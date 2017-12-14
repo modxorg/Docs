@@ -1,0 +1,11 @@
+.idea/
+assets/
+connectors/
+core/
+manager/
+vendor
+html/
+config.core.php
+ht.access
+index.php
+.htaccess
