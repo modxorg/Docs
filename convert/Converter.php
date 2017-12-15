@@ -89,6 +89,9 @@ class Converter {
 
         // Get the file name
         $name = $resource->get('alias');
+        if (empty($name)) {
+            $name = $this->modx->filterPathSegment($resource->get('pagetitle'));
+        }
         $name .= $resource->get('isfolder') ? '/index.md' : '.md';
         $absFileName = $this->outputDir . $currentDirectory . $name;
         $this->ensureCanBeWritten($absFileName);
