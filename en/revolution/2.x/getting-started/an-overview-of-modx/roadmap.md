@@ -12,8 +12,8 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/roadmap"
 
  [You can find a list of all planned releases, and assigned issues, here](https://github.com/modxcms/revolution/milestones).
 
-Released: MODX Revolution 2.5.0
--------------------------------
+Last feature release: MODX Revolution 2.5.0
+-------------------------------------------
 
  MODX Revolution 2.5 was [released in April 2016](https://modx.com/blog/2016/04/21/modx-revolution-2.5/). The following new features or improvements, among many others, [have been added to 2.5.0](https://github.com/modxcms/revolution/issues?q=milestone%3Av2.5.0-pl+is%3Aclosed) so far:
 
@@ -28,10 +28,12 @@ Released: MODX Revolution 2.5.0
 - Ability to unpack zip files from the tree or media manager ([\#12775](https://github.com/modxcms/revolution/pull/12775))
 - Improved "out of the box" experience with a new base template
 
-Planned: MODX Revolution 2.6
-----------------------------
+Planned: MODX Revolution 2.6/2.7/3.0
+------------------------------------
 
- MODX Revolution 2.6 is expected to be released in the first half of 2017. Its progress [can be followed on github](https://github.com/modxcms/revolution/issues?q=is%3Aclosed+milestone%3Av2.6.0), and you can test it by [building MODX from Git](https://docs.modx.com/revolution/2.x/getting-started/installation/git-installation) on the `2.x` branch. Here are some of the features that have been merged:
+Before the end of 2017, an exciting new feature release is planned. This may be version 2.6 or 2.7, but can also be version 3.0 if it includes backwards incompatible features. In that case, the "MODX 3.0/Next" detailed below will become "MODX 4.0".
+
+This feature release is expected to contain a refreshed manager design, as well as other cool new features. Its progress [can be followed on github](https://github.com/modxcms/revolution/issues?q=is%3Aclosed+milestone%3Av2.6.0), and you can test it by [building MODX from Git](https://docs.modx.com/revolution/2.x/getting-started/installation/git-installation) on the `2.x` branch. Here are some of the features that have already been merged:
 
 - Ability to disable the @EVAL binding for improved security ([\#13224](https://github.com/modxcms/revolution/pull/13224))
 - Ability to use newlines in output modifiers ([\#13115](https://github.com/modxcms/revolution/pull/13115))
@@ -40,19 +42,19 @@ Planned: MODX Revolution 2.6
 
  There are also contributions that have been marked to be included in 2.6, but which have not been tested and merged. [These can be viewed here](https://github.com/modxcms/revolution/pulls?q=is%3Aopen+is%3Apr+milestone%3Av2.6.0).
 
-Planned: MODX Revolution 2.x
+Planned: Deprecation Release
 ----------------------------
 
- Between today and the release of 3.0, there will be another 2.x release which provides deprecation notices for features that will be removed in 3.0. This is meant to encourage users and developers to get their site and extras ready for 3.0 before its release.
+ Between today and the release of a 3.0 including breaking changes, there is another 2.x release expected which provides deprecation notices for features that will be removed in 3.0. This is meant to encourage users and developers to get their site and extras ready for 3.0 before its release.
 
- It's possible this release will be 2.6, but it may also be 2.7 or even 2.8.
+ It's possible this release will be 2.6 or 2.7, but may even be 2.8.
 
-Planned: MODX Revolution 3.0
-----------------------------
+Planned: MODX Revolution 3.0/Next
+---------------------------------
 
  MODX Revolution 3.0 is the first major release since Revolution itself. Major releases include backwards incompatible changes, meaning that developers may need to change their 2.x extras in order to work in 3.0.
 
- The focus for MODX 3.0 is to modernise the codebase. This includes introducing support for namespaces, using composer to incorporate core dependencies, introducing a dependency injection container ([see PHP-DI recommendation](https://github.com/modxcms/mab-recommendations/blob/master/php-di-adoption.md)) to manage those dependencies, implementing Slim as router ([see Slim refactor recommendation](https://github.com/modxcms/mab-recommendations/blob/master/slim-refactor.md)), and generally decoupling code to a more sane level. These are largely back-end under-the-hood changes to make MODX more appealing for the developer community.
+ The focus for MODX 3.0/Next is to modernise the codebase. This includes introducing support for namespaces, using composer to incorporate core dependencies, introducing a dependency injection container ([see PHP-DI recommendation](https://github.com/modxcms/mab-recommendations/blob/master/php-di-adoption.md)) to manage those dependencies, implementing Slim as router ([see Slim refactor recommendation](https://github.com/modxcms/mab-recommendations/blob/master/slim-refactor.md)), and generally decoupling code to a more sane level. These are largely back-end under-the-hood changes to make MODX more appealing for the developer community.
 
  There is also a MODX Advisory Board working group investigating the needs and making plans for a completely rebuilt manager interface, however it is uncertain if this will be included in 3.0 or in 4.0. At the moment, 3.0 is expected to still use ExtJS.
 
@@ -71,4 +73,4 @@ Planned: MODX Revolution 3.0
   - modRestClient and modRestServer classes;
   - xPDO will be available through the dependency injection container, instead of directly on the modX object.
 
- Work in progress for MODX 3.0 can be seen in the 3.x branch on GitHub. Once the architectural changes have been fully implemented, or when the MODX Advisory Board suggests additional changes, this roadmap will be updated accordingly.
+ Work in progress for MODX 3.0/Next can be seen in the 3.x and slim branches on GitHub. Once the architectural changes have been fully implemented, or when the MODX Advisory Board suggests additional changes, this roadmap will be updated accordingly.

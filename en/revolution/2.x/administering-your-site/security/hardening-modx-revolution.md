@@ -106,9 +106,11 @@ This is perhaps the most important path to change. Move your core directory **ou
 - /config.core.php (at the site root)
 - /connectors/config.core.php
 - /manager/config.core.php
-- The **modx\_workspaces** database table – this is best done by re-running the setup as you might do when [moving your site](http://rtfm.modx.com/display/revolution20/Moving+Your+Site+to+a+New+Server)
+- The **modx\_workspaces** database table (this is only necessary in older versions of MODX) – this is best done by re-running the setup as you might do when [moving your site](http://rtfm.modx.com/display/revolution20/Moving+Your+Site+to+a+New+Server)
 
-You'll probably want to go ahead and update the other paths, but just keep in mind that once you're done, you'll have to run the setup to ensure that all your paths are clean.
+**Important:** If you move and/or rename the core, you'll also have to modify the processors path ($modx\_processors\_path) in the config.inc.php file unless it is defined relative to the core directory, since the processors directory is under the core directory.
+
+You'll probably want to go ahead and update the other paths, but just keep in mind that once you're done, you'll should run the setup to ensure that all your paths are clean.
 
 #### manager
 
@@ -212,7 +214,7 @@ Here is a sample **.htaccess** file to put inside your manager directory:
 <pre class="brush: php">RewriteEngine On
 RewriteBase /
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ <a href="https://yoursite.com/manager/$1"> https://yoursite.com/manager/ 
+RewriteRule ^(.*)$ <a href="https://yoursite.com/manager/$1"> <a href="https://yoursite.com/manager/"> https://yoursite.com/manager/ </a> 
 </a>
 
 ```Test this by trying to navigate to the non-secure url, e.g. <http://yoursite.com/manager> – if it doesn't redirect to HTTPS, you'll have to tweak the .htaccess.

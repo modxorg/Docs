@@ -4,10 +4,10 @@ _old_id: "259"
 _old_uri: "2.x/developing-in-modx/other-development-resources/reserved-parameters"
 ---
 
-Reserved GET Parameters Inside the MODx Manager
+Reserved GET Parameters Inside the MODX Manager
 -----------------------------------------------
 
-The following is a list (currently incomplete) of GET parameters used by the MODx manager. You should avoid using any of these parameters in [Custom Manager Pages](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages"):
+The following is a list (currently incomplete) of GET parameters used by the MODX Manager. You should avoid using any of these parameters in [Custom Manager Pages](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages"):
 
 - **a** – used to define an action
 - **context\_key** – specifies one of your contexts (e.g. "web" or "mgr")

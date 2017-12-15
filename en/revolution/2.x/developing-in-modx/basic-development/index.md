@@ -4,7 +4,7 @@ _old_id: "31"
 _old_uri: "2.x/developing-in-modx/basic-development/"
 ---
 
-This section is geared at familiarizing developers with basic MODx development principles, and using the structures in MODx to create dynamic, script-driven content.
+This section is geared at familiarizing developers with basic MODX development principles, and using the structures in MODX to create dynamic, script-driven content.
 
 1. [Snippets](/revolution/2.x/developing-in-modx/basic-development/snippets)
   1. [Templating Your Snippets](/revolution/2.x/developing-in-modx/basic-development/snippets/templating-your-snippets)

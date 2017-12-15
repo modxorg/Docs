@@ -1,7 +1,7 @@
 ---
 title: "MIGXdb.Create a basic gallery-management from scratch with MIGXdb"
 _old_id: "932"
-_old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management-from-scratch-with-migxdb"
+_old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management-from-scratch-with-migxdb/"
 ---
 
 <div>- [Creating a basic gallery-management from scratch with MIGXdb](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-CreatingabasicgallerymanagementfromscratchwithMIGXdb)
@@ -117,48 +117,65 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 <pre class="brush: php">{
   "formtabs":[
     {
-      "MIGX_id":1,
+      "MIGX_id":6,
       "caption":"Image",
+      "print_before_tabs":"0",
       "fields":[
         {
-          "MIGX_id":2,
+          "MIGX_id":14,
           "field":"title",
           "caption":"Title",
           "inputTV":"",
           "inputTVtype":"",
-          "configs":""
+          "configs":"",
+          "pos":1
         },
         {
-          "MIGX_id":1,
+          "MIGX_id":15,
           "field":"image",
           "caption":"Image",
+          "description":"",
+          "description_is_code":"0",
           "inputTV":"",
           "inputTVtype":"image",
-          "configs":""
+          "validation":"",
+          "configs":"",
+          "restrictive_condition":"",
+          "display":"",
+          "sourceFrom":"config",
+          "sources":"",
+          "inputOptionValues":"",
+          "default":"",
+          "useDefaultIfEmpty":"0",
+          "pos":2
         },
         {
-          "MIGX_id":3,
+          "MIGX_id":16,
           "field":"pos",
           "caption":"Position",
           "inputTV":"",
           "inputTVtype":"",
-          "configs":""
+          "configs":"",
+          "pos":3
         }
-      ]
+      ],
+      "pos":1
     },
     {
-      "MIGX_id":2,
+      "MIGX_id":7,
       "caption":"Description",
       "fields":[
         {
-          "MIGX_id":1,
+          "MIGX_id":17,
           "field":"description",
           "caption":"Description",
           "inputTV":"",
           "inputTVtype":"textarea",
-          "configs":""
+          "configs":"",
+          "pos":1
         }
-      ]
+      ],
+      "pos":2
     }
   ],
   "contextmenus":"update||publish||unpublish||recall_remove_delete",
@@ -167,13 +184,48 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
   "filters":"",
   "extended":{
     "migx_add":"Add Image",
+    "disable_add_item":"",
+    "add_items_directly":"",
+    "formcaption":"",
+    "update_win_title":"",
+    "win_id":"",
+    "maxRecords":"",
+    "addNewItemAt":"bottom",
+    "media_source_id":"",
+    "multiple_formtabs":"",
+    "multiple_formtabs_label":"",
+    "multiple_formtabs_field":"",
+    "multiple_formtabs_optionstext":"",
+    "multiple_formtabs_optionsvalue":"",
+    "actionbuttonsperrow":1,
+    "winbuttonslist":"",
+    "extrahandlers":"",
+    "filtersperrow":1,
     "packageName":"mygallery",
     "classname":"myGallery",
     "task":"",
+    "getlistsort":"",
+    "getlistsortdir":"",
+    "sortconfig":"",
+    "gridpagesize":"",
+    "use_custom_prefix":"0",
     "prefix":"",
     "grid":"",
+    "gridload_mode":1,
     "check_resid":1,
-    "check_resid_TV":""
+    "check_resid_TV":"",
+    "join_alias":"Resource",
+    "has_jointable":"no",
+    "getlistwhere":"",
+    "joins":"",
+    "hooksnippets":"",
+    "cmpmaincaption":"",
+    "cmptabcaption":"",
+    "cmptabdescription":"",
+    "cmptabcontroller":"",
+    "winbuttons":"",
+    "onsubmitsuccess":"",
+    "submitparams":""
   },
   "columns":[
     {
@@ -224,8 +276,10 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
       "sortable":"false",
       "show_in_grid":"0"
     }
-  ]
+  ],
+  "category":""
 }
+
 
 ``` Click 'done'.
 

@@ -60,10 +60,11 @@ Refreshing the MODX Core Cache
 ``` Alternatively, you can define a `$providers` array with partition `key => $partitionOptions` elements.
 
  ```
-<pre class="brush: php">// refresh the web and web2 context_settings only
-$modx->cacheManager->refresh(array(
-  'context_settings' => array('contexts' => array('web', 'web2')
-));
+<pre class="brush: php">// refresh the web and web2 context_settings only 
+
+$modx - > cacheManager - > refresh(array(
+    'context_settings' => array('contexts' => array('web', 'web2'))
+    );
 
 ``` The second parameter, `$results`, is passed by reference and will contain the results of each of the cache partitions. Depending on the partition, this can be a boolean or an array with more information from the result of refreshing the specific partition. The function itself returns a boolean indicating if any of the partitions returned a boolean false.
 

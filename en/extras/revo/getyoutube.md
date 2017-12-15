@@ -34,7 +34,8 @@ _old_uri: "revo/getyoutube"
  The getYoutube snippet can be called using the tag:
 
  ```
-<pre class="brush: php">[[!getYoutube]]
+<pre class="brush: php">
+[[!getYoutube]]
 
 ```<div class="warning"> Calls must be un-cached. '&mode' property is required. </div><a name="getYoutube-SystemSettings"></a>System Settings
 -------------------------------------------------------
@@ -58,8 +59,8 @@ _old_uri: "revo/getyoutube"
 ### <a name="getYoutube-VideoPlaceholders"></a>Video Placeholders
 
  <table><tbody><tr><th> Placeholder </th> <th> Description </th> <th> Mode </th> <th> Added in Version </th> </tr><tr><td> \[\[+id\]\] </td> <td> Video ID </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+title\]\] </td> <td> Video title </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+description\]\] </td> <td> The description for the video </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+url\]\] </td> <td> URL to the videos YouTube Page </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+embed\_url\]\] </td> <td> URL to use when embedding videos   
-</td> <td> N/A </td> <td> 1.1.0-pl </td> </tr><tr><td> \[\[+publish\_date\]\] </td> <td> The date/time the video was published ( [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format) </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+thumbnail\_small\]\] </td> <td> URL to a small version of the thumbnail (120 x 90px) </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+thumbnail\_medium\]\] </td> <td> URL to a medium version of the thumbnail (320 x 180px) </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+thumbnail\_large\]\] </td> <td> URL to a large version of the thumbnail (480 x 360px) </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+thumbnail\_standard\]\] </td> <td> URL to a standard version of the thumbnail (640 x 480px) </td> <td>video, playlist </td> <td>1.1.1-pl </td> </tr><tr><td> \[\[+thumbnail\_maxres\]\] </td> <td> URL to a max resolution version of the thumbnail (1280 x 720px) </td> <td>video, playlist </td> <td>1.1.1-pl </td> </tr><tr><td> \[\[+channel\_title\]\] </td> <td> Channel title </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+playlist\_id\]\] </td> <td> Playlist ID   
-</td> <td> playlist </td> <td> 1.1.0-pl </td> </tr><tr><td> \[\[+duration\]\] </td> <td> Duration of the video ( [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) format) </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+viewCount\]\] </td> <td> # of views </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+likeCount\]\] </td> <td> # of likes </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+dislikeCount\]\] </td> <td> # of dislikes </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+favoriteCount\]\] </td> <td> # of favorites </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+commentCount\]\] </td> <td> # of comments </td> <td> video </td> <td> 1.0.0-pl </td></tr></tbody></table><div class="info"> If you require additional video data as placeholders, please request here: <https://github.com/tasianmedia/getYoutube/issues>. </div>### <a name="getYoutube-OtherPlaceholders"></a>Other Placeholders
+</td> <td> N/A </td> <td> 1.1.0-pl </td> </tr><tr><td> \[\[+publish\_date\]\] </td> <td> The date/time the video was published ( [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format) </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+thumbnail\_small\]\] </td> <td> URL to a small version of the thumbnail (120 x 90px) </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+thumbnail\_medium\]\] </td> <td> URL to a medium version of the thumbnail (320 x 180px) </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+thumbnail\_large\]\] </td> <td> URL to a large version of the thumbnail (480 x 360px) </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+thumbnail\_standard\]\] </td> <td> URL to a standard version of the thumbnail (640 x 480px) </td> <td> video, playlist </td> <td> 1.1.1-pl </td> </tr><tr><td> \[\[+thumbnail\_maxres\]\] </td> <td> URL to a max resolution version of the thumbnail (1280 x 720px) </td> <td> video, playlist </td> <td> 1.1.1-pl </td> </tr><tr><td> \[\[+channel\_title\]\] </td> <td> Channel title </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+playlist\_id\]\] </td> <td> Playlist ID   
+</td> <td> playlist </td> <td> 1.1.0-pl </td> </tr><tr><td> \[\[+duration\]\] </td> <td> Duration of the video ( [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) format) </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+viewCount\]\] </td> <td> # of views </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+likeCount\]\] </td> <td> # of likes </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+dislikeCount\]\] </td> <td> # of dislikes </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+favoriteCount\]\] </td> <td> # of favorites </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+commentCount\]\] </td> <td> # of comments </td> <td> video </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+tags\]\] </td> <td> Comma separated list of tags </td> <td> video </td> <td> 1.2.0-pl </td></tr></tbody></table><div class="info"> If you require additional video data as placeholders, please request here: <https://github.com/tasianmedia/getYoutube/issues>. </div>### <a name="getYoutube-OtherPlaceholders"></a>Other Placeholders
 
  <table><tbody><tr><th> Placeholder </th> <th> Description </th> <th> Mode </th> <th> Added in Version </th> </tr><tr><td> \[\[+total\]\] </td> <td> Returns the total number of Videos in the output </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+nextPage\]\] </td> <td> URL to the next 50 results in the output (See pagination docs below) </td> <td> N/A </td> <td> 1.0.0-pl </td> </tr><tr><td> \[\[+prevPage\]\] </td> <td> URL to the previous 50 results in the output (See pagination docs below) </td> <td> N/A </td> <td> 1.0.0-pl </td></tr></tbody></table><a name="getYoutube-Examples"></a>Examples
 ------------------------------------------
@@ -67,22 +68,26 @@ _old_uri: "revo/getyoutube"
  Output all videos from the YouTube 'Spotlight' Channel, using the 'videoTpl' chunk:
 
  ```
-<pre class="brush: php">[[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl`]]
+<pre class="brush: php">
+[[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl`]]
 
 ``` Output all videos from the YouTube 'POP Music Playlist 2017 (Songs of All Time)' Playlist, using the 'videoTpl' chunk:
 
  ```
-<pre class="brush: php">[[!getYoutube? &mode=`playlist` &playlist=`PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj` &tpl=`videoTpl`]]
+<pre class="brush: php">
+[[!getYoutube? &mode=`playlist` &playlist=`PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj` &tpl=`videoTpl`]]
 
 ``` Output only specified videos, using the 'videoTpl' chunk:
 
  ```
-<pre class="brush: php">[[!getYoutube? &mode=`video` &video=`_X-jSkrqYzk,FoRRybrFR0c,yXBPbnv1H-U` &tpl=`videoTpl`]]
+<pre class="brush: php">
+[[!getYoutube? &mode=`video` &video=`_X-jSkrqYzk,FoRRybrFR0c,yXBPbnv1H-U` &tpl=`videoTpl`]]
 
 ``` Output all videos from the YouTube 'Spotlight' Channel, using the 'videoTpl' chunk and assign the output to a placeholder:
 
  ```
-<pre class="brush: php">[[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl` &toPlaceholder=`videos`]]
+<pre class="brush: php">
+[[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl` &toPlaceholder=`videos`]]
 [[+videos:notempty=`[[+videos]]`]]
 
 ```<a name="getYoutube-PaginationExamples"></a>Pagination Examples
@@ -93,7 +98,8 @@ _old_uri: "revo/getyoutube"
  Output all videos from the YouTube 'Spotlight' Channel, using the 'videoTpl' chunk:
 
  ```
-<pre class="brush: php">[[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl`]]
+<pre class="brush: php">
+[[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl`]]
 [[+prevPage:notempty=`<a href="[[+prevPage]]">prevPage</a><br>`]]
 [[+nextPage:notempty=`<a href="[[+nextPage]]">nextPage</a><br>`]]
 Total: [[+total]]
@@ -101,7 +107,8 @@ Total: [[+total]]
 ``` Output all videos from the YouTube 'Spotlight' Channel, 10 at a time, using the 'videoTpl' chunk:
 
  ```
-<pre class="brush: php">[[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl` &limit=`10`]]
+<pre class="brush: php">
+[[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl` &limit=`10`]]
 [[+prevPage:notempty=`<a href="[[+prevPage]]">prevPage</a><br>`]]
 [[+nextPage:notempty=`<a href="[[+nextPage]]">nextPage</a><br>`]]
 Total: [[+total]]

@@ -13,7 +13,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.query"
  This can be a good way to issue reporting queries without having to worry about the complex syntax normally required by xPDO. </div> Syntax 
 --------
 
- API Docs: see <http://us1.php.net/manual/en/pdo.query.php>
+ API Docs: see <http://php.net/manual/en/pdo.query.php>
 
  ```
 <pre class="brush: php">
@@ -21,7 +21,7 @@ xPDOObject|false query (string $statement)
 
 ``` **$statement**
 
- The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://us1.php.net/manual/en/pdo.quote.php).
+ The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
 
  Examples 
 ----------
@@ -34,7 +34,7 @@ xPDOObject|false query (string $statement)
 
  **$statement**
 
- The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://us1.php.net/manual/en/pdo.quote.php).
+ The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
 
  Examples 
 ----------
@@ -96,7 +96,7 @@ while ($r = $results->fetch(PDO::FETCH_ASSOC)) {
 
 ```###  Quoting Inputs 
 
- For single queries that rely on user input, you should [manually quote](http://us1.php.net/manual/en/pdo.quote.php) the input strings.
+ For single queries that rely on user input, you should [manually quote](http://php.net/manual/en/pdo.quote.php) the input strings.
 
  ```
 <pre class="brush: php">
@@ -132,7 +132,7 @@ foreach ($modx->query($sql) as $row) {
 }
 return $output;
 
-```You can also use the fetchAll() method to return an array of arrays (i.e. a recordset):
+``` You can also use the fetchAll() method to return an array of arrays (i.e. a recordset):
 
  ```
 <pre class="brush: php">
@@ -159,8 +159,8 @@ return $data;
 
  See
 
-- <http://us1.php.net/manual/en/pdo.prepare.php>
-- <http://us1.php.net/manual/en/pdostatement.execute.php>
+- <http://php.net/manual/en/pdo.prepare.php>
+- <http://php.net/manual/en/pdostatement.execute.php>
 
  See Also 
 ----------

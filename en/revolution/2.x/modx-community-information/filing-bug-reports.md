@@ -4,5 +4,5 @@ _old_id: "356"
 _old_uri: "2.x/modx-community-information/filing-bug-reports"
 ---
 
-<div class="note">**Redirection Notice**  
-This page should redirect to <http://rtfm.modx.com/display/community/Filing+and+Discussing+Issues> in about 5 seconds.</div>
+<div class="note">**Redirection Notice**   
+ This page should redirect to <https://docs.modx.com/community/contribute/filing-and-discussing-issues> in about 5 seconds.</div> The proper procedure for reporting bugs can be found here: <https://docs.modx.com/community/contribute/filing-and-discussing-issues>

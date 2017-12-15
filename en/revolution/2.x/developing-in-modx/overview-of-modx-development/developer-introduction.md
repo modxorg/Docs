@@ -4,7 +4,7 @@ _old_id: "96"
 _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introduction"
 ---
 
-<div>- [What is MODx?](#DeveloperIntroduction-WhatisMODx%3F)
+<div>- [What is MODX?](#DeveloperIntroduction-WhatisMODx%3F)
 - [What is MVC?](#DeveloperIntroduction-WhatisMVC%3F)
   - [What is MVC²?](#DeveloperIntroduction-WhatisMVC%C2%B2%3F)
   - [Connector/Processor Relationships](#DeveloperIntroduction-Connector%2FProcessorRelationships)
@@ -24,10 +24,10 @@ _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introdu
   - [The 2nd C: The Connectors](#DeveloperIntroduction-The2ndC%3ATheConnectors)
 - [See Also](#DeveloperIntroduction-SeeAlso)
 
-</div>What is MODx?
+</div>What is MODX?
 -------------
 
-MODx Revolution is an Content Application Platform, built for developers, designers and users who want a powerful, scalable system with flexible content management built in.
+MODX Revolution is an Content Application Platform, built for developers, designers and users who want a powerful, scalable system with flexible content management built in.
 
 What is MVC?
 ------------
@@ -36,7 +36,7 @@ MVC is "Model-View-Controller", a common programming paradigm where the data's M
 
 ### What is MVC²?
 
-MVC² is a MODx terminology that is "Model-View-Controller/Connector". It basically adds a new way of accessing the model from the view - Connectors, which are AJAX-based files that "connect" to processors to provide remote CRUD interactions.
+MVC² is a MODX terminology that is "Model-View-Controller/Connector". It basically adds a new way of accessing the model from the view - Connectors, which are AJAX-based files that "connect" to processors to provide remote CRUD interactions.
 
 ### Connector/Processor Relationships
 
@@ -65,13 +65,13 @@ Revolution bases its internal structure on what we call a MVC² design system. I
 
 ### The Model
 
-The _M_ stands for _Model_, which is the core classes that manipulate data records. These core classes, prefixed with 'mod' in Revolution, handle all the Domain logic for MODx Revolution.
+The _M_ stands for _Model_, which is the core classes that manipulate data records. These core classes, prefixed with 'mod' in Revolution, handle all the Domain logic for MODX Revolution.
 
-This also includes what Revolution calls "processors", which are scripts that handle Domain Logic for MODx Revolution. They are never accessed directly, and are used to handle form processing, REST requests, AJAX requests, and more. They resemble basic CRUD (Create-Read-Update-Delete) processing tasks.
+This also includes what Revolution calls "processors", which are scripts that handle Domain Logic for MODX Revolution. They are never accessed directly, and are used to handle form processing, REST requests, AJAX requests, and more. They resemble basic CRUD (Create-Read-Update-Delete) processing tasks.
 
 ### The View
 
-Views in MODx Revolution are called 'Templates', but are used differently based on what context we're talking about.
+Views in MODX Revolution are called 'Templates', but are used differently based on what context we're talking about.
 
 #### In the front-end, they are Templates, Chunks and Resources.
 
@@ -85,15 +85,15 @@ Chunks are small pieces of HTML code that can be inserted anywhere. They represe
 
 ##### Resources
 
-Resources is the basic representation of a single "webpage" in MODx Revolution. They represent a single page or resource by which the client accesses content from the server. They can be files, weblinks, symlinks or just plain-old HTML pages wrapped by [Templates](/revolution/2.x/making-sites-with-modx/structuring-your-site/templates "Templates").
+Resources is the basic representation of a single "webpage" in MODX Revolution. They represent a single page or resource by which the client accesses content from the server. They can be files, weblinks, symlinks or just plain-old HTML pages wrapped by [Templates](/revolution/2.x/making-sites-with-modx/structuring-your-site/templates "Templates").
 
 #### In the Manager
 
-In the manager-side of MODx Revolution, the View is handled by templates as well, although these are file-based and located in manager/templates, and currently loaded via Smarty.
+In the manager-side of MODX Revolution, the View is handled by templates as well, although these are file-based and located in manager/templates, and currently loaded via Smarty.
 
 ### The Controller
 
-Controllers in MODx Revolution come in two forms. In the front-end, they are Request Handlers (via the modRequest class) and Snippets and Plugins.
+Controllers in MODX Revolution come in two forms. In the front-end, they are Request Handlers (via the modRequest class) and Snippets and Plugins.
 
 #### [Snippets](/revolution/2.x/developing-in-modx/basic-development/snippets "Snippets")
 
@@ -107,13 +107,13 @@ They allow users to write generic code that affects basic page functionality, su
 
 ### The 2nd C: The Connectors
 
-Connectors are a new idea to MODx Revolution; they are access points for processors. The manager system in MODx Revolution uses them extensively; they provide secure locations for AJAX requests to process data on certain objects.
+Connectors are a new idea to MODX Revolution; they are access points for processors. The manager system in MODX Revolution uses them extensively; they provide secure locations for AJAX requests to process data on certain objects.
 
 For example, a connector request that loads /modx/connectors/resource/index.php with a GET 'action' parameter of "get", and a GET parameter of 'id', will (assuming the request's client has access) grab the Resource with the ID specified and return it in JSON (or whatever is configured; this is JSON by default in Revolution) format.
 
 Every Connector request is also secured down by Context permissions loaded on every request. If the user does not have access (via the Access Policy assigned to the request's context), the connector will refuse to provide data.
 
-Connectors allow for dynamic, secure JSON requests (and eventually REST-based requests) straight from your MODx manager.
+Connectors allow for dynamic, secure JSON requests (and eventually REST-based requests) straight from your MODX manager.
 
 See Also
 --------

@@ -36,7 +36,7 @@ Alternatively, though Pull Requests are preferred first and other external git r
 Using Git and GitHub and the MODX Branching Strategy
 ----------------------------------------------------
 
-If you can code, but source/version control and collaborating is new to you, don't panic! The section on ?[Using Git and GitHub](/community/contribute/using-git-and-github/ "Using Git and GitHub") will fill you in on how to get started and also explains the branching strategy used by MODX and what that means for contributors.
+If you can code, but source/version control and collaborating is new to you, don't panic! The section on [Using Git and GitHub](/community/contribute/using-git-and-github/ "Using Git and GitHub") will fill you in on how to get started and also explains the branching strategy used by MODX and what that means for contributors.
 
 My code contribution was rejected! What?!
 -----------------------------------------
@@ -58,4 +58,4 @@ See Also
 --------
 
 1. [Development Environments](/community/contribute/becoming-a-contributor/development-environments)
-2. [MODx PHP Coding Standards](/community/contribute/becoming-a-contributor/modx-php-coding-standards)
+2. [MODX PHP Coding Standards](/community/contribute/becoming-a-contributor/modx-php-coding-standards)

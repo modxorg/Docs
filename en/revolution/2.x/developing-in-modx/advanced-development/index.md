@@ -4,7 +4,7 @@ _old_id: "16"
 _old_uri: "2.x/developing-in-modx/advanced-development/"
 ---
 
-This section is for advanced techniques and tools in MODx development.
+This section is for advanced techniques and tools in MODX development.
 
 1. [Namespaces](/revolution/2.x/developing-in-modx/advanced-development/namespaces)
 2. [Caching](/revolution/2.x/developing-in-modx/advanced-development/caching)
@@ -34,7 +34,7 @@ This section is for advanced techniques and tools in MODx development.
       10. [MODx.Window](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window)
 4. [Internationalization](/revolution/2.x/developing-in-modx/advanced-development/internationalization)
   1. [Adding a Translation](/revolution/2.x/developing-in-modx/advanced-development/internationalization/adding-a-translation)
-5. [MODx Services](/revolution/2.x/developing-in-modx/advanced-development/modx-services)
+5. [MODX Services](/revolution/2.x/developing-in-modx/advanced-development/modx-services)
   1. [modFileHandler](/revolution/2.x/developing-in-modx/advanced-development/modx-services/modfilehandler)
   2. [modMail](/revolution/2.x/developing-in-modx/advanced-development/modx-services/modmail)
   3. [modRegistry](/revolution/2.x/developing-in-modx/advanced-development/modx-services/modregistry)

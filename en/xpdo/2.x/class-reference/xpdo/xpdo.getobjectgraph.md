@@ -41,7 +41,7 @@ foreach ($page->TemplateVarResources as $tv) {
 return $output;
 
 ```<div class="note">**Heads Up!**   
- It's critical to understand that even though you may think you are retrieving a single object, that object may be joined to a _collection_ of related objects.</div>You'll notice that if you use the above example to get your TV values, you'll sometimes get weird JSON encoded values that are basically unusable! The lesson? **DO NOT RELY ON getObjectGraph to retrieve Template Variable values!** This is important: although you may be able to retrieve some values this way, the default TV values are stored in distant corners of the database, so you should instead rely on the **getTVValue** helper function.
+ It's critical to understand that even though you may think you are retrieving a single object, that object may be joined to a _collection_ of related objects.</div>You'll notice that if you use the above example to get your TV values, you'll sometimes get weird JSON encoded values that are basically unusable! The lesson? **DO NOT RELY ON getObjectGraph to retrieve Template Variable values! (Unless the TV values are simple text or integers \*and\* no TV is set to its default value).** This is important: although you may be able to retrieve some values this way, the default TV values are stored in distant corners of the database, so you should instead rely on the **getTVValue** helper function.
 
 ### Use the getTVValue Helper Function
 
@@ -50,7 +50,8 @@ Instead, use the helper functions **getTVValue** and **setTVValue**:
 ```
 <pre class="brush: php">$page = $modx->getObject('modResource', 123);
 return $page->getTVValue('my_tv_name');
-
+// or (faster)
+return $page->getTVValue($tvId); // (ID of the TV)
 ```Example
 -------
 

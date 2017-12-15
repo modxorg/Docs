@@ -210,12 +210,14 @@ Image
  **All input option names (for use in migx options-json)**
 
 ```
-<pre class="brush: php">{  
-   "targetWidth":"",
-   "targetHeight":"",
-   "targetRatio":"",
-   "thumbnailWidth":"",
-   "allowAltTag":"true"
+<pre class="brush: php">{
+"targetWidth":"",   
+"targetHeight":"",
+"targetRatio":"",   
+"thumbnailWidth":"",   
+"allowAltTag":"true",   
+"allowCaption":"false",   
+"allowCredits":"false"
 }
 
 ```Listbox (Single-Select) (listbox)

@@ -4,7 +4,7 @@ _old_id: "81"
 _old_uri: "2.x/making-sites-with-modx/customizing-content"
 ---
 
-MODx offers many ways of customizing content. This section covers the ways to do so that are built into the core of MODx.
+MODX offers many ways of customizing content. This section covers the ways to do so that are built into the core of MODX.
 
 1. [Template Variables](/revolution/2.x/making-sites-with-modx/customizing-content/template-variables)
   1. [Creating a Template Variable](/revolution/2.x/making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)

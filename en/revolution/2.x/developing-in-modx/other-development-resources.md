@@ -4,9 +4,9 @@ _old_id: "212"
 _old_uri: "2.x/developing-in-modx/other-development-resources"
 ---
 
-This section covers alternative development options and information for MODx developers.
+This section covers alternative development options and information for MODX developers.
 
-1. [Loading MODx Externally](/revolution/2.x/developing-in-modx/other-development-resources/loading-modx-externally)
+1. [Loading MODX Externally](/revolution/2.x/developing-in-modx/other-development-resources/loading-modx-externally)
 2. [API Reference](/revolution/2.x/developing-in-modx/other-development-resources/api-reference)
 3. [Class Reference](/revolution/2.x/developing-in-modx/other-development-resources/class-reference)
   1. [modX](/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modx)

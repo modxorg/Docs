@@ -12,7 +12,7 @@ _old_uri: "2.x/getting-started/server-requirements"
 
 ### Supported Web Servers
 
-- Apache 1.3.x - 2.2.x (uses htaccess for Friendly URLs by default)
+- Apache 1.3.x - 2.4.x (uses htaccess for Friendly URLs)
 - IIS 6.0+
 - lighttpd ([Setup and Friendly URL Guide](/revolution/2.x/getting-started/installation/basic-installation/lighttpd-guide "Lighttpd Guide"))
 - Zeus
@@ -21,7 +21,7 @@ _old_uri: "2.x/getting-started/server-requirements"
 ### PHP Compatibility
 
 - PHP 5.3.3 and above (prior to MODX 2.4: 5.1.2 and above, excluding 5.1.6 and 5.2.0)
-- Required extensions: 
+- Required extensions:
   - zlib
   - JSON (or PECL library)
   - mod\_rewrite (for friendly URLs/.htaccess)
@@ -39,12 +39,12 @@ _old_uri: "2.x/getting-started/server-requirements"
 <figure class="code"><figcaption>**PHP Configuration Options** </figcaption>```
 <pre class="brush: php">./configure --with-apxs2=/usr/local/bin/apxs --with-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 
-``` </figure><figure class="code"><figcaption>**NGINX PHP Configuration Options** </figcaption>```
+```</figure><figure class="code"><figcaption>**NGINX PHP Configuration Options** </figcaption>```
 <pre class="brush: php">./configure --with-mysql --with-pdo-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 
 ```</figure>### MySQL Database Requirements
 
-- 4.1.20 or newer, with the following permissions: 
+- 4.1.20 or newer, with the following permissions:
   - SELECT, INSERT, UPDATE, DELETE are required for normal operation
   - CREATE, ALTER, INDEX, DROP are required for installation/upgrades and potentially for various add-ons
   - CREATE TEMPORARY TABLES may be used by some 3rd party add-ons

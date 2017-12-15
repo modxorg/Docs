@@ -89,7 +89,7 @@ Collections Templates (new in version 2)
 - textarea
 - modx-combo-boolean
 - numberfield
-- {“type”:”number field”,”allowDecimals”:false,”allowNegative”:false}
+- {"xtype":"numberfield","allowDecimals":false,"allowNegative":false}
 
 ### Renderers
 
@@ -149,5 +149,3 @@ Additional Resources
  [Collections 3](http://www.bxr.cz/blog/collections-3/)
 
 [Collections: Enhanced sort](http://www.bxr.cz/blog/collections-enhanced-sort/)
-
-  

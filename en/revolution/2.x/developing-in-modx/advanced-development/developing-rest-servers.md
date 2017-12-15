@@ -9,7 +9,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/developing-rest-servers"
 Recommended Pre-Development Reading
 -----------------------------------
 
- Before building a RESTful API, it helps to know what a RESTful API really is and how they are supposed to work. There are a lot of resources available online, and Phil Sturgeon's "[Build APIs you won't hate](https://leanpub.com/build-apis-you-wont-hate)" is a great (e)book that can be useful to check out.
+ Before building a RESTful API, it helps to know what a RESTful API really is and how they are supposed to work. There are a lot of resources available online, and Phil Sturgeon's " [Build APIs you won't hate](https://leanpub.com/build-apis-you-wont-hate)" is a great (e)book that can be useful to check out.
 
 In a Nutshell
 -------------
@@ -26,7 +26,7 @@ In a Nutshell
  First, create a `rest/index.php` file which looks something like this:
 
  ```
-
+<pre class="brush: plain">
 <?php
 // Boot up MODX
 require_once dirname(dirname(__FILE__)) . '/config.core.php';
@@ -81,7 +81,7 @@ location @modx_rest {
 ``` If you were to open /rest/foobar in your browser now, you should get an error that indicates your API is working, yay!
 
  ```
-
+<pre class="brush: plain">
 {
   success: false,
   message: "Method not allowed",
@@ -104,10 +104,10 @@ location @modx_rest {
 
  There is a lot of discussion around the web about how to name your endpoints - in this case we went for the plural "items". One thing to note is that we don't have endpoints like /items/create - that is already covered by POSTing to /items and is a key aspect of building RESTful APIs.
 
- To create your Items endpoint , you will need to create the Items controller. Based on the configuration we passed to the modRestService earlier, and the defaults, each controller needs to start with MyController, be placed in a `/rest/Controllers/` directory and the file must match the endpoint name suffixed with `.php`. So create a new file `/rest/Controller`s/Items.php. Give it the following contents:
+ To create your Items endpoint , you will need to create the Items controller. Based on the configuration we passed to the modRestService earlier, and the defaults, each controller needs to start with MyController, be placed in a `/rest/Controllers/` directory and the file must match the endpoint name suffixed with `.php`. So create a new file `/rest/Controllers/Items.php`. Give it the following contents:
 
  ```
-
+<pre class="brush: plain">
 class MyControllerItems extends modRestController {
     public $classKey = 'ToDoItem';
     public $defaultSortField = 'sortorder';
@@ -119,7 +119,7 @@ class MyControllerItems extends modRestController {
  If you don't have a package ready, you can also set the classKey property to "modResource" and the defaultSortField to "id" to set up an API for all resources.
 
  ```
-
+<pre class="brush: plain">
 {
   results: [
     {
