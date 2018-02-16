@@ -112,7 +112,12 @@ class Converter {
     public function parseBlock($content)
     {
         try {
-            return $this->converter->convert($content);
+            $parsed = $this->converter->convert($content);
+            // Filter out part of the link to turn 'm into relative links
+            $parsed = str_replace('](revolution/2.x/', '](', $parsed);
+            $parsed = str_replace('](/revolution/2.x/', '](', $parsed);
+
+            return $parsed;
         }
         catch (Exception $e) {
             echo "!!! Invalid HTML content found\n";

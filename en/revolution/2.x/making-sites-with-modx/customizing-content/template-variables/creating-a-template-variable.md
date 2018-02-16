@@ -20,7 +20,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/cre
 - [Template and Resource Group Access](#CreatingaTemplateVariable-TemplateandResourceGroupAccess)
 - [See Also](#CreatingaTemplateVariable-SeeAlso)
  
-</div> This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what about what a Template Variable is, see the page on [Template Variables](revolution/2.x/making-sites-with-modx/customizing-content/template-variables "Template Variables").
+</div> This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what about what a Template Variable is, see the page on [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables").
 
 Explanation
 -----------
@@ -59,11 +59,11 @@ Explanation
 
 <div class="note"> The name should be unique! </div>### 4. Define the Input Options
 
- Next, click on the **Input Options** tab: you need to choose which kind of field this will be, e.g. a text field, a dropdown field, a WYSIWYG, etc. See the page for See the [Template Variable Input Types](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types") for a full list of possible input types.
+ Next, click on the **Input Options** tab: you need to choose which kind of field this will be, e.g. a text field, a dropdown field, a WYSIWYG, etc. See the page for See the [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types") for a full list of possible input types.
 
 - **Input Type**: Your field might be a simple text field, a dropdown, a reference to another page, or many other types of field.
-- **Input Options**: Some Input Types ignore this field, but others may require it. E.g. a dropdown list requires a list of possible values. Again, see the page on [Template Variable Input Types](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types") for more info.
-- **Default**: this affects what the default value for the field will be. This can be a simple value, or it can utilize one of the MODX [Bindings](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/bindings "Bindings") to do things like select a value from the database or inherit a value from a parent page.
+- **Input Options**: Some Input Types ignore this field, but others may require it. E.g. a dropdown list requires a list of possible values. Again, see the page on [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types") for more info.
+- **Default**: this affects what the default value for the field will be. This can be a simple value, or it can utilize one of the MODX [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings") to do things like select a value from the database or inherit a value from a parent page.
 
  ![](download/attachments/18678061/create-tv-rendopt1.png?version=1&modificationDate=1268850855000)
 
@@ -125,31 +125,31 @@ Viewing: [[+subsection]]
 Template and Resource Group Access
 ----------------------------------
 
- We can assign TVs to [Templates](revolution/2.x/making-sites-with-modx/structuring-your-site/templates "Templates"), as well. This allows those Resources assigned to those [Templates](revolution/2.x/making-sites-with-modx/structuring-your-site/templates "Templates") to edit the TVs for each Resource.
+ We can assign TVs to [Templates](making-sites-with-modx/structuring-your-site/templates "Templates"), as well. This allows those Resources assigned to those [Templates](making-sites-with-modx/structuring-your-site/templates "Templates") to edit the TVs for each Resource.
 
  Also, TVs can be restricted to certain Resource Groups, selectable in the grid labeled "Access Permissions".
 
 See Also
 --------
 
-1. [Creating a Template Variable](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
-2. [Bindings](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/bindings)
-  1. [CHUNK Binding](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/bindings/chunk-binding)
-  2. [DIRECTORY Binding](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/bindings/directory-binding)
-  3. [EVAL Binding](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding)
-  4. [FILE Binding](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/bindings/file-binding)
-  5. [INHERIT Binding](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/bindings/inherit-binding)
-  6. [RESOURCE Binding](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding)
-  7. [SELECT Binding](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/bindings/select-binding)
-3. [Template Variable Input Types](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-input-types)
-4. [Template Variable Output Types](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types)
-  1. [Date TV Output Type](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)
-  2. [Delimiter TV Output Type](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type)
-  3. [HTML Tag TV Output Type](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type)
-  4. [Image TV Output Type](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type)
-  5. [URL TV Output Type](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type)
-5. [Adding a Custom TV Type - MODX 2.2](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2)
-6. [Adding a Custom TV Input Type](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-input-type)
-7. [Adding a Custom TV Output Type](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-output-type)
-8. [Creating a multi-select box for related pages in your template](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/creating-a-multi-select-box-for-related-pages-in-your-template)
-9. [Accessing Template Variable Values via the API](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/accessing-template-variable-values-via-the-api)
+1. [Creating a Template Variable](making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
+2. [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings)
+  1. [CHUNK Binding](making-sites-with-modx/customizing-content/template-variables/bindings/chunk-binding)
+  2. [DIRECTORY Binding](making-sites-with-modx/customizing-content/template-variables/bindings/directory-binding)
+  3. [EVAL Binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding)
+  4. [FILE Binding](making-sites-with-modx/customizing-content/template-variables/bindings/file-binding)
+  5. [INHERIT Binding](making-sites-with-modx/customizing-content/template-variables/bindings/inherit-binding)
+  6. [RESOURCE Binding](making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding)
+  7. [SELECT Binding](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding)
+3. [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types)
+4. [Template Variable Output Types](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types)
+  1. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)
+  2. [Delimiter TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type)
+  3. [HTML Tag TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type)
+  4. [Image TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type)
+  5. [URL TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type)
+5. [Adding a Custom TV Type - MODX 2.2](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2)
+6. [Adding a Custom TV Input Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-input-type)
+7. [Adding a Custom TV Output Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-output-type)
+8. [Creating a multi-select box for related pages in your template](making-sites-with-modx/customizing-content/template-variables/creating-a-multi-select-box-for-related-pages-in-your-template)
+9. [Accessing Template Variable Values via the API](making-sites-with-modx/customizing-content/template-variables/accessing-template-variable-values-via-the-api)

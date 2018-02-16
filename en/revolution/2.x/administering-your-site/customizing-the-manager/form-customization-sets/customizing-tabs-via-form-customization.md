@@ -28,8 +28,8 @@ Any time you need to refer to the tab region, for example if moving Template Var
 See Also
 --------
 
-1. [Customizing the Manager via Plugins](/revolution/2.x/administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
-2. [Form Customization Profiles](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-profiles)
-3. [Form Customization Sets](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-sets)
-  1. [Customizing Tabs via Form Customization](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization)
-4. [Manager Templates and Themes](/revolution/2.x/administering-your-site/customizing-the-manager/manager-templates-and-themes)
+1. [Customizing the Manager via Plugins](administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
+2. [Form Customization Profiles](administering-your-site/customizing-the-manager/form-customization-profiles)
+3. [Form Customization Sets](administering-your-site/customizing-the-manager/form-customization-sets)
+  1. [Customizing Tabs via Form Customization](administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization)
+4. [Manager Templates and Themes](administering-your-site/customizing-the-manager/manager-templates-and-themes)

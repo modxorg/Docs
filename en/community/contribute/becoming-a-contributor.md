@@ -45,7 +45,7 @@ Every once in a while, a contribution submitted doesn't make it into the core. I
 
 Sometimes a contribution you submit won't make it in. That may be for a myriad of reasons:
 
-- A contribution doesn't follow [Code Standards](/revolution/2.x/developing-in-modx/code-standards "Code Standards")
+- A contribution doesn't follow [Code Standards](developing-in-modx/code-standards "Code Standards")
 - The contribution will be moved to a component rather than the core
 - The contribution will be deferred to a later release
 - We used a different contribution to fix the issue

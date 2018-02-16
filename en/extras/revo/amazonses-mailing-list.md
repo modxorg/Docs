@@ -22,7 +22,7 @@ _old_uri: "revo/amazonses-mailing-list"
 
  **<a id="download">Download</a>**
 
- It can be downloaded from within the MODX Revolution manager via [Package Management](revolution/2.x/developing-in-modx/advanced-development/package-management), or from the MODX Extras Repository, here: <http://modx.com/extras/package/amazonsesmailinglist>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management), or from the MODX Extras Repository, here: <http://modx.com/extras/package/amazonsesmailinglist>
 
  **<a id="install">Installation</a>**
 

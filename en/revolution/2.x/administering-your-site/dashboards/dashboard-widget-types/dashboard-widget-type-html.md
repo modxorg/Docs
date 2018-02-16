@@ -26,7 +26,7 @@ Hello, [[+modx.user.username]]!
 ```<div class="note">Note that in snippets there is no "active resource", so snippets referencing $modx->resource will have issues.</div>See Also
 --------
 
-1. [Dashboard Widget Type - File](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
-2. [Dashboard Widget Type - HTML](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)
-3. [Dashboard Widget Type - Inline PHP](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
-4. [Dashboard Widget Type - Snippet](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)
+1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
+2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)
+3. [Dashboard Widget Type - Inline PHP](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
+4. [Dashboard Widget Type - Snippet](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)

@@ -4,7 +4,7 @@ _old_id: "87"
 _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php"
 ---
 
- The Inline PHP widget acts very similar to the [Snippet Widget](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet "Dashboard Widget Type - Snippet"), except it runs the content of the widget as if it were a Snippet.
+ The Inline PHP widget acts very similar to the [Snippet Widget](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet "Dashboard Widget Type - Snippet"), except it runs the content of the widget as if it were a Snippet.
 
 Usage
 -----
@@ -27,7 +27,7 @@ return 'Hello, World!';
 See Also
 --------
 
-1. [Dashboard Widget Type - File](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
-2. [Dashboard Widget Type - HTML](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)
-3. [Dashboard Widget Type - Inline PHP](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
-4. [Dashboard Widget Type - Snippet](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)
+1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
+2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)
+3. [Dashboard Widget Type - Inline PHP](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
+4. [Dashboard Widget Type - Snippet](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)

@@ -44,7 +44,7 @@ Tabs are found in the 2nd tab in the Set editing page. You can change their visi
 
 When creating a new tab, you'll be presented with both ID and Title fields. The Title field is what will show as the text of the new tab; whereas the ID is what is used when moving TVs into the tab.
 
-See [Customizing Tabs via Form Customization](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization "Customizing Tabs via Form Customization") for more information.
+See [Customizing Tabs via Form Customization](administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization "Customizing Tabs via Form Customization") for more information.
 
 ### Adjusting Template Variables
 
@@ -60,8 +60,8 @@ Sets can be exported to XML files by right-clicking on a Set in the Profile's ed
 <div class="note">Importing a Set from XML will create a **new** Set, not override any existing ones. After you've imported the Set from XML, you may deactivate any older Sets.</div>See Also
 --------
 
-1. [Customizing the Manager via Plugins](/revolution/2.x/administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
-2. [Form Customization Profiles](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-profiles)
-3. [Form Customization Sets](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-sets)
-  1. [Customizing Tabs via Form Customization](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization)
-4. [Manager Templates and Themes](/revolution/2.x/administering-your-site/customizing-the-manager/manager-templates-and-themes)
+1. [Customizing the Manager via Plugins](administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
+2. [Form Customization Profiles](administering-your-site/customizing-the-manager/form-customization-profiles)
+3. [Form Customization Sets](administering-your-site/customizing-the-manager/form-customization-sets)
+  1. [Customizing Tabs via Form Customization](administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization)
+4. [Manager Templates and Themes](administering-your-site/customizing-the-manager/manager-templates-and-themes)

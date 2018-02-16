@@ -44,9 +44,9 @@ The getDate snippet can be called using the tag:
 
 ### <a name="getDate-OutputFilters"></a>Output Filters
 
-getDate outputs a unix timestamp. To format this timestamp into a human friendly format, please use the built in [MODX Output Filter 'date'](revolution/2.x/making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)#InputandOutputFilters(OutputModifiers)-Stringoutputmodifiers).
+getDate outputs a unix timestamp. To format this timestamp into a human friendly format, please use the built in [MODX Output Filter 'date'](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)#InputandOutputFilters(OutputModifiers)-Stringoutputmodifiers).
 
- <table><tbody><tr><th>Example Output</th> <th>The Filter Parameters</th> </tr><tr><td>22 November 2013</td> <td>\[\[!getDate:date=`%e %B %Y`\]\]</td> </tr><tr><td>Fri Nov 22, 2013</td> <td>\[\[!getDate:date=`%a %b %e, %Y`\]\]</td> </tr><tr><td>Friday, November 22, 2013</td> <td>\[\[!getDate:date=`%A, %B %e, %Y`\]\]</td> </tr><tr><td>2013-11-22</td> <td>\[\[!getDate:date=`%Y-%m-%d`\]\]</td></tr></tbody></table><div class="info">For all date formatting parameters, please see: [revolution/2.x/making-sites-with-modx/commonly-used-template-tags/date-formats#DateFormats-AllParameters](revolution/2.x/making-sites-with-modx/commonly-used-template-tags/date-formats#DateFormats-AllParameters)</div><a name="getDate-Examples"></a>Examples
+ <table><tbody><tr><th>Example Output</th> <th>The Filter Parameters</th> </tr><tr><td>22 November 2013</td> <td>\[\[!getDate:date=`%e %B %Y`\]\]</td> </tr><tr><td>Fri Nov 22, 2013</td> <td>\[\[!getDate:date=`%a %b %e, %Y`\]\]</td> </tr><tr><td>Friday, November 22, 2013</td> <td>\[\[!getDate:date=`%A, %B %e, %Y`\]\]</td> </tr><tr><td>2013-11-22</td> <td>\[\[!getDate:date=`%Y-%m-%d`\]\]</td></tr></tbody></table><div class="info">For all date formatting parameters, please see: [revolution/2.x/making-sites-with-modx/commonly-used-template-tags/date-formats#DateFormats-AllParameters](making-sites-with-modx/commonly-used-template-tags/date-formats#DateFormats-AllParameters)</div><a name="getDate-Examples"></a>Examples
 ---------------------------------------
 
 Output the current unix timestamp:

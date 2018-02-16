@@ -34,4 +34,4 @@ See Also
 --------
 
 - [addPackage()](xpdo/2.x/class-reference/xpdo/xpdo.addpackage)
-- [extension\_packages](revolution/2.x/administering-your-site/settings/system-settings/extension_packages)
+- [extension\_packages](administering-your-site/settings/system-settings/extension_packages)

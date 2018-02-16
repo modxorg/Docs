@@ -4,11 +4,11 @@ _old_id: "133"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-rules"
 ---
 
-<div>- [What is a Rule?](revolution/2.x/administering-your-site/form-customization/form-customization-rules#FormCustomizationRules-WhatisaRule%3F)
-- [What are the Rules available?](revolution/2.x/administering-your-site/form-customization/form-customization-rules#FormCustomizationRules-WhataretheRulesavailable%3F)
-- [Creating a Rule](revolution/2.x/administering-your-site/form-customization/form-customization-rules#FormCustomizationRules-CreatingaRule)
-- [Constraints](revolution/2.x/administering-your-site/form-customization/form-customization-rules#FormCustomizationRules-Constraints)
-- [See Also](revolution/2.x/administering-your-site/form-customization/form-customization-rules#FormCustomizationRules-SeeAlso)
+<div>- [What is a Rule?](administering-your-site/form-customization/form-customization-rules#FormCustomizationRules-WhatisaRule%3F)
+- [What are the Rules available?](administering-your-site/form-customization/form-customization-rules#FormCustomizationRules-WhataretheRulesavailable%3F)
+- [Creating a Rule](administering-your-site/form-customization/form-customization-rules#FormCustomizationRules-CreatingaRule)
+- [Constraints](administering-your-site/form-customization/form-customization-rules#FormCustomizationRules-Constraints)
+- [See Also](administering-your-site/form-customization/form-customization-rules#FormCustomizationRules-SeeAlso)
 
 </div><a name="FormCustomizationRules-WhatisaRule%3F"></a>What is a Rule?
 -------------------------------------------------------------------

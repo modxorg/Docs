@@ -9,7 +9,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 
  CMP stands for Custom Manager Page, and it is simply a custom page that loads in the MODX Revolution manager. It may also be called a Component or 3PC (3rd Party Component). Typically CMPs are accessed from the Components menu, or the Apps menu in MODX 2.3, but as a developer there is a lot of freedom in where they are placed.
 
- If you are a developer looking to build an extra which includes a component, you should follow the [Developing an Extra for MODX Revolution tutorial](revolution/2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution), as it walks you through all the specific steps and terminology based on an example package called doodles. This page only goes into a minimum set up for custom manager pages.
+ If you are a developer looking to build an extra which includes a component, you should follow the [Developing an Extra for MODX Revolution tutorial](case-studies-and-tutorials/developing-an-extra-in-modx-revolution), as it walks you through all the specific steps and terminology based on an example package called doodles. This page only goes into a minimum set up for custom manager pages.
 
 <div class="note"> The equivalent of a CMP or Component in MODX Evolution is a Module, though the technique in which they are created is quite different. </div> Namespaces 
 ------------
@@ -127,7 +127,7 @@ class IndexManagerController extends NamespaceManagerController {
 
 ``` So that's our base index controller. The IndexManagerController will be called when the menu item is loaded, which tells MODX to load the "home" controller by default. By passing an "action" url parameter to the page (either by adjusting the menu item "parameters" option, or by manually crafting that link) it will load a different controller instead.
 
- In this tutorial we only go into the pieces that are actually required to build a real simple manager page, but if you are looking to build a fully fledged manager page with ExtJS and more, follow the [Developing an Extra in MODX Revolution](revolution/2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution) tutorial. You'll find there's an overlap between this page and Part 2 of that tutorial, but that we restrict ourselves to a simple manager page here.
+ In this tutorial we only go into the pieces that are actually required to build a real simple manager page, but if you are looking to build a fully fledged manager page with ExtJS and more, follow the [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution) tutorial. You'll find there's an overlap between this page and Part 2 of that tutorial, but that we restrict ourselves to a simple manager page here.
 
 Adding the Home controller
 --------------------------
@@ -196,32 +196,32 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
  Going beyond plain HTML
 ------------------------
 
- After this tutorial you built a super simple custom manager page. If you want, you can now continue building a rich interface using [MODExt](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext "MODExt"), the ExtJS integration in Revolution. More about MODExt can be found [here](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext "MODExt").
+ After this tutorial you built a super simple custom manager page. If you want, you can now continue building a rich interface using [MODExt](developing-in-modx/advanced-development/custom-manager-pages/modext "MODExt"), the ExtJS integration in Revolution. More about MODExt can be found [here](developing-in-modx/advanced-development/custom-manager-pages/modext "MODExt").
 
- It is also recommended to follow the [Developing an Extra in MODX Revolution](revolution/2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution) tutorial as it walks you through every step needed to build a rich component.
+ It is also recommended to follow the [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution) tutorial as it walks you through every step needed to build a rich component.
 
  See Also 
 ----------
 
-1. [Actions and Menus](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/actions-and-menus)
-  1. [Action List](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/actions-and-menus/action-list)
-2. [Custom Manager Pages in 2.3](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)
-3. [Custom Manager Pages Tutorial](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-tutorial)
-4. [MODExt](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext)
-  1. [MODExt MODx Object](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
-  2. [MODExt Tutorials](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)
-      1. [1. Ext JS Tutorial - Message Boxes](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
-      2. [2. Ext JS Tutorial - Ajax Include](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
-      3. [3. Ext JS Tutorial - Animation](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
-      4. [4. Ext JS Tutorial - Manipulating Nodes](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
-      5. [5. Ext JS Tutorial - Panels](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
-      6. [7. Ext JS Tutoral - Advanced Grid](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
-      7. [8. Ext JS Tutorial - Inside a CMP](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
-  3. [MODx.combo.ComboBox](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.combo.combobox)
-  4. [MODx.Console](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.console)
-  5. [MODx.FormPanel](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel)
-  6. [MODx.grid.Grid](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid)
-  7. [MODx.grid.LocalGrid](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.localgrid)
-  8. [MODx.msg](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.msg)
-  9. [MODx.tree.Tree](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.tree.tree)
-  10. [MODx.Window](/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window)
+1. [Actions and Menus](developing-in-modx/advanced-development/custom-manager-pages/actions-and-menus)
+  1. [Action List](developing-in-modx/advanced-development/custom-manager-pages/actions-and-menus/action-list)
+2. [Custom Manager Pages in 2.3](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)
+3. [Custom Manager Pages Tutorial](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-tutorial)
+4. [MODExt](developing-in-modx/advanced-development/custom-manager-pages/modext)
+  1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
+  2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)
+      1. [1. Ext JS Tutorial - Message Boxes](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
+      2. [2. Ext JS Tutorial - Ajax Include](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
+      3. [3. Ext JS Tutorial - Animation](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
+      4. [4. Ext JS Tutorial - Manipulating Nodes](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
+      5. [5. Ext JS Tutorial - Panels](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
+      6. [7. Ext JS Tutoral - Advanced Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
+      7. [8. Ext JS Tutorial - Inside a CMP](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
+  3. [MODx.combo.ComboBox](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.combo.combobox)
+  4. [MODx.Console](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.console)
+  5. [MODx.FormPanel](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel)
+  6. [MODx.grid.Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid)
+  7. [MODx.grid.LocalGrid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.localgrid)
+  8. [MODx.msg](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.msg)
+  9. [MODx.tree.Tree](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.tree.tree)
+  10. [MODx.Window](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window)

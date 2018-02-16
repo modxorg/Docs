@@ -23,17 +23,17 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager"
 
  A Profile is a collection of Sets, and Sets are collections of Rules. Profiles can be restricted to specific User Groups.
 
- A Set is a collection of Rules, and is tied to a certain view. Normally, you would have a Set for the Resource/Create page, and a Set for the Resource/Update page. Sets can also be tied to specific [Templates](/revolution/2.x/making-sites-with-modx/structuring-your-site/templates "Templates") (meaning they load only when the Resource is using that Template). They can also have a 'Constraint' set, which limits the Set's execution to the restriction made in the Constraint.
+ A Set is a collection of Rules, and is tied to a certain view. Normally, you would have a Set for the Resource/Create page, and a Set for the Resource/Update page. Sets can also be tied to specific [Templates](making-sites-with-modx/structuring-your-site/templates "Templates") (meaning they load only when the Resource is using that Template). They can also have a 'Constraint' set, which limits the Set's execution to the restriction made in the Constraint.
 
  A Rule is all the variations applied in a Set. Rules are hidden from view in MODX Revolution, but are instead shown as fields on the Set Editing page.
 
  More information about each of the parts of Form Customization can be found in each part's respective page:
 
-1. [Customizing the Manager via Plugins](/revolution/2.x/administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
-2. [Form Customization Profiles](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-profiles)
-3. [Form Customization Sets](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-sets)
-  1. [Customizing Tabs via Form Customization](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization)
-4. [Manager Templates and Themes](/revolution/2.x/administering-your-site/customizing-the-manager/manager-templates-and-themes)
+1. [Customizing the Manager via Plugins](administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
+2. [Form Customization Profiles](administering-your-site/customizing-the-manager/form-customization-profiles)
+3. [Form Customization Sets](administering-your-site/customizing-the-manager/form-customization-sets)
+  1. [Customizing Tabs via Form Customization](administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization)
+4. [Manager Templates and Themes](administering-your-site/customizing-the-manager/manager-templates-and-themes)
 
 ### What Forms can I Customize?
 
@@ -42,8 +42,8 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager"
 See Also
 --------
 
-1. [Customizing the Manager via Plugins](/revolution/2.x/administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
-2. [Form Customization Profiles](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-profiles)
-3. [Form Customization Sets](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-sets)
-  1. [Customizing Tabs via Form Customization](/revolution/2.x/administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization)
-4. [Manager Templates and Themes](/revolution/2.x/administering-your-site/customizing-the-manager/manager-templates-and-themes)
+1. [Customizing the Manager via Plugins](administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
+2. [Form Customization Profiles](administering-your-site/customizing-the-manager/form-customization-profiles)
+3. [Form Customization Sets](administering-your-site/customizing-the-manager/form-customization-sets)
+  1. [Customizing Tabs via Form Customization](administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization)
+4. [Manager Templates and Themes](administering-your-site/customizing-the-manager/manager-templates-and-themes)

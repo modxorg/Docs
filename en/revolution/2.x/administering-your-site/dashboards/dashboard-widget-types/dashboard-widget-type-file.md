@@ -64,7 +64,7 @@ File-based widgets have the following PHP variables available to them:
 See Also
 --------
 
-1. [Dashboard Widget Type - File](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
-2. [Dashboard Widget Type - HTML](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)
-3. [Dashboard Widget Type - Inline PHP](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
-4. [Dashboard Widget Type - Snippet](/revolution/2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)
+1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
+2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)
+3. [Dashboard Widget Type - Inline PHP](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
+4. [Dashboard Widget Type - Snippet](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)

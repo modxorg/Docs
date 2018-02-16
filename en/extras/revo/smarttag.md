@@ -43,7 +43,7 @@ System Settings
 
 <div> ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/inputtype-selection.png)![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/outputtype-selection.png)</div><div style="display: block; clear:both;"> </div>###  Input Type Options 
 
- In input type options, they are exactly as same as [auto-tag](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-input-types#TemplateVariableInputTypes-AutoTag) options, except the **queryLimit**.
+ In input type options, they are exactly as same as [auto-tag](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types#TemplateVariableInputTypes-AutoTag) options, except the **queryLimit**.
 
  The default value of this queryLimit is 20.
 
@@ -51,7 +51,7 @@ System Settings
 
 ###  Output Type Options 
 
- In output type options, they adapt [Delimiter](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type) and [URL TV](revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type) output types.
+ In output type options, they adapt [Delimiter](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type) and [URL TV](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type) output types.
 
  The difference is that in adding link for tags, you need to define the "href" of the link. This is required for link.
 

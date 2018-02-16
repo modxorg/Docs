@@ -7,9 +7,9 @@ _old_uri: "2.x/administering-your-site/installing-a-package"
 Installing a Package
 --------------------
 
-This page will guide you through the process of installing a Package via [Package Management](/revolution/2.x/developing-in-modx/advanced-development/package-management "Package Management").
+This page will guide you through the process of installing a Package via [Package Management](developing-in-modx/advanced-development/package-management "Package Management").
 
-<div class="note">Downloading packages through [Package Management](/revolution/2.x/developing-in-modx/advanced-development/package-management "Package Management") requires cURL or PHP Sockets. MODx will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](/revolution/2.x/administering-your-site/installing-a-package/troubleshooting-package-management "Troubleshooting Package Management").</div>Go to Extras -> [Installer](https://rtfm.modx.com/revolution/2.x/developing-in-modx/advanced-development/package-management "Package Management").
+<div class="note">Downloading packages through [Package Management](developing-in-modx/advanced-development/package-management "Package Management") requires cURL or PHP Sockets. MODx will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](administering-your-site/installing-a-package/troubleshooting-package-management "Troubleshooting Package Management").</div>Go to Extras -> [Installer](https://rtfm.modx.com/revolution/2.x/developing-in-modx/advanced-development/package-management "Package Management").
 
 ![](/download/attachments/23c66e1935073aec60f9d9ea342a5b6b/modx-package-management-1.jpg)
 
@@ -25,7 +25,7 @@ The package will be downloaded to the proper directories in your MODx installati
 
 ![](/download/attachments/23c66e1935073aec60f9d9ea342a5b6b/modx-package-management-4.jpg)
 
-[Providers](/revolution/2.x/developing-in-modx/advanced-development/package-management/providers "Providers")
+[Providers](developing-in-modx/advanced-development/package-management/providers "Providers")
 
 You can select the location from which to download packages, add a new location, or select packages on your local machine. Use the Add New Package link, to the left of the Download Extras link. By default, the modxcms.com/extras repository is available as a remote provider.
 
@@ -36,6 +36,6 @@ If you prefer, you can manually copy the package into the core/packages director
 See Also
 --------
 
-1. [Transport Packages](/revolution/2.x/developing-in-modx/advanced-development/package-management/transport-packages)
-2. [Providers](/revolution/2.x/developing-in-modx/advanced-development/package-management/providers)
-3. [Creating a 3rd Party Component Build Script](/revolution/2.x/developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script)
+1. [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages)
+2. [Providers](developing-in-modx/advanced-development/package-management/providers)
+3. [Creating a 3rd Party Component Build Script](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script)

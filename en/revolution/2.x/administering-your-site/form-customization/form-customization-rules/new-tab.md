@@ -4,7 +4,7 @@ _old_id: "209"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-rules/new-tab"
 ---
 
-<div class="note"> The following is relevant to older versions of MODX. See [Customizing Tabs via Form Customization](revolution/2.x/administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization#CustomizingTabsviaFormCustomization-AddingNewTabs) for instructions for newer versions of MODX. </div><a name="NewTab-TheNewTabRule"></a>The New Tab Rule
+<div class="note"> The following is relevant to older versions of MODX. See [Customizing Tabs via Form Customization](administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization#CustomizingTabsviaFormCustomization-AddingNewTabs) for instructions for newer versions of MODX. </div><a name="NewTab-TheNewTabRule"></a>The New Tab Rule
 ---------------------------------------------------
 
  The New Tab Rule, when set, will create a new tab in the panel.

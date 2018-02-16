@@ -19,7 +19,7 @@ _old_uri: "revo/metax"
 </div>What is MetaX?
 --------------
 
- MetaX is a simple meta tag generation [snippet](revolution/2.x/developing-in-modx/basic-development/snippets) to automate and simplify meta tag creation. In addition to meta tags it can also be used to generate several other commonly used head tags such as the base tag, canonical, css, rss and more.
+ MetaX is a simple meta tag generation [snippet](developing-in-modx/basic-development/snippets) to automate and simplify meta tag creation. In addition to meta tags it can also be used to generate several other commonly used head tags such as the base tag, canonical, css, rss and more.
 
  Requirements
 
@@ -40,7 +40,7 @@ Download
 
 ### MODX Revolution
 
- The Revolution version can be downloaded from within the MODX Revolution manager via [Package Management](/revolution/2.x/developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/metax>
+ The Revolution version can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/metax>
 
 ### Usage
 

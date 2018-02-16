@@ -4,11 +4,11 @@ _old_id: "114"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-pages/fc-resource"
 ---
 
-<div>- [Resource Create/Update](revolution/2.x/administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-ResourceCreate%2FUpdate)
-- [Available Fields](revolution/2.x/administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-AvailableFields)
-- [Available Tabs](revolution/2.x/administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-AvailableTabs)
-- [Hiding the Content Field](revolution/2.x/administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-HidingtheContentField)
-- [TVs](revolution/2.x/administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-TVs)
+<div>- [Resource Create/Update](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-ResourceCreate%2FUpdate)
+- [Available Fields](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-AvailableFields)
+- [Available Tabs](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-AvailableTabs)
+- [Hiding the Content Field](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-HidingtheContentField)
+- [TVs](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-TVs)
 
 </div><a name="FC-Resource-ResourceCreate%2FUpdate"></a>Resource Create/Update
 ------------------------------------------------------------------------
