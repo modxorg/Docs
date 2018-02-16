@@ -56,4 +56,4 @@ When you're ready to contribute the commit or commits from your branch, you'll i
 **Related**
 -----------
 
-- [Install Revolution from your Git repo](/revolution/2.x/getting-started/installation/git-installation "Git Installation")
+- [Install Revolution from your Git repo](getting-started/installation/git-installation "Git Installation")

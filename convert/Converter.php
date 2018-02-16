@@ -17,10 +17,16 @@ class Converter {
         1326, // search
         1703, // prefetch
         1325, // search results
+
+        485, // empty resource uri redirecting to 264
+        1653, // the xPDO 1.x root, we don't need this anymore
+        345, // the revolution/aliases/ section
+        1655, // empty index file
     ];
 
     protected static $ignoreContexts = [
-        'evolution'
+        'evolution',
+        'extras',
     ];
 
     public function __construct()
@@ -93,11 +99,42 @@ class Converter {
             $name = $this->modx->filterPathSegment($resource->get('pagetitle'));
         }
         $name .= $resource->get('isfolder') ? '/index.md' : '.md';
-        $absFileName = $this->outputDir . $currentDirectory . $name;
-        $this->ensureCanBeWritten($absFileName);
-        file_put_contents($absFileName, $output);
 
-        echo $currentDirectory . $name . ' converted'."\n";
+        $childDirectory = $currentDirectory . $resource->get('alias') . '/';
+        $ignoreParent = false;
+        // Handle resource-specific overrides to clean things up
+        switch ($resource->get('id')) {
+            // Home!
+            case 1:
+                $currentDirectory = '/';
+                $name = 'index.md';
+                break;
+
+            // Move revolution/2.x/ into /
+            case 3:
+                $childDirectory = '/';
+                $ignoreParent = true;
+                break;
+
+            // Move xpdo/2.x/ into /
+            case 1183:
+                $childDirectory =  '/xpdo/';
+                $ignoreParent = true;
+                break;
+
+            // Move web/style-guide into community
+            case 1312:
+                $currentDirectory = '/community/';
+                break;
+        }
+
+        if (!$ignoreParent) {
+            $absFileName = $this->outputDir . $currentDirectory . $name;
+            $this->ensureCanBeWritten($absFileName);
+            file_put_contents($absFileName, $output);
+
+            echo $currentDirectory . $name . ' converted' . "\n";
+        }
 
         $c = $this->modx->newQuery('modResource');
         $c->where([
@@ -105,7 +142,7 @@ class Converter {
             'published' => true,
         ]);
         foreach ($this->modx->getIterator('modResource', $c) as $childResource) {
-            $this->convertResource($childResource, $currentDirectory . $resource->get('alias') . '/', $resource->get('id'));
+            $this->convertResource($childResource, $childDirectory, $resource->get('id'));
         }
     }
 

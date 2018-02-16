@@ -108,4 +108,4 @@ Prefixing
 <pre class="brush: php">$_lang['mycomponent.welcome_message'] = 'Welcome!';
 
 ```- Always prefix class names; eg: 'finBank', 'finTransaction', etc.
-- Always prefix [Chunk](/revolution/2.x/making-sites-with-modx/structuring-your-site/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'
+- Always prefix [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'
