@@ -6,7 +6,7 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/
 
  The root directory of MODX is split into several subdirectories, each with its own set of responsibilities and tasks. Some of these directories can be renamed and moved, and their locations can be configured during setup.
 
-<div>- [connectors/](#ExplanationofDirectoryStructure-connectors%2F)
+- [connectors/](#ExplanationofDirectoryStructure-connectors%2F)
   - [Notable Files](#ExplanationofDirectoryStructure-NotableFiles)
 - [core/](#ExplanationofDirectoryStructure-core%2F)
   - [core/cache/](#ExplanationofDirectoryStructure-core%2Fcache%2F)
@@ -41,8 +41,9 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/
 - [assets/](#ExplanationofDirectoryStructure-assets%2F)
   - [assets/components/](#ExplanationofDirectoryStructure-assets%2Fcomponents%2F)
 
-</div>connectors/
------------
+
+
+## connectors/
 
  Connectors are essentially entry points for AJAX requests in MODX. They don't do any database manipulation on their own; they simply load up the main MODX class, sanitize any request data, and then handle the request by pointing to the appropriate Processor file.
 
@@ -54,8 +55,7 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/
 
 - - - - - -
 
-core/
------
+## core/
 
  The Core is what makes MODX, MODX. It is the base for all the libraries for Revolution. Most everything you need, with the exception of the manager files and the setup files, are in this directory.
 
@@ -85,7 +85,7 @@ core/
 
 ### core/components/
 
- When you install a package using the [Package Manager](developing-in-modx/advanced-development/package-management "Package Management"), a core/components/ <component_name>/ directory will be created to hold any files necessary for the installed component to run. Typically, any files needed to run in the Manager, such as controllers, model/schema data, processors and class files, should be stored here, as well as files you don't want web-accessible.</component_name>
+ When you install a package using the [Package Manager](developing-in-modx/advanced-development/package-management "Package Management"), a core/components/ / directory will be created to hold any files necessary for the installed component to run. Typically, any files needed to run in the Manager, such as controllers, model/schema data, processors and class files, should be stored here, as well as files you don't want web-accessible.
 
 ### core/config/
 
@@ -109,11 +109,11 @@ core/
 
 ### core/lexicon/
 
- <span class="error">\[Lexicons\]</span>in Revolution are different from language files in Evolution for two main reasons.
+ \[Lexicons\]in Revolution are different from language files in Evolution for two main reasons.
 
  First, in Revolution, lexicon files are split up into separate directories, depending on their two-digit IANA code (for example, English lexicons are stored in /core/lexicon/en/). Inside these subdirectories are multiple files, in the format "topic.inc.php". A "topic" is simply a single lexicon file. Splitting lexicons into topics means that only the _required_language strings are loaded, saving memory and loading time.
 
- Second, all lexicons are stored in the MODX database, and later cached on-demand. This makes it possible to manage lexicons directly from the Manager, inside the <span class="error">\[Lexicon Management\]</span>area.
+ Second, all lexicons are stored in the MODX database, and later cached on-demand. This makes it possible to manage lexicons directly from the Manager, inside the \[Lexicon Management\]area.
 
  To load a lexicon, one would use a format such as this:
 
@@ -189,8 +189,7 @@ core/
 
 - - - - - -
 
-manager/
---------
+## manager/
 
  The Manager is the MODX backend or administration area for creating resources, managing users, and performing overall site maintenance tasks.
 
@@ -212,29 +211,26 @@ manager/
 
 - - - - - -
 
-setup/
-------
+## setup/
 
  This directory is the equivalent of the "install" directory in MODX Evolution. It contains the necessary files needed to run Setup and perform a [Fresh Installation](/display/revolution20/Fresh+Installation "Fresh Installation") or an [Upgrade](administering-your-site/upgrading-modx/upgrading-from-modx-evolution "Upgrading from MODX Evolution").
 
 - - - - - -
 
-\_build/
---------
+## \_build/
 
  This directory is only present in version of MODX Revolution downloaded from the subversion server (as well as the "SDK" distribution). It contains the packaged MODX core data files necessary to install MODX to a database.
 
 ### Notable Files
 
-- **\_build/transport.core.php**- This file must be executed after downloading MODX Revolution, and prior to running Setup. After completion, you should notice a "core" directory inside your core/packages/ directory, which will contain all of the necessary <span class="error">\[Vehicles\]</span>for installing MODX Revolution.
+- **\_build/transport.core.php**- This file must be executed after downloading MODX Revolution, and prior to running Setup. After completion, you should notice a "core" directory inside your core/packages/ directory, which will contain all of the necessary \[Vehicles\]for installing MODX Revolution.
 
 - - - - - -
 
-assets/
--------
+## assets/
 
  This directory is not present in MODX Revolution by default, but like in MODX Evolution, it is common to place images, CSS, JavaScript, and other media in here.
 
 ### assets/components/
 
- When you install a package using the [Package Manager](developing-in-modx/advanced-development/package-management "Package Management"), an assets/components/ <component_name> directory will be created to hold any necessary component files, such as JavaScript or images.</component_name>
+ When you install a package using the [Package Manager](developing-in-modx/advanced-development/package-management "Package Management"), an assets/components/  directory will be created to hold any necessary component files, such as JavaScript or images.

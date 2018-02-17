@@ -4,9 +4,11 @@ _old_id: "25"
 _old_uri: "2.x/administering-your-site/dashboards/assigning-a-dashboard-to-a-user-group"
 ---
 
-<div>- [See Also](#AssigningaDashboardtoaUserGroup-SeeAlso)
+- [See Also](#AssigningaDashboardtoaUserGroup-SeeAlso)
 
-</div>This article describes how to edit a Dashboard, including on how to assign and arrange Widgets for that Dashboard.
+
+
+This article describes how to edit a Dashboard, including on how to assign and arrange Widgets for that Dashboard.
 
 First off, find the User Group that you would like to assign the Dashboard to, and edit it. You can do so by "Security" -> "Access Controls", then right-clicking on the group in the User Groups tree, and clicking "Update User Group".
 
@@ -14,8 +16,7 @@ From there, you can simply click on the "Dashboard" dropdown, and select the Das
 
 ![](/download/attachments/35586562/dashboard-assign.png?version=1&modificationDate=1315431845000)
 
-See Also
---------
+## See Also
 
 1. [Managing Your Dashboard](administering-your-site/dashboards/managing-your-dashboard)
 2. [Assigning a Dashboard to a User Group](administering-your-site/dashboards/assigning-a-dashboard-to-a-user-group)

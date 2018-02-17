@@ -4,7 +4,7 @@ _old_id: "1058"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel"
 ---
 
-<div>- [MODx.FormPanel](#MODx.FormPanel-MODx.FormPanel)
+- [MODx.FormPanel](#MODx.FormPanel-MODx.FormPanel)
 - [Unique Parameters](#MODx.FormPanel-UniqueParameters)
 - [Custom Events](#MODx.FormPanel-CustomEvents)
 - [Other Unique Functions](#MODx.FormPanel-OtherUniqueFunctions)
@@ -13,11 +13,12 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
   - [Field Manipulation](#MODx.FormPanel-FieldManipulation)
 - [See Also](#MODx.FormPanel-SeeAlso)
 
-</div>MODx.FormPanel
---------------
 
-**Extends:** Ext.FormPanel   
-**xtype:** modx-formpanel   
+
+## MODx.FormPanel
+
+**Extends:** Ext.FormPanel 
+**xtype:** modx-formpanel 
 **Key Features:** Drag-and-drop functionality; changed ("dirty") field checking functionality; connector functionality.
 
 FormPanels are found throughout the MODx Manager. They can contain form fields, Grids, Trees - just about any component available.
@@ -26,37 +27,34 @@ They automatically pass the modAuth header and a Powered-By header into any subm
 
 They also automatically integrate into the MODX connector structure. All you must do is pass in a url parameter into the config of the object, and baseParams to send with the form submission, and the FormPanel will handle the rest. With 2.2+ class-based processors and $this->addFieldError(), the MODx.FormPanel will also properly process the errors logged.
 
-Unique Parameters
------------------
+## Unique Parameters
 
 MODx.FormPanel adds a few unique parameters not found in typical Ext.FormPanel objects:
 
-<table><tbody><tr><th>Name</th><th>Description</th><th>Default</th></tr><tr><td>saveMsg</td><td>The message to show in the modal wait dialog when saving.</td><td>Saving...</td></tr><tr><td>allowDrop</td><td>Allow items from a tree to be dropped in this form.</td><td>true</td></tr><tr><td>useLoadingMask</td><td>Set to true to use a loading mask when loading form values.</td><td>false</td></tr><tr><td>onDirtyForm</td><td>A form ID to check against when checking dirty status for the form. Defaults to the form.</td><td>this.getForm()</td></tr></tbody></table>Custom Events
--------------
+NameDescriptionDefaultsaveMsgThe message to show in the modal wait dialog when saving.Saving...allowDropAllow items from a tree to be dropped in this form.trueuseLoadingMaskSet to true to use a loading mask when loading form values.falseonDirtyFormA form ID to check against when checking dirty status for the form. Defaults to the form.this.getForm()## Custom Events
 
 MODx.FormPanel adds a few extra events not found in Ext.FormPanel objects:
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>beforeSubmit</td><td>Fires before a submission of the form, with 3 parameters: - form - The Ext.form.BasicForm object attached to this FormPanel
+NameDescriptionbeforeSubmitFires before a submission of the form, with 3 parameters: - form - The Ext.form.BasicForm object attached to this FormPanel
 - options - Any options passed to the submit() call
 - config - The FormPanel config object
 
-</td></tr><tr><td>failure</td><td>Fires on a form failure or failure response from a processor, with 4 parameters: - result - The response object sent from the processor
+failureFires on a form failure or failure response from a processor, with 4 parameters: - result - The response object sent from the processor
 - form - The Ext.form.BasicForm object attached to this FormPanel
 - options - Any options passed to the submit() call
 - config - The FormPanel config object
 
-</td></tr><tr><td>fieldChange</td><td>Fires whenever a field is changed, with the following parameters: - field - The Ext.Field object that is being changed
+fieldChangeFires whenever a field is changed, with the following parameters: - field - The Ext.Field object that is being changed
 - nv - The new value of the field
 - ov - The old value of the field
 - form - The BasicForm attached to this FormPanel
 
-</td></tr><tr><td>postReady</td><td>Fires after 'ready' event listeners are run (which must be fired by extending classes)</td></tr><tr><td>ready</td><td>Not fired; must be fired by extended objects of MODx.FormPanel to allow fieldChange/postReady events to fire.</td></tr><tr><td>setup</td><td>Fired at the beginning of a formpanel load, and after a successful submission.</td></tr><tr><td>success</td><td>Fires on a form success with a success response from a processor, with 4 parameters: - result - The response object sent from the processor
+postReadyFires after 'ready' event listeners are run (which must be fired by extending classes)readyNot fired; must be fired by extended objects of MODx.FormPanel to allow fieldChange/postReady events to fire.setupFired at the beginning of a formpanel load, and after a successful submission.successFires on a form success with a success response from a processor, with 4 parameters: - result - The response object sent from the processor
 - form - The Ext.form.BasicForm object
 - options - Any options passed to the submit() call
 - config - The FormPanel config object
 
-</td></tr></tbody></table>Other Unique Functions
-----------------------
+## Other Unique Functions
 
 #### Drop Area Fields
 
@@ -79,8 +77,7 @@ You can easily manipulate fields and labels in MODx.FormPanel objects:
 - showField(name) - Shows the field with the name passed if it is hidden
 - setLabel(name,text) - Set the label of a field to the specified text.
 
-See Also
---------
+## See Also
 
 1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
 2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)

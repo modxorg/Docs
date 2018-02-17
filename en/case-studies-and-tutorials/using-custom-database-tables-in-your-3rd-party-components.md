@@ -4,16 +4,17 @@ _old_id: "330"
 _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components"
 ---
 
-<div>- [The Scenario](#UsingCustomDatabaseTablesinyour3rdPartyComponents-TheScenario)
+- [The Scenario](#UsingCustomDatabaseTablesinyour3rdPartyComponents-TheScenario)
 - [Our Model](#UsingCustomDatabaseTablesinyour3rdPartyComponents-OurModel)
 - [Building the Schema](#UsingCustomDatabaseTablesinyour3rdPartyComponents-BuildingtheSchema)
 - [Using our New Model](#UsingCustomDatabaseTablesinyour3rdPartyComponents-UsingourNewModel)
 - [See Also](#UsingCustomDatabaseTablesinyour3rdPartyComponents-SeeAlso)
 
-</div> So you're developing your custom component for MODX Revolution, and you've run into a dilemma. You've got some data that uses a table in your MODX database, but you want a way to use xPDO's object model to access it. This tutorial will walk you through the process of creating your own custom schema, adding it as an xPDO model package, and querying it.
 
-The Scenario
-------------
+
+ So you're developing your custom component for MODX Revolution, and you've run into a dilemma. You've got some data that uses a table in your MODX database, but you want a way to use xPDO's object model to access it. This tutorial will walk you through the process of creating your own custom schema, adding it as an xPDO model package, and querying it.
+
+## The Scenario
 
  So let's say we want to create a custom component called "StoreFinder" that takes a zip code from a textfield and then looks up all the store locations with that zip code and returns them in a table. Currently we'll have one table for this: (note the prefix "modx\_" - this is specific to your DB connection, done in Revolution setup.)
 
@@ -34,8 +35,7 @@ The Scenario
 
  So now that we've got an idea of what's in our tables, let's make the schema file that defines the model. This "schema" file is an XML representation of our database table(s). It is then parsed by xPDO into PHP-format "maps", which are array representations of the schema and its relationships.
 
-Our Model
----------
+## Our Model
 
  Let's take a quick look at our directory structure. This isn't always how you have to do it - this one is specifically built this way for SVN; but it's definitely recommended, especially with the _core/components/storefinder/_ structures, since that makes creating the transport package (should we want to distribute this via Package Management) much easier.
 
@@ -83,7 +83,7 @@ Our Model
 <field key="fax" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
 <field key="active" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
 
-``` As you can see here, each column in our table has a field definition tag. From there, we have   
+``` As you can see here, each column in our table has a field definition tag. From there, we have 
  attribute properties for each field. Most of these are optional, depending on the database type of the column. Some of those attribute properties are:
 
 - **key** - The key name of the column.
@@ -103,8 +103,7 @@ Our Model
 
 ``` So now we have a completed XML schema for our model! Let's move on to the schema build script.
 
-Building the Schema
--------------------
+## Building the Schema
 
  Go ahead and create a 'build.config.php' file in your \_build directory. It should contain this:
 
@@ -172,8 +171,7 @@ exit ();
 
 ``` This block of code executes the schema parsing method, and then outputs the total time the script took to execute. Run it, and viola! Our storefinder/core/model/storefinder/ directory is now filled with all of our map and class files!
 
-Using our New Model
--------------------
+## Using our New Model
 
  You may be asking, "Okay, that's great. Now how do I _use_ these?" Well, xPDO makes it incredibly simple. Let's first create our snippet file in our core/components/storefinder/ directory, and call it 'snippet.storefinder.php' -- we're going to tie into a file on the file system because it's easier to edit it using a text editor, and we want a file on the file system for our build package.
 
@@ -248,8 +246,7 @@ $store->save();
 
  **Part 2 Coming Soon...**
 
-See Also
---------
+## See Also
 
 - [Generating the xPDO Model Code](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code")
 - [More Examples of xPDO XML Schema Files](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files")

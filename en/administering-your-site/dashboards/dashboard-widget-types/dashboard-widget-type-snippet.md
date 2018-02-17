@@ -6,8 +6,7 @@ _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboa
 
 The Snippet Dashboard Widget Type runs a MODX Snippet and places the return value in the widget panel.
 
-Usage
------
+## Usage
 
 Simply place the name of the Snippet (no tags) you would like to run in the content of the widget, ie:
 
@@ -17,8 +16,7 @@ MyCustomDashboardSnippet
 
 ```The output returned by the Snippet will be displayed in the dashboard widget.
 
-See Also
---------
+## See Also
 
 1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
 2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)

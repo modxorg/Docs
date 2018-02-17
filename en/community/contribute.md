@@ -9,7 +9,7 @@ The MODX Community is active in many areas and in many ways, including:
 - [MODX Forums](http://modxcms.com/forums/) - the lifeblood of the community; go here to ask for help or to give back by sharing ideas and helping others
 - [modx.com](http://modx.com/) - community members are [posting jobs](http://modx.com/services/jobs/) and [help wanted](http://modx.com/services/help-wanted/) listings, expanding the [Made In MODX gallery](http://modx.com/learn/gallery/), [becoming heroes](http://modx.com/community/wall-of-fame/) and more
 - [GitHub](https://github.com/modxcms/) - MODX and it's associated open source projects have git code repositories and more hosted on the GitHub social coding network
-- <font color="#006daf">[Issue tracker](http://bugs.modx.com/)</font> - the place to report and discuss bugs and feature requests
+- [Issue tracker](http://bugs.modx.com/) - the place to report and discuss bugs and feature requests
 - [Documentation wiki](http://rtfm.modx.com/) - find MODX documentation and tutorials (you are here already!)
 - [LinkedIn](http://www.linkedin.com/groups?gid=697477)
 - [Twitter](http://twitter.com/#!/modxcms)

@@ -4,14 +4,15 @@ _old_id: "343"
 _old_uri: "2.x/administering-your-site/media-sources/adding-a-media-source"
 ---
 
-<div>- [Creating the Media Source](#AddingaMediaSource-CreatingtheMediaSource)
+- [Creating the Media Source](#AddingaMediaSource-CreatingtheMediaSource)
 - [Editing your new Media Source](#AddingaMediaSource-EditingyournewMediaSource)
 - [Using Your Source](#AddingaMediaSource-UsingYourSource)
 
-</div>This article describes how to add a [Media Source](administering-your-site/media-sources "Media Sources") to your MODX installation.
 
-Creating the Media Source
--------------------------
+
+This article describes how to add a [Media Source](administering-your-site/media-sources "Media Sources") to your MODX installation.
+
+## Creating the Media Source
 
 First find your way to the Media Sources page, often located under "Tools". From here, you will see a grid of your currently available media sources:
 
@@ -25,15 +26,16 @@ For now, go ahead and create a Media Source by clicking on the "Create New Media
 
 Go ahead and choose the Filesystem source type for now, and give it a nice name. For information on creating an S3 Media Source, [click here](administering-your-site/media-sources/media-source-types/media-source-type-s3 "Media Source Type - S3"). Once that's done, you'll see your Media Source in the grid. Right-click on it, and click "Update Media Source".
 
-Editing your new Media Source
------------------------------
+## Editing your new Media Source
 
 This screen will show your new media source's basic information, a grid with type-specific properties for the source that you can change, and an "Access Permissions" tab that will let you restrict access to the source.
 
 For now, go ahead and set the 'basePath' property to "assets/", and then the 'baseUrl' property to "assets/" as well. Save the source.
 
-<div class="note">**Right-Click Only**  
-All properties are available only after you have created the Media Source and then right-click it to edit it.</div>The other available properties include the following:
+**Right-Click Only**
+All properties are available only after you have created the Media Source and then right-click it to edit it.
+
+The other available properties include the following:
 
 - basePath
 - basePathRelative (yes|no)
@@ -45,8 +47,7 @@ All properties are available only after you have created the Media Source and th
 - thumbnailQuality
 - skipFiles
 
-Using Your Source
------------------
+## Using Your Source
 
 After you've created it, you should be able to see the source in the dropdown in the left-hand tree under the Files tab. If you select that source, you should now only be able to see the contents of the 'assets/' directory in your MODX installation! (If you have not yet created an assets/ directory in your install, do so now.)
 

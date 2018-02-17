@@ -4,15 +4,13 @@ _old_id: "1238"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getcollection"
 ---
 
-xPDO::getCollection 
---------------------
+## xPDO::getCollection 
 
 Retrieves a collection of xPDOObjects by the specified xPDOCriteria.
 
 If none are found, returns an empty array.
 
-Syntax 
--------
+## Syntax 
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getCollection>
 
@@ -26,8 +24,7 @@ array getCollection (string $className, [xPDOCriteria|array|str|int $criteria = 
 <pre class="brush: php">
 <object class="MyClassName" table="my_class_name" extends="xPDOObject">
 
-```Examples 
----------
+```## Examples 
 
 Get a collection of Box objects with a width of 40.
 
@@ -45,9 +42,10 @@ Often getCollection is used inside MODX Snippets, so you will call it via the $m
 <pre class="brush: php">
 $pages = $modx->getCollection('modResource', array('template' => 3));
 
-```<div class="tip">**Know Your Objects!**  
-Remember that you need to call the collection by its object name. You may find it quite handy to keep open your `core/model/schema/modx.mysql.schema.xml` file so you can review your object names, e.g. "modResource" for pages, or "modChunk" for chunks etc. </div>See Also 
----------
+```**Know Your Objects!**
+Remember that you need to call the collection by its object name. You may find it quite handy to keep open your `core/model/schema/modx.mysql.schema.xml` file so you can review your object names, e.g. "modResource" for pages, or "modChunk" for chunks etc. 
+
+## See Also 
 
 - [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
 - [xPDO.getIterator](/xpdo/2.x/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")

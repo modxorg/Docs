@@ -4,14 +4,12 @@ _old_id: "1251"
 _old_uri: "2.x/class-reference/xpdo/xpdo.newobject"
 ---
 
-xPDO::newObject 
-----------------
+## xPDO::newObject 
 
-Creates a new instance of a specified class.   
+Creates a new instance of a specified class. 
 All new objects created with this method are transient until [xPDOObject::save()](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/save "save") is called the first time and is reflected by the xPDOObject::$\_new property.
 
-Syntax 
--------
+## Syntax 
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#newObject>
 
@@ -19,8 +17,7 @@ API Docs: <http://api.modxcms.com/xpdo/xPDO.html#newObject>
 <pre class="brush: php">
 object|null newObject (string $className, [array $fields = array ()])
 
-```Example 
---------
+```## Example 
 
 Create a new Box object:
 
@@ -37,8 +34,7 @@ $box = $xpdo->newObject('Box',array(
    'height' => 4,
 ));
 
-```See Also 
----------
+```## See Also 
 
 - [Creating Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/creating-objects "Creating Objects")
 - [Removing (deleting) objects](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/remove)

@@ -4,19 +4,16 @@ _old_id: "475"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onuserremove"
 ---
 
-Event: OnUserRemove
--------------------
+## Event: OnUserRemove
 
 Fires after a User is removed.
 
-Service: 1 - Parser Service Events   
+Service: 1 - Parser Service Events 
 Group: modUser
 
-Event Parameters
-----------------
+## Event Parameters
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>user</td><td>A reference to the modUser object.</td></tr></tbody></table>See Also
---------
+NameDescriptionuserA reference to the modUser object.## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

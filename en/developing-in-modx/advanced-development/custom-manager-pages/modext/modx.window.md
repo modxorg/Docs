@@ -4,7 +4,7 @@ _old_id: "1114"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window"
 ---
 
-<div>- [MODx.Window](#MODx.Window-MODx.Window)
+- [MODx.Window](#MODx.Window-MODx.Window)
 - [Unique Parameters](#MODx.Window-UniqueParameters)
 - [Custom Events](#MODx.Window-CustomEvents)
 - [Unique Functionality](#MODx.Window-UniqueFunctionality)
@@ -14,24 +14,22 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
   - [Hiding and Showing Fields](#MODx.Window-HidingandShowingFields)
 - [See Also](#MODx.Window-SeeAlso)
 
-</div>MODx.Window
------------
 
-**Extends:** Ext.Window   
+
+## MODx.Window
+
+**Extends:** Ext.Window 
 **Key Features:** Drag-and-drop functionality; connector functionality for saving.
 
 ![](/download/attachments/18678082/modx-window.png?version=1&modificationDate=1303411582000)
 
 MODExt Windows are a convenient way to display record data from a Grid or AJAX request for editing. Windows automatically include a FormPanel which you can add form fields (and other components) to. Submitting/saving a Window actually submits the FormPanel, and initiates an AJAX request to your connector.
 
-Unique Parameters
------------------
+## Unique Parameters
 
-<table><tbody><tr><th>Name</th><th>Description</th><th>Default</th></tr><tr><td>action</td><td>If baseParams is not set, will use this as the action to the controller.</td><td> </td></tr><tr><td>allowDrop</td><td>Whether or not to allow dropping of tree items onto the form fields.</td><td>1</td></tr><tr><td>baseParams</td><td>An object of parameters to send along with the window form on save.</td><td>{}</td></tr><tr><td>blankValues</td><td>If true, will reset the values of the form each time it is shown.</td><td>0</td></tr><tr><td>cancelBtnText</td><td>The text of the cancel button for the window.</td><td>Cancel</td></tr><tr><td>fields</td><td>An array of fields for the form, similar to Ext.form.FormPanel's fields definition.</td><td>\[\]</td></tr><tr><td>fileUpload</td><td>If true, the form will be built to accept files.</td><td>0</td></tr><tr><td>formFrame</td><td>Whether or not to add a ext-style frame to the window.</td><td>1</td></tr><tr><td>labelAlign</td><td>The alignment of the labels on the form.</td><td>right</td></tr><tr><td>labelWidth</td><td>The width, in pixels, of the labels on the form.</td><td>100</td></tr><tr><td>record</td><td>A JSON object of default values (in name: value format) to set to the form when first loading the window.</td><td>{}</td></tr><tr><td>saveBtnText</td><td>The text of the save button for the window.</td><td>Save</td></tr><tr><td>url</td><td>The URL of the connector to submit the window form to.</td><td> </td></tr></tbody></table>Custom Events
--------------
+NameDescriptionDefaultactionIf baseParams is not set, will use this as the action to the controller. allowDropWhether or not to allow dropping of tree items onto the form fields.1baseParamsAn object of parameters to send along with the window form on save.{}blankValuesIf true, will reset the values of the form each time it is shown.0cancelBtnTextThe text of the cancel button for the window.CancelfieldsAn array of fields for the form, similar to Ext.form.FormPanel's fields definition.\[\]fileUploadIf true, the form will be built to accept files.0formFrameWhether or not to add a ext-style frame to the window.1labelAlignThe alignment of the labels on the form.rightlabelWidthThe width, in pixels, of the labels on the form.100recordA JSON object of default values (in name: value format) to set to the form when first loading the window.{}saveBtnTextThe text of the save button for the window.SaveurlThe URL of the connector to submit the window form to. ## Custom Events
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>success</td><td>If the form submission returns a success response.</td></tr><tr><td>failure</td><td>If the form submission returns a failure response.</td></tr><tr><td>beforeSubmit</td><td>Before the form submits its values to the connector, but after validation passes.</td></tr></tbody></table>Unique Functionality
---------------------
+NameDescriptionsuccessIf the form submission returns a success response.failureIf the form submission returns a failure response.beforeSubmitBefore the form submits its values to the connector, but after validation passes.## Unique Functionality
 
 #### Firing the submit method
 
@@ -73,8 +71,7 @@ var w = Ext.getCmp('my-window-id');
 w.hideField('email');
 w.showField('comments');
 
-```See Also
---------
+```## See Also
 
 1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
 2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)

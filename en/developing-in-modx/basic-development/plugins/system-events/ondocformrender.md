@@ -4,19 +4,16 @@ _old_id: "421"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocformrender"
 ---
 
-Event: OnDocFormRender
-----------------------
+## Event: OnDocFormRender
 
 Fires after a Resource editing form is loaded in the manager. Useful for inserting HTML into forms, and as of 2.4 for setting several default values on new resources
 
-Service: 1 - Parser Service Events   
+Service: 1 - Parser Service Events 
  Group: Documents
 
-Event Parameters
-----------------
+## Event Parameters
 
-<table><tbody><tr><th>Name</th> <th>Description</th> </tr><tr><td>mode</td> <td>Either 'new' or 'upd', depending on the circumstance.</td> </tr><tr><td>resource</td> <td>A reference to the modResource object. Since 2.4, this will contain an empty resource object when creating a new resource. Before 2.4 this would be null.</td> </tr><tr><td>id</td> <td>The ID of the Resource. Will be 0 for new Resources.</td></tr></tbody></table>Setting Default Resource Values
--------------------------------
+Name Description mode Either 'new' or 'upd', depending on the circumstance. resource A reference to the modResource object. Since 2.4, this will contain an empty resource object when creating a new resource. Before 2.4 this would be null. id The ID of the Resource. Will be 0 for new Resources.## Setting Default Resource Values
 
 As of Revolution 2.4.0, you can use a plugin OnDocFormRender for setting a value for one of the following fields:
 

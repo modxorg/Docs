@@ -4,15 +4,16 @@ _old_id: "1117"
 _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i/php-coding-in-modx-revolution,-pt.-ii"
 ---
 
-<div>- [Creating Objects](#PHPCodinginMODxRevolution%2CPt.II-CreatingObjects)
+- [Creating Objects](#PHPCodinginMODxRevolution%2CPt.II-CreatingObjects)
 - [Removing an Object](#PHPCodinginMODxRevolution%2CPt.II-RemovinganObject)
 - [More Complex Queries](#PHPCodinginMODxRevolution%2CPt.II-MoreComplexQueries)
 - [See Also](#PHPCodinginMODxRevolution%2CPt.II-SeeAlso)
 
-</div>In this article, we'll talk about creating and removing objects (and their respective rows in the database), as well as more complex queries.
 
-Creating Objects
-----------------
+
+In this article, we'll talk about creating and removing objects (and their respective rows in the database), as well as more complex queries.
+
+## Creating Objects
 
 Object creation is handled by the **newObject** method. It assumes that the object you are trying to create has been properly defined inside your XML schema and that schema has generated the proper class files. For a simple example, we can look at the built-in MODX objects.
 
@@ -37,8 +38,9 @@ if ($template->save() === false) {
         die('An error occurred while saving!');
 }
 
-```<div class="tip">A row is never actually added to the database until the object's save() command is run.</div>Removing an Object
-------------------
+```A row is never actually added to the database until the object's save() command is run.
+
+## Removing an Object
 
 To remove an object from the database, we use the **remove** command:
 
@@ -48,8 +50,7 @@ $template->remove();
 
 ```This will also remove any composite relationships defined in the object's schema. In the previous example with modTemplates, these are the modTemplateVarTemplate objects, which map Templates to TVs. Those will cascade and be removed.
 
-More Complex Queries
---------------------
+## More Complex Queries
 
 Okay, so pretty soon you are going to need to do some more complex queries than we've dealt with. That's where the xPDOQuery object comes in. This allows you to build abstract query objects that emulate more advanced SQL commands. So, lets try to grab the third 10 resources (so 21-30), ordered by menuindex, that are either 1) published and searchable, or 2) created by the user with username 'george123'.
 
@@ -77,8 +78,7 @@ Obviously, you can go pretty wild here with complex queries. The nice thing abou
 
 In the [next article](case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i/php-coding-in-modx-revolution,-pt.-iii "PHP Coding in MODx Revolution, Pt. III"), we'll talk about how this is used in the context of MODx processors with JSON.
 
-See Also
---------
+## See Also
 
 - [xPDO: Creating Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/creating-objects "Creating Objects")
 - [xPDOObject::remove](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/remove "remove")

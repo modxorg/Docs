@@ -4,20 +4,20 @@ _old_id: "8"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/accessing-template-variable-values-via-the-api"
 ---
 
-<div>- [Accessing Template Variable Values via the API](#AccessingTemplateVariableValuesviatheAPI-AccessingTemplateVariableValuesviatheAPI)
+- [Accessing Template Variable Values via the API](#AccessingTemplateVariableValuesviatheAPI-AccessingTemplateVariableValuesviatheAPI)
 - [getTVValue](#AccessingTemplateVariableValuesviatheAPI-getTVValue)
   - [getTVValue Usage](#AccessingTemplateVariableValuesviatheAPI-getTVValueUsage)
 - [setTVValue](#AccessingTemplateVariableValuesviatheAPI-setTVValue)
   - [setTVValue Usage](#AccessingTemplateVariableValuesviatheAPI-setTVValueUsage)
 - [See Also](#AccessingTemplateVariableValuesviatheAPI-SeeAlso)
  
-</div>Accessing Template Variable Values via the API
-----------------------------------------------
+
+
+## Accessing Template Variable Values via the API
 
  Like just about everything in the MODX GUI, you can access Template Variables and their values via the MODX API. This relies on the xPDO method [getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and related functions, but we demonstrate some examples here because it relates directly to Template Variables.
 
-getTVValue
-----------
+## getTVValue
 
  ```
 <pre class="brush: php">
@@ -51,8 +51,7 @@ else {
 }
 return '';
 
-```setTVValue
-----------
+```## setTVValue
 
  Use **setTVValue** to save a new value to a TV. Unlike some other xPDO API methods, this method stores values to the database immediately, so you do not need to invoke a separate call to a **save()** method. This method does not clear the resource cache.
 
@@ -69,8 +68,7 @@ if (!$page->setTVValue('bio', 'This is my new bio...')) {
     $modx->log(xPDO::LOG_LEVEL_ERROR, 'There was a problem saving your TV...');
 }
 
-```See Also
---------
+```## See Also
 
 1. [Creating a Template Variable](making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
 2. [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings)

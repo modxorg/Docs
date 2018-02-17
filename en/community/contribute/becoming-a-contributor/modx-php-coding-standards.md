@@ -4,7 +4,7 @@ _old_id: "1133"
 _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 ---
 
-<div>- [General](#MODxPHPCodingStandards-General)
+- [General](#MODxPHPCodingStandards-General)
 - [Parenthesis](#MODxPHPCodingStandards-Parenthesis)
 - [Classes](#MODxPHPCodingStandards-Classes)
 - [Variables](#MODxPHPCodingStandards-Variables)
@@ -14,19 +14,19 @@ _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 - [File Structure](#MODxPHPCodingStandards-FileStructure)
 - [Prefixing](#MODxPHPCodingStandards-Prefixing)
 
-</div>General
--------
+
+
+## General
 
 - Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.
-- Do not do any real logic in object constructors. Create class methods to do so.   
+- Do not do any real logic in object constructors. Create class methods to do so. 
    null, true and false should always be lowercase.
 - Avoid embedded assignments (ex: $d = ($a = $b + $c) is bad).
 - Never use extract().
 - Avoid using global variables if at all possible.
 - Document EVERYTHING.
 
-Parenthesis
------------
+## Parenthesis
 
 - Do not put parenthesis next to keywords. Put a space between.
 - Do put parenthesis next to function names.
@@ -41,8 +41,7 @@ Parenthesis
   ```
 - Do **not** use parenthesis when using include, require, include\_once, and require\_once.
 
-Classes
--------
+## Classes
 
 - All ''core'' classnames, unless stated otherwise for special conditions, will be prefixed with the "mod" prefix: ie, modChunk, modTemplate, etc.
 - All method names will be camelCase and will start with a lowercase letter.
@@ -56,16 +55,14 @@ Classes
   
   ```
 
-Variables
----------
+## Variables
 
 Note these are not function arguments.
 
 - Use all lowercase letters.
 - Separate words with the underscore.
 
-Function Arguments and Class Variables
---------------------------------------
+## Function Arguments and Class Variables
 
 - The first letter is lowercase, rest are camelCase. Example:```
   <pre class="brush: php">class modFactor {
@@ -77,30 +74,26 @@ Function Arguments and Class Variables
   
   ```
 
-Arrays
-------
+## Arrays
 
 - Array index names use the underscore \_, not the dash as their separator. This prevents errors with magic\_quotes.
 - Array index names are always lowercase. Spaces are represented by an underscore.
-- Array index names are always encapsulated with single quotes.   
+- Array index names are always encapsulated with single quotes. 
    Example:```
   <pre class="brush: php">$_lang['chunk_create_text'] = 'Test';
   
   ```
 
-Constants
----------
+## Constants
 
 - Constants must be in all UPPERCASE letters.
 - Use only if absolutely necessary.
 
-File Structure
---------------
+## File Structure
 
 - Always name PHP class files in name.class.php format.
 
-Prefixing
----------
+## Prefixing
 
 - Lexicon strings for Components need to be prefixed:
 

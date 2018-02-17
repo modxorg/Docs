@@ -4,13 +4,11 @@ _old_id: "1265"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.escapesinglequotes"
 ---
 
-xPDOCacheManager::escapeSingleQuotes
-------------------------------------
+## xPDOCacheManager::escapeSingleQuotes
 
 Escapes all single quotes in a string.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#escapeSingleQuotes>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#escapeSingleQ
 <pre class="brush: php">
 string escapeSingleQuotes (string $s)
 
-```Example
--------
+```## Example
 
 Escape the quotes in the string below:
 
@@ -29,8 +26,7 @@ $str = 'Testing my "fun" Windows system.';
 echo $xpdo->cacheManager->escapeSingleQuotes($str);
 // outputs: Testing my \"fun\" Windows system.
 
-```See Also
---------
+```## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

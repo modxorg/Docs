@@ -16,7 +16,6 @@ $modx= new modX();
 $modx->initialize('mgr');
 
 
-```See Also
---------
+```## See Also
 
 [Loading MODx Externally](developing-in-modx/other-development-resources/loading-modx-externally "Loading MODx Externally")

@@ -4,8 +4,7 @@ _old_id: "1079"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getversiondata"
 ---
 
-modX::getVersionData
---------------------
+## modX::getVersionData
 
 Gets the modX core version data. The array contains the following keys (examples for version "MODx Revolution 2.0.0-beta-3"):
 
@@ -17,8 +16,7 @@ Gets the modX core version data. The array contains the following keys (examples
 - **full\_version** - A compiled full version name, eg: '2.0.0-beta-3'
 - **full\_appname** - The entire version name, eg: 'MODx Revolution 2.0.0-beta-3'
 
-Syntax
-------
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getVersionData()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getVersionData())
 
@@ -26,8 +24,7 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.h
 <pre class="brush: php">
 array getVersionData ()
 
-```Example
--------
+```## Example
 
 Print out the current full version:
 
@@ -36,7 +33,6 @@ Print out the current full version:
 $vers = $modx->getVersionData();
 echo $vers['full_version'];
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

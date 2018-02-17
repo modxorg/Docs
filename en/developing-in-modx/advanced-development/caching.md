@@ -8,15 +8,13 @@ _old_uri: "2.x/developing-in-modx/advanced-development/caching"
 
  If you have a custom MODX\_CONFIG\_KEY defined, the cache manager will write to core/cache/MODX\_CONFIG\_KEY/ instead.
 
-General Caching Terminology & Behavior
---------------------------------------
+## General Caching Terminology & Behavior
 
  MODX uses different **partitions** for separate types of data being cached. A partition is, simplified, a folder in the core/cache/ folder, but the real value of partitions is that each partition can be assigned different cache handlers. **Cache handlers** are derivatives of the xPDOCache class and provide a unified API for storing, reading and removing cache entries.
 
  The default **cache handler,** xPDOFileCache, writes the cache to the file system in the core/cache/ folder, but other cache handlers are available in the core for APC (xPDOAPCCache), memcache(d) (xPDOMemCache, xPDOMemCached) and WinCache (xPDOWinCache).
 
-MODX Core Cache Partitions
---------------------------
+## MODX Core Cache Partitions
 
  There are a number of partitions in the core. These can easily be identified by looking in the core/cache/ folder with the default cache configuration.
 
@@ -49,8 +47,7 @@ MODX Core Cache Partitions
 
  This feature can be enabled in environments where database access is more expensive than PHP include time, for instance, when using an external database server, or custom configured for environments with memcached, APC, or other caching systems available. This is a separate partition from the other cache partitions in MODX, so it can be configured with other cache handlers. See [xPDO Caching](display/xPDO20/Caching) for additional information.
 
-Refreshing the MODX Core Cache
-------------------------------
+## Refreshing the MODX Core Cache
 
  To refresh any of the core MODX cache partitions, use the `modCacheManager->refresh()` method. The minimum call has no parameters and will refresh all core cache partitions.
 
@@ -68,8 +65,7 @@ $modx - > cacheManager - > refresh(array(
 
 ``` The second parameter, `$results`, is passed by reference and will contain the results of each of the cache partitions. Depending on the partition, this can be a boolean or an array with more information from the result of refreshing the specific partition. The function itself returns a boolean indicating if any of the partitions returned a boolean false.
 
-Programmatic (Custom) Caching
------------------------------
+## Programmatic (Custom) Caching
 
  By interacting with the modCacheManager, you can easily cache any type of data. There are several useful features for you to use in maintaining a valid cache. By using the modCacheManager with a custom partition (though not required), users of your code can change the cache handler and store the data in a memcached, APC or WinCache instance instead of the default file based cache.
 
@@ -111,8 +107,7 @@ $modx->cacheManager->set('testdata', $str, 7200, $options);
 // Gets the data from cache again. Returns null if cache is not available or expired.
 $str = $modx->cacheManager->get('testdata', $options);
 
-```Note on Revolution 2.0
-----------------------
+```## Note on Revolution 2.0
 
  MODX Revolution 2.0 had a different caching system with different partitions. To clear the cache in 2.0, you would use the clearCache() method that has been deprecated since 2.1. It's better to upgrade to the latest version than to continue using 2.0.
 

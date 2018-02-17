@@ -77,7 +77,9 @@ The fifth parameter, $adhocValues, when true, will automatically set any passed 
   'notRealField' => 'boo',
 ),'',false,false,true);
 
-```<div class="note">The last field can be overridden by passing xPDO::OPT\_HYDRATE\_ADHOC\_FIELDS as 'true' into the xPDO config. If that setting is true, the 5th parameter will always be true.</div>### save
+```The last field can be overridden by passing xPDO::OPT\_HYDRATE\_ADHOC\_FIELDS as 'true' into the xPDO config. If that setting is true, the 5th parameter will always be true.
+
+### save
 
 This function allows you to save your set fields permanently to the database.
 

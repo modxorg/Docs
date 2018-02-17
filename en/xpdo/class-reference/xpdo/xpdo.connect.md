@@ -4,13 +4,11 @@ _old_id: "1236"
 _old_uri: "2.x/class-reference/xpdo/xpdo.connect"
 ---
 
-xPDO::connect
--------------
+## xPDO::connect
 
 Creates a PDO database connection for use by xPDO. Returns true if the connection was created successfully.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#connect>
 
@@ -18,14 +16,12 @@ API Docs: <http://api.modxcms.com/xpdo/xPDO.html#connect>
 <pre class="brush: php">
 boolean connect ([array $driverOptions = array ()])
 
-```Example
--------
+```## Example
 
 ```
 <pre class="brush: php">
 $xpdo->connect();
 
-```See Also
---------
+```## See Also
 
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

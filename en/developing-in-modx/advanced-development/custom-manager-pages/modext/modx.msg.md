@@ -4,18 +4,16 @@ _old_id: "1088"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.msg"
 ---
 
-MODx.msg
---------
+## MODx.msg
 
-**Extends:** Ext.Component   
+**Extends:** Ext.Component 
 **Key Features:** AJAX connector features.
 
 ![](/download/attachments/18678080/confirm.png?version=1&modificationDate=1302195122000)
 
 The MODx.msg class provides the functionality of the Ext.MessageBox class, with the added benefit of using an AJAX callback function (for confirmation dialogs). Simply provide a URL and optional parameters and a connector request will be sent after the user confirms the prompt. It defaults to a minimum width of 200px.
 
-Methods
--------
+## Methods
 
 ### alert
 
@@ -35,7 +33,7 @@ MODx.msg.alert('Warning!','You are out of space! We should clear the cache.',fun
 
 Loads a confirmation dialog that prompts the user for a Yes/No response. If Yes is selected, fires an AJAX request to a specific connector. The properties for the config parameter are:
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>title</td><td>The title of the confirmation box.</td></tr><tr><td>text</td><td>The text in the confirmation box.</td></tr><tr><td>url</td><td>The URL to send the AJAX request to.</td></tr><tr><td>params</td><td>The REQUEST params to send with the AJAX request.</td></tr><tr><td>listeners</td><td>Any listeners to look for on the request.</td></tr></tbody></table>An example:
+NameDescriptiontitleThe title of the confirmation box.textThe text in the confirmation box.urlThe URL to send the AJAX request to.paramsThe REQUEST params to send with the AJAX request.listenersAny listeners to look for on the request.An example:
 
 ```
 <pre class="brush: php">
@@ -57,7 +55,7 @@ MODx.msg.confirm({
 
 MODx.msg.confirm adds a few custom events that fire:
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>success</td><td>Fires on a successful response from the AJAX submission.</td></tr><tr><td>failure</td><td>Fires on a failed response from the AJAX submission.</td></tr><tr><td>cancel</td><td>Fires when the user cancels the confirmation dialog.</td></tr></tbody></table>### status
+NameDescriptionsuccessFires on a successful response from the AJAX submission.failureFires on a failed response from the AJAX submission.cancelFires when the user cancels the confirmation dialog.### status
 
 ```
 <pre class="brush: php">
@@ -65,7 +63,7 @@ MODx.msg.status(opt)
 
 ```Loads a temporary status message in the top-right of the screen, that fades away. The properties for the opt parameter are:
 
-<table><tbody><tr><th>Name</th><th>Description</th><th>Default</th></tr><tr><td>title</td><td>Optional. The title of the message.</td><td> </td></tr><tr><td>message</td><td>The text of the status message.</td><td> </td></tr><tr><td>dontHide</td><td>If true, will not automatically hide the status message. Will stay until it is clicked.</td><td>false</td></tr><tr><td>delay</td><td>The number of seconds to show the message.</td><td>1.5</td></tr></tbody></table>You could use this in custom manager pages to provide confirmation your object was saved. You could add something like this to your FormPanel definition:
+NameDescriptionDefaulttitleOptional. The title of the message. messageThe text of the status message. dontHideIf true, will not automatically hide the status message. Will stay until it is clicked.falsedelayThe number of seconds to show the message.1.5You could use this in custom manager pages to provide confirmation your object was saved. You could add something like this to your FormPanel definition:
 
 ```
 <pre class="brush: php">
@@ -81,8 +79,7 @@ MODx.msg.status(opt)
 
 ```The 'success' listener is part of modExt and comes with [MODx.FormPanel](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel "MODx.FormPanel").
 
-See Also
---------
+## See Also
 
 1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
 2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)

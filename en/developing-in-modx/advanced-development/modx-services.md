@@ -4,8 +4,7 @@ _old_id: "204"
 _old_uri: "2.x/developing-in-modx/advanced-development/modx-services"
 ---
 
-What is a Service?
-------------------
+## What is a Service?
 
 A service is any object that is loaded via [$modx->getService](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService"). It can be a custom class provided by the user, or by MODX itself.
 
@@ -17,8 +16,7 @@ Once an object is loaded with getService, it is accessible via $modx->(servicena
 ));  
 $modx->twitter->tweet('Success!');  
 
-```What are the Default Included Services?
----------------------------------------
+```## What are the Default Included Services?
 
 A list of the core-included MODX Services is as follows:
 
@@ -26,7 +24,6 @@ A list of the core-included MODX Services is as follows:
 2. [modMail](developing-in-modx/advanced-development/modx-services/modmail)
 3. [modRegistry](developing-in-modx/advanced-development/modx-services/modregistry)
 
-See Also
---------
+## See Also
 
 - [modX.getService](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService")

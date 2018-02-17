@@ -4,18 +4,16 @@ _old_id: "1081"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.localgrid"
 ---
 
-MODx.grid.LocalGrid
--------------------
+## MODx.grid.LocalGrid
 
-**Extends:** Ext.grid.EditorGridPanel   
+**Extends:** Ext.grid.EditorGridPanel 
 **Key Features:** Similar to MODx.grid.Grid.
 
 The MODExt LocalGrid class is similar to the [MODx.grid.Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid "MODx.grid.Grid") class, however rather than using a connector to populate it with data, it must be loaded through a local store.
 
 When instantiating this into a tabbed interface, it's recommended to set preventRender: true in its config to prevent JS rendering issues.
 
-See Also
---------
+## See Also
 
 1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
 2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)

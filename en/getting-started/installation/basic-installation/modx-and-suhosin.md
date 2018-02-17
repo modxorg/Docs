@@ -4,12 +4,13 @@ _old_id: "202"
 _old_uri: "2.x/getting-started/installation/basic-installation/modx-and-suhosin"
 ---
 
-<div>- [Known Issues with Suhosin](#MODXandSuhosin-KnownIssueswithSuhosin)
+- [Known Issues with Suhosin](#MODXandSuhosin-KnownIssueswithSuhosin)
   - [Recommended Configuration](#MODXandSuhosin-RecommendedConfiguration)
 - [See Also](#MODXandSuhosin-SeeAlso)
 
-</div>Known Issues with Suhosin 
---------------------------
+
+
+## Known Issues with Suhosin 
 
 Suhosin is a PHP extension that adds extra security measures to PHP. One of these, however, is a check to prevent access on a server if a GET variable is too long. This causes issues in the MODX manager in versions equal to or later than 2.2, as MODX uses [Google minify](http://code.google.com/p/minify) to minimize and compress the JavaScript in the manager.
 
@@ -31,8 +32,7 @@ suhosin.executor.disable_eval 0
 
 ```If you cannot edit the php.ini directly, consult with your host on the best way to set up these configurations. Some hosts might allow changing it through htaccess files, a control panel interface or they can do it for you.
 
-See Also 
----------
+## See Also 
 
 1. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
 2. [Lighttpd Guide](getting-started/installation/basic-installation/lighttpd-guide)

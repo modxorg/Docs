@@ -4,7 +4,7 @@ _old_id: "244"
 _old_uri: "2.x/administering-your-site/security/policies/policytemplates"
 ---
 
-<div>- [What are Policy Templates?](#PolicyTemplates-WhatarePolicyTemplates%3F)
+- [What are Policy Templates?](#PolicyTemplates-WhatarePolicyTemplates%3F)
   - [AdministratorTemplate](#PolicyTemplates-AdministratorTemplate)
   - [ElementTemplate](#PolicyTemplates-ElementTemplate)
   - [MediaSourceTemplate](#PolicyTemplates-MediaSourceTemplate)
@@ -13,8 +13,9 @@ _old_uri: "2.x/administering-your-site/security/policies/policytemplates"
   - [ContextTemplate](#PolicyTemplates-ContextTemplate)
 - [See Also](#PolicyTemplates-SeeAlso)
 
-</div>What are Policy Templates? 
----------------------------
+
+
+## What are Policy Templates? 
 
 Policy Templates define which permissions are _available_ to an [Access Policy](administering-your-site/security/policies "Policies"). A Policy Template does not say if a permission is actually granted or denied (the Access Policy does that), it just defines which permissions the Access Policy should be able to check or uncheck. Having a Policy Template is useful if need to narrow down the list of available permissions you want to define in an Access Policy.
 
@@ -44,8 +45,7 @@ Resource defines extra permissions associated with Resource Group ACLs. [See all
 
 Context defines context access when administration actions are not involved.
 
-See Also 
----------
+## See Also 
 
 1. [Users](administering-your-site/security/users)
 2. [User Groups](administering-your-site/security/user-groups)

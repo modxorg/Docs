@@ -4,13 +4,14 @@ _old_id: "65"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources/content-types"
 ---
 
-<div>- [What are Content Types?](#ContentTypes-WhatareContentTypes%3F)
+- [What are Content Types?](#ContentTypes-WhatareContentTypes%3F)
 - [Usage](#ContentTypes-Usage)
   - [Creating New Content Types](#ContentTypes-CreatingNewContentTypes)
 - [See Also](#ContentTypes-SeeAlso)
 
-</div>What are Content Types?
------------------------
+
+
+## What are Content Types?
 
 Content types are specific filesystem types for your resources. They are associated with file extensions and tell the MODx Parser what type of extension to render the page with.
 
@@ -20,8 +21,7 @@ For example, a [Resources](making-sites-with-modx/structuring-your-site/resource
 
 instead of test.html. This allows you to create any type of file from [Resources](making-sites-with-modx/structuring-your-site/resources "Resources").
 
-Usage
------
+## Usage
 
 When editing a Resource, simply select the Content Type that you'd like to use:
 
@@ -45,8 +45,9 @@ The fields that appear are as follows:
 
 From there, click "save" and the Content Type will appear in the grid.
 
-<div class="tip">**About Aliases**  
-When you create resources, the File Extension you choose for your content type will be what's appended to the alias of that resource (if you have friendly URLs enabled)</div>See Also
---------
+**About Aliases**
+When you create resources, the File Extension you choose for your content type will be what's appended to the alias of that resource (if you have friendly URLs enabled)
+
+## See Also
 
 - [Resources](making-sites-with-modx/structuring-your-site/resources "Resources")

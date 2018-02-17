@@ -4,13 +4,11 @@ _old_id: "1280"
 _old_uri: "2.x/class-reference/xpdomanager/xpdomanager.createsourcecontainer"
 ---
 
-xPDOManager::createSourceContainer()
-------------------------------------
+## xPDOManager::createSourceContainer()
 
 Creates the physical data container represented by a data source.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOManager.html#createSourceContainer>
 
@@ -23,8 +21,7 @@ void createSourceContainer (
    [$containerOptions = null]
 )
 
-```Examples
---------
+```## Examples
 
 Create a database called 'MyDatabase'.
 

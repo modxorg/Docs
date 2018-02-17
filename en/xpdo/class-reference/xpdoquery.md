@@ -18,8 +18,7 @@ _old_uri: "2.x/class-reference/xpdoquery"
 10. [xPDOQuery.sortby](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.sortby)
 11. [xPDOQuery.where](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.where)
 
-Examples
---------
+## Examples
 
  Grab the first 4 Boxes with:
 
@@ -73,9 +72,11 @@ $query->where(array(
   AND password IS NOT NULL
 )
 
-```<div class="note"> Note that if you're specifying the conditional in the key string, such as 'OR:disabled:!=' => true, you'll need to specify the operand as well. This means that you must specify = explicitly, such as in:  'AND:gender:=' => 'M'
+``` Note that if you're specifying the conditional in the key string, such as 'OR:disabled:!=' => true, you'll need to specify the operand as well. This means that you must specify = explicitly, such as in:  'AND:gender:=' => 'M'
 
- </div>### Valid Operators
+ 
+
+### Valid Operators
 
  ```
 <pre class="brush: php">
@@ -92,8 +93,7 @@ $c->where(array(
   'ids:IN' => array(1,2,3), /* IN statement */
 ));
 
-```Debugging
----------
+```## Debugging
 
  Sometimes you need to see what query is actually being generated. You can do this by preparing the query and outputting it using the **toSQL()** method.
 
@@ -104,8 +104,7 @@ $c = $xpdo->newQuery('Person');
 $c->prepare();
 print $c->toSQL();
 
-```See Also
---------
+```## See Also
 
 - [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
 - [xPDO.newQuery](/xpdo/2.x/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")

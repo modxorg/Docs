@@ -4,8 +4,7 @@ _old_id: "1271"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.set"
 ---
 
-xPDOCacheManager::set
----------------------
+## xPDOCacheManager::set
 
 Set a key-value pair in a cache provider.
 
@@ -13,8 +12,7 @@ Also allows for an array of options to be passed. The current available values a
 
 - **format** - If equals XPDO\_CACHE\_JSON, will set the string as the only data in file (rather than a return of the string. This is useful if you want more proper parsing of JSON data.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#set>
 
@@ -22,8 +20,7 @@ API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#set>
 <pre class="brush: php">
 boolean set (string $key, mixed &$var, [integer $lifetime = 0], [array $options = array()])
 
-```Example
--------
+```## Example
 
 Set a cache file to the string provided, to expire in 2 hours.
 
@@ -32,8 +29,7 @@ Set a cache file to the string provided, to expire in 2 hours.
 $str = 'This will be cached.';
 $xpdo->cacheManager->set('mycachefile',$str,7200);
 
-```See Also
---------
+```## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

@@ -4,7 +4,7 @@ _old_id: "370"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object"
 ---
 
-<div>- [The MODx JS Object](#MODExtMODxObject-TheMODxJSObject)
+- [The MODx JS Object](#MODExtMODxObject-TheMODxJSObject)
 - [Custom Class Variables](#MODExtMODxObject-CustomClassVariables)
   - [MODx.request](#MODExtMODxObject-MODx.request)
   - [MODx.config](#MODExtMODxObject-MODx.config)
@@ -24,13 +24,13 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
   - [MODx.isEmpty](#MODExtMODxObject-MODx.isEmpty)
   - [MODx.debug](#MODExtMODxObject-MODx.debug)
 
-</div>The MODx JS Object
-------------------
+
+
+## The MODx JS Object
 
 MODExt comes with a global MODx JS object on each manager page. This object has a few custom methods that can be executed from any custom manager page using MODExt, and also sets up some default settings and customizations.
 
-Custom Class Variables
-----------------------
+## Custom Class Variables
 
 The following variables are accessible from the MODx JS object:
 
@@ -54,7 +54,7 @@ var tpl = MODx.config.default_template;
 
 There are a few other variables available on the MODx.config object that are not [System Settings](administering-your-site/settings/system-settings "System Settings"):
 
-<table><tbody><tr><th>Key</th><th>Description</th></tr><tr><td>base\_url</td><td>The base URL for the MODX site and/or active context.</td></tr><tr><td>connectors\_url</td><td>The URL to the connectors directory.</td></tr><tr><td>manager\_url</td><td>The URL to the manager.</td></tr><tr><td>http\_host</td><td>The HTTP host variable for the active context.</td></tr><tr><td>site\_url</td><td>The full Site URL for the active context.</td></tr><tr><td>custom\_resource\_classes</td><td>An array of custom Resource classes pulled from the System Setting custom\_resource\_classes</td></tr></tbody></table>### MODx.action
+KeyDescriptionbase\_urlThe base URL for the MODX site and/or active context.connectors\_urlThe URL to the connectors directory.manager\_urlThe URL to the manager.http\_hostThe HTTP host variable for the active context.site\_urlThe full Site URL for the active context.custom\_resource\_classesAn array of custom Resource classes pulled from the System Setting custom\_resource\_classes### MODx.action
 
 This object contains a map of all the modAction objects (or MODX manager controllers), mapped by their controller to their ID:
 
@@ -72,7 +72,7 @@ var actionId = MODx.action['mycomponent:controllers/index'];
 
 Contains MODX version information, with the following attributes:
 
-<table><tbody><tr><th>Key</th><th>Example</th></tr><tr><td>version</td><td>2</td></tr><tr><td>major\_version</td><td>1</td></tr><tr><td>minor\_version</td><td>0</td></tr><tr><td>patch\_level</td><td>pl</td></tr><tr><td>code\_name</td><td>Revolution</td></tr><tr><td>distro</td><td><input name="variableValues.traditional" onkeyup="updateOthers(this)" size="12" type="text"></input> <span class="templateparameter">(traditional)</span></td></tr><tr><td>full\_version</td><td>2.1.0-pl</td></tr><tr><td>full\_appname</td><td>MODX Revolution 2.1.0-pl (traditional)</td></tr></tbody></table>Example:
+KeyExampleversion2major\_version1minor\_version0patch\_levelplcode\_nameRevolutiondistro (traditional)full\_version2.1.0-plfull\_appnameMODX Revolution 2.1.0-pl (traditional)Example:
 
 ```
 <pre class="brush: php">
@@ -82,7 +82,7 @@ var fv = MODx.version.full_version;
 
 This object will contain the two following properties for the currently logged-in manager user:
 
-<table><tbody><tr><td>MODx.user.id</td><td>The ID of the user.</td></tr><tr><td>MODx.user.username</td><td>The username of the user.</td></tr></tbody></table>```
+MODx.user.idThe ID of the user.MODx.user.usernameThe username of the user.```
 <pre class="brush: php">
 var userId = MODx.user.id;
 
@@ -90,12 +90,11 @@ var userId = MODx.user.id;
 
 This will contain the following permissions should they be granted to the user (they will not exist if the user does not have the permission):
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>MODx.perm.resource\_tree</td><td>To view the Resources tree.</td></tr><tr><td>MODx.perm.element\_tree</td><td>To view the Elements tree.</td></tr><tr><td>MODx.perm.file\_tree</td><td>To view the Files tree.</td></tr><tr><td>MODx.perm.file\_upload</td><td>To be able to upload files.</td></tr><tr><td>MODx.perm.file\_manager</td><td>To use the MODX file browser.</td></tr><tr><td>MODx.perm.new\_chunk</td><td>To create a new Chunk.</td></tr><tr><td>MODx.perm.new\_plugin</td><td>To create a new Plugin.</td></tr><tr><td>MODx.perm.new\_snippet</td><td>To create a new Snippet.</td></tr><tr><td>MODx.perm.new\_template</td><td>To create a new Template.</td></tr><tr><td>MODx.perm.new\_tv</td><td>To create a new Template Variable.</td></tr><tr><td>MODx.perm.directory\_create</td><td>To be able to create a directory on the filesystem.</td></tr></tbody></table>```
+NameDescriptionMODx.perm.resource\_treeTo view the Resources tree.MODx.perm.element\_treeTo view the Elements tree.MODx.perm.file\_treeTo view the Files tree.MODx.perm.file\_uploadTo be able to upload files.MODx.perm.file\_managerTo use the MODX file browser.MODx.perm.new\_chunkTo create a new Chunk.MODx.perm.new\_pluginTo create a new Plugin.MODx.perm.new\_snippetTo create a new Snippet.MODx.perm.new\_templateTo create a new Template.MODx.perm.new\_tvTo create a new Template Variable.MODx.perm.directory\_createTo be able to create a directory on the filesystem.```
 <pre class="brush: php">
 if (MODx.perm.file_upload) { /* ...code... */ }
 
-```Custom Methods
---------------
+```## Custom Methods
 
 The MODx object also has quite a few custom methods available to it:
 

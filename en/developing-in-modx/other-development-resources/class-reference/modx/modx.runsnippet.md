@@ -4,13 +4,11 @@ _old_id: "1099"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet"
 ---
 
-modX::runSnippet 
------------------
+## modX::runSnippet 
 
 Process and return the output from a PHP snippet by name.
 
-Syntax 
--------
+## Syntax 
 
 ```
 
@@ -25,13 +23,11 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.h
 <pre class="brush: php">
 string runSnippet (string $snippetName, [array $params = array ()])
 
-```Example 
---------
+```## Example 
 
 Run the 'Welcome' snippet with some custom parameters:
 
-Examples 
----------
+## Examples 
 
 ```
 <pre class="brush: php">
@@ -40,9 +36,10 @@ $output = $modx->runSnippet('Welcome',array(
 ));
 echo $output; // prints 'Welcome John!'
 
-```<div class="tip">**Handy Hint**  
-When you call a Snippet using **runSnippet**, the Snippet code is _always_ executed: the results are never returned from cache. It's equivalent to running the Snippet using the `[[!uncached]]` syntax. </div>See Also 
----------
+```**Handy Hint**
+When you call a Snippet using **runSnippet**, the Snippet code is _always_ executed: the results are never returned from cache. It's equivalent to running the Snippet using the `[[!uncached]]` syntax. 
+
+## See Also 
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [Snippets](developing-in-modx/basic-development/snippets "Snippets")

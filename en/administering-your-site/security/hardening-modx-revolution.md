@@ -4,7 +4,7 @@ _old_id: "361"
 _old_uri: "2.x/administering-your-site/security/hardening-modx-revolution"
 ---
 
-<div>- [Overview](#HardeningMODXRevolution-Overview)
+- [Overview](#HardeningMODXRevolution-Overview)
 - [Everything but MODX](#HardeningMODXRevolution-EverythingbutMODX)
   - [Your Computer](#HardeningMODXRevolution-YourComputer)
   - [Your Connection](#HardeningMODXRevolution-YourConnection)
@@ -33,15 +33,15 @@ _old_uri: "2.x/administering-your-site/security/hardening-modx-revolution"
   - [Forcing SSL connections to the Manager](#HardeningMODXRevolution-ForcingSSLconnectionstotheManager)
 - [Monitoring your Site and Server](#HardeningMODXRevolution-MonitoringyourSiteandServer)
 
-</div>Overview
---------
+
+
+## Overview
 
 Hardening any web application, including MODX Revolution, involves auditing all layers of your site, including your server, all of its services, and the application itself. Make no mistake: it's a war out there. If you're not afraid, then you aren't paying attention. The simple act of having a website online will ensure that you will be targeted by hacks. Their motives vary, but the weakest link will be sought out and exploited.
 
 Hardening is a huge topic, so this page seeks to help you identify what might be the most common attack vectors on your site and help you close them.
 
-Everything but MODX
--------------------
+## Everything but MODX
 
 There are **many** aspects to hardening that have nothing to do with MODX. We make perfunctory mention of them here, but this page is focused specifically on how to harden MODX. A thorough security audit will focus on the entire environment, so do not neglect to consider the following aspects:
 
@@ -85,8 +85,7 @@ One of the most important things you can do for your web site is to set up incre
 
 Many hacks involve some plain old trickery: someone calling or emailing you and asking for information under false pretexts. Don't be fooled! Are you SURE it's your client asking you for their password? Or is it someone who got into their email account? For a good read, check out Kevin Mitnick's [Ghost in the Wires](http://www.amazon.com/Ghost-Wires-Adventures-Worlds-Wanted/dp/0316037702): he was able to get the source code from many LARGE companies merely by placing believable phone-calls to the right person.
 
-Locking down MODX
------------------
+## Locking down MODX
 
 You'll notice that this is only one small section of the hardening process. Remember: MODX is only one aspect of your environment, so do not neglect the previous section!
 
@@ -172,13 +171,11 @@ Delete any stagnant users from your site (e.g. if you created a login for a deve
 
 Don't just point your 404 page to your homepage. Set up a dedicated 404 page. We don't want our site to get any undue attention because a scanner thinks that you have a page on your site that you do not. E.g. if scanner looks for a known vulnerability at <http://yoursite.com/malicious/hack>, and the request comes back as an HTTP 200, then the scanner might think that you actually have that vulnerable file on your site, and it will attract other hacks or scans. You can use the FireFox "Web Developer" add-on (or several others) to view page headers and verify that 404s are actually 404s.
 
-Forcing SFTP Access
--------------------
+## Forcing SFTP Access
 
 Never use plain FTP, it is insecure by design. If your server doesn't support SFTP or connecting over a secure shell, you'd be better off finding a different host.
 
-Adding an SSL Certificate to your Manager
------------------------------------------
+## Adding an SSL Certificate to your Manager
 
 Sending usernames and passwords via plaintext is silly: any fool hacker with an ounce of dedication can intercept them. If security is a priority, you should **always** access your MODX manager via a secure connection (i.e. via [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure)). While you're at it, you may as well decide to serve your entire site over HTTPS.
 
@@ -219,8 +216,7 @@ RewriteRule ^(.*)$ <a href="https://yoursite.com/manager/$1"> <a href="https://y
 
 ```Test this by trying to navigate to the non-secure url, e.g. <http://yoursite.com/manager> – if it doesn't redirect to HTTPS, you'll have to tweak the .htaccess.
 
-Monitoring your Site and Server
--------------------------------
+## Monitoring your Site and Server
 
 Once you've locked down your site and server, you'll benefit from regular monitoring of it. There are some free services available. The best ones will monitor specific files and report any changes made to them. If your index.php suddenly changed, then that might indicate that somebody maliciously modified it.
 

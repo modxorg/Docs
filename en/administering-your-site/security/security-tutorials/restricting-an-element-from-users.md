@@ -4,7 +4,7 @@ _old_id: "486"
 _old_uri: "2.x/administering-your-site/security/security-tutorials/restricting-an-element-from-users"
 ---
 
-<div>- [Introduction](#RestrictinganElementfromUsers-Introduction)
+- [Introduction](#RestrictinganElementfromUsers-Introduction)
   - [Brief Summary](#RestrictinganElementfromUsers-BriefSummary)
 - [Step-by-step Explanation](#RestrictinganElementfromUsers-StepbystepExplanation)
   - [1. Create a Category](#RestrictinganElementfromUsers-1.CreateaCategory)
@@ -17,8 +17,9 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials/restricting-a
 - [Special Case for Templates](#RestrictinganElementfromUsers-SpecialCaseforTemplates)
 - [See Also](#RestrictinganElementfromUsers-SeeAlso)
 
-</div>Introduction
-------------
+
+
+## Introduction
 
 This tutorial teaches you how to restrict any Element (such as a Template, Snippet, etc) from view in the MODX manager. It uses Element Category ACLs to accomplish the task, which allow you to protect any Elements in Categories from view. Users in the Editors User Group will be able to see the elements, but they will be hidden from users outside the group.
 
@@ -31,8 +32,7 @@ This tutorial teaches you how to restrict any Element (such as a Template, Snipp
 5. Add an Element Category ACL on the Element Category Access tab (context: mgr, minimum role: Member (9999), access policy: Element)
 6. Flush permissions and reload
 
-Step-by-step Explanation
-------------------------
+## Step-by-step Explanation
 
 ### 1. Create a Category
 
@@ -73,8 +73,7 @@ On the top menu, find "Security -> Flush Permissions" and click it. For Revoluti
 
 This force everyone to log in again, and your Element Category will now be protected from users outside the Editors User Group.
 
-Hiding Specific Elements from Certain Users
--------------------------------------------
+## Hiding Specific Elements from Certain Users
 
 Sometimes, you want to hide elements from all users who are not in the Administrator group. To do that, put the elements in a category as we did above, but connect it to the Administrator user group:
 
@@ -92,8 +91,7 @@ Sometimes, you want to hide elements from all users who are not in the Administr
 
 Now, only the admin Super User can see the elements.
 
-Special Case for Templates
---------------------------
+## Special Case for Templates
 
 Lets say you restricted a Template with the method above. But you also want another User Group, which doesn't have access to the Template, the ability to edit (but not create!) Resources with that Template, and see the Template's TVs. Currently, the 2nd User Group (Let's call them Editors) would be able to see the Resource, and the ID of the Template will show in the Template combobox, but they wont be able to see the TVs. We need to add another ACL to the Editors User Group to get them to load the Template and its associated TVs.
 
@@ -111,8 +109,7 @@ Lets say you restricted a Template with the method above. But you also want anot
 
 Done! Your Editors will now be able to see and edit TVs for the Template in the protected Category and they will be hidden from users who are not in the Editors User Group.
 
-See Also
---------
+## See Also
 
 1. [Giving a User Manager Access](administering-your-site/security/security-tutorials/giving-a-user-manager-access)
 2. [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages)

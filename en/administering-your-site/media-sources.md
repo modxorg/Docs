@@ -4,8 +4,9 @@ _old_id: "369"
 _old_uri: "2.x/administering-your-site/media-sources"
 ---
 
-<div class="note">Media Sources are only available in MODX Revolution 2.2 or later.</div>What are Media Sources?
------------------------
+Media Sources are only available in MODX Revolution 2.2 or later.
+
+## What are Media Sources?
 
 Media Sources are a feature in MODX Revolution, where one can specify the "source" of media in their MODX installation. This is visualized in many ways - the most common being in the left-hand Files tree, the MODx.Browser window, and file and image TVs.
 
@@ -13,8 +14,7 @@ Media Sources are a feature in MODX Revolution, where one can specify the "sourc
 
 A source can be many types - from the file system itself, to an Amazon S3 bucket, to a Flickr album. MODX provides two source types with the core installation: the file system and Amazon S3 bucket integration. Other sources can be made by creating Media Source Drivers, or by downloading them from [Package Management](developing-in-modx/advanced-development/package-management "Package Management").
 
-Using Media Sources
--------------------
+## Using Media Sources
 
 The following articles describe basic usage of media sources.
 
@@ -23,8 +23,7 @@ The following articles describe basic usage of media sources.
 - [Securing a Media Source](administering-your-site/media-sources/securing-a-media-source "Securing a Media Source")
 - [Media Source Types](administering-your-site/media-sources/media-source-types "Media Source Types")
 
-See Also
---------
+## See Also
 
 1. [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source)
 2. [Assigning Media Sources to TVs](administering-your-site/media-sources/assigning-media-sources-to-tvs)

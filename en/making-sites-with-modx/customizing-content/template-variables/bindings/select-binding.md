@@ -4,13 +4,11 @@ _old_id: "272"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/bindings/select-binding"
 ---
 
-What is the @SELECT Binding?
-----------------------------
+## What is the @SELECT Binding?
 
 The @SELECT binding calls a database query based on the provided value and returns the result.
 
-Syntax
-------
+## Syntax
 
 ```
 <pre class="brush: php">
@@ -29,7 +27,9 @@ You can place this binding in one of two places:
 - On a page (edit the page in the manager). The page where you want to put this binding must be using a valid template, and that template must have the correct template variable(s) associated with it. If you've created the [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") and associated it with a [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), and the page you're working on is using that [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), then you'll have a place to enter in some text for that variable when you edit the page. Paste the "@SELECT ..." stuff in there. It sounds more complicated than it is, but this section is written verbosely for the sake of clear documentation.
 - You can also place the query into the "Default Value" box for the Template Variable. If you replace the default text of a Template Variable that's already in use, be careful, because your pages might require a specific type of output, e.g. the output type that a @SELECT binding returns.
 
-<div class="warning">REMEMBER: The query must be on ONE LINE. No returns!</div>You'll need to select only 2 columns - the first being the display value, the second being the value of each row (the input value).
+REMEMBER: The query must be on ONE LINE. No returns!
+
+You'll need to select only 2 columns - the first being the display value, the second being the value of each row (the input value).
 
 For example, to grab a list of active users in a SELECT box:
 
@@ -37,15 +37,13 @@ For example, to grab a list of active users in a SELECT box:
 <pre class="brush: php">
 @SELECT `username` AS `name`,`id` FROM `[[+PREFIX]]users` WHERE `active` = 1
 
-```Alternatives
-------------
+```## Alternatives
 
 Before we get any more complicated, consider doing this a different way. A [Snippet](developing-in-modx/basic-development/snippets "Snippets") might do the job more easily than a binding.
 
 If your query needs to work with template variables and you need specialized formatting for the output, the @SELECT binding is probably not the way to go. Pretty much everything that's done with the bindings is also possible with [Snippets](developing-in-modx/basic-development/snippets "Snippets"); the bindings just provide a shortcut. When you start over-using the shortcut, you may run into headaches.
 
-Having a blank Option
----------------------
+## Having a blank Option
 
 Select queries are a great way to power a listbox dropdown, but since they ALWAYS return results, it can be problematic if you want your dropdown to have an empty option? We can rely on MySQL's "UNION ALL" feature to accomplish this.
 
@@ -58,8 +56,7 @@ SELECT `username`,`id` FROM `[[+PREFIX]]users` WHERE `active` = 1 ORDER BY usern
 
 ```Just be aware that the sort order here may force your empty option somewhere into the stack instead of keeping it on top. In the above example, a hyphen is used in the username to ensure that it sorts to the top of the list.
 
-More Complex Example: Template Variables
-----------------------------------------
+## More Complex Example: Template Variables
 
 What if you need to write a query that accesses the template variables associated with a particular page? Those variables aren't directly stored in the _site\_content_ table, they are stored in other tables. This forces you to write a JOIN statement. Here's a more tangible example: let's say all the pages in a particular folder have a template variable for _opening\_date_... that field doesn't exist in the "site\_content" table. Hold onto your butts, because this gets complicated. You have to look at MODx's gory plumbing in order to pull this off. You have to understand how MODx extends the data stored in the "site\_content" table and makes use of the custom fields known as "Template Variables". This is open to some debate, but unfortunately, MODx's database schema doesn't follow the strict best practices for foreign keys... it's not always clear which table is being referenced by a particular column... it's not even always clear that a column ''is'' a foreign key, but rest assured, it is possible... it just takes a bit of patience to figure out.
 
@@ -87,8 +84,9 @@ WHERE
         AND DATE_FORMAT(STR_TO_DATE(tv_val.value, '%d-%m-%Y %H:%i:%s'), '%Y-%m-%d %H:%i:%s')>'2008-10-24 13:04:57'
 ;
 
-```<div class="note">MODx uses the MyISAM table engine, not InnoDB, so it does not rigidly enforce the foreign key constraints that are inferred by the table structure.</div>Errors
-------
+```MODx uses the MyISAM table engine, not InnoDB, so it does not rigidly enforce the foreign key constraints that are inferred by the table structure.
+
+## Errors
 
 What if your MySQL statement executes perfectly, but once you put it in your SELECT binding, it fails? Well, there are some pit-falls. The implementation isn't perfect. Pay close attention to the following:
 
@@ -96,18 +94,15 @@ What if your MySQL statement executes perfectly, but once you put it in your SEL
 - Delete all MySQL comments /\* this style \*/ and -- this style
 - Make sure you have entered the table names correctly! Many sites use table-prefixes, so it is imperative that you test your queries before trying to use them in a @SELECT Binding. If your query has an error, MODx will log the error to the error log.
 
-Next Step: Formatting
----------------------
+## Next Step: Formatting
 
 Ok, so you can return a bunch of data from the database... now what? If you need to format it intelligently, you might get some mileage out of the Output Renders, but you might find the available options limiting to you. You can write your own [Snippet](developing-in-modx/basic-development/snippets "Snippets") that formats the value of a Template Variable.
 
-Security
---------
+## Security
 
 Does this binding let you execute UPDATE, INSERT, or DELETE queries (or, **gasp**, DROP TABLE statements)? Even if it doesn't _directly_ support this, you may be able to construct and execute a complex query that SELECT's the result of a such a destructive query. At the very least, a user could construct a query to select another user's password hash or to see documents that the user isn't supposed to have access to. A lot of the CMS's out there give **full** access to the database (including DROP and DELETE statements) with the database handle used by the application. That's dangerous, and the @SELECT binding may expose some of those same vulnerabilities.
 
-See Also
---------
+## See Also
 
 - [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
 - [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")

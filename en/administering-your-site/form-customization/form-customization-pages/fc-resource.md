@@ -4,46 +4,49 @@ _old_id: "114"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-pages/fc-resource"
 ---
 
-<div>- [Resource Create/Update](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-ResourceCreate%2FUpdate)
+- [Resource Create/Update](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-ResourceCreate%2FUpdate)
 - [Available Fields](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-AvailableFields)
 - [Available Tabs](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-AvailableTabs)
 - [Hiding the Content Field](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-HidingtheContentField)
 - [TVs](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-TVs)
 
-</div><a name="FC-Resource-ResourceCreate%2FUpdate"></a>Resource Create/Update
-------------------------------------------------------------------------
+
+
+## <a name="FC-Resource-ResourceCreate%2FUpdate"></a>Resource Create/Update
 
 These pages encompass the following Actions:
 
 - resource/update
 - resource/create
 
-<div class="note">When using the _resource/create_ Action, constraints will apply to the **parent** resource. So, a constraint of: - modResource
+When using the _resource/create_ Action, constraints will apply to the **parent** resource. So, a constraint of: - modResource
 - id
-- 2  
+- 2
   ...would apply the rule for all new Resources under the Resource with ID 2.
 
-</div><a name="FC-Resource-AvailableFields"></a>Available Fields
-----------------------------------------------------------
 
-<div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"> Field </th><th class="confluenceTh"> Name </th><th class="confluenceTh"> Containing Panel </th></tr><tr><td class="confluenceTd"> Page Title </td><td class="confluenceTd"> pagetitle </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Template </td><td class="confluenceTd"> template </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Published </td><td class="confluenceTd"> published </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Long Title </td><td class="confluenceTd"> longtitle </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Description </td><td class="confluenceTd"> description </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Introtext </td><td class="confluenceTd"> introtext </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Link Attributes </td><td class="confluenceTd"> link\_attributes </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Alias </td><td class="confluenceTd"> alias </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Menu Title </td><td class="confluenceTd"> menutitle </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Menu Index </td><td class="confluenceTd"> menuindex </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Hide from Menus </td><td class="confluenceTd"> hidemenu </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Container </td><td class="confluenceTd"> isfolder </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Rich Text </td><td class="confluenceTd"> richtext </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Published On </td><td class="confluenceTd"> publishedon </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Publish Date </td><td class="confluenceTd"> pub\_date </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Un-Publish Date </td><td class="confluenceTd"> unpub\_date </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Searchable </td><td class="confluenceTd"> searchable </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Cacheable </td><td class="confluenceTd"> cacheable </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Deleted </td><td class="confluenceTd"> deleted </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Empty Cache </td><td class="confluenceTd"> syncsite </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Content Type </td><td class="confluenceTd"> content\_type </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Content Disposition </td><td class="confluenceTd"> content\_dispo </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Class Key </td><td class="confluenceTd"> class\_key </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Parent </td><td class="confluenceTd"> modx-resource-parent </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> ID </td><td class="confluenceTd"> id </td><td class="confluenceTd"> modx-panel-resource </td></tr><tr><td class="confluenceTd"> Template </td><td class="confluenceTd"> template </td><td class="confluenceTd"> modx-panel-resource </td></tr></tbody></table></div><a name="FC-Resource-AvailableTabs"></a>Available Tabs
-------------------------------------------------------
+
+## <a name="FC-Resource-AvailableFields"></a>Available Fields
+
+ Field  Name  Containing Panel  Page Title  pagetitle  modx-panel-resource  Template  template  modx-panel-resource  Published  published  modx-panel-resource  Long Title  longtitle  modx-panel-resource  Description  description  modx-panel-resource  Introtext  introtext  modx-panel-resource  Link Attributes  link\_attributes  modx-panel-resource  Alias  alias  modx-panel-resource  Menu Title  menutitle  modx-panel-resource  Menu Index  menuindex  modx-panel-resource  Hide from Menus  hidemenu  modx-panel-resource  Container  isfolder  modx-panel-resource  Rich Text  richtext  modx-panel-resource  Published On  publishedon  modx-panel-resource  Publish Date  pub\_date  modx-panel-resource  Un-Publish Date  unpub\_date  modx-panel-resource  Searchable  searchable  modx-panel-resource  Cacheable  cacheable  modx-panel-resource  Deleted  deleted  modx-panel-resource  Empty Cache  syncsite  modx-panel-resource  Content Type  content\_type  modx-panel-resource  Content Disposition  content\_dispo  modx-panel-resource  Class Key  class\_key  modx-panel-resource  Parent  modx-resource-parent  modx-panel-resource  ID  id  modx-panel-resource  Template  template  modx-panel-resource 
+
+## <a name="FC-Resource-AvailableTabs"></a>Available Tabs
 
 These tabs are available for renaming/hiding:
 
-<div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"> Tab </th><th class="confluenceTh"> Name (ID) </th><th class="confluenceTh"> Containing TabPanel </th></tr><tr><td class="confluenceTd"> Create/edit Resource </td><td class="confluenceTd"> modx-resource-settings </td><td class="confluenceTd"> modx-resource-tabs </td></tr><tr><td class="confluenceTd"> Page Settings </td><td class="confluenceTd"> modx-page-settings </td><td class="confluenceTd"> modx-resource-tabs </td></tr><tr><td class="confluenceTd"> Template Variables </td><td class="confluenceTd"> modx-panel-resource-tv </td><td class="confluenceTd"> modx-resource-tabs </td></tr><tr><td class="confluenceTd"> Access Permissions </td><td class="confluenceTd"> modx-resource-access-permissions </td><td class="confluenceTd"> modx-resource-tabs </td></tr></tbody></table></div><a name="FC-Resource-HidingtheContentField"></a>Hiding the Content Field
-------------------------------------------------------------------------
+ Tab  Name (ID)  Containing TabPanel  Create/edit Resource  modx-resource-settings  modx-resource-tabs  Page Settings  modx-page-settings  modx-resource-tabs  Template Variables  modx-panel-resource-tv  modx-resource-tabs  Access Permissions  modx-resource-access-permissions  modx-resource-tabs 
+
+## <a name="FC-Resource-HidingtheContentField"></a>Hiding the Content Field
 
 Use these settings:
 
-**Field**: modx-resource-content  
-**Containing Panel**: modx-panel-resource  
-**Rule**: Field Visible  
+**Field**: modx-resource-content
+**Containing Panel**: modx-panel-resource
+**Rule**: Field Visible
 **Value**: 0
 
-<a name="FC-Resource-TVs"></a>TVs
----------------------------------
+## <a name="FC-Resource-TVs"></a>TVs
 
 Affecting TVs for a Resource is fairly straightforward - just set the "Name" attribute of the Rule to "tv#", and replace # with the ID of the TV you'd like to affect. You can leave the Containing Panel blank.
 
-<div class="note">TV rules on the Resource panel apply to both create **and** update Actions. You'll only need one rule.</div>
+TV rules on the Resource panel apply to both create **and** update Actions. You'll only need one rule.

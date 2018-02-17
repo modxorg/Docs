@@ -4,8 +4,7 @@ _old_id: "1098"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.runprocessor"
 ---
 
-modX::runProcessor
-------------------
+## modX::runProcessor
 
  Loads and runs a specific processor. The method takes 3 arguments:
 
@@ -14,16 +13,16 @@ modX::runProcessor
 - **options** - An array of options passed to the processor. 
   - _processors\_path_ - If specified, will override the default MODX processors path (core/model/modx/processors/) where MODX is looking for the processor. This is helpful if you write your own custom processors and place them for example in your core/components/yourextra/processors/ directory.
 
-<div class="info"> This method replaces $modX->executeProcessor() prior to version 2.1 </div>Syntax
-------
+ This method replaces $modX->executeProcessor() prior to version 2.1 
+
+## Syntax
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::runProcessor()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runProcessor())
 
  ```
 <pre class="brush: php">mixed runProcessor(string $action = '', array $scriptProperties = array(), array $options = array())
 
-```Example
--------
+```## Example
 
  Run the ResourceGroup create processor:
 
@@ -38,8 +37,7 @@ $response = $modx->runProcessor('security/resourcegroup/create', array(
 ));
 
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [Using runProcessor](developing-in-modx/advanced-development/using-runprocessor)

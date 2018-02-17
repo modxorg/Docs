@@ -4,15 +4,16 @@ _old_id: "1169"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/generating-the-model-code"
 ---
 
-<div>- [Loading xPDOManager and xPDOGenerator](#GeneratingtheModelCode-LoadingxPDOManagerandxPDOGenerator)
+- [Loading xPDOManager and xPDOGenerator](#GeneratingtheModelCode-LoadingxPDOManagerandxPDOGenerator)
 - [Setting Class and Map Templates](#GeneratingtheModelCode-SettingClassandMapTemplates)
 - [Generating the Files](#GeneratingtheModelCode-GeneratingtheFiles)
 - [Conclusion](#GeneratingtheModelCode-Conclusion)
 
-</div>To use your newly created XML schema, you'll need to create a PHP script that will parse the XML schema into the xPDO PHP classes and maps.
 
-Loading xPDOManager and xPDOGenerator
--------------------------------------
+
+To use your newly created XML schema, you'll need to create a PHP script that will parse the XML schema into the xPDO PHP classes and maps.
+
+## Loading xPDOManager and xPDOGenerator
 
 Create a PHP file where you have access to an xPDO instance. Then, let's set the Log Target to the browser, and raise it a bit to get more detailed information.
 
@@ -28,10 +29,11 @@ $xpdo->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 $manager= $xpdo->getManager();
 $generator= $manager->getGenerator();
 
-```Setting Class and Map Templates
--------------------------------
+```## Setting Class and Map Templates
 
-<div class="note">Setting the Templates is completely optional. xPDO provides you with some basic templates that will work fine.</div>By default, xPDO provides you with default class and map templates. For the purposes of this example, however, we want to create class files and maps with PHPDoc formatting at the top, so we'll need to override the default class and map templates.
+Setting the Templates is completely optional. xPDO provides you with some basic templates that will work fine.
+
+By default, xPDO provides you with default class and map templates. For the purposes of this example, however, we want to create class files and maps with PHPDoc formatting at the top, so we'll need to override the default class and map templates.
 
 To do so, we'll just override the variables in the $generator object:
 
@@ -61,10 +63,9 @@ $generator->mapHeader= <<<EOD
  */
 EOD;
 
-```Note the \[<ins>phpdoc-package</ins>\] tag that we've built. This is taken from our "model" tag's attribute we defined earlier in the schema. These templates will provide us with the base for our class and map files, with PHPDoc comments.
+```Note the \[phpdoc-package\] tag that we've built. This is taken from our "model" tag's attribute we defined earlier in the schema. These templates will provide us with the base for our class and map files, with PHPDoc comments.
 
-Generating the Files
---------------------
+## Generating the Files
 
 And finally, we want to actually parse this into a file:
 
@@ -76,8 +77,7 @@ $generator->parseSchema($schema,$target);
 
 ```This block of code executes the schema parsing method, and then outputs the total time the script took to execute. Run it, and viola! Our model/ directory now has a storefinder/ subdirectory, which is filled with all of our map and class files.
 
-Conclusion
-----------
+## Conclusion
 
 With the help of [xPDOGenerator](/xpdo/2.x/class-reference/xpdogenerator "xPDOGenerator"), making your XML schema files into usable PHP classes and maps is simple. Now that we've got our PHP code, we'll proceed onto steps on [how to use it](/xpdo/2.x/getting-started/using-your-xpdo-model "Using Your xPDO Model").
 

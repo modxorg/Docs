@@ -4,8 +4,7 @@ _old_id: "1256"
 _old_uri: "2.x/class-reference/xpdo/xpdo.setlogtarget"
 ---
 
-xPDO::setLogTarget
-------------------
+## xPDO::setLogTarget
 
  Sets the log target for xPDO::\_log() calls.
 
@@ -18,8 +17,7 @@ xPDO::setLogTarget
 
  Returns the formerly set log target.
 
-Syntax
-------
+## Syntax
 
  API Docs: <http://api.modxcms.com/xpdo/xPDO.html#setLogTarget>
 
@@ -27,8 +25,7 @@ Syntax
 <pre class="brush: php">
 mixed setLogTarget ([string $target = 'ECHO'], mixed 1)
 
-```Examples
---------
+```## Examples
 
  Set the log target to format log messages in HTML and output to the browser.
 
@@ -48,8 +45,7 @@ $xpdo->setLogTarget(array(
     )
 ));
 
-```See Also
---------
+```## See Also
 
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
 - [xPDO.log](/xpdo/2.x/class-reference/xpdo/xpdo.log)

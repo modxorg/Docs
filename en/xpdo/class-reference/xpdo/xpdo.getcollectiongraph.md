@@ -4,15 +4,13 @@ _old_id: "1239"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getcollectiongraph"
 ---
 
-xPDO::getCollectionGraph
-------------------------
+## xPDO::getCollectionGraph
 
 Retrieves a collection of xPDOObjects and related objects by the specified xPDOCriteria.
 
 If none are found, returns an empty array.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modx.com/xpdo/xPDO.html#getCollectionGraph>
 
@@ -26,8 +24,7 @@ array getCollectionGraph (string $className, array|str $graph, [xPDOCriteria|arr
 <pre class="brush: php">
 <object class="MyClassName" table="my_class_name" extends="xPDOObject">
 
-```Example
--------
+```## Example
 
 Get a collection of Box objects with related BoxColors and Color objects, where the Box has a width of 40.
 
@@ -40,9 +37,10 @@ foreach ($boxes as $box) {
     }
 }
 
-```<div class="note">**No additional queries**  
-The main benefit of using getCollectionGraph is to retrieve data from related tables in a single query. No additional queries are executed when getMany() or getOne() are called on the related objects that are already loaded from the $graph. Graph's are a useful alternative to using xPDO joins.</div>Debugging
----------
+```**No additional queries**
+The main benefit of using getCollectionGraph is to retrieve data from related tables in a single query. No additional queries are executed when getMany() or getOne() are called on the related objects that are already loaded from the $graph. Graph's are a useful alternative to using xPDO joins.
+
+## Debugging
 
 There are a couple caveats to keep in mind when using getCollectionGraph. You can't use the traditional "prepare" and "toSQL" methods. Consider the following code:
 
@@ -59,8 +57,7 @@ $pages = $modx->getCollectionGraph('modResource', '{"TemplateVarResources":{"Tem
 
 The join on the related tables occurs in this case when the getCollectionGraph() function is executed, so trying to print the SQL prior to that moment will not produce an accurate result.
 
-See Also
---------
+## See Also
 
 - [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
 - [xPDO.getCollectionGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")

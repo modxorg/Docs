@@ -4,20 +4,24 @@ _old_id: "349"
 _old_uri: "2.x/getting-started/installation/command-line-installation"
 ---
 
-<div class="note">CLI Installation is available only for MODX Revolution versions 2.2 and later.</div><div>- [Installing MODX via the PHP Command Line](#CommandLineInstallation-InstallingMODXviathePHPCommandLine)
+CLI Installation is available only for MODX Revolution versions 2.2 and later.
+
+- [Installing MODX via the PHP Command Line](#CommandLineInstallation-InstallingMODXviathePHPCommandLine)
 - [New CLI Installations](#CommandLineInstallation-NewCLIInstallations)
 - [Doing a Basic Upgrade MODX via CLI](#CommandLineInstallation-DoingaBasicUpgradeMODXviaCLI)
 - [Doing an Advanced Upgrade MODX via CLI](#CommandLineInstallation-DoinganAdvancedUpgradeMODXviaCLI)
 - [Using a Helper Script](#CommandLineInstallation-UsingaHelperScript)
 - [See Also](#CommandLineInstallation-SeeAlso)
 
-</div>Installing MODX via the PHP Command Line
-----------------------------------------
+
+
+## Installing MODX via the PHP Command Line
 
 MODX allows you to do upgrades and installations via the command line (CLI) while using a config XML file. (More info on this file can be found [here](getting-started/installation/command-line-installation/the-setup-config-xml-file "The Setup Config Xml File").) This allows users to create simple batch scripts to update their MODX installations.
 
-<div class="warning">When running upgrades, it is **always** recommended to backup your files before upgrading.</div>New CLI Installations
----------------------
+When running upgrades, it is **always** recommended to backup your files before upgrading.
+
+## New CLI Installations
 
 First off, [download MODX](http://modx.com/download/) and extract the files to your server. In the setup/ directory, copy the file "config.dist.new.xml" and rename it to "config.xml". MODX will automatically look for the setup/config.xml file during installation. You can move it outside of the setup/ directory (and the MODX webroot, if you choose), and specify its location with the "--config=/path/to/config.xml" argument.
 
@@ -35,8 +39,7 @@ Note : if your core folder is in a "non-standard" location, you might want to us
 <pre class="brush: php">
 --core_path=/path/to/core/
 
-```Doing a Basic Upgrade MODX via CLI
-----------------------------------
+```## Doing a Basic Upgrade MODX via CLI
 
 Follow the same steps as new installations, but this time in your XML file you need only specify the following attributes:
 
@@ -53,8 +56,7 @@ php ./index.php --installmode=upgrade
 
 ```This will upgrade your MODX installation, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
 
-Doing an Advanced Upgrade MODX via CLI
---------------------------------------
+## Doing an Advanced Upgrade MODX via CLI
 
 Follow the same steps as basic upgrade, but this time in your XML file you need all the attributes included in the config.dist.upgrade-advanced.xml file, as all can be changed in an advanced upgrade.
 
@@ -66,15 +68,13 @@ php ./index.php --installmode=upgrade-advanced
 
 ```This will upgrade your MODX installation, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
 
-Using a Helper Script
----------------------
+## Using a Helper Script
 
 There is a helper script **installmodx.php** available on Github: [https://github.com/craftsmancoding/modx\_utils/blob/master/installmodx.php](https://github.com/craftsmancoding/modx_utils/blob/master/installmodx.php)
 
 It provides command line options for this process. Here's a video of it in action:
 
-<object height="300" width="400"><param name="movie" value="http://www.youtube.com/v/-FR10DR16CE&hl=en&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed allowfullscreen="true" allowscriptaccess="always" flashvars="$flashVars" height="300" src="http://www.youtube.com/v/-FR10DR16CE&hl=en&fs=1" type="application/x-shockwave-flash" width="400"></embed></object>See Also
---------
+## See Also
 
 1. [Basic Installation](getting-started/installation/basic-installation)
   1. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)

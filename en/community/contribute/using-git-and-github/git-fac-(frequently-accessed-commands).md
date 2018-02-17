@@ -4,14 +4,16 @@ _old_id: "1131"
 _old_uri: "contribute/using-git-and-github/git-fac-(frequently-accessed-commands)"
 ---
 
-<div>- [How do I get and keep my local major-version branch in sync?](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIgetandkeepmylocaldevelopbranchinsync%3F)
+- [How do I get and keep my local major-version branch in sync?](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIgetandkeepmylocaldevelopbranchinsync%3F)
 - [How do I create a feature branch?](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIcreateafeaturebranch%3F)
 - [Is there a naming convention for feature branches?](#GitFAC%28FrequentlyAccessedCommands%29-Isthereanamingconventionforfeaturebranches%3F)
 - [Do I need a new feature branch for every issue that I work on?](#GitFAC%28FrequentlyAccessedCommands%29-DoIneedanewfeaturebranchforeveryissuethatIworkon%3F)
 - [How do I keep my feature branch in sync with the upstream develop branch?](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIkeepmyfeaturebranchinsyncwiththeupstreamdevelopbranch%3F)
 - [Do I really need to worry about the minor-version branch?](#GitFAC%28FrequentlyAccessedCommands%29-DoIreallyneedtoworryaboutthemasterbranch%3F)
  
-</div>### How do I get and keep my local develop branch in sync?
+
+
+### How do I get and keep my local develop branch in sync?
 
  First, with MODX's collaboration and branching model, you won't be making commits to your major-version branch, so it's easy to keep it up to date. Let's assume you are working with `2.x`:
 

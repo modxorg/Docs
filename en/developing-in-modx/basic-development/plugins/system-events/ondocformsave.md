@@ -4,22 +4,21 @@ _old_id: "422"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocformsave"
 ---
 
-Event: OnDocFormSave
---------------------
+## Event: OnDocFormSave
 
 Fires after a Resource is saved in the manager via the editing form.
 
-Service: 1 - Parser Service Events   
+Service: 1 - Parser Service Events 
 Group: Documents
 
-<div class="tip">**TVs are best Modified Here**  
-If you need to modify TV values, it's best to modify them here and not during [OnBeforeDocFormSave](developing-in-modx/basic-development/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave").</div>Unlike [OnBeforeDocFormSave](developing-in-modx/basic-development/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave"), this event does not support the $modx->event->output() method.
+**TVs are best Modified Here**
+If you need to modify TV values, it's best to modify them here and not during [OnBeforeDocFormSave](developing-in-modx/basic-development/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave").
 
-Event Parameters
-----------------
+Unlike [OnBeforeDocFormSave](developing-in-modx/basic-development/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave"), this event does not support the $modx->event->output() method.
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>mode</td><td>Either 'new' or 'upd', depending on the circumstances.</td></tr><tr><td>resource</td><td>A reference to the modResource object.</td></tr><tr><td>id</td><td>The ID of the Resource (even for new resources)</td></tr></tbody></table>Examples
---------
+## Event Parameters
+
+NameDescriptionmodeEither 'new' or 'upd', depending on the circumstances.resourceA reference to the modResource object.idThe ID of the Resource (even for new resources)## Examples
 
 To do something with the page ID (e.g. to update a related custom table), you can read this out of the **$resource** object (even if you are creating a new resource):
 
@@ -68,9 +67,10 @@ switch ($modx->event->name) {
         break;
 }
 
-```<div class="tip">**Saving Happens Automatically**  
-No need to run the `$resource->save()` method as that happens automatically.</div>See Also
---------
+```**Saving Happens Automatically**
+No need to run the `$resource->save()` method as that happens automatically.
+
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

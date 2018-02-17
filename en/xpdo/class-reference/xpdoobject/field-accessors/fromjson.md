@@ -4,13 +4,11 @@ _old_id: "1167"
 _old_uri: "2.x/class-reference/xpdoobject/field-accessors/fromjson"
 ---
 
-xPDOObject::fromJSON()
-----------------------
+## xPDOObject::fromJSON()
 
 Sets the object fields from a JSON object string.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#fromJSON>
 
@@ -24,8 +22,7 @@ void fromJSON (
    [boolean $adhocValues = false]
 )
 
-```Example
--------
+```## Example
 
 ```
 <pre class="brush: php">
@@ -34,8 +31,7 @@ $object->fromJSON($str);
 echo $object->get('name').' '.$object->get('email');
 // prints "Sirius Black"
 
-```See Also
---------
+```## See Also
 
 - [fromArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
 - [toArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/toarray "toArray")

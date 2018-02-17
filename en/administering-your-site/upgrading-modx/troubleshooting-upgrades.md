@@ -4,7 +4,7 @@ _old_id: "491"
 _old_uri: "2.x/administering-your-site/upgrading-modx/troubleshooting-upgrades"
 ---
 
-<div>- [Common Problems](#TroubleshootingUpgrades-CommonProblems)
+- [Common Problems](#TroubleshootingUpgrades-CommonProblems)
   - [Help! The only option I can choose is "New Installation", but this is an upgrade!](#TroubleshootingUpgrades-Help%5C%21TheonlyoptionIcanchooseis%22NewInstallation%22%2Cbutthisisanupgrade%5C%21)
   - [Setup went well, but my manager isn't fully working.](#TroubleshootingUpgrades-Setupwentwell%2Cbutmymanagerisn%27tfullyworking.)
   - [Some manager pages are blank due to 400 Bad Request from manager/min/](#TroubleshootingUpgrades-Somemanagerpagesareblankdueto400BadRequestfrommin)
@@ -13,8 +13,9 @@ _old_uri: "2.x/administering-your-site/upgrading-modx/troubleshooting-upgrades"
  [](#TroubleshootingUpgrades-Somemanagerpagesareblankdueto400BadRequestfrommin.)- [](#TroubleshootingUpgrades-Somemanagerpagesareblankdueto400BadRequestfrommin.)[Still Problems?](#TroubleshootingUpgrades-StillProblems%3F)
 - [See Also](#TroubleshootingUpgrades-SeeAlso)
  
-</div>Common Problems
----------------
+
+
+## Common Problems
 
  First off, make sure:
 
@@ -38,13 +39,11 @@ _old_uri: "2.x/administering-your-site/upgrading-modx/troubleshooting-upgrades"
 
  If you've never had problems with min before and you happen to have installed the ACE Extra, make sure the files it refers to in manager/components/ace/ exist.
 
-Still Problems?
----------------
+## Still Problems?
 
  File a bug here: <http://tracker.modx.com/> and we'll get right to the issue.
 
-See Also
---------
+## See Also
 
 - [Troubleshooting Installation](getting-started/installation/troubleshooting-installation "Troubleshooting Installation")
 - [Additional Troubleshooting](faqs-and-troubleshooting "FAQs & Troubleshooting")

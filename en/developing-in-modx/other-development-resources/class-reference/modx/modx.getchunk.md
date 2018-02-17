@@ -4,15 +4,15 @@ _old_id: "1062"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getchunk"
 ---
 
-modX::getChunk
---------------
+## modX::getChunk
 
 Processes and returns the output from an HTML chunk by name.
 
 **getChunk** actually sets the properties you pass (and that are picked up from default properties and/or a property set) as placeholders (preserving any with the same key and restoring those after processing is complete) and allows the modChunk class to process() them (along with any other tags, filters, etc.).
 
-<div class="info">**getChunk** will execute the MODX parser, so you can use output filters and the $properties array can be multi-dimenstional (i.e. more than just simple key/value pairs). If this is more horsepower than you need, use [modX.parseChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.parsechunk "modX.parseChunk") instead.</div>Syntax
-------
+**getChunk** will execute the MODX parser, so you can use output filters and the $properties array can be multi-dimenstional (i.e. more than just simple key/value pairs). If this is more horsepower than you need, use [modX.parseChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.parsechunk "modX.parseChunk") instead.
+
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getChunk()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getChunk())
 
@@ -46,8 +46,7 @@ $properties['document']['id'] = 27;
 
 ```In cases where a multi-dimensional array is used, the placeholder syntax changes to use a dot for each node in the array, e.g. \[\[+user.id\]\] and \[\[+document.id\]\]
 
-Examples
---------
+## Examples
 
 ### Simple Example
 
@@ -135,8 +134,7 @@ $chunk->setCacheable(false);
 
 $output = $chunk->process($props, $tpl);
 
-```See Also
---------
+```## See Also
 
 - [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks")
 - [modX.parseChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.parsechunk "modX.parseChunk")

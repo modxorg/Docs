@@ -40,7 +40,11 @@ class Converter {
         $this->modx->setLogTarget('ECHO');
 
         // Get the League's converter
-        $this->converter = new HtmlConverter();
+        $this->converter = new HtmlConverter([
+            'hard_break' => true,
+            'strip_tags' => true,
+            'header_style' => 'atx',
+        ]);
 
         $this->outputDir = dirname(__DIR__) . '/en/';
     }
@@ -153,6 +157,8 @@ class Converter {
             // Filter out part of the link to turn 'm into relative links
             $parsed = str_replace('](revolution/2.x/', '](', $parsed);
             $parsed = str_replace('](/revolution/2.x/', '](', $parsed);
+            $parsed = str_replace('](https://docs.modx.com/revolution/2.x/', '](', $parsed);
+            $parsed = str_replace('](http://docs.modx.com/revolution/2.x/', '](', $parsed);
 
             return $parsed;
         }

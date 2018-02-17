@@ -4,18 +4,19 @@ _old_id: "1116"
 _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i"
 ---
 
-<div>- [The Simple How](#PHPCodinginMODxRevolution%2CPt.I-TheSimpleHow)
+- [The Simple How](#PHPCodinginMODxRevolution%2CPt.I-TheSimpleHow)
 - [The Model](#PHPCodinginMODxRevolution%2CPt.I-TheModel)
 - [See Also](#PHPCodinginMODxRevolution%2CPt.I-SeeAlso)
 
-</div>So, a lot of people have been asking about the new codebase. Is it coder-friendly? Will it be a big deviation from 0.9.6/Evolution? Does it support OOP projects? Is it faster? Will it be easy to learn?
+
+
+So, a lot of people have been asking about the new codebase. Is it coder-friendly? Will it be a big deviation from 0.9.6/Evolution? Does it support OOP projects? Is it faster? Will it be easy to learn?
 
 In these tutorials, we plan to answer those questions with YES.
 
 The codebase in Revolution has switched to [xPDO](http://www.xpdo.org/ "xPDO Homepage"), an object relational bridge modeling tool built by Jason Coward. In layman's terms, this means that all the database tables are now represented by PHP objects (as is common with any ORM). Chunks are represented by 'modChunk' objects, snippets by 'modSnippet' objects and so on.
 
-The Simple How 
----------------
+## The Simple How 
 
 So, how does one actually get an object in the new modx? Well, you used to have to rely on a handful of different functions:
 
@@ -61,8 +62,7 @@ $document = $modx->getObject('modResource',array(
     'alias' => 'test',
 ));
 
-```The Model 
-----------
+```## The Model 
 
 So, you're probably asking, Where is the list of table names to object names map? It can be found in "core/model/schema/modx.mysql.schema.xml". (You'll note the 'mysql' - yes, this means that MODx will in the near future support other databases) From there you can view an XML representation of all the MODx DB tables.
 
@@ -110,10 +110,9 @@ foreach ($settings as $setting) {
     echo 'Setting value: '.$setting->get('value').' <br />';
 }
 
-```Pretty easy, huh? We'll get into creating and removing objects, as well as more complex queries, such as inner joins, limits, sorting and others, in the <span class="error">\[next article\]</span>.
+```Pretty easy, huh? We'll get into creating and removing objects, as well as more complex queries, such as inner joins, limits, sorting and others, in the \[next article\].
 
-See Also 
----------
+## See Also 
 
 - [xPDO: Defining a Schema](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema "Defining a Schema")
 - [xPDO: Related Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")

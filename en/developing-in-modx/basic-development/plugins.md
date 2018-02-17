@@ -4,7 +4,7 @@ _old_id: "242"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins"
 ---
 
-<div>- [What is a Plugin?](#Plugins-WhatisaPlugin%3F)
+- [What is a Plugin?](#Plugins-WhatisaPlugin%3F)
 - [The Event Model](#Plugins-TheEventModel)
 - [Handling an Event](#Plugins-HandlinganEvent)
 - [Plugin Examples](#Plugins-PluginExamples)
@@ -14,21 +14,24 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins"
   - [Page-Not-Found Redirector:](#Plugins-PageNotFoundRedirector%3A)
 - [See Also](#Plugins-SeeAlso)
 
-</div>What is a Plugin?
------------------
+
+
+## What is a Plugin?
 
 Plugins are similar to Snippets in that they are bits of PHP code that have access to the MODx API. The big difference, however, is in _when_ the code executes. You put Snippets inside of a page or inside a template and they run when the page is viewed, whereas Plugins are set to execute during certain system events, e.g. saving a Chunk, or emptying the cache. So when a given event "fires", any Plugin "listening" for that event is executed. Once the Plugin's code has executed, control returns to the point after the spot where the System Event was triggered.
 
-<div class="info">**Other CMSs**   
- Every CMS uses some concept of "plugin", but the exact nomenclature may differ. In WordPress, for example, plugins are "hooked" to events called "actions" or "filters".</div>Since they execute during various events, Plugins aren't limited to front-end processing. Many events are triggered by events that take place only within the MODx Manager. There is a list of MODx System Events [here](http://wiki.modxcms.com/index.php/System_Events "MODx System Events").
+**Other CMSs** 
+ Every CMS uses some concept of "plugin", but the exact nomenclature may differ. In WordPress, for example, plugins are "hooked" to events called "actions" or "filters".
 
-<div class="info">Any closing PHP tag ?> will be stripped from your plugin code when it is saved. It's unnecessary (and unwanted) because the plugin code will end up inside other PHP code when executed.</div>The Event Model
----------------
+Since they execute during various events, Plugins aren't limited to front-end processing. Many events are triggered by events that take place only within the MODx Manager. There is a list of MODx System Events [here](http://wiki.modxcms.com/index.php/System_Events "MODx System Events").
+
+Any closing PHP tag ?> will be stripped from your plugin code when it is saved. It's unnecessary (and unwanted) because the plugin code will end up inside other PHP code when executed.
+
+## The Event Model
 
 MODx invokes System Events across its code processes to allow you to modify core functionality without hacking the core. These System Events can have any number of Plugins attached to them, and will execute each Plugin in rank according to its priority (lowest numbers first).
 
-Handling an Event
------------------
+## Handling an Event
 
 In your Plugin, how you handle the output depends on the System Event you are in. For some system events, you return a value from the Plugin. For others, you access the output by reference and modify it.
 
@@ -50,14 +53,13 @@ switch($eventName) {
         break;
 }
 
-```Plugin Examples
----------------
+```## Plugin Examples
 
 Plugins can be used for a variety of different applications, below are a couple of examples:
 
 ### Message the User:
 
-**Description:** Send a custom message to the user as they create/edit a page... a custom header.   
+**Description:** Send a custom message to the user as they create/edit a page... a custom header. 
 **System Events:** OnDocFormPrerender
 
 ```
@@ -67,7 +69,7 @@ Plugins can be used for a variety of different applications, below are a couple 
 
 ### Custom Validation
 
-**Description:** Do some custom validation on saving a page resource   
+**Description:** Do some custom validation on saving a page resource 
 **System Events:** OnBeforeDocFormSave
 
 ```
@@ -77,15 +79,17 @@ return "This goes to the logs";
 
 ```The trick here is that what you want to message the user has to be passed to the **$modx->event->output()** function; any text you want to write to the logs can simply be returned by the plugin. If you pass validation, simply return null.
 
-<div class="warning">**No HTML Allowed**   
- The output you set in **$modx->event->output()** must not contain any HTML! Use plain text only! This is because the message is passed to the user via a Javascript modal window.  
-  
-Return value must be a string. If your return value will be a number, concatenate it with an empty string.  
-</div>- - - - - -
+**No HTML Allowed** 
+ The output you set in **$modx->event->output()** must not contain any HTML! Use plain text only! This is because the message is passed to the user via a Javascript modal window.
+
+Return value must be a string. If your return value will be a number, concatenate it with an empty string.
+
+
+- - - - - -
 
 ### Word Filter
 
-**Description:** Filter words from a document before it's displayed on the web   
+**Description:** Filter words from a document before it's displayed on the web 
 **System Events:** OnWebPagePrerender
 
 ```
@@ -98,8 +102,8 @@ $output = str_replace($words,"<b>[filtered]</b>",$output);
 
 ### Page-Not-Found Redirector:
 
-**Description:** Redirects a user to selected document and sends a message   
-**System Events:** OnPageNotFound   
+**Description:** Redirects a user to selected document and sends a message 
+**System Events:** OnPageNotFound 
 **System Settings:**
 
 - _pnf.page_: Error Resource ID
@@ -134,8 +138,7 @@ $output = str_replace($words,"<b>[filtered]</b>",$output);
     }
 }
 
-```See Also
---------
+```## See Also
 
 1. [System Events](developing-in-modx/basic-development/plugins/system-events)
   1. [OnBeforeCacheUpdate](developing-in-modx/basic-development/plugins/system-events/onbeforecacheupdate)

@@ -4,26 +4,22 @@ _old_id: "429"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onloadwebdocument"
 ---
 
-Event: OnLoadWebDocument 
--------------------------
+## Event: OnLoadWebDocument 
 
 Fires directly before the Response is sent and after a Resource is loaded.
 
-Service: 5 - Template Service Events   
+Service: 5 - Template Service Events 
 Group: None
 
-Event Parameters 
------------------
+## Event Parameters 
 
 None. The resource can be referenced via $modx->resource.
 
-Return Values 
---------------
+## Return Values 
 
 Any values returned from this event will be written as errors to the logs.
 
-Usage 
-------
+## Usage 
 
 _\* Some of this may not be accurate because I'm testing this via trial and error._
 
@@ -46,8 +42,7 @@ After a page has been cached (i.e. _not_ the first page load), you can append or
 <pre class="brush: php">
 $modx->resource->_content = 'Content override';
 
-```See Also 
----------
+```## See Also 
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

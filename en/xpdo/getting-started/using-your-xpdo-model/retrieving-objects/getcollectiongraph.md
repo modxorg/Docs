@@ -4,8 +4,7 @@ _old_id: "1171"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/retrieving-objects/getcollectiongraph"
 ---
 
-Overview
---------
+## Overview
 
 getCollectionGraph allows you to automatically load up related objects by specifying a JSON style hash to its second argument (in other words, it automatically joins a table on its related tables). It's possible to nest the JSON hash so you also retrieve the related objects of the related objects, for example:
 
@@ -20,8 +19,9 @@ $TFR = $modx->getCollectionGraph('TrackingformsResources', '{ "Resources":{ "Mas
 
 ```xPDO translates this all into the necessary database query that joins on the appropriate tables (e.g. perhaps named trackingforms\_resources, resources, and units) – like most of the xPDO methods, you refer to a model's tables/classes via their aliases.
 
-<div class="note">You can \*NOT\* set a limit on a getCollectionGraph when using an xPDOQuery object - you will be limiting the total number of rows fetched, which is not the same as the total number of top level (eg BlogPost) objects. You can get very unexpected results by doing so.</div>Sample Snippet
---------------
+You can \*NOT\* set a limit on a getCollectionGraph when using an xPDOQuery object - you will be limiting the total number of rows fetched, which is not the same as the total number of top level (eg BlogPost) objects. You can get very unexpected results by doing so.
+
+## Sample Snippet
 
 The below example that specifies several related objects. In the **Zip** XML schema, there would be some sort of aggregate relationship defined for "TZ", "ST", and "CT".
 
@@ -44,7 +44,9 @@ foreach ($collection as $obj)
 return $out;
 ?>
 
-```<div class="note">Note that when you are using $xpdo->newQuery() to filter the results and have multiple field names which are the same, for example an "id" field, in one or more of the different classes you join, xPDO will fail to return any result. Simply prefix your fieldname with the classname in that case, for example myClassName.id</div>### Snippet Call
+```Note that when you are using $xpdo->newQuery() to filter the results and have multiple field names which are the same, for example an "id" field, in one or more of the different classes you join, xPDO will fail to return any result. Simply prefix your fieldname with the classname in that case, for example myClassName.id
+
+### Snippet Call
 
 ```
 <pre class="brush: php">
@@ -92,9 +94,11 @@ WHERE Z.`id` = 32117
 
 The following schema is greatly simplified for readability and this example:
 
-<div class="note">class= had to be renamed to klass= to be presented in this document system. Though a functional schema, this is not a final schema by any stretch of the imagination. In fact this is during the second stage of normalization, and is here for example purposes only.
+class= had to be renamed to klass= to be presented in this document system. Though a functional schema, this is not a final schema by any stretch of the imagination. In fact this is during the second stage of normalization, and is here for example purposes only.
 
-</div>```
+
+
+```
 <pre class="brush: php">
 ?
 <model package="sw_zipCode" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
@@ -135,8 +139,7 @@ The following schema is greatly simplified for readability and this example:
 </object>
 </model>
 
-```Another Example
----------------
+```## Another Example
 
 Another relation example that is common is joining MODX pages with their Template Variable values. Sometimes this does not work as expected since values are stored differently than you might expect. But here's a walk-through.
 
@@ -152,15 +155,13 @@ foreach ($pages as $p) {
         }
 }
 
-```Comments
---------
+```## Comments
 
 1. Obtain a connection via [the xPDO Constructor](/xpdo/1.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") including [Hydrating Fields](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields "Hydrating Fields")
 2. Viewing the package name in the schema we set (or apply) the package to our connection, taking note of the prefix our tables are using in the database
 3. Using 'Zip' as our "view" we look at the relationships directly defined in the Zip object, in our schema, and access those via the aliases given there
 
-Additional Notes:
------------------
+## Additional Notes:
 
 Everything is about the schema definition. A poorly thought out and developed schema may very well lead to many hours of frustration.
 

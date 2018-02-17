@@ -4,13 +4,17 @@ _old_id: "1049"
 _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier"
 ---
 
-<div class="panel" style="border-width: 1px;"><div class="panelContent">This tutorial is part of a Series:
+This tutorial is part of a Series:
 
 - Part I: Getting Started and Creating the Doodles Snippet
 - [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-ii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part II - MODX 2.1 and Earlier")
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-iii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part III - MODX 2.1 and Earlier")
 
-</div></div><div>- [Overview](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-Overview)
+
+
+
+
+- [Overview](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-Overview)
 - [Setting Up Our Directories](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-SettingUpOurDirectories)
 - [Creating the Doodles Snippet](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-CreatingtheDoodlesSnippet)
   - [Making the Magic Path Settings](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-MakingtheMagicPathSettings)
@@ -22,15 +26,17 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
   - [The Doodles class getChunk Method](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-TheDoodlesclassgetChunkMethod)
 - [Summary](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-Summary)
 
-</div>Overview
---------
+
+
+## Overview
 
 This tutorial is written as a comprehensive example on developing Extras for MODX Revolution - as well as how to setup your Extra to be easily packaged into a Transport Package, as well as able to be developed outside the MODX webroot so that source control (such as Git) can be used.
 
 The overview will be dissecting the "Doodles" Extra, which is a simple Extra that uses a custom table to store objects called "Doodles", which have a name and a description. We'll have a Snippet that pulls them and displays a list of them that is templatable via a Chunk, a Custom Manager Page using ExtJS to have a CRUD grid for editing, and a build script for packaging. And we'll make it all i18n-compatible to allow easy translating. **This is an extremely comprehensive tutorial**, so if you're wanting only specific parts, use the Table of Contents above.
 
-<div class="note">The Doodles Extra in this tutorial can be found on GitHub, here: <https://github.com/splittingred/Doodles/tree/2.1></div>Setting Up Our Directories
---------------------------
+The Doodles Extra in this tutorial can be found on GitHub, here: <https://github.com/splittingred/Doodles/tree/2.1>
+
+## Setting Up Our Directories
 
 There are many ways that you could start developing your Extra - you could do so straight out of MODX and package it with a packaging tool like [PackMan](/extras/revo/packman "PackMan"), or you could alternatively develop it outside of the MODX webroot and put it in a source control system such as [Git](http://github.com/). This tutorial will be doing the latter method, as it is beneficial for a few reasons:
 
@@ -42,7 +48,9 @@ Let's start. I've created a directory in my /www/ directory at: /www/doodles/
 
 You can do it wherever you want, but for this tutorial I'll refer to /www/doodles/. Make sure that this directory is **web-accessible** locally, as you'll need that later on. I have /www/ setup as / on my localhost environment, for example.
 
-<div class="note">You **may** have to add a System Setting in your MODX install called session\_cookie\_path and give it a value of "/" (no quotations). This will tell MODX to use the same session when you're running stuff at <http://localhost/doodles/>. Also, giving it a unique name via session\_cookie\_name (like "modxlocaldevsession") is a good idea too. That'll prevent conflicts with other MODX installs on your local machine. If you do this, empty the core/cache/ directory and relogin after doing so.</div>In here, we'll have quite a few directories:
+You **may** have to add a System Setting in your MODX install called session\_cookie\_path and give it a value of "/" (no quotations). This will tell MODX to use the same session when you're running stuff at <http://localhost/doodles/>. Also, giving it a unique name via session\_cookie\_name (like "modxlocaldevsession") is a good idea too. That'll prevent conflicts with other MODX installs on your local machine. If you do this, empty the core/cache/ directory and relogin after doing so.
+
+In here, we'll have quite a few directories:
 
 ![](/download/attachments/37683302/doodles-dir-structure.png?version=1&modificationDate=1325795501000)
 
@@ -67,8 +75,7 @@ Let's also note that this directory is **completely** outside of our MODX webroo
 
 There we have it. A completely isolated development environment from MODX so that we can do separate development and seamless collaboration. Let's get further in.
 
-Creating the Doodles Snippet
-----------------------------
+## Creating the Doodles Snippet
 
 Okay. Go ahead and create a Snippet file in:
 
@@ -457,17 +464,14 @@ return $output;
 
 ```And we've got it loading our custom base class from our System Setting-defined paths, adding our custom xPDO db package, pulling from our custom database table, and outputting it via a Chunk. Cool, huh?
 
-Summary
--------
+## Summary
 
 We've got ourselves a nice custom database model, which our Doodles Snippet using to grab Doodles records from our database. We also have looked at the basic structure for a comprehensive MODX Extra.
 
 But we're gonna want some way of editing that data in the MODX manager, right? Well, that's where Custom Manager Pages (CMPs) come in. Go on and proceed to the [next part of this tutorial](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-ii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part II - MODX 2.1 and Earlier").
 
-<div class="panel" style="border-width: 1px;"><div class="panelContent">This tutorial is part of a Series:
+This tutorial is part of a Series:
 
 - Part I: Getting Started and Creating the Doodles Snippet
 - [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-ii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part II - MODX 2.1 and Earlier")
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-iii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part III - MODX 2.1 and Earlier")
-
-</div></div>

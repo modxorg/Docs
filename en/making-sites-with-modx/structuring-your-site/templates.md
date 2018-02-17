@@ -4,8 +4,7 @@ _old_id: "305"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/templates"
 ---
 
-What are Templates?
--------------------
+## What are Templates?
 
 Templates typically contain the HTML markup tags that determine the layout and appearance of your site. When a document is requested, MODx loads the document and its template, and MODx finds all the special placeholders in the template and replaces them with the corresponding values from the document before sending the finished page off to the user's browser.
 
@@ -15,8 +14,7 @@ Think of a Template like a house. Your [Resource's](making-sites-with-modx/struc
 
 [Resources](making-sites-with-modx/structuring-your-site/resources "Resources") can only use one Template at a time, however, a Resource can switch Templates at any time, just as a person can move from house to house at any time. The Template, just like a house, also changes the main way a page is displayed. A Template usually contains the header and footer of a page - and/or a sidebar, navigation bar, etc.
 
-Usage
------
+## Usage
 
 To create a Template -- Expand the "Elements" part of the tree and right click on Templates. Select "Create a New Template" then paste your HTML into the "Template Code" textarea; you can copy and paste the text below to get started with a very simple template:
 
@@ -43,7 +41,9 @@ MenuTitle: [[*menutitle]]
 
 ```Note the important \[\[\*content\]\] tag; this tag tells MODx where to put the Resource's content.
 
-<div class="note">MODX defaults to storing templates in its database, if you are using a version prior to 2.2.x this is your only option. In MODX 2.2.x and newer you have the option of storing templates as static files using Media Sources.</div>Remember that simply _creating_ a template doesn't mean that it is automatically put to use: you have to edit each [Resources](making-sites-with-modx/structuring-your-site/resources "Resources") and specify which Template it uses. This is different from some content management systems where each template has one or many pages. Each MODx page has a single Template that it uses to format output.
+MODX defaults to storing templates in its database, if you are using a version prior to 2.2.x this is your only option. In MODX 2.2.x and newer you have the option of storing templates as static files using Media Sources.
+
+Remember that simply _creating_ a template doesn't mean that it is automatically put to use: you have to edit each [Resources](making-sites-with-modx/structuring-your-site/resources "Resources") and specify which Template it uses. This is different from some content management systems where each template has one or many pages. Each MODx page has a single Template that it uses to format output.
 
 After you've created one or more Templates, you can edit any Resource and choose a Template for it by selecting one from the "Uses Template" drop-down list.
 
@@ -89,10 +89,7 @@ You can then reference your "bioPhoto" TV in your content with the same tag synt
 
 ```Again, it's important to note that [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") must be explicitly assigned to the Template to be used. Once assigned to the Template, a TV's value for that Resource will be able to be edited when editing the Resource. If you're not seeing a newly created TV in your Resources, make sure you've assigned that TV to the Template.
 
-See Also
---------
+## See Also
 
 - [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax")
 - [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
-
-</body></html>

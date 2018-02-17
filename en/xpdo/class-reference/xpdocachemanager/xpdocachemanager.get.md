@@ -4,8 +4,7 @@ _old_id: "1266"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.get"
 ---
 
-xPDOCacheManager::get
----------------------
+## xPDOCacheManager::get
 
 Get a value from a cache provider by key.
 
@@ -14,8 +13,7 @@ Also allows for an array of options to be passed. The current available values a
 - **format** - If equals XPDO\_CACHE\_JSON, will simply get the contents of the array. This is useful if you set() the cache with XPDO\_CACHE\_JSON, to better handle JSON data.
 - **removeIfEmpty** - If set to true, will remove the cache file if it's empty. This is the default action.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#get>
 
@@ -23,8 +21,7 @@ API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#get>
 <pre class="brush: php">
 mixed get (string $key, [array $options = array()])
 
-```Example
--------
+```## Example
 
 Get the cache record 'test' into a string:
 
@@ -38,8 +35,7 @@ $test = $xpdo->cacheManager->get('test');
 <pre class="brush: php">
 $myJsonData = $xpdo->cacheManager->get('myjson',array('format' => xPDO::CACHE_JSON));
 
-```See Also
---------
+```## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

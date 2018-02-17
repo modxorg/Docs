@@ -4,7 +4,7 @@ _old_id: "299"
 _old_uri: "2.x/administering-your-site/settings/system-settings/"
 ---
 
-<div>- [Creating new System Settings (via the GUI)](#SystemSettings-CreatingnewSystemSettings%28viatheGUI%29)
+- [Creating new System Settings (via the GUI)](#SystemSettings-CreatingnewSystemSettings%28viatheGUI%29)
   - [Parameters](#SystemSettings-Parameters)
   - [Localization](#SystemSettings-Localization)
 - [Using System Settings in your Code](#SystemSettings-UsingSystemSettingsinyourCode)
@@ -16,14 +16,15 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/"
 - [Types of System Settings](#SystemSettings-TypesofSystemSettings)
 - [Settings List](#SystemSettings-SettingsList)
  
-</div> MODx comes with a flexible amount of system settings. They are found in System -> System Settings, and can easily be edited and changed. All system settings are available in your templates by using the \[\[++placeholder\]\] notation. See [Template Tags](making-sites-with-modx/commonly-used-template-tags) for more information.
 
- <object height="500" width="780"> <param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=10433411&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed allowfullscreen="true" allowscriptaccess="always" flashvars="$flashVars" height="500" src="http://vimeo.com/moogaloop.swf?clip_id=10433411&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1" type="application/x-shockwave-flash" width="780"></embed></object> Creating new System Settings (via the GUI) 
---------------------------------------------
+
+ MODx comes with a flexible amount of system settings. They are found in System -> System Settings, and can easily be edited and changed. All system settings are available in your templates by using the \[\[++placeholder\]\] notation. See [Template Tags](making-sites-with-modx/commonly-used-template-tags) for more information.
+
+  ##  Creating new System Settings (via the GUI) 
 
  To create a new system setting, click the "Create New Settings" link under System -> System Settings.
 
- <span class="image-wrap" style="display: block; text-align: center">![](/download/attachments/18678127/system+settings+annotated.png?version=1&modificationDate=1303174387000)</span>
+ ![](/download/attachments/18678127/system+settings+annotated.png?version=1&modificationDate=1303174387000)
 
 ###  Parameters 
 
@@ -53,8 +54,7 @@ $_lang['setting_quip.emailsFrom_desc'] = 'The email address to send system email
 
 ``` We encourage you to right-click an existing system setting and choose to "Update System Setting" to get an idea of how this works.
 
- Using System Settings in your Code 
-------------------------------------
+##  Using System Settings in your Code 
 
  Frequently, you'll want to be able to retrieve the values for your system settings in your Snippets or Plugins. There's more information [on this page](administering-your-site/settings "Settings").
 
@@ -66,7 +66,9 @@ $_lang['setting_quip.emailsFrom_desc'] = 'The email address to send system email
 <pre class="brush: php">
 $siteStartId = $modx->getOption('site_start');
 
-```<div class="note"> In WordPress, the comparable API function is **get\_option()**. </div> This function retrieves the value from the settings cache.
+``` In WordPress, the comparable API function is **get\_option()**. 
+
+ This function retrieves the value from the settings cache.
 
 ###  Saving a System Setting (programmatically) 
 
@@ -108,7 +110,9 @@ $modx->cacheManager->clearCache();
 $cacheRefreshOptions =  array( 'system_settings' => array() );
 $modx->cacheManager-> refresh($cacheRefreshOptions);
 
-```<div class="note"> In WordPress, the comparable API function is **update\_option()**. </div>###  Retrieving a Setting's Meta Data 
+``` In WordPress, the comparable API function is **update\_option()**. 
+
+###  Retrieving a Setting's Meta Data 
 
  Once we start retrieving the _Objects_ that represent the system settings instead of just their value, we can see all of the meta data for any given setting (i.e. all of the attributes). Look at this code as an example:
 
@@ -130,8 +134,7 @@ Array (
 
 ``` Once you understand how to manipulate objects using MODx and xPDO, you'll be able to retrieve and modify just about everything inside of MODx, because just about everything is an object.
 
- Retrieving a list of Related Settings 
----------------------------------------
+##  Retrieving a list of Related Settings 
 
  If you have noticed in the GUI above, MODx allows for some very logical grouping of system settings. The most useful groupings are **area** and by the prefix of the **key**. Using xPDO's [getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") method, we can easily supply some search criteria to get the settings that we want.
 
@@ -157,8 +160,7 @@ foreach ( $relatedSettings as $Setting ) {
 
 ``` You may not have been expecting an introduction to xPDO while you were simply trying to retrieve and set system settings, but it's in there.
 
- Creating a System Setting Programmatically 
---------------------------------------------
+##  Creating a System Setting Programmatically 
 
  You may desire to create a System Setting programmatically in order to provide your users with a cleaner UX/UI. In your code, you can put something like the following:
 
@@ -195,8 +197,7 @@ $_lang['setting_mykey_desc'] = 'Description of my key';
 <pre class="brush: php">
 [[!%setting_emailsender? &topic=`setting` &namespace=`core` &language=`en`]]
 
-``` Types of System Settings 
---------------------------
+```##  Types of System Settings 
 
  The **xtype** attribute defines what type of field the GUI will use when rendering the interface for this field:
 
@@ -213,8 +214,7 @@ $_lang['setting_mykey_desc'] = 'Description of my key';
 - **modx-combo-rte** : like the textarea, but with formatting controls
 - **modx-combo-context** : allows user to select a context
 
- Settings List 
----------------
+##  Settings List 
 
  A description of each setting follows:
 

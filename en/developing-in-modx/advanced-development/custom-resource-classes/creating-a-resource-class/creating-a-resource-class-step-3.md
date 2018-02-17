@@ -4,15 +4,18 @@ _old_id: "72"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3"
 ---
 
-<div class="panel" style="border-width: 1px;"><div class="panelContent">This tutorial is part of a Series:
+This tutorial is part of a Series:
 
 - [Part I: Creating a Custom Resource Class](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class")
 - [Part II: Handling our CRC Behavior](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-2 "Creating a Resource Class - Step 2")
 - Part III: Customizing the Controllers
 - [Part IV: Customizing the Processors](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4")
 
-</div></div>Creating the Resource Controllers
----------------------------------
+
+
+
+
+## Creating the Resource Controllers
 
 Okay, remember how in [Step 1](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class") we told MODX where our controllers/ directory was, via the "getControllerPath" method? To refresh your memory, here's the code from
 

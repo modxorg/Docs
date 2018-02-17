@@ -4,7 +4,7 @@ _old_id: "350"
 _old_uri: "2.x/administering-your-site/media-sources/securing-a-media-source/creating-a-media-source-for-clients-tutorial"
 ---
 
-<div>- [Introduction](#CreatingaMediaSourceforClientsTutorial-Introduction)
+- [Introduction](#CreatingaMediaSourceforClientsTutorial-Introduction)
 - [Tutorial](#CreatingaMediaSourceforClientsTutorial-Tutorial)
   - [Step 1: Create a Directory Structure](#CreatingaMediaSourceforClientsTutorial-Step1%3ACreateaDirectoryStructure)
   - [Step 2: Hide the Filesystem Media Source](#CreatingaMediaSourceforClientsTutorial-Step2%3AHidetheFilesystemMediaSource)
@@ -14,8 +14,9 @@ _old_uri: "2.x/administering-your-site/media-sources/securing-a-media-source/cre
 - [Advanced Usage](#CreatingaMediaSourceforClientsTutorial-AdvancedUsage)
   - [Different Contexts](#CreatingaMediaSourceforClientsTutorial-DifferentContexts)
 
-</div>Introduction
-------------
+
+
+## Introduction
 
 This tutorial will show you how to create a second media source that you can use for clients that will hide your MODX site files. This tutorial should be performed on sites before your clients have uploaded any files. If you are doing this on an existing site, please read Troubleshooting: Existing Installs at the end of this article.
 
@@ -27,8 +28,7 @@ That's cool and all, but we can probably make it more meaningful by preventing u
 
 ![](/download/attachments/41058455/modx2.png?version=1&modificationDate=1346437945000)
 
-Tutorial
---------
+## Tutorial
 
 ### Step 1: Create a Directory Structure
 
@@ -73,8 +73,7 @@ At this point, when clients log in, they will see "Client Files" as the default 
 
 We're done!
 
-Troubleshooting: Existing Installs
-----------------------------------
+## Troubleshooting: Existing Installs
 
 If you are using this tutorial on a site that already has TVs in place and images uploaded, you will need to update their paths after you have performed Steps 1-4:
 
@@ -83,8 +82,7 @@ If you are using this tutorial on a site that already has TVs in place and image
 
 That should be it!
 
-Advanced Usage
---------------
+## Advanced Usage
 
 ### Different Contexts
 

@@ -4,13 +4,11 @@ _old_id: "1307"
 _old_uri: "2.x/class-reference/xpdovalidator/xpdovalidator.addmessage"
 ---
 
-xPDOValidator::addMessage
--------------------------
+## xPDOValidator::addMessage
 
 Add a validation message to the stack.
 
-Syntax
-------
+## Syntax
 
 API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#addMessage>
 
@@ -18,8 +16,7 @@ API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#addMessage>
 <pre class="brush: php">
 void addMessage (string $field, string $name, [mixed $message = null])
 
-```Example
--------
+```## Example
 
 Do our own validation, but still use the validator object.
 
@@ -35,8 +32,7 @@ foreach ($errors as $error) {
    echo 'An error occurred with field "'.$error['name'].'": '.$error['message'];
 }
 
-```See Also
---------
+```## See Also
 
 1. [xPDOValidator.addMessage](/xpdo/2.x/class-reference/xpdovalidator/xpdovalidator.addmessage)
 2. [xPDOValidator.getMessages](/xpdo/2.x/class-reference/xpdovalidator/xpdovalidator.getmessages)

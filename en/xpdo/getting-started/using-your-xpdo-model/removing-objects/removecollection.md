@@ -8,8 +8,7 @@ This method is used to delete multiple objects.
 
 <http://api.modxcms.com/xpdo/xPDO.html#removeCollection>
 
-Examples
---------
+## Examples
 
 From modSessionHandler:
 
@@ -22,5 +21,5 @@ public function gc($max) {
     return $result;
 }
 
-```<div class="warning">**Warning**  
-Careful! If you do not specify your criteria correctly, you can wipe out an entire database table!</div>
+```**Warning**
+Careful! If you do not specify your criteria correctly, you can wipe out an entire database table!

@@ -4,21 +4,18 @@ _old_id: "1094"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientstartupscript"
 ---
 
-modX::regClientStartupScript
-----------------------------
+## modX::regClientStartupScript
 
  Register JavaScript to be injected inside the HEAD tag of a resource.
 
-Syntax
-------
+## Syntax
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientStartupScript()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupScript())
 
  ```
 <pre class="brush: php">void regClientStartupScript (string $src, [boolean $plaintext = false])
 
-```Example
--------
+```## Example
 
  Register some JS to the start of the page:
 
@@ -31,8 +28,7 @@ Syntax
 ``````
 <pre class="brush: php">$modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.regClientCSS](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientcss "modX.regClientCSS")

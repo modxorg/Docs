@@ -4,17 +4,17 @@ _old_id: "1057"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.executeprocessor"
 ---
 
-modX::executeProcessor
-----------------------
+## modX::executeProcessor
 
-<div class="warning">This method is removed in 2.1, and replaced by $modX->runProcessor</div>Executes a specific processor. The only argument is an array, which can take the following values:
+This method is removed in 2.1, and replaced by $modX->runProcessor
+
+Executes a specific processor. The only argument is an array, which can take the following values:
 
 - **action** - The action to take, similar to connector handling.
 - **processors\_path** - If specified, will override the default MODx processors path.
 - **location** - A prefix to load processor files from, will prepend to the action parameter.
 
-Syntax
-------
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::runProcessor()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runProcessor())
 
@@ -22,8 +22,7 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.h
 <pre class="brush: php">
 mixed executeProcessor (array $options)
 
-```Example
--------
+```## Example
 
 Execute the Context getList processor:
 
@@ -34,7 +33,6 @@ $modx->executeProcessor(array(
     'action' => 'getList',
 ));
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

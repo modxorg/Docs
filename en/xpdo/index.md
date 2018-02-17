@@ -6,4 +6,4 @@ description: "Documentation for releases of xPDO."
 summary: "This is the official documentation space for xPDO."
 ---
 
-<section> \[\[getResources@section-parents? &context=`xpdo`\]\] </section>
+ \[\[getResources@section-parents? &context=`xpdo`\]\]

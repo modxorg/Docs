@@ -4,7 +4,7 @@ _old_id: "246"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/properties-and-property-sets"
 ---
 
-<div>- [What are Properties?](#PropertiesandPropertySets-WhatareProperties%3F)
+- [What are Properties?](#PropertiesandPropertySets-WhatareProperties%3F)
 - [What are Property Sets?](#PropertiesandPropertySets-WhatarePropertySets%3F)
 - [Assigning Property Sets to Elements](#PropertiesandPropertySets-AssigningPropertySetstoElements)
 - [Creating Properties in a Property Set](#PropertiesandPropertySets-CreatingPropertiesinaPropertySet)
@@ -13,8 +13,9 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/properties-and-propert
   - [Using getOption](#PropertiesandPropertySets-UsinggetOption)
 - [Conclusion](#PropertiesandPropertySets-Conclusion)
 
-</div>What are Properties?
---------------------
+
+
+## What are Properties?
 
 Properties are simply values that can be configured for any Element via [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax"). An example of a Property is the token 'debug' in this Snippet call:
 
@@ -24,8 +25,7 @@ Properties are simply values that can be configured for any Element via [Tag Syn
 
 ```'debug' is the Property, where '1' is the Property Value. They are passed to the Element's parser and interpreted there. Snippets and Plugins can access them through the $scriptProperties array, or straight in their key values, as they are extract()'ed.
 
-What are Property Sets?
------------------------
+## What are Property Sets?
 
 Property Sets are user-defined collections of properties for an Element. So instead of having an enormous Snippet call with an unreadable long list of properties, you can store all the properties together as a set:
 
@@ -55,8 +55,7 @@ So, if the default property of 'user' was 0, then it would then be set to 2 by t
 
 Properties will be passed into the Element just as they were in MODx 0.9.6, but they are also passed in via the $scriptProperties array, for those of you wanting more flexibility with knowing what properties are passed in.
 
-Assigning Property Sets to Elements
------------------------------------
+## Assigning Property Sets to Elements
 
 Property Sets can only be used on Elements that they are assigned to. This can be done via either the element's properties grid, or Tools -> Property Sets.
 
@@ -78,8 +77,7 @@ From there, you can select the property set you want to add. If you'd like to cr
 
 Then once you save your new Property Set, it will be automatically attached to that Element.
 
-Creating Properties in a Property Set
--------------------------------------
+## Creating Properties in a Property Set
 
 To create a Property in a Property Set, you'll simply need to just load the Property Set you want to work on, and then click "Create Property". That will load this window:
 
@@ -87,13 +85,13 @@ To create a Property in a Property Set, you'll simply need to just load the Prop
 
 From there, you can create a property and associated options. Note here that we are creating a property of type "List", which is a dropdown property. You can add options to that property from the grid. Once you save the property, it will be added to the property set.
 
-Importing and Exporting Properties
-----------------------------------
+## Importing and Exporting Properties
 
 You can also import and export properties using the grid. Simply click on the corresponding buttons at the bottom.
 
-<div class="warning">When you import properties, it will overwrite your properties in the grid currently. Make sure that you want to do this before importing!</div>Using Properties Programmatically
----------------------------------
+When you import properties, it will overwrite your properties in the grid currently. Make sure that you want to do this before importing!
+
+## Using Properties Programmatically
 
 Properties are available in a snippet via the $scriptProperties array:
 
@@ -111,5 +109,4 @@ You can also get a snippet property with $modx->getOption() like this:
 <pre class="brush: php">
 $modx->getOption('propertyName', $scriptProperties, 'default');
 
-```Conclusion
-----------
+```## Conclusion

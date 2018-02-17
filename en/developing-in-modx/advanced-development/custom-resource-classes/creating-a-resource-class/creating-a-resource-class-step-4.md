@@ -4,17 +4,20 @@ _old_id: "73"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4"
 ---
 
-<div class="panel" style="border-width: 1px;"><div class="panelContent"> This tutorial is part of a Series:
+ This tutorial is part of a Series:
 
 - [Part I: Creating a Custom Resource Class](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class")
 - [Part II: Handling our CRC Behavior](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-2 "Creating a Resource Class - Step 2")
 - [Part III: Customizing the Controllers](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3 "Creating a Resource Class - Step 3")
 - Part IV: Customizing the Processors
 
-</div></div> This is a bit of bonus material to help identify some of the things you can do by extending the default processors.
 
-Extending the Processors for our CRC
-------------------------------------
+
+
+
+ This is a bit of bonus material to help identify some of the things you can do by extending the default processors.
+
+## Extending the Processors for our CRC
 
  Extending the Processors for our CopyrightedResource is fairly simple. Load up your **copyrightedresource.class.php** file that contains your main class, and at the top, put this:
 
@@ -73,8 +76,7 @@ class CopyrightedResourceUpdateProcessor extends modResourceUpdateProcessor {
 
  If the attribute is something that can be controlled by the GUI, then you'll have to do some customizations in the processors.
 
-Extra Attributes
-----------------
+## Extra Attributes
 
  There are some attributes that are not in the **modx\_site\_content** table. See the comments in the **modresource.class.php** file for a list of attributes. You can set them in your resource class via the set method, e.g.:
 
@@ -84,7 +86,6 @@ $this->set('hide_children_in_tree',true);
 
 ```You can customize the icon used in the MODX resource by creating a System Setting named after your custom resource class: `mgr_tree_icon_ + strtolower($class_key)`. Set its value to CSS class that will be used.
 
-Conclusion
-----------
+## Conclusion
 
  And that's about it! There's obviously tons of possibilities with CRCs, and you can really go nuts on the customization that you can apply to them and their processing and rendering logic. Have fun!

@@ -4,8 +4,7 @@ _old_id: "1240"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getcount"
 ---
 
-xPDO::getCount
---------------
+## xPDO::getCount
 
 Retrieves a count of xPDOObjects by the specified array or xPDOCriteria.
 
@@ -19,8 +18,7 @@ API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getCount>
 <pre class="brush: php">
 integer getCount (string $className, [mixed $criteria = null])
 
-```Example
--------
+```## Example
 
 Get a count of all the Box objects with width 20.
 
@@ -42,8 +40,7 @@ $total_states = $modx->getCount('States',$query);
 // If you have 50 states, this may print 50, not 10!  Be careful!
 $modx->log(modX::LOG_LEVEL_ERROR, "Total States: $total_states");
 
-```See Also
---------
+```## See Also
 
 - [xPDO.getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
 - [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")

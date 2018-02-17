@@ -4,13 +4,11 @@ _old_id: "1295"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.orcondition"
 ---
 
-xPDOQuery::orCondition
-----------------------
+## xPDOQuery::orCondition
 
  Add an OR condition to the WHERE statement in the query.
 
-Syntax
-------
+## Syntax
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::orCondition()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::orCondition())
 
@@ -18,8 +16,7 @@ Syntax
 <pre class="brush: php">
 void orCondition ( $conditions, [ $binding = null], [ $group = 0])
 
-```Example
--------
+```## Example
 
  Grab all boxes with width 12 or 14.
 
@@ -34,9 +31,10 @@ $query->orCondition(array(
 ));
 $boxes = $xpdo->getCollection('Box',$query);
 
-```<div class="warning"> **Warning**   
- The order you call the functions is important! The **orCondition** must come after the **where** method has been used. </div>Another Example
----------------
+``` **Warning** 
+ The order you call the functions is important! The **orCondition** must come after the **where** method has been used. 
+
+## Another Example
 
  Here's a more familiar example used to retrieve pages when they've got publish/unpublish dates set. This demonstrates an alternative syntax for an or condition. Normally, each place in the array supplied to the **where** method is joined together by a SQL "AND", but you can use the "OR" prefix on your column names to specify how groups of terms are joined together.
 
@@ -58,8 +56,7 @@ $criteria->where(array(
         )
 );
 
-```Example With Joined Tables
---------------------------
+```## Example With Joined Tables
 
 Your filter parameters can reference fields in other tables.
 
@@ -76,7 +73,8 @@ $query->orCondition(array(
 $user = $modx->getObject('modUser', $query);
 
 
-```<div class="note"> The filter parameters may use the class name (as in modUser above) or the alias (as the Profile above). </div>See Also
---------
+``` The filter parameters may use the class name (as in modUser above) or the alias (as the Profile above). 
+
+## See Also
 
 - [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery")

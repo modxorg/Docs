@@ -10,7 +10,9 @@ The MODX manager uses a template much like regular MODX pages. The manager's tem
 
 The way this is set up is just like extending a PHP class: you can override any single file by mimicking the directory structure and updating the **manager\_theme** directory.
 
-<div class="note">For 2.1 and earlier, you must copy the entire controllers and templates directory for your theme. 2.2 and later let you copy single files.</div>For example, to customize just the Manager Login template, you could copy the following file into a new directory:
+For 2.1 and earlier, you must copy the entire controllers and templates directory for your theme. 2.2 and later let you copy single files.
+
+For example, to customize just the Manager Login template, you could copy the following file into a new directory:
 
 **manager/templates/default/security/login.tpl**
 

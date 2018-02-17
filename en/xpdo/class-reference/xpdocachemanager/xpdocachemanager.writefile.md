@@ -4,13 +4,11 @@ _old_id: "1272"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.writefile"
 ---
 
-xPDOCacheManager::writeFile
----------------------------
+## xPDOCacheManager::writeFile
 
 Writes a file to the filesystem.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#writeFile>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#writeFile>
 <pre class="brush: php">
 boolean writeFile (string $filename, string $content, [string $mode = 'wb'], [array $options = array()])
 
-```Example
--------
+```## Example
 
 Write a file to the FS.
 
@@ -28,8 +25,7 @@ Write a file to the FS.
 $str = 'The contents of the file.';
 $xpdo->cacheManager->writeFile('/path/to/the/file.txt',$str);
 
-```See Also
---------
+```## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

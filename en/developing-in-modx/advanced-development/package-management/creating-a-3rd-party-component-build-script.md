@@ -4,7 +4,7 @@ _old_id: "67"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script"
 ---
 
-<div>- [Directory Structure](#Creatinga3rdPartyComponentBuildScript-DirectoryStructure)
+- [Directory Structure](#Creatinga3rdPartyComponentBuildScript-DirectoryStructure)
 - [Starting the Build Script](#Creatinga3rdPartyComponentBuildScript-StartingtheBuildScript)
 - [Packaging in Objects](#Creatinga3rdPartyComponentBuildScript-PackaginginObjects)
 - [Validators and Resolvers](#Creatinga3rdPartyComponentBuildScript-ValidatorsandResolvers)
@@ -12,19 +12,21 @@ _old_uri: "2.x/developing-in-modx/advanced-development/package-management/creati
 - [Package Attributes: License, Readme and Setup Options](#Creatinga3rdPartyComponentBuildScript-PackageAttributes%3ALicense%2CReadmeandSetupOptions)
 - [Related Pages](#Creatinga3rdPartyComponentBuildScript-RelatedPages)
 
-</div><div class="note">Users using Revolution 2.0.0-beta-4 or earlier should note that the defines are different in beta5 and onward. An example: xPDOTransport::UNIQUE\_KEYS in beta5+ is XPDO\_TRANSPORT\_UNIQUE\_KEYS in beta4 and earlier. MODx recommends to just update to beta5/SVN.</div>A build script. What is that, you might ask? This is the meat of the packaging process; here is where your component is actually put into the nice, neat .zip transport package that you find on modxcms.com or through Revolution's Package Management section.
+
+
+Users using Revolution 2.0.0-beta-4 or earlier should note that the defines are different in beta5 and onward. An example: xPDOTransport::UNIQUE\_KEYS in beta5+ is XPDO\_TRANSPORT\_UNIQUE\_KEYS in beta4 and earlier. MODx recommends to just update to beta5/SVN.
+
+A build script. What is that, you might ask? This is the meat of the packaging process; here is where your component is actually put into the nice, neat .zip transport package that you find on modxcms.com or through Revolution's Package Management section.
 
 This tutorial will guide you through how to create one of those scripts. We'll be using a sample component called Quip, which contains a modAction, a few menus, some chunks and a snippet, lexicons, setup options, a license, a readme, and system settings. It's basically a quick, easy run through of all the basics to creating a fundamental build script.
 
-Directory Structure
--------------------
+## Directory Structure
 
 First off, let's take a quick look at our directory structure. This isn't always how you have to do it - this one is specifically built this way for SVN; but it's definitely recommended, especially with the _assets/components/quip/_ and _core/components/quip/_ structures, since that makes creating the transport package much easier.
 
 ![](/download/attachments/18678073/quip-dir1.png?version=1&modificationDate=1273237771000)
 
-Starting the Build Script
--------------------------
+## Starting the Build Script
 
 Let's first start with some phpdoc comments at the top, and then start the timer.
 
@@ -102,16 +104,15 @@ $builder = new modPackageBuilder($modx);
 $builder->createPackage('quip','0.1','alpha7');
 $builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
 
-```The modPackageBuilder::createPackage function has 3 parameters:   
-_name_, _version_, and _release_. For us,   
+```The modPackageBuilder::createPackage function has 3 parameters: 
+_name_, _version_, and _release_. For us, 
 we'll be doing quip-0.1-alpha7, so let's go with that.
 
 Next, we'll register a [Namespace](developing-in-modx/advanced-development/namespaces "Namespaces") to this package. Not all packages need [Namespaces](developing-in-modx/advanced-development/namespaces "Namespaces"); but all 3rd Party Components do. Basically, a Namespace is an organizing tool for MODx so that MODx can know what objects are tied to what package. This is helpful later on should we want to uninstall our package; we'd want it to remove the objects we'd install.
 
 Plus, should we want to add any [Lexicon Entries](developing-in-modx/advanced-development/internationalization "Internationalization") to this package (which we will), MODx does so by relating it to it's Namespace. Our package builder will assign our Lexicon Entries to the Namespace, so we can easily manage _just_ our Lexicon Entries; not any others.
 
-Packaging in Objects
---------------------
+## Packaging in Objects
 
 Objects are packaged as _Vehicles_ in MODx Revolution; basically think of a vehicle as a sort of storage system that transports the data and/or files into the zip package. Packages can contain many vehicles; vehicles can contain many objects or files - however, vehicles that contain an object must only have one reference object (or parent object, whichever you prefer) that the vehicle is based off of.
 
@@ -301,7 +302,9 @@ $properties = include $sources['data'].'properties.inc.php';
 $snippet->setProperties($properties);
 $category->addMany($snippet);
 
-```<div class="note">We're using the addMany method here, and not the addOne method. Wether you need to use one or the other does not so much depend on the amount of objects you are relating (in this case only one snippet), but the cardinality of the relationship. That may sound complex - but the cardinality simply means if it is a one-on-one or one-to-many relationship. In this case, a category has a one-to-many relationship with snippets (there can be many snippets in one category) and that means you will have to use the addMany method. You can pass an array of objects or just one object to that method, but which one you use depends on the cardinality. Read more about [relationships](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships"), [addOne](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/addmany "addMany").</div>You'll use modSnippet's setProperties function to pass in an array of property arrays. So, let's take a look at that properties.inc.php file:
+```We're using the addMany method here, and not the addOne method. Wether you need to use one or the other does not so much depend on the amount of objects you are relating (in this case only one snippet), but the cardinality of the relationship. That may sound complex - but the cardinality simply means if it is a one-on-one or one-to-many relationship. In this case, a category has a one-to-many relationship with snippets (there can be many snippets in one category) and that means you will have to use the addMany method. You can pass an array of objects or just one object to that method, but which one you use depends on the cardinality. Read more about [relationships](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships"), [addOne](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/addmany "addMany").
+
+You'll use modSnippet's setProperties function to pass in an array of property arrays. So, let's take a look at that properties.inc.php file:
 
 ```
 <pre class="brush: php">
@@ -368,8 +371,7 @@ $vehicle = $builder->createVehicle($category,$attr);
 
 ```Great! We've got our category vehicle, complete with all the related chunks and snippet. They'll be installed in the right category when our users install our package, too - so it'll look nice and sharp!
 
-Validators and Resolvers
-------------------------
+## Validators and Resolvers
 
 Validators and resolvers are basically scripts that run during the install process. Validators are run pre-install; meaning that they are run before the main package installation happens. If they return false, the installation does not proceed.
 
@@ -405,8 +407,7 @@ Next, we add a PHP resolver, called 'setupoptions.resolver.php'. We'll get back 
 
 And finally, we pack the vehicle into the package using the putVehicle function.
 
-Lexicons
---------
+## Lexicons
 
 So now we've got a package with system settings, actions, menus, snippets, chunks, a category, and a few resolvers all set up. Let's talk about our lexicons.
 
@@ -420,8 +421,7 @@ As of MODx Revolution RC-2, MODx will automatically find the lexicons in your le
 
 This is because the lexicons are cached first from your files, then any overrides from the DB are merged and cached. This allows people to 'override' your lexicons by using Lexicon Management in the Manager, should they choose to, without breaking their upgrade path for your Component.
 
-Package Attributes: License, Readme and Setup Options
------------------------------------------------------
+## Package Attributes: License, Readme and Setup Options
 
 Each package has what are called 'package attributes', which can be passed to any resolver or validator. You could pass pretty much anything you want into the function modPackageBuilder::setPackageAttributes(), in an array format. There are, however, three special keys that we'll deal with.
 
@@ -583,8 +583,7 @@ exit();
 
 ```Great, we're done! You'll only need to run this script now, and viola! A fully zipped transport package file will appear in your core/packages directory.
 
-Related Pages
--------------
+## Related Pages
 
 - [Package Management](developing-in-modx/advanced-development/package-management "Package Management")
 - [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages")

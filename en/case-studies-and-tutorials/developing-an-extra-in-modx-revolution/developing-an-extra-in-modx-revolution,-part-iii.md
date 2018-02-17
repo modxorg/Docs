@@ -4,13 +4,17 @@ _old_id: "354"
 _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-iii"
 ---
 
-<div class="panel" style="border-width: 1px;"><div class="panelContent">This tutorial is part of a Series:
+This tutorial is part of a Series:
 
 - [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
 - [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II")
 - Part III: Packaging Our Extra
 
-</div></div><div>- [Overview](#DevelopinganExtrainMODXRevolution%2CPartIII-Overview)
+
+
+
+
+- [Overview](#DevelopinganExtrainMODXRevolution%2CPartIII-Overview)
 - [Setting Up Our Build Directory](#DevelopinganExtrainMODXRevolution%2CPartIII-SettingUpOurBuildDirectory)
   - [The Build Script](#DevelopinganExtrainMODXRevolution%2CPartIII-TheBuildScript)
 - [Adding in the Data](#DevelopinganExtrainMODXRevolution%2CPartIII-AddingintheData)
@@ -22,8 +26,9 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
 - [Adding the Changelog, Readme, License and Setup Options](#DevelopinganExtrainMODXRevolution%2CPartIII-AddingtheChangelog%2CReadme%2CLicenseandSetupOptions)
 - [Summary](#DevelopinganExtrainMODXRevolution%2CPartIII-Summary)
 
-</div>Overview
---------
+
+
+## Overview
 
 In this tutorial, we're going to be packaging up our Extra that we made in the [past](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution") [two](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II") tutorials into a [Transport Package](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages") (TP) so that we can install it on any MODX installation, and even submit it to the Extras section on modx.com.
 
@@ -31,8 +36,9 @@ First off, if you're not sure what a Transport Package is, or what Package Manag
 
 Our main goals for this part of the tutorial will be getting the Extra in a package: specifically our Snippet; the files in core/components and assets/components; the Action, Menu and Namespace for our CMP; making our Snippet's default properties i18n supported; and finally, adding a Resolver that creates our custom DB table in the installing user's database.
 
-<div class="note">For simple Extras that don't have a CMP, we could just use [PackMan](/extras/revo/packman "PackMan") to package up our Extra. However, we have a CMP, and we want to learn how to do the script. So, here we are.</div>Setting Up Our Build Directory
-------------------------------
+For simple Extras that don't have a CMP, we could just use [PackMan](/extras/revo/packman "PackMan") to package up our Extra. However, we have a CMP, and we want to learn how to do the script. So, here we are.
+
+## Setting Up Our Build Directory
 
 This is what our \_build directory will look like when we're through. We're already familiar with the build.config.php and build.schema.php files from Part I. For now, let's just explain a few things about it:
 
@@ -146,7 +152,9 @@ require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
 
 ```Okay, here we're defining a whole bunch of paths on where to find stuff in our directory structure. This will be useful later on in our build script, so we can easily reference locations of files.
 
-<div class="note">Note the source\_core and source\_assets keys - it's very important to note that they **do not** have a trailing slash. When we package them in later, this is important.</div>Finally, we'll include our build.config.php file and our modx class. Now it's time to load up the modX object:
+Note the source\_core and source\_assets keys - it's very important to note that they **do not** have a trailing slash. When we package them in later, this is important.
+
+Finally, we'll include our build.config.php file and our modx class. Now it's time to load up the modX object:
 
 ```
 <pre class="brush: php">
@@ -197,8 +205,7 @@ exit ();
 
 Our Transport Package! Nice and done. However, installing it wont actually do anything. Let's try and solve that.
 
-Adding in the Data
-------------------
+## Adding in the Data
 
 We're going to want to package in our Snippet in its own 'Doodles' category, to get it to be nice and separated out from other Snippets the user might be using. In our build.transport.php file, add this below our registerNamespace call at line 42:
 
@@ -470,8 +477,7 @@ return $menu;
 
 So now our Menu and Action are all nicely packaged in.
 
-Adding a Resolver
------------------
+## Adding a Resolver
 
 When someone installs our system, however, they're going to have 1 big problem - the database table modx\_doodles isn't going to exist! Let's write a PHP resolver to create it on install. A PHP Resolver is a PHP script that runs after the Vehicle it's attached to has been installed. We'll attach this resolver to our Menu vehicle. Right below our $builder->createVehicle call for the Menu, and before you run putVehicle for that vehicle, add this:
 
@@ -513,8 +519,7 @@ This method tells MODX to run the SQL to create the database table for the Doodl
 
 If you build the package, and install it now, it will create our database table. Great!
 
-Adding the Changelog, Readme, License and Setup Options
--------------------------------------------------------
+## Adding the Changelog, Readme, License and Setup Options
 
 Let's get fancy. When installing packages in MODX, often you'll see a dialog with a license, readme, and changelog. We want that in our package! First off, let's add those files.
 
@@ -580,12 +585,11 @@ return $output;
 
 ```So, this looks familiar to a resolver, eh? That's because this little bit of code allows us to present 'Setup Options' to the user on installation. Right now we're just going to output a pretty message to tell people thanks for installing Doodles.
 
-Remember that $options array in our PHP resolver? If we were to put any form elements in this output, they'd be found in that array with the same key. (An input with name of 'test' would be in $options<span class="error">\['test'\]</span>). That means you could make a resolver that would process the form fields you put in the Setup Options script.
+Remember that $options array in our PHP resolver? If we were to put any form elements in this output, they'd be found in that array with the same key. (An input with name of 'test' would be in $options\['test'\]). That means you could make a resolver that would process the form fields you put in the Setup Options script.
 
 That means that you could have a lot of neat little fields that do pre-installation options. That's a bit beyond the scope of this tutorial, but now that you know the basics, you can probably figure it out from there. (Also, plenty of existing Extras, such as [Quip](/extras/revo/quip "Quip") do this, and you can [view their code](https://github.com/splittingred/Quip) to see how.
 
-Summary
--------
+## Summary
 
 Now you can run your build.transport.php file, and you'll get a nice little doodles-1.0-beta4.zip file in your MODX install's core/packages/ directory. You can now either install that by uploading it to a MODX install's core/packages/ directory (but not the same one you just developed in!), or post it to [modx.com/extras/](http://modx.com/extras/) to be included in the official MODX Provider that hooks into [Package Management](developing-in-modx/advanced-development/package-management "Package Management"). Pretty neat?
 
@@ -601,13 +605,19 @@ Let's recap. Over the 3 parts of this tutorial, we:
 
 All in all, I'd say that was pretty successful. Congrats, and we hope you enjoy developing on MODX!
 
-<div class="note">The Doodles Extra in this tutorial can be found on GitHub, here: <https://github.com/splittingred/doodles></div><div class="panel" style="border-width: 1px;"><div class="panelContent">This tutorial is part of a Series:
+The Doodles Extra in this tutorial can be found on GitHub, here: <https://github.com/splittingred/doodles>
+
+This tutorial is part of a Series:
 
 - [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
 - [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II")
 - Part III: Packaging Our Extra
 
-</div></div>the transport.menu.php modAction controller value should be just "index" and not have the preceding "controllers/" as follows when using the new abstract classes:
+
+
+
+
+the transport.menu.php modAction controller value should be just "index" and not have the preceding "controllers/" as follows when using the new abstract classes:
 
 ```
 <pre class="brush: php">
@@ -622,13 +632,13 @@ $action->fromArray(array(
     'assets' => '',
 ),'',true,true);
 
-```$action= $modx->newObject('modAction');   
-$action->fromArray(array(   
- 'id' => 1,   
- 'namespace' => 'doodles',   
- 'parent' => 0,   
- 'controller' => 'controllers/index',   
- 'haslayout' => true,   
- 'lang\_topics' => 'doodles:default',   
- 'assets' => '',   
+```$action= $modx->newObject('modAction'); 
+$action->fromArray(array( 
+ 'id' => 1, 
+ 'namespace' => 'doodles', 
+ 'parent' => 0, 
+ 'controller' => 'controllers/index', 
+ 'haslayout' => true, 
+ 'lang\_topics' => 'doodles:default', 
+ 'assets' => '', 
 ),'',true,true);

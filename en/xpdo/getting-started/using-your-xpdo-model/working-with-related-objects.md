@@ -6,8 +6,7 @@ _old_uri: "2.x/getting-started/using-your-xpdo-model/working-with-related-object
 
 Related objects in xPDO can be accessed via newQuery, as shown earlier, or through xPDOObject's helper functions, [getOne](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/getone "getOne") and [getMany](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/getmany "getMany") (depending on the relationship.
 
-Retrieving Objects
-------------------
+## Retrieving Objects
 
 First off, let's look at the related object retrieval methods:
 
@@ -45,8 +44,7 @@ Got the Back Right wheel! */
 
 ```As you can see, this allows us to quickly and easily grab related objects with ease.
 
-Adding Related Objects
-----------------------
+## Adding Related Objects
 
 xPDO also has methods for adding related objects to an existing Object, to make saving easier:
 
@@ -102,8 +100,7 @@ $car->save();
 
 ```This will add all the 10-width Wheels and save the relationships.
 
-See Also
---------
+## See Also
 
 - [getOne](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/getone "getOne")
 - [getMany](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/getmany "getMany")

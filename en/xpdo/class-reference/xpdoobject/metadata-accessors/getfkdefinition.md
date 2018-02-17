@@ -4,13 +4,11 @@ _old_id: "1174"
 _old_uri: "2.x/class-reference/xpdoobject/metadata-accessors/getfkdefinition"
 ---
 
-xPDOObject::getFKDefinition()
------------------------------
+## xPDOObject::getFKDefinition()
 
 Get a foreign key definition for a specific classname. This is generally used to lookup classes in a one-to-many relationship with the current object.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getFKDefinition>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getFKDefinition>
 <pre class="brush: php">
 array getFKDefinition (string $alias)
 
-```Examples
---------
+```## Examples
 
 Get the FK definition of a User who just edited the Document.
 

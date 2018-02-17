@@ -4,13 +4,11 @@ _old_id: "1208"
 _old_uri: "2.x/class-reference/xpdoobject/persistence-methods/save"
 ---
 
-xPDOObject::save()
-------------------
+## xPDOObject::save()
 
  Persist new or changed objects to the database container. Will also cascade and save any objects that have been added to it via related object addition methods (addOne, addMany).
 
-Syntax
-------
+## Syntax
 
  API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#save>
 
@@ -18,8 +16,7 @@ Syntax
 <pre class="brush: php">
 boolean save ([boolean|integer $cacheFlag = null])
 
-```Examples
---------
+```## Examples
 
  Save a wand, along with its owner and parts.
 
@@ -64,8 +61,7 @@ $object->get('id'); // <-- or whatever the primary field is named
 
 ``` _Success may vary depending on the underlying driver._
 
-Validation Messages
--------------------
+## Validation Messages
 
  You can do more than just react to a boolean yes/no of whether your object saved correctly. You can also return some messages about what exactly was problematic.
 

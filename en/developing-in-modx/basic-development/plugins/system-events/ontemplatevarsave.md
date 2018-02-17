@@ -4,22 +4,18 @@ _old_id: "467"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ontemplatevarsave"
 ---
 
-Event: OnTemplateVarSave
-------------------------
+## Event: OnTemplateVarSave
 
 Loaded right after successful saving a template variable to database.
 
-Service: 1 - Parser Service Events   
+Service: 1 - Parser Service Events 
 Group: Template Variables
 
-Event Parameters
-----------------
+## Event Parameters
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>mode</td><td>Either 'new' or 'upd', depending on the circumstances.</td></tr><tr><td>templateVar</td><td>The instance of modTemplateVar class.</td></tr><tr><td>cacheFlag</td><td>Indicates if the saved TV should be cached and optionally, by specifying an integer value, for how many seconds before expiring.</td></tr></tbody></table>Remarks
--------
+NameDescriptionmodeEither 'new' or 'upd', depending on the circumstances.templateVarThe instance of modTemplateVar class.cacheFlagIndicates if the saved TV should be cached and optionally, by specifying an integer value, for how many seconds before expiring.## Remarks
 
-<table><tbody><tr><th>Previous event</th><td>[OnTemplateVarBeforeSave](developing-in-modx/basic-development/plugins/system-events/ontemplatevarbeforesave "OnTemplateVarBeforeSave")</td></tr><tr><th>Next event</th><td>—</td></tr><tr><th>File</th><td>[core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php)</td></tr><tr><th>Class</th><td>modTemplateVar</td></tr><tr><th>Method</th><td>public function save($cacheFlag = null)</td></tr></tbody></table>See Also
---------
+Previous event[OnTemplateVarBeforeSave](developing-in-modx/basic-development/plugins/system-events/ontemplatevarbeforesave "OnTemplateVarBeforeSave")Next event—File[core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php)ClassmodTemplateVarMethodpublic function save($cacheFlag = null)## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

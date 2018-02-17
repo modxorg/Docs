@@ -4,13 +4,11 @@ _old_id: "1298"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.setclassalias"
 ---
 
-xPDOQuery::setClassAlias
-------------------------
+## xPDOQuery::setClassAlias
 
 Sets a SQL alias for the table represented by the main class.
 
-Syntax
-------
+## Syntax
 
 API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::setClassAlias()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::setClassAlias())
 
@@ -18,8 +16,7 @@ API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.clas
 <pre class="brush: php">
 xPDOQuery setClassAlias ([string $alias = ''])
 
-```Example
--------
+```## Example
 
 Grab all OtherBox objects, but set the alias to 'Box' for easier reading.
 
@@ -32,7 +29,6 @@ $query->where(array(
 ));
 $otherBoxes = $xpdo->getCollection('OtherBox',$query);
 
-```See Also
---------
+```## See Also
 
 - [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery")

@@ -4,13 +4,11 @@ _old_id: "201"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx"
 ---
 
-The modX Class
---------------
+## The modX Class
 
 This is the base class of MODx Revolution; it is used for many of the main processing methods of MODx. It extends the [xPDO](/xpdo/1.x/class-reference/xpdo "xPDO") class.
 
-Methods
--------
+## Methods
 
 1. [modX.addEventListener](developing-in-modx/other-development-resources/class-reference/modx/modx.addeventlistener)
 2. [modX.checkForLocks](developing-in-modx/other-development-resources/class-reference/modx/modx.checkforlocks)
@@ -68,5 +66,4 @@ Methods
 54. [modX.unsetPlaceholder](developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholder)
 55. [modX.unsetPlaceholders](developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholders)
 
-See Also
---------
+## See Also

@@ -4,8 +4,7 @@ _old_id: "1124"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.0-rc-2"
 ---
 
-Upgrading to Revolution 2.0.0-rc-2
-----------------------------------
+## Upgrading to Revolution 2.0.0-rc-2
 
 There are a few changes that have occurred in 2.0.0 RC-2 that will only apply to developers. If you are not:
 
@@ -14,8 +13,7 @@ There are a few changes that have occurred in 2.0.0 RC-2 that will only apply to
 
 then you do not have to read this document.
 
-Lexicon Changes
----------------
+## Lexicon Changes
 
 First off, you might ask, "Why such a big change so late in the game?" Well, for one, we didnt realize the limitations of the RC1 lexicon system, and how it hampered Extras development and prevented us from having a stable multi-lingual distribution. What has been changed is:
 
@@ -36,8 +34,7 @@ There are some real benefits to the new approach:
 
 This also means that we will be packaging in core translations into SVN. All core translations will be committed there, similar to Evolution.
 
-Plugin Changes
---------------
+## Plugin Changes
 
 Deprecated Plugin Events have been removed in RC-2, and a few new events have been introduced. Please view the in-progress documentation on these events on the [System Events](developing-in-modx/basic-development/plugins/system-events "System Events") page, or view an exhaustive list via the [code here](http://svn.modxcms.com/svn/tattoo/tattoo/branches/2.0/_build/data/transport.core.events.php).
 
@@ -50,8 +47,7 @@ Note that some of these events are model-centric. This means they are executed f
 
 This means they will fire regardless of where they are executed. This allows you to fire events even when 3rd Party Components modify those objects, such as when a 3PC creates a user. Please see the documentation on each respective event for more information.
 
-See Also
---------
+## See Also
 
 1. [Basic Installation](getting-started/installation/basic-installation)
   1. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)

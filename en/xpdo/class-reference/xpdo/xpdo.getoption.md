@@ -4,13 +4,11 @@ _old_id: "1247"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getoption"
 ---
 
-xPDO::getOption
----------------
+## xPDO::getOption
 
 Get an xPDO configuration option value by key.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getOption>
 
@@ -26,8 +24,7 @@ $default: the value to return when the key was not found.
 
 $skipEmpty: when set to true, the $default will also be returned if the $key's value is an empty string. Added in xPDO 2.2.1 / MODX 2.2.0-rc2.
 
-Examples
---------
+## Examples
 
 Get the table prefix:
 
@@ -41,8 +38,7 @@ $tablePrefix = $xpdo->getOption(xPDO::OPT_TABLE_PREFIX);
 <pre class="brush: php">
 $mySetting = $xpdo->getOption('my_setting',$myConfig,false);
 
-```See Also
---------
+```## See Also
 
 - [xPDO.setOption](/xpdo/2.x/class-reference/xpdo/xpdo.setoption "xPDO.setOption")
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

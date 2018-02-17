@@ -6,15 +6,16 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/how-to-write-a-good
 
 We're putting this here because often a Snippet will use Chunks to format data.
 
-<div>- [Do NOT Over-Rely on Output Modifier Logic!](#HowtoWriteaGoodChunk-DoNOTOverRelyonPHxStyleLogic%21)
+- [Do NOT Over-Rely on Output Modifier Logic!](#HowtoWriteaGoodChunk-DoNOTOverRelyonPHxStyleLogic%21)
   - [The WRONG Way to do It](#HowtoWriteaGoodChunk-TheWRONGWaytodoIt)
   - [Reasons Why Output Modifiers Might Destroy Your Site](#HowtoWriteaGoodChunk-ReasonsWhyOutputModifiersMightDestroyYourSite)
 - [The Right Way to Do It](#HowtoWriteaGoodChunk-TheRightWaytoDoIt)
 - [Good Chunk-keeping Checklist](#HowtoWriteaGoodChunk-GoodChunkkeepingChecklist)
 - [See Also](#HowtoWriteaGoodChunk-SeeAlso)
 
-</div>Do NOT Over-Rely on Output Modifier Logic! 
--------------------------------------------
+
+
+## Do NOT Over-Rely on Output Modifier Logic! 
 
 What are [Output Modifiers](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "PHx")? It is a simplified set of parser rules and output modifies that allows you to manipulate data in your view layer (i.e. in your Chunks and Templates).
 
@@ -63,8 +64,7 @@ One of the things that distinguishes MODX is that its view layer is clean (or it
 
 If you really do need to use them, here is [an excellent article](http://modx.com/blog/2012/09/14/tags-as-the-result-or-how-conditionals-are-like-mosquitoes/) describing how to use Output Modifiers as conditionals with a minimum of overhead.
 
-The Right Way to Do It 
------------------------
+## The Right Way to Do It 
 
 Keep your Chunks and Templates _clean_. They should be easy to read and easy to edit.
 
@@ -74,19 +74,19 @@ Dear [[+first_name]], it was nice to see you last [[+day_of_week]]
 
 ```See that? Simple. Short. Sweet.
 
-Good Chunk tpl-keeping Checklist 
----------------------------------
+## Good Chunk tpl-keeping Checklist 
 
 1. Give your Chunk tpl a good description so people will know what it contains and which Snippets rely on it.
 2. Do not include other Chunks in Chunks! Things can get very confusing if you start going down that rabbit-hole.
 3. Use proper indenting so your HTML is easy to read.
 4. If you do use some logic in your Chunk tpls, make sure you use it _responsibly_. **Do not nest tags**, and do not chain long if-else statements together. A good rule-of-thumb is this: if your Output Modifier does not fit on one line, then you should do it another way.
 
-<div class="note">**Rule of Thumb**  
-If your Chunk tpl uses an Output Modifier, **it should fit on one line**. If it is longer than one-line, then you should probably find another way to accomplish what you're doing, e.g. use a Snippet, or create another page to handle the variations. </div>- - - - - -
+**Rule of Thumb**
+If your Chunk tpl uses an Output Modifier, **it should fit on one line**. If it is longer than one-line, then you should probably find another way to accomplish what you're doing, e.g. use a Snippet, or create another page to handle the variations. 
 
-See Also 
----------
+- - - - - -
+
+## See Also 
 
 - [Code Standards](developing-in-modx/code-standards "Code Standards")
   1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)

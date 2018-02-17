@@ -12,8 +12,7 @@ _old_uri: "style-guide"
 
  The Documentation Guide is in development. If you have suggestions for improving it, please email [hello@modx.com](http://mailto:hello@modx.com).
 
-Use US English
---------------
+## Use US English
 
  Throughout MODX, US English is the standard for all written materials.
 
@@ -31,8 +30,7 @@ Use US English
 
  For a more exhaustive list, see [Wikipedia](http://en.wikipedia.org/wiki/American_and_British_English_spelling_differences)
 
- <table border="1" cellpadding="10" cellspacing="0"><tbody><tr><td> **UK English** </td> <td> **US English** </td> </tr><tr><td> Analyse </td> <td> Analyze </td> </tr><tr><td> Behaviour </td> <td> Behavior </td> </tr><tr><td> Cancelling / Cancelled </td> <td> Canceling / Canceled </td> </tr><tr><td> Centre </td> <td> Center </td> </tr><tr><td> Cheque </td> <td> Check </td> </tr><tr><td> Colour </td> <td> Color </td> </tr><tr><td> Customisation </td> <td> Customization </td> </tr><tr><td> Customise </td> <td> Customize </td> </tr><tr><td> Favourite </td> <td> Favorite </td> </tr><tr><td> Labour </td> <td> Labor </td> </tr><tr><td> Licence </td> <td> License </td> </tr><tr><td> Travelling </td> <td> Traveling </td></tr></tbody></table> <span id="Writing_Rules"> Writing Rules </span>
-------------------------------------------------
+  **UK English**   **US English**   Analyse   Analyze   Behaviour   Behavior   Cancelling / Cancelled   Canceling / Canceled   Centre   Center   Cheque   Check   Colour   Color   Customisation   Customization   Customise   Customize   Favourite   Favorite   Labour   Labor   Licence   License   Travelling   Traveling ##   Writing Rules 
 
  These are som rules that make documents more clear, precise, and easy to understand.
 
@@ -190,8 +188,7 @@ Use US English
 
  Not logon, log, log-in etc.
 
-Spanish — English False Friends and other pitfalls
---------------------------------------------------
+## Spanish — English False Friends and other pitfalls
 
  If Spanish is your first language, beware of the following common mistakes
 
@@ -199,15 +196,14 @@ Spanish — English False Friends and other pitfalls
 
  "Doubt" in english usually has quite a negative meaning. A better translation is questions or queries.
 
- Wrong: If you have any doubts about MODX, consult the wiki.  
+ Wrong: If you have any doubts about MODX, consult the wiki.
  Better: If you have any questions about MODX, consult the wiki.
 
 ### His / hers
 
  In English, only people have a gender. Things are always neutral and take the possessive pronoun "its" (without an apostrophe).
 
- <span id="Bold_and_Italics"> Bold and Italics </span>
-------------------------------------------------------
+##   Bold and Italics 
 
  Because we use different documentation sources, including Mediawiki, a limited number of formatting styles are used:
 
@@ -217,8 +213,7 @@ Spanish — English False Friends and other pitfalls
 
 - _Italic._ Use it when quoting a piece of a text from another source, a piece of text in another language or to give an example, such as sample text to be typed in a text field.
 
- <span id="File_.2F_Menu_Paths">File / Menu Paths</span>
---------------------------------------------------------
+##  File / Menu Paths
 
  File paths (i.e. particular file locations) should follow the standard 
  "Directory/subdirectory/file.extension" format.
@@ -233,13 +228,11 @@ Spanish — English False Friends and other pitfalls
 
  Select **Document > New > Template** from the **File** menu.
 
- <span id="Naming_images_and_screenshots">Naming images andshots</span>
------------------------------------------------------------------------
+##  Naming images andshots
 
  When uploading images or screenshots, name must be related to page's title. If same page contains more than a image, you can additionaly give a number. For example, in Payment Method page, images will be named as _paymentmethod01_, _paymentmethod02_, etc.
 
- <span id="Platform">Platform</span>
-------------------------------------
+##  Platform
 
  MODX runs on many different platforms. When documenting a feature that varies by platform, note the platform before the example or exception. Readers can then skip sections, rather than reading a paragraph before finding it is not relevant, and having to search for the correct section.
 
@@ -259,8 +252,7 @@ Spanish — English False Friends and other pitfalls
 
  To start MODX POS run the batch file start.bat either by double clicking it or by typing start.bat from the command line.
 
- <span id="Other_Conventions">Other Conventions</span>
-------------------------------------------------------
+##  Other Conventions
 
 127. When describing options always start from left to right and from top to bottom. 
   - If you have a list of items (for example a list of files to be downloaded) order them alphabetically unless there is a more obvious logical order.
@@ -270,8 +262,7 @@ Spanish — English False Friends and other pitfalls
   
   
   - Do not use contractions (don't, you're, etc).
- Writing for a global audience 
--------------------------------
+##  Writing for a global audience 
 
  pen source software is global by definition. Keep in mind that people from all over the globe have access to it and its related documentation.
 
@@ -281,19 +272,17 @@ Spanish — English False Friends and other pitfalls
 
 - Remember that currencies and formats to represent dates and numbers are not the same in every part of the world.
 
-Page Formatting and Markup
---------------------------
+## Page Formatting and Markup
 
  There is a limited set of formatting elements in order to make it easy for editors and provide consistent formatting for readers. The following shows what formats are available for HTML and special formats for the MODX Documentation
 
 ### Permitted HTML Markup
 
- <table><thead><tr><td> Format Type </td> <td> Usage </td> <td> Example </td> </tr></thead><tbody><tr><td> Normal Text </td> <td> This is the text format used for all paragraph text and inside tables. </td> <td> </td> </tr><tr><td> Bold </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Italics </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Bulleted Lists </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Numbered Lists </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Indents </td> <td> Reserve indentation for use in creating nested or child lists. Paragraphs should not be </td> <td> </td> </tr><tr><td> Images </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Media </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Table </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Links </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Text-Alignment </td> <td> Reserve text-alignment for table cells. It should not be used to center, right or jusitfy text. Paragraph and headings must be left-aligned. </td> <td> </td> </tr><tr><td> Links </td> <td> (TBD) </td> <td> </td></tr></tbody></table>### Special Formats
+  Format Type   Usage   Example   Normal Text   This is the text format used for all paragraph text and inside tables.     Bold   (TBD)     Italics   (TBD)     Bulleted Lists   (TBD)     Numbered Lists   (TBD)     Indents   Reserve indentation for use in creating nested or child lists. Paragraphs should not be     Images   (TBD)     Media   (TBD)     Table   (TBD)     Links   (TBD)     Text-Alignment   Reserve text-alignment for table cells. It should not be used to center, right or jusitfy text. Paragraph and headings must be left-aligned.     Links   (TBD)   ### Special Formats
 
- <table><thead><tr><td> Format Type </td> <td> Usage </td> <td> Example </td> </tr></thead><tbody><tr><td> PHP Code </td> <td> This is a special macro-format for wrapping code examples including PHP, HTML, CSS and Javascript. This will enable syntax highlighting and enhance the readibility of the page. </td> <td> </td> </tr><tr><td> Note </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Warning </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Danger </td> <td> (TBD) </td> <td> </td> </tr><tr><td> Info </td> <td> (TBD) </td> <td> </td></tr></tbody></table> Other HTML elements such as divs, spans, blockquotes, address and etc. should not be used. This makes maintaining the documentations more difficult and can potentially create issues with layouts. Classes and IDs should not be used in markup. Special classes used when formatting in HTML are created by the Special Format macros listed above.
+  Format Type   Usage   Example   PHP Code   This is a special macro-format for wrapping code examples including PHP, HTML, CSS and Javascript. This will enable syntax highlighting and enhance the readibility of the page.     Note   (TBD)     Warning   (TBD)     Danger   (TBD)     Info   (TBD)    Other HTML elements such as divs, spans, blockquotes, address and etc. should not be used. This makes maintaining the documentations more difficult and can potentially create issues with layouts. Classes and IDs should not be used in markup. Special classes used when formatting in HTML are created by the Special Format macros listed above.
 
-Final checklist 
-----------------
+## Final checklist 
 
  Before considering a document or change complete, it is a good idea to perform the following quick checklist:
 

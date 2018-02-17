@@ -36,13 +36,13 @@ _old_uri: "2.x/getting-started/server-requirements"
 - php-mbstring on (required on some extras like Gallery)
 - PHP memory\_limit 24MB or more, depending on your server
 
-<figure class="code"><figcaption>**PHP Configuration Options** </figcaption>```
+**PHP Configuration Options** ```
 <pre class="brush: php">./configure --with-apxs2=/usr/local/bin/apxs --with-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 
-```</figure><figure class="code"><figcaption>**NGINX PHP Configuration Options** </figcaption>```
+```**NGINX PHP Configuration Options** ```
 <pre class="brush: php">./configure --with-mysql --with-pdo-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 
-```</figure>### MySQL Database Requirements
+```### MySQL Database Requirements
 
 - 4.1.20 or newer, with the following permissions:
   - SELECT, INSERT, UPDATE, DELETE are required for normal operation
@@ -58,4 +58,4 @@ _old_uri: "2.x/getting-started/server-requirements"
 - Apple Safari 3.1.2 and above
 - Microsoft Internet Explorer 8 and above
 
-<div class="info">This list of supported browsers is ONLY for using the backend manager interface. MODX does not control the site visitor's experience and thus supports whatever browser(s) your site's markup is designed for.</div>
+This list of supported browsers is ONLY for using the backend manager interface. MODX does not control the site visitor's experience and thus supports whatever browser(s) your site's markup is designed for.

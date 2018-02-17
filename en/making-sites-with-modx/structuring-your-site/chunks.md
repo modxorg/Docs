@@ -4,26 +4,25 @@ _old_id: "56"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/chunks"
 ---
 
-<div>- [Create](#Chunks-Create)
+- [Create](#Chunks-Create)
 - [Usage](#Chunks-Usage)
 - [Processing Chunk via the API](#Chunks-ProcessingChunkviatheAPI)
   - [Modifying a Chunk Via the API](#Chunks-ModifyingaChunkViatheAPI)
 - [See Also](#Chunks-SeeAlso)
 
-</div>Chunks are bits of static text which you can reuse across your site, similar in function to include files or "blocks" in other content management systems. Common examples of Chunks might be your contact information or a copyright notice. Although Chunks cannot contain any logic directly, they can however contain calls to [Snippets](developing-in-modx/basic-development/snippets "Snippets"), which are executable bits of PHP code which produce dynamic output.
 
-Create
-------
+
+Chunks are bits of static text which you can reuse across your site, similar in function to include files or "blocks" in other content management systems. Common examples of Chunks might be your contact information or a copyright notice. Although Chunks cannot contain any logic directly, they can however contain calls to [Snippets](developing-in-modx/basic-development/snippets "Snippets"), which are executable bits of PHP code which produce dynamic output.
+
+## Create
 
 Before you can use a Chunk, you must first create and name one by pasting text into the MODx manager (Elements --> Chunks --> New Chunk):
 
 ![](/download/attachments/bf9f8ccf5036b4f4bf8b248f7748d0c3/chunk_example.jpg)
 
+## 
 
-
-
-Usage
------
+## Usage
 
 To use the Chunk, you reference it by name in your templates or in your page content.
 
@@ -55,8 +54,7 @@ You could even take it one step further, by adding a [Template Variable](making-
 ```
 <pre class="brush: php">Hello, [[*usersName]]. You have [[*messageCount]] messages.
 
-```Processing Chunk via the API
-----------------------------
+```## Processing Chunk via the API
 
 Chunks are also frequently used to format the output of Snippets. A Chunk can be processed from a Snippet using the process() function; for example, given the following Chunk named 'rowTpl':
 
@@ -105,7 +103,6 @@ $chunk = $modx->getObject('modChunk', array('name' => 'MyObsoleteChunk'));
 if ($chunk) $chunk->remove();
 ?>
 
-```See Also
---------
+```## See Also
 
 - [modChunk](developing-in-modx/other-development-resources/class-reference/modchunk "modChunk")

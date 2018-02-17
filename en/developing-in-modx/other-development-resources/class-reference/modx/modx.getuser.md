@@ -4,13 +4,11 @@ _old_id: "1078"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getuser"
 ---
 
-modX::getUser
--------------
+## modX::getUser
 
  Get the current authenticated User and assigns it to the modX instance.
 
-Syntax
-------
+## Syntax
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getUser())
 
@@ -18,8 +16,7 @@ Syntax
 <pre class="brush: php">
 modUser getUser ([string $contextKey = ''])
 
-```Example
--------
+```## Example
 
  Get the current auth'ed user and print out its username.
 
@@ -49,8 +46,7 @@ if (!$profile) return '';
 $extended = $profile->get('extended');
 print (isset($extended['custom_user_field'])) ? $extended['custom_user_field'] : '';
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modx.getAuthenticatedUser](developing-in-modx/other-development-resources/class-reference/modx/modx.getauthenticateduser)

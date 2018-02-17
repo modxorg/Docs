@@ -4,13 +4,11 @@ _old_id: "1209"
 _old_uri: "2.x/class-reference/xpdoobject/field-accessors/set"
 ---
 
-xPDOObject::set()
------------------
+## xPDOObject::set()
 
 Set a field value by the field key or name.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#set>
 
@@ -22,8 +20,7 @@ boolean set(
    [string|callable $vType = '']
 )
 
-```Examples
---------
+```## Examples
 
 Set the object's name:
 

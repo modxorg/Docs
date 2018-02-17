@@ -6,8 +6,7 @@ _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboa
 
  The Inline PHP widget acts very similar to the [Snippet Widget](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet "Dashboard Widget Type - Snippet"), except it runs the content of the widget as if it were a Snippet.
 
-Usage
------
+## Usage
 
  Simply place your PHP code in the content panel, and return the output of your widget.
 
@@ -24,8 +23,7 @@ return 'Hello, World!';
 - Do not use $modx->resource in your widget, as there is no active resource for the dashboard
 - Do not put a closing PHP tag at the end of your code! For some reason, it gets parsed incorrectly (as of MODX 2.2.8)
 
-See Also
---------
+## See Also
 
 1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
 2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)

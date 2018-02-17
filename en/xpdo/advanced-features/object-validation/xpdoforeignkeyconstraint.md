@@ -4,13 +4,11 @@ _old_id: "1274"
 _old_uri: "2.x/advanced-features/object-validation/xpdoforeignkeyconstraint"
 ---
 
-What Does the Rule Do?
-----------------------
+## What Does the Rule Do?
 
 This rule tests the validity of a foreign key for a defined relationship.
 
-Using the Rule
---------------
+## Using the Rule
 
 Here we want to make sure no category ID is assigned to our object that doesnt have a category that exists.
 
@@ -65,8 +63,7 @@ if ($validator->validate() == false) {
 
 Similarly, we could have used the 'name' field as the "foreign" attribute in our schema, if we were setting our myTest object's category field to that name.
 
-See Also
---------
+## See Also
 
 1. [xPDOForeignKeyConstraint](/xpdo/2.x/advanced-features/object-validation/xpdoforeignkeyconstraint)
 2. [xPDOMaxLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxlengthvalidationrule)

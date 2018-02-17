@@ -4,12 +4,11 @@ _old_id: "22"
 _old_uri: "2.x/getting-started/an-overview-of-modx/"
 ---
 
-What is MODX?
--------------
+## What is MODX?
 
 MODX is a Content Application Platform. What does this mean? Well, that depends on who you are:
 
-<span class="image-wrap" style="float: right">![](/download/attachments/18678475/avgjoe.png?version=1&modificationDate=1280336319000)</span>
+![](/download/attachments/18678475/avgjoe.png?version=1&modificationDate=1280336319000)
 
 ### End-Users (Average Joe)
 
@@ -19,7 +18,7 @@ You can setup everything from a simple site, to a blog, to a full-scale web pres
 
 MODX helps you organize your content the way you want it, and get stellar built-in SEO results. MODX is fully, 100% Friendly URL compatible, so getting mysite.com/my/own/custom/url.html is incredibly simple, and as easy as structuring your site that way.
 
-<span class="image-wrap" style="float: right">![](/download/attachments/18678475/coolcarl.png?version=1&modificationDate=1280336319000)</span>
+![](/download/attachments/18678475/coolcarl.png?version=1&modificationDate=1280336319000)
 
 ### Designers (Cool Carl)
 
@@ -27,7 +26,7 @@ Ever wanted complete freedom with your HTML and CSS? Tired of hacking existing s
 
 You can use MODX as your Content Management System (CMS) of choice, as MODX offers completely flexible templating and no-holds-barred content delivery. Put your CSS and images where you want them. And once you're done designing, either hand off the development duties to your developer, or point-and-click install Extras straight from within the manager. Simple.
 
-<span class="image-wrap" style="float: right">![](/download/attachments/18678475/badassbilly.png?version=1&modificationDate=1280336319000)</span>
+![](/download/attachments/18678475/badassbilly.png?version=1&modificationDate=1280336319000)
 
 ### Developers (Badass Billy)
 
@@ -35,8 +34,7 @@ You've looked at different CMSes, but have found developing in them to be either
 
 Enter MODX Revolution. A completely flexible, powerful and robust API, built on OOP principles and using a PDO-powered Object Relational Model (ORM) called [xPDO](/display/xPDO20/Home "Home"). Add in a rich, [Sencha](http://sencha.com)-powered UI for your clients, that's fully customizable. Custom properties and sets. Internationalization support. Package distribution built-in so you can pack up your code, and distribute it across any Revolution install. Add custom manager pages to run entire applications within MODX.
 
-Basic Concepts
---------------
+## Basic Concepts
 
 MODX, in essence, has a ton of moving parts. But the basics parts are:
 
@@ -68,13 +66,11 @@ Plugins are event hooks that run whenever an event is fired. They are usually us
 
 System Settings give you near infinite configuration options. Most of these are set the best way they should be, but some things (such as [friendly urls](administering-your-site/using-friendly-urls "Using Friendly URLs")) are disabled by default or could be improved for your specific needs just by changing a setting value. After installation, head over to System > System Settings in the Manager and browse through the available options. Definitely check out the "Site" area (use the dropdown that says "Filter on area..."), there are some interesting things there for you.
 
-So What Happens on a Request?
------------------------------
+## So What Happens on a Request?
 
 MODX loads the requested [Resource](making-sites-with-modx/structuring-your-site/resources "Resources"), fetches that Resource's [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), and then places the Resource's content in that Template. MODX then parses the resulting combined content, including any tags that might be in it, in the order they are reached. From there, it outputs the response to the user's browser.
 
-See Also
---------
+## See Also
 
 1. [Glossary of Revolution Terms](getting-started/an-overview-of-modx/glossary-of-revolution-terms)
   1. [Explanation of Directory Structure](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure)

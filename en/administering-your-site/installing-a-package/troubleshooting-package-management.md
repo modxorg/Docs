@@ -4,8 +4,7 @@ _old_id: "312"
 _old_uri: "2.x/administering-your-site/installing-a-package/troubleshooting-package-management"
 ---
 
-Troubleshooting Package Management
-----------------------------------
+## Troubleshooting Package Management
 
 This page is dedicated to problems with Package Management, specifically with downloading and installing packages.
 

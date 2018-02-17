@@ -4,13 +4,11 @@ _old_id: "1140"
 _old_uri: "2.x/class-reference/xpdoobject/static-object-loaders/loadcollectioninstance"
 ---
 
-xPDOObject::\_loadCollectionInstance()
---------------------------------------
+## xPDOObject::\_loadCollectionInstance()
 
 This function is responsible for loading an xPDOObject instance into a collection.
 
-Syntax
-------
+## Syntax
 
 API Doc: [http://api.modx.com/xpdo/om/xPDOObject.html#\_loadCollectionInstance](http://api.modx.com/xpdo/om/xPDOObject.html#_loadCollectionInstance)
 
@@ -26,8 +24,7 @@ static boolean _loadCollectionInstance(
    boolean|integer $cacheFlag
 )
 
-```Example
--------
+```## Example
 
 ```
 <pre class="brush: php">

@@ -4,7 +4,9 @@ _old_id: "320"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-from-modx-evolution"
 ---
 
-<div class="warning">Due to the significant differences in the codebases, tag syntax, and users, upgrading from MODX Evolution to Revolution is more involved process with a number of manual steps.</div>It is **strongly recommended that you back up your data prior to performing any upgrade.**. Once you've done so, simply run the upgrade mode in the setup/ program, and your database tables will be upgraded.
+Due to the significant differences in the codebases, tag syntax, and users, upgrading from MODX Evolution to Revolution is more involved process with a number of manual steps.
+
+It is **strongly recommended that you back up your data prior to performing any upgrade.**. Once you've done so, simply run the upgrade mode in the setup/ program, and your database tables will be upgraded.
 
  From there, a few things will happen. One, you'll probably notice most of your 3rd party scripts will be broken. You'll need to convert them to the Revolution core, as well as all of your tags to the new [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax"). Component developers will hopefully already be converting their scripts by this point, so you may be able to find Revolution-compatible scripts via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or on [modxcms.com](http://modxcms.com/extras.html) or in the [forums](http://www.modxcms.com/forums/).
 
@@ -12,13 +14,13 @@ _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-from-modx-evolut
 
  Again, we don't recommend this, but if you're a \*brave\* soul, feel free to backup and try it.
 
-<div class="info"> An excellent resource on upgrading from Evolution can be found here: <http://bobsguides.com/migrating-revolution.html></div>Extras Changes from Evolution
------------------------------
+ An excellent resource on upgrading from Evolution can be found here: <http://bobsguides.com/migrating-revolution.html>
+
+## Extras Changes from Evolution
 
  Some Extras in Evolution have been discontinued or are no longer in active development. Below is a list of Evolution Extras and their Revolution equivalents:
 
- <table><tbody><tr><th> Evolution </th> <th> Revolution </th> </tr><tr><td> Ditto </td> <td> [getResources](/extras/revo/getresources "getResources"), [getPage](/extras/revo/getpage "getPage"), [tagLister](/extras/revo/taglister "tagLister"), [Archivist](/extras/revo/archivist "Archivist") </td> </tr><tr><td> Jot </td> <td> [Quip](/extras/revo/quip "Quip") </td> </tr><tr><td> SiteMap </td> <td> [GoogleSiteMap](/extras/revo/googlesitemap "GoogleSiteMap") </td> </tr><tr><td> MaxiGallery </td> <td> [Gallery](/extras/revo/gallery "Gallery") </td> </tr><tr><td> eForm </td> <td> [FormIt](/extras/revo/formit "FormIt") </td> </tr><tr><td> Wayfinder </td> <td> [Wayfinder](/extras/evo/wayfinder "Wayfinder") </td> </tr><tr><td> DocManager </td> <td> [Batcher](/extras/revo/batcher "Batcher") </td> </tr><tr><td> AjaxSearch </td> <td> [SimpleSearch](/extras/revo/simplesearch "SimpleSearch") </td> </tr><tr><td> WebLogin </td> <td> [Login](/extras/revo/login "Login") </td></tr></tbody></table>See Also
---------
+  Evolution   Revolution   Ditto   [getResources](/extras/revo/getresources "getResources"), [getPage](/extras/revo/getpage "getPage"), [tagLister](/extras/revo/taglister "tagLister"), [Archivist](/extras/revo/archivist "Archivist")   Jot   [Quip](/extras/revo/quip "Quip")   SiteMap   [GoogleSiteMap](/extras/revo/googlesitemap "GoogleSiteMap")   MaxiGallery   [Gallery](/extras/revo/gallery "Gallery")   eForm   [FormIt](/extras/revo/formit "FormIt")   Wayfinder   [Wayfinder](/extras/evo/wayfinder "Wayfinder")   DocManager   [Batcher](/extras/revo/batcher "Batcher")   AjaxSearch   [SimpleSearch](/extras/revo/simplesearch "SimpleSearch")   WebLogin   [Login](/extras/revo/login "Login") ## See Also
 
 1. [Functional Changes from Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution)
 

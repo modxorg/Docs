@@ -4,13 +4,13 @@ _old_id: "371"
 _old_uri: "2.x/developing-in-modx/advanced-development/modx-services/modfilehandler"
 ---
 
-What is modFileHandler?
------------------------
+## What is modFileHandler?
 
 modFileHandler is a service class used in MODx Revolution for handling files. It abstracts basic file management actions to provide helper methods for file management.
 
-<div class="note">modFileHandler, modFile and modDirectory are still in their infancy stages. Many more methods will be added to them in Revolution 2.2.</div>Using modFileHandler
---------------------
+modFileHandler, modFile and modDirectory are still in their infancy stages. Many more methods will be added to them in Revolution 2.2.
+
+## Using modFileHandler
 
 The basic idea behind modFileHandler is its "make" method. When passed a path into modFileHandler->make(), it will return either a modDirectory or modFile object, depending on what was passed inside of it.
 

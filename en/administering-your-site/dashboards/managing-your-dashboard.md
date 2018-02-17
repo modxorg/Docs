@@ -4,13 +4,14 @@ _old_id: "196"
 _old_uri: "2.x/administering-your-site/dashboards/managing-your-dashboard"
 ---
 
-<div>- [Editing Your Dashboard](#ManagingYourDashboard-EditingYourDashboard)
+- [Editing Your Dashboard](#ManagingYourDashboard-EditingYourDashboard)
 - [See Also](#ManagingYourDashboard-SeeAlso)
 
-</div>This article describes how to edit a Dashboard, including on how to assign and arrange Widgets for that Dashboard.
 
-Editing Your Dashboard
-----------------------
+
+This article describes how to edit a Dashboard, including on how to assign and arrange Widgets for that Dashboard.
+
+## Editing Your Dashboard
 
 Go to the main Dashboards page, which can be found in the top menu via "Dashboard" -> "Dashboards". Once loaded, you'll notice a grid in the first tab that holds (most likely) one dashboard, the "Default" dashboard. Right-click the row, and click "Update Dashboard". This will load the editing page for the Dashboard.
 
@@ -18,8 +19,7 @@ You will see a name and description field, and below, a grid of Widgets assigned
 
 ![](/download/attachments/35586558/dashboard-edit.png?version=1&modificationDate=1315431495000)
 
-See Also
---------
+## See Also
 
 1. [Managing Your Dashboard](administering-your-site/dashboards/managing-your-dashboard)
 2. [Assigning a Dashboard to a User Group](administering-your-site/dashboards/assigning-a-dashboard-to-a-user-group)

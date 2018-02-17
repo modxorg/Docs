@@ -4,8 +4,7 @@ _old_id: "1662"
 _old_uri: "2.x/getting-started/video-quick-start-series/"
 ---
 
-Installing MODX
----------------
+## Installing MODX
 
 ### Using MODX Cloud
 
@@ -15,8 +14,7 @@ MODX Cloud is a rapid development platform built to make tasks like installation
 
 MODX's default installation software makes it easy to deploy on almost any server environment that meets the <a href="">minimum requirements</a>. This video shows you how to install MODX on a common cPanel-enabled hosting account in just a few minutes.
 
- \[\[$vimeo?id=`68094979`\]\] Importing Your HTML Into MODX
------------------------------
+ \[\[$vimeo?id=`68094979`\]\] ## Importing Your HTML Into MODX
 
 This video series walks you step-by-step through the process of integrating custom-designed web pages into MODX. In under an hour, you can turn your static site into a dynamic, CMS-driven powerhouse that's fun and easy to manage.
 

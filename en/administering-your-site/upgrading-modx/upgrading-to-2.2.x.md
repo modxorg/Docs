@@ -4,7 +4,7 @@ _old_id: "1123"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-to-2.2.x"
 ---
 
-<div>- [Introduction](#Upgradingto2.2.x-Introduction)
+- [Introduction](#Upgradingto2.2.x-Introduction)
 - [Media Sources](#Upgradingto2.2.x-MediaSources)
 - [Static Elements](#Upgradingto2.2.x-StaticElements)
 - [Dashboards](#Upgradingto2.2.x-Dashboards)
@@ -19,13 +19,13 @@ _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-to-2.2.x"
   - [Pre-processing Element Default Properties and Property Sets](#Upgradingto2.2.x-PreprocessingElementDefaultPropertiesandPropertySets)
 - [See Also](#Upgradingto2.2.x-SeeAlso)
 
-</div>Introduction
-------------
+
+
+## Introduction
 
 This article describes the major changes to MODX Revolution in the 2.2 release. Please review these changes when upgrading your sites to 2.2 from a prior MODX Revolution install.
 
-Media Sources
--------------
+## Media Sources
 
 A large change in 2.2 is the introduction of [Media Sources](administering-your-site/media-sources "Media Sources"). These abstract the "Files" tab in MODX to allow multiple sources for the Files tree, such as the filesystem, an S3 bucket, or other source types. They integrate directly into most of the MODX manager, including the MODx.Browser, [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables"), and general file manipulations. What does this mean for an upgrade?
 
@@ -35,8 +35,7 @@ MODX will attempt to create new Media Sources for any filemanager\_\* settings a
 
 Any filemanager\_\* User Settings will need to be manually migrated, as the idea of User-specific source basePaths no longer exist. Please use ACLs on the Media Source with a User Group, which you can [learn how to do so here](administering-your-site/media-sources/securing-a-media-source "Securing a Media Source").
 
-Static Elements
----------------
+## Static Elements
 
 MODX 2.2 introduces "Static" Elements, which are Elements that are located on the filesystem, through a Media Source. To use a Static Element, simply create an Element (Chunk/Snippet/Template/etc), and then check the "Is Static" box. This will then popup two fields:
 
@@ -45,13 +44,11 @@ MODX 2.2 introduces "Static" Elements, which are Elements that are located on th
 
 For example, if you selected a File System Media Source with a relative base path of 'assets/', and then specify the Source File as "templates/test.tpl", it will look for the Template file in "/path/to/my/modx/assets/templates/test.tpl".
 
-Dashboards
-----------
+## Dashboards
 
 You will note that your main Dashboard will look slightly different. The basic widgets and functionality will be the same; however, you will now be able to create Custom Dashboards for different User Groups, and rearrange and assign Widgets to them. Please refer to the [Dashboards](administering-your-site/dashboards "Dashboards") documentation.
 
-Other Notables
---------------
+## Other Notables
 
 ### Sorting Contexts in the Tree
 
@@ -91,8 +88,7 @@ In 2.2, MODX is installable and upgradable from the command line. See [Command L
 
 MODX developers and users can now tell specific Elements to pre-process any MODX tags in default property and property set values. When checked on the Properties tab of an Element, the Element will attempt to parse all tags that appear in default property values or values assigned by property sets so that the behavior is the same as if the property was set in the tag string itself. Otherwise, the behavior is the same: tags in default property values or property set values are passed directly to the Element without being processed.
 
-See Also
---------
+## See Also
 
 1. [Troubleshooting Upgrades](administering-your-site/upgrading-modx/troubleshooting-upgrades)
 2. [Upgrading to 2.2.x](administering-your-site/upgrading-modx/upgrading-to-2.2.x)

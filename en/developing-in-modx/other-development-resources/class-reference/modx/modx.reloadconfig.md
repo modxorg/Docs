@@ -4,13 +4,11 @@ _old_id: "1095"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.reloadconfig"
 ---
 
-modX::reloadConfig
-------------------
+## modX::reloadConfig
 
 Reload the config settings. Useful in cases where you've loaded some Settings dynamically.
 
-Syntax
-------
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::reloadConfig()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::reloadConfig())
 
@@ -18,15 +16,13 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.h
 <pre class="brush: php">
 array reloadConfig ()
 
-```Example
--------
+```## Example
 
 ```
 <pre class="brush: php">
 $modx->reloadConfig();
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [Settings](administering-your-site/settings "Settings")

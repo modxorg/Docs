@@ -4,14 +4,14 @@ _old_id: "11"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-input-type"
 ---
 
-<div class="warning">**Only use this documentation for pre-2.2 or core submissions.**  
-Refer to the [Adding a Custom TV Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2 "Adding a Custom TV Type - MODX 2.2") doc for the proper way to build custom TVs in 2.2 which allows easy packaging.</div>What are Custom TV Input Types?
--------------------------------
+**Only use this documentation for pre-2.2 or core submissions.**
+Refer to the [Adding a Custom TV Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2 "Adding a Custom TV Type - MODX 2.2") doc for the proper way to build custom TVs in 2.2 which allows easy packaging.
+
+## What are Custom TV Input Types?
 
 MODx Revolution allows you to create your own custom TV input types (similar to the textbox, radio, textarea, richtext, etc types already available) for your [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables").
 
-Creating the Files
-------------------
+## Creating the Files
 
 To create a custom TV input type (let's say, one called "test"), you need a few things. Let's say my "test" TV input type loads a Template selecting combobox.
 
@@ -53,8 +53,9 @@ MODx.load({
 
 ![](/download/attachments/18678063/customtv1.png?version=1&modificationDate=1269467124000)
 
-<div class="note">You don't have to use the ExtJS code as shown here to have a custom input type. It could even just be a straight HTML input. It's really up to you.</div>See Also
---------
+You don't have to use the ExtJS code as shown here to have a custom input type. It could even just be a straight HTML input. It's really up to you.
+
+## See Also
 
 1. [Creating a Template Variable](making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
 2. [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings)

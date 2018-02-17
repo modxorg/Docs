@@ -4,7 +4,7 @@ _old_id: "353"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)/custom-output-filter-examples"
 ---
 
-<div>- [Introduction](#CustomOutputFilterExamples-Introduction)
+- [Introduction](#CustomOutputFilterExamples-Introduction)
 - [Creating a Custom Output Modifier](#CustomOutputFilterExamples-CreatingaCustomOutputModifier)
 - [Porting PHx to Custom Output Filters](#CustomOutputFilterExamples-PortingPHxtoCustomOutputFilters)
 - [Examples](#CustomOutputFilterExamples-Examples)
@@ -15,8 +15,9 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
   - [substring](#CustomOutputFilterExamples-substring)
   - [numberformat](#CustomOutputFilterExamples-numberformat)
 
-</div>Introduction 
--------------
+
+
+## Introduction 
 
 Custom Output Filters are MODx Snippets dedicated to formatting placeholder output in the view layer (in a Template or in a Chunk). If a raw placeholder, e.g.
 
@@ -36,8 +37,7 @@ In the above example, the pagetitle value will be modified by a Snippet named **
 
 Check the page on MODX's [built-in output filters](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") before writing your own filter.
 
-Creating a Custom Output Modifier 
-----------------------------------
+## Creating a Custom Output Modifier 
 
 When writing your own Output Modifier, your Snippet can take the following inputs:
 
@@ -56,21 +56,19 @@ The syntax is that the Snippet name comes after a colon. Example with a snippet 
 
 ```This will pass these properties to the snippet:
 
-<table><tbody><tr><th>Param </th><th>Value </th><th>Example Result </th></tr><tr><td>input </td><td>The element's value. </td><td>The value of \[\[+file\]\] </td></tr><tr><td>options </td><td>Any value passed to the modifier. </td><td>'notitle' </td></tr><tr><td>token </td><td>The type of the parent element. </td><td>+ (the token on `file`) </td></tr><tr><td>name </td><td>The name of the parent element. </td><td>file </td></tr><tr><td>tag </td><td>The complete parent tag. </td><td>\[\[+file:makeDownloadLink=`notitle`\]\] </td></tr></tbody></table>The most important (and perhaps the most obvious) of these parameters is the **$input** parameter. Your Snippet could do something as simple as this:
+Param Value Example Result input The element's value. The value of \[\[+file\]\] options Any value passed to the modifier. 'notitle' token The type of the parent element. + (the token on `file`) name The name of the parent element. file tag The complete parent tag. \[\[+file:makeDownloadLink=`notitle`\]\] The most important (and perhaps the most obvious) of these parameters is the **$input** parameter. Your Snippet could do something as simple as this:
 
 ```
 <pre class="brush: php">
 return strtolower($input);
 
-```Porting PHx to Custom Output Filters 
--------------------------------------
+```## Porting PHx to Custom Output Filters 
 
 PHx is a popular MODX Evolution extra that offers similar functionality as output filters in Revolution, however they are not exactly the same. The most important thing to remember when porting PHx code to a custom output filter in Revolution is probably that the input (the tag's content being processed) is now available in the $input variable, contrary to the $output one which was the case in PHx.
 
 That said, you can have a look at [this page with PHx examples](http://wiki.modxcms.com/index.php/PHx/CustomModifiers) and convert them to Revolution easily when needed. Could you add them to this page when you did that, too? Thanks! :)
 
-Examples 
----------
+## Examples 
 
 As the examples to be found below are not included in the core, you will need to add these yourself. Luckily, MODx makes this ridiculously easy. You can simply use snippets as output filters, so the process of adding a custom output filter is merely adding a new snippet! To use the output filter, you reference the snippet name.
 

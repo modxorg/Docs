@@ -4,18 +4,19 @@ _old_id: "306"
 _old_uri: "2.x/developing-in-modx/basic-development/snippets/templating-your-snippets"
 ---
 
-Templating Snippets 
---------------------
+## Templating Snippets 
 
 One of the best practices in Snippet design is to make sure that you never write HTML directly in the Snippet, but template out the HTML into Chunks. This tutorial shows you how to do that in a Snippet.
 
-<div>- [Templating Snippets](#TemplatingYourSnippets-TemplatingSnippets)
+- [Templating Snippets](#TemplatingYourSnippets-TemplatingSnippets)
   - [Our Initial Snippet](#TemplatingYourSnippets-OurInitialSnippet)
   - [Templating the Snippet](#TemplatingYourSnippets-TemplatingtheSnippet)
   - [Adding A Row Class](#TemplatingYourSnippets-AddingARowClass)
   - [Passing a Custom ID](#TemplatingYourSnippets-PassingaCustomID)
 
-</div>### Our Initial Snippet 
+
+
+### Our Initial Snippet 
 
 Let's take a case scenario; say you want to iterate across the published, non-deleted Resources that are children of the Resource with ID 390, sorted by menuindex, and then output them as LI tags with the pagetitle and a link to click them.
 
@@ -169,8 +170,7 @@ foreach ($resources as $resource) {
 }
 return $output;
 
-```See Also 
----------
+```## See Also 
 
 1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
 2. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)

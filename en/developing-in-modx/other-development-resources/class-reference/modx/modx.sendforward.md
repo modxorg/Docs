@@ -8,8 +8,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  Forwards the request to another resource without changing the URL. If the ID provided does not exist, sends to a 404 Error page.
 
-Syntax
-------
+## Syntax
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendForward()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendForward())
 
@@ -24,8 +23,7 @@ void sendForward (integer $id, [string|array $options = null])
 - response\_code: the same as if you would pass a string to the $options var
 - merge: a way to merge the resource currently in $modx->resource with the target resource. The content, pub\_date, unpub\_date, richtext, \_content and \_processed values are excluded as well as the value of the forward\_merge\_excludes system setting/another option key. I'm not sure if this is supposed to be used out of the core and there's probably better ways to get data combined (eg: setPlaceholder) then merging.
 
-Example
--------
+## Example
 
  Send the user to Resource ID 234 without actually changing the URL.
 
@@ -33,8 +31,7 @@ Example
 <pre class="brush: php">
 $modx->sendForward(234);
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.makeUrl](developing-in-modx/other-development-resources/class-reference/modx/modx.makeurl "modX.makeUrl")

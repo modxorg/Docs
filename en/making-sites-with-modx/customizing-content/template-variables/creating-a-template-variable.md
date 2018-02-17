@@ -4,7 +4,7 @@ _old_id: "75"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable"
 ---
 
-<div>- [Explanation](#CreatingaTemplateVariable-Explanation)
+- [Explanation](#CreatingaTemplateVariable-Explanation)
 - [Creating the Template Variable](#CreatingaTemplateVariable-CreatingtheTemplateVariable)
   - [1. Log into the MODx manager](#CreatingaTemplateVariable-1.LogintotheMODxmanager)
   - [2. Add the Template Variable](#CreatingaTemplateVariable-2.AddtheTemplateVariable)
@@ -20,16 +20,18 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/cre
 - [Template and Resource Group Access](#CreatingaTemplateVariable-TemplateandResourceGroupAccess)
 - [See Also](#CreatingaTemplateVariable-SeeAlso)
  
-</div> This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what about what a Template Variable is, see the page on [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables").
 
-Explanation
------------
+
+ This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what about what a Template Variable is, see the page on [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables").
+
+## Explanation
 
  When we say "Create a Template Variable", there are two possible actions that we might be talking about: we can be referring to the action of adding some text or content to one of our existing custom fields when we edit a MODX page (i.e. a Resource), OR we can be referring to the action of defining this field so that it is available to our MODX resources. This page is all about the latter. In the first case, we would be creating an _instance_ of the Template Variable, whereas the second case is all about defining the Template Variable blueprint, which determines how each instance will behave.
 
-<div class="note"> **A Class of Field**   
- When you create a Template Variable, you are really defining a _class_ of custom field; it acts as a blueprint for all instances of this custom field. </div>Creating the Template Variable
-------------------------------
+ **A Class of Field** 
+ When you create a Template Variable, you are really defining a _class_ of custom field; it acts as a blueprint for all instances of this custom field. 
+
+## Creating the Template Variable
 
 ### 1. Log into the MODX manager
 
@@ -39,7 +41,7 @@ Explanation
 
  On the left-hand resource-tree pane, click on the **Elements** tab
 
- <span class="image-wrap" style="float: left">![](download/attachments/18678061/MODx+Create+TV.png?version=1&modificationDate=1308130781000)</span>
+ ![](download/attachments/18678061/MODx+Create+TV.png?version=1&modificationDate=1308130781000)
 
 ### 3. Define the General Information
 
@@ -57,7 +59,9 @@ Explanation
 
  In the picture, you can see how the settings will correspond to your pages's editor fields.
 
-<div class="note"> The name should be unique! </div>### 4. Define the Input Options
+ The name should be unique! 
+
+### 4. Define the Input Options
 
  Next, click on the **Input Options** tab: you need to choose which kind of field this will be, e.g. a text field, a dropdown field, a WYSIWYG, etc. See the page for See the [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types") for a full list of possible input types.
 
@@ -87,15 +91,13 @@ Explanation
 
 - - - - - -
 
-Advanced Usage
---------------
+## Advanced Usage
 
  IN PROGRESS ...
 
  You may have noticed we skipped over a fair number of tabs in the initial walk through. Template Variables offer for some more complex functionality that you don't need for simple scenarios.
 
-Output Rendering Options
-------------------------
+## Output Rendering Options
 
  Next, we'll select the output rendering options. We'll select 'Date' as well, and as you'll note, below this box (depending on the Output Render selected) some form fields will show:
 
@@ -103,8 +105,7 @@ Output Rendering Options
 
  Allowing us to edit more fine-grained options for that Output Render.
 
-Properties
-----------
+## Properties
 
  From there, we can specify any default properties we want for the TV. "How can you use properties on a TV?", you might ask. Well, let's say we're doing a textarea TV named "viewingSS". In our content, we've got this:
 
@@ -122,15 +123,13 @@ Viewing: [[+subsection]]
 
 > Viewing: Cars
 
-Template and Resource Group Access
-----------------------------------
+## Template and Resource Group Access
 
  We can assign TVs to [Templates](making-sites-with-modx/structuring-your-site/templates "Templates"), as well. This allows those Resources assigned to those [Templates](making-sites-with-modx/structuring-your-site/templates "Templates") to edit the TVs for each Resource.
 
  Also, TVs can be restricted to certain Resource Groups, selectable in the grid labeled "Access Permissions".
 
-See Also
---------
+## See Also
 
 1. [Creating a Template Variable](making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
 2. [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings)

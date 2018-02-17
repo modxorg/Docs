@@ -4,7 +4,7 @@ _old_id: "153"
 _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introduction/getting-started-developing"
 ---
 
-<div>- [Programming in MODX Revolution](#GettingStartedDeveloping-ProgramminginMODxRevolution)
+- [Programming in MODX Revolution](#GettingStartedDeveloping-ProgramminginMODxRevolution)
 - [3rd-Party Components (3PCs)](#GettingStartedDeveloping-3rdPartyComponents%283PCs%29)
 - [core/components and assets/components](#GettingStartedDeveloping-core%2Fcomponentsandassets%2Fcomponents)
 - [Snippets](#GettingStartedDeveloping-Snippets)
@@ -13,18 +13,17 @@ _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introdu
 - [Custom Manager Pages (CMPs)](#GettingStartedDeveloping-CustomManagerPages%28CMPs%29)
 - [Using MODX Externally](#GettingStartedDeveloping-UsingMODxExternally)
 
-</div>Programming in MODX Revolution
-------------------------------
+
+
+## Programming in MODX Revolution
 
  MODX Revolution is an OOP Framework, built around the database ORM [xPDO](/display/xPDO20/Home "Home").
 
-3rd-Party Components (3PCs)
----------------------------
+## 3rd-Party Components (3PCs)
 
  3rd-Party Components (3PCs) are collections of any sort of MODX Objects. They can be a collection of Snippets, Plugins and Chunks, or a single Snippet, or just a collection of files. They are usually transported and installed via [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages").
 
-core/components and assets/components
--------------------------------------
+## core/components and assets/components
 
  MODX doesn't necessarily limit where you can put your custom 3rd party component files, but we do have some recommendations. For files that don't need to be in the webroot (config files, .php, etc), we recommend putting them in:
 
@@ -36,18 +35,15 @@ core/components and assets/components
 
  Ergo, for 'test', "assets/components/test". This standardization of paths makes it easier for other developers using your components to find your files easily.
 
-[Snippets](developing-in-modx/basic-development/snippets "Snippets")
-------------------------------------------------------------------------------------
+## [Snippets](developing-in-modx/basic-development/snippets "Snippets")
 
  Snippets are simply php scripts that can be executed on any page or other Element. They are the cornerstone of MODX Development and dynamic customization. You can read more about Snippets [here](developing-in-modx/basic-development/snippets "Snippets").
 
-[Plugins](developing-in-modx/basic-development/plugins "Plugins")
----------------------------------------------------------------------------------
+## [Plugins](developing-in-modx/basic-development/plugins "Plugins")
 
  [Plugins](developing-in-modx/basic-development/plugins "Plugins") are similar to snippets in that they are snippets of code that have access to the MODX API - however the big difference is that plugins are associated to specific system events. For example, in an average MODx page request, several events happen at certain points within the page parsing process and plugins can be attached to any of these events to fulfill a desired function. [Plugins](developing-in-modx/basic-development/plugins "Plugins") aren't just limited to front-end processing though, there are many events that are available in the MODX Manager.
 
-[Properties and Property Sets](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets")
-------------------------------------------------------------------------------------------------------------------------------------------------------
+## [Properties and Property Sets](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets")
 
  Properties are simply placeholders on Elements (Snippets/Plugins/Chunks/TVs/Templates), which can be parsed by each individual Element. They allow customization and argument passing for each Element.
 
@@ -55,13 +51,11 @@ core/components and assets/components
 
  More on Property Sets can be found [here](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets").
 
-[Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages") (CMPs)
-----------------------------------------------------------------------------------------------------------------------------------
+## [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages") (CMPs)
 
  [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages"), or CMPs, are custom pages in the manager built by 3rd Party developers to allow backend management of Components. They use the modAction and modMenu objects to dynamically create manager pages that can be easily found and added with no hacking of the core.
 
-Using MODX Externally
----------------------
+## Using MODX Externally
 
  Using the MODx object (and all of its respective classes) is quite simple. All you need is this code:
 

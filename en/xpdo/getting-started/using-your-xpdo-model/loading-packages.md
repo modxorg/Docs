@@ -4,13 +4,11 @@ _old_id: "1194"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/loading-packages"
 ---
 
-What are xPDO Packages?
------------------------
+## What are xPDO Packages?
 
  Packages are collections of maps and classes that represent tables in a database. It's the ORM layer, usually stored inside of a component's "model/" directory.
 
-How are they used?
-------------------
+## How are they used?
 
  Packages are loaded in xPDO via the addPackage method or the addExtensionPackage methods. The addPackage method is appropriate for plugins and Snippets that need to load up classes and table data on demand. addExtensionPackage is a convenience method which ultimately relies on addPackage. When a package is added via addExtensionPackage, it is loaded with each MODX request; it is more appropriate for packages that alter core functionality.
 
@@ -25,13 +23,13 @@ The addPackage method takes 3 parameters: 'name', 'path' and an optional 'table\
 
 ``` From then on out, any of our classes in our Package can be loaded via xPDO's retrieval methods.
 
-<div class="note"> Using the table\_prefix is not recommended unless you have a good reason to specifically set the table prefix. </div>Conclusion
-----------
+ Using the table\_prefix is not recommended unless you have a good reason to specifically set the table prefix. 
+
+## Conclusion
 
  Now that you've got your package loaded, you'll want to look into [creating objects](/xpdo/2.x/getting-started/using-your-xpdo-model/creating-objects "Creating Objects"), or adding rows to your tables, with xPDO.
 
-See Also
---------
+## See Also
 
 - [addPackage()](xpdo/2.x/class-reference/xpdo/xpdo.addpackage)
 - [extension\_packages](administering-your-site/settings/system-settings/extension_packages)

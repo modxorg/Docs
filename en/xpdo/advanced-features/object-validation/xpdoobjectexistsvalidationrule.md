@@ -4,13 +4,11 @@ _old_id: "1288"
 _old_uri: "2.x/advanced-features/object-validation/xpdoobjectexistsvalidationrule"
 ---
 
-What Does the Rule Do?
-----------------------
+## What Does the Rule Do?
 
 This rule checks to see if another object exists. If that object doesn't exist, then the validation on this current object fails. The object can be specified by stating the "classKey" and "pk" values in the rule schema definition.
 
-Using the Rule
---------------
+## Using the Rule
 
 First, our model:
 
@@ -54,8 +52,7 @@ if ($validator->validate() == false) {
 
 > The Chunk does not exist, so this object cannot be saved.
 
-See Also
---------
+## See Also
 
 1. [xPDOForeignKeyConstraint](/xpdo/2.x/advanced-features/object-validation/xpdoforeignkeyconstraint)
 2. [xPDOMaxLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxlengthvalidationrule)

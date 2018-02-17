@@ -4,8 +4,7 @@ _old_id: "1261"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree"
 ---
 
-xPDOCacheManager::copyTree
---------------------------
+## xPDOCacheManager::copyTree
 
 Recursively copies a directory tree from a source directory to a target directory. Allows the following options:
 
@@ -14,8 +13,7 @@ Recursively copies a directory tree from a source directory to a target director
 - **copy\_exclude\_items** - An array of names of files to skip.
 - **copy\_exclude\_patterns** - An array or string of patterns to exclude by.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#copyTree>
 
@@ -23,8 +21,7 @@ API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#copyTree>
 <pre class="brush: php">
 array|boolean copyTree (string $source, string $target, [array $options = array()])
 
-```Example
--------
+```## Example
 
 Copy a directory:
 
@@ -32,8 +29,7 @@ Copy a directory:
 <pre class="brush: php">
 $xpdo->cacheManager->copyTree('/my/old/dir/','/my/new/dir/');
 
-```See Also
---------
+```## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

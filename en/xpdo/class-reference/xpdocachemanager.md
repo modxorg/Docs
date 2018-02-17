@@ -21,7 +21,6 @@ xPDOCacheManager handles all caching algorithms and methods within xPDO.
 13. [xPDOCacheManager.set](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.set)
 14. [xPDOCacheManager.writeTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.writetree)
 
-See Also
---------
+## See Also
 
 - [Caching](/xpdo/2.x/advanced-features/caching "Caching")

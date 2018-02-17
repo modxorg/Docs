@@ -45,8 +45,10 @@ $gu = $xpdo->getObject('GroupUser',array(
  ```
 <pre class="brush: php">$bigbox = $xpdo->getObject('Box',array('width' => 150));
 
-```<div class="tip"> **Handy Hint**   
- If your criteria matches multiple objects, getObject will only return the _first one_. Which one will be first? It's up to the database and how its natural sort order. </div> We'll discuss the third option, xPDOCriteria, later in the xPDOQuery and xPDOCriteria sections.
+``` **Handy Hint** 
+ If your criteria matches multiple objects, getObject will only return the _first one_. Which one will be first? It's up to the database and how its natural sort order. 
+
+ We'll discuss the third option, xPDOCriteria, later in the xPDOQuery and xPDOCriteria sections.
 
 ### [xPDO::getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
 
@@ -86,7 +88,9 @@ foreach ($boxes as $box) {
 // blue
 // yellow
 
-```<div class="note"> Note that the index for each object when iterated over is not the primary key, unlike the array index when using getCollection. </div>### [xPDO::newQuery](/xpdo/2.x/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
+``` Note that the index for each object when iterated over is not the primary key, unlike the array index when using getCollection. 
+
+### [xPDO::newQuery](/xpdo/2.x/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
 
  One of the most powerful parts of xPDO is its ability to create complex queries in a simple fashion using the [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery") wrapper. This class lets you build SQL queries using OOP methods that extend the xPDOCriteria class – you can pass its instance right into getObject or getCollection calls. The newQuery function creates an [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery") object, and takes 3 parameters:
 
@@ -200,10 +204,11 @@ $boxes = $xpdo->getCollection('Box',$c);
 
  See also [xPDOQuery.where](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.where "xPDOQuery.where")
 
-Graphs
-------
+## Graphs
 
-<div class="note"> A graph extends the idea of an object (or objects in collections). Instead of a simple object, a graph includes references to related objects. Graphs are a useful alternative to JOINs. </div>### xPDO::getObjectGraph
+ A graph extends the idea of an object (or objects in collections). Instead of a simple object, a graph includes references to related objects. Graphs are a useful alternative to JOINs. 
+
+### xPDO::getObjectGraph
 
  This is the same as getCollectionGraph, but it returns a single object. See getCollectionGraph below for info.
 
@@ -221,8 +226,10 @@ if ($collection) {
         }
 }
 
-```<div class="tip"> **Aliases in JSON**   
- Remember that the JSON hash passed to getObjectGraph or getCollectionGraph needs to use _aliases_, not class names. </div> You have direct access to all of the fields (table rows) in the Collection Graph comprised in these four tables. The alias is used to create the graph. In this example, the 'Zip' table is the primary table, so we look at that table and we define relationships from the perspective of that primary table.
+``` **Aliases in JSON** 
+ Remember that the JSON hash passed to getObjectGraph or getCollectionGraph needs to use _aliases_, not class names. 
+
+ You have direct access to all of the fields (table rows) in the Collection Graph comprised in these four tables. The alias is used to create the graph. In this example, the 'Zip' table is the primary table, so we look at that table and we define relationships from the perspective of that primary table.
 
  As with getObject and getCollection, we can supply a $criteria object to getCollectionGraph. Let's add some criteria to our getCollectionGraph() query. In this example, we can search for zipcodes in California (CA)
 
@@ -240,8 +247,10 @@ if ($collection) {
         }
 }
 
-```<div class="tip"> **Aliases in Criteria**   
- The table names you specify in your criteria must use the _aliases_, not the class names (just like the JSON hashes). </div> Let's show one more example, this time using MODX tables. This is only an example: filtering on Template Variables is a bit dangerous because the values stored in the database are not always the verbatim values you experience in the manager or in your templates. But this example should help demonstrate the usage of aliases and that you must be aware of the relationships between the objects (some related objects are singular, some are arrays).
+``` **Aliases in Criteria** 
+ The table names you specify in your criteria must use the _aliases_, not the class names (just like the JSON hashes). 
+
+ Let's show one more example, this time using MODX tables. This is only an example: filtering on Template Variables is a bit dangerous because the values stored in the database are not always the verbatim values you experience in the manager or in your templates. But this example should help demonstrate the usage of aliases and that you must be aware of the relationships between the objects (some related objects are singular, some are arrays).
 
  ```
 <pre class="brush: php">$criteria = array();
@@ -261,8 +270,7 @@ if ($pages) {
 
 ``` Please view the dedicated page: [getCollectionGraph](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects/getcollectiongraph "getCollectionGraph")
 
-See Also
---------
+## See Also
 
 - [xPDO.getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
 - [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")

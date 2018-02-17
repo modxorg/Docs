@@ -4,7 +4,7 @@ _old_id: "1216"
 _old_uri: "2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor"
 ---
 
-<div>- [Parameters](#ThexPDOConstructor-Parameters)
+- [Parameters](#ThexPDOConstructor-Parameters)
   - [$dsn](#ThexPDOConstructor-%24dsn)
   - [$username and $password](#ThexPDOConstructor-%24usernameand%24password)
   - [$options](#ThexPDOConstructor-%24options)
@@ -12,12 +12,13 @@ _old_uri: "2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor
 - [See Also](#ThexPDOConstructor-SeeAlso)
   - [More information about options](#ThexPDOConstructor-Moreinformationaboutoptions)
 
-</div><figure class="code"><figcaption>**default xPDO connection constructor**</figcaption>```
+
+
+**default xPDO connection constructor**```
 <pre class="brush: php">
 $xpdo= new xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null) 
 
-```</figure>Parameters
-----------
+```## Parameters
 
 As you can see, there are 5 parameters available in the constructor; the only necessary one is the first:
 
@@ -69,8 +70,7 @@ Some of the xPDO-specific parameters use custom defines that you can use, such a
 
 An optional array of driver-specific PDO options. More info can be found [here](http://us.php.net/manual/en/pdo.drivers.php).
 
-See Also
---------
+## See Also
 
 - [PDO::\_\_construct()](http://php.net/manual/en/pdo.construct.php)
 - [Caching](/xpdo/2.x/advanced-features/caching "Caching")

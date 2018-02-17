@@ -4,8 +4,7 @@ _old_id: "1352"
 _old_uri: "2.x/administering-your-site/security/security-tutorials/more-on-the-anonymous-user-group"
 ---
 
-Who's Anonymous?
-----------------
+## Who's Anonymous?
 
 ### 
 
@@ -13,8 +12,7 @@ Anyone who visits the site and is not logged in belongs to the Anonymous [User G
 
 You can edit the User Group by navigating to the top menu item Security » Access Controls, User Groups tab. Then right-click on the Anonymous User Group's name and select "Update User Group". ![](/download/attachments/42565753/Access+Controls.png?version=1&modificationDate=1350716439000)
 
-What Can Anonymous Users Do?
-----------------------------
+## What Can Anonymous Users Do?
 
 ### 
 

@@ -4,7 +4,7 @@ _old_id: "372"
 _old_uri: "2.x/developing-in-modx/advanced-development/modx-services/modregistry"
 ---
 
-<div>- [What is modRegistry?](#modRegistry-WhatismodRegistry%3F)
+- [What is modRegistry?](#modRegistry-WhatismodRegistry%3F)
 - [Choosing a modRegister implementation](#modRegistry-ChoosingamodRegisterimplementation)
   - [modFileRegister](#modRegistry-modFileRegister)
   - [modDbRegister](#modRegistry-modDbRegister)
@@ -36,15 +36,15 @@ _old_uri: "2.x/developing-in-modx/advanced-development/modx-services/modregistry
   - [Capturing Log Messages](#modRegistry-CapturingLogMessages)
   - [Registering Load Balanced Web Nodes for Remote Commands](#modRegistry-RegisteringLoadBalancedWebNodesforRemoteCommands)
 
-</div>What is modRegistry?
---------------------
+
+
+## What is modRegistry?
 
 The modRegistry service provided with the MODX Revolution Core is a simple message queue service that developers can make use of for a wide variety of purposes. It comes with a file and database modRegister implementation, and can be extended to work with custom or external message queue implementations.
 
 The modRegistry service can connect to any number of unique registers. Within each register, specific topics are subscribed to and messages can then be sent or read from the topic.
 
-Choosing a modRegister implementation
--------------------------------------
+## Choosing a modRegister implementation
 
 MODX ships with two simple modRegister implementations. One is file-based and one uses database tables for storage. Each has benefits and limitations that you should consider before determining which one to use for a specific purpose.
 
@@ -59,8 +59,10 @@ Here is how you would add a specific file-based register named _food_:
 $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('food', 'registry.modFileRegister', array('directory' => 'food'));
 
-```<div class="warning">**Be Careful!**   
- Clearing the cache manually by deleting all files and folders under `core/cache/` will delete any existing modFileRegister messages as well.</div>### modDbRegister
+```**Be Careful!** 
+ Clearing the cache manually by deleting all files and folders under `core/cache/` will delete any existing modFileRegister messages as well.
+
+### modDbRegister
 
 When reading and writing is expected to reach higher volumes, or you need messages shared across a load-balanced environment with multiple web server nodes, you would want to choose the database-powered modRegister implementation.
 
@@ -71,8 +73,7 @@ Here is how you would add a specific database register named _food_:
 $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('food', 'registry.modDbRegister', array('directory' => 'food'));
 
-```Using the Registry API
-----------------------
+```## Using the Registry API
 
 The modRegistry service provides a very simple API for working with Registers, subscribing to topics, and sending/reading messages within them.
 
@@ -126,7 +127,9 @@ Sometimes it is necessary to send a single message without a specific key. The M
 <pre class="brush: php"><?php
 $modx->registry->food->send("/beer/", "It's Miller Time!", array('kill' => true));
 
-```<div class="note">The _kill_ option tells message consumers to stop reading any further messages once a message with this option is read.</div>#### Options for Sending Messages
+```The _kill_ option tells message consumers to stop reading any further messages once a message with this option is read.
+
+#### Options for Sending Messages
 
 ##### delay
 
@@ -183,8 +186,7 @@ Indicates if the message should be removed when it is read.
 
 Indicates if the read operation should include the message keys. If not true, only the messages are returned in a simple, ordered array.
 
-Using the Registry Processors
------------------------------
+## Using the Registry Processors
 
 In addition to the raw API, MODX also provides connectors and processors for sending messages to and reading messages from a register topic. These can be easily utilized by components using the runProcessor method or by AJAX requests via the connectors.
 
@@ -215,8 +217,7 @@ Reading messages with the `system/registry/register/read` processor can also be 
 - **include\_keys** _(optional, MODX 2.2+)_ — Indicates if returned messages should include the message keys; default is false.
 - **show\_filename** _(optional)_ — Indicates if html\_log formatted messages should include the filename; default is false.
 
-Examples
---------
+## Examples
 
 ### Alternative to Session Storage
 

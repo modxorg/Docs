@@ -4,8 +4,7 @@ _old_id: "151"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution"
 ---
 
-Changes from MODx Evolution to MODx Revolution
-----------------------------------------------
+## Changes from MODx Evolution to MODx Revolution
 
 Much has changed from MODx Evolution in the new Revolution release. This document will attempt to address some of the major ones.
 
@@ -20,7 +19,7 @@ In Evolution, pages were parsed via eval and done as a whole - in Revolution, we
 So what does that mean? Well, a few things:
 
 - _Don't put Snippet calls that assign placeholders at the end of a Resource, or after the Resource._ The placeholders will simply be blank, since the [Snippet](developing-in-modx/basic-development/snippets "Snippets") haven't executed yet.
-- _Tags can now have tags within their properties._ \[\[mySnippet? &tag=`test\[<span class="error">\[call\]</span>\]`\]\] is now 100% a-okay.
+- _Tags can now have tags within their properties._ \[\[mySnippet? &tag=`test\[\[call\]\]`\]\] is now 100% a-okay.
 - \_Using =,?,!,\* is now OK in a Snippet property.
 
 ### No More 5000-Document limit

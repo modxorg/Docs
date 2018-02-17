@@ -4,7 +4,7 @@ _old_id: "186"
 _old_uri: "2.x/administering-your-site/security/security-tutorials/making-member-only-pages"
 ---
 
-<div>- [Introduction](#MakingMember-OnlyPages-Introduction)
+- [Introduction](#MakingMember-OnlyPages-Introduction)
 - [Access Wizard explanation (2.2.2 and later)](#MakingMember-OnlyPages-AccessWizardexplanation%282.2.2andlater%29)
   - [1. Create a Resource Group](#MakingMember-OnlyPages-1.CreateaResourceGroup)
   - [2. Add Resources to the Resource Group](#MakingMember-OnlyPages-2.AddResourcestotheResourceGroup)
@@ -21,8 +21,9 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials/making-member
 - [Help! I can't get this to work, still!](#MakingMember-OnlyPages-Help%5C%21Ican%27tgetthistowork%2Cstill%5C%21)
 - [See Also](#MakingMember-OnlyPages-SeeAlso)
 
-</div>Introduction
-------------
+
+
+## Introduction
 
 MODX Revolution uses a whole new set of security systems to allow you more flexibility while giving your users access (or denying) to Manager and Web resources. As there seems to be need for a proper tutorial to get you into the basics of working with this advanced system this document has been written.
 
@@ -37,8 +38,7 @@ For those that are savvy enough, below follows a simple list to help you through
 5. Add users to the user group with the role of Member. (Security -> Manage Users)
 6. Flush permissions (Security -> Flush Permissions) and try it in another browser (not just another browser window: another browser)
 
-Access Wizard explanation (2.2.2 and later)
--------------------------------------------
+## Access Wizard explanation (2.2.2 and later)
 
 MODX 2.2.2 ships with an access wizard that simplifies this process. The step-by-step explanation is still valid, but the access wizard simplifies the process. You may wish to read both explanations to gain a better understanding of how each aspect of MODX's security system interacts.
 
@@ -48,7 +48,7 @@ Go to Security -> Resouce Groups and click the Create Resource Group. A window s
 
 Let's go over each section:
 
-<table><tbody><tr><th>Section</th><th>Explanation</th><th>Tutorial Default</th></tr><tr><td>Name</td><td>This is the name of the resource group that we're generating. Make it descriptive and easy-to-remember.</td><td>Protected</td></tr><tr><td>Contexts</td><td>This is the context where you want the rules to apply. For this tutorial, we only have one context, "web", and we only want to hide things there.</td><td>web</td></tr><tr><td>Automatically give Administrator Group Access</td><td>Checking this box will give all users in the default administrator group access to the resource group. As of 2.2.1, the default admin user is marked as a "sudo" user and they can view all resource groups, regardless of whether the administrator group has access. However, if there are any other administrators that don't have sudo access and we want them to be able to view the resources in the resource group, we should check that box.</td><td>checked</td></tr><tr><td>Automatically give Anonymous Group Access</td><td>Checking this box will give all users in the anonymous user group access to the resource group. When someone comes to your website and they're not logged into anywhere, they're considered in the anonymous user group. We want to protect our pages from users who aren't logged in, so let's leave this box unchecked for this tutorial.</td><td>unchecked</td></tr><tr><td>Create Parallel User Group</td><td>You may not wish to have everyone who can view the member-only pages be in the administrator group (if you've checked the "Automatically give Administrator Group Access" option). In this case, you can create another user group that has access to the resources in this resource group. Let's check that, as our members aren't administrators.</td><td>checked</td></tr><tr><td>Automatically Give Other User Groups Access</td><td>If you have any other user groups that you've defined previously to this tutorial to whom you want to give access, you can list them here.</td><td> </td></tr></tbody></table>Great! We have a resource group and a user group created. We now need to add resources to the resource group and users to that user group and then we'll be laughing.
+SectionExplanationTutorial DefaultNameThis is the name of the resource group that we're generating. Make it descriptive and easy-to-remember.ProtectedContextsThis is the context where you want the rules to apply. For this tutorial, we only have one context, "web", and we only want to hide things there.webAutomatically give Administrator Group AccessChecking this box will give all users in the default administrator group access to the resource group. As of 2.2.1, the default admin user is marked as a "sudo" user and they can view all resource groups, regardless of whether the administrator group has access. However, if there are any other administrators that don't have sudo access and we want them to be able to view the resources in the resource group, we should check that box.checkedAutomatically give Anonymous Group AccessChecking this box will give all users in the anonymous user group access to the resource group. When someone comes to your website and they're not logged into anywhere, they're considered in the anonymous user group. We want to protect our pages from users who aren't logged in, so let's leave this box unchecked for this tutorial.uncheckedCreate Parallel User GroupYou may not wish to have everyone who can view the member-only pages be in the administrator group (if you've checked the "Automatically give Administrator Group Access" option). In this case, you can create another user group that has access to the resources in this resource group. Let's check that, as our members aren't administrators.checkedAutomatically Give Other User Groups AccessIf you have any other user groups that you've defined previously to this tutorial to whom you want to give access, you can list them here. Great! We have a resource group and a user group created. We now need to add resources to the resource group and users to that user group and then we'll be laughing.
 
 ### 2. Add Resources to the Resource Group
 
@@ -58,13 +58,15 @@ We need to tell MODX with resource we want to protect. Let's stay on the same pa
 
 Okay, we've had enough of the Resource Group page. Go to Security > Access Controls. In the Users Groups tab, we can see a list of all of the user groups on our site. Right click on the "Protected" User group. Select "Add User to Group". For the "Name", select the user you want in the user group. For the Role, let's select "Member" for now. Roles define what an individual user can do within a user group, but we don't need that fine of control for this tutorial. Click Save.
 
-<div class="info">It is important to realize that as soon as you have protected a resource by (1) assigning it to one or more resource groups and (2) linking the resource group to a user group using an access control, those pages will no longer show up for users that are not linked to the resource group. The default behavior in that case is displaying the 404-error page. If you would rather return the 401-error, you will need to give the anonymous user group "load" permission for the resource group. More about this in a later tutorial. At this moment in the tutorial, your page will not be visible as you have not yet added it to a user group.</div>We now have our resources in a resource group, and users in a user group. Done? Sorry, we have a few small things to do first. If you're following this tutorial and this is your first foray into MODX security, you will likely run into a small but important snag: the user group we created doesn't have context access to our front end context, web. In other words, if we could view that context, we could view those protected resources -- but we can't currently view that context. Let's give our user group permission to view that context.
+It is important to realize that as soon as you have protected a resource by (1) assigning it to one or more resource groups and (2) linking the resource group to a user group using an access control, those pages will no longer show up for users that are not linked to the resource group. The default behavior in that case is displaying the 404-error page. If you would rather return the 401-error, you will need to give the anonymous user group "load" permission for the resource group. More about this in a later tutorial. At this moment in the tutorial, your page will not be visible as you have not yet added it to a user group.
+
+We now have our resources in a resource group, and users in a user group. Done? Sorry, we have a few small things to do first. If you're following this tutorial and this is your first foray into MODX security, you will likely run into a small but important snag: the user group we created doesn't have context access to our front end context, web. In other words, if we could view that context, we could view those protected resources -- but we can't currently view that context. Let's give our user group permission to view that context.
 
 ### 4. Add Context Access to the User Group
 
 Go to Security > Access Controls. Right click on the protected user group. Select "Update user group". Go to the Context Access tab. Click "Add Context". We are presented with a dialog such as the one below. Let's break it down: ![](/download/attachments/18678352/context-access.png?version=1&modificationDate=1348853336000)
 
-<table><tbody><tr><th>Section</th><th>Explanation</th><th>Tutorial Default</th></tr><tr><td>Context</td><td>This specifies to which context we're giving access. The basic use case will have web and mgr. Web is the public front-end of your website, and mgr is the private back-end of your website (i.e., the manager that you're logged in).</td><td>web</td></tr><tr><td>Minimum Role</td><td>This specifies what user roles this rule will apply to. If we want all users in this user group, select "Member - 9999". This is where some of that fine control comes in that we talked about earlier.</td><td>Member - 9999</td></tr><tr><td>Access Policy</td><td>This specifies what permissions we're giving to the users. Different policies will allow user groups to do different things.</td><td>Administrator</td></tr></tbody></table>Let's make one rule with "web", "Member - 9999", and "Load, List and View". If we want users to be able to view the MODX manager, we can add a second rule to give them access to the mgr context: "mgr", "Member - 9999", and "Administrator". All these users will have admin access. If you would prefer to limit their permissions, you could instead choose "Content Editor" or "Developer" for their access policies. Alternatively, you can make your own in Security > Access Policies if you want to be specific about what users can or can't do.
+SectionExplanationTutorial DefaultContextThis specifies to which context we're giving access. The basic use case will have web and mgr. Web is the public front-end of your website, and mgr is the private back-end of your website (i.e., the manager that you're logged in).webMinimum RoleThis specifies what user roles this rule will apply to. If we want all users in this user group, select "Member - 9999". This is where some of that fine control comes in that we talked about earlier.Member - 9999Access PolicyThis specifies what permissions we're giving to the users. Different policies will allow user groups to do different things.AdministratorLet's make one rule with "web", "Member - 9999", and "Load, List and View". If we want users to be able to view the MODX manager, we can add a second rule to give them access to the mgr context: "mgr", "Member - 9999", and "Administrator". All these users will have admin access. If you would prefer to limit their permissions, you could instead choose "Content Editor" or "Developer" for their access policies. Alternatively, you can make your own in Security > Access Policies if you want to be specific about what users can or can't do.
 
 We now have users in a user group, resources in a resource group, and that user group can view the context. We're so close!
 
@@ -72,8 +74,9 @@ We now have users in a user group, resources in a resource group, and that user 
 
 Before you can see a change, you need to reset / flush what your individual users can see and do. Go to Security > Flush Permissions. To test this in the front end, you must use a different browser. 90% of your grief will come from not testing in a different browser or flushing your permissions, so don't be lazy and open that second browser up. Congratulations, you now have members-only pages!
 
-<div class="info">In some cases you may need to clear the site cache, specifically for the mgr (manager) context as elements and resources may cache their permissions.</div>Step-by-step explanation (pre-2.2.2)
-------------------------------------
+In some cases you may need to clear the site cache, specifically for the mgr (manager) context as elements and resources may cache their permissions.
+
+## Step-by-step explanation (pre-2.2.2)
 
 If you're not quite as savvy, or would rather also know what happens when you set a certain permission or make an access entry, you might find this section interesting. As of 2.2.2, MODX ships with an Access Wizard and you might wish to start with that.
 
@@ -106,7 +109,9 @@ The settings:
 - Minimum role: Member (9999)
 - Access Policy: Resource
 
-<div class="info">It is important to realize that as soon as you have protected a resource by (1) assigning it to one or more resource groups and (2) linking the resource group to a user group using an access control, those pages will no longer show up for users that are not linked to the resource group. The default behavior in that case is displaying the 404-error page. If you would rather return the 401-error, you will need to give the anonymous user group "load" permission for the resource group. More about this in a later tutorial. At this moment in the tutorial, your page will not be visible as you have not yet added it to a user group.</div>### 5. Add users to the user group
+It is important to realize that as soon as you have protected a resource by (1) assigning it to one or more resource groups and (2) linking the resource group to a user group using an access control, those pages will no longer show up for users that are not linked to the resource group. The default behavior in that case is displaying the 404-error page. If you would rather return the 401-error, you will need to give the anonymous user group "load" permission for the resource group. More about this in a later tutorial. At this moment in the tutorial, your page will not be visible as you have not yet added it to a user group.
+
+### 5. Add users to the user group
 
 Now add some users to the user group. You can do this by editing the user, or by going back to the Users tab and adding them from there. It will ask for the User Group, as well as the Role. As we assumed the Member role with an authority of 9999, you can simply use that one.
 
@@ -116,13 +121,13 @@ When using a websignup snippet, make sure it automatically puts them in the righ
 
 Now that all settings are done, you will need to flush permissions (Security -> Flush Permissions) before you will see an effect. Also make sure that, if you go to test it front-end, you use a different browser all together. Don't use a different tab or browser window, as it will still use your Manager login to check for permissions.
 
-<div class="info">Please note that in some cases it is also necessary to clear the site cache, specifically for the mgr (manager) context, as elements and resources may cache their permissions.</div>Help! I can't get this to work, still!
---------------------------------------
+Please note that in some cases it is also necessary to clear the site cache, specifically for the mgr (manager) context, as elements and resources may cache their permissions.
+
+## Help! I can't get this to work, still!
 
 Make sure you followed everything step by step and that you flushed permissions properly. If everything seems to be alright, check again and then go to the Forums to ask for help. If you think the tutorial is misleading or inaccurate, please visit the forum topic (linked below) and post about what is incorrect so it can be fixed.
 
-See Also
---------
+## See Also
 
 Bob's permissions guide: <http://bobsguides.com/revolution-permissions.html>
 

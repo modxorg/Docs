@@ -4,7 +4,7 @@ _old_id: "311"
 _old_uri: "2.x/getting-started/installation/troubleshooting-installation"
 ---
 
-<div>- [Common Problems](#TroubleshootingInstallation-CommonProblems)
+- [Common Problems](#TroubleshootingInstallation-CommonProblems)
 - [PDO Error Messages](#TroubleshootingInstallation-PDOErrorMessages)
 - [Common Errors](#TroubleshootingInstallation-CommonErrors)
   - ["I get a blank white screen instead of the options page!"](#TroubleshootingInstallation-%22Igetablankwhitescreeninsteadoftheoptionspage%5C%21%22)
@@ -22,8 +22,9 @@ _old_uri: "2.x/getting-started/installation/troubleshooting-installation"
   - [Manager parts are missing, undefined language strings, or there are JavaScript 500 Errors in the Manager](#TroubleshootingInstallation-Managerpartsaremissing%2Cundefinedlanguagestrings%2CorthereareJavaScript500ErrorsintheManager)
 - [Still Having Issues?](#TroubleshootingInstallation-StillHavingIssues%3F)
 
-</div>Common Problems
----------------
+
+
+## Common Problems
 
 First off, make sure:
 
@@ -34,8 +35,7 @@ First off, make sure:
 - Clear the core/cache/ directory entirely before starting setup; sometimes improper file permissions can cause issues.
 - Clear your browser cache and cookies
 
-PDO Error Messages
-------------------
+## PDO Error Messages
 
 If you are getting PDO-related error messages during install, before proceeding to specific error messages as below, please confirm that your PDO configuration is setup correctly. You can do so by running this code (replace user/password/database/host with your setup):
 
@@ -56,8 +56,7 @@ try {
 
 ```If this fails, then your PDO setup is not configured correctly.
 
-Common Errors
--------------
+## Common Errors
 
 Here are some common problems that might occur during installation and their solutions:
 
@@ -89,7 +88,7 @@ pdo_mysql.default_socket=/path/to/my/mysql.sock
 
 ```### The login page keeps redirecting me back to the login screen with no error
 
-This can happen with older Revolution beta installs. To fix it, delete the following 3 system settings from the DB table `<span class="error">\[prefix\]</span>\_system\_settings` (where prefix is your table prefix):
+This can happen with older Revolution beta installs. To fix it, delete the following 3 system settings from the DB table `\[prefix\]\_system\_settings` (where prefix is your table prefix):
 
 - session\_name
 - session\_cookie\_path
@@ -148,7 +147,9 @@ php_value session.auto_start 0
 
 Often on shared hosting, if you create a username for your database with an underscore (\_) in it, it will cause problems. Ensure your database username does not contain an underscore, and try again.
 
-<div class="info">More common issues to come...</div>### The manager displays as plain text after installation
+More common issues to come...
+
+### The manager displays as plain text after installation
 
 The MODX manager loads compressed CSS and JS assets. Some server configuration See "JS Errors in the Manager due to Error 4
 
@@ -168,7 +169,6 @@ This will allow you to use the manager without JS and CSS compression.
 
 1. Make sure your connectors/ folder has 0755 permission
 
-Still Having Issues?
---------------------
+## Still Having Issues?
 
 If you're still having problems, post your error and your server environment information in [our forums here](http://modxcms.com/forums/index.php/board,378.0.html), and we'll try and address your issue as soon as possible.

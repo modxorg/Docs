@@ -4,8 +4,7 @@ _old_id: "284"
 _old_uri: "2.x/administering-your-site/settings"
 ---
 
-What are Settings?
-------------------
+## What are Settings?
 
 Settings are site-wide variables that can be used by either the MODx Core or by 3rd-Party Components to provide site, context, or user-level customization. The trick here is the override behavior that applies in the hierarchy: [Contextual Settings](administering-your-site/contexts "Contexts") (if present), override any of the System Settings. [User Settings](administering-your-site/security/users#Users-UsersUserSettings) (if present) override any of the Context or System settings obeying the hierarchy of **System -> Context -> User**
 
@@ -15,8 +14,7 @@ See the following for more information:
 - [Context Settings](administering-your-site/contexts "Contexts")
 - [User Settings](administering-your-site/security/users#Users-UsersUserSettings)
 
-Usage
------
+## Usage
 
 They can be referenced at any point via their Tag, for example, for the 'site\_start' Setting:
 
@@ -28,16 +26,19 @@ They can be referenced at any point via their Tag, for example, for the 'site\_s
 
 The hierarchy to remember is:
 
-<div class="panel" style="border-width: 1px;"><div class="panelContent">System Setting -> Context Setting -> User Setting
+System Setting -> Context Setting -> User Setting
 
-</div></div>Let's say I set the System Setting named 'use\_editor' to 0. However, I created a Context Setting called 'use\_editor' for the 'mgr' context and set it to 1. This would mean that any time I'm in the mgr context, the setting would be 1, overriding the System Setting.
+
+
+
+
+Let's say I set the System Setting named 'use\_editor' to 0. However, I created a Context Setting called 'use\_editor' for the 'mgr' context and set it to 1. This would mean that any time I'm in the mgr context, the setting would be 1, overriding the System Setting.
 
 Further, I've got a user named 'johndoe' who I don't want to use the editor. I create a User Setting 'use\_editor' for his user and set it to 0. Now, John Doe's "use\_editor" setting will be 0, overriding the Context Setting.
 
 Settings can also be specific to [Namespaces](developing-in-modx/advanced-development/namespaces "Namespaces"), as well. This allows you to easily group your settings for each of your different Components.
 
-Retrieving Settings in PHP
---------------------------
+## Retrieving Settings in PHP
 
 Getting settings is simple in MODx Revolution; simply use [getOption](/xpdo/1.x/class-reference/xpdo/xpdo.getoption "xPDO.getOption"). For example, to get the setting 'site\_start', simply:
 
@@ -55,8 +56,8 @@ Now if I were in the 'web' context, and site\_start was still '1' (from the Syst
 
 getOption supports 3 parameters:
 
-1\. The key of the setting   
-2\. An array to search first before looking for the setting   
+1\. The key of the setting 
+2\. An array to search first before looking for the setting 
 3\. A default value should the setting not be found.
 
 So, for example, if I were in a Snippet and wanted some default properties at the top, I could use getOption. [Snippets](developing-in-modx/basic-development/snippets "Snippets") automatically pass in an array of all the Properties attached to that snippet (or specified in the Tag call) via the $scriptProperties array. So, you can use that array to check for default properties. This example sets a default value to the 'showPublished' property should it not be specified:
@@ -71,15 +72,13 @@ $showPublished = $modx->getOption('showPublished',$scriptProperties,true);
 
 showPublished will be set to true. If it did have the default Property attached to it that set the value to 0, or the showPublished property was specified as 0 in the tag, then showPublished would be 0.
 
-Additional Information
-----------------------
+## Additional Information
 
 - Only use getOption if you're reading an existing setting from the DB, not if you need to update the option.
 - getOption uses the settings cache (it's much faster)
 - getOption will also check User -> Context -> System settings (allowing you to override system settings with context and further with user settings)
 
-See Also
---------
+## See Also
 
 [System Settings](administering-your-site/settings/system-settings "System Settings")
 

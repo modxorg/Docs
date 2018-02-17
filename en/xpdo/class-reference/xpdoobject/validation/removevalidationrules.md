@@ -4,13 +4,11 @@ _old_id: "1205"
 _old_uri: "2.x/class-reference/xpdoobject/validation/removevalidationrules"
 ---
 
-xPDOObject::removeValidationRules()
------------------------------------
+## xPDOObject::removeValidationRules()
 
 Remove one or more validation rules from this instance.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#removeValidationRules>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#removeValidationRules>
 <pre class="brush: php">
 void removeValidationRules ([string $field = null], [array $rules = array()])
 
-```Examples
---------
+```## Examples
 
 Remove all rules from this Book object.
 

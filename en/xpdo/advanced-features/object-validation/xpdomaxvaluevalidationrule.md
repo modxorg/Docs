@@ -4,11 +4,9 @@ _old_id: "1284"
 _old_uri: "2.x/advanced-features/object-validation/xpdomaxvaluevalidationrule"
 ---
 
-What Does the Rule Do?
-----------------------
+## What Does the Rule Do?
 
-Using the Rule
---------------
+## Using the Rule
 
 First, our model:
 
@@ -52,8 +50,7 @@ if ($validator->validate() == false) {
 
 > The number cannot be greater than 100.
 
-See Also
---------
+## See Also
 
 1. [xPDOForeignKeyConstraint](/xpdo/2.x/advanced-features/object-validation/xpdoforeignkeyconstraint)
 2. [xPDOMaxLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxlengthvalidationrule)

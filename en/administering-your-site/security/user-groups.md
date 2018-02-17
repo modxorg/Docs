@@ -4,13 +4,11 @@ _old_id: "328"
 _old_uri: "2.x/administering-your-site/security/user-groups"
 ---
 
- What is a User Group? 
------------------------
+##  What is a User Group? 
 
  User Groups are used by MODX to define permissions. Unlike some CMS's, in MODX a User can belong to _multiple_ User Groups.
 
- Usage 
--------
+##  Usage 
 
  Permissions in MODX are granted to _User Groups_, not to individual users, so a User must belong to at least one User Group in order to have any permissions. In other words, what a User can or cannot do depends on which User Groups the User belongs to. In other CMS's this concept is sometimes referred to as a "role".
 
@@ -23,8 +21,7 @@ _old_uri: "2.x/administering-your-site/security/user-groups"
 - **Element Category Access** -- this is where you could limit access to only certain Chunks or to only certain fields within a resource.
 - **Media Source Access** -- this is where you could limit access to certain folders on the filesystem or S3 buckets.
 
- Managing Members 
-------------------
+##  Managing Members 
 
  To add or remove Users to User Groups you can edit the User Groups when you edit a single User (Manage -> Users) then right-click the User you want to edit and view the "Access Permissions" tab.
 
@@ -41,8 +38,7 @@ _old_uri: "2.x/administering-your-site/security/user-groups"
 - Policies assigned on the Resource Group Access tab should be based on the standard Resource policy.
 - Policies assigned on the Element Category Access tab should be based on the standard Element policy.
 
- Roles in User Groups 
-----------------------
+##  Roles in User Groups 
 
  Users can have specific Roles within a User Group, should you choose. They can also exist in the User Group without a Role. Roles allow you to fine-tune your permissions more than in previous MODx versions.
 
@@ -69,8 +65,7 @@ if( $user ){
 ?>
                 
 
-``` See Also 
-----------
+```##  See Also 
 
 1. [Users](administering-your-site/security/users)
 2. [User Groups](administering-your-site/security/user-groups)

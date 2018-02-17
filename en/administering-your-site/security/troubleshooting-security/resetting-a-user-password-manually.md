@@ -4,13 +4,14 @@ _old_id: "484"
 _old_uri: "2.x/administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually"
 ---
 
-<div>- [Resetting a User Password via Database Manipulation](#ResettingaUserPasswordManually-ResettingaUserPasswordviaDatabaseManipulation)
+- [Resetting a User Password via Database Manipulation](#ResettingaUserPasswordManually-ResettingaUserPasswordviaDatabaseManipulation)
   - [Resetting Password in MODX 2.1+](#ResettingaUserPasswordManually-ResettingPasswordinMODX2.1)
   - [Resetting Password in MODX 2.0.x](#ResettingaUserPasswordManually-ResettingPasswordinMODX2.0.x)
 - [Resetting a Password via the API](#ResettingaUserPasswordManually-ResettingaPasswordviatheAPI)
 
-</div>Resetting a User Password via Database Manipulation
----------------------------------------------------
+
+
+## Resetting a User Password via Database Manipulation
 
 It is not uncommon for a User account to become inaccessible because of a lost/forgotten password. In many cases, this can easily be resolved by having the user use the Forgot Password link on the login form. But in some cases you may need to manually reset the password directly in the database. You will need access to the database containing the MODX tables in order to this, either via PHPMyAdmin or another database client that allows you to edit or UPDATE database records.
 
@@ -32,8 +33,7 @@ In MODX 2.0.x, you can simply reset the password field with a valid MD5 hash val
 <pre class="brush: php">
 UPDATE modx_users SET password = MD5('the-new-password') WHERE username = 'theusername';
 
-```Resetting a Password via the API
---------------------------------
+```## Resetting a Password via the API
 
 You can also reset the password (or manipulate any part of the MODX application) by using the API. Below is a sample script to update the password and email address of a given user. It also ensures this user is in the Administrator User Group.
 
@@ -118,5 +118,5 @@ print "SUCCESS: User $username updated.";
 
 ```You can put this script anywhere on your server so long as you update the path to the primary **index.php** file. You can execute the script by hitting it in a browser or via the command line.
 
-<div class="warning">**Warning**  
-Be extremely careful when using a script like this! If possible, do NOT put it inside your document root – instead put it outside of your document root and execute the script via the command line.</div>
+**Warning**
+Be extremely careful when using a script like this! If possible, do NOT put it inside your document root – instead put it outside of your document root and execute the script via the command line.

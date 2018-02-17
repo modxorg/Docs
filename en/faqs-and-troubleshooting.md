@@ -8,7 +8,9 @@ This document aims to get you started with common issues / questions with MODX R
 
 The questions numbering represents nothing but that - a number to indicate what question you're looking at to help scanning through.
 
-<div class="note">This is a documentation stub, and could use your help to complete! If you don't have access to edit this page, [please post anything you would want to see added or updated in this topic on the forums](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).</div><div class="note">This document will always be a work in progress as new features are added / changed, and it could use your help in keeping it structured and up to date! If you do not have access to editing this document, [please post anything you would want to see added or updated in this topic on the forums](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
+This is a documentation stub, and could use your help to complete! If you don't have access to edit this page, [please post anything you would want to see added or updated in this topic on the forums](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
+
+This document will always be a work in progress as new features are added / changed, and it could use your help in keeping it structured and up to date! If you do not have access to editing this document, [please post anything you would want to see added or updated in this topic on the forums](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
 
 _To Editors:_
 
@@ -19,8 +21,9 @@ _To Editors:_
 
 _Thanks!!_
 
-</div>Table of Contents
------------------
+
+
+## Table of Contents
 
 FAQs and/or Troubleshooting on specific subjects elsewhere:
 
@@ -35,7 +38,7 @@ Subpages dealing with specific subjects:
 
 On this page, you will find the following categories and questions:
 
-<div>- [Table of Contents](#FAQs%26Troubleshooting-TableofContents)
+- [Table of Contents](#FAQs%26Troubleshooting-TableofContents)
 - [1. MODX 101](#FAQs%26Troubleshooting-1.MODX101)
   - [1.1. What is MODX Evolution, and what is MODX Revolution? What's the difference?](#FAQs%26Troubleshooting-1.1.WhatisMODXEvolution%2CandwhatisMODXRevolution%3FWhat%27sthedifference%3F)
   - [1.2. What different tags can I use? What is \[\[\*pagetitle\]\], \[\[Wayfinder\]\] etc?](#FAQs%26Troubleshooting-1.2.WhatdifferenttagscanIuse%3FWhatis%26nbsp%3B%5C%5Cpagetitle%5C%5C%2C%26nbsp%3B%5C%5CWayfinder%5C%5Cetc%3F)
@@ -49,8 +52,9 @@ On this page, you will find the following categories and questions:
   - [3.1 Blank frontend pages resolved by Clearing Cache](#FAQs%26Troubleshooting-3.1BlankfrontendpagesresolvedbyClearingCache)
   - [3.2 General Snippet Problems](#FAQs%26Troubleshooting-3.2GeneralSnippetProblems)
 
-</div>1. MODX 101
------------
+
+
+## 1. MODX 101
 
 ### 1.1. What is MODX Evolution, and what is MODX Revolution? What's the difference?
 
@@ -74,8 +78,7 @@ Further reading:
 
 Check out the [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax") documentation. You can find resource fields you can use in Revolution on the [Resources Documentation](making-sites-with-modx/structuring-your-site/resources "Resources").
 
-2. The Manager
---------------
+## 2. The Manager
 
 ### 2.1. Help! Where did the sidebar go?
 
@@ -104,8 +107,7 @@ Practically both terms are used to indicate the same thing: a Document which hol
 
 You're not doomed. [Check out these instructions for Revolution](administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually "Resetting a User Password Manually"), or [these instructions for recovering your user account in Evolution](/evolution/1.0/administration/manager-users/reset-your-password-unblock-your-user "Reset your Password - Unblock your User").
 
-3. Frontend Display Issues
---------------------------
+## 3. Frontend Display Issues
 
 ### 3.1 Blank frontend pages resolved by Clearing Cache
 

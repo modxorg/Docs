@@ -4,7 +4,7 @@ _old_id: "489"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-input-types"
 ---
 
-<div>- [Auto-Tag](#TemplateVariableInputTypes-AutoTag)
+- [Auto-Tag](#TemplateVariableInputTypes-AutoTag)
 - [Check Box](#TemplateVariableInputTypes-CheckBox)
   - [Simple Usage](#TemplateVariableInputTypes-SimpleUsage)
   - [Advanced Usage](#TemplateVariableInputTypes-AdvancedUsage)
@@ -35,14 +35,19 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 - [Textbox](#TemplateVariableInputTypes-Textbox)
 - [URL](#TemplateVariableInputTypes-URL)
 
-</div> There are a number of built-in template variable types.
 
-<div class="note"> Some input types are deprecated depending on your MODX version. </div><div class="note"> It's best to enter multiple Input Option values on a single line with no carriage returns. </div>Auto-Tag (autotag)
-------------------
+
+ There are a number of built-in template variable types.
+
+ Some input types are deprecated depending on your MODX version. 
+
+ It's best to enter multiple Input Option values on a single line with no carriage returns. 
+
+## Auto-Tag (autotag)
 
  Auto-Tag is a convenient template variable for using tags when blogging, have multiple categories a resource can belong to, or anytime you need a list of tags that have been used before. Every time you edit or create a resource with access to an auto-tag template variable, you will see the tags that were used before. You can easily click on priorly used tags to chose them in the list.
 
- To make auto-tag tvs useful in the front end, you will need to set the output type to "Delimiter" and specify a delimiter of your choice, and/or use an output filter to present it in the way you prefer. ![](/download/attachments/33227172/autotag.png?version=1&modificationDate=1292891676000)  
+ To make auto-tag tvs useful in the front end, you will need to set the output type to "Delimiter" and specify a delimiter of your choice, and/or use an output filter to present it in the way you prefer. ![](/download/attachments/33227172/autotag.png?version=1&modificationDate=1292891676000)
  To output the tags in such a way that you each tag links to a certain resource and passes the tag in a GET parameter, you can use an output filter (snippet) as follows:
 
  ```
@@ -64,11 +69,9 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
    "regexText":""
 }
 
-```
+```## 
 
-
-Check Box (checkbox)
---------------------
+## Check Box (checkbox)
 
 ### Simple Usage
 
@@ -104,8 +107,7 @@ Check Box (checkbox)
 
  If you are using multiple checkboxes like this, you will probably need to set the **Output Type** to "Delimiter" (e.g. a comma) so you can distinguish the values contained in each checkbox.
 
-Date (date)
------------
+## Date (date)
 
  This allows you to set both a date and a time.
 
@@ -113,8 +115,8 @@ Date (date)
 
  If you like to have a default set date you can put one of the following keywords inside the default value field (without quotes!). The "strange" logic behind the -X/+X values (which intuitively would be - for back and + for future) comes probably from a subtraction in the code somewhere, eg. now() - value, so if value is +72 this means now() - (+72), but - and + is -, so a positive value gets subtracted while with now() - (-72), - and - equals +, a negative value is added.
 
- <table><tbody><tr><th> Default value </th> <th> Function </th> </tr><tr><td> yesterday </td> <td> Displays the day before todays date, time 12:00pm </td> </tr><tr><td> today </td> <td> Displays todays date, time 12:00pm </td> </tr><tr><td> now </td> <td> Displays todays date, current time </td> </tr><tr><td> tomorrow </td> <td> Displays the day after todays date, time 12:00pm </td> </tr><tr><td> +X </td> <td> X is an amount of hours BACK from the current time, eg. +72 means "3 days back from now" </td> </tr><tr><td> -X </td> <td> X is an amount of hours IN THE FUTURE from the current time, eg. -72 means "in 3 days"   
-</td></tr></tbody></table> You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
+  Default value   Function   yesterday   Displays the day before todays date, time 12:00pm   today   Displays todays date, time 12:00pm   now   Displays todays date, current time   tomorrow   Displays the day after todays date, time 12:00pm   +X   X is an amount of hours BACK from the current time, eg. +72 means "3 days back from now"   -X   X is an amount of hours IN THE FUTURE from the current time, eg. -72 means "in 3 days" 
+ You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
 
  **All input option names (for use in migx options-json)**
 
@@ -124,8 +126,7 @@ Date (date)
    "columns":"1"
 }
 
-```DropDown List Menu
-------------------
+```## DropDown List Menu
 
  NOTE: this TV Input type has been deprecated since Revo 2.1.x Please see [Listbox](#TemplateVariableInputTypes-Listbox(MultiSelect)) input types below.
 
@@ -147,8 +148,7 @@ Date (date)
    "listHeight":""
 }
 
-```Email
------
+```## Email
 
  This is a text field that comes with its own validation: only text that's in a valid email format will be accepted.
 
@@ -163,8 +163,7 @@ Date (date)
    "minLength":""
 }
 
-```File
-----
+```## File
 
  Creates a file input form to browse the server for a file. Files can be uploaded through the MODx File Manager. You can declare a default value file by specifying the path to the file.
 
@@ -172,30 +171,29 @@ Date (date)
 
  **All input option names (for use in migx options-json)**
 
-Hidden
-------
+## Hidden
 
  A hidden field does not show up in the manager, so it's rare that you'd use this option. You can set a default value that can be retrieved on all pages using this variable. Another possibility is to store a Snippet that takes a page's ID as input.
 
-HTML Area (richtext)
---------------------
+## HTML Area (richtext)
 
  This gives you a small WSYIWYG editor for the field. It looks exactly like the Richtext fields.
 
  ![](/download/attachments/33227172/html_area.jpg?version=1&modificationDate=1298000899000)
 
-Image
------
+## Image
 
  ![](/download/attachments/33227172/tv-image-new.png?version=1&modificationDate=1308558236000)
 
  Creates an image input form to browse the server for a file. Files can be uploaded through the MODx File Manager then.
 
-<div class="note"> In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](administering-your-site/media-sources "Media Sources"). </div> ![](/download/attachments/33227172/tv-image-input-options.png?version=1&modificationDate=1308558243000)
+ In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](administering-your-site/media-sources "Media Sources"). 
+
+ ![](/download/attachments/33227172/tv-image-input-options.png?version=1&modificationDate=1308558243000)
 
  1) You can declare a default value file by specifying the path to the image.
 
- 2) If you want to limit the images used for this TV to a specific folder, you can specify (since Revolution 2.1) a base-path and base-url. You can also set relative or absolute paths. Take extra note of relative file paths when using friendly url paths.   
+ 2) If you want to limit the images used for this TV to a specific folder, you can specify (since Revolution 2.1) a base-path and base-url. You can also set relative or absolute paths. Take extra note of relative file paths when using friendly url paths. 
  For correct display of images in frontend and backend be sure to have correct settings in base\_url and base\_path settings!
 
  3) You can prepend URL if filepath doesn't begin with a trailing slash.
@@ -204,8 +202,7 @@ Image
 
  This input type returns the link (to be used as src attribute) to the image. You can also set the whole [html-img-tag as a output-type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type "Image TV Output Type").
 
-[Image+](https://docs.modx.com/extras/revo/image) (imageplus)
--------------------------------------------------------------
+## [Image+](https://docs.modx.com/extras/revo/image) (imageplus)
 
  **All input option names (for use in migx options-json)**
 
@@ -220,13 +217,11 @@ Image
 "allowCredits":"false"
 }
 
-```Listbox (Single-Select) (listbox)
----------------------------------
+```## Listbox (Single-Select) (listbox)
 
  This has the same options available to it as the Listbox (Multi-Select) – see below.
 
-Listbox (Multi-Select) (listbox-multiple)
------------------------------------------
+## Listbox (Multi-Select) (listbox-multiple)
 
  This behaves similar to the checkbox fields: you can select multiple items, and this field can be powered by a @SELECT binding in its "Input Option Values" parameter. Like checkboxes, you probably want to set the "Output Type" to delimiter so you can distinguish between values.
 
@@ -259,8 +254,7 @@ Listbox (Multi-Select) (listbox-multiple)
    "stackItems":"false"
 }
 
-```Number
-------
+```## Number
 
  This is another text field with some pre-emptive validation. You literally cannot type anything but the digits 0 to 9, the minus sign (-) , and a period (i.e. a decimal point). A validation error is triggered if you enter more than one decimal point or minus sign. Complex numbers (e.g. using radicals "^" or "e" are **not** supported).
 
@@ -279,8 +273,7 @@ Listbox (Multi-Select) (listbox-multiple)
    "minValue":""
 }
 
-```Radio Options (option)
-----------------------
+```## Radio Options (option)
 
 ### Simple Usage
 
@@ -319,8 +312,7 @@ Listbox (Multi-Select) (listbox-multiple)
    "columns":"1"
 }
 
-```Resource List (resourcelist)
-----------------------------
+```## Resource List (resourcelist)
 
  Supply the definition with a resource ID, and you'll end up with a drop down list of all pages/resources that are children of that resource. The value stored after you've made a selection is the ID of the single selected resource.
 
@@ -328,7 +320,7 @@ Listbox (Multi-Select) (listbox-multiple)
 
  This is similar to using a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") binding in a DropDown list menu, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
 
- This input type also accepts WHERE conditions to filter by: ![](/download/attachments/33227172/Screen+Shot+2012-05-18+at+9.04.54+PM.png?version=1&modificationDate=1337400324000)  
+ This input type also accepts WHERE conditions to filter by: ![](/download/attachments/33227172/Screen+Shot+2012-05-18+at+9.04.54+PM.png?version=1&modificationDate=1337400324000)
  Another example:
 
  ```
@@ -348,13 +340,11 @@ Listbox (Multi-Select) (listbox-multiple)
    "limit":"0"
 }
 
-```Rich Text
----------
+```## Rich Text
 
  See _HTML Area_.
 
-Tag
----
+## Tag
 
  Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](http://rtfm.modx.com/revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type) for formatting.
 
@@ -365,8 +355,7 @@ Tag
    "allowBlank":"1"
 }
 
-```Text
-----
+```## Text
 
  This is a vanilla text field.
 
@@ -387,8 +376,7 @@ Tag
    "regexText":""
 }
 
-```Textarea
---------
+```## Textarea
 
  This is a standard _textarea_ field, with a height of 15 rows. It's the same size as the HTML Area fields, but without the WYSIWYG editor.
 
@@ -399,18 +387,15 @@ Tag
    "allowBlank":"true"
 }
 
-```Textarea (Mini) (depricated)
-----------------------------
+```## Textarea (Mini) (depricated)
 
  This is a smaller _textarea_ field, with a height of only 5 rows.
 
-Textbox
--------
+## Textbox
 
  This appears to be exactly the same as the vanilla Text field.
 
-URL
----
+## URL
 
  This is a guided text field, which a dropdown option to select the protocol: none, <http://>, <https://>, <ftp://,> or [](mailto:). No validation is performed to ensure the correctness of the URL structure.
 

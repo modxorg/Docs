@@ -4,13 +4,11 @@ _old_id: "1142"
 _old_uri: "2.x/class-reference/xpdoobject/static-object-loaders/loadrows"
 ---
 
-xPDOObject::\_loadRows()
-------------------------
+## xPDOObject::\_loadRows()
 
 This function is responsible for loading a result set from the database and returning a PDOStatement object representing the result set.
 
-Syntax
-------
+## Syntax
 
 API Doc: [http://api.modx.com/xpdo/om/xPDOObject.html#\_loadRows](http://api.modx.com/xpdo/om/xPDOObject.html#_loadRows)
 
@@ -22,8 +20,7 @@ static PDOStatement|null _loadRows(
    mixed $criteria
 )
 
-```Example
--------
+```## Example
 
 ```
 <pre class="brush: php">

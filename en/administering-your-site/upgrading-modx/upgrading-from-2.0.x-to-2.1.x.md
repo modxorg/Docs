@@ -4,8 +4,10 @@ _old_id: "1121"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-from-2.0.x-to-2.1.x"
 ---
 
-<div class="info">This page is a work in progress.. If you have any questions about upgrading your 2.0.x site to 2.1.x, you will likely find help in the [Revolution 2.1 support thread](http://modxcms.com/forums/index.php/board,399.0.html) of our forums.</div>Revolution 2.1 saw the removal of much [legacy code](http://rtfm.modx.com/display/revolution20/Summary+of+Legacy+Code+Removed+in+2.1) that was marked deprecated in pre-2.0 releases. This is partially responsible for the vast improvements in speed and efficiency across the MODX core in this release.
+This page is a work in progress.. If you have any questions about upgrading your 2.0.x site to 2.1.x, you will likely find help in the [Revolution 2.1 support thread](http://modxcms.com/forums/index.php/board,399.0.html) of our forums.
+
+Revolution 2.1 saw the removal of much [legacy code](http://rtfm.modx.com/display/revolution20/Summary+of+Legacy+Code+Removed+in+2.1) that was marked deprecated in pre-2.0 releases. This is partially responsible for the vast improvements in speed and efficiency across the MODX core in this release.
 
 Many of the most common and popular Extras have been upgraded and tested with 2.1 accordingly. While Extras developers have had a long time to start using the more up-to-date object-oriented API and stop using the old Evolution-style API calls, some Extras may still not work as expected or work at all. As a result it is very important to test your site in a safe environment before deploying to ensure changes in the codebase do not cause problems.
 
-<div class="warning">Uploading files for an upgrade overwrites all the core files. You can only go back by restoring your backed up files and database. This is why you should test before upgrading your production/live site.</div>
+Uploading files for an upgrade overwrites all the core files. You can only go back by restoring your backed up files and database. This is why you should test before upgrading your production/live site.

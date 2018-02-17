@@ -4,16 +4,16 @@ _old_id: "13"
 _old_uri: "2.x/developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets"
 ---
 
-Learning How to Register CSS and JS
------------------------------------
+## Learning How to Register CSS and JS
 
  So, you've got a Snippet that you've been writing and want to add CSS and/or JavaScript to your pages, but don't want to have to setup a custom Template Variable and edit it on every Resource your Snippet is used on. You want the Snippet to do it, dagnabbit! Well, it's pretty easy, actually, using some MODx API methods.
 
-<div class="info"> **Other CMSs**   
+ **Other CMSs** 
  This is a common need in any CMS, so if you're coming from another platform, here are some of the related functions. - **WordPress** – uses its _wp\_enqueue\_script_, _wp\_register\_script_, _wp\_enqueue\_style_, _wp\_register\_style_ functions.
 
-</div>Adding to the HEAD
-------------------
+
+
+## Adding to the HEAD
 
  There are a few methods that automatically add CSS and/or JavaScript to the HEAD of the current page. They will run in the order that they're added, so if you need them in a certain order, make sure you execute the methods in that order as well.
 
@@ -53,8 +53,7 @@ Learning How to Register CSS and JS
 var myCustomJSVar = 123;
 </script>');
 
-```Adding Before the BODY End
---------------------------
+```## Adding Before the BODY End
 
  There are also methods that can be used to insert Javascript or HTML at the end of every page, right before the BODY tag closes. They are often useful for custom analytics scripts, or JS that needs to be run at the body-level rather than in the HEAD.
 
@@ -82,13 +81,11 @@ var myCustomJSVar = 123;
 runAnalytics();
 </script>');
 
-```Conclusion
-----------
+```## Conclusion
 
  MODx offers Extras developers many options on how to insert custom CSS/JS into their pages at the Snippet level. However, MODx also recommends in any Extras you are distributing, to make sure inserting CSS or JS into a page is a toggleable option, so that the user can customize the content or javascript framework should they so choose.
 
-See Also
---------
+## See Also
 
 1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
 2. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)

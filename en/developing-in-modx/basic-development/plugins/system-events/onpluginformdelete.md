@@ -4,19 +4,16 @@ _old_id: "445"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onpluginformdelete"
 ---
 
-Event: OnPluginFormDelete
--------------------------
+## Event: OnPluginFormDelete
 
 Fires after a plugin is deleted.
 
-Service: 1 - Parser Service Events   
+Service: 1 - Parser Service Events 
 Group: Plugins
 
-Event Parameters
-----------------
+## Event Parameters
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>chunk</td><td>A reference to the modPlugin object.</td></tr><tr><td>id</td><td>The ID of the Plugin.</td></tr></tbody></table>See Also
---------
+NameDescriptionchunkA reference to the modPlugin object.idThe ID of the Plugin.## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

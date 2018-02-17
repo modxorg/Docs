@@ -4,13 +4,11 @@ _old_id: "1218"
 _old_uri: "2.x/class-reference/xpdoobject/field-accessors/tojson"
 ---
 
-xPDOObject::toJSON()
---------------------
+## xPDOObject::toJSON()
 
 Returns a JSON representation of the object.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#toJSON>
 
@@ -21,8 +19,7 @@ string toJSON (
    [boolean $rawValues = false]
 )
 
-```Example
--------
+```## Example
 
 ```
 <pre class="brush: php">
@@ -32,8 +29,7 @@ $json = $object->toJSON();
 echo $json;
 // prints {"name":"Bob","email":"pinkdaisies@gmail.com"}
 
-```See Also
---------
+```## See Also
 
 - [fromArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
 - [toArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/toarray "toArray")

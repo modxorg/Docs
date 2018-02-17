@@ -4,7 +4,7 @@ _old_id: "96"
 _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introduction"
 ---
 
-<div>- [What is MODX?](#DeveloperIntroduction-WhatisMODx%3F)
+- [What is MODX?](#DeveloperIntroduction-WhatisMODx%3F)
 - [What is MVC?](#DeveloperIntroduction-WhatisMVC%3F)
   - [What is MVC²?](#DeveloperIntroduction-WhatisMVC%C2%B2%3F)
   - [Connector/Processor Relationships](#DeveloperIntroduction-Connector%2FProcessorRelationships)
@@ -24,13 +24,13 @@ _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introdu
   - [The 2nd C: The Connectors](#DeveloperIntroduction-The2ndC%3ATheConnectors)
 - [See Also](#DeveloperIntroduction-SeeAlso)
 
-</div>What is MODX?
--------------
+
+
+## What is MODX?
 
 MODX Revolution is an Content Application Platform, built for developers, designers and users who want a powerful, scalable system with flexible content management built in.
 
-What is MVC?
-------------
+## What is MVC?
 
 MVC is "Model-View-Controller", a common programming paradigm where the data's Model is only accessed through a Controller, which connects to a View that can easily be changed without having to change the Model.
 
@@ -42,13 +42,11 @@ MVC² is a MODX terminology that is "Model-View-Controller/Connector". It basica
 
 Connectors are simply gateway files that hook into specific Processors. They are used mainly to prevent direct accessing of processors, and limit user access to those processors.
 
-What is xPDO?
--------------
+## What is xPDO?
 
 [xPDO](/display/xPDO20/Home "Home") is our name for open eXtensions to PDO. It's a light-weight ORB (object-relational bridge) library that works on PHP 4 and 5, and takes advantage of the newly adopted standard for database persistence in PHP 5.1+, PDO. It implements the very simple, but effective Active Record pattern for data access, as well as a flexible domain model that allows you to isolate domain logic from database-specific logic, or not, depending on your needs.
 
-What is an ORM?
----------------
+## What is an ORM?
 
 As defined by [Wikipedia](http://www.wikipedia.org/wiki/Object-relational_model):
 
@@ -56,8 +54,7 @@ As defined by [Wikipedia](http://www.wikipedia.org/wiki/Object-relational_model)
 
 Basically, tables in SQL databases become classes that can contain table-specific methods, inherit from base classes, and much more.
 
-A Brief Overview of Revolution
-------------------------------
+## A Brief Overview of Revolution
 
 Revolution at its core is a Content Management Framework. It's not a PHP Application Framework like CodeIgnitor or Symfony, nor does it purport to be one. With that said, it's much more than a typical CMS like Wordpress or others; it enables you to build Content Management Applications with ease and extensibility.
 
@@ -115,8 +112,7 @@ Every Connector request is also secured down by Context permissions loaded on ev
 
 Connectors allow for dynamic, secure JSON requests (and eventually REST-based requests) straight from your MODX manager.
 
-See Also
---------
+## See Also
 
 1. [Getting Started Developing](developing-in-modx/overview-of-modx-development/developer-introduction/getting-started-developing)
 

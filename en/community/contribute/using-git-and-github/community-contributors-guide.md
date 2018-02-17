@@ -4,8 +4,7 @@ _old_id: "1128"
 _old_uri: "contribute/using-git-and-github/community-contributors-guide"
 ---
 
-A GitHub-based branching strategy for collaborative development
----------------------------------------------------------------
+## A GitHub-based branching strategy for collaborative development
 
  In order to facilitate collaborative development on the MODX source code managed at GitHub, a clear and consistent branching strategy has been adopted. This strategy consists of maintaining a major-version branch, e.g. `2.x`, that represents work to be incorporated into the "next significant release". If the current stable release of version 2 is 2.2.1, the work in the `2.x` branch would incorporate work intended for the 2.3.0 release.
 
@@ -59,8 +58,10 @@ $ git push origin 2.4.x 2.x
 
  Also note the `--ff-only` flag ensures that only fast-forward merges are performed (in case you accidentally do commit to the major or minor-version branches on your fork without realizing it).
 
-<div class="note"> **Important**   
- Please make sure you have your autocrlf settings set appropriately before making any commits to your fork. See <http://help.github.com/dealing-with-lineendings/> to determine the setting you need based on the platform you are developing on. </div>### Feature branches
+ **Important** 
+ Please make sure you have your autocrlf settings set appropriately before making any commits to your fork. See <http://help.github.com/dealing-with-lineendings/> to determine the setting you need based on the platform you are developing on. 
+
+### Feature branches
 
 - May branch from: major-version branch
 - Naming convention: completely up to you

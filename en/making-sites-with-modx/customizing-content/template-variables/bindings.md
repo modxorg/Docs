@@ -4,8 +4,7 @@ _old_id: "33"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/bindings"
 ---
 
-What are **@** Bindings?
-------------------------
+## What are **@** Bindings?
 
 In the context to Template Variables, a Data Source is the location of the information to be displayed. A Data source can come from any of the following sources:
 
@@ -41,8 +40,7 @@ When placing @ bindings inside the "Input Option Values" field, they are used to
 
 When placing @ bindings inside the "Default Value" field the returned value is used to render to the final web page. This makes it simple to build complex forms for data input on the web very quickly.
 
-Types
------
+## Types
 
 - [@FILE](making-sites-with-modx/customizing-content/template-variables/bindings/file-binding "FILE Binding")
 - [@RESOURCE](making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding "RESOURCE Binding")
@@ -54,7 +52,6 @@ Types
 
 The [getResources](/extras/revo/getresources "getResources") AddOn supports an @INLINE binding.
 
-See Also
---------
+## See Also
 
 - [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")

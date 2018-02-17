@@ -4,8 +4,7 @@ _old_id: "1136"
 _old_uri: "contribute/using-git-and-github/xpdo-github-contributors-guide"
 ---
 
-Contributing to xPDO and Integrating with MODX Revolution
----------------------------------------------------------
+## Contributing to xPDO and Integrating with MODX Revolution
 
 xPDO is an object-oriented framework on which MODX Revolution is built. It is maintained in a separate git repository from revolution and contributing to the xPDO core of MODX requires some additional work.
 
@@ -49,9 +48,13 @@ Switched to branch "master"
 
 Also note the `--ff-only` flag ensures that only fast-forward merges are performed (in case you accidentally do commit to the main branches on your fork without realizing it).
 
-<div class="note">**Important**  
-Please make sure you have your autocrlf settings set appropriately before making any commits to your fork. See <http://help.github.com/dealing-with-lineendings/> to determine the setting you need based on the platform you are developing on.</div><div class="note">**Unit Tests**  
-xPDO has a growing number of Unit Tests which help ensure at least basic functionality is not broken when changes are made to the code base. Make sure your changes pass the unit tests for ALL implemented drivers when submitting any Pull Requests to, or that affect, xPDO code. In addition, all bug fixes and features should be accompanied with new unit test cases where practical.</div>### Forking and Cloning the xPDO Core Repository
+**Important**
+Please make sure you have your autocrlf settings set appropriately before making any commits to your fork. See <http://help.github.com/dealing-with-lineendings/> to determine the setting you need based on the platform you are developing on.
+
+**Unit Tests**
+xPDO has a growing number of Unit Tests which help ensure at least basic functionality is not broken when changes are made to the code base. Make sure your changes pass the unit tests for ALL implemented drivers when submitting any Pull Requests to, or that affect, xPDO code. In addition, all bug fixes and features should be accompanied with new unit test cases where practical.
+
+### Forking and Cloning the xPDO Core Repository
 
 xPDO has two GitHub repositories. The complete repository contains Unit Tests, test models, build scripts and other assets that you would not want integrated into other projects. In order to more easily merge the project within other projects, a second repository that includes only the xpdo/ subdirectory (this contains the run-time files of xPDO only) was created. This repository is kept in sync with the complete xPDO repository via git's subtree merge technique, and this same technique can then be used to merge the xPDO Core with any other git repository.
 

@@ -4,11 +4,14 @@ _old_id: "493"
 _old_uri: "2.x/developing-in-modx/advanced-development/using-runprocessor"
 ---
 
-<div class="note"> The usage of runProcessor described here only work in Revolution 2.0.8 and later. Users prior to that will have to use the deprecated [executeProcessor](developing-in-modx/other-development-resources/class-reference/modx/modx.executeprocessor "modX.executeProcessor") method. </div><div>- [Using runProcessor](#UsingrunProcessor-UsingrunProcessor)
+ The usage of runProcessor described here only work in Revolution 2.0.8 and later. Users prior to that will have to use the deprecated [executeProcessor](developing-in-modx/other-development-resources/class-reference/modx/modx.executeprocessor "modX.executeProcessor") method. 
+
+- [Using runProcessor](#UsingrunProcessor-UsingrunProcessor)
 - [See Also](#UsingrunProcessor-SeeAlso)
 
-</div>Using runProcessor
-------------------
+
+
+## Using runProcessor
 
  MODX has a specific method that allows you to run processors straight from any PHP file, such as a [Plugin](developing-in-modx/basic-development/plugins "Plugins"), [Snippet](developing-in-modx/basic-development/snippets "Snippets") or externally. This can be done with the following syntax:
 
@@ -51,8 +54,7 @@ $fields['extended']['container']['name'] = $value;
 $fields['groups'] = $groups;
 $response = $modx->runProcessor('security/user/create', $fields);    
 
-```See Also
---------
+```## See Also
 
 1. [Namespaces](developing-in-modx/advanced-development/namespaces)
 2. [Caching](developing-in-modx/advanced-development/caching)

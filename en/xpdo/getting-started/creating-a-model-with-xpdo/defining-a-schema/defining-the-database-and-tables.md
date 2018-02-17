@@ -10,8 +10,7 @@ Let's say we have a Package called 'Storefinder'. We want to create a custom sch
 
 If you note, we added in the 'mysql' postfix to the filename, since xPDO will eventually allow for multiple database development. We want to specify that this schema is for a MySQL table.
 
-Starting with a Database
-------------------------
+## Starting with a Database
 
 Our current XML file looks like this:
 
@@ -36,9 +35,10 @@ Our current XML file looks like this:
 - **phpdoc-package & phpdoc-subpackage** — These are custom attributes we're going to use in our map and class files. They're not standard xPDO attributes, but show that you can put whatever you want as attributes.
 - **version** — The version of the xPDO schema. As changes are made to the schema format, the version is updated to differentiate how the model is handled at runtime.
 
-<div class="warning">**Schema Version 1.1**   
- In 2.0.0-rc3, the schema was changed to implement a new `model` element that describes Table Indexes separately from the `field` element's _index_ and _index\_group_ attributes. See [Upgrading Models to Schema Version 1.1](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-the-database-and-tables/upgrading-models-to-schema-version-1.1 "Upgrading Models to Schema Version 1.1") for information on migrating your index definitions to the new format. Do not add version="1.1" (leave off the version attribute or set it to 1.0) if you have not yet described your indexes in the new schema format or xPDO will create the tables with no indexes.</div>Defining Tables
----------------
+**Schema Version 1.1** 
+ In 2.0.0-rc3, the schema was changed to implement a new `model` element that describes Table Indexes separately from the `field` element's _index_ and _index\_group_ attributes. See [Upgrading Models to Schema Version 1.1](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-the-database-and-tables/upgrading-models-to-schema-version-1.1 "Upgrading Models to Schema Version 1.1") for information on migrating your index definitions to the new format. Do not add version="1.1" (leave off the version attribute or set it to 1.0) if you have not yet described your indexes in the new schema format or xPDO will create the tables with no indexes.
+
+## Defining Tables
 
 Great! Now we've got our model definition. Let's add a table tag as the next line.
 
@@ -77,8 +77,10 @@ Now that we've got a table definition for our stores table, let's add some field
 - **default** — The default starting value of the field should none be set.
 - **index** _(deprecated)_ — An optional field, when set, will add a type of index to the field. Some of the values are "pk", "index", and "fk".
 
-<div class="warning">**index is deprecated**   
- The _index_ attribute is deprecated for Schema Version 1.1 and ignored when you generate your models as version 1.1. This is only valid for models with no version attribute (or the version set explicitly to 1.0).</div>Next, we'll define the indexes we want our table to have:
+**index is deprecated** 
+ The _index_ attribute is deprecated for Schema Version 1.1 and ignored when you generate your models as version 1.1. This is only valid for models with no version attribute (or the version set explicitly to 1.0).
+
+Next, we'll define the indexes we want our table to have:
 
 ```
 <pre class="brush: php"><index alias="name" name="name" primary="false" unique="false" type="BTREE">
@@ -88,8 +90,10 @@ Now that we've got a table definition for our stores table, let's add some field
     <column key="zip" length="" collation="A" null="false" />
 </index>
 
-```<div class="note">**The alias element**   
- New in xPDO 2.2 is the ability to define field aliases. This can be useful when changing table structures to maintain backwards compatibility, or for defining useful aliases for the object API without having to modify table structure. The syntax is simple with two attributes, key (the alias) and field (the target field definition).</div>Now let's define an alias for the zip column called postalcode so the value can be accessed by either key:
+```**The alias element** 
+ New in xPDO 2.2 is the ability to define field aliases. This can be useful when changing table structures to maintain backwards compatibility, or for defining useful aliases for the object API without having to modify table structure. The syntax is simple with two attributes, key (the alias) and field (the target field definition).
+
+Now let's define an alias for the zip column called postalcode so the value can be accessed by either key:
 
 ```
 <pre class="brush: php"><alias key="postalcode" field="zip" />

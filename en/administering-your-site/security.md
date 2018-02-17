@@ -4,8 +4,7 @@ _old_id: "488"
 _old_uri: "2.x/administering-your-site/security"
 ---
 
-Security in MODx Revolution
----------------------------
+## Security in MODx Revolution
 
 Security in MODx Revolution is primarily driven by an Attribute-Based Access Control (ABAC) paradigm.
 
@@ -18,9 +17,11 @@ ACLs usually have the following:
 - **Access Policy** - The list of Permissions that is gained by this ACL.
 - **Authority** - The minimum Authority level required to use this ACL (see [Roles](administering-your-site/security/roles "Roles")).
 
-<div class="note">Access is **allow/deny** in MODx, meaning that access is "open" by default. Once an ACL is applied to an object, such as a Context or Resource Group, those Contexts or Resource Groups will now only be accessible to the objects with appropriate Permissions.</div>### Security Tutorial Video
+Access is **allow/deny** in MODx, meaning that access is "open" by default. Once an ACL is applied to an object, such as a Context or Resource Group, those Contexts or Resource Groups will now only be accessible to the objects with appropriate Permissions.
 
-<object height="500" width="780"><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=13856994&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed allowfullscreen="true" allowscriptaccess="always" flashvars="$flashVars" height="500" src="http://vimeo.com/moogaloop.swf?clip_id=13856994&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" type="application/x-shockwave-flash" width="780"></embed></object>Demonstrates by applying concepts to the MODx Sample Site to:
+### Security Tutorial Video
+
+Demonstrates by applying concepts to the MODx Sample Site to:
 
 - Restrict RSS feed to Directors and up
 - Restrict Blog to Staff only
@@ -37,8 +38,7 @@ A good example is creating a Context named 'test', and assigning an ACL to it. T
 
 This will restrict the 'test' Context to users who are a Member (or [Role](administering-your-site/security/roles "Roles") with more authority) of the 'HR Dept' User Group.
 
-See Also
---------
+## See Also
 
 1. [Users](administering-your-site/security/users)
 2. [User Groups](administering-your-site/security/user-groups)

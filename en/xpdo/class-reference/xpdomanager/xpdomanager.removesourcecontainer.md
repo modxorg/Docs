@@ -4,13 +4,11 @@ _old_id: "1282"
 _old_uri: "2.x/class-reference/xpdomanager/xpdomanager.removesourcecontainer"
 ---
 
-xPDOManager::removeSourceContainer()
-------------------------------------
+## xPDOManager::removeSourceContainer()
 
 Drops a physical data container, if it exists.
 
-Syntax
-------
+## Syntax
 
 API Docs: [http://api.modxcms.com/xpdo/om-mysql/xPDOManager\_mysql.html#removeSourceContainer](http://api.modxcms.com/xpdo/om-mysql/xPDOManager_mysql.html#removeSourceContainer)
 
@@ -18,8 +16,7 @@ API Docs: [http://api.modxcms.com/xpdo/om-mysql/xPDOManager\_mysql.html#removeSo
 <pre class="brush: php">
 int removeSourceContainer (string $dsn, string $username, string $password)
 
-```Examples
---------
+```## Examples
 
 Drop a database called 'MyDatabase'.
 

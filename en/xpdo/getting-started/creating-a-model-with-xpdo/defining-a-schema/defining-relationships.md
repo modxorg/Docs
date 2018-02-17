@@ -4,16 +4,17 @@ _old_id: "1159"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships"
 ---
 
-<div>- [Aggregate Relationships](#DefiningRelationships-AggregateRelationships)
+- [Aggregate Relationships](#DefiningRelationships-AggregateRelationships)
 - [Composite Relationships](#DefiningRelationships-CompositeRelationships)
 - [Relating Many-to-Many](#DefiningRelationships-RelatingManytoMany)
 - [Conclusion](#DefiningRelationships-Conclusion)
 - [See Also](#DefiningRelationships-SeeAlso)
 
-</div> We're going to need to define some relationships between our tables so xPDO can communicate properly between them. xPDO deals with two types of relationships, **aggregate** and **composite**.
 
- Aggregate Relationships 
--------------------------
+
+ We're going to need to define some relationships between our tables so xPDO can communicate properly between them. xPDO deals with two types of relationships, **aggregate** and **composite**.
+
+##  Aggregate Relationships 
 
  An aggregate relationship in xPDO is relationship between two tables where the secondary table is an aggregate of the primary table in such a way that if the object in the primary table is deleted, the related object in the secondary table should still exist.
 
@@ -41,8 +42,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defi
 $box = $crayon->getOne('Box');
 echo $box->get('name');
 
-``` Composite Relationships 
--------------------------
+```##  Composite Relationships 
 
  A composite relationship in xPDO is relationship between two tables where the secondary table(s) are composites of the primary table in such a way that if the object in the primary table is deleted, the related object(s) in the secondary table(s) should be removed. If we delete a box, its related crayons should be removed as well.
 
@@ -71,8 +71,7 @@ foreach ($crayons as $crayon) {
 
 ``` ...this would remove all of the related Crayons for that Box. This can be useful to cascade removal of objects, making code simpler and easier to manage.
 
- Relating Many-to-Many 
------------------------
+##  Relating Many-to-Many 
 
  Let's go back to our StoreFinder model. First off, let's review our schema so far:
 
@@ -172,15 +171,13 @@ foreach ($owners as $owner) {
 
 ``` This block of code lets us grab all the owners of a store with only one query.
 
- Conclusion 
-------------
+##  Conclusion 
 
  Building relationships within schemas obeys some simple rules, you just have to get familiar with which directions the relationships apply. If you require more examples of how to represent your database tables in the xPDO schema, have a look at [More Examples of xPDO XML Schema Files](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files").
 
  Now that we've built our schema, let's go ahead and [generate the PHP classes and maps](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code").
 
- See Also 
-----------
+##  See Also 
 
 - [getOne](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/getone "getOne")
 - [getMany](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/getmany "getMany")

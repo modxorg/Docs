@@ -4,7 +4,7 @@ _old_id: "264"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 ---
 
-<div>- [What is a Resource?](#Resources-WhatisaResource%3F)
+- [What is a Resource?](#Resources-WhatisaResource%3F)
   - [Managing Resources](#Resources-ManagingResources)
 - [Resource Fields](#Resources-ResourceFields)
   - [General Resource Fields](#Resources-GeneralResourceFields)
@@ -16,8 +16,9 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
   - [URL Schemes in Link Tags](#Resources-URLSchemesinResourceTags)
 - [See Also](#Resources-SeeAlso)
  
-</div>What is a Resource?
--------------------
+
+
+## What is a Resource?
 
  A resource is a representation of a page in MODx. There are different types of Resources, such as documents, weblinks, symlinks, actual files, or many other things. The default Resource type is a Document, and simply represents a webpage on your site.
 
@@ -33,16 +34,15 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
  The content of the Resource can then be edited in the large content field in the bottom area. Other fields related to each Resource can also be edited via the tabs on the top of the page.
 
-Resource Fields
----------------
+## Resource Fields
 
  Resources come packaged with a list of predetermined fields by default. They are:
 
 ### General Resource Fields
 
- <table><tbody><tr><th> Name </th> <th> Description </th> </tr><tr><td> id </td> <td> The ID of the Resource. </td> </tr><tr><td> template </td> <td> A reference to the [Template](making-sites-with-modx/structuring-your-site/templates "Templates") that this Resource is using </td> </tr><tr><td> published </td> <td> If the Resource is Published, or viewable on the front-end. </td> </tr><tr><td> pagetitle </td> <td> The title of the Resource. </td> </tr><tr><td> longtitle </td> <td> A longer title of the Resource. </td> </tr><tr><td> description </td> <td> An extended description of the Resource. </td> </tr><tr><td> introtext </td> <td> Also called 'Summary', an introductory excerpt of the Resource's content. Useful for blogs or searching. </td> </tr><tr><td> alias </td> <td> The URL alias to use, if your site is using Friendly URLs. A Resource with alias 'home' and Content Type 'html' would render 'home.html' if it isn't a Container. </td> </tr><tr><td> parent </td> <td> The Parent Resource's ID. </td> </tr><tr><td> link\_attributes </td> <td> Used with menu building snippets to add attributes to links, etc. Can be repurposed for other needs. </td> </tr><tr><td> menutitle </td> <td> The title to show for the Resource when displayed in a menu. </td> </tr><tr><td> menuindex </td> <td> The order index of the Resource in a menu. Higher order means later. </td> </tr><tr><td> hidemenu </td> <td> Also called 'Hide from Menus', if set, this Resource will not show in most Menu or Navigation snippets. </td> </tr><tr><td> content </td> <td> The actual content of the Resource. </td></tr></tbody></table>### Settings Resource Fields
+  Name   Description   id   The ID of the Resource.   template   A reference to the [Template](making-sites-with-modx/structuring-your-site/templates "Templates") that this Resource is using   published   If the Resource is Published, or viewable on the front-end.   pagetitle   The title of the Resource.   longtitle   A longer title of the Resource.   description   An extended description of the Resource.   introtext   Also called 'Summary', an introductory excerpt of the Resource's content. Useful for blogs or searching.   alias   The URL alias to use, if your site is using Friendly URLs. A Resource with alias 'home' and Content Type 'html' would render 'home.html' if it isn't a Container.   parent   The Parent Resource's ID.   link\_attributes   Used with menu building snippets to add attributes to links, etc. Can be repurposed for other needs.   menutitle   The title to show for the Resource when displayed in a menu.   menuindex   The order index of the Resource in a menu. Higher order means later.   hidemenu   Also called 'Hide from Menus', if set, this Resource will not show in most Menu or Navigation snippets.   content   The actual content of the Resource. ### Settings Resource Fields
 
- <table><tbody><tr><th> Name </th> <th> Description </th> </tr><tr><td> isfolder </td> <td> Labeled as 'Container', this specifies whether or not the Resource renders with a / in Friendly URLs instead of its suffix. </td> </tr><tr><td> searchable </td> <td> If the Resource is searchable. </td> </tr><tr><td> cacheable </td> <td> If the Resource is cacheable. </td> </tr><tr><td> createdby </td> <td> The ID of the user who created the Resource. </td> </tr><tr><td> editedby </td> <td> The ID of the last user to edit the Resource. </td> </tr><tr><td> deleted </td> <td> If the Resource is deleted or not. </td> </tr><tr><td> deletedby </td> <td> The ID of the user who deleted the Resource. </td> </tr><tr><td> publishedby </td> <td> The ID of the user who last published the Resource. </td> </tr><tr><td> createdon </td> <td> The date the Resource was created. </td> </tr><tr><td> publishedon </td> <td> The date the Resource was published. </td> </tr><tr><td> editedon </td> <td> The date the Resource was last edited. </td> </tr><tr><td> pub\_date </td> <td> The scheduled date for a Resource to be published. </td> </tr><tr><td> unpub\_date </td> <td> The scheduled date for a Resource to be unpublished. </td></tr></tbody></table>### Using Resource Fields
+  Name   Description   isfolder   Labeled as 'Container', this specifies whether or not the Resource renders with a / in Friendly URLs instead of its suffix.   searchable   If the Resource is searchable.   cacheable   If the Resource is cacheable.   createdby   The ID of the user who created the Resource.   editedby   The ID of the last user to edit the Resource.   deleted   If the Resource is deleted or not.   deletedby   The ID of the user who deleted the Resource.   publishedby   The ID of the user who last published the Resource.   createdon   The date the Resource was created.   publishedon   The date the Resource was published.   editedon   The date the Resource was last edited.   pub\_date   The scheduled date for a Resource to be published.   unpub\_date   The scheduled date for a Resource to be unpublished. ### Using Resource Fields
 
  Resource fields can be accessed from anywhere by using the [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") syntax, ie:
 
@@ -71,8 +71,7 @@ Resource Fields
 $output = $modx->resource->get('pagetitle');
 return strrev($output);
 
-```Linking to a Resource
----------------------
+```## Linking to a Resource
 
  In MODx, links to Resources are dynamically managed via "Link Tags". They look like this:
 
@@ -81,7 +80,9 @@ return strrev($output);
 
 ``` where '123' is the ID of the Resource to link to. You can put these tags anywhere, and MODx will dynamically render the URL for the Resource.
 
-<div class="note"> You can also get the Link Tag by dragging a Resource from the left tree into the content panel. </div> Also see [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor "Named Anchor").
+ You can also get the Link Tag by dragging a Resource from the left tree into the content panel. 
+
+ Also see [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor "Named Anchor").
 
 ### URL Parameters for Link Tags
 
@@ -108,8 +109,7 @@ return strrev($output);
 
  The available schemes are:
 
- <table><tbody><tr><th> Name </th> <th> Description </th> </tr><tr><td> -1 </td> <td> (default) URL is relative to site\_url </td> </tr><tr><td> 0 </td> <td> see http </td> </tr><tr><td> 1 </td> <td> see https </td> </tr><tr><td> full </td> <td> Renders the link as an absolute URL, prepended with site\_url </td> </tr><tr><td> abs </td> <td> Renders the link as an absolute URL, prepended with base\_url </td> </tr><tr><td> http </td> <td> Renders the link as an absolute URL, forced to http scheme </td> </tr><tr><td> https </td> <td> Renders the link as an absolute URL, force to https scheme </td></tr></tbody></table>See Also
---------
+  Name   Description   -1   (default) URL is relative to site\_url   0   see http   1   see https   full   Renders the link as an absolute URL, prepended with site\_url   abs   Renders the link as an absolute URL, prepended with base\_url   http   Renders the link as an absolute URL, forced to http scheme   https   Renders the link as an absolute URL, force to https scheme ## See Also
 
 1. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
 2. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)

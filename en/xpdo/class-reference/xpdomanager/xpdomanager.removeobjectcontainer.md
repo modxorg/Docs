@@ -4,13 +4,13 @@ _old_id: "1281"
 _old_uri: "2.x/class-reference/xpdomanager/xpdomanager.removeobjectcontainer"
 ---
 
-xPDOManager::removeObjectContainer()
-------------------------------------
+## xPDOManager::removeObjectContainer()
 
  Drops a table if it exists.
 
-<div class="note"> This will only work if there is a corresponding xPDO class for the table and its package has been loaded. MODX will not drop the table if the ORM layer has not defined the table. </div>Syntax
-------
+ This will only work if there is a corresponding xPDO class for the table and its package has been loaded. MODX will not drop the table if the ORM layer has not defined the table. 
+
+## Syntax
 
  API Docs: [http://api.modxcms.com/xpdo/om-mysql/xPDOManager\_mysql.html#removeObjectContainer](http://api.modxcms.com/xpdo/om-mysql/xPDOManager_mysql.html#removeObjectContainer)
 
@@ -18,8 +18,7 @@ xPDOManager::removeObjectContainer()
 <pre class="brush: php">
 int removeObjectContainer (string $className)
 
-```Examples
---------
+```## Examples
 
  Drop the table associated with the "Person" object:
 
@@ -28,8 +27,7 @@ int removeObjectContainer (string $className)
 $manager = $xpdo->getManager();
 $manager->removeObjectContainer('Person');
 
-```Alternatives
-------------
+```## Alternatives
 
  If you are trying to remove tables after having removed or renamed the underlying xPDO classes, you may need to resort to issuing a manual "DROP TABLE" query.
 

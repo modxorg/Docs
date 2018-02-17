@@ -16,7 +16,8 @@ if ($box->remove() == false) {
 
 ```The remove function will return either true or false, depending on the outcome of the deletion. Errors will also be logged via $xpdo->log.
 
-<div class="note">This will also remove any composite related objects to this object. For example, if our Box had 4 "side" related objects that were mapped out as composites, they would be removed as well when $box->remove is called.</div>See Also
---------
+This will also remove any composite related objects to this object. For example, if our Box had 4 "side" related objects that were mapped out as composites, they would be removed as well when $box->remove is called.
+
+## See Also
 
 - [xPDOObject::remove](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/remove "remove")

@@ -4,8 +4,7 @@ _old_id: "1692"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/validation-rules-in-your-schema"
 ---
 
-Overview
---------
+## Overview
 
  Your XML schema can define validation rules using nodes in the XML that follow this pattern
 
@@ -27,16 +26,15 @@ Overview
 - **type**: can be "callback", "preg\_match" or "xPDOValidationRule" _(required)_
 - **rule**: varies depending on the type. For type=callback, this will be the name of the callback function. For type=preg\_match, this will be the regular expression. For type=xPDOValidationRule, a valid child class must be supplied. _(required)_
 - **value**: an optional argument to pass to the validation functions, e.g. when the type is `xPDOValidationRule` and the rule is a class that extends it. _(optional)_
-- **message**: this is a string describing the the validation rule if it fails. _(required)_<div class="info"> In MODX 2+, the message field contains a lexicon string which can provide language specific message translations.
+- **message**: this is a string describing the the validation rule if it fails. _(required)_ In MODX 2+, the message field contains a lexicon string which can provide language specific message translations.
   
    ```
   <pre class="brush: xml">
           <rule field="category" name="preventBlank" type="xPDOValidationRule" rule="xPDOMinLengthValidationRule" value="1" message="category_err_ns_name" />
   		
-  ``` </div>
+  ```
 
-Regex Validation
-----------------
+## Regex Validation
 
  Let's take this example from the modChunk schema:
 
@@ -50,13 +48,11 @@ Regex Validation
         </validation>
     </object>
 
-```Callback Validation
--------------------
+```## Callback Validation
 
  You can use your own functions for validation purposes by using "callback" as the type -- this relies on PHP's [call\_user\_func()](http://php.net/manual/en/function.call-user-func.php) function. Because the function name is defined in XML where it is impossible to reference an object instance, you can only reference a regular PHP function like `my_function` or a static class method, e.g. `MyClass::myFunction`. Likewise, you cannot pass parameters to these functions (?).
 
-xPDOValidationRule Validation
------------------------------
+## xPDOValidationRule Validation
 
  This is how you can tie-into the built-in MODX validation rules. See the classes available inside the `core/xpdo/validation/xpdovalidator.class.php` file:
 
@@ -79,8 +75,7 @@ xPDOValidationRule Validation
         </validation>
     </object>
 
-```Using xPDOValidator
--------------------
+```## Using xPDOValidator
 
  You can use the xPDOValidator to pre-validate the current state of an `xPDOObject` or you can allow `save()` to call validation (see `xPDO::OPT_VALIDATE_ON_SAVE`) itself and fail if validation fails.
 

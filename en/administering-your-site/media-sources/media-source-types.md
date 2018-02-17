@@ -9,8 +9,7 @@ This is a list of all the currently available Media Source types packaged with t
 - [File System](administering-your-site/media-sources/media-source-types/media-source-type-file-system "Media Source Type - File System")
 - [Amazon S3](administering-your-site/media-sources/media-source-types/media-source-type-s3 "Media Source Type - S3")
 
-See Also
---------
+## See Also
 
 1. [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source)
 2. [Assigning Media Sources to TVs](administering-your-site/media-sources/assigning-media-sources-to-tvs)

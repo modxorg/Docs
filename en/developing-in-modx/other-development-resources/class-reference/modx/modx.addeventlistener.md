@@ -4,13 +4,11 @@ _old_id: "1052"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.addeventlistener"
 ---
 
-modX::addEventListener
-----------------------
+## modX::addEventListener
 
 Add a plugin to the eventMap within the current execution cycle.
 
-Syntax
-------
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::addEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::addEventListener())
 
@@ -18,8 +16,7 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.h
 <pre class="brush: php">
 boolean addEventListener (string $event, integer $pluginId)
 
-```Example
--------
+```## Example
 
 Add a Plugin with ID 2 to the Event 'OnChunkPrerender':
 
@@ -27,8 +24,7 @@ Add a Plugin with ID 2 to the Event 'OnChunkPrerender':
 <pre class="brush: php">
 $modx->addEventListener('OnChunkPrerender',12);
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

@@ -4,13 +4,11 @@ _old_id: "1264"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.endswith"
 ---
 
-xPDOCacheManager::endsWith
---------------------------
+## xPDOCacheManager::endsWith
 
 Sees if a string ends with a specific pattern or set of patterns. Useful for checking file extensions.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#endsWith>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#endsWith>
 <pre class="brush: php">
 boolean endsWith (string $string, string|array $pattern)
 
-```Example
--------
+```## Example
 
 See if a file contains the s
 
@@ -30,8 +27,7 @@ if ($xpdo->cacheManager->endsWith($filename,'flv')) {
   echo 'Ends with flv!";
 }
 
-```See Also
---------
+```## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

@@ -4,13 +4,11 @@ _old_id: "1310"
 _old_uri: "2.x/class-reference/xpdovalidator/xpdovalidator.validate"
 ---
 
-xPDOValidator::validate
------------------------
+## xPDOValidator::validate
 
 Executes validation against the object attached to this validator. May also accept an array of parameters to pass to the validation rule.
 
-Syntax
-------
+## Syntax
 
 API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#>
 
@@ -18,8 +16,7 @@ API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#>
 <pre class="brush: php">
 boolean validate ([array $parameters = array()])
 
-```Example
--------
+```## Example
 
 Check to see if any validation errors occurred.
 
@@ -30,8 +27,7 @@ if ($validator->validate()) {
    echo 'Errors occurred!';
 }
 
-```See Also
---------
+```## See Also
 
 1. [xPDOValidator.addMessage](/xpdo/2.x/class-reference/xpdovalidator/xpdovalidator.addmessage)
 2. [xPDOValidator.getMessages](/xpdo/2.x/class-reference/xpdovalidator/xpdovalidator.getmessages)

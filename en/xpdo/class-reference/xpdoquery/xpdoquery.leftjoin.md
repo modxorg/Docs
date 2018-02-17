@@ -4,13 +4,11 @@ _old_id: "1293"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.leftjoin"
 ---
 
-xPDOQuery::leftJoin
--------------------
+## xPDOQuery::leftJoin
 
 Adds a LEFT JOIN clause to the query.
 
-Syntax
-------
+## Syntax
 
 API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::leftJoin()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::leftJoin())
 
@@ -18,8 +16,7 @@ API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.clas
 <pre class="brush: php">
 void leftJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunction = xPDOQuery::SQL_AND], [ $binding = null], [ $condGroup = 0])
 
-```Example
--------
+```## Example
 
 Select all Boxes and the Owner name.
 
@@ -33,7 +30,6 @@ $query->select(array(
 $query->leftJoin('Owner','Owner');
 $boxes = $xpdo->getCollection('Box',$query);
 
-```See Also
---------
+```## See Also
 
 - [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery")

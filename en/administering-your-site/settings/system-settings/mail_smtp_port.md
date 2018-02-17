@@ -4,11 +4,10 @@ _old_id: "180"
 _old_uri: "2.x/administering-your-site/settings/system-settings/mail_smtp_port"
 ---
 
-mail\_smtp\_port
-----------------
+## mail\_smtp\_port
 
-**Name**: SMTP Port   
-**Type**: String   
+**Name**: SMTP Port 
+**Type**: String 
 **Default**: 587
 
 Sets the default SMTP server port.

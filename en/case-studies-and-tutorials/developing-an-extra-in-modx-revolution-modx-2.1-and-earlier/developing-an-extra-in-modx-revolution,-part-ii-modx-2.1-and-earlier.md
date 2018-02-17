@@ -4,13 +4,17 @@ _old_id: "1050"
 _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-ii-modx-2.1-and-earlier"
 ---
 
-<div class="panel" style="border-width: 1px;"><div class="panelContent">This tutorial is part of a Series:
+This tutorial is part of a Series:
 
 - [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier "Developing an Extra in MODX Revolution - MODX 2.1 and Earlier")
 - Part II: Creating our Custom Manager Page
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-iii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part III - MODX 2.1 and Earlier")
 
-</div></div><div>- [First Setup Steps](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-FirstSetupSteps)
+
+
+
+
+- [First Setup Steps](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-FirstSetupSteps)
   - [Namespaces](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-Namespaces)
   - [Actions and Menus](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-ActionsandMenus)
   - [Lexicons](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-Lexicons)
@@ -30,10 +34,11 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
   - [Adding Inline-Editing](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-AddingInlineEditing)
 - [Summary](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-Summary)
 
-</div>This section will cover creating the Custom Manager Page (CMP) for our Doodles Extra we created in [step 1](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier "Developing an Extra in MODX Revolution - MODX 2.1 and Earlier"). This includes explaining controllers/connectors/processors, making our Namespace, Action and Menu item, and working with ExtJS to create the UI.
 
-First Setup Steps
------------------
+
+This section will cover creating the Custom Manager Page (CMP) for our Doodles Extra we created in [step 1](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier "Developing an Extra in MODX Revolution - MODX 2.1 and Earlier"). This includes explaining controllers/connectors/processors, making our Namespace, Action and Menu item, and working with ExtJS to create the UI.
+
+## First Setup Steps
 
 We've got our snippet and our basic directory structure. Now we need to setup a few things before we can start developing our Custom Manager Page. The first is our Namespace.
 
@@ -164,8 +169,7 @@ You can also see our 'doodles' and 'doodles.desc' strings we referenced earlier 
 
 Great! We're all setup to start developing our CMP.
 
-Setting up the Controllers with MODExt
---------------------------------------
+## Setting up the Controllers with MODExt
 
 CMPs in MODX are generated with [ExtJS](http://sencha.com/), a JavaScript framework by Sencha that allows for rapid and powerful UI development. MODX adds functionality to a few of the ExtJS tools (and calls them MODExt). We're going to use those tools in our CMP. This tutorial is not meant to teach you ExtJS, as there are plenty of tutorials on that on the web, and on the [Sencha main site](http://sencha.com/). But we will go over how to use them to create a neat grid that can do CRUD actions.
 
@@ -261,7 +265,9 @@ We also at the beginning of the class define which action with load first, with 
 
 Next, we make references to the MODX object, and the Doodles object, so our controllers can use them. Then, we'll load a "mgr/header.php" controller, which we'll be creating shortly - this will have all of our Doodles-CMP-shared code in it. And finally, we'll load the current active controller, and return it. Cool!
 
-<div class="note">You don't have to use a custom request router. You could just load the contents of mgr/header.php and mgr/index.php (discussed later) in the controllers/index.php file and be done with it. Custom request routing as described here, though, allows you to have multiple pages for your CMP - which might be useful.</div>### The Header Controller
+You don't have to use a custom request router. You could just load the contents of mgr/header.php and mgr/index.php (discussed later) in the controllers/index.php file and be done with it. Custom request routing as described here, though, allows you to have multiple pages for your CMP - which might be useful.
+
+### The Header Controller
 
 So now we need to create our header controller, which has all the base Doodles CMP stuff in it. Let's add a file here: /www/doodles/core/components/doodles/controllers/mgr/header.php and put this in it:
 
@@ -292,8 +298,7 @@ Doodles = new Doodles();
 
 ```So, basically, we're loading a Doodles object which extends the Ext.Component class. This also gives us a nice JavaScript namespace of 'Doodles'. We're done with the header stuff. Let's start on our initial page.
 
-Our Doodles CMP Page
---------------------
+## Our Doodles CMP Page
 
 Create a file at /www/doodles/core/components/doodles/controllers/mgr/index.php (remember in our defaultAction var, 'index' was it?) and fill it with this:
 
@@ -312,7 +317,9 @@ We're going to load first the doodles.grid.js, which is a widget that displays a
 
 We're going to leave the grid commented out for now, but we'll come back to it. Promise.
 
-<div class="note">We could have put all these JS files in one file, which would have loaded the page faster. For illustration purposes, we put them in 3 separate files, to make explaining this tutorial easier. Feel free to do whatever you want when developing your CMP.</div>### The Section JS File
+We could have put all these JS files in one file, which would have loaded the page faster. For illustration purposes, we put them in 3 separate files, to make explaining this tutorial easier. Feel free to do whatever you want when developing your CMP.
+
+### The Section JS File
 
 Let's first create the index.js file, at /www/doodles/assets/components/doodles/js/mgr/sections/index.js:
 
@@ -427,8 +434,7 @@ Let's load the page and take a look now.
 
 Cool! We've got a MODX-styled panel going. Unfortunately, it's pretty useless. We need to add a grid to manage our Doodles. Let's go ahead and do that now.
 
-The Doodles Grid
-----------------
+## The Doodles Grid
 
 First off, go ahead and uncomment this line in your mgr/index.php controller:
 
@@ -562,7 +568,9 @@ This file will do nothing on its own when access. Loading it directly will give 
 
 There's a few reasons for this. One is that the connectors are locked down and don't allow anyone without a MODX manager session to access them. Secondly, all requests to connectors **must** pass a unique-to-your-site authorization key that prevents CRSF attacks. It can either be passed in the HTTP headers as 'modAuth', or in a REQUEST var as HTTP\_MODAUTH. The value will be $modx->siteId, which is set on a new install, and loaded when MODX is loaded.
 
-<div class="warning">Don't ever paste or share with anyone your $modx->siteId or HTTP\_MODAUTH key. It keeps your site secure.</div>The great thing, though, is you won't have to worry about this. MODX already handles this in MODExt - all HTTP requests made by ExtJS in MODX pass this variable in via their HTTP headers.
+Don't ever paste or share with anyone your $modx->siteId or HTTP\_MODAUTH key. It keeps your site secure.
+
+The great thing, though, is you won't have to worry about this. MODX already handles this in MODExt - all HTTP requests made by ExtJS in MODX pass this variable in via their HTTP headers.
 
 The second reason loading the connector file directly wont work is that we didn't specify a routing path - remember baseParams in the grid? Remember how we set the 'action' param in it to 'mgr/doodle/getList'? That's our routing path. That tells the connector to load the file at:
 
@@ -937,17 +945,14 @@ return $modx->error->success('',$doodle);
 
 ```Note the similarity to our update.php processor, except one thing - we're first processing a param in the $scriptProperties array called "data". This contains a JSON object of our row in the grid, with all the values. We'll just use $modx->fromJSON() to convert it to a nice, readable array, and then use its values in the rest of our processor. Simple, eh?
 
-Summary
--------
+## Summary
 
 We've got ourselves a nice CRUD user interface now, with creating, updating, removing, searching, pagination, and sorting. And all pretty easily, too.
 
 Next, in Part III, we'll explore [creating a Transport Package](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-iii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part III - MODX 2.1 and Earlier") for our Doodles Extra so that we can distribute it on modxcms.com and via Revolution's Package Management system.
 
-<div class="panel" style="border-width: 1px;"><div class="panelContent">This tutorial is part of a Series:
+This tutorial is part of a Series:
 
 - [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier "Developing an Extra in MODX Revolution - MODX 2.1 and Earlier")
 - Part II: Creating our Custom Manager Page
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-iii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part III - MODX 2.1 and Earlier")
-
-</div></div>

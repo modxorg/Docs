@@ -22,15 +22,15 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
   - [The Doodles class getChunk Method](#DevelopinganExtrainMODXRevolution-TheDoodlesclassgetChunkMethod)
 - [Summary](#DevelopinganExtrainMODXRevolution-Summary)
 
- Overview 
-----------
+##  Overview 
 
  This tutorial is written as a comprehensive example on developing Extras for MODX Revolution 2.3 and later - as well as how to setup your Extra to be easily packaged into a Transport Package, as well as able to be developed outside the MODX webroot so that source control (such as Git) can be used.
 
  The overview will be dissecting the "Doodles" Extra, which is a simple Extra that uses a custom table to store objects called "Doodles", which have a name and a description. We'll have a Snippet that pulls them and displays a list of them that is templatable via a Chunk, a Custom Manager Page using ExtJS to have a CRUD grid for editing, and a build script for packaging. And we'll make it all i18n-compatible to allow easy translating. **This is an extremely comprehensive tutorial**, so if you're wanting only specific parts, use the Table of Contents above.
 
-<div class="note"> The Doodles Extra in this tutorial can be found on GitHub, here: <https://github.com/splittingred/doodles></div> Setting Up Our Directories 
-----------------------------
+ The Doodles Extra in this tutorial can be found on GitHub, here: <https://github.com/splittingred/doodles>
+
+##  Setting Up Our Directories 
 
  There are many ways that you could start developing your Extra - you could write your Plugins, Snippets, etc. inside MODX and then package it with a packaging tool like [PackMan](/extras/revo/packman "PackMan"), or you could develop your project outside the MODX manager and track your files via a source control system such as [Git](http://github.com/). This tutorial uses the latter method for several reasons:
 
@@ -40,7 +40,9 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
 
  Let's start. I've created a directory at **/www/doodles/** – make sure that this directory is **web-accessible** locally, as you'll need that later on. I have /www/ setup as my webroot on my localhost environment, for example.
 
-<div class="note"> You **may** have to add a System Setting in your MODX install called session\_cookie\_path and give it a value of "/" (no quotations). This will tell MODX to use the same session when you're running stuff at <http://localhost/doodles/>. Also, giving it a unique name via session\_name (like "modxlocaldevsession") is a good idea too. That'll prevent conflicts with other MODX installs on your local machine. If you do this, empty the core/cache/ directory and relogin after doing so. </div> In here, we'll have quite a few directories:
+ You **may** have to add a System Setting in your MODX install called session\_cookie\_path and give it a value of "/" (no quotations). This will tell MODX to use the same session when you're running stuff at <http://localhost/doodles/>. Also, giving it a unique name via session\_name (like "modxlocaldevsession") is a good idea too. That'll prevent conflicts with other MODX installs on your local machine. If you do this, empty the core/cache/ directory and relogin after doing so. 
+
+ In here, we'll have quite a few directories:
 
  ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/doodles-dir-structure.png)
 
@@ -65,8 +67,7 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
 
  There we have it. An isolated development environment from MODX so that we can do separate development and seamless collaboration. Let's get further in.
 
- Creating the Doodles Snippet 
-------------------------------
+##  Creating the Doodles Snippet 
 
  Go ahead and create a file for our first Snippet:
 
@@ -318,14 +319,18 @@ return $output;
 
 ###  Building the Query 
 
-<div class="warning"> **Note:** The previous object creation which was located here, is moved to the \_build/build.schema.php file, as you can see in the above section. Because creating your storage table should be done inside a snippet but belongs to the build process of your package. </div> Okay, let's add this to our Snippet before the return statement:
+ **Note:** The previous object creation which was located here, is moved to the \_build/build.schema.php file, as you can see in the above section. Because creating your storage table should be done inside a snippet but belongs to the build process of your package. 
+
+ Okay, let's add this to our Snippet before the return statement:
 
  ```
 <pre class="brush: php">$doodles = $modx->getCollection('Doodle');
 $output = count($doodles);
 
-```<div class="tip"> **Know Your Objects!**   
- In this example, we are retrieving a collection of "Doodle" objects. Most of the time when using [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"), you will be retrieving the built-in MODX objects (e.g. pages are "modResource", templates are "modTemplate"), so you may find it quite handy to keep open your `core/model/schema/modx.mysql.schema.xml` file so you can review your object names. </div> That's going to grab an array of Doodle objects, or in non-xPDO terms, a bunch of rows from the database. Go ahead and save your snippet, then run it in the browser at <http://localhost/modx/doodles.html> (or wherever the Resource was). You should get this:
+``` **Know Your Objects!** 
+ In this example, we are retrieving a collection of "Doodle" objects. Most of the time when using [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"), you will be retrieving the built-in MODX objects (e.g. pages are "modResource", templates are "modTemplate"), so you may find it quite handy to keep open your `core/model/schema/modx.mysql.schema.xml` file so you can review your object names. 
+
+ That's going to grab an array of Doodle objects, or in non-xPDO terms, a bunch of rows from the database. Go ahead and save your snippet, then run it in the browser at <http://localhost/modx/doodles.html> (or wherever the Resource was). You should get this:
 
 > 0
 
@@ -378,14 +383,16 @@ $doodles = $modx->getCollection('Doodle',$c);
         return $chunk;
     }
 
-```<div class="note">For now, all you need to know is that these methods will look for Chunks in your /www/doodles/core/components/doodles/elements/chunks/ directory, postfixed with '.chunk.tpl' and all in lowercase. If it doesn't find them on the filesystem, it looks for them in MODX. So, if we called:
+```For now, all you need to know is that these methods will look for Chunks in your /www/doodles/core/components/doodles/elements/chunks/ directory, postfixed with '.chunk.tpl' and all in lowercase. If it doesn't find them on the filesystem, it looks for them in MODX. So, if we called:
 
  ```
 <pre class="brush: php">$o = $dood->getChunk('hello',array('name' => 'Joe'));
 
 ``` It would set to $o the contents of /www/doodles/core/components/doodles/elements/chunks/hello.chunk.tpl, with the property \[\[+name\]\] parsed as Joe. This will allow you to edit your Chunks in your IDE, rather than in MODX. It will also allow you to package your Extra without installing default chunks into the user's MODX install (which they would be tempted to overwrite, which would get erased in upgrades of your Extra).
 
-</div> So, back to our snippet. Create a Chunk file in /www/doodles/core/components/doodles/elements/chunks/rowtpl.chunk.tpl, and put this inside:
+
+
+ So, back to our snippet. Create a Chunk file in /www/doodles/core/components/doodles/elements/chunks/rowtpl.chunk.tpl, and put this inside:
 
  ```
 <pre class="brush: php"><li><strong>[[+name]]</strong> - [[+description]]</li>
@@ -429,8 +436,7 @@ return $output;
 
 ``` And we've got it loading our custom base class from our System Setting-defined paths, adding our custom xPDO db package, pulling from our custom database table, and outputting it via a Chunk. Cool, huh?
 
- Summary 
----------
+##  Summary 
 
  We've got ourselves a nice custom database model, which our Doodles Snippet using to grab Doodles records from our database. We also have looked at the basic structure for a comprehensive MODX Extra.
 

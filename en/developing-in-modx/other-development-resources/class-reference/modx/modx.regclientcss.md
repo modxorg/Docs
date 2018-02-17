@@ -4,13 +4,11 @@ _old_id: "1090"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientcss"
 ---
 
-modX::regClientCSS
-------------------
+## modX::regClientCSS
 
 Register CSS to be injected inside the HEAD tag of a resource.
 
-Syntax
-------
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientCSS()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientCSS())
 
@@ -18,8 +16,7 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.h
 <pre class="brush: php">
 void regClientCSS (string $src)
 
-```Example
--------
+```## Example
 
 Register a CSS file to the HEAD tag:
 
@@ -27,8 +24,7 @@ Register a CSS file to the HEAD tag:
 <pre class="brush: php">
 $modx->regClientCSS('assets/css/style.css');
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.regClientHTMLBlock](developing-in-modx/other-development-resources/class-reference/modx/modx.regclienthtmlblock "modX.regClientHTMLBlock")

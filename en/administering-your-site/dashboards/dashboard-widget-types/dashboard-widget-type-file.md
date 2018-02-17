@@ -9,8 +9,7 @@ The File Dashboard Widget Type runs a file on the filesystem, which can either:
 - Return the output of the file, rendering it in the content pane of the widget
 - Return the name of a class that extends modDashboardWidgetInterface, a MODX-provided abstract class, that has a render() method that will return the output to render to the content pane of the widget
 
-Usage
------
+## Usage
 
 Simply place the name of the file in the content textarea of the widget. You can use the following placeholders to reference the widget path:
 
@@ -53,16 +52,14 @@ return 'modDashboardWidgetHelloWorld';
 
 > Hello, World! Version: 1.0
 
-Available Variables
--------------------
+## Available Variables
 
 File-based widgets have the following PHP variables available to them:
 
 - $modx - A reference to the MODX instance.
 - $scriptProperties - An array of properties of this Dashboard Widget, as if toArray() were run on the widget object.
 
-See Also
---------
+## See Also
 
 1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
 2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)

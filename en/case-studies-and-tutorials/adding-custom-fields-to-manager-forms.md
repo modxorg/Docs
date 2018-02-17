@@ -4,8 +4,7 @@ _old_id: "14"
 _old_uri: "2.x/case-studies-and-tutorials/adding-custom-fields-to-manager-forms"
 ---
 
-Adding a Custom Field
----------------------
+## Adding a Custom Field
 
 Adding custom fields to manager forms - such as the Create Chunk, Update Resource, etc - in MODx Revolution is fairly straightforward. You just use the On\*FormRender Plugin events.
 

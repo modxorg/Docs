@@ -4,7 +4,7 @@ _old_id: "68"
 _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 ---
 
-<div>- [Creating a Blog in MODx Revolution](#CreatingaBloginMODxRevolution-CreatingaBloginMODxRevolution)
+- [Creating a Blog in MODx Revolution](#CreatingaBloginMODxRevolution-CreatingaBloginMODxRevolution)
 - [Getting the Needed Extras](#CreatingaBloginMODxRevolution-GettingtheNeededExtras)
   - [Needed Extras](#CreatingaBloginMODxRevolution-NeededExtras)
   - [Optional Extras](#CreatingaBloginMODxRevolution-OptionalExtras)
@@ -30,15 +30,17 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
   - [Adding a "Most Used Tags" widget](#CreatingaBloginMODxRevolution-Addinga%22MostUsedTags%22widget)
 - [Conclusion](#CreatingaBloginMODxRevolution-Conclusion)
  
-</div> Requirements:
---------------
+
+
+##  Requirements:
 
 1. Extension requirements may call for FURL use and ".html" be changed to "/" : Content -> Content Types -> HTML (.html) -> /
 
-Creating a Blog in MODx Revolution
-----------------------------------
+## Creating a Blog in MODx Revolution
 
-<div class="note"> MODX Revolution 2.2+ users can simply install [Articles](http://modx.com/extras/package/articles/), which does everything below automatically for you, in an intuitive and easy-to-use interface. </div> This tutorial is here to help you setup a flexible, powerful blogging solution in MODx Revolution. Since MODx Revolution is not blogging software, but rather a full-blown Content Application Platform, it doesn't come pre-packaged with a cookie-cutter blogging solution. You'll need to setup your blog how you want it.
+ MODX Revolution 2.2+ users can simply install [Articles](http://modx.com/extras/package/articles/), which does everything below automatically for you, in an intuitive and easy-to-use interface. 
+
+ This tutorial is here to help you setup a flexible, powerful blogging solution in MODx Revolution. Since MODx Revolution is not blogging software, but rather a full-blown Content Application Platform, it doesn't come pre-packaged with a cookie-cutter blogging solution. You'll need to setup your blog how you want it.
 
  Fortunately, the tools to do so are already there for your taking. This tutorial will walk you through how to set them up. It's recommended that you're familiar with Revolution's [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax") before we start.
 
@@ -46,8 +48,7 @@ Creating a Blog in MODx Revolution
 
  This tutorial was based on the blog setup at [splittingred.com](http://splittingred.com/). If you'd like a demo before reading, try there.
 
-Getting the Needed Extras
--------------------------
+## Getting the Needed Extras
 
  First off, you'll want to go ahead and download and install some Extras that we'll be using in our Blog. The following is a list of most commonly-used Extras:
 
@@ -67,8 +68,7 @@ Getting the Needed Extras
 - [getFeed](/extras/revo/getfeed "getFeed") - If you want to grab other feeds in your site, such as a Twitter feed.
 - [Login](/extras/revo/login "Login") - If you want to restrict commenting to logged in users only, you'll need this.
 
-Creating your Blog Post Template
---------------------------------
+## Creating your Blog Post Template
 
  First off, you'll want to have a Template that's geared just for Blog Posts. Why? Well, if you want comments and special formatting or page displays for your blog, you'll probably not want to have to do that for each Blog Post. So, the best route is to setup your own blog post template. This tutorial already assumes you have a base Template for your normal pages on the site - we'll reference that later on as 'BaseTemplate'.
 
@@ -139,7 +139,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Secondly, we then display a Tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/revo/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
 
- And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-\[<span class="error">\[\*id\]</span>\]'. This means that MODx will automatically create a new thread for each new Blog Post we create. Neat!
+ And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-\[\[\*id\]\]'. This means that MODx will automatically create a new thread for each new Blog Post we create. Neat!
 
 ### The Post Content
 
@@ -181,9 +181,10 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  There's a whole bunch of other Quip settings we could change, but we'll leave you to further customization, which you can find out how to do in the [Quip docs](/extras/revo/quip "Quip").
 
-<div class="info"> **What is Threading?**   
- If you enable _threaded_ comments, then users can comment on other comments. Non-threaded comments allow users to only comment on the original blog post. </div>Setting up Tagging
-------------------
+ **What is Threading?** 
+ If you enable _threaded_ comments, then users can comment on other comments. Non-threaded comments allow users to only comment on the original blog post. 
+
+## Setting up Tagging
 
  Now that we've got our Template all setup, we need to setup the 'tags' Template Variable that we'll be using for our Tagging.
 
@@ -193,15 +194,16 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  That's it! Now you'll be able to add tags to any blog post we create, simply when editing your Resource by specifying a comma-separated list of tags.
 
-Creating the Sections
----------------------
+## Creating the Sections
 
  If you want your blog to have 'Sections' (also called Categories), you'll first need to create those Resources.
 
- For this tutorial's purpose, we'll create 2 sections: "Personal" and "Technology". Go ahead and create 2 Resources in the root of your site, and make them 'containers'. You'll want to   
+ For this tutorial's purpose, we'll create 2 sections: "Personal" and "Technology". Go ahead and create 2 Resources in the root of your site, and make them 'containers'. You'll want to 
  have their alias be 'personal' and 'technology', so your blog post URLs turn up nicely.
 
-<div class="note"> We'll say from here on out that our two Section Resources have IDs of 34 and 35, for reference. </div> Make sure you don't use the BlogPostTemplate on these, and use instead your own Base Template. These pages will end up being a way to browse all posts within a certain Section. In the content of these Resources, go ahead and put the following:
+ We'll say from here on out that our two Section Resources have IDs of 34 and 35, for reference. 
+
+ Make sure you don't use the BlogPostTemplate on these, and use instead your own Base Template. These pages will end up being a way to browse all posts within a certain Section. In the content of these Resources, go ahead and put the following:
 
  ```
 <pre class="brush: php">
@@ -261,8 +263,7 @@ Creating the Sections
 
  ![](/download/attachments/18678105/blogpost-tpl1.png?version=1&modificationDate=1279311929000)
 
-Setting up Your Blog Home
--------------------------
+## Setting up Your Blog Home
 
  In our home page for our blog, which we've got in Resource ID 1 - our site start - we've got this:
 
@@ -293,8 +294,7 @@ Setting up Your Blog Home
 
  You could easily make this another page than your site\_start (or ID 1) - just make sure to change the 'target' properties in your tagLister and tolinks Snippet calls to reflect that.
 
-Adding Posts
-------------
+## Adding Posts
 
  Okay, now we're ready to actually add blog posts, now that our structure is all setup.
 
@@ -302,7 +302,9 @@ Adding Posts
 
  Before we start, though, it's important to note that how you structure your posts within the section is totally up to you. You can add year and month container Resources to put these posts in, or just post them directly within the section. It's totally up to you.
 
-<div class="note"> If you choose to have date/year or sub-containers, make sure they have Hide from Menus checked, so that they wont show up in your getResources calls. </div> Remember, though, that whatever structure you build under the sections, that's not going to determine your navigation - [Archivist](/extras/revo/archivist "Archivist") will handle that. What it will determine, however, is the URL of your blog posts. So have fun.
+ If you choose to have date/year or sub-containers, make sure they have Hide from Menus checked, so that they wont show up in your getResources calls. 
+
+ Remember, though, that whatever structure you build under the sections, that's not going to determine your navigation - [Archivist](/extras/revo/archivist "Archivist") will handle that. What it will determine, however, is the URL of your blog posts. So have fun.
 
 ### Adding a New Blog Post
 
@@ -310,8 +312,7 @@ Adding Posts
 
  And finally, when you're done, make sure to specify the tags for your post in your newly created 'tags' TV!
 
-Setting up Your Archives
-------------------------
+## Setting up Your Archives
 
  Great - you have your first blog post! And, you've got it so you can browse it in Sections as well. Now, you're going to want to set up some way of browsing old blog posts. This is where 'Archvist' comes into play.
 
@@ -362,8 +363,7 @@ Setting up Your Archives
 
  That's it! Archivist will actually automatically handle the rest - including all your URL generation for archives - archives/2010/05/ will show all the posts within May 2010, where archives/2009/ will show all posts in 2009. Pretty sweet, huh?
 
-Advanced Options
-----------------
+## Advanced Options
 
 ### Adding a Moderator Group
 
@@ -448,8 +448,7 @@ Advanced Options
 
 ``` And tagLister will check the TV 'tags', and create links that go to the target (here, Resource ID 1) with the top 10 tags being used. There's a ton more [configuration options](/extras/revo/taglister "tagLister"), but we'll leave you with this.
 
-Conclusion
-----------
+## Conclusion
 
  So we've got a full blog setup! It should look something like this in our tree now:
 

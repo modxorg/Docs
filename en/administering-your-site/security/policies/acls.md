@@ -4,19 +4,19 @@ _old_id: "9"
 _old_uri: "2.x/administering-your-site/security/policies/acls"
 ---
 
-<div>- [What is an ACL (Access Control List)?](#ACLs-WhatisanACL%28AccessControlList%29%3F)
+- [What is an ACL (Access Control List)?](#ACLs-WhatisanACL%28AccessControlList%29%3F)
 - [Usage](#ACLs-Usage)
   - [Context ACL](#ACLs-ContextACL)
   - [Resource ACL](#ACLs-ResourceACL)
 - [See Also](#ACLs-SeeAlso)
 
-</div>What is an ACL (Access Control List)?
--------------------------------------
+
+
+## What is an ACL (Access Control List)?
 
 An ACL, or Access Control List, is a set of [Permissions](administering-your-site/security/policies/permissions "Permissions") attached to an object. More information on ACLs can be found [here in Wikipedia](http://en.wikipedia.org/wiki/Access_control_list).
 
-Usage
------
+## Usage
 
 In MODx, ACLs can be applied to any modAccessibleObject. Primarily MODx Revolution 2.0 allows for ACLs on Resources and Contexts.
 
@@ -52,8 +52,7 @@ This means that an ACL applied to a Resource Group will:
 - ... give the Resource Permissions (save, load, delete, etc) in the Policy specified
 - ... to all the Resources in the Resource Group
 
-See Also
---------
+## See Also
 
 1. [Users](administering-your-site/security/users)
 2. [User Groups](administering-your-site/security/user-groups)

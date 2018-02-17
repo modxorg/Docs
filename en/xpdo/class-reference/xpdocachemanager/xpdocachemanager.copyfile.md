@@ -4,8 +4,7 @@ _old_id: "1260"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile"
 ---
 
-xPDOCacheManager::copyFile
---------------------------
+## xPDOCacheManager::copyFile
 
 Copies a file from a source file to a target directory. Takes the following options as an optional 3rd parameter:
 
@@ -16,8 +15,7 @@ Copies a file from a source file to a target directory. Takes the following opti
 - **new\_dir\_permissions** - The permissions to set any new directories to that were created in the target. (Can also be the 4th parameter of copyFile.) Defaults to 0775.
 - **new\_file\_permissions** - The permissions to set the new file to if copy\_preserve\_permissions is false. Defaults to 0664.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#copyFile>
 
@@ -25,8 +23,7 @@ API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#copyFile>
 <pre class="brush: php">
 boolean|array copyFile (string $source, string $target, [array $options = array()])
 
-```Example
--------
+```## Example
 
 Copy a file:
 
@@ -34,8 +31,7 @@ Copy a file:
 <pre class="brush: php">
 $xpdo->cacheManager->copyFile('/my/path/to/file.txt','/my/new/path/dir/');
 
-```See Also
---------
+```## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

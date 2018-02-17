@@ -4,7 +4,9 @@ _old_id: "1195"
 _old_uri: "2.x/class-reference/xpdoobject/metadata-accessors"
 ---
 
-<div class="note">Under Construction</div>1. [getSelectColumns](/xpdo/2.x/class-reference/xpdoobject/metadata-accessors/getselectcolumns)
+Under Construction
+
+1. [getSelectColumns](/xpdo/2.x/class-reference/xpdoobject/metadata-accessors/getselectcolumns)
 2. [getPK](/xpdo/2.x/class-reference/xpdoobject/metadata-accessors/getpk)
 3. [getPKType](/xpdo/2.x/class-reference/xpdoobject/metadata-accessors/getpktype)
 4. [getFKClass](/xpdo/2.x/class-reference/xpdoobject/metadata-accessors/getfkclass)

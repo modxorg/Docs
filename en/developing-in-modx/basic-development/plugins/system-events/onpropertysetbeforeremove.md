@@ -4,18 +4,15 @@ _old_id: "451"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onpropertysetbeforeremove"
 ---
 
-Event: OnPropertySetBeforeRemove
---------------------------------
+## Event: OnPropertySetBeforeRemove
 
 Fires right before a Property Set is removed.
 
 Service: 1 - Parser Service Events
 
-Event Parameters
-----------------
+## Event Parameters
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>propertySet</td><td>A reference to the modPropertySet object.</td></tr></tbody></table>See Also
---------
+NameDescriptionpropertySetA reference to the modPropertySet object.## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

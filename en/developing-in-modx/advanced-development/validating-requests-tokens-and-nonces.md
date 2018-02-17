@@ -25,8 +25,7 @@ if ($token != $modx->user->getUserToken($modx->context->get('key')) {
 
 ``` Recreating this type of security on the front-end of your site may be a bit more involved since the MODX functions are only accessible to an authenticated user.
 
-Differences between Nonce and Token
------------------------------------
+## Differences between Nonce and Token
 
 A nonce makes a form valid for a period of time, say 30 minutes, after which it can no longer be successfully submitted. In a perfect world, you would have "single-serving" forms, where each form was uniquely signed and could only be submitted _once_. But that security model quickly breaks down in the real-world where you may have to use the back-button if a page load times out, so the nonces are usually configured to be valid for a window of time: the shorter the window, the more secure the nonce.
 

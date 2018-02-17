@@ -4,8 +4,7 @@ _old_id: "1129"
 _old_uri: "contribute/becoming-a-contributor/development-environments"
 ---
 
-Recommended Development Tools and Environments for MODX Revolution
-------------------------------------------------------------------
+## Recommended Development Tools and Environments for MODX Revolution
 
 In developing MODX, the team has found the following software and environments invaluable:
 
@@ -59,8 +58,7 @@ For Linux:
 - [PhpStorm](http://www.jetbrains.com/phpstorm/) - IDE
 - [Kate](http://kate-editor.org/) - IDE for Linux / KDE
 
-Development Server Environments
--------------------------------
+## Development Server Environments
 
 We also use MacPorts, XAMPP and MAMP, and the following tools/libraries in the development of MODX Revolution:
 

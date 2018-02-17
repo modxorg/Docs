@@ -4,8 +4,7 @@ _old_id: "1731"
 _old_uri: "2.x/case-studies-and-tutorials/create-a-multilingual-website-with-migxmultilang"
 ---
 
-Introduction
-------------
+## Introduction
 
  migxMultiLang is an extra that allows you to quite easily create a multilingual website without the need for additional contexts or customizing the .htaccess file.
 
@@ -13,15 +12,13 @@ Introduction
 
 Thanks to Bruno Perner and Susan Ottwell for helping me initially work this out!
 
-Requirements
-------------
+## Requirements
 
  migxMultiLang is built on the MIGX and pdoTools extras and requires both to be installed to function. The screenshots in this tutorial show MODX Revolution 2.3.2, however it will also work with previous versions. This tutorial also assumes you have a fresh working MODX install.
 
 **Please also be aware that Friendly URLs must be enabled for this extra to work!**
 
-Step 1: Install the Extras
---------------------------
+## Step 1: Install the Extras
 
  Click on "Installer" in the Extras menu at the top.
 
@@ -181,8 +178,7 @@ Step 1: Install the Extras
 
  Translations won't work yet though, there are still a few things we need to do.
 
-Step 4: System Settings
------------------------
+## Step 4: System Settings
 
  Go into the MODX System Settings. For those that don't know, you can find it at the top right of the screen in the drop-down menu with the cog icon.
 
@@ -194,14 +190,13 @@ Step 4: System Settings
 
  Excellent! This step is complete.
 
-Note for newer versions of pdoTools:  
+Note for newer versions of pdoTools:
 you will need this system-settings:
 
-pdoFetch.class: migxmultilang.mmlfetch  
+pdoFetch.class: migxmultilang.mmlfetch
  pdofetch\_class\_path: {core\_path}components/migxmultilang/model/
 
-Step 5: Create Database Tables
-------------------------------
+## Step 5: Create Database Tables
 
  Select MIGX from the Extras menu at the top.
 
@@ -219,8 +214,7 @@ Step 5: Create Database Tables
 
  ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/23modified.png)
 
-Step 6: Creating the Templates For The Front End
-------------------------------------------------
+## Step 6: Creating the Templates For The Front End
 
  migxMultiLang changes the way we use templates if we want more than one language available for a particular resource.
 
@@ -297,8 +291,7 @@ Step 6: Creating the Templates For The Front End
 
  It's time to go and have a look at the front end of your website.
 
-Step 7: Test it!
-----------------
+## Step 7: Test it!
 
  We set English as our default language so that's the one that appears first.
 
@@ -319,6 +312,3 @@ This tutorial was just to show how to get the simplest form of migxMultiLang up 
 I plan on adding to this soon to show how it can be used in different situations and encourage others to as well.
 
 In the mean time, Bruno has a more complex template example up in the documentation: <https://github.com/Bruno17/migxmultilang>
-
-  
-</body>

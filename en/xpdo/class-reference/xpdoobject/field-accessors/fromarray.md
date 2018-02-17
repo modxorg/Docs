@@ -4,13 +4,11 @@ _old_id: "1166"
 _old_uri: "2.x/class-reference/xpdoobject/field-accessors/fromarray"
 ---
 
-xPDOObject::fromArray()
------------------------
+## xPDOObject::fromArray()
 
 Sets object fields from an associative array of key => value pairs.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#fromArray>
 
@@ -24,8 +22,7 @@ void fromArray(
    [boolean $adhocValues = false]
 )
 
-```Examples
---------
+```## Examples
 
 Input the name of a person from an array.
 
@@ -64,8 +61,7 @@ $data = array(
 $page->fromArray($data);
 $page->save();
 
-```See Also
---------
+```## See Also
 
 - [fromArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
 - [toArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/toarray "toArray")

@@ -4,7 +4,7 @@ _old_id: "308"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/transport-packages"
 ---
 
-<div>- [What is a Transport Package?](#TransportPackages-WhatisaTransportPackage%3F)
+- [What is a Transport Package?](#TransportPackages-WhatisaTransportPackage%3F)
   - [The Internals of a Transport Package](#TransportPackages-TheInternalsofaTransportPackage)
   - [The manifest.php file](#TransportPackages-Themanifest.phpfile)
   - [Okay, what are these Vehicles?](#TransportPackages-Okay%2CwhataretheseVehicles%3F)
@@ -15,8 +15,9 @@ _old_uri: "2.x/developing-in-modx/advanced-development/package-management/transp
 - [Usage](#TransportPackages-Usage)
 - [Related Pages](#TransportPackages-RelatedPages)
 
-</div>What is a Transport Package?
-----------------------------
+
+
+## What is a Transport Package?
 
 A Transport Package is a collection of objects and files that can be used to "transport" data from one MODx installation to another; or even to transport 3rd-Party Components in a simple, easily-manageable format. In other words, Transport Packages can transport nearly _anything_ - from database data, files and even scripts to run during its install.
 
@@ -97,8 +98,7 @@ There are also some optional ones, which may or may not be set:
 
 In xPDOFileVehicles, you will also see a directory with the same filename as the vehicle, minus the ".vehicle". If you open it, there will be the files for the vehicle.
 
-Resolvers and Validators
-------------------------
+## Resolvers and Validators
 
 What are resolvers and validators? Well, think of them like pre and post installation scripts. They are, in essence, PHP scripts. (In fact, if you open them up, they look exactly like PHP scripts.) They are named the same filename as the vehicle, but are postfixed with ".resolver" or ".validator".
 
@@ -114,8 +114,7 @@ Resolvers are executed _after_ the Vehicle is installed, upgraded or uninstalled
 
 Resolvers are useful for 'cleaning up' after a Vehicle is installed, or setting custom configuration options (such as ones setup in Setup Options during install).
 
-Usage
------
+## Usage
 
 Transport Packages can be managed in the [Package Management](developing-in-modx/advanced-development/package-management "Package Management") section of the Revolution manager. They can be added to the Revolution instance by either:
 
@@ -126,8 +125,7 @@ Once downloaded, they can be installed by right-clicking a package in the grid, 
 
 Once installed, the user can uninstall the package at any time. Also, if the package was downloaded from a [Transport Provider](developing-in-modx/advanced-development/package-management/providers "Providers"), then the user can check for updates for the package.
 
-Related Pages
--------------
+## Related Pages
 
 - [Package Management](developing-in-modx/advanced-development/package-management "Package Management")
 - [Providers](developing-in-modx/advanced-development/package-management/providers "Providers")

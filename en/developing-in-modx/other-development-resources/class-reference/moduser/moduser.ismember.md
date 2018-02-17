@@ -4,21 +4,18 @@ _old_id: "1347"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/moduser/moduser.ismember"
 ---
 
-modUser::isMember
------------------
+## modUser::isMember
 
  States whether a user is a member of a user group or multiple user groups. You may specify either a string name of the user group, or an array of user group names.
 
-Syntax
-------
+## Syntax
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#\\\\modUser::isMember()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::isMember())
 
  ```
 <pre class="brush: php">boolean isMember (mixed $groups)
 
-```Example
--------
+```## Example
 
  Get a user object:
 
@@ -40,7 +37,6 @@ Syntax
  ```
 <pre class="brush: php">$user->isMember(array('Staff','Investors'), true);
 
-```See Also
---------
+```## See Also
 
 - [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")

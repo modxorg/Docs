@@ -4,11 +4,10 @@ _old_id: "145"
 _old_uri: "2.x/administering-your-site/settings/system-settings/friendly_alias_urls"
 ---
 
-friendly\_alias\_urls
----------------------
+## friendly\_alias\_urls
 
-**Name**: Use Friendly URL Aliases   
-**Type**: Yes/No   
+**Name**: Use Friendly URL Aliases 
+**Type**: Yes/No 
 **Default**: No
 
 Turns on friendly URLs, which generate SEO-friendly URL mappings for your Resources. The URL map is determined by the Resource's place in the site tree, and its "alias" field.
@@ -19,4 +18,4 @@ For example, a Resource with alias 'blog' and a Content Type of "HTML" will be r
 
 This allows for completely customizable and automatically built SEO-friendly URLs.
 
-<div class="note">To get this fully working, there are some extra steps involved. Please refer to [Using Friendly URLs](administering-your-site/using-friendly-urls "Using Friendly URLs").</div>
+To get this fully working, there are some extra steps involved. Please refer to [Using Friendly URLs](administering-your-site/using-friendly-urls "Using Friendly URLs").

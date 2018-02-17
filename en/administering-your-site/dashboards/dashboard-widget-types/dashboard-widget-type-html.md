@@ -6,8 +6,7 @@ _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboa
 
 The HTML Dashboard Widget Type displays straight HTML - nothing else - in a widget. Useful for simple messages and other data.
 
-Usage
------
+## Usage
 
 Simply place your HTML in the content panel, and it will load the HTML in the widget.
 
@@ -23,8 +22,9 @@ Hello, [[+modx.user.username]]!
 <pre class="brush: php">
 [[MyDashboardSnippet]]
 
-```<div class="note">Note that in snippets there is no "active resource", so snippets referencing $modx->resource will have issues.</div>See Also
---------
+```Note that in snippets there is no "active resource", so snippets referencing $modx->resource will have issues.
+
+## See Also
 
 1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
 2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)

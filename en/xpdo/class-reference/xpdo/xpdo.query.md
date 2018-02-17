@@ -4,14 +4,14 @@ _old_id: "1253"
 _old_uri: "2.x/class-reference/xpdo/xpdo.query"
 ---
 
- xPDO::query 
--------------
+##  xPDO::query 
 
  Executes an SQL statement, returning a result set as a PDOStatement object.
 
-<div class="tip"> **Tip**   
- This can be a good way to issue reporting queries without having to worry about the complex syntax normally required by xPDO. </div> Syntax 
---------
+ **Tip** 
+ This can be a good way to issue reporting queries without having to worry about the complex syntax normally required by xPDO. 
+
+##  Syntax 
 
  API Docs: see <http://php.net/manual/en/pdo.query.php>
 
@@ -23,8 +23,7 @@ xPDOObject|false query (string $statement)
 
  The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
 
- Examples 
-----------
+##  Examples 
 
 ###  Select a Single Record 
 
@@ -36,8 +35,7 @@ xPDOObject|false query (string $statement)
 
  The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
 
- Examples 
-----------
+##  Examples 
 
 ###  Select a Single Record 
 
@@ -81,9 +79,11 @@ Array
     // ...  
 )
 
-```<div class="warning"> **No One-Liners!**   
- The one-line method-chaining available to PDO is not possible with xPDO. The following **will not work**:   
-`$row = $modx->query("SELECT * FROM cms_users WHERE id=1")->fetch();` </div>###  Selecting Multiple Records 
+``` **No One-Liners!** 
+ The one-line method-chaining available to PDO is not possible with xPDO. The following **will not work**: 
+`$row = $modx->query("SELECT * FROM cms_users WHERE id=1")->fetch();` 
+
+###  Selecting Multiple Records 
 
  PDO uses a lazy-loader, so you can't simply print out all of the results at once. Instead, you iterate over each result in the set using a loop, e.g.
 
@@ -106,7 +106,7 @@ $result = $modx->query($sql);
 $row = $result->fetch(PDO::FETCH_ASSOC);
 return print_r($row,true);
 
-``` The <span class="error">\[quote\]</span> function can take a 2nd argument, which you can use to quote integers specifically
+``` The \[quote\] function can take a 2nd argument, which you can use to quote integers specifically
 
 - **PDO::PARAM\_INT** for quoting integers
 - **PDO::PARAM\_STR** for quoting strings (default)
@@ -162,8 +162,7 @@ return $data;
 - <http://php.net/manual/en/pdo.prepare.php>
 - <http://php.net/manual/en/pdostatement.execute.php>
 
- See Also 
-----------
+##  See Also 
 
 - [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
 - [xPDO.getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
@@ -171,5 +170,5 @@ return $data;
 - [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
 - [xPDO.getCollectionGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
 - [xPDO.getIterator](/xpdo/2.x/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
-- <span class="error">\[xPDO.load\]</span>
+- \[xPDO.load\]
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

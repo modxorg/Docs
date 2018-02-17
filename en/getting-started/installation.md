@@ -4,8 +4,11 @@ _old_id: "165"
 _old_uri: "2.x/getting-started/installation"
 ---
 
-<div class="note">This page is for **new installations only**. If you're looking to upgrade, see [Upgrading MODx](administering-your-site/upgrading-modx "Upgrading MODx").</div><div class="note">Before starting your installation, you should ensure your server meets the [Server Requirements](getting-started/server-requirements "Server Requirements").</div>Downloading MODX
-----------------
+This page is for **new installations only**. If you're looking to upgrade, see [Upgrading MODx](administering-your-site/upgrading-modx "Upgrading MODx").
+
+Before starting your installation, you should ensure your server meets the [Server Requirements](getting-started/server-requirements "Server Requirements").
+
+## Downloading MODX
 
 To download MODX Revolution 2.x, you have two options: the MODX Site or via Git:
 
@@ -27,8 +30,7 @@ You have probably noticed that there are a few different _types_ of packages to 
 
 MODX Revolution is managed on [GitHub](http://github.com/modxcms). Please read the [Git Installation](getting-started/installation/git-installation "Git Installation") document to learn how to use MODX Revolution from Git.
 
-Installing MODX
----------------
+## Installing MODX
 
 MODX comes with multiple distributions for download. Installation steps will differ in each distribution, so please select the distribution's installation guide below:
 

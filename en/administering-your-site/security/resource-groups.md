@@ -4,13 +4,11 @@ _old_id: "261"
 _old_uri: "2.x/administering-your-site/security/resource-groups"
 ---
 
-What is a Resource Group? 
---------------------------
+## What is a Resource Group? 
 
 A Resource Group is a collection of Resources, e.g. "Members Only" pages. When coupled with User Groups, Resource Groups are used to restrict access to pages and resources. A MODX page can belong to multiple resource groups.
 
-Usage 
-------
+## Usage 
 
 You can manage the pages in a Resource Group in two different ways:
 
@@ -28,8 +26,7 @@ When you are editing a Resource directly, click on its "Access Permissions" tab,
 
 ![](/download/attachments/18678088/resource_groups_edit.jpg?version=1&modificationDate=1271555832000)
 
-See Also 
----------
+## See Also 
 
 1. [Users](administering-your-site/security/users)
 2. [User Groups](administering-your-site/security/user-groups)

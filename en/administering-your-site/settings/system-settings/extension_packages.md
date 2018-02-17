@@ -4,18 +4,19 @@ _old_id: "109"
 _old_uri: "2.x/administering-your-site/settings/system-settings/extension_packages"
 ---
 
-extension\_packages
--------------------
+## extension\_packages
 
- **Name**: Extension Packages   
-**Type**: String (a JSON encoded array of key value pairs)   
+ **Name**: Extension Packages 
+**Type**: String (a JSON encoded array of key value pairs) 
 **Default**: Yes
 
  Use this setting to autoload packages that extend core classes, e.g. if you are extending modUser. The format should be a JSON array of key/value pairs where the key is the namespace (i.e. the package name) and the value is the path to its model.
 
  This effect here is similar to other frameworks, e.g. CodeIgniter, which allows core classes to be overridden via use of a special classname prefix "MY\_".
 
-<div class="note"> Use this only when you are extending core classes that are used during **initialize()** </div>### Sample value
+ Use this only when you are extending core classes that are used during **initialize()** 
+
+### Sample value
 
  ```
 <pre class="brush: php">
@@ -37,8 +38,7 @@ extension\_packages
 <pre class="brush: php">
 [{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/","tablePrefix":"ext_"}},{"articles":{"path":"[[++core_path]]components/articles/model/"}}]
 
-```Related Functions
------------------
+```## Related Functions
 
  At some point in the recent version history, the `addExtensionPackage` and `removeExtensionPackage` convenience functions were added to facilitate adding and removing data to the **extension\_packages** setting.
 

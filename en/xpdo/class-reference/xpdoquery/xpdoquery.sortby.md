@@ -4,13 +4,11 @@ _old_id: "1299"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.sortby"
 ---
 
-xPDOQuery::sortby
------------------
+## xPDOQuery::sortby
 
  Add an ORDER BY clause to the query.
 
-Syntax
-------
+## Syntax
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::sortby()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::sortby())
 
@@ -18,8 +16,7 @@ Syntax
 <pre class="brush: php">
 xPDOQuery sortby (string $column, [string $direction = 'ASC'])
 
-```Example
--------
+```## Example
 
  Get all the Box objects sorted by name.
 
@@ -45,7 +42,6 @@ $query = $xpdo->newQuery('modResource');
 $query->sortby('FIELD(modResource.id, 4,7,2,5,1 )');
 $boxes = $xpdo->getCollection('modResource',$query);
 
-```See Also
---------
+```## See Also
 
 - [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery")

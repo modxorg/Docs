@@ -4,8 +4,7 @@ _old_id: "271"
 _old_uri: "2.x/administering-your-site/security/security-tutorials"
 ---
 
-Security Tutorials
-------------------
+## Security Tutorials
 
 Here are some tutorials designed to help you get started with Security in MODx Revolution.
 

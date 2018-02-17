@@ -26,8 +26,9 @@ $modx->lexicon->load('tinymce:buttons');
 
 These can all be managed via the Actions panel, which is found under the Tools menu.
 
-<div class="note">Any changes to the order of 'core' menu items will be reverted during Revolution upgrades.</div>Related Pages
--------------
+Any changes to the order of 'core' menu items will be reverted during Revolution upgrades.
+
+## Related Pages
 
 - [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages")
 - [Internationalization](developing-in-modx/advanced-development/internationalization "Internationalization")

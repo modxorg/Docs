@@ -4,13 +4,11 @@ _old_id: "1093"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientstartuphtmlblock"
 ---
 
-modX::regClientStartupHTMLBlock
--------------------------------
+## modX::regClientStartupHTMLBlock
 
 Register HTML to be injected before the closing HEAD tag.
 
-Syntax
-------
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientStartupHTMLBlock()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupHTMLBlock())
 
@@ -18,8 +16,7 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.h
 <pre class="brush: php">
 void regClientStartupHTMLBlock (string $html)
 
-```Example
--------
+```## Example
 
 Render a faux tag element before the end of the HEAD.
 
@@ -27,8 +24,7 @@ Render a faux tag element before the end of the HEAD.
 <pre class="brush: php">
 $modx->regClientStartupHTMLBlock('<tag></tag>');
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.regClientCSS](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientcss "modX.regClientCSS")

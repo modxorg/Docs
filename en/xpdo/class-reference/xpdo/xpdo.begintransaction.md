@@ -4,13 +4,11 @@ _old_id: "1234"
 _old_uri: "2.x/class-reference/xpdo/xpdo.begintransaction"
 ---
 
-xPDO::beginTransaction
-----------------------
+## xPDO::beginTransaction
 
 See <http://php.net/manual/en/function.pdo-begintransaction.php>
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#beginTransaction>
 
@@ -18,14 +16,12 @@ API Docs: <http://api.modxcms.com/xpdo/xPDO.html#beginTransaction>
 <pre class="brush: php">
 void beginTransaction ()
 
-```Example
--------
+```## Example
 
 ```
 <pre class="brush: php">
 $xpdo->beginTransaction();
 
-```See Also
---------
+```## See Also
 
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

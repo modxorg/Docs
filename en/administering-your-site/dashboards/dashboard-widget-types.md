@@ -11,8 +11,7 @@ This article lists the different types of Dashboard Widgets that are available.
 3. [Dashboard Widget Type - Inline PHP](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
 4. [Dashboard Widget Type - Snippet](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)
 
-See Also
---------
+## See Also
 
 1. [Managing Your Dashboard](administering-your-site/dashboards/managing-your-dashboard)
 2. [Assigning a Dashboard to a User Group](administering-your-site/dashboards/assigning-a-dashboard-to-a-user-group)

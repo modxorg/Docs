@@ -4,13 +4,17 @@ _old_id: "98"
 _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii"
 ---
 
-<div class="panel" style="border-width: 1px;"><div class="panelContent"> This tutorial is part of a Series:
+ This tutorial is part of a Series:
 
 - [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
 - Part II: Creating our Custom Manager Page
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-iii "Developing an Extra in MODX Revolution, Part III")
  
-</div></div><div>- [First Setup Steps](#DevelopinganExtrainMODXRevolution%2CPartII-FirstSetupSteps)
+
+
+
+
+- [First Setup Steps](#DevelopinganExtrainMODXRevolution%2CPartII-FirstSetupSteps)
   - [Namespaces](#DevelopinganExtrainMODXRevolution%2CPartII-Namespaces)
   - [Actions and Menus](#DevelopinganExtrainMODXRevolution%2CPartII-ActionsandMenus)
   - [Lexicons](#DevelopinganExtrainMODXRevolution%2CPartII-Lexicons)
@@ -28,10 +32,11 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
   - [Adding Inline-Editing](#DevelopinganExtrainMODXRevolution%2CPartII-AddingInlineEditing)
 - [Summary](#DevelopinganExtrainMODXRevolution%2CPartII-Summary)
 
-</div> This section will cover creating the Custom Manager Page (CMP) for our Doodles Extra we created in [step 1](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution"). This includes explaining controllers/connectors/processors, making our Namespace, Action and Menu item, and working with ExtJS to create the UI.
 
- First Setup Steps 
--------------------
+
+ This section will cover creating the Custom Manager Page (CMP) for our Doodles Extra we created in [step 1](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution"). This includes explaining controllers/connectors/processors, making our Namespace, Action and Menu item, and working with ExtJS to create the UI.
+
+##  First Setup Steps 
 
  We've got our snippet and our basic directory structure. Now we need to setup a few things before we can start developing our Custom Manager Page. The first is our Namespace.
 
@@ -163,8 +168,7 @@ $_lang['doodles.top_downloaded'] = 'Top Downloaded Doodles';
 
  Great! We're all setup to start developing our CMP.
 
- Setting up the Controller with MODExt 
----------------------------------------
+##  Setting up the Controller with MODExt 
 
  CMPs in MODX are generated with [ExtJS](http://sencha.com/), a JavaScript framework by Sencha that allows for rapid and powerful UI development. MODX adds functionality to a few of the ExtJS tools (and calls them MODExt). We're going to use those tools in our CMP. This tutorial is not meant to teach you ExtJS, as there are plenty of tutorials on that on the web, and on the [Sencha main site](http://sencha.com/). But we will go over how to use them to create a neat grid that can do CRUD actions.
 
@@ -241,8 +245,7 @@ Doodles = new Doodles();
 
 ``` So, basically, we're loading a Doodles object which extends the Ext.Component class. This also gives us a nice JavaScript namespace of 'Doodles'.
 
- Our Doodles CMP Page 
-----------------------
+##  Our Doodles CMP Page 
 
 ###  The Section JS File 
 
@@ -365,8 +368,7 @@ Ext.reg('doodles-panel-home',Doodles.panel.Home);
 
  Cool! We've got a MODX-styled panel going. Unfortunately, it's pretty useless. We need to add a grid to manage our Doodles. Let's go ahead and do that now.
 
- The Doodles Grid 
-------------------
+##  The Doodles Grid 
 
  First off, go ahead and uncomment this line in your index.class.php controller:
 
@@ -466,7 +468,7 @@ $modx->request->handleRequest(array(
 
 ``` That's it. We first load the config.core.php file. We'll go ahead and add it here in our development environment; in standard MODX installs, this will already exist.
 
-<div class="note"> On different circumstances, you can create a file at your different folder, eg: /www/doodles/config.core.php and put this in it:
+ On different circumstances, you can create a file at your different folder, eg: /www/doodles/config.core.php and put this in it:
 
  ```
 <pre class="brush: php"><?php
@@ -475,7 +477,9 @@ define('MODX_CONFIG_KEY', 'config');
 
 ``` Obviously, you'll need to change those values to your MODx installation paths. And if you're using SVN or Git for your Extra, you'll want to add those to your ignore file (ie, .gitignore), since you don't want those in your source repository.
 
-</div> Next in our connector, we load the config file, and the MODX connectors/index.php file.
+
+
+ Next in our connector, we load the config file, and the MODX connectors/index.php file.
 
  Then, we load our Doodles class (with our magic system settings!), which will add our xPDO custom Doodles model into MODX, and then load our default doodles Lexicon Topic. Finally, we 'handle' the request using our custom Processors path we defined in our Doodles class, and tell MODX to load the processors.
 
@@ -485,7 +489,9 @@ define('MODX_CONFIG_KEY', 'config');
 
  There's a few reasons for this. One is that the connectors are locked down and don't allow anyone without a MODX manager session to access them. Secondly, all requests to connectors **must** pass a unique-to-your-site authorization key that prevents CRSF attacks. It can either be passed in the HTTP headers as 'modAuth', or in a REQUEST var as HTTP\_MODAUTH. The value will be $modx->siteId, which is set on a new install, and loaded when MODX is loaded.
 
-<div class="warning"> Don't ever paste or share with anyone your $modx->siteId or HTTP\_MODAUTH key. It keeps your site secure. </div> The great thing, though, is you won't have to worry about this. MODX already handles this in MODExt - all HTTP requests made by ExtJS in MODX pass this variable in via their HTTP headers.
+ Don't ever paste or share with anyone your $modx->siteId or HTTP\_MODAUTH key. It keeps your site secure. 
+
+ The great thing, though, is you won't have to worry about this. MODX already handles this in MODExt - all HTTP requests made by ExtJS in MODX pass this variable in via their HTTP headers.
 
  The second reason loading the connector file directly won't work is that we didn't specify a routing path - remember baseParams in the grid? Remember how we set the 'action' param in it to 'mgr/doodle/getList'? That's our routing path. That tells the connector to load the file at:
 
@@ -510,7 +516,7 @@ return 'DoodleGetListProcessor';
 - **$languageTopics** - An array of language topics to load for this processor.
 - **$defaultSortField** - The default sort field to use when grabbing the data.
 - **$defaultSortDirection** - The default sort direction to do when grabbing the data.
-- **$objectType** - This is often used to determine what error lexicon strings to load when grabbing data. Since in our lexicon file we have all the strings as $\_lang<span class="error">\['doodles.doodle\_blahblah'\]</span> and such, we'll specify the prefix here of "doodles.doodle". MODX then will prefix standard error messages with that prefix.
+- **$objectType** - This is often used to determine what error lexicon strings to load when grabbing data. Since in our lexicon file we have all the strings as $\_lang\['doodles.doodle\_blahblah'\] and such, we'll specify the prefix here of "doodles.doodle". MODX then will prefix standard error messages with that prefix.
 
  The assistance class handles the rest, so we don't have to worry about it! All we have to do is "return" the name of the Processor class so MODX knows where to find it.
 
@@ -818,20 +824,23 @@ return 'DoodleUpdateFromGridProcessor';
 
 ``` Note how we're just extending our Update processor class (after including it), and in the initialize() method, parsing our "data" property from JSON (which our grid sends with the updated record) and setting that as the properties for the Processor. Then the Update processor handles the rest. Simple, eh?
 
- Summary 
----------
+##  Summary 
 
  We've got ourselves a nice CRUD user interface now, with creating, updating, removing, searching, pagination, and sorting. And all pretty easily, too.
 
  Next, in Part III, we'll explore [creating a Transport Package](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-iii "Developing an Extra in MODX Revolution, Part III") for our Doodles Extra so that we can distribute it on modxcms.com and via Revolution's Package Management system.
 
-<div class="panel" style="border-width: 1px;"><div class="panelContent"> This tutorial is part of a Series:
+ This tutorial is part of a Series:
 
 - [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
 - Part II: Creating our Custom Manager Page
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-iii "Developing an Extra in MODX Revolution, Part III")
 
-</div></div> The $objectType shown in all processors is not necessary to set.
+
+
+
+
+ The $objectType shown in all processors is not necessary to set.
 
  I have made a couple of custom components and I have setupped a "afterSaveEvent" and "afterRemoveEvent" etc. But then there isn't a name like "object" passed to your plugin (containing your object). The name passed is based on the $objectType value. So when you have Doodles.. you will get a "doodles.doodle" passed into your plugin. With 10 components, 10 different types, this is very un-wanted.
 

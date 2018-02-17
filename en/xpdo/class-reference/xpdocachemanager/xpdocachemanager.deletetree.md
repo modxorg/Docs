@@ -4,8 +4,7 @@ _old_id: "1263"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.deletetree"
 ---
 
-xPDOCacheManager::deleteTree
-----------------------------
+## xPDOCacheManager::deleteTree
 
 Recursively deletes a directory tree of files.
 
@@ -17,8 +16,7 @@ The options array has the following parameters available:
 - **delete\_exclude\_items** - An array of names of files to skip.
 - **delete\_exclude\_patterns** - An array or string of patterns to exclude by.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#deleteTree>
 
@@ -30,8 +28,7 @@ boolean deleteTree (string $dirname, [array $options = array(
    'extensions' => array('.cache.php')
 )])
 
-```Example
--------
+```## Example
 
 Delete the /modx/assets/videos/ directory (assuming the constant MODX\_ASSETS\_PATH is set) and all the files in it:
 
@@ -62,8 +59,7 @@ $xpdo->cacheManager->deleteTree(MODX_ASSETS_PATH.'videos/',array(
    'delete_exclude_patterns' => '/fun/i',
 ));
 
-```See Also
---------
+```## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

@@ -4,13 +4,11 @@ _old_id: "1294"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.limit"
 ---
 
-xPDOQuery::limit
-----------------
+## xPDOQuery::limit
 
 Add a LIMIT/OFFSET clause to the query.
 
-Syntax
-------
+## Syntax
 
 API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::limit()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::limit())
 
@@ -18,8 +16,7 @@ API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.clas
 <pre class="brush: php">
 xPDOQuery limit (integer $limit, [integer $offset = 0])
 
-```Example
--------
+```## Example
 
 Get Boxes 11-20, or the 2nd 10 Boxes.
 
@@ -29,7 +26,6 @@ $query = $xpdo->newQuery('Box');
 $query->limit(10,10);
 $boxes = $xpdo->getCollection('Box',$query);
 
-```See Also
---------
+```## See Also
 
 - [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery")

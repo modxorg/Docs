@@ -11,7 +11,6 @@ xPDOValidator handles all model validation functions within xPDO. Validators can
 3. [xPDOValidator.hasMessages](/xpdo/2.x/class-reference/xpdovalidator/xpdovalidator.hasmessages)
 4. [xPDOValidator.validate](/xpdo/2.x/class-reference/xpdovalidator/xpdovalidator.validate)
 
-See Also
---------
+## See Also
 
 - [Object Validation](/xpdo/2.x/advanced-features/object-validation "Object Validation")

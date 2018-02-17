@@ -20,8 +20,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets"
   - [Don't Work on Live Snippets](#Snippets-Don%27tWorkonLiveSnippets)
   - [Use Default Properties](#Snippets-UseDefaultProperties)
 
-Overview 
----------
+## Overview 
 
 Snippets are the method by which MODX allows you to run dynamic PHP code in any of your pages. They are the main development vehicle for most developers.
 
@@ -47,7 +46,9 @@ return 'Hello, World!';
 
 ```If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet "modX.runSnippet") API method.
 
-<div class="note">Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output. </div>### Passing Values Into a Snippet 
+Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output. 
+
+### Passing Values Into a Snippet 
 
 Values are passed to your Snippet using a modifed CGI web-form type notation that follows the Snippet's name. If your Snippet were named "mySnippet", you might call it using something like this:
 
@@ -86,8 +87,7 @@ Array(
  'y' => 'yellow'
 )
 
-```Database Interaction in Snippets 
----------------------------------
+```## Database Interaction in Snippets 
 
 Accessing the database layer in MODx relies on an Object Relational Model (ORM) called [xPDO](/display/xPDO20/Home "Home") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODx objects and methods such as [getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
 
@@ -145,8 +145,7 @@ For further reading on xPDO, read up on these:
 - [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects") in xPDO
 - The [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery") Object
 
-Recommended Methods and Tips 
------------------------------
+## Recommended Methods and Tips 
 
 ### Write your Snippets outside of the MODX Manager. 
 
@@ -209,8 +208,7 @@ If you're writing new versions of Snippets, _duplicate_ the old version! That wa
 
 Consider adding default properties for your snippet into the snippet's Properties tab, so that the user can add custom [Property Sets](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets") to override them.
 
-See Also 
----------
+## See Also 
 
 1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
 2. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)

@@ -4,13 +4,11 @@ _old_id: "1237"
 _old_uri: "2.x/class-reference/xpdo/xpdo.fromjson"
 ---
 
-xPDO::fromJSON
---------------
+## xPDO::fromJSON
 
 Converts a JSON source string into an equivalent PHP representation.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#fromJSON>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/xPDO.html#fromJSON>
 <pre class="brush: php">
 mixed fromJSON (string $src, [boolean $asArray = true])
 
-```Example
--------
+```## Example
 
 Convert JSON code to an array:
 
@@ -29,8 +26,7 @@ $str = '{name:"John"}';
 $ar = $xpdo->fromJSON($str);
 print_r($ar); // prints: Array ( 'name' => 'John' )
 
-```See Also
---------
+```## See Also
 
 - [xPDO.toJSON](/xpdo/2.x/class-reference/xpdo/xpdo.tojson "xPDO.toJSON")
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

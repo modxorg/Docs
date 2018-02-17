@@ -4,13 +4,11 @@ _old_id: "1344"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/moduser/moduser.getsettings"
 ---
 
-modUser::getSettings
---------------------
+## modUser::getSettings
 
 Gets all user settings in array format.
 
-Syntax
-------
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::getSettings()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::getSettings())
 
@@ -18,8 +16,7 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.clas
 <pre class="brush: php">
 array getSettings ()
 
-```Example
--------
+```## Example
 
 Get all the User Settings for this User.
 
@@ -27,8 +24,7 @@ Get all the User Settings for this User.
 <pre class="brush: php">
 $settings = $user->getSettings();
 
-```See Also
---------
+```## See Also
 
 - [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")
 - [Settings](administering-your-site/settings "Settings")

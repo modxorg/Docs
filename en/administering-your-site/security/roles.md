@@ -4,8 +4,7 @@ _old_id: "268"
 _old_uri: "2.x/administering-your-site/security/roles"
 ---
 
-What is a Role?
----------------
+## What is a Role?
 
 A role is a position or status held within a certain situation. In MODx, it can be used to group Users into a position or status within a User Group, e.g. "Editor" or "Front-end Read Only".
 
@@ -13,10 +12,11 @@ Roles in MODx use an integer value called "Authority". **Lower numbers represent
 
 Be sure you clarify your language when talking about Authority because this inverse relationship can lead to some confusing sentences.
 
-<div class="note">It helps to think of "Authority" as ordinal numbers: first, second, third, etc. **Authority=1** is the first authority and trumps **Authority=2** (i.e. the second authority).</div>You should generally avoid duplicate authority numbers.
+It helps to think of "Authority" as ordinal numbers: first, second, third, etc. **Authority=1** is the first authority and trumps **Authority=2** (i.e. the second authority).
 
-Usage
------
+You should generally avoid duplicate authority numbers.
+
+## Usage
 
 One common example is to create Roles that mimic a basic employee position structure. Let's say we create the following Roles and Authority levels:
 
@@ -43,8 +43,7 @@ This means that Mark has these Permissions, since he's in the User Group, and ha
 
 But this **also** means that John has these Permissions as well, since he is a "Coordinator" which has a stronger Authority level than "Supervisor". So, John as Coordinator has "inherited" the Permissions than Mark had as Supervisor.
 
-See Also
---------
+## See Also
 
 1. [Users](administering-your-site/security/users)
 2. [User Groups](administering-your-site/security/user-groups)

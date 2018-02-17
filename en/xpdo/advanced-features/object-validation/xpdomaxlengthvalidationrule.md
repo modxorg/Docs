@@ -4,13 +4,11 @@ _old_id: "1283"
 _old_uri: "2.x/advanced-features/object-validation/xpdomaxlengthvalidationrule"
 ---
 
-What Does the Rule Do?
-----------------------
+## What Does the Rule Do?
 
 This rule verifies that a field has less than X number of chars, where X is defined by the "value" attribute in the XML schema.
 
-Using the Rule
---------------
+## Using the Rule
 
 First, our model:
 
@@ -54,8 +52,7 @@ if ($validator->validate() == false) {
 
 > The name must be less than 10 characters.
 
-See Also
---------
+## See Also
 
 1. [xPDOForeignKeyConstraint](/xpdo/2.x/advanced-features/object-validation/xpdoforeignkeyconstraint)
 2. [xPDOMaxLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxlengthvalidationrule)

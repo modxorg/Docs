@@ -4,7 +4,7 @@ _old_id: "157"
 _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms"
 ---
 
-<div>- [Add-on](#GlossaryofRevolutionTerms-Addon)
+- [Add-on](#GlossaryofRevolutionTerms-Addon)
 - [Asset](#GlossaryofRevolutionTerms-Asset)
 - [Back-end](#GlossaryofRevolutionTerms-Backend)
 - [Category](#GlossaryofRevolutionTerms-Category)
@@ -47,7 +47,9 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms"
 - [Validator (for xPDOVehicles)](#GlossaryofRevolutionTerms-Validator%28forxPDOVehicles%29)
 - [xPDOVehicle](#GlossaryofRevolutionTerms-xPDOVehicle)
 
-</div>- - - - - -
+
+
+- - - - - -
 
 ### Add-on
 

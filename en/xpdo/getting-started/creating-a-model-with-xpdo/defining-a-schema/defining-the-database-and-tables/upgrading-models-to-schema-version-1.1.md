@@ -4,14 +4,15 @@ _old_id: "1220"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-the-database-and-tables/upgrading-models-to-schema-version-1.1"
 ---
 
-<div>- [Upgrading Models from Schema Version 1.0 to 1.1](#UpgradingModelstoSchemaVersion1.1-UpgradingModelsfromSchemaVersion1.0to1.1)
+- [Upgrading Models from Schema Version 1.0 to 1.1](#UpgradingModelstoSchemaVersion1.1-UpgradingModelsfromSchemaVersion1.0to1.1)
   - [xpdo/tools/schema/upgrade-mysql-1.1.php](#UpgradingModelstoSchemaVersion1.1-xpdo%2Ftools%2Fschema%2Fupgrademysql1.1.php)
   - [Usage](#UpgradingModelstoSchemaVersion1.1-Usage)
       - [Running as CLI script](#UpgradingModelstoSchemaVersion1.1-RunningasCLIscript)
       - [Running as web request](#UpgradingModelstoSchemaVersion1.1-Runningaswebrequest)
 
-</div>Upgrading Models from Schema Version 1.0 to 1.1
------------------------------------------------
+
+
+## Upgrading Models from Schema Version 1.0 to 1.1
 
 In xPDO 2.0.0-rc3, a new schema element for describing table indexes was added to the `object` element of the xPDO schema. To maintain backwards compatibility in the runtime code with older schemas, where the indexes were described using the _index_ and _index\_group_ attributes of the `field` elements, schemas created with this new element must be differentiated from the older schemas. As a result, the _version_ attribute was added to the `model` element with a value of 1.1. All legacy models without the version element are assumed to be version 1.0.
 
@@ -41,15 +42,19 @@ This simple tool takes a few arguments and automatically converts your 1.0 model
   - **error\_reporting** — Set the PHP error\_reporting level for the script. Default is -1 (does not report errors).
   - **display\_errors** — Set the PHP display\_errors setting. Default is true.
 
-<div class="note">**Argument Rules**  
+**Argument Rules**
 - At least one of the four arguments, **echo**, **write**, **regen**, or **debug**, must be set.
 - The **write** argument cannot be used when the **debug** argument is true.
 - **regen** can only be used when **write** is set or the schema is already at version 1.1.
 
-</div>### Usage
 
-<div class="tip">**realpath() used on path arguments**  
-All values for \_path arguments (and the include argument) are passed through realpath().</div>#### Running as CLI script
+
+### Usage
+
+**realpath() used on path arguments**
+All values for \_path arguments (and the include argument) are passed through realpath().
+
+#### Running as CLI script
 
 CLI arguments for the script are specified in the format:
 
@@ -57,8 +62,10 @@ CLI arguments for the script are specified in the format:
 <pre class="brush: php">
 --argument[=value]
 
-```<div class="tip">**boolean arguments**  
-If the equal sign and value are not provided, the argument value is set to boolean true.</div>Here is an example CLI usage:
+```**boolean arguments**
+If the equal sign and value are not provided, the argument value is set to boolean true.
+
+Here is an example CLI usage:
 
 ```
 <pre class="brush: php">
@@ -85,8 +92,10 @@ $regen=true;
 <pre class="brush: php">
 user@hostname:/home/user/xpdo$ php xpdo/tools/schema/upgrade-mysql-1.1.php --include=sample.schema.properties.php
 
-```<div class="note">**CLI arguments override properties file**  
-Please note that any arguments provided in the CLI call will override values set in and included from the properties file.</div>#### Running as web request
+```**CLI arguments override properties file**
+Please note that any arguments provided in the CLI call will override values set in and included from the properties file.
+
+#### Running as web request
 
 You can also execute the script as a web request, passing the arguments as $\_REQUEST variables, $\_GET, $\_POST, or $\_COOKIE. An example URL for such a call might look like this:
 
@@ -94,5 +103,5 @@ You can also execute the script as a web request, passing the arguments as $\_RE
 <pre class="brush: php">
 http://localhost/food/xpdo/tools/schema/upgrade-mysql-1.1.php?pkg=sample&pkg_path=models/&schema_name=sample.mysql.schema.xml&schema_path=schemas/&echo=true&write=true&regen=true
 
-```<div class="tip">**boolean arguments**  
-To set a boolean value of true, make sure you pass the string 'true', otherwise the value is assumed to be boolean false.</div>
+```**boolean arguments**
+To set a boolean value of true, make sure you pass the string 'true', otherwise the value is assumed to be boolean false.

@@ -4,8 +4,7 @@ _old_id: "203"
 _old_uri: "2.x/getting-started/installation/basic-installation/modx-revolution-on-debian"
 ---
 
-MODx Revolution on Debian
--------------------------
+## MODx Revolution on Debian
 
 Debian packages in old versions of MySQL drivers in, so to get it up-to-date and working with the PDO drivers in MODx Revolution, you'll have to do the following:
 

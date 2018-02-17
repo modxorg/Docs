@@ -4,7 +4,7 @@ _old_id: "78"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-tutorial"
 ---
 
-<div>- [Goal](#CustomManagerPagesTutorial-Goal)
+- [Goal](#CustomManagerPagesTutorial-Goal)
 - [Explanation and Mental Preparation](#CustomManagerPagesTutorial-ExplanationandMentalPreparation)
   - [What we'll need:](#CustomManagerPagesTutorial-Whatwe%27llneed%3A)
 - [Create the Namespace](#CustomManagerPagesTutorial-CreatetheNamespace)
@@ -21,13 +21,17 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 - [Troubleshooting / Errors](#CustomManagerPagesTutorial-Troubleshooting%2FErrors)
   - [Your action does not appear in your menu](#CustomManagerPagesTutorial-Youractiondoesnotappearinyourmenu)
 
-</div> Goal 
-------
+
+
+##  Goal 
 
  We want to add a custom page to the MODx Revolution manager that will load (i.e. execute) the contents of an PHP file that has been uploaded to the webserver. Technically, such a page is called a Custom Manager Page, or CMP; please refer to the page on [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages") for a more detailed description.
 
-<div class="info"> In MODx Evolution (versions 1.x and earlier), Custom Manager Pages were handled by "Modules", but those have been deprecated in Revolution. </div><div class="info"> If you want to develop a CMP for **MODX 2.3 or later**, then please read [Custom Manager Pages in 2.3](https://rtfm.modx.com/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)</div> Explanation and Mental Preparation 
-------------------------------------
+ In MODx Evolution (versions 1.x and earlier), Custom Manager Pages were handled by "Modules", but those have been deprecated in Revolution. 
+
+ If you want to develop a CMP for **MODX 2.3 or later**, then please read [Custom Manager Pages in 2.3](https://rtfm.modx.com/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)
+
+##  Explanation and Mental Preparation 
 
  "What's the big deal?" you might ask. "Why can't I just add an anchor tag somewhere that links to my PHP file and be done with it?"
 
@@ -46,8 +50,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
  Maybe you're baffled by the complexity here, and to be fair, for simple scenarios, this is more complicated than is strictly required, but you may find yourself at some point getting into more complicated use-cases at which point you'll realize " _AHA_!!! THAT'S why they did it this way!" For now, just trust that the smart folks behind MODx put a lot of thought into how this was built, and there's a good reason that it is the way it is. Onward.
 
- Create the Namespace 
-----------------------
+##  Create the Namespace 
 
  You can think of the Namespace as a dedicated directory for your PHP file(s) that pertain to this particular manager page. Keep in mind that creating the Namespace inside the MODx manager does not actually create the directory; likewise, removing a Namespace from the manager will not actually delete files and folders. When you "create" the namespace, you're just telling MODx to treat a certain folder in a certain way.
 
@@ -59,8 +62,9 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
   3. Path: **{core\_path}components/mycmp/** _(note the use of the system "core\_path" placeholder, and remember to include the trailing slash)_
 2. Using your FTP client, create a directory inside **core/components** named **mycmp**.
 
-<div class="note"> **Watch out for typos!** Make sure the Namespace path matches the directory name! </div> Make the Controller File 
---------------------------
+ **Watch out for typos!** Make sure the Namespace path matches the directory name! 
+
+##  Make the Controller File 
 
  For our first manager page, we're going to keep it simple. Create a file named **index.php** which contains the following:
 
@@ -75,20 +79,22 @@ return 'This is my first Custom Manager Page';
 
  But for such a check, you will need to temporarily insert some HTML or a print statement in your file.
 
-<div class="note"> Notice that we did NOT use **print**, or **echo**, or raw HTML in our PHP. If you use any of these, you'll find that the text floats to the top of the page; remember that a Custom Manager Page is really acting as a function, so it should _return_ a value. </div> Create the Action 
--------------------
+ Notice that we did NOT use **print**, or **echo**, or raw HTML in our PHP. If you use any of these, you'll find that the text floats to the top of the page; remember that a Custom Manager Page is really acting as a function, so it should _return_ a value. 
+
+##  Create the Action 
 
  The Action object identifies the location of your index.php file within the namespace.
 
-<div class="info"> **About Actions**   
- In this case, an Action is an abstraction, or a "wrapper" around that PHP file you created. One of the most important things that distinguishes a MODx Action from a simple link to PHP file is that you can assign different permissions to an Action: you can control who accesses it and how. </div>1. System->Actions
+ **About Actions** 
+ In this case, an Action is an abstraction, or a "wrapper" around that PHP file you created. One of the most important things that distinguishes a MODx Action from a simple link to PHP file is that you can assign different permissions to an Action: you can control who accesses it and how. 
+
+1. System->Actions
 2. Right-click **mycmp** from the list of namespaces and select "Create Action Here".
 3. Controller: **index** _(this should match the name of your PHP file WITHOUT the .php extension)_
 4. Namespace: yes, use the same namespace: **mycmp**
 5. Parent Controller: Leave it blank or select "No Action".
 
- Create the Menu Object 
-------------------------
+##  Create the Menu Object 
 
 1. System->Actions _(in the same window where you created the Action)_
 2. Right-Click "Components" and choose "Place Action Here" 
@@ -98,12 +104,15 @@ return 'This is my first Custom Manager Page';
   4. **Save** (you can ignore the Icon, Parameters, Handler, and Permissions fields for now)
 3. Refresh your browser page.
 
-<div class="note"> After you edit the menu item, be sure to refresh the manager page. The menu item will not be visible until you refresh your browser; likewise, any changes you make to an existing menu item will not be visible until you refresh the page. You may need to clear the cache too! </div><div class="note"> If you add any GET Parameters to the menu item under System -> Actions, steer clear of any use of the **a** variable or any other [Reserved Parameters](developing-in-modx/other-development-resources/reserved-parameters "Reserved Parameters"). You might be using various GET parameters if your CMP has multiple pages. </div> You should now be able to click on the "Components" menu and see your menu item, and when you click it, you should see your message!
+ After you edit the menu item, be sure to refresh the manager page. The menu item will not be visible until you refresh your browser; likewise, any changes you make to an existing menu item will not be visible until you refresh the page. You may need to clear the cache too! 
+
+ If you add any GET Parameters to the menu item under System -> Actions, steer clear of any use of the **a** variable or any other [Reserved Parameters](developing-in-modx/other-development-resources/reserved-parameters "Reserved Parameters"). You might be using various GET parameters if your CMP has multiple pages. 
+
+ You should now be able to click on the "Components" menu and see your menu item, and when you click it, you should see your message!
 
  ![](/download/attachments/18678083/CMP.jpg?version=1&modificationDate=1272511083000)
 
- Make your CMP Translatable (Optional) 
----------------------------------------
+##  Make your CMP Translatable (Optional) 
 
  If you never intend on internationalizing your site, then you probably have no need to create a Lexicon entry. But if you do want to provide translations, the Lexicon is MODx's way of doing it. The Lexicon key is a unique identifier, e.g. 'My CMP' which can get translated into other languages.
 
@@ -138,7 +147,7 @@ return 'This is my first Custom Manager Page';
 <pre class="brush: php">$_lang['mycmp'] = 'My CMP';
 $_lang['mycmp.menu_desc'] = 'My custom manager page.';
 
-```<div class="warning"> **Strict Naming Conventions!**   
+``` **Strict Naming Conventions!** 
  If you use lexicon entries to translate custom System Settings, then be aware MODX will not look for the exact lexicon entry you typed! You must follow a strict naming convention, otherwise your lexicon entry will not be loaded and your System Setting information will not be translated! The name of your System Setting must use a Lexicon entry that is named after the setting's key, prefixed with "setting\_": ```
 <pre class="brush: php">setting_ + Key
 	
@@ -149,7 +158,9 @@ $_lang['mycmp.menu_desc'] = 'My custom manager page.';
 	
 ``` See System Settings for more info.
 
-</div> Now, clear the site cache to reload the lexicon cache, via Site -> Clear Cache.
+
+
+ Now, clear the site cache to reload the lexicon cache, via Site -> Clear Cache.
 
 ###  Use Translations in your CMP 
 
@@ -160,8 +171,7 @@ $_lang['mycmp.menu_desc'] = 'My custom manager page.';
 
 ``` Put that at the top of your CMP code.
 
- Add a Custom Permission (optional) 
-------------------------------------
+##  Add a Custom Permission (optional) 
 
  Every MODX menu item has a built-in permission already assigned to it. If you want to enforce special access permissions to your new CMP, you do this when you create or edit the menu item. Under System -> Actions, find your menu item and right-click to edit it and type in a unique name for the permission that will define access to this page. Technically, it can be anything so long as it is unique, but it's probably best to identify it with your CMP, e.g. use your namespace's name. Remember that unique permission name and save your Menu.
 
@@ -171,8 +181,7 @@ $_lang['mycmp.menu_desc'] = 'My custom manager page.';
 
  Now your CMP can be governed by the MODX permission schema! You can create an Access Policy that includes or omits that permission and thereby control which User Groups can use your CMP.
 
- Troubleshooting / Errors 
---------------------------
+##  Troubleshooting / Errors 
 
  Having problems? Here are a couple things that you may have run into.
 

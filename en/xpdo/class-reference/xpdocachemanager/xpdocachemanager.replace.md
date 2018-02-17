@@ -4,13 +4,11 @@ _old_id: "1270"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.replace"
 ---
 
-xPDOCacheManager::replace
--------------------------
+## xPDOCacheManager::replace
 
 Replace a key-value pair in in a cache provider.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#replace>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#replace>
 <pre class="brush: php">
 boolean replace (string $key, mixed &$var, [integer $lifetime = 0], [array $options = array()])
 
-```Example
--------
+```## Example
 
 Replace a key with a new value, to expire in 2 hours:
 
@@ -28,8 +25,7 @@ Replace a key with a new value, to expire in 2 hours:
 $str = 'A new value for the cache.';
 $xpdo->cacheManager->replace('mystuff',$str,7200);
 
-```See Also
---------
+```## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

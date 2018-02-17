@@ -4,15 +4,18 @@ _old_id: "346"
 _old_uri: "2.x/administering-your-site/media-sources/assigning-media-sources-to-tvs"
 ---
 
-<div>- [Creating the TV](#AssigningMediaSourcestoTVs-CreatingtheTV)
+- [Creating the TV](#AssigningMediaSourcestoTVs-CreatingtheTV)
 - [Limiting the Source to Specific Folders](#AssigningMediaSourcestoTVs-LimitingtheSourcetoSpecificFolders)
 - [Editing the TV](#AssigningMediaSourcestoTVs-EditingtheTV)
 - [See Also](#AssigningMediaSourcestoTVs-SeeAlso)
 
-</div>This article describes how to assign a Media Source to a TV. It is recommended to read the [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source "Adding a Media Source") article before reading this one.
 
-<div class="info">Only "image" and "file" type TVs use Sources at this time.</div>Creating the TV
----------------
+
+This article describes how to assign a Media Source to a TV. It is recommended to read the [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source "Adding a Media Source") article before reading this one.
+
+Only "image" and "file" type TVs use Sources at this time.
+
+## Creating the TV
 
 First we will start by creating a TV that we will attach a media source to. Go ahead and create a TV called "TestSourceTV", and save it. Notice then you'll see a new tab on your TV, a "Media Sources" tab. This will have a grid of [Contexts](administering-your-site/contexts "Contexts") that are available, and the Sources that are associated with those Contexts.
 
@@ -20,13 +23,12 @@ This means that TVs can use different Sources per Context. This will take effect
 
 For now, go ahead and assign all contexts to the Source "My New Source", which we created in the [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source "Adding a Media Source") article. Set your TV's input type, under the "Input Options" tab, to "image". Assign it to a Template. Save your TV.
 
-Limiting the Source to Specific Folders
----------------------------------------
+## Limiting the Source to Specific Folders
 
 Often, you'll want users to select files from a specific folder when selecting a value for a TV. You can set up this restriction when you define your Media Source.
 
-1\. First, create your Media Source under **Tools -> Media Sources**  
-2\. After you've created the Media Source, right-click it and select "Update Media Source"   
+1\. First, create your Media Source under **Tools -> Media Sources**
+2\. After you've created the Media Source, right-click it and select "Update Media Source" 
 3\. Scroll down and edit the following properties:
 
 - **basePath** - set to something like "assets/images/"
@@ -34,8 +36,9 @@ Often, you'll want users to select files from a specific folder when selecting a
 
 Leave **basePathRelative** and **baseUrlRelative** set to "Yes". That's the most common way to set this up.
 
-<div class="note">**basePath** and **baseUrl** should start _without_ a slash, but they should end with a trailing slash.</div>Editing the TV
---------------
+**basePath** and **baseUrl** should start _without_ a slash, but they should end with a trailing slash.
+
+## Editing the TV
 
 Now, when you edit that TV in a Resource, you'll notice that it uses the Source we created earlier:
 
@@ -45,8 +48,7 @@ Clicking the dropdown will load the MODx.Browser window using the Source that we
 
 Now we'll probably want to consider restricting access to this Source, so that our Content Editors can't accidentally edit it and mess it up. Read the [next article](administering-your-site/media-sources/securing-a-media-source "Securing a Media Source") to find out how.
 
-See Also
---------
+## See Also
 
 1. [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source)
 2. [Assigning Media Sources to TVs](administering-your-site/media-sources/assigning-media-sources-to-tvs)

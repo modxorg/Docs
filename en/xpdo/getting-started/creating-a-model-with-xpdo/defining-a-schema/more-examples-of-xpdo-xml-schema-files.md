@@ -4,7 +4,7 @@ _old_id: "1196"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files"
 ---
 
-<div>- [Goal](#MoreExamplesofxPDOXMLSchemaFiles-Goal)
+- [Goal](#MoreExamplesofxPDOXMLSchemaFiles-Goal)
 - [One to One](#MoreExamplesofxPDOXMLSchemaFiles-OnetoOne)
   - [MySQL Table Definitions](#MoreExamplesofxPDOXMLSchemaFiles-MySQLTableDefinitions)
   - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
@@ -25,8 +25,9 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
   - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
   - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
  
-</div>Goal
-----
+
+
+## Goal
 
  This page contains examples that juxtapose MySQL database tables with their xPDO XML schema counterparts in order to teach developers how to define the foreign-key relationships between tables in xPDO XML schemas by using a series of common database relational patterns as examples.
 
@@ -34,9 +35,10 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
 
  Remember that xPDO _abstracts_ the database, so it's entirely possible that your model is something other than a traditional database, but for the sake of familiarity and clarity, the examples here assume you are using a MySQL database for your model. In general, it's recommended that you design your snippets/plugins etc. using a traditional database before abstracting it using xPDO.
 
-<div class="note"> **FYI**   
- Once you've created a valid XML schema file, xPDO can generate PHP class files _and_ database tables; it is bi-directional. The purpose of this page is to juxtapose the xPDO XML schema to MySQL database tables. Some developers may prefer to write the XML schema file by hand and then let xPDO generate the tables and the class files. Other developers may prefer to first create the database tables, then [reverse engineer](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table") the XML schema and the class files. </div>One to One
-----------
+ **FYI** 
+ Once you've created a valid XML schema file, xPDO can generate PHP class files _and_ database tables; it is bi-directional. The purpose of this page is to juxtapose the xPDO XML schema to MySQL database tables. Some developers may prefer to write the XML schema file by hand and then let xPDO generate the tables and the class files. Other developers may prefer to first create the database tables, then [reverse engineer](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table") the XML schema and the class files. 
+
+## One to One
 
  A one-to-one relationship exists when two tables use the same primary key. Architecturally, this means that the data could theoretically live in a single table, but for whatever reason, the data is separated into two (or more) tables.
 
@@ -51,8 +53,10 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
 
  For this example, we are mimicking the MODx tables where we have one table for **users** and a secondary table that stores additional information about those users, named **userdata**.
 
-<div class="note"> **FYI**   
- Unlike some ORMs (e.g. Doctrine) and even unlike MySQL's foreign-key definitions, xPDO defines a relationship on _both_ sides. You tell the children who their parents are and you also tell the parents who their children are. E.g. the parent object contains a composite relationship and the child object contains an aggregate relationship. This ensures that everybody knows who they're related to. </div>### MySQL Table Definitions
+ **FYI** 
+ Unlike some ORMs (e.g. Doctrine) and even unlike MySQL's foreign-key definitions, xPDO defines a relationship on _both_ sides. You tell the children who their parents are and you also tell the parents who their children are. E.g. the parent object contains a composite relationship and the child object contains an aggregate relationship. This ensures that everybody knows who they're related to. 
+
+### MySQL Table Definitions
 
  Here are abbreviated MySQL table definitions:
 
@@ -120,8 +124,7 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
         return $output;
 ?>
 
-```One to Many
------------
+```## One to Many
 
  This is a common pattern that occurs when a secondary table contains a foreign key. For example, you might have a primary table containing blog posts, and a secondary table containing comments. Each blog post might have zero or many comments, but each comment can belong to one and _only_ one blog post.
 
@@ -184,8 +187,7 @@ foreach ( $comments as $c )
 }
 return $output;
 
-```Many to Many: Joining Tables
-----------------------------
+```## Many to Many: Joining Tables
 
  Another common database pattern involves the use of join tables. This type of relationship is seen frequently when using taxonomies such as "categories" or "tags": e.g. a single post can be "tagged" with multiple terms, and each tag can likewise be associated with multiple posts.
 
@@ -265,8 +267,7 @@ foreach ( $blopost_tags as $bt )
 }
 return $output;
 
-```Parent ID: Self Join
---------------------
+```## Parent ID: Self Join
 
  Another common pattern used to indicate hierarchy is the self-join. This is when one column in a table contains a reference to that table's own primary key. We are familiar with this in the MODx database when we put pages into folders: there is a parent/child relationship where each page may be the child of another page.
 
@@ -321,8 +322,7 @@ foreach ( $subcategories as $sc )
 }
 return $output;
 
-```Using Field Aliases _(xPDO 2.2+ only)_
---------------------------------------
+```## Using Field Aliases _(xPDO 2.2+ only)_
 
  In this example, we are setting an alias of _postalcode_ for the _zip_ field from the **storefinder** model.
 

@@ -45,7 +45,7 @@ An alternative server configuration was suggested [in this forum topic](http://f
 
 Thanks for posting this, complete with FURL support :)
 
-Question: With **root /home/sites/example.com;** defined at the server level, is it necessary to include again in the first location block?   
+Question: With **root /home/sites/example.com;** defined at the server level, is it necessary to include again in the first location block? 
  My understanding is that nginx configs are inherited from the top down, and therefore it could be removed in this case...
 
 In some cases (my guts say older versions of nginx) you might need to comment out the fastcgi\_split\_path\_info directive.

@@ -4,7 +4,7 @@ _old_id: "166"
 _old_uri: "2.x/getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity"
 ---
 
-<div>- [ModSecurity (aka mod\_security or mod\_sec)](#InstallationonaserverrunningModSecurity-ModSecurity%28akamodsecurityormodsec%29)
+- [ModSecurity (aka mod\_security or mod\_sec)](#InstallationonaserverrunningModSecurity-ModSecurity%28akamodsecurityormodsec%29)
 - [How Do I Know if I have ModSecurity Installed?](#InstallationonaserverrunningModSecurity-HowDoIKnowifIhaveModSecurityInstalled%3F)
   - [Checking on a WHM Server](#InstallationonaserverrunningModSecurity-CheckingonaWHMServer)
   - [Checking via the Command Line](#InstallationonaserverrunningModSecurity-CheckingviatheCommandLine)
@@ -24,18 +24,20 @@ _old_uri: "2.x/getting-started/installation/basic-installation/installation-on-a
 - [Static Resources](#InstallationonaserverrunningModSecurity-StaticResources)
 - [See Also](#InstallationonaserverrunningModSecurity-SeeAlso)
 
-</div>This document covers a fairly technical topic and it's not recommended that amateurs attempt this. Command-line noobs best leave this to a professional system admin or to their hosting company. Editing configuration files via the command line can be dangerous and you can destroy your server!
 
-ModSecurity (aka mod\_security or mod\_sec)
--------------------------------------------
+
+This document covers a fairly technical topic and it's not recommended that amateurs attempt this. Command-line noobs best leave this to a professional system admin or to their hosting company. Editing configuration files via the command line can be dangerous and you can destroy your server!
+
+## ModSecurity (aka mod\_security or mod\_sec)
 
 [ModSecurity](http://www.modsecurity.org/) is an open source web application firewall that runs as an Apache server module. It implements a comprehensive set of rules that implement general-purpose hardening, and thereby helps patch common web application security issues. It establishes an external security layer that increases security, detects, and prevents attacks before they reach web applications. It is commonly available on cPanel systems as an EasyApache module. It is a well-respected security module and can really help lock down your site from common attack vectors.
 
 We discuss ModSecurity explicitly here because the MODX Revolution manager issues many requests that can run afoul of mod\_security rules.
 
-<div class="warning">**The Silent Killer**  
-The MODX manager may simply quietly fail if one of its actions is blocked by mod\_security. Know your server! Check your Apache error logs! Your sanity is at stake!</div>How Do I Know if I have ModSecurity Installed?
-----------------------------------------------
+**The Silent Killer**
+The MODX manager may simply quietly fail if one of its actions is blocked by mod\_security. Know your server! Check your Apache error logs! Your sanity is at stake!
+
+## How Do I Know if I have ModSecurity Installed?
 
 Before we discuss how to make ModSecurity and MODX play nicely together, you need to know whether or not you actually have this software installed. The easy solution is to ask your hosting provider, and presumably they will know (if they don't know what software they are running, it's probably time to [find another hosting company](http://modx.com/partners/hosting-saas/)).
 
@@ -84,15 +86,16 @@ Loaded Modules:
  suphp_module (shared)
  security2_module (shared)  # <--- this is ModSecurity
 
-```<div class="note">The mod\_security module is listed as **security2\_module**</div>### Other Recon
+```The mod\_security module is listed as **security2\_module**
+
+### Other Recon
 
 If you don't have the **apachectl** utility or you can't find it, you can manually check your Apache configuration files. It can be configured differently on different servers, but in general, Apache is setup to load its main configuration file, then it will optionally scan additional directories for additional configuration files.
 
 1. Check the main Apache file (often inside **/etc/httpd**, e.g. **/etc/httpd/conf/httpd.conf**)
 2. Check the additional configuration directories (often inside sub-folders of the main configuration directory).
 
-Log Files
----------
+## Log Files
 
 After you've verified that are in fact running ModSecurity, you'll want to monitor your logs to see if your actions in the MODX manager are in fact tripping security alarms. This is best done via the command line: use SSH to log into your server and make sure you have appropriate access (e.g. root privileges) to view these log files.
 
@@ -137,8 +140,7 @@ at ARGS:els.
 
 ```This tells what rule was being tripped, what domain it was tripped on, and from what location inside that domain the rule is being tripped.
 
-Whitelisting a Rule for a Domain
---------------------------------
+## Whitelisting a Rule for a Domain
 
 Whitelisting a rule for a specific domain is accomplished through an "includes" file. This takes several steps to do safely.
 
@@ -185,8 +187,7 @@ You can also set server-wide rules in the file:
 
 That's where Apache will look for additional configurations. If you know you don't need to worry additional configuration files, you can skip ahead to the next section and simply add your whitelist rules. If you are running on a cPanel server or using some other type of setup where you either can't or shouldn't edit the main **httpd.conf** file directly, then you should place your rules into a separate configuration file. You may need to create the directories listed above, or perhaps you'll have to rtfm a bit more to figure out where Apache will look for additional configuration files.
 
-Add the Whitelist Rule
-----------------------
+## Add the Whitelist Rule
 
 ### Generic Example
 
@@ -227,8 +228,10 @@ Give our sample error message earlier which identified the following error:
 
 ```Note that it references the MODX connector by its path and it references the ModSecurity rule by its id.
 
-<div class="warning">**Beware Moving your Site**  
-If you move your site to a new directory or if you move your **connectors** directory to a non-standard location, you will have to edit your rules! They apply to a specific URL, so if your URLs change, the rules will have to be updated.</div>### Broader Example
+**Beware Moving your Site**
+If you move your site to a new directory or if you move your **connectors** directory to a non-standard location, you will have to edit your rules! They apply to a specific URL, so if your URLs change, the rules will have to be updated.
+
+### Broader Example
 
 It can be maddening going through MODX functionality one admin screen at a time, but there seems to be some difficulty in white-listing entire directories. Consider renaming your "connectors" directory (see [Hardening MODX Revolution](administering-your-site/security/hardening-modx-revolution "Hardening MODX Revolution")).
 
@@ -246,8 +249,7 @@ SecRuleRemoveById 300016
   SecRuleRemoveById 300013 300016
 </LocationMatch>
 
-```Restart Apache
---------------
+```## Restart Apache
 
 Once you've made the changes to your configuration files, you will need to restart Apache in order for the configurations to be re-read.
 
@@ -274,12 +276,13 @@ Once you're edits have been made, restart the Apache process:
 
 ```If there are any errors in your files, you will be alerted to them. This can be nerve-wracking because if Apache does not come back on-line, **your site will be down!**
 
-Static Resources
-----------------
+## Static Resources
 
 ModSecurity can affect your MODX static resources (or any PHP script that reads a file for a user to download). What can happen is if your file is too large, the download will get terminated prematurely, and you end up with a corrupted file. Often the size of the downloaded file comes through as only about 64kb even though the original file may be significantly larger. If you experience this, it might be a good hint that ModSecurity is interfering. **There may not be a log entry for this** (!!!), so it can be very difficult to track this behavior back to ModSecurity!
 
-<div class="note">In WHM, you can edit ModSecurity configuration settings by clicking the "Mod Security" plugin link (pictured earlier on this page), and clicking the "Edit Config" button.</div>The configuration details that can affect your downloads are the following:
+In WHM, you can edit ModSecurity configuration settings by clicking the "Mod Security" plugin link (pictured earlier on this page), and clicking the "Edit Config" button.
+
+The configuration details that can affect your downloads are the following:
 
 - SecRequestBodyAccess
 - SecRequestBodyLimit
@@ -295,8 +298,7 @@ SecRequestBodyAccess Off
 
 Another cause of this enigmatic symptom can be a conflict between web servers: for example, if you have Apache and NGINX installed on the same server, _make sure that they both do not use gzip compression_ – the result can look very much like ModSecurity interfering! If NGINX compresses a large static resource and then Apache also tries to compress it, the effort fails and the file ends up clipping at 64kb.
 
-See Also
---------
+## See Also
 
 [ModSecurity Configuration Reference](http://www.modsecurity.org/documentation/modsecurity-apache/2.1.0/modsecurity2-apache-reference.html)
 

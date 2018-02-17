@@ -4,8 +4,7 @@ _old_id: "217"
 _old_uri: "2.x/administering-your-site/security/policies/permissions"
 ---
 
-What is a Permission? 
-----------------------
+## What is a Permission? 
 
 A Permission in Revolution is a single access control that allows or denies execution of a single task. You can think of a permission as a checkbox: can a user perform an action or not?
 
@@ -15,8 +14,7 @@ Normally you don't deal with permissions individually, but in groups called [Acc
 
 MODX permissions are always additive: if a permission exists on "Access Policy A" and not on "Access Policy B" and you add both policies to a user, the effective policy is a collection of all the permissions defined in both policies. Adding more policies will never remove permissions for a user. For example, if you add a limited "Load Only" policy to an administrator user, the administrator user will still be able to do all the things defined in the Administrator policy.
 
-Usage 
-------
+## Usage 
 
 In practice, Access Policies are associated with User Groups (not with individual users). Access Policies are associated with a User Group, and users may be added to the group.
 
@@ -25,8 +23,7 @@ Access Policies (ACLs) define lists of permissions (see Security --> Access Cont
 1. [Permissions - Administrator Policy](administering-your-site/security/policies/permissions/permissions-administrator-policy)
 2. [Permissions - Resource Policy](administering-your-site/security/policies/permissions/permissions-resource-policy)
 
-See Also 
----------
+## See Also 
 
 1. [Users](administering-your-site/security/users)
 2. [User Groups](administering-your-site/security/user-groups)

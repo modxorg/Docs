@@ -4,7 +4,6 @@ _old_id: "333"
 _old_uri: "2.x/administering-your-site/contexts/using-one-gateway-plugin-to-manage-multiple-domains"
 ---
 
-  
 You have a choice when sharing a single database and manager across multiple domains. You can choose to use the primary front-end context (known as 'web') to handle all domains or you can create a unique gateway file for each domain to directly initialize a specific context. If you use a single gateway, you would use a plugin to switch contexts registered to the OnHandleRequest event, something like so:
 
 ```
@@ -46,5 +45,5 @@ $modx->initialize('aContextNameOfYourChoice');
 
 You can also still use a custom core location in either of these scenarios; this is independent of the context-driven multi-site capabilities.
 
-Checkout the GatewayManager component   
+Checkout the GatewayManager component 
 <http://rtfm.modx.com/display/ADDON/GatewayManager>

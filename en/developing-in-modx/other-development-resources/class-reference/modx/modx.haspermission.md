@@ -4,21 +4,18 @@ _old_id: "1083"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.haspermission"
 ---
 
-modX::hasPermission
--------------------
+## modX::hasPermission
 
  Returns true if user has the specified policy permission.
 
-Syntax
-------
+## Syntax
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::hasPermission()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::hasPermission())
 
  ```
 <pre class="brush: php">boolean hasPermission (string|array $pm)
 
-```Example
--------
+```## Example
 
  Deny the user access if they don't have the permission 'edit\_chunk' in their loaded Policies.
 
@@ -36,7 +33,6 @@ if (!$modx->hasPermission($pm)) {
     die ('Access Denied!');
 }
 
-```See Also
---------
+```## See Also
 
 - [Policies](administering-your-site/security/policies "Policies")

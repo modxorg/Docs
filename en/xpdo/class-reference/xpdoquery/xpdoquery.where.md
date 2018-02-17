@@ -4,16 +4,14 @@ _old_id: "1300"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.where"
 ---
 
- xPDOQuery::where 
-------------------
+##  xPDOQuery::where 
 
  Add a WHERE condition to the query. In general, the way this works is you append an operator to an attribute after a colon.
 
  ```
 <pre class="brush: php">array('attribute:operator' => 'value')
 
-```<table><tbody><tr><th> Operator </th> <th> Symbol </th> <th> Example </th> </tr><tr><td> Equals </td> <td> _none_ </td> <td>`$query->where(array('width' => 15));` </td> </tr><tr><td> Not Equals </td> <td> != </td> <td>`$query->where(array('width:!=' => 15));` </td> </tr><tr><td> Greater Than </td> <td> > </td> <td>`$query->where(array('width:>' => 15));` </td> </tr><tr><td> Less Than </td> <td> < </td> <td>`$query->where(array('width:<' => 15));` </td> </tr><tr><td> Greater Than or Equal to </td> <td> >= </td> <td>`$query->where(array('width:>=' => 15));` </td> </tr><tr><td> Less Than or Equal to </td> <td> <= </td> <td>`$query->where(array('width:<=' => 15));` </td> </tr><tr><td> Like </td> <td> LIKE </td> <td>`$query->where(array('width:LIKE' => '%15%'));` </td> </tr><tr><td> Not Like </td> <td> NOT LIKE </td> <td>`$query->where(array('width:NOT LIKE' => '%15%'));` </td> </tr><tr><td> Exists in </td> <td> IN </td> <td>`$query->where(array('width:IN' => array(15,16,17,20)));` </td> </tr><tr><td> Not Exists in </td> <td> NOT IN </td> <td>`$query->where(array('width:NOT IN' => array(15,16,17,20)));` </td> </tr><tr><td> Is Null </td> <td> IS </td> <td>`$query->where(array('width:IS' => null));` </td></tr></tbody></table> Syntax 
---------
+``` Operator   Symbol   Example   Equals   _none_  `$query->where(array('width' => 15));`   Not Equals   !=  `$query->where(array('width:!=' => 15));`   Greater Than   >  `$query->where(array('width:>' => 15));`   Less Than   <  `$query->where(array('width:<' => 15));`   Greater Than or Equal to   >=  `$query->where(array('width:>=' => 15));`   Less Than or Equal to   <=  `$query->where(array('width:<=' => 15));`   Like   LIKE  `$query->where(array('width:LIKE' => '%15%'));`   Not Like   NOT LIKE  `$query->where(array('width:NOT LIKE' => '%15%'));`   Exists in   IN  `$query->where(array('width:IN' => array(15,16,17,20)));`   Not Exists in   NOT IN  `$query->where(array('width:NOT IN' => array(15,16,17,20)));`   Is Null   IS  `$query->where(array('width:IS' => null));` ##  Syntax 
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::where()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::where())
 
@@ -23,8 +21,7 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.where"
  [mixed $binding = null],
  [integer $condGroup = 0])
 
-``` Examples 
-----------
+```##  Examples 
 
  Get all Boxes with width of 15.
 
@@ -131,7 +128,6 @@ $tvrs = $modx->getCollectionGraph('modTemplateVarResource','{"Resource":{}}', $c
 
  <https://github.com/netProphET/revolution/commit/464b8ff3d05f7114412ef19c3ec4729fa78ffeba>
 
- See Also 
-----------
+##  See Also 
 
 - [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery")

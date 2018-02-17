@@ -4,12 +4,13 @@ _old_id: "167"
 _old_uri: "2.x/administering-your-site/installing-a-package"
 ---
 
-Installing a Package
---------------------
+## Installing a Package
 
 This page will guide you through the process of installing a Package via [Package Management](developing-in-modx/advanced-development/package-management "Package Management").
 
-<div class="note">Downloading packages through [Package Management](developing-in-modx/advanced-development/package-management "Package Management") requires cURL or PHP Sockets. MODx will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](administering-your-site/installing-a-package/troubleshooting-package-management "Troubleshooting Package Management").</div>Go to Extras -> [Installer](https://rtfm.modx.com/revolution/2.x/developing-in-modx/advanced-development/package-management "Package Management").
+Downloading packages through [Package Management](developing-in-modx/advanced-development/package-management "Package Management") requires cURL or PHP Sockets. MODx will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](administering-your-site/installing-a-package/troubleshooting-package-management "Troubleshooting Package Management").
+
+Go to Extras -> [Installer](https://rtfm.modx.com/revolution/2.x/developing-in-modx/advanced-development/package-management "Package Management").
 
 ![](/download/attachments/23c66e1935073aec60f9d9ea342a5b6b/modx-package-management-1.jpg)
 
@@ -33,8 +34,7 @@ You can select the location from which to download packages, add a new location,
 
 If you prefer, you can manually copy the package into the core/packages directory. The package must be a transport.zip archive, such as wayfinder-2.1.1-beta1.transport.zip. Then, click on 'Add New Package' in the packages grid. From there, select the 'Scan Local' option. The package will now be visible in the Packages list, and you can install it as usual, by right-clicking and selecting Install Package from the pop-up menu.
 
-See Also
---------
+## See Also
 
 1. [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages)
 2. [Providers](developing-in-modx/advanced-development/package-management/providers)

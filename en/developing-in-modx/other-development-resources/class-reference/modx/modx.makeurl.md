@@ -4,8 +4,7 @@ _old_id: "1087"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.makeurl"
 ---
 
- modX::makeUrl 
----------------
+##  modX::makeUrl 
 
  Generates a URL representing a specified resource.
 
@@ -19,16 +18,14 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 - http : URL is absolute, forced to http scheme
 - https : URL is absolute, forced to https scheme
 
- Syntax 
---------
+##  Syntax 
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::makeUrl()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::makeUrl())
 
 ```
 <pre class="brush: php">string makeUrl (integer $id, [string $context = ''], [string $args = ''], [mixed $scheme = -1])
 
-``` Examples 
-----------
+```##  Examples 
 
  Make a URL for the Resource with ID 4.
 

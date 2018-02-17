@@ -4,7 +4,7 @@ _old_id: "59"
 _old_uri: "2.x/developing-in-modx/code-standards"
 ---
 
-<div>- [Code Standards](#CodeStandards-CodeStandards)
+- [Code Standards](#CodeStandards-CodeStandards)
   - [General Practices](#CodeStandards-GeneralPractices)
       - [Indentation and Line Breaks](#CodeStandards-IndentationandLineBreaks)
       - [Trailing Spaces](#CodeStandards-TrailingSpaces)
@@ -51,15 +51,15 @@ _old_uri: "2.x/developing-in-modx/code-standards"
       - [Prefixing](#CodeStandards-Prefixing)
   - [SQL](#CodeStandards-SQL)
  
-</div>Code Standards
-==============
+
+
+# Code Standards
 
  This page describes the MODX coding standards for any MODX Component, Extension or core code. These are not de-facto rules, but guidelines for easier development and collaboration between developers.
 
  This page was heavily borrowed from [Fellowship One's Design Standards](http://developer.fellowshipone.com/patterns/code.php). Thanks!
 
-General Practices
------------------
+## General Practices
 
 ### Indentation and Line Breaks
 
@@ -75,8 +75,7 @@ General Practices
 
  MODX does not advocate PHP compression.
 
-HTML
-----
+## HTML
 
  HTML5 is a new version of HTML and XHTML. The HTML5 draft specification defines a single language that can be written in HTML and XML. It attempts to solve issues found in previous iterations of HTML and addresses the needs of Web Applications, an area previously not adequately covered by HTML. ( [from html5.org](http://html5.org/))
 
@@ -96,8 +95,8 @@ HTML
 
 ### Self-closing Elements
 
- Though we are using HTML5, which allows for either HTML or XHTML style syntax, we prefer the strictness of XHTML. Therefore, all tags must be properly closed. For tags that can wrap nodes such as text or other elements, termination is a trivial enough task. For tags that are self-closing, the forward slash should have exactly one space preceding it   
- vs. the compact but incorrect   
+ Though we are using HTML5, which allows for either HTML or XHTML style syntax, we prefer the strictness of XHTML. Therefore, all tags must be properly closed. For tags that can wrap nodes such as text or other elements, termination is a trivial enough task. For tags that are self-closing, the forward slash should have exactly one space preceding it 
+ vs. the compact but incorrect 
  . The W3C specifies that a single space should precede the self-closing slash (source).
 
 ### Terseness
@@ -106,40 +105,39 @@ HTML
 
  A nice aspect of HTML5 is that it streamlines the amount of code that is required. Meaningless attributes have been dropped, and the DOCTYPE declaration has been simplified significantly. Additionally, there is no need to use CDATA to escape inline JavaScript, formerly a requirement to meet XML strictness in XHTML.
 
- <figure class="code"><figcaption>**"HTML5 Doctype"** </figcaption>```
+ **"HTML5 Doctype"** ```
 <pre class="brush: php">
 
 
-``` </figure><figure class="code"><figcaption>**"XHTML 1.0 Transitional Doctype"** </figcaption>```
+``` **"XHTML 1.0 Transitional Doctype"** ```
 <pre class="brush: php">
 
 
-```</figure>### Tags and Attributes
+```### Tags and Attributes
 
  All tags and attributes must be written in lowercase. Additionally, we prefer that any attribute values also be lowercase, when the purpose of the text therein is only to be interpreted by machines. For instances in which the data needs to be human readable, proper title capitalization should be followed, such as:
 
- <figure class="code"><figcaption>**"For machines"** </figcaption>```
+ **"For machines"** ```
 <pre class="brush: php">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-``` </figure><figure class="code"><figcaption>**"For humans"** </figcaption>```
+``` **"For humans"** ```
 <pre class="brush: php">
 <a href="http://example.com/" title="Description Goes Here">Example.com</a>
 
-```</figure>### Quotes
+```### Quotes
 
  In keeping with the strictness of XHTML code conventions, according to the W3C, all attributes must have a value, and must use double-quotes (source). The following are examples of proper and improper usage of quotes and attribute/value pairs.
 
- <figure class="code"><figcaption>**"Correct"** </figcaption>```
+ **"Correct"** ```
 <pre class="brush: php">
 <input type="text" name="email" disabled="disabled" />
 
-``` </figure><figure class="code"><figcaption>**"Incorrect"** </figcaption>```
+``` **"Incorrect"** ```
 <pre class="brush: php">
 <input type=text name=email disabled>
 
-```</figure>CSS
----
+```## CSS
 
 ### Inline Styles
 
@@ -157,7 +155,7 @@ HTML
 
  To ease potential headaches for maintenance, we require that all CSS be written in a consistent manner. For one, all CSS selectors must be listed on their own line. As a general rule of thumb, if there is a comma in CSS, it should immediately be followed by a line break. This way, we know that all text on a single line is part of the same selector. Likewise, all property/value pairs must be on their own line, with one tab of indentation. The closing brace must be on the same level of indentation as the selector that began it - flush left.
 
- <figure class="code"><figcaption>**"Correct"** </figcaption>```
+ **"Correct"** ```
 <pre class="brush: php">
 #selector_1 span,
 #selector_2 span,
@@ -166,21 +164,21 @@ HTML
     color: #000;
 }
 
-``` </figure><figure class="code"><figcaption>**"Incorrect"** </figcaption>```
+``` **"Incorrect"** ```
 <pre class="brush: php">
 #selector_1 span, #selector_2 span, #selector_3 span {
     background: #fff; color: #000;
 }
 
-``` </figure><figure class="code"><figcaption>**"Also incorrect"** </figcaption>```
+``` **"Also incorrect"** ```
 <pre class="brush: php">
 #selector { background: #fff; color: #000; }
 
-```</figure>### Pixels vs. Ems
+```### Pixels vs. Ems
 
  We use the px unit of measurement to define font size, because it offers absolute control over text. We realize that using the em unit for font sizing used to be popular, to accommodate for Internet Explorer 6 not resizing pixel based text. However, all major browsers (including IE7 and IE8) now support text resizing of pixel units and/or full-page zooming. Since IE6 is largely considered deprecated, pixels sizing is preferred. Additionally, unit-less line-height is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the font-size.
 
- <figure class="code"><figcaption>**"Correct"** </figcaption>```
+ **"Correct"** ```
 <pre class="brush: php">
 /*
 13 * 1.5 = 19.5 ~ Rounds to 20px.
@@ -190,7 +188,7 @@ HTML
     line-height: 1.5;
 }
 
-``` </figure><figure class="code"><figcaption>**"Incorrect"** </figcaption>```
+``` **"Incorrect"** ```
 <pre class="brush: php">
 /*
 Equivalent to 13px font-size and 20px line-height,
@@ -201,11 +199,11 @@ but only if the browser default text size is 16px.
     line-height: 1.25em;
 }
 
-```</figure>### Internet Explorer Bugs
+```### Internet Explorer Bugs
 
  Inevitably, when all other browsers appear to be working correctly, any and all versions of Internet Explorer will introduce a few nonsensical bugs, delaying time to deployment. While we encourage troubleshooting and building code that will work in all browsers without special modifications, sometimes it is necessary to use conditional if IE comments to serve up specific fixes, which are ignored by other browsers.
 
- <figure class="code"><figcaption>**"Fixing IE"** </figcaption>```
+ **"Fixing IE"** ```
 <pre class="brush: php">
 <!--[if IE 7]>
 <link type="text/css" rel="stylesheet" href="/assets/styleshseets/ie7.css" />
@@ -214,7 +212,7 @@ but only if the browser default text size is 16px.
 <link type="text/css" rel="stylesheet" href="/assets/styleshseets/ie8.css" />
 <![endif]-->
 
-```</figure>### Shorthand
+```### Shorthand
 
  In general, CSS shorthand is preferred because of its terseness, and the ability to later go back and add in values that are already present, such as the case with margin and padding. Developers should be aware of the TRBL acronym, denoting the order in which the sides of an element are defined, in a clock-wise manner: Top, Right, Bottom, Left. If bottom is undefined, it inherits its value from top. Likewise, if left is undefined, it inherits its value from right. If only the top value is defined, all sides inherit from that one declaration.
 
@@ -226,33 +224,33 @@ but only if the browser default text size is 16px.
 
 #### Margin & Padding
 
- <figure class="code"><figcaption>**"Correct"** </figcaption>```
+ **"Correct"** ```
 <pre class="brush: php">
 #selector {
     margin: 0 0 10px;
     padding: 0 0 10px;
 }
 
-``` </figure><figure class="code"><figcaption>**"Incorrect - left attribute unnecessary"** </figcaption>```
+``` **"Incorrect - left attribute unnecessary"** ```
 <pre class="brush: php">
 #selector {
     margin: 0 0 10px 0;
     padding: 0 0 10px 0;
 }
 
-```</figure>#### Hex Colors
+```#### Hex Colors
 
  We prefer hex values for all colors, written in lower-case. No upper-case or RGB, please! Additionally, all colors should be written as tersely as possible. This means that colors such as full blue, which can be written lengthily as #0000FF, should be simply written as #00f. Obviously, for colors that require more precision, all six characters should be used. For example, a light shade of grayish beige: #f9f9f0.
 
 #### Background
 
- <figure class="code"><figcaption>**"Correct - shorthand"** </figcaption>```
+ **"Correct - shorthand"** ```
 <pre class="brush: php">
 #selector {
     background: #fff url(../images/file.png) repeat-x fixed left bottom;
 }
 
-``` </figure><figure class="code"><figcaption>**"Incorrect - longhand unnecessary"** </figcaption>```
+``` **"Incorrect - longhand unnecessary"** ```
 <pre class="brush: php">
 #selector {
     background-color: #fff;
@@ -262,19 +260,19 @@ but only if the browser default text size is 16px.
     background-position: left bottom;
 }
 
-```</figure>#### Border
+```#### Border
 
  In general, border should be a single line declaration, assuming that the values of the border are the same on all sides of the element. The order in which values are declared are: width, style, and color.
 
- <figure class="code"><figcaption>**"Shorthand - method 1"** </figcaption>```
+ **"Shorthand - method 1"** ```
 <pre class="brush: php">
 #selector {
     border: 1px solid #000;
 }
 
-```</figure> If the values of each side differ, then there are two possible ways of using shorthand, and it is up to the discretion of the developer to decide which to use. Note that method 2 follows the TRBL pattern.
+``` If the values of each side differ, then there are two possible ways of using shorthand, and it is up to the discretion of the developer to decide which to use. Note that method 2 follows the TRBL pattern.
 
- <figure class="code"><figcaption>**"Shorthand - method 2"** </figcaption>```
+ **"Shorthand - method 2"** ```
 <pre class="brush: php">
 #selector {
     border-color: #fff #999 #666 #ccc;
@@ -282,7 +280,7 @@ but only if the browser default text size is 16px.
     border-width: 1px 2px 3px 4px;
 }
 
-``` </figure><figure class="code"><figcaption>**"Shorthand - method 3"** </figcaption>```
+``` **"Shorthand - method 3"** ```
 <pre class="brush: php">
 #selector {
     border-top: 1px solid #fff;
@@ -291,9 +289,9 @@ but only if the browser default text size is 16px.
     border-left: 4px double #ccc;
 }
 
-```</figure> By contrast, the same style declaration is extremely verbose using longhand. This should be avoided, except in instances where only one particular value needs to be overridden, allowing the rest to flow through.
+``` By contrast, the same style declaration is extremely verbose using longhand. This should be avoided, except in instances where only one particular value needs to be overridden, allowing the rest to flow through.
 
- <figure class="code"><figcaption>**"Longhand"** </figcaption>```
+ **"Longhand"** ```
 <pre class="brush: php">
 #selector {
     border-top-color: #fff;
@@ -310,20 +308,20 @@ but only if the browser default text size is 16px.
     border-left-width: 4px;
 }
 
-```</figure>#### Font
+```#### Font
 
- Not to be confused with the inadvisable <font> tag, the CSS font property can be written in a few different ways. The shorthand property puts all the aspects of the font into a single declaration, whereas the longhand splits it out over several lines. While the contrast between methods is not as stark as with that of the border property, there is still space to be saved by using shorthand. While line-height can be defined within the scope of the font declaration, but when written in longhand it has its own unique property.</font>
+ Not to be confused with the inadvisable  tag, the CSS font property can be written in a few different ways. The shorthand property puts all the aspects of the font into a single declaration, whereas the longhand splits it out over several lines. While the contrast between methods is not as stark as with that of the border property, there is still space to be saved by using shorthand. While line-height can be defined within the scope of the font declaration, but when written in longhand it has its own unique property.
 
- <font>Note: Times New Roman is encapsulated in quotes, because the font name itself contains spaces.</font>
+ Note: Times New Roman is encapsulated in quotes, because the font name itself contains spaces.
 
- <figure class="code"><figcaption><font>**"Shorthand"** </font></figcaption>```
+ **"Shorthand"** ```
 <pre class="brush: php">
 <font>#selector {
     font: italic small-caps bold 15px/1.5 Cambria, 'Times New Roman', sans-serif;
 }
 </font>
 
-``` </figure><figure class="code"><figcaption><font>**"Longhand"** </font></figcaption>```
+``` **"Longhand"** ```
 <pre class="brush: php">
 <font>#selector {
     font-style: italic;
@@ -335,11 +333,11 @@ but only if the browser default text size is 16px.
 }
 </font>
 
-```</figure>#### <font>Longhand</font>
+```#### Longhand
 
- <font>When overriding only parts of a style, longhand declaration is preferred. This way, by sticking to shorthand for initial style declarations, anytime we see a longhand declaration used, we know that we are specifically overriding only a very precise part of an overall style, thereby leaving other aspects unaffected.</font>
+ When overriding only parts of a style, longhand declaration is preferred. This way, by sticking to shorthand for initial style declarations, anytime we see a longhand declaration used, we know that we are specifically overriding only a very precise part of an overall style, thereby leaving other aspects unaffected.
 
- <figure class="code"><figcaption><font>**"Longhand override"** </font></figcaption>```
+ **"Longhand override"** ```
 <pre class="brush: php">
 <font>#selector {
     border: 1px solid #ccc;
@@ -352,14 +350,13 @@ but only if the browser default text size is 16px.
 }
 </font>
 
-```</figure><font>Javascript</font>
------------------------
+```## Javascript
 
-### <font>Type Coercion</font>
+### Type Coercion
 
- <font>Unlike strongly typed languages such as Java or C#, JavaScript will perform type coercion when evaluating conditional statements. This sometimes creates awkward scenarios in which numerical values are seen as false or the existence of a string is mistaken for true. This is typically disadvantageous.</font>
+ Unlike strongly typed languages such as Java or C#, JavaScript will perform type coercion when evaluating conditional statements. This sometimes creates awkward scenarios in which numerical values are seen as false or the existence of a string is mistaken for true. This is typically disadvantageous.
 
- <font>To ensure a strict level of comparison, as might be seen in a strongly typed or compiled language, JavaScript (like PHP) has a triple-equals operator ===. In similar fashion, it also has a strict negation operator !==. Consider the following examples of potential pitfalls when it comes to evaluating comparisons.</font>
+ To ensure a strict level of comparison, as might be seen in a strongly typed or compiled language, JavaScript (like PHP) has a triple-equals operator ===. In similar fashion, it also has a strict negation operator !==. Consider the following examples of potential pitfalls when it comes to evaluating comparisons.
 
  ```
 <pre class="brush: php">
@@ -383,7 +380,7 @@ if (test_2 !== false) {
 }
 </font>
 
-``` <font>As you can see in the example above, simply using == and != is insufficient because it makes for potentially unpredictable results. Therefore, the stricter comparison operators should always be used. There is never a good reason to use the lesser form of comparison operators. To simply for the existence of elements in the DOM, there is an even more abbreviated way, that leaves no room for ambiguity. If you are unsure if certain elements will be present in an HTML page, use one of the following techniques.</font>
+``` As you can see in the example above, simply using == and != is insufficient because it makes for potentially unpredictable results. Therefore, the stricter comparison operators should always be used. There is never a good reason to use the lesser form of comparison operators. To simply for the existence of elements in the DOM, there is an even more abbreviated way, that leaves no room for ambiguity. If you are unsure if certain elements will be present in an HTML page, use one of the following techniques.
 
  ```
 <pre class="brush: php">
@@ -401,20 +398,20 @@ function second_func() {
 }
 </font>
 
-```### <font>White-space</font>
+```### White-space
 
- <font>In general, the use of whitespace should follow longstanding English reading conventions. Such that, there will be one space after each comma and colon (and semi-colon where applicable), but no spaces immediately inside the right and left sides of parenthesis. In short, we advocate readability within reason. Additionally, braces should always appear on the same line as their preceding argument.</font>
+ In general, the use of whitespace should follow longstanding English reading conventions. Such that, there will be one space after each comma and colon (and semi-colon where applicable), but no spaces immediately inside the right and left sides of parenthesis. In short, we advocate readability within reason. Additionally, braces should always appear on the same line as their preceding argument.
 
- <font>Consider the following examples of a JavaScript for-loop...</font>
+ Consider the following examples of a JavaScript for-loop...
 
- <figure class="code"><figcaption><font>**"Correct"** </font></figcaption>```
+ **"Correct"** ```
 <pre class="brush: php">
 <font>for (var i=0, j=arr.length; i<j; i++) {
     // Do something.
 }
 </font>
 
-``` </figure><figure class="code"><figcaption><font>**"Incorrect"** </font></figcaption>```
+``` **"Incorrect"** ```
 <pre class="brush: php">
 <font>for ( var i = 0, j = arr.length; i < j; i++ )
 {
@@ -422,37 +419,37 @@ function second_func() {
 }
 </font>
 
-```</figure>### <font>Variables, ID & Class</font>
+```### Variables, ID & Class
 
- <font>All JavaScript variables shall be written in completely lowercase letters, with underscores to separate words if need be. Likewise, all id and class declarations in CSS shall be written in the same manner. Neither dashes nor camelCase shall be used, except for words that contain dashes when written in plain English.</font>
+ All JavaScript variables shall be written in completely lowercase letters, with underscores to separate words if need be. Likewise, all id and class declarations in CSS shall be written in the same manner. Neither dashes nor camelCase shall be used, except for words that contain dashes when written in plain English.
 
-### <font>Quotes</font>
+### Quotes
 
- <font>The preferred method of delineating strings is to use single quotes for everything. Since JavaScript exists to manipulate markup, and because HTML is generally written with double quotes in W3C specifications, using single quoted strings will better facilitate handling HTML fragments, and keep code more readable.</font>
+ The preferred method of delineating strings is to use single quotes for everything. Since JavaScript exists to manipulate markup, and because HTML is generally written with double quotes in W3C specifications, using single quoted strings will better facilitate handling HTML fragments, and keep code more readable.
 
- <figure class="code"><figcaption><font>**"Correct"** </font></figcaption>```
+ **"Correct"** ```
 <pre class="brush: php">
 <font>var my_html = '<img class="photo" src="/path/file.jpg" alt="Text" />';
 </font>
 
-``` </figure><figure class="code"><figcaption><font>**"Incorrect"** </font></figcaption>```
+``` **"Incorrect"** ```
 <pre class="brush: php">
 <font>var my_html = "<img class=\"photo\" src=\"/path/file.jpg\" alt=\"Text\" />";
 </font>
 
-```</figure>### <font>Event Listeners</font>
+```### Event Listeners
 
- <font>Rather than using attributes such as onload, onfocus, onsubmit, or onclick directly in markup, we will instead attach event listeners to these elements via unobtrusive techniques. The reasoning for this is the same philosophy that is behind not using inline style="..." declarations. So doing inextricably ties the behavior of a web page to its data, and makes maintenance more difficult.</font>
+ Rather than using attributes such as onload, onfocus, onsubmit, or onclick directly in markup, we will instead attach event listeners to these elements via unobtrusive techniques. The reasoning for this is the same philosophy that is behind not using inline style="..." declarations. So doing inextricably ties the behavior of a web page to its data, and makes maintenance more difficult.
 
-### <font>Event Delegation</font>
+### Event Delegation
 
- <font>When assigning unobtrusive event listeners, it is typically acceptable to assign the event listener directly to the element(s) which will trigger some resulting action. However, occasionally there may be multiple elements which match the criteria for which you are checking, and attaching event listeners to each one might negatively impact performance. In such cases you should use event delegation instead.</font>
+ When assigning unobtrusive event listeners, it is typically acceptable to assign the event listener directly to the element(s) which will trigger some resulting action. However, occasionally there may be multiple elements which match the criteria for which you are checking, and attaching event listeners to each one might negatively impact performance. In such cases you should use event delegation instead.
 
-### <font>Closures & Scope</font>
+### Closures & Scope
 
- <font>To maintain proper scope for variables, it is highly recommended that self-executing anonymous function be used as a closure. For the most part, variables defined correctly using the var syntax, within the scope of a function will not add to global scope pollution. However, from time to time, you may need to access variables via two or more functions. In such cases, multiple functions can be grouped together inside a closure.</font>
+ To maintain proper scope for variables, it is highly recommended that self-executing anonymous function be used as a closure. For the most part, variables defined correctly using the var syntax, within the scope of a function will not add to global scope pollution. However, from time to time, you may need to access variables via two or more functions. In such cases, multiple functions can be grouped together inside a closure.
 
- <figure class="code"><figcaption><font>**"Closure"** </font></figcaption>```
+ **"Closure"** ```
 <pre class="brush: php">
 <font>(function() {
     var first_variable = 'value 1';
@@ -466,15 +463,15 @@ function second_func() {
 })();
 </font>
 
-```</figure>### <font>Objects & Arrays</font>
+```### Objects & Arrays
 
- <font>Objects can be thought of as tiered variables that contain multiple attributes. Similarly, an array could be described as a list of data that all share common characteristics. The following code snippets show examples of objects and arrays, and the different ways in which they can be defined. Note that values such as John Doe's age and marital status do not have quotation marks around them. This is because age is truely numerical, and true is a Boolean value.</font>
+ Objects can be thought of as tiered variables that contain multiple attributes. Similarly, an array could be described as a list of data that all share common characteristics. The following code snippets show examples of objects and arrays, and the different ways in which they can be defined. Note that values such as John Doe's age and marital status do not have quotation marks around them. This is because age is truely numerical, and true is a Boolean value.
 
- <font>Note also that the commas are before the variable or method declaration. This prevents errors with trailing commas in IE and other browsers.</font>
+ Note also that the commas are before the variable or method declaration. This prevents errors with trailing commas in IE and other browsers.
 
- <font>Objects (and arrays) are an important part of JSON - JavaScript Object Notation, which is a platform and language independent way of transmitting data, used as an alternative to XML.</font>
+ Objects (and arrays) are an important part of JSON - JavaScript Object Notation, which is a platform and language independent way of transmitting data, used as an alternative to XML.
 
- <figure class="code"><figcaption><font>**"Object literal - preferred"** </font></figcaption>```
+ **"Object literal - preferred"** ```
 <pre class="brush: php">
 <font>var john_doe = {
     first_name: 'John'
@@ -486,7 +483,7 @@ function second_func() {
 };
 </font>
 
-``` </figure><figure class="code"><figcaption><font>**"Object dot notation"** </font></figcaption>```
+``` **"Object dot notation"** ```
 <pre class="brush: php">
 <font>/*
 Could also be written:
@@ -501,7 +498,7 @@ john_doe.married = true;
 john_doe.age = 30;
 </font>
 
-``` </figure><figure class="code"><figcaption><font>**"Array literal - preferred"** </font></figcaption>```
+``` **"Array literal - preferred"** ```
 <pre class="brush: php">
 <font>var doe_family = [
     'John'
@@ -513,7 +510,7 @@ john_doe.age = 30;
 ];
 </font>
 
-``` </figure><figure class="code"><figcaption><font>**"Array bracket notation"** </font></figcaption>```
+``` **"Array bracket notation"** ```
 <pre class="brush: php">
 <font>/*
 Could also be written:
@@ -528,24 +525,23 @@ doe_family[4] = 'Jared';
 doe_family[5] = 'Jerome';
 </font>
 
-```</figure><font>PHP</font>
-----------------
+```## PHP
 
-### <font>General</font>
+### General
 
-- <font>Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.</font>
-- <font>Do not do any real logic in object constructors. Create class methods to do so.</font>
-- <font>null, true and false should always be lowercase.</font>
-- <font>Avoid embedded assignments (ex: $d = ($a = $b + $c) is bad).</font>
-- <font>Never use extract().</font>
-- <font>Avoid using global variables if at all possible.</font>
-- <font>Document EVERYTHING.</font>
+- Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.
+- Do not do any real logic in object constructors. Create class methods to do so.
+- null, true and false should always be lowercase.
+- Avoid embedded assignments (ex: $d = ($a = $b + $c) is bad).
+- Never use extract().
+- Avoid using global variables if at all possible.
+- Document EVERYTHING.
 
-### <font>Parenthesis</font>
+### Parenthesis
 
-- <font>Do not put parenthesis next to keywords. Put a space between.</font>
-- <font>Do put parenthesis next to function names.</font>
-- <font>Do not use parenthesis in return statements when it's not necessary. Example: ```
+- Do not put parenthesis next to keywords. Put a space between.
+- Do put parenthesis next to function names.
+- Do not use parenthesis in return statements when it's not necessary. Example: ```
   <pre class="brush: php">
   if ($test) {
   }
@@ -554,14 +550,14 @@ doe_family[5] = 'Jerome';
   array_push($one,$two);
   return $test;
   	
-  ``` </font> <font> </font>
-- <font>Do **not** use parenthesis when using include, require, include\_once, and require\_once.</font>
+  ```
+- Do **not** use parenthesis when using include, require, include\_once, and require\_once.
 
-### <font>Classes</font>
+### Classes
 
-- <font>All ''core'' classnames, unless stated otherwise for special conditions, will be prefixed with the "mod" prefix: ie, modChunk, modTemplate, etc.</font>
-- <font>All method names will be camelCase and will start with a lowercase letter.</font>
-- <font>All private methods and variables must be prefixed with the underscore \_ character. ```
+- All ''core'' classnames, unless stated otherwise for special conditions, will be prefixed with the "mod" prefix: ie, modChunk, modTemplate, etc.
+- All method names will be camelCase and will start with a lowercase letter.
+- All private methods and variables must be prefixed with the underscore \_ character. ```
   <pre class="brush: php">
   class modFactor {
       public $publicVar;
@@ -570,18 +566,18 @@ doe_family[5] = 'Jerome';
       public function publicFunc() { }
   }
   	
-  ``` </font> <font> </font>
+  ```
 
-### <font>Variables</font>
+### Variables
 
- <font>Note these are not function arguments.</font>
+ Note these are not function arguments.
 
-- <font>Use all lowercase letters.</font>
-- <font>Separate words with the underscore.</font>
+- Use all lowercase letters.
+- Separate words with the underscore.
 
-### <font>Function Arguments and Class Variables</font>
+### Function Arguments and Class Variables
 
-- <font>The first letter is lowercase, rest are camelCase. Example: ```
+- The first letter is lowercase, rest are camelCase. Example: ```
   <pre class="brush: php">
   class modFactor {
       public function testFunc($testVar, array &$anotherTest = array()) {
@@ -590,55 +586,54 @@ doe_family[5] = 'Jerome';
       }
   }
   	
-  ``` </font> <font> </font>
+  ```
 
-### <font>Arrays</font>
+### Arrays
 
-- <font>Array index names use the underscore \_, not the dash as their separator. This prevents errors with magic\_quotes.</font>
-- <font>Array index names are always lowercase. Spaces are represented by an underscore.</font>
-- <font>Array index names are always encapsulated with single quotes.   
+- Array index names use the underscore \_, not the dash as their separator. This prevents errors with magic\_quotes.
+- Array index names are always lowercase. Spaces are represented by an underscore.
+- Array index names are always encapsulated with single quotes. 
    Example: ```
   <pre class="brush: php">
   $_lang['chunk_create_text'] = 'Test';
   	
-  ``` </font> <font> </font>
+  ```
 
-### <font>Constants</font>
+### Constants
 
-- <font>Constants must be in all UPPERCASE letters.</font>
-- <font>Use only if absolutely necessary.</font>
+- Constants must be in all UPPERCASE letters.
+- Use only if absolutely necessary.
 
-### <font>File Structure</font>
+### File Structure
 
-- <font>Always name PHP class files in name.class.php format.</font>
+- Always name PHP class files in name.class.php format.
 
-### <font>Prefixing</font>
+### Prefixing
 
-- <font>Lexicon strings for Components need to be prefixed:</font>
+- Lexicon strings for Components need to be prefixed:
  
 ```
 <pre class="brush: php">
 <font>$_lang['mycomponent.welcome_message'] = 'Welcome!';
 </font>
 
-```- <font>Always prefix class names; eg: 'finBank', 'finTransaction', etc.</font>
-- <font>Always prefix [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'</font>
+```- Always prefix class names; eg: 'finBank', 'finTransaction', etc.
+- Always prefix [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'
 
-<font>SQL</font>
-----------------
+## SQL
 
- <font>All inline SQL must be capitalized, and table and column names must be enclosed with backticks.</font>
+ All inline SQL must be capitalized, and table and column names must be enclosed with backticks.
 
- <figure class="code"><figcaption><font>**"Correct"** </font></figcaption>```
+ **"Correct"** ```
 <pre class="brush: php">
 <font>UPDATE `mydatabase`.`mytable`
 SET `name` = "Johnny"
 WHERE `id` = 123;
 </font>
 
-``` </figure><figure class="code"><figcaption><font>**"Incorrect"** </font></figcaption>```
+``` **"Incorrect"** ```
 <pre class="brush: php">
 <font>update mydatabase.mytable set name='Johnny' where id=12
 </font>
 
-```</figure>
+```

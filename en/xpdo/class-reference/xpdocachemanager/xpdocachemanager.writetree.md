@@ -4,13 +4,11 @@ _old_id: "1273"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.writetree"
 ---
 
-xPDOCacheManager::writeTree
----------------------------
+## xPDOCacheManager::writeTree
 
 Recursively writes a directory tree of files to the filesystem.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#writeTree>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#writeTree>
 <pre class="brush: php">
 boolean writeTree (string $dirname, [array $options = array()])
 
-```Example
--------
+```## Example
 
 Create a new directory on the FS.
 
@@ -27,8 +24,7 @@ Create a new directory on the FS.
 <pre class="brush: php">
 $xpdo->cacheManager->writeTree('/path/to/new/directory/');
 
-```See Also
---------
+```## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

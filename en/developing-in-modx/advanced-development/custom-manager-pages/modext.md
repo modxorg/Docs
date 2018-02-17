@@ -4,22 +4,22 @@ _old_id: "198"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext"
 ---
 
-<div>- [What is MODExt?](#MODExt-WhatisMODExt%3F)
+- [What is MODExt?](#MODExt-WhatisMODExt%3F)
 - [Commonly-Used Components](#MODExt-CommonlyUsedComponents)
   - [More MODExt Components](#MODExt-MoreMODExtComponents)
       - [xcheckbox](#MODExt-xcheckbox)
 - [Extending a MODExt Class](#MODExt-ExtendingaMODExtClass)
 - [See Also](#MODExt-SeeAlso)
 
-</div>What is MODExt?
----------------
+
+
+## What is MODExt?
 
 MODExt is an extension of the [ExtJS3 JavaScript Framework](http://www.sencha.com/products/extjs) that provides extra, customized-to-MODx functionality. It drives MODx Revolution's manager interface, and it is also available to developers wanting to use it in their CMP development. A developer simply needs to use Ext.extend on the MODx.\* class to instantly get the benefit of custom MODExt components.
 
 Why Ext JS? There are lots of Javascript libraries and frameworks out there, and all of them let you manipulate the DOM, but only a couple of them offer a mature UI library (the Yahoo User Interface and Ext JS are the biggest players in the field). Ext JS is well suited to creating a rich internet application such as the MODX manager.
 
-Commonly-Used Components
-------------------------
+## Commonly-Used Components
 
 There are a few components that are used throughout the MODx Manager, and will likely be used in CMPs
 
@@ -49,8 +49,7 @@ Of course, there are more MODExt components at your disposal. For a full list (a
 
 The xcheckbox xtype is an extension to the regular ExtJS checkbox added in MODX 2.1 that, when the checkbox is not checked, will send the value "0" instead of an empty string compared to the original checkbox form input.
 
-Extending a MODExt Class
-------------------------
+## Extending a MODExt Class
 
 Extending a MODExt component is actually quite simple. Let's extend the MODx.grid.Grid class to create our own custom grid, complete with a custom toolbar.
 
@@ -137,8 +136,7 @@ We then set up our fields (id, name, and menu), and our ColumnModel which refere
 
 Lastly, we create the top toolbar, consisting of a button. The handler creates a window used for creating a record to add to our database.
 
-See Also
---------
+## See Also
 
 - [ExtJS 3.4 API Documentation](http://docs.sencha.com/ext-js/3-4/#!/api)
 - [ExtJS 3.4 Examples](http://dev.sencha.com/deploy/ext-3.4.0/examples/)

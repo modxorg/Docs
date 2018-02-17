@@ -6,20 +6,17 @@ _old_uri: "2.x/developing-in-modx/advanced-development/developing-rest-servers"
 
  MODX 2.3 introduced a convenient method to develop RESTful APIs, on top of MODX. This is done with the modRestService class and modRestController derivatives and supports a whole lot of fancy features for interacting with xPDOObject instances. This document aims to provide you with the information you need to get started building your own API.
 
-Recommended Pre-Development Reading
------------------------------------
+## Recommended Pre-Development Reading
 
  Before building a RESTful API, it helps to know what a RESTful API really is and how they are supposed to work. There are a lot of resources available online, and Phil Sturgeon's " [Build APIs you won't hate](https://leanpub.com/build-apis-you-wont-hate)" is a great (e)book that can be useful to check out.
 
-In a Nutshell
--------------
+## In a Nutshell
 
 1. Create an `index.php` file that handles the loading of MODX, setting up the REST Service with the right configuration and passing on the request to the controller (see #3).
 2. Create a `.htaccess` file that directs all requests (in a subfolder or on a specific domain) to the `index.php` from #1.
 3. Create controllers for each of your endpoints
 
-1. Bootstrapping the API
-------------------------
+## 1. Bootstrapping the API
 
  The `modRestService` and `modRestController` classes will make your work a lot easier, but you do need to set up some basic code to hook it up. For this document, we will assume you are placing your API in a `/rest/` folder, adjust paths as necessary.
 
@@ -91,8 +88,7 @@ location @modx_rest {
 
 ``` Now we can get started with the actual API building!
 
-2. Building API Endpoints 
---------------------------
+## 2. Building API Endpoints 
 
  The actual API consists of a bunch of endpoints. If you want to build a proper RESTful API each endpoint would match a "resource" (not necessarily the kind from the left tree!), and the different HTTP verbs (GET, POST, PUT and DELETE) would be used to interact with specific objects. Say you're building an API for managing your to do list, you could have an endpoint "items" with the following actions:
 
@@ -139,8 +135,7 @@ class MyControllerItems extends modRestController {
 
  Now that you have your basic API running, it's time to start doing some real development and making it work the way you want it to.
 
-3. Making your Endpoints smarter
---------------------------------
+## 3. Making your Endpoints smarter
 
  The majority of the work following now boils down to making your endpoints smarter, and adding more of them. You will probably want to change the way your data is returned, filter out unwanted data and more like that. The modRestController has all the options and hooks for you to do just that.
 

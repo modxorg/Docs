@@ -4,7 +4,7 @@ _old_id: "1198"
 _old_uri: "2.x/advanced-features/object-validation"
 ---
 
-<div>- [What is Object Validation in xPDO?](#ObjectValidation-WhatisObjectValidationinxPDO%3F)
+- [What is Object Validation in xPDO?](#ObjectValidation-WhatisObjectValidationinxPDO%3F)
 - [How is it Done?](#ObjectValidation-HowisitDone%3F)
 - [Example Usage](#ObjectValidation-ExampleUsage)
 - [Rules](#ObjectValidation-Rules)
@@ -13,18 +13,17 @@ _old_uri: "2.x/advanced-features/object-validation"
   - [The 'xPDOValidationRule' Rule](#ObjectValidation-The%27xPDOValidationRule%27Rule)
 - [See Also](#ObjectValidation-SeeAlso)
 
-</div>What is Object Validation in xPDO?
-----------------------------------
+
+
+## What is Object Validation in xPDO?
 
 Object validation is done through xPDOValidator, xPDO's validation class. It's automatically accessible from any xPDOObject, via the getValidator method.
 
-How is it Done?
----------------
+## How is it Done?
 
 Validation can be done either via the XML schema, or during run-time by [xPDOValidator](/xpdo/2.x/class-reference/xpdovalidator "xPDOValidator") methods.
 
-Example Usage
--------------
+## Example Usage
 
 First, let's create our model with this object:
 
@@ -67,8 +66,7 @@ if ($validator->validate() == false) {
 
 > An error occurred on field "name": Please specify a name.
 
-Rules
------
+## Rules
 
 There are three different types of rules, 'callable', 'preg\_match', and 'xPDOValidationRule'.
 
@@ -107,7 +105,9 @@ if ($validator->validate() == false) {
 
 > An error occurred on field "number": Callable failed.
 
-<div class="note">You can also call class methods as well; if you have class A with method B, you can make the rule xml attribute be "A::B" to access the function.</div>### The 'preg\_match' Rule
+You can also call class methods as well; if you have class A with method B, you can make the rule xml attribute be "A::B" to access the function.
+
+### The 'preg\_match' Rule
 
 A preg\_match rule is simply a regular expression rule that must pass on a field in order for the object to validate. An example rule in the schema is like such - this one checks to see if the field contains the string 'php':
 
@@ -145,8 +145,9 @@ An xPDOValidationRule rule is a specific rule type that is based upon a class ex
 5. [xPDOMinValueValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdominvaluevalidationrule)
 6. [xPDOObjectExistsValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
 
-<div class="note">More documentation on these specific rules to come.</div>See Also
---------
+More documentation on these specific rules to come.
+
+## See Also
 
 1. [xPDOForeignKeyConstraint](/xpdo/2.x/advanced-features/object-validation/xpdoforeignkeyconstraint)
 2. [xPDOMaxLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxlengthvalidationrule)

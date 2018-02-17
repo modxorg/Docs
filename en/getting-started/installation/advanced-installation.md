@@ -4,7 +4,7 @@ _old_id: "17"
 _old_uri: "2.x/getting-started/installation/advanced-installation"
 ---
 
-<div>- [Installation Pre-Steps](#AdvancedInstallation-InstallationPreSteps)
+- [Installation Pre-Steps](#AdvancedInstallation-InstallationPreSteps)
   - [Renaming or Moving the Core](#AdvancedInstallation-RenamingorMovingtheCore)
   - [Changing the Configuration Key](#AdvancedInstallation-ChangingtheConfigurationKey)
 - [Advanced Options](#AdvancedInstallation-AdvancedOptions)
@@ -16,13 +16,16 @@ _old_uri: "2.x/getting-started/installation/advanced-installation"
 - [Post-Installation Summary](#AdvancedInstallation-PostInstallationSummary)
 - [See Also](#AdvancedInstallation-SeeAlso)
 
-</div>This is the tutorial for the advanced distribution of MODx. It is recommended to only install this distribution if:
+
+
+This is the tutorial for the advanced distribution of MODx. It is recommended to only install this distribution if:
 
 - You plan on renaming the manager/ or connectors/ directories, or move the core/ directory
 - You have SSH access or can easily move/make writable directories on your server.
 
-<div class="note">You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If after reading this, you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting-installation "Troubleshooting Installation") page.</div>Installation Pre-Steps
-----------------------
+You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If after reading this, you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting-installation "Troubleshooting Installation") page.
+
+## Installation Pre-Steps
 
 After you've [downloaded](getting-started/installation "Installation") MODx Revolution's advanced distribution, upload and extract it to your server. You should be left with two directories - core/ and setup/. From here, if you plan on moving the core/ directory, proceed to the next section. If you're not going to do so, or rename the config key, browse to **setup/** in your browser and skip to the [Advanced Options](#AdvancedInstallation-AdvancedOptions) section of this document.
 
@@ -48,8 +51,7 @@ To change it, simply click the link the install tells you to change the config k
 
 Specify a custom, unique config key and click next.
 
-Advanced Options
-----------------
+## Advanced Options
 
 You will now be presented with some options for install, similar to the [Basic Installation](getting-started/installation/basic-installation "Basic Installation") screen, but with two extra options at the bottom. 'New Installation' will be your only radio option available to check, which is what you want. Below that, you can choose to adjust the permissions for creating new files or folders in your MODx installation. The defaults should work fine, but if on a more restrictive server, you can change the folder/file perms to 0775/0664, respectively.
 
@@ -59,8 +61,7 @@ Below that, you will be presented with two checkbox options:
 
 These will be grayed out during new installations. (During upgrades, it is recommended that you uncheck these as well.) Click 'Next' to proceed to the next step.
 
-Database Options
-----------------
+## Database Options
 
 From here, you will get a form asking you for your database information:
 
@@ -86,31 +87,34 @@ For most users you can leave these values at what they are. However, if you need
 
 This form will now present you with a few fields for setting up your administrator user. Specify a username that you want to be the administrator username.
 
-<div class="note">MODx recommends **not** using 'admin', as this is a common administrator username and is often the first username hackers check.</div>From there, put in your email (or the email of your administrator) and specify a password. Click next when you're finished.
+MODx recommends **not** using 'admin', as this is a common administrator username and is often the first username hackers check.
 
-Context Configuration
----------------------
+From there, put in your email (or the email of your administrator) and specify a password. Click next when you're finished.
+
+## Context Configuration
 
 MODx will now present you with a detailed context installation screen. This is where you can configure the paths to your web context (the main context), as well as the directories for your connectors/ and manager/ folders. MODx recommends leaving the web/ context paths as they are, unless you have a special reason not to.
 
 Renaming your manager/ and connectors/ directories, however, can add an extra level of security to your site. Simply change the paths and URLs in the textfields provided. Note: If you do change the directories, the directories **above** any of those paths must be writable to allow MODx to write the manager/ and/or connectors/ directories to them.
 
-<div class="info">Make sure you change **both** the path and URL!</div>When done, click 'Next' to proceed.
+Make sure you change **both** the path and URL!
 
-Pre-Installation Checks
------------------------
+When done, click 'Next' to proceed.
+
+## Pre-Installation Checks
 
 MODx will then proceed with a list of checks to verify that your system is ready for installing. If any of these fail, you'll need to proceed with the directions that it suggests to make sure your environment meets the [Server Requirements](getting-started/server-requirements "Server Requirements") and has the correct directories writable.
 
 Once you're ready, and all the checks pass, click 'Install' to proceed.
 
-<div class="note">If you get a blank screen or cannot proceed after clicking 'Install', verify these steps: 1. Make sure the directories "/\[root\]", "/core/config", "/core/packages","/core/cache", and "/core/export" are writable. (root will be the actual directory you are installing to.)
+If you get a blank screen or cannot proceed after clicking 'Install', verify these steps: 1. Make sure the directories "/\[root\]", "/core/config", "/core/packages","/core/cache", and "/core/export" are writable. (root will be the actual directory you are installing to.)
 2. Make sure your php.ini setting sets memory\_limit to 128M, and max\_execution\_time to 120
 3. Ensure that MODx can create the manager and connectors directories; this is done by making the parents of those directories writable (since you can change where they are installed)
 4. Post a message in the [Revolution forum](http://modxcms.com/forums/index.php/board,280.0.html) regarding your issue. State your server setup and installation info, and we'll try and help you find a solution.
 
-</div>Post-Installation Summary
--------------------------
+
+
+## Post-Installation Summary
 
 MODx will then let you know if any errors occurred during install, and prompt you to attempt reinstallation should any of those errors have occurred.
 
@@ -122,8 +126,7 @@ MODx recommends that you make sure to remove the setup/ directory after installi
 
 When ready, click 'Login' to be presented with the Login form for the manager interface. You're finished!
 
-See Also
---------
+## See Also
 
 1. [Basic Installation](getting-started/installation/basic-installation)
   1. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)

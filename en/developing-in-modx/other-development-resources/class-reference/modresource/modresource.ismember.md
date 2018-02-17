@@ -4,21 +4,20 @@ _old_id: "1718"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modresource/modresource.ismember"
 ---
 
-modResource::isMember
----------------------
+## modResource::isMember
 
  States whether a resource is a member of a resource group or groups. You may specify either a string name of the resource group, or an array of resource group names.
 
-<div class="info"> This method is available with MODX v2.3 (most likely not in a patch release) </div>Syntax
-------
+ This method is available with MODX v2.3 (most likely not in a patch release) 
+
+## Syntax
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modresource.class.html#\\\\modResource::isMember()](http://api.modx.com/revolution/2.2/db_core_model_modx_modresource.class.html#\\modResource::isMember())
 
  ```
 <pre class="brush: php">boolean isMember (mixed $groups)
 
-```Example
--------
+```## Example
 
  Get a resource object:
 
@@ -40,7 +39,6 @@ modResource::isMember
  ```
 <pre class="brush: php">$resource->isMember(array('Marketing', 'Finances'), true);
 
-```See Also
---------
+```## See Also
 
 - [modResource](developing-in-modx/other-development-resources/class-reference/modresource "modResource")

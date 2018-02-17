@@ -4,18 +4,18 @@ _old_id: "83"
 _old_uri: "2.x/administering-your-site/customizing-the-manager"
 ---
 
-<div>- [What is Form Customization?](#CustomizingtheManager-WhatisFormCustomization%3F)
+- [What is Form Customization?](#CustomizingtheManager-WhatisFormCustomization%3F)
 - [How Does it Work?](#CustomizingtheManager-HowDoesitWork%3F)
   - [What Forms can I Customize?](#CustomizingtheManager-WhatFormscanICustomize%3F)
 - [See Also](#CustomizingtheManager-SeeAlso)
  
-</div>What is Form Customization?
----------------------------
+
+
+## What is Form Customization?
 
  Form Customization is a new feature that allows users to create Rules, which govern how manager pages render their forms in the MODX Revolution Manager. It is similar to ManagerManager in MODX Evolution.
 
- <object height="350" width="500"><param name="movie" value="https://www.youtube.com/v/iJB_IXg7NNc&hl=en&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed allowfullscreen="true" allowscriptaccess="always" flashvars="$flashVars" height="350" src="https://www.youtube.com/v/iJB_IXg7NNc&hl=en&fs=1" type="application/x-shockwave-flash" width="500"></embed></object>How Does it Work?
------------------
+ ## How Does it Work?
 
  Currently, Form Customization has 3 layers:
 
@@ -39,8 +39,7 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager"
 
  The Resource Create and Update pages can be customized at this time in Form Customization.
 
-See Also
---------
+## See Also
 
 1. [Customizing the Manager via Plugins](administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
 2. [Form Customization Profiles](administering-your-site/customizing-the-manager/form-customization-profiles)

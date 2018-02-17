@@ -6,8 +6,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/cre
 
 This brief tutorial will explain how you can make a client-proof "Related pages" template variable. This specific example will introduce you to several MODX subjects including writing custom [snippets](developing-in-modx/basic-development/snippets "Snippets") and using [custom output modifiers](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)"), however there are many different ways to achieve the same result. This tutorial will hopefully allow you to get a deeper understanding of several of the used concepts and help you further develop highly customizable content editing.
 
-Setting up the Template Variable
---------------------------------
+## Setting up the Template Variable
 
 Of course we will need a Template Variable. In the Manager, navigate to the Elements tab in the navigation structure and click the icon with a TV on it, or right click on the Template Variables section to create a new template variable. Give it a suitable name and caption (this tutorial assumes relatedPages).
 
@@ -27,8 +26,7 @@ You probably don't have a snippet called listMyResources yet, so let's create it
 
 \* You don't \*have\* to write a snippet, you could use getResources for it as well, but to introduce you to a number of interesting methods while we're at it you may want to write your own. .
 
-Creating the snippet
---------------------
+## Creating the snippet
 
 We will need to create a snippet that lists the appropriate resources, and in such a way that it makes sense to the TV input type. The Listbox will be expecting a string like the following:
 
@@ -93,8 +91,7 @@ foreach($resArray as $res) {
 $out = implode("||",$resources);
 return $out;
 
-```Presenting the related pages in your template
----------------------------------------------
+```## Presenting the related pages in your template
 
 You can just put the TV tag in your template, but most likely that will just give you a bunch of numbers, representing the IDs of the selected resources. You'll want to do a few things. First of, go back to your template variable and set the Output type to "delimiter". You will be giving the option to specify what your delimiter will be, for example a comma or two pipes. Let's set it as a comma for this tutorial.
 
@@ -200,8 +197,7 @@ return implode('',$output);
 
 ```This creates a list item with a link to the resource and its pagetitle as the title attribute. It will try to use the longtitle for the link text, but defaults to the pagetitle if the longtitle doesn't exist. It also uses the userinfo output modifier to add the fullname of the author of the resource to the list item. You can use any default resource field there.
 
-Further reading..
------------------
+## Further reading..
 
 - ?[Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types")
 - ?[Input and Output Filters](/display/revolution20/Input+and+Output+Filters "Input and Output Filters")

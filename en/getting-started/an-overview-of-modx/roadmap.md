@@ -12,8 +12,7 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/roadmap"
 
  [You can find a list of all planned releases, and assigned issues, here](https://github.com/modxcms/revolution/milestones).
 
-Last feature release: MODX Revolution 2.5.0
--------------------------------------------
+## Last feature release: MODX Revolution 2.5.0
 
  MODX Revolution 2.5 was [released in April 2016](https://modx.com/blog/2016/04/21/modx-revolution-2.5/). The following new features or improvements, among many others, [have been added to 2.5.0](https://github.com/modxcms/revolution/issues?q=milestone%3Av2.5.0-pl+is%3Aclosed) so far:
 
@@ -28,8 +27,7 @@ Last feature release: MODX Revolution 2.5.0
 - Ability to unpack zip files from the tree or media manager ([\#12775](https://github.com/modxcms/revolution/pull/12775))
 - Improved "out of the box" experience with a new base template
 
-Planned: MODX Revolution 2.6/2.7/3.0
-------------------------------------
+## Planned: MODX Revolution 2.6/2.7/3.0
 
 Before the end of 2017, an exciting new feature release is planned. This may be version 2.6 or 2.7, but can also be version 3.0 if it includes backwards incompatible features. In that case, the "MODX 3.0/Next" detailed below will become "MODX 4.0".
 
@@ -42,15 +40,13 @@ This feature release is expected to contain a refreshed manager design, as well 
 
  There are also contributions that have been marked to be included in 2.6, but which have not been tested and merged. [These can be viewed here](https://github.com/modxcms/revolution/pulls?q=is%3Aopen+is%3Apr+milestone%3Av2.6.0).
 
-Planned: Deprecation Release
-----------------------------
+## Planned: Deprecation Release
 
  Between today and the release of a 3.0 including breaking changes, there is another 2.x release expected which provides deprecation notices for features that will be removed in 3.0. This is meant to encourage users and developers to get their site and extras ready for 3.0 before its release.
 
  It's possible this release will be 2.6 or 2.7, but may even be 2.8.
 
-Planned: MODX Revolution 3.0/Next
----------------------------------
+## Planned: MODX Revolution 3.0/Next
 
  MODX Revolution 3.0 is the first major release since Revolution itself. Major releases include backwards incompatible changes, meaning that developers may need to change their 2.x extras in order to work in 3.0.
 

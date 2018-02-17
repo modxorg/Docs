@@ -4,19 +4,16 @@ _old_id: "403"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncategoryremove"
 ---
 
-Event: OnCategoryRemove
------------------------
+## Event: OnCategoryRemove
 
 Happens after a category is removed.
 
-Service: 2 - Manager Access Events   
+Service: 2 - Manager Access Events 
 Group: modCategory
 
-Event Parameters
-----------------
+## Event Parameters
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>category</td><td>A reference to the modCategory object.</td></tr></tbody></table>See Also
---------
+NameDescriptioncategoryA reference to the modCategory object.## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

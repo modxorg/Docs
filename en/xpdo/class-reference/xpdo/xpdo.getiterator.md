@@ -4,15 +4,13 @@ _old_id: "1243"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getiterator"
 ---
 
-xPDO::getIterator
------------------
+## xPDO::getIterator
 
  Retrieves an xPDOIterator representing an iterable collection of xPDOObjects by the specified xPDOCriteria.
 
  Use an xPDOIterator to loop over large result sets and work with one instance at a time. This greatly reduces memory usage over loading the entire collection of objects into memory at one time. It is also slightly faster.
 
-Syntax
-------
+## Syntax
 
  ```
 <pre class="brush: php">xPDOIterator getIterator (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
@@ -22,8 +20,7 @@ Syntax
  ```
 <pre class="brush: php"><object class="MyClassName" table="my_class_name" extends="xPDOObject">
 
-```Example
--------
+```## Example
 
  Get an iterator for a collection of Box objects with a width of 40.
 
@@ -55,8 +52,7 @@ if ($resourceObjs->valid()) {
     // this will not run
 }
 
-```See Also
---------
+```## See Also
 
 - [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
 - [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")

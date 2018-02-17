@@ -4,7 +4,7 @@ _old_id: "168"
 _old_uri: "2.x/developing-in-modx/advanced-development/internationalization"
 ---
 
-<div>- [An Overview](#Internationalization-AnOverview)
+- [An Overview](#Internationalization-AnOverview)
   - [Locales](#Internationalization-Locales)
 - [Lexicon Entries](#Internationalization-LexiconEntries)
 - [Loading and Using Lexicons](#Internationalization-LoadingandUsingLexicons)
@@ -17,13 +17,16 @@ _old_uri: "2.x/developing-in-modx/advanced-development/internationalization"
 - [Conclusion](#Internationalization-Conclusion)
 - [See Also](#Internationalization-SeeAlso)
 
-</div>An Overview
------------
+
+
+## An Overview
 
 Internationalization, or i18n, is the process of extrapolating text strings in a document to separate languages, so that the document may be viewed by a multitude of different languages without having to duplicate the page for every different language. Technically speaking, _internationalization_ refers to the process of _preparing_ code so that it can be translated; in MODX this process often boils down to isolating translatable strings into separate placeholders.
 
-<div class="info">**i18n**   
- The abbreviation **i18n** derives from the word "internationalization". It means "**i** plus 18 letters then **n**".</div>MODX Revolution supports i18n at the core level, through what it calls "Lexicons". A lexicon is simply a collection of the following:
+**i18n** 
+ The abbreviation **i18n** derives from the word "internationalization". It means "**i** plus 18 letters then **n**".
+
+MODX Revolution supports i18n at the core level, through what it calls "Lexicons". A lexicon is simply a collection of the following:
 
 - Languages (IANA format)
 - Topics
@@ -39,8 +42,7 @@ Some translation frameworks (such as [gettext](http://www.gnu.org/software/gette
 
 You could set a locale in the MODX system settings (or in the context settings, if you use i.e. Babel). But be sure that the MODX system locale uses an utf8 charset (i.e. de\_DE.utf8), otherwise the MODX backend will show some glitches.
 
-Lexicon Entries
----------------
+## Lexicon Entries
 
 A Lexicon Entry (or modLexiconEntry in the MODX model) is simply a single translation of a string into another language. It has a few important fields we'll note:
 
@@ -49,8 +51,7 @@ A Lexicon Entry (or modLexiconEntry in the MODX model) is simply a single transl
 - topic - The topic that this entry belongs to.
 - language - The IANA key of the language this Entry is translated into.
 
-Loading and Using Lexicons
---------------------------
+## Loading and Using Lexicons
 
 Lexicons must first be loaded if they are to be used in the front-end; however, this is a trivial process.
 
@@ -63,11 +64,15 @@ To use a Lexicon Entry in a tag, use the following syntax:
 
 ```The 'language', 'topic', and 'namespace' properties are optional; if the tag has been run earlier on the page with the same 'topic' property value, that topic will have already been loaded. If 'topic' is not specified, it will assume 'default'. If 'namespace' is not specified, it will assume 'core', or the MODX Revolution Core Namespace.
 
-<div class="note">It is preferable not to use the 'language' property for every tag should you be changing languages; this is best done through a System or Context Setting for the entire site or context. The best option is different contexts for each language. But again, MODX leaves you with the preference.</div>If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you simply specify the key ("userinput") as tag property and pass what you want it replaced with in the value. Example:
+It is preferable not to use the 'language' property for every tag should you be changing languages; this is best done through a System or Context Setting for the entire site or context. The best option is different contexts for each language. But again, MODX leaves you with the preference.
+
+If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you simply specify the key ("userinput") as tag property and pass what you want it replaced with in the value. Example:
 
 \[\[!%key? &topic=`topicname` &namespace=`namespace\_name` &language=`en` &userinput=`amazing`\]\]
 
-<div class="note">Note our ! prefix for the Tag; this makes sure the Tag isn't cached, since our string might be changing before the page cache does.</div>### Lexicons in PHP
+Note our ! prefix for the Tag; this makes sure the Tag isn't cached, since our string might be changing before the page cache does.
+
+### Lexicons in PHP
 
 Using lexicons in code is fairly simple; first off you'll want to make sure the modLexicon class is loaded by instantiating it as a service:
 
@@ -130,17 +135,18 @@ If you have placeholders in your lexicon string, for example "This is \[\[+useri
 ```
 <pre class="brush: php"> _('lexicon.key',{ userinput: 'amazing' })
 
-```Lexicons for Settings
----------------------
+```## Lexicons for Settings
 
 So say you're creating System Settings for your 3rd Party Component (3PC). The syntax for auto-loading them into the Revolution Settings grid is simple. Let's say we have a Namespace for our Component called 'gallery', and a setting called 'gallery.display\_thumbs'
 
-<div class="info">**Recommended Format**   
+**Recommended Format** 
  The recommended format for 3PC developers is to use a prefix which identifies the parent component: $_lang\['\_name-of-component_.key-name'\] = 'Your translation here.';
 
 This helps to prevent name collisions; keep in mind that the **$\_lang** array may have thousands of entries, so you want to make sure each entry is unique.
 
-</div>To add a lexicon name and description, we'd simply add the following 2 strings into our 'default' Lexicon Topic for our 'gallery' Namespace:
+
+
+To add a lexicon name and description, we'd simply add the following 2 strings into our 'default' Lexicon Topic for our 'gallery' Namespace:
 
 ```
 <pre class="brush: php">$_lang['setting_gallery.display_thumbs'] = 'Display Thumbnails';
@@ -148,12 +154,10 @@ $_lang['setting_gallery.display_thumbs_desc'] = 'When set to true, this will dis
 
 ```And we're done!
 
-Conclusion
-----------
+## Conclusion
 
 Lexicons provide MODX Revolution users with a plethora of avenues and options to do their i18n work. Lexicons are composed of multiple Entries for each Language, and are grouped into Topics. They can be called by PHP method calls, or by MODX Tags.
 
-See Also
---------
+## See Also
 
 - [modX.lexicon](developing-in-modx/other-development-resources/class-reference/modx/modx.lexicon "modX.lexicon")

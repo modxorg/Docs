@@ -4,13 +4,11 @@ _old_id: "1180"
 _old_uri: "2.x/class-reference/xpdoobject/metadata-accessors/getselectcolumns"
 ---
 
-xPDOObject::getSelectColumns()
-------------------------------
+## xPDOObject::getSelectColumns()
 
 Get a set of column names from an xPDOObject for use in SQL queries.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getSelectColumns>
 
@@ -25,8 +23,7 @@ static string getSelectColumns (
    [boolean $exclude = false]
 )
 
-```Examples
---------
+```## Examples
 
 ```
 <pre class="brush: php">

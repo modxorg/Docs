@@ -4,13 +4,11 @@ _old_id: "1342"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/moduser/moduser.endsession"
 ---
 
-modUser::endSession
--------------------
+## modUser::endSession
 
 Ends a user session completely, including all contexts.
 
-Syntax
-------
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::endSession()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::endSession())
 
@@ -18,8 +16,7 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.clas
 <pre class="brush: php">
 void endSession ()
 
-```Example
--------
+```## Example
 
 End the user's session.
 
@@ -27,7 +24,6 @@ End the user's session.
 <pre class="brush: php">
 $user->endSession();
 
-```See Also
---------
+```## See Also
 
 - [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")

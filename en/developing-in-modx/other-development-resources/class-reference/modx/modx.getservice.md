@@ -4,15 +4,13 @@ _old_id: "1075"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getservice"
 ---
 
-modX::getService
-----------------
+## modX::getService
 
  Load and return a named service class instance. Returns either a reference to the service class instance or null if it could not be loaded. You can think of this is a simple dependency injector.
 
  Note that the class is instantiated only once: subsequent calls return a reference to the stored instance.
 
-Syntax
-------
+## Syntax
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#\\modX::getService()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getService())
 
@@ -24,8 +22,7 @@ Syntax
 - `$path` : full path to the directory containing the class in question.
 - `$params` : passed as the 2nd argument to the constructor. The first argument is always a reference to xPDO/MODX.
 
-Examples
---------
+## Examples
 
  Get the modSmarty service.
 
@@ -54,8 +51,7 @@ if(!$Product = $this->modx->getService('mypkg.product','mypkg.Product',MODX_CORE
 
 ```getService may have trouble with PHP namespaces.
 
-See Also
---------
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [MODx Services](developing-in-modx/advanced-development/modx-services "MODx Services")

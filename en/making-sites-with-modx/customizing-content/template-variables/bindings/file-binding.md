@@ -4,13 +4,11 @@ _old_id: "125"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/bindings/file-binding"
 ---
 
-What is the @FILE Binding?
---------------------------
+## What is the @FILE Binding?
 
 The @FILE Binding returns the contents of any specified file.
 
-Syntax
-------
+## Syntax
 
 ```
 <pre class="brush: php">
@@ -20,8 +18,7 @@ Syntax
 
 The **@FILE** command is very useful in cases where we might want to generate data that's available in file. By using the **||** and **==** characters as a delimiter we could interface with any external database application.
 
-Usage
------
+## Usage
 
 For example: Let's say we have a text file called headline\_news.txt that is external to our database system. This file is constantly being updated with up-to-the-minute news items by another external system. We want to display these news items on our website for our visitors to see. How can we do that?
 
@@ -37,8 +34,7 @@ Let's say each headline in the headline\_news.txt file is separated by a new-lin
 
 And voila! We have our dynamically rendering @FILE binding.
 
-See Also
---------
+## See Also
 
 - [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
 - [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")

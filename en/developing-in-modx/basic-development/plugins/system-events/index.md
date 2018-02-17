@@ -4,20 +4,20 @@ _old_id: "298"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/"
 ---
 
-<div>- [What are System Events?](#SystemEvents-WhatareSystemEvents%3F)
+- [What are System Events?](#SystemEvents-WhatareSystemEvents%3F)
 - [The Model of a System Event](#SystemEvents-TheModelofaSystemEvent)
   - [Service Types](#SystemEvents-ServiceTypes)
 - [Available Events](#SystemEvents-AvailableEvents)
 - [Custom Events](#custom_events)
 - [See Also](#SystemEvents-SeeAlso)
  
-</div>What are System Events?
------------------------
+
+
+## What are System Events?
 
  System Events are the events in MODx that [Plugins](developing-in-modx/basic-development/plugins "Plugins") are registered to. They are 'fired' throughout the MODx code, allowing Plugins to interact with MODx code and add custom functionality without hacking core code.
 
-The Model of a System Event
----------------------------
+## The Model of a System Event
 
  The system events table is found under {table\_prefix}\_system\_eventnames, and has the following fields:
 
@@ -39,10 +39,11 @@ The Model of a System Event
 
  3 is not fired in the 'mgr' context; 2 is not fired in any context but 'mgr'.
 
-Available Events
-----------------
+## Available Events
 
-<div class="note"> This is not an exhaustive list as events are still being documented. Thank you for your patience. The TV, Template and Snippet events are still to be documented. For a complete list, please either view a Plugin in the manager and see the System Events tab, or view [here](https://github.com/modxcms/revolution/blob/develop/_build/data/transport.core.events.php). Note also that all WUsr (web-user) events have been removed. </div>1. [OnBeforeCacheUpdate](developing-in-modx/basic-development/plugins/system-events/onbeforecacheupdate)
+ This is not an exhaustive list as events are still being documented. Thank you for your patience. The TV, Template and Snippet events are still to be documented. For a complete list, please either view a Plugin in the manager and see the System Events tab, or view [here](https://github.com/modxcms/revolution/blob/develop/_build/data/transport.core.events.php). Note also that all WUsr (web-user) events have been removed. 
+
+1. [OnBeforeCacheUpdate](developing-in-modx/basic-development/plugins/system-events/onbeforecacheupdate)
 2. [OnBeforeChunkFormDelete](developing-in-modx/basic-development/plugins/system-events/onbeforechunkformdelete)
 3. [OnBeforeChunkFormSave](developing-in-modx/basic-development/plugins/system-events/onbeforechunkformsave)
 4. [OnBeforeDocFormDelete](developing-in-modx/basic-development/plugins/system-events/onbeforedocformdelete)
@@ -160,8 +161,7 @@ Available Events
 116. [OnWebPageInit](developing-in-modx/basic-development/plugins/system-events/onwebpageinit)
 117. [OnWebPagePrerender](developing-in-modx/basic-development/plugins/system-events/onwebpageprerender)
 
-Custom Events
--------------
+## Custom Events
 
  You can create your own custom events, but there is currently no GUI available for this; instead you must use the API. Events have the following attributes:
 
@@ -190,8 +190,7 @@ $modx->invokeEvent('OnMyCustomEvent', $options);
 <pre class="brush: php">
 //... TODO...
 
-```See Also
---------
+```## See Also
 
 1. [System Events](developing-in-modx/basic-development/plugins/system-events)
   1. [OnBeforeCacheUpdate](developing-in-modx/basic-development/plugins/system-events/onbeforecacheupdate)

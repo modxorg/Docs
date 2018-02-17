@@ -4,8 +4,7 @@ _old_id: "1149"
 _old_uri: "2.x/getting-started/fundamentals/xpdo,-the-class/as-pdo-wrapper"
 ---
 
-What is it?
------------
+## What is it?
 
 PDO is the new standard data access layer for PHP, and it's capabilities are at the core of what xPDO is all about. An instance of PDO essentially represents a connection to a database, and by wrapping a PDO instance, essentially making it a "service" object, xPDO can provide a rich buffer between your object model and the persistence services responsible for handling all database communication.
 

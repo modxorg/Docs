@@ -4,7 +4,7 @@ _old_id: "1080"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid"
 ---
 
-<div>- [MODx.grid.Grid](#MODx.grid.Grid-MODx.grid.Grid)
+- [MODx.grid.Grid](#MODx.grid.Grid-MODx.grid.Grid)
 - [MODExt-Specific Parameters](#MODx.grid.Grid-MODExtSpecificParameters)
 - [Custom Events](#MODx.grid.Grid-CustomEvents)
 - [Other Unique Functions](#MODx.grid.Grid-OtherUniqueFunctions)
@@ -17,10 +17,11 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
   - [encode](#MODx.grid.Grid-encode)
 - [See Also](#MODx.grid.Grid-SeeAlso)
 
-</div>MODx.grid.Grid
---------------
 
-**Extends:** Ext.grid.EditorGridPanel   
+
+## MODx.grid.Grid
+
+**Extends:** Ext.grid.EditorGridPanel 
 **Key Features:** Connector functionality; easily integrate toolbar items and MODx.Window; built-in context menu functionality.
 
 When instantiating this into a tabbed interface, it's recommended to set preventRender: true in its config to prevent JS rendering issues.
@@ -61,8 +62,9 @@ getMenu: function() {
 
 ```Returning an array of items in the getMenu method will automatically add the items to the context menu.
 
-<div class="note">Revolution 2.0.x grids cannot simply return the array - they will need to call "this.addContextMenuItem(m);" before the end of the function. Returning the array was added in 2.1.</div>MODExt-Specific Parameters
---------------------------
+Revolution 2.0.x grids cannot simply return the array - they will need to call "this.addContextMenuItem(m);" before the end of the function. Returning the array was added in 2.1.
+
+## MODExt-Specific Parameters
 
 First off, MODx.grid.Grid pulls its data remotely, via the "url" config parameter. It loads the baseParams into the call as well, which defaults to:
 
@@ -74,15 +76,13 @@ baseParams: { action: 'getList' }
 
 MODx.grid.Grid adds a few unique parameters not found in typical Ext.grid.Grid objects:
 
-<table><tbody><tr><th>Name</th><th>Description</th><th>Default</th></tr><tr><td>url</td><td>The URL of the connector to load this grid from.</td><td> </td></tr><tr><td>paging</td><td>If true, will enable paging and add the PagingToolbar automatically to the bottom of the grid.</td><td>true</td></tr><tr><td>pageSize</td><td>The number of items to page by, if paging == true. Defaults to the System Setting of "default\_per\_page", which is 20.</td><td>20</td></tr><tr><td>pageStart</td><td>The index to start the paging on.</td><td>0</td></tr><tr><td>showPerPage</td><td>Whether or not to show the "Per Page" textbox. Defaults to true.</td><td>true</td></tr><tr><td>pagingItems</td><td>Any items to add to the right of the "Per Page" textbox on the paging toolbar. Useful for adding extra buttons.</td><td>\[\]</td></tr><tr><td>grouping</td><td>If true, will automatically enable grouping on this grid.</td><td>false</td></tr><tr><td>groupBy</td><td>The column to group by. Note that the column must be in the column model.</td><td>name</td></tr><tr><td>pluralText</td><td>The text for a plural amount of items in the grouped column, ie: "Rows"</td><td>Records</td></tr><tr><td>singleText</td><td>The text for a single amount of items in the grouped column, ie: "Row"</td><td>Record</td></tr><tr><td>sortBy</td><td>The default column to sort by when grouping and remoteSort are true.</td><td>id</td></tr><tr><td>sortDir</td><td>The default column to sort by when grouping and remoteSort are true.</td><td>ASC</td></tr><tr><td>preventRender</td><td>Prevent the grid from rendering. Useful when putting the grid in panels or tabs.</td><td>1</td></tr><tr><td>autosave</td><td>If true, will automatically fire the 'updateFromGrid' processor (or the processor in the saveUrl config param) for this connector when doing in-line editing in the grid.</td><td>false</td></tr><tr><td>saveUrl</td><td>The connector URL to call when inline-editing with autosave on.</td><td>The value of config.url</td></tr><tr><td>save\_action</td><td>The processor action to call when inline-editing with autosave on.</td><td>updateFromGrid</td></tr><tr><td>saveParams</td><td>A JS object of parameters to also send to the saveUrl when auto-saving or when using MODx.grid.Grid's remove method.</td><td>{}</td></tr><tr><td>save\_callback</td><td>After auto-saving, run this method.</td><td>null</td></tr><tr><td>preventSaveRefresh</td><td>If autosave is true, after saving, will prevent the grid from refreshing. Makes for a more seamless editing experience.</td><td>1</td></tr><tr><td>primaryKey</td><td>If your grid items have a primary key that's not ID, set it here.</td><td>id</td></tr><tr><td>storeId</td><td>A custom ID to give the store for this grid. Will default to a unique Ext ID.</td><td>Ext.id()</td></tr></tbody></table>For a complete list of all parameters not listed here for grids, see the [ExtJS](http://sencha.com) documentation.
+NameDescriptionDefaulturlThe URL of the connector to load this grid from. pagingIf true, will enable paging and add the PagingToolbar automatically to the bottom of the grid.truepageSizeThe number of items to page by, if paging == true. Defaults to the System Setting of "default\_per\_page", which is 20.20pageStartThe index to start the paging on.0showPerPageWhether or not to show the "Per Page" textbox. Defaults to true.truepagingItemsAny items to add to the right of the "Per Page" textbox on the paging toolbar. Useful for adding extra buttons.\[\]groupingIf true, will automatically enable grouping on this grid.falsegroupByThe column to group by. Note that the column must be in the column model.namepluralTextThe text for a plural amount of items in the grouped column, ie: "Rows"RecordssingleTextThe text for a single amount of items in the grouped column, ie: "Row"RecordsortByThe default column to sort by when grouping and remoteSort are true.idsortDirThe default column to sort by when grouping and remoteSort are true.ASCpreventRenderPrevent the grid from rendering. Useful when putting the grid in panels or tabs.1autosaveIf true, will automatically fire the 'updateFromGrid' processor (or the processor in the saveUrl config param) for this connector when doing in-line editing in the grid.falsesaveUrlThe connector URL to call when inline-editing with autosave on.The value of config.urlsave\_actionThe processor action to call when inline-editing with autosave on.updateFromGridsaveParamsA JS object of parameters to also send to the saveUrl when auto-saving or when using MODx.grid.Grid's remove method.{}save\_callbackAfter auto-saving, run this method.nullpreventSaveRefreshIf autosave is true, after saving, will prevent the grid from refreshing. Makes for a more seamless editing experience.1primaryKeyIf your grid items have a primary key that's not ID, set it here.idstoreIdA custom ID to give the store for this grid. Will default to a unique Ext ID.Ext.id()For a complete list of all parameters not listed here for grids, see the [ExtJS](http://sencha.com) documentation.
 
-Custom Events
--------------
+## Custom Events
 
 MODx.grid.Grid adds a few extra events not found in Ext.grid.Grid objects:
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>beforeRemoveRow</td><td>Fires before a row is removed when calling the remove() method on the grid (usually done in a context menu)</td></tr><tr><td>afterRemoveRow</td><td>Fires after a row is removed when calling the remove() method on the grid (usually done in a context menu)</td></tr><tr><td>afterAutoSave</td><td>Fires after an inline-edit save is done, if autosave is set to true.</td></tr></tbody></table>Other Unique Functions
-----------------------
+NameDescriptionbeforeRemoveRowFires before a row is removed when calling the remove() method on the grid (usually done in a context menu)afterRemoveRowFires after a row is removed when calling the remove() method on the grid (usually done in a context menu)afterAutoSaveFires after an inline-edit save is done, if autosave is set to true.## Other Unique Functions
 
 MODExt grids come with quite a few other features.
 
@@ -135,8 +135,7 @@ This will return a JSON object of all modified (dirty) rows and fields. Useful i
 
 This will return a JSON object of all rows.
 
-See Also
---------
+## See Also
 
 1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
 2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)

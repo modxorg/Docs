@@ -4,13 +4,11 @@ _old_id: "1186"
 _old_uri: "2.x/class-reference/xpdoobject/state-accessors/isdirty"
 ---
 
-xPDOObject::isDirty()
----------------------
+## xPDOObject::isDirty()
 
 Indicates if an object field has been modified (or never saved).
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isDirty>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isDirty>
 <pre class="brush: php">
 boolean isDirty (string $key)
 
-```Examples
---------
+```## Examples
 
 Test if a Skrewt object has been modified.
 

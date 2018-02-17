@@ -4,8 +4,7 @@ _old_id: "243"
 _old_uri: "2.x/administering-your-site/security/policies"
 ---
 
-What is an Access Policy?
--------------------------
+## What is an Access Policy?
 
  An Access Policy is a set of [Permissions](administering-your-site/security/policies/permissions "Permissions") containing one or many Permissions, as defined in the manager. By default MODX comes with pre-configured Access Policies:
 
@@ -20,8 +19,9 @@ What is an Access Policy?
 - **Object**: An Object policy with all permissions.
 - **Resource**: MODX Resource Policy with all attributes.
 
-<div class="warning"> If you customize any of the above default Access Policies, duplicate (and rename) them before customizing! If you don't do that all customizations will be lost when updating MODX to a newer version as they get overridden by the setup script. </div>Creating and Editing
---------------------
+ If you customize any of the above default Access Policies, duplicate (and rename) them before customizing! If you don't do that all customizations will be lost when updating MODX to a newer version as they get overridden by the setup script. 
+
+## Creating and Editing
 
  To create an Access Policy in the manager, navigate to
 
@@ -29,8 +29,7 @@ What is an Access Policy?
 
  From there you can add new policies. To edit an Access Policy in the manager, simply right-click the Policy you want to edit.
 
-Usage
------
+## Usage
 
  Policies can be used in a myriad of different ways. Here are 3 example usages that come by default in MODx:
 
@@ -58,8 +57,7 @@ Usage
 
  This would allow only Users in the "Developers" User Group access to see Elements in the "Gallery" Category.
 
-Examples
---------
+## Examples
 
  Here's an example custom policy:
 
@@ -71,8 +69,7 @@ Examples
 
  Any User that had access to this Policy would have the permissions 'view\_accounts' and 'save\_accounts'.
 
-See Also
---------
+## See Also
 
 1. [Users](administering-your-site/security/users)
 2. [User Groups](administering-your-site/security/user-groups)

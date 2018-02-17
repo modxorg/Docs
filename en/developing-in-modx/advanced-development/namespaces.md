@@ -4,13 +4,11 @@ _old_id: "208"
 _old_uri: "2.x/developing-in-modx/advanced-development/namespaces"
 ---
 
-What are Namespaces?
---------------------
+## What are Namespaces?
 
 Namespaces are organizational elements for Components. They relate lexicon strings and packages to one another, as well as provide a basic way for Revolution to know what objects belong to what package.
 
-Usage
------
+## Usage
 
 Revolution uses namespace paths to determine where to load 3rd Party Component files for custom manager pages, as well as managing custom language strings for those 3rd Party Components.
 

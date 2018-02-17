@@ -4,13 +4,11 @@ _old_id: "1146"
 _old_uri: "2.x/class-reference/xpdoobject/validation/addvalidationrule"
 ---
 
-xPDOObject::addValidationRule()
--------------------------------
+## xPDOObject::addValidationRule()
 
 Add a validation rule to an object field for this instance.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#addValidationRule>
 
@@ -24,8 +22,7 @@ void addValidationRule (
    [array $parameters = array()]
 )
 
-```Examples
---------
+```## Examples
 
 ```
 <pre class="brush: php">

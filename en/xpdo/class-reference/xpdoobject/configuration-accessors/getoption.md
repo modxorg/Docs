@@ -4,13 +4,11 @@ _old_id: "1177"
 _old_uri: "2.x/class-reference/xpdoobject/configuration-accessors/getoption"
 ---
 
-xPDOObject::getOption()
------------------------
+## xPDOObject::getOption()
 
 Get an option value for this instance of an xPDOObject, using xPDO options if no instance specific option exists.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getOption>
 
@@ -23,8 +21,7 @@ mixed getOption (string $key [, array|null $options [, mixed $default [, boolean
 - $default: the value to return when the key was not found.
 - $skipEmpty: when set to true, the $default will also be returned if the $key's value is an empty string. **_Added in xPDO 2.2.1 / MODX 2.2.0-rc2_**.
 
-Examples
---------
+## Examples
 
 ### Simple Option Retrieval
 

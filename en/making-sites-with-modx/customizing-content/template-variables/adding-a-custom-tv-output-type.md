@@ -4,8 +4,10 @@ _old_id: "12"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-output-type"
 ---
 
-<div class="warning">**Only use this documentation for pre-2.2 or core submissions.**  
-Refer to the [Adding a Custom TV Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2 "Adding a Custom TV Type - MODX 2.2") doc for the proper way to build custom TVs in 2.2 which allows easy packaging.</div><div>- [What are TV Output Types?](#AddingaCustomTVOutputType-WhatareTVOutputTypes%3F)
+**Only use this documentation for pre-2.2 or core submissions.**
+Refer to the [Adding a Custom TV Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2 "Adding a Custom TV Type - MODX 2.2") doc for the proper way to build custom TVs in 2.2 which allows easy packaging.
+
+- [What are TV Output Types?](#AddingaCustomTVOutputType-WhatareTVOutputTypes%3F)
 - [Creating the Files](#AddingaCustomTVOutputType-CreatingtheFiles)
   - [Setting up the Input Properties Controller](#AddingaCustomTVOutputType-SettinguptheInputPropertiesController)
   - [Setting up the Input Properties Template](#AddingaCustomTVOutputType-SettinguptheInputPropertiesTemplate)
@@ -13,15 +15,15 @@ Refer to the [Adding a Custom TV Type](making-sites-with-modx/customizing-conten
 - [Using the Custom TV Output Type](#AddingaCustomTVOutputType-UsingtheCustomTVOutputType)
 - [See Also](#AddingaCustomTVOutputType-SeeAlso)
 
-</div>What are TV Output Types?
--------------------------
+
+
+## What are TV Output Types?
 
 TV Output Types allow you to output [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") in different markup and formats. Some examples include outputting a TV value as an image, URL, HTML tag, date, etc.
 
 MODx Revolution lets you create custom output types fairly easily.
 
-Creating the Files
-------------------
+## Creating the Files
 
 Let's create a custom TV Output Type called "button". This will render an input button (or more than one) with a specified value and an optional name, with some other fields for attributes. You'll need 3 files:
 
@@ -102,8 +104,10 @@ MODx.load({
 
 ```The key way these save is that each field is prepended with 'prop\_' in its name. This tells MODx to save this field in the TV's output properties. Make sure you specify your fields with this prefix!
 
-<div class="note">You don't have to use ExtJS, however - you can use just straight HTML - it's totally up to you.   
-Note that if you created another manager theme, you'd have to create a properties tpl for that theme as well.</div>### Setting up the Output Controller
+You don't have to use ExtJS, however - you can use just straight HTML - it's totally up to you. 
+Note that if you created another manager theme, you'd have to create a properties tpl for that theme as well.
+
+### Setting up the Output Controller
 
 Now we get into the good stuff. This controller will handle exactly how the button is outputted. Our file looks like this (comments inline):
 
@@ -141,8 +145,7 @@ foreach ($buttons as $button) {
 
 return $o;
 
-```Using the Custom TV Output Type
--------------------------------
+```## Using the Custom TV Output Type
 
 So, how does it look? Well, it should render an output form like this when editing the TV - I've added some custom values to it as well:
 
@@ -162,8 +165,7 @@ And we can examine the HTML source:
 
 And there you go! A custom TV output type!
 
-See Also
---------
+## See Also
 
 1. [Creating a Template Variable](making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
 2. [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings)

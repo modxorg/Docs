@@ -4,13 +4,11 @@ _old_id: "1103"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.sendredirect"
 ---
 
-modX::sendRedirect
-------------------
+## modX::sendRedirect
 
 Sends a redirect to the specified URL using the specified method.
 
-**Syntax**
-----------
+## **Syntax**
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendRedirect()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendRedirect())
 
@@ -31,11 +29,10 @@ $options accepts an array with one or more of the following key/value pairs:
 - responseCode which needs to be the proper HTTP response, so not just "301" or "302". It defaults to HTTP/1.1 302 Moved Temporarily, but you could set it to "HTTP/1.1 301 Moved Permanently" for a 301-style redirect.
 - count\_attempts indicates the number of attempts to redirect before halting.
 
-$type, which is deprecated and should not be used, is the same as the type $options array key.   
+$type, which is deprecated and should not be used, is the same as the type $options array key. 
 $responseCode, which is deprecated and should not be used, is the same as the responseCode $options array key.
 
-Examples
---------
+## Examples
 
 Send a redirection request to the Resource with ID 54.
 
@@ -56,8 +53,7 @@ $modx->sendRedirect('http://modx.com',array('type' => 'REDIRECT_META'));
 <pre class="brush: php">
 $modx->sendRedirect('http://modx.com',array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
 
-```See Also
---------
+```## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.makeUrl](developing-in-modx/other-development-resources/class-reference/modx/modx.makeurl "modX.makeUrl")

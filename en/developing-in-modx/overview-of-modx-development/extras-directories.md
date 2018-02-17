@@ -11,8 +11,7 @@ Extras are most commonly stored in 2 directories when they are installed:
 
 Why the separation? Well, since MODX users can move the core outside the webroot, separating out the non-accessible files into core/components allows MODX developers to add an extra level of security to their Extras.
 
-See Also
---------
+## See Also
 
 1. [Developer Introduction](developing-in-modx/overview-of-modx-development/developer-introduction)
   1. [Getting Started Developing](developing-in-modx/overview-of-modx-development/developer-introduction/getting-started-developing)

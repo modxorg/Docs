@@ -4,13 +4,11 @@ _old_id: "1179"
 _old_uri: "2.x/class-reference/xpdoobject/metadata-accessors/getpktype"
 ---
 
-xPDOObject::getPKType()
------------------------
+## xPDOObject::getPKType()
 
 Gets the type of the primary key field for the object.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getPKType>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getPKType>
 <pre class="brush: php">
 string getPKType()
 
-```Examples
---------
+```## Examples
 
 Grabs the PK type of a table of Resources, which have an auto\_increment ID field:
 

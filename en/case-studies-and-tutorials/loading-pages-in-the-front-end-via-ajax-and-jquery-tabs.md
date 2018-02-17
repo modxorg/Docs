@@ -4,7 +4,7 @@ _old_id: "172"
 _old_uri: "2.x/case-studies-and-tutorials/loading-pages-in-the-front-end-via-ajax-and-jquery-tabs"
 ---
 
-<div>- [The Problem](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-TheProblem)
+- [The Problem](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-TheProblem)
 - [Creating the Resources](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-CreatingtheResources)
 - [Doing the Front-End Loading](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-DoingtheFrontEndLoading)
 - [Wait, I want the Page Titles as the tab headers!](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-Wait%2CIwantthePageTitlesasthetabheaders%5C%21)
@@ -13,18 +13,17 @@ _old_uri: "2.x/case-studies-and-tutorials/loading-pages-in-the-front-end-via-aja
   - [Using a getField Snippet](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-UsingagetFieldSnippet)
 - [Conclusion](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-Conclusion)
 
-</div>The Problem
------------
+
+
+## The Problem
 
  We want in our site to use [jQuery's tabs](http://jqueryui.com/demos/tabs/) to load our Resources via AJAX. How do we do that in MODx? This tutorial will show you just how easy it is to accomplish this in MODx Revolution.
 
-Creating the Resources
-----------------------
+## Creating the Resources
 
  In the Resources you want to load via the tabs, you'll need to just create all your Resources with the Template being **blank** (or a minimal template with only the things you want inside the tabs). This will make sure that we're not loading anything besides the wanted material - you wouldn't want to load your whole page header and footer into each tab!
 
-Doing the Front-End Loading
----------------------------
+## Doing the Front-End Loading
 
  Now we'll use jQuery's fun tabs() command to create the front-end loading system. The code would look something like this (pulled from jquery UI's docs):
 
@@ -42,8 +41,7 @@ $(function() { $("#tabs").tabs(); });
 
 ``` Great! So this loads the pages via Ajax.
 
-Wait, I want the Page Titles as the tab headers!
-------------------------------------------------
+## Wait, I want the Page Titles as the tab headers!
 
  There are a few ways you can do this; one, you can use [getResources](/extras/revo/getresources "getResources"), [Wayfinder](/extras/evo/wayfinder "Wayfinder"), or use a getField snippet.
 
@@ -139,8 +137,7 @@ $(function() { $("#tabs").tabs(); });
         </ul>
 </div>
 
-```Conclusion
-----------
+```## Conclusion
 
  Note that all you're doing is pointing the href tags to the actual document IDs, just like a normal link. The trick is you're making your Template for the Documents be blank (or minimal) so that it only loads the parsed content itself.
 

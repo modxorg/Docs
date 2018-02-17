@@ -4,7 +4,7 @@ _old_id: "134"
 _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customization-sets"
 ---
 
-<div>- [What is a Form Customization Set?](#FormCustomizationSets-WhatisaFormCustomizationSet%3F)
+- [What is a Form Customization Set?](#FormCustomizationSets-WhatisaFormCustomizationSet%3F)
   - [Restricting to a Template](#FormCustomizationSets-RestrictingtoaTemplate)
   - [Using Constraints](#FormCustomizationSets-UsingConstraints)
 - [Making Set Rules](#FormCustomizationSets-MakingSetRules)
@@ -14,8 +14,9 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customizatio
 - [Editing Sets via XML](#FormCustomizationSets-EditingSetsviaXML)
 - [See Also](#FormCustomizationSets-SeeAlso)
 
-</div>What is a Form Customization Set?
----------------------------------
+
+
+## What is a Form Customization Set?
 
 A Form Customization Set is a collection of Rules that occur for a specific page (action) in the Manager. Currently, Sets can apply to either the Resource Create or Update pages. Think of them like a way of collecting all your "Whenever the Create Resource page loads, all these fields change." rules. Sets can also be marked 'inactive' to not load.
 
@@ -29,8 +30,7 @@ Also, setting a Template restricts the list of Template Variables that are shown
 
 A Constraint can be set on the Set to restrict to a certain value. For example, setting a Constraint to a field of 'parent' and value of '123' will apply this Set to all direct children of parent 123. A Constraint for field 'class\_key' and value 'modWebLink' will apply this Set to all WebLinks for the Set's page.
 
-Making Set Rules
-----------------
+## Making Set Rules
 
 Rules can be adjusted in a set by using the grids and tabs in the Set editing page. When you're done editing the fields, use the "Save" button on the top right to save the set.
 
@@ -52,13 +52,13 @@ TVs are found in the 3rd tab in the Set editing page. You can adjust their Label
 
 If you want to change what Tab a TV resides on, simply change the tab field to the ID of the tab you want to move it to. The 'Tab Rank' column allows you to adjust the order in which the TV is put into the Tab with regard to other TVs being moved into that Tab.
 
-Editing Sets via XML
---------------------
+## Editing Sets via XML
 
 Sets can be exported to XML files by right-clicking on a Set in the Profile's editing page. MODX will export the Set to an XML file and prompt you to download it. From there, you can edit the XML file directly, and when finished, 'import' it back via the button on the Sets grid. This can be useful if you do not want to use the UI, or want to have common Sets that you use across multiple sites.
 
-<div class="note">Importing a Set from XML will create a **new** Set, not override any existing ones. After you've imported the Set from XML, you may deactivate any older Sets.</div>See Also
---------
+Importing a Set from XML will create a **new** Set, not override any existing ones. After you've imported the Set from XML, you may deactivate any older Sets.
+
+## See Also
 
 1. [Customizing the Manager via Plugins](administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
 2. [Form Customization Profiles](administering-your-site/customizing-the-manager/form-customization-profiles)

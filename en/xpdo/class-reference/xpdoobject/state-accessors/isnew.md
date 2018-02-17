@@ -4,13 +4,11 @@ _old_id: "1188"
 _old_uri: "2.x/class-reference/xpdoobject/state-accessors/isnew"
 ---
 
-xPDOObject::isNew()
--------------------
+## xPDOObject::isNew()
 
 Indicates if the instance is new, and has not yet been persisted.
 
-Syntax
-------
+## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isNew>
 
@@ -18,8 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isNew>
 <pre class="brush: php">
 boolean isNew ()
 
-```Examples
---------
+```## Examples
 
 State if the Broom has been saved.
 

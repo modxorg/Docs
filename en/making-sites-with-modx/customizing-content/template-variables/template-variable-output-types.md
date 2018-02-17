@@ -4,8 +4,7 @@ _old_id: "303"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types"
 ---
 
-Output Types for TVs
---------------------
+## Output Types for TVs
 
 Output Types (also called Renders) on [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") allow you to format the value of a TV to any different kind of output - such as a URL, image, date, or anything else you can think of.
 
@@ -19,8 +18,7 @@ MODx Revolution comes packaged with a few default Output Types. You can also [cr
 4. [Image TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type)
 5. [URL TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type)
 
-See Also
---------
+## See Also
 
 1. [Creating a Template Variable](making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
 2. [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings)

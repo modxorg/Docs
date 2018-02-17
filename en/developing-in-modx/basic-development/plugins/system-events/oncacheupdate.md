@@ -4,19 +4,16 @@ _old_id: "400"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncacheupdate"
 ---
 
-Event: OnCacheUpdate
---------------------
+## Event: OnCacheUpdate
 
 Fired after the cache is cleared at any time.
 
-Service: 4 - Cache Service Events   
+Service: 4 - Cache Service Events 
 Group: None
 
-Event Parameters
-----------------
+## Event Parameters
 
-<table><tbody><tr><th>Name</th><th>Description</th></tr><tr><td>results</td><td>The results of the clearing.</td></tr><tr><td>paths</td><td>An array of paths that were to be cleared.</td></tr><tr><td>options</td><td>An array of options passed to the cache clearing method.</td></tr></tbody></table>See Also
---------
+NameDescriptionresultsThe results of the clearing.pathsAn array of paths that were to be cleared.optionsAn array of options passed to the cache clearing method.## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

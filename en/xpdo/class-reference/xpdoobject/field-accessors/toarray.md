@@ -4,13 +4,11 @@ _old_id: "1217"
 _old_uri: "2.x/class-reference/xpdoobject/field-accessors/toarray"
 ---
 
-xPDOObject::toArray() 
-----------------------
+## xPDOObject::toArray() 
 
 Copies the object fields and corresponding values to an associative array.
 
-Syntax 
--------
+## Syntax 
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#toArray>
 
@@ -29,14 +27,13 @@ array toArray(
 
 **excludeLazy**: An option flag indicating if you want to exclude lazy fields from the resulting array; the default behavior is to include them which means the object will query the database for the lazy fields before providing the value.
 
-**includeRelated**: Describes if and how to include loaded related object fields.   
-\* As an integer all loaded related objects in the graph up to that level of depth will be included.   
-\* As a string, only loaded related objects matching the JSON graph representation will be included.   
-\* As an array, only loaded related objects matching the graph array will be included.   
+**includeRelated**: Describes if and how to include loaded related object fields. 
+\* As an integer all loaded related objects in the graph up to that level of depth will be included. 
+\* As a string, only loaded related objects matching the JSON graph representation will be included. 
+\* As an array, only loaded related objects matching the graph array will be included. 
 \* As boolean true, all currently loaded related objects will be included.
 
-Examples 
----------
+## Examples 
 
 Get the values of the object in array format:
 
@@ -58,8 +55,7 @@ $a = $object->toArray('dev_');
 print_r($a);
 // prints "Array ( [dev_name] => Mark [dev_version] => 1.0 )"
 
-```See Also 
----------
+```## See Also 
 
 - [fromArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
 - [toArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/toarray "toArray")

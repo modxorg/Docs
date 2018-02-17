@@ -4,15 +4,15 @@ _old_id: "77"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 ---
 
- What is a CMP?
----------------
+##  What is a CMP?
 
  CMP stands for Custom Manager Page, and it is simply a custom page that loads in the MODX Revolution manager. It may also be called a Component or 3PC (3rd Party Component). Typically CMPs are accessed from the Components menu, or the Apps menu in MODX 2.3, but as a developer there is a lot of freedom in where they are placed.
 
  If you are a developer looking to build an extra which includes a component, you should follow the [Developing an Extra for MODX Revolution tutorial](case-studies-and-tutorials/developing-an-extra-in-modx-revolution), as it walks you through all the specific steps and terminology based on an example package called doodles. This page only goes into a minimum set up for custom manager pages.
 
-<div class="note"> The equivalent of a CMP or Component in MODX Evolution is a Module, though the technique in which they are created is quite different. </div> Namespaces 
-------------
+ The equivalent of a CMP or Component in MODX Evolution is a Module, though the technique in which they are created is quite different. 
+
+##  Namespaces 
 
  CMPs need a namespace in order for MODX to know where to load the files from.
 
@@ -32,8 +32,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 - {base\_path} - Resolves to the **MODX\_BASE\_PATH** variable, which contains the absolute path to the root of the MODX installations, typically something _/home/username/public\_html/modx\_location/_
 - {assets\_path} - Resolves to the **MODX\_ASSETS\_PATH** variable, which contains the absolute path to the assets directory of your MODX installation.
 
- Using modAction and modMenu 
------------------------------
+##  Using modAction and modMenu 
 
  To point the end user to your custom manager page, you will typically want to make it available through the top menu. This is done with an Action (modAction) and a Menu item (modMenu).
 
@@ -41,7 +40,9 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 
  To create an Action, go to System -> Actions. Right-click your Namespace from the 'Actions' tree and select "Create Action Here. In the modal window enter your controller name (call it "index" for now), choose the namespace and set the parent controller to "No Action".
 
-<div class="info"> Note: in MODX 2.3, actions are no longer necessary (or possible to set up through the manager interface for that matter) and instead of creating the action, you pass your Menu to the right namespace and give it an action name, which is the name of your controller. </div> Now that we have the Action set up, we can create a menu item. This menu item contains the title and description you can see in the top menu and is linked to the Action, which handles loading the controller (we'll get to the controller in a second).
+ Note: in MODX 2.3, actions are no longer necessary (or possible to set up through the manager interface for that matter) and instead of creating the action, you pass your Menu to the right namespace and give it an action name, which is the name of your controller. 
+
+ Now that we have the Action set up, we can create a menu item. This menu item contains the title and description you can see in the top menu and is linked to the Action, which handles loading the controller (we'll get to the controller in a second).
 
  Again in System > Actions you should see a tree with all the menu items available. Right click on an existing menu item and choose "Place Action Here" to add a menu item. As you would typically place CMPs under the Components menu, right click that one.
 
@@ -61,8 +62,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 
  Hit save, and refresh the page. Your menu item should be there now! But hold on, it wont work yet, because we're missing the controllers..
 
-Adding a base Controller
-------------------------
+## Adding a base Controller
 
  Now, to make your manager page functional, it's necessary to add the controllers for it. Remember that we created an action with a controller "index"? Let's add our index controller, which will function as entry point to our other controllers.
 
@@ -129,8 +129,7 @@ class IndexManagerController extends NamespaceManagerController {
 
  In this tutorial we only go into the pieces that are actually required to build a real simple manager page, but if you are looking to build a fully fledged manager page with ExtJS and more, follow the [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution) tutorial. You'll find there's an overlap between this page and Part 2 of that tutorial, but that we restrict ourselves to a simple manager page here.
 
-Adding the Home controller
---------------------------
+## Adding the Home controller
 
  The Home controller is the one that is actually processed when we open the menu item.
 
@@ -193,15 +192,13 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
 
 ``` This would output a standard MODX Manager page header saying "Bar".
 
- Going beyond plain HTML
-------------------------
+##  Going beyond plain HTML
 
  After this tutorial you built a super simple custom manager page. If you want, you can now continue building a rich interface using [MODExt](developing-in-modx/advanced-development/custom-manager-pages/modext "MODExt"), the ExtJS integration in Revolution. More about MODExt can be found [here](developing-in-modx/advanced-development/custom-manager-pages/modext "MODExt").
 
  It is also recommended to follow the [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution) tutorial as it walks you through every step needed to build a rich component.
 
- See Also 
-----------
+##  See Also 
 
 1. [Actions and Menus](developing-in-modx/advanced-development/custom-manager-pages/actions-and-menus)
   1. [Action List](developing-in-modx/advanced-development/custom-manager-pages/actions-and-menus/action-list)

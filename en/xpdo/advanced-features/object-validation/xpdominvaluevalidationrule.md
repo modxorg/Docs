@@ -4,13 +4,11 @@ _old_id: "1286"
 _old_uri: "2.x/advanced-features/object-validation/xpdominvaluevalidationrule"
 ---
 
-What Does the Rule Do?
-----------------------
+## What Does the Rule Do?
 
 This rule makes sure that the value of the field is at least X, where X is defined by the "value" attribute on the schema.
 
-Using the Rule
---------------
+## Using the Rule
 
 First, our model:
 
@@ -54,8 +52,7 @@ if ($validator->validate() == false) {
 
 > The number must be at least 20.
 
-See Also
---------
+## See Also
 
 1. [xPDOForeignKeyConstraint](/xpdo/2.x/advanced-features/object-validation/xpdoforeignkeyconstraint)
 2. [xPDOMaxLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxlengthvalidationrule)

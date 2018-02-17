@@ -4,16 +4,17 @@ _old_id: "69"
 _old_uri: "2.x/administering-your-site/dashboards/creating-a-dashboard-widget"
 ---
 
-<div>- [Creating a Basic Widget](#CreatingaDashboardWidget-CreatingaBasicWidget)
+- [Creating a Basic Widget](#CreatingaDashboardWidget-CreatingaBasicWidget)
   - [Assigning the Widget to the Default Dashboard](#CreatingaDashboardWidget-AssigningtheWidgettotheDefaultDashboard)
   - [Viewing the Widget](#CreatingaDashboardWidget-ViewingtheWidget)
 - [Other Widget Types](#CreatingaDashboardWidget-OtherWidgetTypes)
 - [See Also](#CreatingaDashboardWidget-SeeAlso)
 
-</div>This article describes how to create a custom Dashboard Widget, including a short description of the different Dashboard Widget types and how they work.
 
-Creating a Basic Widget
------------------------
+
+This article describes how to create a custom Dashboard Widget, including a short description of the different Dashboard Widget types and how they work.
+
+## Creating a Basic Widget
 
 Go to the Dashboards page (Dashboard -> Dashboards in the top menu), and click on the "Widgets" tab. Then, click on "Create New Widget", and this will load the Widget creation screen. You'll see a few new fields:
 
@@ -54,13 +55,11 @@ Now, if you click the "Dashboard" top menu item on the page, you can see your ne
 
 ![](/download/attachments/35586570/dashboard-create3.png?version=1&modificationDate=1315489054000)
 
-Other Widget Types
-------------------
+## Other Widget Types
 
 Obviously, there are more widget types to create. See the [Dashboard Widget Types](administering-your-site/dashboards/dashboard-widget-types "Dashboard Widget Types") section for more information on creating different types of widgets.
 
-See Also
---------
+## See Also
 
 1. [Managing Your Dashboard](administering-your-site/dashboards/managing-your-dashboard)
 2. [Assigning a Dashboard to a User Group](administering-your-site/dashboards/assigning-a-dashboard-to-a-user-group)
