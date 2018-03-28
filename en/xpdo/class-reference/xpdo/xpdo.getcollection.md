@@ -47,9 +47,9 @@ Remember that you need to call the collection by its object name. You may find i
 
 ## See Also 
 
-- [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
-- [xPDO.getIterator](/xpdo/2.x/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
-- [xPDO.getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
-- [xPDO.getCollectionGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
-- [xPDO.query](/xpdo/2.x/class-reference/xpdo/xpdo.query "xPDO.query")
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
+- [xPDO.getIterator](xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
+- [xPDO.getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
+- [xPDO.getCollectionGraph](xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
+- [xPDO.query](xpdo/class-reference/xpdo/xpdo.query "xPDO.query")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

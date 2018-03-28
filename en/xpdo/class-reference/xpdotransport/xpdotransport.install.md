@@ -28,4 +28,4 @@ $transport->install();
 
 ## See Also
 
-- [xPDOTransport](/xpdo/2.x/class-reference/xpdotransport "xPDOTransport")
+- [xPDOTransport](xpdo/class-reference/xpdotransport "xPDOTransport")

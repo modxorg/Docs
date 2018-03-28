@@ -56,7 +56,7 @@ foreach ($users as $u) {
 
 ## See Also
 
-- [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery")
+- [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery")
 
 The function works with either an array of field names or a comma-separated string:
 

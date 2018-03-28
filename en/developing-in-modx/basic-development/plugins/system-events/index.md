@@ -114,7 +114,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/"
 69. [OnManagerPageAfterRender](developing-in-modx/basic-development/plugins/system-events/onmanagerpageafterrender)
 70. [OnManagerPageBeforeRender](developing-in-modx/basic-development/plugins/system-events/onmanagerpagebeforerender)
 71. [OnManagerPageInit](developing-in-modx/basic-development/plugins/system-events/onmanagerpageinit)
-72. [OnMODXInit](http://rtfm.modx.com/revolution/2.x/developing-in-modx/basic-development/plugins/system-events/onmodxinit)
+72. [OnMODXInit](developing-in-modx/basic-development/plugins/system-events/onmodxinit)
 73. [OnPageNotFound](developing-in-modx/basic-development/plugins/system-events/onpagenotfound)
 74. [OnPageUnauthorized](developing-in-modx/basic-development/plugins/system-events/onpageunauthorized)
 75. [OnParseDocument](developing-in-modx/basic-development/plugins/system-events/onparsedocument)

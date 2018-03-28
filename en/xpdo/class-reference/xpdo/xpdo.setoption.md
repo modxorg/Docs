@@ -28,5 +28,5 @@ Remember: setOption changes the option value _only_ for the current request: the
 
 ## See Also 
 
-- [xPDO.getOption](/xpdo/2.x/class-reference/xpdo/xpdo.getoption "xPDO.getOption")
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [xPDO.getOption](xpdo/class-reference/xpdo/xpdo.getoption "xPDO.getOption")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

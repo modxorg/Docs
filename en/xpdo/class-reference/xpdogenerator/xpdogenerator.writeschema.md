@@ -39,6 +39,6 @@ Note: generating the XML schema doesn't generate the aggregate and composite rel
 
 ## See Also
 
-- [Generating the Model Code](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code")
-- [Creating a Model With xPDO](/xpdo/2.x/getting-started/creating-a-model-with-xpdo "Creating a Model With xPDO")
-- [xPDOGenerator.parseSchema](/xpdo/2.x/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema")
+- [Generating the Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code")
+- [Creating a Model With xPDO](xpdo/getting-started/creating-a-model-with-xpdo "Creating a Model With xPDO")
+- [xPDOGenerator.parseSchema](xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema")

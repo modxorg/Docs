@@ -29,7 +29,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
  In MODx Evolution (versions 1.x and earlier), Custom Manager Pages were handled by "Modules", but those have been deprecated in Revolution. 
 
- If you want to develop a CMP for **MODX 2.3 or later**, then please read [Custom Manager Pages in 2.3](https://rtfm.modx.com/revolution/2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)
+ If you want to develop a CMP for **MODX 2.3 or later**, then please read [Custom Manager Pages in 2.3](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)
 
 ##  Explanation and Mental Preparation 
 

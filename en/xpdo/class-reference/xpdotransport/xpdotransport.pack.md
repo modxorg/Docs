@@ -6,7 +6,7 @@ _old_uri: "2.x/class-reference/xpdotransport/xpdotransport.pack"
 
 ## xPDOTransport::pack
 
-Pack the [xPDOTransport](/xpdo/2.x/class-reference/xpdotransport "xPDOTransport") instance in preparation for distribution. This packs the transport into a zip file in the target directory.
+Pack the [xPDOTransport](xpdo/class-reference/xpdotransport "xPDOTransport") instance in preparation for distribution. This packs the transport into a zip file in the target directory.
 
 ## Syntax
 
@@ -26,4 +26,4 @@ $transport->pack();
 
 ## See Also
 
-- [xPDOTransport](/xpdo/2.x/class-reference/xpdotransport "xPDOTransport")
+- [xPDOTransport](xpdo/class-reference/xpdotransport "xPDOTransport")

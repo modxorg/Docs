@@ -624,7 +624,7 @@ Ext.extend(Doodles.grid.Doodles,MODx.grid.Grid,{
 
 ```
 
- The modObjectGetListProcessor assistance class lets us extend the prepareQueryBeforeCount() method to modify the [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery") object before it's passed to the getCount() method. All we have to do is return our modified query object. We're going to extend it here to add searchability to our grid via the "query" parameter. Note we can get whatever that parameter is via the neat ->getProperty() method.
+ The modObjectGetListProcessor assistance class lets us extend the prepareQueryBeforeCount() method to modify the [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery") object before it's passed to the getCount() method. All we have to do is return our modified query object. We're going to extend it here to add searchability to our grid via the "query" parameter. Note we can get whatever that parameter is via the neat ->getProperty() method.
 
  Now load your grid, and you'll get:
 

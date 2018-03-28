@@ -78,17 +78,17 @@ _old_uri: "dashboard.action"
   - [Download Extras](http://modx.com/extras/?product=evolution)
   - [Forum Discussions](http://forums.modx.com/board/48/evo-discussions-support)
   - [Bugs & Feature Requests](http://tracker.modx.com/projects/evo)
-- [](#xpdo) \]\] ## [xPDO](xpdo/2.x/)
+- [](#xpdo) \]\] ## [xPDO](xpdo/)
   
    xPDO is the object-relational bridge (ORB) that powers MODX. If you know what that means, or you're the adventurous type, the following is for you:
   
   ### Quick Links
   
   
-  - [xPDO 2.x Documentation Homepage](xpdo/2.x/)
-  - [Getting Started](xpdo/2.x/getting-started) with xPDO 2.x
-  - [Advanced Features](xpdo/2.x/advanced-features) of xPDO 2.x
-  - [Class Reference](xpdo/2.x/class-reference) for xPDO 2.x
+  - [xPDO 2.x Documentation Homepage](xpdo/)
+  - [Getting Started](xpdo/getting-started) with xPDO 2.x
+  - [Advanced Features](xpdo/advanced-features) of xPDO 2.x
+  - [Class Reference](xpdo/class-reference) for xPDO 2.x
   
   ### Other Resources
   

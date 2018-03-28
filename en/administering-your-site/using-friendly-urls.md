@@ -148,7 +148,7 @@ RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 
  And you're done!
 
- The easiest way to take advantage of using fully qualified Friendly URLs, is to allow MODX to build the links using link tags, described on this page: [link tag syntax](http://rtfm.modx.com/revolution/2.x/making-sites-with-modx/structuring-your-site/resources#Resources-LinkingtoaResource "Linking to a Resources") to create links to different resources, is easy as tying in the link tag below (where 1 is the Resource ID of the page you want to link to). This has the added benefit of being able to move resources around a web project, without needing to fix a bunch of broken links, as MODX will simply update links created in this manner automatically.
+ The easiest way to take advantage of using fully qualified Friendly URLs, is to allow MODX to build the links using link tags, described on this page: [link tag syntax](making-sites-with-modx/structuring-your-site/resources#Resources-LinkingtoaResource "Linking to a Resources") to create links to different resources, is easy as tying in the link tag below (where 1 is the Resource ID of the page you want to link to). This has the added benefit of being able to move resources around a web project, without needing to fix a bunch of broken links, as MODX will simply update links created in this manner automatically.
 
 ``` php 
 

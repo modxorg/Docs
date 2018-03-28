@@ -37,12 +37,12 @@ $myBox = $xpdo->newObject('Box',array(
 
 You cannot set primary key values when using the second parameter of newObject(). Set the primary key values using fromArray() after creating the instance with the newObject() and make sure you set the parameter setPrimaryKeys equal to true.
 
-This will give us an xPDOObject-based Box object that can be [manipulated and saved](/xpdo/2.x/getting-started/using-your-xpdo-model/setting-object-fields "Setting Object Fields"). Note that this Object is not yet persistent until you save it using [xPDOObject.save](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/save "save").
+This will give us an xPDOObject-based Box object that can be [manipulated and saved](xpdo/getting-started/using-your-xpdo-model/setting-object-fields "Setting Object Fields"). Note that this Object is not yet persistent until you save it using [xPDOObject.save](xpdo/class-reference/xpdoobject/persistence-methods/save "save").
 
-In versions prior to xPDO 2.1.1-pl, if your SQL table does not exist for the object you've created, and the object class has a defined table for that class, xPDO will automatically create the table in the database for you. In 2.1.1-pl and later versions, you must set xPDO::OPT\_AUTO\_CREATE\_TABLES to true to have tables created automatically. It is recommended that you create the tables for your model explicitly in a setup script rather than depending on the auto table creation features that were not optional in earlier releases of xPDO. See [xPDOManager.createObjectContainer](/xpdo/2.x/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer") for information on explicitly creating tables from the model.
+In versions prior to xPDO 2.1.1-pl, if your SQL table does not exist for the object you've created, and the object class has a defined table for that class, xPDO will automatically create the table in the database for you. In 2.1.1-pl and later versions, you must set xPDO::OPT\_AUTO\_CREATE\_TABLES to true to have tables created automatically. It is recommended that you create the tables for your model explicitly in a setup script rather than depending on the auto table creation features that were not optional in earlier releases of xPDO. See [xPDOManager.createObjectContainer](xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer") for information on explicitly creating tables from the model.
 
  
 **See Also**
 
-- [xPDO.newObject](/xpdo/2.x/class-reference/xpdo/xpdo.newobject "xPDO.newObject")
-- [xPDOManager.createObjectContainer](/xpdo/2.x/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer")
+- [xPDO.newObject](xpdo/class-reference/xpdo/xpdo.newobject "xPDO.newObject")
+- [xPDOManager.createObjectContainer](xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer")

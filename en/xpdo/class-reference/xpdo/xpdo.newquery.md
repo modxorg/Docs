@@ -17,7 +17,7 @@ xPDOQuery newQuery (string $class, [mixed $criteria = null], [boolean|integer $c
 ```
 
 **Valid Class**
-The string you pass as the class name should be a _valid object class name_. It'll be the same name you use moments later with your call to [getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getobject "xPDO.getObject"), [getObjectGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph"), [getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"), or [getCollectionGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph").
+The string you pass as the class name should be a _valid object class name_. It'll be the same name you use moments later with your call to [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject"), [getObjectGraph](xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph"), [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"), or [getCollectionGraph](xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph").
 
 ## Examples
 
@@ -37,5 +37,5 @@ $xpdo->newQuery('Box',array(
 
 ## See Also
 
-- [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery")
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

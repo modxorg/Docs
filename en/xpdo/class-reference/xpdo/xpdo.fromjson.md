@@ -28,5 +28,5 @@ print_r($ar); // prints: Array ( 'name' => 'John' )
 
 ## See Also
 
-- [xPDO.toJSON](/xpdo/2.x/class-reference/xpdo/xpdo.tojson "xPDO.toJSON")
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [xPDO.toJSON](xpdo/class-reference/xpdo/xpdo.tojson "xPDO.toJSON")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

@@ -26,4 +26,4 @@ $isDebugOn = $xpdo->getDebug();
 
 ## See Also
 
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

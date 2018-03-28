@@ -44,7 +44,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
 
  The tricky thing about one-to-one relationships is that both tables are _not_ equal. Like the movie Highlander, there can be only one primary table: you must decide which table is the primary (or master) table, and which is the secondary (or slave) table.
 
- A good example of this type of relationship exists in the MODx database between the **users** and the **user\_attributes** tables: the **users** table is the primary table, and the **user\_attributes** is the secondary table. If you delete a user from the **users** table, the extra attributes in the **user\_attributes** table should also be deleted, but the opposite is not necessarily true. The documentation on [relationships](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships") stresses this primary/secondary relationship.
+ A good example of this type of relationship exists in the MODx database between the **users** and the **user\_attributes** tables: the **users** table is the primary table, and the **user\_attributes** is the secondary table. If you delete a user from the **users** table, the extra attributes in the **user\_attributes** table should also be deleted, but the opposite is not necessarily true. The documentation on [relationships](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships") stresses this primary/secondary relationship.
 
  When defining relationships, you must first learn about **aggregate** and **composite** relationships; you may not understand the usage of these particular words, but when defining this type of relationship, simply remember the following:
 

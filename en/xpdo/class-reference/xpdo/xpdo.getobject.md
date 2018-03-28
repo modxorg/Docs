@@ -36,7 +36,7 @@ You can retrieve any MODX object this way, just by knowing its object name – u
 
 Common NameObject NameNotesPagemodResourcePages are just one manifestation of modResource – you can also use this to retrieve Weblinks, Symlinks, and Static ResourcesChunkmodChunk UsermodUser TemplatemodTemplate SnippetmodSnippet See **core/model/schema/modx.mysql.schema.xml** file for a full definition of all MODX objects.
 
-If you need to retrieve other attributes for these objects (e.g. TVs for a page), then you may need to look at [getObjectGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
+If you need to retrieve other attributes for these objects (e.g. TVs for a page), then you may need to look at [getObjectGraph](xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
 
 ### Simplest Example (Custom Objects)
 
@@ -84,7 +84,7 @@ $box = $xpdo->getObject('Box', array('color'=>'blue'));
 
 ### Complex Criteria
 
-You can specify more complex selection criteria using an [xPDO query](/xpdo/2.x/class-reference/xpdo/xpdo.newquery "xPDO.newQuery"):
+You can specify more complex selection criteria using an [xPDO query](xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery"):
 
 ``` php 
 $query = $modx->newQuery('MyObject');
@@ -94,11 +94,11 @@ $myobj = $xpdo->getObject('MyObject', $query);
 
 ## See Also
 
-- [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
-- [xPDO.getObjectGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
-- [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
-- [xPDO.getCollectionGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
-- [xPDO.getIterator](/xpdo/2.x/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
+- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
+- [xPDO.getObjectGraph](xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
+- [xPDO.getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
+- [xPDO.getCollectionGraph](xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
+- [xPDO.getIterator](xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
 - \[xPDO.load\]
-- [xPDO.query](/xpdo/2.x/class-reference/xpdo/xpdo.query "xPDO.query")
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [xPDO.query](xpdo/class-reference/xpdo/xpdo.query "xPDO.query")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

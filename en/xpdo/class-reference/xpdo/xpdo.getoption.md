@@ -40,5 +40,5 @@ $mySetting = $xpdo->getOption('my_setting',$myConfig,false);
 
 ## See Also
 
-- [xPDO.setOption](/xpdo/2.x/class-reference/xpdo/xpdo.setoption "xPDO.setOption")
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [xPDO.setOption](xpdo/class-reference/xpdo/xpdo.setoption "xPDO.setOption")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

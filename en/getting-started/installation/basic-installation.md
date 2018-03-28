@@ -123,7 +123,7 @@ _old_uri: "2.x/getting-started/installation/basic-installation"
 
  From there, put in your email (or the email of your administrator) and specify a password. Click next when you're finished.
 
- Some host's server configurations won't allow MODX to send emails if the System Setting [emailsender](https://rtfm.modx.com/revolution/2.x/administering-your-site/settings/system-settings/emailsender) (set at install to the email address entered for the default admin user) is not valid for the domain. If MODX is not sending registration or form emails, check the [emailsender](https://rtfm.modx.com/revolution/2.x/administering-your-site/settings/system-settings/emailsender) and set it to a valid email address for the hosted domain.
+ Some host's server configurations won't allow MODX to send emails if the System Setting [emailsender](administering-your-site/settings/system-settings/emailsender) (set at install to the email address entered for the default admin user) is not valid for the domain. If MODX is not sending registration or form emails, check the [emailsender](administering-your-site/settings/system-settings/emailsender) and set it to a valid email address for the hosted domain.
 
 
 ## Pre-Installation Checks

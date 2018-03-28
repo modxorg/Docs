@@ -26,4 +26,4 @@ $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 
 ## See Also
 
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

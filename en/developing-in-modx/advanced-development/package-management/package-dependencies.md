@@ -8,7 +8,7 @@ New in MODX 2.4 is the ability to define package dependencies in transport packa
 
 ## Adding Package Dependencies to your Build
 
-Package Dependencies are added to the package attributes, which were already used for the license, readme and changelog contents, typically looking like this toward the end of your [build script](https://rtfm.modx.com/revolution/2.x/developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script). If you use a different way of creating packages, you might need to check that documentation to see if it supports these attributes and how you can defined the dependencies there.
+Package Dependencies are added to the package attributes, which were already used for the license, readme and changelog contents, typically looking like this toward the end of your [build script](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script). If you use a different way of creating packages, you might need to check that documentation to see if it supports these attributes and how you can defined the dependencies there.
 
 ``` php 
 $builder->setPackageAttributes(array(

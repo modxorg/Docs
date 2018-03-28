@@ -33,7 +33,7 @@ echo $object->get('name').' '.$object->get('email');
 
 ## See Also
 
-- [fromArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
-- [toArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/toarray "toArray")
-- [fromJSON](/xpdo/2.x/class-reference/xpdoobject/field-accessors/fromjson "fromJSON")
-- [toJSON](/xpdo/2.x/class-reference/xpdoobject/field-accessors/tojson "toJSON")
+- [fromArray](xpdo/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
+- [toArray](xpdo/class-reference/xpdoobject/field-accessors/toarray "toArray")
+- [fromJSON](xpdo/class-reference/xpdoobject/field-accessors/fromjson "fromJSON")
+- [toJSON](xpdo/class-reference/xpdoobject/field-accessors/tojson "toJSON")

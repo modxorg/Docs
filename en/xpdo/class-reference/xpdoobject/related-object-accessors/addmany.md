@@ -49,5 +49,5 @@ $bag->save(); // saves both the bag and all the clubs
 
  Remember that this operation is intended to be called only for objects whose relationships are defined as cardinality="many". ## See Also
 
-- [Working with Related Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")
-- [addOne()](xpdo/2.x/class-reference/xpdoobject/related-object-accessors/addone)
+- [Working with Related Objects](xpdo/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")
+- [addOne()](xpdo/class-reference/xpdoobject/related-object-accessors/addone)

@@ -42,9 +42,9 @@ echo $o=($xpdo->connect()) ? 'Connected' : 'Not Connected';
 
 xPDO creates a PDO object, and thus connects to the database, only when a PDO method is called and the connection is needed. This connect-on-demand feature allows xPDO caching to work without a database connection being required (assuming everything is cached).
 
-More information on these parameters can be found on [The xPDO Constructor](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") page.
+More information on these parameters can be found on [The xPDO Constructor](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") page.
 
-Once you're connected, you'll need to [load your package](/xpdo/2.x/getting-started/using-your-xpdo-model/loading-packages "Loading Packages").
+Once you're connected, you'll need to [load your package](xpdo/getting-started/using-your-xpdo-model/loading-packages "Loading Packages").
 
 ### Example Connection
 
@@ -131,5 +131,5 @@ This makes sure that xPDO selects a connection with that option set to false to 
 
 ## See Also
 
-[The xPDO Constructor](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") 
+[The xPDO Constructor](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") 
 [PDO::\_\_construct()](http://www.php.net/manual/en/pdo.construct.php)

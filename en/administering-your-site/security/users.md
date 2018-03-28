@@ -43,7 +43,7 @@ _old_uri: "2.x/administering-your-site/security/users"
  As of MODX 2.4.0, the default Username can be set in the Systems Settings with the **default\_username** setting. 
 
  **Remember** 
- Keep in mind that confusing caveat: just because you have logged into the _manager_ does not mean that you are logged into the _web_ front-end. The user-specific settings and the [getOption](/xpdo/2.x/class-reference/xpdoobject/configuration-accessors/getoption "getOption") API method obeys this same rule, so if you're not logged in, then the **System Settings -> Context Settings -> User Settings** cannot fully apply. 
+ Keep in mind that confusing caveat: just because you have logged into the _manager_ does not mean that you are logged into the _web_ front-end. The user-specific settings and the [getOption](xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") API method obeys this same rule, so if you're not logged in, then the **System Settings -> Context Settings -> User Settings** cannot fully apply. 
 
 ##  User Fields 
 

@@ -29,7 +29,7 @@ xPDOObject|false query (string $statement)
 
 ###  Select a Single Record 
 
- Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getobject "xPDO.getObject") or [getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
+ Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") or [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
 
 `xPDOObject|false query (string $statement)`
 
@@ -41,7 +41,7 @@ xPDOObject|false query (string $statement)
 
 ###  Select a Single Record 
 
- Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](/display/xPDO20/xPDO.getObject "xPDO.getObject") or [getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
+ Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](/display/xPDO20/xPDO.getObject "xPDO.getObject") or [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
 
  ``` php 
 
@@ -135,7 +135,7 @@ return print_r($row, true);
 
 ###  Select a Collection 
 
- Here's a simple query to fetch multiple rows from the database. Note that you would normally use [getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to retrive data from MODX tables.
+ Here's a simple query to fetch multiple rows from the database. Note that you would normally use [getObject](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to retrive data from MODX tables.
 
  ``` php 
 
@@ -182,11 +182,11 @@ return $data;
 
 ##  See Also 
 
-- [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
-- [xPDO.getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
-- [xPDO.getObjectGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
-- [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
-- [xPDO.getCollectionGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
-- [xPDO.getIterator](/xpdo/2.x/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
+- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
+- [xPDO.getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
+- [xPDO.getObjectGraph](xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
+- [xPDO.getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
+- [xPDO.getCollectionGraph](xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
+- [xPDO.getIterator](xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
 - \[xPDO.load\]
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

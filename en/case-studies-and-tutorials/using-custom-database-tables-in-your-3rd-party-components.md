@@ -230,7 +230,7 @@ $modx->addPackage('storefinder',$base_path.'model/');
 
 ```
 
- This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](/xpdo/2.x/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
+ This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
 
  ``` php 
 $stores = $modx->getCollection('sfStore');
@@ -274,7 +274,7 @@ $store->save();
 
 ## See Also
 
-- [Generating the xPDO Model Code](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code")
-- [More Examples of xPDO XML Schema Files](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files")
+- [Generating the xPDO Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code")
+- [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files")
 - [Reverse Engineer xPDO Classes from Existing Database Table](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table")
 - <http://svn.modxcms.com/docs/display/revolution/PHP+Coding+in+MODx+Revolution%2C+Pt.+I>

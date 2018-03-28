@@ -8,8 +8,8 @@ The xPDO class itself serves many purposes, all of which aim to provide a core s
 
 Since xPDO as a framework is primarily a tool for working with relational data, it makes sense that the first role we'll explore is that of a wrapper class for PDO.
 
-1. [As PDO Wrapper](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/as-pdo-wrapper)
-2. [As Service Layer](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/as-service-layer)
-3. [As Object and Relational Mapper](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/as-object-and-relational-mapper)
-4. [The xPDO Constructor](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor)
-  1. [Hydrating Fields](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields)
+1. [As PDO Wrapper](xpdo/getting-started/fundamentals/xpdo,-the-class/as-pdo-wrapper)
+2. [As Service Layer](xpdo/getting-started/fundamentals/xpdo,-the-class/as-service-layer)
+3. [As Object and Relational Mapper](xpdo/getting-started/fundamentals/xpdo,-the-class/as-object-and-relational-mapper)
+4. [The xPDO Constructor](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor)
+  1. [Hydrating Fields](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields)

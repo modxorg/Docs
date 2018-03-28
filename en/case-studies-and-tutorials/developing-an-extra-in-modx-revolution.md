@@ -190,7 +190,7 @@ return $output;
 
 ```
 
- Ooookay. Lots of stuff here. If this is your first time learning about xPDO or if you are all unfamiliar with the how's and why's of its XML schema files, you may want to review [More Examples of xPDO XML Schema Files](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files"). First off, the first line:
+ Ooookay. Lots of stuff here. If this is your first time learning about xPDO or if you are all unfamiliar with the how's and why's of its XML schema files, you may want to review [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files"). First off, the first line:
 
  ``` php 
 <model package="doodles" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
@@ -360,7 +360,7 @@ $output = count($doodles);
 ```
 
  **Know Your Objects!** 
- In this example, we are retrieving a collection of "Doodle" objects. Most of the time when using [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"), you will be retrieving the built-in MODX objects (e.g. pages are "modResource", templates are "modTemplate"), so you may find it quite handy to keep open your `core/model/schema/modx.mysql.schema.xml` file so you can review your object names. 
+ In this example, we are retrieving a collection of "Doodle" objects. Most of the time when using [xPDO.getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"), you will be retrieving the built-in MODX objects (e.g. pages are "modResource", templates are "modTemplate"), so you may find it quite handy to keep open your `core/model/schema/modx.mysql.schema.xml` file so you can review your object names. 
 
  That's going to grab an array of Doodle objects, or in non-xPDO terms, a bunch of rows from the database. Go ahead and save your snippet, then run it in the browser at <http://localhost/modx/doodles.html> (or wherever the Resource was). You should get this:
 
@@ -372,7 +372,7 @@ $output = count($doodles);
 
 > 2
 
- Great! Your custom database query works! Let's make it more complex. We can use xPDO's [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery") to create some pretty complex queries. For now, let's just add a sort command to it:
+ Great! Your custom database query works! Let's make it more complex. We can use xPDO's [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery") to create some pretty complex queries. For now, let's just add a sort command to it:
 
  ``` php 
 $c = $modx->newQuery('Doodle');

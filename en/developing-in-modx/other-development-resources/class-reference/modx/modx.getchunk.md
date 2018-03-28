@@ -92,7 +92,7 @@ return $output;
 
 ### Used in a Snippet
 
-Often, MODX Chunks are used as [formatting string](http://php.net/manual/en/function.sprintf.php) by Snippets. To that end, you can make good use of xPDO's [toArray()](/xpdo/2.x/class-reference/xpdoobject/field-accessors/toarray "toArray") method.
+Often, MODX Chunks are used as [formatting string](http://php.net/manual/en/function.sprintf.php) by Snippets. To that end, you can make good use of xPDO's [toArray()](xpdo/class-reference/xpdoobject/field-accessors/toarray "toArray") method.
 
 Imagine a Chunk named **single\_user**:
 

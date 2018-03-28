@@ -142,4 +142,4 @@ $modx->setLogLevel($log_level);
 
 - **log\_level** System Setting
 - **log\_target** System Setting
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

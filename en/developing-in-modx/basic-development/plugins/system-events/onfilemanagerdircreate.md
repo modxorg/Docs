@@ -15,5 +15,5 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 
   Name   Description   directory   Contains the full path of the newly created directory.   source   Contains the mediasource object. ## See Also
 
-- [System Events](https://rtfm.modx.com/revolution/2.x/developing-in-modx/basic-development/plugins/system-events)
-- [Plugins](https://rtfm.modx.com/revolution/2.x/developing-in-modx/basic-development/plugins)
+- [System Events](developing-in-modx/basic-development/plugins/system-events)
+- [Plugins](developing-in-modx/basic-development/plugins)

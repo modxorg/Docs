@@ -52,9 +52,9 @@ This will display:
 
 ## See Also
 
-1. [xPDOForeignKeyConstraint](/xpdo/2.x/advanced-features/object-validation/xpdoforeignkeyconstraint)
-2. [xPDOMaxLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxlengthvalidationrule)
-3. [xPDOMaxValueValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxvaluevalidationrule)
-4. [xPDOMinLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdominlengthvalidationrule)
-5. [xPDOMinValueValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdominvaluevalidationrule)
-6. [xPDOObjectExistsValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
+1. [xPDOForeignKeyConstraint](xpdo/advanced-features/object-validation/xpdoforeignkeyconstraint)
+2. [xPDOMaxLengthValidationRule](xpdo/advanced-features/object-validation/xpdomaxlengthvalidationrule)
+3. [xPDOMaxValueValidationRule](xpdo/advanced-features/object-validation/xpdomaxvaluevalidationrule)
+4. [xPDOMinLengthValidationRule](xpdo/advanced-features/object-validation/xpdominlengthvalidationrule)
+5. [xPDOMinValueValidationRule](xpdo/advanced-features/object-validation/xpdominvaluevalidationrule)
+6. [xPDOObjectExistsValidationRule](xpdo/advanced-features/object-validation/xpdoobjectexistsvalidationrule)

@@ -62,7 +62,7 @@ $_lang['setting_quip.emailsFrom_desc'] = 'The email address to send system email
 
 ###  Getting a System Setting (programmatically) 
 
- In a nutshell, you do it using the [getOption](/xpdo/2.x/class-reference/xpdoobject/configuration-accessors/getoption "getOption") function and passing it the unique key for the option, for example:
+ In a nutshell, you do it using the [getOption](xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") function and passing it the unique key for the option, for example:
 
  ``` php 
 
@@ -76,11 +76,11 @@ $siteStartId = $modx->getOption('site_start');
 
 ###  Saving a System Setting (programmatically) 
 
- Here's where things get a little bit more complicated: when we retrieve the value using [getOption](/xpdo/2.x/class-reference/xpdoobject/configuration-accessors/getoption "getOption"), we are retrieving the object from the settings cache. This has the distinct advantage of speed, but it means that we essentially have a read-only copy of the setting's value.
+ Here's where things get a little bit more complicated: when we retrieve the value using [getOption](xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption"), we are retrieving the object from the settings cache. This has the distinct advantage of speed, but it means that we essentially have a read-only copy of the setting's value.
 
  This is for architectural reasons: the system settings are meant to defined as _configurations_, **NOT runtime dynamic values**. They are typically set at the time of install and then not often updated. However, there may be legitimate times when you need to update system settings programmatically, e.g. perhaps you have written a [Custom Manager Page](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-tutorial "Custom Manager Pages Tutorial") that offers a customized form to your users for its system settings.
 
- If we want to update a system setting, we default to the powerful xPDO [getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getobject "xPDO.getObject") function. So let's revisit our retrieval of a simple site setting and compare it side by side with the more verbose (and more flexible) xPDO counterpart:
+ If we want to update a system setting, we default to the powerful xPDO [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") function. So let's revisit our retrieval of a simple site setting and compare it side by side with the more verbose (and more flexible) xPDO counterpart:
 
  ``` php 
 
@@ -150,7 +150,7 @@ Array (
 
 ##  Retrieving a list of Related Settings 
 
- If you have noticed in the GUI above, MODx allows for some very logical grouping of system settings. The most useful groupings are **area** and by the prefix of the **key**. Using xPDO's [getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") method, we can easily supply some search criteria to get the settings that we want.
+ If you have noticed in the GUI above, MODx allows for some very logical grouping of system settings. The most useful groupings are **area** and by the prefix of the **key**. Using xPDO's [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") method, we can easily supply some search criteria to get the settings that we want.
 
  Here's how we would pull up all settings from the 'Mail' area:
 
@@ -163,7 +163,7 @@ foreach ( $relatedSettings as $Setting ) {
 
 ```
 
- This leads us naturally to one of xPDO's other features: the [Query](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery") object. We can use it to pass more complex criteria to our **getCollection call**. Here's how we would pull up all settings that used the prefix of "quip.":
+ This leads us naturally to one of xPDO's other features: the [Query](xpdo/class-reference/xpdoquery "xPDOQuery") object. We can use it to pass more complex criteria to our **getCollection call**. Here's how we would pull up all settings that used the prefix of "quip.":
 
  ``` php 
 

@@ -22,7 +22,7 @@ $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 $xpdo->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 ```
 
-Now, we'll want to load the [xPDOManager](/xpdo/2.x/class-reference/xpdomanager "xPDOManager") and [xPDOGenerator](/xpdo/2.x/class-reference/xpdogenerator "xPDOGenerator") classes, to assist us with the model deployment.
+Now, we'll want to load the [xPDOManager](xpdo/class-reference/xpdomanager "xPDOManager") and [xPDOGenerator](xpdo/class-reference/xpdogenerator "xPDOGenerator") classes, to assist us with the model deployment.
 
 ``` php 
 $manager= $xpdo->getManager();
@@ -79,6 +79,6 @@ This block of code executes the schema parsing method, and then outputs the tota
 
 ## Conclusion
 
-With the help of [xPDOGenerator](/xpdo/2.x/class-reference/xpdogenerator "xPDOGenerator"), making your XML schema files into usable PHP classes and maps is simple. Now that we've got our PHP code, we'll proceed onto steps on [how to use it](/xpdo/2.x/getting-started/using-your-xpdo-model "Using Your xPDO Model").
+With the help of [xPDOGenerator](xpdo/class-reference/xpdogenerator "xPDOGenerator"), making your XML schema files into usable PHP classes and maps is simple. Now that we've got our PHP code, we'll proceed onto steps on [how to use it](xpdo/getting-started/using-your-xpdo-model "Using Your xPDO Model").
 
 For an example of how to build model classes from an existing database, have a look at the following page: [Reverse Engineer xPDO Classes from Existing Database Table](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table")

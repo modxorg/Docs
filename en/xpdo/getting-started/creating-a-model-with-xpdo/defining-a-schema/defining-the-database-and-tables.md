@@ -38,7 +38,7 @@ First we'll tell the browser and parser that this is XML code with a standard XM
 - **version** — The version of the xPDO schema. As changes are made to the schema format, the version is updated to differentiate how the model is handled at runtime.
 
 **Schema Version 1.1** 
- In 2.0.0-rc3, the schema was changed to implement a new `model` element that describes Table Indexes separately from the `field` element's _index_ and _index\_group_ attributes. See [Upgrading Models to Schema Version 1.1](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-the-database-and-tables/upgrading-models-to-schema-version-1.1 "Upgrading Models to Schema Version 1.1") for information on migrating your index definitions to the new format. Do not add version="1.1" (leave off the version attribute or set it to 1.0) if you have not yet described your indexes in the new schema format or xPDO will create the tables with no indexes.
+ In 2.0.0-rc3, the schema was changed to implement a new `model` element that describes Table Indexes separately from the `field` element's _index_ and _index\_group_ attributes. See [Upgrading Models to Schema Version 1.1](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-the-database-and-tables/upgrading-models-to-schema-version-1.1 "Upgrading Models to Schema Version 1.1") for information on migrating your index definitions to the new format. Do not add version="1.1" (leave off the version attribute or set it to 1.0) if you have not yet described your indexes in the new schema format or xPDO will create the tables with no indexes.
 
 ## Defining Tables
 
@@ -153,4 +153,4 @@ Let's close the model definition:
 
 ```
 
-We have a completed XML schema for our model. Now we'll need to [define relationships for that schema](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships").
+We have a completed XML schema for our model. Now we'll need to [define relationships for that schema](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships").

@@ -29,5 +29,5 @@ $cacheManager->set('testcachefile','test123');
 
 ## See Also
 
-- [Caching](/xpdo/2.x/advanced-features/caching "Caching") – the full options are documented on the xPDO caching page.
+- [Caching](xpdo/advanced-features/caching "Caching") – the full options are documented on the xPDO caching page.
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

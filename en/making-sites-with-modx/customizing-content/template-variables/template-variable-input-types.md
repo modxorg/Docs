@@ -378,7 +378,7 @@ Option 1==value1||Option 2==value2
 
 ## Tag
 
- Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](http://rtfm.modx.com/revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type) for formatting.
+ Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type) for formatting.
 
  **All input option names (for use in migx options-json)**
 

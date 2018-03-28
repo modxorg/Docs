@@ -7,7 +7,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.newobject"
 ## xPDO::newObject 
 
 Creates a new instance of a specified class. 
-All new objects created with this method are transient until [xPDOObject::save()](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/save "save") is called the first time and is reflected by the xPDOObject::$\_new property.
+All new objects created with this method are transient until [xPDOObject::save()](xpdo/class-reference/xpdoobject/persistence-methods/save "save") is called the first time and is reflected by the xPDOObject::$\_new property.
 
 ## Syntax 
 
@@ -36,6 +36,6 @@ $box = $xpdo->newObject('Box',array(
 
 ## See Also 
 
-- [Creating Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/creating-objects "Creating Objects")
-- [Removing (deleting) objects](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/remove)
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [Creating Objects](xpdo/getting-started/using-your-xpdo-model/creating-objects "Creating Objects")
+- [Removing (deleting) objects](xpdo/class-reference/xpdoobject/persistence-methods/remove)
+- [xPDO](xpdo/class-reference/xpdo "xPDO")

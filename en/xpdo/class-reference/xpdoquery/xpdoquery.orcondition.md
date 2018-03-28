@@ -85,4 +85,4 @@ $user = $modx->getObject('modUser', $query);
 
 ## See Also
 
-- [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery")
+- [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery")

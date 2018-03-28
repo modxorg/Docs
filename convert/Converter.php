@@ -169,11 +169,24 @@ class Converter {
     {
         try {
             $parsed = $this->converter->convert($content);
-            // Filter out part of the link to turn 'm into relative links
-            $parsed = str_replace('](revolution/2.x/', '](', $parsed);
-            $parsed = str_replace('](/revolution/2.x/', '](', $parsed);
-            $parsed = str_replace('](https://docs.modx.com/revolution/2.x/', '](', $parsed);
-            $parsed = str_replace('](http://docs.modx.com/revolution/2.x/', '](', $parsed);
+
+
+            // Filter out parts of the links to turn 'm into relative links
+            $stripUrls = [
+                'revolution/2.x/' => '',
+                'xpdo/2.x/' => 'xpdo/'
+            ];
+            foreach ($stripUrls as $stripUrl => $newTarget) {
+                $parsed = str_replace([
+                    '](' . $stripUrl,
+                    '](/' . $stripUrl,
+                    '](https://docs.modx.com/' . $stripUrl,
+                    '](http://docs.modx.com/' . $stripUrl,
+                    '](https://rtfm.modx.com/' . $stripUrl,
+                    '](http://rtfm.modx.com/' . $stripUrl,
+                ], '](' . $newTarget, $parsed);
+
+            }
 
             return $parsed;
         }

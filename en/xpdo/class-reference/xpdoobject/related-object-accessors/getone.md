@@ -35,5 +35,5 @@ echo $profile->get('email');
 
 ## See Also
 
-- [getMany](/xpdo/2.x/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
-- [Working with Related Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")
+- [getMany](xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
+- [Working with Related Objects](xpdo/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")

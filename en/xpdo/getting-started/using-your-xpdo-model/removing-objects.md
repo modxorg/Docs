@@ -4,7 +4,7 @@ _old_id: "1206"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/removing-objects"
 ---
 
-When you 'remove' an Object in xPDO, you delete its row from the database. xPDO abstracts this out into a [remove](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/remove "remove") function, seen here:
+When you 'remove' an Object in xPDO, you delete its row from the database. xPDO abstracts this out into a [remove](xpdo/class-reference/xpdoobject/persistence-methods/remove "remove") function, seen here:
 
 ``` php 
 $box = $xpdo->getObject('Box',134);
@@ -20,4 +20,4 @@ This will also remove any composite related objects to this object. For example,
 
 ## See Also
 
-- [xPDOObject::remove](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/remove "remove")
+- [xPDOObject::remove](xpdo/class-reference/xpdoobject/persistence-methods/remove "remove")

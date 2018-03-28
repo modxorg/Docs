@@ -6,7 +6,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
 ## HTML Tag TV Output Type
 
-This type allows you to wrap an HTML tag around the input. It is specifically intended to use with the [Tag input type](http://rtfm.modx.com/revolution/2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-input-types#TemplateVariableInputTypes-Tag), where individual tag values are separated by || characters.
+This type allows you to wrap an HTML tag around the input. It is specifically intended to use with the [Tag input type](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types#TemplateVariableInputTypes-Tag), where individual tag values are separated by || characters.
 
 ## Output Properties
 

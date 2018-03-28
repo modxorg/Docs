@@ -21,7 +21,7 @@ Object validation is done through xPDOValidator, xPDO's validation class. It's a
 
 ## How is it Done?
 
-Validation can be done either via the XML schema, or during run-time by [xPDOValidator](/xpdo/2.x/class-reference/xpdovalidator "xPDOValidator") methods.
+Validation can be done either via the XML schema, or during run-time by [xPDOValidator](xpdo/class-reference/xpdovalidator "xPDOValidator") methods.
 
 ## Example Usage
 
@@ -138,22 +138,22 @@ This outputs:
 
 An xPDOValidationRule rule is a specific rule type that is based upon a class extension of the xPDOValidationRule class. This allows you to do more advanced rules, as well as use the built-in rules. The built in rules include:
 
-1. [xPDOForeignKeyConstraint](/xpdo/2.x/advanced-features/object-validation/xpdoforeignkeyconstraint)
-2. [xPDOMaxLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxlengthvalidationrule)
-3. [xPDOMaxValueValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxvaluevalidationrule)
-4. [xPDOMinLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdominlengthvalidationrule)
-5. [xPDOMinValueValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdominvaluevalidationrule)
-6. [xPDOObjectExistsValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
+1. [xPDOForeignKeyConstraint](xpdo/advanced-features/object-validation/xpdoforeignkeyconstraint)
+2. [xPDOMaxLengthValidationRule](xpdo/advanced-features/object-validation/xpdomaxlengthvalidationrule)
+3. [xPDOMaxValueValidationRule](xpdo/advanced-features/object-validation/xpdomaxvaluevalidationrule)
+4. [xPDOMinLengthValidationRule](xpdo/advanced-features/object-validation/xpdominlengthvalidationrule)
+5. [xPDOMinValueValidationRule](xpdo/advanced-features/object-validation/xpdominvaluevalidationrule)
+6. [xPDOObjectExistsValidationRule](xpdo/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
 
 More documentation on these specific rules to come.
 
 ## See Also
 
-1. [xPDOForeignKeyConstraint](/xpdo/2.x/advanced-features/object-validation/xpdoforeignkeyconstraint)
-2. [xPDOMaxLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxlengthvalidationrule)
-3. [xPDOMaxValueValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdomaxvaluevalidationrule)
-4. [xPDOMinLengthValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdominlengthvalidationrule)
-5. [xPDOMinValueValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdominvaluevalidationrule)
-6. [xPDOObjectExistsValidationRule](/xpdo/2.x/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
+1. [xPDOForeignKeyConstraint](xpdo/advanced-features/object-validation/xpdoforeignkeyconstraint)
+2. [xPDOMaxLengthValidationRule](xpdo/advanced-features/object-validation/xpdomaxlengthvalidationrule)
+3. [xPDOMaxValueValidationRule](xpdo/advanced-features/object-validation/xpdomaxvaluevalidationrule)
+4. [xPDOMinLengthValidationRule](xpdo/advanced-features/object-validation/xpdominlengthvalidationrule)
+5. [xPDOMinValueValidationRule](xpdo/advanced-features/object-validation/xpdominvaluevalidationrule)
+6. [xPDOObjectExistsValidationRule](xpdo/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
 
-- [xPDOValidator](/xpdo/2.x/class-reference/xpdovalidator "xPDOValidator")
+- [xPDOValidator](xpdo/class-reference/xpdovalidator "xPDOValidator")

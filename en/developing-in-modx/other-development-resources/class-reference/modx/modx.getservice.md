@@ -63,4 +63,4 @@ getService may have trouble with PHP namespaces.
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [MODx Services](developing-in-modx/advanced-development/modx-services "MODx Services")
-- [xPDO.loadClass](/xpdo/2.x/class-reference/xpdo/xpdo.loadclass "xPDO.loadClass") – similar to getService, but it just loads the class and doesn't instantiate it.
+- [xPDO.loadClass](xpdo/class-reference/xpdo/xpdo.loadclass "xPDO.loadClass") – similar to getService, but it just loads the class and doesn't instantiate it.

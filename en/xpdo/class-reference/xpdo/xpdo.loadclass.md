@@ -49,5 +49,5 @@ $Box = new myBox();
 
 ## See Also
 
-- [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
+- [xPDO](xpdo/class-reference/xpdo "xPDO")
 - [modX.getService](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService") - this will include a class and instantiate it.
