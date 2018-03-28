@@ -13,6 +13,12 @@ class Converter {
     /** @var HtmlConverter  */
     protected $converter;
 
+    /**
+     * An array of potential problems
+     * @var array
+     */
+    protected $toDos = [];
+
     protected static $ignoreIDs = [
         2, //404 page
         1314, // create
@@ -76,6 +82,17 @@ class Converter {
         foreach ($this->modx->getIterator('modResource', $c) as $rootResource) {
             $this->convertResource($rootResource, $rootResource->get('context_key') . '/');
         }
+
+        echo "Done with the conversion.\n";
+
+        $todos = [];
+        foreach ($this->toDos as $toDo) {
+            $todos[] = '- [ ] ' . $toDo['file'] . ': ' . $toDo['reason'];
+        }
+        $todos = implode("\n", $todos);
+        file_put_contents(__DIR__ . '/todos.txt', $todos);
+
+        echo count($this->toDos) . " potential problems have been logged to todos.txt\n";
     }
 
     public function convertResource(modResource $resource, $currentDirectory = '/', $currentParent = 0)
@@ -153,6 +170,26 @@ class Converter {
             file_put_contents($absFileName, $output);
 
             echo $currentDirectory . $name . ' converted' . "\n";
+
+            // Check for potential problems that will need to be fixed
+            if (empty($content)) {
+                $this->toDos[] = [
+                    'file' => $currentDirectory . $name,
+                    'reason' => 'Content appears to be empty'
+                ];
+            }
+            elseif (strpos($content, '[getResources') !== false) {
+                $this->toDos[] = [
+                    'file' => $currentDirectory . $name,
+                    'reason' => 'Content includes a getResources tag - could be an old index page that needs to be updated.'
+                ];
+            }
+            elseif (strpos($content, 'Redirection Notice') !== false) {
+                $this->toDos[] = [
+                    'file' => $currentDirectory . $name,
+                    'reason' => 'Page might need to be converted into a redirect'
+                ];
+            }
         }
 
         $c = $this->modx->newQuery('modResource');
