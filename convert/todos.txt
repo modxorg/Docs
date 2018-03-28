@@ -1,32 +1,30 @@
-- [ ] /index.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/upgrading-modx/upgrading-from-modx-evolution.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
+- [ ] /index.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/upgrading-modx/upgrading-from-modx-evolution.md: Content includes a getResources tag - could be an old index page that needs to be updated.
 - [ ] /administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.5.md: Page might need to be converted into a redirect
 - [ ] /administering-your-site/form-customization.md: Page might need to be converted into a redirect
-- [ ] /administering-your-site/form-customization/form-customization-pages.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/form-customization/form-customization-rules.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/form-customization/form-customization-rules/move-tv-to-tab.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/form-customization/form-customization-rules/field-default.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/form-customization/form-customization-rules/field-label.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/form-customization/form-customization-rules/field-visible.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/form-customization/form-customization-rules/tab-title.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/form-customization/form-customization-rules/tab-visible.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/form-customization/form-customization-rules/tv-default.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/form-customization/form-customization-rules/tv-title.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /administering-your-site/form-customization/form-customization-rules/tv-visible.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /case-studies-and-tutorials/index.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /case-studies-and-tutorials/creating-a-blog-in-modx-revolution.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /case-studies-and-tutorials/loading-pages-in-the-front-end-via-ajax-and-jquery-tabs.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /making-sites-with-modx/customizing-content/template-variables/bindings.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /making-sites-with-modx/customizing-content/template-variables/creating-a-multi-select-box-for-related-pages-in-your-template.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers).md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /making-sites-with-modx/tag-syntax.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
+- [ ] /administering-your-site/form-customization/form-customization-pages.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/form-customization/form-customization-rules.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/form-customization/form-customization-rules/move-tv-to-tab.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/form-customization/form-customization-rules/field-default.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/form-customization/form-customization-rules/field-label.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/form-customization/form-customization-rules/field-visible.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/form-customization/form-customization-rules/tab-title.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/form-customization/form-customization-rules/tab-visible.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/form-customization/form-customization-rules/tv-default.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/form-customization/form-customization-rules/tv-title.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /administering-your-site/form-customization/form-customization-rules/tv-visible.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /case-studies-and-tutorials/index.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /case-studies-and-tutorials/creating-a-blog-in-modx-revolution.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /case-studies-and-tutorials/loading-pages-in-the-front-end-via-ajax-and-jquery-tabs.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /making-sites-with-modx/customizing-content/template-variables/bindings.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /making-sites-with-modx/tag-syntax.md: Content includes a getResources tag - could be an old index page that needs to be updated.
 - [ ] /modx-community-information.md: Page might need to be converted into a redirect
 - [ ] /modx-community-information/filing-bug-reports.md: Page might need to be converted into a redirect
 - [ ] /modx-community-information/getting-a-modx-account.md: Page might need to be converted into a redirect
 - [ ] /modx-community-information/using-github.md: Page might need to be converted into a redirect
-- [ ] /xpdo/getting-started.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /xpdo/extending-your-xpdo-model.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /xpdo/advanced-features.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /xpdo/xpdo-development.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] /xpdo/class-reference.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
-- [ ] xpdo/index.md: Content includes getResources - could be an old index page that needs to be updated, or a false positive.
+- [ ] /xpdo/getting-started.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /xpdo/extending-your-xpdo-model.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /xpdo/advanced-features.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /xpdo/xpdo-development.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] /xpdo/class-reference.md: Content includes a getResources tag - could be an old index page that needs to be updated.
+- [ ] xpdo/index.md: Content includes a getResources tag - could be an old index page that needs to be updated.
