@@ -92,15 +92,19 @@ _old_uri: "2.x/administering-your-site/upgrading-modx"
 
  If you're copying the extracted folder in Mac OS X, be careful, as OS X will "replace" folders when you drag and drop them over each other. Make sure that you use the "ditto" command from the command line, rather than drag/dropping from Finder, otherwise your core/config/config.inc.php file will be erased. A sample ditto command after you've extracted the zip could be:
 
- ```
-<pre class="brush: php">ditto modx-2.1.0-pl /www/public_html/modx/
+ ``` php 
+ditto modx-2.1.0-pl /www/public_html/modx/
 
-``` The effect is the same if you use the humble **cp** command:
+```
 
- ```
-<pre class="brush: php">\cp -fr modx-2.2.0-pl/* /www/public_html/modx
+ The effect is the same if you use the humble **cp** command:
 
-``` The "-fr" bit forces a recursive copy (i.e. a directory merge). Using a backslash before the "cp" command lets you avoid all the prompts asking "Are you sure?" to every overwrite operation.
+ ``` php 
+\cp -fr modx-2.2.0-pl/* /www/public_html/modx
+
+```
+
+ The "-fr" bit forces a recursive copy (i.e. a directory merge). Using a backslash before the "cp" command lets you avoid all the prompts asking "Are you sure?" to every overwrite operation.
 
  See the note above about FTP clients that support directory merging.
 

@@ -12,16 +12,16 @@ See <http://php.net/manual/en/function.pdo-commit.php>
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#commit>
 
-```
-<pre class="brush: php">
+``` php 
 void commit ()
-
-```## Example
-
 ```
-<pre class="brush: php">
-$xpdo->commit();
 
-```## See Also
+## Example
+
+``` php 
+$xpdo->commit();
+```
+
+## See Also
 
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

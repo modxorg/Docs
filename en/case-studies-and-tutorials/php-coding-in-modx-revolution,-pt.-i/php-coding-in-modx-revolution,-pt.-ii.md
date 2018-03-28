@@ -17,8 +17,7 @@ In this article, we'll talk about creating and removing objects (and their respe
 
 Object creation is handled by the **newObject** method. It assumes that the object you are trying to create has been properly defined inside your XML schema and that schema has generated the proper class files. For a simple example, we can look at the built-in MODX objects.
 
-```
-<pre class="brush: php">
+``` php 
 // let's create a Template
 $template = $modx->newObject('modTemplate');
 
@@ -37,25 +36,25 @@ $template->fromArray($data);
 if ($template->save() === false) {
         die('An error occurred while saving!');
 }
+```
 
-```A row is never actually added to the database until the object's save() command is run.
+A row is never actually added to the database until the object's save() command is run.
 
 ## Removing an Object
 
 To remove an object from the database, we use the **remove** command:
 
-```
-<pre class="brush: php">
+``` php 
 $template->remove();
+```
 
-```This will also remove any composite relationships defined in the object's schema. In the previous example with modTemplates, these are the modTemplateVarTemplate objects, which map Templates to TVs. Those will cascade and be removed.
+This will also remove any composite relationships defined in the object's schema. In the previous example with modTemplates, these are the modTemplateVarTemplate objects, which map Templates to TVs. Those will cascade and be removed.
 
 ## More Complex Queries
 
 Okay, so pretty soon you are going to need to do some more complex queries than we've dealt with. That's where the xPDOQuery object comes in. This allows you to build abstract query objects that emulate more advanced SQL commands. So, lets try to grab the third 10 resources (so 21-30), ordered by menuindex, that are either 1) published and searchable, or 2) created by the user with username 'george123'.
 
-```
-<pre class="brush: php">
+``` php 
 $c = $modx->newQuery('modResource');
 $c->leftJoin('modUser','PublishedBy');
 $c->where(array(
@@ -69,8 +68,9 @@ $c->sortby('menuindex','ASC');
 $c->limit(10,20);
 
 $resources = $modx->getCollection('modResource',$c);
+```
 
-```A couple of things to note. One, note that innerJoin first passes the class name, then the alias. And in orCondition, the 3rd parameter is the group number, which effectively groups the conditions into proper parenthesis (the first 2 in the first parenthetical group, the 3rd in another).
+A couple of things to note. One, note that innerJoin first passes the class name, then the alias. And in orCondition, the 3rd parameter is the group number, which effectively groups the conditions into proper parenthesis (the first 2 in the first parenthetical group, the 3rd in another).
 
 [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery") supports the the methods: join, [rightJoin](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.rightjoin "xPDOQuery.rightJoin"), [leftJoin](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.leftjoin "xPDOQuery.leftJoin"), [innerJoin](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"), [andCondition](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.andcondition "xPDOQuery.andCondition"), [orCondition](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.orcondition "xPDOQuery.orCondition"), [sortby](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.sortby "xPDOQuery.sortby"), [groupby](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.groupby "xPDOQuery.groupby"), [limit](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.limit "xPDOQuery.limit"), bindGraph, bindGraphNode, and [select](/xpdo/2.x/class-reference/xpdoquery/xpdoquery.select "xPDOQuery.select").
 

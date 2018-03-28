@@ -35,18 +35,17 @@ Let's create a custom TV Output Type called "button". This will render an input 
 
 This is the PHP file that will load the mgr template for managing the TV output type's properties. We'll have it contain just this:
 
-```
-<pre class="brush: php">
+``` php 
 <?php
 // any custom php you want to run here
 return $modx->smarty->fetch('element/tv/renders/properties/button.tpl');
+```
 
-```### Setting up the Input Properties Template
+### Setting up the Input Properties Template
 
 This is the template for the default manager theme to render properties with. We'll use ExtJS to render some pretty form fields:
 
-```
-<pre class="brush: php">
+``` php 
 <div id="tv-wprops-form{$tv}"></div>
 {literal}
 <script type="text/javascript">
@@ -101,8 +100,9 @@ MODx.load({
 // ]]>
 </script>
 {/literal}
+```
 
-```The key way these save is that each field is prepended with 'prop\_' in its name. This tells MODx to save this field in the TV's output properties. Make sure you specify your fields with this prefix!
+The key way these save is that each field is prepended with 'prop\_' in its name. This tells MODx to save this field in the TV's output properties. Make sure you specify your fields with this prefix!
 
 You don't have to use ExtJS, however - you can use just straight HTML - it's totally up to you. 
 Note that if you created another manager theme, you'd have to create a properties tpl for that theme as well.
@@ -111,8 +111,7 @@ Note that if you created another manager theme, you'd have to create a propertie
 
 Now we get into the good stuff. This controller will handle exactly how the button is outputted. Our file looks like this (comments inline):
 
-```
-<pre class="brush: php">
+``` php 
 <?php
 $o= '';
 $buttons= $this->parseInput($value, '||', 'array');
@@ -144,8 +143,9 @@ foreach ($buttons as $button) {
 }
 
 return $o;
+```
 
-```## Using the Custom TV Output Type
+## Using the Custom TV Output Type
 
 So, how does it look? Well, it should render an output form like this when editing the TV - I've added some custom values to it as well:
 

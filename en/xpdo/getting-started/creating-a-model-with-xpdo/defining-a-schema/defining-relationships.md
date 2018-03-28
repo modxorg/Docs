@@ -20,13 +20,15 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defi
 
  A great example of this is a collection of Crayons in a Box. The relationship from the Crayons to the Box is an **aggregate** relationship. If you delete a crayon object, it's related box object should not be removed (because it might contain other crayons). Our crayon object would be defined in our XML schema like this:
 
-```
-<pre class="brush: xml"><object class="myCrayon" table="crayons" extends="xPDOSimpleObject">
+``` xml 
+<object class="myCrayon" table="crayons" extends="xPDOSimpleObject">
     <field key="box" dbtype="int" precision="10" phptype="integer" null="false" default="" />
     <aggregate alias="Box" class="myBox" local="box" foreign="id" cardinality="one" owner="foreign" />
 </object>
 
-``` Note the attributes:
+```
+
+ Note the attributes:
 
 - **alias** - Relationships in xPDO allow for 'aliases', which can differentiate between two different relationships that refer to the same foreign key.
 - **class** - The class name of the relating object.
@@ -37,46 +39,54 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defi
 
  So our XML here would allow us to use the following code to grab the Box for a Crayon:
 
-```
-<pre class="brush: php">$crayon = $xpdo->getObject('myCrayon',1);
+``` php 
+$crayon = $xpdo->getObject('myCrayon',1);
 $box = $crayon->getOne('Box');
 echo $box->get('name');
 
-```##  Composite Relationships 
+```
+
+##  Composite Relationships 
 
  A composite relationship in xPDO is relationship between two tables where the secondary table(s) are composites of the primary table in such a way that if the object in the primary table is deleted, the related object(s) in the secondary table(s) should be removed. If we delete a box, its related crayons should be removed as well.
 
  Back to our Crayon-Box example: The Crayons are Composites of the Box object. We'd define that in our XML schema as:
 
-```
-<pre class="brush: xml"><object class="myBox" table="boxes" extends="xPDOSimpleObject">
+``` xml 
+<object class="myBox" table="boxes" extends="xPDOSimpleObject">
     <composite alias="Crayons" class="myCrayon" local="id" foreign="box" cardinality="many" owner="local" />
 </object>
 
-```As you can see, a few attributes have changed. The alias now is plural, since we could have any number of Crayons related to this Box. Also, the local attribute now points to the ID of this Box; the foreign attribute points to the foreign key 'box' in the Crayon object; the cardinality is now "many"; and finally, the owner of the key is now "local", since it is owned by the Box.
+```
+
+As you can see, a few attributes have changed. The alias now is plural, since we could have any number of Crayons related to this Box. Also, the local attribute now points to the ID of this Box; the foreign attribute points to the foreign key 'box' in the Crayon object; the cardinality is now "many"; and finally, the owner of the key is now "local", since it is owned by the Box.
 
  We can grab all the Crayons in the Box with this xPDO code:
 
-```
-<pre class="brush: php">$box = $xpdo->getObject('myBox',23);
+``` php 
+$box = $xpdo->getObject('myBox',23);
 $crayons = $box->getMany('Crayons');
 foreach ($crayons as $crayon) {
    echo $crayon->get('color').'<br />';
 }
 
-``` Remember that in a Composite relationship, should the owner of the relationship be removed, all the Composites will be removed. So, if we remove the Box object:
+```
+
+ Remember that in a Composite relationship, should the owner of the relationship be removed, all the Composites will be removed. So, if we remove the Box object:
+
+``` php 
+$box->remove();
 
 ```
-<pre class="brush: php">$box->remove();
 
-``` ...this would remove all of the related Crayons for that Box. This can be useful to cascade removal of objects, making code simpler and easier to manage.
+ ...this would remove all of the related Crayons for that Box. This can be useful to cascade removal of objects, making code simpler and easier to manage.
 
 ##  Relating Many-to-Many 
 
  Let's go back to our StoreFinder model. First off, let's review our schema so far:
 
-```
-<pre class="brush: php"><?xml version="1.0" encoding="UTF-8"?>
+``` php 
+<?xml version="1.0" encoding="UTF-8"?>
 <model package="storefinder" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="storefinder" phpdoc-subpackage="model" version="1.1">
   <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
     <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
@@ -115,36 +125,46 @@ foreach ($crayons as $crayon) {
   </object>
 </model>
 
-``` We're going to want to relate Stores to Owners, but as you can see here, the relationship is "many-to-many" - an Owner can have multiple Stores, and a Store can have multiple Owners. So how do we handle this? Well, the best way is to create an intermediary table, which we'll call 'sfStoreOwner'. This table has only 3 fields - its ID, and 2 indexed fields that are 'store' and 'owner'.
+```
+
+ We're going to want to relate Stores to Owners, but as you can see here, the relationship is "many-to-many" - an Owner can have multiple Stores, and a Store can have multiple Owners. So how do we handle this? Well, the best way is to create an intermediary table, which we'll call 'sfStoreOwner'. This table has only 3 fields - its ID, and 2 indexed fields that are 'store' and 'owner'.
 
  Those two fields contain the PK values of the Store and Owner it is relating. So let's add the relationships. In our sfStore definition, we want to add this line:
 
-```
-<pre class="brush: xml"><composite alias="StoreOwners" class="sfStoreOwner" local="id" foreign="store" cardinality="many" owner="local" />
-
-``` And in our sfOwner definition, let's add this:
+``` xml 
+<composite alias="StoreOwners" class="sfStoreOwner" local="id" foreign="store" cardinality="many" owner="local" />
 
 ```
-<pre class="brush: php"><composite alias="StoreOwners" class="sfStoreOwner" local="id" foreign="owner" cardinality="many" owner="local" />
 
-``` Note that both of our primary classes use a Composite relationship. This is because if any of our Stores or Owners get deleted, we want to delete any connecting relationships between them.
+ And in our sfOwner definition, let's add this:
+
+``` php 
+<composite alias="StoreOwners" class="sfStoreOwner" local="id" foreign="owner" cardinality="many" owner="local" />
+
+```
+
+ Note that both of our primary classes use a Composite relationship. This is because if any of our Stores or Owners get deleted, we want to delete any connecting relationships between them.
 
  So go to our sfStoreOwner definition, and add these two lines:
 
-```
-<pre class="brush: xml"><aggregate alias="Store" class="sfStore" local="store" foreign="id" cardinality="one" owner="foreign" />
+``` xml 
+<aggregate alias="Store" class="sfStore" local="store" foreign="id" cardinality="one" owner="foreign" />
 <aggregate alias="Owner" class="sfOwner" local="owner" foreign="id" cardinality="one" owner="foreign" />
 
-``` Now that we've got our model defined, in our xPDO code we'll be able to do something like this:
-
 ```
-<pre class="brush: php"><aggregate alias="Store" class="sfStore" local="store" foreign="id" cardinality="one" owner="foreign" />
+
+ Now that we've got our model defined, in our xPDO code we'll be able to do something like this:
+
+``` php 
+<aggregate alias="Store" class="sfStore" local="store" foreign="id" cardinality="one" owner="foreign" />
 <aggregate alias="Owner" class="sfOwner" local="owner" foreign="id" cardinality="one" owner="foreign" />
 
-``` Now that we've got our model defined, in our xPDO code we'll be able to do something like this:
-
 ```
-<pre class="brush: php">$store = $xpdo->getObject('sfStore',43);
+
+ Now that we've got our model defined, in our xPDO code we'll be able to do something like this:
+
+``` php 
+$store = $xpdo->getObject('sfStore',43);
 $storeOwners = $store->getMany('StoreOwners');
 $owners = array();
 foreach ($storeOwners as $storeOwner) {
@@ -154,12 +174,14 @@ foreach ($owners as $owner) {
    echo $owner->get('name').'<br />';
 }
 
-``` And that will output a list of owners for that store.
+```
+
+ And that will output a list of owners for that store.
 
  However, as you can see, that code isn't very optimized. So we're going to optimize it a bit using $xpdo->newQuery:
 
-```
-<pre class="brush: php">$c = $xpdo->newQuery('sfOwner');
+``` php 
+$c = $xpdo->newQuery('sfOwner');
 $c->innerJoin('sfStoreOwner','StoreOwners');
 $c->where(array(
    'StoreOwners.store' => 43, // the ID of our Store
@@ -169,7 +191,9 @@ foreach ($owners as $owner) {
    echo $owner->get('name').'<br />';
 }
 
-``` This block of code lets us grab all the owners of a store with only one query.
+```
+
+ This block of code lets us grab all the owners of a store with only one query.
 
 ##  Conclusion 
 

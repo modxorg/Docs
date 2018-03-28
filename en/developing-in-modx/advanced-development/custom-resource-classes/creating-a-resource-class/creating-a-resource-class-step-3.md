@@ -19,33 +19,33 @@ This tutorial is part of a Series:
 
 Okay, remember how in [Step 1](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class") we told MODX where our controllers/ directory was, via the "getControllerPath" method? To refresh your memory, here's the code from
 
-```
-<pre class="brush: php">
+``` php 
 return $modx->getOption('copyrightedresource.core_path',null,$modx->getOption('core_path').'components/copyrightedresource/').'controllers/';
-
-```As you might have guessed, we're going to put two files into the `core/components/copyrightedresource/controllers/` directory. Create the directory if you haven't already and then create a file named **create.class.php**:
-
 ```
-<pre class="brush: php">
+
+As you might have guessed, we're going to put two files into the `core/components/copyrightedresource/controllers/` directory. Create the directory if you haven't already and then create a file named **create.class.php**:
+
+``` php 
 <?php
 class CopyrightedResourceCreateManagerController extends ResourceCreateManagerController {
     public function getLanguageTopics() {
         return array('resource','copyrightedresource:default');
     }
 }
-
-```Next add **update.class.php**:
-
 ```
-<pre class="brush: php">
+
+Next add **update.class.php**:
+
+``` php 
 <?php
 class CopyrightedResourceUpdateManagerController extends ResourceUpdateManagerController {
     public function getLanguageTopics() {
         return array('resource','copyrightedresource:default');
     }
 }
+```
 
-```So when we're done with that, our file structure should look something like this:
+So when we're done with that, our file structure should look something like this:
 
 ![](/download/attachments/36634961/controllers.png?version=1&modificationDate=1360981998000)
 

@@ -14,11 +14,11 @@ _old_uri: "2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor
 
 
 
-**default xPDO connection constructor**```
-<pre class="brush: php">
+**default xPDO connection constructor**``` php 
 $xpdo= new xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null) 
+```
 
-```## Parameters
+## Parameters
 
 As you can see, there are 5 parameters available in the constructor; the only necessary one is the first:
 

@@ -12,19 +12,19 @@ Send the user to a MODx virtual error page.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendErrorPage()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendErrorPage())
 
-```
-<pre class="brush: php">
+``` php 
 void sendErrorPage ([array $options = null])
+```
 
-```## Example
+## Example
 
 Send the user to the default Error page for the site.
 
-```
-<pre class="brush: php">
+``` php 
 $modx->sendErrorPage();
+```
 
-```## See Also
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.sendUnauthorizedPage](developing-in-modx/other-development-resources/class-reference/modx/modx.sendunauthorizedpage "modX.sendUnauthorizedPage")

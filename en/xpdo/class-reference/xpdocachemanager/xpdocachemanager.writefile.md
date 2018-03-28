@@ -12,20 +12,20 @@ Writes a file to the filesystem.
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#writeFile>
 
-```
-<pre class="brush: php">
+``` php 
 boolean writeFile (string $filename, string $content, [string $mode = 'wb'], [array $options = array()])
+```
 
-```## Example
+## Example
 
 Write a file to the FS.
 
-```
-<pre class="brush: php">
+``` php 
 $str = 'The contents of the file.';
 $xpdo->cacheManager->writeFile('/path/to/the/file.txt',$str);
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

@@ -59,34 +59,34 @@ A handy cPanel/WHM mod\_security module is available for visually editing your r
 
 If you have SSH access to your server, you can check to see which modules Apache loads on startup. To print out which modules are loaded into Apache, you can use the **apachectl** utility on \*NIX systems, e.g.
 
-```
-<pre class="brush: php">
+``` php 
 apachectl -t -D DUMP_MODULES
-
-```Or, if your **apachectl** command is not in your current $PATH, then you may need to specify a full path to the utility. To find the path, you can search for it using the **find** command:
-
 ```
-<pre class="brush: php">
+
+Or, if your **apachectl** command is not in your current $PATH, then you may need to specify a full path to the utility. To find the path, you can search for it using the **find** command:
+
+``` php 
 find / -name apachectl
-
-```Then once you've found the full path to the utility, you can run the command verbosely, e.g.:
-
 ```
-<pre class="brush: php">
+
+Then once you've found the full path to the utility, you can run the command verbosely, e.g.:
+
+``` php 
 /usr/local/apache/bin/apachectl -t -D DUMP_MODULES
-
-```The output will be something like this:
-
 ```
-<pre class="brush: php">
+
+The output will be something like this:
+
+``` php 
 Loaded Modules:
  core_module (static)
  rewrite_module (static)
  so_module (static)
  suphp_module (shared)
  security2_module (shared)  # <--- this is ModSecurity
+```
 
-```The mod\_security module is listed as **security2\_module**
+The mod\_security module is listed as **security2\_module**
 
 ### Other Recon
 
@@ -101,11 +101,11 @@ After you've verified that are in fact running ModSecurity, you'll want to monit
 
 The primary log you'll want to monitor is your Apache error log. The exact location is configured in your Apache configuration file, but often it resides inside of **/usr/local/apache/logs/error\_log** A good way to watch this file is by using the **tail** utility. You can monitor the file in real-time by using the **-f** flag, e.g.
 
-```
-<pre class="brush: php">
+``` php 
 tail -f /usr/local/apache/logs/error_log
+```
 
-```Keep that window open as you navigate the MODX manager and be alert if any errors appear in that file. (Press ctrl-C to close the utility).
+Keep that window open as you navigate the MODX manager and be alert if any errors appear in that file. (Press ctrl-C to close the utility).
 
 You may also want to watch the contents of the mod\_security log. Again, the location is configurable, but often this is stored in **/usr/local/apache/logs/modsec\_audit.log**
 
@@ -115,8 +115,7 @@ If you do see that errors are being tripped inside the Apache error log when you
 
 Here is a sample error from the Apache error log:
 
-```
-<pre class="brush: php">
+``` php 
 [Sat Nov 19 19:16:32 2011] [error] [client 123.123.123.123] ModSecurity: Access denied with code 500 (phase 2).
 Pattern match "(insert[[:space:]]+into.+values|select.*from.+[a-z|A-Z|0-9]|select.+from|bulk[[:space:]]+insert|union.+select|convert.+\\\\(.*from)"
 at ARGS:els.
@@ -129,16 +128,17 @@ at ARGS:els.
 [hostname "yoursite.com"]
 [uri "/connectors/element/tv.php"]
 [unique_id "TshG4EWntHMAAAfIFmUAAAAI"]
-
-```From this error, we need 3 pieces of information in order to whitelist a particular action. Take note of the following 3 items:
-
 ```
-<pre class="brush: php">
+
+From this error, we need 3 pieces of information in order to whitelist a particular action. Take note of the following 3 items:
+
+``` php 
 [id "300016"]
 [hostname "yoursite.com"]
 [uri "/connectors/element/tv.php"]
+```
 
-```This tells what rule was being tripped, what domain it was tripped on, and from what location inside that domain the rule is being tripped.
+This tells what rule was being tripped, what domain it was tripped on, and from what location inside that domain the rule is being tripped.
 
 ## Whitelisting a Rule for a Domain
 
@@ -148,25 +148,24 @@ Whitelisting a rule for a specific domain is accomplished through an "includes" 
 
 The first thing to do is to back up and rebuild the httpd.conf file to make sure there are no errors (run the following commands one at a time)
 
-```
-<pre class="brush: php">
+``` php 
 cd /usr/local/apache/conf
 cp -p httpd.conf httpd.conf.backup
-
-```If you're on a cPanel server, you can then rebuild the file by running the following command:
-
 ```
-<pre class="brush: php">
-/scripts/rebuildhttpdconf
 
-```The goal here is to verify that your existing Apache configuration file is backed-up and working _before_ we try modifying it.
+If you're on a cPanel server, you can then rebuild the file by running the following command:
+
+``` php 
+/scripts/rebuildhttpdconf
+```
+
+The goal here is to verify that your existing Apache configuration file is backed-up and working _before_ we try modifying it.
 
 ### Edit the Virtual Hosts file
 
 Many setups (include cPanel setups) don't want you messing directly with the main Apache configuration file. Instead, you'll edit the vhosts file for a given domain. Look through your main Apache configuration file (**httpd.conf**) and search for your domain name to see where it has outsourced its configuration files. You should find some references to it inside of a **VirtualHost** block.
 
-```
-<pre class="brush: php">
+``` php 
 <VirtualHost 123.123.123.123>
     ServerName yoursite.com
     ServerAlias www.yoursite.com
@@ -175,8 +174,9 @@ Many setups (include cPanel setups) don't want you messing directly with the mai
     Include "/usr/local/apache/conf/userdata/std/2/yoursite/*.conf"
     Include "/usr/local/apache/conf/userdata/std/2/yoursite/yoursite.com/*.conf"
 </VirtualHost>
+```
 
-```Based on this **VirtualHosts** directive, we can turn our attention to the 2 directories referenced:
+Based on this **VirtualHosts** directive, we can turn our attention to the 2 directories referenced:
 
 - /usr/local/apache/conf/userdata/std/2/yoursite/
 - /usr/local/apache/conf/userdata/std/2/yoursite/yoursite.com/
@@ -193,8 +193,7 @@ That's where Apache will look for additional configurations. If you know you don
 
 The general whitelist rule looks like this:
 
-```
-<pre class="brush: php">
+``` php 
 <LocationMatch "/path/to/URI">
   <IfModule mod_security2.c>
     SecRuleRemoveById (Rule number)
@@ -203,30 +202,31 @@ The general whitelist rule looks like this:
     SecRuleRemoveById (etc)
   </IfModule>
 </LocationMatch>
+```
 
-```You can modify this and add it to your VirtualHosts directive (either in your main **httpd.conf** or inside your external **vhosts.conf** files). As long as Apache loads the configuration file, the whitelist rule will get registered.
+You can modify this and add it to your VirtualHosts directive (either in your main **httpd.conf** or inside your external **vhosts.conf** files). As long as Apache loads the configuration file, the whitelist rule will get registered.
 
 ### Specific Example
 
 Give our sample error message earlier which identified the following error:
 
-```
-<pre class="brush: php">
+``` php 
 [id "300016"]
 [hostname "yoursite.com"]
 [uri "/connectors/element/tv.php"]
-
-```We would go to the VirtualHosts directive for **yoursite.com** and add a rule like the following:
-
 ```
-<pre class="brush: php">
+
+We would go to the VirtualHosts directive for **yoursite.com** and add a rule like the following:
+
+``` php 
 <LocationMatch "/connectors/element/tv.php">
   <IfModule mod_security2.c>
     SecRuleRemoveById 300016
   </IfModule>
 </LocationMatch>
+```
 
-```Note that it references the MODX connector by its path and it references the ModSecurity rule by its id.
+Note that it references the MODX connector by its path and it references the ModSecurity rule by its id.
 
 **Beware Moving your Site**
 If you move your site to a new directory or if you move your **connectors** directory to a non-standard location, you will have to edit your rules! They apply to a specific URL, so if your URLs change, the rules will have to be updated.
@@ -235,8 +235,7 @@ If you move your site to a new directory or if you move your **connectors** dire
 
 It can be maddening going through MODX functionality one admin screen at a time, but there seems to be some difficulty in white-listing entire directories. Consider renaming your "connectors" directory (see [Hardening MODX Revolution](administering-your-site/security/hardening-modx-revolution "Hardening MODX Revolution")).
 
-```
-<pre class="brush: php">
+``` php 
 <LocationMatch "/manager/index.php">
 SecRuleRemoveById 300016
 </LocationMatch>
@@ -248,8 +247,9 @@ SecRuleRemoveById 300016
 <LocationMatch "/connectors/element/tv.php">
   SecRuleRemoveById 300013 300016
 </LocationMatch>
+```
 
-```## Restart Apache
+## Restart Apache
 
 Once you've made the changes to your configuration files, you will need to restart Apache in order for the configurations to be re-read.
 
@@ -259,22 +259,22 @@ If you're not on a cPanel server, skip this step and just restart Apache.
 
 On a cPanel server, you'll want to re-run the **rebuildhttpdconf** utility:
 
-```
-<pre class="brush: php">
+``` php 
 cd /usr/local/apache/conf
 /scripts/rebuildhttpdconf
+```
 
-```Then you can check to see that the edits you made in your external files got slurped into the main file (again, this is ONLY on a cPanel setup: cPanel slurps up external configurations into the main **httpd.conf** file). Try browsing through the file to see that the stuff you put in the external file are now included in the main file.
+Then you can check to see that the edits you made in your external files got slurped into the main file (again, this is ONLY on a cPanel setup: cPanel slurps up external configurations into the main **httpd.conf** file). Try browsing through the file to see that the stuff you put in the external file are now included in the main file.
 
 ### Restart Apache
 
 Once you're edits have been made, restart the Apache process:
 
-```
-<pre class="brush: php">
+``` php 
 /etc/init.d/httpd restart
+```
 
-```If there are any errors in your files, you will be alerted to them. This can be nerve-wracking because if Apache does not come back on-line, **your site will be down!**
+If there are any errors in your files, you will be alerted to them. This can be nerve-wracking because if Apache does not come back on-line, **your site will be down!**
 
 ## Static Resources
 
@@ -290,11 +290,11 @@ The configuration details that can affect your downloads are the following:
 
 An easy solution is to bypass ModSecurity entirely for downloads like this:
 
-```
-<pre class="brush: php">
+``` php 
 SecRequestBodyAccess Off
+```
 
-```See <http://www.modsecurity.org/documentation/modsecurity-apache/2.1.0/modsecurity2-apache-reference.html> for more information on the various configuration details.
+See <http://www.modsecurity.org/documentation/modsecurity-apache/2.1.0/modsecurity2-apache-reference.html> for more information on the various configuration details.
 
 Another cause of this enigmatic symptom can be a conflict between web servers: for example, if you have Apache and NGINX installed on the same server, _make sure that they both do not use gzip compression_ – the result can look very much like ModSecurity interfering! If NGINX compresses a large static resource and then Apache also tries to compress it, the effort fails and the file ends up clipping at 64kb.
 

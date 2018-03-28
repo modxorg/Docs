@@ -38,19 +38,19 @@ The following variables are accessible from the MODx JS object:
 
 This is a JS object that contains all the current GET parameters for the page. Example:
 
-```
-<pre class="brush: php">
+``` php 
 var id = MODx.request.id;
+```
 
-```### MODx.config
+### MODx.config
 
 This object contains all the active System Settings in MODX by key:
 
-```
-<pre class="brush: php">
+``` php 
 var tpl = MODx.config.default_template;
+```
 
-```#### Other Variables
+#### Other Variables
 
 There are a few other variables available on the MODx.config object that are not [System Settings](administering-your-site/settings/system-settings "System Settings"):
 
@@ -58,43 +58,43 @@ KeyDescriptionbase\_urlThe base URL for the MODX site and/or active context.conn
 
 This object contains a map of all the modAction objects (or MODX manager controllers), mapped by their controller to their ID:
 
-```
-<pre class="brush: php">
+``` php 
 var actionId = MODx.action['resource/create'];
-
-```As of MODX 2.2, the non-core Actions are prefixed with their namespace. Prior to 2.2 it would just be the action controller. For example a "controllers/index" action in a "mycomponent" namespace would be retrievable using the following in 2.2 and up:
-
 ```
-<pre class="brush: php">
-var actionId = MODx.action['mycomponent:controllers/index'];
 
-```### MODx.version
+As of MODX 2.2, the non-core Actions are prefixed with their namespace. Prior to 2.2 it would just be the action controller. For example a "controllers/index" action in a "mycomponent" namespace would be retrievable using the following in 2.2 and up:
+
+``` php 
+var actionId = MODx.action['mycomponent:controllers/index'];
+```
+
+### MODx.version
 
 Contains MODX version information, with the following attributes:
 
 KeyExampleversion2major\_version1minor\_version0patch\_levelplcode\_nameRevolutiondistro (traditional)full\_version2.1.0-plfull\_appnameMODX Revolution 2.1.0-pl (traditional)Example:
 
-```
-<pre class="brush: php">
+``` php 
 var fv = MODx.version.full_version;
+```
 
-```### MODx.user
+### MODx.user
 
 This object will contain the two following properties for the currently logged-in manager user:
 
-MODx.user.idThe ID of the user.MODx.user.usernameThe username of the user.```
-<pre class="brush: php">
+MODx.user.idThe ID of the user.MODx.user.usernameThe username of the user.``` php 
 var userId = MODx.user.id;
+```
 
-```### MODx.perm
+### MODx.perm
 
 This will contain the following permissions should they be granted to the user (they will not exist if the user does not have the permission):
 
-NameDescriptionMODx.perm.resource\_treeTo view the Resources tree.MODx.perm.element\_treeTo view the Elements tree.MODx.perm.file\_treeTo view the Files tree.MODx.perm.file\_uploadTo be able to upload files.MODx.perm.file\_managerTo use the MODX file browser.MODx.perm.new\_chunkTo create a new Chunk.MODx.perm.new\_pluginTo create a new Plugin.MODx.perm.new\_snippetTo create a new Snippet.MODx.perm.new\_templateTo create a new Template.MODx.perm.new\_tvTo create a new Template Variable.MODx.perm.directory\_createTo be able to create a directory on the filesystem.```
-<pre class="brush: php">
+NameDescriptionMODx.perm.resource\_treeTo view the Resources tree.MODx.perm.element\_treeTo view the Elements tree.MODx.perm.file\_treeTo view the Files tree.MODx.perm.file\_uploadTo be able to upload files.MODx.perm.file\_managerTo use the MODX file browser.MODx.perm.new\_chunkTo create a new Chunk.MODx.perm.new\_pluginTo create a new Plugin.MODx.perm.new\_snippetTo create a new Snippet.MODx.perm.new\_templateTo create a new Template.MODx.perm.new\_tvTo create a new Template Variable.MODx.perm.directory\_createTo be able to create a directory on the filesystem.``` php 
 if (MODx.perm.file_upload) { /* ...code... */ }
+```
 
-```## Custom Methods
+## Custom Methods
 
 The MODx object also has quite a few custom methods available to it:
 
@@ -102,16 +102,16 @@ The MODx object also has quite a few custom methods available to it:
 
 This method will create a new object of any specified xtype and passed in configuration parameters. Example:
 
-```
-<pre class="brush: php">
+``` php 
 var w = MODx.load({
   xtype: 'modx-window-namespace-create'
   ,blankValues: true
 });
 w.setValues({ name: 'My Namespace' });
 w.show();
+```
 
-```Any defined class that has a registered xtype can be loaded from this method.
+Any defined class that has a registered xtype can be loaded from this method.
 
 ### MODx.clearCache
 
@@ -125,11 +125,11 @@ This will release the lock on the current active Resource. This method should no
 
 This method will cause JavaScript to sleep (or halt) for a specified number of seconds:
 
-```
-<pre class="brush: php">
+``` php 
 MODx.sleep(3); /* sleep for 3 seconds */
+```
 
-```### MODx.logout
+### MODx.logout
 
 This method will automatically logout the active manager user. It fires the 'beforeLogout' and 'afterLogout' events on the MODx object. If both events are successful, it will then redirect the user to the login screen.
 
@@ -137,13 +137,13 @@ This method will automatically logout the active manager user. It fires the 'bef
 
 This will load the current Help screen for the active page. Normally this is set by default on the modAction record for the page, and its URL can be found by the MODx.config.help\_url property. You can, however, override this to fire up any URL into the panel:
 
-```
-<pre class="brush: php">
+``` php 
 /* show the modx.com site in the Help modal */
 MODx.config.help_url = 'http://modx.com/';
 MODx.loadHelpPane();
+```
 
-```### MODx.preview
+### MODx.preview
 
 Loads the current MODX site for the active Context.
 

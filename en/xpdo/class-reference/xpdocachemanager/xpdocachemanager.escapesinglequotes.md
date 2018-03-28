@@ -12,21 +12,21 @@ Escapes all single quotes in a string.
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#escapeSingleQuotes>
 
-```
-<pre class="brush: php">
+``` php 
 string escapeSingleQuotes (string $s)
+```
 
-```## Example
+## Example
 
 Escape the quotes in the string below:
 
-```
-<pre class="brush: php">
+``` php 
 $str = 'Testing my "fun" Windows system.';
 echo $xpdo->cacheManager->escapeSingleQuotes($str);
 // outputs: Testing my \"fun\" Windows system.
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

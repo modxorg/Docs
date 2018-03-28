@@ -10,13 +10,13 @@ Fires before the login process is started for a user when logging in to the mana
 
 To allow logging in when using this event please use:
 
-```
-<pre class="brush: php">
+``` php 
 $modx->event->output(true);
 // before Revo 2.3.0 you should use instead:
 $modx->event->_output = true;
+```
 
-```Service: 2 - Manager Access Events 
+Service: 2 - Manager Access Events 
 Group: None
 
 ## Event Parameters

@@ -16,20 +16,20 @@ Also allows for an array of options to be passed. The current available values a
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#set>
 
-```
-<pre class="brush: php">
+``` php 
 boolean set (string $key, mixed &$var, [integer $lifetime = 0], [array $options = array()])
+```
 
-```## Example
+## Example
 
 Set a cache file to the string provided, to expire in 2 hours.
 
-```
-<pre class="brush: php">
+``` php 
 $str = 'This will be cached.';
 $xpdo->cacheManager->set('mycachefile',$str,7200);
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

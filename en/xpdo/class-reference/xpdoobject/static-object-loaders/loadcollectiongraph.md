@@ -12,13 +12,12 @@ This function is responsible for loading a collection of object instances, as we
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#loadCollectionGraph>
 
-```
-<pre class="brush: php">
+``` php 
 function loadCollectionGraph(& $xpdo, $className, $graph, $criteria, $cacheFlag)
-
-```## Example
-
 ```
-<pre class="brush: php">
+
+## Example
+
+``` php 
 
 ```

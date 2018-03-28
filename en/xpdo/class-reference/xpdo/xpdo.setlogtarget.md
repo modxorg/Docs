@@ -21,22 +21,26 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.setlogtarget"
 
  API Docs: <http://api.modxcms.com/xpdo/xPDO.html#setLogTarget>
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 mixed setLogTarget ([string $target = 'ECHO'], mixed 1)
 
-```## Examples
+```
+
+## Examples
 
  Set the log target to format log messages in HTML and output to the browser.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $xpdo->setLogTarget('HTML');
 
-``` Set the log target to output anything WARN or above to a new log file that is set with 'install.' plus a timestamp of current execution (useful for install procedures).
+```
 
- ```
-<pre class="brush: php">
+ Set the log target to output anything WARN or above to a new log file that is set with 'install.' plus a timestamp of current execution (useful for install procedures).
+
+ ``` php 
+
 $xpdo->setLogLevel(xPDO::LOG_LEVEL_WARN);
 $xpdo->setLogTarget(array(
    'target' => 'FILE',
@@ -45,7 +49,9 @@ $xpdo->setLogTarget(array(
     )
 ));
 
-```## See Also
+```
+
+## See Also
 
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
 - [xPDO.log](/xpdo/2.x/class-reference/xpdo/xpdo.log)

@@ -12,30 +12,36 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getiterator"
 
 ## Syntax
 
- ```
-<pre class="brush: php">xPDOIterator getIterator (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
+ ``` php 
+xPDOIterator getIterator (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 
-``` Remember, if you are using xPDO map and class files that were generated from XML schema, the classname is **not** the same as your table name. If in doubt, have a look at the schema XML file, e.g.
+```
 
- ```
-<pre class="brush: php"><object class="MyClassName" table="my_class_name" extends="xPDOObject">
+ Remember, if you are using xPDO map and class files that were generated from XML schema, the classname is **not** the same as your table name. If in doubt, have a look at the schema XML file, e.g.
 
-```## Example
+ ``` php 
+<object class="MyClassName" table="my_class_name" extends="xPDOObject">
+
+```
+
+## Example
 
  Get an iterator for a collection of Box objects with a width of 40.
 
- ```
-<pre class="brush: php">$boxes = $xpdo->getIterator('Box',array(
+ ``` php 
+$boxes = $xpdo->getIterator('Box',array(
    'width' => 40,
 ));
 foreach ($boxes as $idx => $box) {
     echo "Box #{$idx} has an id of {$box->get('id')} and a width of {$box->get('width')}\n";
 }
 
-``` If no matching xPDOObjects are found, the xPDOIterator object will be empty but will still be an object, so the following won't work (opposed to [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")):
+```
 
- ```
-<pre class="brush: php">// a parent of -1 doesn't exist, this is intentional =)
+ If no matching xPDOObjects are found, the xPDOIterator object will be empty but will still be an object, so the following won't work (opposed to [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")):
+
+ ``` php 
+// a parent of -1 doesn't exist, this is intentional =)
 $resourceObjs = $xpdo->getIterator('modResource', array('parent' => -1));
 if ($resourceObjs) { // the same goes for if (!empty($resourceObjs)
     // this will always run, as the $resourceObjs is never empty
@@ -52,7 +58,9 @@ if ($resourceObjs->valid()) {
     // this will not run
 }
 
-```## See Also
+```
+
+## See Also
 
 - [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
 - [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")

@@ -12,18 +12,18 @@ Initialize, cleanse, and process a request made to a modX site.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::handleRequest()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::handleRequest())
 
-```
-<pre class="brush: php">
+``` php 
 mixed handleRequest ()
+```
 
-```## Example
+## Example
 
 Handle the current request.
 
-```
-<pre class="brush: php">
+``` php 
 $modx->handleRequest();
+```
 
-```## See Also
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

@@ -58,25 +58,24 @@ All values for \_path arguments (and the include argument) are passed through re
 
 CLI arguments for the script are specified in the format:
 
-```
-<pre class="brush: php">
+``` php 
 --argument[=value]
+```
 
-```**boolean arguments**
+**boolean arguments**
 If the equal sign and value are not provided, the argument value is set to boolean true.
 
 Here is an example CLI usage:
 
-```
-<pre class="brush: php">
+``` php 
 user@hostname:/home/user/xpdo$ php xpdo/tools/schema/upgrade-mysql-1.1.php --pkg=sample --pkg_path=models/ --schema_name=sample.mysql.schema.xml --schema_path=schemas/ --echo --write --regen
+```
 
-```Alternatively, you can use the include argument to set properties from an external file.
+Alternatively, you can use the include argument to set properties from an external file.
 
 An example properties file, `sample.schema.properties.php`:
 
-```
-<pre class="brush: php">
+``` php 
 <?php
 $pkg='sample';
 $pkg_path='models/';
@@ -85,23 +84,24 @@ $schema_path='schemas/';
 $echo=true;
 $write=true;
 $regen=true;
-
-```And the example CLI call to use the properties file:
-
 ```
-<pre class="brush: php">
-user@hostname:/home/user/xpdo$ php xpdo/tools/schema/upgrade-mysql-1.1.php --include=sample.schema.properties.php
 
-```**CLI arguments override properties file**
+And the example CLI call to use the properties file:
+
+``` php 
+user@hostname:/home/user/xpdo$ php xpdo/tools/schema/upgrade-mysql-1.1.php --include=sample.schema.properties.php
+```
+
+**CLI arguments override properties file**
 Please note that any arguments provided in the CLI call will override values set in and included from the properties file.
 
 #### Running as web request
 
 You can also execute the script as a web request, passing the arguments as $\_REQUEST variables, $\_GET, $\_POST, or $\_COOKIE. An example URL for such a call might look like this:
 
-```
-<pre class="brush: php">
+``` php 
 http://localhost/food/xpdo/tools/schema/upgrade-mysql-1.1.php?pkg=sample&pkg_path=models/&schema_name=sample.mysql.schema.xml&schema_path=schemas/&echo=true&write=true&regen=true
+```
 
-```**boolean arguments**
+**boolean arguments**
 To set a boolean value of true, make sure you pass the string 'true', otherwise the value is assumed to be boolean false.

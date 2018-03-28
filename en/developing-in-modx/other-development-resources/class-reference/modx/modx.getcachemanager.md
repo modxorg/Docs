@@ -14,20 +14,20 @@ Overrides xPDO::getCacheManager.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getCacheManager()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getCacheManager())
 
-```
-<pre class="brush: php">
+``` php 
 object getCacheManager()
+```
 
-```## Example
+## Example
 
 Get the Cache Manager to set a dummy cache file.
 
-```
-<pre class="brush: php">
+``` php 
 $cacheManager = $modx->getCacheManager();
 $cacheManager->set('testcachefile','test123');
+```
 
-```## See Also
+## See Also
 
 - [Caching](/xpdo/2.x/advanced-features/caching "Caching") – the full options are documented on the xPDO caching page.
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

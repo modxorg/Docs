@@ -21,13 +21,13 @@ The MODx.msg class provides the functionality of the Ext.MessageBox class, with 
 
 Used to display an alert dialog box on the page. Example:
 
-```
-<pre class="brush: php">
+``` php 
 MODx.msg.alert('Warning!','You are out of space! We should clear the cache.',function() {
   MODx.clearCache();
 },MODx);
+```
 
-```### confirm
+### confirm
 
 > MODx.msg.confirm(config)
 
@@ -35,8 +35,7 @@ Loads a confirmation dialog that prompts the user for a Yes/No response. If Yes 
 
 NameDescriptiontitleThe title of the confirmation box.textThe text in the confirmation box.urlThe URL to send the AJAX request to.paramsThe REQUEST params to send with the AJAX request.listenersAny listeners to look for on the request.An example:
 
-```
-<pre class="brush: php">
+``` php 
 MODx.msg.confirm({
    title: 'Are you sure?',
    text: 'Do you want to delete the world? This is irreversible.',
@@ -50,23 +49,23 @@ MODx.msg.confirm({
         },scope:true}
    }
 });
+```
 
-```#### MODx.msg.confirm Custom Events
+#### MODx.msg.confirm Custom Events
 
 MODx.msg.confirm adds a few custom events that fire:
 
 NameDescriptionsuccessFires on a successful response from the AJAX submission.failureFires on a failed response from the AJAX submission.cancelFires when the user cancels the confirmation dialog.### status
 
-```
-<pre class="brush: php">
+``` php 
 MODx.msg.status(opt)
+```
 
-```Loads a temporary status message in the top-right of the screen, that fades away. The properties for the opt parameter are:
+Loads a temporary status message in the top-right of the screen, that fades away. The properties for the opt parameter are:
 
 NameDescriptionDefaulttitleOptional. The title of the message. messageThe text of the status message. dontHideIf true, will not automatically hide the status message. Will stay until it is clicked.falsedelayThe number of seconds to show the message.1.5You could use this in custom manager pages to provide confirmation your object was saved. You could add something like this to your FormPanel definition:
 
-```
-<pre class="brush: php">
+``` php 
         listeners: {
             'success': function (res) {
                 MODx.msg.status({
@@ -76,8 +75,9 @@ NameDescriptionDefaulttitleOptional. The title of the message. messageThe text o
                 });
             }
         }
+```
 
-```The 'success' listener is part of modExt and comes with [MODx.FormPanel](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel "MODx.FormPanel").
+The 'success' listener is part of modExt and comes with [MODx.FormPanel](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel "MODx.FormPanel").
 
 ## See Also
 

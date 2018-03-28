@@ -12,8 +12,7 @@ Get a set of column names from an xPDOObject for use in SQL queries.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getSelectColumns>
 
-```
-<pre class="brush: php">
+``` php 
 static string getSelectColumns (
    xPDO &$xpdo,
    string $className,
@@ -22,11 +21,10 @@ static string getSelectColumns (
    [array $columns = array ()],
    [boolean $exclude = false]
 )
-
-```## Examples
-
 ```
-<pre class="brush: php">
-$columnString = xPDOObject::getSelectColumns($xpdo,'modChunk');
 
+## Examples
+
+``` php 
+$columnString = xPDOObject::getSelectColumns($xpdo,'modChunk');
 ```

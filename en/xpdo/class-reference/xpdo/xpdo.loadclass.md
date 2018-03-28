@@ -12,11 +12,11 @@ Include a class by fully qualified name. This is a handy way to perform an `incl
 
 API Docs: <http://api.modx.com/xpdo/xPDO.html#loadClass>
 
-```
-<pre class="brush: php">
+``` php 
 string|boolean loadClass (string $fqn, [ $path = ''], [ $ignorePkg = false], [ $transient = false])
+```
 
-```The $fqn (fully qualified name) should in the format:
+The $fqn (fully qualified name) should in the format:
 
 > dir\_a.dir\_b.dir\_c.classname
 
@@ -34,20 +34,20 @@ which will translate to:
 
 Load a class from the path '/my/path/to/model/'.
 
-```
-<pre class="brush: php">
+``` php 
 $xpdo->loadClass('myBox','/my/path/to/model/');
-
-```Another example:
-
 ```
-<pre class="brush: php">
+
+Another example:
+
+``` php 
 if (!$xpdo->loadClass('myBox','/my/path/to/model/',true,true)) {
     die('Could not load class myBox!');
 }
 $Box = new myBox();
+```
 
-```## See Also
+## See Also
 
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")
 - [modX.getService](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService") - this will include a class and instantiate it.

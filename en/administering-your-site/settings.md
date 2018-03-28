@@ -18,11 +18,11 @@ See the following for more information:
 
 They can be referenced at any point via their Tag, for example, for the 'site\_start' Setting:
 
-```
-<pre class="brush: php">
+``` php 
 [[++site_start]]
+```
 
-```System Settings can be overridden by Context Settings, which are specific to each [Context](administering-your-site/contexts "Contexts"). Context Settings can in turn be overridden by [User Settings](administering-your-site/security/users#Users-UsersUserSettings).
+System Settings can be overridden by Context Settings, which are specific to each [Context](administering-your-site/contexts "Contexts"). Context Settings can in turn be overridden by [User Settings](administering-your-site/security/users#Users-UsersUserSettings).
 
 The hierarchy to remember is:
 
@@ -42,11 +42,11 @@ Settings can also be specific to [Namespaces](developing-in-modx/advanced-develo
 
 Getting settings is simple in MODx Revolution; simply use [getOption](/xpdo/1.x/class-reference/xpdo/xpdo.getoption "xPDO.getOption"). For example, to get the setting 'site\_start', simply:
 
-```
-<pre class="brush: php">
+``` php 
 $siteStartId = $modx->getOption('site_start');
+```
 
-```Now, all settings are overridable by Context and User, as described above, and getOption respects that. So, if in the above code example, if you had set site\_start as a Context Setting that overrode the System Setting, getOption will respect that - but only if you're executing the PHP in that Context that has the Setting.
+Now, all settings are overridable by Context and User, as described above, and getOption respects that. So, if in the above code example, if you had set site\_start as a Context Setting that overrode the System Setting, getOption will respect that - but only if you're executing the PHP in that Context that has the Setting.
 
 For example, if I were using that code block in a Context called 'boo', and I had added a Context Setting for site\_start in the 'boo' Context, and set it to 3, the above code would output '3'.
 
@@ -62,11 +62,11 @@ getOption supports 3 parameters:
 
 So, for example, if I were in a Snippet and wanted some default properties at the top, I could use getOption. [Snippets](developing-in-modx/basic-development/snippets "Snippets") automatically pass in an array of all the Properties attached to that snippet (or specified in the Tag call) via the $scriptProperties array. So, you can use that array to check for default properties. This example sets a default value to the 'showPublished' property should it not be specified:
 
-```
-<pre class="brush: php">
+``` php 
 $showPublished = $modx->getOption('showPublished',$scriptProperties,true);
+```
 
-```Now, assuming the Snippet doesnt have showPublished as a [default property](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets"), if you called the Snippet via the tag call:
+Now, assuming the Snippet doesnt have showPublished as a [default property](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets"), if you called the Snippet via the tag call:
 
 > \[\[mySnippet\]\]
 

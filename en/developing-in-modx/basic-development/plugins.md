@@ -37,13 +37,15 @@ In your Plugin, how you handle the output depends on the System Event you are in
 
 If you need to know which event triggered your plugin (say, for a plugin that listens to more than one event), you can access the Event's name like so:
 
-```
-<pre class="brush: php">$eventName = $modx->event->name;
-
-```The code for a Plugin listening to more than one event looks like this:
+``` php 
+$eventName = $modx->event->name;
 
 ```
-<pre class="brush: php">$eventName = $modx->event->name;
+
+The code for a Plugin listening to more than one event looks like this:
+
+``` php 
+$eventName = $modx->event->name;
 switch($eventName) {
     case 'OnWebPageInit':
         /* do something */
@@ -53,7 +55,9 @@ switch($eventName) {
         break;
 }
 
-```## Plugin Examples
+```
+
+## Plugin Examples
 
 Plugins can be used for a variety of different applications, below are a couple of examples:
 
@@ -62,22 +66,26 @@ Plugins can be used for a variety of different applications, below are a couple 
 **Description:** Send a custom message to the user as they create/edit a page... a custom header. 
 **System Events:** OnDocFormPrerender
 
-```
-<pre class="brush: php">$modx->event->output('Hi there user!');
+``` php 
+$modx->event->output('Hi there user!');
 
-```- - - - - -
+```
+
+- - - - - -
 
 ### Custom Validation
 
 **Description:** Do some custom validation on saving a page resource 
 **System Events:** OnBeforeDocFormSave
 
-```
-<pre class="brush: php">// Do some logical stuff.... if validation failed:
+``` php 
+// Do some logical stuff.... if validation failed:
 $modx->event->output('Something did not validate!');
 return "This goes to the logs";
 
-```The trick here is that what you want to message the user has to be passed to the **$modx->event->output()** function; any text you want to write to the logs can simply be returned by the plugin. If you pass validation, simply return null.
+```
+
+The trick here is that what you want to message the user has to be passed to the **$modx->event->output()** function; any text you want to write to the logs can simply be returned by the plugin. If you pass validation, simply return null.
 
 **No HTML Allowed** 
  The output you set in **$modx->event->output()** must not contain any HTML! Use plain text only! This is because the message is passed to the user via a Javascript modal window.
@@ -92,13 +100,15 @@ Return value must be a string. If your return value will be a number, concatenat
 **Description:** Filter words from a document before it's displayed on the web 
 **System Events:** OnWebPagePrerender
 
-```
-<pre class="brush: php">$words = array("snippet", "template"); // words to filter
+``` php 
+$words = array("snippet", "template"); // words to filter
 $output = &$modx->resource->_output; // get a reference to the output
 $output = str_replace($words,"<b>[filtered]</b>",$output);
 
 
-```- - - - - -
+```
+
+- - - - - -
 
 ### Page-Not-Found Redirector:
 
@@ -110,8 +120,8 @@ $output = str_replace($words,"<b>[filtered]</b>",$output);
 - _pnf.mailto_: Mail To Address
 - _pnf.mailfrom_: Mail From Address
 
-```
-<pre class="brush: php">if ($modx->event->name == 'OnPageNotFound') {
+``` php 
+if ($modx->event->name == 'OnPageNotFound') {
      $errorPage = $modx->getOption('pnf.page');
      if (empty($errorPage)) {
          $modx->sendErrorPage();
@@ -138,7 +148,9 @@ $output = str_replace($words,"<b>[filtered]</b>",$output);
     }
 }
 
-```## See Also
+```
+
+## See Also
 
 1. [System Events](developing-in-modx/basic-development/plugins/system-events)
   1. [OnBeforeCacheUpdate](developing-in-modx/basic-development/plugins/system-events/onbeforecacheupdate)

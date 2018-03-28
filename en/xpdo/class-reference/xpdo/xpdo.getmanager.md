@@ -14,17 +14,17 @@ The manager class can perform operations such as creating or altering table stru
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getManager>
 
-```
-<pre class="brush: php">
+``` php 
 object|null getManager ()
-
-```## Example
-
 ```
-<pre class="brush: php">
-$manager = $xpdo->getManager();
 
-```## See Also
+## Example
+
+``` php 
+$manager = $xpdo->getManager();
+```
+
+## See Also
 
 - [xPDOManager](/xpdo/2.x/class-reference/xpdomanager "xPDOManager")
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

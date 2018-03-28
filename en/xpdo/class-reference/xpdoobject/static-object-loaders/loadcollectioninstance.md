@@ -12,8 +12,7 @@ This function is responsible for loading an xPDOObject instance into a collectio
 
 API Doc: [http://api.modx.com/xpdo/om/xPDOObject.html#\_loadCollectionInstance](http://api.modx.com/xpdo/om/xPDOObject.html#_loadCollectionInstance)
 
-```
-<pre class="brush: php">
+``` php 
 static boolean _loadCollectionInstance(
    xPDO &$xpdo,
    array &$objCollection,
@@ -23,10 +22,10 @@ static boolean _loadCollectionInstance(
    boolean $fromCache,
    boolean|integer $cacheFlag
 )
-
-```## Example
-
 ```
-<pre class="brush: php">
+
+## Example
+
+``` php 
 
 ```

@@ -12,18 +12,16 @@ Gets the type of the primary key field for the object.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getPKType>
 
-```
-<pre class="brush: php">
+``` php 
 string getPKType()
+```
 
-```## Examples
+## Examples
 
 Grabs the PK type of a table of Resources, which have an auto\_increment ID field:
 
-```
-<pre class="brush: php">
+``` php 
 $resource = $xpdo->getObject('Resource',1);
 echo $resource->getPKType();
 // prints "integer"
-
 ```

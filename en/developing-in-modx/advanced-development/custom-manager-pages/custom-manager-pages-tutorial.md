@@ -35,10 +35,12 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
  "What's the big deal?" you might ask. "Why can't I just add an anchor tag somewhere that links to my PHP file and be done with it?"
 
- ```
-<pre class="brush: php"><a href="/path/to/my/file.php">My Custom Manager Page</a>
+ ``` php 
+<a href="/path/to/my/file.php">My Custom Manager Page</a>
 
-``` That should work, right? Well... maybe, but it's not that simple. There are a lot of moving parts that have to get connected to make this seemingly "simple" task work. Allowing for internationalization, permissions schema, and scalability requires that this process include several layers of abstraction that are not immediately obvious. It goes far beyond what's possible with the simple anchor tag solution above. But rest assured, the extra steps will ensure that the solution will be usable in a far greater number of scenarios.
+```
+
+ That should work, right? Well... maybe, but it's not that simple. There are a lot of moving parts that have to get connected to make this seemingly "simple" task work. Allowing for internationalization, permissions schema, and scalability requires that this process include several layers of abstraction that are not immediately obvious. It goes far beyond what's possible with the simple anchor tag solution above. But rest assured, the extra steps will ensure that the solution will be usable in a far greater number of scenarios.
 
 ###  What we'll need: 
 
@@ -68,12 +70,14 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
  For our first manager page, we're going to keep it simple. Create a file named **index.php** which contains the following:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 return 'This is my first Custom Manager Page';
 ?>
 
-``` Upload the file to your MODx site into the directory (i.e. the Namespace) you've just created: **core/components/mycmp/index.php**
+```
+
+ Upload the file to your MODx site into the directory (i.e. the Namespace) you've just created: **core/components/mycmp/index.php**
 
  As a superficial check, you may want to try navigating to the file in a browser window: <http://yourdomain.com/core/components/mycmp/index.php>
 
@@ -136,27 +140,35 @@ return 'This is my first Custom Manager Page';
 
  Create a file name **default.inc.php** in your new 'en' lexicon directory (i.e. _core/components/mycmp/lexicon/en/default.inc.php_), and place your entries in them, in this format:
 
- ```
-<pre class="brush: php">$_lang['lexicon_entry_key'] = 'Translation for Entry';
+ ``` php 
+$_lang['lexicon_entry_key'] = 'Translation for Entry';
 
-```###  Create the Entries (Provide the Translations) 
+```
+
+###  Create the Entries (Provide the Translations) 
 
  Go ahead and add these entries to _core/components/mycmp/lexicon/en/default.inc.php_:
 
- ```
-<pre class="brush: php">$_lang['mycmp'] = 'My CMP';
+ ``` php 
+$_lang['mycmp'] = 'My CMP';
 $_lang['mycmp.menu_desc'] = 'My custom manager page.';
 
-``` **Strict Naming Conventions!** 
- If you use lexicon entries to translate custom System Settings, then be aware MODX will not look for the exact lexicon entry you typed! You must follow a strict naming convention, otherwise your lexicon entry will not be loaded and your System Setting information will not be translated! The name of your System Setting must use a Lexicon entry that is named after the setting's key, prefixed with "setting\_": ```
-<pre class="brush: php">setting_ + Key
-	
-``` The Description must follow the same format and include a suffix of "desc":
+```
 
- ```
-<pre class="brush: php">setting_ + Key + _desc
+ **Strict Naming Conventions!** 
+ If you use lexicon entries to translate custom System Settings, then be aware MODX will not look for the exact lexicon entry you typed! You must follow a strict naming convention, otherwise your lexicon entry will not be loaded and your System Setting information will not be translated! The name of your System Setting must use a Lexicon entry that is named after the setting's key, prefixed with "setting\_": ``` php 
+setting_ + Key
 	
-``` See System Settings for more info.
+```
+
+ The Description must follow the same format and include a suffix of "desc":
+
+ ``` php 
+setting_ + Key + _desc
+	
+```
+
+ See System Settings for more info.
 
 
 
@@ -166,10 +178,12 @@ $_lang['mycmp.menu_desc'] = 'My custom manager page.';
 
  The Systems Settings dialogs should pick up your translations as long as you've followed the expected naming conventions, but in order to use translated text inside your CMP, you need to load the lexicon. You do this using the lexicon object and its load method, something like this:
 
- ```
-<pre class="brush: php">$modx->lexicon->load('your_namespace:default');
+ ``` php 
+$modx->lexicon->load('your_namespace:default');
 
-``` Put that at the top of your CMP code.
+```
+
+ Put that at the top of your CMP code.
 
 ##  Add a Custom Permission (optional) 
 

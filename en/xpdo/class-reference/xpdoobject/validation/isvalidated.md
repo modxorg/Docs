@@ -12,13 +12,12 @@ Indicates if the object or specified field has been validated.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isValidated>
 
-```
-<pre class="brush: php">
+``` php 
 boolean isValidated ([string $key = ''])
-
-```## Examples
-
 ```
-<pre class="brush: php">
+
+## Examples
+
+``` php 
 
 ```

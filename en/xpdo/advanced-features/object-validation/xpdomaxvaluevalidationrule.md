@@ -10,8 +10,7 @@ _old_uri: "2.x/advanced-features/object-validation/xpdomaxvaluevalidationrule"
 
 First, our model:
 
-```
-<pre class="brush: php">
+``` php 
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">    
     <object class="myTest" table="test" extends="xPDOSimpleObject">
@@ -29,11 +28,11 @@ First, our model:
         </validation>
     </object>
 </model>
-
-```From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
-
 ```
-<pre class="brush: php">
+
+From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
+
+``` php 
 $output = '';
 $modx->addPackage('test','/path/to/my/test/model/','test_');
 $obj = $modx->newObject('myTest');
@@ -45,8 +44,9 @@ if ($validator->validate() == false) {
         $output .= $errorMsg['message'];
     }
 }
+```
 
-```This will display:
+This will display:
 
 > The number cannot be greater than 100.
 

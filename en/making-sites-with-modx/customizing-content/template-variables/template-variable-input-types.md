@@ -50,18 +50,20 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
  To make auto-tag tvs useful in the front end, you will need to set the output type to "Delimiter" and specify a delimiter of your choice, and/or use an output filter to present it in the way you prefer. ![](/download/attachments/33227172/autotag.png?version=1&modificationDate=1292891676000)
  To output the tags in such a way that you each tag links to a certain resource and passes the tag in a GET parameter, you can use an output filter (snippet) as follows:
 
- ```
-<pre class="brush: php">  if ($input == '') { return 'Error'; } // In case the TV is empty
+ ``` php 
+  if ($input == '') { return 'Error'; } // In case the TV is empty
   $tags = explode(', ',$input); // Based on a delimiter of ", " this will split each one up in an array
   foreach ($tags as $key => $value) { // Loop through the tags
     $output[] = '<a href="'.$modx->makeurl(9, '', array('tag' => $value)).'">'.$value.'</a>'; // Add it to an output array, with a link to resource 9 and the get parameter.
   }
   return implode(', ',$output); // Merge the output array and output
 
-``` **All input option names (for use in migx options-json)**
+```
 
- ```
-<pre class="brush: php">{
+ **All input option names (for use in migx options-json)**
+
+ ``` php 
+{
    "allowBlank":"true",
    "maxLength":"",
    "minLength":"",
@@ -69,7 +71,9 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
    "regexText":""
 }
 
-```## 
+```
+
+## 
 
 ## Check Box (checkbox)
 
@@ -93,17 +97,21 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  You can distinguish between separate keys and values using double-equals and double-pipes:
 
- ```
-<pre class="brush: php">option1==value1||option2==value2
+ ``` php 
+option1==value1||option2==value2
 
-```### More Advanced Usage
+```
+
+### More Advanced Usage
 
  The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the option1==value1||option2==value2 format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can use a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") to select items from your database, e.g. **Input option values:**
 
- ```
-<pre class="brush: php">@SELECT pagetitle, id FROM modx_site_content WHERE parent=35
+ ``` php 
+@SELECT pagetitle, id FROM modx_site_content WHERE parent=35
 
-``` ![](/download/attachments/33227172/checkboxes.jpg?version=1&modificationDate=1295839664000)
+```
+
+ ![](/download/attachments/33227172/checkboxes.jpg?version=1&modificationDate=1295839664000)
 
  If you are using multiple checkboxes like this, you will probably need to set the **Output Type** to "Delimiter" (e.g. a comma) so you can distinguish the values contained in each checkbox.
 
@@ -120,35 +128,41 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  **All input option names (for use in migx options-json)**
 
- ```
-<pre class="brush: php">{
+ ``` php 
+{
    "allowBlank":"true",
    "columns":"1"
 }
 
-```## DropDown List Menu
+```
+
+## DropDown List Menu
 
  NOTE: this TV Input type has been deprecated since Revo 2.1.x Please see [Listbox](#TemplateVariableInputTypes-Listbox(MultiSelect)) input types below.
 
  Set input option values in the option1==value1||option2==value2||option3==value3 format. Make sure to choose an output type of delimited (or other of your liking) to be able to present this to the front-end in a certain manner. You can also use a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") binding to select 2 columns, e.g.
 
- ```
-<pre class="brush: php">@SELECT name, value FROM your_table
+ ``` php 
+@SELECT name, value FROM your_table
 
-``` Also see Resource List TV type.
+```
+
+ Also see Resource List TV type.
 
  ![](/download/attachments/33227172/dropdown.jpg?version=1&modificationDate=1295840412000)
 
  **All input option names (for use in migx options-json)**
 
- ```
-<pre class="brush: php">{
+ ``` php 
+{
    "allowBlank":"true",
    "listWidth":"",
    "listHeight":""
 }
 
-```## Email
+```
+
+## Email
 
  This is a text field that comes with its own validation: only text that's in a valid email format will be accepted.
 
@@ -156,14 +170,16 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  **All input option names (for use in migx options-json)**
 
- ```
-<pre class="brush: php">{
+ ``` php 
+{
    "allowBlank":"true",
    "maxLength":"",
    "minLength":""
 }
 
-```## File
+```
+
+## File
 
  Creates a file input form to browse the server for a file. Files can be uploaded through the MODx File Manager. You can declare a default value file by specifying the path to the file.
 
@@ -206,8 +222,8 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  **All input option names (for use in migx options-json)**
 
-```
-<pre class="brush: php">{
+``` php 
+{
 "targetWidth":"",   
 "targetHeight":"",
 "targetRatio":"",   
@@ -217,7 +233,9 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 "allowCredits":"false"
 }
 
-```## Listbox (Single-Select) (listbox)
+```
+
+## Listbox (Single-Select) (listbox)
 
  This has the same options available to it as the Listbox (Multi-Select) – see below.
 
@@ -231,20 +249,24 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  Just like with the Checkbox options, you can simply specify a list of values separated by double-pipes:
 
- ```
-<pre class="brush: php">Man||Bear||Pig
+ ``` php 
+Man||Bear||Pig
 
-```### Separate Options/Values
+```
+
+### Separate Options/Values
 
  Often it's nice to have a more readable label. You can display something nice and still store a different value using the double-equals and double-pipes format used by checkboxes:
 
- ```
-<pre class="brush: php">Option 1==value1||Option 2==value2
+ ``` php 
+Option 1==value1||Option 2==value2
 
-``` **All input option names (for use in migx options-json)**
+```
 
- ```
-<pre class="brush: php">{
+ **All input option names (for use in migx options-json)**
+
+ ``` php 
+{
    "allowBlank":"true",
    "listWidth":"",
    "title":"",
@@ -254,7 +276,9 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
    "stackItems":"false"
 }
 
-```## Number
+```
+
+## Number
 
  This is another text field with some pre-emptive validation. You literally cannot type anything but the digits 0 to 9, the minus sign (-) , and a period (i.e. a decimal point). A validation error is triggered if you enter more than one decimal point or minus sign. Complex numbers (e.g. using radicals "^" or "e" are **not** supported).
 
@@ -262,8 +286,8 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  **All input option names (for use in migx options-json)**
 
- ```
-<pre class="brush: php">{
+ ``` php 
+{
    "allowBlank":"true",
    "allowDecimals":"Yes",
    "allowNegative":"Yes",
@@ -273,7 +297,9 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
    "minValue":""
 }
 
-```## Radio Options (option)
+```
+
+## Radio Options (option)
 
 ### Simple Usage
 
@@ -306,13 +332,15 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  **All input option names (for use in migx options-json)**
 
- ```
-<pre class="brush: php">{
+ ``` php 
+{
    "allowBlank":"true",
    "columns":"1"
 }
 
-```## Resource List (resourcelist)
+```
+
+## Resource List (resourcelist)
 
  Supply the definition with a resource ID, and you'll end up with a drop down list of all pages/resources that are children of that resource. The value stored after you've made a selection is the ID of the single selected resource.
 
@@ -323,13 +351,15 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
  This input type also accepts WHERE conditions to filter by: ![](/download/attachments/33227172/Screen+Shot+2012-05-18+at+9.04.54+PM.png?version=1&modificationDate=1337400324000)
  Another example:
 
- ```
-<pre class="brush: php">[{"pagetitle:!=":"Home"}]
+ ``` php 
+[{"pagetitle:!=":"Home"}]
 
-``` **All input option names (for use in migx options-json)**
+```
 
- ```
-<pre class="brush: php">{
+ **All input option names (for use in migx options-json)**
+
+ ``` php 
+{
    "allowBlank":"1",
    "showNone":"1",
    "parents":"",
@@ -340,7 +370,9 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
    "limit":"0"
 }
 
-```## Rich Text
+```
+
+## Rich Text
 
  See _HTML Area_.
 
@@ -350,12 +382,14 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  **All input option names (for use in migx options-json)**
 
- ```
-<pre class="brush: php">{
+ ``` php 
+{
    "allowBlank":"1"
 }
 
-```## Text
+```
+
+## Text
 
  This is a vanilla text field.
 
@@ -367,8 +401,8 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  **All input option names (for use in migx options-json)**
 
- ```
-<pre class="brush: php">{
+ ``` php 
+{
    "allowBlank":"true",
    "maxLength":"",
    "minLength":"",
@@ -376,18 +410,22 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
    "regexText":""
 }
 
-```## Textarea
+```
+
+## Textarea
 
  This is a standard _textarea_ field, with a height of 15 rows. It's the same size as the HTML Area fields, but without the WYSIWYG editor.
 
  **All input option names (for use in migx options-json)**
 
- ```
-<pre class="brush: php">{
+ ``` php 
+{
    "allowBlank":"true"
 }
 
-```## Textarea (Mini) (depricated)
+```
+
+## Textarea (Mini) (depricated)
 
  This is a smaller _textarea_ field, with a height of only 5 rows.
 

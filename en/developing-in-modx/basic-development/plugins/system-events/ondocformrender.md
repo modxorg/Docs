@@ -30,8 +30,8 @@ It is advised to only do this on new resources, as any values you set **will** o
 
 Here is how you might use it:
 
-```
-<pre class="brush: php">switch ($modx->event->name) {
+``` php 
+switch ($modx->event->name) {
   case 'OnDocFormRender':
     if ($mode === 'new') {
       $resource->set('pagetitle', 'This is a default pagetitle');
@@ -39,7 +39,9 @@ Here is how you might use it:
     break;
 }
 
-```See Also
+```
+
+See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

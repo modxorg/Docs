@@ -55,8 +55,7 @@ Extending a MODExt component is actually quite simple. Let's extend the MODx.gri
 
 First, create a new JavaScript file and place the following code:
 
-```
-<pre class="brush: php">
+``` php 
 MyComponent.grid.MyGrid = function( config ) {
     /* Class parent constructor */
     MyComponent.grid.MyGrid.superclass.constructor.call( this, config );
@@ -66,13 +65,13 @@ Ext.extend( MyComponent.grid.MyGrid, MODx.grid.Grid, {
 } );
 /* Register "mycomponent-grid-mygrid" as an xtype */
 Ext.reg( "mycomponent-grid-mygrid", MyComponent.grid.MyGrid );
+```
 
-```Here, we've created our own class (MyComponent.grid.MyGrid) which extends MODx.grid.Grid. We have also registered "mycomponent-grid-mygrid" as an Ext xtype, which can be used to display this grid in a FormPanel or other component. It has no additional functionality -- yet!
+Here, we've created our own class (MyComponent.grid.MyGrid) which extends MODx.grid.Grid. We have also registered "mycomponent-grid-mygrid" as an Ext xtype, which can be used to display this grid in a FormPanel or other component. It has no additional functionality -- yet!
 
 Now, let's add some configuration options:
 
-```
-<pre class="brush: php">
+``` php 
 MyComponent.grid.MyGrid = function( config ) {
     config = config || {};
 
@@ -129,8 +128,9 @@ Ext.extend( MyComponent.grid.MyGrid, MODx.grid.Grid, {
 
 /* Register "mycomponent-grid-mygrid" as an xtype */
 Ext.reg( "mycomponent-grid-mygrid", MyComponent.grid.MyGrid );
+```
 
-```Our basic configuration sets the grid up to work with a "list" connector, using the "getlist" action parameter. It also sets up paging, sorting, and enables "autosave" functionality so that whenever a record is changed, it's automatically updated in the database.
+Our basic configuration sets the grid up to work with a "list" connector, using the "getlist" action parameter. It also sets up paging, sorting, and enables "autosave" functionality so that whenever a record is changed, it's automatically updated in the database.
 
 We then set up our fields (id, name, and menu), and our ColumnModel which references the fields in our store.
 

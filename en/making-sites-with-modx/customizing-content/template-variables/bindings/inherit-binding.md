@@ -12,14 +12,14 @@ For example, if you define a Template Variable to use a default value of "@INHER
 
 The devil is in the details here: if the value of a child TV has not been overridden (i.e. the inherited value is preserved), then MODX follows parsimonious storage rules, and **no row will be created inside the modx\_site\_tmplvar\_contentvalues table**. If you are accessing values via the API, then using the **getTVValue()** method on a page object, it will traverse up the hierarchy to find the value from the parent resource.
 
-```
-<pre class="brush: php">
+``` php 
 $pages = $modx->getCollection('modResource');
 foreach ($pages as $p) {
     print $p->getTVValue('my_inheritance');
 }
+```
 
-```**Be Careful**
+**Be Careful**
 A value is not always written to the database when you are using @INHERIT.
 
 Note that this is a dynamic lookup that occurs whenever the child page is saved and its value is empty. If you later edit the values in the parent, these will be reflected in the child. You can break the inheritance by supplying your own value in the child. You may also restore the inheritance by deleting the value and leaving the field empty.
@@ -28,11 +28,11 @@ Note that this is a dynamic lookup that occurs whenever the child page is saved 
 
 This gets used when you define a Template Variable. You paste the following into the TV's "Default Value" field:
 
-```
-<pre class="brush: php">
+``` php 
 @INHERIT
+```
 
-```## See Also
+## See Also
 
 - [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
 - [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")

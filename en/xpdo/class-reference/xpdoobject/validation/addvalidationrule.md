@@ -12,8 +12,7 @@ Add a validation rule to an object field for this instance.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#addValidationRule>
 
-```
-<pre class="brush: php">
+``` php 
 void addValidationRule (
    string $field,
    string $name,
@@ -21,10 +20,10 @@ void addValidationRule (
    string $rule,
    [array $parameters = array()]
 )
-
-```## Examples
-
 ```
-<pre class="brush: php">
+
+## Examples
+
+``` php 
 
 ```

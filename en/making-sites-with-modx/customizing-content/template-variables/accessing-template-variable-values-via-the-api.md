@@ -19,25 +19,29 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/acc
 
 ## getTVValue
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 string|null getTVValue (str|integer $tv_name OR ID of TV)
 
-``` See **core/model/modx/modresource.class.php**
+```
+
+ See **core/model/modx/modresource.class.php**
 
 ### getTVValue Usage
 
  Let's say we have a TV named 'bio', and we're going to retrieve page id 123 that uses this TV. Here's what our Snippet might look like:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $page = $modx->getObject('modResource', 123);
 return $page->getTVValue('bio');
 
-``` getTVValue fetches values from the resource cache when available. These caches are normally cleared when saving a resource, however if you are updating TV values using the setTVValue method below, these values will not be reflected directly because of the cache. If you absolutely need the latest data, you could bypass the cache by going straight for the data and using getObject to get the TV value record.
+```
 
- ```
-<pre class="brush: php">
+ getTVValue fetches values from the resource cache when available. These caches are normally cleared when saving a resource, however if you are updating TV values using the setTVValue method below, these values will not be reflected directly because of the cache. If you absolutely need the latest data, you could bypass the cache by going straight for the data and using getObject to get the TV value record.
+
+ ``` php 
+
 $tvr = $modx->getObject('modTemplateVarResource', array(
   'tmplvarid' => $tvId,
   'contentid' => $resourceId
@@ -51,24 +55,30 @@ else {
 }
 return '';
 
-```## setTVValue
+```
+
+## setTVValue
 
  Use **setTVValue** to save a new value to a TV. Unlike some other xPDO API methods, this method stores values to the database immediately, so you do not need to invoke a separate call to a **save()** method. This method does not clear the resource cache.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 boolean setTVValue (str|integer $tv_name OR ID of TV, string $value)
 
-```### setTVValue Usage
+```
 
- ```
-<pre class="brush: php">
+### setTVValue Usage
+
+ ``` php 
+
 $page = $modx->getObject('modResource', 123);
 if (!$page->setTVValue('bio', 'This is my new bio...')) {
     $modx->log(xPDO::LOG_LEVEL_ERROR, 'There was a problem saving your TV...');
 }
 
-```## See Also
+```
+
+## See Also
 
 1. [Creating a Template Variable](making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
 2. [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings)

@@ -35,43 +35,43 @@ NameDescriptionsuccessIf the form submission returns a success response.failureI
 
 You can manually fire the submission of the Window's form by running the submit() method, which has an optional "close" parameter (1/0) that, if 1, will close the window on success. Example:
 
-```
-<pre class="brush: php">
+``` php 
 var w = Ext.getCmp('my-window-id');
 w.submit(true); /* submit and then close window */
+```
 
-```#### setValues
+#### setValues
 
 The MODx.Window class comes with a setValues method, that will set the form values of the window:
 
-```
-<pre class="brush: php">
+``` php 
 var w = Ext.getCmp('my-window-id');
 w.setValues({ 
   name: 'John'
   ,email: 'my@email.com'
 });
+```
 
-```#### reset
+#### reset
 
 You can run the reset method to empty (reset) all the fields on the form:
 
-```
-<pre class="brush: php">
+``` php 
 var w = Ext.getCmp('my-window-id');
 w.reset();
+```
 
-```#### Hiding and Showing Fields
+#### Hiding and Showing Fields
 
 MODx.Window comes with a few assistance methods for making fields in its forms visible or hidden:
 
-```
-<pre class="brush: php">
+``` php 
 var w = Ext.getCmp('my-window-id');
 w.hideField('email');
 w.showField('comments');
+```
 
-```## See Also
+## See Also
 
 1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
 2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)

@@ -25,24 +25,24 @@ _\* Some of this may not be accurate because I'm testing this via trial and erro
 
 You can use this event to set resource parameters at runtime or perform logging. E.g.
 
-```
-<pre class="brush: php">
+``` php 
 // Set all pages to be uncached (for debugging)
 $modx->resource->set('cacheable', 0);
 // Or switch the template
 $modx->resource->set('template', 6);
 // Alternate syntax
 $modx->resource->template = 6;
+```
 
-```Note that modifying resource parameters during the _first_ page load (before the resource is cached) will cause those parameters to be written to the cache file. E.g. changing the template at this point will cause the resource `_content` to store the contents of the newly referenced template.
+Note that modifying resource parameters during the _first_ page load (before the resource is cached) will cause those parameters to be written to the cache file. E.g. changing the template at this point will cause the resource `_content` to store the contents of the newly referenced template.
 
 After a page has been cached (i.e. _not_ the first page load), you can append or prepend content (or overwrite it entirely) by modifying the \_content property.
 
-```
-<pre class="brush: php">
+``` php 
 $modx->resource->_content = 'Content override';
+```
 
-```## See Also 
+## See Also 
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

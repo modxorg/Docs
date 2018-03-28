@@ -16,22 +16,21 @@ Processes and returns the output from an HTML chunk by name.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getChunk()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getChunk())
 
-```
-<pre class="brush: php">
+``` php 
 string getChunk (string $chunkName, [array $properties = array ()])
-
-```**$properties** is usually a standard associative array, e.g.
-
 ```
-<pre class="brush: php">
-$properties = array('key' => 'value');
 
-```Which would cause the \[\[+key\]\] placeholders to be replaced by the 'value'.
+**$properties** is usually a standard associative array, e.g.
+
+``` php 
+$properties = array('key' => 'value');
+```
+
+Which would cause the \[\[+key\]\] placeholders to be replaced by the 'value'.
 
 However, **$properties** can also be a more deeply nested array such as the kind that might be returned from certain getObject or getCollection queries, e.g.
 
-```
-<pre class="brush: php">
+``` php 
 $properties = array(
     'user' => array('id' => 1),
     'document' => array('id' => 27)
@@ -43,8 +42,9 @@ $properties['document']['id'] = 27;
 // Corresponds to the following placeholders:
 // [[+user.id]]
 // [[+document.id]]
+```
 
-```In cases where a multi-dimensional array is used, the placeholder syntax changes to use a dot for each node in the array, e.g. \[\[+user.id\]\] and \[\[+document.id\]\]
+In cases where a multi-dimensional array is used, the placeholder syntax changes to use a dot for each node in the array, e.g. \[\[+user.id\]\] and \[\[+document.id\]\]
 
 ## Examples
 
@@ -52,60 +52,59 @@ $properties['document']['id'] = 27;
 
 Lets process this chunk and output its value. We have this Chunk, called "WelcomeChunk":
 
-```
-<pre class="brush: php">
+``` php 
 <p>Welcome [[+name]]!</p>
-
-```We'll put this in our Snippet:
-
 ```
-<pre class="brush: php">
+
+We'll put this in our Snippet:
+
+``` php 
 $output = $modx->getChunk('WelcomeChunk',array(
    'name' => 'John',
 ));
 return $output;
+```
 
-```So every key in the associative array passed to the **getChunk** method corresponds to an available placeholder inside the chunk, e.g. \[\[+name\]\]
+So every key in the associative array passed to the **getChunk** method corresponds to an available placeholder inside the chunk, e.g. \[\[+name\]\]
 
 This code outputs this:
 
-```
-<pre class="brush: php">
+``` php 
 <p>Welcome John!</p>
+```
 
-```### Nested $properties
+### Nested $properties
 
 In our Chunk:
 
-```
-<pre class="brush: php">
+``` php 
 <a href="http://site.com/profile?user_id=[[+user.id]]!">User Details</a>
-
-```In our Snippet:
-
 ```
-<pre class="brush: php">
+
+In our Snippet:
+
+``` php 
 $output = $modx->getChunk('UserLink',array(
    'user' => array('id' => 123)
 );
 return $output;
+```
 
-```### Used in a Snippet
+### Used in a Snippet
 
 Often, MODX Chunks are used as [formatting string](http://php.net/manual/en/function.sprintf.php) by Snippets. To that end, you can make good use of xPDO's [toArray()](/xpdo/2.x/class-reference/xpdoobject/field-accessors/toarray "toArray") method.
 
 Imagine a Chunk named **single\_user**:
 
-```
-<pre class="brush: php">
+``` php 
 Username: [[+username]]<br/>
 Active?:  [[+active]]<br/>
 <hr/>
-
-```Then in your Snippet:
-
 ```
-<pre class="brush: php">
+
+Then in your Snippet:
+
+``` php 
 $userlist = $modx->getCollection('modUser');
 
 $output = '';
@@ -114,13 +113,13 @@ foreach ($userlist as $user) {
 }
 
 return $output;
+```
 
-```### Parsing a String
+### Parsing a String
 
 Sometimes you need to parse a string using the MODX parser – this does not use getChunk, but it is related. Using the MODX parser is a bit slower than using a simple str\_replace function, but it does let you use complex placeholders (e.g. to include another Chunk) and output filters etc. The trick is to create a temporary Chunk object, then run the **process** method on it.
 
-```
-<pre class="brush: php">
+``` php 
 // The formatting String
 $tpl = 'Hello, my name is [[+name]]';
 
@@ -133,8 +132,9 @@ $chunk = $modx->newObject('modChunk', array('name' => "{tmp}-{$uniqid}"));
 $chunk->setCacheable(false);
 
 $output = $chunk->process($props, $tpl);
+```
 
-```## See Also
+## See Also
 
 - [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks")
 - [modX.parseChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.parsechunk "modX.parseChunk")

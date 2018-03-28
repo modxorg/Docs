@@ -12,22 +12,28 @@ Changes the password of a user. It first matches the oldPassword you specify to 
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::changePassword()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::changePassword())
 
-```
-<pre class="brush: php">boolean changePassword (string $newPassword, string $oldPassword)
+``` php 
+boolean changePassword (string $newPassword, string $oldPassword)
 
-```## Example
+```
+
+## Example
 
 Change the password of the user 'foobar' from 'boo123' to 'b33r4me'
 
-```
-<pre class="brush: php">$user = $modx->getObject('modUser',array('username' => 'foobar'));
+``` php 
+$user = $modx->getObject('modUser',array('username' => 'foobar'));
 $user->changePassword('b33r4me', 'boo123');
 
-```Change the password of the user currently logged in from 'mypass' to 's3cur3d'.
+```
+
+Change the password of the user currently logged in from 'mypass' to 's3cur3d'.
+
+``` php 
+$modx->user->changePassword('s3cur3d','mypass');
 
 ```
-<pre class="brush: php">$modx->user->changePassword('s3cur3d','mypass');
 
-```## See Also
+## See Also
 
 Page: [modUser](developing-in-modx/other-development-resources/class-reference/moduser) Page: [Users](administering-your-site/security/users)

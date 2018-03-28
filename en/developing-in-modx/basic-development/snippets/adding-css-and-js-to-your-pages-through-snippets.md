@@ -21,39 +21,51 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/adding-css-and-js-t
 
  This function lets you register any CSS file to the HEAD of the content by providing the URL in the method:
 
- ```
-<pre class="brush: php">$modx->regClientCSS('assets/css/my-custom.css');
+ ``` php 
+$modx->regClientCSS('assets/css/my-custom.css');
 
-``` Or, more correctly, you would use the **MODX\_ASSETS\_URL** constant so your Snippet or plugin would work even on a site that was configured to use a non-standard assets location.
+```
 
- ```
-<pre class="brush: php">$modx->regClientCSS(MODX_ASSETS_URL.'css/my-custom.css');
+ Or, more correctly, you would use the **MODX\_ASSETS\_URL** constant so your Snippet or plugin would work even on a site that was configured to use a non-standard assets location.
 
-```### regClientStartupScript
+ ``` php 
+$modx->regClientCSS(MODX_ASSETS_URL.'css/my-custom.css');
+
+```
+
+### regClientStartupScript
 
  This function lets you register any custom JavaScript to the HEAD of the document:
 
- ```
-<pre class="brush: php">$modx->regClientStartupScript('assets/js/site.js');
+ ``` php 
+$modx->regClientStartupScript('assets/js/site.js');
 
-``` ```
-<pre class="brush: php">$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
+```
 
-``` ```
-<pre class="brush: php">$modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
+ ``` php 
+$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
 
-```### regClientStartupHTMLBlock
+```
+
+ ``` php 
+$modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
+
+```
+
+### regClientStartupHTMLBlock
 
  This function is useful if you need to set some JS variables, or output some HTML into the HEAD:
 
- ```
-<pre class="brush: php">$modx->regClientStartupHTMLBlock('
+ ``` php 
+$modx->regClientStartupHTMLBlock('
 <meta tag="here" />
 <script type="text/javascript">
 var myCustomJSVar = 123;
 </script>');
 
-```## Adding Before the BODY End
+```
+
+## Adding Before the BODY End
 
  There are also methods that can be used to insert Javascript or HTML at the end of every page, right before the BODY tag closes. They are often useful for custom analytics scripts, or JS that needs to be run at the body-level rather than in the HEAD.
 
@@ -61,27 +73,35 @@ var myCustomJSVar = 123;
 
  Similar to [regClientStartupScript](#AddingCSSandJStoYourPagesThroughSnippets-regClientStartupScript) except that it runs before the closing BODY tag:
 
- ```
-<pre class="brush: php">$modx->regClientScript('assets/js/footer.js');
+ ``` php 
+$modx->regClientScript('assets/js/footer.js');
 
-``` ```
-<pre class="brush: php">$modx->regClientScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
+```
 
-``` ```
-<pre class="brush: php">$modx->regClientScript('http://code.jquery.com/jquery-latest.min.js');
+ ``` php 
+$modx->regClientScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
 
-```### regClientHTMLBlock
+```
+
+ ``` php 
+$modx->regClientScript('http://code.jquery.com/jquery-latest.min.js');
+
+```
+
+### regClientHTMLBlock
 
  Similar to [regClientStartupHTMLBlock](#AddingCSSandJStoYourPagesThroughSnippets-regClientStartupHTMLBlock) except that it runs before the closing BODY tag:
 
- ```
-<pre class="brush: php">$modx->regClientHTMLBlock('
+ ``` php 
+$modx->regClientHTMLBlock('
 <div>custom stuff here</div>
 <script type="text/javascript">
 runAnalytics();
 </script>');
 
-```## Conclusion
+```
+
+## Conclusion
 
  MODx offers Extras developers many options on how to insert custom CSS/JS into their pages at the Snippet level. However, MODx also recommends in any Extras you are distributing, to make sure inserting CSS or JS into a page is a toggleable option, so that the user can customize the content or javascript framework should they so choose.
 

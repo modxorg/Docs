@@ -10,8 +10,7 @@ A common need is the ability to control how long a piece of data should live –
 
 In this example, we are going to create a snippet that stores a bit of data for a short period of time. Paste the following bit of code into a new Snippet named "testCache" and then save it.
 
-```
-<pre class="brush: php">
+``` php 
 <?php
 $cacheManager = $modx->getCacheManager();
 
@@ -23,18 +22,19 @@ if (!$payload = $cacheManager->get('my_cache_key')) {
 }
 
 return $payload;
+```
 
-```The trick here is that the output from the cacheManager will be null if the data either does not exist or has expired.
+The trick here is that the output from the cacheManager will be null if the data either does not exist or has expired.
 
 ## Reference the Snippet
 
 When you reference a snippet that is using custom caching like this, you _must_ call it uncached. That bypasses the standard caching mechanisms and it allows your code to take caching into its own hands.
 
-```
-<pre class="brush: php">
+``` php 
 [[!testCache]]
+```
 
-```## Observations
+## Observations
 
 When you view your page containing the `testCache`. Refresh the page frequently. You should notice that the datestamp only refreshes every 10 seconds!
 

@@ -27,19 +27,19 @@ Here's [GitHub's tutorial on forking a repo and making a local clone of it](http
 
 
 **Branch and code**
-All work on a single issue (bug or feature) is to be done on a _feature branch_. ```
-<pre class="brush: php">
+All work on a single issue (bug or feature) is to be done on a _feature branch_. ``` php 
 git checkout -b bug-1111
+```
 
-```You will make changes to a file or files. Coding.. yay! You make one or several commits on that branch. (Multiple commits can really help keep things organized in certain circumstances.)
+You will make changes to a file or files. Coding.. yay! You make one or several commits on that branch. (Multiple commits can really help keep things organized in certain circumstances.)
 
 Along the way, or when the work is done, you _push_ the branch to your fork. You'll be able to see your feature branch and your commits on the GitHub site.
 
-```
-<pre class="brush: php">
+``` php 
 git push myRepo bug-1111
+```
 
-```_Note: Making sure your work and your commits are based on "fresh" code will help you avoid problems and help integrators understand, review and integrate (or feed back on) your work._
+_Note: Making sure your work and your commits are based on "fresh" code will help you avoid problems and help integrators understand, review and integrate (or feed back on) your work._
 
 
 

@@ -117,11 +117,13 @@ The manager is arguably the second most important path to change. After all, if 
 
 Choose a randomly generated alphanumeric bit of text to use as your new manager folder. For maximum compatibility, it should use only lowercase letters. Then update the **core/config/config.inc.php** file to something like the following:
 
-```
-<pre class="brush: php">$modx_manager_path = '/home/youruser/public_html/r4nd0m/';
+``` php 
+$modx_manager_path = '/home/youruser/public_html/r4nd0m/';
 $modx_manager_url = '/r4nd0m/';
 
-```Moving the manager will avoid the fingerprinting bots from easily sniffing your site out as a MODX site, but it's still possible that someone could eventually find your new manager directory (not easy, but entirely possible). For an even more thorough solution, you could put the manager URL on a completely different domain, e.g. `<strong>$modx_manager_url</strong>``= 'http://othersite.com/r4nd0m/';` This would require that you have multiple domains on your server, but the advantage here is that it would really throw off attempts to hack your site because it wouldn't be clear that the 2 domains are related, but it would require far more sysadmin work to make this type of setup work.
+```
+
+Moving the manager will avoid the fingerprinting bots from easily sniffing your site out as a MODX site, but it's still possible that someone could eventually find your new manager directory (not easy, but entirely possible). For an even more thorough solution, you could put the manager URL on a completely different domain, e.g. `<strong>$modx_manager_url</strong>``= 'http://othersite.com/r4nd0m/';` This would require that you have multiple domains on your server, but the advantage here is that it would really throw off attempts to hack your site because it wouldn't be clear that the 2 domains are related, but it would require far more sysadmin work to make this type of setup work.
 
 You can also lock down access to the manager by configuring your server and/or its firewall to allow access to the manager url from specific IP addresses. E.g. if your site is only accessed by workers in an office, you could configure your server to deny requests from outside the office's IP addresses. Another tactic would be to put an .htaccess password on the manager directory. This would mean that users would have to enter 2 separate passwords before entering the MODX manager. Perhaps that's not convenient, but it is more secure.
 
@@ -129,21 +131,25 @@ You can also lock down access to the manager by configuring your server and/or i
 
 Just as with the manager directory, choose a random alphanumeric name for your **connectors** directory, and then update your core/config/config.inc.php to reflect the new location, e.g.
 
-```
-<pre class="brush: php">$modx_connectors_path = '/home/youruser/public_html/0therp4th/';
+``` php 
+$modx_connectors_path = '/home/youruser/public_html/0therp4th/';
 $modx_connectors_url = '/0therp4th/';
 
-```As with the manager, this could also potentially live on a separate domain, however as the manager uses the connectors as AJAX endpoints, this needs to be on the same domain as the manager unless you also allow cross origin requests.
+```
+
+As with the manager, this could also potentially live on a separate domain, however as the manager uses the connectors as AJAX endpoints, this needs to be on the same domain as the manager unless you also allow cross origin requests.
 
 #### assets
 
 The assets URL can be changed, but this is the lowest priority change because anyone visiting your site will be able to examine the source HTML and see the paths to this directory. But it's good to change anyway, simply to confuse any efforts at fingerprinting.
 
-```
-<pre class="brush: php">$modx_assets_path = '/home/youruser/public_html/4ssetsh3r3/';
+``` php 
+$modx_assets_path = '/home/youruser/public_html/4ssetsh3r3/';
 $modx_assets_url = '/4ssetsh3r3/';
 
-```Again, this could potentially live on another domain (e.g. one optimized to serve up static content). As extras install their javascript here for back-end components, this will typically need to share the same domain (origin), unless you set up cross origin requests. You can use Media Sources in MODX to place your front-end assets or uploads anywhere, so keeping the assets on the same domain as the manager is usually best.
+```
+
+Again, this could potentially live on another domain (e.g. one optimized to serve up static content). As extras install their javascript here for back-end components, this will typically need to share the same domain (origin), unless you set up cross origin requests. You can use Media Sources in MODX to place your front-end assets or uploads anywhere, so keeping the assets on the same domain as the manager is usually best.
 
 ### Path Followup
 
@@ -207,14 +213,16 @@ Inside your manager's folder (which you've changed by now from the default /mana
 
 Here is a sample **.htaccess** file to put inside your manager directory:
 
-```
-<pre class="brush: php">RewriteEngine On
+``` php 
+RewriteEngine On
 RewriteBase /
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ <a href="https://yoursite.com/manager/$1"> <a href="https://yoursite.com/manager/"> https://yoursite.com/manager/ </a> 
 </a>
 
-```Test this by trying to navigate to the non-secure url, e.g. <http://yoursite.com/manager> – if it doesn't redirect to HTTPS, you'll have to tweak the .htaccess.
+```
+
+Test this by trying to navigate to the non-secure url, e.g. <http://yoursite.com/manager> – if it doesn't redirect to HTTPS, you'll have to tweak the .htaccess.
 
 ## Monitoring your Site and Server
 

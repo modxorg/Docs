@@ -12,17 +12,17 @@ Sets a Placeholder value, corresponding to the "+" syntax.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::setPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholder())
 
-```
-<pre class="brush: php">
+``` php 
 void setPlaceholder (string $key, mixed $value)
-
-```## Example
-
 ```
-<pre class="brush: php">
-$modx->setPlaceholder('name','Barry');
 
-```This causes the placeholder \[\[+name\]\] to be available inside your templates or page content.
+## Example
+
+``` php 
+$modx->setPlaceholder('name','Barry');
+```
+
+This causes the placeholder \[\[+name\]\] to be available inside your templates or page content.
 
 ## See Also
 

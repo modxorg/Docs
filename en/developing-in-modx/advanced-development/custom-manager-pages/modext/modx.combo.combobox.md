@@ -27,19 +27,18 @@ NameDescriptionDefaulturlThe URL to the connector. baseParamsAny other parameter
 
 MODx.combo.ComboBox also comes with a built-in renderer for usage in grids. To use in, in your grid's column model defintion, simply specify renderer: true in the editor definition, like so:
 
-```
-<pre class="brush: php">
+``` php 
 {
   header: _('usergroup')
   ,dataIndex: 'usergroup'
   ,width: 140
   ,editor: { xtype: 'modx-combo-usergroup' ,renderer: true}
 }
+```
 
-```An example of a local data combo box would be:
+An example of a local data combo box would be:
 
-**Units Combo Box**```
-<pre class="brush: php">
+**Units Combo Box**``` php 
 Doodles.combo.Units = function(config) {
     config = config || {};
     Ext.applyIf(config,{
@@ -64,13 +63,13 @@ Doodles.combo.Units = function(config) {
 };
 Ext.extend(Doodles.combo.Units,MODx.combo.ComboBox);
 Ext.reg('doodle-combo-units',Doodles.combo.Units);
+```
 
-```'store' is used to create your 'fields' and 'data', the optional 'mode' must be set to 'local' for this method.
+'store' is used to create your 'fields' and 'data', the optional 'mode' must be set to 'local' for this method.
 
 And to view that combo box:
 
-**Combo Call From Grid**```
-<pre class="brush: php">
+**Combo Call From Grid**``` php 
        {
             header: _('unit')
             ,dataIndex: 'unit'
@@ -78,9 +77,9 @@ And to view that combo box:
             ,width: 50
             ,editor: { xtype: 'doodle-combo-units', renderer: true }
         }
+```
 
-```**Combo Call From Window**```
-<pre class="brush: php">
+**Combo Call From Window**``` php 
        {
             xtype: 'doodle-combo-units'
             ,fieldLabel: _('unit')
@@ -88,5 +87,6 @@ And to view that combo box:
             ,hiddenName: 'unit'
             ,anchor: '100%'
         }
+```
 
-```hiddenName must be set when calling from a create or update window to save the value, but is not needed in the grid view.
+hiddenName must be set when calling from a create or update window to save the value, but is not needed in the grid view.

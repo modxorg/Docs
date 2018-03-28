@@ -18,16 +18,15 @@ Each message is an array with the following keys:
 
 API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#getMessages>
 
-```
-<pre class="brush: php">
+``` php 
 array getMessages ()
+```
 
-```## Example
+## Example
 
 Check to see if any validation errors occur. If so, return the errors and print out to the browser.
 
-```
-<pre class="brush: php">
+``` php 
 $validator = $obj->getValidator();
 if ($validator->validate() == false) {
    $errorMessages = $validator->getMessages();
@@ -35,8 +34,9 @@ if ($validator->validate() == false) {
        echo 'An error occurred on field "'.$message['field'].'": '.$message['message'];
    }
 }
+```
 
-```## See Also
+## See Also
 
 1. [xPDOValidator.addMessage](/xpdo/2.x/class-reference/xpdovalidator/xpdovalidator.addmessage)
 2. [xPDOValidator.getMessages](/xpdo/2.x/class-reference/xpdovalidator/xpdovalidator.getmessages)

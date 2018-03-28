@@ -12,17 +12,17 @@ Sets an option value for this instance of an xPDOObject.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#setOption>
 
-```
-<pre class="brush: php">
+``` php 
 void setOption(
     string $key,
     mixed $value
 )
-
-```## Example
-
 ```
-<pre class="brush: php">
-$object->setOption(xPDO::OPT_HYDRATE_FIELDS,true);
 
-```Using **setOption** does not permanently update an option as xPDO options are not persisted, but loaded on each request.
+## Example
+
+``` php 
+$object->setOption(xPDO::OPT_HYDRATE_FIELDS,true);
+```
+
+Using **setOption** does not permanently update an option as xPDO options are not persisted, but loaded on each request.

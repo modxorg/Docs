@@ -12,20 +12,20 @@ Remove the persistent instance of an object permanently. This deletes rows from 
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#remove>
 
-```
-<pre class="brush: php">
+``` php 
 boolean remove ([array $ancestors = array ()])
+```
 
-```## Examples 
+## Examples 
 
 Get rid of an item.
 
-```
-<pre class="brush: php">
+``` php 
 $item = $xpdo->getObject('Item',123);
 
 if ($item->remove() == false) echo 'The Item failed to remove.';
+```
 
-```## See Also 
+## See Also 
 
 - [Removing Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/removing-objects)

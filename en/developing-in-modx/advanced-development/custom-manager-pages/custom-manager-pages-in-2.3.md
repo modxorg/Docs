@@ -38,8 +38,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
  Now, on to the file contents:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 class MycmpWelcomeManagerController extends modExtraManagerController {
     public function process(array $scriptProperties = array()) {}
     public function getPageTitle() {
@@ -50,7 +50,9 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
     }
 }
 
-``` As you can see here, we're not doing any business logic, so we don't need to do anything in the process() method. We go ahead and set a page title for this CMP, and then tell MODX where to find our corresponding template file for this CMP. Note that your class name should begin with the name of your CMP followed by the corresponding action and that your namespace should be a lowercase version of the name of your CMP.
+```
+
+ As you can see here, we're not doing any business logic, so we don't need to do anything in the process() method. We go ahead and set a page title for this CMP, and then tell MODX where to find our corresponding template file for this CMP. Note that your class name should begin with the name of your CMP followed by the corresponding action and that your namespace should be a lowercase version of the name of your CMP.
 
 ## Creating the Template File
 
@@ -58,12 +60,14 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
 
  Let's make the content simple:
 
- ```
-<pre class="brush: php"><div class="container">
+ ``` php 
+<div class="container">
 <h2>Welcome!</h2>
 </div>
 
-``` A simple h2, with a wrapping div that adds some padding. And that will display this on our CMP:
+```
+
+ A simple h2, with a wrapping div that adds some padding. And that will display this on our CMP:
 
  ![](/download/attachments/b0c0afd6ef1b26df1ce35159560bcfa2/2-3-CMP.jpg)
 

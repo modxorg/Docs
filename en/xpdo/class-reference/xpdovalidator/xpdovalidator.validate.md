@@ -12,22 +12,22 @@ Executes validation against the object attached to this validator. May also acce
 
 API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#>
 
-```
-<pre class="brush: php">
+``` php 
 boolean validate ([array $parameters = array()])
+```
 
-```## Example
+## Example
 
 Check to see if any validation errors occurred.
 
-```
-<pre class="brush: php">
+``` php 
 $validator = $obj->getValidator();
 if ($validator->validate()) {
    echo 'Errors occurred!';
 }
+```
 
-```## See Also
+## See Also
 
 1. [xPDOValidator.addMessage](/xpdo/2.x/class-reference/xpdovalidator/xpdovalidator.addmessage)
 2. [xPDOValidator.getMessages](/xpdo/2.x/class-reference/xpdovalidator/xpdovalidator.getmessages)

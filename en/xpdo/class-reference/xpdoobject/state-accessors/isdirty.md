@@ -12,16 +12,15 @@ Indicates if an object field has been modified (or never saved).
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isDirty>
 
-```
-<pre class="brush: php">
+``` php 
 boolean isDirty (string $key)
+```
 
-```## Examples
+## Examples
 
 Test if a Skrewt object has been modified.
 
-```
-<pre class="brush: php">
+``` php 
 $skrewt = $xpdo->getObject('Skrewt',1);
 
 echo $skrewt->isDirty() ? 1 : 0; // prints 0
@@ -29,5 +28,4 @@ echo $skrewt->isDirty() ? 1 : 0; // prints 0
 $skrewt->set('poisonous',false);
 
 echo $skrewt->isDirty() ? 1 : 0; // prints 1
-
 ```

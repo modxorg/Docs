@@ -12,17 +12,18 @@ Sets the logging level state for the XPDO instance.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#setLogLevel>
 
-```
-<pre class="brush: php">
+``` php 
 
-```## Example
+```
+
+## Example
 
 Set the log level to show log messages with at least INFO status.
 
-```
-<pre class="brush: php">
+``` php 
 $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
+```
 
-```## See Also
+## See Also
 
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

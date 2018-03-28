@@ -17,25 +17,25 @@ Also allows for an array of options to be passed. The current available values a
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#get>
 
-```
-<pre class="brush: php">
+``` php 
 mixed get (string $key, [array $options = array()])
+```
 
-```## Example
+## Example
 
 Get the cache record 'test' into a string:
 
-```
-<pre class="brush: php">
+``` php 
 $test = $xpdo->cacheManager->get('test');
-
-```Get our JSON cache data called 'myjson':
-
 ```
-<pre class="brush: php">
-$myJsonData = $xpdo->cacheManager->get('myjson',array('format' => xPDO::CACHE_JSON));
 
-```## See Also
+Get our JSON cache data called 'myjson':
+
+``` php 
+$myJsonData = $xpdo->cacheManager->get('myjson',array('format' => xPDO::CACHE_JSON));
+```
+
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

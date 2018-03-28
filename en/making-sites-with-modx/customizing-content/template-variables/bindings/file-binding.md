@@ -10,11 +10,11 @@ The @FILE Binding returns the contents of any specified file.
 
 ## Syntax
 
-```
-<pre class="brush: php">
+``` php 
 @FILE file_path
+```
 
-```Binds the variable to a file, where **_file\_path_** is the path and name of the file. The return value is a string containing the content of the file. The file path is the absolute path from the root of the server or your particular installation.
+Binds the variable to a file, where **_file\_path_** is the path and name of the file. The return value is a string containing the content of the file. The file path is the absolute path from the root of the server or your particular installation.
 
 The **@FILE** command is very useful in cases where we might want to generate data that's available in file. By using the **||** and **==** characters as a delimiter we could interface with any external database application.
 

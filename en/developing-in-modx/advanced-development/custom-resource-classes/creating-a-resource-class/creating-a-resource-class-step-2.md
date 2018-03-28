@@ -21,8 +21,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
  Go ahead and add this method to your CopyrightedResource class `copyrightedresource.class.php`:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 public function getContent(array $options = array()) {
    $content = parent::getContent($options);
    $year = date('Y');
@@ -30,7 +30,9 @@ public function getContent(array $options = array()) {
    return $content;
 }
 
-``` This will automatically append the Copyright to the bottom of every content for the Resource - not the end of the [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), but the end of the contents of the \[\[\*content\]\] placeholder.
+```
+
+ This will automatically append the Copyright to the bottom of every content for the Resource - not the end of the [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), but the end of the contents of the \[\[\*content\]\] placeholder.
 
 ## Next Steps
 

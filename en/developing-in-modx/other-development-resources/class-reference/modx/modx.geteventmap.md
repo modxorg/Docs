@@ -12,18 +12,18 @@ Gets a map of events and registered plugins for the specified context.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getEventMap()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getEventMap())
 
-```
-<pre class="brush: php">
+``` php 
 array getEventMap (string $contextKey)
+```
 
-```## Example
+## Example
 
 Get the event map for the current Context.
 
-```
-<pre class="brush: php">
+``` php 
 $map = $modx->getEventMap();
+```
 
-```## See Also
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

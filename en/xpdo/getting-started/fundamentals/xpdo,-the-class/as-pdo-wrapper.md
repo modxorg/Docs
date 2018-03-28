@@ -14,14 +14,13 @@ Finally, by simply extending xPDO yourself, you can further customize the class 
 
 You'll start off by extending the class like so:
 
-```
-<pre class="brush: php">
+``` php 
 class myClass extends xPDO
-
-```and then define a constructor method:
-
 ```
-<pre class="brush: php">
+
+and then define a constructor method:
+
+``` php 
 function __construct($options = array()) {
     $options = array(
         xPDO::OPT_CACHE_PATH => '/path/to/my/cache/dir',
@@ -44,5 +43,6 @@ function __construct($options = array()) {
     );
     $this->setPackage('mypackage', 'path/to/my/model/');
 }
+```
 
-```There's a lot in there. You can find more information on the constructor here: [The xPDO Constructor](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor").
+There's a lot in there. You can find more information on the constructor here: [The xPDO Constructor](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor").

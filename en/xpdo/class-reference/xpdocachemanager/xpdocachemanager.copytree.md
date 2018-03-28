@@ -17,19 +17,19 @@ Recursively copies a directory tree from a source directory to a target director
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#copyTree>
 
-```
-<pre class="brush: php">
+``` php 
 array|boolean copyTree (string $source, string $target, [array $options = array()])
+```
 
-```## Example
+## Example
 
 Copy a directory:
 
-```
-<pre class="brush: php">
+``` php 
 $xpdo->cacheManager->copyTree('/my/old/dir/','/my/new/dir/');
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

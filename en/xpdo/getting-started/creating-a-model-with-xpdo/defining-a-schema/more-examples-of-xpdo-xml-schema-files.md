@@ -60,8 +60,8 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
 
  Here are abbreviated MySQL table definitions:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
@@ -75,19 +75,23 @@ CREATE TABLE `userdata` (
   PRIMARY KEY (`userdata_id`)
 ) ENGINE=MyISAM;
 
-``` This MySQL query will show _all_ data for users (including info from the primary user table, and also from the secondary userdata table):
+```
 
- ```
-<pre class="brush: php">
+ This MySQL query will show _all_ data for users (including info from the primary user table, and also from the secondary userdata table):
+
+ ``` php 
+
 SELECT users.*, userdata.*
 FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 
-```### XML Schema
+```
+
+### XML Schema
 
  And here's the corresponding XML definitions:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <object class="Users" table="users" extends="xPDOObject">
         <field key="user_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="username" dbtype="varchar" precision="255" phptype="string" null="true" />
@@ -107,12 +111,14 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
         <aggregate alias="Users" class="Users" local="userdata_id" foreign="user_id" cardinality="one" owner="foreign" />
 </object>
 
-```### Sample Snippet Code
+```
+
+### Sample Snippet Code
 
  If you were to access this data in a Snippet, you might do something like the following. This assumes that your package name is **one\_to\_one**
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <?php
         $base_path = MODX_CORE_PATH . 'components/one_to_one/';
         $modx->addPackage('one_to_one',$base_path.'model/','');
@@ -124,7 +130,9 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
         return $output;
 ?>
 
-```## One to Many
+```
+
+## One to Many
 
  This is a common pattern that occurs when a secondary table contains a foreign key. For example, you might have a primary table containing blog posts, and a secondary table containing comments. Each blog post might have zero or many comments, but each comment can belong to one and _only_ one blog post.
 
@@ -132,8 +140,8 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 
 ### MySQL Table Definitions
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 CREATE TABLE `blogposts` (
   `blogpost_id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text,
@@ -146,10 +154,12 @@ CREATE TABLE `comments` (
   PRIMARY KEY (`comment_id`)
 ) ENGINE=MyISAM;
 
-```### XML Schema
+```
 
- ```
-<pre class="brush: php">
+### XML Schema
+
+ ``` php 
+
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
@@ -168,12 +178,14 @@ CREATE TABLE `comments` (
         <aggregate alias="Blogposts" class="Blogposts" local="blogpost" foreign="blogpost_id" cardinality="one" owner="foreign" />
 </object>
 
-```### Sample Snippet Code
+```
+
+### Sample Snippet Code
 
  Here is some sample Snippet code. It assumes your package name is **one\_to\_many**:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <?php
 $base_path = MODX_CORE_PATH . 'components/one_to_many/';
 $modx->addPackage('one_to_many',$base_path.'model/','');
@@ -187,7 +199,9 @@ foreach ( $comments as $c )
 }
 return $output;
 
-```## Many to Many: Joining Tables
+```
+
+## Many to Many: Joining Tables
 
  Another common database pattern involves the use of join tables. This type of relationship is seen frequently when using taxonomies such as "categories" or "tags": e.g. a single post can be "tagged" with multiple terms, and each tag can likewise be associated with multiple posts.
 
@@ -195,8 +209,8 @@ return $output;
 
 ### MySQL Table Definitions
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 CREATE TABLE `blogposts` (
   `blogpost_id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text,
@@ -215,12 +229,14 @@ CREATE TABLE `blogposts_tags` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM;
 
-```### XML Schema
+```
+
+### XML Schema
 
  Note the the following schema still contains the composite relationship for the Comments table.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
@@ -248,12 +264,14 @@ CREATE TABLE `blogposts_tags` (
         <aggregate alias="Blogposts" class="Blogposts" local="blogpost" foreign="blogpost_id" cardinality="one" owner="foreign" />
 </object>
 
-```### Sample Snippet Code
+```
+
+### Sample Snippet Code
 
  The following example assumes that the package is named **many\_to\_many**. Note that the logic displayed here traces the relationships precisely. In this example, we load up a blogpost, then trace it through the joining table to its tags. Arguably, this isn't any easier than writing a JOIN statement in MySQL.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <?php
 $base_path = MODX_CORE_PATH . 'components/many_to_many/';
 $modx->addPackage('many_to_many',$base_path.'model/','');
@@ -267,7 +285,9 @@ foreach ( $blopost_tags as $bt )
 }
 return $output;
 
-```## Parent ID: Self Join
+```
+
+## Parent ID: Self Join
 
  Another common pattern used to indicate hierarchy is the self-join. This is when one column in a table contains a reference to that table's own primary key. We are familiar with this in the MODx database when we put pages into folders: there is a parent/child relationship where each page may be the child of another page.
 
@@ -275,8 +295,8 @@ return $output;
 
 ### MySQL Table Definitions
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) DEFAULT NULL,
@@ -285,12 +305,14 @@ CREATE TABLE `categories` (
   PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM;
 
-```### XML Schema
+```
+
+### XML Schema
 
  In order to define this relationship in xPDO XML, we must add 2 aggregate relationships to the object:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <object class="Categories" table="categories" extends="xPDOObject">
         <field key="category_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="parent_id" dbtype="int" precision="11" phptype="integer" null="true" />
@@ -303,12 +325,14 @@ CREATE TABLE `categories` (
         <composite alias="Children" class="Categories" local="category_id" foreign="parent_id" cardinality="many" owner="local" />
 </object>
 
-```### Sample Snippet Code
+```
+
+### Sample Snippet Code
 
  In this example, our package is named **parent\_child\_example**. Notice that the **getMany** method relies on the alias defined for that relationship.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <?php
 $base_path = MODX_CORE_PATH . 'components/parent_child_example/';
 $modx->addPackage('parent_child_example',$base_path.'model/','');
@@ -322,7 +346,9 @@ foreach ( $subcategories as $sc )
 }
 return $output;
 
-```## Using Field Aliases _(xPDO 2.2+ only)_
+```
+
+## Using Field Aliases _(xPDO 2.2+ only)_
 
  In this example, we are setting an alias of _postalcode_ for the _zip_ field from the **storefinder** model.
 
@@ -330,8 +356,8 @@ return $output;
 
  The field alias definition is simply defined using the `alias` element.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
   <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
   <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -351,12 +377,14 @@ return $output;
   </index>
 </object>
 
-```### Sample Snippet Code
+```
+
+### Sample Snippet Code
 
  The alias _postalcode_ is now accessible as a field of an sfStore object in xPDO. It is simply a reference to the value of the _zip_ field.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <?php
 $modx->addPackage('storefinder', MODX_CORE_PATH . 'components/storefinder/model/');
 $output = '';

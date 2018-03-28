@@ -20,17 +20,17 @@ This is remedied in setup/, as during MODX installation, MODX will attempt to fi
 
 If the user has suhosin on, and wants JS compression, it is recommended to set the offending param value to a higher limit, such as 4096 or greater. This can be done by editing the php.ini file and restarting the server:
 
-```
-<pre class="brush: php">
+``` php 
 suhosin.get.max_value_length = 4096
-
-```In some cases, it may also happen that some functionality doesn't work as expected due to the use of the eval() statement and suhosin blocking that as well. If that happens, you can disable it using the following configuration:
-
 ```
-<pre class="brush: php">
-suhosin.executor.disable_eval 0
 
-```If you cannot edit the php.ini directly, consult with your host on the best way to set up these configurations. Some hosts might allow changing it through htaccess files, a control panel interface or they can do it for you.
+In some cases, it may also happen that some functionality doesn't work as expected due to the use of the eval() statement and suhosin blocking that as well. If that happens, you can disable it using the following configuration:
+
+``` php 
+suhosin.executor.disable_eval 0
+```
+
+If you cannot edit the php.ini directly, consult with your host on the best way to set up these configurations. Some hosts might allow changing it through htaccess files, a control panel interface or they can do it for you.
 
 ## See Also 
 

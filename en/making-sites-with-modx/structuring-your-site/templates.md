@@ -18,8 +18,7 @@ Think of a Template like a house. Your [Resource's](making-sites-with-modx/struc
 
 To create a Template -- Expand the "Elements" part of the tree and right click on Templates. Select "Create a New Template" then paste your HTML into the "Template Code" textarea; you can copy and paste the text below to get started with a very simple template:
 
-```
-<pre class="brush: php">
+``` php 
 <html>
 <head>
     <title>[[*pagetitle]]</title>
@@ -38,8 +37,9 @@ MenuTitle: [[*menutitle]]
 
 </body>
 </html>
+```
 
-```Note the important \[\[\*content\]\] tag; this tag tells MODx where to put the Resource's content.
+Note the important \[\[\*content\]\] tag; this tag tells MODx where to put the Resource's content.
 
 MODX defaults to storing templates in its database, if you are using a version prior to 2.2.x this is your only option. In MODX 2.2.x and newer you have the option of storing templates as static files using Media Sources.
 
@@ -53,27 +53,27 @@ Templates can contain any tags, including [Template Variables](making-sites-with
 
 As you noticed from our Template sample code above, the fields of a Resource can be referenced using the \[\[\*fieldName\]\] syntax. A list of available Resource Fields can be [found here](making-sites-with-modx/structuring-your-site/resources#Resources-ResourceFields). For example, if we wanted to show the current Resource's pagetitle in our <title> tag, we would simply do this:
 
-```
-<pre class="brush: php">
+``` php 
 <title>[[*pagetitle]]</title>
-
-```You can also place the content of the current Resource using the "content" tag:
-
 ```
-<pre class="brush: php">
+
+You can also place the content of the current Resource using the "content" tag:
+
+``` php 
 <body>
 [[*content]]
 </body>
-
-```These tags are like normal MODx tags, in that they can have [output filters](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") applied to them. For example, say we wanted to display the "introtext" field on a right navbar, but strip any HTML tags from it, and only display the first 400 characters - and if longer, add an ellipsis (...):
-
 ```
-<pre class="brush: php">
+
+These tags are like normal MODx tags, in that they can have [output filters](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") applied to them. For example, say we wanted to display the "introtext" field on a right navbar, but strip any HTML tags from it, and only display the first 400 characters - and if longer, add an ellipsis (...):
+
+``` php 
 <div id="rightbar">
 [[*introtext:stripTags:ellipsis=`400`]]
 </div>
+```
 
-```### Template Variables in Templates
+### Template Variables in Templates
 
 If Templates are like a house, think of [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") (TVs) like rooms in that house. You can have an infinite number of TVs in a Template; just think of it like adding new rooms to the house.
 
@@ -81,13 +81,13 @@ Template Variables allow you to have custom fields for any Resource with the spe
 
 You can then reference your "bioPhoto" TV in your content with the same tag syntax as a Resource Field:
 
-```
-<pre class="brush: php">
+``` php 
 <div class="photo">
 [[*bioPhoto]]
 </div>
+```
 
-```Again, it's important to note that [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") must be explicitly assigned to the Template to be used. Once assigned to the Template, a TV's value for that Resource will be able to be edited when editing the Resource. If you're not seeing a newly created TV in your Resources, make sure you've assigned that TV to the Template.
+Again, it's important to note that [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") must be explicitly assigned to the Template to be used. Once assigned to the Template, a TV's value for that Resource will be able to be edited when editing the Resource. If you're not seeing a newly created TV in your Resources, make sure you've assigned that TV to the Template.
 
 ## See Also
 

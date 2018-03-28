@@ -14,18 +14,18 @@ This includes preparing the session, pre-loading some common classes and objects
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::initialize()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::initialize())
 
-```
-<pre class="brush: php">
+``` php 
 void initialize ([string $contextKey = 'web'])
+```
 
-```## Example
+## Example
 
 Initialize the 'sports' Context.
 
-```
-<pre class="brush: php">
+``` php 
 $modx->initialize('sports');
+```
 
-```## See Also
+## See Also
 
 - [Contexts](administering-your-site/contexts "Contexts")

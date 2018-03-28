@@ -12,19 +12,19 @@ Register HTML to be injected before the closing BODY tag.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientHTMLBlock()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientHTMLBlock())
 
-```
-<pre class="brush: php">
+``` php 
 void regClientHTMLBlock (string $html)
+```
 
-```## Example
+## Example
 
 Inject a footer into the page.
 
-```
-<pre class="brush: php">
+``` php 
 $modx->regClientHTMLBlock('<div id="footer">(c) 2009 MODx</div>');
+```
 
-```## See Also
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.regClientCSS](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientcss "modX.regClientCSS")

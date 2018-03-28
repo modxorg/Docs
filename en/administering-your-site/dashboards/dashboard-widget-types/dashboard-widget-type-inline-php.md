@@ -12,12 +12,14 @@ _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboa
 
  For example, this will display "Hello, World!":
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <?php
 return 'Hello, World!';
 
-``` A few notes about using this:
+```
+
+ A few notes about using this:
 
 - Do not "echo" content, as it will be ignored
 - Do not use $modx->resource in your widget, as there is no active resource for the dashboard

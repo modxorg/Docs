@@ -12,17 +12,15 @@ Remove one or more validation rules from this instance.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#removeValidationRules>
 
-```
-<pre class="brush: php">
+``` php 
 void removeValidationRules ([string $field = null], [array $rules = array()])
+```
 
-```## Examples
+## Examples
 
 Remove all rules from this Book object.
 
-```
-<pre class="brush: php">
+``` php 
 $book = $xpdo->getObject('Book',1);
 $book->removeValidationRules();
-
 ```

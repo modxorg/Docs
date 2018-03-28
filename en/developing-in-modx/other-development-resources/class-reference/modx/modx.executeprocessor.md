@@ -18,21 +18,21 @@ Executes a specific processor. The only argument is an array, which can take the
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::runProcessor()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runProcessor())
 
-```
-<pre class="brush: php">
+``` php 
 mixed executeProcessor (array $options)
+```
 
-```## Example
+## Example
 
 Execute the Context getList processor:
 
-```
-<pre class="brush: php">
+``` php 
 $modx->executeProcessor(array(
     'location' => 'context',
     'action' => 'getList',
 ));
+```
 
-```## See Also
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

@@ -12,18 +12,18 @@ Checks to see if the user has a session in the specified context.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::checkSession()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::checkSession())
 
-```
-<pre class="brush: php">
+``` php 
 boolean checkSession ([string $sessionContext = 'web'])
+```
 
-```## Example
+## Example
 
 Check to see if the user has a session in the 'sports' context.
 
-```
-<pre class="brush: php">
+``` php 
 $modx->checkSession('sports');
+```
 
-```## See Also
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

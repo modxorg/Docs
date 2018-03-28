@@ -12,18 +12,18 @@ Pack the [xPDOTransport](/xpdo/2.x/class-reference/xpdotransport "xPDOTransport"
 
 API Docs: <http://api.modxcms.com/xpdo/transport/xPDOTransport.html#pack>
 
-```
-<pre class="brush: php">
+``` php 
 boolean pack ()
+```
 
-```## Example
+## Example
 
 Package the transport into a zip file.
 
-```
-<pre class="brush: php">
+``` php 
 $transport->pack();
+```
 
-```## See Also
+## See Also
 
 - [xPDOTransport](/xpdo/2.x/class-reference/xpdotransport "xPDOTransport")

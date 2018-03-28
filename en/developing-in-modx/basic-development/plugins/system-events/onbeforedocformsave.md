@@ -27,20 +27,24 @@ Name Description mode Either 'new' or 'upd', depending on the circumstances. res
 
 ### Require a Field
 
-```
-<pre class="brush: php">if (empty($resource->longtitle)) {
+``` php 
+if (empty($resource->longtitle)) {
         $modx->event->output('Long title is required!'); // to modal window
         return '[MyPlugin] Failed to save page id '.$id.' due to missing longtitle'; // to the error log
 }
 
-```### Calculate a Field Value
-
 ```
-<pre class="brush: php">if ($resource->get('parent') == 123) {
+
+### Calculate a Field Value
+
+``` php 
+if ($resource->get('parent') == 123) {
         $resource->set('template', 4);
 }
 
-```**Saving Happens Automatically** 
+```
+
+**Saving Happens Automatically** 
  No need to run the `$resource->save()` method as that happens automatically.
 
 ## See Also

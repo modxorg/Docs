@@ -12,18 +12,18 @@ Adds a new context to the user session context array.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::addSessionContext()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::addSessionContext())
 
-```
-<pre class="brush: php">
+``` php 
 void addSessionContext (string $context)
+```
 
-```## Example
+## Example
 
 Add a 'sports' Context session to the user.
 
-```
-<pre class="brush: php">
+``` php 
 $modx->addSessionContext('sports');
+```
 
-```## See Also
+## See Also
 
 Page: [modUser](developing-in-modx/other-development-resources/class-reference/moduser)Page: [Users](administering-your-site/security/users)

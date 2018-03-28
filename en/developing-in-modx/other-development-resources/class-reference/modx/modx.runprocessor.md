@@ -19,15 +19,17 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::runProcessor()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runProcessor())
 
- ```
-<pre class="brush: php">mixed runProcessor(string $action = '', array $scriptProperties = array(), array $options = array())
+ ``` php 
+mixed runProcessor(string $action = '', array $scriptProperties = array(), array $options = array())
 
-```## Example
+```
+
+## Example
 
  Run the ResourceGroup create processor:
 
- ```
-<pre class="brush: php">// create new resource group programatically
+ ``` php 
+// create new resource group programatically
 $response = $modx->runProcessor('security/resourcegroup/create', array(
 	'name' => 'Test', // the name of the new resource group
 	'access_contexts' => 'mgr,web', // the context(s) the new resource group is restricting access in
@@ -37,7 +39,9 @@ $response = $modx->runProcessor('security/resourcegroup/create', array(
 ));
 
 
-```## See Also
+```
+
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [Using runProcessor](developing-in-modx/advanced-development/using-runprocessor)

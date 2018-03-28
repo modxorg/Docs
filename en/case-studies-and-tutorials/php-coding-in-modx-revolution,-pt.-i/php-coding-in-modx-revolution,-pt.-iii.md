@@ -20,26 +20,30 @@ From there the connector will verify the request, and then send it to the proper
 
 And now on to the processor:
 
-```
-<pre class="brush: php"><?php
+``` php 
+<?php
 /**
  * @package modx
  * @subpackage processors.element.chunk
  */
 $modx->lexicon->load('chunk');
 
-```First off, we include the root index.php file for the processors, which does some slight variable checking and includes licensing. Then, we load the proper lexicon foci. In MODx Revolution, i18n language files are separated into smaller files by their 'foci', which is a term we've coined for 'focus area'. Here, we want all language strings with foci 'chunk'. This saves processing power by only loading relevant i18n strings.
+```
+
+First off, we include the root index.php file for the processors, which does some slight variable checking and includes licensing. Then, we load the proper lexicon foci. In MODx Revolution, i18n language files are separated into smaller files by their 'foci', which is a term we've coined for 'focus area'. Here, we want all language strings with foci 'chunk'. This saves processing power by only loading relevant i18n strings.
 
 **About Foci** 
  The lexicon _foci_ are similar to how the popular [gettext](http://www.gnu.org/software/gettext/) translation framework employs _contexts_ to distinguish meanings and provide subsets of translation files. We mention this only for newcomers who may be familiar with systems that use gettext (e.g. WordPress): remember that contexts are something very different in MODx.
 
- ```
-<pre class="brush: php">if (!$modx->hasPermission('new_chunk')) $modx->error->failure($modx->lexicon('permission_denied'));
-
-```This checks to make sure the user has the correct permissions to run this processor. If not, then it sends a failure response back to the browser via $modx->error->failure(). The response is a string message translated via the lexicon.
+ ``` php 
+if (!$modx->hasPermission('new_chunk')) $modx->error->failure($modx->lexicon('permission_denied'));
 
 ```
-<pre class="brush: php">// default values
+
+This checks to make sure the user has the correct permissions to run this processor. If not, then it sends a failure response back to the browser via $modx->error->failure(). The response is a string message translated via the lexicon.
+
+``` php 
+// default values
 if ($_POST['name'] == '') $_POST['name'] = $modx->lexicon('chunk_untitled');
 
 // get rid of invalid chars
@@ -51,10 +55,12 @@ $_POST['name'] = str_replace('<','',$_POST['name']);
 $name_exists = $modx->getObject('modChunk',array('name' => $_POST['name']));
 if ($name_exists != null) return $modx->error->failure($modx->lexicon('chunk_err_exists_name'));
 
-```Note now how we're sanitizing variables, and checking to make sure there already isn't a Chunk with this name.
-
 ```
-<pre class="brush: php">// category
+
+Note now how we're sanitizing variables, and checking to make sure there already isn't a Chunk with this name.
+
+``` php 
+// category
 $category = $modx->getObject('modCategory',array('id' => $_POST['category']));
 if ($category == null) {
         $category = $modx->newObject('modCategory');
@@ -66,19 +72,23 @@ if ($category == null) {
         }
 }
 
-```Okay, here, we allow dynamic Category creation. If the category specified exists, it will later assign it to that category. If not, then it creates the category in the database and prepares it for later association to the Chunk.
-
 ```
-<pre class="brush: php">// invoke OnBeforeChunkFormSave event
+
+Okay, here, we allow dynamic Category creation. If the category specified exists, it will later assign it to that category. If not, then it creates the category in the database and prepares it for later association to the Chunk.
+
+``` php 
+// invoke OnBeforeChunkFormSave event
 $modx->invokeEvent('OnBeforeChunkFormSave',array(
         'mode'  => modSystemEvent::MODE_NEW,
         'id'    => $_POST['id'],
 ));
 
-```Events are pretty much the same invoke-wise in Revolution as they were in 096 - however they are more optimized in their loading.
-
 ```
-<pre class="brush: php">$chunk = $modx->newObject('modChunk', $_POST);
+
+Events are pretty much the same invoke-wise in Revolution as they were in 096 - however they are more optimized in their loading.
+
+``` php 
+$chunk = $modx->newObject('modChunk', $_POST);
 $chunk->set('locked',isset($_POST['locked']));
 $chunk->set('snippet',$_POST['chunk']);
 $chunk->set('category',$category->get('id'));
@@ -86,33 +96,43 @@ if ($chunk->save() === false) {
     return $modx->error->failure($modx->lexicon('chunk_err_save'));
 }
 
-```Important: note the 2nd parameter of the newObject() method. This is basically the same as $obj->fromArray() - it allows you to specify an array of key-value pairs to assign to the new object.
-
 ```
-<pre class="brush: php">// invoke OnChunkFormSave event
+
+Important: note the 2nd parameter of the newObject() method. This is basically the same as $obj->fromArray() - it allows you to specify an array of key-value pairs to assign to the new object.
+
+``` php 
+// invoke OnChunkFormSave event
 $modx->invokeEvent('OnChunkFormSave',array(
    'mode' => modSystemEvent::MODE_NEW,
    'id' => $chunk->get('id'),
 ));
 
-```Again, more event invoking.
-
 ```
-<pre class="brush: php">// log manager action
+
+Again, more event invoking.
+
+``` php 
+// log manager action
 $modx->logManagerAction('chunk_create','modChunk',$chunk->get('id'));
 
-```Now, how manager actions work in Revolution is a little different. This stores a lexicon string key ('chunk\_create'), the class key of the object being modified, and the actual ID of the object. This allows for more detailed manager action reporting.
-
 ```
-<pre class="brush: php">$cacheManager= $modx->getCacheManager();
+
+Now, how manager actions work in Revolution is a little different. This stores a lexicon string key ('chunk\_create'), the class key of the object being modified, and the actual ID of the object. This allows for more detailed manager action reporting.
+
+``` php 
+$cacheManager= $modx->getCacheManager();
 $cacheManager->clearCache();
 
-```Let's simply and easily clear the cache. Pretty easy, huh?
+```
+
+Let's simply and easily clear the cache. Pretty easy, huh?
+
+``` php 
+return $modx->error->success('',$chunk->get(array('id', 'name', 'description', 'locked', 'category')));
 
 ```
-<pre class="brush: php">return $modx->error->success('',$chunk->get(array('id', 'name', 'description', 'locked', 'category')));
 
-```Now, send a success response back to the browser. The parameters of $modx->error->success() are as follows:
+Now, send a success response back to the browser. The parameters of $modx->error->success() are as follows:
 
 1: $message - A string message to send back. Used to report details about a success (or failure). 
  2: $object - An xPDOObject or array of data fields to convert into JSON and send back to the browser.

@@ -12,18 +12,18 @@ Uninstall vehicles in the package from the sponsor xPDO instance.
 
 API Docs: <http://api.modxcms.com/xpdo/transport/xPDOTransport.html#uninstall>
 
-```
-<pre class="brush: php">
+``` php 
 boolean uninstall ([array $options = array ()])
+```
 
-```## Example
+## Example
 
 Uninstall this transport package:
 
-```
-<pre class="brush: php">
+``` php 
 $transport->uninstall();
+```
 
-```## See Also
+## See Also
 
 - [xPDOTransport](/xpdo/2.x/class-reference/xpdotransport "xPDOTransport")

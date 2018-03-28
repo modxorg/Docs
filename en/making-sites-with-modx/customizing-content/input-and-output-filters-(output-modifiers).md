@@ -30,29 +30,37 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  In Revolution, the Output Filter applies one or more of series of output modifiers, which behave similarly to PHx calls in MODx Evolution - except they're built into the core. The syntax looks like this:
 
- ```
-<pre class="brush: php">[[element:modifier=`value`]]
+ ``` php 
+[[element:modifier=`value`]]
 
-``` They can also be chained (executed left to right):
+```
 
- ```
-<pre class="brush: php">[[element:modifier:anothermodifier=`value`:andanothermodifier:yetanother=`value2`]]
+ They can also be chained (executed left to right):
 
-``` You can also use these to modify Snippet output; note that the modifier comes after the Snippet name and before the question mark, e.g.
+ ``` php 
+[[element:modifier:anothermodifier=`value`:andanothermodifier:yetanother=`value2`]]
 
- ```
-<pre class="brush: php">[[mySnippet:modifier=`value`? &mySnippetParam=`something`]]
+```
 
-``` If you have longer code in a :then=``:else=`` statement and you want to make it more readable by putting it on multiple lines, it has to be done like this:
+ You can also use these to modify Snippet output; note that the modifier comes after the Snippet name and before the question mark, e.g.
 
- ```
-<pre class="brush: php">[[+placeholder:is=`0`:then=`
+ ``` php 
+[[mySnippet:modifier=`value`? &mySnippetParam=`something`]]
+
+```
+
+ If you have longer code in a :then=``:else=`` statement and you want to make it more readable by putting it on multiple lines, it has to be done like this:
+
+ ``` php 
+[[+placeholder:is=`0`:then=`
      // code
 `:else=`
      // code
 `]]
 
-```## Output Modifiers
+```
+
+## Output Modifiers
 
  The following table lists some of the existing modifiers and shows examples of their use. Although the examples below are placeholder tags, the output modifiers can be used with any MODx tag. **Make sure that the placeholder used are actually receiving data.**
 
@@ -132,10 +140,12 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  In general, any content in a placeholder that you think **might change dynamically** should be uncached. For example:
 
- ```
-<pre class="brush: php">[[+placeholder:default=`A default value!`]]
+ ``` php 
+[[+placeholder:default=`A default value!`]]
 
-``` This means that this could **sometimes** be empty, and sometimes not. Why would you ever want that cached? That would eliminate the point of the output modifier.
+```
+
+ This means that this could **sometimes** be empty, and sometimes not. Why would you ever want that cached? That would eliminate the point of the output modifier.
 
  Sometimes, output modifiers can be used on a cached placeholder - but only if you're calling the Snippet that sets them cached as well. Otherwise, you're performing an illogical maneuver - trying to cache statically something that was never meant to be static.
 
@@ -145,26 +155,30 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  If you have properties on the tag, you'll want to specify those **after** the modifier:
 
- ```
-<pre class="brush: php">[[!getResources:default=`Sorry - nothing matched your search.`?
+ ``` php 
+[[!getResources:default=`Sorry - nothing matched your search.`?
    &tplFirst=`blogTpl`
    &parents=`2,3,4,8`
    &tvFilters=`blog_tags==%[[!tag:htmlent]]%`
    &includeTVs=`1`]]
 
-```### Creating a Custom Output Modifier
+```
+
+### Creating a Custom Output Modifier
 
  Also, [Snippets](developing-in-modx/basic-development/snippets "Snippets") can be used as custom modifiers. Simply put the [Snippet](developing-in-modx/basic-development/snippets "Snippets") name instead of the modifier. Example with a snippet named 'makeExciting' that appends a variable amount of exclamation marks:
 
- ```
-<pre class="brush: php">[[*pagetitle:makeExciting=`4`]]
+ ``` php 
+[[*pagetitle:makeExciting=`4`]]
 
-``` This document variable call with an output modifier will pass these properties to the snippet:
+```
+
+ This document variable call with an output modifier will pass these properties to the snippet:
 
   Param   Value   Example Result   input   The element's value.   The value of \[\[\*pagetitle\]\]   options   Any value passed to the modifier.   '4'   token   The type of the parent element.   \* (the token on `pagetitle`)   name   The name of the parent element.   pagetitle   tag   The complete parent tag.   \[\[\*pagetitle:makeExciting=`4`\]\]  Here is a sample implementation for our snippet makeExciting:
 
- ```
-<pre class="brush: php">$defaultExcitementLevel = 1;
+ ``` php 
+$defaultExcitementLevel = 1;
 $result = $input;
 if ( true === isset($options) ) {
 $numberOfExclamations = $options;
@@ -176,7 +190,9 @@ for ( $i = $numberOfExclamations; $i > 0; $i-- ) {
 }
 return $result;
 
-``` The return value of the call will be whatever the snippet returns. For our example, the result will be the value of the pagetitle document variable appended with four exclamation marks.
+```
+
+ The return value of the call will be whatever the snippet returns. For our example, the result will be the value of the pagetitle document variable appended with four exclamation marks.
 
  The original input value will be returned if the snippet returns an empty string. 
 
@@ -184,13 +200,15 @@ return $result;
 
  A good example of chaining would be to format a date string to another format, like so:
 
- ```
-<pre class="brush: php">[[+mydate:strtotime:date=`%Y-%m-%d`]]
+ ``` php 
+[[+mydate:strtotime:date=`%Y-%m-%d`]]
 
-``` Directly accessing the modx\_user\_attributes table in the database using output modifiers instead of a [Snippet](developing-in-modx/basic-development/snippets "Snippets") can be accomplished simply by utilizing the userinfo modifier. Select the appropriate column from the table and specify it as the property of the output modifier, like so:
+```
 
- ```
-<pre class="brush: php">User Internal Key: [[!+modx.user.id:userinfo=`internalKey`]]<br />
+ Directly accessing the modx\_user\_attributes table in the database using output modifiers instead of a [Snippet](developing-in-modx/basic-development/snippets "Snippets") can be accomplished simply by utilizing the userinfo modifier. Select the appropriate column from the table and specify it as the property of the output modifier, like so:
+
+ ``` php 
+User Internal Key: [[!+modx.user.id:userinfo=`internalKey`]]<br />
 User name: [[!+modx.user.id:userinfo=`username`]]<br />
 Full Name: [[!+modx.user.id:userinfo=`fullname`]]<br />
 Role:  [[!+modx.user.id:userinfo=`role`]]<br />
@@ -211,13 +229,17 @@ Last Login: [[+modx.user.id:userinfo=`lastlogin`:date=`%Y-%m-%d`]]<br />
 The Login:[[+modx.user.id:userinfo=`thislogin`:date=`%Y-%m-%d`]]<br />
 Number of Logins: [[+modx.user.id:userinfo=`logincount`]]
 
-``` \[\[!+modx.user.id\]\] defaults to the currently logged in user ID. You can of course replace that with \[\[\*createdby\]\] or other resource field or placeholders that return a numeric ID representing a user.
+```
 
- Note that the user ID and username is already available by default in MODx, so you dont need to use the "userinfo" modifier: ```
-<pre class="brush: php">[[!+modx.user.id]] - Prints the ID
+ \[\[!+modx.user.id\]\] defaults to the currently logged in user ID. You can of course replace that with \[\[\*createdby\]\] or other resource field or placeholders that return a numeric ID representing a user.
+
+ Note that the user ID and username is already available by default in MODx, so you dont need to use the "userinfo" modifier: ``` php 
+[[!+modx.user.id]] - Prints the ID
 [[!+modx.user.username]] - Prints the username
 	
-``` You will most likely want to call these uncached (see note about caching above) to prevent unexpected results.
+```
+
+ You will most likely want to call these uncached (see note about caching above) to prevent unexpected results.
 
 
 

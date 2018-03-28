@@ -12,19 +12,19 @@ Recursively writes a directory tree of files to the filesystem.
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#writeTree>
 
-```
-<pre class="brush: php">
+``` php 
 boolean writeTree (string $dirname, [array $options = array()])
+```
 
-```## Example
+## Example
 
 Create a new directory on the FS.
 
-```
-<pre class="brush: php">
+``` php 
 $xpdo->cacheManager->writeTree('/path/to/new/directory/');
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

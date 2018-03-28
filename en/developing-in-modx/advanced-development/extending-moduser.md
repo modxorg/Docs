@@ -63,8 +63,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 
  The simplest example we could imagine is that we want to add a single extra attribute to the user data – so in the database, this would mean we have a separate table with 2 columns: one for the foreign key relation back to the **modx\_users** table, and the other column containing our new "extra" attribute, e.g. a _fackbook\_url_:
 
- ```
-<pre class="brush: php"><?xml version="1.0" encoding="UTF-8"?>
+ ``` php 
+<?xml version="1.0" encoding="UTF-8"?>
 <model package="extendeduser" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" tablePrefix="ext_">
         <!-- extend the modUser class -->
         <object class="extUser" extends="modUser">
@@ -80,14 +80,16 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
         </object>
  </model>
 
-``` Note that the extending of modUser class happens all within that single _object_ node. Also notice that we specify the prefix for our ancillary table in the _model_ node: **ext\_**
+```
+
+ Note that the extending of modUser class happens all within that single _object_ node. Also notice that we specify the prefix for our ancillary table in the _model_ node: **ext\_**
 
 ####  More Involved Example 
 
  Note that the _index="unique"_ bit has been deprecated – the index declaration should go into its own node as in the example above.
 
- ```
-<pre class="brush: php"><?xml version="1.0" encoding="UTF-8"?>
+ ``` php 
+<?xml version="1.0" encoding="UTF-8"?>
 <model package="extendeduser" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" tablePrefix="ext_">
     <!-- inherit the modx user and extend it -->
     <object class="extUser" extends="modUser">
@@ -109,7 +111,9 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
     </object>
 </model>
 
-``` You will need to parse and create the model map associated with this schema. As this process is out of the scope of this topic, please refer to [Using Custom Database Tables in your 3rd Party Components](case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components "Using Custom Database Tables in your 3rd Party Components") for further information.
+```
+
+ You will need to parse and create the model map associated with this schema. As this process is out of the scope of this topic, please refer to [Using Custom Database Tables in your 3rd Party Components](case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components "Using Custom Database Tables in your 3rd Party Components") for further information.
 
 ###  2.) Edit the extuser.class.php 
 
@@ -117,8 +121,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 
  Edit the extuser.class.php file created when you generated the model. The specific file is the one found in the top of the model tree (you should see a mysql directory) in this same folder. Edit the file to resemble the following:
 
- ```
-<pre class="brush: php"> <?php
+ ``` php 
+ <?php
 /**
  * @package extendeduser
  * @subpackage user.mysql
@@ -131,26 +135,32 @@ class extUser extends modUser {
 }
 ?>
 
-```###  3.) Create (or edit) _extension\_packages in System Settings_
+```
+
+###  3.) Create (or edit) _extension\_packages in System Settings_
 
  Access the System settings found in the System menu of the manager, and search for [extension\_packages](administering-your-site/settings/system-settings/extension_packages "extension_packages").
 
  **If the key already exists**, add inside the json array
 
- ```
-<pre class="brush: php">,{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}}
+ ``` php 
+,{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}}
 
-``` **If the key does not exists**
+```
+
+ **If the key does not exists**
 
 - Create a new system setting with name of extension\_packages
 - Key of extension\_packages
 - Fieldtype: Textfield
 - value
  
-```
-<pre class="brush: php">[{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}}]
+``` php 
+[{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}}]
     
-```### 4.) Final Step Create a class to access and utilize your extended class
+```
+
+### 4.) Final Step Create a class to access and utilize your extended class
 
  The whole reason for extending a core class is so you could interact with your extended data more easily. So at some point in a Snippet or Plugin or CMP, you'd be working with your new data.
 
@@ -158,17 +168,19 @@ class extUser extends modUser {
 
  Here's how you might interact with your extended data in a Snippet:
 
- ```
-<pre class="brush: php">$modx->addPackage('extendeduser', MODX_CORE_PATH . 'components/extendeduser/model/', 'ext_');
+ ``` php 
+$modx->addPackage('extendeduser', MODX_CORE_PATH . 'components/extendeduser/model/', 'ext_');
 $user = $modx->getObject('extUser', 123); // where 123 is the id of a user
 $data = $user->getOne('Data'); // use the alias from the schema
 // toArray will print all the extra data, e.g. facebook_url
 return print_r($data->toArray(), true);
 
-```####  More complex example 
+```
 
- ```
-<pre class="brush: php"> <?php
+####  More complex example 
+
+ ``` php 
+ <?php
 /**
  *  File        sample.class.php (requires MODx Revolution 2.x)
  * Created on    Aug 18, 2010
@@ -225,12 +237,14 @@ if (!class_exists('Sampleclass')) {
     }
 }
 
-```####  5.) Accessing the class 
+```
+
+####  5.) Accessing the class 
 
  In our example we will be accessing our extended user throughout our site, therefore we load it as a service as shown in the following example:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 $x = $modx->getService('extendeduser','Sampleclass',$modx->getOption('core_path',null, MODX_CORE_PATH).'components/extendeduser/',$scriptProperties);
 if (!($x instanceof Extendeduser)) {
     $modx->log(modX::LOG_LEVEL_ERROR,'[Extendeduser] Could not load Extendeduser class.');
@@ -238,7 +252,9 @@ if (!($x instanceof Extendeduser)) {
 }
 return;
 
-```##  Noteworthy items 
+```
+
+##  Noteworthy items 
 
 1. Any pre existing user, will still have modUser as the class\_key and therefore will **not** be extended or produce user objects of type extUser unless you change it
 2. Double check the modx.mysql.schema.xml file to make sure you are not using classes or alias it is already using, as yours will supersede the default moduser prohibiting you access to items such as the user attributes (with alias Profile)
@@ -247,8 +263,8 @@ return;
 5. Symptoms of step 3 (extension\_packages path) not being correct: 
   1. Any user with the class\_key of extUser will return an error upon login: "User cannot be found...". If this is the admin, access your database directly, return the class\_key to modUser, login correctly and then alter the path to a correct representation of the path.
   2. The snippets attached to the class will intermittently work or fail altogether
-6. To get counts from your data (i.e. how many phone numbers does this person have) use either (any criteria can be added): ```
-  <pre class="brush: php">$this->modx->getCount('extPhones', array('user' => $this->userID));
+6. To get counts from your data (i.e. how many phone numbers does this person have) use either (any criteria can be added): ``` php 
+  $this->modx->getCount('extPhones', array('user' => $this->userID));
   $this->modx->getCount('extPhones');
       
   ```
@@ -280,15 +296,17 @@ return;
 
  Whenever you modify the class\_key for a built-in MODX object, you need to be aware of how behavior changes. The class\_key affects what aggregates and composites are available to the object. For example, if a user has a class\_key "extUser", you can still retrieve the object using the parent class:
 
- ```
-<pre class="brush: php">// both of these work when class_key is "extUser":
+ ``` php 
+// both of these work when class_key is "extUser":
 $User = $modx->getObject('modUser', 123);
 $User = $modx->getObject('extUser', 123);
 
-``` However, the aggregates or composite relationships depend on the _stored value_ of the class\_key.
+```
 
- ```
-<pre class="brush: php">$Data = $modx->newObject('Userdata');
+ However, the aggregates or composite relationships depend on the _stored value_ of the class\_key.
+
+ ``` php 
+$Data = $modx->newObject('Userdata');
 $Data->set('facebook_url',$url); // ... etc ...
 $User->addOne($Data);
 $User->save(); // this will not save related data if the class_key does not have the relations defined!

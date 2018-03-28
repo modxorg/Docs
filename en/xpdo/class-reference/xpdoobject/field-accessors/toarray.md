@@ -12,16 +12,16 @@ Copies the object fields and corresponding values to an associative array.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#toArray>
 
-```
-<pre class="brush: php">
+``` php 
 array toArray(
    [string $keyPrefix = ''],
    [boolean $rawValues = false],
    [boolean $excludeLazy = false],
    [boolean|integer|string|array $inludeRelated = false])
 )
+```
 
-```**keyPrefix:** an optional prefix to prepend to each fields' keys.
+**keyPrefix:** an optional prefix to prepend to each fields' keys.
 
 **rawValues**: optional flag to get the raw value (true) or to use xPDOObject->get(). Typically will want to use ->get().
 
@@ -37,25 +37,25 @@ array toArray(
 
 Get the values of the object in array format:
 
-```
-<pre class="brush: php">
+``` php 
 $object->set('name','John Lo');
 $object->set('email','jlo@gmail.com');
 $a = $object->toArray();
 print_r($a);
 // prints "Array ( [name] => John Lo [email] => jlo@gmail.com )"
-
-```Get the values of the object, but with their keys prefixed with 'dev\_'
-
 ```
-<pre class="brush: php">
+
+Get the values of the object, but with their keys prefixed with 'dev\_'
+
+``` php 
 $object->set('name','Mark');
 $object->set('version','1.0');
 $a = $object->toArray('dev_');
 print_r($a);
 // prints "Array ( [dev_name] => Mark [dev_version] => 1.0 )"
+```
 
-```## See Also 
+## See Also 
 
 - [fromArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
 - [toArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/toarray "toArray")

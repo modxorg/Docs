@@ -14,22 +14,22 @@ The criteria can be a primary key value, an array of primary key values (for mul
 
 API Docs: <http://api.modx.com/xpdo/xPDO.html#getObject>
 
-```
-<pre class="brush: php">
+``` php 
 xPDOObject|null getObject (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
+```
 
-```## Example
+## Example
 
 ### Simplest Example (Built-in Objects)
 
 You can use **getObject** to retrieve MODX resources (e.g. a page) by its page ID:
 
-```
-<pre class="brush: php">
+``` php 
 $page = $modx->getObject('modResource', 555);
 $output = $page->get('pagetitle');
+```
 
-```**xPDO vs. MODX**
+**xPDO vs. MODX**
 The **$modx** object extends xPDO, so for many situations (e.g. inside your Snippets), you can use the **$modx** object, even though most examples on this page use the **$xpdo** object.
 
 You can retrieve any MODX object this way, just by knowing its object name – usually that's simply a matter of prepending "mod" to the object's familiar name:
@@ -44,20 +44,19 @@ The simplest example is when you retrieve an object by its primary key.
 
 E.g. get a Box object with ID 134.
 
-```
-<pre class="brush: php">
+``` php 
 $box = $xpdo->getObject('Box', 134);
-
-```Back in your XML schema, if your object extends _xPDOSimpleObject_, the primary key column is assumed to be named "id".
-
 ```
-<pre class="brush: php">
+
+Back in your XML schema, if your object extends _xPDOSimpleObject_, the primary key column is assumed to be named "id".
+
+``` php 
 <object class="modPropertySet" table="property_set" extends="xPDOSimpleObject">
-
-```Otherwise, your XML schema will tell you which column is the primary key via the _index alias="PRIMARY"_ node, e.g.
-
 ```
-<pre class="brush: php">
+
+Otherwise, your XML schema will tell you which column is the primary key via the _index alias="PRIMARY"_ node, e.g.
+
+``` php 
         <object class="MyObject" table="my_object" extends="xPDOObject">
                 <field key="object_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
                 <!-- ... stuff here ... -->
@@ -65,34 +64,35 @@ $box = $xpdo->getObject('Box', 134);
                         <column key="object_id" collation="A" null="false" />
                 </index>
         </object>
+```
 
-```### More Verbose Simple Example
+### More Verbose Simple Example
 
 You can also provide more verbose criteria to the 2nd parameter, e.g.
 
-```
-<pre class="brush: php">
+``` php 
 $box = $xpdo->getObject('Box', array('id'=>134));
+```
 
-```### Other Columns
+### Other Columns
 
 You don't have to retrieve based on just the primary key, you can also search on other columns:
 
-```
-<pre class="brush: php">
+``` php 
 $box = $xpdo->getObject('Box', array('color'=>'blue'));
+```
 
-```### Complex Criteria
+### Complex Criteria
 
 You can specify more complex selection criteria using an [xPDO query](/xpdo/2.x/class-reference/xpdo/xpdo.newquery "xPDO.newQuery"):
 
-```
-<pre class="brush: php">
+``` php 
 $query = $modx->newQuery('MyObject');
 $query->where( array('wheels:>=' => 3) );
 $myobj = $xpdo->getObject('MyObject', $query);
+```
 
-```## See Also
+## See Also
 
 - [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
 - [xPDO.getObjectGraph](/xpdo/2.x/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")

@@ -12,17 +12,17 @@ Unsets a placeholder value by key.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::unsetPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::unsetPlaceholder())
 
-```
-<pre class="brush: php">
+``` php 
 void unsetPlaceholder (string $key)
-
-```## Example
-
 ```
-<pre class="brush: php">
-$modx->unsetPlaceholder('myPlaceholder');
 
-```## See Also
+## Example
+
+``` php 
+$modx->unsetPlaceholder('myPlaceholder');
+```
+
+## See Also
 
 - [modX.unsetPlaceholders](developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholders "modX.unsetPlaceholders")
 - [modX.toPlaceholder](developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholder "modX.toPlaceholder")

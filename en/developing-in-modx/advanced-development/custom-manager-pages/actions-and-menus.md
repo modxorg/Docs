@@ -18,11 +18,11 @@ For example, 3rd party devs might want to create a Lexicon Topic named 'buttons'
 
 You can then load the topic via:
 
-```
-<pre class="brush: php">
+``` php 
 $modx->lexicon->load('tinymce:buttons');
+```
 
-```modAction's are also easily hooked to modMenu's, which are abstract representations of the top menubar in the manager. Again, this lets 3rd party developers easily and quickly develop custom menu implementations for their components - or lets users rearrange the top menu.
+modAction's are also easily hooked to modMenu's, which are abstract representations of the top menubar in the manager. Again, this lets 3rd party developers easily and quickly develop custom menu implementations for their components - or lets users rearrange the top menu.
 
 These can all be managed via the Actions panel, which is found under the Tools menu.
 

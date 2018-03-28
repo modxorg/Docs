@@ -29,8 +29,7 @@ First off, the Console starts up a Polling panel that queries the Registry with 
 
 The console can easily be hooked up to nearly any processor and JS custom application in MODX. Simply instantiate a new console object:
 
-```
-<pre class="brush: php">
+``` php 
 var topic = '/mytopic/';
 var register = 'mgr';
 var console = MODx.load({
@@ -45,13 +44,13 @@ var console = MODx.load({
    }
 });
 console.show(Ext.getBody());
+```
 
-```Note here that you fire up the console, and then load the topic that you want (make sure to include the beginning and ending slashes).
+Note here that you fire up the console, and then load the topic that you want (make sure to include the beginning and ending slashes).
 
 When you've got that loaded, you can send a request to your processor:
 
-```
-<pre class="brush: php">
+``` php 
 MODx.Ajax.request({
     url: URL_TO_MY_CONNECTOR
     ,params: {
@@ -65,22 +64,23 @@ MODx.Ajax.request({
         },scope:this}
     }
 });
-
-```You'll need to specify the URL of your connector url, as well as the action you want to load (the processor). In your processor, you can output to the Console by using $modx->log:
-
 ```
-<pre class="brush: php">
+
+You'll need to specify the URL of your connector url, as well as the action you want to load (the processor). In your processor, you can output to the Console by using $modx->log:
+
+``` php 
 $modx->log(modX::LOG_LEVEL_INFO,'An information message in normal colors.');
 $modx->log(modX::LOG_LEVEL_ERROR,'An error in red!');
 $modx->log(modX::LOG_LEVEL_WARN,'A warning in blue!');
-
-```Once you're done with your processor, you should do two things. One, fire off a log message with just "COMPLETED" in the body:
-
 ```
-<pre class="brush: php">
-$modx->log(modX::LOG_LEVEL_INFO,'COMPLETED');
 
-```This tells the console to stop polling, and enables the "OK" button which closes the console.
+Once you're done with your processor, you should do two things. One, fire off a log message with just "COMPLETED" in the body:
+
+``` php 
+$modx->log(modX::LOG_LEVEL_INFO,'COMPLETED');
+```
+
+This tells the console to stop polling, and enables the "OK" button which closes the console.
 
 MODX Revolution 2.1.0-rc2 and later do not need you to send the COMPLETED message in the registry - just firing the 'complete' event on the JS Console object will work. All prior versions require the COMPLETED message.
 

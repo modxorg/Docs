@@ -15,8 +15,6 @@ A valid RegEx pattern for restricting characters used in a Resource alias.
 
 Default:
 
-```
-<pre class="brush: php">
+``` php 
 /[\0\x0B\t\n\r\f\a&=+%#<>"~:`@\?\[\]\{\}\|\^\'\\\\]/
-
 ```

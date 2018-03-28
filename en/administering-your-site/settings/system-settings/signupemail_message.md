@@ -10,8 +10,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/signupemail_mess
 **Type**: String 
 **Default**:
 
-```
-<pre class="brush: php">
+``` php 
 Hello [[+uid]]
 
 Here are your login details for [[+sname]] Content Manager:
@@ -23,8 +22,9 @@ Once you log into the Content Manager ([[+surl]]), you can change your password.
 
 Regards,
 Site Administrator
+```
 
-```Here you can set the message sent to your users when you create an account for them and let MODx send them an e-mail containing their username and password.
+Here you can set the message sent to your users when you create an account for them and let MODx send them an e-mail containing their username and password.
 
 The following placeholders are replaced by the Content Manager when the message is sent: \[\[+sname\]\] - Name of your web site 
 \[\[+saddr\]\] - Your web site email address 

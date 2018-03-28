@@ -12,18 +12,17 @@ This function is responsible for loading a collection of object instances from *
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#loadCollection>
 
-```
-<pre class="brush: php">
+``` php 
 static array loadCollection(
     xPDO &$xpdo,
     string $className,
     [mixed $criteria = null],
     [boolean|integer $cacheFlag = true]
 )
-
-```## Example
-
 ```
-<pre class="brush: php">
+
+## Example
+
+``` php 
 
 ```

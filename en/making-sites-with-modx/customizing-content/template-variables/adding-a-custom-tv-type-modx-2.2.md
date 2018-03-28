@@ -26,8 +26,7 @@ We'll need a plugin to tell MODX where our custom TV directories are. Go ahead a
 
 Now put in the Plugin code:
 
-```
-<pre class="brush: php">
+``` php 
 $corePath = $modx->getOption('core_path',null,MODX_CORE_PATH).'components/ourtvs/';
 switch ($modx->event->name) {
     case 'OnTVInputRenderList':
@@ -45,8 +44,9 @@ switch ($modx->event->name) {
     case 'OnManagerPageBeforeRender':
         break;
 }
+```
 
-```These event handlers tell MODX to check these directories for our TV files when doing all the rendering and processing. Think of it like adding library or include paths.
+These event handlers tell MODX to check these directories for our TV files when doing all the rendering and processing. Think of it like adding library or include paths.
 
 The pathing plugin will not be required in MODX 2.3; the Namespace will handle all the pathing. This is why we told you earlier to make the Namespace. :) 
 
@@ -58,8 +58,7 @@ The input controller is what actually loads the markup for the custom TV input. 
 
 And inside, you can put this code:
 
-```
-<pre class="brush: php">
+``` php 
 <?php
 if(!class_exists('TemplateSelectInputRender')) {
     class TemplateSelectInputRender extends modTemplateVarInputRender {
@@ -71,8 +70,9 @@ if(!class_exists('TemplateSelectInputRender')) {
     }
 }
 return 'TemplateSelectInputRender';
+```
 
-```Here we tell it where to find our smarty template for rendering the TV, as well as having a process() method to do any business logic we want to do prior to rendering the TV.
+Here we tell it where to find our smarty template for rendering the TV, as well as having a process() method to do any business logic we want to do prior to rendering the TV.
 
 Now you can see here we are specifying a "tpl" file for rendering our TV. Go ahead and put it here:
 
@@ -80,8 +80,7 @@ Now you can see here we are specifying a "tpl" file for rendering our TV. Go ahe
 
 And make its content:
 
-```
-<pre class="brush: php">
+``` php 
 <select id="tv{$tv->id}" name="tv{$tv->id}" class="combobox"></select>
 <script type="text/javascript">
 // <![CDATA[
@@ -101,8 +100,9 @@ MODx.load({
 {/literal}
 // ]]>
 </script>
+```
 
-```You don't have to use the ExtJS code as shown here to have a custom input type. It could even just be a straight HTML input. It's really up to you. 
+You don't have to use the ExtJS code as shown here to have a custom input type. It could even just be a straight HTML input. It's really up to you. 
 
 And that should render us a nice template dropdown in the backend:
 
@@ -116,8 +116,7 @@ Okay, so now we want to make the output controller, let's create the file at:
 
 And the content:
 
-```
-<pre class="brush: php">
+``` php 
 if(!class_exists('TemplateSelectOutputRender')) {
     class TemplateSelectOutputRender extends modTemplateVarOutputRender {
         public function process($value,array $params = array()) {
@@ -126,8 +125,9 @@ if(!class_exists('TemplateSelectOutputRender')) {
     }
 }
 return 'TemplateSelectOutputRender';
+```
 
-```There we go - now when we render this in the front-end, it will display the ID of our selected Template wrapped in a div.
+There we go - now when we render this in the front-end, it will display the ID of our selected Template wrapped in a div.
 
 ## See Also 
 

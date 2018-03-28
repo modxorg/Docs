@@ -20,19 +20,19 @@ Gets the modX core version data. The array contains the following keys (examples
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getVersionData()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getVersionData())
 
-```
-<pre class="brush: php">
+``` php 
 array getVersionData ()
+```
 
-```## Example
+## Example
 
 Print out the current full version:
 
-```
-<pre class="brush: php">
+``` php 
 $vers = $modx->getVersionData();
 echo $vers['full_version'];
+```
 
-```## See Also
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

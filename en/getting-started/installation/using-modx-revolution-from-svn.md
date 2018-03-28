@@ -71,15 +71,13 @@ If you use MAMP on Mac OS X, you may get problems (errors about DYLD libraries n
 
 To adjust the dynamic linker library path to include the MAMP PHP libraries, run the following command via the terminal:
 
-```
-<pre class="brush: php">
+``` php 
 export DYLD_LIBRARY_PATH=/Applications/MAMP/Library/lib:$
 {DYLD_LIBRARY_PATH}
-
-```You can then execute ''transport.core.php'' by using the absolute path to the MAMP PHP executable:
-
 ```
-<pre class="brush: php">
-/Applications/MAMP/bin/php5/bin/php transport.core.php
 
+You can then execute ''transport.core.php'' by using the absolute path to the MAMP PHP executable:
+
+``` php 
+/Applications/MAMP/bin/php5/bin/php transport.core.php
 ```

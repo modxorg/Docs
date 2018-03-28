@@ -31,7 +31,7 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/roadmap"
 
 Before the end of 2017, an exciting new feature release is planned. This may be version 2.6 or 2.7, but can also be version 3.0 if it includes backwards incompatible features. In that case, the "MODX 3.0/Next" detailed below will become "MODX 4.0".
 
-This feature release is expected to contain a refreshed manager design, as well as other cool new features. Its progress [can be followed on github](https://github.com/modxcms/revolution/issues?q=is%3Aclosed+milestone%3Av2.6.0), and you can test it by [building MODX from Git](https://docs.modx.com/revolution/2.x/getting-started/installation/git-installation) on the `2.x` branch. Here are some of the features that have already been merged:
+This feature release is expected to contain a refreshed manager design, as well as other cool new features. Its progress [can be followed on github](https://github.com/modxcms/revolution/issues?q=is%3Aclosed+milestone%3Av2.6.0), and you can test it by [building MODX from Git](getting-started/installation/git-installation) on the `2.x` branch. Here are some of the features that have already been merged:
 
 - Ability to disable the @EVAL binding for improved security ([\#13224](https://github.com/modxcms/revolution/pull/13224))
 - Ability to use newlines in output modifiers ([\#13115](https://github.com/modxcms/revolution/pull/13115))

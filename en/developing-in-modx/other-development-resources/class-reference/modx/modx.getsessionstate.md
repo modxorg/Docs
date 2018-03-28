@@ -19,16 +19,16 @@ The possible values for session state are:
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getSessionState()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getSessionState())
 
-```
-<pre class="brush: php">
+``` php 
 integer getSessionState ()
-
-```## Example
-
 ```
-<pre class="brush: php">
-$state = $modx->getSessionState();
 
-```## See Also
+## Example
+
+``` php 
+$state = $modx->getSessionState();
+```
+
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

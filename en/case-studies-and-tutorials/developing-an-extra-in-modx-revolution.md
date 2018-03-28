@@ -75,19 +75,23 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
 
  You'll have to make a snippets/ directory, if you haven't already. Your file should be empty, but let's add a few lines of code:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 $dood = $modx->getService('doodles','Doodles',$modx->getOption('doodles.core_path',null,$modx->getOption('core_path').'components/doodles/').'model/doodles/',$scriptProperties);
 if (!($dood instanceof Doodles)) return '';
 
-``` Whoa! What's that? It's where the magic happens. Let's break down each part. First off, we have the getService call. It's shorthand notation right now, so let's split it up a bit to make it easier to read:
+```
 
- ```
-<pre class="brush: php">$defaultDoodlesCorePath = $modx->getOption('core_path').'components/doodles/';
+ Whoa! What's that? It's where the magic happens. Let's break down each part. First off, we have the getService call. It's shorthand notation right now, so let's split it up a bit to make it easier to read:
+
+ ``` php 
+$defaultDoodlesCorePath = $modx->getOption('core_path').'components/doodles/';
 $doodlesCorePath = $modx->getOption('doodles.core_path',null,$defaultDoodlesCorePath);
 $dood = $modx->getService('doodles','Doodles',$doodlesCorePath.'model/doodles/',$scriptProperties);
 
-``` Okay, so first off, what is $modx->getOption? That's a method that grabs the System Setting with the key (the first parameter). In the first line, we are grabbing a 'default' path we are assuming our Doodles core path is going to be, by prefixing the MODX core path to it. It'll be: /www/modx/core/components/doodles/
+```
+
+ Okay, so first off, what is $modx->getOption? That's a method that grabs the System Setting with the key (the first parameter). In the first line, we are grabbing a 'default' path we are assuming our Doodles core path is going to be, by prefixing the MODX core path to it. It'll be: /www/modx/core/components/doodles/
 
  Next, we'll pass that as a fallback value for the next getOption call. This one passes 3 parameters: a key named "doodles.core\_path", null, and our default path var we just assigned. In getOption, the 2nd parameter is an array to search for the key (which we aren't doing, so we can set it to null), and the 3rd paramter is a default value if the key isn't found.
 
@@ -108,17 +112,19 @@ $dood = $modx->getService('doodles','Doodles',$doodlesCorePath.'model/doodles/',
 
  Now on to the third line:
 
- ```
-<pre class="brush: php">$dood = $modx->getService('doodles','Doodles',$doodlesCorePath.'model/doodles/',$scriptProperties);
+ ``` php 
+$dood = $modx->getService('doodles','Doodles',$doodlesCorePath.'model/doodles/',$scriptProperties);
 
-``` Okay, this gets crazy. $modx->getService loads a class and instantiates an object of it, if it exists, and sets it to $modx->doodles here in this case (the first parameter passed in). More on getService can be found [here](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService"). But wait! We don't have a Doodles class! Well, it's time to make one.
+```
+
+ Okay, this gets crazy. $modx->getService loads a class and instantiates an object of it, if it exists, and sets it to $modx->doodles here in this case (the first parameter passed in). More on getService can be found [here](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService"). But wait! We don't have a Doodles class! Well, it's time to make one.
 
 ###  Making the Doodles Base Class 
 
  First off, you're probably asking me why we're even making this class. Well, it'll help for a few reasons: we can define some basic paths in it that we'll use across our custom Extra, and it can also give us some app-wide methods we can use. Trust me, it's useful. So let's make it in /www/doodles/core/components/doodles/model/doodles/doodles.class.php:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 class Doodles {
     public $modx;
     public $config = array();
@@ -141,12 +147,14 @@ class Doodles {
     }
 }
 
-``` Great! It's pretty simple for now - just creates a class object that has a constructor that sets a reference to the modX object at $doodles->modx. This is useful later. Also, it populates some basic paths we may use later on into the $doodles->config array, and it does it with our fancy System Settings trick so we can point it to our /www/doodles/ path!
+```
+
+ Great! It's pretty simple for now - just creates a class object that has a constructor that sets a reference to the modX object at $doodles->modx. This is useful later. Also, it populates some basic paths we may use later on into the $doodles->config array, and it does it with our fancy System Settings trick so we can point it to our /www/doodles/ path!
 
  Now, back to our Snippet. Let's go ahead and add some default properties to our Snippet, after the lines above, so it looks like this:
 
- ```
-<pre class="brush: php">$dood = $modx->getService('doodles','Doodles',$modx->getOption('doodles.core_path',null,$modx->getOption('core_path').'components/doodles/').'model/doodles/',$scriptProperties);
+ ``` php 
+$dood = $modx->getService('doodles','Doodles',$modx->getOption('doodles.core_path',null,$modx->getOption('core_path').'components/doodles/').'model/doodles/',$scriptProperties);
 if (!($dood instanceof Doodles)) return '';
 /* setup default properties */
 $tpl = $modx->getOption('tpl',$scriptProperties,'rowTpl');
@@ -155,7 +163,9 @@ $dir = $modx->getOption('dir',$scriptProperties,'ASC');
 $output = '';
 return $output;
 
-``` Cool. Now we want to use [xPDO](/display/xPDO20/Home "Home") to query the database to grab our records...oops. We haven't made an xPDO model for them yet. We should do that.
+```
+
+ Cool. Now we want to use [xPDO](/display/xPDO20/Home "Home") to query the database to grab our records...oops. We haven't made an xPDO model for them yet. We should do that.
 
 ###  Making the Model 
 
@@ -163,8 +173,8 @@ return $output;
 
  Go ahead and make a xml file in /www/doodles/core/components/doodles/model/schema/doodles.mysql.schema.xml. Put this in it:
 
- ```
-<pre class="brush: php"><?xml version="1.0" encoding="UTF-8"?>
+ ``` php 
+<?xml version="1.0" encoding="UTF-8"?>
 <model package="doodles" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.0">
     <object class="Doodle" table="doodles" extends="xPDOSimpleObject">
         <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
@@ -178,40 +188,50 @@ return $output;
     </object>
 </model>
 
-``` Ooookay. Lots of stuff here. If this is your first time learning about xPDO or if you are all unfamiliar with the how's and why's of its XML schema files, you may want to review [More Examples of xPDO XML Schema Files](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files"). First off, the first line:
+```
 
- ```
-<pre class="brush: php"><model package="doodles" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
+ Ooookay. Lots of stuff here. If this is your first time learning about xPDO or if you are all unfamiliar with the how's and why's of its XML schema files, you may want to review [More Examples of xPDO XML Schema Files](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files"). First off, the first line:
 
-``` This tells the schema that our xPDO package is called 'doodles'. This is what we'll refer to in our addPackage() call. Great. It also says the base class for all the objects defined here is "xPDOObject", and that this schema is made for MySQL. Finally, it gives a default MySQL engine of MyISAM. Next!
+ ``` php 
+<model package="doodles" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
 
- ```
-<pre class="brush: php"><object class="Doodle" table="doodles" extends="xPDOSimpleObject">
+```
 
-``` An "object" in a xPDO schema is basically a database table. This line says, give xPDO a name for the table called '{table\_prefix} _doodles'. Assuming your table prefix you did in your MODX install is 'modx_', it would translate to 'modx\_doodles'. Then it says that it extends "xPDOSimpleObject". What's that? Well, xPDOObject is the base object for any xPDO table class. xPDOSimpleObject extends it, but adds a nice little "id" auto-increment field to that table. So, since we're gonna want a "id" field on our table, we use xPDOSimpleObject.
+ This tells the schema that our xPDO package is called 'doodles'. This is what we'll refer to in our addPackage() call. Great. It also says the base class for all the objects defined here is "xPDOObject", and that this schema is made for MySQL. Finally, it gives a default MySQL engine of MyISAM. Next!
 
- ```
-<pre class="brush: php"><field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+ ``` php 
+<object class="Doodle" table="doodles" extends="xPDOSimpleObject">
+
+```
+
+ An "object" in a xPDO schema is basically a database table. This line says, give xPDO a name for the table called '{table\_prefix} _doodles'. Assuming your table prefix you did in your MODX install is 'modx_', it would translate to 'modx\_doodles'. Then it says that it extends "xPDOSimpleObject". What's that? Well, xPDOObject is the base object for any xPDO table class. xPDOSimpleObject extends it, but adds a nice little "id" auto-increment field to that table. So, since we're gonna want a "id" field on our table, we use xPDOSimpleObject.
+
+ ``` php 
+<field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
 <field key="description" dbtype="text" phptype="string" null="false" default=""/>
 <field key="createdon" dbtype="datetime" phptype="datetime" null="true"/>
 <field key="createdby" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
 <field key="editedon" dbtype="datetime" phptype="datetime" null="true"/>
 <field key="editedby" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
 
-``` The rest of these fields are pretty self-explanatory - they are fields on the DB table. Let's move on to the last two parts:
+```
 
- ```
-<pre class="brush: php"><aggregate alias="CreatedBy" class="modUser" local="createdby" foreign="id" cardinality="one" owner="foreign"/>
+ The rest of these fields are pretty self-explanatory - they are fields on the DB table. Let's move on to the last two parts:
+
+ ``` php 
+<aggregate alias="CreatedBy" class="modUser" local="createdby" foreign="id" cardinality="one" owner="foreign"/>
 <aggregate alias="EditedBy" class="modUser" local="editedby" foreign="id" cardinality="one" owner="foreign"/>
 
-``` Okay, this is where related objects come in with xPDO. For the purposes of this tutorial, just know that this tells xPDO that the createdby field maps to a modUser, and the editedby field maps to another modUser. Cool? Now let's get into parsing that xml file and creating our classes and maps.
+```
+
+ Okay, this is where related objects come in with xPDO. For the purposes of this tutorial, just know that this tells xPDO that the createdby field maps to a modUser, and the editedby field maps to another modUser. Cool? Now let's get into parsing that xml file and creating our classes and maps.
 
 ###  The Schema Parsing Script 
 
  Now it's time to look at our elusive \_build directory. Go ahead and create a file in there: /www/doodles/\_build/build.schema.php and put this in:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 require_once dirname(__FILE__).'/build.config.php';
 include_once MODX_CORE_PATH . 'model/modx/modx.class.php';
 $modx= new modX();
@@ -232,10 +252,12 @@ $modx->addPackage('doodles', $sources['model']); // add package to make all mode
 $manager->createObjectContainer('Doodle'); // created the database table
 $modx->log(modX::LOG_LEVEL_INFO, 'Done!');
 
-``` Basically this file parses your XML schema file and makes xPDO classes and maps (PHP representations of that XML file) for your component. We'll come back to this, but first off, it's not gonna run. It's gonna die on looking for a /www/doodles/\_build/build.config.php file. Time to make one of those!
+```
 
- ```
-<pre class="brush: php"><?php
+ Basically this file parses your XML schema file and makes xPDO classes and maps (PHP representations of that XML file) for your component. We'll come back to this, but first off, it's not gonna run. It's gonna die on looking for a /www/doodles/\_build/build.config.php file. Time to make one of those!
+
+ ``` php 
+<?php
 define('MODX_BASE_PATH', '/www/modx/');
 define('MODX_CORE_PATH', MODX_BASE_PATH . 'core/');
 define('MODX_MANAGER_PATH', MODX_BASE_PATH . 'manager/');
@@ -247,7 +269,9 @@ define('MODX_MANAGER_URL', MODX_BASE_URL . 'manager/');
 define('MODX_CONNECTORS_URL', MODX_BASE_URL . 'connectors/');
 define('MODX_ASSETS_URL', MODX_BASE_URL . 'assets/');
 
-``` Obviously, you may need to change those paths to wherever your MODX installation is at.
+```
+
+ Obviously, you may need to change those paths to wherever your MODX installation is at.
 
  Now, you can go to your \_build/build.schema.php file, and run it. I do it by loading up in a web browser: [http://localhost/doodles/\_build/build.schema.php](http://localhost/doodles/_build/build.schema.php). You may need to change that URL to wherever you made the doodles directory web-accessible (you did like I said to earlier, didn't you? If not, now's a good time!).
 
@@ -257,8 +281,8 @@ define('MODX_ASSETS_URL', MODX_BASE_URL . 'assets/');
 
  Bravo! You've just made your maps and classes. Let's go make an adjustment to our Doodles base class, so it automatically adds in the Doodles xPDO package whenever we load the class. Add this line after the $this->config = array\_merge part, at the end of the constructor:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 class Doodles {
     public $modx;
     public $config = array();
@@ -283,12 +307,14 @@ class Doodles {
     }
 }
 
-``` This tells xPDO that we want to add the 'doodles' xPDO package in, allowing us to query that custom table. Bravo!
+```
+
+ This tells xPDO that we want to add the 'doodles' xPDO package in, allowing us to query that custom table. Bravo!
 
  Okay, our Snippet so far looks like this:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 $dood = $modx->getService('doodles','Doodles',$modx->getOption('doodles.core_path',null,$modx->getOption('core_path').'components/doodles/').'model/doodles/',$scriptProperties);
 if (!($dood instanceof Doodles)) return '';
 /* setup default properties */
@@ -298,7 +324,9 @@ $dir = $modx->getOption('dir',$scriptProperties,'ASC');
 $output = '';
 return $output;
 
-``` Pretty lame snippet, eh? Well, all we're doing right now is setting up the Doodles class object into a variable called $dood, and setting up some defaults for properties we'll use later. $scriptProperties is an array, by the way, of all the properties passed into the Snippet. The getOption calls here parse it to find the properties in them, and if not set, gives them default values.
+```
+
+ Pretty lame snippet, eh? Well, all we're doing right now is setting up the Doodles class object into a variable called $dood, and setting up some defaults for properties we'll use later. $scriptProperties is an array, by the way, of all the properties passed into the Snippet. The getOption calls here parse it to find the properties in them, and if not set, gives them default values.
 
 ###  The Static Snippet 
 
@@ -308,10 +336,12 @@ return $output;
 
  Create a new snippet, and check the Is Static checkbox. This will display two new fields. First, the Media Source for Static File field. This will offer a list of media sources to use as the base. Since our Doodles is not in the MODx webspace, we'll need to set this to "None". Now, we need to put in the path to the actual snippet file. We'll use that magic path setting we added to the System Settings for the base of the path, and add the rest of the path to the actual snippet file.
 
- ```
-<pre class="brush: php">[[++doodles.core_path]]elements/snippets/snippet.doodles.php
+ ``` php 
+[[++doodles.core_path]]elements/snippets/snippet.doodles.php
 
-``` The path will now resolve to:
+```
+
+ The path will now resolve to:
 
  /www/doodles/core/components/doodles/elements/snippets/snippet.doodles.php
 
@@ -323,11 +353,13 @@ return $output;
 
  Okay, let's add this to our Snippet before the return statement:
 
- ```
-<pre class="brush: php">$doodles = $modx->getCollection('Doodle');
+ ``` php 
+$doodles = $modx->getCollection('Doodle');
 $output = count($doodles);
 
-``` **Know Your Objects!** 
+```
+
+ **Know Your Objects!** 
  In this example, we are retrieving a collection of "Doodle" objects. Most of the time when using [xPDO.getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"), you will be retrieving the built-in MODX objects (e.g. pages are "modResource", templates are "modTemplate"), so you may find it quite handy to keep open your `core/model/schema/modx.mysql.schema.xml` file so you can review your object names. 
 
  That's going to grab an array of Doodle objects, or in non-xPDO terms, a bunch of rows from the database. Go ahead and save your snippet, then run it in the browser at <http://localhost/modx/doodles.html> (or wherever the Resource was). You should get this:
@@ -342,19 +374,21 @@ $output = count($doodles);
 
  Great! Your custom database query works! Let's make it more complex. We can use xPDO's [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery") to create some pretty complex queries. For now, let's just add a sort command to it:
 
- ```
-<pre class="brush: php">$c = $modx->newQuery('Doodle');
+ ``` php 
+$c = $modx->newQuery('Doodle');
 $c->sortby($sort,$dir);
 $doodles = $modx->getCollection('Doodle',$c);
 
-``` Great. That will sort it by the field in $sort (which we defined above) and the direction in $dir. Now we need to actually create some output for it. Let's do it!
+```
+
+ Great. That will sort it by the field in $sort (which we defined above) and the direction in $dir. Now we need to actually create some output for it. Let's do it!
 
 ###  The Doodles class getChunk Method 
 
  In a lot of my Extras, I add a couple of helper methods to my base class called getChunk. What they allow me to do is use file-based chunks to develop in. So, let's do that. Go ahead and open up your Doodles class and add these two methods in:
 
- ```
-<pre class="brush: php">    public function getChunk($name,$properties = array()) {
+ ``` php 
+    public function getChunk($name,$properties = array()) {
         $chunk = null;
         if (!isset($this->chunks[$name])) {
             $chunk = $this->modx->getObject('modChunk',array('name' => $name));
@@ -383,29 +417,37 @@ $doodles = $modx->getCollection('Doodle',$c);
         return $chunk;
     }
 
-```For now, all you need to know is that these methods will look for Chunks in your /www/doodles/core/components/doodles/elements/chunks/ directory, postfixed with '.chunk.tpl' and all in lowercase. If it doesn't find them on the filesystem, it looks for them in MODX. So, if we called:
+```
 
- ```
-<pre class="brush: php">$o = $dood->getChunk('hello',array('name' => 'Joe'));
+For now, all you need to know is that these methods will look for Chunks in your /www/doodles/core/components/doodles/elements/chunks/ directory, postfixed with '.chunk.tpl' and all in lowercase. If it doesn't find them on the filesystem, it looks for them in MODX. So, if we called:
 
-``` It would set to $o the contents of /www/doodles/core/components/doodles/elements/chunks/hello.chunk.tpl, with the property \[\[+name\]\] parsed as Joe. This will allow you to edit your Chunks in your IDE, rather than in MODX. It will also allow you to package your Extra without installing default chunks into the user's MODX install (which they would be tempted to overwrite, which would get erased in upgrades of your Extra).
+ ``` php 
+$o = $dood->getChunk('hello',array('name' => 'Joe'));
+
+```
+
+ It would set to $o the contents of /www/doodles/core/components/doodles/elements/chunks/hello.chunk.tpl, with the property \[\[+name\]\] parsed as Joe. This will allow you to edit your Chunks in your IDE, rather than in MODX. It will also allow you to package your Extra without installing default chunks into the user's MODX install (which they would be tempted to overwrite, which would get erased in upgrades of your Extra).
 
 
 
  So, back to our snippet. Create a Chunk file in /www/doodles/core/components/doodles/elements/chunks/rowtpl.chunk.tpl, and put this inside:
 
- ```
-<pre class="brush: php"><li><strong>[[+name]]</strong> - [[+description]]</li>
+ ``` php 
+<li><strong>[[+name]]</strong> - [[+description]]</li>
 
-``` Now add this below your query but above the return line in your Snippet:
+```
 
- ```
-<pre class="brush: php">foreach ($doodles as $doodle) {
+ Now add this below your query but above the return line in your Snippet:
+
+ ``` php 
+foreach ($doodles as $doodle) {
     $doodleArray = $doodle->toArray();
     $output .= $dood->getChunk($tpl,$doodleArray);
 }
 
-``` So, what this does is iterates over all the Doodle objects we got with the getCollection call, and creates a PHP array from their values with the toArray method. Then, it uses getChunk and that array to set values to the Chunk for each row, and append that to the $output variable. So we get a bunch of \\
+```
+
+ So, what this does is iterates over all the Doodle objects we got with the getCollection call, and creates a PHP array from their values with the toArray method. Then, it uses getChunk and that array to set values to the Chunk for each row, and append that to the $output variable. So we get a bunch of \\
 
 107. tags (as many as you added rows in the DB for). It should look something like this:
 \\> ![](/download/attachments/33587481/doodleoutput1.png?version=1&modificationDate=1295645209000)
@@ -414,8 +456,8 @@ $doodles = $modx->getCollection('Doodle',$c);
 
  So let's recap. Our snippet looks like this:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 $dood = $modx->getService('doodles','Doodles',$modx->getOption('doodles.core_path',null,$modx->getOption('core_path').'components/doodles/').'model/doodles/',$scriptProperties);
 if (!($dood instanceof Doodles)) return '';
 /* setup default properties */
@@ -434,7 +476,9 @@ foreach ($doodles as $doodle) {
 }
 return $output;
 
-``` And we've got it loading our custom base class from our System Setting-defined paths, adding our custom xPDO db package, pulling from our custom database table, and outputting it via a Chunk. Cool, huh?
+```
+
+ And we've got it loading our custom base class from our System Setting-defined paths, adding our custom xPDO db package, pulling from our custom database table, and outputting it via a Chunk. Cool, huh?
 
 ##  Summary 
 

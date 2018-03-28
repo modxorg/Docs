@@ -12,22 +12,22 @@ Add an AND condition to the WHERE clause.
 
 API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::andCondition()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::andCondition())
 
-```
-<pre class="brush: php">
+``` php 
 void andCondition ( $conditions, [ $binding = null], [ $group = 0])
+```
 
-```## Example
+## Example
 
 Grab all Boxes with width of 12 and height of 4.
 
-```
-<pre class="brush: php">
+``` php 
 $query = $xpdo->newQuery('Box');
 $query->where(array('width' => 12));
 $query->andCondition(array('height' => 4));
 $boxes = $xpdo->getCollection('Box',$query);
+```
 
-```**Warning**
+**Warning**
 The order you call the functions is important! The **andCondition** must come after the **where** method has been used.
 
 ## See Also

@@ -14,19 +14,19 @@ Delete a key-value pair from a cache provider. Also allows for extra options:
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#delete>
 
-```
-<pre class="brush: php">
+``` php 
 boolean delete (string $key, [array $options = array()])
+```
 
-```## Example
+## Example
 
 Remove the 'mystuff' entry.
 
-```
-<pre class="brush: php">
+``` php 
 $xpdo->cacheManager->delete('mystuff');
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

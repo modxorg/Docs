@@ -15,8 +15,7 @@ The template for the email that is sent when a user has forgotten their MODX use
 
 The default is:
 
-```
-<pre class="brush: php">
+``` php 
 <p>Hello [[+username]],</p>
 <p>A request for a password reset has been issued for your MODX user. If you sent this, you may follow this link and use this password to login. If you did not send this request, please ignore this email.</p>
 
@@ -29,5 +28,4 @@ The default is:
 <p>After you log into the MODX Manager, you can change your password again, if you wish.</p>
 
 <p>Regards,<br />Site Administrator</p>
-
 ```

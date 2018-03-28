@@ -12,16 +12,18 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.orcondition"
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::orCondition()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::orCondition())
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 void orCondition ( $conditions, [ $binding = null], [ $group = 0])
 
-```## Example
+```
+
+## Example
 
  Grab all boxes with width 12 or 14.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $query = $xpdo->newQuery('Box');
 $query->where(array(
    'width' => 14,
@@ -31,7 +33,9 @@ $query->orCondition(array(
 ));
 $boxes = $xpdo->getCollection('Box',$query);
 
-``` **Warning** 
+```
+
+ **Warning** 
  The order you call the functions is important! The **orCondition** must come after the **where** method has been used. 
 
 ## Another Example
@@ -40,8 +44,8 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  In the following example, a page _must_ be published (1), and the pub\_date must be either zero OR less than or equal to the current timestamp. The unpub\_date must be either zero OR greater than current timestamp.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $criteria = $modx->newQuery('modResource');
 $criteria->where(array(
         'published' => 1,
@@ -56,12 +60,14 @@ $criteria->where(array(
         )
 );
 
-```## Example With Joined Tables
+```
+
+## Example With Joined Tables
 
 Your filter parameters can reference fields in other tables.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $query = $modx->newQuery('modUser');
 $query->innerJoin('modUserProfile','Profile'); 
 $query->where(array(
@@ -73,7 +79,9 @@ $query->orCondition(array(
 $user = $modx->getObject('modUser', $query);
 
 
-``` The filter parameters may use the class name (as in modUser above) or the alias (as the Profile above). 
+```
+
+ The filter parameters may use the class name (as in modUser above) or the alias (as the Profile above). 
 
 ## See Also
 

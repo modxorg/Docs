@@ -138,8 +138,8 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
 
  So we'll go ahead and create our file here: /www/doodles/core/components/doodles/lexicon/en/default.inc.php and fill it with this:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 $_lang['doodle'] = 'Doodle';
 $_lang['doodles'] = 'Doodles';
 $_lang['doodles.desc'] = 'Manage your doodles here.';
@@ -162,7 +162,9 @@ $_lang['doodles.name'] = 'Name';
 $_lang['doodles.search...'] = 'Search...';
 $_lang['doodles.top_downloaded'] = 'Top Downloaded Doodles';
 
-``` There's quite a few strings in there! We'll use them, don't worry. Note that all we're doing is filling a PHP array called $\_lang. That's it; MODX will do the rest.
+```
+
+ There's quite a few strings in there! We'll use them, don't worry. Note that all we're doing is filling a PHP array called $\_lang. That's it; MODX will do the rest.
 
  You can also see our 'doodles' and 'doodles.desc' strings we referenced earlier in here.
 
@@ -178,8 +180,8 @@ $_lang['doodles.top_downloaded'] = 'Top Downloaded Doodles';
 
  Let's create our controller at: /www/doodles/core/components/doodles/controllers/index.class.php. And put this in it:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 require_once dirname(dirname(__FILE__)) . '/model/doodles/doodles.class.php';
 class DoodlesIndexManagerController extends modExtraManagerController {
 	/** @var Doodles $doodles */
@@ -211,7 +213,9 @@ class DoodlesIndexManagerController extends modExtraManagerController {
 	}
 }
 
-``` A bit of explanation here. What we're doing is creating a Controller Class (DoodlesIndexManagerController) for our Extra that extends modExtraManagerController, a special class for developing Extras. MODX 2.3 does request routing via Controller classes, which are all sorts of powerful. But in our Controller for our Extra, we want to make sure to always append some CSS/JS (similar to MODX 2.1 and earlier's header.php file), and also give our Controller access to the Doodles class object.
+```
+
+ A bit of explanation here. What we're doing is creating a Controller Class (DoodlesIndexManagerController) for our Extra that extends modExtraManagerController, a special class for developing Extras. MODX 2.3 does request routing via Controller classes, which are all sorts of powerful. But in our Controller for our Extra, we want to make sure to always append some CSS/JS (similar to MODX 2.1 and earlier's header.php file), and also give our Controller access to the Doodles class object.
 
  So, we do that in the initialize() method, which is called when a controller is loaded. Secondly, we define the getLanguageTopics() method to tell MODX to load our lexicon file for the manager. We then define checkPermissions(), which basically says if it doesn't return true, deny access to this controller page.
 
@@ -227,13 +231,15 @@ class DoodlesIndexManagerController extends modExtraManagerController {
 
  Create your template file at /www/doodles/core/components/doodles/templates/home.tpl and fill it with this:
 
- ```
-<pre class="brush: js"><div id="doodles-panel-home-div"></div>
+ ``` js 
+<div id="doodles-panel-home-div"></div>
 
-``` Note that in the initialize() function of our controller, we're also loading a common JS file, _mgr/doodles.js_, in our JS directory. Then it runs a JS method when ExtJS has loaded that loads the config vars for our $doodles->config in the 'Doodles.config' JS object (which we'll use for paths and such). In our doodles.js file (which is found at /www/doodles/assets/components/doodles/js/mgr/doodles.js), we have this:
+```
 
- ```
-<pre class="brush: php">var Doodles = function(config) {
+ Note that in the initialize() function of our controller, we're also loading a common JS file, _mgr/doodles.js_, in our JS directory. Then it runs a JS method when ExtJS has loaded that loads the config vars for our $doodles->config in the 'Doodles.config' JS object (which we'll use for paths and such). In our doodles.js file (which is found at /www/doodles/assets/components/doodles/js/mgr/doodles.js), we have this:
+
+ ``` php 
+var Doodles = function(config) {
     config = config || {};
     Doodles.superclass.constructor.call(this,config);
 };
@@ -243,7 +249,9 @@ Ext.extend(Doodles,Ext.Component,{
 Ext.reg('doodles',Doodles);
 Doodles = new Doodles();
 
-``` So, basically, we're loading a Doodles object which extends the Ext.Component class. This also gives us a nice JavaScript namespace of 'Doodles'.
+```
+
+ So, basically, we're loading a Doodles object which extends the Ext.Component class. This also gives us a nice JavaScript namespace of 'Doodles'.
 
 ##  Our Doodles CMP Page 
 
@@ -251,8 +259,8 @@ Doodles = new Doodles();
 
  Let's first create the index.js file, at /www/doodles/assets/components/doodles/js/mgr/sections/index.js:
 
- ```
-<pre class="brush: php">Ext.onReady(function() {
+ ``` php 
+Ext.onReady(function() {
     MODx.load({ xtype: 'doodles-page-home'});
 });
 Doodles.page.Home = function(config) {
@@ -268,7 +276,9 @@ Doodles.page.Home = function(config) {
 Ext.extend(Doodles.page.Home,MODx.Component);
 Ext.reg('doodles-page-home',Doodles.page.Home);
 
-``` Okay, let's explain. The first thing that happens is that we tell ExtJS, when the page is nice and loaded, "load" the component (or widget/object/panel) with 'xtype' _doodles-page-home_. How ExtJS works is that it allows you to define components with an 'xtype', which is kind of like a unique identifier for a panel, tree, etc. Think of it like an ID for a class. MODx.load simply instantiates that object.
+```
+
+ Okay, let's explain. The first thing that happens is that we tell ExtJS, when the page is nice and loaded, "load" the component (or widget/object/panel) with 'xtype' _doodles-page-home_. How ExtJS works is that it allows you to define components with an 'xtype', which is kind of like a unique identifier for a panel, tree, etc. Think of it like an ID for a class. MODx.load simply instantiates that object.
 
  Below that, we actually define the 'doodles-page-home' object, and make it extend MODx.Component. MODx.Component is basically an abstracted JS class that renders a page in the MODX manager interface. It provides a few helper methods that make quick generation of MODX pages smoother. All we have to pass into it is the components we want to load; currently, in this case, the 'doodles-panel-home' component (which we haven't defined yet; it'll be in the home.panel.js file mentioned earlier). We also want it to render to the DOM ID of 'doodles-panel-home-div', which, as you might remember, was the "div" we returned earlier in our mgr/index.php controller.
 
@@ -280,8 +290,8 @@ Ext.reg('doodles-page-home',Doodles.page.Home);
 
  We've got our page, but now we want to load a panel in it. Let's create a file at www/doodles/assets/components/doodles/js/mgr/widgets/home.panel.js and put this in it:
 
- ```
-<pre class="brush: php">Doodles.panel.Home = function(config) {
+ ``` php 
+Doodles.panel.Home = function(config) {
     config = config || {};
     Ext.apply(config,{
         border: false
@@ -322,35 +332,41 @@ Ext.reg('doodles-page-home',Doodles.page.Home);
 Ext.extend(Doodles.panel.Home,MODx.Panel);
 Ext.reg('doodles-panel-home',Doodles.panel.Home);
 
-``` So, first, at the bottom, note how we're registering this panel to 'doodles-panel-home', which we referenced in our section. Also note that this panel extends MODx.Panel, which in turn extends Ext.Panel. Why not just extend Ext.Panel? Well, extending MODx.Panel does the same, and adds a CSS class to the panel to give it the nice manager MODX styling.
+```
+
+ So, first, at the bottom, note how we're registering this panel to 'doodles-panel-home', which we referenced in our section. Also note that this panel extends MODx.Panel, which in turn extends Ext.Panel. Why not just extend Ext.Panel? Well, extending MODx.Panel does the same, and adds a CSS class to the panel to give it the nice manager MODX styling.
 
  We're going to give this panel a baseCls of 'modx-formpanel', which lets our top part have a transparent background. And we want a class of 'container', which handles spacing. Then, we'll make sure it doesn't have a border.
 
  Next, we'll define the 'items' in the panel. First, we add a header:
 
- ```
-<pre class="brush: php">{
+ ``` php 
+{
    html: '<h2>'+_('doodles.management')+'</h2>'
    ,border: false
    ,bodyCssClass: 'panel-desc'
 }
 
-``` Basically this just inserts some HTML into the top of the panel with a class of 'modx-page-header', and puts a nice h2 tag up there. Note the \_() method. This is MODX's way of doing i18n (Lexicons) in the manager JS. This tells MODX to translate this key. If you remember, we defined the 'doodles.management' string earlier with: "Doodles Management". So this will render the translation of this key in the h2 tag.
+```
+
+ Basically this just inserts some HTML into the top of the panel with a class of 'modx-page-header', and puts a nice h2 tag up there. Note the \_() method. This is MODX's way of doing i18n (Lexicons) in the manager JS. This tells MODX to translate this key. If you remember, we defined the 'doodles.management' string earlier with: "Doodles Management". So this will render the translation of this key in the h2 tag.
 
  Next, we'll add a TabPanel. We could just load the panel straight without tabs, but what if down the line we wanted to add another tab? Let's define it:
 
- ```
-<pre class="brush: php">,{
+ ``` php 
+,{
    xtype: 'modx-tabs'
    ,defaults: { border: false ,autoHeight: true }
    ,border: true
    ,items: /* ... */
 }
 
-``` Note we load our tabpanel with the xtype 'modx-tabs'. This loads a MODX-specific tabpanel, which has some MODX-specific configuration options. Then we give it some padding, a border, and make sure the defaults for its tabs have no border and an automatic height. Then, we add the tab itself:
+```
 
- ```
-<pre class="brush: php">{
+ Note we load our tabpanel with the xtype 'modx-tabs'. This loads a MODX-specific tabpanel, which has some MODX-specific configuration options. Then we give it some padding, a border, and make sure the defaults for its tabs have no border and an automatic height. Then, we add the tab itself:
+
+ ``` php 
+{
    title: _('doodles')
    ,defaults: { autoHeight: true }
    ,items: [{
@@ -360,7 +376,9 @@ Ext.reg('doodles-panel-home',Doodles.panel.Home);
    }]
 }
 
-``` Okay, this is going to load our first tab with a tab title translated to 'Doodles'. Then, we'll put some stuff in the tab (which is an Ext.Panel, by the way). We'll first put a nice little description with our "doodles.management\_desc" lexicon string.
+```
+
+ Okay, this is going to load our first tab with a tab title translated to 'Doodles'. Then, we'll put some stuff in the tab (which is an Ext.Panel, by the way). We'll first put a nice little description with our "doodles.management\_desc" lexicon string.
 
  Let's load the page and take a look now. You may need to refresh the Manager page to get the Doodles component loaded into the Components menu.
 
@@ -372,13 +390,15 @@ Ext.reg('doodles-panel-home',Doodles.panel.Home);
 
  First off, go ahead and uncomment this line in your index.class.php controller:
 
- ```
-<pre class="brush: php">$this->addJavascript($doodles->config['jsUrl'].'mgr/widgets/doodles.grid.js');
+ ``` php 
+$this->addJavascript($doodles->config['jsUrl'].'mgr/widgets/doodles.grid.js');
 
-``` This tells MODX to load the grid widget file, which we'll now create at /www/doodles/assets/components/doodles/js/mgr/widgets/doodles.grid.js:
+```
 
- ```
-<pre class="brush: php">Doodles.grid.Doodles = function(config) {
+ This tells MODX to load the grid widget file, which we'll now create at /www/doodles/assets/components/doodles/js/mgr/widgets/doodles.grid.js:
+
+ ``` php 
+Doodles.grid.Doodles = function(config) {
     config = config || {};
     Ext.applyIf(config,{
         id: 'doodles-grid-doodles'
@@ -413,7 +433,9 @@ Ext.reg('doodles-panel-home',Doodles.panel.Home);
 Ext.extend(Doodles.grid.Doodles,MODx.grid.Grid);
 Ext.reg('doodles-grid-doodles',Doodles.grid.Doodles);
 
-``` Whew, a lot in there! Let's start off with the configuration parameters we're setting.
+```
+
+ Whew, a lot in there! Let's start off with the configuration parameters we're setting.
 
 - **id**: We give this panel an ID of 'doodles-grid-doodles'.
 - **url**: We point it to the connector file at Doodles.config.connectorUrl (we'll get to connectors here in a second).
@@ -428,8 +450,8 @@ Ext.reg('doodles-grid-doodles',Doodles.grid.Doodles);
 
  Finally, let's add the grid to our panel. Remove the comment tags in the home.panel.js file at lines 22 and 26 :
 
- ```
-<pre class="brush: php">[{
+ ``` php 
+[{
    html: '<p>'+_('doodles.management_desc')+'</p>'
    ,border: false
 },{
@@ -438,7 +460,9 @@ Ext.reg('doodles-grid-doodles',Doodles.grid.Doodles);
    ,preventRender: true
 }]
 
-``` That loads our grid right below the message we posted earlier in our panel, with some nice spacing via the class. The preventRender attribute tells Ext not to render the grid until the rest of the panel loads.
+```
+
+ That loads our grid right below the message we posted earlier in our panel, with some nice spacing via the class. The preventRender attribute tells Ext not to render the grid until the rest of the panel loads.
 
  If you tried to load the page now, the grid would show, but not load any data - we haven't made our Connector yet, and so the grid doesn't have anywhere to fetch its data. Let's do that.
 
@@ -450,8 +474,8 @@ Ext.reg('doodles-grid-doodles',Doodles.grid.Doodles);
 
  Back to our Extra. Our ExtJS grid needs to load its data for its rows via AJAX by our connector. But we need to **create** our connector first. Let's make it at /www/doodles/assets/components/doodles/connector.php:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 require_once dirname(dirname(dirname(dirname(__FILE__)))).'/config.core.php';
 require_once MODX_CORE_PATH.'config/'.MODX_CONFIG_KEY.'.inc.php';
 require_once MODX_CONNECTORS_PATH.'index.php';
@@ -466,16 +490,20 @@ $modx->request->handleRequest(array(
     'location' => '',
 ));
 
-``` That's it. We first load the config.core.php file. We'll go ahead and add it here in our development environment; in standard MODX installs, this will already exist.
+```
+
+ That's it. We first load the config.core.php file. We'll go ahead and add it here in our development environment; in standard MODX installs, this will already exist.
 
  On different circumstances, you can create a file at your different folder, eg: /www/doodles/config.core.php and put this in it:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 define('MODX_CORE_PATH', '/www/modx/core/');
 define('MODX_CONFIG_KEY', 'config');
 
-``` Obviously, you'll need to change those values to your MODx installation paths. And if you're using SVN or Git for your Extra, you'll want to add those to your ignore file (ie, .gitignore), since you don't want those in your source repository.
+```
+
+ Obviously, you'll need to change those values to your MODx installation paths. And if you're using SVN or Git for your Extra, you'll want to add those to your ignore file (ie, .gitignore), since you don't want those in your source repository.
 
 
 
@@ -499,8 +527,8 @@ define('MODX_CONFIG_KEY', 'config');
 
  So let's go ahead and make that file to give our grid some data:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 class DoodleGetListProcessor extends modObjectGetListProcessor {
     public $classKey = 'Doodle';
     public $languageTopics = array('doodles:default');
@@ -510,7 +538,9 @@ class DoodleGetListProcessor extends modObjectGetListProcessor {
 }
 return 'DoodleGetListProcessor';
 
-``` Great. So a few things. You'll note that we're in a class again - MODX 2.2 has new shiny Processor classes, including an assistance class named modObjectGetListProcessor that we're extending here. This class automatically does all the basic logic for handling normal CRUD processor actions, such as this one. All we have to do is specify some class variables on the class - such as $classKey, $objectType, and more. Let's dig into those:
+```
+
+ Great. So a few things. You'll note that we're in a class again - MODX 2.2 has new shiny Processor classes, including an assistance class named modObjectGetListProcessor that we're extending here. This class automatically does all the basic logic for handling normal CRUD processor actions, such as this one. All we have to do is specify some class variables on the class - such as $classKey, $objectType, and more. Let's dig into those:
 
 - **$classKey** - This tells the Processor what MODX Class to grab. We want to grab our Doodle objects.
 - **$languageTopics** - An array of language topics to load for this processor.
@@ -530,8 +560,8 @@ return 'DoodleGetListProcessor';
 
  Add this bit of code to your grid panel in widgets/doodles.grid.js, right after the columns: definition at line 29:
 
- ```
-<pre class="brush: php">,tbar:[{
+ ``` php 
+,tbar:[{
     xtype: 'textfield'
     ,id: 'doodles-search-filter'
     ,emptyText: _('doodles.search...')
@@ -551,17 +581,21 @@ return 'DoodleGetListProcessor';
     }
 }]
 
-``` We just added a textfield to the top bar of our grid, and we gave it some 'emptyText', meaning that when empty, display this text. Also, we gave it a DOM ID of 'doodles-search-filter', and told it to run the 'this.search' method when it changes. Also, the code in the 'render' listener means to fire the change event when someone hits ENTER on their keyboard when editing it.
+```
+
+ We just added a textfield to the top bar of our grid, and we gave it some 'emptyText', meaning that when empty, display this text. Also, we gave it a DOM ID of 'doodles-search-filter', and told it to run the 'this.search' method when it changes. Also, the code in the 'render' listener means to fire the change event when someone hits ENTER on their keyboard when editing it.
 
  So let's define the 'this.search' method - since our Panel is OOP, this means that this.search can be defined in our grid object. To do that, find this code, now at line 52:
 
- ```
-<pre class="brush: php">Ext.extend(Doodles.grid.Doodles,MODx.grid.Grid);
+ ``` php 
+Ext.extend(Doodles.grid.Doodles,MODx.grid.Grid);
 
-``` And replace it with this:
+```
 
- ```
-<pre class="brush: php">Ext.extend(Doodles.grid.Doodles,MODx.grid.Grid,{
+ And replace it with this:
+
+ ``` php 
+Ext.extend(Doodles.grid.Doodles,MODx.grid.Grid,{
     search: function(tf,nv,ov) {
         var s = this.getStore();
         s.baseParams.query = tf.getValue();
@@ -570,12 +604,14 @@ return 'DoodleGetListProcessor';
     }
 });
 
-``` What we're telling it to do here is to extend the MODx.grid.Grid class, and then add another method called 'search'. In that method, we're getting the grid's "Store", which is where the data for the grid is stored and what determines where the data comes from. Then, we are adding a 'query' parameter to our baseParams (remember that earlier?), changing the current page of the grid back to 1, and refreshing it.
+```
+
+ What we're telling it to do here is to extend the MODx.grid.Grid class, and then add another method called 'search'. In that method, we're getting the grid's "Store", which is where the data for the grid is stored and what determines where the data comes from. Then, we are adding a 'query' parameter to our baseParams (remember that earlier?), changing the current page of the grid back to 1, and refreshing it.
 
  This will pass a 'query' REQUEST parameter to our getList Processor in the getlist.class.php file. Since we're not doing anything to handle that yet, let's go open it up. Add this method to the class after line 7:
 
- ```
-<pre class="brush: php">    public function prepareQueryBeforeCount(xPDOQuery $c) {
+ ``` php 
+    public function prepareQueryBeforeCount(xPDOQuery $c) {
         $query = $this->getProperty('query');
         if (!empty($query)) {
             $c->where(array(
@@ -586,7 +622,9 @@ return 'DoodleGetListProcessor';
         return $c;
     }
 
-``` The modObjectGetListProcessor assistance class lets us extend the prepareQueryBeforeCount() method to modify the [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery") object before it's passed to the getCount() method. All we have to do is return our modified query object. We're going to extend it here to add searchability to our grid via the "query" parameter. Note we can get whatever that parameter is via the neat ->getProperty() method.
+```
+
+ The modObjectGetListProcessor assistance class lets us extend the prepareQueryBeforeCount() method to modify the [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery") object before it's passed to the getCount() method. All we have to do is return our modified query object. We're going to extend it here to add searchability to our grid via the "query" parameter. Note we can get whatever that parameter is via the neat ->getProperty() method.
 
  Now load your grid, and you'll get:
 
@@ -598,8 +636,8 @@ return 'DoodleGetListProcessor';
 
  First off, MODX grids usually have context menus when you click them. Ours doesn't, and that's because we haven't defined it yet. Let's go ahead and define it. Add a 'getMenu' method to your Doodles.grid.Grid definition, right below your search: method we just added, line 48:
 
- ```
-<pre class="brush: php">,getMenu: function() {
+ ``` php 
+,getMenu: function() {
     return [{
         text: _('doodles.doodle_update')
         ,handler: this.updateDoodle
@@ -609,10 +647,12 @@ return 'DoodleGetListProcessor';
     }];
 }
 
-``` MODX looks for a getMenu method on grids that extend it, and if it finds it, it runs it. It adds then any menu items you return. Here we've added 2 menu items for our context menu, one that runs a this.updateDoodle method, and the other that runs a this.removeDoodle method. We'll get to the removeDoodle method here in a bit. For now, let's add another JS method below the getMenu call, line 58, and call it updateDoodle:
+```
 
- ```
-<pre class="brush: php">,updateDoodle: function(btn,e) {
+ MODX looks for a getMenu method on grids that extend it, and if it finds it, it runs it. It adds then any menu items you return. Here we've added 2 menu items for our context menu, one that runs a this.updateDoodle method, and the other that runs a this.removeDoodle method. We'll get to the removeDoodle method here in a bit. For now, let's add another JS method below the getMenu call, line 58, and call it updateDoodle:
+
+ ``` php 
+,updateDoodle: function(btn,e) {
     e.preventDefault();
     if (!this.updateDoodleWindow) {
         this.updateDoodleWindow = MODx.load({
@@ -627,7 +667,9 @@ return 'DoodleGetListProcessor';
     this.updateDoodleWindow.show(e.target);
 }
 
-``` A few things. What this little bit of code does is checks for a class variable named 'updateDoodleWindow'. If it doesn't find it, it creates it. This prevents us from having to have ExtJS create a new window every time (it's faster and better to prevent DOM ID conflicts). Also, it passes in a few values:
+```
+
+ A few things. What this little bit of code does is checks for a class variable named 'updateDoodleWindow'. If it doesn't find it, it creates it. This prevents us from having to have ExtJS create a new window every time (it's faster and better to prevent DOM ID conflicts). Also, it passes in a few values:
 
 - **xtype** - This is obviously our unique xtype for the window, which is 'doodles-window-doodle-update'. We'll get to that soon.
 - **record** - MODx.Window objects will automatically fill their fields with whatever is passed into the 'record' configuration param. Also, MODx.grid.Grid objects always have the current row values stored in the 'this.menu.record' object. So we'll just pass that right in to our Window.
@@ -637,8 +679,8 @@ return 'DoodleGetListProcessor';
 
  Now let's actually define the window with this code at the end of the file:
 
- ```
-<pre class="brush: php">Doodles.window.UpdateDoodle = function(config) {
+ ``` php 
+Doodles.window.UpdateDoodle = function(config) {
     config = config || {};
     Ext.applyIf(config,{
         title: _('doodles.doodle_update')
@@ -666,7 +708,9 @@ return 'DoodleGetListProcessor';
 Ext.extend(Doodles.window.UpdateDoodle,MODx.Window);
 Ext.reg('doodles-window-doodle-update',Doodles.window.UpdateDoodle);
 
-``` Similar to what you've seen in the grids, except this time we have 'fields' as the fields for the Window's form. We've provided some fields to edit - and remember, since this is an "Update" form, we need to provide the ID of the Doodle, passed in as a hidden field.
+```
+
+ Similar to what you've seen in the grids, except this time we have 'fields' as the fields for the Window's form. We've provided some fields to edit - and remember, since this is an "Update" form, we need to provide the ID of the Doodle, passed in as a hidden field.
 
  MODx.Window wraps Ext.Window, but provides a form inside that will automatically try and connect to the url: param with the baseParams: parameters, as well as the fields' values. It also automatically provides OK/Cancel buttons. Right-click on a record in the grid, and your window should look like this now:
 
@@ -674,8 +718,8 @@ Ext.reg('doodles-window-doodle-update',Doodles.window.UpdateDoodle);
 
  Excellent! We've got a nice little update window. Now as you probably noticed in our baseParams, we're looking now for the 'mgr/doodle/update' processor. So let's create a file at: /www/doodles/core/components/doodles/processors/mgr/doodle/update.class.php:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 class DoodleUpdateProcessor extends modObjectUpdateProcessor {
     public $classKey = 'Doodle';
     public $languageTopics = array('doodles:default');
@@ -683,14 +727,16 @@ class DoodleUpdateProcessor extends modObjectUpdateProcessor {
 }
 return 'DoodleUpdateProcessor';
 
-``` Again, we're going to create our Processor class by extending an assistance Processor class that MODX provides. This one automatically does all the dirty work for saving an object. All we have to do is specify the classKey and a few other parameters. It handles all the saving and the response automatically. Now we have a working Update form!
+```
+
+ Again, we're going to create our Processor class by extending an assistance Processor class that MODX provides. This one automatically does all the dirty work for saving an object. All we have to do is specify the classKey and a few other parameters. It handles all the saving and the response automatically. Now we have a working Update form!
 
 ###  Adding a Remove Context Menu Option 
 
  Let's finish off the remove part of our UI. We've already got the context menu showing up, so we just need to add the JS method and the processor. After our updateDoodle method in our JS grid, add this at line 70:
 
- ```
-<pre class="brush: php">,removeDoodle: function() {
+ ``` php 
+,removeDoodle: function() {
     MODx.msg.confirm({
         title: _('doodles.doodle_remove')
         ,text: _('doodles.doodle_remove_confirm')
@@ -705,7 +751,9 @@ return 'DoodleUpdateProcessor';
     });
 }
 
-``` MODx.msg.confirm pops up a confirmation dialog, and if confirmed, runs a processor via a connector. Let's take a look at each parameter:
+```
+
+ MODx.msg.confirm pops up a confirmation dialog, and if confirmed, runs a processor via a connector. Let's take a look at each parameter:
 
 - **title** - This is the title of the confirmation dialog.
 - **text** - The text of the dialog. Here it basically asks if we really want to remove a Doodle.
@@ -715,8 +763,8 @@ return 'DoodleUpdateProcessor';
 
  Now let's create our remove processor at /www/doodles/core/components/doodles/processors/mgr/doodle/remove.class.php:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 class DoodleRemoveProcessor extends modObjectRemoveProcessor {
     public $classKey = 'Doodle';
     public $languageTopics = array('doodles:default');
@@ -724,24 +772,28 @@ class DoodleRemoveProcessor extends modObjectRemoveProcessor {
 }
 return 'DoodleRemoveProcessor';
 
-``` Pretty similar to the update processor, except this time, we extend modObjectRemoveProcessor, which handles deleting the Doodle from the database. That's it! We can now remove Doodles.
+```
+
+ Pretty similar to the update processor, except this time, we extend modObjectRemoveProcessor, which handles deleting the Doodle from the database. That's it! We can now remove Doodles.
 
 ###  Creating the Create Form 
 
  So we've got R, U and D of our CRUD interface. What about C? Let's work on a create form. Let's add a button to the top toolbar of the grid to load the create window. Add this to the tbar: property on the grid config in doodles.grid.js, right after our search textfield at line 48. Be careful to insert it between the closing curly bracket of the search textfield and the closing square bracket of the tbar:
 
- ```
-<pre class="brush: php">,{
+ ``` php 
+,{
    text: _('doodles.doodle_create')
    ,handler: { xtype: 'doodles-window-doodle-create' ,blankValues: true }
 }
 
-``` ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/18.png)
+```
+
+ ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/18.png)
 
  MODExt allows you to pass JSON objects into the handler: method on toolbars. What this does is loads the Window with the xtype 'doodles-window-doodle-create', makes sure its values are blanked on load, and runs this.success on a successful window form submit (basically shortcuts the stuff we've been doing). That's what we want, so let's now define the window at the end of our file:
 
- ```
-<pre class="brush: php">Doodles.window.CreateDoodle = function(config) {
+ ``` php 
+Doodles.window.CreateDoodle = function(config) {
     config = config || {};
     Ext.applyIf(config,{
         title: _('doodles.doodle_create')
@@ -766,10 +818,12 @@ return 'DoodleRemoveProcessor';
 Ext.extend(Doodles.window.CreateDoodle,MODx.Window);
 Ext.reg('doodles-window-doodle-create',Doodles.window.CreateDoodle);
 
-``` This is **very** similar to our Update window, except this one doesn't have an ID field, and passes 'create' as the processor. So, on to the processor at: /www/doodles/core/components/doodles/processors/mgr/doodle/create.class.php:
+```
 
- ```
-<pre class="brush: php"><?php
+ This is **very** similar to our Update window, except this one doesn't have an ID field, and passes 'create' as the processor. So, on to the processor at: /www/doodles/core/components/doodles/processors/mgr/doodle/create.class.php:
+
+ ``` php 
+<?php
 class DoodleCreateProcessor extends modObjectCreateProcessor {
     public $classKey = 'Doodle';
     public $languageTopics = array('doodles:default');
@@ -786,7 +840,9 @@ class DoodleCreateProcessor extends modObjectCreateProcessor {
 }
 return 'DoodleCreateProcessor';
 
-``` Similar to the update and remove methods, again, except we aren't grabbing the object, but rather creating it. We're extending the modObjectCreateProcessor assistance class now.
+```
+
+ Similar to the update and remove methods, again, except we aren't grabbing the object, but rather creating it. We're extending the modObjectCreateProcessor assistance class now.
 
  Also, we have a bit of form validation beforehand - we're going to make sure the name isn't blank, and if it is, return a custom error message on that specific field. If it's not blank, then we'll make sure there's no other Doodles with that name. Note we extended the beforeSave() method to do this, and then return the parent class's running of that same method. Then, inside of it, we do two things:
 
@@ -801,14 +857,16 @@ return 'DoodleCreateProcessor';
 
  MODExt also has automatic inline editing built right into its grids. Simply add this to your Doodles.grid.Grid config object, right below the 'autoExpandColumn' property:
 
- ```
-<pre class="brush: php">,save_action: 'mgr/doodle/updateFromGrid'
+ ``` php 
+,save_action: 'mgr/doodle/updateFromGrid'
 ,autosave: true
 
-``` That tells the grid to turn on inline editing and saving; and also to send any saves to the processor at mgr/doodle/updateFromGrid. So let's create it, at: /www/doodles/core/components/doodles/processors/mgr/doodle/updatefromgrid.class.php:
+```
 
- ```
-<pre class="brush: php">require_once (dirname(__FILE__).'/update.class.php');
+ That tells the grid to turn on inline editing and saving; and also to send any saves to the processor at mgr/doodle/updateFromGrid. So let's create it, at: /www/doodles/core/components/doodles/processors/mgr/doodle/updatefromgrid.class.php:
+
+ ``` php 
+require_once (dirname(__FILE__).'/update.class.php');
 class DoodleUpdateFromGridProcessor extends DoodleUpdateProcessor {
     public function initialize() {
         $data = $this->getProperty('data');
@@ -822,7 +880,9 @@ class DoodleUpdateFromGridProcessor extends DoodleUpdateProcessor {
 }
 return 'DoodleUpdateFromGridProcessor';
 
-``` Note how we're just extending our Update processor class (after including it), and in the initialize() method, parsing our "data" property from JSON (which our grid sends with the updated record) and setting that as the properties for the Processor. Then the Update processor handles the rest. Simple, eh?
+```
+
+ Note how we're just extending our Update processor class (after including it), and in the initialize() method, parsing our "data" property from JSON (which our grid sends with the updated record) and setting that as the properties for the Processor. Then the Update processor handles the rest. Simple, eh?
 
 ##  Summary 
 

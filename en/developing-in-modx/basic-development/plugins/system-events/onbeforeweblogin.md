@@ -10,13 +10,13 @@ Fires before the login process is started for a user when logging in via a non-m
 
 To allow logging in when using this event please use:
 
-```
-<pre class="brush: php">
+``` php 
 $modx->event->output(true);
 // before Revo 2.3.0 you should use instead:
 $modx->event->_output = true;
+```
 
-```Service: 3 - Web Access Events 
+Service: 3 - Web Access Events 
 Group: None
 
 ## Event Parameters

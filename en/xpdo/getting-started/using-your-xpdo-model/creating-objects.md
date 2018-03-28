@@ -21,21 +21,21 @@ Creating objects in xPDO utilizes the "newObject" xPDO method.
 
 Let's say we have an object defined in our model of class "Box". We want to create a new object of it:
 
-```
-<pre class="brush: php">
+``` php 
 $myBox = $xpdo->newObject('Box');
-
-```It's that simple. We can also create the Box object with some pre-filled field values:
-
 ```
-<pre class="brush: php">
+
+It's that simple. We can also create the Box object with some pre-filled field values:
+
+``` php 
 $myBox = $xpdo->newObject('Box',array(
    'width' => 5,
    'height' => 12,
    'color' => 'red',
 ));
+```
 
-```You cannot set primary key values when using the second parameter of newObject(). Set the primary key values using fromArray() after creating the instance with the newObject() and make sure you set the parameter setPrimaryKeys equal to true.
+You cannot set primary key values when using the second parameter of newObject(). Set the primary key values using fromArray() after creating the instance with the newObject() and make sure you set the parameter setPrimaryKeys equal to true.
 
 This will give us an xPDOObject-based Box object that can be [manipulated and saved](/xpdo/2.x/getting-started/using-your-xpdo-model/setting-object-fields "Setting Object Fields"). Note that this Object is not yet persistent until you save it using [xPDOObject.save](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/save "save").
 

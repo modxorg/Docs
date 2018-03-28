@@ -125,7 +125,9 @@ class IndexManagerController extends NamespaceManagerController {
     }
 }
 
-``` So that's our base index controller. The IndexManagerController will be called when the menu item is loaded, which tells MODX to load the "home" controller by default. By passing an "action" url parameter to the page (either by adjusting the menu item "parameters" option, or by manually crafting that link) it will load a different controller instead.
+```
+
+ So that's our base index controller. The IndexManagerController will be called when the menu item is loaded, which tells MODX to load the "home" controller by default. By passing an "action" url parameter to the page (either by adjusting the menu item "parameters" option, or by manually crafting that link) it will load a different controller instead.
 
  In this tutorial we only go into the pieces that are actually required to build a real simple manager page, but if you are looking to build a fully fledged manager page with ExtJS and more, follow the [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution) tutorial. You'll find there's an overlap between this page and Part 2 of that tutorial, but that we restrict ourselves to a simple manager page here.
 
@@ -173,7 +175,9 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
     }
 }<br>
 
-``` We're just returning the HTML we want added to the page in the process function. Easy, right? Load the menu item now and your manager page should show up telling you that you're awesome.
+```
+
+ We're just returning the HTML we want added to the page in the process function. Easy, right? Load the menu item now and your manager page should show up telling you that you're awesome.
 
  If you're getting a blank page, there is likely a class name or path wrong somewhere. If you can access the PHP Error logs it will tell you exactly which one, but here are some pointers:
 
@@ -187,10 +191,12 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
 
  Here's an example of using placeholders in the smarty template file, assuming you called $this->setPlaceholder('foo', 'Bar');
 
- ```
-<pre class="brush: html"><h2 class="modx-page-header">{$foo}</h2>
+ ``` html 
+<h2 class="modx-page-header">{$foo}</h2>
 
-``` This would output a standard MODX Manager page header saying "Bar".
+```
+
+ This would output a standard MODX Manager page header saying "Bar".
 
 ##  Going beyond plain HTML
 

@@ -12,22 +12,22 @@ Sees if a string ends with a specific pattern or set of patterns. Useful for che
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#endsWith>
 
-```
-<pre class="brush: php">
+``` php 
 boolean endsWith (string $string, string|array $pattern)
+```
 
-```## Example
+## Example
 
 See if a file contains the s
 
-```
-<pre class="brush: php">
+``` php 
 $filename = '/my/site/test.flv';
 if ($xpdo->cacheManager->endsWith($filename,'flv')) {
   echo 'Ends with flv!";
 }
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

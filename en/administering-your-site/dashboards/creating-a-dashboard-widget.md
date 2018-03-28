@@ -29,11 +29,11 @@ You'll note that as you type the name of the widget, text appears below it follo
 
 Now, in your dashboard widget content, go ahead and put this:
 
-```
-<pre class="brush: php">
+``` php 
 <p>Hello, world!</p>
+```
 
-```Our widget should look like this:
+Our widget should look like this:
 
 ![](/download/attachments/35586570/dashboard-create1.png?version=1&modificationDate=1315489054000)
 

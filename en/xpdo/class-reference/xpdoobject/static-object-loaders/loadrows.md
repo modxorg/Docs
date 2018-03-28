@@ -12,17 +12,16 @@ This function is responsible for loading a result set from the database and retu
 
 API Doc: [http://api.modx.com/xpdo/om/xPDOObject.html#\_loadRows](http://api.modx.com/xpdo/om/xPDOObject.html#_loadRows)
 
-```
-<pre class="brush: php">
+``` php 
 static PDOStatement|null _loadRows(
    xPDO &$xpdo,
    string $className,
    mixed $criteria
 )
-
-```## Example
-
 ```
-<pre class="brush: php">
+
+## Example
+
+``` php 
 
 ```

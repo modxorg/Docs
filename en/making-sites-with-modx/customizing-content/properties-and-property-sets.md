@@ -19,35 +19,35 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/properties-and-propert
 
 Properties are simply values that can be configured for any Element via [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax"). An example of a Property is the token 'debug' in this Snippet call:
 
-```
-<pre class="brush: php">
+``` php 
 [[Quip? &debug=`1`]]
+```
 
-```'debug' is the Property, where '1' is the Property Value. They are passed to the Element's parser and interpreted there. Snippets and Plugins can access them through the $scriptProperties array, or straight in their key values, as they are extract()'ed.
+'debug' is the Property, where '1' is the Property Value. They are passed to the Element's parser and interpreted there. Snippets and Plugins can access them through the $scriptProperties array, or straight in their key values, as they are extract()'ed.
 
 ## What are Property Sets?
 
 Property Sets are user-defined collections of properties for an Element. So instead of having an enormous Snippet call with an unreadable long list of properties, you can store all the properties together as a set:
 
-```
-<pre class="brush: php">
+``` php 
 [[MySnippet? &prop1=`a` &prop2=`b` &prop3=`c` &prop4=`d` &prop5=`e` &prop6=`f`]]
 ... becomes ...
 [[MySnippet@myPropertySet]]
-
-```Property Sets can be attached not only to Snippets, but to _any element_ via that Element's editing page, and a single Property Set can be used by multiple elements. Once a Property Set has been defined and attached to an Element, you can call it by name using the "at" symbol:
-
 ```
-<pre class="brush: php">
+
+Property Sets can be attached not only to Snippets, but to _any element_ via that Element's editing page, and a single Property Set can be used by multiple elements. Once a Property Set has been defined and attached to an Element, you can call it by name using the "at" symbol:
+
+``` php 
 [[ElementName@PropertySetName]]
-
-```So, for an example, let's have a Property Set with two properties - 'debug' set to true, and 'user' set to 2. Then let's call it in a snippet.:
-
 ```
-<pre class="brush: php">
-[[TestSnippet@DebugMode? &user=`1`]]
 
-```This example would call the snippet "TestSnippet", load the Property Set 'DebugMode', and then would set the value 'user' to 1. Since the property 'user' is defined as 2 in the Property Set, it will be overridden in the call, and end up as 1. The order of property loading is:
+So, for an example, let's have a Property Set with two properties - 'debug' set to true, and 'user' set to 2. Then let's call it in a snippet.:
+
+``` php 
+[[TestSnippet@DebugMode? &user=`1`]]
+```
+
+This example would call the snippet "TestSnippet", load the Property Set 'DebugMode', and then would set the value 'user' to 1. Since the property 'user' is defined as 2 in the Property Set, it will be overridden in the call, and end up as 1. The order of property loading is:
 
 > Default Element Properties -> Property Set -> Tag-defined Properties
 
@@ -95,18 +95,18 @@ When you import properties, it will overwrite your properties in the grid curren
 
 Properties are available in a snippet via the $scriptProperties array:
 
-```
-<pre class="brush: php">
+``` php 
 $prop = $scriptProperties['propertyName'];
+```
 
-```Note that if a parameter is sent in the snippet call that has the same name as a property in a property set, the parameter value will override the default value in the property set.
+Note that if a parameter is sent in the snippet call that has the same name as a property in a property set, the parameter value will override the default value in the property set.
 
 ### Using getOption
 
 You can also get a snippet property with $modx->getOption() like this:
 
-```
-<pre class="brush: php">
+``` php 
 $modx->getOption('propertyName', $scriptProperties, 'default');
+```
 
-```## Conclusion
+## Conclusion

@@ -46,15 +46,17 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
  Resource fields can be accessed from anywhere by using the [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") syntax, ie:
 
- ```
-<pre class="brush: php">[[*pagetitle]] // renders the pagetitle.
+ ``` php 
+[[*pagetitle]] // renders the pagetitle.
 [[*id]] // renders the Resource's ID
 [[*createdby]] // renders the ID of the user who created this Resource
 
-``` They can also have [Output Filters](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") applied to them:
+```
 
- ```
-<pre class="brush: php">// Renders a limited version of the introtext field.
+ They can also have [Output Filters](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") applied to them:
+
+ ``` php 
+// Renders a limited version of the introtext field.
 // If it is longer than 100 chars, adds an ...
 [[*introtext:ellipsis=`100`]]
 // Grabs the user who last edited the Resource's username
@@ -62,23 +64,29 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 // Grabs the user who published the Resource's email
 [[*publishedby:userinfo=`email`]]
 
-```### Accessing Resource Fields in a Snippet
+```
+
+### Accessing Resource Fields in a Snippet
 
  Grabbing the Resource Fields in a [Snippet](developing-in-modx/basic-development/snippets "Snippets") is quite easy; MODx provides you with the Resource object in any Snippet, via the $modx->resource reference. For example, this example Snippet will return the current page's pagetitle reversed:
 
- ```
-<pre class="brush: php">/* output the current Resource's pagetitle */
+ ``` php 
+/* output the current Resource's pagetitle */
 $output = $modx->resource->get('pagetitle');
 return strrev($output);
 
-```## Linking to a Resource
+```
+
+## Linking to a Resource
 
  In MODx, links to Resources are dynamically managed via "Link Tags". They look like this:
 
- ```
-<pre class="brush: html">[[~123]]
+ ``` html 
+[[~123]]
 
-``` where '123' is the ID of the Resource to link to. You can put these tags anywhere, and MODx will dynamically render the URL for the Resource.
+```
+
+ where '123' is the ID of the Resource to link to. You can put these tags anywhere, and MODx will dynamically render the URL for the Resource.
 
  You can also get the Link Tag by dragging a Resource from the left tree into the content panel. 
 
@@ -88,24 +96,30 @@ return strrev($output);
 
  Adding URL parameters in your Link Tag is quite simple in Revolution. Let's say we have Resource ID 42 that resolves to a URL of 'store/items.html'. We want to add a 'tag' parameter to the URL, with a value of 'Snacks' and a 'sort' parameter of 'Taste'. Here's how you'd do it:
 
- ```
-<pre class="brush: html">[[~42? &tag=`Snacks` &sort=`Taste`]]
+ ``` html 
+[[~42? &tag=`Snacks` &sort=`Taste`]]
 
-``` This would render as:
+```
 
- ```
-<pre class="brush: html">	store/items.html?tag=Snacks&sort=Taste
+ This would render as:
 
-``` Note that those are **backticks** instead of apostrophes.
+ ``` html 
+	store/items.html?tag=Snacks&sort=Taste
+
+```
+
+ Note that those are **backticks** instead of apostrophes.
 
 ### URL Schemes in Link Tags
 
  You can specify the scheme for a Resource in your tag:
 
- ```
-<pre class="brush: html">[[~123? &scheme=`https`]]
+ ``` html 
+[[~123? &scheme=`https`]]
 
-``` Would render the URL using 'https' instead of the scheme indicated by the current settings (i.e. system or context settings).
+```
+
+ Would render the URL using 'https' instead of the scheme indicated by the current settings (i.e. system or context settings).
 
  The available schemes are:
 

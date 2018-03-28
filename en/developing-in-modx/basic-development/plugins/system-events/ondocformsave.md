@@ -22,8 +22,7 @@ NameDescriptionmodeEither 'new' or 'upd', depending on the circumstances.resourc
 
 To do something with the page ID (e.g. to update a related custom table), you can read this out of the **$resource** object (even if you are creating a new resource):
 
-```
-<pre class="brush: php">
+``` php 
 // Log all available properties of the $resource
 $modx->log(MODX_LOG_LEVEL_ERROR, print_r($resource->toArray(),true) );
 // Get the page id
@@ -37,23 +36,23 @@ if ($mode == 'new') {
 else {
    // existing resource was updated
 }
-
-```Anything you return from this event will be written to the logs, e.g.
-
 ```
-<pre class="brush: php">
+
+Anything you return from this event will be written to the logs, e.g.
+
+``` php 
 return "Help I'm a bug!";
-
-```Will result in a log message like the following:
-
 ```
-<pre class="brush: php">
+
+Will result in a log message like the following:
+
+``` php 
  [2012-06-22 13:00:28] (ERROR @ /connectors/resource/index.php) [OnDocFormSave]Help I'm a bug!
-
-```### Calculating a TV Value
-
 ```
-<pre class="brush: php">
+
+### Calculating a TV Value
+
+``` php 
 switch ($modx->event->name) {
 
         // Documents
@@ -66,8 +65,9 @@ switch ($modx->event->name) {
 
         break;
 }
+```
 
-```**Saving Happens Automatically**
+**Saving Happens Automatically**
 No need to run the `$resource->save()` method as that happens automatically.
 
 ## See Also

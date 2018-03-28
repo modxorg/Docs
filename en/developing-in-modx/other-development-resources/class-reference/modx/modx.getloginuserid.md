@@ -12,18 +12,18 @@ Returns the current user ID, for the current or specified context.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getLoginUserID()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getLoginUserID())
 
-```
-<pre class="brush: php">
+``` php 
 string getLoginUserID ([string $context = ''])
+```
 
-```## Example
+## Example
 
 Get the current login user ID for the 'sports' context.
 
-```
-<pre class="brush: php">
+``` php 
 $id = $modx->getLoginUserID('sports');
+```
 
-```## See Also
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")

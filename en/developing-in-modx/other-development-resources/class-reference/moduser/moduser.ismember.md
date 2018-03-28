@@ -12,31 +12,41 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#\\\\modUser::isMember()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::isMember())
 
- ```
-<pre class="brush: php">boolean isMember (mixed $groups)
+ ``` php 
+boolean isMember (mixed $groups)
 
-```## Example
+```
+
+## Example
 
  Get a user object:
 
- ```
-<pre class="brush: php">$user = $modx->getObject('modUser', array('username' => 'boss'));
+ ``` php 
+$user = $modx->getObject('modUser', array('username' => 'boss'));
 
-``` See if the User is a member of the 'Staff' user group:
+```
 
- ```
-<pre class="brush: php">$user->isMember('Staff');
+ See if the User is a member of the 'Staff' user group:
 
-``` See if the User is a member of EITHER the 'Staff' or 'Investors' user group.
+ ``` php 
+$user->isMember('Staff');
 
- ```
-<pre class="brush: php">$user->isMember(array('Staff','Investors'));
+```
 
-``` See if the User is a member of BOTH the 'Staff' and 'Investors' user group.
+ See if the User is a member of EITHER the 'Staff' or 'Investors' user group.
 
- ```
-<pre class="brush: php">$user->isMember(array('Staff','Investors'), true);
+ ``` php 
+$user->isMember(array('Staff','Investors'));
 
-```## See Also
+```
+
+ See if the User is a member of BOTH the 'Staff' and 'Investors' user group.
+
+ ``` php 
+$user->isMember(array('Staff','Investors'), true);
+
+```
+
+## See Also
 
 - [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")

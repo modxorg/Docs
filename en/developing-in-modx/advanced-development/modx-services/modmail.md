@@ -22,8 +22,7 @@ The following example is based on the native modPHPMailer which comes with MODX 
 
 Let's say we have an email template in the Chunk 'myEmailTemplate'. We want to send it via mail to user@example.com, with the From address being 'me@example.org'. We also want it to be an HTML email. Here's how we'd do it:
 
-```
-<pre class="brush: php">
+``` php 
 $message = $modx->getChunk('myEmailTemplate');
 
 $modx->getService('mail', 'mail.modPHPMailer');
@@ -38,19 +37,20 @@ if (!$modx->mail->send()) {
     $modx->log(modX::LOG_LEVEL_ERROR,'An error occurred while trying to send the email: '.$modx->mail->mailer->ErrorInfo);
 }
 $modx->mail->reset();
+```
 
-```Simple, no?
+Simple, no?
 
 Note that we have to reset() if we want to send mail again; this resets all the fields to blank. Also, the fields above are _optional_ (just like PHPMailer), so that if you didn't want to specify a 'reply-to' (though we recommend it!) you can.
 
 Also, if you want to send the email to multiple addresses, you can simply call address('to') again, like so:
 
-```
-<pre class="brush: php">
+``` php 
 $modx->mail->address('to','user@example.com');
 $modx->mail->address('to','mom@example.org');
+```
 
-```And finally, the example code above will send a message to our error.log if the mail isn't sent for some reason (usually a server misconfiguration).
+And finally, the example code above will send a message to our error.log if the mail isn't sent for some reason (usually a server misconfiguration).
 
 ## Placeholders in your Chunk
 

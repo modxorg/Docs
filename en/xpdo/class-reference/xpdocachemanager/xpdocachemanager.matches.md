@@ -10,22 +10,22 @@ _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.matches"
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#matches>
 
-```
-<pre class="brush: php">
+``` php 
 boolean matches (string $string, string|array $pattern)
+```
 
-```## Example
+## Example
 
 See if the string has the words 'php' in it:
 
-```
-<pre class="brush: php">
+``` php 
 if ($xpdo->cacheManager->matches('This string loves PHP!','/php/i')) {
   echo 'Yay!';
 }
 // Outputs: 'Yay!'
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

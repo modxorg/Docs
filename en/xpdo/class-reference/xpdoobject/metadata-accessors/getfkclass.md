@@ -12,18 +12,16 @@ Get the name of a class related by foreign key to a specified field key. This is
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getFKClass>
 
-```
-<pre class="brush: php">
+``` php 
 void getFKClass (string $k)
+```
 
-```## Examples
+## Examples
 
 Get the name of the class related to the field 'book' on the object 'myChapter':
 
-```
-<pre class="brush: php">
+``` php 
 $chapter = $xpdo->getObject('myChapter',12);
 echo $chapter->getFKClass('book');
 // prints "myBook"
-
 ```

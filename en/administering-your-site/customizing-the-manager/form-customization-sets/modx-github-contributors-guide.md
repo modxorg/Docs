@@ -28,32 +28,38 @@ Each has a special purpose and strict rules governing origination and merge targ
 
 MODx contributors must work directly with their private forks on GitHub. Here is the suggested way to prepare your local repository as a developer for contributing back to any MODx project:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $ git checkout -b master origin/master
 Switched to a new branch "master"
 $ git checkout -b develop origin/develop
 Switched to a new branch "develop"
 
 
-```To keep your local tracking branches for develop and master up-to-date from the upstream repository:
+```
 
- ```
-<pre class="brush: php">
+To keep your local tracking branches for develop and master up-to-date from the upstream repository:
+
+ ``` php 
+
 $ git checkout -b myfeature develop
 Switched to a new branch "myfeature"
 
 
-```#### <a name="MODxGitHubContributor%27sGuide-Submittingapullrequestforafinishedfeature"></a>Submitting a pull request for a finished feature
+```
+
+#### <a name="MODxGitHubContributor%27sGuide-Submittingapullrequestforafinishedfeature"></a>Submitting a pull request for a finished feature
 
 Once you have completed development of a feature on a branch, you should first make sure your work is replayed over the latest updates from develop:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $ git push origin myfeature:myfeature
 
 
-```And you are ready to [submit a pull request](http://help.github.com/pull-requests/) for your feature branch.
+```
+
+And you are ready to [submit a pull request](http://help.github.com/pull-requests/) for your feature branch.
 
 ### <a name="MODxGitHubContributor%27sGuide-Releasebranches"></a>Release branches
 
@@ -68,14 +74,16 @@ Note release branches may exist for a while, until the release is ready to be ro
 
 Release branches are created from develop and will be shared in the upstream repository. For instance, if the 2.1 release is being prepared, you can fetch and get a local copy of this directly from upstream:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $ git branch -d release-2.1
 Deleted branch release-2.1 (was ff452fe).
 $ git push origin :release-2.1
 
 
-```### <a name="MODxGitHubContributor%27sGuide-Hotfixbranches"></a>Hotfix branches
+```
+
+### <a name="MODxGitHubContributor%27sGuide-Hotfixbranches"></a>Hotfix branches
 
 - May branch from: master
 - Naming convention: hotfix-\*
@@ -86,22 +94,26 @@ Unplanned production releases, typically in response to security-related or othe
 
 Hotfix branches are created from master; imagine that you discover a critical security flaw in the current production release and know how to fix it, but changes sitting in the develop branch are as yet untested and thus not stable. The solution is to create a hotfix branch in which to address the problem. First make sure master is up-to-date from upstream:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $ git checkout -b hotfix-fubar master
 Switched to a new branch "hotfix-fubar"
 
 
-```Now fix the bug and commit in one or more separate commits which you can push to your fork:
+```
 
- ```
-<pre class="brush: php">
+Now fix the bug and commit in one or more separate commits which you can push to your fork:
+
+ ``` php 
+
 $ git branch -d hotfix-fubar
 Deleted branch hotfix-fubar (was abbe5d6).
 $ git push origin :hotfix-fubar
 
 
-```## <a name="MODxGitHubContributor%27sGuide-WorkflowShortcutsforCoreTeamMembers"></a>Workflow Shortcuts for Core Team Members
+```
+
+## <a name="MODxGitHubContributor%27sGuide-WorkflowShortcutsforCoreTeamMembers"></a>Workflow Shortcuts for Core Team Members
 
 There are a couple of scenarios where a simpler, alternate workflow is beneficial.
 

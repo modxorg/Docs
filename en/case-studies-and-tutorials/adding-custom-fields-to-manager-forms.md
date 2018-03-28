@@ -12,8 +12,7 @@ We want to add a field called 'Home' that puts an address field into the manager
 
 To do so, we'd create a [Plugin](developing-in-modx/basic-development/plugins "Plugins") and associate it to the **OnDocFormRender** and **OnDocFormSave** events. Our code would look like this:
 
-```
-<pre class="brush: php">
+``` php 
 <?php
 /**
  * Register a form field to forms
@@ -51,5 +50,6 @@ break;
         break;
 }
 return;
+```
 
-```Note the CSS classes and styling in the form HTML. Those are unnecessary; but will make the form "match" the styling of the rest of the fields.
+Note the CSS classes and styling in the form HTML. Those are unnecessary; but will make the form "match" the styling of the rest of the fields.

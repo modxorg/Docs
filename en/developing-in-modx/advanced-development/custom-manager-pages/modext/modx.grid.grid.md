@@ -30,8 +30,7 @@ When instantiating this into a tabbed interface, it's recommended to set prevent
 
 MODExt Grids are used to display tabular data, complete with a ColumnModel, top toolbar (tbar) and bottom toolbar (bbar). It has built-in support for paging as well. Grids are populated remotely from a connector request returning a JSON object. Displaying a right-click context menu for each row can easily be achieved by including a "menu" key for each data row in your processor:
 
-```
-<pre class="brush: php">
+``` php 
 foreach( $items as $item ) {
     $data[] = array(
         'id'    => $obj->get( 'id' ),
@@ -44,13 +43,13 @@ foreach( $items as $item ) {
         )
     );
 }
+```
 
-```The above code would create a context menu for each item with the text being the lexicon key matching "my\_lexicon," and the handler being the myHandler function registered to your Grid object.
+The above code would create a context menu for each item with the text being the lexicon key matching "my\_lexicon," and the handler being the myHandler function registered to your Grid object.
 
 Menus may alternatively (and preferably) be created by extending your JS Grid and adding a "getMenu" method:
 
-```
-<pre class="brush: php">
+``` php 
 getMenu: function() {
     var m = [];
     m.push({
@@ -59,8 +58,9 @@ getMenu: function() {
     });
     return m;
 }
+```
 
-```Returning an array of items in the getMenu method will automatically add the items to the context menu.
+Returning an array of items in the getMenu method will automatically add the items to the context menu.
 
 Revolution 2.0.x grids cannot simply return the array - they will need to call "this.addContextMenuItem(m);" before the end of the function. Returning the array was added in 2.1.
 
@@ -68,11 +68,11 @@ Revolution 2.0.x grids cannot simply return the array - they will need to call "
 
 First off, MODx.grid.Grid pulls its data remotely, via the "url" config parameter. It loads the baseParams into the call as well, which defaults to:
 
-```
-<pre class="brush: php">
+``` php 
 baseParams: { action: 'getList' }
+```
 
-```You can override the baseParams in your config parameter.
+You can override the baseParams in your config parameter.
 
 MODx.grid.Grid adds a few unique parameters not found in typical Ext.grid.Grid objects:
 
@@ -94,14 +94,14 @@ If the JSON returned is not a valid data store collection, and contains a "messa
 
 Automatically load and show a window of any given xtype:
 
-```
-<pre class="brush: php">
+``` php 
 grid.loadWindow({
   xtype: 'my-xtype-for-the-window'
   ,blankValues: true /* blanks the values of the window, good for New Object windows, set false for Update windows */
 });
+```
 
-```This will, if blankValues is not set to true, automatically pass in the currently selected row's data into the Window as well, setting its values in the form (assuming your window extends [MODx.Window](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window "MODx.Window").)
+This will, if blankValues is not set to true, automatically pass in the currently selected row's data into the Window as well, setting its values in the form (assuming your window extends [MODx.Window](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window "MODx.Window").)
 
 #### remove
 
@@ -109,19 +109,19 @@ MODx.grid.Grid comes with a custom method named 'remove', which automatically fi
 
 The method takes one parameter - text - which is the text to display in the confirm dialog that prompts the user if they want to remove the row before actually doing so. The beforeRemoveRow event is fired before the confirm dialog is loaded.
 
-```
-<pre class="brush: php">
+``` php 
 grid.remove("Are you sure you want to remove this Item?");
+```
 
-```#### confirm
+#### confirm
 
 The confirm method is a custom method that allows you to pop up a confirmation dialog before executing an action:
 
-```
-<pre class="brush: php">
+``` php 
 grid.confirm("approve","Are you sure you want to approve this article?");
+```
 
-```Similar to remove, it will take the ID/primaryKey of the currently selected row, and send it through to the processor action specified in the first parameter to the confirm method. Once finished, it will refresh the grid.
+Similar to remove, it will take the ID/primaryKey of the currently selected row, and send it through to the processor action specified in the first parameter to the confirm method. Once finished, it will refresh the grid.
 
 #### refresh
 

@@ -57,17 +57,17 @@ Your old Policies will be upgraded into the Administrator Template if they used 
 
 The setting extension\_packages has been changed to a JSON format. The format used to be:
 
-```
-<pre class="brush: php">
+``` php 
 package_name:package_path,another_package:another_path
-
-```And is now:
-
 ```
-<pre class="brush: php">
-[{"package_name":{"path":"package_path"}},{"another_package":{"path":"another_path"}}]
 
-```This should automatically upgrade without you having to adjust it.
+And is now:
+
+``` php 
+[{"package_name":{"path":"package_path"}},{"another_package":{"path":"another_path"}}]
+```
+
+This should automatically upgrade without you having to adjust it.
 
 ## See Also
 

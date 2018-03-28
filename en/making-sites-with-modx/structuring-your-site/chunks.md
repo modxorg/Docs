@@ -26,10 +26,12 @@ Before you can use a Chunk, you must first create and name one by pasting text i
 
 To use the Chunk, you reference it by name in your templates or in your page content.
 
-```
-<pre class="brush: php">[[$chunkName]]
+``` php 
+[[$chunkName]]
 
-```That reference is then replaced with the contents of the Chunk.
+```
+
+That reference is then replaced with the contents of the Chunk.
 
 You can also pass properties to a Chunk. Say you had a chunk named 'intro' with the contents:
 
@@ -37,37 +39,45 @@ You can also pass properties to a Chunk. Say you had a chunk named 'intro' with 
 
 You could fill those values with:
 
-```
-<pre class="brush: php">[[$intro? &name=`George` &messageCount=`12`]]
+``` php 
+[[$intro? &name=`George` &messageCount=`12`]]
 
-```Which would output:
+```
+
+Which would output:
 
 > Hello, George. You have 12 messages.
 
 You could even take it one step further, by adding a [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") that allows the user to specify their name per Resource:
 
-```
-<pre class="brush: php">[[!$intro? &name=`[[*usersName]]` &messageCount=`[[*messageCount]]`]]
-
-```or in the Chunk itself:
+``` php 
+[[!$intro? &name=`[[*usersName]]` &messageCount=`[[*messageCount]]`]]
 
 ```
-<pre class="brush: php">Hello, [[*usersName]]. You have [[*messageCount]] messages.
 
-```## Processing Chunk via the API
+or in the Chunk itself:
+
+``` php 
+Hello, [[*usersName]]. You have [[*messageCount]] messages.
+
+```
+
+## Processing Chunk via the API
 
 Chunks are also frequently used to format the output of Snippets. A Chunk can be processed from a Snippet using the process() function; for example, given the following Chunk named 'rowTpl':
 
-```
-<pre class="brush: php"><tr class="[[+rowCls]]" id="row[[+id]]">
+``` php 
+<tr class="[[+rowCls]]" id="row[[+id]]">
 <td>[[+pagetitle]]</td>
 <td>[[+introtext]]</td>
 </tr>
 
-```the following Snippet code retrieves it and processes it with an array of properties for all published Resources, and returns formatted results as a table, setting the class to "alt" if for even rows:
-
 ```
-<pre class="brush: php">$resources = $modx->getCollection('modResource',array('published' => true));
+
+the following Snippet code retrieves it and processes it with an array of properties for all published Resources, and returns formatted results as a table, setting the class to "alt" if for even rows:
+
+``` php 
+$resources = $modx->getCollection('modResource',array('published' => true));
 $i = 0;
 $output = '';
 foreach ($resources as $resource) {
@@ -79,12 +89,14 @@ foreach ($resources as $resource) {
 }
 return '<table><tbody>'.$output.'</tbody></table>';
 
-```### Modifying a Chunk Via the API
+```
+
+### Modifying a Chunk Via the API
 
 Chunks can also be manipulated by the MODx API:
 
-```
-<pre class="brush: php"><?php
+``` php 
+<?php
 /* create a new chunk, give it some content and save it to the database */
 $chunk = $modx->newObject('modChunk');
 $chunk->set('name','NewChunkName');
@@ -103,6 +115,8 @@ $chunk = $modx->getObject('modChunk', array('name' => 'MyObsoleteChunk'));
 if ($chunk) $chunk->remove();
 ?>
 
-```## See Also
+```
+
+## See Also
 
 - [modChunk](developing-in-modx/other-development-resources/class-reference/modchunk "modChunk")

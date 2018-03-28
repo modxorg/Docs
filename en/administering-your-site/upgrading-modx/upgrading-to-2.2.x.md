@@ -70,11 +70,11 @@ Due to the new user interface improvements on the Resource Editing screen, Form 
 
 MODX users can now use comment tags in their content:
 
-```
-<pre class="brush: php">
+``` php 
 [[- comment goes here]]
+```
 
-```Anything within one of these tags will be removed prior to the page rendering.
+Anything within one of these tags will be removed prior to the page rendering.
 
 ### Moving TVs Below the Content Panel
 

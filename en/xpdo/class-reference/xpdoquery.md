@@ -28,8 +28,8 @@ _old_uri: "2.x/class-reference/xpdoquery"
 4. A color of 'red','blue' or 'green'
 5. sorted by the Box name, ascending and then by the Box height, descending
  
-```
-<pre class="brush: php">
+``` php 
+
 $query = $xpdo->newQuery('Box');
 // Remember: syntax here is classname, your alias. Note that filters use the alias.
 $query->innerJoin('Owner','User'); 
@@ -45,10 +45,12 @@ $query->sortby('Box.height','DESC');
 $query->limit(4);
 $boxes = $xpdo->getCollection('Box',$query);
 
-``` You can also do more complex queries, like so:
+```
 
- ```
-<pre class="brush: php">
+ You can also do more complex queries, like so:
+
+ ``` php 
+
 $query = $xpdo->newQuery('Person');
 $query->where(array(
     array(
@@ -61,10 +63,12 @@ $query->where(array(
     'password:!=' => null,
 ));
 
-``` translates to:
+```
 
- ```
-<pre class="brush: php">
+ translates to:
+
+ ``` php 
+
 (
   (      `Person`.`first_name` = 'Bob' 
     OR ( `Person`.`last_name` LIKE 'Boblablaw' AND `Person`.`gender` = 'M' )
@@ -72,14 +76,16 @@ $query->where(array(
   AND password IS NOT NULL
 )
 
-``` Note that if you're specifying the conditional in the key string, such as 'OR:disabled:!=' => true, you'll need to specify the operand as well. This means that you must specify = explicitly, such as in:  'AND:gender:=' => 'M'
+```
+
+ Note that if you're specifying the conditional in the key string, such as 'OR:disabled:!=' => true, you'll need to specify the operand as well. This means that you must specify = explicitly, such as in:  'AND:gender:=' => 'M'
 
  
 
 ### Valid Operators
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $c = $xpdo->newQuery('Person');
 $c->where(array(
   'name:=' => 'John', /* Equal To */
@@ -93,18 +99,22 @@ $c->where(array(
   'ids:IN' => array(1,2,3), /* IN statement */
 ));
 
-```## Debugging
+```
+
+## Debugging
 
  Sometimes you need to see what query is actually being generated. You can do this by preparing the query and outputting it using the **toSQL()** method.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $c = $xpdo->newQuery('Person');
 // add filters here...
 $c->prepare();
 print $c->toSQL();
 
-```## See Also
+```
+
+## See Also
 
 - [Retrieving Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
 - [xPDO.newQuery](/xpdo/2.x/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")

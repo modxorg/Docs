@@ -12,21 +12,21 @@ Converts a JSON source string into an equivalent PHP representation.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#fromJSON>
 
-```
-<pre class="brush: php">
+``` php 
 mixed fromJSON (string $src, [boolean $asArray = true])
+```
 
-```## Example
+## Example
 
 Convert JSON code to an array:
 
-```
-<pre class="brush: php">
+``` php 
 $str = '{name:"John"}';
 $ar = $xpdo->fromJSON($str);
 print_r($ar); // prints: Array ( 'name' => 'John' )
+```
 
-```## See Also
+## See Also
 
 - [xPDO.toJSON](/xpdo/2.x/class-reference/xpdo/xpdo.tojson "xPDO.toJSON")
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

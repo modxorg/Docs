@@ -45,11 +45,13 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  In our XML file, let's start out with the first few lines:
 
- ```
-<pre class="brush: xml"><?xml version="1.0" encoding="UTF-8"?>
+ ``` xml 
+<?xml version="1.0" encoding="UTF-8"?>
 <model package="storefinder" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="storefinder" phpdoc-subpackage="model">
 
-``` First we'll tell the browser and parser that this is XML code with a standard XML header. Next, we're going to create a "model" tag, and put some attributes into it. They are:
+```
+
+ First we'll tell the browser and parser that this is XML code with a standard XML header. Next, we're going to create a "model" tag, and put some attributes into it. They are:
 
 - **package** - The name of the xPDO package (note this is different than a "transport package", a Revolution term). This is how xPDO separates different models and manages them.
 - **baseClass** - This is the base class from which all your class definitions will extend. Unless you're planning on creating a custom xPDOObject extension, it's best to leave it at the default.
@@ -59,10 +61,12 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  Great! Now we've got our model definition. Let's add a table tag as the next line.
 
- ```
-<pre class="brush: php"><object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
+ ``` php 
+<object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
 
-``` "Object" is our representation of a table, which will generate into an xPDOObject class when we're through. There are some attributes to note here:
+```
+
+ "Object" is our representation of a table, which will generate into an xPDOObject class when we're through. There are some attributes to note here:
 
 - **class** - This is the name of the class we want to be generated from the table. Here, we'll use "sfStore". Note that instead of just "Store", we prefixed it with "sf" to prevent collisions with any other packages we might install that might also have Store tables.
 - **table** - This should point to the actual database table name, minus the prefix.
@@ -72,8 +76,8 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  Now that we've got a table definition for our stores table, let's add some field definitions to it:
 
- ```
-<pre class="brush: php"><field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
+ ``` php 
+<field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
 <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 <field key="city" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 <field key="state" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -83,7 +87,9 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 <field key="fax" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
 <field key="active" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
 
-``` As you can see here, each column in our table has a field definition tag. From there, we have 
+```
+
+ As you can see here, each column in our table has a field definition tag. From there, we have 
  attribute properties for each field. Most of these are optional, depending on the database type of the column. Some of those attribute properties are:
 
 - **key** - The key name of the column.
@@ -97,28 +103,32 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  And we'll finish by closing the object and model tags:
 
- ```
-<pre class="brush: php"></object>
+ ``` php 
+</object>
 </model>
 
-``` So now we have a completed XML schema for our model! Let's move on to the schema build script.
+```
+
+ So now we have a completed XML schema for our model! Let's move on to the schema build script.
 
 ## Building the Schema
 
  Go ahead and create a 'build.config.php' file in your \_build directory. It should contain this:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 define('MODX_BASE_PATH', dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/MODxRevolution/');
 define('MODX_CORE_PATH', MODX_BASE_PATH . 'core/');
 define('MODX_MANAGER_PATH', MODX_BASE_PATH . 'manager/');
 define('MODX_CONNECTORS_PATH', MODX_BASE_PATH . 'connectors/');
 define('MODX_ASSETS_PATH', MODX_BASE_PATH . 'assets/');
 
-``` ...where MODX\_BASE\_PATH will need to point to where you installed MODX Revolution. If you moved the manager or core outside of that base path, you'll need to adjust those defines as well. From here, create a 'build.schema.php' file in your \_build directory. At the top, put this:
+```
 
- ```
-<pre class="brush: php"><?php
+ ...where MODX\_BASE\_PATH will need to point to where you installed MODX Revolution. If you moved the manager or core outside of that base path, you'll need to adjust those defines as well. From here, create a 'build.schema.php' file in your \_build directory. At the top, put this:
+
+ ``` php 
+<?php
 /**
  * Build Schema script
  *
@@ -146,20 +156,24 @@ $sources = array(
     'schema' => $root.'_build/schema/',
 );
 
-``` This will do a few things. First off, it starts up a nice execution time script for us, so we can see how long it takes to build the schema. Secondly, It includes our build.config.php file to tell the schema script where to find MODX Revolution. Thirdly, it loads the necessary classes, initializes the modX object, and loads the modPackageBuilder class. And finally, it sets some log levels and some base paths for our build script.
+```
+
+ This will do a few things. First off, it starts up a nice execution time script for us, so we can see how long it takes to build the schema. Secondly, It includes our build.config.php file to tell the schema script where to find MODX Revolution. Thirdly, it loads the necessary classes, initializes the modX object, and loads the modPackageBuilder class. And finally, it sets some log levels and some base paths for our build script.
 
  Note that you'll want to make sure the $sources array has the correct paths defined; otherwise your script wont run. Let's add a couple more lines to our schema build script:
 
- ```
-<pre class="brush: php">$manager= $modx->getManager();
+ ``` php 
+$manager= $modx->getManager();
 $generator= $manager->getGenerator();
 
-``` These lines will load xPDOManager and xPDOGenerator, two classes we'll need to build our schema map files.
+```
+
+ These lines will load xPDOManager and xPDOGenerator, two classes we'll need to build our schema map files.
 
  And finally, we want to actually parse this into a file:
 
- ```
-<pre class="brush: php">$generator->parseSchema($sources['schema'].'storefinder.mysql.schema.xml', $sources['model']);
+ ``` php 
+$generator->parseSchema($sources['schema'].'storefinder.mysql.schema.xml', $sources['model']);
 $mtime= microtime();
 $mtime= explode(" ", $mtime);
 $mtime= $mtime[1] + $mtime[0];
@@ -169,7 +183,9 @@ $totalTime= sprintf("%2.4f s", $totalTime);
 echo "\nExecution time: {$totalTime}\n";
 exit ();
 
-``` This block of code executes the schema parsing method, and then outputs the total time the script took to execute. Run it, and viola! Our storefinder/core/model/storefinder/ directory is now filled with all of our map and class files!
+```
+
+ This block of code executes the schema parsing method, and then outputs the total time the script took to execute. Run it, and viola! Our storefinder/core/model/storefinder/ directory is now filled with all of our map and class files!
 
 ## Using our New Model
 
@@ -177,8 +193,8 @@ exit ();
 
  Before we proceed, let's enable testing of this snippet directly from MODX. Since we're developing this in a separate directory from our MODX install, let's create a snippet called 'StoreFinder' in our MODX Revolution instance, and put this inside of it (you'll need to change the first line to the correct path):
 
- ```
-<pre class="brush: php">$base_path = dirname(dirname($modx->getOption('core_path'))).'/MODx Components/tutorials/storefinder/trunk/core/components/storefinder/';
+ ``` php 
+$base_path = dirname(dirname($modx->getOption('core_path'))).'/MODx Components/tutorials/storefinder/trunk/core/components/storefinder/';
 /* change above line to your path */
 $o = '';
 $f = $base_path.'snippet.storefinder.php';
@@ -190,36 +206,44 @@ if (file_exists($f)) {
 }
 return $o;
 
-``` This little helper code allows us to do our development in our own code editor of choice until we're ready to package and distribute our Component. Then we'll simply delete this 'StoreFinder' snippet from our MODX Revolution instance, and install our package. You can find more about building packages by going [here](http://modxcms.com/about/blog/shaun-mccormick/creating-3rd-party-component-build-script.html). If you don't want to build a transport package (we recommend doing so, it makes upgrades FAR easier!), you can simply just copy the files to their proper directories in the manager.
+```
+
+ This little helper code allows us to do our development in our own code editor of choice until we're ready to package and distribute our Component. Then we'll simply delete this 'StoreFinder' snippet from our MODX Revolution instance, and install our package. You can find more about building packages by going [here](http://modxcms.com/about/blog/shaun-mccormick/creating-3rd-party-component-build-script.html). If you don't want to build a transport package (we recommend doing so, it makes upgrades FAR easier!), you can simply just copy the files to their proper directories in the manager.
 
  Okay, back to our snippet. Open up 'snippet.storefinder.php' in your editor, and add this code:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 /**
  * @package storefinder
  */
 $base_path = !empty($base_path) ? $base_path : $modx->getOption('core_path').'components/storefinder/';
 
-``` You'll see here that we're setting a $base\_path variable if and only if it's not already set. Why? Well, this allows us to do development outside our target directory (like we're doing now). If no base\_path is set, then we simply point it to where the component will be installed: core/components/storefinder/
+```
+
+ You'll see here that we're setting a $base\_path variable if and only if it's not already set. Why? Well, this allows us to do development outside our target directory (like we're doing now). If no base\_path is set, then we simply point it to where the component will be installed: core/components/storefinder/
 
  Now on to the brunt of the code. You've got your snippet working, you're in an easy development environment, and now you're ready to get that model working. First off, add these lines:
 
- ```
-<pre class="brush: php">$modx->addPackage('storefinder',$base_path.'model/');
+ ``` php 
+$modx->addPackage('storefinder',$base_path.'model/');
 
-``` This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](/xpdo/2.x/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
+```
 
- ```
-<pre class="brush: php">$stores = $modx->getCollection('sfStore');
+ This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](/xpdo/2.x/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
+
+ ``` php 
+$stores = $modx->getCollection('sfStore');
 echo 'Total: '.count($stores);
 
-``` Note the first time you run this, it might throw an error. This is because xPDO is dynamically creating your database table from your schema. After running, it should show "Total: 0".
+```
+
+ Note the first time you run this, it might throw an error. This is because xPDO is dynamically creating your database table from your schema. After running, it should show "Total: 0".
 
  Let's add a few records into the database for testing. Above the getCollection call, add:
 
- ```
-<pre class="brush: php">$store = $modx->newObject('sfStore');
+ ``` php 
+$store = $modx->newObject('sfStore');
 $store->fromArray(array(
     'name' => 'Store 1',
     'address' => '12 Grimmauld Place',
@@ -240,7 +264,9 @@ $store->fromArray(array(
 ));
 $store->save();
 
-``` Run this **only once** (unless you want duplicate data). That should populate your table with some data, and then output 'Total: 2', assuming you didn't remove the getCollection lines. After you've run it, go ahead and erase those lines.
+```
+
+ Run this **only once** (unless you want duplicate data). That should populate your table with some data, and then output 'Total: 2', assuming you didn't remove the getCollection lines. After you've run it, go ahead and erase those lines.
 
  Okay, now we've got our model running smoothly! For those of you who are already familiar with component development, the second part of this tutorial will be dealing with finishing our Component's scenario. You can stop reading if you want.
 

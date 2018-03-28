@@ -10,11 +10,11 @@ The Snippet Dashboard Widget Type runs a MODX Snippet and places the return valu
 
 Simply place the name of the Snippet (no tags) you would like to run in the content of the widget, ie:
 
-```
-<pre class="brush: php">
+``` php 
 MyCustomDashboardSnippet
+```
 
-```The output returned by the Snippet will be displayed in the dashboard widget.
+The output returned by the Snippet will be displayed in the dashboard widget.
 
 ## See Also
 

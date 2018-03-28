@@ -12,8 +12,7 @@ Sets the object fields from a JSON object string.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#fromJSON>
 
-```
-<pre class="brush: php">
+``` php 
 void fromJSON (
    string $jsonSource,
    [string $keyPrefix = ''],
@@ -21,17 +20,18 @@ void fromJSON (
    [boolean $rawValues = false],
    [boolean $adhocValues = false]
 )
-
-```## Example
-
 ```
-<pre class="brush: php">
+
+## Example
+
+``` php 
 $str = '{"name":"Sirius","email":"Black"}';
 $object->fromJSON($str);
 echo $object->get('name').' '.$object->get('email');
 // prints "Sirius Black"
+```
 
-```## See Also
+## See Also
 
 - [fromArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
 - [toArray](/xpdo/2.x/class-reference/xpdoobject/field-accessors/toarray "toArray")

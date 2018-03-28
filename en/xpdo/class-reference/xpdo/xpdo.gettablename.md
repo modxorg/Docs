@@ -12,18 +12,18 @@ Gets the actual run-time table name from a specified class name.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getTableName>
 
-```
-<pre class="brush: php">
+``` php 
 string getTableName (string $className, [boolean $includeDb = false])
+```
 
-```## Example
+## Example
 
 Output the table name for the Box object with a table name of "boxes":
 
-```
-<pre class="brush: php">
+``` php 
 echo $xpdo->getTableName('Box');
+```
 
-```## See Also
+## See Also
 
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

@@ -38,8 +38,7 @@ The $xpdo->cacheManager object, built from the [xPDOCacheManager](/xpdo/2.x/clas
 
 A simple example script of setting data into a cache partition, then getting it, and deleting it, is as follows:
 
-```
-<pre class="brush: php">
+``` php 
 $str = 'My cached data.';
 $xpdo->cacheManager->set('testdata', $str);
 
@@ -47,8 +46,9 @@ echo $xpdo->cacheManager->get('testdata');
 // outputs: My cached data.
 
 $xpdo->cacheManager->delete('testdata');
+```
 
-```This uses the global cache configuration to set, retrieve, and remove a cache entry. This would be the default cache partition used by the xPDOCacheManager.
+This uses the global cache configuration to set, retrieve, and remove a cache entry. This would be the default cache partition used by the xPDOCacheManager.
 
 ## Utilizing Specific Cache Partitions
 
@@ -56,8 +56,7 @@ To target cache data in a specific partition, you will need to either pass a con
 
 An example of passing the configuration to the xPDOCacheManager methods:
 
-```
-<pre class="brush: php">
+``` php 
 $cacheOptions = array(
     xPDO::OPT_CACHE_KEY => 'myCache',
     xPDO::OPT_CACHE_HANDLER => 'cache.xPDOAPCCache',
@@ -69,13 +68,13 @@ echo $xpdo->cacheManager->get('testdata', $cacheOptions);
 // outputs: My cached data.
 
 $xpdo->cacheManager->delete('testdata', $cacheOptions);
+```
 
-```This would use an instance of xPDOAPCCache and prefix all entries with cacheMe since APC does not allow multiple instances and in order to use it the entries must be partitioned per xPDOCache instance by their key.
+This would use an instance of xPDOAPCCache and prefix all entries with cacheMe since APC does not allow multiple instances and in order to use it the entries must be partitioned per xPDOCache instance by their key.
 
 An alternative approach is to get the specific cache partition itself and use it's methods directly:
 
-```
-<pre class="brush: php">
+``` php 
 $myCache = $xpdo->cacheManager->getCacheProvider('myCache', array(
     xPDO::OPT_CACHE_KEY => 'myCache',
     xPDO::OPT_CACHE_HANDLER => 'cache.xPDOAPCCache',
@@ -87,8 +86,9 @@ echo $myCache->get('testdata');
 // outputs: My cached data.
 
 $myCache->delete('testdata');
+```
 
-```## See Also
+## See Also
 
 - [xPDOCacheManager](/xpdo/2.x/class-reference/xpdocachemanager "xPDOCacheManager")
 

@@ -12,16 +12,15 @@ Indicates if the instance is new, and has not yet been persisted.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isNew>
 
-```
-<pre class="brush: php">
+``` php 
 boolean isNew ()
+```
 
-```## Examples
+## Examples
 
 State if the Broom has been saved.
 
-```
-<pre class="brush: php">
+``` php 
 $broom = $xpdo->newObject('Broom');
 $broom->set('name','Firebolt');
 
@@ -30,5 +29,4 @@ echo $broom->isNew() ? 1 : 0; // prints 1
 $broom->save();
 
 echo $broom->isNew() ? 1 : 0; // prints 0
-
 ```

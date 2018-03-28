@@ -20,46 +20,46 @@ The options array has the following parameters available:
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#deleteTree>
 
-```
-<pre class="brush: php">
+``` php 
 boolean deleteTree (string $dirname, [array $options = array(
    'deleteTop' => false,
    'skipDirs' => false,
    'extensions' => array('.cache.php')
 )])
+```
 
-```## Example
+## Example
 
 Delete the /modx/assets/videos/ directory (assuming the constant MODX\_ASSETS\_PATH is set) and all the files in it:
 
-```
-<pre class="brush: php">
+``` php 
 $xpdo->cacheManager->deleteTree(MODX_ASSETS_PATH.'videos/',array(
    'deleteTop' => true,
    'extensions' => false,
 ));
-
-```Delete only .flv files in the above directory:
-
 ```
-<pre class="brush: php">
+
+Delete only .flv files in the above directory:
+
+``` php 
 $xpdo->cacheManager->deleteTree(MODX_ASSETS_PATH.'videos/',array(
    'deleteTop' => true,
    'extensions' => array('.flv'),
 ));
-
-```Delete all movies in above directory, except george.mov, buddies.flv, and any file name containing the word 'fun'.
-
 ```
-<pre class="brush: php">
+
+Delete all movies in above directory, except george.mov, buddies.flv, and any file name containing the word 'fun'.
+
+``` php 
 $xpdo->cacheManager->deleteTree(MODX_ASSETS_PATH.'videos/',array(
    'deleteTop' => true,
    'extensions' => false,
    'delete_exclude_items' => array('george.mov','buddies.flv'),
    'delete_exclude_patterns' => '/fun/i',
 ));
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

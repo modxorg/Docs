@@ -8,16 +8,16 @@ _old_uri: "2.x/getting-started/using-your-xpdo-model/retrieving-objects/getcolle
 
 getCollectionGraph allows you to automatically load up related objects by specifying a JSON style hash to its second argument (in other words, it automatically joins a table on its related tables). It's possible to nest the JSON hash so you also retrieve the related objects of the related objects, for example:
 
-```
-<pre class="brush: php">
+``` php 
 $blogpost = $modx->getCollectionGraph('BlogPost', '{ "Comments":{} }', 34 );
 foreach ( $blogpost->Comments as $c ) {
 /* ...do something with each comment... */
 }
 // OR, joining on related objects of related objects
 $TFR = $modx->getCollectionGraph('TrackingformsResources', '{ "Resources":{ "MassUnit":{}, "VolumeUnit":{} } }', 123 );
+```
 
-```xPDO translates this all into the necessary database query that joins on the appropriate tables (e.g. perhaps named trackingforms\_resources, resources, and units) – like most of the xPDO methods, you refer to a model's tables/classes via their aliases.
+xPDO translates this all into the necessary database query that joins on the appropriate tables (e.g. perhaps named trackingforms\_resources, resources, and units) – like most of the xPDO methods, you refer to a model's tables/classes via their aliases.
 
 You can \*NOT\* set a limit on a getCollectionGraph when using an xPDOQuery object - you will be limiting the total number of rows fetched, which is not the same as the total number of top level (eg BlogPost) objects. You can get very unexpected results by doing so.
 
@@ -25,8 +25,7 @@ You can \*NOT\* set a limit on a getCollectionGraph when using an xPDOQuery obje
 
 The below example that specifies several related objects. In the **Zip** XML schema, there would be some sort of aggregate relationship defined for "TZ", "ST", and "CT".
 
-```
-<pre class="brush: php">
+``` php 
 <?php
 $out = false;
 $xpdo->setPackage('sw_zipCode', MODX_BASE_PATH.'wsw/model/', 'sw_');
@@ -43,19 +42,19 @@ foreach ($collection as $obj)
 }
 return $out;
 ?>
+```
 
-```Note that when you are using $xpdo->newQuery() to filter the results and have multiple field names which are the same, for example an "id" field, in one or more of the different classes you join, xPDO will fail to return any result. Simply prefix your fieldname with the classname in that case, for example myClassName.id
+Note that when you are using $xpdo->newQuery() to filter the results and have multiple field names which are the same, for example an "id" field, in one or more of the different classes you join, xPDO will fail to return any result. Simply prefix your fieldname with the classname in that case, for example myClassName.id
 
 ### Snippet Call
 
-```
-<pre class="brush: php">
+``` php 
 [[!zipCollectionGraph?lookupZip=`32117`]]
-
-```### Output
-
 ```
-<pre class="brush: php">
+
+### Output
+
+``` php 
 Array
 (
     [id] => 32117
@@ -70,12 +69,11 @@ Array
     [state] => Florida
     [county] => Volusia
 )
-
-
-```### Equivalent MySQL
-
 ```
-<pre class="brush: php">
+
+### Equivalent MySQL
+
+``` php 
 $xpdo->setPackage('sw_zipCode', MODX_BASE_PATH.'wsw/model/', 'sw_');
 $collection= $xpdo->getCollectionGraph('Zip', '{"TZ":{},"ST":{},"CT":{}}', $lookupZip);
 
@@ -87,10 +85,9 @@ LEFT JOIN `sw_county` AS CT ON CT.`id` = Z.`sw_county_id`
 LEFT JOIN `sw_states` AS ST ON ST.`id` = Z.`sw_states_id`
 LEFT JOIN `sw_timezones` AS TZ ON TZ.`id` = Z.`sw_timezones_id`
 WHERE Z.`id` = 32117
+```
 
-
-
-```### The Schema
+### The Schema
 
 The following schema is greatly simplified for readability and this example:
 
@@ -98,8 +95,7 @@ class= had to be renamed to klass= to be presented in this document system. Thou
 
 
 
-```
-<pre class="brush: php">
+``` php 
 ?
 <model package="sw_zipCode" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
 ?
@@ -138,13 +134,13 @@ class= had to be renamed to klass= to be presented in this document system. Thou
 <aggregate alias="CT" klass="States" local="sw_states_id" foreign="id" cardinality="one" owner="foreign" />
 </object>
 </model>
+```
 
-```## Another Example
+## Another Example
 
 Another relation example that is common is joining MODX pages with their Template Variable values. Sometimes this does not work as expected since values are stored differently than you might expect. But here's a walk-through.
 
-```
-<pre class="brush: php">
+``` php 
 $pages = $modx->getCollectionGraph('modResource', '{"TemplateVarResources":{}}', array('parent'=>12));
 
 foreach ($pages as $p) {
@@ -154,8 +150,9 @@ foreach ($pages as $p) {
                 $tv->get('value');
         }
 }
+```
 
-```## Comments
+## Comments
 
 1. Obtain a connection via [the xPDO Constructor](/xpdo/1.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") including [Hydrating Fields](/xpdo/2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields "Hydrating Fields")
 2. Viewing the package name in the schema we set (or apply) the package to our connection, taking note of the prefix our tables are using in the database

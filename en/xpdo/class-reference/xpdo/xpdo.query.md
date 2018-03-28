@@ -15,11 +15,13 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.query"
 
  API Docs: see <http://php.net/manual/en/pdo.query.php>
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 xPDOObject|false query (string $statement)
 
-``` **$statement**
+```
+
+ **$statement**
 
  The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
 
@@ -41,8 +43,8 @@ xPDOObject|false query (string $statement)
 
  Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](/display/xPDO20/xPDO.getObject "xPDO.getObject") or [getCollection](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $result = $modx->query("SELECT * FROM modx_users WHERE id=1");
 if (!is_object($result)) {
    return 'No result!';
@@ -52,10 +54,12 @@ else {
    return 'Result:' .print_r($row,true);
 }
 
-``` Use the **PDO::FETCH\_ASSOC** will force the result to be an associative array:
+```
 
- ```
-<pre class="brush: php">
+ Use the **PDO::FETCH\_ASSOC** will force the result to be an associative array:
+
+ ``` php 
+
 Array
 (
     [id] => 1
@@ -64,10 +68,12 @@ Array
     // ...
 )
 
-``` Without it, the results are a mix of an associative and a regular array:
+```
 
- ```
-<pre class="brush: php">
+ Without it, the results are a mix of an associative and a regular array:
+
+ ``` php 
+
 Array
 (
     [id] => 1
@@ -79,7 +85,9 @@ Array
     // ...  
 )
 
-``` **No One-Liners!** 
+```
+
+ **No One-Liners!** 
  The one-line method-chaining available to PDO is not possible with xPDO. The following **will not work**: 
 `$row = $modx->query("SELECT * FROM cms_users WHERE id=1")->fetch();` 
 
@@ -87,44 +95,50 @@ Array
 
  PDO uses a lazy-loader, so you can't simply print out all of the results at once. Instead, you iterate over each result in the set using a loop, e.g.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $results = $xpdo->query("SELECT * FROM some_table");
 while ($r = $results->fetch(PDO::FETCH_ASSOC)) {
         print_r($r); exit;
 }
 
-```###  Quoting Inputs 
+```
+
+###  Quoting Inputs 
 
  For single queries that rely on user input, you should [manually quote](http://php.net/manual/en/pdo.quote.php) the input strings.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $username = $modx->quote($username);
 $sql = "SELECT * FROM modx_users WHERE username = $username";
 $result = $modx->query($sql);
 $row = $result->fetch(PDO::FETCH_ASSOC);
 return print_r($row,true);
 
-``` The \[quote\] function can take a 2nd argument, which you can use to quote integers specifically
+```
+
+ The \[quote\] function can take a 2nd argument, which you can use to quote integers specifically
 
 - **PDO::PARAM\_INT** for quoting integers
 - **PDO::PARAM\_STR** for quoting strings (default)
  
-```
-<pre class="brush: php">
+``` php 
+
 $id = $modx->quote(1, PDO::PARAM_INT);
 $sql = "SELECT * FROM cms_users WHERE id = $id";
 $result = $modx->query($sql);
 $row = $result->fetch(PDO::FETCH_ASSOC);
 return print_r($row, true);
 
-```###  Select a Collection 
+```
+
+###  Select a Collection 
 
  Here's a simple query to fetch multiple rows from the database. Note that you would normally use [getObject](/xpdo/2.x/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to retrive data from MODX tables.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $output = '';
 $sql = "SELECT * FROM modx_users";
 foreach ($modx->query($sql) as $row) {
@@ -132,17 +146,21 @@ foreach ($modx->query($sql) as $row) {
 }
 return $output;
 
-``` You can also use the fetchAll() method to return an array of arrays (i.e. a recordset):
+```
 
- ```
-<pre class="brush: php">
+ You can also use the fetchAll() method to return an array of arrays (i.e. a recordset):
+
+ ``` php 
+
 $output = '';
 $sql = "SELECT * FROM modx_users";
 $result = $modx->query($sql);
 $data = $result->fetchAll(PDO::FETCH_ASSOC);
 return $data;
 
-```###  Fetch Style 
+```
+
+###  Fetch Style 
 
  From <http://php.net/manual/en/pdostatement.fetch.php>, these are the available constants that affect how your results are returned:
 

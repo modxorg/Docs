@@ -14,18 +14,18 @@ Returns true if successful.
 
 API Docs: <http://api.modxcms.com/xpdo/transport/xPDOTransport.html#install>
 
-```
-<pre class="brush: php">
+``` php 
 boolean install ([array $options = array ()])
+```
 
-```## Example
+## Example
 
 Installs a transport package:
 
-```
-<pre class="brush: php">
+``` php 
 $transport->install();
+```
 
-```## See Also
+## See Also
 
 - [xPDOTransport](/xpdo/2.x/class-reference/xpdotransport "xPDOTransport")

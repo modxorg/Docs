@@ -22,16 +22,15 @@ I'd first need 2 files:
 
 The input controller, test.php, would have:
 
-```
-<pre class="brush: php">
+``` php 
 $this->xpdo->lexicon->load('tv_widget');
 // any other PHP i want here
 return $this->xpdo->smarty->fetch('element/tv/renders/input/test.tpl');
-
-```And the input template, test.tpl, for the default mgr theme would have (note that it is using [Smarty](http://smarty.net/) syntax):
-
 ```
-<pre class="brush: php">
+
+And the input template, test.tpl, for the default mgr theme would have (note that it is using [Smarty](http://smarty.net/) syntax):
+
+``` php 
 <select id="tv{$tv->id}" name="tv{$tv->id}" class="combobox"></select>
 <script type="text/javascript">
 // <![CDATA[
@@ -48,8 +47,9 @@ MODx.load({
 {/literal}
 // ]]>
 </script>
+```
 
-```And there you go! A custom TV input type.
+And there you go! A custom TV input type.
 
 ![](/download/attachments/18678063/customtv1.png?version=1&modificationDate=1269467124000)
 

@@ -14,31 +14,41 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modresource.class.html#\\\\modResource::isMember()](http://api.modx.com/revolution/2.2/db_core_model_modx_modresource.class.html#\\modResource::isMember())
 
- ```
-<pre class="brush: php">boolean isMember (mixed $groups)
+ ``` php 
+boolean isMember (mixed $groups)
 
-```## Example
+```
+
+## Example
 
  Get a resource object:
 
- ```
-<pre class="brush: php">$resource = $modx->getObject('modResource', array('id' => 2));
+ ``` php 
+$resource = $modx->getObject('modResource', array('id' => 2));
 
-``` See if the resource is a member of the 'Marketing' resource group:
+```
 
- ```
-<pre class="brush: php">$resource->isMember('Marketing');
+ See if the resource is a member of the 'Marketing' resource group:
 
-``` See if the resource is a member of EITHER the 'Marketing' or 'Finances' resource group.
+ ``` php 
+$resource->isMember('Marketing');
 
- ```
-<pre class="brush: php">$resource->isMember(array('Marketing', 'Finances'));
+```
 
-``` See if the resource is a member of BOTH the 'Marketing' and 'Finances' resource group (by default it's enough to be in one resource group to get back true).
+ See if the resource is a member of EITHER the 'Marketing' or 'Finances' resource group.
 
- ```
-<pre class="brush: php">$resource->isMember(array('Marketing', 'Finances'), true);
+ ``` php 
+$resource->isMember(array('Marketing', 'Finances'));
 
-```## See Also
+```
+
+ See if the resource is a member of BOTH the 'Marketing' and 'Finances' resource group (by default it's enough to be in one resource group to get back true).
+
+ ``` php 
+$resource->isMember(array('Marketing', 'Finances'), true);
+
+```
+
+## See Also
 
 - [modResource](developing-in-modx/other-development-resources/class-reference/modresource "modResource")

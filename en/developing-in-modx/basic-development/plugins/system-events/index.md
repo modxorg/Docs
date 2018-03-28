@@ -171,26 +171,32 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/"
 
  Creating an event using the MODX API would look something like this:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $Event = $modx->newObject('modEvent');
 $Event->set('name', 'OnMyCustomEvent');
 $Event->set('service',1); 
 $Event->set('groupname', 'Custom');
 
-``` Then your code could trigger that event by name:
+```
 
- ```
-<pre class="brush: php">
+ Then your code could trigger that event by name:
+
+ ``` php 
+
 $modx->invokeEvent('OnMyCustomEvent', $options);
 
-``` Finally, a plugin could be set to listen for that event. In this case, it can receive options passed to it.
+```
 
- ```
-<pre class="brush: php">
+ Finally, a plugin could be set to listen for that event. In this case, it can receive options passed to it.
+
+ ``` php 
+
 //... TODO...
 
-```## See Also
+```
+
+## See Also
 
 1. [System Events](developing-in-modx/basic-development/plugins/system-events)
   1. [OnBeforeCacheUpdate](developing-in-modx/basic-development/plugins/system-events/onbeforecacheupdate)

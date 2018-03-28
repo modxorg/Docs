@@ -54,8 +54,8 @@ _old_uri: "2.x/administering-your-site/security/user-groups"
 
  When working with the modUser object in the MODX API, you can assign access permissions via modUser::[joinGroup](http://api.modx.com/revolution/2.1/_model_modx_moduser.class.html#%5CmodUser::joinGroup()). Using this method, you can add a user directly to a User Group, and optionally assign a Role.
 
-```
-<pre class="brush: php"><?php
+``` php 
+<?php
 // Get modUser object
 $user = $modx->getObject('modUser', array('username' => $username));
 if( $user ){
@@ -65,7 +65,9 @@ if( $user ){
 ?>
                 
 
-```##  See Also 
+```
+
+##  See Also 
 
 1. [Users](administering-your-site/security/users)
 2. [User Groups](administering-your-site/security/user-groups)

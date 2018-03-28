@@ -28,22 +28,18 @@ lighttpd does not use the same system, or even same idea as Apache does for URL 
   - By default it has a # in front of it. This is a comment symbol. Please remove the # from the line and save the file.
 
 - Next we need to find the location in which to put the friendly URL code. 
-  - So lets search for something that looks like this: ```
-      <pre class="brush: php">
+  - So lets search for something that looks like this: ``` php 
          $SERVER["socket"] == ":80" {
         $HTTP["host"] =~ "yourdomainname.com" {
           server.document-root = "/path/to/your/doc/root"
           server.name = "yourservername"
           
-      
       ```
-  - Directly under this you should add the following code. ```
-      <pre class="brush: php">
+  - Directly under this you should add the following code. ``` php 
       url.rewrite-once = ( "^/(assets|manager|core|connectors)(.*)$" => "/$1/$2",
                                "^/(?!index(?:-ajax)?\.php)(.*)\?(.*)$" => "/index.php?q=$1&$2",
                                "^/(?!index(?:-ajax)?\.php)(.*)$" => "/index.php?q=$1"
                          )
-      
       ```
 
 This does not mean you are done! Lighttpd handles url-rewrites a bit differently. You HAVE to exclude any files or folders you do not want rewritten in the config file. Excluded dirs/files in the example above are (assets|manager|core|connectors). If you wish to add more to these, simple add another | followed by the folder or filename you wish to omit from url rewriting.

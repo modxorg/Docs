@@ -25,8 +25,7 @@ This is probably the single biggest mistake you can do: adding too much logic to
 
 Here's an example of a tpl Chunk that got completely out of hand:
 
-```
-<pre class="brush: php">
+``` php 
 [[+tv.RemovePin:eq=`active`:then=`[[+modx.user.id:memberof=`
 Members`:then=`{address:'[[+tv.country]], [[+pagetitle]]', data:'<div class="googleBubble">
 [[+tv.Socialicons:replace=`||==`:replace=`facebook==<img src="/assets/images/mapof/facebook.png"
@@ -48,8 +47,9 @@ pin please <a href="[[~702]]">create an account</a> or <a href="[[~702]]">login<
 </div>',options:{[[+tv.leadadmin:neq=``:then=`icon: new
 google.maps.MarkerImage('/assets/images/mapof/pin-gold.png')`:else=`icon: new
 google.maps.MarkerImage('/assets/images/mapof/pin-blue.png')`]]}},`]]`]]
+```
 
-```If you are writing stuff like this for your site, _**stop now**_. You will save yourself _hours and hours_ of time if you rethink the problem and move all of that logic into a Snippet or put it somewhere else altogether.
+If you are writing stuff like this for your site, _**stop now**_. You will save yourself _hours and hours_ of time if you rethink the problem and move all of that logic into a Snippet or put it somewhere else altogether.
 
 ### Reasons Why Output Modifiers Might Destroy Your Site 
 
@@ -68,11 +68,11 @@ If you really do need to use them, here is [an excellent article](http://modx.co
 
 Keep your Chunks and Templates _clean_. They should be easy to read and easy to edit.
 
-```
-<pre class="brush: php">
+``` php 
 Dear [[+first_name]], it was nice to see you last [[+day_of_week]]
+```
 
-```See that? Simple. Short. Sweet.
+See that? Simple. Short. Sweet.
 
 ## Good Chunk tpl-keeping Checklist 
 

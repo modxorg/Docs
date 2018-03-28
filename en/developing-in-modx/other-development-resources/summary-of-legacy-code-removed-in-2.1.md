@@ -26,30 +26,30 @@ The following input types were removed:
 Many constants, variables and api methods have been long deprecated, marked for removal in 2.0 or 2.1 and are now finally removed from the MODX Revolution 2.1 codebase.
 
 Item RemovedNotes on Replacement or Potential WorkaroundIN\_PARSER\_MODEcheck context is not mgrIN\_MANAGER\_MODEcheck context is mgrIN\_MANAGER\_MODEcheck context is mgr ```
-
 $_SESSION["mgrValidated"]
+```
 
-```modX->user->isAuthenticated('mgr')```
-
+modX->user->isAuthenticated('mgr')```
 $_SESSION["webValidated"]
+```
 
-```modX->user->isAuthenticated('web')```
-
+modX->user->isAuthenticated('web')```
 $_SESSION["mgrInternalKey"]
+```
 
-```modX->user->get('id') when modX->user->isAuthenticated('mgr')```
-
+modX->user->get('id') when modX->user->isAuthenticated('mgr')```
 $_SESSION["webInternalKey"]
+```
 
-```modX->user->get('id') when modX->user->isAuthenticated('web')```
-
+modX->user->get('id') when modX->user->isAuthenticated('web')```
 $_SESSION["mgrShortname"]
+```
 
-```modX->user->get('username') when modX->user->isAuthenticated('mgr')```
-
+modX->user->get('username') when modX->user->isAuthenticated('mgr')```
 $_SESSION["webShortname"]
+```
 
-```modX->user->get('username') when modX->user->isAuthenticated('web') DBAPI: modX->dbmodX->db->config[modX->getOption()](/xpdo/2.x/class-reference/xpdoobject/configuration-accessors/getoption "getOption")modX->db->connect()modX automatically connects to MODX database. If you're looking to set up another connection, you could instantiate xPDO again.modX->db->disconnect()modX->db->escape($s)modX->quote()modX->db->query($sql)modX->query() or modX->execute($criteria) see manual for PDO querymodX->db->delete($from, $where= "",$fields='')see modX->query()modX->db->select($fields= "\*", $from= "", $where= "", $orderby= "", $limit= "")see modX->query()modX->db->update($fields, $table, $where= "")see modX->query()modX->db->insert($fields, $intotable, $fromfields= "\*", $fromtable= "", $where= "", $limit= "")see modX->query()modX->db->exec($sql)see modX->execute($criteria)modX->db->getInsertId()see modX->lastInsertId()modX->db->getAffectedRows()see modX->getCount() or xPDOCriteria->stmt->rowCount()modX->db->getLastError()see xPDOCriteria->stmt->errorCode or xPDOCriteria->stmt->errorInfomodX->db->getRecordCount($ds)modX->getCount($className, $criteria= null)modX->db->getRow($ds, $mode= 'assoc')see xPDOCriteria->stmt->fetch()modX->db->getColumn($name, $dsq)see xPDOCriteria->stmt->fetchColumn()modX->db->getColumnNames($dsq)see modX->getFields($className) (note: not exactly the same .. gives you column names for a specific class)modX->db->getValue($dsq)see xPDOCriteria->stmt->fetchColumn()modX->db->getXML($dsq)no direct analogmodX->db->getTableMetaData($table)modX->map propertymodX->db->prepareDate($timestamp, $fieldType= 'DATETIME')php to sql conversion of datetypes are handled automatically in the modX model (or a custom xPDO model)modX->db->getHTMLGrid($dsq, $params)no direct analogmodX->db->makeArray($rs= '')see xPDOCriteria->stmt->fetch()modX->getFullTableName()modX->getTableName($className, $includeDb=false) 
+modX->user->get('username') when modX->user->isAuthenticated('web') DBAPI: modX->dbmodX->db->config[modX->getOption()](/xpdo/2.x/class-reference/xpdoobject/configuration-accessors/getoption "getOption")modX->db->connect()modX automatically connects to MODX database. If you're looking to set up another connection, you could instantiate xPDO again.modX->db->disconnect()modX->db->escape($s)modX->quote()modX->db->query($sql)modX->query() or modX->execute($criteria) see manual for PDO querymodX->db->delete($from, $where= "",$fields='')see modX->query()modX->db->select($fields= "\*", $from= "", $where= "", $orderby= "", $limit= "")see modX->query()modX->db->update($fields, $table, $where= "")see modX->query()modX->db->insert($fields, $intotable, $fromfields= "\*", $fromtable= "", $where= "", $limit= "")see modX->query()modX->db->exec($sql)see modX->execute($criteria)modX->db->getInsertId()see modX->lastInsertId()modX->db->getAffectedRows()see modX->getCount() or xPDOCriteria->stmt->rowCount()modX->db->getLastError()see xPDOCriteria->stmt->errorCode or xPDOCriteria->stmt->errorInfomodX->db->getRecordCount($ds)modX->getCount($className, $criteria= null)modX->db->getRow($ds, $mode= 'assoc')see xPDOCriteria->stmt->fetch()modX->db->getColumn($name, $dsq)see xPDOCriteria->stmt->fetchColumn()modX->db->getColumnNames($dsq)see modX->getFields($className) (note: not exactly the same .. gives you column names for a specific class)modX->db->getValue($dsq)see xPDOCriteria->stmt->fetchColumn()modX->db->getXML($dsq)no direct analogmodX->db->getTableMetaData($table)modX->map propertymodX->db->prepareDate($timestamp, $fieldType= 'DATETIME')php to sql conversion of datetypes are handled automatically in the modX model (or a custom xPDO model)modX->db->getHTMLGrid($dsq, $params)no direct analogmodX->db->makeArray($rs= '')see xPDOCriteria->stmt->fetch()modX->getFullTableName()modX->getTableName($className, $includeDb=false) 
 or modX->escape($customTableName)modX->dbConfigmodX->getOption() (NOTE: some of the configuration keys are different, i.e. dbuser = username, dbpass = password, dbase = dbname) modX->putChunk()modX->getChunk()modX->isFrontend()modX->context->get('key') == 'web' or other front-end contextmodX->isBackend()modX->context->get('key') == 'mgr'modX->getSettings()modX->config after $modx->getConfig()modX->getDocumentObject($method, $identifier)not public API method; no replacement (see modRequest->getResource())modX->isMemberOfWebGroup()modX->user->isMember or modUser->isMembermodX->getDocumentmodX->getObject('modResource', $criteria)modX->getDocumentsmodX->getCollection('modResource', $criteria) 
 or modX->getIterator('modResource', $criteria)modX->getAllChildren()modX->getCollection('modResource', $criteria) , $criteria having where condition 'parent' = $idmodX->getActiveChildren()modX->getCollection('modResource', $criteria) , $criteria having where conditions 'parent' = $id, 'published' = 1, 'deleted' = 0modX->getDocumentChildren()as above, modX->getCollection('modResource', $criteria) with specific criteriamodX->getDocumentChildrenTVars()- to get document child resources and their TVs all at once:
 - modResource->getMany('Children') and iterate the children and you can modResource->getTVValue()

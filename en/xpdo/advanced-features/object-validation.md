@@ -27,8 +27,7 @@ Validation can be done either via the XML schema, or during run-time by [xPDOVal
 
 First, let's create our model with this object:
 
-```
-<pre class="brush: php">
+``` php 
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">
@@ -46,11 +45,11 @@ First, let's create our model with this object:
         </validation>
     </object>
 </model>
-
-```From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
-
 ```
-<pre class="brush: php">
+
+From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
+
+``` php 
 $output = '';
 $modx->addPackage('test','/path/to/my/test/model/','test_');
 $obj = $modx->newObject('myTest');
@@ -61,8 +60,9 @@ if ($validator->validate() == false) {
         $output .= 'An error occurred on field "'.$errorMsg['field'].'": '.$errorMsg['message'];
     }
 }
+```
 
-```This will output:
+This will output:
 
 > An error occurred on field "name": Please specify a name.
 
@@ -78,17 +78,16 @@ This can be done a few ways. In the "rule" parameter of the schema, you can spec
 
 The function is passed two parameters, the first of which is the value of the column in question, and the second an array of the other attributes on the Rule field in the schema. For example, a model with a rule as such:
 
-```
-<pre class="brush: php">
+``` php 
 <rule field="number" name="callable2"
       type="callable" rule="myCallable"
       min="10" message="Value is too low. Must be 10 or more."
 />
-
-```Called with the code:
-
 ```
-<pre class="brush: php">
+
+Called with the code:
+
+``` php 
 function myCallable($value,$parameters) {
     return $value < $parameters['min'];
 }
@@ -100,8 +99,9 @@ if ($validator->validate() == false) {
         $o .= 'An error occurred on field "'.$errorMsg['field'].'": '.$errorMsg['message'].'<br />';
     }
 }
+```
 
-```Will return:
+Will return:
 
 > An error occurred on field "number": Callable failed.
 
@@ -111,16 +111,15 @@ You can also call class methods as well; if you have class A with method B, you 
 
 A preg\_match rule is simply a regular expression rule that must pass on a field in order for the object to validate. An example rule in the schema is like such - this one checks to see if the field contains the string 'php':
 
-```
-<pre class="brush: php">
+``` php 
 <rule field="name" name="phpMatch"
       type="preg_match" rule="/php/i"
       message="Does not contain the string 'php'." />
-
-```And in the PHP:
-
 ```
-<pre class="brush: php">
+
+And in the PHP:
+
+``` php 
 $obj->set('name','test');
 $validator = $obj->getValidator();
 if ($validator->validate() == false) {
@@ -129,8 +128,9 @@ if ($validator->validate() == false) {
         $o .= 'An error occurred on field "'.$errorMsg['field'].'": '.$errorMsg['message'].'<br />';
     }
 }
+```
 
-```This outputs:
+This outputs:
 
 > An error occurred on field "name": Does not contain the string 'php'.
 

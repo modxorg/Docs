@@ -12,20 +12,20 @@ Replace a key-value pair in in a cache provider.
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#replace>
 
-```
-<pre class="brush: php">
+``` php 
 boolean replace (string $key, mixed &$var, [integer $lifetime = 0], [array $options = array()])
+```
 
-```## Example
+## Example
 
 Replace a key with a new value, to expire in 2 hours:
 
-```
-<pre class="brush: php">
+``` php 
 $str = 'A new value for the cache.';
 $xpdo->cacheManager->replace('mystuff',$str,7200);
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

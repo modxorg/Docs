@@ -27,19 +27,19 @@ First off, [download MODX](http://modx.com/download/) and extract the files to y
 
 Next, edit the XML file and set the appropriate database information, MODX paths, and other configuration parameters, and then in your command line prompt, browse to the MODX setup/ directory, and type:
 
-```
-<pre class="brush: php">
+``` php 
 php ./index.php --installmode=new
+```
 
-```MODX will proceed to install, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
+MODX will proceed to install, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
 
 Note : if your core folder is in a "non-standard" location, you might want to use :
 
-```
-<pre class="brush: php">
+``` php 
 --core_path=/path/to/core/
+```
 
-```## Doing a Basic Upgrade MODX via CLI
+## Doing a Basic Upgrade MODX via CLI
 
 Follow the same steps as new installations, but this time in your XML file you need only specify the following attributes:
 
@@ -50,11 +50,11 @@ Follow the same steps as new installations, but this time in your XML file you n
 
 And any other attributes you would like to change during the upgrade. There is an example upgrade xml file named "config.dist.upgrade.xml". Then, once you are ready, browse to the MODX setup directory, and type:
 
-```
-<pre class="brush: php">
+``` php 
 php ./index.php --installmode=upgrade
+```
 
-```This will upgrade your MODX installation, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
+This will upgrade your MODX installation, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
 
 ## Doing an Advanced Upgrade MODX via CLI
 
@@ -62,11 +62,11 @@ Follow the same steps as basic upgrade, but this time in your XML file you need 
 
 Then, once you are ready, browse to the MODX setup directory, and type:
 
-```
-<pre class="brush: php">
+``` php 
 php ./index.php --installmode=upgrade-advanced
+```
 
-```This will upgrade your MODX installation, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
+This will upgrade your MODX installation, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
 
 ## Using a Helper Script
 

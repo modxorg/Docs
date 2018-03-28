@@ -22,8 +22,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/developing-rest-servers"
 
  First, create a `rest/index.php` file which looks something like this:
 
- ```
-<pre class="brush: plain">
+ ``` plain 
+
 <?php
 // Boot up MODX
 require_once dirname(dirname(__FILE__)) . '/config.core.php';
@@ -51,12 +51,14 @@ if (!$rest->checkPermissions()) {
 // Run the request
 $rest->process();
 
-``` With that in place, next you'll need to make sure the all requests to your `/rest/` folder are actually handled by the REST server. To do that, add the following to your `.htaccess` (or the equivalent on nginx or other systems) in the root of your site:
+```
+
+ With that in place, next you'll need to make sure the all requests to your `/rest/` folder are actually handled by the REST server. To do that, add the following to your `.htaccess` (or the equivalent on nginx or other systems) in the root of your site:
 
 #### Apache:
 
- ```
-<pre class="brush: plain">
+ ``` plain 
+
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-s
@@ -64,10 +66,12 @@ RewriteRule ^(.*)$ rest/index.php?_rest=$1 [QSA,NC,L]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^(.*)$ rest/index.php [QSA,NC,L]
 
-```#### NGINX:
+```
 
- ```
-<pre class="brush: plain">
+#### NGINX:
+
+ ``` plain 
+
 location /rest/ {
     try_files $uri @modx_rest;
 }
@@ -75,10 +79,12 @@ location @modx_rest {
     rewrite ^/rest/(.*)$ /rest/index.php?_rest=$1&$args last;
 }
 
-``` If you were to open /rest/foobar in your browser now, you should get an error that indicates your API is working, yay!
+```
 
- ```
-<pre class="brush: plain">
+ If you were to open /rest/foobar in your browser now, you should get an error that indicates your API is working, yay!
+
+ ``` plain 
+
 {
   success: false,
   message: "Method not allowed",
@@ -86,7 +92,9 @@ location @modx_rest {
   code: 405
 }
 
-``` Now we can get started with the actual API building!
+```
+
+ Now we can get started with the actual API building!
 
 ## 2. Building API Endpoints 
 
@@ -102,20 +110,22 @@ location @modx_rest {
 
  To create your Items endpoint , you will need to create the Items controller. Based on the configuration we passed to the modRestService earlier, and the defaults, each controller needs to start with MyController, be placed in a `/rest/Controllers/` directory and the file must match the endpoint name suffixed with `.php`. So create a new file `/rest/Controllers/Items.php`. Give it the following contents:
 
- ```
-<pre class="brush: plain">
+ ``` plain 
+
 class MyControllerItems extends modRestController {
     public $classKey = 'ToDoItem';
     public $defaultSortField = 'sortorder';
     public $defaultSortDirection = 'ASC';
 }
 
-``` Assuming ToDoItem is the name of a valid xPDOObject derivative, and you loaded it with $modx->addPackage() somewhere (for example in your Service class that we called in the index.php), you now have a fully functional RESTful API for your ToDoItem objects. Just request /rest/items and it should return your ToDoItems in pretty JSON.
+```
+
+ Assuming ToDoItem is the name of a valid xPDOObject derivative, and you loaded it with $modx->addPackage() somewhere (for example in your Service class that we called in the index.php), you now have a fully functional RESTful API for your ToDoItem objects. Just request /rest/items and it should return your ToDoItems in pretty JSON.
 
  If you don't have a package ready, you can also set the classKey property to "modResource" and the defaultSortField to "id" to set up an API for all resources.
 
- ```
-<pre class="brush: plain">
+ ``` plain 
+
 {
   results: [
     {
@@ -131,7 +141,9 @@ class MyControllerItems extends modRestController {
   total: 1
 }
 
-``` It's like magic! But you know what's even better? It is a full blown API now... if you go back to the actions we mentioned earlier, they will all work out of the box. `/rest/items/1` will return only the to do item with ID 1, for example. To test the POST, PUT and DELETE, you will probably need to use something like [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm)[](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm) or curl to send the proper requests but they should be functional now too.
+```
+
+ It's like magic! But you know what's even better? It is a full blown API now... if you go back to the actions we mentioned earlier, they will all work out of the box. `/rest/items/1` will return only the to do item with ID 1, for example. To test the POST, PUT and DELETE, you will probably need to use something like [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm)[](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm) or curl to send the proper requests but they should be functional now too.
 
  Now that you have your basic API running, it's time to start doing some real development and making it work the way you want it to.
 

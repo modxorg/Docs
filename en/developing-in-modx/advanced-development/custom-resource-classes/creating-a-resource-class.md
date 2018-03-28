@@ -25,13 +25,15 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
  If you are planning on versioning this code in Git, your paths may be different, but ultimately you want your files to end up inside the `core/components/your_component/` directory. So for this tutorial our package is named "copyrightedresource", so we will create the schema file `core/components/copyrightedresource/model/schema/copyrightedresource.mysql.schema.xml`:
 
- ```
-<pre class="brush: php"><?xml version="1.0" encoding="UTF-8"?>
+ ``` php 
+<?xml version="1.0" encoding="UTF-8"?>
 <model package="copyrightedresource" version="1.0" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
     <object class="CopyrightedResource" extends="modResource" />
 </model>
 
-``` Note that the "package" attribute in the XML should reflect the exact name of our package: "copyrightedresource".
+```
+
+ Note that the "package" attribute in the XML should reflect the exact name of our package: "copyrightedresource".
 
 ##  Generating your Class Files 
 
@@ -47,12 +49,14 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
  The `copyrightedresource.class.php` file should look like this:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 class CopyrightedResource extends modResource {
 }
 
-``` If the class files did not get created, the sample script should help you identify errors (usually permissions).
+```
+
+ If the class files did not get created, the sample script should help you identify errors (usually permissions).
 
 ##  Customizing your PHP class 
 
@@ -63,8 +67,8 @@ class CopyrightedResource extends modResource {
 
  Now we want to force the class\_key of the resource, and ensure that it shows up in the Resource Create context menu (which we'll configure later on). Edit the core/components/copyrightedresource/model/copyrightedresource/copyrightedresource.class.php file to have this code:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 class CopyrightedResource extends modResource {
     public $showInContextMenu = true;
     function __construct(xPDO & $xpdo) {
@@ -73,7 +77,9 @@ class CopyrightedResource extends modResource {
     }
 }
 
-``` This forces the class\_key to "CopyrightedResource", which is our class, and ensures our Resource class shows up in the left-hand tree's context menu. This is how we govern the value set in the modx\_site\_content "class\_key" column.
+```
+
+ This forces the class\_key to "CopyrightedResource", which is our class, and ensures our Resource class shows up in the left-hand tree's context menu. This is how we govern the value set in the modx\_site\_content "class\_key" column.
 
  You should **never** add fields to the modResource table (yes, some Extras have done this, but it's not the proper way). Rather, create a separate related table to join into, or use Revolution 2.2.1+'s new properties field to store extra data. 
 
@@ -86,14 +92,16 @@ class CopyrightedResource extends modResource {
 
  If you look in the modResource class file, you'll see at the top a PHP Interface that defines what methods **must** be defined for a CRC to work:
 
- ```
-<pre class="brush: php">interface modResourceInterface {
+ ``` php 
+interface modResourceInterface {
     public static function getControllerPath(xPDO &$modx);
     public function getContextMenuText();
     public function getResourceTypeName();
 }
 
-``` We'll now go into detail on each of these methods and how they implement our CRC.
+```
+
+ We'll now go into detail on each of these methods and how they implement our CRC.
 
 ###  Create a Namespace 
 
@@ -101,12 +109,14 @@ class CopyrightedResource extends modResource {
 
  Log into the MODX manager and head to **System -> Namespaces**. (gear icon at upper right)
 
- ```
-<pre class="brush: php">Namespace: copyrightedresource
+ ``` php 
+Namespace: copyrightedresource
 Core Path: {core_path}components/copyrightedresource/
 Assets Path: {assets_path}components/copyrightedresource/
 
-``` ![](/download/attachments/36634952/create_namespace.png?version=1&modificationDate=1360974139000)
+```
+
+ ![](/download/attachments/36634952/create_namespace.png?version=1&modificationDate=1360974139000)
 
  Note the special placeholders you can use to refer to your directories.
 
@@ -114,12 +124,14 @@ Assets Path: {assets_path}components/copyrightedresource/
 
  Once you've added a namespace, we're going to add the getControllerPath method to our class by adding this to your `copyrightedresource.class.php` class:
 
- ```
-<pre class="brush: php">public static function getControllerPath(xPDO &$modx) {
+ ``` php 
+public static function getControllerPath(xPDO &$modx) {
     return $modx->getOption('copyrightedresource.core_path',null,$modx->getOption('core_path').'components/copyrightedresource/').'controllers/';
 }
 
-``` This method tells MODX to look for our manager controllers in our custom directory, thereby overriding the standard default controllers. The line first checks for a custom System Setting that shows where our CRC core directory path is (we add this setting to make our life easier when we are developing the code so we can keep it in a location that is non-standard so that we may version it more easily). If the System Setting has not been set, the code will look for our CRC path in 'core/components/copyrightedresource/'. It looks in the "controllers/" subdirectory.
+```
+
+ This method tells MODX to look for our manager controllers in our custom directory, thereby overriding the standard default controllers. The line first checks for a custom System Setting that shows where our CRC core directory path is (we add this setting to make our life easier when we are developing the code so we can keep it in a location that is non-standard so that we may version it more easily). If the System Setting has not been set, the code will look for our CRC path in 'core/components/copyrightedresource/'. It looks in the "controllers/" subdirectory.
 
  Great! MODX will now look for our controllers in that directory. We'll get into creating those in Step 2 of the tutorial.
 
@@ -127,8 +139,8 @@ Assets Path: {assets_path}components/copyrightedresource/
 
  Go ahead and add this method to your class:
 
- ```
-<pre class="brush: php">public function getContextMenuText() {
+ ``` php 
+public function getContextMenuText() {
   $this->xpdo->lexicon->load('copyrightedresource:default');
   return array(
     'text_create' => $this->xpdo->lexicon('copyrightedresource'),
@@ -136,52 +148,62 @@ Assets Path: {assets_path}components/copyrightedresource/
   );
 }
 
-``` This returns two translated strings that MODX will insert into the "Create" context menu when right-clicking on a node in the Resource tab on the left-hand tree.
+```
+
+ This returns two translated strings that MODX will insert into the "Create" context menu when right-clicking on a node in the Resource tab on the left-hand tree.
 
  You will need to create the lexicon folders and file in core/components/copyrightedresource/lexicon/en/default.inc.php with the language strings, or more simply, upload the core/components/copyrightedresource/lexicon/ folder from the [github files](https://github.com/modxcms/CopyrightedResource).
 
  Just to be clear, you don't necessarily _need_ to use the MODX lexicon here. You could return the text like so:
 
- ```
-<pre class="brush: php">public function getContextMenuText() {
+ ``` php 
+public function getContextMenuText() {
   return array(
     'text_create' => 'Copyrighted Page',
     'text_create_here' => 'Create a Copyrighted Page Here',
   );
 }
 
-``` And that'd work fine. But MODX allows you to load a Lexicon Topic so that you can translate the strings for your worldwide users.
+```
+
+ And that'd work fine. But MODX allows you to load a Lexicon Topic so that you can translate the strings for your worldwide users.
 
 ###  Adding the getResourceTypeName Method 
 
  This final method tells MODX what the translated "name" of your CRC is. We probably don't want to call it "CopyrightedResource", so we're going to plop in this method:
 
- ```
-<pre class="brush: php">public function getResourceTypeName() {
+ ``` php 
+public function getResourceTypeName() {
   $this->xpdo->lexicon->load('copyrightedresource:default');
   return $this->xpdo->lexicon('copyrightedresource');
 }
 
-``` Again, this could just return a string:
+```
 
- ```
-<pre class="brush: php">public function getResourceTypeName() {
+ Again, this could just return a string:
+
+ ``` php 
+public function getResourceTypeName() {
   return 'Copyrighted Page';
 }
 
-``` This tells MODX to call it a "Copyrighted Page", rather than its class name, when dealing with it in the manager.
+```
+
+ This tells MODX to call it a "Copyrighted Page", rather than its class name, when dealing with it in the manager.
 
 ##  Adding the Class to Extension Packages 
 
  To load the CRC properly, you'll need to add it to the Extension Packages. Why? Well, MODX needs to load your CRC when it loads, so that it has a "library" of sorts of all the loaded Resource Classes available to it. MODX 2.2 provides you with an assistance method to add your package to the Extension Packages dataset:
 
- ```
-<pre class="brush: php">$modx->addExtensionPackage('copyrightedresource','/path/to/copyrightedresource/model/');
+ ``` php 
+$modx->addExtensionPackage('copyrightedresource','/path/to/copyrightedresource/model/');
 
-``` Run this code once and MODX will automatically add it to the Extension Packages. Here is another sample script for helping you to do this:
+```
 
- ```
-<pre class="brush: php"><?php
+ Run this code once and MODX will automatically add it to the Extension Packages. Here is another sample script for helping you to do this:
+
+ ``` php 
+<?php
 /**
  * Use this script to add your extension package to MODX's "radar".
  * This should only need to be done once.
@@ -217,12 +239,16 @@ $modx->addExtensionPackage($package_name,"[[++core_path]]components/$package_nam
 print 'Success!';
 ?>
 
-``` To test whether or not this worked, log into the MODX manager and search the System Settings for the "extension\_packages" key. You should see something like this:
+```
 
- ```
-<pre class="brush: php">[{"copyrightedresource":{"path":"[[++core_path]]components/copyrightedresource/model/"}}]
+ To test whether or not this worked, log into the MODX manager and search the System Settings for the "extension\_packages" key. You should see something like this:
 
-``` Note that you can use core\_path placeholder in this path: this offers way to ensure that your path will work should you ever migrate your MODX site to a different server.
+ ``` php 
+[{"copyrightedresource":{"path":"[[++core_path]]components/copyrightedresource/model/"}}]
+
+```
+
+ Note that you can use core\_path placeholder in this path: this offers way to ensure that your path will work should you ever migrate your MODX site to a different server.
 
  There's also a removeExtensionPackage as well for removing the package from MODX.
 

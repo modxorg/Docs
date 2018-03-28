@@ -14,8 +14,8 @@ If you note, we added in the 'mysql' postfix to the filename, since xPDO will ev
 
 Our current XML file looks like this:
 
-```
-<pre class="brush: php"><?xml version="1.0" encoding="UTF-8"?>
+``` php 
+<?xml version="1.0" encoding="UTF-8"?>
 <model package="storefinder" 
    baseClass="xPDOObject" 
    platform="mysql" 
@@ -25,7 +25,9 @@ Our current XML file looks like this:
    phpdoc-subpackage="model" 
    version="1.1">
 
-```First we'll tell the browser and parser that this is XML code with a standard XML header. Next, we're going to create a "model" tag, and put some attributes into it. The "model" tag is a representation of the database itself. The attributes are:
+```
+
+First we'll tell the browser and parser that this is XML code with a standard XML header. Next, we're going to create a "model" tag, and put some attributes into it. The "model" tag is a representation of the database itself. The attributes are:
 
 - **package** - The name of the xPDO package (note this is different than a "transport package", a Revolution term). This is how xPDO separates different models and manages them. _Note: in the XML, the package name must be all lowercase._
 - **baseClass** - This is the base class from which all your class definitions will extend. Unless you're planning on creating a custom xPDOObject extension, it's best to leave it at the default.
@@ -42,10 +44,12 @@ Our current XML file looks like this:
 
 Great! Now we've got our model definition. Let's add a table tag as the next line.
 
-```
-<pre class="brush: php"><object class="sfStore" table="stores" extends="xPDOSimpleObject">
+``` php 
+<object class="sfStore" table="stores" extends="xPDOSimpleObject">
 
-```"Object" is our representation of a table, which will generate into an xPDOObject class when we're through. There are some attributes to note here:
+```
+
+"Object" is our representation of a table, which will generate into an xPDOObject class when we're through. There are some attributes to note here:
 
 - **class** — This is the name of the class we want to be generated from the table. Here, we'll use "sfStore". Note that instead of just "Store", we prefixed it with "sf" to prevent collisions with any other packages we might install that might also have Store tables.
 - **table** — This should point to the actual database table name, minus the tablePrefix we specified for the package.
@@ -55,8 +59,8 @@ You'll see here that this table extends "xPDOSimpleObject", rather than xPDOObje
 
 Now that we've got a table definition for our stores table, let's add some field definitions to it:
 
-```
-<pre class="brush: php"><field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
+``` php 
+<field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
 <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 <field key="city" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 <field key="state" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -66,7 +70,9 @@ Now that we've got a table definition for our stores table, let's add some field
 <field key="fax" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
 <field key="active" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
 
-```As you can see here, each column in our table has a field definition tag. From there, we have attribute properties for each field. Most of these are optional, depending on the database type of the column. Some of those attribute properties are:
+```
+
+As you can see here, each column in our table has a field definition tag. From there, we have attribute properties for each field. Most of these are optional, depending on the database type of the column. Some of those attribute properties are:
 
 - **key** — The key name of the column.
 - **dbtype** — The DB type - such as varchar, int, text, tinyint, etc.
@@ -82,31 +88,37 @@ Now that we've got a table definition for our stores table, let's add some field
 
 Next, we'll define the indexes we want our table to have:
 
-```
-<pre class="brush: php"><index alias="name" name="name" primary="false" unique="false" type="BTREE">
+``` php 
+<index alias="name" name="name" primary="false" unique="false" type="BTREE">
     <column key="name" length="" collation="A" null="false" />
 </index>
 <index alias="zip" name="zip" primary="false" unique="false" type="BTREE">
     <column key="zip" length="" collation="A" null="false" />
 </index>
 
-```**The alias element** 
+```
+
+**The alias element** 
  New in xPDO 2.2 is the ability to define field aliases. This can be useful when changing table structures to maintain backwards compatibility, or for defining useful aliases for the object API without having to modify table structure. The syntax is simple with two attributes, key (the alias) and field (the target field definition).
 
 Now let's define an alias for the zip column called postalcode so the value can be accessed by either key:
 
-```
-<pre class="brush: php"><alias key="postalcode" field="zip" />
-
-```And finally, we'll finish the table definition by closing the object tag:
+``` php 
+<alias key="postalcode" field="zip" />
 
 ```
-<pre class="brush: php"></object>
 
-```Now let's add an "sfOwner" class, which will represent any owners we have:
+And finally, we'll finish the table definition by closing the object tag:
+
+``` php 
+</object>
 
 ```
-<pre class="brush: php"><object class="sfOwner" table="owners" extends="xPDOSimpleObject">
+
+Now let's add an "sfOwner" class, which will represent any owners we have:
+
+``` php 
+<object class="sfOwner" table="owners" extends="xPDOSimpleObject">
   <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
   <field key="email" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 
@@ -115,10 +127,12 @@ Now let's define an alias for the zip column called postalcode so the value can 
   </index>
 </object>
 
-```And since we want our stores to possibly have multiple owners, let's add a sfStoreOwner class, that will bridge the many-to-many relationship:
-
 ```
-<pre class="brush: php"><object class="sfStoreOwner" table="store_owners" extends="xPDOSimpleObject">
+
+And since we want our stores to possibly have multiple owners, let's add a sfStoreOwner class, that will bridge the many-to-many relationship:
+
+``` php 
+<object class="sfStoreOwner" table="store_owners" extends="xPDOSimpleObject">
   <field key="store" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
   <field key="owner" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
 
@@ -130,9 +144,13 @@ Now let's define an alias for the zip column called postalcode so the value can 
   </index>
 </object>
 
-```Let's close the model definition:
+```
+
+Let's close the model definition:
+
+``` php 
+</model>
 
 ```
-<pre class="brush: php"></model>
 
-```We have a completed XML schema for our model. Now we'll need to [define relationships for that schema](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships").
+We have a completed XML schema for our model. Now we'll need to [define relationships for that schema](/xpdo/2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships").

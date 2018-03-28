@@ -12,11 +12,13 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendForward()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendForward())
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 void sendForward (integer $id, [string|array $options = null])
 
-``` $id is a Resource ID (you cannot sendForward to an URL - if you need to pass some value, use modX::setPlaceholder and call that on the target resource).
+```
+
+ $id is a Resource ID (you cannot sendForward to an URL - if you need to pass some value, use modX::setPlaceholder and call that on the target resource).
 
  $options is assumed to be a proper HTTP response code when it is a string, eg "HTTP/1.1 301 Moved Permanently". If it's an array, you can use the following options:
 
@@ -27,11 +29,13 @@ void sendForward (integer $id, [string|array $options = null])
 
  Send the user to Resource ID 234 without actually changing the URL.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $modx->sendForward(234);
 
-```## See Also
+```
+
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.makeUrl](developing-in-modx/other-development-resources/class-reference/modx/modx.makeurl "modX.makeUrl")

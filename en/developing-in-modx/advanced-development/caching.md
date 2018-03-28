@@ -51,19 +51,23 @@ _old_uri: "2.x/developing-in-modx/advanced-development/caching"
 
  To refresh any of the core MODX cache partitions, use the `modCacheManager->refresh()` method. The minimum call has no parameters and will refresh all core cache partitions.
 
- ```
-<pre class="brush: php">$modx->cacheManager->refresh();
+ ``` php 
+$modx->cacheManager->refresh();
 
-``` Alternatively, you can define a `$providers` array with partition `key => $partitionOptions` elements.
+```
 
- ```
-<pre class="brush: php">// refresh the web and web2 context_settings only 
+ Alternatively, you can define a `$providers` array with partition `key => $partitionOptions` elements.
+
+ ``` php 
+// refresh the web and web2 context_settings only 
 
 $modx - > cacheManager - > refresh(array(
     'context_settings' => array('contexts' => array('web', 'web2'))
     );
 
-``` The second parameter, `$results`, is passed by reference and will contain the results of each of the cache partitions. Depending on the partition, this can be a boolean or an array with more information from the result of refreshing the specific partition. The function itself returns a boolean indicating if any of the partitions returned a boolean false.
+```
+
+ The second parameter, `$results`, is passed by reference and will contain the results of each of the cache partitions. Depending on the partition, this can be a boolean or an array with more information from the result of refreshing the specific partition. The function itself returns a boolean indicating if any of the partitions returned a boolean false.
 
 ## Programmatic (Custom) Caching
 
@@ -88,17 +92,19 @@ $modx - > cacheManager - > refresh(array(
 
 ### Example 1: Simple Setting & Getting
 
- ```
-<pre class="brush: php">$str = 'My test cached data.';
+ ``` php 
+$str = 'My test cached data.';
 // Writes the data to the default cache partition with an expiry time of 2 hours.
 $modx->cacheManager->set('testdata', $str, 7200);
 // Gets the data from cache again. Returns null if cache is not available or expired.
 $str = $modx->cacheManager->get('testdata');
 
-```### Example 2: Setting & Getting to a custom partition
+```
 
- ```
-<pre class="brush: php">$str = 'My test cached data.';
+### Example 2: Setting & Getting to a custom partition
+
+ ``` php 
+$str = 'My test cached data.';
 $options = array(
   xPDO::OPT_CACHE_KEY => 'mypartition',
 );
@@ -107,12 +113,14 @@ $modx->cacheManager->set('testdata', $str, 7200, $options);
 // Gets the data from cache again. Returns null if cache is not available or expired.
 $str = $modx->cacheManager->get('testdata', $options);
 
-```## Note on Revolution 2.0
+```
+
+## Note on Revolution 2.0
 
  MODX Revolution 2.0 had a different caching system with different partitions. To clear the cache in 2.0, you would use the clearCache() method that has been deprecated since 2.1. It's better to upgrade to the latest version than to continue using 2.0.
 
- ```
-<pre class="brush: php">// clear all the usual stuff by default (all files with the extension .cache.php
+ ``` php 
+// clear all the usual stuff by default (all files with the extension .cache.php
 // in the cachePath + all object caches)
 $modx->cacheManager->clearCache();
 // clear only cache files with extension .php or .log in the web/ custom/

@@ -12,23 +12,23 @@ Sets a SQL alias for the table represented by the main class.
 
 API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::setClassAlias()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::setClassAlias())
 
-```
-<pre class="brush: php">
+``` php 
 xPDOQuery setClassAlias ([string $alias = ''])
+```
 
-```## Example
+## Example
 
 Grab all OtherBox objects, but set the alias to 'Box' for easier reading.
 
-```
-<pre class="brush: php">
+``` php 
 $query = $xpdo->newQuery('OtherBox');
 $query->setClassAlias('Box');
 $query->where(array(
    'Box.name' => 'RoundBox',
 ));
 $otherBoxes = $xpdo->getCollection('OtherBox',$query);
+```
 
-```## See Also
+## See Also
 
 - [xPDOQuery](/xpdo/2.x/class-reference/xpdoquery "xPDOQuery")

@@ -37,8 +37,7 @@ cPanel will make the necessary changes automatically when you create a new sub d
 
 Now we need to do some Apache work. (If you're not using Apache, you can at least follow the same idea and customize it to your server.) Go to Apache's httpd.conf file, and add these lines, changing where necessary for your domain name:
 
-```
-<pre class="brush: php">
+``` php 
 NameVirtualHost dev.modxcms.com
 <VirtualHost dev.modxcms.com>
   ServerAdmin dev@modxcms.com
@@ -47,8 +46,9 @@ NameVirtualHost dev.modxcms.com
   ErrorLog logs/devmodxcms-error_log
   TransferLog logs/devmodxcms-access_log
 </VirtualHost>
+```
 
-```Some Apache installs prefer you to put the IP address of the server in the VirtualHost and NameVirtualHost parameters - this is fine; the important field is the ServerName.
+Some Apache installs prefer you to put the IP address of the server in the VirtualHost and NameVirtualHost parameters - this is fine; the important field is the ServerName.
 
 Obviously, if you're creating a different subdomain than dev.modxcms.com, you'd want to change these values.
 
@@ -72,37 +72,37 @@ Now, you'll need to edit them.
 
 Edit index.php, and find this line (near the end):
 
-```
-<pre class="brush: php">
+``` php 
 $modx->initialize('web');
+```
 
-```Change 'web' to 'dev'. Save the file and close.
+Change 'web' to 'dev'. Save the file and close.
 
 #### .htaccess
 
 You'll only need to edit one line here (and maybe not at all). Find this line (near the top):
 
-```
-<pre class="brush: php">
+``` php 
 RewriteBase /
+```
 
-```Make sure that's set to /, not anything else. It should match the **base\_url** context setting you set up earlier.
+Make sure that's set to /, not anything else. It should match the **base\_url** context setting you set up earlier.
 
 #### config.core.php
 
 What is really important here is to make sure this line points to your MODX core folder:
 
-```
-<pre class="brush: php">
+``` php 
  define('MODX_CORE_PATH', dirname(__FILE__) . '/core/');
-
-```If the main domain is "up one level" on the filesystem, you should be able to use the following:
-
 ```
-<pre class="brush: php">
- define('MODX_CORE_PATH', dirname(dirname(__FILE__)) . '/core/');
 
-```## Final Steps
+If the main domain is "up one level" on the filesystem, you should be able to use the following:
+
+``` php 
+ define('MODX_CORE_PATH', dirname(dirname(__FILE__)) . '/core/');
+```
+
+## Final Steps
 
 Clear your site cache again, refresh the Resource tree, and click 'Preview' on your "Dev Home" document. You should now be showing the page at the following URL:
 

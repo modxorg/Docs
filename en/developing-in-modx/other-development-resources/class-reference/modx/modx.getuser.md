@@ -12,33 +12,39 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getUser())
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 modUser getUser ([string $contextKey = ''])
 
-```## Example
+```
+
+## Example
 
  Get the current auth'ed user and print out its username.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $user = $modx->getUser();
 echo $user->get('username');
 
-``` Get the user's email address (stored in their profile):
+```
 
- ```
-<pre class="brush: php">
+ Get the user's email address (stored in their profile):
+
+ ``` php 
+
 $user = $modx->getUser();
 if (!$user) return '';
 $profile = $user->getOne('Profile');
 if (!$profile) return '';
 print $profile->get('email');
 
-``` Get an extended field from the user.
+```
 
- ```
-<pre class="brush: php">
+ Get an extended field from the user.
+
+ ``` php 
+
 $user = $modx->getUser();
 if (!$user) return '';
 $profile = $user->getOne('Profile');
@@ -46,7 +52,9 @@ if (!$profile) return '';
 $extended = $profile->get('extended');
 print (isset($extended['custom_user_field'])) ? $extended['custom_user_field'] : '';
 
-```## See Also
+```
+
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modx.getAuthenticatedUser](developing-in-modx/other-development-resources/class-reference/modx/modx.getauthenticateduser)

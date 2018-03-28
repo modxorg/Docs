@@ -30,8 +30,8 @@ _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 
 - Do not put parenthesis next to keywords. Put a space between.
 - Do put parenthesis next to function names.
-- Do not use parenthesis in return statements when it's not necessary. Example:```
-  <pre class="brush: php">if ($test) {
+- Do not use parenthesis in return statements when it's not necessary. Example:``` php 
+  if ($test) {
   }
   while ($test == $other) {
   }
@@ -45,8 +45,8 @@ _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 
 - All ''core'' classnames, unless stated otherwise for special conditions, will be prefixed with the "mod" prefix: ie, modChunk, modTemplate, etc.
 - All method names will be camelCase and will start with a lowercase letter.
-- All private methods and variables must be prefixed with the underscore \_ character.```
-  <pre class="brush: php">class modFactor {
+- All private methods and variables must be prefixed with the underscore \_ character.``` php 
+  class modFactor {
       public $publicVar;
       private $_privateVar;
       private function _privateFunc() { }
@@ -64,8 +64,8 @@ Note these are not function arguments.
 
 ## Function Arguments and Class Variables
 
-- The first letter is lowercase, rest are camelCase. Example:```
-  <pre class="brush: php">class modFactor {
+- The first letter is lowercase, rest are camelCase. Example:``` php 
+  class modFactor {
       public function testFunc($testVar, array &$anotherTest = array()) {
           $this->_privateVar = $testVar;
           $local_variable =& $anotherTest;
@@ -79,8 +79,8 @@ Note these are not function arguments.
 - Array index names use the underscore \_, not the dash as their separator. This prevents errors with magic\_quotes.
 - Array index names are always lowercase. Spaces are represented by an underscore.
 - Array index names are always encapsulated with single quotes. 
-   Example:```
-  <pre class="brush: php">$_lang['chunk_create_text'] = 'Test';
+   Example:``` php 
+  $_lang['chunk_create_text'] = 'Test';
   
   ```
 
@@ -97,8 +97,10 @@ Note these are not function arguments.
 
 - Lexicon strings for Components need to be prefixed:
 
-```
-<pre class="brush: php">$_lang['mycomponent.welcome_message'] = 'Welcome!';
+``` php 
+$_lang['mycomponent.welcome_message'] = 'Welcome!';
 
-```- Always prefix class names; eg: 'finBank', 'finTransaction', etc.
+```
+
+- Always prefix class names; eg: 'finBank', 'finTransaction', etc.
 - Always prefix [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'

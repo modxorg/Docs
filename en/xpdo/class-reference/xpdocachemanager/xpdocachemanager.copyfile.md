@@ -19,19 +19,19 @@ Copies a file from a source file to a target directory. Takes the following opti
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#copyFile>
 
-```
-<pre class="brush: php">
+``` php 
 boolean|array copyFile (string $source, string $target, [array $options = array()])
+```
 
-```## Example
+## Example
 
 Copy a file:
 
-```
-<pre class="brush: php">
+``` php 
 $xpdo->cacheManager->copyFile('/my/path/to/file.txt','/my/new/path/dir/');
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

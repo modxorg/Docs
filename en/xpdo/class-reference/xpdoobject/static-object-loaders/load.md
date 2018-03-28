@@ -12,18 +12,17 @@ This function is responsible for loading a single object instance from a **row**
 
 API Doc: <http://api.modxcms.com/xpdo/om/xPDOObject.html#load>
 
-```
-<pre class="brush: php">
+``` php 
 static object|null load(
    xPDO &$xpdo,
    string $className,
    mixed $criteria,
    [boolean|integer $cacheFlag = true]
 )
-
-```## Example
-
 ```
-<pre class="brush: php">
+
+## Example
+
+``` php 
 
 ```

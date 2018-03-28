@@ -18,24 +18,30 @@ _old_uri: "2.x/case-studies-and-tutorials/managing-resources-and-elements-via-sv
 
  For Elements, all you need is a simple "include" [snippet](developing-in-modx/basic-development/snippets "Snippets"). The code:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 if (!file_exists($file)) return '';
 $o = include $file;
 return $o;
 
-``` You can then call it like so in your Static Resources:
+```
 
- ```
-<pre class="brush: php">
+ You can then call it like so in your Static Resources:
+
+ ``` php 
+
 [[include? &file=`/path/to/my/svn/checkout/snippet.php`]]
 
-``` And you're done. You can also use tags within the 'file' parameter, such as this:
+```
 
- ```
-<pre class="brush: php">
+ And you're done. You can also use tags within the 'file' parameter, such as this:
+
+ ``` php 
+
 [[include? &file=`[[++assets_path]]/js/myscript.js`]]
 
-```## Conclusion
+```
+
+## Conclusion
 
  This allows you to easily manage content via SVN. It can be achieved with [Templates](making-sites-with-modx/structuring-your-site/templates "Templates") and [TVs](making-sites-with-modx/customizing-content/template-variables "Template Variables") as well; just plop the include snippet wherever you need filesystem-based files.

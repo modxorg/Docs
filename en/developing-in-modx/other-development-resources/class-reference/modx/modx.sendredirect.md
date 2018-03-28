@@ -12,11 +12,11 @@ Sends a redirect to the specified URL using the specified method.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendRedirect()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendRedirect())
 
-```
-<pre class="brush: php">
+``` php 
 void sendRedirect (string $url, [array $options = false], [string $type = ''], [string $responseCode])
+```
 
-```Please note that the $type and $responseCode have been deprecated and will likely be removed in an upcoming release. **Do not rely on those**.
+Please note that the $type and $responseCode have been deprecated and will likely be removed in an upcoming release. **Do not rely on those**.
 
 $url needs to be a proper url, which could be generated using modX::makeUrl, to redirect to.
 
@@ -36,24 +36,24 @@ $responseCode, which is deprecated and should not be used, is the same as the re
 
 Send a redirection request to the Resource with ID 54.
 
-```
-<pre class="brush: php">
+``` php 
 $url = $modx->makeUrl(54);
 $modx->sendRedirect($url);
-
-```Send a redirect to modx.com. Do so via the META HTTP-EQUIV refresh tag.
-
 ```
-<pre class="brush: php">
+
+Send a redirect to modx.com. Do so via the META HTTP-EQUIV refresh tag.
+
+``` php 
 $modx->sendRedirect('http://modx.com',array('type' => 'REDIRECT_META'));
-
-```Send a 301 Moved Permanently response code instead of the default 302 Moved Temporarily response code.
-
 ```
-<pre class="brush: php">
-$modx->sendRedirect('http://modx.com',array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
 
-```## See Also
+Send a 301 Moved Permanently response code instead of the default 302 Moved Temporarily response code.
+
+``` php 
+$modx->sendRedirect('http://modx.com',array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
+```
+
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.makeUrl](developing-in-modx/other-development-resources/class-reference/modx/modx.makeurl "modX.makeUrl")

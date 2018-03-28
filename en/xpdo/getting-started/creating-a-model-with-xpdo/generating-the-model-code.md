@@ -17,19 +17,19 @@ To use your newly created XML schema, you'll need to create a PHP script that wi
 
 Create a PHP file where you have access to an xPDO instance. Then, let's set the Log Target to the browser, and raise it a bit to get more detailed information.
 
-```
-<pre class="brush: php">
+``` php 
 $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 $xpdo->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
-
-```Now, we'll want to load the [xPDOManager](/xpdo/2.x/class-reference/xpdomanager "xPDOManager") and [xPDOGenerator](/xpdo/2.x/class-reference/xpdogenerator "xPDOGenerator") classes, to assist us with the model deployment.
-
 ```
-<pre class="brush: php">
+
+Now, we'll want to load the [xPDOManager](/xpdo/2.x/class-reference/xpdomanager "xPDOManager") and [xPDOGenerator](/xpdo/2.x/class-reference/xpdogenerator "xPDOGenerator") classes, to assist us with the model deployment.
+
+``` php 
 $manager= $xpdo->getManager();
 $generator= $manager->getGenerator();
+```
 
-```## Setting Class and Map Templates
+## Setting Class and Map Templates
 
 Setting the Templates is completely optional. xPDO provides you with some basic templates that will work fine.
 
@@ -37,8 +37,7 @@ By default, xPDO provides you with default class and map templates. For the purp
 
 To do so, we'll just override the variables in the $generator object:
 
-```
-<pre class="brush: php">
+``` php 
 $generator->classTemplate= <<<EOD
 <?php
 /**
@@ -62,20 +61,21 @@ $generator->mapHeader= <<<EOD
  * [+phpdoc-package+]
  */
 EOD;
+```
 
-```Note the \[phpdoc-package\] tag that we've built. This is taken from our "model" tag's attribute we defined earlier in the schema. These templates will provide us with the base for our class and map files, with PHPDoc comments.
+Note the \[phpdoc-package\] tag that we've built. This is taken from our "model" tag's attribute we defined earlier in the schema. These templates will provide us with the base for our class and map files, with PHPDoc comments.
 
 ## Generating the Files
 
 And finally, we want to actually parse this into a file:
 
-```
-<pre class="brush: php">
+``` php 
 $schema = '/path/to/storefinder.mysql.schema.xml';
 $target = '/path/to/storefinder/model/';
 $generator->parseSchema($schema,$target);
+```
 
-```This block of code executes the schema parsing method, and then outputs the total time the script took to execute. Run it, and viola! Our model/ directory now has a storefinder/ subdirectory, which is filled with all of our map and class files.
+This block of code executes the schema parsing method, and then outputs the total time the script took to execute. Run it, and viola! Our model/ directory now has a storefinder/ subdirectory, which is filled with all of our map and class files.
 
 ## Conclusion
 

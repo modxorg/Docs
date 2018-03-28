@@ -30,11 +30,11 @@ The value returned from the data source can either be a string value (including 
 
 For example, controls that accept string values such as a radio button group or select list will attempt to convert a record set (rows and columns) into the following format:
 
-```
-<pre class="brush: php">
+``` php 
 col1row1Value==col2row1Value||col1row2Value==col2row2Value,...
+```
 
-```Please note that @ bindings will work only when used inside "Input Option Values" or "Default Value" fields.
+Please note that @ bindings will work only when used inside "Input Option Values" or "Default Value" fields.
 
 When placing @ bindings inside the "Input Option Values" field, they are used to format input options only when editing document within the Manager, for example to create a drop-down list of Cities or Countries.
 

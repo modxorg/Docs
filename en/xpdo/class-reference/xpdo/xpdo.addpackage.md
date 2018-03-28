@@ -12,10 +12,12 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.addpackage"
 
  API Docs: <http://api.modx.com/xpdo/xPDO.html#addPackage>
 
- ```
-<pre class="brush: php">boolean addPackage ([string $pkg = ''], [string $path = ''], [string $tablePrefix = ''])
+ ``` php 
+boolean addPackage ([string $pkg = ''], [string $path = ''], [string $tablePrefix = ''])
 
-``` **$pkg** corresponds to the name of a sub-folder within the specified $path. The sub-folder contains the myriad _your\_table.class.php_ files and most often a _mysql_ sub-folder which contains additional map and class files, e.g. _your\_table.class.php_ and _your\_table.map.inc.php_ 
+```
+
+ **$pkg** corresponds to the name of a sub-folder within the specified $path. The sub-folder contains the myriad _your\_table.class.php_ files and most often a _mysql_ sub-folder which contains additional map and class files, e.g. _your\_table.class.php_ and _your\_table.map.inc.php_ 
 **$path** is the full path to the folder containing the packages, including the package name you referenced in the first argument. 
 **$tablePrefix** is the table prefix for your package. You MUST include contain the correct prefix when **addPackage** is called (i.e. at runtime), otherwise your package will not load correctly!
 
@@ -25,10 +27,12 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.addpackage"
 
  Most commonly, this uses the MODX\_CORE\_PATH constant and points to your package's "model/" directory:
 
- ```
-<pre class="brush: php">$modx->addPackage('mypkg',MODX_CORE_PATH.'components/mypkg/model/','mypkg_');
+ ``` php 
+$modx->addPackage('mypkg',MODX_CORE_PATH.'components/mypkg/model/','mypkg_');
 
-```## Another Example
+```
+
+## Another Example
 
  Pictured is the file structure of the FormIt Snippet.
 
@@ -36,19 +40,23 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.addpackage"
 
  If you were to load one of its packages using the addPackage() method, you could use one of the three available packages (formit, recaptcha, or stopforumspam) as the first argument, and the path to the containing folder as the second argument, e.g.
 
- ```
-<pre class="brush: php">$xpdo->addPackage('recaptcha', MODX_CORE_PATH.'components/formit/model/');
+ ``` php 
+$xpdo->addPackage('recaptcha', MODX_CORE_PATH.'components/formit/model/');
 
-```## Testing
+```
 
- ```
-<pre class="brush: php">$xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
+## Testing
+
+ ``` php 
+$xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 $xpdo->setLogTarget('ECHO');
 if (!$xpdo->addPackage('my_package','/path/to/docroot/core/components/my_package/model/','pkg_')) {
     print 'There was a problem adding your package.';
 }
 
-``` The $path (2nd argument), must exist, or an error will be logged. But if the 1st argument (the $pkg) is not a sub-folder inside the $path, no error is thrown.
+```
+
+ The $path (2nd argument), must exist, or an error will be logged. But if the 1st argument (the $pkg) is not a sub-folder inside the $path, no error is thrown.
 
  On fail, this function will write verbose error messages to the log.
 

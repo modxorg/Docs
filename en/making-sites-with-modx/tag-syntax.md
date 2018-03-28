@@ -41,10 +41,12 @@ Previously, each tag set was parsed independently in a specific order, one level
 
 As of MODX Revolution 2.2 any tag found that starts with a dash (-) is ignored by the parser, and any tags it includes will be silently discarded. Before that, you can use the same however any tags within the comment would be parsed and it would be a tad more resource intensive to do so.
 
-```
-<pre class="brush: php"> [[- This is a comment, and will be removed from the output. ]]
+``` php 
+ [[- This is a comment, and will be removed from the output. ]]
 
-```## Structure of a Tag
+```
+
+## Structure of a Tag
 
 A tag can contain many sub-parts within it. Below is illustrated on multiple lines a tag broken down into each part and explained:
 
@@ -60,20 +62,24 @@ A tag can contain many sub-parts within it. Below is illustrated on multiple lin
 
 Put these all together, and a tag with all valid parts might look like this:
 
-```
-<pre class="brush: php">[[MySnippet@myPropSet:filter1:filter2=`modifier`? &prop1=`x` &prop2=`y`]]
-
-```Note that tags can occur either on one line, or spread out across many lines. Both of these are acceptable:
+``` php 
+[[MySnippet@myPropSet:filter1:filter2=`modifier`? &prop1=`x` &prop2=`y`]]
 
 ```
-<pre class="brush: php">[[!getResources? &parents=`123` &limit=`5`]]
+
+Note that tags can occur either on one line, or spread out across many lines. Both of these are acceptable:
+
+``` php 
+[[!getResources? &parents=`123` &limit=`5`]]
 
 [[!getResources?
   &parents=`123`
   &limit=`5`
 ]]
 
-```**Take it Easy** 
+```
+
+**Take it Easy** 
  Just because you _can_ use complex conditional filters in MODX does not mean that you _should_. Unlike PHP, when you have invalid MODX tag syntax, there are no helpful messages with line numbers telling you where something went wrong. Having tags that require debugging defeats the purpose of having a clean view layer: keep 'em clean and simple. A good rule-of-thumb is that your tags should fit onto one line (even if you spread them out for readability). If you are relying on if-statements and other conditionals in your template tags, then you might need rethink how you're building your pages.
 
 
@@ -82,20 +88,26 @@ Put these all together, and a tag with all valid parts might look like this:
 
 All MODX Revo tags can accept properties (not just Snippets). For example, let's say we had a Chunk named 'Hello' with the content:
 
-```
-<pre class="brush: php">Hello [[+name]]!
-
-```You'll note the new placeholder syntax. So, we'll definitely want to parse that Chunk's property. In Evolution, you would need to do this with a Snippet; no longer. You can simply pass a property for the Chunk:
+``` php 
+Hello [[+name]]!
 
 ```
-<pre class="brush: php">[[$Hello?name=`George`]]
 
-```This would output:
+You'll note the new placeholder syntax. So, we'll definitely want to parse that Chunk's property. In Evolution, you would need to do this with a Snippet; no longer. You can simply pass a property for the Chunk:
+
+``` php 
+[[$Hello?name=`George`]]
 
 ```
-<pre class="brush: php">Hello George!
 
-```The syntax for properties follows the same syntax as 096/Evolution snippet properties.
+This would output:
+
+``` php 
+Hello George!
+
+```
+
+The syntax for properties follows the same syntax as 096/Evolution snippet properties.
 
 ## Caching
 
@@ -119,11 +131,13 @@ If you have cached placeholders below that, they will be evaluated before that S
 
 If you want to call a Snippet uncached that sets placeholders, you need to make sure the placeholders are set to uncached as well:
 
-```
-<pre class="brush: php">[[!Profile]]
+``` php 
+[[!Profile]]
 Hello [[!+username]],
 
-```## Timing
+```
+
+## Timing
 
 There are several timing tags in MODX:
 

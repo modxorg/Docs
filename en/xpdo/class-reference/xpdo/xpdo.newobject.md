@@ -13,28 +13,28 @@ All new objects created with this method are transient until [xPDOObject::save()
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#newObject>
 
-```
-<pre class="brush: php">
+``` php 
 object|null newObject (string $className, [array $fields = array ()])
+```
 
-```## Example 
+## Example 
 
 Create a new Box object:
 
-```
-<pre class="brush: php">
+``` php 
 $box = $xpdo->newObject('Box');
-
-```Create a new Box object with the width and height already set:
-
 ```
-<pre class="brush: php">
+
+Create a new Box object with the width and height already set:
+
+``` php 
 $box = $xpdo->newObject('Box',array(
    'width' => 10,
    'height' => 4,
 ));
+```
 
-```## See Also 
+## See Also 
 
 - [Creating Objects](/xpdo/2.x/getting-started/using-your-xpdo-model/creating-objects "Creating Objects")
 - [Removing (deleting) objects](/xpdo/2.x/class-reference/xpdoobject/persistence-methods/remove)

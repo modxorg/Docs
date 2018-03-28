@@ -12,20 +12,20 @@ Get the absolute path to the current writable directory for storing cache files.
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#getCachePath>
 
-```
-<pre class="brush: php">
+``` php 
 string getCachePath ()
+```
 
-```## Example
+## Example
 
 Returns the cache path.
 
-```
-<pre class="brush: php">
+``` php 
 echo $xpdo->cacheManager->getCachePath();
 // outputs: '/path/to/xpdo/cache/';
+```
 
-```## See Also
+## See Also
 
 1. [xPDOCacheManager.copyFile](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](/xpdo/2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree)

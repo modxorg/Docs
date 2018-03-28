@@ -31,12 +31,14 @@ _old_uri: "2.x/administering-your-site/security/users"
 
  When a user is logged into the frontend of your site, their username and ID can be accessed by the following [Properties](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets"):
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 [[+modx.user.id]] - Prints the ID
 [[+modx.user.username]] - Prints the username
 
-``` If a user is not logged in, ID will be blank, and Username will be "(anonymous)".
+```
+
+ If a user is not logged in, ID will be blank, and Username will be "(anonymous)".
 
  As of MODX 2.4.0, the default Username can be set in the Systems Settings with the **default\_username** setting. 
 
@@ -53,25 +55,29 @@ _old_uri: "2.x/administering-your-site/security/users"
 
  The current user can be retrieved in the API via the $modx->user reference. For example, this snippet outputs the username of the user:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 return $modx->user->get('username');
 
-``` Note that to grab Profile fields, you'll need to first get the modUserProfile object via the Profile alias. For example, this snippet grabs the email of the user and returns it:
+```
 
- ```
-<pre class="brush: php">
+ Note that to grab Profile fields, you'll need to first get the modUserProfile object via the Profile alias. For example, this snippet grabs the email of the user and returns it:
+
+ ``` php 
+
 $profile = $modx->user->getOne('Profile');
 return $profile ? $profile->get('email') : '';
 
-``` If the User is not logged in, $modx->user will still be available as an object, but will return 0 as the ID and (Anonymous) as the username.
+```
+
+ If the User is not logged in, $modx->user will still be available as an object, but will return 0 as the ID and (Anonymous) as the username.
 
 ###  Using Extended Fields 
 
  Values in the extended field return as an array. They can be manipulated like so:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 /* get the extended field named "color": */
 $fields = $profile->get('extended');
 $color = $fields['color'];
@@ -81,7 +87,9 @@ $fields['color'] = 'red';
 $profile->set('extended',$fields);
 $profile->save();
 
-```##  See Also 
+```
+
+##  See Also 
 
 1. [Users](administering-your-site/security/users)
 2. [User Groups](administering-your-site/security/user-groups)

@@ -12,23 +12,31 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientStartupScript()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupScript())
 
- ```
-<pre class="brush: php">void regClientStartupScript (string $src, [boolean $plaintext = false])
+ ``` php 
+void regClientStartupScript (string $src, [boolean $plaintext = false])
 
-```## Example
+```
+
+## Example
 
  Register some JS to the start of the page:
 
- ```
-<pre class="brush: php">$modx->regClientStartupScript('assets/js/onload.js');
+ ``` php 
+$modx->regClientStartupScript('assets/js/onload.js');
 
-``````
-<pre class="brush: php">$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
+```
 
-``````
-<pre class="brush: php">$modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
+``` php 
+$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
 
-```## See Also
+```
+
+``` php 
+$modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
+
+```
+
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.regClientCSS](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientcss "modX.regClientCSS")

@@ -19,26 +19,25 @@ It is not uncommon for a User account to become inaccessible because of a lost/f
 
 In MODX 2.1+, users are created by default with the a hashing algorithm called PBKDF2. Databases like MySQL or SQL Server generally do not have functions for calculating these hashes, and as a result, in order to manually reset the password in the database, you will also need to change the hash\_class specified for the user from hashing.modPBKDF2 to hashing.modMD5. Then you can use the native MD5() function to set the value of the password field appropriately. Here is an example MySQL UPDATE statement:
 
-```
-<pre class="brush: php">
+``` php 
 UPDATE modx_users SET hash_class = 'hashing.modMD5', password = MD5('the-new-password') WHERE username = 'theusername';
+```
 
-```If you want to then have the user password automatically converted back to PBKDF2, you can install the [pbkdf2Convert Plugin](http://modx.com/extras/package/pbkdf2convert) available from Package Management.
+If you want to then have the user password automatically converted back to PBKDF2, you can install the [pbkdf2Convert Plugin](http://modx.com/extras/package/pbkdf2convert) available from Package Management.
 
 ### Resetting Password in MODX 2.0.x
 
 In MODX 2.0.x, you can simply reset the password field with a valid MD5 hash value directly in the database table. Here is an example MySQL UPDATE statement that can reset a user's password by username:
 
-```
-<pre class="brush: php">
+``` php 
 UPDATE modx_users SET password = MD5('the-new-password') WHERE username = 'theusername';
+```
 
-```## Resetting a Password via the API
+## Resetting a Password via the API
 
 You can also reset the password (or manipulate any part of the MODX application) by using the API. Below is a sample script to update the password and email address of a given user. It also ensures this user is in the Administrator User Group.
 
-```
-<pre class="brush: php">
+``` php 
 <?php
 define('MODX_API_MODE', true); // Gotta set this one constant.
 
@@ -115,8 +114,9 @@ if (!$user->save()) {
 print "SUCCESS: User $username updated.";
 
 ?>
+```
 
-```You can put this script anywhere on your server so long as you update the path to the primary **index.php** file. You can execute the script by hitting it in a browser or via the command line.
+You can put this script anywhere on your server so long as you update the path to the primary **index.php** file. You can execute the script by hitting it in a browser or via the command line.
 
 **Warning**
 Be extremely careful when using a script like this! If possible, do NOT put it inside your document root – instead put it outside of your document root and execute the script via the command line.

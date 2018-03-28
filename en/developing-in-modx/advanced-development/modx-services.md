@@ -10,13 +10,15 @@ A service is any object that is loaded via [$modx->getService](developing-in-mod
 
 Once an object is loaded with getService, it is accessible via $modx->(servicename). So, for example:
 
-```
-<pre class="brush: php">$modx->getService('twitter','myTwitter','/path/to/twitter/model/',array(  
+``` php 
+$modx->getService('twitter','myTwitter','/path/to/twitter/model/',array(  
   'api_key' => 3212423,
 ));  
 $modx->twitter->tweet('Success!');  
 
-```## What are the Default Included Services?
+```
+
+## What are the Default Included Services?
 
 A list of the core-included MODX Services is as follows:
 

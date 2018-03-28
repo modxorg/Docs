@@ -12,14 +12,14 @@ This method is used to delete multiple objects.
 
 From modSessionHandler:
 
-```
-<pre class="brush: php">
+``` php 
 public function gc($max) {
     $max = (integer) $this->modx->getOption('session_gc_maxlifetime',null,$max);
     $maxtime= time() - $max;
     $result = $this->modx->removeCollection('modSession', array("`access` < {$maxtime}"));
     return $result;
 }
+```
 
-```**Warning**
+**Warning**
 Careful! If you do not specify your criteria correctly, you can wipe out an entire database table!

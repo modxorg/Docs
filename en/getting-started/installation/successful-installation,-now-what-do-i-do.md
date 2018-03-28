@@ -34,8 +34,8 @@ _old_uri: "2.x/getting-started/installation/successful-installation,-now-what-do
 
  In either case, give the template a name, My Template, a description, First Revolution Template, and then the HTML code for the template. MODx templates are basically just HTML pages, with the content parts replaced with MODx tags. So to begin with, let's just create a really simple template.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -54,4 +54,6 @@ _old_uri: "2.x/getting-started/installation/successful-installation,-now-what-do
 </body>
 </html>
 
-``` Save the new template. Now if you open your first document for editing, you'll see that it's been assigned the template (since it's the only one, and the document didn't have one). Go back to the site and refresh the page. And now, if you click the main Home menu, you'll get the Manager home page without that long list of errors!
+```
+
+ Save the new template. Now if you open your first document for editing, you'll see that it's been assigned the template (since it's the only one, and the document didn't have one). Go back to the site and refresh the page. And now, if you click the main Home menu, you'll get the Manager home page without that long list of errors!

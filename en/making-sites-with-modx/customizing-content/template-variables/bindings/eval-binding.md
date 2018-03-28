@@ -10,23 +10,23 @@ The @EVAL Binding executes the specified PHP code. It should be used with carefu
 
 ## Syntax
 
-```
-<pre class="brush: php">
+``` php 
 @EVAL php_code_here
+```
 
-```## Usage
+## Usage
 
 Simply put a PHP statement after the @EVAL tag:
 
-```
-<pre class="brush: php">
+``` php 
 @EVAL return "The time stamp is now ".time();
+```
 
-``````
-<pre class="brush: php">
+``` php 
 @EVAL $a = 'dog'; return $a;
+```
 
-```## Examples
+## Examples
 
 ### Showing Related Posts
 
@@ -39,17 +39,17 @@ Requirements: The rowboat-snippet.
 
 First, we create a new chunk for our Options and name it 'userOption' with this code:
 
-```
-<pre class="brush: php">
+``` php 
 [[+username]]==[[+id]]
-
-```Then create a dropdown-type TV with this input-options:
-
 ```
-<pre class="brush: php">
-@EVAL return '-- choose a user --||' . $modx->runSnippet('Rowboat',array('table'=>'modx_users','tpl'=>'userOption','outputSeparator'=>'||'));
 
-```## Security
+Then create a dropdown-type TV with this input-options:
+
+``` php 
+@EVAL return '-- choose a user --||' . $modx->runSnippet('Rowboat',array('table'=>'modx_users','tpl'=>'userOption','outputSeparator'=>'||'));
+```
+
+## Security
 
 The eval() statement raises an eyebrow with anyone concerned with security: eval statements are notorious for being exploited, so it's recommended that you find another way of doing whatever you are trying to do, but this context is supported by MODx. If I let my cynical mind wander, allow me to paint one disasterous circumstance: some web user of your MODx application logs in and has access to a field that gets executed by an EVAL binding. This nefarious user could eval some nasty _unlink()_ or _rmdir()_ statements and destroy your web server files, or read sensitive files **anywhere** on the web-server that PHP has access to. Be careful with these!
 

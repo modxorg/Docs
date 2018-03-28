@@ -39,8 +39,7 @@ First off, make sure:
 
 If you are getting PDO-related error messages during install, before proceeding to specific error messages as below, please confirm that your PDO configuration is setup correctly. You can do so by running this code (replace user/password/database/host with your setup):
 
-```
-<pre class="brush: php">
+``` php 
 <?php
 /* Connect to an ODBC database using driver invocation */
 $dsn = 'mysql:dbname=testdb;host=localhost';
@@ -53,8 +52,9 @@ try {
   echo 'Connection failed: ' . $e->getMessage();
 }
 ?>
+```
 
-```If this fails, then your PDO setup is not configured correctly.
+If this fails, then your PDO setup is not configured correctly.
 
 ## Common Errors
 
@@ -80,13 +80,13 @@ One of the common causes of this problem is that you're using a non-standard por
 
 This means your MySQL socket is incorrectly configured. Usually this can be remedied by adding to (or updating) your php.ini:
 
-```
-<pre class="brush: php">
+``` php 
 mysql.default_socket=/path/to/my/mysql.sock
 mysqli.default_socket=/path/to/my/mysql.sock
 pdo_mysql.default_socket=/path/to/my/mysql.sock
+```
 
-```### The login page keeps redirecting me back to the login screen with no error
+### The login page keeps redirecting me back to the login screen with no error
 
 This can happen with older Revolution beta installs. To fix it, delete the following 3 system settings from the DB table `\[prefix\]\_system\_settings` (where prefix is your table prefix):
 
@@ -102,21 +102,21 @@ Unless, of course, you've changed these explicitly for some purpose of your own.
 
 Are you running eAccelerator? In some server configurations, this can cause problems. You might need to disable it. You can do so via your php.ini:
 
-```
-<pre class="brush: php">
+``` php 
 eaccelerator.enable = 0;
 eaccelerator.optimizer = 0;
 eaccelerator.debug = 0;
-
-```or in your .htaccess in the modx root directory, if your server supports php\_flag server directives:
-
 ```
-<pre class="brush: php">
+
+or in your .htaccess in the modx root directory, if your server supports php\_flag server directives:
+
+``` php 
 php_flag eaccelerator.enable 0
 php_flag eaccelerator.optimizer 0
 php_flag eaccelerator.debug 0
+```
 
-```### General weirdness in the Manager (not eAccelerator)
+### General weirdness in the Manager (not eAccelerator)
 
 On some systems, especially with shared hosting, there can be a problem with the compress\_js and/or compress\_css System Settings. Go to System -> System Settings and type 'compress' (without the quotes) in the search box at the upper right. Turn the two settings off, then log out, delete all files in the core/cache directory, clear your browser cache and cookies, and log back in.
 
@@ -139,11 +139,11 @@ A more complete solution:
 
 If you're redirecting back to the login screen every time, try setting this in your .htaccess file in the root of your MODx install:
 
-```
-<pre class="brush: php">
+``` php 
 php_value session.auto_start 0
+```
 
-```### Could not connect to the database server. Check the connection properties and try again. Access Denied...
+### Could not connect to the database server. Check the connection properties and try again. Access Denied...
 
 Often on shared hosting, if you create a username for your database with an underscore (\_) in it, it will cause problems. Ensure your database username does not contain an underscore, and try again.
 

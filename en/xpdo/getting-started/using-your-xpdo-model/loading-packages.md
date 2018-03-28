@@ -18,10 +18,12 @@ The addPackage method takes 3 parameters: 'name', 'path' and an optional 'table\
 
  And our table prefix is 'myapp\_'. So, we'll pass the first parameter as the package name - in this case 'boxpackage' - and the model path as the 2nd parameter:
 
- ```
-<pre class="brush: php">$xpdo->addPackage('boxpackage','/myapp/core/model/','myapp_');
+ ``` php 
+$xpdo->addPackage('boxpackage','/myapp/core/model/','myapp_');
 
-``` From then on out, any of our classes in our Package can be loaded via xPDO's retrieval methods.
+```
+
+ From then on out, any of our classes in our Package can be loaded via xPDO's retrieval methods.
 
  Using the table\_prefix is not recommended unless you have a good reason to specifically set the table prefix. 
 

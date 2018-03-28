@@ -6,8 +6,8 @@ _old_uri: "2.x/getting-started/installation/basic-installation/nginx-server-conf
 
 Here is an example config for a MODX installation on an nginx server (php-fpm is required for nginx servers). This example enables MODX FURLs as well.
 
-```
-<pre class="brush: php">server {
+``` php 
+server {
         listen 80;
         server_name example.com www.example.com;
         root /home/sites/example.com;
@@ -35,7 +35,9 @@ Here is an example config for a MODX installation on an nginx server (php-fpm is
         }
 }
 
-```FastCGI connectivity between nginx and PHP as expressed on the line "fastcgi\_pass 127.0.0.1:9000;" _**may need to be set**_ to something like "fastcgi\_pass unix:/var/run/php5-fpm.sock;"
+```
+
+FastCGI connectivity between nginx and PHP as expressed on the line "fastcgi\_pass 127.0.0.1:9000;" _**may need to be set**_ to something like "fastcgi\_pass unix:/var/run/php5-fpm.sock;"
 
 This is _**codependent**_ on how the www.conf (usually located at /etc/php5/fpm/pool.d ) file is configured. How is the "listen" directive set up in _**that**_ file: TCP or unix socket (i.e. /var/run/php5-fpm.sock ) ?
 

@@ -12,18 +12,18 @@ Returns the current user name, for the current or specified context.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getLoginUserName()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getLoginUserName())
 
-```
-<pre class="brush: php">
+``` php 
 string getLoginUserName ([string $context = ''])
+```
 
-```## Example
+## Example
 
 Grab the user's username in the current Context.
 
-```
-<pre class="brush: php">
+``` php 
 $username = $modx->getLoginUserName();
+```
 
-```## See Also
+## See Also
 
 - [Contexts](administering-your-site/contexts "Contexts")

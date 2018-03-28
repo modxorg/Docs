@@ -14,41 +14,49 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::toPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholders())
 
- ```
-<pre class="brush: php">array toPlaceholders (array|object  $subject, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])
+ ``` php 
+array toPlaceholders (array|object  $subject, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])
 
-```## Example
+```
+
+## Example
 
  Set an array of placeholders and prefix with 'my.' Returns a multi-dimensional array containing up to two elements: 'keys' which always contains an array of placeholder keys that were set, and optionally, if the restore parameter is true, 'restore' containing an array of placeholder values that were overwritten by the method.
 
- ```
-<pre class="brush: php">$modx->toPlaceholders(array(
+ ``` php 
+$modx->toPlaceholders(array(
   'name' => 'John',
   'email' => 'jdoe@gmail.com',
 ),'my');
 
-```## Example with Nested Placeholders
+```
+
+## Example with Nested Placeholders
 
  Using nested data as the **$placeholders**:
 
- ```
-<pre class="brush: php">$modx->toPlaceholders(array(
+ ``` php 
+$modx->toPlaceholders(array(
   'document' => array('pagetitle' => 'My Page')
 ));
 
-``` Corresponds to placeholders such as \[\[+document.pagetitle\]\]
+```
+
+ Corresponds to placeholders such as \[\[+document.pagetitle\]\]
 
  Note that using a $prefix on nested placeholders adds the $prefix to the front of _each key_. For example:
 
- ```
-<pre class="brush: php">$modx->toPlaceholders(
+ ``` php 
+$modx->toPlaceholders(
   array(
     'test' => 'this',
     'document' => array('pagetitle' => 'My Page')
   ), 'tmp'
 );
 
-``` Would have placeholders such as \[\[+tmp.test\]\] and \[\[+tmp.document.pagetitle\]\]
+```
+
+ Would have placeholders such as \[\[+tmp.test\]\] and \[\[+tmp.document.pagetitle\]\]
 
 ## See Also
 

@@ -59,10 +59,12 @@ Lexicons must first be loaded if they are to be used in the front-end; however, 
 
 To use a Lexicon Entry in a tag, use the following syntax:
 
-```
-<pre class="brush: php">[[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
+``` php 
+[[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
 
-```The 'language', 'topic', and 'namespace' properties are optional; if the tag has been run earlier on the page with the same 'topic' property value, that topic will have already been loaded. If 'topic' is not specified, it will assume 'default'. If 'namespace' is not specified, it will assume 'core', or the MODX Revolution Core Namespace.
+```
+
+The 'language', 'topic', and 'namespace' properties are optional; if the tag has been run earlier on the page with the same 'topic' property value, that topic will have already been loaded. If 'topic' is not specified, it will assume 'default'. If 'namespace' is not specified, it will assume 'core', or the MODX Revolution Core Namespace.
 
 It is preferable not to use the 'language' property for every tag should you be changing languages; this is best done through a System or Context Setting for the entire site or context. The best option is different contexts for each language. But again, MODX leaves you with the preference.
 
@@ -76,66 +78,84 @@ Note our ! prefix for the Tag; this makes sure the Tag isn't cached, since our s
 
 Using lexicons in code is fairly simple; first off you'll want to make sure the modLexicon class is loaded by instantiating it as a service:
 
-```
-<pre class="brush: php">$modx->getService('lexicon','modLexicon');
+``` php 
+$modx->getService('lexicon','modLexicon');
 
-```Then we'll want to load the Topic using the load() method.
+```
+
+Then we'll want to load the Topic using the load() method.
 
 #### Loading lexicon topics with modLexicon::load()
 
 The syntax for the modLexicon::load method is pretty simple:
 
-```
-<pre class="brush: php">$modx->lexicon->load('topicname');
-
-```The load() function supports Namespace-specific loading. So, say you had a Lexicon Topic named 'default' in a Namespace called 'school'. You'd simply load it like so:
+``` php 
+$modx->lexicon->load('topicname');
 
 ```
-<pre class="brush: php">$modx->lexicon->load('school:default');
 
-```This would load the 'default' Topic in the 'school' Namespace. If the Namespace is not specified, it defaults to 'core', which is the default Namespace for the MODX Revolution backend.
+The load() function supports Namespace-specific loading. So, say you had a Lexicon Topic named 'default' in a Namespace called 'school'. You'd simply load it like so:
+
+``` php 
+$modx->lexicon->load('school:default');
+
+```
+
+This would load the 'default' Topic in the 'school' Namespace. If the Namespace is not specified, it defaults to 'core', which is the default Namespace for the MODX Revolution backend.
 
 The load() function also takes an infinite number of parameters; each parameter loads a separate Topic. Example:
 
-```
-<pre class="brush: php">$modx->lexicon->load('chunk','user','school:playground');
+``` php 
+$modx->lexicon->load('chunk','user','school:playground');
 
-```This would load 3 Topics: 'chunk', 'user', and the 'playground' Topic from the 'school' Namespace.
+```
+
+This would load 3 Topics: 'chunk', 'user', and the 'playground' Topic from the 'school' Namespace.
 
 Furthermore, the load parameter supports language-specific loading, should you want to override the default language that is being loaded (which defaults to the current value of $this->modx->cultureKey, which is set differently depending on the Context loaded, and can be set via Settings), you could load it like so:
 
-```
-<pre class="brush: php">$modx->lexicon->load('es:school:playground');
+``` php 
+$modx->lexicon->load('es:school:playground');
 
-```This would load the Spanish version of the 'playground' Topic for the 'school' Namespace. Fun, huh?
+```
+
+This would load the Spanish version of the 'playground' Topic for the 'school' Namespace. Fun, huh?
 
 #### Displaying translated content with modX::lexicon()
 
 Now we can use the lexicon() method on the MODX object to get our Entry with key 'school.basketball':
 
-```
-<pre class="brush: php">$modx->lexicon('school.basketball');
-
-```If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you can pass an array as the second arguement which has key=>value pairs of your placeholder content, like so:
+``` php 
+$modx->lexicon('school.basketball');
 
 ```
-<pre class="brush: php">$modx->lexicon('school.basketball',array('sport' => 'basketball'));
 
-```### Lexicons in JavaScript (within MODX)
+If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you can pass an array as the second arguement which has key=>value pairs of your placeholder content, like so:
+
+``` php 
+$modx->lexicon('school.basketball',array('sport' => 'basketball'));
+
+```
+
+### Lexicons in JavaScript (within MODX)
 
 In CMPs you can use the following to use lexicons.
 
-```
-<pre class="brush: php"> _('lexicon.key')
+``` php 
+ _('lexicon.key')
 
-```Please note that this assumes you have loaded the lexicon in your connector - there is (at least to my knowledge at this time ~Mark H.) no way to dynamically load other lexicon topics through JavaScript.
+```
+
+Please note that this assumes you have loaded the lexicon in your connector - there is (at least to my knowledge at this time ~Mark H.) no way to dynamically load other lexicon topics through JavaScript.
 
 If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you can pass the values for the placeholders as a javascript object, like so:
 
-```
-<pre class="brush: php"> _('lexicon.key',{ userinput: 'amazing' })
+``` php 
+ _('lexicon.key',{ userinput: 'amazing' })
 
-```## Lexicons for Settings
+```
+
+## Lexicons for Settings
 
 So say you're creating System Settings for your 3rd Party Component (3PC). The syntax for auto-loading them into the Revolution Settings grid is simple. Let's say we have a Namespace for our Component called 'gallery', and a setting called 'gallery.display\_thumbs'
 
@@ -148,11 +168,13 @@ This helps to prevent name collisions; keep in mind that the **$\_lang** array m
 
 To add a lexicon name and description, we'd simply add the following 2 strings into our 'default' Lexicon Topic for our 'gallery' Namespace:
 
-```
-<pre class="brush: php">$_lang['setting_gallery.display_thumbs'] = 'Display Thumbnails';
+``` php 
+$_lang['setting_gallery.display_thumbs'] = 'Display Thumbnails';
 $_lang['setting_gallery.display_thumbs_desc'] = 'When set to true, this will display thumbnails for the gallery.';
 
-```And we're done!
+```
+
+And we're done!
 
 ## Conclusion
 

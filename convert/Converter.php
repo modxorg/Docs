@@ -1,4 +1,11 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/config.core.php';
+require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
+require_once __DIR__ . '/util/CodeConverter.php';
+require_once __DIR__ . '/util/PreformattedConverter.php';
+
+use League\HTMLToMarkdown\Environment;
 use League\HTMLToMarkdown\HtmlConverter;
 class Converter {
     /** @var modX */
@@ -31,20 +38,28 @@ class Converter {
 
     public function __construct()
     {
-        require_once __DIR__ . '/vendor/autoload.php';
-        require_once dirname(__DIR__) . '/config.core.php';
-        require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
         $this->modx = new modX();
         $this->modx->initialize('web');
         $this->modx->getService('error','error.modError', '', '');
         $this->modx->setLogTarget('ECHO');
 
         // Get the League's converter
-        $this->converter = new HtmlConverter([
-            'hard_break' => true,
-            'strip_tags' => true,
-            'header_style' => 'atx',
-        ]);
+
+        $options = array(
+            'header_style' => 'atx', // Set to 'atx' to output H1 and H2 headers as # Header1 and ## Header2
+            'suppress_errors' => true, // Set to false to show warnings when loading malformed HTML
+            'strip_tags' => true, // Set to true to strip tags that don't have markdown equivalents. N.B. Strips tags, not their content. Useful to clean MS Word HTML output.
+            'bold_style' => '**', // Set to '__' if you prefer the underlined style
+            'italic_style' => '_', // Set to '*' if you prefer the asterisk style
+            'remove_nodes' => '', // space-separated list of dom nodes that should be removed. example: 'meta style script'
+            'hard_break' => true, // Set to true to turn <br> into `\n` instead of `  \n`
+            'list_item_style' => '-', // Set the default character for each <li> in a <ul>. Can be '-', '*', or '+'
+        );
+
+        $environment = Environment::createDefaultEnvironment($options);
+        $environment->addConverter(new CodeConverter());
+        $environment->addConverter(new PreformattedConverter());
+        $this->converter = new HtmlConverter($environment);
 
         $this->outputDir = dirname(__DIR__) . '/en/';
     }

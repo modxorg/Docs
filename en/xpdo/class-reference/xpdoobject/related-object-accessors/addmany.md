@@ -12,19 +12,21 @@ _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/addmany"
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoobject.class.html#%5CxPDOObject::addMany()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::addMany())
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 boolean addMany (
    mixed &$obj,
    [string $alias = '']
 )
 
-```## Example
+```
+
+## Example
 
  Add golf clubs to a bag and save.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $bag = $xpdo->newObject('GolfBag');
 $bag->set('name',"Chris's Bag");
 $bag->set('color','blue');
@@ -37,7 +39,9 @@ for ($i=1;$i<10;$i++) {
 $bag->addMany($clubs);
 $bag->save(); // saves both the bag and all the clubs
 
-``` **Nested Calls** You can nest one addMany() call inside another and thus create all your related data via a single save() operation.
+```
+
+ **Nested Calls** You can nest one addMany() call inside another and thus create all your related data via a single save() operation.
 
  
 

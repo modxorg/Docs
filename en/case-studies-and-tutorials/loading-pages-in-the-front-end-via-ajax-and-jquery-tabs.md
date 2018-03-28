@@ -27,8 +27,8 @@ _old_uri: "2.x/case-studies-and-tutorials/loading-pages-in-the-front-end-via-aja
 
  Now we'll use jQuery's fun tabs() command to create the front-end loading system. The code would look something like this (pulled from jquery UI's docs):
 
- ```
-<pre class="brush: php"><script type="text/javascript">
+ ``` php 
+<script type="text/javascript">
 $(function() { $("#tabs").tabs(); });
 </script>
 <div id="tabs">
@@ -39,7 +39,9 @@ $(function() { $("#tabs").tabs(); });
         </ul>
 </div>
 
-``` Great! So this loads the pages via Ajax.
+```
+
+ Great! So this loads the pages via Ajax.
 
 ## Wait, I want the Page Titles as the tab headers!
 
@@ -49,13 +51,15 @@ $(function() { $("#tabs").tabs(); });
 
  For getResources, make sure you use the 'tpl' property, which you can create as a Chunk named 'myRowTpl' (or whatever you want), looks like this:
 
- ```
-<pre class="brush: php"><li id="[[+id]]"><a href="[[~[[+id]]]]" title="[[+longtitle]]">[[+pagetitle]]</a></li>
+ ``` php 
+<li id="[[+id]]"><a href="[[~[[+id]]]]" title="[[+longtitle]]">[[+pagetitle]]</a></li>
 
-``` and in our tabs page:
+```
 
- ```
-<pre class="brush: php"><script type="text/javascript">
+ and in our tabs page:
+
+ ``` php 
+<script type="text/javascript">
 $(function() { $("#tabs").tabs(); });
 </script>
 <div id="tabs">
@@ -64,17 +68,21 @@ $(function() { $("#tabs").tabs(); });
         </ul>
 </div>
 
-```### Using Wayfinder
+```
+
+### Using Wayfinder
 
  For Wayfinder, make sure your rowTpl template, which you can create as a Chunk named 'myRowTpl' (or whatever you want), looks like this:
 
- ```
-<pre class="brush: php"><li[[+wf.id]][[+wf.classes]]><a href="[[+wf.link]]" title="[[+wf.title]]">[[+wf.linktext]]</a></li>
+ ``` php 
+<li[[+wf.id]][[+wf.classes]]><a href="[[+wf.link]]" title="[[+wf.title]]">[[+wf.linktext]]</a></li>
 
-``` and in our tabs page:
+```
 
- ```
-<pre class="brush: php"><script type="text/javascript">
+ and in our tabs page:
+
+ ``` php 
+<script type="text/javascript">
 $(function() { $("#tabs").tabs(); });
 </script>
 <div id="tabs">
@@ -83,12 +91,14 @@ $(function() { $("#tabs").tabs(); });
         </ul>
 </div>
 
-```### Using a getField Snippet
+```
+
+### Using a getField Snippet
 
  Or, you can use a Snippet such as this one to grab the pagetitle:
 
- ```
-<pre class="brush: php"><?php
+ ``` php 
+<?php
 /**
  * Grabs a field for a specified Resource
  */
@@ -105,10 +115,12 @@ if ($id) { /* grab the resource object */
 return $resource->get($field);
 ?>
 
-``` Call this Snippet getField like so in our tabs page:
+```
 
- ```
-<pre class="brush: php"><script type="text/javascript">
+ Call this Snippet getField like so in our tabs page:
+
+ ``` php 
+<script type="text/javascript">
 $(function() { $("#tabs").tabs(); });
 </script>
 <div id="tabs">
@@ -119,14 +131,16 @@ $(function() { $("#tabs").tabs(); });
         </ul>
 </div>
 
-``` However, the getField solution is not as fast or elegant as the Wayfinder solution, since it has to make a query every tab.
+```
+
+ However, the getField solution is not as fast or elegant as the Wayfinder solution, since it has to make a query every tab.
 
 ### Using FastField or pdoTools
 
  pdoTools includes the FastField extended parser to provide a new field-fetching MODX tag using a "#" identifier, so they both work the same way.
 
- ```
-<pre class="brush: php"><script type="text/javascript">
+ ``` php 
+<script type="text/javascript">
 $(function() { $("#tabs").tabs(); });
 </script>
 <div id="tabs">
@@ -137,7 +151,9 @@ $(function() { $("#tabs").tabs(); });
         </ul>
 </div>
 
-```## Conclusion
+```
+
+## Conclusion
 
  Note that all you're doing is pointing the href tags to the actual document IDs, just like a normal link. The trick is you're making your Template for the Documents be blank (or minimal) so that it only loads the parsed content itself.
 

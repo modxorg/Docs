@@ -51,12 +51,12 @@ Toolbars can be loaded remotely, using the remoteToolbar config parameter. This 
 
 Nodes can be dragged into MODx.FormPanel fields, assuming that the following is passed into the config var:
 
-```
-<pre class="brush: php">
+``` php 
 ,enableDD: true
 ,ddGroup: 'modx-treedrop-dd'
+```
 
-```and that the node has an attribute of 'type', which is one of the following values: modResource,snippet,chunk,tv,file.
+and that the node has an attribute of 'type', which is one of the following values: modResource,snippet,chunk,tv,file.
 
 ## See Also
 

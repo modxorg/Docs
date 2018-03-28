@@ -14,17 +14,17 @@ Parse a chunk using an associative array of replacement variables.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::parseChunk()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::parseChunk())
 
-```
-<pre class="brush: php">
+``` php 
 string parseChunk (string $chunkName, array $chunkArr, [string $prefix = '[[+'], [string $suffix = ']]'])
-
-```## Example
-
 ```
-<pre class="brush: php">
-$output = $modx->parseChunk('myChunk',array('name' => 'John'));
 
-```## See Also
+## Example
+
+``` php 
+$output = $modx->parseChunk('myChunk',array('name' => 'John'));
+```
+
+## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
 - [modX.getChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.getchunk "modX.getChunk")

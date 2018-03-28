@@ -12,13 +12,12 @@ Indicates if the object or specified field is lazy.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isLazy>
 
-```
-<pre class="brush: php">
+``` php 
 boolean isLazy ([string $key = ''])
-
-```## Examples
-
 ```
-<pre class="brush: php">
+
+## Examples
+
+``` php 
 
 ```

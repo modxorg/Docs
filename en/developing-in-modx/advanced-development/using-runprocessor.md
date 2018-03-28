@@ -21,8 +21,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/using-runprocessor"
 
  For example, this code creates a new Chunk:
 
- ```
-<pre class="brush: php">$response = $modx->runProcessor('element/chunk/create',array(
+ ``` php 
+$response = $modx->runProcessor('element/chunk/create',array(
    'name' => 'NewChunk',
    'description' => 'A test Chunk made with runProcessor.',
    'snippet' => '<h3>Chunkify!</h3>',
@@ -33,12 +33,14 @@ if ($response->isError()) {
 $chunkArray = $response->getObject();
 return 'The chunk "'.$chunkArray['name'].' was created with ID '.$chunkArray['id'];
 
-``` This block of code runs the 'element/chunk/create' processor, checks to see if it was successful (with isError()), and if so, returns a message saying the ID and the name of the new Chunk. Note that getObject returns an **array** of the object that is returned by the processor. getMessage will return any message sent back from the processor.
+```
+
+ This block of code runs the 'element/chunk/create' processor, checks to see if it was successful (with isError()), and if so, returns a message saying the ID and the name of the new Chunk. Note that getObject returns an **array** of the object that is returned by the processor. getMessage will return any message sent back from the processor.
 
  You can also create an entire user, including Extended Fields, group assignments, a generated password and email notification.
 
- ```
-<pre class="brush: php">$groups = array();
+ ``` php 
+$groups = array();
 $groups['Group1']['usergroup'] = '7'; // ID of group
 $groups['Group1']['role'] = '1'; // ID of role
 $groups['Group2']['usergroup'] = '8';
@@ -54,7 +56,9 @@ $fields['extended']['container']['name'] = $value;
 $fields['groups'] = $groups;
 $response = $modx->runProcessor('security/user/create', $fields);    
 
-```## See Also
+```
+
+## See Also
 
 1. [Namespaces](developing-in-modx/advanced-development/namespaces)
 2. [Caching](developing-in-modx/advanced-development/caching)

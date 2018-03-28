@@ -228,8 +228,8 @@ pdoFetch.class: migxmultilang.mmlfetch
 
  Delete everything in the "Template Code (HTML)" area and then paste in the following code:
 
- ```
-<pre class="brush: plain">[[!mmlCache?
+ ``` plain 
+[[!mmlCache?
   &element=`pdoResources`
   &parents=`0` 
   &resources=`[[*id]]` 
@@ -242,7 +242,9 @@ pdoFetch.class: migxmultilang.mmlfetch
   &prepareSnippet = `mmlTranslatePdoToolsRow`
 ]]
 
-``` If you named your chunk anything other than "MainTpl", make sure you update the &tpl argument.
+```
+
+ If you named your chunk anything other than "MainTpl", make sure you update the &tpl argument.
 
  ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/18modified.png)
 
@@ -256,8 +258,8 @@ pdoFetch.class: migxmultilang.mmlfetch
 
  Here is a very simple example of a possible MainTpl chunk:
 
- ```
-<pre class="brush: plain"><!doctype html>
+ ``` plain 
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="[[++modx_charset]]">
@@ -269,7 +271,9 @@ pdoFetch.class: migxmultilang.mmlfetch
     [[!mml_LangLinks]]
 </body>
 
-``` Besides the normal MODX tags in the head section, you can see I've added `[[+mml_pagetitle]]` and `[[!mml_LangLinks]]`.
+```
+
+ Besides the normal MODX tags in the head section, you can see I've added `[[+mml_pagetitle]]` and `[[!mml_LangLinks]]`.
 
 `[[+mml_pagetitle]]` references one of the initial TVs we created and will hold both versions of the resource name.
 

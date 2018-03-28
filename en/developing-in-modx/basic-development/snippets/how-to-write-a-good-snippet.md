@@ -24,8 +24,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/how-to-write-a-good
 
 ##  Our Example Snippet 
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 <?php
 /**
  * mySnippet
@@ -61,7 +61,9 @@ if (!isset($scriptProperties['x']) || !isset($scriptProperties['y'])) {
 return $x * $y * $z;
 ?>
 
-```##  A Good Name 
+```
+
+##  A Good Name 
 
  Give your Snippet a name that makes sense to someone who is not familiar with it. A good name is easy to remember.
 
@@ -93,30 +95,36 @@ return $x * $y * $z;
 
  Set default properties in the snippet's Properties tab. You can read properties passed to the Snippet and set default properties using the **getOption** method. Remember that all Snippets are passed an array of $scriptProperties.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $headTpl = $modx->getOption('headTpl', $scriptProperties, 'myHeadTpl');
 
-```##  Do not include HTML 
+```
+
+##  Do not include HTML 
 
  Your Snippet should be as clean from HTML as possible. If you need to format the output, use a Chunk to format the output. This is an important architectural principle!
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $props = array(
     'cow' => 'Moo',
     'pig' => 'Oink',
 );
 return $modx->getChunk('myChunk', $props);
 
-```Using the placeholders in the chunk:
-
 ```
-<pre class="brush: html">
+
+Using the placeholders in the chunk:
+
+``` html 
+
 <!-- myChunk -->
 A cow says "[[+cow]]" and a pig says "[[+pig]]".
 
-```## 
+```
+
+## 
 
 ## Do not Print or Echo 
 
@@ -132,17 +140,21 @@ A cow says "[[+cow]]" and a pig says "[[+pig]]".
 
  MODX has a logging function: _use it_. See [xPDO::log()](/xpdo/2.x/class-reference/xpdo/xpdo.log). If your users forgot to include a required property, log an error so your users will know it.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 $modx->log(modX::LOG_LEVEL_ERROR, '[mySnippet] missing the &xyz property!');
 
-``` You can also log debugging info, which is useful for users who are debugging things. This will only be written to the error log when the log\_level system setting is set to the appropriate level.
+```
 
- ```
-<pre class="brush: php">
+ You can also log debugging info, which is useful for users who are debugging things. This will only be written to the error log when the log\_level system setting is set to the appropriate level.
+
+ ``` php 
+
 $modx->log(modX::LOG_LEVEL_DEBUG, '[mySnippet] was called with the following properties: '.print_r($scriptProperties,true));
 
-```##  See Also 
+```
+
+##  See Also 
 
 - [Code Standards](developing-in-modx/code-standards "Code Standards")
   1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)

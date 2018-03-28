@@ -44,15 +44,19 @@ When creating a new context, make sure your desired user-groups have access to i
 
  In a template or Chunk:
 
-```
-<pre class="brush: php">[[++my_context_setting]]
-
-``` Programmatically in a Snippet:
+``` php 
+[[++my_context_setting]]
 
 ```
-<pre class="brush: php">$setting = $modx->getOption('my_context_setting');
 
-```##  See Also 
+ Programmatically in a Snippet:
+
+``` php 
+$setting = $modx->getOption('my_context_setting');
+
+```
+
+##  See Also 
 
 1. [Creating a Subdomain from a Folder using Virtual Hosts](administering-your-site/contexts/creating-a-subdomain-from-a-folder-using-virtual-hosts)
 2. [Using One Gateway Plugin to Manage Multiple Domains](administering-your-site/contexts/using-one-gateway-plugin-to-manage-multiple-domains)

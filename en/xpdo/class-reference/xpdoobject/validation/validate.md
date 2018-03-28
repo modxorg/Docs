@@ -12,13 +12,12 @@ Validate the field values using an xPDOValidator.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#validate>
 
-```
-<pre class="brush: php">
+``` php 
 boolean validate ([array $options = array()])
-
-```## Examples
-
 ```
-<pre class="brush: php">
+
+## Examples
+
+``` php 
 
 ```

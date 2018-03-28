@@ -12,19 +12,19 @@ Sets an xPDO configuration option value.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#setOption>
 
-```
-<pre class="brush: php">
+``` php 
 void setOption (string $key, mixed $value)
+```
 
-```## Example 
+## Example 
 
 Set the DB caching to false.
 
-```
-<pre class="brush: php">
+``` php 
 $xpdo->setOption(xPDO::OPT_CACHE_DB,false);
+```
 
-```Remember: setOption changes the option value _only_ for the current request: the values are not persisted.
+Remember: setOption changes the option value _only_ for the current request: the values are not persisted.
 
 ## See Also 
 

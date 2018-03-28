@@ -10,11 +10,11 @@ The @SELECT binding calls a database query based on the provided value and retur
 
 ## Syntax
 
-```
-<pre class="brush: php">
+``` php 
 @SELECT `pagetitle` AS `name`,`id` FROM `[[+PREFIX]]site_content` WHERE `published` = 1 AND `deleted` = 0
+```
 
-```To write one of these, you need to be familiar with [MySQL syntax](http://dev.mysql.com/doc/refman/5.1/en/). It is recommended that you first write a functional MySQL statement that executes without error in the MySQL command line (see errors, below for some pit-falls). Once you've verified that your query works, then you can create a @SELECT binding with it.
+To write one of these, you need to be familiar with [MySQL syntax](http://dev.mysql.com/doc/refman/5.1/en/). It is recommended that you first write a functional MySQL statement that executes without error in the MySQL command line (see errors, below for some pit-falls). Once you've verified that your query works, then you can create a @SELECT binding with it.
 
 All you need to do is after you've got a working MySQL query is:
 
@@ -33,11 +33,11 @@ You'll need to select only 2 columns - the first being the display value, the se
 
 For example, to grab a list of active users in a SELECT box:
 
-```
-<pre class="brush: php">
+``` php 
 @SELECT `username` AS `name`,`id` FROM `[[+PREFIX]]users` WHERE `active` = 1
+```
 
-```## Alternatives
+## Alternatives
 
 Before we get any more complicated, consider doing this a different way. A [Snippet](developing-in-modx/basic-development/snippets "Snippets") might do the job more easily than a binding.
 
@@ -49,12 +49,12 @@ Select queries are a great way to power a listbox dropdown, but since they ALWAY
 
 Consider the following query:
 
-```
-<pre class="brush: php">
+``` php 
 @SELECT '-none-' AS username, 0 AS id UNION ALL 
 SELECT `username`,`id` FROM `[[+PREFIX]]users` WHERE `active` = 1 ORDER BY username ASC
+```
 
-```Just be aware that the sort order here may force your empty option somewhere into the stack instead of keeping it on top. In the above example, a hyphen is used in the username to ensure that it sorts to the top of the list.
+Just be aware that the sort order here may force your empty option somewhere into the stack instead of keeping it on top. In the above example, a hyphen is used in the username to ensure that it sorts to the top of the list.
 
 ## More Complex Example: Template Variables
 
@@ -69,8 +69,7 @@ First, have a look at the following tables (you may have prefixes to your table 
 
 In our example, we want to filter based on a custom date field named "opening\_date", but if you look closely, the site\_tmplvar\_contentvalues.value field is a _text_ field. MySQL won't automatically recognize arbitrary text as a date value, so you'll have to make use of MySQL's [str\_to\_date()](http://dev.mysql.com/doc/refman/5.0/en/date-and-time-functions.html#function_str-to-date) function. You may think that the site\_tmplvars.display\_params is a savior here, but it's not... you end up smashing your nose directly into the nasty truth that the formats used by PHP's [strftime()](http://www.php.net/strftime) (stored in site\_tmplvars.display\_params) are **not** the same as what MySQL can use in its STR\_TO\_DATE() function. There may be a way to automatically do this, but it's easier to just hard-code it. You might end up with a query like this:
 
-```
-<pre class="brush: php">
+``` php 
 SELECT
         page.alias,
         tv_val.value,
@@ -83,8 +82,9 @@ WHERE
         AND tv_val.tmplvarid='6' /* 6 is the opening_date */
         AND DATE_FORMAT(STR_TO_DATE(tv_val.value, '%d-%m-%Y %H:%i:%s'), '%Y-%m-%d %H:%i:%s')>'2008-10-24 13:04:57'
 ;
+```
 
-```MODx uses the MyISAM table engine, not InnoDB, so it does not rigidly enforce the foreign key constraints that are inferred by the table structure.
+MODx uses the MyISAM table engine, not InnoDB, so it does not rigidly enforce the foreign key constraints that are inferred by the table structure.
 
 ## Errors
 

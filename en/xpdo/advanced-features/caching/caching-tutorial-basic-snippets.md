@@ -12,37 +12,37 @@ This page is designed to demonstrate some basic principles about the MODX cache 
 
 Here's our first Snippet, named **cacheWrite**:
 
-```
-<pre class="brush: php">
+``` php 
 $cacheManager = $modx->getCacheManager();
 $x = date('H:i:s');
 $cacheManager->set('my_cache_key',$x);
 return $x;
+```
 
-```Remember that we need to use the $x variable as an intermediary because the cacheManager relies on variable references. You can't simply pass it a static value.
+Remember that we need to use the $x variable as an intermediary because the cacheManager relies on variable references. You can't simply pass it a static value.
 
 This snippet simple stores the current timestamp to a cache key named "my\_cache\_key". Put this Snippet on a page in your site (CACHED), e.g. on "Page One":
 
-```
-<pre class="brush: php">
+``` php 
 [[writeCache]]
+```
 
-```### Snippet Two: Read from Cache
+### Snippet Two: Read from Cache
 
 Next, we will create simple snippet that will _read_ values from the cache, named **readCache**:
 
-```
-<pre class="brush: php">
+``` php 
 $cacheManager = $modx->getCacheManager();
 return $cacheManager->get('my_cache_key');
-
-```And put this Snippet onto a different page on your site (UNCACHED), e.g. on "Page Two":
-
 ```
-<pre class="brush: php">
-[[!readCache]]
 
-```## Observing our Snippets
+And put this Snippet onto a different page on your site (UNCACHED), e.g. on "Page Two":
+
+``` php 
+[[!readCache]]
+```
+
+## Observing our Snippets
 
 1\. First, navigate to "Page One" (or just preview that page in your site). You should see a simple timestamp, e.g. '11:44:55'. 
 2\. Next, navigate to "Page Two" on your site in a separate browser tab. You should see the _same_ timestamp, e.g. '11:44:55'. Even if you wait 5 minutes, the timestamp should not change.
@@ -62,11 +62,11 @@ Next, try this:
 
 1\. Edit "Page One" so that it calls `writeCache` uncached:
 
-```
-<pre class="brush: php">
+``` php 
 [[!writeCache]]
+```
 
-```2\. Visit "Page One" in a browser. Notice the timestamp. 
+2\. Visit "Page One" in a browser. Notice the timestamp. 
 3\. Refresh "Page One". Notice that the timestamp updates. 
 4\. Visit "Page Two" in a browser. What timestamp does it show?
 

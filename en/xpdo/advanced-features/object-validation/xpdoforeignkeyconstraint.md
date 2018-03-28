@@ -14,8 +14,7 @@ Here we want to make sure no category ID is assigned to our object that doesnt h
 
 First, our model:
 
-```
-<pre class="brush: php">
+``` php 
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">    
     <object class="myTest" table="test" extends="xPDOSimpleObject">
@@ -40,11 +39,11 @@ First, our model:
                    cardinality="one" owner="foreign" />
     </object>
 </model>
-
-```From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
-
 ```
-<pre class="brush: php">
+
+From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
+
+``` php 
 $output = '';
 $modx->addPackage('test','/path/to/my/test/model/','test_');
 $obj = $modx->newObject('myTest');
@@ -56,8 +55,9 @@ if ($validator->validate() == false) {
         $output .= $errorMsg['message'];
     }
 }
+```
 
-```This will display, assuming that a category doesn't exist with ID '123':
+This will display, assuming that a category doesn't exist with ID '123':
 
 > The category specified does not exist.
 

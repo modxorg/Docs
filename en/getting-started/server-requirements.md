@@ -36,13 +36,17 @@ _old_uri: "2.x/getting-started/server-requirements"
 - php-mbstring on (required on some extras like Gallery)
 - PHP memory\_limit 24MB or more, depending on your server
 
-**PHP Configuration Options** ```
-<pre class="brush: php">./configure --with-apxs2=/usr/local/bin/apxs --with-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
+**PHP Configuration Options** ``` php 
+./configure --with-apxs2=/usr/local/bin/apxs --with-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 
-```**NGINX PHP Configuration Options** ```
-<pre class="brush: php">./configure --with-mysql --with-pdo-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
+```
 
-```### MySQL Database Requirements
+**NGINX PHP Configuration Options** ``` php 
+./configure --with-mysql --with-pdo-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
+
+```
+
+### MySQL Database Requirements
 
 - 4.1.20 or newer, with the following permissions:
   - SELECT, INSERT, UPDATE, DELETE are required for normal operation

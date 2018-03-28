@@ -28,8 +28,8 @@ Each has a special purpose and strict rules governing origination and merge targ
 
 Integration managers must work directly with the "blessed" repository when merging to/from develop and master (as well as when sharing release or hotfix branches is necessary), but can share feature branches on their GitHub forks as any contributing developer would. Here is the suggested way to prepare your local repository as an integrator for working with both the "blessed" repository and your own developer fork (which you create on GitHub):
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 
 $ git checkout -b master origin/master
 Switched to a new branch "master"
@@ -37,10 +37,12 @@ $ git checkout -b develop origin/develop
 Switched to a new branch "develop"
 
 
-```To keep your local tracking branches up-to-date when your working copy is clean:
+```
 
- ```
-<pre class="brush: php">
+To keep your local tracking branches up-to-date when your working copy is clean:
+
+ ``` php 
+
 
 $ git fetch origin
 $ git checkout develop
@@ -48,19 +50,23 @@ Switched to branch {{develop}}
 $ git rebase origin/develop
 
 
-```Please note that the permanent branches in our workflow are irrelevant in the GitHub developer forks. Any work that is incorporated into the "blessed" repository's master or develop branch should eventually match in all forks. Contributors will be taught to create and share topic branches that can contain new features or bug fixes they wish to contribute back to the project. It is the integrator's responsibility to make sure any work that is incorporated into the "blessed" repository is from a developer who has signed and returned their CLA.
+```
+
+Please note that the permanent branches in our workflow are irrelevant in the GitHub developer forks. Any work that is incorporated into the "blessed" repository's master or develop branch should eventually match in all forks. Contributors will be taught to create and share topic branches that can contain new features or bug fixes they wish to contribute back to the project. It is the integrator's responsibility to make sure any work that is incorporated into the "blessed" repository is from a developer who has signed and returned their CLA.
 
 That said, as long as you never commit to it, you can keep your master branch up-to-date in your fork like this (assuming you have your local tracking branch for master up-to-date from origin):
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 
 $ git checkout -b mydevelop opengeek/develop
 $ git merge --ff-only develop
 $ git push opengeek mydevelop:develop
 
 
-```Note the --ff-only flag ensures that only fast-forward merges are performed (in case you accidentally commit to the main branches on your fork or origin without realizing it or, in the case of origin, without pushing the changes).
+```
+
+Note the --ff-only flag ensures that only fast-forward merges are performed (in case you accidentally commit to the main branches on your fork or origin without realizing it or, in the case of origin, without pushing the changes).
 
 **Important**
 Please make sure you have your autocrlf settings set appropriately before making any commits to your fork or the "blessed" repository. See <http://help.github.com/dealing-with-lineendings/> to determine the setting you need based on the platform you are developing on.
@@ -82,8 +88,8 @@ Feature branches typically exist in developer forks only for sharing purposes, n
 
 When starting work on a new feature, branch off from the develop branch.
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 
 $ git checkout develop
 Switched to branch 'develop'
@@ -95,7 +101,9 @@ Deleted branch myfeature (was 05e5997).
 $ git push origin develop
 
 
-```**Important**
+```
+
+**Important**
 The --no-ff flag prevents a fast-forward merge, always creating a new commit object, even if the merge could be performed with a fast-forward. This avoids losing critical information about the existence of a feature branch. It also groups the changes into one commit object so the entire feature can easily be reverted.
  The --log flag adds the first line of the commit message for every commit that is merged into the merge commit message.
  The --no-commit prevents the commit from automatically occurring; you can then manually commit and edit the commit message as needed.
@@ -112,8 +120,8 @@ Release branches exist for the sole purpose of preparing a new production releas
 
 Release branches are created from develop and will be shared in origin:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 
 $ git checkout master
 Switched to branch 'master'
@@ -124,17 +132,21 @@ $ git tag -u "Jason Coward (MODx, LLC) <jason@modx.com>" v2.1 -m "Tagging versio
 $ git push origin master --tags
 
 
-```Then merging the changes made in the release branch back to develop:
+```
 
- ```
-<pre class="brush: php">
+Then merging the changes made in the release branch back to develop:
+
+ ``` php 
+
 
 $ git branch -d release-2.1
 Deleted branch release-2.1 (was ff452fe).
 $ git push origin :release-2.1
 
 
-```### <a name="MODxGitHubIntegrator%27sGuide-Hotfixbranches"></a>Hotfix branches
+```
+
+### <a name="MODxGitHubIntegrator%27sGuide-Hotfixbranches"></a>Hotfix branches
 
 - May branch from: master
 - Must merge into: develop and master
@@ -146,15 +158,17 @@ Unplanned production releases, typically in response to security-related or othe
 
 Hotfix branches are created from master; imagine that a critical security flaw is discovered in the current production release, but changes sitting in the develop branch are as yet untested and thus not stable. The solution is to create a hotfix branch in which to address the problem:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 
 $ git commit -m "Fixed severe production problem"
 [hotfix-2.1.1 abbe5d6] Fixed severe production problem
 5 files changed, 32 insertions(+), 17 deletions(-)
 
 
-```Hotfix branches will generally not be pushed to any public repositories unless collaborative development needs to take place on the fix.
+```
+
+Hotfix branches will generally not be pushed to any public repositories unless collaborative development needs to take place on the fix.
 
 #### <a name="MODxGitHubIntegrator%27sGuide-Finishingthehotfixbranch"></a>Finishing the hotfix branch
 
@@ -162,8 +176,8 @@ Similar to the release branch, the hotfix branch must be merged into both master
 
 First, update master and tag the release:
 
- ```
-<pre class="brush: php">
+ ``` php 
+
 
 $ git checkout develop
 Switched to branch 'develop'
@@ -172,12 +186,14 @@ Automatic merge went well; stopped before committing as requested
 $ git commit
 
 
-```There is an exception to this though: if a release branch exists, the hotfix changes need to be merged into the release branch instead of develop, where it will eventually be merged back into develop anyway. But you can safely merge it into develop as well, if work in develop immediately requires the fix.
+```
+
+There is an exception to this though: if a release branch exists, the hotfix changes need to be merged into the release branch instead of develop, where it will eventually be merged back into develop anyway. But you can safely merge it into develop as well, if work in develop immediately requires the fix.
 
 Once you have merged it everywhere you need to, go ahead and get rid of the temporary hotfix branch:
 
  ```
-<pre class="code-java">
+
 $ git branch -d hotfix-2.1.1
 Deleted branch hotfix-2.1.1 (was abbe5d6).
 

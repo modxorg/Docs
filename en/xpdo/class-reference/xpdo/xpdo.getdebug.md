@@ -12,18 +12,18 @@ Returns the debug state for the XPDO connection.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getDebug>
 
-```
-<pre class="brush: php">
+``` php 
 boolean getDebug ()
+```
 
-```## Example
+## Example
 
 Get whether debug mode is on or not.
 
-```
-<pre class="brush: php">
+``` php 
 $isDebugOn = $xpdo->getDebug();
+```
 
-```## See Also
+## See Also
 
 - [xPDO](/xpdo/2.x/class-reference/xpdo "xPDO")

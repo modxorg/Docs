@@ -12,26 +12,26 @@ Within a request, contexts retrieved using this function will cache the context 
 
 If you merely want to check the current context, you can return the context key:
 
-```
-<pre class="brush: php">
+``` php 
 $modx->context->key;
+```
 
-```## Syntax
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getContext()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getContext())
 
-```
-<pre class="brush: php">
+``` php 
 &$modContext getContext (string $contextKey)
+```
 
-```## Example
+## Example
 
 Get the 'sports' Context.
 
-```
-<pre class="brush: php">
+``` php 
 $ctx = $modx->getContext('sports');
+```
 
-```## See Also
+## See Also
 
 Page: [modX](developing-in-modx/other-development-resources/class-reference/modx)Page: [Contexts](administering-your-site/contexts)Page: [modX.getContext](developing-in-modx/other-development-resources/class-reference/modx/modx.getcontext)
