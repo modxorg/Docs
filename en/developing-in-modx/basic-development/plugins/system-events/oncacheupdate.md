@@ -13,7 +13,12 @@ Group: None
 
 ## Event Parameters
 
-NameDescriptionresultsThe results of the clearing.pathsAn array of paths that were to be cleared.optionsAn array of options passed to the cache clearing method.## See Also
+| Name | Description |
+|------|-------------|
+| results | The results of the clearing. |
+| paths | An array of paths that were to be cleared. |
+| options | An array of options passed to the cache clearing method. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

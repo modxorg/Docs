@@ -13,7 +13,10 @@ Group: modChunk
 
 ## Event Parameters
 
-NameDescriptionchunkA reference to the modChunk object.## See Also
+| Name | Description |
+|------|-------------|
+| chunk | A reference to the modChunk object. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

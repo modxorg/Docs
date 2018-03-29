@@ -14,7 +14,21 @@ It's output options look like:
 
 ![](/download/attachments/35095498/tv-image-output-options2.png?version=1&modificationDate=1308560369000)
 
-NameDescriptionValueOutput typeThe option to be outputted to the frontend.ImageAlternate textalternative text for the image to be displayed if img coudn't be load H Spacehorizontal space V Spacevertical space Border Sizesize of the border the image should get Alignalign of the image (middle, top, bottom, center, left, right)noneNamename for the image tag ClassCSS class to attach the img tag IDCSS ID to attach the img tag StyleAny CSS style-attributes to add to the tag Attributesany other HTML-attributes you want to add to the tag    ## See Also
+| Name | Description | Value |
+|------|-------------|-------|
+| Output type | The option to be outputted to the frontend. | Image |
+| Alternate text | alternative text for the image to be displayed if img coudn't be load |  |
+| H Space | horizontal space |  |
+| V Space | vertical space |  |
+| Border Size | size of the border the image should get |  |
+| Align | align of the image (middle, top, bottom, center, left, right) | none |
+| Name | name for the image tag |  |
+| Class | CSS class to attach the img tag |  |
+| ID | CSS ID to attach the img tag |  |
+| Style | Any CSS style-attributes to add to the tag |  |
+| Attributes | any other HTML-attributes you want to add to the tag |  |
+|  |  |  |
+## See Also
 
 1. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)
 2. [Delimiter TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type)

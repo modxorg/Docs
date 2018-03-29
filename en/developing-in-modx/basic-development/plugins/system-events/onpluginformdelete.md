@@ -13,7 +13,11 @@ Group: Plugins
 
 ## Event Parameters
 
-NameDescriptionchunkA reference to the modPlugin object.idThe ID of the Plugin.## See Also
+| Name | Description |
+|------|-------------|
+| chunk | A reference to the modPlugin object. |
+| id | The ID of the Plugin. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

@@ -13,7 +13,11 @@ Group: Snippets
 
 ## Event Parameters
 
-NameDescriptionsnippetA reference to the modSnippet object.idThe ID of the Snippet.## See Also
+| Name | Description |
+|------|-------------|
+| snippet | A reference to the modSnippet object. |
+| id | The ID of the Snippet. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

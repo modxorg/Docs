@@ -14,7 +14,11 @@ Specify the ID of the tab to move to in the "name" field of the Rule. Then speci
 
 The list of available tabs is:
 
-IDDescriptionmodx-resource-settingsThe first tab, or Create/Edit resource tab.modx-page-settingsThe second tab, or Page Settings tab.
+| ID | Description |
+|----|-------------|
+| modx-resource-settings | The first tab, or Create/Edit resource tab. |
+| modx-page-settings | The second tab, or Page Settings tab. |
+
 
 You can also create a tab with the [New Tab](display/revolution20/New+Tab "New Tab") rule and move a TV there.
 

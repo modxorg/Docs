@@ -19,19 +19,22 @@ To simplify parsing logic, improve parsing performance and avoid confusion with 
 
 ## Tag Format Changes for Content Elements and Content Tags
 
-**_Content Elements_**  Evolution (Old)   Revolution (New) Example for Revolution 
- [Templates](making-sites-with-modx/structuring-your-site/templates "Templates")  no tag representation   no tag representation   Resource Fields \[\*_field_\*\]   \[\[\*field\]\] 
- \[\[\*pagetitle\]\] [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")  \[\*_templatevar_\*\]   \[\[\*_templatevar_\]\] \[\[\*tags\]\] 
- [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks")  {{_chunk_ }} 
-   \[\[$_chunk_\]\] \[\[$header\]\] 
- [Snippets](developing-in-modx/basic-development/snippets "Snippets")  \[\[_snippet_\]\]   \[\[_snippet_\]\] \[\[getResources\]\] 
- [Plugins](developing-in-modx/basic-development/plugins "Plugins")  no tag representation   no tag representation   [Modules](/evolution/1.0/developers-guide/modules "Modules")  no tag representation   does not exist in Revolution, use [CMPs](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages")   **_Content Tags_**          Placeholders \[+_placeholder_+\] 
-   \[\[+_placeholder_\]\] \[\[+modx.user.id\]\] 
- [Links](making-sites-with-modx/structuring-your-site/resources "Resources")  \[~_link_~\]   \[\[~_link_\]\] \[\[~\[\[\*id\]\]? &scheme=`full`\]\] 
- [System Settings](administering-your-site/settings/system-settings "System Settings")  \[(_system\_setting_)\]   \[\[++_system\_setting_\]\] \[\[++site\_start\]\] 
- [Language](developing-in-modx/advanced-development/internationalization "Internationalization")  no tag representation   \[\[%_language\_string\_key_\]\] \[\[%LanguageStringKey? &language=`en` &namespace=`NameSpaceName` &topic=`TopicName`\]\] Comment (see note below) 
-     \[\[-this is a comment\]\] 
-  Adopting this simplified format allows the new parser to be fully-recursive, following a source-order mechanism that does not depend on regular expressions.
+| **_Content Elements_** | Evolution (Old) |  | Revolution (New) | Example for Revolution |
+|------------------------|-----------------|---|------------------|------------------------|
+| [Templates](making-sites-with-modx/structuring-your-site/templates "Templates") | no tag representation |  | no tag representation |  |
+| Resource Fields | \[\*_field_\*\] |  | \[\[\*field\]\] | \[\[\*pagetitle\]\] |
+| [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") | \[\*_templatevar_\*\] |  | \[\[\*_templatevar_\]\] | \[\[\*tags\]\] |
+| [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks") | {{_chunk_ }} |  | \[\[$_chunk_\]\] | \[\[$header\]\] |
+| [Snippets](developing-in-modx/basic-development/snippets "Snippets") | \[\[_snippet_\]\] |  | \[\[_snippet_\]\] | \[\[getResources\]\] |
+| [Plugins](developing-in-modx/basic-development/plugins "Plugins") | no tag representation |  | no tag representation |  |
+| [Modules](/evolution/1.0/developers-guide/modules "Modules") | no tag representation |  | does not exist in Revolution, use [CMPs](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages") |  |
+| **_Content Tags_** |  |  |  |  |
+| Placeholders | \[+_placeholder_+\] |  | \[\[+_placeholder_\]\] | \[\[+modx.user.id\]\] |
+| [Links](making-sites-with-modx/structuring-your-site/resources "Resources") | \[~_link_~\] |  | \[\[~_link_\]\] | \[\[~\[\[\*id\]\]? &scheme=`full`\]\] |
+| [System Settings](administering-your-site/settings/system-settings "System Settings") | \[(_system\_setting_)\] |  | \[\[++_system\_setting_\]\] | \[\[++site\_start\]\] |
+| [Language](developing-in-modx/advanced-development/internationalization "Internationalization") | no tag representation |  | \[\[%_language\_string\_key_\]\] | \[\[%LanguageStringKey? &language=`en` &namespace=`NameSpaceName` &topic=`TopicName`\]\] |
+| Comment (see note below) |  |  | \[\[-this is a comment\]\] |  |
+Adopting this simplified format allows the new parser to be fully-recursive, following a source-order mechanism that does not depend on regular expressions.
 
 Previously, each tag set was parsed independently in a specific order, one level at a time, with any embedded tags delayed until the next pass. Now tags are parsed as they are encountered regardless of the element types they represent, and embedded tags are parsed before the outer tag to allow much more complex tags to be composed. Combined with the ability to use the previously reserved ? & and = symbols in tag strings (when escaped by the infamous backtick, e.g. `&param=`?=&is ok now, wow!?&=``), MODx Content Tags offer a powerful new set of capabilities for mashing up your content.
 

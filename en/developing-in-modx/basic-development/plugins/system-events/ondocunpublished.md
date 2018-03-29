@@ -13,7 +13,12 @@ Group: None
 
 ## Event Parameters
 
-NameDescriptiondocidThe ID of the resource being unpublished. (deprecated)idThe ID of the resource being unpublished.resourceA reference to the modResource object being unpublished.## See Also
+| Name | Description |
+|------|-------------|
+| docid | The ID of the resource being unpublished. (deprecated) |
+| id | The ID of the resource being unpublished. |
+| resource | A reference to the modResource object being unpublished. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

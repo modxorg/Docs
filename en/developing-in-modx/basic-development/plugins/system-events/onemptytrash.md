@@ -13,7 +13,11 @@ Group: Documents
 
 ## Event Parameters
 
-NameDescriptionidsAn array of Resource IDs that were attempted to be permanently deleted.num\_deletedThe number of Resources actually deleted.## See Also
+| Name | Description |
+|------|-------------|
+| ids | An array of Resource IDs that were attempted to be permanently deleted. |
+| num\_deleted | The number of Resources actually deleted. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

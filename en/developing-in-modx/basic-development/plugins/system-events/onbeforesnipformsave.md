@@ -13,7 +13,12 @@ Group: Snippets
 
 ## Event Parameters
 
-NameDescriptionmodeEither 'upd' or 'new', depending on the circumstance.snippetA reference to the modSnippet object.idThe ID of the Snippet. Will be 0 for new Snippets.## See Also
+| Name | Description |
+|------|-------------|
+| mode | Either 'upd' or 'new', depending on the circumstance. |
+| snippet | A reference to the modSnippet object. |
+| id | The ID of the Snippet. Will be 0 for new Snippets. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

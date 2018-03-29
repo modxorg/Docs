@@ -27,9 +27,29 @@ MODExt Windows are a convenient way to display record data from a Grid or AJAX r
 
 ## Unique Parameters
 
-NameDescriptionDefaultactionIf baseParams is not set, will use this as the action to the controller. allowDropWhether or not to allow dropping of tree items onto the form fields.1baseParamsAn object of parameters to send along with the window form on save.{}blankValuesIf true, will reset the values of the form each time it is shown.0cancelBtnTextThe text of the cancel button for the window.CancelfieldsAn array of fields for the form, similar to Ext.form.FormPanel's fields definition.\[\]fileUploadIf true, the form will be built to accept files.0formFrameWhether or not to add a ext-style frame to the window.1labelAlignThe alignment of the labels on the form.rightlabelWidthThe width, in pixels, of the labels on the form.100recordA JSON object of default values (in name: value format) to set to the form when first loading the window.{}saveBtnTextThe text of the save button for the window.SaveurlThe URL of the connector to submit the window form to. ## Custom Events
+| Name | Description | Default |
+|------|-------------|---------|
+| action | If baseParams is not set, will use this as the action to the controller. |  |
+| allowDrop | Whether or not to allow dropping of tree items onto the form fields. | 1 |
+| baseParams | An object of parameters to send along with the window form on save. | {} |
+| blankValues | If true, will reset the values of the form each time it is shown. | 0 |
+| cancelBtnText | The text of the cancel button for the window. | Cancel |
+| fields | An array of fields for the form, similar to Ext.form.FormPanel's fields definition. | \[\] |
+| fileUpload | If true, the form will be built to accept files. | 0 |
+| formFrame | Whether or not to add a ext-style frame to the window. | 1 |
+| labelAlign | The alignment of the labels on the form. | right |
+| labelWidth | The width, in pixels, of the labels on the form. | 100 |
+| record | A JSON object of default values (in name: value format) to set to the form when first loading the window. | {} |
+| saveBtnText | The text of the save button for the window. | Save |
+| url | The URL of the connector to submit the window form to. |  |
+## Custom Events
 
-NameDescriptionsuccessIf the form submission returns a success response.failureIf the form submission returns a failure response.beforeSubmitBefore the form submits its values to the connector, but after validation passes.## Unique Functionality
+| Name | Description |
+|------|-------------|
+| success | If the form submission returns a success response. |
+| failure | If the form submission returns a failure response. |
+| beforeSubmit | Before the form submits its values to the connector, but after validation passes. |
+## Unique Functionality
 
 #### Firing the submit method
 

@@ -19,13 +19,50 @@ The config.xml file used for running setup via CLI has the following XML nodes. 
 
 ### Database Configuration Options
 
-KeyDescriptionDefaultdatabase\_typeThe database driver to use for this installation.mysqldatabase\_serverThe hostname where your DB server is located. To use a port, postfix with :portnumberlocalhostdatabaseThe name of the databasemodx\_modxdatabase\_userThe user to use to connect to the databasedb\_usernamedatabase\_passwordThe password to use to connect to the databasedb\_passworddatabase\_connection\_charsetThe charset to use in the connection to the databaseutf8database\_charsetThe charset of the databaseutf8database\_collationThe collation of the databaseutf8\_general\_citable\_prefixThe table prefix to use for all MODX tablesmodx\_### Installation Configuration Options
+| Key | Description | Default |
+|-----|-------------|---------|
+| database\_type | The database driver to use for this installation. | mysql |
+| database\_server | The hostname where your DB server is located. To use a port, postfix with :portnumber | localhost |
+| database | The name of the database | modx\_modx |
+| database\_user | The user to use to connect to the database | db\_username |
+| database\_password | The password to use to connect to the database | db\_password |
+| database\_connection\_charset | The charset to use in the connection to the database | utf8 |
+| database\_charset | The charset of the database | utf8 |
+| database\_collation | The collation of the database | utf8\_general\_ci |
+| table\_prefix | The table prefix to use for all MODX tables | modx\_ |
+### Installation Configuration Options
 
-KeyDescriptionDefaultinplaceSet this to 1 if you are using MODX from Git or extracted it from the full MODX package to the server prior to installationunpackedSet this to 1 if you have manually extracted the core package from the file core/packages/core.transport.zip. This will reduce the time it takes for the installation process on systems that do not allow the PHP time\_limit and script execution time settings to be alteredlanguageThe language to install MODX for. This will set the default manager language to this. Use IANA codes.cmsadminThe username of the new Administrator account for new installsusernamecmspasswordThe password of the new Administrator account for new installspasswordcmsadminemailThe email of the new Administrator account for new installsemail@address.comremove\_setup\_directoryWhether or not to remove the setup/ directory after installation.1### Path Configuration Options
+| Key | Description | Default |
+|-----|-------------|---------|
+| inplace | Set this to 1 if you are using MODX from Git or extracted it from the full MODX package to the server prior to installation |
+| unpacked | Set this to 1 if you have manually extracted the core package from the file core/packages/core.transport.zip. This will reduce the time it takes for the installation process on systems that do not allow the PHP time\_limit and script execution time settings to be altered |
+| language | The language to install MODX for. This will set the default manager language to this. Use IANA codes. |
+| cmsadmin | The username of the new Administrator account for new installs | username |
+| cmspassword | The password of the new Administrator account for new installs | password |
+| cmsadminemail | The email of the new Administrator account for new installs | email@address.com |
+| remove\_setup\_directory | Whether or not to remove the setup/ directory after installation. | 1 |
+### Path Configuration Options
 
-KeyDescriptionDefaultcontext\_mgr\_path  context\_mgr\_url  context\_connectors\_path  context\_connectors\_url  context\_web\_path  context\_web\_url  assets\_path  assets\_url  core\_path  processors\_path  ### Other Configuration Options
+| Key | Description | Default |
+|-----|-------------|---------|
+| context\_mgr\_path |  |  |
+| context\_mgr\_url |  |  |
+| context\_connectors\_path |  |  |
+| context\_connectors\_url |  |  |
+| context\_web\_path |  |  |
+| context\_web\_url |  |  |
+| assets\_path |  |  |
+| assets\_url |  |  |
+| core\_path |  |  |
+| processors\_path |  |  |
+### Other Configuration Options
 
-KeyDescriptionDefaulthttps\_portThe port on your server for HTTPS connections443http\_hostThe HTTP host of your server. Usually the hostname, such as mysite.comlocalhostcache\_disabledWhether or not to disable the MODX cache0## See Also
+| Key | Description | Default |
+|-----|-------------|---------|
+| https\_port | The port on your server for HTTPS connections | 443 |
+| http\_host | The HTTP host of your server. Usually the hostname, such as mysite.com | localhost |
+| cache\_disabled | Whether or not to disable the MODX cache | 0 |
+## See Also
 
 1. [Basic Installation](getting-started/installation/basic-installation)
   1. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)

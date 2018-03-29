@@ -24,4 +24,9 @@ $chunk->setContent('<h2>Hello!</h2>');
 
 ## See Also
 
-Page: [(at)CHUNK](/evolution/0.9.x/developers-guide/template-variables/(at)-binding/(at)chunk)Page: [(at)CHUNK](/evolution/1.0/developers-guide/template-variables/(at)-binding/(at)chunk)Page: [modChunk](developing-in-modx/other-development-resources/class-reference/modchunk)Page: [modChunk.setContent](developing-in-modx/other-development-resources/class-reference/modchunk/modchunk.setcontent)Page: [modChunk.getContent](developing-in-modx/other-development-resources/class-reference/modchunk/modchunk.getcontent)
+| Page: [(at)CHUNK](/evolution/0.9.x/developers-guide/template-variables/(at)-binding/(at)chunk) |
+|------------------------------------------------------------------------------------------------|
+| Page: [(at)CHUNK](/evolution/1.0/developers-guide/template-variables/(at)-binding/(at)chunk) |
+| Page: [modChunk](developing-in-modx/other-development-resources/class-reference/modchunk) |
+| Page: [modChunk.setContent](developing-in-modx/other-development-resources/class-reference/modchunk/modchunk.setcontent) |
+| Page: [modChunk.getContent](developing-in-modx/other-development-resources/class-reference/modchunk/modchunk.getcontent) |

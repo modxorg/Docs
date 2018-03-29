@@ -28,15 +28,34 @@ Trees provide a quick and easy way to display multiple levels of objects which h
 
 MODx.tree.Tree has a few extra parameters not found in Ext.tree.TreePanel objects:
 
-NameDescriptionDefaulturlThe URL to point the tree loader at. Optional if you pass in the data parameter. rootNameThe text of the root node, if rootVisible is set to true. rootIdThe ID of the root node.rootdataOptional; if url is not set, data must be loaded in through here.\[\]remoteToolbarIf true, will load the tree's toolbar via data loaded remotely.falseremoteToolbarUrl\*The connector URL to load the toolbar from. Defaults to the tree's URL. remoteToolbarAction\*The processor action to load the toolbar from.getToolbaruseDefaultToolbarIf remoteToolbar is false, this will load the default toolbar, which contains expand all, contract all, and refresh. Items passed to tbar property will be added after.falsemenuConfigThe config object to pass to the context menu loaded for this tree. expandFirstIf true, will expand the first level nodes on render.trueremoveAction\*The processor action to take when removing a node.removeremoveTitle\*The title for the remove dialog when removing a node.Warning!primaryKeyThe primary key for the node. Usually is id.idsortActionThe processor action to take when sorting nodes via drag/drop.sorttoolbarItemCls\*The CSS class to add to remoteToolbar loaded items.x-btn-icon- = MODX Revolution 2.1+ Only
+| Name | Description | Default |
+|------|-------------|---------|
+| url | The URL to point the tree loader at. Optional if you pass in the data parameter. |  |
+| rootName | The text of the root node, if rootVisible is set to true. |  |
+| rootId | The ID of the root node. | root |
+| data | Optional; if url is not set, data must be loaded in through here. | \[\] |
+| remoteToolbar | If true, will load the tree's toolbar via data loaded remotely. | false |
+| remoteToolbarUrl\* | The connector URL to load the toolbar from. Defaults to the tree's URL. |  |
+| remoteToolbarAction\* | The processor action to load the toolbar from. | getToolbar |
+| useDefaultToolbar | If remoteToolbar is false, this will load the default toolbar, which contains expand all, contract all, and refresh. Items passed to tbar property will be added after. | false |
+| menuConfig | The config object to pass to the context menu loaded for this tree. |  |
+| expandFirst | If true, will expand the first level nodes on render. | true |
+| removeAction\* | The processor action to take when removing a node. | remove |
+| removeTitle\* | The title for the remove dialog when removing a node. | Warning! |
+| primaryKey | The primary key for the node. Usually is id. | id |
+| sortAction | The processor action to take when sorting nodes via drag/drop. | sort |
+| toolbarItemCls\* | The CSS class to add to remoteToolbar loaded items. | x-btn-icon |
+- = MODX Revolution 2.1+ Only
 
 ## Custom Events
 
 The custom events fired by MODx.tree.Tree are:
 
-NameDescriptionbeforeSortFired before the tree sends off the sorted nodes to the sort processor. Passed the sorted nodes, encoded.afterSortFired after the tree node sorting happens. Passes: - event - The drop event
-- result - The response object from the sort processor.
-
+| Name | Description |
+|------|-------------|
+| beforeSort | Fired before the tree sends off the sorted nodes to the sort processor. Passed the sorted nodes, encoded. |
+| afterSort | Fired after the tree node sorting happens. Passes: - event - The drop event
+- result - The response object from the sort processor. |
 ## Other Unique Features
 
 #### Sorting

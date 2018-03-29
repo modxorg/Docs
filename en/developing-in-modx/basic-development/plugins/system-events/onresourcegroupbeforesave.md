@@ -13,7 +13,10 @@ Group: modResourceGroup
 
 ## Event Parameters
 
-NameDescriptiongroupA reference to the modResourceGroup object.## See Also
+| Name | Description |
+|------|-------------|
+| group | A reference to the modResourceGroup object. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

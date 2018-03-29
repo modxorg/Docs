@@ -13,7 +13,10 @@ Group: None
 
 ## Event Parameters
 
-NameDescriptionresultsAn array of results.## See Also
+| Name | Description |
+|------|-------------|
+| results | An array of results. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

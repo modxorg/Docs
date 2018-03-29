@@ -54,7 +54,15 @@ var tpl = MODx.config.default_template;
 
 There are a few other variables available on the MODx.config object that are not [System Settings](administering-your-site/settings/system-settings "System Settings"):
 
-KeyDescriptionbase\_urlThe base URL for the MODX site and/or active context.connectors\_urlThe URL to the connectors directory.manager\_urlThe URL to the manager.http\_hostThe HTTP host variable for the active context.site\_urlThe full Site URL for the active context.custom\_resource\_classesAn array of custom Resource classes pulled from the System Setting custom\_resource\_classes### MODx.action
+| Key | Description |
+|-----|-------------|
+| base\_url | The base URL for the MODX site and/or active context. |
+| connectors\_url | The URL to the connectors directory. |
+| manager\_url | The URL to the manager. |
+| http\_host | The HTTP host variable for the active context. |
+| site\_url | The full Site URL for the active context. |
+| custom\_resource\_classes | An array of custom Resource classes pulled from the System Setting custom\_resource\_classes |
+### MODx.action
 
 This object contains a map of all the modAction objects (or MODX manager controllers), mapped by their controller to their ID:
 
@@ -72,7 +80,17 @@ var actionId = MODx.action['mycomponent:controllers/index'];
 
 Contains MODX version information, with the following attributes:
 
-KeyExampleversion2major\_version1minor\_version0patch\_levelplcode\_nameRevolutiondistro (traditional)full\_version2.1.0-plfull\_appnameMODX Revolution 2.1.0-pl (traditional)Example:
+| Key | Example |
+|-----|---------|
+| version | 2 |
+| major\_version | 1 |
+| minor\_version | 0 |
+| patch\_level | pl |
+| code\_name | Revolution |
+| distro | (traditional) |
+| full\_version | 2.1.0-pl |
+| full\_appname | MODX Revolution 2.1.0-pl (traditional) |
+Example:
 
 ``` php 
 var fv = MODx.version.full_version;
@@ -82,7 +100,10 @@ var fv = MODx.version.full_version;
 
 This object will contain the two following properties for the currently logged-in manager user:
 
-MODx.user.idThe ID of the user.MODx.user.usernameThe username of the user.``` php 
+| MODx.user.id | The ID of the user. |
+|--------------|---------------------|
+| MODx.user.username | The username of the user. |
+``` php 
 var userId = MODx.user.id;
 ```
 
@@ -90,7 +111,20 @@ var userId = MODx.user.id;
 
 This will contain the following permissions should they be granted to the user (they will not exist if the user does not have the permission):
 
-NameDescriptionMODx.perm.resource\_treeTo view the Resources tree.MODx.perm.element\_treeTo view the Elements tree.MODx.perm.file\_treeTo view the Files tree.MODx.perm.file\_uploadTo be able to upload files.MODx.perm.file\_managerTo use the MODX file browser.MODx.perm.new\_chunkTo create a new Chunk.MODx.perm.new\_pluginTo create a new Plugin.MODx.perm.new\_snippetTo create a new Snippet.MODx.perm.new\_templateTo create a new Template.MODx.perm.new\_tvTo create a new Template Variable.MODx.perm.directory\_createTo be able to create a directory on the filesystem.``` php 
+| Name | Description |
+|------|-------------|
+| MODx.perm.resource\_tree | To view the Resources tree. |
+| MODx.perm.element\_tree | To view the Elements tree. |
+| MODx.perm.file\_tree | To view the Files tree. |
+| MODx.perm.file\_upload | To be able to upload files. |
+| MODx.perm.file\_manager | To use the MODX file browser. |
+| MODx.perm.new\_chunk | To create a new Chunk. |
+| MODx.perm.new\_plugin | To create a new Plugin. |
+| MODx.perm.new\_snippet | To create a new Snippet. |
+| MODx.perm.new\_template | To create a new Template. |
+| MODx.perm.new\_tv | To create a new Template Variable. |
+| MODx.perm.directory\_create | To be able to create a directory on the filesystem. |
+``` php 
 if (MODx.perm.file_upload) { /* ...code... */ }
 ```
 

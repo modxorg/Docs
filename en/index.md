@@ -4,8 +4,6 @@ _old_id: "1"
 _old_uri: "dashboard.action"
 ---
 
-**This is just an edit to show the difference between 2.x and 3.x of the docs branches for demonstration purposes.**
-
 ## Overview
 
  MODX Revolution (Revo) is an easy-to-use Content Management System (CMS) and Application Framework rolled into one. Despite the limitless possibilities that MODX affords you, we think you'll find it refreshingly intuitive to work with. At every step, MODX strives to deliver Creative Freedom.

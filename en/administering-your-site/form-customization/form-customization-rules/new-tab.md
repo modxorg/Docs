@@ -21,7 +21,18 @@ _old_uri: "2.x/administering-your-site/form-customization/form-customization-rul
 
  Here are the IDs for the corresponding tab panels on various manager pages.
 
-  ID   Corresponding Page   modx-resource-tabs   The Resource edit/create page.   modx-chunk-tabs   The Chunk page.   modx-snippet-tabs   The Snippet page.   modx-plugin-tabs   The Plugin page.   modx-template-tabs   The Template page.   modx-tv-tabs   The Template Variable page.   modx-user-tabs   The User page.   modx-usergroup-tabs   The User Group page.   modx-context-tabs   The Context page.  
+ | ID | Corresponding Page |
+|----|--------------------|
+| modx-resource-tabs | The Resource edit/create page. |
+| modx-chunk-tabs | The Chunk page. |
+| modx-snippet-tabs | The Snippet page. |
+| modx-plugin-tabs | The Plugin page. |
+| modx-template-tabs | The Template page. |
+| modx-tv-tabs | The Template Variable page. |
+| modx-user-tabs | The User page. |
+| modx-usergroup-tabs | The User Group page. |
+| modx-context-tabs | The Context page. |
+
 
  Tab Panels on non-Resource pages are only available in 2.0.0-pl and up. 
 

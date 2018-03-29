@@ -16,7 +16,10 @@ It's output properties look like:
 
 ![](/download/attachments/20119608/tvot.delim.png?version=1&modificationDate=1281374552000)
 
-NameDescriptionDelimiterA delimiter to separated each item with.## See Also
+| Name | Description |
+|------|-------------|
+| Delimiter | A delimiter to separated each item with. |
+## See Also
 
 1. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)
 2. [Delimiter TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type)

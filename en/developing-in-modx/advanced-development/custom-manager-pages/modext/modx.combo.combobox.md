@@ -21,7 +21,12 @@ One unique feature of the MODx ComboBox class is the built-in renderer for grids
 
 The unique parameters for the class are simply pass-thru parameters to the data store for the combo:
 
-NameDescriptionDefaulturlThe URL to the connector. baseParamsAny other parameters to always send to the connector.{}fieldsThe fields, in array format, you expect from the connector response.\[\]The class also inherits all [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox) properties.
+| Name | Description | Default |
+|------|-------------|---------|
+| url | The URL to the connector. |  |
+| baseParams | Any other parameters to always send to the connector. | {} |
+| fields | The fields, in array format, you expect from the connector response. | \[\] |
+The class also inherits all [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox) properties.
 
 ## Using the Grid Renderer
 

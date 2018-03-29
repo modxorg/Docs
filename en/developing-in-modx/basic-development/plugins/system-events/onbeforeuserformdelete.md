@@ -13,7 +13,11 @@ Group: Users
 
 ## Event Parameters
 
-NameDescriptionuserA reference to the modUser object.idThe ID of the User.## See Also
+| Name | Description |
+|------|-------------|
+| user | A reference to the modUser object. |
+| id | The ID of the User. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

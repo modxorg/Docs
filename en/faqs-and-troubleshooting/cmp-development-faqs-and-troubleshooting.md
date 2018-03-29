@@ -66,7 +66,13 @@ Using the different parts however is advised to make sure you can easily deploy 
 
 ### 1.3. What version of ExtJS does MODX Revolution use? When will MODX Revolution update to ExtJS 4.0?
 
-MODX VersionExtJS version2.1.2-pl3.4.02.1.0-rc13.3.12.0.4-pl3.3.02.0.0-rc23.2.1It is unlikely that MODX will start using ExtJS 4 until 2.3/2.4 or 3.0. If you insist on using ExtJS 4.0, you can always get your hands dirty and start the migration process of the manager/assets/modext/ folder.
+| MODX Version | ExtJS version |
+|--------------|---------------|
+| 2.1.2-pl | 3.4.0 |
+| 2.1.0-rc1 | 3.3.1 |
+| 2.0.4-pl | 3.3.0 |
+| 2.0.0-rc2 | 3.2.1 |
+It is unlikely that MODX will start using ExtJS 4 until 2.3/2.4 or 3.0. If you insist on using ExtJS 4.0, you can always get your hands dirty and start the migration process of the manager/assets/modext/ folder.
 
 ### 1.4. Can I use ExtJS widgets that MODX uses in the Manager in my own CMP as well?
 

@@ -13,7 +13,10 @@ Group: Documents
 
 ## Event Parameters
 
-NameDescriptionidsAn array of Resource IDs that will be permanently deleted.## See Also
+| Name | Description |
+|------|-------------|
+| ids | An array of Resource IDs that will be permanently deleted. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

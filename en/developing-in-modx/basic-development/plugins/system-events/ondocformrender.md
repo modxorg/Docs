@@ -13,7 +13,12 @@ Service: 1 - Parser Service Events
 
 ## Event Parameters
 
-Name Description mode Either 'new' or 'upd', depending on the circumstance. resource A reference to the modResource object. Since 2.4, this will contain an empty resource object when creating a new resource. Before 2.4 this would be null. id The ID of the Resource. Will be 0 for new Resources.## Setting Default Resource Values
+| Name | Description |
+|------|-------------|
+| mode | Either 'new' or 'upd', depending on the circumstance. |
+| resource | A reference to the modResource object. Since 2.4, this will contain an empty resource object when creating a new resource. Before 2.4 this would be null. |
+| id | The ID of the Resource. Will be 0 for new Resources. |
+## Setting Default Resource Values
 
 As of Revolution 2.4.0, you can use a plugin OnDocFormRender for setting a value for one of the following fields:
 

@@ -13,9 +13,19 @@ Group: Template Variables
 
 ## Event Parameters
 
-NameDescriptiontemplateVarThe instance of modTemplateVar class.cacheFlagIndicates if the saved TV should be cached and optionally, by specifying an integer value, for how many seconds before expiring. Returns always 'true'## Remarks
+| Name | Description |
+|------|-------------|
+| templateVar | The instance of modTemplateVar class. |
+| cacheFlag | Indicates if the saved TV should be cached and optionally, by specifying an integer value, for how many seconds before expiring. Returns always 'true' |
+## Remarks
 
-Previous event[OnTemplateVarBeforeRemove](developing-in-modx/basic-development/plugins/system-events/ontemplatevarbeforeremove "OnTemplateVarBeforeRemove")Next event—File[core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php)ClassmodTemplateVarMethodpublic function remove(array $ancestors= array ())## See Also
+| Previous event | [OnTemplateVarBeforeRemove](developing-in-modx/basic-development/plugins/system-events/ontemplatevarbeforeremove "OnTemplateVarBeforeRemove") |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Next event | — |
+| File | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
+| Class | modTemplateVar |
+| Method | public function remove(array $ancestors= array ()) |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

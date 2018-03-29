@@ -34,7 +34,14 @@ The **$modx** object extends xPDO, so for many situations (e.g. inside your Snip
 
 You can retrieve any MODX object this way, just by knowing its object name – usually that's simply a matter of prepending "mod" to the object's familiar name:
 
-Common NameObject NameNotesPagemodResourcePages are just one manifestation of modResource – you can also use this to retrieve Weblinks, Symlinks, and Static ResourcesChunkmodChunk UsermodUser TemplatemodTemplate SnippetmodSnippet See **core/model/schema/modx.mysql.schema.xml** file for a full definition of all MODX objects.
+| Common Name | Object Name | Notes |
+|-------------|-------------|-------|
+| Page | modResource | Pages are just one manifestation of modResource – you can also use this to retrieve Weblinks, Symlinks, and Static Resources |
+| Chunk | modChunk |  |
+| User | modUser |  |
+| Template | modTemplate |  |
+| Snippet | modSnippet |  |
+See **core/model/schema/modx.mysql.schema.xml** file for a full definition of all MODX objects.
 
 If you need to retrieve other attributes for these objects (e.g. TVs for a page), then you may need to look at [getObjectGraph](xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
 

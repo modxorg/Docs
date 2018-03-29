@@ -31,29 +31,36 @@ They also automatically integrate into the MODX connector structure. All you mus
 
 MODx.FormPanel adds a few unique parameters not found in typical Ext.FormPanel objects:
 
-NameDescriptionDefaultsaveMsgThe message to show in the modal wait dialog when saving.Saving...allowDropAllow items from a tree to be dropped in this form.trueuseLoadingMaskSet to true to use a loading mask when loading form values.falseonDirtyFormA form ID to check against when checking dirty status for the form. Defaults to the form.this.getForm()## Custom Events
+| Name | Description | Default |
+|------|-------------|---------|
+| saveMsg | The message to show in the modal wait dialog when saving. | Saving... |
+| allowDrop | Allow items from a tree to be dropped in this form. | true |
+| useLoadingMask | Set to true to use a loading mask when loading form values. | false |
+| onDirtyForm | A form ID to check against when checking dirty status for the form. Defaults to the form. | this.getForm() |
+## Custom Events
 
 MODx.FormPanel adds a few extra events not found in Ext.FormPanel objects:
 
-NameDescriptionbeforeSubmitFires before a submission of the form, with 3 parameters: - form - The Ext.form.BasicForm object attached to this FormPanel
+| Name | Description |
+|------|-------------|
+| beforeSubmit | Fires before a submission of the form, with 3 parameters: - form - The Ext.form.BasicForm object attached to this FormPanel
 - options - Any options passed to the submit() call
-- config - The FormPanel config object
-
-failureFires on a form failure or failure response from a processor, with 4 parameters: - result - The response object sent from the processor
+- config - The FormPanel config object |
+| failure | Fires on a form failure or failure response from a processor, with 4 parameters: - result - The response object sent from the processor
 - form - The Ext.form.BasicForm object attached to this FormPanel
 - options - Any options passed to the submit() call
-- config - The FormPanel config object
-
-fieldChangeFires whenever a field is changed, with the following parameters: - field - The Ext.Field object that is being changed
+- config - The FormPanel config object |
+| fieldChange | Fires whenever a field is changed, with the following parameters: - field - The Ext.Field object that is being changed
 - nv - The new value of the field
 - ov - The old value of the field
-- form - The BasicForm attached to this FormPanel
-
-postReadyFires after 'ready' event listeners are run (which must be fired by extending classes)readyNot fired; must be fired by extended objects of MODx.FormPanel to allow fieldChange/postReady events to fire.setupFired at the beginning of a formpanel load, and after a successful submission.successFires on a form success with a success response from a processor, with 4 parameters: - result - The response object sent from the processor
+- form - The BasicForm attached to this FormPanel |
+| postReady | Fires after 'ready' event listeners are run (which must be fired by extending classes) |
+| ready | Not fired; must be fired by extended objects of MODx.FormPanel to allow fieldChange/postReady events to fire. |
+| setup | Fired at the beginning of a formpanel load, and after a successful submission. |
+| success | Fires on a form success with a success response from a processor, with 4 parameters: - result - The response object sent from the processor
 - form - The Ext.form.BasicForm object
 - options - Any options passed to the submit() call
-- config - The FormPanel config object
-
+- config - The FormPanel config object |
 ## Other Unique Functions
 
 #### Drop Area Fields

@@ -13,9 +13,17 @@ Group: Richtext Editor
 
 ## Event Parameters
 
-NameDescriptioneditorThe specified editor that the user wants to use.elementsAn array of elements to transform into an RTE.Other properties might be passed, such as:
+| Name | Description |
+|------|-------------|
+| editor | The specified editor that the user wants to use. |
+| elements | An array of elements to transform into an RTE. |
+Other properties might be passed, such as:
 
-forfrontendIf passed, this will indicate to the plugin that this is to be loaded in a front-end context, not the manager.widthThe requested width of the RTE.heightThe requested height of the RTE.## See Also
+| forfrontend | If passed, this will indicate to the plugin that this is to be loaded in a front-end context, not the manager. |
+|-------------|----------------------------------------------------------------------------------------------------------------|
+| width | The requested width of the RTE. |
+| height | The requested height of the RTE. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

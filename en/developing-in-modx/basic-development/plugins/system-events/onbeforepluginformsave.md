@@ -13,7 +13,12 @@ Group: Plugin
 
 ## Event Parameters
 
-NameDescriptionmodeEither 'upd' or 'new', depending on the circumstance.pluginA reference to the modPlugin object.idThe ID of the plugin. Will be 0 for new plugins.## See Also
+| Name | Description |
+|------|-------------|
+| mode | Either 'upd' or 'new', depending on the circumstance. |
+| plugin | A reference to the modPlugin object. |
+| id | The ID of the plugin. Will be 0 for new plugins. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

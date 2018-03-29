@@ -13,7 +13,14 @@ Group: None
 
 ## Event Parameters
 
-NameDescriptionresponse\_codeThe response code to send. Defaults to "HTTP/1.1 404 Not Found"error\_typeThe type. Defaults to 404.error\_headerThe header being sent: Defaults to "HTTP/1.1 404 Not Found"error\_pagetitleThe pagetitle of the error page.error\_messageThe message being sent in the error page.## See Also
+| Name | Description |
+|------|-------------|
+| response\_code | The response code to send. Defaults to "HTTP/1.1 404 Not Found" |
+| error\_type | The type. Defaults to 404. |
+| error\_header | The header being sent: Defaults to "HTTP/1.1 404 Not Found" |
+| error\_pagetitle | The pagetitle of the error page. |
+| error\_message | The message being sent in the error page. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

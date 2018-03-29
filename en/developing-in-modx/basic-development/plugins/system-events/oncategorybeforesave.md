@@ -13,7 +13,11 @@ Group: Categories
 
 ## Event Parameters
 
-NameDescriptionidThe ID of the modCategory object.categoryA reference to the modCategory object.## See Also
+| Name | Description |
+|------|-------------|
+| id | The ID of the modCategory object. |
+| category | A reference to the modCategory object. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

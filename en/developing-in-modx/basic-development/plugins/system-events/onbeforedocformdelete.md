@@ -13,7 +13,12 @@ Group: Documents
 
 ## Event Parameters
 
-NameDescriptionresourceA reference to the modResource object.idThe ID of the Resource.childrenAn array of IDs of children of this resource which will also be deleted.## See Also
+| Name | Description |
+|------|-------------|
+| resource | A reference to the modResource object. |
+| id | The ID of the Resource. |
+| children | An array of IDs of children of this resource which will also be deleted. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

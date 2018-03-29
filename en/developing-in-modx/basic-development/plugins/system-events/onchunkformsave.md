@@ -13,7 +13,12 @@ Group: Chunks
 
 ## Event Parameters
 
-NameDescriptionmodeEither 'upd' or 'new', depending on the circumstance.chunkA reference to the modChunk object.idThe ID of the chunk.## See Also
+| Name | Description |
+|------|-------------|
+| mode | Either 'upd' or 'new', depending on the circumstance. |
+| chunk | A reference to the modChunk object. |
+| id | The ID of the chunk. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

@@ -123,7 +123,14 @@ option1==value1||option2==value2
 
  If you like to have a default set date you can put one of the following keywords inside the default value field (without quotes!). The "strange" logic behind the -X/+X values (which intuitively would be - for back and + for future) comes probably from a subtraction in the code somewhere, eg. now() - value, so if value is +72 this means now() - (+72), but - and + is -, so a positive value gets subtracted while with now() - (-72), - and - equals +, a negative value is added.
 
-  Default value   Function   yesterday   Displays the day before todays date, time 12:00pm   today   Displays todays date, time 12:00pm   now   Displays todays date, current time   tomorrow   Displays the day after todays date, time 12:00pm   +X   X is an amount of hours BACK from the current time, eg. +72 means "3 days back from now"   -X   X is an amount of hours IN THE FUTURE from the current time, eg. -72 means "in 3 days" 
+ | Default value | Function |
+|---------------|----------|
+| yesterday | Displays the day before todays date, time 12:00pm |
+| today | Displays todays date, time 12:00pm |
+| now | Displays todays date, current time |
+| tomorrow | Displays the day after todays date, time 12:00pm |
+| +X | X is an amount of hours BACK from the current time, eg. +72 means "3 days back from now" |
+| -X | X is an amount of hours IN THE FUTURE from the current time, eg. -72 means "in 3 days" |
  You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
 
  **All input option names (for use in migx options-json)**

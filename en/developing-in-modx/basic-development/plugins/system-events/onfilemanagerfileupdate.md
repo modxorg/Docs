@@ -13,7 +13,11 @@ Group: None
 
 ## Event Parameters
 
-NameDescriptionpathContains the full path to the updated file. sourceContains the mediasource object.## See Also
+| Name | Description |
+|------|-------------|
+| path | Contains the full path to the updated file. |
+| source | Contains the mediasource object. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events)
 - [Plugins](developing-in-modx/basic-development/plugins)

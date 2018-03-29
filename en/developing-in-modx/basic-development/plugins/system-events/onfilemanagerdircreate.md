@@ -13,7 +13,11 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 
 ## Event Parameters
 
-  Name   Description   directory   Contains the full path of the newly created directory.   source   Contains the mediasource object. ## See Also
+ | Name | Description |
+|------|-------------|
+| directory | Contains the full path of the newly created directory. |
+| source | Contains the mediasource object. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events)
 - [Plugins](developing-in-modx/basic-development/plugins)

@@ -76,13 +76,41 @@ You can override the baseParams in your config parameter.
 
 MODx.grid.Grid adds a few unique parameters not found in typical Ext.grid.Grid objects:
 
-NameDescriptionDefaulturlThe URL of the connector to load this grid from. pagingIf true, will enable paging and add the PagingToolbar automatically to the bottom of the grid.truepageSizeThe number of items to page by, if paging == true. Defaults to the System Setting of "default\_per\_page", which is 20.20pageStartThe index to start the paging on.0showPerPageWhether or not to show the "Per Page" textbox. Defaults to true.truepagingItemsAny items to add to the right of the "Per Page" textbox on the paging toolbar. Useful for adding extra buttons.\[\]groupingIf true, will automatically enable grouping on this grid.falsegroupByThe column to group by. Note that the column must be in the column model.namepluralTextThe text for a plural amount of items in the grouped column, ie: "Rows"RecordssingleTextThe text for a single amount of items in the grouped column, ie: "Row"RecordsortByThe default column to sort by when grouping and remoteSort are true.idsortDirThe default column to sort by when grouping and remoteSort are true.ASCpreventRenderPrevent the grid from rendering. Useful when putting the grid in panels or tabs.1autosaveIf true, will automatically fire the 'updateFromGrid' processor (or the processor in the saveUrl config param) for this connector when doing in-line editing in the grid.falsesaveUrlThe connector URL to call when inline-editing with autosave on.The value of config.urlsave\_actionThe processor action to call when inline-editing with autosave on.updateFromGridsaveParamsA JS object of parameters to also send to the saveUrl when auto-saving or when using MODx.grid.Grid's remove method.{}save\_callbackAfter auto-saving, run this method.nullpreventSaveRefreshIf autosave is true, after saving, will prevent the grid from refreshing. Makes for a more seamless editing experience.1primaryKeyIf your grid items have a primary key that's not ID, set it here.idstoreIdA custom ID to give the store for this grid. Will default to a unique Ext ID.Ext.id()For a complete list of all parameters not listed here for grids, see the [ExtJS](http://sencha.com) documentation.
+| Name | Description | Default |
+|------|-------------|---------|
+| url | The URL of the connector to load this grid from. |  |
+| paging | If true, will enable paging and add the PagingToolbar automatically to the bottom of the grid. | true |
+| pageSize | The number of items to page by, if paging == true. Defaults to the System Setting of "default\_per\_page", which is 20. | 20 |
+| pageStart | The index to start the paging on. | 0 |
+| showPerPage | Whether or not to show the "Per Page" textbox. Defaults to true. | true |
+| pagingItems | Any items to add to the right of the "Per Page" textbox on the paging toolbar. Useful for adding extra buttons. | \[\] |
+| grouping | If true, will automatically enable grouping on this grid. | false |
+| groupBy | The column to group by. Note that the column must be in the column model. | name |
+| pluralText | The text for a plural amount of items in the grouped column, ie: "Rows" | Records |
+| singleText | The text for a single amount of items in the grouped column, ie: "Row" | Record |
+| sortBy | The default column to sort by when grouping and remoteSort are true. | id |
+| sortDir | The default column to sort by when grouping and remoteSort are true. | ASC |
+| preventRender | Prevent the grid from rendering. Useful when putting the grid in panels or tabs. | 1 |
+| autosave | If true, will automatically fire the 'updateFromGrid' processor (or the processor in the saveUrl config param) for this connector when doing in-line editing in the grid. | false |
+| saveUrl | The connector URL to call when inline-editing with autosave on. | The value of config.url |
+| save\_action | The processor action to call when inline-editing with autosave on. | updateFromGrid |
+| saveParams | A JS object of parameters to also send to the saveUrl when auto-saving or when using MODx.grid.Grid's remove method. | {} |
+| save\_callback | After auto-saving, run this method. | null |
+| preventSaveRefresh | If autosave is true, after saving, will prevent the grid from refreshing. Makes for a more seamless editing experience. | 1 |
+| primaryKey | If your grid items have a primary key that's not ID, set it here. | id |
+| storeId | A custom ID to give the store for this grid. Will default to a unique Ext ID. | Ext.id() |
+For a complete list of all parameters not listed here for grids, see the [ExtJS](http://sencha.com) documentation.
 
 ## Custom Events
 
 MODx.grid.Grid adds a few extra events not found in Ext.grid.Grid objects:
 
-NameDescriptionbeforeRemoveRowFires before a row is removed when calling the remove() method on the grid (usually done in a context menu)afterRemoveRowFires after a row is removed when calling the remove() method on the grid (usually done in a context menu)afterAutoSaveFires after an inline-edit save is done, if autosave is set to true.## Other Unique Functions
+| Name | Description |
+|------|-------------|
+| beforeRemoveRow | Fires before a row is removed when calling the remove() method on the grid (usually done in a context menu) |
+| afterRemoveRow | Fires after a row is removed when calling the remove() method on the grid (usually done in a context menu) |
+| afterAutoSave | Fires after an inline-edit save is done, if autosave is set to true. |
+## Other Unique Functions
 
 MODExt grids come with quite a few other features.
 

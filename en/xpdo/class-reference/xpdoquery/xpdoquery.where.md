@@ -13,7 +13,20 @@ array('attribute:operator' => 'value')
 
 ```
 
- Operator   Symbol   Example   Equals   _none_  `$query->where(array('width' => 15));`   Not Equals   !=  `$query->where(array('width:!=' => 15));`   Greater Than   >  `$query->where(array('width:>' => 15));`   Less Than   <  `$query->where(array('width:<' => 15));`   Greater Than or Equal to   >=  `$query->where(array('width:>=' => 15));`   Less Than or Equal to   <=  `$query->where(array('width:<=' => 15));`   Like   LIKE  `$query->where(array('width:LIKE' => '%15%'));`   Not Like   NOT LIKE  `$query->where(array('width:NOT LIKE' => '%15%'));`   Exists in   IN  `$query->where(array('width:IN' => array(15,16,17,20)));`   Not Exists in   NOT IN  `$query->where(array('width:NOT IN' => array(15,16,17,20)));`   Is Null   IS  `$query->where(array('width:IS' => null));` ##  Syntax 
+| Operator | Symbol | Example |
+|----------|--------|---------|
+| Equals | _none_ | `$query->where(array('width' => 15));` |
+| Not Equals | != | `$query->where(array('width:!=' => 15));` |
+| Greater Than | > | `$query->where(array('width:>' => 15));` |
+| Less Than | < | `$query->where(array('width:<' => 15));` |
+| Greater Than or Equal to | >= | `$query->where(array('width:>=' => 15));` |
+| Less Than or Equal to | <= | `$query->where(array('width:<=' => 15));` |
+| Like | LIKE | `$query->where(array('width:LIKE' => '%15%'));` |
+| Not Like | NOT LIKE | `$query->where(array('width:NOT LIKE' => '%15%'));` |
+| Exists in | IN | `$query->where(array('width:IN' => array(15,16,17,20)));` |
+| Not Exists in | NOT IN | `$query->where(array('width:NOT IN' => array(15,16,17,20)));` |
+| Is Null | IS | `$query->where(array('width:IS' => null));` |
+##  Syntax 
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::where()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::where())
 

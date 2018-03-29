@@ -25,4 +25,6 @@ This is the base User class for MODx Revolution.
 
 ## See Also
 
-Page: [modUser](developing-in-modx/other-development-resources/class-reference/moduser)Page: [Users](administering-your-site/security/users)
+| Page: [modUser](developing-in-modx/other-development-resources/class-reference/moduser) |
+|---------------------------------------------------------------------------------------------------------|
+| Page: [Users](administering-your-site/security/users) |

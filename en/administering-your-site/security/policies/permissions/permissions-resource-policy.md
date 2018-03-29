@@ -10,7 +10,22 @@ This policy is packaged into MODx and is given to users on any context who want 
 
 ## Default Permissions
 
-Nameadd\_childrencreatedeletelistloadmovepublishremovesavesteal\_lockundeleteunpublishview## See Also
+| Name |
+|------|
+| add\_children |
+| create |
+| delete |
+| list |
+| load |
+| move |
+| publish |
+| remove |
+| save |
+| steal\_lock |
+| undelete |
+| unpublish |
+| view |
+## See Also
 
 1. [Permissions - Administrator Policy](administering-your-site/security/policies/permissions/permissions-administrator-policy)
 2. [Permissions - Resource Policy](administering-your-site/security/policies/permissions/permissions-resource-policy)

@@ -13,7 +13,10 @@ Group: modContext
 
 ## Event Parameters
 
-NameDescriptioncontextA reference to the modContext object.## See Also
+| Name | Description |
+|------|-------------|
+| context | A reference to the modContext object. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

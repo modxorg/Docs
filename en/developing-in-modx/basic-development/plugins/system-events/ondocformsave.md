@@ -18,7 +18,12 @@ Unlike [OnBeforeDocFormSave](developing-in-modx/basic-development/plugins/system
 
 ## Event Parameters
 
-NameDescriptionmodeEither 'new' or 'upd', depending on the circumstances.resourceA reference to the modResource object.idThe ID of the Resource (even for new resources)## Examples
+| Name | Description |
+|------|-------------|
+| mode | Either 'new' or 'upd', depending on the circumstances. |
+| resource | A reference to the modResource object. |
+| id | The ID of the Resource (even for new resources) |
+## Examples
 
 To do something with the page ID (e.g. to update a related custom table), you can read this out of the **$resource** object (even if you are creating a new resource):
 

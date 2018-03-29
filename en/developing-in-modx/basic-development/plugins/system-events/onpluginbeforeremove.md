@@ -13,7 +13,10 @@ Group: modPlugin
 
 ## Event Parameters
 
-NameDescriptionpluginA reference to the modPlugin object.## See Also
+| Name | Description |
+|------|-------------|
+| plugin | A reference to the modPlugin object. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

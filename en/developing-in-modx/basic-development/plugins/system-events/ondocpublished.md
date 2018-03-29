@@ -13,7 +13,12 @@ Group: None
 
 ## Event Parameters
 
-NameDescriptiondocidThe ID of the resource being published. (deprecated)idThe ID of the resource being published.resourceA reference to the modResource object being published.## See Also
+| Name | Description |
+|------|-------------|
+| docid | The ID of the resource being published. (deprecated) |
+| id | The ID of the resource being published. |
+| resource | A reference to the modResource object being published. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

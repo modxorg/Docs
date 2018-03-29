@@ -4,6 +4,7 @@ require_once dirname(__DIR__) . '/config.core.php';
 require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
 require_once __DIR__ . '/util/CodeConverter.php';
 require_once __DIR__ . '/util/PreformattedConverter.php';
+require_once __DIR__ . '/util/TableConverter.php';
 
 use League\HTMLToMarkdown\Environment;
 use League\HTMLToMarkdown\HtmlConverter;
@@ -70,6 +71,7 @@ class Converter {
         $environment = Environment::createDefaultEnvironment($options);
         $environment->addConverter(new CodeConverter());
         $environment->addConverter(new PreformattedConverter());
+        $environment->addConverter(new TableConverter());
         $this->converter = new HtmlConverter($environment);
 
         $this->outputDir = dirname(__DIR__) . '/en/';

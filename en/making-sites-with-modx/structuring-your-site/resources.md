@@ -40,9 +40,40 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
 ### General Resource Fields
 
-  Name   Description   id   The ID of the Resource.   template   A reference to the [Template](making-sites-with-modx/structuring-your-site/templates "Templates") that this Resource is using   published   If the Resource is Published, or viewable on the front-end.   pagetitle   The title of the Resource.   longtitle   A longer title of the Resource.   description   An extended description of the Resource.   introtext   Also called 'Summary', an introductory excerpt of the Resource's content. Useful for blogs or searching.   alias   The URL alias to use, if your site is using Friendly URLs. A Resource with alias 'home' and Content Type 'html' would render 'home.html' if it isn't a Container.   parent   The Parent Resource's ID.   link\_attributes   Used with menu building snippets to add attributes to links, etc. Can be repurposed for other needs.   menutitle   The title to show for the Resource when displayed in a menu.   menuindex   The order index of the Resource in a menu. Higher order means later.   hidemenu   Also called 'Hide from Menus', if set, this Resource will not show in most Menu or Navigation snippets.   content   The actual content of the Resource. ### Settings Resource Fields
+ | Name | Description |
+|------|-------------|
+| id | The ID of the Resource. |
+| template | A reference to the [Template](making-sites-with-modx/structuring-your-site/templates "Templates") that this Resource is using |
+| published | If the Resource is Published, or viewable on the front-end. |
+| pagetitle | The title of the Resource. |
+| longtitle | A longer title of the Resource. |
+| description | An extended description of the Resource. |
+| introtext | Also called 'Summary', an introductory excerpt of the Resource's content. Useful for blogs or searching. |
+| alias | The URL alias to use, if your site is using Friendly URLs. A Resource with alias 'home' and Content Type 'html' would render 'home.html' if it isn't a Container. |
+| parent | The Parent Resource's ID. |
+| link\_attributes | Used with menu building snippets to add attributes to links, etc. Can be repurposed for other needs. |
+| menutitle | The title to show for the Resource when displayed in a menu. |
+| menuindex | The order index of the Resource in a menu. Higher order means later. |
+| hidemenu | Also called 'Hide from Menus', if set, this Resource will not show in most Menu or Navigation snippets. |
+| content | The actual content of the Resource. |
+### Settings Resource Fields
 
-  Name   Description   isfolder   Labeled as 'Container', this specifies whether or not the Resource renders with a / in Friendly URLs instead of its suffix.   searchable   If the Resource is searchable.   cacheable   If the Resource is cacheable.   createdby   The ID of the user who created the Resource.   editedby   The ID of the last user to edit the Resource.   deleted   If the Resource is deleted or not.   deletedby   The ID of the user who deleted the Resource.   publishedby   The ID of the user who last published the Resource.   createdon   The date the Resource was created.   publishedon   The date the Resource was published.   editedon   The date the Resource was last edited.   pub\_date   The scheduled date for a Resource to be published.   unpub\_date   The scheduled date for a Resource to be unpublished. ### Using Resource Fields
+ | Name | Description |
+|------|-------------|
+| isfolder | Labeled as 'Container', this specifies whether or not the Resource renders with a / in Friendly URLs instead of its suffix. |
+| searchable | If the Resource is searchable. |
+| cacheable | If the Resource is cacheable. |
+| createdby | The ID of the user who created the Resource. |
+| editedby | The ID of the last user to edit the Resource. |
+| deleted | If the Resource is deleted or not. |
+| deletedby | The ID of the user who deleted the Resource. |
+| publishedby | The ID of the user who last published the Resource. |
+| createdon | The date the Resource was created. |
+| publishedon | The date the Resource was published. |
+| editedon | The date the Resource was last edited. |
+| pub\_date | The scheduled date for a Resource to be published. |
+| unpub\_date | The scheduled date for a Resource to be unpublished. |
+### Using Resource Fields
 
  Resource fields can be accessed from anywhere by using the [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") syntax, ie:
 
@@ -123,7 +154,16 @@ return strrev($output);
 
  The available schemes are:
 
-  Name   Description   -1   (default) URL is relative to site\_url   0   see http   1   see https   full   Renders the link as an absolute URL, prepended with site\_url   abs   Renders the link as an absolute URL, prepended with base\_url   http   Renders the link as an absolute URL, forced to http scheme   https   Renders the link as an absolute URL, force to https scheme ## See Also
+ | Name | Description |
+|------|-------------|
+| -1 | (default) URL is relative to site\_url |
+| 0 | see http |
+| 1 | see https |
+| full | Renders the link as an absolute URL, prepended with site\_url |
+| abs | Renders the link as an absolute URL, prepended with base\_url |
+| http | Renders the link as an absolute URL, forced to http scheme |
+| https | Renders the link as an absolute URL, force to https scheme |
+## See Also
 
 1. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
 2. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)

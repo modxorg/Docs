@@ -33,7 +33,14 @@ MODx.msg.alert('Warning!','You are out of space! We should clear the cache.',fun
 
 Loads a confirmation dialog that prompts the user for a Yes/No response. If Yes is selected, fires an AJAX request to a specific connector. The properties for the config parameter are:
 
-NameDescriptiontitleThe title of the confirmation box.textThe text in the confirmation box.urlThe URL to send the AJAX request to.paramsThe REQUEST params to send with the AJAX request.listenersAny listeners to look for on the request.An example:
+| Name | Description |
+|------|-------------|
+| title | The title of the confirmation box. |
+| text | The text in the confirmation box. |
+| url | The URL to send the AJAX request to. |
+| params | The REQUEST params to send with the AJAX request. |
+| listeners | Any listeners to look for on the request. |
+An example:
 
 ``` php 
 MODx.msg.confirm({
@@ -55,7 +62,12 @@ MODx.msg.confirm({
 
 MODx.msg.confirm adds a few custom events that fire:
 
-NameDescriptionsuccessFires on a successful response from the AJAX submission.failureFires on a failed response from the AJAX submission.cancelFires when the user cancels the confirmation dialog.### status
+| Name | Description |
+|------|-------------|
+| success | Fires on a successful response from the AJAX submission. |
+| failure | Fires on a failed response from the AJAX submission. |
+| cancel | Fires when the user cancels the confirmation dialog. |
+### status
 
 ``` php 
 MODx.msg.status(opt)
@@ -63,7 +75,13 @@ MODx.msg.status(opt)
 
 Loads a temporary status message in the top-right of the screen, that fades away. The properties for the opt parameter are:
 
-NameDescriptionDefaulttitleOptional. The title of the message. messageThe text of the status message. dontHideIf true, will not automatically hide the status message. Will stay until it is clicked.falsedelayThe number of seconds to show the message.1.5You could use this in custom manager pages to provide confirmation your object was saved. You could add something like this to your FormPanel definition:
+| Name | Description | Default |
+|------|-------------|---------|
+| title | Optional. The title of the message. |  |
+| message | The text of the status message. |  |
+| dontHide | If true, will not automatically hide the status message. Will stay until it is clicked. | false |
+| delay | The number of seconds to show the message. | 1.5 |
+You could use this in custom manager pages to provide confirmation your object was saved. You could add something like this to your FormPanel definition:
 
 ``` php 
         listeners: {

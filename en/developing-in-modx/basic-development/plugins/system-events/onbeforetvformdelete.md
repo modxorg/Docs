@@ -13,7 +13,11 @@ Group: Template Variables
 
 ## Event Parameters
 
-NameDescriptiontvA reference to the modTemplateVar object.idThe ID of the TV.## See Also
+| Name | Description |
+|------|-------------|
+| tv | A reference to the modTemplateVar object. |
+| id | The ID of the TV. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

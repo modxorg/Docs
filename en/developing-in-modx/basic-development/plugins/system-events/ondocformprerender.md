@@ -13,7 +13,12 @@ Group: Documents
 
 ## Event Parameters
 
-NameDescriptionmodeEither 'new' or 'upd', depending on the circumstance.resourceA reference to the modResource object. Will be null for new Resources.idThe ID of the Resource. Will be 0 for new Resources.## See Also
+| Name | Description |
+|------|-------------|
+| mode | Either 'new' or 'upd', depending on the circumstance. |
+| resource | A reference to the modResource object. Will be null for new Resources. |
+| id | The ID of the Resource. Will be 0 for new Resources. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")

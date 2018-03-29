@@ -13,7 +13,12 @@ Group: Users
 
 ## Event Parameters
 
-NameDescriptionmodeEither 'upd' or 'new', depending on the circumstance.userA reference to the modUser object.idThe ID of the User. Will be 0 for new Users.## See Also
+| Name | Description |
+|------|-------------|
+| mode | Either 'upd' or 'new', depending on the circumstance. |
+| user | A reference to the modUser object. |
+| id | The ID of the User. Will be 0 for new Users. |
+## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
 - [Plugins](developing-in-modx/basic-development/plugins "Plugins")
