@@ -18,6 +18,7 @@ Group: Plugins
 | mode | Either 'upd' or 'new', depending on the circumstance. |
 | chunk | A reference to the modPlugin object. |
 | id | The ID of the plugin. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

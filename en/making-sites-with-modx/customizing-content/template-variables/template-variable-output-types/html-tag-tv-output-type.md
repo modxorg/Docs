@@ -21,6 +21,7 @@ Its output properties look like:
 | Class | Any CSS classes to add to the tag. |
 | Style | Any style attributes to add to the tag. |
 | Attributes | Any other attributes you want to add to the tag. |
+
 ## See Also
 
 1. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)

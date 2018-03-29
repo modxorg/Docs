@@ -56,6 +56,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 | menuindex | The order index of the Resource in a menu. Higher order means later. |
 | hidemenu | Also called 'Hide from Menus', if set, this Resource will not show in most Menu or Navigation snippets. |
 | content | The actual content of the Resource. |
+
 ### Settings Resource Fields
 
  | Name | Description |
@@ -73,6 +74,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 | editedon | The date the Resource was last edited. |
 | pub\_date | The scheduled date for a Resource to be published. |
 | unpub\_date | The scheduled date for a Resource to be unpublished. |
+
 ### Using Resource Fields
 
  Resource fields can be accessed from anywhere by using the [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") syntax, ie:
@@ -163,6 +165,7 @@ return strrev($output);
 | abs | Renders the link as an absolute URL, prepended with base\_url |
 | http | Renders the link as an absolute URL, forced to http scheme |
 | https | Renders the link as an absolute URL, force to https scheme |
+
 ## See Also
 
 1. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)

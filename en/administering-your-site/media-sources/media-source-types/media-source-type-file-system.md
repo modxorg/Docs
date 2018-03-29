@@ -27,6 +27,7 @@ This Source Type allows you to browse the file system your MODX installation res
 | thumbnailType | When a thumbnail is displayed, the type of image it will be rendered as. | png |
 | thumbnailQuality | The quality of the rendered thumbnail, on a scale from 0-100 | 90 |
 | skipFiles | A comma-separated list of filenames to skip when browsing the source. | .svn,.git,\_notes,nbproject,.idea,.DS\_Store |
+
 ## See Also
 
 1. [Media Source Type - File System](administering-your-site/media-sources/media-source-types/media-source-type-file-system)

@@ -16,6 +16,7 @@ Group: modPlugin
 | Name | Description |
 |------|-------------|
 | plugin | A reference to the modPlugin object. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

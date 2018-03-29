@@ -17,6 +17,7 @@ Group: Template Variables
 |------|-------------|
 | tv | A reference to the modTemplateVar object. |
 | id | The ID of the TV. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

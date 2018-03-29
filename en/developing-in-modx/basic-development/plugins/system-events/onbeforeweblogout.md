@@ -20,6 +20,7 @@ Group: None
 | username | The username of the user. (deprecated) |
 | **&** loginContext | The context key this logout is occurring in. **Passed by reference** |
 | **&** addContexts | Additional contexts in which the logout is also occuring in. **Passed by reference** |
+
 ## See Also
 
 - ?[OnBeforeManagerLogout event](developing-in-modx/basic-development/plugins/system-events/onbeforemanagerlogout "OnBeforeManagerLogout")

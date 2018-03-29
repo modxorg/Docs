@@ -40,6 +40,7 @@ Loads a confirmation dialog that prompts the user for a Yes/No response. If Yes 
 | url | The URL to send the AJAX request to. |
 | params | The REQUEST params to send with the AJAX request. |
 | listeners | Any listeners to look for on the request. |
+
 An example:
 
 ``` php 
@@ -67,6 +68,7 @@ MODx.msg.confirm adds a few custom events that fire:
 | success | Fires on a successful response from the AJAX submission. |
 | failure | Fires on a failed response from the AJAX submission. |
 | cancel | Fires when the user cancels the confirmation dialog. |
+
 ### status
 
 ``` php 
@@ -81,6 +83,7 @@ Loads a temporary status message in the top-right of the screen, that fades away
 | message | The text of the status message. |  |
 | dontHide | If true, will not automatically hide the status message. Will stay until it is clicked. | false |
 | delay | The number of seconds to show the message. | 1.5 |
+
 You could use this in custom manager pages to provide confirmation your object was saved. You could add something like this to your FormPanel definition:
 
 ``` php 

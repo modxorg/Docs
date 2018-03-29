@@ -31,6 +31,7 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customizatio
 | modx-page-settings-right-box-right |  |  |
 | modx-panel-resource-tv | Template Variables | A primary tab |
 | modx-resource-access-permissions | Resource Groups | A primary tab |
+
 ## Adding New Tabs
 
  Adding a new tab is quite simple. Edit your Set, and open the Regions tab. Click the Create New Tab button, give it an ID like "my-new-tab" and a description.

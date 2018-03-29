@@ -16,6 +16,7 @@ Group: Categories
 | Name | Description |
 |------|-------------|
 | category | A reference to the modCategory object. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

@@ -131,6 +131,7 @@ option1==value1||option2==value2
 | tomorrow | Displays the day after todays date, time 12:00pm |
 | +X | X is an amount of hours BACK from the current time, eg. +72 means "3 days back from now" |
 | -X | X is an amount of hours IN THE FUTURE from the current time, eg. -72 means "in 3 days" |
+
  You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
 
  **All input option names (for use in migx options-json)**

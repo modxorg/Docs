@@ -114,6 +114,7 @@ This policy is packaged into MODx and is given to users on the 'mgr' context who
 | view\_unpublished | To view any unpublished [Resources](making-sites-with-modx/structuring-your-site/resources "Resources"). |
 | view\_user | To view any [User](administering-your-site/security/users "Users"). |
 | workspaces | To utilize [Package Management](developing-in-modx/advanced-development/package-management "Package Management"). |
+
 ## Custom Permissions
 
 If you have created your own actions and menu items (e.g. if you have created a [Custom Manager Page](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-tutorial "Custom Manager Pages Tutorial")), then you can define custom permission items when you create the menu item (System --> Actions --> Create Menu) that correspond to permissions listed here.

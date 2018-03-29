@@ -18,6 +18,7 @@ Group: Snippets
 | mode | Either 'upd' or 'new', depending on the circumstance. |
 | snippet | A reference to the modSnippet object. |
 | id | The ID of the Snippet. Will be 0 for new Snippets. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

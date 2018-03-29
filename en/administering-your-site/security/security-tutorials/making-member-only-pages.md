@@ -56,6 +56,7 @@ Let's go over each section:
 | Automatically give Anonymous Group Access | Checking this box will give all users in the anonymous user group access to the resource group. When someone comes to your website and they're not logged into anywhere, they're considered in the anonymous user group. We want to protect our pages from users who aren't logged in, so let's leave this box unchecked for this tutorial. | unchecked |
 | Create Parallel User Group | You may not wish to have everyone who can view the member-only pages be in the administrator group (if you've checked the "Automatically give Administrator Group Access" option). In this case, you can create another user group that has access to the resources in this resource group. Let's check that, as our members aren't administrators. | checked |
 | Automatically Give Other User Groups Access | If you have any other user groups that you've defined previously to this tutorial to whom you want to give access, you can list them here. |  |
+
 Great! We have a resource group and a user group created. We now need to add resources to the resource group and users to that user group and then we'll be laughing.
 
 ### 2. Add Resources to the Resource Group
@@ -79,6 +80,7 @@ Go to Security > Access Controls. Right click on the protected user group. Selec
 | Context | This specifies to which context we're giving access. The basic use case will have web and mgr. Web is the public front-end of your website, and mgr is the private back-end of your website (i.e., the manager that you're logged in). | web |
 | Minimum Role | This specifies what user roles this rule will apply to. If we want all users in this user group, select "Member - 9999". This is where some of that fine control comes in that we talked about earlier. | Member - 9999 |
 | Access Policy | This specifies what permissions we're giving to the users. Different policies will allow user groups to do different things. | Administrator |
+
 Let's make one rule with "web", "Member - 9999", and "Load, List and View". If we want users to be able to view the MODX manager, we can add a second rule to give them access to the mgr context: "mgr", "Member - 9999", and "Administrator". All these users will have admin access. If you would prefer to limit their permissions, you could instead choose "Content Editor" or "Developer" for their access policies. Alternatively, you can make your own in Security > Access Policies if you want to be specific about what users can or can't do.
 
 We now have users in a user group, resources in a resource group, and that user group can view the context. We're so close!

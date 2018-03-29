@@ -16,6 +16,7 @@ Group: modUser
 | Name | Description |
 |------|-------------|
 | user | A reference to the modUser object. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

@@ -18,6 +18,7 @@ Group: None
 | docid | The ID of the resource being published. (deprecated) |
 | id | The ID of the resource being published. |
 | resource | A reference to the modResource object being published. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

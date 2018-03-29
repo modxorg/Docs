@@ -18,6 +18,7 @@ Group: modContext
 | key | The key of the context. |
 | context | A reference to the modContext object. |
 | mode | Either 'upd' or 'new', depending on the situation. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

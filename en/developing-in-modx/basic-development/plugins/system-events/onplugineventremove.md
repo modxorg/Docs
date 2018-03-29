@@ -17,6 +17,7 @@ Group: None
 |------|-------------|
 | id | The id of the modPluginEvent object |
 | pluginEvent | A reference to the modPluginEvent object |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

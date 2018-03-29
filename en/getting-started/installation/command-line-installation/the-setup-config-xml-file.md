@@ -30,6 +30,7 @@ The config.xml file used for running setup via CLI has the following XML nodes. 
 | database\_charset | The charset of the database | utf8 |
 | database\_collation | The collation of the database | utf8\_general\_ci |
 | table\_prefix | The table prefix to use for all MODX tables | modx\_ |
+
 ### Installation Configuration Options
 
 | Key | Description | Default |
@@ -41,6 +42,7 @@ The config.xml file used for running setup via CLI has the following XML nodes. 
 | cmspassword | The password of the new Administrator account for new installs | password |
 | cmsadminemail | The email of the new Administrator account for new installs | email@address.com |
 | remove\_setup\_directory | Whether or not to remove the setup/ directory after installation. | 1 |
+
 ### Path Configuration Options
 
 | Key | Description | Default |
@@ -55,6 +57,7 @@ The config.xml file used for running setup via CLI has the following XML nodes. 
 | assets\_url |  |  |
 | core\_path |  |  |
 | processors\_path |  |  |
+
 ### Other Configuration Options
 
 | Key | Description | Default |
@@ -62,6 +65,7 @@ The config.xml file used for running setup via CLI has the following XML nodes. 
 | https\_port | The port on your server for HTTPS connections | 443 |
 | http\_host | The HTTP host of your server. Usually the hostname, such as mysite.com | localhost |
 | cache\_disabled | Whether or not to disable the MODX cache | 0 |
+
 ## See Also
 
 1. [Basic Installation](getting-started/installation/basic-installation)

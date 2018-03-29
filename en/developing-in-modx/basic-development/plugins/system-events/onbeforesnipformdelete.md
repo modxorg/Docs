@@ -17,6 +17,7 @@ Group: Snippets
 |------|-------------|
 | snippet | A reference to the modSnippet object. |
 | id | The ID of the Snippet. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

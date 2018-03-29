@@ -20,6 +20,7 @@ The list of available tabs is:
 | modx-page-settings | The second tab, or Page Settings tab. |
 
 
+
 You can also create a tab with the [New Tab](display/revolution20/New+Tab "New Tab") rule and move a TV there.
 
 ## <a name="MoveTVtoTab-Examples"></a>Examples

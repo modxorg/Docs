@@ -19,6 +19,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 | file | An array of the current file looping through the PHP $\_FILES array. |
 | directory | A reference to the modDirectory object that the files are being uploaded to. |
 | source | Contains mediasource object. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events)

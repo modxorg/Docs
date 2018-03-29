@@ -44,6 +44,7 @@ _old_uri: "style-guide"
 | Labour | Labor |
 | Licence | License |
 | Travelling | Traveling |
+
 ##   Writing Rules 
 
  These are som rules that make documents more clear, precise, and easy to understand.
@@ -293,8 +294,7 @@ _old_uri: "style-guide"
 ### Permitted HTML Markup
 
  | Format Type | Usage | Example |
-
------
+|-------------|-------|---------|
 | Normal Text | This is the text format used for all paragraph text and inside tables. |  |
 | Bold | (TBD) |  |
 | Italics | (TBD) |  |
@@ -307,16 +307,17 @@ _old_uri: "style-guide"
 | Links | (TBD) |  |
 | Text-Alignment | Reserve text-alignment for table cells. It should not be used to center, right or jusitfy text. Paragraph and headings must be left-aligned. |  |
 | Links | (TBD) |  |
+
 ### Special Formats
 
  | Format Type | Usage | Example |
-
------
+|-------------|-------|---------|
 | PHP Code | This is a special macro-format for wrapping code examples including PHP, HTML, CSS and Javascript. This will enable syntax highlighting and enhance the readibility of the page. |  |
 | Note | (TBD) |  |
 | Warning | (TBD) |  |
 | Danger | (TBD) |  |
 | Info | (TBD) |  |
+
  Other HTML elements such as divs, spans, blockquotes, address and etc. should not be used. This makes maintaining the documentations more difficult and can potentially create issues with layouts. Classes and IDs should not be used in markup. Special classes used when formatting in HTML are created by the Special Format macros listed above.
 
 ## Final checklist 

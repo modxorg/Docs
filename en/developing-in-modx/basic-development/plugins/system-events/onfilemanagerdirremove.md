@@ -17,6 +17,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 |------|-------------|
 | directory | Contains the full path of the directory that has been removed. |
 | source | Contains the mediasource object. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events)

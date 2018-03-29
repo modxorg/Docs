@@ -21,6 +21,7 @@ Group: None
 | userid | The user ID of the user. (deprecated) |
 | username | The username of the user. (deprecated) |
 | userpassword | The new password being set. (deprecated) |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

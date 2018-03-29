@@ -27,6 +27,7 @@ Anything returned by this event will be written to the logs as an error.
 | File | [core/model/modx/modmanagerrequest.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagerrequest.class.php) |
 | Class | class modManagerRequest |
 | Method | public function handleRequest() |
+
 ## See Also 
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

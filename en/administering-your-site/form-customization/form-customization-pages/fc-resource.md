@@ -58,6 +58,7 @@ When using the _resource/create_ Action, constraints will apply to the **parent*
 | Template | template | modx-panel-resource |
 
 
+
 ## <a name="FC-Resource-AvailableTabs"></a>Available Tabs
 
 These tabs are available for renaming/hiding:
@@ -68,6 +69,7 @@ These tabs are available for renaming/hiding:
 | Page Settings | modx-page-settings | modx-resource-tabs |
 | Template Variables | modx-panel-resource-tv | modx-resource-tabs |
 | Access Permissions | modx-resource-access-permissions | modx-resource-tabs |
+
 
 
 ## <a name="FC-Resource-HidingtheContentField"></a>Hiding the Content Field

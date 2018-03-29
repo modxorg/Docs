@@ -42,6 +42,7 @@ MODExt Windows are a convenient way to display record data from a Grid or AJAX r
 | record | A JSON object of default values (in name: value format) to set to the form when first loading the window. | {} |
 | saveBtnText | The text of the save button for the window. | Save |
 | url | The URL of the connector to submit the window form to. |  |
+
 ## Custom Events
 
 | Name | Description |
@@ -49,6 +50,7 @@ MODExt Windows are a convenient way to display record data from a Grid or AJAX r
 | success | If the form submission returns a success response. |
 | failure | If the form submission returns a failure response. |
 | beforeSubmit | Before the form submits its values to the connector, but after validation passes. |
+
 ## Unique Functionality
 
 #### Firing the submit method

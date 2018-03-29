@@ -24,6 +24,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/link_tag_scheme"
 | abs | Renders the link as an absolute URL, prepended with base\_url |
 | http | Renders the link as an absolute URL, forced to http scheme |
 | https | Renders the link as an absolute URL, force to https scheme |
+
 You can override the scheme in each link by passing &scheme in your links:
 
  ```

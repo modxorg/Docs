@@ -62,6 +62,7 @@ There are a few other variables available on the MODx.config object that are not
 | http\_host | The HTTP host variable for the active context. |
 | site\_url | The full Site URL for the active context. |
 | custom\_resource\_classes | An array of custom Resource classes pulled from the System Setting custom\_resource\_classes |
+
 ### MODx.action
 
 This object contains a map of all the modAction objects (or MODX manager controllers), mapped by their controller to their ID:
@@ -90,6 +91,7 @@ Contains MODX version information, with the following attributes:
 | distro | (traditional) |
 | full\_version | 2.1.0-pl |
 | full\_appname | MODX Revolution 2.1.0-pl (traditional) |
+
 Example:
 
 ``` php 
@@ -103,6 +105,7 @@ This object will contain the two following properties for the currently logged-i
 | MODx.user.id | The ID of the user. |
 |--------------|---------------------|
 | MODx.user.username | The username of the user. |
+
 ``` php 
 var userId = MODx.user.id;
 ```
@@ -124,6 +127,7 @@ This will contain the following permissions should they be granted to the user (
 | MODx.perm.new\_template | To create a new Template. |
 | MODx.perm.new\_tv | To create a new Template Variable. |
 | MODx.perm.directory\_create | To be able to create a directory on the filesystem. |
+
 ``` php 
 if (MODx.perm.file_upload) { /* ...code... */ }
 ```

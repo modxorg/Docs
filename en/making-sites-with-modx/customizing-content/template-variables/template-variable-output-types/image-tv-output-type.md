@@ -28,6 +28,7 @@ It's output options look like:
 | Style | Any CSS style-attributes to add to the tag |  |
 | Attributes | any other HTML-attributes you want to add to the tag |  |
 |  |  |  |
+
 ## See Also
 
 1. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)

@@ -31,6 +31,7 @@ It is **strongly recommended that you back up your data prior to performing any 
 | DocManager | [Batcher](/extras/revo/batcher "Batcher") |
 | AjaxSearch | [SimpleSearch](/extras/revo/simplesearch "SimpleSearch") |
 | WebLogin | [Login](/extras/revo/login "Login") |
+
 ## See Also
 
 1. [Functional Changes from Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution)

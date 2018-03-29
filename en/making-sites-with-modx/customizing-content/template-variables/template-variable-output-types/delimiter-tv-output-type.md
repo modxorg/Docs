@@ -19,6 +19,7 @@ It's output properties look like:
 | Name | Description |
 |------|-------------|
 | Delimiter | A delimiter to separated each item with. |
+
 ## See Also
 
 1. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)

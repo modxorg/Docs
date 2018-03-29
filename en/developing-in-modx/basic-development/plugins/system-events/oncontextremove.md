@@ -16,6 +16,7 @@ Group: modContext
 | Name | Description |
 |------|-------------|
 | context | A reference to the modContext object. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

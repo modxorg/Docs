@@ -18,6 +18,7 @@ Group: Template Variables
 | mode | Either 'upd' or 'new', depending on the circumstance. |
 | tv | A reference to the modTemplateVar object. |
 | id | The ID of the TV. Will be 0 for new TVs. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

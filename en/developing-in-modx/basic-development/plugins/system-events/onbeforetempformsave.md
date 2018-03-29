@@ -18,6 +18,7 @@ Group: Templates
 | mode | Either 'upd' or 'new', depending on the circumstance. |
 | template | A reference to the modTemplate object. |
 | id | The ID of the Template. Will be 0 for new Templates. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

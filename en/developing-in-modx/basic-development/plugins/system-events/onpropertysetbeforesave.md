@@ -15,6 +15,7 @@ Service: 1 - Parser Service Events
 | Name | Description |
 |------|-------------|
 | propertySet | A reference to the modPropertySet object. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

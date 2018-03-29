@@ -34,6 +34,7 @@ _old_uri: "2.x/administering-your-site/form-customization/form-customization-rul
 | modx-context-tabs | The Context page. |
 
 
+
  Tab Panels on non-Resource pages are only available in 2.0.0-pl and up. 
 
 ## <a name="NewTab-Examples"></a>Examples

@@ -18,6 +18,7 @@ Group: Chunks
 | mode | Either 'new' or 'upd', depending on the circumstance. |
 | id | The ID of the Chunk. This will be 0 for new chunks. |
 | chunk | A reference to the modChunk object. Will be null in new chunks. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

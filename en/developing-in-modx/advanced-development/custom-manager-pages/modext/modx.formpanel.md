@@ -37,6 +37,7 @@ MODx.FormPanel adds a few unique parameters not found in typical Ext.FormPanel o
 | allowDrop | Allow items from a tree to be dropped in this form. | true |
 | useLoadingMask | Set to true to use a loading mask when loading form values. | false |
 | onDirtyForm | A form ID to check against when checking dirty status for the form. Defaults to the form. | this.getForm() |
+
 ## Custom Events
 
 MODx.FormPanel adds a few extra events not found in Ext.FormPanel objects:
@@ -61,6 +62,7 @@ MODx.FormPanel adds a few extra events not found in Ext.FormPanel objects:
 - form - The Ext.form.BasicForm object
 - options - Any options passed to the submit() call
 - config - The FormPanel config object |
+
 ## Other Unique Functions
 
 #### Drop Area Fields

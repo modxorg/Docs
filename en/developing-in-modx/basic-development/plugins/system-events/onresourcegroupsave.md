@@ -16,6 +16,7 @@ Group: modResourceGroup
 | Name | Description |
 |------|-------------|
 | group | A reference to the modResourceGroup object. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

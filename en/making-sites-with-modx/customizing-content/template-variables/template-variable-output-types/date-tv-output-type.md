@@ -18,6 +18,7 @@ It's output properties look like:
 |------|-------------|
 | Date Format | A format string similar to the [PHP strftime method](http://php.net/strftime). |
 | Default | If no value is set for the TV, use the current time? This defaults to 'no', which will output a blank value. |
+
 ## Examples
 
 | Format String | Example Output |
@@ -25,6 +26,7 @@ It's output properties look like:
 | %A %d, %B %Y | Friday 01, April 2011 |
 | %Y-%m-%d | 2011-04-01 |
 | %b %e, %Y | Apr 1, 2011 |
+
 ## See Also
 
 1. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)

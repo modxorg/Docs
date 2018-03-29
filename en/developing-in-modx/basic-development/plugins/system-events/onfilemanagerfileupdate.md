@@ -17,6 +17,7 @@ Group: None
 |------|-------------|
 | path | Contains the full path to the updated file. |
 | source | Contains the mediasource object. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events)

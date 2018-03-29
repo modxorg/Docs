@@ -16,6 +16,7 @@ Group: None
 | Name | Description |
 |------|-------------|
 | results | An array of results. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

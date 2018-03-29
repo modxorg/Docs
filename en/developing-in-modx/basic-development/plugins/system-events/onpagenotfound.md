@@ -20,6 +20,7 @@ Group: None
 | error\_header | The header being sent: Defaults to "HTTP/1.1 404 Not Found" |
 | error\_pagetitle | The pagetitle of the error page. |
 | error\_message | The message being sent in the error page. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

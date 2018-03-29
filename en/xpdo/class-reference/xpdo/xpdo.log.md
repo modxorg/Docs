@@ -139,13 +139,13 @@ $modx->setLogLevel($log_level);
 ##  Verbosity Constants 
 
  | xPDO Constant | MODX Constant | Value |
-
------
+|---------------|---------------|-------|
 | xPDO::LOG\_LEVEL\_FATAL | MODX\_LOG\_LEVEL\_FATAL | 0 |
 | xPDO::LOG\_LEVEL\_ERROR | MODX\_LOG\_LEVEL\_ERROR | 1 |
 | xPDO::LOG\_LEVEL\_WARN | MODX\_LOG\_LEVEL\_WARN | 2 |
 | xPDO::LOG\_LEVEL\_INFO | MODX\_LOG\_LEVEL\_INFO | 3 |
 | xPDO::LOG\_LEVEL\_DEBUG | MODX\_LOG\_LEVEL\_DEBUG | 4 |
+
 ##  See Also 
 
 - **log\_level** System Setting

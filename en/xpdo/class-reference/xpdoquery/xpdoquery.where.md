@@ -26,6 +26,7 @@ array('attribute:operator' => 'value')
 | Exists in | IN | `$query->where(array('width:IN' => array(15,16,17,20)));` |
 | Not Exists in | NOT IN | `$query->where(array('width:NOT IN' => array(15,16,17,20)));` |
 | Is Null | IS | `$query->where(array('width:IS' => null));` |
+
 ##  Syntax 
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::where()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::where())

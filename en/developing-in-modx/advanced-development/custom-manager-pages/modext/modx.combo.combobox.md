@@ -26,6 +26,7 @@ The unique parameters for the class are simply pass-thru parameters to the data 
 | url | The URL to the connector. |  |
 | baseParams | Any other parameters to always send to the connector. | {} |
 | fields | The fields, in array format, you expect from the connector response. | \[\] |
+
 The class also inherits all [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox) properties.
 
 ## Using the Grid Renderer

@@ -86,6 +86,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 | else | Conditional usage, together with then. | \[\[+numbooks:gt=`0`:then=`Now available!`:else=`Sorry, currently sold out.`\]\] |
 | select | Output a replacement, if the value is found in the list of values before the equal sign. Otherwise the result is empty. | \[\[+numbooks:select=`0=Value 0&1=Value 1&2=Value 2`\]\] |
 | memberof, ismember, mo | Checks if the user is a member of the specified group(s). | \[\[+modx.user.id:memberof=`Administrator`\]\] |
+
 ### String output modifiers
 
  | Modifier | Description | Example |
@@ -145,6 +146,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
  Uses [modX.regClientScript](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientscript "modX.regClientScript"). | \[\[+jsTV:jsToBottom\]\] |
 | urlencode | Converts the input into a URL-friendly string similar to how an HTML form would do so. Similar to PHP's [urlencode](http://www.php.net/manual/en/function.urlencode.php) | \[\[+mystring:urlencode\]\] |
 | urldecode | Converts the input from an URL-friendly string Similar to PHP's [urldecode](http://www.php.net/manual/en/function.urldecode.php) | \[\[+myparam:urldecode\]\] |
+
 ### Caching
 
  In general, any content in a placeholder that you think **might change dynamically** should be uncached. For example:
@@ -191,6 +193,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 | token | The type of the parent element. | \* (the token on `pagetitle`) |
 | name | The name of the parent element. | pagetitle |
 | tag | The complete parent tag. | \[\[\*pagetitle:makeExciting=`4`\]\] |
+
  Here is a sample implementation for our snippet makeExciting:
 
  ``` php 

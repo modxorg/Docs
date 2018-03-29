@@ -23,6 +23,7 @@ Group: None
 | lifetime | The lifetime of the session cookie. |
 | **&** loginContext | The context key this login is occurring in. **Passed by reference** |
 | **&** addContexts | Additional contexts in which the login is also occuring in. **Passed by reference** |
+
 ## Event Login Workflow
 
 1. _[_OnBeforeWebLogin_](http://rtfm.modx.com/display/revolution20/OnBeforeWebLogin)_ || _[OnBeforeManagerLogin](http://rtfm.modx.com/display/revolution20/OnBeforeManagerLogin)_ - Inside this event the developer can check for erroneous parameters which will **disallow** further logging in process. If plugins executed by this event return something except true, the logging in will be aborted with the specified error.

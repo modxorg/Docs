@@ -28,6 +28,7 @@ _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags"
 | **\[\[\*parent\]\]** | the ID of the parent page (if any). Set by MODx when the page is created. Can be altered by the user. | Often used in conjunction with the link syntax, e.g. `<a href="[[~[[*parent]]]]">Up to parent page</a>` |
 | **\[\[\*menutitle\]\]** | the Title used when the page appears in menus. | _Most frequently used by Snippets such as_ _[Wayfinder](/extras/evo/wayfinder "Wayfinder")_ _when dynamically constructing menus_ |
 | **\[\[\*content\]\]** | the content of the page. | `<body>[[*content]]</body>` |
+
 ##  Other Common Tags 
 
  These tags represent system settings, which are editable under the **System** menu -> **System Settings**.
@@ -40,6 +41,7 @@ _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags"
 | **\[\[$chunk\]\]** | This references a chunk by name. Chunks are any bit of reusable content. | Common chunks might be for _header_ or _footer_ |
 | **\[\[~link\]\]** | Use this syntax to build links to pages by referencing their unique id (visible in parentheses next to the page's name in the resource tree). These links will not break if pages are moved or renamed. You can change the generated scheme of the link by passing the &scheme parameter (see [link\_tag\_scheme](administering-your-site/settings/system-settings/link_tag_scheme)) | `<a id="logo" href="[[~1]]">Home</a>` |
 | **\[\[%translated\_message\]\]** | Use lexicon tags to localize messages. | \[\[!%setting\_emailsender? &topic=`setting` &namespace=`core` &language=`en`\]\] |
+
 ##  All Tags 
 
  As you increase your understanding of how MODx templates work, you'll want to have at your disposal the complete list of available content fields. Here is the complete list of all tags, gleaned from this [blog post](http://modxcms.com/forums/index.php/topic,63481.0/topicseen.html).
@@ -79,6 +81,7 @@ _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags"
 | **\[\[\*unpub\_date\]\]** | date – Unpublish Date | `[[*unpub_date:strtotime:date=`%a %b %e, %Y`]]` See [Date Formats](making-sites-with-modx/commonly-used-template-tags/date-formats "Date Formats"). |
 | **\[\[\*uri\_override\]\]** | int 0/1 | Freeze URI |  |
 | **\[\[\*uri\]\]** | string | URI |  |
+
  Just to clarify on pub\_date – it's only set when the user sets a future date for publication in the Publish On field. And when the doc is actually published, it's zeroed out.  The publishedon field always contains the most recent date that the resource changed form unpublished to published (or the date a new doc was saved with Publish checked).
 
 

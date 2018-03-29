@@ -18,6 +18,7 @@ Group: Documents
 | resource | A reference to the modResource object. |
 | id | The ID of the Resource. |
 | children | An array of IDs of children of this resource which were deleted. |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

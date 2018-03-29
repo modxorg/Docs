@@ -32,20 +32,20 @@ class TableConverter implements ConverterInterface
                 return trim($element->getValue());
 
             case 'tbody':
-                return $element->getValue();
+                return trim($element->getValue());
 
             case 'thead':
-                $headerLine = [];
-                $betweenLine = [];
-                foreach ($element->getChildren() as $child) {
-                    $v = $child->getValue();
-                    $headerLine[] = $v;
-                    $betweenLine[] = str_repeat('-', 5);
-                }
-                $headerLine = implode(' | ', $headerLine);
-                $betweenLine = implode(' | ', $betweenLine);
+                $headerLine = reset($element->getChildren())->getValue();
+                $headers = explode(' | ', trim(trim($headerLine, "\n"), '|'));
 
-                return $headerLine . "\n" . $betweenLine . "\n";
+                $hr = [];
+                foreach ($headers as $td) {
+                    $length = strlen(trim($td)) + 2;
+                    $hr[] = str_repeat('-', $length > 3 ? $length : 3);
+                }
+                $hr = '|' . implode('|', $hr) . '|';
+
+                return $headerLine . $hr . "\n";
             case 'table':
                 $inner = $element->getValue();
                 if (strpos($inner, '-----') === false) {
@@ -60,7 +60,7 @@ class TableConverter implements ConverterInterface
                     array_splice($inner, 1, 0, $hr);
                     $inner = implode("\n", $inner);
                 }
-                return $inner;
+                return trim($inner) . "\n\n";
         }
         return $element->getValue();
     }

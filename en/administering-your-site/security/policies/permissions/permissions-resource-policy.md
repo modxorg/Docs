@@ -25,6 +25,7 @@ This policy is packaged into MODx and is given to users on any context who want 
 | undelete |
 | unpublish |
 | view |
+
 ## See Also
 
 1. [Permissions - Administrator Policy](administering-your-site/security/policies/permissions/permissions-administrator-policy)

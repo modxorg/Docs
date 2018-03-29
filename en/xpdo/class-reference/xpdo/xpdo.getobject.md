@@ -41,6 +41,7 @@ You can retrieve any MODX object this way, just by knowing its object name – u
 | User | modUser |  |
 | Template | modTemplate |  |
 | Snippet | modSnippet |  |
+
 See **core/model/schema/modx.mysql.schema.xml** file for a full definition of all MODX objects.
 
 If you need to retrieve other attributes for these objects (e.g. TVs for a page), then you may need to look at [getObjectGraph](xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")

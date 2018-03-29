@@ -50,19 +50,18 @@ _old_uri: "2.x/administering-your-site/security/users"
  Users contain the following fields:
 
  | Name | Description |
-
------
+|------|-------------|
 | id | The ID of the user. |
 | username | The username of the user. |
 | password | The user's encrypted password. |
 | active | Either 1 or 0. If not active, the user will not be able to log in. |
 | remote\_key | A remote user Key used by remote authentication apps. |
 | remote\_data | A JSON array of data used by remote authentication apps. |
+
  Users also have a Profile attached to them. It contains the following fields:
 
  | Name | Description |
-
------
+|------|-------------|
 | internalKey | The ID of the user. |
 | fullname | The full name of the user. |
 | email | The email of the user. |
@@ -88,6 +87,7 @@ _old_uri: "2.x/administering-your-site/security/users"
 | comment | An optional comment field for comments on the User. |
 | website | The website of the user. |
 | extended | A JSON array that can be used to store extra fields for the User. |
+
 ##  Grabbing the User via the API 
 
  The current user can be retrieved in the API via the $modx->user reference. For example, this snippet outputs the username of the user:

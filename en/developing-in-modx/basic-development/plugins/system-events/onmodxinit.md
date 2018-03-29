@@ -19,6 +19,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmodx
 |------|-------------|
 | contextKey | The context\_key of the context being initialized |
 | options | Any options passed to the initialize() function |
+
 ## Remarks
 
  | Previous event | ? |
@@ -27,6 +28,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmodx
 | File | [core/model/modx/modx.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modx.class.php) |
 | Class | class modx |
 | Method | public function initialize($contextKey= 'web', $options = null) |
+
 ## See Also
 
 - [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")

@@ -45,6 +45,7 @@ MODx.tree.Tree has a few extra parameters not found in Ext.tree.TreePanel object
 | primaryKey | The primary key for the node. Usually is id. | id |
 | sortAction | The processor action to take when sorting nodes via drag/drop. | sort |
 | toolbarItemCls\* | The CSS class to add to remoteToolbar loaded items. | x-btn-icon |
+
 - = MODX Revolution 2.1+ Only
 
 ## Custom Events
@@ -56,6 +57,7 @@ The custom events fired by MODx.tree.Tree are:
 | beforeSort | Fired before the tree sends off the sorted nodes to the sort processor. Passed the sorted nodes, encoded. |
 | afterSort | Fired after the tree node sorting happens. Passes: - event - The drop event
 - result - The response object from the sort processor. |
+
 ## Other Unique Features
 
 #### Sorting

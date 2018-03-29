@@ -99,6 +99,7 @@ MODx.grid.Grid adds a few unique parameters not found in typical Ext.grid.Grid o
 | preventSaveRefresh | If autosave is true, after saving, will prevent the grid from refreshing. Makes for a more seamless editing experience. | 1 |
 | primaryKey | If your grid items have a primary key that's not ID, set it here. | id |
 | storeId | A custom ID to give the store for this grid. Will default to a unique Ext ID. | Ext.id() |
+
 For a complete list of all parameters not listed here for grids, see the [ExtJS](http://sencha.com) documentation.
 
 ## Custom Events
@@ -110,6 +111,7 @@ MODx.grid.Grid adds a few extra events not found in Ext.grid.Grid objects:
 | beforeRemoveRow | Fires before a row is removed when calling the remove() method on the grid (usually done in a context menu) |
 | afterRemoveRow | Fires after a row is removed when calling the remove() method on the grid (usually done in a context menu) |
 | afterAutoSave | Fires after an inline-edit save is done, if autosave is set to true. |
+
 ## Other Unique Functions
 
 MODExt grids come with quite a few other features.

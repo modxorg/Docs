@@ -30,6 +30,7 @@ It's not possible to give every possible example because date formatting can be 
 | 18 April 2011 | `[[*createdon:strtotime:date=`%e %B %Y`]]` |
 | Monday, April 18, 2011 | `[[*createdon:strtotime:date=`%A, %B %e, %Y`]]` |
 | 2011-04-18 | `[[*createdon:strtotime:date=`%Y-%m-%d`]]` |
+
 ## All Parameters
 
 | Code | Display | Example |
@@ -65,6 +66,7 @@ It's not possible to give every possible example because date formatting can be 
 | %Y | Four-digit year | 2010 |
 | %Z or %z | Time zone offset or name | -005 or EST |
 | %% | A literal % character | % |
+
 ## See Also
 
 - The above were gleaned from one of Bob's helpful forum posts: <http://modxcms.com/forums/index.php?topic=56339.0>

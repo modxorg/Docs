@@ -28,6 +28,7 @@ You may also pass a message to the $modx->event->output() function and this will
 | mode | Either 'new' or 'upd', depending on the circumstances. |
 | resource | A reference to the modResource object. |
 | id | The ID of the Resource. Will be 0 for new Resources. |
+
 ## Examples
 
 ### Require a Field

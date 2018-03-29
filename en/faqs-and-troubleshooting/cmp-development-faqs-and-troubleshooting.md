@@ -72,6 +72,7 @@ Using the different parts however is advised to make sure you can easily deploy 
 | 2.1.0-rc1 | 3.3.1 |
 | 2.0.4-pl | 3.3.0 |
 | 2.0.0-rc2 | 3.2.1 |
+
 It is unlikely that MODX will start using ExtJS 4 until 2.3/2.4 or 3.0. If you insist on using ExtJS 4.0, you can always get your hands dirty and start the migration process of the manager/assets/modext/ folder.
 
 ### 1.4. Can I use ExtJS widgets that MODX uses in the Manager in my own CMP as well?
