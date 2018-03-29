@@ -99,8 +99,8 @@ class Converter {
 
         echo count($this->toDos) . " potential problems have been logged to todos.txt\n";
 
-        file_put_contents($this->outputDir . 'redirects.json', json_encode($this->redirects,  JSON_PRETTY_PRINT));
-        echo count($this->redirects) . " redirects have been written to en/redirects.json\n";
+        file_put_contents(dirname($this->outputDir) . '/redirects.json', json_encode($this->redirects,  JSON_PRETTY_PRINT));
+        echo count($this->redirects) . " redirects have been written to redirects.json\n";
     }
 
     public function convertResource(modResource $resource, $currentDirectory = '/', $currentParent = 0)
@@ -202,7 +202,7 @@ class Converter {
             // Keep a list of redirects
             $oldUri = $this->modx->makeUrl($resource->get('id'), '', '', 'relative');
             $oldUri = str_replace($this->modx->getOption('site_url'), '/', $oldUri);
-            $newUri = ltrim($currentDirectory, '/') . $name;
+            $newUri = 'en/' . ltrim($currentDirectory, '/') . $name;
             $newUri = str_replace('.md', '', $newUri);
             if ($oldUri !== $newUri) {
                 $this->redirects[$oldUri] = $newUri;
