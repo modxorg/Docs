@@ -4,8 +4,8 @@ _old_id: "152"
 _old_uri: "2.x/getting-started"
 ---
 
- Welcome to MODX Revolution. This section provides installation tutorials, beginning concepts around MODX, and general information about MODX to get you started.
+Добро пожаловать в MODX Revolution. В этом разделе представлены руководства по установке, Основные понятия о MODX и общие сведения о MODX для начала работы.
 
-1. [Server Requirements](getting-started/server-requirements)
-2. [Installation](getting-started/installation)
-3. [An Overview of MODX](getting-started/an-overview-of-modx)
+1. [Требования к серверу](getting-started/server-requirements)
+2. [Установка](getting-started/installation)
+3. [Обзор MODX](getting-started/an-overview-of-modx)

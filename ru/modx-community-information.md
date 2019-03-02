@@ -5,4 +5,4 @@ _old_uri: "2.x/modx-community-information"
 ---
 
 **Уведомление о перенаправлении**
-Эта страница должна быть перенаправлена на  [display/community/Home/](display/community/Home/) примерно через 5 секунд.
+Эта страница будет перенаправлена на [display/community/Home/](display/community/Home/) через 5 секунд.
