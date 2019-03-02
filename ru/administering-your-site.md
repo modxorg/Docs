@@ -4,10 +4,10 @@ _old_id: "15"
 _old_uri: "2.x/administering-your-site"
 ---
 
-This section contains information about maintaining and administering your MODX site.
+Этот раздел содержит информацию о поддержке и администрировании сайта MODX.
 
-1. [Settings](administering-your-site/settings)
-2. [Using Friendly URLs](administering-your-site/using-friendly-urls)
-3. [Contexts](administering-your-site/contexts)
-4. [Customizing the Manager](administering-your-site/customizing-the-manager)
-5. [Security](administering-your-site/security)
+1. [Настройка](administering-your-site/settings)
+2. [Использование дружественных URL](administering-your-site/using-friendly-urls)
+3. [Контексты](administering-your-site/contexts)
+4. [Настройка административной части](administering-your-site/customizing-the-manager)
+5. [Безопасность](administering-your-site/security)
