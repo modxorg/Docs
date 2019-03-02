@@ -1,6 +1,4 @@
----
-title: "MODX Docs"
----
+# MODX Docs
 
 ## Обзор
 
@@ -16,7 +14,7 @@ title: "MODX Docs"
 - Руководство [Создание сайтов с MODX](making-sites-with-modx/)
 - [Создание блога с MODX](case-studies-and-tutorials/creating-a-blog-in-modx-revolution)
 
-Если у вас есть вопрос об этом сайте документации или предложения о том, как сделать улучшения, пожалуйста, [сообщите нам] (mailto: support@modx.com). От основной команды MODX и сообщества сообщества MODX "Добро пожаловать!"
+Если у вас есть вопрос об этом сайте документации или предложения о том, как сделать улучшения, пожалуйста, [сообщите нам] (mailto: support@modx.com). От основной команды MODX и сообщества MODX "Добро пожаловать!"
 
 ## [MODX Revolution](#revolution) 
   
@@ -47,14 +45,14 @@ Revolution - флагманская CMS и прикладная среда MODX,
   - [Дополнения для Revo](extras/revo/)
   - [getResources](extras/revo/getresources) документация
   - [Wayfinder](extras/revo/wayfinder) документация
-  - [Extras for Evo](extras/evo/)
+  - [Дополнения для Evo](extras/evo/)
   - [Ditto](extras/evo/ditto) документация
   - [Wayfinder](extras/evo/wayfinder) для Evo документация
   
   ### Другие ресурсы
 
-  - [Скачаат Revolution Extras](http://modx.com/extras/?product=revolution)
-  - [Скачаат Evolution Extras](http://modx.com/extras/?product=evolution)
+  - [Скачать Revolution Extras](http://modx.com/extras/?product=revolution)
+  - [Скачать Evolution Extras](http://modx.com/extras/?product=evolution)
   - [Форум](http://forums.modx.com/?category=5)
 
  (#evolution) 
@@ -84,10 +82,10 @@ xPDO - это объектно-реляционный мост (ORB), котор
   
   ### Быстрые ссылки
   
-  - [xPDO 2.x Documentation Homepage](xpdo/)
-  - [Getting Started](xpdo/getting-started) with xPDO 2.x
-  - [Advanced Features](xpdo/advanced-features) of xPDO 2.x
-  - [Class Reference](xpdo/class-reference) for xPDO 2.x
+  - [xPDO 2.x страница документации](xpdo/)
+  - [С чего начать](xpdo/getting-started) с xPDO 2.x
+  - [Расширенные возможности](xpdo/advanced-features) xPDO 2.x
+  - [Class Reference](xpdo/class-reference) для xPDO 2.x
   
   ### Другие ресурсы
   
