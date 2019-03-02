@@ -1,8 +1,8 @@
 ---
-title: "MODX Community Information"
+title: "Информация о Сообществе MODX"
 _old_id: "373"
 _old_uri: "2.x/modx-community-information"
 ---
 
-**Redirection Notice**
-This page should redirect to [display/community/Home/](display/community/Home/) in about 5 seconds.
+**Уведомление о перенаправлении**
+Эта страница должна быть перенаправлена на  [display/community/Home/](display/community/Home/) примерно через 5 секунд.
