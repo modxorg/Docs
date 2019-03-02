@@ -1,71 +1,69 @@
 ---
 title: "FAQs & Troubleshooting"
-_old_id: "1689"
-_old_uri: "2.x/faqs-and-troubleshooting"
 ---
 
-This document aims to get you started with common issues / questions with MODX Revolution by either answering it, or pointing you to the right resources. It is by no means exclusive, and a good search on the forums and this documentation may find more resources for what you're looking for. In all cases - if you can't find what you need, do ask in the [forums](http://forums.modx.com) or on IRC: irc.freenode.org channel: #MODX.
+Этот документ поможет вам начать с общих проблем / вопросов по MODX Revolution, либо ответив на них, либо указав на нужные ресурсы.  Он ни в коем случае не является эксклюзивным, и хороший поиск на форумах и в этой документации может найти больше ресурсов для того, что вы ищете. В любом случае, если вы не можете найти то, что ищете, спросите на [форумах](http://forums.modx.com) или в IRC: irc.freenode.org канал: #MODX.
 
-The questions numbering represents nothing but that - a number to indicate what question you're looking at to help scanning through.
+Нумерация вопросов представляет собой ни что иное, как просто номер вопроса, для того чтобы помочь вам найти нужный.
 
-This is a documentation stub, and could use your help to complete! If you don't have access to edit this page, [please post anything you would want to see added or updated in this topic on the forums](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
+Это заглушка документации и вы можете помочь завершить ее! Если у вас нет доступа к редактированию этой страницы, [пожалуйста, напишите о том что вы хотите добавить или обновить в этом топике на форуме](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
 
-This document will always be a work in progress as new features are added / changed, and it could use your help in keeping it structured and up to date! If you do not have access to editing this document, [please post anything you would want to see added or updated in this topic on the forums](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
+Этот документ всегда будет в процессе, так как постоянно добавляются / изменяются новые возможности, и вы можете помочь поддержать его развитие и актуальность! Если у вас нет доступа к редактированию этой страницы, [пожалуйста, напишите о том что вы хотите добавить или обновить в этом топике на форуме](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
 
-_To Editors:_
+_Для редакторов:_
 
-- _Please use the right headings (heading 2 for categories, heading 3 for questions) to make sure the table of contents et al are properly generated and make sense._
-- _Big subjects can be created as a subpage to this page, and if other pages already exist on these docs please link to it in the first section._
-- _Please make sure the numbering is correct when you add a question to allow easier scanning of the page._
-- _Make sure you link generously to further reading on the subject._
+- _Пожалуйста, используйте правильные заголовки (заголовки 2-го уровня для категорий, заголовки 3-го уровня для вопросов) чтобы быть уверенными, что оглавление и остальное правильно сгенерируются и будут иметь смысл._
+- _Большие темы могут использоваться для создания подстраниц этой страницы, и если другие похожие страницы уже существуют, пожалуйста, дайте ссылку на них в первом разделе._
+- _Пожалуйста, убедитесь, что нумерация верна, когда вы добавляете вопрос, чтобы облегчить навигацию по странице._
+- _Пожалуйста, убедитесь, что ваши ссылки правильно указывают на дальнейшую информацию по теме._
 
-_Thanks!!_
+_Спасибо!!_
 
 
 
-## Table of Contents
+## Оглавление
 
-FAQs and/or Troubleshooting on specific subjects elsewhere:
+FAQ и/или Устранение неполадок по конкретным темам в других местах:
 
-- [Troubleshooting Installation](getting-started/installation/troubleshooting-installation "Troubleshooting Installation")
-- [Troubleshooting Upgrades](administering-your-site/upgrading-modx/troubleshooting-upgrades "Troubleshooting Upgrades")
-- [Troubleshooting Package Management](administering-your-site/installing-a-package/troubleshooting-package-management "Troubleshooting Package Management")
-- [Troubleshooting Security](administering-your-site/security/troubleshooting-security "Troubleshooting Security")
+- [Устранение неполадок при установке](getting-started/installation/troubleshooting-installation "Устранение неполадок при установке")
+- [Устранение неполадок при обновлении](administering-your-site/upgrading-modx/troubleshooting-upgrades "Устранение неполадок при обновлении")
+- [Устранение неполадок при управлении дополнениями](administering-your-site/installing-a-package/troubleshooting-package-management "Устранение неполадок при управлении дополнениями")
+- [Устранение неполадок безопасности](administering-your-site/security/troubleshooting-security "Устранение неполадок безопасности")
 
-Subpages dealing with specific subjects:
+Подстраницы, посвященные конкретным темам:
 
-- [CMP Development FAQs & Troubleshooting](faqs-and-troubleshooting/cmp-development-faqs-and-troubleshooting "CMP Development FAQs & Troubleshooting")
+- [FAQ и устранение неполадок по разработке CMP](faqs-and-troubleshooting/cmp-development-faqs-and-troubleshooting "FAQ и устранение неполадок по разработке CMP")
 
-On this page, you will find the following categories and questions:
+На этой странице вы можете найти следующие категории и вопросы:
 
-- [Table of Contents](#FAQs%26Troubleshooting-TableofContents)
-- [1. MODX 101](#FAQs%26Troubleshooting-1.MODX101)
-  - [1.1. What is MODX Evolution, and what is MODX Revolution? What's the difference?](#FAQs%26Troubleshooting-1.1.WhatisMODXEvolution%2CandwhatisMODXRevolution%3FWhat%27sthedifference%3F)
-  - [1.2. What different tags can I use? What is \[\[\*pagetitle\]\], \[\[Wayfinder\]\] etc?](#FAQs%26Troubleshooting-1.2.WhatdifferenttagscanIuse%3FWhatis%26nbsp%3B%5C%5Cpagetitle%5C%5C%2C%26nbsp%3B%5C%5CWayfinder%5C%5Cetc%3F)
-- [2. The Manager](#FAQs%26Troubleshooting-2.TheManager)
-  - [2.1. Help! Where did the sidebar go?](#FAQs%26Troubleshooting-2.1.Help%5C%21%26nbsp%3BWheredidthesidebargo%3F)
-  - [2.2 How can I modify what resource fields are visible when creating or editing a Resource? Is there something like ManagerManager for Revolution?](#FAQs%26Troubleshooting-2.2HowcanImodifywhatresourcefieldsarevisiblewhencreatingoreditingarevolution20%3AResource%3FIstheresomethinglikeManagerManager)
-  - [2.3 What does modDocument/ modWeblink/ modSymLink/ modStaticResource mean?](#FAQs%26Troubleshooting-2.3WhatdoesmodDocument%2FmodWeblink%2FmodSymLink%2FmodStaticResourcemean%3F)
-  - [2.4 What is the difference between a Resource and a Document?](#FAQs%26Troubleshooting-2.4WhatisthedifferencebetweenaResourceandaDocument%3F)
-  - [2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!](#FAQs%26Troubleshooting-2.5I%27mlockedout%5C%21Ican%27taccessthemanager%5C%21Forgotmypasswordandrecoverydoesn%27twork%5C%21)
-- [3. Frontend Display Issues](#FAQs%26Troubleshooting-3.FrontendDisplayIssues)
-  - [3.1 Blank frontend pages resolved by Clearing Cache](#FAQs%26Troubleshooting-3.1BlankfrontendpagesresolvedbyClearingCache)
-  - [3.2 General Snippet Problems](#FAQs%26Troubleshooting-3.2GeneralSnippetProblems)
+- [Оглавление](#%D0%BE%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5)
+- [1. MODX 101](#1-modx-101)
+  - [1.1. Что такое MODX Evolution, и что такое MODX Revolution? В чем отличия?](#11-%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-modx-evolution-%D0%B8-%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-modx-revolution-%D0%B2-%D1%87%D0%B5%D0%BC-%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B8%D1%8F)
+  - [1.2. What different tags can I use? What is \[\[\*pagetitle\]\], \[\[Wayfinder\]\] etc?](#12-what-different-tags-can-i-use-what-is-pagetitle-wayfinder-etc)
+- [2. The Manager](#2-the-manager)
+  - [2.1. Help! Where did the sidebar go?](#21-help-where-did-the-sidebar-go)
+  - [2.2 How can I modify what resource fields are visible when creating or editing a Resource? Is there something like ManagerManager for Revolution?](#22-how-can-i-modify-what-resource-fields-are-visible-when-creating-or-editing-a-resource-is-there-something-like-managermanager-for-revolution)
+  - [2.3 What does modDocument/ modWeblink/ modSymLink/ modStaticResource mean?](#23-what-does-moddocument-modweblink-modsymlink-modstaticresource-mean)
+  - [2.4 What is the difference between a Resource and a Document?](#24-what-is-the-difference-between-a-resource-and-a-document)
+  - [2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!](#25-im-locked-out-i-cant-access-the-manager-forgot-my-password-and-recovery-doesnt-work)
+- [3. Frontend Display Issues](#3-frontend-display-issues)
+  - [3.1 Blank frontend pages resolved by Clearing Cache](#31-blank-frontend-pages-resolved-by-clearing-cache)
+  - [3.2 General Snippet Problems](#32-general-snippet-problems)
 
 
 
 ## 1. MODX 101
 
-### 1.1. What is MODX Evolution, and what is MODX Revolution? What's the difference?
+### 1.1. Что такое MODX Evolution, и что такое MODX Revolution? В чем отличия?
 
-MODX Evolution is the legacy code and are the 1.x versions. It has powered hundreds of thousands of websites in the past five years and is what has shaped MODX.
+MODX Evolution является устаревшим кодом 1.x версий. За последние пять лет на нем созданы сотни тысяч веб-сайтов и на основе него сформирован MODX.
 
-MODX Revolution is a complete rewrite of MODX Evolution which shares the same ideas but is based on xPDO, a database abstraction layer, and finally saw daylight in 2010.
+MODX Revolution - это полностью переписанный MODX Evolution, который разделяет те же идеи, но основан на xPDO, слое абстракции базы данных, выпущенный в 2010 году.
 
-There are three kinds of MODX products at this point:
+На данный момент существует три версии MODX:
 
-- 0.9.6.x – the original code base that started with it's first production/stable release as version 0.9.0 at the end of October 2005. _No longer supported, and you REALLY should update to the latest Evolution version. Exploits founds in 0.9.6.x have long been fixed!_
-- Evolution 1.x – a cleaned up and refined distribution of 0.9.6.x with conventions and terminology more in line with our totally rewritten Revolution release.
+- 0.9.6.x – исходная кодовая база, которая началась с первого выпуска стабильной версии 0.9.0 в конце октября 2005. _Больше не поддерживается, вы должны обновить ее до последней версии Evolution. Уязвимости, найденные в 0.9.6.x давно исправлены!_
+- Evolution 1.x – доработанный и улучшенный дистрибутив 0.9.6.x с конвенциями и терминологией, более соответствующий нашей полностью переписанной версии Revolution.
 - Revolution 2.x – a fully object oriented and completely new branch that's been in development for more than 3 years that addresses limitations found in the original code base such as having a truly recursive parser and eliminating the 5,000 document ceiling.
 
 Further reading:
