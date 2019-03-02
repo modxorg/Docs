@@ -5,4 +5,4 @@ _old_uri: "2.x/modx-community-information"
 ---
 
 **Redirection Notice**
-This page should redirect to [display/community/Home/](display/community/Home/) in about 5 seconds.
+Эта страница будет перенаправлена на [display/community/Home/](display/community/Home/) через 5 секунд.
