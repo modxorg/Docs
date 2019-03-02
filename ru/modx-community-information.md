@@ -1,7 +1,5 @@
 ---
 title: "Информация о Сообществе MODX"
-_old_id: "373"
-_old_uri: "2.x/modx-community-information"
 ---
 
 **Уведомление о перенаправлении**

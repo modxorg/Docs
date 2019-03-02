@@ -1,7 +1,5 @@
 ---
 title: "Getting Started"
-_old_id: "152"
-_old_uri: "2.x/getting-started"
 ---
 
 Добро пожаловать в MODX Revolution. В этом разделе представлены руководства по установке, Основные понятия о MODX и общие сведения о MODX для начала работы.

@@ -1,7 +1,5 @@
 ---
 title: "Administering Your Site"
-_old_id: "15"
-_old_uri: "2.x/administering-your-site"
 ---
 
 Этот раздел содержит информацию о поддержке и администрировании сайта MODX.
