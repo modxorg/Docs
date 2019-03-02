@@ -1,13 +1,11 @@
 ---
 title: "Developing in MODX"
-_old_id: "99"
-_old_uri: "2.x/developing-in-modx"
 ---
 
- This section contains information on starting development in MODX.
+Этот раздел содержит информацию о начале разработки на MODX.
 
-1. [Code Standards](developing-in-modx/code-standards)
-2. [Overview of MODX Development](developing-in-modx/overview-of-modx-development)
-3. [Basic Development](developing-in-modx/basic-development/)
-4. [Advanced Development](developing-in-modx/advanced-development/)
-5. [Other Development Resources](developing-in-modx/other-development-resources)
+1. [Стандарты кода](developing-in-modx/code-standards)
+2. [Обзор разработки на MODX](developing-in-modx/overview-of-modx-development)
+3. [Базовая разработка](developing-in-modx/basic-development/)
+4. [Продвинутая разработка](developing-in-modx/advanced-development/)
+5. [Другие ресурсы для разработки](developing-in-modx/other-development-resources)
