@@ -1,18 +1,16 @@
 ---
 title: "MODX Docs"
-_old_id: "1"
-_old_uri: "dashboard.action"
 ---
 
-## Overview
+## Обзор
 
- MODX Revolution (Revo) is an easy-to-use Content Management System (CMS) and Application Framework rolled into one. Despite the limitless possibilities that MODX affords you, we think you'll find it refreshingly intuitive to work with. At every step, MODX strives to deliver Creative Freedom.
+ MODX Revolution (Revo) - это простая в использовании система управления контентом (CMS) и Application Framework, объединенные в одно целое. Несмотря на безграничные возможности, которые предоставляет вам MODX, мы думаем, что работать с ним будет просто и понятно. На каждом этапе MODX стремится предоставить полную свободу.
 
- In addition to this documentation site, the [MODX Community](http://forums.modx.com) is vibrant and always willing to help. Go ahead and ask questions there - you'll be pleasantly surprised at the responsiveness of the MODX user base. Additionally, there are trusted, experienced [MODX Professionals](http://modx.com/professionals) with whom you can engage to get the job done. MODX also has [vendor-backed commercial support](http://modx.com/support/) options, so no matter your needs and requirements - you're covered.
+ В дополнение к этому сайту документации, [MODX сообщество](http://forums.modx.com) энергичное и всегда готовое помочь. Продолжайте задавать вопросы - вы будете приятно удивлены отзывчивостью пользователей MODX. Кроме того, есть доверенные, опытные [MODX Профессионалы](http://modx.com/professionals) с кем вы можете взаимодействовать, чтобы выполнить работу. MODX также имеет [коммерческую поддержку при поддержке поставщика](http://modx.com/support/) варианты, поэтому независимо от ваших потребностей и требований - вы можете быть удовлетворены.
 
-## Getting Started
+## С чего начать
 
- This documentation site is a thorough Reference for all things MODX, but there are also Guides and Tutorials to help you get started quickly and easily. Highlights include:
+ Этот сайт документации является подробным справочником по всем вопросам MODX, но есть также руководства и учебные пособия, которые помогут вам быстро и легко начать работу. Основные моменты включают в себя:
 
 - The [Video Quick-Start Series](getting-started/video-quick-start-series/) of tutorials
 - A guide on [Making Sites with MODX](making-sites-with-modx/)
