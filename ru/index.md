@@ -12,94 +12,97 @@ title: "MODX Docs"
 
  Этот сайт документации является подробным справочником по всем вопросам MODX, но есть также руководства и учебные пособия, которые помогут вам быстро и легко начать работу. Основные моменты включают в себя:
 
-- The [Video Quick-Start Series](getting-started/video-quick-start-series/) of tutorials
-- A guide on [Making Sites with MODX](making-sites-with-modx/)
-- The [Creating a Blog in MODX](case-studies-and-tutorials/creating-a-blog-in-modx-revolution) tutorial
+- [Серия видео для быстрого старта](getting-started/video-quick-start-series/)
+- Руководство [Создание сайтов с MODX](making-sites-with-modx/)
+- [Создание блога с MODX](case-studies-and-tutorials/creating-a-blog-in-modx-revolution)
 
- If you have a question about this documentation site, or suggestions on how to increase the awesomeness herein, please [let us know](mailto:support@modx.com). From the MODX core team, and the MODX community-at-large, "Welcome!"
+Если у вас есть вопрос об этом сайте документации или предложения о том, как сделать улучшения, пожалуйста, [сообщите нам] (mailto: support@modx.com). От основной команды MODX и сообщества сообщества MODX "Добро пожаловать!"
 
-- [](#revolution)## [MODX Revolution]()
+## [MODX Revolution](#revolution) 
   
-   Revolution is MODX's flagship CMS and application framework, lovingly called "Revo". If you're new to MODX, start here.
+Revolution - флагманская CMS и прикладная среда MODX, которую с любовью называют «Revo». Если вы новичок в MODX, начните с нее.
   
-  ### Quick Links
-  
-  
-  - [Documentation Homepage]()
-  - [Video Quick-Start Series](getting-started/video-quick-start-series/)
-  - [Installation Guide](getting-started/installation)
-  - [Making Sites with MODX](making-sites-with-modx/)
-  
-  ### Other Resources
+  ### Быстрые ссылки
   
   
-  - [Get the Latest Release](http://modx.com/download/)
-  - [Download Add-ons](http://modx.com/extras/)
-  - [Forum Discussions](http://forums.modx.com/board/?board=264)
-  - [Bugs & Feature Requests](http://tracker.modx.com/projects/revo)
-- [](#extras)## [Extras](extras/revo/)
+  - [Домашняя страница документации]()
+  - [Серия видео для быстрого старта](getting-started/video-quick-start-series/)
+  - [Инструкция по установке](getting-started/installation)
+  - [Создание сайтов с MODX](making-sites-with-modx/)
   
-   MODX Extras extend the core functionality of the MODX software. Other CMSs refer to them as "Plugins" or "Modules". Many of the Extras are developed by the MODX core team, while others are by third parties. Although by no means an exhaustive reference, the majority of the most popular Extras are documented here.
-  
-  ### Quick Links
+  ### Другие ресурсы
   
   
-  - [Extras for Revo](extras/revo/)
-  - [getResources](extras/revo/getresources) Documentation
-  - [Wayfinder](extras/revo/wayfinder) Documentation
+  - [Получить последнюю версию](http://modx.com/download/)
+  - [Скачать дополнения](http://modx.com/extras/)
+  - [Форум](http://forums.modx.com/board/?board=264)
+  - [Ошибки и пожелания](http://tracker.modx.com/projects/revo)
+
+  ### [Дополнения](extras/revo/) [](#extras) 
+  
+Дополнения MODX расширяют основные функциональные возможности программного обеспечения MODX. Другие CMS называют их «плагинами» или «модулями». Многие дополнения разработаны основной командой MODX, а другие сторонними разработчиками. Хотя это ни в коем случае не исчерпывающая ссылка, большинство самых популярных дополнений документированы здесь.
+  
+  ### Быстрые ссылки
+  
+  - [Дополнения для Revo](extras/revo/)
+  - [getResources](extras/revo/getresources) документация
+  - [Wayfinder](extras/revo/wayfinder) документация
   - [Extras for Evo](extras/evo/)
-  - [Ditto](extras/evo/ditto) Documentation
-  - [Wayfinder](extras/evo/wayfinder) for Evo Documentation
+  - [Ditto](extras/evo/ditto) документация
+  - [Wayfinder](extras/evo/wayfinder) для Evo документация
   
-  ### Other Resources
+  ### Другие ресурсы
+
+  - [Скачаат Revolution Extras](http://modx.com/extras/?product=revolution)
+  - [Скачаат Evolution Extras](http://modx.com/extras/?product=evolution)
+  - [Форум](http://forums.modx.com/?category=5)
+
+ (#evolution) 
+ ## [Evolution](evolution/1.0)
+  
+   Evolution - это классическая кодовая база MODX - наша оригинальная версия, выпущенная в 2005 году. Обращайте внимание на то, что Evolution заложила основы для всего, что есть у MODX сегодня, с руководящими принципами гибкости и творческой свободы.
+  
+  ### Быстрые ссылки  
+  
+  - [Домашняя страница документации](evolution/1.0)
+  - [Редактирование контента](evolution/1.0/content-editing) в Evolution
+  - Evolution [Manager](evolution/1.0/content-editing/the-manager)
+  - [Обновление](evolution/1.0/administration/upgrading) Evolution
+  
+  ### Другие ресурсы
   
   
-  - [Download Revolution Extras](http://modx.com/extras/?product=revolution)
-  - [Download Evolution Extras](http://modx.com/extras/?product=evolution)
-  - [Forum Discussions](http://forums.modx.com/?category=5)
-- [](#evolution) \[\[- ## [Evolution](evolution/1.0)
+  - [Получить последнюю версию Evolution](http://modx.com/download/evolution/)
+  - [Скачать дополнения](http://modx.com/extras/?product=evolution)
+  - [Форум](http://forums.modx.com/board/48/evo-discussions-support)
+  - [Ошибки и пожелания](http://tracker.modx.com/projects/evo)
+
+(#xpdo) 
+## [xPDO](xpdo/)
   
-   Evolution is MODX's classic codebase - our original version released in 2005. Lean and mean, Evolution laid the groundwork for everything MODX is today, with the guiding principles of flexibility and Creative Freedom.
+xPDO - это объектно-реляционный мост (ORB), который поддерживает MODX. Если вы знаете, что это значит, или вы любите приключения, то для вас следующее:
   
-  ### Quick Links
-  
-  
-  - [Documentation Homepage](evolution/1.0)
-  - [Content Editing](evolution/1.0/content-editing) in Evolution
-  - The Evolution [Manager](evolution/1.0/content-editing/the-manager)
-  - [Upgrading](evolution/1.0/administration/upgrading) Evolution
-  
-  ### Other Resources
-  
-  
-  - [Get the Latest Release of Evolution](http://modx.com/download/evolution/)
-  - [Download Extras](http://modx.com/extras/?product=evolution)
-  - [Forum Discussions](http://forums.modx.com/board/48/evo-discussions-support)
-  - [Bugs & Feature Requests](http://tracker.modx.com/projects/evo)
-- [](#xpdo) \]\] ## [xPDO](xpdo/)
-  
-   xPDO is the object-relational bridge (ORB) that powers MODX. If you know what that means, or you're the adventurous type, the following is for you:
-  
-  ### Quick Links
-  
+  ### Быстрые ссылки
   
   - [xPDO 2.x Documentation Homepage](xpdo/)
   - [Getting Started](xpdo/getting-started) with xPDO 2.x
   - [Advanced Features](xpdo/advanced-features) of xPDO 2.x
   - [Class Reference](xpdo/class-reference) for xPDO 2.x
   
-  ### Other Resources
+  ### Другие ресурсы
   
   
-  - [Get the Latest Release](http://xpdo.org/downloads.html)
-  - [Forum Discussions](http://forums.modx.com/board/46/developing-with-xpdo)
-  - [Bugs & Feature Requests](http://tracker.modx.com/projects/xpdo)
-- [](#community)## [Contributor Guide](community/)
+  - [Получить последнюю версию](http://xpdo.org/downloads.html)
+  - [Форум](http://forums.modx.com/board/46/developing-with-xpdo)
+  - [Ошибки и пожелания](http://tracker.modx.com/projects/xpdo)
+
+(#community)
+## [Справочник участника](community/)
   
-   Love MODX? Learn how to get involved in the Community and contribute to the open source project.
+   Любишь MODX? Узнайте, как принять участие в сообществе и внести свой вклад в проект с открытым исходным кодом.
   
   
-  - [Documentation](community/)
-  - [Filing and Discussing Issues](community/contribute/filing-and-discussing-issues)
-  - <a href="">Becoming a Contributor</a>
-  - [Documentation Style Guide](/style-guide)
+  - [Документация](community/)
+  - [Подача и обсуждение вопросов](community/contribute/filing-and-discussing-issues)
+  - <a href="">Стать участником</a>
+  - [Руководство по стилю документации](/style-guide)
