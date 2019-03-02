@@ -9,5 +9,5 @@ _old_uri: "2.x/administering-your-site"
 1. [Настройка](administering-your-site/settings)
 2. [Использование дружественных URL](administering-your-site/using-friendly-urls)
 3. [Контексты](administering-your-site/contexts)
-4. [Настройка административной части](administering-your-site/customizing-the-manager)
+4. [Настройка панели администрирования](administering-your-site/customizing-the-manager)
 5. [Безопасность](administering-your-site/security)
