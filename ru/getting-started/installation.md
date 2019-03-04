@@ -1,4 +1,8 @@
-# Installation
+---
+title: "Установка"
+translation: "2.x/getting-started/installation"
+---
+
 
 Эта страница предназначена только для ** новых установок **. Если вы хотите обновить, см.[Обновление MODx](administering-your-site/upgrading-modx "Upgrading MODx").
 

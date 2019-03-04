@@ -1,4 +1,7 @@
-# MODX Docs
+---
+title: "MODX Docs"
+translation: "2.x/index"
+---
 
 ## Обзор
 

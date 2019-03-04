@@ -1,4 +1,8 @@
-# Требования к серверу
+---
+title: "Требования к серверу"
+translation: "2.x/getting-started/server-requirements"
+---
+
 
 ### Поддерживаемые операционные системы
 
