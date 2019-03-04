@@ -39,16 +39,16 @@ FAQ и/или Устранение неполадок по конкретным 
 - [Оглавление](#%D0%BE%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5)
 - [1. MODX 101](#1-modx-101)
   - [1.1. Что такое MODX Evolution, и что такое MODX Revolution? В чем отличия?](#11-%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-modx-evolution-%D0%B8-%D1%87%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-modx-revolution-%D0%B2-%D1%87%D0%B5%D0%BC-%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B8%D1%8F)
-  - [1.2. What different tags can I use? What is \[\[\*pagetitle\]\], \[\[Wayfinder\]\] etc?](#12-what-different-tags-can-i-use-what-is-pagetitle-wayfinder-etc)
-- [2. The Manager](#2-the-manager)
-  - [2.1. Help! Where did the sidebar go?](#21-help-where-did-the-sidebar-go)
-  - [2.2 How can I modify what resource fields are visible when creating or editing a Resource? Is there something like ManagerManager for Revolution?](#22-how-can-i-modify-what-resource-fields-are-visible-when-creating-or-editing-a-resource-is-there-something-like-managermanager-for-revolution)
-  - [2.3 What does modDocument/ modWeblink/ modSymLink/ modStaticResource mean?](#23-what-does-moddocument-modweblink-modsymlink-modstaticresource-mean)
-  - [2.4 What is the difference between a Resource and a Document?](#24-what-is-the-difference-between-a-resource-and-a-document)
-  - [2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!](#25-im-locked-out-i-cant-access-the-manager-forgot-my-password-and-recovery-doesnt-work)
-- [3. Frontend Display Issues](#3-frontend-display-issues)
-  - [3.1 Blank frontend pages resolved by Clearing Cache](#31-blank-frontend-pages-resolved-by-clearing-cache)
-  - [3.2 General Snippet Problems](#32-general-snippet-problems)
+  - [1.2. Какие теги я могу использовать? Что означает `[[*pagetitle]]`, `[[Wayfinder]]` и т.д.?](#12-%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5-%D1%82%D0%B5%D0%B3%D0%B8-%D1%8F-%D0%BC%D0%BE%D0%B3%D1%83-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D1%87%D1%82%D0%BE-%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%B0%D0%B5%D1%82-pagetitle-wayfinder-%D0%B8-%D1%82%D0%B4)
+- [2. Панель управления](#2-%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C-%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F)
+  - [2.1. Помогите! Куда пропал сайдбар?](#21-%D0%BF%D0%BE%D0%BC%D0%BE%D0%B3%D0%B8%D1%82%D0%B5-%D0%BA%D1%83%D0%B4%D0%B0-%D0%BF%D1%80%D0%BE%D0%BF%D0%B0%D0%BB-%D1%81%D0%B0%D0%B9%D0%B4%D0%B1%D0%B0%D1%80)
+  - [2.2 Как изменить видимые поля ресурсов при создании или редактировании Ресурса? Это что-то вроде ManagerManager для Revolution?](#22-%D0%BA%D0%B0%D0%BA-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B8%D1%82%D1%8C-%D0%B2%D0%B8%D0%B4%D0%B8%D0%BC%D1%8B%D0%B5-%D0%BF%D0%BE%D0%BB%D1%8F-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%BE%D0%B2-%D0%BF%D1%80%D0%B8-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B8-%D0%B8%D0%BB%D0%B8-%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B8-%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81%D0%B0-%D1%8D%D1%82%D0%BE-%D1%87%D1%82%D0%BE-%D1%82%D0%BE-%D0%B2%D1%80%D0%BE%D0%B4%D0%B5-managermanager-%D0%B4%D0%BB%D1%8F-revolution)
+  - [2.3 Что означает modDocument/ modWeblink/ modSymLink/ modStaticResource?](#23-%D1%87%D1%82%D0%BE-%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%B0%D0%B5%D1%82-moddocument-modweblink-modsymlink-modstaticresource)
+  - [2.4 В чем разница между Resource и Document?](#24-%D0%B2-%D1%87%D0%B5%D0%BC-%D1%80%D0%B0%D0%B7%D0%BD%D0%B8%D1%86%D0%B0-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-resource-%D0%B8-document)
+  - [2.5 Я заблокирован! Я не могу попасть в панель управления! "Забыли пароль" и восстановление не работает!](#25-%D1%8F-%D0%B7%D0%B0%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD-%D1%8F-%D0%BD%D0%B5-%D0%BC%D0%BE%D0%B3%D1%83-%D0%BF%D0%BE%D0%BF%D0%B0%D1%81%D1%82%D1%8C-%D0%B2-%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D1%8C-%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%22%D0%B7%D0%B0%D0%B1%D1%8B%D0%BB%D0%B8-%D0%BF%D0%B0%D1%80%D0%BE%D0%BB%D1%8C%22-%D0%B8-%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B5-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82)
+- [3. Проблемы Отображения Интерфейса](#3-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B-%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81%D0%B0)
+  - [3.1 Пустые страницы фронтэнда, разрешаемые очисткой кэша.](#31-%D0%BF%D1%83%D1%81%D1%82%D1%8B%D0%B5-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B-%D1%84%D1%80%D0%BE%D0%BD%D1%82%D1%8D%D0%BD%D0%B4%D0%B0-%D1%80%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5-%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%BE%D0%B9-%D0%BA%D1%8D%D1%88%D0%B0)
+  - [3.2 Общие Проблемы Сниппетов](#32-%D0%BE%D0%B1%D1%89%D0%B8%D0%B5-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B-%D1%81%D0%BD%D0%B8%D0%BF%D0%BF%D0%B5%D1%82%D0%BE%D0%B2)
 
 
 
@@ -64,57 +64,57 @@ MODX Revolution - это полностью переписанный MODX Evolut
 
 - 0.9.6.x – исходная кодовая база, которая началась с первого выпуска стабильной версии 0.9.0 в конце октября 2005. _Больше не поддерживается, вы должны обновить ее до последней версии Evolution. Уязвимости, найденные в 0.9.6.x давно исправлены!_
 - Evolution 1.x – доработанный и улучшенный дистрибутив 0.9.6.x с конвенциями и терминологией, более соответствующий нашей полностью переписанной версии Revolution.
-- Revolution 2.x – a fully object oriented and completely new branch that's been in development for more than 3 years that addresses limitations found in the original code base such as having a truly recursive parser and eliminating the 5,000 document ceiling.
+- Revolution 2.x – полностью объектно-ориентированная и совершенно новая ветвь, которая разрабатывалась более 3 лет, которая устраняет ограничения, обнаруженные в исходной базе кода, такие как наличие рекурсивного синтаксического анализатора и устранение потолка в 5000 документов.
 
-Further reading:
+Дополнительно к прочтению:
 
 - "The Evolution of a Revolution" <http://modx.com/about/blog/the-evolution-of-a-revolution/>
-- "What are the basic differences between Evolution and Revolution?" <http://modx.com/revolution/product/faq/#q1>
-- There's a number of big topics on the forums as well discussing evo and revo which may be interesting if you're looking for more in-depth discussing of the differences. As Revolution has been over three years in development, do check out the date something was posted to be sure they are still relevant.
+- "Основные различия между Evolution и Revolution?" <http://modx.com/revolution/product/faq/#q1>
+- На форумах также есть несколько больших тем, в которых обсуждаются evo и revo. Они могут быть интересны, если вы ищете более глубокое обсуждение различий. Поскольку Revo была более трех лет в разработке, проверьте дату их публикации, чтобы убедиться, что они по-прежнему актуальны.
 
-### 1.2. What different tags can I use? What is \[\[\*pagetitle\]\], \[\[Wayfinder\]\] etc?
+### 1.2. Какие теги я могу использовать? Что означает `[[*pagetitle]]`, `[[Wayfinder]]` и т.д.?
 
-Check out the [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax") documentation. You can find resource fields you can use in Revolution on the [Resources Documentation](making-sites-with-modx/structuring-your-site/resources "Resources").
+Прочитайте документацию по [Синтаксису тегов](making-sites-with-modx/tag-syntax "Синтакс тегов"). Вы можете найти поля ресурсов, которые можно использовать в Revolution на странице [Документации по ресурсам](making-sites-with-modx/structuring-your-site/resources "Ресурсы").
 
-## 2. The Manager
+## 2. Панель управления
 
-### 2.1. Help! Where did the sidebar go?
+### 2.1. Помогите! Куда пропал сайдбар?
 
-You probably hid it at some point. There's a subtle arrow on the left side of the screen ([see this image](/download/attachments/36634926/subtlearrow.PNG?version=1&modificationDate=1322402411000)) that you can click to bring it back. In some cases you will need to refresh the page for the contents of the sidebar to load properly.
+Скорее всего вы его скрыли. В левой части экрана есть тонкая стрелка ([смотрите картинку](/download/attachments/36634926/subtlearrow.PNG?version=1&modificationDate=1322402411000)), которую можно кликнуть чтобы вернуть его. В некоторых случаях для правильной загрузки содержимого боковой панели потребуется обновить страницу.
 
-### 2.2 How can I modify what resource fields are visible when creating or editing a [Resource](/display/revolution20/Resource "Resource")? Is there something like [ManagerManager](http://modx.com/extras/package/managermanager) for Revolution?
+### 2.2  Как изменить видимые поля ресурсов при создании или редактировании [Ресурса](/display/revolution20/Resource "Resource")? Это что-то вроде [ManagerManager](http://modx.com/extras/package/managermanager) для Revolution?
 
-You can use [Form Customization](/display/revolution20/Form+Customization "Form Customization") (found under the Security menu) to change the fields. It doesn't offer all of the (Evolution) ManagerManager plugin but comes pretty far.
+Вы можете использовать [Настройку форм](/display/revolution20/Form+Customization "Настройка форм") (Находится под системными настройками) для изменения полей. Она не предоставляет все возможности плагина ManagerManager (Evolution), но дает многие из них.
 
-### 2.3 What does modDocument/ modWeblink/ modSymLink/ modStaticResource mean?
+### 2.3 Что означает modDocument/ modWeblink/ modSymLink/ modStaticResource?
 
-They are the class names of Documents, Weblinks, Symlinks and Static Resources. They are "subtypes" of Resources (class name modResource) and each have their own specific goal. They all show up in the Resource Tree and can appear anywhere in the hierarchy.
+Это имена классов документов, веб-ссылок, символических ссылок и статических ресурсов. Они являются "подтипом" ресурсов (modResource - имя класса) и у каждой есть своя конкретная цель. Все они отображаются в дереве ресурсов и могут отображаться в любом месте иерархии.
 
-- [Documents](making-sites-with-modx/structuring-your-site/resources "Resources") (commonly refered to as Resources, see 2.4 below) are regular pages and have content.
-- A [Weblink](making-sites-with-modx/structuring-your-site/resources/weblink "Weblink") redirect a user to a different Resource or an external URL.
-- A [Symlink](making-sites-with-modx/structuring-your-site/resources/symlink "Symlink") acts as a copy of a Document
-- [Static Resources](making-sites-with-modx/structuring-your-site/resources/static-resource "Static Resource") act like Documents, however their content comes from a file on the filesystem.
+- [Документы](making-sites-with-modx/structuring-your-site/resources "Ресурсы") (называются также Русерсами, смотрите 2.4 и ниже) обычные страницы с контентом.
+- [Веб-ссылки](making-sites-with-modx/structuring-your-site/resources/weblink "Веб-ссылки") перенаправляют пользователя на разные Ресурсы или являются внешними ссылками.
+- [Символические ссылки](making-sites-with-modx/structuring-your-site/resources/symlink "Symlink") ведут себя как копии Документа.
+- [Статические ресурсы](making-sites-with-modx/structuring-your-site/resources/static-resource "Статические ресурсы") работают как документы, однако их содержимое получается из файла в файловой системе.
 
-### 2.4 What is the difference between a Resource and a Document?
+### 2.4 В чем разница между Resource и Document?
 
-Technically, a Resource (modResource) is an abstract object of which a Document (modDocument) is an implementation.
+Технически, Resource (modResource) это абстрактный объект который реализует Document (modDocument).
 
-Practically both terms are used to indicate the same thing: a Document which holds certain content. Coming from the technical implementation, a [Weblink](making-sites-with-modx/structuring-your-site/resources/weblink "Weblink"), [Symlink](making-sites-with-modx/structuring-your-site/resources/symlink "Symlink") or [Static Resource](making-sites-with-modx/structuring-your-site/resources/static-resource "Static Resource") are also be included when referring to "Resources" as they are also implementations of the modResource class.
+Практически оба термина используются для обозначения одного и того же: документа, содержащего определенные вещи. Исходя из технической реализации, [Веб-ссылки](making-sites-with-modx/structuring-your-site/resources/weblink "Веб-ссылки"), [Символические ссылки](making-sites-with-modx/structuring-your-site/resources/symlink "Символические ссылки") или [Статические ресурсы](making-sites-with-modx/structuring-your-site/resources/static-resource "Статические ресурсы") также ссылаются на "Resources" так как являются реализацией класса modResource.
 
-### 2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!
+### 2.5 Я заблокирован! Я не могу попасть в панель управления! "Забыли пароль" и восстановление не работает!
 
-You're not doomed. [Check out these instructions for Revolution](administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually "Resetting a User Password Manually"), or [these instructions for recovering your user account in Evolution](/evolution/1.0/administration/manager-users/reset-your-password-unblock-your-user "Reset your Password - Unblock your User").
+Вы не обречены. [Следуйте этой инструкции для Revolution](administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually "Ручной сброс пароля"), или [инструкции для восстановления аккаунта для Evolution](/evolution/1.0/administration/manager-users/reset-your-password-unblock-your-user "Сброс пароля - Разблокирование Пользователя").
 
-## 3. Frontend Display Issues
+## 3. Проблемы Отображения Интерфейса
 
-### 3.1 Blank frontend pages resolved by Clearing Cache
+### 3.1 Пустые страницы фронтэнда, разрешаемые очисткой кэша.
 
-In Revolution 2.2.5 the way xPDO/MODX write cache files has been re-factored. If you are having issues with blank frontend pages that are resolved after clearing the site cache, you could try setting _use\_flock_. This should help with RackSpace Cloud hosting, GoDaddy hosting, and some other providers.
+В Revolution 2.2.5 способ записи файлов кэша xPDO/MODX был переработан. Если у вас возникли проблемы с пустыми страницами фронтенда, которые решаются после очистки кэша сайта, вы можете попробовать установить _use\_flock_. Это должно помочь с облачным хостингом RackSpace, хостингом GoDaddy и некоторыми другими поставщиками.
 
-In your MODX config file add the setting _use\_flock_ in your $config\_options array, and set it to false.
+В файле конфигурации MODX добавьте параметр `use\flock` в массив `$config\options` и задайте для него значение false.
 
-See Original Post: <http://forums.modx.com/thread/78611/core-cache-file-locks-and-will-not-update#dis-post-434053>
+Смотрите оригинальный пост: <http://forums.modx.com/thread/78611/core-cache-file-locks-and-will-not-update#dis-post-434053>
 
-### 3.2 General Snippet Problems
+### 3.2 Общие Проблемы Сниппетов
 
-If you find a snippet and/or plugin isn't working properly despite the correct code, double check that it has been installed.
+Если вы обнаружите, что сниппет и/или плагин не работает должным образом, несмотря на правильный код, дважды проверьте, что он установлен.
