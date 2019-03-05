@@ -25,15 +25,15 @@ _Thanks!!_
 
 ## Table of Contents
 
-- [Table of Contents](#CMPDevelopmentFAQs%26Troubleshooting-TableofContents)
-- [1. General](#CMPDevelopmentFAQs%26Troubleshooting-1.General)
-  - [1.1. What are connectors and processors? And what is a controller?](#CMPDevelopmentFAQs%26Troubleshooting-1.1.Whatareconnectorsandprocessors%3FAndwhatisacontroller%3F)
-  - [1.2. Why do I need all those different parts in my manager page? Can't I just echo some values in my controller and build stuff from there?](#CMPDevelopmentFAQs%26Troubleshooting-1.2.WhydoIneedallthosedifferentpartsinmymanagerpage%3FCan%27tIjustechosomevaluesinmycontrollerandbuildstufffromthere%3F)
-  - [1.3. What version of ExtJS does MODX Revolution use? When will MODX Revolution update to ExtJS 4.0?](#CMPDevelopmentFAQs%26Troubleshooting-1.3.WhatversionofExtJSdoesMODXRevolutionuse%3FWhenwillMODXRevolutionupdatetoExtJS4.0%3F)
-  - [1.4. Can I use ExtJS widgets that MODX uses in the Manager in my own CMP as well?](#CMPDevelopmentFAQs%26Troubleshooting-1.4.CanIuseExtJSwidgetsthatMODXusesintheManagerinmyownCMPaswell%3F)
-- [2. ExtJS / modExt Troubleshooting](#CMPDevelopmentFAQs%26Troubleshooting-2.ExtJS%2FmodExtTroubleshooting)
-  - [2.1. Error: Syntax Error: Unexpected Token '<' on ext-all.js Line 7](#CMPDevelopmentFAQs%26Troubleshooting-2.1.Error%3ASyntaxError%3AUnexpectedToken%27%3C%27onextall.jsLine7)
-  - [2.2. Why does my grid send out two requests when I refresh it / changePage / filter?](#CMPDevelopmentFAQs%26Troubleshooting-2.2.Whydoesmygridrevolution20%3AMODx.grid.GridsendouttworequestswhenIrefreshit%2FchangePage%2Ffilter%3F)
+- [Table of Contents](#table-of-contents)
+- [1. General](#1-general)
+  - [1.1. What are connectors and processors? And what is a controller?](#11-what-are-connectors-and-processors-and-what-is-a-controller)
+  - [1.2. Why do I need all those different parts in my manager page? Can't I just echo some values in my controller and build stuff from there?](#12-why-do-i-need-all-those-different-parts-in-my-manager-page-cant-i-just-echo-some-values-in-my-controller-and-build-stuff-from-there)
+  - [1.3. What version of ExtJS does MODX Revolution use? When will MODX Revolution update to ExtJS 4.0?](#13-what-version-of-extjs-does-modx-revolution-use-when-will-modx-revolution-update-to-extjs-40)
+  - [1.4. Can I use ExtJS widgets that MODX uses in the Manager in my own CMP as well?](#14-can-i-use-extjs-widgets-that-modx-uses-in-the-manager-in-my-own-cmp-as-well)
+- [2. ExtJS / modExt Troubleshooting](#2-extjs--modext-troubleshooting)
+  - [2.1. Error: Syntax Error: Unexpected Token '<' on ext-all.js Line 7](#21-error-syntax-error-unexpected-token--on-ext-alljs-line-7)
+  - [2.2. Why does my grid send out two requests when I refresh it / changePage / filter?](#22-why-does-my-grid-send-out-two-requests-when-i-refresh-it--changepage--filter)
 
 
 
@@ -67,11 +67,11 @@ Using the different parts however is advised to make sure you can easily deploy 
 ### 1.3. What version of ExtJS does MODX Revolution use? When will MODX Revolution update to ExtJS 4.0?
 
 | MODX Version | ExtJS version |
-|--------------|---------------|
-| 2.1.2-pl | 3.4.0 |
-| 2.1.0-rc1 | 3.3.1 |
-| 2.0.4-pl | 3.3.0 |
-| 2.0.0-rc2 | 3.2.1 |
+| ------------ | ------------- |
+| 2.1.2-pl     | 3.4.0         |
+| 2.1.0-rc1    | 3.3.1         |
+| 2.0.4-pl     | 3.3.0         |
+| 2.0.0-rc2    | 3.2.1         |
 
 It is unlikely that MODX will start using ExtJS 4 until 2.3/2.4 or 3.0. If you insist on using ExtJS 4.0, you can always get your hands dirty and start the migration process of the manager/assets/modext/ folder.
 

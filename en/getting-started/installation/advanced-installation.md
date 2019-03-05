@@ -4,19 +4,17 @@ _old_id: "17"
 _old_uri: "2.x/getting-started/installation/advanced-installation"
 ---
 
-- [Installation Pre-Steps](#AdvancedInstallation-InstallationPreSteps)
-  - [Renaming or Moving the Core](#AdvancedInstallation-RenamingorMovingtheCore)
-  - [Changing the Configuration Key](#AdvancedInstallation-ChangingtheConfigurationKey)
-- [Advanced Options](#AdvancedInstallation-AdvancedOptions)
-- [Database Options](#AdvancedInstallation-DatabaseOptions)
-  - [Collations and Charsets](#AdvancedInstallation-CollationsandCharsets)
-  - [Creating an Administrator User](#AdvancedInstallation-CreatinganAdministratorUser)
-- [Context Configuration](#AdvancedInstallation-ContextConfiguration)
-- [Pre-Installation Checks](#AdvancedInstallation-PreInstallationChecks)
-- [Post-Installation Summary](#AdvancedInstallation-PostInstallationSummary)
-- [See Also](#AdvancedInstallation-SeeAlso)
-
-
+- [Installation Pre-Steps](#installation-pre-steps)
+  - [Renaming or Moving the Core](#renaming-or-moving-the-core)
+  - [Changing the Configuration Key](#changing-the-configuration-key)
+- [Advanced Options](#advanced-options)
+- [Database Options](#database-options)
+  - [Collations and Charsets](#collations-and-charsets)
+  - [Creating an Administrator User](#creating-an-administrator-user)
+- [Context Configuration](#context-configuration)
+- [Pre-Installation Checks](#pre-installation-checks)
+- [Post-Installation Summary](#post-installation-summary)
+- [See Also](#see-also)
 
 This is the tutorial for the advanced distribution of MODx. It is recommended to only install this distribution if:
 
@@ -129,16 +127,16 @@ When ready, click 'Login' to be presented with the Login form for the manager in
 ## See Also
 
 1. [Basic Installation](getting-started/installation/basic-installation)
-  1. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
-  2. [Lighttpd Guide](getting-started/installation/basic-installation/lighttpd-guide)
-  3. [Problems with WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i)
-  4. [Installation on a server running ModSecurity](getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity)
-  5. [MODX and Suhosin](getting-started/installation/basic-installation/modx-and-suhosin)
-  6. [Nginx Server Config](getting-started/installation/basic-installation/nginx-server-config)
-2. [Advanced Installation](getting-started/installation/advanced-installation)
-3. [Git Installation](getting-started/installation/git-installation)
-4. [Command Line Installation](getting-started/installation/command-line-installation)
-  1. [The Setup Config Xml File](getting-started/installation/command-line-installation/the-setup-config-xml-file)
-5. [Troubleshooting Installation](getting-started/installation/troubleshooting-installation)
-6. [Successful Installation, Now What Do I Do?](getting-started/installation/successful-installation,-now-what-do-i-do)
-7. [Using MODx Revolution from SVN](getting-started/installation/using-modx-revolution-from-svn)
+2. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
+3. [Lighttpd Guide](getting-started/installation/basic-installation/lighttpd-guide)
+4. [Problems with WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i)
+5. [Installation on a server running ModSecurity](getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity)
+6. [MODX and Suhosin](getting-started/installation/basic-installation/modx-and-suhosin)
+7. [Nginx Server Config](getting-started/installation/basic-installation/nginx-server-config)
+8. [Advanced Installation](getting-started/installation/advanced-installation)
+9. [Git Installation](getting-started/installation/git-installation)
+10. [Command Line Installation](getting-started/installation/command-line-installation)
+11. [The Setup Config Xml File](getting-started/installation/command-line-installation/the-setup-config-xml-file)
+12. [Troubleshooting Installation](getting-started/installation/troubleshooting-installation)
+13. [Successful Installation, Now What Do I Do?](getting-started/installation/successful-installation,-now-what-do-i-do)
+14. [Using MODx Revolution from SVN](getting-started/installation/using-modx-revolution-from-svn)

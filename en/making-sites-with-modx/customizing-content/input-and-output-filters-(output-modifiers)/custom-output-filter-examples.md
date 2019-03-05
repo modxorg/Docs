@@ -4,16 +4,17 @@ _old_id: "353"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)/custom-output-filter-examples"
 ---
 
-- [Introduction](#CustomOutputFilterExamples-Introduction)
-- [Creating a Custom Output Modifier](#CustomOutputFilterExamples-CreatingaCustomOutputModifier)
-- [Porting PHx to Custom Output Filters](#CustomOutputFilterExamples-PortingPHxtoCustomOutputFilters)
-- [Examples](#CustomOutputFilterExamples-Examples)
-  - [alternateClass](#CustomOutputFilterExamples-alternateClass)
-  - [parseLinks](#CustomOutputFilterExamples-parseLinks)
-  - [parseTags](#CustomOutputFilterExamples-parseTags)
-  - [shorten](#CustomOutputFilterExamples-shorten)
-  - [substring](#CustomOutputFilterExamples-substring)
-  - [numberformat](#CustomOutputFilterExamples-numberformat)
+- [Introduction](#introduction)
+- [Creating a Custom Output Modifier](#creating-a-custom-output-modifier)
+- [Porting PHx to Custom Output Filters](#porting-phx-to-custom-output-filters)
+- [Examples](#examples)
+  - [alternateClass](#alternateclass)
+  - [parseLinks](#parselinks)
+  - [parseTags](#parsetags)
+  - [parseTags](#parsetags-1)
+  - [shorten](#shorten)
+  - [substring](#substring)
+  - [numberformat](#numberformat)
 
 
 
@@ -56,13 +57,13 @@ The syntax is that the Snippet name comes after a colon. Example with a snippet 
 
 This will pass these properties to the snippet:
 
-| Param | Value | Example Result |
-|-------|-------|----------------|
-| input | The element's value. | The value of \[\[+file\]\] |
-| options | Any value passed to the modifier. | 'notitle' |
-| token | The type of the parent element. | + (the token on `file`) |
-| name | The name of the parent element. | file |
-| tag | The complete parent tag. | \[\[+file:makeDownloadLink=`notitle`\]\] |
+| Param   | Value                             | Example Result                           |
+| ------- | --------------------------------- | ---------------------------------------- |
+| input   | The element's value.              | The value of \[\[+file\]\]               |
+| options | Any value passed to the modifier. | 'notitle'                                |
+| token   | The type of the parent element.   | + (the token on `file`)                  |
+| name    | The name of the parent element.   | file                                     |
+| tag     | The complete parent tag.          | \[\[+file:makeDownloadLink=`notitle`\]\] |
 
 The most important (and perhaps the most obvious) of these parameters is the **$input** parameter. Your Snippet could do something as simple as this:
 

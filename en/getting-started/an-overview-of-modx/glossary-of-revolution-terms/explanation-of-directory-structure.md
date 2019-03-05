@@ -119,7 +119,6 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/
 
  ``` php 
     $modx->lexicon->load( 'lang:namespace:topic' );
-
 ```
 
  # **lang**- the 2-digit IANA code. This is optional, and defaults to 'en'.
@@ -165,7 +164,6 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/
 
  ``` php 
     $modx->smarty->assign('resource',$resource); return $modx->smarty->fetch('resource/staticresource/update.tpl');
-
 ```
 
  The Smarty placeholders in update.tpl are filled in with the data held in the $resource array.

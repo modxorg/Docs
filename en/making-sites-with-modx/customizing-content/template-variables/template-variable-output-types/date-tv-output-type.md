@@ -14,18 +14,18 @@ It's output properties look like:
 
 ![](/download/attachments/20119603/tvot.date.png?version=1&modificationDate=1281374106000)
 
-| Name | Description |
-|------|-------------|
-| Date Format | A format string similar to the [PHP strftime method](http://php.net/strftime). |
-| Default | If no value is set for the TV, use the current time? This defaults to 'no', which will output a blank value. |
+| Name        | Description                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------ |
+| Date Format | A format string similar to the [PHP strftime method](http://php.net/strftime).                               |
+| Default     | If no value is set for the TV, use the current time? This defaults to 'no', which will output a blank value. |
 
 ## Examples
 
-| Format String | Example Output |
-|---------------|----------------|
-| %A %d, %B %Y | Friday 01, April 2011 |
-| %Y-%m-%d | 2011-04-01 |
-| %b %e, %Y | Apr 1, 2011 |
+| Format String | Example Output        |
+| ------------- | --------------------- |
+| %A %d, %B %Y  | Friday 01, April 2011 |
+| %Y-%m-%d      | 2011-04-01            |
+| %b %e, %Y     | Apr 1, 2011           |
 
 ## See Also
 
