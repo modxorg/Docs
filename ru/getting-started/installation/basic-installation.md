@@ -17,9 +17,9 @@ translation: "getting-started/installation/basic-installation"
 - [Резюме после установки](#BasicInstallation-PostInstallationSummary)
 - [Дополнительная информация](#BasicInstallation-AdditionalInfo)
   - [WAMPServer 2.0i](#BasicInstallation-WAMPServer2.0i)
-  - [MAMP on MacOSX](#BasicInstallation-MAMPonMacOSX)
+  - [MAMP на MacOSX](#BasicInstallation-MAMPonMacOSX)
   - [Debian](#BasicInstallation-Debian)
-  - [Vista and XAMPP](#BasicInstallation-VistaandXAMPP)
+  - [Vista и XAMPP](#BasicInstallation-VistaandXAMPP)
   - [Установка пакетов](#BasicInstallation-InstallingPackages)
   - [Смотрите также](#BasicInstallation-SeeAlso)
  
