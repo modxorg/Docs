@@ -1,6 +1,6 @@
 ---
 title: "Разработка с MODX"
-translation: "2.x/developing-in-modx"
+translation: "developing-in-modx"
 ---
 
 Этот раздел содержит информацию о начале разработки на MODX.

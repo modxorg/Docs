@@ -1,6 +1,6 @@
 ---
 title: "С чего начать"
-translation: "2.x/getting-started"
+translation: "getting-started"
 ---
 
 Добро пожаловать в MODX Revolution. В этом разделе представлены руководства по установке, основные понятия о MODX и общие сведения о MODX для начала работы.

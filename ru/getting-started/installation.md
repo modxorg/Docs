@@ -1,6 +1,6 @@
 ---
 title: "Установка"
-translation: "2.x/getting-started/installation"
+translation: "getting-started/installation"
 ---
 
 

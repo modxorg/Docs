@@ -1,6 +1,6 @@
 ---
 title: "MODX Docs"
-translation: "2.x/index"
+translation: "index"
 ---
 
 ## Обзор

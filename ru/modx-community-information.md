@@ -1,6 +1,6 @@
 ---
 title: "Информация о Сообществе MODX"
-translation: "2.x/modx-community-information"
+translation: "modx-community-information"
 ---
 
 **Уведомление о перенаправлении**

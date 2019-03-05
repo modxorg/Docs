@@ -1,6 +1,6 @@
 ---
 title: "Требования к серверу"
-translation: "2.x/getting-started/server-requirements"
+translation: "getting-started/server-requirements"
 ---
 
 
