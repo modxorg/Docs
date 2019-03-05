@@ -4,30 +4,30 @@ translation: "getting-started/installation/basic-installation"
 ---
 
 - [Начало установки](#BasicInstallation-BeginningSetup)
-  - [Installing MODX With An Existing Site](#BasicInstallation-InstallingMODXWithAnExistingSite)
-      - [Existing Static HTML Site](#BasicInstallation-ExistingStaticHTMLSite)
-      - [Existing Other CMS or ?Dynamically Driven Site](#BasicInstallation-ExistingOtherCMSor%EF%BB%BFDynamicallyDrivenSite)
-  - [Pre-DNS Transfer Installation to Temporary Directory](#BasicInstallation-PreDNSTransferInstallationtoTemporaryDirectory)
-- [Installing MODX Revolution](#BasicInstallation-InstallingMODXRevolution)
-- [Install Options](#BasicInstallation-InstallOptions)
-- [Database Options](#BasicInstallation-DatabaseOptions)
-  - [Collations and Charsets](#BasicInstallation-CollationsandCharsets)
-  - [Creating an Administrator User](#BasicInstallation-CreatinganAdministratorUser)
-- [Pre-Installation Checks](#BasicInstallation-PreInstallationChecks)
-- [Post-Installation Summary](#BasicInstallation-PostInstallationSummary)
-- [Additional Info](#BasicInstallation-AdditionalInfo)
+  - [Установка MODX на существующий сайт](#BasicInstallation-InstallingMODXWithAnExistingSite)
+      - [Существующий статический HTML-сайт](#BasicInstallation-ExistingStaticHTMLSite)
+      - [Существующий динамически управляемый сайт с другой CMS](#BasicInstallation-ExistingOtherCMSor%EF%BB%BFDynamicallyDrivenSite)
+  - [Установка во временный каталог на время переноса DNS](#BasicInstallation-PreDNSTransferInstallationtoTemporaryDirectory)
+- [Установка MODX Revolution](#BasicInstallation-InstallingMODXRevolution)
+- [Варианты установки](#BasicInstallation-InstallOptions)
+- [Параметры базы данных](#BasicInstallation-DatabaseOptions)
+  - [Сопоставление и Кодировка](#BasicInstallation-CollationsandCharsets)
+  - [Создание Администратора по умолчанию](#BasicInstallation-CreatinganAdministratorUser)
+- [Проверка перед установкой](#BasicInstallation-PreInstallationChecks)
+- [Резюме после установки](#BasicInstallation-PostInstallationSummary)
+- [Дополнительная информация](#BasicInstallation-AdditionalInfo)
   - [WAMPServer 2.0i](#BasicInstallation-WAMPServer2.0i)
   - [MAMP on MacOSX](#BasicInstallation-MAMPonMacOSX)
   - [Debian](#BasicInstallation-Debian)
   - [Vista and XAMPP](#BasicInstallation-VistaandXAMPP)
-  - [Installing Packages](#BasicInstallation-InstallingPackages)
-  - [See Also](#BasicInstallation-SeeAlso)
+  - [Установка пакетов](#BasicInstallation-InstallingPackages)
+  - [Смотрите также](#BasicInstallation-SeeAlso)
  
 
 
 ## Начало установки
 
-После того, как вы [скачали](getting-started/installation "Installation") MODX Revolution, загрузите файл .zip на ваш сервер. На самом сервере через функцию извлечения из архива панели управления или в файловом менеджере сервера, извлеките файл в свой собственный каталог. Скопируйте или переместите все файлы из папки с новой версией MODX в каталог, в который вы хотите установить MODX. После завершения установки папку, извлечённую из архива, вместе со всем содержимым, можно удалить.
+После того, как вы [скачали](getting-started/installation "Installation") MODX Revolution, загрузите файл .zip на ваш сервер. На самом сервере через функцию извлечения из архива панели управления или в файловом менеджере сервера, распакуйте файл в свой собственный каталог. Скопируйте или переместите все файлы из папки с новой версией MODX в каталог, в который вы хотите установить MODX. После завершения установки папку, извлечённую из архива, вместе со всем содержимым, можно удалить.
 
 Вы можете установить MODX в любой каталог по вашему желанию, но установка в корневой каталог, как правило, предпочтительнее для рабочих сайтов.
 
@@ -35,7 +35,7 @@ translation: "getting-started/installation/basic-installation"
 
 ### Установка MODX на существующий сайт
 
-Сайт на период разработки часто размещают в подкаталоге, а затем, по завершении, [перемещаются](administering-your-site/moving-your-site-to-a-new-server "Moving Your Site to a New Server") в корневой каталог. Такой способ полезен, если у вас есть существующий сайт, который должен оставаться доступным во время разработки, или для установки поддоменов MODX. Также возможно оставить MODX в подкаталоге и использовать .htaccess, чтобы переписать ваши URL-адреса в корень.
+Сайт на период разработки часто размещают в подкаталоге, а затем, по завершении, [перемещаются](administering-your-site/moving-your-site-to-a-new-server "Moving Your Site to a New Server") в корневой каталог. Такой способ полезен, если у вас есть существующий сайт, который должен оставаться доступным во время разработки, или для установки поддоменов MODX. Также возможно оставить MODX в подкаталоге и использовать .htaccess, чтобы переписать ваши URL-адреса в корень сайта.
 
 #### Существующий статический HTML-сайт
 
@@ -100,9 +100,6 @@ translation: "getting-started/installation/basic-installation"
 
 Из-за того, что так работает драйвер PDO для SqlSrv, вы можете не получить сообщение об ошибке или ответ после нажатия кнопки «Проверить подключение к серверу базы данных и просмотреть параметры сортировки». Если это происходит, это указывает на проблему с подключением к базе данных, аутентификацией или выбором самой базы данных. После проверки настроек нажмите кнопку Назад, чтобы перейти на предыдущую страницу, а затем Далее, чтобы вернуться на страницу Информация о подключении.
 
-Сборники и Charsets
-Затем появится другая форма для настройки кодировки и сопоставления вашей базы данных:
-
 ### Сопоставление и Кодировка
 
 Следующая форма содержит настройки кодировки и сопоставления вашей базы данных:
@@ -129,7 +126,7 @@ MODX **не рекомендует** использовать 'admin' в кач�
 
 MODX затем продолжит необходимые проверки, чтобы убедиться, что ваша система готова к установке. Если что-то из этого не получится, вам нужно будет следовать указаниям, чтобы убедиться, что ваша программное окружение соответствует [Требованиям к серверу](getting-started/server-requirements "Server Requirements") и имеет правильные права на запись в каталоги.
 
-Когда все будет готово и все проверки пройдены, нажмите 'Установить', чтобы продолжить.
+Когда все будет готово и все проверки пройдены, нажмите 'Установить'.
 
 Если появился пустой экран или нет возможности продолжить после нажатия 'Установить', проверьте следующие этапы:
 1. Убедитесь, что каталоги "/core/packages", "/core/cache", "/core/import" и "/core/export" доступны для записи.
@@ -137,7 +134,7 @@ MODX затем продолжит необходимые проверки, чт
 3. Создайте пустой файл "/core/config/config.inc.php" и сделайте его доступным для записи. **НЕ КОПИРУЙТЕ config.inc.tpl! Просто сделайте пустой файл!**
 4. Отправьте сообщение на [форуме Revolution](http://modxcms.com/forums/index.php/board,280.0.html) относительно вашей проблемы. Укажите информацию о настройке и установке вашего сервера, и мы постараемся помочь вам найти решение.
 
-## Post-Installation Summary Резюме после установки
+## Резюме после установки
 
 MODX сообщит вам, если какие-либо ошибки произошли во время установки, и предложит вам попытаться переустановить, если какая-либо из ошибок возникла.
 
@@ -157,9 +154,9 @@ MODX рекомендует обязательно удалить каталог
 
 ### WAMPServer 2.0i
 
-Пожалуйста, прочитайте эту статью: [Проблемы с WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i "Problems with WAMPServer 2.0i")
+Пожалуйста, прочитайте статью [Проблемы с WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i "Problems with WAMPServer 2.0i")
 
-### MAMP on MacOSX
+### MAMP на MacOSX
 
 MAMP (включая последнюю версию 1.8.4) отлично работает с MODX Revolution, за одним исключением. Вы не можете использовать eAccelerator в качестве системы кеширования, так как драйверы, скомпилированные с MAMP, неправильно работают с PDO и могут вызвать ошибки ядра Apache. Выберите драйверы кэширования 'xCache', чтобы это исправить.
 
@@ -179,10 +176,10 @@ Debian использует устаревшие драйверы MySQL для �
 
 ### Смотрите также
 
-1. [MODX Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
-2. [Lighttpd Guide](getting-started/installation/basic-installation/lighttpd-guide)
-3. [Problems with WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i)
-4. [Installation on a server running ModSecurity](getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity)
-5. [MODX and Suhosin](getting-started/installation/basic-installation/modx-and-suhosin)
-6. [Nginx Server Config](getting-started/installation/basic-installation/nginx-server-config)
-7. [YouTube video by a MODX Ambassador](http://www.youtube.com/watch?v=Wwrq-3CWFVU)
+1. [MODX Revolution на Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
+2. [Руководство Lighttpd](getting-started/installation/basic-installation/lighttpd-guide)
+3. [Проблемы с WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i)
+4. [Установка на сервер под управлением ModSecurity](getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity)
+5. [MODX и Suhosin](getting-started/installation/basic-installation/modx-and-suhosin)
+6. [Конфигурация сервера Nginx](getting-started/installation/basic-installation/nginx-server-config)
+7. [Видео на YouTube от MODX Ambassador](http://www.youtube.com/watch?v=Wwrq-3CWFVU)
