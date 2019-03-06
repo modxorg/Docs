@@ -217,8 +217,8 @@ Here is a sample **.htaccess** file to put inside your manager directory:
 RewriteEngine On
 RewriteBase /
 RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ <a href="https://yoursite.com/manager/$1"> <a href="https://yoursite.com/manager/"> https://yoursite.com/manager/ </a> 
-</a>
+RewriteRule ^(.*)$ https://example.com/manager/$1
+
 
 ```
 

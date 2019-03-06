@@ -10,7 +10,7 @@ Sets the object fields from a JSON object string.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#fromJSON>
+API Docs: [https://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoobject.class.html](https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html)
 
 ``` php 
 void fromJSON (
@@ -20,6 +20,7 @@ void fromJSON (
    [boolean $rawValues = false],
    [boolean $adhocValues = false]
 )
+
 ```
 
 ## Example
@@ -29,6 +30,7 @@ $str = '{"name":"Sirius","email":"Black"}';
 $object->fromJSON($str);
 echo $object->get('name').' '.$object->get('email');
 // prints "Sirius Black"
+
 ```
 
 ## See Also

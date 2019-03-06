@@ -16,8 +16,8 @@ It's output properties look like:
 
 ![](/download/attachments/20119608/tvot.delim.png?version=1&modificationDate=1281374552000)
 
-| Name | Description |
-|------|-------------|
+| Name      | Description                              |
+| --------- | ---------------------------------------- |
 | Delimiter | A delimiter to separated each item with. |
 
 ## See Also

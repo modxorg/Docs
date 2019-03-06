@@ -23,15 +23,15 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
 
 
-##  Goal 
+## Goal
 
  We want to add a custom page to the MODx Revolution manager that will load (i.e. execute) the contents of an PHP file that has been uploaded to the webserver. Technically, such a page is called a Custom Manager Page, or CMP; please refer to the page on [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages") for a more detailed description.
 
- In MODx Evolution (versions 1.x and earlier), Custom Manager Pages were handled by "Modules", but those have been deprecated in Revolution. 
+ In MODx Evolution (versions 1.x and earlier), Custom Manager Pages were handled by "Modules", but those have been deprecated in Revolution.
 
  If you want to develop a CMP for **MODX 2.3 or later**, then please read [Custom Manager Pages in 2.3](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)
 
-##  Explanation and Mental Preparation 
+## Explanation and Mental Preparation
 
  "What's the big deal?" you might ask. "Why can't I just add an anchor tag somewhere that links to my PHP file and be done with it?"
 
@@ -42,17 +42,17 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
  That should work, right? Well... maybe, but it's not that simple. There are a lot of moving parts that have to get connected to make this seemingly "simple" task work. Allowing for internationalization, permissions schema, and scalability requires that this process include several layers of abstraction that are not immediately obvious. It goes far beyond what's possible with the simple anchor tag solution above. But rest assured, the extra steps will ensure that the solution will be usable in a far greater number of scenarios.
 
-###  What we'll need: 
+### What we'll need:
 
 - A PHP file on the webserver which generates the text for our CMP (a.k.a. the controller).
 - A Namespace (i.e. a path) which defines a dedicated folder for our script(s).
 - A clickable Menu object (modMenu) which associates the clickable link to the action.
-- An Action object (modAction) which is an abstract representation of your file.
+- An Action object (modAction) which points to a specific file. As of MODX 2.3, you should be using [namespace-based custom manager page routing instead.](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)
 - And optionally, a Lexicon entry which would allow you to translate the label on your menu item.
 
  Maybe you're baffled by the complexity here, and to be fair, for simple scenarios, this is more complicated than is strictly required, but you may find yourself at some point getting into more complicated use-cases at which point you'll realize " _AHA_!!! THAT'S why they did it this way!" For now, just trust that the smart folks behind MODx put a lot of thought into how this was built, and there's a good reason that it is the way it is. Onward.
 
-##  Create the Namespace 
+## Create the Namespace
 
  You can think of the Namespace as a dedicated directory for your PHP file(s) that pertain to this particular manager page. Keep in mind that creating the Namespace inside the MODx manager does not actually create the directory; likewise, removing a Namespace from the manager will not actually delete files and folders. When you "create" the namespace, you're just telling MODx to treat a certain folder in a certain way.
 
@@ -64,9 +64,9 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
   3. Path: **{core\_path}components/mycmp/** _(note the use of the system "core\_path" placeholder, and remember to include the trailing slash)_
 2. Using your FTP client, create a directory inside **core/components** named **mycmp**.
 
- **Watch out for typos!** Make sure the Namespace path matches the directory name! 
+ **Watch out for typos!** Make sure the Namespace path matches the directory name!
 
-##  Make the Controller File 
+## Make the Controller File
 
  For our first manager page, we're going to keep it simple. Create a file named **index.php** which contains the following:
 
@@ -83,50 +83,53 @@ return 'This is my first Custom Manager Page';
 
  But for such a check, you will need to temporarily insert some HTML or a print statement in your file.
 
- Notice that we did NOT use **print**, or **echo**, or raw HTML in our PHP. If you use any of these, you'll find that the text floats to the top of the page; remember that a Custom Manager Page is really acting as a function, so it should _return_ a value. 
+ Notice that we did NOT use **print**, or **echo**, or raw HTML in our PHP. If you use any of these, you'll find that the text floats to the top of the page; remember that a Custom Manager Page is really acting as a function, so it should _return_ a value.
 
-##  Create the Action 
+## Create the Action
 
  The Action object identifies the location of your index.php file within the namespace.
 
- **About Actions** 
- In this case, an Action is an abstraction, or a "wrapper" around that PHP file you created. One of the most important things that distinguishes a MODx Action from a simple link to PHP file is that you can assign different permissions to an Action: you can control who accesses it and how. 
+ **Heads up: Actions are deprecated**
+As of MODX 2.3, you no longer need an action. Instead, you will define both the namespace and the filename on the menu. [More here](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3). On MODX 2.3 and up, skip to Create the menu object
 
-1. System->Actions
+ **About Actions**
+ In this case, an Action is an abstraction, or a "wrapper" around that PHP file you created. One of the most important things that distinguishes a MODx Action from a simple link to PHP file is that you can assign different permissions to an Action: you can control who accesses it and how.
+
+1. System->Menu
 2. Right-click **mycmp** from the list of namespaces and select "Create Action Here".
 3. Controller: **index** _(this should match the name of your PHP file WITHOUT the .php extension)_
 4. Namespace: yes, use the same namespace: **mycmp**
 5. Parent Controller: Leave it blank or select "No Action".
 
-##  Create the Menu Object 
+## Create the Menu Object
 
-1. System->Actions _(in the same window where you created the Action)_
+1. System->Menu
 2. Right-Click "Components" and choose "Place Action Here" 
   1. Lexicon Key: **mycmp** (we'll translate this in a bit)
   2. Description: **mycmp.menu\_desc** (we'll translate this in a bit)
-  3. Action: **mynamespace - index**
+  3. Action: on <= 2.3, choose the created action (**mynamespace - index**) in the list. In MODX 2.3+, set the namespace to your namespace, and the action to the name of your file without .class.php.
   4. **Save** (you can ignore the Icon, Parameters, Handler, and Permissions fields for now)
 3. Refresh your browser page.
 
- After you edit the menu item, be sure to refresh the manager page. The menu item will not be visible until you refresh your browser; likewise, any changes you make to an existing menu item will not be visible until you refresh the page. You may need to clear the cache too! 
+ After you edit the menu item, be sure to refresh the manager page. The menu item will not be visible until you refresh your browser; likewise, any changes you make to an existing menu item will not be visible until you refresh the page. You may need to clear the cache too!
 
- If you add any GET Parameters to the menu item under System -> Actions, steer clear of any use of the **a** variable or any other [Reserved Parameters](developing-in-modx/other-development-resources/reserved-parameters "Reserved Parameters"). You might be using various GET parameters if your CMP has multiple pages. 
+ If you add any GET Parameters to the menu item under System -> Actions, steer clear of any use of the **a** variable or any other [Reserved Parameters](developing-in-modx/other-development-resources/reserved-parameters "Reserved Parameters"). You might be using various GET parameters if your CMP has multiple pages.
 
  You should now be able to click on the "Components" menu and see your menu item, and when you click it, you should see your message!
 
  ![](/download/attachments/18678083/CMP.jpg?version=1&modificationDate=1272511083000)
 
-##  Make your CMP Translatable (Optional) 
+## Make your CMP Translatable (Optional)
 
  If you never intend on internationalizing your site, then you probably have no need to create a Lexicon entry. But if you do want to provide translations, the Lexicon is MODx's way of doing it. The Lexicon key is a unique identifier, e.g. 'My CMP' which can get translated into other languages.
 
-###  Create a Lexicon Directory 
+### Create a Lexicon Directory
 
  Go to your Namespace path (usually in your Extra's core/components/mycmp/ directory) and place a "lexicon/" directory in there. From there, add an 'en' directory as well ('en' for 'English' -- or use your language code of choice). You should have something like:
 
 > core/components/mycmp/lexicon/en/
 
-###  Identify your Lexicon key 
+### Identify your Lexicon key
 
 1. System->Actions
 2. Find your Menu action in the menu on the right (under Components)
@@ -136,7 +139,7 @@ return 'This is my first Custom Manager Page';
 
  We need both a Language Topic and a Lexicon Key in order to define a Lexicon entry. By doing the above, you've now pointed your Action/Menu to use a particular Topic and Key, but you haven't yet defined them in the Lexicon. It's entirely possible to set up the Lexicon entries _first_ and then point your Action and Menu objects to reference them _second_, but here we're assuming that you are adding Lexicon entries _after_ creating the Action and Menu objects.
 
-###  Create the Topic File 
+### Create the Topic File
 
  Create a file name **default.inc.php** in your new 'en' lexicon directory (i.e. _core/components/mycmp/lexicon/en/default.inc.php_), and place your entries in them, in this format:
 
@@ -145,7 +148,7 @@ $_lang['lexicon_entry_key'] = 'Translation for Entry';
 
 ```
 
-###  Create the Entries (Provide the Translations) 
+### Create the Entries (Provide the Translations)
 
  Go ahead and add these entries to _core/components/mycmp/lexicon/en/default.inc.php_:
 
@@ -155,7 +158,7 @@ $_lang['mycmp.menu_desc'] = 'My custom manager page.';
 
 ```
 
- **Strict Naming Conventions!** 
+ **Strict Naming Conventions!**
  If you use lexicon entries to translate custom System Settings, then be aware MODX will not look for the exact lexicon entry you typed! You must follow a strict naming convention, otherwise your lexicon entry will not be loaded and your System Setting information will not be translated! The name of your System Setting must use a Lexicon entry that is named after the setting's key, prefixed with "setting\_": ``` php 
 setting_ + Key
 	
@@ -174,7 +177,7 @@ setting_ + Key + _desc
 
  Now, clear the site cache to reload the lexicon cache, via Site -> Clear Cache.
 
-###  Use Translations in your CMP 
+### Use Translations in your CMP
 
  The Systems Settings dialogs should pick up your translations as long as you've followed the expected naming conventions, but in order to use translated text inside your CMP, you need to load the lexicon. You do this using the lexicon object and its load method, something like this:
 
@@ -185,7 +188,7 @@ $modx->lexicon->load('your_namespace:default');
 
  Put that at the top of your CMP code.
 
-##  Add a Custom Permission (optional) 
+## Add a Custom Permission (optional)
 
  Every MODX menu item has a built-in permission already assigned to it. If you want to enforce special access permissions to your new CMP, you do this when you create or edit the menu item. Under System -> Actions, find your menu item and right-click to edit it and type in a unique name for the permission that will define access to this page. Technically, it can be anything so long as it is unique, but it's probably best to identify it with your CMP, e.g. use your namespace's name. Remember that unique permission name and save your Menu.
 
@@ -195,7 +198,7 @@ $modx->lexicon->load('your_namespace:default');
 
  Now your CMP can be governed by the MODX permission schema! You can create an Access Policy that includes or omits that permission and thereby control which User Groups can use your CMP.
 
-##  Troubleshooting / Errors 
+## Troubleshooting / Errors
 
  Having problems? Here are a couple things that you may have run into.
 
@@ -204,7 +207,7 @@ $modx->lexicon->load('your_namespace:default');
 3. Your menu items aren't being translated? Be sure to clear your cache! **Site->Clear Cache**
 4. Translations aren't appearing in your CMP? Make sure you specified the "lexicon" in the Action object (ie, "mycmp:default")
 
-###  Your action does not appear in your menu 
+### Your action does not appear in your menu
 
  If your new action does not appear in the menu where you placed it even though it shows up in the correct place under System -> Actions, then you may be dealing with some permissions errors on your server. Specifically, be alert to any error messages that show up when you clear your site's cache. If you any errors, it may be a sign that your permissions on your server are incorrect. You may need to change the permissions on the core/components directory, or maybe you need to go as far to as to change the user/group names that Apache uses when accessing your site.
 

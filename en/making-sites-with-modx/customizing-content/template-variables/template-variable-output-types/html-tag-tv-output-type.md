@@ -14,12 +14,12 @@ Its output properties look like:
 
 ![](/download/attachments/20119610/tvot.htmltag.png?version=1&modificationDate=1281387052000)
 
-| Name | Description |
-|------|-------------|
-| Tag Name | The tag to create, such as div, img, span, etc. |
-| Tag ID | The dom ID of the tag. |
-| Class | Any CSS classes to add to the tag. |
-| Style | Any style attributes to add to the tag. |
+| Name       | Description                                      |
+| ---------- | ------------------------------------------------ |
+| Tag Name   | The tag to create, such as div, img, span, etc.  |
+| Tag ID     | The dom ID of the tag.                           |
+| Class      | Any CSS classes to add to the tag.               |
+| Style      | Any style attributes to add to the tag.          |
 | Attributes | Any other attributes you want to add to the tag. |
 
 ## See Also

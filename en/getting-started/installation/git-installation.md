@@ -28,7 +28,6 @@ _old_uri: "2.x/getting-started/installation/git-installation"
 
  ``` php 
 git clone http://github.com/modxcms/revolution.git
-
 ```
 
  Or, if you'd like to contribute back, [fork it in your GitHub repository](http://help.github.com/forking/) and clone that repository as "origin" and add the modxcms/revolution repository as a remote called "upstream":
@@ -37,7 +36,6 @@ git clone http://github.com/modxcms/revolution.git
 git clone git@github.com:yourgitusernamehere/revolution.git
 cd revolution
 git remote add upstream -f http://github.com/modxcms/revolution.git
-
 ```
 
  Forking it with your GitHub account will allow you to contribute back to MODX by sending pull requests by clicking the "Pull Request" button on your GitHub page. (You'll need to [submit a CLA](http://develop.modx.com/contribute/cla/) before we can accept your code, though.) If you decide to fork, it'd be helpful for you to read our [Git Contributors Guide](/display/community/MODX+GitHub+Contributor%27s+Guide "MODX GitHub Contributor's Guide") for detailed information on keeping your fork up-to-date.
@@ -58,7 +56,6 @@ git remote add upstream -f http://github.com/modxcms/revolution.git
 
  ``` php 
 git checkout -b 2.x origin/2.x
-
 ```
 
  And git will handle the rest.
@@ -92,7 +89,6 @@ git checkout -b 2.x origin/2.x
  ``` php 
 git fetch origin
 git rebase origin/2.x
-
 ```
 
  And Git will update your install. (Substitute '2.5.x' for '2.x' if you're testing/contributing to a specific minor-version branch, or whatever branch you might be working from.)
@@ -117,7 +113,6 @@ git rebase origin/2.x
 
  ``` php 
 git checkout -b myworkflow 2.x
-
 ```
 
  ...and then do your coding there. Once you're done, you'd push that branch to your fork, and then send the Pull Request over. Once MODX has integrated your code (or rejected it and you're finished with it), you can then delete the branch like so:
@@ -125,7 +120,6 @@ git checkout -b myworkflow 2.x
  ``` php 
 git checkout 2.x
 git branch -d myworkflow
-
 ```
 
  The first step takes us back to the develop branch, and then deletes the custom branch. This allows you to easily update MODX without having to worry about invalid or no-longer used commits, and keeps your main branch clean.
@@ -141,7 +135,6 @@ git branch -d myworkflow
  ``` php 
 git fetch upstream
 git checkout 2.5.x upstream/2.5.x
-
 ```
 
  Of course, replacing 2.5.x with the actual name of the branch you want to switch to. After you've done so, run the build and run setup/ again, since different branches might have different databases.
@@ -158,12 +151,32 @@ git checkout 2.5.x upstream/2.5.x
 
  ``` php 
 export DYLD_LIBRARY_PATH=/Applications/MAMP/Library/lib:$\{DYLD_LIBRARY_PATH\}
-
 ```
 
  You can then execute ''transport.core.php'' by using the absolute path to the MAMP PHP executable:
 
  ``` php 
 /Applications/MAMP/bin/php5/bin/php transport.core.php
-
 ```
+
+### Git Install for 3.x Development
+
+This assumes you have a local web server, pointed at the directory herein referred to as "your\_directory".
+
+1. Locally cd into the directory, from which you want to deploy modx into a subfolder: `cd /path/to/parent/directory`
+2. Run: `composer create-project modx/revolution your_directory 3.x-dev`
+3. Change directory and checkout the 3.x branch: `cd your_directory && git checkout 3.x`
+4. Checkout a feature branch: `git checkout -b 3.x-myfeaturebranch`
+
+Optionally fork [MODX Revolution on Github](https://github.com/modxcms/revolution/) to your own Github account, at which point you'll want to do the following:
+
+1. `git remote add upstream https://github.com/modxcms/revolution.git` (different URL if you're using SSH)
+2. `git remote set-url origin {your github repo url}`
+3. You may also need: ` git remote set-url --push origin {your github repo url}`
+
+Build the core:
+
+1. `cp build.config.sample.php build.config.php && cp build.properties.sample.php build.properties.php`
+2. Edit those two files, adding your paths and database credentials
+3. Then run: `php transport.core.php`
+4. Run the installer in a browser.

@@ -11,7 +11,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/package-management/creati
 - [Lexicons](#Creatinga3rdPartyComponentBuildScript-Lexicons)
 - [Package Attributes: License, Readme and Setup Options](#Creatinga3rdPartyComponentBuildScript-PackageAttributes%3ALicense%2CReadmeandSetupOptions)
 - [Related Pages](#Creatinga3rdPartyComponentBuildScript-RelatedPages)
-
+ 
 
 
 Users using Revolution 2.0.0-beta-4 or earlier should note that the defines are different in beta5 and onward. An example: xPDOTransport::UNIQUE\_KEYS in beta5+ is XPDO\_TRANSPORT\_UNIQUE\_KEYS in beta4 and earlier. MODx recommends to just update to beta5/SVN.
@@ -28,7 +28,7 @@ First off, let's take a quick look at our directory structure. This isn't always
 
 ## Starting the Build Script
 
-Let's first start with some phpdoc comments at the top, and then start the timer.
+Create a new file. Typically, it's build.transport.php in the \_build directory. Let's first start with some phpdoc comments at the top, and then start the timer.
 
 ``` php 
 <?php
@@ -43,6 +43,7 @@ $mtime = explode(" ", $mtime);
 $mtime = $mtime[1] + $mtime[0];
 $tstart = $mtime;
 set_time_limit(0); /* makes sure our script doesnt timeout */
+
 ```
 
 Now let's define some basic paths. We can define these up top into a "sources" array to make them easier to reach later in the build script. Note how the 'source\_core' and 'source\_assets' directories do _not_ post-fix a foreslash onto their paths. This is required.
@@ -60,12 +61,14 @@ $sources= array (
     'docs' => $root.'core/components/quip/docs/',
 );
 unset($root); /* save memory */
+
 ```
 
 Now, we'll need to include some files to get the build libraries we'll need. First, let's include a file we'll create called 'build.config.php' in our build dir.
 
 ``` php 
 require_once dirname(__FILE__) . '/build.config.php';
+
 ```
 
 In this file, we'll want to define the location of our MODx Revolution installation so that the build script can know where to get the modX class, as well as where to put the package when finished. Our file will look somewhat like this:
@@ -80,6 +83,7 @@ In this file, we'll want to define the location of our MODx Revolution installat
  */
 define('MODX_CORE_PATH', '/absolute/path/to/modx/core/');
 define('MODX_CONFIG_KEY','config');
+
 ```
 
 You'll want to make sure to change the value of MODX\_CORE\_PATH to the absolute path of where your MODx Revolution core is installed. MODX\_CONFIG\_KEY can stay the same, unless you're doing a multi-domain install.
@@ -93,6 +97,7 @@ $modx= new modX();
 $modx->initialize('mgr');
 $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
+
 ```
 
 Okay, it's time for the meat. Let's first off use $modx->loadClass to load the modPackageBuilder class. Then we'll instantiate an instance of it, and create a package.
@@ -102,6 +107,7 @@ $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
 $builder->createPackage('quip','0.1','alpha7');
 $builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
+
 ```
 
 The modPackageBuilder::createPackage function has 3 parameters: 
@@ -127,6 +133,7 @@ $vehicle = $builder->createVehicle($snippet,array(
     xPDOTransport::UPDATE_OBJECT => true,
     xPDOTransport::PRESERVE_KEYS => false,
 ));
+
 ```
 
 So, first off, we created a snippet object. Note that you'll have to specify an arbitrary ID for it, even though we wont keep it later. This is required. Then, we used the 'createVehicle' function in modPackageBuilder to create the vehicle object. Let's look at those attributes options more closely:
@@ -174,6 +181,7 @@ $vehicle= $builder->createVehicle($menu,array (
         ),
     ),
 ));
+
 ```
 
 Okay, a bit more meat here. We're introducing 2 new parameters:
@@ -227,6 +235,7 @@ $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
 $builder->createPackage('quip','0.1','alpha5');
 $builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
+
 ```
 
 So, let's first package in our modActions and modMenus for our backend:
@@ -250,6 +259,7 @@ $vehicle= $builder->createVehicle($menu,array (
 ));
 $builder->putVehicle($vehicle);
 unset($vehicle,$action); /* to keep memory low */
+
 ```
 
 Wait! Notice how I put the action data in a different file? You don't have to do this - it's completely personal preference - but it does keep our build script clean, and isolate our actions/menus to a separate file for easy management.
@@ -270,6 +280,7 @@ foreach ($settings as $setting) {
     $builder->putVehicle($vehicle);
 }
 unset($settings,$setting,$attributes);
+
 ```
 
 Great! We've got our actions, menus and settings packaged in. Now, using our newfound knowledge about related objects, let's create a category called 'Quip' and put our Snippet and Chunks in that category. We'll go through this a bit slower, so we can easily see how this works:
@@ -279,6 +290,7 @@ Great! We've got our actions, menus and settings packaged in. Now, using our new
 $category= $modx->newObject('modCategory');
 $category->set('id',1);
 $category->set('category','Quip');
+
 ```
 
 Okay, great. Step one done: category created. Now about that Snippet:
@@ -290,6 +302,7 @@ $snippet->set('id',0);
 $snippet->set('name', 'Quip');
 $snippet->set('description', 'A simple commenting component.');
 $snippet->set('snippet',file_get_contents($sources['source_core'].'/snippet.quip.php');
+
 ```
 
 Great! Note how here we're actually using the file\_get\_contents() function to grab the contents of the snippet from our dev environment and place it here. This makes it easy to run the build in future iterations; no need to continually update this call - just update that file.
@@ -300,6 +313,7 @@ Now, we had some properties on that snippet...how do we put those in?
 $properties = include $sources['data'].'properties.inc.php';
 $snippet->setProperties($properties);
 $category->addMany($snippet);
+
 ```
 
 We're using the addMany method here, and not the addOne method. Wether you need to use one or the other does not so much depend on the amount of objects you are relating (in this case only one snippet), but the cardinality of the relationship. That may sound complex - but the cardinality simply means if it is a one-on-one or one-to-many relationship. In this case, a category has a one-to-many relationship with snippets (there can be many snippets in one category) and that means you will have to use the addMany method. You can pass an array of objects or just one object to that method, but which one you use depends on the cardinality. Read more about [relationships](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships"), [addOne](xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany").
@@ -332,6 +346,7 @@ $properties = array(
     /* ...removed others for brevity... */
 );
 return $properties;
+
 ```
 
 Simple enough. And now on to the chunks:
@@ -342,6 +357,7 @@ $chunks = include $sources['data'].'transport.chunks.php';
 if (is_array($chunks)) {
     $category->addMany($chunks);
 } else { $modx->log(modX::LOG_LEVEL_FATAL,'Adding chunks failed.'); }
+
 ```
 
 Good. We returned an array of chunks, and used modCategory's addMany() function to add them in. We also added a sanity check just in case we made a typo or something. Now, let's package all that into a vehicle:
@@ -367,6 +383,7 @@ $attr = array(
     )
 );
 $vehicle = $builder->createVehicle($category,$attr);
+
 ```
 
 Great! We've got our category vehicle, complete with all the related chunks and snippet. They'll be installed in the right category when our users install our package, too - so it'll look nice and sharp!
@@ -392,6 +409,7 @@ $vehicle->resolve('php',array(
     'source' => $sources['resolvers'] . 'setupoptions.resolver.php',
 ));
 $builder->putVehicle($vehicle);
+
 ```
 
 Okay, first things first. File resolvers take two options:
@@ -440,6 +458,7 @@ $builder->setPackageAttributes(array(
         'source' => $sources['build'] . 'setup.options.php'
     ),
 ));
+
 ```
 
 Obviously our license and readme values are being passed the contents of our license and readme files. We're doing them via file\_get\_contents() so that we can still store the actual files in the _modx/core/components/quip/docs_ directory after install, should the user want to view them later.
@@ -492,11 +511,12 @@ $output = '<label for="quip-emailsTo">Emails To:</label>
 <input type="text" name="emailsReplyTo" id="quip-emailsReplyTo" width="300" value="'.$values['emailsReplyTo'].'" />';
 
 return $output;
+
 ```
 
 As you can see, some new constants here. These are available to all setup options forms and resolvers:
 
-- **xPDOTransport::PACKAGE\_ACTION** - This tells us what action is being performed on the package; it is one of the following 3 values: 
+- **xPDOTransport::PACKAGE\_ACTION** - This tells us what action is being performed on the package; it is one of the following 3 values:
   - **xPDOTransport::ACTION\_INSTALL** - This is set when the package is being executed as an install.
   - **xPDOTransport::ACTION\_UPGRADE** - This is set when the package is being upgraded.
   - **xPDOTransport::ACTION\_UNINSTALL** - This is set when the package is being uninstalled. This doesn't apply to setup-options, obviously, since nothing is being set up. In future Revolution releases, it will allow you to do specific options for uninstall; but not yet.
@@ -557,6 +577,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         break;
 }
 return $success;
+
 ```
 
 Note that $modx is not available here; you're actually running these scripts from within the transport object. The $modx object is available as a different name, however: $object->xpdo. $object is the object that the resolver is attached to; here, it would be the modCategory.
@@ -579,6 +600,7 @@ $modx->log(modX::LOG_LEVEL_INFO,"\nPackage Built.\nExecution time: {$totalTime}\
 
 session_write_close();
 exit();
+
 ```
 
 Great, we're done! You'll only need to run this script now, and viola! A fully zipped transport package file will appear in your core/packages directory.
