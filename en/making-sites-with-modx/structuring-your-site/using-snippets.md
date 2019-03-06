@@ -4,10 +4,10 @@ _old_id: "335"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/using-snippets"
 ---
 
-- [Using a Snippet](#UsingSnippets-UsingaSnippet)
-- [Snippet Properties](#UsingSnippets-SnippetProperties)
-- [Installing Snippets](#UsingSnippets-InstallingSnippets)
-- [See Also](#UsingSnippets-SeeAlso)
+- [Using a Snippet](#using-a-snippet)
+- [Snippet Properties](#snippet-properties)
+- [Installing Snippets](#installing-snippets)
+- [See Also](#see-also)
 
 
 

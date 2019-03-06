@@ -4,14 +4,14 @@ _old_id: "302"
 _old_uri: "2.x/making-sites-with-modx/tag-syntax"
 ---
 
-- [Tag Format Changes for Content Elements and Content Tags](#TagSyntax-TagFormatChangesforContentElementsandContentTags)
-  - [Comment tags](#TagSyntax-Commenttags)
-- [Structure of a Tag](#TagSyntax-StructureofaTag)
-- [Properties](#TagSyntax-Properties)
-- [Caching](#TagSyntax-Caching)
-  - [Parsing Order](#TagSyntax-ParsingOrder)
-- [Timing](#TagSyntax-Timing)
-  - [Additional Help](#TagSyntax-AdditionalHelp)
+- [Tag Format Changes for Content Elements and Content Tags](#tag-format-changes-for-content-elements-and-content-tags)
+  - [Comment tags](#comment-tags)
+- [Structure of a Tag](#structure-of-a-tag)
+- [Properties](#properties)
+- [Caching](#caching)
+  - [Parsing Order](#parsing-order)
+- [Timing](#timing)
+  - [Additional Help](#additional-help)
 
 
 
@@ -19,21 +19,21 @@ To simplify parsing logic, improve parsing performance and avoid confusion with 
 
 ## Tag Format Changes for Content Elements and Content Tags
 
-| **_Content Elements_** | Evolution (Old) |  | Revolution (New) | Example for Revolution |
-|------------------------|-----------------|---|------------------|------------------------|
-| [Templates](making-sites-with-modx/structuring-your-site/templates "Templates") | no tag representation |  | no tag representation |  |
-| Resource Fields | \[\*_field_\*\] |  | \[\[\*field\]\] | \[\[\*pagetitle\]\] |
-| [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") | \[\*_templatevar_\*\] |  | \[\[\*_templatevar_\]\] | \[\[\*tags\]\] |
-| [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks") | {{_chunk_ }} |  | \[\[$_chunk_\]\] | \[\[$header\]\] |
-| [Snippets](developing-in-modx/basic-development/snippets "Snippets") | \[\[_snippet_\]\] |  | \[\[_snippet_\]\] | \[\[getResources\]\] |
-| [Plugins](developing-in-modx/basic-development/plugins "Plugins") | no tag representation |  | no tag representation |  |
-| [Modules](/evolution/1.0/developers-guide/modules "Modules") | no tag representation |  | does not exist in Revolution, use [CMPs](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages") |  |
-| **_Content Tags_** |  |  |  |  |
-| Placeholders | \[+_placeholder_+\] |  | \[\[+_placeholder_\]\] | \[\[+modx.user.id\]\] |
-| [Links](making-sites-with-modx/structuring-your-site/resources "Resources") | \[~_link_~\] |  | \[\[~_link_\]\] | \[\[~\[\[\*id\]\]? &scheme=`full`\]\] |
-| [System Settings](administering-your-site/settings/system-settings "System Settings") | \[(_system\_setting_)\] |  | \[\[++_system\_setting_\]\] | \[\[++site\_start\]\] |
-| [Language](developing-in-modx/advanced-development/internationalization "Internationalization") | no tag representation |  | \[\[%_language\_string\_key_\]\] | \[\[%LanguageStringKey? &language=`en` &namespace=`NameSpaceName` &topic=`TopicName`\]\] |
-| Comment (see note below) |  |  | \[\[-this is a comment\]\] |  |
+| **_Content Elements_**                                                                                   | Evolution (Old)         |     | Revolution (New)                                                                                                              | Example for Revolution                                                                   |
+| -------------------------------------------------------------------------------------------------------- | ----------------------- | --- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [Templates](making-sites-with-modx/structuring-your-site/templates "Templates")                          | no tag representation   |     | no tag representation                                                                                                         |                                                                                          |
+| Resource Fields                                                                                          | \[\*_field_\*\]         |     | \[\[\*field\]\]                                                                                                               | \[\[\*pagetitle\]\]                                                                      |
+| [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") | \[\*_templatevar_\*\]   |     | \[\[\*_templatevar_\]\]                                                                                                       | \[\[\*tags\]\]                                                                           |
+| [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks")                                   | {{_chunk_ }}            |     | \[\[$_chunk_\]\]                                                                                                              | \[\[$header\]\]                                                                          |
+| [Snippets](developing-in-modx/basic-development/snippets "Snippets")                                     | \[\[_snippet_\]\]       |     | \[\[_snippet_\]\]                                                                                                             | \[\[getResources\]\]                                                                     |
+| [Plugins](developing-in-modx/basic-development/plugins "Plugins")                                        | no tag representation   |     | no tag representation                                                                                                         |                                                                                          |
+| [Modules](/evolution/1.0/developers-guide/modules "Modules")                                             | no tag representation   |     | does not exist in Revolution, use [CMPs](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages") |                                                                                          |
+| **_Content Tags_**                                                                                       |                         |     |                                                                                                                               |                                                                                          |
+| Placeholders                                                                                             | \[+_placeholder_+\]     |     | \[\[+_placeholder_\]\]                                                                                                        | \[\[+modx.user.id\]\]                                                                    |
+| [Links](making-sites-with-modx/structuring-your-site/resources "Resources")                              | \[~_link_~\]            |     | \[\[~_link_\]\]                                                                                                               | \[\[~\[\[\*id\]\]? &scheme=`full`\]\]                                                    |
+| [System Settings](administering-your-site/settings/system-settings "System Settings")                    | \[(_system\_setting_)\] |     | \[\[++_system\_setting_\]\]                                                                                                   | \[\[++site\_start\]\]                                                                    |
+| [Language](developing-in-modx/advanced-development/internationalization "Internationalization")          | no tag representation   |     | \[\[%_language\_string\_key_\]\]                                                                                              | \[\[%LanguageStringKey? &language=`en` &namespace=`NameSpaceName` &topic=`TopicName`\]\] |
+| Comment (see note below)                                                                                 |                         |     | \[\[-this is a comment\]\]                                                                                                    |                                                                                          |
 
 Adopting this simplified format allows the new parser to be fully-recursive, following a source-order mechanism that does not depend on regular expressions.
 
@@ -47,7 +47,6 @@ As of MODX Revolution 2.2 any tag found that starts with a dash (-) is ignored b
 
 ``` php 
  [[- This is a comment, and will be removed from the output. ]]
-
 ```
 
 ## Structure of a Tag
@@ -68,7 +67,6 @@ Put these all together, and a tag with all valid parts might look like this:
 
 ``` php 
 [[MySnippet@myPropSet:filter1:filter2=`modifier`? &prop1=`x` &prop2=`y`]]
-
 ```
 
 Note that tags can occur either on one line, or spread out across many lines. Both of these are acceptable:
@@ -80,7 +78,6 @@ Note that tags can occur either on one line, or spread out across many lines. Bo
   &parents=`123`
   &limit=`5`
 ]]
-
 ```
 
 **Take it Easy** 
@@ -101,14 +98,12 @@ You'll note the new placeholder syntax. So, we'll definitely want to parse that 
 
 ``` php 
 [[$Hello?name=`George`]]
-
 ```
 
 This would output:
 
 ``` php 
 Hello George!
-
 ```
 
 The syntax for properties follows the same syntax as 096/Evolution snippet properties.
@@ -138,7 +133,6 @@ If you want to call a Snippet uncached that sets placeholders, you need to make 
 ``` php 
 [[!Profile]]
 Hello [[!+username]],
-
 ```
 
 ## Timing

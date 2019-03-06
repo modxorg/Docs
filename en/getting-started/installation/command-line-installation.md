@@ -6,12 +6,12 @@ _old_uri: "2.x/getting-started/installation/command-line-installation"
 
 CLI Installation is available only for MODX Revolution versions 2.2 and later.
 
-- [Installing MODX via the PHP Command Line](#CommandLineInstallation-InstallingMODXviathePHPCommandLine)
-- [New CLI Installations](#CommandLineInstallation-NewCLIInstallations)
-- [Doing a Basic Upgrade MODX via CLI](#CommandLineInstallation-DoingaBasicUpgradeMODXviaCLI)
-- [Doing an Advanced Upgrade MODX via CLI](#CommandLineInstallation-DoinganAdvancedUpgradeMODXviaCLI)
-- [Using a Helper Script](#CommandLineInstallation-UsingaHelperScript)
-- [See Also](#CommandLineInstallation-SeeAlso)
+- [Installing MODX via the PHP Command Line](#installing-modx-via-the-php-command-line)
+- [New CLI Installations](#new-cli-installations)
+- [Doing a Basic Upgrade MODX via CLI](#doing-a-basic-upgrade-modx-via-cli)
+- [Doing an Advanced Upgrade MODX via CLI](#doing-an-advanced-upgrade-modx-via-cli)
+- [Using a Helper Script](#using-a-helper-script)
+- [See Also](#see-also)
 
 
 
@@ -77,16 +77,16 @@ It provides command line options for this process. Here's a video of it in actio
 ## See Also
 
 1. [Basic Installation](getting-started/installation/basic-installation)
-  1. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
-  2. [Lighttpd Guide](getting-started/installation/basic-installation/lighttpd-guide)
-  3. [Problems with WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i)
-  4. [Installation on a server running ModSecurity](getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity)
-  5. [MODX and Suhosin](getting-started/installation/basic-installation/modx-and-suhosin)
-  6. [Nginx Server Config](getting-started/installation/basic-installation/nginx-server-config)
-2. [Advanced Installation](getting-started/installation/advanced-installation)
-3. [Git Installation](getting-started/installation/git-installation)
-4. [Command Line Installation](getting-started/installation/command-line-installation)
-  1. [The Setup Config Xml File](getting-started/installation/command-line-installation/the-setup-config-xml-file)
-5. [Troubleshooting Installation](getting-started/installation/troubleshooting-installation)
-6. [Successful Installation, Now What Do I Do?](getting-started/installation/successful-installation,-now-what-do-i-do)
-7. [Using MODx Revolution from SVN](getting-started/installation/using-modx-revolution-from-svn)
+2. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
+3. [Lighttpd Guide](getting-started/installation/basic-installation/lighttpd-guide)
+4. [Problems with WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i)
+5. [Installation on a server running ModSecurity](getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity)
+6. [MODX and Suhosin](getting-started/installation/basic-installation/modx-and-suhosin)
+7. [Nginx Server Config](getting-started/installation/basic-installation/nginx-server-config)
+8. [Advanced Installation](getting-started/installation/advanced-installation)
+9. [Git Installation](getting-started/installation/git-installation)
+10. [Command Line Installation](getting-started/installation/command-line-installation)
+11. [The Setup Config Xml File](getting-started/installation/command-line-installation/the-setup-config-xml-file)
+12. [Troubleshooting Installation](getting-started/installation/troubleshooting-installation)
+13. [Successful Installation, Now What Do I Do?](getting-started/installation/successful-installation,-now-what-do-i-do)
+14. [Using MODx Revolution from SVN](getting-started/installation/using-modx-revolution-from-svn)

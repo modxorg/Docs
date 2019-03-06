@@ -11,12 +11,12 @@ Note: The MODx repository has moved to GitHub as of MODx 2.1, so the information
 
 
 
-- [Installation Process](#UsingMODxRevolutionfromSVN-InstallationProcess)
-  - [SVN Locations](#UsingMODxRevolutionfromSVN-SVNLocations)
-  - [Run the Build](#UsingMODxRevolutionfromSVN-RuntheBuild)
-  - [Run Setup](#UsingMODxRevolutionfromSVN-RunSetup)
-- [Upgrading After Commits](#UsingMODxRevolutionfromSVN-UpgradingAfterCommits)
-- [Using MAMP on Mac OS X](#UsingMODxRevolutionfromSVN-UsingMAMPonMacOSX)
+- [Installation Process](#installation-process)
+  - [SVN Locations](#svn-locations)
+  - [Run the Build](#run-the-build)
+  - [Run Setup](#run-setup)
+- [Upgrading After Commits](#upgrading-after-commits)
+- [Using MAMP on Mac OS X](#using-mamp-on-mac-os-x)
 
 
 

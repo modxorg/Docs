@@ -70,7 +70,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
    "regex":"",
    "regexText":""
 }
-
 ```
 
 ## 
@@ -99,7 +98,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  ``` php 
 option1==value1||option2==value2
-
 ```
 
 ### More Advanced Usage
@@ -108,7 +106,6 @@ option1==value1||option2==value2
 
  ``` php 
 @SELECT pagetitle, id FROM modx_site_content WHERE parent=35
-
 ```
 
  ![](/download/attachments/33227172/checkboxes.jpg?version=1&modificationDate=1295839664000)
@@ -123,14 +120,14 @@ option1==value1||option2==value2
 
  If you like to have a default set date you can put one of the following keywords inside the default value field (without quotes!). The "strange" logic behind the -X/+X values (which intuitively would be - for back and + for future) comes probably from a subtraction in the code somewhere, eg. now() - value, so if value is +72 this means now() - (+72), but - and + is -, so a positive value gets subtracted while with now() - (-72), - and - equals +, a negative value is added.
 
- | Default value | Function |
-|---------------|----------|
-| yesterday | Displays the day before todays date, time 12:00pm |
-| today | Displays todays date, time 12:00pm |
-| now | Displays todays date, current time |
-| tomorrow | Displays the day after todays date, time 12:00pm |
-| +X | X is an amount of hours BACK from the current time, eg. +72 means "3 days back from now" |
-| -X | X is an amount of hours IN THE FUTURE from the current time, eg. -72 means "in 3 days" |
+ | Default value | Function                                                                                 |
+ | ------------- | ---------------------------------------------------------------------------------------- |
+ | yesterday     | Displays the day before todays date, time 12:00pm                                        |
+ | today         | Displays todays date, time 12:00pm                                                       |
+ | now           | Displays todays date, current time                                                       |
+ | tomorrow      | Displays the day after todays date, time 12:00pm                                         |
+ | +X            | X is an amount of hours BACK from the current time, eg. +72 means "3 days back from now" |
+ | -X            | X is an amount of hours IN THE FUTURE from the current time, eg. -72 means "in 3 days"   |
 
  You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
 
@@ -149,7 +146,6 @@ option1==value1||option2==value2
    "timeIncrement":"",
    "hideTime":"false"
 }
-
 ```
 
 ## DropDown List Menu
@@ -160,7 +156,6 @@ option1==value1||option2==value2
 
  ``` php 
 @SELECT name, value FROM your_table
-
 ```
 
  Also see Resource List TV type.
@@ -175,7 +170,6 @@ option1==value1||option2==value2
    "listWidth":"",
    "listHeight":""
 }
-
 ```
 
 ## Email
@@ -192,7 +186,6 @@ option1==value1||option2==value2
    "maxLength":"",
    "minLength":""
 }
-
 ```
 
 ## File
@@ -248,7 +241,6 @@ option1==value1||option2==value2
 "allowCaption":"false",   
 "allowCredits":"false"
 }
-
 ```
 
 ## Listbox (Single-Select) (listbox)
@@ -267,7 +259,6 @@ option1==value1||option2==value2
 
  ``` php 
 Man||Bear||Pig
-
 ```
 
 ### Separate Options/Values
@@ -276,7 +267,6 @@ Man||Bear||Pig
 
  ``` php 
 Option 1==value1||Option 2==value2
-
 ```
 
  **All input option names (for use in migx options-json)**
@@ -291,7 +281,6 @@ Option 1==value1||Option 2==value2
    "listEmptyText":"",
    "stackItems":"false"
 }
-
 ```
 
 ## Number
@@ -312,7 +301,6 @@ Option 1==value1||Option 2==value2
    "maxValue":"",
    "minValue":""
 }
-
 ```
 
 ## Radio Options (option)
@@ -353,7 +341,6 @@ Option 1==value1||Option 2==value2
    "allowBlank":"true",
    "columns":"1"
 }
-
 ```
 
 ## Resource List (resourcelist)
@@ -369,7 +356,6 @@ Option 1==value1||Option 2==value2
 
  ``` php 
 [{"pagetitle:!=":"Home"}]
-
 ```
 
  **All input option names (for use in migx options-json)**
@@ -385,7 +371,6 @@ Option 1==value1||Option 2==value2
    "where":"[{\"isfolder: = \":\"1\"},{\"hidemenu\":\"0\",\"OR:hidemenu:=\":\"1\"}]",
    "limit":"0"
 }
-
 ```
 
 ## Rich Text
@@ -402,7 +387,6 @@ Option 1==value1||Option 2==value2
 {
    "allowBlank":"1"
 }
-
 ```
 
 ## Text
@@ -425,7 +409,6 @@ Option 1==value1||Option 2==value2
    "regex":"",
    "regexText":""
 }
-
 ```
 
 ## Textarea
@@ -438,7 +421,6 @@ Option 1==value1||Option 2==value2
 {
    "allowBlank":"true"
 }
-
 ```
 
 ## Textarea (Mini) (deprecated)
