@@ -3,17 +3,17 @@ title: "Расширенная установка"
 translation: "getting-started/installation/advanced-installation"
 ---
 
-- [Предварительные шаги по установке] (#AdvancedInstallation-InstallationPreSteps)
-  - [Переименование или перемещение ядра] (#AdvancedInstallation-RenamingorMovingtheCore)
-  - [Изменение ключа конфигурации] (#AdvancedInstallation-ChangingtheConfigurationKey)
-- [Дополнительные параметры] (#AdvancedInstallation-AdvancedOptions)
-- [Параметры базы данных] (#AdvancedInstallation-DatabaseOptions)
-  - [Сопоставление и Кодировка] (#AdvancedInstallation-CollationsandCharsets)
-  - [Создание Администратора по умолчанию] (#AdvancedInstallation-CreateanAdministratorUser)
-- [Конфигурация контекста] (#AdvancedInstallation-ContextConfiguration)
-- [Проверки перед установкой] (#AdvancedInstallation-PreInstallationChecks)
-- [Резюме после установки] (#AdvancedInstallation-PostInstallationSummary)
-- [Смотрите также] (#AdvancedInstallation-SeeAlso)
+- [Предварительные шаги по установке](#AdvancedInstallation-InstallationPreSteps)
+  - [Переименование или перемещение ядра](#AdvancedInstallation-RenamingorMovingtheCore)
+  - [Изменение ключа конфигурации](#AdvancedInstallation-ChangingtheConfigurationKey)
+- [Дополнительные параметры](#AdvancedInstallation-AdvancedOptions)
+- [Параметры базы данных](#AdvancedInstallation-DatabaseOptions)
+  - [Сопоставление и Кодировка](#AdvancedInstallation-CollationsandCharsets)
+  - [Создание Администратора по умолчанию](#AdvancedInstallation-CreatinganAdministratorUser)
+- [Конфигурация контекста](#AdvancedInstallation-ContextConfiguration)
+- [Проверки перед установкой](#AdvancedInstallation-PreInstallationChecks)
+- [Резюме после установки](#AdvancedInstallation-PostInstallationSummary)
+- [Смотрите также](#AdvancedInstallation-SeeAlso)
 
 
 Это руководство для установки MODx с расширенным перечнем опций. Рекомендуется устанавливать этот дистрибутив, только если:
