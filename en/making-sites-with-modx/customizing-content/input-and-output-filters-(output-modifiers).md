@@ -92,8 +92,8 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
  | Modifier | Description | Example |
 |----------|-------------|---------|
 | cat | Appends the option's value (if not empty) to the input value | \[\[+numbooks:cat=` books`\]\] |
-| after, append | appends the options value to the input value (if both not empty) | \[\[+totalnumber:after=` total`\]\] |
-| before, prepend | prepends the options value to the input value (if both not empty) | \[\[+booknum:before=`book #`\]\] |
+| after, append | Appends the options value to the input value (if both not empty). Added in 2.6.0. | \[\[+totalnumber:after=` total`\]\] |
+| before, prepend | Prepends the options value to the input value (if both not empty). Added in 2.6.0. | \[\[+booknum:before=`book #`\]\] |
 | lcase, lowercase, strtolower | Transforms strings to lowercase. Similar to PHP's [strtolower](http://www.php.net/manual/en/function.strtolower.php) | \[\[+title:lcase\]\] |
 | ucase, uppercase, strtoupper | Transforms strings to uppercase. Similar to PHP's [strtoupper](http://www.php.net/manual/en/function.strtoupper.php) | \[\[+headline:ucase\]\] |
 | ucwords | Transforms the first letter of a word to uppercase. Similar to PHP's [ucwords](http://www.php.net/manual/en/function.ucwords.php) | \[\[+title:ucwords\]\] |
@@ -114,9 +114,9 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 | tvLabel | Display's the Label from a tv usefull when using select or checkboxes etc where you use "Label==1||Otherlabel==2||More options==3" so if the value is 2 this wil return Otherlabel. | \[\[+mySelectboxTv:tvLabel\]\] |
 | math | Returns the result of an advanced calculation (expensive on processor. not recommended) Removed in Revolution 2.2.6. |  |
 | add,increment,incr | Returns input incremented by option (default: +1) | \[\[+downloads:incr\]\] 
- \[\[+blackjack:add=`21`\]\] |
+\[\[+blackjack:add=`21`\]\] |
 | subtract,decrement,decr | Returns input decremented by option (default: -1) | \[\[+countdown:decr\]\] 
- \[\[+moneys:subtract=`100`\]\] |
+\[\[+moneys:subtract=`100`\]\] |
 | multiply,mpy | Returns input multiplied by option (default: \*2) | \[\[+trifecta:mpy=`3`\] |
 | divide,div | Returns input divided by option (default: /2) Does not accept 0. | \[\[+rating:div=`4`\]\] |
 | modulus,mod | Returns the option modulus on input (default: %2, returns 0 or 1) | \[\[+number:mod\]\] or \[\[+number:mod=`3`\]\] |
@@ -146,6 +146,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
  Uses [modX.regClientScript](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientscript "modX.regClientScript"). | \[\[+jsTV:jsToBottom\]\] |
 | urlencode | Converts the input into a URL-friendly string similar to how an HTML form would do so. Similar to PHP's [urlencode](http://www.php.net/manual/en/function.urlencode.php) | \[\[+mystring:urlencode\]\] |
 | urldecode | Converts the input from an URL-friendly string Similar to PHP's [urldecode](http://www.php.net/manual/en/function.urldecode.php) | \[\[+myparam:urldecode\]\] |
+| filterPathSegment | Added in 2.7. Converts the input into a URL-friendly string with the same mechanism that turns a pagetitle into an alias, including transliteration if enabled. Useful for custom urls. | \[\[+pagetitle:filterPathSegment\]\] |
 
 ### Caching
 
@@ -213,7 +214,7 @@ return $result;
 
  The return value of the call will be whatever the snippet returns. For our example, the result will be the value of the pagetitle document variable appended with four exclamation marks.
 
- The original input value will be returned if the snippet returns an empty string. 
+ The original input value will be returned if the snippet returns an empty string.
 
 ## Chaining (Multiple Output Filters)
 

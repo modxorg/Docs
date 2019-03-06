@@ -139,7 +139,15 @@ option1==value1||option2==value2
  ``` php 
 {
    "allowBlank":"true",
-   "columns":"1"
+   "disabledDates":"",
+   "disabledDays":"",
+   "minDateValue":"",
+   "minTimeValue":"",
+   "maxDateValue":"",
+   "maxTimeValue":"",
+   "startDay":"",
+   "timeIncrement":"",
+   "hideTime":"false"
 }
 
 ```
@@ -433,7 +441,7 @@ Option 1==value1||Option 2==value2
 
 ```
 
-## Textarea (Mini) (depricated)
+## Textarea (Mini) (deprecated)
 
  This is a smaller _textarea_ field, with a height of only 5 rows.
 

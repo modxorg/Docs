@@ -27,7 +27,9 @@ _old_uri: "2.x/getting-started/installation/git-installation"
  Git clone the revolution repository on GitHub at: <http://github.com/modxcms/revolution/> using this syntax:
 
  ``` php 
-git clone http://github.com/modxcms/revolution.git
+git clone <a href="http://github.com/modxcms/revolution.git"> <a href="http://github.com/modxcms/revolution.git"> http://github.com/modxcms/revolution.git
+</a>
+</a>
 
 ```
 
@@ -36,7 +38,9 @@ git clone http://github.com/modxcms/revolution.git
  ``` php 
 git clone git@github.com:yourgitusernamehere/revolution.git
 cd revolution
-git remote add upstream -f http://github.com/modxcms/revolution.git
+git remote add upstream -f <a href="http://github.com/modxcms/revolution.git"> <a href="http://github.com/modxcms/revolution.git"> http://github.com/modxcms/revolution.git
+</a>
+</a>
 
 ```
 
@@ -167,3 +171,25 @@ export DYLD_LIBRARY_PATH=/Applications/MAMP/Library/lib:$\{DYLD_LIBRARY_PATH\}
 /Applications/MAMP/bin/php5/bin/php transport.core.php
 
 ```
+
+### Git Install for 3.x Development
+
+This assumes you have a local web server, pointed at the directory herein referred to as "your\_directory".
+
+1. Locally cd into the directory, from which you want to deploy modx into a subfolder: `cd /path/to/parent/directory`
+2. Run: `composer create-project modx/revolution your_directory 3.x-dev`
+3. Change directory and checkout the 3.x branch: `cd your_directory && git checkout 3.x`
+4. Checkout a feature branch: `git checkout -b 3.x-myfeaturebranch`
+
+Optionally fork [MODX Revolution on Github](https://github.com/modxcms/revolution/) to your own Github account, at which point you'll want to do the following:
+
+1. `git remote add upstream https://github.com/modxcms/revolution.git` (different URL if you're using SSH)
+2. `git remote set-url origin {your github repo url}`
+3. You may also need: ` git remote set-url --push origin {your github repo url}`
+
+Build the core:
+
+1. `cp build.config.sample.php build.config.php && cp build.properties.sample.php build.properties.php`
+2. Edit those two files, adding your paths and database credentials
+3. Then run: `php transport.core.php`
+4. Run the installer in a browser.

@@ -48,7 +48,7 @@ Sometimes a contribution you submit won't make it in. That may be for a myriad o
 - The contribution will be deferred to a later release
 - We used a different contribution to fix the issue
 - The contribution caused too many other issues to arise
-- The patch was submitted in [lolcode](http://lolcode.com/), which although we had a hoot reading, was pretty useless in the end
+- The patch was submitted in [LOLCODE](http://lolcode.org/), which although we had a hoot reading, was pretty useless in the end
 
 So don't take offense. We really appreciate _any and all_ contributions to MODX, and we seriously consider everything that this wonderful community gives to it. MODX has thrived because of this community. However, some things just won't match with the MODX vision and design philosophy; so be patient with us, and know we really like people who submit pull requests and patches. A ton. Did we mention we really like people who have forked us?
 

@@ -31,7 +31,3 @@ to a new directory with the same name as your new custom them directory, like so
 **manager/controllers/custom**
 
 This is because when you change the manager\_theme key value in System Settings it will also reference the new controllers directory. Of course you can probably change the path for that somewhere...
-
-YJ, actually, that only applies for 2.1 and earlier. 2.2 will allow you to copy only single files without the need to create the other directory.
-
-Good news!

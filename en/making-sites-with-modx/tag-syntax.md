@@ -37,7 +37,7 @@ To simplify parsing logic, improve parsing performance and avoid confusion with 
 
 Adopting this simplified format allows the new parser to be fully-recursive, following a source-order mechanism that does not depend on regular expressions.
 
-Previously, each tag set was parsed independently in a specific order, one level at a time, with any embedded tags delayed until the next pass. Now tags are parsed as they are encountered regardless of the element types they represent, and embedded tags are parsed before the outer tag to allow much more complex tags to be composed. Combined with the ability to use the previously reserved ? & and = symbols in tag strings (when escaped by the infamous backtick, e.g. `&param=`?=&is ok now, wow!?&=``), MODx Content Tags offer a powerful new set of capabilities for mashing up your content.
+Previously, each tag set was parsed independently in a specific order, one level at a time, with any embedded tags delayed until the next pass. Now tags are parsed as they are encountered regardless of the element types they represent, and embedded tags are parsed before the outer tag to allow much more complex tags to be composed. Combined with the ability to use the previously reserved ? & and = symbols in tag strings (when escaped by the infamous backtick, e.g. `¶m=`?=&is ok now, wow!?&=``), MODx Content Tags offer a powerful new set of capabilities for mashing up your content.
 
 ### Comment tags
 
@@ -148,8 +148,9 @@ There are several timing tags in MODX:
 - **\[^qt^\]** - Query Time - Shows how long MODx took talking to the database
 - **\[^q^\]** - Query Count -Shows how many database queries MODX made
 - **\[^p^\]** - Parse Time - Shows how long MODX took to parse the page
-- **\[^t^\]** - Total Time - Shows the total time taken to parse/ render the page
-- **\[^s^\]** - Source - Shows the source of page, whether is database or cache.
+- **\[^t^\]** - Total Time - Shows the total time taken to parse/render the page
+- **\[^s^\]** - Source - Shows the source of page, whether is database or cache
+- **\[^m^\]** - Memory Usage - Shows the total memory taken to parse/render the page
 
 For example, for this page, MySQL queries took 0.0000 seconds for 0 queries(s), document parsing took 0.3043 seconds, for a total time of 0.3043 seconds, and retrieved from cache.
 
