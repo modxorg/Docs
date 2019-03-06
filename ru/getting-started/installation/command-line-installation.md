@@ -7,7 +7,7 @@ _old_uri: "2.x/getting-started/installation/command-line-installation"
 Установка при помощи командной строки (CLI), доступна в MODX Revolution начиная с версии 2.2
 
 - [Установка MODX при помощи командной строки (CLI)](#CommandLineInstallation-InstallingMODXviathePHPCommandLine)
-- [Установка (CLI)](#CommandLineInstallation-NewCLIInstallations)
+- [Установка (CLI)](#CommandLineInstallation-Установка(CLI))
 - [Обновление MODX при помощи командной строки (CLI)](#CommandLineInstallation-DoingaBasicUpgradeMODXviaCLI)
 - [Расширенное обновление MODX при помощи командной строки (CLI)](#CommandLineInstallation-DoinganAdvancedUpgradeMODXviaCLI)
 - [Использование вспомогательного скрипта](#CommandLineInstallation-UsingaHelperScript)
