@@ -1,12 +1,11 @@
 ---
 title: "Nginx Server Config"
-_old_id: "376"
-_old_uri: "2.x/getting-started/installation/basic-installation/nginx-server-config"
+translation: "/getting-started/installation/basic-installation/nginx-server-config"
 ---
 
-Here is an example config for a MODX installation on an nginx server (php-fpm is required for nginx servers). This example enables MODX FURLs as well.
+Это пример настройки nginx сервера для установки MODX (требуется php-fpm). Этот пример позволяет использовать дружественные URL MODX.
 
-``` php 
+```
 server {
         listen 80;
         server_name example.com www.example.com;
@@ -34,20 +33,19 @@ server {
                 deny  all;
         }
 }
-
 ```
 
-FastCGI connectivity between nginx and PHP as expressed on the line "fastcgi\_pass 127.0.0.1:9000;" _**may need to be set**_ to something like "fastcgi\_pass unix:/var/run/php5-fpm.sock;"
+Подключение FastCGI между nginx и PHP, выраженное в строке `fastcgi\_pass 127.0.0.1:9000;` _**должно быть установлено**_ во что-то вроде `fastcgi\_pass unix:/var/run/php5-fpm.sock;`
 
-This is _**codependent**_ on how the www.conf (usually located at /etc/php5/fpm/pool.d ) file is configured. How is the "listen" directive set up in _**that**_ file: TCP or unix socket (i.e. /var/run/php5-fpm.sock ) ?
+Это _**зависит**_ от того, как настроен файл www.conf (обычно расположен в `/etc/php5/fpm/pool.d` ). Как настроить директиву "listen" в _**этом**_ файле: TCP или unix сокет (такой как `/var/run/php5-fpm.sock`)?
 
-The nginx config file needs to specify the _**same**_ connection in _**both**_ files! \[NB: theoretically unix sockets will be faster, but in such case both resources need to be on the _**same**_ host. TCP is useful in a distributed environment. \]
+Файл nginx конфигурации должен указать _**те же**_ соединения в _**обоих**_ файлах! \[теоретически сокеты unix будут быстрее, но в таком случае оба ресурса должны быть на _**одном**_ хосте. TCP полезен в распределенной среде. \]
 
-An alternative server configuration was suggested [in this forum topic](http://forums.modx.com/thread/70163/furls-not-working-after-upgrade-2-1-3-pl?page=2#dis-post-394442).
+Альтернативная конфигурация сервера указана [в этой теме на форуме](http://forums.modx.com/thread/70163/furls-not-working-after-upgrade-2-1-3-pl?page=2#dis-post-394442).
 
-Thanks for posting this, complete with FURL support :)
+Спасибо за размещение этой конфигурации с поддержкой дружественных URL :)
 
-Question: With **root /home/sites/example.com;** defined at the server level, is it necessary to include again in the first location block? 
- My understanding is that nginx configs are inherited from the top down, and therefore it could be removed in this case...
+Вопрос: С **root /home/sites/example.com;** определенном на уровне сервера, необходимо ли снова включить в первый блок `location`? 
+В моем понимании, конфигурации nginx наследуются сверху вниз, и поэтому в этом случае их можно удалить.
 
-In some cases (my guts say older versions of nginx) you might need to comment out the fastcgi\_split\_path\_info directive.
+В некоторых случаях (например в старых версиях nginx) вам нужно закомментировать директиву `fastcgi\_split\_path\_info`.
