@@ -4,10 +4,10 @@ _old_id: "346"
 _old_uri: "2.x/administering-your-site/media-sources/assigning-media-sources-to-tvs"
 ---
 
-- [Creating the TV](#AssigningMediaSourcestoTVs-CreatingtheTV)
-- [Limiting the Source to Specific Folders](#AssigningMediaSourcestoTVs-LimitingtheSourcetoSpecificFolders)
-- [Editing the TV](#AssigningMediaSourcestoTVs-EditingtheTV)
-- [See Also](#AssigningMediaSourcestoTVs-SeeAlso)
+- [Creating the TV](#creating-the-tv)
+- [Limiting the Source to Specific Folders](#limiting-the-source-to-specific-folders)
+- [Editing the TV](#editing-the-tv)
+- [See Also](#see-also)
 
 
 

@@ -4,8 +4,8 @@ _old_id: "84"
 _old_uri: "2.x/administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins"
 ---
 
-- [System Events](#CustomizingtheManagerviaPlugins-SystemEvents)
-- [See Also](#CustomizingtheManagerviaPlugins-SeeAlso)
+- [System Events](#system-events)
+- [See Also](#see-also)
 
 
 

@@ -13,10 +13,8 @@ _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboa
  For example, this will display "Hello, World!":
 
  ``` php 
-
 <?php
 return 'Hello, World!';
-
 ```
 
  A few notes about using this:

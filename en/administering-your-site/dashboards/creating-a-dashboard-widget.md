@@ -4,11 +4,11 @@ _old_id: "69"
 _old_uri: "2.x/administering-your-site/dashboards/creating-a-dashboard-widget"
 ---
 
-- [Creating a Basic Widget](#CreatingaDashboardWidget-CreatingaBasicWidget)
-  - [Assigning the Widget to the Default Dashboard](#CreatingaDashboardWidget-AssigningtheWidgettotheDefaultDashboard)
-  - [Viewing the Widget](#CreatingaDashboardWidget-ViewingtheWidget)
-- [Other Widget Types](#CreatingaDashboardWidget-OtherWidgetTypes)
-- [See Also](#CreatingaDashboardWidget-SeeAlso)
+- [Creating a Basic Widget](#creating-a-basic-widget)
+  - [Assigning the Widget to the Default Dashboard](#assigning-the-widget-to-the-default-dashboard)
+  - [Viewing the Widget](#viewing-the-widget)
+- [Other Widget Types](#other-widget-types)
+- [See Also](#see-also)
 
 
 

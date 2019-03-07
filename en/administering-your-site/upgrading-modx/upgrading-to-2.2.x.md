@@ -4,20 +4,20 @@ _old_id: "1123"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-to-2.2.x"
 ---
 
-- [Introduction](#Upgradingto2.2.x-Introduction)
-- [Media Sources](#Upgradingto2.2.x-MediaSources)
-- [Static Elements](#Upgradingto2.2.x-StaticElements)
-- [Dashboards](#Upgradingto2.2.x-Dashboards)
-- [Other Notables](#Upgradingto2.2.x-OtherNotables)
-  - [Sorting Contexts in the Tree](#Upgradingto2.2.x-SortingContextsintheTree)
-  - [Primary User Group](#Upgradingto2.2.x-PrimaryUserGroup)
-  - [Minify in the Manager](#Upgradingto2.2.x-MinifyintheManager)
-  - [Form Customization Tweaks](#Upgradingto2.2.x-FormCustomizationTweaks)
-  - [Comment Tags](#Upgradingto2.2.x-CommentTags)
-  - [Moving TVs Below the Content Panel](#Upgradingto2.2.x-MovingTVsBelowtheContentPanel)
-  - [Upgrading/Installing via Command Line](#Upgradingto2.2.x-Upgrading%2FInstallingviaCommandLine)
-  - [Pre-processing Element Default Properties and Property Sets](#Upgradingto2.2.x-PreprocessingElementDefaultPropertiesandPropertySets)
-- [See Also](#Upgradingto2.2.x-SeeAlso)
+- [Introduction](#introduction)
+- [Media Sources](#media-sources)
+- [Static Elements](#static-elements)
+- [Dashboards](#dashboards)
+- [Other Notables](#other-notables)
+  - [Sorting Contexts in the Tree](#sorting-contexts-in-the-tree)
+  - [Primary User Group](#primary-user-group)
+  - [Minify in the Manager](#minify-in-the-manager)
+  - [Form Customization Tweaks](#form-customization-tweaks)
+  - [Comment Tags](#comment-tags)
+  - [Moving TVs Below the Content Panel](#moving-tvs-below-the-content-panel)
+  - [Upgrading/Installing via Command Line](#upgradinginstalling-via-command-line)
+  - [Pre-processing Element Default Properties and Property Sets](#pre-processing-element-default-properties-and-property-sets)
+- [See Also](#see-also)
 
 
 

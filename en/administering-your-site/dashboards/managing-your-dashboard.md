@@ -4,8 +4,8 @@ _old_id: "196"
 _old_uri: "2.x/administering-your-site/dashboards/managing-your-dashboard"
 ---
 
-- [Editing Your Dashboard](#ManagingYourDashboard-EditingYourDashboard)
-- [See Also](#ManagingYourDashboard-SeeAlso)
+- [Editing Your Dashboard](#editing-your-dashboard)
+- [See Also](#see-also)
 
 
 

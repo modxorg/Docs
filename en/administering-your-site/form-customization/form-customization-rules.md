@@ -12,12 +12,14 @@ _old_uri: "2.x/administering-your-site/form-customization/form-customization-rul
 
 
 
-## <a name="FormCustomizationRules-WhatisaRule%3F"></a>What is a Rule?
+## What is a Rule?
 
 Rules in MODx Revolution are simply generic rules that apply to any Action (manager page). They also can be tied to User Groups, wherein a Rule will only be applied if the User is part of that User Group.
 
-## <a name="FormCustomizationRules-WhataretheRulesavailable%3F"></a>What are the Rules available?
+## What are the Rules available?
 
 The available Rules are:
 
- \[\[getResources@section? &parents=`133` &context=`revolution`\]\]
+``` php 
+[[getResources@section? &parents=`133` &context=`revolution`]]
+```

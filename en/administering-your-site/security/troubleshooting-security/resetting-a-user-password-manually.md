@@ -4,10 +4,10 @@ _old_id: "484"
 _old_uri: "2.x/administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually"
 ---
 
-- [Resetting a User Password via Database Manipulation](#ResettingaUserPasswordManually-ResettingaUserPasswordviaDatabaseManipulation)
-  - [Resetting Password in MODX 2.1+](#ResettingaUserPasswordManually-ResettingPasswordinMODX2.1)
-  - [Resetting Password in MODX 2.0.x](#ResettingaUserPasswordManually-ResettingPasswordinMODX2.0.x)
-- [Resetting a Password via the API](#ResettingaUserPasswordManually-ResettingaPasswordviatheAPI)
+- [Resetting a User Password via Database Manipulation](#resetting-a-user-password-via-database-manipulation)
+  - [Resetting Password in MODX 2.1+](#resetting-password-in-modx-21)
+  - [Resetting Password in MODX 2.0.x](#resetting-password-in-modx-20x)
+- [Resetting a Password via the API](#resetting-a-password-via-the-api)
 
 
 
@@ -57,8 +57,6 @@ if (empty($username) || empty($password) || empty($email)) {
         die('ERROR: Missing criteria.');
 }
 
-
-
 $modx= new modX();
 $modx->initialize('mgr');
 
@@ -69,7 +67,6 @@ $user = $modx->getObjectGraph('modUser', '{ "Profile":{}, "UserGroupMembers":{} 
 if (!$user) {
         die("ERROR: No user with username $username");
 }
-
 
 $user->set('username',$username);
 $user->set('active',1);

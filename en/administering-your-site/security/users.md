@@ -4,12 +4,9 @@ _old_id: "329"
 _old_uri: "2.x/administering-your-site/security/users"
 ---
 
-- [What is a User?](#Users-WhatisaUser?)
-- [User Settings](#Users-UserSettings)
-- [Users in the Front-End](#Users-UsersintheFrontEnd)
-- [User Fields](#Users-UserFields)
-- [Grabbing the User via the API](#Users-GrabbingtheUserviatheAPI)
-  - [Using Extended Fields](#Users-UsingExtendedFields)
+- [What is a User?](#what-is-a-user)
+- [User Settings](#user-settings)
+- [Users in the Front-End](#users-in-the-front-end)
 
 ##  What is a User? 
 
@@ -32,10 +29,8 @@ _old_uri: "2.x/administering-your-site/security/users"
  When a user is logged into the frontend of your site, their username and ID can be accessed by the following [Properties](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets"):
 
  ``` php 
-
 [[+modx.user.id]] - Prints the ID
 [[+modx.user.username]] - Prints the username
-
 ```
 
  If a user is not logged in, ID will be blank, and Username will be "(anonymous)".
@@ -49,62 +44,58 @@ _old_uri: "2.x/administering-your-site/security/users"
 
  Users contain the following fields:
 
- | Name | Description |
-|------|-------------|
-| id | The ID of the user. |
-| username | The username of the user. |
-| password | The user's encrypted password. |
-| active | Either 1 or 0. If not active, the user will not be able to log in. |
-| remote\_key | A remote user Key used by remote authentication apps. |
-| remote\_data | A JSON array of data used by remote authentication apps. |
+ | Name         | Description                                                        |
+ | ------------ | ------------------------------------------------------------------ |
+ | id           | The ID of the user.                                                |
+ | username     | The username of the user.                                          |
+ | password     | The user's encrypted password.                                     |
+ | active       | Either 1 or 0. If not active, the user will not be able to log in. |
+ | remote\_key  | A remote user Key used by remote authentication apps.              |
+ | remote\_data | A JSON array of data used by remote authentication apps.           |
 
  Users also have a Profile attached to them. It contains the following fields:
 
- | Name | Description |
-|------|-------------|
-| internalKey | The ID of the user. |
-| fullname | The full name of the user. |
-| email | The email of the user. |
-| phone | The phone number. |
-| mobilephone | The cellphone number. |
-| fax | The fax number. |
-| blocked | Either 1 or 0. If blocked is set to true, the user will not be able to log in. |
-| blockeduntil | A timestamp that, when set, will prevent the user from logging in until this date. |
-| blockedafter | A timestamp that, when set, will prevent the user from logging in after this date. |
-| logincount | The number of logins for this user. |
-| lastlogin | The last time the user logged in. |
-| thislogin | The time the user logged in in their current session. |
-| failedlogincount | The number of times the user has failed to log in since last logging in. |
-| sessionid | The User's session ID that maps to the session table. |
-| dob | The date of birth. |
-| gender | 0 for neither, 1 for male and 2 for female. |
-| address | The physical address. |
-| country | The country of the user. |
-| city | The city of the user. |
-| zip | The zip or postal code for the user. |
-| state | The physical state or province of the user. |
-| photo | An optional field for a photo. Not used in the UI. |
-| comment | An optional comment field for comments on the User. |
-| website | The website of the user. |
-| extended | A JSON array that can be used to store extra fields for the User. |
+ | Name             | Description                                                                        |
+ | ---------------- | ---------------------------------------------------------------------------------- |
+ | internalKey      | The ID of the user.                                                                |
+ | fullname         | The full name of the user.                                                         |
+ | email            | The email of the user.                                                             |
+ | phone            | The phone number.                                                                  |
+ | mobilephone      | The cellphone number.                                                              |
+ | fax              | The fax number.                                                                    |
+ | blocked          | Either 1 or 0. If blocked is set to true, the user will not be able to log in.     |
+ | blockeduntil     | A timestamp that, when set, will prevent the user from logging in until this date. |
+ | blockedafter     | A timestamp that, when set, will prevent the user from logging in after this date. |
+ | logincount       | The number of logins for this user.                                                |
+ | lastlogin        | The last time the user logged in.                                                  |
+ | thislogin        | The time the user logged in in their current session.                              |
+ | failedlogincount | The number of times the user has failed to log in since last logging in.           |
+ | sessionid        | The User's session ID that maps to the session table.                              |
+ | dob              | The date of birth.                                                                 |
+ | gender           | 0 for neither, 1 for male and 2 for female.                                        |
+ | address          | The physical address.                                                              |
+ | country          | The country of the user.                                                           |
+ | city             | The city of the user.                                                              |
+ | zip              | The zip or postal code for the user.                                               |
+ | state            | The physical state or province of the user.                                        |
+ | photo            | An optional field for a photo. Not used in the UI.                                 |
+ | comment          | An optional comment field for comments on the User.                                |
+ | website          | The website of the user.                                                           |
+ | extended         | A JSON array that can be used to store extra fields for the User.                  |
 
 ##  Grabbing the User via the API 
 
  The current user can be retrieved in the API via the $modx->user reference. For example, this snippet outputs the username of the user:
 
  ``` php 
-
 return $modx->user->get('username');
-
 ```
 
  Note that to grab Profile fields, you'll need to first get the modUserProfile object via the Profile alias. For example, this snippet grabs the email of the user and returns it:
 
  ``` php 
-
 $profile = $modx->user->getOne('Profile');
 return $profile ? $profile->get('email') : '';
-
 ```
 
  If the User is not logged in, $modx->user will still be available as an object, but will return 0 as the ID and (Anonymous) as the username.
@@ -114,7 +105,6 @@ return $profile ? $profile->get('email') : '';
  Values in the extended field return as an array. They can be manipulated like so:
 
  ``` php 
-
 /* get the extended field named "color": */
 $fields = $profile->get('extended');
 $color = $fields['color'];
@@ -123,7 +113,6 @@ $fields = $profile->get('extended');
 $fields['color'] = 'red';
 $profile->set('extended',$fields);
 $profile->save();
-
 ```
 
 ##  See Also 

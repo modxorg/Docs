@@ -4,9 +4,9 @@ _old_id: "487"
 _old_uri: "2.x/administering-your-site/media-sources/securing-a-media-source"
 ---
 
-- [Locking Down our Source to Admins](#SecuringaMediaSource-LockingDownourSourcetoAdmins)
-- [Restricting to Content Editors](#SecuringaMediaSource-RestrictingtoContentEditors)
-- [See Also](#SecuringaMediaSource-SeeAlso)
+- [Locking Down our Source to Admins](#locking-down-our-source-to-admins)
+- [Restricting to Content Editors](#restricting-to-content-editors)
+- [See Also](#see-also)
 
 
 

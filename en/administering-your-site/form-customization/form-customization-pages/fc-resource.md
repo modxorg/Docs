@@ -13,7 +13,7 @@ note: "You can learn more about form customization in the Customizing the Manage
 
 
 
-## <a name="FC-Resource-ResourceCreate%2FUpdate"></a>Resource Create/Update
+## Resource Create/Update
 
 These pages encompass the following Actions:
 
@@ -27,53 +27,53 @@ When using the _resource/create_ Action, constraints will apply to the **parent*
 
 
 
-## <a name="FC-Resource-AvailableFields"></a>Available Fields
+## Available Fields
 
-| Field | Name | Containing Panel |
-|-------|------|------------------|
-| Page Title | pagetitle | modx-panel-resource |
-| Template | template | modx-panel-resource |
-| Published | published | modx-panel-resource |
-| Long Title | longtitle | modx-panel-resource |
-| Description | description | modx-panel-resource |
-| Introtext | introtext | modx-panel-resource |
-| Link Attributes | link\_attributes | modx-panel-resource |
-| Alias | alias | modx-panel-resource |
-| Menu Title | menutitle | modx-panel-resource |
-| Menu Index | menuindex | modx-panel-resource |
-| Hide from Menus | hidemenu | modx-panel-resource |
-| Container | isfolder | modx-panel-resource |
-| Rich Text | richtext | modx-panel-resource |
-| Published On | publishedon | modx-panel-resource |
-| Publish Date | pub\_date | modx-panel-resource |
-| Un-Publish Date | unpub\_date | modx-panel-resource |
-| Searchable | searchable | modx-panel-resource |
-| Cacheable | cacheable | modx-panel-resource |
-| Deleted | deleted | modx-panel-resource |
-| Empty Cache | syncsite | modx-panel-resource |
-| Content Type | content\_type | modx-panel-resource |
-| Content Disposition | content\_dispo | modx-panel-resource |
-| Class Key | class\_key | modx-panel-resource |
-| Parent | modx-resource-parent | modx-panel-resource |
-| ID | id | modx-panel-resource |
-| Template | template | modx-panel-resource |
+| Field               | Name                 | Containing Panel    |
+| ------------------- | -------------------- | ------------------- |
+| Page Title          | pagetitle            | modx-panel-resource |
+| Template            | template             | modx-panel-resource |
+| Published           | published            | modx-panel-resource |
+| Long Title          | longtitle            | modx-panel-resource |
+| Description         | description          | modx-panel-resource |
+| Introtext           | introtext            | modx-panel-resource |
+| Link Attributes     | link\_attributes     | modx-panel-resource |
+| Alias               | alias                | modx-panel-resource |
+| Menu Title          | menutitle            | modx-panel-resource |
+| Menu Index          | menuindex            | modx-panel-resource |
+| Hide from Menus     | hidemenu             | modx-panel-resource |
+| Container           | isfolder             | modx-panel-resource |
+| Rich Text           | richtext             | modx-panel-resource |
+| Published On        | publishedon          | modx-panel-resource |
+| Publish Date        | pub\_date            | modx-panel-resource |
+| Un-Publish Date     | unpub\_date          | modx-panel-resource |
+| Searchable          | searchable           | modx-panel-resource |
+| Cacheable           | cacheable            | modx-panel-resource |
+| Deleted             | deleted              | modx-panel-resource |
+| Empty Cache         | syncsite             | modx-panel-resource |
+| Content Type        | content\_type        | modx-panel-resource |
+| Content Disposition | content\_dispo       | modx-panel-resource |
+| Class Key           | class\_key           | modx-panel-resource |
+| Parent              | modx-resource-parent | modx-panel-resource |
+| ID                  | id                   | modx-panel-resource |
+| Template            | template             | modx-panel-resource |
 
 
 
-## <a name="FC-Resource-AvailableTabs"></a>Available Tabs
+## Available Tabs
 
 These tabs are available for renaming/hiding:
 
-| Tab | Name (ID) | Containing TabPanel |
-|-----|-----------|---------------------|
-| Create/edit Resource | modx-resource-settings | modx-resource-tabs |
-| Page Settings | modx-page-settings | modx-resource-tabs |
-| Template Variables | modx-panel-resource-tv | modx-resource-tabs |
-| Access Permissions | modx-resource-access-permissions | modx-resource-tabs |
+| Tab                  | Name (ID)                        | Containing TabPanel |
+| -------------------- | -------------------------------- | ------------------- |
+| Create/edit Resource | modx-resource-settings           | modx-resource-tabs  |
+| Page Settings        | modx-page-settings               | modx-resource-tabs  |
+| Template Variables   | modx-panel-resource-tv           | modx-resource-tabs  |
+| Access Permissions   | modx-resource-access-permissions | modx-resource-tabs  |
 
 
 
-## <a name="FC-Resource-HidingtheContentField"></a>Hiding the Content Field
+## Hiding the Content Field
 
 Use these settings:
 
@@ -82,7 +82,7 @@ Use these settings:
 **Rule**: Field Visible
 **Value**: 0
 
-## <a name="FC-Resource-TVs"></a>TVs
+## TVs
 
 Affecting TVs for a Resource is fairly straightforward - just set the "Name" attribute of the Rule to "tv#", and replace # with the ID of the TV you'd like to affect. You can leave the Containing Panel blank.
 

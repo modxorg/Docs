@@ -4,8 +4,8 @@ _old_id: "132"
 _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customization-profiles"
 ---
 
-- [What is a Form Customization Profile?](#FormCustomizationProfiles-WhatisaFormCustomizationProfile%3F)
-- [See Also](#FormCustomizationProfiles-SeeAlso)
+- [What is a Form Customization Profile?](#what-is-a-form-customization-profile)
+- [See Also](#see-also)
 
 
 

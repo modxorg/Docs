@@ -9,9 +9,9 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customizatio
  **When a Tab is not a Tab** 
  When setting up Form Customization rules under **Security --> Form Customization**, then editing a behavior set, there is a list of "Tabs", but the list doesn't correspond directly to the familiar "Document", "Settings", "Template Variables", and "Resource Groups". Rather, the tab ids listed here refer to entire tabs or _parts_ of tabs. 
 
-- [Tab Regions](#CustomizingTabsviaFormCustomization-TabRegions)
-- [Adding New Tabs](#CustomizingTabsviaFormCustomization-AddingNewTabs)
-- [See Also](#CustomizingTabsviaFormCustomization-SeeAlso)
+- [Tab Regions](#tab-regions)
+- [Adding New Tabs](#adding-new-tabs)
+- [See Also](#see-also)
 
 
 
@@ -19,18 +19,18 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customizatio
 
  These are the various tab regions whose visibility can be toggled.
 
- | ID | Default Tab Title | Description |
-|----|-------------------|-------------|
-| modx-resource-settings | Document | A primary tab |
-| modx-resource-main-left |  |  |
-| modx-resource-main-right |  |  |
-| modx-page-settings | Settings | A primary tab |
-| modx-page-settings-left |  |  |
-| modx-page-settings-right |  |  |
-| modx-page-settings-right-box-left |  |  |
-| modx-page-settings-right-box-right |  |  |
-| modx-panel-resource-tv | Template Variables | A primary tab |
-| modx-resource-access-permissions | Resource Groups | A primary tab |
+ | ID                                 | Default Tab Title  | Description   |
+ | ---------------------------------- | ------------------ | ------------- |
+ | modx-resource-settings             | Document           | A primary tab |
+ | modx-resource-main-left            |                    |               |
+ | modx-resource-main-right           |                    |               |
+ | modx-page-settings                 | Settings           | A primary tab |
+ | modx-page-settings-left            |                    |               |
+ | modx-page-settings-right           |                    |               |
+ | modx-page-settings-right-box-left  |                    |               |
+ | modx-page-settings-right-box-right |                    |               |
+ | modx-panel-resource-tv             | Template Variables | A primary tab |
+ | modx-resource-access-permissions   | Resource Groups    | A primary tab |
 
 ## Adding New Tabs
 

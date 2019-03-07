@@ -20,17 +20,17 @@ It is **strongly recommended that you back up your data prior to performing any 
 
  Some Extras in Evolution have been discontinued or are no longer in active development. Below is a list of Evolution Extras and their Revolution equivalents:
 
- | Evolution | Revolution |
-|-----------|------------|
-| Ditto | [getResources](/extras/revo/getresources "getResources"), [getPage](/extras/revo/getpage "getPage"), [tagLister](/extras/revo/taglister "tagLister"), [Archivist](/extras/revo/archivist "Archivist") |
-| Jot | [Quip](/extras/revo/quip "Quip") |
-| SiteMap | [GoogleSiteMap](/extras/revo/googlesitemap "GoogleSiteMap") |
-| MaxiGallery | [Gallery](/extras/revo/gallery "Gallery") |
-| eForm | [FormIt](/extras/revo/formit "FormIt") |
-| Wayfinder | [Wayfinder](/extras/evo/wayfinder "Wayfinder") |
-| DocManager | [Batcher](/extras/revo/batcher "Batcher") |
-| AjaxSearch | [SimpleSearch](/extras/revo/simplesearch "SimpleSearch") |
-| WebLogin | [Login](/extras/revo/login "Login") |
+ | Evolution   | Revolution                                                                                                                                                                                            |
+ | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | Ditto       | [getResources](/extras/revo/getresources "getResources"), [getPage](/extras/revo/getpage "getPage"), [tagLister](/extras/revo/taglister "tagLister"), [Archivist](/extras/revo/archivist "Archivist") |
+ | Jot         | [Quip](/extras/revo/quip "Quip")                                                                                                                                                                      |
+ | SiteMap     | [GoogleSiteMap](/extras/revo/googlesitemap "GoogleSiteMap")                                                                                                                                           |
+ | MaxiGallery | [Gallery](/extras/revo/gallery "Gallery")                                                                                                                                                             |
+ | eForm       | [FormIt](/extras/revo/formit "FormIt")                                                                                                                                                                |
+ | Wayfinder   | [Wayfinder](/extras/evo/wayfinder "Wayfinder")                                                                                                                                                        |
+ | DocManager  | [Batcher](/extras/revo/batcher "Batcher")                                                                                                                                                             |
+ | AjaxSearch  | [SimpleSearch](/extras/revo/simplesearch "SimpleSearch")                                                                                                                                              |
+ | WebLogin    | [Login](/extras/revo/login "Login")                                                                                                                                                                   |
 
 ## See Also
 

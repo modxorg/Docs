@@ -30,7 +30,6 @@ On a UNIX style system, you can create a compressed file using the tar command:
 
 ``` php 
 tar -czf /path/to/backups/modx_revo_site.tar.gz /path/to/modx_doc_root/
-
 ```
 
 **Forget me Not** 
@@ -43,7 +42,6 @@ On a UNIX style system, you can unpackage a .tar.gz file using the following com
 ``` php 
 gunzip modx_revo_site.tar.gz
 tar xvf modx_revo_site.tar
-
 ```
 
 Once you've extracted the files, you can move the whole directory into the correct place. Again, be careful about moving files in bulk: you might inadvertently forget to copy those hidden files. It's better to rename or move the containing directory instead.
@@ -64,7 +62,6 @@ You can dump your MySQL database using a GUI tool such as phpMyAdmin, or you can
 
 ``` php 
 mysqldump -u username -p your_revo_db > /path/to/backups/my_revo_db.sql
-
 ```
 
 If you use _mysqldump_, be sure you use a username that has SELECT and LOCK permissions on all your MODX Revolution database tables – usually it's best to simply use the same username and password that are defined in your configuration file (_/core/config/config.inc.php_). Remember that _mysqldump_ will prompt you for the password after you execute this command: when you type it (or paste it), you won't see anything in the terminal window.
@@ -73,7 +70,6 @@ On the new server, you can simply use the "mysql" command to slurp the dump file
 
 ``` php 
 mysql -u username -p target_db < my_revo_db.sql
-
 ```
 
 You can also use phpMyAdmin, but remember that web-based tools like this are subject to the same memory limits as PHP, so you're usually better off using a command-line tool if possible.
@@ -97,7 +93,6 @@ $modx_assets_path= '/path/to/modx_doc_root/assets/';
 
 /* HOST (used for command-line PHP stuff) */
 $http_host='yoursite.com';
-
 ```
 
 If you are also moving your site into or out of a subfolder, be sure to update the variables such as **$modx\_connectors\_url,** **$modx\_manager\_url,** and **$modx\_base\_url**. They should generally 
@@ -111,7 +106,6 @@ There are also 3 additional configuration files that contain two PHP constants:
 ``` php 
 define('MODX_CORE_PATH', '/path/to/modx_doc_root/core/');
 define('MODX_CONFIG_KEY', 'config');
-
 ```
 
 - /config.core.php
@@ -135,7 +129,6 @@ To see the path information that is stored inside the MODX database, type the fo
 
 ``` php 
 SELECT `path` FROM `your_revo_db`.`workspaces`;
-
 ```
 
 Change "your\_revo\_db" to your database name, and add an appropriate prefix to the "workspaces" table if necessary, e.g. `modx\_workspaces`.
@@ -144,7 +137,6 @@ If the path on the new server is different than on the old server, you will need
 
 ``` php 
 UPDATE `your_revo_db`.`workspaces` SET path='/path/to/modx_doc_root/core/' WHERE id='1';
-
 ```
 
 ## Update .htaccess
@@ -155,9 +147,8 @@ When you change servers, you frequently wind up changing domain names. Make sure
 
 Log into the manager on the new server to verify that it works. Upon entry, you may experience:
 
-```
+``` php
 Could not find action file at: /path/to/manager/controllers/default/welcome.php
-
 ```
 
 That's because the old path is still cached; MODX Revolution caches a lot of information in the database and on the file system, so once you've gotten the files and database transferred over to the new server, make sure you clear your site's cache once again, and manually refresh the manager page.
@@ -199,7 +190,6 @@ This manifests itself as an error message like the following:
 
 ``` php 
 Fatal error: Class 'xPDODriver_' not found in /path/to/webroot/core/xpdo/xpdo.class.php on line 1823
-
 ```
 
 This is usually a sign that your configuration file got mangled. Re-open your core/config/config.inc.php and verify that its contents are in place. A mangled config file contains placeholders instead of values.
@@ -215,7 +205,6 @@ $table_prefix = '{table_prefix}';
 $database_dsn = '{database_dsn}';
 $config_options = {config_options};
 $driver_options = {driver_options};
-
 ```
 
 #### Installation Summary shows Incomplete Items
