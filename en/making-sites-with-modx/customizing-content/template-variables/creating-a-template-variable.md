@@ -4,21 +4,19 @@ _old_id: "75"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable"
 ---
 
-- [Explanation](#CreatingaTemplateVariable-Explanation)
-- [Creating the Template Variable](#CreatingaTemplateVariable-CreatingtheTemplateVariable)
-  - [1. Log into the MODx manager](#CreatingaTemplateVariable-1.LogintotheMODxmanager)
-  - [2. Add the Template Variable](#CreatingaTemplateVariable-2.AddtheTemplateVariable)
-  - [3. Define the General Information](#CreatingaTemplateVariable-3.DefinetheGeneralInformation)
-  - [4. Define the Input Options](#CreatingaTemplateVariable-4.DefinetheInputOptions)
-  - [5. Configure Template Access](#CreatingaTemplateVariable-5.ConfigureTemplateAccess)
-  - [6. Save the TV definition.](#CreatingaTemplateVariable-6.SavetheTVdefinition.)
-  - [7. Use it: Create a Resource](#CreatingaTemplateVariable-7.Useit%3ACreateaResource)
-  - [8. Edit the Value](#CreatingaTemplateVariable-8.EdittheValue)
-- [Advanced Usage](#CreatingaTemplateVariable-AdvancedUsage)
-- [Output Rendering Options](#CreatingaTemplateVariable-OutputRenderingOptions)
-- [Properties](#CreatingaTemplateVariable-Properties)
-- [Template and Resource Group Access](#CreatingaTemplateVariable-TemplateandResourceGroupAccess)
-- [See Also](#CreatingaTemplateVariable-SeeAlso)
+- [Explanation](#explanation)
+- [Creating the Template Variable](#creating-the-template-variable)
+  - [1. Log into the MODX manager](#1-log-into-the-modx-manager)
+  - [2. Add the Template Variable](#2-add-the-template-variable)
+  - [3. Define the General Information](#3-define-the-general-information)
+  - [4. Define the Input Options](#4-define-the-input-options)
+  - [5. Configure Template Access](#5-configure-template-access)
+  - [6. Save the TV definition.](#6-save-the-tv-definition)
+  - [7. Use it: Create a Resource](#7-use-it-create-a-resource)
+  - [8. Edit the Value](#8-edit-the-value)
+- [Advanced Usage](#advanced-usage)
+- [Output Rendering Options](#output-rendering-options)
+- [Properties](#properties)
  
 
 
@@ -110,7 +108,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/cre
  From there, we can specify any default properties we want for the TV. "How can you use properties on a TV?", you might ask. Well, let's say we're doing a textarea TV named "viewingSS". In our content, we've got this:
 
  ``` php 
-
 Viewing: [[+subsection]]
 
 ```
@@ -118,9 +115,7 @@ Viewing: [[+subsection]]
  We can add a list property 'subsection' to the grid, and then allow that property to be overridden via property sets. Say we created a Property Set named 'CarsSectionTVPS' (PS for Property Set). In it, we set the 'subsection' property to "Cars". We'd then attach it to the TV in our Resource, or Template, or whereever we are using it like so:
 
  ``` php 
-
 [[*viewingSS@CarsSectionTVPS]]
-
 ```
 
  This would output in the place of the TV:
@@ -137,22 +132,22 @@ Viewing: [[+subsection]]
 
 1. [Creating a Template Variable](making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
 2. [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings)
-  1. [CHUNK Binding](making-sites-with-modx/customizing-content/template-variables/bindings/chunk-binding)
-  2. [DIRECTORY Binding](making-sites-with-modx/customizing-content/template-variables/bindings/directory-binding)
-  3. [EVAL Binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding)
-  4. [FILE Binding](making-sites-with-modx/customizing-content/template-variables/bindings/file-binding)
-  5. [INHERIT Binding](making-sites-with-modx/customizing-content/template-variables/bindings/inherit-binding)
-  6. [RESOURCE Binding](making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding)
-  7. [SELECT Binding](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding)
-3. [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types)
-4. [Template Variable Output Types](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types)
-  1. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)
-  2. [Delimiter TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type)
-  3. [HTML Tag TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type)
-  4. [Image TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type)
-  5. [URL TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type)
-5. [Adding a Custom TV Type - MODX 2.2](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2)
-6. [Adding a Custom TV Input Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-input-type)
-7. [Adding a Custom TV Output Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-output-type)
-8. [Creating a multi-select box for related pages in your template](making-sites-with-modx/customizing-content/template-variables/creating-a-multi-select-box-for-related-pages-in-your-template)
-9. [Accessing Template Variable Values via the API](making-sites-with-modx/customizing-content/template-variables/accessing-template-variable-values-via-the-api)
+3. [CHUNK Binding](making-sites-with-modx/customizing-content/template-variables/bindings/chunk-binding)
+4. [DIRECTORY Binding](making-sites-with-modx/customizing-content/template-variables/bindings/directory-binding)
+5. [EVAL Binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding)
+6. [FILE Binding](making-sites-with-modx/customizing-content/template-variables/bindings/file-binding)
+7. [INHERIT Binding](making-sites-with-modx/customizing-content/template-variables/bindings/inherit-binding)
+8. [RESOURCE Binding](making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding)
+9. [SELECT Binding](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding)
+10. [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types)
+11. [Template Variable Output Types](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types)
+12. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)
+13. [Delimiter TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type)
+14. [HTML Tag TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type)
+15. [Image TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type)
+16. [URL TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type)
+17. [Adding a Custom TV Type - MODX 2.2](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2)
+18. [Adding a Custom TV Input Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-input-type)
+19. [Adding a Custom TV Output Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-output-type)
+20. [Creating a multi-select box for related pages in your template](making-sites-with-modx/customizing-content/template-variables/creating-a-multi-select-box-for-related-pages-in-your-template)
+21. [Accessing Template Variable Values via the API](making-sites-with-modx/customizing-content/template-variables/accessing-template-variable-values-via-the-api)

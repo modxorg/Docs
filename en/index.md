@@ -20,7 +20,7 @@ _old_uri: "dashboard.action"
 
  If you have a question about this documentation site, or suggestions on how to increase the awesomeness herein, please [let us know](mailto:support@modx.com). From the MODX core team, and the MODX community-at-large, "Welcome!"
 
-- [](#revolution)## [MODX Revolution]()
+  ### MODX Revolution
   
    Revolution is MODX's flagship CMS and application framework, lovingly called "Revo". If you're new to MODX, start here.
   
@@ -39,7 +39,8 @@ _old_uri: "dashboard.action"
   - [Download Add-ons](http://modx.com/extras/)
   - [Forum Discussions](http://forums.modx.com/board/?board=264)
   - [Bugs & Feature Requests](http://tracker.modx.com/projects/revo)
-- [](#extras)## [Extras](extras/revo/)
+  
+  ### Extras
   
    MODX Extras extend the core functionality of the MODX software. Other CMSs refer to them as "Plugins" or "Modules". Many of the Extras are developed by the MODX core team, while others are by third parties. Although by no means an exhaustive reference, the majority of the most popular Extras are documented here.
   
@@ -59,7 +60,8 @@ _old_uri: "dashboard.action"
   - [Download Revolution Extras](http://modx.com/extras/?product=revolution)
   - [Download Evolution Extras](http://modx.com/extras/?product=evolution)
   - [Forum Discussions](http://forums.modx.com/?category=5)
-- [](#evolution) \[\[- ## [Evolution](evolution/1.0)
+  - 
+  ### Evolution
   
    Evolution is MODX's classic codebase - our original version released in 2005. Lean and mean, Evolution laid the groundwork for everything MODX is today, with the guiding principles of flexibility and Creative Freedom.
   
@@ -78,7 +80,8 @@ _old_uri: "dashboard.action"
   - [Download Extras](http://modx.com/extras/?product=evolution)
   - [Forum Discussions](http://forums.modx.com/board/48/evo-discussions-support)
   - [Bugs & Feature Requests](http://tracker.modx.com/projects/evo)
-- [](#xpdo) \]\] ## [xPDO](xpdo/)
+  
+  ### xPDO
   
    xPDO is the object-relational bridge (ORB) that powers MODX. If you know what that means, or you're the adventurous type, the following is for you:
   
@@ -96,7 +99,8 @@ _old_uri: "dashboard.action"
   - [Get the Latest Release](http://xpdo.org/downloads.html)
   - [Forum Discussions](http://forums.modx.com/board/46/developing-with-xpdo)
   - [Bugs & Feature Requests](http://tracker.modx.com/projects/xpdo)
-- [](#community)## [Contributor Guide](community/)
+  
+  ### Contributor Guide
   
    Love MODX? Learn how to get involved in the Community and contribute to the open source project.
   

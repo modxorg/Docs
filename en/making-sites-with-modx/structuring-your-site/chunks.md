@@ -4,11 +4,12 @@ _old_id: "56"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/chunks"
 ---
 
-- [Create](#Chunks-Create)
-- [Usage](#Chunks-Usage)
-- [Processing Chunk via the API](#Chunks-ProcessingChunkviatheAPI)
-  - [Modifying a Chunk Via the API](#Chunks-ModifyingaChunkViatheAPI)
-- [See Also](#Chunks-SeeAlso)
+- [Create](#create)
+- [](#)
+- [Usage](#usage)
+- [Processing Chunk via the API](#processing-chunk-via-the-api)
+  - [Modifying a Chunk Via the API](#modifying-a-chunk-via-the-api)
+- [See Also](#see-also)
 
 
 
@@ -28,7 +29,6 @@ To use the Chunk, you reference it by name in your templates or in your page con
 
 ``` php 
 [[$chunkName]]
-
 ```
 
 That reference is then replaced with the contents of the Chunk.
@@ -41,7 +41,6 @@ You could fill those values with:
 
 ``` php 
 [[$intro? &name=`George` &messageCount=`12`]]
-
 ```
 
 Which would output:
@@ -52,14 +51,12 @@ You could even take it one step further, by adding a [Template Variable](making-
 
 ``` php 
 [[!$intro? &name=`[[*usersName]]` &messageCount=`[[*messageCount]]`]]
-
 ```
 
 or in the Chunk itself:
 
 ``` php 
 Hello, [[*usersName]]. You have [[*messageCount]] messages.
-
 ```
 
 ## Processing Chunk via the API
@@ -71,7 +68,6 @@ Chunks are also frequently used to format the output of Snippets. A Chunk can be
 <td>[[+pagetitle]]</td>
 <td>[[+introtext]]</td>
 </tr>
-
 ```
 
 the following Snippet code retrieves it and processes it with an array of properties for all published Resources, and returns formatted results as a table, setting the class to "alt" if for even rows:
@@ -88,7 +84,6 @@ foreach ($resources as $resource) {
   $i++;
 }
 return '<table><tbody>'.$output.'</tbody></table>';
-
 ```
 
 ### Modifying a Chunk Via the API
@@ -114,7 +109,6 @@ if ($chunk) {
 $chunk = $modx->getObject('modChunk', array('name' => 'MyObsoleteChunk'));
 if ($chunk) $chunk->remove();
 ?>
-
 ```
 
 ## See Also

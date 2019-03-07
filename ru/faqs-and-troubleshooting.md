@@ -1,5 +1,5 @@
 ---
-title: "FAQs & Troubleshooting"
+title: "Часто задаваемые вопросы и устранение неполадок"
 translation: "faqs-and-troubleshooting"
 ---
 
