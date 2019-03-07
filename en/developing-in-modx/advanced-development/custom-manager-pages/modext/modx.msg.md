@@ -21,7 +21,7 @@ The MODx.msg class provides the functionality of the Ext.MessageBox class, with 
 
 Used to display an alert dialog box on the page. Example:
 
-``` php 
+``` js 
 MODx.msg.alert('Warning!','You are out of space! We should clear the cache.',function() {
   MODx.clearCache();
 },MODx);
@@ -33,17 +33,17 @@ MODx.msg.alert('Warning!','You are out of space! We should clear the cache.',fun
 
 Loads a confirmation dialog that prompts the user for a Yes/No response. If Yes is selected, fires an AJAX request to a specific connector. The properties for the config parameter are:
 
-| Name | Description |
-|------|-------------|
-| title | The title of the confirmation box. |
-| text | The text in the confirmation box. |
-| url | The URL to send the AJAX request to. |
-| params | The REQUEST params to send with the AJAX request. |
-| listeners | Any listeners to look for on the request. |
+| Name      | Description                                       |
+| --------- | ------------------------------------------------- |
+| title     | The title of the confirmation box.                |
+| text      | The text in the confirmation box.                 |
+| url       | The URL to send the AJAX request to.              |
+| params    | The REQUEST params to send with the AJAX request. |
+| listeners | Any listeners to look for on the request.         |
 
 An example:
 
-``` php 
+``` js 
 MODx.msg.confirm({
    title: 'Are you sure?',
    text: 'Do you want to delete the world? This is irreversible.',
@@ -63,30 +63,30 @@ MODx.msg.confirm({
 
 MODx.msg.confirm adds a few custom events that fire:
 
-| Name | Description |
-|------|-------------|
+| Name    | Description                                              |
+| ------- | -------------------------------------------------------- |
 | success | Fires on a successful response from the AJAX submission. |
-| failure | Fires on a failed response from the AJAX submission. |
-| cancel | Fires when the user cancels the confirmation dialog. |
+| failure | Fires on a failed response from the AJAX submission.     |
+| cancel  | Fires when the user cancels the confirmation dialog.     |
 
 ### status
 
-``` php 
+``` js 
 MODx.msg.status(opt)
 ```
 
 Loads a temporary status message in the top-right of the screen, that fades away. The properties for the opt parameter are:
 
-| Name | Description | Default |
-|------|-------------|---------|
-| title | Optional. The title of the message. |  |
-| message | The text of the status message. |  |
-| dontHide | If true, will not automatically hide the status message. Will stay until it is clicked. | false |
-| delay | The number of seconds to show the message. | 1.5 |
+| Name     | Description                                                                             | Default |
+| -------- | --------------------------------------------------------------------------------------- | ------- |
+| title    | Optional. The title of the message.                                                     |         |
+| message  | The text of the status message.                                                         |         |
+| dontHide | If true, will not automatically hide the status message. Will stay until it is clicked. | false   |
+| delay    | The number of seconds to show the message.                                              | 1.5     |
 
 You could use this in custom manager pages to provide confirmation your object was saved. You could add something like this to your FormPanel definition:
 
-``` php 
+``` js 
         listeners: {
             'success': function (res) {
                 MODx.msg.status({

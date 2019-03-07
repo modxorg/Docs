@@ -23,11 +23,11 @@ You may also pass a message to the $modx->event->output() function and this will
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| mode | Either 'new' or 'upd', depending on the circumstances. |
-| resource | A reference to the modResource object. |
-| id | The ID of the Resource. Will be 0 for new Resources. |
+| Name     | Description                                            |
+| -------- | ------------------------------------------------------ |
+| mode     | Either 'new' or 'upd', depending on the circumstances. |
+| resource | A reference to the modResource object.                 |
+| id       | The ID of the Resource. Will be 0 for new Resources.   |
 
 ## Examples
 
@@ -38,7 +38,6 @@ if (empty($resource->longtitle)) {
         $modx->event->output('Long title is required!'); // to modal window
         return '[MyPlugin] Failed to save page id '.$id.' due to missing longtitle'; // to the error log
 }
-
 ```
 
 ### Calculate a Field Value
@@ -47,7 +46,6 @@ if (empty($resource->longtitle)) {
 if ($resource->get('parent') == 123) {
         $resource->set('template', 4);
 }
-
 ```
 
 **Saving Happens Automatically** 

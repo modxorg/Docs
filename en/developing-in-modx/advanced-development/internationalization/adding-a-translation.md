@@ -4,10 +4,10 @@ _old_id: "344"
 _old_uri: "2.x/developing-in-modx/advanced-development/internationalization/adding-a-translation"
 ---
 
-- [The Core Manager Lexicon](#AddingaTranslation-TheCoreManagerLexicon)
-- [The Setup Lexicon](#AddingaTranslation-TheSetupLexicon)
-- [Extras Lexicons](#AddingaTranslation-ExtrasLexicons)
-- [Contributing Translations](#AddingaTranslation-ContributingTranslations)
+- [The Core Manager Lexicon](#the-core-manager-lexicon)
+- [The Setup Lexicon](#the-setup-lexicon)
+- [Extras Lexicons](#extras-lexicons)
+- [Contributing Translations](#contributing-translations)
 
 
 

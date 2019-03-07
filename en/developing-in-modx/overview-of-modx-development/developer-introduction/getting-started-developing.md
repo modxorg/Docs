@@ -4,14 +4,14 @@ _old_id: "153"
 _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introduction/getting-started-developing"
 ---
 
-- [Programming in MODX Revolution](#GettingStartedDeveloping-ProgramminginMODxRevolution)
-- [3rd-Party Components (3PCs)](#GettingStartedDeveloping-3rdPartyComponents%283PCs%29)
-- [core/components and assets/components](#GettingStartedDeveloping-core%2Fcomponentsandassets%2Fcomponents)
-- [Snippets](#GettingStartedDeveloping-Snippets)
-- [Plugins](#GettingStartedDeveloping-Plugins)
-- [Properties and Property Sets](#GettingStartedDeveloping-PropertiesandPropertySets)
-- [Custom Manager Pages (CMPs)](#GettingStartedDeveloping-CustomManagerPages%28CMPs%29)
-- [Using MODX Externally](#GettingStartedDeveloping-UsingMODxExternally)
+- [Programming in MODX Revolution](#programming-in-modx-revolution)
+- [3rd-Party Components (3PCs)](#3rd-party-components-3pcs)
+- [core/components and assets/components](#corecomponents-and-assetscomponents)
+- [Snippets](#snippets)
+- [Plugins](#plugins)
+- [Properties and Property Sets](#properties-and-property-sets)
+- [Custom Manager Pages (CMPs)](#custom-manager-pages-cmps)
+- [Using MODX Externally](#using-modx-externally)
 
 
 
@@ -65,7 +65,6 @@ require_once MODX_CORE_PATH.'model/modx/modx.class.php';
 $modx = new modX();
 $modx->initialize('web');
 $modx->getService('error', 'error.modError');
-
 ```
 
  This will initialize the MODX object into the 'web' [Context](administering-your-site/contexts "Contexts"). Now, if you want to access it under a different [Context](administering-your-site/contexts "Contexts") (and thereby changing its access permissions, policies, etc), you'll just need to change 'web' to whatever [Context](administering-your-site/contexts "Contexts") you want to load.

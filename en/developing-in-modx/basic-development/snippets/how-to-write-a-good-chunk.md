@@ -6,12 +6,12 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/how-to-write-a-good
 
 We're putting this here because often a Snippet will use Chunks to format data.
 
-- [Do NOT Over-Rely on Output Modifier Logic!](#HowtoWriteaGoodChunk-DoNOTOverRelyonPHxStyleLogic%21)
-  - [The WRONG Way to do It](#HowtoWriteaGoodChunk-TheWRONGWaytodoIt)
-  - [Reasons Why Output Modifiers Might Destroy Your Site](#HowtoWriteaGoodChunk-ReasonsWhyOutputModifiersMightDestroyYourSite)
-- [The Right Way to Do It](#HowtoWriteaGoodChunk-TheRightWaytoDoIt)
-- [Good Chunk-keeping Checklist](#HowtoWriteaGoodChunk-GoodChunkkeepingChecklist)
-- [See Also](#HowtoWriteaGoodChunk-SeeAlso)
+- [Do NOT Over-Rely on Output Modifier Logic!](#do-not-over-rely-on-output-modifier-logic)
+  - [The WRONG Way to do It](#the-wrong-way-to-do-it)
+  - [Reasons Why Output Modifiers Might Destroy Your Site](#reasons-why-output-modifiers-might-destroy-your-site)
+- [The Right Way to Do It](#the-right-way-to-do-it)
+- [Good Chunk tpl-keeping Checklist](#good-chunk-tpl-keeping-checklist)
+- [See Also](#see-also)
 
 
 
@@ -88,8 +88,8 @@ If your Chunk tpl uses an Output Modifier, **it should fit on one line**. If it 
 
 ## See Also 
 
-- [Code Standards](developing-in-modx/code-standards "Code Standards")
-  1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
-  2. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)
-  3. [How to Write a Good Snippet](developing-in-modx/basic-development/snippets/how-to-write-a-good-snippet)
-  4. [How to Write a Good Chunk](developing-in-modx/basic-development/snippets/how-to-write-a-good-chunk)
+1. [Code Standards](developing-in-modx/code-standards "Code Standards")
+2. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
+3. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)
+4. [How to Write a Good Snippet](developing-in-modx/basic-development/snippets/how-to-write-a-good-snippet)
+5. [How to Write a Good Chunk](developing-in-modx/basic-development/snippets/how-to-write-a-good-chunk)

@@ -13,8 +13,8 @@ Group: modUser
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name | Description                        |
+| ---- | ---------------------------------- |
 | user | A reference to the modUser object. |
 
 ## See Also

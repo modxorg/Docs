@@ -35,9 +35,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
  "What's the big deal?" you might ask. "Why can't I just add an anchor tag somewhere that links to my PHP file and be done with it?"
 
- ``` php 
+ ``` html 
 <a href="/path/to/my/file.php">My Custom Manager Page</a>
-
 ```
 
  That should work, right? Well... maybe, but it's not that simple. There are a lot of moving parts that have to get connected to make this seemingly "simple" task work. Allowing for internationalization, permissions schema, and scalability requires that this process include several layers of abstraction that are not immediately obvious. It goes far beyond what's possible with the simple anchor tag solution above. But rest assured, the extra steps will ensure that the solution will be usable in a far greater number of scenarios.
@@ -74,7 +73,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 <?php
 return 'This is my first Custom Manager Page';
 ?>
-
 ```
 
  Upload the file to your MODx site into the directory (i.e. the Namespace) you've just created: **core/components/mycmp/index.php**
@@ -145,7 +143,6 @@ As of MODX 2.3, you no longer need an action. Instead, you will define both the 
 
  ``` php 
 $_lang['lexicon_entry_key'] = 'Translation for Entry';
-
 ```
 
 ### Create the Entries (Provide the Translations)
@@ -155,20 +152,18 @@ $_lang['lexicon_entry_key'] = 'Translation for Entry';
  ``` php 
 $_lang['mycmp'] = 'My CMP';
 $_lang['mycmp.menu_desc'] = 'My custom manager page.';
-
 ```
 
  **Strict Naming Conventions!**
- If you use lexicon entries to translate custom System Settings, then be aware MODX will not look for the exact lexicon entry you typed! You must follow a strict naming convention, otherwise your lexicon entry will not be loaded and your System Setting information will not be translated! The name of your System Setting must use a Lexicon entry that is named after the setting's key, prefixed with "setting\_": ``` php 
+ If you use lexicon entries to translate custom System Settings, then be aware MODX will not look for the exact lexicon entry you typed! You must follow a strict naming convention, otherwise your lexicon entry will not be loaded and your System Setting information will not be translated! The name of your System Setting must use a Lexicon entry that is named after the setting's key, prefixed with "setting\_": 
+ ``` php 
 setting_ + Key
-	
 ```
 
  The Description must follow the same format and include a suffix of "desc":
 
  ``` php 
 setting_ + Key + _desc
-	
 ```
 
  See System Settings for more info.
@@ -183,7 +178,6 @@ setting_ + Key + _desc
 
  ``` php 
 $modx->lexicon->load('your_namespace:default');
-
 ```
 
  Put that at the top of your CMP code.

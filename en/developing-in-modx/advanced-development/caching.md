@@ -53,7 +53,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/caching"
 
  ``` php 
 $modx->cacheManager->refresh();
-
 ```
 
  Alternatively, you can define a `$providers` array with partition `key => $partitionOptions` elements.
@@ -64,7 +63,6 @@ $modx->cacheManager->refresh();
 $modx - > cacheManager - > refresh(array(
     'context_settings' => array('contexts' => array('web', 'web2'))
     );
-
 ```
 
  The second parameter, `$results`, is passed by reference and will contain the results of each of the cache partitions. Depending on the partition, this can be a boolean or an array with more information from the result of refreshing the specific partition. The function itself returns a boolean indicating if any of the partitions returned a boolean false.
@@ -98,7 +96,6 @@ $str = 'My test cached data.';
 $modx->cacheManager->set('testdata', $str, 7200);
 // Gets the data from cache again. Returns null if cache is not available or expired.
 $str = $modx->cacheManager->get('testdata');
-
 ```
 
 ### Example 2: Setting & Getting to a custom partition
@@ -112,7 +109,6 @@ $options = array(
 $modx->cacheManager->set('testdata', $str, 7200, $options);
 // Gets the data from cache again. Returns null if cache is not available or expired.
 $str = $modx->cacheManager->get('testdata', $options);
-
 ```
 
 ## Note on Revolution 2.0
@@ -133,5 +129,4 @@ $modx->cacheManager->clearCache($paths, $options);
 $paths = array('');
 $options = array('objects' => '*', 'publishing' => true, 'extensions' => array('.php'));
 $modx->cacheManager->clearCache($paths, $options);
-
 ```

@@ -16,7 +16,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  ``` php 
 array toPlaceholders (array|object  $subject, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])
-
 ```
 
 ## Example
@@ -28,7 +27,6 @@ $modx->toPlaceholders(array(
   'name' => 'John',
   'email' => 'jdoe@gmail.com',
 ),'my');
-
 ```
 
 ## Example with Nested Placeholders
@@ -39,7 +37,6 @@ $modx->toPlaceholders(array(
 $modx->toPlaceholders(array(
   'document' => array('pagetitle' => 'My Page')
 ));
-
 ```
 
  Corresponds to placeholders such as \[\[+document.pagetitle\]\]
@@ -53,7 +50,6 @@ $modx->toPlaceholders(
     'document' => array('pagetitle' => 'My Page')
   ), 'tmp'
 );
-
 ```
 
  Would have placeholders such as \[\[+tmp.test\]\] and \[\[+tmp.document.pagetitle\]\]

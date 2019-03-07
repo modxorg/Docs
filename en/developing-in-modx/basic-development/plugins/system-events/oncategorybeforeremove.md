@@ -13,8 +13,8 @@ Group: Categories
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name     | Description                            |
+| -------- | -------------------------------------- |
 | category | A reference to the modCategory object. |
 
 ## See Also

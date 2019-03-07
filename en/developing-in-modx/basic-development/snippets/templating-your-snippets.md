@@ -8,11 +8,12 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/templating-your-sni
 
 One of the best practices in Snippet design is to make sure that you never write HTML directly in the Snippet, but template out the HTML into Chunks. This tutorial shows you how to do that in a Snippet.
 
-- [Templating Snippets](#TemplatingYourSnippets-TemplatingSnippets)
-  - [Our Initial Snippet](#TemplatingYourSnippets-OurInitialSnippet)
-  - [Templating the Snippet](#TemplatingYourSnippets-TemplatingtheSnippet)
-  - [Adding A Row Class](#TemplatingYourSnippets-AddingARowClass)
-  - [Passing a Custom ID](#TemplatingYourSnippets-PassingaCustomID)
+- [Templating Snippets](#templating-snippets)
+  - [Our Initial Snippet](#our-initial-snippet)
+  - [Templating the Snippet](#templating-the-snippet)
+  - [Adding A Row Class](#adding-a-row-class)
+  - [Passing a Custom ID](#passing-a-custom-id)
+- [See Also](#see-also)
 
 
 

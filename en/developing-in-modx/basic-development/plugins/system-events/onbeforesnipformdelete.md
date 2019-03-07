@@ -13,10 +13,10 @@ Group: Snippets
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name    | Description                           |
+| ------- | ------------------------------------- |
 | snippet | A reference to the modSnippet object. |
-| id | The ID of the Snippet. |
+| id      | The ID of the Snippet.                |
 
 ## See Also
 

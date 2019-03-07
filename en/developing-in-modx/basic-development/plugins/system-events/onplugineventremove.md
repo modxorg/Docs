@@ -13,9 +13,9 @@ Group: None
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| id | The id of the modPluginEvent object |
+| Name        | Description                              |
+| ----------- | ---------------------------------------- |
+| id          | The id of the modPluginEvent object      |
 | pluginEvent | A reference to the modPluginEvent object |
 
 ## See Also

@@ -13,13 +13,13 @@ Group: None
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| response\_code | The response code to send. Defaults to "HTTP/1.1 401 Unauthorized" |
-| error\_type | The type. Defaults to 401. |
-| error\_header | The header being sent: Defaults to "HTTP/1.1 401 Unauthorized" |
-| error\_pagetitle | The pagetitle of the unauthorized page. |
-| error\_message | The message being sent in the unauthorized page. |
+| Name             | Description                                                        |
+| ---------------- | ------------------------------------------------------------------ |
+| response\_code   | The response code to send. Defaults to "HTTP/1.1 401 Unauthorized" |
+| error\_type      | The type. Defaults to 401.                                         |
+| error\_header    | The header being sent: Defaults to "HTTP/1.1 401 Unauthorized"     |
+| error\_pagetitle | The pagetitle of the unauthorized page.                            |
+| error\_message   | The message being sent in the unauthorized page.                   |
 
 ## See Also
 

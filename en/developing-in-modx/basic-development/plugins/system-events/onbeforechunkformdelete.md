@@ -13,10 +13,10 @@ Group: Chunks
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name  | Description                         |
+| ----- | ----------------------------------- |
 | chunk | A reference to the modChunk object. |
-| id | The ID of the Chunk. |
+| id    | The ID of the Chunk.                |
 
 ## See Also
 

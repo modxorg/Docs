@@ -13,11 +13,11 @@ Group: Snippets
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| mode | Either 'upd' or 'new', depending on the circumstance. |
-| snippet | A reference to the modSnippet object. |
-| id | The ID of the Snippet. Will be 0 for new Snippets. |
+| Name    | Description                                           |
+| ------- | ----------------------------------------------------- |
+| mode    | Either 'upd' or 'new', depending on the circumstance. |
+| snippet | A reference to the modSnippet object.                 |
+| id      | The ID of the Snippet. Will be 0 for new Snippets.    |
 
 ## See Also
 

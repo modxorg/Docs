@@ -14,7 +14,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  ``` php 
 void regClientStartupScript (string $src, [boolean $plaintext = false])
-
 ```
 
 ## Example
@@ -23,17 +22,14 @@ void regClientStartupScript (string $src, [boolean $plaintext = false])
 
  ``` php 
 $modx->regClientStartupScript('assets/js/onload.js');
-
 ```
 
 ``` php 
 $modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
-
 ```
 
 ``` php 
 $modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
-
 ```
 
 ## See Also

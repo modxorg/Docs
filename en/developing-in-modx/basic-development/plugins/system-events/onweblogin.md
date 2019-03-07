@@ -13,13 +13,13 @@ Group: None
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| user | A reference to the modUser object. |
-| attributes | An array of: - rememberme - Boolean set if user wants password to be remembered.
-- lifetime - The session cookie lifetime for this login.
-- loginContext - The context key this login is occurring in.
-- addContexts - Additional contexts in which the login is also occuring in. |
+| Name         | Description                                                                      |
+| ------------ | -------------------------------------------------------------------------------- |
+| user         | A reference to the modUser object.                                               |
+| attributes   | An array of: - rememberme - Boolean set if user wants password to be remembered. |
+| lifetime     | The session cookie lifetime for this login.                                      |
+| loginContext | The context key this login is occurring in.                                      |
+| addContexts  | Additional contexts in which the login is also occuring in.                      |
 
 ## Event Login Workflow
 

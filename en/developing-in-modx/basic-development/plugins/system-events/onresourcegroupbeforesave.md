@@ -13,8 +13,8 @@ Group: modResourceGroup
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name  | Description                                 |
+| ----- | ------------------------------------------- |
 | group | A reference to the modResourceGroup object. |
 
 ## See Also

@@ -13,11 +13,11 @@ Group: Documents
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| mode | Either 'new' or 'upd', depending on the circumstance. |
+| Name     | Description                                                            |
+| -------- | ---------------------------------------------------------------------- |
+| mode     | Either 'new' or 'upd', depending on the circumstance.                  |
 | resource | A reference to the modResource object. Will be null for new Resources. |
-| id | The ID of the Resource. Will be 0 for new Resources. |
+| id       | The ID of the Resource. Will be 0 for new Resources.                   |
 
 ## See Also
 

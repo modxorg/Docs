@@ -4,37 +4,37 @@ _old_id: "372"
 _old_uri: "2.x/developing-in-modx/advanced-development/modx-services/modregistry"
 ---
 
-- [What is modRegistry?](#modRegistry-WhatismodRegistry%3F)
-- [Choosing a modRegister implementation](#modRegistry-ChoosingamodRegisterimplementation)
-  - [modFileRegister](#modRegistry-modFileRegister)
-  - [modDbRegister](#modRegistry-modDbRegister)
-- [Using the Registry API](#modRegistry-UsingtheRegistryAPI)
-  - [Connecting](#modRegistry-Connecting)
-  - [Subscribing](#modRegistry-Subscribing)
-  - [Sending Messages](#modRegistry-SendingMessages)
-      - [Sending an Array of Sequenced Messages](#modRegistry-SendinganArrayofSequencedMessages)
-      - [Sending an Array of Named Messages](#modRegistry-SendinganArrayofNamedMessages)
-      - [Sending a Single Message](#modRegistry-SendingaSingleMessage)
-      - [Options for Sending Messages](#modRegistry-OptionsforSendingMessages)
-            - [delay](#modRegistry-delay)
-            - [ttl](#modRegistry-ttl)
-            - [kill](#modRegistry-kill)
-  - [Reading Messages](#modRegistry-ReadingMessages)
-      - [Polling for New Messages in a Topic](#modRegistry-PollingforNewMessagesinaTopic)
-      - [Options for Reading Messages](#modRegistry-OptionsforReadingMessages)
-            - [poll\_limit](#modRegistry-polllimit)
-            - [poll\_interval](#modRegistry-pollinterval)
-            - [time\_limit](#modRegistry-timelimit)
-            - [msg\_limit](#modRegistry-msglimit)
-            - [remove\_read](#modRegistry-removeread)
-            - [include\_keys _(MODX 2.2+ only)_](#modRegistry-includekeys%28MODX2.2only%29)
-- [Using the Registry Processors](#modRegistry-UsingtheRegistryProcessors)
-  - [Sending Messages](#modRegistry-SendingMessages)
-  - [Reading Messages](#modRegistry-ReadingMessages)
-- [Examples](#modRegistry-Examples)
-  - [Alternative to Session Storage](#modRegistry-AlternativetoSessionStorage)
-  - [Capturing Log Messages](#modRegistry-CapturingLogMessages)
-  - [Registering Load Balanced Web Nodes for Remote Commands](#modRegistry-RegisteringLoadBalancedWebNodesforRemoteCommands)
+- [What is modRegistry?](#what-is-modregistry)
+- [Choosing a modRegister implementation](#choosing-a-modregister-implementation)
+  - [modFileRegister](#modfileregister)
+  - [modDbRegister](#moddbregister)
+- [Using the Registry API](#using-the-registry-api)
+  - [Connecting](#connecting)
+  - [Subscribing](#subscribing)
+  - [Sending Messages](#sending-messages)
+    - [Sending an Array of Sequenced Messages](#sending-an-array-of-sequenced-messages)
+    - [Sending an Array of Named Messages](#sending-an-array-of-named-messages)
+    - [Sending a Single Message](#sending-a-single-message)
+    - [Options for Sending Messages](#options-for-sending-messages)
+      - [delay](#delay)
+      - [ttl](#ttl)
+      - [kill](#kill)
+  - [Reading Messages](#reading-messages)
+    - [Polling for New Messages in a Topic](#polling-for-new-messages-in-a-topic)
+    - [Options for Reading Messages](#options-for-reading-messages)
+      - [poll\_limit](#polllimit)
+      - [poll\_interval](#pollinterval)
+      - [time\_limit](#timelimit)
+      - [msg\_limit](#msglimit)
+      - [remove\_read](#removeread)
+      - [include\_keys _(MODX 2.2+ only)_](#includekeys-modx-22-only)
+- [Using the Registry Processors](#using-the-registry-processors)
+  - [Sending Messages](#sending-messages-1)
+  - [Reading Messages](#reading-messages-1)
+- [Examples](#examples)
+  - [Alternative to Session Storage](#alternative-to-session-storage)
+  - [Capturing Log Messages](#capturing-log-messages)
+  - [Registering Load Balanced Web Nodes for Remote Commands](#registering-load-balanced-web-nodes-for-remote-commands)
 
 
 
@@ -58,7 +58,6 @@ Here is how you would add a specific file-based register named _food_:
 <?php
 $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('food', 'registry.modFileRegister', array('directory' => 'food'));
-
 ```
 
 **Be Careful!** 
@@ -74,7 +73,6 @@ Here is how you would add a specific database register named _food_:
 <?php
 $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('food', 'registry.modDbRegister', array('directory' => 'food'));
-
 ```
 
 ## Using the Registry API
@@ -88,7 +86,6 @@ Once you have obtained the modRegistry and initialized a modRegister implementat
 ``` php 
 <?php
 $connected = $modx->registry->food->connect();
-
 ```
 
 If there is any problem connecting to the register instance, the return value will be `false`.
@@ -100,7 +97,6 @@ Once you make a successful connection, it is time to subscribe to a topic for re
 ``` php 
 <?php
 $modx->registry->food->subscribe("/beer/");
-
 ```
 
 This adds the topic "/beer/" to your subscriptions and sets it as the current topic. Topics are similar to relative URI's. If you specify a slash at the beginning, you are subscribing to a topic from the root of the register. No initial slash would indicate you want to subscribe to a sub-topic of the current topic. Once subscribed to at least one topic, you are free to send and read messages from them at will.
@@ -116,7 +112,6 @@ Let's say we wanted to send three messages that should be read in the same order
 ``` php 
 <?php
 $modx->registry->food->send("/beer/", array("beer1", "beer2", "beer3"));
-
 ```
 
 #### Sending an Array of Named Messages
@@ -126,7 +121,6 @@ You can also provide an associative array to send messages with specific keys th
 ``` php 
 <?php
 $modx->registry->food->send("/beer/", array("Heineken" => "not so good", "Pabst Blue Ribbon" => "rocks", "Molson Golden" => "ok for Canadian beer"));
-
 ```
 
 These messages will be read in ascending alphabetic order, or specifically by key.
@@ -138,7 +132,6 @@ Sometimes it is necessary to send a single message without a specific key. The M
 ``` php 
 <?php
 $modx->registry->food->send("/beer/", "It's Miller Time!", array('kill' => true));
-
 ```
 
 The _kill_ option tells message consumers to stop reading any further messages once a message with this option is read.
@@ -171,7 +164,6 @@ $msgs = $modx->registry->food->read(array(
     'poll_limit' => 1,
     'msg_limit' => 5
 ));
-
 ```
 
 This returns an array of the messages sent to the queue in the order they are read, without the corresponding message keys, regardless if they were specified when sent.
@@ -250,7 +242,6 @@ $modx->registry->login->subscribe('/useractivation/');
 $modx->registry->login->send('/useractivation/',array($user->get('username') => $pword),array(
     'ttl' => ($modx->getOption('activationttl',$scriptProperties,180)*60),
 ));
-
 ```
 
 And to retrieve the specific message later:
@@ -263,7 +254,6 @@ $modx->registry->login->connect();
 $modx->registry->login->subscribe('/useractivation/'.$user->get('username'));
 $msgs = $modx->registry->login->read(array('poll_limit' => 1));
 $password = reset($msgs);
-
 ```
 
 ### Capturing Log Messages
@@ -284,7 +274,6 @@ $oldTarget = $modx->setLogTarget($modx->registry->logging);
 
 /* set the old target back */
 $modx->setLogTarget($oldTarget);
-
 ```
 
 ### Registering Load Balanced Web Nodes for Remote Commands
@@ -325,7 +314,6 @@ if (!empty($instance) && $modx->getService('registry', 'registry.modRegistry')) 
         }
     }
 }
-
 ```
 
 And here is an example sendclearcache plugin for registering a remote command message to each remote server instance:
@@ -348,7 +336,6 @@ if ($modx->getService('registry', 'registry.modRegistry')) {
         }
     }
 }
-
 ```
 
 Other remote commands could also be sent and processed in this way. You would simply implement handling for additional commands in the switch statement in the RemoteCommands plugin.

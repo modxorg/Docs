@@ -4,14 +4,14 @@ _old_id: "1058"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel"
 ---
 
-- [MODx.FormPanel](#MODx.FormPanel-MODx.FormPanel)
-- [Unique Parameters](#MODx.FormPanel-UniqueParameters)
-- [Custom Events](#MODx.FormPanel-CustomEvents)
-- [Other Unique Functions](#MODx.FormPanel-OtherUniqueFunctions)
-  - [Drop Area Fields](#MODx.FormPanel-DropAreaFields)
-  - [Automatic Dirty-Field Handling](#MODx.FormPanel-AutomaticDirtyFieldHandling)
-  - [Field Manipulation](#MODx.FormPanel-FieldManipulation)
-- [See Also](#MODx.FormPanel-SeeAlso)
+- [MODx.FormPanel](#modxformpanel)
+- [Unique Parameters](#unique-parameters)
+- [Custom Events](#custom-events)
+- [Other Unique Functions](#other-unique-functions)
+    - [Drop Area Fields](#drop-area-fields)
+    - [Automatic Dirty-Field Handling](#automatic-dirty-field-handling)
+    - [Field Manipulation](#field-manipulation)
+- [See Also](#see-also)
 
 
 
@@ -31,20 +31,20 @@ They also automatically integrate into the MODX connector structure. All you mus
 
 MODx.FormPanel adds a few unique parameters not found in typical Ext.FormPanel objects:
 
-| Name | Description | Default |
-|------|-------------|---------|
-| saveMsg | The message to show in the modal wait dialog when saving. | Saving... |
-| allowDrop | Allow items from a tree to be dropped in this form. | true |
-| useLoadingMask | Set to true to use a loading mask when loading form values. | false |
-| onDirtyForm | A form ID to check against when checking dirty status for the form. Defaults to the form. | this.getForm() |
+| Name           | Description                                                                               | Default        |
+| -------------- | ----------------------------------------------------------------------------------------- | -------------- |
+| saveMsg        | The message to show in the modal wait dialog when saving.                                 | Saving...      |
+| allowDrop      | Allow items from a tree to be dropped in this form.                                       | true           |
+| useLoadingMask | Set to true to use a loading mask when loading form values.                               | false          |
+| onDirtyForm    | A form ID to check against when checking dirty status for the form. Defaults to the form. | this.getForm() |
 
 ## Custom Events
 
 MODx.FormPanel adds a few extra events not found in Ext.FormPanel objects:
 
-| Name | Description |
-|------|-------------|
-| beforeSubmit | Fires before a submission of the form, with 3 parameters: - form - The Ext.form.BasicForm object attached to this FormPanel
+| Name         | Description                                                                                                                 |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| beforeSubmit | Fires before a submission of the form, with 3 parameters: - form - The Ext.form.BasicForm object attached to this FormPanel |
 - options - Any options passed to the submit() call
 - config - The FormPanel config object |
 | failure | Fires on a form failure or failure response from a processor, with 4 parameters: - result - The response object sent from the processor

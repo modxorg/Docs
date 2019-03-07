@@ -13,8 +13,8 @@ Group: modContext
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name    | Description                           |
+| ------- | ------------------------------------- |
 | context | A reference to the modContext object. |
 
 ## See Also

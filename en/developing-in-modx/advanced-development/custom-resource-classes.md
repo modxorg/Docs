@@ -6,11 +6,11 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes"
 
 Custom Resource Classes are available in MODX 2.2 and later only. 
 
-- [What is a Custom Resource Class?](#CustomResourceClasses-WhatisaCustomResourceClass%3F)
-  - [When to Use](#CustomResourceClasses-WhentoUse)
-  - [When Not to Use](#CustomResourceClasses-WhenNottoUse)
-- [Usage](#CustomResourceClasses-Usage)
-- [Creating a CRC](#CustomResourceClasses-CreatingaCRC)
+- [What is a Custom Resource Class?](#what-is-a-custom-resource-class)
+  - [When to Use](#when-to-use)
+  - [When Not to Use](#when-not-to-use)
+- [Usage](#usage)
+- [Creating a CRC](#creating-a-crc)
 
 
 

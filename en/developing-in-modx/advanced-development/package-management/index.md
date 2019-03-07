@@ -8,11 +8,11 @@ MODX Revolution introduces what are called [Transport Packages](developing-in-mo
 
 Revolution also has [Providers](developing-in-modx/advanced-development/package-management/providers "Providers"), which are download locations that allow for downloading packages straight from within the MODx manager itself.
 
-- [Downloading Packages](#PackageManagement-DownloadingPackages)
-- [Installing Packages](#PackageManagement-InstallingPackages)
-- [Updating Packages](#PackageManagement-UpdatingPackages)
-- [Uninstalling Packages](#PackageManagement-UninstallingPackages)
-- [See Also](#PackageManagement-SeeAlso)
+- [Downloading Packages](#downloading-packages)
+- [Installing Packages](#installing-packages)
+- [Updating Packages](#updating-packages)
+- [Uninstalling Packages](#uninstalling-packages)
+- [See Also](#see-also)
 
 
 

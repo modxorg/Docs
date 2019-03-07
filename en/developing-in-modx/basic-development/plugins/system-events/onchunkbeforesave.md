@@ -13,8 +13,8 @@ Group: modChunk
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name  | Description                         |
+| ----- | ----------------------------------- |
 | chunk | A reference to the modChunk object. |
 
 ## See Also

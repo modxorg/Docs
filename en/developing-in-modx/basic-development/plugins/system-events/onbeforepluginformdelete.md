@@ -13,10 +13,10 @@ Group: Plugins
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name   | Description                          |
+| ------ | ------------------------------------ |
 | plugin | A reference to the modPlugin object. |
-| id | The ID of the Plugin. |
+| id     | The ID of the Plugin.                |
 
 ## See Also
 

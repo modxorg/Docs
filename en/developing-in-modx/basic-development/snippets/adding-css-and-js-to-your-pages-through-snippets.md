@@ -23,14 +23,12 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/adding-css-and-js-t
 
  ``` php 
 $modx->regClientCSS('assets/css/my-custom.css');
-
 ```
 
  Or, more correctly, you would use the **MODX\_ASSETS\_URL** constant so your Snippet or plugin would work even on a site that was configured to use a non-standard assets location.
 
  ``` php 
 $modx->regClientCSS(MODX_ASSETS_URL.'css/my-custom.css');
-
 ```
 
 ### regClientStartupScript
@@ -39,17 +37,14 @@ $modx->regClientCSS(MODX_ASSETS_URL.'css/my-custom.css');
 
  ``` php 
 $modx->regClientStartupScript('assets/js/site.js');
-
 ```
 
  ``` php 
 $modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
-
 ```
 
  ``` php 
 $modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
-
 ```
 
 ### regClientStartupHTMLBlock
@@ -62,7 +57,6 @@ $modx->regClientStartupHTMLBlock('
 <script type="text/javascript">
 var myCustomJSVar = 123;
 </script>');
-
 ```
 
 ## Adding Before the BODY End
@@ -75,17 +69,14 @@ var myCustomJSVar = 123;
 
  ``` php 
 $modx->regClientScript('assets/js/footer.js');
-
 ```
 
  ``` php 
 $modx->regClientScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
-
 ```
 
  ``` php 
 $modx->regClientScript('http://code.jquery.com/jquery-latest.min.js');
-
 ```
 
 ### regClientHTMLBlock
@@ -98,7 +89,6 @@ $modx->regClientHTMLBlock('
 <script type="text/javascript">
 runAnalytics();
 </script>');
-
 ```
 
 ## Conclusion

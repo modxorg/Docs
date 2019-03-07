@@ -14,7 +14,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  ``` php 
 boolean isMember (mixed $groups)
-
 ```
 
 ## Example
@@ -23,28 +22,24 @@ boolean isMember (mixed $groups)
 
  ``` php 
 $user = $modx->getObject('modUser', array('username' => 'boss'));
-
 ```
 
  See if the User is a member of the 'Staff' user group:
 
  ``` php 
 $user->isMember('Staff');
-
 ```
 
  See if the User is a member of EITHER the 'Staff' or 'Investors' user group.
 
  ``` php 
 $user->isMember(array('Staff','Investors'));
-
 ```
 
  See if the User is a member of BOTH the 'Staff' and 'Investors' user group.
 
  ``` php 
 $user->isMember(array('Staff','Investors'), true);
-
 ```
 
 ## See Also

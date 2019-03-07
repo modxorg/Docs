@@ -13,8 +13,8 @@ Group: modPlugin
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name   | Description                          |
+| ------ | ------------------------------------ |
 | plugin | A reference to the modPlugin object. |
 
 ## See Also

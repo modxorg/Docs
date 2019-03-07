@@ -13,10 +13,10 @@ Group: Documents
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| ids | An array of Resource IDs that were attempted to be permanently deleted. |
-| num\_deleted | The number of Resources actually deleted. |
+| Name         | Description                                                             |
+| ------------ | ----------------------------------------------------------------------- |
+| ids          | An array of Resource IDs that were attempted to be permanently deleted. |
+| num\_deleted | The number of Resources actually deleted.                               |
 
 ## See Also
 

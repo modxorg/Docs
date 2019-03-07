@@ -13,10 +13,10 @@ Group: Template Variables
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| tv | A reference to the modTemplateVar object. |
-| id | The ID of the TV. |
+| Name | Description                               |
+| ---- | ----------------------------------------- |
+| tv   | A reference to the modTemplateVar object. |
+| id   | The ID of the TV.                         |
 
 ## See Also
 

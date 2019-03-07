@@ -4,25 +4,25 @@ _old_id: "96"
 _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introduction"
 ---
 
-- [What is MODX?](#DeveloperIntroduction-WhatisMODx%3F)
-- [What is MVC?](#DeveloperIntroduction-WhatisMVC%3F)
-  - [What is MVC²?](#DeveloperIntroduction-WhatisMVC%C2%B2%3F)
-  - [Connector/Processor Relationships](#DeveloperIntroduction-Connector%2FProcessorRelationships)
-- [What is xPDO?](#DeveloperIntroduction-WhatisxPDO%3F)
-- [What is an ORM?](#DeveloperIntroduction-WhatisanORM%3F)
-- [A Brief Overview of Revolution](#DeveloperIntroduction-ABriefOverviewofRevolution)
-  - [The Model](#DeveloperIntroduction-TheModel)
-  - [The View](#DeveloperIntroduction-TheView)
-      - [In the front-end, they are Templates, Chunks and Resources.](#DeveloperIntroduction-Inthefrontend%2CtheyareTemplates%2CChunksandResources.)
-            - [Templates](#DeveloperIntroduction-Templates)
-            - [Chunks](#DeveloperIntroduction-Chunks)
-            - [Resources](#DeveloperIntroduction-Resources)
-      - [In the Manager](#DeveloperIntroduction-IntheManager)
-  - [The Controller](#DeveloperIntroduction-TheController)
-      - [Snippets](#DeveloperIntroduction-Snippets)
-      - [Plugins](#DeveloperIntroduction-Plugins)
-  - [The 2nd C: The Connectors](#DeveloperIntroduction-The2ndC%3ATheConnectors)
-- [See Also](#DeveloperIntroduction-SeeAlso)
+- [What is MODX?](#what-is-modx)
+- [What is MVC?](#what-is-mvc)
+  - [What is MVC²?](#what-is-mvc%C2%B2)
+  - [Connector/Processor Relationships](#connectorprocessor-relationships)
+- [What is xPDO?](#what-is-xpdo)
+- [What is an ORM?](#what-is-an-orm)
+- [A Brief Overview of Revolution](#a-brief-overview-of-revolution)
+  - [The Model](#the-model)
+  - [The View](#the-view)
+    - [In the front-end, they are Templates, Chunks and Resources.](#in-the-front-end-they-are-templates-chunks-and-resources)
+      - [Templates](#templates)
+      - [Chunks](#chunks)
+      - [Resources](#resources)
+    - [In the Manager](#in-the-manager)
+  - [The Controller](#the-controller)
+    - [Snippets](#snippets)
+    - [Plugins](#plugins)
+  - [The 2nd C: The Connectors](#the-2nd-c-the-connectors)
+- [See Also](#see-also)
 
 
 
@@ -115,7 +115,6 @@ Connectors allow for dynamic, secure JSON requests (and eventually REST-based re
 ## See Also
 
 1. [Getting Started Developing](developing-in-modx/overview-of-modx-development/developer-introduction/getting-started-developing)
-
-- [xPDO](/display/xPDO20/Home "Home"), the database layer for Revolution
-- [Explanation of Directory Structure](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure "Explanation of Directory Structure")
-- [Glossary of Revolution Terms](getting-started/an-overview-of-modx/glossary-of-revolution-terms "Glossary of Revolution Terms")
+2. [xPDO](/display/xPDO20/Home "Home"), the database layer for Revolution
+3. [Explanation of Directory Structure](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure "Explanation of Directory Structure")
+4. [Glossary of Revolution Terms](getting-started/an-overview-of-modx/glossary-of-revolution-terms "Glossary of Revolution Terms")

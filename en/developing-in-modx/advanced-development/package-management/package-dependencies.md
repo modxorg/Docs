@@ -45,10 +45,10 @@ Keep in mind that these package dependencies only work in MODX 2.4 and up. If yo
 
 There are different ways of specifying the version numbers that each carry different meaning. You can also add multiple constraints by separating them with a comma.
 
-| Token | What it does | Example version string |
-|-------|--------------|------------------------|
-| ~ | Requires at least the specified version, up to the next significant version | ~1.0 translates to >=1.0,<2.0
-~1.3.0 translates to >=1.3.0,<1.4.0 |
-| n.\* | Wildcard for a specific part of the version string | 1.\* translates to >=1.0,<2.0 |
-| <, >, ! | At least that version, at most that version, or not that version |  |
-| \* | Anything goes |  |
+| Token                               | What it does                                                                | Example version string        |
+| ----------------------------------- | --------------------------------------------------------------------------- | ----------------------------- |
+| ~                                   | Requires at least the specified version, up to the next significant version | ~1.0 translates to >=1.0,<2.0 |
+| ~1.3.0 translates to >=1.3.0,<1.4.0 |
+| n.\*                                | Wildcard for a specific part of the version string                          | 1.\* translates to >=1.0,<2.0 |
+| <, >, !                             | At least that version, at most that version, or not that version            |                               |
+| \*                                  | Anything goes                                                               |                               |

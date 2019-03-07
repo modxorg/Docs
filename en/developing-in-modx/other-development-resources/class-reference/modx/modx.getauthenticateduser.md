@@ -13,9 +13,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getAuthenticatedUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getAuthenticatedUser())
 
  ``` php 
-
 unknown getAuthenticatedUser ([string $contextKey = ''])
-
 ```
 
 ## Example
@@ -23,9 +21,7 @@ unknown getAuthenticatedUser ([string $contextKey = ''])
  Get the authenticated user for the 'sports' context:
 
  ``` php 
-
 $user = $modx->getAuthenticatedUser('sports');
-
 ```
 
 ## See Also

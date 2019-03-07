@@ -15,7 +15,6 @@ $modx->getService('twitter','myTwitter','/path/to/twitter/model/',array(
   'api_key' => 3212423,
 ));  
 $modx->twitter->tweet('Success!');  
-
 ```
 
 ## What are the Default Included Services?

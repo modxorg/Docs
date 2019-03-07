@@ -4,9 +4,9 @@ _old_id: "247"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/providers"
 ---
 
-- [What is a Transport Provider?](#Providers-WhatisaTransportProvider%3F)
-- [Usage](#Providers-Usage)
-- [Related Pages](#Providers-RelatedPages)
+- [What is a Transport Provider?](#what-is-a-transport-provider)
+- [Usage](#usage)
+- [Related Pages](#related-pages)
 
 
 

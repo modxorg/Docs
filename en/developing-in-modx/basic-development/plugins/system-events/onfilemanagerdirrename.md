@@ -13,10 +13,10 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 
 ## Event Parameters
 
- | Name | Description |
-|------|-------------|
-| directory | Contains the full path to the renamed directory. |
-| source | Contains mediasource object. |
+ | Name      | Description                                      |
+ | --------- | ------------------------------------------------ |
+ | directory | Contains the full path to the renamed directory. |
+ | source    | Contains mediasource object.                     |
 
 ## See Also
 
