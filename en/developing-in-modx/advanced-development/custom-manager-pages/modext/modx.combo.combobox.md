@@ -21,11 +21,11 @@ One unique feature of the MODx ComboBox class is the built-in renderer for grids
 
 The unique parameters for the class are simply pass-thru parameters to the data store for the combo:
 
-| Name | Description | Default |
-|------|-------------|---------|
-| url | The URL to the connector. |  |
-| baseParams | Any other parameters to always send to the connector. | {} |
-| fields | The fields, in array format, you expect from the connector response. | \[\] |
+| Name       | Description                                                          | Default |
+| ---------- | -------------------------------------------------------------------- | ------- |
+| url        | The URL to the connector.                                            |         |
+| baseParams | Any other parameters to always send to the connector.                | {}      |
+| fields     | The fields, in array format, you expect from the connector response. | \[\]    |
 
 The class also inherits all [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox) properties.
 
@@ -33,7 +33,7 @@ The class also inherits all [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.
 
 MODx.combo.ComboBox also comes with a built-in renderer for usage in grids. To use in, in your grid's column model defintion, simply specify renderer: true in the editor definition, like so:
 
-``` php 
+``` js 
 {
   header: _('usergroup')
   ,dataIndex: 'usergroup'
@@ -44,7 +44,8 @@ MODx.combo.ComboBox also comes with a built-in renderer for usage in grids. To u
 
 An example of a local data combo box would be:
 
-**Units Combo Box**``` php 
+**Units Combo Box**
+``` js 
 Doodles.combo.Units = function(config) {
     config = config || {};
     Ext.applyIf(config,{
@@ -75,7 +76,8 @@ Ext.reg('doodle-combo-units',Doodles.combo.Units);
 
 And to view that combo box:
 
-**Combo Call From Grid**``` php 
+**Combo Call From Grid**
+``` js 
        {
             header: _('unit')
             ,dataIndex: 'unit'
@@ -85,7 +87,8 @@ And to view that combo box:
         }
 ```
 
-**Combo Call From Window**``` php 
+**Combo Call From Window**
+``` js 
        {
             xtype: 'doodle-combo-units'
             ,fieldLabel: _('unit')

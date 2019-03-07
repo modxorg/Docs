@@ -4,16 +4,16 @@ _old_id: "308"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/transport-packages"
 ---
 
-- [What is a Transport Package?](#TransportPackages-WhatisaTransportPackage%3F)
-  - [The Internals of a Transport Package](#TransportPackages-TheInternalsofaTransportPackage)
-  - [The manifest.php file](#TransportPackages-Themanifest.phpfile)
-  - [Okay, what are these Vehicles?](#TransportPackages-Okay%2CwhataretheseVehicles%3F)
-      - [Inside a Vehicle's Source](#TransportPackages-InsideaVehicle%27sSource)
-- [Resolvers and Validators](#TransportPackages-ResolversandValidators)
-  - [A Validator](#TransportPackages-AValidator)
-  - [A Resolver](#TransportPackages-AResolver)
-- [Usage](#TransportPackages-Usage)
-- [Related Pages](#TransportPackages-RelatedPages)
+- [What is a Transport Package?](#what-is-a-transport-package)
+  - [The Internals of a Transport Package](#the-internals-of-a-transport-package)
+  - [The manifest.php file](#the-manifestphp-file)
+  - [Okay, what are these Vehicles?](#okay-what-are-these-vehicles)
+    - [Inside a Vehicle's Source](#inside-a-vehicles-source)
+- [Resolvers and Validators](#resolvers-and-validators)
+  - [A Validator](#a-validator)
+  - [A Resolver](#a-resolver)
+- [Usage](#usage)
+- [Related Pages](#related-pages)
 
 
 

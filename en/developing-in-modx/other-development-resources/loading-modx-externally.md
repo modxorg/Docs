@@ -14,7 +14,6 @@ require_once MODX_CORE_PATH.'model/modx/modx.class.php';
 $modx = new modX();
 $modx->initialize('web');
 $modx->getService('error','error.modError', '', '');
-
 ```
 
  This will initialize the MODx object into the 'web' [Context](administering-your-site/contexts "Contexts"). Now, if you want to access it under a different context (and thereby changing its access permissions, policies, etc), you'll just need to change 'web' to whatever [Context](administering-your-site/contexts "Contexts") you want to load. This also loads the MODX error handler as well.
@@ -35,7 +34,6 @@ if (!defined('MODX_CONFIG_KEY')) {
 require_once( MODX_CORE_PATH . 'model/modx/modx.class.php');
 $modx = new modX();
 $modx->initialize('mgr');
-
 ```
 
 ##  Deprecated Example 
@@ -49,7 +47,6 @@ define('MODX_API_MODE', true);
 // Full path to the index
 require_once('/path/to/modx/public_html/index.php');
 $modx->initialize('mgr');
-
 ```
 
 ##  See Also 

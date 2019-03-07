@@ -13,9 +13,9 @@ Group: Documents
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| ids | An array of Resource IDs that will be permanently deleted. |
+| Name | Description                                                |
+| ---- | ---------------------------------------------------------- |
+| ids  | An array of Resource IDs that will be permanently deleted. |
 
 ## See Also
 

@@ -68,7 +68,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 
  Create a new file core/components/namespace/index.class.php, with the following contents:
 
- ```
+ ``` php
 <?php
 /**
  * The abstract Manager Controller.
@@ -124,7 +124,6 @@ class IndexManagerController extends NamespaceManagerController {
         return 'home';
     }
 }
-
 ```
 
  So that's our base index controller. The IndexManagerController will be called when the menu item is loaded, which tells MODX to load the "home" controller by default. By passing an "action" url parameter to the page (either by adjusting the menu item "parameters" option, or by manually crafting that link) it will load a different controller instead.
@@ -137,7 +136,7 @@ class IndexManagerController extends NamespaceManagerController {
 
  Create a new file in core/components/namespace/controllers/home.class.php and give it the following contents:
 
- ```
+ ``` php
 <?php
 /**
  * The name of the controller is based on the action (home) and the
@@ -174,7 +173,6 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
         </script>');
     }
 }<br>
-
 ```
 
  We're just returning the HTML we want added to the page in the process function. Easy, right? Load the menu item now and your manager page should show up telling you that you're awesome.
@@ -193,7 +191,6 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
 
  ``` html 
 <h2 class="modx-page-header">{$foo}</h2>
-
 ```
 
  This would output a standard MODX Manager page header saying "Bar".

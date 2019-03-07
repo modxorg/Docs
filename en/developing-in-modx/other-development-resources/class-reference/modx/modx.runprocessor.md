@@ -21,7 +21,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  ``` php 
 mixed runProcessor(string $action = '', array $scriptProperties = array(), array $options = array())
-
 ```
 
 ## Example
@@ -37,8 +36,6 @@ $response = $modx->runProcessor('security/resourcegroup/create', array(
 	'access_parallel' => 1, // creates a new user group "Test" parallel to the resource group
 	'access_usergroups' => 'Editors', // adds access to the new resource group for the user group "Editors"
 ));
-
-
 ```
 
 ## See Also

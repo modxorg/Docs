@@ -16,7 +16,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  ``` php 
 boolean isMember (mixed $groups)
-
 ```
 
 ## Example
@@ -25,28 +24,24 @@ boolean isMember (mixed $groups)
 
  ``` php 
 $resource = $modx->getObject('modResource', array('id' => 2));
-
 ```
 
  See if the resource is a member of the 'Marketing' resource group:
 
  ``` php 
 $resource->isMember('Marketing');
-
 ```
 
  See if the resource is a member of EITHER the 'Marketing' or 'Finances' resource group.
 
  ``` php 
 $resource->isMember(array('Marketing', 'Finances'));
-
 ```
 
  See if the resource is a member of BOTH the 'Marketing' and 'Finances' resource group (by default it's enough to be in one resource group to get back true).
 
  ``` php 
 $resource->isMember(array('Marketing', 'Finances'), true);
-
 ```
 
 ## See Also

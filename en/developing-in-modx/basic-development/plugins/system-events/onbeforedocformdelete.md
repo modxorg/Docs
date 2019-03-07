@@ -13,10 +13,10 @@ Group: Documents
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| resource | A reference to the modResource object. |
-| id | The ID of the Resource. |
+| Name     | Description                                                              |
+| -------- | ------------------------------------------------------------------------ |
+| resource | A reference to the modResource object.                                   |
+| id       | The ID of the Resource.                                                  |
 | children | An array of IDs of children of this resource which will also be deleted. |
 
 ## See Also

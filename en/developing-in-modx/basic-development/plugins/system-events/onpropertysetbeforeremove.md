@@ -12,8 +12,8 @@ Service: 1 - Parser Service Events
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name        | Description                               |
+| ----------- | ----------------------------------------- |
 | propertySet | A reference to the modPropertySet object. |
 
 ## See Also

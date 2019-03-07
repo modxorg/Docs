@@ -13,11 +13,11 @@ Group: modContext
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| key | The key of the context. |
-| context | A reference to the modContext object. |
-| mode | Either 'upd' or 'new', depending on the situation. |
+| Name    | Description                                        |
+| ------- | -------------------------------------------------- |
+| key     | The key of the context.                            |
+| context | A reference to the modContext object.              |
+| mode    | Either 'upd' or 'new', depending on the situation. |
 
 ## See Also
 

@@ -13,10 +13,10 @@ Group: Templates
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name     | Description                            |
+| -------- | -------------------------------------- |
 | template | A reference to the modTemplate object. |
-| id | The ID of the Template. |
+| id       | The ID of the Template.                |
 
 ## See Also
 

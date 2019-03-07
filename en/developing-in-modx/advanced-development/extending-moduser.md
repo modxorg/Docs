@@ -4,24 +4,17 @@ _old_id: "355"
 _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 ---
 
-- [Intended Audience](#ExtendingmodUser-IntendedAudience)
-  - [See Also](#ExtendingmodUser-SeeAlso)
-- [Overview](#ExtendingmodUser-Overview)
-- [Purpose](#ExtendingmodUser-Purpose)
-- [The Rules](#ExtendingmodUser-TheRules)
-- [Steps to extending modUser](#ExtendingmodUser-StepstoextendingmodUser)
-  - [1. ) Create the schema and generate a model](#ExtendingmodUser-1.%29Createtheschemaandgenerateamodel)
-      - [Simple Example](#ExtendingmodUser-SimpleExample)
-      - [More Involved Example](#ExtendingmodUser-MoreInvolvedExample)
-  - [2.) Edit the extuser.class.php](#ExtendingmodUser-2.%29Edittheextuser.class.php)
-  - [3.) Create (or edit) _extension\_packages in System Settings_](#ExtendingmodUser-3.%29Create%28oredit%29extensionpackagesinSystemSettings)
-  - [4.) Final Step Create a class to access and utilize your extended class](#ExtendingmodUser-4.%29FinalStepCreateaclasstoaccessandutilizeyourextendedclass)
-      - [Simple Example](#ExtendingmodUser-SimpleExample)
-      - [More complex example](#ExtendingmodUser-Morecomplexexample)
-      - [5.) Accessing the class](#ExtendingmodUser-5.%29Accessingtheclass)
-- [Noteworthy items](#ExtendingmodUser-Noteworthyitems)
-- [Suggested additional considerations](#ExtendingmodUser-Suggestedadditionalconsiderations)
-- [Extended modUser Classes currently Available](#ExtendingmodUser-ExtendedmodUserClassescurrentlyAvailable)
+- [Intended Audience](#intended-audience)
+  - [See Also](#see-also)
+- [Overview](#overview)
+- [Purpose](#purpose)
+- [The Rules](#the-rules)
+- [Steps to extending modUser](#steps-to-extending-moduser)
+  - [1. ) Create the schema and generate a model](#1--create-the-schema-and-generate-a-model)
+    - [Simple Example](#simple-example)
+- [Suggested additional considerations](#suggested-additional-considerations)
+- [Extended modUser Classes currently Available](#extended-moduser-classes-currently-available)
+- [Modifying class\_key](#modifying-classkey)
 
 
 
@@ -79,7 +72,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
                 <aggregate alias="extUser" local="userdata_id" foreign="id" cardinality="one" owner="foreign" />
         </object>
  </model>
-
 ```
 
  Note that the extending of modUser class happens all within that single _object_ node. Also notice that we specify the prefix for our ancillary table in the _model_ node: **ext\_**
@@ -110,7 +102,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
         <aggregate alias="extUser" local="user" foreign="id" cardinality="one" owner="foreign" />
     </object>
 </model>
-
 ```
 
  You will need to parse and create the model map associated with this schema. As this process is out of the scope of this topic, please refer to [Using Custom Database Tables in your 3rd Party Components](case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components "Using Custom Database Tables in your 3rd Party Components") for further information.
@@ -134,7 +125,6 @@ class extUser extends modUser {
     }
 }
 ?>
-
 ```
 
 ###  3.) Create (or edit) _extension\_packages in System Settings_
@@ -145,7 +135,6 @@ class extUser extends modUser {
 
  ``` php 
 ,{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}}
-
 ```
 
  **If the key does not exists**
@@ -157,7 +146,6 @@ class extUser extends modUser {
  
 ``` php 
 [{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}}]
-    
 ```
 
 ### 4.) Final Step Create a class to access and utilize your extended class
@@ -174,7 +162,6 @@ $user = $modx->getObject('extUser', 123); // where 123 is the id of a user
 $data = $user->getOne('Data'); // use the alias from the schema
 // toArray will print all the extra data, e.g. facebook_url
 return print_r($data->toArray(), true);
-
 ```
 
 ####  More complex example 
@@ -236,7 +223,6 @@ if (!class_exists('Sampleclass')) {
         }
     }
 }
-
 ```
 
 ####  5.) Accessing the class 
@@ -251,7 +237,6 @@ if (!($x instanceof Extendeduser)) {
     $modx->event->output(true);
 }
 return;
-
 ```
 
 ##  Noteworthy items 
@@ -266,7 +251,6 @@ return;
 6. To get counts from your data (i.e. how many phone numbers does this person have) use either (any criteria can be added): ``` php 
   $this->modx->getCount('extPhones', array('user' => $this->userID));
   $this->modx->getCount('extPhones');
-      
   ```
 
  It is completely possible to have multiple extended modUser systems active at the same time. It would even be feasible to extend Jason Coward's rpx extension into a hybrid system utilizing the benefits of both systems. It is also completely possible to have multiple extended modUser applications running autonomously. This is simply done by following this process for each of your extensions, changing only the "class\_key" field to reflect the extended class belonging to each respective user.
@@ -300,7 +284,6 @@ return;
 // both of these work when class_key is "extUser":
 $User = $modx->getObject('modUser', 123);
 $User = $modx->getObject('extUser', 123);
-
 ```
 
  However, the aggregates or composite relationships depend on the _stored value_ of the class\_key.
@@ -314,5 +297,4 @@ $User->set('class_key', 'extUser');
 $User->save(); // now we can set related data
 $User->addOne($Data);
 $User->save(); // and now we can save related data
-
 ```

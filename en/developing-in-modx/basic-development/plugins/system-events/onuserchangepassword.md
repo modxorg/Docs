@@ -13,14 +13,14 @@ Group: None
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| user | A reference to the modUser object of the user. |
-| newpassword | The new password being set. |
-| oldpassword | The old password being overridden. |
-| userid | The user ID of the user. (deprecated) |
-| username | The username of the user. (deprecated) |
-| userpassword | The new password being set. (deprecated) |
+| Name         | Description                                    |
+| ------------ | ---------------------------------------------- |
+| user         | A reference to the modUser object of the user. |
+| newpassword  | The new password being set.                    |
+| oldpassword  | The old password being overridden.             |
+| userid       | The user ID of the user. (deprecated)          |
+| username     | The username of the user. (deprecated)         |
+| userpassword | The new password being set. (deprecated)       |
 
 ## See Also
 

@@ -13,9 +13,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendForward()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendForward())
 
  ``` php 
-
 void sendForward (integer $id, [string|array $options = null])
-
 ```
 
  $id is a Resource ID (you cannot sendForward to an URL - if you need to pass some value, use modX::setPlaceholder and call that on the target resource).
@@ -30,9 +28,7 @@ void sendForward (integer $id, [string|array $options = null])
  Send the user to Resource ID 234 without actually changing the URL.
 
  ``` php 
-
 $modx->sendForward(234);
-
 ```
 
 ## See Also

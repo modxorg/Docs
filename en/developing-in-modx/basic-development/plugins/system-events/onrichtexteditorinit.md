@@ -13,17 +13,17 @@ Group: Richtext Editor
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| editor | The specified editor that the user wants to use. |
-| elements | An array of elements to transform into an RTE. |
+| Name     | Description                                      |
+| -------- | ------------------------------------------------ |
+| editor   | The specified editor that the user wants to use. |
+| elements | An array of elements to transform into an RTE.   |
 
 Other properties might be passed, such as:
 
 | forfrontend | If passed, this will indicate to the plugin that this is to be loaded in a front-end context, not the manager. |
-|-------------|----------------------------------------------------------------------------------------------------------------|
-| width | The requested width of the RTE. |
-| height | The requested height of the RTE. |
+| ----------- | -------------------------------------------------------------------------------------------------------------- |
+| width       | The requested width of the RTE.                                                                                |
+| height      | The requested height of the RTE.                                                                               |
 
 ## See Also
 

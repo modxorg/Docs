@@ -13,8 +13,8 @@ Group: None
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name    | Description          |
+| ------- | -------------------- |
 | results | An array of results. |
 
 ## See Also

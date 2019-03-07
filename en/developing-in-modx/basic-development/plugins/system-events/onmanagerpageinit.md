@@ -13,18 +13,18 @@ Group: System
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name   | Description                                  |
+| ------ | -------------------------------------------- |
 | action | The ID of the action currently being loaded. |
 
 ## Remarks
 
-| Previous event | [OnHandleRequest](developing-in-modx/basic-development/plugins/system-events/onhandlerequest "OnHandleRequest") |
-|----------------|---------------------------------------------------------------------------------------------------------------------------------|
-| Next event | [OnBeforeManagerPageInit](developing-in-modx/basic-development/plugins/system-events/onbeforemanagerpageinit "OnBeforeManagerPageInit") |
-| File | [core/model/modx/modmanagerrequest.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagerrequest.class.php) |
-| Class | class modManagerRequest |
-| Method | public function handleRequest() |
+| Previous event | [OnHandleRequest](developing-in-modx/basic-development/plugins/system-events/onhandlerequest "OnHandleRequest")                              |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Next event     | [OnBeforeManagerPageInit](developing-in-modx/basic-development/plugins/system-events/onbeforemanagerpageinit "OnBeforeManagerPageInit")      |
+| File           | [core/model/modx/modmanagerrequest.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagerrequest.class.php) |
+| Class          | class modManagerRequest                                                                                                                      |
+| Method         | public function handleRequest()                                                                                                              |
 
 ## See Also
 

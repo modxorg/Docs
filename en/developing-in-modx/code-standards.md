@@ -110,43 +110,35 @@ _old_uri: "2.x/developing-in-modx/code-standards"
 
 
 ```
-
  **"XHTML 1.0 Transitional Doctype"** ``` php 
-
-
-
 ```
 
 ### Tags and Attributes
 
  All tags and attributes must be written in lowercase. Additionally, we prefer that any attribute values also be lowercase, when the purpose of the text therein is only to be interpreted by machines. For instances in which the data needs to be human readable, proper title capitalization should be followed, such as:
 
- **"For machines"** ``` php 
-
+ **"For machines"** 
+ ``` php 
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
 ```
 
- **"For humans"** ``` php 
-
+ **"For humans"** 
+ ``` php 
 <a href="http://example.com/" title="Description Goes Here">Example.com</a>
-
 ```
 
 ### Quotes
 
  In keeping with the strictness of XHTML code conventions, according to the W3C, all attributes must have a value, and must use double-quotes (source). The following are examples of proper and improper usage of quotes and attribute/value pairs.
 
- **"Correct"** ``` php 
-
+ **"Correct"** 
+ ``` php 
 <input type="text" name="email" disabled="disabled" />
-
 ```
 
- **"Incorrect"** ``` php 
-
+ **"Incorrect"** 
+ ``` php 
 <input type=text name=email disabled>
-
 ```
 
 ## CSS
@@ -167,37 +159,34 @@ _old_uri: "2.x/developing-in-modx/code-standards"
 
  To ease potential headaches for maintenance, we require that all CSS be written in a consistent manner. For one, all CSS selectors must be listed on their own line. As a general rule of thumb, if there is a comma in CSS, it should immediately be followed by a line break. This way, we know that all text on a single line is part of the same selector. Likewise, all property/value pairs must be on their own line, with one tab of indentation. The closing brace must be on the same level of indentation as the selector that began it - flush left.
 
- **"Correct"** ``` php 
-
+ **"Correct"** 
+``` css 
 #selector_1 span,
 #selector_2 span,
 #selector_3 span {
     background: #fff;
     color: #000;
 }
-
 ```
 
- **"Incorrect"** ``` php 
-
+ **"Incorrect"** 
+``` css 
 #selector_1 span, #selector_2 span, #selector_3 span {
     background: #fff; color: #000;
 }
-
 ```
 
- **"Also incorrect"** ``` php 
-
+ **"Also incorrect"** 
+``` css 
 #selector { background: #fff; color: #000; }
-
 ```
 
 ### Pixels vs. Ems
 
  We use the px unit of measurement to define font size, because it offers absolute control over text. We realize that using the em unit for font sizing used to be popular, to accommodate for Internet Explorer 6 not resizing pixel based text. However, all major browsers (including IE7 and IE8) now support text resizing of pixel units and/or full-page zooming. Since IE6 is largely considered deprecated, pixels sizing is preferred. Additionally, unit-less line-height is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the font-size.
 
- **"Correct"** ``` php 
-
+ **"Correct"** 
+ ``` css 
 /*
 13 * 1.5 = 19.5 ~ Rounds to 20px.
 */
@@ -205,11 +194,10 @@ _old_uri: "2.x/developing-in-modx/code-standards"
     font-size: 13px;
     line-height: 1.5;
 }
-
 ```
 
- **"Incorrect"** ``` php 
-
+ **"Incorrect"** 
+ ``` css 
 /*
 Equivalent to 13px font-size and 20px line-height,
 but only if the browser default text size is 16px.
@@ -218,22 +206,20 @@ but only if the browser default text size is 16px.
     font-size: 0.813em;
     line-height: 1.25em;
 }
-
 ```
 
 ### Internet Explorer Bugs
 
  Inevitably, when all other browsers appear to be working correctly, any and all versions of Internet Explorer will introduce a few nonsensical bugs, delaying time to deployment. While we encourage troubleshooting and building code that will work in all browsers without special modifications, sometimes it is necessary to use conditional if IE comments to serve up specific fixes, which are ignored by other browsers.
 
- **"Fixing IE"** ``` php 
-
+ **"Fixing IE"** 
+ ``` php 
 <!--[if IE 7]>
 <link type="text/css" rel="stylesheet" href="/assets/styleshseets/ie7.css" />
 <![endif]-->
 <!--[if IE 8]>
 <link type="text/css" rel="stylesheet" href="/assets/styleshseets/ie8.css" />
 <![endif]-->
-
 ```
 
 ### Shorthand
@@ -248,22 +234,20 @@ but only if the browser default text size is 16px.
 
 #### Margin & Padding
 
- **"Correct"** ``` php 
-
+ **"Correct"** 
+ ``` css 
 #selector {
     margin: 0 0 10px;
     padding: 0 0 10px;
 }
-
 ```
 
- **"Incorrect - left attribute unnecessary"** ``` php 
-
+ **"Incorrect - left attribute unnecessary"** 
+ ``` css 
 #selector {
     margin: 0 0 10px 0;
     padding: 0 0 10px 0;
 }
-
 ```
 
 #### Hex Colors
@@ -272,16 +256,15 @@ but only if the browser default text size is 16px.
 
 #### Background
 
- **"Correct - shorthand"** ``` php 
-
+ **"Correct - shorthand"** 
+ ``` css 
 #selector {
     background: #fff url(../images/file.png) repeat-x fixed left bottom;
 }
-
 ```
 
- **"Incorrect - longhand unnecessary"** ``` php 
-
+ **"Incorrect - longhand unnecessary"** 
+ ``` css 
 #selector {
     background-color: #fff;
     background-image: url(../images/file.png);
@@ -289,48 +272,44 @@ but only if the browser default text size is 16px.
     background-attachment: fixed;
     background-position: left bottom;
 }
-
 ```
 
 #### Border
 
  In general, border should be a single line declaration, assuming that the values of the border are the same on all sides of the element. The order in which values are declared are: width, style, and color.
 
- **"Shorthand - method 1"** ``` php 
-
+ **"Shorthand - method 1"** 
+ ``` css 
 #selector {
     border: 1px solid #000;
 }
-
 ```
 
  If the values of each side differ, then there are two possible ways of using shorthand, and it is up to the discretion of the developer to decide which to use. Note that method 2 follows the TRBL pattern.
 
- **"Shorthand - method 2"** ``` php 
-
+ **"Shorthand - method 2"** 
+ ``` css 
 #selector {
     border-color: #fff #999 #666 #ccc;
     border-style: solid dashed dotted double;
     border-width: 1px 2px 3px 4px;
 }
-
 ```
 
- **"Shorthand - method 3"** ``` php 
-
+ **"Shorthand - method 3"** 
+ ``` css 
 #selector {
     border-top: 1px solid #fff;
     border-right: 2px dashed #999;
     border-bottom: 3px dotted #666;
     border-left: 4px double #ccc;
 }
-
 ```
 
  By contrast, the same style declaration is extremely verbose using longhand. This should be avoided, except in instances where only one particular value needs to be overridden, allowing the rest to flow through.
 
- **"Longhand"** ``` php 
-
+ **"Longhand"** 
+ ``` css 
 #selector {
     border-top-color: #fff;
     border-right-color: #999;
@@ -345,7 +324,6 @@ but only if the browser default text size is 16px.
     border-bottom-width: 3px;
     border-left-width: 4px;
 }
-
 ```
 
 #### Font
@@ -354,18 +332,16 @@ but only if the browser default text size is 16px.
 
  Note: Times New Roman is encapsulated in quotes, because the font name itself contains spaces.
 
- **"Shorthand"** ``` php 
-
-<font>#selector {
+ **"Shorthand"** 
+ ``` css 
+#selector {
     font: italic small-caps bold 15px/1.5 Cambria, 'Times New Roman', sans-serif;
 }
-</font>
-
 ```
 
- **"Longhand"** ``` php 
-
-<font>#selector {
+ **"Longhand"** 
+ ``` css 
+#selector {
     font-style: italic;
     font-variant: small-caps;
     font-weight: bold;
@@ -373,17 +349,15 @@ but only if the browser default text size is 16px.
     line-height: 1.5;
     font-family: Cambria, 'Times New Roman', sans-serif;
 }
-</font>
-
 ```
 
 #### Longhand
 
  When overriding only parts of a style, longhand declaration is preferred. This way, by sticking to shorthand for initial style declarations, anytime we see a longhand declaration used, we know that we are specifically overriding only a very precise part of an overall style, thereby leaving other aspects unaffected.
 
- **"Longhand override"** ``` php 
-
-<font>#selector {
+ **"Longhand override"** 
+ ``` css 
+#selector {
     border: 1px solid #ccc;
     font: 11px Verdana, sans-serif;
 }
@@ -392,8 +366,6 @@ but only if the browser default text size is 16px.
     border-bottom-width: 2px;
     font-family: Georgia, serif;
 }
-</font>
-
 ```
 
 ## Javascript
@@ -404,9 +376,8 @@ but only if the browser default text size is 16px.
 
  To ensure a strict level of comparison, as might be seen in a strongly typed or compiled language, JavaScript (like PHP) has a triple-equals operator ===. In similar fashion, it also has a strict negation operator !==. Consider the following examples of potential pitfalls when it comes to evaluating comparisons.
 
- ``` php 
-
-<font>var test_1 = 'true';
+ ``` js 
+var test_1 = 'true';
 var test_2 = 0;
 if (test_1 == true) {
     // Code here will run.
@@ -424,15 +395,12 @@ if (test_2 !== false) {
     // Code here will run.
     // Correct behavior.
 }
-</font>
-
 ```
 
  As you can see in the example above, simply using == and != is insufficient because it makes for potentially unpredictable results. Therefore, the stricter comparison operators should always be used. There is never a good reason to use the lesser form of comparison operators. To simply for the existence of elements in the DOM, there is an even more abbreviated way, that leaves no room for ambiguity. If you are unsure if certain elements will be present in an HTML page, use one of the following techniques.
 
- ``` php 
-
-<font>function first_func() {
+ ``` js 
+function first_func() {
     if (!document.getElementById('id_name')) {
         return;
     }
@@ -444,8 +412,6 @@ function second_func() {
     }
     // If code gets here, one or more exist.
 }
-</font>
-
 ```
 
 ### White-space
@@ -454,23 +420,19 @@ function second_func() {
 
  Consider the following examples of a JavaScript for-loop...
 
- **"Correct"** ``` php 
-
-<font>for (var i=0, j=arr.length; i<j; i++) {
+ **"Correct"** 
+ ``` js 
+for (var i=0, j=arr.length; i<j; i++) {
     // Do something.
 }
-</font>
-
 ```
 
- **"Incorrect"** ``` php 
-
-<font>for ( var i = 0, j = arr.length; i < j; i++ )
+ **"Incorrect"** 
+``` js 
+for ( var i = 0, j = arr.length; i < j; i++ )
 {
 // Do something.
 }
-</font>
-
 ```
 
 ### Variables, ID & Class
@@ -481,18 +443,14 @@ function second_func() {
 
  The preferred method of delineating strings is to use single quotes for everything. Since JavaScript exists to manipulate markup, and because HTML is generally written with double quotes in W3C specifications, using single quoted strings will better facilitate handling HTML fragments, and keep code more readable.
 
- **"Correct"** ``` php 
-
-<font>var my_html = '<img class="photo" src="/path/file.jpg" alt="Text" />';
-</font>
-
+ **"Correct"** 
+ ``` js 
+var my_html = '<img class="photo" src="/path/file.jpg" alt="Text" />';
 ```
 
- **"Incorrect"** ``` php 
-
-<font>var my_html = "<img class=\"photo\" src=\"/path/file.jpg\" alt=\"Text\" />";
-</font>
-
+ **"Incorrect"** 
+ ``` js 
+var my_html = "<img class=\"photo\" src=\"/path/file.jpg\" alt=\"Text\" />";
 ```
 
 ### Event Listeners
@@ -507,9 +465,9 @@ function second_func() {
 
  To maintain proper scope for variables, it is highly recommended that self-executing anonymous function be used as a closure. For the most part, variables defined correctly using the var syntax, within the scope of a function will not add to global scope pollution. However, from time to time, you may need to access variables via two or more functions. In such cases, multiple functions can be grouped together inside a closure.
 
- **"Closure"** ``` php 
-
-<font>(function() {
+ **"Closure"** 
+ ``` js 
+(function() {
     var first_variable = 'value 1';
     var second_variable = 'value 2';
     function first_func() {
@@ -519,8 +477,6 @@ function second_func() {
         // Do something.
     }
 })();
-</font>
-
 ```
 
 ### Objects & Arrays
@@ -531,9 +487,9 @@ function second_func() {
 
  Objects (and arrays) are an important part of JSON - JavaScript Object Notation, which is a platform and language independent way of transmitting data, used as an alternative to XML.
 
- **"Object literal - preferred"** ``` php 
-
-<font>var john_doe = {
+ **"Object literal - preferred"** 
+ ``` js 
+var john_doe = {
     first_name: 'John'
     ,last_name: 'Doe'
     ,job: 'Everyman Respresentative'
@@ -541,13 +497,11 @@ function second_func() {
     ,married: true
     ,age: 30
 };
-</font>
-
 ```
 
- **"Object dot notation"** ``` php 
-
-<font>/*
+ **"Object dot notation"** 
+ ``` js 
+/*
 Could also be written:
 var john_doe = new Object();
 */
@@ -558,13 +512,11 @@ john_doe.job = 'Everyman Representative';
 john_doe.email = 'john.doe@example.com';
 john_doe.married = true;
 john_doe.age = 30;
-</font>
-
 ```
 
- **"Array literal - preferred"** ``` php 
-
-<font>var doe_family = [
+ **"Array literal - preferred"** 
+ ``` js 
+var doe_family = [
     'John'
     ,'James'
     ,'Jane'
@@ -572,13 +524,11 @@ john_doe.age = 30;
     ,'Jared'
     ,'Jerome'
 ];
-</font>
-
 ```
 
- **"Array bracket notation"** ``` php 
-
-<font>/*
+ **"Array bracket notation"** 
+ ``` js 
+/*
 Could also be written:
 var doe_family = new Array();
 */
@@ -589,8 +539,6 @@ doe_family[2] = 'Jane';
 doe_family[3] = 'Jenny';
 doe_family[4] = 'Jared';
 doe_family[5] = 'Jerome';
-</font>
-
 ```
 
 ## PHP
@@ -600,7 +548,7 @@ doe_family[5] = 'Jerome';
 - Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.
 - Do not do any real logic in object constructors. Create class methods to do so.
 - null, true and false should always be lowercase.
-- Avoid embedded assignments (ex: $d = ($a = $b + $c) is bad).
+- Avoid embedded assignments (ex: `$d = ($a = $b + $c)` is bad).
 - Never use extract().
 - Avoid using global variables if at all possible.
 - Document EVERYTHING.
@@ -609,15 +557,14 @@ doe_family[5] = 'Jerome';
 
 - Do not put parenthesis next to keywords. Put a space between.
 - Do put parenthesis next to function names.
-- Do not use parenthesis in return statements when it's not necessary. Example: ``` php 
-  
+- Do not use parenthesis in return statements when it's not necessary. Example: 
+- ``` php 
   if ($test) {
   }
   while ($test == $other) {
   }
   array_push($one,$two);
   return $test;
-  	
   ```
 - Do **not** use parenthesis when using include, require, include\_once, and require\_once.
 
@@ -625,15 +572,14 @@ doe_family[5] = 'Jerome';
 
 - All ''core'' classnames, unless stated otherwise for special conditions, will be prefixed with the "mod" prefix: ie, modChunk, modTemplate, etc.
 - All method names will be camelCase and will start with a lowercase letter.
-- All private methods and variables must be prefixed with the underscore \_ character. ``` php 
-  
+- All private methods and variables must be prefixed with the underscore \_ character. 
+``` php 
   class modFactor {
       public $publicVar;
       private $_privateVar;
       private function _privateFunc() { }
       public function publicFunc() { }
-  }
-  	
+  }	
   ```
 
 ### Variables
@@ -645,15 +591,14 @@ doe_family[5] = 'Jerome';
 
 ### Function Arguments and Class Variables
 
-- The first letter is lowercase, rest are camelCase. Example: ``` php 
-  
+- The first letter is lowercase, rest are camelCase. Example: 
+``` php 
   class modFactor {
       public function testFunc($testVar, array &$anotherTest = array()) {
           $this->_privateVar = $testVar;
           $local_variable =& $anotherTest;
       }
   }
-  	
   ```
 
 ### Arrays
@@ -661,10 +606,9 @@ doe_family[5] = 'Jerome';
 - Array index names use the underscore \_, not the dash as their separator. This prevents errors with magic\_quotes.
 - Array index names are always lowercase. Spaces are represented by an underscore.
 - Array index names are always encapsulated with single quotes. 
-   Example: ``` php 
-  
+   Example: 
+  ``` php 
   $_lang['chunk_create_text'] = 'Test';
-  	
   ```
 
 ### Constants
@@ -681,10 +625,7 @@ doe_family[5] = 'Jerome';
 - Lexicon strings for Components need to be prefixed:
  
 ``` php 
-
-<font>$_lang['mycomponent.welcome_message'] = 'Welcome!';
-</font>
-
+$_lang['mycomponent.welcome_message'] = 'Welcome!';
 ```
 
 - Always prefix class names; eg: 'finBank', 'finTransaction', etc.
@@ -694,18 +635,14 @@ doe_family[5] = 'Jerome';
 
  All inline SQL must be capitalized, and table and column names must be enclosed with backticks.
 
- **"Correct"** ``` php 
-
-<font>UPDATE `mydatabase`.`mytable`
+ **"Correct"** 
+ ``` php 
+UPDATE `mydatabase`.`mytable`
 SET `name` = "Johnny"
 WHERE `id` = 123;
-</font>
-
 ```
 
- **"Incorrect"** ``` php 
-
-<font>update mydatabase.mytable set name='Johnny' where id=12
-</font>
-
+ **"Incorrect"** 
+ ``` php 
+update mydatabase.mytable set name='Johnny' where id=12
 ```

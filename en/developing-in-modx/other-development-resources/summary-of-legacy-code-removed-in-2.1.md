@@ -4,9 +4,9 @@ _old_id: "1120"
 _old_uri: "2.x/developing-in-modx/other-development-resources/summary-of-legacy-code-removed-in-2.1"
 ---
 
-- [Functionality](#SummaryofLegacyCodeRemovedin2.1-Functionality)
-  - [TV Input Types](#SummaryofLegacyCodeRemovedin2.1-TVInputTypes)
-- [Methods, Constants and Variables](#SummaryofLegacyCodeRemovedin2.1-Methods%2CConstantsandVariables)
+- [Functionality](#functionality)
+  - [TV Input Types](#tv-input-types)
+- [Methods, Constants and Variables](#methods-constants-and-variables)
 
 
 
@@ -25,13 +25,13 @@ The following input types were removed:
 
 Many constants, variables and api methods have been long deprecated, marked for removal in 2.0 or 2.1 and are now finally removed from the MODX Revolution 2.1 codebase.
 
-| Item Removed | Notes on Replacement or Potential Workaround |
-|--------------|----------------------------------------------|
-| IN\_PARSER\_MODE | check context is not mgr |
-| IN\_MANAGER\_MODE | check context is mgr |
-| IN\_MANAGER\_MODE | check context is mgr |
-|  |
-| ```
+| Item Removed      | Notes on Replacement or Potential Workaround |
+| ----------------- | -------------------------------------------- |
+| IN\_PARSER\_MODE  | check context is not mgr                     |
+| IN\_MANAGER\_MODE | check context is mgr                         |
+| IN\_MANAGER\_MODE | check context is mgr                         |
+|                   |
+| ```               |
 $_SESSION["mgrValidated"]
 ``` | modX->user->isAuthenticated('mgr') |
 | ```

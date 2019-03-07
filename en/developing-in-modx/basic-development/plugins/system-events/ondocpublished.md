@@ -13,10 +13,10 @@ Group: None
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| docid | The ID of the resource being published. (deprecated) |
-| id | The ID of the resource being published. |
+| Name     | Description                                            |
+| -------- | ------------------------------------------------------ |
+| docid    | The ID of the resource being published. (deprecated)   |
+| id       | The ID of the resource being published.                |
 | resource | A reference to the modResource object being published. |
 
 ## See Also

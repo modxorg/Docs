@@ -16,7 +16,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  ``` php 
 object getService (string $name, [string $class = ''], [string $path = ''], [array $params = array ()])
-
 ```
 
 - `$name` : a key which uniquely identifies the service.
@@ -30,7 +29,6 @@ object getService (string $name, [string $class = ''], [string $path = ''], [arr
 
  ``` php 
 $modx->getService('smarty','smarty.modSmarty');
-
 ```
 
  Get a custom, user-defined service called 'modTwitter' from a custom path ('/path/to/modtwitter.class.php'), and pass in some custom parameters.
@@ -40,7 +38,6 @@ $modx->getService('twitter','modTwitter','/path/to/',array(
   'api_key' => 3212423,
 ));
 $modx->twitter->tweet('Success!');
-
 ```
 
 Another example of using getService inside a custom Extra:
@@ -54,7 +51,6 @@ if(!$Product = $this->modx->getService('mypkg.product','Product',MODX_CORE_PATH.
 if(!$Product = $this->modx->getService('mypkg.product','mypkg.Product',MODX_CORE_PATH.'components/mypkg/model/')) {
     return 'NOT FOUND';
 }
-
 ```
 
 getService may have trouble with PHP namespaces.

@@ -4,18 +4,18 @@ _old_id: "1080"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid"
 ---
 
-- [MODx.grid.Grid](#MODx.grid.Grid-MODx.grid.Grid)
-- [MODExt-Specific Parameters](#MODx.grid.Grid-MODExtSpecificParameters)
-- [Custom Events](#MODx.grid.Grid-CustomEvents)
-- [Other Unique Functions](#MODx.grid.Grid-OtherUniqueFunctions)
-  - [Custom Store Exception Messages](#MODx.grid.Grid-CustomStoreExceptionMessages)
-  - [loadWindow](#MODx.grid.Grid-loadWindow)
-  - [remove](#MODx.grid.Grid-remove)
-  - [confirm](#MODx.grid.Grid-confirm)
-  - [refresh](#MODx.grid.Grid-refresh)
-  - [encodeModified](#MODx.grid.Grid-encodeModified)
-  - [encode](#MODx.grid.Grid-encode)
-- [See Also](#MODx.grid.Grid-SeeAlso)
+- [MODx.grid.Grid](#modxgridgrid)
+- [MODExt-Specific Parameters](#modext-specific-parameters)
+- [Custom Events](#custom-events)
+- [Other Unique Functions](#other-unique-functions)
+    - [Custom Store Exception Messages](#custom-store-exception-messages)
+    - [loadWindow](#loadwindow)
+    - [remove](#remove)
+    - [confirm](#confirm)
+    - [refresh](#refresh)
+    - [encodeModified](#encodemodified)
+    - [encode](#encode)
+- [See Also](#see-also)
 
 
 
@@ -49,7 +49,7 @@ The above code would create a context menu for each item with the text being the
 
 Menus may alternatively (and preferably) be created by extending your JS Grid and adding a "getMenu" method:
 
-``` php 
+``` js 
 getMenu: function() {
     var m = [];
     m.push({
@@ -76,29 +76,29 @@ You can override the baseParams in your config parameter.
 
 MODx.grid.Grid adds a few unique parameters not found in typical Ext.grid.Grid objects:
 
-| Name | Description | Default |
-|------|-------------|---------|
-| url | The URL of the connector to load this grid from. |  |
-| paging | If true, will enable paging and add the PagingToolbar automatically to the bottom of the grid. | true |
-| pageSize | The number of items to page by, if paging == true. Defaults to the System Setting of "default\_per\_page", which is 20. | 20 |
-| pageStart | The index to start the paging on. | 0 |
-| showPerPage | Whether or not to show the "Per Page" textbox. Defaults to true. | true |
-| pagingItems | Any items to add to the right of the "Per Page" textbox on the paging toolbar. Useful for adding extra buttons. | \[\] |
-| grouping | If true, will automatically enable grouping on this grid. | false |
-| groupBy | The column to group by. Note that the column must be in the column model. | name |
-| pluralText | The text for a plural amount of items in the grouped column, ie: "Rows" | Records |
-| singleText | The text for a single amount of items in the grouped column, ie: "Row" | Record |
-| sortBy | The default column to sort by when grouping and remoteSort are true. | id |
-| sortDir | The default column to sort by when grouping and remoteSort are true. | ASC |
-| preventRender | Prevent the grid from rendering. Useful when putting the grid in panels or tabs. | 1 |
-| autosave | If true, will automatically fire the 'updateFromGrid' processor (or the processor in the saveUrl config param) for this connector when doing in-line editing in the grid. | false |
-| saveUrl | The connector URL to call when inline-editing with autosave on. | The value of config.url |
-| save\_action | The processor action to call when inline-editing with autosave on. | updateFromGrid |
-| saveParams | A JS object of parameters to also send to the saveUrl when auto-saving or when using MODx.grid.Grid's remove method. | {} |
-| save\_callback | After auto-saving, run this method. | null |
-| preventSaveRefresh | If autosave is true, after saving, will prevent the grid from refreshing. Makes for a more seamless editing experience. | 1 |
-| primaryKey | If your grid items have a primary key that's not ID, set it here. | id |
-| storeId | A custom ID to give the store for this grid. Will default to a unique Ext ID. | Ext.id() |
+| Name               | Description                                                                                                                                                               | Default                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| url                | The URL of the connector to load this grid from.                                                                                                                          |                         |
+| paging             | If true, will enable paging and add the PagingToolbar automatically to the bottom of the grid.                                                                            | true                    |
+| pageSize           | The number of items to page by, if paging == true. Defaults to the System Setting of "default\_per\_page", which is 20.                                                   | 20                      |
+| pageStart          | The index to start the paging on.                                                                                                                                         | 0                       |
+| showPerPage        | Whether or not to show the "Per Page" textbox. Defaults to true.                                                                                                          | true                    |
+| pagingItems        | Any items to add to the right of the "Per Page" textbox on the paging toolbar. Useful for adding extra buttons.                                                           | \[\]                    |
+| grouping           | If true, will automatically enable grouping on this grid.                                                                                                                 | false                   |
+| groupBy            | The column to group by. Note that the column must be in the column model.                                                                                                 | name                    |
+| pluralText         | The text for a plural amount of items in the grouped column, ie: "Rows"                                                                                                   | Records                 |
+| singleText         | The text for a single amount of items in the grouped column, ie: "Row"                                                                                                    | Record                  |
+| sortBy             | The default column to sort by when grouping and remoteSort are true.                                                                                                      | id                      |
+| sortDir            | The default column to sort by when grouping and remoteSort are true.                                                                                                      | ASC                     |
+| preventRender      | Prevent the grid from rendering. Useful when putting the grid in panels or tabs.                                                                                          | 1                       |
+| autosave           | If true, will automatically fire the 'updateFromGrid' processor (or the processor in the saveUrl config param) for this connector when doing in-line editing in the grid. | false                   |
+| saveUrl            | The connector URL to call when inline-editing with autosave on.                                                                                                           | The value of config.url |
+| save\_action       | The processor action to call when inline-editing with autosave on.                                                                                                        | updateFromGrid          |
+| saveParams         | A JS object of parameters to also send to the saveUrl when auto-saving or when using MODx.grid.Grid's remove method.                                                      | {}                      |
+| save\_callback     | After auto-saving, run this method.                                                                                                                                       | null                    |
+| preventSaveRefresh | If autosave is true, after saving, will prevent the grid from refreshing. Makes for a more seamless editing experience.                                                   | 1                       |
+| primaryKey         | If your grid items have a primary key that's not ID, set it here.                                                                                                         | id                      |
+| storeId            | A custom ID to give the store for this grid. Will default to a unique Ext ID.                                                                                             | Ext.id()                |
 
 For a complete list of all parameters not listed here for grids, see the [ExtJS](http://sencha.com) documentation.
 
@@ -106,11 +106,11 @@ For a complete list of all parameters not listed here for grids, see the [ExtJS]
 
 MODx.grid.Grid adds a few extra events not found in Ext.grid.Grid objects:
 
-| Name | Description |
-|------|-------------|
+| Name            | Description                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------- |
 | beforeRemoveRow | Fires before a row is removed when calling the remove() method on the grid (usually done in a context menu) |
-| afterRemoveRow | Fires after a row is removed when calling the remove() method on the grid (usually done in a context menu) |
-| afterAutoSave | Fires after an inline-edit save is done, if autosave is set to true. |
+| afterRemoveRow  | Fires after a row is removed when calling the remove() method on the grid (usually done in a context menu)  |
+| afterAutoSave   | Fires after an inline-edit save is done, if autosave is set to true.                                        |
 
 ## Other Unique Functions
 
@@ -124,7 +124,7 @@ If the JSON returned is not a valid data store collection, and contains a "messa
 
 Automatically load and show a window of any given xtype:
 
-``` php 
+``` js 
 grid.loadWindow({
   xtype: 'my-xtype-for-the-window'
   ,blankValues: true /* blanks the values of the window, good for New Object windows, set false for Update windows */
@@ -139,7 +139,7 @@ MODx.grid.Grid comes with a custom method named 'remove', which automatically fi
 
 The method takes one parameter - text - which is the text to display in the confirm dialog that prompts the user if they want to remove the row before actually doing so. The beforeRemoveRow event is fired before the confirm dialog is loaded.
 
-``` php 
+``` js 
 grid.remove("Are you sure you want to remove this Item?");
 ```
 
@@ -147,7 +147,7 @@ grid.remove("Are you sure you want to remove this Item?");
 
 The confirm method is a custom method that allows you to pop up a confirmation dialog before executing an action:
 
-``` php 
+``` js 
 grid.confirm("approve","Are you sure you want to approve this article?");
 ```
 

@@ -9,9 +9,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/validating-requests-token
  If you are working on Custom Manager Pages (CMPs), you may see values like the following that are included in the post data under a key named HTTP\_MODAUTH:
 
  ``` php 
-
 $_POST['HTTP_MODAUTH'] => modx12345xxxx.9887_abcdef1234.0987654
-
 ```
 
  This value is associated with a user and his current context -- this may seem strange, but consider that sessions are also associated with a "user" (even if the user is not logged in), and you can begin to understand why the relevant code is in the modUser class, but the default behavior here is that the tokens and their validation only applies to a user who is logged in.
@@ -19,12 +17,10 @@ $_POST['HTTP_MODAUTH'] => modx12345xxxx.9887_abcdef1234.0987654
 For example, here's how you might test a form that was posted from somewhere in the manager.
 
  ``` php 
-
 $token = $modx->getOption('HTTP_MODAUTH', $_POST);
 if ($token != $modx->user->getUserToken($modx->context->get('key')) {
     // ERROR! Invalid request
 }
-
 ```
 
  Recreating this type of security on the front-end of your site may be a bit more involved since the MODX functions are only accessible to an authenticated user.

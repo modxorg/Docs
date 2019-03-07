@@ -4,21 +4,22 @@ _old_id: "292"
 _old_uri: "2.x/developing-in-modx/basic-development/snippets"
 ---
 
-- [Overview](#Snippets-Overview)
-  - [What is a Snippet?](#Snippets-WhatisaSnippet%3F)
-  - [How Do They Work?](#Snippets-HowDoTheyWork%3F)
-  - [Simple Example](#Snippets-SimpleExample)
-  - [Passing Values Into a Snippet](#Snippets-PassingValuesIntoaSnippet)
-  - [Reading Values in your Snippets](#Snippets-ReadingValuesinyourSnippets)
-- [Database Interaction in Snippets](#Snippets-DatabaseInteractioninSnippets)
-  - [Why an ORM?](#Snippets-WhyanORM%3F)
-  - [Example DB Code](#Snippets-ExampleDBCode)
-  - [Further Database Reading](#Snippets-FurtherDatabaseReading)
-- [Recommended Methods and Tips](#Snippets-RecommendedMethodsandTips)
-  - [Write your Snippets outside of the Manager.](#Snippets-WriteyourSnippetsoutsideofMODX.)
-  - [Don't try to mix PHP and HTML in a Snippet.](#Snippets-Don%27ttrytomixPHPandHTMLinaSnippet.)
-  - [Don't Work on Live Snippets](#Snippets-Don%27tWorkonLiveSnippets)
-  - [Use Default Properties](#Snippets-UseDefaultProperties)
+- [Overview](#overview)
+  - [What is a Snippet?](#what-is-a-snippet)
+  - [How Do They Work?](#how-do-they-work)
+  - [Simple Example](#simple-example)
+  - [Passing Values Into a Snippet](#passing-values-into-a-snippet)
+  - [Reading Values in your Snippets](#reading-values-in-your-snippets)
+- [Database Interaction in Snippets](#database-interaction-in-snippets)
+  - [Why an ORM?](#why-an-orm)
+  - [Example DB Code](#example-db-code)
+  - [Further Database Reading](#further-database-reading)
+- [Recommended Methods and Tips](#recommended-methods-and-tips)
+  - [Write your Snippets outside of the MODX Manager.](#write-your-snippets-outside-of-the-modx-manager)
+  - [Don't try to mix PHP and HTML in a Snippet.](#dont-try-to-mix-php-and-html-in-a-snippet)
+  - [Don't Work on Live Snippets](#dont-work-on-live-snippets)
+  - [Use Default Properties](#use-default-properties)
+- [See Also](#see-also)
 
 ## Overview 
 

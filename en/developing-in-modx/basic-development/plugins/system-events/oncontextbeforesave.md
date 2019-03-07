@@ -12,10 +12,10 @@ Service: 2 - Manager Access Events
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| context | A reference to the modContext object. |
-| mode | Either 'new' (modSystemEvent::MODE\_NEW) or 'upd' (modSystemEvent::MODE\_UPD) depending on whether is a new object or an existing one. |
+| Name    | Description                                                                                                                            |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| context | A reference to the modContext object.                                                                                                  |
+| mode    | Either 'new' (modSystemEvent::MODE\_NEW) or 'upd' (modSystemEvent::MODE\_UPD) depending on whether is a new object or an existing one. |
 
 ## See Also
 

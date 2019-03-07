@@ -21,11 +21,11 @@ Group: None
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| username | The provided username. |
-| password | The provided password. |
-| attributes | An array of: - **&** rememberme - Boolean set if user wants password to be remembered. **Passed by reference**
+| Name       | Description                                                                                                    |
+| ---------- | -------------------------------------------------------------------------------------------------------------- |
+| username   | The provided username.                                                                                         |
+| password   | The provided password.                                                                                         |
+| attributes | An array of: - **&** rememberme - Boolean set if user wants password to be remembered. **Passed by reference** |
 - **&** lifetime - The session cookie lifetime for this login. **Passed by reference**
 - **&** loginContext - The context key this login is occurring in. **Passed by reference**
 - **&** addContexts - Additional contexts in which the login is also occuring in. **Passed by reference** |

@@ -4,9 +4,9 @@ _old_id: "1056"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.console"
 ---
 
-- [What is the MODx.Console?](#MODx.Console-WhatistheMODx.Console%3F)
-- [How it Works](#MODx.Console-HowitWorks)
-- [Usage](#MODx.Console-Usage)
+- [What is the MODx.Console?](#what-is-the-modxconsole)
+- [How it Works](#how-it-works)
+- [Usage](#usage)
 
 
 
@@ -29,7 +29,7 @@ First off, the Console starts up a Polling panel that queries the Registry with 
 
 The console can easily be hooked up to nearly any processor and JS custom application in MODX. Simply instantiate a new console object:
 
-``` php 
+``` js 
 var topic = '/mytopic/';
 var register = 'mgr';
 var console = MODx.load({
@@ -50,7 +50,7 @@ Note here that you fire up the console, and then load the topic that you want (m
 
 When you've got that loaded, you can send a request to your processor:
 
-``` php 
+``` js 
 MODx.Ajax.request({
     url: URL_TO_MY_CONNECTOR
     ,params: {

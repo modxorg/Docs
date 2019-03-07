@@ -12,8 +12,8 @@ Service: 1 - Parser Service Events
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name  | Description                                 |
+| ----- | ------------------------------------------- |
 | group | A reference to the modResourceGroup object. |
 
 ## See Also

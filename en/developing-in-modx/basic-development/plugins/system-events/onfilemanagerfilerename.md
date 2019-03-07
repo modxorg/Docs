@@ -13,10 +13,10 @@ Group: None
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| path | Contains the full path to the renamed file. |
-| source | Contains the mediasource object. |
+| Name   | Description                                 |
+| ------ | ------------------------------------------- |
+| path   | Contains the full path to the renamed file. |
+| source | Contains the mediasource object.            |
 
 ## See Also
 

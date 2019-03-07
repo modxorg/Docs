@@ -4,18 +4,18 @@ _old_id: "168"
 _old_uri: "2.x/developing-in-modx/advanced-development/internationalization"
 ---
 
-- [An Overview](#Internationalization-AnOverview)
-  - [Locales](#Internationalization-Locales)
-- [Lexicon Entries](#Internationalization-LexiconEntries)
-- [Loading and Using Lexicons](#Internationalization-LoadingandUsingLexicons)
-  - [Lexicons via Tag (in content, chunks, templates etc)](#Internationalization-LexiconsviaTag%28incontent%2Cchunks%2Ctemplatesetc%29)
-  - [Lexicons in PHP](#Internationalization-LexiconsinPHP)
-      - [Loading lexicon topics with modLexicon::load()](#Internationalization-LoadinglexicontopicswithmodLexicon%3A%3Aload%28%29)
-      - [Displaying translated content with modX::lexicon()](#Internationalization-DisplayingtranslatedcontentwithmodX%3A%3Alexicon%28%29)
-  - [Lexicons in JavaScript (within MODX)](#Internationalization-LexiconsinJavaScript%28withinMODX%29)
-- [Lexicons for Settings](#Internationalization-LexiconsforSettings)
-- [Conclusion](#Internationalization-Conclusion)
-- [See Also](#Internationalization-SeeAlso)
+- [An Overview](#an-overview)
+  - [Locales](#locales)
+- [Lexicon Entries](#lexicon-entries)
+- [Loading and Using Lexicons](#loading-and-using-lexicons)
+  - [Lexicons via Tag (in content, chunks, templates etc)](#lexicons-via-tag-in-content-chunks-templates-etc)
+  - [Lexicons in PHP](#lexicons-in-php)
+    - [Loading lexicon topics with modLexicon::load()](#loading-lexicon-topics-with-modlexiconload)
+    - [Displaying translated content with modX::lexicon()](#displaying-translated-content-with-modxlexicon)
+  - [Lexicons in JavaScript (within MODX)](#lexicons-in-javascript-within-modx)
+- [Lexicons for Settings](#lexicons-for-settings)
+- [Conclusion](#conclusion)
+- [See Also](#see-also)
 
 
 
@@ -61,7 +61,6 @@ To use a Lexicon Entry in a tag, use the following syntax:
 
 ``` php 
 [[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
-
 ```
 
 The 'language', 'topic', and 'namespace' properties are optional; if the tag has been run earlier on the page with the same 'topic' property value, that topic will have already been loaded. If 'topic' is not specified, it will assume 'default'. If 'namespace' is not specified, it will assume 'core', or the MODX Revolution Core Namespace.
@@ -80,7 +79,6 @@ Using lexicons in code is fairly simple; first off you'll want to make sure the 
 
 ``` php 
 $modx->getService('lexicon','modLexicon');
-
 ```
 
 Then we'll want to load the Topic using the load() method.
@@ -91,14 +89,12 @@ The syntax for the modLexicon::load method is pretty simple:
 
 ``` php 
 $modx->lexicon->load('topicname');
-
 ```
 
 The load() function supports Namespace-specific loading. So, say you had a Lexicon Topic named 'default' in a Namespace called 'school'. You'd simply load it like so:
 
 ``` php 
 $modx->lexicon->load('school:default');
-
 ```
 
 This would load the 'default' Topic in the 'school' Namespace. If the Namespace is not specified, it defaults to 'core', which is the default Namespace for the MODX Revolution backend.
@@ -107,7 +103,6 @@ The load() function also takes an infinite number of parameters; each parameter 
 
 ``` php 
 $modx->lexicon->load('chunk','user','school:playground');
-
 ```
 
 This would load 3 Topics: 'chunk', 'user', and the 'playground' Topic from the 'school' Namespace.
@@ -116,7 +111,6 @@ Furthermore, the load parameter supports language-specific loading, should you w
 
 ``` php 
 $modx->lexicon->load('es:school:playground');
-
 ```
 
 This would load the Spanish version of the 'playground' Topic for the 'school' Namespace. Fun, huh?
@@ -127,14 +121,12 @@ Now we can use the lexicon() method on the MODX object to get our Entry with key
 
 ``` php 
 $modx->lexicon('school.basketball');
-
 ```
 
 If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you can pass an array as the second arguement which has key=>value pairs of your placeholder content, like so:
 
 ``` php 
 $modx->lexicon('school.basketball',array('sport' => 'basketball'));
-
 ```
 
 ### Lexicons in JavaScript (within MODX)
@@ -143,7 +135,6 @@ In CMPs you can use the following to use lexicons.
 
 ``` php 
  _('lexicon.key')
-
 ```
 
 Please note that this assumes you have loaded the lexicon in your connector - there is (at least to my knowledge at this time ~Mark H.) no way to dynamically load other lexicon topics through JavaScript.
@@ -152,7 +143,6 @@ If you have placeholders in your lexicon string, for example "This is \[\[+useri
 
 ``` php 
  _('lexicon.key',{ userinput: 'amazing' })
-
 ```
 
 ## Lexicons for Settings
@@ -171,7 +161,6 @@ To add a lexicon name and description, we'd simply add the following 2 strings i
 ``` php 
 $_lang['setting_gallery.display_thumbs'] = 'Display Thumbnails';
 $_lang['setting_gallery.display_thumbs_desc'] = 'When set to true, this will display thumbnails for the gallery.';
-
 ```
 
 And we're done!

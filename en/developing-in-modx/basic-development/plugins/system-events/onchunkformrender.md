@@ -13,10 +13,10 @@ Group: Chunks
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| mode | Either 'new' or 'upd', depending on the circumstance. |
-| id | The ID of the Chunk. This will be 0 for new chunks. |
+| Name  | Description                                                     |
+| ----- | --------------------------------------------------------------- |
+| mode  | Either 'new' or 'upd', depending on the circumstance.           |
+| id    | The ID of the Chunk. This will be 0 for new chunks.             |
 | chunk | A reference to the modChunk object. Will be null in new chunks. |
 
 ## See Also

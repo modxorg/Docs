@@ -13,11 +13,11 @@ Group: Users
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
+| Name | Description                                           |
+| ---- | ----------------------------------------------------- |
 | mode | Either 'upd' or 'new', depending on the circumstance. |
-| user | A reference to the modUser object. |
-| id | The ID of the User. Will be 0 for new Users. |
+| user | A reference to the modUser object.                    |
+| id   | The ID of the User. Will be 0 for new Users.          |
 
 ## See Also
 

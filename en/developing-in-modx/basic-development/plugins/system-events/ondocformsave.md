@@ -18,11 +18,11 @@ Unlike [OnBeforeDocFormSave](developing-in-modx/basic-development/plugins/system
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| mode | Either 'new' or 'upd', depending on the circumstances. |
-| resource | A reference to the modResource object. |
-| id | The ID of the Resource (even for new resources) |
+| Name     | Description                                            |
+| -------- | ------------------------------------------------------ |
+| mode     | Either 'new' or 'upd', depending on the circumstances. |
+| resource | A reference to the modResource object.                 |
+| id       | The ID of the Resource (even for new resources)        |
 
 ## Examples
 

@@ -13,9 +13,9 @@ Group: Categories
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| id | The ID of the modCategory object. |
+| Name     | Description                            |
+| -------- | -------------------------------------- |
+| id       | The ID of the modCategory object.      |
 | category | A reference to the modCategory object. |
 
 ## See Also

@@ -4,11 +4,10 @@ _old_id: "1048"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3"
 ---
 
-- [Setting the Namespace Path](#CustomManagerPagesin2.3-SettingtheNamespacePath)
-- [Creating the Menu](#CustomManagerPagesin2.3-CreatingtheMenu)
-- [Creating the Controller File](#CustomManagerPagesin2.3-CreatingtheControllerFile)
-- [Creating the Template File](#CustomManagerPagesin2.3-CreatingtheTemplateFile)
-- [We're Finished!](#CustomManagerPagesin2.3-We%27reFinished%5C%21)
+- [Setting the Namespace Path](#setting-the-namespace-path)
+- [](#)
+- [Creating the Menu](#creating-the-menu)
+- [Creating the Controller File](#creating-the-controller-file)
 
 
 
@@ -49,7 +48,6 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
         return 'welcome.tpl';
     }
 }
-
 ```
 
  As you can see here, we're not doing any business logic, so we don't need to do anything in the process() method. We go ahead and set a page title for this CMP, and then tell MODX where to find our corresponding template file for this CMP. Note that your class name should begin with the name of your CMP followed by the corresponding action and that your namespace should be a lowercase version of the name of your CMP.
@@ -60,11 +58,10 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
 
  Let's make the content simple:
 
- ``` php 
+ ``` html 
 <div class="container">
 <h2>Welcome!</h2>
 </div>
-
 ```
 
  A simple h2, with a wrapping div that adds some padding. And that will display this on our CMP:

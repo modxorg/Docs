@@ -14,7 +14,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  ``` php 
 boolean hasPermission (string|array $pm)
-
 ```
 
 ## Example
@@ -26,7 +25,6 @@ $pm = 'edit_chunk';
 if (!$modx->hasPermission($pm)) {
     die('Access Denied!');
 }
-
 ```
 
  It's also possible to check if the user has multiple permissions, like 'edit\_chunk' and 'edit\_template'. Like;
@@ -36,7 +34,6 @@ $pm = array('edit_chunk' => true, 'edit_template' => true);
 if (!$modx->hasPermission($pm)) {
     die ('Access Denied!');
 }
-
 ```
 
 ## See Also

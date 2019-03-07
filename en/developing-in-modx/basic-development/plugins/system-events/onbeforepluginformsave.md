@@ -13,11 +13,11 @@ Group: Plugin
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| mode | Either 'upd' or 'new', depending on the circumstance. |
-| plugin | A reference to the modPlugin object. |
-| id | The ID of the plugin. Will be 0 for new plugins. |
+| Name   | Description                                           |
+| ------ | ----------------------------------------------------- |
+| mode   | Either 'upd' or 'new', depending on the circumstance. |
+| plugin | A reference to the modPlugin object.                  |
+| id     | The ID of the plugin. Will be 0 for new plugins.      |
 
 ## See Also
 

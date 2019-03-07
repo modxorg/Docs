@@ -23,11 +23,9 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebp
 **System Events:** OnWebPagePrerender
 
  ``` php 
-
 $words = array("snippet", "template"); // words to filter
 $output = &$modx->resource->_output; // get a reference to the output
 $output = str_replace($words,"<b>[filtered]</b>",$output);
-
 ```
 
  Be careful if your OnWebPagePrerender plugin is a static element and it includes or requires files using _relative paths_. The plugin code executes from its cached file, e.g. `core/cache/includes/elements/modplugin/7.include.cache.php`, not from the original static element file. See [Bug 11129](https://github.com/modxcms/revolution/issues/11129)

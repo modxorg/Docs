@@ -14,7 +14,6 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.clas
 
 ``` php 
 boolean changePassword (string $newPassword, string $oldPassword)
-
 ```
 
 ## Example
@@ -24,14 +23,12 @@ Change the password of the user 'foobar' from 'boo123' to 'b33r4me'
 ``` php 
 $user = $modx->getObject('modUser',array('username' => 'foobar'));
 $user->changePassword('b33r4me', 'boo123');
-
 ```
 
 Change the password of the user currently logged in from 'mypass' to 's3cur3d'.
 
 ``` php 
 $modx->user->changePassword('s3cur3d','mypass');
-
 ```
 
 ## See Also

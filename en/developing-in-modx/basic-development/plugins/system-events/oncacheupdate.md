@@ -13,10 +13,10 @@ Group: None
 
 ## Event Parameters
 
-| Name | Description |
-|------|-------------|
-| results | The results of the clearing. |
-| paths | An array of paths that were to be cleared. |
+| Name    | Description                                              |
+| ------- | -------------------------------------------------------- |
+| results | The results of the clearing.                             |
+| paths   | An array of paths that were to be cleared.               |
 | options | An array of options passed to the cache clearing method. |
 
 ## See Also
