@@ -2,6 +2,7 @@
 title: "FC-Resource"
 _old_id: "114"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-pages/fc-resource"
+note: "You can learn more about form customization in the Customizing the Manager section"
 ---
 
 - [Resource Create/Update](administering-your-site/form-customization/form-customization-pages/fc-resource#FC-Resource-ResourceCreate%2FUpdate)
