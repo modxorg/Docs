@@ -4,11 +4,11 @@ _old_id: "300"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-rules/tab-title"
 ---
 
-## <a name="TabTitle-TheTabTitleRule"></a>The Tab Title Rule
+## The Tab Title Rule
 
 The Tab Title Rule will change the title of any Tab.
 
-## <a name="TabTitle-Usage"></a>Usage
+## Usage
 
 The values for the Rule should be as follows:
 
@@ -19,7 +19,7 @@ The values for the Rule should be as follows:
 
 For a list of tabs available for each page, see [Form Customization Pages](display/revolution20/Form+Customization+Pages "Form Customization Pages").
 
-## <a name="TabTitle-Examples"></a>Examples
+## Examples
 
 An example Rule of changing the title for the Page Settings tab for all [Users](display/revolution20/Users "Users") to "Custom Fields" would look like this:
 
@@ -27,4 +27,6 @@ An example Rule of changing the title for the Page Settings tab for all [Users](
 
 ## <a name="TabTitle-SeeAlso"></a>See Also
 
- \[\[getResources@section? &parents=`300` &context=`revolution`\]\]
+``` php 
+[[getResources@section? &parents=`300` &context=`revolution`]]
+```

@@ -19,7 +19,6 @@ _old_uri: "2.x/administering-your-site/using-friendly-urls"
  Here is the ht.access file that comes with one version of MODX (your version may be slightly different).
 
  ``` php 
-
 # MODX supports Friendly URLs via this .htaccess file. You must serve web
 # pages via Apache with mod_rewrite to use this functionality, and you must
 # change the file name from ht.access to .htaccess.
@@ -106,7 +105,6 @@ RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 #BrowserMatch "Mozilla/4.[0-9]{2}" brokenvary=1
 #BrowserMatch "Opera" !brokenvary
 #SetEnvIf brokenvary 1 force-no-vary
-
 ```
 
  You can also put the file in /htdocs or /public\_html or what ever your server uses as long as it is in, or above, the MODX root directory.
@@ -138,10 +136,8 @@ RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 
  Make sure you have the following tag in the head section of all your templates. If you have only one front-end context (e.g., 'web') you can usually leave out the exclamation point to speed of page loads:
 
- ``` php 
-
+ ``` html 
 <base href="[[!++site_url]]" />
-
 ```
 
 ### 4) Clear the site cache
@@ -150,13 +146,11 @@ RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 
  The easiest way to take advantage of using fully qualified Friendly URLs, is to allow MODX to build the links using link tags, described on this page: [link tag syntax](making-sites-with-modx/structuring-your-site/resources#Resources-LinkingtoaResource "Linking to a Resources") to create links to different resources, is easy as tying in the link tag below (where 1 is the Resource ID of the page you want to link to). This has the added benefit of being able to move resources around a web project, without needing to fix a bunch of broken links, as MODX will simply update links created in this manner automatically.
 
-``` php 
-
+``` html 
 		<a href="[[~1]]" title="some title">Some Page</a>
 	
 ```
 
- 
 
 ### 5) Convert WWW URLs to non-WWW or Vice Versa
 
@@ -166,24 +160,20 @@ RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 
  For example, to remove the 'www.' from all requests for a site with the domain 'yoursite.com' change this section:
 
- ```
-
+ ``` php
 # Rewrite www.domain.com -> domain.com -- used with SEO Strict URLs plugin
 #RewriteCond %{HTTP_HOST} .
 #RewriteCond %{HTTP_HOST} !^example-domain-please-change\.com [NC]
 #RewriteRule (.*) http://example-domain-please-change.com/$1 [R=301,L]
-
 ```
 
  to look like this:
 
- ```
-
+ ``` php
 # Rewrite www.domain.com -> domain.com -- used with SEO Strict URLs plugin
 RewriteCond %{HTTP_HOST} .
 RewriteCond %{HTTP_HOST} !^yoursite\.com [NC]
 RewriteRule (.*) http://yoursite.com/$1 [R=301,L]
-
 ```
 
  Notice that we didn't uncomment the first line. It's a real comment. Uncommenting would make the server treat it like code and that might crash the server.

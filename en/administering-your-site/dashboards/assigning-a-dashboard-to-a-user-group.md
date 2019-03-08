@@ -4,7 +4,7 @@ _old_id: "25"
 _old_uri: "2.x/administering-your-site/dashboards/assigning-a-dashboard-to-a-user-group"
 ---
 
-- [See Also](#AssigningaDashboardtoaUserGroup-SeeAlso)
+- [See Also](#see-also)
 
 
 

@@ -4,15 +4,15 @@ _old_id: "350"
 _old_uri: "2.x/administering-your-site/media-sources/securing-a-media-source/creating-a-media-source-for-clients-tutorial"
 ---
 
-- [Introduction](#CreatingaMediaSourceforClientsTutorial-Introduction)
-- [Tutorial](#CreatingaMediaSourceforClientsTutorial-Tutorial)
-  - [Step 1: Create a Directory Structure](#CreatingaMediaSourceforClientsTutorial-Step1%3ACreateaDirectoryStructure)
-  - [Step 2: Hide the Filesystem Media Source](#CreatingaMediaSourceforClientsTutorial-Step2%3AHidetheFilesystemMediaSource)
-  - [Step 3: Add the Client Files Media Source](#CreatingaMediaSourceforClientsTutorial-Step3%3AAddtheClientFilesMediaSource)
-  - [Step 4: Set the Default Media Source](#CreatingaMediaSourceforClientsTutorial-Step4%3ASettheDefaultMediaSource)
-- [Troubleshooting: Existing Installs](#CreatingaMediaSourceforClientsTutorial-Troubleshooting%3AExistingInstalls)
-- [Advanced Usage](#CreatingaMediaSourceforClientsTutorial-AdvancedUsage)
-  - [Different Contexts](#CreatingaMediaSourceforClientsTutorial-DifferentContexts)
+- [Introduction](#introduction)
+- [Tutorial](#tutorial)
+  - [Step 1: Create a Directory Structure](#step-1-create-a-directory-structure)
+  - [Step 2: Hide the Filesystem Media Source](#step-2-hide-the-filesystem-media-source)
+  - [Step 3: Add the Client Files Media Source](#step-3-add-the-client-files-media-source)
+  - [Step 4: Set the Default Media Source](#step-4-set-the-default-media-source)
+- [Troubleshooting: Existing Installs](#troubleshooting-existing-installs)
+- [Advanced Usage](#advanced-usage)
+  - [Different Contexts](#different-contexts)
 
 
 

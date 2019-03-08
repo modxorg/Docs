@@ -4,18 +4,18 @@ _old_id: "486"
 _old_uri: "2.x/administering-your-site/security/security-tutorials/restricting-an-element-from-users"
 ---
 
-- [Introduction](#RestrictinganElementfromUsers-Introduction)
-  - [Brief Summary](#RestrictinganElementfromUsers-BriefSummary)
-- [Step-by-step Explanation](#RestrictinganElementfromUsers-StepbystepExplanation)
-  - [1. Create a Category](#RestrictinganElementfromUsers-1.CreateaCategory)
-  - [2. Place the Element into the Category](#RestrictinganElementfromUsers-2.PlacetheElementintotheCategory)
-  - [3. Create a User Group](#RestrictinganElementfromUsers-3.CreateaUserGroup)
-  - [4. Add the Users to the User Group](#RestrictinganElementfromUsers-4.AddtheUserstotheUserGroup)
-  - [5. Add the Element Category ACL](#RestrictinganElementfromUsers-5.AddtheElementCategoryACL)
-  - [6. Flush Permissions](#RestrictinganElementfromUsers-6.FlushPermissions)
-- [Hiding Specific Elements from Certain Users](#RestrictinganElementfromUsers-HidingSpecificElementsfromCertainUsers)
-- [Special Case for Templates](#RestrictinganElementfromUsers-SpecialCaseforTemplates)
-- [See Also](#RestrictinganElementfromUsers-SeeAlso)
+- [Introduction](#introduction)
+  - [Brief Summary](#brief-summary)
+- [Step-by-step Explanation](#step-by-step-explanation)
+  - [1. Create a Category](#1-create-a-category)
+  - [2. Place the Element into the Category](#2-place-the-element-into-the-category)
+  - [3. Create a User Group](#3-create-a-user-group)
+  - [4. Add the Users to the User Group](#4-add-the-users-to-the-user-group)
+  - [5. Add the Element Category ACL](#5-add-the-element-category-acl)
+  - [6. Flush Permissions](#6-flush-permissions)
+- [Hiding Specific Elements from Certain Users](#hiding-specific-elements-from-certain-users)
+- [Special Case for Templates](#special-case-for-templates)
+- [See Also](#see-also)
 
 
 

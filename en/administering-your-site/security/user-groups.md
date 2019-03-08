@@ -63,8 +63,6 @@ if( $user ){
     // Assign new user to User Group / Role
     $user->joinGroup('UserGroupNameOrId','OptionalRoleNameOrId');}
 ?>
-                
-
 ```
 
 ##  See Also 

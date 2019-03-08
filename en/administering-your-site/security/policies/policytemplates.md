@@ -4,14 +4,14 @@ _old_id: "244"
 _old_uri: "2.x/administering-your-site/security/policies/policytemplates"
 ---
 
-- [What are Policy Templates?](#PolicyTemplates-WhatarePolicyTemplates%3F)
-  - [AdministratorTemplate](#PolicyTemplates-AdministratorTemplate)
-  - [ElementTemplate](#PolicyTemplates-ElementTemplate)
-  - [MediaSourceTemplate](#PolicyTemplates-MediaSourceTemplate)
-  - [ObjectTemplate](#PolicyTemplates-ObjectTemplate)
-  - [ResourceTemplate](#PolicyTemplates-ResourceTemplate)
-  - [ContextTemplate](#PolicyTemplates-ContextTemplate)
-- [See Also](#PolicyTemplates-SeeAlso)
+- [What are Policy Templates?](#what-are-policy-templates)
+  - [AdministratorTemplate](#administratortemplate)
+  - [ElementTemplate](#elementtemplate)
+  - [MediaSourceTemplate](#mediasourcetemplate)
+  - [ObjectTemplate](#objecttemplate)
+  - [ResourceTemplate](#resourcetemplate)
+  - [ContextTemplate](#contexttemplate)
+- [See Also](#see-also)
 
 
 

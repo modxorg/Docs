@@ -4,9 +4,9 @@ _old_id: "343"
 _old_uri: "2.x/administering-your-site/media-sources/adding-a-media-source"
 ---
 
-- [Creating the Media Source](#AddingaMediaSource-CreatingtheMediaSource)
-- [Editing your new Media Source](#AddingaMediaSource-EditingyournewMediaSource)
-- [Using Your Source](#AddingaMediaSource-UsingYourSource)
+- [Creating the Media Source](#creating-the-media-source)
+- [Editing your new Media Source](#editing-your-new-media-source)
+- [Using Your Source](#using-your-source)
 
 
 

@@ -4,14 +4,13 @@ _old_id: "321"
 _old_uri: "2.x/administering-your-site/upgrading-modx"
 ---
 
-- [Upgrading MODX Revolution 2.x](#UpgradingMODX-UpgradingMODXRevolution2.x)
-- [Uploading the Files](#UpgradingMODX-UploadingtheFiles)
-- [Beginning Setup](#UpgradingMODX-BeginningSetup)
-- [After Setup](#UpgradingMODX-AfterSetup)
-- [Version-Specific Changes](#UpgradingMODX-VersionSpecificChanges)
-- [See Also](#UpgradingMODX-SeeAlso)
-  - [Mac OS X Users](#UpgradingMODX-MacOSXUsers)
-  - [Related Articles](#UpgradingMODX-RelatedArticles)
+- [Upgrading MODX Revolution 2.x](#upgrading-modx-revolution-2x)
+- [Uploading the Files](#uploading-the-files)
+- [Beginning Setup](#beginning-setup)
+- [After Setup](#after-setup)
+- [Version-Specific Changes](#version-specific-changes)
+- [See Also](#see-also)
+  - [Mac OS X Users](#mac-os-x-users)
 
 
 
@@ -94,14 +93,12 @@ _old_uri: "2.x/administering-your-site/upgrading-modx"
 
  ``` php 
 ditto modx-2.1.0-pl /www/public_html/modx/
-
 ```
 
  The effect is the same if you use the humble **cp** command:
 
  ``` php 
-\cp -fr modx-2.2.0-pl/* /www/public_html/modx
-
+cp -fr modx-2.2.0-pl/* /www/public_html/modx
 ```
 
  The "-fr" bit forces a recursive copy (i.e. a directory merge). Using a backslash before the "cp" command lets you avoid all the prompts asking "Are you sure?" to every overwrite operation.
@@ -116,4 +113,4 @@ ditto modx-2.1.0-pl /www/public_html/modx/
 4. [Upgrading from Versions Earlier than 2.0.5](administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5)
 5. [Upgrading to Revolution 2.0.0-rc-2](administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.0-rc-2)
 6. [Upgrading from MODX Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution)
-  1. [Functional Changes from Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution)
+7. [Functional Changes from Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution)

@@ -46,14 +46,12 @@ When creating a new context, make sure your desired user-groups have access to i
 
 ``` php 
 [[++my_context_setting]]
-
 ```
 
  Programmatically in a Snippet:
 
 ``` php 
 $setting = $modx->getOption('my_context_setting');
-
 ```
 
 ##  See Also 

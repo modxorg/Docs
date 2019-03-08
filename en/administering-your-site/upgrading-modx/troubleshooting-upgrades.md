@@ -4,14 +4,12 @@ _old_id: "491"
 _old_uri: "2.x/administering-your-site/upgrading-modx/troubleshooting-upgrades"
 ---
 
-- [Common Problems](#TroubleshootingUpgrades-CommonProblems)
-  - [Help! The only option I can choose is "New Installation", but this is an upgrade!](#TroubleshootingUpgrades-Help%5C%21TheonlyoptionIcanchooseis%22NewInstallation%22%2Cbutthisisanupgrade%5C%21)
-  - [Setup went well, but my manager isn't fully working.](#TroubleshootingUpgrades-Setupwentwell%2Cbutmymanagerisn%27tfullyworking.)
-  - [Some manager pages are blank due to 400 Bad Request from manager/min/](#TroubleshootingUpgrades-Somemanagerpagesareblankdueto400BadRequestfrommin)
-   
-  [](#TroubleshootingUpgrades-Somemanagerpagesareblankdueto400BadRequestfrommin.)
- [](#TroubleshootingUpgrades-Somemanagerpagesareblankdueto400BadRequestfrommin.)- [](#TroubleshootingUpgrades-Somemanagerpagesareblankdueto400BadRequestfrommin.)[Still Problems?](#TroubleshootingUpgrades-StillProblems%3F)
-- [See Also](#TroubleshootingUpgrades-SeeAlso)
+- [Common Problems](#common-problems)
+  - [Help! The only option I can choose is "New Installation", but this is an upgrade!](#help-the-only-option-i-can-choose-is-%22new-installation%22-but-this-is-an-upgrade)
+  - [Setup went well, but my manager isn't fully working.](#setup-went-well-but-my-manager-isnt-fully-working)
+  - [Some manager pages are blank due to 400 Bad Request from manager/min/](#some-manager-pages-are-blank-due-to-400-bad-request-from-managermin)
+- [Still Problems?](#still-problems)
+- [See Also](#see-also)
  
 
 

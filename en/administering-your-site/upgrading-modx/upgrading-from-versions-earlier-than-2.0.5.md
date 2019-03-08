@@ -4,11 +4,11 @@ _old_id: "1122"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5"
 ---
 
-- [Upgrading to Revolution 2.0.5](#UpgradingfromVersionsEarlierthan2.0.5-UpgradingtoRevolution2.0.5)
-- [Form Customization Updates](#UpgradingfromVersionsEarlierthan2.0.5-FormCustomizationUpdates)
-- [Access Policy Updates](#UpgradingfromVersionsEarlierthan2.0.5-AccessPolicyUpdates)
-- [extension\_packages Changes](#UpgradingfromVersionsEarlierthan2.0.5-extensionpackagesChanges)
-- [See Also](#UpgradingfromVersionsEarlierthan2.0.5-SeeAlso)
+- [Upgrading to Revolution 2.0.5](#upgrading-to-revolution-205)
+- [Form Customization Updates](#form-customization-updates)
+- [Access Policy Updates](#access-policy-updates)
+- [extension\_packages Changes](#extensionpackages-changes)
+- [See Also](#see-also)
 
 
 

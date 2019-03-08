@@ -4,15 +4,15 @@ _old_id: "134"
 _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customization-sets"
 ---
 
-- [What is a Form Customization Set?](#FormCustomizationSets-WhatisaFormCustomizationSet%3F)
-  - [Restricting to a Template](#FormCustomizationSets-RestrictingtoaTemplate)
-  - [Using Constraints](#FormCustomizationSets-UsingConstraints)
-- [Making Set Rules](#FormCustomizationSets-MakingSetRules)
-  - [Adjusting Fields](#FormCustomizationSets-AdjustingFields)
-  - [Hiding or Renaming Tabs](#FormCustomizationSets-HidingorRenamingTabs)
-  - [Adjusting Template Variables](#FormCustomizationSets-AdjustingTemplateVariables)
-- [Editing Sets via XML](#FormCustomizationSets-EditingSetsviaXML)
-- [See Also](#FormCustomizationSets-SeeAlso)
+- [What is a Form Customization Set?](#what-is-a-form-customization-set)
+  - [Restricting to a Template](#restricting-to-a-template)
+  - [Using Constraints](#using-constraints)
+- [Making Set Rules](#making-set-rules)
+  - [Adjusting Fields](#adjusting-fields)
+  - [Hiding or Renaming Tabs](#hiding-or-renaming-tabs)
+  - [Adjusting Template Variables](#adjusting-template-variables)
+- [Editing Sets via XML](#editing-sets-via-xml)
+- [See Also](#see-also)
 
 
 

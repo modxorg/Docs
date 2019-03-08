@@ -4,34 +4,34 @@ _old_id: "361"
 _old_uri: "2.x/administering-your-site/security/hardening-modx-revolution"
 ---
 
-- [Overview](#HardeningMODXRevolution-Overview)
-- [Everything but MODX](#HardeningMODXRevolution-EverythingbutMODX)
-  - [Your Computer](#HardeningMODXRevolution-YourComputer)
-  - [Your Connection](#HardeningMODXRevolution-YourConnection)
-  - [Your Server](#HardeningMODXRevolution-YourServer)
-  - [Passwords and Logins](#HardeningMODXRevolution-PasswordsandLogins)
-  - [Keep it Clean](#HardeningMODXRevolution-KeepitClean)
-  - [Backups](#HardeningMODXRevolution-Backups)
-  - [Social Engineering](#HardeningMODXRevolution-SocialEngineering)
-- [Locking down MODX](#HardeningMODXRevolution-LockingdownMODX)
-  - [Changing Default Paths](#HardeningMODXRevolution-ChangingDefaultPaths)
-      - [core](#HardeningMODXRevolution-core)
-      - [manager](#HardeningMODXRevolution-manager)
-      - [connectors](#HardeningMODXRevolution-connectors)
-      - [assets](#HardeningMODXRevolution-assets)
-  - [Path Followup](#HardeningMODXRevolution-PathFollowup)
-  - [Change your Login Page](#HardeningMODXRevolution-ChangeyourLoginPage)
-  - [Changing Default Database Prefixes](#HardeningMODXRevolution-ChangingDefaultDatabasePrefixes)
-  - [Use a unique name for the Admin User](#HardeningMODXRevolution-UseauniquenamefortheAdminUser)
-  - [Force a Password Policy](#HardeningMODXRevolution-ForceaPasswordPolicy)
-  - [Set up a dedicated 404 page](#HardeningMODXRevolution-Setupadedicated404page)
-- [Forcing SFTP Access](#HardeningMODXRevolution-ForcingSFTPAccess)
-- [Adding an SSL Certificate to your Manager](#HardeningMODXRevolution-AddinganSSLCertificatetoyourManager)
-  - [Using a shared Certificate](#HardeningMODXRevolution-UsingasharedCertificate)
-  - [Using a self-signed Certificate](#HardeningMODXRevolution-UsingaselfsignedCertificate)
-  - [Install a "Real" Certificate](#HardeningMODXRevolution-Installa%22Real%22Certificate)
-  - [Forcing SSL connections to the Manager](#HardeningMODXRevolution-ForcingSSLconnectionstotheManager)
-- [Monitoring your Site and Server](#HardeningMODXRevolution-MonitoringyourSiteandServer)
+- [Overview](#overview)
+- [Everything but MODX](#everything-but-modx)
+  - [Your Computer](#your-computer)
+  - [Your Connection](#your-connection)
+  - [Your Server](#your-server)
+  - [Passwords and Logins](#passwords-and-logins)
+  - [Keep it Clean](#keep-it-clean)
+  - [Backups](#backups)
+  - [Social Engineering](#social-engineering)
+- [Locking down MODX](#locking-down-modx)
+  - [Changing Default Paths](#changing-default-paths)
+    - [core](#core)
+    - [manager](#manager)
+    - [connectors](#connectors)
+    - [assets](#assets)
+  - [Path Followup](#path-followup)
+  - [Change your Login Page](#change-your-login-page)
+  - [Changing Default Database Prefixes](#changing-default-database-prefixes)
+  - [Use a unique name for the Admin User](#use-a-unique-name-for-the-admin-user)
+  - [Force a Password Policy](#force-a-password-policy)
+  - [Set up a dedicated 404 page](#set-up-a-dedicated-404-page)
+- [Forcing SFTP Access](#forcing-sftp-access)
+- [Adding an SSL Certificate to your Manager](#adding-an-ssl-certificate-to-your-manager)
+  - [Using a shared Certificate](#using-a-shared-certificate)
+  - [Using a self-signed Certificate](#using-a-self-signed-certificate)
+  - [Using a proper certificate](#using-a-proper-certificate)
+  - [Forcing SSL connections to the Manager](#forcing-ssl-connections-to-the-manager)
+- [Monitoring your Site and Server](#monitoring-your-site-and-server)
 
 
 
@@ -120,7 +120,6 @@ Choose a randomly generated alphanumeric bit of text to use as your new manager 
 ``` php 
 $modx_manager_path = '/home/youruser/public_html/r4nd0m/';
 $modx_manager_url = '/r4nd0m/';
-
 ```
 
 Moving the manager will avoid the fingerprinting bots from easily sniffing your site out as a MODX site, but it's still possible that someone could eventually find your new manager directory (not easy, but entirely possible). For an even more thorough solution, you could put the manager URL on a completely different domain, e.g. `<strong>$modx_manager_url</strong>``= 'http://othersite.com/r4nd0m/';` This would require that you have multiple domains on your server, but the advantage here is that it would really throw off attempts to hack your site because it wouldn't be clear that the 2 domains are related, but it would require far more sysadmin work to make this type of setup work.
@@ -134,7 +133,6 @@ Just as with the manager directory, choose a random alphanumeric name for your *
 ``` php 
 $modx_connectors_path = '/home/youruser/public_html/0therp4th/';
 $modx_connectors_url = '/0therp4th/';
-
 ```
 
 As with the manager, this could also potentially live on a separate domain, however as the manager uses the connectors as AJAX endpoints, this needs to be on the same domain as the manager unless you also allow cross origin requests.
@@ -146,7 +144,6 @@ The assets URL can be changed, but this is the lowest priority change because an
 ``` php 
 $modx_assets_path = '/home/youruser/public_html/4ssetsh3r3/';
 $modx_assets_url = '/4ssetsh3r3/';
-
 ```
 
 Again, this could potentially live on another domain (e.g. one optimized to serve up static content). As extras install their javascript here for back-end components, this will typically need to share the same domain (origin), unless you set up cross origin requests. You can use Media Sources in MODX to place your front-end assets or uploads anywhere, so keeping the assets on the same domain as the manager is usually best.
@@ -218,8 +215,6 @@ RewriteEngine On
 RewriteBase /
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://example.com/manager/$1
-
-
 ```
 
 Test this by trying to navigate to the non-secure url, e.g. <http://yoursite.com/manager> – if it doesn't redirect to HTTPS, you'll have to tweak the .htaccess.
