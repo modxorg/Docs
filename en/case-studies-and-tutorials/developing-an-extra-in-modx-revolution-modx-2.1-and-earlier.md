@@ -10,21 +10,17 @@ This tutorial is part of a Series:
 - [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-ii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part II - MODX 2.1 and Earlier")
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-iii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part III - MODX 2.1 and Earlier")
 
-
-
-
-
-- [Overview](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-Overview)
-- [Setting Up Our Directories](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-SettingUpOurDirectories)
-- [Creating the Doodles Snippet](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-CreatingtheDoodlesSnippet)
-  - [Making the Magic Path Settings](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-MakingtheMagicPathSettings)
-  - [Making the Doodles Base Class](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-MakingtheDoodlesBaseClass)
-  - [Making the Model](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-MakingtheModel)
-  - [The Schema Parsing Script](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-TheSchemaParsingScript)
-  - [The include Snippet](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-TheincludeSnippet)
-  - [Building the Query](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-BuildingtheQuery)
-  - [The Doodles class getChunk Method](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-TheDoodlesclassgetChunkMethod)
-- [Summary](#DevelopinganExtrainMODXRevolution-MODX2.1andEarlier-Summary)
+- [Overview](#overview)
+- [Setting Up Our Directories](#setting-up-our-directories)
+- [Creating the Doodles Snippet](#creating-the-doodles-snippet)
+  - [Making the Magic Path Settings](#making-the-magic-path-settings)
+  - [Making the Doodles Base Class](#making-the-doodles-base-class)
+  - [Making the Model](#making-the-model)
+  - [The Schema Parsing Script](#the-schema-parsing-script)
+  - [The include Snippet](#the-include-snippet)
+  - [Building the Query](#building-the-query)
+  - [The Doodles class getChunk Method](#the-doodles-class-getchunk-method)
+- [Summary](#summary)
 
 
 
@@ -176,7 +172,7 @@ xPDO does database abstraction into neat OOP query methods. It currently is begi
 
 Go ahead and make a xml file in /www/doodles/core/components/doodles/model/schema/doodles.mysql.schema.xml. Put this in it:
 
-``` php 
+``` xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="doodles" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
     <object class="Doodle" table="doodles" extends="xPDOSimpleObject">
@@ -196,19 +192,19 @@ Go ahead and make a xml file in /www/doodles/core/components/doodles/model/schem
 
 Ooookay. Lots of stuff here. First off, the first line:
 
-``` php 
+``` xml 
 <model package="doodles" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
 ```
 
 This tells the schema that our xPDO package is called 'doodles'. This is what we'll refer to in our addPackage() call. Great. It also says the base class for all the objects defined here is "xPDOObject", and that this schema is made for MySQL. Finally, it gives a default MySQL engine of MyISAM. Next!
 
-``` php 
+``` xml 
 <object class="Doodle" table="doodles" extends="xPDOSimpleObject">
 ```
 
 An "object" in a xPDO schema is basically a database table. This line says, give xPDO a name for the table called '{table\_prefix}_doodles'. Assuming your table prefix you did in your MODX install is 'modx_', it would translate to 'modx\_doodles'. Then it says that it extends "xPDOSimpleObject". What's that? Well, xPDOObject is the base object for any xPDO table class. xPDOSimpleObject extends it, but adds a nice little "id" auto-increment field to that table. So, since we're gonna want a "id" field on our table, we use xPDOSimpleObject.
 
-``` php 
+``` xml 
 <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
 <field key="description" dbtype="text" phptype="string" null="false" default=""/>
 <field key="createdon" dbtype="datetime" phptype="datetime" null="true"/>
@@ -219,7 +215,7 @@ An "object" in a xPDO schema is basically a database table. This line says, give
 
 The rest of these fields are pretty self-explanatory - they are fields on the DB table. Let's move on to the last two parts:
 
-``` php 
+``` xml 
 <aggregate alias="CreatedBy" class="modUser" local="createdby" foreign="id" cardinality="one" owner="foreign"/>
 <aggregate alias="EditedBy" class="modUser" local="editedby" foreign="id" cardinality="one" owner="foreign"/>
 ```

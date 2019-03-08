@@ -75,7 +75,6 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
  We'll create one called 'BlogPostTemplate'. Our content looks something like this:
 
  ``` php 
-
 [[$pageHeader]]
 <div id="content" class="blog-post">
   <h2 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h2>
@@ -114,7 +113,6 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
   </div>
 </div>
 [[$pageFooter]]
-
 ```
 
  So let's examine the Template, shall we? As we go, remember this - you can move any of these pieces around, change their parameters, and adjust their placing. This is solely a base structure - if you want your tags at the bottom, for instance, move them there! MODx doesn't restrict you from doing that.
@@ -128,7 +126,6 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
  Next we get into the "info" of the post - basically the author and tags for the post. Let's look in detail:
 
  ``` php 
-
 <p class="post-info">
 Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] | 
 Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] | 
@@ -136,7 +133,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
   Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
 </a>
 </p>
-
 ```
 
  The first part takes the publishedon Resource field, and formats it into a nice, pretty date.
@@ -154,7 +150,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  Okay, now we're in the comments part of BlogPostTemplate. As you can see here, we're using [Quip](/extras/revo/quip "Quip") for our commenting system. You could feel free to use another system, such as Disqus, here if you choose. For this tutorial, we'll go with Quip. Our code is as follows:
 
  ``` php 
-
 <div class="post-comments" id="comments">[[!Quip?
     &thread=`blog-post-[[*id]]`
     &replyResourceId=`19`
@@ -168,19 +163,16 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
      &closeAfter=`30`
   ]]
 </div>
-
 ```
 
  Okay, cool. Note we have two Snippet calls here - one for displaying the comments for this thread ([Quip](/extras/revo/quip/quip.quip "Quip.Quip")), and another for displaying the reply form ([QuipReply](/extras/revo/quip/quip.quipreply "Quip.QuipReply")).
 
  In our Quip snippet call, we've specified a thread ID in the manner we've described above, and then set some settings. Our comments are going to be threaded (the default), so we need to specify a Resource ID where our Reply to Thread post is going to be (this is detailed in the [Quip Documentation](/extras/revo/quip "Quip"). We recommend reading there for how to set it up.) with the 'replyResourceId' property. For a quick example, if your &replyResourceId points to page 123, then on page 123, you should put something like the following:
 
- ``` php 
-
+ ``` php
 [[!QuipReply]]
 <br />
 [[!Quip]]
-
 ```
 
  Next, we want to specify - in both the Quip and Quip Reply calls - a 'closeAfter' property. This tells Quip to automatically close commenting on these threads after 30 days of the thread creation (when we load it).
@@ -214,7 +206,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  Make sure you don't use the BlogPostTemplate on these, and use instead your own Base Template. These pages will end up being a way to browse all posts within a certain Section. In the content of these Resources, go ahead and put the following:
 
  ``` php 
-
 [[!getResourcesTag?
   &element=`getResources`
   &elementClass=`modSnippet`
@@ -232,7 +223,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 </ul>  
 </div>
 `]]
-
 ```
 
  Okay, let's explain this. getResourcesTag a wrapper snippet for [getResources](/extras/revo/getresources "getResources") and [getPage](/extras/revo/getpage "getPage") that automatically filters results by a 'tags' TV. So basically, we want to grab all published Resources within this section (and we can also filter by tag should we pass a '?tag=TagName' parameter into the URL.
@@ -244,7 +234,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  In that call, we also have a property called 'tpl' which we set to 'blogPost'. This is our Chunk that shows each result of our blog post listings. It should contain this:
 
  ``` php 
-
 <div class="post">
     <h2 class="title"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></h2>
     <p class="post-info">Posted by [[+createdby:userinfo=`fullname`]]
@@ -264,7 +253,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
       </span>
     </p>
 </div>
-
 ```
 
  Cool - let's dive in. We start out by making a clickable link to the post with the pagetitle as the title. Then, we set our 'posted by' part and tag listing (similar to how we did it earlier in BlogPostTemplate).
@@ -280,7 +268,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  In our home page for our blog, which we've got in Resource ID 1 - our site start - we've got this:
 
  ``` php 
-
 [[!getResourcesTag?
   &elementClass=`modSnippet`
   &element=`getResources`
@@ -301,7 +288,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 </ul>  
 </div>
 `]]
-
 ```
 
  This allows us to show all posts from the two sections we've made, in Resources 34 and 35. It also allows us to filter by tag (since all our 'tolinks' and 'tagLister' calls have a target of 1 (this Resource's ID). In other words, by putting our getResourcesTag call here, we have automatic tagging!
@@ -335,7 +321,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  Go ahead and place a Resource in your root called 'Archives', and give it an alias of 'archives'. Then inside the content, place this:
 
  ``` php 
-
 [[!getPage?
   &element=`getArchives`
   &elementClass=`modSnippet`
@@ -357,7 +342,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 </ul>  
 </div>
 `]]
-
 ```
 
  Look familiar? It's very similar to getResourcesTag, described above in our Section page. This time, getPage is wrapping the [getArchives](/extras/revo/archivist "Archivist") snippet, and saying that we want to grab posts in Resources 34 and 35 (our Section pages). We'll set the result to a placeholder called 'archives' which we reference later.
@@ -369,12 +353,10 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  Okay, so now you've got a Resource to browse archives in, but you need some way of generating the months that lists posts. That's actually pretty simple - somewhere on your site (say, in your footer, put this nice little bit:
 
  ``` php 
-
 <h3>Archives</h3>
 <ul>
 [[!Archivist? &target=`30` &parents=`34,35`]]
 </ul>
-
 ```
 
  So what the [Archivist](/extras/revo/archivist/archivist.archivist "Archivist.Archivist") Snippet does is generate a month-by-month list of posts (you can add all kinds of other options, but see [it's documentation](/extras/revo/archivist/archivist.archivist "Archivist.Archivist") for that). We are saying we want its links to go to our Archives Resource (30), and to only grab posts in the Resources 34 and 35 (our Section Resources).
@@ -404,7 +386,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  First off, you'll want to place this call wherever you want the list to appear:
 
  ``` php 
-
 [[!getResources? 
   &parents=`34,35`
   &hideContainers=`1`
@@ -412,7 +393,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
   &limit=`5`
   &sortby=`publishedon`
 ]]
-
 ```
 
  So we're telling [getResources](/extras/revo/getresources "getResources") to display a top 5 list of Resources in your Section Resources (34,35), and sort by their publishedon date.
@@ -420,12 +400,10 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  Then, create the `latestPostsTpl` chunk, which you've specified with the 'tpl' call in the getResources snippet call. Put this as the chunk's content:
 
  ``` php 
-
 <li>
   <a href="[[~[[+id]]]]">[[+pagetitle]]</a>
   [[+publishedon:notempty=`<br /> - [[+publishedon:strtotime:date=`%b %d, %Y`]]`]]
 </li>
-
 ```
 
  And boom! Latest blog posts displaying on your site:
@@ -439,21 +417,17 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  Place the call wherever you want the comment list to show:
 
  ``` php 
-
 [[!QuipLatestComments? &tpl=`latestCommentTpl`]]
-
 ```
 
  Now create a chunk called 'latestCommentTpl':
 
  ``` php 
-
 <li class="[[+cls]][[+alt]]">
     <a href="[[+url]]">[[+body:ellipsis=`[[+bodyLimit]]`]]</a>
     <br /><span class="author">by [[+name]]</span>
     <br /><span class="ago">[[+createdon:ago]]</span>
 </li>
-
 ```
 
  Before we proceed, there's a few things to note - QuipLatestComments will automatically truncate the comment and add an ellipsis past the &bodyLimit property passed into it, which defaults to 30 characters. Secondly, note the 'ago' [Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") we used here. This filter is built into MODx Revolution, and translates a timestamp into a nice, pretty 'two hours, 34 minutes' (or two other time metrics, such as min/sec, year/mo, mo/week) format.
@@ -469,9 +443,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  This part is ridiculously easy; [tagLister](/extras/revo/taglister "tagLister") does this for you. Just place this wherever you want:
 
  ``` php 
-
 [[!tagLister? &tv=`tags` &target=`1`]]
-
 ```
 
  And tagLister will check the TV 'tags', and create links that go to the target (here, Resource ID 1) with the top 10 tags being used. There's a ton more [configuration options](/extras/revo/taglister "tagLister"), but we'll leave you with this.

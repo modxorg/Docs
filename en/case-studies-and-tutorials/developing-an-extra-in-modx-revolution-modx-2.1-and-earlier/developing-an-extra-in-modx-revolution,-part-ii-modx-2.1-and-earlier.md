@@ -10,29 +10,25 @@ This tutorial is part of a Series:
 - Part II: Creating our Custom Manager Page
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-iii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part III - MODX 2.1 and Earlier")
 
-
-
-
-
-- [First Setup Steps](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-FirstSetupSteps)
-  - [Namespaces](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-Namespaces)
-  - [Actions and Menus](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-ActionsandMenus)
-  - [Lexicons](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-Lexicons)
-- [Setting up the Controllers with MODExt](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-SettinguptheControllerswithMODExt)
-  - [The Base Controller](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-TheBaseController)
-  - [Custom Request Routing](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-CustomRequestRouting)
-  - [The Header Controller](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-TheHeaderController)
-- [Our Doodles CMP Page](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-OurDoodlesCMPPage)
-  - [The Section JS File](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-TheSectionJSFile)
-  - [The Panel JS File](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-ThePanelJSFile)
-- [The Doodles Grid](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-TheDoodlesGrid)
-  - [Hooking Up via Connectors](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-HookingUpviaConnectors)
-  - [Adding Search](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-AddingSearch)
-  - [Adding an Update Window](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-AddinganUpdateWindow)
-  - [Adding a Remove Context Menu Option](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-AddingaRemoveContextMenuOption)
-  - [Creating the Create Form](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-CreatingtheCreateForm)
-  - [Adding Inline-Editing](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-AddingInlineEditing)
-- [Summary](#DevelopinganExtrainMODXRevolution%2CPartII-MODX2.1andEarlier-Summary)
+- [First Setup Steps](#first-setup-steps)
+  - [Namespaces](#namespaces)
+  - [Actions and Menus](#actions-and-menus)
+  - [Lexicons](#lexicons)
+- [Setting up the Controllers with MODExt](#setting-up-the-controllers-with-modext)
+  - [The Base Controller](#the-base-controller)
+  - [Custom Request Routing](#custom-request-routing)
+  - [The Header Controller](#the-header-controller)
+- [Our Doodles CMP Page](#our-doodles-cmp-page)
+  - [The Section JS File](#the-section-js-file)
+  - [The Panel JS File](#the-panel-js-file)
+- [The Doodles Grid](#the-doodles-grid)
+  - [Hooking Up via Connectors](#hooking-up-via-connectors)
+  - [Adding Search](#adding-search)
+  - [Adding an Update Window](#adding-an-update-window)
+  - [Adding a Remove Context Menu Option](#adding-a-remove-context-menu-option)
+  - [Creating the Create Form](#creating-the-create-form)
+  - [Adding Inline-Editing](#adding-inline-editing)
+- [Summary](#summary)
 
 
 
@@ -323,7 +319,7 @@ We could have put all these JS files in one file, which would have loaded the pa
 
 Let's first create the index.js file, at /www/doodles/assets/components/doodles/js/mgr/sections/index.js:
 
-``` php 
+``` js 
 Ext.onReady(function() {
     MODx.load({ xtype: 'doodles-page-home'});
 });
@@ -354,7 +350,7 @@ Great! On to the panel.
 
 We've got our page, but now we want to load a panel in it. Let's create a file at www/doodles/assets/components/doodles/js/mgr/widgets/home.panel.js and put this in it:
 
-``` php 
+``` js 
 Doodles.panel.Home = function(config) {
     config = config || {};
     Ext.apply(config,{
@@ -391,7 +387,7 @@ We're going to give this panel a baseCls of 'modx-formpanel', which lets our top
 
 Next, we'll define the 'items' in the panel. First, we add a header:
 
-``` php 
+``` js 
 {
    html: '<h2>'+_('doodles.management')+'</h2>'
    ,border: false
@@ -403,7 +399,7 @@ Basically this just inserts some HTML into the top of the panel with a class of 
 
 Next, we'll add a TabPanel. We could just load the panel straight without tabs, but what if down the line we wanted to add another tab? Let's define it:
 
-``` php 
+``` js 
 ,{
    xtype: 'modx-tabs'
    ,bodyStyle: 'padding: 10px'
@@ -415,7 +411,7 @@ Next, we'll add a TabPanel. We could just load the panel straight without tabs, 
 
 Note we load our tabpanel with the xtype 'modx-tabs'. This loads a MODX-specific tabpanel, which has some MODX-specific configuration options. Then we give it some padding, a border, and make sure the defaults for its tabs have no border and an automatic height. Then, we add the tab itself:
 
-``` php 
+``` js 
 {
    title: _('doodles')
    ,defaults: { autoHeight: true }
@@ -444,7 +440,7 @@ $modx->regClientStartupScript($doodles->config['jsUrl'].'mgr/widgets/doodles.gri
 
 This tells MODX to load the grid widget file, which we'll now create at /www/doodles/assets/components/doodles/js/mgr/widgets/doodles.grid.js:
 
-``` php 
+``` js 
 Doodles.grid.Doodles = function(config) {
     config = config || {};
     Ext.applyIf(config,{
@@ -496,7 +492,7 @@ Then, we define some columns for our grid. We also allow 'name' and 'description
 
 Finally, let's add the grid to our panel. Change this part in our Doodles.panel.Home:
 
-``` php 
+``` js 
 ,items: [{
    html: '<p>'+_('doodles.management_desc')+'</p><br />'
    ,border: false
@@ -505,7 +501,7 @@ Finally, let's add the grid to our panel. Change this part in our Doodles.panel.
 
 to this:
 
-``` php 
+``` js 
 [{
    html: '<p>'+_('doodles.management_desc')+'</p><br />'
    ,border: false
@@ -618,7 +614,7 @@ Great! We've got a working grid. Now, let's add some functionality to it, since 
 
 Add this bit of code to your grid panel, right after the columns: definition:
 
-``` php 
+``` js 
 ,tbar:[{
     xtype: 'textfield'
     ,id: 'doodles-search-filter'
@@ -644,13 +640,13 @@ We just added a textfield to the top bar of our grid, and we gave it some 'empty
 
 So let's define the 'this.search' method - since our Panel is OOP, this means that this.search can be defined in our grid object. To do that, find this code:
 
-``` php 
+``` js 
 Ext.extend(Doodles.grid.Doodles,MODx.grid.Grid);
 ```
 
 And replace it with this:
 
-``` php 
+``` js 
 Ext.extend(Doodles.grid.Doodles,MODx.grid.Grid,{
     search: function(tf,nv,ov) {
         var s = this.getStore();
@@ -690,7 +686,7 @@ And there's our searchable grid. Now let's work on updating records.
 
 First off, MODX grids usually have context menus when you click them. Ours doesn't, and that's because we haven't defined it yet. Let's go ahead and define it. Add a 'getMenu' method to your Doodles.grid.Grid definition, right below your search: method we just added:
 
-``` php 
+``` js 
 ,getMenu: function() {
     var m = [{
         text: _('doodles.doodle_update')
@@ -706,7 +702,7 @@ First off, MODX grids usually have context menus when you click them. Ours doesn
 
 MODX looks for a getMenu method on grids that extend it, and if it finds it, it runs it. Here we've added 2 menu items for our context menu, one that runs a this.updateDoodle method, and the other that runs a this.removeDoodle method. We'll get to the removeDoodle method here in a bit. For now, let's add another JS method below the getMenu call, and call it updateDoodle:
 
-``` php 
+``` js 
 ,updateDoodle: function(btn,e) {
     if (!this.updateDoodleWindow) {
         this.updateDoodleWindow = MODx.load({
@@ -733,7 +729,7 @@ After we create the window, we'll run the show() method on it to show it. The 'e
 
 Now let's actually define the window:
 
-``` php 
+``` js 
 Doodles.window.UpdateDoodle = function(config) {
     config = config || {};
     Ext.applyIf(config,{
@@ -797,7 +793,7 @@ If we find it, however, we'll set its fields with $doodle->fromArray from the $s
 
 Let's finish off the remove part of our UI. We've already got the context menu showing up, so we just need to add the JS method and the processor. After our updateDoodle method in our JS grid, add this:
 
-``` php 
+``` js 
 ,removeDoodle: function() {
     MODx.msg.confirm({
         title: _('doodles.doodle_remove')
@@ -843,7 +839,7 @@ Pretty similar to the update processor, except this time, we run $doodle->remove
 
 So we've got R, U and D of our CRUD interface. What about C? Let's work on a create form. Let's add a button to the top toolbar of the grid to load the create window. Add this to the tbar: property on the grid config, right after our search textfield:
 
-``` php 
+``` js 
 ,{
    text: _('doodles.doodle_create')
    ,handler: { xtype: 'doodles-window-doodle-create' ,blankValues: true }
@@ -852,7 +848,7 @@ So we've got R, U and D of our CRUD interface. What about C? Let's work on a cre
 
 MODExt allows you to pass JSON objects into the handler: method on toolbars. What this does is loads the Window with the xtype 'doodles-window-doodle-create', makes sure its values are blanked on load, and runs this.success on a successful window form submit (basically shortcuts the stuff we've been doing). That's what we want, so let's now define the window at the end of our file:
 
-``` php 
+``` js 
 Doodles.window.CreateDoodle = function(config) {
     config = config || {};
     Ext.applyIf(config,{

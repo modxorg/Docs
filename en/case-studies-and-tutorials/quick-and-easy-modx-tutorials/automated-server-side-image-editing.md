@@ -4,15 +4,13 @@ _old_id: "347"
 _old_uri: "2.x/case-studies-and-tutorials/quick-and-easy-modx-tutorials/automated-server-side-image-editing"
 ---
 
-- [Introduction](#AutomatedServer-SideImageEditing-Introduction)
-- [Basic Usage (Resizing and Cropping)](#AutomatedServer-SideImageEditing-BasicUsage%28ResizingandCropping%29)
-- [Remove backgrounds](#AutomatedServer-SideImageEditing-Removebackgrounds)
-- [Desaturating](#AutomatedServer-SideImageEditing-Desaturating)
-- [Colouring](#AutomatedServer-SideImageEditing-Colouring)
-- [Chaining](#AutomatedServer-SideImageEditing-Chaining)
-- [More Reading](#AutomatedServer-SideImageEditing-MoreReading)
-
-
+- [Introduction](#introduction)
+- [Basic Usage (Resizing and Cropping)](#basic-usage-resizing-and-cropping)
+- [Remove backgrounds](#remove-backgrounds)
+- [Desaturating](#desaturating)
+- [Colouring](#colouring)
+- [Chaining](#chaining)
+- [More Reading](#more-reading)
 
 ## Introduction
 
@@ -25,7 +23,6 @@ Each of these examples will assume that you've created an image Template Variabl
 
 **Performance Hit**
 If you are on a shared server, remember excessive image processing can affect other users. Your host may contact you and/or suspend your account if it causes problems. Reducing the picture size, even if not to the exact dimensions, will reduce the resource usage and processing time.
-
 
 
 ## Basic Usage (Resizing and Cropping)
