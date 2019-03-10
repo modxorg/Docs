@@ -13,6 +13,6 @@ translation: "contribute"
 - [LinkedIn](http://www.linkedin.com/groups?gid=697477)
 - [Twitter](http://twitter.com/#!/modxcms)
 - [Facebook](http://www.facebook.com/modxcms)
-- \#modx channel on the Freenode IRC network
+- \#modx канал в сети Freenode IRC
 
-This space in the documentation wiki is primarily aimed at that part of the community wishing to collaborate and contribute code or documentation.
+Это пространство в вики документации в основном предназначено для той части сообщества, которая хочет сотрудничать и вносить код или документацию.
