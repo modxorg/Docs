@@ -1,15 +1,14 @@
 ---
-title: "Other Accounts You May Need"
-_old_id: "1134"
-_old_uri: "contribute/other-accounts-you-may-need"
+title: "Другие учетные записи, которые вам могут понадобиться"
+translation: "contribute/other-accounts-you-may-need"
 ---
 
-In addition to your MODX account:
+В дополнение к вашей учетной записи MODX:
 
 ## GitHub
 
-Coders wishing to contribute to the project will want a GitHub account. Accounts are free if all of your repositories are public, as your forks of any open source MODX repositories will be. You may also wish to host private repositories for a fee. [View GitHub plans and sign up.](https://github.com/plans)
+Разработчикам, желающим внести свой вклад в проект, понадобится учетная запись GitHub. Учетные записи бесплатны, если все ваши репозитории являются общедоступными, как и ваши форки любых репозиториев MODX с открытым исходным кодом. Вы также можете разместить частные репозитории за отдельную плату. [Посмотреть планы GitHub и зарегистрироваться.](https://github.com/plans)
 
-## Documentation Wiki
+## Документация Wiki
 
-The MODX Documentation Wiki is maintained by community members. If you wish to contribute to the Documentation, please request access by emailing [support@modx.com](mailto:support@modx.com) with your MODX.com username and what parts of the documentation you'd like to be able of working on.
+MODX Documentation Wiki поддерживается членами сообщества. Если вы хотите внести свой вклад в Документацию, пожалуйста, запросите доступ по электронной почте [support@modx.com] (mailto: support@modx.com) с вашим именем пользователя MODX.com и с какими частями документации вы хотели бы иметь возможность работа над.
