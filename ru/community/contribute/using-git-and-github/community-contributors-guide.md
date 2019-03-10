@@ -1,28 +1,27 @@
 ---
-title: "Community Contributor's Guide"
-_old_id: "1128"
-_old_uri: "contribute/using-git-and-github/community-contributors-guide"
+title: "Руководство для участников сообщества"
+translation: "contribute/using-git-and-github/community-contributors-guide"
 ---
 
-## A GitHub-based branching strategy for collaborative development
+## Основанная на GitHub стратегия ветвления для совместной разработки
 
- In order to facilitate collaborative development on the MODX source code managed at GitHub, a clear and consistent branching strategy has been adopted. This strategy consists of maintaining a major-version branch, e.g. `2.x`, that represents work to be incorporated into the "next significant release". If the current stable release of version 2 is 2.2.1, the work in the `2.x` branch would incorporate work intended for the 2.3.0 release.
+Чтобы облегчить совместную разработку исходного кода MODX, управляемого на GitHub, была принята четкая и последовательная стратегия ветвления. Эта стратегия состоит в том, чтобы поддерживать ветку основной версии, например, `2.x`, который представляет работу, которая будет включена в "следующий значимый выпуск". Если текущий стабильный выпуск версии 2 - 2.2.1, работа в ветке `2.x` будет включать работу, предназначенную для выпуска 2.3.0.
 
- In addition, there is a branch maintained for the current stable minor release of each major-version. If this is 2.2, then the branch would be `2.2.x`. This would represent development intended for the next patch release of 2.2. Following Semantic Versioning, only bug fixes would target these temporary minor release branches.
+Кроме того, существует ветка для текущего стабильного минорного выпуска каждой мажорной версии. Если это 2.2, то ветвь будет `2.2.x`. Это будет представлять собой разработку, предназначенную для следующего выпуска патча 2.2. После семантического управления версиями только временные исправления будут нацелены на эти временные второстепенные ветки.
 
-### The major-version branches
+### Ветвь мажорной версии
 
- The major-version branch, e.g. `2.x` and `3.x` is essentially a virtual `master` branch for each major release of MODX Revolution. This branch has an infinite lifetime and contains new features that do not break backwards compatiblity intended for the next minor release. You can think of this as the "integration branch" where all changes are delivered for the next significant release.
+Ветвь мажорной версии, например `2.x` и `3.x` - это, по сути, виртуальная ветка `master` для каждого основного выпуска MODX Revolution. Эта ветвь имеет бесконечный срок службы и содержит новые функции, которые не нарушают обратную совместимость, предназначенную для следующего вспомогательного выпуска. Вы можете думать об этом как о «ветви интеграции», где все изменения будут представлены в следующем значимом выпуске.
 
- When the code in these branches reaches a stable point and is ready to be released, a commit is tagged with a new minor release number, e.g. `v2.2.0`, and the release is produced from that tag.
+Когда код в этих ветвях достигает стабильной точки и готов к выпуску, коммит помечается новым второстепенным номером выпуска, например, `v2.2.0`, и релиз создается из этого тега.
 
-### The minor-version branches
+### Минорные версии веток
 
- There are supporting temporary branches in our process that are used to aid in collaborative development of bugfixes and translation updates which can be quickly applied to patch releases. These branches are referred to as minor-version branches and have a limited lifetime as long as their parent minor release is the current stable release. They contain only bugfixes and translation updates. Following the rules of semantic versioning, new features that do not break backwards compatibility, must go in the next minor release; never in a minor-version branch from which patch releases will be produced.
+В нашем процессе поддерживаются временные ветки, которые используются для совместной разработки исправлений и обновлений переводов, которые могут быть быстро применены к выпускам патчей. Эти ветви называются ветвями второстепенной версии и имеют ограниченный срок действия, если их родительский минорный выпуск является текущим стабильным выпуском. Они содержат только исправления ошибок и обновления переводов. Следуя правилам семантического управления версиями, новые функции, которые не нарушают обратную совместимость, должны появиться в следующем дополнительном выпуске, никогда в ветке с минорной версией, из которой будут производиться релизы патчей.
 
-### Working with your GitHub fork
+### Работа с вашим форком GitHub
 
- MODx contributors must work directly with their private forks on GitHub. Here is the suggested way to prepare your local repository as a developer for contributing back to any MODx project:
+Участники MODx должны работать напрямую со своими приватными форками на GitHub. Вот предлагаемый способ подготовить ваш локальный репозиторий в качестве разработчика для участия в любом проекте MODx:
 
  ``` php 
 $ git clone git@github.com:YourGitUsername/revolution.git
@@ -30,9 +29,9 @@ $ cd revolution
 $ git remote add upstream -f http://github.com/modxcms/revolution.git
 ```
 
- This setup makes your fork the standard `origin` remote, and adds/fetches the "blessed" repository as the remote `upstream`. You may want to add other remotes to other developer forks as well, and I would name those remotes appropriately so you can keep track of each one.
+Эта настройка делает ваш форк стандартным `origin` удаленным и добавляет/извлекает "благословенный" репозиторий как удаленный `upstream`. Возможно, вы захотите добавить другие ремоты в другие ветки разработчика, и я бы назвал эти ремоты соответствующим образом, чтобы вы могли отслеживать каждый из них.
 
- You'll want to go ahead and create local tracking branches for the major version branch and/or minor-version branch you will want to work with from your fork, a.k.a. `origin`:
+Вы захотите пойти дальше и создать локальные ветви отслеживания для ветви основной версии и/или ветви вспомогательной версии, с которой вы хотите работать, из своего форка, a.k.a. `origin`:
 
  ``` php 
 $ git checkout -b 2.x origin/2.x
@@ -41,7 +40,7 @@ $ git checkout -b 2.4.x origin/2.4.x
 Switched to a new branch "2.4.x"
 ```
 
- To keep your local tracking branches for `2.x` and `2.4.x` up-to-date from the `upstream` repository:
+Чтобы ваши локальные ветви отслеживания для `2.x` и` 2.4.x` были актуальными из репозитория `upstream`:
 
  ``` php 
 $ git fetch upstream
@@ -54,34 +53,35 @@ $ git merge --ff-only upstream/2.x
 $ git push origin 2.4.x 2.x
 ```
 
- Note however, that the push is mainly for show, as the permanent branches should never be a target for contributor commits, even in the forks. IOW, `2.4.x` and `2.x` in your fork should match the `upstream` branches of the same name. It is expected that all contributions will be submitted via a feature branch originating from the appropriate up-to-date major-version branch, or a bugfix branch originating from a minor-version branch in the upstream repository.
+Тем не менее, обратите внимание, что push предназначен главным образом для показа, так как постоянные ветви никогда не должны быть целью коммитов участника, даже в форках. `2.4.x` и `2.x` в вашей ветке должны соответствовать ветвям `upstream` с тем же именем. Ожидается, что все вклады будут отправлены через отдельную ветвь, происходящую из соответствующей современной ветки основной версии, или ветку с исправлением ошибок, происходящую из ветви минорной версии в вышестоящем репозитории.
 
- Also note the `--ff-only` flag ensures that only fast-forward merges are performed (in case you accidentally do commit to the major or minor-version branches on your fork without realizing it).
+Также обратите внимание, что флаг `--ff-only` гарантирует, что будут выполняться только быстрые слияния (в случае, если вы случайно сделаете коммит с ветвями основной или вспомогательной версии на вашем форке, не осознавая этого).
 
- **Important** 
- Please make sure you have your autocrlf settings set appropriately before making any commits to your fork. See <http://help.github.com/dealing-with-lineendings/> to determine the setting you need based on the platform you are developing on. 
+**Важно** 
+
+Пожалуйста, убедитесь, что у вас правильно настроены параметры autocrlf, прежде чем делать какие-либо коммиты на ваш форк. См. <http://help.github.com/dealing-with-lineendings/>, чтобы определить необходимые настройки в зависимости от платформы, на которой вы разрабатываете.
 
 ### Feature branches
 
-- May branch from: major-version branch
-- Naming convention: completely up to you
+- Майская ветка от: major-version ветки
+- Соглашение об именах: полностью зависит от вас
 
- Feature branches, also known as topic branches, are used to develop a specific new feature (or set of features) for a future release. Once it is accepted and ready to be incorporated in the next minor release, it is merged into the major-version branch by an integrator. If the feature is never completed or accepted, it can simply be discarded.
+Feature branches, также известные как разделы тем, используются для разработки конкретной новой функции (или набора функций) для будущего выпуска. Как только оно будет принято и готово для включения в следующий дополнительный выпуск, оно будет объединено с основной версией интегратором. Если функция никогда не завершена или не принята, ее можно просто отказаться.
 
- Feature branches exist in developer forks, not in the "blessed", or `upstream` repository.
+Feature branches существуют в ветвях разработчика, а не в «благословенном» или `upstream` хранилище.
 
-#### Creating a feature branch
+#### Создание feature branch
 
- When starting work on a new feature, branch off from the major-version branch you are targeting, e.g. `2.x`.
+Когда вы начнете работать с новой функцией, отойдите от основной ветки, на которую вы нацелены, например, `2.x`.
 
  ``` php 
 $ git checkout -b my-bc-feature 2.x
 Switched to a new branch "my-bc-feature"
 ```
 
-#### Submitting a pull request for a finished feature
+#### Отправка pull request на получение готовой функции
 
- Once you have completed development of a feature on your branch, you should first make sure your work is replayed over the latest updates from `develop`:
+После того, как вы завершили разработку функции в своей ветке, вы должны сначала убедиться, что ваша работа воспроизводится поверх последних обновлений от `develop`:
 
  ``` php 
 $ git fetch upstream
@@ -93,41 +93,41 @@ Switched to branch "my-bc-feature"
 $ git rebase 2.x
 ```
 
- This will make it easier for integrators to incorporate your work without conflict.
+Это поможет интеграторам без труда включать вашу работу.
 
- Now simply push your feature to your fork (you can do this early on if you want to share your feature branch for collaboration or review):
+Теперь просто перенесите свою функцию в свой форк (вы можете сделать это на ранней стадии, если вы хотите поделиться своей веткой функций для совместной работы или обзора):
 
  ``` php 
 $ git push origin my-bc-feature
 ```
 
- And you are ready to [submit a pull request](http://help.github.com/pull-requests/) for your feature branch.
+И вы готовы [отправка pull request](http://help.github.com/pull-requests/) длы вашей feature branch.
 
-### Bug Branches
+### Ветки ошибок
 
- If there's a bug in the MODX [GitHub Issues](https://github.com/modxcms/revolution/issues) that you would like to fix, here's a simple workflow you can follow.
+Если есть ошибка в MODX [GitHub Issues](https://github.com/modxcms/revolution/issues) что вы хотели бы исправить, вот простой рабочий процесс, которому вы можете следовать.
 
- First, fork the MODX Git repo on github, then clone your fork (see above).
+Сначала склонируйте репозиторий MODX Git на github, затем клонируйте свой форк (см. выше).
 
- Before you begin work on coding your fix, create a new branch devoted to your upstream target (where XXXX is the bug number):
+Прежде чем вы начнете работать над написанием кода своего исправления, создайте новую ветку, посвященную вашей исходной цели (где XXXX - номер ошибки):
 
  ``` php 
 git checkout -b bug-XXXX 2.4.x
 ```
 
- Now you're ready to make your changes and fix the nasty bug!
+Теперь вы готовы внести изменения и исправить неприятную ошибку!
 
- Once the bug is fixed, you can commit your changes and push your bugfix branch to your fork:
+После исправления ошибки вы можете зафиксировать свои изменения и перенести ветку исправления ошибок в форк:
 
  ``` php 
 git commit .
 git push origin bug-XXXX
 ```
 
- Then you're ready to issue your pull request from Github.
+Вы готовы выпустить ваш pull request на Github.
 
- Log into your Github account, find your MODX fork, then hit the button at the top that says "Pull Request".
+Войдите в свою учетную запись Github, найдите форк MODX и нажмите кнопку на которой написано "Pull Request".
 
- ![](/download/attachments/33948128/github_modx_pull_request.jpg?version=1&modificationDate=1370290791000)
+![](/download/attachments/33948128/github_modx_pull_request.jpg?version=1&modificationDate=1370290791000)
 
- Make sure you select the "base branch" – you want to issue the pull request to the branch you originally branched from (2.4.x in the above example).
+Убедитесь, что вы выбрали «базовую ветвь» - вы хотите отправить запрос на получение ветки, из которой вы изначально разветвились (2.4.x в приведенном выше примере).

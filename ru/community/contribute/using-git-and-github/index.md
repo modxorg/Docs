@@ -1,60 +1,58 @@
 ---
-title: "Using Git and GitHub"
-_old_id: "1135"
-_old_uri: "contribute/using-git-and-github/"
+title: "Использование Git и GitHub"
+translation: "contribute/using-git-and-github/"
 ---
 
-**Git** is the distributed version control system used by MODX for source code collaboration and version control. Like MODX, it's free and open source.
+**Git** является распределенной системой контроля версий, используемой MODX для совместной работы с исходным кодом и контроля версий. Как и MODX, это бесплатно и с открытым исходным кодом.
 
-- [Git's official website](http://git-scm.com/) is an excellent place to get started if you're new to Git or to [version control and software configuration management](http://en.wikipedia.org/wiki/Revision_control) in general. You'll want to install Git and get familiar with basic configuration parameters and commands.
-- If you have a background in SVN, then [this crash course](http://git.or.cz/course/svn.html) may be what you need.
-- If that isn't enough, there's a [great interactive cheat sheet by Andrew Peterson](http://www.ndpsoftware.com/git-cheatsheet.html), or .. [let us Google that for you](http://lmgtfy.com/?q=git+svn) ;-)
+- [Git's официальный сайт](http://git-scm.com/) это отличное место для начала, если вы новичок в Git или [контроль версий и управление конфигурацией программного обеспечения](http://en.wikipedia.org/wiki/Revision_control) в общем. Вы захотите установить Git и ознакомиться с основными параметрами конфигурации и командами.
+- Если у вас есть опыт работы в SVN, то [этот ускоренный курс](http://git.or.cz/course/svn.html) может быть то, что вам нужно.
+- Если этого недостаточно, есть [отличный интерактивная шпаргалка Эндрю Петерсона](http://www.ndpsoftware.com/git-cheatsheet.html), или .. [дайте нам Google, чтобы найти для вас](http://lmgtfy.com/?q=git+svn) ;-)
 
-**GitHub** is where MODX Git repositories are hosted. GitHub is a service for "secure source code hosting and collaborative development" but also forms a social network for coders.
+**GitHub** где хранятся репозитории MODX Git. GitHub - это сервис для «безопасного размещения исходного кода и совместной разработки», но он также является социальной сетью для разработчиков.
+Подробнее о [хостинг репозитория GitHub](https://github.com/features/hosting) но также не забудьте добавить в закладки сайт [Git Reference](http://gitref.org/).
 
-Read more about [GitHub's repository hosting](https://github.com/features/hosting) but also be sure to bookmark their excellent [Git Reference](http://gitref.org/) site.
+## Обзор 
 
-## Overview 
+Вот краткий обзор рабочего процесса, который вы будете использовать для внесения изменений в любой репозиторий MODX. Это поможет понять это прежде, чем погрузиться более подробно.
 
+**Форк**
 
-Here's an overview of the workflow you'll be using to contribute changes to any MODX repository. It will help to understand this first before diving in to more detail.
+Сначала вы создадите форк хранилища кода MODX для своей учетной записи GitHub. Это "твой форк". Вы будете публиковать ваш вклад (коммиты) в ваш код, а не напрямую в репозиторий modxcms. (Это то, что делает Git распределенными, тогда как SVN централизован вокруг одного репозитория.) Затем, для работы с вашим форком, вам понадобится локальная копия или ее `clone`.
 
-**Fork**
-First, you will fork a MODX code repository to your own GitHub account. This is "your fork". You will be publishing your code contributions (commits) to your fork, not directly to the modxcms repository. (This is what makes Git _distributed_, whereas SVN is centralized around one repository.) Then, in order to work with your fork, you will need a local copy, or `clone` of it.
+Вот [Учебник GitHub по созданию репо и созданию его локального клона](http://help.github.com/fork-a-repo/).
 
-Here's [GitHub's tutorial on forking a repo and making a local clone of it](http://help.github.com/fork-a-repo/).
+**Ветки и код**
 
-
-
-**Branch and code**
-All work on a single issue (bug or feature) is to be done on a _feature branch_. 
+Вся работа над одной проблемой (ошибка или функция) должна быть выполнена в _тематической ветвь_. 
 ``` php 
 git checkout -b bug-1111
 ```
 
-You will make changes to a file or files. Coding.. yay! You make one or several commits on that branch. (Multiple commits can really help keep things organized in certain circumstances.)
+Вы внесете изменения в файл или файлы. Кодирование .. ууу! Вы делаете один или несколько коммитов на этой ветке. (Многократные коммиты могут действительно помочь сохранить вещи организованными в определенных обстоятельствах.)
 
-Along the way, or when the work is done, you _push_ the branch to your fork. You'll be able to see your feature branch and your commits on the GitHub site.
+По пути, или когда работа сделана, вы _пушите_ ветку в форк. Вы сможете увидеть свою ветку функций и свои коммиты на сайте GitHub.
 
 ``` php 
 git push myRepo bug-1111
 ```
 
-_Note: Making sure your work and your commits are based on "fresh" code will help you avoid problems and help integrators understand, review and integrate (or feed back on) your work._
+_Заметка: Убедитесь, что ваша работа и ваши коммиты основаны на «свежем» коде - это поможет вам избежать проблем и помогут интеграторам понять, проанализировать и интегрировать (или отозвать) вашу работу._
 
 **Pull Request**
-When you're ready to contribute the commit or commits from your branch, you'll issue a [Pull Request](http://help.github.com/pull-requests/) from your GitHub account. Your Pull Request may be accepted as-is by an integrator or they may make changes or comment, ask questions etc. GitHub facilitates communication with in-line code comments as well as a simple discussion thread on Pull Requests.
 
-## Community Contributor's Guide 
+Когда вы будете готовы внести коммит или коммит из вашей ветки, вы делаете [Pull Request](http://help.github.com/pull-requests/) из вашей учетной записи GitHub. Ваш Pull Request может быть принят интегратором как есть, или они могут вносить изменения или комментировать, задавать вопросы и т.д. GitHub облегчает общение с помощью встроенных комментариев кода, а также простой ветки обсуждения в Pull Requests.
 
-With that basis in the workflow, your next step is to read the [Community Contributor's Guide](/community/contribute/using-git-and-github/community-contributors-guide "Community Contributor's Guide") to understand the branching model MODX is using and for more detail on putting it into practice.
+## Руководство для участников сообщества 
 
-## More 
+С этими основами в рабочем процессе ваш следующий шаг - прочитать [Руководство для участников сообщества](/community/contribute/using-git-and-github/community-contributors-guide "Community Contributor's Guide") чтобы понять модель ветвления, которую использует MODX, и для получени более подробной информации о ее применении на практике.
 
-1. [Community Contributor's Guide](/community/contribute/using-git-and-github/community-contributors-guide)
-2. [Git FAC (Frequently Accessed Commands)](/community/contribute/using-git-and-github/git-fac-(frequently-accessed-commands))
-3. [xPDO GitHub Contributor's Guide](/community/contribute/using-git-and-github/xpdo-github-contributors-guide)
+## Больше 
 
-## **Related**
+1. [Руководство для участников сообщества](/community/contribute/using-git-and-github/community-contributors-guide)
+2. [Git FAC (часто используемые команды)](/community/contribute/using-git-and-github/git-fac-(frequently-accessed-commands))
+3. [Руководство участника xPDO GitHub](/community/contribute/using-git-and-github/xpdo-github-contributors-guide)
 
-- [Install Revolution from your Git repo](getting-started/installation/git-installation "Git Installation")
+## **Связанные**
+
+- [Установка Revolution из вашего репозитория Git](getting-started/installation/git-installation "Git Installation")
