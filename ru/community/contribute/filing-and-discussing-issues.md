@@ -1,17 +1,16 @@
 ---
-title: "Filing and Discussing Issues"
-_old_id: "1130"
-_old_uri: "contribute/filing-and-discussing-issues"
+title: "Подача и обсуждение вопросов"
+translation: "contribute/filing-and-discussing-issues"
 ---
 
-Please file issues for the appropriate project in the issues section at Github: <https://github.com/modxcms/>
+Пожалуйста, подайте вопросы для соответствующего проекта в разделе вопросов на Github: <https://github.com/modxcms/>
 
-Issues that the community can initiate or collaborate on include:
+Вопросы, по которым сообщество может инициировать или сотрудничать, включают в себя:
 
-- bugs in MODX (Evolution and Revolution) and some Extras
-- feature requests for MODX (Evolution and Revolution) and some Extras
-- reports of bugs or problems with various MODX websites or parts thereof
+- ошибки в MODX (Evolution и Revolution) и некоторые дополнения
+- запросы функций для MODX (Evolution и Revolution) и некоторых дополнений
+- сообщения об ошибках или проблемах с различными сайтами MODX или их частями
 
-Many feature requests and bug reports stem originally from discussions in the forums. If you are filing a bug report or feature request for which there is forum discussion, please include a link to the forum thread.
+Многие запросы функций и сообщения об ошибках изначально возникли в результате обсуждений на форумах. Если вы отправляете отчет об ошибке или запрос функции, для которой есть обсуждение на форуме, пожалуйста, включите ссылку на ветку форума.
 
-Dialog around your bugs and features is very helpful especially when the solution is not clear-cut. Ultimately, contributors and the code integration team working on bug fixes and features will use the issue tracker as the first, and possibly only, source of information on the problem. If there is no link to additional information, that information may never play a role in solving your bug or getting a new feature developed.
+Диалог вокруг ваших ошибок и функций очень полезен, особенно когда решение не ясно. В конечном итоге участники и группа по интеграции кода, работающие над исправлением ошибок и функциями, будут использовать средство отслеживания проблем в качестве первого и, возможно, единственного источника информации о проблеме. Если нет ссылки на дополнительную информацию, эта информация может никогда не сыграть роли в устранении вашей ошибки или разработке новой функции.

@@ -1,58 +1,55 @@
 ---
-title: "Becoming a Contributor"
-_old_id: "1127"
-_old_uri: "contribute/becoming-a-contributor"
+title: "Стать участником"
+translation: "contribute/becoming-a-contributor"
 ---
 
-- [**The Contributor License Agreement**](#the-contributor-license-agreement)
-- [I've submitted my CLA, now what? I want to commit!](#ive-submitted-my-cla-now-what-i-want-to-commit)
-  - [In a Nutshell](#in-a-nutshell)
-- [Using Git and GitHub and the MODX Branching Strategy](#using-git-and-github-and-the-modx-branching-strategy)
-- [My code contribution was rejected! What?!](#my-code-contribution-was-rejected-what)
-- [See Also](#see-also)
+- [**Лицензионное соглашение участника**](#%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B5-%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%88%D0%B5%D0%BD%D0%B8%D0%B5-%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA%D0%B0)
+- [Я отправил свой CLA, что теперь? Я хочу совершить!](#%D1%8F-%D0%BE%D1%82%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB-%D1%81%D0%B2%D0%BE%D0%B9-cla-%D1%87%D1%82%D0%BE-%D1%82%D0%B5%D0%BF%D0%B5%D1%80%D1%8C-%D1%8F-%D1%85%D0%BE%D1%87%D1%83-%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B8%D1%82%D1%8C)
+  - [В двух словах](#%D0%B2-%D0%B4%D0%B2%D1%83%D1%85-%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%85)
+- [Использование Git и GitHub и стратегия ветвления MODX](#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-git-%D0%B8-github-%D0%B8-%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D1%8F-%D0%B2%D0%B5%D1%82%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-modx)
+- [Мой код был отклонен! Как?!](#%D0%BC%D0%BE%D0%B9-%D0%BA%D0%BE%D0%B4-%D0%B1%D1%8B%D0%BB-%D0%BE%D1%82%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD-%D0%BA%D0%B0%D0%BA)
+- [Смотрите также](#%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5-%D1%82%D0%B0%D0%BA%D0%B6%D0%B5)
 
+Итак, вам не терпится начать разработку или документацию MODX Revolution или MODX Evolution. Но, к вашему ужасу, вы не знаете, как начать этот процесс. Эта статья поможет вам достичь уровня приверженности в разработке - будь то активный программист или тестировщик, который представляет патчи.
 
+## **Лицензионное соглашение участника**
 
-So, you're itching to get in on the development or documentation of MODX Revolution or MODX Evolution. But, to your dismay, you're confused on how to start that process. This article will help you get to your level of commitment in development - be it an active coder or a tester who submits patches.
+Если вы хотите поработать над ошибками или функциями и фактически зафиксировать некоторый код в MODX или внести свой вклад в документацию, первым шагом является заполнение и отправка **[Лицензионного соглашения участника (CLA)] (http://development.modx.com/contrib/cla/)** после создания учетной записи MODX. CLA защищает ваши вклады, но также дает MODX и его базе пользователей четкое разрешение использовать эти вклады любым способом, который совместим с лицензией MODX (GPL), и основывается на них - больше похоже на то, что они были скопированы напрямую - на том же, который использовался. Apache и Фондом Додзё.
 
-## **The Contributor License Agreement**
+## Я отправил свой CLA, что теперь? Я хочу совершить!
 
-If you want to work on bugs or features and actually commit some code to MODX, or contribute to the documentation, the first step is to fill out and send in a **[Contributor License Agreement (CLA)](http://develop.modx.com/contribute/cla/)** after creating your MODX account. A CLA protects your contributions, but also gives MODX and its user base clear permission to use those contributions any way that is compliant with the MODX license (GPL), and it's based on--more like copied directly from--the same one used by Apache and the Dojo Foundation.
+Теперь, когда у вас есть доступ к средству отслеживания проблем, продолжайте и исправьте некоторые ошибки или поработайте над функцией.
 
-## I've submitted my CLA, now what? I want to commit!
+Сотрудничать над кодом MODX легко. MODX использует Git для контроля версий, и наши репозитории размещены на [GitHub](http://github.com/modxcms/).
 
-Now that you have access to the issue tracker, go ahead and fix some bugs or work on a feature.
+### В двух словах
 
-Collaborating on MODX's code is easy. MODX uses Git for source control, and our repositories are hosted on [GitHub](http://github.com/modxcms/).
+**Мы предпочитаем, чтобы вы отправляли изменения в исходном коде с помощью GitHub's Pull Requests.** Просто разветвите проект и клонируйте репозиторий. Создайте исправление или ветку функций локально и начните работать над изменениями. Затем, как только вы закончите и протестируете его, отправьте ветку на свою ветвь и отправьте запрос на извлечение данных в официальный репозиторий modxcms. Затем команда интеграции интегрирует или отклонит ваш запрос. Это оно! Не нужно получать доступ от core команды - просто нажмите и отправьте pull Git! (Пожалуйста, никаких политических шуток, скрытых в комментариях. Действительно.)
 
-### In a Nutshell
+Те, у кого есть общедоступные репозитории git, отсутствующие в GitHub, могут прикреплять подробные сведения о доступе к репозиторию к соответствующим проблемам в трекере. Также объясните, какая ветка является релевантной, и, если необходимо, укажите ссылки на сами коммиты.
 
-**We prefer that you submit source code changes by using GitHub's Pull Requests.** Simply fork the project and clone the repository. Create a bugfix or feature branch locally, and start working on your change. Then, once you've finished and tested it thoroughly, push your branch to your fork and send a Pull Request to the official modxcms repository. An Integration Manager will then integrate or reject your request. That's it! No getting access from the core team needed - just push and pull in Git! (Please, no political jokes hidden in the comments. Really.)
+В качестве альтернативы, хотя запросы на извлечение являются предпочтительными в первую очередь, а другие внешние репозитории git - вторыми, мы также примем файлы исправлений, прикрепленные к заявке в трекере проблем. Если вы сделаете это, убедитесь, что ваши патчи сгенерированы для самых последних файлов (либо из ветки релиза, либо из ветки разработки).
 
-Those with publicly accessible git repositories not on GitHub can attach details on accessing the repository to the relevant issue(s) in the issue tracker. Also explain which branch is relevant and, if relevant, reference the commits themselves.
+## Использование Git и GitHub и стратегия ветвления MODX
 
-Alternatively, though Pull Requests are preferred first and other external git repositories second, we will also accept patch files attached to a ticket in the issue tracker. If you do this, please ensure that your patches are generated against the most recent files (either from a release branch or the develop branch).
+Если вы умеете кодировать, но контроль над исходным кодом/версией и совместная работа для вас новы, не паникуйте! Раздел [Использование Git и GitHub](/community/contrib/using-git-and-github/) расскажет вам, как начать работу, а также объяснит стратегию ветвления, используемую MODX и что это означает для участников.
 
-## Using Git and GitHub and the MODX Branching Strategy
+## Мой код был отклонен! Как?!
 
-If you can code, but source/version control and collaborating is new to you, don't panic! The section on [Using Git and GitHub](/community/contribute/using-git-and-github/ "Using Git and GitHub") will fill you in on how to get started and also explains the branching strategy used by MODX and what that means for contributors.
+Время от времени, представленный вклад не отправляется в ядро. Это не потому, что ты нам не нравишься. Честно говоря, Джейсон любит дартс, и через определенные промежутки времени он скрепляет вклады в стену, и мы выбираем тот, который он бьет, когда завязывают глаза. (Хорошо, так что это не правда. Он не с завязанными глазами.)
 
-## My code contribution was rejected! What?!
+Иногда вклад, который вы отправляете, не вносится. Это может быть по множеству причин:
 
-Every once in a while, a contribution submitted doesn't make it into the core. It's not because we don't like you. In all honesty, Jason loves darts, and at random intervals he staples contributions to the wall and we choose the one he hits while blindfolded. (Okay, so that's not true. He's not blindfolded.)
+- Участник не следовал [Стандарты кода](developing-in-modx/code-standards "Code Standards")
+- Вклад будет перемещен в компонент, а не ядро
+- Вклад будет отложен до более позднего выпуска
+- Мы использовали другой вклад, чтобы решить проблему
+- Вклад вызвал слишком много других вопросов, чтобы возникнуть
+- Патч был представлен в [LOLCODE] (http://lolcode.org/), который, хотя у нас было много криков, в конце концов оказался довольно бесполезным.
 
-Sometimes a contribution you submit won't make it in. That may be for a myriad of reasons:
+Так что не обижайся. Мы очень ценим каждый и все вклады в MODX и серьезно относимся ко всему, что ему дает это замечательное сообщество. MODX процветал благодаря этому сообществу. Однако некоторые вещи просто не будут соответствовать видению и философии дизайна MODX. Так что будьте терпеливы с нами, и знайте, что нам действительно нравятся люди, которые отправляют запросы на удаление и исправления. Мы упоминали, что нам действительно нравятся люди, которые нас обманули?
 
-- A contribution doesn't follow [Code Standards](developing-in-modx/code-standards "Code Standards")
-- The contribution will be moved to a component rather than the core
-- The contribution will be deferred to a later release
-- We used a different contribution to fix the issue
-- The contribution caused too many other issues to arise
-- The patch was submitted in [LOLCODE](http://lolcode.org/), which although we had a hoot reading, was pretty useless in the end
+## Смотрите также
 
-So don't take offense. We really appreciate _any and all_ contributions to MODX, and we seriously consider everything that this wonderful community gives to it. MODX has thrived because of this community. However, some things just won't match with the MODX vision and design philosophy; so be patient with us, and know we really like people who submit pull requests and patches. A ton. Did we mention we really like people who have forked us?
-
-## See Also
-
-1. [Development Environments](/community/contribute/becoming-a-contributor/development-environments)
-2. [MODX PHP Coding Standards](/community/contribute/becoming-a-contributor/modx-php-coding-standards)
+1. [Среды разработки](/community/contribute/becoming-a-contributor/development-environments)
+2. [MODX PHP стандарты разработки](/community/contribute/becoming-a-contributor/modx-php-coding-standards)
