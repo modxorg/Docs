@@ -15,9 +15,3 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isLazy>
 ``` php 
 boolean isLazy ([string $key = ''])
 ```
-
-## Examples
-
-``` php 
-
-```

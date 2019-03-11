@@ -11,8 +11,6 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/adding-css-and-js-t
  **Other CMSs** 
  This is a common need in any CMS, so if you're coming from another platform, here are some of the related functions. - **WordPress** – uses its _wp\_enqueue\_script_, _wp\_register\_script_, _wp\_enqueue\_style_, _wp\_register\_style_ functions.
 
-
-
 ## Adding to the HEAD
 
  There are a few methods that automatically add CSS and/or JavaScript to the HEAD of the current page. They will run in the order that they're added, so if you need them in a certain order, make sure you execute the methods in that order as well.
@@ -43,7 +41,7 @@ $modx->regClientStartupScript('assets/js/site.js');
 $modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
 ```
 
- ``` php 
+``` php 
 $modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
 ```
 
@@ -75,7 +73,7 @@ $modx->regClientScript('assets/js/footer.js');
 $modx->regClientScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
 ```
 
- ``` php 
+``` php 
 $modx->regClientScript('http://code.jquery.com/jquery-latest.min.js');
 ```
 

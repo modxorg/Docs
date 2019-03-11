@@ -18,8 +18,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/cre
 - [Output Rendering Options](#output-rendering-options)
 - [Properties](#properties)
  
-
-
  This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what about what a Template Variable is, see the page on [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables").
 
 ## Explanation
@@ -109,7 +107,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/cre
 
  ``` php 
 Viewing: [[+subsection]]
-
 ```
 
  We can add a list property 'subsection' to the grid, and then allow that property to be overridden via property sets. Say we created a Property Set named 'CarsSectionTVPS' (PS for Property Set). In it, we set the 'subsection' property to "Cars". We'd then attach it to the TV in our Resource, or Template, or whereever we are using it like so:

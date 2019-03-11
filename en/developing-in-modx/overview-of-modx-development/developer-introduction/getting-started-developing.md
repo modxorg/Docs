@@ -13,8 +13,6 @@ _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introdu
 - [Custom Manager Pages (CMPs)](#custom-manager-pages-cmps)
 - [Using MODX Externally](#using-modx-externally)
 
-
-
 ## Programming in MODX Revolution
 
  MODX Revolution is an OOP Framework, built around the database ORM [xPDO](/display/xPDO20/Home "Home").

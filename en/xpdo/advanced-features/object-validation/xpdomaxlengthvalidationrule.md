@@ -12,7 +12,7 @@ This rule verifies that a field has less than X number of chars, where X is defi
 
 First, our model:
 
-``` php 
+``` xml 
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">    
     <object class="myTest" table="test" extends="xPDOSimpleObject">

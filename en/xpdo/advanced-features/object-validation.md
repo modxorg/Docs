@@ -4,16 +4,14 @@ _old_id: "1198"
 _old_uri: "2.x/advanced-features/object-validation"
 ---
 
-- [What is Object Validation in xPDO?](#ObjectValidation-WhatisObjectValidationinxPDO%3F)
-- [How is it Done?](#ObjectValidation-HowisitDone%3F)
-- [Example Usage](#ObjectValidation-ExampleUsage)
-- [Rules](#ObjectValidation-Rules)
-  - [The 'callable' Rule](#ObjectValidation-The%27callable%27Rule)
-  - [The 'preg\_match' Rule](#ObjectValidation-The%27pregmatch%27Rule)
-  - [The 'xPDOValidationRule' Rule](#ObjectValidation-The%27xPDOValidationRule%27Rule)
-- [See Also](#ObjectValidation-SeeAlso)
-
-
+- [What is Object Validation in xPDO?](#what-is-object-validation-in-xpdo)
+- [How is it Done?](#how-is-it-done)
+- [Example Usage](#example-usage)
+- [Rules](#rules)
+  - [The 'callable' Rule](#the-callable-rule)
+  - [The 'preg\_match' Rule](#the-pregmatch-rule)
+  - [The 'xPDOValidationRule' Rule](#the-xpdovalidationrule-rule)
+- [See Also](#see-also)
 
 ## What is Object Validation in xPDO?
 
@@ -27,7 +25,7 @@ Validation can be done either via the XML schema, or during run-time by [xPDOVal
 
 First, let's create our model with this object:
 
-``` php 
+``` xml 
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">

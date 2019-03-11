@@ -34,13 +34,13 @@ The **$modx** object extends xPDO, so for many situations (e.g. inside your Snip
 
 You can retrieve any MODX object this way, just by knowing its object name – usually that's simply a matter of prepending "mod" to the object's familiar name:
 
-| Common Name | Object Name | Notes |
-|-------------|-------------|-------|
-| Page | modResource | Pages are just one manifestation of modResource – you can also use this to retrieve Weblinks, Symlinks, and Static Resources |
-| Chunk | modChunk |  |
-| User | modUser |  |
-| Template | modTemplate |  |
-| Snippet | modSnippet |  |
+| Common Name | Object Name | Notes                                                                                                                        |
+| ----------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Page        | modResource | Pages are just one manifestation of modResource – you can also use this to retrieve Weblinks, Symlinks, and Static Resources |
+| Chunk       | modChunk    |                                                                                                                              |
+| User        | modUser     |                                                                                                                              |
+| Template    | modTemplate |                                                                                                                              |
+| Snippet     | modSnippet  |                                                                                                                              |
 
 See **core/model/schema/modx.mysql.schema.xml** file for a full definition of all MODX objects.
 
@@ -58,20 +58,20 @@ $box = $xpdo->getObject('Box', 134);
 
 Back in your XML schema, if your object extends _xPDOSimpleObject_, the primary key column is assumed to be named "id".
 
-``` php 
+``` xml 
 <object class="modPropertySet" table="property_set" extends="xPDOSimpleObject">
 ```
 
 Otherwise, your XML schema will tell you which column is the primary key via the _index alias="PRIMARY"_ node, e.g.
 
-``` php 
-        <object class="MyObject" table="my_object" extends="xPDOObject">
-                <field key="object_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
-                <!-- ... stuff here ... -->
-                <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
-                        <column key="object_id" collation="A" null="false" />
-                </index>
-        </object>
+``` xml 
+ <object class="MyObject" table="my_object" extends="xPDOObject">
+  <field key="object_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+  <!-- ... stuff here ... -->
+  <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
+    <column key="object_id" collation="A" null="false" />
+  </index>
+ </object>
 ```
 
 ### More Verbose Simple Example

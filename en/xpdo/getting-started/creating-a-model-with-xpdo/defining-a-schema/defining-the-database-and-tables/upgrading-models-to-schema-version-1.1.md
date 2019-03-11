@@ -4,13 +4,11 @@ _old_id: "1220"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-the-database-and-tables/upgrading-models-to-schema-version-1.1"
 ---
 
-- [Upgrading Models from Schema Version 1.0 to 1.1](#UpgradingModelstoSchemaVersion1.1-UpgradingModelsfromSchemaVersion1.0to1.1)
-  - [xpdo/tools/schema/upgrade-mysql-1.1.php](#UpgradingModelstoSchemaVersion1.1-xpdo%2Ftools%2Fschema%2Fupgrademysql1.1.php)
-  - [Usage](#UpgradingModelstoSchemaVersion1.1-Usage)
-      - [Running as CLI script](#UpgradingModelstoSchemaVersion1.1-RunningasCLIscript)
-      - [Running as web request](#UpgradingModelstoSchemaVersion1.1-Runningaswebrequest)
-
-
+- [Upgrading Models from Schema Version 1.0 to 1.1](#upgrading-models-from-schema-version-10-to-11)
+  - [xpdo/tools/schema/upgrade-mysql-1.1.php](#xpdotoolsschemaupgrade-mysql-11php)
+  - [Usage](#usage)
+    - [Running as CLI script](#running-as-cli-script)
+    - [Running as web request](#running-as-web-request)
 
 ## Upgrading Models from Schema Version 1.0 to 1.1
 

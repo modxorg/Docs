@@ -17,7 +17,6 @@ The primary way is via the set method:
 ``` php 
 $myBox->set('width',10);
 $myBox->set('height',4);
-
 ```
 
 set() also takes a 3rd $vType parameter, which is either a string indicating the format of provided value, or a callable function that should be used to set the field value, overriding the default behavior. For example:
@@ -34,7 +33,6 @@ function setDim($k,$v,&$obj) {
    $obj->set($k,$dim);
 }
 $myBox->set('dimension','','setDim');
-
 ```
 
 ### fromArray
@@ -46,7 +44,6 @@ $myBox->fromArray(array(
    'width' => 5,
    'height' => 10,
 ));
-
 ```
 
 xPDOObject::fromArray takes 5 parameters in total. We've seen the first in use. The second is $keyPrefix, which when set, will strip the passed value from the array you are passing in the first parameter. A good example of this is when passing $\_POST vars to an Object:
@@ -60,7 +57,6 @@ xPDOObject::fromArray takes 5 parameters in total. We've seen the first in use. 
 $myBox->fromArray($_POST,'test_');
 
 echo $myBox->get('w'); // prints '12'
-
 ```
 
 The third parameter, $setPrimaryKeys, is a boolean value that defaults to false. When set, it will allow Primary Keys in the object to be set. This is useful for creating new objects that you want to specify the ID of:
@@ -74,7 +70,6 @@ $myBox->fromArray(array(
 ),'',true);
 
 echo $myBox->get('id'); // prints '23'
-
 ```
 
 The fourth parameter, $rawValues, is set to false by default. If true, the object will set its values without calling set() internally. What does this mean? Well, it means field type validation wont happen; nor will that field be set as 'dirty'.
@@ -86,7 +81,6 @@ $myBox->fromArray(array(
   'width' 5',
   'notRealField' => 'boo',
 ),'',false,false,true);
-
 ```
 
 The last field can be overridden by passing xPDO::OPT\_HYDRATE\_ADHOC\_FIELDS as 'true' into the xPDO config. If that setting is true, the 5th parameter will always be true.
@@ -97,7 +91,6 @@ This function allows you to save your set fields permanently to the database.
 
 ``` php 
 $myBox->save();
-
 ```
 
 This will immediately execute the UPDATE (or CREATE) query that will save the record to the database.

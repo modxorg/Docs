@@ -111,7 +111,6 @@ return strrev($output);
 
  ``` html 
 [[~123]]
-
 ```
 
  where '123' is the ID of the Resource to link to. You can put these tags anywhere, and MODx will dynamically render the URL for the Resource.
@@ -126,14 +125,12 @@ return strrev($output);
 
  ``` html 
 [[~42? &tag=`Snacks` &sort=`Taste`]]
-
 ```
 
  This would render as:
 
  ``` html 
-	store/items.html?tag=Snacks&sort=Taste
-
+store/items.html?tag=Snacks&sort=Taste
 ```
 
  Note that those are **backticks** instead of apostrophes.
@@ -144,7 +141,6 @@ return strrev($output);
 
  ``` html 
 [[~123? &scheme=`https`]]
-
 ```
 
  Would render the URL using 'https' instead of the scheme indicated by the current settings (i.e. system or context settings).

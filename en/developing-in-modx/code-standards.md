@@ -376,7 +376,7 @@ but only if the browser default text size is 16px.
 
  To ensure a strict level of comparison, as might be seen in a strongly typed or compiled language, JavaScript (like PHP) has a triple-equals operator ===. In similar fashion, it also has a strict negation operator !==. Consider the following examples of potential pitfalls when it comes to evaluating comparisons.
 
- ``` js 
+ ``` javascript 
 var test_1 = 'true';
 var test_2 = 0;
 if (test_1 == true) {
@@ -399,7 +399,7 @@ if (test_2 !== false) {
 
  As you can see in the example above, simply using == and != is insufficient because it makes for potentially unpredictable results. Therefore, the stricter comparison operators should always be used. There is never a good reason to use the lesser form of comparison operators. To simply for the existence of elements in the DOM, there is an even more abbreviated way, that leaves no room for ambiguity. If you are unsure if certain elements will be present in an HTML page, use one of the following techniques.
 
- ``` js 
+ ``` javascript 
 function first_func() {
     if (!document.getElementById('id_name')) {
         return;
@@ -421,14 +421,14 @@ function second_func() {
  Consider the following examples of a JavaScript for-loop...
 
  **"Correct"** 
- ``` js 
+ ``` javascript 
 for (var i=0, j=arr.length; i<j; i++) {
     // Do something.
 }
 ```
 
  **"Incorrect"** 
-``` js 
+``` javascript 
 for ( var i = 0, j = arr.length; i < j; i++ )
 {
 // Do something.
@@ -444,12 +444,12 @@ for ( var i = 0, j = arr.length; i < j; i++ )
  The preferred method of delineating strings is to use single quotes for everything. Since JavaScript exists to manipulate markup, and because HTML is generally written with double quotes in W3C specifications, using single quoted strings will better facilitate handling HTML fragments, and keep code more readable.
 
  **"Correct"** 
- ``` js 
+ ``` javascript 
 var my_html = '<img class="photo" src="/path/file.jpg" alt="Text" />';
 ```
 
  **"Incorrect"** 
- ``` js 
+ ``` javascript 
 var my_html = "<img class=\"photo\" src=\"/path/file.jpg\" alt=\"Text\" />";
 ```
 
@@ -466,7 +466,7 @@ var my_html = "<img class=\"photo\" src=\"/path/file.jpg\" alt=\"Text\" />";
  To maintain proper scope for variables, it is highly recommended that self-executing anonymous function be used as a closure. For the most part, variables defined correctly using the var syntax, within the scope of a function will not add to global scope pollution. However, from time to time, you may need to access variables via two or more functions. In such cases, multiple functions can be grouped together inside a closure.
 
  **"Closure"** 
- ``` js 
+ ``` javascript 
 (function() {
     var first_variable = 'value 1';
     var second_variable = 'value 2';
@@ -488,7 +488,7 @@ var my_html = "<img class=\"photo\" src=\"/path/file.jpg\" alt=\"Text\" />";
  Objects (and arrays) are an important part of JSON - JavaScript Object Notation, which is a platform and language independent way of transmitting data, used as an alternative to XML.
 
  **"Object literal - preferred"** 
- ``` js 
+ ``` javascript 
 var john_doe = {
     first_name: 'John'
     ,last_name: 'Doe'
@@ -500,7 +500,7 @@ var john_doe = {
 ```
 
  **"Object dot notation"** 
- ``` js 
+ ``` javascript 
 /*
 Could also be written:
 var john_doe = new Object();
@@ -515,7 +515,7 @@ john_doe.age = 30;
 ```
 
  **"Array literal - preferred"** 
- ``` js 
+ ``` javascript 
 var doe_family = [
     'John'
     ,'James'
@@ -527,7 +527,7 @@ var doe_family = [
 ```
 
  **"Array bracket notation"** 
- ``` js 
+ ``` javascript 
 /*
 Could also be written:
 var doe_family = new Array();

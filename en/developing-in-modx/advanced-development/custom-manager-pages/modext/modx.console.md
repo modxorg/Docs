@@ -29,7 +29,7 @@ First off, the Console starts up a Polling panel that queries the Registry with 
 
 The console can easily be hooked up to nearly any processor and JS custom application in MODX. Simply instantiate a new console object:
 
-``` js 
+``` javascript 
 var topic = '/mytopic/';
 var register = 'mgr';
 var console = MODx.load({
@@ -50,7 +50,7 @@ Note here that you fire up the console, and then load the topic that you want (m
 
 When you've got that loaded, you can send a request to your processor:
 
-``` js 
+``` javascript 
 MODx.Ajax.request({
     url: URL_TO_MY_CONNECTOR
     ,params: {

@@ -11,10 +11,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 - [Part III: Customizing the Controllers](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3 "Creating a Resource Class - Step 3")
 - Part IV: Customizing the Processors
 
-
-
-
-
  This is a bit of bonus material to help identify some of the things you can do by extending the default processors.
 
 ## Extending the Processors for our CRC

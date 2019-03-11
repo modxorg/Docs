@@ -12,9 +12,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 - [Part IV: Customizing the Processors](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4")
  
 
-
- 
-
  Now that we've got our class, we want to append our copyright date to it. Let's go ahead:
 
 ## Overriding getContent

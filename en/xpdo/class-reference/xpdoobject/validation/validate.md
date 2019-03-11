@@ -15,9 +15,3 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#validate>
 ``` php 
 boolean validate ([array $options = array()])
 ```
-
-## Examples
-
-``` php 
-
-```

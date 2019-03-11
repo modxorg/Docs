@@ -12,7 +12,7 @@ This rule verifies that the field is at least X number of characters long, where
 
 First, our model:
 
-``` php 
+``` xml 
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">    
     <object class="myTest" table="test" extends="xPDOSimpleObject">

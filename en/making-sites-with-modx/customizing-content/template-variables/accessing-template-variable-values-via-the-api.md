@@ -4,15 +4,9 @@ _old_id: "8"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/accessing-template-variable-values-via-the-api"
 ---
 
-- [Accessing Template Variable Values via the API](#AccessingTemplateVariableValuesviatheAPI-AccessingTemplateVariableValuesviatheAPI)
-- [getTVValue](#AccessingTemplateVariableValuesviatheAPI-getTVValue)
-  - [getTVValue Usage](#AccessingTemplateVariableValuesviatheAPI-getTVValueUsage)
-- [setTVValue](#AccessingTemplateVariableValuesviatheAPI-setTVValue)
-  - [setTVValue Usage](#AccessingTemplateVariableValuesviatheAPI-setTVValueUsage)
-- [See Also](#AccessingTemplateVariableValuesviatheAPI-SeeAlso)
+- [Accessing Template Variable Values via the API](#accessing-template-variable-values-via-the-api)
+- [getTVValue](#gettvvalue)
  
-
-
 ## Accessing Template Variable Values via the API
 
  Like just about everything in the MODX GUI, you can access Template Variables and their values via the MODX API. This relies on the xPDO method [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and related functions, but we demonstrate some examples here because it relates directly to Template Variables.
@@ -20,9 +14,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/acc
 ## getTVValue
 
  ``` php 
-
 string|null getTVValue (str|integer $tv_name OR ID of TV)
-
 ```
 
  See **core/model/modx/modresource.class.php**
@@ -32,16 +24,13 @@ string|null getTVValue (str|integer $tv_name OR ID of TV)
  Let's say we have a TV named 'bio', and we're going to retrieve page id 123 that uses this TV. Here's what our Snippet might look like:
 
  ``` php 
-
 $page = $modx->getObject('modResource', 123);
 return $page->getTVValue('bio');
-
 ```
 
  getTVValue fetches values from the resource cache when available. These caches are normally cleared when saving a resource, however if you are updating TV values using the setTVValue method below, these values will not be reflected directly because of the cache. If you absolutely need the latest data, you could bypass the cache by going straight for the data and using getObject to get the TV value record.
 
  ``` php 
-
 $tvr = $modx->getObject('modTemplateVarResource', array(
   'tmplvarid' => $tvId,
   'contentid' => $resourceId
@@ -54,7 +43,6 @@ else {
   if ($tv) return $tv->get('default_text');
 }
 return '';
-
 ```
 
 ## setTVValue
@@ -62,20 +50,16 @@ return '';
  Use **setTVValue** to save a new value to a TV. Unlike some other xPDO API methods, this method stores values to the database immediately, so you do not need to invoke a separate call to a **save()** method. This method does not clear the resource cache.
 
  ``` php 
-
 boolean setTVValue (str|integer $tv_name OR ID of TV, string $value)
-
 ```
 
 ### setTVValue Usage
 
  ``` php 
-
 $page = $modx->getObject('modResource', 123);
 if (!$page->setTVValue('bio', 'This is my new bio...')) {
     $modx->log(xPDO::LOG_LEVEL_ERROR, 'There was a problem saving your TV...');
 }
-
 ```
 
 ## See Also

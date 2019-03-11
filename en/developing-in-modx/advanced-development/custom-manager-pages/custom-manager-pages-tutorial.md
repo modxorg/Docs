@@ -168,8 +168,6 @@ setting_ + Key + _desc
 
  See System Settings for more info.
 
-
-
  Now, clear the site cache to reload the lexicon cache, via Site -> Clear Cache.
 
 ### Use Translations in your CMP

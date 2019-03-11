@@ -21,9 +21,3 @@ void addValidationRule (
    [array $parameters = array()]
 )
 ```
-
-## Examples
-
-``` php 
-
-```

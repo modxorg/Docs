@@ -14,8 +14,6 @@ Revolution also has [Providers](developing-in-modx/advanced-development/package-
 - [Uninstalling Packages](#uninstalling-packages)
 - [See Also](#see-also)
 
-
-
 ## Downloading Packages
 
 You have a few options: you can download remotely via the Provider option, by selecting the modxcms.com provider from the menu (or just by clicking 'Download Extras' in the grid toolbar).

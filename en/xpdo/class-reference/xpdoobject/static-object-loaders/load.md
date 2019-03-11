@@ -20,9 +20,3 @@ static object|null load(
    [boolean|integer $cacheFlag = true]
 )
 ```
-
-## Example
-
-``` php 
-
-```

@@ -15,8 +15,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/package-management/transp
 - [Usage](#usage)
 - [Related Pages](#related-pages)
 
-
-
 ## What is a Transport Package?
 
 A Transport Package is a collection of objects and files that can be used to "transport" data from one MODx installation to another; or even to transport 3rd-Party Components in a simple, easily-manageable format. In other words, Transport Packages can transport nearly _anything_ - from database data, files and even scripts to run during its install.

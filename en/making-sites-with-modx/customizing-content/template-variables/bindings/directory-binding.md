@@ -22,7 +22,7 @@ In MODx Revolution, the path used for the @DIRECTORY binding is relative to the 
 
 If you are using the @DIRECTORY binding for your template variable \[\[\*myTV\]\], you can easily imagine that your template code could have some stuff in it like:
 
-``` php 
+``` html 
 <img src="[[*myTV]]" alt="" />
 ```
 

@@ -12,7 +12,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.log"
 
  ``` php 
 $xpdo->log($level, $msg, $target= '', $def= '', $file= '', $line= '');
-
 ```
 
 - `$level` (integer) The verbosity level of the logged message. See Verbosity Constants below
@@ -26,7 +25,6 @@ $xpdo->log($level, $msg, $target= '', $def= '', $file= '', $line= '');
 
  ``` php 
 void log (integer $level, string $msg, [string $target = ''], [string $def = ''], [string $file = ''], [string $line = ''])
-
 ```
 
 ##  Log Levels 
@@ -43,14 +41,12 @@ void log (integer $level, string $msg, [string $target = ''], [string $def = '']
 
  ``` php 
 $xpdo->log(xPDO::LOG_LEVEL_ERROR,'An error occurred.');
-
 ```
 
  In the logs, this would appear like this:
 
  ```
 [2013-09-15 14:21:25] (ERROR @ /index.php) [Mobile Detect] An error occurred.
-
 ```
 
 ###  Specify the Snippet 
@@ -59,12 +55,10 @@ $xpdo->log(xPDO::LOG_LEVEL_ERROR,'An error occurred.');
 
  ``` php 
 $xpdo->log(xPDO::LOG_LEVEL_ERROR,'An error occurred.','','MySnippet');
-
 ```
 
-```
+``` php
 [2013-09-15 14:22:48] (ERROR in MySnippet @ /index.php) An error occurred
-
 ```
 
 ###  Specify File and Line 
@@ -73,10 +67,9 @@ $xpdo->log(xPDO::LOG_LEVEL_ERROR,'An error occurred.','','MySnippet');
 
  ``` php 
 $xpdo->log(xPDO::LOG_LEVEL_ERROR,'This is my error message...','','MySnippet',__FILE__,__LINE__);
-
 ```
 
-```
+``` php
 [2013-09-15 14:48:02] (ERROR in MySnippet @ /path/to/core/cache/includes/elements/modsnippet/28.include.cache.php : 7) This is my error message...
 
 ```
@@ -89,14 +82,12 @@ $xpdo->log(xPDO::LOG_LEVEL_ERROR,'This is my error message...','','MySnippet',__
 $xpdo->log(xPDO::LOG_LEVEL_ERROR,'Error for my custom log file', 
     array('target'=>'FILE', 'options'=> array('filename'=>'custom.log'))
 );
-
 ```
 
  By default, the path for log files is `core/cache/logs/` so in this example, we find our log message inside the `custom.log` file:
 
- ```
+ ``` php
 [2013-09-15 15:01:07] (ERROR @ /index.php) Error for my custom log file
-
 ```
 
  If desired, you may also specify the path via the `filepath` argument.
@@ -112,7 +103,6 @@ $log_target = array(
 ); 
 $xpdo->log(xPDO::LOG_LEVEL_ERROR,'My Error...',$log_target); 
 $xpdo->log(xPDO::LOG_LEVEL_ERROR,'Some other error...',$log_target);
-
 ```
 
 ###  Debugging 
@@ -121,7 +111,6 @@ $xpdo->log(xPDO::LOG_LEVEL_ERROR,'Some other error...',$log_target);
 
  ``` php 
 $xpdo->log(xPDO::LOG_LEVEL_DEBUG,'This is a debugging statement.');
-
 ```
 
 ###  Custom Use in Snippets 
@@ -133,18 +122,17 @@ $xpdo->log(xPDO::LOG_LEVEL_DEBUG,'This is a debugging statement.');
 // Override global log_level value
 $log_level = $modx->getOption('log_level',$scriptProperties, $modx->getOption('log_level'));
 $modx->setLogLevel($log_level);
-
 ```
 
 ##  Verbosity Constants 
 
- | xPDO Constant | MODX Constant | Value |
-|---------------|---------------|-------|
-| xPDO::LOG\_LEVEL\_FATAL | MODX\_LOG\_LEVEL\_FATAL | 0 |
-| xPDO::LOG\_LEVEL\_ERROR | MODX\_LOG\_LEVEL\_ERROR | 1 |
-| xPDO::LOG\_LEVEL\_WARN | MODX\_LOG\_LEVEL\_WARN | 2 |
-| xPDO::LOG\_LEVEL\_INFO | MODX\_LOG\_LEVEL\_INFO | 3 |
-| xPDO::LOG\_LEVEL\_DEBUG | MODX\_LOG\_LEVEL\_DEBUG | 4 |
+ | xPDO Constant           | MODX Constant           | Value |
+ | ----------------------- | ----------------------- | ----- |
+ | xPDO::LOG\_LEVEL\_FATAL | MODX\_LOG\_LEVEL\_FATAL | 0     |
+ | xPDO::LOG\_LEVEL\_ERROR | MODX\_LOG\_LEVEL\_ERROR | 1     |
+ | xPDO::LOG\_LEVEL\_WARN  | MODX\_LOG\_LEVEL\_WARN  | 2     |
+ | xPDO::LOG\_LEVEL\_INFO  | MODX\_LOG\_LEVEL\_INFO  | 3     |
+ | xPDO::LOG\_LEVEL\_DEBUG | MODX\_LOG\_LEVEL\_DEBUG | 4     |
 
 ##  See Also 
 

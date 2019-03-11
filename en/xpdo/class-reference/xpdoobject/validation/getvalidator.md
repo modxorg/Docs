@@ -15,9 +15,3 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getValidator>
 ``` php 
 string|boolean getValidator ()
 ```
-
-## Examples
-
-``` php 
-
-```

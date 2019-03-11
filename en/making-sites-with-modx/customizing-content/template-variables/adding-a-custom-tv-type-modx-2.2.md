@@ -80,7 +80,7 @@ Now you can see here we are specifying a "tpl" file for rendering our TV. Go ahe
 
 And make its content:
 
-``` php 
+``` javascript 
 <select id="tv{$tv->id}" name="tv{$tv->id}" class="combobox"></select>
 <script type="text/javascript">
 // <![CDATA[

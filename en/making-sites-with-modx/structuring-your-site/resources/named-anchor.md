@@ -18,13 +18,13 @@ The problem with using named anchors with MODX and friendly URLs enabled, is tha
 
 To generate a link to the current Resource, while using a named anchor of "prohibited":
 
-``` php 
+``` html 
 <a href="[[~[[*id]]]]#prohibited">Prohibited Activities</a>
 ```
 
 To generate a link to a Resource with ID 12, while using a named anchor of "prohibited":
 
-``` php 
+``` html 
 <a href="[[~12]]#prohibited">Prohibited Activities</a>
 ```
 

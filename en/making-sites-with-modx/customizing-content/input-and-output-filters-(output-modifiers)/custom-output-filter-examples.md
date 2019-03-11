@@ -24,14 +24,12 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
 ``` php 
 [[*pagetitle]]
-
 ```
 
  returns a string of text, you can modify it via a custom Output Filter, e.g.
 
 ``` php 
 [[*pagetitle:myOutputFilter]]
-
 ```
 
  simply by creating a Snippet named **myOutputFilter**
@@ -47,7 +45,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 ``` php 
 $input; // the value that is being formatted/filtered
 $options; // optional values passed via backticks
-
 ```
 
  A custom output filter is simply a [Snippet](developing-in-modx/basic-development/snippets "Snippets") that is earmarked to modify content. Simply put the [Snippet](developing-in-modx/basic-development/snippets "Snippets") name instead of the modifier.
@@ -56,7 +53,6 @@ $options; // optional values passed via backticks
 
 ``` php 
 [[+file:makeDownloadLink=`notitle`]]
-
 ```
 
  This will pass these properties to the snippet:
@@ -73,7 +69,6 @@ $options; // optional values passed via backticks
 
 ``` php 
 return strtolower($input);
-
 ```
 
 ##  Porting PHx to Custom Output Filters 
@@ -104,14 +99,12 @@ if ($input % 2) {
   return ''; // Could set another class here
 }
 ?>
-
 ```
 
  Use like this:
 
 ``` php 
 [[+component.idx:alternateClass=`alt`]]
-
 ```
 
 ###  parseLinks 
@@ -119,7 +112,7 @@ if ($input % 2) {
  The parseLinks output filter finds links, and replaces them with a html <a> attribute.</a>
 
 ``` php 
-<a><?php
+<?php
 /*
  * Based on phx:parseLinks
  */
@@ -127,15 +120,14 @@ $t = $input;
 $t = ereg_replace("[a-zA-Z]+://([.]?[a-zA-Z0-9_/-])*", "<a href=\"\\0\">\\0</a>", $t);
 $t = ereg_replace("(^| |\n)(www([.]?[a-zA-Z0-9_/-])*)", "\\1<a href=\"http://\\2\">\\2</a>", $t);
 return $t;
-</a>
 ```
 
-### <a> parseTags </a>
+### parseTags
 
-<a> This parseTags takes input as a comma delimited list, and makes all individual tags a link to resource 9 with tag=tagname query parameter appended to the link.</a>
+This parseTags takes input as a comma delimited list, and makes all individual tags a link to resource 9 with tag=tagname query parameter appended to the link.
 
 ``` php 
-<a><?php
+<?php
 /*
  * Based on phx:parseLinks
  */
@@ -143,15 +135,14 @@ $t = $input;
 $t = ereg_replace("[a-zA-Z]+://([.]?[a-zA-Z0-9_/-])*", "<a href=\"\\0\">\\0</a>", $t);
 $t = ereg_replace("(^| |\n)(www([.]?[a-zA-Z0-9_/-])*)", "\\1<a href=\"http://\\2\">\\2</a>", $t);
 return $t;
-</a>
 ```
 
-### <a> parseTags </a>
+### parseTags
 
-<a> This parseTags takes input as a comma delimited list, and makes all individual tags a link to resource 9 with tag=tagname query parameter appended to the link.</a>
+This parseTags takes input as a comma delimited list, and makes all individual tags a link to resource 9 with tag=tagname query parameter appended to the link.
 
 ``` php 
-<a><?php
+<?php
 /*
  * parseTags output filter
  * by Mark Hamstra (http://www.markhamstra.nl)
@@ -163,15 +154,14 @@ if ($input == '') { return ''; } // Output filters are also processed when the i
     $output[] = '<a href="'.$modx->makeurl(9, '', array('tag' => $value)).'">'.$value.'</a>';
   }
   return implode(', ',$output); // Delimit again with a comma-space
-</a>
 ```
 
-### <a> shorten </a>
+### shorten
 
-<a> This shortens the input like :ellipsis but it does not truncate words. Defaults to the length of max. 50 characters. Based on code by gOmp.</a>
+This shortens the input like :ellipsis but it does not truncate words. Defaults to the length of max. 50 characters. Based on code by gOmp.
 
 ``` php 
-<a><?php
+<?php
 $output = '';
 $options = !empty($options)?$options:50;
 if (!empty($input) && !empty($options)) {
@@ -184,31 +174,27 @@ if (!empty($input) && !empty($options)) {
 }
 return $output;
 ?>
-</a>
 ```
 
-### <a> substring </a>
+### substring
 
-<a> Get a substring of the input.</a>
+Get a substring of the input.
 
 ``` php 
-<a><?php
+<?php
 $options=explode(',',$options);
 return count($options)>1 ? substr($input,$options[0],$options[1]) : substr($input,$options[0]);
 ?>
-</a>
 ```
 
-<a> Example:</a>
+Example:
 
 ``` php 
-<a><span>[[*introtext:substring=`0,1`]]</span>[[*introtext:substring=`1`]]
-</a>
+<span>[[*introtext:substring=`0,1`]]</span>[[*introtext:substring=`1`]]
 ```
 
-### <a> numberformat </a>
-
-<a> </a><http://php.net/manual/en/function.number-format.php>
+### numberformat
+[PHP: number_format](http://php.net/manual/en/function.number-format.php)
 
 ``` php 
 <?php
@@ -229,12 +215,9 @@ $dec_point = isset($optionsArray['dec_point']) ? $optionsArray['dec_point'] : nu
 $thousands_sep = isset($optionsArray['thousands_sep']) ? $optionsArray['thousands_sep'] : null;
 $output = number_format($number, $decimals, $dec_point, $thousands_sep);
 return $output;
-
 ```
 
  Example:
-
 ``` php 
 [[+price:numberformat=`&decimals=2&dec_point=,&thousands_sep=.`]]
-
 ```

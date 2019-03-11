@@ -19,7 +19,6 @@ boolean writeSchema (
   [string $baseClass = ''],
   [string $tablePrefix = ''],
   [boolean $restrictPrefix = false])
-
 ```
 
 ## Example
@@ -32,7 +31,6 @@ $manager= $xpdo->getManager();
 $generator= $manager->getGenerator();
 
 $xml= $generator->writeSchema('/path/to/my/new/packagename.schema.xml','mypackage', 'xPDOObject','mydb_');
-
 ```
 
 Note: generating the XML schema doesn't generate the aggregate and composite relationships - just the field and object definitions. You'll need to specify those relationships yourself. See [Defining Relationships](http://rtfm.modx.com/display/xPDO20/Defining+Relationships) for more details. 

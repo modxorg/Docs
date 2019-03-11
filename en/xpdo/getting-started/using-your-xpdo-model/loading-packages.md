@@ -20,7 +20,6 @@ The addPackage method takes 3 parameters: 'name', 'path' and an optional 'table\
 
  ``` php 
 $xpdo->addPackage('boxpackage','/myapp/core/model/','myapp_');
-
 ```
 
  From then on out, any of our classes in our Package can be loaded via xPDO's retrieval methods.

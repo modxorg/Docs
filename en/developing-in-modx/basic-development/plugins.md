@@ -14,8 +14,6 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins"
   - [Page-Not-Found Redirector:](#page-not-found-redirector)
 - [See Also](#see-also)
 
-
-
 ## What is a Plugin?
 
 Plugins are similar to Snippets in that they are bits of PHP code that have access to the MODx API. The big difference, however, is in _when_ the code executes. You put Snippets inside of a page or inside a template and they run when the page is viewed, whereas Plugins are set to execute during certain system events, e.g. saving a Chunk, or emptying the cache. So when a given event "fires", any Plugin "listening" for that event is executed. Once the Plugin's code has executed, control returns to the point after the spot where the System Event was triggered.
@@ -39,7 +37,6 @@ If you need to know which event triggered your plugin (say, for a plugin that li
 
 ``` php 
 $eventName = $modx->event->name;
-
 ```
 
 The code for a Plugin listening to more than one event looks like this:
@@ -88,7 +85,6 @@ The trick here is that what you want to message the user has to be passed to the
  The output you set in **$modx->event->output()** must not contain any HTML! Use plain text only! This is because the message is passed to the user via a Javascript modal window.
 
 Return value must be a string. If your return value will be a number, concatenate it with an empty string.
-
 
 - - - - - -
 

@@ -4,13 +4,11 @@ _old_id: "1152"
 _old_uri: "2.x/advanced-features/caching"
 ---
 
-- [Global Configuration](#Caching-GlobalConfiguration)
-- [Caching Providers and Partitions](#Caching-CachingProvidersandPartitions)
-- [Manipulation of the Cache](#Caching-ManipulationoftheCache)
-- [Utilizing Specific Cache Partitions](#Caching-UtilizingSpecificCachePartitions)
-- [See Also](#Caching-SeeAlso)
-
-
+- [Global Configuration](#global-configuration)
+- [Caching Providers and Partitions](#caching-providers-and-partitions)
+- [Manipulation of the Cache](#manipulation-of-the-cache)
+- [Utilizing Specific Cache Partitions](#utilizing-specific-cache-partitions)
+- [See Also](#see-also)
 
 ## Global Configuration
 

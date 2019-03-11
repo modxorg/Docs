@@ -4,11 +4,11 @@ _old_id: "1184"
 _old_uri: "2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields"
 ---
 
-- [What is hydration?](#HydratingFields-Whatishydration%3F)
-- [Hydrating Fields](#HydratingFields-HydratingFields)
-- [Hydrating Ad Hoc Fields](#HydratingFields-HydratingAdHocFields)
-- [Hydrating Related Objects](#HydratingFields-HydratingRelatedObjects)
-- [See Also](#HydratingFields-SeeAlso)
+- [What is hydration?](#what-is-hydration)
+- [Hydrating Fields](#hydrating-fields)
+- [Hydrating Ad Hoc Fields](#hydrating-ad-hoc-fields)
+- [Hydrating Related Objects](#hydrating-related-objects)
+- [See Also](#see-also)
 
 
 

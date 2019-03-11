@@ -99,5 +99,5 @@ _old_uri: "dashboard.action"
   
   - [Documentation](community/)
   - [Filing and Discussing Issues](community/contribute/filing-and-discussing-issues)
-  - <a href="">Becoming a Contributor</a>
+  - [Becoming a Contributor](community/contribute/becoming-a-contributor)
   - [Documentation Style Guide](/style-guide)

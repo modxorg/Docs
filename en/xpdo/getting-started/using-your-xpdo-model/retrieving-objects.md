@@ -28,7 +28,6 @@ _old_uri: "2.x/getting-started/using-your-xpdo-model/retrieving-objects"
 
  ``` php 
 $box23 = $xpdo->getObject('Box',23);
-
 ```
 
  If an object doesn't exist, it will return 'null'.
@@ -41,14 +40,12 @@ $gu = $xpdo->getObject('GroupUser',array(
    'user' => 12,
    'group' => 4,
 ));
-
 ```
 
  Or, let's say we wanted to grab the first Box object we find with a width of 150:
 
  ``` php 
 $bigbox = $xpdo->getObject('Box',array('width' => 150));
-
 ```
 
  **Handy Hint** 
@@ -74,7 +71,6 @@ foreach ($boxes as $box) {
 // red
 // blue
 // yellow
-
 ```
 
 ### [xPDO::getIterator](xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
@@ -95,7 +91,6 @@ foreach ($boxes as $box) {
 // red
 // blue
 // yellow
-
 ```
 
  Note that the index for each object when iterated over is not the primary key, unlike the array index when using getCollection. 
@@ -115,7 +110,6 @@ $c = $xpdo->newQuery('Box');
 $c->where(array('width' => 14));
 $c->sortby('name','ASC');
 $boxes = $xpdo->getCollection('Box',$c);
-
 ```
 
  Once you have your result, you can iterate over the array (see above). You can see the similarity between the defining a query object and passing a simple array to getObject or getCollection. So why use [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery")? It's more flexible. Did you see how we could use it to specify the sorting order?
@@ -132,7 +126,6 @@ $c->where(array(
 $c->sortby('name','ASC');
 $c->limit(5);
 $boxes = $xpdo->getCollection('Box',$c);
-
 ```
 
  We can join on 3rd table ("Owner") by using another call to [xPDOQuery.innerJoin](xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"). Let's also grab the 2nd 5 Boxes by specifying an offset – it's a 2nd argument to the limit() function:
@@ -149,7 +142,6 @@ $c->where(array(
 $c->sortby('Box.name','ASC');
 $c->limit(5,5); // limit, offset
 $boxes = $xpdo->getCollection('Box',$c);
-
 ```
 
  You can see that the sortby and where functions can take dot syntax on their parameters; they can prefix their columns with alias – sometimes they have to do this to prevent collisions!
@@ -167,7 +159,6 @@ $c = $xpdo->newQuery('Box');
 // ... add some more criteria...
 $c->prepare();
 print $c->toSQL();
-
 ```
 
 ### xPDOCriteria
@@ -185,7 +176,6 @@ $c = $xpdo->newQuery('Box');
 $c->where(array('width' => 14));
 $c->sortby('name','ASC');
 $boxes = $xpdo->getCollection('Box',$c);
-
 ```
 
  Once you have your result, you can iterate over the array (see above). You can see the similarity between the defining a query object and passing a simple array to getObject or getCollection. So why use [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery")? It's more flexible. Did you see how we could use it to specify the sorting order?
@@ -202,7 +192,6 @@ $c->where(array(
 $c->sortby('name','ASC');
 $c->limit(5);
 $boxes = $xpdo->getCollection('Box',$c);
-
 ```
 
  We can join on 3rd table ("Owner") by using another call to [xPDOQuery.innerJoin](xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"). Let's also grab the 2nd 5 Boxes by specifying an offset – it's a 2nd argument to the limit() function:
@@ -219,7 +208,6 @@ $c->where(array(
 $c->sortby('Box.name','ASC');
 $c->limit(5,5); // limit, offset
 $boxes = $xpdo->getCollection('Box',$c);
-
 ```
 
  You can see that the sortby and where functions can take dot syntax on their parameters; they can prefix their columns with alias – sometimes they have to do this to prevent collisions!
@@ -249,7 +237,6 @@ if ($collection) {
                 print_r($out);
         }
 }
-
 ```
 
  **Aliases in JSON** 
@@ -272,7 +259,6 @@ if ($collection) {
                 print_r($out);
         }
 }
-
 ```
 
  **Aliases in Criteria** 
@@ -295,7 +281,6 @@ if ($pages) {
         }
     }
 }
-
 ```
 
  Please view the dedicated page: [getCollectionGraph](xpdo/getting-started/using-your-xpdo-model/retrieving-objects/getcollectiongraph "getCollectionGraph")

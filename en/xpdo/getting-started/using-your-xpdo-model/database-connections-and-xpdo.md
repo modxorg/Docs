@@ -4,13 +4,13 @@ _old_id: "1157"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/database-connections-and-xpdo"
 ---
 
-- [xPDO Database Connections](#DatabaseConnectionsandxPDO-xPDODatabaseConnections)
-  - [Example Connection](#DatabaseConnectionsandxPDO-ExampleConnection)
-- [Defining Multiple Connections _(xPDO 2.2+)_](#DatabaseConnectionsandxPDO-DefiningMultipleConnections%28xPDO2.2%29)
-  - [xPDO::OPT\_CONNECTIONS](#DatabaseConnectionsandxPDO-xPDO%3A%3AOPTCONNECTIONS)
-  - [xPDO::OPT\_CONN\_MUTABLE](#DatabaseConnectionsandxPDO-xPDO%3A%3AOPTCONNMUTABLE)
-  - [xPDO::OPT\_CONN\_INIT](#DatabaseConnectionsandxPDO-xPDO%3A%3AOPTCONNINIT)
-- [See Also](#DatabaseConnectionsandxPDO-SeeAlso)
+- [xPDO Database Connections](#xpdo-database-connections)
+  - [Example Connection](#example-connection)
+- [Defining Multiple Connections _(xPDO 2.2+)_](#defining-multiple-connections-xpdo-22)
+  - [xPDO::OPT\_CONNECTIONS](#xpdooptconnections)
+  - [xPDO::OPT\_CONN\_MUTABLE](#xpdooptconnmutable)
+  - [xPDO::OPT\_CONN\_INIT](#xpdooptconninit)
+- [See Also](#see-also)
 
 
 
@@ -20,7 +20,6 @@ Database connectivity in xPDO is done in the constructor. The xPDO object can on
 
 ``` php 
 function xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null)
-
 ```
 
 So let's say we want to connect to a localhost database named 'test' on port 3306, with a utf-8 charset:
@@ -28,7 +27,6 @@ So let's say we want to connect to a localhost database named 'test' on port 330
 ``` php 
 $dsn = 'mysql:host=localhost;dbname=test;port=3306;charset=utf8';
 $xpdo = new xPDO($dsn,'username','password');
-
 ```
 
 And you're done!
@@ -37,7 +35,6 @@ Optionally verify the connection, by simply adding the following line afterward
 
 ``` php 
 echo $o=($xpdo->connect()) ? 'Connected' : 'Not Connected';
-
 ```
 
 xPDO creates a PDO object, and thus connects to the database, only when a PDO method is called and the connection is needed. This connect-on-demand feature allows xPDO caching to work without a database connection being required (assuming everything is cached).
@@ -75,7 +72,6 @@ echo $o = ($xpdo->connect()) ? 'Connected' : 'Not Connected';
 $results = $xpdo->query("SELECT id FROM some_table"); 
 $recordCount = $results->rowCount();
 print $recordCount;
-
 ```
 
 ## Defining Multiple Connections _(xPDO 2.2+)_
@@ -111,7 +107,6 @@ $xpdo = new xPDO('mysql:host=127.0.0.1:19570;dbname=xpdotest;charset=utf8', 'use
             ),
         ),
 ));
-
 ```
 
 ### xPDO::OPT\_CONN\_MUTABLE
@@ -124,7 +119,6 @@ This option defines criteria that a connection must meet to be considered for us
 
 ``` php 
 xPDO::OPT_CONN_INIT => array(xPDO::_OPT_CONN_MUTABLE => false)
-
 ```
 
 This makes sure that xPDO selects a connection with that option set to false to start with. If a write operation is performed within xPDO after a read-only connection is initialized, a new mutable connection will be selected and cached for reuse by other write operations within the same execution cycle.

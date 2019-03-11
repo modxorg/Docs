@@ -14,7 +14,7 @@ Here we want to make sure no category ID is assigned to our object that doesnt h
 
 First, our model:
 
-``` php 
+``` xml 
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">    
     <object class="myTest" table="test" extends="xPDOSimpleObject">

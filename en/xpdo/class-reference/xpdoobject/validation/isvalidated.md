@@ -15,9 +15,3 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isValidated>
 ``` php 
 boolean isValidated ([string $key = ''])
 ```
-
-## Examples
-
-``` php 
-
-```

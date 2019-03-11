@@ -91,7 +91,6 @@ All MODX Revo tags can accept properties (not just Snippets). For example, let's
 
 ``` php 
 Hello [[+name]]!
-
 ```
 
 You'll note the new placeholder syntax. So, we'll definitely want to parse that Chunk's property. In Evolution, you would need to do this with a Snippet; no longer. You can simply pass a property for the Chunk:
@@ -114,7 +113,6 @@ In Evolution, Snippets that need to be processed with each request should be on 
 
 In Revolution, any tag can be called uncached by inserting an exclamation point immediately after the double-bracket: \[\[!snippet\]\], \[\[!$chunk\]\], \[\[!+placeholder\]\], \[\[!\*template\_var\]\], etc.
 
-?
 
 If you have some kind of advanced setup in which the site\_url setting is being set per request, but your \[\[~\[\[\*id\]\]\]\] links are not being generated properly, remember that any tag can be called uncached, including the link or anchor tag: \[\[!~\[\[\*id\]\]\]\]
 

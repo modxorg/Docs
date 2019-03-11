@@ -17,8 +17,6 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources/static-res
 
 To ensure your file is transmitted correctly, you should use the (empty) template. The static resource becomes a link to the file as long as you use this template. If you need to add some meta information to the resource via some Template Variables, and you create your own 'empty' template to enable this, then you must set the contents of the template to \[\[\*content\]\] before it will work correctly.
 
- 
-
 ## See Also
 
 1. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)

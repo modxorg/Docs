@@ -42,26 +42,26 @@ MODx.FormPanel adds a few unique parameters not found in typical Ext.FormPanel o
 
 MODx.FormPanel adds a few extra events not found in Ext.FormPanel objects:
 
-| Name         | Description                                                                                                                 |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| beforeSubmit | Fires before a submission of the form, with 3 parameters: - form - The Ext.form.BasicForm object attached to this FormPanel |
-- options - Any options passed to the submit() call
-- config - The FormPanel config object |
-| failure | Fires on a form failure or failure response from a processor, with 4 parameters: - result - The response object sent from the processor
-- form - The Ext.form.BasicForm object attached to this FormPanel
-- options - Any options passed to the submit() call
-- config - The FormPanel config object |
-| fieldChange | Fires whenever a field is changed, with the following parameters: - field - The Ext.Field object that is being changed
-- nv - The new value of the field
-- ov - The old value of the field
-- form - The BasicForm attached to this FormPanel |
-| postReady | Fires after 'ready' event listeners are run (which must be fired by extending classes) |
-| ready | Not fired; must be fired by extended objects of MODx.FormPanel to allow fieldChange/postReady events to fire. |
-| setup | Fired at the beginning of a formpanel load, and after a successful submission. |
-| success | Fires on a form success with a success response from a processor, with 4 parameters: - result - The response object sent from the processor
-- form - The Ext.form.BasicForm object
-- options - Any options passed to the submit() call
-- config - The FormPanel config object |
+| Name         | Description                                                                                                                                 |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| beforeSubmit | Fires before a submission of the form, with 3 parameters: - form - The Ext.form.BasicForm object attached to this FormPanel                 |
+| options      | Any options passed to the submit() call                                                                                                     |
+| config       | The FormPanel config object                                                                                                                 |
+| failure      | Fires on a form failure or failure response from a processor, with 4 parameters: - result - The response object sent from the processor     |
+| form         | The Ext.form.BasicForm object attached to this FormPanel                                                                                    |
+| options      | Any options passed to the submit() call                                                                                                     |
+| config       | The FormPanel config object                                                                                                                 |
+| fieldChange  | Fires whenever a field is changed, with the following parameters: - field - The Ext.Field object that is being changed                      |
+| nv           | The new value of the field                                                                                                                  |
+| ov           | The old value of the field                                                                                                                  |
+| form         | The BasicForm attached to this FormPanel                                                                                                    |
+| postReady    | Fires after 'ready' event listeners are run (which must be fired by extending classes)                                                      |
+| ready        | Not fired; must be fired by extended objects of MODx.FormPanel to allow fieldChange/postReady events to fire.                               |
+| setup        | Fired at the beginning of a formpanel load, and after a successful submission.                                                              |
+| success      | Fires on a form success with a success response from a processor, with 4 parameters: - result - The response object sent from the processor |
+| form         | The Ext.form.BasicForm object                                                                                                               |
+| options      | Any options passed to the submit() call                                                                                                     |
+| config       | The FormPanel config object                                                                                                                 |
 
 ## Other Unique Functions
 

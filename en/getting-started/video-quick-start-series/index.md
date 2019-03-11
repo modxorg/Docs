@@ -10,8 +10,8 @@ _old_uri: "2.x/getting-started/video-quick-start-series/"
 
 MODX Cloud is a rapid development platform built to make tasks like installation, upgrading, and migrating MODX sites a one-button affair. This video shows you how to sign up for an account and get started with MODX in minutes.
 
- !![560x315]( //player.vimeo.com/video/60298110)
-
+ \[\[$vimeo?id=`60298110`\]\] 
+ 
  ### Using cPanel
 
 MODX's default installation software makes it easy to deploy on almost any server environment that meets the <a href="">minimum requirements</a>. This video shows you how to install MODX on a common cPanel-enabled hosting account in just a few minutes.

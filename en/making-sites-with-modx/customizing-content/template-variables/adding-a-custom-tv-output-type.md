@@ -15,8 +15,6 @@ Refer to the [Adding a Custom TV Type](making-sites-with-modx/customizing-conten
 - [Using the Custom TV Output Type](#using-the-custom-tv-output-type)
 - [See Also](#see-also)
 
-
-
 ## What are TV Output Types?
 
 TV Output Types allow you to output [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") in different markup and formats. Some examples include outputting a TV value as an image, URL, HTML tag, date, etc.
@@ -45,7 +43,7 @@ return $modx->smarty->fetch('element/tv/renders/properties/button.tpl');
 
 This is the template for the default manager theme to render properties with. We'll use ExtJS to render some pretty form fields:
 
-``` php 
+``` javascript 
 <div id="tv-wprops-form{$tv}"></div>
 {literal}
 <script type="text/javascript">

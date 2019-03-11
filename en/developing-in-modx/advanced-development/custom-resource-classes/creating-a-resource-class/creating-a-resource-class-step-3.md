@@ -11,10 +11,6 @@ This tutorial is part of a Series:
 - Part III: Customizing the Controllers
 - [Part IV: Customizing the Processors](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4")
 
-
-
-
-
 ## Creating the Resource Controllers
 
 Okay, remember how in [Step 1](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class") we told MODX where our controllers/ directory was, via the "getControllerPath" method? To refresh your memory, here's the code from

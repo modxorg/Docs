@@ -13,14 +13,12 @@ _old_uri: "2.x/getting-started/using-your-xpdo-model/removing-objects/removecoll
  From modSessionHandler:
 
  ``` php 
-
 public function gc($max) {
     $max = (integer) $this->modx->getOption('session_gc_maxlifetime',null,$max);
     $maxtime= time() - $max;
     $result = $this->modx->removeCollection('modSession', array("`access` < {$maxtime}"));
     return $result;
 }
-
 ```
 
  **Warning** 
@@ -33,7 +31,5 @@ public function gc($max) {
  For example, to delete all objects of type 'objectName' from the database, do the following.
 
  ``` php 
-
 $modx->removeCollection('objectName', array());
-
 ```
