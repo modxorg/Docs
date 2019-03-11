@@ -1,7 +1,6 @@
 ---
 title: "xPDO GitHub Contributor's Guide"
-_old_id: "1136"
-_old_uri: "contribute/using-git-and-github/xpdo-github-contributors-guide"
+translation: "contribute/using-git-and-github/xpdo-github-contributors-guide"
 ---
 
 ## Contributing to xPDO and Integrating with MODX Revolution

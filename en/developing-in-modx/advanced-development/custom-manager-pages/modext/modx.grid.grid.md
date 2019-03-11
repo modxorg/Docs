@@ -49,7 +49,7 @@ The above code would create a context menu for each item with the text being the
 
 Menus may alternatively (and preferably) be created by extending your JS Grid and adding a "getMenu" method:
 
-``` js 
+``` javascript 
 getMenu: function() {
     var m = [];
     m.push({
@@ -68,7 +68,7 @@ Revolution 2.0.x grids cannot simply return the array - they will need to call "
 
 First off, MODx.grid.Grid pulls its data remotely, via the "url" config parameter. It loads the baseParams into the call as well, which defaults to:
 
-``` php 
+``` javascript 
 baseParams: { action: 'getList' }
 ```
 
@@ -124,7 +124,7 @@ If the JSON returned is not a valid data store collection, and contains a "messa
 
 Automatically load and show a window of any given xtype:
 
-``` js 
+``` javascript 
 grid.loadWindow({
   xtype: 'my-xtype-for-the-window'
   ,blankValues: true /* blanks the values of the window, good for New Object windows, set false for Update windows */
@@ -139,7 +139,7 @@ MODx.grid.Grid comes with a custom method named 'remove', which automatically fi
 
 The method takes one parameter - text - which is the text to display in the confirm dialog that prompts the user if they want to remove the row before actually doing so. The beforeRemoveRow event is fired before the confirm dialog is loaded.
 
-``` js 
+``` javascript 
 grid.remove("Are you sure you want to remove this Item?");
 ```
 
@@ -147,7 +147,7 @@ grid.remove("Are you sure you want to remove this Item?");
 
 The confirm method is a custom method that allows you to pop up a confirmation dialog before executing an action:
 
-``` js 
+``` javascript 
 grid.confirm("approve","Are you sure you want to approve this article?");
 ```
 

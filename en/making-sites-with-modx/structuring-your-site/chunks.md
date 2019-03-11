@@ -5,7 +5,6 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/chunks"
 ---
 
 - [Create](#create)
-- [](#)
 - [Usage](#usage)
 - [Processing Chunk via the API](#processing-chunk-via-the-api)
   - [Modifying a Chunk Via the API](#modifying-a-chunk-via-the-api)
@@ -20,8 +19,6 @@ Chunks are bits of static text which you can reuse across your site, similar in 
 Before you can use a Chunk, you must first create and name one by pasting text into the MODx manager (Elements --> Chunks --> New Chunk):
 
 ![](/download/attachments/bf9f8ccf5036b4f4bf8b248f7748d0c3/chunk_example.jpg)
-
-## 
 
 ## Usage
 

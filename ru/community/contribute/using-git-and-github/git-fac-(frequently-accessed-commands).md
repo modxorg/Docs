@@ -1,7 +1,6 @@
 ---
 title: "Git FAC (Frequently Accessed Commands)"
-_old_id: "1131"
-_old_uri: "contribute/using-git-and-github/git-fac-(frequently-accessed-commands)"
+translation: "contribute/using-git-and-github/git-fac-(frequently-accessed-commands)"
 ---
 
 - [How do I get and keep my local major-version branch in sync?](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIgetandkeepmylocaldevelopbranchinsync%3F)

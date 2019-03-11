@@ -154,8 +154,6 @@ So say you're creating System Settings for your 3rd Party Component (3PC). The s
 
 This helps to prevent name collisions; keep in mind that the **$\_lang** array may have thousands of entries, so you want to make sure each entry is unique.
 
-
-
 To add a lexicon name and description, we'd simply add the following 2 strings into our 'default' Lexicon Topic for our 'gallery' Namespace:
 
 ``` php 

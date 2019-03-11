@@ -12,7 +12,7 @@ This rule checks to see if another object exists. If that object doesn't exist, 
 
 First, our model:
 
-``` php 
+``` xml 
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">    
     <object class="myTest" table="test" extends="xPDOSimpleObject">

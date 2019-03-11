@@ -1,7 +1,6 @@
 ---
 title: "Documentation Guide"
-_old_id: "1312"
-_old_uri: "style-guide"
+translation: "style-guide"
 ---
 
  Welcome to MODX documentation guide for authors and contributors.

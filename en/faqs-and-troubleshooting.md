@@ -38,19 +38,19 @@ Subpages dealing with specific subjects:
 
 On this page, you will find the following categories and questions:
 
-- [Table of Contents](#FAQs%26Troubleshooting-TableofContents)
-- [1. MODX 101](#FAQs%26Troubleshooting-1.MODX101)
-  - [1.1. What is MODX Evolution, and what is MODX Revolution? What's the difference?](#FAQs%26Troubleshooting-1.1.WhatisMODXEvolution%2CandwhatisMODXRevolution%3FWhat%27sthedifference%3F)
-  - [1.2. What different tags can I use? What is \[\[\*pagetitle\]\], \[\[Wayfinder\]\] etc?](#FAQs%26Troubleshooting-1.2.WhatdifferenttagscanIuse%3FWhatis%26nbsp%3B%5C%5Cpagetitle%5C%5C%2C%26nbsp%3B%5C%5CWayfinder%5C%5Cetc%3F)
-- [2. The Manager](#FAQs%26Troubleshooting-2.TheManager)
-  - [2.1. Help! Where did the sidebar go?](#FAQs%26Troubleshooting-2.1.Help%5C%21%26nbsp%3BWheredidthesidebargo%3F)
-  - [2.2 How can I modify what resource fields are visible when creating or editing a Resource? Is there something like ManagerManager for Revolution?](#FAQs%26Troubleshooting-2.2HowcanImodifywhatresourcefieldsarevisiblewhencreatingoreditingarevolution20%3AResource%3FIstheresomethinglikeManagerManager)
-  - [2.3 What does modDocument/ modWeblink/ modSymLink/ modStaticResource mean?](#FAQs%26Troubleshooting-2.3WhatdoesmodDocument%2FmodWeblink%2FmodSymLink%2FmodStaticResourcemean%3F)
-  - [2.4 What is the difference between a Resource and a Document?](#FAQs%26Troubleshooting-2.4WhatisthedifferencebetweenaResourceandaDocument%3F)
-  - [2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!](#FAQs%26Troubleshooting-2.5I%27mlockedout%5C%21Ican%27taccessthemanager%5C%21Forgotmypasswordandrecoverydoesn%27twork%5C%21)
-- [3. Frontend Display Issues](#FAQs%26Troubleshooting-3.FrontendDisplayIssues)
-  - [3.1 Blank frontend pages resolved by Clearing Cache](#FAQs%26Troubleshooting-3.1BlankfrontendpagesresolvedbyClearingCache)
-  - [3.2 General Snippet Problems](#FAQs%26Troubleshooting-3.2GeneralSnippetProblems)
+- [Table of Contents](#table-of-contents)
+- [1. MODX 101](#1-modx-101)
+  - [1.1. What is MODX Evolution, and what is MODX Revolution? What's the difference?](#11-what-is-modx-evolution-and-what-is-modx-revolution-whats-the-difference)
+  - [1.2. What different tags can I use? What is \[\[\*pagetitle\]\], \[\[Wayfinder\]\] etc?](#12-what-different-tags-can-i-use-what-is-pagetitle-wayfinder-etc)
+- [2. The Manager](#2-the-manager)
+  - [2.1. Help! Where did the sidebar go?](#21-help-where-did-the-sidebar-go)
+  - [2.2 How can I modify what resource fields are visible when creating or editing a Resource? Is there something like ManagerManager for Revolution?](#22-how-can-i-modify-what-resource-fields-are-visible-when-creating-or-editing-a-resource-is-there-something-like-managermanager-for-revolution)
+  - [2.3 What does modDocument/ modWeblink/ modSymLink/ modStaticResource mean?](#23-what-does-moddocument-modweblink-modsymlink-modstaticresource-mean)
+  - [2.4 What is the difference between a Resource and a Document?](#24-what-is-the-difference-between-a-resource-and-a-document)
+  - [2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!](#25-im-locked-out-i-cant-access-the-manager-forgot-my-password-and-recovery-doesnt-work)
+- [3. Frontend Display Issues](#3-frontend-display-issues)
+  - [3.1 Blank frontend pages resolved by Clearing Cache](#31-blank-frontend-pages-resolved-by-clearing-cache)
+  - [3.2 General Snippet Problems](#32-general-snippet-problems)
 
 
 

@@ -21,7 +21,6 @@ API Docs: <http://api.modx.com/xpdo/xPDO.html#getObjectGraph>
 
 ``` php 
 xPDOObject|null getObjectGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
-
 ```
 
 ## Example using Template Variables
@@ -40,7 +39,6 @@ foreach ($page->TemplateVarResources as $tv) {
     $output .= $tv->get('value');  // or do something else with this value
 }
 return $output;
-
 ```
 
 **Heads Up!** 
@@ -68,7 +66,6 @@ $box = $xpdo->getObjectGraph('Box', array('BoxColors' => array('Color' => array(
 foreach ($box->getMany('BoxColors') as $boxColor) {
     echo $boxColor->getOne('Color')->get('name');
 }
-
 ```
 
 The same example using a JSON-format $graph parameter.
@@ -78,7 +75,6 @@ $box = $xpdo->getObjectGraph('Box', '{"BoxColors":{"Color":{}}}', 134);
 foreach ($box->getMany('BoxColors') as $boxColor) {
     echo $boxColor->getOne('Color')->get('name');
 }
-
 ```
 
 **No additional queries** 

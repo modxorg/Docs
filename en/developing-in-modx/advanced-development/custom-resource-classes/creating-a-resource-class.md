@@ -11,10 +11,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 - [Part III: Customizing the Controllers](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3 "Creating a Resource Class - Step 3")
 - [Part IV: Customizing the Processors](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4")
 
-
-
-
-
  We're going to create a sample Custom Resource Class (CRC) that does a very simple task - it outputs a copyright on the bottom of a page with the current date. Yes, something this trivial should be done by placing a [Snippet](developing-in-modx/basic-development/snippets "Snippets") in your [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), but we want to illustrate the concept of CRCs using something very, very simple, so bear with us. :)
 
  This page deals with Part I - creating the actual Custom Resource Class itself. [Part II](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-2 "Creating a Resource Class - Step 2") will actually implement the behavior of appending the copyright. [Part III](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3 "Creating a Resource Class - Step 3") will deal with overriding the Controllers, and [Part IV](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4") will deal with overriding the Processors. The files used in this tutorial can be found on GitHub for reference: <https://github.com/modxcms/CopyrightedResource>
@@ -25,7 +21,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
  If you are planning on versioning this code in Git, your paths may be different, but ultimately you want your files to end up inside the `core/components/your_component/` directory. So for this tutorial our package is named "copyrightedresource", so we will create the schema file `core/components/copyrightedresource/model/schema/copyrightedresource.mysql.schema.xml`:
 
- ``` php 
+ ``` xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="copyrightedresource" version="1.0" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
     <object class="CopyrightedResource" extends="modResource" />

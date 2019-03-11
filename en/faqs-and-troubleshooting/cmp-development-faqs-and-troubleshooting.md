@@ -22,7 +22,6 @@ _To Editors:_
 _Thanks!!_
 
 
-
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)

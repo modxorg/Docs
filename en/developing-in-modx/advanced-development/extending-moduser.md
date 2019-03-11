@@ -16,8 +16,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 - [Extended modUser Classes currently Available](#extended-moduser-classes-currently-available)
 - [Modifying class\_key](#modifying-classkey)
 
-
-
 ##  Intended Audience 
 
  This article is for developers who are looking to add additional data to their MODX users and functionality to the related classes. Although this is possible via a less integrated approach by simply adding a database table that includes a foreign key relation back to the original MODX users table, the approach outlined here is for a more thorough integration via extending the core modUser class. The steps here are highly technical and they rely on MODX's underlying xPDO framework. You should have some familiarity with xPDO's objects and methods (e.g. [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")) before attempting this tutorial.
@@ -56,7 +54,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 
  The simplest example we could imagine is that we want to add a single extra attribute to the user data – so in the database, this would mean we have a separate table with 2 columns: one for the foreign key relation back to the **modx\_users** table, and the other column containing our new "extra" attribute, e.g. a _fackbook\_url_:
 
- ``` php 
+ ``` xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="extendeduser" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" tablePrefix="ext_">
         <!-- extend the modUser class -->
@@ -80,7 +78,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 
  Note that the _index="unique"_ bit has been deprecated – the index declaration should go into its own node as in the example above.
 
- ``` php 
+ ``` xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="extendeduser" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" tablePrefix="ext_">
     <!-- inherit the modx user and extend it -->

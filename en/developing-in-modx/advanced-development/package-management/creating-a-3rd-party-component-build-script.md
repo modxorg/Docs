@@ -12,8 +12,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/package-management/creati
 - [Package Attributes: License, Readme and Setup Options](#package-attributes-license-readme-and-setup-options)
 - [Related Pages](#related-pages)
  
-
-
 Users using Revolution 2.0.0-beta-4 or earlier should note that the defines are different in beta5 and onward. An example: xPDOTransport::UNIQUE\_KEYS in beta5+ is XPDO\_TRANSPORT\_UNIQUE\_KEYS in beta4 and earlier. MODx recommends to just update to beta5/SVN.
 
 A build script. What is that, you might ask? This is the meat of the packaging process; here is where your component is actually put into the nice, neat .zip transport package that you find on modxcms.com or through Revolution's Package Management section.

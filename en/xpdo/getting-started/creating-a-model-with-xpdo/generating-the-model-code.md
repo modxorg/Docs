@@ -4,10 +4,10 @@ _old_id: "1169"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/generating-the-model-code"
 ---
 
-- [Loading xPDOManager and xPDOGenerator](#GeneratingtheModelCode-LoadingxPDOManagerandxPDOGenerator)
-- [Setting Class and Map Templates](#GeneratingtheModelCode-SettingClassandMapTemplates)
-- [Generating the Files](#GeneratingtheModelCode-GeneratingtheFiles)
-- [Conclusion](#GeneratingtheModelCode-Conclusion)
+- [Loading xPDOManager and xPDOGenerator](#loading-xpdomanager-and-xpdogenerator)
+- [Setting Class and Map Templates](#setting-class-and-map-templates)
+- [Generating the Files](#generating-the-files)
+- [Conclusion](#conclusion)
 
 
 

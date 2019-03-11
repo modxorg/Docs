@@ -12,7 +12,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 - [See Also](#see-also)
 
 
-
 ## What is MODExt?
 
 MODExt is an extension of the [ExtJS3 JavaScript Framework](http://www.sencha.com/products/extjs) that provides extra, customized-to-MODx functionality. It drives MODx Revolution's manager interface, and it is also available to developers wanting to use it in their CMP development. A developer simply needs to use Ext.extend on the MODx.\* class to instantly get the benefit of custom MODExt components.
@@ -71,7 +70,7 @@ Here, we've created our own class (MyComponent.grid.MyGrid) which extends MODx.g
 
 Now, let's add some configuration options:
 
-``` js 
+``` javascript 
 MyComponent.grid.MyGrid = function( config ) {
     config = config || {};
 

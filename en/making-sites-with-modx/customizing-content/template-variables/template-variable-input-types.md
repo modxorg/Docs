@@ -62,7 +62,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"true",
    "maxLength":"",
@@ -71,8 +71,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
    "regexText":""
 }
 ```
-
-## 
 
 ## Check Box (checkbox)
 
@@ -104,7 +102,7 @@ option1==value1||option2==value2
 
  The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the option1==value1||option2==value2 format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can use a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") to select items from your database, e.g. **Input option values:**
 
- ``` php 
+ ``` sql 
 @SELECT pagetitle, id FROM modx_site_content WHERE parent=35
 ```
 
@@ -133,7 +131,7 @@ option1==value1||option2==value2
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"true",
    "disabledDates":"",
@@ -154,7 +152,7 @@ option1==value1||option2==value2
 
  Set input option values in the option1==value1||option2==value2||option3==value3 format. Make sure to choose an output type of delimited (or other of your liking) to be able to present this to the front-end in a certain manner. You can also use a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") binding to select 2 columns, e.g.
 
- ``` php 
+ ``` sql 
 @SELECT name, value FROM your_table
 ```
 
@@ -164,7 +162,7 @@ option1==value1||option2==value2
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"true",
    "listWidth":"",
@@ -180,7 +178,7 @@ option1==value1||option2==value2
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"true",
    "maxLength":"",
@@ -231,7 +229,7 @@ option1==value1||option2==value2
 
  **All input option names (for use in migx options-json)**
 
-``` php 
+``` json 
 {
 "targetWidth":"",   
 "targetHeight":"",
@@ -271,7 +269,7 @@ Option 1==value1||Option 2==value2
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"true",
    "listWidth":"",
@@ -291,7 +289,7 @@ Option 1==value1||Option 2==value2
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"true",
    "allowDecimals":"Yes",
@@ -336,7 +334,7 @@ Option 1==value1||Option 2==value2
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"true",
    "columns":"1"
@@ -360,7 +358,7 @@ Option 1==value1||Option 2==value2
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"1",
    "showNone":"1",
@@ -383,7 +381,7 @@ Option 1==value1||Option 2==value2
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"1"
 }
@@ -401,7 +399,7 @@ Option 1==value1||Option 2==value2
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"true",
    "maxLength":"",
@@ -417,7 +415,7 @@ Option 1==value1||Option 2==value2
 
  **All input option names (for use in migx options-json)**
 
- ``` php 
+ ``` json 
 {
    "allowBlank":"true"
 }

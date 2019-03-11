@@ -33,7 +33,7 @@ The class also inherits all [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.
 
 MODx.combo.ComboBox also comes with a built-in renderer for usage in grids. To use in, in your grid's column model defintion, simply specify renderer: true in the editor definition, like so:
 
-``` js 
+``` javascript 
 {
   header: _('usergroup')
   ,dataIndex: 'usergroup'
@@ -45,7 +45,7 @@ MODx.combo.ComboBox also comes with a built-in renderer for usage in grids. To u
 An example of a local data combo box would be:
 
 **Units Combo Box**
-``` js 
+``` javascript 
 Doodles.combo.Units = function(config) {
     config = config || {};
     Ext.applyIf(config,{
@@ -77,7 +77,7 @@ Ext.reg('doodle-combo-units',Doodles.combo.Units);
 And to view that combo box:
 
 **Combo Call From Grid**
-``` js 
+``` javascript 
        {
             header: _('unit')
             ,dataIndex: 'unit'
@@ -88,7 +88,7 @@ And to view that combo box:
 ```
 
 **Combo Call From Window**
-``` js 
+``` javascript 
        {
             xtype: 'doodle-combo-units'
             ,fieldLabel: _('unit')

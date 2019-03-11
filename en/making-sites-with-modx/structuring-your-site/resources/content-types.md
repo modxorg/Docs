@@ -4,10 +4,10 @@ _old_id: "65"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources/content-types"
 ---
 
-- [What are Content Types?](#ContentTypes-WhatareContentTypes%3F)
-- [Usage](#ContentTypes-Usage)
-  - [Creating New Content Types](#ContentTypes-CreatingNewContentTypes)
-- [See Also](#ContentTypes-SeeAlso)
+- [What are Content Types?](#what-are-content-types)
+- [Usage](#usage)
+  - [Creating New Content Types](#creating-new-content-types)
+- [See Also](#see-also)
 
 
 

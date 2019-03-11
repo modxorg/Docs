@@ -4,17 +4,18 @@ _old_id: "1216"
 _old_uri: "2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor"
 ---
 
-- [Parameters](#ThexPDOConstructor-Parameters)
-  - [$dsn](#ThexPDOConstructor-%24dsn)
-  - [$username and $password](#ThexPDOConstructor-%24usernameand%24password)
-  - [$options](#ThexPDOConstructor-%24options)
-  - [$driverOptions](#ThexPDOConstructor-%24driverOptions)
-- [See Also](#ThexPDOConstructor-SeeAlso)
-  - [More information about options](#ThexPDOConstructor-Moreinformationaboutoptions)
+- [Parameters](#parameters)
+  - [$dsn](#dsn)
+  - [$username and $password](#username-and-password)
+  - [$options](#options)
+  - [$driverOptions](#driveroptions)
+- [See Also](#see-also)
+  - [More information about options](#more-information-about-options)
 
 
 
-**default xPDO connection constructor**``` php 
+**default xPDO connection constructor**
+``` php 
 $xpdo= new xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null) 
 ```
 

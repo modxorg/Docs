@@ -228,7 +228,7 @@ A bit of explanation here. What we're doing is creating a Controller Class (Dood
 
  Create your template file at /www/doodles/core/components/doodles/templates/home.tpl and fill it with this:
 
- ``` js 
+ ``` javascript 
 <div id="doodles-panel-home-div"></div>
 
 ```

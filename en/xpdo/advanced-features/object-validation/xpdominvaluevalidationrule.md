@@ -12,7 +12,7 @@ This rule makes sure that the value of the field is at least X, where X is defin
 
 First, our model:
 
-``` php 
+``` xml 
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">    
     <object class="myTest" table="test" extends="xPDOSimpleObject">

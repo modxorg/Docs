@@ -21,7 +21,7 @@ The MODx.msg class provides the functionality of the Ext.MessageBox class, with 
 
 Used to display an alert dialog box on the page. Example:
 
-``` js 
+``` javascript 
 MODx.msg.alert('Warning!','You are out of space! We should clear the cache.',function() {
   MODx.clearCache();
 },MODx);
@@ -43,7 +43,7 @@ Loads a confirmation dialog that prompts the user for a Yes/No response. If Yes 
 
 An example:
 
-``` js 
+``` javascript 
 MODx.msg.confirm({
    title: 'Are you sure?',
    text: 'Do you want to delete the world? This is irreversible.',
@@ -71,7 +71,7 @@ MODx.msg.confirm adds a few custom events that fire:
 
 ### status
 
-``` js 
+``` javascript 
 MODx.msg.status(opt)
 ```
 
@@ -86,7 +86,7 @@ Loads a temporary status message in the top-right of the screen, that fades away
 
 You could use this in custom manager pages to provide confirmation your object was saved. You could add something like this to your FormPanel definition:
 
-``` js 
+``` javascript 
         listeners: {
             'success': function (res) {
                 MODx.msg.status({

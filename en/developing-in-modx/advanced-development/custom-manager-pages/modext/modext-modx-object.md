@@ -38,7 +38,7 @@ The following variables are accessible from the MODx JS object:
 
 This is a JS object that contains all the current GET parameters for the page. Example:
 
-``` js 
+``` javascript 
 var id = MODx.request.id;
 ```
 
@@ -46,7 +46,7 @@ var id = MODx.request.id;
 
 This object contains all the active System Settings in MODX by key:
 
-``` js 
+``` javascript 
 var tpl = MODx.config.default_template;
 ```
 
@@ -67,13 +67,13 @@ There are a few other variables available on the MODx.config object that are not
 
 This object contains a map of all the modAction objects (or MODX manager controllers), mapped by their controller to their ID:
 
-``` js 
+``` javascript 
 var actionId = MODx.action['resource/create'];
 ```
 
 As of MODX 2.2, the non-core Actions are prefixed with their namespace. Prior to 2.2 it would just be the action controller. For example a "controllers/index" action in a "mycomponent" namespace would be retrievable using the following in 2.2 and up:
 
-``` js 
+``` javascript 
 var actionId = MODx.action['mycomponent:controllers/index'];
 ```
 
@@ -94,7 +94,7 @@ Contains MODX version information, with the following attributes:
 
 Example:
 
-``` js 
+``` javascript 
 var fv = MODx.version.full_version;
 ```
 
@@ -106,7 +106,7 @@ This object will contain the two following properties for the currently logged-i
 | ------------------ | ------------------------- |
 | MODx.user.username | The username of the user. |
 
-``` js 
+``` javascript 
 var userId = MODx.user.id;
 ```
 
@@ -128,7 +128,7 @@ This will contain the following permissions should they be granted to the user (
 | MODx.perm.new\_tv           | To create a new Template Variable.                  |
 | MODx.perm.directory\_create | To be able to create a directory on the filesystem. |
 
-``` js 
+``` javascript 
 if (MODx.perm.file_upload) { /* ...code... */ }
 ```
 
@@ -140,7 +140,7 @@ The MODx object also has quite a few custom methods available to it:
 
 This method will create a new object of any specified xtype and passed in configuration parameters. Example:
 
-``` js 
+``` javascript 
 var w = MODx.load({
   xtype: 'modx-window-namespace-create'
   ,blankValues: true
@@ -163,7 +163,7 @@ This will release the lock on the current active Resource. This method should no
 
 This method will cause JavaScript to sleep (or halt) for a specified number of seconds:
 
-``` js 
+``` javascript 
 MODx.sleep(3); /* sleep for 3 seconds */
 ```
 
@@ -175,7 +175,7 @@ This method will automatically logout the active manager user. It fires the 'bef
 
 This will load the current Help screen for the active page. Normally this is set by default on the modAction record for the page, and its URL can be found by the MODx.config.help\_url property. You can, however, override this to fire up any URL into the panel:
 
-``` js 
+``` javascript 
 /* show the modx.com site in the Help modal */
 MODx.config.help_url = 'http://modx.com/';
 MODx.loadHelpPane();

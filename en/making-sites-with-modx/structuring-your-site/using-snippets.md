@@ -9,8 +9,6 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/using-snippets"
 - [Installing Snippets](#installing-snippets)
 - [See Also](#see-also)
 
-
-
 [Snippets](developing-in-modx/basic-development/snippets "Snippets") are MODx's answer to inline PHP code. They provide customizable dynamic content, such as menus, blog or news listings, search and other form-based functionality and anything else that your site needs to generate on-demand.
 
 ## Using a Snippet

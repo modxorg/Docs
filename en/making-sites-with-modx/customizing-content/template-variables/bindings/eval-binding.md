@@ -14,7 +14,6 @@ The @EVAL Binding executes the specified PHP code. It should be used with carefu
 
 ``` php 
 @EVAL php_code_here
-
 ```
 
 ## Usage
@@ -23,12 +22,10 @@ Simply put a PHP statement after the @EVAL tag:
 
 ``` php 
 @EVAL return "The time stamp is now ".time();
-
 ```
 
  ``` php 
 @EVAL $a = 'dog'; return $a;
-
 ```
 
 ## Examples
@@ -46,14 +43,12 @@ First, we create a new chunk for our Options and name it 'userOption' with this 
 
 ``` php 
 [[+username]]==[[+id]]
-
 ```
 
 Then create a dropdown-type TV with this input-options:
 
 ``` php 
 @EVAL return '-- choose a user --||' . $modx->runSnippet('Rowboat',array('table'=>'modx_users','tpl'=>'userOption','outputSeparator'=>'||'));
-
 ```
 
 ## Security

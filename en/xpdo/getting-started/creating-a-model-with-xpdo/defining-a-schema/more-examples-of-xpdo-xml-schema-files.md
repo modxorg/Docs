@@ -25,8 +25,6 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
   - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
   - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
  
-
-
 ## Goal
 
  This page contains examples that juxtapose MySQL database tables with their xPDO XML schema counterparts in order to teach developers how to define the foreign-key relationships between tables in xPDO XML schemas by using a series of common database relational patterns as examples.
@@ -60,8 +58,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
 
  Here are abbreviated MySQL table definitions:
 
- ``` php 
-
+ ``` sql 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
@@ -74,24 +71,20 @@ CREATE TABLE `userdata` (
   `age` tinyint(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`userdata_id`)
 ) ENGINE=MyISAM;
-
 ```
 
  This MySQL query will show _all_ data for users (including info from the primary user table, and also from the secondary userdata table):
 
- ``` php 
-
+ ``` sql 
 SELECT users.*, userdata.*
 FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
-
 ```
 
 ### XML Schema
 
  And here's the corresponding XML definitions:
 
- ``` php 
-
+ ``` xml 
 <object class="Users" table="users" extends="xPDOObject">
         <field key="user_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="username" dbtype="varchar" precision="255" phptype="string" null="true" />
@@ -110,7 +103,6 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
         </index>
         <aggregate alias="Users" class="Users" local="userdata_id" foreign="user_id" cardinality="one" owner="foreign" />
 </object>
-
 ```
 
 ### Sample Snippet Code
@@ -118,7 +110,6 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
  If you were to access this data in a Snippet, you might do something like the following. This assumes that your package name is **one\_to\_one**
 
  ``` php 
-
 <?php
         $base_path = MODX_CORE_PATH . 'components/one_to_one/';
         $modx->addPackage('one_to_one',$base_path.'model/','');
@@ -129,7 +120,6 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
         $output .= $userdata->get('age');
         return $output;
 ?>
-
 ```
 
 ## One to Many
@@ -140,8 +130,7 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 
 ### MySQL Table Definitions
 
- ``` php 
-
+ ``` sql 
 CREATE TABLE `blogposts` (
   `blogpost_id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text,
@@ -153,13 +142,11 @@ CREATE TABLE `comments` (
   `comment` text,
   PRIMARY KEY (`comment_id`)
 ) ENGINE=MyISAM;
-
 ```
 
 ### XML Schema
 
- ``` php 
-
+ ``` xml 
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
@@ -177,7 +164,6 @@ CREATE TABLE `comments` (
         </index>
         <aggregate alias="Blogposts" class="Blogposts" local="blogpost" foreign="blogpost_id" cardinality="one" owner="foreign" />
 </object>
-
 ```
 
 ### Sample Snippet Code
@@ -185,7 +171,6 @@ CREATE TABLE `comments` (
  Here is some sample Snippet code. It assumes your package name is **one\_to\_many**:
 
  ``` php 
-
 <?php
 $base_path = MODX_CORE_PATH . 'components/one_to_many/';
 $modx->addPackage('one_to_many',$base_path.'model/','');
@@ -198,7 +183,6 @@ foreach ( $comments as $c )
     $output .= $c->get('comment');
 }
 return $output;
-
 ```
 
 ## Many to Many: Joining Tables
@@ -209,8 +193,7 @@ return $output;
 
 ### MySQL Table Definitions
 
- ``` php 
-
+ ``` sql 
 CREATE TABLE `blogposts` (
   `blogpost_id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text,
@@ -228,15 +211,13 @@ CREATE TABLE `blogposts_tags` (
   `tag` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM;
-
 ```
 
 ### XML Schema
 
  Note the the following schema still contains the composite relationship for the Comments table.
 
- ``` php 
-
+ ``` xml 
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
@@ -263,7 +244,6 @@ CREATE TABLE `blogposts_tags` (
         <aggregate alias="Tags" class="Tags" local="tag" foreign="tag_id" cardinality="one" owner="foreign" />
         <aggregate alias="Blogposts" class="Blogposts" local="blogpost" foreign="blogpost_id" cardinality="one" owner="foreign" />
 </object>
-
 ```
 
 ### Sample Snippet Code
@@ -271,7 +251,6 @@ CREATE TABLE `blogposts_tags` (
  The following example assumes that the package is named **many\_to\_many**. Note that the logic displayed here traces the relationships precisely. In this example, we load up a blogpost, then trace it through the joining table to its tags. Arguably, this isn't any easier than writing a JOIN statement in MySQL.
 
  ``` php 
-
 <?php
 $base_path = MODX_CORE_PATH . 'components/many_to_many/';
 $modx->addPackage('many_to_many',$base_path.'model/','');
@@ -284,7 +263,6 @@ foreach ( $blopost_tags as $bt )
     $output .= $tag->get('name');
 }
 return $output;
-
 ```
 
 ## Parent ID: Self Join
@@ -295,8 +273,7 @@ return $output;
 
 ### MySQL Table Definitions
 
- ``` php 
-
+ ``` sql 
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) DEFAULT NULL,
@@ -304,15 +281,13 @@ CREATE TABLE `categories` (
   `seq` smallint(4) DEFAULT NULL,
   PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM;
-
 ```
 
 ### XML Schema
 
  In order to define this relationship in xPDO XML, we must add 2 aggregate relationships to the object:
 
- ``` php 
-
+ ``` xml 
 <object class="Categories" table="categories" extends="xPDOObject">
         <field key="category_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="parent_id" dbtype="int" precision="11" phptype="integer" null="true" />
@@ -324,7 +299,6 @@ CREATE TABLE `categories` (
         <aggregate alias="Parent" class="Categories" local="parent_id" foreign="category_id" cardinality="one" owner="foreign" />
         <composite alias="Children" class="Categories" local="category_id" foreign="parent_id" cardinality="many" owner="local" />
 </object>
-
 ```
 
 ### Sample Snippet Code
@@ -332,7 +306,6 @@ CREATE TABLE `categories` (
  In this example, our package is named **parent\_child\_example**. Notice that the **getMany** method relies on the alias defined for that relationship.
 
  ``` php 
-
 <?php
 $base_path = MODX_CORE_PATH . 'components/parent_child_example/';
 $modx->addPackage('parent_child_example',$base_path.'model/','');
@@ -345,7 +318,6 @@ foreach ( $subcategories as $sc )
     $output .= $sc->get('name');
 }
 return $output;
-
 ```
 
 ## Using Field Aliases _(xPDO 2.2+ only)_
@@ -356,8 +328,7 @@ return $output;
 
  The field alias definition is simply defined using the `alias` element.
 
- ``` php 
-
+ ``` xml 
 <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
   <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
   <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -376,7 +347,6 @@ return $output;
       <column key="zip" length="" collation="A" null="false" />
   </index>
 </object>
-
 ```
 
 ### Sample Snippet Code
@@ -384,7 +354,6 @@ return $output;
  The alias _postalcode_ is now accessible as a field of an sfStore object in xPDO. It is simply a reference to the value of the _zip_ field.
 
  ``` php 
-
 <?php
 $modx->addPackage('storefinder', MODX_CORE_PATH . 'components/storefinder/model/');
 $output = '';
@@ -393,5 +362,4 @@ if ($store) {
     $output = "Postal code is {$store->get('postalcode')}";
 }
 return $output;
-
 ```

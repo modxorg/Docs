@@ -15,9 +15,3 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#loadCollectionGraph>
 ``` php 
 function loadCollectionGraph(& $xpdo, $className, $graph, $criteria, $cacheFlag)
 ```
-
-## Example
-
-``` php 
-
-```

@@ -20,7 +20,6 @@ void fromJSON (
    [boolean $rawValues = false],
    [boolean $adhocValues = false]
 )
-
 ```
 
 ## Example
@@ -30,7 +29,6 @@ $str = '{"name":"Sirius","email":"Black"}';
 $object->fromJSON($str);
 echo $object->get('name').' '.$object->get('email');
 // prints "Sirius Black"
-
 ```
 
 ## See Also

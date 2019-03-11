@@ -8,8 +8,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
 
  Your XML schema can define validation rules using nodes in the XML that follow this pattern
 
- ``` php 
-
+ ``` xml 
 <validation>
     <rule field="$name_of_field" 
     name="$name_of_rule" 
@@ -18,7 +17,6 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
     value="$optional_parameter"
     message="string" />
 </validation>
-
 ```
 
  The **rule** may have have these attributes:
@@ -30,18 +28,16 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
 - **value**: an optional argument to pass to the validation functions, e.g. when the type is `xPDOValidationRule` and the rule is a class that extends it. _(optional)_
 - **message**: this is a string describing the the validation rule if it fails. _(required)_ In MODX 2+, the message field contains a lexicon string which can provide language specific message translations.
   
-   ``` xml 
-  
-          <rule field="category" name="preventBlank" type="xPDOValidationRule" rule="xPDOMinLengthValidationRule" value="1" message="category_err_ns_name" />
-  		
-  ```
+``` xml 
+<rule field="category" name="preventBlank" type="xPDOValidationRule" rule="xPDOMinLengthValidationRule" value="1" message="category_err_ns_name" />
+
+```
 
 ## Regex Validation
 
  Let's take this example from the modChunk schema:
 
- ``` php 
-
+ ``` xml 
     <object class="modChunk" table="site_htmlsnippets" extends="modElement">
         <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
         <!-- ... more fields here -->
@@ -49,7 +45,6 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
             <rule field="name" name="invalid" type="preg_match" rule="/^(?!\s)[a-zA-Z0-9\x2d-\x2f\x7f-\xff_-\s]+(?!\s)$/" message="chunk_err_invalid_name" />
         </validation>
     </object>
-
 ```
 
 ## Callback Validation
@@ -69,8 +64,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
 
  For example, look a the the rule defined for the `modContentType`
 
- ``` php 
-
+ ``` xml 
     <object class="modContentType" table="content_type" extends="xPDOSimpleObject">
         <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" index="unique" />
         <!-- ... more fields here ... -->
@@ -78,7 +72,6 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
             <rule field="name" name="name" type="xPDOValidationRule" rule="xPDOMinLengthValidationRule" value="1" message="content_type_err_ns_name" />
         </validation>
     </object>
-
 ```
 
 ## Using xPDOValidator
@@ -88,7 +81,6 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
  An example of pre-validation from MODX Revolution's `modObjectCreateProcessor` class:
 
  ``` php 
-
 /* run object validation */
 if (!$this->object->validate()) {
     /** @var modValidator $validator */
@@ -99,13 +91,11 @@ if (!$this->object->validate()) {
         }
     }
 }
-
 ```
 
  An example of examining the validation messages after `save()` failure from MODX Revolution's `modError` class:
 
  ``` php 
-
 /* save object and report validation errors */
 if (!$this->object->save()) {
     /** @var modValidator $validator */
@@ -116,7 +106,6 @@ if (!$this->object->save()) {
         }
     }
 }
-
 ```
 
 ### Writing Your Own Validation Rules
@@ -125,17 +114,18 @@ If you want to write your own validation rules, you need to create a PHP class f
 
 Let's look at a Custom Resource Class (CRC) that does not want to be nested under other CRC's -- it wants as its parent only the built-in MODX classes (modDocument, a WebLink, etc). Here's its XML schema definition:
 
- ``` php 
-
+ ``` xml 
     <object class="MyCRC" extends="modResource">
-        <composite alias="Things" cardinality="many" class="Things" foreign="parent" local="id" owner="local"></composite><validation><rule field="parent" message="Invalid parent" name="parent" rule="NormalParents" type="xPDOValidationRule"></rule></validation></object>
-
+        <composite alias="Things" cardinality="many" class="Things" foreign="parent" local="id" owner="local"></composite>
+        <validation>
+          <rule field="parent" message="Invalid parent" name="parent" rule="NormalParents" type="xPDOValidationRule"></rule>
+        </validation>
+    </object>
 ```
 
 And here's the corresponding validation rule from `core/components/my_pkg/model/my_pkg/normalparents.class.php`:
 
  ``` php 
-
 <?php /**
  * @param mixed $value candidate value
  * @param array $options from the XML schema
@@ -159,5 +149,4 @@ class NormalParents extends xPDOValidationRule {
         return $result;
     }
 }
-
 ```

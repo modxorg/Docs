@@ -14,14 +14,12 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getiterator"
 
  ``` php 
 xPDOIterator getIterator (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
-
 ```
 
  Remember, if you are using xPDO map and class files that were generated from XML schema, the classname is **not** the same as your table name. If in doubt, have a look at the schema XML file, e.g.
 
- ``` php 
+ ``` xml 
 <object class="MyClassName" table="my_class_name" extends="xPDOObject">
-
 ```
 
 ## Example
@@ -35,7 +33,6 @@ $boxes = $xpdo->getIterator('Box',array(
 foreach ($boxes as $idx => $box) {
     echo "Box #{$idx} has an id of {$box->get('id')} and a width of {$box->get('width')}\n";
 }
-
 ```
 
  If no matching xPDOObjects are found, the xPDOIterator object will be empty but will still be an object, so the following won't work (opposed to [xPDO.getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")):
@@ -57,7 +54,6 @@ $resourceObjs->rewind();
 if ($resourceObjs->valid()) {
     // this will not run
 }
-
 ```
 
 ## See Also

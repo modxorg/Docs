@@ -20,9 +20,3 @@ static xPDOObject _loadInstance(
    array $row
 )
 ```
-
-## Example
-
-``` php 
-
-```

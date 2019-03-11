@@ -14,7 +14,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.addpackage"
 
  ``` php 
 boolean addPackage ([string $pkg = ''], [string $path = ''], [string $tablePrefix = ''])
-
 ```
 
  **$pkg** corresponds to the name of a sub-folder within the specified $path. The sub-folder contains the myriad _your\_table.class.php_ files and most often a _mysql_ sub-folder which contains additional map and class files, e.g. _your\_table.class.php_ and _your\_table.map.inc.php_ 
@@ -29,7 +28,6 @@ boolean addPackage ([string $pkg = ''], [string $path = ''], [string $tablePrefi
 
  ``` php 
 $modx->addPackage('mypkg',MODX_CORE_PATH.'components/mypkg/model/','mypkg_');
-
 ```
 
 ## Another Example
@@ -42,7 +40,6 @@ $modx->addPackage('mypkg',MODX_CORE_PATH.'components/mypkg/model/','mypkg_');
 
  ``` php 
 $xpdo->addPackage('recaptcha', MODX_CORE_PATH.'components/formit/model/');
-
 ```
 
 ## Testing
@@ -53,7 +50,6 @@ $xpdo->setLogTarget('ECHO');
 if (!$xpdo->addPackage('my_package','/path/to/docroot/core/components/my_package/model/','pkg_')) {
     print 'There was a problem adding your package.';
 }
-
 ```
 
  The $path (2nd argument), must exist, or an error will be logged. But if the 1st argument (the $pkg) is not a sub-folder inside the $path, no error is thrown.

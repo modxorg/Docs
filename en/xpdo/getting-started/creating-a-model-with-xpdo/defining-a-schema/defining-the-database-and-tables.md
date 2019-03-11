@@ -14,7 +14,7 @@ If you note, we added in the 'mysql' postfix to the filename, since xPDO will ev
 
 Our current XML file looks like this:
 
-``` php 
+``` xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="storefinder" 
    baseClass="xPDOObject" 
@@ -24,7 +24,6 @@ Our current XML file looks like this:
    phpdoc-package="storefinder" 
    phpdoc-subpackage="model" 
    version="1.1">
-
 ```
 
 First we'll tell the browser and parser that this is XML code with a standard XML header. Next, we're going to create a "model" tag, and put some attributes into it. The "model" tag is a representation of the database itself. The attributes are:
@@ -44,9 +43,8 @@ First we'll tell the browser and parser that this is XML code with a standard XM
 
 Great! Now we've got our model definition. Let's add a table tag as the next line.
 
-``` php 
+``` xml 
 <object class="sfStore" table="stores" extends="xPDOSimpleObject">
-
 ```
 
 "Object" is our representation of a table, which will generate into an xPDOObject class when we're through. There are some attributes to note here:
@@ -59,7 +57,7 @@ You'll see here that this table extends "xPDOSimpleObject", rather than xPDOObje
 
 Now that we've got a table definition for our stores table, let's add some field definitions to it:
 
-``` php 
+``` xml 
 <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
 <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 <field key="city" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -69,7 +67,6 @@ Now that we've got a table definition for our stores table, let's add some field
 <field key="phone" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
 <field key="fax" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
 <field key="active" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
-
 ```
 
 As you can see here, each column in our table has a field definition tag. From there, we have attribute properties for each field. Most of these are optional, depending on the database type of the column. Some of those attribute properties are:
@@ -88,14 +85,13 @@ As you can see here, each column in our table has a field definition tag. From t
 
 Next, we'll define the indexes we want our table to have:
 
-``` php 
+``` xml 
 <index alias="name" name="name" primary="false" unique="false" type="BTREE">
     <column key="name" length="" collation="A" null="false" />
 </index>
 <index alias="zip" name="zip" primary="false" unique="false" type="BTREE">
     <column key="zip" length="" collation="A" null="false" />
 </index>
-
 ```
 
 **The alias element** 
@@ -103,21 +99,19 @@ Next, we'll define the indexes we want our table to have:
 
 Now let's define an alias for the zip column called postalcode so the value can be accessed by either key:
 
-``` php 
+``` xml 
 <alias key="postalcode" field="zip" />
-
 ```
 
 And finally, we'll finish the table definition by closing the object tag:
 
-``` php 
+``` xml 
 </object>
-
 ```
 
 Now let's add an "sfOwner" class, which will represent any owners we have:
 
-``` php 
+``` xml 
 <object class="sfOwner" table="owners" extends="xPDOSimpleObject">
   <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
   <field key="email" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -126,12 +120,11 @@ Now let's add an "sfOwner" class, which will represent any owners we have:
       <column key="name" length="" collation="A" null="false" />
   </index>
 </object>
-
 ```
 
 And since we want our stores to possibly have multiple owners, let's add a sfStoreOwner class, that will bridge the many-to-many relationship:
 
-``` php 
+``` xml 
 <object class="sfStoreOwner" table="store_owners" extends="xPDOSimpleObject">
   <field key="store" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
   <field key="owner" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
@@ -143,14 +136,12 @@ And since we want our stores to possibly have multiple owners, let's add a sfSto
       <column key="owner" length="" collation="A" null="false" />
   </index>
 </object>
-
 ```
 
 Let's close the model definition:
 
-``` php 
+``` xml 
 </model>
-
 ```
 
 We have a completed XML schema for our model. Now we'll need to [define relationships for that schema](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships").

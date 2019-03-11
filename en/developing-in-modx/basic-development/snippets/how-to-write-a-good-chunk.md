@@ -13,8 +13,6 @@ We're putting this here because often a Snippet will use Chunks to format data.
 - [Good Chunk tpl-keeping Checklist](#good-chunk-tpl-keeping-checklist)
 - [See Also](#see-also)
 
-
-
 ## Do NOT Over-Rely on Output Modifier Logic! 
 
 What are [Output Modifiers](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "PHx")? It is a simplified set of parser rules and output modifies that allows you to manipulate data in your view layer (i.e. in your Chunks and Templates).

@@ -76,9 +76,10 @@ Array
 ``` php 
 $xpdo->setPackage('sw_zipCode', MODX_BASE_PATH.'wsw/model/', 'sw_');
 $collection= $xpdo->getCollectionGraph('Zip', '{"TZ":{},"ST":{},"CT":{}}', $lookupZip);
+```
 
 In MySQL:
-
+``` sql
 SELECT *
 FROM `sw_zips` AS Z
 LEFT JOIN `sw_county` AS CT ON CT.`id` = Z.`sw_county_id`
@@ -95,40 +96,33 @@ class= had to be renamed to klass= to be presented in this document system. Thou
 
 
 
-``` php 
-?
+``` xml
 <model package="sw_zipCode" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
-?
 <object klass="class="City" table="city" extends="xPDOSimpleObject">
-<field key="cityname" dbtype="varchar" precision="50" phptype="string" null="false"/>
+  <field key="cityname" dbtype="varchar" precision="50" phptype="string" null="false"/>
 </object>
-?
 <object klass="Cityzip" table="cityzip" extends="xPDOSimpleObject">
-<field key="city" dbtype="int" precision="10" phptype="integer" null="false"/>
-<field key="zip" dbtype="int" precision="5" phptype="integer" null="false"/>
+  <field key="city" dbtype="int" precision="10" phptype="integer" null="false"/>
+  <field key="zip" dbtype="int" precision="5" phptype="integer" null="false"/>
 </object>
-?
 <object klass="County" table="county" extends="xPDOSimpleObject">
-<field key="countyname" dbtype="varchar" precision="35" phptype="string" null="true" index="index"/>
+  <field key="countyname" dbtype="varchar" precision="35" phptype="string" null="true" index="index"/>
 </object>
-?
 <object klass="States" table="states" extends="xPDOSimpleObject">
-<field key="statename" dbtype="varchar" precision="40" phptype="string" null="false" index="index"/>
-<field key="abbrv" dbtype="char" precision="2" phptype="string" null="false"/>
+  <field key="statename" dbtype="varchar" precision="40" phptype="string" null="false" index="index"/>
+  <field key="abbrv" dbtype="char" precision="2" phptype="string" null="false"/>
 </object>
-?
 <object klass="Timezones" table="timezones" extends="xPDOSimpleObject">
-<field key="tzname" dbtype="varchar" precision="20" phptype="string" null="true" index="index"/>
+  <field key="tzname" dbtype="varchar" precision="20" phptype="string" null="true" index="index"/>
 </object>
-?
 <object klass="Zip" table="zips" extends="xPDOSimpleObject">
-<field key="city" dbtype="varchar" precision="50" phptype="string" null="true"/>
-<field key="areacode" dbtype="int" precision="3" phptype="integer" null="true"/>
-<field key="lat" dbtype="float" phptype="float" null="true"/>
-<field key="lon" dbtype="float" phptype="float" null="true"/>
-<field key="sw_county_id" dbtype="int" precision="4" phptype="integer" null="false" index="pk"/>
-<field key="sw_states_id" dbtype="int" precision="2" phptype="integer" null="false" index="pk"/>
-<field key="sw_timezones_id" dbtype="int" precision="2" phptype="integer" null="false" index="pk"/>
+  <field key="city" dbtype="varchar" precision="50" phptype="string" null="true"/>
+  <field key="areacode" dbtype="int" precision="3" phptype="integer" null="true"/>
+  <field key="lat" dbtype="float" phptype="float" null="true"/>
+  <field key="lon" dbtype="float" phptype="float" null="true"/>
+  <field key="sw_county_id" dbtype="int" precision="4" phptype="integer" null="false" index="pk"/>
+  <field key="sw_states_id" dbtype="int" precision="2" phptype="integer" null="false" index="pk"/>
+  <field key="sw_timezones_id" dbtype="int" precision="2" phptype="integer" null="false" index="pk"/>
 <aggregate alias="TZ" klass="Timezones" local="tz_id" foreign="id" cardinality="one" owner="foreign" />    
 <aggregate alias="ST" klass="County" local="sw_county_id" foreign="id" cardinality="one" owner="foreign" />
 <aggregate alias="CT" klass="States" local="sw_states_id" foreign="id" cardinality="one" owner="foreign" />

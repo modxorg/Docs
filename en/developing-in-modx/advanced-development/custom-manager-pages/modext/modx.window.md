@@ -57,7 +57,7 @@ MODExt Windows are a convenient way to display record data from a Grid or AJAX r
 
 You can manually fire the submission of the Window's form by running the submit() method, which has an optional "close" parameter (1/0) that, if 1, will close the window on success. Example:
 
-``` js 
+``` javascript 
 var w = Ext.getCmp('my-window-id');
 w.submit(true); /* submit and then close window */
 ```
@@ -66,7 +66,7 @@ w.submit(true); /* submit and then close window */
 
 The MODx.Window class comes with a setValues method, that will set the form values of the window:
 
-``` js 
+``` javascript 
 var w = Ext.getCmp('my-window-id');
 w.setValues({ 
   name: 'John'
@@ -78,7 +78,7 @@ w.setValues({
 
 You can run the reset method to empty (reset) all the fields on the form:
 
-``` js 
+``` javascript 
 var w = Ext.getCmp('my-window-id');
 w.reset();
 ```
@@ -87,7 +87,7 @@ w.reset();
 
 MODx.Window comes with a few assistance methods for making fields in its forms visible or hidden:
 
-``` js 
+``` javascript 
 var w = Ext.getCmp('my-window-id');
 w.hideField('email');
 w.showField('comments');

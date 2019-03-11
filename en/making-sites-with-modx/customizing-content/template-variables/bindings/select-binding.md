@@ -33,7 +33,7 @@ You'll need to select only 2 columns - the first being the display value, the se
 
 For example, to grab a list of active users in a SELECT box:
 
-``` php 
+``` sql 
 @SELECT `username` AS `name`,`id` FROM `[[+PREFIX]]users` WHERE `active` = 1
 ```
 
@@ -49,7 +49,7 @@ Select queries are a great way to power a listbox dropdown, but since they ALWAY
 
 Consider the following query:
 
-``` php 
+``` sql 
 @SELECT '-none-' AS username, 0 AS id UNION ALL 
 SELECT `username`,`id` FROM `[[+PREFIX]]users` WHERE `active` = 1 ORDER BY username ASC
 ```
@@ -69,7 +69,7 @@ First, have a look at the following tables (you may have prefixes to your table 
 
 In our example, we want to filter based on a custom date field named "opening\_date", but if you look closely, the site\_tmplvar\_contentvalues.value field is a _text_ field. MySQL won't automatically recognize arbitrary text as a date value, so you'll have to make use of MySQL's [str\_to\_date()](http://dev.mysql.com/doc/refman/5.0/en/date-and-time-functions.html#function_str-to-date) function. You may think that the site\_tmplvars.display\_params is a savior here, but it's not... you end up smashing your nose directly into the nasty truth that the formats used by PHP's [strftime()](http://www.php.net/strftime) (stored in site\_tmplvars.display\_params) are **not** the same as what MySQL can use in its STR\_TO\_DATE() function. There may be a way to automatically do this, but it's easier to just hard-code it. You might end up with a query like this:
 
-``` php 
+``` sql 
 SELECT
         page.alias,
         tv_val.value,

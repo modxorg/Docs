@@ -4,13 +4,11 @@ _old_id: "1159"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships"
 ---
 
-- [Aggregate Relationships](#DefiningRelationships-AggregateRelationships)
-- [Composite Relationships](#DefiningRelationships-CompositeRelationships)
-- [Relating Many-to-Many](#DefiningRelationships-RelatingManytoMany)
-- [Conclusion](#DefiningRelationships-Conclusion)
-- [See Also](#DefiningRelationships-SeeAlso)
-
-
+- [Aggregate Relationships](#aggregate-relationships)
+- [Composite Relationships](#composite-relationships)
+- [Relating Many-to-Many](#relating-many-to-many)
+- [Conclusion](#conclusion)
+- [See Also](#see-also)
 
  We're going to need to define some relationships between our tables so xPDO can communicate properly between them. xPDO deals with two types of relationships, **aggregate** and **composite**.
 
@@ -25,7 +23,6 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defi
     <field key="box" dbtype="int" precision="10" phptype="integer" null="false" default="" />
     <aggregate alias="Box" class="myBox" local="box" foreign="id" cardinality="one" owner="foreign" />
 </object>
-
 ```
 
  Note the attributes:
@@ -43,7 +40,6 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defi
 $crayon = $xpdo->getObject('myCrayon',1);
 $box = $crayon->getOne('Box');
 echo $box->get('name');
-
 ```
 
 ##  Composite Relationships 
@@ -56,7 +52,6 @@ echo $box->get('name');
 <object class="myBox" table="boxes" extends="xPDOSimpleObject">
     <composite alias="Crayons" class="myCrayon" local="id" foreign="box" cardinality="many" owner="local" />
 </object>
-
 ```
 
 As you can see, a few attributes have changed. The alias now is plural, since we could have any number of Crayons related to this Box. Also, the local attribute now points to the ID of this Box; the foreign attribute points to the foreign key 'box' in the Crayon object; the cardinality is now "many"; and finally, the owner of the key is now "local", since it is owned by the Box.
@@ -69,14 +64,12 @@ $crayons = $box->getMany('Crayons');
 foreach ($crayons as $crayon) {
    echo $crayon->get('color').'<br />';
 }
-
 ```
 
  Remember that in a Composite relationship, should the owner of the relationship be removed, all the Composites will be removed. So, if we remove the Box object:
 
 ``` php 
 $box->remove();
-
 ```
 
  ...this would remove all of the related Crayons for that Box. This can be useful to cascade removal of objects, making code simpler and easier to manage.
@@ -85,7 +78,7 @@ $box->remove();
 
  Let's go back to our StoreFinder model. First off, let's review our schema so far:
 
-``` php 
+``` xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="storefinder" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="storefinder" phpdoc-subpackage="model" version="1.1">
   <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
@@ -124,7 +117,6 @@ $box->remove();
     </index>
   </object>
 </model>
-
 ```
 
  We're going to want to relate Stores to Owners, but as you can see here, the relationship is "many-to-many" - an Owner can have multiple Stores, and a Store can have multiple Owners. So how do we handle this? Well, the best way is to create an intermediary table, which we'll call 'sfStoreOwner'. This table has only 3 fields - its ID, and 2 indexed fields that are 'store' and 'owner'.
@@ -133,14 +125,12 @@ $box->remove();
 
 ``` xml 
 <composite alias="StoreOwners" class="sfStoreOwner" local="id" foreign="store" cardinality="many" owner="local" />
-
 ```
 
  And in our sfOwner definition, let's add this:
 
-``` php 
+``` xml 
 <composite alias="StoreOwners" class="sfStoreOwner" local="id" foreign="owner" cardinality="many" owner="local" />
-
 ```
 
  Note that both of our primary classes use a Composite relationship. This is because if any of our Stores or Owners get deleted, we want to delete any connecting relationships between them.
@@ -150,7 +140,6 @@ $box->remove();
 ``` xml 
 <aggregate alias="Store" class="sfStore" local="store" foreign="id" cardinality="one" owner="foreign" />
 <aggregate alias="Owner" class="sfOwner" local="owner" foreign="id" cardinality="one" owner="foreign" />
-
 ```
 
  Now that we've got our model defined, in our xPDO code we'll be able to do something like this:
@@ -158,7 +147,6 @@ $box->remove();
 ``` php 
 <aggregate alias="Store" class="sfStore" local="store" foreign="id" cardinality="one" owner="foreign" />
 <aggregate alias="Owner" class="sfOwner" local="owner" foreign="id" cardinality="one" owner="foreign" />
-
 ```
 
  Now that we've got our model defined, in our xPDO code we'll be able to do something like this:
@@ -173,7 +161,6 @@ foreach ($storeOwners as $storeOwner) {
 foreach ($owners as $owner) {
    echo $owner->get('name').'<br />';
 }
-
 ```
 
  And that will output a list of owners for that store.
@@ -190,7 +177,6 @@ $owners = $xpdo->getCollection('sfOwner',$c);
 foreach ($owners as $owner) {
    echo $owner->get('name').'<br />';
 }
-
 ```
 
  This block of code lets us grab all the owners of a store with only one query.

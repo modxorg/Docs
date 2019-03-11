@@ -18,7 +18,7 @@ Think of a Template like a house. Your [Resource's](making-sites-with-modx/struc
 
 To create a Template -- Expand the "Elements" part of the tree and right click on Templates. Select "Create a New Template" then paste your HTML into the "Template Code" textarea; you can copy and paste the text below to get started with a very simple template:
 
-``` php 
+``` html 
 <html>
 <head>
     <title>[[*pagetitle]]</title>
@@ -53,13 +53,13 @@ Templates can contain any tags, including [Template Variables](making-sites-with
 
 As you noticed from our Template sample code above, the fields of a Resource can be referenced using the \[\[\*fieldName\]\] syntax. A list of available Resource Fields can be [found here](making-sites-with-modx/structuring-your-site/resources#Resources-ResourceFields). For example, if we wanted to show the current Resource's pagetitle in our <title> tag, we would simply do this:
 
-``` php 
+``` html 
 <title>[[*pagetitle]]</title>
 ```
 
 You can also place the content of the current Resource using the "content" tag:
 
-``` php 
+``` html 
 <body>
 [[*content]]
 </body>
@@ -67,7 +67,7 @@ You can also place the content of the current Resource using the "content" tag:
 
 These tags are like normal MODx tags, in that they can have [output filters](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") applied to them. For example, say we wanted to display the "introtext" field on a right navbar, but strip any HTML tags from it, and only display the first 400 characters - and if longer, add an ellipsis (...):
 
-``` php 
+``` html 
 <div id="rightbar">
 [[*introtext:stripTags:ellipsis=`400`]]
 </div>
@@ -81,7 +81,7 @@ Template Variables allow you to have custom fields for any Resource with the spe
 
 You can then reference your "bioPhoto" TV in your content with the same tag syntax as a Resource Field:
 
-``` php 
+``` html 
 <div class="photo">
 [[*bioPhoto]]
 </div>

@@ -20,9 +20,3 @@ static array loadCollection(
     [boolean|integer $cacheFlag = true]
 )
 ```
-
-## Example
-
-``` php 
-
-```

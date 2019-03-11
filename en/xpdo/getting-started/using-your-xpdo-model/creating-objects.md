@@ -4,8 +4,8 @@ _old_id: "1156"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/creating-objects"
 ---
 
-- [What is an Object?](#CreatingObjects-WhatisanObject%3F)
-- [Creating an Object](#CreatingObjects-CreatinganObject)
+- [What is an Object?](#what-is-an-object)
+- [Creating an Object](#creating-an-object)
 
 
 

@@ -5,7 +5,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 ---
 
 - [Setting the Namespace Path](#setting-the-namespace-path)
-- [](#)
 - [Creating the Menu](#creating-the-menu)
 - [Creating the Controller File](#creating-the-controller-file)
 
@@ -16,8 +15,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 ## Setting the Namespace Path
 
  First off, we'll create a Namespace (Settings > Namespaces) called "mycmp", and set its path to "{core\_path}components/mycmp/". Set its Assets Path to "{assets\_path}components/mycmp/" as well.
-
-## 
 
  ![](/download/attachments/763b342992d3623156aef15b0dd5d168/create-namespace.png)
 

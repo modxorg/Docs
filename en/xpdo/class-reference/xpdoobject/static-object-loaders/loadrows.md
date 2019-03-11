@@ -19,9 +19,3 @@ static PDOStatement|null _loadRows(
    mixed $criteria
 )
 ```
-
-## Example
-
-``` php 
-
-```

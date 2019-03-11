@@ -10,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/"
 - [Available Events](#available-events)
 - [Custom Events](#custom-events)
  
-
-
 ## What are System Events?
 
  System Events are the events in MODx that [Plugins](developing-in-modx/basic-development/plugins "Plugins") are registered to. They are 'fired' throughout the MODx code, allowing Plugins to interact with MODx code and add custom functionality without hacking core code.

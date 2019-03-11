@@ -16,9 +16,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.query"
  API Docs: see <http://php.net/manual/en/pdo.query.php>
 
  ``` php 
-
 xPDOObject|false query (string $statement)
-
 ```
 
  **$statement**
@@ -44,7 +42,6 @@ xPDOObject|false query (string $statement)
  Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](/display/xPDO20/xPDO.getObject "xPDO.getObject") or [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
 
  ``` php 
-
 $result = $modx->query("SELECT * FROM modx_users WHERE id=1");
 if (!is_object($result)) {
    return 'No result!';
@@ -53,13 +50,11 @@ else {
    $row = $result->fetch(PDO::FETCH_ASSOC);
    return 'Result:' .print_r($row,true);
 }
-
 ```
 
  Use the **PDO::FETCH\_ASSOC** will force the result to be an associative array:
 
  ``` php 
-
 Array
 (
     [id] => 1
@@ -67,13 +62,11 @@ Array
     [password] => xxxxxxxxxxxxxxxxxxx
     // ...
 )
-
 ```
 
  Without it, the results are a mix of an associative and a regular array:
 
  ``` php 
-
 Array
 (
     [id] => 1
@@ -84,7 +77,6 @@ Array
     [2] => xxxxxxxxxxxxxxxxxxxxx
     // ...  
 )
-
 ```
 
  **No One-Liners!** 
@@ -96,12 +88,10 @@ Array
  PDO uses a lazy-loader, so you can't simply print out all of the results at once. Instead, you iterate over each result in the set using a loop, e.g.
 
  ``` php 
-
 $results = $xpdo->query("SELECT * FROM some_table");
 while ($r = $results->fetch(PDO::FETCH_ASSOC)) {
         print_r($r); exit;
 }
-
 ```
 
 ###  Quoting Inputs 
@@ -109,13 +99,11 @@ while ($r = $results->fetch(PDO::FETCH_ASSOC)) {
  For single queries that rely on user input, you should [manually quote](http://php.net/manual/en/pdo.quote.php) the input strings.
 
  ``` php 
-
 $username = $modx->quote($username);
 $sql = "SELECT * FROM modx_users WHERE username = $username";
 $result = $modx->query($sql);
 $row = $result->fetch(PDO::FETCH_ASSOC);
 return print_r($row,true);
-
 ```
 
  The \[quote\] function can take a 2nd argument, which you can use to quote integers specifically
@@ -124,13 +112,11 @@ return print_r($row,true);
 - **PDO::PARAM\_STR** for quoting strings (default)
  
 ``` php 
-
 $id = $modx->quote(1, PDO::PARAM_INT);
 $sql = "SELECT * FROM cms_users WHERE id = $id";
 $result = $modx->query($sql);
 $row = $result->fetch(PDO::FETCH_ASSOC);
 return print_r($row, true);
-
 ```
 
 ###  Select a Collection 
@@ -138,26 +124,22 @@ return print_r($row, true);
  Here's a simple query to fetch multiple rows from the database. Note that you would normally use [getObject](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to retrive data from MODX tables.
 
  ``` php 
-
 $output = '';
 $sql = "SELECT * FROM modx_users";
 foreach ($modx->query($sql) as $row) {
     $output .= $row['username'] .'<br/>';
 }
 return $output;
-
 ```
 
  You can also use the fetchAll() method to return an array of arrays (i.e. a recordset):
 
  ``` php 
-
 $output = '';
 $sql = "SELECT * FROM modx_users";
 $result = $modx->query($sql);
 $data = $result->fetchAll(PDO::FETCH_ASSOC);
 return $data;
-
 ```
 
 ###  Fetch Style 

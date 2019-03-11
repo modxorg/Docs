@@ -23,9 +23,3 @@ static boolean _loadCollectionInstance(
    boolean|integer $cacheFlag
 )
 ```
-
-## Example
-
-``` php 
-
-```
