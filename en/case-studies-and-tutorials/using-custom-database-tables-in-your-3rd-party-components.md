@@ -4,13 +4,8 @@ _old_id: "330"
 _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components"
 ---
 
-- [The Scenario](#UsingCustomDatabaseTablesinyour3rdPartyComponents-TheScenario)
-- [Our Model](#UsingCustomDatabaseTablesinyour3rdPartyComponents-OurModel)
-- [Building the Schema](#UsingCustomDatabaseTablesinyour3rdPartyComponents-BuildingtheSchema)
-- [Using our New Model](#UsingCustomDatabaseTablesinyour3rdPartyComponents-UsingourNewModel)
-- [See Also](#UsingCustomDatabaseTablesinyour3rdPartyComponents-SeeAlso)
-
-
+- [The Scenario](#the-scenario)
+- [Our Model](#our-model)
 
  So you're developing your custom component for MODX Revolution, and you've run into a dilemma. You've got some data that uses a table in your MODX database, but you want a way to use xPDO's object model to access it. This tutorial will walk you through the process of creating your own custom schema, adding it as an xPDO model package, and querying it.
 
@@ -48,7 +43,6 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
  ``` xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="storefinder" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="storefinder" phpdoc-subpackage="model">
-
 ```
 
  First we'll tell the browser and parser that this is XML code with a standard XML header. Next, we're going to create a "model" tag, and put some attributes into it. They are:
@@ -61,9 +55,8 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  Great! Now we've got our model definition. Let's add a table tag as the next line.
 
- ``` php 
+ ``` xml 
 <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
-
 ```
 
  "Object" is our representation of a table, which will generate into an xPDOObject class when we're through. There are some attributes to note here:
@@ -76,7 +69,7 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  Now that we've got a table definition for our stores table, let's add some field definitions to it:
 
- ``` php 
+ ``` xml 
 <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
 <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 <field key="city" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -86,7 +79,6 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 <field key="phone" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
 <field key="fax" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
 <field key="active" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
-
 ```
 
  As you can see here, each column in our table has a field definition tag. From there, we have 
@@ -103,10 +95,9 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  And we'll finish by closing the object and model tags:
 
- ``` php 
+ ``` xml 
 </object>
 </model>
-
 ```
 
  So now we have a completed XML schema for our model! Let's move on to the schema build script.
@@ -122,7 +113,6 @@ define('MODX_CORE_PATH', MODX_BASE_PATH . 'core/');
 define('MODX_MANAGER_PATH', MODX_BASE_PATH . 'manager/');
 define('MODX_CONNECTORS_PATH', MODX_BASE_PATH . 'connectors/');
 define('MODX_ASSETS_PATH', MODX_BASE_PATH . 'assets/');
-
 ```
 
  ...where MODX\_BASE\_PATH will need to point to where you installed MODX Revolution. If you moved the manager or core outside of that base path, you'll need to adjust those defines as well. From here, create a 'build.schema.php' file in your \_build directory. At the top, put this:
@@ -155,7 +145,6 @@ $sources = array(
     'assets' => $root.'assets/components/storefinder/',
     'schema' => $root.'_build/schema/',
 );
-
 ```
 
  This will do a few things. First off, it starts up a nice execution time script for us, so we can see how long it takes to build the schema. Secondly, It includes our build.config.php file to tell the schema script where to find MODX Revolution. Thirdly, it loads the necessary classes, initializes the modX object, and loads the modPackageBuilder class. And finally, it sets some log levels and some base paths for our build script.
@@ -165,7 +154,6 @@ $sources = array(
  ``` php 
 $manager= $modx->getManager();
 $generator= $manager->getGenerator();
-
 ```
 
  These lines will load xPDOManager and xPDOGenerator, two classes we'll need to build our schema map files.
@@ -182,7 +170,6 @@ $totalTime= ($tend - $tstart);
 $totalTime= sprintf("%2.4f s", $totalTime);
 echo "\nExecution time: {$totalTime}\n";
 exit ();
-
 ```
 
  This block of code executes the schema parsing method, and then outputs the total time the script took to execute. Run it, and viola! Our storefinder/core/model/storefinder/ directory is now filled with all of our map and class files!
@@ -205,7 +192,6 @@ if (file_exists($f)) {
    $modx->log(modX::LOG_LEVEL_ERROR,'StoreFinder not found at: '.$f);
 }
 return $o;
-
 ```
 
  This little helper code allows us to do our development in our own code editor of choice until we're ready to package and distribute our Component. Then we'll simply delete this 'StoreFinder' snippet from our MODX Revolution instance, and install our package. You can find more about building packages by going [here](http://modxcms.com/about/blog/shaun-mccormick/creating-3rd-party-component-build-script.html). If you don't want to build a transport package (we recommend doing so, it makes upgrades FAR easier!), you can simply just copy the files to their proper directories in the manager.
@@ -218,7 +204,6 @@ return $o;
  * @package storefinder
  */
 $base_path = !empty($base_path) ? $base_path : $modx->getOption('core_path').'components/storefinder/';
-
 ```
 
  You'll see here that we're setting a $base\_path variable if and only if it's not already set. Why? Well, this allows us to do development outside our target directory (like we're doing now). If no base\_path is set, then we simply point it to where the component will be installed: core/components/storefinder/
@@ -227,7 +212,6 @@ $base_path = !empty($base_path) ? $base_path : $modx->getOption('core_path').'co
 
  ``` php 
 $modx->addPackage('storefinder',$base_path.'model/');
-
 ```
 
  This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
@@ -235,7 +219,6 @@ $modx->addPackage('storefinder',$base_path.'model/');
  ``` php 
 $stores = $modx->getCollection('sfStore');
 echo 'Total: '.count($stores);
-
 ```
 
  Note the first time you run this, it might throw an error. This is because xPDO is dynamically creating your database table from your schema. After running, it should show "Total: 0".
@@ -263,7 +246,6 @@ $store->fromArray(array(
     'phone' => '555-2011-978',
 ));
 $store->save();
-
 ```
 
  Run this **only once** (unless you want duplicate data). That should populate your table with some data, and then output 'Total: 2', assuming you didn't remove the getCollection lines. After you've run it, go ahead and erase those lines.

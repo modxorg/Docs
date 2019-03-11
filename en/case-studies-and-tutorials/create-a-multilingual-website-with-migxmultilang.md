@@ -154,10 +154,8 @@ Thanks to Bruno Perner and Susan Ottwell for helping me initially work this out!
 
  The Configurations should be:
 
-```
-
-	mml_translations:migxmultilang,mml_translate:migxmultilang
-	
+``` php
+mml_translations:migxmultilang,mml_translate:migxmultilang
 ```
 
  ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/15modified.png)
@@ -228,7 +226,7 @@ pdoFetch.class: migxmultilang.mmlfetch
 
  Delete everything in the "Template Code (HTML)" area and then paste in the following code:
 
- ``` plain 
+ ``` php 
 [[!mmlCache?
   &element=`pdoResources`
   &parents=`0` 
@@ -258,7 +256,7 @@ pdoFetch.class: migxmultilang.mmlfetch
 
  Here is a very simple example of a possible MainTpl chunk:
 
- ``` plain 
+ ``` html 
 <!doctype html>
 <html lang="en">
 <head>

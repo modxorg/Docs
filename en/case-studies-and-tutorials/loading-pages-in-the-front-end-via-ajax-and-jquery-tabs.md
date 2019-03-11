@@ -13,8 +13,6 @@ _old_uri: "2.x/case-studies-and-tutorials/loading-pages-in-the-front-end-via-aja
   - [Using a getField Snippet](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-UsingagetFieldSnippet)
 - [Conclusion](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-Conclusion)
 
-
-
 ## The Problem
 
  We want in our site to use [jQuery's tabs](http://jqueryui.com/demos/tabs/) to load our Resources via AJAX. How do we do that in MODx? This tutorial will show you just how easy it is to accomplish this in MODx Revolution.
@@ -38,7 +36,6 @@ $(function() { $("#tabs").tabs(); });
                 <li><a href="[[~123]]">Resource with ID 123</a></li>
         </ul>
 </div>
-
 ```
 
  Great! So this loads the pages via Ajax.
@@ -53,7 +50,6 @@ $(function() { $("#tabs").tabs(); });
 
  ``` php 
 <li id="[[+id]]"><a href="[[~[[+id]]]]" title="[[+longtitle]]">[[+pagetitle]]</a></li>
-
 ```
 
  and in our tabs page:
@@ -67,7 +63,6 @@ $(function() { $("#tabs").tabs(); });
 [[getResources? &parents=`123` &depth=`1` &tpl=`myRowTpl` &includeContent=`1` &includeTVs=`1`]]
         </ul>
 </div>
-
 ```
 
 ### Using Wayfinder
@@ -76,7 +71,6 @@ $(function() { $("#tabs").tabs(); });
 
  ``` php 
 <li[[+wf.id]][[+wf.classes]]><a href="[[+wf.link]]" title="[[+wf.title]]">[[+wf.linktext]]</a></li>
-
 ```
 
  and in our tabs page:
@@ -90,7 +84,6 @@ $(function() { $("#tabs").tabs(); });
 [[Wayfinder? &startId=`123` &level=`1` &rowTpl=`myRowTpl`]]
         </ul>
 </div>
-
 ```
 
 ### Using a getField Snippet
@@ -114,7 +107,6 @@ if ($id) { /* grab the resource object */
 /* return the field value */
 return $resource->get($field);
 ?>
-
 ```
 
  Call this Snippet getField like so in our tabs page:
@@ -130,7 +122,6 @@ $(function() { $("#tabs").tabs(); });
                 <li><a href="[[~123]]">[[getField? &id=`123` &field=`pagetitle`]]</a></li>
         </ul>
 </div>
-
 ```
 
  However, the getField solution is not as fast or elegant as the Wayfinder solution, since it has to make a query every tab.
@@ -150,7 +141,6 @@ $(function() { $("#tabs").tabs(); });
                 <li><a href="[[~123]]">[[#123.pagetitle]]</a></li>
         </ul>
 </div>
-
 ```
 
 ## Conclusion

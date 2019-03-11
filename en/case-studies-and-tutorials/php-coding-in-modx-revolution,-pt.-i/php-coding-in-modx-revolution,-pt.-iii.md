@@ -50,11 +50,9 @@ if ($_POST['name'] == '') $_POST['name'] = $modx->lexicon('chunk_untitled');
 $_POST['name'] = str_replace('>','',$_POST['name']);
 $_POST['name'] = str_replace('<','',$_POST['name']);
 
-
 // if the name already exists for this chunk, send back an error
 $name_exists = $modx->getObject('modChunk',array('name' => $_POST['name']));
 if ($name_exists != null) return $modx->error->failure($modx->lexicon('chunk_err_exists_name'));
-
 ```
 
 Note now how we're sanitizing variables, and checking to make sure there already isn't a Chunk with this name.
@@ -71,7 +69,6 @@ if ($category == null) {
                 $category->save();
         }
 }
-
 ```
 
 Okay, here, we allow dynamic Category creation. If the category specified exists, it will later assign it to that category. If not, then it creates the category in the database and prepares it for later association to the Chunk.
@@ -82,7 +79,6 @@ $modx->invokeEvent('OnBeforeChunkFormSave',array(
         'mode'  => modSystemEvent::MODE_NEW,
         'id'    => $_POST['id'],
 ));
-
 ```
 
 Events are pretty much the same invoke-wise in Revolution as they were in 096 - however they are more optimized in their loading.
@@ -95,7 +91,6 @@ $chunk->set('category',$category->get('id'));
 if ($chunk->save() === false) {
     return $modx->error->failure($modx->lexicon('chunk_err_save'));
 }
-
 ```
 
 Important: note the 2nd parameter of the newObject() method. This is basically the same as $obj->fromArray() - it allows you to specify an array of key-value pairs to assign to the new object.
@@ -106,7 +101,6 @@ $modx->invokeEvent('OnChunkFormSave',array(
    'mode' => modSystemEvent::MODE_NEW,
    'id' => $chunk->get('id'),
 ));
-
 ```
 
 Again, more event invoking.
@@ -114,7 +108,6 @@ Again, more event invoking.
 ``` php 
 // log manager action
 $modx->logManagerAction('chunk_create','modChunk',$chunk->get('id'));
-
 ```
 
 Now, how manager actions work in Revolution is a little different. This stores a lexicon string key ('chunk\_create'), the class key of the object being modified, and the actual ID of the object. This allows for more detailed manager action reporting.
@@ -122,14 +115,12 @@ Now, how manager actions work in Revolution is a little different. This stores a
 ``` php 
 $cacheManager= $modx->getCacheManager();
 $cacheManager->clearCache();
-
 ```
 
 Let's simply and easily clear the cache. Pretty easy, huh?
 
 ``` php 
 return $modx->error->success('',$chunk->get(array('id', 'name', 'description', 'locked', 'category')));
-
 ```
 
 Now, send a success response back to the browser. The parameters of $modx->error->success() are as follows:

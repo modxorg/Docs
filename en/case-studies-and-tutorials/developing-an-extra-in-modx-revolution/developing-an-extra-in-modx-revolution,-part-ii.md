@@ -11,9 +11,6 @@ This tutorial is part of a Series:
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-iii "Developing an Extra in MODX Revolution, Part III")
  
 
-
- 
-
 - [First Setup Steps](#DevelopinganExtrainMODXRevolution%2CPartII-FirstSetupSteps)
   - [Namespaces](#DevelopinganExtrainMODXRevolution%2CPartII-Namespaces)
   - [Actions and Menus](#DevelopinganExtrainMODXRevolution%2CPartII-ActionsandMenus)
@@ -31,8 +28,6 @@ This tutorial is part of a Series:
   - [Creating the Create Form](#DevelopinganExtrainMODXRevolution%2CPartII-CreatingtheCreateForm)
   - [Adding Inline-Editing](#DevelopinganExtrainMODXRevolution%2CPartII-AddingInlineEditing)
 - [Summary](#DevelopinganExtrainMODXRevolution%2CPartII-Summary)
-
-
 
 This section will cover creating the Custom Manager Page (CMP) for our Doodles Extra we created in [step 1](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution"). This includes explaining controllers/connectors/processors, making our Namespace, Action and Menu item, and working with ExtJS to create the UI.
 

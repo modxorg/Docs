@@ -4,11 +4,9 @@ _old_id: "1116"
 _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i"
 ---
 
-- [The Simple How](#PHPCodinginMODxRevolution%2CPt.I-TheSimpleHow)
-- [The Model](#PHPCodinginMODxRevolution%2CPt.I-TheModel)
-- [See Also](#PHPCodinginMODxRevolution%2CPt.I-SeeAlso)
-
-
+- [The Simple How](#the-simple-how)
+- [The Model](#the-model)
+- [See Also](#see-also)
 
 So, a lot of people have been asking about the new codebase. Is it coder-friendly? Will it be a big deviation from 0.9.6/Evolution? Does it support OOP projects? Is it faster? Will it be easy to learn?
 
@@ -68,7 +66,7 @@ So, you're probably asking, Where is the list of table names to object names map
 
 For example, modChunk:
 
-``` php 
+``` xml 
 <object class="modChunk" table="site_htmlsnippets" extends="modElement">
     <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
     <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default="Chunk" />
@@ -83,19 +81,19 @@ For example, modChunk:
 
 You can also define your own schemas for your own components and add them as packages - more on that in a future article. Lets go into the schema:
 
-``` php 
+``` xml 
 <object class="modChunk" table="site_htmlsnippets" extends="modElement">
 ```
 
 The _class_ property tells you what the name of the class will be. The _table_ property shows the actual MySQL table, and _extends_ shows what object it extends. modElement is a base class for all Elements in MODx - snippets, modules, chunks, templates, etc.
 
-``` php 
+``` xml 
 <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
 ```
 
 This tag represents a column in the database. Most of these attributes are pretty straightforward.
 
-``` php 
+``` xml 
 <aggregate alias="modCategory" class="modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
 ```
 

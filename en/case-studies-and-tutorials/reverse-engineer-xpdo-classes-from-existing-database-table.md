@@ -12,8 +12,6 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
 - [Accessing your Data](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-AccessingyourData)
 - [See Also](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-SeeAlso)
  
-
-
 ## Introduction
 
  The xPDO Object-Relational-Bridge (ORB) relies on a series of PHP classes to provide an interface to database tables. These PHP classes can be generated automatically by parsing a specially formatted XML file, by reverse engineering existing database tables, or they can even be written by hand (masochists only). The easiest approach when dealing with a custom database table is to reverse engineer existing MySQL database tables: MySQL has been around for a long time, and there are numerous tutorials and books out there to help you learn how to use it.
@@ -57,16 +55,13 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
  Together, they behave similarly to other ORM's, e.g. Doctrine
 
  ``` php 
-
 // Sample Doctrine code:
 Doctrine_Core::generateModelsFromDb();
-
 ```
 
  Here's a reverse-engineering script that allows a bit of configuration and does a little error checking:
 
  ``` php 
-
 <?php /* ------------------------------------------------------------------------------
   ================================================================================
   === Reverse Engineer Existing MySQL Database Tables to xPDO Maps and Classes ===
@@ -281,7 +276,6 @@ function print_msg($msg) {
     print $msg;
 }
 /* EOF */
-
 ```
 
  
@@ -290,9 +284,7 @@ function print_msg($msg) {
 **/user/youruser/public\_html/core/components/yourpackage/model/yourpackage**. You should see a couple files – one for each table. If you see a TON of tables corresponding to all of MODx's tables, then try to explicitly set the database password and name – leave the following line commented out:
 
  ``` php 
-
 //include('core/config/config.inc.php');
-
 ```
 
  See <http://modxcms.com/forums/index.php?topic=40174.0> for more discussion on this script.
@@ -304,9 +296,7 @@ function print_msg($msg) {
  In the scaffolding script above, set the following:
 
  ``` php 
-
 $regenerate_schema = false;
-
 ```
 
  Then re-run the script in order to push your changes in the XML to the PHP class files.
@@ -316,7 +306,6 @@ $regenerate_schema = false;
  Once you've created the required xPDO classes, you need to use xPDO's methods to access them (e.g. in a Snippet or in a Custom Manager Page). In order for xPDO to access the objects, you have to load up the corresponding PHP classes using the **addPackage** method. **addPackage** is what triggers the PHP classes to be included.
 
  ``` php 
-
 if(!$modx->addPackage('mypackage','/full/path/to/core/components/mypackage/model/','mp_')) {
     return 'There was a problem adding your package!  Check the logs for more info!';
 }
@@ -331,7 +320,6 @@ else {
     return 'No items found.';
 }
 return $output;
-
 ```
 
  **Watch the Prefix!** 

@@ -11,22 +11,17 @@ This tutorial is part of a Series:
 - Part III: Packaging Our Extra
 
 
-
-
-
-- [Overview](#DevelopinganExtrainMODXRevolution%2CPartIII-Overview)
-- [Setting Up Our Build Directory](#DevelopinganExtrainMODXRevolution%2CPartIII-SettingUpOurBuildDirectory)
-  - [The Build Script](#DevelopinganExtrainMODXRevolution%2CPartIII-TheBuildScript)
-- [Adding in the Data](#DevelopinganExtrainMODXRevolution%2CPartIII-AddingintheData)
-  - [Adding the Snippet](#DevelopinganExtrainMODXRevolution%2CPartIII-AddingtheSnippet)
-  - [Adding in Snippet Properties](#DevelopinganExtrainMODXRevolution%2CPartIII-AddinginSnippetProperties)
-  - [Adding the File Resolvers](#DevelopinganExtrainMODXRevolution%2CPartIII-AddingtheFileResolvers)
-  - [Adding the Menu and Action](#DevelopinganExtrainMODXRevolution%2CPartIII-AddingtheMenuandAction)
-- [Adding a Resolver](#DevelopinganExtrainMODXRevolution%2CPartIII-AddingaResolver)
-- [Adding the Changelog, Readme, License and Setup Options](#DevelopinganExtrainMODXRevolution%2CPartIII-AddingtheChangelog%2CReadme%2CLicenseandSetupOptions)
-- [Summary](#DevelopinganExtrainMODXRevolution%2CPartIII-Summary)
-
-
+- [Overview](#overview)
+- [Setting Up Our Build Directory](#setting-up-our-build-directory)
+  - [The Build Script](#the-build-script)
+- [Adding in the Data](#adding-in-the-data)
+  - [Adding the Snippet](#adding-the-snippet)
+  - [Adding in Snippet Properties](#adding-in-snippet-properties)
+  - [Adding the File Resolvers](#adding-the-file-resolvers)
+  - [Adding the Menu and Action](#adding-the-menu-and-action)
+- [Adding a Resolver](#adding-a-resolver)
+- [Adding the Changelog, Readme, License and Setup Options](#adding-the-changelog-readme-license-and-setup-options)
+- [Summary](#summary)
 
 ## Overview
 

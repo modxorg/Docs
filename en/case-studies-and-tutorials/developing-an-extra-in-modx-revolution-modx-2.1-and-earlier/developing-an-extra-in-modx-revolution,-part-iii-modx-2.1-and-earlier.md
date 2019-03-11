@@ -10,21 +10,17 @@ This tutorial is part of a Series:
 - [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-ii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part II - MODX 2.1 and Earlier")
 - Part III: Packaging Our Extra
 
-
-
-
-
-- [Overview](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-Overview)
-- [Setting Up Our Build Directory](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-SettingUpOurBuildDirectory)
-  - [The Build Script](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-TheBuildScript)
-- [Adding in the Data](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-AddingintheData)
-  - [Adding the Snippet](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-AddingtheSnippet)
-  - [Adding in Snippet Properties](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-AddinginSnippetProperties)
-  - [Adding the File Resolvers](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-AddingtheFileResolvers)
-  - [Adding the Menu and Action](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-AddingtheMenuandAction)
-- [Adding a Resolver](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-AddingaResolver)
-- [Adding the Changelog, Readme, License and Setup Options](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-AddingtheChangelog%2CReadme%2CLicenseandSetupOptions)
-- [Summary](#DevelopinganExtrainMODXRevolution%2CPartIII-MODX2.1andEarlier-Summary)
+- [Overview](#overview)
+- [Setting Up Our Build Directory](#setting-up-our-build-directory)
+  - [The Build Script](#the-build-script)
+- [Adding in the Data](#adding-in-the-data)
+  - [Adding the Snippet](#adding-the-snippet)
+  - [Adding in Snippet Properties](#adding-in-snippet-properties)
+  - [Adding the File Resolvers](#adding-the-file-resolvers)
+  - [Adding the Menu and Action](#adding-the-menu-and-action)
+- [Adding a Resolver](#adding-a-resolver)
+- [Adding the Changelog, Readme, License and Setup Options](#adding-the-changelog-readme-license-and-setup-options)
+- [Summary](#summary)
 
 
 
@@ -350,7 +346,9 @@ These are PHP representations of the default Properties for our Snippet. Let's l
 
 - **name** - This is the name, or key, of the property. We've got tpl, sort, and dir. For example, in our tpl property, we're telling it to default to 'rowTpl'. When someone wants to use the property, it would look like this in their snippet call:
 
-> \[\[Doodles? &tpl=`rowTpl`\]\]
+``` php 
+[[Doodles? &tpl=`rowTpl`]]
+```
 
 - **desc** - The description of our property. This can either be the actual description, or, if the 'lexicon' attribute on this property is set, a Lexicon key. We've got it as a Lexicon key, because we're going to i18n our properties.
 - **type** - This is the 'xtype' of the property. Currently, the 4 available values are "textfield", "textarea", "combo-boolean" (Yes/No) and "list". We've got two textfields here, and a list type.

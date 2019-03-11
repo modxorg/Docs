@@ -4,14 +4,12 @@ _old_id: "364"
 _old_uri: "2.x/case-studies-and-tutorials/integrating-a-template-into-modx-tutorial"
 ---
 
-- [Integrating a Template into MODX Tutorial](#IntegratingaTemplateintoMODXTutorial-IntegratingaTemplateintoMODXTutorial)
-  - [Part 1: Project Setup, HTML Cutting, and Extras](#IntegratingaTemplateintoMODXTutorial-Part1%3AProjectSetup%2CHTMLCutting%2CandExtras)
-  - [Part 2: Categories, Extras, Templates, Chunks, Wayfinder](#IntegratingaTemplateintoMODXTutorial-Part2%3ACategories%2CExtras%2CTemplates%2CChunks%2CWayfinder)
-  - [Part 3: Photo Gallery](#IntegratingaTemplateintoMODXTutorial-Part3%3APhotoGallery)
-  - [Part 4: Template Variables (TVs) and You](#IntegratingaTemplateintoMODXTutorial-Part4%3ATemplateVariables%28TVs%29andYou)
-  - [Part 5: Making things User Friendly for End Users using Form Customization](#IntegratingaTemplateintoMODXTutorial-Part5%3AMakingthingsUserFriendlyforEndUsersusingFormCustomization)
-
-
+- [Integrating a Template into MODX Tutorial](#integrating-a-template-into-modx-tutorial)
+  - [Part 1: Project Setup, HTML Cutting, and Extras](#part-1-project-setup-html-cutting-and-extras)
+  - [Part 2: Categories, Extras, Templates, Chunks, Wayfinder](#part-2-categories-extras-templates-chunks-wayfinder)
+  - [Part 3: Photo Gallery](#part-3-photo-gallery)
+  - [Part 4: Template Variables (TVs) and You](#part-4-template-variables-tvs-and-you)
+  - [Part 5: Making things User Friendly for End Users using Form Customization](#part-5-making-things-user-friendly-for-end-users-using-form-customization)
 
 # Integrating a Template into MODX Tutorial
 

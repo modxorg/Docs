@@ -19,27 +19,21 @@ _old_uri: "2.x/case-studies-and-tutorials/managing-resources-and-elements-via-sv
  For Elements, all you need is a simple "include" [snippet](developing-in-modx/basic-development/snippets "Snippets"). The code:
 
  ``` php 
-
 if (!file_exists($file)) return '';
 $o = include $file;
 return $o;
-
 ```
 
  You can then call it like so in your Static Resources:
 
  ``` php 
-
 [[include? &file=`/path/to/my/svn/checkout/snippet.php`]]
-
 ```
 
  And you're done. You can also use tags within the 'file' parameter, such as this:
 
  ``` php 
-
 [[include? &file=`[[++assets_path]]/js/myscript.js`]]
-
 ```
 
 ## Conclusion

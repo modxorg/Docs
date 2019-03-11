@@ -4,10 +4,10 @@ _old_id: "1117"
 _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i/php-coding-in-modx-revolution,-pt.-ii"
 ---
 
-- [Creating Objects](#PHPCodinginMODxRevolution%2CPt.II-CreatingObjects)
-- [Removing an Object](#PHPCodinginMODxRevolution%2CPt.II-RemovinganObject)
-- [More Complex Queries](#PHPCodinginMODxRevolution%2CPt.II-MoreComplexQueries)
-- [See Also](#PHPCodinginMODxRevolution%2CPt.II-SeeAlso)
+- [Creating Objects](#creating-objects)
+- [Removing an Object](#removing-an-object)
+- [More Complex Queries](#more-complex-queries)
+- [See Also](#see-also)
 
 
 
