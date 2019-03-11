@@ -1,0 +1,173 @@
+---
+title: "Устранение неполадок при установке"
+translation: "getting-started/installation/troubleshooting-installation"
+---
+
+- [Общие проблемы](#TroubleshootingInstallation-CommonProblems)
+- [Сообщения об ошибках PDO](#TroubleshootingInstallation-PDOErrorMessages)
+- [Распространенные ошибки](#TroubleshootingInstallation-CommonErrors)
+  - ["Я получаю пустой белый экран вместо страницы настроек!"](#TroubleshootingInstallation-%22Igetablankwhitescreeninsteadoftheoptionspage%5C%21%22)
+  - ["Я нажал Установить и получил пустой белый экран!"](#TroubleshootingInstallation-%22Iclickedinstallandgotablankwhitescreen%5C%21%22)
+  - ["Не удается подключиться к базе данных" на странице настроек базы данных](#TroubleshootingInstallation-%22Cannotconnecttodatabase%22inthedatabaseoptionspage)
+  - [Предупреждение: PDO::\_\_construct() \[pdo.--construct\]: \[2002\] Argument invalid (trying to connect via unix://) ИЛИ "Checking database:Could not connect to the mysql server."](#TroubleshootingInstallation-Warning%3APDO%3A%3Aconstruct%28%29%5Cpdo.construct%5C%3A%5C2002%5CArgumentinvalid%28tryingtoconnectviaunix%3A%2F%2F%29OR%22Checkingdatabase%3ACouldnotconnecttothemysqlserver.%22)
+  - [Страница входа продолжает перенаправлять меня обратно на экран входа без показа ошибки](#TroubleshootingInstallation-Theloginpagekeepsredirectingmebacktotheloginscreenwithnoerror)
+  - [Иногда что-то не загружается, страница вылетает и т.д. (eAccelerator)](#TroubleshootingInstallation-Thingssometimesdon%27tload%2Cthepageflakesout%2Cetc%28eAccelerator%29)
+  - [Необъяснимые неполадки в Панели управления (не eAccelerator)](#TroubleshootingInstallation-GeneralweirdnessintheManager%28noteAccelerator%29)
+  - [Вкладки Ресурсы/Элементы/Файлы не отображаются в дереве](#TroubleshootingInstallation-Resource%2FElements%2FFiletreenotappearing)
+  - [Я не могу войти в Панель управления после установки!](#TroubleshootingInstallation-Ican%27tlogintothemanagerafterinstalling%5C%21)
+  - [Не удалось подключиться к серверу базы данных. Проверьте свойства подключения и попробуйте снова. Доступ запрещён...](#TroubleshootingInstallation-Couldnotconnecttothedatabaseserver.Checktheconnectionpropertiesandtryagain.AccessDenied...)
+  - [Панель управления выводится в виде текста после установки](#TroubleshootingInstallation-Themanagerdisplaysasplaintextafterinstallation)
+  - [Панель управления отображается в виде обычного текста, отдельные элементы отсутствуют или выводятся ошибки JavaScript 400](#TroubleshootingInstallation-TheManagerdisplaysasplaintext%2CManagerpartsaremissing%2CorthereareJavaScript400ErrorsintheManager)
+  - [Отсутствуют элементы Панели управления, неопределенные языковые строки или выводятся ошибки JavaScript 500](#TroubleshootingInstallation-Managerpartsaremissing%2Cundefinedlanguagestrings%2CorthereareJavaScript500ErrorsintheManager)
+- [Все еще остались проблемы?](#TroubleshootingInstallation-StillHavingIssues%3F)
+
+
+
+## Общие проблемы
+
+Прежде всего, убедитесь:
+
+- У вас отключен eAccelerator во время установки. eAccelerator может вызвать проблемы при обработке сложных процессов в процессе установки.
+- Вы выполнили все указания, приведённые [здесь](getting-started/installation "Installation") для своего дистрибутива.
+- Вы используете как минимум PHP 5.1.1+, но не 5.1.6 или 5.2.0
+- Вы используете MySQL версии выше 4.1.20, но не используете итерацию MySQL 5.0.51 (включая 5.0.51a).
+- Полностью очистите каталог core/cache/ перед началом установки; иногда неправильные права доступа к файлам могут вызвать проблемы.
+- Очистите кеш вашего браузера и файлы cookie
+
+## Сообщения об ошибках PDO
+
+Если вы получаете сообщения об ошибках, связанных с PDO, во время установки, прежде чем переходить к конкретным сообщениям об ошибках, как показано ниже, убедитесь, что ваша конфигурация PDO настроена правильно. Вы можете это сделать, запустив следующий код (замените user/password/database/host вашей настройкой):
+
+``` php 
+<?php
+/* Connect to an ODBC database using driver invocation */
+$dsn = 'mysql:dbname=testdb;host=localhost';
+$user = 'dbuser';
+$password = 'dbpass';
+
+try {
+  $dbh = new PDO($dsn, $user, $password);
+} catch (PDOException $e) {
+  echo 'Connection failed: ' . $e->getMessage();
+}
+?>
+```
+
+Если это не удается, значит, ваша установка PDO настроена неправильно.
+
+## Распространенные ошибки
+
+Вот некоторые распространенные проблемы, которые могут возникнуть во время установки, и способы их решения:
+
+### "Я получаю пустой белый экран вместо страницы настроек!"
+
+Вы, вероятно, скопировали config.inc.tpl в config.inc.php, что неверно. Сделайте файл config.inc.php пустым, доступным для записи файлом.
+
+Если вы переименовали config.inc.tpl в config.inc.php, переименуйте его обратно в config.inc.tpl и создайте пустой файл с именем config.inc.php, который доступен для записи.
+
+### "Я нажал Установить и получил пустой белый экран!"
+
+Убедитесь, что в вашей настройке 'memory\_limit' в php.ini установлено значение не менее 32M. Для более медленных серверов вам может потребоваться увеличение до 64M.
+
+### "Не удается подключиться к базе данных" на странице настроек базы данных 
+
+Одной из распространенных причин этой проблемы является то, что вы используете нестандартный порт для MySQL. Попробуйте вставить этот синтаксис в поле имени хоста (заменив данные хостом и портом вашего сервера mysql):
+
+> my.database.com;port=3307
+
+### Предупреждение: PDO::\_\_construct() \[pdo.--construct\]: \[2002\] Argument invalid (trying to connect via unix://) ИЛИ "Checking database:Could not connect to the mysql server."
+
+Это означает, что ваш сокет MySQL неправильно настроен. Обычно это можно исправить, добавив (или обновив) ваш php.ini:
+
+``` php 
+mysql.default_socket=/path/to/my/mysql.sock
+mysqli.default_socket=/path/to/my/mysql.sock
+pdo_mysql.default_socket=/path/to/my/mysql.sock
+```
+
+### Страница входа продолжает перенаправлять меня обратно на экран входа без показа ошибки
+
+Это может произойти при установке старой бета-версии Revolution. Чтобы это исправить, удалите следующие 3 системных параметра из таблицы БД `[prefix]_system_settings` (где prefix - ваш префикс таблицы):
+
+- session\_name
+- session\_cookie\_path
+- session\_cookie\_domain
+
+Затем удалите файл core/cache/config.cache.php.
+
+Если, конечно, вы не изменили их специально для какой-то своей цели.
+
+### Иногда что-то не загружается, страница вылетает и т.д. (eAccelerator)
+
+Вы используете eAccelerator? В некоторых конфигурациях сервера это может вызвать проблемы. Возможно, вам придется отключить его. Вы можете сделать это через ваш php.ini:
+
+``` php 
+eaccelerator.enable = 0;
+eaccelerator.optimizer = 0;
+eaccelerator.debug = 0;
+```
+
+или в вашем .htaccess в корневом каталоге modx, если ваш сервер поддерживает серверные директивы php\_flag:
+
+``` php 
+php_flag eaccelerator.enable 0
+php_flag eaccelerator.optimizer 0
+php_flag eaccelerator.debug 0
+```
+
+### Необъяснимые неполадки в Панели управления (не eAccelerator)
+
+В некоторых системах, особенно с общим хостингом, могут возникнуть проблемы с Системными настройками compress\_js и/или compress\_css. Перейдите в Система -> Системные настройки и наберите 'compress' (без кавычек) в поле поиска в правом верхнем углу. Выключите эти две настройки, затем выйдите из Панели управления, удалите все файлы в каталоге core/cache, очистите кеш браузера и файлы cookie и снова войдите в систему.
+
+Если Панель управления испорчена настолько, что вы не можете изменить настройки, см. примечание ниже об изменении двух Системных настроек в таблице modx\_system\_settings в базе данных с помощью PhpMyAdmin.
+
+### Вкладки Ресурсы/Элементы/Файлы не отображаются в дереве
+
+Кроме того, неполный вывод страницы может быть вызван данными, сохранёнными в кэше вашего браузера. Старые версии javascript и других файлов, используемые на стороне клиента, могут привести к неправильному отображению дерева ресурсов / элементов / файлов. Это можно проверить, зайдя в Панель управления с помощью браузера, ранее не использовавшегося при этом.
+
+Простое решение: очистить кеш вашего браузера и снова войти в Панель управления.
+
+Более полное решение:
+
+1. Раздел меню Управление - Очистить Кэш
+2. В разделе Управление - Перезагрузить права доступа и затем Завершить все сеансы
+3. Эти действия приведут к общему сбросу и выходу из Панели управления
+4. Последний шаг Очистите кеш браузера
+
+### Я не могу войти в Панель управления после установки!
+
+Если вас каждый раз перенаправляет обратно на экран входа в систему, попробуйте добавить эту настройку в файле .htaccess в корне вашей установки MODx:
+
+``` php 
+php_value session.auto_start 0
+```
+
+### Не удалось подключиться к серверу базы данных. Проверьте свойства подключения и попробуйте снова. Доступ запрещён...
+
+Часто на виртуальном хостинге, если вы создаете имя пользователя для вашей базы данных с подчеркиванием (\_), это вызывает проблемы. Убедитесь, что имя пользователя вашей базы данных не содержит подчеркивания, и повторите попытку.
+
+Более распространенные проблемы впереди ...
+
+### Панель управления выводится в виде текста после установки
+
+Панель управления MODX загружает сжатые ресурсы CSS и JS. Некоторая конфигурация сервера. См. "Ошибки JS в диспетчере из-за ошибки 4
+
+### Панель управления отображается в виде обычного текста, отдельные элементы отсутствуют или выводятся ошибки JavaScript 400
+
+Если Панель управления MODX не загружается должным образом из-за 400 ошибок при попытке загрузить код JavaScript, сжатый Google Minify, это, вероятно, связано с неправильной настройкой вашего сервера. Если это невозможно исправить на стороне сервера, вы можете вручную отключить сжатие JS и CSS следующим образом:
+
+1. Зайдите в БД с помощью PhpMyAdmin и найдите таблицу \[table\_prefix\]\_system\_settings (table\_prefix обычно modx).
+2. Найдите строки с ключами "compress\_js" и "compress\_css", установите для них значение 0 и сохраните.
+3. Очистите каталог core/cache/.
+4. Очистите кеш браузера и cookies
+5. Войдите в Панель управления.
+
+Это позволит вам использовать Панель управления без сжатия JS и CSS.
+
+### Отсутствуют элементы Панели управления, неопределенные языковые строки или выводятся ошибки JavaScript 500
+
+1. Убедитесь, что для папки connectors/ установлены права доступа 0755
+
+## Все еще остались проблемы?
+
+Если у вас по-прежнему возникают проблемы, опубликуйте информацию об ошибке и программном окружении сервера на [нашем форуме](http://modxcms.com/forums/index.php/board,378.0.html), и мы попробуем решить вашу проблему как можно скорее.
