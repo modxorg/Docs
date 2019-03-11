@@ -1,7 +1,6 @@
 ---
-title: "MODX PHP Coding Standards"
-_old_id: "1133"
-_old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
+title: "MODX PHP Стандарты кодирования"
+translation: "contribute/becoming-a-contributor/modx-php-coding-standards"
 ---
 
 - [General](#general)
