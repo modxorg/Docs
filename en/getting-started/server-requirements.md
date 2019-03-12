@@ -1,5 +1,6 @@
 ---
 title: "Server Requirements"
+sortorder: "2"
 _old_id: "273"
 _old_uri: "2.x/getting-started/server-requirements"
 ---
