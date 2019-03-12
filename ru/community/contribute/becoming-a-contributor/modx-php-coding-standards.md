@@ -1,35 +1,35 @@
 ---
-title: "MODX PHP Стандарты кодирования"
+title: "Стандарты кодирования PHP для MODx"
 translation: "contribute/becoming-a-contributor/modx-php-coding-standards"
 ---
 
-- [General](#general)
-- [Parenthesis](#parenthesis)
-- [Classes](#classes)
-- [Variables](#variables)
-- [Function Arguments and Class Variables](#function-arguments-and-class-variables)
-- [Arrays](#arrays)
-- [Constants](#constants)
-- [File Structure](#file-structure)
-- [Prefixing](#prefixing)
+- [Общие требования](#%D0%BE%D0%B1%D1%89%D0%B8%D0%B5-%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
+- [Скобки](#%D1%81%D0%BA%D0%BE%D0%B1%D0%BA%D0%B8)
+- [Классы](#%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B)
+- [Переменные](#%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5)
+- [Аргументы функций и свойства классов](#%D0%B0%D1%80%D0%B3%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9-%D0%B8-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BE%D0%B2)
+- [Массивы](#%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%8B)
+- [Константы](#%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D1%8B)
+- [Структура файла](#%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0)
+- [Префиксы](#%D0%BF%D1%80%D0%B5%D1%84%D0%B8%D0%BA%D1%81%D1%8B)
 
 
 
-## General
+## Общие требования
 
-- Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.
-- Do not do any real logic in object constructors. Create class methods to do so. 
-   null, true and false should always be lowercase.
-- Avoid embedded assignments (ex: $d = ($a = $b + $c) is bad).
-- Never use extract().
-- Avoid using global variables if at all possible.
-- Document EVERYTHING.
+- Открывающие фигурные скобки не разрывает строку. Они пишутся после одного проблема после скобки, согласно традициям Unix.
+- Не пишите никакой реальной бизнес-логики в конструкторах класса. Создайте специальные методы для этого.
+- null, true and false всегда должны быть в нижнем регистре.
+- Избегайте вложенных вычислений (например:$d = ($a = $b + $c) так делать плохо).
+- Никогда не используйте extract().
+- Избегайте использования глобальных переменных по возможности.
+- Документируйте ВСЁ.
 
-## Parenthesis
+## Скобки
 
-- Do not put parenthesis next to keywords. Put a space between.
-- Do put parenthesis next to function names.
-- Do not use parenthesis in return statements when it's not necessary. Example:
+- Не ставьте скобки сразу после оператора. Разделяйте пробелами.
+- Ставьте скобки сразу после имени функции.
+- Не используйте скобки в выражениях с return когда это необходимо. Например:
   ``` php 
   if ($test) {
   }
@@ -39,13 +39,14 @@ translation: "contribute/becoming-a-contributor/modx-php-coding-standards"
   return $test;
 
   ```
-- Do **not** use parenthesis when using include, require, include\_once, and require\_once.
+- **Не используйте** скобки когда используете функции include, require, include\_once, и require\_once.
 
-## Classes
+## Классы
 
-- All ''core'' classnames, unless stated otherwise for special conditions, will be prefixed with the "mod" prefix: ie, modChunk, modTemplate, etc.
-- All method names will be camelCase and will start with a lowercase letter.
-- All private methods and variables must be prefixed with the underscore \_ character.
+- Все имена классов в "core", если иное не оговаривается в отдельных случаях, должны начинаться с перфикса "modx": т.е. modChunk, modTemplate и т.д.
+- Все имена методов должны быть в camelCase и начинаться со строчной буквы.
+- Все private методы и переменные должны начинаться с символа подчеркивания "_".
+
   ``` php 
   class modFactor {
       public $publicVar;
@@ -55,16 +56,16 @@ translation: "contribute/becoming-a-contributor/modx-php-coding-standards"
   }
   ```
 
-## Variables
+## Переменные
 
-Note these are not function arguments.
+Обратите внимание, это не аргументы функции.
 
-- Use all lowercase letters.
-- Separate words with the underscore.
+- Используйте строчные буквы.
+- Разделяйте слова подчеркиванием.
 
-## Function Arguments and Class Variables
+## Аргументы функций и свойства классов
 
-- The first letter is lowercase, rest are camelCase. Example:
+- Первая буква в нижнем регистре, остальные в camelCase. Пример:
   ``` php 
   class modFactor {
       public function testFunc($testVar, array &$anotherTest = array()) {
@@ -74,32 +75,33 @@ Note these are not function arguments.
   }
   ```
 
-## Arrays
+## Массивы
 
-- Array index names use the underscore \_, not the dash as their separator. This prevents errors with magic\_quotes.
-- Array index names are always lowercase. Spaces are represented by an underscore.
-- Array index names are always encapsulated with single quotes. 
-   Example:
-   ``` php 
-  $_lang['chunk_create_text'] = 'Test';
-  ```
+- В именах полей в индексах массива используйте подчеркивание "_", а не тире "-" в качестве разделителя. Это предотвратит ошибки с magic_quotes.
+- Имена полей в индексах массива всегда в нижнем регистре. Пробелы представлены в виде подчеркиваний.
+- Имена полей в индексах массива всегда заключено в одинарные кавычки.
+  
+Пример:
+``` php 
+$_lang['chunk_create_text'] = 'Test';
+```
 
-## Constants
+## Константы
 
-- Constants must be in all UPPERCASE letters.
-- Use only if absolutely necessary.
+- Константы должны быть в ВЕРХНЕМ РЕГИСТРЕ.
+- Используйте только в случае крайней необходимости.
 
-## File Structure
+## Структура файла
 
-- Always name PHP class files in name.class.php format.
+- Всегда называйте файлы PHP классов в формате name.class.php.
 
-## Prefixing
+## Префиксы
 
-- Lexicon strings for Components need to be prefixed:
+- Строки словарей для компонентов должны начинаться с префикса:
 
 ``` php 
 $_lang['mycomponent.welcome_message'] = 'Welcome!';
 ```
 
-- Always prefix class names; eg: 'finBank', 'finTransaction', etc.
-- Always prefix [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'
+- Всегда добавляйте префикс к имени класса: например 'finBank', 'finTransaction' и тд.
+- Всегда добавляйте префикс к имени чанка [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") например 'finStatement', 'finDeposit'

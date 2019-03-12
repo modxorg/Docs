@@ -1,17 +1,17 @@
 ---
-title: "xPDO GitHub Contributor's Guide"
+title: "Руководство разработчика xPDO на GitHub"
 translation: "contribute/using-git-and-github/xpdo-github-contributors-guide"
 ---
 
-## Contributing to xPDO and Integrating with MODX Revolution
+## Разработка xPDO и интеграция с MODX Revolution
 
-xPDO is an object-oriented framework on which MODX Revolution is built. It is maintained in a separate git repository from revolution and contributing to the xPDO core of MODX requires some additional work.
+xPDO — это объектно-ориентированный фреймворк, на базе которого построена MODX Revolution. Он хранится в отдельном от MODX Revolution репозитории и внесение изменений в из xPDO в ядро MODX Revolution требует дополнительных действий.
 
-xPDO contributors should follow the same basic process and branching strategy as those for MODX itself. See the [MODx GitHub Contributor's Guide](/display/community/MODx+GitHub+Contributor%27s+Guide "MODx GitHub Contributor's Guide") for details on the branching strategies for features, releases, hotfixes, and more. This guide will focus on the additional steps required to integrate your xPDO changes into MODX for testing before submitting Pull Requests on the xPDO repository.
+xPDO разработчики должны следовать такой же модели процесса и стратегии ветвления, как MODX разработчики. Смотрите [Руководство участника сообщества](/display/community/MODx+GitHub+Contributor%27s+Guide "Руководство участника сообщества") там описаны подробности стратегии ветвления для улучшений, релизов, быстрых правок и другие аспекты. Это руководство фокусируется на дополнительных шагах, необходимых для включения ваших правок в xPDO в MODX для тестирования перед тем, как послать pull request в репозиторий xPDO.
 
-### Forking and Cloning the Complete xPDO Repository
+### Копирование и клонирование полного репозитория xPDO
 
-As with MODX, this means contributors must work directly with their private forks on GitHub. Here is the suggested way to prepare your local repository as a developer for contributing back to the complete xPDO project:
+Как и с MODX, разработчики должны работать напрямую со своим личным форком на GitHub. Здесь предлагается способ, как подготовить ваш локальный репозиторий для разработки полной версии проекта xPDO:
 
 ``` php 
 [repos]$ git clone git@github.com:YourGitUsername/xpdo.git
@@ -19,9 +19,9 @@ As with MODX, this means contributors must work directly with their private fork
 [xpdo]$ git remote add upstream -f http://github.com/modxcms/xpdo.git
 ```
 
-This setup makes your fork the standard `origin` remote, and adds/fetches the "blessed" repository as the remote `upstream`. You may want to add other remotes to other developer forks as well, and I would name those remotes appropriately so you can keep track of each one.
+Это устанавливает ваш форк в качестве стандартного удаленного репозитория `origin` и добавляет "священный" репозиторий под именем `upstream`. Вы можете добавить ссылки на форки других разработчиков и назвать их так, чтобы вы могли отслеживать каждого из них.
 
-You'll want to go ahead and create local tracking branches for the permanent branches from your fork, a.k.a. `origin`:
+Пора идти вперед и создавать локальные ветки для постоянных веток из вашего форка, который  `origin`:
 
 ``` php 
 [xpdo]$ git checkout -b master origin/master
@@ -30,7 +30,7 @@ Switched to a new branch "master"
 Switched to a new branch "develop"
 ```
 
-To keep your local tracking branches for `develop` and `master` up-to-date from the `upstream` repository:
+Чтобы держать свои локальные ветки свежими относительно `develop` and `master`, обновляйтесь с репозитория `upstream`:
 
 ``` php 
 [xpdo]$ git fetch upstream
@@ -43,21 +43,21 @@ Switched to branch "master"
 [xpdo]$ git push origin develop master
 ```
 
-Note however, that the push is mainly for show, as the permanent branches should never be a target for contributor commits, even in the forks. IOW, `develop` and `master` in your fork should always match the `upstream` branches of the same name. It is expected that all contributions will be submitted via a feature or hotfix branch originating from the appropriate permanent branch, or a bug fix branch originating from a release branch in the upstream repository.
+Стоит отметить, что push в осноном для "показать" и не стоит пушить в постоянные ветки, даже в своих форках. Другими словами, имена веток `develop` и `master` в вашем форке должны всегда соответствовать именам веток в `upstream`. Ожидается, что все исправления будут отправлены в ветках для фич или быстрых исправлений, происходящих от соответствующей постоянной ветки или ветка с исправлением ошибки, происходящая от ветки релиза в upstreamрепозитории.
 
-Also note the `--ff-only` flag ensures that only fast-forward merges are performed (in case you accidentally do commit to the main branches on your fork without realizing it).
+Также обратите внимание на флаг `--ff-only`, который гарантирует fast-forward слияние (в случае, когда вы сделали коммит в основную ветку не осознавая этого).
 
-**Important**
-Please make sure you have your autocrlf settings set appropriately before making any commits to your fork. See <http://help.github.com/dealing-with-lineendings/> to determine the setting you need based on the platform you are developing on.
+**Важно**
+Пожалуйста, удостоверьтесь в том, что у вас установлена настройка autocrlf перед тем, как коммитить в ваш форк. Смотрите <http://help.github.com/dealing-with-lineendings/> чтобы определить, какие настройки вам нужны. Это зависит от платформы, на которой вы работаете.
 
-**Unit Tests**
-xPDO has a growing number of Unit Tests which help ensure at least basic functionality is not broken when changes are made to the code base. Make sure your changes pass the unit tests for ALL implemented drivers when submitting any Pull Requests to, or that affect, xPDO code. In addition, all bug fixes and features should be accompanied with new unit test cases where practical.
+**Модульные тесты (Unit Tests)**
+xPDO содержит растущее число модульных тестов, которые помогают убедиться, что основные функции не сломались, когда внесены изменения в кодовую базу. Убедитесь, что ваши изменения проходят модульные тесты для ВСЕХ реализованных драйверов (БД) перед отправкой любого pull request-а или всего, что влияет на код xPDO. Кроме того, все исправления и новые функции должны быть покрыты новыми тестами, где это возможно.
 
-### Forking and Cloning the xPDO Core Repository
+### Копирование и клонирование xPDO для ядра MODX Revolution
 
-xPDO has two GitHub repositories. The complete repository contains Unit Tests, test models, build scripts and other assets that you would not want integrated into other projects. In order to more easily merge the project within other projects, a second repository that includes only the xpdo/ subdirectory (this contains the run-time files of xPDO only) was created. This repository is kept in sync with the complete xPDO repository via git's subtree merge technique, and this same technique can then be used to merge the xPDO Core with any other git repository.
+xPDO хранится в двух GitHub репозиториях. Полная версия содержит модульные тесты, тестовые модели, скрипты сборки и другие ресурсы, которые не хотелось бы включать в другие проекты. Для того, чтобы легче было включать проект в другие проекты, второй репозиторий содержит только папку `xpdo/` (она содержит только исполняемые файлы xPDO). Этот репозиторий синхронизирован с полной версией репозитория xPDO с помощью техники слияния подмодулей (git's subtree merge technique) и подобная техника может быть использована, чтобы сливать ядро xPDO с другими проектами.
 
-So the next step is to fork and clone this repository as well:
+Итак, следующий шаг — скопировать и склонировать этот репозиторий как есть:
 
 ``` php 
 [repos]$ git clone git@github.com:YourGitUsername/xpdo-core.git
@@ -65,17 +65,17 @@ So the next step is to fork and clone this repository as well:
 [xpdo-core]$ git remote add upstream -f http://github.com/modxcms/xpdo-core.git
 ```
 
-### Migrating Changes for Testing
+### Миграция изменений для тестирования
 
-Whenever you have completed a feature or bugfix in the complete xPDO repository, all the unit tests are passing, and you are ready to test the change in another project, you can push the change to an appropriate branch on your fork. Once there, you can choose to manually copy your modified files into place in any external project you are using xPDO with, or use git's subtree merge technique to update the xpdo-core repository with your changes, and then turn around and do the same from xpdo-core into your project's repository.
+Всякий раз, когда вы написали улучшение или исправили ошибку в полной версии xPDO репозитория, все модульные тесты прошли и вы готовы протестировать изменения в другом проекте, вы можете запушить изменения в соответствующую ветку в вашем форке. Вы можете вручную скопировать ваши измененные файлы в нужное место в другом проекте, использующем xPDO или использовать технику слияния подмодулей, чтобы обновить xpdo-core репозиторий с вашими изменениями и затем развернуться и сделать тоже самое с xpdo-core в вашем проекте.
 
-To update the xpdo-core repository, we first need to add and fetch a remote for your fork of the complete xpdo repository:
+Чтобы обновить xpdo-core репозиторий, мы сначала должны добавить и обновить remote для вашего форка полной версии xpdo:
 
 ``` php 
 [xpdo-core]$ git remote add -f xpdo git@github.com:YourGitUsername/xpdo.git
 ```
 
-Once added, you can fetch changes you commit to your xpdo fork and merge them easily. Make sure your xpdo-core branches are up-to-date from upstream first, e.g. if pushing a feature branch called xpdo/feature-1234 off of the upstream/develop branch:
+После добавления вы можете извлекать ваши коммиты с изменениями в вашем форке xpdo и с легкостью их сливать. Сначала убедитесь, что ваши ветки xpdo-core обновлены из `upstream`, например если пушится ветка с названием `xpdo/feature-1234` в ветку `upstream/develop`:
 
 ``` php 
 [xpdo-core]$ git fetch upstream
@@ -89,11 +89,11 @@ Switched to branch "develop"
 [xpdo-core]$ git push origin feature-1234
 ```
 
-At this point, your feature branch is in your xpdo-core fork and ready for merging into MODX Revolution or any other project that has xpdo-core subtree merged into it.
+На данный момент, ваша ветка в вашем форке xpdo-core и готова для включения в MODX Revolution или любой другой проект, который использует xpdo-core в качестве подмодуля.
 
-### Testing Changes in MODX Revolution
+### Тестирование изменений в MODX Revolution
 
-Now, to test your changes with MODX Revolution, you need to add and fetch your fork of the xpdo-core repository as a remote to your revolution fork. Once you do that, you can create a branch to merge in and test your xpdo-core feature branch. Change directory to your MODX Revolution git fork and get it up-to-date.
+Теперь, чтобы протестировать ваши изменения в MODX Revolution вам нужно добавить как remote в ваш форк с MODX ваш форк репозитория xpdo-core и обновить его. Как только вы сделаете это, вы можете создать ветку для слияния и протестировать вашу ветку с фичей из xpdo-core. Затем измените папку к вашему форку с MODX Revolution и обновите его.
 
 ``` php 
 [revolution]$ git checkout develop
@@ -106,12 +106,12 @@ Switched to branch "develop"
 [revolution]$ git merge -s subtree --log xpdo/feature-1234
 ```
 
-If it works, share your branch with the xpdo-core changes integrated with the world to play with:
+Если все работает, покажите вашу ветку с изменениями в xpdo-core миру вот так:
 
 ``` php 
 [revolution]$ git push origin xpdo-feature-1234
 ```
 
-### Submitting the Pull Request
+### Отправка Pull Request
 
-After all of this is done, and you are confident your changes should make it into xPDO, all you need to do is submit your original feature branch, on your fork of the complete xpdo repository, to the appropriate branch of the upstream xpdo repository.
+После всего, что было сделано и если вы уверены, что изменения должны быть в xPDO, все что вам нужно сделать - это отправить вашу ветку с исправлением в ваш форк полного репозитория xPDO в соответствующую ветку основного репозитория xPDO.

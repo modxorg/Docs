@@ -1,20 +1,18 @@
 ---
-title: "Git FAC (Frequently Accessed Commands)"
+title: "Git FAC (Часто используемые команды)"
 translation: "contribute/using-git-and-github/git-fac-(frequently-accessed-commands)"
 ---
 
-- [How do I get and keep my local major-version branch in sync?](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIgetandkeepmylocaldevelopbranchinsync%3F)
-- [How do I create a feature branch?](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIcreateafeaturebranch%3F)
-- [Is there a naming convention for feature branches?](#GitFAC%28FrequentlyAccessedCommands%29-Isthereanamingconventionforfeaturebranches%3F)
-- [Do I need a new feature branch for every issue that I work on?](#GitFAC%28FrequentlyAccessedCommands%29-DoIneedanewfeaturebranchforeveryissuethatIworkon%3F)
-- [How do I keep my feature branch in sync with the upstream develop branch?](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIkeepmyfeaturebranchinsyncwiththeupstreamdevelopbranch%3F)
-- [Do I really need to worry about the minor-version branch?](#GitFAC%28FrequentlyAccessedCommands%29-DoIreallyneedtoworryaboutthemasterbranch%3F)
+- [Как мне создать и держать свежей локальную ветку develop?]
+- [Как мне создать тематическую ветку?]
+- [Существует ли соглашение об именах для ветвей функций?]
+- [Нужна ли мне новая тематическая ветка для каждой проблемы, над которой я работаю?]
+- [Как мне сохранять свежесть мой ветки относительно develop ветки в upstream?]
+- [Мне действительно нужно беспокоиться о ветке минорной версии?]
  
+### Как мне создать и держать свежей локальную ветку develop?
 
-
-### How do I get and keep my local develop branch in sync?
-
- First, with MODX's collaboration and branching model, you won't be making commits to your major-version branch, so it's easy to keep it up to date. Let's assume you are working with `2.x`:
+Во-первых, с помощью модели сотрудничества и ветвления MODX вы не будете делать коммиты в свою ветку Major-версии, поэтому легко поддерживать ее в актуальном состоянии. Предположим, вы работаете с `2.x`:
 
  ``` php 
 $ git fetch upstream
@@ -23,35 +21,35 @@ Switched to branch "2.x"
 $ git merge --ff-only upstream/2.x
 ```
 
- This assumes that the modxcms or _blessed_ repo is set up as a remote named upstream. (git remote manpage: <http://www.kernel.org/pub/software/scm/git/docs/git-remote.html>)
+Это означает, что modxcms или другой репозиторий установлен как `upstream` в remote. (git remote manpage: <http://www.kernel.org/pub/software/scm/git/docs/git-remote.html>)
 
-### How do I create a feature branch?
+### Как мне создать тематическую ветку?
 
- If you've just merged in the upstream repo's latet changes to the major-version branch you are targeting, then it's simple:
+Если вы только что влили свежие изменения из ветки develop из upstream репозитория, тогда это очень просто:
 
  ``` php 
 $ git checkout -b myFeatureBranchName 2.x
 ```
 
- If you have not fetched the latest changes from upstream and merged them locally, you should [do that first](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIgetandkeepmylocaldevelopbranchinsync%3F).
+Если вы не получили последние изменения из апстрима и слили их локально, вам следует [сделать это сначала](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIgetandkeepmylocaldevelopbranchinsync%3F).
 
-### Is there a naming convention for feature branches?
+### Существует ли соглашение об именах для ветвей функций?
 
- If you are making changes related to a ticket in the issue tracker (please file a ticket for any bugs first if there isn't one) then you could name your branch "issue-xxxx" where xxxx is the issue number from the bug tracker.
+Если вы вносите изменения, связанные с заявкой, в трекере проблем (пожалуйста, сначала отправьте заявку на любые ошибки, если ее нет), тогда вы можете назвать свою ветку "issue-xxxx", где xxxx - номер проблемы из трекера ошибок.
 
  ``` php 
 $ git checkout -b issue-1234 2.4.x
 ```
 
-Note that this is not requirement, but might help you organize your local branches if you have many of them.
+Обратите внимание, что это не является обязательным требованием, но может помочь вам организовать ваши локальные ветки, если у вас их много.
 
- If you are working on a feature which does not have a ticket, you can name it anything you want, but avoid names that look like release version numbers.
+ Если вы работаете с новой функцией, у которой нет номера, вы можете назвать ее как угодно, но избегайте имен, которые выглядят как номера версий релиза.
 
  ``` php 
 $ git checkout -b myAwesomeFeature 2.x
 ```
 
-### Do I need a new feature branch for every issue that I work on?
+### Нужна ли мне новая тематическая ветка для каждой проблемы, над которой я работаю?
 
  Yes.
 
@@ -59,11 +57,11 @@ $ git checkout -b myAwesomeFeature 2.x
 $ echo 'Yes'
 ```
 
-### How do I keep my feature branch in sync with the upstream develop branch?
+### Как мне сохранять свежесть мой ветки относительно develop ветки в upstream?
 
- If you're working on a feature that's taking a while, you may find it beneficial to keep in sync with upstream changes. Git allows you to "replay" your commits over top of changes in the develop branch using the rebase command.
+Если вы работаете над новой функцией, для которой требуется некоторое время, может оказаться полезным синхронизировать изменения в основной ветке разработки. Git позволяет вам «воспроизводить» ваши коммиты поверх изменений в ветке разработки с помощью команды rebase.
 
- In fact, it's generally a good idea to do this before any final commits to your fork and issuing a Pull Request.
+На самом деле, это, как правило, хорошая идея сделать перед тем, как сделать окончательный коммит на ваш форк и сделать Pull Request.
 
  ``` php 
 $ git fetch upstream
@@ -75,11 +73,11 @@ Switched to branch "my-bc-feature"
 $ git rebase 2.x
 ```
 
- To learn more, here's the git rebase manpage: <http://www.kernel.org/pub/software/scm/git/docs/git-rebase.html>
+ Чтобы узнать больше, вот страница помощи git rebase: <http://www.kernel.org/pub/software/scm/git/docs/git-rebase.html>
 
-### Do I really need to worry about the minor-version branch?
+### Мне действительно нужно беспокоиться о ветке минорной версии?
 
- No, not really. But if you are fixing bugs that should be included in a patch release as soon as possible, you might consider branching from and targeting the minor-release branches instead of the major in case in needs to be backported due to conflicts in changes between major and minor. But it's not critical to the workflow of a contributor at all.
+ Нет, не совсем. Но если вы исправляете ошибки, которые должны быть включены в выпуск патча, как можно скорее, вы можете рассмотреть возможность ветвления и нацеливания на ветви с второстепенным выпуском, а не на основные, в случае необходимости их переноса из-за конфликтов в изменениях между основными и незначительный. Но это совсем не критично для рабочего процесса участника.
 
  ``` php 
 $
