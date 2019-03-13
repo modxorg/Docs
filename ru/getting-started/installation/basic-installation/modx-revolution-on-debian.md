@@ -1,6 +1,6 @@
 ---
 title: "MODx Revolution в Debian"
-translation: "getting-started/installation/basic-installation/modx-revolution-on-debian"
+translation: "_legacy/getting-started/modx-revolution-on-debian"
 ---
 
 ## MODx Revolution в Debian

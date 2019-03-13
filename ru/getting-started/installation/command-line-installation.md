@@ -1,6 +1,6 @@
 ---
 title: "Установка при помощи командной строки"
-translation: "getting-started/installation/command-line-installation"
+translation: "getting-started/installation/cli"
 ---
 
 Установка при помощи командной строки (CLI), доступна в MODX Revolution начиная с версии 2.2

@@ -1,6 +1,6 @@
 ---
 title: "Documentation Guide"
-translation: "style-guide"
+translation: "contribute/documentation/style-guide"
 ---
 
  Welcome to MODX documentation guide for authors and contributors.

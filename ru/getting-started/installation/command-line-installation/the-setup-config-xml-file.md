@@ -1,6 +1,6 @@
 ---
 title: "Создание Установочного Xml Файла"
-translation: "getting-started/installation/command-line-installation/the-setup-config-xml-file"
+translation: "getting-started/installation/cli/config.xml"
 ---
 
 - [Установочный Xml Файл](#установочный-xml-файл)

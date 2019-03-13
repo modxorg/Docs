@@ -1,6 +1,6 @@
 ---
 title: "Расширенная установка"
-translation: "getting-started/installation/advanced-installation"
+translation: "getting-started/installation/advanced"
 ---
 
 - [Предварительные шаги по установке](#AdvancedInstallation-InstallationPreSteps)
