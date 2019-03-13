@@ -1,6 +1,6 @@
 ---
 title: "Building Sites"
-sortorder: "2"
+sortorder: 2
 _old_id: "187"
 _old_uri: "2.x/making-sites-with-modx/"
 ---

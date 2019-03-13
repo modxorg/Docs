@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-sortorder: "1"
+sortorder: 1
 _old_id: "152"
 _old_uri: "2.x/getting-started"
 ---

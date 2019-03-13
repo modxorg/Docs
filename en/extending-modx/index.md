@@ -1,5 +1,6 @@
 ---
 title: "Extending MODX"
+sortorder: 3
 _old_id: "99"
 _old_uri: "2.x/developing-in-modx"
 ---
