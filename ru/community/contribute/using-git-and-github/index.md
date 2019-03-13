@@ -1,6 +1,6 @@
 ---
 title: "Использование Git и GitHub"
-translation: "contribute/using-git-and-github/"
+translation: "contribute/code/git-github"
 ---
 
 **Git** является распределенной системой контроля версий, используемой MODX для совместной работы с исходным кодом и контроля версий. Как и MODX, это бесплатно и с открытым исходным кодом.

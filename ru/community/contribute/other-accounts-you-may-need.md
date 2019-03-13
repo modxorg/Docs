@@ -1,6 +1,6 @@
 ---
 title: "Другие учетные записи, которые вам могут понадобиться"
-translation: "contribute/other-accounts-you-may-need"
+translation: "_legacy/community/other-accounts-you-may-need"
 ---
 
 В дополнение к вашей учетной записи MODX:

@@ -1,6 +1,6 @@
 ---
 title: "Nginx Server Config"
-translation: "/getting-started/installation/basic-installation/nginx-server-config"
+translation: "getting-started/friendly-urls/nginx"
 ---
 
 Это пример настройки nginx сервера для установки MODX (требуется php-fpm). Этот пример позволяет использовать дружественные URL MODX.

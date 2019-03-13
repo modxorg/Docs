@@ -1,6 +1,11 @@
 ---
+<<<<<<< HEAD
 title: "Стандарты кодирования PHP для MODx"
 translation: "contribute/becoming-a-contributor/modx-php-coding-standards"
+=======
+title: "MODX PHP Стандарты кодирования"
+translation: "contribute/code/coding-standards"
+>>>>>>> 7ae4fe90f31b85b23b94163f0dfe903c56fa0a2c
 ---
 
 - [Общие требования](#%D0%BE%D0%B1%D1%89%D0%B8%D0%B5-%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
@@ -103,5 +108,10 @@ $_lang['chunk_create_text'] = 'Test';
 $_lang['mycomponent.welcome_message'] = 'Welcome!';
 ```
 
+<<<<<<< HEAD
 - Всегда добавляйте префикс к имени класса: например 'finBank', 'finTransaction' и тд.
 - Всегда добавляйте префикс к имени чанка [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") например 'finStatement', 'finDeposit'
+=======
+- Always prefix class names; eg: 'finBank', 'finTransaction', etc.
+- Always prefix [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'
+>>>>>>> 7ae4fe90f31b85b23b94163f0dfe903c56fa0a2c

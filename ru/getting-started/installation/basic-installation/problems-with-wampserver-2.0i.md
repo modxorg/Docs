@@ -1,6 +1,6 @@
 ---
 title: "Проблемы с WAMPServer 2.0i"
-translation: "getting-started/installation/basic-installation/problems-with-wampserver-2.0i"
+translation: "_legacy/getting-started/problems-with-wampserver-2.0i"
 ---
 
 ## Как заставить WAMPServer 2.0i работать на MODx Revolution

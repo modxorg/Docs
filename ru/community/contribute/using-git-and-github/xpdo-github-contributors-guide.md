@@ -1,6 +1,11 @@
 ---
+<<<<<<< HEAD
 title: "Руководство разработчика xPDO на GitHub"
 translation: "contribute/using-git-and-github/xpdo-github-contributors-guide"
+=======
+title: "xPDO GitHub Contributor's Guide"
+translation: "contribute/code/xpdo"
+>>>>>>> 7ae4fe90f31b85b23b94163f0dfe903c56fa0a2c
 ---
 
 ## Разработка xPDO и интеграция с MODX Revolution
@@ -114,4 +119,8 @@ Switched to branch "develop"
 
 ### Отправка Pull Request
 
+<<<<<<< HEAD
 После всего, что было сделано и если вы уверены, что изменения должны быть в xPDO, все что вам нужно сделать - это отправить вашу ветку с исправлением в ваш форк полного репозитория xPDO в соответствующую ветку основного репозитория xPDO.
+=======
+After all of this is done, and you are confident your changes should make it into xPDO, all you need to do is submit your original feature branch, on your fork of the complete xpdo repository, to the appropriate branch of the upstream xpdo repository.
+>>>>>>> 7ae4fe90f31b85b23b94163f0dfe903c56fa0a2c

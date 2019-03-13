@@ -1,6 +1,6 @@
 ---
 title: "Ваша учетная запись MODX и как ее получить"
-translation: "contribute/your-modx-account-and-how-to-get-one"
+translation: "contribute/modx-account"
 ---
 
 Ваша учетная запись MODX дает вам доступ к
