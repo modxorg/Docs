@@ -1,6 +1,6 @@
 ---
 title: "Подача и обсуждение вопросов"
-translation: "contribute/filing-and-discussing-issues"
+translation: "contribute/issues"
 ---
 
 Пожалуйста, подайте вопросы для соответствующего проекта в разделе вопросов на Github: <https://github.com/modxcms/>

@@ -1,6 +1,6 @@
 ---
 title: "Базовая установка"
-translation: "getting-started/installation/basic-installation"
+translation: "getting-started/installation/standard"
 ---
 
 - [Начало установки](#BasicInstallation-BeginningSetup)

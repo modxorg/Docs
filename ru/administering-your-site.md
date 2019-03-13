@@ -1,6 +1,6 @@
 ---
 title: "Администрирование вашего сайта"
-translation: "administering-your-site"
+translation: "building-sites"
 ---
 
 Этот раздел содержит информацию о поддержке и администрировании сайта MODX.

@@ -1,6 +1,6 @@
 ---
 title: "Среды разработки"
-translation: "contribute/becoming-a-contributor/development-environments"
+translation: "contribute/code/development-environment"
 ---
 
 ## Рекомендуемые средства разработки и среды для MODX Revolution

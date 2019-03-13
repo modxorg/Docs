@@ -1,6 +1,6 @@
 ---
 title: "MODX и Suhosin"
-translation: "getting-started/installation/basic-installation/modx-and-suhosin"
+translation: "_legacy/getting-started/modx-and-suhosin"
 ---
 
 - [Известные проблемы с Suhosin](#известные-проблемы-с-suhosin)

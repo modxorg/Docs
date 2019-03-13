@@ -1,6 +1,6 @@
 ---
 title: "Руководство для участников сообщества"
-translation: "contribute/using-git-and-github/community-contributors-guide"
+translation: "contribute/code/contributors-guide"
 ---
 
 ## Основанная на GitHub стратегия ветвления для совместной разработки

@@ -1,6 +1,6 @@
 ---
 title: "Устранение неполадок при установке"
-translation: "getting-started/installation/troubleshooting-installation"
+translation: "getting-started/installation/troubleshooting"
 ---
 
 - [Общие проблемы](#TroubleshootingInstallation-CommonProblems)

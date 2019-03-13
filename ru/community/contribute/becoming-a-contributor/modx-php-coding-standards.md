@@ -1,6 +1,6 @@
 ---
 title: "MODX PHP Стандарты кодирования"
-translation: "contribute/becoming-a-contributor/modx-php-coding-standards"
+translation: "contribute/code/coding-standards"
 ---
 
 - [General](#general)

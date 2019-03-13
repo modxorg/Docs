@@ -1,6 +1,6 @@
 ---
 title: "xPDO GitHub Contributor's Guide"
-translation: "contribute/using-git-and-github/xpdo-github-contributors-guide"
+translation: "contribute/code/xpdo"
 ---
 
 ## Contributing to xPDO and Integrating with MODX Revolution

@@ -1,6 +1,6 @@
 ---
 title: "Установка с использованием Git"
-translation: "getting-started/installation/git-installation"
+translation: "getting-started/installation/git"
 ---
 
 - [Процесс установки](#процесс-установки)
