@@ -45,7 +45,11 @@ class Converter {
 
     protected static $ignoreContexts = [
         'evolution',
-        'extras',
+//        'extras',
+        'revolution',
+        'xpdo',
+        'community',
+        'contribute',
     ];
 
     public function __construct()
