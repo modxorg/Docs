@@ -1,5 +1,6 @@
 ---
 title: "Installation"
+sortorder: "3"
 _old_id: "165"
 _old_uri: "2.x/getting-started/installation"
 ---
@@ -14,7 +15,7 @@ To download MODX Revolution 2.x, you have two options: the MODX Site or via Git:
 
 ### From the MODX Site
 
-The quickest way to get your Revolution site up and running is to grab a copy directly from the [MODX Downloads](http://modxcms.com/download/) page. There you will find downloads for MODX Revolution.
+The quickest way to get your Revolution site up and running is to grab a copy directly from the [MODX Downloads](https://modx.com/download/) page. There you will find downloads for MODX Revolution.
 
 It's worth noting that these packages are basically snapshots from Git, our version control software, at the time they were packaged. A lot may have changed since then, including bugfixes and the addition of new features. Note the release date for each package. Git will always have the latest up-to-date snapshot of Revolution.
 

@@ -20,31 +20,29 @@ _old_uri: "dashboard.action"
 
  If you have a question about this documentation site, or suggestions on how to increase the awesomeness herein, please [let us know](mailto:support@modx.com). From the MODX core team, and the MODX community-at-large, "Welcome!"
 
-- [](#revolution)## [MODX Revolution]()
+### MODX Revolution
   
    Revolution is MODX's flagship CMS and application framework, lovingly called "Revo". If you're new to MODX, start here.
   
-  ### Quick Links
-  
+### Quick Links
   
   - [Documentation Homepage]()
   - [Video Quick-Start Series](getting-started/video-quick-start-series/)
   - [Installation Guide](getting-started/installation)
   - [Making Sites with MODX](making-sites-with-modx/)
   
-  ### Other Resources
-  
+### Other Resources
   
   - [Get the Latest Release](http://modx.com/download/)
   - [Download Add-ons](http://modx.com/extras/)
   - [Forum Discussions](http://forums.modx.com/board/?board=264)
   - [Bugs & Feature Requests](http://tracker.modx.com/projects/revo)
-- [](#extras)## [Extras](extras/revo/)
+  
+### Extras
   
    MODX Extras extend the core functionality of the MODX software. Other CMSs refer to them as "Plugins" or "Modules". Many of the Extras are developed by the MODX core team, while others are by third parties. Although by no means an exhaustive reference, the majority of the most popular Extras are documented here.
   
-  ### Quick Links
-  
+### Quick Links
   
   - [Extras for Revo](extras/revo/)
   - [getResources](extras/revo/getresources) Documentation
@@ -53,55 +51,53 @@ _old_uri: "dashboard.action"
   - [Ditto](extras/evo/ditto) Documentation
   - [Wayfinder](extras/evo/wayfinder) for Evo Documentation
   
-  ### Other Resources
+### Other Resources
   
   
   - [Download Revolution Extras](http://modx.com/extras/?product=revolution)
   - [Download Evolution Extras](http://modx.com/extras/?product=evolution)
   - [Forum Discussions](http://forums.modx.com/?category=5)
-- [](#evolution) \[\[- ## [Evolution](evolution/1.0)
+
+### Evolution
   
    Evolution is MODX's classic codebase - our original version released in 2005. Lean and mean, Evolution laid the groundwork for everything MODX is today, with the guiding principles of flexibility and Creative Freedom.
   
-  ### Quick Links
-  
+### Quick Links
   
   - [Documentation Homepage](evolution/1.0)
   - [Content Editing](evolution/1.0/content-editing) in Evolution
   - The Evolution [Manager](evolution/1.0/content-editing/the-manager)
   - [Upgrading](evolution/1.0/administration/upgrading) Evolution
   
-  ### Other Resources
-  
+### Other Resources
   
   - [Get the Latest Release of Evolution](http://modx.com/download/evolution/)
   - [Download Extras](http://modx.com/extras/?product=evolution)
   - [Forum Discussions](http://forums.modx.com/board/48/evo-discussions-support)
   - [Bugs & Feature Requests](http://tracker.modx.com/projects/evo)
-- [](#xpdo) \]\] ## [xPDO](xpdo/)
+  
+### xPDO
   
    xPDO is the object-relational bridge (ORB) that powers MODX. If you know what that means, or you're the adventurous type, the following is for you:
   
-  ### Quick Links
-  
+### Quick Links
   
   - [xPDO 2.x Documentation Homepage](xpdo/)
   - [Getting Started](xpdo/getting-started) with xPDO 2.x
   - [Advanced Features](xpdo/advanced-features) of xPDO 2.x
   - [Class Reference](xpdo/class-reference) for xPDO 2.x
   
-  ### Other Resources
-  
+### Other Resources
   
   - [Get the Latest Release](http://xpdo.org/downloads.html)
   - [Forum Discussions](http://forums.modx.com/board/46/developing-with-xpdo)
   - [Bugs & Feature Requests](http://tracker.modx.com/projects/xpdo)
-- [](#community)## [Contributor Guide](community/)
   
-   Love MODX? Learn how to get involved in the Community and contribute to the open source project.
+### Contributor Guide
   
+  Love MODX? Learn how to get involved in the Community and contribute to the open source project.
   
   - [Documentation](community/)
   - [Filing and Discussing Issues](community/contribute/filing-and-discussing-issues)
-  - <a href="">Becoming a Contributor</a>
+  - [Becoming a Contributor](community/contribute/becoming-a-contributor)
   - [Documentation Style Guide](/style-guide)
