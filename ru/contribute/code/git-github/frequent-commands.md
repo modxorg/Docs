@@ -1,11 +1,6 @@
 ---
-<<<<<<< HEAD
-title: "Git FAC (Часто используемые команды)"
-translation: "contribute/using-git-and-github/git-fac-(frequently-accessed-commands)"
-=======
 title: "Git FAC (Frequently Accessed Commands)"
 translation: "contribute/code/git-github/frequent-commands"
->>>>>>> 7ae4fe90f31b85b23b94163f0dfe903c56fa0a2c
 ---
 
 - [Как мне создать и держать свежей локальную ветку develop?]
