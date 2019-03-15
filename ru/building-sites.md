@@ -5,8 +5,8 @@ translation: "building-sites"
 
 Этот раздел содержит информацию о поддержке и администрировании сайта MODX.
 
-1. [Настройка](administering-your-site/settings)
-2. [Использование дружественных URL](administering-your-site/using-friendly-urls)
-3. [Контексты](administering-your-site/contexts)
-4. [Настройка панели администрирования](administering-your-site/customizing-the-manager)
-5. [Безопасность](administering-your-site/security)
+1. [Настройка](_legacy/administering-your-site/settings)
+2. [Использование дружественных URL](getting-started/friendly-urls)
+3. [Контексты](building-sites/contexts)
+4. [Настройка панели администрирования](building-sites/client-proofing/form-customization)
+5. [Безопасность](building-sites/client-proofing/security)

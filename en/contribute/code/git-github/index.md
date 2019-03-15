@@ -50,14 +50,14 @@ When you're ready to contribute the commit or commits from your branch, you'll i
 
 ## Community Contributor's Guide 
 
-With that basis in the workflow, your next step is to read the [Community Contributor's Guide](/community/contribute/using-git-and-github/community-contributors-guide "Community Contributor's Guide") to understand the branching model MODX is using and for more detail on putting it into practice.
+With that basis in the workflow, your next step is to read the [Community Contributor's Guide](/contribute/code/contributors-guide "Community Contributor's Guide") to understand the branching model MODX is using and for more detail on putting it into practice.
 
 ## More 
 
-1. [Community Contributor's Guide](/community/contribute/using-git-and-github/community-contributors-guide)
-2. [Git FAC (Frequently Accessed Commands)](/community/contribute/using-git-and-github/git-fac-(frequently-accessed-commands))
-3. [xPDO GitHub Contributor's Guide](/community/contribute/using-git-and-github/xpdo-github-contributors-guide)
+1. [Community Contributor's Guide](/contribute/code/contributors-guide)
+2. [Git FAC (Frequently Accessed Commands)](contribute/code/git-github/frequent-commands)
+3. [xPDO GitHub Contributor's Guide](/contribute/code/xpdo)
 
 ## **Related**
 
-- [Install Revolution from your Git repo](getting-started/installation/git-installation "Git Installation")
+- [Install Revolution from your Git repo](getting-started/installation/git "Git Installation")

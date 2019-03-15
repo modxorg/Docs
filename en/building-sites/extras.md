@@ -7,11 +7,11 @@ note: "This page is the result of different pages getting combined, which needs 
 
 ## Installing a Package
 
-This page will guide you through the process of installing a Package via [Package Management](developing-in-modx/advanced-development/package-management "Package Management").
+This page will guide you through the process of installing a Package via [Package Management](extending-modx/transport-packages "Package Management").
 
-Downloading packages through [Package Management](developing-in-modx/advanced-development/package-management "Package Management") requires cURL or PHP Sockets. MODx will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](administering-your-site/installing-a-package/troubleshooting-package-management "Troubleshooting Package Management").
+Downloading packages through [Package Management](extending-modx/transport-packages "Package Management") requires cURL or PHP Sockets. MODx will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](building-sites/extras/troubleshooting "Troubleshooting Package Management").
 
-Go to Extras -> [Installer](developing-in-modx/advanced-development/package-management "Package Management").
+Go to Extras -> [Installer](extending-modx/transport-packages "Package Management").
 
 ![](/download/attachments/23c66e1935073aec60f9d9ea342a5b6b/modx-package-management-1.jpg)
 

@@ -65,5 +65,5 @@ Context defines context access when administration actions are not involved.
   5. [More on the Anonymous User Group](administering-your-site/security/security-tutorials/more-on-the-anonymous-user-group)
 7. [Hardening MODX Revolution](administering-your-site/security/hardening-modx-revolution)
 8. [Security Standards](administering-your-site/security/security-standards)
-9. [Troubleshooting Security](administering-your-site/security/troubleshooting-security)
-  1. [Resetting a User Password Manually](administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually)
+9. [Troubleshooting Security](building-sites/client-proofing/security/troubleshooting-security)
+  1. [Resetting a User Password Manually](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)

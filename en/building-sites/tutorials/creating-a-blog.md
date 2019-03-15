@@ -40,7 +40,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
  This tutorial is here to help you setup a flexible, powerful blogging solution in MODx Revolution. Since MODx Revolution is not blogging software, but rather a full-blown Content Application Platform, it doesn't come pre-packaged with a cookie-cutter blogging solution. You'll need to setup your blog how you want it.
 
- Fortunately, the tools to do so are already there for your taking. This tutorial will walk you through how to set them up. It's recommended that you're familiar with Revolution's [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax") before we start.
+ Fortunately, the tools to do so are already there for your taking. This tutorial will walk you through how to set them up. It's recommended that you're familiar with Revolution's [Tag Syntax](building-sites/tag-syntax "Tag Syntax") before we start.
 
  One thing before we start, though - this tutorial is extensive, and will show you how to set up a powerful blog with posting, archiving, tagging, commenting and more. If you don't need any specific part, just skip that part. MODx is modular, and your blog can function in any scope you like. And, again, this is only one way to do it - there are tons of ways to setup a blog in MODx Revolution.
 

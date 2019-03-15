@@ -76,7 +76,7 @@ Views in MODX Revolution are called 'Templates', but are used differently based 
 
 Templates are what they sound like. They allow you to create templates that will encapsulate more page-specific data. Think of them like headers/footers all rolled into one (and so much more!)
 
-##### [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks")
+##### [Chunks](building-sites/elements/chunks "Chunks")
 
 Chunks are small pieces of HTML code that can be inserted anywhere. They represent View widgets, in a sense, because of their modularity and ease of insertion.
 
@@ -94,7 +94,7 @@ Controllers in MODX Revolution come in two forms. In the front-end, they are Req
 
 #### [Snippets](developing-in-modx/basic-development/snippets "Snippets")
 
-Snippets are simply PHP code that can be placed anywhere in a page. They can be placed in [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks"), [Templates](making-sites-with-modx/structuring-your-site/templates "Templates"), or Resources. They simply execute PHP code whenever they are called, and return whatever output they would like to push to the page.
+Snippets are simply PHP code that can be placed anywhere in a page. They can be placed in [Chunks](building-sites/elements/chunks "Chunks"), [Templates](making-sites-with-modx/structuring-your-site/templates "Templates"), or Resources. They simply execute PHP code whenever they are called, and return whatever output they would like to push to the page.
 
 #### [Plugins](developing-in-modx/basic-development/plugins "Plugins")
 

@@ -18,7 +18,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
  A resource is a representation of a page in MODx. There are different types of Resources, such as documents, weblinks, symlinks, actual files, or many other things. The default Resource type is a Document, and simply represents a webpage on your site.
 
- There are 4 total types of Resources, and they are Documents, [Weblinks](making-sites-with-modx/structuring-your-site/resources/weblink "Weblink"), [Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink "Symlink"), and [Static Resources](making-sites-with-modx/structuring-your-site/resources/static-resource "Static Resource").
+ There are 4 total types of Resources, and they are Documents, [Weblinks](building-sites/resources/weblink "Weblink"), [Symlinks](building-sites/resources/symlink "Symlink"), and [Static Resources](building-sites/resources/static-rsource "Static Resource").
 
  Each Resource also has a unique ID, or "Resource Identifier". This lets MODx know what Resource to fetch when you are loading a webpage. Also, when you're wanting to link between Resources, you should always use the ID to do so. That way MODx will generate the link and you will not have to worry about changed aliases, content types or anything - MODx will change your links also. Please see the Linking to Resources section below for more information on how to do this.
 
@@ -162,7 +162,7 @@ store/items.html?tag=Snacks&sort=Taste
 
 1. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
 2. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)
-3. [Static Resource](making-sites-with-modx/structuring-your-site/resources/static-resource)
-4. [Symlink](making-sites-with-modx/structuring-your-site/resources/symlink)
+3. [Static Resource](building-sites/resources/static-rsource)
+4. [Symlink](building-sites/resources/symlink)
   1. [Using Resource Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink/using-resource-symlinks)
-5. [Weblink](making-sites-with-modx/structuring-your-site/resources/weblink)
+5. [Weblink](building-sites/resources/weblink)

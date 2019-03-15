@@ -22,7 +22,7 @@ In other words, if @CHUNK Hello is the value of a TV called MyChunk, the followi
 
 Binds the variable to a document. Where chunk\_name is the name of the chunk. The returned value is a string containing the content of the chunk.
 
-This binding is very similar to the [@RESOURCE binding](making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding "RESOURCE Binding") with the exception that it will bind the TV to a [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks").
+This binding is very similar to the [@RESOURCE binding](making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding "RESOURCE Binding") with the exception that it will bind the TV to a [Chunk](building-sites/elements/chunks "Chunks").
 
 ## Usage
 

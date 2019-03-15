@@ -21,7 +21,7 @@ translation: "getting-started/installation/advanced"
 - Вы планируете переименовать папки manager/ или connectors/ или переместить каталог core/
 - У вас есть доступ по SSH или вы можете легко перемещать и создавать директории для записи на вашем сервере.
 
-Возможно, вы захотите сначала изучить [Требования к серверу](getting-started/server-requirements "Server Requirements"). Если после прочтения этого документа у вас по-прежнему возникают проблемы с установкой, прочитайте страницу [Устранение неполадок при установке](getting-started/installation/troubleshooting-installation "Troubleshooting Installation").
+Возможно, вы захотите сначала изучить [Требования к серверу](getting-started/server-requirements "Server Requirements"). Если после прочтения этого документа у вас по-прежнему возникают проблемы с установкой, прочитайте страницу [Устранение неполадок при установке](getting-started/installation/troubleshooting "Troubleshooting Installation").
 
 ## Предварительные шаги по установке
 
@@ -51,7 +51,7 @@ MODx может также попросить вас сделать доступ
 
 ## Расширенные настройки
 
-Теперь вам будет предложено несколько вариантов установки, аналогичные окну [Базовая установка](getting-started/installation/basic-installation "Basic Installation"), но с двумя дополнительными опциями внизу. 'Новая установка' будет единственной опцией, доступной для выбора, что вам и нужно. Ниже вы можете настроить разрешения для создания новых файлов или папок в вашей установке MODx. Значения по умолчанию должны работать корректно,но, если сервер задаёт лишние ограничения, вы можете изменить права доступа для каталогов/файлов на 0775/0664 соответственно.
+Теперь вам будет предложено несколько вариантов установки, аналогичные окну [Базовая установка](getting-started/installation/standard "Basic Installation"), но с двумя дополнительными опциями внизу. 'Новая установка' будет единственной опцией, доступной для выбора, что вам и нужно. Ниже вы можете настроить разрешения для создания новых файлов или папок в вашей установке MODx. Значения по умолчанию должны работать корректно,но, если сервер задаёт лишние ограничения, вы можете изменить права доступа для каталогов/файлов на 0775/0664 соответственно.
 
 Ниже вам будут представлены две опции:
 
@@ -125,17 +125,17 @@ MODx рекомендует вам обязательно удалить кат�
 
 ### Смотрите также
 
-1. [Базовая установка](getting-started/installation/basic-installation)
-2. [MODx Revolution на Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
-3. [Руководство Lighttpd](getting-started/installation/basic-installation/lighttpd-guide)
-4. [Проблемы с WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i)
-5. [Установка на сервер под управлением ModSecurity](getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity)
-6. [MODX и Suhosin](getting-started/installation/basic-installation/modx-and-suhosin)
-7. [Конфигурация сервера Nginx](getting-started/installation/basic-installation/nginx-server-config)
-8. [Расширенная установка](getting-started/installation/advanced-installation)
-9. [Установка Git](getting-started/installation/git-installation)
-10. [Установка из командной строки](getting-started/installation/command-line-installation)
-11. [Файл Xml с параметрами установки](getting-started/installation/command-line-installation/the-setup-config-xml-file)
-12. [Устранение неполадок при установке](getting-started/installation/troubleshooting-installation)
-13. [Успешная установка, что делать дальше?](getting-started/installation/successful-installation,-now-what-do-i-do)
-14. [Использование MODx Revolution с SVN](getting-started/installation/using-modx-revolution-from-svn)
+1. [Базовая установка](getting-started/installation/standard)
+2. [MODx Revolution на Debian](_legacy/getting-started/modx-revolution-on-debian)
+3. [Руководство Lighttpd](getting-started/friendly-urls/lighttpd)
+4. [Проблемы с WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
+5. [Установка на сервер под управлением ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+6. [MODX и Suhosin](_legacy/getting-started/modx-and-suhosin)
+7. [Конфигурация сервера Nginx](getting-started/friendly-urls/nginx)
+8. [Расширенная установка](getting-started/installation/advanced)
+9. [Установка Git](getting-started/installation/git)
+10. [Установка из командной строки](getting-started/installation/cli)
+11. [Файл Xml с параметрами установки](getting-started/installation/cli/config.xml)
+12. [Устранение неполадок при установке](getting-started/installation/troubleshooting)
+13. [Успешная установка, что делать дальше?](getting-started/getting-started)
+14. [Использование MODx Revolution с SVN](_legacy/getting-started/using-modx-revolution-from-svn)

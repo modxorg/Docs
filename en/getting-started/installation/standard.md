@@ -37,11 +37,11 @@ _old_uri: "2.x/getting-started/installation/basic-installation"
 
 ### Installing MODX With An Existing Site
 
- Development sites often begin in a subdirectory, and then are [moved](administering-your-site/moving-your-site-to-a-new-server "Moving Your Site to a New Server") to the root directory when completed. The subdirectory method is useful if you've got an existing site that must remain available during development, or for subdomain MODX installations. It is also possible to leave MODX in a subdirectory and use .htaccess to rewrite your urls to the root.
+ Development sites often begin in a subdirectory, and then are [moved](getting-started/maintenance/moving-your-site "Moving Your Site to a New Server") to the root directory when completed. The subdirectory method is useful if you've got an existing site that must remain available during development, or for subdomain MODX installations. It is also possible to leave MODX in a subdirectory and use .htaccess to rewrite your urls to the root.
 
 #### Existing Static HTML Site
 
- If your existing site is static html with an index.html or similar start page, you can install MODX into the root folder alongside your static site while developing. When you are ready to go live, rename or move your static html files and MODX will take over. **Do not enable** [Friendly URL's](administering-your-site/using-friendly-urls "Using Friendly URLs") if using this method until after your html files have been moved or renamed. As always, **back up your existing site** prior to installing MODX Revolution or making any changes to your current file structure.
+ If your existing site is static html with an index.html or similar start page, you can install MODX into the root folder alongside your static site while developing. When you are ready to go live, rename or move your static html files and MODX will take over. **Do not enable** [Friendly URL's](getting-started/friendly-urls "Using Friendly URLs") if using this method until after your html files have been moved or renamed. As always, **back up your existing site** prior to installing MODX Revolution or making any changes to your current file structure.
 
 #### Existing Other CMS or Dynamically Driven Site
 
@@ -51,13 +51,13 @@ _old_uri: "2.x/getting-started/installation/basic-installation"
 
 ### Pre-DNS Transfer Installation to Temporary Directory
 
- If your host provides a temporary installation folder to develop in prior to DNS transfer, once your DNS has been transferred you will need to reference the [Moving Your Site to Another Server](administering-your-site/moving-your-site-to-a-new-server "Moving Your Site to a New Server") page and update the configuration files: _core/config/config.inc.php, /config.core.php, /connectors/config.php, and /manager/config.core.php_ paths to point to your new root directory.
+ If your host provides a temporary installation folder to develop in prior to DNS transfer, once your DNS has been transferred you will need to reference the [Moving Your Site to Another Server](getting-started/maintenance/moving-your-site "Moving Your Site to a New Server") page and update the configuration files: _core/config/config.inc.php, /config.core.php, /connectors/config.php, and /manager/config.core.php_ paths to point to your new root directory.
 
 ## Installing MODX Revolution
 
  Start the install process by loading your web browser and running the setup script by navigating to the **setup/** folder.
 
- You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting-installation "Troubleshooting Installation") page. 
+ You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation") page. 
 
  Before running setup, make sure your core/cache/ and core/config/ directories are writable by PHP. 
 
@@ -124,7 +124,7 @@ _old_uri: "2.x/getting-started/installation/basic-installation"
 
  From there, put in your email (or the email of your administrator) and specify a password. Click next when you're finished.
 
- Some host's server configurations won't allow MODX to send emails if the System Setting [emailsender](administering-your-site/settings/system-settings/emailsender) (set at install to the email address entered for the default admin user) is not valid for the domain. If MODX is not sending registration or form emails, check the [emailsender](administering-your-site/settings/system-settings/emailsender) and set it to a valid email address for the hosted domain.
+ Some host's server configurations won't allow MODX to send emails if the System Setting [emailsender](building-sites/settings/emailsender) (set at install to the email address entered for the default admin user) is not valid for the domain. If MODX is not sending registration or form emails, check the [emailsender](building-sites/settings/emailsender) and set it to a valid email address for the hosted domain.
 
 
 ## Pre-Installation Checks
@@ -162,7 +162,7 @@ WARNING: the setup application grants powerful and far-reaching control over you
 
 ### WAMPServer 2.0i
 
- Please see this article: [Problems with WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i "Problems with WAMPServer 2.0i")
+ Please see this article: [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i "Problems with WAMPServer 2.0i")
 
 ### MAMP on MacOSX
 
@@ -170,7 +170,7 @@ WARNING: the setup application grants powerful and far-reaching control over you
 
 ### Debian
 
- Debian uses outdated MySQL drivers for its PHP build that will need to be updated; please see the [MODX Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian "MODX Revolution on Debian") article for more information.
+ Debian uses outdated MySQL drivers for its PHP build that will need to be updated; please see the [MODX Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian "MODX Revolution on Debian") article for more information.
 
 ### Vista and XAMPP
 
@@ -180,14 +180,14 @@ WARNING: the setup application grants powerful and far-reaching control over you
 
 ### Installing Packages
 
- For information on installing 3rd-party packages, see the [How to Install Packages](developing-in-modx/advanced-development/package-management "Package Management") article.
+ For information on installing 3rd-party packages, see the [How to Install Packages](extending-modx/transport-packages "Package Management") article.
 
 ### See Also
 
-1. [MODX Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
-2. [Lighttpd Guide](getting-started/installation/basic-installation/lighttpd-guide)
-3. [Problems with WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i)
-4. [Installation on a server running ModSecurity](getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity)
-5. [MODX and Suhosin](getting-started/installation/basic-installation/modx-and-suhosin)
-6. [Nginx Server Config](getting-started/installation/basic-installation/nginx-server-config)
+1. [MODX Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
+2. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
+3. [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
+4. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+5. [MODX and Suhosin](_legacy/getting-started/modx-and-suhosin)
+6. [Nginx Server Config](getting-started/friendly-urls/nginx)
 7. [YouTube video by a MODX Ambassador](http://www.youtube.com/watch?v=Wwrq-3CWFVU)

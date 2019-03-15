@@ -9,11 +9,11 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/templates"
 
 Templates typically contain the HTML markup tags that determine the layout and appearance of your site. When a document is requested, MODx loads the document and its template, and MODx finds all the special placeholders in the template and replaces them with the corresponding values from the document before sending the finished page off to the user's browser.
 
-Think of a Template like a house. Your [Resource's](making-sites-with-modx/structuring-your-site/resources "Resources") content, then, is a person. A person can have many different houses, but only live in one house at a time.
+Think of a Template like a house. Your [Resource's](building-sites/resources "Resources") content, then, is a person. A person can have many different houses, but only live in one house at a time.
 
 ![](/download/attachments/18678060/template-info1.jpg?version=1&modificationDate=1280149156000)
 
-[Resources](making-sites-with-modx/structuring-your-site/resources "Resources") can only use one Template at a time, however, a Resource can switch Templates at any time, just as a person can move from house to house at any time. The Template, just like a house, also changes the main way a page is displayed. A Template usually contains the header and footer of a page - and/or a sidebar, navigation bar, etc.
+[Resources](building-sites/resources "Resources") can only use one Template at a time, however, a Resource can switch Templates at any time, just as a person can move from house to house at any time. The Template, just like a house, also changes the main way a page is displayed. A Template usually contains the header and footer of a page - and/or a sidebar, navigation bar, etc.
 
 ## Usage
 
@@ -44,11 +44,11 @@ Note the important \[\[\*content\]\] tag; this tag tells MODx where to put the R
 
 MODX defaults to storing templates in its database, if you are using a version prior to 2.2.x this is your only option. In MODX 2.2.x and newer you have the option of storing templates as static files using Media Sources.
 
-Remember that simply _creating_ a template doesn't mean that it is automatically put to use: you have to edit each [Resources](making-sites-with-modx/structuring-your-site/resources "Resources") and specify which Template it uses. This is different from some content management systems where each template has one or many pages. Each MODx page has a single Template that it uses to format output.
+Remember that simply _creating_ a template doesn't mean that it is automatically put to use: you have to edit each [Resources](building-sites/resources "Resources") and specify which Template it uses. This is different from some content management systems where each template has one or many pages. Each MODx page has a single Template that it uses to format output.
 
 After you've created one or more Templates, you can edit any Resource and choose a Template for it by selecting one from the "Uses Template" drop-down list.
 
-Templates can contain any tags, including [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables"), [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks"), [Snippets](developing-in-modx/basic-development/snippets "Snippets"), and others.
+Templates can contain any tags, including [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables"), [Chunks](building-sites/elements/chunks "Chunks"), [Snippets](developing-in-modx/basic-development/snippets "Snippets"), and others.
 
 ### Using Resource Fields in the Template
 
@@ -92,5 +92,5 @@ Again, it's important to note that [Template Variables](making-sites-with-modx/c
 
 ## See Also
 
-- [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax")
+- [Tag Syntax](building-sites/tag-syntax "Tag Syntax")
 - [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")

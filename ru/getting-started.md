@@ -7,4 +7,4 @@ translation: "getting-started"
 
 1. [Требования к серверу](getting-started/server-requirements)
 2. [Установка](getting-started/installation)
-3. [Обзор MODX](getting-started/an-overview-of-modx)
+3. [Обзор MODX](getting-started/what-is-modx)

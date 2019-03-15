@@ -88,13 +88,13 @@ _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags"
 
 - [Date Formats](making-sites-with-modx/commonly-used-template-tags/date-formats "Date Formats") : shows how to format date fields.
 
-1. [Resources](making-sites-with-modx/structuring-your-site/resources)
+1. [Resources](building-sites/resources)
 2. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
 3. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)
-4. [Static Resource](making-sites-with-modx/structuring-your-site/resources/static-resource)
-5. [Symlink](making-sites-with-modx/structuring-your-site/resources/symlink)
+4. [Static Resource](building-sites/resources/static-rsource)
+5. [Symlink](building-sites/resources/symlink)
 6. [Using Resource Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink/using-resource-symlinks)
-7. [Weblink](making-sites-with-modx/structuring-your-site/resources/weblink)
+7. [Weblink](building-sites/resources/weblink)
 8. [Templates](making-sites-with-modx/structuring-your-site/templates)
-9. [Chunks](making-sites-with-modx/structuring-your-site/chunks)
+9. [Chunks](building-sites/elements/chunks)
 10. [Using Snippets](making-sites-with-modx/structuring-your-site/using-snippets)

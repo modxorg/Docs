@@ -26,14 +26,14 @@ _Спасибо!!_
 
 FAQ и/или Устранение неполадок по конкретным темам в других местах:
 
-- [Устранение неполадок при установке](getting-started/installation/troubleshooting-installation "Устранение неполадок при установке")
-- [Устранение неполадок при обновлении](administering-your-site/upgrading-modx/troubleshooting-upgrades "Устранение неполадок при обновлении")
-- [Устранение неполадок при управлении дополнениями](administering-your-site/installing-a-package/troubleshooting-package-management "Устранение неполадок при управлении дополнениями")
-- [Устранение неполадок безопасности](administering-your-site/security/troubleshooting-security "Устранение неполадок безопасности")
+- [Устранение неполадок при установке](getting-started/installation/troubleshooting "Устранение неполадок при установке")
+- [Устранение неполадок при обновлении](getting-started/maintenance/upgrading/troubleshooting "Устранение неполадок при обновлении")
+- [Устранение неполадок при управлении дополнениями](building-sites/extras/troubleshooting "Устранение неполадок при управлении дополнениями")
+- [Устранение неполадок безопасности](building-sites/client-proofing/security/troubleshooting-security "Устранение неполадок безопасности")
 
 Подстраницы, посвященные конкретным темам:
 
-- [FAQ и устранение неполадок по разработке CMP](faqs-and-troubleshooting/cmp-development-faqs-and-troubleshooting "FAQ и устранение неполадок по разработке CMP")
+- [FAQ и устранение неполадок по разработке CMP](extending-modx/custom-manager-pages/troubleshooting "FAQ и устранение неполадок по разработке CMP")
 
 На этой странице вы можете найти следующие категории и вопросы:
 
@@ -75,7 +75,7 @@ MODX Revolution - это полностью переписанный MODX Evolut
 
 ### 1.2. Какие теги я могу использовать? Что означает `[[*pagetitle]]`, `[[Wayfinder]]` и т.д.?
 
-Прочитайте документацию по [Синтаксису тегов](making-sites-with-modx/tag-syntax "Синтакс тегов"). Вы можете найти поля ресурсов, которые можно использовать в Revolution на странице [Документации по ресурсам](making-sites-with-modx/structuring-your-site/resources "Ресурсы").
+Прочитайте документацию по [Синтаксису тегов](building-sites/tag-syntax "Синтакс тегов"). Вы можете найти поля ресурсов, которые можно использовать в Revolution на странице [Документации по ресурсам](building-sites/resources "Ресурсы").
 
 ## 2. Панель управления
 
@@ -91,20 +91,20 @@ MODX Revolution - это полностью переписанный MODX Evolut
 
 Это имена классов документов, веб-ссылок, символических ссылок и статических ресурсов. Они являются "подтипом" ресурсов (modResource - имя класса) и у каждой есть своя конкретная цель. Все они отображаются в дереве ресурсов и могут отображаться в любом месте иерархии.
 
-- [Документы](making-sites-with-modx/structuring-your-site/resources "Ресурсы") (называются также Русерсами, смотрите 2.4 и ниже) обычные страницы с контентом.
-- [Веб-ссылки](making-sites-with-modx/structuring-your-site/resources/weblink "Веб-ссылки") перенаправляют пользователя на разные Ресурсы или являются внешними ссылками.
-- [Символические ссылки](making-sites-with-modx/structuring-your-site/resources/symlink "Symlink") ведут себя как копии Документа.
-- [Статические ресурсы](making-sites-with-modx/structuring-your-site/resources/static-resource "Статические ресурсы") работают как документы, однако их содержимое получается из файла в файловой системе.
+- [Документы](building-sites/resources "Ресурсы") (называются также Русерсами, смотрите 2.4 и ниже) обычные страницы с контентом.
+- [Веб-ссылки](building-sites/resources/weblink "Веб-ссылки") перенаправляют пользователя на разные Ресурсы или являются внешними ссылками.
+- [Символические ссылки](building-sites/resources/symlink "Symlink") ведут себя как копии Документа.
+- [Статические ресурсы](building-sites/resources/static-rsource "Статические ресурсы") работают как документы, однако их содержимое получается из файла в файловой системе.
 
 ### 2.4 В чем разница между Resource и Document?
 
 Технически, Resource (modResource) это абстрактный объект который реализует Document (modDocument).
 
-Практически оба термина используются для обозначения одного и того же: документа, содержащего определенные вещи. Исходя из технической реализации, [Веб-ссылки](making-sites-with-modx/structuring-your-site/resources/weblink "Веб-ссылки"), [Символические ссылки](making-sites-with-modx/structuring-your-site/resources/symlink "Символические ссылки") или [Статические ресурсы](making-sites-with-modx/structuring-your-site/resources/static-resource "Статические ресурсы") также ссылаются на "Resources" так как являются реализацией класса modResource.
+Практически оба термина используются для обозначения одного и того же: документа, содержащего определенные вещи. Исходя из технической реализации, [Веб-ссылки](building-sites/resources/weblink "Веб-ссылки"), [Символические ссылки](building-sites/resources/symlink "Символические ссылки") или [Статические ресурсы](building-sites/resources/static-rsource "Статические ресурсы") также ссылаются на "Resources" так как являются реализацией класса modResource.
 
 ### 2.5 Я заблокирован! Я не могу попасть в панель управления! "Забыли пароль" и восстановление не работает!
 
-Вы не обречены. [Следуйте этой инструкции для Revolution](administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually "Ручной сброс пароля"), или [инструкции для восстановления аккаунта для Evolution](/evolution/1.0/administration/manager-users/reset-your-password-unblock-your-user "Сброс пароля - Разблокирование Пользователя").
+Вы не обречены. [Следуйте этой инструкции для Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Ручной сброс пароля"), или [инструкции для восстановления аккаунта для Evolution](/evolution/1.0/administration/manager-users/reset-your-password-unblock-your-user "Сброс пароля - Разблокирование Пользователя").
 
 ## 3. Проблемы Отображения Интерфейса
 

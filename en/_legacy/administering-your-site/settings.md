@@ -126,7 +126,7 @@ showPublished will be set to true. If it did have the default Property attached 
   41. [default\_template](administering-your-site/settings/system-settings/default_template)
   42. [editor\_css\_path](administering-your-site/settings/system-settings/editor_css_path)
   43. [editor\_css\_selectors](administering-your-site/settings/system-settings/editor_css_selectors)
-  44. [emailsender](administering-your-site/settings/system-settings/emailsender)
+  44. [emailsender](building-sites/settings/emailsender)
   45. [emailsubject](administering-your-site/settings/system-settings/emailsubject)
   46. [enable\_dragdrop](administering-your-site/settings/system-settings/enable_dragdrop)
   47. [error\_page](administering-your-site/settings/system-settings/error_page)

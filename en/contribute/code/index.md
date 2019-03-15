@@ -54,5 +54,5 @@ So don't take offense. We really appreciate _any and all_ contributions to MODX,
 
 ## See Also
 
-1. [Development Environments](/community/contribute/becoming-a-contributor/development-environments)
-2. [MODX PHP Coding Standards](/community/contribute/becoming-a-contributor/modx-php-coding-standards)
+1. [Development Environments](/contribute/code/development-environment)
+2. [MODX PHP Coding Standards](/contribute/code/coding-standards)

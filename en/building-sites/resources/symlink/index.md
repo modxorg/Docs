@@ -6,7 +6,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources/symlink"
 
 ## What is a Symlink? 
 
-Symlinks map a URL to an existing resource. They are similar to [Weblinks](making-sites-with-modx/structuring-your-site/resources/weblink "Weblink") in that they redirect to another [Resources](making-sites-with-modx/structuring-your-site/resources "Resources") or URL; however, symlinks will persist the current URL. The name is taken from Linux, and the purpose is similar.
+Symlinks map a URL to an existing resource. They are similar to [Weblinks](building-sites/resources/weblink "Weblink") in that they redirect to another [Resources](building-sites/resources "Resources") or URL; however, symlinks will persist the current URL. The name is taken from Linux, and the purpose is similar.
 
 ## Use Cases 
 
@@ -26,7 +26,7 @@ Likewise, the target page must exist, otherwise an error page will be generated.
 
 1. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
 2. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)
-3. [Static Resource](making-sites-with-modx/structuring-your-site/resources/static-resource)
-4. [Symlink](making-sites-with-modx/structuring-your-site/resources/symlink)
+3. [Static Resource](building-sites/resources/static-rsource)
+4. [Symlink](building-sites/resources/symlink)
 5. [Using Resource Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink/using-resource-symlinks)
-6. [Weblink](making-sites-with-modx/structuring-your-site/resources/weblink)
+6. [Weblink](building-sites/resources/weblink)

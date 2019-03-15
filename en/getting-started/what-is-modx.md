@@ -41,7 +41,7 @@ MODX, in essence, has a ton of moving parts. But the basics parts are:
 
 ### Resources
 
-[Resources](making-sites-with-modx/structuring-your-site/resources "Resources") are basically a webpage location. It can be actual HTML content, or a file, forwarding link, or a symlink, or anything else.
+[Resources](building-sites/resources "Resources") are basically a webpage location. It can be actual HTML content, or a file, forwarding link, or a symlink, or anything else.
 
 ### Templates
 
@@ -53,7 +53,7 @@ MODX, in essence, has a ton of moving parts. But the basics parts are:
 
 ### Chunks
 
-[Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks") are simply small blocks of content, be it whatever you want inside it. They can contain [Snippets](developing-in-modx/basic-development/snippets "Snippets"), or any other Element type (Snippet, Chunk, TV, etc).
+[Chunks](building-sites/elements/chunks "Chunks") are simply small blocks of content, be it whatever you want inside it. They can contain [Snippets](developing-in-modx/basic-development/snippets "Snippets"), or any other Element type (Snippet, Chunk, TV, etc).
 
 ### Snippets
 
@@ -65,11 +65,11 @@ Plugins are event hooks that run whenever an event is fired. They are usually us
 
 ### System Settings
 
-System Settings give you near infinite configuration options. Most of these are set the best way they should be, but some things (such as [friendly urls](administering-your-site/using-friendly-urls "Using Friendly URLs")) are disabled by default or could be improved for your specific needs just by changing a setting value. After installation, head over to System > System Settings in the Manager and browse through the available options. Definitely check out the "Site" area (use the dropdown that says "Filter on area..."), there are some interesting things there for you.
+System Settings give you near infinite configuration options. Most of these are set the best way they should be, but some things (such as [friendly urls](getting-started/friendly-urls "Using Friendly URLs")) are disabled by default or could be improved for your specific needs just by changing a setting value. After installation, head over to System > System Settings in the Manager and browse through the available options. Definitely check out the "Site" area (use the dropdown that says "Filter on area..."), there are some interesting things there for you.
 
 ## So What Happens on a Request?
 
-MODX loads the requested [Resource](making-sites-with-modx/structuring-your-site/resources "Resources"), fetches that Resource's [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), and then places the Resource's content in that Template. MODX then parses the resulting combined content, including any tags that might be in it, in the order they are reached. From there, it outputs the response to the user's browser.
+MODX loads the requested [Resource](building-sites/resources "Resources"), fetches that Resource's [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), and then places the Resource's content in that Template. MODX then parses the resulting combined content, including any tags that might be in it, in the order they are reached. From there, it outputs the response to the user's browser.
 
 ## See Also
 
