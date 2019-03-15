@@ -5,7 +5,7 @@ translation: "getting-started/friendly-urls/nginx"
 
 Это пример настройки nginx сервера для установки MODX (требуется php-fpm). Этот пример позволяет использовать дружественные URL MODX.
 
-```
+``` php
 server {
         listen 80;
         server_name example.com www.example.com;
