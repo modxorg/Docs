@@ -18,4 +18,4 @@ For example, a Resource with alias 'blog' and a Content Type of "HTML" will be r
 
 This allows for completely customizable and automatically built SEO-friendly URLs.
 
-To get this fully working, there are some extra steps involved. Please refer to [Using Friendly URLs](administering-your-site/using-friendly-urls "Using Friendly URLs").
+To get this fully working, there are some extra steps involved. Please refer to [Using Friendly URLs](getting-started/friendly-urls "Using Friendly URLs").

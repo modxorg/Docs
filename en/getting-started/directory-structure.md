@@ -85,7 +85,7 @@ Additionally, the web context cache will contain separate directories for resour
 
 ### core/components/
 
-When you install a package using the [Package Manager](developing-in-modx/advanced-development/package-management "Package Management"), a core/components/ / directory will be created to hold any files necessary for the installed component to run. Typically, any files needed to run in the Manager, such as controllers, model/schema data, processors and class files, should be stored here, as well as files you don't want web-accessible.
+When you install a package using the [Package Manager](extending-modx/transport-packages "Package Management"), a core/components/ / directory will be created to hold any files necessary for the installed component to run. Typically, any files needed to run in the Manager, such as controllers, model/schema data, processors and class files, should be stored here, as well as files you don't want web-accessible.
 
 ### core/config/
 
@@ -170,7 +170,7 @@ The Smarty placeholders in update.tpl are filled in with the data held in the $r
 
 ### core/packages/
 
-Here you will find any transport packages you've downloaded via the [Package Management](developing-in-modx/advanced-development/package-management "Package Management") section of Revolution, such as TinyMCE, Ditto, etc. The core package is also found here as well. This allows for easy installation and removal, as well as remote updating of installed packages.
+Here you will find any transport packages you've downloaded via the [Package Management](extending-modx/transport-packages "Package Management") section of Revolution, such as TinyMCE, Ditto, etc. The core package is also found here as well. This allows for easy installation and removal, as well as remote updating of installed packages.
 
 When you build a package (for example, after checking out from SVN), the transport package will be stored here.
 
@@ -235,4 +235,4 @@ This directory is not present in MODX Revolution by default, but like in MODX Ev
 
 ### assets/components/
 
-When you install a package using the [Package Manager](developing-in-modx/advanced-development/package-management "Package Management"), an assets/components/  directory will be created to hold any necessary component files, such as JavaScript or images.
+When you install a package using the [Package Manager](extending-modx/transport-packages "Package Management"), an assets/components/  directory will be created to hold any necessary component files, such as JavaScript or images.

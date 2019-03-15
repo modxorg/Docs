@@ -52,7 +52,7 @@ which would override the set's value on `level` of 1, setting it instead to 2.
 
 ## Installing Snippets
 
-You can also download and install Snippets via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"). See the tutorial on [installing a Package](administering-your-site/installing-a-package "Installing a Package") for more information.
+You can also download and install Snippets via [Package Management](extending-modx/transport-packages "Package Management"). See the tutorial on [installing a Package](administering-your-site/installing-a-package "Installing a Package") for more information.
 
 ## See Also
 

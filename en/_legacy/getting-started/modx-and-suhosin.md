@@ -34,9 +34,9 @@ If you cannot edit the php.ini directly, consult with your host on the best way 
 
 ## See Also 
 
-1. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
-2. [Lighttpd Guide](getting-started/installation/basic-installation/lighttpd-guide)
-3. [Problems with WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i)
-4. [Installation on a server running ModSecurity](getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity)
-5. [MODX and Suhosin](getting-started/installation/basic-installation/modx-and-suhosin)
-6. [Nginx Server Config](getting-started/installation/basic-installation/nginx-server-config)
+1. [MODx Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
+2. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
+3. [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
+4. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+5. [MODX and Suhosin](_legacy/getting-started/modx-and-suhosin)
+6. [Nginx Server Config](getting-started/friendly-urls/nginx)

@@ -45,7 +45,7 @@ return 'Hello, World!';
 ?>
 ```
 
-If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet "modX.runSnippet") API method.
+If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](building-sites/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet "modX.runSnippet") API method.
 
 Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output. 
 

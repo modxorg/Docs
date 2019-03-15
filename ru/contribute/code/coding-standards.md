@@ -104,4 +104,4 @@ $_lang['mycomponent.welcome_message'] = 'Welcome!';
 ```
 
 - Всегда добавляйте префикс к имени класса: например 'finBank', 'finTransaction' и тд.
-- Всегда добавляйте префикс к имени чанка [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") например 'finStatement', 'finDeposit'
+- Всегда добавляйте префикс к имени чанка [Chunk](building-sites/elements/chunks "Chunks") например 'finStatement', 'finDeposit'

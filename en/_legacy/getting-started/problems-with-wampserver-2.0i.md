@@ -16,7 +16,7 @@ A short summary and explanation is below.
 
 Usually it is best to make sure in any server configuration that your MySQL server and client build versions are the same. WAMPServer allows you to start your stack with different versions of PHP/MySQL combinations.
 
-The problem child comes in WAMPServer 2.0i's PHP 5.2.11 version. It sets its server version at 5.1.36, but its client version at 5.0.51a. MODx [does not support 5.0.51a](getting-started/server-requirements/mysql-5.0.51-issues "MySQL 5.0.51 Issues"), and therefore will not install with this configuration.
+The problem child comes in WAMPServer 2.0i's PHP 5.2.11 version. It sets its server version at 5.1.36, but its client version at 5.0.51a. MODx [does not support 5.0.51a](getting-started/installation/troubleshooting/mysql-5.0.51 "MySQL 5.0.51 Issues"), and therefore will not install with this configuration.
 
 ## The Solution
 

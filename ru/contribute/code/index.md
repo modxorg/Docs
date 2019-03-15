@@ -51,5 +51,5 @@ translation: "contribute/code"
 
 ## Смотрите также
 
-1. [Среды разработки](/community/contribute/becoming-a-contributor/development-environments)
-2. [MODX PHP стандарты разработки](/community/contribute/becoming-a-contributor/modx-php-coding-standards)
+1. [Среды разработки](/contribute/code/development-environment)
+2. [MODX PHP стандарты разработки](/contribute/code/coding-standards)

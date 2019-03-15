@@ -583,6 +583,6 @@ Great, we're done! You'll only need to run this script now, and viola! A fully z
 
 ## Related Pages
 
-- [Package Management](developing-in-modx/advanced-development/package-management "Package Management")
+- [Package Management](extending-modx/transport-packages "Package Management")
 - [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages")
 - [Transport Providers](developing-in-modx/advanced-development/package-management/providers "Providers")

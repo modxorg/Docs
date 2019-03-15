@@ -87,7 +87,7 @@ _old_uri: "2.x/developing-in-modx/code-standards"
 
 ### Inline HTML in Snippets
 
- MODX requires that **no html** be echo'ed or inline in a Snippet. MODX also recommends externalizing any HTML in PHP code into [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks").
+ MODX requires that **no html** be echo'ed or inline in a Snippet. MODX also recommends externalizing any HTML in PHP code into [Chunks](building-sites/elements/chunks "Chunks").
 
  All HTML pages should be verified against the W3C validator, to ensure that the markup is well formed. This in and of itself is not directly indicative of good code, but it helps to weed out problems that are able to be tested via automation. It is no substitute for manual code review.
 
@@ -629,7 +629,7 @@ $_lang['mycomponent.welcome_message'] = 'Welcome!';
 ```
 
 - Always prefix class names; eg: 'finBank', 'finTransaction', etc.
-- Always prefix [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'
+- Always prefix [Chunk](building-sites/elements/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'
 
 ## SQL
 

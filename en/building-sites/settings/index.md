@@ -276,7 +276,7 @@ $_lang['setting_mykey_desc'] = 'Description of my key';
 44. [default\_template](administering-your-site/settings/system-settings/default_template)
 45. [editor\_css\_path](administering-your-site/settings/system-settings/editor_css_path)
 46. [editor\_css\_selectors](administering-your-site/settings/system-settings/editor_css_selectors)
-47. [emailsender](administering-your-site/settings/system-settings/emailsender)
+47. [emailsender](building-sites/settings/emailsender)
 48. [emailsubject](administering-your-site/settings/system-settings/emailsubject)
 49. [enable\_dragdrop](administering-your-site/settings/system-settings/enable_dragdrop)
 50. [error\_page](administering-your-site/settings/system-settings/error_page)

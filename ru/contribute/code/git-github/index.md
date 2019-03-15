@@ -45,14 +45,14 @@ _Заметка: Убедитесь, что ваша работа и ваши к
 
 ## Руководство для участников сообщества 
 
-С этими основами в рабочем процессе ваш следующий шаг - прочитать [Руководство для участников сообщества](/community/contribute/using-git-and-github/community-contributors-guide "Community Contributor's Guide") чтобы понять модель ветвления, которую использует MODX, и для получени более подробной информации о ее применении на практике.
+С этими основами в рабочем процессе ваш следующий шаг - прочитать [Руководство для участников сообщества](/contribute/code/contributors-guide "Community Contributor's Guide") чтобы понять модель ветвления, которую использует MODX, и для получени более подробной информации о ее применении на практике.
 
 ## Больше 
 
-1. [Руководство для участников сообщества](/community/contribute/using-git-and-github/community-contributors-guide)
-2. [Git FAC (часто используемые команды)](/community/contribute/using-git-and-github/git-fac-(frequently-accessed-commands))
-3. [Руководство участника xPDO GitHub](/community/contribute/using-git-and-github/xpdo-github-contributors-guide)
+1. [Руководство для участников сообщества](/contribute/code/contributors-guide)
+2. [Git FAC (часто используемые команды)](contribute/code/git-github/frequent-commands)
+3. [Руководство участника xPDO GitHub](/contribute/code/xpdo)
 
 ## **Связанные**
 
-- [Установка Revolution из вашего репозитория Git](getting-started/installation/git-installation "Git Installation")
+- [Установка Revolution из вашего репозитория Git](getting-started/installation/git "Git Installation")

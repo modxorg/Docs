@@ -12,7 +12,7 @@ Media Sources are a feature in MODX Revolution, where one can specify the "sourc
 
 ![](/download/attachments/35586532/sources-tree2.png?version=1&modificationDate=1325619244000)
 
-A source can be many types - from the file system itself, to an Amazon S3 bucket, to a Flickr album. MODX provides two source types with the core installation: the file system and Amazon S3 bucket integration. Other sources can be made by creating Media Source Drivers, or by downloading them from [Package Management](developing-in-modx/advanced-development/package-management "Package Management").
+A source can be many types - from the file system itself, to an Amazon S3 bucket, to a Flickr album. MODX provides two source types with the core installation: the file system and Amazon S3 bucket integration. Other sources can be made by creating Media Source Drivers, or by downloading them from [Package Management](extending-modx/transport-packages "Package Management").
 
 ## Using Media Sources
 

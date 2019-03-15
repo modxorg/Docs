@@ -14,8 +14,8 @@ _old_uri: "dashboard.action"
 
  This documentation site is a thorough Reference for all things MODX, but there are also Guides and Tutorials to help you get started quickly and easily. Highlights include:
 
-- The [Video Quick-Start Series](getting-started/video-quick-start-series/) of tutorials
-- A guide on [Making Sites with MODX](making-sites-with-modx/)
+- The [Video Quick-Start Series](building-sites/integrating-templates/video-quick-start) of tutorials
+- A guide on [Making Sites with MODX](building-sites)
 - The [Creating a Blog in MODX](case-studies-and-tutorials/creating-a-blog-in-modx-revolution) tutorial
 
  If you have a question about this documentation site, or suggestions on how to increase the awesomeness herein, please [let us know](mailto:support@modx.com). From the MODX core team, and the MODX community-at-large, "Welcome!"
@@ -26,10 +26,9 @@ _old_uri: "dashboard.action"
   
 ### Quick Links
   
-  - [Documentation Homepage]()
-  - [Video Quick-Start Series](getting-started/video-quick-start-series/)
+  - [Video Quick-Start Series](building-sites/integrating-templates/video-quick-start)
   - [Installation Guide](getting-started/installation)
-  - [Making Sites with MODX](making-sites-with-modx/)
+  - [Making Sites with MODX](building-sites)
   
 ### Other Resources
   
@@ -82,10 +81,8 @@ _old_uri: "dashboard.action"
   
 ### Quick Links
   
-  - [xPDO 2.x Documentation Homepage](xpdo/)
-  - [Getting Started](xpdo/getting-started) with xPDO 2.x
-  - [Advanced Features](xpdo/advanced-features) of xPDO 2.x
-  - [Class Reference](xpdo/class-reference) for xPDO 2.x
+  - [xPDO 2.x Documentation Homepage](extending-modx/xpdo)
+  - [Getting Started](getting-started) with xPDO 2.x
   
 ### Other Resources
   
@@ -97,7 +94,7 @@ _old_uri: "dashboard.action"
   
   Love MODX? Learn how to get involved in the Community and contribute to the open source project.
   
-  - [Documentation](community/)
-  - [Filing and Discussing Issues](community/contribute/filing-and-discussing-issues)
-  - [Becoming a Contributor](community/contribute/becoming-a-contributor)
-  - [Documentation Style Guide](/style-guide)
+  - [Documentation](contribute/)
+  - [Filing and Discussing Issues](contribute/issues)
+  - [Becoming a Contributor](contribute/code)
+  - [Documentation Style Guide](contribute/documentation/style-guide)

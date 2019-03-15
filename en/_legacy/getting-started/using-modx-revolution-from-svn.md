@@ -4,7 +4,7 @@ _old_id: "332"
 _old_uri: "2.x/getting-started/installation/using-modx-revolution-from-svn"
 ---
 
-Note: The MODx repository has moved to GitHub as of MODx 2.1, so the information on this page is no longer correct. See the following links for more information: - [Git Installation](getting-started/installation/git-installation "Git Installation")
+Note: The MODx repository has moved to GitHub as of MODx 2.1, so the information on this page is no longer correct. See the following links for more information: - [Git Installation](getting-started/installation/git "Git Installation")
 - [Using Git with MODx](http://rtfm.modx.com/display/community/Using+GitHub)
 - [MODx Revolution repository at GitHub](https://github.com/modxcms/revolution)
 - [MODx Evolution repository at GitHub](https://github.com/modxcms/evolution)

@@ -10,7 +10,7 @@ Much has changed from MODx Evolution in the new Revolution release. This documen
 
 ### Tag Syntax
 
-Tags have changed their basic syntax. You can view the [Tag Syntax changes here](making-sites-with-modx/tag-syntax "Tag Syntax").
+Tags have changed their basic syntax. You can view the [Tag Syntax changes here](building-sites/tag-syntax "Tag Syntax").
 
 ### Parsing Order
 

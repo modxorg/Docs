@@ -10,4 +10,4 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/auto_check_pkg_u
 **Type**: Number 
 **Default**: 15
 
-The number of minutes that [Package Management](developing-in-modx/advanced-development/package-management "Package Management") will cache the results when checking for package updates.
+The number of minutes that [Package Management](extending-modx/transport-packages "Package Management") will cache the results when checking for package updates.

@@ -134,7 +134,7 @@ A cow says "[[+cow]]" and a pig says "[[+pig]]".
 
  **Variable Names:** Whatever your coding style, be consistent. If you want to use camelCase variable names, then make sure all your variables use that style.
 
- **Indents:** Use the same indenting style throughout. See the MODX [Code Standards](developing-in-modx/code-standards) for some great recommendations on how to structure your code.
+ **Indents:** Use the same indenting style throughout. See the MODX [Code Standards](_legacy/developing-in-modx/code-standards) for some great recommendations on how to structure your code.
 
 ##  Log Errors and Info 
 

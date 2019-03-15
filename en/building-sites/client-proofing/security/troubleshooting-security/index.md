@@ -8,4 +8,4 @@ _old_uri: "2.x/administering-your-site/security/troubleshooting-security"
 
 Here you will find topics discussing resolutions to common security problems you may encounter when working with MODX.
 
-1. [Resetting a User Password Manually](administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually)
+1. [Resetting a User Password Manually](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)

@@ -25,9 +25,9 @@ This policy is packaged into MODx and is given to users on the 'mgr' context who
 | database                    | The System Info page                                                                                                                                     |
 | database\_truncate          | The ability to truncate a database table.                                                                                                                |
 | delete\_category            | To delete or remove any Categories.                                                                                                                      |
-| delete\_chunk               | To delete or remove any [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks").                                                          |
+| delete\_chunk               | To delete or remove any [Chunks](building-sites/elements/chunks "Chunks").                                                                               |
 | delete\_context             | To delete or remove any [Contexts](administering-your-site/contexts "Contexts").                                                                         |
-| delete\_document            | To delete or remove any [Resources](making-sites-with-modx/structuring-your-site/resources "Resources").                                                 |
+| delete\_document            | To delete or remove any [Resources](building-sites/resources "Resources").                                                                               |
 | delete\_eventlog            | To empty the Event Log.                                                                                                                                  |
 | delete\_plugin              | To delete or remove any [Plugins](developing-in-modx/basic-development/plugins "Plugins").                                                               |
 | delete\_snippet             | To delete or remove any [Snippets](developing-in-modx/basic-development/snippets "Snippets").                                                            |
@@ -36,9 +36,9 @@ This policy is packaged into MODx and is given to users on the 'mgr' context who
 | delete\_role                | To delete or remove any [Roles](administering-your-site/security/roles "Roles").                                                                         |
 | delete\_user                | To delete or remove any [Users](administering-your-site/security/users "Users").                                                                         |
 | edit\_category              | To edit any Categories.                                                                                                                                  |
-| edit\_chunk                 | To edit any [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks").                                                                      |
+| edit\_chunk                 | To edit any [Chunks](building-sites/elements/chunks "Chunks").                                                                                           |
 | edit\_context               | To edit any [Contexts](administering-your-site/contexts "Contexts").                                                                                     |
-| edit\_document              | To edit any [Resources](making-sites-with-modx/structuring-your-site/resources "Resources").                                                             |
+| edit\_document              | To edit any [Resources](building-sites/resources "Resources").                                                                                           |
 | edit\_locked                | Allows a user to override a lock and edit a locked Resource.                                                                                             |
 | edit\_parser                |
 | edit\_plugin                | To edit any [Plugins](developing-in-modx/basic-development/plugins "Plugins").                                                                           |
@@ -67,16 +67,16 @@ This policy is packaged into MODx and is given to users on the 'mgr' context who
 | messages                    | To send or view any personal Messages.                                                                                                                   |
 | namespaces                  | To edit or view [Namespaces](developing-in-modx/advanced-development/namespaces "Namespaces").                                                           |
 | new\_category               | To create a new Category.                                                                                                                                |
-| new\_chunk                  | To create a new [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks").                                                                   |
+| new\_chunk                  | To create a new [Chunk](building-sites/elements/chunks "Chunks").                                                                                        |
 | new\_context                | To create a new [Context](administering-your-site/contexts "Contexts").                                                                                  |
-| new\_document               | To create a new [Resources](making-sites-with-modx/structuring-your-site/resources "Resources").                                                         |
+| new\_document               | To create a new [Resources](building-sites/resources "Resources").                                                                                       |
 | new\_plugin                 | To create a new [Plugin](developing-in-modx/basic-development/plugins "Plugins").                                                                        |
 | new\_role                   | To create a new [Role](administering-your-site/security/roles "Roles").                                                                                  |
 | new\_snippet                | To create a new [Snippet](developing-in-modx/basic-development/snippets "Snippets").                                                                     |
 | new\_template               | To create a new [Template](making-sites-with-modx/structuring-your-site/templates "Templates").                                                          |
 | new\_tv                     | To create a new [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables").                                 |
 | new\_user                   | To create a new [User](administering-your-site/security/users "Users").                                                                                  |
-| packages                    | To use any Transport Packages in the [Package Management](developing-in-modx/advanced-development/package-management "Package Management") system.       |
+| packages                    | To use any Transport Packages in the [Package Management](extending-modx/transport-packages "Package Management") system.                                |
 | property\_sets              | To view and edit [Properties and Property Sets](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets"). |
 | providers                   | To view and edit [Providers](developing-in-modx/advanced-development/package-management/providers "Providers") across the site.                          |
 | publish\_document           | To publish or unpublish any Resource.                                                                                                                    |
@@ -86,9 +86,9 @@ This policy is packaged into MODx and is given to users on the 'mgr' context who
 | resource\_tree              | To view the Resource Tree in the left nav.                                                                                                               |
 | save                        | Basic save permission for any object.                                                                                                                    |
 | save\_category              | To save any Categories.                                                                                                                                  |
-| save\_chunk                 | To save any [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks").                                                                      |
+| save\_chunk                 | To save any [Chunks](building-sites/elements/chunks "Chunks").                                                                                           |
 | save\_context               | To save any [Contexts](administering-your-site/contexts "Contexts").                                                                                     |
-| save\_document              | To save any [Resources](making-sites-with-modx/structuring-your-site/resources "Resources").                                                             |
+| save\_document              | To save any [Resources](building-sites/resources "Resources").                                                                                           |
 | save\_plugin                | To save any [Plugins](developing-in-modx/basic-development/plugins "Plugins").                                                                           |
 | save\_role                  | To save any [Roles](administering-your-site/security/roles "Roles").                                                                                     |
 | save\_snippet               | To save any [Snippets](developing-in-modx/basic-development/snippets "Snippets").                                                                        |
@@ -101,9 +101,9 @@ This policy is packaged into MODx and is given to users on the 'mgr' context who
 | unlock\_element\_properties | To be able to edit the default properties for any Element.                                                                                               |
 | view                        | Basic permission to "view" any object.                                                                                                                   |
 | view\_category              | To view any Categories.                                                                                                                                  |
-| view\_chunk                 | To view any [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks").                                                                      |
+| view\_chunk                 | To view any [Chunks](building-sites/elements/chunks "Chunks").                                                                                           |
 | view\_context               | To view any [Contexts](administering-your-site/contexts "Contexts").                                                                                     |
-| view\_document              | To view any [Resources](making-sites-with-modx/structuring-your-site/resources "Resources").                                                             |
+| view\_document              | To view any [Resources](building-sites/resources "Resources").                                                                                           |
 | view\_eventlog              | To view the Event Log.                                                                                                                                   |
 | view\_offline               |
 | view\_plugin                | To view any [Plugins](developing-in-modx/basic-development/plugins "Plugins").                                                                           |
@@ -111,9 +111,9 @@ This policy is packaged into MODx and is given to users on the 'mgr' context who
 | view\_snippet               | To view any [Snippets](developing-in-modx/basic-development/snippets "Snippets").                                                                        |
 | view\_template              | To view any [Templates](making-sites-with-modx/structuring-your-site/templates "Templates").                                                             |
 | view\_tv                    | To view any [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables").                                    |
-| view\_unpublished           | To view any unpublished [Resources](making-sites-with-modx/structuring-your-site/resources "Resources").                                                 |
+| view\_unpublished           | To view any unpublished [Resources](building-sites/resources "Resources").                                                                               |
 | view\_user                  | To view any [User](administering-your-site/security/users "Users").                                                                                      |
-| workspaces                  | To utilize [Package Management](developing-in-modx/advanced-development/package-management "Package Management").                                        |
+| workspaces                  | To utilize [Package Management](extending-modx/transport-packages "Package Management").                                                                 |
 
 ## Custom Permissions
 

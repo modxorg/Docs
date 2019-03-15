@@ -114,7 +114,7 @@ Resolvers are useful for 'cleaning up' after a Vehicle is installed, or setting 
 
 ## Usage
 
-Transport Packages can be managed in the [Package Management](developing-in-modx/advanced-development/package-management "Package Management") section of the Revolution manager. They can be added to the Revolution instance by either:
+Transport Packages can be managed in the [Package Management](extending-modx/transport-packages "Package Management") section of the Revolution manager. They can be added to the Revolution instance by either:
 
 1. Uploading the file manually to core/packages/, and then clicking "Add New Package" and selecting the "Search Locally for Packages" option
 2. Downloading the package from a [Transport Provider](developing-in-modx/advanced-development/package-management/providers "Providers"). This allows updates to be remotely downloaded for a package as well.
@@ -125,6 +125,6 @@ Once installed, the user can uninstall the package at any time. Also, if the pac
 
 ## Related Pages
 
-- [Package Management](developing-in-modx/advanced-development/package-management "Package Management")
+- [Package Management](extending-modx/transport-packages "Package Management")
 - [Providers](developing-in-modx/advanced-development/package-management/providers "Providers")
 - Tutorial: [Creating a 3rd Party Component Build Script](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script "Creating a 3rd Party Component Build Script")

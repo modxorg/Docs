@@ -9,4 +9,4 @@ _old_uri: "2.x/getting-started"
 
 1. [Server Requirements](getting-started/server-requirements)
 2. [Installation](getting-started/installation)
-3. [An Overview of MODX](getting-started/an-overview-of-modx)
+3. [An Overview of MODX](getting-started/what-is-modx)

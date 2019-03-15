@@ -17,7 +17,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/properties-and-propert
 
 ## What are Properties?
 
-Properties are simply values that can be configured for any Element via [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax"). An example of a Property is the token 'debug' in this Snippet call:
+Properties are simply values that can be configured for any Element via [Tag Syntax](building-sites/tag-syntax "Tag Syntax"). An example of a Property is the token 'debug' in this Snippet call:
 
 ``` php 
 [[Quip? &debug=`1`]]

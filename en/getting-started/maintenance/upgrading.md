@@ -18,7 +18,7 @@ _old_uri: "2.x/administering-your-site/upgrading-modx"
 
 ## Upgrading MODX Revolution 2.x
 
- This document assumes you are upgrading from a standard install. For Git users, please see [Git Installation](getting-started/installation/git-installation "Git Installation").
+ This document assumes you are upgrading from a standard install. For Git users, please see [Git Installation](getting-started/installation/git "Git Installation").
 
  **The latest MODX Revolution release can be downloaded at** **<http://modx.com/download/>**
 
@@ -64,7 +64,7 @@ _old_uri: "2.x/administering-your-site/upgrading-modx"
 
  If you are upgrading using the **Advanced** distribution, make sure you have the "Core Package has been manually unpacked" and "Files in-place" checkboxes unchecked, and that the core/, manager/ and connectors/ directories are writable.
 
- If you get errors during setup, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting-installation "Troubleshooting Installation") and the [Troubleshooting Upgrades](administering-your-site/upgrading-modx/troubleshooting-upgrades "Troubleshooting Upgrades") pages. 
+ If you get errors during setup, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation") and the [Troubleshooting Upgrades](getting-started/maintenance/upgrading/troubleshooting "Troubleshooting Upgrades") pages. 
 
 ## After Setup
 
@@ -107,7 +107,7 @@ cp -fr modx-2.2.0-pl/* /www/public_html/modx
 
 ### Related Articles
 
-1. [Troubleshooting Upgrades](administering-your-site/upgrading-modx/troubleshooting-upgrades)
+1. [Troubleshooting Upgrades](getting-started/maintenance/upgrading/troubleshooting)
 2. [Upgrading to 2.2.x](administering-your-site/upgrading-modx/upgrading-to-2.2.x)
 3. [Upgrading from 2.0.x to 2.1.x](administering-your-site/upgrading-modx/upgrading-from-2.0.x-to-2.1.x)
 4. [Upgrading from Versions Earlier than 2.0.5](administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5)

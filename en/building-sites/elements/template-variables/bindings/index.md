@@ -10,8 +10,8 @@ In the context to Template Variables, a Data Source is the location of the infor
 
 - an externally generated file that is sent via FTP to the server
 - a Database table accessible to MODx
-- a [Resources](making-sites-with-modx/structuring-your-site/resources "Resources") in the resource tree
-- a [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") in the Elements tree
+- a [Resources](building-sites/resources "Resources") in the resource tree
+- a [Chunk](building-sites/elements/chunks "Chunks") in the Elements tree
 - the result of an evaluated PHP script
 
 These Data Sources can be tied (or "bound") to a Template Variable for formatting and displaying in document. In addition, the bound data in the TVs can be almost effortlessly formatted via the Display Controls within the TV system for some truly stunning results. The format for using the types of data source bindings available to all template variables follows:

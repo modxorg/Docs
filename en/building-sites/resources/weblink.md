@@ -24,7 +24,7 @@ Originally a menu snippet would make the link to the Weblink itself, just as to 
 
 1. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
 2. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)
-3. [Static Resource](making-sites-with-modx/structuring-your-site/resources/static-resource)
-4. [Symlink](making-sites-with-modx/structuring-your-site/resources/symlink)
+3. [Static Resource](building-sites/resources/static-rsource)
+4. [Symlink](building-sites/resources/symlink)
 5. [Using Resource Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink/using-resource-symlinks)
-6. [Weblink](making-sites-with-modx/structuring-your-site/resources/weblink)
+6. [Weblink](building-sites/resources/weblink)

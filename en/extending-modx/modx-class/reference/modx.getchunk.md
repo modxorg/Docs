@@ -136,5 +136,5 @@ $output = $chunk->process($props, $tpl);
 
 ## See Also
 
-- [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks")
+- [Chunks](building-sites/elements/chunks "Chunks")
 - [modX.parseChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.parsechunk "modX.parseChunk")
