@@ -207,7 +207,7 @@ If you're writing new versions of Snippets, _duplicate_ the old version! That wa
 
 ### Use Default Properties 
 
-Consider adding default properties for your snippet into the snippet's Properties tab, so that the user can add custom [Property Sets](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets") to override them.
+Consider adding default properties for your snippet into the snippet's Properties tab, so that the user can add custom [Property Sets](building-sites/properties-and-property-sets "Properties and Property Sets") to override them.
 
 ## See Also 
 

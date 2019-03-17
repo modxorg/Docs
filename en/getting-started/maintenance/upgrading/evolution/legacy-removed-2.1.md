@@ -51,7 +51,7 @@ $_SESSION["webShortname"]
 ``` | modX->user->get('username') when modX->user->isAuthenticated('web') |
 |  |
 | DBAPI: modX->db |
-| modX->db->config | [modX->getOption()](xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") |
+| modX->db->config | [modX->getOption()](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") |
 | modX->db->connect() | modX automatically connects to MODX database. If you're looking to set up another connection, you could instantiate xPDO again. |
 | modX->db->disconnect() |
 | modX->db->escape($s) | modX->quote() |

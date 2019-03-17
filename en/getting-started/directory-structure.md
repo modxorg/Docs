@@ -47,7 +47,7 @@ The root directory of MODX is split into several subdirectories, each with its o
 
 Connectors are essentially entry points for AJAX requests in MODX. They don't do any database manipulation on their own; they simply load up the main MODX class, sanitize any request data, and then handle the request by pointing to the appropriate Processor file.
 
-For example, when we create a resource, we request connectors/resource/index.php?action=create. The index.php file will include the base connector file (connectors/index.php) which instantiates the main MODX object, handle any custom [Context](administering-your-site/contexts "Contexts") switching, and sanitize the GET or POST request. The connectors/resource/index.php will then "handle" the request and call the correct Processor file, which we will discuss later.
+For example, when we create a resource, we request connectors/resource/index.php?action=create. The index.php file will include the base connector file (connectors/index.php) which instantiates the main MODX object, handle any custom [Context](building-sites/contexts "Contexts") switching, and sanitize the GET or POST request. The connectors/resource/index.php will then "handle" the request and call the correct Processor file, which we will discuss later.
 
 ### Notable Files
 
@@ -123,7 +123,7 @@ To load a lexicon, one would use a format such as this:
 
 \# **lang**- the 2-digit IANA code. This is optional, and defaults to 'en'.
 
-1. **namespace**- Each lexicon has its own [Namespace](developing-in-modx/advanced-development/namespaces "Namespaces"). The built-in namespace for MODX is "core". Package creators will also be able to create a custom namespace, and Manager users can also create their own namespaces as well.
+1. **namespace**- Each lexicon has its own [Namespace](extending-modx/namespaces "Namespaces"). The built-in namespace for MODX is "core". Package creators will also be able to create a custom namespace, and Manager users can also create their own namespaces as well.
 2. **topic**- The specific topic/file you want to load.
 
 ### core/model/

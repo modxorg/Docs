@@ -27,7 +27,7 @@ The package will be downloaded to the proper directories in your MODx installati
 
 ![](/download/attachments/23c66e1935073aec60f9d9ea342a5b6b/modx-package-management-4.jpg)
 
-[Providers](developing-in-modx/advanced-development/package-management/providers "Providers")
+[Providers](building-sites/extras/providers "Providers")
 
 You can select the location from which to download packages, add a new location, or select packages on your local machine. Use the Add New Package link, to the left of the Download Extras link. By default, the modxcms.com/extras repository is available as a remote provider.
 

@@ -111,8 +111,8 @@ Done! Your Editors will now be able to see and edit TVs for the Template in the 
 
 ## See Also
 
-1. [Giving a User Manager Access](administering-your-site/security/security-tutorials/giving-a-user-manager-access)
-2. [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages)
-3. [Creating a Second Super Admin User](administering-your-site/security/security-tutorials/creating-a-second-super-admin-user)
-4. [Restricting an Element from Users](administering-your-site/security/security-tutorials/restricting-an-element-from-users)
-5. [More on the Anonymous User Group](administering-your-site/security/security-tutorials/more-on-the-anonymous-user-group)
+1. [Giving a User Manager Access](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)
+2. [Making Member-Only Pages](building-sites/client-proofing/security/security-tutorials/making-member-only-pages)
+3. [Creating a Second Super Admin User](building-sites/client-proofing/security/security-tutorials/creating-a-second-super-admin-user)
+4. [Restricting an Element from Users](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
+5. [More on the Anonymous User Group](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)

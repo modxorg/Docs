@@ -12,7 +12,7 @@ _old_uri: "2.x/administering-your-site/security/users"
 
  A User is simply a representation of a login in MODx Revolution.
 
- Users can also be assigned to User Groups, which can have [ACLs](administering-your-site/security/policies/acls "ACLs") attached to them to provide Access Controls.
+ Users can also be assigned to User Groups, which can have [ACLs](building-sites/client-proofing/security/policies/acls "ACLs") attached to them to provide Access Controls.
 
 ##  User Settings 
 
@@ -26,7 +26,7 @@ _old_uri: "2.x/administering-your-site/security/users"
 
 ##  Users in the Front-End 
 
- When a user is logged into the frontend of your site, their username and ID can be accessed by the following [Properties](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets"):
+ When a user is logged into the frontend of your site, their username and ID can be accessed by the following [Properties](building-sites/properties-and-property-sets "Properties and Property Sets"):
 
  ``` php 
 [[+modx.user.id]] - Prints the ID
@@ -38,7 +38,7 @@ _old_uri: "2.x/administering-your-site/security/users"
  As of MODX 2.4.0, the default Username can be set in the Systems Settings with the **default\_username** setting. 
 
  **Remember** 
- Keep in mind that confusing caveat: just because you have logged into the _manager_ does not mean that you are logged into the _web_ front-end. The user-specific settings and the [getOption](xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") API method obeys this same rule, so if you're not logged in, then the **System Settings -> Context Settings -> User Settings** cannot fully apply. 
+ Keep in mind that confusing caveat: just because you have logged into the _manager_ does not mean that you are logged into the _web_ front-end. The user-specific settings and the [getOption](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") API method obeys this same rule, so if you're not logged in, then the **System Settings -> Context Settings -> User Settings** cannot fully apply. 
 
 ##  User Fields 
 
@@ -117,25 +117,25 @@ $profile->save();
 
 ##  See Also 
 
-1. [Users](administering-your-site/security/users)
-2. [User Groups](administering-your-site/security/user-groups)
-3. [Resource Groups](administering-your-site/security/resource-groups)
-4. [Roles](administering-your-site/security/roles)
-5. [Policies](administering-your-site/security/policies)
-  1. [Permissions](administering-your-site/security/policies/permissions)
-      1. [Permissions - Administrator Policy](administering-your-site/security/policies/permissions/permissions-administrator-policy)
-      2. [Permissions - Resource Policy](administering-your-site/security/policies/permissions/permissions-resource-policy)
-  2. [ACLs](administering-your-site/security/policies/acls)
-  3. [PolicyTemplates](administering-your-site/security/policies/policytemplates)
-6. [Security Tutorials](administering-your-site/security/security-tutorials)
-  1. [Giving a User Manager Access](administering-your-site/security/security-tutorials/giving-a-user-manager-access)
-  2. [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages)
-  3. [Creating a Second Super Admin User](administering-your-site/security/security-tutorials/creating-a-second-super-admin-user)
-  4. [Restricting an Element from Users](administering-your-site/security/security-tutorials/restricting-an-element-from-users)
-  5. [More on the Anonymous User Group](administering-your-site/security/security-tutorials/more-on-the-anonymous-user-group)
-7. [Hardening MODX Revolution](administering-your-site/security/hardening-modx-revolution)
+1. [Users](building-sites/client-proofing/security/users)
+2. [User Groups](building-sites/client-proofing/security/user-groups)
+3. [Resource Groups](building-sites/client-proofing/security/resource-groups)
+4. [Roles](building-sites/client-proofing/security/roles)
+5. [Policies](building-sites/client-proofing/security/policies)
+  1. [Permissions](building-sites/client-proofing/security/policies/permissions)
+      1. [Permissions - Administrator Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy)
+      2. [Permissions - Resource Policy](building-sites/client-proofing/security/policies/permissions/resource-policy)
+  2. [ACLs](building-sites/client-proofing/security/policies/acls)
+  3. [PolicyTemplates](building-sites/client-proofing/security/policies/policytemplates)
+6. [Security Tutorials](building-sites/client-proofing/security/security-tutorials)
+  1. [Giving a User Manager Access](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)
+  2. [Making Member-Only Pages](building-sites/client-proofing/security/security-tutorials/making-member-only-pages)
+  3. [Creating a Second Super Admin User](building-sites/client-proofing/security/security-tutorials/creating-a-second-super-admin-user)
+  4. [Restricting an Element from Users](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
+  5. [More on the Anonymous User Group](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)
+7. [Hardening MODX Revolution](getting-started/maintenance/securing-modx)
 8. [Security Standards](administering-your-site/security/security-standards)
 9. [Troubleshooting Security](building-sites/client-proofing/security/troubleshooting-security)
   1. [Resetting a User Password Manually](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)
 
- [Extending modUser](developing-in-modx/advanced-development/extending-moduser "Extending modUser")
+ [Extending modUser](extending-modx/custom-users "Extending modUser")

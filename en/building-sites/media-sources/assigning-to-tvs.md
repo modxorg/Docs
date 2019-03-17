@@ -17,7 +17,7 @@ Only "image" and "file" type TVs use Sources at this time.
 
 ## Creating the TV
 
-First we will start by creating a TV that we will attach a media source to. Go ahead and create a TV called "TestSourceTV", and save it. Notice then you'll see a new tab on your TV, a "Media Sources" tab. This will have a grid of [Contexts](administering-your-site/contexts "Contexts") that are available, and the Sources that are associated with those Contexts.
+First we will start by creating a TV that we will attach a media source to. Go ahead and create a TV called "TestSourceTV", and save it. Notice then you'll see a new tab on your TV, a "Media Sources" tab. This will have a grid of [Contexts](building-sites/contexts "Contexts") that are available, and the Sources that are associated with those Contexts.
 
 This means that TVs can use different Sources per Context. This will take effect when editing a TV in a Resource from that Context, as well as when that TV is rendered in that Context.
 

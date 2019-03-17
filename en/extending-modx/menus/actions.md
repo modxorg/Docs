@@ -32,4 +32,4 @@ Any changes to the order of 'core' menu items will be reverted during Revolution
 ## Related Pages
 
 - [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages")
-- [Internationalization](developing-in-modx/advanced-development/internationalization "Internationalization")
+- [Internationalization](extending-modx/internationalization "Internationalization")

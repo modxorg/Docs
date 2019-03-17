@@ -28,5 +28,5 @@ This policy is packaged into MODx and is given to users on any context who want 
 
 ## See Also
 
-1. [Permissions - Administrator Policy](administering-your-site/security/policies/permissions/permissions-administrator-policy)
-2. [Permissions - Resource Policy](administering-your-site/security/policies/permissions/permissions-resource-policy)
+1. [Permissions - Administrator Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy)
+2. [Permissions - Resource Policy](building-sites/client-proofing/security/policies/permissions/resource-policy)

@@ -39,7 +39,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
  | Name             | Description                                                                                                                                                       |
  | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
  | id               | The ID of the Resource.                                                                                                                                           |
- | template         | A reference to the [Template](making-sites-with-modx/structuring-your-site/templates "Templates") that this Resource is using                                     |
+ | template         | A reference to the [Template](building-sites/elements/templates "Templates") that this Resource is using                                                          |
  | published        | If the Resource is Published, or viewable on the front-end.                                                                                                       |
  | pagetitle        | The title of the Resource.                                                                                                                                        |
  | longtitle        | A longer title of the Resource.                                                                                                                                   |
@@ -73,7 +73,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
 ### Using Resource Fields
 
- Resource fields can be accessed from anywhere by using the [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") syntax, ie:
+ Resource fields can be accessed from anywhere by using the [Template Variable](building-sites/elements/template-variables "Template Variables") syntax, ie:
 
  ``` php 
 [[*pagetitle]] // renders the pagetitle.
@@ -82,7 +82,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
 ```
 
- They can also have [Output Filters](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") applied to them:
+ They can also have [Output Filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") applied to them:
 
  ``` php 
 // Renders a limited version of the introtext field.
@@ -97,7 +97,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
 ### Accessing Resource Fields in a Snippet
 
- Grabbing the Resource Fields in a [Snippet](developing-in-modx/basic-development/snippets "Snippets") is quite easy; MODx provides you with the Resource object in any Snippet, via the $modx->resource reference. For example, this example Snippet will return the current page's pagetitle reversed:
+ Grabbing the Resource Fields in a [Snippet](extending-modx/snippets "Snippets") is quite easy; MODx provides you with the Resource object in any Snippet, via the $modx->resource reference. For example, this example Snippet will return the current page's pagetitle reversed:
 
  ``` php 
 /* output the current Resource's pagetitle */

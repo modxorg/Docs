@@ -16,7 +16,7 @@ Those installing new installs of MODX 2.2.0-pl will need to add the string "sour
 
 ## Locking Down our Source to Admins
 
-Media Sources use the common ACLs that the [MODX Security System](administering-your-site/security "Security") uses. You can attach policies to them via User Groups, that allow you to restrict basic actions on them, such as saving, loading, and listing.
+Media Sources use the common ACLs that the [MODX Security System](building-sites/client-proofing/security "Security") uses. You can attach policies to them via User Groups, that allow you to restrict basic actions on them, such as saving, loading, and listing.
 
 Go ahead and edit our "My New Source" source that we created in the [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source "Adding a Media Source") article. From there, click on the "Access Permissions" tab. You'll see an empty grid. Sources that have no User Groups assigned to them are "public" - in the sense that any user can use, edit and see them.
 
@@ -24,7 +24,7 @@ We're going to first lock down our new source so that it can only be seen and ed
 
 ![](/download/attachments/35586541/20110907-jje3b536kann962u778as3gxj5.jpeg?version=1&modificationDate=1315428999000)
 
-Fill it out as shown above, noting that there are two available [Access Policies](administering-your-site/security/policies "Policies"). The "Media Source Admin" policy is what we want - it allows full access to the media source, including viewing, editing, removing and listing. The other - Media Source User - only allows viewing and listing of the source (basically a read-only policy). Since we're assigning this to our Administrator group, we want them to have full access.
+Fill it out as shown above, noting that there are two available [Access Policies](building-sites/client-proofing/security/policies "Policies"). The "Media Source Admin" policy is what we want - it allows full access to the media source, including viewing, editing, removing and listing. The other - Media Source User - only allows viewing and listing of the source (basically a read-only policy). Since we're assigning this to our Administrator group, we want them to have full access.
 
 Save your Source. Flush Sessions (Security -> Flush Sessions) and then re-login to the manager. This will make it viewable now to only Administrators.
 

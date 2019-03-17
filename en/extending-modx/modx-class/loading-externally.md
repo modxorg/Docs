@@ -16,7 +16,7 @@ $modx->initialize('web');
 $modx->getService('error','error.modError', '', '');
 ```
 
- This will initialize the MODx object into the 'web' [Context](administering-your-site/contexts "Contexts"). Now, if you want to access it under a different context (and thereby changing its access permissions, policies, etc), you'll just need to change 'web' to whatever [Context](administering-your-site/contexts "Contexts") you want to load. This also loads the MODX error handler as well.
+ This will initialize the MODx object into the 'web' [Context](building-sites/contexts "Contexts"). Now, if you want to access it under a different context (and thereby changing its access permissions, policies, etc), you'll just need to change 'web' to whatever [Context](building-sites/contexts "Contexts") you want to load. This also loads the MODX error handler as well.
 
  From there, you can use any MODx methods, functions, or classes.
 

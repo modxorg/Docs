@@ -4,7 +4,7 @@ _old_id: "351"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/creating-a-multi-select-box-for-related-pages-in-your-template"
 ---
 
-This brief tutorial will explain how you can make a client-proof "Related pages" template variable. This specific example will introduce you to several MODX subjects including writing custom [snippets](developing-in-modx/basic-development/snippets "Snippets") and using [custom output modifiers](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)"), however there are many different ways to achieve the same result. This tutorial will hopefully allow you to get a deeper understanding of several of the used concepts and help you further develop highly customizable content editing.
+This brief tutorial will explain how you can make a client-proof "Related pages" template variable. This specific example will introduce you to several MODX subjects including writing custom [snippets](extending-modx/snippets "Snippets") and using [custom output modifiers](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)"), however there are many different ways to achieve the same result. This tutorial will hopefully allow you to get a deeper understanding of several of the used concepts and help you further develop highly customizable content editing.
 
 ## Setting up the Template Variable
 
@@ -14,13 +14,13 @@ In this case we will want to be able of selecting multiple resources, so we're g
 
 Next link the Template Variable to the template that needs it on the "Template Access" tab, for example your blog item template.
 
-To fill the template variable with some values, we will need to write simple snippet\* and run it in the Input Options field. To do this we will be using what is known as an [@BINDING](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings"). Add the following code to the Input Options field:
+To fill the template variable with some values, we will need to write simple snippet\* and run it in the Input Options field. To do this we will be using what is known as an [@BINDING](building-sites/elements/template-variables/bindings "Bindings"). Add the following code to the Input Options field:
 
 ``` php 
  @EVAL return $modx->runSnippet('listMyResources',array('parent' => 9));
 ```
 
-This makes use of the [@EVAL binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding "EVAL Binding") to wrap the rest of the input in an eval() PHP statement. This can be used to execute PHP, and therefore access the very powerful $modx object. We are then using that to use the runSnippet method which, well, runs a snippet, while passing the array in the second parameter as properties. In this case we are telling it that "parent" is equal to 9. The result of this snippet will then be returned - not echoed. This is needed to make sure it can be parsed and will not be placed on the page randomly.
+This makes use of the [@EVAL binding](building-sites/elements/template-variables/bindings/eval-binding "EVAL Binding") to wrap the rest of the input in an eval() PHP statement. This can be used to execute PHP, and therefore access the very powerful $modx object. We are then using that to use the runSnippet method which, well, runs a snippet, while passing the array in the second parameter as properties. In this case we are telling it that "parent" is equal to 9. The result of this snippet will then be returned - not echoed. This is needed to make sure it can be parsed and will not be placed on the page randomly.
 
 You probably don't have a snippet called listMyResources yet, so let's create it.
 
@@ -113,7 +113,7 @@ $tpl = $modx->getOption('tpl',$scriptProperties,'relatedPagesTpl');
 if ($modx->getChunk($tpl) == '') { return 'We found some related pages, but don\'t know how to present it.'; }
 ```
 
-What you see here is first checking if the $input variable (derived from the &input property) is empty and return an error message if so. The reason we're using this directly and not in the way as shown with the $tpl variable (using modX::getOption) is because we could also use the snippet as an output filter, and when we do that we can assume the $input variable is set. [More about output filters here](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)"). On the second line we are first assigning a value to $tpl, which is either the "tpl" property passed in the snippet call, or the default of 'relatedPagesTpl'. On the third line we fetch the chunk by its name using modX::getChunk, and if that is empty (so it does not exist, or is empty) we return a nice error message.
+What you see here is first checking if the $input variable (derived from the &input property) is empty and return an error message if so. The reason we're using this directly and not in the way as shown with the $tpl variable (using modX::getOption) is because we could also use the snippet as an output filter, and when we do that we can assume the $input variable is set. [More about output filters here](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)"). On the second line we are first assigning a value to $tpl, which is either the "tpl" property passed in the snippet call, or the default of 'relatedPagesTpl'. On the third line we fetch the chunk by its name using modX::getChunk, and if that is empty (so it does not exist, or is empty) we return a nice error message.
 
 So now that we have the settings, we can start processing. Let's first split up the delimited list of IDs into an array using the explode function. We will also set up an empty array for our output.
 

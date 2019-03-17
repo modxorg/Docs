@@ -33,21 +33,21 @@ _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introdu
 
  Ergo, for 'test', "assets/components/test". This standardization of paths makes it easier for other developers using your components to find your files easily.
 
-## [Snippets](developing-in-modx/basic-development/snippets "Snippets")
+## [Snippets](extending-modx/snippets "Snippets")
 
- Snippets are simply php scripts that can be executed on any page or other Element. They are the cornerstone of MODX Development and dynamic customization. You can read more about Snippets [here](developing-in-modx/basic-development/snippets "Snippets").
+ Snippets are simply php scripts that can be executed on any page or other Element. They are the cornerstone of MODX Development and dynamic customization. You can read more about Snippets [here](extending-modx/snippets "Snippets").
 
-## [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+## [Plugins](extending-modx/plugins "Plugins")
 
- [Plugins](developing-in-modx/basic-development/plugins "Plugins") are similar to snippets in that they are snippets of code that have access to the MODX API - however the big difference is that plugins are associated to specific system events. For example, in an average MODx page request, several events happen at certain points within the page parsing process and plugins can be attached to any of these events to fulfill a desired function. [Plugins](developing-in-modx/basic-development/plugins "Plugins") aren't just limited to front-end processing though, there are many events that are available in the MODX Manager.
+ [Plugins](extending-modx/plugins "Plugins") are similar to snippets in that they are snippets of code that have access to the MODX API - however the big difference is that plugins are associated to specific system events. For example, in an average MODx page request, several events happen at certain points within the page parsing process and plugins can be attached to any of these events to fulfill a desired function. [Plugins](extending-modx/plugins "Plugins") aren't just limited to front-end processing though, there are many events that are available in the MODX Manager.
 
-## [Properties and Property Sets](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets")
+## [Properties and Property Sets](building-sites/properties-and-property-sets "Properties and Property Sets")
 
  Properties are simply placeholders on Elements (Snippets/Plugins/Chunks/TVs/Templates), which can be parsed by each individual Element. They allow customization and argument passing for each Element.
 
  Property Sets are user-defined groupings of Properties that can be used to quickly centralize custom tag syntax calls.
 
- More on Property Sets can be found [here](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets").
+ More on Property Sets can be found [here](building-sites/properties-and-property-sets "Properties and Property Sets").
 
 ## [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages") (CMPs)
 
@@ -65,4 +65,4 @@ $modx->initialize('web');
 $modx->getService('error', 'error.modError');
 ```
 
- This will initialize the MODX object into the 'web' [Context](administering-your-site/contexts "Contexts"). Now, if you want to access it under a different [Context](administering-your-site/contexts "Contexts") (and thereby changing its access permissions, policies, etc), you'll just need to change 'web' to whatever [Context](administering-your-site/contexts "Contexts") you want to load.
+ This will initialize the MODX object into the 'web' [Context](building-sites/contexts "Contexts"). Now, if you want to access it under a different [Context](building-sites/contexts "Contexts") (and thereby changing its access permissions, policies, etc), you'll just need to change 'web' to whatever [Context](building-sites/contexts "Contexts") you want to load.

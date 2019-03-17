@@ -17,7 +17,7 @@ note: 'This document does not describe a full workflow for using static resource
 
  The following is relevant to older versions of MODX. For MODX 2.2.x, as with static resources, simply use [Static Elements](administering-your-site/upgrading-modx/upgrading-to-2.2.x#Upgradingto2.2.x-StaticElements). Static Elements have the further advantage of being able to use [Media Sources](administering-your-site/upgrading-modx/upgrading-to-2.2.x#Upgradingto2.2.x-MediaSources). 
 
- For Elements, all you need is a simple "include" [snippet](developing-in-modx/basic-development/snippets "Snippets"). The code:
+ For Elements, all you need is a simple "include" [snippet](extending-modx/snippets "Snippets"). The code:
 
  ``` php 
 if (!file_exists($file)) return '';
@@ -39,4 +39,4 @@ return $o;
 
 ## Conclusion
 
- This allows you to easily manage content via SVN. It can be achieved with [Templates](making-sites-with-modx/structuring-your-site/templates "Templates") and [TVs](making-sites-with-modx/customizing-content/template-variables "Template Variables") as well; just plop the include snippet wherever you need filesystem-based files.
+ This allows you to easily manage content via SVN. It can be achieved with [Templates](building-sites/elements/templates "Templates") and [TVs](building-sites/elements/template-variables "Template Variables") as well; just plop the include snippet wherever you need filesystem-based files.

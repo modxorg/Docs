@@ -9,7 +9,7 @@ The usage of runProcessor described here only work in Revolution 2.0.8 and later
 
 ## Using runProcessor
 
-MODX has a specific method that allows you to run processors straight from any PHP file, such as a [Plugin](developing-in-modx/basic-development/plugins "Plugins"), [Snippet](developing-in-modx/basic-development/snippets "Snippets") or externally. This can be done with the following syntax:
+MODX has a specific method that allows you to run processors straight from any PHP file, such as a [Plugin](extending-modx/plugins "Plugins"), [Snippet](extending-modx/snippets "Snippets") or externally. This can be done with the following syntax:
 
 > $response = $modx->runProcessor('action/path/to/processor',$arrayOfProperties,$otherOptions);
 

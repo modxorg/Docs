@@ -106,9 +106,9 @@ The modPackageBuilder::createPackage function has 3 parameters:
 _name_, _version_, and _release_. For us, 
 we'll be doing quip-0.1-alpha7, so let's go with that.
 
-Next, we'll register a [Namespace](developing-in-modx/advanced-development/namespaces "Namespaces") to this package. Not all packages need [Namespaces](developing-in-modx/advanced-development/namespaces "Namespaces"); but all 3rd Party Components do. Basically, a Namespace is an organizing tool for MODx so that MODx can know what objects are tied to what package. This is helpful later on should we want to uninstall our package; we'd want it to remove the objects we'd install.
+Next, we'll register a [Namespace](extending-modx/namespaces "Namespaces") to this package. Not all packages need [Namespaces](extending-modx/namespaces "Namespaces"); but all 3rd Party Components do. Basically, a Namespace is an organizing tool for MODx so that MODx can know what objects are tied to what package. This is helpful later on should we want to uninstall our package; we'd want it to remove the objects we'd install.
 
-Plus, should we want to add any [Lexicon Entries](developing-in-modx/advanced-development/internationalization "Internationalization") to this package (which we will), MODx does so by relating it to it's Namespace. Our package builder will assign our Lexicon Entries to the Namespace, so we can easily manage _just_ our Lexicon Entries; not any others.
+Plus, should we want to add any [Lexicon Entries](extending-modx/internationalization "Internationalization") to this package (which we will), MODx does so by relating it to it's Namespace. Our package builder will assign our Lexicon Entries to the Namespace, so we can easily manage _just_ our Lexicon Entries; not any others.
 
 ## Packaging in Objects
 
@@ -585,4 +585,4 @@ Great, we're done! You'll only need to run this script now, and viola! A fully z
 
 - [Package Management](extending-modx/transport-packages "Package Management")
 - [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages")
-- [Transport Providers](developing-in-modx/advanced-development/package-management/providers "Providers")
+- [Transport Providers](building-sites/extras/providers "Providers")

@@ -171,7 +171,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
 ### Creating a Custom Output Modifier
 
- Also, [Snippets](developing-in-modx/basic-development/snippets "Snippets") can be used as custom modifiers. Simply put the [Snippet](developing-in-modx/basic-development/snippets "Snippets") name instead of the modifier. Example with a snippet named 'makeExciting' that appends a variable amount of exclamation marks:
+ Also, [Snippets](extending-modx/snippets "Snippets") can be used as custom modifiers. Simply put the [Snippet](extending-modx/snippets "Snippets") name instead of the modifier. Example with a snippet named 'makeExciting' that appends a variable amount of exclamation marks:
 
  ``` php 
 [[*pagetitle:makeExciting=`4`]]
@@ -215,7 +215,7 @@ return $result;
 [[+mydate:strtotime:date=`%Y-%m-%d`]]
 ```
 
- Directly accessing the modx\_user\_attributes table in the database using output modifiers instead of a [Snippet](developing-in-modx/basic-development/snippets "Snippets") can be accomplished simply by utilizing the userinfo modifier. Select the appropriate column from the table and specify it as the property of the output modifier, like so:
+ Directly accessing the modx\_user\_attributes table in the database using output modifiers instead of a [Snippet](extending-modx/snippets "Snippets") can be accomplished simply by utilizing the userinfo modifier. Select the appropriate column from the table and specify it as the property of the output modifier, like so:
 
  ``` php 
 User Internal Key: [[!+modx.user.id:userinfo=`internalKey`]]<br />
@@ -253,7 +253,7 @@ You will most likely want to call these uncached (see note about caching above) 
 
 ## See Also
 
-- [Properties and Property Sets](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets")
-- [Templates](making-sites-with-modx/structuring-your-site/templates "Templates")
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
-- [Snippets](developing-in-modx/basic-development/snippets "Snippets")
+- [Properties and Property Sets](building-sites/properties-and-property-sets "Properties and Property Sets")
+- [Templates](building-sites/elements/templates "Templates")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")
+- [Snippets](extending-modx/snippets "Snippets")

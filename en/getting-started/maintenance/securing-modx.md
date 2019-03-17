@@ -223,4 +223,4 @@ Test this by trying to navigate to the non-secure url, e.g. <http://yoursite.com
 
 Once you've locked down your site and server, you'll benefit from regular monitoring of it. There are some free services available. The best ones will monitor specific files and report any changes made to them. If your index.php suddenly changed, then that might indicate that somebody maliciously modified it.
 
-Changing the [Manager Templates](administering-your-site/customizing-the-manager/manager-templates-and-themes "Manager Templates and Themes") as per the documentation is a nice way to customize your login page!
+Changing the [Manager Templates](building-sites/client-proofing/custom-manager-themes "Manager Templates and Themes") as per the documentation is a nice way to customize your login page!

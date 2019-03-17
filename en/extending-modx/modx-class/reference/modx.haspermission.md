@@ -38,4 +38,4 @@ if (!$modx->hasPermission($pm)) {
 
 ## See Also
 
-- [Policies](administering-your-site/security/policies "Policies")
+- [Policies](building-sites/client-proofing/security/policies "Policies")

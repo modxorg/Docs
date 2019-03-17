@@ -117,14 +117,14 @@ Resolvers are useful for 'cleaning up' after a Vehicle is installed, or setting 
 Transport Packages can be managed in the [Package Management](extending-modx/transport-packages "Package Management") section of the Revolution manager. They can be added to the Revolution instance by either:
 
 1. Uploading the file manually to core/packages/, and then clicking "Add New Package" and selecting the "Search Locally for Packages" option
-2. Downloading the package from a [Transport Provider](developing-in-modx/advanced-development/package-management/providers "Providers"). This allows updates to be remotely downloaded for a package as well.
+2. Downloading the package from a [Transport Provider](building-sites/extras/providers "Providers"). This allows updates to be remotely downloaded for a package as well.
 
 Once downloaded, they can be installed by right-clicking a package in the grid, and clicking Install. This will prompt the user to accept a License Agreement should the package come with one, and prompting to read the README should the package contain one. Then it will present a form with pre-installation options, which may or may not exist depending on the package. The user can then click 'Install' to install the package.
 
-Once installed, the user can uninstall the package at any time. Also, if the package was downloaded from a [Transport Provider](developing-in-modx/advanced-development/package-management/providers "Providers"), then the user can check for updates for the package.
+Once installed, the user can uninstall the package at any time. Also, if the package was downloaded from a [Transport Provider](building-sites/extras/providers "Providers"), then the user can check for updates for the package.
 
 ## Related Pages
 
 - [Package Management](extending-modx/transport-packages "Package Management")
-- [Providers](developing-in-modx/advanced-development/package-management/providers "Providers")
+- [Providers](building-sites/extras/providers "Providers")
 - Tutorial: [Creating a 3rd Party Component Build Script](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script "Creating a 3rd Party Component Build Script")

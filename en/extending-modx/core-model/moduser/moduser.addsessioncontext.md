@@ -28,4 +28,4 @@ $modx->addSessionContext('sports');
 
 | Page: [modUser](developing-in-modx/other-development-resources/class-reference/moduser) |
 |---------------------------------------------------------------------------------------------------------|
-| Page: [Users](administering-your-site/security/users) |
+| Page: [Users](building-sites/client-proofing/security/users) |

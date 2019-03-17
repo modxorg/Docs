@@ -6,12 +6,12 @@ _old_uri: "2.x/administering-your-site/settings"
 
 ## What are Settings?
 
-Settings are site-wide variables that can be used by either the MODx Core or by 3rd-Party Components to provide site, context, or user-level customization. The trick here is the override behavior that applies in the hierarchy: [Contextual Settings](administering-your-site/contexts "Contexts") (if present), override any of the System Settings. [User Settings](administering-your-site/security/users#Users-UsersUserSettings) (if present) override any of the Context or System settings obeying the hierarchy of **System -> Context -> User**
+Settings are site-wide variables that can be used by either the MODx Core or by 3rd-Party Components to provide site, context, or user-level customization. The trick here is the override behavior that applies in the hierarchy: [Contextual Settings](building-sites/contexts "Contexts") (if present), override any of the System Settings. [User Settings](administering-your-site/security/users#Users-UsersUserSettings) (if present) override any of the Context or System settings obeying the hierarchy of **System -> Context -> User**
 
 See the following for more information:
 
 - [System Settings](administering-your-site/settings/system-settings "System Settings")
-- [Context Settings](administering-your-site/contexts "Contexts")
+- [Context Settings](building-sites/contexts "Contexts")
 - [User Settings](administering-your-site/security/users#Users-UsersUserSettings)
 
 ## Usage
@@ -22,7 +22,7 @@ They can be referenced at any point via their Tag, for example, for the 'site\_s
 [[++site_start]]
 ```
 
-System Settings can be overridden by Context Settings, which are specific to each [Context](administering-your-site/contexts "Contexts"). Context Settings can in turn be overridden by [User Settings](administering-your-site/security/users#Users-UsersUserSettings).
+System Settings can be overridden by Context Settings, which are specific to each [Context](building-sites/contexts "Contexts"). Context Settings can in turn be overridden by [User Settings](administering-your-site/security/users#Users-UsersUserSettings).
 
 The hierarchy to remember is:
 
@@ -36,7 +36,7 @@ Let's say I set the System Setting named 'use\_editor' to 0. However, I created 
 
 Further, I've got a user named 'johndoe' who I don't want to use the editor. I create a User Setting 'use\_editor' for his user and set it to 0. Now, John Doe's "use\_editor" setting will be 0, overriding the Context Setting.
 
-Settings can also be specific to [Namespaces](developing-in-modx/advanced-development/namespaces "Namespaces"), as well. This allows you to easily group your settings for each of your different Components.
+Settings can also be specific to [Namespaces](extending-modx/namespaces "Namespaces"), as well. This allows you to easily group your settings for each of your different Components.
 
 ## Retrieving Settings in PHP
 
@@ -60,13 +60,13 @@ getOption supports 3 parameters:
 2\. An array to search first before looking for the setting 
 3\. A default value should the setting not be found.
 
-So, for example, if I were in a Snippet and wanted some default properties at the top, I could use getOption. [Snippets](developing-in-modx/basic-development/snippets "Snippets") automatically pass in an array of all the Properties attached to that snippet (or specified in the Tag call) via the $scriptProperties array. So, you can use that array to check for default properties. This example sets a default value to the 'showPublished' property should it not be specified:
+So, for example, if I were in a Snippet and wanted some default properties at the top, I could use getOption. [Snippets](extending-modx/snippets "Snippets") automatically pass in an array of all the Properties attached to that snippet (or specified in the Tag call) via the $scriptProperties array. So, you can use that array to check for default properties. This example sets a default value to the 'showPublished' property should it not be specified:
 
 ``` php 
 $showPublished = $modx->getOption('showPublished',$scriptProperties,true);
 ```
 
-Now, assuming the Snippet doesnt have showPublished as a [default property](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets"), if you called the Snippet via the tag call:
+Now, assuming the Snippet doesnt have showPublished as a [default property](building-sites/properties-and-property-sets "Properties and Property Sets"), if you called the Snippet via the tag call:
 
 > \[\[mySnippet\]\]
 

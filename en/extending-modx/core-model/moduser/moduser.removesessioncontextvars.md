@@ -27,4 +27,4 @@ $user->removeSessionContextVars('sports');
 ## See Also
 
 - [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")
-- [Contexts](administering-your-site/contexts "Contexts")
+- [Contexts](building-sites/contexts "Contexts")

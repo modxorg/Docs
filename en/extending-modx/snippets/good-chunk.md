@@ -15,7 +15,7 @@ We're putting this here because often a Snippet will use Chunks to format data.
 
 ## Do NOT Over-Rely on Output Modifier Logic! 
 
-What are [Output Modifiers](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "PHx")? It is a simplified set of parser rules and output modifies that allows you to manipulate data in your view layer (i.e. in your Chunks and Templates).
+What are [Output Modifiers](building-sites/tag-syntax/output-filters) "PHx")? It is a simplified set of parser rules and output modifies that allows you to manipulate data in your view layer (i.e. in your Chunks and Templates).
 
 This is probably the single biggest mistake you can do: adding too much logic to your Chunks or templates. The beautiful thing about MODX as a framework is its adherence to sound architecture, and when you put too much logic in your view layer (i.e. in Chunks and Templates), you are destroying all that's good in this world. Sometimes you have to put an output filter or a little if statement into your Chunk, but please, keep it to an absolute minimum. It's a lot like morphine: morphine is a great pain-killer when used responsibly, but it is terribly addictive and it can destroy lives. Yes, that's a crazy analogy, but I have considered opening a "Rehab Center" for developers with bad coding habits.
 

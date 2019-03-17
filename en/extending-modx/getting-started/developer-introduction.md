@@ -72,7 +72,7 @@ Views in MODX Revolution are called 'Templates', but are used differently based 
 
 #### In the front-end, they are Templates, Chunks and Resources.
 
-##### [Templates](making-sites-with-modx/structuring-your-site/templates "Templates")
+##### [Templates](building-sites/elements/templates "Templates")
 
 Templates are what they sound like. They allow you to create templates that will encapsulate more page-specific data. Think of them like headers/footers all rolled into one (and so much more!)
 
@@ -82,7 +82,7 @@ Chunks are small pieces of HTML code that can be inserted anywhere. They represe
 
 ##### Resources
 
-Resources is the basic representation of a single "webpage" in MODX Revolution. They represent a single page or resource by which the client accesses content from the server. They can be files, weblinks, symlinks or just plain-old HTML pages wrapped by [Templates](making-sites-with-modx/structuring-your-site/templates "Templates").
+Resources is the basic representation of a single "webpage" in MODX Revolution. They represent a single page or resource by which the client accesses content from the server. They can be files, weblinks, symlinks or just plain-old HTML pages wrapped by [Templates](building-sites/elements/templates "Templates").
 
 #### In the Manager
 
@@ -92,11 +92,11 @@ In the manager-side of MODX Revolution, the View is handled by templates as well
 
 Controllers in MODX Revolution come in two forms. In the front-end, they are Request Handlers (via the modRequest class) and Snippets and Plugins.
 
-#### [Snippets](developing-in-modx/basic-development/snippets "Snippets")
+#### [Snippets](extending-modx/snippets "Snippets")
 
-Snippets are simply PHP code that can be placed anywhere in a page. They can be placed in [Chunks](building-sites/elements/chunks "Chunks"), [Templates](making-sites-with-modx/structuring-your-site/templates "Templates"), or Resources. They simply execute PHP code whenever they are called, and return whatever output they would like to push to the page.
+Snippets are simply PHP code that can be placed anywhere in a page. They can be placed in [Chunks](building-sites/elements/chunks "Chunks"), [Templates](building-sites/elements/templates "Templates"), or Resources. They simply execute PHP code whenever they are called, and return whatever output they would like to push to the page.
 
-#### [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+#### [Plugins](extending-modx/plugins "Plugins")
 
 Plugins are also PHP code, but are targeted at specific System Events that occur throughout the request processing. They can occur before the webpage is rendered, after it is, before the request is handled, or many more places.
 

@@ -24,7 +24,7 @@ All you need to do is after you've got a working MySQL query is:
 
 You can place this binding in one of two places:
 
-- On a page (edit the page in the manager). The page where you want to put this binding must be using a valid template, and that template must have the correct template variable(s) associated with it. If you've created the [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") and associated it with a [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), and the page you're working on is using that [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), then you'll have a place to enter in some text for that variable when you edit the page. Paste the "@SELECT ..." stuff in there. It sounds more complicated than it is, but this section is written verbosely for the sake of clear documentation.
+- On a page (edit the page in the manager). The page where you want to put this binding must be using a valid template, and that template must have the correct template variable(s) associated with it. If you've created the [Template Variable](building-sites/elements/template-variables "Template Variables") and associated it with a [Template](building-sites/elements/templates "Templates"), and the page you're working on is using that [Template](building-sites/elements/templates "Templates"), then you'll have a place to enter in some text for that variable when you edit the page. Paste the "@SELECT ..." stuff in there. It sounds more complicated than it is, but this section is written verbosely for the sake of clear documentation.
 - You can also place the query into the "Default Value" box for the Template Variable. If you replace the default text of a Template Variable that's already in use, be careful, because your pages might require a specific type of output, e.g. the output type that a @SELECT binding returns.
 
 REMEMBER: The query must be on ONE LINE. No returns!
@@ -39,9 +39,9 @@ For example, to grab a list of active users in a SELECT box:
 
 ## Alternatives
 
-Before we get any more complicated, consider doing this a different way. A [Snippet](developing-in-modx/basic-development/snippets "Snippets") might do the job more easily than a binding.
+Before we get any more complicated, consider doing this a different way. A [Snippet](extending-modx/snippets "Snippets") might do the job more easily than a binding.
 
-If your query needs to work with template variables and you need specialized formatting for the output, the @SELECT binding is probably not the way to go. Pretty much everything that's done with the bindings is also possible with [Snippets](developing-in-modx/basic-development/snippets "Snippets"); the bindings just provide a shortcut. When you start over-using the shortcut, you may run into headaches.
+If your query needs to work with template variables and you need specialized formatting for the output, the @SELECT binding is probably not the way to go. Pretty much everything that's done with the bindings is also possible with [Snippets](extending-modx/snippets "Snippets"); the bindings just provide a shortcut. When you start over-using the shortcut, you may run into headaches.
 
 ## Having a blank Option
 
@@ -96,7 +96,7 @@ What if your MySQL statement executes perfectly, but once you put it in your SEL
 
 ## Next Step: Formatting
 
-Ok, so you can return a bunch of data from the database... now what? If you need to format it intelligently, you might get some mileage out of the Output Renders, but you might find the available options limiting to you. You can write your own [Snippet](developing-in-modx/basic-development/snippets "Snippets") that formats the value of a Template Variable.
+Ok, so you can return a bunch of data from the database... now what? If you need to format it intelligently, you might get some mileage out of the Output Renders, but you might find the available options limiting to you. You can write your own [Snippet](extending-modx/snippets "Snippets") that formats the value of a Template Variable.
 
 ## Security
 
@@ -104,5 +104,5 @@ Does this binding let you execute UPDATE, INSERT, or DELETE queries (or, **gasp*
 
 ## See Also
 
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
-- [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")
+- [Bindings](building-sites/elements/template-variables/bindings "Bindings")

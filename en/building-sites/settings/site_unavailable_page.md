@@ -16,4 +16,4 @@ Make sure this ID you enter belongs to an existing resource that has been publis
 
 ## See Also
 
-[unauthorized\_page](administering-your-site/settings/system-settings/unauthorized_page "unauthorized_page")
+[unauthorized\_page](building-sites/settings/unauthorized_page "unauthorized_page")

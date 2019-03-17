@@ -45,19 +45,19 @@ MODX, in essence, has a ton of moving parts. But the basics parts are:
 
 ### Templates
 
-[Templates](making-sites-with-modx/structuring-your-site/templates "Templates") are the house a Resource lives in. They usually contain the footer and header for a page.
+[Templates](building-sites/elements/templates "Templates") are the house a Resource lives in. They usually contain the footer and header for a page.
 
 ### Template Variables
 
-[Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") (TVs) are custom fields for a Template that allow the user to assign dynamic values to a Resource. A great example would be a 'tags' TV that allows you to specify tags for a Resource. You can have an unlimited number of TVs per page.
+[Template Variables](building-sites/elements/template-variables "Template Variables") (TVs) are custom fields for a Template that allow the user to assign dynamic values to a Resource. A great example would be a 'tags' TV that allows you to specify tags for a Resource. You can have an unlimited number of TVs per page.
 
 ### Chunks
 
-[Chunks](building-sites/elements/chunks "Chunks") are simply small blocks of content, be it whatever you want inside it. They can contain [Snippets](developing-in-modx/basic-development/snippets "Snippets"), or any other Element type (Snippet, Chunk, TV, etc).
+[Chunks](building-sites/elements/chunks "Chunks") are simply small blocks of content, be it whatever you want inside it. They can contain [Snippets](extending-modx/snippets "Snippets"), or any other Element type (Snippet, Chunk, TV, etc).
 
 ### Snippets
 
-[Snippets](developing-in-modx/basic-development/snippets "Snippets") are dynamic bits of PHP code that run when the page is loaded. They can do anything you can code, including building custom menus, grabbing custom data, tagging elements, processing forms, grabbing tweets, etc.
+[Snippets](extending-modx/snippets "Snippets") are dynamic bits of PHP code that run when the page is loaded. They can do anything you can code, including building custom menus, grabbing custom data, tagging elements, processing forms, grabbing tweets, etc.
 
 ### Plugins
 
@@ -69,7 +69,7 @@ System Settings give you near infinite configuration options. Most of these are 
 
 ## So What Happens on a Request?
 
-MODX loads the requested [Resource](building-sites/resources "Resources"), fetches that Resource's [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), and then places the Resource's content in that Template. MODX then parses the resulting combined content, including any tags that might be in it, in the order they are reached. From there, it outputs the response to the user's browser.
+MODX loads the requested [Resource](building-sites/resources "Resources"), fetches that Resource's [Template](building-sites/elements/templates "Templates"), and then places the Resource's content in that Template. MODX then parses the resulting combined content, including any tags that might be in it, in the order they are reached. From there, it outputs the response to the user's browser.
 
 ## See Also
 
