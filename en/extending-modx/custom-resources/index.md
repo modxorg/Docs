@@ -17,7 +17,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
 ##  Create your XML Schema 
 
- First, we are going to create a xPDO package using a schema (if you're not familiar on how to do this, please review the page on [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution") tutorial and/or the [xPDO Defining a Schema](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema "Defining a Schema") tutorial).
+ First, we are going to create a xPDO package using a schema (if you're not familiar on how to do this, please review the page on [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") tutorial and/or the [xPDO Defining a Schema](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema "Defining a Schema") tutorial).
 
  If you are planning on versioning this code in Git, your paths may be different, but ultimately you want your files to end up inside the `core/components/your_component/` directory. So for this tutorial our package is named "copyrightedresource", so we will create the schema file `core/components/copyrightedresource/model/schema/copyrightedresource.mysql.schema.xml`:
 

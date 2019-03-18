@@ -7,7 +7,7 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
  This tutorial is part of a Series:
 
 - Part I: Getting Started and Creating the Doodles Snippet
-- [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II")
+- [Part II: Creating our Custom Manager Page](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II")
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-iii "Developing an Extra in MODX Revolution, Part III")
 
 - [Overview](#DevelopinganExtrainMODXRevolution-Overview)
@@ -484,10 +484,10 @@ return $output;
 
  We've got ourselves a nice custom database model, which our Doodles Snippet using to grab Doodles records from our database. We also have looked at the basic structure for a comprehensive MODX Extra.
 
- But we're gonna want some way of editing that data in the MODX manager, right? Well, that's where Custom Manager Pages (CMPs) come in. Go on and proceed to the [next part of this tutorial](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II").
+ But we're gonna want some way of editing that data in the MODX manager, right? Well, that's where Custom Manager Pages (CMPs) come in. Go on and proceed to the [next part of this tutorial](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II").
 
  This tutorial is part of a Series:
 
 - Part I: Getting Started and Creating the Doodles Snippet
-- [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II")
+- [Part II: Creating our Custom Manager Page](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II")
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-iii "Developing an Extra in MODX Revolution, Part III")

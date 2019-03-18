@@ -134,7 +134,7 @@ So, MODX does model sort-of similar. We actually do a MVC/C model, in which we a
 
 #### core/model/modx/
 
-"Wait! I thought we were already in a modx dir? Why another modx subdirectory?" Good question. Well, MODX Revolution uses xPDO for its database management. xPDO uses the idea of 'packages' for different connections to different models. So, if I wanted to create my custom tables, I'd create a new xPDO package, and add it in at runtime. This way I could use the maps and classes created without having to modify the MODX core. This is shown in the [Crea ting a 3rd Party Component](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Writing a 3rd Party Component in MODX Revolution, Pt. I") tutorial.
+"Wait! I thought we were already in a modx dir? Why another modx subdirectory?" Good question. Well, MODX Revolution uses xPDO for its database management. xPDO uses the idea of 'packages' for different connections to different models. So, if I wanted to create my custom tables, I'd create a new xPDO package, and add it in at runtime. This way I could use the maps and classes created without having to modify the MODX core. This is shown in the [Crea ting a 3rd Party Component](extending-modx/tutorials/developing-an-extra "Writing a 3rd Party Component in MODX Revolution, Pt. I") tutorial.
 
 So, that said, it can be inferred that the core/model/modx directory is referring to the "modx" package. Let's go inside it, and you'll see a ton of classes. These are the classes that are either xPDOObjects - which are PHP classes that represent tables in the DB (ie, modsnippet.class.php is a PHP class that is an object of modx\_site\_snippets), or they are functional classes, such as modcachemanager.class.php.
 
@@ -152,7 +152,7 @@ This directory contains the individual processor files used in database manipula
 
 #### core/model/schema/
 
-The schema is the XML representation of the MODX database. This is used in building new maps and classes, but is never actually read or parsed when MODX is running. For the most part, you can ignore this directory, as it is mainly used for development work. The tutorials on [creating 3rd party components](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Writing a 3rd Party Component in MODX Revolution, Pt. I") teach more about schemas.
+The schema is the XML representation of the MODX database. This is used in building new maps and classes, but is never actually read or parsed when MODX is running. For the most part, you can ignore this directory, as it is mainly used for development work. The tutorials on [creating 3rd party components](extending-modx/tutorials/developing-an-extra "Writing a 3rd Party Component in MODX Revolution, Pt. I") teach more about schemas.
 
 #### core/model/smarty/
 

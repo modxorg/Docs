@@ -6,8 +6,8 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
 
 This tutorial is part of a Series:
 
-- [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
-- [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II")
+- [Part I: Getting Started and Creating the Doodles Snippet](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution")
+- [Part II: Creating our Custom Manager Page](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II")
 - Part III: Packaging Our Extra
 
 
@@ -25,7 +25,7 @@ This tutorial is part of a Series:
 
 ## Overview
 
-In this tutorial, we're going to be packaging up our Extra that we made in the [past](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution") [two](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II") tutorials into a [Transport Package](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages") (TP) so that we can install it on any MODX installation, and even submit it to the Extras section on modx.com.
+In this tutorial, we're going to be packaging up our Extra that we made in the [past](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") [two](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II") tutorials into a [Transport Package](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages") (TP) so that we can install it on any MODX installation, and even submit it to the Extras section on modx.com.
 
 First off, if you're not sure what a Transport Package is, or what Package Management is, I suggest you read up on [Package Management](extending-modx/transport-packages "Package Management") and [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages") first before proceeding.
 
@@ -604,8 +604,8 @@ The Doodles Extra in this tutorial can be found on GitHub, here: <https://github
 
 This tutorial is part of a Series:
 
-- [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
-- [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II")
+- [Part I: Getting Started and Creating the Doodles Snippet](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution")
+- [Part II: Creating our Custom Manager Page](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II")
 - Part III: Packaging Our Extra
 
 

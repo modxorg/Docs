@@ -28,7 +28,7 @@ note: "This document is about the pre-2.3 way of adding custom managers pages."
 
  In MODx Evolution (versions 1.x and earlier), Custom Manager Pages were handled by "Modules", but those have been deprecated in Revolution.
 
- If you want to develop a CMP for **MODX 2.3 or later**, then please read [Custom Manager Pages in 2.3](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)
+ If you want to develop a CMP for **MODX 2.3 or later**, then please read [Custom Manager Pages in 2.3](extending-modx/custom-manager-pages/tutorial)
 
 ## Explanation and Mental Preparation
 
@@ -45,7 +45,7 @@ note: "This document is about the pre-2.3 way of adding custom managers pages."
 - A PHP file on the webserver which generates the text for our CMP (a.k.a. the controller).
 - A Namespace (i.e. a path) which defines a dedicated folder for our script(s).
 - A clickable Menu object (modMenu) which associates the clickable link to the action.
-- An Action object (modAction) which points to a specific file. As of MODX 2.3, you should be using [namespace-based custom manager page routing instead.](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)
+- An Action object (modAction) which points to a specific file. As of MODX 2.3, you should be using [namespace-based custom manager page routing instead.](extending-modx/custom-manager-pages/tutorial)
 - And optionally, a Lexicon entry which would allow you to translate the label on your menu item.
 
  Maybe you're baffled by the complexity here, and to be fair, for simple scenarios, this is more complicated than is strictly required, but you may find yourself at some point getting into more complicated use-cases at which point you'll realize " _AHA_!!! THAT'S why they did it this way!" For now, just trust that the smart folks behind MODx put a lot of thought into how this was built, and there's a good reason that it is the way it is. Onward.
@@ -87,7 +87,7 @@ return 'This is my first Custom Manager Page';
  The Action object identifies the location of your index.php file within the namespace.
 
  **Heads up: Actions are deprecated**
-As of MODX 2.3, you no longer need an action. Instead, you will define both the namespace and the filename on the menu. [More here](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3). On MODX 2.3 and up, skip to Create the menu object
+As of MODX 2.3, you no longer need an action. Instead, you will define both the namespace and the filename on the menu. [More here](extending-modx/custom-manager-pages/tutorial). On MODX 2.3 and up, skip to Create the menu object
 
  **About Actions**
  In this case, an Action is an abstraction, or a "wrapper" around that PHP file you created. One of the most important things that distinguishes a MODx Action from a simple link to PHP file is that you can assign different permissions to an Action: you can control who accesses it and how.
@@ -202,25 +202,25 @@ $modx->lexicon->load('your_namespace:default');
 
  If your new action does not appear in the menu where you placed it even though it shows up in the correct place under System -> Actions, then you may be dealing with some permissions errors on your server. Specifically, be alert to any error messages that show up when you clear your site's cache. If you any errors, it may be a sign that your permissions on your server are incorrect. You may need to change the permissions on the core/components directory, or maybe you need to go as far to as to change the user/group names that Apache uses when accessing your site.
 
-1. [Actions and Menus](developing-in-modx/advanced-development/custom-manager-pages/actions-and-menus)
-  1. [Action List](developing-in-modx/advanced-development/custom-manager-pages/actions-and-menus/action-list)
-2. [Custom Manager Pages in 2.3](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3)
-3. [Custom Manager Pages Tutorial](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-tutorial)
-4. [MODExt](developing-in-modx/advanced-development/custom-manager-pages/modext)
-  1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
-  2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)
-      1. [1. Ext JS Tutorial - Message Boxes](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
-      2. [2. Ext JS Tutorial - Ajax Include](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
-      3. [3. Ext JS Tutorial - Animation](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
-      4. [4. Ext JS Tutorial - Manipulating Nodes](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
-      5. [5. Ext JS Tutorial - Panels](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
-      6. [7. Ext JS Tutoral - Advanced Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
-      7. [8. Ext JS Tutorial - Inside a CMP](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
-  3. [MODx.combo.ComboBox](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.combo.combobox)
-  4. [MODx.Console](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.console)
-  5. [MODx.FormPanel](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel)
-  6. [MODx.grid.Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid)
-  7. [MODx.grid.LocalGrid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.localgrid)
-  8. [MODx.msg](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.msg)
-  9. [MODx.tree.Tree](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.tree.tree)
-  10. [MODx.Window](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window)
+1. [Actions and Menus](extending-modx/menus/actions)
+  1. [Action List](extending-modx/menus/action-list)
+2. [Custom Manager Pages in 2.3](extending-modx/custom-manager-pages/tutorial)
+3. [Custom Manager Pages Tutorial](_legacy/developing-in-modx/custom-manager-pages-tutorial)
+4. [MODExt](extending-modx/custom-manager-pages/modext)
+  1. [MODExt MODx Object](extending-modx/custom-manager-pages/modext/modext-modx-object)
+  2. [MODExt Tutorials](extending-modx/custom-manager-pages/modext/modext-tutorials)
+      1. [1. Ext JS Tutorial - Message Boxes](extending-modx/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
+      2. [2. Ext JS Tutorial - Ajax Include](extending-modx/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
+      3. [3. Ext JS Tutorial - Animation](extending-modx/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
+      4. [4. Ext JS Tutorial - Manipulating Nodes](extending-modx/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
+      5. [5. Ext JS Tutorial - Panels](extending-modx/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
+      6. [7. Ext JS Tutoral - Advanced Grid](extending-modx/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
+      7. [8. Ext JS Tutorial - Inside a CMP](extending-modx/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
+  3. [MODx.combo.ComboBox](extending-modx/custom-manager-pages/modext/modx.combo.combobox)
+  4. [MODx.Console](extending-modx/custom-manager-pages/modext/modx.console)
+  5. [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel)
+  6. [MODx.grid.Grid](extending-modx/custom-manager-pages/modext/modx.grid.grid)
+  7. [MODx.grid.LocalGrid](extending-modx/custom-manager-pages/modext/modx.grid.localgrid)
+  8. [MODx.msg](extending-modx/custom-manager-pages/modext/modx.msg)
+  9. [MODx.tree.Tree](extending-modx/custom-manager-pages/modext/modx.tree.tree)
+  10. [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window)
