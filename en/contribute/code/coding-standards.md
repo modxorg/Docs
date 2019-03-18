@@ -4,15 +4,15 @@ _old_id: "1133"
 _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 ---
 
-- [General](#MODxPHPCodingStandards-General)
-- [Parenthesis](#MODxPHPCodingStandards-Parenthesis)
-- [Classes](#MODxPHPCodingStandards-Classes)
-- [Variables](#MODxPHPCodingStandards-Variables)
-- [Function Arguments and Class Variables](#MODxPHPCodingStandards-FunctionArgumentsandClassVariables)
-- [Arrays](#MODxPHPCodingStandards-Arrays)
-- [Constants](#MODxPHPCodingStandards-Constants)
-- [File Structure](#MODxPHPCodingStandards-FileStructure)
-- [Prefixing](#MODxPHPCodingStandards-Prefixing)
+- [General](#general)
+- [Parenthesis](#parenthesis)
+- [Classes](#classes)
+- [Variables](#variables)
+- [Function Arguments and Class Variables](#function-arguments-and-class-variables)
+- [Arrays](#arrays)
+- [Constants](#constants)
+- [File Structure](#file-structure)
+- [Prefixing](#prefixing)
 
 
 
@@ -30,30 +30,30 @@ _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 
 - Do not put parenthesis next to keywords. Put a space between.
 - Do put parenthesis next to function names.
-- Do not use parenthesis in return statements when it's not necessary. Example:``` php 
+- Do not use parenthesis in return statements when it's not necessary. Example:
+``` php 
   if ($test) {
   }
   while ($test == $other) {
   }
   array_push($one,$two);
   return $test;
-  
-  ```
+```
 - Do **not** use parenthesis when using include, require, include\_once, and require\_once.
 
 ## Classes
 
 - All ''core'' classnames, unless stated otherwise for special conditions, will be prefixed with the "mod" prefix: ie, modChunk, modTemplate, etc.
 - All method names will be camelCase and will start with a lowercase letter.
-- All private methods and variables must be prefixed with the underscore \_ character.``` php 
+- All private methods and variables must be prefixed with the underscore \_ character.
+``` php 
   class modFactor {
       public $publicVar;
       private $_privateVar;
       private function _privateFunc() { }
       public function publicFunc() { }
   }
-  
-  ```
+```
 
 ## Variables
 
@@ -64,25 +64,25 @@ Note these are not function arguments.
 
 ## Function Arguments and Class Variables
 
-- The first letter is lowercase, rest are camelCase. Example:``` php 
+- The first letter is lowercase, rest are camelCase. Example:
+``` php 
   class modFactor {
       public function testFunc($testVar, array &$anotherTest = array()) {
           $this->_privateVar = $testVar;
           $local_variable =& $anotherTest;
       }
   }
-  
-  ```
+```
 
 ## Arrays
 
 - Array index names use the underscore \_, not the dash as their separator. This prevents errors with magic\_quotes.
 - Array index names are always lowercase. Spaces are represented by an underscore.
 - Array index names are always encapsulated with single quotes. 
-   Example:``` php 
-  $_lang['chunk_create_text'] = 'Test';
-  
-  ```
+   Example:
+``` php 
+$_lang['chunk_create_text'] = 'Test';
+```
 
 ## Constants
 
@@ -99,7 +99,6 @@ Note these are not function arguments.
 
 ``` php 
 $_lang['mycomponent.welcome_message'] = 'Welcome!';
-
 ```
 
 - Always prefix class names; eg: 'finBank', 'finTransaction', etc.

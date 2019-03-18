@@ -10,7 +10,7 @@ Processes and returns the output from an HTML chunk by name.
 
 **getChunk** actually sets the properties you pass (and that are picked up from default properties and/or a property set) as placeholders (preserving any with the same key and restoring those after processing is complete) and allows the modChunk class to process() them (along with any other tags, filters, etc.).
 
-**getChunk** will execute the MODX parser, so you can use output filters and the $properties array can be multi-dimenstional (i.e. more than just simple key/value pairs). If this is more horsepower than you need, use [modX.parseChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.parsechunk "modX.parseChunk") instead.
+**getChunk** will execute the MODX parser, so you can use output filters and the $properties array can be multi-dimenstional (i.e. more than just simple key/value pairs). If this is more horsepower than you need, use [modX.parseChunk](extending-modx/core-model/modx/modx.parsechunk "modX.parseChunk") instead.
 
 ## Syntax
 
@@ -137,4 +137,4 @@ $output = $chunk->process($props, $tpl);
 ## See Also
 
 - [Chunks](building-sites/elements/chunks "Chunks")
-- [modX.parseChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.parsechunk "modX.parseChunk")
+- [modX.parseChunk](extending-modx/core-model/modx/modx.parsechunk "modX.parseChunk")

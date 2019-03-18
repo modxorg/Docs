@@ -156,7 +156,7 @@ $modx->log(modX::LOG_LEVEL_DEBUG, '[mySnippet] was called with the following pro
 
 ##  See Also 
 
-- [Code Standards](developing-in-modx/code-standards "Code Standards")
+- [Code Standards](_legacy/developing-in-modx/code-standards "Code Standards")
   1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
   2. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)
   3. [How to Write a Good Snippet](developing-in-modx/basic-development/snippets/how-to-write-a-good-snippet)

@@ -117,7 +117,7 @@ $dood = $modx->getService('doodles','Doodles',$doodlesCorePath.'model/doodles/',
 
 ```
 
- Okay, this gets crazy. $modx->getService loads a class and instantiates an object of it, if it exists, and sets it to $modx->doodles here in this case (the first parameter passed in). More on getService can be found [here](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService"). But wait! We don't have a Doodles class! Well, it's time to make one.
+ Okay, this gets crazy. $modx->getService loads a class and instantiates an object of it, if it exists, and sets it to $modx->doodles here in this case (the first parameter passed in). More on getService can be found [here](extending-modx/core-model/modx/modx.getservice "modX.getService"). But wait! We don't have a Doodles class! Well, it's time to make one.
 
 ###  Making the Doodles Base Class 
 

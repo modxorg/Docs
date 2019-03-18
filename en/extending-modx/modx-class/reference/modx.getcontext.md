@@ -37,4 +37,4 @@ $ctx = $modx->getContext('sports');
 | Page: [modX](developing-in-modx/other-development-resources/class-reference/modx) |
 |---------------------------------------------------------------------------------------------------|
 | Page: [Contexts](building-sites/contexts) |
-| Page: [modX.getContext](developing-in-modx/other-development-resources/class-reference/modx/modx.getcontext) |
+| Page: [modX.getContext](extending-modx/core-model/modx/modx.getcontext) |

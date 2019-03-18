@@ -29,4 +29,4 @@ Note that when using this method in the manager (to collect input options for a 
 ## See Also
 
 - [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
-- [modX.getParentIds](developing-in-modx/other-development-resources/class-reference/modx/modx.getparentids "modX.getParentIds")
+- [modX.getParentIds](extending-modx/core-model/modx/modx.getparentids "modX.getParentIds")

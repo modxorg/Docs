@@ -33,6 +33,6 @@ $modx->user->changePassword('s3cur3d','mypass');
 
 ## See Also
 
-| Page: [modUser](developing-in-modx/other-development-resources/class-reference/moduser) |
+| Page: [modUser](extending-modx/core-model/moduser) |
 |---------------------------------------------------------------------------------------------------------|
 | Page: [Users](building-sites/client-proofing/security/users) |

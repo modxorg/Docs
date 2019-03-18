@@ -26,5 +26,5 @@ $modx->setDebug(true);
 
 ## See Also
 
-| Page: [modX.setDebug](developing-in-modx/other-development-resources/class-reference/modx/modx.setdebug) |
+| Page: [modX.setDebug](extending-modx/core-model/modx/modx.setdebug) |
 |--------------------------------------------------------------------------------------------------------------------------|

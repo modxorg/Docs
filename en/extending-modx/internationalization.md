@@ -169,4 +169,4 @@ Lexicons provide MODX Revolution users with a plethora of avenues and options to
 
 ## See Also
 
-- [modX.lexicon](developing-in-modx/other-development-resources/class-reference/modx/modx.lexicon "modX.lexicon")
+- [modX.lexicon](extending-modx/core-model/modx/modx.lexicon "modX.lexicon")

@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/modx-services"
 
 ## What is a Service?
 
-A service is any object that is loaded via [$modx->getService](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService"). It can be a custom class provided by the user, or by MODX itself.
+A service is any object that is loaded via [$modx->getService](extending-modx/core-model/modx/modx.getservice "modX.getService"). It can be a custom class provided by the user, or by MODX itself.
 
 Once an object is loaded with getService, it is accessible via $modx->(servicename). So, for example:
 
@@ -27,4 +27,4 @@ A list of the core-included MODX Services is as follows:
 
 ## See Also
 
-- [modX.getService](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService")
+- [modX.getService](extending-modx/core-model/modx/modx.getservice "modX.getService")

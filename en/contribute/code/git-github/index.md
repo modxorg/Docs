@@ -27,7 +27,8 @@ Here's [GitHub's tutorial on forking a repo and making a local clone of it](http
 
 
 **Branch and code**
-All work on a single issue (bug or feature) is to be done on a _feature branch_. ``` php 
+All work on a single issue (bug or feature) is to be done on a _feature branch_. 
+``` php 
 git checkout -b bug-1111
 ```
 
@@ -42,11 +43,8 @@ git push myRepo bug-1111
 _Note: Making sure your work and your commits are based on "fresh" code will help you avoid problems and help integrators understand, review and integrate (or feed back on) your work._
 
 
-
 **Pull Request**
 When you're ready to contribute the commit or commits from your branch, you'll issue a [Pull Request](http://help.github.com/pull-requests/) from your GitHub account. Your Pull Request may be accepted as-is by an integrator or they may make changes or comment, ask questions etc. GitHub facilitates communication with in-line code comments as well as a simple discussion thread on Pull Requests.
-
-
 
 ## Community Contributor's Guide 
 
