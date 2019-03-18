@@ -11,4 +11,4 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/allow_forward_ac
 **Default**: No 
 **Available In:** 2.1+
 
-When enabled, Symlinks and modX::sendForward() API calls can forward requests to Resources in other Contexts.
+When enabled, Symlinks and `modX::sendForward()` API calls can forward requests to Resources in other Contexts.

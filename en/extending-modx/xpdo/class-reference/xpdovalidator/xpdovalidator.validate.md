@@ -29,7 +29,7 @@ if ($validator->validate()) {
 
 ## See Also
 
-1. [xPDOValidator.addMessage](xpdo/class-reference/xpdovalidator/xpdovalidator.addmessage)
-2. [xPDOValidator.getMessages](xpdo/class-reference/xpdovalidator/xpdovalidator.getmessages)
-3. [xPDOValidator.hasMessages](xpdo/class-reference/xpdovalidator/xpdovalidator.hasmessages)
-4. [xPDOValidator.validate](xpdo/class-reference/xpdovalidator/xpdovalidator.validate)
+1. [xPDOValidator.addMessage](extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.addmessage)
+2. [xPDOValidator.getMessages](extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.getmessages)
+3. [xPDOValidator.hasMessages](extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.hasmessages)
+4. [xPDOValidator.validate](extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.validate)

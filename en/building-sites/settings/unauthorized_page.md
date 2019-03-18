@@ -18,4 +18,4 @@ Make sure the ID you enter belongs to an existing resource that has been publish
 
 ## See Also
 
-[site\_unavailable\_page](administering-your-site/settings/system-settings/site_unavailable_page "site_unavailable_page")
+[site\_unavailable\_page](building-sites/settings/site_unavailable_page "site_unavailable_page")

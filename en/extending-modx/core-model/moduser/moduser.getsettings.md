@@ -27,4 +27,4 @@ $settings = $user->getSettings();
 ## See Also
 
 - [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")
-- [Settings](administering-your-site/settings "Settings")
+- [Settings](_legacy/administering-your-site/settings "Settings")

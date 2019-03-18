@@ -26,5 +26,5 @@ $manager = $xpdo->getManager();
 
 ## See Also
 
-- [xPDOManager](xpdo/class-reference/xpdomanager "xPDOManager")
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDOManager](extending-modx/xpdo/class-reference/xpdomanager "xPDOManager")
+- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")

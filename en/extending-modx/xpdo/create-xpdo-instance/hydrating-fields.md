@@ -52,7 +52,7 @@ The option respects the xPDO::OPT\_HYDRATE\_FIELDS option with respect to making
 
 ## Hydrating Related Objects
 
-If the xPDO::OPT\_HYDRATE\_RELATED\_OBJECTS option is set to true, all related objects will be made available as public member variables of the object. By default, related objects are only accessible via the [getOne](xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") or [getMany](xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany") methods of xPDOObject, but this option (similar to xPDO::OPT\_HYDRATE\_FIELDS) makes any related objects already loaded by those methods accessible directly as variables. Example:
+If the xPDO::OPT\_HYDRATE\_RELATED\_OBJECTS option is set to true, all related objects will be made available as public member variables of the object. By default, related objects are only accessible via the [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") or [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany") methods of xPDOObject, but this option (similar to xPDO::OPT\_HYDRATE\_FIELDS) makes any related objects already loaded by those methods accessible directly as variables. Example:
 
 ``` php 
 $fordPrefect->getMany('Beers');
@@ -61,10 +61,10 @@ foreach ($fordPrefect->Beers as $beer) {
 }
 ```
 
-This would echo a list of all the Beers associated to the $fordPrefect object loaded by the [getMany](xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany") method.
+This would echo a list of all the Beers associated to the $fordPrefect object loaded by the [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany") method.
 
 **One vs. Many**
-Objects loaded with [getOne](xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") are available directly as an object of that class, while those with [getMany](xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany") are available as an array of objects of the class.
+Objects loaded with [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") are available directly as an object of that class, while those with [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany") are available as an array of objects of the class.
 
 ## See Also
 

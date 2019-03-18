@@ -214,7 +214,7 @@ $base_path = !empty($base_path) ? $base_path : $modx->getOption('core_path').'co
 $modx->addPackage('storefinder',$base_path.'model/');
 ```
 
- This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
+ This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
 
  ``` php 
 $stores = $modx->getCollection('sfStore');

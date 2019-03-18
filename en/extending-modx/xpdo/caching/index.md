@@ -32,7 +32,7 @@ A derived xPDOCache implementation must be in a package that is loaded by the co
 
 ## Manipulation of the Cache
 
-The $xpdo->cacheManager object, built from the [xPDOCacheManager](xpdo/class-reference/xpdocachemanager "xPDOCacheManager") class, is accessible after calling $xpdo->getCacheManager().
+The $xpdo->cacheManager object, built from the [xPDOCacheManager](extending-modx/xpdo/class-reference/xpdocachemanager "xPDOCacheManager") class, is accessible after calling $xpdo->getCacheManager().
 
 A simple example script of setting data into a cache partition, then getting it, and deleting it, is as follows:
 
@@ -88,7 +88,7 @@ $myCache->delete('testdata');
 
 ## See Also
 
-- [xPDOCacheManager](xpdo/class-reference/xpdocachemanager "xPDOCacheManager")
+- [xPDOCacheManager](extending-modx/xpdo/class-reference/xpdocachemanager "xPDOCacheManager")
 
 1. [Caching Tutorial - Basic Snippets](xpdo/advanced-features/caching/caching-tutorial-basic-snippets)
 2. [Caching Tutorial - Lifetimes](xpdo/advanced-features/caching/caching-tutorial-lifetimes)

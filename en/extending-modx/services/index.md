@@ -22,7 +22,7 @@ $modx->twitter->tweet('Success!');
 A list of the core-included MODX Services is as follows:
 
 1. [modFileHandler](developing-in-modx/advanced-development/modx-services/modfilehandler)
-2. [modMail](developing-in-modx/advanced-development/modx-services/modmail)
+2. [modMail](extending-modx/services/modmail)
 3. [modRegistry](developing-in-modx/advanced-development/modx-services/modregistry)
 
 ## See Also

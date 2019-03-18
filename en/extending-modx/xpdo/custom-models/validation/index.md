@@ -19,7 +19,7 @@ Object validation is done through xPDOValidator, xPDO's validation class. It's a
 
 ## How is it Done?
 
-Validation can be done either via the XML schema, or during run-time by [xPDOValidator](xpdo/class-reference/xpdovalidator "xPDOValidator") methods.
+Validation can be done either via the XML schema, or during run-time by [xPDOValidator](extending-modx/xpdo/class-reference/xpdovalidator "xPDOValidator") methods.
 
 ## Example Usage
 
@@ -154,4 +154,4 @@ More documentation on these specific rules to come.
 5. [xPDOMinValueValidationRule](xpdo/advanced-features/object-validation/xpdominvaluevalidationrule)
 6. [xPDOObjectExistsValidationRule](xpdo/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
 
-- [xPDOValidator](xpdo/class-reference/xpdovalidator "xPDOValidator")
+- [xPDOValidator](extending-modx/xpdo/class-reference/xpdovalidator "xPDOValidator")

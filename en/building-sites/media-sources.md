@@ -18,17 +18,17 @@ A source can be many types - from the file system itself, to an Amazon S3 bucket
 
 The following articles describe basic usage of media sources.
 
-- [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source "Adding a Media Source")
-- [Assigning Media Sources to TVs](administering-your-site/media-sources/assigning-media-sources-to-tvs "Assigning Media Sources to TVs")
-- [Securing a Media Source](administering-your-site/media-sources/securing-a-media-source "Securing a Media Source")
-- [Media Source Types](administering-your-site/media-sources/media-source-types "Media Source Types")
+- [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source")
+- [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs "Assigning Media Sources to TVs")
+- [Securing a Media Source](building-sites/media-sources/securing "Securing a Media Source")
+- [Media Source Types](building-sites/media-sources/types "Media Source Types")
 
 ## See Also
 
-1. [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source)
-2. [Assigning Media Sources to TVs](administering-your-site/media-sources/assigning-media-sources-to-tvs)
-3. [Securing a Media Source](administering-your-site/media-sources/securing-a-media-source)
-  1. [Creating a Media Source for Clients Tutorial](administering-your-site/media-sources/securing-a-media-source/creating-a-media-source-for-clients-tutorial)
-4. [Media Source Types](administering-your-site/media-sources/media-source-types)
-  1. [Media Source Type - File System](administering-your-site/media-sources/media-source-types/media-source-type-file-system)
-  2. [Media Source Type - S3](administering-your-site/media-sources/media-source-types/media-source-type-s3)
+1. [Adding a Media Source](building-sites/media-sources/creating)
+2. [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs)
+3. [Securing a Media Source](building-sites/media-sources/securing)
+  1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
+4. [Media Source Types](building-sites/media-sources/types)
+  1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
+  2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)

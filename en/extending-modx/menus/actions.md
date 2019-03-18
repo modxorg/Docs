@@ -31,5 +31,5 @@ Any changes to the order of 'core' menu items will be reverted during Revolution
 
 ## Related Pages
 
-- [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages")
+- [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages")
 - [Internationalization](extending-modx/internationalization "Internationalization")

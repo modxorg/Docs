@@ -32,7 +32,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
 ##  Generating your Class Files 
 
- The next step is to generate the maps and classes for the model. You can do this using your own script, you'll just want to refer to the docs on [Generating the Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code") and xPDO's [parseSchema()](xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema") function. We've provided a sample script below. It's a modified version of the script used when [Reverse Engineering xPDO classes from an existing Database Table](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table").
+ The next step is to generate the maps and classes for the model. You can do this using your own script, you'll just want to refer to the docs on [Generating the Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code") and xPDO's [parseSchema()](extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema") function. We've provided a sample script below. It's a modified version of the script used when [Reverse Engineering xPDO classes from an existing Database Table](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table").
 
  Create the script at the web root of your MODX site, then execute it by hitting that page in a browser.
 

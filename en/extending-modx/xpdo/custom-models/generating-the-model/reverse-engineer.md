@@ -323,14 +323,14 @@ return $output;
 ```
 
  **Watch the Prefix!** 
-[addPackage](xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") requires that you specify the correct table prefix for your package! 
+[addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") requires that you specify the correct table prefix for your package! 
 
 ## See Also
 
 - [Schema Files and Relations](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files") Looking at XML schema file relations
-- [addPackage](xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for loading up your schema
-- [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") for loading up a single object
-- [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") for loading up a collection of objects.
+- [addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for loading up your schema
+- [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") for loading up a single object
+- [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") for loading up a collection of objects.
 - [xPDO: Creating Objects](xpdo/getting-started/using-your-xpdo-model/creating-objects "Creating Objects")
 - [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects") a demonstration of how to retrieve objects using xPDO
 - [Generating the Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code") – offers a streamlined version of the script provided here, but you can also change your class templates.

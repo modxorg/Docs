@@ -36,6 +36,6 @@ Once you've selected your provider, click Next, and the download tree will be po
 
 ## Related Pages
 
-1. [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages)
-2. [Providers](developing-in-modx/advanced-development/package-management/providers)
-3. [Creating a 3rd Party Component Build Script](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script)
+1. [Transport Packages](extending-modx/transport-packages)
+2. [Providers](building-sites/extras/providers)
+3. [Creating a 3rd Party Component Build Script](extending-modx/transport-packages/build-script)

@@ -19,9 +19,9 @@ To ensure your file is transmitted correctly, you should use the (empty) templat
 
 ## See Also
 
-1. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
-2. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)
-3. [Static Resource](building-sites/resources/static-rsource)
+1. [Content Types](building-sites/resources/content-types)
+2. [Named Anchor](building-sites/integrating-templates/named-anchor)
+3. [Static Resource](building-sites/resources/static-resource)
 4. [Symlink](building-sites/resources/symlink)
-  1. [Using Resource Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink/using-resource-symlinks)
+  1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
 5. [Weblink](building-sites/resources/weblink)

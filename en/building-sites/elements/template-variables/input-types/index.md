@@ -210,7 +210,7 @@ option1==value1||option2==value2
 
  Creates an image input form to browse the server for a file. Files can be uploaded through the MODx File Manager then.
 
- In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](administering-your-site/media-sources "Media Sources"). 
+ In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](building-sites/media-sources "Media Sources"). 
 
  ![](/download/attachments/33227172/tv-image-input-options.png?version=1&modificationDate=1308558243000)
 

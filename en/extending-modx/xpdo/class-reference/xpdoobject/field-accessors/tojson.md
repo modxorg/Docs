@@ -31,7 +31,7 @@ echo $json;
 
 ## See Also
 
-- [fromArray](xpdo/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
-- [toArray](xpdo/class-reference/xpdoobject/field-accessors/toarray "toArray")
-- [fromJSON](xpdo/class-reference/xpdoobject/field-accessors/fromjson "fromJSON")
-- [toJSON](xpdo/class-reference/xpdoobject/field-accessors/tojson "toJSON")
+- [fromArray](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
+- [toArray](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/toarray "toArray")
+- [fromJSON](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fromjson "fromJSON")
+- [toJSON](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/tojson "toJSON")

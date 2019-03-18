@@ -60,7 +60,7 @@ The join on the related tables occurs in this case when the getCollectionGraph()
 ## See Also
 
 - [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
-- [xPDO.getCollectionGraph](xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
-- [xPDO.getIterator](xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
-- [xPDO.getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO.getCollectionGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
+- [xPDO.getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
+- [xPDO.getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
+- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")

@@ -18,7 +18,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
  A resource is a representation of a page in MODx. There are different types of Resources, such as documents, weblinks, symlinks, actual files, or many other things. The default Resource type is a Document, and simply represents a webpage on your site.
 
- There are 4 total types of Resources, and they are Documents, [Weblinks](building-sites/resources/weblink "Weblink"), [Symlinks](building-sites/resources/symlink "Symlink"), and [Static Resources](building-sites/resources/static-rsource "Static Resource").
+ There are 4 total types of Resources, and they are Documents, [Weblinks](building-sites/resources/weblink "Weblink"), [Symlinks](building-sites/resources/symlink "Symlink"), and [Static Resources](building-sites/resources/static-resource "Static Resource").
 
  Each Resource also has a unique ID, or "Resource Identifier". This lets MODx know what Resource to fetch when you are loading a webpage. Also, when you're wanting to link between Resources, you should always use the ID to do so. That way MODx will generate the link and you will not have to worry about changed aliases, content types or anything - MODx will change your links also. Please see the Linking to Resources section below for more information on how to do this.
 
@@ -118,7 +118,7 @@ return strrev($output);
 
  You can also get the Link Tag by dragging a Resource from the left tree into the content panel. 
 
- Also see [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor "Named Anchor").
+ Also see [Named Anchor](building-sites/integrating-templates/named-anchor "Named Anchor").
 
 ### URL Parameters for Link Tags
 
@@ -160,9 +160,9 @@ store/items.html?tag=Snacks&sort=Taste
 
 ## See Also
 
-1. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
-2. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)
-3. [Static Resource](building-sites/resources/static-rsource)
+1. [Content Types](building-sites/resources/content-types)
+2. [Named Anchor](building-sites/integrating-templates/named-anchor)
+3. [Static Resource](building-sites/resources/static-resource)
 4. [Symlink](building-sites/resources/symlink)
-  1. [Using Resource Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink/using-resource-symlinks)
+  1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
 5. [Weblink](building-sites/resources/weblink)

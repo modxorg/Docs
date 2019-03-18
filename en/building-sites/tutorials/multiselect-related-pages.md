@@ -201,9 +201,9 @@ This creates a list item with a link to the resource and its pagetitle as the ti
 
 - ?[Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types")
 - ?[Input and Output Filters](/display/revolution20/Input+and+Output+Filters "Input and Output Filters")
-- [modX::getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
-- [modX::getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
-- [modX::getChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.getchunk "modX.getChunk")
+- [modX::getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
+- [modX::getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
+- [modX::getChunk](extending-modx/modx-class/reference/modx.getchunk "modX.getChunk")
 
 When looking to also include TVs in your relatedPagesTpl chunk, you'll have to modify the snippet a bit.
 

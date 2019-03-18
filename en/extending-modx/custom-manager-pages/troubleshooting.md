@@ -39,7 +39,7 @@ _Thanks!!_
 Other Resources:
 
 - [ExtJS 3.4.0 Documentation](http://docs.sencha.com/ext-js/3-4/)
-- [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages")
+- [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages")
 - [Custom Manager Pages Tutorial](_legacy/developing-in-modx/custom-manager-pages-tutorial "Custom Manager Pages Tutorial")
 - [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution") (Specifically [part 2](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II"))
 

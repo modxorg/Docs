@@ -96,13 +96,13 @@ They are the class names of Documents, Weblinks, Symlinks and Static Resources. 
 - [Documents](building-sites/resources "Resources") (commonly refered to as Resources, see 2.4 below) are regular pages and have content.
 - A [Weblink](building-sites/resources/weblink "Weblink") redirect a user to a different Resource or an external URL.
 - A [Symlink](building-sites/resources/symlink "Symlink") acts as a copy of a Document
-- [Static Resources](building-sites/resources/static-rsource "Static Resource") act like Documents, however their content comes from a file on the filesystem.
+- [Static Resources](building-sites/resources/static-resource "Static Resource") act like Documents, however their content comes from a file on the filesystem.
 
 ### 2.4 What is the difference between a Resource and a Document?
 
 Technically, a Resource (modResource) is an abstract object of which a Document (modDocument) is an implementation.
 
-Practically both terms are used to indicate the same thing: a Document which holds certain content. Coming from the technical implementation, a [Weblink](building-sites/resources/weblink "Weblink"), [Symlink](building-sites/resources/symlink "Symlink") or [Static Resource](building-sites/resources/static-rsource "Static Resource") are also be included when referring to "Resources" as they are also implementations of the modResource class.
+Practically both terms are used to indicate the same thing: a Document which holds certain content. Coming from the technical implementation, a [Weblink](building-sites/resources/weblink "Weblink"), [Symlink](building-sites/resources/symlink "Symlink") or [Static Resource](building-sites/resources/static-resource "Static Resource") are also be included when referring to "Resources" as they are also implementations of the modResource class.
 
 ### 2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!
 

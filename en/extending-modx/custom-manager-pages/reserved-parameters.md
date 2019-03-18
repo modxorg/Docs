@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/reserved-parameter
 
 ## Reserved GET Parameters Inside the MODX Manager
 
-The following is a list (currently incomplete) of GET parameters used by the MODX Manager. You should avoid using any of these parameters in [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages"):
+The following is a list (currently incomplete) of GET parameters used by the MODX Manager. You should avoid using any of these parameters in [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages"):
 
 - **a** – used to define an action or controller
 - **namespace** -- indicates what namespace the action belongs to

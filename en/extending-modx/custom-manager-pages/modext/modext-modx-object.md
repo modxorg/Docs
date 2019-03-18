@@ -52,7 +52,7 @@ var tpl = MODx.config.default_template;
 
 #### Other Variables
 
-There are a few other variables available on the MODx.config object that are not [System Settings](administering-your-site/settings/system-settings "System Settings"):
+There are a few other variables available on the MODx.config object that are not [System Settings](building-sites/settings "System Settings"):
 
 | Key                       | Description                                                                                  |
 | ------------------------- | -------------------------------------------------------------------------------------------- |
@@ -153,7 +153,7 @@ Any defined class that has a registered xtype can be loaded from this method.
 
 ### MODx.clearCache
 
-This fires up the console that clears the MODX cache. It will also fire the 'beforeClearCache' and 'afterClearCache' events on the MODx object. If the System Setting [clear\_cache\_refresh\_trees](administering-your-site/settings/system-settings/clear_cache_refresh_trees "clear_cache_refresh_trees") is set to 1, it will also refresh all the active left-hand trees.
+This fires up the console that clears the MODX cache. It will also fire the 'beforeClearCache' and 'afterClearCache' events on the MODx object. If the System Setting [clear\_cache\_refresh\_trees](building-sites/settings/clear_cache_refresh_trees "clear_cache_refresh_trees") is set to 1, it will also refresh all the active left-hand trees.
 
 ### MODx.releaseLock
 
@@ -199,4 +199,4 @@ Checks to see if the specified variable is "empty" (in the PHP sense). This mean
 
 (2.1+ only)
 
-This will send off a debug message if and only if the MODX [System Setting](administering-your-site/settings "Settings") [ui\_debug\_mode](administering-your-site/settings/system-settings/ui_debug_mode "ui_debug_mode") is set to Yes/1. The debug message will use console.log to output to the console. This can be useful to add debugging and assertions to your code without breaking it in production sites (which would presumably have [ui\_debug\_mode](administering-your-site/settings/system-settings/ui_debug_mode "ui_debug_mode") off).
+This will send off a debug message if and only if the MODX [System Setting](_legacy/administering-your-site/settings "Settings") [ui\_debug\_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") is set to Yes/1. The debug message will use console.log to output to the console. This can be useful to add debugging and assertions to your code without breaking it in production sites (which would presumably have [ui\_debug\_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") off).

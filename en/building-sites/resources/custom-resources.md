@@ -39,4 +39,4 @@ CRCs can have their Controllers, Processors and main rendering functionality ext
 
 ## Creating a CRC 
 
-Please follow the tutorial on [Creating a Resource Class](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class").
+Please follow the tutorial on [Creating a Resource Class](extending-modx/custom-resources "Creating a Resource Class").

@@ -138,7 +138,7 @@ A cow says "[[+cow]]" and a pig says "[[+pig]]".
 
 ##  Log Errors and Info 
 
- MODX has a logging function: _use it_. See [xPDO::log()](xpdo/class-reference/xpdo/xpdo.log). If your users forgot to include a required property, log an error so your users will know it.
+ MODX has a logging function: _use it_. See [xPDO::log()](extending-modx/xpdo/class-reference/xpdo/xpdo.log). If your users forgot to include a required property, log an error so your users will know it.
 
  ``` php 
 

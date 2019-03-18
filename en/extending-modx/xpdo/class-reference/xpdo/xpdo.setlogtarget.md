@@ -47,5 +47,5 @@ $xpdo->setLogTarget(array(
 
 ## See Also
 
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
-- [xPDO.log](xpdo/class-reference/xpdo/xpdo.log)
+- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")
+- [xPDO.log](extending-modx/xpdo/class-reference/xpdo/xpdo.log)

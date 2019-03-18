@@ -26,5 +26,5 @@ echo $str; // prints: {name:"John"}
 
 ## See Also
 
-- [xPDO.fromJSON](xpdo/class-reference/xpdo/xpdo.fromjson "xPDO.fromJSON")
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO.fromJSON](extending-modx/xpdo/class-reference/xpdo/xpdo.fromjson "xPDO.fromJSON")
+- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")

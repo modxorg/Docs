@@ -10,7 +10,7 @@ _old_uri: "2.x/administering-your-site/media-sources/securing-a-media-source"
 
 
 
-This article describes how to secure a Media Source to certain User Groups. It is recommended to read the [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source "Adding a Media Source") article before reading this one. Before getting started, create a "Content Editors" user group, if you don't already have one.
+This article describes how to secure a Media Source to certain User Groups. It is recommended to read the [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source") article before reading this one. Before getting started, create a "Content Editors" user group, if you don't already have one.
 
 Those installing new installs of MODX 2.2.0-pl will need to add the string "sources.modAccessMediaSource" (no quotes) to the comma-separated list of values in the "principal\_targets" System Setting. This is due to [this bug here](http://bugs.modx.com/issues/6470) which has been fixed in 2.2.0-pl2.
 
@@ -18,7 +18,7 @@ Those installing new installs of MODX 2.2.0-pl will need to add the string "sour
 
 Media Sources use the common ACLs that the [MODX Security System](building-sites/client-proofing/security "Security") uses. You can attach policies to them via User Groups, that allow you to restrict basic actions on them, such as saving, loading, and listing.
 
-Go ahead and edit our "My New Source" source that we created in the [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source "Adding a Media Source") article. From there, click on the "Access Permissions" tab. You'll see an empty grid. Sources that have no User Groups assigned to them are "public" - in the sense that any user can use, edit and see them.
+Go ahead and edit our "My New Source" source that we created in the [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source") article. From there, click on the "Access Permissions" tab. You'll see an empty grid. Sources that have no User Groups assigned to them are "public" - in the sense that any user can use, edit and see them.
 
 We're going to first lock down our new source so that it can only be seen and edited by Administrators. Click on the "Add User Group" button above the grid. This should pop up a window:
 
@@ -43,14 +43,14 @@ Media source policy decides what a user can do with files provided by the media 
 
 
 
-That's the end of basic Media Source usage. Feel free to learn about the different [Media Source Types](administering-your-site/media-sources/media-source-types "Media Source Types").
+That's the end of basic Media Source usage. Feel free to learn about the different [Media Source Types](building-sites/media-sources/types "Media Source Types").
 
 ## See Also
 
-1. [Adding a Media Source](administering-your-site/media-sources/adding-a-media-source)
-2. [Assigning Media Sources to TVs](administering-your-site/media-sources/assigning-media-sources-to-tvs)
-3. [Securing a Media Source](administering-your-site/media-sources/securing-a-media-source)
-  1. [Creating a Media Source for Clients Tutorial](administering-your-site/media-sources/securing-a-media-source/creating-a-media-source-for-clients-tutorial)
-4. [Media Source Types](administering-your-site/media-sources/media-source-types)
-  1. [Media Source Type - File System](administering-your-site/media-sources/media-source-types/media-source-type-file-system)
-  2. [Media Source Type - S3](administering-your-site/media-sources/media-source-types/media-source-type-s3)
+1. [Adding a Media Source](building-sites/media-sources/creating)
+2. [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs)
+3. [Securing a Media Source](building-sites/media-sources/securing)
+  1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
+4. [Media Source Types](building-sites/media-sources/types)
+  1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
+  2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)

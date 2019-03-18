@@ -356,7 +356,7 @@ Use whatever DB editing software (such as phpMyAdmin) you want, and find the 'mo
 
 > 2
 
-Great! Your custom database query works! Let's make it more complex. We can use xPDO's [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery") to create some pretty complex queries. For now, let's just add a sort command to it:
+Great! Your custom database query works! Let's make it more complex. We can use xPDO's [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") to create some pretty complex queries. For now, let's just add a sort command to it:
 
 ``` php 
 $c = $modx->newQuery('Doodle');

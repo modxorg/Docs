@@ -621,7 +621,7 @@ This will pass a 'query' REQUEST parameter to our getList Processor in the getli
 
 ```
 
-The modObjectGetListProcessor assistance class lets us extend the prepareQueryBeforeCount() method to modify the [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery") object before it's passed to the getCount() method. All we have to do is return our modified query object. We're going to extend it here to add searchability to our grid via the "query" parameter. Note we can get whatever that parameter is via the neat ->getProperty() method.
+The modObjectGetListProcessor assistance class lets us extend the prepareQueryBeforeCount() method to modify the [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") object before it's passed to the getCount() method. All we have to do is return our modified query object. We're going to extend it here to add searchability to our grid via the "query" parameter. Note we can get whatever that parameter is via the neat ->getProperty() method.
 
 Now load your grid, and you'll get:
 

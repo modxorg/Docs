@@ -24,7 +24,7 @@ note: "This document is about the pre-2.3 way of adding custom managers pages."
 
 ## Goal
 
- We want to add a custom page to the MODx Revolution manager that will load (i.e. execute) the contents of an PHP file that has been uploaded to the webserver. Technically, such a page is called a Custom Manager Page, or CMP; please refer to the page on [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages") for a more detailed description.
+ We want to add a custom page to the MODx Revolution manager that will load (i.e. execute) the contents of an PHP file that has been uploaded to the webserver. Technically, such a page is called a Custom Manager Page, or CMP; please refer to the page on [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages") for a more detailed description.
 
  In MODx Evolution (versions 1.x and earlier), Custom Manager Pages were handled by "Modules", but those have been deprecated in Revolution.
 

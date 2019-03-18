@@ -62,9 +62,9 @@ if (!$xpdo->addPackage('my_package','/path/to/docroot/core/components/my_package
 
 ## Creating Tables
 
- It's not enough to just load up the package and its PHP classes. If your package defines database tables, you may have to create the tables. This is normally done for you when you install a package, but if you're doing things manually, you'll want to look at the [xPDOManager.createObjectContainer](xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer") function.
+ It's not enough to just load up the package and its PHP classes. If your package defines database tables, you may have to create the tables. This is normally done for you when you install a package, but if you're doing things manually, you'll want to look at the [xPDOManager.createObjectContainer](extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer") function.
 
 ## See Also
 
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")
 - [Loading Packages](xpdo/getting-started/using-your-xpdo-model/loading-packages "Loading Packages")

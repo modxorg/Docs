@@ -47,9 +47,9 @@ $modx->setLogLevel(4); // show all debugging info
 Foreign key definition for class , alias XXXXX not found, or cardinality is not 'one'.
 ```
 
- then you should probably be using [addMany()](xpdo/class-reference/xpdoobject/related-object-accessors/addmany) instead. Check your XML schema file for the object which is attempting to run addOne and verify that the relationship to the object you are trying to add is defined with cardinality="one".
+ then you should probably be using [addMany()](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany) instead. Check your XML schema file for the object which is attempting to run addOne and verify that the relationship to the object you are trying to add is defined with cardinality="one".
 
 ## See Also
 
 - [Working with Related Objects](xpdo/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")
-- [addMany()](xpdo/class-reference/xpdoobject/related-object-accessors/addmany)
+- [addMany()](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany)

@@ -11,7 +11,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/properties-and-propert
 - [Importing and Exporting Properties](#importing-and-exporting-properties)
 - [Using Properties Programmatically](#using-properties-programmatically)
   - [Using getOption](#using-getoption)
-- [Conclusion](#conclusion)
 
 
 
@@ -108,5 +107,3 @@ You can also get a snippet property with $modx->getOption() like this:
 ``` php 
 $modx->getOption('propertyName', $scriptProperties, 'default');
 ```
-
-## Conclusion

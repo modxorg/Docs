@@ -90,7 +90,7 @@ Array(
 
 ## Database Interaction in Snippets 
 
-Accessing the database layer in MODx relies on an Object Relational Model (ORM) called [xPDO](/display/xPDO20/Home "Home") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODx objects and methods such as [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
+Accessing the database layer in MODx relies on an Object Relational Model (ORM) called [xPDO](/display/xPDO20/Home "Home") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODx objects and methods such as [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
 
 ### Why an ORM? 
 
@@ -117,7 +117,7 @@ return $chunk->process(array(
 ));
 ```
 
-That code would get a chunk with the name of 'LineItem', and return it processed with the placeholders set. The $chunk variable there is actually an [xPDOObject](xpdo/class-reference/xpdoobject "xPDOObject"), which is an object representation of the Resource.
+That code would get a chunk with the name of 'LineItem', and return it processed with the placeholders set. The $chunk variable there is actually an [xPDOObject](extending-modx/xpdo/class-reference/xpdoobject "xPDOObject"), which is an object representation of the Resource.
 
 What about more complex queries? Like, say, getting the first 10 Resources with a parent of 23, 24 or 25. And let's make it so they aren't hidden from menus or deleted, are published, and sort them by menuindex. That's when we use the powerful $modx->newQuery() method:
 
@@ -144,7 +144,7 @@ For further reading on xPDO, read up on these:
 
 - xPDO at the [xPDO](/display/xPDO20/Home "Home") space
 - [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects") in xPDO
-- The [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery") Object
+- The [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") Object
 
 ## Recommended Methods and Tips 
 

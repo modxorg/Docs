@@ -10,7 +10,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/signupemail_mess
 **Type**: String 
 **Default**:
 
-``` php 
+``` html 
 Hello [[+uid]]
 
 Here are your login details for [[+sname]] Content Manager:
@@ -32,7 +32,6 @@ The following placeholders are replaced by the Content Manager when the message 
 \[\[+uid\]\] - User\\'s Login name or id 
 \[\[+pwd\]\] - User\\'s password 
 \[\[+ufn\]\] - User\\'s full name.
-
 
 
 Leave the \[\[+uid\]\] and \[\[+pwd\]\] in the e-mail, or else the username and password won't be sent in the mail and your users won't know their username or password!

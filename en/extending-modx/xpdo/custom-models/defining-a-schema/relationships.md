@@ -190,9 +190,9 @@ foreach ($owners as $owner) {
 
 ##  See Also 
 
-- [getOne](xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
-- [getMany](xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
-- [addOne](xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne")
-- [addMany](xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany")
+- [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
+- [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
+- [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne")
+- [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany")
 - [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
 - [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files")

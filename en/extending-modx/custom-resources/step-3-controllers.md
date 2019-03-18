@@ -6,14 +6,14 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
 This tutorial is part of a Series:
 
-- [Part I: Creating a Custom Resource Class](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class")
+- [Part I: Creating a Custom Resource Class](extending-modx/custom-resources "Creating a Resource Class")
 - [Part II: Handling our CRC Behavior](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-2 "Creating a Resource Class - Step 2")
 - Part III: Customizing the Controllers
 - [Part IV: Customizing the Processors](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4")
 
 ## Creating the Resource Controllers
 
-Okay, remember how in [Step 1](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class") we told MODX where our controllers/ directory was, via the "getControllerPath" method? To refresh your memory, here's the code from
+Okay, remember how in [Step 1](extending-modx/custom-resources "Creating a Resource Class") we told MODX where our controllers/ directory was, via the "getControllerPath" method? To refresh your memory, here's the code from
 
 ``` php 
 return $modx->getOption('copyrightedresource.core_path',null,$modx->getOption('core_path').'components/copyrightedresource/').'controllers/';
@@ -45,7 +45,7 @@ So when we're done with that, our file structure should look something like this
 
 ![](/download/attachments/36634961/controllers.png?version=1&modificationDate=1360981998000)
 
-And that's all we need to get our custom controllers up and running. You don't even have to include the getLanguageTopics call, but we did so we can load our custom Lexicon for the page. Read that again: you do not need to create the **getLanguageTopics()** function! You do need to create the controllers and create the classes, but you do not need to add any functions to them. If you're confused, remember our hot tip from [Part I](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class"): any time you extend a PHP class, you should review the parent class that you're extending. In this case, you can take a gander at the parent classes:
+And that's all we need to get our custom controllers up and running. You don't even have to include the getLanguageTopics call, but we did so we can load our custom Lexicon for the page. Read that again: you do not need to create the **getLanguageTopics()** function! You do need to create the controllers and create the classes, but you do not need to add any functions to them. If you're confused, remember our hot tip from [Part I](extending-modx/custom-resources "Creating a Resource Class"): any time you extend a PHP class, you should review the parent class that you're extending. In this case, you can take a gander at the parent classes:
 
 - `manager/controllers/default/resource/create.class.php`
 - `manager/controllers/default/resource/update.class.php`

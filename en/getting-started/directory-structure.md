@@ -184,8 +184,8 @@ These classes are used by MODX internally, and developers should never need to d
 
 ### Notable Files
 
-- **core/cache/config.cache.php**- This is the cache file for all of the [System Settings](administering-your-site/settings/system-settings "System Settings") in MODX. Their database equivalents are found in the \_system\_settings table, and their xPDO equivalents are modSystemSetting objects.
-  - **_Tip_** - If you ever get locked out by the CAPTCHA component, you can edit this file and set _use\_captcha_to '0' to disable CAPTCHA. Then you can log in and disable CAPTCHA in [System Settings](administering-your-site/settings/system-settings "System Settings").
+- **core/cache/config.cache.php**- This is the cache file for all of the [System Settings](building-sites/settings "System Settings") in MODX. Their database equivalents are found in the \_system\_settings table, and their xPDO equivalents are modSystemSetting objects.
+  - **_Tip_** - If you ever get locked out by the CAPTCHA component, you can edit this file and set _use\_captcha_to '0' to disable CAPTCHA. Then you can log in and disable CAPTCHA in [System Settings](building-sites/settings "System Settings").
 - **core/cache/sitePublishing.idx.php**- In MODX Evolution, this file contained the cache data for all documents, chunks, and snippets. In Revolution, this is no longer the case, and this file now keeps track of cache refresh intervals.
 - **core/cache/mgr/actions.cache.php**- a map of all modAction objects.
 

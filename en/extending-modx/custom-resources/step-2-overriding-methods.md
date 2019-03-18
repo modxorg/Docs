@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
  This tutorial is part of a Series:
 
-- [Part I: Creating a Custom Resource Class](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class")
+- [Part I: Creating a Custom Resource Class](extending-modx/custom-resources "Creating a Resource Class")
 - Part II: Handling our CRC Behavior
 - [Part III: Customizing the Controllers](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3 "Creating a Resource Class - Step 3")
 - [Part IV: Customizing the Processors](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4")
