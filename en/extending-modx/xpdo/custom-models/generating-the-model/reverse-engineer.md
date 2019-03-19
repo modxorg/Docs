@@ -291,7 +291,7 @@ function print_msg($msg) {
 
 ## Defining Key Relationships
 
- Once you have your XML schema file generated, you may need to edit it manually to define any foreign key relationships between your tables. It's best if you create a backup of the XML schema file, then add in your aggregate and composite relationships (see [Schema Files and Relations](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files") for more info).
+ Once you have your XML schema file generated, you may need to edit it manually to define any foreign key relationships between your tables. It's best if you create a backup of the XML schema file, then add in your aggregate and composite relationships (see [Schema Files and Relations](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files") for more info).
 
  In the scaffolding script above, set the following:
 
@@ -327,12 +327,12 @@ return $output;
 
 ## See Also
 
-- [Schema Files and Relations](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files") Looking at XML schema file relations
+- [Schema Files and Relations](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files") Looking at XML schema file relations
 - [addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for loading up your schema
 - [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") for loading up a single object
 - [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") for loading up a collection of objects.
 - [xPDO: Creating Objects](extending-modx/xpdo/creating-objects "Creating Objects")
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects") a demonstration of how to retrieve objects using xPDO
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects") a demonstration of how to retrieve objects using xPDO
 - [Generating the Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code") – offers a streamlined version of the script provided here, but you can also change your class templates.
-- [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files") – juxtaposes MySQL database tables with xPDO XML schemas
+- [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files") – juxtaposes MySQL database tables with xPDO XML schemas
 - [Build script: Reverse-engineering tables / forward-engineering classes / maps](http://forums.modx.com/thread/31778/build-script-reverse-engineering-tables-forward-engineering-classes-maps) – another example by Jason.

@@ -127,4 +127,4 @@ Once installed, the user can uninstall the package at any time. Also, if the pac
 
 - [Package Management](extending-modx/transport-packages "Package Management")
 - [Providers](building-sites/extras/providers "Providers")
-- Tutorial: [Creating a 3rd Party Component Build Script](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script "Creating a 3rd Party Component Build Script")
+- Tutorial: [Creating a 3rd Party Component Build Script](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script")

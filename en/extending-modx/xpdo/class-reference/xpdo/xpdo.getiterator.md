@@ -58,7 +58,7 @@ if ($resourceObjs->valid()) {
 
 ## See Also
 
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects")
 - [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
 - [xPDO.getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
 - [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")

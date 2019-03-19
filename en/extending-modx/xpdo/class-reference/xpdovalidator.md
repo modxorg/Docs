@@ -13,4 +13,4 @@ xPDOValidator handles all model validation functions within xPDO. Validators can
 
 ## See Also
 
-- [Object Validation](xpdo/advanced-features/object-validation "Object Validation")
+- [Object Validation](extending-modx/xpdo/custom-models/validation "Object Validation")

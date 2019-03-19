@@ -52,9 +52,9 @@ Some of the xPDO-specific parameters use custom defines that you can use, such a
 - **xPDO::OPT\_CONNECTIONS** — Optionally defines a pool of [additional connections](http://rtfm.modx.com/display/xPDO20/Database+Connections+and+xPDO#DatabaseConnectionsandxPDO-DefiningMultipleConnections%28xPDO2.2%29) to select from when instantiating xPDO. _(2.2 only)_
 - **xPDO::OPT\_CONN\_INIT** — Defines options a connection must have to be selected as the initial connection; applicable when multiple connections are defined. _(2.2 only)_
 - **xPDO::OPT\_CONN\_MUTABLE** — Defines if data from a connection can be changed, i.e. is writable. _(2.2 only)_
-- **xPDO::OPT\_HYDRATE\_FIELDS** — If true, fields will be [hydrated](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields "Hydrating Fields").
-- **xPDO::OPT\_HYDRATE\_RELATED\_OBJECTS** — If true, related objects will be [hydrated](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields "Hydrating Fields").
-- **xPDO::OPT\_HYDRATE\_ADHOC\_FIELDS** — If true, ad-hoc fields will be [hydrated](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields "Hydrating Fields").
+- **xPDO::OPT\_HYDRATE\_FIELDS** — If true, fields will be [hydrated](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields").
+- **xPDO::OPT\_HYDRATE\_RELATED\_OBJECTS** — If true, related objects will be [hydrated](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields").
+- **xPDO::OPT\_HYDRATE\_ADHOC\_FIELDS** — If true, ad-hoc fields will be [hydrated](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields").
 - **xPDO::OPT\_LOADER\_CLASSES** — Can be an array of class names to load upon instantiation of the xPDO object. _(deprecated in 2.0.0-pl)_
 - **xPDO::OPT\_ON\_SET\_STRIPSLASHES** — If set, stripslashes() is applied to values being set() on xPDOObject instances.
 - **xPDO::OPT\_TABLE\_PREFIX** — If set, all database class references will be prefixed with this prefix.
@@ -69,11 +69,11 @@ An optional array of driver-specific PDO options. More info can be found [here](
 
 - [PDO::\_\_construct()](http://php.net/manual/en/pdo.construct.php)
 - [Caching](extending-modx/xpdo/caching "Caching")
-- [Database Connections and xPDO](xpdo/getting-started/using-your-xpdo-model/database-connections-and-xpdo "Database Connections and xPDO")
-- [Hydrating Fields](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields "Hydrating Fields")
-- [Object Validation](xpdo/advanced-features/object-validation "Object Validation")
+- [Database Connections and xPDO](extending-modx/xpdo/create-xpdo-instance/connections "Database Connections and xPDO")
+- [Hydrating Fields](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields")
+- [Object Validation](extending-modx/xpdo/custom-models/validation "Object Validation")
 - [Using Custom Object Loaders](xpdo/extending-your-xpdo-model/overriding-derived-behavior/using-custom-object-loaders "Using Custom Object Loaders")
 
 ### More information about options
 
-1. [Hydrating Fields](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields)
+1. [Hydrating Fields](extending-modx/xpdo/create-xpdo-instance/hydrating-fields)

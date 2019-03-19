@@ -148,7 +148,7 @@ foreach ($pages as $p) {
 
 ## Comments
 
-1. Obtain a connection via [the xPDO Constructor](/xpdo/1.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") including [Hydrating Fields](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields "Hydrating Fields")
+1. Obtain a connection via [the xPDO Constructor](/xpdo/1.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") including [Hydrating Fields](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields")
 2. Viewing the package name in the schema we set (or apply) the package to our connection, taking note of the prefix our tables are using in the database
 3. Using 'Zip' as our "view" we look at the relationships directly defined in the Zip object, in our schema, and access those via the aliases given there
 

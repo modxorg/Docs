@@ -28,4 +28,4 @@ if ($item->remove() == false) echo 'The Item failed to remove.';
 
 ## See Also 
 
-- [Removing Objects](xpdo/getting-started/using-your-xpdo-model/removing-objects)
+- [Removing Objects](extending-modx/xpdo/removing-objects)

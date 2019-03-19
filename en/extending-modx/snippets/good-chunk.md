@@ -87,7 +87,7 @@ If your Chunk tpl uses an Output Modifier, **it should fit on one line**. If it 
 ## See Also 
 
 1. [Code Standards](_legacy/developing-in-modx/code-standards "Code Standards")
-2. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
-3. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)
-4. [How to Write a Good Snippet](developing-in-modx/basic-development/snippets/how-to-write-a-good-snippet)
-5. [How to Write a Good Chunk](developing-in-modx/basic-development/snippets/how-to-write-a-good-chunk)
+2. [Templating Your Snippets](extending-modx/snippets/templating)
+3. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
+4. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
+5. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)

@@ -143,7 +143,7 @@ And finally, we called getCollection which - unlike getObject - returns a collec
 For further reading on xPDO, read up on these:
 
 - xPDO at the [xPDO](/display/xPDO20/Home "Home") space
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects") in xPDO
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects") in xPDO
 - The [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") Object
 
 ## Recommended Methods and Tips 
@@ -211,10 +211,10 @@ Consider adding default properties for your snippet into the snippet's Propertie
 
 ## See Also 
 
-1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
-2. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)
-3. [How to Write a Good Snippet](developing-in-modx/basic-development/snippets/how-to-write-a-good-snippet)
-4. [How to Write a Good Chunk](developing-in-modx/basic-development/snippets/how-to-write-a-good-chunk)
+1. [Templating Your Snippets](extending-modx/snippets/templating)
+2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
+3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
+4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)
 
 - [modX.runSnippet](extending-modx/core-model/modx/modx.runsnippet "modX.runSnippet")
 - [modX.setPlaceholder](extending-modx/core-model/modx/modx.setplaceholder "modX.setPlaceholder")

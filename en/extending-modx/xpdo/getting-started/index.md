@@ -58,7 +58,7 @@ function __construct($options = array()) {
 }
 ```
 
-There's a lot in there. You can find more information on the constructor here: [The xPDO Constructor](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor").
+There's a lot in there. You can find more information on the constructor here: [The xPDO Constructor](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor").
 
 ## xPDO as Service Layer
 

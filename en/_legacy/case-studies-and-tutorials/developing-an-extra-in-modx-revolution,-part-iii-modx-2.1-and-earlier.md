@@ -230,7 +230,7 @@ $vehicle = $builder->createVehicle($category,$attr);
 $builder->putVehicle($vehicle);
 ```
 
-Quite a bit of this is detailed [in this tutorial here](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script "Creating a 3rd Party Component Build Script"), but we'll go over it again here. First off, we create a modCategory object that has the name (category) of 'Doodles'. Great. Note how we don't ->save() on it - we just want the object. Next we have some code to package in the Snippet, but we've commented it out for now. Go ahead and ignore it - we'll come back to it.
+Quite a bit of this is detailed [in this tutorial here](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script"), but we'll go over it again here. First off, we create a modCategory object that has the name (category) of 'Doodles'. Great. Note how we don't ->save() on it - we just want the object. Next we have some code to package in the Snippet, but we've commented it out for now. Go ahead and ignore it - we'll come back to it.
 
 Next, we create this really big array of attributes, it seems. A bit more on these - they are attributes for the Vehicle for the Category. What's a Vehicle? Well, a Vehicle "carries" an Object in the Transport Package. Each object (say, a Snippet, Menu, Category, etc) needs a Vehicle to be carried in the Transport Package. So we'll create one, but first we want to assign some attributes to it to tell MODX just how this Vehicle should behave when the user installs it.
 

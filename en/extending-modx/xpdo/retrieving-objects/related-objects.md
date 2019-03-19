@@ -106,4 +106,4 @@ This will add all the 10-width Wheels and save the relationships.
 - [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
 - [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne")
 - [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany")
-- [Defining Relationships](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships")
+- [Defining Relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships")

@@ -16,7 +16,7 @@ _old_uri: "2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor
 
 Hydration is the process in which fields and related objects represented by an xPDOObject are populated with values. By default, these fields are **only** accessible using the get(), getOne() and getMany() methods of xPDOObject, and must be defined with appropriate metadata in the map for the object. However, there are a number of options you can use to extend how xPDO hydrates fields and related objects.
 
-The options are available by passing any of the following configuration options into the `$config` parameter of the [xPDO constructor](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor"):
+The options are available by passing any of the following configuration options into the `$config` parameter of the [xPDO constructor](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor"):
 
 - **xPDO::OPT\_HYDRATE\_FIELDS** - If true, fields will be hydrated as public member variables of the object.
 - **xPDO::OPT\_HYDRATE\_RELATED\_OBJECTS** - If true, related objects will be hydrated as public member variables of the object.
@@ -68,6 +68,6 @@ Objects loaded with [getOne](extending-modx/xpdo/class-reference/xpdoobject/rela
 
 ## See Also
 
-- [The xPDO Constructor](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor")
-- [Setting Object Fields](xpdo/getting-started/using-your-xpdo-model/setting-object-fields "Setting Object Fields")
+- [The xPDO Constructor](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor")
+- [Setting Object Fields](extending-modx/xpdo/setting-object-fields "Setting Object Fields")
 - [Working with Related Objects](extending-modx/xpdo/retrieving-objects/related-objects "Working with Related Objects")

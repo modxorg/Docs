@@ -58,7 +58,7 @@ if (!$xpdo->addPackage('my_package','/path/to/docroot/core/components/my_package
 
 ## Adding Packages from other Databases
 
- The addPackage() method works on any instantiated xPDO object that has valid class and map files. If you need to connect to a different database, instantiate a new instance of xPDO using valid login criteria, e.g. as described here: [Database Connections and xPDO](xpdo/getting-started/using-your-xpdo-model/database-connections-and-xpdo "Database Connections and xPDO")
+ The addPackage() method works on any instantiated xPDO object that has valid class and map files. If you need to connect to a different database, instantiate a new instance of xPDO using valid login criteria, e.g. as described here: [Database Connections and xPDO](extending-modx/xpdo/create-xpdo-instance/connections "Database Connections and xPDO")
 
 ## Creating Tables
 
@@ -67,4 +67,4 @@ if (!$xpdo->addPackage('my_package','/path/to/docroot/core/components/my_package
 ## See Also
 
 - [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")
-- [Loading Packages](xpdo/getting-started/using-your-xpdo-model/loading-packages "Loading Packages")
+- [Loading Packages](extending-modx/xpdo/custom-models/loading-package "Loading Packages")

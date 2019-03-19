@@ -24,7 +24,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 ###  See Also 
 
 - [Reverse Engineer xPDO Classes from Existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table")
-- [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files")
+- [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files")
 - [Generating the Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code")
 
 ##  Overview 
@@ -103,7 +103,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 </model>
 ```
 
- You will need to parse and create the model map associated with this schema. As this process is out of the scope of this topic, please refer to [Using Custom Database Tables in your 3rd Party Components](case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components "Using Custom Database Tables in your 3rd Party Components") for further information.
+ You will need to parse and create the model map associated with this schema. As this process is out of the scope of this topic, please refer to [Using Custom Database Tables in your 3rd Party Components](extending-modx/tutorials/using-custom-database-tables "Using Custom Database Tables in your 3rd Party Components") for further information.
 
 ###  2.) Edit the extuser.class.php 
 
