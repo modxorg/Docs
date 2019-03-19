@@ -20,5 +20,5 @@ Group: None
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events)
-- [Plugins](developing-in-modx/basic-development/plugins)
+- [System Events](extending-modx/plugins/system-events)
+- [Plugins](extending-modx/plugins)

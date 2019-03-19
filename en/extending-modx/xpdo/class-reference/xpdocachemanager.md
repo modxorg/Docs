@@ -23,4 +23,4 @@ xPDOCacheManager handles all caching algorithms and methods within xPDO.
 
 ## See Also
 
-- [Caching](xpdo/advanced-features/caching "Caching")
+- [Caching](extending-modx/xpdo/caching "Caching")

@@ -62,6 +62,6 @@ Simple - just extend modMail with that class, then load your class via [getServi
 
 ## See Also
 
-- [MODx Services](developing-in-modx/advanced-development/modx-services "MODx Services")
+- [MODx Services](extending-modx/services "MODx Services")
 - [modX.getService](extending-modx/core-model/modx/modx.getservice "modX.getService")
 - [modSwiftMailer](/extras/revo/modswiftmailer "modSwiftMailer")

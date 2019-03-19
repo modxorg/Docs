@@ -7,9 +7,9 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 This tutorial is part of a Series:
 
 - [Part I: Creating a Custom Resource Class](extending-modx/custom-resources "Creating a Resource Class")
-- [Part II: Handling our CRC Behavior](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-2 "Creating a Resource Class - Step 2")
+- [Part II: Handling our CRC Behavior](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2")
 - Part III: Customizing the Controllers
-- [Part IV: Customizing the Processors](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4")
+- [Part IV: Customizing the Processors](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
 
 ## Creating the Resource Controllers
 
@@ -56,4 +56,4 @@ Now you can go to the Resource tree, and create a "Copyrighted Page", and it wil
 
 ![](/download/attachments/36634961/fe-view.png?version=1&modificationDate=1322513681000)
 
-Wonderful! This should give you a good understanding of how resources are handled by MODX. You could stop there, but we'll go on a little bit further to describe how to [extend the processors for your CRC](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4"). That's where things get more interesting... you can customize the behavior of the manager and control where things get saved in the database, and all sorts of things...
+Wonderful! This should give you a good understanding of how resources are handled by MODX. You could stop there, but we'll go on a little bit further to describe how to [extend the processors for your CRC](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4"). That's where things get more interesting... you can customize the behavior of the manager and control where things get saved in the database, and all sorts of things...

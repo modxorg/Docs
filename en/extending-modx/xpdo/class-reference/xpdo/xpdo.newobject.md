@@ -36,6 +36,6 @@ $box = $xpdo->newObject('Box',array(
 
 ## See Also 
 
-- [Creating Objects](xpdo/getting-started/using-your-xpdo-model/creating-objects "Creating Objects")
+- [Creating Objects](extending-modx/xpdo/creating-objects "Creating Objects")
 - [Removing (deleting) objects](extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/remove)
 - [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")

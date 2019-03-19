@@ -51,5 +51,5 @@ $modx->initialize('mgr');
 
 ##  See Also 
 
-- [Developer Introduction](developing-in-modx/overview-of-modx-development/developer-introduction "Developer Introduction")
+- [Developer Introduction](extending-modx/getting-started/developer-introduction "Developer Introduction")
 - [xPDO](/display/xPDO20/Home "Home"), the db-layer for Revolution

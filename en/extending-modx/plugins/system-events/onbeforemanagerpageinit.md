@@ -20,9 +20,9 @@ Group: System
 
 ## Remarks
 
-| Previous event | [OnManagerPageInit](developing-in-modx/basic-development/plugins/system-events/onmanagerpageinit "OnManagerPageInit")                              |
+| Previous event | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit")                              |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | [OnManagerPageBeforeRender](developing-in-modx/basic-development/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")      |
+| Next event     | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")      |
 | File           | [core/model/modx/modmanagercontroller.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagercontroller.class.php) |
 | Class          | abstract class modManagerController                                                                                                                |
 | Method         | public function render()                                                                                                                           |

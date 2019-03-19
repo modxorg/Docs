@@ -74,12 +74,12 @@ A couple of things to note. One, note that innerJoin first passes the class name
 
 [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") supports the the methods: join, [rightJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.rightjoin "xPDOQuery.rightJoin"), [leftJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.leftjoin "xPDOQuery.leftJoin"), [innerJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"), [andCondition](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.andcondition "xPDOQuery.andCondition"), [orCondition](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.orcondition "xPDOQuery.orCondition"), [sortby](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.sortby "xPDOQuery.sortby"), [groupby](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.groupby "xPDOQuery.groupby"), [limit](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.limit "xPDOQuery.limit"), bindGraph, bindGraphNode, and [select](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.select "xPDOQuery.select").
 
-Obviously, you can go pretty wild here with complex queries. The nice thing about xPDO in MODx is that there's really a ton of different ways to do most things - you could also have used [$modx->getCollectionGraph](xpdo/getting-started/using-your-xpdo-model/retrieving-objects/getcollectiongraph "getCollectionGraph") for this as well.
+Obviously, you can go pretty wild here with complex queries. The nice thing about xPDO in MODx is that there's really a ton of different ways to do most things - you could also have used [$modx->getCollectionGraph](extending-modx/xpdo/retrieving-objects/graphs "getCollectionGraph") for this as well.
 
-In the [next article](case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i/php-coding-in-modx-revolution,-pt.-iii "PHP Coding in MODx Revolution, Pt. III"), we'll talk about how this is used in the context of MODx processors with JSON.
+In the [next article](extending-modx/getting-started/tutorial/part-3 "PHP Coding in MODx Revolution, Pt. III"), we'll talk about how this is used in the context of MODx processors with JSON.
 
 ## See Also
 
-- [xPDO: Creating Objects](xpdo/getting-started/using-your-xpdo-model/creating-objects "Creating Objects")
+- [xPDO: Creating Objects](extending-modx/xpdo/creating-objects "Creating Objects")
 - [xPDOObject::remove](extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/remove "remove")
 - [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")

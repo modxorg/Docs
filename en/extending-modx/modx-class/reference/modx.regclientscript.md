@@ -26,7 +26,7 @@ $modx->regClientScript('assets/js/footer.js');
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")
 - [modX.regClientCSS](extending-modx/core-model/modx/modx.regclientcss "modX.regClientCSS")
 - [modX.regClientHTMLBlock](extending-modx/core-model/modx/modx.regclienthtmlblock "modX.regClientHTMLBlock")
 - [modX.regClientStartupHTMLBlock](extending-modx/core-model/modx/modx.regclientstartuphtmlblock "modX.regClientStartupHTMLBlock")

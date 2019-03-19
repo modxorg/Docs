@@ -26,7 +26,7 @@ $modx->regClientHTMLBlock('<div id="footer">(c) 2009 MODx</div>');
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")
 - [modX.regClientCSS](extending-modx/core-model/modx/modx.regclientcss "modX.regClientCSS")
 - [modX.regClientScript](extending-modx/core-model/modx/modx.regclientscript "modX.regClientScript")
 - [modX.regClientStartupHTMLBlock](extending-modx/core-model/modx/modx.regclientstartuphtmlblock "modX.regClientStartupHTMLBlock")

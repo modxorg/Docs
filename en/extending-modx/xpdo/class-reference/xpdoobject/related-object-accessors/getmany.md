@@ -35,4 +35,4 @@ foreach ($chunks as $chunk) {
 ## See Also
 
 - [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
-- [Working with Related Objects](xpdo/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")
+- [Working with Related Objects](extending-modx/xpdo/retrieving-objects/related-objects "Working with Related Objects")

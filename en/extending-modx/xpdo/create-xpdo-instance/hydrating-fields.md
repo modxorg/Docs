@@ -70,4 +70,4 @@ Objects loaded with [getOne](extending-modx/xpdo/class-reference/xpdoobject/rela
 
 - [The xPDO Constructor](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor")
 - [Setting Object Fields](xpdo/getting-started/using-your-xpdo-model/setting-object-fields "Setting Object Fields")
-- [Working with Related Objects](xpdo/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")
+- [Working with Related Objects](extending-modx/xpdo/retrieving-objects/related-objects "Working with Related Objects")

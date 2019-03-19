@@ -25,9 +25,9 @@ This tutorial is part of a Series:
 
 ## Overview
 
-In this tutorial, we're going to be packaging up our Extra that we made in the [past](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") [two](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II") tutorials into a [Transport Package](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages") (TP) so that we can install it on any MODX installation, and even submit it to the Extras section on modx.com.
+In this tutorial, we're going to be packaging up our Extra that we made in the [past](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") [two](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II") tutorials into a [Transport Package](extending-modx/transport-packages "Transport Packages") (TP) so that we can install it on any MODX installation, and even submit it to the Extras section on modx.com.
 
-First off, if you're not sure what a Transport Package is, or what Package Management is, I suggest you read up on [Package Management](extending-modx/transport-packages "Package Management") and [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages") first before proceeding.
+First off, if you're not sure what a Transport Package is, or what Package Management is, I suggest you read up on [Package Management](extending-modx/transport-packages "Package Management") and [Transport Packages](extending-modx/transport-packages "Transport Packages") first before proceeding.
 
 Our main goals for this part of the tutorial will be getting the Extra in a package: specifically our Snippet; the files in core/components and assets/components; the Action, Menu and Namespace for our CMP; making our Snippet's default properties i18n supported; and finally, adding a Resolver that creates our custom DB table in the installing user's database.
 

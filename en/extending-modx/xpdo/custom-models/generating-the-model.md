@@ -74,4 +74,4 @@ This block of code executes the schema parsing method, and then outputs the tota
 
 With the help of [xPDOGenerator](extending-modx/xpdo/class-reference/xpdogenerator "xPDOGenerator"), making your XML schema files into usable PHP classes and maps is simple. Now that we've got our PHP code, we'll proceed onto steps on [how to use it](xpdo/getting-started/using-your-xpdo-model "Using Your xPDO Model").
 
-For an example of how to build model classes from an existing database, have a look at the following page: [Reverse Engineer xPDO Classes from Existing Database Table](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table")
+For an example of how to build model classes from an existing database, have a look at the following page: [Reverse Engineer xPDO Classes from Existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table")

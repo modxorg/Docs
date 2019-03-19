@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modUser::changePassword
 
-Changes the password of a user. It first matches the oldPassword you specify to the current password using modUser->passwordMatches($oldPassword), then sets the password and finally it invokes the [OnUserChangePassword](developing-in-modx/basic-development/plugins/system-events/onuserchangepassword "OnUserChangePassword") event. Returns true if the password was changed, false if not.
+Changes the password of a user. It first matches the oldPassword you specify to the current password using modUser->passwordMatches($oldPassword), then sets the password and finally it invokes the [OnUserChangePassword](extending-modx/plugins/system-events/onuserchangepassword "OnUserChangePassword") event. Returns true if the password was changed, false if not.
 
 ## Syntax
 

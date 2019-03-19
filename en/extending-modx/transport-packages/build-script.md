@@ -584,5 +584,5 @@ Great, we're done! You'll only need to run this script now, and viola! A fully z
 ## Related Pages
 
 - [Package Management](extending-modx/transport-packages "Package Management")
-- [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages")
+- [Transport Packages](extending-modx/transport-packages "Transport Packages")
 - [Transport Providers](building-sites/extras/providers "Providers")

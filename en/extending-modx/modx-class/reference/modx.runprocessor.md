@@ -40,5 +40,5 @@ $response = $modx->runProcessor('security/resourcegroup/create', array(
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
-- [Using runProcessor](developing-in-modx/advanced-development/using-runprocessor)
+- [modX](extending-modx/core-model/modx "modX")
+- [Using runProcessor](extending-modx/processors/using-runprocessor)

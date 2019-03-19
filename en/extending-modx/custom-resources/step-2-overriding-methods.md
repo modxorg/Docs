@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
 - [Part I: Creating a Custom Resource Class](extending-modx/custom-resources "Creating a Resource Class")
 - Part II: Handling our CRC Behavior
-- [Part III: Customizing the Controllers](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3 "Creating a Resource Class - Step 3")
-- [Part IV: Customizing the Processors](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4")
+- [Part III: Customizing the Controllers](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3")
+- [Part IV: Customizing the Processors](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
  
 
  Now that we've got our class, we want to append our copyright date to it. Let's go ahead:
@@ -48,4 +48,4 @@ public function getContent(array $options = array()) {
 
  When you try to add a new Copyrighted Resource, however, you will only get a white screen! This is normal – we haven't created the controller files yet. 
 
- Now let's make things start working by [making our controller files](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3 "Creating a Resource Class - Step 3").
+ Now let's make things start working by [making our controller files](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3").

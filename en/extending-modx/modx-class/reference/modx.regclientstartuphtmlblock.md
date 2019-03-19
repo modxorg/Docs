@@ -26,7 +26,7 @@ $modx->regClientStartupHTMLBlock('<tag></tag>');
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")
 - [modX.regClientCSS](extending-modx/core-model/modx/modx.regclientcss "modX.regClientCSS")
 - [modX.regClientHTMLBlock](extending-modx/core-model/modx/modx.regclienthtmlblock "modX.regClientHTMLBlock")
 - [modX.regClientScript](extending-modx/core-model/modx/modx.regclientscript "modX.regClientScript")

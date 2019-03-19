@@ -33,7 +33,7 @@ $modx->sendForward(234);
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")
 - [modX.makeUrl](extending-modx/core-model/modx/modx.makeurl "modX.makeUrl")
 - [modX.sendRedirect](extending-modx/core-model/modx/modx.sendredirect "modX.sendRedirect")
 - [modX.sendErrorPage](extending-modx/core-model/modx/modx.senderrorpage "modX.sendErrorPage")

@@ -55,7 +55,7 @@ $modx->sendRedirect('http://modx.com',array('responseCode' => 'HTTP/1.1 301 Move
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")
 - [modX.makeUrl](extending-modx/core-model/modx/modx.makeurl "modX.makeUrl")
 - [modX.sendForward](extending-modx/core-model/modx/modx.sendforward "modX.sendForward")
 - [modX.sendErrorPage](extending-modx/core-model/modx/modx.senderrorpage "modX.sendErrorPage")

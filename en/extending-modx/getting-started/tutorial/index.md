@@ -112,5 +112,5 @@ Pretty easy, huh? We'll get into creating and removing objects, as well as more 
 
 ## See Also 
 
-- [xPDO: Defining a Schema](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema "Defining a Schema")
-- [xPDO: Related Objects](xpdo/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")
+- [xPDO: Defining a Schema](extending-modx/xpdo/custom-models/defining-a-schema "Defining a Schema")
+- [xPDO: Related Objects](extending-modx/xpdo/retrieving-objects/related-objects "Working with Related Objects")

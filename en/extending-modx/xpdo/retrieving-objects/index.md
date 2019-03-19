@@ -283,13 +283,13 @@ if ($pages) {
 }
 ```
 
- Please view the dedicated page: [getCollectionGraph](xpdo/getting-started/using-your-xpdo-model/retrieving-objects/getcollectiongraph "getCollectionGraph")
+ Please view the dedicated page: [getCollectionGraph](extending-modx/xpdo/retrieving-objects/graphs "getCollectionGraph")
 
 ## See Also
 
 - [xPDO.getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
 - [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
-- [getCollectionGraph](xpdo/getting-started/using-your-xpdo-model/retrieving-objects/getcollectiongraph "getCollectionGraph")
+- [getCollectionGraph](extending-modx/xpdo/retrieving-objects/graphs "getCollectionGraph")
 - [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")
 - [xPDO.newQuery](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
 - [xPDO.where](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.where "xPDO.where")

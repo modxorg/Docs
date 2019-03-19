@@ -26,7 +26,7 @@ $modx->regClientCSS('assets/css/style.css');
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")
 - [modX.regClientHTMLBlock](extending-modx/core-model/modx/modx.regclienthtmlblock "modX.regClientHTMLBlock")
 - [modX.regClientScript](extending-modx/core-model/modx/modx.regclientscript "modX.regClientScript")
 - [modX.regClientStartupHTMLBlock](extending-modx/core-model/modx/modx.regclientstartuphtmlblock "modX.regClientStartupHTMLBlock")

@@ -28,7 +28,7 @@ $xpdo->addPackage('boxpackage','/myapp/core/model/','myapp_');
 
 ## Conclusion
 
- Now that you've got your package loaded, you'll want to look into [creating objects](xpdo/getting-started/using-your-xpdo-model/creating-objects "Creating Objects"), or adding rows to your tables, with xPDO.
+ Now that you've got your package loaded, you'll want to look into [creating objects](extending-modx/xpdo/creating-objects "Creating Objects"), or adding rows to your tables, with xPDO.
 
 ## See Also
 

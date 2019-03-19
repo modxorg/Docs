@@ -7,8 +7,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
  This tutorial is part of a Series:
 
 - [Part I: Creating a Custom Resource Class](extending-modx/custom-resources "Creating a Resource Class")
-- [Part II: Handling our CRC Behavior](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-2 "Creating a Resource Class - Step 2")
-- [Part III: Customizing the Controllers](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3 "Creating a Resource Class - Step 3")
+- [Part II: Handling our CRC Behavior](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2")
+- [Part III: Customizing the Controllers](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3")
 - Part IV: Customizing the Processors
 
  This is a bit of bonus material to help identify some of the things you can do by extending the default processors.

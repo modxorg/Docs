@@ -186,7 +186,7 @@ foreach ($owners as $owner) {
 
  Building relationships within schemas obeys some simple rules, you just have to get familiar with which directions the relationships apply. If you require more examples of how to represent your database tables in the xPDO schema, have a look at [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files").
 
- Now that we've built our schema, let's go ahead and [generate the PHP classes and maps](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code").
+ Now that we've built our schema, let's go ahead and [generate the PHP classes and maps](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code").
 
 ##  See Also 
 

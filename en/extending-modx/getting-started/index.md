@@ -19,7 +19,7 @@ _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introdu
 
 ## 3rd-Party Components (3PCs)
 
- 3rd-Party Components (3PCs) are collections of any sort of MODX Objects. They can be a collection of Snippets, Plugins and Chunks, or a single Snippet, or just a collection of files. They are usually transported and installed via [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages").
+ 3rd-Party Components (3PCs) are collections of any sort of MODX Objects. They can be a collection of Snippets, Plugins and Chunks, or a single Snippet, or just a collection of files. They are usually transported and installed via [Transport Packages](extending-modx/transport-packages "Transport Packages").
 
 ## core/components and assets/components
 

@@ -114,7 +114,7 @@ Connectors allow for dynamic, secure JSON requests (and eventually REST-based re
 
 ## See Also
 
-1. [Getting Started Developing](developing-in-modx/overview-of-modx-development/developer-introduction/getting-started-developing)
+1. [Getting Started Developing](extending-modx/getting-started)
 2. [xPDO](/display/xPDO20/Home "Home"), the database layer for Revolution
-3. [Explanation of Directory Structure](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure "Explanation of Directory Structure")
-4. [Glossary of Revolution Terms](getting-started/an-overview-of-modx/glossary-of-revolution-terms "Glossary of Revolution Terms")
+3. [Explanation of Directory Structure](getting-started/directory-structure "Explanation of Directory Structure")
+4. [Glossary of Revolution Terms](getting-started/glossary "Glossary of Revolution Terms")

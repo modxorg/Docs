@@ -19,7 +19,7 @@ Group: System
 
 ## Remarks
 
-| Previous event | [OnManagerPageBeforeRender](developing-in-modx/basic-development/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")      |
+| Previous event | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")      |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Next event     | —                                                                                                                                                 |
 | File           | [core/model/modx/modmanagercontroller.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagercontroller.class.php) |

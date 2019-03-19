@@ -4,7 +4,7 @@ _old_id: "57"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/"
 ---
 
-1. [modX](developing-in-modx/other-development-resources/class-reference/modx)
+1. [modX](extending-modx/core-model/modx)
 2. [modX.getChunk](extending-modx/core-model/modx/modx.getchunk)
 3. [modX.getLoginUserName](extending-modx/core-model/modx/modx.getloginusername)
 4. [modX.getPlaceholder](extending-modx/core-model/modx/modx.getplaceholder)

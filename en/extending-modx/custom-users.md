@@ -23,9 +23,9 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 
 ###  See Also 
 
-- [Reverse Engineer xPDO Classes from Existing Database Table](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table")
+- [Reverse Engineer xPDO Classes from Existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table")
 - [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files")
-- [Generating the Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code")
+- [Generating the Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code")
 
 ##  Overview 
 

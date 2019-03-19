@@ -68,7 +68,7 @@ An optional array of driver-specific PDO options. More info can be found [here](
 ## See Also
 
 - [PDO::\_\_construct()](http://php.net/manual/en/pdo.construct.php)
-- [Caching](xpdo/advanced-features/caching "Caching")
+- [Caching](extending-modx/xpdo/caching "Caching")
 - [Database Connections and xPDO](xpdo/getting-started/using-your-xpdo-model/database-connections-and-xpdo "Database Connections and xPDO")
 - [Hydrating Fields](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields "Hydrating Fields")
 - [Object Validation](xpdo/advanced-features/object-validation "Object Validation")

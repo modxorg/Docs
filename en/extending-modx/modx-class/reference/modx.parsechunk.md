@@ -26,5 +26,5 @@ $output = $modx->parseChunk('myChunk',array('name' => 'John'));
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")
 - [modX.getChunk](extending-modx/modx-class/reference/modx.getchunk "modX.getChunk")

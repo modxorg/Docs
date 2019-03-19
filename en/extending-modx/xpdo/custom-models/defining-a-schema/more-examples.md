@@ -34,7 +34,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
  Remember that xPDO _abstracts_ the database, so it's entirely possible that your model is something other than a traditional database, but for the sake of familiarity and clarity, the examples here assume you are using a MySQL database for your model. In general, it's recommended that you design your snippets/plugins etc. using a traditional database before abstracting it using xPDO.
 
  **FYI** 
- Once you've created a valid XML schema file, xPDO can generate PHP class files _and_ database tables; it is bi-directional. The purpose of this page is to juxtapose the xPDO XML schema to MySQL database tables. Some developers may prefer to write the XML schema file by hand and then let xPDO generate the tables and the class files. Other developers may prefer to first create the database tables, then [reverse engineer](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table") the XML schema and the class files. 
+ Once you've created a valid XML schema file, xPDO can generate PHP class files _and_ database tables; it is bi-directional. The purpose of this page is to juxtapose the xPDO XML schema to MySQL database tables. Some developers may prefer to write the XML schema file by hand and then let xPDO generate the tables and the class files. Other developers may prefer to first create the database tables, then [reverse engineer](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table") the XML schema and the class files. 
 
 ## One to One
 

@@ -190,7 +190,7 @@ You'll find that MODX will append PHP tags to beginning and end of the snippet, 
 <?php <?php //something here ?> ?>
 ```
 
-If you need to do something like this, **use a Chunk** - separate the PHP into a Snippet, load its output into a placeholder with the [modx API](developing-in-modx/other-development-resources/class-reference/modx "modX") placeholder functions or chunk processing, and include the Snippet's placeholders in the Chunk:
+If you need to do something like this, **use a Chunk** - separate the PHP into a Snippet, load its output into a placeholder with the [modx API](extending-modx/core-model/modx "modX") placeholder functions or chunk processing, and include the Snippet's placeholders in the Chunk:
 
 ``` php 
 $output = $modx->getChunk('myChunk',array(

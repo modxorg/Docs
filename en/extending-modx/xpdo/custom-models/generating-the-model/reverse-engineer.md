@@ -331,8 +331,8 @@ return $output;
 - [addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for loading up your schema
 - [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") for loading up a single object
 - [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") for loading up a collection of objects.
-- [xPDO: Creating Objects](xpdo/getting-started/using-your-xpdo-model/creating-objects "Creating Objects")
+- [xPDO: Creating Objects](extending-modx/xpdo/creating-objects "Creating Objects")
 - [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects") a demonstration of how to retrieve objects using xPDO
-- [Generating the Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code") – offers a streamlined version of the script provided here, but you can also change your class templates.
+- [Generating the Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code") – offers a streamlined version of the script provided here, but you can also change your class templates.
 - [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files") – juxtaposes MySQL database tables with xPDO XML schemas
 - [Build script: Reverse-engineering tables / forward-engineering classes / maps](http://forums.modx.com/thread/31778/build-script-reverse-engineering-tables-forward-engineering-classes-maps) – another example by Jason.

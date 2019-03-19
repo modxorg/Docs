@@ -7,17 +7,17 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
  This tutorial is part of a Series:
 
 - Part I: Creating a Custom Resource Class
-- [Part II: Handling our CRC Behavior](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-2 "Creating a Resource Class - Step 2")
-- [Part III: Customizing the Controllers](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3 "Creating a Resource Class - Step 3")
-- [Part IV: Customizing the Processors](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4")
+- [Part II: Handling our CRC Behavior](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2")
+- [Part III: Customizing the Controllers](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3")
+- [Part IV: Customizing the Processors](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
 
  We're going to create a sample Custom Resource Class (CRC) that does a very simple task - it outputs a copyright on the bottom of a page with the current date. Yes, something this trivial should be done by placing a [Snippet](extending-modx/snippets "Snippets") in your [Template](building-sites/elements/templates "Templates"), but we want to illustrate the concept of CRCs using something very, very simple, so bear with us. :)
 
- This page deals with Part I - creating the actual Custom Resource Class itself. [Part II](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-2 "Creating a Resource Class - Step 2") will actually implement the behavior of appending the copyright. [Part III](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3 "Creating a Resource Class - Step 3") will deal with overriding the Controllers, and [Part IV](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4 "Creating a Resource Class - Step 4") will deal with overriding the Processors. The files used in this tutorial can be found on GitHub for reference: <https://github.com/modxcms/CopyrightedResource>
+ This page deals with Part I - creating the actual Custom Resource Class itself. [Part II](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2") will actually implement the behavior of appending the copyright. [Part III](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3") will deal with overriding the Controllers, and [Part IV](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4") will deal with overriding the Processors. The files used in this tutorial can be found on GitHub for reference: <https://github.com/modxcms/CopyrightedResource>
 
 ##  Create your XML Schema 
 
- First, we are going to create a xPDO package using a schema (if you're not familiar on how to do this, please review the page on [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") tutorial and/or the [xPDO Defining a Schema](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema "Defining a Schema") tutorial).
+ First, we are going to create a xPDO package using a schema (if you're not familiar on how to do this, please review the page on [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") tutorial and/or the [xPDO Defining a Schema](extending-modx/xpdo/custom-models/defining-a-schema "Defining a Schema") tutorial).
 
  If you are planning on versioning this code in Git, your paths may be different, but ultimately you want your files to end up inside the `core/components/your_component/` directory. So for this tutorial our package is named "copyrightedresource", so we will create the schema file `core/components/copyrightedresource/model/schema/copyrightedresource.mysql.schema.xml`:
 
@@ -32,7 +32,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
 ##  Generating your Class Files 
 
- The next step is to generate the maps and classes for the model. You can do this using your own script, you'll just want to refer to the docs on [Generating the Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code") and xPDO's [parseSchema()](extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema") function. We've provided a sample script below. It's a modified version of the script used when [Reverse Engineering xPDO classes from an existing Database Table](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table").
+ The next step is to generate the maps and classes for the model. You can do this using your own script, you'll just want to refer to the docs on [Generating the Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code") and xPDO's [parseSchema()](extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema") function. We've provided a sample script below. It's a modified version of the script used when [Reverse Engineering xPDO classes from an existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table").
 
  Create the script at the web root of your MODX site, then execute it by hitting that page in a browser.
 
@@ -245,4 +245,4 @@ print 'Success!';
 
 You may need to clear the cache a couple of times.
 
- Fantastic! Now we've got our Custom Resource Class loaded, and we're ready to start actually getting into the nitty-gritty. [Proceed onto Step 2](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-2 "Creating a Resource Class - Step 2")!
+ Fantastic! Now we've got our Custom Resource Class loaded, and we're ready to start actually getting into the nitty-gritty. [Proceed onto Step 2](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2")!

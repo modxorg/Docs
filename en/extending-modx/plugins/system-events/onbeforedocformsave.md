@@ -12,7 +12,7 @@ Service: 1 - Parser Service Events
  Group: Documents
 
 **Be Careful with TVs** 
- Changing or inserting TV values is better done [OnDocFormSave](developing-in-modx/basic-development/plugins/system-events/ondocformsave "OnDocFormSave") as the process for saving TVs during onBeforeDocFormSave is more complicated due to TV values being rendered.
+ Changing or inserting TV values is better done [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave "OnDocFormSave") as the process for saving TVs during onBeforeDocFormSave is more complicated due to TV values being rendered.
 
 Plugins tied to this event should return **null** on success. Any value returned will be sent to the logs as an error (but the page will still be saved).
 

@@ -28,6 +28,6 @@ $generator->parseSchema('mypackage.mysql.schema.xml','/path/to/mypackage/model/'
 
 ## See Also
 
-- [Generating the Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code")
+- [Generating the Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code")
 - [Creating a Model With xPDO](xpdo/getting-started/creating-a-model-with-xpdo "Creating a Model With xPDO")
 - [xPDOGenerator.writeSchema](extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.writeschema "xPDOGenerator.writeSchema")

@@ -21,7 +21,7 @@ Group: Template Variables
 
 ## Remarks
 
-| Previous event | [OnTemplateVarBeforeSave](developing-in-modx/basic-development/plugins/system-events/ontemplatevarbeforesave "OnTemplateVarBeforeSave") |
+| Previous event | [OnTemplateVarBeforeSave](extending-modx/plugins/system-events/ontemplatevarbeforesave "OnTemplateVarBeforeSave") |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | Next event     | —                                                                                                                                      |
 | File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php)  |

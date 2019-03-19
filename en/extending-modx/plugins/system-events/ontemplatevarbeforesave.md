@@ -23,7 +23,7 @@ Group: Template Variables
 
 | Previous event | —                                                                                                                                     |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | [OnTemplateVarSave](developing-in-modx/basic-development/plugins/system-events/ontemplatevarsave "OnTemplateVarSave")                  |
+| Next event     | [OnTemplateVarSave](extending-modx/plugins/system-events/ontemplatevarsave "OnTemplateVarSave")                  |
 | File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
 | Class          | modTemplateVar                                                                                                                         |
 | Method         | public function save($cacheFlag = null)                                                                                                |
