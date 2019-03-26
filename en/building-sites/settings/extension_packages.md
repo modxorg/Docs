@@ -18,7 +18,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/extension_packag
 
 ### Sample value
 
- ``` php 
+ ``` json 
 [{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}},{"articles":{"path":"[[++core_path]]components/articles/model/"}}]
 ```
 
@@ -34,7 +34,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/extension_packag
 
  If your extension uses a different table prefix, you should list this in your JSON by using the **tablePrefix** key, e.g.
 
- ``` php 
+ ``` json 
 [{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/","tablePrefix":"ext_"}},{"articles":{"path":"[[++core_path]]components/articles/model/"}}]
 ```
 

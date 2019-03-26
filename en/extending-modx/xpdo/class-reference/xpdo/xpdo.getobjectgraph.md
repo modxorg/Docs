@@ -82,10 +82,10 @@ foreach ($box->getMany('BoxColors') as $boxColor) {
 
 ## See Also
 
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
-- [xPDO.getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
-- [xPDO.getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
-- [xPDO.getCollectionGraph](xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
-- [xPDO.getIterator](xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects")
+- [xPDO.getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
+- [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
+- [xPDO.getCollectionGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
+- [xPDO.getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
 - \[xPDO.load\]
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")

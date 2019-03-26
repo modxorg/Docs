@@ -34,4 +34,4 @@ $_lang['welcome_message'] = 'Hello [[+name]]!  How are you today?';
 
 ## See Also
 
-- [Internationalization](developing-in-modx/advanced-development/internationalization "Internationalization")
+- [Internationalization](extending-modx/internationalization "Internationalization")

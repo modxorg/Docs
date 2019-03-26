@@ -6,8 +6,8 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
 
 This tutorial is part of a Series:
 
-- [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
-- [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II")
+- [Part I: Getting Started and Creating the Doodles Snippet](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution")
+- [Part II: Creating our Custom Manager Page](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II")
 - Part III: Packaging Our Extra
 
 
@@ -25,9 +25,9 @@ This tutorial is part of a Series:
 
 ## Overview
 
-In this tutorial, we're going to be packaging up our Extra that we made in the [past](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution") [two](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II") tutorials into a [Transport Package](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages") (TP) so that we can install it on any MODX installation, and even submit it to the Extras section on modx.com.
+In this tutorial, we're going to be packaging up our Extra that we made in the [past](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") [two](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II") tutorials into a [Transport Package](extending-modx/transport-packages "Transport Packages") (TP) so that we can install it on any MODX installation, and even submit it to the Extras section on modx.com.
 
-First off, if you're not sure what a Transport Package is, or what Package Management is, I suggest you read up on [Package Management](extending-modx/transport-packages "Package Management") and [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages") first before proceeding.
+First off, if you're not sure what a Transport Package is, or what Package Management is, I suggest you read up on [Package Management](extending-modx/transport-packages "Package Management") and [Transport Packages](extending-modx/transport-packages "Transport Packages") first before proceeding.
 
 Our main goals for this part of the tutorial will be getting the Extra in a package: specifically our Snippet; the files in core/components and assets/components; the Action, Menu and Namespace for our CMP; making our Snippet's default properties i18n supported; and finally, adding a Resolver that creates our custom DB table in the installing user's database.
 
@@ -233,7 +233,7 @@ $vehicle = $builder->createVehicle($category,$attr);
 $builder->putVehicle($vehicle);
 ```
 
-Quite a bit of this is detailed [in this tutorial here](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script "Creating a 3rd Party Component Build Script"), but we'll go over it again here. First off, we create a modCategory object that has the name (category) of 'Doodles'. Great. Note how we don't ->save() on it - we just want the object. Next we have some code to package in the Snippet, but we've commented it out for now. Go ahead and ignore it - we'll come back to it.
+Quite a bit of this is detailed [in this tutorial here](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script"), but we'll go over it again here. First off, we create a modCategory object that has the name (category) of 'Doodles'. Great. Note how we don't ->save() on it - we just want the object. Next we have some code to package in the Snippet, but we've commented it out for now. Go ahead and ignore it - we'll come back to it.
 
 Next, we create this really big array of attributes, it seems. A bit more on these - they are attributes for the Vehicle for the Category. What's a Vehicle? Well, a Vehicle "carries" an Object in the Transport Package. Each object (say, a Snippet, Menu, Category, etc) needs a Vehicle to be carried in the Transport Package. So we'll create one, but first we want to assign some attributes to it to tell MODX just how this Vehicle should behave when the user installs it.
 
@@ -604,13 +604,9 @@ The Doodles Extra in this tutorial can be found on GitHub, here: <https://github
 
 This tutorial is part of a Series:
 
-- [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
-- [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II")
+- [Part I: Getting Started and Creating the Doodles Snippet](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution")
+- [Part II: Creating our Custom Manager Page](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II")
 - Part III: Packaging Our Extra
-
-
-
-
 
 the transport.menu.php modAction controller value should be just "index" and not have the preceding "controllers/" as follows when using the new abstract classes:
 
@@ -626,7 +622,7 @@ $action->fromArray(array(
     'assets' => '',
 ),'',true,true);
 ```
-
+``` php 
 $action= $modx->newObject('modAction'); 
 $action->fromArray(array( 
  'id' => 1, 
@@ -637,3 +633,4 @@ $action->fromArray(array(
  'lang\_topics' => 'doodles:default', 
  'assets' => '', 
 ),'',true,true);
+```

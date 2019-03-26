@@ -214,7 +214,7 @@ $base_path = !empty($base_path) ? $base_path : $modx->getOption('core_path').'co
 $modx->addPackage('storefinder',$base_path.'model/');
 ```
 
- This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
+ This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
 
  ``` php 
 $stores = $modx->getCollection('sfStore');
@@ -256,7 +256,7 @@ $store->save();
 
 ## See Also
 
-- [Generating the xPDO Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code")
-- [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files")
-- [Reverse Engineer xPDO Classes from Existing Database Table](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table")
+- [Generating the xPDO Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code")
+- [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files")
+- [Reverse Engineer xPDO Classes from Existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table")
 - <http://svn.modxcms.com/docs/display/revolution/PHP+Coding+in+MODx+Revolution%2C+Pt.+I>

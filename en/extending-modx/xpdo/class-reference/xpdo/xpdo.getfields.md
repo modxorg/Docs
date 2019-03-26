@@ -29,4 +29,4 @@ print_r($fields); // prints: Array ([id] => 1, [width] => 10, [height] => 23)
 
 ## See Also
 
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")

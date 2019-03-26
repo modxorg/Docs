@@ -4,7 +4,7 @@ _old_id: "209"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-rules/new-tab"
 ---
 
- The following is relevant to older versions of MODX. See [Customizing Tabs via Form Customization](administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization#CustomizingTabsviaFormCustomization-AddingNewTabs) for instructions for newer versions of MODX. 
+ The following is relevant to older versions of MODX. See [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs#CustomizingTabsviaFormCustomization-AddingNewTabs) for instructions for newer versions of MODX. 
 
 ## The New Tab Rule
 

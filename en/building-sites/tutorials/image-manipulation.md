@@ -17,7 +17,7 @@ _old_uri: "2.x/case-studies-and-tutorials/quick-and-easy-modx-tutorials/automate
 Don't want to wait ten seconds for Photoshop to load? Me neither. This tutorial will introduce you to the wonderful PHP script [phpthumbof](http://phpthumb.sourceforge.net/) ported to [MODX](/extras/revo/phpthumbof "phpThumbOf") by Shaun McCormick. 
 [phpthumbof](/extras/revo/phpthumbof "phpThumbOf") allows MODX to automatically generate thumbnails of a chosen width and height for us. Additionally, there are a billion other neat features to do basic image work that are at our disposal. Let's talk about a few of the most useful ones.
 
-This tutorial assumes that you know how to create and call [template variables](making-sites-with-modx/customizing-content/template-variables "Template Variables"). Knowing about [output filters](/display/revolution20/Input+and+Output+Filters "Input and Output Filters") is handy too, but we'll still get things working even if you don't know about them (they're good stuff, though).
+This tutorial assumes that you know how to create and call [template variables](building-sites/elements/template-variables "Template Variables"). Knowing about [output filters](/display/revolution20/Input+and+Output+Filters "Input and Output Filters") is handy too, but we'll still get things working even if you don't know about them (they're good stuff, though).
 
 Each of these examples will assume that you've created an image Template Variable called "big\_image", that it's applied to the current document, that you've filled in a valid image, and that you're ready to impress the pants off of your clients, friends, and families. Let's get started.
 

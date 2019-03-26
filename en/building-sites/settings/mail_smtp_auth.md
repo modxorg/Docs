@@ -10,4 +10,4 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/mail_smtp_auth"
 **Type**: Yes/No 
 **Default**: No
 
-Sets SMTP authentication. Utilizes the [mail\_smtp\_user](administering-your-site/settings/system-settings/mail_smtp_user "mail_smtp_user") and [mail\_smtp\_pass](administering-your-site/settings/system-settings/mail_smtp_pass "mail_smtp_pass") settings.
+Sets SMTP authentication. Utilizes the [mail\_smtp\_user](building-sites/settings/mail_smtp_user "mail_smtp_user") and [mail\_smtp\_pass](building-sites/settings/mail_smtp_pass "mail_smtp_pass") settings.

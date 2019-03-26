@@ -27,7 +27,7 @@ xPDOObject|false query (string $statement)
 
 ###  Select a Single Record 
 
- Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") or [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
+ Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") or [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
 
 `xPDOObject|false query (string $statement)`
 
@@ -39,7 +39,7 @@ xPDOObject|false query (string $statement)
 
 ###  Select a Single Record 
 
- Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](/display/xPDO20/xPDO.getObject "xPDO.getObject") or [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
+ Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](/display/xPDO20/xPDO.getObject "xPDO.getObject") or [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
 
  ``` php 
 $result = $modx->query("SELECT * FROM modx_users WHERE id=1");
@@ -121,7 +121,7 @@ return print_r($row, true);
 
 ###  Select a Collection 
 
- Here's a simple query to fetch multiple rows from the database. Note that you would normally use [getObject](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to retrive data from MODX tables.
+ Here's a simple query to fetch multiple rows from the database. Note that you would normally use [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to retrive data from MODX tables.
 
  ``` php 
 $output = '';
@@ -164,11 +164,11 @@ return $data;
 
 ##  See Also 
 
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
-- [xPDO.getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
-- [xPDO.getObjectGraph](xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
-- [xPDO.getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
-- [xPDO.getCollectionGraph](xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
-- [xPDO.getIterator](xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects")
+- [xPDO.getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
+- [xPDO.getObjectGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
+- [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
+- [xPDO.getCollectionGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
+- [xPDO.getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
 - \[xPDO.load\]
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")

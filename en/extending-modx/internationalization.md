@@ -38,7 +38,7 @@ Furthermore, the modNamespace class is used to further separate Lexicon Topics i
 
 ### Locales
 
-Some translation frameworks (such as [gettext](http://www.gnu.org/software/gettext/)) rely on a specific _locale_ and a context to help distinguish between meanings. For example "football" has a different meaning depending on locale (Britain or the United States). MODX willl likely not support locales in the core, but you can handle setting locales however you need to based on your site organization and i18n approach. The most logical place would probably be using a plugin tied to the [OnInitCulture](developing-in-modx/basic-development/plugins/system-events/oninitculture "OnInitCulture") event.
+Some translation frameworks (such as [gettext](http://www.gnu.org/software/gettext/)) rely on a specific _locale_ and a context to help distinguish between meanings. For example "football" has a different meaning depending on locale (Britain or the United States). MODX willl likely not support locales in the core, but you can handle setting locales however you need to based on your site organization and i18n approach. The most logical place would probably be using a plugin tied to the [OnInitCulture](extending-modx/plugins/system-events/oninitculture "OnInitCulture") event.
 
 You could set a locale in the MODX system settings (or in the context settings, if you use i.e. Babel). But be sure that the MODX system locale uses an utf8 charset (i.e. de\_DE.utf8), otherwise the MODX backend will show some glitches.
 
@@ -169,4 +169,4 @@ Lexicons provide MODX Revolution users with a plethora of avenues and options to
 
 ## See Also
 
-- [modX.lexicon](developing-in-modx/other-development-resources/class-reference/modx/modx.lexicon "modX.lexicon")
+- [modX.lexicon](extending-modx/core-model/modx/modx.lexicon "modX.lexicon")

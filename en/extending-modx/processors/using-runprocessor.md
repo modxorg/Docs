@@ -4,12 +4,12 @@ _old_id: "493"
 _old_uri: "2.x/developing-in-modx/advanced-development/using-runprocessor"
 ---
 
-The usage of runProcessor described here only work in Revolution 2.0.8 and later. Users prior to that will have to use the deprecated [executeProcessor](developing-in-modx/other-development-resources/class-reference/modx/modx.executeprocessor "modX.executeProcessor") method. 
+The usage of runProcessor described here only work in Revolution 2.0.8 and later. Users prior to that will have to use the deprecated [executeProcessor](extending-modx/core-model/modx/modx.executeprocessor "modX.executeProcessor") method. 
 - [Using runProcessor](#using-runprocessor)
 
 ## Using runProcessor
 
-MODX has a specific method that allows you to run processors straight from any PHP file, such as a [Plugin](developing-in-modx/basic-development/plugins "Plugins"), [Snippet](developing-in-modx/basic-development/snippets "Snippets") or externally. This can be done with the following syntax:
+MODX has a specific method that allows you to run processors straight from any PHP file, such as a [Plugin](extending-modx/plugins "Plugins"), [Snippet](extending-modx/snippets "Snippets") or externally. This can be done with the following syntax:
 
 > $response = $modx->runProcessor('action/path/to/processor',$arrayOfProperties,$otherOptions);
 

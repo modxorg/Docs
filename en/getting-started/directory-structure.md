@@ -47,7 +47,7 @@ The root directory of MODX is split into several subdirectories, each with its o
 
 Connectors are essentially entry points for AJAX requests in MODX. They don't do any database manipulation on their own; they simply load up the main MODX class, sanitize any request data, and then handle the request by pointing to the appropriate Processor file.
 
-For example, when we create a resource, we request connectors/resource/index.php?action=create. The index.php file will include the base connector file (connectors/index.php) which instantiates the main MODX object, handle any custom [Context](administering-your-site/contexts "Contexts") switching, and sanitize the GET or POST request. The connectors/resource/index.php will then "handle" the request and call the correct Processor file, which we will discuss later.
+For example, when we create a resource, we request connectors/resource/index.php?action=create. The index.php file will include the base connector file (connectors/index.php) which instantiates the main MODX object, handle any custom [Context](building-sites/contexts "Contexts") switching, and sanitize the GET or POST request. The connectors/resource/index.php will then "handle" the request and call the correct Processor file, which we will discuss later.
 
 ### Notable Files
 
@@ -123,7 +123,7 @@ To load a lexicon, one would use a format such as this:
 
 \# **lang**- the 2-digit IANA code. This is optional, and defaults to 'en'.
 
-1. **namespace**- Each lexicon has its own [Namespace](developing-in-modx/advanced-development/namespaces "Namespaces"). The built-in namespace for MODX is "core". Package creators will also be able to create a custom namespace, and Manager users can also create their own namespaces as well.
+1. **namespace**- Each lexicon has its own [Namespace](extending-modx/namespaces "Namespaces"). The built-in namespace for MODX is "core". Package creators will also be able to create a custom namespace, and Manager users can also create their own namespaces as well.
 2. **topic**- The specific topic/file you want to load.
 
 ### core/model/
@@ -134,7 +134,7 @@ So, MODX does model sort-of similar. We actually do a MVC/C model, in which we a
 
 #### core/model/modx/
 
-"Wait! I thought we were already in a modx dir? Why another modx subdirectory?" Good question. Well, MODX Revolution uses xPDO for its database management. xPDO uses the idea of 'packages' for different connections to different models. So, if I wanted to create my custom tables, I'd create a new xPDO package, and add it in at runtime. This way I could use the maps and classes created without having to modify the MODX core. This is shown in the [Crea ting a 3rd Party Component](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Writing a 3rd Party Component in MODX Revolution, Pt. I") tutorial.
+"Wait! I thought we were already in a modx dir? Why another modx subdirectory?" Good question. Well, MODX Revolution uses xPDO for its database management. xPDO uses the idea of 'packages' for different connections to different models. So, if I wanted to create my custom tables, I'd create a new xPDO package, and add it in at runtime. This way I could use the maps and classes created without having to modify the MODX core. This is shown in the [Crea ting a 3rd Party Component](extending-modx/tutorials/developing-an-extra "Writing a 3rd Party Component in MODX Revolution, Pt. I") tutorial.
 
 So, that said, it can be inferred that the core/model/modx directory is referring to the "modx" package. Let's go inside it, and you'll see a ton of classes. These are the classes that are either xPDOObjects - which are PHP classes that represent tables in the DB (ie, modsnippet.class.php is a PHP class that is an object of modx\_site\_snippets), or they are functional classes, such as modcachemanager.class.php.
 
@@ -152,7 +152,7 @@ This directory contains the individual processor files used in database manipula
 
 #### core/model/schema/
 
-The schema is the XML representation of the MODX database. This is used in building new maps and classes, but is never actually read or parsed when MODX is running. For the most part, you can ignore this directory, as it is mainly used for development work. The tutorials on [creating 3rd party components](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Writing a 3rd Party Component in MODX Revolution, Pt. I") teach more about schemas.
+The schema is the XML representation of the MODX database. This is used in building new maps and classes, but is never actually read or parsed when MODX is running. For the most part, you can ignore this directory, as it is mainly used for development work. The tutorials on [creating 3rd party components](extending-modx/tutorials/developing-an-extra "Writing a 3rd Party Component in MODX Revolution, Pt. I") teach more about schemas.
 
 #### core/model/smarty/
 
@@ -184,8 +184,8 @@ These classes are used by MODX internally, and developers should never need to d
 
 ### Notable Files
 
-- **core/cache/config.cache.php**- This is the cache file for all of the [System Settings](administering-your-site/settings/system-settings "System Settings") in MODX. Their database equivalents are found in the \_system\_settings table, and their xPDO equivalents are modSystemSetting objects.
-  - **_Tip_** - If you ever get locked out by the CAPTCHA component, you can edit this file and set _use\_captcha_to '0' to disable CAPTCHA. Then you can log in and disable CAPTCHA in [System Settings](administering-your-site/settings/system-settings "System Settings").
+- **core/cache/config.cache.php**- This is the cache file for all of the [System Settings](building-sites/settings "System Settings") in MODX. Their database equivalents are found in the \_system\_settings table, and their xPDO equivalents are modSystemSetting objects.
+  - **_Tip_** - If you ever get locked out by the CAPTCHA component, you can edit this file and set _use\_captcha_to '0' to disable CAPTCHA. Then you can log in and disable CAPTCHA in [System Settings](building-sites/settings "System Settings").
 - **core/cache/sitePublishing.idx.php**- In MODX Evolution, this file contained the cache data for all documents, chunks, and snippets. In Revolution, this is no longer the case, and this file now keeps track of cache refresh intervals.
 - **core/cache/mgr/actions.cache.php**- a map of all modAction objects.
 

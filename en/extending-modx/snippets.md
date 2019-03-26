@@ -45,7 +45,7 @@ return 'Hello, World!';
 ?>
 ```
 
-If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](building-sites/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet "modX.runSnippet") API method.
+If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](building-sites/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](extending-modx/core-model/modx/modx.runsnippet "modX.runSnippet") API method.
 
 Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output. 
 
@@ -90,7 +90,7 @@ Array(
 
 ## Database Interaction in Snippets 
 
-Accessing the database layer in MODx relies on an Object Relational Model (ORM) called [xPDO](/display/xPDO20/Home "Home") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODx objects and methods such as [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
+Accessing the database layer in MODx relies on an Object Relational Model (ORM) called [xPDO](/display/xPDO20/Home "Home") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODx objects and methods such as [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
 
 ### Why an ORM? 
 
@@ -117,7 +117,7 @@ return $chunk->process(array(
 ));
 ```
 
-That code would get a chunk with the name of 'LineItem', and return it processed with the placeholders set. The $chunk variable there is actually an [xPDOObject](xpdo/class-reference/xpdoobject "xPDOObject"), which is an object representation of the Resource.
+That code would get a chunk with the name of 'LineItem', and return it processed with the placeholders set. The $chunk variable there is actually an [xPDOObject](extending-modx/xpdo/class-reference/xpdoobject "xPDOObject"), which is an object representation of the Resource.
 
 What about more complex queries? Like, say, getting the first 10 Resources with a parent of 23, 24 or 25. And let's make it so they aren't hidden from menus or deleted, are published, and sort them by menuindex. That's when we use the powerful $modx->newQuery() method:
 
@@ -143,8 +143,8 @@ And finally, we called getCollection which - unlike getObject - returns a collec
 For further reading on xPDO, read up on these:
 
 - xPDO at the [xPDO](/display/xPDO20/Home "Home") space
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects") in xPDO
-- The [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery") Object
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects") in xPDO
+- The [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") Object
 
 ## Recommended Methods and Tips 
 
@@ -190,7 +190,7 @@ You'll find that MODX will append PHP tags to beginning and end of the snippet, 
 <?php <?php //something here ?> ?>
 ```
 
-If you need to do something like this, **use a Chunk** - separate the PHP into a Snippet, load its output into a placeholder with the [modx API](developing-in-modx/other-development-resources/class-reference/modx "modX") placeholder functions or chunk processing, and include the Snippet's placeholders in the Chunk:
+If you need to do something like this, **use a Chunk** - separate the PHP into a Snippet, load its output into a placeholder with the [modx API](extending-modx/core-model/modx "modX") placeholder functions or chunk processing, and include the Snippet's placeholders in the Chunk:
 
 ``` php 
 $output = $modx->getChunk('myChunk',array(
@@ -207,15 +207,15 @@ If you're writing new versions of Snippets, _duplicate_ the old version! That wa
 
 ### Use Default Properties 
 
-Consider adding default properties for your snippet into the snippet's Properties tab, so that the user can add custom [Property Sets](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets") to override them.
+Consider adding default properties for your snippet into the snippet's Properties tab, so that the user can add custom [Property Sets](building-sites/properties-and-property-sets "Properties and Property Sets") to override them.
 
 ## See Also 
 
-1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
-2. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)
-3. [How to Write a Good Snippet](developing-in-modx/basic-development/snippets/how-to-write-a-good-snippet)
-4. [How to Write a Good Chunk](developing-in-modx/basic-development/snippets/how-to-write-a-good-chunk)
+1. [Templating Your Snippets](extending-modx/snippets/templating)
+2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
+3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
+4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)
 
-- [modX.runSnippet](developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet "modX.runSnippet")
-- [modX.setPlaceholder](developing-in-modx/other-development-resources/class-reference/modx/modx.setplaceholder "modX.setPlaceholder")
-- [modX.regClientCSS](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientcss "modX.regClientCSS")
+- [modX.runSnippet](extending-modx/core-model/modx/modx.runsnippet "modX.runSnippet")
+- [modX.setPlaceholder](extending-modx/core-model/modx/modx.setplaceholder "modX.setPlaceholder")
+- [modX.regClientCSS](extending-modx/core-model/modx/modx.regclientcss "modX.regClientCSS")

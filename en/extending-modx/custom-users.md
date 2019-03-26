@@ -12,9 +12,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 - [Steps to extending modUser](#steps-to-extending-moduser)
   - [1. ) Create the schema and generate a model](#1--create-the-schema-and-generate-a-model)
     - [Simple Example](#simple-example)
-- [Suggested additional considerations](#suggested-additional-considerations)
-- [Extended modUser Classes currently Available](#extended-moduser-classes-currently-available)
-- [Modifying class\_key](#modifying-classkey)
 
 ##  Intended Audience 
 
@@ -22,13 +19,13 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
  
  Although this is possible via a less integrated approach by simply adding a database table that includes a foreign key relation back to the original MODX users table, the approach outlined here is for a more thorough integration via extending the core modUser class. 
  
- The steps here are highly technical and they rely on MODX's underlying xPDO framework. You should have some familiarity with xPDO's objects and methods (e.g. [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")) before attempting this tutorial.
+ The steps here are highly technical and they rely on MODX's underlying xPDO framework. You should have some familiarity with xPDO's objects and methods (e.g. [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")) before attempting this tutorial.
 
 ###  See Also 
 
-- [Reverse Engineer xPDO Classes from Existing Database Table](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table")
-- [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files")
-- [Generating the Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code")
+- [Reverse Engineer xPDO Classes from Existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table")
+- [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files")
+- [Generating the Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code")
 
 ##  Overview 
 
@@ -106,7 +103,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 </model>
 ```
 
- You will need to parse and create the model map associated with this schema. As this process is out of the scope of this topic, please refer to [Using Custom Database Tables in your 3rd Party Components](case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components "Using Custom Database Tables in your 3rd Party Components") for further information.
+ You will need to parse and create the model map associated with this schema. As this process is out of the scope of this topic, please refer to [Using Custom Database Tables in your 3rd Party Components](extending-modx/tutorials/using-custom-database-tables "Using Custom Database Tables in your 3rd Party Components") for further information.
 
 ###  2.) Edit the extuser.class.php 
 
@@ -131,7 +128,7 @@ class extUser extends modUser {
 
 ###  3.) Create (or edit) _extension\_packages in System Settings_
 
- Access the System settings found in the System menu of the manager, and search for [extension\_packages](administering-your-site/settings/system-settings/extension_packages "extension_packages").
+ Access the System settings found in the System menu of the manager, and search for [extension\_packages](building-sites/settings/extension_packages "extension_packages").
 
  **If the key already exists**, add inside the json array
 

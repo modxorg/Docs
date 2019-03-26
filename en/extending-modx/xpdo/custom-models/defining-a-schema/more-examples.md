@@ -34,7 +34,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
  Remember that xPDO _abstracts_ the database, so it's entirely possible that your model is something other than a traditional database, but for the sake of familiarity and clarity, the examples here assume you are using a MySQL database for your model. In general, it's recommended that you design your snippets/plugins etc. using a traditional database before abstracting it using xPDO.
 
  **FYI** 
- Once you've created a valid XML schema file, xPDO can generate PHP class files _and_ database tables; it is bi-directional. The purpose of this page is to juxtapose the xPDO XML schema to MySQL database tables. Some developers may prefer to write the XML schema file by hand and then let xPDO generate the tables and the class files. Other developers may prefer to first create the database tables, then [reverse engineer](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table") the XML schema and the class files. 
+ Once you've created a valid XML schema file, xPDO can generate PHP class files _and_ database tables; it is bi-directional. The purpose of this page is to juxtapose the xPDO XML schema to MySQL database tables. Some developers may prefer to write the XML schema file by hand and then let xPDO generate the tables and the class files. Other developers may prefer to first create the database tables, then [reverse engineer](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table") the XML schema and the class files. 
 
 ## One to One
 
@@ -42,7 +42,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
 
  The tricky thing about one-to-one relationships is that both tables are _not_ equal. Like the movie Highlander, there can be only one primary table: you must decide which table is the primary (or master) table, and which is the secondary (or slave) table.
 
- A good example of this type of relationship exists in the MODx database between the **users** and the **user\_attributes** tables: the **users** table is the primary table, and the **user\_attributes** is the secondary table. If you delete a user from the **users** table, the extra attributes in the **user\_attributes** table should also be deleted, but the opposite is not necessarily true. The documentation on [relationships](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships") stresses this primary/secondary relationship.
+ A good example of this type of relationship exists in the MODx database between the **users** and the **user\_attributes** tables: the **users** table is the primary table, and the **user\_attributes** is the secondary table. If you delete a user from the **users** table, the extra attributes in the **user\_attributes** table should also be deleted, but the opposite is not necessarily true. The documentation on [relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships") stresses this primary/secondary relationship.
 
  When defining relationships, you must first learn about **aggregate** and **composite** relationships; you may not understand the usage of these particular words, but when defining this type of relationship, simply remember the following:
 

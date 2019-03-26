@@ -115,7 +115,7 @@ Now on to the third line:
 $doodles = $modx->getService('doodles','Doodles',$doodlesCorePath.'model/doodles/',$scriptProperties);
 ```
 
-Okay, this gets crazy. $modx->getService loads a class and instantiates an object of it, if it exists, and sets it to $modx->doodles here in this case (the first parameter passed in). More on getService can be found [here](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService"). But wait! We don't have a Doodles class! Well, it's time to make one.
+Okay, this gets crazy. $modx->getService loads a class and instantiates an object of it, if it exists, and sets it to $modx->doodles here in this case (the first parameter passed in). More on getService can be found [here](extending-modx/core-model/modx/modx.getservice "modX.getService"). But wait! We don't have a Doodles class! Well, it's time to make one.
 
 ### Making the Doodles Base Class
 
@@ -356,7 +356,7 @@ Use whatever DB editing software (such as phpMyAdmin) you want, and find the 'mo
 
 > 2
 
-Great! Your custom database query works! Let's make it more complex. We can use xPDO's [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery") to create some pretty complex queries. For now, let's just add a sort command to it:
+Great! Your custom database query works! Let's make it more complex. We can use xPDO's [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") to create some pretty complex queries. For now, let's just add a sort command to it:
 
 ``` php 
 $c = $modx->newQuery('Doodle');

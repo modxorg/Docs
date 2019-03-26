@@ -12,7 +12,7 @@ _old_uri: "2.x/advanced-features/caching"
 
 ## Global Configuration
 
-To use xPDO's caching abilities, you'll need to configure several global options to define caching options. Most importantly, you should define the xPDO::OPT\_CACHE\_PATH into the $options variable of the [xPDO constructor](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor"). Set it to the absolute path you would like xPDO to write cache files to. This also provides a location for xPDO to write log files if configured to do so, which would require this file path to be defined even if no file-based caching was being utilized.
+To use xPDO's caching abilities, you'll need to configure several global options to define caching options. Most importantly, you should define the xPDO::OPT\_CACHE\_PATH into the $options variable of the [xPDO constructor](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor"). Set it to the absolute path you would like xPDO to write cache files to. This also provides a location for xPDO to write log files if configured to do so, which would require this file path to be defined even if no file-based caching was being utilized.
 
 There are several additional global options that can be set if you wish to use something other than the default cache partition and provider.
 
@@ -32,7 +32,7 @@ A derived xPDOCache implementation must be in a package that is loaded by the co
 
 ## Manipulation of the Cache
 
-The $xpdo->cacheManager object, built from the [xPDOCacheManager](xpdo/class-reference/xpdocachemanager "xPDOCacheManager") class, is accessible after calling $xpdo->getCacheManager().
+The $xpdo->cacheManager object, built from the [xPDOCacheManager](extending-modx/xpdo/class-reference/xpdocachemanager "xPDOCacheManager") class, is accessible after calling $xpdo->getCacheManager().
 
 A simple example script of setting data into a cache partition, then getting it, and deleting it, is as follows:
 
@@ -88,7 +88,7 @@ $myCache->delete('testdata');
 
 ## See Also
 
-- [xPDOCacheManager](xpdo/class-reference/xpdocachemanager "xPDOCacheManager")
+- [xPDOCacheManager](extending-modx/xpdo/class-reference/xpdocachemanager "xPDOCacheManager")
 
-1. [Caching Tutorial - Basic Snippets](xpdo/advanced-features/caching/caching-tutorial-basic-snippets)
-2. [Caching Tutorial - Lifetimes](xpdo/advanced-features/caching/caching-tutorial-lifetimes)
+1. [Caching Tutorial - Basic Snippets](extending-modx/caching/example)
+2. [Caching Tutorial - Lifetimes](extending-modx/caching/lifetimes)

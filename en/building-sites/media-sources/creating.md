@@ -10,7 +10,7 @@ _old_uri: "2.x/administering-your-site/media-sources/adding-a-media-source"
 
 
 
-This article describes how to add a [Media Source](administering-your-site/media-sources "Media Sources") to your MODX installation.
+This article describes how to add a [Media Source](building-sites/media-sources "Media Sources") to your MODX installation.
 
 ## Creating the Media Source
 
@@ -24,7 +24,7 @@ For now, go ahead and create a Media Source by clicking on the "Create New Media
 
 ![](/download/attachments/35586535/20110907-bmtk5qd8b27w8rfhyn4xftw2wj.jpeg?version=1&modificationDate=1315427096000)
 
-Go ahead and choose the Filesystem source type for now, and give it a nice name. For information on creating an S3 Media Source, [click here](administering-your-site/media-sources/media-source-types/media-source-type-s3 "Media Source Type - S3"). Once that's done, you'll see your Media Source in the grid. Right-click on it, and click "Update Media Source".
+Go ahead and choose the Filesystem source type for now, and give it a nice name. For information on creating an S3 Media Source, [click here](building-sites/media-sources/types/media-source-type-s3 "Media Source Type - S3"). Once that's done, you'll see your Media Source in the grid. Right-click on it, and click "Update Media Source".
 
 ## Editing your new Media Source
 
@@ -51,4 +51,4 @@ The other available properties include the following:
 
 After you've created it, you should be able to see the source in the dropdown in the left-hand tree under the Files tab. If you select that source, you should now only be able to see the contents of the 'assets/' directory in your MODX installation! (If you have not yet created an assets/ directory in your install, do so now.)
 
-Furthermore, you can attach this Source to a TV. Read the [Assigning Media Sources to TVs](administering-your-site/media-sources/assigning-media-sources-to-tvs "Assigning Media Sources to TVs") article to learn how.
+Furthermore, you can attach this Source to a TV. Read the [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs "Assigning Media Sources to TVs") article to learn how.

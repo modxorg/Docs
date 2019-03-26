@@ -30,11 +30,11 @@ _old_uri: "2.x/case-studies-and-tutorials/loading-pages-in-the-front-end-via-aja
 $(function() { $("#tabs").tabs(); });
 </script>
 <div id="tabs">
-        <ul>
-                <li><a href="[[~92]]">Resource with ID 92</a></li>
-                <li><a href="[[~546]]">Resource with ID 546</a></li>
-                <li><a href="[[~123]]">Resource with ID 123</a></li>
-        </ul>
+  <ul>
+    <li><a href="[[~92]]">Resource with ID 92</a></li>
+    <li><a href="[[~546]]">Resource with ID 546</a></li>
+    <li><a href="[[~123]]">Resource with ID 123</a></li>
+  </ul>
 </div>
 ```
 
@@ -59,9 +59,9 @@ $(function() { $("#tabs").tabs(); });
 $(function() { $("#tabs").tabs(); });
 </script>
 <div id="tabs">
-        <ul>
-[[getResources? &parents=`123` &depth=`1` &tpl=`myRowTpl` &includeContent=`1` &includeTVs=`1`]]
-        </ul>
+  <ul>
+    [[getResources? &parents=`123` &depth=`1` &tpl=`myRowTpl` &includeContent=`1` &includeTVs=`1`]]
+  </ul>
 </div>
 ```
 
@@ -80,9 +80,9 @@ $(function() { $("#tabs").tabs(); });
 $(function() { $("#tabs").tabs(); });
 </script>
 <div id="tabs">
-        <ul>
-[[Wayfinder? &startId=`123` &level=`1` &rowTpl=`myRowTpl`]]
-        </ul>
+  <ul>
+    [[Wayfinder? &startId=`123` &level=`1` &rowTpl=`myRowTpl`]]
+  </ul>
 </div>
 ```
 
@@ -116,11 +116,11 @@ return $resource->get($field);
 $(function() { $("#tabs").tabs(); });
 </script>
 <div id="tabs">
-        <ul>
-                <li><a href="[[~92]]">[[getField? &id=`92` &field=`pagetitle`]]</a></li>
-                <li><a href="[[~546]]">[[getField? &id=`546` &field=`pagetitle`]]</a></li>
-                <li><a href="[[~123]]">[[getField? &id=`123` &field=`pagetitle`]]</a></li>
-        </ul>
+  <ul>
+    <li><a href="[[~92]]">[[getField? &id=`92` &field=`pagetitle`]]</a></li>
+    <li><a href="[[~546]]">[[getField? &id=`546` &field=`pagetitle`]]</a></li>
+    <li><a href="[[~123]]">[[getField? &id=`123` &field=`pagetitle`]]</a></li>
+  </ul>
 </div>
 ```
 
@@ -135,11 +135,11 @@ $(function() { $("#tabs").tabs(); });
 $(function() { $("#tabs").tabs(); });
 </script>
 <div id="tabs">
-        <ul>
-                <li><a href="[[~92]]">[[#92.pagetitle]]</a></li>
-                <li><a href="[[~546]]">[[#546.pagetitle]]</a></li>
-                <li><a href="[[~123]]">[[#123.pagetitle]]</a></li>
-        </ul>
+  <ul>
+    <li><a href="[[~92]]">[[#92.pagetitle]]</a></li>
+    <li><a href="[[~546]]">[[#546.pagetitle]]</a></li>
+    <li><a href="[[~123]]">[[#123.pagetitle]]</a></li>
+  </ul>
 </div>
 ```
 

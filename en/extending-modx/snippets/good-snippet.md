@@ -6,26 +6,11 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/how-to-write-a-good
 
  For some, writing a MODX snippet might be their first foray into coding. Here are some tips for newbies and experienced developers alike.
 
-- [Our Example Snippet](#HowtoWriteaGoodSnippet-OurExampleSnippet)
-- [A Good Name](#HowtoWriteaGoodSnippet-AGoodName)
-- [Description](#HowtoWriteaGoodSnippet-Description)
-- [Comment Block](#HowtoWriteaGoodSnippet-CommentBlock)
-  - [DESCRIPTION](#HowtoWriteaGoodSnippet-DESCRIPTION)
-  - [PROPERTIES](#HowtoWriteaGoodSnippet-PROPERTIES)
-  - [USAGE](#HowtoWriteaGoodSnippet-USAGE)
-- [Set Default Properties](#HowtoWriteaGoodSnippet-SetDefaultProperties)
-- [Do not include HTML](#HowtoWriteaGoodSnippet-DonotincludeHTML)
-- [Do not Print or Echo](#HowtoWriteaGoodSnippet-DonotPrint)
-- [Consistency](#HowtoWriteaGoodSnippet-Consistency)
-- [Log Errors and Info](#HowtoWriteaGoodSnippet-LogErrorsandInfo)
-- [See Also](#HowtoWriteaGoodSnippet-SeeAlso)
+- [Our Example Snippet](#our-example-snippet)
  
-
-
 ##  Our Example Snippet 
 
  ``` php 
-
 <?php
 /**
  * mySnippet
@@ -60,7 +45,6 @@ if (!isset($scriptProperties['x']) || !isset($scriptProperties['y'])) {
 }
 return $x * $y * $z;
 ?>
-
 ```
 
 ##  A Good Name 
@@ -77,17 +61,17 @@ return $x * $y * $z;
 
  Your comment block should include the following items:
 
-- ####  DESCRIPTION 
+####  DESCRIPTION 
   
-   This is where you can describe your code in more detail.
-- ####  PROPERTIES 
+  This is where you can describe your code in more detail.
+####  PROPERTIES 
   
-   Detail exactly which properties can be passed to your Snippet _and_ what type of data each property accepts. You should also specify whether the property is required or whether there is a default value. Here are some examples:
+  Detail exactly which properties can be passed to your Snippet _and_ what type of data each property accepts. You should also specify whether the property is required or whether there is a default value. Here are some examples:
   
-   &day integer a number from 0 (Sunday) to 6 (Saturday) representing the day of the week. (required) 
+  &day integer a number from 0 (Sunday) to 6 (Saturday) representing the day of the week. (required) 
   &is\_secure boolean 1 will force an HTTPS connection; 0 uses an HTTP connection. Default: 1 
   &formatTpl string name of a Chunk used to format output. Default myChunk
-- ####  USAGE 
+####  USAGE 
   
    _Always_ include some examples of how to use your Snippet. These should be examples that users can literally copy and paste into their pages to see how your Snippet works.
 
@@ -96,9 +80,7 @@ return $x * $y * $z;
  Set default properties in the snippet's Properties tab. You can read properties passed to the Snippet and set default properties using the **getOption** method. Remember that all Snippets are passed an array of $scriptProperties.
 
  ``` php 
-
 $headTpl = $modx->getOption('headTpl', $scriptProperties, 'myHeadTpl');
-
 ```
 
 ##  Do not include HTML 
@@ -106,25 +88,19 @@ $headTpl = $modx->getOption('headTpl', $scriptProperties, 'myHeadTpl');
  Your Snippet should be as clean from HTML as possible. If you need to format the output, use a Chunk to format the output. This is an important architectural principle!
 
  ``` php 
-
 $props = array(
     'cow' => 'Moo',
     'pig' => 'Oink',
 );
 return $modx->getChunk('myChunk', $props);
-
 ```
 
 Using the placeholders in the chunk:
 
 ``` html 
-
 <!-- myChunk -->
 A cow says "[[+cow]]" and a pig says "[[+pig]]".
-
 ```
-
-## 
 
 ## Do not Print or Echo 
 
@@ -138,26 +114,22 @@ A cow says "[[+cow]]" and a pig says "[[+pig]]".
 
 ##  Log Errors and Info 
 
- MODX has a logging function: _use it_. See [xPDO::log()](xpdo/class-reference/xpdo/xpdo.log). If your users forgot to include a required property, log an error so your users will know it.
+ MODX has a logging function: _use it_. See [xPDO::log()](extending-modx/xpdo/class-reference/xpdo/xpdo.log). If your users forgot to include a required property, log an error so your users will know it.
 
  ``` php 
-
 $modx->log(modX::LOG_LEVEL_ERROR, '[mySnippet] missing the &xyz property!');
-
 ```
 
  You can also log debugging info, which is useful for users who are debugging things. This will only be written to the error log when the log\_level system setting is set to the appropriate level.
 
  ``` php 
-
 $modx->log(modX::LOG_LEVEL_DEBUG, '[mySnippet] was called with the following properties: '.print_r($scriptProperties,true));
-
 ```
 
 ##  See Also 
 
-- [Code Standards](developing-in-modx/code-standards "Code Standards")
-  1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
-  2. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)
-  3. [How to Write a Good Snippet](developing-in-modx/basic-development/snippets/how-to-write-a-good-snippet)
-  4. [How to Write a Good Chunk](developing-in-modx/basic-development/snippets/how-to-write-a-good-chunk)
+- [Code Standards](_legacy/developing-in-modx/code-standards "Code Standards")
+  1. [Templating Your Snippets](extending-modx/snippets/templating)
+  2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
+  3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
+  4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)

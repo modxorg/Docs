@@ -41,5 +41,5 @@ When you call a Snippet using **runSnippet**, the Snippet code is _always_ execu
 
 ## See Also 
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
-- [Snippets](developing-in-modx/basic-development/snippets "Snippets")
+- [modX](extending-modx/core-model/modx "modX")
+- [Snippets](extending-modx/snippets "Snippets")

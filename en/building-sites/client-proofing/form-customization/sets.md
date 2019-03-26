@@ -44,7 +44,7 @@ Tabs are found in the 2nd tab in the Set editing page. You can change their visi
 
 When creating a new tab, you'll be presented with both ID and Title fields. The Title field is what will show as the text of the new tab; whereas the ID is what is used when moving TVs into the tab.
 
-See [Customizing Tabs via Form Customization](administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization "Customizing Tabs via Form Customization") for more information.
+See [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs "Customizing Tabs via Form Customization") for more information.
 
 ### Adjusting Template Variables
 
@@ -60,8 +60,8 @@ Importing a Set from XML will create a **new** Set, not override any existing on
 
 ## See Also
 
-1. [Customizing the Manager via Plugins](administering-your-site/customizing-the-manager/customizing-the-manager-via-plugins)
-2. [Form Customization Profiles](administering-your-site/customizing-the-manager/form-customization-profiles)
-3. [Form Customization Sets](administering-your-site/customizing-the-manager/form-customization-sets)
-  1. [Customizing Tabs via Form Customization](administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization)
-4. [Manager Templates and Themes](administering-your-site/customizing-the-manager/manager-templates-and-themes)
+1. [Customizing the Manager via Plugins](_legacy/administering-your-site/customizing-the-manager-via-plugins)
+2. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
+3. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
+  1. [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs)
+4. [Manager Templates and Themes](building-sites/client-proofing/custom-manager-themes)

@@ -6,8 +6,8 @@ _old_uri: "2.x/class-reference/xpdoobject/validation"
 
 Under Construction
 
-1. [addValidationRule](xpdo/class-reference/xpdoobject/validation/addvalidationrule)
-2. [removeValidationRules](xpdo/class-reference/xpdoobject/validation/removevalidationrules)
-3. [getValidator](xpdo/class-reference/xpdoobject/validation/getvalidator)
-4. [validate](xpdo/class-reference/xpdoobject/validation/validate)
-5. [isValidated](xpdo/class-reference/xpdoobject/validation/isvalidated)
+1. [addValidationRule](extending-modx/xpdo/class-reference/xpdoobject/validation/addvalidationrule)
+2. [removeValidationRules](extending-modx/xpdo/class-reference/xpdoobject/validation/removevalidationrules)
+3. [getValidator](extending-modx/xpdo/class-reference/xpdoobject/validation/getvalidator)
+4. [validate](extending-modx/xpdo/class-reference/xpdoobject/validation/validate)
+5. [isValidated](extending-modx/xpdo/class-reference/xpdoobject/validation/isvalidated)

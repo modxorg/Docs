@@ -54,14 +54,14 @@ And finally, the example code above will send a message to our error.log if the 
 
 ## Placeholders in your Chunk
 
-In the example above, [modX.getChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.getchunk "modX.getChunk") was used as the mail message. See the documentation on that function for how to use its optional second argument. As far as modMail is concerned, the placeholders used are entirely up to you; you don't even have to use getChunk at all. You could just as easily pass the **modMail::MAIL\_BODY** setting a static string.
+In the example above, [modX.getChunk](extending-modx/modx-class/reference/modx.getchunk "modX.getChunk") was used as the mail message. See the documentation on that function for how to use its optional second argument. As far as modMail is concerned, the placeholders used are entirely up to you; you don't even have to use getChunk at all. You could just as easily pass the **modMail::MAIL\_BODY** setting a static string.
 
 ## What if I want to use another email class?
 
-Simple - just extend modMail with that class, then load your class via [getService](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService"). You'll get all the modMail functionality, but you will have to provide the wrapper class (like modPHPMailer) to do so.
+Simple - just extend modMail with that class, then load your class via [getService](extending-modx/core-model/modx/modx.getservice "modX.getService"). You'll get all the modMail functionality, but you will have to provide the wrapper class (like modPHPMailer) to do so.
 
 ## See Also
 
-- [MODx Services](developing-in-modx/advanced-development/modx-services "MODx Services")
-- [modX.getService](developing-in-modx/other-development-resources/class-reference/modx/modx.getservice "modX.getService")
+- [MODx Services](extending-modx/services "MODx Services")
+- [modX.getService](extending-modx/core-model/modx/modx.getservice "modX.getService")
 - [modSwiftMailer](/extras/revo/modswiftmailer "modSwiftMailer")

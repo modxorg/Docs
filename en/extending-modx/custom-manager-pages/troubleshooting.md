@@ -39,9 +39,9 @@ _Thanks!!_
 Other Resources:
 
 - [ExtJS 3.4.0 Documentation](http://docs.sencha.com/ext-js/3-4/)
-- [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages")
-- [Custom Manager Pages Tutorial](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-tutorial "Custom Manager Pages Tutorial")
-- [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution") (Specifically [part 2](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II"))
+- [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages")
+- [Custom Manager Pages Tutorial](_legacy/developing-in-modx/custom-manager-pages-tutorial "Custom Manager Pages Tutorial")
+- [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") (Specifically [part 2](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II"))
 
 ## 1. General
 
@@ -88,6 +88,6 @@ When received after initiating an AJAX request to a connector/processor, this er
 
 Often this is caused by a PHP Fatal Error in the processor code. Inspect the outgoing request using Firebug or Developer Tools to see what it returns and where the error in the PHP side of things is.
 
-### 2.2. Why does my [grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid "MODx.grid.Grid") send out two requests when I refresh it / changePage / filter?
+### 2.2. Why does my [grid](extending-modx/custom-manager-pages/modext/modx.grid.grid "MODx.grid.Grid") send out two requests when I refresh it / changePage / filter?
 
 This was caused by a legacy bug fixed for MODX 2.2-rc1. If you are still experiencing a number of requests that are not needed, make sure you don't have listeners calling another refresh/load, changePage(0) and refresh() or in another way are explicitely calling a request twice.

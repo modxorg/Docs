@@ -69,4 +69,4 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
 
  That's it! That's all you need to start making CMPs in MODX 2.3. You can see that our CMP is now accessible via /url/to/modx/manager/?action=welcome&namespace=mycmp - which is much neater than the ID-based actions of 2.2 and earlier.
 
- There's obviously more API methods that you can override in modExtraManagerController in your PHP controller class, and then you can use [MODExt](developing-in-modx/advanced-development/custom-manager-pages/modext "MODExt") and such in your actual CMP to make powerful pages, but that's beyond the scope of this tutorial.
+ There's obviously more API methods that you can override in modExtraManagerController in your PHP controller class, and then you can use [MODExt](extending-modx/custom-manager-pages/modext "MODExt") and such in your actual CMP to make powerful pages, but that's beyond the scope of this tutorial.

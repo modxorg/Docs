@@ -11,5 +11,5 @@ xPDOCriteria and xPDOQuery allow you to create complex queries via an OOP paradi
 
 ## See Also
 
-- [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery")
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
+- [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects")

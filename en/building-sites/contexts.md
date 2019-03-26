@@ -24,7 +24,7 @@ _old_uri: "2.x/administering-your-site/contexts"
 
  You can create settings for any defined context by clicking on **System -> Contexts**, then right-click any context and select "Update Context".
 
- Each context can have its own settings that override or extend the [System Settings](administering-your-site/settings/system-settings "System Settings"). Contextual settings can in turn be overridden or extended by [User Settings](administering-your-site/security/users#Users-UsersUserSettings). The hierarchy to remember is this:
+ Each context can have its own settings that override or extend the [System Settings](building-sites/settings "System Settings"). Contextual settings can in turn be overridden or extended by [User Settings](administering-your-site/security/users#Users-UsersUserSettings). The hierarchy to remember is this:
 
  System Setting -> Context Setting -> User Setting
 
@@ -56,5 +56,5 @@ $setting = $modx->getOption('my_context_setting');
 
 ##  See Also 
 
-1. [Creating a Subdomain from a Folder using Virtual Hosts](administering-your-site/contexts/creating-a-subdomain-from-a-folder-using-virtual-hosts)
-2. [Using One Gateway Plugin to Manage Multiple Domains](administering-your-site/contexts/using-one-gateway-plugin-to-manage-multiple-domains)
+1. [Creating a Subdomain from a Folder using Virtual Hosts](building-sites/contexts/virtual-host)
+2. [Using One Gateway Plugin to Manage Multiple Domains](building-sites/contexts/gateway-plugin)

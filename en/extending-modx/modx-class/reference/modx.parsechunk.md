@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 Parse a chunk using an associative array of replacement variables.
 
-**parseChunk** simply does a str\_replace on the values in the associative array you pass it, so you cannot use Output Filters or other complex placeholder modifiers here. If you require more functionality from the parser, see [modX.getChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.getchunk "modX.getChunk") instead.
+**parseChunk** simply does a str\_replace on the values in the associative array you pass it, so you cannot use Output Filters or other complex placeholder modifiers here. If you require more functionality from the parser, see [modX.getChunk](extending-modx/modx-class/reference/modx.getchunk "modX.getChunk") instead.
 
 ## Syntax
 
@@ -26,5 +26,5 @@ $output = $modx->parseChunk('myChunk',array('name' => 'John'));
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
-- [modX.getChunk](developing-in-modx/other-development-resources/class-reference/modx/modx.getchunk "modX.getChunk")
+- [modX](extending-modx/core-model/modx "modX")
+- [modX.getChunk](extending-modx/modx-class/reference/modx.getchunk "modX.getChunk")

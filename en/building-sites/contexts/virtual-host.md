@@ -116,5 +116,5 @@ And you're done!
 
 ## See Also
 
-- [Contexts](administering-your-site/contexts "Contexts")
+- [Contexts](building-sites/contexts "Contexts")
 - Contexts as subfolders (from the forums: <http://modxcms.com/forums/index.php/topic,51346.0.html>)

@@ -46,4 +46,4 @@ $resource->isMember(array('Marketing', 'Finances'), true);
 
 ## See Also
 
-- [modResource](developing-in-modx/other-development-resources/class-reference/modresource "modResource")
+- [modResource](extending-modx/core-model/modresource "modResource")

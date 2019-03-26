@@ -184,15 +184,15 @@ foreach ($owners as $owner) {
 
 ##  Conclusion 
 
- Building relationships within schemas obeys some simple rules, you just have to get familiar with which directions the relationships apply. If you require more examples of how to represent your database tables in the xPDO schema, have a look at [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files").
+ Building relationships within schemas obeys some simple rules, you just have to get familiar with which directions the relationships apply. If you require more examples of how to represent your database tables in the xPDO schema, have a look at [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files").
 
- Now that we've built our schema, let's go ahead and [generate the PHP classes and maps](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code").
+ Now that we've built our schema, let's go ahead and [generate the PHP classes and maps](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code").
 
 ##  See Also 
 
-- [getOne](xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
-- [getMany](xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
-- [addOne](xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne")
-- [addMany](xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany")
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
-- [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files")
+- [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
+- [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
+- [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne")
+- [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany")
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects")
+- [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files")

@@ -32,4 +32,4 @@ The order you call the functions is important! The **andCondition** must come af
 
 ## See Also
 
-- [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery")
+- [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")

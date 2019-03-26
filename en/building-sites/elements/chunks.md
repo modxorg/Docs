@@ -13,7 +13,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/chunks"
 
 
 
-Chunks are bits of static text which you can reuse across your site, similar in function to include files or "blocks" in other content management systems. Common examples of Chunks might be your contact information or a copyright notice. Although Chunks cannot contain any logic directly, they can however contain calls to [Snippets](developing-in-modx/basic-development/snippets "Snippets"), which are executable bits of PHP code which produce dynamic output.
+Chunks are bits of static text which you can reuse across your site, similar in function to include files or "blocks" in other content management systems. Common examples of Chunks might be your contact information or a copyright notice. Although Chunks cannot contain any logic directly, they can however contain calls to [Snippets](extending-modx/snippets "Snippets"), which are executable bits of PHP code which produce dynamic output.
 
 ## Create
 
@@ -45,7 +45,7 @@ Which would output:
 
 > Hello, George. You have 12 messages.
 
-You could even take it one step further, by adding a [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") that allows the user to specify their name per Resource:
+You could even take it one step further, by adding a [Template Variable](building-sites/elements/template-variables "Template Variables") that allows the user to specify their name per Resource:
 
 ``` php 
 [[!$intro? &name=`[[*usersName]]` &messageCount=`[[*messageCount]]`]]
@@ -111,4 +111,4 @@ if ($chunk) $chunk->remove();
 
 ## See Also
 
-- [modChunk](developing-in-modx/other-development-resources/class-reference/modchunk "modChunk")
+- [modChunk](extending-modx/core-model/modchunk "modChunk")

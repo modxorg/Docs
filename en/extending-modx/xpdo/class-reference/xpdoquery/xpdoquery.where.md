@@ -128,7 +128,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
 ###  More Complex Examples 
 
- If you have a more complex model with many joined tables, the where method should refer _only to the_ **_class alias_** (not the class name) that contains the attribute. Below is an example of a query passed to the [getCollectionGraph](xpdo/getting-started/using-your-xpdo-model/retrieving-objects/getcollectiongraph "getCollectionGraph") method, where you can see that myTable object is joined through to the user profile information.
+ If you have a more complex model with many joined tables, the where method should refer _only to the_ **_class alias_** (not the class name) that contains the attribute. Below is an example of a query passed to the [getCollectionGraph](extending-modx/xpdo/retrieving-objects/graphs "getCollectionGraph") method, where you can see that myTable object is joined through to the user profile information.
 
  ``` php 
 $query = $modx->newQuery('myTable');
@@ -154,4 +154,4 @@ $tvrs = $modx->getCollectionGraph('modTemplateVarResource','{"Resource":{}}', $c
 
 ##  See Also 
 
-- [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery")
+- [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")

@@ -24,12 +24,12 @@ CRCs are useful for creating "embedded applications" into MODX, such as a Blog P
 
 ### When Not to Use 
 
-CRCs are not recommended to use when you are just wanting to add a few extra fields to a Resource, or alter the presentation of a Resource on the front-end. Those situations are best dealt with by using [Templates](making-sites-with-modx/structuring-your-site/templates "Templates") and [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables"). Do not use CRCs if you are not a strong developer or if your additions do not need to be manipulated and displayed via the built-in MODX Resource listings.
+CRCs are not recommended to use when you are just wanting to add a few extra fields to a Resource, or alter the presentation of a Resource on the front-end. Those situations are best dealt with by using [Templates](building-sites/elements/templates "Templates") and [Template Variables](building-sites/elements/template-variables "Template Variables"). Do not use CRCs if you are not a strong developer or if your additions do not need to be manipulated and displayed via the built-in MODX Resource listings.
 
 Also remember that CRCs cannot be overridden themselves: you cannot extend a CRC.
 
 **"Rule of Thumb"**
-If it can be done more easily using [Snippets](developing-in-modx/basic-development/snippets "Snippets") or [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables"), then it's probably best to do it that way: CRCs are much more difficult to develop. 
+If it can be done more easily using [Snippets](extending-modx/snippets "Snippets") or [Template Variables](building-sites/elements/template-variables "Template Variables"), then it's probably best to do it that way: CRCs are much more difficult to develop. 
 
 ## Usage 
 
@@ -39,4 +39,4 @@ CRCs can have their Controllers, Processors and main rendering functionality ext
 
 ## Creating a CRC 
 
-Please follow the tutorial on [Creating a Resource Class](developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class "Creating a Resource Class").
+Please follow the tutorial on [Creating a Resource Class](extending-modx/custom-resources "Creating a Resource Class").

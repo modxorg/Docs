@@ -94,4 +94,4 @@ Any new TVs in that context will now use that media source.
 
  ![](/download/attachments/41058455/modx5.png?version=1&modificationDate=1346438434000)
 
-Combined with [this tutorial](administering-your-site/contexts/creating-a-subdomain-from-a-folder-using-virtual-hosts "Creating a Subdomain from a Folder using Virtual Hosts"), we now have different sites on the same MODX install, each with their own unique file system. Neat!
+Combined with [this tutorial](building-sites/contexts/virtual-host "Creating a Subdomain from a Folder using Virtual Hosts"), we now have different sites on the same MODX install, each with their own unique file system. Neat!

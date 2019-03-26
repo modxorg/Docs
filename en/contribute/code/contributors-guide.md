@@ -25,11 +25,9 @@ _old_uri: "contribute/using-git-and-github/community-contributors-guide"
  MODx contributors must work directly with their private forks on GitHub. Here is the suggested way to prepare your local repository as a developer for contributing back to any MODx project:
 
  ``` php 
-
 $ git clone git@github.com:YourGitUsername/revolution.git
 $ cd revolution
 $ git remote add upstream -f http://github.com/modxcms/revolution.git
-
 ```
 
  This setup makes your fork the standard `origin` remote, and adds/fetches the "blessed" repository as the remote `upstream`. You may want to add other remotes to other developer forks as well, and I would name those remotes appropriately so you can keep track of each one.
@@ -37,18 +35,15 @@ $ git remote add upstream -f http://github.com/modxcms/revolution.git
  You'll want to go ahead and create local tracking branches for the major version branch and/or minor-version branch you will want to work with from your fork, a.k.a. `origin`:
 
  ``` php 
-
 $ git checkout -b 2.x origin/2.x
 Switched to a new branch "2.x"
 $ git checkout -b 2.4.x origin/2.4.x
 Switched to a new branch "2.4.x"
-
 ```
 
  To keep your local tracking branches for `2.x` and `2.4.x` up-to-date from the `upstream` repository:
 
  ``` php 
-
 $ git fetch upstream
 $ git checkout 2.4.x
 Switched to branch "2.4.x"
@@ -57,7 +52,6 @@ $ git checkout 2.x
 Switched to branch "2.x"
 $ git merge --ff-only upstream/2.x
 $ git push origin 2.4.x 2.x
-
 ```
 
  Note however, that the push is mainly for show, as the permanent branches should never be a target for contributor commits, even in the forks. IOW, `2.4.x` and `2.x` in your fork should match the `upstream` branches of the same name. It is expected that all contributions will be submitted via a feature branch originating from the appropriate up-to-date major-version branch, or a bugfix branch originating from a minor-version branch in the upstream repository.
@@ -81,10 +75,8 @@ $ git push origin 2.4.x 2.x
  When starting work on a new feature, branch off from the major-version branch you are targeting, e.g. `2.x`.
 
  ``` php 
-
 $ git checkout -b my-bc-feature 2.x
 Switched to a new branch "my-bc-feature"
-
 ```
 
 #### Submitting a pull request for a finished feature
@@ -92,7 +84,6 @@ Switched to a new branch "my-bc-feature"
  Once you have completed development of a feature on your branch, you should first make sure your work is replayed over the latest updates from `develop`:
 
  ``` php 
-
 $ git fetch upstream
 $ git checkout 2.x
 Switched to branch "2.x"
@@ -100,7 +91,6 @@ $ git merge --ff-only upstream/2.x
 $ git checkout my-bc-feature
 Switched to branch "my-bc-feature"
 $ git rebase 2.x
-
 ```
 
  This will make it easier for integrators to incorporate your work without conflict.
@@ -108,9 +98,7 @@ $ git rebase 2.x
  Now simply push your feature to your fork (you can do this early on if you want to share your feature branch for collaboration or review):
 
  ``` php 
-
 $ git push origin my-bc-feature
-
 ```
 
  And you are ready to [submit a pull request](http://help.github.com/pull-requests/) for your feature branch.
@@ -124,9 +112,7 @@ $ git push origin my-bc-feature
  Before you begin work on coding your fix, create a new branch devoted to your upstream target (where XXXX is the bug number):
 
  ``` php 
-
 git checkout -b bug-XXXX 2.4.x
-
 ```
 
  Now you're ready to make your changes and fix the nasty bug!
@@ -134,10 +120,8 @@ git checkout -b bug-XXXX 2.4.x
  Once the bug is fixed, you can commit your changes and push your bugfix branch to your fork:
 
  ``` php 
-
 git commit .
 git push origin bug-XXXX
-
 ```
 
  Then you're ready to issue your pull request from Github.

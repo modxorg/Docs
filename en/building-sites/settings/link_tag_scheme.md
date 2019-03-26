@@ -27,8 +27,6 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/link_tag_scheme"
 
 You can override the scheme in each link by passing &scheme in your links:
 
- ```
-
+ ``` php
 [[~123? &scheme=`full`]]
-
 ```

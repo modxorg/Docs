@@ -12,9 +12,9 @@ Service: 1 - Parser Service Events
 Group: Documents
 
 **TVs are best Modified Here**
-If you need to modify TV values, it's best to modify them here and not during [OnBeforeDocFormSave](developing-in-modx/basic-development/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave").
+If you need to modify TV values, it's best to modify them here and not during [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave").
 
-Unlike [OnBeforeDocFormSave](developing-in-modx/basic-development/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave"), this event does not support the $modx->event->output() method.
+Unlike [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave"), this event does not support the $modx->event->output() method.
 
 ## Event Parameters
 
@@ -78,5 +78,5 @@ No need to run the `$resource->save()` method as that happens automatically.
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

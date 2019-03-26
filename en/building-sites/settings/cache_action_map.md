@@ -14,5 +14,5 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/cache_action_map
 
 ## See Also
 
-- **modmanagerrequest.class.php** modManagerRequest::loadActionMap() function
-- $modx->actionMap array
+- **modmanagerrequest.class.php** `modManagerRequest::loadActionMap()` function
+- `$modx->actionMap array`

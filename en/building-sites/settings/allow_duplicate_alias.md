@@ -14,4 +14,4 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/allow_duplicate_
 
 If set to 'yes', this will allow duplicate aliases to be saved.
 
-This option should be used with [use\_alias\_path](administering-your-site/settings/system-settings/use_alias_path "use_alias_path") set to 'Yes' in order to avoid problems when referencing a resource.
+This option should be used with [use\_alias\_path](building-sites/settings/use_alias_path "use_alias_path") set to 'Yes' in order to avoid problems when referencing a resource.

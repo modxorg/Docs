@@ -38,7 +38,7 @@ First we'll tell the browser and parser that this is XML code with a standard XM
 
 ## Schema Versions
 
-There are different schema versions. Between version 1.0 and 1.1, the biggest difference is how object indexes are defined. See [Upgrading Models to Schema Version 1.1](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-the-database-and-tables/upgrading-models-to-schema-version-1.1 "Upgrading Models to Schema Version 1.1") for information on migrating your index definitions to the new format. Do not add version="1.1" (leave off the version attribute or set it to 1.0) if you have not yet described your indexes in the 1.1 schema format or xPDO will create the tables with no indexes.
+There are different schema versions. Between version 1.0 and 1.1, the biggest difference is how object indexes are defined. See [Upgrading Models to Schema Version 1.1](extending-modx/xpdo/custom-models/defining-a-schema/upgrade-schema-v1.0-to-v1.1 "Upgrading Models to Schema Version 1.1") for information on migrating your index definitions to the new format. Do not add version="1.1" (leave off the version attribute or set it to 1.0) if you have not yet described your indexes in the 1.1 schema format or xPDO will create the tables with no indexes.
 
 ## Defining Tables
 
@@ -143,4 +143,4 @@ Let's close the model definition:
 </model>
 ```
 
-We have a completed XML schema for our model. Now we'll need to [define relationships for that schema](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships").
+We have a completed XML schema for our model. Now we'll need to [define relationships for that schema](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships").

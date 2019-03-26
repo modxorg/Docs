@@ -35,7 +35,7 @@ foreach ($boxes as $idx => $box) {
 }
 ```
 
- If no matching xPDOObjects are found, the xPDOIterator object will be empty but will still be an object, so the following won't work (opposed to [xPDO.getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")):
+ If no matching xPDOObjects are found, the xPDOIterator object will be empty but will still be an object, so the following won't work (opposed to [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")):
 
  ``` php 
 // a parent of -1 doesn't exist, this is intentional =)
@@ -58,7 +58,7 @@ if ($resourceObjs->valid()) {
 
 ## See Also
 
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
-- [xPDO.getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
-- [xPDO.getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects")
+- [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
+- [xPDO.getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
+- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")

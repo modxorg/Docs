@@ -4,12 +4,12 @@ _old_id: "1127"
 _old_uri: "contribute/becoming-a-contributor"
 ---
 
-- [**The Contributor License Agreement**](#BecomingaContributor-)
-- [I've submitted my CLA, now what? I want to commit!](#BecomingaContributor-I%27vesubmittedmyCLA%2Cnowwhat%3FIwanttocommit%5C%21)
-  - [In a Nutshell](#BecomingaContributor-InaNutshell)
-- [Using Git and GitHub and the MODX Branching Strategy](#BecomingaContributor-UsingGitandGitHubandtheMODXBranchingStrategy)
-- [My code contribution was rejected! What?!](#BecomingaContributor-Mycodecontributionwasrejected%5C%21What%3F%5C%21)
-- [See Also](#BecomingaContributor-SeeAlso)
+- [**The Contributor License Agreement**](#the-contributor-license-agreement)
+- [I've submitted my CLA, now what? I want to commit!](#ive-submitted-my-cla-now-what-i-want-to-commit)
+  - [In a Nutshell](#in-a-nutshell)
+- [Using Git and GitHub and the MODX Branching Strategy](#using-git-and-github-and-the-modx-branching-strategy)
+- [My code contribution was rejected! What?!](#my-code-contribution-was-rejected-what)
+- [See Also](#see-also)
 
 
 
@@ -43,7 +43,7 @@ Every once in a while, a contribution submitted doesn't make it into the core. I
 
 Sometimes a contribution you submit won't make it in. That may be for a myriad of reasons:
 
-- A contribution doesn't follow [Code Standards](developing-in-modx/code-standards "Code Standards")
+- A contribution doesn't follow [Code Standards](_legacy/developing-in-modx/code-standards "Code Standards")
 - The contribution will be moved to a component rather than the core
 - The contribution will be deferred to a later release
 - We used a different contribution to fix the issue

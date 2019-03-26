@@ -25,4 +25,4 @@ $provider = $cacheManager->getCacheProvider('xPDOMemCache');
 
 ## See Also
 
-- [xPDOCacheManager](xpdo/class-reference/xpdocachemanager "xPDOCacheManager")
+- [xPDOCacheManager](extending-modx/xpdo/class-reference/xpdocachemanager "xPDOCacheManager")

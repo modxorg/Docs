@@ -97,7 +97,7 @@ If you're not quite as savvy, or would rather also know what happens when you se
 
 ### 1. Create a Resource Group
 
-A [Resource Group](administering-your-site/security/resource-groups "Resource Groups") is a collection of resources which you can link to user groups and access list entries. When you have created a resource group, you can easily classify pages to be only visible for certain user groups, or roles within user groups.
+A [Resource Group](building-sites/client-proofing/security/resource-groups "Resource Groups") is a collection of resources which you can link to user groups and access list entries. When you have created a resource group, you can easily classify pages to be only visible for certain user groups, or roles within user groups.
 
 To create a resource group, navigate to Security -> Resource Groups and click on the Create Resource Group button. In the popup you are prompted to enter a name for the resource group. In the tutorial we expect you named it "Protected".
 
@@ -150,4 +150,4 @@ Forum topic discussing this tutorial: <http://modxcms.com/forums/index.php/topic
 
 Using the Login Snippet to set up a basic "Members Only" area: [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup")
 
-Security: [Security](administering-your-site/security "Security")
+Security: [Security](building-sites/client-proofing/security "Security")

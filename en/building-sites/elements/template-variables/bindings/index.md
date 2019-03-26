@@ -42,16 +42,16 @@ When placing @ bindings inside the "Default Value" field the returned value is u
 
 ## Types
 
-- [@FILE](making-sites-with-modx/customizing-content/template-variables/bindings/file-binding "FILE Binding")
-- [@RESOURCE](making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding "RESOURCE Binding")
-- [@CHUNK](making-sites-with-modx/customizing-content/template-variables/bindings/chunk-binding "CHUNK Binding")
-- [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding")
-- [@EVAL](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding "EVAL Binding")
-- [@DIRECTORY](making-sites-with-modx/customizing-content/template-variables/bindings/directory-binding "DIRECTORY Binding")
-- [@INHERIT](making-sites-with-modx/customizing-content/template-variables/bindings/inherit-binding "INHERIT Binding")
+- [@FILE](building-sites/elements/template-variables/bindings/file-binding "FILE Binding")
+- [@RESOURCE](building-sites/elements/template-variables/bindings/resource-binding "RESOURCE Binding")
+- [@CHUNK](building-sites/elements/template-variables/bindings/chunk-binding "CHUNK Binding")
+- [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding")
+- [@EVAL](building-sites/elements/template-variables/bindings/eval-binding "EVAL Binding")
+- [@DIRECTORY](building-sites/elements/template-variables/bindings/directory-binding "DIRECTORY Binding")
+- [@INHERIT](building-sites/elements/template-variables/bindings/inherit-binding "INHERIT Binding")
 
 The [getResources](/extras/revo/getresources "getResources") AddOn supports an @INLINE binding.
 
 ## See Also
 
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")

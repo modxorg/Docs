@@ -33,8 +33,8 @@ $modx->sendForward(234);
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
-- [modX.makeUrl](developing-in-modx/other-development-resources/class-reference/modx/modx.makeurl "modX.makeUrl")
-- [modX.sendRedirect](developing-in-modx/other-development-resources/class-reference/modx/modx.sendredirect "modX.sendRedirect")
-- [modX.sendErrorPage](developing-in-modx/other-development-resources/class-reference/modx/modx.senderrorpage "modX.sendErrorPage")
-- [modX.sendUnauthorizedPage](developing-in-modx/other-development-resources/class-reference/modx/modx.sendunauthorizedpage)
+- [modX](extending-modx/core-model/modx "modX")
+- [modX.makeUrl](extending-modx/core-model/modx/modx.makeurl "modX.makeUrl")
+- [modX.sendRedirect](extending-modx/core-model/modx/modx.sendredirect "modX.sendRedirect")
+- [modX.sendErrorPage](extending-modx/core-model/modx/modx.senderrorpage "modX.sendErrorPage")
+- [modX.sendUnauthorizedPage](extending-modx/core-model/modx/modx.sendunauthorizedpage)

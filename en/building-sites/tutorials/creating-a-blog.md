@@ -428,7 +428,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 </li>
 ```
 
- Before we proceed, there's a few things to note - QuipLatestComments will automatically truncate the comment and add an ellipsis past the &bodyLimit property passed into it, which defaults to 30 characters. Secondly, note the 'ago' [Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") we used here. This filter is built into MODx Revolution, and translates a timestamp into a nice, pretty 'two hours, 34 minutes' (or two other time metrics, such as min/sec, year/mo, mo/week) format.
+ Before we proceed, there's a few things to note - QuipLatestComments will automatically truncate the comment and add an ellipsis past the &bodyLimit property passed into it, which defaults to 30 characters. Secondly, note the 'ago' [Output Filter](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") we used here. This filter is built into MODx Revolution, and translates a timestamp into a nice, pretty 'two hours, 34 minutes' (or two other time metrics, such as min/sec, year/mo, mo/week) format.
 
  Note also that it will default to showing the 5 latest. The result:
 

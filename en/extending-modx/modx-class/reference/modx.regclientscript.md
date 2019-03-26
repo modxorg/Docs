@@ -26,10 +26,10 @@ $modx->regClientScript('assets/js/footer.js');
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
-- [modX.regClientCSS](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientcss "modX.regClientCSS")
-- [modX.regClientHTMLBlock](developing-in-modx/other-development-resources/class-reference/modx/modx.regclienthtmlblock "modX.regClientHTMLBlock")
-- [modX.regClientStartupHTMLBlock](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientstartuphtmlblock "modX.regClientStartupHTMLBlock")
-- [modX.regClientStartupScript](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientstartupscript "modX.regClientStartupScript")
-- [modX.getRegisteredClientScripts](developing-in-modx/other-development-resources/class-reference/modx/modx.getregisteredclientscripts "modX.getRegisteredClientScripts")
-- [modX.getRegisteredClientStartupScripts](developing-in-modx/other-development-resources/class-reference/modx/modx.getregisteredclientstartupscripts "modX.getRegisteredClientStartupScripts")
+- [modX](extending-modx/core-model/modx "modX")
+- [modX.regClientCSS](extending-modx/core-model/modx/modx.regclientcss "modX.regClientCSS")
+- [modX.regClientHTMLBlock](extending-modx/core-model/modx/modx.regclienthtmlblock "modX.regClientHTMLBlock")
+- [modX.regClientStartupHTMLBlock](extending-modx/core-model/modx/modx.regclientstartuphtmlblock "modX.regClientStartupHTMLBlock")
+- [modX.regClientStartupScript](extending-modx/core-model/modx/modx.regclientstartupscript "modX.regClientStartupScript")
+- [modX.getRegisteredClientScripts](extending-modx/core-model/modx/modx.getregisteredclientscripts "modX.getRegisteredClientScripts")
+- [modX.getRegisteredClientStartupScripts](extending-modx/core-model/modx/modx.getregisteredclientstartupscripts "modX.getRegisteredClientStartupScripts")

@@ -100,7 +100,7 @@ option1==value1||option2==value2
 
 ### More Advanced Usage
 
- The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the option1==value1||option2==value2 format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can use a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") to select items from your database, e.g. **Input option values:**
+ The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the option1==value1||option2==value2 format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") to select items from your database, e.g. **Input option values:**
 
  ``` sql 
 @SELECT pagetitle, id FROM modx_site_content WHERE parent=35
@@ -150,7 +150,7 @@ option1==value1||option2==value2
 
  NOTE: this TV Input type has been deprecated since Revo 2.1.x Please see [Listbox](#TemplateVariableInputTypes-Listbox(MultiSelect)) input types below.
 
- Set input option values in the option1==value1||option2==value2||option3==value3 format. Make sure to choose an output type of delimited (or other of your liking) to be able to present this to the front-end in a certain manner. You can also use a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") binding to select 2 columns, e.g.
+ Set input option values in the option1==value1||option2==value2||option3==value3 format. Make sure to choose an output type of delimited (or other of your liking) to be able to present this to the front-end in a certain manner. You can also use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding to select 2 columns, e.g.
 
  ``` sql 
 @SELECT name, value FROM your_table
@@ -210,7 +210,7 @@ option1==value1||option2==value2
 
  Creates an image input form to browse the server for a file. Files can be uploaded through the MODx File Manager then.
 
- In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](administering-your-site/media-sources "Media Sources"). 
+ In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](building-sites/media-sources "Media Sources"). 
 
  ![](/download/attachments/33227172/tv-image-input-options.png?version=1&modificationDate=1308558243000)
 
@@ -347,7 +347,7 @@ Option 1==value1||Option 2==value2
 
  ![](/download/attachments/33227172/Resource_List.jpg?version=1&modificationDate=1297999877000)
 
- This is similar to using a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") binding in a DropDown list menu, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
+ This is similar to using a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding in a DropDown list menu, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
 
  This input type also accepts WHERE conditions to filter by: ![](/download/attachments/33227172/Screen+Shot+2012-05-18+at+9.04.54+PM.png?version=1&modificationDate=1337400324000)
  Another example:
@@ -377,7 +377,7 @@ Option 1==value1||Option 2==value2
 
 ## Tag
 
- Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type) for formatting.
+ Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](building-sites/elements/template-variables/output-types/html) for formatting.
 
  **All input option names (for use in migx options-json)**
 

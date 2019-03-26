@@ -42,5 +42,5 @@ Depending on how the file is used on the page, it may pose a security risk. Be c
 
 ## See Also
 
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
-- [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")
+- [Bindings](building-sites/elements/template-variables/bindings "Bindings")

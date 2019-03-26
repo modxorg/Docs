@@ -28,4 +28,4 @@ $modx->switchContext('sports');
 
 ## See Also
 
-- [Contexts](administering-your-site/contexts "Contexts")
+- [Contexts](building-sites/contexts "Contexts")

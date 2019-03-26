@@ -40,7 +40,7 @@ We've got our snippet and our basic directory structure. Now we need to setup a 
 
 ### Namespaces
 
-[Namespaces](developing-in-modx/advanced-development/namespaces "Namespaces") in MODX Revolution are basically silos of development in the system. They load the base path for your CMP, and allow MODX to know where to grab the files for it and for Lexicon files (i18n). They allow you to develop and run your Extras without having to modify core MODX files or get in the way of Git/SVN deployments of MODX.
+[Namespaces](extending-modx/namespaces "Namespaces") in MODX Revolution are basically silos of development in the system. They load the base path for your CMP, and allow MODX to know where to grab the files for it and for Lexicon files (i18n). They allow you to develop and run your Extras without having to modify core MODX files or get in the way of Git/SVN deployments of MODX.
 
 We'll want to create ours. Go ahead and click on the Namespaces submenu item in the System menu:
 
@@ -122,7 +122,7 @@ Great! We've got an Action and Menu now. Let's go ahead and create our default L
 
 ### Lexicons
 
-[Lexicons](developing-in-modx/advanced-development/internationalization "Internationalization") in MODX Revolution allow you to provide MODX with translations for your Extra (and anything, really) in any language. We want our Extra to be i18n-compatible, so we want to utilize this feature. Each string (also called an Entry) has its own key, such as 'doodles.desc' shown above. The common practice for Lexicon keys for Extras is to prefix them with the Namespace path and a dot. This prevents collisions with other Extras.
+[Lexicons](extending-modx/internationalization "Internationalization") in MODX Revolution allow you to provide MODX with translations for your Extra (and anything, really) in any language. We want our Extra to be i18n-compatible, so we want to utilize this feature. Each string (also called an Entry) has its own key, such as 'doodles.desc' shown above. The common practice for Lexicon keys for Extras is to prefix them with the Namespace path and a dot. This prevents collisions with other Extras.
 
 Lexicon strings are collected in files called 'Lexicon Topics'. This means your strings can be isolated by a specific area (similar to how the core/lexicon/ directory does it), and makes it so you don't have to load _all_ the strings for your Extra when you may only want to load a few.
 
@@ -600,7 +600,7 @@ return $this->outputArray($list,$count);
 
 Great. So a few things. You'll note the $modx object, and an array called $scriptProperties, is already available. What is $scriptProperties? Well here it's a sanitized array of REQUEST vars - anything passed in goes in that array. So you'll notice we're setting up some default parameters to handle sorting and pagination at the beginning.
 
-Then, we're creating a new [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery") object to do sorting and pagination on the query with our passed-in parameters. We grab a collection of Doodle objects then with $modx->getIterator. $modx->getIterator is the same as $modx->getCollection, with one big caveat; it only loads objects as they are requested - so it's faster than getCollection when just looping over a collection of objects like we're doing here.
+Then, we're creating a new [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") object to do sorting and pagination on the query with our passed-in parameters. We grab a collection of Doodle objects then with $modx->getIterator. $modx->getIterator is the same as $modx->getCollection, with one big caveat; it only loads objects as they are requested - so it's faster than getCollection when just looping over a collection of objects like we're doing here.
 
 Finally, we use a foreach loop to loop over our data, store an associative array of their fields and values using ->toArray, and then run a special-to-processors method called 'outputArray'. This method returns a JSON array of data, with 2 parameters - the first being the array of data, and the second being the total number of objects. We are passing in a $count var here, because if we had more than 10 Doodles, we'd want to get the total number (as we're only returning 10 by default).
 

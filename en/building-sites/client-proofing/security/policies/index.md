@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/security/policies"
 
 ## What is an Access Policy?
 
- An Access Policy is a set of [Permissions](administering-your-site/security/policies/permissions "Permissions") containing one or many Permissions, as defined in the manager. By default MODX comes with pre-configured Access Policies:
+ An Access Policy is a set of [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") containing one or many Permissions, as defined in the manager. By default MODX comes with pre-configured Access Policies:
 
 - **Administrator**: Context administration policy with all default permissions.
 - **Context Editor**: Context administration policy with limited, content-editing related Permissions, but no publishing Permissions.
@@ -35,13 +35,13 @@ _old_uri: "2.x/administering-your-site/security/policies"
 
 ### Context Access
 
- Access Policies can be assigned as [Access Control Lists](administering-your-site/security/policies/acls "ACLs") (ACLs) to a Context and User Group, with a specified Minimum [Role](administering-your-site/security/roles "Roles"). When done, this means that all the Users in that User Group with at least the Role specified as the Minimum Role can use the Permissions in the Policy in the Context specified in the [ACL](administering-your-site/security/policies/acls "ACLs").
+ Access Policies can be assigned as [Access Control Lists](building-sites/client-proofing/security/policies/acls "ACLs") (ACLs) to a Context and User Group, with a specified Minimum [Role](building-sites/client-proofing/security/roles "Roles"). When done, this means that all the Users in that User Group with at least the Role specified as the Minimum Role can use the Permissions in the Policy in the Context specified in the [ACL](building-sites/client-proofing/security/policies/acls "ACLs").
 
- MODx comes with a default ["Administrator" Policy](administering-your-site/security/policies/permissions/permissions-administrator-policy "Permissions - Administrator Policy") that contains all the [Permissions](administering-your-site/security/policies/permissions "Permissions") one would use in a Context ACL. It's best to duplicate this policy when creating a custom access policy for restricting manager users.
+ MODx comes with a default ["Administrator" Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy "Permissions - Administrator Policy") that contains all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") one would use in a Context ACL. It's best to duplicate this policy when creating a custom access policy for restricting manager users.
 
 ### Resource Group Access
 
- They can also be Resource ACLs, that limit access to Resources based on Roles and Resource Groups. MODx comes packaged with a default ["Resource" Policy](administering-your-site/security/policies/permissions/permissions-resource-policy "Permissions - Resource Policy") that contains all the basic Permissions one would use in a Resource Group ACL.
+ They can also be Resource ACLs, that limit access to Resources based on Roles and Resource Groups. MODx comes packaged with a default ["Resource" Policy](building-sites/client-proofing/security/policies/permissions/resource-policy "Permissions - Resource Policy") that contains all the basic Permissions one would use in a Resource Group ACL.
 
  An example would be to assign the "Resource" policy to a Resource Group called 'HR Documents'. Then, you would give a User Group called "HR Department" access to this Resource Group via the Resource ACL:
 
@@ -71,23 +71,23 @@ _old_uri: "2.x/administering-your-site/security/policies"
 
 ## See Also
 
-1. [Users](administering-your-site/security/users)
-2. [User Groups](administering-your-site/security/user-groups)
-3. [Resource Groups](administering-your-site/security/resource-groups)
-4. [Roles](administering-your-site/security/roles)
-5. [Policies](administering-your-site/security/policies)
-  1. [Permissions](administering-your-site/security/policies/permissions)
-      1. [Permissions - Administrator Policy](administering-your-site/security/policies/permissions/permissions-administrator-policy)
-      2. [Permissions - Resource Policy](administering-your-site/security/policies/permissions/permissions-resource-policy)
-  2. [ACLs](administering-your-site/security/policies/acls)
-  3. [PolicyTemplates](administering-your-site/security/policies/policytemplates)
-6. [Security Tutorials](administering-your-site/security/security-tutorials)
-  1. [Giving a User Manager Access](administering-your-site/security/security-tutorials/giving-a-user-manager-access)
-  2. [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages)
-  3. [Creating a Second Super Admin User](administering-your-site/security/security-tutorials/creating-a-second-super-admin-user)
-  4. [Restricting an Element from Users](administering-your-site/security/security-tutorials/restricting-an-element-from-users)
-  5. [More on the Anonymous User Group](administering-your-site/security/security-tutorials/more-on-the-anonymous-user-group)
-7. [Hardening MODX Revolution](administering-your-site/security/hardening-modx-revolution)
+1. [Users](building-sites/client-proofing/security/users)
+2. [User Groups](building-sites/client-proofing/security/user-groups)
+3. [Resource Groups](building-sites/client-proofing/security/resource-groups)
+4. [Roles](building-sites/client-proofing/security/roles)
+5. [Policies](building-sites/client-proofing/security/policies)
+  1. [Permissions](building-sites/client-proofing/security/policies/permissions)
+      1. [Permissions - Administrator Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy)
+      2. [Permissions - Resource Policy](building-sites/client-proofing/security/policies/permissions/resource-policy)
+  2. [ACLs](building-sites/client-proofing/security/policies/acls)
+  3. [PolicyTemplates](building-sites/client-proofing/security/policies/policytemplates)
+6. [Security Tutorials](building-sites/client-proofing/security/security-tutorials)
+  1. [Giving a User Manager Access](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)
+  2. [Making Member-Only Pages](building-sites/client-proofing/security/security-tutorials/making-member-only-pages)
+  3. [Creating a Second Super Admin User](building-sites/client-proofing/security/security-tutorials/creating-a-second-super-admin-user)
+  4. [Restricting an Element from Users](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
+  5. [More on the Anonymous User Group](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)
+7. [Hardening MODX Revolution](getting-started/maintenance/securing-modx)
 8. [Security Standards](administering-your-site/security/security-standards)
 9. [Troubleshooting Security](building-sites/client-proofing/security/troubleshooting-security)
   1. [Resetting a User Password Manually](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)

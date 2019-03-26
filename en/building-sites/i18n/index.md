@@ -22,13 +22,13 @@ Lexicon topics need to be loaded before they can be used.
 
 ### Using Lexicons in templates
 
-``` html
+``` php
 [[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
 ```
 
 ### Using Lexicons in PHP
 
-``` html
+``` php
 $modx->lexicon->load('namespace_name:topicname');
 echo $modx->lexicon('key');
 ```

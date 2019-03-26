@@ -34,5 +34,5 @@ This gets used when you define a Template Variable. You paste the following into
 
 ## See Also
 
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
-- [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")
+- [Bindings](building-sites/elements/template-variables/bindings "Bindings")

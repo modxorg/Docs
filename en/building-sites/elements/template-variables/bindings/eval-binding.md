@@ -32,7 +32,7 @@ Simply put a PHP statement after the @EVAL tag:
 
 ### Showing Related Posts
 
-There's a whole page showing an example of using the EVAL binding to execute a snippet: [Creating a multi-select box for related pages in your template](making-sites-with-modx/customizing-content/template-variables/creating-a-multi-select-box-for-related-pages-in-your-template "Creating a multi-select box for related pages in your template").
+There's a whole page showing an example of using the EVAL binding to execute a snippet: [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages "Creating a multi-select box for related pages in your template").
 
 ### db-driven input-option-values by using rowboat
 
@@ -59,5 +59,5 @@ Thankfully, I've been unsuccessful in my attempts to unlink() a file using the @
 
 ## See Also
 
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
-- [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")
+- [Bindings](building-sites/elements/template-variables/bindings "Bindings")

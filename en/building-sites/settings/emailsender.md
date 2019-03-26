@@ -16,4 +16,4 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/emailsender"
 
 ###  See Also 
 
- [modMail](developing-in-modx/advanced-development/modx-services/modmail) for sending emails.
+ [modMail](extending-modx/services/modmail) for sending emails.

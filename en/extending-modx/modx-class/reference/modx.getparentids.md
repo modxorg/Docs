@@ -30,9 +30,7 @@ Important! This method makes use of the context cache to get the parent IDs. If 
 $pids = $modx->getParentIds($id, 10, array('context' => 'web'));
 ```
 
-
-
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
-- [modX.getChildIds](developing-in-modx/other-development-resources/class-reference/modx/modx.getchildids "modX.getChildIds")
+- [modX](extending-modx/core-model/modx "modX")
+- [modX.getChildIds](extending-modx/core-model/modx/modx.getchildids "modX.getChildIds")

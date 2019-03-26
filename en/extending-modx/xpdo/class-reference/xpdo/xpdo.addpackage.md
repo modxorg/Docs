@@ -58,13 +58,13 @@ if (!$xpdo->addPackage('my_package','/path/to/docroot/core/components/my_package
 
 ## Adding Packages from other Databases
 
- The addPackage() method works on any instantiated xPDO object that has valid class and map files. If you need to connect to a different database, instantiate a new instance of xPDO using valid login criteria, e.g. as described here: [Database Connections and xPDO](xpdo/getting-started/using-your-xpdo-model/database-connections-and-xpdo "Database Connections and xPDO")
+ The addPackage() method works on any instantiated xPDO object that has valid class and map files. If you need to connect to a different database, instantiate a new instance of xPDO using valid login criteria, e.g. as described here: [Database Connections and xPDO](extending-modx/xpdo/create-xpdo-instance/connections "Database Connections and xPDO")
 
 ## Creating Tables
 
- It's not enough to just load up the package and its PHP classes. If your package defines database tables, you may have to create the tables. This is normally done for you when you install a package, but if you're doing things manually, you'll want to look at the [xPDOManager.createObjectContainer](xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer") function.
+ It's not enough to just load up the package and its PHP classes. If your package defines database tables, you may have to create the tables. This is normally done for you when you install a package, but if you're doing things manually, you'll want to look at the [xPDOManager.createObjectContainer](extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer") function.
 
 ## See Also
 
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
-- [Loading Packages](xpdo/getting-started/using-your-xpdo-model/loading-packages "Loading Packages")
+- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")
+- [Loading Packages](extending-modx/xpdo/custom-models/loading-package "Loading Packages")

@@ -36,7 +36,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  In the above example, the pagetitle value will be modified by a Snippet named **myOutputFilter**
 
- Check the page on MODX's [built-in output filters](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") before writing your own filter.
+ Check the page on MODX's [built-in output filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") before writing your own filter.
 
 ##  Creating a Custom Output Modifier 
 
@@ -47,7 +47,7 @@ $input; // the value that is being formatted/filtered
 $options; // optional values passed via backticks
 ```
 
- A custom output filter is simply a [Snippet](developing-in-modx/basic-development/snippets "Snippets") that is earmarked to modify content. Simply put the [Snippet](developing-in-modx/basic-development/snippets "Snippets") name instead of the modifier.
+ A custom output filter is simply a [Snippet](extending-modx/snippets "Snippets") that is earmarked to modify content. Simply put the [Snippet](extending-modx/snippets "Snippets") name instead of the modifier.
 
  The syntax is that the Snippet name comes after a colon. Example with a snippet named 'makeDownloadLink':
 

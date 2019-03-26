@@ -29,5 +29,5 @@ This media source type allows you to connect to an Amazon S3 bucket.
 
 ## See Also
 
-1. [Media Source Type - File System](administering-your-site/media-sources/media-source-types/media-source-type-file-system)
-2. [Media Source Type - S3](administering-your-site/media-sources/media-source-types/media-source-type-s3)
+1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
+2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)

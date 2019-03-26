@@ -106,9 +106,9 @@ The modPackageBuilder::createPackage function has 3 parameters:
 _name_, _version_, and _release_. For us, 
 we'll be doing quip-0.1-alpha7, so let's go with that.
 
-Next, we'll register a [Namespace](developing-in-modx/advanced-development/namespaces "Namespaces") to this package. Not all packages need [Namespaces](developing-in-modx/advanced-development/namespaces "Namespaces"); but all 3rd Party Components do. Basically, a Namespace is an organizing tool for MODx so that MODx can know what objects are tied to what package. This is helpful later on should we want to uninstall our package; we'd want it to remove the objects we'd install.
+Next, we'll register a [Namespace](extending-modx/namespaces "Namespaces") to this package. Not all packages need [Namespaces](extending-modx/namespaces "Namespaces"); but all 3rd Party Components do. Basically, a Namespace is an organizing tool for MODx so that MODx can know what objects are tied to what package. This is helpful later on should we want to uninstall our package; we'd want it to remove the objects we'd install.
 
-Plus, should we want to add any [Lexicon Entries](developing-in-modx/advanced-development/internationalization "Internationalization") to this package (which we will), MODx does so by relating it to it's Namespace. Our package builder will assign our Lexicon Entries to the Namespace, so we can easily manage _just_ our Lexicon Entries; not any others.
+Plus, should we want to add any [Lexicon Entries](extending-modx/internationalization "Internationalization") to this package (which we will), MODx does so by relating it to it's Namespace. Our package builder will assign our Lexicon Entries to the Namespace, so we can easily manage _just_ our Lexicon Entries; not any others.
 
 ## Packaging in Objects
 
@@ -300,7 +300,7 @@ $snippet->setProperties($properties);
 $category->addMany($snippet);
 ```
 
-We're using the addMany method here, and not the addOne method. Wether you need to use one or the other does not so much depend on the amount of objects you are relating (in this case only one snippet), but the cardinality of the relationship. That may sound complex - but the cardinality simply means if it is a one-on-one or one-to-many relationship. In this case, a category has a one-to-many relationship with snippets (there can be many snippets in one category) and that means you will have to use the addMany method. You can pass an array of objects or just one object to that method, but which one you use depends on the cardinality. Read more about [relationships](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships"), [addOne](xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany").
+We're using the addMany method here, and not the addOne method. Wether you need to use one or the other does not so much depend on the amount of objects you are relating (in this case only one snippet), but the cardinality of the relationship. That may sound complex - but the cardinality simply means if it is a one-on-one or one-to-many relationship. In this case, a category has a one-to-many relationship with snippets (there can be many snippets in one category) and that means you will have to use the addMany method. You can pass an array of objects or just one object to that method, but which one you use depends on the cardinality. Read more about [relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships"), [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany").
 
 You'll use modSnippet's setProperties function to pass in an array of property arrays. So, let's take a look at that properties.inc.php file:
 
@@ -584,5 +584,5 @@ Great, we're done! You'll only need to run this script now, and viola! A fully z
 ## Related Pages
 
 - [Package Management](extending-modx/transport-packages "Package Management")
-- [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages")
-- [Transport Providers](developing-in-modx/advanced-development/package-management/providers "Providers")
+- [Transport Packages](extending-modx/transport-packages "Transport Packages")
+- [Transport Providers](building-sites/extras/providers "Providers")

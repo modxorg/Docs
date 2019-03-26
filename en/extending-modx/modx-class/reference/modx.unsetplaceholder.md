@@ -24,9 +24,9 @@ $modx->unsetPlaceholder('myPlaceholder');
 
 ## See Also
 
-- [modX.unsetPlaceholders](developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholders "modX.unsetPlaceholders")
-- [modX.toPlaceholder](developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholder "modX.toPlaceholder")
-- [modX.toPlaceholders](developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholders "modX.toPlaceholders")
-- [modX.setPlaceholder](developing-in-modx/other-development-resources/class-reference/modx/modx.setplaceholder "modX.setPlaceholder")
-- [modX.setPlaceholders](developing-in-modx/other-development-resources/class-reference/modx/modx.setplaceholders "modX.setPlaceholders")
-- [modX.getPlaceholder](developing-in-modx/other-development-resources/class-reference/modx/modx.getplaceholder "modX.getPlaceholder")
+- [modX.unsetPlaceholders](extending-modx/core-model/modx/modx.unsetplaceholders "modX.unsetPlaceholders")
+- [modX.toPlaceholder](extending-modx/core-model/modx/modx.toplaceholder "modX.toPlaceholder")
+- [modX.toPlaceholders](extending-modx/core-model/modx/modx.toplaceholders "modX.toPlaceholders")
+- [modX.setPlaceholder](extending-modx/core-model/modx/modx.setplaceholder "modX.setPlaceholder")
+- [modX.setPlaceholders](extending-modx/core-model/modx/modx.setplaceholders "modX.setPlaceholders")
+- [modX.getPlaceholder](extending-modx/core-model/modx/modx.getplaceholder "modX.getPlaceholder")
