@@ -4,15 +4,6 @@ _old_id: "1127"
 _old_uri: "contribute/becoming-a-contributor"
 ---
 
-- [**The Contributor License Agreement**](#the-contributor-license-agreement)
-- [I've submitted my CLA, now what? I want to commit!](#ive-submitted-my-cla-now-what-i-want-to-commit)
-  - [In a Nutshell](#in-a-nutshell)
-- [Using Git and GitHub and the MODX Branching Strategy](#using-git-and-github-and-the-modx-branching-strategy)
-- [My code contribution was rejected! What?!](#my-code-contribution-was-rejected-what)
-- [See Also](#see-also)
-
-
-
 So, you're itching to get in on the development or documentation of MODX Revolution or MODX Evolution. But, to your dismay, you're confused on how to start that process. This article will help you get to your level of commitment in development - be it an active coder or a tester who submits patches.
 
 ## **The Contributor License Agreement**

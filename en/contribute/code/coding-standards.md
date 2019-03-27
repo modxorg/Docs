@@ -4,18 +4,6 @@ _old_id: "1133"
 _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 ---
 
-- [General](#general)
-- [Parenthesis](#parenthesis)
-- [Classes](#classes)
-- [Variables](#variables)
-- [Function Arguments and Class Variables](#function-arguments-and-class-variables)
-- [Arrays](#arrays)
-- [Constants](#constants)
-- [File Structure](#file-structure)
-- [Prefixing](#prefixing)
-
-
-
 ## General
 
 - Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.
