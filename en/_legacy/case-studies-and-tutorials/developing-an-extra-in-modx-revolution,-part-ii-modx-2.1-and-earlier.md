@@ -10,28 +10,6 @@ This tutorial is part of a Series:
 - Part II: Creating our Custom Manager Page
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-iii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part III - MODX 2.1 and Earlier")
 
-- [First Setup Steps](#first-setup-steps)
-  - [Namespaces](#namespaces)
-  - [Actions and Menus](#actions-and-menus)
-  - [Lexicons](#lexicons)
-- [Setting up the Controllers with MODExt](#setting-up-the-controllers-with-modext)
-  - [The Base Controller](#the-base-controller)
-  - [Custom Request Routing](#custom-request-routing)
-  - [The Header Controller](#the-header-controller)
-- [Our Doodles CMP Page](#our-doodles-cmp-page)
-  - [The Section JS File](#the-section-js-file)
-  - [The Panel JS File](#the-panel-js-file)
-- [The Doodles Grid](#the-doodles-grid)
-  - [Hooking Up via Connectors](#hooking-up-via-connectors)
-  - [Adding Search](#adding-search)
-  - [Adding an Update Window](#adding-an-update-window)
-  - [Adding a Remove Context Menu Option](#adding-a-remove-context-menu-option)
-  - [Creating the Create Form](#creating-the-create-form)
-  - [Adding Inline-Editing](#adding-inline-editing)
-- [Summary](#summary)
-
-
-
 This section will cover creating the Custom Manager Page (CMP) for our Doodles Extra we created in [step 1](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier "Developing an Extra in MODX Revolution - MODX 2.1 and Earlier"). This includes explaining controllers/connectors/processors, making our Namespace, Action and Menu item, and working with ExtJS to create the UI.
 
 ## First Setup Steps

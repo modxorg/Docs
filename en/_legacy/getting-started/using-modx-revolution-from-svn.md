@@ -9,17 +9,6 @@ Note: The MODx repository has moved to GitHub as of MODx 2.1, so the information
 - [MODx Revolution repository at GitHub](https://github.com/modxcms/revolution)
 - [MODx Evolution repository at GitHub](https://github.com/modxcms/evolution)
 
-
-
-- [Installation Process](#installation-process)
-  - [SVN Locations](#svn-locations)
-  - [Run the Build](#run-the-build)
-  - [Run Setup](#run-setup)
-- [Upgrading After Commits](#upgrading-after-commits)
-- [Using MAMP on Mac OS X](#using-mamp-on-mac-os-x)
-
-
-
 ## Installation Process
 
 Here are some notes on participating in MODx Revolution testing and/or development. Unlike previous versions of MODx, Revolution will not install directly from SVN. Because of the nature of the new packaging and installation system, you must first create the core installation package using a PHP build script before running the setup.
