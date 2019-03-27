@@ -4,16 +4,6 @@ _old_id: "242"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins"
 ---
 
-- [What is a Plugin?](#what-is-a-plugin)
-- [The Event Model](#the-event-model)
-- [Handling an Event](#handling-an-event)
-- [Plugin Examples](#plugin-examples)
-  - [Message the User:](#message-the-user)
-  - [Custom Validation](#custom-validation)
-  - [Word Filter](#word-filter)
-  - [Page-Not-Found Redirector:](#page-not-found-redirector)
-- [See Also](#see-also)
-
 ## What is a Plugin?
 
 Plugins are similar to Snippets in that they are bits of PHP code that have access to the MODx API. The big difference, however, is in _when_ the code executes. You put Snippets inside of a page or inside a template and they run when the page is viewed, whereas Plugins are set to execute during certain system events, e.g. saving a Chunk, or emptying the cache. So when a given event "fires", any Plugin "listening" for that event is executed. Once the Plugin's code has executed, control returns to the point after the spot where the System Event was triggered.

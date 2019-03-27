@@ -4,12 +4,6 @@ _old_id: "1056"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.console"
 ---
 
-- [What is the MODx.Console?](#what-is-the-modxconsole)
-- [How it Works](#how-it-works)
-- [Usage](#usage)
-
-
-
 ## What is the MODx.Console?
 
 The MODx.Console is a special Ext widget that has been built to act as a terminal-like output console for processors that need to return more detailed information. It can be found in [Package Management](extending-modx/transport-packages "Package Management"), clearing the cache, or in other areas of MODX:

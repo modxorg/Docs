@@ -10,19 +10,6 @@ This tutorial is part of a Series:
 - [Part II: Creating our Custom Manager Page](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II")
 - Part III: Packaging Our Extra
 
-
-- [Overview](#overview)
-- [Setting Up Our Build Directory](#setting-up-our-build-directory)
-  - [The Build Script](#the-build-script)
-- [Adding in the Data](#adding-in-the-data)
-  - [Adding the Snippet](#adding-the-snippet)
-  - [Adding in Snippet Properties](#adding-in-snippet-properties)
-  - [Adding the File Resolvers](#adding-the-file-resolvers)
-  - [Adding the Menu and Action](#adding-the-menu-and-action)
-- [Adding a Resolver](#adding-a-resolver)
-- [Adding the Changelog, Readme, License and Setup Options](#adding-the-changelog-readme-license-and-setup-options)
-- [Summary](#summary)
-
 ## Overview
 
 In this tutorial, we're going to be packaging up our Extra that we made in the [past](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") [two](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II") tutorials into a [Transport Package](extending-modx/transport-packages "Transport Packages") (TP) so that we can install it on any MODX installation, and even submit it to the Extras section on modx.com.

@@ -8,13 +8,6 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/templating-your-sni
 
 One of the best practices in Snippet design is to make sure that you never write HTML directly in the Snippet, but template out the HTML into Chunks. This tutorial shows you how to do that in a Snippet.
 
-- [Templating Snippets](#templating-snippets)
-  - [Our Initial Snippet](#our-initial-snippet)
-  - [Templating the Snippet](#templating-the-snippet)
-  - [Adding A Row Class](#adding-a-row-class)
-  - [Passing a Custom ID](#passing-a-custom-id)
-- [See Also](#see-also)
-
 ### Our Initial Snippet 
 
 Let's take a case scenario; say you want to iterate across the published, non-deleted Resources that are children of the Resource with ID 390, sorted by menuindex, and then output them as LI tags with the pagetitle and a link to click them.

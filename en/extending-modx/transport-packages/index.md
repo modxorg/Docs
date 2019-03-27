@@ -4,17 +4,6 @@ _old_id: "308"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/transport-packages"
 ---
 
-- [What is a Transport Package?](#what-is-a-transport-package)
-  - [The Internals of a Transport Package](#the-internals-of-a-transport-package)
-  - [The manifest.php file](#the-manifestphp-file)
-  - [Okay, what are these Vehicles?](#okay-what-are-these-vehicles)
-    - [Inside a Vehicle's Source](#inside-a-vehicles-source)
-- [Resolvers and Validators](#resolvers-and-validators)
-  - [A Validator](#a-validator)
-  - [A Resolver](#a-resolver)
-- [Usage](#usage)
-- [Related Pages](#related-pages)
-
 ## What is a Transport Package?
 
 A Transport Package is a collection of objects and files that can be used to "transport" data from one MODx installation to another; or even to transport 3rd-Party Components in a simple, easily-manageable format. In other words, Transport Packages can transport nearly _anything_ - from database data, files and even scripts to run during its install.

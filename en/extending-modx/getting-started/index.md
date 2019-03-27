@@ -4,15 +4,6 @@ _old_id: "153"
 _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introduction/getting-started-developing"
 ---
 
-- [Programming in MODX Revolution](#programming-in-modx-revolution)
-- [3rd-Party Components (3PCs)](#3rd-party-components-3pcs)
-- [core/components and assets/components](#corecomponents-and-assetscomponents)
-- [Snippets](#snippets)
-- [Plugins](#plugins)
-- [Properties and Property Sets](#properties-and-property-sets)
-- [Custom Manager Pages (CMPs)](#custom-manager-pages-cmps)
-- [Using MODX Externally](#using-modx-externally)
-
 ## Programming in MODX Revolution
 
  MODX Revolution is an OOP Framework, built around the database ORM [xPDO](/display/xPDO20/Home "Home").

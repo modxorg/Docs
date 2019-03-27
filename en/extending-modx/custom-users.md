@@ -4,15 +4,6 @@ _old_id: "355"
 _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 ---
 
-- [Intended Audience](#intended-audience)
-  - [See Also](#see-also)
-- [Overview](#overview)
-- [Purpose](#purpose)
-- [The Rules](#the-rules)
-- [Steps to extending modUser](#steps-to-extending-moduser)
-  - [1. ) Create the schema and generate a model](#1--create-the-schema-and-generate-a-model)
-    - [Simple Example](#simple-example)
-
 ##  Intended Audience 
 
  This article is for developers who are looking to add additional data to their MODX users and functionality to the related classes. 

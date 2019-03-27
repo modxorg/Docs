@@ -4,15 +4,6 @@ _old_id: "1198"
 _old_uri: "2.x/advanced-features/object-validation"
 ---
 
-- [What is Object Validation in xPDO?](#what-is-object-validation-in-xpdo)
-- [How is it Done?](#how-is-it-done)
-- [Example Usage](#example-usage)
-- [Rules](#rules)
-  - [The 'callable' Rule](#the-callable-rule)
-  - [The 'preg\_match' Rule](#the-pregmatch-rule)
-  - [The 'xPDOValidationRule' Rule](#the-xpdovalidationrule-rule)
-- [See Also](#see-also)
-
 ## What is Object Validation in xPDO?
 
 Object validation is done through xPDOValidator, xPDO's validation class. It's automatically accessible from any xPDOObject, via the getValidator method.

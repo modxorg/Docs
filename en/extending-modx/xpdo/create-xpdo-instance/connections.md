@@ -4,16 +4,6 @@ _old_id: "1157"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/database-connections-and-xpdo"
 ---
 
-- [xPDO Database Connections](#xpdo-database-connections)
-  - [Example Connection](#example-connection)
-- [Defining Multiple Connections _(xPDO 2.2+)_](#defining-multiple-connections-xpdo-22)
-  - [xPDO::OPT\_CONNECTIONS](#xpdooptconnections)
-  - [xPDO::OPT\_CONN\_MUTABLE](#xpdooptconnmutable)
-  - [xPDO::OPT\_CONN\_INIT](#xpdooptconninit)
-- [See Also](#see-also)
-
-
-
 ## xPDO Database Connections
 
 Database connectivity in xPDO is done in the constructor. The xPDO object can only hold one database connection per instance, but you are free to instantiate as many xPDO instances as you need. The syntax of the constructor is such:

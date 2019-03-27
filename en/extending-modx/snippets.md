@@ -4,23 +4,6 @@ _old_id: "292"
 _old_uri: "2.x/developing-in-modx/basic-development/snippets"
 ---
 
-- [Overview](#overview)
-  - [What is a Snippet?](#what-is-a-snippet)
-  - [How Do They Work?](#how-do-they-work)
-  - [Simple Example](#simple-example)
-  - [Passing Values Into a Snippet](#passing-values-into-a-snippet)
-  - [Reading Values in your Snippets](#reading-values-in-your-snippets)
-- [Database Interaction in Snippets](#database-interaction-in-snippets)
-  - [Why an ORM?](#why-an-orm)
-  - [Example DB Code](#example-db-code)
-  - [Further Database Reading](#further-database-reading)
-- [Recommended Methods and Tips](#recommended-methods-and-tips)
-  - [Write your Snippets outside of the MODX Manager.](#write-your-snippets-outside-of-the-modx-manager)
-  - [Don't try to mix PHP and HTML in a Snippet.](#dont-try-to-mix-php-and-html-in-a-snippet)
-  - [Don't Work on Live Snippets](#dont-work-on-live-snippets)
-  - [Use Default Properties](#use-default-properties)
-- [See Also](#see-also)
-
 ## Overview 
 
 Snippets are the method by which MODX allows you to run dynamic PHP code in any of your pages. They are the main development vehicle for most developers.

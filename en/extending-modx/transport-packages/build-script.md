@@ -3,14 +3,6 @@ title: "Creating a Build Script"
 _old_id: "67"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script"
 ---
-
-- [Directory Structure](#directory-structure)
-- [Starting the Build Script](#starting-the-build-script)
-- [Packaging in Objects](#packaging-in-objects)
-- [Validators and Resolvers](#validators-and-resolvers)
-- [Lexicons](#lexicons)
-- [Package Attributes: License, Readme and Setup Options](#package-attributes-license-readme-and-setup-options)
-- [Related Pages](#related-pages)
  
 Users using Revolution 2.0.0-beta-4 or earlier should note that the defines are different in beta5 and onward. An example: xPDOTransport::UNIQUE\_KEYS in beta5+ is XPDO\_TRANSPORT\_UNIQUE\_KEYS in beta4 and earlier. MODx recommends to just update to beta5/SVN.
 
