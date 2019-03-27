@@ -4,18 +4,6 @@ _old_id: "17"
 _old_uri: "2.x/getting-started/installation/advanced-installation"
 ---
 
-- [Installation Pre-Steps](#installation-pre-steps)
-  - [Renaming or Moving the Core](#renaming-or-moving-the-core)
-  - [Changing the Configuration Key](#changing-the-configuration-key)
-- [Advanced Options](#advanced-options)
-- [Database Options](#database-options)
-  - [Collations and Charsets](#collations-and-charsets)
-  - [Creating an Administrator User](#creating-an-administrator-user)
-- [Context Configuration](#context-configuration)
-- [Pre-Installation Checks](#pre-installation-checks)
-- [Post-Installation Summary](#post-installation-summary)
-- [See Also](#see-also)
-
 This is the tutorial for the advanced distribution of MODx. It is recommended to only install this distribution if:
 
 - You plan on renaming the manager/ or connectors/ directories, or move the core/ directory

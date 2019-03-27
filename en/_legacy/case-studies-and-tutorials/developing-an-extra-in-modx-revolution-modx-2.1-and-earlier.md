@@ -10,20 +10,6 @@ This tutorial is part of a Series:
 - [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-ii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part II - MODX 2.1 and Earlier")
 - [Part III: Packaging Our Extra](case-studies-and-tutorials/developing-an-extra-in-modx-revolution-modx-2.1-and-earlier/developing-an-extra-in-modx-revolution,-part-iii-modx-2.1-and-earlier "Developing an Extra in MODX Revolution, Part III - MODX 2.1 and Earlier")
 
-- [Overview](#overview)
-- [Setting Up Our Directories](#setting-up-our-directories)
-- [Creating the Doodles Snippet](#creating-the-doodles-snippet)
-  - [Making the Magic Path Settings](#making-the-magic-path-settings)
-  - [Making the Doodles Base Class](#making-the-doodles-base-class)
-  - [Making the Model](#making-the-model)
-  - [The Schema Parsing Script](#the-schema-parsing-script)
-  - [The include Snippet](#the-include-snippet)
-  - [Building the Query](#building-the-query)
-  - [The Doodles class getChunk Method](#the-doodles-class-getchunk-method)
-- [Summary](#summary)
-
-
-
 ## Overview
 
 This tutorial is written as a comprehensive example on developing Extras for MODX Revolution - as well as how to setup your Extra to be easily packaged into a Transport Package, as well as able to be developed outside the MODX webroot so that source control (such as Git) can be used.

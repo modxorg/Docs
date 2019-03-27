@@ -4,14 +4,6 @@ _old_id: "265"
 _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table"
 ---
 
-- [Introduction](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-Introduction)
-  - [Access Points](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-AccessPoints)
-- [Creating a MySQL table](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-CreatingaMySQLtable)
-- [Create Reverse Engineering Script](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-CreateReverseEngineeringScript)
-- [Defining Key Relationships](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-DefiningKeyRelationships)
-- [Accessing your Data](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-AccessingyourData)
-- [See Also](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-SeeAlso)
- 
 ## Introduction
 
  The xPDO Object-Relational-Bridge (ORB) relies on a series of PHP classes to provide an interface to database tables. These PHP classes can be generated automatically by parsing a specially formatted XML file, by reverse engineering existing database tables, or they can even be written by hand (masochists only). The easiest approach when dealing with a custom database table is to reverse engineer existing MySQL database tables: MySQL has been around for a long time, and there are numerous tutorials and books out there to help you learn how to use it.

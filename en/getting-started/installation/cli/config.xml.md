@@ -4,15 +4,6 @@ _old_id: "307"
 _old_uri: "2.x/getting-started/installation/command-line-installation/the-setup-config-xml-file"
 ---
 
-- [The XML Configuration File](#the-xml-configuration-file)
-  - [Database Configuration Options](#database-configuration-options)
-  - [Installation Configuration Options](#installation-configuration-options)
-  - [Path Configuration Options](#path-configuration-options)
-  - [Other Configuration Options](#other-configuration-options)
-- [See Also](#see-also)
-
-
-
 ## The XML Configuration File
 
 The config.xml file used for running setup via CLI has the following XML nodes. They are described and outlined below:

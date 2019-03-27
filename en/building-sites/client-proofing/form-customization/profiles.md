@@ -4,9 +4,6 @@ _old_id: "132"
 _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customization-profiles"
 ---
 
-- [What is a Form Customization Profile?](#what-is-a-form-customization-profile)
-- [See Also](#see-also)
-
 ## What is a Form Customization Profile?
 
 A Profile is a collection of [Form Customization Sets](building-sites/client-proofing/form-customization/sets "Form Customization Sets"). A Profile can be restricted to only load for specific User Groups. If no User Groups are assigned, the Profile will be run for all Users.

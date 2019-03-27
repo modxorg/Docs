@@ -6,13 +6,6 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/how-to-write-a-good
 
 We're putting this here because often a Snippet will use Chunks to format data.
 
-- [Do NOT Over-Rely on Output Modifier Logic!](#do-not-over-rely-on-output-modifier-logic)
-  - [The WRONG Way to do It](#the-wrong-way-to-do-it)
-  - [Reasons Why Output Modifiers Might Destroy Your Site](#reasons-why-output-modifiers-might-destroy-your-site)
-- [The Right Way to Do It](#the-right-way-to-do-it)
-- [Good Chunk tpl-keeping Checklist](#good-chunk-tpl-keeping-checklist)
-- [See Also](#see-also)
-
 ## Do NOT Over-Rely on Output Modifier Logic! 
 
 What are [Output Modifiers](building-sites/tag-syntax/output-filters) "PHx")? It is a simplified set of parser rules and output modifies that allows you to manipulate data in your view layer (i.e. in your Chunks and Templates).

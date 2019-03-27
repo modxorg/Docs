@@ -4,20 +4,6 @@ _old_id: "154"
 _old_uri: "2.x/getting-started/installation/git-installation"
 ---
 
-- [Installation Process](#GitInstallation-InstallationProcess)
-  - [Git Location](#GitInstallation-GitLocation)
-      - [Major-Version Branch](#GitInstallation-MajorVersionBranch)
-      - [Minor-Version Branch](#GitInstallation-MinorVersionBranch)
-  - [Run the Build](#GitInstallation-RuntheBuild)
-  - [Run Setup](#GitInstallation-RunSetup)
-- [Upgrading Your Local Git Repository After Commits](#GitInstallation-UpgradingYourLocalGitRepositoryAfterCommits)
-  - [Contributing By Sending Pull Requests](#GitInstallation-ContributingBySendingPullRequests)
-  - [Switching Branches](#GitInstallation-SwitchingBranches)
-- [Additional Information](#GitInstallation-AdditionalInformation)
-  - [Using MAMP on Mac OS X](#GitInstallation-UsingMAMPonMacOSX)
-
-
-
 ## Installation Process
 
  Here are some notes on participating in MODX Revolution testing and/or development. Unlike previous versions of MODX, Revolution will not install directly from Git. Because of the nature of the new packaging and installation system, you must first create the core installation package using a PHP build script before running the setup.

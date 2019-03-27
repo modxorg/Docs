@@ -4,20 +4,6 @@ _old_id: "353"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)/custom-output-filter-examples"
 ---
 
-- [Introduction](#introduction)
-- [Creating a Custom Output Modifier](#creating-a-custom-output-modifier)
-- [Porting PHx to Custom Output Filters](#porting-phx-to-custom-output-filters)
-- [Examples](#examples)
-  - [alternateClass](#alternateclass)
-  - [parseLinks](#parselinks)
-  - [parseTags](#parsetags)
-  - [parseTags](#parsetags-1)
-  - [shorten](#shorten)
-  - [substring](#substring)
-  - [numberformat](#numberformat)
-
-
-
 ##  Introduction 
 
  Custom Output Filters are MODx Snippets dedicated to formatting placeholder output in the view layer (in a Template or in a Chunk). If a raw placeholder, e.g.

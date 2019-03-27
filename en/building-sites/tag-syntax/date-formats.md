@@ -4,12 +4,6 @@ _old_id: "91"
 _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags/date-formats"
 ---
 
-- [Common Examples.](#common-examples)
-- [All Parameters](#all-parameters)
-- [See Also](#see-also)
-
-
-
 MODx is written in PHP, and as such, it relies on the underlying PHP date functions, e.g. [strftime](http://www.php.net/manual/en/function.strftime.php). The discussion here can get quite tricky because the [strftime](http://www.php.net/manual/en/function.strftime.php) and [strtotime](http://co.php.net/strtotime) functions deploy _similar_ arguments, but they are not identical. Sorry for the confusion; date manipulation and formatting is more complex than it might at first seem.
 
 The discussion here relates primarily to the following content fields:

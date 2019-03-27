@@ -6,43 +6,6 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/
 
 The root directory of MODX is split into several subdirectories, each with its own set of responsibilities and tasks. Some of these directories can be renamed and moved, and their locations can be configured during setup.
 
-- [connectors/](#ExplanationofDirectoryStructure-connectors%2F)
-  - [Notable Files](#ExplanationofDirectoryStructure-NotableFiles)
-- [core/](#ExplanationofDirectoryStructure-core%2F)
-  - [core/cache/](#ExplanationofDirectoryStructure-core%2Fcache%2F)
-      - [core/cache/logs/](#ExplanationofDirectoryStructure-core%2Fcache%2Flogs%2F)
-      - [core/cache/mgr/](#ExplanationofDirectoryStructure-core%2Fcache%2Fmgr%2F)
-      - [core/cache/rss/](#ExplanationofDirectoryStructure-core%2Fcache%2Frss%2F)
-      - [core/cache/web/](#ExplanationofDirectoryStructure-core%2Fcache%2Fweb%2F)
-  - [core/components/](#ExplanationofDirectoryStructure-core%2Fcomponents%2F)
-  - [core/config/](#ExplanationofDirectoryStructure-core%2Fconfig%2F)
-  - [core/docs/](#ExplanationofDirectoryStructure-core%2Fdocs%2F)
-  - [core/error/](#ExplanationofDirectoryStructure-core%2Ferror%2F)
-  - [core/export/](#ExplanationofDirectoryStructure-core%2Fexport%2F)
-  - [core/import/](#ExplanationofDirectoryStructure-core%2Fimport%2F)
-  - [core/lexicon/](#ExplanationofDirectoryStructure-core%2Flexicon%2F)
-  - [core/model/](#ExplanationofDirectoryStructure-core%2Fmodel%2F)
-      - [core/model/modx/](#ExplanationofDirectoryStructure-core%2Fmodel%2Fmodx%2F)
-            - [core/model/modx/mysql/](#ExplanationofDirectoryStructure-core%2Fmodel%2Fmodx%2Fmysql%2F)
-            - [core/model/modx/processors/](#ExplanationofDirectoryStructure-core%2Fmodel%2Fmodx%2Fprocessors%2F)
-      - [core/model/schema/](#ExplanationofDirectoryStructure-core%2Fmodel%2Fschema%2F)
-      - [core/model/smarty/](#ExplanationofDirectoryStructure-core%2Fmodel%2Fsmarty%2F)
-  - [core/packages/](#ExplanationofDirectoryStructure-core%2Fpackages%2F)
-  - [core/xpdo/](#ExplanationofDirectoryStructure-core%2Fxpdo%2F)
-  - [Notable Files](#ExplanationofDirectoryStructure-NotableFiles)
-- [manager/](#ExplanationofDirectoryStructure-manager%2F)
-  - [manager/assets/](#ExplanationofDirectoryStructure-manager%2Fassets%2F)
-  - [manager/controllers/](#ExplanationofDirectoryStructure-manager%2Fassets%2Fcontrollers%2F)
-  - [manager/templates/](#ExplanationofDirectoryStructure-manager%2Fassets%2Ftemplates%2F)
-  - [Notable Files](#ExplanationofDirectoryStructure-NotableFiles)
-- [setup/](#ExplanationofDirectoryStructure-setup%2F)
-- [\_build/](#ExplanationofDirectoryStructure-%5Cbuild%2F)
-  - [Notable Files](#ExplanationofDirectoryStructure-NotableFiles)
-- [assets/](#ExplanationofDirectoryStructure-assets%2F)
-  - [assets/components/](#ExplanationofDirectoryStructure-assets%2Fcomponents%2F)
-
-
-
 ## connectors/
 
 Connectors are essentially entry points for AJAX requests in MODX. They don't do any database manipulation on their own; they simply load up the main MODX class, sanitize any request data, and then handle the request by pointing to the appropriate Processor file.

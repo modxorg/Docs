@@ -4,15 +4,6 @@ _old_id: "172"
 _old_uri: "2.x/case-studies-and-tutorials/loading-pages-in-the-front-end-via-ajax-and-jquery-tabs"
 ---
 
-- [The Problem](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-TheProblem)
-- [Creating the Resources](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-CreatingtheResources)
-- [Doing the Front-End Loading](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-DoingtheFrontEndLoading)
-- [Wait, I want the Page Titles as the tab headers!](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-Wait%2CIwantthePageTitlesasthetabheaders%5C%21)
-  - [Using getResources](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-UsinggetResources)
-  - [Using Wayfinder](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-UsingWayfinder)
-  - [Using a getField Snippet](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-UsingagetFieldSnippet)
-- [Conclusion](#LoadingPagesintheFront-EndviaAJAXandjQueryTabs-Conclusion)
-
 ## The Problem
 
  We want in our site to use [jQuery's tabs](http://jqueryui.com/demos/tabs/) to load our Resources via AJAX. How do we do that in MODx? This tutorial will show you just how easy it is to accomplish this in MODx Revolution.

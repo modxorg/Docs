@@ -4,10 +4,7 @@ _old_id: "330"
 _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components"
 ---
 
-- [The Scenario](#the-scenario)
-- [Our Model](#our-model)
-
- So you're developing your custom component for MODX Revolution, and you've run into a dilemma. You've got some data that uses a table in your MODX database, but you want a way to use xPDO's object model to access it. This tutorial will walk you through the process of creating your own custom schema, adding it as an xPDO model package, and querying it.
+So you're developing your custom component for MODX Revolution, and you've run into a dilemma. You've got some data that uses a table in your MODX database, but you want a way to use xPDO's object model to access it. This tutorial will walk you through the process of creating your own custom schema, adding it as an xPDO model package, and querying it.
 
 ## The Scenario
 

@@ -5,8 +5,6 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/how-to-write-a-good
 ---
 
  For some, writing a MODX snippet might be their first foray into coding. Here are some tips for newbies and experienced developers alike.
-
-- [Our Example Snippet](#our-example-snippet)
  
 ##  Our Example Snippet 
 

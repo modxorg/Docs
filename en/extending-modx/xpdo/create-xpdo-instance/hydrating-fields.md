@@ -4,14 +4,6 @@ _old_id: "1184"
 _old_uri: "2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields"
 ---
 
-- [What is hydration?](#what-is-hydration)
-- [Hydrating Fields](#hydrating-fields)
-- [Hydrating Ad Hoc Fields](#hydrating-ad-hoc-fields)
-- [Hydrating Related Objects](#hydrating-related-objects)
-- [See Also](#see-also)
-
-
-
 ## What is hydration?
 
 Hydration is the process in which fields and related objects represented by an xPDOObject are populated with values. By default, these fields are **only** accessible using the get(), getOne() and getMany() methods of xPDOObject, and must be defined with appropriate metadata in the map for the object. However, there are a number of options you can use to extend how xPDO hydrates fields and related objects.

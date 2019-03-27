@@ -4,40 +4,6 @@ _old_id: "372"
 _old_uri: "2.x/developing-in-modx/advanced-development/modx-services/modregistry"
 ---
 
-- [What is modRegistry?](#what-is-modregistry)
-- [Choosing a modRegister implementation](#choosing-a-modregister-implementation)
-  - [modFileRegister](#modfileregister)
-  - [modDbRegister](#moddbregister)
-- [Using the Registry API](#using-the-registry-api)
-  - [Connecting](#connecting)
-  - [Subscribing](#subscribing)
-  - [Sending Messages](#sending-messages)
-    - [Sending an Array of Sequenced Messages](#sending-an-array-of-sequenced-messages)
-    - [Sending an Array of Named Messages](#sending-an-array-of-named-messages)
-    - [Sending a Single Message](#sending-a-single-message)
-    - [Options for Sending Messages](#options-for-sending-messages)
-      - [delay](#delay)
-      - [ttl](#ttl)
-      - [kill](#kill)
-  - [Reading Messages](#reading-messages)
-    - [Polling for New Messages in a Topic](#polling-for-new-messages-in-a-topic)
-    - [Options for Reading Messages](#options-for-reading-messages)
-      - [poll\_limit](#polllimit)
-      - [poll\_interval](#pollinterval)
-      - [time\_limit](#timelimit)
-      - [msg\_limit](#msglimit)
-      - [remove\_read](#removeread)
-      - [include\_keys _(MODX 2.2+ only)_](#includekeys-modx-22-only)
-- [Using the Registry Processors](#using-the-registry-processors)
-  - [Sending Messages](#sending-messages-1)
-  - [Reading Messages](#reading-messages-1)
-- [Examples](#examples)
-  - [Alternative to Session Storage](#alternative-to-session-storage)
-  - [Capturing Log Messages](#capturing-log-messages)
-  - [Registering Load Balanced Web Nodes for Remote Commands](#registering-load-balanced-web-nodes-for-remote-commands)
-
-
-
 ## What is modRegistry?
 
 The modRegistry service provided with the MODX Revolution Core is a simple message queue service that developers can make use of for a wide variety of purposes. It comes with a file and database modRegister implementation, and can be extended to work with custom or external message queue implementations.

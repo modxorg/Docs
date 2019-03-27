@@ -4,28 +4,6 @@ _old_id: "96"
 _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introduction"
 ---
 
-- [What is MODX?](#what-is-modx)
-- [What is MVC?](#what-is-mvc)
-  - [What is MVC²?](#what-is-mvc%C2%B2)
-  - [Connector/Processor Relationships](#connectorprocessor-relationships)
-- [What is xPDO?](#what-is-xpdo)
-- [What is an ORM?](#what-is-an-orm)
-- [A Brief Overview of Revolution](#a-brief-overview-of-revolution)
-  - [The Model](#the-model)
-  - [The View](#the-view)
-    - [In the front-end, they are Templates, Chunks and Resources.](#in-the-front-end-they-are-templates-chunks-and-resources)
-      - [Templates](#templates)
-      - [Chunks](#chunks)
-      - [Resources](#resources)
-    - [In the Manager](#in-the-manager)
-  - [The Controller](#the-controller)
-    - [Snippets](#snippets)
-    - [Plugins](#plugins)
-  - [The 2nd C: The Connectors](#the-2nd-c-the-connectors)
-- [See Also](#see-also)
-
-
-
 ## What is MODX?
 
 MODX Revolution is an Content Application Platform, built for developers, designers and users who want a powerful, scalable system with flexible content management built in.

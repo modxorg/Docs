@@ -4,28 +4,6 @@ _old_id: "166"
 _old_uri: "2.x/getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity"
 ---
 
-- [ModSecurity (aka mod\_security or mod\_sec)](#InstallationonaserverrunningModSecurity-ModSecurity%28akamodsecurityormodsec%29)
-- [How Do I Know if I have ModSecurity Installed?](#InstallationonaserverrunningModSecurity-HowDoIKnowifIhaveModSecurityInstalled%3F)
-  - [Checking on a WHM Server](#InstallationonaserverrunningModSecurity-CheckingonaWHMServer)
-  - [Checking via the Command Line](#InstallationonaserverrunningModSecurity-CheckingviatheCommandLine)
-  - [Other Recon](#InstallationonaserverrunningModSecurity-OtherRecon)
-- [Log Files](#InstallationonaserverrunningModSecurity-LogFiles)
-  - [Sample Error](#InstallationonaserverrunningModSecurity-SampleError)
-- [Whitelisting a Rule for a Domain](#InstallationonaserverrunningModSecurity-WhitelistingaRuleforaDomain)
-  - [Rebuild the Apache Configuration](#InstallationonaserverrunningModSecurity-RebuildtheApacheConfiguration)
-  - [Edit the Virtual Hosts file](#InstallationonaserverrunningModSecurity-EdittheVirtualHostsfile)
-- [Add the Whitelist Rule](#InstallationonaserverrunningModSecurity-AddtheWhitelistRule)
-  - [Generic Example](#InstallationonaserverrunningModSecurity-GenericExample)
-  - [Specific Example](#InstallationonaserverrunningModSecurity-SpecificExample)
-  - [Broader Example](#InstallationonaserverrunningModSecurity-BroaderExample)
-- [Restart Apache](#InstallationonaserverrunningModSecurity-RestartApache)
-  - [cPanel: Rebuild Conf file](#InstallationonaserverrunningModSecurity-cPanel%3ARebuildConffile)
-  - [Restart Apache](#InstallationonaserverrunningModSecurity-RestartApache)
-- [Static Resources](#InstallationonaserverrunningModSecurity-StaticResources)
-- [See Also](#InstallationonaserverrunningModSecurity-SeeAlso)
-
-
-
 This document covers a fairly technical topic and it's not recommended that amateurs attempt this. Command-line noobs best leave this to a professional system admin or to their hosting company. Editing configuration files via the command line can be dangerous and you can destroy your server!
 
 ## ModSecurity (aka mod\_security or mod\_sec)

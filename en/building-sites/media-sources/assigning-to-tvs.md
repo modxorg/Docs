@@ -4,13 +4,6 @@ _old_id: "346"
 _old_uri: "2.x/administering-your-site/media-sources/assigning-media-sources-to-tvs"
 ---
 
-- [Creating the TV](#creating-the-tv)
-- [Limiting the Source to Specific Folders](#limiting-the-source-to-specific-folders)
-- [Editing the TV](#editing-the-tv)
-- [See Also](#see-also)
-
-
-
 This article describes how to assign a Media Source to a TV. It is recommended to read the [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source") article before reading this one.
 
 Only "image" and "file" type TVs use Sources at this time.

@@ -3,26 +3,6 @@ title: "Устранение неполадок при установке"
 translation: "getting-started/installation/troubleshooting"
 ---
 
-- [Общие проблемы](#TroubleshootingInstallation-CommonProblems)
-- [Сообщения об ошибках PDO](#TroubleshootingInstallation-PDOErrorMessages)
-- [Распространенные ошибки](#TroubleshootingInstallation-CommonErrors)
-  - ["Я получаю пустой белый экран вместо страницы настроек!"](#TroubleshootingInstallation-%22Igetablankwhitescreeninsteadoftheoptionspage%5C%21%22)
-  - ["Я нажал Установить и получил пустой белый экран!"](#TroubleshootingInstallation-%22Iclickedinstallandgotablankwhitescreen%5C%21%22)
-  - ["Не удается подключиться к базе данных" на странице настроек базы данных](#TroubleshootingInstallation-%22Cannotconnecttodatabase%22inthedatabaseoptionspage)
-  - [Предупреждение: PDO::\_\_construct() \[pdo.--construct\]: \[2002\] Argument invalid (trying to connect via unix://) ИЛИ "Checking database:Could not connect to the mysql server."](#TroubleshootingInstallation-Warning%3APDO%3A%3Aconstruct%28%29%5Cpdo.construct%5C%3A%5C2002%5CArgumentinvalid%28tryingtoconnectviaunix%3A%2F%2F%29OR%22Checkingdatabase%3ACouldnotconnecttothemysqlserver.%22)
-  - [Страница входа продолжает перенаправлять меня обратно на экран входа без показа ошибки](#TroubleshootingInstallation-Theloginpagekeepsredirectingmebacktotheloginscreenwithnoerror)
-  - [Иногда что-то не загружается, страница вылетает и т.д. (eAccelerator)](#TroubleshootingInstallation-Thingssometimesdon%27tload%2Cthepageflakesout%2Cetc%28eAccelerator%29)
-  - [Необъяснимые неполадки в Панели управления (не eAccelerator)](#TroubleshootingInstallation-GeneralweirdnessintheManager%28noteAccelerator%29)
-  - [Вкладки Ресурсы/Элементы/Файлы не отображаются в дереве](#TroubleshootingInstallation-Resource%2FElements%2FFiletreenotappearing)
-  - [Я не могу войти в Панель управления после установки!](#TroubleshootingInstallation-Ican%27tlogintothemanagerafterinstalling%5C%21)
-  - [Не удалось подключиться к серверу базы данных. Проверьте свойства подключения и попробуйте снова. Доступ запрещён...](#TroubleshootingInstallation-Couldnotconnecttothedatabaseserver.Checktheconnectionpropertiesandtryagain.AccessDenied...)
-  - [Панель управления выводится в виде текста после установки](#TroubleshootingInstallation-Themanagerdisplaysasplaintextafterinstallation)
-  - [Панель управления отображается в виде обычного текста, отдельные элементы отсутствуют или выводятся ошибки JavaScript 400](#TroubleshootingInstallation-TheManagerdisplaysasplaintext%2CManagerpartsaremissing%2CorthereareJavaScript400ErrorsintheManager)
-  - [Отсутствуют элементы Панели управления, неопределенные языковые строки или выводятся ошибки JavaScript 500](#TroubleshootingInstallation-Managerpartsaremissing%2Cundefinedlanguagestrings%2CorthereareJavaScript500ErrorsintheManager)
-- [Все еще остались проблемы?](#TroubleshootingInstallation-StillHavingIssues%3F)
-
-
-
 ## Общие проблемы
 
 Прежде всего, убедитесь:

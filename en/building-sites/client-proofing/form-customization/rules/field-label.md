@@ -16,5 +16,5 @@ An example Rule of changing the introtext's label to "Comments" for the [Users](
 
 ## See Also
 ``` php
- [[getResources@section? &parents=`123` &context=`revolution`]]
- ```
+[[getResources@section? &parents=`123` &context=`revolution`]]
+```

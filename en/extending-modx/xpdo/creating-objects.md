@@ -4,11 +4,6 @@ _old_id: "1156"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/creating-objects"
 ---
 
-- [What is an Object?](#what-is-an-object)
-- [Creating an Object](#creating-an-object)
-
-
-
 ## What is an Object?
 
 An "Object" in xPDO is simply an abstract, class-based representation of a row in a table in a database. In other words, a row in the table 'cars' would have an xPDO model definition of the 'cars' table, and then you would grab Collections of Objects of each car.

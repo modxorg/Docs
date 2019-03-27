@@ -4,12 +4,6 @@ _old_id: "1152"
 _old_uri: "2.x/advanced-features/caching"
 ---
 
-- [Global Configuration](#global-configuration)
-- [Caching Providers and Partitions](#caching-providers-and-partitions)
-- [Manipulation of the Cache](#manipulation-of-the-cache)
-- [Utilizing Specific Cache Partitions](#utilizing-specific-cache-partitions)
-- [See Also](#see-also)
-
 ## Global Configuration
 
 To use xPDO's caching abilities, you'll need to configure several global options to define caching options. Most importantly, you should define the xPDO::OPT\_CACHE\_PATH into the $options variable of the [xPDO constructor](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor"). Set it to the absolute path you would like xPDO to write cache files to. This also provides a location for xPDO to write log files if configured to do so, which would require this file path to be defined even if no file-based caching was being utilized.

@@ -4,13 +4,7 @@ _old_id: "1048"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3"
 ---
 
-- [Setting the Namespace Path](#setting-the-namespace-path)
-- [Creating the Menu](#creating-the-menu)
-- [Creating the Controller File](#creating-the-controller-file)
-
-
-
- Creating MODX custom manager pages (CMPs) is **far** simpler in MODX Revolution 2.3 - you simply have to set a Namespace path, and then create PHP files. That's it.
+Creating MODX custom manager pages (CMPs) is **far** simpler in MODX Revolution 2.3 - you simply have to set a Namespace path, and then create PHP files. That's it.
 
 ## Setting the Namespace Path
 

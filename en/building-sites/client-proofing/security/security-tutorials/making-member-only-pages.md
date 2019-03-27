@@ -4,25 +4,6 @@ _old_id: "186"
 _old_uri: "2.x/administering-your-site/security/security-tutorials/making-member-only-pages"
 ---
 
-- [Introduction](#introduction)
-- [Access Wizard explanation (2.2.2 and later)](#access-wizard-explanation-222-and-later)
-  - [1. Create a Resource Group](#1-create-a-resource-group)
-  - [2. Add Resources to the Resource Group](#2-add-resources-to-the-resource-group)
-  - [3. Add Users to the User Group](#3-add-users-to-the-user-group)
-  - [4. Add Context Access to the User Group](#4-add-context-access-to-the-user-group)
-  - [5. Flush Permissions](#5-flush-permissions)
-- [Step-by-step explanation (pre-2.2.2)](#step-by-step-explanation-pre-222)
-  - [1. Create a Resource Group](#1-create-a-resource-group-1)
-  - [2. Link your member-only resource to the Resource Group](#2-link-your-member-only-resource-to-the-resource-group)
-  - [3. Create a User Group](#3-create-a-user-group)
-  - [4. Add Resource Group access](#4-add-resource-group-access)
-  - [5. Add users to the user group](#5-add-users-to-the-user-group)
-  - [6. Flush permissions](#6-flush-permissions)
-- [Help! I can't get this to work, still!](#help-i-cant-get-this-to-work-still)
-- [See Also](#see-also)
-
-
-
 ## Introduction
 
 MODX Revolution uses a whole new set of security systems to allow you more flexibility while giving your users access (or denying) to Manager and Web resources. As there seems to be need for a proper tutorial to get you into the basics of working with this advanced system this document has been written.

@@ -4,14 +4,6 @@ _old_id: "69"
 _old_uri: "2.x/administering-your-site/dashboards/creating-a-dashboard-widget"
 ---
 
-- [Creating a Basic Widget](#creating-a-basic-widget)
-  - [Assigning the Widget to the Default Dashboard](#assigning-the-widget-to-the-default-dashboard)
-  - [Viewing the Widget](#viewing-the-widget)
-- [Other Widget Types](#other-widget-types)
-- [See Also](#see-also)
-
-
-
 This article describes how to create a custom Dashboard Widget, including a short description of the different Dashboard Widget types and how they work.
 
 ## Creating a Basic Widget

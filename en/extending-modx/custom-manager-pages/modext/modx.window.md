@@ -4,18 +4,6 @@ _old_id: "1114"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window"
 ---
 
-- [MODx.Window](#modxwindow)
-- [Unique Parameters](#unique-parameters)
-- [Custom Events](#custom-events)
-- [Unique Functionality](#unique-functionality)
-    - [Firing the submit method](#firing-the-submit-method)
-    - [setValues](#setvalues)
-    - [reset](#reset)
-    - [Hiding and Showing Fields](#hiding-and-showing-fields)
-- [See Also](#see-also)
-
-
-
 ## MODx.Window
 
 **Extends:** Ext.Window 

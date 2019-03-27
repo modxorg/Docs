@@ -4,13 +4,7 @@ _old_id: "1159"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships"
 ---
 
-- [Aggregate Relationships](#aggregate-relationships)
-- [Composite Relationships](#composite-relationships)
-- [Relating Many-to-Many](#relating-many-to-many)
-- [Conclusion](#conclusion)
-- [See Also](#see-also)
-
- We're going to need to define some relationships between our tables so xPDO can communicate properly between them. xPDO deals with two types of relationships, **aggregate** and **composite**.
+We're going to need to define some relationships between our tables so xPDO can communicate properly between them. xPDO deals with two types of relationships, **aggregate** and **composite**.
 
 ##  Aggregate Relationships 
 

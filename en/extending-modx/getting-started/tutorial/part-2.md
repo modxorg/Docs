@@ -4,13 +4,6 @@ _old_id: "1117"
 _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i/php-coding-in-modx-revolution,-pt.-ii"
 ---
 
-- [Creating Objects](#creating-objects)
-- [Removing an Object](#removing-an-object)
-- [More Complex Queries](#more-complex-queries)
-- [See Also](#see-also)
-
-
-
 In this article, we'll talk about creating and removing objects (and their respective rows in the database), as well as more complex queries.
 
 ## Creating Objects

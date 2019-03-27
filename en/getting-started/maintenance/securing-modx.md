@@ -4,37 +4,6 @@ _old_id: "361"
 _old_uri: "2.x/administering-your-site/security/hardening-modx-revolution"
 ---
 
-- [Overview](#overview)
-- [Everything but MODX](#everything-but-modx)
-  - [Your Computer](#your-computer)
-  - [Your Connection](#your-connection)
-  - [Your Server](#your-server)
-  - [Passwords and Logins](#passwords-and-logins)
-  - [Keep it Clean](#keep-it-clean)
-  - [Backups](#backups)
-  - [Social Engineering](#social-engineering)
-- [Locking down MODX](#locking-down-modx)
-  - [Changing Default Paths](#changing-default-paths)
-    - [core](#core)
-    - [manager](#manager)
-    - [connectors](#connectors)
-    - [assets](#assets)
-  - [Path Followup](#path-followup)
-  - [Change your Login Page](#change-your-login-page)
-  - [Changing Default Database Prefixes](#changing-default-database-prefixes)
-  - [Use a unique name for the Admin User](#use-a-unique-name-for-the-admin-user)
-  - [Force a Password Policy](#force-a-password-policy)
-  - [Set up a dedicated 404 page](#set-up-a-dedicated-404-page)
-- [Forcing SFTP Access](#forcing-sftp-access)
-- [Adding an SSL Certificate to your Manager](#adding-an-ssl-certificate-to-your-manager)
-  - [Using a shared Certificate](#using-a-shared-certificate)
-  - [Using a self-signed Certificate](#using-a-self-signed-certificate)
-  - [Using a proper certificate](#using-a-proper-certificate)
-  - [Forcing SSL connections to the Manager](#forcing-ssl-connections-to-the-manager)
-- [Monitoring your Site and Server](#monitoring-your-site-and-server)
-
-
-
 ## Overview
 
 Hardening any web application, including MODX Revolution, involves auditing all layers of your site, including your server, all of its services, and the application itself. Make no mistake: it's a war out there. If you're not afraid, then you aren't paying attention. The simple act of having a website online will ensure that you will be targeted by hacks. Their motives vary, but the weakest link will be sought out and exploited.

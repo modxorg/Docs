@@ -5,23 +5,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 note: "This document is about the pre-2.3 way of adding custom managers pages."
 ---
 
-- [Goal](#CustomManagerPagesTutorial-Goal)
-- [Explanation and Mental Preparation](#CustomManagerPagesTutorial-ExplanationandMentalPreparation)
-  - [What we'll need:](#CustomManagerPagesTutorial-Whatwe%27llneed%3A)
-- [Create the Namespace](#CustomManagerPagesTutorial-CreatetheNamespace)
-- [Make the Controller File](#CustomManagerPagesTutorial-MaketheControllerFile)
-- [Create the Action](#CustomManagerPagesTutorial-CreatetheAction)
-- [Create the Menu Object](#CustomManagerPagesTutorial-CreatetheMenuObject)
-- [Make your CMP Translatable (Optional)](#CustomManagerPagesTutorial-MakeyourCMPTranslatable%28Optional%29)
-  - [Create a Lexicon Directory](#CustomManagerPagesTutorial-CreateaLexiconDirectory)
-  - [Identify your Lexicon key](#CustomManagerPagesTutorial-IdentifyyourLexiconkey)
-  - [Create the Topic File](#CustomManagerPagesTutorial-CreatetheTopicFile)
-  - [Create the Entries (Provide the Translations)](#CustomManagerPagesTutorial-CreatetheEntries%28ProvidetheTranslations%29)
-  - [Use Translations in your CMP](#CustomManagerPagesTutorial-UseTranslationsinyourCMP)
-- [Add a Custom Permission (optional)](#CustomManagerPagesTutorial-AddaCustomPermission%28optional%29)
-- [Troubleshooting / Errors](#CustomManagerPagesTutorial-Troubleshooting%2FErrors)
-  - [Your action does not appear in your menu](#CustomManagerPagesTutorial-Youractiondoesnotappearinyourmenu)
-
 ## Goal
 
  We want to add a custom page to the MODx Revolution manager that will load (i.e. execute) the contents of an PHP file that has been uploaded to the webserver. Technically, such a page is called a Custom Manager Page, or CMP; please refer to the page on [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages") for a more detailed description.

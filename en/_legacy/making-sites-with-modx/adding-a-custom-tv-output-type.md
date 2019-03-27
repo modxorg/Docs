@@ -7,14 +7,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/add
 **Only use this documentation for pre-2.2 or core submissions.**
 Refer to the [Adding a Custom TV Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2 "Adding a Custom TV Type - MODX 2.2") doc for the proper way to build custom TVs in 2.2 which allows easy packaging.
 
-- [What are TV Output Types?](#what-are-tv-output-types)
-- [Creating the Files](#creating-the-files)
-  - [Setting up the Input Properties Controller](#setting-up-the-input-properties-controller)
-  - [Setting up the Input Properties Template](#setting-up-the-input-properties-template)
-  - [Setting up the Output Controller](#setting-up-the-output-controller)
-- [Using the Custom TV Output Type](#using-the-custom-tv-output-type)
-- [See Also](#see-also)
-
 ## What are TV Output Types?
 
 TV Output Types allow you to output [Template Variables](building-sites/elements/template-variables "Template Variables") in different markup and formats. Some examples include outputting a TV value as an image, URL, HTML tag, date, etc.

@@ -4,12 +4,6 @@ _old_id: "366"
 _old_uri: "2.x/administering-your-site/media-sources/media-source-types/media-source-type-file-system"
 ---
 
-- [The File System Media Source Type](#the-file-system-media-source-type)
-- [Available Properties](#available-properties)
-- [See Also](#see-also)
-
-
-
 ## The File System Media Source Type
 
 This Source Type allows you to browse the file system your MODX installation resides on.

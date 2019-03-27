@@ -4,10 +4,6 @@ _old_id: "1116"
 _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i"
 ---
 
-- [The Simple How](#the-simple-how)
-- [The Model](#the-model)
-- [See Also](#see-also)
-
 So, a lot of people have been asking about the new codebase. Is it coder-friendly? Will it be a big deviation from 0.9.6/Evolution? Does it support OOP projects? Is it faster? Will it be easy to learn?
 
 In these tutorials, we plan to answer those questions with YES.
