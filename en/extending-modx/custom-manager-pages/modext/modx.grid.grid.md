@@ -4,21 +4,6 @@ _old_id: "1080"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid"
 ---
 
-- [MODx.grid.Grid](#modxgridgrid)
-- [MODExt-Specific Parameters](#modext-specific-parameters)
-- [Custom Events](#custom-events)
-- [Other Unique Functions](#other-unique-functions)
-    - [Custom Store Exception Messages](#custom-store-exception-messages)
-    - [loadWindow](#loadwindow)
-    - [remove](#remove)
-    - [confirm](#confirm)
-    - [refresh](#refresh)
-    - [encodeModified](#encodemodified)
-    - [encode](#encode)
-- [See Also](#see-also)
-
-
-
 ## MODx.grid.Grid
 
 **Extends:** Ext.grid.EditorGridPanel 

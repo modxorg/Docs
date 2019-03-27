@@ -4,27 +4,6 @@ _old_id: "1196"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files"
 ---
 
-- [Goal](#MoreExamplesofxPDOXMLSchemaFiles-Goal)
-- [One to One](#MoreExamplesofxPDOXMLSchemaFiles-OnetoOne)
-  - [MySQL Table Definitions](#MoreExamplesofxPDOXMLSchemaFiles-MySQLTableDefinitions)
-  - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
-  - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
-- [One to Many](#MoreExamplesofxPDOXMLSchemaFiles-OnetoMany)
-  - [MySQL Table Definitions](#MoreExamplesofxPDOXMLSchemaFiles-MySQLTableDefinitions)
-  - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
-  - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
-- [Many to Many: Joining Tables](#MoreExamplesofxPDOXMLSchemaFiles-ManytoMany%3AJoiningTables)
-  - [MySQL Table Definitions](#MoreExamplesofxPDOXMLSchemaFiles-MySQLTableDefinitions)
-  - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
-  - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
-- [Parent ID: Self Join](#MoreExamplesofxPDOXMLSchemaFiles-ParentID%3ASelfJoin)
-  - [MySQL Table Definitions](#MoreExamplesofxPDOXMLSchemaFiles-MySQLTableDefinitions)
-  - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
-  - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
-- [Using Field Aliases _(xPDO 2.2+ only)_](#MoreExamplesofxPDOXMLSchemaFiles-UsingFieldAliases%28xPDO2.2%5Conly%29)
-  - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
-  - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
- 
 ## Goal
 
  This page contains examples that juxtapose MySQL database tables with their xPDO XML schema counterparts in order to teach developers how to define the foreign-key relationships between tables in xPDO XML schemas by using a series of common database relational patterns as examples.

@@ -4,14 +4,6 @@ _old_id: "198"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext"
 ---
 
-- [What is MODExt?](#what-is-modext)
-- [Commonly-Used Components](#commonly-used-components)
-  - [More MODExt Components](#more-modext-components)
-    - [xcheckbox](#xcheckbox)
-- [Extending a MODExt Class](#extending-a-modext-class)
-- [See Also](#see-also)
-
-
 ## What is MODExt?
 
 MODExt is an extension of the [ExtJS3 JavaScript Framework](http://www.sencha.com/products/extjs) that provides extra, customized-to-MODx functionality. It drives MODx Revolution's manager interface, and it is also available to developers wanting to use it in their CMP development. A developer simply needs to use Ext.extend on the MODx.\* class to instantly get the benefit of custom MODExt components.

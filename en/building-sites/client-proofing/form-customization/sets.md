@@ -4,18 +4,6 @@ _old_id: "134"
 _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customization-sets"
 ---
 
-- [What is a Form Customization Set?](#what-is-a-form-customization-set)
-  - [Restricting to a Template](#restricting-to-a-template)
-  - [Using Constraints](#using-constraints)
-- [Making Set Rules](#making-set-rules)
-  - [Adjusting Fields](#adjusting-fields)
-  - [Hiding or Renaming Tabs](#hiding-or-renaming-tabs)
-  - [Adjusting Template Variables](#adjusting-template-variables)
-- [Editing Sets via XML](#editing-sets-via-xml)
-- [See Also](#see-also)
-
-
-
 ## What is a Form Customization Set?
 
 A Form Customization Set is a collection of Rules that occur for a specific page (action) in the Manager. Currently, Sets can apply to either the Resource Create or Update pages. Think of them like a way of collecting all your "Whenever the Create Resource page loads, all these fields change." rules. Sets can also be marked 'inactive' to not load.

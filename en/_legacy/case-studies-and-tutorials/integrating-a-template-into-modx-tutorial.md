@@ -5,13 +5,6 @@ _old_uri: "2.x/case-studies-and-tutorials/integrating-a-template-into-modx-tutor
 note: "The links are no longer available, which is a shame as the tutorials were great."
 ---
 
-- [Integrating a Template into MODX Tutorial](#integrating-a-template-into-modx-tutorial)
-  - [Part 1: Project Setup, HTML Cutting, and Extras](#part-1-project-setup-html-cutting-and-extras)
-  - [Part 2: Categories, Extras, Templates, Chunks, Wayfinder](#part-2-categories-extras-templates-chunks-wayfinder)
-  - [Part 3: Photo Gallery](#part-3-photo-gallery)
-  - [Part 4: Template Variables (TVs) and You](#part-4-template-variables-tvs-and-you)
-  - [Part 5: Making things User Friendly for End Users using Form Customization](#part-5-making-things-user-friendly-for-end-users-using-form-customization)
-
 # Integrating a Template into MODX Tutorial
 
 Benjamin Marte ([@benmarte](http://twitter.com/benmarte)) is writing a fantastic tutorial on how to integrate a template into MODX. His tutorial is a great starting point for beginners looking to integrate their first HTML template into MODX. This page will serve as a stub for each of the sections.

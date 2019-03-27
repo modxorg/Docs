@@ -4,20 +4,6 @@ _old_id: "164"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)"
 ---
 
-- [What are Filters?](#InputandOutputFilters%28OutputModifiers%29-WhatareFilters%3F)
-- [Input Filter](#InputandOutputFilters%28OutputModifiers%29-InputFilter)
-- [Output Filter](#InputandOutputFilters%28OutputModifiers%29-OutputFilter)
-- [Output Modifiers](#InputandOutputFilters%28OutputModifiers%29-OutputModifiers)
-  - [Conditional output modifiers](#InputandOutputFilters%28OutputModifiers%29-Conditionaloutputmodifiers)
-  - [String output modifiers](#InputandOutputFilters%28OutputModifiers%29-Stringoutputmodifiers)
-  - [Caching](#InputandOutputFilters%28OutputModifiers%29-Caching)
-  - [Using an Output Modifier with Tag Properties](#InputandOutputFilters%28OutputModifiers%29-UsinganOutputModifierwithTagProperties)
-  - [Creating a Custom Output Modifier](#InputandOutputFilters%28OutputModifiers%29-CreatingaCustomOutputModifier)
-- [Chaining (Multiple Output Filters)](#InputandOutputFilters%28OutputModifiers%29-Chaining%28MultipleOutputFilters%29)
-- [See Also](#InputandOutputFilters%28OutputModifiers%29-SeeAlso)
-
-
-
 ## What are Filters?
 
  Filters in Revolution allow you to manipulate the way data is presented or parsed in a tag. They allow you to modify values from inside your templates.

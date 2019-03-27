@@ -5,21 +5,7 @@ _old_id: "75"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable"
 ---
 
-- [Explanation](#explanation)
-- [Creating the Template Variable](#creating-the-template-variable)
-  - [1. Log into the MODX manager](#1-log-into-the-modx-manager)
-  - [2. Add the Template Variable](#2-add-the-template-variable)
-  - [3. Define the General Information](#3-define-the-general-information)
-  - [4. Define the Input Options](#4-define-the-input-options)
-  - [5. Configure Template Access](#5-configure-template-access)
-  - [6. Save the TV definition.](#6-save-the-tv-definition)
-  - [7. Use it: Create a Resource](#7-use-it-create-a-resource)
-  - [8. Edit the Value](#8-edit-the-value)
-- [Advanced Usage](#advanced-usage)
-- [Output Rendering Options](#output-rendering-options)
-- [Properties](#properties)
- 
- This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what about what a Template Variable is, see the page on [Template Variables](building-sites/elements/template-variables "Template Variables").
+This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what about what a Template Variable is, see the page on [Template Variables](building-sites/elements/template-variables "Template Variables").
 
 ## Explanation
 

@@ -4,12 +4,6 @@ _old_id: "1120"
 _old_uri: "2.x/developing-in-modx/other-development-resources/summary-of-legacy-code-removed-in-2.1"
 ---
 
-- [Functionality](#functionality)
-  - [TV Input Types](#tv-input-types)
-- [Methods, Constants and Variables](#methods-constants-and-variables)
-
-
-
 **In progress**
 
 

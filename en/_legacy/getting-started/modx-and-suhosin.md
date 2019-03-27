@@ -4,12 +4,6 @@ _old_id: "202"
 _old_uri: "2.x/getting-started/installation/basic-installation/modx-and-suhosin"
 ---
 
-- [Known Issues with Suhosin](#MODXandSuhosin-KnownIssueswithSuhosin)
-  - [Recommended Configuration](#MODXandSuhosin-RecommendedConfiguration)
-- [See Also](#MODXandSuhosin-SeeAlso)
-
-
-
 ## Known Issues with Suhosin 
 
 Suhosin is a PHP extension that adds extra security measures to PHP. One of these, however, is a check to prevent access on a server if a GET variable is too long. This causes issues in the MODX manager in versions equal to or later than 2.2, as MODX uses [Google minify](http://code.google.com/p/minify) to minimize and compress the JavaScript in the manager.

@@ -4,16 +4,6 @@ _old_id: "246"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/properties-and-property-sets"
 ---
 
-- [What are Properties?](#what-are-properties)
-- [What are Property Sets?](#what-are-property-sets)
-- [Assigning Property Sets to Elements](#assigning-property-sets-to-elements)
-- [Creating Properties in a Property Set](#creating-properties-in-a-property-set)
-- [Importing and Exporting Properties](#importing-and-exporting-properties)
-- [Using Properties Programmatically](#using-properties-programmatically)
-  - [Using getOption](#using-getoption)
-
-
-
 ## What are Properties?
 
 Properties are simply values that can be configured for any Element via [Tag Syntax](building-sites/tag-syntax "Tag Syntax"). An example of a Property is the token 'debug' in this Snippet call:

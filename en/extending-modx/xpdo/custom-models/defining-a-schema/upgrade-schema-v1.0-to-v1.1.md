@@ -4,12 +4,6 @@ _old_id: "1220"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-the-database-and-tables/upgrading-models-to-schema-version-1.1"
 ---
 
-- [Upgrading Models from Schema Version 1.0 to 1.1](#upgrading-models-from-schema-version-10-to-11)
-  - [xpdo/tools/schema/upgrade-mysql-1.1.php](#xpdotoolsschemaupgrade-mysql-11php)
-  - [Usage](#usage)
-    - [Running as CLI script](#running-as-cli-script)
-    - [Running as web request](#running-as-web-request)
-
 ## Upgrading Models from Schema Version 1.0 to 1.1
 
 In xPDO 2.0.0-rc3, a new schema element for describing table indexes was added to the `object` element of the xPDO schema. To maintain backwards compatibility in the runtime code with older schemas, where the indexes were described using the _index_ and _index\_group_ attributes of the `field` elements, schemas created with this new element must be differentiated from the older schemas. As a result, the _version_ attribute was added to the `model` element with a value of 1.1. All legacy models without the version element are assumed to be version 1.0.

@@ -4,11 +4,6 @@ _old_id: "169"
 _old_uri: "2.x/getting-started/installation/basic-installation/lighttpd-guide"
 ---
 
-- [Lighttpd Guide for Setup and Friendly URLs.](#lighttpd-guide-for-setup-and-friendly-urls)
-  - [Friendly URL Setup](#friendly-url-setup)
-
-
-
 ## Lighttpd Guide for Setup and Friendly URLs.
 
 - This is still a work in progress, and currently only covers the URL rewriting aspect.

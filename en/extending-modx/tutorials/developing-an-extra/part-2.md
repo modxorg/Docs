@@ -9,25 +9,6 @@ This tutorial is part of a Series:
 - [Part I: Getting Started and Creating the Doodles Snippet](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution")
 - Part II: Creating our Custom Manager Page
 - [Part III: Packaging Our Extra](extending-modx/tutorials/developing-an-extra/part-3 "Developing an Extra in MODX Revolution, Part III")
- 
-
-- [First Setup Steps](#DevelopinganExtrainMODXRevolution%2CPartII-FirstSetupSteps)
-  - [Namespaces](#DevelopinganExtrainMODXRevolution%2CPartII-Namespaces)
-  - [Actions and Menus](#DevelopinganExtrainMODXRevolution%2CPartII-ActionsandMenus)
-  - [Lexicons](#DevelopinganExtrainMODXRevolution%2CPartII-Lexicons)
-- [Setting up the Controllers with MODExt](#DevelopinganExtrainMODXRevolution%2CPartII-SettinguptheControllerswithMODExt)
-  - [The Base Controller](#DevelopinganExtrainMODXRevolution%2CPartII-TheBaseController)
-- [Our Doodles CMP Page](#DevelopinganExtrainMODXRevolution%2CPartII-OurDoodlesCMPPage)
-  - [The Section JS File](#DevelopinganExtrainMODXRevolution%2CPartII-TheSectionJSFile)
-  - [The Panel JS File](#DevelopinganExtrainMODXRevolution%2CPartII-ThePanelJSFile)
-- [The Doodles Grid](#DevelopinganExtrainMODXRevolution%2CPartII-TheDoodlesGrid)
-  - [Hooking Up via Connectors](#DevelopinganExtrainMODXRevolution%2CPartII-HookingUpviaConnectors)
-  - [Adding Search](#DevelopinganExtrainMODXRevolution%2CPartII-AddingSearch)
-  - [Adding an Update Window](#DevelopinganExtrainMODXRevolution%2CPartII-AddinganUpdateWindow)
-  - [Adding a Remove Context Menu Option](#DevelopinganExtrainMODXRevolution%2CPartII-AddingaRemoveContextMenuOption)
-  - [Creating the Create Form](#DevelopinganExtrainMODXRevolution%2CPartII-CreatingtheCreateForm)
-  - [Adding Inline-Editing](#DevelopinganExtrainMODXRevolution%2CPartII-AddingInlineEditing)
-- [Summary](#DevelopinganExtrainMODXRevolution%2CPartII-Summary)
 
 This section will cover creating the Custom Manager Page (CMP) for our Doodles Extra we created in [step 1](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution"). This includes explaining controllers/connectors/processors, making our Namespace, Action and Menu item, and working with ExtJS to create the UI.
 

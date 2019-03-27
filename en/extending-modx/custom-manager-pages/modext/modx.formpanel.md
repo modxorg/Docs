@@ -4,17 +4,6 @@ _old_id: "1058"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel"
 ---
 
-- [MODx.FormPanel](#modxformpanel)
-- [Unique Parameters](#unique-parameters)
-- [Custom Events](#custom-events)
-- [Other Unique Functions](#other-unique-functions)
-    - [Drop Area Fields](#drop-area-fields)
-    - [Automatic Dirty-Field Handling](#automatic-dirty-field-handling)
-    - [Field Manipulation](#field-manipulation)
-- [See Also](#see-also)
-
-
-
 ## MODx.FormPanel
 
 **Extends:** Ext.FormPanel 

@@ -4,13 +4,6 @@ _old_id: "484"
 _old_uri: "2.x/administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually"
 ---
 
-- [Resetting a User Password via Database Manipulation](#resetting-a-user-password-via-database-manipulation)
-  - [Resetting Password in MODX 2.1+](#resetting-password-in-modx-21)
-  - [Resetting Password in MODX 2.0.x](#resetting-password-in-modx-20x)
-- [Resetting a Password via the API](#resetting-a-password-via-the-api)
-
-
-
 ## Resetting a User Password via Database Manipulation
 
 It is not uncommon for a User account to become inaccessible because of a lost/forgotten password. In many cases, this can easily be resolved by having the user use the Forgot Password link on the login form. But in some cases you may need to manually reset the password directly in the database. You will need access to the database containing the MODX tables in order to this, either via PHPMyAdmin or another database client that allows you to edit or UPDATE database records.

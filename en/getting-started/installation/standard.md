@@ -5,28 +5,6 @@ _old_id: "32"
 _old_uri: "2.x/getting-started/installation/basic-installation"
 ---
 
-- [Beginning Setup](#beginning-setup)
-  - [Installing MODX With An Existing Site](#installing-modx-with-an-existing-site)
-    - [Existing Static HTML Site](#existing-static-html-site)
-    - [Existing Other CMS or Dynamically Driven Site](#existing-other-cms-or-dynamically-driven-site)
-  - [Pre-DNS Transfer Installation to Temporary Directory](#pre-dns-transfer-installation-to-temporary-directory)
-- [Installing MODX Revolution](#installing-modx-revolution)
-- [Install Options](#install-options)
-- [Database Options](#database-options)
-  - [Collations and Charsets](#collations-and-charsets)
-  - [Creating an Administrator User](#creating-an-administrator-user)
-- [Pre-Installation Checks](#pre-installation-checks)
-- [Post-Installation Summary](#post-installation-summary)
-- [Additional Info](#additional-info)
-  - [WAMPServer 2.0i](#wampserver-20i)
-  - [MAMP on MacOSX](#mamp-on-macosx)
-  - [Debian](#debian)
-  - [Vista and XAMPP](#vista-and-xampp)
-  - [Installing Packages](#installing-packages)
-  - [See Also](#see-also)
- 
-
-
 ## Beginning Setup
 
  After you've [downloaded](getting-started/installation "Installation") MODX Revolution, upload the .zip file to your server. On the server itself, either through your control panel extraction script or in the server's file manager, extract the file to its own directory. Copy or move all the files within the new extracted MODX version directory to the directory that you wish to install MODX into. You may delete the extracted folder and its contents, as well as the MODX .zip file once your installation is complete.

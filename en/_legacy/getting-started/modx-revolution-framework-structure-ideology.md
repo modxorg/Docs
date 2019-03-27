@@ -4,14 +4,7 @@ _old_id: "375"
 _old_uri: "2.x/getting-started/an-overview-of-modx/modx-revolution-framework-structure-ideology"
 ---
 
-- [Controllers](#MODxRevolutionFrameworkStructureIdeology-Controllers)
-- [Templates](#MODxRevolutionFrameworkStructureIdeology-Templates)
-- [Connectors](#MODxRevolutionFrameworkStructureIdeology-Connectors)
-- [Processors](#MODxRevolutionFrameworkStructureIdeology-Processors)
-
-
-
- The manager in MODX Revolution is structured like so.
+The manager in MODX Revolution is structured like so.
 
 - Controllers
 - Templates

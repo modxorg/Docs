@@ -4,12 +4,6 @@ _old_id: "247"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/providers"
 ---
 
-- [What is a Transport Provider?](#what-is-a-transport-provider)
-- [Usage](#usage)
-- [Related Pages](#related-pages)
-
-
-
 ## What is a Transport Provider?
 
 Transport Providers in MODx are remote sources that one can download Transport Packages from. Simply by specifying a service URL, you can easily hook into the Transport Provider and grab the latest Transport Packages easily from it.

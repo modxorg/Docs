@@ -3,28 +3,6 @@ title: "Базовая установка"
 translation: "getting-started/installation/standard"
 ---
 
-- [Начало установки](#BasicInstallation-BeginningSetup)
-  - [Установка MODX на существующий сайт](#BasicInstallation-InstallingMODXWithAnExistingSite)
-      - [Существующий статический HTML-сайт](#BasicInstallation-ExistingStaticHTMLSite)
-      - [Существующий динамически управляемый сайт с другой CMS](#BasicInstallation-ExistingOtherCMSor%EF%BB%BFDynamicallyDrivenSite)
-  - [Установка во временный каталог на время переноса DNS](#BasicInstallation-PreDNSTransferInstallationtoTemporaryDirectory)
-- [Установка MODX Revolution](#BasicInstallation-InstallingMODXRevolution)
-- [Варианты установки](#BasicInstallation-InstallOptions)
-- [Параметры базы данных](#BasicInstallation-DatabaseOptions)
-  - [Сопоставление и Кодировка](#BasicInstallation-CollationsandCharsets)
-  - [Создание Администратора по умолчанию](#BasicInstallation-CreatinganAdministratorUser)
-- [Проверка перед установкой](#BasicInstallation-PreInstallationChecks)
-- [Резюме после установки](#BasicInstallation-PostInstallationSummary)
-- [Дополнительная информация](#BasicInstallation-AdditionalInfo)
-  - [WAMPServer 2.0i](#BasicInstallation-WAMPServer2.0i)
-  - [MAMP на MacOSX](#BasicInstallation-MAMPonMacOSX)
-  - [Debian](#BasicInstallation-Debian)
-  - [Vista и XAMPP](#BasicInstallation-VistaandXAMPP)
-  - [Установка пакетов](#BasicInstallation-InstallingPackages)
-  - [Смотрите также](#BasicInstallation-SeeAlso)
- 
-
-
 ## Начало установки
 
 После того, как вы [скачали](getting-started/installation "Installation") MODX Revolution, загрузите файл .zip на ваш сервер. На самом сервере через функцию извлечения из архива панели управления или в файловом менеджере сервера, распакуйте файл в свой собственный каталог. Скопируйте или переместите все файлы из папки с новой версией MODX в каталог, в который вы хотите установить MODX. После завершения установки папку, извлечённую из архива, вместе со всем содержимым, можно удалить.

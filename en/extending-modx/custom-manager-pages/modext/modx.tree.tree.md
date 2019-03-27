@@ -4,17 +4,6 @@ _old_id: "1111"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.tree.tree"
 ---
 
-- [MODx.tree.Tree](#modxtreetree)
-- [Unique Parameters](#unique-parameters)
-- [Custom Events](#custom-events)
-- [Other Unique Features](#other-unique-features)
-    - [Sorting](#sorting)
-    - [Remote Toolbar Loading](#remote-toolbar-loading)
-    - [Drag/Drop to MODx.FormPanel Fields](#dragdrop-to-modxformpanel-fields)
-- [See Also](#see-also)
-
-
-
 ## MODx.tree.Tree
 
 **Extends:** Ext.tree.TreePanel 

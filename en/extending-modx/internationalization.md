@@ -4,21 +4,6 @@ _old_id: "168"
 _old_uri: "2.x/developing-in-modx/advanced-development/internationalization"
 ---
 
-- [An Overview](#an-overview)
-  - [Locales](#locales)
-- [Lexicon Entries](#lexicon-entries)
-- [Loading and Using Lexicons](#loading-and-using-lexicons)
-  - [Lexicons via Tag (in content, chunks, templates etc)](#lexicons-via-tag-in-content-chunks-templates-etc)
-  - [Lexicons in PHP](#lexicons-in-php)
-    - [Loading lexicon topics with modLexicon::load()](#loading-lexicon-topics-with-modlexiconload)
-    - [Displaying translated content with modX::lexicon()](#displaying-translated-content-with-modxlexicon)
-  - [Lexicons in JavaScript (within MODX)](#lexicons-in-javascript-within-modx)
-- [Lexicons for Settings](#lexicons-for-settings)
-- [Conclusion](#conclusion)
-- [See Also](#see-also)
-
-
-
 ## An Overview
 
 Internationalization, or i18n, is the process of extrapolating text strings in a document to separate languages, so that the document may be viewed by a multitude of different languages without having to duplicate the page for every different language. Technically speaking, _internationalization_ refers to the process of _preparing_ code so that it can be translated; in MODX this process often boils down to isolating translatable strings into separate placeholders.

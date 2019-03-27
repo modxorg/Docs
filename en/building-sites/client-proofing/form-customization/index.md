@@ -4,12 +4,6 @@ _old_id: "83"
 _old_uri: "2.x/administering-your-site/customizing-the-manager"
 ---
 
-- [What is Form Customization?](#what-is-form-customization)
-  - [What Forms can I Customize?](#what-forms-can-i-customize)
-- [See Also](#see-also)
- 
-
-
 ## What is Form Customization?
 
  Form Customization is a new feature that allows users to create Rules, which govern how manager pages render their forms in the MODX Revolution Manager. It is similar to ManagerManager in MODX Evolution.

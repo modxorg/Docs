@@ -4,28 +4,6 @@ _old_id: "370"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object"
 ---
 
-- [The MODx JS Object](#the-modx-js-object)
-- [Custom Class Variables](#custom-class-variables)
-  - [MODx.request](#modxrequest)
-  - [MODx.config](#modxconfig)
-    - [Other Variables](#other-variables)
-  - [MODx.action](#modxaction)
-  - [MODx.version](#modxversion)
-  - [MODx.user](#modxuser)
-  - [MODx.perm](#modxperm)
-- [Custom Methods](#custom-methods)
-  - [MODx.load](#modxload)
-  - [MODx.clearCache](#modxclearcache)
-  - [MODx.releaseLock](#modxreleaselock)
-  - [MODx.sleep](#modxsleep)
-  - [MODx.logout](#modxlogout)
-  - [MODx.loadHelpPane](#modxloadhelppane)
-  - [MODx.preview](#modxpreview)
-  - [MODx.isEmpty](#modxisempty)
-  - [MODx.debug](#modxdebug)
-
-
-
 ## The MODx JS Object
 
 MODExt comes with a global MODx JS object on each manager page. This object has a few custom methods that can be executed from any custom manager page using MODExt, and also sets up some default settings and customizations.

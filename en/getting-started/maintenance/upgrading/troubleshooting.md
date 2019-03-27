@@ -4,15 +4,6 @@ _old_id: "491"
 _old_uri: "2.x/administering-your-site/upgrading-modx/troubleshooting-upgrades"
 ---
 
-- [Common Problems](#common-problems)
-  - [Help! The only option I can choose is "New Installation", but this is an upgrade!](#help-the-only-option-i-can-choose-is-%22new-installation%22-but-this-is-an-upgrade)
-  - [Setup went well, but my manager isn't fully working.](#setup-went-well-but-my-manager-isnt-fully-working)
-  - [Some manager pages are blank due to 400 Bad Request from manager/min/](#some-manager-pages-are-blank-due-to-400-bad-request-from-managermin)
-- [Still Problems?](#still-problems)
-- [See Also](#see-also)
- 
-
-
 ## Common Problems
 
  First off, make sure:

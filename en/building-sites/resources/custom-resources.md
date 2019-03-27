@@ -6,12 +6,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes"
 
 Custom Resource Classes are available in MODX 2.2 and later only. 
 
-- [What is a Custom Resource Class?](#what-is-a-custom-resource-class)
-  - [When to Use](#when-to-use)
-  - [When Not to Use](#when-not-to-use)
-- [Usage](#usage)
-- [Creating a CRC](#creating-a-crc)
-
 ## What is a Custom Resource Class? 
 
 A Custom Resource Class (CRC) is a PHP class that extends the modResource class, allowing custom Resource types that can represent various types of data or applications. The MODX core uses four different types of Resource Classes: Documents, WebLinks, SymLinks, and Static Resources. Other types of CRCs could be a Blog type, a Forum type, a Gallery Album type, a RSS Feed type, etc – basically any type of content for which you want a URL (remember the "R" in URL stands for _Resource_).

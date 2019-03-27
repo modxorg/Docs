@@ -4,40 +4,7 @@ _old_id: "489"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-input-types"
 ---
 
-- [Auto-Tag](#TemplateVariableInputTypes-AutoTag)
-- [Check Box](#TemplateVariableInputTypes-CheckBox)
-  - [Simple Usage](#TemplateVariableInputTypes-SimpleUsage)
-  - [Advanced Usage](#TemplateVariableInputTypes-AdvancedUsage)
-  - [More Advanced Usage](#TemplateVariableInputTypes-MoreAdvancedUsage)
-- [Date](#TemplateVariableInputTypes-Date)
-- [DropDown List Menu](#TemplateVariableInputTypes-DropDownListMenu)
-- [Email](#TemplateVariableInputTypes-Email)
-- [File](#TemplateVariableInputTypes-File)
-- [Hidden](#TemplateVariableInputTypes-Hidden)
-- [HTML Area](#TemplateVariableInputTypes-HTMLArea)
-- [Image](#TemplateVariableInputTypes-Image)
-- [Listbox (Single-Select)](#TemplateVariableInputTypes-Listbox%28SingleSelect%29)
-- [Listbox (Multi-Select)](#TemplateVariableInputTypes-Listbox%28MultiSelect%29)
-  - [Simple Usage](#TemplateVariableInputTypes-SimpleUsage)
-  - [Separate Options/Values](#TemplateVariableInputTypes-SeparateOptions%2FValues)
-- [Number](#TemplateVariableInputTypes-Number)
-- [Radio Options](#TemplateVariableInputTypes-RadioOptions)
-  - [Simple Usage](#TemplateVariableInputTypes-SimpleUsage)
-  - [Advanced Usage](#TemplateVariableInputTypes-AdvancedUsage)
-      - [Sidebar Example Evolution\*](#TemplateVariableInputTypes-SidebarExampleEvolution%5C)
-      - [Sidebar Example Revolution:](#TemplateVariableInputTypes-SidebarExampleRevolution%3A)
-- [Resource List](#TemplateVariableInputTypes-ResourceList)
-- [Rich Text](#TemplateVariableInputTypes-RichText)
-- [Tag](#TemplateVariableInputTypes-Tag)
-- [Text](#TemplateVariableInputTypes-Text)
-- [Textarea](#TemplateVariableInputTypes-Textarea)
-- [Textarea (Mini)](#TemplateVariableInputTypes-Textarea%28Mini%29)
-- [Textbox](#TemplateVariableInputTypes-Textbox)
-- [URL](#TemplateVariableInputTypes-URL)
-
-
-
- There are a number of built-in template variable types.
+There are a number of built-in template variable types.
 
  Some input types are deprecated depending on your MODX version. 
 

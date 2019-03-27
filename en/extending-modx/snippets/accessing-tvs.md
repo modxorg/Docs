@@ -4,9 +4,6 @@ _old_id: "8"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/accessing-template-variable-values-via-the-api"
 ---
 
-- [Accessing Template Variable Values via the API](#accessing-template-variable-values-via-the-api)
-- [getTVValue](#gettvvalue)
- 
 ## Accessing Template Variable Values via the API
 
  Like just about everything in the MODX GUI, you can access Template Variables and their values via the MODX API. This relies on the xPDO method [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and related functions, but we demonstrate some examples here because it relates directly to Template Variables.
