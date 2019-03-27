@@ -4,10 +4,6 @@ _old_id: "329"
 _old_uri: "2.x/administering-your-site/security/users"
 ---
 
-- [What is a User?](#what-is-a-user)
-- [User Settings](#user-settings)
-- [Users in the Front-End](#users-in-the-front-end)
-
 ##  What is a User? 
 
  A User is simply a representation of a login in MODx Revolution.

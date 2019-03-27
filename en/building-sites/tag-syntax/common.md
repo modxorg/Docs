@@ -4,12 +4,7 @@ _old_id: "60"
 _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags"
 ---
 
-- [Default Resource Content Field Tags](#default-resource-content-field-tags)
-- [Other Common Tags](#other-common-tags)
-- [All Tags](#all-tags)
-- [See Also](#see-also)
-
- This page lists the most commonly used MODx Revolution tags as an aid to anyone converting HTML/CSS layouts into MODx [Templates](building-sites/elements/templates "Templates"). These are frequently referred to as "tags" or "placeholders" (and sometimes "template variables"), so we mention those terms here as an aid to searching, although technically speaking they are **not** placeholders or template variables: they are MODx tags. Yes, it can be confusing for the newcomer, so just remember that there are different flavors of these tags, each with its own purpose and name. Placeholders are set in code and are displayed with placeholder tags. [Template Variables](building-sites/elements/template-variables "Template Variables") are extra resource content fields created by the user; they can be thought of as custom fields. Neither placeholders, not template variables are pre-set by the MODx core.
+This page lists the most commonly used MODx Revolution tags as an aid to anyone converting HTML/CSS layouts into MODx [Templates](building-sites/elements/templates "Templates"). These are frequently referred to as "tags" or "placeholders" (and sometimes "template variables"), so we mention those terms here as an aid to searching, although technically speaking they are **not** placeholders or template variables: they are MODx tags. Yes, it can be confusing for the newcomer, so just remember that there are different flavors of these tags, each with its own purpose and name. Placeholders are set in code and are displayed with placeholder tags. [Template Variables](building-sites/elements/template-variables "Template Variables") are extra resource content fields created by the user; they can be thought of as custom fields. Neither placeholders, not template variables are pre-set by the MODx core.
 
 ##  Default Resource Content Field Tags 
 

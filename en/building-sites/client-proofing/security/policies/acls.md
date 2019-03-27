@@ -4,14 +4,6 @@ _old_id: "9"
 _old_uri: "2.x/administering-your-site/security/policies/acls"
 ---
 
-- [What is an ACL (Access Control List)?](#what-is-an-acl-access-control-list)
-- [Usage](#usage)
-  - [Context ACL](#context-acl)
-  - [Resource ACL](#resource-acl)
-- [See Also](#see-also)
-
-
-
 ## What is an ACL (Access Control List)?
 
 An ACL, or Access Control List, is a set of [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") attached to an object. More information on ACLs can be found [here in Wikipedia](http://en.wikipedia.org/wiki/Access_control_list).

@@ -5,17 +5,6 @@ _old_id: "302"
 _old_uri: "2.x/making-sites-with-modx/tag-syntax"
 ---
 
-- [Tag Format Changes for Content Elements and Content Tags](#tag-format-changes-for-content-elements-and-content-tags)
-  - [Comment tags](#comment-tags)
-- [Structure of a Tag](#structure-of-a-tag)
-- [Properties](#properties)
-- [Caching](#caching)
-  - [Parsing Order](#parsing-order)
-- [Timing](#timing)
-  - [Additional Help](#additional-help)
-
-
-
 To simplify parsing logic, improve parsing performance and avoid confusion with many new adopters, all tags are now of a single format, differentiated by a token or a set of tokens which appear before a string which identifies the Content Element or Content Tag to be processed; e.g. \[\[_tokenIdentifier_\]\].
 
 ## Tag Format Changes for Content Elements and Content Tags

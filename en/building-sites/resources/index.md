@@ -5,15 +5,6 @@ _old_id: "264"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 ---
 
-- [What is a Resource?](#what-is-a-resource)
-  - [Managing Resources](#managing-resources)
-- [Resource Fields](#resource-fields)
-  - [General Resource Fields](#general-resource-fields)
-  - [Settings Resource Fields](#settings-resource-fields)
-  - [Using Resource Fields](#using-resource-fields)
- 
-
-
 ## What is a Resource?
 
  A resource is a representation of a page in MODx. There are different types of Resources, such as documents, weblinks, symlinks, actual files, or many other things. The default Resource type is a Document, and simply represents a webpage on your site.

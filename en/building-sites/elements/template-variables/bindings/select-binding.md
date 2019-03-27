@@ -10,7 +10,7 @@ The @SELECT binding calls a database query based on the provided value and retur
 
 ## Syntax
 
-``` php 
+``` sql 
 @SELECT `pagetitle` AS `name`,`id` FROM `[[+PREFIX]]site_content` WHERE `published` = 1 AND `deleted` = 0
 ```
 

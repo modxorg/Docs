@@ -5,14 +5,6 @@ _old_id: "56"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/chunks"
 ---
 
-- [Create](#create)
-- [Usage](#usage)
-- [Processing Chunk via the API](#processing-chunk-via-the-api)
-  - [Modifying a Chunk Via the API](#modifying-a-chunk-via-the-api)
-- [See Also](#see-also)
-
-
-
 Chunks are bits of static text which you can reuse across your site, similar in function to include files or "blocks" in other content management systems. Common examples of Chunks might be your contact information or a copyright notice. Although Chunks cannot contain any logic directly, they can however contain calls to [Snippets](extending-modx/snippets "Snippets"), which are executable bits of PHP code which produce dynamic output.
 
 ## Create

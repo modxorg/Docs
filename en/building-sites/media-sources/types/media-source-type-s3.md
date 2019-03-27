@@ -4,12 +4,6 @@ _old_id: "367"
 _old_uri: "2.x/administering-your-site/media-sources/media-source-types/media-source-type-s3"
 ---
 
-- [The Amazon S3 Media Source Type](#the-amazon-s3-media-source-type)
-  - [Available Properties](#available-properties)
-- [See Also](#see-also)
-
-
-
 ## The Amazon S3 Media Source Type
 
 This media source type allows you to connect to an Amazon S3 bucket.

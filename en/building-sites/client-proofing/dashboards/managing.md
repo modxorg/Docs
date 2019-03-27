@@ -4,11 +4,6 @@ _old_id: "196"
 _old_uri: "2.x/administering-your-site/dashboards/managing-your-dashboard"
 ---
 
-- [Editing Your Dashboard](#editing-your-dashboard)
-- [See Also](#see-also)
-
-
-
 This article describes how to edit a Dashboard, including on how to assign and arrange Widgets for that Dashboard.
 
 ## Editing Your Dashboard

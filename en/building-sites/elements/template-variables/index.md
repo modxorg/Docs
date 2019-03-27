@@ -5,11 +5,6 @@ _old_id: "304"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables"
 ---
 
-- [What is a Template Variable?](#what-is-a-template-variable)
-- [Usage](#usage)
- 
-
-
 ## What is a Template Variable?
 
  **A Template Variable (TV) is a custom field**, or more specifically, it is custom field for a MODX Resource. TVs are used to extend the default attributes available for a Resource (e.g. for a Page or WebLink). A normal MODX Resource has a certain number of default fields: pagetitle, content, description, etc. If you need to add some custom fields to your pages, e.g. a second content area or a dropdown list of month names, or any other bit of custom data, you do this by adding a Template Variable to your template. MODX allows you to have a virtually unlimited number of TVs.

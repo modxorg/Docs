@@ -4,14 +4,6 @@ _old_id: "347"
 _old_uri: "2.x/case-studies-and-tutorials/quick-and-easy-modx-tutorials/automated-server-side-image-editing"
 ---
 
-- [Introduction](#introduction)
-- [Basic Usage (Resizing and Cropping)](#basic-usage-resizing-and-cropping)
-- [Remove backgrounds](#remove-backgrounds)
-- [Desaturating](#desaturating)
-- [Colouring](#colouring)
-- [Chaining](#chaining)
-- [More Reading](#more-reading)
-
 ## Introduction
 
 Don't want to wait ten seconds for Photoshop to load? Me neither. This tutorial will introduce you to the wonderful PHP script [phpthumbof](http://phpthumb.sourceforge.net/) ported to [MODX](/extras/revo/phpthumbof "phpThumbOf") by Shaun McCormick. 

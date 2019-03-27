@@ -4,12 +4,6 @@ _old_id: "487"
 _old_uri: "2.x/administering-your-site/media-sources/securing-a-media-source"
 ---
 
-- [Locking Down our Source to Admins](#locking-down-our-source-to-admins)
-- [Restricting to Content Editors](#restricting-to-content-editors)
-- [See Also](#see-also)
-
-
-
 This article describes how to secure a Media Source to certain User Groups. It is recommended to read the [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source") article before reading this one. Before getting started, create a "Content Editors" user group, if you don't already have one.
 
 Those installing new installs of MODX 2.2.0-pl will need to add the string "sources.modAccessMediaSource" (no quotes) to the comma-separated list of values in the "principal\_targets" System Setting. This is due to [this bug here](http://bugs.modx.com/issues/6470) which has been fixed in 2.2.0-pl2.

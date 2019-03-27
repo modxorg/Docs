@@ -4,21 +4,6 @@ _old_id: "486"
 _old_uri: "2.x/administering-your-site/security/security-tutorials/restricting-an-element-from-users"
 ---
 
-- [Introduction](#introduction)
-  - [Brief Summary](#brief-summary)
-- [Step-by-step Explanation](#step-by-step-explanation)
-  - [1. Create a Category](#1-create-a-category)
-  - [2. Place the Element into the Category](#2-place-the-element-into-the-category)
-  - [3. Create a User Group](#3-create-a-user-group)
-  - [4. Add the Users to the User Group](#4-add-the-users-to-the-user-group)
-  - [5. Add the Element Category ACL](#5-add-the-element-category-acl)
-  - [6. Flush Permissions](#6-flush-permissions)
-- [Hiding Specific Elements from Certain Users](#hiding-specific-elements-from-certain-users)
-- [Special Case for Templates](#special-case-for-templates)
-- [See Also](#see-also)
-
-
-
 ## Introduction
 
 This tutorial teaches you how to restrict any Element (such as a Template, Snippet, etc) from view in the MODX manager. It uses Element Category ACLs to accomplish the task, which allow you to protect any Elements in Categories from view. Users in the Editors User Group will be able to see the elements, but they will be hidden from users outside the group.

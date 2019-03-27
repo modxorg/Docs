@@ -4,34 +4,6 @@ _old_id: "68"
 _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 ---
 
-- [Creating a Blog in MODx Revolution](#CreatingaBloginMODxRevolution-CreatingaBloginMODxRevolution)
-- [Getting the Needed Extras](#CreatingaBloginMODxRevolution-GettingtheNeededExtras)
-  - [Needed Extras](#CreatingaBloginMODxRevolution-NeededExtras)
-  - [Optional Extras](#CreatingaBloginMODxRevolution-OptionalExtras)
-- [Creating your Blog Post Template](#CreatingaBloginMODxRevolution-CreatingyourBlogPostTemplate)
-  - [Header and Footer](#CreatingaBloginMODxRevolution-HeaderandFooter)
-  - [The Post Info](#CreatingaBloginMODxRevolution-ThePostInfo)
-  - [The Post Content](#CreatingaBloginMODxRevolution-ThePostContent)
-  - [Adding Comments to Posts](#CreatingaBloginMODxRevolution-AddingCommentstoPosts)
-- [Setting up Tagging](#CreatingaBloginMODxRevolution-SettingupTagging)
-- [Creating the Sections](#CreatingaBloginMODxRevolution-CreatingtheSections)
-  - [Setting up the blogPost Chunk](#CreatingaBloginMODxRevolution-SettinguptheblogPostChunk)
-- [Setting up Your Blog Home](#CreatingaBloginMODxRevolution-SettingupYourBlogHome)
-- [Adding Posts](#CreatingaBloginMODxRevolution-AddingPosts)
-  - [Page Structure Within the Sections](#CreatingaBloginMODxRevolution-PageStructureWithintheSections)
-  - [Adding a New Blog Post](#CreatingaBloginMODxRevolution-AddingaNewBlogPost)
-- [Setting up Your Archives](#CreatingaBloginMODxRevolution-SettingupYourArchives)
-  - [Creating the Archives Resource](#CreatingaBloginMODxRevolution-CreatingtheArchivesResource)
-  - [Setting up the Archivist Widget](#CreatingaBloginMODxRevolution-SettinguptheArchivistWidget)
-- [Advanced Options](#CreatingaBloginMODxRevolution-AdvancedOptions)
-  - [Adding a Moderator Group](#CreatingaBloginMODxRevolution-AddingaModeratorGroup)
-  - [Adding a "Latest Posts" widget](#CreatingaBloginMODxRevolution-Addinga%22LatestPosts%22widget)
-  - [Adding a "Latest Comments" widget](#CreatingaBloginMODxRevolution-Addinga%22LatestComments%22widget)
-  - [Adding a "Most Used Tags" widget](#CreatingaBloginMODxRevolution-Addinga%22MostUsedTags%22widget)
-- [Conclusion](#CreatingaBloginMODxRevolution-Conclusion)
- 
-
-
 ##  Requirements:
 
 1. Extension requirements may call for FURL use and ".html" be changed to "/" : Content -> Content Types -> HTML (.html) -> /

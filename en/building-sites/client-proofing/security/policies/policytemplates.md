@@ -4,17 +4,6 @@ _old_id: "244"
 _old_uri: "2.x/administering-your-site/security/policies/policytemplates"
 ---
 
-- [What are Policy Templates?](#what-are-policy-templates)
-  - [AdministratorTemplate](#administratortemplate)
-  - [ElementTemplate](#elementtemplate)
-  - [MediaSourceTemplate](#mediasourcetemplate)
-  - [ObjectTemplate](#objecttemplate)
-  - [ResourceTemplate](#resourcetemplate)
-  - [ContextTemplate](#contexttemplate)
-- [See Also](#see-also)
-
-
-
 ## What are Policy Templates? 
 
 Policy Templates define which permissions are _available_ to an [Access Policy](building-sites/client-proofing/security/policies "Policies"). A Policy Template does not say if a permission is actually granted or denied (the Access Policy does that), it just defines which permissions the Access Policy should be able to check or uncheck. Having a Policy Template is useful if need to narrow down the list of available permissions you want to define in an Access Policy.
