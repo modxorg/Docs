@@ -6,15 +6,6 @@ _old_uri: "2.x/getting-started/installation/command-line-installation"
 
 CLI Installation is available only for MODX Revolution versions 2.2 and later.
 
-- [Installing MODX via the PHP Command Line](#installing-modx-via-the-php-command-line)
-- [New CLI Installations](#new-cli-installations)
-- [Doing a Basic Upgrade MODX via CLI](#doing-a-basic-upgrade-modx-via-cli)
-- [Doing an Advanced Upgrade MODX via CLI](#doing-an-advanced-upgrade-modx-via-cli)
-- [Using a Helper Script](#using-a-helper-script)
-- [See Also](#see-also)
-
-
-
 ## Installing MODX via the PHP Command Line
 
 MODX allows you to do upgrades and installations via the command line (CLI) while using a config XML file. (More info on this file can be found [here](getting-started/installation/command-line-installation/the-setup-config-xml-file "The Setup Config Xml File").) This allows users to create simple batch scripts to update their MODX installations.

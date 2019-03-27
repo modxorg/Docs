@@ -4,26 +4,6 @@ _old_id: "311"
 _old_uri: "2.x/getting-started/installation/troubleshooting-installation"
 ---
 
-- [Common Problems](#common-problems)
-- [PDO Error Messages](#pdo-error-messages)
-- [Common Errors](#common-errors)
-  - ["I get a blank white screen instead of the options page!"](#%22i-get-a-blank-white-screen-instead-of-the-options-page%22)
-  - ["I clicked install and got a blank white screen!"](#%22i-clicked-install-and-got-a-blank-white-screen%22)
-  - ["Cannot connect to database" in the database options page](#%22cannot-connect-to-database%22-in-the-database-options-page)
-  - [Warning: PDO::\_\_construct() \[pdo.--construct\]: \[2002\] Argument invalid (trying to connect via unix://) OR "Checking database:Could not connect to the mysql server."](#warning-pdoconstruct-pdo--construct-2002-argument-invalid-trying-to-connect-via-unix-or-%22checking-databasecould-not-connect-to-the-mysql-server%22)
-  - [The login page keeps redirecting me back to the login screen with no error](#the-login-page-keeps-redirecting-me-back-to-the-login-screen-with-no-error)
-  - [Things sometimes don't load, the page flakes out, etc (eAccelerator)](#things-sometimes-dont-load-the-page-flakes-out-etc-eaccelerator)
-  - [General weirdness in the Manager (not eAccelerator)](#general-weirdness-in-the-manager-not-eaccelerator)
-  - [Resource / Elements / File tree not appearing](#resource--elements--file-tree-not-appearing)
-  - [I can't login to the manager after installing!](#i-cant-login-to-the-manager-after-installing)
-  - [Could not connect to the database server. Check the connection properties and try again. Access Denied...](#could-not-connect-to-the-database-server-check-the-connection-properties-and-try-again-access-denied)
-  - [The manager displays as plain text after installation](#the-manager-displays-as-plain-text-after-installation)
-  - [The Manager displays as plain text, Manager parts are missing, or there are JavaScript 400 Errors in the Manager](#the-manager-displays-as-plain-text-manager-parts-are-missing-or-there-are-javascript-400-errors-in-the-manager)
-  - [Manager parts are missing, undefined language strings, or there are JavaScript 500 Errors in the Manager](#manager-parts-are-missing-undefined-language-strings-or-there-are-javascript-500-errors-in-the-manager)
-- [Still Having Issues?](#still-having-issues)
-
-
-
 ## Common Problems
 
 First off, make sure:
