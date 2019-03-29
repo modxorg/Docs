@@ -57,12 +57,6 @@ $options; // optional values passed via backticks
 return strtolower($input);
 ```
 
-##  Porting PHx to Custom Output Filters 
-
- PHx is a popular MODX Evolution extra that offers similar functionality as output filters in Revolution, however they are not exactly the same. The most important thing to remember when porting PHx code to a custom output filter in Revolution is probably that the input (the tag's content being processed) is now available in the $input variable, contrary to the $output one which was the case in PHx.
-
- That said, you can have a look at [this page with PHx examples](http://wiki.modxcms.com/index.php/PHx/CustomModifiers) and convert them to Revolution easily when needed. Could you add them to this page when you did that, too? Thanks! :)
-
 ##  Examples 
 
  As the examples to be found below are not included in the core, you will need to add these yourself. Luckily, MODx makes this ridiculously easy. You can simply use snippets as output filters, so the process of adding a custom output filter is merely adding a new snippet! To use the output filter, you reference the snippet name.
