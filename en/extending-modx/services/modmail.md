@@ -14,7 +14,7 @@ modPHPMailer is a class that extends modMail to provide an implementation for th
 
 ### Other modMail Implementations
 
-- [modSwiftMailer](/extras/revo/modswiftmailer "modSwiftMailer") - Can be downloaded through Package Management.
+- [modSwiftMailer](https://modx.com/extras/revo/modswiftmailer "modSwiftMailer") - Can be downloaded through Package Management.
 
 ## Usage
 
@@ -64,4 +64,4 @@ Simple - just extend modMail with that class, then load your class via [getServi
 
 - [MODx Services](extending-modx/services "MODx Services")
 - [modX.getService](extending-modx/modx-class/reference/modx.getservice "modX.getService")
-- [modSwiftMailer](/extras/revo/modswiftmailer "modSwiftMailer")
+- [modSwiftMailer](https://modx.com/extras/revo/modswiftmailer "modSwiftMailer")

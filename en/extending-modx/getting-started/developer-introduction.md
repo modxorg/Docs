@@ -93,6 +93,6 @@ Connectors allow for dynamic, secure JSON requests (and eventually REST-based re
 ## See Also
 
 1. [Getting Started Developing](extending-modx/getting-started)
-2. [xPDO](/display/xPDO20/Home "Home"), the database layer for Revolution
+2. [xPDO](extending-modx/xpdo), the database layer for Revolution
 3. [Explanation of Directory Structure](getting-started/directory-structure "Explanation of Directory Structure")
 4. [Glossary of Revolution Terms](getting-started/glossary "Glossary of Revolution Terms")
