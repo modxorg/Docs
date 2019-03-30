@@ -45,7 +45,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/caching"
 
  If you enable the **cache\_db** system setting, MODX can automatically cache database result sets fetched by any xPDOCriteria or xPDOQuery instance. This includes all of the result sets representing xPDOObjects or collections of xPDOObjects returned by methods like getObject and getCollection.
 
- This feature can be enabled in environments where database access is more expensive than PHP include time, for instance, when using an external database server, or custom configured for environments with memcached, APC, or other caching systems available. This is a separate partition from the other cache partitions in MODX, so it can be configured with other cache handlers. See [xPDO Caching](display/xPDO20/Caching) for additional information.
+ This feature can be enabled in environments where database access is more expensive than PHP include time, for instance, when using an external database server, or custom configured for environments with memcached, APC, or other caching systems available. This is a separate partition from the other cache partitions in MODX, so it can be configured with other cache handlers. See [xPDO Caching](extending-modx/xpdo/caching) for additional information.
 
 ## Refreshing the MODX Core Cache
 

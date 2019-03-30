@@ -21,21 +21,6 @@ _To Editors:_
 
 _Thanks!!_
 
-
-## Table of Contents
-
-- [Table of Contents](#table-of-contents)
-- [1. General](#1-general)
-  - [1.1. What are connectors and processors? And what is a controller?](#11-what-are-connectors-and-processors-and-what-is-a-controller)
-  - [1.2. Why do I need all those different parts in my manager page? Can't I just echo some values in my controller and build stuff from there?](#12-why-do-i-need-all-those-different-parts-in-my-manager-page-cant-i-just-echo-some-values-in-my-controller-and-build-stuff-from-there)
-  - [1.3. What version of ExtJS does MODX Revolution use? When will MODX Revolution update to ExtJS 4.0?](#13-what-version-of-extjs-does-modx-revolution-use-when-will-modx-revolution-update-to-extjs-40)
-  - [1.4. Can I use ExtJS widgets that MODX uses in the Manager in my own CMP as well?](#14-can-i-use-extjs-widgets-that-modx-uses-in-the-manager-in-my-own-cmp-as-well)
-- [2. ExtJS / modExt Troubleshooting](#2-extjs--modext-troubleshooting)
-  - [2.1. Error: Syntax Error: Unexpected Token '<' on ext-all.js Line 7](#21-error-syntax-error-unexpected-token--on-ext-alljs-line-7)
-  - [2.2. Why does my grid send out two requests when I refresh it / changePage / filter?](#22-why-does-my-grid-send-out-two-requests-when-i-refresh-it--changepage--filter)
-
-
-
 Other Resources:
 
 - [ExtJS 3.4.0 Documentation](http://docs.sencha.com/ext-js/3-4/)
