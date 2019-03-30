@@ -52,9 +52,9 @@ With that basis in the workflow, your next step is to read the [Community Contri
 
 ## More 
 
-1. [Community Contributor's Guide](/contribute/code/contributors-guide)
+1. [Community Contributor's Guide](contribute/code/contributors-guide)
 2. [Git FAC (Frequently Accessed Commands)](contribute/code/git-github/frequent-commands)
-3. [xPDO GitHub Contributor's Guide](/contribute/code/xpdo)
+3. [xPDO GitHub Contributor's Guide](contribute/code/xpdo)
 
 ## **Related**
 
