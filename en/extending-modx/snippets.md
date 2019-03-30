@@ -28,7 +28,7 @@ return 'Hello, World!';
 ?>
 ```
 
-If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](building-sites/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](extending-modx/core-model/modx/modx.runsnippet "modX.runSnippet") API method.
+If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](building-sites/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](extending-modx/modx-class/reference/modx.runsnippet "modX.runSnippet") API method.
 
 Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output. 
 
@@ -199,6 +199,6 @@ Consider adding default properties for your snippet into the snippet's Propertie
 3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
 4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)
 
-- [modX.runSnippet](extending-modx/core-model/modx/modx.runsnippet "modX.runSnippet")
-- [modX.setPlaceholder](extending-modx/core-model/modx/modx.setplaceholder "modX.setPlaceholder")
-- [modX.regClientCSS](extending-modx/core-model/modx/modx.regclientcss "modX.regClientCSS")
+- [modX.runSnippet](extending-modx/modx-class/reference/modx.runsnippet "modX.runSnippet")
+- [modX.setPlaceholder](extending-modx/modx-class/reference/modx.setplaceholder "modX.setPlaceholder")
+- [modX.regClientCSS](extending-modx/modx-class/reference/modx.regclientcss "modX.regClientCSS")

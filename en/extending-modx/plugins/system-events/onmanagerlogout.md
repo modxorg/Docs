@@ -23,8 +23,8 @@ Group: None
 
 ## See Also
 
-- ?[OnBeforeWebLogout event](extending-modx/plugins/system-events/onbeforeweblogout "OnBeforeWebLogout")
-- ?[OnBeforeManagerLogout event](extending-modx/plugins/system-events/onbeforemanagerlogout "OnBeforeManagerLogout")
-- ?[OnWebLogout event](extending-modx/plugins/system-events/onweblogout "OnWebLogout")
+- [OnBeforeWebLogout event](extending-modx/plugins/system-events/onbeforeweblogout "OnBeforeWebLogout")
+- [OnBeforeManagerLogout event](extending-modx/plugins/system-events/onbeforemanagerlogout "OnBeforeManagerLogout")
+- [OnWebLogout event](extending-modx/plugins/system-events/onweblogout "OnWebLogout")
 - [System Events](extending-modx/plugins/system-events "System Events")
 - [Plugins](extending-modx/plugins "Plugins")

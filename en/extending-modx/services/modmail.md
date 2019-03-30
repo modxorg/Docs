@@ -58,10 +58,10 @@ In the example above, [modX.getChunk](extending-modx/modx-class/reference/modx.g
 
 ## What if I want to use another email class?
 
-Simple - just extend modMail with that class, then load your class via [getService](extending-modx/core-model/modx/modx.getservice "modX.getService"). You'll get all the modMail functionality, but you will have to provide the wrapper class (like modPHPMailer) to do so.
+Simple - just extend modMail with that class, then load your class via [getService](extending-modx/modx-class/reference/modx.getservice "modX.getService"). You'll get all the modMail functionality, but you will have to provide the wrapper class (like modPHPMailer) to do so.
 
 ## See Also
 
 - [MODx Services](extending-modx/services "MODx Services")
-- [modX.getService](extending-modx/core-model/modx/modx.getservice "modX.getService")
+- [modX.getService](extending-modx/modx-class/reference/modx.getservice "modX.getService")
 - [modSwiftMailer](/extras/revo/modswiftmailer "modSwiftMailer")

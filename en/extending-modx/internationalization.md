@@ -154,4 +154,4 @@ Lexicons provide MODX Revolution users with a plethora of avenues and options to
 
 ## See Also
 
-- [modX.lexicon](extending-modx/core-model/modx/modx.lexicon "modX.lexicon")
+- [modX.lexicon](extending-modx/modx-class/reference/modx.lexicon "modX.lexicon")

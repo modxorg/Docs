@@ -27,4 +27,4 @@ $user = $modx->getAuthenticatedUser('sports');
 ## See Also
 
 - [modX](extending-modx/core-model/modx "modX")
-- [modx.getUser](extending-modx/core-model/modx/modx.getuser)
+- [modx.getUser](extending-modx/modx-class/reference/modx.getuser)

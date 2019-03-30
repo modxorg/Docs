@@ -33,4 +33,4 @@ $pids = $modx->getParentIds($id, 10, array('context' => 'web'));
 ## See Also
 
 - [modX](extending-modx/core-model/modx "modX")
-- [modX.getChildIds](extending-modx/core-model/modx/modx.getchildids "modX.getChildIds")
+- [modX.getChildIds](extending-modx/modx-class/reference/modx.getchildids "modX.getChildIds")

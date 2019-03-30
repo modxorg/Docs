@@ -13,7 +13,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/"
  The system events table is found under {table\_prefix}\_system\_eventnames, and has the following fields:
 
 - **id** - The unique ID of the event.
-- **name** - The name of the event. This is how they are referenced in code, via the [modX.invokeEvent](extending-modx/core-model/modx/modx.invokeevent "modX.invokeEvent") method.
+- **name** - The name of the event. This is how they are referenced in code, via the [modX.invokeEvent](extending-modx/modx-class/reference/modx.invokeevent "modX.invokeEvent") method.
 - **service** - What type of system event this event is.
 - **groupname** - Used for user interfaces, primarily for filtering, grouping and sorting of events. Not used explicitly in the modx model.
 
