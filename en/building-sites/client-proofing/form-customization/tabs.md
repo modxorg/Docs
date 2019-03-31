@@ -9,11 +9,6 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customizatio
  **When a Tab is not a Tab** 
  When setting up Form Customization rules under **Security --> Form Customization**, then editing a behavior set, there is a list of "Tabs", but the list doesn't correspond directly to the familiar "Document", "Settings", "Template Variables", and "Resource Groups". Rather, the tab ids listed here refer to entire tabs or _parts_ of tabs. 
 
-- [Tab Regions](#tab-regions)
-- [Adding New Tabs](#adding-new-tabs)
-- [See Also](#see-also)
-
-
 
 ## Tab Regions
 
