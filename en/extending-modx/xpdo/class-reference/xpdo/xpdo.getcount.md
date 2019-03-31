@@ -44,4 +44,4 @@ $modx->log(modX::LOG_LEVEL_ERROR, "Total States: $total_states");
 
 - [xPDO.getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
 - [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
-- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo "xPDO")

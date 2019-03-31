@@ -24,4 +24,4 @@ $xpdo->connect();
 
 ## See Also
 
-- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo "xPDO")

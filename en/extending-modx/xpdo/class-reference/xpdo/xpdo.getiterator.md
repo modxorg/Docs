@@ -61,4 +61,4 @@ if ($resourceObjs->valid()) {
 - [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects")
 - [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
 - [xPDO.getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
-- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo "xPDO")

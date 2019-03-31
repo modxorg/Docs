@@ -38,4 +38,4 @@ $xpdo->newQuery('Box',array(
 ## See Also
 
 - [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")
-- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo "xPDO")
