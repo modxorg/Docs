@@ -98,7 +98,9 @@ $myBox->save();
 This will immediately execute the UPDATE (or CREATE) query that will save the record to the database.
 
 ## Many objects at once
-    public function updateCollection($className, array $set, $criteria= null) {
+``` php 
+public function updateCollection($className, array $set, $criteria= null) {
+```
 
 For batch updates, you can use `xPDO->updateCollection($className, $setValues, $critera)`. 
 

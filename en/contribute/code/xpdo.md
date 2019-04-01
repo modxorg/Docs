@@ -8,7 +8,7 @@ _old_uri: "contribute/using-git-and-github/xpdo-github-contributors-guide"
 
 xPDO is an object-oriented framework on which MODX Revolution is built. It is maintained in a separate git repository from revolution and contributing to the xPDO core of MODX requires some additional work.
 
-xPDO contributors should follow the same basic process and branching strategy as those for MODX itself. See the [MODx GitHub Contributor's Guide](/display/community/MODx+GitHub+Contributor%27s+Guide "MODx GitHub Contributor's Guide") for details on the branching strategies for features, releases, hotfixes, and more. This guide will focus on the additional steps required to integrate your xPDO changes into MODX for testing before submitting Pull Requests on the xPDO repository.
+xPDO contributors should follow the same basic process and branching strategy as those for MODX itself. See the [MODx GitHub Contributor's Guide](contribute/code/contributors-guide "MODx GitHub Contributor's Guide") for details on the branching strategies for features, releases, hotfixes, and more. This guide will focus on the additional steps required to integrate your xPDO changes into MODX for testing before submitting Pull Requests on the xPDO repository.
 
 ### Forking and Cloning the Complete xPDO Repository
 

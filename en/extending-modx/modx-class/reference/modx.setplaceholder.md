@@ -26,7 +26,7 @@ This causes the placeholder \[\[+name\]\] to be available inside your templates 
 
 ## See Also
 
-- [modX.getPlaceholder](extending-modx/core-model/modx/modx.getplaceholder "modX.getPlaceholder")
-- [modX.setPlaceholders](extending-modx/core-model/modx/modx.setplaceholders "modX.setPlaceholders")
-- [modX.toPlaceholder](extending-modx/core-model/modx/modx.toplaceholder "modX.toPlaceholder")
-- [modX.toPlaceholders](extending-modx/core-model/modx/modx.toplaceholders "modX.toPlaceholders")
+- [modX.getPlaceholder](extending-modx/modx-class/reference/modx.getplaceholder "modX.getPlaceholder")
+- [modX.setPlaceholders](extending-modx/modx-class/reference/modx.setplaceholders "modX.setPlaceholders")
+- [modX.toPlaceholder](extending-modx/modx-class/reference/modx.toplaceholder "modX.toPlaceholder")
+- [modX.toPlaceholders](extending-modx/modx-class/reference/modx.toplaceholders "modX.toPlaceholders")

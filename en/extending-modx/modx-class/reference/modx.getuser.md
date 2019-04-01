@@ -49,4 +49,4 @@ print (isset($extended['custom_user_field'])) ? $extended['custom_user_field'] :
 ## See Also
 
 - [modX](extending-modx/core-model/modx "modX")
-- [modx.getAuthenticatedUser](extending-modx/core-model/modx/modx.getauthenticateduser)
+- [modx.getAuthenticatedUser](extending-modx/modx-class/reference/modx.getauthenticateduser)

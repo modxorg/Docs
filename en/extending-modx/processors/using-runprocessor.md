@@ -4,8 +4,7 @@ _old_id: "493"
 _old_uri: "2.x/developing-in-modx/advanced-development/using-runprocessor"
 ---
 
-The usage of runProcessor described here only work in Revolution 2.0.8 and later. Users prior to that will have to use the deprecated [executeProcessor](extending-modx/core-model/modx/modx.executeprocessor "modX.executeProcessor") method. 
-- [Using runProcessor](#using-runprocessor)
+The usage of runProcessor described here only work in Revolution 2.0.8 and later. Users prior to that will have to use the deprecated [executeProcessor](extending-modx/modx-class/reference/modx.executeprocessor "modX.executeProcessor") method. 
 
 ## Using runProcessor
 

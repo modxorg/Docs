@@ -56,12 +56,12 @@ _old_uri: "2.x/developing-in-modx/code-standards"
 
  A nice aspect of HTML5 is that it streamlines the amount of code that is required. Meaningless attributes have been dropped, and the DOCTYPE declaration has been simplified significantly. Additionally, there is no need to use CDATA to escape inline JavaScript, formerly a requirement to meet XML strictness in XHTML.
 
- **"HTML5 Doctype"** ``` php 
-
-
-
+ 
+ ``` php 
+"HTML5 Doctype" 
 ```
- **"XHTML 1.0 Transitional Doctype"** ``` php 
+ ``` php 
+"XHTML 1.0 Transitional Doctype"
 ```
 
 ### Tags and Attributes

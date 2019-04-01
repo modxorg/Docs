@@ -27,9 +27,9 @@ $modx->regClientHTMLBlock('<div id="footer">(c) 2009 MODx</div>');
 ## See Also
 
 - [modX](extending-modx/core-model/modx "modX")
-- [modX.regClientCSS](extending-modx/core-model/modx/modx.regclientcss "modX.regClientCSS")
-- [modX.regClientScript](extending-modx/core-model/modx/modx.regclientscript "modX.regClientScript")
-- [modX.regClientStartupHTMLBlock](extending-modx/core-model/modx/modx.regclientstartuphtmlblock "modX.regClientStartupHTMLBlock")
-- [modX.regClientStartupScript](extending-modx/core-model/modx/modx.regclientstartupscript "modX.regClientStartupScript")
-- [modX.getRegisteredClientScripts](extending-modx/core-model/modx/modx.getregisteredclientscripts "modX.getRegisteredClientScripts")
-- [modX.getRegisteredClientStartupScripts](extending-modx/core-model/modx/modx.getregisteredclientstartupscripts "modX.getRegisteredClientStartupScripts")
+- [modX.regClientCSS](extending-modx/modx-class/reference/modx.regclientcss "modX.regClientCSS")
+- [modX.regClientScript](extending-modx/modx-class/reference/modx.regclientscript "modX.regClientScript")
+- [modX.regClientStartupHTMLBlock](extending-modx/modx-class/reference/modx.regclientstartuphtmlblock "modX.regClientStartupHTMLBlock")
+- [modX.regClientStartupScript](extending-modx/modx-class/reference/modx.regclientstartupscript "modX.regClientStartupScript")
+- [modX.getRegisteredClientScripts](extending-modx/modx-class/reference/modx.getregisteredclientscripts "modX.getRegisteredClientScripts")
+- [modX.getRegisteredClientStartupScripts](extending-modx/modx-class/reference/modx.getregisteredclientstartupscripts "modX.getRegisteredClientStartupScripts")

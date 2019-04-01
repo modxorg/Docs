@@ -27,6 +27,6 @@ $modx->sendUnauthorizedPage();
 ## See Also
 
 - [modX](extending-modx/core-model/modx "modX")
-- [modX.sendErrorPage](extending-modx/core-model/modx/modx.senderrorpage "modX.sendErrorPage")
-- [modX.sendForward](extending-modx/core-model/modx/modx.sendforward "modX.sendForward")
-- [modX.sendRedirect](extending-modx/core-model/modx/modx.sendredirect "modX.sendRedirect")
+- [modX.sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage")
+- [modX.sendForward](extending-modx/modx-class/reference/modx.sendforward "modX.sendForward")
+- [modX.sendRedirect](extending-modx/modx-class/reference/modx.sendredirect "modX.sendRedirect")

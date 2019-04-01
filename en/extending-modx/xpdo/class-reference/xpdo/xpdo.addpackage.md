@@ -66,5 +66,5 @@ if (!$xpdo->addPackage('my_package','/path/to/docroot/core/components/my_package
 
 ## See Also
 
-- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo "xPDO")
 - [Loading Packages](extending-modx/xpdo/custom-models/loading-package "Loading Packages")

@@ -29,4 +29,4 @@ Remember: setOption changes the option value _only_ for the current request: the
 ## See Also 
 
 - [xPDO.getOption](extending-modx/xpdo/class-reference/xpdo/xpdo.getoption "xPDO.getOption")
-- [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo "xPDO")

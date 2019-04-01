@@ -17,7 +17,7 @@ You can provide any of the following static methods in your custom xPDOObject de
 
 This is done with the help of the \[xPDO::call()\] method.
 
-Overriding these methods allows you to implement additional behavior or completely change the behavior of loading your table objects via the object and collection methods provided by [xPDO](extending-modx/xpdo/class-reference/xpdo "xPDO") and [xPDOObject](extending-modx/xpdo/class-reference/xpdoobject "xPDOObject"). For instance, it can be used to perform security checks or to add i18n processing before allowing a row to be loaded.
+Overriding these methods allows you to implement additional behavior or completely change the behavior of loading your table objects via the object and collection methods provided by [xPDO](extending-modx/xpdo "xPDO") and [xPDOObject](extending-modx/xpdo/class-reference/xpdoobject "xPDOObject"). For instance, it can be used to perform security checks or to add i18n processing before allowing a row to be loaded.
 
 ## < 2.0
 
