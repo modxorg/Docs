@@ -43,5 +43,4 @@ Navigeer naar `http://example.com/setup/` om de setup te beginnen.
 
 Direct worden er enkele verificaties uitgevoerd om, onder andere, zeker te weten dat sessies en de tijdzone juist zijn geconfigureerd op de server. Als die checks mislukken krijg je daar een melding van te zien, en moet de server configuratie aangepast worden voor je verder kunt met de installatie. Neem hiervoor contact op met je server administrator of hosting partij. 
 
-
 [Lees hier verder in het Engels](/current/en/getting-started/installation/standard).
