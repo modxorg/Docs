@@ -13,17 +13,6 @@ This is a documentation stub, and could use your help to complete! If you don't 
 
 This document will always be a work in progress as new features are added / changed, and it could use your help in keeping it structured and up to date! If you do not have access to editing this document, [please post anything you would want to see added or updated in this topic on the forums](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
 
-_To Editors:_
-
-- _Please use the right headings (heading 2 for categories, heading 3 for questions) to make sure the table of contents et al are properly generated and make sense._
-- _Big subjects can be created as a subpage to this page, and if other pages already exist on these docs please link to it in the first section._
-- _Please make sure the numbering is correct when you add a question to allow easier scanning of the page._
-- _Make sure you link generously to further reading on the subject._
-
-_Thanks!!_
-
-
-
 ## Table of Contents
 
 FAQs and/or Troubleshooting on specific subjects elsewhere:

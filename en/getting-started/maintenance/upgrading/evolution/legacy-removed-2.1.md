@@ -4,9 +4,6 @@ _old_id: "1120"
 _old_uri: "2.x/developing-in-modx/other-development-resources/summary-of-legacy-code-removed-in-2.1"
 ---
 
-**In progress**
-
-
 ## Functionality
 
 ### TV Input Types
@@ -24,27 +21,17 @@ Many constants, variables and api methods have been long deprecated, marked for 
 | IN\_PARSER\_MODE  | check context is not mgr                     |
 | IN\_MANAGER\_MODE | check context is mgr                         |
 | IN\_MANAGER\_MODE | check context is mgr                         |
-|                   |
-| ```               |
-$_SESSION["mgrValidated"]
-``` | modX->user->isAuthenticated('mgr') |
-| ```
-$_SESSION["webValidated"]
-``` | modX->user->isAuthenticated('web') |
-| ```
-$_SESSION["mgrInternalKey"]
-``` | modX->user->get('id') when modX->user->isAuthenticated('mgr') |
-| ```
-$_SESSION["webInternalKey"]
-``` | modX->user->get('id') when modX->user->isAuthenticated('web') |
-| ```
-$_SESSION["mgrShortname"]
-``` | modX->user->get('username') when modX->user->isAuthenticated('mgr') |
-| ```
-$_SESSION["webShortname"]
-``` | modX->user->get('username') when modX->user->isAuthenticated('web') |
-|  |
-| DBAPI: modX->db |
+| `$_SESSION["mgrValidated"]` | modX->user->isAuthenticated('mgr') |
+| `_SESSION["webValidated"]` | modX->user->isAuthenticated('web') |
+| `$_SESSION["mgrInternalKey"]` | modX->user->get('id') when modX->user->isAuthenticated('mgr') |
+| `$_SESSION["webInternalKey"]` | modX->user->get('id') when modX->user->isAuthenticated('web') |
+| `$_SESSION["mgrShortname"]` | modX->user->get('username') when modX->user->isAuthenticated('mgr') |
+| `$_SESSION["webShortname"]` | modX->user->get('username') when modX->user->isAuthenticated('web') |
+
+DBAPI: `modX->db`
+
+| Item Removed      | Notes on Replacement or Potential Workaround |
+| ----------------- | -------------------------------------------- |
 | modX->db->config | [modX->getOption()](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") |
 | modX->db->connect() | modX automatically connects to MODX database. If you're looking to set up another connection, you could instantiate xPDO again. |
 | modX->db->disconnect() |
@@ -84,10 +71,7 @@ or modX->getIterator('modResource', $criteria) |
 | modX->getAllChildren() | modX->getCollection('modResource', $criteria) , $criteria having where condition 'parent' = $id |
 | modX->getActiveChildren() | modX->getCollection('modResource', $criteria) , $criteria having where conditions 'parent' = $id, 'published' = 1, 'deleted' = 0 |
 | modX->getDocumentChildren() | as above, modX->getCollection('modResource', $criteria) with specific criteria |
-| modX->getDocumentChildrenTVars() | - to get document child resources and their TVs all at once:
-- modResource->getMany('Children') and iterate the children and you can modResource->getTVValue()
-- or to get TVs of any modResource object, modResource->getTemplateVars()
-- or get a modTemplateVar with modX->getObject('modTemplateVar', array('name' => $tvName)) and then modTemplateVar->getValue($resourceId)/renderOutput($resourceId) |
+| modX->getDocumentChildrenTVars() | to get document child resources and their TVs all at once: `modResource->getMany('Children')` and iterate the children and you can `modResource->getTVValue()`, or to get TVs of any modResource object: `modResource->getTemplateVars()`, or get a modTemplateVar with `modX->getObject('modTemplateVar', array('name' => $tvName))` and then `modTemplateVar->getValue($resourceId)/renderOutput($resourceId)` |
 | modX->getTemplateVar() | modX->getObject('modTemplateVar', $criteria) |
 | modX->getTemplateVars() | modX->getCollection('modTemplateVar', $criteria) |
 | modX->getTemplateVarOutput() | use modTemplateVar->renderOutput() on a collection of modTemplateVar objects |

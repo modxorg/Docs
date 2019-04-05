@@ -74,6 +74,6 @@ MODX loads the requested [Resource](building-sites/resources "Resources"), fetch
 ## See Also
 
 1. [Glossary of Revolution Terms](getting-started/an-overview-of-modx/glossary-of-revolution-terms)
-  1. [Explanation of Directory Structure](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure)
+    1. [Explanation of Directory Structure](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure)
 2. [Roadmap](getting-started/an-overview-of-modx/roadmap)
 3. [MODx Revolution Framework Structure Ideology](getting-started/an-overview-of-modx/modx-revolution-framework-structure-ideology)
