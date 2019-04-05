@@ -28,7 +28,3 @@ You will want to cover every field the user needs to enter into the database. Th
 - country
 - website
 - latitude and longitude. If both are empty it will retrieve it automatically based on address/zip/city/country values entered. If you don't need the country, add it as a hidden field to make sure enough data is available to retrieve the lat/long pair from the Google Maps API.
-
-## Form Example
-
-Hopefully coming soon!

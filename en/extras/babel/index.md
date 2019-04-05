@@ -4,19 +4,6 @@ _old_id: "605"
 _old_uri: "revo/babel"
 ---
 
-- [What is Babel?](#Babel-WhatisBabel%3F)
-- [History](#Babel-History)
-- [Installation](#Babel-Installation)
-  - [Preparations](#Babel-Preparations)
-  - [Download](#Babel-Download)
-  - [Setup](#Babel-Setup)
-- [How to Use](#Babel-HowtoUse)
-  - [Snippets](#Babel-Snippets)
-- [Change Babel Settings after Installation](#Babel-ChangeBabelSettingsafterInstallation)
-- [See Also](#Babel-SeeAlso)
-
-
-
 ## What is Babel?
 
 Babel is an Extra for MODx Revolution that helps you managing your multilingual websites using different contexts. Babel even supports managing several different multilingual websites within one MODx instance by using so called context groups.
@@ -33,7 +20,6 @@ Babel has been developed by Jakob Class based on ideas of Sylvain Aerni and firs
 
 ## Development and Bug Reporting 
 
-
 Babel is stored and developed in GitHub, and can be found here: <https://github.com/mikrobi/babel>
 
 Bugs can be filed here: <https://github.com/mikrobi/babel/issues>
@@ -48,7 +34,7 @@ Be sure that your context switches work well.
 
 ### Download
 
-babel can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/781>
+babel can be downloaded from within the MODx Revolution manager via [Package Management](building-sites/extras "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/781>
 
 ### Setup
 

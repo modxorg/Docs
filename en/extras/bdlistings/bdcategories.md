@@ -19,7 +19,9 @@ The bdCategories snippet can be used to output a dynamic category listing based 
 | subSeparator | Separator to use between individual sub categories. | - (space dash space) |
 | categorySeparator | Separator to use between individual categories. | line break (\\n) |
 | tplCategory | Chunk (name) to use for displaying categories. Note that subcategories have a different template. 
+
 Placeholders you can use: 
+
 - id (category ID)
 - name
 - description

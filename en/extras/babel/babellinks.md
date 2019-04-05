@@ -4,11 +4,11 @@ _old_id: "787"
 _old_uri: "revo/babel/babel.babellinks"
 ---
 
- BabelLinks is a snippet which displays links to other languages (contexts) in the frontend.
+BabelLinks is a snippet which displays links to other languages (contexts) in the frontend.
 
 ## Available Parameters
 
- | Name | Description | Default | Version |
+| Name | Description | Default | Version |
 |------|-------------|---------|---------|
 | resourceId | (optional) ID of resource of which links to translations should be displayed. | current resource's ID |  |
 | tpl | (optional) Chunk to display a language link. | babelLink |  |
@@ -22,17 +22,15 @@ _old_uri: "revo/babel/babel.babellinks"
 
 ## BabelLink Chunk
 
- If the &tpl parameter is not set the default chunk will be used with the follwoing code:
+If the &tpl parameter is not set the default chunk will be used with the follwoing code:
 
- ``` html 
-
+``` html 
 <li><a href="[[+url]]" class="[[+cultureKey]][[+active:notempty=` [[+active]]`]]">[[%babel.language_[[+cultureKey]]? &topic=`default` &namespace=`babel`]]</a></li>
-
 ```
 
- When using your own chunk to display the language links you can use the following placeholders:
+When using your own chunk to display the language links you can use the following placeholders:
 
- | Name | Description |
+| Name | Description |
 |------|-------------|
 | url | Url to linked translation (or site\_url of specific language if there is no translated resource available). |
 | cultureKey | Culture key of translation (e.g en, de, fr oder es). You may use the babel lexicon to display the language's name: \[\[%babel.language\_\[\[+cultureKey\]\]? &topic=`default` &namespace=`babel`\]\] |
@@ -41,10 +39,10 @@ _old_uri: "revo/babel/babel.babellinks"
 
 ## Example
 
- ``` html 
+``` html 
 
 <ul>
-  [[BabelLinks]]
+[[BabelLinks]]
 </ul>
 
 ```
@@ -54,4 +52,4 @@ _old_uri: "revo/babel/babel.babellinks"
 1. [Babel.BabelLinks](/extras/revo/babel/babel.babellinks)
 2. [Babel.BabelTranslation](/extras/revo/babel/babel.babeltranslation)
 
- [Offical Babel project website: Multilingual websites with MODX](http://www.multilingual-modx.com/)
+[Offical Babel project website: Multilingual websites with MODX](http://www.multilingual-modx.com/)
