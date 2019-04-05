@@ -16,13 +16,13 @@ A Chunk named "**Paging1**" is provided with AdvSearch. This Chunk name is set a
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
-| previouslink | Link to the previous page. |
-| first | Number of first result of the current page. |
-| last | Number of last result of the current page. |
-| total | The total number of results. |
-| nextlink | Link to the next page. |
+| Name         | Description                                 |
+| ------------ | ------------------------------------------- |
+| previouslink | Link to the previous page.                  |
+| first        | Number of first result of the current page. |
+| last         | Number of last result of the current page.  |
+| total        | The total number of results.                |
+| nextlink     | Link to the next page.                      |
 
 ## See Also
 

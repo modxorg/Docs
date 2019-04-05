@@ -24,15 +24,15 @@ A Chunk named "**AdvSearchForm**" is provided with AdvSearch. This Chunk name is
 
 ## Available Placeholders 
 
-| Name | Description |
-|------|-------------|
-| asId | AdvSearch identifier. This placeholder is required in the search form template to distinguish advSearch instances. |
-| helpLink | Where is displayed the link for opening the advanced search help |
-| landing | The id of the resource to show search results on. Defaults to the current Resource. |
-| method | Whether to submit over GET or POST. Defaults to GET. |
-| searchValue | The default or current search value. |
-| searchIndex | The REQUEST var used for the search parameter. |
-| resultsWindow | div section where will be attached the search results window. (ajax mode) |
+| Name          | Description                                                                                                        |
+| ------------- | ------------------------------------------------------------------------------------------------------------------ |
+| asId          | AdvSearch identifier. This placeholder is required in the search form template to distinguish advSearch instances. |
+| helpLink      | Where is displayed the link for opening the advanced search help                                                   |
+| landing       | The id of the resource to show search results on. Defaults to the current Resource.                                |
+| method        | Whether to submit over GET or POST. Defaults to GET.                                                               |
+| searchValue   | The default or current search value.                                                                               |
+| searchIndex   | The REQUEST var used for the search parameter.                                                                     |
+| resultsWindow | div section where will be attached the search results window. (ajax mode)                                          |
 
 ## Search form customization 
 

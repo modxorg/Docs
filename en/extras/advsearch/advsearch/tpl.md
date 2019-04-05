@@ -19,19 +19,19 @@ A Chunk named "**AdvSearchResult**" is provided with AdvSearch. This Chunk name 
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
-| idx | Number of result. could be use inside the AdvSearchResult chunk to alternate class. |
-| link | By setting this placeholder you override the Resource id as url target |
-| id | The resource id used as url target |
-| extracts | The extracts |
+| Name     | Description                                                                         |
+| -------- | ----------------------------------------------------------------------------------- |
+| idx      | Number of result. could be use inside the AdvSearchResult chunk to alternate class. |
+| link     | By setting this placeholder you override the Resource id as url target              |
+| id       | The resource id used as url target                                                  |
+| extracts | The extracts                                                                        |
 
 but also
 
-| Name | Description |
-|------|-------------|
-| _fieldName_ | Any field value from the list of fields provided by the field parameter. |
-| _TVName_ | Any TV value from the list of TV provided by the withTVs and includeTVs parameter. |
+| Name        | Description                                                                        |
+| ----------- | ---------------------------------------------------------------------------------- |
+| _fieldName_ | Any field value from the list of fields provided by the field parameter.           |
+| _TVName_    | Any TV value from the list of TV provided by the withTVs and includeTVs parameter. |
 
 ## See Also
 

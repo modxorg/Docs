@@ -4,19 +4,6 @@ _old_id: "600"
 _old_uri: "revo/advsearch"
 ---
 
-- [What is AdvSearch?](#AdvSearch-WhatisAdvSearch%3F)
-- [Requirements](#AdvSearch-Requirements)
-- [History](#AdvSearch-History)
-  - [Download](#AdvSearch-Download)
-  - [Demonstration](#AdvSearch-Demonstration)
-  - [Development and Bug Reporting](#AdvSearch-DevelopmentandBugReporting)
-- [Installation of the Zend Search class](#AdvSearch-InstallationoftheZendSearchclass)
-- [Usage](#AdvSearch-Usage)
-- [Examples](#AdvSearch-Examples)
-- [See Also](#AdvSearch-SeeAlso)
-
-
-
 ##  What is AdvSearch? 
 
  AdvSearch is an advanced search component for MODx Revolution. It allows search in dynamic contents (by using Zend Lucene search class), setting up of faceted search and searching in custom packages. 
@@ -74,19 +61,17 @@ _old_uri: "revo/advsearch"
 
  Display a search form, and below it, the results:
 
-``` plain 
+``` php 
 [[!AdvSearchForm]]
 
 <h2>Results</h2>
 [[!AdvSearch]]
-
 ```
 
  Display a Search form that sends you to a results page in Resource 82 (which has the AdvSearch call in it):
 
-``` plain 
+``` php 
 [[!AdvSearchForm? &landing=`82`]]
-
 ```
 
 ##  See Also 
@@ -98,6 +83,6 @@ _old_uri: "revo/advsearch"
   4. [AdvSearch.AdvSearch.paging0Tpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl)
   5. [AdvSearch.AdvSearch.tpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.tpl)
 2. [AdvSearch.AdvSearchForm](/extras/revo/advsearch/advsearch.advsearchform)
-  1. [Advsearch.AdvSearchForm.tpl](/extras/revo/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl)
+  6. [Advsearch.AdvSearchForm.tpl](/extras/revo/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl)
 3. [AdvSearch.AdvSearchHelp](/extras/revo/advsearch/advsearch.advsearchhelp)
-  1. [AdvSearch.AdvSearchHelp.helplinkTpl](/extras/revo/advsearch/advsearch.advsearchhelp/advsearch.advsearchhelp.helplinktpl)
+  7. [AdvSearch.AdvSearchHelp.helplinkTpl](/extras/revo/advsearch/advsearch.advsearchhelp/advsearch.advsearchhelp.helplinktpl)

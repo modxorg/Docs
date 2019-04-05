@@ -4,13 +4,6 @@ _old_id: "1763"
 _old_uri: "revo/activationemail"
 ---
 
-- [What is ActivationEmail?](#ActivationEmail-WhatisActivationEmail)
-- [Package Information](#ActivationEmail-Information)
-- [History](#ActivationEmail-History)
-- [Download](#ActivationEmail-Download)
-- [Development and Bug Reporting](#ActivationEmail-DevelopmentandBugReporting)
-- [Documentation](#ActivationEmail-Documentation)
- 
 ## What is ActivationEmail?
 
  This Revolution plugin sends an email to users manually activated in the MODX Manager and (optionally) to deactivated users. The messages are sent using a modifiable Tpl chunk.

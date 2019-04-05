@@ -24,26 +24,26 @@ A Chunk named "**AdvSearchResults**" is provided with AdvSearch. This Chunk name
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
-| etime | Server elapsed time of the search. |
-| paging | The pagination links |
+| Name       | Description                                            |
+| ---------- | ------------------------------------------------------ |
+| etime      | Server elapsed time of the search.                     |
+| paging     | The pagination links                                   |
 | resultInfo | The message saying how many search results were found. |
-| results | The search results. |
+| results    | The search results.                                    |
 
 but also:
 
-| Name | Description |
-|------|-------------|
-| total | The total number of results |
-| pagingType | The paging type used |
-| page | The current page number |
-| totalPage | The total number of result pages |
-| perPage | The maximum number of results per page |
-| offset | Offset of the current page |
-| first | Number of first result of the current page |
-| last | Number of last result of the current page |
-| separator | String used as separator between page link number (paging type 0) |
+| Name       | Description                                                       |
+| ---------- | ----------------------------------------------------------------- |
+| total      | The total number of results                                       |
+| pagingType | The paging type used                                              |
+| page       | The current page number                                           |
+| totalPage  | The total number of result pages                                  |
+| perPage    | The maximum number of results per page                            |
+| offset     | Offset of the current page                                        |
+| first      | Number of first result of the current page                        |
+| last       | Number of last result of the current page                         |
+| separator  | String used as separator between page link number (paging type 0) |
 
 ## See Also
 

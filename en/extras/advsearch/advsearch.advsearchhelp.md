@@ -4,10 +4,10 @@ _old_id: "774"
 _old_uri: "revo/advsearch/advsearch.advsearchhelp"
 ---
 
-- [AdvSearchHelp Snippet](#AdvSearch.AdvSearchHelp-AdvSearchHelpSnippet)
-- [Usage](#AdvSearch.AdvSearchHelp-Usage)
-- [Help window content](#AdvSearch.AdvSearchHelp-Helpwindowcontent)
-- [See Also](#AdvSearch.AdvSearchHelp-SeeAlso)
+- [AdvSearchHelp Snippet](#advsearchhelp-snippet)
+- [Usage](#usage)
+- [Help window content](#help-window-content)
+- [See Also](#see-also)
 
 
 

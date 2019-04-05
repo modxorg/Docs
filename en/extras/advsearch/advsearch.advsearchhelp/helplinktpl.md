@@ -16,8 +16,8 @@ A Chunk named "**helpLink**" is provided with AdvSearch. This Chunk name is used
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
+| Name   | Description                      |
+| ------ | -------------------------------- |
 | helpId | The url target for the help link |
 
 ## See Also

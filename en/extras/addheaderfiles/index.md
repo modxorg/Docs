@@ -4,15 +4,6 @@ _old_id: "1691"
 _old_uri: "revo/addheaderfiles"
 ---
 
-- [What is AddHeaderfiles](#whatis)
-- [Requirements](#requirements)
-  
-  - [Download](#download)
-  - [Support and Bug Reporting](#support)
-- [Usage](#usage)
-- [Examples](#examples)
-- [Notes](#notes)
-
 ## What is AddHeaderfiles?
 
  With this tool the MODX regClient functions are used to insert Javascript and CSS styles at the appropriate positions of the current page. Since those functions don't insert the same filename twice, the snippet could be called everywhere in the template, document or in chunks to collect all needed Javascripts and CSS styles together.
@@ -30,7 +21,7 @@ _old_uri: "revo/addheaderfiles"
 
 ### Support and Bug Reporting
 
- **Forum Thread:** <http://forums.modx.com/thread/xxx/support-comments-for-addheaderfiles>
+**Forum Thread:** <http://forums.modx.com/thread/xxx/support-comments-for-addheaderfiles>
 **Bugtracker**: <https://github.com/Jako/AddHeaderfiles-revo>
 
 ## Usage
@@ -39,12 +30,12 @@ _old_uri: "revo/addheaderfiles"
 
 ### Snippet parameter
 
- | Property | Description | Default |
-|----------|-------------|---------|
-| addcode | External filenames(s) or chunkname(s) separated by &sep. The external files can have a position setting or media type separated by &sepmed. See note 1 |  |
-| sep | Separator for files/chunknames | ; |
-| sepmed | Seperator for media type or script position | | |
-| mediadefault | Media default for css files | screen, tv, projection |
+ | Property     | Description                                                                                                                                            | Default                |
+ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+ | addcode      | External filenames(s) or chunkname(s) separated by &sep. The external files can have a position setting or media type separated by &sepmed. See note 1 |                        |
+ | sep          | Separator for files/chunknames                                                                                                                         | ;                      |
+ | sepmed       | Seperator for media type or script position                                                                                                            |                        |  |
+ | mediadefault | Media default for css files                                                                                                                            | screen, tv, projection |
 
 ## Examples
 
@@ -56,21 +47,18 @@ _old_uri: "revo/addheaderfiles"
 /assets/js/colorbox.js|end;/assets/css/colorbox.css;
 /assets/css/test.css|print`
 ]]
-
 ```
 
  shows:
 
- ``` php 
+ ``` html 
 ...
     <script type="text/javascript" src="/assets/js/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/colorbox.css" media="screen, tv, projection" />
     <link rel="stylesheet" type="text/css" href="/assets/css/test.css" media="print" />
 </head>
-...
     <script type="text/javascript" src="/assets/js/colorbox.js"></script>
 </body>
-
 ```
 
  Fill a chunk (i.e. 'headerColorbox') by:
@@ -78,7 +66,6 @@ _old_uri: "revo/addheaderfiles"
  ``` php 
 /assets/js/jquery.js;
 /assets/js/colorbox.js|end;/assets/css/colorbox.css
-
 ```
 
  and call it like this:
@@ -87,7 +74,6 @@ _old_uri: "revo/addheaderfiles"
 [[!AddHeaderfiles?
 &addcode=`headerColorbox`
 ]]
-
 ```
 
  Parts of the addcode parameterchain could point to chunks too (recursive). The parts of the chunks that are not pointing to other chunks or to files/uri should contain the complete ... or ... code.
@@ -97,7 +83,6 @@ _old_uri: "revo/addheaderfiles"
 &addcode=`headerColorbox;
 /assets/css/test.css|print`
 ]]
-
 ```
 
 ### Notes

@@ -16,8 +16,8 @@ A Chunk named "**extract**" is provided with AdvSearch. This Chunk name is set a
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
+| Name    | Description      |
+| ------- | ---------------- |
 | extract | A single extract |
 
 ## See Also

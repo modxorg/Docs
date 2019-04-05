@@ -16,8 +16,8 @@ A Chunk named "**Paging0**" is provided with AdvSearch. This Chunk name is set a
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
+| Name    | Description     |
+| ------- | --------------- |
 | paging0 | The pagination. |
 
 ## AdvSearch's pageTpl and CurrentPageTpl Chunks
@@ -27,22 +27,22 @@ These Chunk names are set as &pageTpl and &currentPageTpl properties on the [Adv
 
 ## Default Value for PageLink
 
-``` php 
+``` html 
 <span class="advsea-page"><a href="[[+link]]">[[+text]]</a></span>
 ```
 
 ## Default Value for CurrentPageLink
 
-``` php 
+``` html 
 <span class="advsea-page advsea-current-page">[[+text]]</span>
 ```
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
+| Name | Description          |
+| ---- | -------------------- |
 | link | The link to the page |
-| text | The page number |
+| text | The page number      |
 
 You could define the separator between page link numbers by using the pagingSeparator parameter.
 
