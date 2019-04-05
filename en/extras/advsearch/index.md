@@ -51,9 +51,9 @@ _old_uri: "revo/advsearch"
  AdvSearch has mainly 2 snippets - one to display a form ("AdvSearchForm") and the other to display search results ("AdvSearch"). 
  A third snippet ("AdvSearchHelp") is used to display a help window for the presentation of the query syntax.
 
-- [AdvSearchForm](/extras/revo/advsearch/advsearch.advsearchform "AdvSearch.AdvSearchForm")
-- [AdvSearchHelp](/extras/revo/advsearch/advsearch.advsearchhelp "AdvSearch.AdvSearchHelp")
-- [AdvSearch](/extras/revo/advsearch/advsearch.advsearch "AdvSearch.AdvSearch")
+- [AdvSearchForm](/extras/advsearch/advsearch.advsearchform "AdvSearch.AdvSearchForm")
+- [AdvSearchHelp](/extras/advsearch/advsearch.advsearchhelp "AdvSearch.AdvSearchHelp")
+- [AdvSearch](/extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch")
 
  All the templates used by default to set up the form and display the results are provided as chunks. These chunks are installed through the package management.
 
@@ -76,13 +76,13 @@ _old_uri: "revo/advsearch"
 
 ##  See Also 
 
-1. [AdvSearch.AdvSearch](/extras/revo/advsearch/advsearch.advsearch)
-  1. [AdvSearch.AdvSearch.containerTpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl)
-  2. [Advsearch.AdvSearch.extractTpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.extracttpl)
-  3. [AdvSearch.Advsearch.paging1Tpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl)
-  4. [AdvSearch.AdvSearch.paging0Tpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl)
-  5. [AdvSearch.AdvSearch.tpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.tpl)
-2. [AdvSearch.AdvSearchForm](/extras/revo/advsearch/advsearch.advsearchform)
-  6. [Advsearch.AdvSearchForm.tpl](/extras/revo/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl)
-3. [AdvSearch.AdvSearchHelp](/extras/revo/advsearch/advsearch.advsearchhelp)
-  7. [AdvSearch.AdvSearchHelp.helplinkTpl](/extras/revo/advsearch/advsearch.advsearchhelp/advsearch.advsearchhelp.helplinktpl)
+1. [AdvSearch.AdvSearch](/extras/advsearch/advsearch.advsearch)
+  1. [AdvSearch.AdvSearch.containerTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl)
+  2. [Advsearch.AdvSearch.extractTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.extracttpl)
+  3. [AdvSearch.Advsearch.paging1Tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl)
+  4. [AdvSearch.AdvSearch.paging0Tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl)
+  5. [AdvSearch.AdvSearch.tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.tpl)
+2. [AdvSearch.AdvSearchForm](/extras/advsearch/advsearch.advsearchform)
+  6. [Advsearch.AdvSearchForm.tpl](/extras/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl)
+3. [AdvSearch.AdvSearchHelp](/extras/advsearch/advsearch.advsearchhelp)
+  7. [AdvSearch.AdvSearchHelp.helplinkTpl](/extras/advsearch/advsearch.advsearchhelp/advsearch.advsearchhelp.helplinktpl)

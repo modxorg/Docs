@@ -64,4 +64,4 @@ Some common placeholders are:
 
 ## Examples
 
-- [Adding a Twitter Feed](/extras/revo/getfeed/getfeed.adding-a-twitter-feed "getFeed.Adding a Twitter Feed")
+- [Adding a Twitter Feed](/extras/getfeed/getfeed.adding-a-twitter-feed "getFeed.Adding a Twitter Feed")

@@ -30,7 +30,7 @@ You can use the following properties in cmCampers to adjust its behaviour and to
 6. Inactive | 1,2,3,4 |
 | numimages | Integer indicating how many images should be retrieved. | 1 |
 | target | Integer resource ID for the camper details page. Will be used with makeUrl to create a link following friendly url settings, passing "cid" in the URL with the camper ID. | 2 |
-| tplOuter | Chunkname. Outer template to wrap the entire result set. [Placeholders](/extras/revo/campermanagement/campermanagement.developing-the-front-end/campermanagement.placeholders-you-can-use "CamperManagement.Placeholders you can use") | cmDefaultTplOuter |
+| tplOuter | Chunkname. Outer template to wrap the entire result set. [Placeholders](/extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.placeholders-you-can-use "CamperManagement.Placeholders you can use") | cmDefaultTplOuter |
 | tplItem | Chunkname. Template for one item. \[Placeholders|display/ADDON/CamperManagement.Placeholders+you+can+use\] | cmDefaultTplItem |
 | tplImageOuter | Chunkname. Outer template to wrap the entire image result set, called for every vehicle item. \[Placeholders|display/ADDON/CamperManagement.Placeholders+you+can+use\] | cmDefaultTplImageOuter |
 | tplImageItem | Chunkname. Template for one image item. \[Placeholders|display/ADDON/CamperManagement.Placeholders+you+can+use\] | cmDefaultTplImageItem |

@@ -6,7 +6,7 @@ _old_uri: "revo/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesi
 
 ## GoogleSiteMap's itemTpl Chunk
 
-This is the Chunk displayed with the &itemTpl property on the [GoogleSiteMap](/extras/revo/googlesitemap/googlesitemap.googlesitemap "GoogleSiteMap.GoogleSiteMap") snippet. Used for each result item that is listed.
+This is the Chunk displayed with the &itemTpl property on the [GoogleSiteMap](/extras/googlesitemap/googlesitemap.googlesitemap "GoogleSiteMap.GoogleSiteMap") snippet. Used for each result item that is listed.
 
 ## Default Value
 
@@ -30,7 +30,7 @@ This is the Chunk displayed with the &itemTpl property on the [GoogleSiteMap](/e
 
 ## See Also
 
-1. [GoogleSiteMap.GoogleSiteMap](/extras/revo/googlesitemap/googlesitemap.googlesitemap)
-  1. [GoogleSiteMap.GoogleSiteMap.containerTpl](/extras/revo/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
-  2. [GoogleSiteMap.GoogleSiteMap.itemTpl](/extras/revo/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
-2. [GoogleSiteMap.Roadmap](/extras/revo/googlesitemap/googlesitemap.roadmap)
+1. [GoogleSiteMap.GoogleSiteMap](/extras/googlesitemap/googlesitemap.googlesitemap)
+  1. [GoogleSiteMap.GoogleSiteMap.containerTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
+  2. [GoogleSiteMap.GoogleSiteMap.itemTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
+2. [GoogleSiteMap.Roadmap](/extras/googlesitemap/googlesitemap.roadmap)

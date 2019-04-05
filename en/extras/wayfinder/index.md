@@ -5,25 +5,25 @@ _old_uri: "revo/wayfinder"
 ---
 
 - [History](https://docs.modx.com/extras/revo/wayfinder#Wayfinder-History)
-  - [Version history](/extras/revo/wayfinder#Wayfinder-Versionhistory)
-- [Installation](/extras/revo/wayfinder#Wayfinder-Installation)
-  - [Downloads](/extras/revo/wayfinder#Wayfinder-Downloads)
-  - [Evolution (and before)](/extras/revo/wayfinder#Wayfinder-Evolution%28andbefore%29)
-  - [Revolution](/extras/revo/wayfinder#Wayfinder-Revolution)
-- [Getting started](/extras/revo/wayfinder#Wayfinder-Gettingstarted)
-- [Parameters](/extras/revo/wayfinder#Wayfinder-Parameters)
-  - [General Parameters](/extras/revo/wayfinder#Wayfinder-GeneralParameters)
-  - [Template Parameters](/extras/revo/wayfinder#Wayfinder-TemplateParameters)
-  - [CSS Class Name Parameters](/extras/revo/wayfinder#Wayfinder-CSSClassNameParameters)
-  - [Code-Embedding Parameters](/extras/revo/wayfinder#Wayfinder-CodeEmbeddingParameters)
-  - [Default values in Revolution](/extras/revo/wayfinder#Wayfinder-DefaultvaluesinRevolution)
-- [Examples](/extras/revo/wayfinder#Wayfinder-Examples)
-  - [The Minimum Wayfinder Call](/extras/revo/wayfinder#Wayfinder-TheMinimumWayfinderCall)
-  - [Replacing DropMenu with Wayfinder](/extras/revo/wayfinder#Wayfinder-ReplacingDropMenuwithWayfinder)
+  - [Version history](/extras/wayfinder#Wayfinder-Versionhistory)
+- [Installation](/extras/wayfinder#Wayfinder-Installation)
+  - [Downloads](/extras/wayfinder#Wayfinder-Downloads)
+  - [Evolution (and before)](/extras/wayfinder#Wayfinder-Evolution%28andbefore%29)
+  - [Revolution](/extras/wayfinder#Wayfinder-Revolution)
+- [Getting started](/extras/wayfinder#Wayfinder-Gettingstarted)
+- [Parameters](/extras/wayfinder#Wayfinder-Parameters)
+  - [General Parameters](/extras/wayfinder#Wayfinder-GeneralParameters)
+  - [Template Parameters](/extras/wayfinder#Wayfinder-TemplateParameters)
+  - [CSS Class Name Parameters](/extras/wayfinder#Wayfinder-CSSClassNameParameters)
+  - [Code-Embedding Parameters](/extras/wayfinder#Wayfinder-CodeEmbeddingParameters)
+  - [Default values in Revolution](/extras/wayfinder#Wayfinder-DefaultvaluesinRevolution)
+- [Examples](/extras/wayfinder#Wayfinder-Examples)
+  - [The Minimum Wayfinder Call](/extras/wayfinder#Wayfinder-TheMinimumWayfinderCall)
+  - [Replacing DropMenu with Wayfinder](/extras/wayfinder#Wayfinder-ReplacingDropMenuwithWayfinder)
  
 
 
- [Wayfinder](/extras/revo/wayfinder "Wayfinder") is a [Snippet](making-sites-with-modx/structuring-your-site/using-snippets "Snippets") by **kylej** that scans a specified portion of the MODX document tree, finds all documents that satisfy a certain criteria (determined by the Parameters), and outputs a formatted list of those documents. The formatting of the output is template-driven, and can contain any combination of HTML, CSS and JavaScript, yielding an enormous degree of flexibility.
+ [Wayfinder](/extras/wayfinder "Wayfinder") is a [Snippet](making-sites-with-modx/structuring-your-site/using-snippets "Snippets") by **kylej** that scans a specified portion of the MODX document tree, finds all documents that satisfy a certain criteria (determined by the Parameters), and outputs a formatted list of those documents. The formatting of the output is template-driven, and can contain any combination of HTML, CSS and JavaScript, yielding an enormous degree of flexibility.
 
  _Wayfinder's_ primary purpose is to generate navigational menus that automatically update to reflect changes made to the document tree, but it can be used for other purposes as well.
 
@@ -41,18 +41,18 @@ _old_uri: "revo/wayfinder"
 
 ###  Version history 
 
- | Version | Released | MODX version | Notes |
-|---------|----------|--------------|-------|
-| 0.9 beta 1/2/3 | Aug/Sept 2006 | 0.9.2.1 | Initial release |
-| 1.0 | Oct 23, 2006 | 0.9.2.1 |  |
-| 1.0.1 | Nov 07, 2006 | 0.9.2.1 - 0.9.5 |  |
-| 2.0 | Feb 27, 2007 | 0.9.5 + | Current release for Evolution |
-| 2.1.1 beta 1 | May 21, 2009 | 2.0.0-beta 1 |  |
-| 2.1.1 beta 2 | Oct 20, 2009 | 2.0.0-beta 4 |  |
-| 2.1.1 beta 4 | Nov 05, 2009 | 2.0.0-beta 5 + |  |
-| 2.3.1 | May 18, 2011 | 2.0+ |  |
-| 2.3.2 | Sept 20, 2011 | 2.0+ |  |
-| 2.3.3 | Oct 31, 2011 | 2.0+ | Current release for Revolution |
+ | Version        | Released      | MODX version    | Notes                          |
+ | -------------- | ------------- | --------------- | ------------------------------ |
+ | 0.9 beta 1/2/3 | Aug/Sept 2006 | 0.9.2.1         | Initial release                |
+ | 1.0            | Oct 23, 2006  | 0.9.2.1         |                                |
+ | 1.0.1          | Nov 07, 2006  | 0.9.2.1 - 0.9.5 |                                |
+ | 2.0            | Feb 27, 2007  | 0.9.5 +         | Current release for Evolution  |
+ | 2.1.1 beta 1   | May 21, 2009  | 2.0.0-beta 1    |                                |
+ | 2.1.1 beta 2   | Oct 20, 2009  | 2.0.0-beta 4    |                                |
+ | 2.1.1 beta 4   | Nov 05, 2009  | 2.0.0-beta 5 +  |                                |
+ | 2.3.1          | May 18, 2011  | 2.0+            |                                |
+ | 2.3.2          | Sept 20, 2011 | 2.0+            |                                |
+ | 2.3.3          | Oct 31, 2011  | 2.0+            | Current release for Revolution |
 
 ##  Installation 
 
@@ -87,35 +87,35 @@ _old_uri: "revo/wayfinder"
 
  will output the HTML for a multi-level, unordered list of the entire document tree (with certain exceptions), where each list item is a link to a corresponding document in the MODX document tree.
 
- See [Wayfinder Introductory Examples](/extras/revo/wayfinder/wayfinder-introductory-examples "Wayfinder Introductory Examples") for some thorough examples comparing Wayfinder snippet calls to HTML output.
+ See [Wayfinder Introductory Examples](/extras/wayfinder/wayfinder-introductory-examples "Wayfinder Introductory Examples") for some thorough examples comparing Wayfinder snippet calls to HTML output.
 
 ##  Parameters 
 
 ###  General Parameters 
 
- | Parameter | Description | Default |
-|-----------|-------------|---------|
-| &startId | The starting point (document ID) for the menu to list documents from. Specify 0 to start from the site root. | current docId |
-| &displayStart | Show the document as referenced by &startId in the menu. | 0 |
-| &level | Depth (number of levels) to build the menu from. '0' goes through all levels. | 0 |
-| &limit | The limit parameter causes Wayfinder to only process the number of items specified per level. | 0 |
-| &ignoreHidden | Ignore the "Show in menu" checkbox for documents, and include them in the menu anyway. | 0 |
-| &ph | Name of a placeholder to set with the output results, instead of directly returning the output. | 0 |
-| &debug | Set to '1' to enable debug mode for extra troubleshooting. | 0 |
-| &hideSubMenus | Set to '1' to only output the active submenu. | 0 |
-| &removeNewLines | Set to '1' to remove newline characters from the output. | 0 |
-| &textOfLinks | The field to get the actual link text from. Possible values: _menutitle, id, pagetitle, description, parent, alias, longtitle, introtext_ | menutitle |
-| &titleOfLinks | The field to get the link title from. Possible values: _menutitle, id, pagetitle, description, parent, alias, longtitle, introtext_ | pagetitle |
-| &rowIdPrefix | If set, this parameter creates a unique ID for each item. The value will be _rowIdPrefix_ + _docId_. | 0 |
-| &useWeblinkUrl | When set to 1, the link specified in a weblink document will be output to the placeholder \[ wf.link\] instead of the link to the weblink. | 1 |
-| &includeDocs | Comma separated list of document IDs to be included in the menu. |  |
-| &excludeDocs | Comma seperated list of document IDs to be excluded from the menu. | 0 |
-| &cacheResults | caches queries for faster loading ( _added in 2.2.0-rc1_) |  |
-| &cacheTime | The number of seconds to store the cached menu, if cacheResults is 1. Set to 0 to store indefinitely until cache is manually cleared. | 3600 |
-| &contexts | Contexts to use for building the menu. Defaults to the current context. ( _added in 2.2.0-rc1_) |  |
-| &startIdContext | ( _added in 2.2.0-rc1_) |  |
-| &config | external php file to configure Wayfinder ( _see core/components/wayfinder/configs for examples_) |  |
-| &scheme | format for how URLs are generated. Possible values are (based on makeURL API call): 
+ | Parameter       | Description                                                                                                                                | Default       |
+ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
+ | &startId        | The starting point (document ID) for the menu to list documents from. Specify 0 to start from the site root.                               | current docId |
+ | &displayStart   | Show the document as referenced by &startId in the menu.                                                                                   | 0             |
+ | &level          | Depth (number of levels) to build the menu from. '0' goes through all levels.                                                              | 0             |
+ | &limit          | The limit parameter causes Wayfinder to only process the number of items specified per level.                                              | 0             |
+ | &ignoreHidden   | Ignore the "Show in menu" checkbox for documents, and include them in the menu anyway.                                                     | 0             |
+ | &ph             | Name of a placeholder to set with the output results, instead of directly returning the output.                                            | 0             |
+ | &debug          | Set to '1' to enable debug mode for extra troubleshooting.                                                                                 | 0             |
+ | &hideSubMenus   | Set to '1' to only output the active submenu.                                                                                              | 0             |
+ | &removeNewLines | Set to '1' to remove newline characters from the output.                                                                                   | 0             |
+ | &textOfLinks    | The field to get the actual link text from. Possible values: _menutitle, id, pagetitle, description, parent, alias, longtitle, introtext_  | menutitle     |
+ | &titleOfLinks   | The field to get the link title from. Possible values: _menutitle, id, pagetitle, description, parent, alias, longtitle, introtext_        | pagetitle     |
+ | &rowIdPrefix    | If set, this parameter creates a unique ID for each item. The value will be _rowIdPrefix_ + _docId_.                                       | 0             |
+ | &useWeblinkUrl  | When set to 1, the link specified in a weblink document will be output to the placeholder \[ wf.link\] instead of the link to the weblink. | 1             |
+ | &includeDocs    | Comma separated list of document IDs to be included in the menu.                                                                           |               |
+ | &excludeDocs    | Comma seperated list of document IDs to be excluded from the menu.                                                                         | 0             |
+ | &cacheResults   | caches queries for faster loading ( _added in 2.2.0-rc1_)                                                                                  |               |
+ | &cacheTime      | The number of seconds to store the cached menu, if cacheResults is 1. Set to 0 to store indefinitely until cache is manually cleared.      | 3600          |
+ | &contexts       | Contexts to use for building the menu. Defaults to the current context. ( _added in 2.2.0-rc1_)                                            |               |
+ | &startIdContext | ( _added in 2.2.0-rc1_)                                                                                                                    |               |
+ | &config         | external php file to configure Wayfinder ( _see core/components/wayfinder/configs for examples_)                                           |               |
+ | &scheme         | format for how URLs are generated. Possible values are (based on makeURL API call):                                                        |
 - -1 : (default value) URL is relative to site\_url
 - 0 : see http
 - 1 : see https
@@ -205,9 +205,9 @@ Revolution: [[+wf._____]]
 
  The following table shows other parameters to change your output, that use the same placeholders as the &outerTpl parameter.
 
- | Parameter | Description |
-|-----------|-------------|
-| &innerTpl | Name of the chunk containing the template for any subfolders listed in the menu. |
+ | Parameter | Description                                                                      |
+ | --------- | -------------------------------------------------------------------------------- |
+ | &innerTpl | Name of the chunk containing the template for any subfolders listed in the menu. |
 
  **_&rowTpl_**
 
@@ -268,17 +268,17 @@ Revolution: [[+wf._____]]
 
  The following table shows other parameters to change your output, that use the same placeholders as the &rowTpl parameter.
 
- | Parameter | Description |
-|-----------|-------------|
-| &startItemTpl | Name of the chunk containing the template for the start item, if enabled via the &displayStart parameter. Note: the default template shows the start item but does not link it. If you do not need a link, a class can be applied to the default template using the parameter &firstClass=`className`. |
-| &parentRowHereTpl | Name of the chunk containing the template for the current document if it is a container and has children. Remember the \[ wf.wrapper\] placeholder to output the children documents. |
-| &parentRowTpl | Name of the chunk containing the template for any document that is a container and has children. Remember the \[ wf.wrapper\] placeholder to output the children documents. |
-| &hereTpl | Name of the chunk containing the template for the current document. |
-| &innerTpl | Name of the chunk containing the template for each submenu. If no innerTpl is specified the outerTpl is used in its place. |
-| &innerRowTpl | Name of the chunk containing the template for the row items in a subfolder. |
-| &innerHereTpl | Name of the chunk containing the template for the current document if it is in a subfolder. |
-| &activeParentRowTpl | Name of the chunk containing the template for items that are containers, have children and are currently active in the tree. |
-| &categoryFoldersTpl | Name of the chunk containing the template for category folders. Category folders are determined by setting the template to blank or by setting the link attributes field to rel="category". |
+ | Parameter           | Description                                                                                                                                                                                                                                                                                            |
+ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+ | &startItemTpl       | Name of the chunk containing the template for the start item, if enabled via the &displayStart parameter. Note: the default template shows the start item but does not link it. If you do not need a link, a class can be applied to the default template using the parameter &firstClass=`className`. |
+ | &parentRowHereTpl   | Name of the chunk containing the template for the current document if it is a container and has children. Remember the \[ wf.wrapper\] placeholder to output the children documents.                                                                                                                   |
+ | &parentRowTpl       | Name of the chunk containing the template for any document that is a container and has children. Remember the \[ wf.wrapper\] placeholder to output the children documents.                                                                                                                            |
+ | &hereTpl            | Name of the chunk containing the template for the current document.                                                                                                                                                                                                                                    |
+ | &innerTpl           | Name of the chunk containing the template for each submenu. If no innerTpl is specified the outerTpl is used in its place.                                                                                                                                                                             |
+ | &innerRowTpl        | Name of the chunk containing the template for the row items in a subfolder.                                                                                                                                                                                                                            |
+ | &innerHereTpl       | Name of the chunk containing the template for the current document if it is in a subfolder.                                                                                                                                                                                                            |
+ | &activeParentRowTpl | Name of the chunk containing the template for items that are containers, have children and are currently active in the tree.                                                                                                                                                                           |
+ | &categoryFoldersTpl | Name of the chunk containing the template for category folders. Category folders are determined by setting the template to blank or by setting the link attributes field to rel="category".                                                                                                            |
 
  &parentRow and &activeParentRow require that the parent resource's "Container" setting is checked. 
 
@@ -294,18 +294,18 @@ Revolution: [[+wf._____]]
 
  You can use CSS to control the appearance (and in some cases the behavior) of various portions of the generated output. But it's up to you to tell Wayfinder the CSS classnames you want to use, and which portions of the generated output you want them associated with.
 
- | Parameter | Description | Default |
-|-----------|-------------|---------|
-| &firstClass | CSS class for the first item at a given menu level. |  |
-| &lastClass | CSS class for the last item at a given menu level. | last |
-| &hereClass | CSS class for the items showing where you are, all the way up the chain. | active |
-| &selfClass | CSS class for the current item. |  |
-| &parentClass | CSS class for menu items that are a container and have children. | parent |
-| &rowClass | CSS class denoting each output row |  |
-| &levelClass | CSS class denoting every output row level. The level number will be added to the specified class (level1, level2, level3 etc if you specified 'level'). |  |
-| &outerClass | CSS class for the outer template. |  |
-| &innerClass | CSS class for the inner template |  |
-| &webLinkClass | CSS class for weblink items. |  |
+ | Parameter     | Description                                                                                                                                             | Default |
+ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+ | &firstClass   | CSS class for the first item at a given menu level.                                                                                                     |         |
+ | &lastClass    | CSS class for the last item at a given menu level.                                                                                                      | last    |
+ | &hereClass    | CSS class for the items showing where you are, all the way up the chain.                                                                                | active  |
+ | &selfClass    | CSS class for the current item.                                                                                                                         |         |
+ | &parentClass  | CSS class for menu items that are a container and have children.                                                                                        | parent  |
+ | &rowClass     | CSS class denoting each output row                                                                                                                      |         |
+ | &levelClass   | CSS class denoting every output row level. The level number will be added to the specified class (level1, level2, level3 etc if you specified 'level'). |         |
+ | &outerClass   | CSS class for the outer template.                                                                                                                       |         |
+ | &innerClass   | CSS class for the inner template                                                                                                                        |         |
+ | &webLinkClass | CSS class for weblink items.                                                                                                                            |         |
 
  **Example** 
  Simply specify the class parameters in the snippet to add the classnames to the output.
@@ -322,16 +322,16 @@ Revolution: [[+wf._____]]
 
  If the generated output of a Wayfinder call requires the presence of certain CSS or JavaScript, you can store the CSS in one chunk and the JavaScript in another, then use these parameters to have Wayfinder copy one or both chunks into the HEAD section of the webpage in which the Wayfinder call is made.
 
- | Parameter | Description |
-|-----------|-------------|
-| &cssTpl | Name of a chunk containing the CSS you would like added to the page when the Wayfinder call is present. |
-| &jsTpl | Name of a chunk containing the JavaScript you would like added to the page when the Wayfinder call is present. |
+ | Parameter | Description                                                                                                    |
+ | --------- | -------------------------------------------------------------------------------------------------------------- |
+ | &cssTpl   | Name of a chunk containing the CSS you would like added to the page when the Wayfinder call is present.        |
+ | &jsTpl    | Name of a chunk containing the JavaScript you would like added to the page when the Wayfinder call is present. |
 
 ###  Default values in Revolution 
 
  | Parameter | Default value |
-|-----------|---------------|
-| &outerTpl | ``` php 
+ | --------- | ------------- |
+ | &outerTpl | ``` php       |
 
 <ul[[+wf.classes]]>[[+wf.wrapper]]</ul>
 		
@@ -351,7 +351,7 @@ Revolution: [[+wf._____]]
 
 ##  Examples 
 
- See [Wayfinder Introductory Examples](/extras/revo/wayfinder/wayfinder-introductory-examples "Wayfinder Introductory Examples") for some thorough examples comparing Wayfinder snippet calls to HTML output.
+ See [Wayfinder Introductory Examples](/extras/wayfinder/wayfinder-introductory-examples "Wayfinder Introductory Examples") for some thorough examples comparing Wayfinder snippet calls to HTML output.
 
 ###  The Minimum Wayfinder Call 
 

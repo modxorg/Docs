@@ -4,7 +4,7 @@ _old_id: "890"
 _old_uri: "revo/getresources/getresources.examples/getresources.google-xml-sitemap"
 ---
 
-Who needs [a special snippet](/extras/revo/googlesitemap "GoogleSiteMap"), you can also let getResources do the dirty work of creating an XML sitemap for Google.
+Who needs [a special snippet](/extras/googlesitemap "GoogleSiteMap"), you can also let getResources do the dirty work of creating an XML sitemap for Google.
 
 **We'll be making a couple of items:**
 

@@ -14,19 +14,19 @@ tolinks is called with the normal snippet tag, passing in an 'items' property as
 
 ## Properties
 
-| Name | Example usage | Description | Default Value |
-|------|---------------|-------------|---------------|
-| items | &items=`\[\[\*myTemplateVar\]\]` | The items to turn into links. |  |
-| tpl | &tpl=`linkTpl` | Name of a Chunk that will be used for each result. | link |
-| target | &target=`6` | The ID of the Resource that links will point to. | 1 |
-| inputDelim | &inputDelim=`,` | The delimiter that is used on the items property. Defaults to a comma. | , |
-| outputDelim | &outputDelim=`,` | The delimiter that separates the links that are outputted. Defaults to a comma. | , |
-| tagRequestParam | &tagRequestParam=`tag` | The REQUEST var key that will be used in generating the links. | tag |
-| cls | &cls=`tagStyle` | Name of a CSS class to add to each result. | tl-tag |
-| toPlaceholder | &toPlaceholder=`placeholderName` | If set, will set the output of this snippet to this placeholder rather than output it. | false |
-| useTagsFurl | &useTagsFurl=`1` | Is set to 1, this will force full links to each tag. | false |
-| tagKey | &tagKey=`articlestags` | tag group name, used in generating links | tags |
-| tagKeyVar | &tagKeyVar=`MyCustomVar` | sets the GET var key 
+| Name            | Example usage                    | Description                                                                            | Default Value |
+| --------------- | -------------------------------- | -------------------------------------------------------------------------------------- | ------------- |
+| items           | &items=`\[\[\*myTemplateVar\]\]` | The items to turn into links.                                                          |               |
+| tpl             | &tpl=`linkTpl`                   | Name of a Chunk that will be used for each result.                                     | link          |
+| target          | &target=`6`                      | The ID of the Resource that links will point to.                                       | 1             |
+| inputDelim      | &inputDelim=`,`                  | The delimiter that is used on the items property. Defaults to a comma.                 | ,             |
+| outputDelim     | &outputDelim=`,`                 | The delimiter that separates the links that are outputted. Defaults to a comma.        | ,             |
+| tagRequestParam | &tagRequestParam=`tag`           | The REQUEST var key that will be used in generating the links.                         | tag           |
+| cls             | &cls=`tagStyle`                  | Name of a CSS class to add to each result.                                             | tl-tag        |
+| toPlaceholder   | &toPlaceholder=`placeholderName` | If set, will set the output of this snippet to this placeholder rather than output it. | false         |
+| useTagsFurl     | &useTagsFurl=`1`                 | Is set to 1, this will force full links to each tag.                                   | false         |
+| tagKey          | &tagKey=`articlestags`           | tag group name, used in generating links                                               | tags          |
+| tagKeyVar       | &tagKeyVar=`MyCustomVar`         | sets the GET var key                                                                   |
 
  I.e., 
  \[\[tolinks? &tagKey=`articlestags` &tagKeyVar=`MyCustomVar`\]\] 
@@ -37,7 +37,7 @@ tolinks is called with the normal snippet tag, passing in an 'items' property as
 
 There is 1 chunk that is processed in tolinks. Its corresponding parameters are:
 
-- [tpl](/extras/revo/taglister/taglister.tolinks/taglister.tolinks.tpl "tagLister.tolinks.tpl") - The Chunk to use for each link generated.
+- [tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl "tagLister.tolinks.tpl") - The Chunk to use for each link generated.
 
 ## Examples
 
@@ -75,9 +75,9 @@ The resource ID referenced by the **&target** parameter should contain something
 
 ## See Also
 
-1. [tagLister.getResourcesTag](/extras/revo/taglister/taglister.getresourcestag)
-2. [tagLister.tagLister](/extras/revo/taglister/taglister.taglister)
-  1. [tagLister.tagLister.all](/extras/revo/taglister/taglister.taglister/taglister.taglister.all)
-  2. [tagLister.tagLister.tpl](/extras/revo/taglister/taglister.taglister/taglister.taglister.tpl)
-3. [tagLister.tolinks](/extras/revo/taglister/taglister.tolinks)
-  1. [tagLister.tolinks.tpl](/extras/revo/taglister/taglister.tolinks/taglister.tolinks.tpl)
+1. [tagLister.getResourcesTag](/extras/taglister/taglister.getresourcestag)
+2. [tagLister.tagLister](/extras/taglister/taglister.taglister)
+  1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
+  2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
+3. [tagLister.tolinks](/extras/taglister/taglister.tolinks)
+  1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)

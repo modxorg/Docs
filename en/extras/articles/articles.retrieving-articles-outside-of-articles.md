@@ -6,7 +6,7 @@ _old_uri: "revo/articles/articles.retrieving-articles-outside-of-articles"
 
 Articles are stored as Resources in MODX, allowing you to easily utilize them in other MODX Extras. The only thing to note is that Articles have "hidemenu" set to 1 (they are hidden from menus) by default - the reason being to prevent them from showing in menus across your site (Imagine a site with 10,000 Articles - that'd be a big menu!).
 
-For example, this [getResources](/extras/revo/getresources "getResources") call grabs the latest 8 Articles for you in your Container with ID 10:
+For example, this [getResources](/extras/getresources "getResources") call grabs the latest 8 Articles for you in your Container with ID 10:
 
 ``` php 
 [[getResources?

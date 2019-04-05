@@ -8,7 +8,7 @@ _old_uri: "revo/archivist"
 
 Archivist is an archive navigation Extra for MODx Revolution. It allows for wordpress-style navigation of Resources, as well as month/year/day archive listing and automatic FURL generation.
 
-If you are looking to create a blog, check out [Articles](/extras/revo/articles "Articles"). It includes Archivist in an easy to use form.
+If you are looking to create a blog, check out [Articles](/extras/articles "Articles"). It includes Archivist in an easy to use form.
 
 ## Requirements
 
@@ -34,8 +34,8 @@ Bugs can be filed here: <http://tracker.modx.com/projects/archivist>
 
 Archivist has 2 snippets - one to display the month/year/day listing ("Archivist"), and the other to display archive results ("getArchives").
 
-- [Archivist.Archivist](/extras/revo/archivist/archivist.archivist "Archivist.Archivist") - Displays archive navigation links.
-- [Archivist.getArchives](/extras/revo/archivist/archivist.getarchives "Archivist.getArchives") - Displays results of archives.
+- [Archivist.Archivist](/extras/archivist/archivist.archivist "Archivist.Archivist") - Displays archive navigation links.
+- [Archivist.getArchives](/extras/archivist/archivist.getarchives "Archivist.getArchives") - Displays results of archives.
 
 ## Examples
 
@@ -62,8 +62,8 @@ And then on your archives page:
 
 ## See Also
 
-1. [Archivist.Archivist](/extras/revo/archivist/archivist.archivist)
-  1. [Archivist.Archivist.tpl](/extras/revo/archivist/archivist.archivist/archivist.archivist.tpl)
-2. [Archivist.ArchivistGrouper](/extras/revo/archivist/archivist.archivistgrouper)
-3. [Archivist.getArchives](/extras/revo/archivist/archivist.getarchives)
-  2. [Archivist.getArchives.tpl](/extras/revo/archivist/archivist.getarchives/archivist.getarchives.tpl)
+1. [Archivist.Archivist](/extras/archivist/archivist.archivist)
+  1. [Archivist.Archivist.tpl](/extras/archivist/archivist.archivist/archivist.archivist.tpl)
+2. [Archivist.ArchivistGrouper](/extras/archivist/archivist.archivistgrouper)
+3. [Archivist.getArchives](/extras/archivist/archivist.getarchives)
+  2. [Archivist.getArchives.tpl](/extras/archivist/archivist.getarchives/archivist.getarchives.tpl)

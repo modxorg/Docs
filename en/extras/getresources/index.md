@@ -223,7 +223,7 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 
 ##  Examples 
 
- Also see the [Examples](/extras/revo/getresources/getresources.examples "getResources.Examples") sub section of this documentation for more detailed examples and tutorials.
+ Also see the [Examples](/extras/getresources/getresources.examples "getResources.Examples") sub section of this documentation for more detailed examples and tutorials.
 
  Output a list of child Resources of the current Resource, using the 'myRowTpl' chunk:
 
@@ -320,7 +320,7 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 
 ##  Using getPage for Pagination 
 
- When combined with [getPage](/extras/revo/getpage "getPage"), getResources allows you to do powerful and flexible pagination on your pages.
+ When combined with [getPage](/extras/getpage "getPage"), getResources allows you to do powerful and flexible pagination on your pages.
 
 ###  Examples 
 
@@ -400,4 +400,4 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 
 ##  See Also 
 
- If you only need to get a single field from a foreign resource, try using [getResourceField](/extras/revo/getresourcefield "getResourceField").
+ If you only need to get a single field from a foreign resource, try using [getResourceField](/extras/getresourcefield "getResourceField").

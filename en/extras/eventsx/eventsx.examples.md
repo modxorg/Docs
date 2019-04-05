@@ -37,4 +37,4 @@ A screenshot could look like this. Note that I've styled the time element indivi
 
 ## See Also
 
-1. [EventsX.Examples](/extras/revo/eventsx/eventsx.examples)
+1. [EventsX.Examples](/extras/eventsx/eventsx.examples)

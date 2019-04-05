@@ -41,7 +41,7 @@ Not specifying a thread will make the QuipReply snippet look for the 'quip\_thre
 | gravatarSize | The size in pixels of the Gravatar. | 50 |
 | postAction | The name of the submit field to initiate a comment post. | quip-post |
 | previewAction | The name of the submit field to preview a comment post. | quip-preview |
-| tplAddComment | The add comment form. Can either be a chunk name or value. If set to a value, will override the chunk. See [tplAddComment](/extras/revo/quip/quip.quipreply/quip.quipreply.tpladdcomment "Quip.QuipReply.tplAddComment") for the default form used. It lives on the filesystem: core/components/quip/elements/chunks/quipaddcomment.chunk.tpl |  |
+| tplAddComment | The add comment form. Can either be a chunk name or value. If set to a value, will override the chunk. See [tplAddComment](/extras/quip/quip.quipreply/quip.quipreply.tpladdcomment "Quip.QuipReply.tplAddComment") for the default form used. It lives on the filesystem: core/components/quip/elements/chunks/quipaddcomment.chunk.tpl |  |
 | tplLoginToComment | The portion to show when the user is not logged in. Can either be a chunk name or value. If set to a value, will override the chunk. The default chunk lives on the filesystem: core/components/quip/elements/chunks/quipaddcomment.chunk.tpl |  |
 | tplPreview | The preview view. Can either be a chunk name or value. If set to a value, will override the chunk. |  |
 | idPrefix | If you want to use multiple Quip instances on a page, change this ID prefix. | qcom |
@@ -51,9 +51,9 @@ Not specifying a thread will make the QuipReply snippet look for the 'quip\_thre
 
 There are 3 chunks that are processed. Their corresponding parameters are:
 
-- [tplAddComment](/extras/revo/quip/quip.quipreply/quip.quipreply.tpladdcomment "Quip.QuipReply.tplAddComment") - The Chunk to use for the add comment form.
-- [tplLoginToComment](/extras/revo/quip/quip.quipreply/quip.quipreply.tpllogintocomment "Quip.QuipReply.tplLoginToComment") - Will display when requireAuth is set to 1 and the user is not logged in.
-- [tplPreview](/extras/revo/quip/quip.quipreply/quip.quipreply.tplpreview "Quip.QuipReply.tplPreview") - The preview view for an about-to-be-posted comment.
+- [tplAddComment](/extras/quip/quip.quipreply/quip.quipreply.tpladdcomment "Quip.QuipReply.tplAddComment") - The Chunk to use for the add comment form.
+- [tplLoginToComment](/extras/quip/quip.quipreply/quip.quipreply.tpllogintocomment "Quip.QuipReply.tplLoginToComment") - Will display when requireAuth is set to 1 and the user is not logged in.
+- [tplPreview](/extras/quip/quip.quipreply/quip.quipreply.tplpreview "Quip.QuipReply.tplPreview") - The preview view for an about-to-be-posted comment.
 
 ## Examples
 
@@ -65,18 +65,18 @@ Display a reply form for the thread 'myThread', with the moderators in the User 
 
 ## See Also
 
-1. [Quip.Quip](/extras/revo/quip/quip.quip)
-  1. [Quip.Quip.tplComment](/extras/revo/quip/quip.quip/quip.quip.tplcomment)
-  2. [Quip.Quip.tplCommentOptions](/extras/revo/quip/quip.quip/quip.quip.tplcommentoptions)
-  3. [Quip.Quip.tplComments](/extras/revo/quip/quip.quip/quip.quip.tplcomments)
-  4. [Quip.Quip.tplReport](/extras/revo/quip/quip.quip/quip.quip.tplreport)
-2. [Quip.QuipCount](/extras/revo/quip/quip.quipcount)
-3. [Quip.QuipLatestComments](/extras/revo/quip/quip.quiplatestcomments)
-4. [Quip.QuipReply](/extras/revo/quip/quip.quipreply)
-  1. [Quip.QuipReply.tplAddComment](/extras/revo/quip/quip.quipreply/quip.quipreply.tpladdcomment)
-  2. [Quip.QuipReply.tplLoginToComment](/extras/revo/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
-  3. [Quip.QuipReply.tplPreview](/extras/revo/quip/quip.quipreply/quip.quipreply.tplpreview)
-5. [Quip.QuipRss](/extras/revo/quip/quip.quiprss)
-6. [Quip.Roadmap](/extras/revo/quip/quip.roadmap)
-7. [Quip.Upgrading](/extras/revo/quip/quip.upgrading)
-  1. [Quip.Upgrading to 1.0.1](/extras/revo/quip/quip.upgrading/quip.upgrading-to-1.0.1)
+1. [Quip.Quip](/extras/quip/quip.quip)
+  1. [Quip.Quip.tplComment](/extras/quip/quip.quip/quip.quip.tplcomment)
+  2. [Quip.Quip.tplCommentOptions](/extras/quip/quip.quip/quip.quip.tplcommentoptions)
+  3. [Quip.Quip.tplComments](/extras/quip/quip.quip/quip.quip.tplcomments)
+  4. [Quip.Quip.tplReport](/extras/quip/quip.quip/quip.quip.tplreport)
+2. [Quip.QuipCount](/extras/quip/quip.quipcount)
+3. [Quip.QuipLatestComments](/extras/quip/quip.quiplatestcomments)
+4. [Quip.QuipReply](/extras/quip/quip.quipreply)
+  1. [Quip.QuipReply.tplAddComment](/extras/quip/quip.quipreply/quip.quipreply.tpladdcomment)
+  2. [Quip.QuipReply.tplLoginToComment](/extras/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
+  3. [Quip.QuipReply.tplPreview](/extras/quip/quip.quipreply/quip.quipreply.tplpreview)
+5. [Quip.QuipRss](/extras/quip/quip.quiprss)
+6. [Quip.Roadmap](/extras/quip/quip.roadmap)
+7. [Quip.Upgrading](/extras/quip/quip.upgrading)
+  1. [Quip.Upgrading to 1.0.1](/extras/quip/quip.upgrading/quip.upgrading-to-1.0.1)

@@ -57,9 +57,9 @@ _old_uri: "revo/gallery/gallery.galleryitem"
 
  There are 3 chunks that are processed in GalleryItem. Their corresponding GalleryItem parameters are:
 
-- [tpl](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.tpl "Gallery.GalleryItem.tpl") - The Chunk to use if toPlaceholders is set to 0.
-- [albumTpl](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl "Gallery.GalleryItem.albumTpl") - The Chunk to use for each Album listed with the item.
-- [tagTpl](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl "Gallery.GalleryItem.tagTpl") - The Chunk to use for each Tag listed with the item.
+- [tpl](/extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl "Gallery.GalleryItem.tpl") - The Chunk to use if toPlaceholders is set to 0.
+- [albumTpl](/extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl "Gallery.GalleryItem.albumTpl") - The Chunk to use for each Album listed with the item.
+- [tagTpl](/extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl "Gallery.GalleryItem.tagTpl") - The Chunk to use for each Tag listed with the item.
 
 ## Examples
 
@@ -101,21 +101,21 @@ _old_uri: "revo/gallery/gallery.galleryitem"
 
 ## See Also
 
-1. [Gallery.Gallery](/extras/revo/gallery/gallery.gallery)
-  1. [Gallery.Gallery.containerTpl](/extras/revo/gallery/gallery.gallery/gallery.gallery.containertpl)
-  2. [Gallery.Gallery.thumbTpl](/extras/revo/gallery/gallery.gallery/gallery.gallery.thumbtpl)
-2. [Gallery.GalleryAlbums](/extras/revo/gallery/gallery.galleryalbums)
-  3. [Gallery.GalleryAlbums.containerTpl](/extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
-  4. [Gallery.GalleryAlbums.rowTpl](/extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
-3. [Gallery.GalleryItem](/extras/revo/gallery/gallery.galleryitem)
-  5. [Gallery.GalleryItem.albumTpl](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
-  6. [Gallery.GalleryItem.GalleryItemPagination](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
-  7. [Gallery.GalleryItem.tagTpl](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
-  8. [Gallery.GalleryItem.tpl](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
-4. [Gallery.Plugins](/extras/revo/gallery/gallery.plugins)
-  9. [Gallery.Plugins.Galleriffic](/extras/revo/gallery/gallery.plugins/gallery.plugins.galleriffic)
-  10. [Gallery.Plugins.Slimbox](/extras/revo/gallery/gallery.plugins/gallery.plugins.slimbox)
-5. [Gallery.Roadmap](/extras/revo/gallery/gallery.roadmap)
-6. [Gallery.Setting Up Your Gallery](/extras/revo/gallery/gallery.setting-up-your-gallery)
-7. [Gallery.Example1](/extras/revo/gallery/gallery.example1)
-8. [Gallery.Setting Up the GalleryItem TV](/extras/revo/gallery/gallery.setting-up-the-galleryitem-tv)
+1. [Gallery.Gallery](/extras/gallery/gallery.gallery)
+  1. [Gallery.Gallery.containerTpl](/extras/gallery/gallery.gallery/gallery.gallery.containertpl)
+  2. [Gallery.Gallery.thumbTpl](/extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
+2. [Gallery.GalleryAlbums](/extras/gallery/gallery.galleryalbums)
+  3. [Gallery.GalleryAlbums.containerTpl](/extras/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
+  4. [Gallery.GalleryAlbums.rowTpl](/extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
+3. [Gallery.GalleryItem](/extras/gallery/gallery.galleryitem)
+  5. [Gallery.GalleryItem.albumTpl](/extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
+  6. [Gallery.GalleryItem.GalleryItemPagination](/extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
+  7. [Gallery.GalleryItem.tagTpl](/extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
+  8. [Gallery.GalleryItem.tpl](/extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
+4. [Gallery.Plugins](/extras/gallery/gallery.plugins)
+  9. [Gallery.Plugins.Galleriffic](/extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
+  10. [Gallery.Plugins.Slimbox](/extras/gallery/gallery.plugins/gallery.plugins.slimbox)
+5. [Gallery.Roadmap](/extras/gallery/gallery.roadmap)
+6. [Gallery.Setting Up Your Gallery](/extras/gallery/gallery.setting-up-your-gallery)
+7. [Gallery.Example1](/extras/gallery/gallery.example1)
+8. [Gallery.Setting Up the GalleryItem TV](/extras/gallery/gallery.setting-up-the-galleryitem-tv)

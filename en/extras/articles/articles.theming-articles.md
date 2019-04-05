@@ -38,18 +38,18 @@ You can move these placeholders around to adjust your new template to however yo
 Our article template, or "BlogPostTemplate", has some placeholders as well:
 
 - \[\[+latest\_posts\]\] - This shows the "Latest Posts" widget on the right-hand side of the sample template.
-- \[\[+comments\]\] - The comments, provided by [Quip](/extras/revo/quip "Quip"), for this article, if comments are enabled.
-- \[\[+comments\_count\]\] - a count of the number of comments made on the current article (i.e. on the current post). Relies on [QuipCount](/extras/revo/quip/quip.quipcount "Quip.QuipCount").
-- \[\[+comments\_form\]\] - The reply form, provided by [Quip](/extras/revo/quip "Quip"), if comments are enabled.
+- \[\[+comments\]\] - The comments, provided by [Quip](/extras/quip "Quip"), for this article, if comments are enabled.
+- \[\[+comments\_count\]\] - a count of the number of comments made on the current article (i.e. on the current post). Relies on [QuipCount](/extras/quip/quip.quipcount "Quip.QuipCount").
+- \[\[+comments\_form\]\] - The reply form, provided by [Quip](/extras/quip "Quip"), if comments are enabled.
 - \[\[\*articlestags\]\] - Used with the "notempty" output filter, this can trigger whether or not you show the \[\[+article\_tags\]\] placeholder (note the \* instead of the +)
 - \[\[+article\_tags\]\] - contains a list of all tags that the current article has been tagged with.
 - \[\[\*articles\_container\]\] - The ID of the Container that our Article is in. Note the \* instead of the +
 
-If you are _outside_ the Article Template and you need to display the number of comments that were made on a given post (e.g. if you want to display the number of comments on each post in your list of "Latest Posts"), then you cannot use the \[\[+comments\_count\]\] placeholder. You must instead use [QuipCount](/extras/revo/quip/quip.quipcount "Quip.QuipCount"). Go to the **Components -> Quip** page and take a look at the thread names that Articles gives each post automatically. It follows this format: article-b{page-id-of-blog}-{page-id-of-post}, e.g. **article-b12-37**
+If you are _outside_ the Article Template and you need to display the number of comments that were made on a given post (e.g. if you want to display the number of comments on each post in your list of "Latest Posts"), then you cannot use the \[\[+comments\_count\]\] placeholder. You must instead use [QuipCount](/extras/quip/quip.quipcount "Quip.QuipCount"). Go to the **Components -> Quip** page and take a look at the thread names that Articles gives each post automatically. It follows this format: article-b{page-id-of-blog}-{page-id-of-post}, e.g. **article-b12-37**
 
 ![](/download/attachments/36635030/Quip-Thread-Names.jpg?version=1&modificationDate=1341982338000)
 
-Knowing that, we can then use [QuipCount](/extras/revo/quip/quip.quipcount "Quip.QuipCount") inside of a getResources call to retrieve the number of comments on each post, e.g.
+Knowing that, we can then use [QuipCount](/extras/quip/quip.quipcount "Quip.QuipCount") inside of a getResources call to retrieve the number of comments on each post, e.g.
 
 ``` php 
 [[!QuipCount? &thread=`article-b9-[[+id]]`]]
@@ -65,7 +65,7 @@ Articles also provides some basic Chunks for various display settings for your C
 
 Articles allows simple, MODX-style Templating and easy editing, without breaking upgradability. Theming your blog has never been easier.
 
-1. [Articles.Creating a Blog](/extras/revo/articles/articles.creating-a-blog)
-2. [Articles.Retrieving Articles Outside of Articles](/extras/revo/articles/articles.retrieving-articles-outside-of-articles)
-3. [Articles.Roadmap](/extras/revo/articles/articles.roadmap)
-4. [Articles.Theming Articles](/extras/revo/articles/articles.theming-articles)
+1. [Articles.Creating a Blog](/extras/articles/articles.creating-a-blog)
+2. [Articles.Retrieving Articles Outside of Articles](/extras/articles/articles.retrieving-articles-outside-of-articles)
+3. [Articles.Roadmap](/extras/articles/articles.roadmap)
+4. [Articles.Theming Articles](/extras/articles/articles.theming-articles)

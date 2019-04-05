@@ -35,18 +35,18 @@ Bugs can be filed here: <https://github.com/bezumkin/modx-loginza/issues>
 
 ## Usage
 
-[L](/extras/revo/pagebreaker/pagebreaker.pagebreaker "PageBreaker.PageBreaker")oginza currently comes with one Snippet:
+[L](/extras/pagebreaker/pagebreaker.pagebreaker "PageBreaker.PageBreaker")oginza currently comes with one Snippet:
 
-- [Loginza](/extras/revo/loginza/loginza.loginza "Loginza.Loginza")
+- [Loginza](/extras/loginza/loginza.loginza "Loginza.Loginza")
 
 And two Chunks:
 
-- [tpl.Loginza.login](/extras/revo/loginza/tpl.loginza.login "tpl.Loginza.login")
-- [tpl.Loginza.logout](/extras/revo/loginza/tpl.loginza.logout "tpl.Loginza.logout")
+- [tpl.Loginza.login](/extras/loginza/tpl.loginza.login "tpl.Loginza.login")
+- [tpl.Loginza.logout](/extras/loginza/tpl.loginza.logout "tpl.Loginza.logout")
 
 ## See Also
 
-1. [Loginza.Loginza](/extras/revo/loginza/loginza.loginza)
-2. [tpl.Loginza.login](/extras/revo/loginza/tpl.loginza.login)
-3. [tpl.Loginza.logout](/extras/revo/loginza/tpl.loginza.logout)
-4. [tpl.Loginza.profile](/extras/revo/loginza/tpl.loginza.profile)
+1. [Loginza.Loginza](/extras/loginza/loginza.loginza)
+2. [tpl.Loginza.login](/extras/loginza/tpl.loginza.login)
+3. [tpl.Loginza.logout](/extras/loginza/tpl.loginza.logout)
+4. [tpl.Loginza.profile](/extras/loginza/tpl.loginza.profile)

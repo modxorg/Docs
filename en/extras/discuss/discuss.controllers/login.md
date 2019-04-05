@@ -36,7 +36,7 @@ There are no specific placeholders to use in this controller template.
 ]]
 ```
 
-Please note that the disLoginTpl and disLogoutTpl chunks are currently (1.1.0) not included in the package, but can be any valid [Login chunk](/extras/revo/login/login.login "Login.Login"). In order to properly sync user data to Discuss, you will need to have the preHook.DiscussLogin as prehook and postHook.DiscussLogin as posthook - also when using a third party auth scheme.
+Please note that the disLoginTpl and disLogoutTpl chunks are currently (1.1.0) not included in the package, but can be any valid [Login chunk](/extras/login/login.login "Login.Login"). In order to properly sync user data to Discuss, you will need to have the preHook.DiscussLogin as prehook and postHook.DiscussLogin as posthook - also when using a third party auth scheme.
 
 [Follow these instructions to set up login on your site using sso\_mode (recommended).](http://rtfm.modx.com/display/ADDON/Discuss.Installation#Discuss.Installation-SettingupLogin%2CRegister%26UpdateProfilepageswithDiscuss)
 

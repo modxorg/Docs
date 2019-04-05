@@ -43,7 +43,7 @@ Note: if you try to view a XML sitemap with tens of thousands of nodes in your b
 
  There is 1 chunk processed with GoogleSiteMap:
 
-- [containerTpl](/extras/revo/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl "GoogleSiteMap.GoogleSiteMap.containerTpl") - The Chunk to use for wrapping the results.
+- [containerTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl "GoogleSiteMap.GoogleSiteMap.containerTpl") - The Chunk to use for wrapping the results.
 
 ## Examples
 
@@ -73,8 +73,8 @@ NOTE: the last example would call the legacy Snippet, which will time out if man
 
 ## See Also
 
-1. [GoogleSiteMap.GoogleSiteMap](/extras/revo/googlesitemap/googlesitemap.googlesitemap)
-  1. [GoogleSiteMap.GoogleSiteMap.containerTpl](/extras/revo/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
-  2. [GoogleSiteMap.GoogleSiteMap.itemTpl](/extras/revo/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
+1. [GoogleSiteMap.GoogleSiteMap](/extras/googlesitemap/googlesitemap.googlesitemap)
+  1. [GoogleSiteMap.GoogleSiteMap.containerTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
+  2. [GoogleSiteMap.GoogleSiteMap.itemTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
 2. [GoogleSiteMap.GoogleSiteMapVersion1](https://rtfm.modx.com/extras/revo/googlesitemap/googlesitemapversion1)
-3. [GoogleSiteMap.Roadmap](/extras/revo/googlesitemap/googlesitemap.roadmap)
+3. [GoogleSiteMap.Roadmap](/extras/googlesitemap/googlesitemap.roadmap)

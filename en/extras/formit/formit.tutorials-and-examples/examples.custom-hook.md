@@ -6,7 +6,7 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/formit.examples.custom-hook
 
 Often, a form submission should include various logging information such as the visitor's IP address or date the form was submitted. You could print this information as hidden fields in your form, but in this example, we'll show you how to add those values via a custom hook.
 
-We'll base this off of a generic contact form as outlined in the [Contact Page](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page "FormIt.Examples.Simple Contact Page") example.
+We'll base this off of a generic contact form as outlined in the [Contact Page](/extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page "FormIt.Examples.Simple Contact Page") example.
 
 ## Snippet Tag
 

@@ -35,7 +35,7 @@ There is no unusual placeholders in this chunk.
 
 ## See Also
 
-1. [Loginza.Loginza](/extras/revo/loginza/loginza.loginza)
-2. [tpl.Loginza.login](/extras/revo/loginza/tpl.loginza.login)
-3. [tpl.Loginza.logout](/extras/revo/loginza/tpl.loginza.logout)
-4. [tpl.Loginza.profile](/extras/revo/loginza/tpl.loginza.profile)
+1. [Loginza.Loginza](/extras/loginza/loginza.loginza)
+2. [tpl.Loginza.login](/extras/loginza/tpl.loginza.login)
+3. [tpl.Loginza.logout](/extras/loginza/tpl.loginza.logout)
+4. [tpl.Loginza.profile](/extras/loginza/tpl.loginza.profile)

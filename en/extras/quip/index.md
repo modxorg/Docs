@@ -72,16 +72,16 @@ And then you'll need to add the 'replyResourceId' property to your original Quip
 [[!QuipReply? &thread=`threadNameHere`]]
 ```
 
-Also, Quip provides users with an assistance snippet called [QuipCount](/extras/revo/quip/quip.quipcount "Quip.QuipCount"), which can be used to find thread comment totals or user comment totals.
+Also, Quip provides users with an assistance snippet called [QuipCount](/extras/quip/quip.quipcount "Quip.QuipCount"), which can be used to find thread comment totals or user comment totals.
 
 ## Quip Snippets
 
 Quip comes with 4 separate snippets:
 
-- [Quip](/extras/revo/quip/quip.quip "Quip.Quip") - Displays comments for a thread.
-- [QuipReply](/extras/revo/quip/quip.quipreply "Quip.QuipReply") - Displays the reply form for a thread.
-- [QuipCount](/extras/revo/quip/quip.quipcount "Quip.QuipCount") - Returns the number of comments on a thread.
-- [QuipLatestComments](/extras/revo/quip/quip.quiplatestcomments "Quip.QuipLatestComments") - Displays a list of the latest comments for all threads, a user, or specific thread.
+- [Quip](/extras/quip/quip.quip "Quip.Quip") - Displays comments for a thread.
+- [QuipReply](/extras/quip/quip.quipreply "Quip.QuipReply") - Displays the reply form for a thread.
+- [QuipCount](/extras/quip/quip.quipcount "Quip.QuipCount") - Returns the number of comments on a thread.
+- [QuipLatestComments](/extras/quip/quip.quiplatestcomments "Quip.QuipLatestComments") - Displays a list of the latest comments for all threads, a user, or specific thread.
 
 ### System Settings
 
@@ -128,18 +128,18 @@ Display comments for thread `spamproof123`, with no threading, with reCaptcha su
 
 ## See Also
 
-1. [Quip.Quip](/extras/revo/quip/quip.quip)
-  1. [Quip.Quip.tplComment](/extras/revo/quip/quip.quip/quip.quip.tplcomment)
-  2. [Quip.Quip.tplCommentOptions](/extras/revo/quip/quip.quip/quip.quip.tplcommentoptions)
-  3. [Quip.Quip.tplComments](/extras/revo/quip/quip.quip/quip.quip.tplcomments)
-  4. [Quip.Quip.tplReport](/extras/revo/quip/quip.quip/quip.quip.tplreport)
-2. [Quip.QuipCount](/extras/revo/quip/quip.quipcount)
-3. [Quip.QuipLatestComments](/extras/revo/quip/quip.quiplatestcomments)
-4. [Quip.QuipReply](/extras/revo/quip/quip.quipreply)
-  1. [Quip.QuipReply.tplAddComment](/extras/revo/quip/quip.quipreply/quip.quipreply.tpladdcomment)
-  2. [Quip.QuipReply.tplLoginToComment](/extras/revo/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
-  3. [Quip.QuipReply.tplPreview](/extras/revo/quip/quip.quipreply/quip.quipreply.tplpreview)
-5. [Quip.QuipRss](/extras/revo/quip/quip.quiprss)
-6. [Quip.Roadmap](/extras/revo/quip/quip.roadmap)
-7. [Quip.Upgrading](/extras/revo/quip/quip.upgrading)
-  1. [Quip.Upgrading to 1.0.1](/extras/revo/quip/quip.upgrading/quip.upgrading-to-1.0.1)
+1. [Quip.Quip](/extras/quip/quip.quip)
+  1. [Quip.Quip.tplComment](/extras/quip/quip.quip/quip.quip.tplcomment)
+  2. [Quip.Quip.tplCommentOptions](/extras/quip/quip.quip/quip.quip.tplcommentoptions)
+  3. [Quip.Quip.tplComments](/extras/quip/quip.quip/quip.quip.tplcomments)
+  4. [Quip.Quip.tplReport](/extras/quip/quip.quip/quip.quip.tplreport)
+2. [Quip.QuipCount](/extras/quip/quip.quipcount)
+3. [Quip.QuipLatestComments](/extras/quip/quip.quiplatestcomments)
+4. [Quip.QuipReply](/extras/quip/quip.quipreply)
+  1. [Quip.QuipReply.tplAddComment](/extras/quip/quip.quipreply/quip.quipreply.tpladdcomment)
+  2. [Quip.QuipReply.tplLoginToComment](/extras/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
+  3. [Quip.QuipReply.tplPreview](/extras/quip/quip.quipreply/quip.quipreply.tplpreview)
+5. [Quip.QuipRss](/extras/quip/quip.quiprss)
+6. [Quip.Roadmap](/extras/quip/quip.roadmap)
+7. [Quip.Upgrading](/extras/quip/quip.upgrading)
+  1. [Quip.Upgrading to 1.0.1](/extras/quip/quip.upgrading/quip.upgrading-to-1.0.1)

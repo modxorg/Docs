@@ -24,7 +24,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.create-selectable-and-sortable-attribut
 
 ##  Requirements 
 
- First off we will need to install [MIGX](/extras/revo/migx "MIGX") by Package Management and do some [basic configurations](/extras/revo/migxdb/migxdb.configuration "MIGXdb.Configuration"). 
+ First off we will need to install [MIGX](/extras/migx "MIGX") by Package Management and do some [basic configurations](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration"). 
  Version required: 2.5.2 +
 
 ##  Create the Attributes Builder 

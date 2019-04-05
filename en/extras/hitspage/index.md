@@ -41,7 +41,7 @@ Once the placeholder is...in place, the "HitsPage" TV will be dynamically update
 
 ## Examples
 
-A [getResources](/extras/revo/getresources "getResources") call using the following &tpl will return a list of pages displaying their Titles and the number of hits they've received:
+A [getResources](/extras/getresources "getResources") call using the following &tpl will return a list of pages displaying their Titles and the number of hits they've received:
 
 ``` php 
 <li>[[+pagetitle]] has been viewed [[+tv.HitsPage]] times.</li>

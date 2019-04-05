@@ -144,7 +144,7 @@ So any logged in user can not vote twice.
 
 On the quip's call, try to use this as an example:
 
-``` html 
+``` php 
 <p>Total Rating:</p>
 [[!LexRatingList?
 &name=`threadNameHere`
@@ -167,7 +167,7 @@ On the quip's call, try to use this as an example:
 You can sync the connection between the thread's name (eg:**threadNameHere**) with the **LexRating** inside the other chunk, **lexrating.quipComment**. 
 Basically, it only adds up the **LexRating** call but with the proper properties to make this works:
 
-``` html 
+``` php 
 [[!LexRating?
 &group=`Overall Rating`
 &name=`[[+thread]]`
@@ -195,11 +195,11 @@ You must specify different names for the quip's thread names, remember to change
 the duplicate of **lexrating.quipAddComment**
 
 ``` html 
-        <!-- replace lexrating_groupName's value with what you have as the &group -->
-        <input type="hidden" name="lexrating_groupName" value="Overall Rating" />
+<!-- replace lexrating_groupName's value with what you have as the &group -->
+<input type="hidden" name="lexrating_groupName" value="Overall Rating" />
 
-        <!-- but leave this one untouched because the &name is using the same placeholder [[+thread]] anyway -->
-        <input type="hidden" name="lexrating_objectName" value="[[+thread]]" />
+<!-- but leave this one untouched because the &name is using the same placeholder [[+thread]] anyway -->
+<input type="hidden" name="lexrating_objectName" value="[[+thread]]" />
 ```
 
 the duplicate of **lexrating.quipComment**

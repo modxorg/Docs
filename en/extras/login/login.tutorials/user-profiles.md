@@ -6,11 +6,11 @@ _old_uri: "revo/login/login.tutorials/login.user-profiles"
 
 ## Outline
 
-This tutorial builds the [Basic Setup](/extras/revo/login/login.tutorials/login.request-membership "Login.Request Membership") tutorial (which in turn was based on the [Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup")). Do not attempt this tutorial until you've gotten the other login flows setup and working on your site!
+This tutorial builds the [Basic Setup](/extras/login/login.tutorials/login.request-membership "Login.Request Membership") tutorial (which in turn was based on the [Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup")). Do not attempt this tutorial until you've gotten the other login flows setup and working on your site!
 
 ## Create the Required Pages
 
-As with the [Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup"), we want to make sure we have the required pages in place before we add in all the Snippets. Make sure the following **9** pages exist on your MODx Revo site (1 - 9 are the same as the previous setup, additional pages highlighted in green):
+As with the [Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), we want to make sure we have the required pages in place before we add in all the Snippets. Make sure the following **9** pages exist on your MODx Revo site (1 - 9 are the same as the previous setup, additional pages highlighted in green):
 
 - **Login Page (1)** : the page containing your login form
 - **Forgot Password (2)** : the page where users can go when they forgot their password
@@ -27,7 +27,7 @@ As with the [Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "
 
 ### Update Profile (10)
 
-On this page, we will be featuring the [UpdateProfile](/extras/revo/login/login.updateprofile "Login.UpdateProfile") Snippet. You put the Snippet at the top of the page, and some placeholders throughout the page.
+On this page, we will be featuring the [UpdateProfile](/extras/login/login.updateprofile "Login.UpdateProfile") Snippet. You put the Snippet at the top of the page, and some placeholders throughout the page.
 
 Create the page, and add it to the "Members Only" Resource Group.
 
@@ -62,16 +62,16 @@ For the content, use something like this:
 </div>
 ```
 
-This is a stripped down example from what appears on the [UpdateProfile](/extras/revo/login/login.updateprofile "Login.UpdateProfile") page. There are a couple things to note, just for your MODX education:
+This is a stripped down example from what appears on the [UpdateProfile](/extras/login/login.updateprofile "Login.UpdateProfile") page. There are a couple things to note, just for your MODX education:
 
 1. The example uses MODX lexicon entries to translate text, e.g. . See \[[Internationalization](developing-in-modx/advanced-development/internationalization "Internationalization")\] for how you can translate lexicon entries. E.g. `<label>[[!%login.email]]</label>` instead of `<label>Email</label>`. The tag will translate; hard-coding it will not.
-2. Note that the password field is **never** made available for direct editing. This is for security reasons. Use the [ChangePassword](/extras/revo/login/login.changepassword "Login.ChangePassword") Snippet for that.
+2. Note that the password field is **never** made available for direct editing. This is for security reasons. Use the [ChangePassword](/extras/login/login.changepassword "Login.ChangePassword") Snippet for that.
 
 If you don't want a user to be able to edit a field, simply omit it from the form.
 
 ### View Profile (11)
 
-On this page, we will be featuring the [Profile](/extras/revo/login/login.profile "Login.Profile") Snippet. It's pretty straight forward. You put the Snippet at the top of the page, and some placeholders throughout the page.
+On this page, we will be featuring the [Profile](/extras/login/login.profile "Login.Profile") Snippet. It's pretty straight forward. You put the Snippet at the top of the page, and some placeholders throughout the page.
 
 Create the page, and add it to the "Members Only" Resource Group.
 
@@ -91,7 +91,7 @@ Notice that we're putting a link in there so we can edit the profile. Remember: 
 
 ### Change Password (12)
 
-This is a page where the user can change their password. It happens on a separate page. We're just following along with \[[ChangePassword](/extras/revo/login/login.changepassword "Login.ChangePassword")\] playbook.
+This is a page where the user can change their password. It happens on a separate page. We're just following along with \[[ChangePassword](/extras/login/login.changepassword "Login.ChangePassword")\] playbook.
 
 ``` html 
 <h2>Change Password</h2>
@@ -162,4 +162,4 @@ Try changing your info.
 
 ## Next
 
-If you've got this working, try the next tutorial on [Extended User Profiles](/extras/revo/login/login.tutorials/login.extended-user-profiles "Login.Extended User Profiles"). See also the tutorial on [Using Custom Fields](/extras/revo/login/login.tutorials/login.using-custom-fields "Login.Using Custom Fields")
+If you've got this working, try the next tutorial on [Extended User Profiles](/extras/login/login.tutorials/login.extended-user-profiles "Login.Extended User Profiles"). See also the tutorial on [Using Custom Fields](/extras/login/login.tutorials/login.using-custom-fields "Login.Using Custom Fields")

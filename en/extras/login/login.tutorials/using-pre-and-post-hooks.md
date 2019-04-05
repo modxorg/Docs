@@ -6,7 +6,7 @@ _old_uri: "revo/login/login.tutorials/login.using-pre-and-post-hooks"
 
 ##  Hooking it Up with Login 
 
- The [Register](/extras/revo/login/login.register "Login.Register"), [UpdateProfile](/extras/revo/login/login.updateprofile "Login.UpdateProfile") and [Login](/extras/revo/login/login.login "Login.Login") snippets have properties named 'preHooks' and 'postHooks'. These properties allow you to attach custom functionality to both before and after each one of those Snippets executes its main actions.
+ The [Register](/extras/login/login.register "Login.Register"), [UpdateProfile](/extras/login/login.updateprofile "Login.UpdateProfile") and [Login](/extras/login/login.login "Login.Login") snippets have properties named 'preHooks' and 'postHooks'. These properties allow you to attach custom functionality to both before and after each one of those Snippets executes its main actions.
 
 ##  Using Custom Hooks 
 
@@ -26,18 +26,14 @@ _old_uri: "revo/login/login.tutorials/login.using-pre-and-post-hooks"
  The fields in the form are available in the snippet in the 'fields' via the Hooks API. Example:
 
  ``` php 
-
 $email = $hook->getValue('email');
-
 ```
 
  You can also grab all the values of the form:
 
  ``` php 
-
 $formFields = $hook->getValues();
 $email = $formFields['email'];
-
 ```
 
  Post-Hooks have special fields in addition to the ones passed in the form that can be accessed for each Snippet:
@@ -45,27 +41,23 @@ $email = $formFields['email'];
 ####  Register 
 
  ``` php 
-
 // A reference to the modUser object
 $user = $hook->getValue('register.user');
 // A reference to the modUserProfile object
 $profile = $hook->getValue('register.profile');
 // An array of usergroup names that the User joined
 $usergroups = $hook->getValue('register.usergroups');
-
 ```
 
 ####  UpdateProfile 
 
  ``` php 
-
 // A reference to the modUser object
 $user = $hook->getValue('updateprofile.user');
 // A reference to the modUserProfile object
 $profile = $hook->getValue('updateprofile.profile');
 // A boolean stating if the username was changed
 $changed = $hook->getValue('updateprofile.usernameChanged');
-
 ```
 
 ###  Accessing Snippet Properties 
@@ -73,9 +65,7 @@ $changed = $hook->getValue('updateprofile.usernameChanged');
  You can access properties passed to Snippets like Register and Login, like this:
 
  ``` php 
-
 $properties = $hook->login->controller->config;
-
 ```
 
 ###  Custom preHook return values 
@@ -85,11 +75,9 @@ $properties = $hook->login->controller->config;
  The $hook object is available in the snippet in the 'hook' member of the $scriptProperties array. It can be used to return generic error messages to the preHook from the snippet:
 
  ``` php 
-
 $errorMsg = 'User not found';
 $hook->addError('user',$errorMsg);
 return false;
-
 ```
 
 ##  Examples
@@ -101,7 +89,6 @@ return false;
  We'd create a snippet named 'hookComEmail', and use this code:
 
  ``` php 
-
 $message = 'Hi, a new User signed up: '.$hook->getValue('username')
  . ' with email '.$hook->getValue('email').'.';
 $modx->getService('mail', 'mail.modPHPMailer');
@@ -118,35 +105,32 @@ if (!$modx->mail->send()) {
 $modx->mail->reset();
 /* tell our snippet we're good and can continue */
 return true;
-
 ```
 
  Then we'd adjust our Register snippet call to load the postHook:
 
  ``` php 
-
 [[!Register? &postHooks=`hookComEmail`]]
-
 ```
 
  And we're done!
 
 ##  See Also 
 
-1. [Login.Login](/extras/revo/login/login.login)
-2. [Login.Profile](/extras/revo/login/login.profile)
-3. [Login.UpdateProfile](/extras/revo/login/login.updateprofile)
-4. [Login.Register](/extras/revo/login/login.register)
-  1. [Register.Example Form 1](/extras/revo/login/login.register/register.example-form-1)
-5. [Login.ConfirmRegister](/extras/revo/login/login.confirmregister)
-6. [Login.ForgotPassword](/extras/revo/login/login.forgotpassword)
-7. [Login.ResetPassword](/extras/revo/login/login.resetpassword)
-8. [Login.ChangePassword](/extras/revo/login/login.changepassword)
-9. [Login.Tutorials](/extras/revo/login/login.tutorials)
-  1. [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup)
-  2. [Login.Extended User Profiles](/extras/revo/login/login.tutorials/login.extended-user-profiles)
-  3. [Login.Request Membership](/extras/revo/login/login.tutorials/login.request-membership)
-  4. [Login.User Profiles](/extras/revo/login/login.tutorials/login.user-profiles)
-  5. [Login.Using Custom Fields](/extras/revo/login/login.tutorials/login.using-custom-fields)
-  6. [Login.Using Pre and Post Hooks](/extras/revo/login/login.tutorials/login.using-pre-and-post-hooks)
-10. [Login.Roadmap](/extras/revo/login/login.roadmap)
+1. [Login.Login](/extras/login/login.login)
+2. [Login.Profile](/extras/login/login.profile)
+3. [Login.UpdateProfile](/extras/login/login.updateprofile)
+4. [Login.Register](/extras/login/login.register)
+  1. [Register.Example Form 1](/extras/login/login.register/register.example-form-1)
+5. [Login.ConfirmRegister](/extras/login/login.confirmregister)
+6. [Login.ForgotPassword](/extras/login/login.forgotpassword)
+7. [Login.ResetPassword](/extras/login/login.resetpassword)
+8. [Login.ChangePassword](/extras/login/login.changepassword)
+9. [Login.Tutorials](/extras/login/login.tutorials)
+  1. [Login.Basic Setup](/extras/login/login.tutorials/login.basic-setup)
+  2. [Login.Extended User Profiles](/extras/login/login.tutorials/login.extended-user-profiles)
+  3. [Login.Request Membership](/extras/login/login.tutorials/login.request-membership)
+  4. [Login.User Profiles](/extras/login/login.tutorials/login.user-profiles)
+  5. [Login.Using Custom Fields](/extras/login/login.tutorials/login.using-custom-fields)
+  6. [Login.Using Pre and Post Hooks](/extras/login/login.tutorials/login.using-pre-and-post-hooks)
+10. [Login.Roadmap](/extras/login/login.roadmap)

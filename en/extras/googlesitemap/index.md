@@ -21,7 +21,7 @@ _old_uri: "revo/googlesitemap/"
 
  The legacy GoogleSiteMap Snippet was originally written by Shaun McCormick (splittingred) as a Snippet to display a Google SiteMap, and first released on June 23rd, 2009.
 
- You can view the [roadmap here](/extras/revo/googlesitemap/googlesitemap.roadmap "GoogleSiteMap.Roadmap").
+ You can view the [roadmap here](/extras/googlesitemap/googlesitemap.roadmap "GoogleSiteMap.Roadmap").
 
 ### Download
 
@@ -39,7 +39,7 @@ _old_uri: "revo/googlesitemap/"
 
  GoogleSiteMap comes with two snippets:
 
-- [GoogleSiteMap](/extras/revo/googlesitemap/googlesitemap.googlesitemap "GoogleSiteMap.GoogleSiteMap")
+- [GoogleSiteMap](/extras/googlesitemap/googlesitemap.googlesitemap "GoogleSiteMap.GoogleSiteMap")
 - [GoogleSiteMapVersion1](https://rtfm.modx.com/extras/revo/googlesitemap/googlesitemapversion1)
 
 ## Examples
@@ -60,8 +60,8 @@ _old_uri: "revo/googlesitemap/"
 
 ## See Also
 
-1. [GoogleSiteMap.GoogleSiteMap](/extras/revo/googlesitemap/googlesitemap.googlesitemap)
-  1. [GoogleSiteMap.GoogleSiteMap.containerTpl](/extras/revo/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
-  2. [GoogleSiteMap.GoogleSiteMap.itemTpl](/extras/revo/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
+1. [GoogleSiteMap.GoogleSiteMap](/extras/googlesitemap/googlesitemap.googlesitemap)
+  1. [GoogleSiteMap.GoogleSiteMap.containerTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
+  2. [GoogleSiteMap.GoogleSiteMap.itemTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
 2. [GoogleSiteMapVersion1](https://rtfm.modx.com/extras/revo/googlesitemap/googlesitemapversion1)
-3. [GoogleSiteMap.Roadmap](/extras/revo/googlesitemap/googlesitemap.roadmap)
+3. [GoogleSiteMap.Roadmap](/extras/googlesitemap/googlesitemap.roadmap)

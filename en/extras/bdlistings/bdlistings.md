@@ -10,11 +10,11 @@ The bdListings snippet can be used to present search results, a generic listing 
 
 ### General Properties
 
-| Property Name | Description | Default Value |
-|---------------|-------------|---------------|
-| limit | Maximum number of results, or 0 for all listings. | 0 |
-| offset | Optional offset (for use with pagination, you can use getPage for that). | 0 |
-| sort | JSON string to allow sorting on multiple factors with different directions. Fields you can use in this property and &sortby are: 
+| Property Name | Description                                                                                                                      | Default Value |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| limit         | Maximum number of results, or 0 for all listings.                                                                                | 0             |
+| offset        | Optional offset (for use with pagination, you can use getPage for that).                                                         | 0             |
+| sort          | JSON string to allow sorting on multiple factors with different directions. Fields you can use in this property and &sortby are: |
 - id
 - title
 - description
@@ -50,7 +50,7 @@ The bdListings snippet can be used to present search results, a generic listing 
 | where | Optional JSON encoded limits. |  |
 | acceptUrlParams | \[1|0\] Allow specific url params (see acceptedUrlParams) to override properties you set in the snippet call / default values. | 1 |
 | acceptedUrlParams | Comma separated list of properties that are allowed to override what's set in the snippet call or default values. | query, keyword, target, pricegroup, city, category, subcategory, sort, listings |
-| redirectResource | **Required if using click tracking.** The Resource ID to use as redirect resource. See [bdRedirect](/extras/revo/bdlistings/bdlistings.bdredirect "bdListings.bdRedirect") as well. | 39 |
+| redirectResource | **Required if using click tracking.** The Resource ID to use as redirect resource. See [bdRedirect](/extras/bdlistings/bdlistings.bdredirect "bdListings.bdRedirect") as well. | 39 |
 | rowSeparator | Separator to use between listings. | a line break (\\n) |
 | imageSeparator | Separator to use between images of a listing. | a line break (\\n) |
 | emptyValue | A value (hint: could be a chunk tag) to display when there are no results. | <p>No listings found :(</p> (bdlistings.noresults lexicon key) |
@@ -58,16 +58,16 @@ The bdListings snippet can be used to present search results, a generic listing 
 
 ## Filtering Properties
 
-| Property Name | Description |
-|---------------|-------------|
-| query | Full-text search that uses a loose match against the title and description of a listing. |
-| keyword | Full-text search that uses a loose match against the keyword field. |
-| target | ID of a target as defined in the component to match against. |
-| pricegroup | ID of a price group as defined in the component to match against. |
-| city | Loose match against the city field. |
-| category | Either the category name (exact match) or ID to filter on. As of 1.1.2 this will also search subcategories (name or ID). |
-| subcategory | Either the subcategory name (exact match) or ID to filter on. |
-| listings | If you want to show only a specific set of listings, this can be a comma separated list of their IDs. |
+| Property Name | Description                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| query         | Full-text search that uses a loose match against the title and description of a listing.                                 |
+| keyword       | Full-text search that uses a loose match against the keyword field.                                                      |
+| target        | ID of a target as defined in the component to match against.                                                             |
+| pricegroup    | ID of a price group as defined in the component to match against.                                                        |
+| city          | Loose match against the city field.                                                                                      |
+| category      | Either the category name (exact match) or ID to filter on. As of 1.1.2 this will also search subcategories (name or ID). |
+| subcategory   | Either the subcategory name (exact match) or ID to filter on.                                                            |
+| listings      | If you want to show only a specific set of listings, this can be a comma separated list of their IDs.                    |
 
 Tip: by default each of these are accepted as URL properties (or POST values) so they are great to offer as filtering options to your site visitor.
 
@@ -173,16 +173,16 @@ Placeholders:
 
 In the tplRow chunk there's a googlemap\_static placeholder. That's a simple image showing a map with the listing centered with a marker. The following properties influence its behavior, and I would suggest reading up on the Google Maps Static API if you are looking for more in-depth explanation of what goes on behind the scenes.
 
-| Property Name | Description | Default Value |
-|---------------|-------------|---------------|
-| staticMapWidth | Width of the image to generate. | 150 |
-| staticMapHeight | Height of the image to generate. | 150 |
-| staticMapZoom | Zoom level (1-23, depending on location) | 12 |
-| staticMapType | Type of map to show. | hybrid |
-| staticMapMarkerColor | Color (some textual, otherwise hex) for the marker. | red |
-| staticMapMarkerLabel | Text on the marker. Limited to 1 upper character or number. | A |
-| staticMapMarkerSize | \[tiny|mid|small|medium\] Size of the marker. | medium |
-| staticMapMarkerIcon | Optionally an icon to use instead of the marker. Consult the Google Maps Static API for detailed usage and what you need to encode or not. An example could be: 
+| Property Name        | Description                                                                                                                                                     | Default Value |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| staticMapWidth       | Width of the image to generate.                                                                                                                                 | 150           |
+| staticMapHeight      | Height of the image to generate.                                                                                                                                | 150           |
+| staticMapZoom        | Zoom level (1-23, depending on location)                                                                                                                        | 12            |
+| staticMapType        | Type of map to show.                                                                                                                                            | hybrid        |
+| staticMapMarkerColor | Color (some textual, otherwise hex) for the marker.                                                                                                             | red           |
+| staticMapMarkerLabel | Text on the marker. Limited to 1 upper character or number.                                                                                                     | A             |
+| staticMapMarkerSize  | \[tiny                                                                                                                                                          | mid           | small | medium\] Size of the marker. | medium |
+| staticMapMarkerIcon  | Optionally an icon to use instead of the marker. Consult the Google Maps Static API for detailed usage and what you need to encode or not. An example could be: |
 ``` php 
 http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600
 ``` |  |

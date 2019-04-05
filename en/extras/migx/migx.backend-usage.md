@@ -72,13 +72,13 @@ _old_uri: "revo/migx/migx.backend-usage"
 
  We are now halfway done with our first MIGX TV. We have now created the form for each of the individual data items. The keys for each field are listed below in a table for your viewing convenience. Let's now define the summary view of the data items using Grid Columns in Step 3.2
 
- | Key | Description |
-|-----|-------------|
-| field | this is the name for your placeholder to use with getImageList and a template |
-| caption | this will be the caption in your form for the end user to see |
-| description | this is the description in your form, if empty MIGX will use the description of the inputTV, if any |
-| inputTV | Pick either this or "inputTVtype". If you use this, specify the name of the TV that you would like to use. This is useful if your data type requires any custom functionality (ie, a default value, output options, etc). You can use the same input TV for different fields (ie, if you have an object that has multiple images). |
-| inputTVtype | Pick either this or "inputTV". If you use this, specify the name of the TV type that you would like to use. This is useful if your data type does not require any custom functionality. |
+ | Key         | Description                                                                                                                                                                                                                                                                                                                        |
+ | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | field       | this is the name for your placeholder to use with getImageList and a template                                                                                                                                                                                                                                                      |
+ | caption     | this will be the caption in your form for the end user to see                                                                                                                                                                                                                                                                      |
+ | description | this is the description in your form, if empty MIGX will use the description of the inputTV, if any                                                                                                                                                                                                                                |
+ | inputTV     | Pick either this or "inputTVtype". If you use this, specify the name of the TV that you would like to use. This is useful if your data type requires any custom functionality (ie, a default value, output options, etc). You can use the same input TV for different fields (ie, if you have an object that has multiple images). |
+ | inputTVtype | Pick either this or "inputTV". If you use this, specify the name of the TV type that you would like to use. This is useful if your data type does not require any custom functionality.                                                                                                                                            |
 
 #### Step 2.2 Grid Columns
 
@@ -105,16 +105,16 @@ _old_uri: "revo/migx/migx.backend-usage"
 
  Don't forget to save your Resource after adding or editing MIGX items! 
 
- We're now half done our MIGX experience. Next step: [Data Entry](/extras/revo/migx/migx.data-entry "MIGX.Data-Entry")
+ We're now half done our MIGX experience. Next step: [Data Entry](/extras/migx/migx.data-entry "MIGX.Data-Entry")
 
  The keys for this grid are listed here:
 
- | Key | Description |
-|-----|-------------|
-| header | the caption of the column |
-| sortable | if the columns is sortable by clicking the header |
-| dataIndex | the field, you want to render into this column |
-| renderer | you can use a renderer for each column. For example the included function "this.renderImage". This will render an image-preview in the grid-cell, if you are using an image-TV for this field. |
+ | Key       | Description                                                                                                                                                                                    |
+ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | header    | the caption of the column                                                                                                                                                                      |
+ | sortable  | if the columns is sortable by clicking the header                                                                                                                                              |
+ | dataIndex | the field, you want to render into this column                                                                                                                                                 |
+ | renderer  | you can use a renderer for each column. For example the included function "this.renderImage". This will render an image-preview in the grid-cell, if you are using an image-TV for this field. |
 
 ## Advanced MIGX Configuration
 
@@ -148,10 +148,10 @@ _old_uri: "revo/migx/migx.backend-usage"
 
  here we have an additional outer array with two keys.
 
- | key | description |
-|-----|-------------|
-| formname | give each form an unique name. This is the value, which you will see in the generated dropdown to switch the form |
-| formtabs | this are the formtabs for this form |
+ | key      | description                                                                                                       |
+ | -------- | ----------------------------------------------------------------------------------------------------------------- |
+ | formname | give each form an unique name. This is the value, which you will see in the generated dropdown to switch the form |
+ | formtabs | this are the formtabs for this form                                                                               |
 
  when using multiple forms this will produce an additional field with name 'MIGX\_formname'. 
  You can use the value of this field to switch tpls in the frontend by using &tpl=`@FIELD:MIGX\_formname` and create chunks with the same names as your formnames or you can add an additional field (listbox-TV with name tpl for example) to choose the output-tpl for this item.

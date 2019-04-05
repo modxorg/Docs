@@ -4,7 +4,7 @@ _old_id: "725"
 _old_uri: "revo/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-setting-up-the-payment-methods"
 ---
 
-If you haven't already make sure you have setup the [product listing](/extras/revo/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-listing-the-products "SubscribeMe - Listing the Products") page, and adjusted the optionsResource value.
+If you haven't already make sure you have setup the [product listing](/extras/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-listing-the-products "SubscribeMe - Listing the Products") page, and adjusted the optionsResource value.
 
 ## Minimum Call
 
@@ -16,24 +16,24 @@ If you haven't already make sure you have setup the [product listing](/extras/re
 
 You can use all of the following properties in the smListProducts snippet, all of these are also available from the snippets' Properties tab.
 
-| Property | Description | Default |
-|----------|-------------|---------|
-| debug | Set to 1 or true to output debug data on the screen. | 0 |
-| redirect | When enabled, the snippet will directly redirect to PayPal and not offer the payment options screen. | 0 |
-| tpl | Name of a chunk to use for the output of the snippet | smcheckout.paymentoptions (included as file) |
-| toPlaceholder | The name of a placeholder to assign the output to. The snippet will, when set, output nothing. |  |
-| return\_id | The ID of a Resource to be used for the next checkout step. This will be passed to PayPal. |  |
-| cancel\_id | The ID of a Resource to be displayed when the PayPal authorization was cancelled. |  |
-| fail\_id | The ID of a Resource to be displayed when the PayPal authorization or transaction failed. |  |
+| Property      | Description                                                                                          | Default                                      |
+| ------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| debug         | Set to 1 or true to output debug data on the screen.                                                 | 0                                            |
+| redirect      | When enabled, the snippet will directly redirect to PayPal and not offer the payment options screen. | 0                                            |
+| tpl           | Name of a chunk to use for the output of the snippet                                                 | smcheckout.paymentoptions (included as file) |
+| toPlaceholder | The name of a placeholder to assign the output to. The snippet will, when set, output nothing.       |                                              |
+| return\_id    | The ID of a Resource to be used for the next checkout step. This will be passed to PayPal.           |                                              |
+| cancel\_id    | The ID of a Resource to be displayed when the PayPal authorization was cancelled.                    |                                              |
+| fail\_id      | The ID of a Resource to be displayed when the PayPal authorization or transaction failed.            |                                              |
 
 This snippet also uses the following **system settings** for some parts of its behavior:
 
 Verification is needed for this snippets use of these system settings.
 
-| Key | Description |
-|-----|-------------|
+| Key                           | Description        |
+| ----------------------------- | ------------------ |
 | subscribeme.paypal.cancel\_id | Same as cancel\_id |
-| subscribeme.paypal.fail\_id | Same as fail\_id |
+| subscribeme.paypal.fail\_id   | Same as fail\_id   |
 | subscribeme.paypal.return\_id | Same as return\_id |
 
 ## tpl

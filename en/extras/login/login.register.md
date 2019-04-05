@@ -6,11 +6,11 @@ _old_uri: "revo/login/login.register"
 
 ##  What is Register? 
 
- Register is a registration form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets"). An example call can be found [here](/extras/revo/login/login.register/register.example-form-1 "Register.Example Form 1").
+ Register is a registration form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets"). An example call can be found [here](/extras/login/login.register/register.example-form-1 "Register.Example Form 1").
 
 ##  Usage 
 
- Simply place the Register snippet in the Resource where your registration form is. (A default one called lgnRegisterForm is provided by the [Login](/extras/revo/login "Login") 3PC.) This snippet also requires Activation by the User, so they will get an email in their inbox regarding their signup.
+ Simply place the Register snippet in the Resource where your registration form is. (A default one called lgnRegisterForm is provided by the [Login](/extras/login "Login") 3PC.) This snippet also requires Activation by the User, so they will get an email in their inbox regarding their signup.
 
 ###  Default Properties 
 
@@ -52,7 +52,7 @@ _old_uri: "revo/login/login.register"
 
 ###  Validators 
 
- Validators in Login follow the same syntax as [FormIt Validators](/extras/revo/formit/formit.validators "FormIt.Validators"). You can use the methods described there to use them in your Login-based snippets.
+ Validators in Login follow the same syntax as [FormIt Validators](/extras/formit/formit.validators "FormIt.Validators"). You can use the methods described there to use them in your Login-based snippets.
 
 ###  Custom Validators 
 
@@ -63,7 +63,6 @@ _old_uri: "revo/login/login.register"
   Boxes:<span class="error">[[+error.boxes]]</span>
   <input type="text" name="boxes" id="boxes" value="[[+boxes]]" />
 </label>
-
 ```
 
  And in our Register call:
@@ -73,7 +72,6 @@ _old_uri: "revo/login/login.register"
   &validate=`boxes:equalTo=^123^`
   &customValidators=`equalTo`
 ]]
-
 ```
 
  Now, in our snippet, our code would look like so:
@@ -85,7 +83,6 @@ if ($scriptProperties['value'] !== $scriptProperties['param']) {
 }
 return true;
 ?>
-
 ```
 
  Returning true will make the field valid. Any other return value will be the error message. Snippets get passed the following parameters in the $scriptProperties array:
@@ -111,21 +108,19 @@ return true;
 
 ``` php 
 [[!Register? &usergroups=`Marketing,Research`]]
-
 ```
 
  Alternatively, you can also specify the Role you would like to add the user to in the User Group by adding it after the User Group name with a colon, like so:
 
 ``` php 
 [[!Register? &usergroups=`Marketing:Member,Research:Super User`]]
-
 ```
 
 ###  Sending an Activation Email 
 
  Register by default requires the User to activate their account before logging in. The Snippet creates the modUser object and sets its "active" field to 0. The User then gets an email with a URL to activate their account with. Once the User visits the page, their account is set to "active=1", and they can then login.
 
- To enable this, you will need to create an Activation page by creating a new Resource, and putting the [ConfirmRegister](/extras/revo/login/login.confirmregister "Login.ConfirmRegister") snippet inside of it.
+ To enable this, you will need to create an Activation page by creating a new Resource, and putting the [ConfirmRegister](/extras/login/login.confirmregister "Login.ConfirmRegister") snippet inside of it.
 
  Next, you'll need to specify an email template chunk to use for the email being sent to the user. An example one is provided with the name: lgnActivateEmailTpl.
 
@@ -138,7 +133,6 @@ return true;
    &activationResourceId=`26`
    &submittedResourceId=`325`
 ]]
-
 ```
 
  This would send the User the email specified in the "myActivationEmailTpl" chunk, with the specified subject line, which will direct the User to the Resource 26 to activate their account. It will also, after sending the email, redirect the User to a "Please activate your account page" of sorts at Resource 325.
@@ -159,7 +153,6 @@ return true;
 
 ``` php 
 [[!Register? &submittedResourceId=`23`]]
-
 ```
 
  Will redirect to the Resource with ID 23. It will also append "username" and "email" GET parameters to the URL.
@@ -170,7 +163,6 @@ return true;
 
 ``` php 
 [[!Register? &successMsg=`Thanks for registering!`]]
-
 ```
 
  Will display "Thanks for registering!" in the \[\[+error.message\]\] property in the Resource that your \[\[Register\]\] snippet call is in after the User submits a valid registration form.
@@ -189,20 +181,20 @@ return true;
 
 ##  See Also 
 
-1. [Login.Login](/extras/revo/login/login.login)
-2. [Login.Profile](/extras/revo/login/login.profile)
-3. [Login.UpdateProfile](/extras/revo/login/login.updateprofile)
-4. [Login.Register](/extras/revo/login/login.register)
-  1. [Register.Example Form 1](/extras/revo/login/login.register/register.example-form-1)
-5. [Login.ConfirmRegister](/extras/revo/login/login.confirmregister)
-6. [Login.ForgotPassword](/extras/revo/login/login.forgotpassword)
-7. [Login.ResetPassword](/extras/revo/login/login.resetpassword)
-8. [Login.ChangePassword](/extras/revo/login/login.changepassword)
-9. [Login.Tutorials](/extras/revo/login/login.tutorials)
-  2. [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup)
-  3. [Login.Extended User Profiles](/extras/revo/login/login.tutorials/login.extended-user-profiles)
-  4. [Login.Request Membership](/extras/revo/login/login.tutorials/login.request-membership)
-  5. [Login.User Profiles](/extras/revo/login/login.tutorials/login.user-profiles)
-  6. [Login.Using Custom Fields](/extras/revo/login/login.tutorials/login.using-custom-fields)
-  7. [Login.Using Pre and Post Hooks](/extras/revo/login/login.tutorials/login.using-pre-and-post-hooks)
-10. [Login.Roadmap](/extras/revo/login/login.roadmap)
+1. [Login.Login](/extras/login/login.login)
+2. [Login.Profile](/extras/login/login.profile)
+3. [Login.UpdateProfile](/extras/login/login.updateprofile)
+4. [Login.Register](/extras/login/login.register)
+  1. [Register.Example Form 1](/extras/login/login.register/register.example-form-1)
+5. [Login.ConfirmRegister](/extras/login/login.confirmregister)
+6. [Login.ForgotPassword](/extras/login/login.forgotpassword)
+7. [Login.ResetPassword](/extras/login/login.resetpassword)
+8. [Login.ChangePassword](/extras/login/login.changepassword)
+9. [Login.Tutorials](/extras/login/login.tutorials)
+  2. [Login.Basic Setup](/extras/login/login.tutorials/login.basic-setup)
+  3. [Login.Extended User Profiles](/extras/login/login.tutorials/login.extended-user-profiles)
+  4. [Login.Request Membership](/extras/login/login.tutorials/login.request-membership)
+  5. [Login.User Profiles](/extras/login/login.tutorials/login.user-profiles)
+  6. [Login.Using Custom Fields](/extras/login/login.tutorials/login.using-custom-fields)
+  7. [Login.Using Pre and Post Hooks](/extras/login/login.tutorials/login.using-pre-and-post-hooks)
+10. [Login.Roadmap](/extras/login/login.roadmap)

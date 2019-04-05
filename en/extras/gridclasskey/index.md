@@ -125,7 +125,6 @@ foreach ($users as $user) {
 }
 $output = implode('||', $output);
 return $output;
-
 ```
 
  This will list the users from this specific user group on resource.
@@ -164,7 +163,6 @@ if (is_numeric($input)) {
     }
 }
 return $output;
-
 ```
 
  Then go to the "Container's Settings" tab to define our custom Javascript file.
@@ -255,7 +253,6 @@ Ext.onReady(function() {
         usersCombo.reset();
     });
 });
-
 ```
 
  Now we need to create a connector for the combo, "assets/components/customize-gck/connector.php"
@@ -275,7 +272,6 @@ $modx->request->handleRequest(array(
     'processors_path' => $modx->getOption('core_path') . 'components/customize-gck/processors/',
     'location' => '',
 ));
-
 ```
 
  Now let's add the combo's processor, "core/components/customize-gck/processors/authors/getlist.class.php"
@@ -325,7 +321,6 @@ class AuthorUsersGetListProcessor extends modObjectGetListProcessor {
     }
 }
 return 'AuthorUsersGetListProcessor';
-
 ```
 
  And now ALL are set.
@@ -368,7 +363,6 @@ GridClassKey.combo.Availability = function (config) {
 };
 Ext.extend(GridClassKey.combo.Availability, MODx.combo.Boolean);
 Ext.reg('gridclasskey-combo-availability', GridClassKey.combo.Availability);
-
 ```
 
 On here, this component extends "MODx.combo.Boolean" with obvious values, just for the sake of simplicity.

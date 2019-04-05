@@ -14,7 +14,7 @@ CRCs are created by extending the modResource class in PHP and loading the new c
 
 ### When to Use 
 
-CRCs are useful for creating "embedded applications" into MODX, such as a Blog Post type (such as [modBlog](/extras/revo/articles "Articles")) that lets you place a blog into your already existing MODX site. You can use them when you've got a fair amount of developer experience and you're comfortable with object-oriented code and you understand how your application can fit into the MODX content table along with other resources.
+CRCs are useful for creating "embedded applications" into MODX, such as a Blog Post type (such as [modBlog](/extras/articles "Articles")) that lets you place a blog into your already existing MODX site. You can use them when you've got a fair amount of developer experience and you're comfortable with object-oriented code and you understand how your application can fit into the MODX content table along with other resources.
 
 ### When Not to Use 
 

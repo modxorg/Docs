@@ -32,7 +32,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-doodles-manager-with-help-
 
 ##  Requirements 
 
- To begin with we will need to install [MIGX](/extras/revo/migx "MIGX") using the Package Manager and do some [basic configuration](/extras/revo/migxdb/migxdb.configuration "MIGXdb.Configuration").
+ To begin with we will need to install [MIGX](/extras/migx "MIGX") using the Package Manager and do some [basic configuration](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
 
 ##  Create a new Package and schema-file 
 

@@ -6,7 +6,7 @@ _old_uri: "revo/archivist/archivist.getarchives/archivist.getarchives.tpl"
 
 ## getArchives tpl Chunk
 
-This is the Chunk displayed with the &tpl property on the [Archivist](/extras/revo/archivist/archivist.getarchives "Archivist.getArchives") snippet.
+This is the Chunk displayed with the &tpl property on the [Archivist](/extras/archivist/archivist.getarchives "Archivist.getArchives") snippet.
 
 ## Default Value
 
@@ -28,12 +28,12 @@ This is the Chunk displayed with the &tpl property on the [Archivist](/extras/re
 
 ## Available Placeholders
 
-Any field on a Resource is available to use as a property. The Chunk is similar to how [getResources](/extras/revo/getresources "getResources")'s tpl property works.
+Any field on a Resource is available to use as a property. The Chunk is similar to how [getResources](/extras/getresources "getResources")'s tpl property works.
 
 ## See Also
 
-1. [Archivist.Archivist](/extras/revo/archivist/archivist.archivist)
-  1. [Archivist.Archivist.tpl](/extras/revo/archivist/archivist.archivist/archivist.archivist.tpl)
-2. [Archivist.ArchivistGrouper](/extras/revo/archivist/archivist.archivistgrouper)
-3. [Archivist.getArchives](/extras/revo/archivist/archivist.getarchives)
-  1. [Archivist.getArchives.tpl](/extras/revo/archivist/archivist.getarchives/archivist.getarchives.tpl)
+1. [Archivist.Archivist](/extras/archivist/archivist.archivist)
+  1. [Archivist.Archivist.tpl](/extras/archivist/archivist.archivist/archivist.archivist.tpl)
+2. [Archivist.ArchivistGrouper](/extras/archivist/archivist.archivistgrouper)
+3. [Archivist.getArchives](/extras/archivist/archivist.getarchives)
+  1. [Archivist.getArchives.tpl](/extras/archivist/archivist.getarchives/archivist.getarchives.tpl)

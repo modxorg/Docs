@@ -19,7 +19,7 @@ The board controller builds an overview of threads in a board.
 
 ## Options
 
-If you don't know what the manifest is, please go back to the [Getting Started](/extras/revo/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "board" options array of the manifest.
+If you don't know what the manifest is, please go back to the [Getting Started](/extras/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "board" options array of the manifest.
 
 | Key                              | Default             | Description                                                                                                                                                                                                                                                                                                                                                        |
 | -------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -60,22 +60,22 @@ If you don't know what the manifest is, please go back to the [Getting Started](
 
 This controller template has the following placeholders you can use, on top of the placeholders mentioned in the options above:
 
-| Placeholder    | Description                                                                                                                                          |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-|                | [All fields of the disBoard object.](http://rtfm.modx.com/display/ADDON/Discuss.Database+Model#Discuss.DatabaseModel-disBoardBoards)                 |
-| posts          | The posts in this board.                                                                                                                             |
-| boards         | Sub boards of this forum, if available and enabled (see options above).                                                                              |
-| boards\_toggle | Either "display:none;" or empty depending on the value in boards.                                                                                    |
-| top            | Empty unless set by plugin on OnDiscussRenderBoard event by using $modx->event->output(array('name-of-placeholder' => 'stuff'));                     |
-| bottom         | See "top" placeholder.                                                                                                                               |
-| aboveThreads   | See "top" placeholder.                                                                                                                               |
-| belowBoards    | See "top" placeholder.                                                                                                                               |
-| belowThreads   | See "top" placeholder.                                                                                                                               |
-| pagination     | Pagination for this board.                                                                                                                           |
-| readers        | Users viewing this board                                                                                                                             |
-| moderators     | Moderators for this board                                                                                                                            |
-| trail          | Breadcrumbs for this board                                                                                                                           |
-| actionbuttons  | Actions avialable for the user. See note on actionbuttons on the [Controllers](/extras/revo/discuss/discuss.controllers "Discuss.Controllers") page. |
+| Placeholder    | Description                                                                                                                                     |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+|                | [All fields of the disBoard object.](http://rtfm.modx.com/display/ADDON/Discuss.Database+Model#Discuss.DatabaseModel-disBoardBoards)            |
+| posts          | The posts in this board.                                                                                                                        |
+| boards         | Sub boards of this forum, if available and enabled (see options above).                                                                         |
+| boards\_toggle | Either "display:none;" or empty depending on the value in boards.                                                                               |
+| top            | Empty unless set by plugin on OnDiscussRenderBoard event by using $modx->event->output(array('name-of-placeholder' => 'stuff'));                |
+| bottom         | See "top" placeholder.                                                                                                                          |
+| aboveThreads   | See "top" placeholder.                                                                                                                          |
+| belowBoards    | See "top" placeholder.                                                                                                                          |
+| belowThreads   | See "top" placeholder.                                                                                                                          |
+| pagination     | Pagination for this board.                                                                                                                      |
+| readers        | Users viewing this board                                                                                                                        |
+| moderators     | Moderators for this board                                                                                                                       |
+| trail          | Breadcrumbs for this board                                                                                                                      |
+| actionbuttons  | Actions avialable for the user. See note on actionbuttons on the [Controllers](/extras/discuss/discuss.controllers "Discuss.Controllers") page. |
 
 ``` html 
 [[+top]]

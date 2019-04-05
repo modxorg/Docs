@@ -10,9 +10,9 @@ _old_uri: "revo/migx/migx.tutorials/migx.fancybox-images-with-seperate-placehold
 
  First off, you'll want to go ahead and download and install some Extras that we'll be using for this Setup. The following is a list of used Extras:
 
-- [MIGX](/extras/revo/migx "MIGX") - For creating and fill the boxes in MODX-backend and for listing them on the frontend.
+- [MIGX](/extras/migx "MIGX") - For creating and fill the boxes in MODX-backend and for listing them on the frontend.
 - [TinyMCE](/extras/evo/tinymce "TinyMCE") - Richtext-Editor to edit the content-texts.
-- [phpThumbOf](/extras/revo/phpthumbof "phpThumbOf") - For resizing the images to fit in our columns.
+- [phpThumbOf](/extras/phpthumbof "phpThumbOf") - For resizing the images to fit in our columns.
 
  You'll also download [fancybox](http://fancybox.net/home) and upload the subfolder '/fancybox/' of this package to your modx-installation to /assets/fancybox/
 
@@ -58,10 +58,10 @@ _old_uri: "revo/migx/migx.tutorials/migx.fancybox-images-with-seperate-placehold
 
  We need some Input-Tvs, which we want to use in our Backend-Forms later.
 
-| name | input-type | default-value | purpose |
-|------|------------|---------------|---------|
-| imageTV | image |  | to choose our images by filemanager |
-| placeholderTV | hidden | img | this is the placeholder-prefix, needed for rendering the correct placeholder in the grid |
+| name          | input-type | default-value | purpose                                                                                  |
+| ------------- | ---------- | ------------- | ---------------------------------------------------------------------------------------- |
+| imageTV       | image      |               | to choose our images by filemanager                                                      |
+| placeholderTV | hidden     | img           | this is the placeholder-prefix, needed for rendering the correct placeholder in the grid |
 
  Give these TVs no Template Access. We need them only as input-types for our Forms. 
 

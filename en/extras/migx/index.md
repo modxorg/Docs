@@ -28,7 +28,7 @@ _old_uri: "revo/migx"
 
  The package is highly customizable and allows the developer to define a custom input window for the MIGX TV. From this input window, items can be added, modified, and reordered.
 
- The package also ships with a snippet ( [getImageList](/extras/revo/migx/migx.frontend-usage "MIGX.Frontend-Usage")) that facilitates the easy retrieval of the complex data items from the custom MIGX TV input type.
+ The package also ships with a snippet ( [getImageList](/extras/migx/migx.frontend-usage "MIGX.Frontend-Usage")) that facilitates the easy retrieval of the complex data items from the custom MIGX TV input type.
 
  Please read below for install instructions for MIGX as they differ from typical MODX packages.
 
@@ -84,7 +84,7 @@ _old_uri: "revo/migx"
 
 ##  Upgrading to MIGX 2.0 
 
- MIGX 2.0 requires a new field in the MIGX table within your database to work properly. This procedure will add a new auto\_increment field, MIGX\_id, that is required for the [getImageList](/extras/revo/migx/migx.frontend-usage "MIGX.Frontend-Usage") snippet to work correctly. It is important that you create a snapshot of your database before any database structure changes.
+ MIGX 2.0 requires a new field in the MIGX table within your database to work properly. This procedure will add a new auto\_increment field, MIGX\_id, that is required for the [getImageList](/extras/migx/migx.frontend-usage "MIGX.Frontend-Usage") snippet to work correctly. It is important that you create a snapshot of your database before any database structure changes.
 
 ###  Step 1: Backup your database 
 
@@ -113,16 +113,16 @@ _old_uri: "revo/migx"
 
  Create a new TV and apply it to a template
 
- [View Instructions](/extras/revo/migx/migx.backend-usage "MIGX.Backend-Usage")
+ [View Instructions](/extras/migx/migx.backend-usage "MIGX.Backend-Usage")
 
 ###  Step 3: Data Entry 
 
  Fill in content into your new TV.
 
- [View Instructions](/extras/revo/migx/migx.data-entry "MIGX.Data-Entry")
+ [View Instructions](/extras/migx/migx.data-entry "MIGX.Data-Entry")
 
 ###  Step 4: Frontend Usage 
 
  Use the getImageList snippet to display content from your new TV.
 
- [View Instructions](/extras/revo/migx/migx.frontend-usage "MIGX.Frontend-Usage")
+ [View Instructions](/extras/migx/migx.frontend-usage "MIGX.Frontend-Usage")

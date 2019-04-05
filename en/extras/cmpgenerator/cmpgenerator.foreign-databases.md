@@ -169,5 +169,5 @@ $foreignDB = ForeignConnect::getInstance($database_dsn, $database_user, $databas
 
 ## See Also
 
-1. [CMPGenerator.5 minute example](/extras/revo/cmpgenerator/cmpgenerator.5-minute-example)
-2. [CMPGenerator.Foreign Databases](/extras/revo/cmpgenerator/cmpgenerator.foreign-databases)
+1. [CMPGenerator.5 minute example](/extras/cmpgenerator/cmpgenerator.5-minute-example)
+2. [CMPGenerator.Foreign Databases](/extras/cmpgenerator/cmpgenerator.foreign-databases)

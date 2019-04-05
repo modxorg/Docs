@@ -4,7 +4,7 @@ _old_id: "811"
 _old_uri: "revo/discuss/discuss.chunkmap"
 ---
 
-You may find the [Discss Controller documentation](/extras/revo/discuss/discuss.controllers "Discuss.Controllers") easier to use than the below placeholder coverage.
+You may find the [Discss Controller documentation](/extras/discuss/discuss.controllers "Discuss.Controllers") easier to use than the below placeholder coverage.
 
 ## Map of Chunks to Page Placeholders
 
@@ -196,23 +196,23 @@ These placeholders are used across most pages and always use the same chunks:
 
 ## See Also
 
-1. [Discuss.Installation](/extras/revo/discuss/discuss.installation)
-  1. [Discuss.Installation from Git](/extras/revo/discuss/discuss.installation/discuss.installation-from-git)
-2. [Discuss.Getting Started](/extras/revo/discuss/discuss.getting-started)
-3. [Discuss.Creating a Discuss Theme](/extras/revo/discuss/discuss.creating-a-discuss-theme)
-4. [Discuss.Controllers](/extras/revo/discuss/discuss.controllers)
-  2. [Discuss.Controllers.board](/extras/revo/discuss/discuss.controllers/discuss.controllers.board)
-      1. [Discuss.Controllers.board.xml](/extras/revo/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
-  3. [Discuss.Controllers.home](/extras/revo/discuss/discuss.controllers/discuss.controllers.home)
-  4. [Discuss.Controllers.login](/extras/revo/discuss/discuss.controllers/discuss.controllers.login)
-  5. [Discuss.Controllers.logout](/extras/revo/discuss/discuss.controllers/discuss.controllers.logout)
-  6. [Discuss.Controllers.profile](/extras/revo/discuss/discuss.controllers/discuss.controllers.profile)
-  7. [Discuss.Controllers.register](/extras/revo/discuss/discuss.controllers/discuss.controllers.register)
-  8. [Discuss.Controllers.search](/extras/revo/discuss/discuss.controllers/discuss.controllers.search)
-  9. [Discuss.Controllers.thread](/extras/revo/discuss/discuss.controllers/discuss.controllers.thread)
-5. [Discuss.Database Model](/extras/revo/discuss/discuss.database-model)
-6. [Discuss.Contributing](/extras/revo/discuss/discuss.contributing)
-7. [Discuss.ChunkMap](/extras/revo/discuss/discuss.chunkmap)
-8. [Discuss.Features](/extras/revo/discuss/discuss.features)
-9. [Discuss.Roadmap](/extras/revo/discuss/discuss.roadmap)
-10. [Configuring Sphinx for Search](/extras/revo/discuss/configuring-sphinx-for-search)
+1. [Discuss.Installation](/extras/discuss/discuss.installation)
+  1. [Discuss.Installation from Git](/extras/discuss/discuss.installation/discuss.installation-from-git)
+2. [Discuss.Getting Started](/extras/discuss/discuss.getting-started)
+3. [Discuss.Creating a Discuss Theme](/extras/discuss/discuss.creating-a-discuss-theme)
+4. [Discuss.Controllers](/extras/discuss/discuss.controllers)
+  2. [Discuss.Controllers.board](/extras/discuss/discuss.controllers/discuss.controllers.board)
+      1. [Discuss.Controllers.board.xml](/extras/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
+  3. [Discuss.Controllers.home](/extras/discuss/discuss.controllers/discuss.controllers.home)
+  4. [Discuss.Controllers.login](/extras/discuss/discuss.controllers/discuss.controllers.login)
+  5. [Discuss.Controllers.logout](/extras/discuss/discuss.controllers/discuss.controllers.logout)
+  6. [Discuss.Controllers.profile](/extras/discuss/discuss.controllers/discuss.controllers.profile)
+  7. [Discuss.Controllers.register](/extras/discuss/discuss.controllers/discuss.controllers.register)
+  8. [Discuss.Controllers.search](/extras/discuss/discuss.controllers/discuss.controllers.search)
+  9. [Discuss.Controllers.thread](/extras/discuss/discuss.controllers/discuss.controllers.thread)
+5. [Discuss.Database Model](/extras/discuss/discuss.database-model)
+6. [Discuss.Contributing](/extras/discuss/discuss.contributing)
+7. [Discuss.ChunkMap](/extras/discuss/discuss.chunkmap)
+8. [Discuss.Features](/extras/discuss/discuss.features)
+9. [Discuss.Roadmap](/extras/discuss/discuss.roadmap)
+10. [Configuring Sphinx for Search](/extras/discuss/configuring-sphinx-for-search)

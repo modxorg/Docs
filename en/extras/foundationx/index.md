@@ -31,4 +31,4 @@ When the Snapshot has been successfully injected, you'll receive a Notification.
 
 ## Next Steps... 
 
-[How to Use FoundationX](/extras/revo/foundationx/foundationx.how-to-use-foundationx "FoundationX.How to Use FoundationX")
+[How to Use FoundationX](/extras/foundationx/foundationx.how-to-use-foundationx "FoundationX.How to Use FoundationX")

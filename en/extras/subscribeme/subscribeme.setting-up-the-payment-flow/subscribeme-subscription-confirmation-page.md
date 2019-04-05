@@ -4,7 +4,7 @@ _old_id: "726"
 _old_uri: "revo/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-subscription-confirmation-page"
 ---
 
-Once the user is finished with PayPal they will be returned the confirmation page setup in the [previous step](/extras/revo/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-setting-up-the-payment-methods "SubscribeMe - Setting up the Payment Methods"). You should make sure the return\_id property points to this page.
+Once the user is finished with PayPal they will be returned the confirmation page setup in the [previous step](/extras/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-setting-up-the-payment-methods "SubscribeMe - Setting up the Payment Methods"). You should make sure the return\_id property points to this page.
 
 ## Confirmation Page Code
 
@@ -37,11 +37,11 @@ Once the user is finished with PayPal they will be returned the confirmation pag
 
 The users address and other information will be retrieved from PayPal using the preHook smGetUserDataFromPayPal, and saved to their user account. You should at the very least remove the "Bla, bla, bla, bla.", but if you get carried away, setting the completedResource and errorResource values in the formIt call would be a good idea.
 
-| Property | Description | Default |
-|----------|-------------|---------|
-| completedResource | Redirects the user to a thank you page |  |
-| errorResource | Redirects the user to an error page |  |
+| Property          | Description                            | Default |
+| ----------------- | -------------------------------------- | ------- |
+| completedResource | Redirects the user to a thank you page |         |
+| errorResource     | Redirects the user to an error page    |         |
 
 ## Going Live
 
-You may want to make other adjustments to your website, such as offering a profile management section, but at this stage in the game you should have everything setup and working. If you need it, [how to go live](/extras/revo/subscribeme/subscribeme.configuring-api-credentials,-ipn-and-going-live "SubscribeMe.Configuring API Credentials, IPN and going Live") with SubscribeMe
+You may want to make other adjustments to your website, such as offering a profile management section, but at this stage in the game you should have everything setup and working. If you need it, [how to go live](/extras/subscribeme/subscribeme.configuring-api-credentials,-ipn-and-going-live "SubscribeMe.Configuring API Credentials, IPN and going Live") with SubscribeMe

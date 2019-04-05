@@ -10,7 +10,7 @@ _old_uri: "revo/archivist/archivist.archivist"
 
 ## Usage
 
- Simply place the snippet wherever you would like to display archive listings in, the parents to grab archives from, and a target resource to load the archives using the [getArchives](/extras/revo/archivist/archivist.getarchives "Archivist.getArchives") snippet.
+ Simply place the snippet wherever you would like to display archive listings in, the parents to grab archives from, and a target resource to load the archives using the [getArchives](/extras/archivist/archivist.getarchives "Archivist.getArchives") snippet.
 
  ``` php 
 [[!Archivist? &target=`123` &parents=`4,12,33`]]
@@ -46,7 +46,7 @@ _old_uri: "revo/archivist/archivist.archivist"
 
  There is 1 chunk that is processed in Archivist. Its corresponding Archivist parameter is:
 
-- [tpl](/extras/revo/archivist/archivist.archivist/archivist.archivist.tpl "Archivist.Archivist.tpl") - The Chunk to use for each result displayed.
+- [tpl](/extras/archivist/archivist.archivist/archivist.archivist.tpl "Archivist.Archivist.tpl") - The Chunk to use for each result displayed.
 
 ## Examples
 
@@ -59,8 +59,8 @@ _old_uri: "revo/archivist/archivist.archivist"
 
 ## See Also
 
-1. [Archivist.Archivist](/extras/revo/archivist/archivist.archivist)
-  1. [Archivist.Archivist.tpl](/extras/revo/archivist/archivist.archivist/archivist.archivist.tpl)
-2. [Archivist.ArchivistGrouper](/extras/revo/archivist/archivist.archivistgrouper)
-3. [Archivist.getArchives](/extras/revo/archivist/archivist.getarchives)
-  1. [Archivist.getArchives.tpl](/extras/revo/archivist/archivist.getarchives/archivist.getarchives.tpl)
+1. [Archivist.Archivist](/extras/archivist/archivist.archivist)
+  1. [Archivist.Archivist.tpl](/extras/archivist/archivist.archivist/archivist.archivist.tpl)
+2. [Archivist.ArchivistGrouper](/extras/archivist/archivist.archivistgrouper)
+3. [Archivist.getArchives](/extras/archivist/archivist.getarchives)
+  1. [Archivist.getArchives.tpl](/extras/archivist/archivist.getarchives/archivist.getarchives.tpl)

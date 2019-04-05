@@ -29,7 +29,7 @@ Preparing a CSV for import is fairly easy if you know how to use excel or simila
 
 ## See Also
 
-1. [Eletters.API](/extras/revo/eletters/eletters.api)
-2. [Eletters.FormIt](/extras/revo/eletters/eletters.formit)
-3. [Eletters.Import CSV](/extras/revo/eletters/eletters.import-csv)
-4. [Eletters.Templates](/extras/revo/eletters/eletters.templates)
+1. [Eletters.API](/extras/eletters/eletters.api)
+2. [Eletters.FormIt](/extras/eletters/eletters.formit)
+3. [Eletters.Import CSV](/extras/eletters/eletters.import-csv)
+4. [Eletters.Templates](/extras/eletters/eletters.templates)

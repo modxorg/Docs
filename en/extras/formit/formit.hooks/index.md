@@ -86,12 +86,12 @@ Simply specify the hook in the 'hooks' property in your FormIt snippet call. For
 
  This is a list of the built-in hooks packaged with FormIt:
 
-- [email](/extras/revo/formit/formit.hooks/formit.hooks.email "FormIt.Hooks.email")
-- [redirect](/extras/revo/formit/formit.hooks/formit.hooks.redirect "FormIt.Hooks.redirect")
-- [spam](/extras/revo/formit/formit.hooks/formit.hooks.spam "FormIt.Hooks.spam")
-- [math](/extras/revo/formit/formit.hooks/formit.hooks.math "FormIt.Hooks.math")
-- [recaptcha](/extras/revo/formit/formit.hooks/formit.hooks.recaptcha "FormIt.Hooks.recaptcha")
-- [FormItAutoResponder](/extras/revo/formit/formit.hooks/formit.hooks.formitautoresponder "FormIt.Hooks.FormItAutoResponder")
+- [email](/extras/formit/formit.hooks/formit.hooks.email "FormIt.Hooks.email")
+- [redirect](/extras/formit/formit.hooks/formit.hooks.redirect "FormIt.Hooks.redirect")
+- [spam](/extras/formit/formit.hooks/formit.hooks.spam "FormIt.Hooks.spam")
+- [math](/extras/formit/formit.hooks/formit.hooks.math "FormIt.Hooks.math")
+- [recaptcha](/extras/formit/formit.hooks/formit.hooks.recaptcha "FormIt.Hooks.recaptcha")
+- [FormItAutoResponder](/extras/formit/formit.hooks/formit.hooks.formitautoresponder "FormIt.Hooks.FormItAutoResponder")
 
  The redirect hook (if used) should always be the last hook specified. Remember that the hooks execute in the order they are specified in the property.
 

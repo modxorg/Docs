@@ -126,4 +126,4 @@ Go to components -> EventsX and create some events
 
 ## See Also
 
-1. [EventsX.Examples](/extras/revo/eventsx/eventsx.examples)
+1. [EventsX.Examples](/extras/eventsx/eventsx.examples)

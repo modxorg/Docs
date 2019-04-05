@@ -17,14 +17,14 @@ _old_uri: "revo/rampart"
 
 ## What is Rampart?
 
-Rampart is a robust anti-spam tool for MODX Revolution. It can be used to help prevent spam registrations and postings on your MODX Revolution site, as well as provides DNS blacklisting. It can also currently be integrated into either the [Register](/extras/revo/login/login.register "Login.Register") snippet, [Quip](/extras/revo/quip "Quip") comments, or into any [FormIt](/extras/revo/formit "FormIt")-powered form.
+Rampart is a robust anti-spam tool for MODX Revolution. It can be used to help prevent spam registrations and postings on your MODX Revolution site, as well as provides DNS blacklisting. It can also currently be integrated into either the [Register](/extras/login/login.register "Login.Register") snippet, [Quip](/extras/quip "Quip") comments, or into any [FormIt](/extras/formit "FormIt")-powered form.
 
 ## Requirements
 
 - MODx Revolution 2.0.7 or later
 - PHP5 or later
 - mcrypt PHP extension
-- [Login](/extras/revo/login "Login") Extra, version 1.5.2 or later
+- [Login](/extras/login "Login") Extra, version 1.5.2 or later
 
 ## History
 
@@ -44,9 +44,9 @@ Bugs can be filed here: <http://bugs.modx.com/projects/Rampart> - The Roadmap fo
 
 Rampart currently comes with 3 Snippets:
 
-- [preHook.RampartRegister](/extras/revo/rampart/rampart.prehook.rampartregister "Rampart.preHook.RampartRegister") - Handles spam prevention when using the [Register](/extras/revo/login/login.register "Login.Register") snippet.
-- [hook.RampartFormIt](/extras/revo/rampart/rampart.hook.rampartformit "Rampart.hook.RampartFormIt") - Hook that can be used to integrate Rampart into any FormIt-based form.
-- [hook.RampartQuip](/extras/revo/rampart/rampart.hook.rampartquip "Rampart.hook.RampartQuip") - Hook that can be used to integrate Rampart into Quip comments.
+- [preHook.RampartRegister](/extras/rampart/rampart.prehook.rampartregister "Rampart.preHook.RampartRegister") - Handles spam prevention when using the [Register](/extras/login/login.register "Login.Register") snippet.
+- [hook.RampartFormIt](/extras/rampart/rampart.hook.rampartformit "Rampart.hook.RampartFormIt") - Hook that can be used to integrate Rampart into any FormIt-based form.
+- [hook.RampartQuip](/extras/rampart/rampart.hook.rampartquip "Rampart.hook.RampartQuip") - Hook that can be used to integrate Rampart into Quip comments.
 
 It also comes with a Custom Manager Page, where you can manage your banlist, moderate flagged users, and view attempts your bans caught.
 
@@ -61,6 +61,6 @@ You can enable the HoneyPot integration by setting the appropriate values for th
 
 ## See Also
 
-1. [Rampart.hook.RampartFormIt](/extras/revo/rampart/rampart.hook.rampartformit)
-2. [Rampart.hook.RampartQuip](/extras/revo/rampart/rampart.hook.rampartquip)
-3. [Rampart.preHook.RampartRegister](/extras/revo/rampart/rampart.prehook.rampartregister)
+1. [Rampart.hook.RampartFormIt](/extras/rampart/rampart.hook.rampartformit)
+2. [Rampart.hook.RampartQuip](/extras/rampart/rampart.hook.rampartquip)
+3. [Rampart.preHook.RampartRegister](/extras/rampart/rampart.prehook.rampartregister)

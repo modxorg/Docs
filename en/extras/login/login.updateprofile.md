@@ -21,21 +21,21 @@ To use the profile editing functionality, first create the Resource the
 
 UpdateProfile comes with some default properties you can override. They are:
 
-| Name                  | Description                                                                                                                                                                                                                                                                                            | Default           |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- |
-| submitVar             | The name of the form submit button that triggers the submission.                                                                                                                                                                                                                                       | login-updprof-btn |
-| validate              | A comma-separated list of fields to validate, with each field name as name:validator (eg: username:required,email:required). [Validators](/extras/revo/formit/formit.validators "FormIt.Validators") can also be chained, like email:email:required. This property can be specified on multiple lines. |                   |
-| redirectToLogin       | If true, will redirect non-logged-in users that visit the page with the snippet to the Unauthorized Page.                                                                                                                                                                                              | 1                 |
-| reloadOnSuccess       | If true, the page will redirect to itself with a GET parameter to prevent double-postbacks. If false, it will simply set a success placeholder.                                                                                                                                                        | 1                 |
-| emailField            | The field name for the email field in the form.                                                                                                                                                                                                                                                        | email             |
-| preHooks              | A comma-separated list of 'hooks', or Snippets, that will be executed before the user's profile is updated but after validation. Also can specify 'captcha' as a hook.                                                                                                                                 |                   |
-| postHooks             | A comma-separated list of 'hooks', or Snippets, that will be executed after the user's profile is updated.                                                                                                                                                                                             |                   |
-| syncUsername          | If set to a column name in the Profile, UpdateProfile will attempt to sync the username to this field after a successful save.                                                                                                                                                                         |                   |
-| allowedFields         | A comma-separated list of fields to allow when updating the user's profile. (Leave empty to allow all user profile fields to be updated.)                                                                                                                                                              |                   |
-| useExtended           | Whether or not to set any extra fields in the form to the Profiles extended field. This can be useful for storing extra user fields.                                                                                                                                                                   | 1                 |
-| allowedExtendedFields | A comma-separated list of extended fields to allow in the form, when useExtended is enabled. (Leave empty to allow any extra fields to be set.)                                                                                                                                                        |                   |
-| excludeExtended       | A comma-separated list of fields to exclude from setting as extended fields.                                                                                                                                                                                                                           |                   |
-| placeholderPrefix     | The prefix to use for all placeholders set by this snippet.                                                                                                                                                                                                                                            |                   |
+| Name                  | Description                                                                                                                                                                                                                                                                                       | Default           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| submitVar             | The name of the form submit button that triggers the submission.                                                                                                                                                                                                                                  | login-updprof-btn |
+| validate              | A comma-separated list of fields to validate, with each field name as name:validator (eg: username:required,email:required). [Validators](/extras/formit/formit.validators "FormIt.Validators") can also be chained, like email:email:required. This property can be specified on multiple lines. |                   |
+| redirectToLogin       | If true, will redirect non-logged-in users that visit the page with the snippet to the Unauthorized Page.                                                                                                                                                                                         | 1                 |
+| reloadOnSuccess       | If true, the page will redirect to itself with a GET parameter to prevent double-postbacks. If false, it will simply set a success placeholder.                                                                                                                                                   | 1                 |
+| emailField            | The field name for the email field in the form.                                                                                                                                                                                                                                                   | email             |
+| preHooks              | A comma-separated list of 'hooks', or Snippets, that will be executed before the user's profile is updated but after validation. Also can specify 'captcha' as a hook.                                                                                                                            |                   |
+| postHooks             | A comma-separated list of 'hooks', or Snippets, that will be executed after the user's profile is updated.                                                                                                                                                                                        |                   |
+| syncUsername          | If set to a column name in the Profile, UpdateProfile will attempt to sync the username to this field after a successful save.                                                                                                                                                                    |                   |
+| allowedFields         | A comma-separated list of fields to allow when updating the user's profile. (Leave empty to allow all user profile fields to be updated.)                                                                                                                                                         |                   |
+| useExtended           | Whether or not to set any extra fields in the form to the Profiles extended field. This can be useful for storing extra user fields.                                                                                                                                                              | 1                 |
+| allowedExtendedFields | A comma-separated list of extended fields to allow in the form, when useExtended is enabled. (Leave empty to allow any extra fields to be set.)                                                                                                                                                   |                   |
+| excludeExtended       | A comma-separated list of fields to exclude from setting as extended fields.                                                                                                                                                                                                                      |                   |
+| placeholderPrefix     | The prefix to use for all placeholders set by this snippet.                                                                                                                                                                                                                                       |                   |
 
 ### The UpdateProfile Form
 
@@ -115,20 +115,20 @@ Then, below this, add in the following HTML (removing any fields you'd like) to 
 
 ## See Also
 
-1. [Login.Login](/extras/revo/login/login.login)
-2. [Login.Profile](/extras/revo/login/login.profile)
-3. [Login.UpdateProfile](/extras/revo/login/login.updateprofile)
-4. [Login.Register](/extras/revo/login/login.register)
-  1. [Register.Example Form 1](/extras/revo/login/login.register/register.example-form-1)
-5. [Login.ConfirmRegister](/extras/revo/login/login.confirmregister)
-6. [Login.ForgotPassword](/extras/revo/login/login.forgotpassword)
-7. [Login.ResetPassword](/extras/revo/login/login.resetpassword)
-8. [Login.ChangePassword](/extras/revo/login/login.changepassword)
-9. [Login.Tutorials](/extras/revo/login/login.tutorials)
-  2. [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup)
-  3. [Login.Extended User Profiles](/extras/revo/login/login.tutorials/login.extended-user-profiles)
-  4. [Login.Request Membership](/extras/revo/login/login.tutorials/login.request-membership)
-  5. [Login.User Profiles](/extras/revo/login/login.tutorials/login.user-profiles)
-  6. [Login.Using Custom Fields](/extras/revo/login/login.tutorials/login.using-custom-fields)
-  7. [Login.Using Pre and Post Hooks](/extras/revo/login/login.tutorials/login.using-pre-and-post-hooks)
-10. [Login.Roadmap](/extras/revo/login/login.roadmap)
+1. [Login.Login](/extras/login/login.login)
+2. [Login.Profile](/extras/login/login.profile)
+3. [Login.UpdateProfile](/extras/login/login.updateprofile)
+4. [Login.Register](/extras/login/login.register)
+  1. [Register.Example Form 1](/extras/login/login.register/register.example-form-1)
+5. [Login.ConfirmRegister](/extras/login/login.confirmregister)
+6. [Login.ForgotPassword](/extras/login/login.forgotpassword)
+7. [Login.ResetPassword](/extras/login/login.resetpassword)
+8. [Login.ChangePassword](/extras/login/login.changepassword)
+9. [Login.Tutorials](/extras/login/login.tutorials)
+  2. [Login.Basic Setup](/extras/login/login.tutorials/login.basic-setup)
+  3. [Login.Extended User Profiles](/extras/login/login.tutorials/login.extended-user-profiles)
+  4. [Login.Request Membership](/extras/login/login.tutorials/login.request-membership)
+  5. [Login.User Profiles](/extras/login/login.tutorials/login.user-profiles)
+  6. [Login.Using Custom Fields](/extras/login/login.tutorials/login.using-custom-fields)
+  7. [Login.Using Pre and Post Hooks](/extras/login/login.tutorials/login.using-pre-and-post-hooks)
+10. [Login.Roadmap](/extras/login/login.roadmap)

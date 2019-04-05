@@ -6,9 +6,9 @@ _old_uri: "revo/breadcrumb/"
 
 ## What is BreadCrumb?
 
- Breadcrumb is a snippet for MODx Revolution, inspired by the [Breadcrumbs](/extras/revo/breadcrumbs "Breadcrumbs") snippet.
+ Breadcrumb is a snippet for MODx Revolution, inspired by the [Breadcrumbs](/extras/breadcrumbs "Breadcrumbs") snippet.
 
- As the original [Breadcrumbs](/extras/revo/breadcrumbs "Breadcrumbs"), this snippet will create a breadcrumb navigation (no kidding !! ) but also add some new features like template properties or specific resource ID property.
+ As the original [Breadcrumbs](/extras/breadcrumbs "Breadcrumbs"), this snippet will create a breadcrumb navigation (no kidding !! ) but also add some new features like template properties or specific resource ID property.
 
 ### Requirements
 
@@ -78,14 +78,14 @@ _old_uri: "revo/breadcrumb/"
 
  @CODE no longer supported since 1.4.0-pl. Use @INLINE instead.
 
- | Name             | Description                                                                                                                                | Default                                                                                                          | Version     |
- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- | ----------- |
- | containerTpl     | Name of the chunk containing the template for the container of the breadcrumb. It also can be file path (@FILE ) or chunk code (@INLINE ). | cf [BreadCrumb.containerTpl](http://rtfm.modx.com/extras/revo/breadcrumb/breadcrumb.containertpl)                |             |
- | homeCrumbTpl     | Name of the chunk containing the template for the current crumb. It also can be file path (@FILE ) or chunk code (@INLINE ).               | cf [BreadCrumb.homeCrumbTpl](http://rtfm.modx.com/extras/revo/breadcrumb/breadcrumb.homecrumbtpl)                | 1.4.0-pl    |
- | currentCrumbTpl  | Name of the chunk containing the template for the current crumb. It also can be file path (@FILE ) or chunk code (@INLINE ).               | cf [BreadCrumb.currentCrumbTpl](/extras/revo/breadcrumb/breadcrumb.currentcrumbtpl "BreadCrumb.currentCrumbTpl") |             |
- | linkCrumbTpl     | Name of the chunk containing the template for the default crumb. It also can be file path (@FILE ) or chunk code (@INLINE ).               | cf [BreadCrumb.linkCrumbTpl](http://rtfm.modx.com/extras/revo/breadcrumb/breadcrumb.linkcrumbtpl)                |             |
- | categoryCrumbTpl | Name of the chunk containing the template for categories crumbs. Can be file (@FILE ) or code (@INLINE ).                                  | cf [BreadCrumb.categoryCrumbTpl](http://rtfm.modx.com/extras/revo/breadcrumb/breadcrumb.categorycrumbtpl)        | 1.3.2-beta1 |
- | maxCrumbTpl      | Name of the chunk containing the template for the max delimiter crumb. It also can be file path (@FILE ) or chunk code (@INLINE ).         | cf [BreadCrumb.maxCrumbTpl](/extras/revo/breadcrumb/breadcrumb.maxcrumbtpl "BreadCrumb.maxCrumbTpl")             |             |
+ | Name             | Description                                                                                                                                | Default                                                                                                     | Version     |
+ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ----------- |
+ | containerTpl     | Name of the chunk containing the template for the container of the breadcrumb. It also can be file path (@FILE ) or chunk code (@INLINE ). | cf [BreadCrumb.containerTpl](http://rtfm.modx.com/extras/revo/breadcrumb/breadcrumb.containertpl)           |             |
+ | homeCrumbTpl     | Name of the chunk containing the template for the current crumb. It also can be file path (@FILE ) or chunk code (@INLINE ).               | cf [BreadCrumb.homeCrumbTpl](http://rtfm.modx.com/extras/revo/breadcrumb/breadcrumb.homecrumbtpl)           | 1.4.0-pl    |
+ | currentCrumbTpl  | Name of the chunk containing the template for the current crumb. It also can be file path (@FILE ) or chunk code (@INLINE ).               | cf [BreadCrumb.currentCrumbTpl](/extras/breadcrumb/breadcrumb.currentcrumbtpl "BreadCrumb.currentCrumbTpl") |             |
+ | linkCrumbTpl     | Name of the chunk containing the template for the default crumb. It also can be file path (@FILE ) or chunk code (@INLINE ).               | cf [BreadCrumb.linkCrumbTpl](http://rtfm.modx.com/extras/revo/breadcrumb/breadcrumb.linkcrumbtpl)           |             |
+ | categoryCrumbTpl | Name of the chunk containing the template for categories crumbs. Can be file (@FILE ) or code (@INLINE ).                                  | cf [BreadCrumb.categoryCrumbTpl](http://rtfm.modx.com/extras/revo/breadcrumb/breadcrumb.categorycrumbtpl)   | 1.3.2-beta1 |
+ | maxCrumbTpl      | Name of the chunk containing the template for the max delimiter crumb. It also can be file path (@FILE ) or chunk code (@INLINE ).         | cf [BreadCrumb.maxCrumbTpl](/extras/breadcrumb/breadcrumb.maxcrumbtpl "BreadCrumb.maxCrumbTpl")             |             |
 
 ### Examples
 
@@ -142,7 +142,7 @@ _old_uri: "revo/breadcrumb/"
 
 ## Migrate from Breadcrumbs snippet
 
- Once again, BreadCrumb was inspired by the [Breadcrumbs](/extras/revo/breadcrumbs "Breadcrumbs") snippet. Some of [Breadcrumbs](/extras/revo/breadcrumbs "Breadcrumbs") properties have been removed but you still can do the same things with BreadCrumb ... just in a different way.
+ Once again, BreadCrumb was inspired by the [Breadcrumbs](/extras/breadcrumbs "Breadcrumbs") snippet. Some of [Breadcrumbs](/extras/breadcrumbs "Breadcrumbs") properties have been removed but you still can do the same things with BreadCrumb ... just in a different way.
 
  | Removed Breadcrumb properties | Previous Breadcrumbs usage | New BreadCrumb usage |
  | ----------------------------- | -------------------------- | -------------------- |

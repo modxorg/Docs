@@ -66,7 +66,6 @@ _old_uri: "revo/lingua"
 ##### lingua.selector.wrapper
 
  ``` php 
-
 <div class="container">
         <div class="btn-group">
                 <button
@@ -79,19 +78,16 @@ _old_uri: "revo/lingua"
                 </ul>
         </div>
 </div>
-
 ```
 
 ##### lingua.selector.item
 
  ``` php 
-
 [[+lingua.cultureKey:is=`[[+lingua.lang_code]]`:then=``:else=`<li>
         <a href="[[+lingua.url]]" title="[[+lingua.local_name]]">
                 <img src="[[+lingua.flag]]" alt=""/> [[+lingua.local_name]]
         </a>
 </li>`]]
-
 ```
 
  On this chunk, the default content tries to ignore the language of the current language using Output Filter.
@@ -102,17 +98,13 @@ _old_uri: "revo/lingua"
  This snippet only contains
 
  ``` php 
-
 return $modx->cultureKey;
-
 ```
 
  No! It's different to
 
  ``` php 
-
 return $modx->getOption('cultureKey');
-
 ```
 
  This snippet is the most important part to grab the language's lexicons.
@@ -120,17 +112,13 @@ return $modx->getOption('cultureKey');
  **Version 1: Please notice the exclamation mark in front of the %login. The lexicon must be +UN+CACHED.**
 
  ``` php 
-
 [[!%login? &namespace=`Login` &language=`[[!lingua.cultureKey]]`]]
-
 ```
 
  **Version 2:** Lingua has its own cache folder. All translated pages are stored on different files, so everything can be cached.
 
  ``` php 
-
 [[%login? &namespace=`Login` &language=`[[lingua.cultureKey]]`]]
-
 ```
 
 ### lingua.getField
@@ -148,9 +136,7 @@ return $modx->getOption('cultureKey');
 ##### Examples
 
  ``` php 
-
 Created on: [[*createdon:date=`[[!lingua.getField? &field=`date_format_lite`]]`]]
-
 ```
 
 ### lingua.getValue
@@ -168,8 +154,8 @@ Created on: [[*createdon:date=`[[!lingua.getField? &field=`date_format_lite`]]`]
 
 ##### Examples
 
- On your wayfinder's rowTpl, change the placeholder, like this: ``` php 
-
+ On your wayfinder's rowTpl, change the placeholder, like this: 
+ ``` php 
 <li[[+wf.id]][[+wf.classes]]>
     <a href="[[+wf.link]]" title="[[+wf.title]]" [[+wf.attributes]]>
         <-- [[-+wf.linktext]] -->
@@ -178,7 +164,6 @@ Created on: [[*createdon:date=`[[!lingua.getField? &field=`date_format_lite`]]`]
     </a>
     [[+wf.wrapper]]
 </li>
-
 ```
 
 ## Version 2.0.0+

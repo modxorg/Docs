@@ -91,7 +91,7 @@ ini_set('apc.cache_by_default', 0);
 
 ##  Integration of service 
 
-1. [HybridAuth.Integrating Facebook](/extras/revo/hybridauth/hybridauth.integrating-facebook)
-2. [HybridAuth.Integrating Google](/extras/revo/hybridauth/hybridauth.integrating-google)
-3. [HybridAuth.Integrating Twitter](/extras/revo/hybridauth/hybridauth.integrating-twitter)
-4. [HybridAuth.Integrating VK.com](/extras/revo/hybridauth/hybridauth.integrating-vk.com)
+1. [HybridAuth.Integrating Facebook](/extras/hybridauth/hybridauth.integrating-facebook)
+2. [HybridAuth.Integrating Google](/extras/hybridauth/hybridauth.integrating-google)
+3. [HybridAuth.Integrating Twitter](/extras/hybridauth/hybridauth.integrating-twitter)
+4. [HybridAuth.Integrating VK.com](/extras/hybridauth/hybridauth.integrating-vk.com)

@@ -247,7 +247,7 @@ Display a message when no results found (equivalent of "empty" parameter in Ditt
 
 ## Using getPage for Pagination
 
-When combined with [getPage](/extras/revo/getpage "getPage"), renderResources allows you to do powerful and flexible pagination on your pages.
+When combined with [getPage](/extras/getpage "getPage"), renderResources allows you to do powerful and flexible pagination on your pages.
 
 ### Examples
 
@@ -288,5 +288,5 @@ and the chunk blogListPost:
 
 ## See Also
 
-If you want to render properties of Resources rather than the complete output, use [getResources](/extras/revo/getresources "getResources"). 
-If you only need to get a single field from a foreign resource, try using [getResourceField](/extras/revo/getresourcefield "getResourceField").
+If you want to render properties of Resources rather than the complete output, use [getResources](/extras/getresources "getResources"). 
+If you only need to get a single field from a foreign resource, try using [getResourceField](/extras/getresourcefield "getResourceField").

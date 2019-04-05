@@ -40,7 +40,7 @@ Display the first 10 User Groups, sorted by name:
 
 The only chunk used in the PeopleGroups snippet is the &tpl property, which uses the default of pplUserGroup.
 
-- [tpl](/extras/revo/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl "Peoples.PeopleGroups.tpl")
+- [tpl](/extras/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl "Peoples.PeopleGroups.tpl")
 
 ## Examples
 
@@ -64,10 +64,10 @@ Show the first 10 User Groups for the User with ID 15:
 
 ## See Also
 
-1. [Peoples.PeopleGroup](/extras/revo/peoples/peoples.peoplegroup)
-  1. [Peoples.PeopleGroup.userTpl](/extras/revo/peoples/peoples.peoplegroup/peoples.peoplegroup.usertpl)
-2. [Peoples.PeopleGroups](/extras/revo/peoples/peoples.peoplegroups)
-  1. [Peoples.PeopleGroups.tpl](/extras/revo/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
-3. [Peoples.Peoples](/extras/revo/peoples/peoples.peoples)
-  1. [Peoples.Peoples.tpl](/extras/revo/peoples/peoples.peoples/peoples.peoples.tpl)
-4. [Peoples.Roadmap](/extras/revo/peoples/peoples.roadmap)
+1. [Peoples.PeopleGroup](/extras/peoples/peoples.peoplegroup)
+  1. [Peoples.PeopleGroup.userTpl](/extras/peoples/peoples.peoplegroup/peoples.peoplegroup.usertpl)
+2. [Peoples.PeopleGroups](/extras/peoples/peoples.peoplegroups)
+  1. [Peoples.PeopleGroups.tpl](/extras/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
+3. [Peoples.Peoples](/extras/peoples/peoples.peoples)
+  1. [Peoples.Peoples.tpl](/extras/peoples/peoples.peoples/peoples.peoples.tpl)
+4. [Peoples.Roadmap](/extras/peoples/peoples.roadmap)

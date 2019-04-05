@@ -38,9 +38,9 @@ Register user to group Users, do not update his profile on next logins and remem
 | rememberme       | Remember user? Depends on [session\_cookie\_lifetime](administering-your-site/settings/system-settings/session_cookie_lifetime "session_cookie_lifetime") | 1                                                                                                             |
 | groups           | Comma-separated list of existing groups for registering users.                                                                                            | none                                                                                                          |
 |                  |                                                                                                                                                           |                                                                                                               |
-| loginTpl         | Chunk for not authenticated users with link to login.                                                                                                     | [tpl.Loginza.login](/extras/revo/loginza/tpl.loginza.login "tpl.Loginza.login")                               |
-| logoutTpl        | Chunk for authenticated user with link to logout.                                                                                                         | [tpl.Loginza.logout](/extras/revo/loginza/tpl.loginza.logout "tpl.Loginza.logout")                            |
-| profileTpl       | Chunk for display and edit user profile                                                                                                                   | [tpl.Loginza.profile](/extras/revo/loginza/tpl.loginza.profile "tpl.Loginza.profile")                         |
+| loginTpl         | Chunk for not authenticated users with link to login.                                                                                                     | [tpl.Loginza.login](/extras/loginza/tpl.loginza.login "tpl.Loginza.login")                                    |
+| logoutTpl        | Chunk for authenticated user with link to logout.                                                                                                         | [tpl.Loginza.logout](/extras/loginza/tpl.loginza.logout "tpl.Loginza.logout")                                 |
+| profileTpl       | Chunk for display and edit user profile                                                                                                                   | [tpl.Loginza.profile](/extras/loginza/tpl.loginza.profile "tpl.Loginza.profile")                              |
 |                  |                                                                                                                                                           |                                                                                                               |
 | saltName         | Any string to complicate md5 hash of username md(identity + salt). Without it username will be simple md5 hash of its identity from remote service.       | none                                                                                                          |
 | saltPass         | Any string to complicate md5 hash of pass. Without it pass will be simple md5 hash of its identity from remote service.                                   | none                                                                                                          |
@@ -59,7 +59,7 @@ Here is this [snippet on Github](https://github.com/bezumkin/modx-loginza/blob/m
 
 ## See Also
 
-1. [Loginza.Loginza](/extras/revo/loginza/loginza.loginza)
-2. [tpl.Loginza.login](/extras/revo/loginza/tpl.loginza.login)
-3. [tpl.Loginza.logout](/extras/revo/loginza/tpl.loginza.logout)
-4. [tpl.Loginza.profile](/extras/revo/loginza/tpl.loginza.profile)
+1. [Loginza.Loginza](/extras/loginza/loginza.loginza)
+2. [tpl.Loginza.login](/extras/loginza/tpl.loginza.login)
+3. [tpl.Loginza.logout](/extras/loginza/tpl.loginza.logout)
+4. [tpl.Loginza.profile](/extras/loginza/tpl.loginza.profile)

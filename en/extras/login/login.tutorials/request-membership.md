@@ -6,7 +6,7 @@ _old_uri: "revo/login/login.tutorials/login.request-membership"
 
 ## Outline
 
-If you've followed the tutorial for the [Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup"), then it's time to try for a more thorough implementation of the Login Snippet where _users can apply for site membership themselves_. Once you've completed this tutorial, visitors to your site will be able to request membership by themselves and you will not have to add users manually.
+If you've followed the tutorial for the [Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), then it's time to try for a more thorough implementation of the Login Snippet where _users can apply for site membership themselves_. Once you've completed this tutorial, visitors to your site will be able to request membership by themselves and you will not have to add users manually.
 
 Do not try to use extended user fields yet. First get the registration process working using the standard user fields. See the next tutorial for setting up user profiles and using extended user fields.
 
@@ -32,13 +32,11 @@ The steps go something like this:
 
 ![](/download/attachments/35094671/The+FoxyCart+Forum+-+Sign+Out.jpg?version=1&modificationDate=1303606763000)
 
-Make sense? It's pretty similar to what we did before in the [Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup"), but there are a few extra things going on, so we need a few extra pages. Most importantly, we'll need to integrate both the [Register](/extras/revo/login/login.register "Login.Register") and the [Personalize](http://modx.com/extras/package/personalize) Snippets, and we'll need to shuffle around a couple other components from the [Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup") tutorial.
+Make sense? It's pretty similar to what we did before in the [Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), but there are a few extra things going on, so we need a few extra pages. Most importantly, we'll need to integrate both the [Register](/extras/login/login.register "Login.Register") and the [Personalize](http://modx.com/extras/package/personalize) Snippets, and we'll need to shuffle around a couple other components from the [Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup") tutorial.
 
 This tutorial makes use of related and complimentary Snippets!
 
 Let's get started!
-
-- - - - - -
 
 ## Download the Necessary Snippets
 
@@ -47,8 +45,6 @@ We're augmenting the functionality offered by the default Login snippet, so make
 ![](/download/attachments/35094671/Personalize+Snippet.jpg?version=1&modificationDate=1303607956000)
 
 Be sure to download the latest version (the one by BobRay). Bob says he may have goofed when submitting his upgrade, so it shows up as a separate package.
-
-- - - - - -
 
 ## Create the Required Pages
 
@@ -80,8 +76,12 @@ You don't have to spruce up your login page, so if you're at all unsure here, sk
 As before, we can use the same Login Snippet:
 
 ``` php 
-[[!Login? &loginTpl=`lgnLoginTpl` &logoutTpl=`lgnLogoutTpl` &errTpl=`lgnErrTpl` &logoutResourceId=`5`]] 
-
+[[!Login? 
+&loginTpl=`lgnLoginTpl` 
+&logoutTpl=`lgnLogoutTpl` 
+&errTpl=`lgnErrTpl` 
+&logoutResourceId=`5`
+]] 
 ```
 
 ### The Homepage Template
@@ -94,7 +94,6 @@ To make use of it, put something like the following in your homepage template (a
 <div id="your_header">
 [[!Personalize? &yesChunk=`header_for_members` &noChunk=`header_for_guests` &ph=`name`]]
 </div>
-
 ```
 
 It's important that the **Personalize** snippet is not cached!
@@ -105,7 +104,6 @@ Create a chunk that contains something like the following:
 
 ``` php 
 <span id="logged_in_status">Not signed in (<a href="[[~1]]">Sign in</a>)</span>
-
 ```
 
 The important thing there is that it links back to the login form.
@@ -116,7 +114,6 @@ Next create a chunk that will be displayed to members when they are logged in:
 
 ``` php 
 <span id="logged_in_status">Signed in: [[+name]] (<a href="[[~1? &service=`logout`]]">Sign out</a>)</span>
-
 ```
 
 Note the special format of the logout link: you trigger the logout action by passing a parameter to the _Login_ page.
@@ -141,12 +138,11 @@ We can basically use the same Snippet call as the Basic setup, but we're going t
 &errTpl=`lgnErrTpl` 
 &logoutResourceId=`5` 
 &redirectToPrior=`1`]] 
-
 ```
 
 We can use the same **loginTpl** Chunk to display the login form, but we want to add a link to where the user can "Request Membership" :
 
-``` php 
+``` html 
 <div class="loginForm">
     <div class="loginMessage">[[+errors]]</div>
     <div class="loginLogin">
@@ -172,7 +168,6 @@ We can use the same **loginTpl** Chunk to display the login form, but we want to
 </div>
 
 <a href="[[~2]]">Forgot your Password?</a>  <a href="[[~6]]">Apply for Membership</a>
-
 ```
 
 Again, you may choose to put the "Forgot Password" and "Apply for Membership" links outside of your Chunk and put them in the template alongside the Snippet call.
@@ -195,9 +190,9 @@ This page doesn't have to change any from the basic setup. Its purpose is simply
 
 ### Request Membership (6)
 
-Next, let's handle the form that allows users to apply for membership on your site. The [Register](/extras/revo/login/login.register "Login.Register") Snippet acts on a form that is included in-line on the page (as opposed to a form inside of a chunk).
+Next, let's handle the form that allows users to apply for membership on your site. The [Register](/extras/login/login.register "Login.Register") Snippet acts on a form that is included in-line on the page (as opposed to a form inside of a chunk).
 
-``` php 
+``` html 
 <h2>Register</h2>
 
 [[!Register?
@@ -209,8 +204,6 @@ Next, let's handle the form that allows users to apply for membership on your si
     &usergroups=`Members`
 ]]
 
-
- 
 <div class="register">
     <div class="registerMessage">[[+error.message]]</div>
      
@@ -249,7 +242,6 @@ Next, let's handle the form that allows users to apply for membership on your si
         </div>
     </form>
 </div>
-
 ```
 
 It needs to reference two other pages: the **Request Pending (7)** page, and the **Membership Confirmation Handler (8)** page.
@@ -258,7 +250,7 @@ It needs to reference two other pages: the **Request Pending (7)** page, and the
 
 This page's job is to inform the user that their request is being processed and that they should check their email for an activation link. Here's a sample message:
 
-``` php 
+``` html 
 <p>Thank you for your interest in our site! Check your email for an activation link.  
 You will need to click this link before you can log into our site.</p>
 
@@ -270,10 +262,7 @@ This page handles the incoming links from the emails sent by the **Register** Sn
 
 ``` php 
 [[ConfirmRegister? &redirectTo=`9`]]
-
 ```
-
-\----------------------
 
 ## Testing: Making it all Work
 
@@ -303,13 +292,11 @@ Also check your spam filters on your your email account, and keep in mind it may
 
 ### Login
 
-Using a different browser other than the one you're logged into the MODX manager, navigate to your **Login Page (1)** (as was set up in the [basic tutorial](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup"). Try to log in using the newly created user.
+Using a different browser other than the one you're logged into the MODX manager, navigate to your **Login Page (1)** (as was set up in the [basic tutorial](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"). Try to log in using the newly created user.
 
 1. **CHECK:** is the login successful? Does the page redirect to your **Members Home Page (4)**? If not, double-check the **&loginResourceId** parameter in your **Login** Snippet call.
 2. **CHECK:** is the **Members Home Page (4)** publicly accessible? You might need a 3rd browser for this, but try visiting the Members Home Page in a browser where you are not logged in to any part of the site. You should see a 404 page.
 3. **CHECK:** Can you log out? It's best to put a logout link on your Members Home Page somewhere. See the basic tutorial for how to set up a logout link. In a pinch, visit your login page and append **?service=logout** to the URL.
-
-\----------------------
 
 ## Errors
 
@@ -338,7 +325,6 @@ Email configuration is unfortunately complex and differs from server to server. 
    echo("<p>Message delivery failed...</p>");
   }
  ?>
-
 ```
 
 _\* Script from [About.com](http://email.about.com/od/emailprogrammingtips/qt/How_to_Send_Email_from_a_PHP_Script.htm)_
@@ -358,7 +344,6 @@ if (function_exists('mb_ereg')) {
 else {
  print 'No, the function does not exist. The Register Snippet may fail.';
 }
-
 ```
 
 The solution involves recompiling PHP. You must have the **mbstring** library installed and you must ensure that you have not included the _--disable-mbregex_ option.

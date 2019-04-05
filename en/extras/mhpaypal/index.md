@@ -31,6 +31,6 @@ mhPayPal is available as a free package for MODX Revolution and can be downloade
 
 ### Documentation
 
-1. [mhPayPal.Snippet Usage](/extras/revo/mhpaypal/mhpaypal.snippet-usage)
-  1. [mhPayPal.Snippet Usage.Hooks](/extras/revo/mhpaypal/mhpaypal.snippet-usage/mhpaypal.snippet-usage.hooks)
-  2. [mhPayPal.Snippet Usage.Templating](/extras/revo/mhpaypal/mhpaypal.snippet-usage/mhpaypal.snippet-usage.templating)
+1. [mhPayPal.Snippet Usage](/extras/mhpaypal/mhpaypal.snippet-usage)
+  1. [mhPayPal.Snippet Usage.Hooks](/extras/mhpaypal/mhpaypal.snippet-usage/mhpaypal.snippet-usage.hooks)
+  2. [mhPayPal.Snippet Usage.Templating](/extras/mhpaypal/mhpaypal.snippet-usage/mhpaypal.snippet-usage.templating)

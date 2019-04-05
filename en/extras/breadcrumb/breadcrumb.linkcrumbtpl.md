@@ -6,7 +6,7 @@ _old_uri: "revo/breadcrumb/breadcrumb.linkcrumbtpl"
 
 ## BreadCrumb's linkCrumbTpl Chunk
 
-This is the chunk displayed with the &linkCrumbTpl property on the [BreadCrumb](/extras/revo/breadcrumb "BreadCrumb") snippet. Used for the crumb (except the current one).
+This is the chunk displayed with the &linkCrumbTpl property on the [BreadCrumb](/extras/breadcrumb "BreadCrumb") snippet. Used for the crumb (except the current one).
 
 ## Default Value
 

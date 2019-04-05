@@ -19,7 +19,7 @@ The actual searching is done by the search class. This is configured with the di
 
 ## Options
 
-If you don't know what the manifest is, please go back to the [Getting Started](/extras/revo/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "search" options array of the manifest.
+If you don't know what the manifest is, please go back to the [Getting Started](/extras/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "search" options array of the manifest.
 
 | Key          | Default                                   | Description                                                                                                                                                                                                                                     |
 | ------------ | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

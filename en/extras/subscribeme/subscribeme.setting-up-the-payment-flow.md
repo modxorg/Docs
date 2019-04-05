@@ -22,8 +22,8 @@ Once the Subscription has been set up, they are unable to do anything until the 
 
 ## Payment Flow in Detail, using the SubscribeMe Snippets
 
-- [SubscribeMe - Listing the Products](/extras/revo/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-listing-the-products "SubscribeMe - Listing the Products")
-- [SubscribeMe - Setting up the Payment Methods](/extras/revo/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-setting-up-the-payment-methods "SubscribeMe - Setting up the Payment Methods")
-- [SubscribeMe - Subscription Confirmation Page](/extras/revo/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-subscription-confirmation-page "SubscribeMe - Subscription Confirmation Page")
+- [SubscribeMe - Listing the Products](/extras/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-listing-the-products "SubscribeMe - Listing the Products")
+- [SubscribeMe - Setting up the Payment Methods](/extras/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-setting-up-the-payment-methods "SubscribeMe - Setting up the Payment Methods")
+- [SubscribeMe - Subscription Confirmation Page](/extras/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-subscription-confirmation-page "SubscribeMe - Subscription Confirmation Page")
 
 Until everything has been properly documented, you can find some brief (tho surprisingly in detail) steps at Github: <https://github.com/Mark-H/SubscribeMe#readme>
