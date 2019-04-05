@@ -4,16 +4,6 @@ _old_id: "604"
 _old_uri: "revo/articles"
 ---
 
-- [What is Articles?](#Articles-WhatisArticles%3F)
-  - [Requirements](#Articles-Requirements)
-  - [History](#Articles-History)
-  - [Download](#Articles-Download)
-  - [Bugs and Issues](#Articles-BugsandIssues)
-- [Getting Started](#Articles-GettingStarted)
-- [See Also](#Articles-SeeAlso)
-
-
-
 ## What is Articles?
 
  Articles is a Custom Resource Type for MODX 2.2 and later, that adds a custom Article Resource to MODX that streamlines blogging, commenting, archiving, tagging and other features of MODX into one unified interface.

@@ -4,17 +4,6 @@ _old_id: "603"
 _old_uri: "revo/archivist"
 ---
 
-- [What is Archivist?](#Archivist-WhatisArchivist%3F)
-- [Requirements](#Archivist-Requirements)
-- [History](#Archivist-History)
-  - [Download](#Archivist-Download)
-  - [Development and Bug Reporting](#Archivist-DevelopmentandBugReporting)
-- [Usage](#Archivist-Usage)
-- [Examples](#Archivist-Examples)
-- [See Also](#Archivist-SeeAlso)
-
-
-
 ## What is Archivist?
 
 Archivist is an archive navigation Extra for MODx Revolution. It allows for wordpress-style navigation of Resources, as well as month/year/day archive listing and automatic FURL generation.
@@ -56,7 +45,6 @@ The call for the Month listing:
 
 ``` php 
 [[!Archivist? &parents=`54,55` &target=`123`]]
-
 ```
 
 And then on your archives page:
@@ -70,7 +58,6 @@ And then on your archives page:
 <h2>[[!+arc_month_name]] [[!+arc_year]] Archives</h2>
 
 [[!+archives]]
-
 ```
 
 ## See Also
@@ -79,4 +66,4 @@ And then on your archives page:
   1. [Archivist.Archivist.tpl](/extras/revo/archivist/archivist.archivist/archivist.archivist.tpl)
 2. [Archivist.ArchivistGrouper](/extras/revo/archivist/archivist.archivistgrouper)
 3. [Archivist.getArchives](/extras/revo/archivist/archivist.getarchives)
-  1. [Archivist.getArchives.tpl](/extras/revo/archivist/archivist.getarchives/archivist.getarchives.tpl)
+  2. [Archivist.getArchives.tpl](/extras/revo/archivist/archivist.getarchives/archivist.getarchives.tpl)

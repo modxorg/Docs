@@ -10,10 +10,6 @@ The [Articles](/extras/revo/articles "Articles") addon 1.6.1 came with the Archi
 
 The descriptions in the table are just a guess!!! Someone with more experience or the creator should confirm or adjust these!!
 
-
-
-
-
 ## Usage
 
 Simply place the snippet wherever you would like to display archive listings in, the parents to grab archives from.

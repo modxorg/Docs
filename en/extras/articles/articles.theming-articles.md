@@ -4,15 +4,6 @@ _old_id: "786"
 _old_uri: "revo/articles/articles.theming-articles"
 ---
 
-- [Duplicate the Sample Templates](#Articles.ThemingArticles-DuplicatetheSampleTemplates)
-- [Editing the Templates](#Articles.ThemingArticles-EditingtheTemplates)
-  - [The Container Template](#Articles.ThemingArticles-TheContainerTemplate)
-  - [The Article Template](#Articles.ThemingArticles-TheArticleTemplate)
-- [Editing Chunks](#Articles.ThemingArticles-EditingChunks)
-- [Conclusion](#Articles.ThemingArticles-Conclusion)
-
-
-
 Articles is built in the MODX philosophy of always separating code from content. Therefore, every bit of Articles's markup can be edited, tweaked and changed. It's fairly simple: just duplicate the Templates and change them, and then
 
 ## Duplicate the Sample Templates
@@ -62,7 +53,6 @@ Knowing that, we can then use [QuipCount](/extras/revo/quip/quip.quipcount "Quip
 
 ``` php 
 [[!QuipCount? &thread=`article-b9-[[+id]]`]]
-
 ```
 
 In the above example, the blog is page id 9.

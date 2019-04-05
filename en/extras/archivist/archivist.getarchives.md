@@ -22,14 +22,14 @@ If using with [getPage](/extras/revo/getpage "getPage"), make sure to set &cache
 
 getArchives is a variant of [getResources](/extras/revo/getresources "getResources"), **so all the properties in** **[getResources](/extras/revo/getresources "getResources")** **are also available to getArchives**, as well as the following:
 
-| Name | Description | Default |
-|------|-------------|---------|
-| tpl | Name of a chunk serving as a resource template. |  |
-| parents | Comma-delimited list of ids serving as parents. |  |
-| filterField | The field to use to filter by when filtering by archives. Make sure this is the same as the sortBy parameter on the Archivist snippet call. | publishedon |
-| filterPrefix | The prefix to use for GET parameters with the Archivist links. Make sure this is the same as the filterPrefix parameter on the getArchives snippet call. | arc\_ |
-| tagsIndex | If set, and a REQUEST var of this index is found, will automatically filter results by the value. | tags |
-| toPlaceholder | If set, will set the output of this snippet to this placeholder rather than output it. |  |
+| Name          | Description                                                                                                                                              | Default     |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| tpl           | Name of a chunk serving as a resource template.                                                                                                          |             |
+| parents       | Comma-delimited list of ids serving as parents.                                                                                                          |             |
+| filterField   | The field to use to filter by when filtering by archives. Make sure this is the same as the sortBy parameter on the Archivist snippet call.              | publishedon |
+| filterPrefix  | The prefix to use for GET parameters with the Archivist links. Make sure this is the same as the filterPrefix parameter on the getArchives snippet call. | arc\_       |
+| tagsIndex     | If set, and a REQUEST var of this index is found, will automatically filter results by the value.                                                        | tags        |
+| toPlaceholder | If set, will set the output of this snippet to this placeholder rather than output it.                                                                   |             |
 
 If your getArchives call is not displaying any results and your resources are **hidden from menus**, make sure you specify the &showHidden=`1` parameter (inherited from getResource) parameter!
 

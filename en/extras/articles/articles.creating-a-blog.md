@@ -4,14 +4,6 @@ _old_id: "782"
 _old_uri: "revo/articles/articles.creating-a-blog"
 ---
 
-- [Creating a Blog](#Articles.CreatingaBlog-CreatingaBlog)
-  - [The First Tab](#Articles.CreatingaBlog-TheFirstTab)
-  - [The Template Tab](#Articles.CreatingaBlog-TheTemplateTab)
-  - [The Advanced Settings Tab](#Articles.CreatingaBlog-TheAdvancedSettingsTab)
-- [Conclusion](#Articles.CreatingaBlog-Conclusion)
-
-
-
 ## Creating a Blog
 
 Creating a Blog is simple: just right-click on any node in the Resources tree on the left-hand side, and mouse over to the "Create" option. Then click on "Create Articles Here":
@@ -74,64 +66,64 @@ There are quite a few fields here, in separate vertical tabs:
 
 ![](/download/attachments/36634992/articles-tab3.png?version=1&modificationDate=1322602531000)
 
-1. General Options 
-  1. **Enable Update Services** - If on, Articles will attempt to ping Ping-o-Matic whenever you publish an Article, to send out your article's title and URL to major search engines.
-  2. **Menu Index** - This is the order of the resource in the tree. It is usually used for ordering purposes in displaying resources dynamically. You can also change this by drag/dropping the container in the left-hand tree.
-  3. **Sort Field** - The field to sort by on the main and archives listing pages.
-  4. **Sort Direction** - The direction to sort by on the main and archives listing pages (DESCending or ASCending).
-  5. **Include TVs in Listing** - If on, will include TV values as options in the listing chunks.
-  6. **Include TVs List** - An optional comma-delimited list of TemplateVar names to include explicitly if Include TVs is on. If you leave this blank, it will include all TVs attached to the Resource\\'s Template.
-  7. **Process TVs in Listing** - If on, will process the TV values in the listing chunks.
-  8. **Process TVs List** - An optional comma-delimited list of TemplateVar names to include explicitly if Include TVs is on. If you leave this blank, it will process all TVs attached to the Resource\\'s Template.
-  9. **Other Listing Parameters** - Any other properties you would like to add to the getResources/getPage call for the Articles listing page. Put them in MODX tag syntax, as if you were adding it to the tag call (eg, &property=`value`).
+- General Options 
+  - **Enable Update Services** - If on, Articles will attempt to ping Ping-o-Matic whenever you publish an Article, to send out your article's title and URL to major search engines.
+  - **Menu Index** - This is the order of the resource in the tree. It is usually used for ordering purposes in displaying resources dynamically. You can also change this by drag/dropping the container in the left-hand tree.
+  - **Sort Field** - The field to sort by on the main and archives listing pages.
+  - **Sort Direction** - The direction to sort by on the main and archives listing pages (DESCending or ASCending).
+  - **Include TVs in Listing** - If on, will include TV values as options in the listing chunks.
+  - **Include TVs List** - An optional comma-delimited list of TemplateVar names to include explicitly if Include TVs is on. If you leave this blank, it will include all TVs attached to the Resource\\'s Template.
+  - **Process TVs in Listing** - If on, will process the TV values in the listing chunks.
+  - **Process TVs List** - An optional comma-delimited list of TemplateVar names to include explicitly if Include TVs is on. If you leave this blank, it will process all TVs attached to the Resource\\'s Template.
+  - **Other Listing Parameters** - Any other properties you would like to add to the getResources/getPage call for the Articles listing page. Put them in MODX tag syntax, as if you were adding it to the tag call (eg, &property=`value`).
 
-1. Pagination Options 
-  1. **Articles Per Page** - The number of Articles to show per page when listing posts.
-  2. **Pages Limit** - The maximum number of pages to display when rendering paging controls
-  3. **Page Nav Tpl** - Content representing a single page navigation control.
-  4. **Page Active Tpl** - Content representing the current page navigation control.
-  5. **Page First Tpl** - Content representing the first page navigation control.
-  6. **Page Last Tpl** - Content representing the last page navigation control.
-  7. **Page Previous Tpl** - Content representing the previous page navigation control.
-  8. **Page Next Tpl** - Content representing the next page navigation control.
-  9. **Page Offset** - The offset, or record position to start at within the collection for rendering results for the current page; should be calculated based on page variable set in Page Var Key.
-  10. **Page Var Key** - The key of a property that indicates the current page.
-  11. **Total Var** - The key of a placeholder that must contain the total records in the limitable collection being paged.
-  12. **Page Nav Var** - The key of a placeholder to be set with the paging navigation controls.
+- Pagination Options 
+  - **Articles Per Page** - The number of Articles to show per page when listing posts.
+  - **Pages Limit** - The maximum number of pages to display when rendering paging controls
+  - **Page Nav Tpl** - Content representing a single page navigation control.
+  - **Page Active Tpl** - Content representing the current page navigation control.
+  - **Page First Tpl** - Content representing the first page navigation control.
+  - **Page Last Tpl** - Content representing the last page navigation control.
+  - **Page Previous Tpl** - Content representing the previous page navigation control.
+  - **Page Next Tpl** - Content representing the next page navigation control.
+  - **Page Offset** - The offset, or record position to start at within the collection for rendering results for the current page; should be calculated based on page variable set in Page Var Key.
+  - **Page Var Key** - The key of a property that indicates the current page.
+  - **Total Var** - The key of a placeholder that must contain the total records in the limitable collection being paged.
+  - **Page Nav Var** - The key of a placeholder to be set with the paging navigation controls.
 
-1. Archives Options 
-  1. **Archive Listing Chunk** - The Chunk to use for each month/year that is listed.
-  2. **Archive Listings to Show** - The number of archive months/years to show.
-  3. **Archive By Month** - Whether or not to archive by month or by year. Yes will archive by month.
-  4. **Archive CSS Class** - A CSS class to apply to each archive listing.
-  5. **Archive Alternate CSS Class** - A CSS class to apply to each alternate row for each archive listing.
-  6. **Group By Year** - If set to 1, will group archive results by year into a nested list. If set to 1, this will ignore the Archive By Month setting.
-  7. **Group By Year Chunk** - If Group By Year is set to 1, the Chunk to use for the wrapper for the archive list grouping.
+- Archives Options 
+  - **Archive Listing Chunk** - The Chunk to use for each month/year that is listed.
+  - **Archive Listings to Show** - The number of archive months/years to show.
+  - **Archive By Month** - Whether or not to archive by month or by year. Yes will archive by month.
+  - **Archive CSS Class** - A CSS class to apply to each archive listing.
+  - **Archive Alternate CSS Class** - A CSS class to apply to each alternate row for each archive listing.
+  - **Group By Year** - If set to 1, will group archive results by year into a nested list. If set to 1, this will ignore the Archive By Month setting.
+  - **Group By Year Chunk** - If Group By Year is set to 1, the Chunk to use for the wrapper for the archive list grouping.
 
-1. Tagging Options 
-  1. **Tag Listing Chunk** - The Chunk to use when displaying tags on the listing pages.
-  2. **Tag Listings to Show** - The number of tags to show in the popular tags listing.
-  3. **Tag CSS Class** - A CSS class to apply to each tag listing.
-  4. **Tag Alternate CSS Class** - A CSS class to apply to each alternate row for each tag listing.
+- Tagging Options 
+  - **Tag Listing Chunk** - The Chunk to use when displaying tags on the listing pages.
+  - **Tag Listings to Show** - The number of tags to show in the popular tags listing.
+  - **Tag CSS Class** - A CSS class to apply to each tag listing.
+  - **Tag Alternate CSS Class** - A CSS class to apply to each alternate row for each tag listing.
 
-1. RSS Options 
-  1. **RSS Alias (Permalink)** - The alias (permalink) for the RSS feed, appended to the blog URL. Can be a comma-separated list. For example, if you set this to "rssfeed.rss", your blog at mysite.com/blog/rssfeed.rss would show the RSS feed.
-  2. **Number of RSS Items** - The number of latest RSS items to show on the RSS feed.
-  3. **RSS Feed Chunk** - The Chunk to use for the RSS Feed template.
-  4. **RSS Item Chunk** - The Chunk to use for each item in the RSS Feed.
+- RSS Options 
+  - **RSS Alias (Permalink)** - The alias (permalink) for the RSS feed, appended to the blog URL. Can be a comma-separated list. For example, if you set this to "rssfeed.rss", your blog at mysite.com/blog/rssfeed.rss would show the RSS feed.
+  - **Number of RSS Items** - The number of latest RSS items to show on the RSS feed.
+  - **RSS Feed Chunk** - The Chunk to use for the RSS Feed template.
+  - **RSS Item Chunk** - The Chunk to use for each item in the RSS Feed.
 
-1. Latest Posts Options 
-  1. **Latest Articles Chunk** - The Chunk to use for each Latest Article.
-  2. **Latest Articles To Show** - The number of latest Articles to show.
-  3. **Latest Articles Offset** - The starting index of the listing of latest Articles.
+- Latest Posts Options 
+  - **Latest Articles Chunk** - The Chunk to use for each Latest Article.
+  - **Latest Articles To Show** - The number of latest Articles to show.
+  - **Latest Articles Offset** - The starting index of the listing of latest Articles.
 
-1. Notifications (_not shown in screenshot - new as of Articles 1.4.1_) 
-  1. **Send to Twitter** - If enabled, automatically posts to Twitter when Article is published.
-  2. **Twitter Consumer Key** - Optional security key.
-  3. **Secret Twitter Consumer Key** - Optional secret access token.
-  4. **Twitter Template** - The template to use for each tweet. Available placeholders are: \[\[+title\]\], \[\[+url\]\] and \[\[+hashtags\]\]
-  5. **Twitter Template (hashtags)** - If hashtags placeholder is used, this sets the maximum number of tags to include.
-  6. **URL Shortener** - The service to use for shortening URLs. Can be set to blank for no shortening.
+- Notifications (_not shown in screenshot - new as of Articles 1.4.1_) 
+  - **Send to Twitter** - If enabled, automatically posts to Twitter when Article is published.
+  - **Twitter Consumer Key** - Optional security key.
+  - **Secret Twitter Consumer Key** - Optional secret access token.
+  - **Twitter Template** - The template to use for each tweet. Available placeholders are: \[\[+title\]\], \[\[+url\]\] and \[\[+hashtags\]\]
+  - **Twitter Template (hashtags)** - If hashtags placeholder is used, this sets the maximum number of tags to include.
+  - **URL Shortener** - The service to use for shortening URLs. Can be set to blank for no shortening.
 
 For more information on the Commenting settings, read up on the [Quip](/extras/revo/quip "Quip") documentation.
 
