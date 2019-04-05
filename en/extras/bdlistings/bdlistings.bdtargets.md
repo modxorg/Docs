@@ -8,14 +8,14 @@ bdTargets is a simple snippet to output your target groups.
 
 ## Snippet Properties
 
-| Property Name | Description | Default Value |
-|---------------|-------------|---------------|
-| limit | Limit the amount of results. | 0 |
-| offset | Offset to start at. | 0 |
-| sortby | Field to sort on. Can be sortorder, id or name. | sortorder |
-| sortdir | Direction to sort on. Either asc or desc. | asc |
-| rowSeparator | String to use between rowTpl items. | \\n |
-| tplOuter | Chunkname to wrap the complete result set in. 
+| Property Name | Description                                     | Default Value |
+| ------------- | ----------------------------------------------- | ------------- |
+| limit         | Limit the amount of results.                    | 0             |
+| offset        | Offset to start at.                             | 0             |
+| sortby        | Field to sort on. Can be sortorder, id or name. | sortorder     |
+| sortdir       | Direction to sort on. Either asc or desc.       | asc           |
+| rowSeparator  | String to use between rowTpl items.             | \\n           |
+| tplOuter      | Chunkname to wrap the complete result set in.   |
 Default: 
 
 ``` php 
@@ -27,8 +27,8 @@ Default:
 
 Placeholders to use:
 
-- wrapper |  |
-| tplRow | Chunk name to wrap individual target groups in. 
+- wrapper
+`tplRow` - Chunk name to wrap individual target groups in. 
 Default: 
 
 ``` php 
@@ -39,7 +39,7 @@ Placeholders to use:
 
 - id
 - name
-- sortorder |  |
+- sortorder
 
 ## Examples
 

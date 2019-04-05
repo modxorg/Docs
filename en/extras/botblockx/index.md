@@ -4,13 +4,6 @@ _old_id: "1764"
 _old_uri: "revo/botblockx"
 ---
 
-- [What is BotBlockX?](#BotBlockX-WhatisBotBlockX)
-- [Package Information](#BotBlockX-Information)
-- [History](#BotBlockX-History)
-- [Download](#BotBlockX-Download)
-- [Development and Bug Reporting](#BotBlockX-DevelopmentandBugReporting)
-- [Documentation](#BotBlockX-Documentation)
- 
 ## What is BotBlockX?
 
 BotBlockX is based on Alex Kemp's [classic bot-blocking routine](http://download.modem-help.co.uk/non-modem/PHP/Rogue-Bot-Blocking/ "Classic bot blocking script"). I have rewritten it for MODX Revolution and added a few tweaks, but the heart of it is Alex's original code.

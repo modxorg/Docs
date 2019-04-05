@@ -14,17 +14,15 @@ _old_uri: "revo/breadcrumb/breadcrumb.containertpl"
  Templates properties can be chunk name, file path (@FILE:) or chunk code (@CODE:) 
 
  ``` php 
-
 @CODE : 
 <ul id="breadcrumb" itemprop="breadcrumb">
   <li><a href="[[++site_url]]">[[++site_name]]</a></li>
   [[+crumbs]]
 </ul>
-
 ```
 
 ## Available Placeholders
 
- | Name | Description |
-|------|-------------|
-| crumbs | The list of crumbs |
+ | Name   | Description        |
+ | ------ | ------------------ |
+ | crumbs | The list of crumbs |

@@ -13,6 +13,6 @@ This is the chunk displayed with the &maxCrumbTpl property on the [BreadCrumb](/
 Since BreadCrumb 1.3.0, maxCrumbTpl is no longer a chunk but a snippet property. 
  Templates properties can be chunk name, file path (@FILE:) or chunk code (@CODE:)
 
- ``` php 
+ ``` html 
 <li>...</li>
 ```

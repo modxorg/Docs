@@ -4,16 +4,6 @@ _old_id: "608"
 _old_uri: "revo/batcher"
 ---
 
-- [What is Batcher?](#Batcher-WhatisBatcher%3F)
-- [Requirements](#Batcher-Requirements)
-- [History](#Batcher-History)
-  - [Download](#Batcher-Download)
-  - [Development and Bug Reporting](#Batcher-DevelopmentandBugReporting)
-- [Usage](#Batcher-Usage)
-- [See Also](#Batcher-SeeAlso)
-
-
-
 ## What is Batcher?
 
 Batcher is a batch-editing component for MODx Revolution. It allows you to perform basic actions on multiple Resources.

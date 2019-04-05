@@ -8,15 +8,15 @@ The BabelTranslation snippets returns the ID of a translated resource in a given
 
 ## Available Parameters
 
-| Name | Description | Default |
-|------|-------------|---------|
-| resourceId | (optional) ID of resource of which a translated resource should be determined. | current resource's ID |
-| contextKey | Key of context in which translated resource should be determined. |  |
-| showUnpublished | (optional) Flag whether to show unpublished translations. | 0 |
+| Name            | Description                                                                    | Default               |
+| --------------- | ------------------------------------------------------------------------------ | --------------------- |
+| resourceId      | (optional) ID of resource of which a translated resource should be determined. | current resource's ID |
+| contextKey      | Key of context in which translated resource should be determined.              |                       |
+| showUnpublished | (optional) Flag whether to show unpublished translations.                      | 0                     |
 
 ## Example
 
-``` html 
+``` php 
 [[BabelTranslation? &contextKey=`de`]]
 ```
 
