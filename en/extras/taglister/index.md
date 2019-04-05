@@ -30,7 +30,7 @@ Here are the 3 components you need to establish to make this work.
 
 ### 1. Show all Pages tagged with a given Term
 
-Create a page dedicated to showing all pages tagged with a given term. On that page, place the **getResourcesTag** Snippet. It's more or less an extension of the [getResources](/extras/revo/getresources "getResources") Snippet, so it shares most of the same arguments.
+Create a page dedicated to showing all pages tagged with a given term. On that page, place the **getResourcesTag** Snippet. It's more or less an extension of the [getResources](/extras/getresources "getResources") Snippet, so it shares most of the same arguments.
 
 If you are tagging only resources in a certain folder, reference the folder's page ID in the **&parents** argument, otherwise use "0" to search the entire site.
 
@@ -86,9 +86,9 @@ tagLister has 1 snippet that displays a list of used tags, grabbed from the spec
 
 tagLister comes with three Snippets:
 
-- [tagLister](/extras/revo/taglister/taglister.taglister "tagLister.tagLister") - Lists most commonly used tags.
-- [getResourcesTag](/extras/revo/taglister/taglister.getresourcestag "tagLister.getResourcesTag") - For grabbing Resources filtered by tags.
-- [tolinks](/extras/revo/taglister/taglister.tolinks "tagLister.tolinks") - For converting a comma-separated list into links.
+- [tagLister](/extras/taglister/taglister.taglister "tagLister.tagLister") - Lists most commonly used tags.
+- [getResourcesTag](/extras/taglister/taglister.getresourcestag "tagLister.getResourcesTag") - For grabbing Resources filtered by tags.
+- [tolinks](/extras/taglister/taglister.tolinks "tagLister.tolinks") - For converting a comma-separated list into links.
 
 ## Examples
 
@@ -108,9 +108,9 @@ Grab a list of tags specified in the TV 'blog-tags', which are separated by spac
 
 ## See Also
 
-1. [tagLister.getResourcesTag](/extras/revo/taglister/taglister.getresourcestag)
-2. [tagLister.tagLister](/extras/revo/taglister/taglister.taglister)
-  1. [tagLister.tagLister.all](/extras/revo/taglister/taglister.taglister/taglister.taglister.all)
-  2. [tagLister.tagLister.tpl](/extras/revo/taglister/taglister.taglister/taglister.taglister.tpl)
-3. [tagLister.tolinks](/extras/revo/taglister/taglister.tolinks)
-  1. [tagLister.tolinks.tpl](/extras/revo/taglister/taglister.tolinks/taglister.tolinks.tpl)
+1. [tagLister.getResourcesTag](/extras/taglister/taglister.getresourcestag)
+2. [tagLister.tagLister](/extras/taglister/taglister.taglister)
+  1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
+  2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
+3. [tagLister.tolinks](/extras/taglister/taglister.tolinks)
+  1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)

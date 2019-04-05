@@ -33,5 +33,5 @@ MIGX comes with a configurable custom-TV-input-type and some controllers and pro
 
 For more Information see:
 
-- [Backend-Usage(Configuration)](/extras/revo/migxdb/migxdb.configuration "MIGXdb.Configuration")
-- [MIGXdb Tutorials](/extras/revo/migxdb/migxdb.tutorials)
+- [Backend-Usage(Configuration)](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration")
+- [MIGXdb Tutorials](/extras/migxdb/migxdb.tutorials)

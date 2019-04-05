@@ -4,42 +4,33 @@ _old_id: "801"
 _old_uri: "revo/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcampers-snippet"
 ---
 
-- [Snippet Properties](#CamperManagement.cmCampersSnippet-SnippetProperties)
-- [Example usage](#CamperManagement.cmCampersSnippet-Exampleusage)
-  - [Example 1: Simple overview of latest additions](#CamperManagement.cmCampersSnippet-Example1%3ASimpleoverviewoflatestadditions)
-  - [Example 2: Slideshow with vehicles marked as favorite](#CamperManagement.cmCampersSnippet-Example2%3ASlideshowwithvehiclesmarkedasfavorite)
-  - [Example 3: Horizontal row style overview](#CamperManagement.cmCampersSnippet-Example3%3AHorizontalrowstyleoverview)
-  - [Suggestion: Slideshow of images per vehicle](#CamperManagement.cmCampersSnippet-Suggestion%3ASlideshowofimagespervehicle)
-
-
-
 cmCampers can be used to aggregate data on the different vehicles in the database.
 
 ## Snippet Properties
 
 You can use the following properties in cmCampers to adjust its behaviour and to make it your own. Some of them overlap with the cmCamperDetails snippet.
 
-| &property | Description | Default Value |
-|-----------|-------------|---------------|
-| start | Possible offset to ignore the first N vehicles. | 0 |
-| limit | Number of results to return from the snippet. Set to 0 or a real high number for infinite. | 4 |
-| sort | Field to sort on. Accepts any field in the cmCamper object but not all of them would make sense. Note that when sorting on related items (Brand, Owner) it will sort on their ID and \*not\* the name. When searchFromRequest is set to 1 the sort can be determined by the sort url parameter. | added |
-| dir | asc | desc. Direction to sort on. When searchFromRequest is set to 1 the sort can be determined by the sortdir url parameter. | desc |
-| includeBrand | 1 | 0. Determines if the related brand object should be retrieved. Can save some processing time when not needed. | 1 |
-| includeOwner | 1 | 0. Determines if the related owner object should be retrieved. Can save some processing time when not needed. | 0 |
-| includeImages | 1 | 0. Determines if the related images should be retrieved. Can save some processing time when not needed. | 1 |
-| includeOptions | 1 | 0. Determines if the related options should be retrieved. Can save some processing time when not needed. | 1 |
-| status | Comma seperated list of status IDs that should be included in the results. The IDs are: 
+| &property      | Description                                                                                                                                                                                                                                                                                     | Default Value                                                                                                           |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| start          | Possible offset to ignore the first N vehicles.                                                                                                                                                                                                                                                 | 0                                                                                                                       |
+| limit          | Number of results to return from the snippet. Set to 0 or a real high number for infinite.                                                                                                                                                                                                      | 4                                                                                                                       |
+| sort           | Field to sort on. Accepts any field in the cmCamper object but not all of them would make sense. Note that when sorting on related items (Brand, Owner) it will sort on their ID and \*not\* the name. When searchFromRequest is set to 1 the sort can be determined by the sort url parameter. | added                                                                                                                   |
+| dir            | asc                                                                                                                                                                                                                                                                                             | desc. Direction to sort on. When searchFromRequest is set to 1 the sort can be determined by the sortdir url parameter. | desc |
+| includeBrand   | 1                                                                                                                                                                                                                                                                                               | 0. Determines if the related brand object should be retrieved. Can save some processing time when not needed.           | 1    |
+| includeOwner   | 1                                                                                                                                                                                                                                                                                               | 0. Determines if the related owner object should be retrieved. Can save some processing time when not needed.           | 0    |
+| includeImages  | 1                                                                                                                                                                                                                                                                                               | 0. Determines if the related images should be retrieved. Can save some processing time when not needed.                 | 1    |
+| includeOptions | 1                                                                                                                                                                                                                                                                                               | 0. Determines if the related options should be retrieved. Can save some processing time when not needed.                | 1    |
+| status         | Comma seperated list of status IDs that should be included in the results. The IDs are:                                                                                                                                                                                                         |
 
-0. Unconfirmed 
-1. Active 
-2. Favorite 
-3. Conditionally sold 
-4. Sold 
-5. Inactive | 1,2,3,4 |
+1. Unconfirmed 
+2. Active 
+3. Favorite 
+4. Conditionally sold 
+5. Sold 
+6. Inactive | 1,2,3,4 |
 | numimages | Integer indicating how many images should be retrieved. | 1 |
 | target | Integer resource ID for the camper details page. Will be used with makeUrl to create a link following friendly url settings, passing "cid" in the URL with the camper ID. | 2 |
-| tplOuter | Chunkname. Outer template to wrap the entire result set. [Placeholders](/extras/revo/campermanagement/campermanagement.developing-the-front-end/campermanagement.placeholders-you-can-use "CamperManagement.Placeholders you can use") | cmDefaultTplOuter |
+| tplOuter | Chunkname. Outer template to wrap the entire result set. [Placeholders](/extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.placeholders-you-can-use "CamperManagement.Placeholders you can use") | cmDefaultTplOuter |
 | tplItem | Chunkname. Template for one item. \[Placeholders|display/ADDON/CamperManagement.Placeholders+you+can+use\] | cmDefaultTplItem |
 | tplImageOuter | Chunkname. Outer template to wrap the entire image result set, called for every vehicle item. \[Placeholders|display/ADDON/CamperManagement.Placeholders+you+can+use\] | cmDefaultTplImageOuter |
 | tplImageItem | Chunkname. Template for one image item. \[Placeholders|display/ADDON/CamperManagement.Placeholders+you+can+use\] | cmDefaultTplImageItem |

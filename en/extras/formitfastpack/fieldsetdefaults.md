@@ -25,12 +25,11 @@ _old_uri: "revo/formitfastpack/fieldsetdefaults"
 
  Change the &outer\_type parameter for two groups of field snippets:
 
-``` plain 
+``` php 
 [[!fieldSetDefaults? &outer_type=`personal`]]
 [[!field? &name=`first_name`]]
 [[!field? &name=`last_name`]]
 [[!fieldSetDefaults? &outer_type=`company`]]
 [[!field? &name=`company_name`]]
 [[!field? &name=`company_address`]]
-
 ```

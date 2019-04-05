@@ -60,5 +60,5 @@ Basic, this will show the first album:
 
 ## See Also
 
-1. [jgSlideshow Snippet](/extras/revo/slideshow-manager/jgslideshow-snippet)
-2. [Slideshow Manager CMP](/extras/revo/slideshow-manager/slideshow-manager-cmp)
+1. [jgSlideshow Snippet](/extras/slideshow-manager/jgslideshow-snippet)
+2. [Slideshow Manager CMP](/extras/slideshow-manager/slideshow-manager-cmp)

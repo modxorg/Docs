@@ -4,10 +4,6 @@ _old_id: "639"
 _old_uri: "revo/filedownload-r"
 ---
 
-- [FileDownload R](#FileDownloadR-FileDownloadR)
-
-
-
 # FileDownload R
 
 FileDownload R is a snippet that will display a list of files from user's directory.
@@ -24,9 +20,9 @@ The download counter is stored inside a custom database.
 
 There are 2 snippets of this package:
 
-1. [FileDownload](/extras/revo/filedownload-r/filedownload-r.filedownload "FileDownload R.FileDownload")
-2. [FileDownloadLink](/extras/revo/filedownload-r/filedownload-r.filedownloadlink "FileDownload R.FileDownloadLink")
+1. [FileDownload](/extras/filedownload-r/filedownload-r.filedownload "FileDownload R.FileDownload")
+2. [FileDownloadLink](/extras/filedownload-r/filedownload-r.filedownloadlink "FileDownload R.FileDownloadLink")
 
 Since v. 1.0.0-pl, this package also provides plugin feature to enable developer adding their additional functions for the downloading process.
 
-- [Plugins](/extras/revo/filedownload-r/filedownload-r.plugins "FileDownload R.Plugins")
+- [Plugins](/extras/filedownload-r/filedownload-r.plugins "FileDownload R.Plugins")

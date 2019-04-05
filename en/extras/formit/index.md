@@ -4,20 +4,6 @@ _old_id: "644"
 _old_uri: "revo/formit"
 ---
 
-- [What is FormIt?](#FormIt-WhatisFormIt%3F)
-- [History](#FormIt-History)
-  - [Download](#FormIt-Download)
-  - [Development and Bug Reporting](#FormIt-DevelopmentandBugReporting)
-  - [Important changes](#FormIt-Importantchanges)
-- [How to Use](#FormIt-HowtoUse)
-  - [Available Properties](#FormIt-AvailableProperties)
-- [Validation](#FormIt-Validation)
-- [Hooks](#FormIt-Hooks)
-- [Troubleshooting](/extras/revo/formit/formit.tutorials-and-examples#FormIt.TutorialsandExamples-Troubleshooting)
-- [See Also](#FormIt-SeeAlso)
-
-
-
 ##  What is FormIt? 
 
  FormIt is a dynamic form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODx Revolution. It handles a form after submission, performing validation and followup actions like sending an email. It does not generate the form, but it can repopulate it if it fails validation.
@@ -56,33 +42,33 @@ It can be downloaded from within the MODx Revolution manager via [Package Manage
 
  These are the available general properties for the FormIt call (not including hook-specific properties):
 
- | Name | Description | Default Value |
-|------|-------------|---------------|
-| preHooks | What scripts to fire, if any, once the form loads. This can be a comma-separated list of [hooks](/extras/revo/formit/formit.hooks "FormIt.Hooks"), and if the first fails, the proceeding ones will not fire. A hook can also be a Snippet name that will execute that Snippet. |  |
-| renderHooks | What scripts to fire, if any, once the form loads, preHooks are finished and all fields & errors has been set. This can be a comma-separated list of [hooks](https://docs.modx.com/extras/revo/formit/formit.hooks) used for manipulating all the fields of the form before everything is set based on given data from other packages or preHooks. A hook can also be a Snippet name that will execute that Snippet. |  |
-| hooks | What scripts to fire, if any, after the form passes validation. This can be a comma-separated list of [hooks](https://docs.modx.com/extras/revo/formit/formit.hooks), and if the first fails, the proceeding ones will not fire. A hook can also be a Snippet name that will execute that Snippet. |  |
-| submitVar | If set, will not begin form processing if this POST variable is not passed. _Notice: Needed if you use &store property (+ set submit var in input="submit"!)._ |  |
-| validate | A comma-separated list of fields to validate, with each field name as name:validator (eg: username:required,email:required). [Validators](/extras/revo/formit/formit.validators "FormIt.Validators") can also be chained, like email:email:required. This property can be specified on multiple lines. |  |
-| validationErrorMessage | A general error message to set to a placeholder \[\[!+fi.validation\_error\_message\]\] if validation fails. Can contain \[\[+errors\]\] if you want to display a list of all errors at the top. | A form validation error occurred. Please check the values you have entered. |
-| validationErrorBulkTpl | HTML tpl that is used for each individual error in the generic validation error message value. | 1. \[\[+error\]\] |
-| errTpl | The wrapper html for error messages. Note: not a chunk, just straight HTML. | \[\[+error\]\] |
-| customValidators | A comma-separated list of custom validator names (snippets) you plan to use in this form. They must be explicitly stated here, or they will not be run. |
-| clearFieldsOnSuccess | If true, will clear the fields on a successful form submission that does not redirect. | 1 |
-| store | If true, will store the data in the cache for retrieval using the [FormItRetriever](/extras/revo/formit/formit.formitretriever "FormIt.FormItRetriever") snippet. | 0 |
-| storeTime | If 'store' is set to true, this specifies the number of seconds to store the data from the form submission. Defaults to five minutes. | 300 |
-| storeLocation | When using store, this defines where the form is stored after submit. Possible options are 'cache' and 'session'. Defaults to 'cache'. | cache |
-| placeholderPrefix | The prefix to use for all placeholders set by FormIt for fields. Make sure to include the '.' separator in your prefix. | fi. |
-| successMessage | If not using the redirect hook, display this success message after a successful submission. |  |
-| successMessagePlaceholder | The name of the placeholder to set the success message to. | fi.successMessage |
-| redirectTo | page ID of a "Thank You" page, where the visitor can be sent after successfully submitting the form, but this parameter is read ONLY if you include "redirect" in the list of &hooks. |  |
-| allowFiles | Specify if files are allowed to be posted. Submitted files are stored in a temporary directory to prevent files getting lost in multistep forms. | true |
-| attachFilesToEmail | Attaches uploaded files in email, form needs to be set as enctype="multipart/form-data" | true |
+ | Name                      | Description                                                                                                                                                                                                                                                                                                                                                                                                          | Default Value                                                               |
+ | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+ | preHooks                  | What scripts to fire, if any, once the form loads. This can be a comma-separated list of [hooks](/extras/formit/formit.hooks "FormIt.Hooks"), and if the first fails, the proceeding ones will not fire. A hook can also be a Snippet name that will execute that Snippet.                                                                                                                                           |                                                                             |
+ | renderHooks               | What scripts to fire, if any, once the form loads, preHooks are finished and all fields & errors has been set. This can be a comma-separated list of [hooks](https://docs.modx.com/extras/revo/formit/formit.hooks) used for manipulating all the fields of the form before everything is set based on given data from other packages or preHooks. A hook can also be a Snippet name that will execute that Snippet. |                                                                             |
+ | hooks                     | What scripts to fire, if any, after the form passes validation. This can be a comma-separated list of [hooks](https://docs.modx.com/extras/revo/formit/formit.hooks), and if the first fails, the proceeding ones will not fire. A hook can also be a Snippet name that will execute that Snippet.                                                                                                                   |                                                                             |
+ | submitVar                 | If set, will not begin form processing if this POST variable is not passed. _Notice: Needed if you use &store property (+ set submit var in input="submit"!)._                                                                                                                                                                                                                                                       |                                                                             |
+ | validate                  | A comma-separated list of fields to validate, with each field name as name:validator (eg: username:required,email:required). [Validators](/extras/formit/formit.validators "FormIt.Validators") can also be chained, like email:email:required. This property can be specified on multiple lines.                                                                                                                    |                                                                             |
+ | validationErrorMessage    | A general error message to set to a placeholder \[\[!+fi.validation\_error\_message\]\] if validation fails. Can contain \[\[+errors\]\] if you want to display a list of all errors at the top.                                                                                                                                                                                                                     | A form validation error occurred. Please check the values you have entered. |
+ | validationErrorBulkTpl    | HTML tpl that is used for each individual error in the generic validation error message value.                                                                                                                                                                                                                                                                                                                       | 1. \[\[+error\]\]                                                           |
+ | errTpl                    | The wrapper html for error messages. Note: not a chunk, just straight HTML.                                                                                                                                                                                                                                                                                                                                          | \[\[+error\]\]                                                              |
+ | customValidators          | A comma-separated list of custom validator names (snippets) you plan to use in this form. They must be explicitly stated here, or they will not be run.                                                                                                                                                                                                                                                              |
+ | clearFieldsOnSuccess      | If true, will clear the fields on a successful form submission that does not redirect.                                                                                                                                                                                                                                                                                                                               | 1                                                                           |
+ | store                     | If true, will store the data in the cache for retrieval using the [FormItRetriever](/extras/formit/formit.formitretriever "FormIt.FormItRetriever") snippet.                                                                                                                                                                                                                                                         | 0                                                                           |
+ | storeTime                 | If 'store' is set to true, this specifies the number of seconds to store the data from the form submission. Defaults to five minutes.                                                                                                                                                                                                                                                                                | 300                                                                         |
+ | storeLocation             | When using store, this defines where the form is stored after submit. Possible options are 'cache' and 'session'. Defaults to 'cache'.                                                                                                                                                                                                                                                                               | cache                                                                       |
+ | placeholderPrefix         | The prefix to use for all placeholders set by FormIt for fields. Make sure to include the '.' separator in your prefix.                                                                                                                                                                                                                                                                                              | fi.                                                                         |
+ | successMessage            | If not using the redirect hook, display this success message after a successful submission.                                                                                                                                                                                                                                                                                                                          |                                                                             |
+ | successMessagePlaceholder | The name of the placeholder to set the success message to.                                                                                                                                                                                                                                                                                                                                                           | fi.successMessage                                                           |
+ | redirectTo                | page ID of a "Thank You" page, where the visitor can be sent after successfully submitting the form, but this parameter is read ONLY if you include "redirect" in the list of &hooks.                                                                                                                                                                                                                                |                                                                             |
+ | allowFiles                | Specify if files are allowed to be posted. Submitted files are stored in a temporary directory to prevent files getting lost in multistep forms.                                                                                                                                                                                                                                                                     | true                                                                        |
+ | attachFilesToEmail        | Attaches uploaded files in email, form needs to be set as enctype="multipart/form-data"                                                                                                                                                                                                                                                                                                                              | true                                                                        |
 
 ##  Validation 
 
  Validation in FormIt is done via the &validate property, and can be used to automatically handle validation on any of the fields in your form.
 
- For more information on validation in FormIt, see the [Validators](/extras/revo/formit/formit.validators "FormIt.Validators") page.
+ For more information on validation in FormIt, see the [Validators](/extras/formit/formit.validators "FormIt.Validators") page.
 
 ##  Hooks 
 
@@ -90,25 +76,25 @@ It can be downloaded from within the MODx Revolution manager via [Package Manage
 
 If any hook fails, the ones following it will not execute.
 
- For more information on hooks, see the [Hooks](/extras/revo/formit/formit.hooks "FormIt.Hooks") page.
+ For more information on hooks, see the [Hooks](/extras/formit/formit.hooks "FormIt.Hooks") page.
 
 ##  See Also 
 
-1. [FormIt.Hooks](/extras/revo/formit/formit.hooks)
-  1. [FormIt.Hooks.email](/extras/revo/formit/formit.hooks/formit.hooks.email)
-  2. [FormIt.Hooks.FormItAutoResponder](/extras/revo/formit/formit.hooks/formit.hooks.formitautoresponder)
-  3. [FormIt.Hooks.math](/extras/revo/formit/formit.hooks/formit.hooks.math)
-  4. [FormIt.Hooks.recaptcha](/extras/revo/formit/formit.hooks/formit.hooks.recaptcha)
-  5. [FormIt.Hooks.redirect](/extras/revo/formit/formit.hooks/formit.hooks.redirect)
-  6. [FormIt.Hooks.spam](/extras/revo/formit/formit.hooks/formit.hooks.spam)
+1. [FormIt.Hooks](/extras/formit/formit.hooks)
+  1. [FormIt.Hooks.email](/extras/formit/formit.hooks/formit.hooks.email)
+  2. [FormIt.Hooks.FormItAutoResponder](/extras/formit/formit.hooks/formit.hooks.formitautoresponder)
+  3. [FormIt.Hooks.math](/extras/formit/formit.hooks/formit.hooks.math)
+  4. [FormIt.Hooks.recaptcha](/extras/formit/formit.hooks/formit.hooks.recaptcha)
+  5. [FormIt.Hooks.redirect](/extras/formit/formit.hooks/formit.hooks.redirect)
+  6. [FormIt.Hooks.spam](/extras/formit/formit.hooks/formit.hooks.spam)
   7. [FormIt.Hooks.FormItSaveForm](https://rtfm.modx.com/extras/revo/formit/formit.hooks/formit.hooks.formitsaveform)
-2. [FormIt.Validators](/extras/revo/formit/formit.validators)
-3. [FormIt.FormItRetriever](/extras/revo/formit/formit.formitretriever)
-4. [FormIt.Tutorials and Examples](/extras/revo/formit/formit.tutorials-and-examples)
-  1. [FormIt.Examples.Custom Hook](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
-  2. [FormIt.Examples.Simple Contact Page](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
-  3. [FormIt.Handling Selects, Checkboxes and Radios](/extras/revo/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
-  4. [FormIt.Using a Blank NoSpam Field](/extras/revo/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
-5. [FormIt.Roadmap](/extras/revo/formit/formit.roadmap)
-6. [FormIt.FormItCountryOptions](/extras/revo/formit/formit.formitcountryoptions)
-7. [FormIt.FormItStateOptions](/extras/revo/formit/formit.formitstateoptions)
+2. [FormIt.Validators](/extras/formit/formit.validators)
+3. [FormIt.FormItRetriever](/extras/formit/formit.formitretriever)
+4. [FormIt.Tutorials and Examples](/extras/formit/formit.tutorials-and-examples)
+  8. [FormIt.Examples.Custom Hook](/extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
+  9. [FormIt.Examples.Simple Contact Page](/extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
+  10. [FormIt.Handling Selects, Checkboxes and Radios](/extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
+  11. [FormIt.Using a Blank NoSpam Field](/extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
+5. [FormIt.Roadmap](/extras/formit/formit.roadmap)
+6. [FormIt.FormItCountryOptions](/extras/formit/formit.formitcountryoptions)
+7. [FormIt.FormItStateOptions](/extras/formit/formit.formitstateoptions)

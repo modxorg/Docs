@@ -4,12 +4,6 @@ _old_id: "835"
 _old_uri: "revo/eventscalendar2/eventscalendar2.generating-events"
 ---
 
-- [Example](#eventsCalendar2.Generatingevents-Example)
-- [Usage](#eventsCalendar2.Generatingevents-Usage)
-- [See Also](#eventsCalendar2.Generatingevents-SeeAlso)
-
-
-
 ## Example
 
 It is not built-in snippet, it example of snippet for generating events. Save this code as snippet eventsGenerator and you may used it for debugging.
@@ -46,9 +40,9 @@ return json_encode($arr);
 
 ## See Also
 
-1. [eventsCalendar2.eventsCalendar2](/extras/revo/eventscalendar2/eventscalendar2.eventscalendar2)
-2. [eventsCalendar2.Generating events](/extras/revo/eventscalendar2/eventscalendar2.generating-events)
-3. [eventsCalendar2.tplCalendar2](/extras/revo/eventscalendar2/eventscalendar2.tplcalendar2)
-4. [eventsCalendar2.tplCell2](/extras/revo/eventscalendar2/eventscalendar2.tplcell2)
-5. [eventsCalendar2.tplEvent2](/extras/revo/eventscalendar2/eventscalendar2.tplevent2)
-6. [eventsCalendar2.tplHead2](/extras/revo/eventscalendar2/eventscalendar2.tplhead2)
+1. [eventsCalendar2.eventsCalendar2](/extras/eventscalendar2/eventscalendar2.eventscalendar2)
+2. [eventsCalendar2.Generating events](/extras/eventscalendar2/eventscalendar2.generating-events)
+3. [eventsCalendar2.tplCalendar2](/extras/eventscalendar2/eventscalendar2.tplcalendar2)
+4. [eventsCalendar2.tplCell2](/extras/eventscalendar2/eventscalendar2.tplcell2)
+5. [eventsCalendar2.tplEvent2](/extras/eventscalendar2/eventscalendar2.tplevent2)
+6. [eventsCalendar2.tplHead2](/extras/eventscalendar2/eventscalendar2.tplhead2)

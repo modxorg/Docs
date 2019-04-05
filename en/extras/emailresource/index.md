@@ -4,13 +4,6 @@ _old_id: "1776"
 _old_uri: "revo/emailresource"
 ---
 
-- [What is EmailResource?](#EmailResource-WhatisEmailResource)
-- [Package Information](#EmailResource-Information)
-- [History](#EmailResource-History)
-- [Download](#EmailResource-Download)
-- [Development and Bug Reporting](#EmailResource-DevelopmentandBugReporting)
-- [Documentation](#EmailResource-Documentation)
- 
 ## What is EmailResource?
 
 EMails an HTML version of any resource with inline CSS code based on your CSS in files, resources, or chunks. The plugin is attached to the OnWebPagePrerender System Event and acts when the resource is previewed from the Manager.

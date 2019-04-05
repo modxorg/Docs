@@ -29,26 +29,26 @@ _old_uri: "revo/simplesearch/simplesearch.simplesearch"
 
 ## Available Properties
 
- | Name | Description | Default |
-|------|-------------|---------|
-| tpl | The chunk that will be used to display the contents of each search result. | SearchResult |
-| containerTpl | The chunk that will be used to wrap all the search results, pagination and message. | SearchResults |
-| useAllWords | If true, will only find results with all the specified search words. | 0 |
-| maxWords | The maximum number of words to include in the search. Only applicable if useAllWords is off. | 7 |
-| minChars | The minimum number of characters to trigger the search. | 3 |
-| searchStyle | To search either with a 'partial' LIKE search, or a relevance-based 'match' search. | partial |
-| andTerms | Whether or not to add a logical AND between words. | 1 |
-| matchWildcard | Enable wildcard search. Set to false to do exact searching on a search term. | 1 |
-| docFields | A comma-separated list of specific Resource fields to search. | pagetitle,longtitle,alias,description,introtext,content |
-| fieldPotency | Score and sort the results (see <https://github.com/splittingred/SimpleSearch/pull/29> for more infos/usage) |  |
-| perPage | The number of search results to show per page. | 10 |
-| showExtract | Whether or not to show an extract of the content of each search result. | 1 |
-| extractSource | (new in version 1.9) Allows the user to define where the extract comes from. If the value of this parameter is a resource field name (including TVs if &includeTVs is set) then that resource field is used for the extract. Otherwise the parameter is taken as the name of a Snippet to run. The Snippet is passed the resource array as parameters. If there is no Snippet by that name, then the extract will be empty. | content |
-| extractLength | The number of characters for the content extraction of each search result. | 200 |
-| extractEllipsis | The string used to wrap extract results with. Defaults to an ellipsis. | ... |
-| includeTVs | Indicates if TemplateVar values should be included in the properties available to each resource template. Defaults to 0. Turning this on might make your search slower if you have lots of TVs. | 0 |
-| includeTVList | An optional comma-delimited list of TemplateVar names to include explicitly if includeTVs is 1. |  |
-| process TVs | Indicates if TemplateVar values should be rendered as they would on the resource being summarized. Defaults to 0. Some notes: 
+ | Name            | Description                                                                                                                                                                                                                                                                                                                                                                                                                 | Default                                                 |
+ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+ | tpl             | The chunk that will be used to display the contents of each search result.                                                                                                                                                                                                                                                                                                                                                  | SearchResult                                            |
+ | containerTpl    | The chunk that will be used to wrap all the search results, pagination and message.                                                                                                                                                                                                                                                                                                                                         | SearchResults                                           |
+ | useAllWords     | If true, will only find results with all the specified search words.                                                                                                                                                                                                                                                                                                                                                        | 0                                                       |
+ | maxWords        | The maximum number of words to include in the search. Only applicable if useAllWords is off.                                                                                                                                                                                                                                                                                                                                | 7                                                       |
+ | minChars        | The minimum number of characters to trigger the search.                                                                                                                                                                                                                                                                                                                                                                     | 3                                                       |
+ | searchStyle     | To search either with a 'partial' LIKE search, or a relevance-based 'match' search.                                                                                                                                                                                                                                                                                                                                         | partial                                                 |
+ | andTerms        | Whether or not to add a logical AND between words.                                                                                                                                                                                                                                                                                                                                                                          | 1                                                       |
+ | matchWildcard   | Enable wildcard search. Set to false to do exact searching on a search term.                                                                                                                                                                                                                                                                                                                                                | 1                                                       |
+ | docFields       | A comma-separated list of specific Resource fields to search.                                                                                                                                                                                                                                                                                                                                                               | pagetitle,longtitle,alias,description,introtext,content |
+ | fieldPotency    | Score and sort the results (see <https://github.com/splittingred/SimpleSearch/pull/29> for more infos/usage)                                                                                                                                                                                                                                                                                                                |                                                         |
+ | perPage         | The number of search results to show per page.                                                                                                                                                                                                                                                                                                                                                                              | 10                                                      |
+ | showExtract     | Whether or not to show an extract of the content of each search result.                                                                                                                                                                                                                                                                                                                                                     | 1                                                       |
+ | extractSource   | (new in version 1.9) Allows the user to define where the extract comes from. If the value of this parameter is a resource field name (including TVs if &includeTVs is set) then that resource field is used for the extract. Otherwise the parameter is taken as the name of a Snippet to run. The Snippet is passed the resource array as parameters. If there is no Snippet by that name, then the extract will be empty. | content                                                 |
+ | extractLength   | The number of characters for the content extraction of each search result.                                                                                                                                                                                                                                                                                                                                                  | 200                                                     |
+ | extractEllipsis | The string used to wrap extract results with. Defaults to an ellipsis.                                                                                                                                                                                                                                                                                                                                                      | ...                                                     |
+ | includeTVs      | Indicates if TemplateVar values should be included in the properties available to each resource template. Defaults to 0. Turning this on might make your search slower if you have lots of TVs.                                                                                                                                                                                                                             | 0                                                       |
+ | includeTVList   | An optional comma-delimited list of TemplateVar names to include explicitly if includeTVs is 1.                                                                                                                                                                                                                                                                                                                             |                                                         |
+ | process TVs     | Indicates if TemplateVar values should be rendered as they would on the resource being summarized. Defaults to 0. Some notes:                                                                                                                                                                                                                                                                                               |
  TVs can be accessed by their TV name \[\[+myTV\]\] By default SimpleSearch does not use a prefix, e.g. \[\[+tv.myTV\]\] will NOT render. 
  TVs are processed during indexing for Solr searching, so there is no need to do this here. | 0 |
 | highlightResults | Whether or not to highlight the search term in results. | 1 |
@@ -80,10 +80,10 @@ _old_uri: "revo/simplesearch/simplesearch.simplesearch"
 
  There are 4 chunks that are processed in SimpleSearch. Their corresponding SimpleSearch parameters are:
 
-- [tpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl "SimpleSearch.SimpleSearch.tpl") - The Chunk to use for each result displayed.
-- [containerTpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl "SimpleSearch.SimpleSearch.containerTpl") - The Chunk that will be used to wrap all the search results, pagination and message.
-- [pageTpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl "SimpleSearch.SimpleSearch.pageTpl") - The Chunk to use for a pagination link.
-- [currentPageTpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl "SimpleSearch.SimpleSearch.currentPageTpl") - The Chunk to use for the current pagination link.
+- [tpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl "SimpleSearch.SimpleSearch.tpl") - The Chunk to use for each result displayed.
+- [containerTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl "SimpleSearch.SimpleSearch.containerTpl") - The Chunk that will be used to wrap all the search results, pagination and message.
+- [pageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl "SimpleSearch.SimpleSearch.pageTpl") - The Chunk to use for a pagination link.
+- [currentPageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl "SimpleSearch.SimpleSearch.currentPageTpl") - The Chunk to use for the current pagination link.
 
 ## Searching Custom Tables
 
@@ -94,7 +94,7 @@ className:fieldName(s):packageName:packagePath:joinCriteria||class2Name:fieldNam
 
 ```
 
- In other words, each custom package is separated by ||. Then, each part of it is separated by colons (:). An example to search [Quip](/extras/revo/quip "Quip") comments:
+ In other words, each custom package is separated by ||. Then, each part of it is separated by colons (:). An example to search [Quip](/extras/quip "Quip") comments:
 
  ``` php 
 &customPackages=`quipComment:body:quip:{core_path}components/quip/model/:quipComment.resource = modResource.id`
@@ -113,7 +113,7 @@ className:fieldName(s):packageName:packagePath:joinCriteria||class2Name:fieldNam
 
 ## Examples
 
- These examples assume you've already sent the search query with the [SimpleSearchForm](/extras/revo/simplesearch/simplesearch.simplesearchform "SimpleSearch.SimpleSearchForm") snippet. 
+ These examples assume you've already sent the search query with the [SimpleSearchForm](/extras/simplesearch/simplesearch.simplesearchform "SimpleSearch.SimpleSearchForm") snippet. 
 
  Display results, but just show their titles:
 
@@ -138,13 +138,13 @@ className:fieldName(s):packageName:packagePath:joinCriteria||class2Name:fieldNam
 
 ## See Also
 
-1. [SimpleSearch.Roadmap](/extras/revo/simplesearch/simplesearch.roadmap)
-2. [SimpleSearch.SimpleSearch](/extras/revo/simplesearch/simplesearch.simplesearch)
-  1. [SimpleSearch.SimpleSearch.containerTpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
-  2. [SimpleSearch.SimpleSearch.currentPageTpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
-  3. [SimpleSearch.SimpleSearch.pageTpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
-  4. [SimpleSearch.SimpleSearch.tpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
-  5. [SimpleSearch.Faceted Search Through PostHooks](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
-3. [SimpleSearch.SimpleSearchForm](/extras/revo/simplesearch/simplesearch.simplesearchform)
-  1. [SimpleSearch.SimpleSearchForm.tpl](/extras/revo/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
-4. [SimpleSearch.Solr](/extras/revo/simplesearch/simplesearch.solr)
+1. [SimpleSearch.Roadmap](/extras/simplesearch/simplesearch.roadmap)
+2. [SimpleSearch.SimpleSearch](/extras/simplesearch/simplesearch.simplesearch)
+  1. [SimpleSearch.SimpleSearch.containerTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
+  2. [SimpleSearch.SimpleSearch.currentPageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
+  3. [SimpleSearch.SimpleSearch.pageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
+  4. [SimpleSearch.SimpleSearch.tpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
+  5. [SimpleSearch.Faceted Search Through PostHooks](/extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
+3. [SimpleSearch.SimpleSearchForm](/extras/simplesearch/simplesearch.simplesearchform)
+  1. [SimpleSearch.SimpleSearchForm.tpl](/extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
+4. [SimpleSearch.Solr](/extras/simplesearch/simplesearch.solr)

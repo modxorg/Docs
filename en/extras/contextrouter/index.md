@@ -24,9 +24,7 @@ If you already had these configured when you installed ContextRouter, it should 
 
 Go to System > System Settings and choose contextrouter in the namespace dropdown (the one that defaults to "core").
 
-| Key | Description |
-|-----|-------------|
-| contextrouter.includeWww | When enabled, ContextRouter will automatically alias www and no-www variations of a host to the current context. |
-| contextrouter.defaultContext | The key of the context that any hosts that are not specifically routed should be routed to. |
-
-###
+| Key                          | Description                                                                                                      |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| contextrouter.includeWww     | When enabled, ContextRouter will automatically alias www and no-www variations of a host to the current context. |
+| contextrouter.defaultContext | The key of the context that any hosts that are not specifically routed should be routed to.                      |

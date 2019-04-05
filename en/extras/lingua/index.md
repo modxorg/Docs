@@ -4,28 +4,6 @@ _old_id: "1364"
 _old_uri: "revo/lingua"
 ---
 
-- [Background](#Lingua-Background)
-- [CMP](#Lingua-CMP)
-- [Plugin](#Lingua-Plugin)
-- [Snippets](#Lingua-Snippets)
-  - [lingua.selector](#Lingua-lingua.selector)
-      - [Properties](#Lingua-Properties)
-      - [Default Chunks](#Lingua-DefaultChunks)
-            - [lingua.selector.wrapper](#Lingua-lingua.selector.wrapper)
-            - [lingua.selector.item](#Lingua-lingua.selector.item)
-  - [lingua.cultureKey](#Lingua-lingua.cultureKey)
-  - [lingua.getField](#Lingua-lingua.getField)
-      - [Properties](#Lingua-lingua.getField-Properties)
-            - [Examples](#Lingua-lingua.getField-Examples)
-  - [lingua.getValue](#Lingua-lingua.getValue)
-      - [Properties](#Lingua-lingua.getValue-Properties)
-            - [Examples](#Lingua-lingua.getValue-Examples)
-- [Version 2.0.0+](#version-2.0.0+)
-  - [Template Variable's Cloning Patterns](#Lingua-Cloning-Patterns)
-- [Limitation](#Lingua-Limitation)
-- [Incompatibility](#Lingua-Incompatibility)
- 
-
 
  A MODX's Lexicon switcher for front-end interface. 
  This can be downloaded from Manager's Package Manager. 
@@ -68,14 +46,14 @@ _old_uri: "revo/lingua"
 
 #### Properties
 
- | Name | Description | Example | Default Value | Options |
-|------|-------------|---------|---------------|---------|
-| tplWrapper | the wrapper template chunk | &tplWrapper=`chunkName` | lingua.selector.wrapper | chunk's name, @BINDINGs enabled |
-| tplItem | the item template chunk | &tplItem=`chunkName` | lingua.selector.item | chunk's name, @BINDINGs enabled |
-| sortby | sort the output by a field name | &tplItem=`lcid\_string` | id | id, local\_name, lang\_code, lcid\_string, lcid\_dec |
-| sortdir | the direction of the sorting | &sortdir=`ASC` | asc | asc, desc |
-| phsPrefix | placeholder's prefix to avoid conflict with other packages' placeholders | &phsPrefix=`lingua.` | lingua. | (string) |
-| codeField | the field of which will be used as the value of the options | &codeField=`lang\_code` | System Setting's **lingua.code.field** | id, local\_name, lang\_code, lcid\_string, lcid\_dec |
+ | Name       | Description                                                              | Example                 | Default Value                          | Options                                              |
+ | ---------- | ------------------------------------------------------------------------ | ----------------------- | -------------------------------------- | ---------------------------------------------------- |
+ | tplWrapper | the wrapper template chunk                                               | &tplWrapper=`chunkName` | lingua.selector.wrapper                | chunk's name, @BINDINGs enabled                      |
+ | tplItem    | the item template chunk                                                  | &tplItem=`chunkName`    | lingua.selector.item                   | chunk's name, @BINDINGs enabled                      |
+ | sortby     | sort the output by a field name                                          | &tplItem=`lcid\_string` | id                                     | id, local\_name, lang\_code, lcid\_string, lcid\_dec |
+ | sortdir    | the direction of the sorting                                             | &sortdir=`ASC`          | asc                                    | asc, desc                                            |
+ | phsPrefix  | placeholder's prefix to avoid conflict with other packages' placeholders | &phsPrefix=`lingua.`    | lingua.                                | (string)                                             |
+ | codeField  | the field of which will be used as the value of the options              | &codeField=`lang\_code` | System Setting's **lingua.code.field** | id, local\_name, lang\_code, lcid\_string, lcid\_dec |
 
  @BINDING in chunks means the developer can use:
 
@@ -88,7 +66,6 @@ _old_uri: "revo/lingua"
 ##### lingua.selector.wrapper
 
  ``` php 
-
 <div class="container">
         <div class="btn-group">
                 <button
@@ -101,19 +78,16 @@ _old_uri: "revo/lingua"
                 </ul>
         </div>
 </div>
-
 ```
 
 ##### lingua.selector.item
 
  ``` php 
-
 [[+lingua.cultureKey:is=`[[+lingua.lang_code]]`:then=``:else=`<li>
         <a href="[[+lingua.url]]" title="[[+lingua.local_name]]">
                 <img src="[[+lingua.flag]]" alt=""/> [[+lingua.local_name]]
         </a>
 </li>`]]
-
 ```
 
  On this chunk, the default content tries to ignore the language of the current language using Output Filter.
@@ -124,17 +98,13 @@ _old_uri: "revo/lingua"
  This snippet only contains
 
  ``` php 
-
 return $modx->cultureKey;
-
 ```
 
  No! It's different to
 
  ``` php 
-
 return $modx->getOption('cultureKey');
-
 ```
 
  This snippet is the most important part to grab the language's lexicons.
@@ -142,17 +112,13 @@ return $modx->getOption('cultureKey');
  **Version 1: Please notice the exclamation mark in front of the %login. The lexicon must be +UN+CACHED.**
 
  ``` php 
-
 [[!%login? &namespace=`Login` &language=`[[!lingua.cultureKey]]`]]
-
 ```
 
  **Version 2:** Lingua has its own cache folder. All translated pages are stored on different files, so everything can be cached.
 
  ``` php 
-
 [[%login? &namespace=`Login` &language=`[[lingua.cultureKey]]`]]
-
 ```
 
 ### lingua.getField
@@ -162,17 +128,15 @@ return $modx->getOption('cultureKey');
 
 #### Properties
 
- | Name | Description | Example | Default Value | Options |
-|------|-------------|---------|---------------|---------|
-| **field** | any field to be selected | &field=`date\_format\_lite` |  | all available fields: id, active, local\_name, lang\_code, lcid\_string, lcid\_dec, date\_format\_lite, date\_format\_full, is\_rtl, flag |
-| codeField | the field of which will be used as the value of the options | &codeField=`lang\_code` | System Setting's **lingua.code.field** | id, local\_name, lang\_code, lcid\_string, lcid\_dec |
+ | Name      | Description                                                 | Example                     | Default Value                          | Options                                                                                                                                   |
+ | --------- | ----------------------------------------------------------- | --------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+ | **field** | any field to be selected                                    | &field=`date\_format\_lite` |                                        | all available fields: id, active, local\_name, lang\_code, lcid\_string, lcid\_dec, date\_format\_lite, date\_format\_full, is\_rtl, flag |
+ | codeField | the field of which will be used as the value of the options | &codeField=`lang\_code`     | System Setting's **lingua.code.field** | id, local\_name, lang\_code, lcid\_string, lcid\_dec                                                                                      |
 
 ##### Examples
 
  ``` php 
-
 Created on: [[*createdon:date=`[[!lingua.getField? &field=`date_format_lite`]]`]]
-
 ```
 
 ### lingua.getValue
@@ -182,16 +146,16 @@ Created on: [[*createdon:date=`[[!lingua.getField? &field=`date_format_lite`]]`]
 
 #### Properties
 
- | Name | Description | Example | Default Value | Options |
-|------|-------------|---------|---------------|---------|
-| **field** | the "key" name, or the field's name in database. **required \*** | &field=`pagetitle` |  | Main fields: pagetitle, longtitle, description, alias, link\_attributes, introtext, content, menutitle, uri, uri\_override, properties 
- or any Template Variable's name |
-| id | The id of the resource to get the value from | &id=`\[\[+snippetPrefix.id\]\]` | Current resource | integer |
+ | Name                            | Description                                                      | Example                         | Default Value    | Options                                                                                                                                |
+ | ------------------------------- | ---------------------------------------------------------------- | ------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+ | **field**                       | the "key" name, or the field's name in database. **required \*** | &field=`pagetitle`              |                  | Main fields: pagetitle, longtitle, description, alias, link\_attributes, introtext, content, menutitle, uri, uri\_override, properties |
+ | or any Template Variable's name |
+ | id                              | The id of the resource to get the value from                     | &id=`\[\[+snippetPrefix.id\]\]` | Current resource | integer                                                                                                                                |
 
 ##### Examples
 
- On your wayfinder's rowTpl, change the placeholder, like this: ``` php 
-
+ On your wayfinder's rowTpl, change the placeholder, like this: 
+ ``` php 
 <li[[+wf.id]][[+wf.classes]]>
     <a href="[[+wf.link]]" title="[[+wf.title]]" [[+wf.attributes]]>
         <-- [[-+wf.linktext]] -->
@@ -200,7 +164,6 @@ Created on: [[*createdon:date=`[[!lingua.getField? &field=`date_format_lite`]]`]
     </a>
     [[+wf.wrapper]]
 </li>
-
 ```
 
 ## Version 2.0.0+

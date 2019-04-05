@@ -4,12 +4,6 @@ _old_id: "832"
 _old_uri: "revo/eletters/eletters.import-csv"
 ---
 
-- [Preparing a CSV File for Import](#Eletters.ImportCSV-PreparingaCSVFileforImport)
-- [Import a CSV File](#Eletters.ImportCSV-ImportaCSVFile)
-- [See Also](#Eletters.ImportCSV-SeeAlso)
-
-
-
 Added in 1.0 beta3
 
 You can now create a CSV of name and import them directly and choose if they are active and what groups they are assigned to.
@@ -35,7 +29,7 @@ Preparing a CSV for import is fairly easy if you know how to use excel or simila
 
 ## See Also
 
-1. [Eletters.API](/extras/revo/eletters/eletters.api)
-2. [Eletters.FormIt](/extras/revo/eletters/eletters.formit)
-3. [Eletters.Import CSV](/extras/revo/eletters/eletters.import-csv)
-4. [Eletters.Templates](/extras/revo/eletters/eletters.templates)
+1. [Eletters.API](/extras/eletters/eletters.api)
+2. [Eletters.FormIt](/extras/eletters/eletters.formit)
+3. [Eletters.Import CSV](/extras/eletters/eletters.import-csv)
+4. [Eletters.Templates](/extras/eletters/eletters.templates)

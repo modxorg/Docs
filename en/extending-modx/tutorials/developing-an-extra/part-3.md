@@ -18,7 +18,7 @@ First off, if you're not sure what a Transport Package is, or what Package Manag
 
 Our main goals for this part of the tutorial will be getting the Extra in a package: specifically our Snippet; the files in core/components and assets/components; the Action, Menu and Namespace for our CMP; making our Snippet's default properties i18n supported; and finally, adding a Resolver that creates our custom DB table in the installing user's database.
 
-For simple Extras that don't have a CMP, we could just use [PackMan](/extras/revo/packman "PackMan") to package up our Extra. However, we have a CMP, and we want to learn how to do the script. So, here we are.
+For simple Extras that don't have a CMP, we could just use [PackMan](/extras/packman "PackMan") to package up our Extra. However, we have a CMP, and we want to learn how to do the script. So, here we are.
 
 ## Setting Up Our Build Directory
 
@@ -569,7 +569,7 @@ So, this looks familiar to a resolver, eh? That's because this little bit of cod
 
 Remember that $options array in our PHP resolver? If we were to put any form elements in this output, they'd be found in that array with the same key. (An input with name of 'test' would be in $options\['test'\]). That means you could make a resolver that would process the form fields you put in the Setup Options script.
 
-That means that you could have a lot of neat little fields that do pre-installation options. That's a bit beyond the scope of this tutorial, but now that you know the basics, you can probably figure it out from there. (Also, plenty of existing Extras, such as [Quip](/extras/revo/quip "Quip") do this, and you can [view their code](https://github.com/splittingred/Quip) to see how.
+That means that you could have a lot of neat little fields that do pre-installation options. That's a bit beyond the scope of this tutorial, but now that you know the basics, you can probably figure it out from there. (Also, plenty of existing Extras, such as [Quip](/extras/quip "Quip") do this, and you can [view their code](https://github.com/splittingred/Quip) to see how.
 
 ## Summary
 

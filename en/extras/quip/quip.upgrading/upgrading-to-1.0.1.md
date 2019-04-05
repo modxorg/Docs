@@ -47,4 +47,4 @@ In the &tplComment chunk, children comments are now properly nested inside, rath
 
 ## See Also
 
-1. [Quip.Upgrading to 1.0.1](/extras/revo/quip/quip.upgrading/quip.upgrading-to-1.0.1)
+1. [Quip.Upgrading to 1.0.1](/extras/quip/quip.upgrading/quip.upgrading-to-1.0.1)

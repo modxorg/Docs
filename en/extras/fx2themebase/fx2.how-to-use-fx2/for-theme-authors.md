@@ -4,7 +4,7 @@ _old_id: "1670"
 _old_uri: "revo/fx2themebase/fx2.how-to-use-fx2/fx2.for-theme-authors"
 ---
 
-## <a name="fx2.HowtoUsefx2-custom-dashboard"></a>Custom Dashboard
+## Custom Dashboard
 
  The first thing you see when you login to MODX Revolution is the Dashboard. FX2 has a custom Dashboard, with Quick Buttons to the most commonly used features, embedded video tutorials, and links to documentation.
 
@@ -18,7 +18,7 @@ _old_uri: "revo/fx2themebase/fx2.how-to-use-fx2/fx2.for-theme-authors"
 
  Optionally add your own styles and markup. The MODX tags will be parsed, so you can use placeholders just like in any Template, Chunk or Resource.
 
-## <a name="fx2.HowtoUsefx2-site-customization"></a>Site Customization
+## Site Customization
 
  From the Dashboard, click on the Quick Link "Customize Your Site". This takes you to the customized ClientConfig component - a nice user interface for your end users to customize their site after they've installed your theme.
 
@@ -38,11 +38,11 @@ _old_uri: "revo/fx2themebase/fx2.how-to-use-fx2/fx2.for-theme-authors"
 
  As you can see, the Key, Label, and Field Type are required. Let's go through the fields one by one:
 
- | Field Name | Description |
-|------------|-------------|
-| Key | This is the key of your custom site setting. It will be available from any Template, Chunk, or Resource in MODX using the system setting placeholder tag, like this: \[\[++setting\_key\]\] If you create a setting with the same key as a MODX system setting or context setting, ClientConfig will override those. (e.g. in the screenshot above, there is a setting called "Site Name" with the key \[\[++site\_name\]\]. This value will be used throughout the site instead of the value in the System Settings.) |
-| Label | This is the field label displayed to your end user. |
-| Field Type | Choose from 11 available field types, including Google Font List, Colorpicker, Rich Text and Image.
+ | Field Name | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+ | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | Key        | This is the key of your custom site setting. It will be available from any Template, Chunk, or Resource in MODX using the system setting placeholder tag, like this: \[\[++setting\_key\]\] If you create a setting with the same key as a MODX system setting or context setting, ClientConfig will override those. (e.g. in the screenshot above, there is a setting called "Site Name" with the key \[\[++site\_name\]\]. This value will be used throughout the site instead of the value in the System Settings.) |
+ | Label      | This is the field label displayed to your end user.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+ | Field Type | Choose from 11 available field types, including Google Font List, Colorpicker, Rich Text and Image.                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
  ![](/download/attachments/6db40c3bf7b03bf43a88376d9864ff04/Screen Shot 2013-10-04 at 11.34.00 PM.png) |
 | Description | Descriptive text to help your end user properly utilize the setting. |

@@ -4,13 +4,6 @@ _old_id: "1769"
 _old_uri: "revo/caseinsensitiveurls"
 ---
 
-- [What is CaseInsensitiveURLs?](#CaseInsensitiveURLs-WhatisCaseInsensitiveURLs)
-- [Package Information](#CaseInsensitiveURLs-Information)
-- [History](#CaseInsensitiveURLs-History)
-- [Download](#CaseInsensitiveURLs-Download)
-- [Development and Bug Reporting](#CaseInsensitiveURLs-DevelopmentandBugReporting)
-- [Documentation](#CaseInsensitiveURLs-Documentation)
- 
 ## What is CaseInsensitiveURLs?
 
 The CaseInsensitiveURLs Plugin redirects page requests for mixed-case URLs to the lowercase version when the mixed-case version is not found. URL query parameters will not be altered. The Plugin will not slow down your site because it only executes when the page-not-found event fires.

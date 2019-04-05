@@ -4,15 +4,6 @@ _old_id: "638"
 _old_uri: "revo/fastfield"
 ---
 
-- [What is fastField?](#fastField-WhatisfastField%3F)
-- [History](#fastField-History)
-- [Download](#fastField-Download)
-- [Usage](#fastField-Usage)
-- [Examples](#fastField-Examples)
-- [How it works](#fastField-Howitworks)
- 
-
-
 ##  What is fastField? 
 
  fastField is a plugin which adds new type of tag \[\[#...\]\] . It can be used to display a single field, including template variables and properties, of a different resource for MODx Revolution 2.2+. It also can display the value of superglobal PHP variables $\_POST, $\_GET and others.
@@ -39,58 +30,44 @@ _old_uri: "revo/fastfield"
 
  Return the pagetitle from the resource with id 123:
 
- ``` plain 
-
- [[#123.pagetitle]]
-
+ ``` php 
+[[#123.pagetitle]]
 ```
 
  Return the introtext of a parent of a current resource and display description for empty one:
 
- ``` plain 
-
- [[#[[*parent]].introtext:default=`[[#[[*parent]].description]]`]]
-
+ ``` php 
+[[#[[*parent]].introtext:default=`[[#[[*parent]].description]]`]]
 ```
 
  Or, more efficiently (see [this MODX blog article](http://modx.com/blog/2012/09/14/tags-as-the-result-or-how-conditionals-are-like-mosquitoes/)):
 
- ``` plain 
-
- [[[[#[[*parent]].introtext:default=`#[[*parent]].description`]]]]
-
+ ``` php 
+[[[[#[[*parent]].introtext:default=`#[[*parent]].description`]]]]
 ```
 
  Return the content of the resources in rowTpl chunk while [Wayfinder](/extras/evo/wayfinder) usage:
 
- ``` plain 
-
- [[#[[+wf.docid]].content]]
-
+``` php 
+[[#[[+wf.docid]].content]]
 ```
 
  Return TV image from the resource with id 10:
 
- ``` plain 
-
- [[#10.tv.image]]
-
+``` php 
+[[#10.tv.image]]
 ```
 
  Return property articlesPerPage from the resource with id 1 of custom resource type [Articles](/display/ADDON/Articles)
 
- ``` php 
-
- [[#1.properties.articles.articlesPerPage]]
-
+``` php 
+[[#1.properties.articles.articlesPerPage]]
 ```
 
  Return the value of $\_POST\['myVar'\]:
 
- ``` plain 
-
- [[!#post.myVar]]
-
+ ``` php 
+[[!#post.myVar]]
 ```
 
  Supported global arrays: $\_GET, $\_POST, $\_REQUEST, $\_SERVER, $\_FILES, $\_COOKIE, $\_SESSION. The type of array after # is case-insensitive. The name of array element is case-sensitive. You should use uncached tag, eg. \[\[!#get.name\]\], for cached resources.

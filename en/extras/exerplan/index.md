@@ -4,31 +4,6 @@ _old_id: "1359"
 _old_uri: "revo/exerplan"
 ---
 
-- [ExerPlan](#ExerPlan-ExerPlan)
-  - [Download](#ExerPlan-Download)
-  - [Development and Bug Reporting](#ExerPlan-DevelopmentandBugReporting)
-- [Custom Manager Page (CMP)](#ExerPlan-CustomManagerPage%28CMP%29)
-  - [Settings](#ExerPlan-Settings)
-  - [Workouts](#ExerPlan-Workouts)
-  - [Users](#ExerPlan-Users)
-- [Snippets](#ExerPlan-Snippets)
-  - [exerplan.Exercises](#ExerPlan-exerplan.Exercises)
-      - [Properties](#ExerPlan-Properties)
-  - [exerplan.Galleries](#ExerPlan-exerplan.Galleries)
-      - [Properties](#ExerPlan-Properties)
-  - [exerplan.Assessments](#ExerPlan-exerplan.Assessments)
-      - [Properties](#ExerPlan-Properties)
-- [Examples](#ExerPlan-Examples)
-- [Default Chunks](#ExerPlan-DefaultChunks)
-  - [exerplan.exercises.item](#ExerPlan-exerplan.exercises.item)
-  - [exerplan.exercises.wrapper](#ExerPlan-exerplan.exercises.wrapper)
-  - [exerplan.gallery.item](#ExerPlan-exerplan.gallery.item)
-  - [exerplan.gallery.wrapper](#ExerPlan-exerplan.gallery.wrapper)
-  - [exerplan.assessment.item](#ExerPlan-exerplan.assessment.item)
-  - [exerplan.assessment.wrapper](#ExerPlan-exerplan.assessment.wrapper)
-
-
-
 # ExerPlan
 
 ExerPlan is en exercise planner for a health care or sport training type websites. 
@@ -116,28 +91,28 @@ This snippet show the workouts that have been set for the members.
 
 ### Properties
 
-| property | description | options | default |
-|----------|-------------|---------|---------|
-| **requireAuth** | is authorization required to see the output? | bool | 1 |
-| userId | get the workouts that apply to this user | int |  |
-| sortby | sort the list by this selection | the field's name of the workouts table | id |
-| sortdir | sort the list by this direction | enum(asc,desc) | asc |
-| phsPrefix | placeholder's prefix of the output | string | exerplan. |
-| groupByUsergroups | _not yet implemented_ |  |  |
-| getGalleries | include the galleries of each workout | bool |  |
-| gallerySource | if this is used, then filter the output by this media source | string |  |
-| galleryMediatype | if this is used, then filter the output by this media type | string |  |
-| galleryPrefix | add more placeholder's prefix for the gallery | string | gallery. |
-| getUsergroupWorkouts | Is getting workouts for user groups? | bool | 1 |
-| getUserWorkouts | Is getting workouts for user? | bool | 1 |
-| tplItem | chunk name, or use any of @BINDINGs for workout rows | string | exerplan.exercises.item |
-| itemSeparator | separator of each of item templates output | string | "\\n" |
-| tplWrapper | chunk name, or use any of @BINDINGs for wrapper | string | exerplan.exercises.wrapper |
-| tplGalleryItem | chunk name, or use any of @BINDINGs for gallery's rows inside the gallery's wrapper | string | exerplan.gallery.item |
-| gallerySeparator | separator of each of gallery's item templates output | string | "\\n" |
-| tplGalleryWrapper | chunk name, or use any of @BINDINGs for gallery's wrapper | string | exerplan.gallery.wrapper |
-| **toArray** | dump the placeholders output, rather parse them in the chunk | bool |  |
-| toPlaceholder | place the output into the given name of the placeholder | string |  |
+| property             | description                                                                         | options                                | default                    |
+| -------------------- | ----------------------------------------------------------------------------------- | -------------------------------------- | -------------------------- |
+| **requireAuth**      | is authorization required to see the output?                                        | bool                                   | 1                          |
+| userId               | get the workouts that apply to this user                                            | int                                    |                            |
+| sortby               | sort the list by this selection                                                     | the field's name of the workouts table | id                         |
+| sortdir              | sort the list by this direction                                                     | enum(asc,desc)                         | asc                        |
+| phsPrefix            | placeholder's prefix of the output                                                  | string                                 | exerplan.                  |
+| groupByUsergroups    | _not yet implemented_                                                               |                                        |                            |
+| getGalleries         | include the galleries of each workout                                               | bool                                   |                            |
+| gallerySource        | if this is used, then filter the output by this media source                        | string                                 |                            |
+| galleryMediatype     | if this is used, then filter the output by this media type                          | string                                 |                            |
+| galleryPrefix        | add more placeholder's prefix for the gallery                                       | string                                 | gallery.                   |
+| getUsergroupWorkouts | Is getting workouts for user groups?                                                | bool                                   | 1                          |
+| getUserWorkouts      | Is getting workouts for user?                                                       | bool                                   | 1                          |
+| tplItem              | chunk name, or use any of @BINDINGs for workout rows                                | string                                 | exerplan.exercises.item    |
+| itemSeparator        | separator of each of item templates output                                          | string                                 | "\\n"                      |
+| tplWrapper           | chunk name, or use any of @BINDINGs for wrapper                                     | string                                 | exerplan.exercises.wrapper |
+| tplGalleryItem       | chunk name, or use any of @BINDINGs for gallery's rows inside the gallery's wrapper | string                                 | exerplan.gallery.item      |
+| gallerySeparator     | separator of each of gallery's item templates output                                | string                                 | "\\n"                      |
+| tplGalleryWrapper    | chunk name, or use any of @BINDINGs for gallery's wrapper                           | string                                 | exerplan.gallery.wrapper   |
+| **toArray**          | dump the placeholders output, rather parse them in the chunk                        | bool                                   |                            |
+| toPlaceholder        | place the output into the given name of the placeholder                             | string                                 |                            |
 
 ## exerplan.Galleries
 
@@ -145,24 +120,24 @@ This snippet show the **individual Galleries** that have been given for the memb
 
 ### Properties
 
-| property | description | options | default |
-|----------|-------------|---------|---------|
-| **requireAuth** | is authorization required to see the output? | bool | 1 |
-| userId | get the workouts that apply to this user | int |  |
-| sortby | sort the list by this selection | the field's name of the workouts table | id |
-| sortdir | sort the list by this direction | enum(asc,desc) | asc |
-| phsPrefix | placeholder's prefix of the output | string | exerplan. |
-| workoutId | the ID of the workout | int |  |
-| gallerySource | if this is used, then filter the output by this media source | string |  |
-| galleryMediatype | if this is used, then filter the output by this media type | string |  |
-| galleryPrefix | add more placeholder's prefix for the gallery | string | gallery. |
-| getUsergroupWorkouts | Is getting workouts for user groups? | bool | 1 |
-| getUserWorkouts | Is getting workouts for user? | bool | 1 |
-| tplItem | chunk name, or use any of @BINDINGs for gallery's rows | string | exerplan.gallery.item |
-| itemSeparator | separator of each of item templates output | string | "\\n" |
-| tplWrapper | chunk name, or use any of @BINDINGs for gallery's wrapper | string | exerplan.gallery.wrapper |
-| **toArray** | dump the placeholders output, rather parse them in the chunk | bool |  |
-| toPlaceholder | place the output into the given name of the placeholder | string |  |
+| property             | description                                                  | options                                | default                  |
+| -------------------- | ------------------------------------------------------------ | -------------------------------------- | ------------------------ |
+| **requireAuth**      | is authorization required to see the output?                 | bool                                   | 1                        |
+| userId               | get the workouts that apply to this user                     | int                                    |                          |
+| sortby               | sort the list by this selection                              | the field's name of the workouts table | id                       |
+| sortdir              | sort the list by this direction                              | enum(asc,desc)                         | asc                      |
+| phsPrefix            | placeholder's prefix of the output                           | string                                 | exerplan.                |
+| workoutId            | the ID of the workout                                        | int                                    |                          |
+| gallerySource        | if this is used, then filter the output by this media source | string                                 |                          |
+| galleryMediatype     | if this is used, then filter the output by this media type   | string                                 |                          |
+| galleryPrefix        | add more placeholder's prefix for the gallery                | string                                 | gallery.                 |
+| getUsergroupWorkouts | Is getting workouts for user groups?                         | bool                                   | 1                        |
+| getUserWorkouts      | Is getting workouts for user?                                | bool                                   | 1                        |
+| tplItem              | chunk name, or use any of @BINDINGs for gallery's rows       | string                                 | exerplan.gallery.item    |
+| itemSeparator        | separator of each of item templates output                   | string                                 | "\\n"                    |
+| tplWrapper           | chunk name, or use any of @BINDINGs for gallery's wrapper    | string                                 | exerplan.gallery.wrapper |
+| **toArray**          | dump the placeholders output, rather parse them in the chunk | bool                                   |                          |
+| toPlaceholder        | place the output into the given name of the placeholder      | string                                 |                          |
 
 ## exerplan.Assessments
 
@@ -170,25 +145,25 @@ This snippet show the assessments that have been set for the members, or from th
 
 ### Properties
 
-| property | description | options | default |
-|----------|-------------|---------|---------|
-| **requireAuth** | is authorization required to see the output? | bool | 1 |
-| assesseeId | get the assessments for this user | int |  |
-| assessorId | get the assessments from this user | int |  |
-| **showHidden** | Show hidden assessments? | bool |  |
-| sortby | sort the list by this selection | the field's name of the workouts table | id |
-| sortdir | sort the list by this direction | enum(asc,desc) | asc |
-| phsPrefix | placeholder's prefix of the output | string | exerplan. |
-| assessmentPrefix | add more placeholder's prefix for the assessment's output | string | assessment. |
-| tplItem | chunk name, or use any of @BINDINGs for assessment's rows | string | exerplan.assessment.item |
-| itemSeparator | separator of each of item templates output | string | "\\n" |
-| tplWrapper | chunk name, or use any of @BINDINGs for assessment's wrapper | string | exerplan.assessment.wrapper |
-| **toArray** | dump the placeholders output, rather parse them in the chunk | bool |  |
-| toPlaceholder | place the output into the given name of the placeholder | string |  |
+| property         | description                                                  | options                                | default                     |
+| ---------------- | ------------------------------------------------------------ | -------------------------------------- | --------------------------- |
+| **requireAuth**  | is authorization required to see the output?                 | bool                                   | 1                           |
+| assesseeId       | get the assessments for this user                            | int                                    |                             |
+| assessorId       | get the assessments from this user                           | int                                    |                             |
+| **showHidden**   | Show hidden assessments?                                     | bool                                   |                             |
+| sortby           | sort the list by this selection                              | the field's name of the workouts table | id                          |
+| sortdir          | sort the list by this direction                              | enum(asc,desc)                         | asc                         |
+| phsPrefix        | placeholder's prefix of the output                           | string                                 | exerplan.                   |
+| assessmentPrefix | add more placeholder's prefix for the assessment's output    | string                                 | assessment.                 |
+| tplItem          | chunk name, or use any of @BINDINGs for assessment's rows    | string                                 | exerplan.assessment.item    |
+| itemSeparator    | separator of each of item templates output                   | string                                 | "\\n"                       |
+| tplWrapper       | chunk name, or use any of @BINDINGs for assessment's wrapper | string                                 | exerplan.assessment.wrapper |
+| **toArray**      | dump the placeholders output, rather parse them in the chunk | bool                                   |                             |
+| toPlaceholder    | place the output into the given name of the placeholder      | string                                 |                             |
 
 # Examples
 
-``` html 
+``` php 
 [[!Login]]<br>
 
 <!-- &toArray is commented out, remove _ to run -->

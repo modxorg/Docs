@@ -65,10 +65,10 @@ Simply place the snippet wherever you would like to display a comment thread, an
 
 There are 4 chunks that are processed in Quip. Their corresponding parameters are:
 
-- [tplComment](/extras/revo/quip/quip.quip/quip.quip.tplcomment "Quip.Quip.tplComment")
-- [tplCommentOptions](/extras/revo/quip/quip.quip/quip.quip.tplcommentoptions "Quip.Quip.tplCommentOptions")
-- [tplComments](/extras/revo/quip/quip.quip/quip.quip.tplcomments "Quip.Quip.tplComments")
-- [tplReport](/extras/revo/quip/quip.quip/quip.quip.tplreport "Quip.Quip.tplReport")
+- [tplComment](/extras/quip/quip.quip/quip.quip.tplcomment "Quip.Quip.tplComment")
+- [tplCommentOptions](/extras/quip/quip.quip/quip.quip.tplcommentoptions "Quip.Quip.tplCommentOptions")
+- [tplComments](/extras/quip/quip.quip/quip.quip.tplcomments "Quip.Quip.tplComments")
+- [tplReport](/extras/quip/quip.quip/quip.quip.tplreport "Quip.Quip.tplReport")
 
 ## Examples
 
@@ -98,18 +98,18 @@ A comment thread, pagination enabled, having only 5 root comments per page, and 
 
 ## See Also
 
-1. [Quip.Quip](/extras/revo/quip/quip.quip)
-  1. [Quip.Quip.tplComment](/extras/revo/quip/quip.quip/quip.quip.tplcomment)
-  2. [Quip.Quip.tplCommentOptions](/extras/revo/quip/quip.quip/quip.quip.tplcommentoptions)
-  3. [Quip.Quip.tplComments](/extras/revo/quip/quip.quip/quip.quip.tplcomments)
-  4. [Quip.Quip.tplReport](/extras/revo/quip/quip.quip/quip.quip.tplreport)
-2. [Quip.QuipCount](/extras/revo/quip/quip.quipcount)
-3. [Quip.QuipLatestComments](/extras/revo/quip/quip.quiplatestcomments)
-4. [Quip.QuipReply](/extras/revo/quip/quip.quipreply)
-  1. [Quip.QuipReply.tplAddComment](/extras/revo/quip/quip.quipreply/quip.quipreply.tpladdcomment)
-  2. [Quip.QuipReply.tplLoginToComment](/extras/revo/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
-  3. [Quip.QuipReply.tplPreview](/extras/revo/quip/quip.quipreply/quip.quipreply.tplpreview)
-5. [Quip.QuipRss](/extras/revo/quip/quip.quiprss)
-6. [Quip.Roadmap](/extras/revo/quip/quip.roadmap)
-7. [Quip.Upgrading](/extras/revo/quip/quip.upgrading)
-  1. [Quip.Upgrading to 1.0.1](/extras/revo/quip/quip.upgrading/quip.upgrading-to-1.0.1)
+1. [Quip.Quip](/extras/quip/quip.quip)
+  1. [Quip.Quip.tplComment](/extras/quip/quip.quip/quip.quip.tplcomment)
+  2. [Quip.Quip.tplCommentOptions](/extras/quip/quip.quip/quip.quip.tplcommentoptions)
+  3. [Quip.Quip.tplComments](/extras/quip/quip.quip/quip.quip.tplcomments)
+  4. [Quip.Quip.tplReport](/extras/quip/quip.quip/quip.quip.tplreport)
+2. [Quip.QuipCount](/extras/quip/quip.quipcount)
+3. [Quip.QuipLatestComments](/extras/quip/quip.quiplatestcomments)
+4. [Quip.QuipReply](/extras/quip/quip.quipreply)
+  1. [Quip.QuipReply.tplAddComment](/extras/quip/quip.quipreply/quip.quipreply.tpladdcomment)
+  2. [Quip.QuipReply.tplLoginToComment](/extras/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
+  3. [Quip.QuipReply.tplPreview](/extras/quip/quip.quipreply/quip.quipreply.tplpreview)
+5. [Quip.QuipRss](/extras/quip/quip.quiprss)
+6. [Quip.Roadmap](/extras/quip/quip.roadmap)
+7. [Quip.Upgrading](/extras/quip/quip.upgrading)
+  1. [Quip.Upgrading to 1.0.1](/extras/quip/quip.upgrading/quip.upgrading-to-1.0.1)

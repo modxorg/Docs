@@ -4,23 +4,6 @@ _old_id: "647"
 _old_uri: "revo/gallery"
 ---
 
-- [What is Gallery?](#Gallery-WhatisGallery%3F)
-- [Requirements](#Gallery-Requirements)
-- [History and Info](#Gallery-HistoryandInfo)
-  - [Download](#Gallery-Download)
-  - [Development and Bug Reporting](#Gallery-DevelopmentandBugReporting)
-- [Usage](#Gallery-Usage)
-  - [Snippets](#Gallery-Snippets)
-  - [System Settings](#Gallery-SystemSettings)
-  - [Using the Custom TV](#Gallery-UsingtheCustomTV)
-  - [Gallery Plugins](#Gallery-GalleryPlugins)
-  - [Gallery manager page](#Gallery-Gallerymanagerpage)
-  - [Gallery Media Source](#Gallery-GalleryMediaSource)
-- [Examples](#Gallery-Examples)
-- [See Also](#Gallery-SeeAlso)
-
-
-
 ## What is Gallery?
 
  Gallery is a dynamic Gallery Extra for MODx Revolution. It allows you to quickly and easily put up galleries of images, sort them, tag them, and display them in a myriad of ways in the front-end of your site.
@@ -37,7 +20,7 @@ _old_uri: "revo/gallery"
 
  Gallery was written by Shaun McCormick (splittingred) as a dynamic Gallery component, and first released on February 5th, 2010.
 
- You can view the [roadmap here](/extras/revo/gallery/gallery.roadmap "Gallery.Roadmap").
+ You can view the [roadmap here](/extras/gallery/gallery.roadmap "Gallery.Roadmap").
 
 ### Download
 
@@ -54,46 +37,45 @@ _old_uri: "revo/gallery"
  ``` php 
 [[Gallery? &album=`My Album`]]
 [[GalleryAlbums? &limit=`10`]]
-
 ```
 
 ### Snippets
 
  Gallery comes packaged with 3 snippets - one called "Gallery", which displays a gallery from either an Album, a Tag, or both; a snippet called "GalleryAlbums", which displays a list of Albums; and a snippet called "GalleryItem", which displays a single Gallery Item.
 
-- [Gallery](/extras/revo/gallery/gallery.gallery "Gallery.Gallery")
-- [GalleryAlbums](/extras/revo/gallery/gallery.galleryalbums "Gallery.GalleryAlbums")
-- [GalleryItem](/extras/revo/gallery/gallery.galleryitem "Gallery.GalleryItem")
+- [Gallery](/extras/gallery/gallery.gallery "Gallery.Gallery")
+- [GalleryAlbums](/extras/gallery/gallery.galleryalbums "Gallery.GalleryAlbums")
+- [GalleryItem](/extras/gallery/gallery.galleryitem "Gallery.GalleryItem")
 
 ### System Settings
 
  You can change the place where you store your Gallery images by changing the following settings:
 
- | gallery.files\_path | The absolute path of a folder to store images in. |
-|---------------------|---------------------------------------------------|
-| gallery.files\_url | The web-accessible URL that you can reach gallery.files\_path from. |
+ | gallery.files\_path | The absolute path of a folder to store images in.                   |
+ | ------------------- | ------------------------------------------------------------------- |
+ | gallery.files\_url  | The web-accessible URL that you can reach gallery.files\_path from. |
 
  As of version 1.3.0 you can also enable and control a TinyMCE integration for Gallery item descriptions. These settings are included:
 
- | key | description |
-|-----|-------------|
-| gallery.use\_richtext | Set to yes (true) to enable the TinyMCE integration. Note that you will need to have the TinyMCE Extra installed in order for this to work. |
-| gallery.tiny.width | Width of the text editor in either pixels or a percentage. |
-| gallery.tiny.height | Height of the text editor in either pixels or a percentage. |
-| gallery.tiny.buttons1/2/3/4/5 | Buttons to display on the different rows (1 through 5). When empty this will inherit from the main TinyMCE settings. |
-| gallery.tiny.custom\_plugins | A comma separated list of plugins to load. When empty this will inherit from the main TInyMCE settings. |
-| gallery.tiny.theme\_advanced\_blockformats | Block formats to use in the drop down box. Inherits from main TinyMCE settings when empty. |
-| gallery.tiny.theme\_advanced\_css\_selectors | CSS Selectors to choose from. Inherits from main TinyMCE settings when empty. |
+ | key                                          | description                                                                                                                                 |
+ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+ | gallery.use\_richtext                        | Set to yes (true) to enable the TinyMCE integration. Note that you will need to have the TinyMCE Extra installed in order for this to work. |
+ | gallery.tiny.width                           | Width of the text editor in either pixels or a percentage.                                                                                  |
+ | gallery.tiny.height                          | Height of the text editor in either pixels or a percentage.                                                                                 |
+ | gallery.tiny.buttons1/2/3/4/5                | Buttons to display on the different rows (1 through 5). When empty this will inherit from the main TinyMCE settings.                        |
+ | gallery.tiny.custom\_plugins                 | A comma separated list of plugins to load. When empty this will inherit from the main TInyMCE settings.                                     |
+ | gallery.tiny.theme\_advanced\_blockformats   | Block formats to use in the drop down box. Inherits from main TinyMCE settings when empty.                                                  |
+ | gallery.tiny.theme\_advanced\_css\_selectors | CSS Selectors to choose from. Inherits from main TinyMCE settings when empty.                                                               |
 
 ### Using the Custom TV
 
  Gallery comes packaged with a custom TV input and output type for managing Gallery images in the backend. You can crop, resize, rotate, and more with it. Please see the following article for more usage:
 
-- [Setting Up the GalleryItem TV](/extras/revo/gallery/gallery.setting-up-the-galleryitem-tv "Gallery.Setting Up the GalleryItem TV")
+- [Setting Up the GalleryItem TV](/extras/gallery/gallery.setting-up-the-galleryitem-tv "Gallery.Setting Up the GalleryItem TV")
 
 ### Gallery Plugins
 
- Gallery allows you to display your galleries either straight as thumbnail images in the front-end, or using jQuery plugins. You can pass a plugin name through the Gallery snippet. Currently, the only available plugin is for [Galleriffic](/extras/revo/gallery/gallery.plugins/gallery.plugins.galleriffic "Gallery.Plugins.Galleriffic").
+ Gallery allows you to display your galleries either straight as thumbnail images in the front-end, or using jQuery plugins. You can pass a plugin name through the Gallery snippet. Currently, the only available plugin is for [Galleriffic](/extras/gallery/gallery.plugins/gallery.plugins.galleriffic "Gallery.Plugins.Galleriffic").
 
 ### Gallery manager page
 
@@ -111,40 +93,37 @@ _old_uri: "revo/gallery"
 
  ``` php 
 [[!Gallery? &album=`My Album` &plugin=`galleriffic`]]
-
 ```
 
  Grab the first 10 photos tagged "Fun":
 
  ``` php 
 [[!Gallery? &tag=`Fun`]]
-
 ```
 
  Grab all photos in the album "My Album" with tag "Blue":
 
  ``` php 
 [[!Gallery? &album=`My Album` &tag=`blue`]]
-
 ```
 
 ## See Also
 
-1. [Gallery.Gallery](/extras/revo/gallery/gallery.gallery)
-  1. [Gallery.Gallery.containerTpl](/extras/revo/gallery/gallery.gallery/gallery.gallery.containertpl)
-  2. [Gallery.Gallery.thumbTpl](/extras/revo/gallery/gallery.gallery/gallery.gallery.thumbtpl)
-2. [Gallery.GalleryAlbums](/extras/revo/gallery/gallery.galleryalbums)
-  1. [Gallery.GalleryAlbums.containerTpl](extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
-  2. [Gallery.GalleryAlbums.rowTpl](/extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
-3. [Gallery.GalleryItem](/extras/revo/gallery/gallery.galleryitem)
-  1. [Gallery.GalleryItem.albumTpl](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
-  2. [Gallery.GalleryItem.GalleryItemPagination](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
-  3. [Gallery.GalleryItem.tagTpl](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
-  4. [Gallery.GalleryItem.tpl](/extras/revo/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
-4. [Gallery.Plugins](/extras/revo/gallery/gallery.plugins)
-  1. [Gallery.Plugins.Galleriffic](/extras/revo/gallery/gallery.plugins/gallery.plugins.galleriffic)
-  2. [Gallery.Plugins.Slimbox](/extras/revo/gallery/gallery.plugins/gallery.plugins.slimbox)
-5. [Gallery.Roadmap](/extras/revo/gallery/gallery.roadmap)
-6. [Gallery.Setting Up Your Gallery](/extras/revo/gallery/gallery.setting-up-your-gallery)
-7. [Gallery.Example1](/extras/revo/gallery/gallery.example1)
-8. [Gallery.Setting Up the GalleryItem TV](/extras/revo/gallery/gallery.setting-up-the-galleryitem-tv)
+1. [Gallery.Gallery](/extras/gallery/gallery.gallery)
+  1. [Gallery.Gallery.containerTpl](/extras/gallery/gallery.gallery/gallery.gallery.containertpl)
+  2. [Gallery.Gallery.thumbTpl](/extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
+2. [Gallery.GalleryAlbums](/extras/gallery/gallery.galleryalbums)
+  3. [Gallery.GalleryAlbums.containerTpl](extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
+  4. [Gallery.GalleryAlbums.rowTpl](/extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
+3. [Gallery.GalleryItem](/extras/gallery/gallery.galleryitem)
+  5. [Gallery.GalleryItem.albumTpl](/extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
+  6. [Gallery.GalleryItem.GalleryItemPagination](/extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
+  7. [Gallery.GalleryItem.tagTpl](/extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
+  8. [Gallery.GalleryItem.tpl](/extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
+4. [Gallery.Plugins](/extras/gallery/gallery.plugins)
+  9. [Gallery.Plugins.Galleriffic](/extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
+  10. [Gallery.Plugins.Slimbox](/extras/gallery/gallery.plugins/gallery.plugins.slimbox)
+5. [Gallery.Roadmap](/extras/gallery/gallery.roadmap)
+6. [Gallery.Setting Up Your Gallery](/extras/gallery/gallery.setting-up-your-gallery)
+7. [Gallery.Example1](/extras/gallery/gallery.example1)
+8. [Gallery.Setting Up the GalleryItem TV](/extras/gallery/gallery.setting-up-the-galleryitem-tv)

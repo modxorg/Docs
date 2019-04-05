@@ -22,29 +22,29 @@ This snippet displays a search form for SimpleSearch.
 
 ## Usage
 
-Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [SimpleSearch](/extras/revo/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet call is located (which is where the results will display).
+Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [SimpleSearch](/extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet call is located (which is where the results will display).
 
 ``` php 
 [[!SimpleSearchForm? &landing=`123`]]
 ```
 
-If you'd like the results to show on the same page, simply place the [SimpleSearch](/extras/revo/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet call below the SimpleSearchForm call, and don't specify a 'landing' parameter.
+If you'd like the results to show on the same page, simply place the [SimpleSearch](/extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet call below the SimpleSearchForm call, and don't specify a 'landing' parameter.
 
 ## Available Properties
 
-| Name | Description | Default |
-|------|-------------|---------|
-| tpl | The chunk that will be used to display the search form. | SearchForm |
-| landing | The Resource that the SimpleSearch snippet is called on, that will display the results of the search. |  |
-| searchIndex | The name of the REQUEST parameter that the search will use. | search |
-| method | Whether to send the search over POST or GET. | GET |
-| toPlaceholder | Whether to set the output to directly return, or set to a placeholder with this propertys name. |  |
+| Name          | Description                                                                                           | Default    |
+| ------------- | ----------------------------------------------------------------------------------------------------- | ---------- |
+| tpl           | The chunk that will be used to display the search form.                                               | SearchForm |
+| landing       | The Resource that the SimpleSearch snippet is called on, that will display the results of the search. |            |
+| searchIndex   | The name of the REQUEST parameter that the search will use.                                           | search     |
+| method        | Whether to send the search over POST or GET.                                                          | GET        |
+| toPlaceholder | Whether to set the output to directly return, or set to a placeholder with this propertys name.       |            |
 
 ## SimpleSearchForm Chunks
 
 There is 1 chunk that is processed in SimpleSearchForm. Its corresponding SimpleSearchForm parameter is:
 
-- [tpl](/extras/revo/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl "SimpleSearch.SimpleSearchForm.tpl") - The Chunk to use for the search form.
+- [tpl](/extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl "SimpleSearch.SimpleSearchForm.tpl") - The Chunk to use for the search form.
 
 ## Examples
 
@@ -93,13 +93,13 @@ Then that probably means that the **SimpleSearch** isn't looking in the right pl
 
 ## See Also
 
-1. [SimpleSearch.Roadmap](/extras/revo/simplesearch/simplesearch.roadmap)
-2. [SimpleSearch.SimpleSearch](/extras/revo/simplesearch/simplesearch.simplesearch)
-  1. [SimpleSearch.SimpleSearch.containerTpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
-  2. [SimpleSearch.SimpleSearch.currentPageTpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
-  3. [SimpleSearch.SimpleSearch.pageTpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
-  4. [SimpleSearch.SimpleSearch.tpl](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
-  5. [SimpleSearch.Faceted Search Through PostHooks](/extras/revo/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
-3. [SimpleSearch.SimpleSearchForm](/extras/revo/simplesearch/simplesearch.simplesearchform)
-  1. [SimpleSearch.SimpleSearchForm.tpl](/extras/revo/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
-4. [SimpleSearch.Solr](/extras/revo/simplesearch/simplesearch.solr)
+1. [SimpleSearch.Roadmap](/extras/simplesearch/simplesearch.roadmap)
+2. [SimpleSearch.SimpleSearch](/extras/simplesearch/simplesearch.simplesearch)
+  1. [SimpleSearch.SimpleSearch.containerTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
+  2. [SimpleSearch.SimpleSearch.currentPageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
+  3. [SimpleSearch.SimpleSearch.pageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
+  4. [SimpleSearch.SimpleSearch.tpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
+  5. [SimpleSearch.Faceted Search Through PostHooks](/extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
+3. [SimpleSearch.SimpleSearchForm](/extras/simplesearch/simplesearch.simplesearchform)
+  1. [SimpleSearch.SimpleSearchForm.tpl](/extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
+4. [SimpleSearch.Solr](/extras/simplesearch/simplesearch.solr)

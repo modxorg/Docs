@@ -4,20 +4,6 @@ _old_id: "640"
 _old_uri: "revo/filelister"
 ---
 
-- [What is FileLister?](#FileLister-WhatisFileLister%3F)
-- [Requirements](#FileLister-Requirements)
-- [History and Info](#FileLister-HistoryandInfo)
-  - [Download](#FileLister-Download)
-  - [Development and Bug Reporting](#FileLister-DevelopmentandBugReporting)
-- [Usage](#FileLister-Usage)
-  - [Snippets](#FileLister-Snippets)
-  - [System Settings](#FileLister-SystemSettings)
-- [Examples](#FileLister-Examples)
-- [Sample Resource Content](#FileLister-SampleResourceContent)
-- [See Also](#FileLister-SeeAlso)
-
-
-
 ## What is FileLister?
 
 FileLister is a dynamic file listing Extra for MODx Revolution. It allows you to list files within a directory, as well as securely browse through subdirectories.
@@ -31,7 +17,7 @@ FileLister is a dynamic file listing Extra for MODx Revolution. It allows you to
 
 FileLister was written by Shaun McCormick (splittingred) as a dynamic file listing component, and first released on June 30th, 2010.
 
-You can view the [roadmap here](/extras/revo/filelister/filelister.roadmap "FileLister.Roadmap").
+You can view the [roadmap here](/extras/filelister/filelister.roadmap "FileLister.Roadmap").
 
 ### Download
 
@@ -49,12 +35,12 @@ FileLister can be called via the Snippet tags, and passing a 'path' argument.
 
 FileLister comes with one snippet:
 
-- [FileLister](/extras/revo/filelister/filelister.filelister "FileLister.FileLister")
+- [FileLister](/extras/filelister/filelister.filelister "FileLister.FileLister")
 
 ### System Settings
 
-| Name | Description |
-|------|-------------|
+| Name            | Description                       |
+| --------------- | --------------------------------- |
 | filelister.salt | A custom salt for the navigation. |
 
 ## Examples
@@ -87,7 +73,7 @@ Restrict file listings in 'assets/pdfs' to only PDF files:
 
 This is a sample of HTML that you can put inside a Resource to output your content. You'll need to have the toPlaceholder property set to 'files' for this to work, and call your FileLister snippet uncached **before** this HTML.
 
-``` php 
+``` html 
 <h2>Files</h2>
 
 <p>Current Path: <span>[[+filelister.path]]</span></p>
@@ -115,9 +101,9 @@ This is a sample of HTML that you can put inside a Resource to output your conte
 
 ## See Also
 
-1. [FileLister.FileLister](/extras/revo/filelister/filelister.filelister)
-  1. [FileLister.FileLister.directoryTpl](/extras/revo/filelister/filelister.filelister/filelister.filelister.directorytpl)
-  2. [FileLister.FileLister.fileLinkTpl](/extras/revo/filelister/filelister.filelister/filelister.filelister.filelinktpl)
-  3. [FileLister.FileLister.fileTpl](/extras/revo/filelister/filelister.filelister/filelister.filelister.filetpl)
-  4. [FileLister.FileLister.pathTpl](/extras/revo/filelister/filelister.filelister/filelister.filelister.pathtpl)
-2. [FileLister.Roadmap](/extras/revo/filelister/filelister.roadmap)
+1. [FileLister.FileLister](/extras/filelister/filelister.filelister)
+  1. [FileLister.FileLister.directoryTpl](/extras/filelister/filelister.filelister/filelister.filelister.directorytpl)
+  2. [FileLister.FileLister.fileLinkTpl](/extras/filelister/filelister.filelister/filelister.filelister.filelinktpl)
+  3. [FileLister.FileLister.fileTpl](/extras/filelister/filelister.filelister/filelister.filelister.filetpl)
+  4. [FileLister.FileLister.pathTpl](/extras/filelister/filelister.filelister/filelister.filelister.pathtpl)
+2. [FileLister.Roadmap](/extras/filelister/filelister.roadmap)

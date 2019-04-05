@@ -4,13 +4,6 @@ _old_id: "1774"
 _old_uri: "revo/defaultusergroup"
 ---
 
-- [What is DefaultUserGroup?](#DefaultUserGroup-WhatisDefaultUserGroup)
-- [Package Information](#DefaultUserGroup-Information)
-- [History](#DefaultUserGroup-History)
-- [Download](#DefaultUserGroup-Download)
-- [Development and Bug Reporting](#DefaultUserGroup-DevelopmentandBugReporting)
-- [Documentation](#DefaultUserGroup-Documentation)
- 
 ## What is DefaultUserGroup?
 
 Plugin assigns new users to one or more User Groups, optionally with specified role(s).

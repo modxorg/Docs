@@ -6,21 +6,14 @@ _old_uri: "revo/discuss/discuss.controllers/discuss.controllers.login"
 
 The Login controller is used for either showing a login form, or when discuss.sso\_mode is enabled (recommended), to redirect the user to the login page.
 
-- [Basic Information](#Discuss.Controllers.login-BasicInformation)
-- [Options](#Discuss.Controllers.login-Options)
-- [Controller Template](#Discuss.Controllers.login-ControllerTemplate)
-- [System Events](#Discuss.Controllers.login-SystemEvents)
-
-
-
 ## Basic Information
 
-| Since Version | 1.0 |
-|---------------|-----|
-| Controller File | controllers/web/login.class.php |
-| Controller Class Name | DiscussLoginController |
-| Controller Template | pages/login.tpl (if sso\_mode=0) |
-| Manifest Name | login |
+| Since Version         | 1.0                              |
+| --------------------- | -------------------------------- |
+| Controller File       | controllers/web/login.class.php  |
+| Controller Class Name | DiscussLoginController           |
+| Controller Template   | pages/login.tpl (if sso\_mode=0) |
+| Manifest Name         | login                            |
 
 ## Options
 
@@ -43,7 +36,7 @@ There are no specific placeholders to use in this controller template.
 ]]
 ```
 
-Please note that the disLoginTpl and disLogoutTpl chunks are currently (1.1.0) not included in the package, but can be any valid [Login chunk](/extras/revo/login/login.login "Login.Login"). In order to properly sync user data to Discuss, you will need to have the preHook.DiscussLogin as prehook and postHook.DiscussLogin as posthook - also when using a third party auth scheme.
+Please note that the disLoginTpl and disLogoutTpl chunks are currently (1.1.0) not included in the package, but can be any valid [Login chunk](/extras/login/login.login "Login.Login"). In order to properly sync user data to Discuss, you will need to have the preHook.DiscussLogin as prehook and postHook.DiscussLogin as posthook - also when using a third party auth scheme.
 
 [Follow these instructions to set up login on your site using sso\_mode (recommended).](http://rtfm.modx.com/display/ADDON/Discuss.Installation#Discuss.Installation-SettingupLogin%2CRegister%26UpdateProfilepageswithDiscuss)
 

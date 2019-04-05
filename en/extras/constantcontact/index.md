@@ -4,13 +4,6 @@ _old_id: "1771"
 _old_uri: "revo/constantcontact"
 ---
 
-- [What is ConstantContact?](#ConstantContact-WhatisConstantContact)
-- [Package Information](#ConstantContact-Information)
-- [History](#ConstantContact-History)
-- [Download](#ConstantContact-Download)
-- [Development and Bug Reporting](#ConstantContact-DevelopmentandBugReporting)
-- [Documentation](#ConstantContact-Documentation)
- 
 ## What is ConstantContact?
 
 The package includes a plugin, a property set, and a custom System Event (OnCustomerOrder).

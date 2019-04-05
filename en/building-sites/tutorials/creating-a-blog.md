@@ -24,19 +24,19 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 ### Needed Extras
 
-- [getResources](/extras/revo/getresources "getResources") - For listing posts, pages and other Resources.
-- [getPage](/extras/revo/getpage "getPage") - For pagination of listings.
-- [Quip](/extras/revo/quip "Quip") - For anything and everything in commenting.
-- [tagger](/extras/revo/tagger "tagger") - For managing tags and doing tag-based navigation.
-- [Archivist](/extras/revo/archivist "Archivist") - For managing your Archives section.
+- [getResources](/extras/getresources "getResources") - For listing posts, pages and other Resources.
+- [getPage](/extras/getpage "getPage") - For pagination of listings.
+- [Quip](/extras/quip "Quip") - For anything and everything in commenting.
+- [tagger](/extras/tagger "tagger") - For managing tags and doing tag-based navigation.
+- [Archivist](/extras/archivist "Archivist") - For managing your Archives section.
 
 ### Optional Extras
 
-- [Breadcrumbs](/extras/revo/breadcrumbs "Breadcrumbs") - For displaying a breadcrumb navigation trail.
-- [Gallery](/extras/revo/gallery "Gallery") - For managing photo Galleries.
-- [SimpleSearch](/extras/revo/simplesearch "SimpleSearch") - For adding a simple search box to your site.
-- [getFeed](/extras/revo/getfeed "getFeed") - If you want to grab other feeds in your site, such as a Twitter feed.
-- [Login](/extras/revo/login "Login") - If you want to restrict commenting to logged in users only, you'll need this.
+- [Breadcrumbs](/extras/breadcrumbs "Breadcrumbs") - For displaying a breadcrumb navigation trail.
+- [Gallery](/extras/gallery "Gallery") - For managing photo Galleries.
+- [SimpleSearch](/extras/simplesearch "SimpleSearch") - For adding a simple search box to your site.
+- [getFeed](/extras/getfeed "getFeed") - If you want to grab other feeds in your site, such as a Twitter feed.
+- [Login](/extras/login "Login") - If you want to restrict commenting to logged in users only, you'll need this.
 
 ## Creating your Blog Post Template
 
@@ -107,7 +107,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  The first part takes the publishedon Resource field, and formats it into a nice, pretty date.
 
- Secondly, we then display a Tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/revo/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
+ Secondly, we then display a Tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
 
  And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-\[\[\*id\]\]'. This means that MODx will automatically create a new thread for each new Blog Post we create. Neat!
 
@@ -117,7 +117,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
 ### Adding Comments to Posts
 
- Okay, now we're in the comments part of BlogPostTemplate. As you can see here, we're using [Quip](/extras/revo/quip "Quip") for our commenting system. You could feel free to use another system, such as Disqus, here if you choose. For this tutorial, we'll go with Quip. Our code is as follows:
+ Okay, now we're in the comments part of BlogPostTemplate. As you can see here, we're using [Quip](/extras/quip "Quip") for our commenting system. You could feel free to use another system, such as Disqus, here if you choose. For this tutorial, we'll go with Quip. Our code is as follows:
 
  ``` php 
 <div class="post-comments" id="comments">[[!Quip?
@@ -135,9 +135,9 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 </div>
 ```
 
- Okay, cool. Note we have two Snippet calls here - one for displaying the comments for this thread ([Quip](/extras/revo/quip/quip.quip "Quip.Quip")), and another for displaying the reply form ([QuipReply](/extras/revo/quip/quip.quipreply "Quip.QuipReply")).
+ Okay, cool. Note we have two Snippet calls here - one for displaying the comments for this thread ([Quip](/extras/quip/quip.quip "Quip.Quip")), and another for displaying the reply form ([QuipReply](/extras/quip/quip.quipreply "Quip.QuipReply")).
 
- In our Quip snippet call, we've specified a thread ID in the manner we've described above, and then set some settings. Our comments are going to be threaded (the default), so we need to specify a Resource ID where our Reply to Thread post is going to be (this is detailed in the [Quip Documentation](/extras/revo/quip "Quip"). We recommend reading there for how to set it up.) with the 'replyResourceId' property. For a quick example, if your &replyResourceId points to page 123, then on page 123, you should put something like the following:
+ In our Quip snippet call, we've specified a thread ID in the manner we've described above, and then set some settings. Our comments are going to be threaded (the default), so we need to specify a Resource ID where our Reply to Thread post is going to be (this is detailed in the [Quip Documentation](/extras/quip "Quip"). We recommend reading there for how to set it up.) with the 'replyResourceId' property. For a quick example, if your &replyResourceId points to page 123, then on page 123, you should put something like the following:
 
  ``` php
 [[!QuipReply]]
@@ -149,7 +149,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  In our QuipReply call, we want to tell Quip to moderate all posts, and the moderators for our post can be found in the Moderators User Group (we'll explain how to set this up later in the tutorial).
 
- There's a whole bunch of other Quip settings we could change, but we'll leave you to further customization, which you can find out how to do in the [Quip docs](/extras/revo/quip "Quip").
+ There's a whole bunch of other Quip settings we could change, but we'll leave you to further customization, which you can find out how to do in the [Quip docs](/extras/quip "Quip").
 
  **What is Threading?** 
  If you enable _threaded_ comments, then users can comment on other comments. Non-threaded comments allow users to only comment on the original blog post. 
@@ -195,7 +195,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 `]]
 ```
 
- Okay, let's explain this. getResourcesTag a wrapper snippet for [getResources](/extras/revo/getresources "getResources") and [getPage](/extras/revo/getpage "getPage") that automatically filters results by a 'tags' TV. So basically, we want to grab all published Resources within this section (and we can also filter by tag should we pass a '?tag=TagName' parameter into the URL.
+ Okay, let's explain this. getResourcesTag a wrapper snippet for [getResources](/extras/getresources "getResources") and [getPage](/extras/getpage "getPage") that automatically filters results by a 'tags' TV. So basically, we want to grab all published Resources within this section (and we can also filter by tag should we pass a '?tag=TagName' parameter into the URL.
 
  Below the getResourcesTag call, we put our pagination links, since by default getResourcesTag only shows 10 posts per page.
 
@@ -274,7 +274,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  If you choose to have date/year or sub-containers, make sure they have Hide from Menus checked, so that they wont show up in your getResources calls. 
 
- Remember, though, that whatever structure you build under the sections, that's not going to determine your navigation - [Archivist](/extras/revo/archivist "Archivist") will handle that. What it will determine, however, is the URL of your blog posts. So have fun.
+ Remember, though, that whatever structure you build under the sections, that's not going to determine your navigation - [Archivist](/extras/archivist "Archivist") will handle that. What it will determine, however, is the URL of your blog posts. So have fun.
 
 ### Adding a New Blog Post
 
@@ -314,7 +314,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 `]]
 ```
 
- Look familiar? It's very similar to getResourcesTag, described above in our Section page. This time, getPage is wrapping the [getArchives](/extras/revo/archivist "Archivist") snippet, and saying that we want to grab posts in Resources 34 and 35 (our Section pages). We'll set the result to a placeholder called 'archives' which we reference later.
+ Look familiar? It's very similar to getResourcesTag, described above in our Section page. This time, getPage is wrapping the [getArchives](/extras/archivist "Archivist") snippet, and saying that we want to grab posts in Resources 34 and 35 (our Section pages). We'll set the result to a placeholder called 'archives' which we reference later.
 
  Then, below that, we add a few placeholders that show the current browsing month and year. And finally, we have our pagination. Cool! We're done with that. Our Resource, for reference purposes, we'll say has an ID of **30**.
 
@@ -329,7 +329,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 </ul>
 ```
 
- So what the [Archivist](/extras/revo/archivist/archivist.archivist "Archivist.Archivist") Snippet does is generate a month-by-month list of posts (you can add all kinds of other options, but see [it's documentation](/extras/revo/archivist/archivist.archivist "Archivist.Archivist") for that). We are saying we want its links to go to our Archives Resource (30), and to only grab posts in the Resources 34 and 35 (our Section Resources).
+ So what the [Archivist](/extras/archivist/archivist.archivist "Archivist.Archivist") Snippet does is generate a month-by-month list of posts (you can add all kinds of other options, but see [it's documentation](/extras/archivist/archivist.archivist "Archivist.Archivist") for that). We are saying we want its links to go to our Archives Resource (30), and to only grab posts in the Resources 34 and 35 (our Section Resources).
 
  That's it! Archivist will actually automatically handle the rest - including all your URL generation for archives - archives/2010/05/ will show all the posts within May 2010, where archives/2009/ will show all posts in 2009. Pretty sweet, huh?
 
@@ -365,7 +365,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 ]]
 ```
 
- So we're telling [getResources](/extras/revo/getresources "getResources") to display a top 5 list of Resources in your Section Resources (34,35), and sort by their publishedon date.
+ So we're telling [getResources](/extras/getresources "getResources") to display a top 5 list of Resources in your Section Resources (34,35), and sort by their publishedon date.
 
  Then, create the `latestPostsTpl` chunk, which you've specified with the 'tpl' call in the getResources snippet call. Put this as the chunk's content:
 
@@ -382,7 +382,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
 ### Adding a "Latest Comments" widget
 
- What about a widget that shows a few of the latest comments across your posts? Simple - Quip packages a nice little snippet called [QuipLatestComments](/extras/revo/quip/quip.quiplatestcomments "Quip.QuipLatestComments") that can handle this easily.
+ What about a widget that shows a few of the latest comments across your posts? Simple - Quip packages a nice little snippet called [QuipLatestComments](/extras/quip/quip.quiplatestcomments "Quip.QuipLatestComments") that can handle this easily.
 
  Place the call wherever you want the comment list to show:
 
@@ -406,17 +406,17 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  ![](/download/attachments/18678105/latestcomments.png?version=1&modificationDate=1279309243000)
 
- You can see the [documentation for the snippet](/extras/revo/quip/quip.quiplatestcomments "Quip.QuipLatestComments") for more configuration options.
+ You can see the [documentation for the snippet](/extras/quip/quip.quiplatestcomments "Quip.QuipLatestComments") for more configuration options.
 
 ### Adding a "Most Used Tags" widget
 
- This part is ridiculously easy; [tagLister](/extras/revo/taglister "tagLister") does this for you. Just place this wherever you want:
+ This part is ridiculously easy; [tagLister](/extras/taglister "tagLister") does this for you. Just place this wherever you want:
 
  ``` php 
 [[!tagLister? &tv=`tags` &target=`1`]]
 ```
 
- And tagLister will check the TV 'tags', and create links that go to the target (here, Resource ID 1) with the top 10 tags being used. There's a ton more [configuration options](/extras/revo/taglister "tagLister"), but we'll leave you with this.
+ And tagLister will check the TV 'tags', and create links that go to the target (here, Resource ID 1) with the top 10 tags being used. There's a ton more [configuration options](/extras/taglister "tagLister"), but we'll leave you with this.
 
 ## Conclusion
 

@@ -8,10 +8,8 @@ _old_uri: "revo/cachebuster"
 
 ## Using Cachebuster
 
- ``` php 
-
+ ``` html 
 <link rel="stylesheet" href="[[++assets_url]]css/styles.css?nc=[[$smartcache]]">
-
 ```
 
  If the `cb.cachebust``System Setting` is enabled the asset will never be cached by the browser. If disabled, it will return the current version of the website obtained from the `cb.site_ver System Setting`. Adding the site version to the URL will ensure that when changes pushed to production returning visiting aren't loading stale files from their browser cache.
@@ -23,7 +21,6 @@ _old_uri: "revo/cachebuster"
  Cachebuster can set to a placeholder rather than returning a value. Simply pass the name of the placeholder you'd like to use as seen below.
 
  ``` php 
-
 [[$smartcache? &placeholder=`cbtime`]]
 ```
 
@@ -32,7 +29,6 @@ _old_uri: "revo/cachebuster"
  To append a URL parameter to the result use the param paramater as seen below.
 
  ``` php 
-
 [[$smartcache? &param=`?cb`]]
 ```
 

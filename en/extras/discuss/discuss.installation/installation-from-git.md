@@ -6,14 +6,6 @@ _old_uri: "revo/discuss/discuss.installation/discuss.installation-from-git"
 
 In order to work with Discuss from Git, there are a few extra steps we will need to take.
 
-- [1. Fork & Clone](#Discuss.InstallationfromGit-1.Fork%26Clone)
-- [2. Build a Package](#Discuss.InstallationfromGit-2.BuildaPackage)
-- [3. Install Discuss from package](#Discuss.InstallationfromGit-3.InstallDiscussfrompackage)
-- [4. Hook up your versioned Discuss Repository to your Forum](#Discuss.InstallationfromGit-4.HookupyourversionedDiscussRepositorytoyourForum)
-- [5. Have fun.](#Discuss.InstallationfromGit-5.Havefun.%26nbsp%3B)
-
-
-
 ## 1. Fork & Clone
 
 Discuss is maintained on Github and to properly allow external contributions, we will need you to fork the main repository and clone it to your local environment. If you are new to Git, please follow the [interactive Git tutorial on Github](http://try.github.com) to get started. Next, if you don't already have a fork and/or local clone, follow these simple steps:
@@ -23,7 +15,7 @@ Discuss is maintained on Github and to properly allow external contributions, we
 3. Clone it to your local environment using the following command on terminal: 
   git clone git@github.com:**username**/Discuss.git 
   this will create a Discuss directory in the directory you were at with the contents of the Discuss repository. You will want to make sure this is in a web accessible directory but that is not in your MODX directory.
-4. Checkout the proper branch using `git checkout <branch>`. This will likely be "develop", a theme or a release branch depending on your intentions. Please see the [Discuss Contributions Guidelines](/extras/revo/discuss/discuss.contributing "Discuss.Contributing") docs for more info on picking the right branch.
+4. Checkout the proper branch using `git checkout <branch>`. This will likely be "develop", a theme or a release branch depending on your intentions. Please see the [Discuss Contributions Guidelines](/extras/discuss/discuss.contributing "Discuss.Contributing") docs for more info on picking the right branch.
 
 Next, we'll need to build a package to install. This will help you kickstart your forum and takes away lots of manual configuration.
 
@@ -37,7 +29,7 @@ Next, run the \_build/build.transport.php file. You can do this on the terminal 
 
 ## 3. Install Discuss from package
 
-[Follow the Installation instructions to set up your forum](/extras/revo/discuss/discuss.installation "Discuss.Installation").
+[Follow the Installation instructions to set up your forum](/extras/discuss/discuss.installation "Discuss.Installation").
 
 ## 4. Hook up your versioned Discuss Repository to your Forum
 

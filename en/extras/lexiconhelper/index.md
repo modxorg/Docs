@@ -4,13 +4,6 @@ _old_id: "1782"
 _old_uri: "revo/lexiconhelper"
 ---
 
-- [What is LexiconHelper?](#LexiconHelper-WhatisLexiconHelper)
-- [Package Information](#LexiconHelper-Information)
-- [History](#LexiconHelper-History)
-- [Download](#LexiconHelper-Download)
-- [Development and Bug Reporting](#LexiconHelper-DevelopmentandBugReporting)
-- [Documentation](#LexiconHelper-Documentation)
- 
 ## What is LexiconHelper?
 
 LexiconHelper is a utility to assist add-on component developers in internationalizing their components.

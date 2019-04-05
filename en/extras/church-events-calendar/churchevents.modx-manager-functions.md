@@ -4,14 +4,6 @@ _old_id: "808"
 _old_uri: "revo/church-events-calendar/churchevents.modx-manager-functions"
 ---
 
-- [Church Events Calendar Manager functions](#ChurchEvents.MODXManagerfunctions-ChurchEventsCalendarManagerfunctions)
-  - [Calendars](#ChurchEvents.MODXManagerfunctions-Calendars)
-  - [Categories](#ChurchEvents.MODXManagerfunctions-Categories)
-  - [Buildings/Location Types](#ChurchEvents.MODXManagerfunctions-Buildings%2FLocationTypes)
-  - [Rooms/Locations](#ChurchEvents.MODXManagerfunctions-Rooms%2FLocations)
-
-
-
 ## Church Events Calendar Manager functions
 
 Once you have installed Church Event Calendar via the package manager and your refresh the page you should see in the MODX Manager Menu: Components -> Calendar Administrator. This is where you can manage the Calendars, Categories and Locations. ![](/download/attachments/37126295/menu-2.2.jpg?version=1&modificationDate=1324584704000)

@@ -34,7 +34,7 @@ Since version 1.0-pl, this package added database table to store additional info
 
 # Upload to Users Snippet 
 
-Currently, it can only be used by [FileDownload R](/extras/revo/filedownload-r "FileDownload R") because the link has its own placeholder.
+Currently, it can only be used by [FileDownload R](/extras/filedownload-r "FileDownload R") because the link has its own placeholder.
 
 ## Examples 
 
@@ -81,11 +81,11 @@ The result of the FileDownload output will be changed like this:
 
 ## Properties 
 
-| Name | Description | Default Value |
-|------|-------------|---------------|
-| path | the full path to the particular file/folder **(mandatory)** |  |
-| field | the table's field to be retrieved | title |
-| toArray | dump the output as an array instead |  |
-| toPlaceholder | return the output into a placeholder instead |  |
+| Name          | Description                                                 | Default Value |
+| ------------- | ----------------------------------------------------------- | ------------- |
+| path          | the full path to the particular file/folder **(mandatory)** |               |
+| field         | the table's field to be retrieved                           | title         |
+| toArray       | dump the output as an array instead                         |               |
+| toPlaceholder | return the output into a placeholder instead                |               |
 
 The available fields are id, dir\_path, name, title, description.

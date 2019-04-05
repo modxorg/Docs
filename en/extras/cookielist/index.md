@@ -18,8 +18,8 @@ Feel free to fork it and add further functionality if you need it - a pull reque
 
 CookieList is installable via the Package Manager or [on the MODX site](http://modx.com/extras/package/cookielist) and was developed for MODX Revolution. Though not extensively tested on lower versions it should work from 2.0 up.
 
-| Version | Released On | Notes |
-|---------|-------------|-------|
+| Version  | Released On         | Notes                 |
+| -------- | ------------------- | --------------------- |
 | 1.0.0-pl | November 18th, 2011 | First public release. |
 
 ## Usage
@@ -44,17 +44,17 @@ You will \*always\* need to call the addToCookieList and getCookieList snippets 
 
 You can use the following properties:
 
-| Property | Description | Default value |
-|----------|-------------|---------------|
-| value | What to store in the cookie. You'll probably want to store the unique ID of an object so you can use the getCookieList snippet to generate an overview of those objects with a snippet. | Current Resource ID |
-| addText | Override the language-specific default "add" label. | "Add to your CookieList" |
-| removeText | Override the language-specific default "remove" label. | "Remove from your CookieList" |
-| tpl | Allows you to override the default chunk template. You can use link, value and label in your chunk tpl. The default (filebased) chunk looks like this: 
+| Property   | Description                                                                                                                                                                             | Default value                 |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| value      | What to store in the cookie. You'll probably want to store the unique ID of an object so you can use the getCookieList snippet to generate an overview of those objects with a snippet. | Current Resource ID           |
+| addText    | Override the language-specific default "add" label.                                                                                                                                     | "Add to your CookieList"      |
+| removeText | Override the language-specific default "remove" label.                                                                                                                                  | "Remove from your CookieList" |
+| tpl        | Allows you to override the default chunk template. You can use link, value and label in your chunk tpl. The default (filebased) chunk looks like this:                                  |
 
 
 ``` php 
 <a href="[[+link]]" title="[[+label]]">[[+label]]</a>
-``` |  |
+```
 
 #### Examples
 

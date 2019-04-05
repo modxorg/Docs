@@ -4,13 +4,6 @@ _old_id: "1778"
 _old_uri: "revo/fileupload"
 ---
 
-- [What is FileUpload?](#FileUpload-WhatisFileUpload)
-- [Package Information](#FileUpload-Information)
-- [History](#FileUpload-History)
-- [Download](#FileUpload-Download)
-- [Development and Bug Reporting](#FileUpload-DevelopmentandBugReporting)
-- [Documentation](#FileUpload-Documentation)
- 
 ## What is FileUpload?
 
  FileUpload is a Revolution version of Michel van de Wetering's FileUpload snippet.

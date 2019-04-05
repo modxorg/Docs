@@ -14,9 +14,8 @@ One thing Gallery lacks out-of-box is assigning albums to a resources. To get th
 
  3. Create a chunk named "galleryDropdownList" for instance.
 
- ``` plain 
+ ``` php 
 [[+name]]==[[+id]]||
-
 ```
 
  4. Create a new [tv](making-sites-with-modx/customizing-content/template-variables) with a name "assignedGallery". **Input options:**
@@ -25,7 +24,7 @@ One thing Gallery lacks out-of-box is assigning albums to a resources. To get th
 
  Input Option Values (just copy-paste the following code):
 
- ``` plain 
+ ``` php 
 $output = $modx->runSnippet("GalleryAlbums",array("rowTpl"=>"galleryDropdownList"))."none==0"; return $output;
 ```
 
@@ -41,6 +40,6 @@ Default Value: 0
 
 7\. In your page template, place the following code where you expect your gallery to be rendered:
 
-``` plain 
+``` php 
 [[!Gallery? &album=`[[*assignedGallery]]`]]
 ```

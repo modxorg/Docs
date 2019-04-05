@@ -4,14 +4,6 @@ _old_id: "852"
 _old_uri: "revo/formit/formit.formitcountryoptions"
 ---
 
-- [What is FormItCountryOptions?](extras/revo/formit/formit.formitcountryoptions#FormIt.FormItCountryOptions-WhatisFormItCountryOptions%3F)
-- [Usage](extras/revo/formit/formit.formitcountryoptions#FormIt.FormItCountryOptions-Usage)
-  - [FormItCountryOptions Properties](extras/revo/formit/formit.formitcountryoptions#FormIt.FormItCountryOptions-FormItCountryOptionsProperties)
-  - [Prioritizing Countries](extras/revo/formit/formit.formitcountryoptions#FormIt.FormItCountryOptions-PrioritizingCountries)
-- [See Also](extras/revo/formit/formit.formitcountryoptions#FormIt.FormItCountryOptions-SeeAlso)
- 
-
-
 ## What is FormItCountryOptions?
 
  FormItCountryOptions is an assistance snippet for [FormIt](extras/revo/formit "FormIt") 1.7.0+ that will output an option list of countries in the world. It is useful for forms that need a dropdown list of countries.
@@ -21,11 +13,9 @@ _old_uri: "revo/formit/formit.formitcountryoptions"
  Simply add the Snippet to your form, inside a `<select>` element:
 
  ``` php 
-
 <select name="country">
 [[!FormItCountryOptions? &selected=`[[!+fi.country]]`]]
 </select>
-
 ```
 
  Note how we are passing the value of the "fi.country" placeholder (which stores the value of the country field) into the selected parameter. This tells FormItCountryOptions to select the last-selected option in the form.
@@ -34,29 +24,27 @@ _old_uri: "revo/formit/formit.formitcountryoptions"
 
  FormItCountryOptions comes with some default properties you can override. They are:
 
- | Name | Description | Default |
-|------|-------------|---------|
-| selected | The country value to select. |  |
-| selectedAttribute | Optional. The HTML attribute to add to a selected country. | selected="selected" |
-| tpl | Optional. The chunk to use for each country dropdown option. |  |
-| useIsoCode | If 1, will use the ISO country code for the value. If 0, will use the country name. | 1 |
-| prioritized | Optional. A comma-separated list of ISO codes for countries that will move them into a prioritized "Frequent Visitors" group at the top of the dropdown. This can be used for your commonly-selected countries. |  |
-| prioritizedGroupText | Optional. If set and &prioritized is in use, will be the text label for the prioritized option group. |
-| allGroupText | Optional. If set and &prioritized is in use, will be the text label for the all other countries option group. |
-| optGroupTpl | Optional. If set and &prioritized is in use, will be the chunk tpl to use for the option group markup. | optgroup |
-| toPlaceholder | Optional. Use this to set the output to a placeholder instead of outputting directly. |  |
+ | Name                 | Description                                                                                                                                                                                                     | Default             |
+ | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+ | selected             | The country value to select.                                                                                                                                                                                    |                     |
+ | selectedAttribute    | Optional. The HTML attribute to add to a selected country.                                                                                                                                                      | selected="selected" |
+ | tpl                  | Optional. The chunk to use for each country dropdown option.                                                                                                                                                    |                     |
+ | useIsoCode           | If 1, will use the ISO country code for the value. If 0, will use the country name.                                                                                                                             | 1                   |
+ | prioritized          | Optional. A comma-separated list of ISO codes for countries that will move them into a prioritized "Frequent Visitors" group at the top of the dropdown. This can be used for your commonly-selected countries. |                     |
+ | prioritizedGroupText | Optional. If set and &prioritized is in use, will be the text label for the prioritized option group.                                                                                                           |
+ | allGroupText         | Optional. If set and &prioritized is in use, will be the text label for the all other countries option group.                                                                                                   |
+ | optGroupTpl          | Optional. If set and &prioritized is in use, will be the chunk tpl to use for the option group markup.                                                                                                          | optgroup            |
+ | toPlaceholder        | Optional. Use this to set the output to a placeholder instead of outputting directly.                                                                                                                           |                     |
 
 ### Prioritizing Countries 
 
  Sometimes you want to have certain countries appear at the top of the list, in an option group. FormItCountryOptions supports this, with the `&prioritized` option. For example:
 
  ``` php 
-
 [[!FormItCountryOptions?
   &selected=`[[+fi.country]]`
   &prioritized=`US,GB,DE,RU,JP,FR,NL,CA,AU,UA`
 ]]
-
 ```
 
  Will output a list that looks like this:
@@ -77,10 +65,10 @@ _old_uri: "revo/formit/formit.formitcountryoptions"
 2. [FormIt.Validators](extras/revo/formit/formit.validators)
 3. [FormIt.FormItRetriever](extras/revo/formit/formit.formitretriever)
 4. [FormIt.Tutorials and Examples](extras/revo/formit/formit.tutorials-and-examples)
-  1. [FormIt.Examples.Custom Hook](extras/revo/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
-  2. [FormIt.Examples.Simple Contact Page](extras/revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
-  3. [FormIt.Handling Selects, Checkboxes and Radios](extras/revo/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
-  4. [FormIt.Using a Blank NoSpam Field](extras/revo/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
+  7. [FormIt.Examples.Custom Hook](extras/revo/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
+  8. [FormIt.Examples.Simple Contact Page](extras/revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
+  9. [FormIt.Handling Selects, Checkboxes and Radios](extras/revo/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
+  10. [FormIt.Using a Blank NoSpam Field](extras/revo/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
 5. [FormIt.Roadmap](extras/revo/formit/formit.roadmap)
 6. [FormIt.FormItCountryOptions](extras/revo/formit/formit.formitcountryoptions)
 7. [FormIt.FormItStateOptions](extras/revo/formit/formit.formitstateoptions)

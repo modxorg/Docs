@@ -4,16 +4,6 @@ _old_id: "604"
 _old_uri: "revo/articles"
 ---
 
-- [What is Articles?](#Articles-WhatisArticles%3F)
-  - [Requirements](#Articles-Requirements)
-  - [History](#Articles-History)
-  - [Download](#Articles-Download)
-  - [Bugs and Issues](#Articles-BugsandIssues)
-- [Getting Started](#Articles-GettingStarted)
-- [See Also](#Articles-SeeAlso)
-
-
-
 ## What is Articles?
 
  Articles is a Custom Resource Type for MODX 2.2 and later, that adds a custom Article Resource to MODX that streamlines blogging, commenting, archiving, tagging and other features of MODX into one unified interface.
@@ -26,7 +16,7 @@ _old_uri: "revo/articles"
 
 ### History
 
- Articles was written by [Shaun McCormick](/display/~splittingred) as a blogging and news event Custom Resource Class, and was first released on November 29th, 2011. You can also view the [Roadmap](/extras/revo/articles/articles.roadmap "Articles.Roadmap") for future features to be added to Articles.
+ Articles was written by [Shaun McCormick](/display/~splittingred) as a blogging and news event Custom Resource Class, and was first released on November 29th, 2011. You can also view the [Roadmap](/extras/articles/articles.roadmap "Articles.Roadmap") for future features to be added to Articles.
 
 ### Download
 
@@ -42,8 +32,8 @@ _old_uri: "revo/articles"
 
  Here are some tutorials to get you started with Articles:
 
-- [Creating a Blog](/extras/revo/articles/articles.creating-a-blog "Articles.Creating a Blog")
-- [Theming Articles](/extras/revo/articles/articles.theming-articles "Articles.Theming Articles")
+- [Creating a Blog](/extras/articles/articles.creating-a-blog "Articles.Creating a Blog")
+- [Theming Articles](/extras/articles/articles.theming-articles "Articles.Theming Articles")
 
 ## Video: See Articles in action
 
@@ -51,7 +41,7 @@ See how you can create an Articles weblog from scratch in 5 minutes. You can als
 
 ## See Also
 
-1. [Articles.Creating a Blog](/extras/revo/articles/articles.creating-a-blog)
-2. [Articles.Retrieving Articles Outside of Articles](/extras/revo/articles/articles.retrieving-articles-outside-of-articles)
-3. [Articles.Roadmap](/extras/revo/articles/articles.roadmap)
-4. [Articles.Theming Articles](/extras/revo/articles/articles.theming-articles)
+1. [Articles.Creating a Blog](/extras/articles/articles.creating-a-blog)
+2. [Articles.Retrieving Articles Outside of Articles](/extras/articles/articles.retrieving-articles-outside-of-articles)
+3. [Articles.Roadmap](/extras/articles/articles.roadmap)
+4. [Articles.Theming Articles](/extras/articles/articles.theming-articles)

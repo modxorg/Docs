@@ -11,8 +11,6 @@ _old_uri: "revo/formitfastpack/formitfastpack.field"
 - [More Examples](http://rtfm.modx.com/extras/revo/formitfastpack/formitfastpack.field#Examples)
 - [Tutorial](http://rtfm.modx.com/extras/revo/formitfastpack/formitfastpack.tutorial)
 
-
-
 ## Usage
 
  Call below the FormIt (or any other request-processing snippet) to generate a single HTML form field.
@@ -26,7 +24,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.field"
 
  **Simple Example Form:**
 
- ```
+ ``` php
 [[!FormIt? &prefix=`myprefix.` &submitVar=`submitForm`]]
 <form action="[[~[[*id]]]]" method="post">
 [[!fieldSetDefaults? &prefix=`myprefix.` &outer_tpl=`myWrapTpl` &resetDefaults=`1`]]
@@ -36,16 +34,15 @@ _old_uri: "revo/formitfastpack/formitfastpack.field"
 [[!field &name=`message` &type=`textarea`]]
 [[!field &name=`submitForm` &type=`submit` &label=` ` &message=`Submit Form`]]
 </form>
-
 ```
 
 ## Snippet Parameters
 
  The most common parameter names are in **bold**.
 
- | Parameter | Description | Default |
-|-----------|-------------|---------|
-| array | Used with field types that can provide multiple responses (checkbox, select & file input types by default) to signify that the field should be treated as an array. This will append \[\] to the field name to signify to the form that multiple result values may be selected.
+ | Parameter | Description                                                                                                                                                                                                                                                                     | Default |
+ | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+ | array     | Used with field types that can provide multiple responses (checkbox, select & file input types by default) to signify that the field should be treated as an array. This will append \[\] to the field name to signify to the form that multiple result values may be selected. |
 
 If you're passing an array of options (which will look like this `One||Two||Three`) then add &array=`1` so you can receive multiple values returned from the form. |  |
 | cache | By default, caching is "auto". Auto caching works as follows:
@@ -113,7 +110,7 @@ If you're passing an array of options (which will look like this `One||Two||Thre
 
  Here is a subset of the default &tpl chunk ( **fieldTypesTpl**):
 
- ``` xml 
+ ``` html 
 <!-- default -->
 <input type="[[+type]]" name="[[+name]]" id="[[+key]]" value="[[+current_value]]" class="[[+type]] [[+class]][[+error_class]]" />
 <!-- default -->
@@ -123,12 +120,11 @@ If you're passing an array of options (which will look like this `One||Two||Thre
 <!-- textarea -->
   <textarea id="[[+key]]" class="[[+type]] [[+class]][[+error_class]]" name="[[+name]]">[[+current_value]]</textarea>
 <!-- textarea -->
-
 ```
 
  Here is the default &outer\_tpl chunk ( **fieldWrapTpl**):
 
- ``` xml 
+ ``` html 
 <!-- default -->
 <div class="[[+outer_class]]" id="[[+name]]_wrap">
 <label for="[[+name]]" title="[[+name:replace=`_== `:ucwords]]">[[+label:default=`[[+name:replace=`_== `:ucwords]]`]][[+req:notempty=` *`]]</label>
@@ -137,7 +133,6 @@ If you're passing an array of options (which will look like this `One||Two||Thre
 [[+error:notempty=`<span class="[[+error_class]]">[[+error]]</span>`]]
 </div>
 <!-- default -->
-
 ```
 
  The "note", "note\_field", and "req" placeholders above are examples of custom placeholders. 
@@ -148,14 +143,14 @@ If you're passing an array of options (which will look like this `One||Two||Thre
 
  In addition, the following special placeholders are passed in:
 
- | Placeholder | Description |
-|-------------|-------------|
-| inner\_html | Used in the outer\_tpl to position the generated content, which will vary by field type. Simple example: `<li>[[+inner_html]]</li>` |
-| options\_html | Used in the tpl to position the options html (only when using &options or an options override). Example: `<select name="[[+name]]">[[+options_html]]</select>` |
-| current\_value | The value of the FormIt value for the field name. Exactly the same as writing \[\[!fi.fieldname\]\] for each fieldname (if the prefix is fi.). Never gets cached. |
-| error | The value of the FormIt error message for the field name, if one is found. Exactly the same as writing \[\[!fi.error.fieldname\]\] for each fieldname (if the prefix is fi.). Never gets cached. |
-| error\_class | set to the value of the error\_class parameter (default is " error") ONLY if a FormIt error for the field name is found. Exactly the same as using \[\[+error:notempty=` error`\]\]. |
-| key | A unique but human-friendly identifier for each field or sub-field (useful for HTML id attributes). Generated from the key\_prefix, prefix, field name, and (only if using an option field) value. |
+ | Placeholder    | Description                                                                                                                                                                                        |
+ | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | inner\_html    | Used in the outer\_tpl to position the generated content, which will vary by field type. Simple example: `<li>[[+inner_html]]</li>`                                                                |
+ | options\_html  | Used in the tpl to position the options html (only when using &options or an options override). Example: `<select name="[[+name]]">[[+options_html]]</select>`                                     |
+ | current\_value | The value of the FormIt value for the field name. Exactly the same as writing \[\[!fi.fieldname\]\] for each fieldname (if the prefix is fi.). Never gets cached.                                  |
+ | error          | The value of the FormIt error message for the field name, if one is found. Exactly the same as writing \[\[!fi.error.fieldname\]\] for each fieldname (if the prefix is fi.). Never gets cached.   |
+ | error\_class   | set to the value of the error\_class parameter (default is " error") ONLY if a FormIt error for the field name is found. Exactly the same as using \[\[+error:notempty=` error`\]\].               |
+ | key            | A unique but human-friendly identifier for each field or sub-field (useful for HTML id attributes). Generated from the key\_prefix, prefix, field name, and (only if using an option field) value. |
 
 ## Using in PHP Scripts
 
@@ -166,94 +161,129 @@ $output = '';
 $output .= $modx->runSnippet('field', array('name'=> 'name', 'type'=> 'text'));
 $output .= $modx->runSnippet('field', array('name'=> 'email', 'type'=> 'email'));
 return $output;
-
 ```
 
 ## More Examples
 
  Set the defaults for all field snippets lower down
 
- ```
-[[!fieldSetDefaults? &prefix=`myprefix` &chunks_path=`/path/to/chunks/if/using/file/based/chunks/` &outer_class=`ui-widget` ]]
-
+ ``` php
+[[!fieldSetDefaults? 
+  &prefix=`myprefix` 
+  &chunks_path=`/path/to/chunks/if/using/file/based/chunks/` 
+  &outer_class=`ui-widget`
+]]
 ```
 
  Type defaults to text:
 
- ```
+ ``` php
 [[!field? &name=`name`]]
-
 ```
 
  Options use the same format as template variables: Label1==Value1||Another Label==another\_value. To use the same value for both label and value, just use Value1||Value2||Value3
 
- ```
-[[!field? &type=`radio` &req=`1` &name=`color` &label=`Your Favorite Color:` &default=`` 
-&options=`Red==red||Blue==blue||Other==default`
+ ``` php
+[[!field? 
+  &type=`radio` 
+  &req=`1` 
+  &name=`color` 
+  &label=`Your Favorite Color:` 
+  &default=`` 
+  &options=`Red==red||Blue==blue||Other==default`
 ]]
-
 ```
 
- ```
-[[!field? &type=`radio` &label=` ` &options=`Publish==publish||Save as draft==save||Preview==preview` &name=`action` &default=``]]
-
+``` php
+[[!field? 
+  &type=`radio` 
+  &label=` ` 
+  &options=`Publish==publish||Save as draft==save||Preview==preview` 
+  &name=`action` 
+  &default=``
+]]
 ```
 
  Here, a different style of form fields is used by switching out of the default chunks. Use property sets to easily maintain various form styles around the site.
 
- ```
-[[!field? &type=`text` &req=`1` &name=`email` &tpl=`aDifferentTemplate` &outer_tpl=`ADifferentOuterTpl`]]
-
+ ``` php
+  [[!field? 
+  &type=`text` 
+  &req=`1` 
+  &name=`email` 
+  &tpl=`aDifferentTemplate` 
+  &outer_tpl=`ADifferentOuterTpl`
+]]
 ```
 
  You can disable the outer template:
 
- ```
-[[!field? &type=`hidden` &outer_tpl=`` &name=`blank`]]
-
+ ``` php
+[[!field? 
+  &type=`hidden` 
+  &outer_tpl=`` 
+  &name=`blank`
+]]
 ```
 
  Here, there were too many options to list, so a chunk name is specified instead that contains the option HTML:
 
- ```
+ ``` php
 [[!field? &type=`select` &default=`1` &name=`country_id` &label=`Country:` &options_element=`optionsCountries`  &header=`Please select...`]]
-
 ```
 
  A snippet can be used instead of a chunk:
 
- ```
+ ``` php
 [[!field? &type=`select` &name=`category` &req=`1` &multiple=`1` &title=`Choose some categories` &array=`1`
     &options_element=`mySnippetToListTopics` &options_element_class=`modSnippet` 
     &options_element_properties=`{"tpl":"fieldOptionTopic"}`
 ]]
-
 ```
 
  &req=`1` is an example of a custom placeholder. In this case, it can be used to add an asterisk or something similar to the label using the notempty output filter
 
- ```
-[[!field? &type=`textarea` &class=`elastic` &req=`1` &name=`message` &label=`Comment`]]
-
+ ``` php
+[[!field? 
+  &type=`textarea` 
+  &class=`elastic` 
+  &req=`1` 
+  &name=`message` 
+  &label=`Comment`
+]]
 ```
 
  There is no need to specify a label if you have a naming convention for your form fields. For example, use \[\[+label:default=`\[\[+name:replace=`\_== `:ucwords\]\]`\]\] to generate a label in your templates. This is already done in the default templates.
 
- ```
-[[!field? &type=`select` &name=`favorite_things` &multiple=`1` &array=`1` &options=`MODx==modx||Money==money||Power==power||Other==default`]]
-
+ ``` php
+[[!field? 
+  &type=`select` 
+  &name=`favorite_things` 
+  &multiple=`1` 
+  &array=`1` 
+  &options=`MODx==modx||Money==money||Power==power||Other==default`
+]]
 ```
 
  Here is a custom field with a custom type. If you use options with a custom type, you need to specify the type of the options fields with &option\_type.
 
- ```
-[[!field? &type=`customtype` &name=`custom_field_type` &_note=`Make sure you add this custom field to the &tpl chunk!` &custom_placeholder=`custom_value` &another_custom_placeholder=`And another custom value` &options=`One||Two||Three` &option_type=`radio`]]
-
+ ``` php
+[[!field? 
+  &type=`customtype` 
+  &name=`custom_field_type` 
+  &_note=`Make sure you add this custom field to the &tpl chunk!` 
+  &custom_placeholder=`custom_value` 
+  &another_custom_placeholder=`And another custom value` 
+  &options=`One||Two||Three` 
+  &option_type=`radio`
+]]
 ```
 
  You can even use field snippets for the submit field:
 
- ```
-[[!field? &type=`submit` &name=`submitForm`]]
-
+ ``` php
+[[!field? 
+  &type=`submit` 
+  &name=`submitForm`
+]]
 ```

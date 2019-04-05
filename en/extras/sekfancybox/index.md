@@ -165,7 +165,7 @@ Make sure when loading jquery in a template, and setting sekFancyBox's load jque
 ## Examples
 
 Below are some basic examples. 
-You can also view the [sekFancyBox & Gallery](/extras/revo/sekfancybox/sekfancybox-and-gallery "sekFancyBox & Gallery") example.
+You can also view the [sekFancyBox & Gallery](/extras/sekfancybox/sekfancybox-and-gallery "sekFancyBox & Gallery") example.
 
 ### Inline Type
 

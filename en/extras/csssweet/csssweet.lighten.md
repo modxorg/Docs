@@ -8,25 +8,25 @@ _old_uri: "revo/csssweet/csssweet.lighten"
 
  Examples:
 
-```
+``` php
 [[+color:lighten=`20`]]
 ```
 
  Result: lightens the $input hex color by 20%
 
-```
+``` php
 [[+color:lighten=`-30`]]
 ```
 
  Result: darkens the $input color by 30%
 
-```
+``` php
 [[+color:lighten=`max`]]
 ```
 
  Result: if the $input value is above the $threshold value, 'ffffff' will be returned, else '000000' will be returned. The $threshold value can be defined in the Snippet properties.
 
-```
+``` php
 [[+color:lighten=`rev60`]]
 ```
 

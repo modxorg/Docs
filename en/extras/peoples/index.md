@@ -35,9 +35,9 @@ It can be downloaded from within the MODx Revolution manager via [Package Manage
 
 Peoples comes with 3 separate snippets:
 
-- [Peoples](/extras/revo/peoples/peoples.peoples "Peoples.Peoples") - Displays a list of Users.
-- [PeopleGroups](/extras/revo/peoples/peoples.peoplegroups "Peoples.PeopleGroups") - Displays a list of User Groups.
-- [PeopleGroup](/extras/revo/peoples/peoples.peoplegroup "Peoples.PeopleGroup") - Displays a User Group and all Users within.
+- [Peoples](/extras/peoples/peoples.peoples "Peoples.Peoples") - Displays a list of Users.
+- [PeopleGroups](/extras/peoples/peoples.peoplegroups "Peoples.PeopleGroups") - Displays a list of User Groups.
+- [PeopleGroup](/extras/peoples/peoples.peoplegroup "Peoples.PeopleGroup") - Displays a User Group and all Users within.
 
 ## Usage Examples
 
@@ -65,10 +65,10 @@ Display the User Group "HR Department", and output the Users in the group to the
 
 ## See Also
 
-1. [Peoples.PeopleGroup](/extras/revo/peoples/peoples.peoplegroup)
-  1. [Peoples.PeopleGroup.userTpl](/extras/revo/peoples/peoples.peoplegroup/peoples.peoplegroup.usertpl)
-2. [Peoples.PeopleGroups](/extras/revo/peoples/peoples.peoplegroups)
-  1. [Peoples.PeopleGroups.tpl](/extras/revo/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
-3. [Peoples.Peoples](/extras/revo/peoples/peoples.peoples)
-  1. [Peoples.Peoples.tpl](/extras/revo/peoples/peoples.peoples/peoples.peoples.tpl)
-4. [Peoples.Roadmap](/extras/revo/peoples/peoples.roadmap)
+1. [Peoples.PeopleGroup](/extras/peoples/peoples.peoplegroup)
+  1. [Peoples.PeopleGroup.userTpl](/extras/peoples/peoples.peoplegroup/peoples.peoplegroup.usertpl)
+2. [Peoples.PeopleGroups](/extras/peoples/peoples.peoplegroups)
+  1. [Peoples.PeopleGroups.tpl](/extras/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
+3. [Peoples.Peoples](/extras/peoples/peoples.peoples)
+  1. [Peoples.Peoples.tpl](/extras/peoples/peoples.peoples/peoples.peoples.tpl)
+4. [Peoples.Roadmap](/extras/peoples/peoples.roadmap)

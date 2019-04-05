@@ -4,34 +4,7 @@ _old_id: "811"
 _old_uri: "revo/discuss/discuss.chunkmap"
 ---
 
-You may find the [Discss Controller documentation](/extras/revo/discuss/discuss.controllers "Discuss.Controllers") easier to use than the below placeholder coverage.
-
-- [Map of Chunks to Page Placeholders](#Discuss.ChunkMap-MapofChunkstoPagePlaceholders)
-  - [Commonly-Used Placeholders](#Discuss.ChunkMap-CommonlyUsedPlaceholders)
-  - [home.tpl](#Discuss.ChunkMap-home.tpl)
-  - [board.tpl](#Discuss.ChunkMap-board.tpl)
-  - [thread/index.tpl](#Discuss.ChunkMap-thread%2Findex.tpl)
-  - [thread/new.tpl](#Discuss.ChunkMap-thread%2Fnew.tpl)
-  - [thread/reply.tpl](#Discuss.ChunkMap-thread%2Freply.tpl)
-  - [thread/modify.tpl](#Discuss.ChunkMap-thread%2Fmodify.tpl)
-  - [thread/move.tpl](#Discuss.ChunkMap-thread%2Fmove.tpl)
-  - [thread/preview.tpl](#Discuss.ChunkMap-thread%2Fpreview.tpl)
-  - [thread/recent.tpl](#Discuss.ChunkMap-thread%2Frecent.tpl)
-  - [thread/unread.tpl](#Discuss.ChunkMap-thread%2Funread.tpl)
-  - [thread/unread\_last\_visit.tpl](#Discuss.ChunkMap-thread%2Funreadlastvisit.tpl)
-  - [post/track.tpl](#Discuss.ChunkMap-post%2Ftrack.tpl)
-  - [user/ignoreboards.tpl](#Discuss.ChunkMap-user%2Fignoreboards.tpl)
-  - [user/index.tpl](#Discuss.ChunkMap-user%2Findex.tpl)
-  - [user/subscriptions.tpl](#Discuss.ChunkMap-user%2Fsubscriptions.tpl)
-  - [messages/index.tpl](#Discuss.ChunkMap-messages%2Findex.tpl)
-  - [messages/modify.tpl](#Discuss.ChunkMap-messages%2Fmodify.tpl)
-  - [messages/new.tpl](#Discuss.ChunkMap-messages%2Fnew.tpl)
-  - [messages/reply.tpl](#Discuss.ChunkMap-messages%2Freply.tpl)
-  - [messages/view.tpl](#Discuss.ChunkMap-messages%2Fview.tpl)
-  - [search.tpl](#Discuss.ChunkMap-search.tpl)
-- [See Also](#Discuss.ChunkMap-SeeAlso)
-
-
+You may find the [Discss Controller documentation](/extras/discuss/discuss.controllers "Discuss.Controllers") easier to use than the below placeholder coverage.
 
 ## Map of Chunks to Page Placeholders
 
@@ -43,17 +16,17 @@ These placeholders are used across most pages and always use the same chunks:
 
 | Placeholder | Chunks |
 |-------------|--------|
-| trail | breadcrumbs/disBreadcrumbsLink - For a crumb link 
-breadcrumbs/disBreadcrumbsActive - For an active crumb text 
-breadcrumbs/disBreadcrumbs - The entire crumbs wrapper |
-| boards | board/disLastPostBy - For the "Last Post" by part 
-board/disSubForumLink - For any sub-boards in the board row 
-category/disCategoryLi - For the category row 
-board/disBoardLi - For each board |
+| trail | breadcrumbs/disBreadcrumbsLink |  For a crumb link  |
+| breadcrumbs/disBreadcrumbsActive |  For an active crumb text | 
+| breadcrumbs/disBreadcrumbs |  The entire crumbs wrapper |
+| boards | board/disLastPostBy |  For the "Last Post" by part | 
+| board/disSubForumLink |  For any sub-boards in the board row | 
+| category/disCategoryLi |  For the category row | 
+| board/disBoardLi |  For each board |
 | actionbuttons | No chunks currently, but a UL tag with classes 'dis-action-btns right' and li tags for each button |
-| pagination | pagination/PaginationLink - For a link to a page (1,2,3) 
-pagination/PaginationActive - Text for the active page 
-pagination/PaginationWrapper - The wrapper for the pagination |
+| pagination | pagination/PaginationLink |  For a link to a page (1,2,3) | 
+| pagination/PaginationActive |  Text for the active page | 
+| pagination/PaginationWrapper |  The wrapper for the pagination |
 | usermenu | disUserMenu |
 
 ### home.tpl
@@ -67,8 +40,8 @@ pagination/PaginationWrapper - The wrapper for the pagination |
 
 | Placeholder | Chunks |
 |-------------|--------|
-| posts | post/disBoardPost - For each post in an li 
-board/disLastPostBy - For the "last post by" part |
+| posts | post/disBoardPost |  For each post in an li | 
+| board/disLastPostBy |  For the "last post by" part |
 | readers | Just a string of a tags |
 | moderators | Just a string of a tags |
 
@@ -76,12 +49,12 @@ board/disLastPostBy - For the "last post by" part |
 
 | Placeholder | Chunks |
 |-------------|--------|
-| posts | post/disThreadPost - For each post in the thread 
-post/disThreadPostPrint - Replaces prior chunk if Print Thread is clicked 
-post/disPostAttachment - For each attachment on the post |
+| posts - post/disThreadPost |  For each post in the thread | 
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| post/disPostAttachment |  For each attachment on the post |
 | readers | Just a string of a tags |
-| threadactionbuttons | disActionButton - For each button 
-disActionButtons - Wrapper of all buttons |
+| threadactionbuttons - disActionButton |  For each button 
+| disActionButtons |  Wrapper of all buttons |
 
 ### thread/new.tpl
 
@@ -95,9 +68,9 @@ disActionButtons - Wrapper of all buttons |
 
 | Placeholder | Chunks |
 |-------------|--------|
-| thread\_posts | post/disThreadPost - For each post in the thread 
-post/disThreadPostPrint - Replaces prior chunk if Print Thread is clicked 
-post/disPostAttachment - For each attachment on the post |
+| thread\_posts | post/disThreadPost - For each post in the thread | 
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| post/disPostAttachment |  For each attachment on the post |
 | attachment\_fields | post/disAttachmentFields |
 | buttons | disPostButtons |
 | discuss.error\_panel | Ignore this. Always empty. |
@@ -106,9 +79,9 @@ post/disPostAttachment - For each attachment on the post |
 
 | Placeholder | Chunks |
 |-------------|--------|
-| thread\_posts | post/disThreadPost - For each post in the thread 
-post/disThreadPostPrint - Replaces prior chunk if Print Thread is clicked 
-post/disPostAttachment - For each attachment on the post |
+| thread\_posts | post/disThreadPost |  For each post in the thread | 
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| post/disPostAttachment |  For each attachment on the post |
 | attachment\_fields | post/disAttachmentFields |
 | buttons | disPostButtons |
 | discuss.error\_panel | Ignore this. Always empty. |
@@ -153,8 +126,8 @@ post/disPostAttachment - For each attachment on the post |
 
 | Placeholder | Chunks |
 |-------------|--------|
-| boards | disBoardCheckbox - For each board and its checkbox 
-disBoardCategoryIb - For each Category, with a placeholder for its nested boards |
+| boards |  disBoardCheckbox - For each board and its checkbox | 
+| disBoardCategoryIb |  For each Category, with a placeholder for its nested boards |
 
 ### user/index.tpl
 
@@ -178,9 +151,9 @@ disBoardCategoryIb - For each Category, with a placeholder for its nested boards
 
 | Placeholder | Chunks |
 |-------------|--------|
-| thread\_posts | post/disThreadPost - For each post in the thread 
-post/disThreadPostPrint - Replaces prior chunk if Print Thread is clicked 
-post/disPostAttachment - For each attachment on the post |
+| thread\_posts | post/disThreadPost - For each post in the thread | 
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| post/disPostAttachment |  For each attachment on the post |
 | attachment\_fields | post/disAttachmentFields |
 | buttons | disPostButtons |
 | discuss.error\_panel | Ignore this. Always empty. |
@@ -197,9 +170,9 @@ post/disPostAttachment - For each attachment on the post |
 
 | Placeholder | Chunks |
 |-------------|--------|
-| thread\_posts | post/disThreadPost - For each post in the thread 
-post/disThreadPostPrint - Replaces prior chunk if Print Thread is clicked 
-post/disPostAttachment - For each attachment on the post |
+| thread\_posts | post/disThreadPost - For each post in the thread | 
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| post/disPostAttachment |  For each attachment on the post |
 | attachment\_fields | post/disAttachmentFields |
 | buttons | disPostButtons |
 | discuss.error\_panel | Ignore this. Always empty. |
@@ -208,12 +181,12 @@ post/disPostAttachment - For each attachment on the post |
 
 | Placeholder | Chunks |
 |-------------|--------|
-| posts | post/disThreadPost - For each post in the thread 
-post/disThreadPostPrint - Replaces prior chunk if Print Thread is clicked 
-post/disPostAttachment - For each attachment on the post |
+| posts |  post/disThreadPost - For each post in the thread | 
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| post/disPostAttachment |  For each attachment on the post |
 | readers | Just a string of a tags |
-| threadactionbuttons | disActionButton - For each button 
-disActionButtons - Wrapper of all buttons |
+| threadactionbuttons | disActionButton - For each button | 
+| disActionButtons - Wrapper of all buttons |
 
 ### search.tpl
 
@@ -223,23 +196,23 @@ disActionButtons - Wrapper of all buttons |
 
 ## See Also
 
-1. [Discuss.Installation](/extras/revo/discuss/discuss.installation)
-  1. [Discuss.Installation from Git](/extras/revo/discuss/discuss.installation/discuss.installation-from-git)
-2. [Discuss.Getting Started](/extras/revo/discuss/discuss.getting-started)
-3. [Discuss.Creating a Discuss Theme](/extras/revo/discuss/discuss.creating-a-discuss-theme)
-4. [Discuss.Controllers](/extras/revo/discuss/discuss.controllers)
-  1. [Discuss.Controllers.board](/extras/revo/discuss/discuss.controllers/discuss.controllers.board)
-      1. [Discuss.Controllers.board.xml](/extras/revo/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
-  2. [Discuss.Controllers.home](/extras/revo/discuss/discuss.controllers/discuss.controllers.home)
-  3. [Discuss.Controllers.login](/extras/revo/discuss/discuss.controllers/discuss.controllers.login)
-  4. [Discuss.Controllers.logout](/extras/revo/discuss/discuss.controllers/discuss.controllers.logout)
-  5. [Discuss.Controllers.profile](/extras/revo/discuss/discuss.controllers/discuss.controllers.profile)
-  6. [Discuss.Controllers.register](/extras/revo/discuss/discuss.controllers/discuss.controllers.register)
-  7. [Discuss.Controllers.search](/extras/revo/discuss/discuss.controllers/discuss.controllers.search)
-  8. [Discuss.Controllers.thread](/extras/revo/discuss/discuss.controllers/discuss.controllers.thread)
-5. [Discuss.Database Model](/extras/revo/discuss/discuss.database-model)
-6. [Discuss.Contributing](/extras/revo/discuss/discuss.contributing)
-7. [Discuss.ChunkMap](/extras/revo/discuss/discuss.chunkmap)
-8. [Discuss.Features](/extras/revo/discuss/discuss.features)
-9. [Discuss.Roadmap](/extras/revo/discuss/discuss.roadmap)
-10. [Configuring Sphinx for Search](/extras/revo/discuss/configuring-sphinx-for-search)
+1. [Discuss.Installation](/extras/discuss/discuss.installation)
+  1. [Discuss.Installation from Git](/extras/discuss/discuss.installation/discuss.installation-from-git)
+2. [Discuss.Getting Started](/extras/discuss/discuss.getting-started)
+3. [Discuss.Creating a Discuss Theme](/extras/discuss/discuss.creating-a-discuss-theme)
+4. [Discuss.Controllers](/extras/discuss/discuss.controllers)
+  2. [Discuss.Controllers.board](/extras/discuss/discuss.controllers/discuss.controllers.board)
+      1. [Discuss.Controllers.board.xml](/extras/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
+  3. [Discuss.Controllers.home](/extras/discuss/discuss.controllers/discuss.controllers.home)
+  4. [Discuss.Controllers.login](/extras/discuss/discuss.controllers/discuss.controllers.login)
+  5. [Discuss.Controllers.logout](/extras/discuss/discuss.controllers/discuss.controllers.logout)
+  6. [Discuss.Controllers.profile](/extras/discuss/discuss.controllers/discuss.controllers.profile)
+  7. [Discuss.Controllers.register](/extras/discuss/discuss.controllers/discuss.controllers.register)
+  8. [Discuss.Controllers.search](/extras/discuss/discuss.controllers/discuss.controllers.search)
+  9. [Discuss.Controllers.thread](/extras/discuss/discuss.controllers/discuss.controllers.thread)
+5. [Discuss.Database Model](/extras/discuss/discuss.database-model)
+6. [Discuss.Contributing](/extras/discuss/discuss.contributing)
+7. [Discuss.ChunkMap](/extras/discuss/discuss.chunkmap)
+8. [Discuss.Features](/extras/discuss/discuss.features)
+9. [Discuss.Roadmap](/extras/discuss/discuss.roadmap)
+10. [Configuring Sphinx for Search](/extras/discuss/configuring-sphinx-for-search)

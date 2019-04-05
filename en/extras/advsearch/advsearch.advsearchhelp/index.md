@@ -4,10 +4,10 @@ _old_id: "774"
 _old_uri: "revo/advsearch/advsearch.advsearchhelp"
 ---
 
-- [AdvSearchHelp Snippet](#AdvSearch.AdvSearchHelp-AdvSearchHelpSnippet)
-- [Usage](#AdvSearch.AdvSearchHelp-Usage)
-- [Help window content](#AdvSearch.AdvSearchHelp-Helpwindowcontent)
-- [See Also](#AdvSearch.AdvSearchHelp-SeeAlso)
+- [AdvSearchHelp Snippet](#advsearchhelp-snippet)
+- [Usage](#usage)
+- [Help window content](#help-window-content)
+- [See Also](#see-also)
 
 
 
@@ -33,13 +33,13 @@ The content of the help window is provided by the lexicon file help.inc Add your
 
 ## See Also 
 
-1. [AdvSearch.AdvSearch](/extras/revo/advsearch/advsearch.advsearch)
-  1. [AdvSearch.AdvSearch.containerTpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl)
-  2. [Advsearch.AdvSearch.extractTpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.extracttpl)
-  3. [AdvSearch.Advsearch.paging1Tpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl)
-  4. [AdvSearch.AdvSearch.paging0Tpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl)
-  5. [AdvSearch.AdvSearch.tpl](/extras/revo/advsearch/advsearch.advsearch/advsearch.advsearch.tpl)
-2. [AdvSearch.AdvSearchForm](/extras/revo/advsearch/advsearch.advsearchform)
-  1. [Advsearch.AdvSearchForm.tpl](/extras/revo/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl)
-3. [AdvSearch.AdvSearchHelp](/extras/revo/advsearch/advsearch.advsearchhelp)
-  1. [AdvSearch.AdvSearchHelp.helplinkTpl](/extras/revo/advsearch/advsearch.advsearchhelp/advsearch.advsearchhelp.helplinktpl)
+1. [AdvSearch.AdvSearch](/extras/advsearch/advsearch.advsearch)
+  1. [AdvSearch.AdvSearch.containerTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl)
+  2. [Advsearch.AdvSearch.extractTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.extracttpl)
+  3. [AdvSearch.Advsearch.paging1Tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl)
+  4. [AdvSearch.AdvSearch.paging0Tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl)
+  5. [AdvSearch.AdvSearch.tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.tpl)
+2. [AdvSearch.AdvSearchForm](/extras/advsearch/advsearch.advsearchform)
+  1. [Advsearch.AdvSearchForm.tpl](/extras/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl)
+3. [AdvSearch.AdvSearchHelp](/extras/advsearch/advsearch.advsearchhelp)
+  1. [AdvSearch.AdvSearchHelp.helplinkTpl](/extras/advsearch/advsearch.advsearchhelp/advsearch.advsearchhelp.helplinktpl)

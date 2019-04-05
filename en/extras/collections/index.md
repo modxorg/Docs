@@ -127,12 +127,11 @@ publishedon=published:asc
 
 ### getSelections Snippet
 
- ```
+ ``` php
 [[getSelections? 
 	&selections=`[[*id]]` 
 	&tpl=`myTplChunk`
 ]]
-
 ```
 
  getSelections is a wrapper Snippet for getResources, so it relies on getResources being installed. Any / all of the getResources properties available in the version of getResources that you have installed will also be available as properties for getSelections. Additionally here are the properties specific to getSelections:
@@ -148,8 +147,6 @@ publishedon=published:asc
 
 ## Additional Resources
 
- [Collections: Customizable Views for Content Types](http://modx.com/blog/2014/09/30/collections-easily-customizable-admin-views-for-content-types/)
-
- [Collections 3](http://www.bxr.cz/blog/collections-3/)
-
+[Collections: Customizable Views for Content Types](http://modx.com/blog/2014/09/30/collections-easily-customizable-admin-views-for-content-types/)
+[Collections 3](http://www.bxr.cz/blog/collections-3/)
 [Collections: Enhanced sort](http://www.bxr.cz/blog/collections-enhanced-sort/)

@@ -6,19 +6,6 @@ _old_uri: "revo/handyman/handyman.frequently-asked-questions"
 
 HandyMan is a complex product, and there are no doubt several questions going through many people's minds! Here's a few..
 
-- [What is the HandyMan manager URL?](#HandyMan.FrequentlyAskedQuestions-WhatistheHandyManmanagerURL%3F)
-- [Is HandyMan a replacement for the MODX Manager?](#HandyMan.FrequentlyAskedQuestions-IsHandyManareplacementfortheMODXManager%3F)
-- [I installed HandyMan, but the manager hasn't changed on my phone. Thanks for nothing!](#HandyMan.FrequentlyAskedQuestions-IinstalledHandyMan%2Cbutthemanagerhasn%27tchangedonmyphone.Thanksfornothing%5C%21)
-- [Does HandyMan support my mobile phone?](#HandyMan.FrequentlyAskedQuestions-DoesHandyMansupportmymobilephone%3F)
-- [How can I enable (Textile) richtext editing in HandyMan?](#HandyMan.FrequentlyAskedQuestions-HowcanIenable%28Textile%29richtexteditinginHandyMan%3F)
-- [Is HandyMan free and open source?](#HandyMan.FrequentlyAskedQuestions-IsHandyManfreeandopensource%3F)
-- [Can I make a donation somewhere?](#HandyMan.FrequentlyAskedQuestions-CanImakeadonationsomewhere%3F)
-- [Does HandyMan work with custom resource classes, like Articles for MODX 2.2?](#HandyMan.FrequentlyAskedQuestions-DoesHandyManworkwithcustomresourceclasses%2ClikeArticlesforMODX2.2%3F)
-- [What versions of MODX does HandyMan support?](#HandyMan.FrequentlyAskedQuestions-WhatversionsofMODXdoesHandyMansupport%3F)
-- [Does HandyMan support logging in using a captcha?](#HandyMan.FrequentlyAskedQuestions-DoesHandyMansupportlogginginusingacaptcha%3F)
-
-
-
 ## What is the HandyMan manager URL?
 
 www.yoursite.com/handyman/

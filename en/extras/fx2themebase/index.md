@@ -4,14 +4,6 @@ _old_id: "1667"
 _old_uri: "revo/fx2themebase"
 ---
 
-- [What is FX2?](extras/revo/fx2themebase#fx2-what-is-fx2)
-- [Requirements](extras/revo/fx2themebase#fx2-requirements)
-- [History](extras/revo/fx2themebase#fx2-history)
-- [Installation](extras/revo/fx2themebase#fx2-installation)
-- [Next Steps...](extras/revo/fx2themebase#fx2-next-steps)
- 
-
-
 ## What is FX2?
 
  Hint: it's not the sequel to the 80s action-thriller film :P
@@ -45,13 +37,12 @@ _old_uri: "revo/fx2themebase"
  You can install FX2 via Package Management like any other MODX Extra. The current version 1.2.1-beta2 does not install the custom dashboard. To fix this:
 
 1. Create a new dashboard widget of type "Inline PHP"
-2. Enter this one line and save the widget: ```
-  
+2. Enter this one line and save the widget: 
+``` php
   return $modx->getChunk('fx2.dashboard');
-  	
-  ```
-3. Add the widget to the dashboard of your choice
-4. Ensure your user groups have this dashboard set as default, to view it.
+```
+1. Add the widget to the dashboard of your choice
+2. Ensure your user groups have this dashboard set as default, to view it.
 
 ### Installation in MODX Cloud
 

@@ -4,12 +4,6 @@ _old_id: "896"
 _old_uri: "revo/handyman/handyman.installation"
 ---
 
-- [MODX.com Provider Installation](#HandyMan.Installation-MODX.comProviderInstallation)
-- [Beta Provider Installation](#HandyMan.Installation-BetaProviderInstallation)
-- [Installation (Building) from Git](#HandyMan.Installation-Installation%28Building%29fromGit)
-
-
-
 HandyMan 0.9.0 does **not** support MODX Revolution 2.0.8 or lower - limited support for 2.0.8 is available in 1.0.x, but can be phased out in any of the future versions so don't lurk around on Revo 2.0!
 
 The HandyMan package creates a folder in the root of the site called "HandyMan". If your server is running SuPHP or phpsuexec you will have no problems there, however if you don't you may get errors in the install log. If so, add a folder called "handyman" to the root of your website and give it appropriate permissions for the install (often 777). Then run the HandyMan installer, and make sure to set the folder permissions back to 755.

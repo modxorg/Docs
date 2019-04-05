@@ -4,7 +4,7 @@ _old_id: "1010"
 _old_uri: "revo/socialsuite/socialsuite.prettynumbers"
 ---
 
-[SocialSuite](/extras/revo/socialsuite "SocialSuite")is a collection of useful tools for integrating various social media into your MODX website.
+[SocialSuite](/extras/socialsuite "SocialSuite")is a collection of useful tools for integrating various social media into your MODX website.
 
 prettyNumbers is an [output filter](/display/revolution20/Input+and+Output+Filters "Input and Output Filters"), part of SocialSuite, which formats numbers nicely depending on the size of the number. It can also be used as a standalone snippet by passing a number into the **input** property.
 
@@ -35,11 +35,11 @@ As a standalone snippet, the syntax is slightly different in both scenarios:
 
 You can also specify options to the output filter or snippet to change how it formats the number. These are as follows:
 
-| Option Key | Default | Description |
-|------------|---------|-------------|
-| case | lower | When set to "u", "ucase", "upper" or "strtoupper", this will change the suffix (k, m, b) to uppercase. |
-| decimal | . (dot) | A string to use as decimal separator. |
-| thousands | , (comma) | A string to use as thousands' separator. |
+| Option Key | Default   | Description                                                                                            |
+| ---------- | --------- | ------------------------------------------------------------------------------------------------------ |
+| case       | lower     | When set to "u", "ucase", "upper" or "strtoupper", this will change the suffix (k, m, b) to uppercase. |
+| decimal    | . (dot)   | A string to use as decimal separator.                                                                  |
+| thousands  | , (comma) | A string to use as thousands' separator.                                                               |
 
 You specify these like this:
 

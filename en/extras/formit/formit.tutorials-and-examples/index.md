@@ -10,22 +10,22 @@ This page is a list of tutorials and examples for FormIt, as well as general usa
 
 ### Building Your Form 
 
-- [Handling Selects, Checkboxes and Radios](/extras/revo/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios "FormIt.Handling Selects, Checkboxes and Radios")
-- [Using a Blank NoSpam Field](/extras/revo/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field "FormIt.Using a Blank NoSpam Field")
+- [Handling Selects, Checkboxes and Radios](/extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios "FormIt.Handling Selects, Checkboxes and Radios")
+- [Using a Blank NoSpam Field](/extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field "FormIt.Using a Blank NoSpam Field")
 
 ### Email Handling 
 
-- [Specifying a To Address in the Form](/extras/revo/formit/formit.hooks/formit.hooks.email#FormIt.Hooks.email-SpecifyingaDynamicToAddress)
-- [Using a Subject Field as the Email Subject Line](/extras/revo/formit/formit.hooks/formit.hooks.email#FormIt.Hooks.email-UsingaSubjectFieldastheEmailSubjectLine)
+- [Specifying a To Address in the Form](/extras/formit/formit.hooks/formit.hooks.email#FormIt.Hooks.email-SpecifyingaDynamicToAddress)
+- [Using a Subject Field as the Email Subject Line](/extras/formit/formit.hooks/formit.hooks.email#FormIt.Hooks.email-UsingaSubjectFieldastheEmailSubjectLine)
 
 ### Redirection 
 
-- [Redirecting to Another Page After Success](/extras/revo/formit/formit.hooks/formit.hooks.redirect "FormIt.Hooks.redirect")
-- [Redirecting with GET Parameters](/extras/revo/formit/formit.hooks/formit.hooks.redirect#FormIt.Hooks.redirect-RedirectingwithParameters)
+- [Redirecting to Another Page After Success](/extras/formit/formit.hooks/formit.hooks.redirect "FormIt.Hooks.redirect")
+- [Redirecting with GET Parameters](/extras/formit/formit.hooks/formit.hooks.redirect#FormIt.Hooks.redirect-RedirectingwithParameters)
 
 ## Examples 
 
-- [Simple Contact Page](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page "FormIt.Examples.Simple Contact Page")
+- [Simple Contact Page](/extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page "FormIt.Examples.Simple Contact Page")
 
 ## Troubleshooting 
 
@@ -35,13 +35,13 @@ A common error here is with validation. Try removing the **&validation** portion
 
 For example, if your form reads in part:
 
-``` php 
+``` html 
 ...
 <input type="text" name="firstname" id="firstname" value="[[!+fi.firstname]]" />
 ...
 ```
 
-Then the following validation rule will not work (for a full example of the Snippet call, see [here](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page "FormIt.Examples.Simple Contact Page")):
+Then the following validation rule will not work (for a full example of the Snippet call, see [here](/extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page "FormIt.Examples.Simple Contact Page")):
 
 ``` php 
 ...
@@ -55,10 +55,10 @@ Other reason that can cause FormIt silently failing is the lack of the "name" at
 
 ## See Also 
 
-1. [FormIt.Hooks](/extras/revo/formit/FormIt.Hooks)
-2. [FormIt.Validators](/extras/revo/formit/FormIt.Validators)
-3. [FormIt.FormItRetriever](/extras/revo/formit/FormIt.FormItRetriever)
-4. [FormIt.Tutorials and Examples](/extras/revo/formit/formit.Tutorials-and-Examples)
-5. [FormIt.Roadmap](/extras/revo/formit/FormIt.Roadmap)
-6. [FormIt.FormItCountryOptions](/extras/revo/formit/FormIt.FormItCountryOptions)
-7. [FormIt.FormItStateOptions](/extras/revo/formit/FormIt.FormItStateOptions)
+1. [FormIt.Hooks](/extras/formit/FormIt.Hooks)
+2. [FormIt.Validators](/extras/formit/FormIt.Validators)
+3. [FormIt.FormItRetriever](/extras/formit/FormIt.FormItRetriever)
+4. [FormIt.Tutorials and Examples](/extras/formit/formit.Tutorials-and-Examples)
+5. [FormIt.Roadmap](/extras/formit/FormIt.Roadmap)
+6. [FormIt.FormItCountryOptions](/extras/formit/FormIt.FormItCountryOptions)
+7. [FormIt.FormItStateOptions](/extras/formit/FormIt.FormItStateOptions)

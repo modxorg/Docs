@@ -10,12 +10,6 @@ ClientConfig is maintained by Mark Hamstra on Github, please file your bugs and 
 
 [Discuss ClientConfig on the Forums](http://forums.modx.com/thread/81490/clientconfig-custom-configuration-cmp-for-clients#dis-post-449423).
 
-- [Setting up Configuration Options](#ClientConfig-SettingupConfigurationOptions)
-- [Settings](#ClientConfig-Settings)
-- [Field Types](#ClientConfig-FieldTypes)
-
-
-
 ## Setting up Configuration Options
 
 ClientConfig lets you define what you want your client to manage. Therefore ClientConfig ships as an empty canvas, waiting for you to set up the relevant settings.

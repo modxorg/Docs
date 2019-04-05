@@ -4,15 +4,6 @@ _old_id: "855"
 _old_uri: "revo/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios"
 ---
 
-- [Handling Selects, Checkboxes and Radios](#FormIt.HandlingSelects%2CCheckboxesandRadios-HandlingSelects%2CCheckboxesandRadios)
-  - [Handling Select Fields](#FormIt.HandlingSelects%2CCheckboxesandRadios-HandlingSelectFields)
-  - [Handling Checkboxes and Radios](#FormIt.HandlingSelects%2CCheckboxesandRadios-HandlingCheckboxesandRadios)
-      - [Handling Required on Checkboxes](#FormIt.HandlingSelects%2CCheckboxesandRadios-HandlingRequiredonCheckboxes)
-      - [Handling Checkboxes and Multiple Selects in a Custom Hook](#FormIt.HandlingSelects,CheckboxesandRadios-HandlingCheckboxesSelectsCustomHook)
-- [See Also](#FormIt.HandlingSelects%2CCheckboxesandRadios-SeeAlso)
-
-
-
 ## Handling Selects, Checkboxes and Radios
 
  While FormIt can handle any type of field, special directions are required for selects, radios and checkboxes due to their value nature.
@@ -29,7 +20,6 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/formit.handling-selects,-ch
    <!-- This would also work -->
    <option value="yellow" [[!+fi.color:is=`yellow`:then=`selected`]]>Yellow</option>
 </select>
-
 ```
 
  This will automatically handle the "selected" part of the option field, persisting it through validation and error handling.
@@ -45,7 +35,6 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/formit.handling-selects,-ch
 <input type="checkbox" name="color[]" value="blue" [[!+fi.color:FormItIsChecked=`blue`]] > Blue 
 <input type="checkbox" name="color[]" value="red" [[!+fi.color:FormItIsChecked=`red`]] > Red 
 <input type="checkbox" name="color[]" value="green" [[!+fi.color:FormItIsChecked=`green`]] > Green
-
 ```
 
  Note that the \[\] is stripped when setting the "fi.error.color" placeholder.
@@ -54,7 +43,7 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/formit.handling-selects,-ch
 
  Since HTML does not send a value if a checkbox is not checked, handling the "required" validation on a checkbox can be tricky. You'll need to add a "hidden" field before so that at least an empty value is sent:
 
- ``` php 
+ ``` html 
 [[!FormIt? &validate=`color:required`]]
 ...
 <label>Color: [[!+fi.error.color]]</label>
@@ -62,7 +51,6 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/formit.handling-selects,-ch
 <input type="checkbox" name="color[]" value="blue" [[!+fi.color:FormItIsChecked=`blue`]] > Blue 
 <input type="checkbox" name="color[]" value="red" [[!+fi.color:FormItIsChecked=`red`]] > Red 
 <input type="checkbox" name="color[]" value="green" [[!+fi.color:FormItIsChecked=`green`]] > Green
-
 ```
 
  This will successfully check to make sure at least one checkbox was selected when submitting the form.
@@ -73,12 +61,11 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/formit.handling-selects,-ch
 
  ``` php 
 $hook->setValue('hobbies',json_encode(array('music','films','books')));
-
 ```
 
 ## See Also
 
-1. [FormIt.Examples.Custom Hook](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
-2. [FormIt.Examples.Simple Contact Page](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
-3. [FormIt.Handling Selects, Checkboxes and Radios](/extras/revo/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
-4. [FormIt.Using a Blank NoSpam Field](/extras/revo/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
+1. [FormIt.Examples.Custom Hook](/extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
+2. [FormIt.Examples.Simple Contact Page](/extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
+3. [FormIt.Handling Selects, Checkboxes and Radios](/extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
+4. [FormIt.Using a Blank NoSpam Field](/extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)

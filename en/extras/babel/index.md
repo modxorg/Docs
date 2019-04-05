@@ -79,7 +79,7 @@ If you'd like to remove a translation link, just mouseover the (green) language 
 
 ### Snippets
 
-Currently there are two snippets available for Babel: [BabelLinks](/extras/revo/babel/babel.babellinks "Babel.BabelLinks") and [BabelTranslation](/extras/revo/babel/babel.babeltranslation "Babel.BabelTranslation").
+Currently there are two snippets available for Babel: [BabelLinks](/extras/babel/babel.babellinks "Babel.BabelLinks") and [BabelTranslation](/extras/babel/babel.babeltranslation "Babel.BabelTranslation").
 
 ## Change Babel Settings after Installation
 
@@ -89,7 +89,7 @@ You may change your Babel settings after setup. For example if you want to defin
 
 ## See Also
 
-1. [Babel.BabelLinks](/extras/revo/babel/babel.babellinks)
-2. [Babel.BabelTranslation](/extras/revo/babel/babel.babeltranslation)
+1. [Babel.BabelLinks](/extras/babel/babel.babellinks)
+2. [Babel.BabelTranslation](/extras/babel/babel.babeltranslation)
 
 [Offical Babel project website: Multilingual websites with MODX](http://www.multilingual-modx.com/)

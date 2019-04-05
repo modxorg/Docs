@@ -24,39 +24,39 @@ Example for input.combobox using an object:
 
 ## Properties
 
-| Name | Description | Default | Required | Version |
-|------|-------------|---------|----------|---------|
-| input\_id | The id to assign to the input box. While not required, it is best to give all fields an input id. |  |  | >0.0.1 |
-| name | The name to assign to the input box. |  |  | >0.0.1 |
-| value | The value to assign to the input box. |  |  | >0.0.1 |
-| object | JSON array of options to return a combobox list. |  |  | >0.0.1 |
-| snippet | A snippet call to return a custom JSON list. |  |  | >0.0.1 |
-| value\_list | Create a custom list for the combobox. |  |  | >0.0.1 |
-| filter | JSON array to filter the combo list. |  |  | >0.0.1 |
-| helper\_snippet | Name of the snippet to call by ajax request to change option list. |  |  | >0.0.1 |
+| Name            | Description                                                                                       | Default | Required | Version |
+| --------------- | ------------------------------------------------------------------------------------------------- | ------- | -------- | ------- |
+| input\_id       | The id to assign to the input box. While not required, it is best to give all fields an input id. |         |          | >0.0.1  |
+| name            | The name to assign to the input box.                                                              |         |          | >0.0.1  |
+| value           | The value to assign to the input box.                                                             |         |          | >0.0.1  |
+| object          | JSON array of options to return a combobox list.                                                  |         |          | >0.0.1  |
+| snippet         | A snippet call to return a custom JSON list.                                                      |         |          | >0.0.1  |
+| value\_list     | Create a custom list for the combobox.                                                            |         |          | >0.0.1  |
+| filter          | JSON array to filter the combo list.                                                              |         |          | >0.0.1  |
+| helper\_snippet | Name of the snippet to call by ajax request to change option list.                                |         |          | >0.0.1  |
 
 ### object
 
 The object property has several parts to quickly define combo box options from a modx table.
 
-| Name | Description | Default | Required | Version |
-|------|-------------|---------|----------|---------|
-| name | The name of the modx table called by the object name. |  | Yes | >0.0.1 |
-| sortby | The table field to sort by. |  |  | >0.0.1 |
-| groupby | Simply group values together ?(most likely to be used if the value and label fields are the same). |  |  | >0.0.4 |
-| value | The table field that will be used as the value for the option. |  | Yes | >0.0.1 |
-| label | The table field that will be used as the label for the option. |  | Yes | >0.0.1 |
+| Name    | Description                                                                                        | Default | Required | Version |
+| ------- | -------------------------------------------------------------------------------------------------- | ------- | -------- | ------- |
+| name    | The name of the modx table called by the object name.                                              |         | Yes      | >0.0.1  |
+| sortby  | The table field to sort by.                                                                        |         |          | >0.0.1  |
+| groupby | Simply group values together ?(most likely to be used if the value and label fields are the same). |         |          | >0.0.4  |
+| value   | The table field that will be used as the value for the option.                                     |         | Yes      | >0.0.1  |
+| label   | The table field that will be used as the label for the option.                                     |         | Yes      | >0.0.1  |
 
 ### filter
 
 The filter property has several parts to filter the data returned by the object property.
 
-| Name | Description | Default | Required | Version |
-|------|-------------|---------|----------|---------|
-| input\_id | The id of an input field that will dynamically change the options list. |  |  | >0.0.1 |
-| name | The object name to base filter on. |  |  | >0.0.1 |
-| field | The field that will be used to filter the results. |  | Yes | >0.0.1 |
-| value | The value to filter on. |  |  | >0.0.1 |
+| Name      | Description                                                             | Default | Required | Version |
+| --------- | ----------------------------------------------------------------------- | ------- | -------- | ------- |
+| input\_id | The id of an input field that will dynamically change the options list. |         |          | >0.0.1  |
+| name      | The object name to base filter on.                                      |         |          | >0.0.1  |
+| field     | The field that will be used to filter the results.                      |         | Yes      | >0.0.1  |
+| value     | The value to filter on.                                                 |         |          | >0.0.1  |
 
 ## Examples
 
@@ -103,7 +103,7 @@ We can also filter the combo box using xpdo's powerful relational filters. Here 
     ]]
 ```
 
-The combo box can also be filter live using jquery. please view the [Advanced Examples](/extras/revo/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples") for more information.
+The combo box can also be filter live using jquery. please view the [Advanced Examples](/extras/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples") for more information.
 
 ### Snippet
 

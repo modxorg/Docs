@@ -17,7 +17,7 @@ _old_uri: "revo/migx/migx.frontend-usage"
 
 ##  Displaying MIGX Items 
 
- MIGX includes a snippet named getImageList that is used to output information from MIGX TVs. Despite the snippet name, non-images can be retrieved as well. Think of it as the ever-popular snippet [getResources](/extras/revo/getresources "getResources") but for MIGX.
+ MIGX includes a snippet named getImageList that is used to output information from MIGX TVs. Despite the snippet name, non-images can be retrieved as well. Think of it as the ever-popular snippet [getResources](/extras/getresources "getResources") but for MIGX.
 
  Here are some sample uses of getImageList:
 
@@ -44,7 +44,7 @@ _old_uri: "revo/migx/migx.frontend-usage"
 
  Let's break this down. The first parameter, &tvname, refers to the name of the MIGX TV that we created in Backend Usage, Step 2. &tpl refers to either a code string for which to use with the MIGX items or the name of a chunk. If you're using a code string, make sure to prepend the code as above with @CODE.
 
- If you're using [phpthumbof](/extras/revo/phpthumbof "phpThumbOf"), you will need to use a chunk and not a code string.
+ If you're using [phpthumbof](/extras/phpthumbof "phpThumbOf"), you will need to use a chunk and not a code string.
 
 ``` html 
 <ul>
@@ -66,7 +66,7 @@ _old_uri: "revo/migx/migx.frontend-usage"
 
 ##  Using MIGX with getResources 
 
- You can call getImageList from [getResources](/extras/revo/getresources "getResources") to build a gallery of galleries.
+ You can call getImageList from [getResources](/extras/getresources "getResources") to build a gallery of galleries.
 
 ``` html 
 <li>
@@ -115,18 +115,18 @@ _old_uri: "revo/migx/migx.frontend-usage"
 
 ##  Properties 
 
-| Name | Description | Default |
-|------|-------------|---------|
-| tvname | the Name of your MIGX-TV |  |
-| tpl | chunkname to render each record. You can also use @CODE: or @FILE: if empty, getImageList will output an array-string of the records |  |
-| docid | if you want to show MIGX-records from other resources. Usefull in [getResources](/extras/revo/getresources "getResources")-tpls with &docid=`\[\[+id\]\]` | \[\[\*id\]\] |
-| value | if you want to send your own JSON-string to getImageList instaed of using the TV-output. tvname and docid are ignored then. |  |
-| limit | If set to non-zero, will only show X number of items. | 0 |
-| offset | The index to start grabbing from when limiting the number of items. | 0 |
-| totalVar | the key for the total-placeholder, usefull together with [getPage](/extras/revo/getpage "getPage") for pagination. | total |
-| randomize | set &randomize=`1` if you want randomized output | 0 |
-| preselectLimit | together with &randomize, this will preselect items from top to limit, for images you want to see in any case in ranomized output | 5 |
-| where | filter items. example: ``` javascript 
+| Name           | Description                                                                                                                                          | Default      |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| tvname         | the Name of your MIGX-TV                                                                                                                             |              |
+| tpl            | chunkname to render each record. You can also use @CODE: or @FILE: if empty, getImageList will output an array-string of the records                 |              |
+| docid          | if you want to show MIGX-records from other resources. Usefull in [getResources](/extras/getresources "getResources")-tpls with &docid=`\[\[+id\]\]` | \[\[\*id\]\] |
+| value          | if you want to send your own JSON-string to getImageList instaed of using the TV-output. tvname and docid are ignored then.                          |              |
+| limit          | If set to non-zero, will only show X number of items.                                                                                                | 0            |
+| offset         | The index to start grabbing from when limiting the number of items.                                                                                  | 0            |
+| totalVar       | the key for the total-placeholder, usefull together with [getPage](/extras/getpage "getPage") for pagination.                                        | total        |
+| randomize      | set &randomize=`1` if you want randomized output                                                                                                     | 0            |
+| preselectLimit | together with &randomize, this will preselect items from top to limit, for images you want to see in any case in ranomized output                    | 5            |
+| where          | filter items. example: ``` javascript                                                                                                                |
 {"active:=":"1","rating:>":"5"}
 
 ``` |
@@ -146,14 +146,14 @@ _old_uri: "revo/migx/migx.frontend-usage"
 
 ##  Placeholders 
 
-| Placeholder | Description |
-|-------------|-------------|
-| \[\[+fieldname\]\] | replace 'fieldname' with your fieldnames |
-| \[\[+idx\]\] | the index of each item, begins allways with 1 |
-| \[\[+\_first\]\] | returns 1, if in first row |
-| \[\[+\_last\]\] | returns 1, if in last row |
-| \[\[+\_alt\]\] | returns 1 every second row |
-| \[\[+total\]\] | count of all rows, replace 'total' with your totalVar |
+| Placeholder            | Description                                                                                                                                                               |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \[\[+fieldname\]\]     | replace 'fieldname' with your fieldnames                                                                                                                                  |
+| \[\[+idx\]\]           | the index of each item, begins allways with 1                                                                                                                             |
+| \[\[+\_first\]\]       | returns 1, if in first row                                                                                                                                                |
+| \[\[+\_last\]\]        | returns 1, if in last row                                                                                                                                                 |
+| \[\[+\_alt\]\]         | returns 1 every second row                                                                                                                                                |
+| \[\[+total\]\]         | count of all rows, replace 'total' with your totalVar                                                                                                                     |
 | \[\[+property.name\]\] | you can use every script property/param that's set in the actual snippet call, for example if you have &docid=`20` the placeholder \[\[+property.docid\]\] will return 20 |
 
 ##  Advanced Usage 

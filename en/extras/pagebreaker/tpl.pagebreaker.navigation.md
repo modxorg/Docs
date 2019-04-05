@@ -37,6 +37,6 @@ There is only four simple placeholders.
 
 ## See Also
 
-1. [PageBreaker.PageBreaker](/extras/revo/pagebreaker/pagebreaker.pagebreaker)
-2. [tpl.PageBreaker.ajax](/extras/revo/pagebreaker/tpl.pagebreaker.ajax)
-3. [tpl.PageBreaker.navigation](/extras/revo/pagebreaker/tpl.pagebreaker.navigation)
+1. [PageBreaker.PageBreaker](/extras/pagebreaker/pagebreaker.pagebreaker)
+2. [tpl.PageBreaker.ajax](/extras/pagebreaker/tpl.pagebreaker.ajax)
+3. [tpl.PageBreaker.navigation](/extras/pagebreaker/tpl.pagebreaker.navigation)

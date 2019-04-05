@@ -29,9 +29,7 @@ _old_uri: "revo/getvimeo"
  The getVimeo snippet can be called using the tag:
 
  ``` php 
-
 [[getVimeo]]
-
 ```
 
  Calls without the &channel, &id and &tpl properties specified will output nothing. 
@@ -40,28 +38,28 @@ _old_uri: "revo/getvimeo"
 
 ###  Selection Properties 
 
- | Name | Description | Default Value | Added in Version |
-|------|-------------|---------------|------------------|
-| channel | The URL Name or Numeric ID of the target Vimeo Channel. (REQUIRED) |  | 1.0.0-pl |
-| id | A comma-separated list of Numeric Video IDs to output from target Channel. Use `all` to output all Videos. (REQUIRED) |  | 1.0.0-pl |
-| sortby | A placeholder name to sort by. (NOTE: Please see placeholder docs for more details) | upload\_date | 1.0.0-pl |
-| sortdir | Order which to sort by. (OPTIONS: DESC or ASC) | DESC | 1.0.0-pl |
-| limit | Limits the number of Videos returned. Use `0` for unlimited results. | 0 | 1.1.0-pl |
-| offset | An offset of Videos to skip. | 0 | 1.1.0-pl |
+ | Name    | Description                                                                                                           | Default Value | Added in Version |
+ | ------- | --------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------- |
+ | channel | The URL Name or Numeric ID of the target Vimeo Channel. (REQUIRED)                                                    |               | 1.0.0-pl         |
+ | id      | A comma-separated list of Numeric Video IDs to output from target Channel. Use `all` to output all Videos. (REQUIRED) |               | 1.0.0-pl         |
+ | sortby  | A placeholder name to sort by. (NOTE: Please see placeholder docs for more details)                                   | upload\_date  | 1.0.0-pl         |
+ | sortdir | Order which to sort by. (OPTIONS: DESC or ASC)                                                                        | DESC          | 1.0.0-pl         |
+ | limit   | Limits the number of Videos returned. Use `0` for unlimited results.                                                  | 0             | 1.1.0-pl         |
+ | offset  | An offset of Videos to skip.                                                                                          | 0             | 1.1.0-pl         |
 
 ###  Templating Properties 
 
- | Name | Description | Default Value | Added in Version |
-|------|-------------|---------------|------------------|
-| tpl | Name of a chunk serving as a template. (REQUIRED) |  | 1.0.0-pl |
-| tplAlt | Name of a chunk serving as a template for every other Video. |  | 1.0.0-pl |
-| tplWrapper | Name of a chunk serving as a wrapper template for the output. (NOTE: Does not work with &toPlaceholder. The placeholder where the items are inserted is \[\[+output\]\]) |  | 1.0.0-pl |
-| toPlaceholder | If set, will assign the output to this placeholder instead of outputting it directly. (NOTE: Does not work with &tplWrapper) |  | 1.0.0-pl |
+ | Name          | Description                                                                                                                                                              | Default Value | Added in Version |
+ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ---------------- |
+ | tpl           | Name of a chunk serving as a template. (REQUIRED)                                                                                                                        |               | 1.0.0-pl         |
+ | tplAlt        | Name of a chunk serving as a template for every other Video.                                                                                                             |               | 1.0.0-pl         |
+ | tplWrapper    | Name of a chunk serving as a wrapper template for the output. (NOTE: Does not work with &toPlaceholder. The placeholder where the items are inserted is \[\[+output\]\]) |               | 1.0.0-pl         |
+ | toPlaceholder | If set, will assign the output to this placeholder instead of outputting it directly. (NOTE: Does not work with &tplWrapper)                                             |               | 1.0.0-pl         |
 
 ###  Other Properties 
 
  | totalVar | Define the key of a placeholder set by getVimeo indicating the total number of Videos that would be returned, NOT considering the LIMIT value. | total | 1.1.0-pl |
-|----------|------------------------------------------------------------------------------------------------------------------------------------------------|-------|----------|
+ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ----- | -------- |
 
 ###  Available Placeholders 
 
@@ -69,63 +67,57 @@ _old_uri: "revo/getvimeo"
 
 ####  Video Placeholders 
 
- | Placeholder | Description | Added in Version |
-|-------------|-------------|------------------|
-| \[\[+title\]\] | Video title |  |
-| \[\[+url\]\] | URL to the Video Page |  |
-| \[\[+id\]\] | Video ID |  |
-| \[\[+description\]\] | The description of the video |  |
-| \[\[+thumbnail\_small\]\] | URL to a small version of the thumbnail |  |
-| \[\[+thumbnail\_medium\]\] | URL to a medium version of the thumbnail |  |
-| \[\[+thumbnail\_large\]\] | URL to a large version of the thumbnail |  |
-| \[\[+user\_name\]\] | The user name of the video’s uploader |  |
-| \[\[+user\_url\]\] | The URL to the user profile |  |
-| \[\[+upload\_date\]\] | The date/time the video was uploaded on |  |
-| \[\[+user\_portrait\_small\]\] | Small user portrait (30px) |  |
-| \[\[+user\_portrait\_medium\]\] | Medium user portrait (100px) |  |
-| \[\[+user\_portrait\_large\]\] | Large user portrait (300px) |  |
-| \[\[+stats\_number\_of\_likes\]\] | # of likes |  |
-| \[\[+stats\_number\_of\_views\]\] | # of views |  |
-| \[\[+stats\_number\_of\_comments\]\] | # of comments |  |
-| \[\[+duration\]\] | Duration of the video in seconds |  |
-| \[\[+width\]\] | Standard definition width of the video |  |
-| \[\[+height\]\] | Standard definition height of the video |  |
-| \[\[+tags\]\] | Comma separated list of tags |  |
+ | Placeholder                          | Description                              | Added in Version |
+ | ------------------------------------ | ---------------------------------------- | ---------------- |
+ | \[\[+title\]\]                       | Video title                              |                  |
+ | \[\[+url\]\]                         | URL to the Video Page                    |                  |
+ | \[\[+id\]\]                          | Video ID                                 |                  |
+ | \[\[+description\]\]                 | The description of the video             |                  |
+ | \[\[+thumbnail\_small\]\]            | URL to a small version of the thumbnail  |                  |
+ | \[\[+thumbnail\_medium\]\]           | URL to a medium version of the thumbnail |                  |
+ | \[\[+thumbnail\_large\]\]            | URL to a large version of the thumbnail  |                  |
+ | \[\[+user\_name\]\]                  | The user name of the video’s uploader   |                  |
+ | \[\[+user\_url\]\]                   | The URL to the user profile              |                  |
+ | \[\[+upload\_date\]\]                | The date/time the video was uploaded on  |                  |
+ | \[\[+user\_portrait\_small\]\]       | Small user portrait (30px)               |                  |
+ | \[\[+user\_portrait\_medium\]\]      | Medium user portrait (100px)             |                  |
+ | \[\[+user\_portrait\_large\]\]       | Large user portrait (300px)              |                  |
+ | \[\[+stats\_number\_of\_likes\]\]    | # of likes                               |                  |
+ | \[\[+stats\_number\_of\_views\]\]    | # of views                               |                  |
+ | \[\[+stats\_number\_of\_comments\]\] | # of comments                            |                  |
+ | \[\[+duration\]\]                    | Duration of the video in seconds         |                  |
+ | \[\[+width\]\]                       | Standard definition width of the video   |                  |
+ | \[\[+height\]\]                      | Standard definition height of the video  |                  |
+ | \[\[+tags\]\]                        | Comma separated list of tags             |                  |
 
  Please see: <http://developer.vimeo.com/apis/simple#video-response> for an up to date list of video response data provided by the API. 
 
 ####  Other Placeholders 
 
- | Placeholder | Description | Added in Version |
-|-------------|-------------|------------------|
-| \[\[+total\]\] | Returns the total number of Videos in the output. | 1.0.1-pl |
-| \[\[+idx\]\] | Returns each Videos numerical position within the output. Increases with each iteration, starting with 1. | 1.1.0-pl |
+ | Placeholder    | Description                                                                                               | Added in Version |
+ | -------------- | --------------------------------------------------------------------------------------------------------- | ---------------- |
+ | \[\[+total\]\] | Returns the total number of Videos in the output.                                                         | 1.0.1-pl         |
+ | \[\[+idx\]\]   | Returns each Videos numerical position within the output. Increases with each iteration, starting with 1. | 1.1.0-pl         |
 
 ##  Examples 
 
  Output a list of ALL videos from the Vimeo 'Staff Picks' Channel, using the 'vimeoTpl' chunk:
 
  ``` php 
-
 [[!getVimeo? &channel=`staffpicks` &id=`all` &tpl=`vimeoTpl`]]
-
 ```
 
  Output only the videos specified from the Vimeo 'Staff Picks' Channel, using the 'vimeoTpl' chunk:
 
  ``` php 
-
 [[!getVimeo? &channel=`staffpicks` &id=`68688561,69239313,68146128` &tpl=`vimeoTpl`]]
-
 ```
 
  Output a list of ALL videos from the Vimeo 'Staff Picks' Channel, using the 'vimeoTpl' chunk and assign the output to a placeholder:
 
  ``` php 
-
 [[!getVimeo? &channel=`staffpicks` &id=`all` &tpl=`vimeoTpl` &toPlaceholder=`videos`]]
 [[+videos:notempty=`[[+videos]]`]]
-
 ```
 
  You CANNOT pass a placeholder name (&toPlaceholder) to a wrapper chunk (&tplWrapper). 
@@ -137,7 +129,6 @@ _old_uri: "revo/getvimeo"
  Output a list of ALL videos from the Vimeo 'Staff Picks' Channel, using the 'vimeoTpl' chunk:
 
  ``` php 
-
 [[!getPage?
   &element=`getVimeo`
   &channel=`staffpicks`
@@ -150,5 +141,4 @@ _old_uri: "revo/getvimeo"
   <ul class="pageList">
     [[!+page.nav]]
   </ul></div>
-
 ```

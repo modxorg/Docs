@@ -7,25 +7,6 @@ _old_uri: "revo/ditsnews"
 **Warning**
 Author no longer works at Dit's Media, package not updated since July 2011
 
-- [What is DitsNews?](#DitsNews-WhatisDitsNews%3F)
-  - [Features](#DitsNews-Features)
-  - [History](#DitsNews-History)
-  - [Requirements](#DitsNews-Requirements)
-  - [Development & Bug reporting](#DitsNews-Development%26Bugreporting)
-- [Installation](#DitsNews-Installation)
-- [Usage](#DitsNews-Usage)
-  - [Short guide](#DitsNews-Shortguide%26nbsp%3B)
-  - [Backend - Settings](#DitsNews-BackendSettings)
-  - [Backend - Groups](#DitsNews-BackendGroups)
-  - [Backend - Subscribers](#DitsNews-BackendSubscribers)
-  - [Backend - Creating a Newsletter](#DitsNews-BackendCreatingaNewsletter)
-  - [available placeholders](#DitsNews-availableplaceholders)
-- [Examples](#DitsNews-Examples)
-  - [Example of a Newsletter Template](#DitsNews-ExampleofaNewsletterTemplate)
-- [Roadmap](#DitsNews-Roadmap)
-
-
-
 ## What is DitsNews?
 
 DitsNews is a component for managing Newsletters with MODX Revolution.
@@ -44,16 +25,16 @@ DitsNews is a component for managing Newsletters with MODX Revolution.
 
 Being developed since December 2010 by [ditsmedia](http://modx.com/extras/author/ditsmedia).
 
-| Version | Release date | Contributors | Remarks / highlights |
-|---------|--------------|--------------|----------------------|
-| [0.1.0 alpha](http://modx.com/extras/package/ditsnews?version=4d556d0fb2b083396d000fa4) | 24 Dec 2010 | ditsmedia | Initial release. |
-| [0.1.0 alpha2](http://modx.com/extras/package/ditsnews) | 11 Jan 2011 | ditsmedia | several issues fixed |
-| [0.2.0 alpha](http://modx.com/extras/package/ditsnews) | soon! | ditsmedia | New codebase |
+| Version                                                                                 | Release date | Contributors | Remarks / highlights |
+| --------------------------------------------------------------------------------------- | ------------ | ------------ | -------------------- |
+| [0.1.0 alpha](http://modx.com/extras/package/ditsnews?version=4d556d0fb2b083396d000fa4) | 24 Dec 2010  | ditsmedia    | Initial release.     |
+| [0.1.0 alpha2](http://modx.com/extras/package/ditsnews)                                 | 11 Jan 2011  | ditsmedia    | several issues fixed |
+| [0.2.0 alpha](http://modx.com/extras/package/ditsnews)                                  | soon!        | ditsmedia    | New codebase         |
 
 ### Requirements
 
 - MODX Revolution (tested with 2.1.1)
-- [FormIt](/extras/revo/formit "FormIt") (for sign-up form)
+- [FormIt](/extras/formit "FormIt") (for sign-up form)
 - Cronjobs (or some other method to run a script periodically)
 
 ### Development & Bug reporting
@@ -138,24 +119,24 @@ A Newsletter is fully created with MODX native templates and ressources. So firs
 
 ### Example of a Newsletter Template
 
-``` php 
+``` html 
 [[!ditsnewsPlaceholders? &firstnameDefault=`Subscriber`]] <!-- Sets firstname field of email newsletter to "Subscriber" when empty -->
 <html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>My newsletter</title>
-<base href="[[++site_url]]" /><!-- Important! DitsNews needs this to create correct URLs! -->
-<style type="text/css">
-a {
- font-weight: bold;
- color: #ff0000
-}
-</style>
-</head>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>My newsletter</title>
+    <base href="[[++site_url]]" /><!-- Important! DitsNews needs this to create correct URLs! -->
+    <style type="text/css">
+        a {
+        font-weight: bold;
+        color: #ff0000
+        }
+    </style>
+    </head>
 <body>
-<p>Hello [[!+firstname:default=`Subscriber`]],</p>
-[[*content]]
-<p><a href="[[~10]]">Unsubscribe</a></p><!-- Link to unsubscribe page: user data will be added while sending -->
+    <p>Hello [[!+firstname:default=`Subscriber`]],</p>
+    [[*content]]
+    <p><a href="[[~10]]">Unsubscribe</a></p><!-- Link to unsubscribe page: user data will be added while sending -->
 </body>
 </html>
 ```

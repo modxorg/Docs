@@ -4,12 +4,6 @@ _old_id: "851"
 _old_uri: "revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page"
 ---
 
-- [Snippet Tag](#FormIt.Examples.SimpleContactPage-SnippetTag)
-- [Contact Form](#FormIt.Examples.SimpleContactPage-ContactForm)
-- [MyEmailChunk (Tpl Chunk)](#FormIt.Examples.SimpleContactPage-MyEmailChunk%28TplChunk%29)
-
-
-
 A simple Contact page with email sending, validation and redirection to Resource with ID 123.
 
 Will also strip tags from the message, validate the email as a real email address, and make sure none of the fields are blank.
@@ -35,12 +29,11 @@ And finally, we want reCaptcha support. We've already setup our public and priva
       numbers:required,
       colors:required`
 ]]
-
 ```
 
 ## Contact Form
 
-``` php 
+``` html 
 <h2>Contact Form</h2>
 
 [[!+fi.validation_error_message:notempty=`<p>[[!+fi.validation_error_message]]</p>`]]
@@ -71,7 +64,6 @@ And finally, we want reCaptcha support. We've already setup our public and priva
         <span class="error">[[!+fi.error.text]]</span>
     </label>
     <textarea name="text" id="text" cols="55" rows="7" value="[[!+fi.text]]">[[!+fi.text]]</textarea>
-
 
     <label>
         Numbers:[[+fi.error.numbers]]
@@ -109,7 +101,6 @@ And finally, we want reCaptcha support. We've already setup our public and priva
         <input type="submit" value="Send Contact Inquiry" />
     </div>
 </form>
-
 ```
 
 ## MyEmailChunk (Tpl Chunk)
@@ -120,5 +111,4 @@ This is the Formit Email Chunk.
 <br />[[+name]] ([[+email]]) Wrote: <br />
 
 [[+text]]
-
 ```

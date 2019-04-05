@@ -14,21 +14,21 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.formitsaveform"
 
  It has the following properties to be passed into the FormIt snippet call:
 
- | name | description |
-|------|-------------|
-| formName | The name of the form. Defaults to "form-{resourceid}". |
-| formEncrypt | If is set to '1' _(true)_ the submitted form will be encrypted before saving inside the DB. |
-| formFields | A comma-separated list of fields that will be saved. Defaults will save all fields including the submit button. |
-| fieldNames | Change the name of the field inside the CMP. So if the field name is email2 you could change the name to "secondary email". 
- Ex: &fieldnames=`fieldname==newfieldname, anotherone==anothernewname`. |
+ | name                                                                   | description                                                                                                                 |
+ | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+ | formName                                                               | The name of the form. Defaults to "form-{resourceid}".                                                                      |
+ | formEncrypt                                                            | If is set to '1' _(true)_ the submitted form will be encrypted before saving inside the DB.                                 |
+ | formFields                                                             | A comma-separated list of fields that will be saved. Defaults will save all fields including the submit button.             |
+ | fieldNames                                                             | Change the name of the field inside the CMP. So if the field name is email2 you could change the name to "secondary email". |
+ | Ex: &fieldnames=`fieldname==newfieldname, anotherone==anothernewname`. |
 
 ## See Also
 
-1. [FormIt.Hooks.email](/extras/revo/formit/formit.hooks/formit.hooks.email)
-2. [FormIt.Hooks.FormItAutoResponder](/extras/revo/formit/formit.hooks/formit.hooks.formitautoresponder)
+1. [FormIt.Hooks.email](/extras/formit/formit.hooks/formit.hooks.email)
+2. [FormIt.Hooks.FormItAutoResponder](/extras/formit/formit.hooks/formit.hooks.formitautoresponder)
 3. [FormIt.Hooks.FormItSaveForm](http://rtfm.modx.com/extras/revo/formit/formit.hooks/formit.hooks.formitsaveform)
-4. [FormIt.Hooks.math](/extras/revo/formit/formit.hooks/formit.hooks.math)
-5. [FormIt.Hooks.recaptcha](/extras/revo/formit/formit.hooks/formit.hooks.recaptcha)
-6. [FormIt.Hooks.redirect](/extras/revo/formit/formit.hooks/formit.hooks.redirect)
-7. [FormIt.Hooks.spam](/extras/revo/formit/formit.hooks/formit.hooks.spam)
+4. [FormIt.Hooks.math](/extras/formit/formit.hooks/formit.hooks.math)
+5. [FormIt.Hooks.recaptcha](/extras/formit/formit.hooks/formit.hooks.recaptcha)
+6. [FormIt.Hooks.redirect](/extras/formit/formit.hooks/formit.hooks.redirect)
+7. [FormIt.Hooks.spam](/extras/formit/formit.hooks/formit.hooks.spam)
 8. [FormIt.PreHooks.FormItLoadSavedForm](https://docs.modx.com/extras/revo/formit/formit.hooks/formit.prehooks.formitloadsavedform)

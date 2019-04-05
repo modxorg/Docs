@@ -4,17 +4,6 @@ _old_id: "625"
 _old_uri: "revo/customurls"
 ---
 
-- [What is CustomUrls?](#CustomUrls-WhatisCustomUrls%3F)
-  - [Requirements](#CustomUrls-Requirements)
-  - [Public Releases](#CustomUrls-PublicReleases)
-  - [Download](#CustomUrls-Download)
-  - [Support, Comments, Development and Bug Reporting](#CustomUrls-Support%2CComments%2CDevelopmentandBugReporting)
-- [Usage](#CustomUrls-Usage)
-  - [Rules properties](#CustomUrls-Rulesproperties)
-- [Pattern examples](#CustomUrls-Patternexamples)
-
-
-
 ## What is CustomUrls?
 
 This extra allows you to define custom alias or URI patterns for your resources. **It supports translit and Redirector packages**.
@@ -30,10 +19,10 @@ For example, with CustomURLs you can add the resource's ID or publish month in t
 
 ### Public Releases
 
-| Version | Date | Author | Product |
-|---------|------|--------|---------|
+| Version   | Date              | Author       | Product    |
+| --------- | ----------------- | ------------ | ---------- |
 | 1.0.0-rc2 | September 9, 2012 | ben\_omycode | Revolution |
-| 1.0.0-rc1 | August 23, 2012 | ben\_omycode | Revolution |
+| 1.0.0-rc1 | August 23, 2012   | ben\_omycode | Revolution |
 
 ### Download
 
@@ -50,15 +39,15 @@ To start with CustomUrls, go to Components > Custom URLs and add a rule.
 
 ### Rules properties
 
-| Name | Description | Example |
-|------|-------------|---------|
-| Pattern | Your custom URL pattern built from text, resource fields, TV, snippet and output filters. You also can use _cu.parent_ placeholder to get the complete parent alias path. | \[\[+id\]\]-\[\[+alias\]\] |
-| Constraint field | Can be any resource field : id, parent, template ... | template |
-| Constraint value |  | 2 |
-| User group | User group for whom rule is active | Administrators |
-| URI | By default, an alias is created but you can choose to create URI instead | false |
-| Override | Override alias or URI when resource is updated. | true |
-| Active | Is the rule active ? | true |
+| Name             | Description                                                                                                                                                               | Example                    |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| Pattern          | Your custom URL pattern built from text, resource fields, TV, snippet and output filters. You also can use _cu.parent_ placeholder to get the complete parent alias path. | \[\[+id\]\]-\[\[+alias\]\] |
+| Constraint field | Can be any resource field : id, parent, template ...                                                                                                                      | template                   |
+| Constraint value |                                                                                                                                                                           | 2                          |
+| User group       | User group for whom rule is active                                                                                                                                        | Administrators             |
+| URI              | By default, an alias is created but you can choose to create URI instead                                                                                                  | false                      |
+| Override         | Override alias or URI when resource is updated.                                                                                                                           | true                       |
+| Active           | Is the rule active ?                                                                                                                                                      | true                       |
 
 ## Pattern examples
 

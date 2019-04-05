@@ -8,22 +8,15 @@ The Profile controller acts as a legacy **redirect** coming from SMF. It does no
 
 This controller has been marked as **deprecated** on 2012-12-18 with the goal of isolating legacy redirects someplace else in a future version.
 
-- [Basic Information](#Discuss.Controllers.profile-BasicInformation)
-- [Options](#Discuss.Controllers.profile-Options)
-- [Controller Template](#Discuss.Controllers.profile-ControllerTemplate)
-- [System Events](#Discuss.Controllers.profile-SystemEvents)
-
-
-
 ## Basic Information
 
-| Since Version | 1.0 |
-|---------------|-----|
-| Controller File | controllers/web/profile.class.php |
-| Controller Class Name | DiscussProfileController |
-| Controller Template | None |
-| Manifest Name | profile |
-| Deprecated | 2012-12-18 |
+| Since Version         | 1.0                               |
+| --------------------- | --------------------------------- |
+| Controller File       | controllers/web/profile.class.php |
+| Controller Class Name | DiscussProfileController          |
+| Controller Template   | None                              |
+| Manifest Name         | profile                           |
+| Deprecated            | 2012-12-18                        |
 
 ## Options
 

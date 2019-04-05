@@ -8,6 +8,12 @@ _old_uri: "revo/boilerx/bx-container-close"
 
 Blank by default, meant to be close any wrapper tags opened in bx-container-open.
 
-## <a name="boilerX-SeeAlso"></a>See Also
+## See Also
 
- \[\[getResources@section? &parents=`1316` &context=`extras` &limit=`0` &resources=`1316,-\[\[\*id\]\]`\]\]
+ ``` php
+[[getResources@section? 
+    &parents=`1316` 
+    &context=`extras` 
+    &limit=`0` 
+    &resources=`1316,[[*id]]`
+]]

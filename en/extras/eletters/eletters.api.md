@@ -4,19 +4,14 @@ _old_id: "830"
 _old_uri: "revo/eletters/eletters.api"
 ---
 
-- [Eletters API](#Eletters.API-ElettersAPI)
-  - [Snippet Code example](#Eletters.API-SnippetCodeexample)
-- [See Also](#Eletters.API-SeeAlso)
-
-
-
 ## Eletters API
 
 New in version 1.1 are easy API to create your own Triggers to send out emails via an action of the user or through your own snippet/extra.
 
 ### Snippet Code example
 
-**Snippet Example, found at: core/components/eltters/elements/snippets/elettertriggerexample.snippet.php**``` javascript 
+**Snippet Example, found at: core/components/eltters/elements/snippets/elettertriggerexample.snippet.php**
+``` javascript 
 <?php
 /**
  * Eletter Trigger/Response code example snippet
@@ -87,7 +82,7 @@ return $output;
 
 ## See Also
 
-1. [Eletters.API](/extras/revo/eletters/eletters.api)
-2. [Eletters.FormIt](/extras/revo/eletters/eletters.formit)
-3. [Eletters.Import CSV](/extras/revo/eletters/eletters.import-csv)
-4. [Eletters.Templates](/extras/revo/eletters/eletters.templates)
+1. [Eletters.API](/extras/eletters/eletters.api)
+2. [Eletters.FormIt](/extras/eletters/eletters.formit)
+3. [Eletters.Import CSV](/extras/eletters/eletters.import-csv)
+4. [Eletters.Templates](/extras/eletters/eletters.templates)

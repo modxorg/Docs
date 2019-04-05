@@ -50,7 +50,7 @@ When placing @ bindings inside the "Default Value" field the returned value is u
 - [@DIRECTORY](building-sites/elements/template-variables/bindings/directory-binding "DIRECTORY Binding")
 - [@INHERIT](building-sites/elements/template-variables/bindings/inherit-binding "INHERIT Binding")
 
-The [getResources](/extras/revo/getresources "getResources") AddOn supports an @INLINE binding.
+The [getResources](/extras/getresources "getResources") AddOn supports an @INLINE binding.
 
 ## See Also
 

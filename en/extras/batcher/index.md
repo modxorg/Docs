@@ -37,4 +37,4 @@ After installing, simply reload the page, and the 'Batcher' menu option should b
 
 ## See Also
 
-1. [Batcher.Roadmap](/extras/revo/batcher/batcher.roadmap)
+1. [Batcher.Roadmap](/extras/batcher/batcher.roadmap)

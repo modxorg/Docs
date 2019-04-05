@@ -33,36 +33,36 @@ SekFormTools will install 5 tables, a country, state, US cities, US zipcodes, an
 
 The sekFormTools is called through several snippets using the below tags?
 
-- [sekFormTools.input.autocomplete](/extras/revo/sekformtools/sekformtools.input.autocomplete "sekFormTools.input.autocomplete") - A jquery auto-complete field.
-- [sekFormTools.input.combobox](/extras/revo/sekformtools/sekformtools.input.combobox "sekFormTools.input.combobox") - A jquery auto-complete combo box.
-- [sekFormTools.input.datepicker](/extras/revo/sekformtools/sekformtools.input.datepicker "sekFormTools.input.datepicker") - A jquery date picker field.
-- [sekFormTools.input.textfield](/extras/revo/sekformtools/sekformtools.input.textfield "sekFormTools.input.textfield") - A jquery text field with suggestion overlay.
-- [sekFormTools.input.helper](/extras/revo/sekformtools/sekformtools.input.helper "sekFormTools.input.helper") - Called from a blank page, used to fill auto-complete and combo boxes from a database.
+- [sekFormTools.input.autocomplete](/extras/sekformtools/sekformtools.input.autocomplete "sekFormTools.input.autocomplete") - A jquery auto-complete field.
+- [sekFormTools.input.combobox](/extras/sekformtools/sekformtools.input.combobox "sekFormTools.input.combobox") - A jquery auto-complete combo box.
+- [sekFormTools.input.datepicker](/extras/sekformtools/sekformtools.input.datepicker "sekFormTools.input.datepicker") - A jquery date picker field.
+- [sekFormTools.input.textfield](/extras/sekformtools/sekformtools.input.textfield "sekFormTools.input.textfield") - A jquery text field with suggestion overlay.
+- [sekFormTools.input.helper](/extras/sekformtools/sekformtools.input.helper "sekFormTools.input.helper") - Called from a blank page, used to fill auto-complete and combo boxes from a database.
 - spellchecker - Call the \[\[spellchecker\]\] snippet from anywhere on a page will load spelling and grammar checking on every textarea.
 
-For more complex setups, try [Advanced Examples](/extras/revo/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples").
+For more complex setups, try [Advanced Examples](/extras/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples").
 
 ## Available Settings
 
-| Name | Description | Default | Version |
-|------|-------------|---------|---------|
-| sekformtools.load\_jquery | This will enable or disable JQuery from being loaded when sekFormTools is called on a page. If JQuery is being loaded from another extra used on the same pages as sekFormTools, or it is loaded in a template, this setting should be set to No/False. | Yes/True | >0.0.1 |
-| sekformtools.customcss | Location of the css file in relation to the modx assets folder. |  | >0.0.1 |
-| sekformtools.theme | The theme to use for the form fields. | smoothness | >0.0.1 |
-| sekformtools.helper\_resource\_id | The id of the page making the jquery calls.This only needs to be set if you plan to use the autocomplete snippet or filter a combobox, |  | >0.0.1 |
+| Name                              | Description                                                                                                                                                                                                                                             | Default    | Version |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------- |
+| sekformtools.load\_jquery         | This will enable or disable JQuery from being loaded when sekFormTools is called on a page. If JQuery is being loaded from another extra used on the same pages as sekFormTools, or it is loaded in a template, this setting should be set to No/False. | Yes/True   | >0.0.1  |
+| sekformtools.customcss            | Location of the css file in relation to the modx assets folder.                                                                                                                                                                                         |            | >0.0.1  |
+| sekformtools.theme                | The theme to use for the form fields.                                                                                                                                                                                                                   | smoothness | >0.0.1  |
+| sekformtools.helper\_resource\_id | The id of the page making the jquery calls.This only needs to be set if you plan to use the autocomplete snippet or filter a combobox,                                                                                                                  |            | >0.0.1  |
 
 ## Themes
 
 SekFormTools comes with 8 themes. Additional themes can be downloaded from the jquery.ui website and placed in the css folder.
 
-| Theme Name | Version |
-|------------|---------|
-| blitzer | >0.0.1 |
-| eggplant | >0.0.1 |
-| flick | >0.0.1 |
-| overcast | >0.0.1 |
-| pepper-grinder | >0.0.1 |
-| redmond | >0.0.1 |
-| smoothness | >0.0.1 |
-| ui-lightness | >0.0.1 |
-| humanity | >0.0.5 |
+| Theme Name     | Version |
+| -------------- | ------- |
+| blitzer        | >0.0.1  |
+| eggplant       | >0.0.1  |
+| flick          | >0.0.1  |
+| overcast       | >0.0.1  |
+| pepper-grinder | >0.0.1  |
+| redmond        | >0.0.1  |
+| smoothness     | >0.0.1  |
+| ui-lightness   | >0.0.1  |
+| humanity       | >0.0.5  |

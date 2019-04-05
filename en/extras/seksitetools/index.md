@@ -29,6 +29,6 @@ SekSiteToolsis on GitHub: <https://github.com/insomnix/sekSiteTools>, report any
 
 Currently sekSiteTools has 3 tools, and more will be added:
 
-- [sekSiteTools.printdiv](/extras/revo/seksitetools/seksitetools.printdiv "sekSiteTools.printdiv") - This will copy the content of the specified div into a popup window that will then open a print dialog box to print a "printer friendly version" of the content. After the print job is sent to the printer the popup window will automatically close.
-- [sekSiteTools.google.analytics](/extras/revo/seksitetools/seksitetools.google.analytics "sekSiteTools.google.analytics") - Add the google analytics code to your website quickly and easily using this snippet. All that is required for this snippet to work is to register the domain with google and insert the account number into the &accountNumber property.
-- [sekSiteTools.easytabs](/extras/revo/seksitetools/seksitetools.easytabs "sekSiteTools.easytabs") - Add tabs to a form quickly and easily.
+- [sekSiteTools.printdiv](/extras/seksitetools/seksitetools.printdiv "sekSiteTools.printdiv") - This will copy the content of the specified div into a popup window that will then open a print dialog box to print a "printer friendly version" of the content. After the print job is sent to the printer the popup window will automatically close.
+- [sekSiteTools.google.analytics](/extras/seksitetools/seksitetools.google.analytics "sekSiteTools.google.analytics") - Add the google analytics code to your website quickly and easily using this snippet. All that is required for this snippet to work is to register the domain with google and insert the account number into the &accountNumber property.
+- [sekSiteTools.easytabs](/extras/seksitetools/seksitetools.easytabs "sekSiteTools.easytabs") - Add tabs to a form quickly and easily.

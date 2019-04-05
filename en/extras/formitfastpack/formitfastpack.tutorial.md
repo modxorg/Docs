@@ -8,7 +8,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 
 ### 1. Call FormIt as usual, but use **field** snippets to manage the form HTML.
 
- ``` plain 
+ ``` php 
 [[!FormIt?
     &hooks=`math,spam,email,redirect`
     &emailTpl=`ContactFormReport`
@@ -20,6 +20,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 ]]
 [[!fieldSetDefaults? &prefix=`fi.` &outer_type=`default` &tpl=`fieldTypesTpl` &outer_tpl=`fieldWrapTpl`]]    
 <div>[[!+fi.error.error_message]] [[!+fi.validation_error_message]] [[!+fi.error.recaptcha]]</div>
+
 <form id="ContactForm" action="[[~[[*id]]]]#ContactForm" method="post"><div>
 <input name="nospam" type="hidden" />
 [[!field? &type=`text` &name=`full_name` &req=`1`]]
@@ -31,8 +32,8 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
     <input type="hidden" name="op2" value="[[!+fi.op2]]" />
     <input type="hidden" name="operator" value="[[!+fi.operator]]" />
 [[!field? &type=`submit` &name=`submitForm` &label=` ` &message=`Send this Message!`]]
-</div></form>
-
+</div>
+</form>
 ```
 
 #### Explanation:
@@ -45,26 +46,27 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 
  A. Add the fiGenerateReport right before the "email" hook.
 
- ``` plain 
-[[!FormIt? &hooks=`math,spam,fiGenerateReport,email,redirect` ...]]<br>
-
+ ``` php 
+[[!FormIt? 
+  &hooks=`math,spam,fiGenerateReport,email,redirect` 
+  ...
+]]<br>
 ```
 
  B. Add the &figrExcludedFields parameter to exclude the special fields used by the math and spam fields from the email report.
 
- ``` plain 
-[[!FormIt? &hooks=`math,spam,fiGenerateReport,email,redirect`
+ ``` php 
+[[!FormIt? 
+  &hooks=`math,spam,fiGenerateReport,email,redirect`
   &figrExcludedFields=`op1,op2,operator,math`
 ]]
-
 ```
 
  C. In your emailTpl template chunk (called "ContactFormReport" in the above example, use the figr\_values placeholder to output a dynamic list of fields:
 
- ``` plain 
+ ``` php 
 <p>A <strong>[[++site_name]]</strong> contact form submission was sent from the <strong>[[*pagetitle]]</strong> page:</p>
 [[+figr_values]]
-
 ```
 
 ### 3. OPTIONAL: customize the &outer\_tpl chunk 
@@ -73,7 +75,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 
  Important: the tpl and outer\_tpl chunks use special comments to separate the HTML for different field types. Make sure each type is surrounded above and below by an HTML comment of the type name as shown below, or you might get more output than you expected! 
 
-``` plain 
+``` php 
 <!-- default -->
 <div class="[[+outer_class:default=`field_wrap`]] [[+type]]_wrap" id="[[+name]]_wrap">
 <label for="[[+name]]" title="[[+name:replace=`_== `:ucwords]]">[[+label:default=`[[+name:replace=`_== `:ucwords]]`]][[+req:notempty=` *`]]</label>
@@ -82,7 +84,6 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 [[+error:notempty=`<span class="[[+error_class]]">[[+error]]</span>`]]
 </div>
 <!-- default -->
-
 ```
 
 ###  4. OPTIONAL: customize the &tpl chunk
@@ -91,7 +92,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 
  Important: the tpl and outer\_tpl chunks use special comments to separate the HTML for different field types. Make sure each type is surrounded above and below by an HTML comment of the type name as shown below, or you might get more output than you expected! 
 
-``` plain 
+``` html 
 <!-- default -->
   <input type="[[+type]]" name="[[+name]]" id="[[+key]]" value="[[+current_value]]" class="[[+type]] [[+class]][[+error_class]]" size="[[+size:default=`40`]]" />
 <!-- default -->
@@ -137,5 +138,4 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 <span class="boolDiv [[+class]]">
 <input type="[[+type]]" class="[[+type]]" value="[[+value]]" name="[[+name]][[+array:notempty=`[]`]]" id="[[+key]]"  /> 
 <label for="[[+key]]" class="[[+type]]" id="label[[+key]]">[[+label]]</label></span><!-- bool -->
-
 ```

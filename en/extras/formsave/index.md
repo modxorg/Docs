@@ -4,17 +4,6 @@ _old_id: "645"
 _old_uri: "revo/formsave"
 ---
 
-- [What is FormSave?](#FormSave-WhatisFormSave%3F)
-  - [Requirements](#FormSave-Requirements)
-  - [History](#FormSave-History)
-  - [Download & Installation](#FormSave-Download%26Installation)
-- [What you need to know](#FormSave-Whatyouneedtoknow)
-- [Using FormSave in the front-end](#FormSave-UsingFormSaveinthefrontend)
-  - [Using the snippet](#FormSave-Usingthesnippet)
-- [External sources](#FormSave-Externalsources)
-
-
-
 # What is FormSave?
 
 FormSave is a hook for FormIt that allows you to save virtually any form to the database and export the results to CSV/XML/Print view right out of the box. You can also add your own export templates to make any export format possible.
@@ -27,10 +16,10 @@ FormSave requires MODX® Revolution 2.2.0 or later.
 
 ## History
 
-| Version | Release date | Author | Changes |
-|---------|--------------|--------|---------|
-| 1.0.1-PL1 | June 8th, 2012 | [Patrick Nijkamp](http://www.scherpontwikkeling.nl/over-ons/patrick-nijkamp.html) ([SCHERP Ontwikkeling](http://www.scherpontwikkeling.nl)) | Added ability to delete form entries, fixed a bug. |
-| 1.0.0-PL1 | April 24th, 2012 | [Patrick Nijkamp](http://www.scherpontwikkeling.nl/over-ons/patrick-nijkamp.html) ([SCHERP Ontwikkeling](http://www.scherpontwikkeling.nl)) | Initial release. |
+| Version   | Release date     | Author                                                                                                                                      | Changes                                            |
+| --------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| 1.0.1-PL1 | June 8th, 2012   | [Patrick Nijkamp](http://www.scherpontwikkeling.nl/over-ons/patrick-nijkamp.html) ([SCHERP Ontwikkeling](http://www.scherpontwikkeling.nl)) | Added ability to delete form entries, fixed a bug. |
+| 1.0.0-PL1 | April 24th, 2012 | [Patrick Nijkamp](http://www.scherpontwikkeling.nl/over-ons/patrick-nijkamp.html) ([SCHERP Ontwikkeling](http://www.scherpontwikkeling.nl)) | Initial release.                                   |
 
 ## Download & Installation
 
@@ -59,7 +48,6 @@ As an example we'll use the call from FormIt's example contact page which looks 
       numbers:required,
       colors:required`
 ]]
-
 ```
 
 But now we want to save the form to the database to view the results later. To do this we simply add the hook and a parameter to the FormIt call:
@@ -78,16 +66,15 @@ But now we want to save the form to the database to view the results later. To d
       numbers:required,
       colors:required`
 ]]
-
 ```
 
 These are the parameters you can use in the FormIt call:
 
-| Parameter | Explanation |
-|-----------|-------------|
-| fsFormTopic | The topic for the form. Used to separate multiple forms. (Defaults to "form") |
-| fsFormFields | A comma separated list of fields to save, if omitted all form fields will be saved. (example: name,email,message) |
-| fsFormPublished | Whether or not the form should have published "1" in the database. Currently unused. |
+| Parameter       | Explanation                                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------------------- |
+| fsFormTopic     | The topic for the form. Used to separate multiple forms. (Defaults to "form")                                     |
+| fsFormFields    | A comma separated list of fields to save, if omitted all form fields will be saved. (example: name,email,message) |
+| fsFormPublished | Whether or not the form should have published "1" in the database. Currently unused.                              |
 
 # External sources
 

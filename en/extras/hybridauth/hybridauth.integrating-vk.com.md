@@ -17,5 +17,3 @@ Integration of any service is very simple. So, you can read about [Facebook](htt
 ``` php 
 {"id":"Application ID","secret":"Secure key"}
 ```
-
-## See also

@@ -35,10 +35,10 @@ There's a forum topic for discussion here: <http://forums.modx.com/thread/70680/
 These resources should help you get started swiftly with SubscribeMe, monetizing your valuable content.
 
 - Getting Started with the PayPal Sandbox
-- [The SubscribeMe Checkout flow, and how to set it up](/extras/revo/subscribeme/subscribeme.setting-up-the-payment-flow "SubscribeMe.Setting up the Payment Flow")
-- [User Account Management with SubscribeMe Subscriptions](/extras/revo/subscribeme/subscribeme.user-account-management "SubscribeMe.User Account Management")
+- [The SubscribeMe Checkout flow, and how to set it up](/extras/subscribeme/subscribeme.setting-up-the-payment-flow "SubscribeMe.Setting up the Payment Flow")
+- [User Account Management with SubscribeMe Subscriptions](/extras/subscribeme/subscribeme.user-account-management "SubscribeMe.User Account Management")
 - Component Features and how to work with them
-- [Configuring API Credentials, IPN and going live!](/extras/revo/subscribeme/subscribeme.configuring-api-credentials,-ipn-and-going-live "SubscribeMe.Configuring API Credentials, IPN and going Live")
+- [Configuring API Credentials, IPN and going live!](/extras/subscribeme/subscribeme.configuring-api-credentials,-ipn-and-going-live "SubscribeMe.Configuring API Credentials, IPN and going Live")
 
 ## 3. Stuck? Here's some tips..
 

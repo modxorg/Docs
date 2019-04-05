@@ -4,12 +4,6 @@ _old_id: "1024"
 _old_uri: "revo/loginza/tpl.loginza.logout"
 ---
 
-- [Description](#tpl.Loginza.logout-Description)
-- [Placeholders](#tpl.Loginza.logout-Placeholders)
-- [See Also](#tpl.Loginza.logout-SeeAlso)
-
-
-
 ## Description
 
 This is chunk for authenticated users. It is display full name of logged in user and link to exit.
@@ -27,7 +21,7 @@ There is no unusual placeholders in this chunk. You can use all placeholders fro
 
 ## See Also
 
-1. [Loginza.Loginza](/extras/revo/loginza/loginza.loginza)
-2. [tpl.Loginza.login](/extras/revo/loginza/tpl.loginza.login)
-3. [tpl.Loginza.logout](/extras/revo/loginza/tpl.loginza.logout)
-4. [tpl.Loginza.profile](/extras/revo/loginza/tpl.loginza.profile)
+1. [Loginza.Loginza](/extras/loginza/loginza.loginza)
+2. [tpl.Loginza.login](/extras/loginza/tpl.loginza.login)
+3. [tpl.Loginza.logout](/extras/loginza/tpl.loginza.logout)
+4. [tpl.Loginza.profile](/extras/loginza/tpl.loginza.profile)

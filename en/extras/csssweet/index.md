@@ -22,20 +22,19 @@ IMPORTANT: As of version 2, the cssSweet system settings have been deprecated in
 
 ### cssSweet System Settings
 
- | **Key** | **What it does** | **Default value** |
-|---------|------------------|-------------------|
-| csss.custom\_css\_path | Sets the path where the saveCustomCss plugin will output the static CSS file. | {assets\_path}components/csssweet/ |
-| csss.custom\_css\_chunk | Name of the chunk to parse for the contents of the CSS output file. | csss.custom.css |
-| csss.custom\_css\_filename | Name of the static CSS output file. | csss-custom.css |
-| csss.minify\_custom\_css | Enable or disable minification of the static CSS file contents. | true |
+ | **Key**                    | **What it does**                                                              | **Default value**                  |
+ | -------------------------- | ----------------------------------------------------------------------------- | ---------------------------------- |
+ | csss.custom\_css\_path     | Sets the path where the saveCustomCss plugin will output the static CSS file. | {assets\_path}components/csssweet/ |
+ | csss.custom\_css\_chunk    | Name of the chunk to parse for the contents of the CSS output file.           | csss.custom.css                    |
+ | csss.custom\_css\_filename | Name of the static CSS output file.                                           | csss-custom.css                    |
+ | csss.minify\_custom\_css   | Enable or disable minification of the static CSS file contents.               | true                               |
 
 ### How the plugin uses these settings
 
  Assuming the default values shown above, whenever the Site » Clear Cache menu item in the Manager is clicked, the plugin will parse the contents of the 'csss.custom.css' Chunk and write the contents to a file at: '{assets\_path}components/csssweet/csss-custom.css'. To call this file into your template, you'll want to use the 'assets\_url' system setting, like this:
 
- ```
+ ``` html
 <link rel="stylesheet" href="[[++assets_url]]components/csssweet/csss-custom.css" />
-
 ```
 
  The contents of that file will have all spaces, tabs and line breaks stripped down to a single space, since the csss.minify\_custom\_css setting is 'true'.

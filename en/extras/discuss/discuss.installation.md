@@ -4,20 +4,6 @@ _old_id: "827"
 _old_uri: "revo/discuss/discuss.installation"
 ---
 
-- [Installing Discuss](#Discuss.Installation-InstallingDiscuss)
-  - [Setting up the necessary Resources](#Discuss.Installation-SettingupthenecessaryResources)
-  - [Setting up Friendly URLs & Discuss specific rewrite rules](#Discuss.Installation-SettingupFriendlyURLs%26Discussspecificrewriterules)
-      - [For .htaccess (Apache, mod\_rewrite enabled)](#Discuss.Installation-For.htaccess%28Apache%2Cmodrewriteenabled%29)
-      - [For nginx](#Discuss.Installation-Fornginx)
-  - [Configure Discuss to match your environment.](#Discuss.Installation-ConfigureDiscusstomatchyourenvironment.)
-- [Setting up Login, Register & Update Profile pages with Discuss](#Discuss.Installation-SettingupLogin%2CRegister%26UpdateProfilepageswithDiscuss)
-  - [Setting Up Login](#Discuss.Installation-SettingUpLogin)
-  - [Setting Up Register](#Discuss.Installation-SettingUpRegister)
-  - [Setting Up UpdateProfile](#Discuss.Installation-SettingUpUpdateProfile)
-- [See Also](#Discuss.Installation-SeeAlso)
-
-
-
 ## Installing Discuss
 
 Installing Discuss is pretty simple using the MODX Package Manager. Just download the discuss package and [run the installer](administering-your-site/installing-a-package "Installing a Package") as you would for any other package. While you're in the package manager, you will also need to download and install the following Extras which are required for Discuss to work properly:
@@ -51,7 +37,7 @@ You can change the alias to suit something else if you want, but keep in mind th
 
 While Discuss includes login and sign up functionality (using the Login package), you will most likely want to use specific or already existent login and registration pages for your forum. This is accomplished using the so called SSO mode (we'll discuss this later), and it requires you to set up separate resources for login, registration and update profile resources. Please create those now.
 
-You can build these as you normally would ([see the Login documentation](/extras/revo/login "Login") for more information on them) and there are no requirements on how they look or are build. There is one important thing to include in your login, register and update profile pages, which is pre and posthooks specific to Discuss:
+You can build these as you normally would ([see the Login documentation](/extras/login "Login") for more information on them) and there are no requirements on how they look or are build. There is one important thing to include in your login, register and update profile pages, which is pre and posthooks specific to Discuss:
 
 ``` php 
  &preHooks=`preHook.DiscussLogin`
@@ -146,9 +132,9 @@ if (!-e $request_filename){
 Now that friendly urls are working, we're ready to configure Discuss. As most of this configuration is done in System settings, open that through System > System settings and choose the "discuss" namespace to see Discuss specific configuration.
 
 - **discuss.forums\_resource\_id** - Point this to the ID of the Resource your Discuss forum resides in.
-- **discuss.login\_resource\_id** - Point this to the ID of the Resource your [Login](/extras/revo/login "Login") call resides in.
-- **discuss.register\_resource\_id** - Point this to the ID of the Resource your [Register](/extras/revo/login/login.register "Login.Register") call resides in.
-- **discuss.update\_profile\_resource\_id** - Point this to the ID of the Resource your [UpdateProfile](/extras/revo/login/login.updateprofile "Login.UpdateProfile") call resides in.
+- **discuss.login\_resource\_id** - Point this to the ID of the Resource your [Login](/extras/login "Login") call resides in.
+- **discuss.register\_resource\_id** - Point this to the ID of the Resource your [Register](/extras/login/login.register "Login.Register") call resides in.
+- **discuss.update\_profile\_resource\_id** - Point this to the ID of the Resource your [UpdateProfile](/extras/login/login.updateprofile "Login.UpdateProfile") call resides in.
 - Set **discuss.sso\_mode** to yes. This will make Discuss let your own login, register and update\_profile pages instead of the ones built in.
 
 Some other nice configuration options to change or to keep in mind:
@@ -164,7 +150,7 @@ While this bit of installation is technically not a part of Discuss, here's some
 
 ### Setting Up Login
 
-Make sure in your [Login](/extras/revo/login "Login") call that you specify the following as pre and post hooks:
+Make sure in your [Login](/extras/login "Login") call that you specify the following as pre and post hooks:
 
 ``` php 
    &preHooks=`preHook.DiscussLogin`
@@ -181,7 +167,7 @@ Make sure you add the members to the "Forum Members" User Group, so that they wi
 &usergroups=`Forum Members:Member`
 ```
 
-In your [Register](/extras/revo/login/login.register "Login.Register") call.
+In your [Register](/extras/login/login.register "Login.Register") call.
 
 ### Setting Up UpdateProfile
 
@@ -201,7 +187,7 @@ Then, **after** the UpdateProfile call, place this snippet call:
 
 Finally, there are some extra form fields you can add to allow users to modify their Discuss profile:
 
-``` php 
+``` html 
 <label for="signature">Signature <span class="error">[[!+up.error.signature:stripTags=`p,b,strong,i,a,ul,li`]]</span></label>
 <textarea name="signature:allowTags" id="signature">[[!+up.signature]]</textarea>
 
@@ -225,23 +211,23 @@ The prior fields will allow your users to toggle those values in their profile.
 
 ## See Also
 
-1. [Discuss.Installation](/extras/revo/discuss/discuss.installation)
-  1. [Discuss.Installation from Git](/extras/revo/discuss/discuss.installation/discuss.installation-from-git)
-2. [Discuss.Getting Started](/extras/revo/discuss/discuss.getting-started)
-3. [Discuss.Creating a Discuss Theme](/extras/revo/discuss/discuss.creating-a-discuss-theme)
-4. [Discuss.Controllers](/extras/revo/discuss/discuss.controllers)
-  1. [Discuss.Controllers.board](/extras/revo/discuss/discuss.controllers/discuss.controllers.board)
-      1. [Discuss.Controllers.board.xml](/extras/revo/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
-  2. [Discuss.Controllers.home](/extras/revo/discuss/discuss.controllers/discuss.controllers.home)
-  3. [Discuss.Controllers.login](/extras/revo/discuss/discuss.controllers/discuss.controllers.login)
-  4. [Discuss.Controllers.logout](/extras/revo/discuss/discuss.controllers/discuss.controllers.logout)
-  5. [Discuss.Controllers.profile](/extras/revo/discuss/discuss.controllers/discuss.controllers.profile)
-  6. [Discuss.Controllers.register](/extras/revo/discuss/discuss.controllers/discuss.controllers.register)
-  7. [Discuss.Controllers.search](/extras/revo/discuss/discuss.controllers/discuss.controllers.search)
-  8. [Discuss.Controllers.thread](/extras/revo/discuss/discuss.controllers/discuss.controllers.thread)
-5. [Discuss.Database Model](/extras/revo/discuss/discuss.database-model)
-6. [Discuss.Contributing](/extras/revo/discuss/discuss.contributing)
-7. [Discuss.ChunkMap](/extras/revo/discuss/discuss.chunkmap)
-8. [Discuss.Features](/extras/revo/discuss/discuss.features)
-9. [Discuss.Roadmap](/extras/revo/discuss/discuss.roadmap)
-10. [Configuring Sphinx for Search](/extras/revo/discuss/configuring-sphinx-for-search)
+1. [Discuss.Installation](/extras/discuss/discuss.installation)
+  1. [Discuss.Installation from Git](/extras/discuss/discuss.installation/discuss.installation-from-git)
+2. [Discuss.Getting Started](/extras/discuss/discuss.getting-started)
+3. [Discuss.Creating a Discuss Theme](/extras/discuss/discuss.creating-a-discuss-theme)
+4. [Discuss.Controllers](/extras/discuss/discuss.controllers)
+  1. [Discuss.Controllers.board](/extras/discuss/discuss.controllers/discuss.controllers.board)
+      1. [Discuss.Controllers.board.xml](/extras/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
+  2. [Discuss.Controllers.home](/extras/discuss/discuss.controllers/discuss.controllers.home)
+  3. [Discuss.Controllers.login](/extras/discuss/discuss.controllers/discuss.controllers.login)
+  4. [Discuss.Controllers.logout](/extras/discuss/discuss.controllers/discuss.controllers.logout)
+  5. [Discuss.Controllers.profile](/extras/discuss/discuss.controllers/discuss.controllers.profile)
+  6. [Discuss.Controllers.register](/extras/discuss/discuss.controllers/discuss.controllers.register)
+  7. [Discuss.Controllers.search](/extras/discuss/discuss.controllers/discuss.controllers.search)
+  8. [Discuss.Controllers.thread](/extras/discuss/discuss.controllers/discuss.controllers.thread)
+5. [Discuss.Database Model](/extras/discuss/discuss.database-model)
+6. [Discuss.Contributing](/extras/discuss/discuss.contributing)
+7. [Discuss.ChunkMap](/extras/discuss/discuss.chunkmap)
+8. [Discuss.Features](/extras/discuss/discuss.features)
+9. [Discuss.Roadmap](/extras/discuss/discuss.roadmap)
+10. [Configuring Sphinx for Search](/extras/discuss/configuring-sphinx-for-search)

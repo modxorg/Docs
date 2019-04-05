@@ -142,7 +142,7 @@ $modx->mail->address('to', array(
 
 Will add **two** e-mails, "barneystinson@howimetyourmother.tld" and "tedmosby@howimetyourmother.tld" both with the **name** "How I Met Your Mother cast".
 
-Finally, imagine your form was plugged into a [FormIt](/extras/revo/formit "FormIt") postHook which has an optional fullname (or name or username) field, which isn't always set or contains data. Your e-mails would look pretty crappy, won't they? Nay!
+Finally, imagine your form was plugged into a [FormIt](/extras/formit "FormIt") postHook which has an optional fullname (or name or username) field, which isn't always set or contains data. Your e-mails would look pretty crappy, won't they? Nay!
 
 ``` php 
 $modx->mail->address('to', array(
@@ -153,7 +153,7 @@ $modx->mail->address('to', array(
 
 Granted, I reckon the first, second and fourth examples will be used the most, but I like a little challenge.
 
-Again, in a poorly scripted [FormIt postHook](/extras/revo/formit/formit.hooks "FormIt.Hooks") you also want to e-mail the same e-mail to a BCC (\*B\*lind \*C\*arbon \*C\*opy) recipient. Easy pease, exactly the same functionality as to;
+Again, in a poorly scripted [FormIt postHook](/extras/formit/formit.hooks "FormIt.Hooks") you also want to e-mail the same e-mail to a BCC (\*B\*lind \*C\*arbon \*C\*opy) recipient. Easy pease, exactly the same functionality as to;
 
 ``` php 
 $modx->mail->address('bcc', 'phantom@theopera.tld', 'Phantom');

@@ -6,7 +6,8 @@ _old_uri: "revo/bannerx"
 
 # BannerX 
 
-**BannerX has been replaced with [BannerY](/extras/revo/bannery "BannerY")**
+**Removed**
+See [BannerY](/extras/bannery "BannerY")
 
 Display images with hyperlinks at designated positions in a page. The developer is Bezumkin / Jeroen Kenters.
 
@@ -24,19 +25,19 @@ This will retrieve randomly one banner that is set to be active for assigned pos
 
 ## Available Properties 
 
-| Name | Description | Default |
-|------|-------------|---------|
-| tpl | Name of a chunk serving as a recourse template | bxAd |
-| sortdir | Order of the results | ASC |
-| sortby | Return results in random order | RAND() |
-| limit | If set to non-zero, will only show X number of items | 5 |
-| position | If set to non-zero, will retrieve only images that are assigned to the position given. | 0 |
+| Name     | Description                                                                            | Default |
+| -------- | -------------------------------------------------------------------------------------- | ------- |
+| tpl      | Name of a chunk serving as a recourse template                                         | bxAd    |
+| sortdir  | Order of the results                                                                   | ASC     |
+| sortby   | Return results in random order                                                         | RAND()  |
+| limit    | If set to non-zero, will only show X number of items                                   | 5       |
+| position | If set to non-zero, will retrieve only images that are assigned to the position given. | 0       |
 
 ## Available Placeholders 
 
-| Name | Description |
-|------|-------------|
-| adposition |  |
-| image | The image assigned to this banner |
-| name | The name assigned to this banner |
-| url | The url assigned to this banner |
+| Name       | Description                       |
+| ---------- | --------------------------------- |
+| adposition |                                   |
+| image      | The image assigned to this banner |
+| name       | The name assigned to this banner  |
+| url        | The url assigned to this banner   |

@@ -15,8 +15,6 @@ CREATE TABLE `modx_test` (
   `description` VARCHAR(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=INNODB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
-
-
 ```
 
 1. Go to the Manager then CMPGenerator and click on Create Package 
@@ -27,7 +25,8 @@ CREATE TABLE `modx_test` (
 3. Now go lets see if this worked and create a simple snippet to test out our newly created table. 
    Name the Snippet: mytest and insert the following code:
 
-**mytest Snippet Code** ``` javascript 
+**mytest Snippet Code** 
+``` php 
 <?php
 /**
  * mytest table
@@ -87,14 +86,12 @@ $output .= '
 </table>';
 
 return $output;
-
 ```
 
 1. Now put the snippet in a resource and run it a few times.
 
 ``` php 
 [[!mytest]]
-
 ```
 
 You should see something like this (note my test page has CSS assigned to tables): 
