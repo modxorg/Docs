@@ -18,7 +18,7 @@ For more how to install Sphinx can be found from [official Sphinx documentation]
 
 Example configuration uses two indexes for Sphinx; the main index and delta index for faster and more frequent indexing. Using delta index is preferred when forum is active or there are considerable amount of posts which can cause indexer to take long re-indexing main index. Delta index can also keep search more up to date with results depending on indexing frequency.
 
-```
+``` php
 source discuss_posts {
     type                    = mysql
     sql_host                = localhost
@@ -84,7 +84,7 @@ searchd {
 
 Before running indexer with the configuration, create new table with next sql piece to your database which has discuss installed. You can rename the delta table to anything you want, as long it matches with the pre\_query delta update and delta query table in the main index.
 
-```
+``` sql
 CREATE TABLE `modx_discuss_sphinx_delta` (
   `counter_id` int(11) NOT NULL,
   `max_doc_id` int(11) NOT NULL,

@@ -4,20 +4,6 @@ _old_id: "915"
 _old_uri: "revo/login/login.tutorials/login.user-profiles"
 ---
 
-- [Outline](#Login.UserProfiles-Outline)
-- [Create the Required Pages](#Login.UserProfiles-CreatetheRequiredPages)
-  - [Update Profile (10)](#Login.UserProfiles-UpdateProfile%2810%29)
-  - [View Profile (11)](#Login.UserProfiles-ViewProfile%2811%29)
-  - [Change Password (12)](#Login.UserProfiles-ChangePassword%2812%29)
-  - [Members Home Page (4)](#Login.UserProfiles-MembersHomePage%284%29)
-- [Testing: Making it all Work](#Login.UserProfiles-Testing%3AMakingitallWork)
-  - [Login](#Login.UserProfiles-Login)
-  - [View Profile (11)](#Login.UserProfiles-ViewProfile%2811%29)
-  - [Update Profile (10)](#Login.UserProfiles-UpdateProfile%2810%29)
-- [Next](#Login.UserProfiles-Next)
-
-
-
 ## Outline
 
 This tutorial builds the [Basic Setup](/extras/revo/login/login.tutorials/login.request-membership "Login.Request Membership") tutorial (which in turn was based on the [Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup")). Do not attempt this tutorial until you've gotten the other login flows setup and working on your site!
@@ -47,7 +33,7 @@ Create the page, and add it to the "Members Only" Resource Group.
 
 For the content, use something like this:
 
-``` php 
+``` html 
 [[!UpdateProfile? &useExtended=`0`]]
  
 <div class="update-profile">
@@ -107,7 +93,7 @@ Notice that we're putting a link in there so we can edit the profile. Remember: 
 
 This is a page where the user can change their password. It happens on a separate page. We're just following along with \[[ChangePassword](/extras/revo/login/login.changepassword "Login.ChangePassword")\] playbook.
 
-``` php 
+``` html 
 <h2>Change Password</h2>
 [[!ChangePassword?
    &submitVar=`change-password`

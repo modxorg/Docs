@@ -10,21 +10,21 @@ Version 1.0
 
 ### Chunks
 
-| Name | Description | Default Value |
-|------|-------------|---------------|
-| rssTpl | Event RSS Item |  |
-| rssItemTpl | The RSS template |  |
+| Name       | Description      | Default Value |
+| ---------- | ---------------- | ------------- |
+| rssTpl     | Event RSS Item   |               |
+| rssItemTpl | The RSS template |               |
 
 ### Others
 
-| Name | Description | Default Value |
-|------|-------------|---------------|
-| prominent | List prominent events, if set can be Yes/No | NULL |
-| calendarID | Show one calendar, default shows all |  |
-| categoryID | Show one category, default shows all |  |
-| year | Choose a year to start from, default is current year(YYYY) |  |
-| month | Choose a month to start from, default is current month(MM) |  |
-| day | Choose a day to start from, default is current day (DD) |  |
+| Name       | Description                                                | Default Value |
+| ---------- | ---------------------------------------------------------- | ------------- |
+| prominent  | List prominent events, if set can be Yes/No                | NULL          |
+| calendarID | Show one calendar, default shows all                       |               |
+| categoryID | Show one category, default shows all                       |               |
+| year       | Choose a year to start from, default is current year(YYYY) |               |
+| month      | Choose a month to start from, default is current month(MM) |               |
+| day        | Choose a day to start from, default is current day (DD)    |               |
 
 ## Creating a RSS Resource
 

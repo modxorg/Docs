@@ -4,15 +4,6 @@ _old_id: "840"
 _old_uri: "revo/eventsx/eventsx.examples"
 ---
 
-- [Examples for EventsX](#EventsX.Examples-ExamplesforEventsX)
-  - [Display a list of upcoming events](#EventsX.Examples-Displayalistofupcomingevents)
-  - [create your chunk "upcomingEvents":](#EventsX.Examples-createyourchunk%22upcomingEvents%22%3A)
-  - [create snippet call](#EventsX.Examples-createsnippetcall)
-  - [screenshot](#EventsX.Examples-screenshot)
-- [See Also](#EventsX.Examples-SeeAlso)
-
-
-
 ## Examples for EventsX
 
 ### Display a list of upcoming events

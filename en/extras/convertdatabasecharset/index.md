@@ -4,12 +4,6 @@ _old_id: "1772"
 _old_uri: "revo/convertdatabasecharset"
 ---
 
-- [What is ConvertDatabaseCharset?](#ConvertDatabaseCharset-WhatisSimpleSearch%3F)
-- [History](#ConvertDatabaseCharset-History)
-- [Download](#ConvertDatabaseCharset-Download)
-- [Development and Bug Reporting](#ConvertDatabaseCharset-DevelopmentandBugReporting)
-- [Documentation](#ConvertDatabaseCharset-Documentation)
- 
 ## What is ConvertDatabaseCharset?
 
 ConvertDatabaseCharset is a utility to safely convert a database from one character set to another (e.g., Latin1 -> utf-8). Be sure to read the complete documentation before using ConvertDatabaseCharset.

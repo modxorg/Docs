@@ -4,18 +4,12 @@ _old_id: "838"
 _old_uri: "revo/eventscalendar2/eventscalendar2.tplevent2"
 ---
 
-- [Usage](#eventsCalendar2.tplEvent2-Usage)
-- [Placeholders](#eventsCalendar2.tplEvent2-Placeholders)
-- [See Also](#eventsCalendar2.tplEvent2-SeeAlso)
-
-
-
 ## Usage
 
 This chunk is a template for one event in the day.
 
-``` php 
-<div><div>
+``` html 
+<div>
         <span class="num"><b>[[+ec.num]].</b></span>
         <span class="eventdate">[[+ec.date]]</span>
         <span class="link"><a href="[[+ec.url]]">[[+ec.longtitle:default=`[[+ec.pagetitle]]`]]</a></span>
@@ -25,11 +19,11 @@ This chunk is a template for one event in the day.
 
 ## Placeholders
 
-| Name | Description |
-|------|-------------|
-| num | Number of event in day. |
-| url | Link to resource of this event. |
-| date | Date of event. |
+| Name | Description                     |
+| ---- | ------------------------------- |
+| num  | Number of event in day.         |
+| url  | Link to resource of this event. |
+| date | Date of event.                  |
 
 You can use all placeholders from MODx resources. See it [there](http://rtfm.modx.com/display/revolution20/Resources).
 

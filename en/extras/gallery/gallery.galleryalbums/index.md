@@ -12,30 +12,30 @@ _old_uri: "revo/gallery/gallery.galleryalbums/"
 
 ## Properties
 
- | Name | Description | Default Value |
-|------|-------------|---------------|
-| rowTpl | The Chunk to use for each album row. | galAlbumRowTpl |
-| containerTpl | The Chunk to use for wrapping all album rows (available with 1.6.0 beta). |  |
-| sort | The field to sort the results by. | createdon |
-| dir | The direction to sort the results by. | DESC |
-| limit | If set to non-zero, will limit the number of results returned. | 10 |
-| start | The index to start from in the results. | 0 |
-| toPlaceholder | If not empty, will set the output to a placeholder with this value. |  |
-| showInactive | If 1, will show inactive galleries as well. | 0 |
-| showAll | If 1, will show all albums regardless of their parent. | 1 |
-| showName | If 0, will hide name of Album. | 1 |
-| parent | Grab only the albums with a parent album with this ID. Remember to set showAll to 0, otherwise it won't work! | 0 |
-| prominentOnly | If 1, will only display albums marked with a "prominent" status. | 1 |
-| albumCoverSort | The field which to use when sorting to get the Album Cover. To get the first image, use "rank". To get a random image, use "random". | rank |
-| albumCoverSortDir | The direction to use when sorting to get the Album Cover. Accepts "ASC" or "DESC". | ASC |
-| thumbWidth | The width for the cover album thumbnail. | 100 |
-| thumbHeight | The width for the cover album thumbnail. | 100 |
-| thumbZoomCrop | Whether or not to use zoom crop on the cover album thumbnail. | 1 |
-| thumbFar | The aspect ratio for phpThumb with the cover album thumbnail. | C |
-| thumbQuality | If quality of the cover album thumbnail, from 0-100. | 90 |
-| thumbProperties | A JSON object of parameters to pass to phpThumb as properties for the album thumbnail. |  |
-| albumRequestVar | If checkForRequestAlbumVar is set to true on the Gallery snippet, will look for a REQUEST var with this name to select the album. |  |
-| totalVar | Define the key of a placeholder set by GalleryAlbums indicating the total number of Albums that would be selected not considering the limit value (available with 1.6.0 beta). | total |
+ | Name              | Description                                                                                                                                                                    | Default Value  |
+ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+ | rowTpl            | The Chunk to use for each album row.                                                                                                                                           | galAlbumRowTpl |
+ | containerTpl      | The Chunk to use for wrapping all album rows (available with 1.6.0 beta).                                                                                                      |                |
+ | sort              | The field to sort the results by.                                                                                                                                              | createdon      |
+ | dir               | The direction to sort the results by.                                                                                                                                          | DESC           |
+ | limit             | If set to non-zero, will limit the number of results returned.                                                                                                                 | 10             |
+ | start             | The index to start from in the results.                                                                                                                                        | 0              |
+ | toPlaceholder     | If not empty, will set the output to a placeholder with this value.                                                                                                            |                |
+ | showInactive      | If 1, will show inactive galleries as well.                                                                                                                                    | 0              |
+ | showAll           | If 1, will show all albums regardless of their parent.                                                                                                                         | 1              |
+ | showName          | If 0, will hide name of Album.                                                                                                                                                 | 1              |
+ | parent            | Grab only the albums with a parent album with this ID. Remember to set showAll to 0, otherwise it won't work!                                                                  | 0              |
+ | prominentOnly     | If 1, will only display albums marked with a "prominent" status.                                                                                                               | 1              |
+ | albumCoverSort    | The field which to use when sorting to get the Album Cover. To get the first image, use "rank". To get a random image, use "random".                                           | rank           |
+ | albumCoverSortDir | The direction to use when sorting to get the Album Cover. Accepts "ASC" or "DESC".                                                                                             | ASC            |
+ | thumbWidth        | The width for the cover album thumbnail.                                                                                                                                       | 100            |
+ | thumbHeight       | The width for the cover album thumbnail.                                                                                                                                       | 100            |
+ | thumbZoomCrop     | Whether or not to use zoom crop on the cover album thumbnail.                                                                                                                  | 1              |
+ | thumbFar          | The aspect ratio for phpThumb with the cover album thumbnail.                                                                                                                  | C              |
+ | thumbQuality      | If quality of the cover album thumbnail, from 0-100.                                                                                                                           | 90             |
+ | thumbProperties   | A JSON object of parameters to pass to phpThumb as properties for the album thumbnail.                                                                                         |                |
+ | albumRequestVar   | If checkForRequestAlbumVar is set to true on the Gallery snippet, will look for a REQUEST var with this name to select the album.                                              |                |
+ | totalVar          | Define the key of a placeholder set by GalleryAlbums indicating the total number of Albums that would be selected not considering the limit value (available with 1.6.0 beta). | total          |
 
 ## GalleryAlbums Chunks
 
@@ -50,35 +50,42 @@ _old_uri: "revo/gallery/gallery.galleryalbums/"
 
  ``` php 
 [[!GalleryAlbums]]
-
 ```
 
  Grab 10 alphanumerically sorted prominent albums:
 
  ``` php 
-[[!GalleryAlbums? &sort=`name` &dir=`ASC`]]
-
+[[!GalleryAlbums? 
+  &sort=`name` 
+  &dir=`ASC`
+]]
 ```
 
  Grab most recent 3 Albums, whether prominent or not, and set to the placeholder 'albums':
 
  ``` php 
-[[!GalleryAlbums? &limit=`3` &prominentOnly=`0` &toPlaceholder=`albums`]]
-
+[[!GalleryAlbums? 
+  &limit=`3` 
+  &prominentOnly=`0` 
+  &toPlaceholder=`albums`
+]]
 ```
 
  Display the most recent 3 albums with a random cover image.
 
  ``` php 
-[[!GalleryAlbums? &limit=`3` &albumCoverSort=`random`]]
-
+[[!GalleryAlbums? 
+  &limit=`3` 
+  &albumCoverSort=`random`
+]]
 ```
 
  Using &thumbProperties to set the output of the album cover thumbnail to 90% quality jpg instead of png:
 
  ``` php 
-[[!GalleryAlbums? &thumbProperties=`{"f":"jpg","q":"90%"}`]]
-
+[[!GalleryAlbums? 
+  &thumbProperties=`{"f":"jpg","q":"90%"}`
+]]
 ```
 
 ## See Also

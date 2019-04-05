@@ -4,27 +4,6 @@ _old_id: "636"
 _old_uri: "revo/eventsx"
 ---
 
-- [What is EventsX?](#EventsX-WhatisEventsX%3F)
-- [Features](#EventsX-Features)
-- [Requirements](#EventsX-Requirements%26nbsp%3B)
-- [History](#EventsX-History)
-- [Download](#EventsX-Download)
-  - [](#EventsX-)
-- [Development and Bug Reporting](#EventsX-DevelopmentandBugReporting)
-  - [](#EventsX-)
-- [Roadmap](#EventsX-Roadmap)
-  - [](#EventsX-)
-- [Install](#EventsX-Install)
-- [How to use](#EventsX-Howtouse)
-  - [To create a calendar on your page:](#EventsX-Tocreateacalendaronyourpage%3A)
-- [Templates](#EventsX-Templates)
-  - [example _events_ calendar template](#EventsX-exampleeventscalendartemplate)
-  - [example _upcoming events_ calendar template](#EventsX-exampleupcomingeventscalendartemplate)
-  - [example _single event_ calendar template](#EventsX-example%26nbsp%3Bsingleevent%26nbsp%3Bcalendartemplate)
-- [See Also](#EventsX-SeeAlso)
- 
-
-
 Please note: Use this documentation on your own risk as it's not revised yet by the author of the extra.
 
 ## What is EventsX?
@@ -53,19 +32,13 @@ EventX was written by Jeroen Kenters and had its initial release Dec, 1st 2011.
 
 ## Download
 
-### 
-
 It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/eventsx>
 
 ## Development and Bug Reporting
 
-### 
-
 EventX is on GitHub: <https://github.com/jkenters/EventsX>, report any issues or feature-requests here: <https://github.com/jkenters/EventsX/issues>.
 
 ## Roadmap
-
-### 
 
 EventX has its issues and feature-requests on GitHub: <https://github.com/jkenters/EventsX/issues>. Nevertheless there's a roadmap:
 
@@ -98,7 +71,7 @@ Go to components -> EventsX and create some events
 
 ### example _events_ calendar template
 
-``` php 
+``` html 
 <html>
 <head>
 <title>[[++site_name]] - [[*pagetitle]]</title>
@@ -114,12 +87,11 @@ Go to components -> EventsX and create some events
   [[*content]]
 </body>
 </html>
-
 ```
 
 ### example _upcoming events_ calendar template
 
-``` php 
+``` html 
 <html>
 <head>
 <title>[[++site_name]] - [[*pagetitle]]</title>
@@ -130,12 +102,11 @@ Go to components -> EventsX and create some events
     [[*content]]
 </body>
 </html>
-
 ```
 
 ### example _single event_ calendar template
 
-``` php 
+``` html 
 [[!evxEvent?]]<html>
 <head>
 <title>[[++site_name]] - [[*pagetitle]]</title>
@@ -151,7 +122,6 @@ Go to components -> EventsX and create some events
     <p><a href="[[+event.website]]">Visit website</a></p>
 </body>
 </html>
-
 ```
 
 ## See Also

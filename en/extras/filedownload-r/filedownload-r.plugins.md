@@ -6,12 +6,6 @@ _old_uri: "revo/filedownload-r/filedownload-r.plugins"
 
 This feature is available since v.1.0.0-pl
 
-- [Events](#FileDownloadR.Plugins-Events)
-- [Properties](#FileDownloadR.Plugins-Properties)
-- [APIs](#FileDownloadR.Plugins-APIs)
-
-
-
 ## Events
 
 There are still a few events that have been provided, because again, this is small script. 
@@ -146,12 +140,12 @@ Multiple plugins and events must be called repeatedly, because they have differe
 
 These are the APIs that can be used inside your plugin script:
 
-| Instance | Method | Description |
-|----------|--------|-------------|
-| $modx | all modx's methods | default MODX instance |
-| $fileDownload | getConfig($key), getConfigs() | gets the scriptProperties, eg the **&emailProps** above |
-| $plugin | getProperties() | gets the custom properties of the plugin |
-|  | getAllEvents() | gets all event triggers |
-|  | getAppliedEvents() | gets the applied events for the particular plugin in the run-time process |
+| Instance      | Method                        | Description                                                               |
+| ------------- | ----------------------------- | ------------------------------------------------------------------------- |
+| $modx         | all modx's methods            | default MODX instance                                                     |
+| $fileDownload | getConfig($key), getConfigs() | gets the scriptProperties, eg the **&emailProps** above                   |
+| $plugin       | getProperties()               | gets the custom properties of the plugin                                  |
+|               | getAllEvents()                | gets all event triggers                                                   |
+|               | getAppliedEvents()            | gets the applied events for the particular plugin in the run-time process |
 
 Now, you can use your imagination to add more features for this snippet.

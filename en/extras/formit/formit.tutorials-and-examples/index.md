@@ -35,7 +35,7 @@ A common error here is with validation. Try removing the **&validation** portion
 
 For example, if your form reads in part:
 
-``` php 
+``` html 
 ...
 <input type="text" name="firstname" id="firstname" value="[[!+fi.firstname]]" />
 ...

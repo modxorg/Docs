@@ -4,13 +4,6 @@ _old_id: "1775"
 _old_uri: "revo/dirwalker"
 ---
 
-- [What is DirWalker?](#DirWalker-WhatisDirWalker)
-- [Package Information](#DirWalker-Information)
-- [History](#DirWalker-History)
-- [Download](#DirWalker-Download)
-- [Development and Bug Reporting](#DirWalker-DevelopmentandBugReporting)
-- [Documentation](#DirWalker-Documentation)
- 
 ## What is DirWalker?
 
 DirWalker is a class for recursively traversing directories. You can exclude directories by name and you can include or exclude files either by string or by regular expression.

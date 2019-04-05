@@ -12,40 +12,40 @@ _old_uri: "revo/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagin
 
  GalleryItemPagination uses the following properties:
 
- | Name | Description | default value |
-|------|-------------|---------------|
-| curItem | The ID of the image currently on display. Can be overridden by an URL parameter. | 1, or an url parameter |
-| checkForRequestVar | Wether or not to override curItem with the url parameter as specified in the getParam property | 1 |
-| getParam | URL parameter to use with checkForRequestVar | galItem |
-| album | The ID or name of an album to use | 1 |
-| checkForRequestAlbumVar | Whether or not to override album with the url parameter as specified in the albumRequstVar property | 1 |
-| albumRequestVar | URL parameter to use with checkForRequestAlbumVar | galAlbum |
+ | Name                    | Description                                                                                         | default value          |
+ | ----------------------- | --------------------------------------------------------------------------------------------------- | ---------------------- |
+ | curItem                 | The ID of the image currently on display. Can be overridden by an URL parameter.                    | 1, or an url parameter |
+ | checkForRequestVar      | Wether or not to override curItem with the url parameter as specified in the getParam property      | 1                      |
+ | getParam                | URL parameter to use with checkForRequestVar                                                        | galItem                |
+ | album                   | The ID or name of an album to use                                                                   | 1                      |
+ | checkForRequestAlbumVar | Whether or not to override album with the url parameter as specified in the albumRequstVar property | 1                      |
+ | albumRequestVar         | URL parameter to use with checkForRequestAlbumVar                                                   | galAlbum               |
 
 ## Placeholders
 
  GalleryItemPagination sets placeholders for the current, previous, next, first and last item in an album. You can find the namespaces for that in the table below. You can use the same fields the [GalleryItem placeholders](display/ADDON/Gallery.GalleryItem#Gallery.GalleryItem-DefaultPlaceholders), minus album and tags.
 
- | Name | Description |
-|------|-------------|
-| galitem.cur.\* | placeholder namespace for current item of album |
-| galitem.prev.\* | placeholder namespace for previous item of album |
-| galitem.next.\* | placeholder namespace for next item of album |
-| galitem.first.\* | placeholder namespace for first item of album |
-| galitem.last.\* | placeholder namespace for last item of album |
+ | Name             | Description                                      |
+ | ---------------- | ------------------------------------------------ |
+ | galitem.cur.\*   | placeholder namespace for current item of album  |
+ | galitem.prev.\*  | placeholder namespace for previous item of album |
+ | galitem.next.\*  | placeholder namespace for next item of album     |
+ | galitem.first.\* | placeholder namespace for first item of album    |
+ | galitem.last.\*  | placeholder namespace for last item of album     |
 
 ### Example placeholders
 
  Below you can find some common placeholders for GalleryItemPagination that can be used in your tpl/resource.
 
- | Name | Description |
-|------|-------------|
-| galitem.cur.id | placeholder for current item ID of album |
-| galitem.prev.id | placeholder for previous item ID of album |
-| galitem.next.id | placeholder for next item ID of album |
-| galitem.first.id | placeholder for first item ID of album |
-| galitem.last.id | placeholder for last item ID of album |
-| galitem.next.filename | filename of the next item |
-| galitem.cur.description | description of the current item |
+ | Name                    | Description                               |
+ | ----------------------- | ----------------------------------------- |
+ | galitem.cur.id          | placeholder for current item ID of album  |
+ | galitem.prev.id         | placeholder for previous item ID of album |
+ | galitem.next.id         | placeholder for next item ID of album     |
+ | galitem.first.id        | placeholder for first item ID of album    |
+ | galitem.last.id         | placeholder for last item ID of album     |
+ | galitem.next.filename   | filename of the next item                 |
+ | galitem.cur.description | description of the current item           |
 
 ## GalleryItemPagination examples
 
@@ -56,7 +56,6 @@ _old_uri: "revo/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagin
  First of all you have to create the snippet. Name it 'GalleryItemPagination' and save it.
 
  ``` php 
-
 <?php
 // First instantiate the Gallery package
 $modx->addPackage('gallery',$modx->getOption('gallery.core_path',$config,$modx->getOption('core_path').'components/gallery/').'model/');
@@ -116,20 +115,17 @@ $phs['galitem.first.'] = $first;
 $phs['galitem.last.'] = $last;
 $modx->setPlaceholders($phs);
 return '';
-
 ```
 
  Now set up your placeholders for the navigation:
 
  ``` php 
-
 [[!GalleryItemPagination? &album=`1`]]
 [[!If? &subject=`[[!+galitem.prev.id]]`&operator=`isnotempty` &then=`
 <a id="previmg" href="[[++site_url]]?id=[[*id]]&galItem=[[!+galitem.prev.id]]&galAlbum=1&galTag=">previous image</a>`]]
 [[!If? &subject=`[[!+galitem.next.id]]`&operator=`isnotempty` &then=`
 <a id="nextimg" href="[[++site_url]]?id=[[*id]]&galItem=[[!+galitem.next.id]]&galAlbum=1&galTag=">next image</a>`]]
 `]]
-
 ```
 
 ## See Also

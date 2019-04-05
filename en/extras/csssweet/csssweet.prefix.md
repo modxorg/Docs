@@ -8,7 +8,7 @@ _old_uri: "revo/csssweet/csssweet.prefix"
 
  Examples:
 
-```
+``` php
 [[+my_radius_css:prefix]]
 ```
 
@@ -16,22 +16,22 @@ _old_uri: "revo/csssweet/csssweet.prefix"
 
  Results:
 
-```
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+``` css
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
 ```
 
-```
+``` php
 [[prefix?to=`transition: all 300ms ease;` &options=`all`]]
 ```
 
  Results:
 
-```
-	-webkit-transition: all 300ms ease;
-	-moz-transition: all 300ms ease;
-	-ms-transition: all 300ms ease;
-	-o-transition: all 300ms ease;
-	transition: all 300ms ease;
+``` css
+-webkit-transition: all 300ms ease;
+-moz-transition: all 300ms ease;
+-ms-transition: all 300ms ease;
+-o-transition: all 300ms ease;
+transition: all 300ms ease;
 ```

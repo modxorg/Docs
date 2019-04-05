@@ -4,13 +4,6 @@ _old_id: "1768"
 _old_uri: "revo/captcha"
 ---
 
-- [What is Captcha?](#Captcha-WhatisCaptcha)
-- [Package Information](#Captcha-Information)
-- [History](#Captcha-History)
-- [Download](#Captcha-Download)
-- [Development and Bug Reporting](#Captcha-DevelopmentandBugReporting)
-- [Documentation](#Captcha-Documentation)
- 
 ## What is Captcha?
 
 This utility provides captcha verification in the MODX Manager login.

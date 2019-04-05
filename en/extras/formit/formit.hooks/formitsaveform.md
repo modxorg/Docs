@@ -14,13 +14,13 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.formitsaveform"
 
  It has the following properties to be passed into the FormIt snippet call:
 
- | name | description |
-|------|-------------|
-| formName | The name of the form. Defaults to "form-{resourceid}". |
-| formEncrypt | If is set to '1' _(true)_ the submitted form will be encrypted before saving inside the DB. |
-| formFields | A comma-separated list of fields that will be saved. Defaults will save all fields including the submit button. |
-| fieldNames | Change the name of the field inside the CMP. So if the field name is email2 you could change the name to "secondary email". 
- Ex: &fieldnames=`fieldname==newfieldname, anotherone==anothernewname`. |
+ | name                                                                   | description                                                                                                                 |
+ | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+ | formName                                                               | The name of the form. Defaults to "form-{resourceid}".                                                                      |
+ | formEncrypt                                                            | If is set to '1' _(true)_ the submitted form will be encrypted before saving inside the DB.                                 |
+ | formFields                                                             | A comma-separated list of fields that will be saved. Defaults will save all fields including the submit button.             |
+ | fieldNames                                                             | Change the name of the field inside the CMP. So if the field name is email2 you could change the name to "secondary email". |
+ | Ex: &fieldnames=`fieldname==newfieldname, anotherone==anothernewname`. |
 
 ## See Also
 

@@ -6,13 +6,6 @@ _old_uri: "revo/getresources/getresources.examples/getresources.building-a-rss-f
 
 Sites which publish new articles, blogs or news items will probably want to give their visitors a way to keep updated. RSS Feeds are an easy way of doing that. This short tutorial will go into detail on how to make your own RSS Feed using MODX Revolution and the getResources addon. If you have not yet installed getResources, please do so first.
 
-- [Creating the RSS Resource](#getResources.BuildingaRSSfeed-CreatingtheRSSResource)
-- [Set up the getResources tpl for the items](#getResources.BuildingaRSSfeed-SetupthegetResourcestplfortheitems)
-- [Now what...](#getResources.BuildingaRSSfeed-Nowwhat...)
-- [Troubleshooting](#getResources.BuildingaRSSfeed-Troubleshooting)
-
-
-
 ## Creating the RSS Resource
 
 In your MODX Manager, create a new resource.
@@ -45,7 +38,6 @@ In your MODX Manager, create a new resource.
 ]]
 </channel>
 </rss>
-
 ```
 
 **Warning for Articles** 
@@ -83,7 +75,6 @@ In the getResources snippets we referenced a chunk called "rssItem", so let's cr
       [[+createdby:userinfo=`fullname`]]
   </dc:creator>
 </item>
-
 ```
 
 You can modify this chunk to suit your needs and include that information you want to include (or not). This item template includes:
@@ -99,7 +90,6 @@ When you save the chunk, and go back to your feed, you should see it has loaded 
 
 ``` php 
  <link rel="alternate" type="application/rss+xml" title="Follow this website with RSS" href="[[~52]]" />
-
 ```
 
 Be sure to replace 52 with the ID of your RSS resource. This will make the browser recognize the feed, and put the shiny icon in the navigation bar.

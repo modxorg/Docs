@@ -4,20 +4,6 @@ _old_id: "827"
 _old_uri: "revo/discuss/discuss.installation"
 ---
 
-- [Installing Discuss](#Discuss.Installation-InstallingDiscuss)
-  - [Setting up the necessary Resources](#Discuss.Installation-SettingupthenecessaryResources)
-  - [Setting up Friendly URLs & Discuss specific rewrite rules](#Discuss.Installation-SettingupFriendlyURLs%26Discussspecificrewriterules)
-      - [For .htaccess (Apache, mod\_rewrite enabled)](#Discuss.Installation-For.htaccess%28Apache%2Cmodrewriteenabled%29)
-      - [For nginx](#Discuss.Installation-Fornginx)
-  - [Configure Discuss to match your environment.](#Discuss.Installation-ConfigureDiscusstomatchyourenvironment.)
-- [Setting up Login, Register & Update Profile pages with Discuss](#Discuss.Installation-SettingupLogin%2CRegister%26UpdateProfilepageswithDiscuss)
-  - [Setting Up Login](#Discuss.Installation-SettingUpLogin)
-  - [Setting Up Register](#Discuss.Installation-SettingUpRegister)
-  - [Setting Up UpdateProfile](#Discuss.Installation-SettingUpUpdateProfile)
-- [See Also](#Discuss.Installation-SeeAlso)
-
-
-
 ## Installing Discuss
 
 Installing Discuss is pretty simple using the MODX Package Manager. Just download the discuss package and [run the installer](administering-your-site/installing-a-package "Installing a Package") as you would for any other package. While you're in the package manager, you will also need to download and install the following Extras which are required for Discuss to work properly:
@@ -201,7 +187,7 @@ Then, **after** the UpdateProfile call, place this snippet call:
 
 Finally, there are some extra form fields you can add to allow users to modify their Discuss profile:
 
-``` php 
+``` html 
 <label for="signature">Signature <span class="error">[[!+up.error.signature:stripTags=`p,b,strong,i,a,ul,li`]]</span></label>
 <textarea name="signature:allowTags" id="signature">[[!+up.signature]]</textarea>
 

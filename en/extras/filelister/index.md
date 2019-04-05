@@ -4,20 +4,6 @@ _old_id: "640"
 _old_uri: "revo/filelister"
 ---
 
-- [What is FileLister?](#FileLister-WhatisFileLister%3F)
-- [Requirements](#FileLister-Requirements)
-- [History and Info](#FileLister-HistoryandInfo)
-  - [Download](#FileLister-Download)
-  - [Development and Bug Reporting](#FileLister-DevelopmentandBugReporting)
-- [Usage](#FileLister-Usage)
-  - [Snippets](#FileLister-Snippets)
-  - [System Settings](#FileLister-SystemSettings)
-- [Examples](#FileLister-Examples)
-- [Sample Resource Content](#FileLister-SampleResourceContent)
-- [See Also](#FileLister-SeeAlso)
-
-
-
 ## What is FileLister?
 
 FileLister is a dynamic file listing Extra for MODx Revolution. It allows you to list files within a directory, as well as securely browse through subdirectories.
@@ -53,8 +39,8 @@ FileLister comes with one snippet:
 
 ### System Settings
 
-| Name | Description |
-|------|-------------|
+| Name            | Description                       |
+| --------------- | --------------------------------- |
 | filelister.salt | A custom salt for the navigation. |
 
 ## Examples
@@ -87,7 +73,7 @@ Restrict file listings in 'assets/pdfs' to only PDF files:
 
 This is a sample of HTML that you can put inside a Resource to output your content. You'll need to have the toPlaceholder property set to 'files' for this to work, and call your FileLister snippet uncached **before** this HTML.
 
-``` php 
+``` html 
 <h2>Files</h2>
 
 <p>Current Path: <span>[[+filelister.path]]</span></p>

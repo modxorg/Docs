@@ -6,16 +6,6 @@ _old_uri: "revo/foundationx/foundationx.how-to-use-foundationx"
 
 With FoundationX, you can start publishing content immediately. However, to customize your site, you'll want to configure a few settings first. Don't worry - we've made it really easy, even for non-developers.
 
-- [When You Login](#FoundationX.HowtoUseFoundationX-WhenYouLogin)
-- [Manage Site Settings](#FoundationX.HowtoUseFoundationX-ManageSiteSettings)
-- [Manage Style Settings](#FoundationX.HowtoUseFoundationX-ManageStyleSettings)
-  - [Colors](#FoundationX.HowtoUseFoundationX-Colors)
-  - [Foundation](#FoundationX.HowtoUseFoundationX-Foundation)
-  - [Look and Feel](#FoundationX.HowtoUseFoundationX-LookandFeel)
-- [Just Add Content](#FoundationX.HowtoUseFoundationX-JustAddContent)
-
-
-
 ## When You Login
 
 The first thing you see when you login to MODX Revolution is the Dashboard. FoundationX has a custom Dashboard, with Quick Buttons to the most commonly used features, embedded video tutorials, and links to documentation.
@@ -28,27 +18,27 @@ Click on the "Context Settings" tab. You'll see a table, or "data-grid" of setti
 
 This list of settings is sorted alphabetically by Name, which is the default view for the Edit Context Settings page in MODX Revolution. The settings are not grouped logically. Please review the full list for thorough understanding of FoundationX Site Settings.
 
-| Name | Key | Description |
-|------|-----|-------------|
-| Physical Address | fx.address | Enter the physical address of your business. If you don't want an address displayed, save this as blank. |
-| City Location | fx.city | If you have an address set in "Physical Address", enter the city name here. If not, save this as blank. |
-| Make Content Area Panel? | fx.contentPanel | If "Yes", your main content area will display as a FoundationX Panel. More on those in the Site Styles section below. |
-| Country | fx.country | If you have an address set in "Physical Address", enter the country name here. If not, save this as blank. |
-| Email Address | fx.email | This is required if you're using the contact form on the contact us page in FoundationX. It also displays in the footer if you have Verbose Footer enabled. |
-| Facebook URL | fx.facebook | This should be the full URL of your Facebook page. If you don't have one, or don't want the Facebook icon & link displayed, save this as blank. |
-| Google+ URL | fx.google | This should be the full URL of your Google+ page. If you don't have one, or don't want the Google+ icon & link displayed, save this as blank. |
-| LinkedIn URL | fx.linkedin | This should be the full URL of your LinkedIn page. If you don't have one, or don't want the LinkedIn icon & link displayed, save this as blank. |
-| Enable Masthead? | fx.masthead | If "Yes", a header will display above your main navigation, which by default contains your Logo, Site Tagline, and social media icons. |
-| Phone | fx.phone | Enter the phone number for your business. If you don't want a phone number displayed, save this as blank. |
-| Pinterest URL | fx.pinterest | This should be the full URL of your Pinterest page. If you don't have one, or don't want the Pinterest icon & link displayed, save this as blank. |
-| Postal Code | fx.postal | Enter the postal/zip code for your business. If you don't want a postal code displayed, save this as blank. |
-| Make Blog Sidebar Display Left? | fx.sidebarLeft | If "Yes", the sidebar navigation in the FoundationX blog pages will display on the left. If "No", it will display right. If you're not using the Blog functionality, un-publish the blog page and this setting will have no effect. |
-| Make Sidebar Widgets Panels? | fx.sidebarPanels | If "Yes", the sidebar widgets will display as a FoundationX Panel. More on those in the Site Styles section below. |
-| State/Province | fx.state | If you have an address set in "Physical Address", enter the state name here. If not, save this as blank. |
-| Site Tagline | fx.tagline | This tagline appears beneath your Logo in the site header, if "Enable Masthead" is set to "Yes". |
-| Twitter URL | fx.twitter | This should be the full URL of your Twitter page. If you don't have one, or don't want the Twitter icon & link displayed, save this as blank. |
-| Verbose Footer? | fx.verboseFooter | If "Yes", a larger footer will display on your site with Site Name, Physical Address, Phone, social media icons, and a list of top level menu items. |
-| YouTube URL | fx.youtube | This should be the full URL of your YouTube page. If you don't have one, or don't want the YouTube icon & link displayed, save this as blank. |
+| Name                            | Key              | Description                                                                                                                                                                                                                         |
+| ------------------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Physical Address                | fx.address       | Enter the physical address of your business. If you don't want an address displayed, save this as blank.                                                                                                                            |
+| City Location                   | fx.city          | If you have an address set in "Physical Address", enter the city name here. If not, save this as blank.                                                                                                                             |
+| Make Content Area Panel?        | fx.contentPanel  | If "Yes", your main content area will display as a FoundationX Panel. More on those in the Site Styles section below.                                                                                                               |
+| Country                         | fx.country       | If you have an address set in "Physical Address", enter the country name here. If not, save this as blank.                                                                                                                          |
+| Email Address                   | fx.email         | This is required if you're using the contact form on the contact us page in FoundationX. It also displays in the footer if you have Verbose Footer enabled.                                                                         |
+| Facebook URL                    | fx.facebook      | This should be the full URL of your Facebook page. If you don't have one, or don't want the Facebook icon & link displayed, save this as blank.                                                                                     |
+| Google+ URL                     | fx.google        | This should be the full URL of your Google+ page. If you don't have one, or don't want the Google+ icon & link displayed, save this as blank.                                                                                       |
+| LinkedIn URL                    | fx.linkedin      | This should be the full URL of your LinkedIn page. If you don't have one, or don't want the LinkedIn icon & link displayed, save this as blank.                                                                                     |
+| Enable Masthead?                | fx.masthead      | If "Yes", a header will display above your main navigation, which by default contains your Logo, Site Tagline, and social media icons.                                                                                              |
+| Phone                           | fx.phone         | Enter the phone number for your business. If you don't want a phone number displayed, save this as blank.                                                                                                                           |
+| Pinterest URL                   | fx.pinterest     | This should be the full URL of your Pinterest page. If you don't have one, or don't want the Pinterest icon & link displayed, save this as blank.                                                                                   |
+| Postal Code                     | fx.postal        | Enter the postal/zip code for your business. If you don't want a postal code displayed, save this as blank.                                                                                                                         |
+| Make Blog Sidebar Display Left? | fx.sidebarLeft   | If "Yes", the sidebar navigation in the FoundationX blog pages will display on the left. If "No", it will display right. If you're not using the Blog functionality, un-publish the blog page and this setting will have no effect. |
+| Make Sidebar Widgets Panels?    | fx.sidebarPanels | If "Yes", the sidebar widgets will display as a FoundationX Panel. More on those in the Site Styles section below.                                                                                                                  |
+| State/Province                  | fx.state         | If you have an address set in "Physical Address", enter the state name here. If not, save this as blank.                                                                                                                            |
+| Site Tagline                    | fx.tagline       | This tagline appears beneath your Logo in the site header, if "Enable Masthead" is set to "Yes".                                                                                                                                    |
+| Twitter URL                     | fx.twitter       | This should be the full URL of your Twitter page. If you don't have one, or don't want the Twitter icon & link displayed, save this as blank.                                                                                       |
+| Verbose Footer?                 | fx.verboseFooter | If "Yes", a larger footer will display on your site with Site Name, Physical Address, Phone, social media icons, and a list of top level menu items.                                                                                |
+| YouTube URL                     | fx.youtube       | This should be the full URL of your YouTube page. If you don't have one, or don't want the YouTube icon & link displayed, save this as blank.                                                                                       |
 
 There's only one other setting, a System Setting, that needs to be modified in order to fully customize your FoundationX site. From the main menu in the Manager, select System » System Settings. At the top of the data-grid, there's a drop-down select box that says "Filter by area..." Click on it and choose "Site" near the bottom of the list. Look for the setting with name "Site name" and key "site\_name". Double-click on the value, which by default is "FoundationX" and the version number. Enter your business name, or the name you want for the site. When you're done, click on the "site\_name" key text. System settings are saved as soon as you move focus away from the text input box.
 

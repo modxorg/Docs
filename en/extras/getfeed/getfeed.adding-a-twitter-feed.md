@@ -9,8 +9,6 @@ Twitter has deprecated their API v1.0 (which this tutorial makes use of) and it 
 
 You can use JSONDerulo (<http://modx.com/extras/package/jsonderulo>) or TwitterX (<http://modx.com/extras/package/twitterx>) to show twitter feeds instead.
 
-
-
 ## Adding Twitter to Your Site
 
 This tutorial shows you how to add Twitter feeds to your site through [getFeed](/extras/revo/getfeed "getFeed").

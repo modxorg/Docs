@@ -4,17 +4,11 @@ _old_id: "1025"
 _old_uri: "revo/loginza/tpl.loginza.profile"
 ---
 
-- [Description](#tpl.Loginza.profile-Description)
-- [Placeholders](#tpl.Loginza.profile-Placeholders)
-- [See Also](#tpl.Loginza.profile-SeeAlso)
-
-
-
 ## Description
 
 Chunk for display and edit user profile.
 
-``` php 
+``` html 
 <form action="[[~[[*id]]]]" method="post" class="form-horizontal">
         <div class="control-group[[+error.username:notempty=` error`]]">
                 <label class="control-label">???</label>

@@ -4,13 +4,6 @@ _old_id: "1770"
 _old_uri: "revo/classextender"
 ---
 
-- [What is ClassExtender?](#ClassExtender-WhatisClassExtender)
-- [Package Information](#ClassExtender-Information)
-- [History](#ClassExtender-History)
-- [Download](#ClassExtender-Download)
-- [Development and Bug Reporting](#ClassExtender-DevelopmentandBugReporting)
-- [Documentation](#ClassExtender-Documentation)
- 
 ## What is ClassExtender?
 
 ClassExtender is designed to make it easy to extend the modUser and modResource objects in MODX. It will not only extend the objects for you, it also gives you tools update them in the database, and search for your extended objects and display them.

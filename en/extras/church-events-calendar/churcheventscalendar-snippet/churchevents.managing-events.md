@@ -4,18 +4,6 @@ _old_id: "807"
 _old_uri: "revo/church-events-calendar/churcheventscalendar-snippet/churchevents.managing-events"
 ---
 
-- [Adding an Event](#ChurchEvents.Managingevents-AddinganEvent)
-  - [Choosing a day and time](#ChurchEvents.Managingevents-Choosingadayandtime)
-  - [Repeating event options](#ChurchEvents.Managingevents-Repeatingeventoptions)
-      - [How to use the Daily option](#ChurchEvents.Managingevents-HowtousetheDailyoption)
-      - [Using the Weekly repeating option](#ChurchEvents.Managingevents-UsingtheWeeklyrepeatingoption)
-      - [**Monthly repeating**](#ChurchEvents.Managingevents-Monthlyrepeating)
-- [Edit an event(s)](#ChurchEvents.Managingevents-Editanevent%28s%29)
-- [Delete an event](#ChurchEvents.Managingevents-Deleteanevent)
-- [Requesting an event](#ChurchEvents.Managingevents-Requestinganevent)
-
-
-
 ## Adding an Event
 
 Below are instructions based on the default template, if you have customized your calendar then you may not have that same instructions.

@@ -77,20 +77,20 @@ To show a single image:
 
 ### Available Parameters
 
-| Parameter | Description | Default Value |
-|-----------|-------------|---------------|
-| thumbWidth | Thumbnail width in pixels | 120 |
-| thumbHeight | Thumbnail height in pixels | 120 |
-| wrapperTpl | The wrapper html chunk, shared for all view | Albums : albumwrapper |
-| itemTpl | Each item html chunk, shared for all view | Albums : albumcover |
-| plugin | The plugin controller, a PHP file which handle the display options | default |
-| columns | The number of columns to show | 3 |
-| columnBreak | The HTML markup used to break columns with the default viewer | <br style="clear: both;"> |
-| browse | Used for Album list and album view. 
-Tell the script whether the thumbnail should link a page or directly the image | 1 |
-| loadJquery | Set 0 to avoid loading Jquery by Cliche. | 1 |
-| loadCss | Set 1 to load custom css. | 0 |
-| css | Path and name to CSS file excluding .css extension. |  |
+| Parameter                                                                      | Description                                                        | Default Value             |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------- |
+| thumbWidth                                                                     | Thumbnail width in pixels                                          | 120                       |
+| thumbHeight                                                                    | Thumbnail height in pixels                                         | 120                       |
+| wrapperTpl                                                                     | The wrapper html chunk, shared for all view                        | Albums : albumwrapper     |
+| itemTpl                                                                        | Each item html chunk, shared for all view                          | Albums : albumcover       |
+| plugin                                                                         | The plugin controller, a PHP file which handle the display options | default                   |
+| columns                                                                        | The number of columns to show                                      | 3                         |
+| columnBreak                                                                    | The HTML markup used to break columns with the default viewer      | <br style="clear: both;"> |
+| browse                                                                         | Used for Album list and album view.                                |
+| Tell the script whether the thumbnail should link a page or directly the image | 1                                                                  |
+| loadJquery                                                                     | Set 0 to avoid loading Jquery by Cliche.                           | 1                         |
+| loadCss                                                                        | Set 1 to load custom css.                                          | 0                         |
+| css                                                                            | Path and name to CSS file excluding .css extension.                |                           |
 
 ### Templates
 
@@ -205,7 +205,7 @@ $("a.zoom").fancybox();
 
 ##### galleriffic/script.tpl
 
-``` php 
+``` javascript 
  jQuery(document).ready(function($) {
     $('div.navigation').css({'width' : '220px', 'float' : 'left'});
     $('div.content').css('display', 'block');

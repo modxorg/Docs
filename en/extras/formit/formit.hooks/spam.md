@@ -12,10 +12,10 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.spam"
 
 ## Available Properties
 
- | name | description |
-|------|-------------|
-| spamEmailFields | Optional. A comma-delimited list of email fields to check. Defaults to 'email'. |
-| spamCheckIp | If true, will also check the IP of the submitter. Defaults to false. |
+ | name            | description                                                                     |
+ | --------------- | ------------------------------------------------------------------------------- |
+ | spamEmailFields | Optional. A comma-delimited list of email fields to check. Defaults to 'email'. |
+ | spamCheckIp     | If true, will also check the IP of the submitter. Defaults to false.            |
 
 ## Usage
 
@@ -23,7 +23,6 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.spam"
 
  ``` php 
 [[!FormIt? &hooks=`spam`]]
-
 ```
 
 ### Checking the IP For Spam

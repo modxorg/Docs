@@ -21,11 +21,11 @@ This is the Chunk displayed with the &itemTpl property on the [GoogleSiteMap](/e
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
-| url | The full URL of the resource |
-| date | The last updated (edited) date |
-| update | The frequency updated |
+| Name     | Description                          |
+| -------- | ------------------------------------ |
+| url      | The full URL of the resource         |
+| date     | The last updated (edited) date       |
+| update   | The frequency updated                |
 | priority | The priority to assign this Resource |
 
 ## See Also

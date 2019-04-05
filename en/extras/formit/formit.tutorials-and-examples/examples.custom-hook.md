@@ -4,14 +4,6 @@ _old_id: "850"
 _old_uri: "revo/formit/formit.tutorials-and-examples/formit.examples.custom-hook"
 ---
 
-- [Snippet Tag](#FormIt.Examples.CustomHook-SnippetTag)
-- [customhook Snippet](#FormIt.Examples.CustomHook-customhookSnippet)
-  - [Testing](#FormIt.Examples.CustomHook-Testing)
-  - [Setting Values](#FormIt.Examples.CustomHook-SettingValues)
-  - [Reading Values](#FormIt.Examples.CustomHook-ReadingValues)
-
-
-
 Often, a form submission should include various logging information such as the visitor's IP address or date the form was submitted. You could print this information as hidden fields in your form, but in this example, we'll show you how to add those values via a custom hook.
 
 We'll base this off of a generic contact form as outlined in the [Contact Page](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page "FormIt.Examples.Simple Contact Page") example.

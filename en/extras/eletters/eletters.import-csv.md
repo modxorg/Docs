@@ -4,12 +4,6 @@ _old_id: "832"
 _old_uri: "revo/eletters/eletters.import-csv"
 ---
 
-- [Preparing a CSV File for Import](#Eletters.ImportCSV-PreparingaCSVFileforImport)
-- [Import a CSV File](#Eletters.ImportCSV-ImportaCSVFile)
-- [See Also](#Eletters.ImportCSV-SeeAlso)
-
-
-
 Added in 1.0 beta3
 
 You can now create a CSV of name and import them directly and choose if they are active and what groups they are assigned to.

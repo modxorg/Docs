@@ -16,19 +16,19 @@ This chunk is used for each Album iterated through by the [GalleryAlbums](/extra
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
-| id | The ID of the Album. |
-| name | The name of the Album. |
-| parent | The parent ID of the Album. Defaults to 0. |
-| description | The description of the Album. |
-| createdon | A timestamp of when the Album was created. |
-| createdby | The ID of the User that created this Album. |
-| rank | The 'rank', or order, in which this Album is stored as. |
-| active | Whether or not this Album is marked "Active". Can be 1 or 0. |
-| prominent | Whether or not this Album is marked "Prominent". Can be 1 or 0. |
+| Name            | Description                                                                                                                                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id              | The ID of the Album.                                                                                                                                           |
+| name            | The name of the Album.                                                                                                                                         |
+| parent          | The parent ID of the Album. Defaults to 0.                                                                                                                     |
+| description     | The description of the Album.                                                                                                                                  |
+| createdon       | A timestamp of when the Album was created.                                                                                                                     |
+| createdby       | The ID of the User that created this Album.                                                                                                                    |
+| rank            | The 'rank', or order, in which this Album is stored as.                                                                                                        |
+| active          | Whether or not this Album is marked "Active". Can be 1 or 0.                                                                                                   |
+| prominent       | Whether or not this Album is marked "Prominent". Can be 1 or 0.                                                                                                |
 | albumRequestVar | The albumRequestVar parameter passed to the [GalleryAlbums](/extras/revo/gallery/gallery.galleryalbums "Gallery.GalleryAlbums") snippet. Defaults to galAlbum. |
-| image | The link to an image as determined by the GalleryAlbums snippet. |
+| image           | The link to an image as determined by the GalleryAlbums snippet.                                                                                               |
 
 When you use the image placeholder in your template as the source for an image tag, it doesn't seem to obey the thumbnail properties given in the snippet-call. But no worries, you can add them yourself as this image-placeholder is actually a call to phpthumb. So, lets say you want your thumbnail to be 240x160 with zoomcrop, you can do:
 

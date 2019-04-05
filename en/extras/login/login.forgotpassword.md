@@ -4,14 +4,6 @@ _old_id: "906"
 _old_uri: "revo/login/login.forgotpassword"
 ---
 
-- [What is ForgotPassword?](#Login.ForgotPassword-WhatisForgotPassword%3F)
-- [Usage](#Login.ForgotPassword-Usage)
-  - [ForgotPassword Properties](#Login.ForgotPassword-ForgotPasswordProperties)
-  - [tplType Options](#Login.ForgotPassword-tplTypeOptions)
-- [See Also](#Login.ForgotPassword-SeeAlso)
-
-
-
 ## What is ForgotPassword?
 
  ForgotPassword is a simple Snippet that handles the form when a User has forgotten their password and needs to retrieve it.
@@ -37,20 +29,20 @@ _old_uri: "revo/login/login.forgotpassword"
 
  ForgotPassword comes with some default properties you can override. They are:
 
- | Name | Description | Default |
-|------|-------------|---------|
-| tpl | The reset password message tpl. May be the type specified by the _tplType_ property. | lgnForgotPassTpl |
-| tplType | The type of tpl being provided by _tpl_ | modChunk |
-| errTpl | The error message tpl. May be the type specified by the _errTplType_ property. | lgnErrTpl |
-| errTplType | The type of tpls being provided by _errTpl_ | modChunk |
-| emailTpl | The confirmation email message tpl. | lgnForgotPassEmail |
-| emailTplAlt | alternate confirmation email message tpl - for multi-part email with text alternative. |  |
-| emailSubject | The subject of the email message | Password Retrieval Email |
-| emailTplType | The type of tpl being provided by _emailTpl_ | modChunk |
-| sentTpl | The message tpl to show when an email was successfully sent. | lgnForgotPassSentTpl |
-| sentTplType | The type of tpl being provided by _sentTpl_ | modChunk |
-| loginResourceId | The resource to direct users to on successful confirmation. | 1 |
-| resetResourceId | The resource that contains the [Login.ResetPassword](/extras/revo/login/login.resetpassword "Login.ResetPassword") Snippet. | 1 |
+ | Name            | Description                                                                                                                 | Default                  |
+ | --------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+ | tpl             | The reset password message tpl. May be the type specified by the _tplType_ property.                                        | lgnForgotPassTpl         |
+ | tplType         | The type of tpl being provided by _tpl_                                                                                     | modChunk                 |
+ | errTpl          | The error message tpl. May be the type specified by the _errTplType_ property.                                              | lgnErrTpl                |
+ | errTplType      | The type of tpls being provided by _errTpl_                                                                                 | modChunk                 |
+ | emailTpl        | The confirmation email message tpl.                                                                                         | lgnForgotPassEmail       |
+ | emailTplAlt     | alternate confirmation email message tpl - for multi-part email with text alternative.                                      |                          |
+ | emailSubject    | The subject of the email message                                                                                            | Password Retrieval Email |
+ | emailTplType    | The type of tpl being provided by _emailTpl_                                                                                | modChunk                 |
+ | sentTpl         | The message tpl to show when an email was successfully sent.                                                                | lgnForgotPassSentTpl     |
+ | sentTplType     | The type of tpl being provided by _sentTpl_                                                                                 | modChunk                 |
+ | loginResourceId | The resource to direct users to on successful confirmation.                                                                 | 1                        |
+ | resetResourceId | The resource that contains the [Login.ResetPassword](/extras/revo/login/login.resetpassword "Login.ResetPassword") Snippet. | 1                        |
 
 ### tplType Options
 
@@ -73,10 +65,10 @@ _old_uri: "revo/login/login.forgotpassword"
 7. [Login.ResetPassword](/extras/revo/login/login.resetpassword)
 8. [Login.ChangePassword](/extras/revo/login/login.changepassword)
 9. [Login.Tutorials](/extras/revo/login/login.tutorials)
-  1. [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup)
-  2. [Login.Extended User Profiles](/extras/revo/login/login.tutorials/login.extended-user-profiles)
-  3. [Login.Request Membership](/extras/revo/login/login.tutorials/login.request-membership)
-  4. [Login.User Profiles](/extras/revo/login/login.tutorials/login.user-profiles)
-  5. [Login.Using Custom Fields](/extras/revo/login/login.tutorials/login.using-custom-fields)
-  6. [Login.Using Pre and Post Hooks](/extras/revo/login/login.tutorials/login.using-pre-and-post-hooks)
+  2. [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup)
+  3. [Login.Extended User Profiles](/extras/revo/login/login.tutorials/login.extended-user-profiles)
+  4. [Login.Request Membership](/extras/revo/login/login.tutorials/login.request-membership)
+  5. [Login.User Profiles](/extras/revo/login/login.tutorials/login.user-profiles)
+  6. [Login.Using Custom Fields](/extras/revo/login/login.tutorials/login.using-custom-fields)
+  7. [Login.Using Pre and Post Hooks](/extras/revo/login/login.tutorials/login.using-pre-and-post-hooks)
 10. [Login.Roadmap](/extras/revo/login/login.roadmap)

@@ -16,15 +16,20 @@ _old_uri: "revo/formitfastpack/"
 
  Below is a simple example of using the _field_ snippet with a FormIt form. For a more detailed example, check out the [Tutorial](https://rtfm.modx.com/extras/revo/formitfastpack/formitfastpack.tutorial).
 
- ``` html 
-[[!FormIt? &hooks=`email,redirect` &emailTpl=`ContactFormReport` &emailTo=`[[++emailsender]]` &emailSubject=`New contact form submission` 
-           &validate=`email:email:required,message:required` &redirectTo=`1` ]]
+ ``` php 
+[[!FormIt? 
+  &hooks=`email,redirect` 
+  &emailTpl=`ContactFormReport`
+  &emailTo=`[[++emailsender]]` 
+  &emailSubject=`New contact form submission` 
+  &validate=`email:email:required,message:required` 
+  &redirectTo=`1`
+]]
 <form action="[[~[[*id]]]]" method="post">
 [[!field? &type=`text` &name=`email` &req=`1`]]
 [[!field? &type=`textarea` &name=`message` &class=`cleardefault` &req=`1`]]
 [[!field? &type=`submit` &name=`submitForm` &label=` ` &message=`Send this Message!`]]
 </form>
-
 ```
 
 ## Included Snippets
@@ -49,11 +54,11 @@ _old_uri: "revo/formitfastpack/"
 
   _Example results:_  
 
-| **Field Name** | **Generated Label** |
-|----------------|---------------------|
-| name | Name |
-| first\_name | First Name |
-| company\_address | Company Address |
+| **Field Name**        | **Generated Label** |
+| --------------------- | ------------------- |
+| name                  | Name                |
+| first\_name           | First Name          |
+| company\_address      | Company Address     |
 | number\_of\_employees | Number Of Employees |
 
 ## Support

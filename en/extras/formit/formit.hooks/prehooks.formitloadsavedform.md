@@ -22,7 +22,6 @@ _old_uri: "revo/formit/formit.hooks/formit.prehooks.formitloadsavedform"
 ]]
 // open the page in the browser
 // http://your-domain.com/path/to/form?yourCustomGetParameter=<FormHashFromFormItCMP>
-
 ```
 
  Please note: you must not use the parameter `fieldNames` because it makes assigning the form values to the fields impossible
@@ -31,11 +30,11 @@ _old_uri: "revo/formit/formit.hooks/formit.prehooks.formitloadsavedform"
 
  It has the following properties to be passed into the FormIt snippet call:
 
- | name | description |
-|------|-------------|
-| savedFormHashKeyField | The get parameter to take the submission hash from the url. Defaults to "savedFormHashKey". |
-| updateSavedForm | If loading the previously submitted form values should be possible. Defaults to false. |
-| returnValueOnFail | If the preHook should return true on fail. Defaults to true |
+ | name                  | description                                                                                 |
+ | --------------------- | ------------------------------------------------------------------------------------------- |
+ | savedFormHashKeyField | The get parameter to take the submission hash from the url. Defaults to "savedFormHashKey". |
+ | updateSavedForm       | If loading the previously submitted form values should be possible. Defaults to false.      |
+ | returnValueOnFail     | If the preHook should return true on fail. Defaults to true                                 |
 
 ## See Also
 

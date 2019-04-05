@@ -10,7 +10,7 @@ This is the Chunk displayed with the &fileTpl property on the [FileLister](/extr
 
 ## Default Value
 
-``` php 
+``` html 
 <tr class="[[+cls]]">
     <td class="feo-filename">[[+link]]</td>
     <td class="feo-filesize">[[+filesize]]</td>
@@ -20,18 +20,18 @@ This is the Chunk displayed with the &fileTpl property on the [FileLister](/extr
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
-| link | The link to view or download the file. |
-| filename | The basename of the file. |
-| filesize | The filesize, formatted. |
-| bytesize | The size in bytes of the file. |
-| extension | The file extension of the file. |
-| lastmod | The last modified date, in timestamp format. |
-| dateFormat | The dateFormat string passed into the [FileLister](/extras/revo/filelister/filelister.filelister "FileLister.FileLister") snippet. |
-| path | The absolute path to the file. |
+| Name         | Description                                                                                                                                           |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| link         | The link to view or download the file.                                                                                                                |
+| filename     | The basename of the file.                                                                                                                             |
+| filesize     | The filesize, formatted.                                                                                                                              |
+| bytesize     | The size in bytes of the file.                                                                                                                        |
+| extension    | The file extension of the file.                                                                                                                       |
+| lastmod      | The last modified date, in timestamp format.                                                                                                          |
+| dateFormat   | The dateFormat string passed into the [FileLister](/extras/revo/filelister/filelister.filelister "FileLister.FileLister") snippet.                    |
+| path         | The absolute path to the file.                                                                                                                        |
 | relativePath | The relative path to the 'path' property passed into the [FileLister](/extras/revo/filelister/filelister.filelister "FileLister.FileLister") snippet. |
-| navKey | The navKey being used for link generation. |
+| navKey       | The navKey being used for link generation.                                                                                                            |
 
 ## See Also
 

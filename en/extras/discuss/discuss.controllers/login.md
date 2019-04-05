@@ -6,21 +6,14 @@ _old_uri: "revo/discuss/discuss.controllers/discuss.controllers.login"
 
 The Login controller is used for either showing a login form, or when discuss.sso\_mode is enabled (recommended), to redirect the user to the login page.
 
-- [Basic Information](#Discuss.Controllers.login-BasicInformation)
-- [Options](#Discuss.Controllers.login-Options)
-- [Controller Template](#Discuss.Controllers.login-ControllerTemplate)
-- [System Events](#Discuss.Controllers.login-SystemEvents)
-
-
-
 ## Basic Information
 
-| Since Version | 1.0 |
-|---------------|-----|
-| Controller File | controllers/web/login.class.php |
-| Controller Class Name | DiscussLoginController |
-| Controller Template | pages/login.tpl (if sso\_mode=0) |
-| Manifest Name | login |
+| Since Version         | 1.0                              |
+| --------------------- | -------------------------------- |
+| Controller File       | controllers/web/login.class.php  |
+| Controller Class Name | DiscussLoginController           |
+| Controller Template   | pages/login.tpl (if sso\_mode=0) |
+| Manifest Name         | login                            |
 
 ## Options
 

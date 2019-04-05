@@ -3,13 +3,6 @@ title: "getDynaDescription"
 _old_id: "1780"
 _old_uri: "revo/getdynadescription"
 ---
-
-- [What is getDynaDescription?](#getDynaDescription-WhatisgetDynaDescription)
-- [Package Information](#getDynaDescription-Information)
-- [History](#getDynaDescription-History)
-- [Download](#getDynaDescription-Download)
-- [Development and Bug Reporting](#getDynaDescription-DevelopmentandBugReporting)
-- [Documentation](#getDynaDescription-Documentation)
  
 ## What is getDynaDescription?
 

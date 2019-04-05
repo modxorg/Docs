@@ -4,35 +4,6 @@ _old_id: "910"
 _old_uri: "revo/login/login.tutorials/login.request-membership"
 ---
 
-- [Outline](#Login.RequestMembership-Outline)
-- [Download the Necessary Snippets](#Login.RequestMembership-DownloadtheNecessarySnippets)
-- [Create the Required Pages](#Login.RequestMembership-CreatetheRequiredPages)
-- [Ensure Basic Permissions are in Place](#Login.RequestMembership-EnsureBasicPermissionsareinPlace)
-- [Add Snippets](#Login.RequestMembership-AddSnippets)
-  - [Login Page (1)](#Login.RequestMembership-LoginPage%281%29)
-  - [The Homepage Template](#Login.RequestMembership-TheHomepageTemplate)
-      - [Add Chunk: header\_for\_guests](#Login.RequestMembership-AddChunk%3Aheaderforguests)
-      - [Add Chunk: header\_for\_members](#Login.RequestMembership-AddChunk%3Aheaderformembers)
-  - [Login Page (1)](#Login.RequestMembership-LoginPage%281%29)
-  - [Forgot Password (2)](#Login.RequestMembership-ForgotPassword%282%29)
-  - [Reset Password Handler (3)](#Login.RequestMembership-ResetPasswordHandler%283%29)
-  - [Members Home Page (4)](#Login.RequestMembership-MembersHomePage%284%29)
-  - [Come Again Soon (5)](#Login.RequestMembership-ComeAgainSoon%285%29)
-  - [Request Membership (6)](#Login.RequestMembership-RequestMembership%286%29)
-  - [Request Pending (7)](#Login.RequestMembership-RequestPending%287%29)
-  - [Membership Confirmation Handler (8)](#Login.RequestMembership-MembershipConfirmationHandler%288%29)
-- [Testing: Making it all Work](#Login.RequestMembership-Testing%3AMakingitallWork)
-  - [Request Membership](#Login.RequestMembership-RequestMembership)
-  - [Check for Verification Email](#Login.RequestMembership-CheckforVerificationEmail)
-  - [Login](#Login.RequestMembership-Login)
-- [Errors](#Login.RequestMembership-Errors)
-  - [When I submit the request membership form, the page does not redirect!](#Login.RequestMembership-WhenIsubmittherequestmembershipform%2Cthepagedoesnotredirect%21)
-  - [When I get the Activation email, the message is blank!](#Login.RequestMembership-WhenIgettheActivationemail%2Cthemessageisblank%21)
-  - [I never get the Emails that MODx sends!](#Login.RequestMembership-InevergettheEmailsthatMODxsends%21)
-  - [After submitting the registration form, I get a white page.](#Login.RequestMembership-Aftersubmittingtheregistrationform%2CIgetawhitepage.)
-
-
-
 ## Outline
 
 If you've followed the tutorial for the [Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup"), then it's time to try for a more thorough implementation of the Login Snippet where _users can apply for site membership themselves_. Once you've completed this tutorial, visitors to your site will be able to request membership by themselves and you will not have to add users manually.

@@ -15,27 +15,26 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.recaptcha"
  ``` php 
 [[+formit.recaptcha_html]]
 [[!+fi.error.recaptcha]]
-
 ```
 
  The first placeholder is where the reCaptcha form will be rendered; the 2nd is the error message (if any) for reCaptcha.
 
  Finally, you'll need to setup your reCaptcha private and public keys in System Settings. The settings available for reCaptcha are:
 
- | Name | Description |
-|------|-------------|
-| formit.recaptcha\_public\_key | Your reCaptcha public key. |
-| formit.recaptcha\_private\_key | Your reCaptcha private key. |
-| formit.recaptcha\_use\_ssl | Whether or not to use SSL for reCaptcha requests. Defaults to false. |
+ | Name                           | Description                                                          |
+ | ------------------------------ | -------------------------------------------------------------------- |
+ | formit.recaptcha\_public\_key  | Your reCaptcha public key.                                           |
+ | formit.recaptcha\_private\_key | Your reCaptcha private key.                                          |
+ | formit.recaptcha\_use\_ssl     | Whether or not to use SSL for reCaptcha requests. Defaults to false. |
 
 ## Available Properties
 
  The reCaptcha hook has a few extra configuration options:
 
- | Name | Description | Default |
-|------|-------------|---------|
-| recaptchaJs | A JSON object to pass into the RecaptchaOptions var, which configures the reCaptcha widget. See the official reCaptcha docs for more information. | {} |
-| recaptchaTheme | The recaptcha theme to use. | clean |
+ | Name           | Description                                                                                                                                       | Default |
+ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+ | recaptchaJs    | A JSON object to pass into the RecaptchaOptions var, which configures the reCaptcha widget. See the official reCaptcha docs for more information. | {}      |
+ | recaptchaTheme | The recaptcha theme to use.                                                                                                                       | clean   |
 
 ## See Also
 

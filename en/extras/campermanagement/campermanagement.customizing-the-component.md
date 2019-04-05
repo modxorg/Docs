@@ -6,15 +6,6 @@ _old_uri: "revo/campermanagement/campermanagement.customizing-the-component"
 
 CamperManagement was created for a specific website, and with that it has some quite specific terminology and aspects that can be used. Luckily, combining the flexibility of MODX and some customization built into the addon you can actually change quite a few things without needing developer experience. This page will give you an overview of how to do that.
 
-- 1 [Changing Component terminology and fields](#CamperManagement.CustomizingtheComponent-ChangingComponentterminologyandfields)
-  - 1.1 [First look at using Lexicon Management](#CamperManagement.CustomizingtheComponent-FirstlookatusingLexiconManagement)
-  - 1.2 [Changing some Strings](#CamperManagement.CustomizingtheComponent-ChangingsomeStrings)
-      - 1.2.1 [Status names](#CamperManagement.CustomizingtheComponent-Statusnames)
-- 2 [Custom button on top of the Campers grid](#CamperManagement.CustomizingtheComponent-CustombuttonontopoftheCampersgrid)
-- 3 [Custom Context Menu items](#CamperManagement.CustomizingtheComponent-CustomContextMenuitems)
-
-
-
 ## Changing Component terminology and fields
 
 The addon uses terms like "Campers", "Brands" etc. All of these have been made translateable in the development process, and with that in place you can take advantage of Lexicon Management (under System in the main menu) to change terms throughout the component. In the 1.0 release there are 82 strings you can change, varying from "CamperManagement" to "Car" and error messages.

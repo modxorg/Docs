@@ -4,19 +4,6 @@ _old_id: "614"
 _old_uri: "revo/church-events-calendar"
 ---
 
-- [What is Church Events Calendar?](#ChurchEventsCalendar-WhatisChurchEventsCalendar%3F)
-- [Required extra Packages](#ChurchEventsCalendar-RequiredextraPackages)
-- [History](#ChurchEventsCalendar-History)
-  - [Demo](#ChurchEventsCalendar-Demo)
-  - [Download](#ChurchEventsCalendar-Download)
-  - [Development and Bug Reporting](#ChurchEventsCalendar-DevelopmentandBugReporting)
-- [Install](#ChurchEventsCalendar-Install)
-  - [How to use](#ChurchEventsCalendar-Howtouse)
-  - [System Settings](#ChurchEventsCalendar-SystemSettingsrevolution20%3ASystemSettings)
-- [See Also](#ChurchEventsCalendar-SeeAlso)
-
-
-
 ## What is Church Events Calendar?
 
 ChurchEvents is a calendar extra for MODx Revolution was initially designed specifically for churches but would be useful in many other contexts. Churchevents now supports templates and translations. There are now 3 Snippets included: ChurchEventsCalendar, ChurchEventsList and ChurchEventsRss.
@@ -53,9 +40,7 @@ ChurchEvents is on GitHub: <https://github.com/jgulledge19/Church-Events-Calenda
 To make a calendar on you page:
 
 ``` php 
-[[!ChurchEventsCalendar?
-
-]]
+[[!ChurchEventsCalendar?]]
 ```
 
 Make a list of all prominent events with a limit of 10 on you page:
@@ -68,14 +53,14 @@ Make a list of all prominent events with a limit of 10 on you page:
 
 These need to be created if they do not exist.
 
-| Name | Key | Field Type | Namespace | Area Lexicon | Default Value | Description |
-|------|-----|------------|-----------|--------------|---------------|-------------|
-| Allow Requests | churchevents.allowRequests | Yes/No | churchevents | ChurchEvents | Yes | Allow guests to request events. |
-| Date Format | churchevents.dateFormat | Textfield | churchevents | ChurchEvents | %m/%d/%Y | This is the format that will appear on forms and when a date is presented. Default is %m/%d/%Y see php.net/strftime for all options. |
-| Extended Fields | churchevents.extended | Textarea | churchevents | ChurchEvents |  | A comma separated list of fields you want on the event form. Example: extend\_numberOfPeople,extend\_needCatering. |
-| Page/Resource ID | churchevents.pageID | Textfield | churchevents | ChurchEvents |  | This is the Page/Resource ID where the calendar will be located. This is what all generated URLs are based on. |
-| Use Locations | churchevents.useLocations | Yes/No | churchevents | ChurchEvents | Yes | Use the location manager. If yes events will choose from a list of locations and events can check for conflicts. If no then each event can have a typed in a location and no event is checked for conflict. |
-| RSS Page/Resource ID | churchevents.rssPageID | Textfield | churchevents | ChurchEvents |  | This is the Page/Resource ID that will have the RSSEvents snippet and all generated RSS URLs will go here. |
+| Name                 | Key                        | Field Type | Namespace    | Area Lexicon | Default Value | Description                                                                                                                                                                                                 |
+| -------------------- | -------------------------- | ---------- | ------------ | ------------ | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Allow Requests       | churchevents.allowRequests | Yes/No     | churchevents | ChurchEvents | Yes           | Allow guests to request events.                                                                                                                                                                             |
+| Date Format          | churchevents.dateFormat    | Textfield  | churchevents | ChurchEvents | %m/%d/%Y      | This is the format that will appear on forms and when a date is presented. Default is %m/%d/%Y see php.net/strftime for all options.                                                                        |
+| Extended Fields      | churchevents.extended      | Textarea   | churchevents | ChurchEvents |               | A comma separated list of fields you want on the event form. Example: extend\_numberOfPeople,extend\_needCatering.                                                                                          |
+| Page/Resource ID     | churchevents.pageID        | Textfield  | churchevents | ChurchEvents |               | This is the Page/Resource ID where the calendar will be located. This is what all generated URLs are based on.                                                                                              |
+| Use Locations        | churchevents.useLocations  | Yes/No     | churchevents | ChurchEvents | Yes           | Use the location manager. If yes events will choose from a list of locations and events can check for conflicts. If no then each event can have a typed in a location and no event is checked for conflict. |
+| RSS Page/Resource ID | churchevents.rssPageID     | Textfield  | churchevents | ChurchEvents |               | This is the Page/Resource ID that will have the RSSEvents snippet and all generated RSS URLs will go here.                                                                                                  |
 
 ## See Also
 

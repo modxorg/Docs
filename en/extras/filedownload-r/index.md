@@ -4,10 +4,6 @@ _old_id: "639"
 _old_uri: "revo/filedownload-r"
 ---
 
-- [FileDownload R](#FileDownloadR-FileDownloadR)
-
-
-
 # FileDownload R
 
 FileDownload R is a snippet that will display a list of files from user's directory.

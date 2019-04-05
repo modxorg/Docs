@@ -8,12 +8,6 @@ After the installation of Discuss, you will likely want to throw your own style 
 
 Ready? Okay. Discuss is big. No really, it is. Even though you may not expect it, forums are complicated! This getting started guide will help you make sense of the various moving parts and how to make Discuss your b.. er how to make it your own. Here's what we'll discuss:
 
-- [Discuss Controller(s)](#Discuss.GettingStarted-DiscussController%28s%29)
-- [The Discuss Manifest](#Discuss.GettingStarted-TheDiscussManifest)
-- [Themes](#Discuss.GettingStarted-Themes)
-
-
-
 ## Discuss Controller(s)
 
 If you installed Discuss with the demo data, you will see that we use one resource with a blank template and possibly the simplest yet most powerful snippet call in the world:

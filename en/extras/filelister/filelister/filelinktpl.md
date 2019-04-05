@@ -16,9 +16,9 @@ This is the Chunk displayed with the &fileLinkTpl property on the [FileLister](/
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
-| url | The URL that is generated for browsing. |
+| Name     | Description                             |
+| -------- | --------------------------------------- |
+| url      | The URL that is generated for browsing. |
 | filename | The base name of the file or directory. |
 
 ## See Also

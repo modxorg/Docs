@@ -21,7 +21,6 @@ _old_uri: "revo/getresources/getresources.examples/getresources.category-index-p
  **Create a chunk and name it list-docs-thumb**
 
  ``` php 
-
 <div class="list-docs thumb grid">
  [[!getResources?  
         &parents=`[[*id]]` 
@@ -34,13 +33,11 @@ _old_uri: "revo/getresources/getresources.examples/getresources.category-index-p
         &sortby=`menuindex`  
         ]]  
 </div><!-- eof list-docs -->?
-
 ```
 
  **Create a second chunk for the getResources template, name it: list-docs-thumb-tpl** (see what I did there? Naming conventions are your friend.)
 
  ``` php 
-
 <div class="list-item column span-6">
           <h2>[[+pagetitle]]</h2>
                  <a href="[[~[[+id]]]]" title="[[+pagetitle]]">     
@@ -48,7 +45,6 @@ _old_uri: "revo/getresources/getresources.examples/getresources.category-index-p
              </a>  
         <p>[[+introtext]]</p>   
 </div>  <!-- eof item -->?
-
 ```
 
 ## Installation

@@ -4,31 +4,11 @@ _old_id: "902"
 _old_uri: "revo/login/login.tutorials/login.basic-setup"
 ---
 
-- [Create the Required Pages](#Login.BasicSetup-CreatetheRequiredPages)
-- [Create the Necessary User Groups and Resource Groups](#Login.BasicSetup-CreatetheNecessaryUserGroupsandResourceGroups)
-- [Add Snippets to the Pages](#Login.BasicSetup-AddSnippetstothePages)
-  - [Login Page (1)](#Login.BasicSetup-LoginPage%281%29)
-  - [Forgot Password (2)](#Login.BasicSetup-ForgotPassword%282%29)
-  - [Reset Password Handler (3)](#Login.BasicSetup-ResetPasswordHandler%283%29)
-  - [Members Home Page (4)](#Login.BasicSetup-MembersHomePage%284%29)
-  - [Come Again Soon (5)](#Login.BasicSetup-ComeAgainSoon%285%29)
-- [Optional](#Login.BasicSetup-Optional)
-  - [Logout Page](#Login.BasicSetup-LogoutPage)
-- [Possible Errors](#Login.BasicSetup-PossibleErrors)
-  - [I can't log in!](#Login.BasicSetup-Ican%27tlogin%5C%21)
-  - [I can't log out!](#Login.BasicSetup-Ican%27tlogout%5C%21)
-  - [Login errors are not displayed](#Login.BasicSetup-Loginerrorsarenotdisplayed)
-  - [Error HTTP 500 (Internal Server Error)](#Login.BasicSetup-ErrorHTTP500%28InternalServerError%29)
-
-
-
  This tutorial catalogs which pages you need to set up and the Snippets that belong on each page. At the end of this tutorial, you will have a setup which will allow users to log in via the front-end of your website, but the users must be manually created by an admin in the manager. There is a [separate tutorial](extras/revo/login/login.tutorials/login.request-membership "Login.Request Membership") for establishing a process where users can request membership themselves.
 
  Even a basic setup of a login portal involves a lot of inter-related parts, and the setup demonstrated here puts pretty much everything on its own page. A cleaner implementation might involve putting some of the functions listed below inside chunks or templates instead of on their own dedicated pages, but this page should give enough information to get a login portal established.
 
  All the pages here use a sample **page\_id** for reference. 
-
-- - - - - -
 
 ## Create the Required Pages
 
@@ -42,8 +22,6 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  Next, you'll want to prepare the necessary rights and permissions for users and resources on your site.
 
-- - - - - -
-
 ## Create the Necessary User Groups and Resource Groups
 
  MODx Revolution includes some pretty head-splitting granularity when it comes to [Permissions](administering-your-site/security/policies/permissions "Permissions"), but here is a basic schema to get you started. (Have a look at [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages "Making Member-Only Pages") for more detailed explanation.)
@@ -54,8 +32,6 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 - Create Parallel User Group: **checked**
 - Automatically Give Anonymous Access: _UNCHECKED_
 - Automatically Give Other User Groups Access: _blank_
-
-
 
  If you are using an older version of MODX or you just want to enhance your understanding of the process, you can follow the manual steps below:
 
@@ -95,8 +71,6 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  Now circle back to add the various Snippet (adjust the Snippet calls so they point to the corresponding pages on your system).
 
-- - - - - -
-
 ## Add Snippets to the Pages
 
 ### Login Page (1)
@@ -104,15 +78,20 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
  Put the following Snippet call on your login page:
 
  ``` php 
-[[!Login? &loginTpl=`lgnLoginTpl` &logoutTpl=`lgnLogoutTpl` &errTpl=`lgnErrTpl` &loginResourceId=`4` &logoutResourceId=`5`]]
-
+[[!Login? 
+&loginTpl=`lgnLoginTpl` 
+&logoutTpl=`lgnLogoutTpl` 
+&errTpl=`lgnErrTpl` 
+&loginResourceId=`4` 
+&logoutResourceId=`5`
+]]
 ```
 
  Then save the page. You'll notice that the Snippet call has a lot of arguments – many of those arguments reference the names of Chunks. When you installed the Login Add-on, many of these Chunks were already created for you (look under the Elements tab), but sometimes you may want to create your own Chunks and update the Snippet parameters to reference their names. In this example, we are customizing the **lgnLoginTpl** Chunk.
 
  The Chunk that displays the login form should also include a link to the "Forgot Password" page; this is so we only display that link to users who have not logged in yet. Here is an example of the **lgnLoginTpl** Chunk, so either create a Chunk of that name or edit the existing Chunk so it matches the following:
 
- ``` php 
+ ``` html 
 <div class="loginForm">
     <div class="loginMessage">[[+errors]]</div>
     <div class="loginLogin">
@@ -134,7 +113,6 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
     </div>
 </div>
 <a href="[[~2]]">Forgot your Password?</a>
-
 ```
 
  You may choose to put the link to "Forgot your Password" inside your template and keep it out of the Chunk, it's really up to you. As long as your site is clean and organized and you're not putting chunks within chunks within chunks, then you should be Ok.
@@ -147,7 +125,6 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  ``` php 
 [[!ForgotPassword? &resetResourceId=`3` &tpl=`lgnForgotPassTpl`]]
-
 ```
 
  Here's what the flow looks like, just so you can follow what we're doing here:
@@ -162,7 +139,6 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  ``` php 
 [[!ResetPassword? &loginResourceId=`1`]]
-
 ```
 
  Remember to ensure the **Forgot Password (2)** and **Reset Password Handler (3)** pages are published.
@@ -179,9 +155,8 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  This is the page that people see after a successful logout. It needs only to contain a basic message, or perhaps a link back to the Login page:
 
- ``` php 
+ ``` html 
 <p>Thank you for visiting! Come again soon!</p>
-
 ```
 
 ## Optional
@@ -196,14 +171,12 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  ``` php 
 [[~1? &service=`logout`]]
-
 ```
 
  This is effectively the same as adding a Logout link like this to your pages:
 
- ``` php 
+ ``` html 
 <a href="[[~1? &service=`logout`]]" title="Logout">Logout</a>
-
 ```
 
 ## Possible Errors
@@ -218,14 +191,12 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  ``` php 
 [[!Login]]
-
 ```
 
  and **not**
 
  ``` php 
 [[Login]]
-
 ```
 
 ### I can't log out!

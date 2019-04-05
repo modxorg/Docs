@@ -4,14 +4,6 @@ _old_id: "904"
 _old_uri: "revo/login/login.confirmregister"
 ---
 
-- [What is ConfirmRegister?](#Login.ConfirmRegister-WhatisConfirmRegister%3F)
-- [Usage](#Login.ConfirmRegister-Usage)
-  - [Default Properties](#Login.ConfirmRegister-DefaultProperties)
-  - [Events](#Login.ConfirmRegister-Events)
-- [See Also](#Login.ConfirmRegister-SeeAlso)
-
-
-
 ## What is ConfirmRegister? 
 
 ConfirmRegister is a simple snippet that confirms a registration by a User from the [Register](/extras/revo/login/login.register "Login.Register") snippet, when 'activation' in that snippet is set to 1 (the default). It is placed on a separate, "Registration Activated" page.
@@ -42,13 +34,13 @@ This would send the User the email specified in the "myActivationEmailTpl" chunk
 
 ConfirmRegister has some default properties packaged into it. They are:
 
-| Name | Description | Default |
-|------|-------------|---------|
-| redirectTo | Optional. After a successful confirmation, redirect to this Resource. |  |
-| redirectParams | Optional. A JSON object of parameters to pass when redirecting using redirectTo. |  |
-| authenticate | Authenticate and login the user to the current context after confirming registration. | 1 |
-| authenticateContexts | Optional. A comma-separated list of contexts to authenticate to. Defaults to the current context. |  |
-| errorPage | Optional. If set, will redirect user to a custom error page if they try to access this page after activating their account. |
+| Name                 | Description                                                                                                                 | Default |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------- |
+| redirectTo           | Optional. After a successful confirmation, redirect to this Resource.                                                       |         |
+| redirectParams       | Optional. A JSON object of parameters to pass when redirecting using redirectTo.                                            |         |
+| authenticate         | Authenticate and login the user to the current context after confirming registration.                                       | 1       |
+| authenticateContexts | Optional. A comma-separated list of contexts to authenticate to. Defaults to the current context.                           |         |
+| errorPage            | Optional. If set, will redirect user to a custom error page if they try to access this page after activating their account. |
 
 ### Events 
 
@@ -66,10 +58,10 @@ ConfirmRegister also fires the [OnUserActivate](developing-in-modx/basic-develop
 7. [Login.ResetPassword](/extras/revo/login/login.resetpassword)
 8. [Login.ChangePassword](/extras/revo/login/login.changepassword)
 9. [Login.Tutorials](/extras/revo/login/login.tutorials)
-  1. [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup)
-  2. [Login.Extended User Profiles](/extras/revo/login/login.tutorials/login.extended-user-profiles)
-  3. [Login.Request Membership](/extras/revo/login/login.tutorials/login.request-membership)
-  4. [Login.User Profiles](/extras/revo/login/login.tutorials/login.user-profiles)
-  5. [Login.Using Custom Fields](/extras/revo/login/login.tutorials/login.using-custom-fields)
-  6. [Login.Using Pre and Post Hooks](/extras/revo/login/login.tutorials/login.using-pre-and-post-hooks)
+  2. [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup)
+  3. [Login.Extended User Profiles](/extras/revo/login/login.tutorials/login.extended-user-profiles)
+  4. [Login.Request Membership](/extras/revo/login/login.tutorials/login.request-membership)
+  5. [Login.User Profiles](/extras/revo/login/login.tutorials/login.user-profiles)
+  6. [Login.Using Custom Fields](/extras/revo/login/login.tutorials/login.using-custom-fields)
+  7. [Login.Using Pre and Post Hooks](/extras/revo/login/login.tutorials/login.using-pre-and-post-hooks)
 10. [Login.Roadmap](/extras/revo/login/login.roadmap)

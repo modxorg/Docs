@@ -4,13 +4,6 @@ _old_id: "1773"
 _old_uri: "revo/defaultresourcegroup"
 ---
 
-- [What is DefaultResourceGroup?](#DefaultResourceGroup-WhatisDefaultResourceGroup)
-- [Package Information](#DefaultResourceGroup-Information)
-- [History](#DefaultResourceGroup-History)
-- [Download](#DefaultResourceGroup-Download)
-- [Development and Bug Reporting](#DefaultResourceGroup-DevelopmentandBugReporting)
-- [Documentation](#DefaultResourceGroup-Documentation)
- 
 ## What is DefaultResourceGroup?
 
 Assigns new resources to one or more resource groups or allows new resources to inherit their parent's resource groups.

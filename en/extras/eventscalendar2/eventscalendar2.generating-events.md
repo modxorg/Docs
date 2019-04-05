@@ -4,12 +4,6 @@ _old_id: "835"
 _old_uri: "revo/eventscalendar2/eventscalendar2.generating-events"
 ---
 
-- [Example](#eventsCalendar2.Generatingevents-Example)
-- [Usage](#eventsCalendar2.Generatingevents-Usage)
-- [See Also](#eventsCalendar2.Generatingevents-SeeAlso)
-
-
-
 ## Example
 
 It is not built-in snippet, it example of snippet for generating events. Save this code as snippet eventsGenerator and you may used it for debugging.

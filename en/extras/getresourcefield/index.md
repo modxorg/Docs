@@ -4,16 +4,6 @@ _old_id: "653"
 _old_uri: "revo/getresourcefield"
 ---
 
-- [What is getResourceField?](#getResourceField-WhatisgetResourceField%3F)
-- [History](#getResourceField-History)
-  - [Download](#getResourceField-Download)
-- [Usage](#getResourceField-Usage)
-  - [getResourceField parameters](#getResourceField-getResourceFieldparameters)
-  - [Examples](#getResourceField-Examples)
-- [Errors](#getResourceField-Errors)
-
-
-
 ## What is getResourceField?
 
 getResourceField is a simple snippet which can be used to display a single field, including template variables, of a different resource for MODx Revolution.
@@ -38,13 +28,13 @@ This will output the pagetitle of the current resource.
 
 ### getResourceField parameters
 
-| Name | Description | Default value |
-|------|-------------|---------------|
-| id | The resource ID to get the field from. | $modx->resource->get('id') |
-| field | The field or template variable name to return. | ?pagetitle |
-| isTV | When set to 1 or true, the field is considered to be a template variable. | false |
-| processTV | When set to 1 or true, the template variable will be processed according to its output settings. | false |
-| default | The value (string) to return if the field is not found or is empty. |  |
+| Name      | Description                                                                                      | Default value              |
+| --------- | ------------------------------------------------------------------------------------------------ | -------------------------- |
+| id        | The resource ID to get the field from.                                                           | $modx->resource->get('id') |
+| field     | The field or template variable name to return.                                                   | ?pagetitle                 |
+| isTV      | When set to 1 or true, the field is considered to be a template variable.                        | false                      |
+| processTV | When set to 1 or true, the template variable will be processed according to its output settings. | false                      |
+| default   | The value (string) to return if the field is not found or is empty.                              |                            |
 
 ### Examples
 

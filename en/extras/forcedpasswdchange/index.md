@@ -4,16 +4,6 @@ _old_id: "643"
 _old_uri: "revo/forcedpasswdchange"
 ---
 
-- [What is ForcedPasswdChange?](#ForcedPasswdChange-WhatisForcedPasswdChange%3F)
-  - [Requirements](#ForcedPasswdChange-Requirements)
-  - [History](#ForcedPasswdChange-History)
-  - [Download](#ForcedPasswdChange-Download)
-- [Development and Bug Reporting](#ForcedPasswdChange-DevelopmentandBugReporting)
-- [Howto use it](#ForcedPasswdChange-Howtouseit)
-- [Events](#ForcedPasswdChange-Events)
-
-
-
 ## What is ForcedPasswdChange?
 
 With the ForcedPasswdChange you can create or update an user and activate the forced change of their password in the Manager. When checked this option, the user can login but can't do anything untill they have changed their password succesful.

@@ -27,10 +27,8 @@ _old_uri: "revo/fx2themebase/fx2-included-extras"
   
    Usage: this simply returns true or false. Used in the BlogHomeTemplate to change the property set for the getResourcesTag snippet call, like this:
   
-   ```
-  
+   ``` php
   [[!requestCategory:is=`1`:then=`@categories`]]
-  	
   ```
 
 ### Plugins

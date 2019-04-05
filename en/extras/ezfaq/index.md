@@ -4,13 +4,6 @@ _old_id: "1777"
 _old_uri: "revo/ezfaq"
 ---
 
-- [What is EZfaq?](#EZfaq-WhatisEZfaq)
-- [Package Information](#EZfaq-Information)
-- [History](#EZfaq-History)
-- [Download](#EZfaq-Download)
-- [Development and Bug Reporting](#EZfaq-DevelopmentandBugReporting)
-- [Documentation](#EZfaq-Documentation)
- 
 ## What is EZfaq?
 
  Creates an FAQ page with questions and expandable answers.

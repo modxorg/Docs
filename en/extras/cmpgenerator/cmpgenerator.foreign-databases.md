@@ -4,13 +4,6 @@ _old_id: "810"
 _old_uri: "revo/cmpgenerator/cmpgenerator.foreign-databases"
 ---
 
-- [Using Foreign Databases](#CMPGenerator.ForeignDatabases-UsingForeignDatabases)
-  - [Basic Snippet Code Example](#CMPGenerator.ForeignDatabases-BasicSnippetCodeExample)
-  - [Advanced Snippet Code Example](#CMPGenerator.ForeignDatabases-AdvancedSnippetCodeExample)
-- [See Also](#CMPGenerator.ForeignDatabases-SeeAlso)
-
-
-
 ## Using Foreign Databases
 
 Added in 1.1
@@ -23,7 +16,8 @@ When you run the CMPGenerator fill in the database name and if needed the table 
 
 ### Basic Snippet Code Example
 
-**Example code** ``` php 
+**Example code** 
+``` php 
 <?php
 require_once $modx->getOption('core_path').'config/foreigndb_config.php';
 
@@ -85,7 +79,6 @@ $output .= '
 </table>';
 
 return $output;
-
 ```
 
 Example of schema and foreign DB from James Ehly 
@@ -97,7 +90,8 @@ Example of schema and foreign DB from James Ehly
 
 The above code will create a new connection for each snippet call. So if you have 2 or 3 snippet calls to your snippet that is using a foreign db it will lag. So I wrote a simple class that will save you db connection so you don't have to reconnect each time.
 
-**foreignconnect.class.php** ``` php 
+**foreignconnect.class.php** 
+``` php 
 class ForeignConnect {
     /**
      * @var (Array) of db_dsn => (Object) the xPDO instance
@@ -141,12 +135,12 @@ class ForeignConnect {
         self::$instance = array();
     }
 }
-
 ```
 
 Now create a config file that can be required for each snippet call:
 
-**Custom** ``` php 
+**Custom** 
+``` php 
 $database_type = 'mysql';
 
 $database_server = 'localhost';
@@ -157,12 +151,12 @@ $database_connection_charset = 'utf8';
 $dbase = 'foreign_db';
 $table_prefix = '';
 $database_dsn = $database_type.':host='.$database_server.';dbname='.$dbase.';charset='.$database_connection_charset;
-
 ```
 
 Then the first few lines of the snippet will looks like this instead:
 
-**Snippet** ``` php 
+**Snippet** 
+``` php 
 require $modx->getOption('core_path').'/config/foreign_config.inc.php';
 
 $output = '';// this is what the snippet will return
@@ -171,7 +165,6 @@ $package_path = $modx->getOption('core_path').'components/foreigndb/model/';
 require_once $package_path.'foreignconnect.class.php';
 
 $foreignDB = ForeignConnect::getInstance($database_dsn, $database_user, $database_password); // returns an xPDO instance
-
 ```
 
 ## See Also

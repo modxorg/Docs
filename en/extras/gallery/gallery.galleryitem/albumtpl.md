@@ -10,26 +10,24 @@ _old_uri: "revo/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl"
 
 ## Default Value
 
- ``` php 
-
+ ``` html 
 <span class="gal-item-album"><a href="[[~[[*id]]]]?[[+albumRequestVar]]=[[+id]]">[[+name]]</a></span>
-
 ```
 
 ## Available Placeholders
 
- | Name | Description |
-|------|-------------|
-| id | The ID of the Album. |
-| name | The name of the Album. |
-| parent | The parent ID of the Album. Defaults to 0. |
-| description | The description of the Album. |
-| createdon | A timestamp of when the Album was created. |
-| createdby | The ID of the User that created this Album. |
-| rank | The 'rank', or order, in which this Album is stored as. |
-| active | Whether or not this Album is marked "Active". Can be 1 or 0. |
-| prominent | Whether or not this Album is marked "Prominent". Can be 1 or 0. |
-| albumRequestVar | The albumRequestVar parameter passed to the [GalleryItem](/extras/revo/gallery/gallery.galleryitem "Gallery.GalleryItem") snippet. Defaults to galAlbum. |
+ | Name            | Description                                                                                                                                              |
+ | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | id              | The ID of the Album.                                                                                                                                     |
+ | name            | The name of the Album.                                                                                                                                   |
+ | parent          | The parent ID of the Album. Defaults to 0.                                                                                                               |
+ | description     | The description of the Album.                                                                                                                            |
+ | createdon       | A timestamp of when the Album was created.                                                                                                               |
+ | createdby       | The ID of the User that created this Album.                                                                                                              |
+ | rank            | The 'rank', or order, in which this Album is stored as.                                                                                                  |
+ | active          | Whether or not this Album is marked "Active". Can be 1 or 0.                                                                                             |
+ | prominent       | Whether or not this Album is marked "Prominent". Can be 1 or 0.                                                                                          |
+ | albumRequestVar | The albumRequestVar parameter passed to the [GalleryItem](/extras/revo/gallery/gallery.galleryitem "Gallery.GalleryItem") snippet. Defaults to galAlbum. |
 
 ## See Also
 

@@ -10,17 +10,17 @@ This is the Chunk displayed with the &pathTpl property on the [FileLister](/extr
 
 ## Default Value
 
-``` php 
+``` html 
 <a href="[[~[[*id]]]]?[[+navKey]]=[[+key]]">[[+dir]]</a>[[+separator]]
 ```
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
-| dir | The directory name. |
-| key | The generated hash key for navigation. |
-| navKey | The navKey being used for link generation. |
+| Name      | Description                                  |
+| --------- | -------------------------------------------- |
+| dir       | The directory name.                          |
+| key       | The generated hash key for navigation.       |
+| navKey    | The navKey being used for link generation.   |
 | separator | The passed in separator between directories. |
 
 ## See Also

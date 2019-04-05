@@ -4,18 +4,6 @@ _old_id: "856"
 _old_uri: "revo/formit/formit.hooks/"
 ---
 
-- [FormIt Hooks](#FormIt.Hooks-FormItHooks)
-  - [Using preHooks](#FormIt.Hooks-UsingpreHooks)
-  - [Using hooks](#FormIt.Hooks-Usinghooks)
-- [Built-In Hooks](#FormIt.Hooks-BuiltInHooks)
-- [Custom Hooks](#FormIt.Hooks-CustomHooks)
-  - [Registering custom hooks](#FormIt.Hooks-Registeringcustomhooks)
-  - [Accessing the FormIt fields in the Hook](#FormIt.Hooks-AccessingtheFormItfieldsintheHook)
-  - [Custom hook return values](#FormIt.Hooks-Customhookreturnvalues)
-- [File-based Hooks](#FormIt.Hooks-FilebasedHooks)
-
-
-
 ## FormIt Hooks
 
  Hooks are basically scripts that run during FormIt processing. The hooks always execute in the order they appear in the property. If, for example, you have an email hook followed by a validation hook, the email will be sent before the validation occurs. If any hook fails, the ones following it will not execute.
@@ -34,7 +22,6 @@ _old_uri: "revo/formit/formit.hooks/"
 
  ``` php 
 [[!FormIt? &preHooks=`loadCustomValues`]]
-
 ```
 
  Would then run the 'loadCustomValues' snippet before loading the form. You could then set fields on the form like so:
@@ -44,7 +31,6 @@ _old_uri: "revo/formit/formit.hooks/"
 $hook->setValue('name','John Doe');
 $hook->setValue('email','john.doe@fake-emails.com');
 return true;
-
 ```
 
  Or alternatively using ->setValues:
@@ -56,7 +42,6 @@ $hook->setValues(array(
   'email' => 'john.doe@fake-emails.com',
 ));
 return true;
-
 ```
 
  Note that using the **setValues()** method here will make the corresponding placeholders available to your email chunk; the effect of manually setting values is similar to adding hidden fields to your form.
@@ -66,7 +51,6 @@ return true;
  ``` php 
 $hook->addError('user','User not found.');
 return $hook->hasErrors();
-
 ```
 
 ### Using renderHooks
@@ -86,12 +70,7 @@ foreach ($values as $value) {
 	$fields[] = $modx->getChunk('fieldChunk', $value);
 }
 $modx->toPlaceholder('extraFields', implode(PHP_EOL, $fields));
-
 ```
-
-### 
-
-### 
 
 With the new hook system it's more easy to generate custom forms from sessions, database or api data.
 
@@ -101,7 +80,6 @@ Simply specify the hook in the 'hooks' property in your FormIt snippet call. For
 
  ``` php 
 [[!FormIt? &hooks=`spam,email`]]
-
 ```
 
 ## Built-In Hooks
@@ -132,7 +110,6 @@ Simply specify the hook in the 'hooks' property in your FormIt snippet call. For
  ``` php 
 $email = $hook->getValue('email');
 $allFormFields = $hook->getValues();
-
 ```
 
  If you want to **set** fields, however, you'll need to access them this way:
@@ -143,14 +120,12 @@ $hook->setValues(array(
   'name' => 'John Doe',
   'books' => 'Hunger Games,To Kill a Mockingbird,Mindset',
 ));
-
 ```
 
  If you want to set an array field (i.e. a checkbox group with the same name, a select multiple field) in a preHook, you have to json\_encode the array value.
 
  ``` php 
 $hook->setValue('hobbies',json_encode(array('music','films','books')));
-
 ```
 
 ### Accessing FormIt scriptProperties (config)
@@ -159,10 +134,7 @@ $hook->setValue('hobbies',json_encode(array('music','films','books')));
 
  ``` php 
 $hook->formit->config['key']
-
 ```
-
-### 
 
 ### Custom hook return values
 
@@ -174,7 +146,6 @@ $hook->formit->config['key']
 $errorMsg = 'User not found';
 $hook->addError('user',$errorMsg);
 return false;
-
 ```
 
  Again, remember - if your hook succeeds, make sure you have "return true;" at the end of your Hook. If you use "return false;" or do not return a value, FormIt will assume the Hook failed. Also, be sure that any custom hooks you specify come before the redirect hook in the hooks property.
@@ -187,7 +158,6 @@ return false;
 [[!FormIt? 
   &hooks=`[[++assets_path]]hooks/my.hook.php`
 ]]
-
 ```
 
  This will evaluate the MODX tags in the hook line, and then look for the hook at assets/hooks/my.hook.php. If the file is found, it will evaluate the hook from there.

@@ -6,14 +6,6 @@ _old_uri: "revo/discuss/discuss.installation/discuss.installation-from-git"
 
 In order to work with Discuss from Git, there are a few extra steps we will need to take.
 
-- [1. Fork & Clone](#Discuss.InstallationfromGit-1.Fork%26Clone)
-- [2. Build a Package](#Discuss.InstallationfromGit-2.BuildaPackage)
-- [3. Install Discuss from package](#Discuss.InstallationfromGit-3.InstallDiscussfrompackage)
-- [4. Hook up your versioned Discuss Repository to your Forum](#Discuss.InstallationfromGit-4.HookupyourversionedDiscussRepositorytoyourForum)
-- [5. Have fun.](#Discuss.InstallationfromGit-5.Havefun.%26nbsp%3B)
-
-
-
 ## 1. Fork & Clone
 
 Discuss is maintained on Github and to properly allow external contributions, we will need you to fork the main repository and clone it to your local environment. If you are new to Git, please follow the [interactive Git tutorial on Github](http://try.github.com) to get started. Next, if you don't already have a fork and/or local clone, follow these simple steps:

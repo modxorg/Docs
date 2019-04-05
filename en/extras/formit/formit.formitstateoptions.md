@@ -4,13 +4,6 @@ _old_id: "854"
 _old_uri: "revo/formit/formit.formitstateoptions"
 ---
 
-- [What is FormItStateOptions?](#FormIt.FormItStateOptions-WhatisFormItStateOptions%3F)
-- [Usage](#FormIt.FormItStateOptions-Usage)
-  - [FormItStateOptions Properties](#FormIt.FormItStateOptions-FormItStateOptionsProperties)
-- [See Also](#FormIt.FormItStateOptions-SeeAlso)
-
-
-
 ## What is FormItStateOptions?
 
 FormItStateOptions is an assistance snippet for [FormIt](/extras/revo/formit "FormIt") 1.7.0+ that will output an option list of U.S. states. It is useful for forms that need a dropdown list of U.S. states.
@@ -31,13 +24,13 @@ Note how we are passing the value of the "fi.state" placeholder (which stores th
 
 FormItStateOptions comes with some default properties you can override. They are:
 
-| Name | Description | Default |
-|------|-------------|---------|
-| selected | The country value to select. |  |
-| selectedAttribute | Optional. The HTML attribute to add to a selected country. | selected="selected" |
-| tpl | Optional. The chunk to use for each country dropdown option. |  |
-| useAbbr | If 1, will use the state abbreviation for the value. If 0, will use the full state name. | 1 |
-| toPlaceholder | Optional. Use this to set the output to a placeholder instead of outputting directly. |  |
+| Name              | Description                                                                              | Default             |
+| ----------------- | ---------------------------------------------------------------------------------------- | ------------------- |
+| selected          | The country value to select.                                                             |                     |
+| selectedAttribute | Optional. The HTML attribute to add to a selected country.                               | selected="selected" |
+| tpl               | Optional. The chunk to use for each country dropdown option.                             |                     |
+| useAbbr           | If 1, will use the state abbreviation for the value. If 0, will use the full state name. | 1                   |
+| toPlaceholder     | Optional. Use this to set the output to a placeholder instead of outputting directly.    |                     |
 
 ## See Also
 
@@ -51,10 +44,10 @@ FormItStateOptions comes with some default properties you can override. They are
 2. [FormIt.Validators](/extras/revo/formit/formit.validators)
 3. [FormIt.FormItRetriever](/extras/revo/formit/formit.formitretriever)
 4. [FormIt.Tutorials and Examples](/extras/revo/formit/formit.tutorials-and-examples)
-  1. [FormIt.Examples.Custom Hook](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
-  2. [FormIt.Examples.Simple Contact Page](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
-  3. [FormIt.Handling Selects, Checkboxes and Radios](/extras/revo/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
-  4. [FormIt.Using a Blank NoSpam Field](/extras/revo/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
+  7. [FormIt.Examples.Custom Hook](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
+  8. [FormIt.Examples.Simple Contact Page](/extras/revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
+  9. [FormIt.Handling Selects, Checkboxes and Radios](/extras/revo/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
+  10. [FormIt.Using a Blank NoSpam Field](/extras/revo/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
 5. [FormIt.Roadmap](/extras/revo/formit/formit.roadmap)
 6. [FormIt.FormItCountryOptions](/extras/revo/formit/formit.formitcountryoptions)
 7. [FormIt.FormItStateOptions](/extras/revo/formit/formit.formitstateoptions)

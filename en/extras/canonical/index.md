@@ -4,13 +4,6 @@ _old_id: "1767"
 _old_uri: "revo/canonical"
 ---
 
-- [What is Canonical?](#Canonical-WhatisCanonical)
-- [Package Information](#Canonical-Information)
-- [History](#Canonical-History)
-- [Download](#Canonical-Download)
-- [Development and Bug Reporting](#Canonical-DevelopmentandBugReporting)
-- [Documentation](#Canonical-Documentation)
- 
 ## What is Canonical?
 
 The Canonical snippet puts a canonical link tag in the head section of your HTML. It executes only for Symlinks, and prevents search engines from penalizing you for duplicate content.

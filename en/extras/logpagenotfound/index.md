@@ -4,13 +4,6 @@ _old_id: "1784"
 _old_uri: "revo/logpagenotfound"
 ---
 
-- [What is LogPageNotFound?](#LogPageNotFound-WhatisLogPageNotFound)
-- [Package Information](#LogPageNotFound-Information)
-- [History](#LogPageNotFound-History)
-- [Download](#LogPageNotFound-Download)
-- [Development and Bug Reporting](#LogPageNotFound-DevelopmentandBugReporting)
-- [Documentation](#LogPageNotFound-Documentation)
- 
 ## What is LogPageNotFound?
 
 The LogPageNotFound plugin for MODX Revolution logs all requests that result in a 404 (page not found) error. It will not slow down the site, because it only executes when a page is not found.

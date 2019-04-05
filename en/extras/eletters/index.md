@@ -4,18 +4,6 @@ _old_id: "634"
 _old_uri: "revo/eletters"
 ---
 
-- [Overview of GroupEletters](#Eletters-OverviewofGroup%7B%7DEletters)
-  - [Features](#Eletters-Features)
-  - [Requirements](#Eletters-Requirements)
-- [History](#Eletters-History)
-- [Bug Reporting and Contribute](#Eletters-BugReportingandContribute)
-- [Installation](#Eletters-Installation)
-- [Updating GroupEletters 1.0 to Eletters 1.1+](#Eletters-UpdatingGroupEletters1.0toEletters1.1%5C)
-- [How to Use](#Eletters-HowtoUse)
-- [See Also](#Eletters-SeeAlso)
-
-
-
 ## Overview of GroupEletters
 
 GroupEletters is a Addon for MODX Revolution that allows you to create & send beautiful email campaigns within MODX! You can now take advantage of MODX advanced template features to create custom eletter templates. Easily manage lists & subscribers and allow subscribers to manage their own preferences. Personalize your emails with some default placeholders.

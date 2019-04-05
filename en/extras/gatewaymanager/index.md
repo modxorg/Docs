@@ -4,15 +4,6 @@ _old_id: "648"
 _old_uri: "revo/gatewaymanager"
 ---
 
-- [What is GatewayManager?](#GatewayManager-WhatisGatewayManager%3F)
-  - [Requirements](#GatewayManager-Requirements)
-  - [History](#GatewayManager-History)
-  - [Download](#GatewayManager-Download)
-- [Development and Bug Reporting](#GatewayManager-DevelopmentandBugReporting)
-- [Howto use it](#GatewayManager-Howtouseit)
-
-
-
 ## What is GatewayManager?
 
 With the GatewayManager you're able to make your domains available for certain context inside your MODX installation. You even can link a resource as new startpage and the GatewayManager provides a placeholder with the original URL (useful for canonical tags).

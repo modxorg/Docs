@@ -4,21 +4,6 @@ _old_id: "909"
 _old_uri: "revo/login/login.register"
 ---
 
-- [What is Register?](#Login.Register-WhatisRegister%3F)
-- [Usage](#Login.Register-Usage)
-  - [Default Properties](#Login.Register-DefaultProperties)
-  - [Validators](#Login.Register-Validators)
-  - [Custom Validators](#Login.Register-CustomValidators)
-- [Post-Validation](#Login.Register-PostValidation)
-  - [Assigning User to User Groups](#Login.Register-AssigningUsertoUserGroups)
-  - [Sending an Activation Email](#Login.Register-SendinganActivationEmail)
-  - [Redirecting to a Resource After Validation](#Login.Register-RedirectingtoaResourceAfterValidation)
-  - [Display a Success Message](#Login.Register-DisplayaSuccessMessage)
-- [Typical Setup](#Login.Register-TypicalSetup)
-- [See Also](#Login.Register-SeeAlso)
-
-
-
 ##  What is Register? 
 
  Register is a registration form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets"). An example call can be found [here](/extras/revo/login/login.register/register.example-form-1 "Register.Example Form 1").
@@ -31,39 +16,39 @@ _old_uri: "revo/login/login.register"
 
  Register has some default properties packaged into it. They are:
 
-| Name | Description | Default |
-|------|-------------|---------|
-| activation | Whether or not to require activation for proper registration. If true, users will not be marked active until they have activated their account. Defaults to true. Will only work if the registration form passes an email field. | 1 |
-| activationEmailSubject | The subject of the activation email. |  |
-| activationEmailTpl | The activation email tpl. The text of the email includes a link where users can activate their new account and their username and (generated) password. | lgnActivateEmailTpl |
-| activationEmailTplType | The type of tpls being provided for the activation email. | modChunk |
-| activationResourceId | The Resource ID where the ConfirmRegister snippet for activation is located. | 1 |
-| activationttl | Number of minutes until the activation email expires. Defaults to 3 hours. | 180 |
-| autoLogin | Whether or not to automatically login the User after successful registration. (Requires activation = 0) | 0 |
-| customValidators | A comma-separated list of custom validator names (snippets) you plan to use in this form. They must be explicitly stated here, or they will not be run. |  |
-| emailField | The name of the field to use for the new User's email address. | email |
-| ensurePasswordStrength | If set to Yes, Register will ensure the user enters a strong enough password. Strong passwords are passwords with multiple words or non-alphabetic characters in them. | 0 |
-| ensurePasswordStrengthSuggestions | If ensurePasswordStrength is set to Yes, and the password fails the strength test, Register will supply this many number of suggestions to the user for their password. | 5 |
-| excludeExtended | A comma-separated list of fields to exclude from setting as extended fields. |  |
-| generatePassword | If set to Yes, Register will generate a random password for the user, overwriting any passed password. Useful for automatic generation of passwords. | 0 |
-| maximumPossibleStrongerPasswords | If ensurePasswordStrength is set to Yes, then this is the maximum amount of suggestions that Register can find to consider the supplied password "strong". Making this number higher makes the check more lenient; lower makes it tougher. | 25 |
-| minimumStrongPasswordWordCount | If ensurePasswordStrength is set to Yes, if a supplied password has this many words, then it will be consider a strong password. | 3 |
-| moderatedResourceId | If a prehook sets the user as moderated, then send to this Resource instead of the submittedResourceId. Leave blank to bypass. |  |
-| passwordField | The name of the field to use for the new User's password. | password |
-| passwordWordSeparator | If ensurePasswordStrength is set to Yes, this will be the separator between words when determining how many words are in a supplied password. |  |
-| persistParams | Optional. A JSON object of parameters to persist across the register process. Useful when using redirect on ConfirmRegister to redirect to another page (eg, for shopping carts). |  |
-| preHooks | A comma-separated list of 'hooks', or Snippets, that will be executed before the user is registered but after validation. Also can specify 'recaptcha' as a hook. |  |
-| postHooks | A comma-separated list of 'hooks', or Snippets, that will be executed after the user is registered. |  |
-| submitVar | The var to check for to load the Register functionality. If empty or set to false, Register will process the form on all POST requests. | login-register-btn |
-| successMsg | Optional. If not redirecting using the submittedResourceId parameter, will display this message instead. |  |
-| submittedResourceId | If set, will redirect to the specified Resource after the User submits the registration form. |  |
-| trimPassword | If set to Yes, Register will trim the password of whitespace at the beginning and end when processing it. | 1 |
-| useExtended | Whether or not to set any extra fields in the form to the Profiles extended field. This can be useful for storing extra user fields. | 1 |
-| usergroups | Optional. A comma-separated list of User Group names or IDs to add the newly-registered User to. |  |
-| usergroupsField | Optional. The name of the field to use for the new User's usergroups, eg: using checkbox or radio input. |  |
-| usernameField | The name of the field to use for the new User's username. | username |
-| validate | A comma-separated list of fields to validate, with each field name as name:validator (eg: username:required,email:required). Validators can also be chained, like email:email:required. This property can be specified on multiple lines. |  |
-| validatePassword | Whether or not to validate the sent password when registering. Recommended to leave this Yes unless you are generating your own password in a hook. | 1 |
+| Name                              | Description                                                                                                                                                                                                                                | Default             |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
+| activation                        | Whether or not to require activation for proper registration. If true, users will not be marked active until they have activated their account. Defaults to true. Will only work if the registration form passes an email field.           | 1                   |
+| activationEmailSubject            | The subject of the activation email.                                                                                                                                                                                                       |                     |
+| activationEmailTpl                | The activation email tpl. The text of the email includes a link where users can activate their new account and their username and (generated) password.                                                                                    | lgnActivateEmailTpl |
+| activationEmailTplType            | The type of tpls being provided for the activation email.                                                                                                                                                                                  | modChunk            |
+| activationResourceId              | The Resource ID where the ConfirmRegister snippet for activation is located.                                                                                                                                                               | 1                   |
+| activationttl                     | Number of minutes until the activation email expires. Defaults to 3 hours.                                                                                                                                                                 | 180                 |
+| autoLogin                         | Whether or not to automatically login the User after successful registration. (Requires activation = 0)                                                                                                                                    | 0                   |
+| customValidators                  | A comma-separated list of custom validator names (snippets) you plan to use in this form. They must be explicitly stated here, or they will not be run.                                                                                    |                     |
+| emailField                        | The name of the field to use for the new User's email address.                                                                                                                                                                             | email               |
+| ensurePasswordStrength            | If set to Yes, Register will ensure the user enters a strong enough password. Strong passwords are passwords with multiple words or non-alphabetic characters in them.                                                                     | 0                   |
+| ensurePasswordStrengthSuggestions | If ensurePasswordStrength is set to Yes, and the password fails the strength test, Register will supply this many number of suggestions to the user for their password.                                                                    | 5                   |
+| excludeExtended                   | A comma-separated list of fields to exclude from setting as extended fields.                                                                                                                                                               |                     |
+| generatePassword                  | If set to Yes, Register will generate a random password for the user, overwriting any passed password. Useful for automatic generation of passwords.                                                                                       | 0                   |
+| maximumPossibleStrongerPasswords  | If ensurePasswordStrength is set to Yes, then this is the maximum amount of suggestions that Register can find to consider the supplied password "strong". Making this number higher makes the check more lenient; lower makes it tougher. | 25                  |
+| minimumStrongPasswordWordCount    | If ensurePasswordStrength is set to Yes, if a supplied password has this many words, then it will be consider a strong password.                                                                                                           | 3                   |
+| moderatedResourceId               | If a prehook sets the user as moderated, then send to this Resource instead of the submittedResourceId. Leave blank to bypass.                                                                                                             |                     |
+| passwordField                     | The name of the field to use for the new User's password.                                                                                                                                                                                  | password            |
+| passwordWordSeparator             | If ensurePasswordStrength is set to Yes, this will be the separator between words when determining how many words are in a supplied password.                                                                                              |                     |
+| persistParams                     | Optional. A JSON object of parameters to persist across the register process. Useful when using redirect on ConfirmRegister to redirect to another page (eg, for shopping carts).                                                          |                     |
+| preHooks                          | A comma-separated list of 'hooks', or Snippets, that will be executed before the user is registered but after validation. Also can specify 'recaptcha' as a hook.                                                                          |                     |
+| postHooks                         | A comma-separated list of 'hooks', or Snippets, that will be executed after the user is registered.                                                                                                                                        |                     |
+| submitVar                         | The var to check for to load the Register functionality. If empty or set to false, Register will process the form on all POST requests.                                                                                                    | login-register-btn  |
+| successMsg                        | Optional. If not redirecting using the submittedResourceId parameter, will display this message instead.                                                                                                                                   |                     |
+| submittedResourceId               | If set, will redirect to the specified Resource after the User submits the registration form.                                                                                                                                              |                     |
+| trimPassword                      | If set to Yes, Register will trim the password of whitespace at the beginning and end when processing it.                                                                                                                                  | 1                   |
+| useExtended                       | Whether or not to set any extra fields in the form to the Profiles extended field. This can be useful for storing extra user fields.                                                                                                       | 1                   |
+| usergroups                        | Optional. A comma-separated list of User Group names or IDs to add the newly-registered User to.                                                                                                                                           |                     |
+| usergroupsField                   | Optional. The name of the field to use for the new User's usergroups, eg: using checkbox or radio input.                                                                                                                                   |                     |
+| usernameField                     | The name of the field to use for the new User's username.                                                                                                                                                                                  | username            |
+| validate                          | A comma-separated list of fields to validate, with each field name as name:validator (eg: username:required,email:required). Validators can also be chained, like email:email:required. This property can be specified on multiple lines.  |                     |
+| validatePassword                  | Whether or not to validate the sent password when registering. Recommended to leave this Yes unless you are generating your own password in a hook.                                                                                        | 1                   |
 
 ###  Validators 
 
@@ -214,10 +199,10 @@ return true;
 7. [Login.ResetPassword](/extras/revo/login/login.resetpassword)
 8. [Login.ChangePassword](/extras/revo/login/login.changepassword)
 9. [Login.Tutorials](/extras/revo/login/login.tutorials)
-  1. [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup)
-  2. [Login.Extended User Profiles](/extras/revo/login/login.tutorials/login.extended-user-profiles)
-  3. [Login.Request Membership](/extras/revo/login/login.tutorials/login.request-membership)
-  4. [Login.User Profiles](/extras/revo/login/login.tutorials/login.user-profiles)
-  5. [Login.Using Custom Fields](/extras/revo/login/login.tutorials/login.using-custom-fields)
-  6. [Login.Using Pre and Post Hooks](/extras/revo/login/login.tutorials/login.using-pre-and-post-hooks)
+  2. [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup)
+  3. [Login.Extended User Profiles](/extras/revo/login/login.tutorials/login.extended-user-profiles)
+  4. [Login.Request Membership](/extras/revo/login/login.tutorials/login.request-membership)
+  5. [Login.User Profiles](/extras/revo/login/login.tutorials/login.user-profiles)
+  6. [Login.Using Custom Fields](/extras/revo/login/login.tutorials/login.using-custom-fields)
+  7. [Login.Using Pre and Post Hooks](/extras/revo/login/login.tutorials/login.using-pre-and-post-hooks)
 10. [Login.Roadmap](/extras/revo/login/login.roadmap)

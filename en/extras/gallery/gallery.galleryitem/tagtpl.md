@@ -10,19 +10,17 @@ _old_uri: "revo/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl"
 
 ## Default Value
 
- ``` php 
-
+ ``` php
 <span class="gal-item-tag"><a href="[[~[[*id]]]]?[[+tagRequestVar]]=[[+tag]]">[[+tag]]</a></span>
-
 ```
 
 ## Available Placeholders
 
- | Name | Description |
-|------|-------------|
-| tag | The Tag value. |
-| item | The ID of the Item. |
-| tagRequestVar | The tagRequestVar parameter passed to the [GalleryItem](/extras/revo/gallery/gallery.galleryitem "Gallery.GalleryItem") snippet. Defaults to galTag. |
+ | Name          | Description                                                                                                                                          |
+ | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | tag           | The Tag value.                                                                                                                                       |
+ | item          | The ID of the Item.                                                                                                                                  |
+ | tagRequestVar | The tagRequestVar parameter passed to the [GalleryItem](/extras/revo/gallery/gallery.galleryitem "Gallery.GalleryItem") snippet. Defaults to galTag. |
 
 ## See Also
 

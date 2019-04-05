@@ -4,18 +4,6 @@ _old_id: "656"
 _old_uri: "revo/googlesitemap/"
 ---
 
-- [What is GoogleSiteMap?](#GoogleSiteMap-WhatisGoogleSiteMap%3F)
-- [Requirements](#GoogleSiteMap-Requirements)
-- [History and Info](#GoogleSiteMap-HistoryandInfo)
-  - [Download](#GoogleSiteMap-Download)
-  - [Development and Bug Reporting](#GoogleSiteMap-DevelopmentandBugReporting)
-- [Usage](#GoogleSiteMap-Usage)
-  - [Snippets](#GoogleSiteMap-Snippets)
-- [Examples](#GoogleSiteMap-Examples)
-- [See Also](#GoogleSiteMap-SeeAlso)
- 
-
-
 ## What is GoogleSiteMap?
 
  GoogleSiteMap is a snippet that will display a Google-customized SiteMap for your site.
@@ -59,17 +47,13 @@ _old_uri: "revo/googlesitemap/"
  Display a Google SiteMap for tens of thousands of Resources.
 
  ``` php 
-
 [[!GoogleSiteMap]]
-
 ```
 
  Display a Google SiteMap for a more modest number of Resources, using a custom item template Chunk.
 
  ``` php 
-
 [[!GoogleSiteMap? &itemTpl=`myCustomTpl`]]
-
 ```
 
  Note: the latter example would result in the legacy Snippet being called and will time-out if a huge number of nodes need to be generated. 

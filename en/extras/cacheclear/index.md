@@ -4,13 +4,6 @@ _old_id: "1765"
 _old_uri: "revo/cacheclear"
 ---
 
-- [What is CacheClear?](#CacheClear-WhatisCacheClear)
-- [Package Information](#CacheClear-Information)
-- [History](#CacheClear-History)
-- [Download](#CacheClear-Download)
-- [Development and Bug Reporting](#CacheClear-DevelopmentandBugReporting)
-- [Documentation](#CacheClear-Documentation)
- 
 ## What is CacheClear?
 
 CacheClear is an extra for MODX Revolution that deletes all files in the MODX core/cache directory. It is for people who may not have shell or FTP access to a site or who want a convenient way to completely empty the cache in the MODX Manager.

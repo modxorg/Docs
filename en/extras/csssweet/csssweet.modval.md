@@ -8,13 +8,13 @@ _old_uri: "revo/csssweet/csssweet.modval"
 
  Examples:
 
-```
+``` php
 [[modval?input=`4px`&options=`*3`]]
 ```
 
  Results: '12px'
 
-```
+``` php
 [[+line_height:modval=`/2`]]
 ```
 

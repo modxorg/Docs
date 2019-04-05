@@ -14,23 +14,23 @@ _old_uri: "revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl
 
 ## Available Placeholders
 
- | Name | Description |
-|------|-------------|
-| albums | The Album rows. |
-| nav.first | The ID of the first Album. |
-| nav.prev | The ID of the previous Album. |
-| nav.current | The ID of the current Album. |
-| nav.next | The ID of the next Album. |
-| nav.last | The ID of the last Album. |
-| nav.curIdx | The index of the current Album. |
-| nav.count | The count of the Album rows. |
-| albumRequestVar | The albumRequestVar parameter passed to the [GalleryAlbums](extras/revo/gallery/gallery.galleryalbums) snippet. Defaults to galAlbum. |
+ | Name            | Description                                                                                                                           |
+ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+ | albums          | The Album rows.                                                                                                                       |
+ | nav.first       | The ID of the first Album.                                                                                                            |
+ | nav.prev        | The ID of the previous Album.                                                                                                         |
+ | nav.current     | The ID of the current Album.                                                                                                          |
+ | nav.next        | The ID of the next Album.                                                                                                             |
+ | nav.last        | The ID of the last Album.                                                                                                             |
+ | nav.curIdx      | The index of the current Album.                                                                                                       |
+ | nav.count       | The count of the Album rows.                                                                                                          |
+ | albumRequestVar | The albumRequestVar parameter passed to the [GalleryAlbums](extras/revo/gallery/gallery.galleryalbums) snippet. Defaults to galAlbum. |
 
 ##  Example 
 
  The following example shows possible placeholders. It displays a previous/next gallery navigation in an album or a gallery overview.
 
- ``` php 
+ ``` html 
 [[+nav.curIdx:ne=`<div>
 <ul>
 <li>
@@ -48,7 +48,6 @@ _old_uri: "revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl
 `:else=`<div>
 [[+albums]]
 </div>`]]
-
 ```
 
 ## See Also

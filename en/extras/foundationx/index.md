@@ -4,15 +4,6 @@ _old_id: "646"
 _old_uri: "revo/foundationx"
 ---
 
-- [What is FoundationX?](#FoundationX-WhatisFoundationX%3F)
-- [Requirements](#FoundationX-Requirements)
-- [History](#FoundationX-History)
-  - [Current Version](#FoundationX-CurrentVersion)
-- [Installation](#FoundationX-Installation)
-- [Next Steps...](#FoundationX-NextSteps...)
-
-
-
 ## What is FoundationX? 
 
 FoundationX is a MODX implementation of Zurb's responsive CSS framework, Foundation.

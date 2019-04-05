@@ -4,16 +4,6 @@ _old_id: "627"
 _old_uri: "revo/discuss"
 ---
 
-- [What is Discuss?](#Discuss-WhatisDiscuss%3F)
-  - [Requirements](#Discuss-Requirements)
-  - [History](#Discuss-History)
-  - [Development and Bug Reporting](#Discuss-DevelopmentandBugReporting)
-- [Getting Started](#Discuss-GettingStarted)
-- [What's Next](#Discuss-What%27sNext)
-- [See Also](#Discuss-SeeAlso)
-
-
-
 ## What is Discuss?
 
 Discuss is a native forum solution for MODX Revolution.

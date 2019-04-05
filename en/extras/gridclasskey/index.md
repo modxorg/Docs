@@ -4,16 +4,6 @@ _old_id: "1707"
 _old_uri: "revo/gridclasskey"
 ---
 
-- [Settings](#GridClassKey-Settings)
-  - [Fields](#GridClassKey-Settings-Fields)
-  - [Container's Settings](#GridClassKey-Settings-Containers-Settings)
-  - [Example of Custom Javascript](#GridClassKey-Settings-Containers-Settings-Examples)
-      - [Adding a dropdown filter](#GridClassKey-Settings-Containers-Settings-Example-1)
-      - [Custom Editor](#GridClassKey-Settings-Containers-Settings-Example-2)
-- [Permissions](#GridClassKey-Permissions)
-
-
-
  GridClassKey is a custom class key for MODX Revolution's Manager to hide child resources inside container's grid.
 
  You can switch the current resource to be this class key, AND it can be reverted back to the usual modResource by changing the Resource Type inside the Settings tab.

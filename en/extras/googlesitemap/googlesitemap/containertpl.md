@@ -18,9 +18,9 @@ This is the Chunk displayed with the &containerTpl property on the [GoogleSiteMa
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
-| items | The result items. |
+| Name   | Description            |
+| ------ | ---------------------- |
+| items  | The result items.      |
 | schema | The Google Schema URL. |
 
 ## See Also

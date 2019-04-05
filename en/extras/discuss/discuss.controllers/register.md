@@ -6,21 +6,14 @@ _old_uri: "revo/discuss/discuss.controllers/discuss.controllers.register"
 
 The Register controller is used for either showing a registration form, or when **discuss.sso\_mode** is enabled (recommended), to redirect the user to the registration resource.
 
-- [Basic Information](#Discuss.Controllers.register-BasicInformation)
-- [Options](#Discuss.Controllers.register-Options)
-- [Controller Template](#Discuss.Controllers.register-ControllerTemplate)
-- [System Events](#Discuss.Controllers.register-SystemEvents)
-
-
-
 ## Basic Information
 
-| Since Version | 1.0 |
-|---------------|-----|
-| Controller File | controllers/web/register.class.php |
-| Controller Class Name | DiscussRegisterController |
-| Controller Template | pages/register.tpl (only used if sso\_mode=0) |
-| Manifest Name | register |
+| Since Version         | 1.0                                           |
+| --------------------- | --------------------------------------------- |
+| Controller File       | controllers/web/register.class.php            |
+| Controller Class Name | DiscussRegisterController                     |
+| Controller Template   | pages/register.tpl (only used if sso\_mode=0) |
+| Manifest Name         | register                                      |
 
 ## Options
 
@@ -42,9 +35,8 @@ There are no specific placeholders to use in this controller template.
     &activationEmailSubject=`Thanks for Registering!`
     &usergroups=`Forum New Member`
 ]]
-
-
-
+```
+``` html
 <form class="dis-form dis-register" action="[[~[[*id]]]]register" method="post">
     <h2>[[%discuss.register? &namespace=`discuss` &topic=`web`]]</h2>
     <span class="error">[[+error.spam_empty]]</span>

@@ -4,12 +4,6 @@ _old_id: "1024"
 _old_uri: "revo/loginza/tpl.loginza.logout"
 ---
 
-- [Description](#tpl.Loginza.logout-Description)
-- [Placeholders](#tpl.Loginza.logout-Placeholders)
-- [See Also](#tpl.Loginza.logout-SeeAlso)
-
-
-
 ## Description
 
 This is chunk for authenticated users. It is display full name of logged in user and link to exit.

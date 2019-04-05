@@ -18,13 +18,13 @@ This is the Chunk displayed with the &directoryTpl property on the [FileLister](
 
 ## Available Placeholders
 
-| Name | Description |
-|------|-------------|
-| link | The link to browse the directory. |
-| filename | The basename of the directory. |
-| path | The absolute path to the directory. |
+| Name         | Description                                                                                                                                           |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| link         | The link to browse the directory.                                                                                                                     |
+| filename     | The basename of the directory.                                                                                                                        |
+| path         | The absolute path to the directory.                                                                                                                   |
 | relativePath | The relative path to the 'path' property passed into the [FileLister](/extras/revo/filelister/filelister.filelister "FileLister.FileLister") snippet. |
-| navKey | The navKey being used for link generation. |
+| navKey       | The navKey being used for link generation.                                                                                                            |
 
 ## See Also
 

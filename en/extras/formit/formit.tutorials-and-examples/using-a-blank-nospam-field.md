@@ -14,7 +14,7 @@ FormIt provides you with the "blank" validator, which can be used to achieve a "
 
 Simply add the following input into your form. You can change the name of the field at any time; using commonly used field names like "workemail" can be used to trick spambots into filling in the field:
 
-``` php 
+``` html 
 <input type="hidden" name="workemail" value="" />
 ```
 

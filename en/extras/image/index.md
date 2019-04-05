@@ -4,15 +4,6 @@ _old_id: "1678"
 _old_uri: "revo/image"
 ---
 
-- [What is Image+?](#Image%2B-WhatisImage%3F)
-- [Requirements](#Image%2B-Requirements)
-- [History & Info](#Image%2B-History%26Info)
-  - [Download](#Image%2B-Download)
-  - [Development & Bug Reporting](#Image%2B-Development%26BugReporting)
-- [Documentation](#Image%2B-Documentation)
-
-
-
 ## What is Image+?
 
  Image+ is an advanced image custom template variable type for MODx Revolution. The dimensions for the uploaded image can (optionally) be configured to constrain a minimal width and/or height. The image crop could be forced to remain at a pre-set ratio. A graphical tool could be used to crop the image to the required dimensions/proportions.

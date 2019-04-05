@@ -4,13 +4,6 @@ _old_id: "1783"
 _old_uri: "revo/loglogins"
 ---
 
-- [What is LogLogins?](#LogLogins-WhatisLogLogins)
-- [Package Information](#LogLogins-Information)
-- [History](#LogLogins-History)
-- [Download](#LogLogins-Download)
-- [Development and Bug Reporting](#LogLogins-DevelopmentandBugReporting)
-- [Documentation](#LogLogins-Documentation)
- 
 ## What is LogLogins?
 
 Once LogLogins is installed it will automatically record user logins and logouts to the Manager Actions Log for both Manager and front-end logins. It will report the time, the username, and the context(s) involved.

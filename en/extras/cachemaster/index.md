@@ -4,13 +4,6 @@ _old_id: "1766"
 _old_uri: "revo/cachemaster"
 ---
 
-- [What is CacheMaster?](#CacheMaster-WhatisCacheMaster)
-- [Package Information](#CacheMaster-Information)
-- [History](#CacheMaster-History)
-- [Download](#CacheMaster-Download)
-- [Development and Bug Reporting](#CacheMaster-DevelopmentandBugReporting)
-- [Documentation](#CacheMaster-Documentation)
- 
 ## What is CacheMaster?
 
 On a large site, MODX's default behavior of clearing the cache for all Resources whenever you save a Resource or Element can really slow things down for your visitors. The CacheMaster Plugin for MODX Revolution allows you to have the cache cleared for a single Resource or Element when you save it, without clearing anything else.

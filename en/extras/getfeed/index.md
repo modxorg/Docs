@@ -4,18 +4,6 @@ _old_id: "650"
 _old_uri: "revo/getfeed"
 ---
 
-- [What is getFeed?](#getFeed-WhatisgetFeed%3F)
-- [Requirements](#getFeed-Requirements)
-- [History](#getFeed-History)
-  - [Download](#getFeed-Download)
-  - [Development and Bug Reporting](#getFeed-DevelopmentandBugReporting)
-- [Usage](#getFeed-Usage)
-  - [Available Properties](#getFeed-AvailableProperties)
-  - [Chunk Placeholders](#getFeed-ChunkPlaceholders)
-- [Examples](#getFeed-Examples)
-
-
-
 ## What is getFeed?
 
 A simple snippet to retrieve an RSS feed and iterate the feed items using a Chunk.
@@ -49,14 +37,14 @@ getFeed is used by placing the Snippet call into your content and passing a 'url
 
 ### Available Properties
 
-| Name | Description | Default |
-|------|-------------|---------|
-| url | URL of the feed to retrieve. |  |
-| tpl | Name of a chunk to serve as an item tpl. If blank, will output the placeholders as arrays. |  |
-| limit | Limit the number of items to return; 0 is no limit. | 0 |
-| offset | The zero-based index of the item to start at in the feed results. | 0 |
-| totalVar | The name of a placeholder where the total number of items in the feed is stored. For getPage compatibility. | total |
-| toPlaceholder | If set, will set the output to this placeholder name. If not set, will output directly the results. |  |
+| Name          | Description                                                                                                 | Default |
+| ------------- | ----------------------------------------------------------------------------------------------------------- | ------- |
+| url           | URL of the feed to retrieve.                                                                                |         |
+| tpl           | Name of a chunk to serve as an item tpl. If blank, will output the placeholders as arrays.                  |         |
+| limit         | Limit the number of items to return; 0 is no limit.                                                         | 0       |
+| offset        | The zero-based index of the item to start at in the feed results.                                           | 0       |
+| totalVar      | The name of a placeholder where the total number of items in the feed is stored. For getPage compatibility. | total   |
+| toPlaceholder | If set, will set the output to this placeholder name. If not set, will output directly the results.         |         |
 
 ### Chunk Placeholders
 

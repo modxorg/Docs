@@ -4,16 +4,6 @@ _old_id: "624"
 _old_uri: "revo/cronmanager"
 ---
 
-- [What is Cron Manager](#CronManager-WhatisCronManager)
-- [Installation](#CronManager-Installation)
-- [Usage examples](#CronManager-Usageexamples)
-  - [Create new cronjob](#CronManager-Createnewcronjob)
-  - [Explanation of the overview](#CronManager-Explanationoftheoverview)
-  - [Log for each cronjob](#CronManager-Logforeachcronjob)
-- [Development and bug reporting](#CronManager-Developmentandbugreporting)
-
-
-
 ## What is Cron Manager 
 
 The cron manager for MODx makes it possible to execute snippets by the crontab of the server. By using the manager of MODx Revolution you can simply add new snippets to the cron list.

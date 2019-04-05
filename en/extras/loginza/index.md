@@ -4,15 +4,6 @@ _old_id: "669"
 _old_uri: "revo/loginza"
 ---
 
-- [Description](#Loginza-Description)
-  - [Requirements](#Loginza-Requirements)
-  - [Download](#Loginza-Download)
-  - [Development and Bug Reporting](#Loginza-DevelopmentandBugReporting)
-- [Usage](#Loginza-Usage)
-- [See Also](#Loginza-SeeAlso)
-
-
-
 ## Description
 
 This is component for OpenID 2.0 account provider [Loginza](http://loginza.ru/?lang=en). It is an identification system that provides a single method of logging into popular web-services. Twitter, Google, Facebook etc.

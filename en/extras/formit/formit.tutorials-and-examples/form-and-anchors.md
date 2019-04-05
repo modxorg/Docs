@@ -16,7 +16,6 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/form-and-anchors"
 </div>
 ... Your input fields here ...
 </form>
-
 ```
 
 1\. Add an anchor to the action.

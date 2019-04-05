@@ -4,30 +4,6 @@ _old_id: "654"
 _old_uri: "revo/getresources"
 ---
 
-- [What is getResources?](#getResources-WhatisgetResources%3F)
-- [Requirements](#getResources-Requirements)
-- [History](#getResources-History)
-  - [Download](#getResources-Download)
-- [Usage](#getResources-Usage)
-  - [Available Properties](#getResources-AvailableProperties)
-      - [Templating Properties](#getResources-TemplatingProperties)
-      - [Selection Properties](#getResources-SelectionProperties)
-      - [Other Properties](#getResources-OtherProperties)
-  - [Available Placeholders](#getResources-AvailablePlaceholders)
-- [Examples](#getResources-Examples)
-- [Displaying Template Variables with getResources](#getResources-DisplayingTemplateVariableswithgetResources)
-- [Using getPage for Pagination](#getResources-UsinggetPageforPagination)
-  - [Examples](#getResources-Examples)
-- [Troubleshooting](#getResources-Troubleshooting)
-  - [Nothing Happens](#getResources-NothingHappens)
-  - [Array of Attributes is Dumped](#getResources-ArrayofAttributesisDumped)
-  - [The same resource is output multiple times _(1.2.2 and prior releases)_](#getResources-Thesameresourceisoutputmultipletimes%281.2.2andpriorreleases%29)
-  - [The Content isn't There](#getResources-TheContentisn%27tThere)
-  - [Caching problems using tpl, tpl\_N, tpl\_nN, tplFirst, tplLast or tplOdd](#getResources-Cachingproblemsusingtpl%2CtplN%2CtplnN%2CtplFirst%2CtplLastortplOdd)
-- [See Also](#getResources-SeeAlso)
-
-
-
 ##  What is getResources? 
 
  A general purpose Resource listing and summarization snippet.
@@ -53,39 +29,37 @@ _old_uri: "revo/getresources"
 
  The getResources snippet can be called using the tag:
 
- ``` php 
-    [[getResources]]
-
+``` php 
+[[getResources]]
 ```
 
  Prior to version 1.6.1-pl, calls without the &tpl property specified will output an array of each Resource in the result set, and its fields. Since version 1.6.1-pl this behaviour has changed and you will have to use "&debug=`1`" to get the full result:
 
- ``` php 
-    [[getResources? &debug=`1`]] [[getResources? &parents=`choose_an_id` &debug=`1`]]
-
+``` php 
+[[getResources? &debug=`1`]] [[getResources? &parents=`choose_an_id` &debug=`1`]]
 ```
 
 ###  Available Properties 
 
 ####  Templating Properties 
 
- | Name | Description | Default Value | Added in version |
-|------|-------------|---------------|------------------|
-| tpl | Name of a chunk serving as a resource template. If not provided, properties are dumped to output for each resource |  |  |
-| tplOdd | Name of a chunk serving as resource template for resources with an odd idx value (see idx property) |  |  |
-| tplFirst | Name of a chunk serving as resource template for the first resource |  |  |
-| tplLast | Name of a chunk serving as resource template for the last resource |  |  |
-| tpl\_N | Name of a chunk serving as resource template for the Nth resource, for example &tpl\_4=`tpl4th` |  |  |
-| tpl\_nN | Name of a chunk serving as resource template for every Nth resource, for example &tpl\_n4=`tpl4th` would apply to any item divisible by 4 |  | 1.4.1 |
-| tplCondition | Defines a field of the resource to evaluate against keys defined in the &conditionalTpls property. Must be a resource field; does not work with Template Variables. |  | 1.5.0 |
-| conditionalTpls | A JSON object defining a map of field values and the associated tpl Chunks to use when the field defined by &tplCondition matches the value _:_ &conditionalTpls=`{"1":"tplA","2":"tplB","3":"tplC"}`
-_\[NOTE: tplOdd, tplFirst, tplLast, \* and tpl\_{n} will take precedence over any defined conditionalTpls\]_ |  | 1.5.0 |
-| tplPath | An optional directory to look for file-based chunks when using @FILE | _assets\_path_+ "elements/chunks/" |  |
-| tplWrapper | Name of a chunk serving as a wrapper template for the output \[NOTE: Does not work with toSeparatePlaceholders\]. The placeholder where the items are inserted is \[\[+output\]\]. |  | 1.6.0 |
-| wrapIfEmpty | If true, will output the wrapper specified in &tplWrapper even if the output is empty. | false | 1.6.0 |
-| outputSeparator | An optional string to separate each tpl instance (delimiter) | "\\n" |  |
-| toPlaceholder | If set, will assign the result to this placeholder instead of outputting it directly. |  |  |
-| toSeparatePlaceholders | If set, will assign EACH result to a separate placeholder named by this param suffixed with a sequential number (starting from 0). |  | 1.3.0 |
+ | Name                                                                                                         | Description                                                                                                                                                                                           | Default Value                      | Added in version |
+ | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ---------------- |
+ | tpl                                                                                                          | Name of a chunk serving as a resource template. If not provided, properties are dumped to output for each resource                                                                                    |                                    |                  |
+ | tplOdd                                                                                                       | Name of a chunk serving as resource template for resources with an odd idx value (see idx property)                                                                                                   |                                    |                  |
+ | tplFirst                                                                                                     | Name of a chunk serving as resource template for the first resource                                                                                                                                   |                                    |                  |
+ | tplLast                                                                                                      | Name of a chunk serving as resource template for the last resource                                                                                                                                    |                                    |                  |
+ | tpl\_N                                                                                                       | Name of a chunk serving as resource template for the Nth resource, for example &tpl\_4=`tpl4th`                                                                                                       |                                    |                  |
+ | tpl\_nN                                                                                                      | Name of a chunk serving as resource template for every Nth resource, for example &tpl\_n4=`tpl4th` would apply to any item divisible by 4                                                             |                                    | 1.4.1            |
+ | tplCondition                                                                                                 | Defines a field of the resource to evaluate against keys defined in the &conditionalTpls property. Must be a resource field; does not work with Template Variables.                                   |                                    | 1.5.0            |
+ | conditionalTpls                                                                                              | A JSON object defining a map of field values and the associated tpl Chunks to use when the field defined by &tplCondition matches the value _:_ &conditionalTpls=`{"1":"tplA","2":"tplB","3":"tplC"}` |
+ | _\[NOTE: tplOdd, tplFirst, tplLast, \* and tpl\_{n} will take precedence over any defined conditionalTpls\]_ |                                                                                                                                                                                                       | 1.5.0                              |
+ | tplPath                                                                                                      | An optional directory to look for file-based chunks when using @FILE                                                                                                                                  | _assets\_path_+ "elements/chunks/" |                  |
+ | tplWrapper                                                                                                   | Name of a chunk serving as a wrapper template for the output \[NOTE: Does not work with toSeparatePlaceholders\]. The placeholder where the items are inserted is \[\[+output\]\].                    |                                    | 1.6.0            |
+ | wrapIfEmpty                                                                                                  | If true, will output the wrapper specified in &tplWrapper even if the output is empty.                                                                                                                | false                              | 1.6.0            |
+ | outputSeparator                                                                                              | An optional string to separate each tpl instance (delimiter)                                                                                                                                          | "\\n"                              |                  |
+ | toPlaceholder                                                                                                | If set, will assign the result to this placeholder instead of outputting it directly.                                                                                                                 |                                    |                  |
+ | toSeparatePlaceholders                                                                                       | If set, will assign EACH result to a separate placeholder named by this param suffixed with a sequential number (starting from 0).                                                                    |                                    | 1.3.0            |
 
  **@FILE and @INLINE tpls** 
  You can prefix any tpl property with @FILE or @INLINE to use a file-based chunk or inline markup respectively. - **@FILE**— This prefix allows you to provide a file instead of a Chunk in the database as the tpl. The path and filename you specify will by default, unless you specify a custom _tplPath_property, searche for the @FILE tpl relative to your configured assets\_path + "elements/chunks/".
@@ -104,22 +78,19 @@ _\[NOTE: tplOdd, tplFirst, tplLast, \* and tpl\_{n} will take precedence over an
 | tvFilters | Can be used to filter resources by certain TV values. These are entered as \[( _tvname_)( _operator_)\]( _value_). There are two delimiters you can use to combine filter conditions.  You can have "OR" filters using two pipe symbols. An OR filter fetches resources that has one of the listed TV values.
 
  ``` php 
-                    mytv==somevalue||mytv==othervalue
-		
+   mytv==somevalue||mytv==othervalue
 ```
 
  You can also use an "and" filter using a comma. This will make sure that all the conditions are met.
 
  ``` php 
-                    mytv==somevalue,othertv==othervalue
-		
+   mytv==somevalue,othertv==othervalue
 ```
 
  For advanced filtering you can also group these. It is important to know that conditions are first separated based on the OR (||) delimiter, and after that on the AND (,) delimiter. So let's take this hypothetical example:
 
  ``` php 
-                    mytv==foo||mytv==bar,bartv==3||bartv==1
-		
+   mytv==foo||mytv==bar,bartv==3||bartv==1
 ```
 
  This will filter resources to meet one of the following conditions:
@@ -130,22 +101,19 @@ _\[NOTE: tplOdd, tplFirst, tplLast, \* and tpl\_{n} will take precedence over an
    The examples above search for exact values. You can also use the percentage sign (%) as a wildcard. For example:
  
 ``` php 
-                    mytv==%a%
-		
+   mytv==%a%
 ```
 
  Matches any resources that has an "a" in the mytv value.
 
  ``` php 
-                    mytv==a%
-		
+   mytv==a%	
 ```
 
  Matches any resources that have a mytv value that starts with an "a"
 
  ``` php 
-                    mytv==%a
-		
+   mytv==%a	
 ```
 
  Matches any resources that have a mytv value that ends with an "a".
@@ -155,22 +123,22 @@ _\[NOTE: tplOdd, tplFirst, tplLast, \* and tpl\_{n} will take precedence over an
  It is important to know that this function **looks at the raw value of a template variable**for a specific resource. This means that **the value has been explicitly set for the resource**, and that it has not been **processed by a template variable output type**( **or is the default value** _in releases prior to 1.4.2-pl; this release adds support for filtering that includes default values_). So if you have an "autotag" tv, this means the raw value is a comma delimited list, and it is not split up in tags like you see it in the manager. 
 
  **New filter operators available in 1.4.2-pl** 
- Starting with release 1.4.2-pl of getResources, there are a number of new comparison operators for use when creating filter conditions. In addition, when using many of these new operators, numeric comparison values are automatically CAST TV values to numeric before comparison. Here is a list of the valid operators: | Filter Operator | SQL Operator | CASTs numerics | Notes |
-|-----------------|--------------|----------------|-------|
-| <=> | <=> | Yes | _NULL safe equals_ |
-| === | = | Yes |  |
-| !== | != | Yes |  |
-| <> | <> | Yes |  |
-| == | LIKE | No |  |
-| != | NOT LIKE | No |  |
-| << | < | Yes |  |
-| <= | <= | Yes |  |
-| =< | =< | Yes |  |
-| >> | > | Yes |  |
-| >= | >= | Yes |  |
-| => | => | Yes |  |
-|  | |  |
-| sortby | [Any Resource Field](making-sites-with-modx/structuring-your-site/resources#Resources-ResourcesResourceFields) (_excluding Template Variables. See below for the 'sortbyTV' property_). Some common fields to sort on are publishedon, menuindex, pagetitle etc, but see the Resources documentation for all fields. Specify fields with the name only, not using the tag syntax. Note that when using fields like template, publishedby and the likes for sorting, it will be sorted on the raw values, so the template or user ID, and NOT their names.
+ | Starting with release 1.4.2-pl of getResources, there are a number of new comparison operators for use when creating filter conditions. In addition, when using many of these new operators, numeric comparison values are automatically CAST TV values to numeric before comparison. Here is a list of the valid operators: | Filter Operator                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | SQL Operator | CASTs numerics     | Notes |
+ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------ |
+ | <=>                                                                                                                                                                                                                                                                                                                          | <=>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Yes          | _NULL safe equals_ |
+ | ===                                                                                                                                                                                                                                                                                                                          | =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Yes          |                    |
+ | !==                                                                                                                                                                                                                                                                                                                          | !=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Yes          |                    |
+ | <>                                                                                                                                                                                                                                                                                                                           | <>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Yes          |                    |
+ | ==                                                                                                                                                                                                                                                                                                                           | LIKE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | No           |                    |
+ | !=                                                                                                                                                                                                                                                                                                                           | NOT LIKE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | No           |                    |
+ | <<                                                                                                                                                                                                                                                                                                                           | <                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Yes          |                    |
+ | <=                                                                                                                                                                                                                                                                                                                           | <=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Yes          |                    |
+ | =<                                                                                                                                                                                                                                                                                                                           | =<                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Yes          |                    |
+ | >>                                                                                                                                                                                                                                                                                                                           | >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Yes          |                    |
+ | >=                                                                                                                                                                                                                                                                                                                           | >=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Yes          |                    |
+ | =>                                                                                                                                                                                                                                                                                                                           | =>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Yes          |                    |
+ |                                                                                                                                                                                                                                                                                                                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |              |
+ | sortby                                                                                                                                                                                                                                                                                                                       | [Any Resource Field](making-sites-with-modx/structuring-your-site/resources#Resources-ResourcesResourceFields) (_excluding Template Variables. See below for the 'sortbyTV' property_). Some common fields to sort on are publishedon, menuindex, pagetitle etc, but see the Resources documentation for all fields. Specify fields with the name only, not using the tag syntax. Note that when using fields like template, publishedby and the likes for sorting, it will be sorted on the raw values, so the template or user ID, and NOT their names. |
 
  You can also sort randomly by specifying RAND(), like so: ``` php 
                     &sortby=`RAND()`
@@ -219,25 +187,25 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 
 ####  Other Properties 
 
- | Name | Description | Default Value | Added in version |
-|------|-------------|---------------|------------------|
-| showUnpublished | If true, will also show Resources if they are unpublished. | 0 |  |
-| showDeleted | If true, will also show Resources regardless if they are deleted. | 0 |  |
-| showHidden | If true, will show Resources regardless if they are hidden from the menus. | 0 |  |
-| hideContainers | If set, will not show any Resources marked as a container (isfolder). | 0 |  |
-| includeContent | Indicates if the content of each resource should be returned in the results | 0 |  |
-| includeTVs | Indicates if TemplateVar values should be included in the properties available to each resource template | 0 |  |
-| includeTVList | An optional comma-delimited list of TemplateVar names to include explicitly if includeTVs is 1 |  | 1.4.0 |
-| prepareTVs | Prepares media source-dependant TemplateVar values. | 1 | 1.5.0 |
-| prepareTVList | Limits the TVs that are prepared to those specified by name in a comma-delimited list |  | 1.5.0 |
-| processTVs | Indicates if TemplateVar values should be rendered as they would on the resource being summarized. TemplateVars must be included (see includeTVs/includeTVList) to be processed. | 0 |  |
-| processTVList | An optional comma-delimited list of TemplateVar names to process explicitly. TemplateVars specified here must be included via includeTVs/includeTVList |  | 1.4.0 |
-| tvPrefix | The prefix for TemplateVar properties | tv. |  |
-| idx | You can define the starting idx of the resources, which is an property that is incremented as each resource is rendered | 1 |  |
-| first | Define the idx which represents the first resource | 1 |  |
-| last | Define the idx which represents the last resource. Default is # of resources being summarized + first - 1 |  |  |
-| totalVar | Define the key of a placeholder set by getResources indicating the total number of Resources that would be selected **not**considering the _limit_value. | total |  |
-| debug | If true, will send the SQL query to the MODX log. | false |  |
+ | Name            | Description                                                                                                                                                                      | Default Value | Added in version |
+ | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------- |
+ | showUnpublished | If true, will also show Resources if they are unpublished.                                                                                                                       | 0             |                  |
+ | showDeleted     | If true, will also show Resources regardless if they are deleted.                                                                                                                | 0             |                  |
+ | showHidden      | If true, will show Resources regardless if they are hidden from the menus.                                                                                                       | 0             |                  |
+ | hideContainers  | If set, will not show any Resources marked as a container (isfolder).                                                                                                            | 0             |                  |
+ | includeContent  | Indicates if the content of each resource should be returned in the results                                                                                                      | 0             |                  |
+ | includeTVs      | Indicates if TemplateVar values should be included in the properties available to each resource template                                                                         | 0             |                  |
+ | includeTVList   | An optional comma-delimited list of TemplateVar names to include explicitly if includeTVs is 1                                                                                   |               | 1.4.0            |
+ | prepareTVs      | Prepares media source-dependant TemplateVar values.                                                                                                                              | 1             | 1.5.0            |
+ | prepareTVList   | Limits the TVs that are prepared to those specified by name in a comma-delimited list                                                                                            |               | 1.5.0            |
+ | processTVs      | Indicates if TemplateVar values should be rendered as they would on the resource being summarized. TemplateVars must be included (see includeTVs/includeTVList) to be processed. | 0             |                  |
+ | processTVList   | An optional comma-delimited list of TemplateVar names to process explicitly. TemplateVars specified here must be included via includeTVs/includeTVList                           |               | 1.4.0            |
+ | tvPrefix        | The prefix for TemplateVar properties                                                                                                                                            | tv.           |                  |
+ | idx             | You can define the starting idx of the resources, which is an property that is incremented as each resource is rendered                                                          | 1             |                  |
+ | first           | Define the idx which represents the first resource                                                                                                                               | 1             |                  |
+ | last            | Define the idx which represents the last resource. Default is # of resources being summarized + first - 1                                                                        |               |                  |
+ | totalVar        | Define the key of a placeholder set by getResources indicating the total number of Resources that would be selected **not**considering the _limit_value.                         | total         |                  |
+ | debug           | If true, will send the SQL query to the MODX log.                                                                                                                                | false         |                  |
 
 ###  Available Placeholders 
 
@@ -249,9 +217,9 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 
  In addition there are the following placeholders:
 
- | Placeholder | Description |
-|-------------|-------------|
-| \[\[+idx\]\] | Increases with each iteration, starting with 1 (or the value set by the **&idx**parameter) |
+ | Placeholder  | Description                                                                                |
+ | ------------ | ------------------------------------------------------------------------------------------ |
+ | \[\[+idx\]\] | Increases with each iteration, starting with 1 (or the value set by the **&idx**parameter) |
 
 ##  Examples 
 

@@ -4,19 +4,6 @@ _old_id: "642"
 _old_uri: "revo/flexibility"
 ---
 
-- [What is Flexibility?](#Flexibility-WhatisFlexibility%3F)
-- [Requirements](#Flexibility-Requirements)
-- [About](#Flexibility-About)
-- [Installation](#Flexibility-Installation)
-  - [Attention](#Flexibility-Attention)
-  - [Manual installation](#Flexibility-Manualinstallation)
-- [Adding an changing content](#Flexibility-Addinganchangingcontent)
-- [Update instructions:](#Flexibility-Updateinstructions%3A)
-- [Credits](#Flexibility-Credits)
-- [Bugs and feature rquests](#Flexibility-Bugsandfeaturerquests)
-
-
-
 ## What is Flexibility?
 
 **Flexibility - Fully functional MODX Revolution website.**

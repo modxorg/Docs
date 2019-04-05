@@ -16,11 +16,11 @@ _old_uri: "revo/gallery/gallery.gallery/gallery.gallery.containertpl"
 
 ## Available Placeholders
 
- | Name | Description |
-|------|-------------|
-| thumbnails | The generated thumbnails. |
-| album\_name | The name of the current Album. |
-| album\_description | The description of the current Album. |
+ | Name               | Description                           |
+ | ------------------ | ------------------------------------- |
+ | thumbnails         | The generated thumbnails.             |
+ | album\_name        | The name of the current Album.        |
+ | album\_description | The description of the current Album. |
 
 ## See Also
 

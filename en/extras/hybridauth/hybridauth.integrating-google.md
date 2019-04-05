@@ -22,5 +22,3 @@ Integration of any service is very simple. So, you can read about [Facebook](htt
 [![](/download/thumbnails/43417872/ha_gg1.png)](/download/attachments/43417872/ha_gg1.png) [![](/download/thumbnails/43417872/ha_gg2.png)](/download/attachments/43417872/ha_gg2.png) [![](/download/thumbnails/43417872/ha_gg3.png)](/download/attachments/43417872/ha_gg3.png)
 
 [![](/download/thumbnails/43417872/ha_gg4.png)](/download/attachments/43417872/ha_gg4.png) [![](/download/thumbnails/43417872/ha_gg5.png)](/download/attachments/43417872/ha_gg5.png) [![](/download/thumbnails/43417872/ha_gg6.png)](/download/attachments/43417872/ha_gg6.png)
-
-## See also

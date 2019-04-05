@@ -4,13 +4,6 @@ _old_id: "1779"
 _old_uri: "revo/fixedpre"
 ---
 
-- [What is FixedPre?](#FixedPre-WhatisFixedPre)
-- [Package Information](#FixedPre-Information)
-- [History](#FixedPre-History)
-- [Download](#FixedPre-Download)
-- [Development and Bug Reporting](#FixedPre-DevelopmentandBugReporting)
-- [Documentation](#FixedPre-Documentation)
- 
 ## What is FixedPre?
 
  Revolution implementation of Rahul Dhesi's FixedPre plugin.

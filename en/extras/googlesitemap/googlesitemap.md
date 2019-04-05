@@ -16,29 +16,28 @@ Note: if you try to view a XML sitemap with tens of thousands of nodes in your b
 
  ``` php 
 [[!GoogleSiteMap]]
-
 ```
 
  Don't forget to set the content type to 'xml'.
 
 ## Properties
 
- | Name | Description | Default Value |
-|------|-------------|---------------|
-| cachePrefix | A string prefix for cache file(s). | googlesitemap |
-| cachePartition | Folder under core/cache/ for cache file(s). | googlesitemap |
-| cacheExpires | Time to expire cache. Default is 1 day. | 86400 |
-| legacyProps | Only modify this if you really know what you are doing. Properties in this comma-separated list will trigger the execution of the legacy GoogleSiteMap Snippet. | allowedtemplates, excludeResources, excludeChildrenOf, sortByAlias, templateFilter, itemTpl, startId, where |
-| legacySnippet | Only modify this if you really know what you are doing. This snippet will be called if a legacy property is passed to the call to GoogleSiteMap. | GoogleSiteMapVersion1 |
-| containerTpl | The Chunk to use for the output container. | gContainer |
-| context | Limit to the specified Context(s). If empty, will grab Resources from current Context. Defaults to empty, can support a comma-separated list. |  |
-| googleSchema | The location of the GoogleSiteMap schema. | <http://www.google.com/schemas/sitemap/0.9> |
-| hideDeleted | If true, will show only nondeleted Resources. | true |
-| published | If true, will only show published resources. | true |
-| searchable | If true, will only show searchable resources. | true |
-| showHidden | If true, will include hidden Resources. | false |
-| sortBy | The field to sort the results by. | menuindex |
-| sortDir | The direction to sort in. | ASC |
+ | Name           | Description                                                                                                                                                     | Default Value                                                                                               |
+ | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+ | cachePrefix    | A string prefix for cache file(s).                                                                                                                              | googlesitemap                                                                                               |
+ | cachePartition | Folder under core/cache/ for cache file(s).                                                                                                                     | googlesitemap                                                                                               |
+ | cacheExpires   | Time to expire cache. Default is 1 day.                                                                                                                         | 86400                                                                                                       |
+ | legacyProps    | Only modify this if you really know what you are doing. Properties in this comma-separated list will trigger the execution of the legacy GoogleSiteMap Snippet. | allowedtemplates, excludeResources, excludeChildrenOf, sortByAlias, templateFilter, itemTpl, startId, where |
+ | legacySnippet  | Only modify this if you really know what you are doing. This snippet will be called if a legacy property is passed to the call to GoogleSiteMap.                | GoogleSiteMapVersion1                                                                                       |
+ | containerTpl   | The Chunk to use for the output container.                                                                                                                      | gContainer                                                                                                  |
+ | context        | Limit to the specified Context(s). If empty, will grab Resources from current Context. Defaults to empty, can support a comma-separated list.                   |                                                                                                             |
+ | googleSchema   | The location of the GoogleSiteMap schema.                                                                                                                       | <http://www.google.com/schemas/sitemap/0.9>                                                                 |
+ | hideDeleted    | If true, will show only nondeleted Resources.                                                                                                                   | true                                                                                                        |
+ | published      | If true, will only show published resources.                                                                                                                    | true                                                                                                        |
+ | searchable     | If true, will only show searchable resources.                                                                                                                   | true                                                                                                        |
+ | showHidden     | If true, will include hidden Resources.                                                                                                                         | false                                                                                                       |
+ | sortBy         | The field to sort the results by.                                                                                                                               | menuindex                                                                                                   |
+ | sortDir        | The direction to sort in.                                                                                                                                       | ASC                                                                                                         |
 
 ## GoogleSiteMap Chunks
 
@@ -52,14 +51,12 @@ Note: if you try to view a XML sitemap with tens of thousands of nodes in your b
 
  ``` php 
 [[!GoogleSiteMap]]
-
 ```
 
  Display a sitemap that combines both the web and marketing contexts:
 
  ``` php 
 [[!GoogleSiteMap? &context=`web,marketing`]]
-
 ```
 
  Limit the sitemap to only the Resources with Template named 'BlogTemplate', and exclude the Resources with IDs 123 or 78:
@@ -70,7 +67,6 @@ Note: if you try to view a XML sitemap with tens of thousands of nodes in your b
   &templateFilter=`templatename`
   &excludeResources=`123,78`
 ]]
-
 ```
 
 NOTE: the last example would call the legacy Snippet, which will time out if many thousands of nodes need to be generated.

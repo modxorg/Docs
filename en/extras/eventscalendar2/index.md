@@ -4,16 +4,6 @@ _old_id: "635"
 _old_uri: "revo/eventscalendar2"
 ---
 
-- [Description](#eventsCalendar2-Description)
-  - [Requirements](#eventsCalendar2-Requirements)
-  - [Homepage and Demo](#eventsCalendar2-HomepageandDemo)
-  - [Download](#eventsCalendar2-Download)
-  - [Development and Bug Reporting](#eventsCalendar2-DevelopmentandBugReporting)
-- [Usage](#eventsCalendar2-Usage)
-- [See Also](#eventsCalendar2-SeeAlso)
-
-
-
 [![](/download/thumbnails/39354637/eventsCalendar2.png)](/download/attachments/39354637/eventsCalendar2.png)
 
 ## Description
