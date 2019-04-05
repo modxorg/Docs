@@ -4,22 +4,16 @@ _old_id: "659"
 _old_uri: "index"
 ---
 
-This is the home page for the MODx Extras documentation space.
+In this section of the documentation you'll find information about extras for MODX Revolution. These extras (and their documentation) are made by third party developers, so are not officially supported.
 
-  \[\[getResources@section-parents? &context=`extras`\]\] These Extras are not officially supported by MODx, nor is their representative documentation. If you would like more info or help on them, please contact their respective authors.
 
-**Evolution or Revolution**
-Please take a moment to ensure the extra being considered is for your specific MODx product (either Evolution or Revolution). Also, note the minimum required version indicated by the respective extra and that the installation of MODx being used meets or exceeds that requirement.
+## Distributing your own Extras
 
-Documentors: Please prefix the name of your Add-On to your subpages. In other words, a subpage for the Quip Add-On would be Quip.SubPage
+Go to <https://modx.com/extras/>, log in to your MODX account (or create one), then click on the button at the bottom to "Submit an Extra". There you can upload a MODX [Transport Package](http://rtfm.modx.com/display/revolution20/Transport+Packages "Transport Packages"). This is a special kind of zip file that ensures that your add-on and all of its components are installed correctly on the target system. To make one, you need to create a [Build Script](http://rtfm.modx.com/display/revolution20/Creating+a+3rd+Party+Component+Build+Script "Creating a 3rd Party Component Build Script"). See the related pages for more info.
 
-## <a name="Home-CreatingYourOwnAddOn"></a>Creating Your Own Add-On
+## Commonly used Extras
 
-Go to <http://modx.com/extras/>, log in to your MODX account (or create one), then click on the button at the bottom to "Submit an Extra". You can use whatever version control system that you want (you don't even _have_ to use version control if you don't want), but your extra **must** be packaged up into a MODX [Transport Package](http://rtfm.modx.com/display/revolution20/Transport+Packages "Transport Packages"). This is a special kind of zip file that ensures that your add-on and all of its components are installed correctly on the target system. To make one, you need to create a [Build Script](http://rtfm.modx.com/display/revolution20/Creating+a+3rd+Party+Component+Build+Script "Creating a 3rd Party Component Build Script"). See the related pages for more info.
-
-## <a name="Home-Commonlyusedaddons%26nbsp%3B"></a>Commonly used addons 
-
-For your convenience, below you will find a table with a list of the most commonly used addons for both Revolution and Evolution, per category. Please note that this list is manually maintained, and not all addons will be mentioned here. Please see the [Add-Ons Repository](http://modx.com/extras/) on the MODX Site for a complete list. The grid below displays addons that can be used in no specific order. Often addons are designed to be flexible and have many options, be sure to investigate which one suits your goals best.
+Below you'll find a table with some commonly used extras. Please note that this is not a conclusive list, and recommended extras may change over time.
 
  | Category | Revolution (2.x) | Evolution (1.x) |
 |----------|------------------|-----------------|
