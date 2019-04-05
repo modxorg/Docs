@@ -4,14 +4,6 @@ _old_id: "782"
 _old_uri: "revo/articles/articles.creating-a-blog"
 ---
 
-- [Creating a Blog](#Articles.CreatingaBlog-CreatingaBlog)
-  - [The First Tab](#Articles.CreatingaBlog-TheFirstTab)
-  - [The Template Tab](#Articles.CreatingaBlog-TheTemplateTab)
-  - [The Advanced Settings Tab](#Articles.CreatingaBlog-TheAdvancedSettingsTab)
-- [Conclusion](#Articles.CreatingaBlog-Conclusion)
-
-
-
 ## Creating a Blog
 
 Creating a Blog is simple: just right-click on any node in the Resources tree on the left-hand side, and mouse over to the "Create" option. Then click on "Create Articles Here":

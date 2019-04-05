@@ -1,5 +1,5 @@
 ---
-title: "AdvSearch.Advsearch.paging1Tpl"
+title: "paging1Tpl"
 _old_id: "770"
 _old_uri: "revo/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl"
 ---

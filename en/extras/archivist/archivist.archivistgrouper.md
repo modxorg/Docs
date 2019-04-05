@@ -10,10 +10,6 @@ The [Articles](/extras/revo/articles "Articles") addon 1.6.1 came with the Archi
 
 The descriptions in the table are just a guess!!! Someone with more experience or the creator should confirm or adjust these!!
 
-
-
-
-
 ## Usage
 
 Simply place the snippet wherever you would like to display archive listings in, the parents to grab archives from.
@@ -64,9 +60,3 @@ If no templates are given, the defaults are used. As it got me puzzled how to cr
 ```
 
 Notice the placeholder **\[\[+resources\]\]** that passes on the results to the itemTpl.
-
-## Result
-
-The results looks like this:
-
-![](https://img.skitch.com/20110321-mnufd64c1jyc941kk8nfj3t5i5.jpg)

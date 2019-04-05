@@ -4,25 +4,10 @@ _old_id: "602"
 _old_uri: "revo/analytics"
 ---
 
-- [What is Analytics?](#Analytics-WhatisAnalytics%3F)
-- [Requirements](#Analytics-Requirements)
-- [History](#Analytics-History)
-  - [Download](#Analytics-Download)
-- [Usage](#Analytics-Usage)
-  - [Usage examples](#Analytics-UsageExamples)
-  - [Shared Properties](#Analytics-SharedProperties)
-  - [Google Universal Analytics Properties (analytics.js)](#Analytics-UniversalAnalyticsProperties)
-  - [Google Analytics Properties (ga.js)](#Analytics-GoogleAnalyticsProperties)
-  - [Different ways to set properties](#Analytics-DifferentWaysToSetProperties)
-- [Use your own tracking codes](#Analytics-UseYourOwnTrackingCodes)
-- [Troubleshooting](#Analytics-Troubleshooting)
-- [Development and Bug reporting](#Analytics-DevelopmentandBugreporting)
-
-
-
 ## What is Analytics?
 
 Analytics is a utility tool for MODX Revolution that will insert the tracking code for Google Universal Analytics (analytics.js) and/or Google Analytics (ga.js) on your website's pages. 
+
 By default it will ignore traffic from users logged into the manager. Every context in your website can be excluded on demand, wether or not users are logged in. 
 The tracking code templates [can be overridden with your own chunks](#Analytics-UseYourOwnTrackingCodes).
 

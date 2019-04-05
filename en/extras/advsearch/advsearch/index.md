@@ -4,20 +4,6 @@ _old_id: "766"
 _old_uri: "revo/advsearch/advsearch.advsearch"
 ---
 
-- [AdvSearch Snippet](#AdvSearch.AdvSearch-AdvSearchSnippet)
-- [Usage](#AdvSearch.AdvSearch-Usage)
-- [Available Properties](#AdvSearch.AdvSearch-AvailableProperties)
-  - [Design the query](#AdvSearch.AdvSearch-Designthequery)
-  - [Organize the search results](#AdvSearch.AdvSearch-Organizethesearchresults)
-  - [Design the page results](#AdvSearch.AdvSearch-Designthepageresults)
-  - [Overall AdvSearch design](#AdvSearch.AdvSearch-OverallAdvSearchdesign)
-  - [Custom installation](#AdvSearch.AdvSearch-Custominstallation)
-- [AdvSearch Chunks](#AdvSearch.AdvSearch-AdvSearchChunks)
-- [Examples](#AdvSearch.AdvSearch-Examples)
-- [See Also](#AdvSearch.AdvSearch-SeeAlso)
-
-
-
 ##  AdvSearch Snippet 
 
  This snippet displays search results based on the search criteria sent.

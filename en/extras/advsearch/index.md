@@ -4,19 +4,6 @@ _old_id: "600"
 _old_uri: "revo/advsearch"
 ---
 
-- [What is AdvSearch?](#AdvSearch-WhatisAdvSearch%3F)
-- [Requirements](#AdvSearch-Requirements)
-- [History](#AdvSearch-History)
-  - [Download](#AdvSearch-Download)
-  - [Demonstration](#AdvSearch-Demonstration)
-  - [Development and Bug Reporting](#AdvSearch-DevelopmentandBugReporting)
-- [Installation of the Zend Search class](#AdvSearch-InstallationoftheZendSearchclass)
-- [Usage](#AdvSearch-Usage)
-- [Examples](#AdvSearch-Examples)
-- [See Also](#AdvSearch-SeeAlso)
-
-
-
 ##  What is AdvSearch? 
 
  AdvSearch is an advanced search component for MODx Revolution. It allows search in dynamic contents (by using Zend Lucene search class), setting up of faceted search and searching in custom packages. 

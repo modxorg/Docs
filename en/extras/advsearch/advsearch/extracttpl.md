@@ -1,5 +1,5 @@
 ---
-title: "Advsearch.AdvSearch.extractTpl"
+title: "extractTpl"
 _old_id: "768"
 _old_uri: "revo/advsearch/advsearch.advsearch/advsearch.advsearch.extracttpl"
 ---
