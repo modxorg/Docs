@@ -4,39 +4,31 @@ _old_id: "1700"
 _old_uri: "revo/amazonses-mailing-list"
 ---
 
-- [What is amazonSESMailingList?](#whatis)
-- [Requirements](#req)
-- [Download](#download)
-- [Installation](#install)
-  - [Cron set up](#cron)
-- [Usage](http://usage)
-
- **<a id="whatis">What is Amazon SES Mailing List?</a>**
+## What is Amazon SES Mailing List?
 
  Amazon SES Mailing list is a complete mailing list which uses [Amazon SES](http://aws.amazon.com/ses/) for sending bulk emails for a small cost (like 0.10$ per 1000 emails!) without any need for having a mail server of your own!
 
- <a id="req">**Requirements**</a>
+## Requirements
 
 - MODX Revolution 2.2.X
 - PHP5 or later
 
- **<a id="download">Download</a>**
+## Download
 
  It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management), or from the MODX Extras Repository, here: <http://modx.com/extras/package/amazonsesmailinglist>
 
- **<a id="install">Installation</a>**
+## Installation
 
 1. Install the package via _Package Management_
 2. Open _System Settings_ and filter the settings by _Namespace **aSES**_
 3. Set the _Amazon ID (Access Key ID)_ and _Amazon Secret_ (_Secret Access Key_) - [https://console.aws.amazon.com/iam/home?#security\_credential](https://console.aws.amazon.com/iam/home?#security_credential) - _Access Key_s
 4. Create a _MODx resource_and put under content
 
-``` plain 
+``` php 
 [[!aSES]]
-
 ```
 
- **Properties**
+## Properties
 
  **&tpl** - Chunk name with unsubscribe message when unsubscribing is successful (default: aSESUnsubscribe)
 
@@ -48,7 +40,6 @@ _old_uri: "revo/amazonses-mailing-list"
 
  ``` plain 
 * * * * * php /absoulte/path/to/modx/web/directory/assets/components/aSES/cron.php
-
 ```
 
 
@@ -57,11 +48,7 @@ _old_uri: "revo/amazonses-mailing-list"
  cron.php sends 100 emails per run. It sends every email because the amazonSESMailingList gives an option for personalized emails (You can put the \[\[+name\]\] placeholder in the email ;) 
 
 
- **<a id="usage"></a>**
-
- **<a id="usage"> Usage </a>**
-
- **<a id="usage"></a>**
+## Usage
 
  Under _Components_ open _aSESmailings_ and create new _Mailing list_. When created, double-click on it and you will see three tabs - _Mails | Basic settings | Emails_
 

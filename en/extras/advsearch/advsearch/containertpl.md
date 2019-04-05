@@ -10,7 +10,7 @@ A Chunk named "**AdvSearchResults**" is provided with AdvSearch. This Chunk name
 
 ## Default Value
 
-``` php 
+``` html 
 <p class="advsea-results">[[+resultInfo]] - Elapsed time: [[+etime]]</p>
 
 <div class="advsea-paging[[+pagingType]]">[[+paging]]</div>
