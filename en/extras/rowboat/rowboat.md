@@ -98,7 +98,7 @@ Grab 10 Doodles where description isn't empty **or** the name is "Test":
 
 More to come shortly.
 
-### Using [getPage](/extras/getpage "getPage") with Rowboat
+### Using [getPage](extras/getpage "getPage") with Rowboat
 
 It's pretty simple - just make sure to set the totalVar property in your getPage call as "rowboat.total", and have cache=`0` in the getPage call. For example, this will grab all doodles where the name contains "Fun", paginate them to 10 per page, and add page navigation:
 
@@ -126,4 +126,4 @@ Be careful about the &columns argument: if you list a column that does not exist
 
 ## See Also
 
-1. [Rowboat.Rowboat](/extras/rowboat/rowboat.rowboat)
+1. [Rowboat.Rowboat](extras/rowboat/rowboat.rowboat)

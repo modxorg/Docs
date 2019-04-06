@@ -41,7 +41,7 @@ Below a screenshot of the manager pages. More screenshots will be added later.
 
 ## See also
 
-1. [Polls.Polls](/extras/polls/polls.polls)
-2. [Polls.PollsLatest](/extras/polls/polls.pollslatest)
-3. [Polls.PollsPrevious](/extras/polls/polls.pollsprevious)
-4. [Polls.PollsResult](/extras/polls/polls.pollsresult)
+1. [Polls.Polls](extras/polls/polls.polls)
+2. [Polls.PollsLatest](extras/polls/polls.pollslatest)
+3. [Polls.PollsPrevious](extras/polls/polls.pollsprevious)
+4. [Polls.PollsResult](extras/polls/polls.pollsresult)

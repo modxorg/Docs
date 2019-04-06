@@ -4,7 +4,7 @@ _old_id: "1009"
 _old_uri: "revo/socialsuite/socialsuite.gettwitterprofile"
 ---
 
-[SocialSuite](/extras/socialsuite "SocialSuite")is a collection of useful tools for integrating various social media into your MODX website.
+[SocialSuite](extras/socialsuite "SocialSuite")is a collection of useful tools for integrating various social media into your MODX website.
 
 getTwitter Profile is a [snippet](developing-in-modx/basic-development/snippets "Snippets"), part of SocialSuite, which returns all sorts of information about a **user** on Twitter.
 

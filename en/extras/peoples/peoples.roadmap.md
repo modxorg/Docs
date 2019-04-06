@@ -13,7 +13,7 @@ Tasks in purple are already finished in Git. Ones in green are finished in beta/
 ### Peoples 1.0.0-pl
 
 - &exclude and &include properties on all snippets
-- Better pagination support with [getPage](/extras/getpage "getPage")
+- Better pagination support with [getPage](extras/getpage "getPage")
 
 ## Released Versions
 

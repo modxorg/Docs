@@ -6,7 +6,7 @@ _old_uri: "revo/archivist/archivist.archivistgrouper"
 
 # ArchivistGrouper
 
-The [Articles](/extras/articles "Articles") addon 1.6.1 came with the Archivist addon 1.2.3, so I suppose this ArchivistGrouper snippet is now part of [Archivist](/extras/archivist "Archivist"). No documentation yet from its creator, but I found the available properties in the snippet.
+The [Articles](extras/articles "Articles") addon 1.6.1 came with the Archivist addon 1.2.3, so I suppose this ArchivistGrouper snippet is now part of [Archivist](extras/archivist "Archivist"). No documentation yet from its creator, but I found the available properties in the snippet.
 
 The descriptions in the table are just a guess!!! Someone with more experience or the creator should confirm or adjust these!!
 
@@ -46,7 +46,7 @@ Simply place the snippet wherever you would like to display archive listings in,
 | groupTpl                                    | The chunk that will be used to display each month/year result.                                                                                           | yearContainer (when property mode=`year`) |
 | monthContainer (when property mode=`month`) |
 
-Almost all of the descriptions are the same properties as mentioned on the [Archivist page](/extras/archivist/archivist.archivist "Archivist.Archivist").
+Almost all of the descriptions are the same properties as mentioned on the [Archivist page](extras/archivist/archivist.archivist "Archivist.Archivist").
 
 ## Chunks
 

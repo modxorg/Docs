@@ -24,7 +24,7 @@ This will return the ID of the translated resource located in the "de" context o
 
 ## See Also
 
-1. [Babel.BabelLinks](/extras/babel/babel.babellinks)
-2. [Babel.BabelTranslation](/extras/babel/babel.babeltranslation)
+1. [Babel.BabelLinks](extras/babel/babel.babellinks)
+2. [Babel.BabelTranslation](extras/babel/babel.babeltranslation)
 
 [Offical Babel project website: Multilingual websites with MODX](http://www.multilingual-modx.com/)

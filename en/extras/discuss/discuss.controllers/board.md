@@ -19,7 +19,7 @@ The board controller builds an overview of threads in a board.
 
 ## Options
 
-If you don't know what the manifest is, please go back to the [Getting Started](/extras/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "board" options array of the manifest.
+If you don't know what the manifest is, please go back to the [Getting Started](extras/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "board" options array of the manifest.
 
 | Key                              | Default             | Description                                                                                                                                                                                                                                                                                                                                                        |
 | -------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -75,7 +75,7 @@ This controller template has the following placeholders you can use, on top of t
 | readers        | Users viewing this board                                                                                                                        |
 | moderators     | Moderators for this board                                                                                                                       |
 | trail          | Breadcrumbs for this board                                                                                                                      |
-| actionbuttons  | Actions avialable for the user. See note on actionbuttons on the [Controllers](/extras/discuss/discuss.controllers "Discuss.Controllers") page. |
+| actionbuttons  | Actions avialable for the user. See note on actionbuttons on the [Controllers](extras/discuss/discuss.controllers "Discuss.Controllers") page. |
 
 ``` html 
 [[+top]]

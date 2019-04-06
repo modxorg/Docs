@@ -29,33 +29,33 @@ Bugs and feature requests can be filed here: <http://bugs.modx.com/projects/Disc
 
 Several documents are available to help you get started using Discuss.
 
-1. [Installation](/extras/discuss/discuss.installation "Discuss.Installation")
-2. [Getting Started](/extras/discuss/discuss.getting-started "Discuss.Getting Started")
-3. [Creating a Discuss Theme](/extras/discuss/discuss.creating-a-discuss-theme "Discuss.Creating a Discuss Theme")
+1. [Installation](extras/discuss/discuss.installation "Discuss.Installation")
+2. [Getting Started](extras/discuss/discuss.getting-started "Discuss.Getting Started")
+3. [Creating a Discuss Theme](extras/discuss/discuss.creating-a-discuss-theme "Discuss.Creating a Discuss Theme")
 
 ## What's Next
 
-Please see the [Roadmap](/extras/discuss/discuss.roadmap "Discuss.Roadmap"). Remember to report your bugs and feature requests in the [Tracker](http://tracker.modx.com/projects/discuss/issues).
+Please see the [Roadmap](extras/discuss/discuss.roadmap "Discuss.Roadmap"). Remember to report your bugs and feature requests in the [Tracker](http://tracker.modx.com/projects/discuss/issues).
 
 ## See Also
 
-1. [Discuss.Installation](/extras/discuss/discuss.installation)
-  1. [Discuss.Installation from Git](/extras/discuss/discuss.installation/discuss.installation-from-git)
-2. [Discuss.Getting Started](/extras/discuss/discuss.getting-started)
-3. [Discuss.Creating a Discuss Theme](/extras/discuss/discuss.creating-a-discuss-theme)
-4. [Discuss.Controllers](/extras/discuss/discuss.controllers)
-  1. [Discuss.Controllers.board](/extras/discuss/discuss.controllers/discuss.controllers.board)
-      1. [Discuss.Controllers.board.xml](/extras/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
-  2. [Discuss.Controllers.home](/extras/discuss/discuss.controllers/discuss.controllers.home)
-  3. [Discuss.Controllers.login](/extras/discuss/discuss.controllers/discuss.controllers.login)
-  4. [Discuss.Controllers.logout](/extras/discuss/discuss.controllers/discuss.controllers.logout)
-  5. [Discuss.Controllers.profile](/extras/discuss/discuss.controllers/discuss.controllers.profile)
-  6. [Discuss.Controllers.register](/extras/discuss/discuss.controllers/discuss.controllers.register)
-  7. [Discuss.Controllers.search](/extras/discuss/discuss.controllers/discuss.controllers.search)
-  8. [Discuss.Controllers.thread](/extras/discuss/discuss.controllers/discuss.controllers.thread)
-5. [Discuss.Database Model](/extras/discuss/discuss.database-model)
-6. [Discuss.Contributing](/extras/discuss/discuss.contributing)
-7. [Discuss.ChunkMap](/extras/discuss/discuss.chunkmap)
-8. [Discuss.Features](/extras/discuss/discuss.features)
-9. [Discuss.Roadmap](/extras/discuss/discuss.roadmap)
-10. [Configuring Sphinx for Search](/extras/discuss/configuring-sphinx-for-search)
+1. [Discuss.Installation](extras/discuss/discuss.installation)
+  1. [Discuss.Installation from Git](extras/discuss/discuss.installation/discuss.installation-from-git)
+2. [Discuss.Getting Started](extras/discuss/discuss.getting-started)
+3. [Discuss.Creating a Discuss Theme](extras/discuss/discuss.creating-a-discuss-theme)
+4. [Discuss.Controllers](extras/discuss/discuss.controllers)
+  1. [Discuss.Controllers.board](extras/discuss/discuss.controllers/discuss.controllers.board)
+      1. [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
+  2. [Discuss.Controllers.home](extras/discuss/discuss.controllers/discuss.controllers.home)
+  3. [Discuss.Controllers.login](extras/discuss/discuss.controllers/discuss.controllers.login)
+  4. [Discuss.Controllers.logout](extras/discuss/discuss.controllers/discuss.controllers.logout)
+  5. [Discuss.Controllers.profile](extras/discuss/discuss.controllers/discuss.controllers.profile)
+  6. [Discuss.Controllers.register](extras/discuss/discuss.controllers/discuss.controllers.register)
+  7. [Discuss.Controllers.search](extras/discuss/discuss.controllers/discuss.controllers.search)
+  8. [Discuss.Controllers.thread](extras/discuss/discuss.controllers/discuss.controllers.thread)
+5. [Discuss.Database Model](extras/discuss/discuss.database-model)
+6. [Discuss.Contributing](extras/discuss/discuss.contributing)
+7. [Discuss.ChunkMap](extras/discuss/discuss.chunkmap)
+8. [Discuss.Features](extras/discuss/discuss.features)
+9. [Discuss.Roadmap](extras/discuss/discuss.roadmap)
+10. [Configuring Sphinx for Search](extras/discuss/configuring-sphinx-for-search)

@@ -6,7 +6,7 @@ _old_uri: "revo/breadcrumb/breadcrumb.currentcrumbtpl"
 
 ## BreadCrumb's currentCrumbTpl Chunk
 
-This is the chunk displayed with the ¤tCrumbTpl property on the [BreadCrumb](/extras/breadcrumb "BreadCrumb") snippet. Used for the current crumb.
+This is the chunk displayed with the ¤tCrumbTpl property on the [BreadCrumb](extras/breadcrumb "BreadCrumb") snippet. Used for the current crumb.
 
 ## Default Value
 

@@ -115,7 +115,7 @@ To call the plugins, you need to call it inside the snippet, as a JSON format, e
 ]]
 ```
 
-In this example, I'm using 2 default plugins for examples, **[FormSave](/extras/formsave "FormSave")** (as file based) and **Email** (as a snippet), which are both depend on [FormIt](/extras/formit "FormIt"). 
+In this example, I'm using 2 default plugins for examples, **[FormSave](extras/formsave "FormSave")** (as file based) and **Email** (as a snippet), which are both depend on [FormIt](extras/formit "FormIt"). 
 These plugins will do:
 
 - OnLoad 
@@ -123,7 +123,7 @@ These plugins will do:
 - AfterFileDownload 
   After the file is downloaded, store the information into FormSave, and then send email to the given addresses, with the chunk as provided
 
-The email's properties are using the [FormIt](/extras/formit "FormIt")'s properties, because it IS the [FormIt](/extras/formit "FormIt")'s hook.
+The email's properties are using the [FormIt](extras/formit "FormIt")'s properties, because it IS the [FormIt](extras/formit "FormIt")'s hook.
 
 The structure of the JSON is:
 

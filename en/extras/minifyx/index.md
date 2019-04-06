@@ -33,7 +33,7 @@ MinifyX combines your files to 1 cache file and loads it from there. If you comb
 
 ## Placing the snippet
 
-Place the main \[\[[MinifyX](/extras/minifyx "MinifyX")\]\] snippet call on your webpage. If you have placed the snippet it assigns the following placeholders to your page:
+Place the main \[\[[MinifyX](extras/minifyx "MinifyX")\]\] snippet call on your webpage. If you have placed the snippet it assigns the following placeholders to your page:
 
 | Placeholder name            | Content                                                                                                                             |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |

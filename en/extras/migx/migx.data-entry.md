@@ -30,4 +30,4 @@ Right click on any item. Select either Update, Duplicate, or Remove.
 
 Click and drag items to change their ordering.
 
-You're 3/4 done your MIGX experience. Ready for Step 4: [Frontend Usage](/extras/migx/migx.frontend-usage "MIGX.Frontend-Usage")?
+You're 3/4 done your MIGX experience. Ready for Step 4: [Frontend Usage](extras/migx/migx.frontend-usage "MIGX.Frontend-Usage")?

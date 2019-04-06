@@ -52,10 +52,10 @@ Simply place the snippet anywhere and pass in a path:
 
 There are 4 chunks that are processed in FileLister. Their corresponding parameters are:
 
-- [fileTpl](/extras/filelister/filelister.filelister/filelister.filelister.filetpl "FileLister.FileLister.fileTpl") - The Chunk to use for each file listed.
-- [directoryTpl](/extras/filelister/filelister.filelister/filelister.filelister.directorytpl "FileLister.FileLister.directoryTpl") - The Chunk to use for each directory listed.
-- [fileLinkTpl](/extras/filelister/filelister.filelister/filelister.filelister.filelinktpl "FileLister.FileLister.fileLinkTpl") - The Chunk to use for each link made for each item.
-- [pathTpl](/extras/filelister/filelister.filelister/filelister.filelister.pathtpl "FileLister.FileLister.pathTpl") - The chunk for each item in the path placeholder.
+- [fileTpl](extras/filelister/filelister.filelister/filelister.filelister.filetpl "FileLister.FileLister.fileTpl") - The Chunk to use for each file listed.
+- [directoryTpl](extras/filelister/filelister.filelister/filelister.filelister.directorytpl "FileLister.FileLister.directoryTpl") - The Chunk to use for each directory listed.
+- [fileLinkTpl](extras/filelister/filelister.filelister/filelister.filelister.filelinktpl "FileLister.FileLister.fileLinkTpl") - The Chunk to use for each link made for each item.
+- [pathTpl](extras/filelister/filelister.filelister/filelister.filelister.pathtpl "FileLister.FileLister.pathTpl") - The chunk for each item in the path placeholder.
 
 ## Examples
 
@@ -67,9 +67,9 @@ Display a list of only files within the 'assets/downloads/' path:
 
 ## See Also
 
-1. [FileLister.FileLister](/extras/filelister/filelister.filelister)
-  1. [FileLister.FileLister.directoryTpl](/extras/filelister/filelister.filelister/filelister.filelister.directorytpl)
-  2. [FileLister.FileLister.fileLinkTpl](/extras/filelister/filelister.filelister/filelister.filelister.filelinktpl)
-  3. [FileLister.FileLister.fileTpl](/extras/filelister/filelister.filelister/filelister.filelister.filetpl)
-  4. [FileLister.FileLister.pathTpl](/extras/filelister/filelister.filelister/filelister.filelister.pathtpl)
-2. [FileLister.Roadmap](/extras/filelister/filelister.roadmap)
+1. [FileLister.FileLister](extras/filelister/filelister.filelister)
+  1. [FileLister.FileLister.directoryTpl](extras/filelister/filelister.filelister/filelister.filelister.directorytpl)
+  2. [FileLister.FileLister.fileLinkTpl](extras/filelister/filelister.filelister/filelister.filelister.filelinktpl)
+  3. [FileLister.FileLister.fileTpl](extras/filelister/filelister.filelister/filelister.filelister.filetpl)
+  4. [FileLister.FileLister.pathTpl](extras/filelister/filelister.filelister/filelister.filelister.pathtpl)
+2. [FileLister.Roadmap](extras/filelister/filelister.roadmap)

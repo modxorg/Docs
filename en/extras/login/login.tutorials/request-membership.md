@@ -6,7 +6,7 @@ _old_uri: "revo/login/login.tutorials/login.request-membership"
 
 ## Outline
 
-If you've followed the tutorial for the [Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), then it's time to try for a more thorough implementation of the Login Snippet where _users can apply for site membership themselves_. Once you've completed this tutorial, visitors to your site will be able to request membership by themselves and you will not have to add users manually.
+If you've followed the tutorial for the [Basic Setup](extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), then it's time to try for a more thorough implementation of the Login Snippet where _users can apply for site membership themselves_. Once you've completed this tutorial, visitors to your site will be able to request membership by themselves and you will not have to add users manually.
 
 Do not try to use extended user fields yet. First get the registration process working using the standard user fields. See the next tutorial for setting up user profiles and using extended user fields.
 
@@ -32,7 +32,7 @@ The steps go something like this:
 
 ![](/download/attachments/35094671/The+FoxyCart+Forum+-+Sign+Out.jpg?version=1&modificationDate=1303606763000)
 
-Make sense? It's pretty similar to what we did before in the [Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), but there are a few extra things going on, so we need a few extra pages. Most importantly, we'll need to integrate both the [Register](/extras/login/login.register "Login.Register") and the [Personalize](http://modx.com/extras/package/personalize) Snippets, and we'll need to shuffle around a couple other components from the [Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup") tutorial.
+Make sense? It's pretty similar to what we did before in the [Basic Setup](extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), but there are a few extra things going on, so we need a few extra pages. Most importantly, we'll need to integrate both the [Register](extras/login/login.register "Login.Register") and the [Personalize](http://modx.com/extras/package/personalize) Snippets, and we'll need to shuffle around a couple other components from the [Basic Setup](extras/login/login.tutorials/login.basic-setup "Login.Basic Setup") tutorial.
 
 This tutorial makes use of related and complimentary Snippets!
 
@@ -190,7 +190,7 @@ This page doesn't have to change any from the basic setup. Its purpose is simply
 
 ### Request Membership (6)
 
-Next, let's handle the form that allows users to apply for membership on your site. The [Register](/extras/login/login.register "Login.Register") Snippet acts on a form that is included in-line on the page (as opposed to a form inside of a chunk).
+Next, let's handle the form that allows users to apply for membership on your site. The [Register](extras/login/login.register "Login.Register") Snippet acts on a form that is included in-line on the page (as opposed to a form inside of a chunk).
 
 ``` html 
 <h2>Register</h2>
@@ -292,7 +292,7 @@ Also check your spam filters on your your email account, and keep in mind it may
 
 ### Login
 
-Using a different browser other than the one you're logged into the MODX manager, navigate to your **Login Page (1)** (as was set up in the [basic tutorial](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"). Try to log in using the newly created user.
+Using a different browser other than the one you're logged into the MODX manager, navigate to your **Login Page (1)** (as was set up in the [basic tutorial](extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"). Try to log in using the newly created user.
 
 1. **CHECK:** is the login successful? Does the page redirect to your **Members Home Page (4)**? If not, double-check the **&loginResourceId** parameter in your **Login** Snippet call.
 2. **CHECK:** is the **Members Home Page (4)** publicly accessible? You might need a 3rd browser for this, but try visiting the Members Home Page in a browser where you are not logged in to any part of the site. You should see a 404 page.

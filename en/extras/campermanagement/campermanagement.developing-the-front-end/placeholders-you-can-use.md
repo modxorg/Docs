@@ -97,7 +97,7 @@ The owner object could be used as a very rudimentary customer relationships syst
 
 ## Also see: 
 
-1. [CamperManagement.cmCamperDetails Snippet](/extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcamperdetails-snippet)
-2. [CamperManagement.cmCampers Snippet](/extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcampers-snippet)
-3. [CamperManagement.Placeholders you can use](/extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.placeholders-you-can-use)
+1. [CamperManagement.cmCamperDetails Snippet](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcamperdetails-snippet)
+2. [CamperManagement.cmCampers Snippet](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcampers-snippet)
+3. [CamperManagement.Placeholders you can use](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.placeholders-you-can-use)
 

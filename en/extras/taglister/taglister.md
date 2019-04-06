@@ -47,8 +47,8 @@ _old_uri: "revo/taglister/taglister.taglister"
 
  There are 2 chunks that are processed in tagLister. Their corresponding parameters are:
 
-- [tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl "tagLister.tagLister.tpl") - The Chunk to use for each tag listed.
-- [allTpl](/extras/taglister/taglister.taglister/taglister.taglister.all "tagLister.tagLister.all") - The Chunk to use for the 'All Tags' link.
+- [tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl "tagLister.tagLister.tpl") - The Chunk to use for each tag listed.
+- [allTpl](extras/taglister/taglister.taglister/taglister.taglister.all "tagLister.tagLister.all") - The Chunk to use for the 'All Tags' link.
 
 ## Examples
 
@@ -60,9 +60,9 @@ _old_uri: "revo/taglister/taglister.taglister"
 
 ## See Also
 
-1. [tagLister.getResourcesTag](/extras/taglister/taglister.getresourcestag)
-2. [tagLister.tagLister](/extras/taglister/taglister.taglister)
-     1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
-     2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
-3. [tagLister.tolinks](/extras/taglister/taglister.tolinks)
-     1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+1. [tagLister.getResourcesTag](extras/taglister/taglister.getresourcestag)
+2. [tagLister.tagLister](extras/taglister/taglister.taglister)
+     1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
+     2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
+3. [tagLister.tolinks](extras/taglister/taglister.tolinks)
+     1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)

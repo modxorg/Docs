@@ -69,10 +69,10 @@ _old_uri: "revo/simplesearch/simplesearch.simplesearch"
 
  There are 4 chunks that are processed in SimpleSearch. Their corresponding SimpleSearch parameters are:
 
-- [tpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl "SimpleSearch.SimpleSearch.tpl") - The Chunk to use for each result displayed.
-- [containerTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl "SimpleSearch.SimpleSearch.containerTpl") - The Chunk that will be used to wrap all the search results, pagination and message.
-- [pageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl "SimpleSearch.SimpleSearch.pageTpl") - The Chunk to use for a pagination link.
-- [currentPageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl "SimpleSearch.SimpleSearch.currentPageTpl") - The Chunk to use for the current pagination link.
+- [tpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl "SimpleSearch.SimpleSearch.tpl") - The Chunk to use for each result displayed.
+- [containerTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl "SimpleSearch.SimpleSearch.containerTpl") - The Chunk that will be used to wrap all the search results, pagination and message.
+- [pageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl "SimpleSearch.SimpleSearch.pageTpl") - The Chunk to use for a pagination link.
+- [currentPageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl "SimpleSearch.SimpleSearch.currentPageTpl") - The Chunk to use for the current pagination link.
 
 ## Searching Custom Tables
 
@@ -82,7 +82,7 @@ _old_uri: "revo/simplesearch/simplesearch.simplesearch"
 className:fieldName(s):packageName:packagePath:joinCriteria||class2Name:fieldName(s):package2Name:package2Path:join2Criteria
 ```
 
- In other words, each custom package is separated by ||. Then, each part of it is separated by colons (:). An example to search [Quip](/extras/quip "Quip") comments:
+ In other words, each custom package is separated by ||. Then, each part of it is separated by colons (:). An example to search [Quip](extras/quip "Quip") comments:
 
  ``` php
 &customPackages=`quipComment:body:quip:{core_path}components/quip/model/:quipComment.resource = modResource.id`
@@ -100,7 +100,7 @@ className:fieldName(s):packageName:packagePath:joinCriteria||class2Name:fieldNam
 
 ## Examples
 
- These examples assume you've already sent the search query with the [SimpleSearchForm](/extras/simplesearch/simplesearch.simplesearchform "SimpleSearch.SimpleSearchForm") snippet. 
+ These examples assume you've already sent the search query with the [SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform "SimpleSearch.SimpleSearchForm") snippet. 
 
  Display results, but just show their titles:
 
@@ -122,13 +122,13 @@ className:fieldName(s):packageName:packagePath:joinCriteria||class2Name:fieldNam
 
 ## See Also
 
-1. [SimpleSearch.Roadmap](/extras/simplesearch/simplesearch.roadmap)
-2. [SimpleSearch.SimpleSearch](/extras/simplesearch/simplesearch.simplesearch)
-     1. [SimpleSearch.SimpleSearch.containerTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
-     2. [SimpleSearch.SimpleSearch.currentPageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
-     3. [SimpleSearch.SimpleSearch.pageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
-     4. [SimpleSearch.SimpleSearch.tpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
-     5. [SimpleSearch.Faceted Search Through PostHooks](/extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
-3. [SimpleSearch.SimpleSearchForm](/extras/simplesearch/simplesearch.simplesearchform)
-     1. [SimpleSearch.SimpleSearchForm.tpl](/extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
-4. [SimpleSearch.Solr](/extras/simplesearch/simplesearch.solr)
+1. [SimpleSearch.Roadmap](extras/simplesearch/simplesearch.roadmap)
+2. [SimpleSearch.SimpleSearch](extras/simplesearch/simplesearch.simplesearch)
+     1. [SimpleSearch.SimpleSearch.containerTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
+     2. [SimpleSearch.SimpleSearch.currentPageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
+     3. [SimpleSearch.SimpleSearch.pageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
+     4. [SimpleSearch.SimpleSearch.tpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
+     5. [SimpleSearch.Faceted Search Through PostHooks](extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
+3. [SimpleSearch.SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform)
+     1. [SimpleSearch.SimpleSearchForm.tpl](extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
+4. [SimpleSearch.Solr](extras/simplesearch/simplesearch.solr)

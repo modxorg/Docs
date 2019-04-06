@@ -38,6 +38,6 @@ It has the following properties to be passed into the Register snippet call:
 
 ## See Also
 
-1. [Rampart.hook.RampartFormIt](/extras/rampart/rampart.hook.rampartformit)
-2. [Rampart.hook.RampartQuip](/extras/rampart/rampart.hook.rampartquip)
-3. [Rampart.preHook.RampartRegister](/extras/rampart/rampart.prehook.rampartregister)
+1. [Rampart.hook.RampartFormIt](extras/rampart/rampart.hook.rampartformit)
+2. [Rampart.hook.RampartQuip](extras/rampart/rampart.hook.rampartquip)
+3. [Rampart.preHook.RampartRegister](extras/rampart/rampart.prehook.rampartregister)

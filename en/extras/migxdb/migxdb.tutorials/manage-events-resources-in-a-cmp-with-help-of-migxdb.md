@@ -13,7 +13,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.manage-events-resources-in-a-cmp-
 
 ## Requirements
 
- First off we will need to install [MIGX](/extras/migx "MIGX") by package-management, if not allready done, and do some [basic configurations](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
+ First off we will need to install [MIGX](extras/migx "MIGX") by package-management, if not allready done, and do some [basic configurations](extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
  Minimum Required version: MIGX 2.3.2 (10.09.2012)
 
  Download and install this package:

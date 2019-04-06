@@ -15,7 +15,7 @@ Discuss is maintained on Github and to properly allow external contributions, we
 3. Clone it to your local environment using the following command on terminal: 
   git clone git@github.com:**username**/Discuss.git 
   this will create a Discuss directory in the directory you were at with the contents of the Discuss repository. You will want to make sure this is in a web accessible directory but that is not in your MODX directory.
-4. Checkout the proper branch using `git checkout <branch>`. This will likely be "develop", a theme or a release branch depending on your intentions. Please see the [Discuss Contributions Guidelines](/extras/discuss/discuss.contributing "Discuss.Contributing") docs for more info on picking the right branch.
+4. Checkout the proper branch using `git checkout <branch>`. This will likely be "develop", a theme or a release branch depending on your intentions. Please see the [Discuss Contributions Guidelines](extras/discuss/discuss.contributing "Discuss.Contributing") docs for more info on picking the right branch.
 
 Next, we'll need to build a package to install. This will help you kickstart your forum and takes away lots of manual configuration.
 
@@ -29,7 +29,7 @@ Next, run the \_build/build.transport.php file. You can do this on the terminal 
 
 ## 3. Install Discuss from package
 
-[Follow the Installation instructions to set up your forum](/extras/discuss/discuss.installation "Discuss.Installation").
+[Follow the Installation instructions to set up your forum](extras/discuss/discuss.installation "Discuss.Installation").
 
 ## 4. Hook up your versioned Discuss Repository to your Forum
 

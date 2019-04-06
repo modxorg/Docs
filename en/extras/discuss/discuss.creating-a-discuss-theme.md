@@ -88,7 +88,7 @@ The manifest is a big php array located in the themes' templates directory calle
 2. The second level can be either of the following: 
   1. "js": allows you to define javascript to load on specific controllers. This option has a third level, which is one of the following: "header", "footer" or "inline". This third level then contains an array of files to load from assets/components/discuss/theme\_name/js/.
   2. "css": allows you to define stylesheets to load on specific controllers. This third level then contains an array of files to load from assets/components/discuss/theme\_name/css/.
-  3. "options": defines controller specific options to configure the behaviour of the controller. The options vary from controller to controller, and you can find them all in the [Controllers](/extras/discuss/discuss.controllers "Discuss.Controllers") documentation.
+  3. "options": defines controller specific options to configure the behaviour of the controller. The options vary from controller to controller, and you can find them all in the [Controllers](extras/discuss/discuss.controllers "Discuss.Controllers") documentation.
 
 If you're scared by the thought of PHP or PHP Arrays, have a look through [these](http://www.tizag.com/phpT/arrays.php) [resources](http://www.htmlandphp.com/beginner-php/207-introduction-to-arrays-in-php.html). What we're doing is called a multidimensional associative array.
 
@@ -101,14 +101,14 @@ $ git clone git@github.com:Your_Username/Discuss.git
 $ git remote add upstream https://github.com/modxcms/Discuss.git
 ```
 
-Next, check out the current release branch which contains the most up to date version. At time of writing that is release-1.1, but check the [Discuss Contributors Guidelines](/extras/discuss/discuss.contributing "Discuss.Contributing") for latest instructions.
+Next, check out the current release branch which contains the most up to date version. At time of writing that is release-1.1, but check the [Discuss Contributors Guidelines](extras/discuss/discuss.contributing "Discuss.Contributing") for latest instructions.
 
 ``` php 
 $ cd Discuss
 $ git checkout release-1.1
 ```
 
-Once you did that, we're going to create a different theme branch, which will help make collaboration easier in case you want to [contribute back to Discuss](/extras/discuss/discuss.contributing "Discuss.Contributing") \*cough\*. If you want to fix stuff in the default branch, you would instead create a fix branch, eg fix-colorsbug.
+Once you did that, we're going to create a different theme branch, which will help make collaboration easier in case you want to [contribute back to Discuss](extras/discuss/discuss.contributing "Discuss.Contributing") \*cough\*. If you want to fix stuff in the default branch, you would instead create a fix branch, eg fix-colorsbug.
 
 ``` php 
 $ git checkout -b theme-name_of_theme
@@ -124,4 +124,4 @@ define('MODX_CORE_PATH', '/Applications/MAMP/htdocs/modx/core/');
 define('MODX_CONFIG_KEY', 'config');
 ```
 
-You should have a functional Discuss install now, or at least be ready to follow the [Installation instructions](/extras/discuss/discuss.installation "Discuss.Installation") and get theming :)
+You should have a functional Discuss install now, or at least be ready to follow the [Installation instructions](extras/discuss/discuss.installation "Discuss.Installation") and get theming :)

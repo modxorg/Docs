@@ -33,16 +33,16 @@ SekUserGalleries is on GitHub: <https://github.com/insomnix/sekUserGalleries>, r
 
 The sekUserGalleries is called through several snippets using the below tags ?(currently all snippets should be called on separate pages):
 
-- [sekUserGalleries.browse.galleries](/extras/sekusergalleries/sekusergalleries.browse.galleries "sekUserGalleries.browse.galleries") - This will display all the galleries.
-- [sekUserGalleries.users.gallery.view](/extras/sekusergalleries/sekusergalleries.users.gallery.view "sekUserGalleries.users.gallery.view") - Display the selected galleries albums. If no gallery is specified in the url, and the user is logged in and has permission to have a gallery, this will default to that user's gallery page.
-- [sekUserGalleries.users.gallery.manage](/extras/sekusergalleries/sekusergalleries.users.gallery.manage "sekUserGalleries.users.gallery.manage") - This page will allow the user to change their user settings for the gallery, if they are logged in and have permission.
-- [sekUserGalleries.album.view](/extras/sekusergalleries/sekusergalleries.album.view "sekUserGalleries.album.view") - View the images within the selected album.
-- [sekUserGalleries.album.manage](/extras/sekusergalleries/sekusergalleries.album.manage "sekUserGalleries.album.manage") - Add, edit, and remove albums to the gallery, if the user is logged in and has permission.
-- [sekUserGalleries.album.items.manage](/extras/sekusergalleries/sekusergalleries.album.items.manage "sekUserGalleries.album.items.manage") - Add, edit, and remove the album items. Currently set up to upload images only.
-- [sekUserGalleries.album.items.helper](/extras/sekusergalleries/sekusergalleries.album.items.helper "sekUserGalleries.album.items.helper") - This helper snippet does all the work for the \[\[album.items.manage\]\] snippet.
-- [sekUserGalleries.image.information](/extras/sekusergalleries/sekusergalleries.image.information "sekUserGalleries.image.information") - Simple snippet that gives additional information about an image, like the date the picture was taken, camera used, etc.
-- [sekUserGalleries.search](/extras/sekusergalleries/sekusergalleries.search "sekUserGalleries.search") - Search the albums title, description, and keywords, and display.
-- [sekUserGalleries.directory](/extras/sekusergalleries/sekusergalleries.directory "sekUserGalleries.directory") - Display how much space the user is currently using on the server (This uses the 1024 based measurement, MiB, GiB, etc).
+- [sekUserGalleries.browse.galleries](extras/sekusergalleries/sekusergalleries.browse.galleries "sekUserGalleries.browse.galleries") - This will display all the galleries.
+- [sekUserGalleries.users.gallery.view](extras/sekusergalleries/sekusergalleries.users.gallery.view "sekUserGalleries.users.gallery.view") - Display the selected galleries albums. If no gallery is specified in the url, and the user is logged in and has permission to have a gallery, this will default to that user's gallery page.
+- [sekUserGalleries.users.gallery.manage](extras/sekusergalleries/sekusergalleries.users.gallery.manage "sekUserGalleries.users.gallery.manage") - This page will allow the user to change their user settings for the gallery, if they are logged in and have permission.
+- [sekUserGalleries.album.view](extras/sekusergalleries/sekusergalleries.album.view "sekUserGalleries.album.view") - View the images within the selected album.
+- [sekUserGalleries.album.manage](extras/sekusergalleries/sekusergalleries.album.manage "sekUserGalleries.album.manage") - Add, edit, and remove albums to the gallery, if the user is logged in and has permission.
+- [sekUserGalleries.album.items.manage](extras/sekusergalleries/sekusergalleries.album.items.manage "sekUserGalleries.album.items.manage") - Add, edit, and remove the album items. Currently set up to upload images only.
+- [sekUserGalleries.album.items.helper](extras/sekusergalleries/sekusergalleries.album.items.helper "sekUserGalleries.album.items.helper") - This helper snippet does all the work for the \[\[album.items.manage\]\] snippet.
+- [sekUserGalleries.image.information](extras/sekusergalleries/sekusergalleries.image.information "sekUserGalleries.image.information") - Simple snippet that gives additional information about an image, like the date the picture was taken, camera used, etc.
+- [sekUserGalleries.search](extras/sekusergalleries/sekusergalleries.search "sekUserGalleries.search") - Search the albums title, description, and keywords, and display.
+- [sekUserGalleries.directory](extras/sekusergalleries/sekusergalleries.directory "sekUserGalleries.directory") - Display how much space the user is currently using on the server (This uses the 1024 based measurement, MiB, GiB, etc).
 
 Ensure that the page resource id for each snippet is entered into the Settings (see below Available Settings) to ensure the pages work correctly.
 

@@ -4,7 +4,7 @@ _old_id: "1007"
 _old_uri: "revo/socialsuite/socialsuite.getfacebookshares"
 ---
 
-[SocialSuite](/extras/socialsuite "SocialSuite") is a collection of useful tools for integrating various social media into your MODX website.
+[SocialSuite](extras/socialsuite "SocialSuite") is a collection of useful tools for integrating various social media into your MODX website.
 
 getFacebookShares is a [snippet](developing-in-modx/basic-development/snippets "Snippets"), part of SocialSuite, which returns a number indicating the amount of times a certain URL has been **shared or commented on** using Facebook.
 

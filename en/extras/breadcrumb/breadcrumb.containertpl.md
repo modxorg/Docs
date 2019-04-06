@@ -6,7 +6,7 @@ _old_uri: "revo/breadcrumb/breadcrumb.containertpl"
 
 ## BreadCrumb's containerTpl
 
- This is the chunk displayed with the &containerTpl property on the [BreadCrumb](/extras/breadcrumb "BreadCrumb") snippet. Contains the list of crumbs.
+ This is the chunk displayed with the &containerTpl property on the [BreadCrumb](extras/breadcrumb "BreadCrumb") snippet. Contains the list of crumbs.
 
 ## Default Value
 

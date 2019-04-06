@@ -4,7 +4,7 @@ _old_id: "1006"
 _old_uri: "revo/socialsuite/socialsuite.getfacebookprofile"
 ---
 
-[SocialSuite](/extras/socialsuite "SocialSuite")is a collection of useful tools for integrating various social media into your MODX website.
+[SocialSuite](extras/socialsuite "SocialSuite")is a collection of useful tools for integrating various social media into your MODX website.
 
 getFacebookProfile is a [snippet](developing-in-modx/basic-development/snippets "Snippets"), part of SocialSuite, which returns all sorts of information about a **user or page** on Facebook.
 

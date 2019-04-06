@@ -4,7 +4,7 @@ _old_id: "734"
 _old_uri: "revo/wayfinder"
 ---
 
- [Wayfinder](/extras/wayfinder "Wayfinder") is a [Snippet](making-sites-with-modx/structuring-your-site/using-snippets "Snippets") by **kylej** that scans a specified portion of the MODX document tree, finds all documents that satisfy a certain criteria (determined by the Parameters), and outputs a formatted list of those documents. The formatting of the output is template-driven, and can contain any combination of HTML, CSS and JavaScript, yielding an enormous degree of flexibility.
+ [Wayfinder](extras/wayfinder "Wayfinder") is a [Snippet](making-sites-with-modx/structuring-your-site/using-snippets "Snippets") by **kylej** that scans a specified portion of the MODX document tree, finds all documents that satisfy a certain criteria (determined by the Parameters), and outputs a formatted list of those documents. The formatting of the output is template-driven, and can contain any combination of HTML, CSS and JavaScript, yielding an enormous degree of flexibility.
 
  _Wayfinder's_ primary purpose is to generate navigational menus that automatically update to reflect changes made to the document tree, but it can be used for other purposes as well.
 
@@ -66,7 +66,7 @@ _old_uri: "revo/wayfinder"
 
  will output the HTML for a multi-level, unordered list of the entire document tree (with certain exceptions), where each list item is a link to a corresponding document in the MODX document tree.
 
- See [Wayfinder Introductory Examples](/extras/wayfinder/wayfinder-introductory-examples "Wayfinder Introductory Examples") for some thorough examples comparing Wayfinder snippet calls to HTML output.
+ See [Wayfinder Introductory Examples](extras/wayfinder/wayfinder-introductory-examples "Wayfinder Introductory Examples") for some thorough examples comparing Wayfinder snippet calls to HTML output.
 
 ## Parameters
 
@@ -281,7 +281,7 @@ For example, adding &levelClass=`level` will result in
 
 ## Examples
 
- See [Wayfinder Introductory Examples](/extras/wayfinder/wayfinder-introductory-examples "Wayfinder Introductory Examples") for some thorough examples comparing Wayfinder snippet calls to HTML output.
+ See [Wayfinder Introductory Examples](extras/wayfinder/wayfinder-introductory-examples "Wayfinder Introductory Examples") for some thorough examples comparing Wayfinder snippet calls to HTML output.
 
 ### The Minimum Wayfinder Call
 

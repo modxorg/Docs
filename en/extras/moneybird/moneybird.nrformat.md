@@ -29,6 +29,6 @@ s - Symbol before the price, with a space
 
 ## See Also
 
-1. [MoneyBird.Contacts](/extras/moneybird/moneybird.contacts)
-2. [MoneyBird.Invoices](/extras/moneybird/moneybird.invoices)
-3. [MoneyBird.NrFormat](/extras/moneybird/moneybird.nrformat)
+1. [MoneyBird.Contacts](extras/moneybird/moneybird.contacts)
+2. [MoneyBird.Invoices](extras/moneybird/moneybird.invoices)
+3. [MoneyBird.NrFormat](extras/moneybird/moneybird.nrformat)

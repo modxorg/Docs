@@ -6,7 +6,7 @@ _old_uri: "revo/taglister/taglister.taglister/taglister.taglister.tpl"
 
 ## tagLister's tpl Chunk
 
-This is the Chunk displayed with the &tpl property on the [tagLister](/extras/taglister/taglister.taglister "tagLister.tagLister") snippet.
+This is the Chunk displayed with the &tpl property on the [tagLister](extras/taglister/taglister.taglister "tagLister.tagLister") snippet.
 
 ## Default Value
 
@@ -28,9 +28,9 @@ This is the Chunk displayed with the &tpl property on the [tagLister](/extras/ta
 
 ## See Also
 
-1. [tagLister.getResourcesTag](/extras/taglister/taglister.getresourcestag)
-2. [tagLister.tagLister](/extras/taglister/taglister.taglister)
-     1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
-     2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
-3. [tagLister.tolinks](/extras/taglister/taglister.tolinks)
-     1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+1. [tagLister.getResourcesTag](extras/taglister/taglister.getresourcestag)
+2. [tagLister.tagLister](extras/taglister/taglister.taglister)
+     1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
+     2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
+3. [tagLister.tolinks](extras/taglister/taglister.tolinks)
+     1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)

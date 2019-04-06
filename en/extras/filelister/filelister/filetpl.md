@@ -6,7 +6,7 @@ _old_uri: "revo/filelister/filelister.filelister/filelister.filelister.filetpl"
 
 ## FileLister's fileTpl Chunk
 
-This is the Chunk displayed with the &fileTpl property on the [FileLister](/extras/filelister/filelister.filelister "FileLister.FileLister") snippet.
+This is the Chunk displayed with the &fileTpl property on the [FileLister](extras/filelister/filelister.filelister "FileLister.FileLister") snippet.
 
 ## Default Value
 
@@ -28,16 +28,16 @@ This is the Chunk displayed with the &fileTpl property on the [FileLister](/extr
 | bytesize     | The size in bytes of the file.                                                                                                                   |
 | extension    | The file extension of the file.                                                                                                                  |
 | lastmod      | The last modified date, in timestamp format.                                                                                                     |
-| dateFormat   | The dateFormat string passed into the [FileLister](/extras/filelister/filelister.filelister "FileLister.FileLister") snippet.                    |
+| dateFormat   | The dateFormat string passed into the [FileLister](extras/filelister/filelister.filelister "FileLister.FileLister") snippet.                    |
 | path         | The absolute path to the file.                                                                                                                   |
-| relativePath | The relative path to the 'path' property passed into the [FileLister](/extras/filelister/filelister.filelister "FileLister.FileLister") snippet. |
+| relativePath | The relative path to the 'path' property passed into the [FileLister](extras/filelister/filelister.filelister "FileLister.FileLister") snippet. |
 | navKey       | The navKey being used for link generation.                                                                                                       |
 
 ## See Also
 
-1. [FileLister.FileLister](/extras/filelister/filelister.filelister)
-  1. [FileLister.FileLister.directoryTpl](/extras/filelister/filelister.filelister/filelister.filelister.directorytpl)
-  2. [FileLister.FileLister.fileLinkTpl](/extras/filelister/filelister.filelister/filelister.filelister.filelinktpl)
-  3. [FileLister.FileLister.fileTpl](/extras/filelister/filelister.filelister/filelister.filelister.filetpl)
-  4. [FileLister.FileLister.pathTpl](/extras/filelister/filelister.filelister/filelister.filelister.pathtpl)
-2. [FileLister.Roadmap](/extras/filelister/filelister.roadmap)
+1. [FileLister.FileLister](extras/filelister/filelister.filelister)
+  1. [FileLister.FileLister.directoryTpl](extras/filelister/filelister.filelister/filelister.filelister.directorytpl)
+  2. [FileLister.FileLister.fileLinkTpl](extras/filelister/filelister.filelister/filelister.filelister.filelinktpl)
+  3. [FileLister.FileLister.fileTpl](extras/filelister/filelister.filelister/filelister.filelister.filetpl)
+  4. [FileLister.FileLister.pathTpl](extras/filelister/filelister.filelister/filelister.filelister.pathtpl)
+2. [FileLister.Roadmap](extras/filelister/filelister.roadmap)

@@ -18,9 +18,9 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
  First off, you'll want to go ahead and download and install some Extras that we'll be using for this Setup. The following is a list of used Extras:
 
-- [MIGX](/extras/migx "MIGX") - For creating and fill the boxes in MODX-backend and for listing them on the frontend. ADDON/TinyMCE
-- [TinyMCE](/extras/evo/tinymce "TinyMCE") - Richtext-Editor to edit the content-texts.
-- [phpThumbOf](/extras/phpthumbof "phpThumbOf") - For resizing the images to fit in our columns.
+- [MIGX](extras/migx "MIGX") - For creating and fill the boxes in MODX-backend and for listing them on the frontend. ADDON/TinyMCE
+- [TinyMCE](extras/evo/tinymce "TinyMCE") - Richtext-Editor to edit the content-texts.
+- [phpThumbOf](extras/phpthumbof "phpThumbOf") - For resizing the images to fit in our columns.
 
 ### The Template
 

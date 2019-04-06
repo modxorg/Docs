@@ -42,8 +42,8 @@ First of all: ALWAYS MAKE A BACKUP BEFORE UPDATING!
 
  SimpleSearch has 2 snippets - one to display a form ("SimpleSearchForm"), and the other to display search results ("SimpleSearch").
 
-- [SimpleSearch](/extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch")
-- [SimpleSearchForm](/extras/simplesearch/simplesearch.simplesearchform "SimpleSearch.SimpleSearchForm")
+- [SimpleSearch](extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch")
+- [SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform "SimpleSearch.SimpleSearchForm")
 
 ## Examples
 
@@ -64,13 +64,13 @@ First of all: ALWAYS MAKE A BACKUP BEFORE UPDATING!
 
 ## See Also
 
-1. [SimpleSearch.Roadmap](/extras/simplesearch/simplesearch.roadmap)
-2. [SimpleSearch.SimpleSearch](/extras/simplesearch/simplesearch.simplesearch)
-     1. [SimpleSearch.SimpleSearch.containerTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
-     2. [SimpleSearch.SimpleSearch.currentPageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
-     3. [SimpleSearch.SimpleSearch.pageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
-     4. [SimpleSearch.SimpleSearch.tpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
-     5. [SimpleSearch.Faceted Search Through PostHooks](/extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
-3. [SimpleSearch.SimpleSearchForm](/extras/simplesearch/simplesearch.simplesearchform)
-     1. [SimpleSearch.SimpleSearchForm.tpl](/extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
-4. [SimpleSearch.Solr](/extras/simplesearch/simplesearch.solr)
+1. [SimpleSearch.Roadmap](extras/simplesearch/simplesearch.roadmap)
+2. [SimpleSearch.SimpleSearch](extras/simplesearch/simplesearch.simplesearch)
+     1. [SimpleSearch.SimpleSearch.containerTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
+     2. [SimpleSearch.SimpleSearch.currentPageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
+     3. [SimpleSearch.SimpleSearch.pageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
+     4. [SimpleSearch.SimpleSearch.tpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
+     5. [SimpleSearch.Faceted Search Through PostHooks](extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
+3. [SimpleSearch.SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform)
+     1. [SimpleSearch.SimpleSearchForm.tpl](extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
+4. [SimpleSearch.Solr](extras/simplesearch/simplesearch.solr)

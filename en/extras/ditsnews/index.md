@@ -34,7 +34,7 @@ Being developed since December 2010 by [ditsmedia](http://modx.com/extras/author
 ### Requirements
 
 - MODX Revolution (tested with 2.1.1)
-- [FormIt](/extras/formit "FormIt") (for sign-up form)
+- [FormIt](extras/formit "FormIt") (for sign-up form)
 - Cronjobs (or some other method to run a script periodically)
 
 ### Development & Bug reporting

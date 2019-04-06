@@ -10,7 +10,7 @@ _old_uri: "revo/login/login.forgotpassword"
 
 ## Usage
 
- To use the password retrieval functionality, first create the Resource the user will log into when they click on the confirmation email, and put the [ResetPassword](/extras/login/login.resetpassword "Login.ResetPassword") snippet in. Tell it what Resource the Login snippet is in - or where you'd like it to provide a link back to:
+ To use the password retrieval functionality, first create the Resource the user will log into when they click on the confirmation email, and put the [ResetPassword](extras/login/login.resetpassword "Login.ResetPassword") snippet in. Tell it what Resource the Login snippet is in - or where you'd like it to provide a link back to:
 
  ``` php 
 [[!ResetPassword? &loginResourceId=`72`]]
@@ -40,7 +40,7 @@ _old_uri: "revo/login/login.forgotpassword"
  | sentTpl         | The message tpl to show when an email was successfully sent.                                                           | lgnForgotPassSentTpl     |
  | sentTplType     | The type of tpl being provided by _sentTpl_                                                                            | modChunk                 |
  | loginResourceId | The resource to direct users to on successful confirmation.                                                            | 1                        |
- | resetResourceId | The resource that contains the [Login.ResetPassword](/extras/login/login.resetpassword "Login.ResetPassword") Snippet. | 1                        |
+ | resetResourceId | The resource that contains the [Login.ResetPassword](extras/login/login.resetpassword "Login.ResetPassword") Snippet. | 1                        |
 
 ### tplType Options
 
@@ -53,20 +53,20 @@ _old_uri: "revo/login/login.forgotpassword"
 
 ## See Also
 
-1. [Login.Login](/extras/login/login.login)
-2. [Login.Profile](/extras/login/login.profile)
-3. [Login.UpdateProfile](/extras/login/login.updateprofile)
-4. [Login.Register](/extras/login/login.register)
-  1. [Register.Example Form 1](/extras/login/login.register/register.example-form-1)
-5. [Login.ConfirmRegister](/extras/login/login.confirmregister)
-6. [Login.ForgotPassword](/extras/login/login.forgotpassword)
-7. [Login.ResetPassword](/extras/login/login.resetpassword)
-8. [Login.ChangePassword](/extras/login/login.changepassword)
-9. [Login.Tutorials](/extras/login/login.tutorials)
-  2. [Login.Basic Setup](/extras/login/login.tutorials/login.basic-setup)
-  3. [Login.Extended User Profiles](/extras/login/login.tutorials/login.extended-user-profiles)
-  4. [Login.Request Membership](/extras/login/login.tutorials/login.request-membership)
-  5. [Login.User Profiles](/extras/login/login.tutorials/login.user-profiles)
-  6. [Login.Using Custom Fields](/extras/login/login.tutorials/login.using-custom-fields)
-  7. [Login.Using Pre and Post Hooks](/extras/login/login.tutorials/login.using-pre-and-post-hooks)
-10. [Login.Roadmap](/extras/login/login.roadmap)
+1. [Login.Login](extras/login/login.login)
+2. [Login.Profile](extras/login/login.profile)
+3. [Login.UpdateProfile](extras/login/login.updateprofile)
+4. [Login.Register](extras/login/login.register)
+  1. [Register.Example Form 1](extras/login/login.register/register.example-form-1)
+5. [Login.ConfirmRegister](extras/login/login.confirmregister)
+6. [Login.ForgotPassword](extras/login/login.forgotpassword)
+7. [Login.ResetPassword](extras/login/login.resetpassword)
+8. [Login.ChangePassword](extras/login/login.changepassword)
+9. [Login.Tutorials](extras/login/login.tutorials)
+  2. [Login.Basic Setup](extras/login/login.tutorials/login.basic-setup)
+  3. [Login.Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles)
+  4. [Login.Request Membership](extras/login/login.tutorials/login.request-membership)
+  5. [Login.User Profiles](extras/login/login.tutorials/login.user-profiles)
+  6. [Login.Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields)
+  7. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks)
+10. [Login.Roadmap](extras/login/login.roadmap)

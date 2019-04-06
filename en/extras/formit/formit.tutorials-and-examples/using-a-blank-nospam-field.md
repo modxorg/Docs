@@ -30,7 +30,7 @@ Make sure not to use an existing field name in your form for the nospam field! T
 
 ## See Also
 
-1. [FormIt.Examples.Custom Hook](/extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
-2. [FormIt.Examples.Simple Contact Page](/extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
-3. [FormIt.Handling Selects, Checkboxes and Radios](/extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
-4. [FormIt.Using a Blank NoSpam Field](/extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
+1. [FormIt.Examples.Custom Hook](extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
+2. [FormIt.Examples.Simple Contact Page](extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
+3. [FormIt.Handling Selects, Checkboxes and Radios](extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
+4. [FormIt.Using a Blank NoSpam Field](extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
