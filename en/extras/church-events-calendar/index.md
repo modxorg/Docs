@@ -66,6 +66,6 @@ These need to be created if they do not exist.
 
 1. [ChurchEvents.MODX Manager functions](/extras/church-events-calendar/churchevents.modx-manager-functions)
 2. [ChurchEventsCalendar Snippet](/extras/church-events-calendar/churcheventscalendar-snippet)
-  1. [ChurchEvents.Managing events](/extras/church-events-calendar/churcheventscalendar-snippet/churchevents.managing-events)
+    1. [ChurchEvents.Managing events](/extras/church-events-calendar/churcheventscalendar-snippet/churchevents.managing-events)
 3. [ChurchEventsList Snippet](/extras/church-events-calendar/churcheventslist-snippet)
 4. [ChurchEventsRss Snippet](/extras/church-events-calendar/churcheventsrss-snippet)

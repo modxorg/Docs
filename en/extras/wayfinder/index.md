@@ -94,14 +94,7 @@ _old_uri: "revo/wayfinder"
  | &contexts       | Contexts to use for building the menu. Defaults to the current context. ( _added in 2.2.0-rc1_)                                            |               |
  | &startIdContext | ( _added in 2.2.0-rc1_)                                                                                                                    |               |
  | &config         | external php file to configure Wayfinder ( _see core/components/wayfinder/configs for examples_)                                           |               |
- | &scheme         | format for how URLs are generated. Possible values are (based on makeURL API call):                                                        |
-- -1 : (default value) URL is relative to site\_url
-- 0 : see http
-- 1 : see https
-- full : URL is absolute, prepended with site\_url from config
-- abs : URL is absolute, prepended with base\_url from config
-- http : URL is absolute, forced to http scheme
-- https : URL is absolute, forced to https scheme (_added in 2.3.1-pl_) | -1 |
+ | &scheme         | format for how URLs are generated. Possible values are (based on makeURL API call): `-1` : (default value) URL is relative to site\_url, `0`: see http, `1`: see https, `full`: URL is absolute, prepended with site\_url from config, `abs`: URL is absolute, prepended with base\_url from config, `http`: URL is absolute, forced to http scheme, `https`: URL is absolute, forced to https scheme (_added in 2.3.1-pl_) | -1 |
 | &sortBy | Which field to sort by e.g. 'published' |  |
 | &sortOrder | The sorting order, 'ASC' or 'DESC' |  |
 | &where | JSON style filtering option. For example when trying to hide blog or news from the Articles addon: &where=`\[{"class\_key:!=": "Article"}\]` |  |
@@ -138,35 +131,32 @@ return $doc->getTVValue($myTV);
 
  As a result the full processed image TV is returned.
 
- **_&outerTpl_**
+#### &outerTpl
 
- Name of the chunk containing the template for the outer most container; if not included, a string including "
+ Name of the chunk containing the template for the outer most container; if not included, a string including `[[+wf.wrapper]]` is assumed
 
- \[\[+wf.wrapper\]\]
- " is assumed
-
- Available placeholders are:
+Available placeholders are:
 
 - wf.classes - outputs relevant classes (including class=" ")
 - wf.classnames - outputs relevant classes (without class=" ")
 - wf.wrapper - outputs inner (row) contents. This placeholder is required.
 
- Please note that you will need to wrap the placeholders with the relevant tags.
+Please note that you will need to wrap the placeholders with the relevant tags.
 
- ``` php
+``` php
 Evolution: [+wf._____+]
 Revolution: [[+wf._____]]
 ```
 
- Example of an &outerTpl chunk (Evo):
+Example of an &outerTpl chunk (Evo):
 
- ``` php
+``` php
 <ul id="topnav"[+wf.classes+]>[+wf.wrapper+]</ul>
 ```
 
- Revo:
+Revo:
 
- ``` php
+``` php
 <ul id="topnav"[[+wf.classes]]>[[+wf.wrapper]]</ul>
 ```
 
@@ -176,7 +166,7 @@ Revolution: [[+wf._____]]
  | --------- | -------------------------------------------------------------------------------- |
  | &innerTpl | Name of the chunk containing the template for any subfolders listed in the menu. |
 
- **_&rowTpl_**
+#### &rowTpl
 
  Name of the chunk containing the template for the regular row items.
  Available placeholders are:
@@ -262,10 +252,11 @@ Revolution: [[+wf._____]]
  | &innerClass   | CSS class for the inner template                                                                                                                        |         |
  | &webLinkClass | CSS class for weblink items.                                                                                                                            |         |
 
- **Example**
- Simply specify the class parameters in the snippet to add the classnames to the output.
+**Example**:
 
- For example, adding &levelClass=`level` will result in
+Simply specify the class parameters in the snippet to add the classnames to the output.
+
+For example, adding &levelClass=`level` will result in
 
  ``` html
 <li class="level2">
@@ -284,10 +275,9 @@ Revolution: [[+wf._____]]
 
  | Parameter     | Default value                                                                                                                           |
  | ------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
- | &outerTpl     | > <ul[[+wf.classes]]>[[+wf.wrapper]]</ul>                                                                                               |
- | &rowTpl       | > <li[[+wf.id]][[+wf.classes]]><a href="[[+wf.link]]" title="[[+wf.title]]" [[+wf.attributes]]>[[+wf.linktext]]</a>[[+wf.wrapper]]</li> |
- | &startItemTpl | > <h2[[+wf.id]][[+wf.classes]]>[[+wf.linktext]]</h2>[[+wf.wrapper]]                                                                     |
-
+ | &outerTpl     | `<ul[[+wf.classes]]>[[+wf.wrapper]]</ul>`                                                                                             |
+ | &rowTpl       | `<li[[+wf.id]][[+wf.classes]]><a href="[[+wf.link]]" title="[[+wf.title]]" [[+wf.attributes]]>[[+wf.linktext]]</a>[[+wf.wrapper]]</li>` |
+ | &startItemTpl | `<h2[[+wf.id]][[+wf.classes]]>[[+wf.linktext]]</h2>[[+wf.wrapper]]`                                                                    |
 
 ## Examples
 

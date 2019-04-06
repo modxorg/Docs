@@ -45,7 +45,7 @@ Create a new chunk and call it: google-sitemap-tpl
 
 ## The Page
 
-Create a page in the root of your site and name it "sitemap.xml". Check the Hide From Menus box. Set the template to '<empty>'. In Page Settings change the content type to xml. Paste in the below code and you should be good to go. When you have saved it, confirm the resource alias field is 'sitemap.xml' and the resource is published.
+Create a page in the root of your site and name it "sitemap.xml". Check the Hide From Menus box. Set the template to `<empty>`. In Page Settings change the content type to xml. Paste in the below code and you should be good to go. When you have saved it, confirm the resource alias field is 'sitemap.xml' and the resource is published.
 
 ``` php 
 <?xml version="1.0" encoding="UTF-8"?>

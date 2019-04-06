@@ -21,8 +21,8 @@ Add a standard event that only occurs once
 2. Select the date that you wish to have the event on.
 3. Now you will need to select the option if the event is timed or if it is an all-day event. An example of a timed event would be a meeting that happens at 7pm and would last for an hour. 
   _Note with either option if you are using the Location Management setting and the location you choose for this event is checking for conflicts no one else will be able to put in an event that will overlap this event._
-  1. If you select Yes, you will have a Start Time and Duration that must be filled in, you also have an optional setup time. Example would be event is from 7pm to 8pm so select 7:00 pm for the start time and then select 1:00 for the duration(length of event)
-  2. If you select No there are no additional options and this event will show up as All Day.
+    1. If you select Yes, you will have a Start Time and Duration that must be filled in, you also have an optional setup time. Example would be event is from 7pm to 8pm so select 7:00 pm for the start time and then select 1:00 for the duration(length of event)
+    2. If you select No there are no additional options and this event will show up as All Day.
 
 ### Repeating event options
 
@@ -35,16 +35,16 @@ There are three repeating event options, Daily, Weekly and Monthly. Some example
 3. Now select the day that the event starts on
 4. Select the day that the event ends on
 
-**Examples**
+**Examples**:
 
 1. An event that repeats every day from Monday 12/5 to Friday 12/9. 
-  1. You would select repeat Every day
-  2. Select the start day to be 12/5
-  3. And then select the end date to be 12/9.
+    1. You would select repeat Every day
+    2. Select the start day to be 12/5
+    3. And then select the end date to be 12/9.
 2. An event that repeats every other day starting on Sunday 12/4 and ending Friday 12/16. The event will be Sun, Tues, Thurs, Sat, Mon, Wed and Fri. 
-  1. Select repeat Every third day
-  2. Select the start day of 12/4
-  3. Select the end day of 12/16
+    1. Select repeat Every third day
+    2. Select the start day of 12/4
+    3. Select the end day of 12/16
 
 #### Using the Weekly repeating option
 
@@ -54,17 +54,17 @@ There are three repeating event options, Daily, Weekly and Monthly. Some example
 4. Now select the day that the event starts on
 5. Select the day that the event ends on
 
-**Examples**
+**Examples**:
 
 1. You have an event on every Monday, Wednesday, and Friday that last for the month of January 2012. 
-  1. Select repeat weekly
-  2. Now select Monday, Wednesday and Friday
-  3. Select the start date 1/02/2011
-  4. And the end date 1/30/2011
+    1. Select repeat weekly
+    2. Now select Monday, Wednesday and Friday
+    3. Select the start date 1/02/2011
+    4. And the end date 1/30/2011
 2. You have an event that repeats on Tuesday’s every other week. 
-  1. Select repeat weekly
-  2. Select Tuesday
-  3. Select the start date and end date.
+    1. Select repeat weekly
+    2. Select Tuesday
+    3. Select the start date and end date.
 
 #### **Monthly repeating**
 
@@ -77,16 +77,16 @@ Monthly repeating can seem a little overwhelming until you understand how it wor
 4. Now select the day that the event starts on
 5. Select the day that the event ends on
 
-**Examples**
+**Examples**:
 
 1. The first Monday of every month there is an event. 
-  1. Select Every month
-  2. Select the Sunday in the First Week row.
-  3. Select the day that the event starts on and the day the event ends on.
+    1. Select Every month
+    2. Select the Sunday in the First Week row.
+    3. Select the day that the event starts on and the day the event ends on.
 2. An event that occurs on the second Tuesday and forth Monday of every month. 
-  1. Select Every month
-  2. Select the Tuesday in the second week row
-  3. Select the Monday in the fourth week row.
+    1. Select Every month
+    2. Select the Tuesday in the second week row
+    3. Select the Monday in the fourth week row.
 
 ## Edit an event(s)
 

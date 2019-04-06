@@ -105,13 +105,13 @@ This snippet retrieves the items of the LexRating's results based on the given g
 
 To get the complete placeholders, just use **&toArray=`1`** to spit out the keys.
 
-**WRAPPER**
+**WRAPPER**:
 
 | Name                          | Description                         |
 | ----------------------------- | ----------------------------------- |
 | \[\[+lexrating.list.items\]\] | The holder of the list of the items |
 
-**LIST**
+**LIST**:
 
 | Name                            | Description                               |
 | ------------------------------- | ----------------------------------------- |

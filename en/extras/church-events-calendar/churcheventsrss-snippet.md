@@ -34,9 +34,7 @@ In your MODX Manager you will need to create a new resource.
 2. Next, change the template to use "(empty)", or in other words no template at all. You will get a popup asking if you are sure you want to change the template, click yes.
 3. Move into the Page Settings tab and find the "Content Type". Open it, and set it to RSS.
 4. Now you are ready to include the Snippet in the page content. If you are using TinyMCE or a similar rich text editor, disable it on the Page Settings tab to prevent odd things happening to the code.
-5. Just paste in the code: ``` php 
-  [[!ChurchEventsRss?]]
-  ```
+5. Just paste in the code: `[[!ChurchEventsRss?]]`
 6. Now save the resource
 7. Copy the newly created page ID
 8. Now go to System Settings (under System)

@@ -22,16 +22,16 @@ _old_uri: "revo/getresources/getresources.examples/getresources.category-index-p
 
  ``` php 
 <div class="list-docs thumb grid">
- [[!getResources?  
+    [[!getResources?  
         &parents=`[[*id]]` 
-         &tpl=`list-docs-thumb-tpl`  
+        &tpl=`list-docs-thumb-tpl`  
         &limit=`100`  
         &sortdir=`ASC`  
         &includeTVs=`1`  
         &includeContent=`1`   
         &depth=`0`  
         &sortby=`menuindex`  
-        ]]  
+    ]]  
 </div><!-- eof list-docs -->?
 ```
 
@@ -39,11 +39,11 @@ _old_uri: "revo/getresources/getresources.examples/getresources.category-index-p
 
  ``` php 
 <div class="list-item column span-6">
-          <h2>[[+pagetitle]]</h2>
-                 <a href="[[~[[+id]]]]" title="[[+pagetitle]]">     
-                 <img src="[[+tv.page-thumb:phpthumbof=`w=153&h=200&zc=1`]]" alt="[[+pagetitle]]" />
-             </a>  
-        <p>[[+introtext]]</p>   
+    <h2>[[+pagetitle]]</h2>
+    <a href="[[~[[+id]]]]" title="[[+pagetitle]]">     
+        <img src="[[+tv.page-thumb:phpthumbof=`w=153&h=200&zc=1`]]" alt="[[+pagetitle]]" />
+    </a>  
+    <p>[[+introtext]]</p>   
 </div>  <!-- eof item -->?
 ```
 
@@ -55,4 +55,4 @@ _old_uri: "revo/getresources/getresources.examples/getresources.category-index-p
 
  Note that this specific example requires phpThumbOf to be installed to display the images - it can be gotten through the package manager.
 
- Use &tvFilters=`page-thumb==%` to skip resources with empty TV
+ Use ```&tvFilters=`page-thumb==%` ``` to skip resources with empty TV

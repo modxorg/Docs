@@ -106,7 +106,7 @@ This will filter resources to meet one of the following conditions:
   
   It is important to know that this function **looks at the raw value of a template variable** for a specific resource. This means that **the value has been explicitly set for the resource**, and that it has not been **processed by a template variable output type**. So if you have an "autotag" tv, this means the raw value is a comma delimited list, and it is not split up in tags like you see it in the manager.
   
-  **Available filter operators**
+  **Available filter operators**:
   
   There are a number of comparison operators for use when creating filter conditions. In addition, when using many of these operators, numeric comparison values are automatically CAST TV values to numeric before comparison. Here is a list of the valid operators:
   |        | Filter Operator                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |     | SQL Operator |  | CASTs numerics |  | Notes |  |  | <=> | <=> | Yes | _NULL safe equals_ |  | === | = | Yes |  |
@@ -266,5 +266,5 @@ and the chunk blogListPost:
 
 ## See Also
 
-If you want to render properties of Resources rather than the complete output, use [getResources](/extras/getresources "getResources"). 
-If you only need to get a single field from a foreign resource, try using [getResourceField](/extras/getresourcefield "getResourceField").
+If you want to render properties of Resources rather than the complete output, use [getResources](extras/getresources "getResources"). 
+If you only need to get a single field from a foreign resource, try using [getResourceField](extras/getresourcefield "getResourceField").

@@ -12,8 +12,8 @@ SubscribeMe comes with a snippet to list subscriptions (be it manual or PayPal R
 
 ## Listing Subscriptions: smGetSubscriptions
 
-_Coming soon..._
+Coming soon...
 
 ## Cancelling Subscriptions using FormIt hooks: smCancelPayPalProfilePre and smCancelPayPalProfile
 
-_Coming soon..._
+Coming soon...

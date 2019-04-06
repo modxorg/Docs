@@ -38,16 +38,13 @@ A Chunk named "**AdvSearchForm**" is provided with AdvSearch. This Chunk name is
 
 The searchForm chunk should contain:
 
-- an action: action="\[\[~\[\[+landing\]\]\]\]"
-- a method: method="\[\[+method\]\]"
-- a hidden input field named asId: <input type="hidden" name="asId" value="\[\[+asId\]\]"> for the form instance
-- a hidden input field named id: <input type="hidden" name="id" value="\[\[+landing\]\]"> with the landing page id
+- an action: `action="[[~[[+landing]]]]"`
+- a method: `method="[[+method]]"`
+- a hidden input field named asId: `<input type="hidden" name="asId" value="[[+asId]]">` for the form instance
+- a hidden input field named id: `<input type="hidden" name="id" value="[[+landing]]">` with the landing page id
 - a submit input field named "sub".
 
 and possibly:
 
-- an input text field: <input type="text" id="\[\[+asId\]\]\_search" name="\[\[+searchIndex\]\]" value="\[\[+searchValue\]\]" /> 
-  For a form without a search input field, simply remove this line from the form.
-
-- the help link: \[\[+helpLink\]\] 
-  To hide the help link use the &help parameter to remove the placeholder altogether.
+- an input text field: `<input type="text" id="[[+asId]]_search" name="[[+searchIndex]]" value="[[+searchValue]]" />` For a form without a search input field, simply remove this line from the form.
+- the help link: `[[+helpLink]]` To hide the help link use the `&help` parameter to remove the placeholder altogether.

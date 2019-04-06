@@ -20,9 +20,7 @@ Version 1.0
 
 | Name    | Description                                                                                                              | Default Value |
 | ------- | ------------------------------------------------------------------------------------------------------------------------ | ------------- |
-| headTpl | This is the JS/CSS for the calendar goes in the <head> and can use the results from looping categoryHeadTpl like ``` php |
- [[+categoryHeadTpl]] 
-``` | ChurchEvents\_HeadTpl |
+| headTpl | This is the JS/CSS for the calendar goes in the <head> and can use the results from looping categoryHeadTpl like ``` php [[+categoryHeadTpl]]``` | ChurchEvents\_HeadTpl |
 | categoryHeadTpl | Category CSS or JS that will go through loop and be placed in <head> | ChurchEvents\_CategoryHeadTpl |
 | calFilterTpl | Calendar Filter | ChurchEvents\_CalFilterTpl |
 | calAdminFilterTpl | Calendar Filter (added in 1.1) | ChurchEvents\_CalFilterTpl |

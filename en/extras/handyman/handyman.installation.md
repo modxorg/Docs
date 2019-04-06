@@ -25,7 +25,7 @@ The Beta Provider has been discontinued. Please use the official MODX.com reposi
 Clone the repo at <https://github.com/Mark-H/HandyMan> to your local host.
 
 ``` php 
-$ git clone https://github.com/Mark-H/HandyMan.git
+git clone https://github.com/Mark-H/HandyMan.git
 ```
 
 Add or adjust the core.config.php file to make sure it points to your MODX installation.
