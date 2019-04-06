@@ -4,13 +4,6 @@ _old_id: "1791"
 _old_uri: "revo/personalize"
 ---
 
-- [What is Personalize?](#Personalize-WhatisPersonalize)
-- [Package Information](#Personalize-Information)
-- [History](#Personalize-History)
-- [Download](#Personalize-Download)
-- [Development and Bug Reporting](#Personalize-DevelopmentandBugReporting)
-- [Documentation](#Personalize-Documentation)
- 
 ## What is Personalize?
 
 Shows one chunk to logged-in users and another to everyone else.
@@ -40,7 +33,7 @@ It is currently maintained by Bob Ray.
 
  Personalize can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/personalize).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  Personalize is stored and developed using GitHub, and can be found here: [Personalize GitHub main page](https://github.com/BobRay/personalize).
 

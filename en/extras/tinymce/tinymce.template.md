@@ -19,7 +19,7 @@ This is just a quick guide for adding templates to TinyMCE in Revolution (I foun
 
 \- Change the value for the property '**Template List**' (key: 'tiny.template\_list'). Add the values (templates) in a comma separated list in this format:
 
-``` php 
+``` php
 name:path-to-the-template:description
 ```
 

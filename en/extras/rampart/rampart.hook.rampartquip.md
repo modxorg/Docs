@@ -8,7 +8,7 @@ _old_uri: "revo/rampart/rampart.hook.rampartquip"
 
 To enable Rampart spam prevention on your Quip comments, simply add hook.RampartQuip as a preHook in your Quip call:
 
-``` php 
+``` php
 [[!Quip?
   &preHook=`hook.RampartQuip`
 ]]
@@ -20,8 +20,8 @@ This will automatically check the email on the Quip form against spammers in you
 
 It has the following properties to be passed into the FormIt snippet call:
 
-| name | description | default |
-|------|-------------|---------|
+| name                   | description                                                                        | default                                           |
+| ---------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------- |
 | rptSpammerErrorMessage | The field-specific message that will show when a spammer tries to submit the form. | Your account has been banned as a spammer. Sorry. |
 
 ## See Also

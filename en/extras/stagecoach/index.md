@@ -4,13 +4,6 @@ _old_id: "1799"
 _old_uri: "revo/stagecoach"
 ---
 
-- [What is StageCoach?](#StageCoach-WhatisStageCoach)
-- [Package Information](#StageCoach-Information)
-- [History](#StageCoach-History)
-- [Download](#StageCoach-Download)
-- [Development and Bug Reporting](#StageCoach-DevelopmentandBugReporting)
-- [Documentation](#StageCoach-Documentation)
- 
 ## What is StageCoach?
 
 For new Resources in MODX, you can set a future publication date so that the new content won't appear until that date, but sometimes you want to stage changes to an existing Resource and not have the changes appear until a future date. That's exactly what StageCoach does for you.
@@ -37,7 +30,7 @@ It is currently maintained by Bob Ray.
 
  StageCoach can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/stagecoach).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  StageCoach is stored and developed using GitHub, and can be found here: [StageCoach GitHub main page](https://github.com/BobRay/StageCoach).
 

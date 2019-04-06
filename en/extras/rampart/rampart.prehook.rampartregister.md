@@ -8,7 +8,7 @@ _old_uri: "revo/rampart/rampart.prehook.rampartregister"
 
 To enable Rampart spam prevention on your Register forms, simply add preHook.RampartRegister as a preHook:
 
-``` php 
+``` php
 [[!Register?
   &preHooks=`math,preHook.RampartRegister`
   &moderatedResourceId=`217`
@@ -32,8 +32,8 @@ It also checks with [StopForumSpam](http://stopforumspam.com/) for any flagged e
 
 It has the following properties to be passed into the Register snippet call:
 
-| name | description | default |
-|------|-------------|---------|
+| name                   | description                                                                    | default                                           |
+| ---------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------- |
 | rptSpammerErrorMessage | The field-specific message that will show when a banned user tries to sign up. | Your account has been banned as a spammer. Sorry. |
 
 ## See Also

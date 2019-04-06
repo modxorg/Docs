@@ -4,13 +4,6 @@ _old_id: "1800"
 _old_uri: "revo/subscribe"
 ---
 
-- [What is Subscribe?](#Subscribe-WhatisSubscribe)
-- [Package Information](#Subscribe-Information)
-- [History](#Subscribe-History)
-- [Download](#Subscribe-Download)
-- [Development and Bug Reporting](#Subscribe-DevelopmentandBugReporting)
-- [Documentation](#Subscribe-Documentation)
- 
 ## What is Subscribe?
 
 Subscribe allows users to register as members on your site. It wraps the register snippet with a more extensive form that lets users unsubscribe, or (optionally) manage their preferences and group membership.

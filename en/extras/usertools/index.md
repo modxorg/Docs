@@ -4,70 +4,64 @@ _old_id: "1762"
 _old_uri: "revo/usertools"
 ---
 
-## <a name="userTools-WhatisuserTools"></a>What is userTools?
+## What is userTools?
 
  This extra includes a set of MODX Revolution snippets for retrieving Users and User related information.
 
-## <a name="userTools-History"></a>History
+## History
 
  userTools was first written by David Pede (davidpede) and released on March 24, 2017.
 
-## <a name="userTools-Download"></a>Download
+## Download
 
  It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <http://modx.com/extras/package/usertools>
 
  The source code and build script is also available on GitHub: <https://github.com/tasianmedia/usertools>
 
-## <a name="userTools-Bugs&FeatureRequests"></a>Bugs & Feature Requests
+## Bugs & Feature Requests
 
  Bugs, issues and feature requests can be reported in the GitHub Repository, found here: <https://github.com/tasianmedia/usertools/issues>
 
-## <a name="userTools-AvailableSnippets"></a>Available Snippets
+## Available Snippets
 
-### <a name="userTools-AvailableSnippets-getProfile"></a>getProfile
+### getProfile
 
  The getProfile snippet can be called using the tag:
 
- ``` php 
-
+ ``` php
 [[getProfile]]
-
 ```
 
-### <a name="userTools-AvailableSnippets-getUsers"></a>getUsers
+### getUsers
 
  The getUsers snippet can be called using the tag:
 
- ``` php 
-
+ ``` php
 [[getUsers]]
-
 ```
 
-### <a name="userTools-AvailableSnippets-getGroups"></a>getGroups
+### getGroups
 
  The getGroups snippet can be called using the tag:
 
- ``` php 
-
+ ``` php
 [[getGroups]]
-
 ```
 
  getProfile, getUsers & getGroups can be called cached or un-cached. 
 
-## <a name="userTools-Usage"></a>Usage
+## Usage
 
-### <a name="userTools-AvailableProperties"></a>getProfile
+### getProfile
 
-#### <a name="userTools-AvailableProperties-getProfile"></a>Available Properties
+#### Available Properties
 
  | Name | Description | Default Value | Added in Version |
 |------|-------------|---------------|------------------|
 | id | Comma-seperated list of numeric User ID's. If not set, will return Current User. |  | 1.0.0-pl |
 | tpl | Name of a chunk serving as a template. \[REQUIRED\] |  | 1.0.0-pl |
 
-### <a name="userTools-AvailablePlaceholders-getProfile"></a>Available Placeholders
+### Available Placeholders
 
  | Name | Description | Default Value | Added in Version |
 |------|-------------|---------------|------------------|
@@ -97,9 +91,9 @@ _old_uri: "revo/usertools"
 | website | Website of the user. |  | 1.0.0-pl |
 | extended | Extended fields of the user. Access the placeholder by prefixing 'extended.' to the required field name: \[\[+extended.myField\]\] |  | 1.0.0-pl |
 
-### <a name="userTools-getUsers"></a>getUsers
+### getUsers
 
-#### <a name="userTools-AvailableProperties-getUsers"></a>Available Properties
+#### Available Properties
 
  | Name | Description | Default Value | Added in Version |
 |------|-------------|---------------|------------------|

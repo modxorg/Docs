@@ -4,14 +4,7 @@ _old_id: "1790"
 _old_uri: "revo/orphans"
 ---
 
-- [What is Orphans?](#Orphans-WhatisOrphans)
-- [Package Information](#Orphans-Information)
-- [History](#Orphans-History)
-- [Download](#Orphans-Download)
-- [Development and Bug Reporting](#Orphans-DevelopmentandBugReporting)
-- [Documentation](#Orphans-Documentation)
- 
-## What is Orphans?
+# What is Orphans?
 
 Orphans is a MODX Revolution CMP that attempts to identify unused elements on your site.
 
@@ -36,7 +29,7 @@ It is currently maintained by Bob Ray.
 
  Orphans can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/orphans).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  Orphans is stored and developed using GitHub, and can be found here: [Orphans GitHub main page](https://github.com/BobRay/Orphans).
 

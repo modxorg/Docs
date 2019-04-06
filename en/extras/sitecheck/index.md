@@ -4,12 +4,6 @@ _old_id: "1796"
 _old_uri: "revo/sitecheck"
 ---
 
-- [What is SiteCheck?](#SiteCheck-WhatisSiteCheck)
-- [History](#SiteCheck-History)
-- [Download](#SiteCheck-Download)
-- [Development and Bug Reporting](#SiteCheck-DevelopmentandBugReporting)
-- [Documentation](#SiteCheck-Documentation)
- 
 ## What is SiteCheck?
 
  SiteCheck is a commercial extra that tests the integrity of your MODX site. It typically performs about 5,000 tests. Here's a partial list of the things SiteCheck will find:
@@ -62,7 +56,7 @@ It is currently maintained by Bob Ray.
 
 ## Download
 
- SiteCheck can be obtained from the secure server at [Gumroad.com](https://gum.co/DLChj)..
+ SiteCheck can be obtained from the secure server at [Gumroad.com](https://gum.co/DLChj).
 
 ## Development and Bug Reporting 
 

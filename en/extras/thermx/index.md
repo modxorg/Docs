@@ -4,13 +4,6 @@ _old_id: "1802"
 _old_uri: "revo/thermx"
 ---
 
-- [What is ThermX?](#ThermX-WhatisThermX)
-- [Package Information](#ThermX-Information)
-- [History](#ThermX-History)
-- [Download](#ThermX-Download)
-- [Development and Bug Reporting](#ThermX-DevelopmentandBugReporting)
-- [Documentation](#ThermX-Documentation)
- 
 ## What is ThermX?
 
 ThermX displays a fundraising thermometer for use on your web site. ThermX sets steps to the specified goal automatically.

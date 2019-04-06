@@ -6,7 +6,7 @@ _old_uri: "revo/sociallogin"
 
  Fast and short social login snippets for your MODX Revolution website (not for the Manager).
 
- **Documentation in progress** 
+## Documentation in progress
 
  Package supports social login for:
 

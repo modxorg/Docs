@@ -4,18 +4,9 @@ _old_id: "701"
 _old_uri: "revo/rezimgcrop"
 ---
 
-- [What is RezImgCrop?](#RezImgCrop-WhatisRezImgCrop%3F)
-  - [Requirements](#RezImgCrop-Requirements)
-  - [History](#RezImgCrop-History)
-  - [Download](#RezImgCrop-Download)
-  - [Attributes](#RezImgCrop-Attributes)
-- [Usage Examples](#RezImgCrop-UsageExamples)
- 
-
-
 ## What is RezImgCrop?
 
- RezImgCrop is a custom [Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") for MODx Revolution that can reduce images, cut off and grayscale them. 
+ RezImgCrop is a custom [Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") for MODx Revolution that can reduce images, cut off and grayscale them.
  It is often while articles or news are being added on a site that images turn out different, in design accurate images very well look. This filter does not break a proportion of the image and creates a folder "rezcrop" in a image folder and saves images with a unique name, so that the system at repeated reversal could give already processed result even if a storage cache was cleared.
 
 ### Requirements
@@ -35,62 +26,50 @@ _old_uri: "revo/rezimgcrop"
 
 - r - does decreases of the image,
 - c - does cropping of the image,
-- g - Color image conversion in a shade of gray, 
+- g - Color image conversion in a shade of gray,
    WxH - w = width, H = height (in pixels)
 
 ## Usage Examples
 
  Resize on width and cropping:
 
- ``` php 
-
+ ``` php
 [[*tv.images:rezimgcrop=`r-150x,c-150x75`]]
-
 ```
 
  We do resize images, then cropping and a shade of gray:
 
- ``` php 
-
+ ``` php
 [[*tv.images:rezimgcrop=`r-150x,c-150x75,g-`]]
-
 ```
 
  Resize min 150px:
 
- ``` php 
-
+ ``` php
 [[*tv.images:rezimgcrop=`min-150`]]
-
 ```
 
  Resize min 150px, then cropping:
 
- ``` php 
-
+ ``` php
 [[*tv.images:rezimgcrop=`min-150,c-150x150`]]
-
 ```
 
  Resize on width:
 
- ``` php 
-
+ ``` php
 [[*tv.images:rezimgcrop=`r-150x`]]
-
 ```
 
  Resize on width:
 
- ``` php 
-
+ ``` php
 [[*tv.images:rezimgcrop=`r-150x0`]]
-
 ```
 
  Resize on height:
 
- ``` php 
+ ``` php
 
 [[*tv.images:rezimgcrop=`r-0x75`]]
 
@@ -98,16 +77,12 @@ _old_uri: "revo/rezimgcrop"
 
  Resize on height:
 
- ``` php 
-
+ ``` php
 [[*tv.images:rezimgcrop=`r-x75`]]
-
 ```
 
  If we specify two parameters of reduction of the image the image to decrease not proportionally, it is necessary to specify better width, then to apply crop.
 
- ``` php 
-
+ ``` php
 [[*tv.images:rezimgcrop=`r-150x75`]]
-
 ```

@@ -4,13 +4,6 @@ _old_id: "1792"
 _old_uri: "revo/quickemail"
 ---
 
-- [What is QuickEmail?](#QuickEmail-WhatisQuickEmail)
-- [Package Information](#QuickEmail-Information)
-- [History](#QuickEmail-History)
-- [Download](#QuickEmail-Download)
-- [Development and Bug Reporting](#QuickEmail-DevelopmentandBugReporting)
-- [Documentation](#QuickEmail-Documentation)
- 
 ## What is QuickEmail?
 
 QuickEmail can be used to send an email form within a snippet, but its main purpose is to diagnose email problems.
@@ -19,7 +12,9 @@ After installing QUickEmail, create a resource called QuickEmailCheck and add th
 
 When you preview the page, you should receive an email. If not, change the tag to this and preview the page again:
 
-\[\[!QuickEmail? &debug=`1`\]\]
+``` php
+[[!QuickEmail? &debug=`1`]]
+```
 
 ## Package Information
 
@@ -40,7 +35,7 @@ It is currently maintained by Bob Ray.
 
  QuickEmail can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/quickemail).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  QuickEmail is stored and developed using GitHub, and can be found here: [QuickEmail GitHub main page](https://github.com/BobRay/QuickEmail).
 

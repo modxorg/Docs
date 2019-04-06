@@ -4,13 +4,6 @@ _old_id: "1788"
 _old_uri: "revo/notify"
 ---
 
-- [What is Notify?](#Notify-WhatisNotify)
-- [Package Information](#Notify-Information)
-- [History](#Notify-History)
-- [Download](#Notify-Download)
-- [Development and Bug Reporting](#Notify-DevelopmentandBugReporting)
-- [Documentation](#Notify-Documentation)
- 
 ## What is Notify?
 
  Notify sends email updates to users on your site and (optionally) posts to Twitter and Facebook. The users can be selected by User Group, and/or by tags specifying user interests. The updates are manual, rather than automatic, so Notify only sends them when you tell it to. The [Subscribe extra](https://bobsguides.com/subscribe-tutorial.html) works with Notify to let users manage their preferences and group memberships.
@@ -38,7 +31,7 @@ _old_uri: "revo/notify"
 
  Notify can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/notify).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  Notify is stored and developed using GitHub, and can be found here: [Notify GitHub main page](https://github.com/BobRay/notify).
 

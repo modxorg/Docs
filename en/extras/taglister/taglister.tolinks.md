@@ -43,21 +43,19 @@ There is 1 chunk that is processed in tolinks. Its corresponding parameters are:
 
 Change the TV value of 'tags' into links that point to the URL of Resource 123 with the GET param of 'tag':
 
-``` php 
+``` php
 [[!tolinks? &items=`[[*tags]]` &key=`tag` &target=`123`]]
 
 ```
 
-**Be Careful** 
+**Be Careful**
 **toLinks** will generate _relative_ URLs to the resource indicated by the **&target** parameter, so if you are having trouble getting the links to point to the correct URL, add a Chunk containing something like the following for use by the **&tpl** parameter: [\[\[+item\]\]]([[++site_url]][[+url]])
 
 Alternatively, set the **&useTagsFurl** property.
 
-
-
 The resource ID referenced by the **&target** parameter should contain something like the following that lists the posts tagged:
 
-``` php 
+``` php
 [[!getResourcesTag?
  &element=`getResources`
  &elementClass=`modSnippet`
@@ -70,14 +68,13 @@ The resource ID referenced by the **&target** parameter should contain something
  [[!+page.nav:notempty=`
     [[!+page.nav]]
  `]]
-
 ```
 
 ## See Also
 
 1. [tagLister.getResourcesTag](/extras/taglister/taglister.getresourcestag)
 2. [tagLister.tagLister](/extras/taglister/taglister.taglister)
-  1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
-  2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
+     1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
+     2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
 3. [tagLister.tolinks](/extras/taglister/taglister.tolinks)
-  1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+     1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)

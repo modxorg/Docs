@@ -4,18 +4,6 @@ _old_id: "1002"
 _old_uri: "revo/simplesearch/simplesearch.simplesearchform"
 ---
 
-- [SimpleSearchForm Snippet](#SimpleSearch.SimpleSearchForm-SimpleSearchFormSnippet)
-- [Usage](#SimpleSearch.SimpleSearchForm-Usage)
-- [Available Properties](#SimpleSearch.SimpleSearchForm-AvailableProperties)
-- [SimpleSearchForm Chunks](#SimpleSearch.SimpleSearchForm-SimpleSearchFormChunks)
-- [Examples](#SimpleSearch.SimpleSearchForm-Examples)
-- [Errors](#SimpleSearch.SimpleSearchForm-Errors)
-  - [SimpleSearchForm tpl:](#SimpleSearch.SimpleSearchForm-SimpleSearchFormtpl%3A)
-  - [SimpleSearch Snippet call:](#SimpleSearch.SimpleSearchForm-SimpleSearchSnippetcall%3A)
-- [See Also](#SimpleSearch.SimpleSearchForm-SeeAlso)
-
-
-
 ## SimpleSearchForm Snippet
 
 This snippet displays a search form for SimpleSearch.
@@ -24,7 +12,7 @@ This snippet displays a search form for SimpleSearch.
 
 Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [SimpleSearch](/extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet call is located (which is where the results will display).
 
-``` php 
+``` php
 [[!SimpleSearchForm? &landing=`123`]]
 ```
 
@@ -50,13 +38,13 @@ There is 1 chunk that is processed in SimpleSearchForm. Its corresponding Simple
 
 Display the search form, but search with POST instead of GET:
 
-``` php 
+``` php
 [[SimpleSearchForm? &method=`POST`]]
 ```
 
 Set the search form to a 'search.form' placeholder, specify a landing page on Resource 123, and use a custom Chunk called 'MySearchForm' for the form template:
 
-``` php 
+``` php
 [[SimpleSearchForm? &tpl=`MySearchForm` &landing=`123` &toPlaceholder=`search.form`]]
 
 <h2>Search</h2>
@@ -69,7 +57,7 @@ Note that with current version (1.0.0) there seems to be a bug where if you ACTU
 
 If you get an error like the following after submitting a search:
 
-``` php 
+``` php
 There were no search results for the search "". Please try using more general terms to get more results.
 ```
 
@@ -77,7 +65,7 @@ Then that probably means that the **SimpleSearch** isn't looking in the right pl
 
 ### SimpleSearchForm tpl:
 
-``` php 
+``` html
 <form id="my_id" action="[[~[[+landing:default=`[[*id]]`]]]]" method="[[+method:default=`get`]]">
         <input id="searchField" class="my_class" type="text" name="my_custom_search_field" value="[[+searchValue:default=`Search the site`]]"/>
         <input id="searchIcon" class="utilityButton" type="image" alt="Search" src="/assets/templates/my/images/searchButton.png">
@@ -87,7 +75,7 @@ Then that probably means that the **SimpleSearch** isn't looking in the right pl
 
 ### SimpleSearch Snippet call:
 
-``` php 
+``` php
 [[!SimpleSearch? &searchIndex=`my_custom_search_field`]]
 ```
 
@@ -95,11 +83,11 @@ Then that probably means that the **SimpleSearch** isn't looking in the right pl
 
 1. [SimpleSearch.Roadmap](/extras/simplesearch/simplesearch.roadmap)
 2. [SimpleSearch.SimpleSearch](/extras/simplesearch/simplesearch.simplesearch)
-  1. [SimpleSearch.SimpleSearch.containerTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
-  2. [SimpleSearch.SimpleSearch.currentPageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
-  3. [SimpleSearch.SimpleSearch.pageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
-  4. [SimpleSearch.SimpleSearch.tpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
-  5. [SimpleSearch.Faceted Search Through PostHooks](/extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
+     1. [SimpleSearch.SimpleSearch.containerTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
+     2. [SimpleSearch.SimpleSearch.currentPageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
+     3. [SimpleSearch.SimpleSearch.pageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
+     4. [SimpleSearch.SimpleSearch.tpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
+     5. [SimpleSearch.Faceted Search Through PostHooks](/extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
 3. [SimpleSearch.SimpleSearchForm](/extras/simplesearch/simplesearch.simplesearchform)
-  1. [SimpleSearch.SimpleSearchForm.tpl](/extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
+     1. [SimpleSearch.SimpleSearchForm.tpl](/extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
 4. [SimpleSearch.Solr](/extras/simplesearch/simplesearch.solr)

@@ -4,15 +4,7 @@ _old_id: "731"
 _old_uri: "revo/upload-to-users-cmp"
 ---
 
-- [Upload to Users CMP](#UploadtoUsersCMP-UploadtoUsersCMP)
-  - [Examples](#UploadtoUsersCMP-Examples)
-- [Upload to Users Snippet](#UploadtoUsersCMP-UploadtoUsersSnippet)
-  - [Examples](#UploadtoUsersCMP-Examples2)
-  - [Properties](#UploadtoUsersCMP-Properties)
-
-
-
-# Upload to Users CMP 
+# Upload to Users CMP
 
 A Custom Manager Page (CMP) to upload file to registered members to a specified parent folder.
 
@@ -21,9 +13,9 @@ The GitHub link is <https://github.com/goldsky/UploadToUsers> .
 
 It would be useful for setting up specific folers to each of logged in users, and use FileLister or FileDownload R (>=1.0.0-rc.4) snippet to get the folder using user's ID or username to their own folders.
 
-## Examples 
+## Examples
 
-``` html 
+``` php
 [[FileLister? &path=`assets/userfile/[[+modx.user.id]]/`]]
 [[FileDownload? &getDir=`assets/userfile/[[+modx.user.username]]/`]]
 ```
@@ -32,15 +24,15 @@ Since version 1.0-pl, this package added database table to store additional info
 
 ![](/download/attachments/41058348/uploadtousers-1.0-pl.jpg?version=1&modificationDate=1345753736000)
 
-# Upload to Users Snippet 
+# Upload to Users Snippet
 
 Currently, it can only be used by [FileDownload R](/extras/filedownload-r "FileDownload R") because the link has its own placeholder.
 
-## Examples 
+## Examples
 
 To use the snippet, user need to change the FileDownload's template from the original:
 
-``` html 
+``` html
     <tr[[+fd.class]]>
         <td style="width:16px;"><img src="[[+fd.image]]" alt="[[+fd.image]]" /></td>
         <td><a href="[[+fd.link]]"[[+fd.linkAttribute]]>[[+fd.filename]]</a>
@@ -58,7 +50,7 @@ To use the snippet, user need to change the FileDownload's template from the ori
 
 to, for instance:
 
-``` html 
+``` html
     <tr[[+fd.class]]>
         <td style="width:16px;"><img src="[[+fd.image]]" alt="[[+fd.image]]" /></td>
         <td><a href="[[+fd.link]]"[[+fd.linkAttribute]]>
@@ -79,7 +71,7 @@ The result of the FileDownload output will be changed like this:
 
 ![](/download/attachments/41058348/FDL-U2U.jpg?version=1&modificationDate=1345754441000)
 
-## Properties 
+## Properties
 
 | Name          | Description                                                 | Default Value |
 | ------------- | ----------------------------------------------------------- | ------------- |

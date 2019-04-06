@@ -12,7 +12,7 @@ This helper class handles all the requests by the album.items.manage snippet.
 
 Example for album.items.helper:
 
-``` php 
+``` php
 [[!album.items.helper]]
 ```
 

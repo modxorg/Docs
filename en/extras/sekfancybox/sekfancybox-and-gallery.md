@@ -18,7 +18,7 @@ This is just a simple example of how you might use sekFancyBox with the Gallery 
 
 On the page you wish to display your gallery, place the snippet call using getPage. Don't forget the page.nav.
 
-``` php 
+``` php
 <ul class="pagination-nav">
 [[!+page.nav]]
 </ul>
@@ -42,7 +42,7 @@ On the page you wish to display your gallery, place the snippet call using getPa
 
 In order to make pagination work with Gallery, I had to add the below line to the getPage snippet. I placed it on line 41 as suggested by the helpful people in the forums [Revolution Gallery - how to add pagination](http://forums.modx.com/thread/37769/revolution-gallery---how-to-add-pagination).
 
-``` php 
+``` php
 $properties['start'] = $properties['offset'];
 ```
 
@@ -50,7 +50,7 @@ $properties['start'] = $properties['offset'];
 
 Keeping it simple, the custom chunk is a simple unordered list with a class call to the css.
 
-``` php 
+``` php
 <ul class="image-container">
 [[+thumbnails]]
 </ul>
@@ -60,7 +60,7 @@ Keeping it simple, the custom chunk is a simple unordered list with a class call
 
 The thumbnail chunk has the sekfancybox snippet call. Here I set the buttonhelper to 1, this gives me a little play button at the top of the screen so I can start a slideshow.
 
-``` php 
+``` php
 <li>
 [[!sekfancybox?
     &type=`media`
@@ -78,7 +78,7 @@ The thumbnail chunk has the sekfancybox snippet call. Here I set the buttonhelpe
 
 I am far from being a css master, but the css below is very handy for this gallery method.
 
-``` php 
+``` css
 /* gallery images */
 ul.image-container{
     margin:0;

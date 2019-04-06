@@ -4,16 +4,6 @@ _old_id: "997"
 _old_uri: "revo/simplesearch/simplesearch.simplesearch"
 ---
 
-- [SimpleSearch Snippet](#SimpleSearch.SimpleSearch-SimpleSearchSnippet)
-- [Usage](#SimpleSearch.SimpleSearch-Usage)
-- [Available Properties](#SimpleSearch.SimpleSearch-AvailableProperties)
-- [SimpleSearch Chunks](#SimpleSearch.SimpleSearch-SimpleSearchChunks)
-- [Searching Custom Tables](#SimpleSearch.SimpleSearch-SearchingCustomTables)
-- [Examples](#SimpleSearch.SimpleSearch-Examples)
-- [See Also](#SimpleSearch.SimpleSearch-SeeAlso)
-
-
-
 ## SimpleSearch Snippet
 
  This snippet displays search results based on the search criteria sent.
@@ -22,9 +12,8 @@ _old_uri: "revo/simplesearch/simplesearch.simplesearch"
 
  Simply place the snippet in the Resource you would like to display search results in.
 
- ``` php 
+ ``` php
 [[!SimpleSearch]]
-
 ```
 
 ## Available Properties
@@ -89,16 +78,14 @@ _old_uri: "revo/simplesearch/simplesearch.simplesearch"
 
  Searching custom tables is available in SimpleSearch using the &customPackages property; however, you must have a custom package built for it. The format is:
 
- ``` php 
+ ``` php
 className:fieldName(s):packageName:packagePath:joinCriteria||class2Name:fieldName(s):package2Name:package2Path:join2Criteria
-
 ```
 
  In other words, each custom package is separated by ||. Then, each part of it is separated by colons (:). An example to search [Quip](/extras/quip "Quip") comments:
 
- ``` php 
+ ``` php
 &customPackages=`quipComment:body:quip:{core_path}components/quip/model/:quipComment.resource = modResource.id`
-
 ```
 
  Let's break down each part:
@@ -117,34 +104,31 @@ className:fieldName(s):packageName:packagePath:joinCriteria||class2Name:fieldNam
 
  Display results, but just show their titles:
 
- ``` php 
+ ``` php
 [[!SimpleSearch? &showExtract=`0`]]
-
 ```
 
  Display all results but only in Resources 1, 3, or 4 - or below those Resources - and highlight tags with a 'strong' tag:
 
- ``` php 
+ ``` php
 [[!SimpleSearch? &ids=`1,3,4` &highlightTag=`strong`]]
-
 ```
 
  Only find search results that use all the words in the query string, and set the results to the placeholder 'results':
 
- ``` php 
+ ``` php
 [[!SimpleSearch? &useAllWords=`1` &toPlaceholder=`results`]]
-
 ```
 
 ## See Also
 
 1. [SimpleSearch.Roadmap](/extras/simplesearch/simplesearch.roadmap)
 2. [SimpleSearch.SimpleSearch](/extras/simplesearch/simplesearch.simplesearch)
-  1. [SimpleSearch.SimpleSearch.containerTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
-  2. [SimpleSearch.SimpleSearch.currentPageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
-  3. [SimpleSearch.SimpleSearch.pageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
-  4. [SimpleSearch.SimpleSearch.tpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
-  5. [SimpleSearch.Faceted Search Through PostHooks](/extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
+     1. [SimpleSearch.SimpleSearch.containerTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
+     2. [SimpleSearch.SimpleSearch.currentPageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
+     3. [SimpleSearch.SimpleSearch.pageTpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
+     4. [SimpleSearch.SimpleSearch.tpl](/extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
+     5. [SimpleSearch.Faceted Search Through PostHooks](/extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
 3. [SimpleSearch.SimpleSearchForm](/extras/simplesearch/simplesearch.simplesearchform)
-  1. [SimpleSearch.SimpleSearchForm.tpl](/extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
+     1. [SimpleSearch.SimpleSearchForm.tpl](/extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
 4. [SimpleSearch.Solr](/extras/simplesearch/simplesearch.solr)

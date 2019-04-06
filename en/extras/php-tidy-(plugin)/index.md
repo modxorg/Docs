@@ -4,16 +4,11 @@ _old_id: "690"
 _old_uri: "revo/php-tidy-(plugin)"
 ---
 
-- [HTML 5](#PHPTidy%28plugin%29-HTML5)
-- [UTF 8](#PHPTidy%28plugin%29-UTF8)
-
-
-
-This plugin is based on [PHP Tidy](http://php.net/manual/en/book.tidy.php) parser, ported to MODX by goldsky. 
-This is only for MODX Revolution, and can be downloaded from the Package Management. 
+This plugin is based on [PHP Tidy](http://php.net/manual/en/book.tidy.php) parser, ported to MODX by goldsky.
+This is only for MODX Revolution, and can be downloaded from the Package Management.
 This runs on the MODX's OnWebPagePrerender event trigger.
 
-To change properties of this plugin, change them in the plugin's property tab. 
+To change properties of this plugin, change them in the plugin's property tab.
 The complete reference of the property can be found in [HTML Tidy Configuration Options](http://tidy.sourceforge.net/docs/quickref.html)
 
 # HTML 5

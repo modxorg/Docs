@@ -4,17 +4,6 @@ _old_id: "716"
 _old_uri: "revo/slink"
 ---
 
-- [What is sLink?](#sLink-WhatissLink%3F)
-  - [Requirements](#sLink-Requirements)
-  - [History](#sLink-History)
-  - [Download & Installation](#sLink-Download%26Installation)
-- [Using sLink](#sLink-UsingsLink)
-  - [Examples](#sLink-Examples)
-- [Development](#sLink-Development)
-- [External sources](#sLink-Externalsources)
-
-
-
 # What is sLink?
 
 sLink (pronounced: es-link) is a simple snippet for MODx Revolution which can help create the xhtml markup for links or anchors from paramaters. sLink was first released on October 21st, 2010 and was created by Mark Hamstra.
@@ -25,9 +14,9 @@ sLink was created as a Revolution snippet, and should function on all versions s
 
 ## History
 
-| Version | Release date | Author | Changes |
-|---------|--------------|--------|---------|
-| 1.0.0-RC | October 21st, 2010 | Mark Hamstra | Initial release. |
+| Version       | Release date       | Author       | Changes                                                                    |
+| ------------- | ------------------ | ------------ | -------------------------------------------------------------------------- |
+| 1.0.0-RC      | October 21st, 2010 | Mark Hamstra | Initial release.                                                           |
 | **1.0.0-RC2** | October 21st, 2010 | Mark Hamstra | Fixes resource->get() error when using regular links instead of a resource |
 
 ## Download & Installation
@@ -40,10 +29,10 @@ Alternatively, you can download the transport package from the [repository](http
 
 sLink is an easy to use snippet which can be used in a few different ways using the parameters.
 
-| ?Parameter | Description | Possible values | Default value |
-|------------|-------------|-----------------|---------------|
-| &to | Required. This parameter describes where the link points to, either a resource id or regular url. | (int) doc id | (string) url/anchor |  |
-| &title | Optional. 
+| ?Parameter | Description                                                                                       | Possible values | Default value       |
+| ---------- | ------------------------------------------------------------------------------------------------- | --------------- | ------------------- |
+| &to        | Required. This parameter describes where the link points to, either a resource id or regular url. | (int) doc id    | (string) url/anchor |  |
+| &title     | Optional.                                                                                         |
 1. Determines the resource field for the title attribute (title=" ") of the link when &to is a resource id.
 2. String to use as title attribute when not using a resource id in the &to parameter, or the &to parameter does not validate as resource field. | 1. (string) pagetitle | menutitle | longtitle | introtext | description
 2. (string) string to use as title attribute | longtitle |
@@ -60,19 +49,19 @@ sLink is an easy to use snippet which can be used in a few different ways using 
 
 Minimum call which gets the menutitle of resource 5 for the link text, and the longtitle for the title (hover) text.
 
-``` php 
+``` php
  [[sLink? &to=`5`]]
 ```
 
 Minimum call for external links, with link and title text set in the snippet call.
 
-``` php 
+``` php
 [[sLink? &to=`http://rtfm.modx.com` &title=`Please, read that manual!` &link=`RTFM`]]
 ```
 
 Calling sLink to create an anchor within your page.
 
-``` php 
+``` php
 [[sLink? &to=`#myAnchor` &name=`myAnchor` &link=`This is an anchor` &title=`Clicking me focuses your screen`]]
 ```
 

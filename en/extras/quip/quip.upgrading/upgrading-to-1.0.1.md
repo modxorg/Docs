@@ -16,7 +16,7 @@ In the &tplComment chunk, there is no longer any html form tag. The 'remove' and
 
 In the &tplComment chunk, children comments are now properly nested inside, rather than outside each li tag. You may need to upgrade your tpls and CSS to reflect this. The new chunk looks like this:
 
-``` php 
+``` html
 <li class="[[+cls]]" id="[[+idprefix]][[+id]]" [[+depth_margin:notempty=`style="padding-left: [[+depth_margin]]px"`]]>
 <div id="[[+idprefix]][[+id]]-div" class="quip-comment-body [[+alt]]">
     <div class="quip-comment-right">

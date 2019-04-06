@@ -12,7 +12,7 @@ Add an auto-complete field to a form quickly and easily using this snippet.
 
 Example for input.autocomplete using an object:
 
-``` php 
+``` php
 [[input.autocomplete? &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`]]
 ```
 
@@ -59,7 +59,7 @@ Some additional examples
 
 Grabbing data by a table object is simple and straight forward. Using a json string, enter the name of the object, the optional sort by, and the table fields to use in the auto-complete label and value.
 
-``` php 
+``` php
 [[!input.autocomplete?
       &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
     ]]

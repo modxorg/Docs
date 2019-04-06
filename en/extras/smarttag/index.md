@@ -4,7 +4,7 @@ _old_id: "1714"
 _old_uri: "revo/smarttag"
 ---
 
-## Description 
+## Description
 
   **SmartTag** is a tagging system for MODX Revolution and is intended to replace MODX's original auto-tag TV.
 
@@ -12,7 +12,7 @@ _old_uri: "revo/smarttag"
 
  From the CMP you can rename the tag, or delete it entirely from the system, on all resources. You can convert existing auto-tag TVs to be SmartTag TV, or revert SmartTag back to other tag type.
 
-## History 
+## History
 
  SmartTag was first written by goldsky and released on March 28, 2014.
 
@@ -36,15 +36,14 @@ _old_uri: "revo/smarttag"
  | smarttag.use\_filter                                 | (Optional) Whether use MODX's cleanAlias function and lowercase the character when inserting new tag. |
  | Set it to false if tags are in non-latin characters. | true                                                                                                  | 1.0.2-pl |
 
-## Template Variable 
+## Template Variable
 
  When creating the TV, you need to select the proper input type and output type.
 
  ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/inputtype-selection.png)![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/outputtype-selection.png)
 
- 
 
-### Input Type Options 
+### Input Type Options
 
  In input type options, they are exactly as same as [auto-tag](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types#TemplateVariableInputTypes-AutoTag) options, except the **queryLimit**.
 
@@ -52,7 +51,7 @@ _old_uri: "revo/smarttag"
 
  **(v. 1.0.4-pl)** If you want the typeahead drop-down tag TV gets all tags regardless their TVs' scopes, set **Global Tags** to true.
 
-### Output Type Options 
+### Output Type Options
 
  In output type options, they adapt [Delimiter](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type) and [URL TV](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type) output types.
 
@@ -60,9 +59,9 @@ _old_uri: "revo/smarttag"
 
  The content can be \[\[~pageId\]\] or <http://www.domain.com>
 
- If the Output Type not set, the output will be raw values delimited by double pipelines "||". 
+ If the Output Type not set, the output will be raw values delimited by double pipelines "||".
 
- The tags are case sensitive! If you need them to all lowercase, just rename them from the Custom Manager Page. 
+ The tags are case sensitive! If you need them to all lowercase, just rename them from the Custom Manager Page.
 
 ### Add a new Tag
 
@@ -76,9 +75,9 @@ _old_uri: "revo/smarttag"
 
  If you just want to add new tag, just hit **\[ENTER\]** before **1 second**.
 
-## Custom Manager Page 
+## Custom Manager Page
 
-### TagCloud 
+### TagCloud
 
  The CMP is used to make manager easily manages the tags.
 
@@ -92,7 +91,7 @@ _old_uri: "revo/smarttag"
 
  The Resource's titles are links, so they can be clicked (or ctrl+click or middle-mouse click) to open it.
 
-### Converter 
+### Converter
 
  In the second page, there's a converter utility to convert existing tag types to SmartTag or revert SmartTag TVs back to the other tag types.
 
@@ -100,11 +99,11 @@ _old_uri: "revo/smarttag"
 
  When a SmartTag TV is selected, it also can be synchronized to get all values from related resources to store them into the SmartTag's DB.
 
-## Snippet 
+## Snippet
 
  SmartTag also provides a snippet to list the tags, based on some filters.
 
-### smarttagTags 
+### smarttagTags
 
  | Name              | Description                                                                                                                                                                                             | Value Type                 | Default Value        | Since Version |
  | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------------- | ------------- |

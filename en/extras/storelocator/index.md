@@ -4,22 +4,6 @@ _old_id: "722"
 _old_uri: "revo/storelocator"
 ---
 
-- [What is StoreLocator?](#StoreLocator-WhatisStoreLocator%3F)
-  - [Requirements](#StoreLocator-Requirements)
-  - [History](#StoreLocator-History)
-  - [Download & Installation](#StoreLocator-Download%26Installation)
-- [Using StoreLocator in the manager](#StoreLocator-UsingStoreLocatorinthemanager)
-  - [Adding stores](#StoreLocator-Addingstores)
-  - [Sorting stores](#StoreLocator-Sortingstores)
-- [Using StoreLocator in the front-end (user side)](#StoreLocator-UsingStoreLocatorinthefrontend%28userside%29)
-  - [Placing the snippet](#StoreLocator-Placingthesnippet)
-  - [Examples](#StoreLocator-Examples)
-  - [YouTube example](#StoreLocator-YouTubeexample)
-- [StoreLocator premium](#StoreLocator-StoreLocatorpremium)
-- [External sources](#StoreLocator-Externalsources)
-
-
-
 # What is StoreLocator?
 
 StoreLocator is a snippet that integrates Google Maps into MODX® to allow your users to find stores (or whatever location you want them to find) that are close to an address (their home for instance). StoreLocator is easily integrated in your website and is fully customizable.
@@ -96,7 +80,7 @@ You can configure the snippet "StoreLocator" with the following parameters:
 
 Below you see the main snippet call and the placement of the placeholders. Every parameter is optional, we have just used some possibilities of customization.
 
-``` php 
+``` php
 [[!StoreLocator?
   &searchZoom=`10`
   &zoom=`7`

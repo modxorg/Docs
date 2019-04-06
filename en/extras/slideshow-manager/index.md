@@ -4,18 +4,6 @@ _old_id: "714"
 _old_uri: "revo/slideshow-manager"
 ---
 
-- [What is Slideshow Manager?](#SlideshowManager-WhatisSlideshowManager%3F)
-- [History](#SlideshowManager-History)
-  - [Demo](#SlideshowManager-Demo)
-  - [Download](#SlideshowManager-Download)
-  - [Development and Bug Reporting](#SlideshowManager-DevelopmentandBugReporting)
-- [Update](#SlideshowManager-Update)
-- [Install](#SlideshowManager-Install)
-  - [How to use](#SlideshowManager-Howtouse)
-- [See Also](#SlideshowManager-SeeAlso)
-
-
-
 ## What is Slideshow Manager?
 
 Slideshow manager is a CMP (custom manager page) and snippet. The manager allows you to easily upload new slides and schedule them based on start date and end date. You can also just put slides in a TBD (to be determined). Slideshow Manager allows you to have as many slides shows, called albums, as you want on your site.
@@ -48,7 +36,7 @@ Update through the Package Manager in MODX. If the package manager does not see 
 
 Basic, this will show the first album:
 
-``` php 
+``` php
 <div id="slider-wrapper">
 
  [[!jgSlideShow?

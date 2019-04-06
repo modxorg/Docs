@@ -4,13 +4,6 @@ _old_id: "1795"
 _old_uri: "revo/siteatoz"
 ---
 
-- [What is SiteAtoZ?](#SiteAtoZ-WhatisSiteAtoZ)
-- [Package Information](#SiteAtoZ-Information)
-- [History](#SiteAtoZ-History)
-- [Download](#SiteAtoZ-Download)
-- [Development and Bug Reporting](#SiteAtoZ-DevelopmentandBugReporting)
-- [Documentation](#SiteAtoZ-Documentation)
- 
 ## What is SiteAtoZ?
 
 SiteAtoZ is a snippet that displays an alphabetical listing of your site's content, with a jump list at the top for quick access.

@@ -4,13 +4,6 @@ _old_id: "1793"
 _old_uri: "revo/reflectblock"
 ---
 
-- [What is ReflectBlock?](#ReflectBlock-WhatisReflectBlock)
-- [Package Information](#ReflectBlock-Information)
-- [History](#ReflectBlock-History)
-- [Download](#ReflectBlock-Download)
-- [Development and Bug Reporting](#ReflectBlock-DevelopmentandBugReporting)
-- [Documentation](#ReflectBlock-Documentation)
- 
 ## What is ReflectBlock?
 
 The ReflectBlock plugin for MODX Revolution blocks and logs visitors looking for the old reflect snippet, a minor security vulnerability in older versions of MODX.
@@ -38,7 +31,7 @@ It is currently maintained by Bob Ray.
 
  ReflectBlock can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/reflectblock).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  ReflectBlock is stored and developed using GitHub, and can be found here: [ReflectBlock GitHub main page](https://github.com/BobRay/ReflectBlock).
 

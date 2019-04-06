@@ -33,18 +33,18 @@ Watch for news about sekFancyBox at <http://www.seknetsolutions.com/modx-extras/
 
 The sekFancyBox is called through a single snippet using the tag:
 
-\[\[sekfancybox\]\]
+[[sekfancybox]]
 
 There are several properties that must be set based on the type of modal window that is being called:
 
 ## Available Properties
 
-| Name | Description | Type | Default | Optional | Version |
-|------|-------------|------|---------|----------|---------|
-| type | This defines what kind of window will open. 
-Options: inline, iframe, document, media, jcode |  | inline | yes |  |
-| link | If calling only one inline modal, this does not need to be set. 
-If calling multiple inline modals on a single page, each call must have a unique one word name. 
+| Name                                            | Description                                                     | Type   | Default | Optional | Version |
+| ----------------------------------------------- | --------------------------------------------------------------- | ------ | ------- | -------- | ------- |
+| type                                            | This defines what kind of window will open.                     |
+| Options: inline, iframe, document, media, jcode |                                                                 | inline | yes     |          |
+| link                                            | If calling only one inline modal, this does not need to be set. |
+If calling multiple inline modals on a single page, each call must have a unique one word name.
 If using in any other type, this must by the url of the item to view. |  | sekfancybox | inline only |  |
 | linktext | Text to display as the link on the page. |  |  |  |  |
 | text | Text to display in the modal window. | inline only |  |  |  |
@@ -114,7 +114,7 @@ For more information on how to customize fancyBox, check out their [website](htt
 
 There are several options and sub options that can be set in the helpers properties.
 
-``` php 
+``` php
 &helpers=`{
 "title":{"type":"inside"},
 "overlay":{"opacity": 0.8,"css":{"'background-color'": "#000"}},
@@ -122,43 +122,43 @@ There are several options and sub options that can be set in the helpers propert
 }`
 ```
 
-``` php 
+``` php
 &helpers=`{
 "title":"null",
 "overlay":"null"
 }`
 ```
 
-| Name | Description | Default |
-|------|-------------|---------|
-| title | Title group contains an array of values or return 'null'. |  |
-| title \[type\] | How the title will be displayed; 'float', 'inside', 'outside' or 'over'. | float |
-| overlay | Overlay group contains an array of values or return. 'null' |  |
-| overlay \[closeClick\] | If true, fancyBox will be closed when user clicks on the overlay. | true |
-| overlay \[speedOut\] | Duration of fadeOut animation. | 200 |
-| overlay \[showEarly\] | Indicates if should be opened immediately or wait until the content is ready. | true |
-| overlay \[css\] | Custom CSS properties. |  |
-| overlay \[locked\] | If true, the content will be locked into overlay. | true |
-| overlay \[opacity\] | The opacity of the overlay | 0.8 |
-| thumbs | Thumbs contains an array of values for the thumbnail helper options. |  |
-| thumbs \[width\] | Thumbnail width. | 50 |
-| thumbs \[height\] | Thumbnail height | 50 |
+| Name                   | Description                                                                   | Default |
+| ---------------------- | ----------------------------------------------------------------------------- | ------- |
+| title                  | Title group contains an array of values or return 'null'.                     |         |
+| title \[type\]         | How the title will be displayed; 'float', 'inside', 'outside' or 'over'.      | float   |
+| overlay                | Overlay group contains an array of values or return. 'null'                   |         |
+| overlay \[closeClick\] | If true, fancyBox will be closed when user clicks on the overlay.             | true    |
+| overlay \[speedOut\]   | Duration of fadeOut animation.                                                | 200     |
+| overlay \[showEarly\]  | Indicates if should be opened immediately or wait until the content is ready. | true    |
+| overlay \[css\]        | Custom CSS properties.                                                        |         |
+| overlay \[locked\]     | If true, the content will be locked into overlay.                             | true    |
+| overlay \[opacity\]    | The opacity of the overlay                                                    | 0.8     |
+| thumbs                 | Thumbs contains an array of values for the thumbnail helper options.          |         |
+| thumbs \[width\]       | Thumbnail width.                                                              | 50      |
+| thumbs \[height\]      | Thumbnail height                                                              | 50      |
 
 ## Available Settings
 
-| Name | Description | Default | Version |
-|------|-------------|---------|---------|
-| sekfancybox.load\_jquery | This will enable or disable JQuery from being loaded when sekFancyBox is called on a page. If JQuery is being loaded from another extra used on the same pages as sekFancyBox, or it is loaded in a template, this setting should be set to No/False. The loadjquery option will override whatever this setting is set to. | Yes/True | 0.0.2 |
-| sekfancybox.load\_jquery\_head | If set to YES, the jquery file in the addon will be loaded in the head of the page. If set to NO, jquery will load at the bottom of the page. | Yes/True | 1.0.0 |
-| sekfancybox.custom\_css | If blank, use the css file that comes with sekFancyBox. Snippet property &customcss will always override this setting. |  | 1.0.0 |
-| sekfancybox.custom\_buttons\_css | If blank, use the css file that comes with sekFancyBox. Snippet property &custombuttonscss will always override this setting. |  | 1.0.0 |
-| sekfancybox.custom\_thumbs\_css | If blank, use the css file that comes with sekFancyBox. Snippet property &customthumbnailcss will always override this setting. |  | 1.0.0 |
+| Name                             | Description                                                                                                                                                                                                                                                                                                                | Default  | Version |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
+| sekfancybox.load\_jquery         | This will enable or disable JQuery from being loaded when sekFancyBox is called on a page. If JQuery is being loaded from another extra used on the same pages as sekFancyBox, or it is loaded in a template, this setting should be set to No/False. The loadjquery option will override whatever this setting is set to. | Yes/True | 0.0.2   |
+| sekfancybox.load\_jquery\_head   | If set to YES, the jquery file in the addon will be loaded in the head of the page. If set to NO, jquery will load at the bottom of the page.                                                                                                                                                                              | Yes/True | 1.0.0   |
+| sekfancybox.custom\_css          | If blank, use the css file that comes with sekFancyBox. Snippet property &customcss will always override this setting.                                                                                                                                                                                                     |          | 1.0.0   |
+| sekfancybox.custom\_buttons\_css | If blank, use the css file that comes with sekFancyBox. Snippet property &custombuttonscss will always override this setting.                                                                                                                                                                                              |          | 1.0.0   |
+| sekfancybox.custom\_thumbs\_css  | If blank, use the css file that comes with sekFancyBox. Snippet property &customthumbnailcss will always override this setting.                                                                                                                                                                                            |          | 1.0.0   |
 
 ## Loading JQuery Manually In Your Template
 
 Make sure when loading jquery in a template, and setting sekFancyBox's load jquery option to false, that " type="text/javascript" " is defined in your script tag. If this is not done, sekFancyBox will not function correctly.
 
-``` php 
+``` html
 <script type="text/javascript" src="assets/js/libs/jquery-1.8.3.min.js"></script>
 ```
 
@@ -171,59 +171,71 @@ You can also view the [sekFancyBox & Gallery](/extras/sekfancybox/sekfancybox-an
 
 Display inline is default behavior, and is easy to call with just two properties:
 
-\[\[sekfancybox? 
- &linktext=`Text to display as a link` 
- &text=`Text that will display in the modal window.` 
-\]\]
+``` php
+[[sekfancybox?
+ &linktext=`Text to display as a link`
+ &text=`Text that will display in the modal window.`
+]]
+```
 
 For multiple inline modal windows on a single page, the link property must be set to prevent clashing modal windows (remember that for the inline type this must not have any spaces):
 
-\[\[sekfancybox? 
- &link=`modal-one` 
- &linktext=`Text 1 to display as link` 
- &text=`Text 1 that will display in the modal window.` 
-\]\]
+``` php
+[[sekfancybox?
+ &link=`modal-one`
+ &linktext=`Text 1 to display as link`
+ &text=`Text 1 that will display in the modal window.`
+]]
+```
 
-\[\[sekfancybox? 
- &link=`modal-two` 
- &linktext=`Text 2 to display as link` 
- &text=`Text 2 that will display in the modal window.` 
-\]\]
+``` php
+[[sekfancybox?
+ &link=`modal-two`
+ &linktext=`Text 2 to display as link`
+ &text=`Text 2 that will display in the modal window.`
+]]
+```
 
 This can become more complex by calling several options:
 
-\[\[sekfancybox? 
- &link=`modal` 
- &linktext=`Text to display as link` 
- &title=`displays under modal` 
- &text=`Text that will display in the modal window.` 
- &modalwidth=`600` 
- &header=`Displays at top of modal window` 
-\]\]
+``` php
+[[sekfancybox?
+ &link=`modal`
+ &linktext=`Text to display as link`
+ &title=`displays under modal`
+ &text=`Text that will display in the modal window.`
+ &modalwidth=`600`
+ &header=`Displays at top of modal window`
+]]
+```
 
 ### Iframe Type
 
 Define type as iframe to display another website within your own site, type of iframe must be used:
 
-\[\[sekfancybox? 
- &type=`iframe` 
- &linktext=`SEKNet Solutions` 
- &link=`<http://www.seknetsolutions.com>` 
-\]\]
+``` php
+[[sekfancybox?
+ &type=`iframe`
+ &linktext=`SEKNet Solutions`
+ &link=`<http://www.seknetsolutions.com>`
+]]
+```
 
-If linking to an external website, it is recommended one defines a weblink resource, then call that weblink resource by the id ( &link=`\[\[~22\]\]` ).
+If linking to an external website, it is recommended one defines a weblink resource, then call that weblink resource by the id ( &link=`[[~22]]` ).
 
 ### Document Type
 
 Define type as document to display a file within your own site ( can be htm, or even txt file):
 
-\[\[sekfancybox? 
- &type=`document` 
- &linktext=`link to document` 
- &link=`\[\[~19\]\]` 
-\]\]
+``` php
+[[sekfancybox?
+ &type=`document`
+ &linktext=`link to document`
+ &link=`[[~19]]`
+]]
+```
 
-This is nice to display large amounts of formatted information without placing it inline on the current page. Use this for calling a resource with an empty template, or defining a "BlankTemplate" (defining a "BlankTemplate" would allow one to use tags like \[\[\*pagetitle\]\], where empty templates will only display the content itself).
+This is nice to display large amounts of formatted information without placing it inline on the current page. Use this for calling a resource with an empty template, or defining a "BlankTemplate" (defining a "BlankTemplate" would allow one to use tags like [[\*pagetitle]], where empty templates will only display the content itself).
 
 If linking to a .txt file, it is recommended one defines a static resource, then call that static resource by the id.
 
@@ -231,56 +243,68 @@ If linking to a .txt file, it is recommended one defines a static resource, then
 
 Define type as media to display images or even flash:
 
-\[\[sekfancybox? 
- &type=`media` 
- &linktext=`<img src="thumbs/image.jpg" />` 
- &link=`images/image.jpg` 
-\]\]
+``` php
+[[sekfancybox?
+ &type=`media`
+ &linktext=`<img src="thumbs/image.jpg" />`
+ &link=`images/image.jpg`
+]]
+```
 
-\[\[sekfancybox? 
- &type=`media` 
- &linktext=`SWF File` 
+``` php
+[[sekfancybox?
+ &type=`media`
+ &linktext=`SWF File`
  &link=`[http://www.adobe.com/jp/events/cs3\_web\_edition\_tour/swfs/perform.swf](http://www.adobe.com/jp/events/cs3_web_edition_tour/swfs/perform.swf)` 
-\]\]
+]]
+```
 
-If linking to an external website, it is recommended one defines a weblink resource, then call that weblink resource by the id ( &link=`\[\[~122\]\]` ).
+If linking to an external website, it is recommended one defines a weblink resource, then call that weblink resource by the id ( &link=`[[~122]]` ).
 
 ### Media Type Groups
 
 In the below example, the four photos are set up in two groups. Group1 is using the thumbnailhelper option, and group2 is using the buttonhelper option. The modalclass is used here because there are two groups using different options within each group. This will cause conflicts if both groups are using the same class.
 
-\[\[sekfancybox? 
- &type=`media` 
- &linktext=`<img src="thumbs/image1.jpg" />` 
- &link=`images/image1.jpg` 
- &modalclass=`class-thumb` 
- &thumbnailhelper=`1` 
- &group=`group1` 
-\]\]
+``` php
+[[sekfancybox?
+ &type=`media`
+ &linktext=`<img src="thumbs/image1.jpg" />`
+ &link=`images/image1.jpg`
+ &modalclass=`class-thumb`
+ &thumbnailhelper=`1`
+ &group=`group1`
+]]
+```
 
-\[\[sekfancybox? 
+``` php
+[[sekfancybox? 
  &type=`media` 
- &linktext=`<img src="thumbs/image2.jpg" />` 
- &link=`images/image2.jpg` 
- &modalclass=`class-thumb` 
- &thumbnailhelper=`1` 
- &group=`group1` 
-\]\]
+ &linktext=`<img src="thumbs/image2.jpg" />`
+ &link=`images/image2.jpg`
+ &modalclass=`class-thumb`
+ &thumbnailhelper=`1`
+ &group=`group1`
+]]
+```
 
-\[\[sekfancybox? 
- &type=`media` 
- &linktext=`<img src="thumbs/image3.jpg" />` 
- &link=`images/image3.jpg` 
- &modalclass=`class-button` 
- &buttonhelper=`1` 
- &group=`group2` 
-\]\]
+``` php
+[[sekfancybox?
+ &type=`media`
+ &linktext=`<img src="thumbs/image3.jpg" />`
+ &link=`images/image3.jpg`
+ &modalclass=`class-button`
+ &buttonhelper=`1`
+ &group=`group2`
+]]
+```
 
-\[\[sekfancybox? 
- &type=`media` 
- &linktext=`<img src="thumbs/image4.jpg" />` 
- &link=`images/image4.jpg` 
- &modalclass=`class-button` 
- &buttonhelper=`1` 
- &group=`group2` 
-\]\]
+``` php
+[[sekfancybox?
+ &type=`media`
+ &linktext=`<img src="thumbs/image4.jpg" />`
+ &link=`images/image4.jpg`
+ &modalclass=`class-button`
+ &buttonhelper=`1`
+ &group=`group2`
+]]
+```

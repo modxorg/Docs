@@ -4,13 +4,6 @@ _old_id: "1787"
 _old_uri: "revo/newspublisher"
 ---
 
-- [What is NewsPublisher?](#NewsPublisher-WhatisNewsPublisher)
-- [Package Information](#NewsPublisher-Information)
-- [History](#NewsPublisher-History)
-- [Download](#NewsPublisher-Download)
-- [Development and Bug Reporting](#NewsPublisher-DevelopmentandBugReporting)
-- [Documentation](#NewsPublisher-Documentation)
- 
 ## What is NewsPublisher?
 
  NewsPublisher allows users to create and edit Resources in the front end, without having to log in to the MODX Manager. It allows editing of all resource fields (except the id field) and any Template Variables attached to the Resource. You choose which fields to display and can make most of them read-only if necessary. Full Rich Text editing is available for the content, description, and summary (introtext) fields and for any rich text TVs using TinyMCE 4. NewsPublisher provides built-in image and file browsing, as well as image editing via elFinder.
@@ -46,7 +39,7 @@ _old_uri: "revo/newspublisher"
 
  NewsPublisher can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/newspublisher).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  NewsPublisher is stored and developed using GitHub, and can be found here: [NewsPublisher GitHub main page](https://github.com/BobRay/newspublisher).
 

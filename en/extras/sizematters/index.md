@@ -4,13 +4,6 @@ _old_id: "1797"
 _old_uri: "revo/sizematters"
 ---
 
-- [What is SizeMatters?](#SizeMatters-WhatisSizeMatters)
-- [Package Information](#SizeMatters-Information)
-- [History](#SizeMatters-History)
-- [Download](#SizeMatters-Download)
-- [Development and Bug Reporting](#SizeMatters-DevelopmentandBugReporting)
-- [Documentation](#SizeMatters-Documentation)
- 
 ## What is SizeMatters?
 
 SizeMatters logs and displays the viewport widths of your visitors. It displays graphs showing the distribution of widths for your site's visitors in Ems and pixels, and the font sizes used. It also displays a configurable pie chart showing the percentage of visitors in each category (e.g., phones, tablets, notebooks, desktops).

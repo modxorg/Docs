@@ -4,13 +4,6 @@ _old_id: "1798"
 _old_uri: "revo/spform"
 ---
 
-- [What is SPForm?](#SPForm-WhatisSPForm)
-- [Package Information](#SPForm-Information)
-- [History](#SPForm-History)
-- [Download](#SPForm-Download)
-- [Development and Bug Reporting](#SPForm-DevelopmentandBugReporting)
-- [Documentation](#SPForm-Documentation)
- 
 ## What is SPForm?
 
 SPForm is a simple, spam-proof contact form that gives you a standard, working, contact form as soon as it is installed.
@@ -63,7 +56,7 @@ It is currently maintained by Bob Ray.
 
  SPForm can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/spform).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  SPForm is stored and developed using GitHub, and can be found here: [SPForm GitHub main page](https://github.com/BobRay/SPForm).
 

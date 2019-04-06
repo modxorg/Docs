@@ -4,13 +4,6 @@ _old_id: "1794"
 _old_uri: "revo/refreshcache"
 ---
 
-- [What is RefreshCache?](#RefreshCache-WhatisRefreshCache)
-- [Package Information](#RefreshCache-Information)
-- [History](#RefreshCache-History)
-- [Download](#RefreshCache-Download)
-- [Development and Bug Reporting](#RefreshCache-DevelopmentandBugReporting)
-- [Documentation](#RefreshCache-Documentation)
- 
 ## What is RefreshCache?
 
 RefreshCache is a snippet for MODX Revolution that refreshes all cacheable resources and the chunks and snippets they contain -- whether they need it or not. It is slow and inelegant, but when it's finished, site visitors will not have to wait so long for pages to load.
@@ -36,7 +29,7 @@ It is currently maintained by Bob Ray.
 
  RefreshCache can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/refreshcache).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  RefreshCache is stored and developed using GitHub, and can be found here: [RefreshCache GitHub main page](https://github.com/BobRay/RefreshCache).
 

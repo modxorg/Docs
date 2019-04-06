@@ -8,16 +8,15 @@ _old_uri: "revo/taglister/taglister.taglister"
 
  This snippet displays a list of the most commonly used tags on your site.
 
-## Usage 
+## Usage
 
  Simply place the snippet anywhere you want to show a list of commonly-used tags, and pass the ID or name of the TV and the target Resource ID you want the links to go to:
 
-``` php 
+``` php
 [[!tagLister? &tv=`tags` &target=`123`]]
-
 ```
 
-## Properties 
+## Properties
 
 | Name          | Description                                                                            | Default Value |
 | ------------- | -------------------------------------------------------------------------------------- | ------------- |
@@ -44,27 +43,26 @@ _old_uri: "revo/taglister/taglister.taglister"
 | parents       | Comma delimited list of parents to use to limit the search for tags to.                |               |
 | depth         | Depth of parents to search in.                                                         | 10            |
 
-## tagLister Chunks 
+## tagLister Chunks
 
  There are 2 chunks that are processed in tagLister. Their corresponding parameters are:
 
 - [tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl "tagLister.tagLister.tpl") - The Chunk to use for each tag listed.
 - [allTpl](/extras/taglister/taglister.taglister/taglister.taglister.all "tagLister.tagLister.all") - The Chunk to use for the 'All Tags' link.
 
-## Examples 
+## Examples
 
  Display a list of the top 5 tags for the 'tags' TV, and link to Resource ID 123:
 
-``` php 
+``` php
 [[!tagLister? &tv=`tags` &limit=`5` &target=`123`]]
-
 ```
 
 ## See Also
 
 1. [tagLister.getResourcesTag](/extras/taglister/taglister.getresourcestag)
 2. [tagLister.tagLister](/extras/taglister/taglister.taglister)
-  1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
-  2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
+     1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
+     2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
 3. [tagLister.tolinks](/extras/taglister/taglister.tolinks)
-  1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+     1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)

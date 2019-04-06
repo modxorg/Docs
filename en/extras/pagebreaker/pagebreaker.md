@@ -4,12 +4,6 @@ _old_id: "944"
 _old_uri: "revo/pagebreaker/pagebreaker.pagebreaker"
 ---
 
-- [Description](#PageBreaker.PageBreaker-Description)
-- [Properties](#PageBreaker.PageBreaker-Properties)
-- [See Also](#PageBreaker.PageBreaker-SeeAlso)
-
-
-
 ## Description
 
 Plugin have two modes of work.

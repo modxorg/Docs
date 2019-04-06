@@ -8,7 +8,7 @@ If you haven't already make sure you have setup the [product listing](/extras/su
 
 ## Minimum Call
 
-``` php 
+``` php
 [[!smCheckout]]
 ```
 
@@ -40,7 +40,7 @@ Verification is needed for this snippets use of these system settings.
 
 Default value (from core/components/subscribeme/elements/chunks/smcheckout.paymentoptions.tpl):
 
-``` php 
+``` html
 <style type="text/css">
     #paymentoptions {
     width: 600px;

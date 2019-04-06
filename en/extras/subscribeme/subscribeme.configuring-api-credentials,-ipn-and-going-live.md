@@ -6,13 +6,6 @@ _old_uri: "revo/subscribeme/subscribeme.configuring-api-credentials,-ipn-and-goi
 
 Before getting to this stage, you should make sure the system works and you understand it using the Sandbox mode. ONLY switch to live if you have tested the functionality you needed using the sandbox mode.
 
-- [Requesting a API Credentials](#SubscribeMe.ConfiguringAPICredentials%2CIPNandgoingLive-RequestingaAPICredentials)
-- [Configuring your API Credentials in MODX](#SubscribeMe.ConfiguringAPICredentials%2CIPNandgoingLive-ConfiguringyourAPICredentialsinMODX)
-- [Configuring Instant Payment Notifications](#SubscribeMe.ConfiguringAPICredentials%2CIPNandgoingLive-ConfiguringInstantPaymentNotifications)
-- [Going LIVE!](#SubscribeMe.ConfiguringAPICredentials%2CIPNandgoingLive-GoingLIVE%5C%21)
-
-
-
 ## Requesting a API Credentials
 
 First, log in to your account at www.paypal.com. 
@@ -48,16 +41,16 @@ You'll get some information on what IPN is, click the button to choose your sett
 
 Fill in the IPN url. This is the file at <http://yoursite.com/assets/components/subscribeme/paypal/ipn.php>. If you visit it in your site you should see, well, nothing. It's not intended for public viewing but is processing your request in the back-end. To make sure you have the right URL, enable debug mode in the system settings (system setting key: subscribeme.debug) and open the page. Next, visit your MODX Error Log. You should see the following being added:
 
-> \[2011-09-20 16:11:24\] (FATAL @ /assets/components/subscribeme/paypal/ipn.php) IPN Triggered with data: Array 
-> ( 
-> ) 
-> \[2011-09-20 16:11:25\] (FATAL @ /assets/components/subscribeme/paypal/ipn.php) \[Request\] Posted to <https://www.paypal.com/cgi-bin/webscr:> cmd=\_notify-validate 
-> \[2011-09-20 16:11:25\] (FATAL @ /assets/components/subscribeme/paypal/ipn.php) \[Response\] Status: 200 Response: INVALID 
+> \[2011-09-20 16:11:24\] (FATAL @ /assets/components/subscribeme/paypal/ipn.php) IPN Triggered with data: Array
+> (
+> )
+> \[2011-09-20 16:11:25\] (FATAL @ /assets/components/subscribeme/paypal/ipn.php) \[Request\] Posted to <https://www.paypal.com/cgi-bin/webscr:> cmd=\_notify-validate
+> \[2011-09-20 16:11:25\] (FATAL @ /assets/components/subscribeme/paypal/ipn.php) \[Response\] Status: 200 Response: INVALID
 > \[2011-09-20 16:11:25\] (FATAL @ /assets/components/subscribeme/paypal/ipn.php) IPN was found to be INVALID
 
 This means it received an empty IPN response, it tried to validate it with PayPal and while it found the PayPal confirmation page the IPN was not considered valid by PayPal. Which makes sense, as PayPal didn't send the request.
 
-So fill in that IPN URL and choose to "_Receive IPN messages (Enabled)_", like the below image. 
+So fill in that IPN URL and choose to "_Receive IPN messages (Enabled)_", like the below image.
 ![](/download/attachments/35586749/ipn2.PNG?version=1&modificationDate=1316531892000)
 
 Now that you set that up you should be able to process transactions!

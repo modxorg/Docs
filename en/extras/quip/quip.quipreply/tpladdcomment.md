@@ -10,7 +10,7 @@ This is the Chunk displayed with the &tplAddComment property on the [Quip.QuipRe
 
 ## Default Value
 
-``` php 
+``` html
 [[+preview]]
 <span class="quip-success" id="quip-success-[[+idprefix]]">[[+successMsg]]</span>
 
@@ -27,13 +27,13 @@ This is the Chunk displayed with the &tplAddComment property on the [Quip.QuipRe
         <input type="text" name="name" id="quip-comment-name-[[+idprefix]]" value="[[+name]]" />
         <br />
     </div>
-    
+
     <div class="quip-fld">
         <label for="quip-comment-email-[[+idprefix]]">[[%quip.email]]:<span class="quip-error">[[+error.email]]</span></label>
         <input type="text" name="email" id="quip-comment-email-[[+idprefix]]" value="[[+email]]" />
         <br />
     </div>
-    
+
     <div class="quip-fld">
         <label for="quip-comment-website-[[+idprefix]]">[[%quip.website]]:<span class="quip-error">[[+error.website]]</span></label>
         <input type="text" name="website" id="quip-comment-website-[[+idprefix]]" value="[[+website]]" />
@@ -50,14 +50,13 @@ This is the Chunk displayed with the &tplAddComment property on the [Quip.QuipRe
     [[+quip.recaptcha_html]]
     <span class="quip-error">[[+error.recaptcha]]</span>
     </div>
-    
-    
+
     <p><span class="quip-allowed-tags">[[%quip.allowed_tags? &tags=`[[++quip.allowed_tags:htmlent]]`]]</span>[[%quip.comment_add_new]]<span class="quip-error">[[+error.comment]]</span></p>
     <textarea name="comment" id="quip-comment-box-[[+idprefix]]" rows="5">[[+comment]]</textarea>
-    
+
     <button type="submit" name="[[+preview_action]]" value="1">[[%quip.preview]]</button>
     [[+can_post:is=`1`:then=`<button type="submit" name="[[+post_action]]" value="1">[[%quip.post]]</button>`]]
-    
+
     <br class="clear" />
 </div>
 </form>
@@ -83,17 +82,17 @@ This is the Chunk displayed with the &tplAddComment property on the [Quip.QuipRe
 ## See Also
 
 1. [Quip.Quip](/extras/quip/quip.quip)
-  1. [Quip.Quip.tplComment](/extras/quip/quip.quip/quip.quip.tplcomment)
-  2. [Quip.Quip.tplCommentOptions](/extras/quip/quip.quip/quip.quip.tplcommentoptions)
-  3. [Quip.Quip.tplComments](/extras/quip/quip.quip/quip.quip.tplcomments)
-  4. [Quip.Quip.tplReport](/extras/quip/quip.quip/quip.quip.tplreport)
+   1. [Quip.Quip.tplComment](/extras/quip/quip.quip/quip.quip.tplcomment)
+   2. [Quip.Quip.tplCommentOptions](/extras/quip/quip.quip/quip.quip.tplcommentoptions)
+   3. [Quip.Quip.tplComments](/extras/quip/quip.quip/quip.quip.tplcomments)
+   4. [Quip.Quip.tplReport](/extras/quip/quip.quip/quip.quip.tplreport)
 2. [Quip.QuipCount](/extras/quip/quip.quipcount)
 3. [Quip.QuipLatestComments](/extras/quip/quip.quiplatestcomments)
 4. [Quip.QuipReply](/extras/quip/quip.quipreply)
-  1. [Quip.QuipReply.tplAddComment](/extras/quip/quip.quipreply/quip.quipreply.tpladdcomment)
-  2. [Quip.QuipReply.tplLoginToComment](/extras/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
-  3. [Quip.QuipReply.tplPreview](/extras/quip/quip.quipreply/quip.quipreply.tplpreview)
+   1. [Quip.QuipReply.tplAddComment](/extras/quip/quip.quipreply/quip.quipreply.tpladdcomment)
+   2. [Quip.QuipReply.tplLoginToComment](/extras/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
+   3. [Quip.QuipReply.tplPreview](/extras/quip/quip.quipreply/quip.quipreply.tplpreview)
 5. [Quip.QuipRss](/extras/quip/quip.quiprss)
 6. [Quip.Roadmap](/extras/quip/quip.roadmap)
 7. [Quip.Upgrading](/extras/quip/quip.upgrading)
-  1. [Quip.Upgrading to 1.0.1](/extras/quip/quip.upgrading/quip.upgrading-to-1.0.1)
+   1. [Quip.Upgrading to 1.0.1](/extras/quip/quip.upgrading/quip.upgrading-to-1.0.1)

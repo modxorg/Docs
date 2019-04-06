@@ -4,15 +4,6 @@ _old_id: "708"
 _old_uri: "revo/selflink"
 ---
 
-- [What is selfLink?](#selfLink-WhatisselfLink%3F)
-  - [Requirements](#selfLink-Requirements)
-  - [Download & Installation](#selfLink-Download%26Installation)
-- [Using selfLink](#selfLink-UsingselfLink)
-  - [Examples](#selfLink-Examples)
-- [External sources](#selfLink-Externalsources)
-
-
-
 # What is selfLink?
 
 selfLink is a simple snippet for MODx Revolution which can help create links or anchors to a page by direction like 'up', 'next' and 'previous'.
@@ -31,18 +22,18 @@ To get started using the selfLink snippet, simply go to System -> Package Manage
 
 selfLink is an easy to use snippet which can be used in a few different ways using the parameters.
 
-| Parameter | Description | Default value |
-|-----------|-------------|---------------|
-| direction | Enter one of the values like 'up', 'next' or 'previous |  |
-| id | (optional) Enter the ID of the resource where the link must be from | Current page ID |
-| tpl | (optional) The chunkname to use for the link presentation | <a href="...">Title</a> |
-| linktext | (optional) Alternative link text. When not entered, the resource pagetitle is used |  |
+| Parameter | Description                                                                        | Default value           |
+| --------- | ---------------------------------------------------------------------------------- | ----------------------- |
+| direction | Enter one of the values like 'up', 'next' or 'previous                             |                         |
+| id        | (optional) Enter the ID of the resource where the link must be from                | Current page ID         |
+| tpl       | (optional) The chunkname to use for the link presentation                          | <a href="...">Title</a> |
+| linktext  | (optional) Alternative link text. When not entered, the resource pagetitle is used |                         |
 
 ## Examples
 
 Minimum call for getting a link to the next resource in the tree
 
-``` php 
+``` php
 [[selfLink? &direction=`next`]]
 ```
 

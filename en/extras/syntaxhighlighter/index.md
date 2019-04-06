@@ -4,13 +4,6 @@ _old_id: "1801"
 _old_uri: "revo/syntaxhighlighter"
 ---
 
-- [What is SyntaxHighlighter?](#SyntaxHighlighter-WhatisSyntaxHighlighter)
-- [Package Information](#SyntaxHighlighter-Information)
-- [History](#SyntaxHighlighter-History)
-- [Download](#SyntaxHighlighter-Download)
-- [Development and Bug Reporting](#SyntaxHighlighter-DevelopmentandBugReporting)
-- [Documentation](#SyntaxHighlighter-Documentation)
- 
 ## What is SyntaxHighlighter?
 
 Front-end syntax highlighting for MODX Revolution. SyntaxHighlighter, based on Alex Gorbatchev's great JS syntax highlighter will highlight almost any kind of code. The package contains both plugin and snippet versions of the code.
@@ -35,7 +28,7 @@ It is currently maintained by Bob Ray.
 
  SyntaxHighlighter can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/syntaxhighlighter).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  SyntaxHighlighter is stored and developed using GitHub, and can be found here: [SyntaxHighlighter GitHub main page](https://github.com/BobRay/syntaxhighlighter).
 

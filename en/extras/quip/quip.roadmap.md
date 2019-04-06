@@ -71,7 +71,7 @@ Tasks in purple are already finished in Git. Ones in green are finished in beta/
 
 ### Quip 0.5
 
-- Comment Moderation 
+- Comment Moderation
   - Access Policy based
   - Notification email to moderators
   - Usergroup-based moderatorship
@@ -88,7 +88,7 @@ Tasks in purple are already finished in Git. Ones in green are finished in beta/
 
 ### Quip 0.4
 
-- Toggleable threaded comments 
+- Toggleable threaded comments
   - Restrict threading to X levels deep
 - Separate snippet into separate QuipReply and Quip snippets
 - Add latest comments snippet

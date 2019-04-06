@@ -4,12 +4,6 @@ _old_id: "1026"
 _old_uri: "revo/pagebreaker/tpl.pagebreaker.ajax"
 ---
 
-- [Description](#tpl.PageBreaker.ajax-Description)
-- [Placeholders](#tpl.PageBreaker.ajax-Placeholders)
-- [See Also](#tpl.PageBreaker.ajax-SeeAlso)
-
-
-
 ## Description
 
 This chunk used only if you enable **pb\_ajax** parameter of [PageBreaker](/extras/pagebreaker/pagebreaker.pagebreaker "PageBreaker.PageBreaker") plugin.
@@ -18,7 +12,7 @@ It is simply handle clicks on links with class **load\_page** and sends ajax req
 
 You need to specify id of element on webpage where content is.
 
-``` php 
+``` php
 <script type='text/javascript'>
   var elem = '#content'; // HTML element on webpage in which will be loaded new block of text
 

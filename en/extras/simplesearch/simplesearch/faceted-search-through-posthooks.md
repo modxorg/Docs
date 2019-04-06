@@ -4,13 +4,6 @@ _old_id: "995"
 _old_uri: "revo/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks"
 ---
 
-- [Doing Faceted Search in SimpleSearch](#SimpleSearch.FacetedSearchThroughPostHooks-DoingFacetedSearchinSimpleSearch)
-- [Setting up your Resource](#SimpleSearch.FacetedSearchThroughPostHooks-SettingupyourResource)
-- [Setting up the PostHook](#SimpleSearch.FacetedSearchThroughPostHooks-SettingupthePostHook)
-- [Separate Templating Per Facet](#SimpleSearch.FacetedSearchThroughPostHooks-SeparateTemplatingPerFacet)
-
-
-
 ## Doing Faceted Search in SimpleSearch
 
 SimpleSearch 1.3.0+ allows faceted search results to be set through postHooks, allowing you to fine-grain your search results and even integrate other, non-MODX-Resource results into your search results. This basic tutorial shows you how to get started with setting up faceted search.
@@ -21,7 +14,7 @@ Basically, SimpleSearch puts all main, resource-based results into a 'default' f
 
 First off, you'll want to have a place to show your results
 
-``` php 
+``` php
 [[!SimpleSearch?
   &toPlaceholder=`sisea.results`
   &perPage=`10`
@@ -43,7 +36,7 @@ Note we have the standard 'sisea.results' placeholder, but we've also added a 's
 
 Then at the bottom, we'll have a page that links to another page (ID 123) that will let us fine-grain our search results, showing only People results, and showing 20 at a time:
 
-``` php 
+``` php
 [[!SimpleSearch?
   &toPlaceholder=`sisea.results`
   &perPage=`20`
@@ -59,7 +52,7 @@ Then at the bottom, we'll have a page that links to another page (ID 123) that w
 
 Go ahead and make a Snippet named 'PeopleFacetHook', and put this in it:
 
-``` php 
+``` php
 <?php
 $c = $modx->newQuery('modUser');
 $c->innerJoin('modUserProfile','Profile');
@@ -110,7 +103,7 @@ Then we call the $hook->addFacet method, which takes 3 parameters:
 
 Let's say we wanted a separate chunk template for our "people" results, rather than the standard one we set in the &tpl property on the SimpleSearch call. Remember how we set the "name" of the facet to "people"? Well, SimpleSearch allows us to pass facet-specific tpl calls, such as a custom chunk called "OurPeopleChunk" by postfixing the name of the facet to the property &tpl, if we wish:
 
-``` php 
+``` php
 [[!SimpleSearch?
   &toPlaceholder=`sisea.results`
   &perPage=`20`

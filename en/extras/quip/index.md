@@ -4,20 +4,6 @@ _old_id: "696"
 _old_uri: "revo/quip"
 ---
 
-- [What is Quip?](#Quip-WhatisQuip%3F)
-  - [Requirements](#Quip-Requirements)
-  - [History](#Quip-History)
-  - [Download](#Quip-Download)
-- [Usage](#Quip-Usage)
-  - [Non-threaded Comments](#Quip-NonthreadedComments)
-  - [Threaded Comments](#Quip-ThreadedComments)
-- [Quip Snippets](#Quip-QuipSnippets)
-  - [System Settings](#Quip-SystemSettings)
-- [Examples](#Quip-Examples)
-- [See Also](#Quip-SeeAlso)
-
-
-
 ## What is Quip?
 
 Quip is a simple commenting [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODx Revolution. It allows you to quickly and easily put up comments on your website, including threaded support, moderation, url to link conversion, automatic thread closing, and more. It also allows for full comment management via the backend system in the Revolution manager.
@@ -45,7 +31,7 @@ Quip has 2 modes, threaded and non-threaded comments.
 
 The Quip snippet can be called like so in the page you want comments to display:
 
-``` php 
+``` php
 [[!Quip? &thread=`threadNameHere` &threading=`0`]]
 <br />
 [[!QuipReply? &thread=`threadNameHere`]]
@@ -55,7 +41,7 @@ The Quip snippet can be called like so in the page you want comments to display:
 
 If you have threading turned on, you'll need to first do a couple things. One is to add a "Reply to Thread" page with these snippet calls:
 
-``` php 
+``` php
 <h2>Reply to Thread</h2>
 [[!Quip]]
 <br />
@@ -66,7 +52,7 @@ You wont need to set any properties on this call, since it will pull from your o
 
 And then you'll need to add the 'replyResourceId' property to your original Quip snippet call in your page where the comments will load (such as a blog post), so it will look like this with a Resource of ID 123:
 
-``` php 
+``` php
 [[!Quip? &thread=`threadNameHere` &replyResourceId=`123`]]
 <br />
 [[!QuipReply? &thread=`threadNameHere`]]
@@ -87,32 +73,32 @@ Quip comes with 4 separate snippets:
 
 Quip comes pre-packaged with some site-wide settings as well.
 
-| Name | Description |
-|------|-------------|
-| quip.emailsFrom | The email address to send system and moderation emails from. |
-| quip.emailsTo | The email address to send system and moderation emails to. |
-| quip.emailsReplyTo | The email address to set the reply-to to. Defaults to emailFrom. |
-| quip.allowedTags | The tags allowed by users in comment posting. See [php.net/strip\_tags](http://php.net/strip_tags) for a list of acceptable values. |
+| Name               | Description                                                                                                                         |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| quip.emailsFrom    | The email address to send system and moderation emails from.                                                                        |
+| quip.emailsTo      | The email address to send system and moderation emails to.                                                                          |
+| quip.emailsReplyTo | The email address to set the reply-to to. Defaults to emailFrom.                                                                    |
+| quip.allowedTags   | The tags allowed by users in comment posting. See [php.net/strip\_tags](http://php.net/strip_tags) for a list of acceptable values. |
 
 Also, there are 3 settings for reCaptcha support, in the recaptcha namespace:
 
-| Name | Description |
-|------|-------------|
-| recaptcha.public\_key | Your public key for reCaptcha. |
-| recaptcha.private\_key | Your private key for reCaptcha. |
-| recaptcha.use\_ssl | If true, will use SSL for reCaptcha connectivity. |
+| Name                   | Description                                       |
+| ---------------------- | ------------------------------------------------- |
+| recaptcha.public\_key  | Your public key for reCaptcha.                    |
+| recaptcha.private\_key | Your private key for reCaptcha.                   |
+| recaptcha.use\_ssl     | If true, will use SSL for reCaptcha connectivity. |
 
 ## Examples
 
 A sample code line for a blog post that's on a Resource with no threading:
 
-``` php 
+``` php
 [[Quip? &thread=`blogpost[[*id]]` &threading=`0`]]
 ```
 
 Display comments for thread `post45`, but only allow logged-in users to comment, and have the "Reply to Thread" resource be ID 123:
 
-``` php 
+``` php
 [[!Quip? &thread=`post45` &replyResourceId=`123`]]
 <br />
 [[!QuipReply? &thread=`post45` &requireAuth=`1`]]
@@ -120,7 +106,7 @@ Display comments for thread `post45`, but only allow logged-in users to comment,
 
 Display comments for thread `spamproof123`, with no threading, with reCaptcha support.
 
-``` php 
+``` php
 [[!Quip? &thread=`spamproof123` &threaded=`0`]]
 <br />
 [[!QuipReply? &thread=`spamproof123` &recaptcha=`1`]]
@@ -129,17 +115,17 @@ Display comments for thread `spamproof123`, with no threading, with reCaptcha su
 ## See Also
 
 1. [Quip.Quip](/extras/quip/quip.quip)
-  1. [Quip.Quip.tplComment](/extras/quip/quip.quip/quip.quip.tplcomment)
-  2. [Quip.Quip.tplCommentOptions](/extras/quip/quip.quip/quip.quip.tplcommentoptions)
-  3. [Quip.Quip.tplComments](/extras/quip/quip.quip/quip.quip.tplcomments)
-  4. [Quip.Quip.tplReport](/extras/quip/quip.quip/quip.quip.tplreport)
+   1. [Quip.Quip.tplComment](/extras/quip/quip.quip/quip.quip.tplcomment)
+   2. [Quip.Quip.tplCommentOptions](/extras/quip/quip.quip/quip.quip.tplcommentoptions)
+   3. [Quip.Quip.tplComments](/extras/quip/quip.quip/quip.quip.tplcomments)
+   4. [Quip.Quip.tplReport](/extras/quip/quip.quip/quip.quip.tplreport)
 2. [Quip.QuipCount](/extras/quip/quip.quipcount)
 3. [Quip.QuipLatestComments](/extras/quip/quip.quiplatestcomments)
 4. [Quip.QuipReply](/extras/quip/quip.quipreply)
-  1. [Quip.QuipReply.tplAddComment](/extras/quip/quip.quipreply/quip.quipreply.tpladdcomment)
-  2. [Quip.QuipReply.tplLoginToComment](/extras/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
-  3. [Quip.QuipReply.tplPreview](/extras/quip/quip.quipreply/quip.quipreply.tplpreview)
+   1. [Quip.QuipReply.tplAddComment](/extras/quip/quip.quipreply/quip.quipreply.tpladdcomment)
+   2. [Quip.QuipReply.tplLoginToComment](/extras/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
+   3. [Quip.QuipReply.tplPreview](/extras/quip/quip.quipreply/quip.quipreply.tplpreview)
 5. [Quip.QuipRss](/extras/quip/quip.quiprss)
 6. [Quip.Roadmap](/extras/quip/quip.roadmap)
 7. [Quip.Upgrading](/extras/quip/quip.upgrading)
-  1. [Quip.Upgrading to 1.0.1](/extras/quip/quip.upgrading/quip.upgrading-to-1.0.1)
+   1. [Quip.Upgrading to 1.0.1](/extras/quip/quip.upgrading/quip.upgrading-to-1.0.1)

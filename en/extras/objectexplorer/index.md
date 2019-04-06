@@ -4,14 +4,7 @@ _old_id: "1789"
 _old_uri: "revo/objectexplorer"
 ---
 
-- [What is ObjectExplorer?](#ObjectExplorer-WhatisObjectExplorer)
-- [Package Information](#ObjectExplorer-Information)
-- [History](#ObjectExplorer-History)
-- [Download](#ObjectExplorer-Download)
-- [Development and Bug Reporting](#ObjectExplorer-DevelopmentandBugReporting)
-- [Documentation](#ObjectExplorer-Documentation)
- 
-## What is ObjectExplorer?
+## What is ObjectExplorer
 
 The output of ObjectExplorer is derived from the MODX schema file, so it should match the objects in the version of MODX Revolution that you are running. It's handy to have as a reference when working on MODX code. It will also run outside of MODX.
 
@@ -19,11 +12,17 @@ The default output is the Quick Reference, which is recommended. As an alternati
 
 Create a resource and insert a tag like the following one in the Resource Content field:
 
-\[\[ObjectExplorer\]\]
+``` php
+[[ObjectExplorer]]
+```
 
-\[\[ObjectExplorer? &full=`1`\]\]
+``` php
+[[ObjectExplorer? &full=`1`]]
+```
 
-\[\[ObjectExplorer? &columns=`5`\]\]
+``` php
+[[ObjectExplorer? &columns=`5`]]
+```
 
 View the resource and you should see the reference.
 
@@ -50,7 +49,7 @@ It is currently maintained by Bob Ray.
 
  ObjectExplorer can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/objectexplorer).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  ObjectExplorer is stored and developed using GitHub, and can be found here: [ObjectExplorer GitHub main page](https://github.com/BobRay/ObjectExplorer).
 

@@ -12,7 +12,7 @@ Input helper is a catch-all for jquery calls for sekFormTools. When input.combob
 
 Example for input.helper:
 
-``` php 
+``` php
 [[input.helper]]
 ```
 

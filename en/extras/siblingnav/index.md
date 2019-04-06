@@ -4,16 +4,6 @@ _old_id: "710"
 _old_uri: "revo/siblingnav"
 ---
 
-- [What is siblingNav?](#siblingNav-WhatissiblingNav%3F)
-  - [Requirements](#siblingNav-Requirements)
-  - [Download & Installation](#siblingNav-Download%26Installation)
-- [Using siblingNav](#siblingNav-UsingsiblingNav)
-  - [siblingNav Properties](#siblingNav-siblingNavProperties)
-  - [Examples](#siblingNav-Examples)
-- [External sources](#siblingNav-Externalsources)
-
-
-
 # What is siblingNav?
 
 siblingNav is a snippet for MODx Revolution which can generate Navigation to Resource-Siblings.
@@ -32,21 +22,21 @@ Install siblingNav by Package-Management
 
 ## siblingNav Properties
 
-| PROPERTY | DEFAULT | DESCRIPTION |
-|----------|---------|-------------|
-| rowTpl | snrow | chunk for siblings |
-| selfTpl | snself | chunk for active row |
-| prevTpl | snprev | chunk for previous-link |
-| nextTpl | snnext | chunk for next-link |
-| firstTpl | snfirst | chunk for link to first resource |
-| lastTpl | snlast | chunk for link to last resource |
-| placeholderPrefix | sn. | example: \[\[+sn.next\]\] |
-| id | modx-recource-id | the resourceid from where to get the siblings |
-| parents | false | commaseperated, get siblings from more than one parent |
-| showDeleted | 0 |  |
-| showUnpublished | 0 |  |
-| showHidden | 0 |  |
-| sortBy | ```
+| PROPERTY          | DEFAULT          | DESCRIPTION                                            |
+| ----------------- | ---------------- | ------------------------------------------------------ |
+| rowTpl            | snrow            | chunk for siblings                                     |
+| selfTpl           | snself           | chunk for active row                                   |
+| prevTpl           | snprev           | chunk for previous-link                                |
+| nextTpl           | snnext           | chunk for next-link                                    |
+| firstTpl          | snfirst          | chunk for link to first resource                       |
+| lastTpl           | snlast           | chunk for link to last resource                        |
+| placeholderPrefix | sn.              | example: \[\[+sn.next\]\]                              |
+| id                | modx-recource-id | the resourceid from where to get the siblings          |
+| parents           | false            | commaseperated, get siblings from more than one parent |
+| showDeleted       | 0                |                                                        |
+| showUnpublished   | 0                |                                                        |
+| showHidden        | 0                |                                                        |
+| sortBy            | ```              |
  {"menuindex":"ASC","id":"ASC"} 
 ``` | JSON-string with resource-fields for sorting |
 | limit | false |  |
@@ -57,14 +47,14 @@ you can find the default chunk-files here: <https://github.com/Bruno17/siblingna
 
 Minimum call for getting a navigation with all siblings
 
-``` php 
+``` php
 [[!siblingNav]]
 [[+sn.first]][[+sn.prev]][[+sn.prevlinks]][[+sn.self]][[+sn.nextlinks]][[+sn.next]][[+sn.last]]
 ```
 
 Advanced calls for getting a navigation with parents and navigate between childs of multiple parents
 
-``` php 
+``` php
 [[!siblingNav? &limit=`7` &id=`[[*parent]]` &placeholderPrefix=`snparent.`]]
 [[+snparent.prev]][[+snparent.prevlinks]][[+snparent.self]][[+snparent.nextlinks]][[+snparent.next]]
 

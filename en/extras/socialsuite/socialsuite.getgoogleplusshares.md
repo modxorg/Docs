@@ -21,19 +21,19 @@ getGooglePlusSharesis a [snippet](developing-in-modx/basic-development/snippets 
 
 Get the amount of shares for the current resource:
 
-``` php 
+``` php
 [[!getGooglePlusShares]]
 ```
 
 Get the amount of shares for the url "http://google.com/" and format it nicely using the [prettyNumbers](/extras/socialsuite/socialsuite.prettynumbers "SocialSuite.prettyNumbers") output filter that comes with SocialSuite:
 
-``` php 
+``` php
 [[!getGooglePlusShares:prettyNumbers? &url=`http://google.com/`]]
 ```
 
 Run this snippet inside another snippet to get counts of a specific url:
 
-``` php 
+``` php
 <?php
 $url = 'http://google.com/';
 $shares = $modx->runSnippet('getGooglePlusShares', array('url' => $url));

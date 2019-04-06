@@ -4,16 +4,6 @@ _old_id: "694"
 _old_uri: "revo/polls"
 ---
 
-- [What is Polls?](#Polls-WhatisPolls%3F)
-  - [Requirements](#Polls-Requirements)
-  - [History](#Polls-History)
-  - [Download](#Polls-Download)
-- [Development and Bug Reporting](#Polls-DevelopmentandBugReporting)
-- [Screenshots](#Polls-Screenshots)
-- [See also](#Polls-Seealso)
-
-
-
 ## What is Polls?
 
 Polls is a question and answer manager for MODx Revolution.
@@ -43,11 +33,11 @@ Bugs can be filed here: <https://github.com/bertoost/MODx-Polls/issues>
 
 Below a screenshot of the manager pages. More screenshots will be added later.
 
-| [![](/download/thumbnails/33587281/polls-screenshot1.jpg)](/download/attachments/33587281/polls-screenshot1.jpg) | [![](/download/thumbnails/33587281/polls-screenshot2.jpg)](/download/attachments/33587281/polls-screenshot2.jpg) | [![](/download/thumbnails/33587281/polls-screenshot3.jpg)](/download/attachments/33587281/polls-screenshot3.jpg) | [![](/download/thumbnails/33587281/polls-screenshot4.jpg)](/download/attachments/33587281/polls-screenshot4.jpg) | [![](/download/thumbnails/33587281/polls-screenshot5.jpg)](/download/attachments/33587281/polls-screenshot5.jpg) |
-|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-|  |  |  |  |  |
-
-
+[![](/download/thumbnails/33587281/polls-screenshot1.jpg)](/download/attachments/33587281/polls-screenshot1.jpg)
+[![](/download/thumbnails/33587281/polls-screenshot2.jpg)](/download/attachments/33587281/polls-screenshot2.jpg)
+[![](/download/thumbnails/33587281/polls-screenshot3.jpg)](/download/attachments/33587281/polls-screenshot3.jpg)
+[![](/download/thumbnails/33587281/polls-screenshot4.jpg)](/download/attachments/33587281/polls-screenshot4.jpg)
+[![](/download/thumbnails/33587281/polls-screenshot5.jpg)](/download/attachments/33587281/polls-screenshot5.jpg)
 
 ## See also
 
@@ -55,5 +45,3 @@ Below a screenshot of the manager pages. More screenshots will be added later.
 2. [Polls.PollsLatest](/extras/polls/polls.pollslatest)
 3. [Polls.PollsPrevious](/extras/polls/polls.pollsprevious)
 4. [Polls.PollsResult](/extras/polls/polls.pollsresult)
-
-?

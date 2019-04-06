@@ -4,24 +4,7 @@ _old_id: "699"
 _old_uri: "revo/renderresources"
 ---
 
-- [What is renderResources?](#renderResources-WhatisrenderResources%3F)
-- [Requirements](#renderResources-Requirements)
-- [History](#renderResources-History)
-  - [Download](#renderResources-Download)
-- [Usage](#renderResources-Usage)
-  - [Available Properties](#renderResources-AvailableProperties)
-      - [Templating Properties](#renderResources-TemplatingProperties)
-      - [Selection Properties](#renderResources-SelectionProperties)
-      - [Other Properties](#renderResources-OtherProperties)
-- [Examples](#renderResources-Examples)
-- [Using getPage for Pagination](#renderResources-UsinggetPageforPagination)
-  - [Examples](#renderResources-Examples)
-- [Troubleshooting](#renderResources-Troubleshooting)
-- [See Also](#renderResources-SeeAlso)
-
-
-
-## What is renderResources?
+## What is renderResources
 
 A general purpose snippet for rendering the output of a collection of Resources.
 
@@ -44,7 +27,7 @@ It is NOT a replacement for Ditto, but rather an alternative component that can 
 
 The renderResources snippet can be called using the tag:
 
-``` php 
+``` php
 [[renderResources]]
 ```
 
@@ -56,17 +39,17 @@ renderResources cannot be used with binary Content Types, or with modSymLink or 
 
 #### Templating Properties
 
-| Name | Description | Default Value | Added in version |
-|------|-------------|---------------|------------------|
-| tpl | Name of a chunk serving as a wrapper template for the Resource output. If not provided, the output of the Resource is returned directly. |  |  |
-| tplOdd | Name of a chunk serving as a wrapper template for resources with an odd idx value (see idx property) |  |  |
-| tplFirst | Name of a chunk serving as a wrapper template for the first resource |  |  |
-| tplLast | Name of a chunk serving as a wrapper template for the last resource |  |  |
-| tpl\_N | Name of a chunk serving as a wrapper template for the Nth resource, for example &tpl\_4=`tpl4th` |  |  |
-| tpl\_nN | Name of a chunk serving as a wrapper template for every Nth resource, for example &tpl\_n4=`tpl4th` would apply to any item divisible by 4 |  |  |
-| outputSeparator | An optional string to separate each tpl instance | "\\n" |  |
-| toPlaceholder | If set, will assign the result to this placeholder instead of outputting it directly. |  |  |
-| toSeparatePlaceholders | If set, will assign EACH result to a separate placeholder named by this param suffixed with a sequential number (starting from 0). |  |  |
+| Name                   | Description                                                                                                                                | Default Value | Added in version |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ---------------- |
+| tpl                    | Name of a chunk serving as a wrapper template for the Resource output. If not provided, the output of the Resource is returned directly.   |               |                  |
+| tplOdd                 | Name of a chunk serving as a wrapper template for resources with an odd idx value (see idx property)                                       |               |                  |
+| tplFirst               | Name of a chunk serving as a wrapper template for the first resource                                                                       |               |                  |
+| tplLast                | Name of a chunk serving as a wrapper template for the last resource                                                                        |               |                  |
+| tpl\_N                 | Name of a chunk serving as a wrapper template for the Nth resource, for example &tpl\_4=`tpl4th`                                           |               |                  |
+| tpl\_nN                | Name of a chunk serving as a wrapper template for every Nth resource, for example &tpl\_n4=`tpl4th` would apply to any item divisible by 4 |               |                  |
+| outputSeparator        | An optional string to separate each tpl instance                                                                                           | "\\n"         |                  |
+| toPlaceholder          | If set, will assign the result to this placeholder instead of outputting it directly.                                                      |               |                  |
+| toSeparatePlaceholders | If set, will assign EACH result to a separate placeholder named by this param suffixed with a sequential number (starting from 0).         |               |                  |
 
 #### Selection Properties
 
@@ -74,23 +57,23 @@ renderResources cannot be used with binary Content Types, or with modSymLink or 
 | parents | Comma-delimited list of ids serving as parents. Use -1 to ignore parents when specifying _resources_ to include. | current Resource id |  |
 | resources | Comma-delimited list of ids to include in the results. Prefix an id with a dash to exclude the resource from the result. |  |  |
 | depth | Integer value indicating depth to search for resources from each parent | 10 |  |
-| tvFilters | Can be used to filter resources by certain TV values. These are entered as \[(_tvname_)(_operator_)\](_value_). There are two delimiters you can use to combine filter conditions. 
+| tvFilters | Can be used to filter resources by certain TV values. These are entered as \[(_tvname_)(_operator_)\](_value_). There are two delimiters you can use to combine filter conditions.
 
-You can have "OR" filters using two pipe symbols. An OR filter fetches resources that has one of the listed TV values. 
+You can have "OR" filters using two pipe symbols. An OR filter fetches resources that has one of the listed TV values.
 
-``` php 
+``` php
 mytv==somevalue||mytv==othervalue
 ```
 
 You can also use an "and" filter using a comma. This will make sure that all the conditions are met.
 
-``` php 
+``` php
 mytv==somevalue,othertv==othervalue
 ```
 
 For advanced filtering you can also group these. It is important to know that conditions are first seperated based on the OR (||) delimiter, and after that on the AND (,) delimiter. So let's take this hypothetical example:
 
-``` php 
+``` php
 mytv==foo||mytv==bar,bartv==3||bartv==1
 ```
 
@@ -98,77 +81,72 @@ This will filter resources to meet one of the following conditions:
 
 - mytv is LIKE foo, or:
 - mytv is LIKE bar AND bartv is LIKE 3, or:
-- bartv is LIKE 1 
-  The examples above search for exact values. If you want, you can also use the percentage sign (%) as a wildcard. For example: 
-  
-  ``` php 
+- bartv is LIKE 1
+  The examples above search for exact values. If you want, you can also use the percentage sign (%) as a wildcard. For example:
+
+``` php
   mytv==%a%
-  ```
-  
+```
+
   Matches any resources that has an "a" in the mytv value.
-  
-  ``` php 
+
+  ``` php
   mytv==a%
   ```
-  
+
   Matches any resources that have a mytv value that starts with an a, and anything after that.
-  
-  ``` php 
+
+  ``` php
   mytv==%a
   ```
-  
-  Matches any resources that have a mytv value that ends with an a, but can have anything in front of it. 
+
+  Matches any resources that have a mytv value that ends with an a, but can have anything in front of it.
   
   Of course you can also combine this with the OR (||) and AND (,) delimiters explained above.
   
-  
-  It is important to know that this function **looks at the raw value of a template variable** for a specific resource. This means that **the value has been explicitly set for the resource**, and that it has not been **processed by a template variable output type**. So if you have an "autotag" tv, this means the raw value is a comma delimited list, and it is not split up in tags like you see it in the manager. 
-  
-  
-  
-  
+  It is important to know that this function **looks at the raw value of a template variable** for a specific resource. This means that **the value has been explicitly set for the resource**, and that it has not been **processed by a template variable output type**. So if you have an "autotag" tv, this means the raw value is a comma delimited list, and it is not split up in tags like you see it in the manager.
   
   **Available filter operators**
   
-  There are a number of comparison operators for use when creating filter conditions. In addition, when using many of these operators, numeric comparison values are automatically CAST TV values to numeric before comparison. Here is a list of the valid operators: 
-  || Filter Operator || SQL Operator || CASTs numerics || Notes ||| <=> | <=> | Yes | _NULL safe equals_ | | === | = | Yes |  |
-  |-----|---|-----|---|
-  | !== | != | Yes |  |
-  | <> | <> | Yes |  |
-  | == | LIKE | No |  |
-  | != | NOT LIKE | No |  |
-  | << | < | Yes |  |
-  | <= | <= | Yes |  |
-  | =< | =< | Yes |  |
-  | >> | > | Yes |  |
-  | >= | >= | Yes |  |
-  | => | => | Yes |  |  | |  |  |
-| sortby | [Any Resource Field](making-sites-with-modx/structuring-your-site/resources#Resources-ResourcesResourceFields) (excluding Template Variables) to sort by. Some common fields to sort on are publishedon, menuindex, pagetitle etc, but see the Resources documentation for all fields. Specify fields with the name only, not using the tag syntax. Note that when using fields like template, publishedby and the likes for sorting, it will be sorted on the raw values, so the template or user ID, and NOT their names. 
+  There are a number of comparison operators for use when creating filter conditions. In addition, when using many of these operators, numeric comparison values are automatically CAST TV values to numeric before comparison. Here is a list of the valid operators:
+  |        | Filter Operator                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |     | SQL Operator |  | CASTs numerics |  | Notes |  |  | <=> | <=> | Yes | _NULL safe equals_ |  | === | = | Yes |  |
+  | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- | ------------ |
+  | !==    | !=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |
+  | <>     | <>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |
+  | ==     | LIKE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | No  |              |
+  | !=     | NOT LIKE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | No  |              |
+  | <<     | <                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Yes |              |
+  | <=     | <=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |
+  | =<     | =<                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |
+  | >>     | >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Yes |              |
+  | >=     | >=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |
+  | =>     | =>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |  |                |  |       |
+  | sortby | [Any Resource Field](making-sites-with-modx/structuring-your-site/resources#Resources-ResourcesResourceFields) (excluding Template Variables) to sort by. Some common fields to sort on are publishedon, menuindex, pagetitle etc, but see the Resources documentation for all fields. Specify fields with the name only, not using the tag syntax. Note that when using fields like template, publishedby and the likes for sorting, it will be sorted on the raw values, so the template or user ID, and NOT their names. |
 
-You can also sort randomly by specifying RAND(), like so: 
-``` php 
+You can also sort randomly by specifying RAND(), like so:
+
+``` php
 &sortby=`RAND()`
 ```
 
-
 This can also be a [JSON](http://json-schema.org/) array to sort on multiple fields, e.g.
 
-``` php 
+``` php
 &sortby=`{"publishedon":"ASC","createdon":"DESC"}`
 ```
 
-
 If you want to to sort in a specific order, you can do so by specifying a resource id-list like this:
 
-``` php 
+``` php
 &sortby=`FIELD(modResource.id, 4,7,2,5,1 )`
 ```
 
 The same thing is possible if you put the sorted IDs in a template variable, like this:
 
-``` php 
+``` php
 &sortby=`FIELD(modResource.id,[[*templateVariable]])`
-``` |  |  |
+```
+
 | publishedon |  |
 | sortbyAlias | Query alias for sortby field |  |  |
 | sortbyEscaped | Escapes the field name specified in sortby |  |  |
@@ -183,65 +161,65 @@ The same thing is possible if you put the sorted IDs in a template variable, lik
 
 #### Other Properties
 
-| Name | Description | Default Value | Added in version |
-|------|-------------|---------------|------------------|
-| showUnpublished | If true, will also show Resources if they are unpublished. | 0 |  |
-| showDeleted | If true, will also show Resources regardless if they are deleted. | 0 |  |
-| showHidden | If true, will show Resources regardless if they are hidden from the menus. | 0 |  |
-| hideContainers | If set, will not show any Resources marked as a container (is\_folder). | 0 |  |
-| idx | You can define the starting idx of the resources, which is an property that is incremented as each resource is rendered | 1 |  |
-| first | Define the idx which represents the first resource | 1 |  |
-| last | Define the idx which represents the last resource. Default is # of resources being summarized + first - 1 |  |  |
-| totalVar | Define the key of a placeholder set by renderResources indicating the total number of Resources that would be selected **not** considering the _limit_ value. | total |  |
-| debug | If true, will send the SQL query to the MODx log. | false |  |
+| Name            | Description                                                                                                                                                   | Default Value | Added in version |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------- |
+| showUnpublished | If true, will also show Resources if they are unpublished.                                                                                                    | 0             |                  |
+| showDeleted     | If true, will also show Resources regardless if they are deleted.                                                                                             | 0             |                  |
+| showHidden      | If true, will show Resources regardless if they are hidden from the menus.                                                                                    | 0             |                  |
+| hideContainers  | If set, will not show any Resources marked as a container (is\_folder).                                                                                       | 0             |                  |
+| idx             | You can define the starting idx of the resources, which is an property that is incremented as each resource is rendered                                       | 1             |                  |
+| first           | Define the idx which represents the first resource                                                                                                            | 1             |                  |
+| last            | Define the idx which represents the last resource. Default is # of resources being summarized + first - 1                                                     |               |                  |
+| totalVar        | Define the key of a placeholder set by renderResources indicating the total number of Resources that would be selected **not** considering the _limit_ value. | total         |                  |
+| debug           | If true, will send the SQL query to the MODx log.                                                                                                             | false         |                  |
 
 ## Examples
 
 Output a list of child Resources of the current Resource, using the 'myRowTpl' chunk:
 
-``` php 
+``` php
 [[!renderResources? &parents=`[[*id]]` &tpl=`myRowTpl`]]
 ```
 
 Output all resources beneath the Resource with ID '5', with the exception of resource 10, using the 'myRowTpl' chunk:
 
-``` php 
+``` php
 [[!renderResources? &parents=`5` &resources=`-10` &tpl=`myRowTpl`]]
 ```
 
 Output only the resources specified, using the 'myRowTpl' chunk:
 
-``` php 
+``` php
 [[!renderResources? &parents=`-1` &resources=`10,11,12` &tpl=`myRowTpl`]]
 ```
 
 Output the top 5 latest published Resources beneath the Resource with ID '5', with tpl 'blogPost':
 
-``` php 
+``` php
 [[!renderResources? &parents=`5` &limit=`5` &tpl=`blogPost` &includeContent=`1`]]
 ```
 
 Output a list of child Resources of the current Resource, based on the Resource-template:
 
-``` php 
+``` php
 [[!renderResources? &parents=`[[*id]]` &where=`{"template:=":8}` &tpl=`myRowTpl`]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1 or 2:
 
-``` php 
+``` php
 [[!renderResources? &parents=`[[*id]]` &where=`{"template:=":1, "OR:template:=":2}` &tpl=`myRowTpl`]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1, 2 or 3 (you cannot use the same key name more than once):
 
-``` php 
+``` php
 [[!renderResources? &parents=`[[*id]]` &where=`{"template:IN":[1,2,3]}` &tpl=`myRowTpl`]]
 ```
 
 Display a message when no results found (equivalent of "empty" parameter in Ditto):
 
-``` php 
+``` php
 [[!renderResources:default=`No results found`? &parents=`[[*id]]` &tpl=`myRowTpl`]]
 ```
 
@@ -253,7 +231,7 @@ When combined with [getPage](/extras/getpage "getPage"), renderResources allows 
 
 Grab first 10 Resources - sorted by publishedon - below the Resource ID 17, no more than 2 levels deep, with the tpl 'blogListPost', including the TVs and content:
 
-``` php 
+``` php
 [[!getPage?
    &elementClass=`modSnippet`
    &element=`renderResources`
@@ -274,7 +252,7 @@ Grab first 10 Resources - sorted by publishedon - below the Resource ID 17, no m
 
 and the chunk blogListPost:
 
-``` php 
+``` php
 <div class="blogPost">
   [[+output]]
   <div class="clear"></div>

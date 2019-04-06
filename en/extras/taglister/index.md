@@ -4,20 +4,6 @@ _old_id: "729"
 _old_uri: "revo/taglister"
 ---
 
-- [What is tagLister?](#tagLister-WhatistagLister%3F)
-  - [1. Show all Pages tagged with a given Term](#tagLister-1.ShowallPagestaggedwithagivenTerm)
-  - [2. Show all tags for a given page](#tagLister-2.Showalltagsforagivenpage)
-  - [3. Display a Tag Cloud](#tagLister-3.DisplayaTagCloud)
-- [Requirements](#tagLister-Requirements)
-- [History](#tagLister-History)
-  - [Download](#tagLister-Download)
-  - [Development and Bug Reporting](#tagLister-DevelopmentandBugReporting)
-- [Usage](#tagLister-Usage)
-- [Examples](#tagLister-Examples)
-- [See Also](#tagLister-SeeAlso)
-
-
-
 ## What is tagLister?
 
 tagLister is a snippet which lists tags in order to generate tag-based navigation such as a tag cloud; the tags are unique values for a given Template Variable (one dedicated for tags). tagLister works in conjunction with several other related Snippets.
@@ -34,9 +20,8 @@ Create a page dedicated to showing all pages tagged with a given term. On that p
 
 If you are tagging only resources in a certain folder, reference the folder's page ID in the **&parents** argument, otherwise use "0" to search the entire site.
 
-``` php 
+``` php
 [[!getResourcesTag? &parents=`0` &tagKey=`my_tags` &tpl=`result_tpl`]]
-
 ```
 
 - **&tagKey** is the unique name of the Template Variable containing the tags
@@ -48,9 +33,8 @@ Remember the page ID of this page: we will use it in the next step.
 
 The next component here is showing all the given tags that appear on a given page. For this component, we rely on the **toLinks** Snippet. This will point to the page ID we created in step 1.
 
-``` php 
+``` php
 [[!toLinks? &items=`[[*my_tags]]` &target=`123`]]
-
 ```
 
 The **&items** argument should include the goods: what has your page been tagged with? This should be the name of your Template Variable.
@@ -94,23 +78,21 @@ tagLister comes with three Snippets:
 
 Grab a list of tags specified in the TV 'tags', which are separated by commas, and make the links go to the home page:
 
-``` php 
+``` php
 [[!tagLister? &tv=`tags`]]
-
 ```
 
 Grab a list of tags specified in the TV 'blog-tags', which are separated by spaces, and make the links go to Resource ID 123:
 
-``` php 
+``` php
 [[!tagLister? &tv=`blog-tags` &tvDelimiter=` ` &target=`123`]]
-
 ```
 
 ## See Also
 
 1. [tagLister.getResourcesTag](/extras/taglister/taglister.getresourcestag)
 2. [tagLister.tagLister](/extras/taglister/taglister.taglister)
-  1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
-  2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
+     1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
+     2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
 3. [tagLister.tolinks](/extras/taglister/taglister.tolinks)
-  1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+     1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)

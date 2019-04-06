@@ -4,16 +4,6 @@ _old_id: "698"
 _old_uri: "revo/redirector"
 ---
 
-- [What is Redirector?](#Redirector-WhatisRedirector%3F)
-- [Requirements](#Redirector-Requirements)
-- [History](#Redirector-History)
-  - [Download](#Redirector-Download)
-  - [Development and Bug Reporting](#Redirector-DevelopmentandBugReporting)
-- [Usage](#Redirector-Usage)
-- [See Also](#Redirector-SeeAlso)
-
-
-
 ## What is Redirector?
 
 Redirector is a management tool for your 404 / 301 redirects on your site.

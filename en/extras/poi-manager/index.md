@@ -12,11 +12,11 @@ _old_uri: "revo/poi-manager"
 
  After installation via package management, follow these steps:
 
-1. Create new POI type 
-  - Under components menu, open POI types and create new type
-  - Add at least one field to the POI type
-2. Create new POI container 
-  - POI containers are specific resource types, to create a new container right click in Resource tree and choose **Create a POI Container**
+1. Create new POI type
+     + Under components menu, open POI types and create new type
+     + Add at least one field to the POI type
+2. Create new POI container
+      + POI containers are specific resource types, to create a new container right click in Resource tree and choose **Create a POI Container**
 3. Add new POI to the created container
-  - Fill the POI info
-  - To insert marker into the map, right click the map on desired location or insert lat and lng directly into the fields above the map
+      + Fill the POI info
+      + To insert marker into the map, right click the map on desired location or insert lat and lng directly into the fields above the map

@@ -12,13 +12,13 @@ Simple snippet that gives additional information about an image, like the date t
 
 Example for image.information:
 
-``` php 
+``` php
 [[!image.information]]
 ```
 
 You can also specify the templates:
 
-``` php 
+``` php
 [[!image.information? &tplContainer=`image.information`]]
 ```
 
@@ -26,6 +26,6 @@ See the snippet properties for more options.
 
 ## Properties
 
-| Name | Description | Default | Version |
-|------|-------------|---------|---------|
-| tplContainer | The container to use to hold the image information. | image.information | >0.0.1 |
+| Name         | Description                                         | Default           | Version |
+| ------------ | --------------------------------------------------- | ----------------- | ------- |
+| tplContainer | The container to use to hold the image information. | image.information | >0.0.1  |

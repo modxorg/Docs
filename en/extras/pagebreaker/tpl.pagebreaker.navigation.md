@@ -4,17 +4,11 @@ _old_id: "1027"
 _old_uri: "revo/pagebreaker/tpl.pagebreaker.navigation"
 ---
 
-- [Description](#tpl.PageBreaker.navigation-Description)
-- [Placeholders](#tpl.PageBreaker.navigation-Placeholders)
-- [See Also](#tpl.PageBreaker.navigation-SeeAlso)
-
-
-
 ## Description
 
 It is the chunk for pagination.
 
-``` php 
+``` php
 <div style="margin-top: 10px; text-align: center;"><div style="margin-top: 10px; text-align: center;">
   [[+pb.link_prev:isnotempty=`<a href="[[+pb.link_prev]]" class="load_page">&larr;&nbsp;Previous page</a>`]]
   &nbsp;&nbsp;
@@ -28,12 +22,12 @@ It is the chunk for pagination.
 
 There is only four simple placeholders.
 
-| Placeholder | Description |
-|-------------|-------------|
-| pb.link\_prev | Link to previous page |
-| pb.link\_next | Link to next page |
-| pb.current | Number of current page |
-| pb.total | Total pages |
+| Placeholder   | Description            |
+| ------------- | ---------------------- |
+| pb.link\_prev | Link to previous page  |
+| pb.link\_next | Link to next page      |
+| pb.current    | Number of current page |
+| pb.total      | Total pages            |
 
 ## See Also
 

@@ -12,13 +12,13 @@ Add a combobox to a form quickly and easily using this snippet.
 
 Example for input.combobox using a value list:
 
-``` php 
+``` php
 [[input.combobox? &value_list=`[{ "value": "r", "label": "Red" }, { "value": "b", "label": "Blue" }]`]]
 ```
 
 Example for input.combobox using an object:
 
-``` php 
+``` php
 [[input.combobox? &object=`[{"name": "sekftStates", "sortby": "state_name", "value": "state_abbr", "label": "state_name"}]`]]
 ```
 
@@ -66,7 +66,7 @@ Some additional examples
 
 The simplest way to create a quick combo box.
 
-``` php 
+``` php
 [[!input.combobox? &value_list=`[
 { "value": "101", "label": "Regular" },
 { "value": "102", "label": "Chocolate" },
@@ -79,7 +79,7 @@ The simplest way to create a quick combo box.
 
 Grabbing data by a table object is simple and straight forward. Using a json string, enter the name of the object, the optional sort by, and the table fields to use in the combo box options label and value.
 
-``` php 
+``` php
 [[!input.combobox?
       &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
     ]]
@@ -87,7 +87,7 @@ Grabbing data by a table object is simple and straight forward. Using a json str
 
 You can even filter the data by using the filter option. Here we just want to grab all the cities with the state id of 62, which in this case is Kansas.
 
-``` php 
+``` php
 [[!input.combobox?
       &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
       &filter=`{"field": "state_id", "value": "62"}`
@@ -96,7 +96,7 @@ You can even filter the data by using the filter option. Here we just want to gr
 
 We can also filter the combo box using xpdo's powerful relational filters. Here we use the filter->name field to grab the states table. The field we filter on is the abbreviation, and the value we want to filter "KS". XPDO will then do the work by finding the relationship between the two tables ( the "id" of the states table and the "state\_id" field of the city table ) and return the filtered list by state.
 
-``` php 
+``` php
 [[!input.combobox?
       &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
       &filter=`{"name": "sekftStates", "field": "state_abbr", "value": "KS"}`
@@ -109,13 +109,13 @@ The combo box can also be filter live using jquery. please view the [Advanced Ex
 
 If more advanced filters are needed, a custom snippet can be called to fill the combo box.
 
-``` php 
+``` php
 [[!input.combobox? &snippet=`xpdo`]]
 ```
 
 The snippet must must return a json array.
 
-``` php 
+``` php
 $items = $modx->getCollection('sekftStates');
 $itemListArray = array();
 foreach ($items as $item) {
@@ -130,13 +130,13 @@ return $modx->toJSON($itemListArray);
 
 Similarly, a large list of values can be placed in an array within a snippet.
 
-``` php 
+``` php
 [[!input.combobox? &snippet=`array`]]
 ```
 
 The snippet must must return a json array.
 
-``` php 
+``` php
 $itemListArray = array(
   array(
     'value' => '1',

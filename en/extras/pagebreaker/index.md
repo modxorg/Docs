@@ -4,19 +4,9 @@ _old_id: "688"
 _old_uri: "revo/pagebreaker"
 ---
 
-- [Description](#PageBreaker-Description)
-  - [Requirements](#PageBreaker-Requirements)
-  - [Homepage and Demo](#PageBreaker-HomepageandDemo)
-  - [Download](#PageBreaker-Download)
-- [Usage](#PageBreaker-Usage)
-- [Integration with TinyMCE](#PageBreaker-IntegrationwithTinyMCE)
-- [See Also](#PageBreaker-SeeAlso)
-
-
-
 ## Description
 
-PageBreaker is a plugin, than allows you to show big texts splitted to pages. 
+PageBreaker is a plugin, than allows you to show big texts splitted to pages.
 It is searching for special string in text (**<!- splitter ->**) and splitting text on it. Also included pagination and friendly urls for pages of text.
 
 You can manually enter splitters in text or use plugin for TinyMCE for it (see below).
@@ -55,22 +45,22 @@ When you installed pagebreaker, it is overwrite built-in TinyMCE plugin [pagebre
 
 [![](/download/thumbnails/39355041/pagebreaker_1.png)](/download/attachments/39355041/pagebreaker_1.png)
 
-You need to enable this plugin and additional buttons in in system settings. 
+You need to enable this plugin and additional buttons in in system settings.
 Go to **System** -> **System Settings**, switch filter of namespaces to **timymce** and enter to **Custom Buttons Row 3**
 
-```
+``` php
 pagebreak,pagebreakmanual,pagebreakauto,pagebreakcls
 ```
 
 Then add in **Custom Plugins**
 
-```
+``` php
 pagebreak
 ```
 
  [![](/download/thumbnails/39355041/pagebreaker_2.png)](/download/attachments/39355041/pagebreaker_2.png)
 
-Now we have 4 new additional buttons in TinyMCE: 
+Now we have 4 new additional buttons in TinyMCE:
 If you have only one button - you just need to reinstall Pagebreaker. It happends when you install TinyMCE **after** Pagebreaker.
 
 What is this buttons?

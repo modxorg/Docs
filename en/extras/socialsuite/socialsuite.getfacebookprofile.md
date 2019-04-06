@@ -22,13 +22,13 @@ getFacebookProfile is a [snippet](developing-in-modx/basic-development/snippets 
 
 ## Example Usage
 
-``` php 
+``` php
 [[!getFacebookProfile? &user=`modxcms` &showAvailableData=`1` &toPlaceholders=`1`]]
 ```
 
 returns the following:
 
-``` php 
+``` php
 name = MODX
 is_published = 1
 website = http://modx.com/
@@ -49,14 +49,14 @@ cover.offset_y = 0
 
 And allows you to do something like this:
 
-``` php 
+``` php
 Facebook Name: [[!+fb.name]]<br />
 Likes: [[!+fb.likes]]
 ```
 
 which outputs something like this:
 
-``` php 
+``` php
 Facebook Name: MODX
 Likes: 2348
 ```

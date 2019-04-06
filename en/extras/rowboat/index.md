@@ -4,16 +4,6 @@ _old_id: "702"
 _old_uri: "revo/rowboat"
 ---
 
-- [What is Rowboat?](#Rowboat-WhatisRowboat%3F)
-- [Requirements](#Rowboat-Requirements)
-- [History](#Rowboat-History)
-  - [Download](#Rowboat-Download)
-  - [Development and Bug Reporting](#Rowboat-DevelopmentandBugReporting)
-- [Usage](#Rowboat-Usage)
-- [See Also](#Rowboat-SeeAlso)
-
-
-
 ## What is Rowboat?
 
 Rowboat is a custom snippet for looping over rows in any database table. Rowboat currently supports MySQL tables only.

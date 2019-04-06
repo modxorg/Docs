@@ -6,33 +6,6 @@ _old_uri: "revo/wayfinder/wayfinder-introductory-examples"
 
 Wayfinder is easily one of the single most important Snippets for your MODx site because nearly **every** site will use menus.
 
-- [Before You Start](#WayfinderIntroductoryExamples-BeforeYouStart)
-  - [Diagram](#WayfinderIntroductoryExamples-Diagram)
-  - [To Aid your Memory](#WayfinderIntroductoryExamples-ToAidyourMemory)
-      - [List Chunks](#WayfinderIntroductoryExamples-ListChunks)
-      - [List Item Chunks](#WayfinderIntroductoryExamples-ListItemChunks)
-- [Basic Usage](#WayfinderIntroductoryExamples-BasicUsage)
-  - [Snippet call:](#WayfinderIntroductoryExamples-Snippetcall%3A)
-  - [Output example:](#WayfinderIntroductoryExamples-Outputexample%3A)
-- [Formatting each Link: rowTpl](#WayfinderIntroductoryExamples-FormattingeachLink%3ArowTpl)
-  - [Output Example:](#WayfinderIntroductoryExamples-OutputExample%3A)
-- [Outer Wrapper: formatting the `<ul>`](#WayfinderIntroductoryExamples-OuterWrapper%3Aformattingthe%7B%7B%3Cul%3E%7D%7D)
-  - [Sample output:](#WayfinderIntroductoryExamples-Sampleoutput%3A)
-- [ParentRow: Special formatting for the parent folder items](#WayfinderIntroductoryExamples-ParentRow%3ASpecialformattingfortheparentfolderitems)
-  - [Sample Snippet Call:](#WayfinderIntroductoryExamples-SampleSnippetCall%3A)
-  - [Sample Output:](#WayfinderIntroductoryExamples-SampleOutput%3A)
-- [innerTpl](#WayfinderIntroductoryExamples-innerTpl)
-  - [Sample Output:](#WayfinderIntroductoryExamples-SampleOutput%3A)
-- [innerRowTpl](#WayfinderIntroductoryExamples-innerRowTpl)
-  - [Snippet Call](#WayfinderIntroductoryExamples-SnippetCall)
-  - [Sample Output](#WayfinderIntroductoryExamples-SampleOutput)
-- [Setting classes](#WayfinderIntroductoryExamples-Settingclasses)
-  - [Snippet Call](#WayfinderIntroductoryExamples-SnippetCall)
-  - [Sample Output](#WayfinderIntroductoryExamples-SampleOutput)
-- [Conclusion](#WayfinderIntroductoryExamples-Conclusion)
-
-
-
 ## Before You Start
 
 For the following examples, we will be referring to the following sample resources:
@@ -75,13 +48,13 @@ The simplest WayFinder call uses built-in formatting:
 
 ### Snippet call:
 
-``` php 
+``` php
 [[Wayfinder? &startId=`55` ]]
 ```
 
 ### Output example:
 
-``` php 
+``` html
 <ul>
         <li class="first"><a href="media-hub/news" title="HG in the News" >HG in the News</a></li>
         <li><a href="media-hub/events" title="HG Events" >HG Events</a></li>
@@ -114,13 +87,13 @@ You can see how the default behavior here nests unordered lists. Not too bad for
 
 Next, we can specify verbatim how we want to format each link by setting the &rowTpl parameter as in the following Snippet call:
 
-``` php 
+``` php
 [[Wayfinder? &startId=`55` &rowTpl=`rowTpl`]]
 ```
 
 We set our "rowTpl" Chunk to look like this:
 
-``` php 
+``` php
 <!-- rowTpl -->
 <li[[+wf.id]][[+wf.classes]]>
 <a href="[[+wf.link]]" title="[[+wf.title]]" [[+wf.attributes]]>[[+wf.linktext]]</a>
@@ -130,7 +103,7 @@ We set our "rowTpl" Chunk to look like this:
 
 ### Output Example:
 
-``` php 
+``` html
 <ul>
         <!-- rowTpl -->
         <li class="first"><a href="media-hub/news" title="HG in the News" >HG in the News</a></li>
@@ -169,7 +142,7 @@ We set our "rowTpl" Chunk to look like this:
 </ul>
 ```
 
-See how it's basically the same thing, except this time we have explicit control over the formatting of each item? 
+See how it's basically the same thing, except this time we have explicit control over the formatting of each item?
 We also included a comment in our chunk so it was clear how the output is iterated.
 
 ## Outer Wrapper: formatting the `<ul>`
@@ -178,13 +151,13 @@ Next, we will explicitly format the outer unordered-lists <ul> by setting the **
 
 Here's out sample Snippet call:
 
-``` php 
+``` php
 [[Wayfinder? &startId=`55` &rowTpl=`rowTpl` &outerTpl=`outerTpl`]]
 ```
 
 And here's our new Chunk "outerTpl":
 
-``` php 
+``` php
 <!-- outerTpl -->
 <ul id="topnav"[[+wf.classes]]>
 [[+wf.wrapper]]
@@ -193,7 +166,7 @@ And here's our new Chunk "outerTpl":
 
 ### Sample output:
 
-``` php 
+``` html
 <!-- outerTpl -->
 <ul class="topnav">
         <!-- rowTpl -->
@@ -239,8 +212,6 @@ So we now have control over each item and over the format of the <ul> for each l
 
 Be careful: contrary to what you might think given its name, the **outerTpl** does not necessarily format only the final outer-most wrapper, it formats _EACH_ group of items that contains children _unless an_ **_innerTpl_** _Chunk is specified!_If you want the more "expected" behavior where the **outerTpl** is used to format only the outer-most group, then you must explicitly specify the "innerTpl" parameter (see below).
 
-
-
 One takeaway here is DO NOT use a CSS id inside your **outerTpl** because you might end up having multiple instances of the same ID on the page.
 
 Did you notice how in our **outerTpl** we explicitly set the CSS class? You don't necessarily need to do that: **Wayfinder** includes parameters that allow you to set the CSS classes used by many of the component chunks (more on that in a bit).
@@ -251,13 +222,13 @@ This time around we are going to specify a different formatting chunk for the it
 
 ### Sample Snippet Call:
 
-``` php 
+``` php
 [[Wayfinder? &startId=`55` &rowTpl=`rowTpl` &outerTpl=`outerTpl` &parentRowTpl=`parentRow`]]
 ```
 
 Here's what we have in our "parentRow" Chunk:
 
-``` php 
+``` php
 <!-- ParentRow -->
 <li>
 <a href="[[+wf.link]]">[[+wf.linktext]]</a> - [[+wf.description]]
@@ -269,7 +240,7 @@ Here's what we have in our "parentRow" Chunk:
 
 And here is our sample output.
 
-``` php 
+``` html
 <!-- outerTpl -->
 <ul class="topnav">
         <!-- rowTpl -->
@@ -316,20 +287,20 @@ If we had omitted the **&parentRowTpl** parameter, the **&rowTpl** Chunk would h
 
 ## innerTpl
 
-Before we noticed how the outerTpl parameter is used to format the outer-most group 
-AND any other group of items. It basically is used as the <ul> container to wrap 
-the various list items. But it's pretty common that you'd want the outer-most <ul> 
+Before we noticed how the outerTpl parameter is used to format the outer-most group
+AND any other group of items. It basically is used as the <ul> container to wrap
+the various list items. But it's pretty common that you'd want the outer-most <ul>
 to use different formatting than the various <ul>'s that contain the sub-items.
 
 That's when we can use the &innerTpl.
 
-``` php 
+``` php
 [[Wayfinder? &startId=`55` &rowTpl=`rowTpl` &outerTpl=`outerTpl` &parentRowTpl=`parentRow` &innerTpl=`innerTpl`]]
 ```
 
 ### Sample Output:
 
-``` php 
+``` html
 <!-- outerTpl -->
 <ul class="topnav">
         <!-- rowTpl -->
@@ -377,7 +348,7 @@ The last remaining formatting bit is to distinguish between the top-level items 
 
 This Chunk is a variation of the basic **&rowTpl**. Here's what we have for our "innerRowTpl":
 
-``` php 
+``` html
 <!-- innerRowTpl -->
 <li><a href="[[+wf.link]]">[[+wf.linktext]]</a>[[+wf.wrapper]]</li>
 ```
@@ -386,7 +357,7 @@ This Chunk is a variation of the basic **&rowTpl**. Here's what we have for our 
 
 Here's what our Snippet call looks like:
 
-``` php 
+``` php
 [[Wayfinder? &startId=`55` &rowTpl=`rowTpl` &outerTpl=`outerTpl` &parentRowTpl=`parentRow` &innerTpl=`innerTpl` &innerRowTpl=`innerRowTpl`]]
 ```
 
@@ -394,7 +365,7 @@ Here's what our Snippet call looks like:
 
 And here's the outputed HTML:
 
-``` php 
+``` html
 <!-- outerTpl -->
 <ul class="topnav">
         <!-- rowTpl -->
@@ -436,17 +407,17 @@ And here's the outputed HTML:
 </ul>
 ```
 
-In other words, the top level pages (56, 57, 58, 60, 61, 62) use the standard **&rowTpl**, and all pages in sub-folders 
+In other words, the top level pages (56, 57, 58, 60, 61, 62) use the standard **&rowTpl**, and all pages in sub-folders
 use the &innerRowTpl.
 
 ## Setting classes
 
-Before you go too far down the rabbit hole, let's quickly demonstrate how you can 
-use some of the other available parameters to affect the final output. You may not need to come up with a zillion different Chunks to format your output. See in our 
-examples how the first and last row items have custom CSS classes added? These 
+Before you go too far down the rabbit hole, let's quickly demonstrate how you can
+use some of the other available parameters to affect the final output. You may not need to come up with a zillion different Chunks to format your output. See in our
+examples how the first and last row items have custom CSS classes added? These
 are intelligently added to the `[``<span class="error">[+wf.attributes]</span>``]` placeholder inside of our "rowTpl":
 
-``` php 
+``` php
 <!-- rowTpl -->
 <li[[+wf.id]][[+wf.classes]]>
 <a href="[[+wf.link]]" title="[[+wf.title]]" [[+wf.attributes]]>[[+wf.linktext]]</a>
@@ -465,7 +436,7 @@ We are going to set the following parameters so you can see how it affects the f
 
 Our adjust Wayfinder Snippet call looks like this:
 
-``` php 
+``` php
 [[!Wayfinder? &startId=`55`
 &rowTpl=`rowTpl`
 &outerTpl=`outerTpl`
@@ -480,7 +451,7 @@ Our adjust Wayfinder Snippet call looks like this:
 
 And here's what our sample output looks like:
 
-``` php 
+``` php
 <!-- outerTpl -->
 <ul id="topnav" class="my_outer_class">
         <!-- rowTpl -->
@@ -524,7 +495,7 @@ And here's what our sample output looks like:
 
 Notice how the first and last links got two classes? The "my\_row\_class" is added to **all** rows, and the first and last items get the "my\_first\_class" or "my\_last\_class" respectively in addition to the "my\_row\_class".
 
-Remember: if you want to take advantage of these parameters, make sure you include 
+Remember: if you want to take advantage of these parameters, make sure you include
 the `[[+wf.attributes]]` placeholder inside your Chunks!!!
 
 ## Conclusion

@@ -3,13 +3,6 @@ title: "UpgradeMODX"
 _old_id: "1803"
 _old_uri: "revo/upgrademodx"
 ---
-
-- [What is UpgradeMODX?](#UpgradeMODX-WhatisUpgradeMODX)
-- [Package Information](#UpgradeMODX-Information)
-- [History](#UpgradeMODX-History)
-- [Download](#UpgradeMODX-Download)
-- [Development and Bug Reporting](#UpgradeMODX-DevelopmentandBugReporting)
-- [Documentation](#UpgradeMODX-Documentation)
  
 ## What is UpgradeMODX?
 

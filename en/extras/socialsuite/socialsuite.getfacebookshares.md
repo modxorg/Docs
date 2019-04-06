@@ -22,31 +22,31 @@ getFacebookShares is a [snippet](developing-in-modx/basic-development/snippets "
 
 Get the the amount of shares for the current resource:
 
-``` php 
+``` php
 [[!getFacebookShares]]
 ```
 
 Get the amount of facebook comments for the current resource:
 
-``` php 
+``` php
 [[!getFacebookShares? &node=`comments`]]
 ```
 
 Get the amount of facebook comments for a resource in a getResources tpl:
 
-``` php 
+``` php
 Comments: [[!getFacebookShares? &node=`comments` &url=`[[~[[+id]]? &scheme=`full`]]`]]
 ```
 
 Get the amount of shares for the url "http://google.com/" and format it nicely using the prettyNumbers output filter that comes with SocialSuite:
 
-``` php 
+``` php
 [[!getFacebookShares:prettyNumbers? &url=`http://google.com/`]]
 ```
 
 Run this snippet inside another snippet to get counts of a specific url:
 
-``` php 
+``` php
 <?php
 $url = 'http://google.com/';
 $shares = $modx->runSnippet('getFacebookShares', array('url' => $url));

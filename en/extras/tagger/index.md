@@ -54,7 +54,7 @@ _old_uri: "revo/tagger"
 
  System Settings under Tagger namespace are available for these settings: tagger.place\_in\_tab\_label, tagger.place\_tvs\_tab\_label, tagger.place\_above\_content\_label, tagger.place\_below\_content\_label, tagger.place\_bottom\_page\_label
 
- You can change their value to text or a lexicon key. If you want to have different name based on Resource Template, you can use following notation: 
+ You can change their value to text or a lexicon key. If you want to have different name based on Resource Template, you can use following notation:
 **1==Label For Template with ID 1||2==Label For Template with ID 2**
 
  **Default label:** tagger.tab.label
@@ -91,7 +91,7 @@ _old_uri: "revo/tagger"
 
  **OUTPUT PLACEHOLDERS AND EXAMPLE VALUES:**
 
- ```
+ ``` php
 [[+id]] => 1
 [[+tag]] => News
 [[+alias]] => news
@@ -109,13 +109,12 @@ _old_uri: "revo/tagger"
 [[+uri]]
 [[+idx]] = Number starting from one for each tag
 [[+active]] => 1 (1/0 based on if current tag is active or not)
-
 ```
 
  **EXAMPLE USAGE:**
 
- ```
-// Get tags for all resources, including unused tags 
+ ``` php
+// Get tags for all resources, including unused tags
 [[TaggerGetTags? &showUnused=`1`]]
 // Get tags from groups 1 and 3 for all resources
 [[TaggerGetTags? &groups=`1,3` &rowTpl=`tag_links_tpl`]]
@@ -123,12 +122,7 @@ _old_uri: "revo/tagger"
 [[!TaggerGetTags? &resources=`[[*id]]` &rowTpl=`tag_links_tpl`]]
 // Get tags for current resource in getResources tpl
 [[!TaggerGetTags? &resources=`[[+id]]` &rowTpl=`tag_links_tpl`]]
-
 ```
-
-``
-
-``
 
 #### How to translate groups
 
@@ -160,7 +154,10 @@ _old_uri: "revo/tagger"
 
  **EXAMPLE USAGE:**
 
- ```
-[[!getResources? &where=`[[!TaggerGetResourcesWhere? &tags=`Books,Vehicles` &where=`{"isfolder": 0}`]]`]]
-
+ ``` php
+[[!getResources?
+  &where=`[[!TaggerGetResourcesWhere?
+  &tags=`Books,Vehicles`
+  &where=`{"isfolder": 0}`]]`
+]]
 ```

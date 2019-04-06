@@ -12,13 +12,13 @@ Add the google analytics code to your website quickly and easily using this snip
 
 Example for google.analytics:
 
-``` php 
+``` php
 [[google.analytics? &accountNumber=`U123456`]]
 ```
 
 You can also specify a domain name, only needed if using analytics with sub domains:
 
-``` php 
+``` php
 [[google.analytics? &accountNumber=`U123456` &domainName=`domain.com`]]
 ```
 
@@ -26,7 +26,7 @@ See the snippet properties for more information.
 
 ## Properties
 
-| Name | Description | Default | Required | Version |
-|------|-------------|---------|----------|---------|
-| accountNumber | The account number created when starting a google analytics account must be inserted for the code to work. |  | Yes | >0.0.1 |
-| domainName | The domain name is only required if using subdomains. |  |  | >0.0.1 |
+| Name          | Description                                                                                                | Default | Required | Version |
+| ------------- | ---------------------------------------------------------------------------------------------------------- | ------- | -------- | ------- |
+| accountNumber | The account number created when starting a google analytics account must be inserted for the code to work. |         | Yes      | >0.0.1  |
+| domainName    | The domain name is only required if using subdomains.                                                      |         |          | >0.0.1  |

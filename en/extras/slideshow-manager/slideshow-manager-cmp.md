@@ -4,14 +4,6 @@ _old_id: "715"
 _old_uri: "revo/slideshow-manager/slideshow-manager-cmp"
 ---
 
-- [Albums](#SlideshowManagerCMP-Albums)
-  - [Create an Album](#SlideshowManagerCMP-CreateanAlbum)
-- [Slides](#SlideshowManagerCMP-Slides)
-  - [Create a Slide](#SlideshowManagerCMP-CreateaSlide)
-  - [Edit a Slide](#SlideshowManagerCMP-EditaSlide)
-
-
-
 Once you have installed Slideshow Manager via the package manager and you refresh the page you should see in the MODX Manager Menu: Components -> Slideshow Manager. This is where you can manage and create slideshows.
 
 ## Albums

@@ -24,26 +24,26 @@ getTwitterProfile seems to be broken right now.. will update once resolved
 
 ## Example Usage
 
-``` php 
+``` php
 [[!getTwitterProfile? &user=`modx` &showAvailableData=`1` &toPlaceholders=`1`]]
 ```
 
 returns the following:
 
-``` php 
+``` php
 <currently erroring>
 ```
 
 And allows you to do something like this:
 
-``` php 
+``` php
 Twitter Name: [[!+tw.name]]<br />
 Likes: [[!+tw.likes]]
 ```
 
 which outputs something like this:
 
-``` php 
+``` php
 Twitter Name: MODX
 Likes: 2348
 ```

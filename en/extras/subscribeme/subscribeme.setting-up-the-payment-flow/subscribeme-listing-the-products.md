@@ -12,7 +12,7 @@ SubscribeMe needs the soon to be paying member to already have a user account, s
 
 ## Minimum Call
 
-``` php 
+``` php
 [[smListProducts]]
 ```
 
@@ -46,7 +46,7 @@ This snippet also uses the following **system settings** for some parts of its b
 
 Default value (from core/components/subscribeme/elements/chunks/smListProducts.outer.tpl):
 
-``` php 
+``` php
 [[!FormIt?
   &hooks=`smNewSubscription`
   &optionsResource=`4`
@@ -69,7 +69,7 @@ The tplOuter chunk only has access to the products placeholder.
 
 Default value (from core/components/subscribeme/elements/chunks/smListProducts.row.tpl):
 
-``` php 
+``` php
 <li style="width: 450px; border: 2px solid #333; list-style-type: none; padding: 15px;">
     <form action="[[~[[*id]]]]" method="POST">
         <input type="hidden" name="product" value="[[+product_id]]" / >

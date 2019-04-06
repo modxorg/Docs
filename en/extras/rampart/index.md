@@ -4,17 +4,6 @@ _old_id: "697"
 _old_uri: "revo/rampart"
 ---
 
-- [What is Rampart?](#Rampart-WhatisRampart%3F)
-- [Requirements](#Rampart-Requirements)
-- [History](#Rampart-History)
-  - [Download](#Rampart-Download)
-  - [Development and Bug Reporting](#Rampart-DevelopmentandBugReporting)
-- [Usage](#Rampart-Usage)
-  - [Enabling Project Honey Pot DNS Blacklisting](#Rampart-EnablingProjectHoneyPotDNSBlacklisting)
-- [See Also](#Rampart-SeeAlso)
-
-
-
 ## What is Rampart?
 
 Rampart is a robust anti-spam tool for MODX Revolution. It can be used to help prevent spam registrations and postings on your MODX Revolution site, as well as provides DNS blacklisting. It can also currently be integrated into either the [Register](/extras/login/login.register "Login.Register") snippet, [Quip](/extras/quip "Quip") comments, or into any [FormIt](/extras/formit "FormIt")-powered form.

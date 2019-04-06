@@ -4,16 +4,6 @@ _old_id: "727"
 _old_uri: "revo/syntaxchecker"
 ---
 
-- [What is SyntaxChecker?](#SyntaxChecker-WhatisSyntaxChecker%3F)
-  - [Requirements](#SyntaxChecker-Requirements)
-  - [History](#SyntaxChecker-History)
-  - [Download](#SyntaxChecker-Download)
-- [Usage Examples](#SyntaxChecker-UsageExamples)
-- [Troubleshooting](#SyntaxChecker-Troubleshooting)
-- [See Also](#SyntaxChecker-SeeAlso)
-
-
-
 ## What is SyntaxChecker?
 
 [SyntaxChecker](http://modx.com/extras/package/syntaxchecker) is a plugin that checks the syntax of your MODX tags and alerts you to problems. This helps ensure that your documents and templates render the way you expect them to.
@@ -55,5 +45,3 @@ The following represents some of the conditions that are checked for (see the re
 
 - Be sure to clear your MODX error log periodically.
 - File bugs at <https://github.com/fireproofsocks/SyntaxChecker>
-
-## See Also

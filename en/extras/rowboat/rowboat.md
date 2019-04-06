@@ -4,17 +4,6 @@ _old_id: "976"
 _old_uri: "revo/rowboat/rowboat.rowboat"
 ---
 
-- [The Rowboat Snippet](#Rowboat.Rowboat-TheRowboatSnippet)
-- [Usage](#Rowboat.Rowboat-Usage)
-- [Available Properties](#Rowboat.Rowboat-AvailableProperties)
-- [tpl Chunk Properties](#Rowboat.Rowboat-tplChunkProperties)
-- [Examples](#Rowboat.Rowboat-Examples)
-  - [Using getPage with Rowboat](#Rowboat.Rowboat-UsinggetPagewithRowboat)
-- [Gotchas](#Rowboat.Rowboat-Gotchas)
-- [See Also](#Rowboat.Rowboat-SeeAlso)
-
-
-
 ## The Rowboat Snippet
 
 This snippet iterates across rows for any database table.
@@ -23,7 +12,7 @@ This snippet iterates across rows for any database table.
 
 Display the first 10 Doodles in the modx\_doodles table, sorted by name:
 
-``` php 
+``` php
 [[!Rowboat?
    &table=`modx_doodles`
    &tpl=`myDoodle`
@@ -34,45 +23,45 @@ Display the first 10 Doodles in the modx\_doodles table, sorted by name:
 
 Using the following Chunk, "myDoodle":
 
-``` php 
+``` php
 <li id="doodle[[+id]]"><strong>[[+name]]</strong> - [[+description]]</li>
 ```
 
 ## Available Properties
 
-| Name | Description | Default |
-|------|-------------|---------|
-| tpl | The Chunk to use for each row. If empty, will output an array of placeholders that are available. |  |
-| table | Required. The table to grab records from. |  |
-| columns | A JSON object of columns and aliases for those columns to grab for the row. If not set, will grab all columns in the table. | \* |
-| where | A JSON object for a where statement. |  |
-| sortBy | If set, will sort by this field. |
-| sortDir | The direction to sort by. | ASC |
-| limit | The number of rows to limit per call. Defaults to 10. Set to 0 to show all. | 10 |
-| offset | The start index to begin with when limiting. | 0 |
-| cacheResults | If set to 1, will cache the results of the specific query. | 1 |
-| cacheTime | If cacheResults is set to 1, the number of seconds to cache the query for. | 3600 |
-| placeholderPrefix | The prefix to use when setting global placeholders, such as total. | rowboat. |
-| outputSeparator | The separator between each user record. |  |
-| toPlaceholder | Optional. If set, will set the output to this placeholder and return empty. |  |
-| debug | Optional. If set to 1, will output a table of information about the generated query and results. Always leave at 0 for production sites. | 0 |
+| Name              | Description                                                                                                                              | Default  |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| tpl               | The Chunk to use for each row. If empty, will output an array of placeholders that are available.                                        |          |
+| table             | Required. The table to grab records from.                                                                                                |          |
+| columns           | A JSON object of columns and aliases for those columns to grab for the row. If not set, will grab all columns in the table.              | \*       |
+| where             | A JSON object for a where statement.                                                                                                     |          |
+| sortBy            | If set, will sort by this field.                                                                                                         |
+| sortDir           | The direction to sort by.                                                                                                                | ASC      |
+| limit             | The number of rows to limit per call. Defaults to 10. Set to 0 to show all.                                                              | 10       |
+| offset            | The start index to begin with when limiting.                                                                                             | 0        |
+| cacheResults      | If set to 1, will cache the results of the specific query.                                                                               | 1        |
+| cacheTime         | If cacheResults is set to 1, the number of seconds to cache the query for.                                                               | 3600     |
+| placeholderPrefix | The prefix to use when setting global placeholders, such as total.                                                                       | rowboat. |
+| outputSeparator   | The separator between each user record.                                                                                                  |          |
+| toPlaceholder     | Optional. If set, will set the output to this placeholder and return empty.                                                              |          |
+| debug             | Optional. If set to 1, will output a table of information about the generated query and results. Always leave at 0 for production sites. | 0        |
 
 ## tpl Chunk Properties
 
 In your &tpl Chunk, you will have all the columns that you selected as properties, as well as:
 
-| Name | Description |
-|------|-------------|
-| \_idx | The index of this row. |
-| \_alt | 1 if is an even row, 0 if odd. |
+| Name    | Description                                                             |
+| ------- | ----------------------------------------------------------------------- |
+| \_idx   | The index of this row.                                                  |
+| \_alt   | 1 if is an even row, 0 if odd.                                          |
 | \_first | If this row is the first of this paged result set, then this will be 1. |
-| \_last | If this row is the last of this paged result set, then this will be 1. |
+| \_last  | If this row is the last of this paged result set, then this will be 1.  |
 
 ## Examples
 
 Grab top 10 Doodles, sorted by name, from modx\_doodles that have "Test" in their name:
 
-``` php 
+``` php
 [[!Rowboat?
    &table=`modx_doodles`
    &tpl=`myDoodle`
