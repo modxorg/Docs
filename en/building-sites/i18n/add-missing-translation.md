@@ -22,7 +22,7 @@ A similar process can be done for the installer, if you so choose. Just copy the
 
 ## Extras Lexicons
 
-Often, Extras lexicons can be found in their respective directories in the core/components/ directory. For example, [Quip's](/extras/revo/quip "Quip") is found here:
+Often, Extras lexicons can be found in their respective directories in the core/components/ directory. For example, [Quip's](/extras/quip "Quip") is found here:
 
 `core/components/quip/lexicon/en/`
 

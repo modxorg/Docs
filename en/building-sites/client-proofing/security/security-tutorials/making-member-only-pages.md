@@ -8,7 +8,7 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials/making-member
 
 MODX Revolution uses a whole new set of security systems to allow you more flexibility while giving your users access (or denying) to Manager and Web resources. As there seems to be need for a proper tutorial to get you into the basics of working with this advanced system this document has been written.
 
-It's common to have pages in the front end of a site that can only be seen by certain users. This tutorial describes how to do that in MODX Revolution. It assumes that you already know how to let users register and log in using the components in the [Login](/extras/revo/login "Login") package. The process described below will have no effect on which resources users can see or edit in the MODX Manager.
+It's common to have pages in the front end of a site that can only be seen by certain users. This tutorial describes how to do that in MODX Revolution. It assumes that you already know how to let users register and log in using the components in the [Login](/extras/login "Login") package. The process described below will have no effect on which resources users can see or edit in the MODX Manager.
 
 For those that are savvy enough, below follows a simple list to help you through the maze or to remind you how it works. If you need more information and would like some examples, scroll down to the related subsection below.
 
@@ -129,6 +129,6 @@ Bob's permissions guide: <http://bobsguides.com/revolution-permissions.html>
 
 Forum topic discussing this tutorial: <http://modxcms.com/forums/index.php/topic,51259.0.html>
 
-Using the Login Snippet to set up a basic "Members Only" area: [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup")
+Using the Login Snippet to set up a basic "Members Only" area: [Login.Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup")
 
 Security: [Security](building-sites/client-proofing/security "Security")

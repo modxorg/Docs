@@ -33,7 +33,7 @@ $(function() { $("#tabs").tabs(); });
 
 ## Wait, I want the Page Titles as the tab headers!
 
- There are a few ways you can do this; one, you can use [getResources](/extras/revo/getresources "getResources"), [Wayfinder](/extras/evo/wayfinder "Wayfinder"), or use a getField snippet.
+ There are a few ways you can do this; one, you can use [getResources](/extras/getresources "getResources"), [Wayfinder](/extras/evo/wayfinder "Wayfinder"), or use a getField snippet.
 
 ### Using getResources
 
