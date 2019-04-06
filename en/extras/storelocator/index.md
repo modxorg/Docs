@@ -44,7 +44,7 @@ To sort stores log in to the manager and go to "Components" -> "Store Locator". 
 
 ## Placing the snippet
 
-Place the main \[\[[StoreLocator](/extras/storelocator "StoreLocator")\]\] snippet call on your webpage. If you have placed the snippet it assigns the following placeholders to your page:
+Place the main \[\[[StoreLocator](extras/storelocator "StoreLocator")\]\] snippet call on your webpage. If you have placed the snippet it assigns the following placeholders to your page:
 
 | Placeholder name                 | Content                               |
 | -------------------------------- | ------------------------------------- |

@@ -6,7 +6,7 @@ _old_uri: "revo/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl"
 
 ## PeopleGroups's tpl Chunk
 
-This is the Chunk displayed with the &tpl property on the [PeopleGroups](/extras/peoples/peoples.peoplegroups "Peoples.PeopleGroups") snippet.
+This is the Chunk displayed with the &tpl property on the [PeopleGroups](extras/peoples/peoples.peoplegroups "Peoples.PeopleGroups") snippet.
 
 ## Default Value
 
@@ -26,10 +26,10 @@ This is the Chunk displayed with the &tpl property on the [PeopleGroups](/extras
 
 ## See Also
 
-- [Peoples.PeopleGroup](/extras/peoples/peoples.peoplegroup)
-  - [Peoples.PeopleGroup.userTpl](/extras/peoples/peoples.peoplegroup/peoples.peoplegroup.usertpl)
-- [Peoples.PeopleGroups](/extras/peoples/peoples.peoplegroups)
-  - [Peoples.PeopleGroups.tpl](/extras/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
-- [Peoples.Peoples](/extras/peoples/peoples.peoples)
-  - [Peoples.Peoples.tpl](/extras/peoples/peoples.peoples/peoples.peoples.tpl)
-- [Peoples.Roadmap](/extras/peoples/peoples.roadmap)
+- [Peoples.PeopleGroup](extras/peoples/peoples.peoplegroup)
+  - [Peoples.PeopleGroup.userTpl](extras/peoples/peoples.peoplegroup/peoples.peoplegroup.usertpl)
+- [Peoples.PeopleGroups](extras/peoples/peoples.peoplegroups)
+  - [Peoples.PeopleGroups.tpl](extras/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
+- [Peoples.Peoples](extras/peoples/peoples.peoples)
+  - [Peoples.Peoples.tpl](extras/peoples/peoples.peoples/peoples.peoples.tpl)
+- [Peoples.Roadmap](extras/peoples/peoples.roadmap)

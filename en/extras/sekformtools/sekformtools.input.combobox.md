@@ -103,7 +103,7 @@ We can also filter the combo box using xpdo's powerful relational filters. Here 
     ]]
 ```
 
-The combo box can also be filter live using jquery. please view the [Advanced Examples](/extras/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples") for more information.
+The combo box can also be filter live using jquery. please view the [Advanced Examples](extras/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples") for more information.
 
 ### Snippet
 

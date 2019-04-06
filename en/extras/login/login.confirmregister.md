@@ -6,19 +6,19 @@ _old_uri: "revo/login/login.confirmregister"
 
 ## What is ConfirmRegister? 
 
-ConfirmRegister is a simple snippet that confirms a registration by a User from the [Register](/extras/login/login.register "Login.Register") snippet, when 'activation' in that snippet is set to 1 (the default). It is placed on a separate, "Registration Activated" page.
+ConfirmRegister is a simple snippet that confirms a registration by a User from the [Register](extras/login/login.register "Login.Register") snippet, when 'activation' in that snippet is set to 1 (the default). It is placed on a separate, "Registration Activated" page.
 
 ## Usage 
 
-[Register](/extras/login/login.register "Login.Register") by default requires the User to activate their account before logging in. The Snippet creates the modUser object and sets its "active" field to 0. The User then gets an email with a URL to activate their account with. Once the User visits the page, their account is set to "active=1", and they can then login.
+[Register](extras/login/login.register "Login.Register") by default requires the User to activate their account before logging in. The Snippet creates the modUser object and sets its "active" field to 0. The User then gets an email with a URL to activate their account with. Once the User visits the page, their account is set to "active=1", and they can then login.
 
-To enable this, you will need to create an Activation page by creating a new Resource, and putting this [ConfirmRegister](/extras/login/login.confirmregister "Login.ConfirmRegister") snippet inside of it:
+To enable this, you will need to create an Activation page by creating a new Resource, and putting this [ConfirmRegister](extras/login/login.confirmregister "Login.ConfirmRegister") snippet inside of it:
 
 ``` php 
 [[!ConfirmRegister]]
 ```
 
-An example [Register](/extras/login/login.register "Login.Register") snippet call with activation would look like this:
+An example [Register](extras/login/login.register "Login.Register") snippet call with activation would look like this:
 
 ``` php 
 [[!Register? 
@@ -48,20 +48,20 @@ ConfirmRegister also fires the [OnUserActivate](developing-in-modx/basic-develop
 
 ## See Also 
 
-1. [Login.Login](/extras/login/login.login)
-2. [Login.Profile](/extras/login/login.profile)
-3. [Login.UpdateProfile](/extras/login/login.updateprofile)
-4. [Login.Register](/extras/login/login.register)
-  1. [Register.Example Form 1](/extras/login/login.register/register.example-form-1)
-5. [Login.ConfirmRegister](/extras/login/login.confirmregister)
-6. [Login.ForgotPassword](/extras/login/login.forgotpassword)
-7. [Login.ResetPassword](/extras/login/login.resetpassword)
-8. [Login.ChangePassword](/extras/login/login.changepassword)
-9. [Login.Tutorials](/extras/login/login.tutorials)
-  2. [Login.Basic Setup](/extras/login/login.tutorials/login.basic-setup)
-  3. [Login.Extended User Profiles](/extras/login/login.tutorials/login.extended-user-profiles)
-  4. [Login.Request Membership](/extras/login/login.tutorials/login.request-membership)
-  5. [Login.User Profiles](/extras/login/login.tutorials/login.user-profiles)
-  6. [Login.Using Custom Fields](/extras/login/login.tutorials/login.using-custom-fields)
-  7. [Login.Using Pre and Post Hooks](/extras/login/login.tutorials/login.using-pre-and-post-hooks)
-10. [Login.Roadmap](/extras/login/login.roadmap)
+1. [Login.Login](extras/login/login.login)
+2. [Login.Profile](extras/login/login.profile)
+3. [Login.UpdateProfile](extras/login/login.updateprofile)
+4. [Login.Register](extras/login/login.register)
+  1. [Register.Example Form 1](extras/login/login.register/register.example-form-1)
+5. [Login.ConfirmRegister](extras/login/login.confirmregister)
+6. [Login.ForgotPassword](extras/login/login.forgotpassword)
+7. [Login.ResetPassword](extras/login/login.resetpassword)
+8. [Login.ChangePassword](extras/login/login.changepassword)
+9. [Login.Tutorials](extras/login/login.tutorials)
+  2. [Login.Basic Setup](extras/login/login.tutorials/login.basic-setup)
+  3. [Login.Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles)
+  4. [Login.Request Membership](extras/login/login.tutorials/login.request-membership)
+  5. [Login.User Profiles](extras/login/login.tutorials/login.user-profiles)
+  6. [Login.Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields)
+  7. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks)
+10. [Login.Roadmap](extras/login/login.roadmap)

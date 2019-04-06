@@ -6,7 +6,7 @@ _old_uri: "revo/pagebreaker/tpl.pagebreaker.ajax"
 
 ## Description
 
-This chunk used only if you enable **pb\_ajax** parameter of [PageBreaker](/extras/pagebreaker/pagebreaker.pagebreaker "PageBreaker.PageBreaker") plugin.
+This chunk used only if you enable **pb\_ajax** parameter of [PageBreaker](extras/pagebreaker/pagebreaker.pagebreaker "PageBreaker.PageBreaker") plugin.
 
 It is simply handle clicks on links with class **load\_page** and sends ajax request to current page. After receiving response from plugin it changes old text block to new.
 
@@ -35,6 +35,6 @@ There is no unusual placeholders in this chunk.
 
 ## See Also
 
-1. [PageBreaker.PageBreaker](/extras/pagebreaker/pagebreaker.pagebreaker)
-2. [tpl.PageBreaker.ajax](/extras/pagebreaker/tpl.pagebreaker.ajax)
-3. [tpl.PageBreaker.navigation](/extras/pagebreaker/tpl.pagebreaker.navigation)
+1. [PageBreaker.PageBreaker](extras/pagebreaker/pagebreaker.pagebreaker)
+2. [tpl.PageBreaker.ajax](extras/pagebreaker/tpl.pagebreaker.ajax)
+3. [tpl.PageBreaker.navigation](extras/pagebreaker/tpl.pagebreaker.navigation)

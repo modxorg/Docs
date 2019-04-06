@@ -6,7 +6,7 @@ _old_uri: "revo/mhpaypal/mhpaypal.snippet-usage"
 
 # mhpaypal Snippet Usage
 
-_This document provides information on the mhPayPal snippet, its properties and some example usages. If looking for more information about the mhPayPal package in which the snippet is included, please visit ?__[mhPayPal](/extras/mhpaypal "mhPayPal")_ instead.
+_This document provides information on the mhPayPal snippet, its properties and some example usages. If looking for more information about the mhPayPal package in which the snippet is included, please visit ?__[mhPayPal](extras/mhpaypal "mhPayPal")_ instead.
 
 ## Introduction
 
@@ -75,4 +75,4 @@ This example still uses the default form (you probably don't want that in this c
 
 ## More mhPayPal documentation
 
-- [mhPayPal.Snippet Usage](/extras/mhpaypal/mhpaypal.snippet-usage "mhPayPal.Snippet Usage")
+- [mhPayPal.Snippet Usage](extras/mhpaypal/mhpaypal.snippet-usage "mhPayPal.Snippet Usage")

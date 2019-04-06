@@ -14,7 +14,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-
 
 ## Requirements
 
- First off we will need to install [MIGX](/extras/migx "MIGX") by Package Management and do some [basic configurations](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
+ First off we will need to install [MIGX](extras/migx "MIGX") by Package Management and do some [basic configurations](extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
 
 ## Create the dynamic resource-specific media source
 

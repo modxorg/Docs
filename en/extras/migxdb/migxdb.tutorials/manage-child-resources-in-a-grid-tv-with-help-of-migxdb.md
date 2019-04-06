@@ -16,7 +16,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.manage-child-resources-in-a-grid-
 
 ## Requirements
 
- First off we will need to install [MIGX](/extras/migx "MIGX") by package-management, if not already done, and do some [basic configurations](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
+ First off we will need to install [MIGX](extras/migx "MIGX") by package-management, if not already done, and do some [basic configurations](extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
  Minimum Required version: MIGX 2.2.3 (31.07.2012
  We need also install the latest package of [migxchildresources](https://github.com/Bruno17/migxchildresources/tree/master/packages) from github
 

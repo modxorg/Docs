@@ -43,8 +43,8 @@ _old_uri: "revo/googlesitemap/googlesitemapversion1"
 
  There are 2 chunks that are processed in GoogleSiteMap. Their corresponding parameters are:
 
-- [itemTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl "GoogleSiteMap.GoogleSiteMap.itemTpl") - The Chunk to use for each result listed.
-- [containerTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl "GoogleSiteMap.GoogleSiteMap.containerTpl") - The Chunk to use for wrapping the results.
+- [itemTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl "GoogleSiteMap.GoogleSiteMap.itemTpl") - The Chunk to use for each result listed.
+- [containerTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl "GoogleSiteMap.GoogleSiteMap.containerTpl") - The Chunk to use for wrapping the results.
 
 ## Examples
 
@@ -72,7 +72,7 @@ _old_uri: "revo/googlesitemap/googlesitemapversion1"
 
 ## See Also
 
-1. [GoogleSiteMap.GoogleSiteMap](/extras/googlesitemap/googlesitemap.googlesitemap)
-  1. [GoogleSiteMap.GoogleSiteMap.containerTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
-  2. [GoogleSiteMap.GoogleSiteMap.itemTpl](/extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
-2. [GoogleSiteMap.Roadmap](/extras/googlesitemap/googlesitemap.roadmap)
+1. [GoogleSiteMap.GoogleSiteMap](extras/googlesitemap/googlesitemap.googlesitemap)
+  1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
+  2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
+2. [GoogleSiteMap.Roadmap](extras/googlesitemap/googlesitemap.roadmap)

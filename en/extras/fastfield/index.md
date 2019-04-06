@@ -46,7 +46,7 @@ Or, more efficiently (see [this MODX blog article](http://modx.com/blog/2012/09/
 [[[[#[[*parent]].introtext:default=`#[[*parent]].description`]]]]
 ```
 
-Return the content of the resources in rowTpl chunk while [Wayfinder](/extras/evo/wayfinder) usage:
+Return the content of the resources in rowTpl chunk while [Wayfinder](extras/evo/wayfinder) usage:
 
 ``` php 
 [[#[[+wf.docid]].content]]

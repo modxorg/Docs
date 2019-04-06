@@ -21,7 +21,7 @@ There is no unusual placeholders in this chunk. You can use all placeholders fro
 
 ## See Also
 
-1. [Loginza.Loginza](/extras/loginza/loginza.loginza)
-2. [tpl.Loginza.login](/extras/loginza/tpl.loginza.login)
-3. [tpl.Loginza.logout](/extras/loginza/tpl.loginza.logout)
-4. [tpl.Loginza.profile](/extras/loginza/tpl.loginza.profile)
+1. [Loginza.Loginza](extras/loginza/loginza.loginza)
+2. [tpl.Loginza.login](extras/loginza/tpl.loginza.login)
+3. [tpl.Loginza.logout](extras/loginza/tpl.loginza.logout)
+4. [tpl.Loginza.profile](extras/loginza/tpl.loginza.profile)

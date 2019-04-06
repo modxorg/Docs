@@ -99,23 +99,23 @@ _old_uri: "revo/advsearch/advsearch.advsearch"
 
  There are several chunks that are processed in AdvSearch. Their corresponding AdvSearch parameters are:
 
-- [tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.tpl "AdvSearch.AdvSearch.tpl") - **AdvSearchResult** : The Chunk to use for each result displayed.
-- [containerTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl "AdvSearch.AdvSearch.containerTpl") - **AdvSearchResults** : The Chunk that will be used to wrap all the search results, pagination and message.
+- [tpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.tpl "AdvSearch.AdvSearch.tpl") - **AdvSearchResult** : The Chunk to use for each result displayed.
+- [containerTpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl "AdvSearch.AdvSearch.containerTpl") - **AdvSearchResults** : The Chunk that will be used to wrap all the search results, pagination and message.
 
  Depending the paging type: 
  Paging type 1:
 
-- [paging1Tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl "AdvSearch.Advsearch.paging1Tpl") - **Paging1** : The Chunk to use for the pagination type 1.
+- [paging1Tpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl "AdvSearch.Advsearch.paging1Tpl") - **Paging1** : The Chunk to use for the pagination type 1.
 
  Paging type 0:
 
-- [paging0Tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **Paging0** : The Chunk that will be used to wrap all paging type 0 elements.
-- [pageTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **PageLink** : The Chunk to use for a pagination link.
-- [currentPageTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **CurrentPageLink** : The Chunk to use for the current pagination link.
+- [paging0Tpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **Paging0** : The Chunk that will be used to wrap all paging type 0 elements.
+- [pageTpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **PageLink** : The Chunk to use for a pagination link.
+- [currentPageTpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **CurrentPageLink** : The Chunk to use for the current pagination link.
 
 ## Examples 
 
- These examples assume you've already sent the search query with the [AdvSearchForm](/extras/advsearch/advsearch.advsearchform "AdvSearch.AdvSearchForm") snippet. 
+ These examples assume you've already sent the search query with the [AdvSearchForm](extras/advsearch/advsearch.advsearchform "AdvSearch.AdvSearchForm") snippet. 
 
  Display results, but just show their titles:
 
@@ -137,13 +137,13 @@ _old_uri: "revo/advsearch/advsearch.advsearch"
 
 ## See Also 
 
-1. [AdvSearch.AdvSearch](/extras/advsearch/advsearch.advsearch)
-  1. [AdvSearch.AdvSearch.containerTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl)
-  2. [Advsearch.AdvSearch.extractTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.extracttpl)
-  3. [AdvSearch.Advsearch.paging1Tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl)
-  4. [AdvSearch.AdvSearch.paging0Tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl)
-  5. [AdvSearch.AdvSearch.tpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.tpl)
-2. [AdvSearch.AdvSearchForm](/extras/advsearch/advsearch.advsearchform)
-  6. [Advsearch.AdvSearchForm.tpl](/extras/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl)
-3. [AdvSearch.AdvSearchHelp](/extras/advsearch/advsearch.advsearchhelp)
-  7. [AdvSearch.AdvSearchHelp.helplinkTpl](/extras/advsearch/advsearch.advsearchhelp/advsearch.advsearchhelp.helplinktpl)
+1. [AdvSearch.AdvSearch](extras/advsearch/advsearch.advsearch)
+  1. [AdvSearch.AdvSearch.containerTpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl)
+  2. [Advsearch.AdvSearch.extractTpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.extracttpl)
+  3. [AdvSearch.Advsearch.paging1Tpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl)
+  4. [AdvSearch.AdvSearch.paging0Tpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl)
+  5. [AdvSearch.AdvSearch.tpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.tpl)
+2. [AdvSearch.AdvSearchForm](extras/advsearch/advsearch.advsearchform)
+  6. [Advsearch.AdvSearchForm.tpl](extras/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl)
+3. [AdvSearch.AdvSearchHelp](extras/advsearch/advsearch.advsearchhelp)
+  7. [AdvSearch.AdvSearchHelp.helplinkTpl](extras/advsearch/advsearch.advsearchhelp/advsearch.advsearchhelp.helplinktpl)

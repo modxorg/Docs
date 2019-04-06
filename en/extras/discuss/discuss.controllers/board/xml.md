@@ -19,7 +19,7 @@ This controller does not use the wrapper template, but does extend the Discuss.C
 
 ## Options
 
-If you don't know what the manifest is, please go back to the [Getting Started](/extras/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "board.xml" options array of the manifest.
+If you don't know what the manifest is, please go back to the [Getting Started](extras/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "board.xml" options array of the manifest.
 
 This controller accepts all options from the board controller, with the following changes/additions:
 

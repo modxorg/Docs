@@ -36,7 +36,7 @@ In a nutshell, the manifest allows you to define:
 
 1. The global CSS and JS to load. You don't have to define this in the manifest (could just do it in the wrapper.tpl itself), but any file you add here will be injected into the output on most pages (xml pages are the exception again).
 2. CSS and JS to load on specific controllers only, such as the print controller, home, thread/reply etc.
-3. Options to apply to specific [controllers](/extras/discuss/discuss.controllers "Discuss.Controllers").
+3. Options to apply to specific [controllers](extras/discuss/discuss.controllers "Discuss.Controllers").
 4. Modules (we'll cover these later).
 
 While the manifest brings you lot of opportunity, as a best practice it should be advisable to limit the amount of dynamically assigned CSS and JS files either globally or for specific controllers.
@@ -94,13 +94,13 @@ return $manifest;
 
 We'll see we are defining a variable $manifest as an array, with a first element called "global" which in turn defines an array. In this second level, we have two items: css and js. They both define the third level of the array which in this case defines files (relative from the assets/components/discuss/themes/theme\_name/css or js/ directory) that should be loaded in the header of the page on every controller. In the case of js, we can also tell it to register it in the footer by replacing "header" with "footer" or adding that as another item in the array, and we can even define "inline" for js which wraps whatever you put there in a <script> tag in the header of the page. This can be useful for when your theme needs certain configuration options from settings or Discuss.
 
-Below the global definition, we will see a print and a home controller in which we can also define css or js in the same way as with the global, but you will also find the "options" array in the home controller's bit. This contains a bunch of options that either have a true or false value, or a string value such as the subBoardSeparator option shown in the excerpt above. These are the options you will want to change to adjust behaviour of the controller. So when you're looking at the [controllers documentation](/extras/discuss/discuss.controllers "Discuss.Controllers"), keep that in mind.
+Below the global definition, we will see a print and a home controller in which we can also define css or js in the same way as with the global, but you will also find the "options" array in the home controller's bit. This contains a bunch of options that either have a true or false value, or a string value such as the subBoardSeparator option shown in the excerpt above. These are the options you will want to change to adjust behaviour of the controller. So when you're looking at the [controllers documentation](extras/discuss/discuss.controllers "Discuss.Controllers"), keep that in mind.
 
 ## Themes
 
 Theming in MODX revolves around the core/components/discuss/themes/theme\_name/ directory and a matching assets/components/discuss/themes/theme\_name/ directory for files that need to be directly accessible (js, css and images). The core theme directory contains a "chunks" and "pages" directory by default. These files contain the html, into which content will be injected with placeholders. If you have developed a site using Wayfinder or getResources before, this concept shouldn't be entirely new for you. To choose a theme, change the **discuss.theme** setting to the name of the directory you want to use. If it doesn't exist, it will default to "default".
 
-The files in the "pages" directory all end in .tpl, and mostly correspond directly with the name of a [controller](/extras/discuss/discuss.controllers "Discuss.Controllers"), such as "board" or "thread/new". These are basically the content of the individual controllers and contain the markup specific to what controller is requested.
+The files in the "pages" directory all end in .tpl, and mostly correspond directly with the name of a [controller](extras/discuss/discuss.controllers "Discuss.Controllers"), such as "board" or "thread/new". These are basically the content of the individual controllers and contain the markup specific to what controller is requested.
 
 The special "wrapper.tpl" and "print-wrapper.tpl" are used as outer wrappers to the controller wrappers depending on the request.
 

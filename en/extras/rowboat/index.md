@@ -31,8 +31,8 @@ Bugs can be filed here: <http://github.com/splittingred/Rowboat/issues>
 
 Rowboat currently comes with one Snippet:
 
-- [Rowboat](/extras/rowboat/rowboat.rowboat "Rowboat.Rowboat") - For iterating across any database table.
+- [Rowboat](extras/rowboat/rowboat.rowboat "Rowboat.Rowboat") - For iterating across any database table.
 
 ## See Also
 
-1. [Rowboat.Rowboat](/extras/rowboat/rowboat.rowboat)
+1. [Rowboat.Rowboat](extras/rowboat/rowboat.rowboat)

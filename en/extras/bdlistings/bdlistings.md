@@ -50,7 +50,7 @@ The bdListings snippet can be used to present search results, a generic listing 
 | where | Optional JSON encoded limits. |  |
 | acceptUrlParams | \[1|0\] Allow specific url params (see acceptedUrlParams) to override properties you set in the snippet call / default values. | 1 |
 | acceptedUrlParams | Comma separated list of properties that are allowed to override what's set in the snippet call or default values. | query, keyword, target, pricegroup, city, category, subcategory, sort, listings |
-| redirectResource | **Required if using click tracking.** The Resource ID to use as redirect resource. See [bdRedirect](/extras/bdlistings/bdlistings.bdredirect "bdListings.bdRedirect") as well. | 39 |
+| redirectResource | **Required if using click tracking.** The Resource ID to use as redirect resource. See [bdRedirect](extras/bdlistings/bdlistings.bdredirect "bdListings.bdRedirect") as well. | 39 |
 | rowSeparator | Separator to use between listings. | a line break (\\n) |
 | imageSeparator | Separator to use between images of a listing. | a line break (\\n) |
 | emptyValue | A value (hint: could be a chunk tag) to display when there are no results. | <p>No listings found :(</p> (bdlistings.noresults lexicon key) |

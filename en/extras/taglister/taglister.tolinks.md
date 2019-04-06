@@ -37,7 +37,7 @@ tolinks is called with the normal snippet tag, passing in an 'items' property as
 
 There is 1 chunk that is processed in tolinks. Its corresponding parameters are:
 
-- [tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl "tagLister.tolinks.tpl") - The Chunk to use for each link generated.
+- [tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl "tagLister.tolinks.tpl") - The Chunk to use for each link generated.
 
 ## Examples
 
@@ -72,9 +72,9 @@ The resource ID referenced by the **&target** parameter should contain something
 
 ## See Also
 
-1. [tagLister.getResourcesTag](/extras/taglister/taglister.getresourcestag)
-2. [tagLister.tagLister](/extras/taglister/taglister.taglister)
-     1. [tagLister.tagLister.all](/extras/taglister/taglister.taglister/taglister.taglister.all)
-     2. [tagLister.tagLister.tpl](/extras/taglister/taglister.taglister/taglister.taglister.tpl)
-3. [tagLister.tolinks](/extras/taglister/taglister.tolinks)
-     1. [tagLister.tolinks.tpl](/extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+1. [tagLister.getResourcesTag](extras/taglister/taglister.getresourcestag)
+2. [tagLister.tagLister](extras/taglister/taglister.taglister)
+     1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
+     2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
+3. [tagLister.tolinks](extras/taglister/taglister.tolinks)
+     1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)

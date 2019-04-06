@@ -91,7 +91,7 @@ _old_uri: "revo/migx/migx.backend-usage"
 
  Don't forget to save your Resource after adding or editing MIGX items!
 
- We're now half done our MIGX experience. Next step: [Data Entry](/extras/migx/migx.data-entry "MIGX.Data-Entry")
+ We're now half done our MIGX experience. Next step: [Data Entry](extras/migx/migx.data-entry "MIGX.Data-Entry")
 
  The keys for this grid are listed here:
 

@@ -8,7 +8,7 @@ The smListProducts snippet, included in the package, can and should be used to o
 
 ## User Check
 
-SubscribeMe needs the soon to be paying member to already have a user account, so depending on your website structure, you may want to create a registration page before linking to this page. You could also use [If](/extras/if "If") to display a user login/registration form, before showing the product list. You can use [Register](/extras/login/login.register "Login.Register") to handle the user registration and making a [member only page](administering-your-site/security/security-tutorials/making-member-only-pages "Making Member-Only Pages") if you haven't already setup a members area of your website.
+SubscribeMe needs the soon to be paying member to already have a user account, so depending on your website structure, you may want to create a registration page before linking to this page. You could also use [If](extras/if "If") to display a user login/registration form, before showing the product list. You can use [Register](extras/login/login.register "Login.Register") to handle the user registration and making a [member only page](administering-your-site/security/security-tutorials/making-member-only-pages "Making Member-Only Pages") if you haven't already setup a members area of your website.
 
 ## Minimum Call
 
@@ -16,7 +16,7 @@ SubscribeMe needs the soon to be paying member to already have a user account, s
 [[smListProducts]]
 ```
 
-The minimum call is a functional assuming you have set up a PayPal account, or PayPal Sandbox account properly and have [FormIt](/extras/formit "FormIt") installed. You must edit the OptionsResource located in the smListProducts.outer file, in order for SubscribeMe to function properly.
+The minimum call is a functional assuming you have set up a PayPal account, or PayPal Sandbox account properly and have [FormIt](extras/formit "FormIt") installed. You must edit the OptionsResource located in the smListProducts.outer file, in order for SubscribeMe to function properly.
 
 ## Available Properties
 
@@ -59,7 +59,7 @@ Default value (from core/components/subscribeme/elements/chunks/smListProducts.o
 
 **Note**: You should NOT edit the default file directly, as future updates will overwrite any changes to this file. It is highly recommended you duplicate the file, or create a chunk with the contents, updating the snippet call, or snippet parameters accordingly.
 
-In your outer template (or near it) you should set up your FormIt call like the above. The optionsResource setting points to the next step in the checkout flow, which is the payment options screen. This ID is used to redirect from the smNewSubscription hook. If you use multiple formit calls and they seem to be conflicting, use unique form IDs, refer to the [FormIt](/extras/formit "FormIt") documentation.
+In your outer template (or near it) you should set up your FormIt call like the above. The optionsResource setting points to the next step in the checkout flow, which is the payment options screen. This ID is used to redirect from the smNewSubscription hook. If you use multiple formit calls and they seem to be conflicting, use unique form IDs, refer to the [FormIt](extras/formit "FormIt") documentation.
 
 The smNewSubscription hook contacts PayPal with the product details to set up a token for the transaction, this link will be used in the next page.
 
@@ -107,4 +107,4 @@ You can already see most of the placeholders in the default, here's a total list
 
 ## Displaying the Payment Methods
 
-The next step in the checkout process is the [payment methods](/extras/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-setting-up-the-payment-methods "SubscribeMe - Setting up the Payment Methods") page. You may also optionally disable this page as outlined.
+The next step in the checkout process is the [payment methods](extras/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-setting-up-the-payment-methods "SubscribeMe - Setting up the Payment Methods") page. You may also optionally disable this page as outlined.

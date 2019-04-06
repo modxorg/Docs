@@ -21,7 +21,7 @@ getPage was first written by Jason Coward (opengeek) and released on March 19, 2
 
 It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/getpage>
 
-This Snippet does nothing by itself, but rather depends on another Snippet to return the output for a specified page (or range of data within a complete set). For example, the [getResources](/extras/getresources "getResources"), [getFeed](/extras/getfeed "getFeed"), and [Archivist](http://rtfm.modx.com/display/ADDON/archivist) Snippets can both be wrapped by getPage.
+This Snippet does nothing by itself, but rather depends on another Snippet to return the output for a specified page (or range of data within a complete set). For example, the [getResources](extras/getresources "getResources"), [getFeed](extras/getfeed "getFeed"), and [Archivist](http://rtfm.modx.com/display/ADDON/archivist) Snippets can both be wrapped by getPage.
 
 ## Usage
 

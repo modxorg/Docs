@@ -6,11 +6,11 @@ _old_uri: "revo/login/login.register"
 
 ## What is Register? 
 
- Register is a registration form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets"). An example call can be found [here](/extras/login/login.register/register.example-form-1 "Register.Example Form 1").
+ Register is a registration form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets"). An example call can be found [here](extras/login/login.register/register.example-form-1 "Register.Example Form 1").
 
 ## Usage 
 
- Simply place the Register snippet in the Resource where your registration form is. (A default one called lgnRegisterForm is provided by the [Login](/extras/login "Login") 3PC.) This snippet also requires Activation by the User, so they will get an email in their inbox regarding their signup.
+ Simply place the Register snippet in the Resource where your registration form is. (A default one called lgnRegisterForm is provided by the [Login](extras/login "Login") 3PC.) This snippet also requires Activation by the User, so they will get an email in their inbox regarding their signup.
 
 ### Default Properties 
 
@@ -52,7 +52,7 @@ _old_uri: "revo/login/login.register"
 
 ### Validators 
 
- Validators in Login follow the same syntax as [FormIt Validators](/extras/formit/formit.validators "FormIt.Validators"). You can use the methods described there to use them in your Login-based snippets.
+ Validators in Login follow the same syntax as [FormIt Validators](extras/formit/formit.validators "FormIt.Validators"). You can use the methods described there to use them in your Login-based snippets.
 
 ### Custom Validators 
 
@@ -120,7 +120,7 @@ return true;
 
  Register by default requires the User to activate their account before logging in. The Snippet creates the modUser object and sets its "active" field to 0. The User then gets an email with a URL to activate their account with. Once the User visits the page, their account is set to "active=1", and they can then login.
 
- To enable this, you will need to create an Activation page by creating a new Resource, and putting the [ConfirmRegister](/extras/login/login.confirmregister "Login.ConfirmRegister") snippet inside of it.
+ To enable this, you will need to create an Activation page by creating a new Resource, and putting the [ConfirmRegister](extras/login/login.confirmregister "Login.ConfirmRegister") snippet inside of it.
 
  Next, you'll need to specify an email template chunk to use for the email being sent to the user. An example one is provided with the name: lgnActivateEmailTpl.
 
@@ -181,20 +181,20 @@ return true;
 
 ## See Also 
 
-1. [Login.Login](/extras/login/login.login)
-2. [Login.Profile](/extras/login/login.profile)
-3. [Login.UpdateProfile](/extras/login/login.updateprofile)
-4. [Login.Register](/extras/login/login.register)
-  1. [Register.Example Form 1](/extras/login/login.register/register.example-form-1)
-5. [Login.ConfirmRegister](/extras/login/login.confirmregister)
-6. [Login.ForgotPassword](/extras/login/login.forgotpassword)
-7. [Login.ResetPassword](/extras/login/login.resetpassword)
-8. [Login.ChangePassword](/extras/login/login.changepassword)
-9. [Login.Tutorials](/extras/login/login.tutorials)
-  2. [Login.Basic Setup](/extras/login/login.tutorials/login.basic-setup)
-  3. [Login.Extended User Profiles](/extras/login/login.tutorials/login.extended-user-profiles)
-  4. [Login.Request Membership](/extras/login/login.tutorials/login.request-membership)
-  5. [Login.User Profiles](/extras/login/login.tutorials/login.user-profiles)
-  6. [Login.Using Custom Fields](/extras/login/login.tutorials/login.using-custom-fields)
-  7. [Login.Using Pre and Post Hooks](/extras/login/login.tutorials/login.using-pre-and-post-hooks)
-10. [Login.Roadmap](/extras/login/login.roadmap)
+1. [Login.Login](extras/login/login.login)
+2. [Login.Profile](extras/login/login.profile)
+3. [Login.UpdateProfile](extras/login/login.updateprofile)
+4. [Login.Register](extras/login/login.register)
+  1. [Register.Example Form 1](extras/login/login.register/register.example-form-1)
+5. [Login.ConfirmRegister](extras/login/login.confirmregister)
+6. [Login.ForgotPassword](extras/login/login.forgotpassword)
+7. [Login.ResetPassword](extras/login/login.resetpassword)
+8. [Login.ChangePassword](extras/login/login.changepassword)
+9. [Login.Tutorials](extras/login/login.tutorials)
+  2. [Login.Basic Setup](extras/login/login.tutorials/login.basic-setup)
+  3. [Login.Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles)
+  4. [Login.Request Membership](extras/login/login.tutorials/login.request-membership)
+  5. [Login.User Profiles](extras/login/login.tutorials/login.user-profiles)
+  6. [Login.Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields)
+  7. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks)
+10. [Login.Roadmap](extras/login/login.roadmap)

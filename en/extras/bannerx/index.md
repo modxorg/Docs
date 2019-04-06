@@ -7,7 +7,7 @@ _old_uri: "revo/bannerx"
 # BannerX 
 
 **Removed**
-See [BannerY](/extras/bannery "BannerY")
+See [BannerY](extras/bannery "BannerY")
 
 Display images with hyperlinks at designated positions in a page. The developer is Bezumkin / Jeroen Kenters.
 

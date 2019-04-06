@@ -65,4 +65,4 @@ Grabbing data by a table object is simple and straight forward. Using a json str
     ]]
 ```
 
-The auto-complete can also be filtered live using jquery. please view the [Advanced Examples](/extras/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples") for more information.
+The auto-complete can also be filtered live using jquery. please view the [Advanced Examples](extras/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples") for more information.

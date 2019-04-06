@@ -4,7 +4,7 @@ _old_id: "725"
 _old_uri: "revo/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-setting-up-the-payment-methods"
 ---
 
-If you haven't already make sure you have setup the [product listing](/extras/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-listing-the-products "SubscribeMe - Listing the Products") page, and adjusted the optionsResource value.
+If you haven't already make sure you have setup the [product listing](extras/subscribeme/subscribeme.setting-up-the-payment-flow/subscribeme-listing-the-products "SubscribeMe - Listing the Products") page, and adjusted the optionsResource value.
 
 ## Minimum Call
 

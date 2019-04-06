@@ -26,7 +26,7 @@ Since version 1.0-pl, this package added database table to store additional info
 
 # Upload to Users Snippet
 
-Currently, it can only be used by [FileDownload R](/extras/filedownload-r "FileDownload R") because the link has its own placeholder.
+Currently, it can only be used by [FileDownload R](extras/filedownload-r "FileDownload R") because the link has its own placeholder.
 
 ## Examples
 

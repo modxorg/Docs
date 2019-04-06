@@ -6,9 +6,9 @@ _old_uri: "revo/login/login.tutorials/login.extended-user-profiles"
 
 ## Outline
 
-This tutorial builds the [Basic Setup](/extras/login/login.tutorials/login.user-profiles "Login.User Profiles") and [User Profiles](/extras/login/login.tutorials/login.user-profiles "Login.User Profiles") tutorials. Do not attempt this tutorial until you've gotten the other login flows setup and working on your site! In this tutorial, you will see how to add extended fields to your users' profiles.
+This tutorial builds the [Basic Setup](extras/login/login.tutorials/login.user-profiles "Login.User Profiles") and [User Profiles](extras/login/login.tutorials/login.user-profiles "Login.User Profiles") tutorials. Do not attempt this tutorial until you've gotten the other login flows setup and working on your site! In this tutorial, you will see how to add extended fields to your users' profiles.
 
-So what going to do in this tutorial is to modify the Snippets that we've already put in place in the standard [User Profiles](/extras/login/login.tutorials/login.user-profiles "Login.User Profiles") tutorial.
+So what going to do in this tutorial is to modify the Snippets that we've already put in place in the standard [User Profiles](extras/login/login.tutorials/login.user-profiles "Login.User Profiles") tutorial.
 
 ## Verify that you have the Required Pages
 
@@ -106,7 +106,7 @@ Make sure you reference the correct Email Chunk in the **&activationEmailTpl** p
 
 ### Update Profile (10)
 
-We're gonna edit this page to use some more of features of the [UpdateProfile](/extras/login/login.updateprofile "Login.UpdateProfile") Snippet. We're going to add a "custom\_field". We're going to verbosely set the **&useExtended** parameter. This ensures that any extra fields posted here end up getting tracked as extended fields.
+We're gonna edit this page to use some more of features of the [UpdateProfile](extras/login/login.updateprofile "Login.UpdateProfile") Snippet. We're going to add a "custom\_field". We're going to verbosely set the **&useExtended** parameter. This ensures that any extra fields posted here end up getting tracked as extended fields.
 
 ``` html 
 [[!UpdateProfile? &excludeExtended=`email:required:email,login-updprof-btn` &useExtended=`1`]]
@@ -149,7 +149,7 @@ Why are we using the **&excludeExtended** parameter? Well... there seems to be a
 
 ### View Profile (11)
 
-As before, we will be featuring the [Profile](/extras/login/login.profile "Login.Profile") Snippet. We just need to add placeholders for the extra fields. In our example we added a **custom\_field** field:
+As before, we will be featuring the [Profile](extras/login/login.profile "Login.Profile") Snippet. We just need to add placeholders for the extra fields. In our example we added a **custom\_field** field:
 
 ``` php 
 [[!Profile]]
@@ -180,7 +180,7 @@ Try changing your info.
 
 ## Variations
 
-The FormIt Snippet has a useful helper Snippet: [FormItCountryOptions](/extras/formit/formit.formitcountryoptions "FormIt.FormItCountryOptions"). If you want to track a user's country, it can be a great way to add a country dropdown.
+The FormIt Snippet has a useful helper Snippet: [FormItCountryOptions](extras/formit/formit.formitcountryoptions "FormIt.FormItCountryOptions"). If you want to track a user's country, it can be a great way to add a country dropdown.
 
 ``` php 
 <select name="country">
@@ -188,4 +188,4 @@ The FormIt Snippet has a useful helper Snippet: [FormItCountryOptions](/extras/f
 </select>
 ```
 
-There is a similar Snippet for US State options: [FormItStateOptions](/extras/formit/formit.formitstateoptions "FormIt.FormItStateOptions")
+There is a similar Snippet for US State options: [FormItStateOptions](extras/formit/formit.formitstateoptions "FormIt.FormItStateOptions")

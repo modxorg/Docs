@@ -32,12 +32,12 @@ By default you need only to set splitters in the content of resource and disable
 
 PageBreaker currently comes with one Plugin:
 
-- [PageBreaker](/extras/pagebreaker/pagebreaker.pagebreaker "PageBreaker.PageBreaker")
+- [PageBreaker](extras/pagebreaker/pagebreaker.pagebreaker "PageBreaker.PageBreaker")
 
 And two Chunks:
 
-- [tpl.PageBreaker.navigation](/extras/pagebreaker/tpl.pagebreaker.navigation "tpl.PageBreaker.navigation") - here is the english version of this chunk.
-- [tpl.PageBreaker.ajax](/extras/pagebreaker/tpl.pagebreaker.ajax "tpl.PageBreaker.ajax") - this is need only if you will enable changing pages trought ajax.
+- [tpl.PageBreaker.navigation](extras/pagebreaker/tpl.pagebreaker.navigation "tpl.PageBreaker.navigation") - here is the english version of this chunk.
+- [tpl.PageBreaker.ajax](extras/pagebreaker/tpl.pagebreaker.ajax "tpl.PageBreaker.ajax") - this is need only if you will enable changing pages trought ajax.
 
 ## Integration with TinyMCE
 
@@ -76,6 +76,6 @@ After uninstalling PageBreaker you need to reinstall TinyMCE, because plugin pag
 
 ## See Also
 
-1. [PageBreaker.PageBreaker](/extras/pagebreaker/pagebreaker.pagebreaker)
-2. [tpl.PageBreaker.ajax](/extras/pagebreaker/tpl.pagebreaker.ajax)
-3. [tpl.PageBreaker.navigation](/extras/pagebreaker/tpl.pagebreaker.navigation)
+1. [PageBreaker.PageBreaker](extras/pagebreaker/pagebreaker.pagebreaker)
+2. [tpl.PageBreaker.ajax](extras/pagebreaker/tpl.pagebreaker.ajax)
+3. [tpl.PageBreaker.navigation](extras/pagebreaker/tpl.pagebreaker.navigation)

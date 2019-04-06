@@ -14,7 +14,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
 ## Requirements
 
- First off we will need to install [MIGX](/extras/migx "MIGX") by package-management and do some [basic configurations](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
+ First off we will need to install [MIGX](extras/migx "MIGX") by package-management and do some [basic configurations](extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
 
 ## Create a new Package and schema-file
 

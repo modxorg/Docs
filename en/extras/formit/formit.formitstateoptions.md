@@ -6,7 +6,7 @@ _old_uri: "revo/formit/formit.formitstateoptions"
 
 ## What is FormItStateOptions?
 
-FormItStateOptions is an assistance snippet for [FormIt](/extras/formit "FormIt") 1.7.0+ that will output an option list of U.S. states. It is useful for forms that need a dropdown list of U.S. states.
+FormItStateOptions is an assistance snippet for [FormIt](extras/formit "FormIt") 1.7.0+ that will output an option list of U.S. states. It is useful for forms that need a dropdown list of U.S. states.
 
 ## Usage
 
@@ -34,20 +34,20 @@ FormItStateOptions comes with some default properties you can override. They are
 
 ## See Also
 
-1. [FormIt.Hooks](/extras/formit/formit.hooks)
-  1. [FormIt.Hooks.email](/extras/formit/formit.hooks/formit.hooks.email)
-  2. [FormIt.Hooks.FormItAutoResponder](/extras/formit/formit.hooks/formit.hooks.formitautoresponder)
-  3. [FormIt.Hooks.math](/extras/formit/formit.hooks/formit.hooks.math)
-  4. [FormIt.Hooks.recaptcha](/extras/formit/formit.hooks/formit.hooks.recaptcha)
-  5. [FormIt.Hooks.redirect](/extras/formit/formit.hooks/formit.hooks.redirect)
-  6. [FormIt.Hooks.spam](/extras/formit/formit.hooks/formit.hooks.spam)
-2. [FormIt.Validators](/extras/formit/formit.validators)
-3. [FormIt.FormItRetriever](/extras/formit/formit.formitretriever)
-4. [FormIt.Tutorials and Examples](/extras/formit/formit.tutorials-and-examples)
-  7. [FormIt.Examples.Custom Hook](/extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
-  8. [FormIt.Examples.Simple Contact Page](/extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
-  9. [FormIt.Handling Selects, Checkboxes and Radios](/extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
-  10. [FormIt.Using a Blank NoSpam Field](/extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
-5. [FormIt.Roadmap](/extras/formit/formit.roadmap)
-6. [FormIt.FormItCountryOptions](/extras/formit/formit.formitcountryoptions)
-7. [FormIt.FormItStateOptions](/extras/formit/formit.formitstateoptions)
+1. [FormIt.Hooks](extras/formit/formit.hooks)
+  1. [FormIt.Hooks.email](extras/formit/formit.hooks/formit.hooks.email)
+  2. [FormIt.Hooks.FormItAutoResponder](extras/formit/formit.hooks/formit.hooks.formitautoresponder)
+  3. [FormIt.Hooks.math](extras/formit/formit.hooks/formit.hooks.math)
+  4. [FormIt.Hooks.recaptcha](extras/formit/formit.hooks/formit.hooks.recaptcha)
+  5. [FormIt.Hooks.redirect](extras/formit/formit.hooks/formit.hooks.redirect)
+  6. [FormIt.Hooks.spam](extras/formit/formit.hooks/formit.hooks.spam)
+2. [FormIt.Validators](extras/formit/formit.validators)
+3. [FormIt.FormItRetriever](extras/formit/formit.formitretriever)
+4. [FormIt.Tutorials and Examples](extras/formit/formit.tutorials-and-examples)
+  7. [FormIt.Examples.Custom Hook](extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
+  8. [FormIt.Examples.Simple Contact Page](extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
+  9. [FormIt.Handling Selects, Checkboxes and Radios](extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
+  10. [FormIt.Using a Blank NoSpam Field](extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
+5. [FormIt.Roadmap](extras/formit/formit.roadmap)
+6. [FormIt.FormItCountryOptions](extras/formit/formit.formitcountryoptions)
+7. [FormIt.FormItStateOptions](extras/formit/formit.formitstateoptions)

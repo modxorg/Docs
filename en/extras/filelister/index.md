@@ -17,7 +17,7 @@ FileLister is a dynamic file listing Extra for MODx Revolution. It allows you to
 
 FileLister was written by Shaun McCormick (splittingred) as a dynamic file listing component, and first released on June 30th, 2010.
 
-You can view the [roadmap here](/extras/filelister/filelister.roadmap "FileLister.Roadmap").
+You can view the [roadmap here](extras/filelister/filelister.roadmap "FileLister.Roadmap").
 
 ### Download
 
@@ -35,7 +35,7 @@ FileLister can be called via the Snippet tags, and passing a 'path' argument.
 
 FileLister comes with one snippet:
 
-- [FileLister](/extras/filelister/filelister.filelister "FileLister.FileLister")
+- [FileLister](extras/filelister/filelister.filelister "FileLister.FileLister")
 
 ### System Settings
 
@@ -101,9 +101,9 @@ This is a sample of HTML that you can put inside a Resource to output your conte
 
 ## See Also
 
-1. [FileLister.FileLister](/extras/filelister/filelister.filelister)
-  1. [FileLister.FileLister.directoryTpl](/extras/filelister/filelister.filelister/filelister.filelister.directorytpl)
-  2. [FileLister.FileLister.fileLinkTpl](/extras/filelister/filelister.filelister/filelister.filelister.filelinktpl)
-  3. [FileLister.FileLister.fileTpl](/extras/filelister/filelister.filelister/filelister.filelister.filetpl)
-  4. [FileLister.FileLister.pathTpl](/extras/filelister/filelister.filelister/filelister.filelister.pathtpl)
-2. [FileLister.Roadmap](/extras/filelister/filelister.roadmap)
+1. [FileLister.FileLister](extras/filelister/filelister.filelister)
+  1. [FileLister.FileLister.directoryTpl](extras/filelister/filelister.filelister/filelister.filelister.directorytpl)
+  2. [FileLister.FileLister.fileLinkTpl](extras/filelister/filelister.filelister/filelister.filelister.filelinktpl)
+  3. [FileLister.FileLister.fileTpl](extras/filelister/filelister.filelister/filelister.filelister.filetpl)
+  4. [FileLister.FileLister.pathTpl](extras/filelister/filelister.filelister/filelister.filelister.pathtpl)
+2. [FileLister.Roadmap](extras/filelister/filelister.roadmap)

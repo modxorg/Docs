@@ -34,11 +34,11 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.formitautoresponder"
 
 ## See Also
 
-1. [FormIt.Hooks.email](/extras/formit/formit.hooks/formit.hooks.email)
-2. [FormIt.Hooks.FormItAutoResponder](/extras/formit/formit.hooks/formit.hooks.formitautoresponder)
+1. [FormIt.Hooks.email](extras/formit/formit.hooks/formit.hooks.email)
+2. [FormIt.Hooks.FormItAutoResponder](extras/formit/formit.hooks/formit.hooks.formitautoresponder)
 3. [FormIt.Hooks.FormItSaveForm](http://rtfm.modx.com/extras/revo/formit/formit.hooks/formit.hooks.formitsaveform)
-4. [FormIt.Hooks.math](/extras/formit/formit.hooks/formit.hooks.math)
-5. [FormIt.Hooks.recaptcha](/extras/formit/formit.hooks/formit.hooks.recaptcha)
-6. [FormIt.Hooks.redirect](/extras/formit/formit.hooks/formit.hooks.redirect)
-7. [FormIt.Hooks.spam](/extras/formit/formit.hooks/formit.hooks.spam)
+4. [FormIt.Hooks.math](extras/formit/formit.hooks/formit.hooks.math)
+5. [FormIt.Hooks.recaptcha](extras/formit/formit.hooks/formit.hooks.recaptcha)
+6. [FormIt.Hooks.redirect](extras/formit/formit.hooks/formit.hooks.redirect)
+7. [FormIt.Hooks.spam](extras/formit/formit.hooks/formit.hooks.spam)
 8. [FormIt.PreHooks.FormItLoadSavedForm](https://docs.modx.com/extras/revo/formit/formit.hooks/formit.prehooks.formitloadsavedform)
