@@ -4,10 +4,12 @@ _old_id: "1133"
 _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 ---
 
+# MODX PHP Coding Standards
+
 ## General
 
 - Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.
-- Do not do any real logic in object constructors. Create class methods to do so. 
+- Do not do any real logic in object constructors. Create class methods to do so.
    null, true and false should always be lowercase.
 - Avoid embedded assignments (ex: $d = ($a = $b + $c) is bad).
 - Never use extract().
@@ -19,7 +21,8 @@ _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 - Do not put parenthesis next to keywords. Put a space between.
 - Do put parenthesis next to function names.
 - Do not use parenthesis in return statements when it's not necessary. Example:
-``` php 
+
+``` php
   if ($test) {
   }
   while ($test == $other) {
@@ -27,6 +30,7 @@ _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
   array_push($one,$two);
   return $test;
 ```
+
 - Do **not** use parenthesis when using include, require, include\_once, and require\_once.
 
 ## Classes
@@ -34,7 +38,8 @@ _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 - All ''core'' classnames, unless stated otherwise for special conditions, will be prefixed with the "mod" prefix: ie, modChunk, modTemplate, etc.
 - All method names will be camelCase and will start with a lowercase letter.
 - All private methods and variables must be prefixed with the underscore \_ character.
-``` php 
+
+``` php
   class modFactor {
       public $publicVar;
       private $_privateVar;
@@ -53,7 +58,8 @@ Note these are not function arguments.
 ## Function Arguments and Class Variables
 
 - The first letter is lowercase, rest are camelCase. Example:
-``` php 
+
+``` php
   class modFactor {
       public function testFunc($testVar, array &$anotherTest = array()) {
           $this->_privateVar = $testVar;
@@ -66,9 +72,10 @@ Note these are not function arguments.
 
 - Array index names use the underscore \_, not the dash as their separator. This prevents errors with magic\_quotes.
 - Array index names are always lowercase. Spaces are represented by an underscore.
-- Array index names are always encapsulated with single quotes. 
+- Array index names are always encapsulated with single quotes.
    Example:
-``` php 
+
+``` php
 $_lang['chunk_create_text'] = 'Test';
 ```
 
@@ -85,7 +92,7 @@ $_lang['chunk_create_text'] = 'Test';
 
 - Lexicon strings for Components need to be prefixed:
 
-``` php 
+``` php
 $_lang['mycomponent.welcome_message'] = 'Welcome!';
 ```
 

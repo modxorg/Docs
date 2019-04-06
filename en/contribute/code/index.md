@@ -6,7 +6,7 @@ _old_uri: "contribute/becoming-a-contributor"
 
 So, you're itching to get in on the development or documentation of MODX Revolution or MODX Evolution. But, to your dismay, you're confused on how to start that process. This article will help you get to your level of commitment in development - be it an active coder or a tester who submits patches.
 
-## **The Contributor License Agreement**
+## The Contributor License Agreement
 
 If you want to work on bugs or features and actually commit some code to MODX, or contribute to the documentation, the first step is to fill out and send in a **[Contributor License Agreement (CLA)](http://develop.modx.com/contribute/cla/)** after creating your MODX account. A CLA protects your contributions, but also gives MODX and its user base clear permission to use those contributions any way that is compliant with the MODX license (GPL), and it's based on--more like copied directly from--the same one used by Apache and the Dojo Foundation.
 

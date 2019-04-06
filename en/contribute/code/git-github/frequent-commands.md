@@ -31,7 +31,7 @@ $ git checkout -b myFeatureBranchName 2.x
 
  If you are making changes related to a ticket in the issue tracker (please file a ticket for any bugs first if there isn't one) then you could name your branch "issue-xxxx" where xxxx is the issue number from the bug tracker.
 
- ``` php 
+``` php
 $ git checkout -b issue-1234 2.4.x
 ```
 
@@ -39,7 +39,7 @@ Note that this is not requirement, but might help you organize your local branch
 
  If you are working on a feature which does not have a ticket, you can name it anything you want, but avoid names that look like release version numbers.
 
- ``` php 
+``` php
 $ git checkout -b myAwesomeFeature 2.x
 ```
 
@@ -47,7 +47,7 @@ $ git checkout -b myAwesomeFeature 2.x
 
  Yes.
 
- ``` php 
+``` php
 $ echo 'Yes'
 ```
 
