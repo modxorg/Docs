@@ -10,7 +10,7 @@ A service is any object that is loaded via [$modx->getService](extending-modx/mo
 
 Once an object is loaded with getService, it is accessible via $modx->(servicename). So, for example:
 
-``` php 
+``` php
 $modx->getService('twitter','myTwitter','/path/to/twitter/model/',array(  
   'api_key' => 3212423,
 ));  

@@ -12,7 +12,7 @@ Replace a key-value pair in in a cache provider.
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#replace>
 
-``` php 
+``` php
 boolean replace (string $key, mixed &$var, [integer $lifetime = 0], [array $options = array()])
 ```
 
@@ -20,7 +20,7 @@ boolean replace (string $key, mixed &$var, [integer $lifetime = 0], [array $opti
 
 Replace a key with a new value, to expire in 2 hours:
 
-``` php 
+``` php
 $str = 'A new value for the cache.';
 $xpdo->cacheManager->replace('mystuff',$str,7200);
 ```

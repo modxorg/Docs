@@ -51,13 +51,13 @@ _old_uri: "2.x/developing-in-modx/advanced-development/caching"
 
  To refresh any of the core MODX cache partitions, use the `modCacheManager->refresh()` method. The minimum call has no parameters and will refresh all core cache partitions.
 
- ``` php 
+ ``` php
 $modx->cacheManager->refresh();
 ```
 
  Alternatively, you can define a `$providers` array with partition `key => $partitionOptions` elements.
 
- ``` php 
+ ``` php
 // refresh the web and web2 context_settings only 
 
 $modx - > cacheManager - > refresh(array(
@@ -90,7 +90,7 @@ $modx - > cacheManager - > refresh(array(
 
 ### Example 1: Simple Setting & Getting
 
- ``` php 
+ ``` php
 $str = 'My test cached data.';
 // Writes the data to the default cache partition with an expiry time of 2 hours.
 $modx->cacheManager->set('testdata', $str, 7200);
@@ -100,7 +100,7 @@ $str = $modx->cacheManager->get('testdata');
 
 ### Example 2: Setting & Getting to a custom partition
 
- ``` php 
+ ``` php
 $str = 'My test cached data.';
 $options = array(
   xPDO::OPT_CACHE_KEY => 'mypartition',
@@ -115,7 +115,7 @@ $str = $modx->cacheManager->get('testdata', $options);
 
  MODX Revolution 2.0 had a different caching system with different partitions. To clear the cache in 2.0, you would use the clearCache() method that has been deprecated since 2.1. It's better to upgrade to the latest version than to continue using 2.0.
 
- ``` php 
+ ``` php
 // clear all the usual stuff by default (all files with the extension .cache.php
 // in the cachePath + all object caches)
 $modx->cacheManager->clearCache();

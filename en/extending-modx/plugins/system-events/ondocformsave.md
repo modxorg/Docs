@@ -28,7 +28,7 @@ Unlike [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocfor
 
 To do something with the page ID (e.g. to update a related custom table), you can read this out of the **$resource** object (even if you are creating a new resource):
 
-``` php 
+``` php
 // Log all available properties of the $resource
 $modx->log(MODX_LOG_LEVEL_ERROR, print_r($resource->toArray(),true) );
 // Get the page id
@@ -46,19 +46,19 @@ else {
 
 Anything you return from this event will be written to the logs, e.g.
 
-``` php 
+``` php
 return "Help I'm a bug!";
 ```
 
 Will result in a log message like the following:
 
-``` php 
+``` php
  [2012-06-22 13:00:28] (ERROR @ /connectors/resource/index.php) [OnDocFormSave]Help I'm a bug!
 ```
 
 ### Calculating a TV Value
 
-``` php 
+``` php
 switch ($modx->event->name) {
 
         // Documents

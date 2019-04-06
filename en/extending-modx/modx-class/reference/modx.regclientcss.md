@@ -12,7 +12,7 @@ Register CSS to be injected inside the HEAD tag of a resource.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientCSS()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientCSS())
 
-``` php 
+``` php
 void regClientCSS (string $src)
 ```
 
@@ -20,7 +20,7 @@ void regClientCSS (string $src)
 
 Register a CSS file to the HEAD tag:
 
-``` php 
+``` php
 $modx->regClientCSS('assets/css/style.css');
 ```
 

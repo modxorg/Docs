@@ -12,7 +12,7 @@ Gets all of the child resource ids for a given resource.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getChildIds()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getChildIds())
 
-``` php 
+``` php
 array getChildIds ([integer $id = null], [integer $depth = 10], [array $options = array()])
 ```
 
@@ -20,7 +20,7 @@ array getChildIds ([integer $id = null], [integer $depth = 10], [array $options 
 
 Get all the children IDs for the Resource 23. Limit to 6 levels deep. Only in the web context.
 
-``` php 
+``` php
 $array_ids = $modx->getChildIds(23,6,array('context' => 'web'));
 ```
 

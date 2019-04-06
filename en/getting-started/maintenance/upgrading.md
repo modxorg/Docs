@@ -81,13 +81,13 @@ Upgrades after 2.0.0-rc-2 should run smoothly without issues.
 
 If you're copying the extracted folder in Mac OS X, be careful, as OS X will "replace" folders when you drag and drop them over each other. Make sure that you use the "ditto" command from the command line, rather than drag/dropping from Finder, otherwise your core/config/config.inc.php file will be erased. A sample ditto command after you've extracted the zip could be:
 
-``` php 
+``` php
 ditto modx-2.1.0-pl /www/public_html/modx/
 ```
 
 The effect is the same if you use the humble **cp** command:
 
-``` php 
+``` php
 cp -fr modx-2.2.0-pl/* /www/public_html/modx
 ```
 

@@ -12,13 +12,13 @@ Sets the debug state for the XPDO connection.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#setDebug>
 
-``` php 
+``` php
 void setDebug ([boolean $v = true])
 ```
 
 ## Example
 
-``` php 
+``` php
 $xpdo->setDebug(true);
 ```
 

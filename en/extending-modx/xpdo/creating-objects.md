@@ -16,13 +16,13 @@ Creating objects in xPDO utilizes the "newObject" xPDO method.
 
 Let's say we have an object defined in our model of class "Box". We want to create a new object of it:
 
-``` php 
+``` php
 $myBox = $xpdo->newObject('Box');
 ```
 
 It's that simple. We can also create the Box object with some pre-filled field values:
 
-``` php 
+``` php
 $myBox = $xpdo->newObject('Box',array(
    'width' => 5,
    'height' => 12,

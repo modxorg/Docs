@@ -35,7 +35,7 @@ Previously, each tag set was parsed independently in a specific order, one level
 
 As of MODX Revolution 2.2 any tag found that starts with a dash (-) is ignored by the parser, and any tags it includes will be silently discarded. Before that, you can use the same however any tags within the comment would be parsed and it would be a tad more resource intensive to do so.
 
-``` php 
+``` php
  [[- This is a comment, and will be removed from the output. ]]
 ```
 
@@ -55,13 +55,13 @@ A tag can contain many sub-parts within it. Below is illustrated on multiple lin
 
 Put these all together, and a tag with all valid parts might look like this:
 
-``` php 
+``` php
 [[MySnippet@myPropSet:filter1:filter2=`modifier`? &prop1=`x` &prop2=`y`]]
 ```
 
 Note that tags can occur either on one line, or spread out across many lines. Both of these are acceptable:
 
-``` php 
+``` php
 [[!getResources? &parents=`123` &limit=`5`]]
 
 [[!getResources?
@@ -79,19 +79,19 @@ Note that tags can occur either on one line, or spread out across many lines. Bo
 
 All MODX Revo tags can accept properties (not just Snippets). For example, let's say we had a Chunk named 'Hello' with the content:
 
-``` php 
+``` php
 Hello [[+name]]!
 ```
 
 You'll note the new placeholder syntax. So, we'll definitely want to parse that Chunk's property. In Evolution, you would need to do this with a Snippet; no longer. You can simply pass a property for the Chunk:
 
-``` php 
+``` php
 [[$Hello?name=`George`]]
 ```
 
 This would output:
 
-``` php 
+``` php
 Hello George!
 ```
 
@@ -118,7 +118,7 @@ If you have cached placeholders below that, they will be evaluated before that S
 
 If you want to call a Snippet uncached that sets placeholders, you need to make sure the placeholders are set to uncached as well:
 
-``` php 
+``` php
 [[!Profile]]
 Hello [[!+username]],
 ```

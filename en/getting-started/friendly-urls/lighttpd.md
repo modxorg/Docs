@@ -23,7 +23,7 @@ First we need to make sure that the URL rewriting module is enabled.
 
 Next we need to find the location in which to put the friendly URL code. So lets search for something that looks like this: 
 
-``` php 
+``` php
     $SERVER["socket"] == ":80" {
     $HTTP["host"] =~ "yourdomainname.com" {
       server.document-root = "/path/to/your/doc/root"
@@ -32,7 +32,7 @@ Next we need to find the location in which to put the friendly URL code. So lets
 
 Directly under this you should add the following code. 
 
-``` php 
+``` php
     url.rewrite-once = ( "^/(assets|manager|core|connectors)(.*)$" => "/$1/$2",
            "^/(?!index(?:-ajax)?\.php)(.*)\?(.*)$" => "/index.php?q=$1&$2",
            "^/(?!index(?:-ajax)?\.php)(.*)$" => "/index.php?q=$1"

@@ -12,6 +12,6 @@ Rules in MODx Revolution are simply generic rules that apply to any Action (mana
 
 The available Rules are:
 
-``` php 
+``` php
 [[getResources@section? &parents=`133` &context=`revolution`]]
 ```

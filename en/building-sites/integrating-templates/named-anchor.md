@@ -18,13 +18,13 @@ The problem with using named anchors with MODX and friendly URLs enabled, is tha
 
 To generate a link to the current Resource, while using a named anchor of "prohibited":
 
-``` html 
+``` html
 <a href="[[~[[*id]]]]#prohibited">Prohibited Activities</a>
 ```
 
 To generate a link to a Resource with ID 12, while using a named anchor of "prohibited":
 
-``` html 
+``` html
 <a href="[[~12]]#prohibited">Prohibited Activities</a>
 ```
 
@@ -34,7 +34,7 @@ Alternatively, you could use a plugin to automatically prepend a link to the cur
 
 Put the following code into a new plugin, and on the System Events tab assign it to the "OnWebPagePrerender" event (based on [this post](http://forums.modx.com/thread/35800/plugin-anchorsaway?page=3#dis-post-199475)).
 
-``` php 
+``` php
 if($modx->resource->get('id') !=$modx->config['site_start']) {    
   $modx->resource->_output =str_replace('href="#','href="' .$modx->makeUrl($modx->resource->get('id')) .'#',$modx->resource->_output);
 }

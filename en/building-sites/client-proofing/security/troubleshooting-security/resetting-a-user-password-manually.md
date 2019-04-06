@@ -12,7 +12,7 @@ It is not uncommon for a User account to become inaccessible because of a lost/f
 
 In MODX 2.1+, users are created by default with the a hashing algorithm called PBKDF2. Databases like MySQL or SQL Server generally do not have functions for calculating these hashes, and as a result, in order to manually reset the password in the database, you will also need to change the hash\_class specified for the user from hashing.modPBKDF2 to hashing.modMD5. Then you can use the native MD5() function to set the value of the password field appropriately. Here is an example MySQL UPDATE statement:
 
-``` php 
+``` php
 UPDATE modx_users SET hash_class = 'hashing.modMD5', password = MD5('the-new-password') WHERE username = 'theusername';
 ```
 
@@ -22,7 +22,7 @@ If you want to then have the user password automatically converted back to PBKDF
 
 In MODX 2.0.x, you can simply reset the password field with a valid MD5 hash value directly in the database table. Here is an example MySQL UPDATE statement that can reset a user's password by username:
 
-``` php 
+``` php
 UPDATE modx_users SET password = MD5('the-new-password') WHERE username = 'theusername';
 ```
 
@@ -30,7 +30,7 @@ UPDATE modx_users SET password = MD5('the-new-password') WHERE username = 'theus
 
 You can also reset the password (or manipulate any part of the MODX application) by using the API. Below is a sample script to update the password and email address of a given user. It also ensures this user is in the Administrator User Group.
 
-``` php 
+``` php
 <?php
 define('MODX_API_MODE', true); // Gotta set this one constant.
 
@@ -40,7 +40,7 @@ $username = 'theusername';
 $password = 'newpassword';
 $email = 'new@email.com';
 
-$user_group = 1; // 1 for Administrator 
+$user_group = 1; // 1 for Administrator
 
 // Full path to the MODX index.php file
 require_once('/full/path/to/index.php');
@@ -75,7 +75,7 @@ if (!empty($user->UserGroupMembers)) {
         foreach ($user->UserGroupMembers as $UserGroupMembers) {
                 if ($UserGroupMembers->get('user_group') == $user_group) {
                         $is_member = true;
-                        break;                  
+                        break;
                 }
         }
 }
@@ -88,10 +88,10 @@ if (!$is_member) {
         }
 
         $Member = $modx->newObject('modUserGroupMember');
-        $Member->set('user_group', $user_group); 
+        $Member->set('user_group', $user_group);
         $Member->set('member', $user->get('id'));
         // Super User = role 2
-        $Member->set('role', 2); 
+        $Member->set('role', 2);
         $Member->set('rank', 0);
         $user->addOne($Member,'UserGroupMembers');
 }

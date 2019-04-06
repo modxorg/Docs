@@ -10,13 +10,13 @@ The @CHUNK Binding returns the parsed content of any specified Chunk when @CHUNK
 
 In other words, if @CHUNK Hello is the value of a TV called MyChunk, the following tag in a Template or in the Resource Content field of a Resource will be replaced with the contents of the Hello chunk:
 
-``` php 
+``` php
 [[*MyChunk]]
 ```
 
 ## Syntax
 
-``` php 
+``` php
 @CHUNK chunk_name
 ```
 
@@ -26,7 +26,7 @@ This binding is very similar to the [@RESOURCE binding](building-sites/elements/
 
 ## Usage
 
-``` php 
+``` php
 @CHUNK MycontactForm
 ```
 

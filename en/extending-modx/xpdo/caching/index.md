@@ -30,7 +30,7 @@ The $xpdo->cacheManager object, built from the [xPDOCacheManager](extending-modx
 
 A simple example script of setting data into a cache partition, then getting it, and deleting it, is as follows:
 
-``` php 
+``` php
 $str = 'My cached data.';
 $xpdo->cacheManager->set('testdata', $str);
 
@@ -48,7 +48,7 @@ To target cache data in a specific partition, you will need to either pass a con
 
 An example of passing the configuration to the xPDOCacheManager methods:
 
-``` php 
+``` php
 $cacheOptions = array(
     xPDO::OPT_CACHE_KEY => 'myCache',
     xPDO::OPT_CACHE_HANDLER => 'cache.xPDOAPCCache',
@@ -66,7 +66,7 @@ This would use an instance of xPDOAPCCache and prefix all entries with cacheMe s
 
 An alternative approach is to get the specific cache partition itself and use it's methods directly:
 
-``` php 
+``` php
 $myCache = $xpdo->cacheManager->getCacheProvider('myCache', array(
     xPDO::OPT_CACHE_KEY => 'myCache',
     xPDO::OPT_CACHE_HANDLER => 'cache.xPDOAPCCache',

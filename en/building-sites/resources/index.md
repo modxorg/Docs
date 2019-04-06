@@ -66,7 +66,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
  Resource fields can be accessed from anywhere by using the [Template Variable](building-sites/elements/template-variables "Template Variables") syntax, ie:
 
- ``` php 
+ ``` php
 [[*pagetitle]] // renders the pagetitle.
 [[*id]] // renders the Resource's ID
 [[*createdby]] // renders the ID of the user who created this Resource
@@ -75,7 +75,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
  They can also have [Output Filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") applied to them:
 
- ``` php 
+ ``` php
 // Renders a limited version of the introtext field.
 // If it is longer than 100 chars, adds an ...
 [[*introtext:ellipsis=`100`]]
@@ -90,7 +90,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
  Grabbing the Resource Fields in a [Snippet](extending-modx/snippets "Snippets") is quite easy; MODx provides you with the Resource object in any Snippet, via the $modx->resource reference. For example, this example Snippet will return the current page's pagetitle reversed:
 
- ``` php 
+ ``` php
 /* output the current Resource's pagetitle */
 $output = $modx->resource->get('pagetitle');
 return strrev($output);
@@ -101,7 +101,7 @@ return strrev($output);
 
  In MODx, links to Resources are dynamically managed via "Link Tags". They look like this:
 
- ``` html 
+ ``` html
 [[~123]]
 ```
 
@@ -115,13 +115,13 @@ return strrev($output);
 
  Adding URL parameters in your Link Tag is quite simple in Revolution. Let's say we have Resource ID 42 that resolves to a URL of 'store/items.html'. We want to add a 'tag' parameter to the URL, with a value of 'Snacks' and a 'sort' parameter of 'Taste'. Here's how you'd do it:
 
- ``` html 
+ ``` html
 [[~42? &tag=`Snacks` &sort=`Taste`]]
 ```
 
  This would render as:
 
- ``` html 
+ ``` html
 store/items.html?tag=Snacks&sort=Taste
 ```
 
@@ -131,7 +131,7 @@ store/items.html?tag=Snacks&sort=Taste
 
  You can specify the scheme for a Resource in your tag:
 
- ``` html 
+ ``` html
 [[~123? &scheme=`https`]]
 ```
 

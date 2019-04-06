@@ -37,25 +37,25 @@ A handy cPanel/WHM mod\_security module is available for visually editing your r
 
 If you have SSH access to your server, you can check to see which modules Apache loads on startup. To print out which modules are loaded into Apache, you can use the **apachectl** utility on \*NIX systems, e.g.
 
-``` php 
+``` php
 apachectl -t -D DUMP_MODULES
 ```
 
 Or, if your **apachectl** command is not in your current $PATH, then you may need to specify a full path to the utility. To find the path, you can search for it using the **find** command:
 
-``` php 
+``` php
 find / -name apachectl
 ```
 
 Then once you've found the full path to the utility, you can run the command verbosely, e.g.:
 
-``` php 
+``` php
 /usr/local/apache/bin/apachectl -t -D DUMP_MODULES
 ```
 
 The output will be something like this:
 
-``` php 
+``` php
 Loaded Modules:
  core_module (static)
  rewrite_module (static)
@@ -79,7 +79,7 @@ After you've verified that are in fact running ModSecurity, you'll want to monit
 
 The primary log you'll want to monitor is your Apache error log. The exact location is configured in your Apache configuration file, but often it resides inside of **/usr/local/apache/logs/error\_log** A good way to watch this file is by using the **tail** utility. You can monitor the file in real-time by using the **-f** flag, e.g.
 
-``` php 
+``` php
 tail -f /usr/local/apache/logs/error_log
 ```
 
@@ -93,7 +93,7 @@ If you do see that errors are being tripped inside the Apache error log when you
 
 Here is a sample error from the Apache error log:
 
-``` php 
+``` php
 [Sat Nov 19 19:16:32 2011] [error] [client 123.123.123.123] ModSecurity: Access denied with code 500 (phase 2).
 Pattern match "(insert[[:space:]]+into.+values|select.*from.+[a-z|A-Z|0-9]|select.+from|bulk[[:space:]]+insert|union.+select|convert.+\\\\(.*from)"
 at ARGS:els.
@@ -110,7 +110,7 @@ at ARGS:els.
 
 From this error, we need 3 pieces of information in order to whitelist a particular action. Take note of the following 3 items:
 
-``` php 
+``` php
 [id "300016"]
 [hostname "yoursite.com"]
 [uri "/connectors/element/tv.php"]
@@ -126,14 +126,14 @@ Whitelisting a rule for a specific domain is accomplished through an "includes" 
 
 The first thing to do is to back up and rebuild the httpd.conf file to make sure there are no errors (run the following commands one at a time)
 
-``` php 
+``` php
 cd /usr/local/apache/conf
 cp -p httpd.conf httpd.conf.backup
 ```
 
 If you're on a cPanel server, you can then rebuild the file by running the following command:
 
-``` php 
+``` php
 /scripts/rebuildhttpdconf
 ```
 
@@ -143,7 +143,7 @@ The goal here is to verify that your existing Apache configuration file is backe
 
 Many setups (include cPanel setups) don't want you messing directly with the main Apache configuration file. Instead, you'll edit the vhosts file for a given domain. Look through your main Apache configuration file (**httpd.conf**) and search for your domain name to see where it has outsourced its configuration files. You should find some references to it inside of a **VirtualHost** block.
 
-``` php 
+``` php
 <VirtualHost 123.123.123.123>
     ServerName yoursite.com
     ServerAlias www.yoursite.com
@@ -171,7 +171,7 @@ That's where Apache will look for additional configurations. If you know you don
 
 The general whitelist rule looks like this:
 
-``` php 
+``` php
 <LocationMatch "/path/to/URI">
   <IfModule mod_security2.c>
     SecRuleRemoveById (Rule number)
@@ -188,7 +188,7 @@ You can modify this and add it to your VirtualHosts directive (either in your ma
 
 Give our sample error message earlier which identified the following error:
 
-``` php 
+``` php
 [id "300016"]
 [hostname "yoursite.com"]
 [uri "/connectors/element/tv.php"]
@@ -196,7 +196,7 @@ Give our sample error message earlier which identified the following error:
 
 We would go to the VirtualHosts directive for **yoursite.com** and add a rule like the following:
 
-``` php 
+``` php
 <LocationMatch "/connectors/element/tv.php">
   <IfModule mod_security2.c>
     SecRuleRemoveById 300016
@@ -213,7 +213,7 @@ If you move your site to a new directory or if you move your **connectors** dire
 
 It can be maddening going through MODX functionality one admin screen at a time, but there seems to be some difficulty in white-listing entire directories. Consider renaming your "connectors" directory (see [Hardening MODX Revolution](administering-your-site/security/hardening-modx-revolution "Hardening MODX Revolution")).
 
-``` php 
+``` php
 <LocationMatch "/manager/index.php">
 SecRuleRemoveById 300016
 </LocationMatch>
@@ -237,7 +237,7 @@ If you're not on a cPanel server, skip this step and just restart Apache.
 
 On a cPanel server, you'll want to re-run the **rebuildhttpdconf** utility:
 
-``` php 
+``` php
 cd /usr/local/apache/conf
 /scripts/rebuildhttpdconf
 ```
@@ -248,7 +248,7 @@ Then you can check to see that the edits you made in your external files got slu
 
 Once you're edits have been made, restart the Apache process:
 
-``` php 
+``` php
 /etc/init.d/httpd restart
 ```
 
@@ -268,7 +268,7 @@ The configuration details that can affect your downloads are the following:
 
 An easy solution is to bypass ModSecurity entirely for downloads like this:
 
-``` php 
+``` php
 SecRequestBodyAccess Off
 ```
 

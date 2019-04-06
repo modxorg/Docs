@@ -19,7 +19,7 @@ Copies a file from a source file to a target directory. Takes the following opti
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#copyFile>
 
-``` php 
+``` php
 boolean|array copyFile (string $source, string $target, [array $options = array()])
 ```
 
@@ -27,7 +27,7 @@ boolean|array copyFile (string $source, string $target, [array $options = array(
 
 Copy a file:
 
-``` php 
+``` php
 $xpdo->cacheManager->copyFile('/my/path/to/file.txt','/my/new/path/dir/');
 ```
 

@@ -4,7 +4,7 @@ _old_id: "77"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 ---
 
-##  What is a CMP?
+## What is a CMP?
 
  CMP stands for Custom Manager Page, and it is simply a custom page that loads in the MODX Revolution manager. It may also be called a Component or 3PC (3rd Party Component). Typically CMPs are accessed from the Extras menu in MODX, but as a developer there is a lot of freedom in where they are placed.
 
@@ -12,7 +12,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 
  The equivalent of a CMP or Component in MODX Evolution is a Module, though the technique in which they are created is quite different. 
 
-##  Namespaces 
+## Namespaces 
 
  CMPs need a namespace in order for MODX to know where to load the files from.
 
@@ -32,7 +32,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 - {base\_path} - Resolves to the **MODX\_BASE\_PATH** variable, which contains the absolute path to the root of the MODX installations, typically something _/home/username/public\_html/modx\_location/_
 - {assets\_path} - Resolves to the **MODX\_ASSETS\_PATH** variable, which contains the absolute path to the assets directory of your MODX installation.
 
-##  Using modAction and modMenu 
+## Using modAction and modMenu 
 
  To point the end user to your custom manager page, you will typically want to make it available through the top menu. This is done with an Action (modAction) and a Menu item (modMenu).
 
@@ -189,19 +189,19 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
 
  Here's an example of using placeholders in the smarty template file, assuming you called $this->setPlaceholder('foo', 'Bar');
 
- ``` html 
+ ``` html
 <h2 class="modx-page-header">{$foo}</h2>
 ```
 
  This would output a standard MODX Manager page header saying "Bar".
 
-##  Going beyond plain HTML
+## Going beyond plain HTML
 
  After this tutorial you built a super simple custom manager page. If you want, you can now continue building a rich interface using [MODExt](extending-modx/custom-manager-pages/modext "MODExt"), the ExtJS integration in Revolution. More about MODExt can be found [here](extending-modx/custom-manager-pages/modext "MODExt").
 
  It is also recommended to follow the [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra) tutorial as it walks you through every step needed to build a rich component.
 
-##  See Also 
+## See Also 
 
 1. [Actions and Menus](extending-modx/menus/actions)
   1. [Action List](extending-modx/menus/action-list)

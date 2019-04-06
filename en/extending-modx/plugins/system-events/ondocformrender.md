@@ -36,7 +36,7 @@ It is advised to only do this on new resources, as any values you set **will** o
 
 Here is how you might use it:
 
-``` php 
+``` php
 switch ($modx->event->name) {
   case 'OnDocFormRender':
     if ($mode === 'new') {

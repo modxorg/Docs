@@ -18,7 +18,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
  Go ahead and add this method to your CopyrightedResource class `copyrightedresource.class.php`:
 
- ``` php 
+ ``` php
 public function getContent(array $options = array()) {
    $content = parent::getContent($options);
    $year = date('Y');

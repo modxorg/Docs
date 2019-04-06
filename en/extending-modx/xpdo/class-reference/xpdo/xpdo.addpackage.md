@@ -12,7 +12,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.addpackage"
 
  API Docs: <http://api.modx.com/xpdo/xPDO.html#addPackage>
 
- ``` php 
+ ``` php
 boolean addPackage ([string $pkg = ''], [string $path = ''], [string $tablePrefix = ''])
 ```
 
@@ -26,7 +26,7 @@ boolean addPackage ([string $pkg = ''], [string $path = ''], [string $tablePrefi
 
  Most commonly, this uses the MODX\_CORE\_PATH constant and points to your package's "model/" directory:
 
- ``` php 
+ ``` php
 $modx->addPackage('mypkg',MODX_CORE_PATH.'components/mypkg/model/','mypkg_');
 ```
 
@@ -38,13 +38,13 @@ $modx->addPackage('mypkg',MODX_CORE_PATH.'components/mypkg/model/','mypkg_');
 
  If you were to load one of its packages using the addPackage() method, you could use one of the three available packages (formit, recaptcha, or stopforumspam) as the first argument, and the path to the containing folder as the second argument, e.g.
 
- ``` php 
+ ``` php
 $xpdo->addPackage('recaptcha', MODX_CORE_PATH.'components/formit/model/');
 ```
 
 ## Testing
 
- ``` php 
+ ``` php
 $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 $xpdo->setLogTarget('ECHO');
 if (!$xpdo->addPackage('my_package','/path/to/docroot/core/components/my_package/model/','pkg_')) {

@@ -16,13 +16,13 @@ Processes and returns the output from an HTML chunk by name.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getChunk()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getChunk())
 
-``` php 
+``` php
 string getChunk (string $chunkName, [array $properties = array ()])
 ```
 
 **$properties** is usually a standard associative array, e.g.
 
-``` php 
+``` php
 $properties = array('key' => 'value');
 ```
 
@@ -30,7 +30,7 @@ Which would cause the \[\[+key\]\] placeholders to be replaced by the 'value'.
 
 However, **$properties** can also be a more deeply nested array such as the kind that might be returned from certain getObject or getCollection queries, e.g.
 
-``` php 
+``` php
 $properties = array(
     'user' => array('id' => 1),
     'document' => array('id' => 27)
@@ -52,13 +52,13 @@ In cases where a multi-dimensional array is used, the placeholder syntax changes
 
 Lets process this chunk and output its value. We have this Chunk, called "WelcomeChunk":
 
-``` php 
+``` php
 <p>Welcome [[+name]]!</p>
 ```
 
 We'll put this in our Snippet:
 
-``` php 
+``` php
 $output = $modx->getChunk('WelcomeChunk',array(
    'name' => 'John',
 ));
@@ -69,7 +69,7 @@ So every key in the associative array passed to the **getChunk** method correspo
 
 This code outputs this:
 
-``` php 
+``` php
 <p>Welcome John!</p>
 ```
 
@@ -77,13 +77,13 @@ This code outputs this:
 
 In our Chunk:
 
-``` php 
+``` php
 <a href="http://site.com/profile?user_id=[[+user.id]]!">User Details</a>
 ```
 
 In our Snippet:
 
-``` php 
+``` php
 $output = $modx->getChunk('UserLink',array(
    'user' => array('id' => 123)
 );
@@ -96,7 +96,7 @@ Often, MODX Chunks are used as [formatting string](http://php.net/manual/en/func
 
 Imagine a Chunk named **single\_user**:
 
-``` php 
+``` php
 Username: [[+username]]<br/>
 Active?:  [[+active]]<br/>
 <hr/>
@@ -104,7 +104,7 @@ Active?:  [[+active]]<br/>
 
 Then in your Snippet:
 
-``` php 
+``` php
 $userlist = $modx->getCollection('modUser');
 
 $output = '';
@@ -119,7 +119,7 @@ return $output;
 
 Sometimes you need to parse a string using the MODX parser – this does not use getChunk, but it is related. Using the MODX parser is a bit slower than using a simple str\_replace function, but it does let you use complex placeholders (e.g. to include another Chunk) and output filters etc. The trick is to create a temporary Chunk object, then run the **process** method on it.
 
-``` php 
+``` php
 // The formatting String
 $tpl = 'Hello, my name is [[+name]]';
 

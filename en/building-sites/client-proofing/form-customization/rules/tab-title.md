@@ -27,6 +27,6 @@ An example Rule of changing the title for the Page Settings tab for all [Users](
 
 ## See Also
 
-``` php 
+``` php
 [[getResources@section? &parents=`300` &context=`revolution`]]
 ```

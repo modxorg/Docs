@@ -12,7 +12,7 @@ Pack the [xPDOTransport](extending-modx/xpdo/class-reference/xpdotransport "xPDO
 
 API Docs: <http://api.modxcms.com/xpdo/transport/xPDOTransport.html#pack>
 
-``` php 
+``` php
 boolean pack ()
 ```
 
@@ -20,7 +20,7 @@ boolean pack ()
 
 Package the transport into a zip file.
 
-``` php 
+``` php
 $transport->pack();
 ```
 

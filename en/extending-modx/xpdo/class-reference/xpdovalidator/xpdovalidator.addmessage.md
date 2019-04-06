@@ -12,7 +12,7 @@ Add a validation message to the stack.
 
 API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#addMessage>
 
-``` php 
+``` php
 void addMessage (string $field, string $name, [mixed $message = null])
 ```
 
@@ -20,7 +20,7 @@ void addMessage (string $field, string $name, [mixed $message = null])
 
 Do our own validation, but still use the validator object.
 
-``` php 
+``` php
 $validator = $obj->getValidator();
 if ($obj->get('name') == '') {
    $validator->addMessage('name','emptyName','Please enter a valid name.');

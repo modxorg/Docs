@@ -64,7 +64,7 @@ Sometimes, you want to hide elements from all users who are not in the Administr
 
 - Go to the Administrator User Group edit page (Security -> Access Controls -> User Groups -> right click on "Administrator" and select Update User Group) For Revolution 2.3.x this is Access Control Lists in the Admin menu (the gear icon).
 - Find the Element Category Access tab
-- Add the following ACL entry, by clicking on "Add Category": 
+- Add the following ACL entry, by clicking on "Add Category":
   - Category: your Category you made/selected earlier
   - Minimum Role: admin Super User
   - Access Policy: Element
@@ -82,7 +82,7 @@ Lets say you restricted a Template with the method above. But you also want anot
 
 - Go to the Editors User Group edit page (Security -> Access Controls -> User Groups -> right click on "Editors" and select Update User Group)
 - Find the Element Category Access tab
-- Add the following ACL entry, by clicking on "Add Category": 
+- Add the following ACL entry, by clicking on "Add Category":
   - Category: your Category you made/selected earlier
   - Minimum Role: Member
   - Access Policy: Load Only

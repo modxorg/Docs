@@ -12,7 +12,7 @@ Converts a JSON source string into an equivalent PHP representation.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#fromJSON>
 
-``` php 
+``` php
 mixed fromJSON (string $src, [boolean $asArray = true])
 ```
 
@@ -20,7 +20,7 @@ mixed fromJSON (string $src, [boolean $asArray = true])
 
 Convert JSON code to an array:
 
-``` php 
+``` php
 $str = '{name:"John"}';
 $ar = $xpdo->fromJSON($str);
 print_r($ar); // prints: Array ( 'name' => 'John' )

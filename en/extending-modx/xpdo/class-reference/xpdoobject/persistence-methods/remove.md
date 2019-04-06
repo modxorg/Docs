@@ -12,7 +12,7 @@ Remove the persistent instance of an object permanently. This deletes rows from 
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#remove>
 
-``` php 
+``` php
 boolean remove ([array $ancestors = array ()])
 ```
 
@@ -20,7 +20,7 @@ boolean remove ([array $ancestors = array ()])
 
 Get rid of an item.
 
-``` php 
+``` php
 $item = $xpdo->getObject('Item',123);
 
 if ($item->remove() == false) echo 'The Item failed to remove.';

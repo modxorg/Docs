@@ -12,7 +12,7 @@ Checks if the user has a specific session context, or in other words, is "logged
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::hasSessionContext()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::hasSessionContext())
 
-``` php 
+``` php
 boolean hasSessionContext (mixed $context)
 ```
 
@@ -20,7 +20,7 @@ boolean hasSessionContext (mixed $context)
 
 See if the User has a Session for the 'sports' Context:
 
-``` php 
+``` php
 if ($user->hasSessionContext('sports')) {
     // do code here
 }

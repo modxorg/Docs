@@ -12,7 +12,7 @@ Returns the current user ID, for the current or specified context.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getLoginUserID()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getLoginUserID())
 
-``` php 
+``` php
 string getLoginUserID ([string $context = ''])
 ```
 
@@ -20,7 +20,7 @@ string getLoginUserID ([string $context = ''])
 
 Get the current login user ID for the 'sports' context.
 
-``` php 
+``` php
 $id = $modx->getLoginUserID('sports');
 ```
 

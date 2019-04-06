@@ -12,14 +12,14 @@ _old_uri: "revo/login/login.forgotpassword"
 
  To use the password retrieval functionality, first create the Resource the user will log into when they click on the confirmation email, and put the [ResetPassword](extras/login/login.resetpassword "Login.ResetPassword") snippet in. Tell it what Resource the Login snippet is in - or where you'd like it to provide a link back to:
 
- ``` php 
+ ``` php
 [[!ResetPassword? &loginResourceId=`72`]]
 ```
 
  Then create another resource with the ForgotPassword snippet, and tell it 
  what Resource the Reset snippet is in:
 
- ``` php 
+ ``` php
 [[!ForgotPassword? &resetResourceId=`123`]]
 ```
 

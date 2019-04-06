@@ -12,7 +12,7 @@ Sees if a string ends with a specific pattern or set of patterns. Useful for che
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#endsWith>
 
-``` php 
+``` php
 boolean endsWith (string $string, string|array $pattern)
 ```
 
@@ -20,7 +20,7 @@ boolean endsWith (string $string, string|array $pattern)
 
 See if a file contains the s
 
-``` php 
+``` php
 $filename = '/my/site/test.flv';
 if ($xpdo->cacheManager->endsWith($filename,'flv')) {
   echo 'Ends with flv!";

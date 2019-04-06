@@ -12,7 +12,7 @@ Add a LIMIT/OFFSET clause to the query.
 
 API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::limit()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::limit())
 
-``` php 
+``` php
 xPDOQuery limit (integer $limit, [integer $offset = 0])
 ```
 
@@ -20,7 +20,7 @@ xPDOQuery limit (integer $limit, [integer $offset = 0])
 
 Get Boxes 11-20, or the 2nd 10 Boxes.
 
-``` php 
+``` php
 $query = $xpdo->newQuery('Box');
 $query->limit(10,10);
 $boxes = $xpdo->getCollection('Box',$query);

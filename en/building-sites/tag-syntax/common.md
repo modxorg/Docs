@@ -6,7 +6,7 @@ _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags"
 
 This page lists the most commonly used MODx Revolution tags as an aid to anyone converting HTML/CSS layouts into MODx [Templates](building-sites/elements/templates "Templates"). These are frequently referred to as "tags" or "placeholders" (and sometimes "template variables"), so we mention those terms here as an aid to searching, although technically speaking they are **not** placeholders or template variables: they are MODx tags. Yes, it can be confusing for the newcomer, so just remember that there are different flavors of these tags, each with its own purpose and name. Placeholders are set in code and are displayed with placeholder tags. [Template Variables](building-sites/elements/template-variables "Template Variables") are extra resource content fields created by the user; they can be thought of as custom fields. Neither placeholders, not template variables are pre-set by the MODx core.
 
-##  Default Resource Content Field Tags 
+## Default Resource Content Field Tags 
 
  In MODx Revolution, each page will always have the following content fields that you can use when constructing your templates. Except for the Resource ID and the parent field, they are all supplied by the user when editing the resource and may be empty if the user did not fill them in:
 
@@ -22,7 +22,7 @@ This page lists the most commonly used MODx Revolution tags as an aid to anyone 
 | **\[\[\*menutitle\]\]**   | the Title used when the page appears in menus.                                                        | _Most frequently used by Snippets such as_ _[Wayfinder](/extras/evo/wayfinder "Wayfinder")_ _when dynamically constructing menus_ |
 | **\[\[\*content\]\]**     | the content of the page.                                                                              | `<body>[[*content]]</body>`                                                                                                       |
 
-##  Other Common Tags 
+## Other Common Tags 
 
  These tags represent system settings, which are editable under the **System** menu -> **System Settings**.
 
@@ -35,7 +35,7 @@ This page lists the most commonly used MODx Revolution tags as an aid to anyone 
 | **\[\[~link\]\]**                | Use this syntax to build links to pages by referencing their unique id (visible in parentheses next to the page's name in the resource tree). These links will not break if pages are moved or renamed. You can change the generated scheme of the link by passing the &scheme parameter (see [link\_tag\_scheme](building-sites/settings/link_tag_scheme)) | `<a id="logo" href="[[~1]]">Home</a>`                                                                                                        |
 | **\[\[%translated\_message\]\]** | Use lexicon tags to localize messages.                                                                                                                                                                                                                                                                                                                      | \[\[!%setting\_emailsender? &topic=`setting` &namespace=`core` &language=`en`\]\]                                                            |
 
-##  All Tags 
+## All Tags 
 
  As you increase your understanding of how MODx templates work, you'll want to have at your disposal the complete list of available content fields. Here is the complete list of all tags, gleaned from this [blog post](http://modxcms.com/forums/index.php/topic,63481.0/topicseen.html).
 
@@ -79,7 +79,7 @@ This page lists the most commonly used MODx Revolution tags as an aid to anyone 
 
 
 
-##  See Also 
+## See Also 
 
 - [Date Formats](building-sites/tag-syntax/date-formats "Date Formats") : shows how to format date fields.
 

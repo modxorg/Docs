@@ -13,7 +13,7 @@ All new objects created with this method are transient until [xPDOObject::save()
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#newObject>
 
-``` php 
+``` php
 object|null newObject (string $className, [array $fields = array ()])
 ```
 
@@ -21,13 +21,13 @@ object|null newObject (string $className, [array $fields = array ()])
 
 Create a new Box object:
 
-``` php 
+``` php
 $box = $xpdo->newObject('Box');
 ```
 
 Create a new Box object with the width and height already set:
 
-``` php 
+``` php
 $box = $xpdo->newObject('Box',array(
    'width' => 10,
    'height' => 4,

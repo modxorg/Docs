@@ -28,7 +28,7 @@ Any time you pack up a site and move, it's best to package the files into "boxes
 
 On a UNIX style system, you can create a compressed file using the tar command:
 
-``` php 
+``` php
 tar -czf /path/to/backups/modx_revo_site.tar.gz /path/to/modx_doc_root/
 ```
 
@@ -39,7 +39,7 @@ Once you arrive on the other end, it's good to put the zipped file into its own 
 
 On a UNIX style system, you can unpackage a .tar.gz file using the following commands from a command line:
 
-``` php 
+``` php
 gunzip modx_revo_site.tar.gz
 tar xvf modx_revo_site.tar
 ```
@@ -60,7 +60,7 @@ _Please note that MODX can run on multiple database drivers, currently MySQL and
 
 You can dump your MySQL database using a GUI tool such as phpMyAdmin, or you can run the command-line **mysqldump** utility.
 
-``` php 
+``` php
 mysqldump -u username -p your_revo_db > /path/to/backups/my_revo_db.sql
 ```
 
@@ -68,7 +68,7 @@ If you use _mysqldump_, be sure you use a username that has SELECT and LOCK perm
 
 On the new server, you can simply use the "mysql" command to slurp the dump file into the new target database:
 
-``` php 
+``` php
 mysql -u username -p target_db < my_revo_db.sql
 ```
 
@@ -82,7 +82,7 @@ Many server control panels offer database backup and compression tools as well.
 
 Once you've deployed files to the new server, you need to update the main configuration file: _core/config/config.inc.php_. You have to update paths to **6** different resources. Open the file and update the values for the following variables doing a find and replace:
 
-``` php 
+``` php
 /* PATHS */
 $modx_core_path= '/path/to/modx_doc_root/core/';
 $modx_processors_path= '/path/to/modx_doc_root/core/model/modx/processors/';
@@ -103,7 +103,7 @@ If you are also moving your site into or out of a subfolder, be sure to update t
 
 There are also 3 additional configuration files that contain two PHP constants:
 
-``` php 
+``` php
 define('MODX_CORE_PATH', '/path/to/modx_doc_root/core/');
 define('MODX_CONFIG_KEY', 'config');
 ```
@@ -127,7 +127,7 @@ Sometimes developers structure their development and production servers to use t
 
 To see the path information that is stored inside the MODX database, type the following query into phpMyAdmin, the MySQL command line, or any other application that allows you to execute queries on your database:
 
-``` php 
+``` php
 SELECT `path` FROM `your_revo_db`.`workspaces`;
 ```
 
@@ -135,7 +135,7 @@ Change "your\_revo\_db" to your database name, and add an appropriate prefix to 
 
 If the path on the new server is different than on the old server, you will need to update this record. You can edit it using a GUI editor (like SQL-Yog or phpMyAdmin), or you can execute the following command (again, you need to customize the query depending on your database, prefix, and the path to your data):
 
-``` php 
+``` php
 UPDATE `your_revo_db`.`workspaces` SET path='/path/to/modx_doc_root/core/' WHERE id='1';
 ```
 
@@ -188,13 +188,13 @@ You may encounter problems when re-running Setup on the new server. Sometimes re
 
 This manifests itself as an error message like the following:
 
-``` php 
+``` php
 Fatal error: Class 'xPDODriver_' not found in /path/to/webroot/core/xpdo/xpdo.class.php on line 1823
 ```
 
 This is usually a sign that your configuration file got mangled. Re-open your core/config/config.inc.php and verify that its contents are in place. A mangled config file contains placeholders instead of values.
 
-``` php 
+``` php
 $database_type = '{database_type}';
 $database_server = '{database_server}';
 $database_user = '{database_user}';

@@ -8,7 +8,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/properties-and-propert
 
 Properties are simply values that can be configured for any Element via [Tag Syntax](building-sites/tag-syntax "Tag Syntax"). An example of a Property is the token 'debug' in this Snippet call:
 
-``` php 
+``` php
 [[Quip? &debug=`1`]]
 ```
 
@@ -18,7 +18,7 @@ Properties are simply values that can be configured for any Element via [Tag Syn
 
 Property Sets are user-defined collections of properties for an Element. So instead of having an enormous Snippet call with an unreadable long list of properties, you can store all the properties together as a set:
 
-``` php 
+``` php
 [[MySnippet? &prop1=`a` &prop2=`b` &prop3=`c` &prop4=`d` &prop5=`e` &prop6=`f`]]
 ... becomes ...
 [[MySnippet@myPropertySet]]
@@ -26,13 +26,13 @@ Property Sets are user-defined collections of properties for an Element. So inst
 
 Property Sets can be attached not only to Snippets, but to _any element_ via that Element's editing page, and a single Property Set can be used by multiple elements. Once a Property Set has been defined and attached to an Element, you can call it by name using the "at" symbol:
 
-``` php 
+``` php
 [[ElementName@PropertySetName]]
 ```
 
 So, for an example, let's have a Property Set with two properties - 'debug' set to true, and 'user' set to 2. Then let's call it in a snippet.:
 
-``` php 
+``` php
 [[TestSnippet@DebugMode? &user=`1`]]
 ```
 
@@ -84,7 +84,7 @@ When you import properties, it will overwrite your properties in the grid curren
 
 Properties are available in a snippet via the $scriptProperties array:
 
-``` php 
+``` php
 $prop = $scriptProperties['propertyName'];
 ```
 
@@ -94,6 +94,6 @@ Note that if a parameter is sent in the snippet call that has the same name as a
 
 You can also get a snippet property with $modx->getOption() like this:
 
-``` php 
+``` php
 $modx->getOption('propertyName', $scriptProperties, 'default');
 ```

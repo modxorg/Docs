@@ -12,13 +12,13 @@ Gets a field name as represented in the database container. This gets the name o
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getFieldName>
 
-``` php 
+``` php
 string getFieldName (string $k, [string $alias = null])
 ```
 
 ## Examples
 
-``` php 
+``` php
 $document = $xpdo->getObject('Document',1);
 echo $document->getFieldName('editedby');
 // prints `documents`.`editedby`

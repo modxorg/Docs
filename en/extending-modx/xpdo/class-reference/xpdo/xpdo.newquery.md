@@ -12,7 +12,7 @@ Creates an new xPDOQuery for a specified xPDOObject class.
 
 API Docs: <http://api.modx.com/xpdo/xPDO.html#newQuery>
 
-``` php 
+``` php
 xPDOQuery newQuery (string $class, [mixed $criteria = null], [boolean|integer $cacheFlag = true])
 ```
 
@@ -23,13 +23,13 @@ The string you pass as the class name should be a _valid object class name_. It'
 
 Create a new Query for the Box object:
 
-``` php 
+``` php
 $xpdo->newQuery('Box');
 ```
 
 Create a new Query for the Box object, but already add a WHERE clause limiting to Boxes with width greater than 10:
 
-``` php 
+``` php
 $xpdo->newQuery('Box',array(
    'width:>' => 10,
 ));

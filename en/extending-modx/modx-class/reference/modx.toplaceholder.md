@@ -12,7 +12,7 @@ Recursively validates and sets placeholders appropriate to the value type passed
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::toPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholder())
 
-``` php 
+``` php
 array toPlaceholder (string $key, mixed $value, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])
 ```
 
@@ -20,7 +20,7 @@ array toPlaceholder (string $key, mixed $value, [string $prefix = ''], [string $
 
 Set a placeholder and prefix its key with 'my.' Returns an array multi-dimensional array containing up to two elements: 'keys' which always contains an array of placeholder keys that were set, and optionally, if the restore parameter is true, 'restore' containing an array of placeholder values that were overwritten by the method.
 
-``` php 
+``` php
 $modx->toPlaceholder('name','John','my');
 ```
 

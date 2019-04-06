@@ -12,7 +12,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getiterator"
 
 ## Syntax
 
- ``` php 
+ ``` php
 xPDOIterator getIterator (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 ```
 
@@ -26,7 +26,7 @@ xPDOIterator getIterator (string $className, [xPDOCriteria|array|str|int $criter
 
  Get an iterator for a collection of Box objects with a width of 40.
 
- ``` php 
+ ``` php
 $boxes = $xpdo->getIterator('Box',array(
    'width' => 40,
 ));
@@ -37,7 +37,7 @@ foreach ($boxes as $idx => $box) {
 
  If no matching xPDOObjects are found, the xPDOIterator object will be empty but will still be an object, so the following won't work (opposed to [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")):
 
- ``` php 
+ ``` php
 // a parent of -1 doesn't exist, this is intentional =)
 $resourceObjs = $xpdo->getIterator('modResource', array('parent' => -1));
 if ($resourceObjs) { // the same goes for if (!empty($resourceObjs)

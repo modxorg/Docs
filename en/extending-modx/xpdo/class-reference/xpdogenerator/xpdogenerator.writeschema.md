@@ -12,7 +12,7 @@ Parses an existing database and generates a XPDO XML schema from it.
 
 API Docs: [http://api.modxcms.com/xpdo/om-mysql/xPDOGenerator\_mysql.html#writeSchema](http://api.modxcms.com/xpdo/om-mysql/xPDOGenerator_mysql.html#writeSchema)
 
-``` php 
+``` php
 boolean writeSchema (
   string $schemaFile,
   [string $package = ''],
@@ -25,7 +25,7 @@ boolean writeSchema (
 
 Generate the xml schema from an existing database. This also only generates XML for the tables prefixed with 'mydb\_'.
 
-``` php 
+``` php
 $xpdo= new xPDO('mysql:host=localhost;dbname=myolddatabase','username','password','mydb_');
 $manager= $xpdo->getManager();
 $generator= $manager->getGenerator();

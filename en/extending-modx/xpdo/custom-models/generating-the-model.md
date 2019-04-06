@@ -10,14 +10,14 @@ To use your newly created XML schema, you'll need to create a PHP script that wi
 
 Create a PHP file where you have access to an xPDO instance. Then, let's set the Log Target to the browser, and raise it a bit to get more detailed information.
 
-``` php 
+``` php
 $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 $xpdo->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 ```
 
 Now, we'll want to load the [xPDOManager](extending-modx/xpdo/class-reference/xpdomanager "xPDOManager") and [xPDOGenerator](extending-modx/xpdo/class-reference/xpdogenerator "xPDOGenerator") classes, to assist us with the model deployment.
 
-``` php 
+``` php
 $manager= $xpdo->getManager();
 $generator= $manager->getGenerator();
 ```
@@ -30,7 +30,7 @@ By default, xPDO provides you with default class and map templates. For the purp
 
 To do so, we'll just override the variables in the $generator object:
 
-``` php 
+``` php
 $generator->classTemplate= <<<EOD
 <?php
 /**
@@ -62,7 +62,7 @@ Note the \[phpdoc-package\] tag that we've built. This is taken from our "model"
 
 And finally, we want to actually parse this into a file:
 
-``` php 
+``` php
 $schema = '/path/to/storefinder.mysql.schema.xml';
 $target = '/path/to/storefinder/model/';
 $generator->parseSchema($schema,$target);

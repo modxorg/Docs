@@ -12,7 +12,7 @@ Sends a redirect to the specified URL using the specified method.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendRedirect()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendRedirect())
 
-``` php 
+``` php
 void sendRedirect (string $url, [array $options = false], [string $type = ''], [string $responseCode])
 ```
 
@@ -36,20 +36,20 @@ $responseCode, which is deprecated and should not be used, is the same as the re
 
 Send a redirection request to the Resource with ID 54.
 
-``` php 
+``` php
 $url = $modx->makeUrl(54);
 $modx->sendRedirect($url);
 ```
 
 Send a redirect to modx.com. Do so via the META HTTP-EQUIV refresh tag.
 
-``` php 
+``` php
 $modx->sendRedirect('http://modx.com',array('type' => 'REDIRECT_META'));
 ```
 
 Send a 301 Moved Permanently response code instead of the default 302 Moved Temporarily response code.
 
-``` php 
+``` php
 $modx->sendRedirect('http://modx.com',array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
 ```
 

@@ -10,7 +10,7 @@ In this article, we'll talk about creating and removing objects (and their respe
 
 Object creation is handled by the **newObject** method. It assumes that the object you are trying to create has been properly defined inside your XML schema and that schema has generated the proper class files. For a simple example, we can look at the built-in MODX objects.
 
-``` php 
+``` php
 // let's create a Template
 $template = $modx->newObject('modTemplate');
 
@@ -37,7 +37,7 @@ A row is never actually added to the database until the object's save() command 
 
 To remove an object from the database, we use the **remove** command:
 
-``` php 
+``` php
 $template->remove();
 ```
 
@@ -47,7 +47,7 @@ This will also remove any composite relationships defined in the object's schema
 
 Okay, so pretty soon you are going to need to do some more complex queries than we've dealt with. That's where the xPDOQuery object comes in. This allows you to build abstract query objects that emulate more advanced SQL commands. So, lets try to grab the third 10 resources (so 21-30), ordered by menuindex, that are either 1) published and searchable, or 2) created by the user with username 'george123'.
 
-``` php 
+``` php
 $c = $modx->newQuery('modResource');
 $c->leftJoin('modUser','PublishedBy');
 $c->where(array(

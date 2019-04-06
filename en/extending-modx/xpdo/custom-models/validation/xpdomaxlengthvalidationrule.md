@@ -34,7 +34,7 @@ First, our model:
 
 From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
 
-``` php 
+``` php
 $output = '';
 $modx->addPackage('test','/path/to/my/test/model/','test_');
 $obj = $modx->newObject('myTest');

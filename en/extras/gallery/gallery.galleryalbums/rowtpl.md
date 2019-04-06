@@ -10,7 +10,7 @@ This chunk is used for each Album iterated through by the [GalleryAlbums](extras
 
 ## Default Value
 
-``` php 
+``` php
 <li[[+cls:notempty=``]]><a href="[[~[[*id]]? &[[+albumRequestVar]]=`[[+id]]`]]">[[+showName:notempty=`[[+name]]`]]</a></li>
 ```
 
@@ -32,7 +32,7 @@ This chunk is used for each Album iterated through by the [GalleryAlbums](extras
 
 When you use the image placeholder in your template as the source for an image tag, it doesn't seem to obey the thumbnail properties given in the snippet-call. But no worries, you can add them yourself as this image-placeholder is actually a call to phpthumb. So, lets say you want your thumbnail to be 240x160 with zoomcrop, you can do:
 
-``` php 
+``` php
 <img src="[[+image]]&w=240&h=160&zc=1" alt="[[+name]]" />
 ```
 

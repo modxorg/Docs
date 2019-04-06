@@ -17,7 +17,7 @@ Recursively copies a directory tree from a source directory to a target director
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#copyTree>
 
-``` php 
+``` php
 array|boolean copyTree (string $source, string $target, [array $options = array()])
 ```
 
@@ -25,7 +25,7 @@ array|boolean copyTree (string $source, string $target, [array $options = array(
 
 Copy a directory:
 
-``` php 
+``` php
 $xpdo->cacheManager->copyTree('/my/old/dir/','/my/new/dir/');
 ```
 

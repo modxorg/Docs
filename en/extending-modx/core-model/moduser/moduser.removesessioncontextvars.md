@@ -12,7 +12,7 @@ Removes the session vars associated with a specific context.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::removeSessionContextVars()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::removeSessionContextVars())
 
-``` php 
+``` php
 void removeSessionContextVars (string $context)
 ```
 
@@ -20,7 +20,7 @@ void removeSessionContextVars (string $context)
 
 Remove all session vars for the User in the 'sports' Context.
 
-``` php 
+``` php
 $user->removeSessionContextVars('sports');
 ```
 

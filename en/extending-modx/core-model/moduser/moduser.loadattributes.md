@@ -12,7 +12,7 @@ Loads the principal attributes that define a modUser security profile.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::loadAttributes()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::loadAttributes())
 
-``` php 
+``` php
 void loadAttributes ( $target, [ $context = ''], [ $reload = false])
 ```
 
@@ -20,7 +20,7 @@ void loadAttributes ( $target, [ $context = ''], [ $reload = false])
 
 Load attributes for the 'sports' context and the modResource target.
 
-``` php 
+``` php
 $user->loadAttributes('modResource','sports',true);
 ```
 

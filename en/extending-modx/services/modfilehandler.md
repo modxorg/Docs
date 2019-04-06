@@ -16,7 +16,7 @@ The basic idea behind modFileHandler is its "make" method. When passed a path in
 
 For example, a simple snippet that makes a modDirectory object out of the passed "path" property (defaulting to "/www/test/") and then removes the directory:
 
-``` php 
+``` php
 if (!isset($path)) $path = '/www/test/';
 
 $modx->getService('fileHandler','modFileHandler');
@@ -30,7 +30,7 @@ if (!$directory->remove()) {
 
 You can also create modDirectory or modFile objects from non-existent paths. This will allow you to run ->create() on them, allowing you to make new directories or files. For example, to create a new file with the content of 'Hello!' at the path "/www/test/test.txt":
 
-``` php 
+``` php
 $modx->getService('fileHandler','modFileHandler');
 $file = $modx->fileHandler->make('/www/test/test.txt');
 if (!$file->create('Hello!')) {

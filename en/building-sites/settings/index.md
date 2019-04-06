@@ -15,14 +15,12 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/"
 - [Creating a System Setting Programmatically](#SystemSettings-CreatingaSystemSettingProgrammatically)
 - [Types of System Settings](#SystemSettings-TypesofSystemSettings)
 - [Settings List](#SystemSettings-SettingsList)
- 
-
 
  MODx comes with a flexible amount of system settings. They are found in System -> System Settings, and can easily be edited and changed. All system settings are available in your templates by using the \[\[++placeholder\]\] notation. See [Template Tags](building-sites/tag-syntax/common) for more information.
- 
+
 ## Overriding Settings (Inheritance)
 
-While this document mostly talks about _System_ Settings, MODX comes with a very powerful inheritance system that allows you to override settings at the context, usergroup, or user setting. 
+While this document mostly talks about _System_ Settings, MODX comes with a very powerful inheritance system that allows you to override settings at the context, usergroup, or user setting.
 
 Basically, when a setting is requested in the session of a specific user, the settings are checked in the following order:
 
@@ -31,14 +29,13 @@ Basically, when a setting is requested in the session of a specific user, the se
 3. Context Setting (Note that in the manager, the context is usually `mgr`)
 4. System setting
 
-
-  ##  Creating new System Settings (via the GUI) 
+## Creating new System Settings (via the GUI)
 
  To create a new system setting, click the "Create New Settings" link under System -> System Settings.
 
  ![](/download/attachments/18678127/system+settings+annotated.png?version=1&modificationDate=1303174387000)
 
-###  Parameters 
+### Parameters
 
 - Key: This is ultimately the unique name of your \[\[++placeholder\]\]
 - Name: This is the label displayed in the "Name" column while viewing all system settings. This value can be localized (see below).
@@ -48,7 +45,7 @@ Basically, when a setting is requested in the session of a specific user, the se
 - Value: The default value.
 - Description: This value can be localized (see below).
 
-###  Localization 
+### Localization
 
  The values used to describe system settings can be optionally localized (i.e. translated) by referencing a specific localization file. The lexicon keys follow a specific format:
 
@@ -59,30 +56,30 @@ Basically, when a setting is requested in the session of a specific user, the se
 
  In our Quip example, we see a name of _setting\_quip.emailsFrom_ and a description of _setting\_quip.emailsFrom\_desc_. These two values correspond to keys in the **$\_lang** array inside of **default.inc.php**:
 
- ``` php 
+ ``` php
 $_lang['setting_quip.emailsFrom'] = 'From Email';
 $_lang['setting_quip.emailsFrom_desc'] = 'The email address to send system emails from.';
 ```
 
  We encourage you to right-click an existing system setting and choose to "Update System Setting" to get an idea of how this works.
 
-##  Using System Settings in your Code 
+## Using System Settings in your Code
 
  Frequently, you'll want to be able to retrieve the values for your system settings in your Snippets or Plugins. There's more information [on this page](_legacy/administering-your-site/settings "Settings").
 
-###  Getting a System Setting (programmatically) 
+### Getting a System Setting (programmatically)
 
  In a nutshell, you do it using the [getOption](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") function and passing it the unique key for the option, for example:
 
- ``` php 
+ ``` php
 $siteStartId = $modx->getOption('site_start');
 ```
 
- In WordPress, the comparable API function is **get\_option()**. 
+ In WordPress, the comparable API function is **get\_option()**.
 
  This function retrieves the value from the settings cache.
 
-###  Saving a System Setting (programmatically) 
+### Saving a System Setting (programmatically)
 
  Here's where things get a little bit more complicated: when we retrieve the value using [getOption](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption"), we are retrieving the object from the settings cache. This has the distinct advantage of speed, but it means that we essentially have a read-only copy of the setting's value.
 
@@ -90,7 +87,7 @@ $siteStartId = $modx->getOption('site_start');
 
  If we want to update a system setting, we default to the powerful xPDO [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") function. So let's revisit our retrieval of a simple site setting and compare it side by side with the more verbose (and more flexible) xPDO counterpart:
 
- ``` php 
+ ``` php
 print $modx->getOption('site_name');
 // prints the same thing as this:
 $Setting = $modx->getObject('modSystemSetting', 'site_name');
@@ -99,7 +96,7 @@ print $Setting->get('value');
 
  The difference is that using **getObject** retrieves the object from the database uncached, and we can do far more things with an object, including saving that object. So here's how we would retrieve and save a system setting:
 
- ``` php 
+ ``` php
 $Setting = $modx->getObject('modSystemSetting', 'site_name');
 $Setting->set('value', 'My New Site Name');
 $Setting->save();
@@ -109,36 +106,36 @@ $Setting->save();
 
  To rectify this in MODx 2.0.x, you have to clear the _entire_ cache, including your page cache. Clearing your entire cache frequently could slow down your system because it would keep having to rebuild it:
 
- ``` php 
+ ``` php
 // clear cache in MODx 2.0.x
 $modx->cacheManager->clearCache();
 ```
 
  MODx 2.1.x offers more granular caching, which helps us in this case:
 
- ``` php 
+ ``` php
 // clear cache in MODx 2.1.x
 $cacheRefreshOptions =  array( 'system_settings' => array() );
 $modx->cacheManager-> refresh($cacheRefreshOptions);
 ```
 
- In WordPress, the comparable API function is **update\_option()**. 
+ In WordPress, the comparable API function is **update\_option()**.
 
-###  Retrieving a Setting's Meta Data 
+### Retrieving a Setting's Meta Data
 
  Once we start retrieving the _Objects_ that represent the system settings instead of just their value, we can see all of the meta data for any given setting (i.e. all of the attributes). Look at this code as an example:
 
- ``` php 
+ ``` php
 $Setting = $modx->getObject('modSystemSetting', 'site_name');
 print_r( $Setting->toArray() );
-/* 
+/*
 prints out something like this:
-Array ( 
-        [key] => site_name 
-        [value] => My Skiphop Site 
-        [xtype] => textfield 
-        [namespace] => core 
-        [area] => site 
+Array (
+        [key] => site_name
+        [value] => My Skiphop Site
+        [xtype] => textfield
+        [namespace] => core
+        [area] => site
         [editedon] => 2010-10-24 21:53:55 
 )
 */
@@ -146,13 +143,13 @@ Array (
 
  Once you understand how to manipulate objects using MODx and xPDO, you'll be able to retrieve and modify just about everything inside of MODx, because just about everything is an object.
 
-##  Retrieving a list of Related Settings 
+## Retrieving a list of Related Settings 
 
  If you have noticed in the GUI above, MODx allows for some very logical grouping of system settings. The most useful groupings are **area** and by the prefix of the **key**. Using xPDO's [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") method, we can easily supply some search criteria to get the settings that we want.
 
  Here's how we would pull up all settings from the 'Mail' area:
 
- ``` php 
+ ``` php
 $relatedSettings = $modx->getCollection('modSystemSetting', array('area'=>'Mail'));
 foreach ( $relatedSettings as $Setting ) {
         print $Setting->get('value');
@@ -161,7 +158,7 @@ foreach ( $relatedSettings as $Setting ) {
 
  This leads us naturally to one of xPDO's other features: the [Query](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") object. We can use it to pass more complex criteria to our **getCollection call**. Here's how we would pull up all settings that used the prefix of "quip.":
 
- ``` php 
+ ``` php
 $query = $modx->newQuery('modSystemSetting');
 $query->where(array('key:LIKE' => 'quip.%') );
 $relatedSettings = $modx->getCollection('modSystemSetting', $query);
@@ -172,11 +169,11 @@ foreach ( $relatedSettings as $Setting ) {
 
  You may not have been expecting an introduction to xPDO while you were simply trying to retrieve and set system settings, but it's in there.
 
-##  Creating a System Setting Programmatically 
+## Creating a System Setting Programmatically 
 
  You may desire to create a System Setting programmatically in order to provide your users with a cleaner UX/UI. In your code, you can put something like the following:
 
- ``` php 
+ ``` php
 $MySetting = $modx->newObject('modSystemSetting');
 $MySetting->set('key', 'mykey');
 $MySetting->set('value', 'my_value');
@@ -196,7 +193,7 @@ $modx->cacheManager-> refresh($cacheRefreshOptions);
 
  So in this example, you would need to add the following lexicon entries to a lexicon that you have loaded:
 
- ``` php 
+ ``` php
 $_lang['setting_mykey'] = 'Name of My Setting';
 $_lang['setting_mykey_desc'] = 'Description of my key';
 ```
@@ -205,11 +202,11 @@ $_lang['setting_mykey_desc'] = 'Description of my key';
 
  You may find it useful to reference your localized language strings inside your Templates or CMPs. You can do this via a lexicon tag, but you must specify the "setting" topic, e.g.
 
- ``` php 
+ ``` php
 [[!%setting_emailsender? &topic=`setting` &namespace=`core` &language=`en`]]
 ```
 
-##  Types of System Settings 
+## Types of System Settings 
 
  The **xtype** attribute defines what type of field the GUI will use when rendering the interface for this field:
 
@@ -226,7 +223,7 @@ $_lang['setting_mykey_desc'] = 'Description of my key';
 - **modx-combo-rte** : like the textarea, but with formatting controls
 - **modx-combo-context** : allows user to select a context
 
-##  Settings List 
+## Settings List 
 
  A description of each setting follows:
 

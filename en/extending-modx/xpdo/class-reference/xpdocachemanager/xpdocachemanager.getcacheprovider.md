@@ -12,13 +12,13 @@ Get an instance of a provider which implements the xPDOCache interface. Defaults
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#getCacheProvider>
 
-``` php 
+``` php
 void &getCacheProvider ([ $key = ''], [ $options = array()])
 ```
 
 ## Example
 
-``` php 
+``` php
 $cacheManager = $xpdo->getCacheManager();
 $provider = $cacheManager->getCacheProvider('xPDOMemCache');
 ```

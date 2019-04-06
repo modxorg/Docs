@@ -12,7 +12,7 @@ Get a field value (or a set of values) by the field key(s) or name(s).
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#get>
 
-``` php 
+``` php
 mixed get(
    string|array $k,
    [string|array $format = null],
@@ -26,7 +26,7 @@ Do not use the $format parameter if retrieving multiple values of different type
 
 Get the name field value of the object.
 
-``` php 
+``` php
 $object->set('name','Charles');
 $name = $object->get('name');
 echo $name; // produces "Charles"
@@ -34,7 +34,7 @@ echo $name; // produces "Charles"
 
 Get an array of values for multiple fields:
 
-``` php 
+``` php
 $object->set('name_first','Charles');
 $object->set('name_last','Longbottom');
 $names = $object->get(array('name_first','name_last'));

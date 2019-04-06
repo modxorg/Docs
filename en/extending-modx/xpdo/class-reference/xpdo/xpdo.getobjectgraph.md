@@ -19,7 +19,7 @@ The criteria can be a primary key value, an array of primary key values (for mul
 
 API Docs: <http://api.modx.com/xpdo/xPDO.html#getObjectGraph>
 
-``` php 
+``` php
 xPDOObject|null getObjectGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 ```
 
@@ -31,7 +31,7 @@ Before you try using this method to walk through your custom data model, here's 
 
 You may be tempted to retrieve MODX Template Variable values by using **getObjectGraph**:
 
-``` php 
+``` php
 // DO NOT DO THIS!!!  TV's have some special methods
 $page = $modx->getObjectGraph('modResource', '{"TemplateVarResources":{}}',123);
 $output = '';
@@ -50,7 +50,7 @@ You'll notice that if you use the above example to get your TV values, you'll so
 
 Instead, use the helper functions **getTVValue** and **setTVValue**:
 
-``` php 
+``` php
 $page = $modx->getObject('modResource', 123);
 return $page->getTVValue('my_tv_name');
 // or (faster)
@@ -61,7 +61,7 @@ return $page->getTVValue($tvId); // (ID of the TV)
 
 Get a Box object with ID 134, along with related BoxColors and Color instances already loaded.
 
-``` php 
+``` php
 $box = $xpdo->getObjectGraph('Box', array('BoxColors' => array('Color' => array())), 134);
 foreach ($box->getMany('BoxColors') as $boxColor) {
     echo $boxColor->getOne('Color')->get('name');
@@ -70,7 +70,7 @@ foreach ($box->getMany('BoxColors') as $boxColor) {
 
 The same example using a JSON-format $graph parameter.
 
-``` php 
+``` php
 $box = $xpdo->getObjectGraph('Box', '{"BoxColors":{"Color":{}}}', 134);
 foreach ($box->getMany('BoxColors') as $boxColor) {
     echo $boxColor->getOne('Color')->get('name');

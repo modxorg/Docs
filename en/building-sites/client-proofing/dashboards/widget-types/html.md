@@ -12,13 +12,13 @@ Simply place your HTML in the content panel, and it will load the HTML in the wi
 
 This widget type also supports cached placeholders and element calls (uncached calls will not work). So, for example, you can use:
 
-``` php 
+``` php
 Hello, [[+modx.user.username]]!
 ```
 
 To output the username of the logged-in user. You can also call Snippets, like so:
 
-``` php 
+``` php
 [[MyDashboardSnippet]]
 ```
 

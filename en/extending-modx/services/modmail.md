@@ -22,7 +22,7 @@ The following example is based on the native modPHPMailer which comes with MODX 
 
 Let's say we have an email template in the Chunk 'myEmailTemplate'. We want to send it via mail to user@example.com, with the From address being 'me@example.org'. We also want it to be an HTML email. Here's how we'd do it:
 
-``` php 
+``` php
 $message = $modx->getChunk('myEmailTemplate');
 
 $modx->getService('mail', 'mail.modPHPMailer');
@@ -45,7 +45,7 @@ Note that we have to reset() if we want to send mail again; this resets all the 
 
 Also, if you want to send the email to multiple addresses, you can simply call address('to') again, like so:
 
-``` php 
+``` php
 $modx->mail->address('to','user@example.com');
 $modx->mail->address('to','mom@example.org');
 ```

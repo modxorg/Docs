@@ -6,7 +6,7 @@ _old_uri: "2.x/getting-started/installation/basic-installation/nginx-server-conf
 
 Here is an example config for a MODX installation on an nginx server (php-fpm is required for nginx servers). This example enables MODX FURLs as well.
 
-``` php 
+``` php
 server {
         listen 80;
         server_name example.com www.example.com;

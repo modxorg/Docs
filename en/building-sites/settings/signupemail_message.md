@@ -10,7 +10,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/signupemail_mess
 **Type**: String 
 **Default**:
 
-``` html 
+``` html
 Hello [[+uid]]
 
 Here are your login details for [[+sname]] Content Manager:

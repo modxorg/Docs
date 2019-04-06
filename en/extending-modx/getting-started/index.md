@@ -48,7 +48,7 @@ _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introdu
 
  Using the MODx object (and all of its respective classes) is quite simple. All you need is this code:
 
- ``` php 
+ ``` php
 require_once '/absolute/path/to/modx/config.core.php';
 require_once MODX_CORE_PATH.'model/modx/modx.class.php';
 $modx = new modX();

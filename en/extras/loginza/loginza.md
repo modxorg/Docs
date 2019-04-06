@@ -14,13 +14,13 @@ On first login user will be registered. On next logins user profile will be upda
 
 Call uncached snippet on your page.
 
-``` php 
+``` php
 [[!Loginza]]
 ```
 
 Register user to group Users, do not update his profile on next logins and remember him.
 
-``` php 
+``` php
 [[!Loginza?
   &groups=`Users`
   &updateProfile=`0`

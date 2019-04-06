@@ -14,7 +14,7 @@ The codebase in Revolution has switched to [xPDO](http://www.xpdo.org/ "xPDO Hom
 
 So, how does one actually get an object in the new modx? Well, you used to have to rely on a handful of different functions:
 
-``` php 
+``` php
 // The old way of doing things in MODx 1.x and earlier
 $doc = $modx->getDocument(23);
 $doc = $modx->getDocument(45,'pagetitle,introtext');
@@ -34,7 +34,7 @@ return $users;
 
 Not anymore. Things are much simpler, and there's really only a few functions you'll need. Lets look at some examples:
 
-``` php 
+``` php
 // getting a chunk with ID 43
 $chunk = $modx->getObject('modChunk',43);
 
@@ -95,7 +95,7 @@ This tag represents a column in the database. Most of these attributes are prett
 
 Okay, this is where we get into DB relationships. An **Aggregate** relationship is a relationship where, in laymans terms, if you were to delete this chunk, it wouldn't delete the Category that it's related to. If it were a **Composite** relationship, it would. There is "dependence" in the Composite relationship that is related to the other object. For an example, let's get all the modContextSettings for a modContext:
 
-``` php 
+``` php
 $context = $modx->getObject('modContext','web');
 $settings = $context->getMany('ContextSetting');
 foreach ($settings as $setting) {

@@ -12,7 +12,7 @@ Adds a LEFT JOIN clause to the query.
 
 API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::leftJoin()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::leftJoin())
 
-``` php 
+``` php
 void leftJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunction = xPDOQuery::SQL_AND], [ $binding = null], [ $condGroup = 0])
 ```
 
@@ -20,7 +20,7 @@ void leftJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunctio
 
 Select all Boxes and the Owner name.
 
-``` php 
+``` php
 $query = $xpdo->newQuery('Box');
 $query->select($xpdo->getSelectColumns('Box'));
 $query->select(array(

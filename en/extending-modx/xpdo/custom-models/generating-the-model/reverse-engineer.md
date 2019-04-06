@@ -46,14 +46,14 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
 
  Together, they behave similarly to other ORM's, e.g. Doctrine
 
- ``` php 
+ ``` php
 // Sample Doctrine code:
 Doctrine_Core::generateModelsFromDb();
 ```
 
  Here's a reverse-engineering script that allows a bit of configuration and does a little error checking:
 
- ``` php 
+ ``` php
 <?php /* ------------------------------------------------------------------------------
   ================================================================================
   === Reverse Engineer Existing MySQL Database Tables to xPDO Maps and Classes ===
@@ -275,7 +275,7 @@ function print_msg($msg) {
  To check whether or not this script succeeded, take a look inside the folder that is mentioned in its output, e.g. 
 **/user/youruser/public\_html/core/components/yourpackage/model/yourpackage**. You should see a couple files – one for each table. If you see a TON of tables corresponding to all of MODx's tables, then try to explicitly set the database password and name – leave the following line commented out:
 
- ``` php 
+ ``` php
 //include('core/config/config.inc.php');
 ```
 
@@ -287,7 +287,7 @@ function print_msg($msg) {
 
  In the scaffolding script above, set the following:
 
- ``` php 
+ ``` php
 $regenerate_schema = false;
 ```
 
@@ -297,7 +297,7 @@ $regenerate_schema = false;
 
  Once you've created the required xPDO classes, you need to use xPDO's methods to access them (e.g. in a Snippet or in a Custom Manager Page). In order for xPDO to access the objects, you have to load up the corresponding PHP classes using the **addPackage** method. **addPackage** is what triggers the PHP classes to be included.
 
- ``` php 
+ ``` php
 if(!$modx->addPackage('mypackage','/full/path/to/core/components/mypackage/model/','mp_')) {
     return 'There was a problem adding your package!  Check the logs for more info!';
 }

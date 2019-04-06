@@ -30,7 +30,7 @@ The value returned from the data source can either be a string value (including 
 
 For example, controls that accept string values such as a radio button group or select list will attempt to convert a record set (rows and columns) into the following format:
 
-``` php 
+``` php
 col1row1Value==col2row1Value||col1row2Value==col2row2Value,...
 ```
 

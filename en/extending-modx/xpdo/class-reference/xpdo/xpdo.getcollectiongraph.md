@@ -14,13 +14,13 @@ If none are found, returns an empty array.
 
 API Docs: <http://api.modx.com/xpdo/xPDO.html#getCollectionGraph>
 
-``` php 
+``` php
 array getCollectionGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 ```
 
 Remember, if you are using xPDO map and class files that were generated from XML schema, the classname is **not** the same as your table name. If in doubt, have a look at the schema XML file, e.g.
 
-``` php 
+``` php
 <object class="MyClassName" table="my_class_name" extends="xPDOObject">
 ```
 
@@ -28,7 +28,7 @@ Remember, if you are using xPDO map and class files that were generated from XML
 
 Get a collection of Box objects with related BoxColors and Color objects, where the Box has a width of 40.
 
-``` php 
+``` php
 $boxes = $xpdo->getCollectionGraph('Box', '{"BoxColors":{"Color":{}}}', array('Box.width' => 40));
 foreach ($boxes as $box) {
     foreach ($box->getMany('BoxColors') as $boxColor) {
@@ -44,7 +44,7 @@ The main benefit of using getCollectionGraph is to retrieve data from related ta
 
 There are a couple caveats to keep in mind when using getCollectionGraph. You can't use the traditional "prepare" and "toSQL" methods. Consider the following code:
 
-``` php 
+``` php
 $criteria['modResource.id:IN'] = array(1,2,3);
 $criteria['TemplateVarResources.tmplvarid'] = 5;
 $criteria = $modx->newQuery('modResource', $criteria);

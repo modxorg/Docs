@@ -12,7 +12,7 @@ Gets a map of events and registered plugins for the specified context.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getEventMap()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getEventMap())
 
-``` php 
+``` php
 array getEventMap (string $contextKey)
 ```
 
@@ -20,7 +20,7 @@ array getEventMap (string $contextKey)
 
 Get the event map for the current Context.
 
-``` php 
+``` php
 $map = $modx->getEventMap();
 ```
 

@@ -18,7 +18,7 @@ Each message is an array with the following keys:
 
 API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#getMessages>
 
-``` php 
+``` php
 array getMessages ()
 ```
 
@@ -26,7 +26,7 @@ array getMessages ()
 
 Check to see if any validation errors occur. If so, return the errors and print out to the browser.
 
-``` php 
+``` php
 $validator = $obj->getValidator();
 if ($validator->validate() == false) {
    $errorMessages = $validator->getMessages();

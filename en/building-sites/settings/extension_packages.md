@@ -18,13 +18,13 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/extension_packag
 
 ### Sample value
 
- ``` json 
+ ``` json
 [{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}},{"articles":{"path":"[[++core_path]]components/articles/model/"}}]
 ```
 
  You can make use of the
 
- ``` php 
+ ``` php
 [[++core_path]]
 ```
 
@@ -34,7 +34,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/extension_packag
 
  If your extension uses a different table prefix, you should list this in your JSON by using the **tablePrefix** key, e.g.
 
- ``` json 
+ ``` json
 [{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/","tablePrefix":"ext_"}},{"articles":{"path":"[[++core_path]]components/articles/model/"}}]
 ```
 
@@ -44,13 +44,13 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/extension_packag
 
 ### addExtensionPackage
 
- ``` php 
+ ``` php
 boolean addExtensionPackage ([string $pkg = ''], [string $modelpath = ''], [array $options = array()])
 ```
 
  The $pkg argument really specifies a subfolder in the named model directory. In most packages, this name is the same as the package's namespace, but other packages may specify multiple sub-folders in their model. Note that the $options array can specify a "tablePrefix" key, e.g.
 
- ``` php 
+ ``` php
 $modx->addExtensionPackage('mypkg', '/path/to/core/components/mypkg/model/', array('tablePrefix'=>'mypre_'));
 ```
 
@@ -58,6 +58,6 @@ $modx->addExtensionPackage('mypkg', '/path/to/core/components/mypkg/model/', arr
 
 When it's time to clean up, remove your node from the **extension\_packages** array using this convenience function:
 
- ``` php 
+ ``` php
 boolean removeExtensionPackage (string $pkg = '')
 ```

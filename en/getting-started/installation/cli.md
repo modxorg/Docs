@@ -18,7 +18,7 @@ First off, [download MODX](http://modx.com/download/) and extract the files to y
 
 Next, edit the XML file and set the appropriate database information, MODX paths, and other configuration parameters, and then in your command line prompt, browse to the MODX setup/ directory, and type:
 
-``` php 
+``` php
 php ./index.php --installmode=new
 ```
 
@@ -26,7 +26,7 @@ MODX will proceed to install, and when finished will display the time it took to
 
 Note : if your core folder is in a "non-standard" location, you might want to use :
 
-``` php 
+``` php
 --core_path=/path/to/core/
 ```
 
@@ -41,7 +41,7 @@ Follow the same steps as new installations, but this time in your XML file you n
 
 And any other attributes you would like to change during the upgrade. There is an example upgrade xml file named "config.dist.upgrade.xml". Then, once you are ready, browse to the MODX setup directory, and type:
 
-``` php 
+``` php
 php ./index.php --installmode=upgrade
 ```
 
@@ -53,7 +53,7 @@ Follow the same steps as basic upgrade, but this time in your XML file you need 
 
 Then, once you are ready, browse to the MODX setup directory, and type:
 
-``` php 
+``` php
 php ./index.php --installmode=upgrade-advanced
 ```
 

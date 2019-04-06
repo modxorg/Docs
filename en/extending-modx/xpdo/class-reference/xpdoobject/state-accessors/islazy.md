@@ -12,6 +12,6 @@ Indicates if the object or specified field is lazy.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isLazy>
 
-``` php 
+``` php
 boolean isLazy ([string $key = ''])
 ```

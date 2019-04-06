@@ -19,7 +19,7 @@ For example, 3rd party devs might want to create a Lexicon Topic named 'buttons'
 
 You can then load the topic via:
 
-``` php 
+``` php
 $modx->lexicon->load('tinymce:buttons');
 ```
 

@@ -12,7 +12,7 @@ Register HTML to be injected before the closing HEAD tag.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientStartupHTMLBlock()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupHTMLBlock())
 
-``` php 
+``` php
 void regClientStartupHTMLBlock (string $html)
 ```
 
@@ -20,7 +20,7 @@ void regClientStartupHTMLBlock (string $html)
 
 Render a faux tag element before the end of the HEAD.
 
-``` php 
+``` php
 $modx->regClientStartupHTMLBlock('<tag></tag>');
 ```
 

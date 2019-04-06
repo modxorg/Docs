@@ -21,7 +21,7 @@ You'll note that as you type the name of the widget, text appears below it follo
 
 Now, in your dashboard widget content, go ahead and put this:
 
-``` php 
+``` php
 <p>Hello, world!</p>
 ```
 
@@ -57,7 +57,7 @@ Obviously, there are more widget types to create. See the [Dashboard Widget Type
 2. [Assigning a Dashboard to a User Group](building-sites/client-proofing/dashboards/usergroups)
 3. [Creating a Dashboard Widget](building-sites/client-proofing/dashboards/creating-a-widget)
 4. [Dashboard Widget Types](building-sites/client-proofing/dashboards/widget-types)
-  1. [Dashboard Widget Type - File](building-sites/client-proofing/dashboards/widget-types/file)
-  2. [Dashboard Widget Type - HTML](building-sites/client-proofing/dashboards/widget-types/html)
-  3. [Dashboard Widget Type - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
-  4. [Dashboard Widget Type - Snippet](building-sites/client-proofing/dashboards/widget-types/snippet)
+    1. [Dashboard Widget Type - File](building-sites/client-proofing/dashboards/widget-types/file)
+    2. [Dashboard Widget Type - HTML](building-sites/client-proofing/dashboards/widget-types/html)
+    3. [Dashboard Widget Type - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+    4. [Dashboard Widget Type - Snippet](building-sites/client-proofing/dashboards/widget-types/snippet)

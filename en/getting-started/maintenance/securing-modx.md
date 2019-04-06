@@ -86,7 +86,7 @@ The manager is arguably the second most important path to change. After all, if 
 
 Choose a randomly generated alphanumeric bit of text to use as your new manager folder. For maximum compatibility, it should use only lowercase letters. Then update the **core/config/config.inc.php** file to something like the following:
 
-``` php 
+``` php
 $modx_manager_path = '/home/youruser/public_html/r4nd0m/';
 $modx_manager_url = '/r4nd0m/';
 ```
@@ -99,7 +99,7 @@ You can also lock down access to the manager by configuring your server and/or i
 
 Just as with the manager directory, choose a random alphanumeric name for your **connectors** directory, and then update your core/config/config.inc.php to reflect the new location, e.g.
 
-``` php 
+``` php
 $modx_connectors_path = '/home/youruser/public_html/0therp4th/';
 $modx_connectors_url = '/0therp4th/';
 ```
@@ -110,7 +110,7 @@ As with the manager, this could also potentially live on a separate domain, howe
 
 The assets URL can be changed, but this is the lowest priority change because anyone visiting your site will be able to examine the source HTML and see the paths to this directory. But it's good to change anyway, simply to confuse any efforts at fingerprinting.
 
-``` php 
+``` php
 $modx_assets_path = '/home/youruser/public_html/4ssetsh3r3/';
 $modx_assets_url = '/4ssetsh3r3/';
 ```
@@ -179,7 +179,7 @@ Inside your manager's folder (which you've changed by now from the default /mana
 
 Here is a sample **.htaccess** file to put inside your manager directory:
 
-``` php 
+``` php
 RewriteEngine On
 RewriteBase /
 RewriteCond %{SERVER_PORT} 80

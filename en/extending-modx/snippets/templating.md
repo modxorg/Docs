@@ -14,7 +14,7 @@ Let's take a case scenario; say you want to iterate across the published, non-de
 
 Go ahead and create a snippet called 'ResourceLister', and put this inside:
 
-``` php 
+``` php
 /* first, build the query */
 $c = $modx->newQuery('modResource');
 /* we only want published and undeleted resources */
@@ -46,13 +46,13 @@ This does what we want, but puts the HTML inline. We don't want that. It doesn't
 
 First off, let's create a chunk that we'll use for each item in the result set. Call it "ResourceItem", and make this its content:
 
-``` php 
+``` php
 <li><a href="[[~[[+id]]]]">[[+pagetitle]]</a></li>
 ```
 
 Basically, we make an LI tag, and put some placeholders were our content was. We have available any field in the Resource, and here we're just using the ID and pagetitle fields. The \[\[~ tells MODx to make a link from the ID passed in the \[\[+id\]\] property. Now let's add a default property to the snippet, called 'tpl', to the top of our snippet code:
 
-``` php 
+``` php
 $tpl = $modx->getOption('tpl',$scriptProperties,'ResourceItem');
 ```
 
@@ -60,7 +60,7 @@ This gets us the &tpl= property from the Snippet call, since $scriptProperties j
 
 And then, change the foreach loop in the Snippet to this:
 
-``` php 
+``` php
 foreach ($resources as $resource) {
    $resourceArray = $resource->toArray();
    $output .= $modx->getChunk($tpl,$resourceArray);
@@ -71,7 +71,7 @@ The code first turns the modResource object into an array of field=name pairs (i
 
 An alternative and slightly faster (especially helpful when looping through a big xPDO result) but also a bit longer way to do the same would be
 
-``` php 
+``` php
 // first get the template chunk in a variable
 $tpl = $this->modx->getParser()->getElement('modChunk', 'chunkName');
 $tpl->setCacheable(false);
@@ -86,7 +86,7 @@ foreach ($resources as $resource) {
 
 Now the user can call the snippet this way to override the chunk for each Resource with this call:
 
-``` php 
+``` php
 [[!ResourceLister? &tpl=`MyOwnChunk`]]
 ```
 
@@ -96,19 +96,19 @@ Meaning they can template their results however they want - using LIs, or table 
 
 What if we want the user to be able to specify a CSS class for each LI row, but not have to make their own custom chunk? Simple, we just add a default property 'rowCls' to our snippet code at the top, below our first getOption call:
 
-``` php 
+``` php
 $rowCls = $modx->getOption('rowCls',$scriptProperties,'resource-item');
 ```
 
 This tells MODx to default the &rowCls property for the snippet to 'resource-item'. Let's go edit our ResourceItem chunk:
 
-``` php 
+``` php
 <li class="[[+rowCls]]"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></li>
 ```
 
 And finally, change our foreach loop to this:
 
-``` php 
+``` php
 foreach ($resources as $resource) {
    $resourceArray = $resource->toArray();
    $resourceArray['rowCls'] = $rowCls;
@@ -122,13 +122,13 @@ Note how we're explicitly setting the 'rowCls' variable into our $resourceArray 
 
 What if we want the user to be able to pass in what parent to grab resources from? Again, we just add a default property 'id' to our snippet code at the top, below our getOption calls:
 
-``` php 
+``` php
 $id = (int)$modx->getOption('id',$scriptProperties,390);
 ```
 
 Basically, allow the user to override the parent ID for the Snippet - to say Resource 123, with an &id=`123` property - in their snippet call. But we want it to default to 390. And then we'll change the getChildIds line to this:
 
-``` php 
+``` php
 $children = $modx->getChildIds($id);
 ```
 
@@ -136,7 +136,7 @@ Obviously, you could add more options to this snippet, such as firstRowCls (for 
 
 For reference, our final code looks like this:
 
-``` php 
+``` php
 $tpl = $modx->getOption('tpl',$scriptProperties,'ResourceItem');
 $id = (int)$modx->getOption('id',$scriptProperties,390);
 $rowCls = $modx->getOption('rowCls',$scriptProperties,'resource-item');

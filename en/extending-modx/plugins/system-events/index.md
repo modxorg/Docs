@@ -162,7 +162,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/"
 
  Creating an event using the MODX API would look something like this:
 
- ``` php 
+ ``` php
 $Event = $modx->newObject('modEvent');
 $Event->set('name', 'OnMyCustomEvent');
 $Event->set('service',1); 
@@ -171,13 +171,13 @@ $Event->set('groupname', 'Custom');
 
  Then your code could trigger that event by name:
 
- ``` php 
+ ``` php
 $modx->invokeEvent('OnMyCustomEvent', $options);
 ```
 
  Finally, a plugin could be set to listen for that event. In this case, it can receive options passed to it.
 
- ``` php 
+ ``` php
 //... TODO...
 ```
 

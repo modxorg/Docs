@@ -23,21 +23,21 @@ This event is triggered inside the getResource() function in modrequest.class.ph
 
 In MODX 2.3 and later you can access the resource properties (see [Issue 9841](http://bugs.modx.com/issues/9841)):
 
-``` php 
+``` php
 // Override Output
 $modx->event->params['resource']->_content = 'Overridden...';
 ```
 
 You can access resource properties like so:
 
-``` php 
+``` php
 // Override Pagetitle
 $modx->event->params['resource']->pagetitle = 'My New Pagetitle';
 ```
 
 TVs are a trickier. They get cached as an standard array. For reading and overriding values, you will focus on element 1:
 
-``` php 
+``` php
 // Reading value of TV named "my_tv"
 $my_tv = $modx->event->params['resource']->my_tv[1];
 /*

@@ -14,7 +14,7 @@ This includes default values for each field and is used by the objects themselve
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getFields>
 
-``` php 
+``` php
 array getFields (string $className)
 ```
 
@@ -22,7 +22,7 @@ array getFields (string $className)
 
 Get a list of fields for the Box object, which has 3 fields: id, width and height:
 
-``` php 
+``` php
 $fields = $xpdo->getFields('Box');
 print_r($fields); // prints: Array ([id] => 1, [width] => 10, [height] => 23)
 ```

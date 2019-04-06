@@ -15,25 +15,25 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  In Revolution, the Output Filter applies one or more of series of output modifiers, which behave similarly to PHx calls in MODx Evolution - except they're built into the core. The syntax looks like this:
 
- ``` php 
+ ``` php
 [[element:modifier=`value`]]
 ```
 
  They can also be chained (executed left to right):
 
- ``` php 
+ ``` php
 [[element:modifier:anothermodifier=`value`:andanothermodifier:yetanother=`value2`]]
 ```
 
  You can also use these to modify Snippet output; note that the modifier comes after the Snippet name and before the question mark, e.g.
 
- ``` php 
+ ``` php
 [[mySnippet:modifier=`value`? &mySnippetParam=`something`]]
 ```
 
  If you have longer code in a :then=``:else=`` statement and you want to make it more readable by putting it on multiple lines, it has to be done like this:
 
- ``` php 
+ ``` php
 [[+placeholder:is=`0`:then=`
      // code
 `:else=`
@@ -133,7 +133,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  In general, any content in a placeholder that you think **might change dynamically** should be uncached. For example:
 
- ``` php 
+ ``` php
 [[+placeholder:default=`A default value!`]]
 ```
 
@@ -147,7 +147,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  If you have properties on the tag, you'll want to specify those **after** the modifier:
 
- ``` php 
+ ``` php
 [[!getResources:default=`Sorry - nothing matched your search.`?
    &tplFirst=`blogTpl`
    &parents=`2,3,4,8`
@@ -159,7 +159,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  Also, [Snippets](extending-modx/snippets "Snippets") can be used as custom modifiers. Simply put the [Snippet](extending-modx/snippets "Snippets") name instead of the modifier. Example with a snippet named 'makeExciting' that appends a variable amount of exclamation marks:
 
- ``` php 
+ ``` php
 [[*pagetitle:makeExciting=`4`]]
 ```
 
@@ -175,7 +175,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  Here is a sample implementation for our snippet makeExciting:
 
- ``` php 
+ ``` php
 $defaultExcitementLevel = 1;
 $result = $input;
 if ( true === isset($options) ) {
@@ -197,13 +197,13 @@ return $result;
 
  A good example of chaining would be to format a date string to another format, like so:
 
- ``` php 
+ ``` php
 [[+mydate:strtotime:date=`%Y-%m-%d`]]
 ```
 
  Directly accessing the modx\_user\_attributes table in the database using output modifiers instead of a [Snippet](extending-modx/snippets "Snippets") can be accomplished simply by utilizing the userinfo modifier. Select the appropriate column from the table and specify it as the property of the output modifier, like so:
 
- ``` php 
+ ``` php
 User Internal Key: [[!+modx.user.id:userinfo=`internalKey`]]<br />
 User name: [[!+modx.user.id:userinfo=`username`]]<br />
 Full Name: [[!+modx.user.id:userinfo=`fullname`]]<br />
@@ -230,7 +230,7 @@ Number of Logins: [[+modx.user.id:userinfo=`logincount`]]
 
 Note that the user ID and username is already available by default in MODx, so you dont need to use the "userinfo" modifier: 
 
-``` php 
+``` php
 [[!+modx.user.id]] - Prints the ID
 [[!+modx.user.username]] - Prints the username
 ```

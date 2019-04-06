@@ -4,17 +4,17 @@ _old_id: "353"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)/custom-output-filter-examples"
 ---
 
-##  Introduction 
+## Introduction 
 
  Custom Output Filters are MODx Snippets dedicated to formatting placeholder output in the view layer (in a Template or in a Chunk). If a raw placeholder, e.g.
 
-``` php 
+``` php
 [[*pagetitle]]
 ```
 
  returns a string of text, you can modify it via a custom Output Filter, e.g.
 
-``` php 
+``` php
 [[*pagetitle:myOutputFilter]]
 ```
 
@@ -24,11 +24,11 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  Check the page on MODX's [built-in output filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") before writing your own filter.
 
-##  Creating a Custom Output Modifier 
+## Creating a Custom Output Modifier 
 
  When writing your own Output Modifier, your Snippet can take the following inputs:
 
-``` php 
+``` php
 $input; // the value that is being formatted/filtered
 $options; // optional values passed via backticks
 ```
@@ -37,7 +37,7 @@ $options; // optional values passed via backticks
 
  The syntax is that the Snippet name comes after a colon. Example with a snippet named 'makeDownloadLink':
 
-``` php 
+``` php
 [[+file:makeDownloadLink=`notitle`]]
 ```
 
@@ -53,21 +53,21 @@ $options; // optional values passed via backticks
 
  The most important (and perhaps the most obvious) of these parameters is the **$input** parameter. Your Snippet could do something as simple as this:
 
-``` php 
+``` php
 return strtolower($input);
 ```
 
-##  Examples 
+## Examples 
 
  As the examples to be found below are not included in the core, you will need to add these yourself. Luckily, MODx makes this ridiculously easy. You can simply use snippets as output filters, so the process of adding a custom output filter is merely adding a new snippet! To use the output filter, you reference the snippet name.
 
  To documentation contributors: please add examples in alphabetical order.
 
-###  alternateClass 
+### alternateClass 
 
  alternateClass simply checks if an integer (for example, a counting placeholder) passed can be divided by two. If that is possible, it returns the class you specify as the output filter's property.
 
-``` php 
+``` php
 <?php
 /*
  * Based on phx:alternateClass by Smashingred
@@ -83,15 +83,15 @@ if ($input % 2) {
 
  Use like this:
 
-``` php 
+``` php
 [[+component.idx:alternateClass=`alt`]]
 ```
 
-###  parseLinks 
+### parseLinks 
 
  The parseLinks output filter finds links, and replaces them with a html <a> attribute.</a>
 
-``` php 
+``` php
 <?php
 /*
  * Based on phx:parseLinks
@@ -106,7 +106,7 @@ return $t;
 
 This parseTags takes input as a comma delimited list, and makes all individual tags a link to resource 9 with tag=tagname query parameter appended to the link.
 
-``` php 
+``` php
 <?php
 /*
  * Based on phx:parseLinks
@@ -121,7 +121,7 @@ return $t;
 
 This parseTags takes input as a comma delimited list, and makes all individual tags a link to resource 9 with tag=tagname query parameter appended to the link.
 
-``` php 
+``` php
 <?php
 /*
  * parseTags output filter
@@ -140,7 +140,7 @@ if ($input == '') { return ''; } // Output filters are also processed when the i
 
 This shortens the input like :ellipsis but it does not truncate words. Defaults to the length of max. 50 characters. Based on code by gOmp.
 
-``` php 
+``` php
 <?php
 $output = '';
 $options = !empty($options)?$options:50;
@@ -160,7 +160,7 @@ return $output;
 
 Get a substring of the input.
 
-``` php 
+``` php
 <?php
 $options=explode(',',$options);
 return count($options)>1 ? substr($input,$options[0],$options[1]) : substr($input,$options[0]);
@@ -169,14 +169,14 @@ return count($options)>1 ? substr($input,$options[0],$options[1]) : substr($inpu
 
 Example:
 
-``` php 
+``` php
 <span>[[*introtext:substring=`0,1`]]</span>[[*introtext:substring=`1`]]
 ```
 
 ### numberformat
 [PHP: number_format](http://php.net/manual/en/function.number-format.php)
 
-``` php 
+``` php
 <?php
 $number = floatval($input);
 $optionsXpld = @explode('&', $options);
@@ -198,6 +198,6 @@ return $output;
 ```
 
  Example:
-``` php 
+``` php
 [[+price:numberformat=`&decimals=2&dec_point=,&thousands_sep=.`]]
 ```

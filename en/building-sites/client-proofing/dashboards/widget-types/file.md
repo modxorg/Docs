@@ -23,7 +23,7 @@ Simply place the name of the file in the content textarea of the widget. You can
 
 There are two methods in your external file to return the content of the widget. The first is simply returning the output, like so:
 
-``` php 
+``` php
 <?php
 return 'Hello, world!';
 ```
@@ -36,8 +36,8 @@ You can also return a class name of a class you have defined in your external fi
 
 An example class-based widget would look like this:
 
-``` php 
-class modDashboardWidgetHelloWorld extends modDashboardWidgetInterface { 
+``` php
+class modDashboardWidgetHelloWorld extends modDashboardWidgetInterface {
     public $version = '1.0';
 
     public function render() {

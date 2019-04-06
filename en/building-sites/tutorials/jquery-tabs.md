@@ -16,7 +16,7 @@ _old_uri: "2.x/case-studies-and-tutorials/loading-pages-in-the-front-end-via-aja
 
  Now we'll use jQuery's fun tabs() command to create the front-end loading system. The code would look something like this (pulled from jquery UI's docs):
 
- ``` php 
+ ``` php
 <script type="text/javascript">
 $(function() { $("#tabs").tabs(); });
 </script>
@@ -39,13 +39,13 @@ $(function() { $("#tabs").tabs(); });
 
  For getResources, make sure you use the 'tpl' property, which you can create as a Chunk named 'myRowTpl' (or whatever you want), looks like this:
 
- ``` php 
+ ``` php
 <li id="[[+id]]"><a href="[[~[[+id]]]]" title="[[+longtitle]]">[[+pagetitle]]</a></li>
 ```
 
  and in our tabs page:
 
- ``` php 
+ ``` php
 <script type="text/javascript">
 $(function() { $("#tabs").tabs(); });
 </script>
@@ -60,13 +60,13 @@ $(function() { $("#tabs").tabs(); });
 
  For Wayfinder, make sure your rowTpl template, which you can create as a Chunk named 'myRowTpl' (or whatever you want), looks like this:
 
- ``` php 
+ ``` php
 <li[[+wf.id]][[+wf.classes]]><a href="[[+wf.link]]" title="[[+wf.title]]">[[+wf.linktext]]</a></li>
 ```
 
  and in our tabs page:
 
- ``` php 
+ ``` php
 <script type="text/javascript">
 $(function() { $("#tabs").tabs(); });
 </script>
@@ -81,7 +81,7 @@ $(function() { $("#tabs").tabs(); });
 
  Or, you can use a Snippet such as this one to grab the pagetitle:
 
- ``` php 
+ ``` php
 <?php
 /**
  * Grabs a field for a specified Resource
@@ -102,7 +102,7 @@ return $resource->get($field);
 
  Call this Snippet getField like so in our tabs page:
 
- ``` php 
+ ``` php
 <script type="text/javascript">
 $(function() { $("#tabs").tabs(); });
 </script>
@@ -121,7 +121,7 @@ $(function() { $("#tabs").tabs(); });
 
  pdoTools includes the FastField extended parser to provide a new field-fetching MODX tag using a "#" identifier, so they both work the same way.
 
- ``` php 
+ ``` php
 <script type="text/javascript">
 $(function() { $("#tabs").tabs(); });
 </script>

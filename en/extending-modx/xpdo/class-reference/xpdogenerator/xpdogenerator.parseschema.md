@@ -12,7 +12,7 @@ Parses an XPDO XML schema and generates classes and map files from it.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOGenerator.html#parseSchema>
 
-``` php 
+``` php
 boolean parseSchema (string $schemaFile, [string $outputDir = ''], [boolean $compile = false])
 ```
 
@@ -20,7 +20,7 @@ boolean parseSchema (string $schemaFile, [string $outputDir = ''], [boolean $com
 
 Generate the map and class files for an XML schema:
 
-``` php 
+``` php
 $manager = $xpdo->getManager();
 $generator = $manager->getGenerator();
 $generator->parseSchema('mypackage.mysql.schema.xml','/path/to/mypackage/model/');

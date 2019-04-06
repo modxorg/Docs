@@ -75,7 +75,7 @@ If you can't edit your .htaccess or if you want to ponctually use SmartOptimizer
 
 Before (without SmartOptimizer)
 
-``` html                       |
+``` html                      |
 <!-- Your CSS files -->
 <link rel="stylesheet" href="[[+link_to_css]]"/>
 

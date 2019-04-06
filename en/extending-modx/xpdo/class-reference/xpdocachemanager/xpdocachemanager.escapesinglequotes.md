@@ -12,7 +12,7 @@ Escapes all single quotes in a string.
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#escapeSingleQuotes>
 
-``` php 
+``` php
 string escapeSingleQuotes (string $s)
 ```
 
@@ -20,7 +20,7 @@ string escapeSingleQuotes (string $s)
 
 Escape the quotes in the string below:
 
-``` php 
+``` php
 $str = 'Testing my "fun" Windows system.';
 echo $xpdo->cacheManager->escapeSingleQuotes($str);
 // outputs: Testing my \"fun\" Windows system.

@@ -14,7 +14,7 @@ If you are specifying the select(), don't use getCount(), just run the query and
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getCount>
 
-``` php 
+``` php
 integer getCount (string $className, [mixed $criteria = null])
 ```
 
@@ -22,7 +22,7 @@ integer getCount (string $className, [mixed $criteria = null])
 
 Get a count of all the Box objects with width 20.
 
-``` php 
+``` php
 $total = $xpdo->getCount('Box',array(
    'width' => 20,
 ));
@@ -30,7 +30,7 @@ $total = $xpdo->getCount('Box',array(
 
 Note that if you pass this function a query object for the second parameter, the **limit** criteria may be ignored.
 
-``` php 
+``` php
 $query = $modx->newQuery('States');
 $query->limit(10, 0);  // <-- probably you want to put this line AFTER the getCount
 

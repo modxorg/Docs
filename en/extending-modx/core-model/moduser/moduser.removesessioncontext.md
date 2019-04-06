@@ -12,7 +12,7 @@ Removes a user session context.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::removeSessionContext()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::removeSessionContext())
 
-``` php 
+``` php
 void removeSessionContext (string|array $context)
 ```
 
@@ -20,7 +20,7 @@ void removeSessionContext (string|array $context)
 
 Remove the session for the User in the 'sports' Context.
 
-``` php 
+``` php
 $user->removeSessionContext('sports');
 ```
 

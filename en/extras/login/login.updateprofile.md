@@ -13,7 +13,7 @@ UpdateProfile is a simple Snippet that allows users who are logged in the in the
 To use the profile editing functionality, first create the Resource the 
  user will go to to edit their profile. Then, add this snippet:
 
-``` php 
+``` php
 [[!UpdateProfile? &validate=`fullname:required,email:required:email`]]
 ```
 
@@ -41,7 +41,7 @@ UpdateProfile comes with some default properties you can override. They are:
 
 Then, below this, add in the following HTML (removing any fields you'd like) to be the form. Feel free to style it and adjust the markup (just don't change the form field names). This is also found in core/components/login/chunks/lgnupdateprofile.chunk.tpl.
 
-``` html 
+``` html
 <div class="update-profile">
     <div class="updprof-error">[[+error.message]]</div>
     [[+login.update_success:is=`1`:then=`[[%login.profile_updated? &namespace=`login` &topic=`updateprofile`]]`]]

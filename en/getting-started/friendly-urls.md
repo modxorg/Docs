@@ -17,7 +17,7 @@ The .htaccess file can be anywhere above the MODX installation but the usual loc
 
 Here is the ht.access file that comes with one version of MODX (your version may be slightly different).
 
-``` php 
+``` php
 # MODX supports Friendly URLs via this .htaccess file. You must serve web
 # pages via Apache with mod_rewrite to use this functionality, and you must
 # change the file name from ht.access to .htaccess.
@@ -130,7 +130,7 @@ The friendly\_alias\_urls setting was removed in MODX 2.1+. Enabling friendly\_u
 
 Make sure you have the following tag in the head section of all your templates. If you have only one front-end context (e.g., 'web') you can usually leave out the exclamation point to speed of page loads:
 
-``` html 
+``` html
 <base href="[[!++site_url]]" />
 ```
 
@@ -140,7 +140,7 @@ And you're done!
 
 The easiest way to take advantage of using fully qualified Friendly URLs, is to allow MODX to build the links using link tags, described on this page: [link tag syntax](making-sites-with-modx/structuring-your-site/resources#Resources-LinkingtoaResource "Linking to a Resources") to create links to different resources, is easy as tying in the link tag below (where 1 is the Resource ID of the page you want to link to). This has the added benefit of being able to move resources around a web project, without needing to fix a bunch of broken links, as MODX will simply update links created in this manner automatically.
 
-``` html 
+``` html
     <a href="[[~1]]" title="some title">Some Page</a>
 
 ```

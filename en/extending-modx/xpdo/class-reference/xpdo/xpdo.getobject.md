@@ -14,7 +14,7 @@ The criteria can be a primary key value, an array of primary key values (for mul
 
 API Docs: <http://api.modx.com/xpdo/xPDO.html#getObject>
 
-``` php 
+``` php
 xPDOObject|null getObject (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 ```
 
@@ -24,7 +24,7 @@ xPDOObject|null getObject (string $className, [xPDOCriteria|array|str|int $crite
 
 You can use **getObject** to retrieve MODX resources (e.g. a page) by its page ID:
 
-``` php 
+``` php
 $page = $modx->getObject('modResource', 555);
 $output = $page->get('pagetitle');
 ```
@@ -52,7 +52,7 @@ The simplest example is when you retrieve an object by its primary key.
 
 E.g. get a Box object with ID 134.
 
-``` php 
+``` php
 $box = $xpdo->getObject('Box', 134);
 ```
 
@@ -78,7 +78,7 @@ Otherwise, your XML schema will tell you which column is the primary key via the
 
 You can also provide more verbose criteria to the 2nd parameter, e.g.
 
-``` php 
+``` php
 $box = $xpdo->getObject('Box', array('id'=>134));
 ```
 
@@ -86,7 +86,7 @@ $box = $xpdo->getObject('Box', array('id'=>134));
 
 You don't have to retrieve based on just the primary key, you can also search on other columns:
 
-``` php 
+``` php
 $box = $xpdo->getObject('Box', array('color'=>'blue'));
 ```
 
@@ -94,7 +94,7 @@ $box = $xpdo->getObject('Box', array('color'=>'blue'));
 
 You can specify more complex selection criteria using an [xPDO query](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery"):
 
-``` php 
+``` php
 $query = $modx->newQuery('MyObject');
 $query->where( array('wheels:>=' => 3) );
 $myobj = $xpdo->getObject('MyObject', $query);

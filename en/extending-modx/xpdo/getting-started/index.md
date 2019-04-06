@@ -27,13 +27,13 @@ Finally, by simply extending xPDO yourself, you can further customize the class 
 
 You'll start off by extending the class like so:
 
-``` php 
+``` php
 class myClass extends xPDO
 ```
 
 and then define a constructor method:
 
-``` php 
+``` php
 function __construct($options = array()) {
     $options = array(
         xPDO::OPT_CACHE_PATH => '/path/to/my/cache/dir',
@@ -66,7 +66,7 @@ In addition to PDO, xPDO can wrap other objects you may want to work with alongs
 
 For example, you could manually load smarty as an object that you can call directly from your xPDO instance:
 
-``` php 
+``` php
 if ($className= $xpdo->loadClass('Smarty','/path/to/smarty/smarty.class.php', false, true)) {
     $xpdo->smarty= & new $className ($xpdo);
 }
@@ -76,7 +76,7 @@ $xpdo->smarty->someFunc();
 
 But xPDO provides a convenience method for doing this in a single line:
 
-``` php 
+``` php
 if ($xpdo->getService('myService', 'myServiceClass', '/path/to/model/root/', array('param1' => $param1, 'param2' => $param2)) {
     $xpdo->myService->doSomething();
 }

@@ -15,7 +15,7 @@ Note that unlike [modX.toPlaceholders](extending-modx/modx-class/reference/modx.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::setPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholders())
 
-``` php 
+``` php
 void setPlaceholders (array|object  $placeholders, [string $namespace = ''])
 ```
 
@@ -25,7 +25,7 @@ Unlike \[getChunk\], the **$placeholders** array can _not_ be deeply nested. It 
 
 Add an array of placeholders, and prefix 'my.' to their key.
 
-``` php 
+``` php
 $modx->setPlaceholders(array(
    'name' => 'John',
    'email' => 'jdoe@gmail.com',

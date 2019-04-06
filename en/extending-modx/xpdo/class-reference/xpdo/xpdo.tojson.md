@@ -12,13 +12,13 @@ Converts a PHP array into a JSON encoded string.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#toJSON>
 
-``` php 
+``` php
 string toJSON (array $array)
 ```
 
 ## Example
 
-``` php 
+``` php
 $ar = array('name' => 'John');
 $str = $xpdo->toJSON($ar);
 echo $str; // prints: {name:"John"}

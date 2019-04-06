@@ -12,13 +12,13 @@ _old_uri: "2.x/getting-started/installation/git-installation"
 
  Git clone the revolution repository on GitHub at: <http://github.com/modxcms/revolution/> using this syntax:
 
- ``` php 
+ ``` php
 git clone http://github.com/modxcms/revolution.git
 ```
 
  Or, if you'd like to contribute back, [fork it in your GitHub repository](http://help.github.com/forking/) and clone that repository as "origin" and add the modxcms/revolution repository as a remote called "upstream":
 
- ``` php 
+ ``` php
 git clone git@github.com:yourgitusernamehere/revolution.git
 cd revolution
 git remote add upstream -f http://github.com/modxcms/revolution.git
@@ -40,7 +40,7 @@ git remote add upstream -f http://github.com/modxcms/revolution.git
 
  To create a local tracking branch from one in the origin remote; after cloning, just type:
 
- ``` php 
+ ``` php
 git checkout -b 2.x origin/2.x
 ```
 
@@ -72,7 +72,7 @@ git checkout -b 2.x origin/2.x
 
  Simply run these two commands:
 
- ``` php 
+ ``` php
 git fetch origin
 git rebase origin/2.x
 ```
@@ -97,13 +97,13 @@ git rebase origin/2.x
 
  For example, lets say you want to add a feature for workflow for MODX. You'd create a local branch from the '2.x' branch called 'myworkflow' with:
 
- ``` php 
+ ``` php
 git checkout -b myworkflow 2.x
 ```
 
  ...and then do your coding there. Once you're done, you'd push that branch to your fork, and then send the Pull Request over. Once MODX has integrated your code (or rejected it and you're finished with it), you can then delete the branch like so:
 
- ``` php 
+ ``` php
 git checkout 2.x
 git branch -d myworkflow
 ```
@@ -118,7 +118,7 @@ git branch -d myworkflow
 
  If you want to switch to a different branch (that you have already checked out locally), simply type these commands:
 
- ``` php 
+ ``` php
 git fetch upstream
 git checkout 2.5.x upstream/2.5.x
 ```
@@ -135,13 +135,13 @@ git checkout 2.5.x upstream/2.5.x
 
  To adjust the dynamic linker library path to include the MAMP PHP libraries, run the following command via the terminal:
 
- ``` php 
+ ``` php
 export DYLD_LIBRARY_PATH=/Applications/MAMP/Library/lib:$\{DYLD_LIBRARY_PATH\}
 ```
 
  You can then execute ''transport.core.php'' by using the absolute path to the MAMP PHP executable:
 
- ``` php 
+ ``` php
 /Applications/MAMP/bin/php5/bin/php transport.core.php
 ```
 

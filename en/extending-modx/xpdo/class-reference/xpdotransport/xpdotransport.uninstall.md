@@ -12,7 +12,7 @@ Uninstall vehicles in the package from the sponsor xPDO instance.
 
 API Docs: <http://api.modxcms.com/xpdo/transport/xPDOTransport.html#uninstall>
 
-``` php 
+``` php
 boolean uninstall ([array $options = array ()])
 ```
 
@@ -20,7 +20,7 @@ boolean uninstall ([array $options = array ()])
 
 Uninstall this transport package:
 
-``` php 
+``` php
 $transport->uninstall();
 ```
 

@@ -25,13 +25,13 @@ In your Plugin, how you handle the output depends on the System Event you are in
 
 If you need to know which event triggered your plugin (say, for a plugin that listens to more than one event), you can access the Event's name like so:
 
-``` php 
+``` php
 $eventName = $modx->event->name;
 ```
 
 The code for a Plugin listening to more than one event looks like this:
 
-``` php 
+``` php
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnWebPageInit':
@@ -52,7 +52,7 @@ Plugins can be used for a variety of different applications, below are a couple 
 **Description:** Send a custom message to the user as they create/edit a page... a custom header. 
 **System Events:** OnDocFormPrerender
 
-``` php 
+``` php
 $modx->event->output('Hi there user!');
 ```
 
@@ -63,7 +63,7 @@ $modx->event->output('Hi there user!');
 **Description:** Do some custom validation on saving a page resource 
 **System Events:** OnBeforeDocFormSave
 
-``` php 
+``` php
 // Do some logical stuff.... if validation failed:
 $modx->event->output('Something did not validate!');
 return "This goes to the logs";
@@ -83,7 +83,7 @@ Return value must be a string. If your return value will be a number, concatenat
 **Description:** Filter words from a document before it's displayed on the web 
 **System Events:** OnWebPagePrerender
 
-``` php 
+``` php
 $words = array("snippet", "template"); // words to filter
 $output = &$modx->resource->_output; // get a reference to the output
 $output = str_replace($words,"<b>[filtered]</b>",$output);
@@ -101,7 +101,7 @@ $output = str_replace($words,"<b>[filtered]</b>",$output);
 - _pnf.mailto_: Mail To Address
 - _pnf.mailfrom_: Mail From Address
 
-``` php 
+``` php
 if ($modx->event->name == 'OnPageNotFound') {
      $errorPage = $modx->getOption('pnf.page');
      if (empty($errorPage)) {

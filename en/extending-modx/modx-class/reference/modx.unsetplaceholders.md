@@ -12,7 +12,7 @@ Unset multiple placeholders, either by prefix or an array of keys.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::unsetPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::unsetPlaceholders())
 
-``` php 
+``` php
 void unsetPlaceholders (string|array $keys)
 ```
 
@@ -20,13 +20,13 @@ void unsetPlaceholders (string|array $keys)
 
 Unset the 'my.name' and 'my.email' Placeholders.
 
-``` php 
+``` php
 $modx->unsetPlaceholders(array('my.name','my.email'));
 ```
 
 Unset all Placeholders that are prefixed with 'my.'
 
-``` php 
+``` php
 $modx->unsetPlaceholders('my.');
 ```
 

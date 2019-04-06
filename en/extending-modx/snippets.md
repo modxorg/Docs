@@ -22,7 +22,7 @@ Then, once they're up to be cached, Snippets are then parsed by the MODX Parser.
 
 Here's a basic example of what a Snippet's code might look like:
 
-``` php 
+``` php
 <?php
 return 'Hello, World!';
 ?>
@@ -36,13 +36,13 @@ Note how we returned the code rather than echo'ed the content out. **Never use e
 
 Values are passed to your Snippet using a modifed CGI web-form type notation that follows the Snippet's name. If your Snippet were named "mySnippet", you might call it using something like this:
 
-``` php 
+``` php
 [[!mySnippet? &input=`Hello World`]]
 ```
 
 And the code for your Snippet might look something like this:
 
-``` php 
+``` php
 <?php
 return 'My input was: ' . $input;
 ?>
@@ -58,13 +58,13 @@ You can also read _all_ parameters by using the built-in **$scriptProperties** a
 
 For example, if you call your Snippet using a call like this:
 
-``` php 
+``` php
 [[!mySnippet? &x=`x-ray` &y=`yellow`]]
 ```
 
 Then the **$scriptProperties** array will contain this:
 
-``` php 
+``` php
 Array(
  'x' => 'x-ray',
  'y' => 'yellow'
@@ -89,7 +89,7 @@ There are more reasons, but that's for brevity. Let's look at a few examples:
 
 Let's get a chunk named 'LineItem', and change the placeholders in it (done with \[\[+placeholderName\]\] syntax) to some custom values:
 
-``` php 
+``` php
 $chunk = $modx->getObject('modChunk',array(
    'name' => 'LineItem',
 ));
@@ -104,7 +104,7 @@ That code would get a chunk with the name of 'LineItem', and return it processed
 
 What about more complex queries? Like, say, getting the first 10 Resources with a parent of 23, 24 or 25. And let's make it so they aren't hidden from menus or deleted, are published, and sort them by menuindex. That's when we use the powerful $modx->newQuery() method:
 
-``` php 
+``` php
 $c = $modx->newQuery('modResource');
 $c->where(array(
    'parent:IN' => array(23,24,25),
@@ -137,7 +137,7 @@ As of 2.2.0, you can simply add a "static" Snippet: just reference the static fi
 
 Pre 2.2.0, it's still pretty easy to do - just create an 'include' snippet, but make its content be this:
 
-``` php 
+``` php
 if (file_exists($file)) {
    $o = include $file;
 } else { $o = 'File not found at: '.$file; }
@@ -146,7 +146,7 @@ return $o;
 
 You can use the include snippet on a page like such:
 
-``` php 
+``` php
 [[!include? &file=`/absolute/path/to/my/snippet.php`]]
 ```
 
@@ -160,7 +160,7 @@ Remember that a snippet in a file on your web site can be executed by anyone wit
 
 Snippets execute PHP code. They should always begin with a **<?php** and end with a **?>** _You cannot mix PHP and HTML in a Snippet!_ For example, the following code won't work:
 
-``` php 
+``` php
 <p>This is a horrible mixture of HTML and PHP</p>
 <?php
 return "<p>and PHP!  Don't try it!  It's bad architecture and it won't work!!</p>";
@@ -169,13 +169,13 @@ return "<p>and PHP!  Don't try it!  It's bad architecture and it won't work!!</p
 
 You'll find that MODX will append PHP tags to beginning and end of the snippet, creating an invalid syntax, e.g.:
 
-``` php 
+``` php
 <?php <?php //something here ?> ?>
 ```
 
 If you need to do something like this, **use a Chunk** - separate the PHP into a Snippet, load its output into a placeholder with the [modx API](extending-modx/core-model/modx "modX") placeholder functions or chunk processing, and include the Snippet's placeholders in the Chunk:
 
-``` php 
+``` php
 $output = $modx->getChunk('myChunk',array(
   'placeholderOne' => 'test',
   'name' => 'Harry',

@@ -16,6 +16,6 @@ An example Rule of setting the label to "Boo!" for a TV with ID of 1 for all [Us
 
 ## See Also
 
-``` php 
+``` php
 [[getResources@section? &parents=`314` &context=`revolution`]]
 ```

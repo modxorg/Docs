@@ -12,7 +12,7 @@ Copies the object fields and corresponding values to an associative array.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#toArray>
 
-``` php 
+``` php
 array toArray(
    [string $keyPrefix = ''],
    [boolean $rawValues = false],
@@ -37,7 +37,7 @@ array toArray(
 
 Get the values of the object in array format:
 
-``` php 
+``` php
 $object->set('name','John Lo');
 $object->set('email','jlo@gmail.com');
 $a = $object->toArray();
@@ -47,7 +47,7 @@ print_r($a);
 
 Get the values of the object, but with their keys prefixed with 'dev\_'
 
-``` php 
+``` php
 $object->set('name','Mark');
 $object->set('version','1.0');
 $a = $object->toArray('dev_');

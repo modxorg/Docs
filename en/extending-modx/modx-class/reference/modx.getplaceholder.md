@@ -12,13 +12,13 @@ Get a placeholder value by key.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getPlaceholder())
 
-``` php 
+``` php
 mixed getPlaceholder (string $key)
 ```
 
 ## Example
 
-``` php 
+``` php
 $value = $modx->getPlaceholder('MyPlaceholder');
 ```
 

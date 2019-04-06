@@ -226,7 +226,7 @@ Save the MainTpl chunk and then open up the BaseTemplate again.
 
 Delete everything in the "Template Code (HTML)" area and then paste in the following code:
 
-``` php 
+``` php
 [[!mmlCache?
 &element=`pdoResources`
 &parents=`0` 
@@ -256,7 +256,7 @@ migxMultiLang comes with a snippet called `mml_LangLinks` and we are going to ad
 
 Here is a very simple example of a possible MainTpl chunk:
 
-``` html 
+``` html
 <!doctype html>
 <html lang="en">
 <head>

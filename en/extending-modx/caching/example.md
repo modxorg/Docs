@@ -12,7 +12,7 @@ This page is designed to demonstrate some basic principles about the xPDO/MODX c
 
 Here's our first Snippet, named **cacheWrite**:
 
-``` php 
+``` php
 $cacheManager = $modx->getCacheManager();
 $x = date('H:i:s');
 $cacheManager->set('my_cache_key',$x);
@@ -23,7 +23,7 @@ Remember that we need to use the $x variable as an intermediary because the cach
 
 This snippet simple stores the current timestamp to a cache key named "my\_cache\_key". Put this Snippet on a page in your site (CACHED), e.g. on "Page One":
 
-``` php 
+``` php
 [[writeCache]]
 ```
 
@@ -31,14 +31,14 @@ This snippet simple stores the current timestamp to a cache key named "my\_cache
 
 Next, we will create simple snippet that will _read_ values from the cache, named **readCache**:
 
-``` php 
+``` php
 $cacheManager = $modx->getCacheManager();
 return $cacheManager->get('my_cache_key');
 ```
 
 And put this Snippet onto a different page on your site (UNCACHED), e.g. on "Page Two":
 
-``` php 
+``` php
 [[!readCache]]
 ```
 
@@ -62,7 +62,7 @@ Next, try this:
 
 1\. Edit "Page One" so that it calls `writeCache` uncached:
 
-``` php 
+``` php
 [[!writeCache]]
 ```
 

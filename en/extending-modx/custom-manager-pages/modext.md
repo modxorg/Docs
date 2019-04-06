@@ -46,7 +46,7 @@ Extending a MODExt component is actually quite simple. Let's extend the MODx.gri
 
 First, create a new JavaScript file and place the following code:
 
-``` php 
+``` php
 MyComponent.grid.MyGrid = function( config ) {
     /* Class parent constructor */
     MyComponent.grid.MyGrid.superclass.constructor.call( this, config );
@@ -62,7 +62,7 @@ Here, we've created our own class (MyComponent.grid.MyGrid) which extends MODx.g
 
 Now, let's add some configuration options:
 
-``` javascript 
+``` javascript
 MyComponent.grid.MyGrid = function( config ) {
     config = config || {};
 

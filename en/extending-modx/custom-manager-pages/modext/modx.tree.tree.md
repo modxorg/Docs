@@ -61,7 +61,7 @@ Toolbars can be loaded remotely, using the remoteToolbar config parameter. This 
 
 Nodes can be dragged into MODx.FormPanel fields, assuming that the following is passed into the config var:
 
-``` javascript 
+``` javascript
 ,enableDD: true
 ,ddGroup: 'modx-treedrop-dd'
 ```

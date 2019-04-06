@@ -12,7 +12,7 @@ Indicates if an object field has been modified (or never saved).
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isDirty>
 
-``` php 
+``` php
 boolean isDirty (string $key)
 ```
 
@@ -20,7 +20,7 @@ boolean isDirty (string $key)
 
 Test if a Skrewt object has been modified.
 
-``` php 
+``` php
 $skrewt = $xpdo->getObject('Skrewt',1);
 
 echo $skrewt->isDirty() ? 1 : 0; // prints 0

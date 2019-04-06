@@ -6,9 +6,8 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customizatio
 
  When you use Form Customization to customize the forms in the MODX manager, you can either allow/disallow access to specific fields, or you can allow/disallow access to entire tabs or _parts_ of tabs.
 
- **When a Tab is not a Tab** 
- When setting up Form Customization rules under **Security --> Form Customization**, then editing a behavior set, there is a list of "Tabs", but the list doesn't correspond directly to the familiar "Document", "Settings", "Template Variables", and "Resource Groups". Rather, the tab ids listed here refer to entire tabs or _parts_ of tabs. 
-
+ **When a Tab is not a Tab**
+ When setting up Form Customization rules under **Security --> Form Customization**, then editing a behavior set, there is a list of "Tabs", but the list doesn't correspond directly to the familiar "Document", "Settings", "Template Variables", and "Resource Groups". Rather, the tab ids listed here refer to entire tabs or _parts_ of tabs.
 
 ## Tab Regions
 
@@ -40,5 +39,5 @@ Any time you need to refer to the tab region, for example if moving Template Var
 1. [Customizing the Manager via Plugins](_legacy/administering-your-site/customizing-the-manager-via-plugins)
 2. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
 3. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
-  1. [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs)
+   1. [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs)
 4. [Manager Templates and Themes](building-sites/client-proofing/custom-manager-themes)

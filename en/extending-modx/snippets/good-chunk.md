@@ -16,7 +16,7 @@ This is probably the single biggest mistake you can do: adding too much logic to
 
 Here's an example of a tpl Chunk that got completely out of hand:
 
-``` php 
+``` php
 [[+tv.RemovePin:eq=`active`:then=`[[+modx.user.id:memberof=`
 Members`:then=`{address:'[[+tv.country]], [[+pagetitle]]', data:'<div class="googleBubble">
 [[+tv.Socialicons:replace=`||==`:replace=`facebook==<img src="/assets/images/mapof/facebook.png"
@@ -59,7 +59,7 @@ If you really do need to use them, here is [an excellent article](http://modx.co
 
 Keep your Chunks and Templates _clean_. They should be easy to read and easy to edit.
 
-``` php 
+``` php
 Dear [[+first_name]], it was nice to see you last [[+day_of_week]]
 ```
 

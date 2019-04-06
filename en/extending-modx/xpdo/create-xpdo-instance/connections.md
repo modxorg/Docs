@@ -8,13 +8,13 @@ _old_uri: "2.x/getting-started/using-your-xpdo-model/database-connections-and-xp
 
 Database connectivity in xPDO is done in the constructor. The xPDO object can only hold one database connection per instance, but you are free to instantiate as many xPDO instances as you need. The syntax of the constructor is such:
 
-``` php 
+``` php
 function xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null)
 ```
 
 So let's say we want to connect to a localhost database named 'test' on port 3306, with a utf-8 charset:
 
-``` php 
+``` php
 $dsn = 'mysql:host=localhost;dbname=test;port=3306;charset=utf8';
 $xpdo = new xPDO($dsn,'username','password');
 ```
@@ -23,7 +23,7 @@ And you're done!
 
 Optionally verify the connection, by simply adding the following line afterward
 
-``` php 
+``` php
 echo $o=($xpdo->connect()) ? 'Connected' : 'Not Connected';
 ```
 
@@ -37,7 +37,7 @@ Once you're connected, you'll need to [load your package](extending-modx/xpdo/cu
 
 Here's an example script that can be used to connect to a foreign database:
 
-``` php 
+``` php
 <?php
 
 define('MODX_CORE_PATH', '/path/to/revo/core/');
@@ -72,7 +72,7 @@ xPDO 2.2 introduces the ability to define multiple connections, and includes con
 
 To define additional connections for an xPDO instance, you can pass an array of connection configuration arrays in the `$options` parameter of the xPDO constructor. Each connection array defines the same parameters as an xPDO constructor call. Here is an example constructor call with multiple read-only connections specified:
 
-``` php 
+``` php
 $xpdo = new xPDO('mysql:host=127.0.0.1:19570;dbname=xpdotest;charset=utf8', 'username', 'password' array(
     xPDO::OPT_CONN_MUTABLE => true,
     xPDO::OPT_CONN_INIT => array(xPDO::OPT_CONN_MUTABLE => false),
@@ -107,7 +107,7 @@ This option defines the mutability of a defined connection, i.e. is it a read-on
 
 This option defines criteria that a connection must meet to be considered for use as the initial connection created by xPDO. In master/slave configurations, a typical value for this option (which is specified only once in the main configuration options) would indicate to initialize a read-only or immutable connection.
 
-``` php 
+``` php
 xPDO::OPT_CONN_INIT => array(xPDO::_OPT_CONN_MUTABLE => false)
 ```
 

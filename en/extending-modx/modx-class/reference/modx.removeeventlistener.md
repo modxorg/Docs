@@ -12,7 +12,7 @@ Remove an event from the eventMap so it will not be invoked.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
 
-``` php 
+``` php
 boolean removeEventListener (string $event)
 ```
 
@@ -20,7 +20,7 @@ boolean removeEventListener (string $event)
 
 Prevent any Events from firing on 'OnChunkRender':
 
-``` php 
+``` php
 $modx->removeEventListener('OnChunkRender');
 ```
 

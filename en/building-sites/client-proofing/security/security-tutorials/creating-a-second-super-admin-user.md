@@ -15,8 +15,8 @@ After logging into your site's manager, do the following:
 1. Create a new user: Manage -> Users -> New User (Button)
 2. Be sure you give the new user a unique username, password, and email.
 3. Before saving the user, click the tab marked **Access Permissions** and click the button marked **Add User Group to User**
-  1. **User Group:**`Administrator`
-  2. **Role:**`Super User`
+    1. **User Group:**`Administrator`
+    2. **Role:**`Super User`
 4. Save the user. (You can always return to Security -> Manage Users and right-click the user to update the properties).
 5. Try logging in to the manager using a different browser to verify that the login works.
 

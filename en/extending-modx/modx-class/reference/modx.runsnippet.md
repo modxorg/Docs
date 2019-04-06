@@ -19,7 +19,7 @@ string runSnippet (string $snippetName, [array $params = array ()])
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::runSnippet()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runSnippet())
 
-``` php 
+``` php
 string runSnippet (string $snippetName, [array $params = array ()])
 ```
 
@@ -29,7 +29,7 @@ Run the 'Welcome' snippet with some custom parameters:
 
 ## Examples 
 
-``` php 
+``` php
 $output = $modx->runSnippet('Welcome',array(
    'name' => 'John'
 ));

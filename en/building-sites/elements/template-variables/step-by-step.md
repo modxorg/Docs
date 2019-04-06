@@ -92,13 +92,13 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 
  From there, we can specify any default properties we want for the TV. "How can you use properties on a TV?", you might ask. Well, let's say we're doing a textarea TV named "viewingSS". In our content, we've got this:
 
- ``` php 
+ ``` php
 Viewing: [[+subsection]]
 ```
 
  We can add a list property 'subsection' to the grid, and then allow that property to be overridden via property sets. Say we created a Property Set named 'CarsSectionTVPS' (PS for Property Set). In it, we set the 'subsection' property to "Cars". We'd then attach it to the TV in our Resource, or Template, or whereever we are using it like so:
 
- ``` php 
+ ``` php
 [[*viewingSS@CarsSectionTVPS]]
 ```
 

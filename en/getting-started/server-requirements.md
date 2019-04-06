@@ -39,13 +39,13 @@ _old_uri: "2.x/getting-started/server-requirements"
 
 **PHP Configuration Options**:
 
-``` php 
+``` php
 ./configure --with-apxs2=/usr/local/bin/apxs --with-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 ```
 
 **NGINX PHP Configuration Options**:
 
-``` php 
+``` php
 ./configure --with-mysql --with-pdo-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 ```
 

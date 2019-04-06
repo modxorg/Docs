@@ -12,7 +12,7 @@ The @EVAL Binding executes the specified PHP code. It should be used with carefu
 
 ## Syntax
 
-``` php 
+``` php
 @EVAL php_code_here
 ```
 
@@ -20,11 +20,11 @@ The @EVAL Binding executes the specified PHP code. It should be used with carefu
 
 Simply put a PHP statement after the @EVAL tag:
 
-``` php 
+``` php
 @EVAL return "The time stamp is now ".time();
 ```
 
- ``` php 
+ ``` php
 @EVAL $a = 'dog'; return $a;
 ```
 
@@ -41,13 +41,13 @@ Requirements: The rowboat-snippet.
 
 First, we create a new chunk for our Options and name it 'userOption' with this code:
 
-``` php 
+``` php
 [[+username]]==[[+id]]
 ```
 
 Then create a dropdown-type TV with this input-options:
 
-``` php 
+``` php
 @EVAL return '-- choose a user --||' . $modx->runSnippet('Rowboat',array('table'=>'modx_users','tpl'=>'userOption','outputSeparator'=>'||'));
 ```
 

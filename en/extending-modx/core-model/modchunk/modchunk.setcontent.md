@@ -12,13 +12,13 @@ Sets the content of this Chunk.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modchunk.class.html#%5CmodChunk::setContent()](http://api.modx.com/revolution/2.2/db_core_model_modx_modchunk.class.html#%5CmodChunk::setContent())
 
-``` php 
+``` php
 void setContent ( $content, [ $options = array()])
 ```
 
 ## Example
 
-``` php 
+``` php
 $chunk->setContent('<h2>Hello!</h2>');
 ```
 

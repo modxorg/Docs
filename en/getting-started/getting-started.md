@@ -30,7 +30,7 @@ After a successful installation, you'll be presented with the Manager login page
 
  In either case, give the template a name, My Template, a description, First Revolution Template, and then the HTML code for the template. MODx templates are basically just HTML pages, with the content parts replaced with MODx tags. So to begin with, let's just create a really simple template.
 
- ``` php 
+ ``` php
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>My First Revolutionary Page</title>

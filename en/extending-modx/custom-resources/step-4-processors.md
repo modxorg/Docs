@@ -17,7 +17,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
  Extending the Processors for our CopyrightedResource is fairly simple. Load up your **copyrightedresource.class.php** file that contains your main class, and at the top, put this:
 
- ``` php 
+ ``` php
 require_once MODX_CORE_PATH.'model/modx/modprocessor.class.php';
 require_once MODX_CORE_PATH.'model/modx/processors/resource/create.class.php';
 require_once MODX_CORE_PATH.'model/modx/processors/resource/update.class.php';
@@ -25,7 +25,7 @@ require_once MODX_CORE_PATH.'model/modx/processors/resource/update.class.php';
 
  This tells MODX to load some base classes that we'll need – yes, we're sort of double-dipping here. Because our main class file is on MODX's radar and will be included when MODX loads, we just can require more files from there. At the bottom of the same file, after your CopyrightedResource class, put this:
 
- ``` php 
+ ``` php
 class CopyrightedResourceCreateProcessor extends modResourceCreateProcessor {
 }
 class CopyrightedResourceUpdateProcessor extends modResourceUpdateProcessor {
@@ -34,7 +34,7 @@ class CopyrightedResourceUpdateProcessor extends modResourceUpdateProcessor {
 
  Now we've overridden the processors for our class; MODX will automatically use these classes as the processor class when creating or updating our CRC. We can then override methods to provide custom functionality for our CopyrightedResource class. For example, here is a stub for our CopyrightedResource class and the Update processor that shows some methods that you could override:
 
- ``` php 
+ ``` php
 class CopyrightedResourceUpdateProcessor extends modResourceUpdateProcessor {
     /**
      * Do any processing before the fields are set
@@ -79,7 +79,7 @@ class CopyrightedResourceUpdateProcessor extends modResourceUpdateProcessor {
 
  There are some attributes that are not in the **modx\_site\_content** table. See the comments in the **modresource.class.php** file for a list of attributes. You can set them in your resource class via the set method, e.g.:
 
- ``` php 
+ ``` php
 $this->set('show_in_tree',false);
 $this->set('hide_children_in_tree',true);
 ```

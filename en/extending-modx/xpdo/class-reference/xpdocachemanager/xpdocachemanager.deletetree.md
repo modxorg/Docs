@@ -20,7 +20,7 @@ The options array has the following parameters available:
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#deleteTree>
 
-``` php 
+``` php
 boolean deleteTree (string $dirname, [array $options = array(
    'deleteTop' => false,
    'skipDirs' => false,
@@ -32,7 +32,7 @@ boolean deleteTree (string $dirname, [array $options = array(
 
 Delete the /modx/assets/videos/ directory (assuming the constant MODX\_ASSETS\_PATH is set) and all the files in it:
 
-``` php 
+``` php
 $xpdo->cacheManager->deleteTree(MODX_ASSETS_PATH.'videos/',array(
    'deleteTop' => true,
    'extensions' => false,
@@ -41,7 +41,7 @@ $xpdo->cacheManager->deleteTree(MODX_ASSETS_PATH.'videos/',array(
 
 Delete only .flv files in the above directory:
 
-``` php 
+``` php
 $xpdo->cacheManager->deleteTree(MODX_ASSETS_PATH.'videos/',array(
    'deleteTop' => true,
    'extensions' => array('.flv'),
@@ -50,7 +50,7 @@ $xpdo->cacheManager->deleteTree(MODX_ASSETS_PATH.'videos/',array(
 
 Delete all movies in above directory, except george.mov, buddies.flv, and any file name containing the word 'fun'.
 
-``` php 
+``` php
 $xpdo->cacheManager->deleteTree(MODX_ASSETS_PATH.'videos/',array(
    'deleteTop' => true,
    'extensions' => false,

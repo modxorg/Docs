@@ -33,7 +33,7 @@ You may also pass a message to the $modx->event->output() function and this will
 
 ### Require a Field
 
-``` php 
+``` php
 if (empty($resource->longtitle)) {
         $modx->event->output('Long title is required!'); // to modal window
         return '[MyPlugin] Failed to save page id '.$id.' due to missing longtitle'; // to the error log
@@ -42,7 +42,7 @@ if (empty($resource->longtitle)) {
 
 ### Calculate a Field Value
 
-``` php 
+``` php
 if ($resource->get('parent') == 123) {
         $resource->set('template', 4);
 }

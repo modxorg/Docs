@@ -12,7 +12,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientStartupScript()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupScript())
 
- ``` php 
+ ``` php
 void regClientStartupScript (string $src, [boolean $plaintext = false])
 ```
 
@@ -20,15 +20,15 @@ void regClientStartupScript (string $src, [boolean $plaintext = false])
 
  Register some JS to the start of the page:
 
- ``` php 
+ ``` php
 $modx->regClientStartupScript('assets/js/onload.js');
 ```
 
-``` php 
+``` php
 $modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
 ```
 
-``` php 
+``` php
 $modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
 ```
 

@@ -12,7 +12,7 @@ Attempt to load the request handler class, if not already loaded. Defaults to mo
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getRequest()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getRequest())
 
-``` php 
+``` php
 boolean getRequest ([$string $class = 'modRequest'], [$path $path = ''])
 ```
 
@@ -20,7 +20,7 @@ boolean getRequest ([$string $class = 'modRequest'], [$path $path = ''])
 
 Load a custom Request handler class called 'myRequest' from '/path/to/myrequest.class.php':
 
-``` php 
+``` php
 $modx->getRequest('myRequest','/path/to/');
 ```
 

@@ -12,7 +12,7 @@ Remove all registered events for the current request.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::removeAllEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeAllEventListener())
 
-``` php 
+``` php
 void removeAllEventListener ()
 ```
 
@@ -20,7 +20,7 @@ void removeAllEventListener ()
 
 Eliminate any other events from firing:
 
-``` php 
+``` php
 $modx->removeAllEventListener();
 ```
 

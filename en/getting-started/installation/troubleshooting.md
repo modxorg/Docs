@@ -19,7 +19,7 @@ First off, make sure:
 
 If you are getting PDO-related error messages during install, before proceeding to specific error messages as below, please confirm that your PDO configuration is setup correctly. You can do so by running this code (replace user/password/database/host with your setup):
 
-``` php 
+``` php
 <?php
 /* Connect to an ODBC database using driver invocation */
 $dsn = 'mysql:dbname=testdb;host=localhost';
@@ -60,7 +60,7 @@ One of the common causes of this problem is that you're using a non-standard por
 
 This means your MySQL socket is incorrectly configured. Usually this can be remedied by adding to (or updating) your php.ini:
 
-``` php 
+``` php
 mysql.default_socket=/path/to/my/mysql.sock
 mysqli.default_socket=/path/to/my/mysql.sock
 pdo_mysql.default_socket=/path/to/my/mysql.sock
@@ -82,7 +82,7 @@ Unless, of course, you've changed these explicitly for some purpose of your own.
 
 Are you running eAccelerator? In some server configurations, this can cause problems. You might need to disable it. You can do so via your php.ini:
 
-``` php 
+``` php
 eaccelerator.enable = 0;
 eaccelerator.optimizer = 0;
 eaccelerator.debug = 0;
@@ -90,7 +90,7 @@ eaccelerator.debug = 0;
 
 or in your .htaccess in the modx root directory, if your server supports php\_flag server directives:
 
-``` php 
+``` php
 php_flag eaccelerator.enable 0
 php_flag eaccelerator.optimizer 0
 php_flag eaccelerator.debug 0
@@ -119,7 +119,7 @@ A more complete solution:
 
 If you're redirecting back to the login screen every time, try setting this in your .htaccess file in the root of your MODx install:
 
-``` php 
+``` php
 php_value session.auto_start 0
 ```
 

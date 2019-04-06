@@ -12,6 +12,6 @@ Indicates if the object or specified field has been validated.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isValidated>
 
-``` php 
+``` php
 boolean isValidated ([string $key = ''])
 ```

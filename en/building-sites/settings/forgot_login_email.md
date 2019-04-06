@@ -15,7 +15,7 @@ The template for the email that is sent when a user has forgotten their MODX use
 
 The default is:
 
-``` html 
+``` html
 <p>Hello [[+username]],</p>
 <p>A request for a password reset has been issued for your MODX user. If you sent this, you may follow this link and use this password to login. If you did not send this request, please ignore this email.</p>
 

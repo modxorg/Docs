@@ -14,7 +14,7 @@ First off, let's look at the related object retrieval methods:
 
 Let's say we have a Car object, that has an Owner related object. Each Car can have only one Owner, which is a table with ID, name, and email. We want to grab the Owner, given that we have the Car object:
 
-``` php 
+``` php
 $car = $xpdo->getObject('Car',123);
 
 $owner = $car->getOne('Owner');
@@ -27,7 +27,7 @@ echo 'The owner of this car is: '.$owner->get('name');
 
 Now say we have Wheel objects for our Car - obviously there can be more than one Wheel per Car, and we want to grab the whole collection of them. The Wheel object has 'id' and 'position' fields:
 
-``` php 
+``` php
 $car = $xpdo->getObject('Car',123);
 
 $wheels = $car->getMany('Wheel');
@@ -52,7 +52,7 @@ xPDO also has methods for adding related objects to an existing Object, to make 
 
 So we have our Car object, but say we want to set it a new owner that we've just created. We can use [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") to easily add it in:
 
-``` php 
+``` php
 $car = $xpdo->getObject('Car',123);
 $owner = $xpdo->getObject('Owner',array('name' => 'Mark'));
 $car->addOne($owner);
@@ -63,7 +63,7 @@ Saving the Car object will save the 'owner' field on the Car row to the Owner's 
 
 You can also do this with new (unsaved) objects; the [save](extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/save "save") function will cascade and save both objects. Let's say we have a Car object, but we're adding an entirely new Owner:
 
-``` php 
+``` php
 $car = $xpdo->getObject('Car',324);
 
 $owner = $xpdo->newObject('Owner');
@@ -78,7 +78,7 @@ This will save both the Car and the Owner object, and relate them together.
 
 Both [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany") take a 2nd parameter, called 'alias'. This should be used when an object has more than one relationship with a single class. For example, adding an Owner and Seller relationships, which are both User objects:
 
-``` php 
+``` php
 $car->addOne($ownerUser,'Owner');
 $car->addOne($sellerUser,'Seller');
 ```
@@ -89,7 +89,7 @@ This helps xPDO differentiate between which object belongs to which relationship
 
 Objects with one-to-many relationships can also be batch added via the [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany") method. Let's say we want to add all the Wheel objects with width of 10 to our Car:
 
-``` php 
+``` php
 $wheels = $xpdo->getCollection('Wheel',array(
    'width' => 10,
 ));

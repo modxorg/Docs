@@ -26,7 +26,7 @@ We'll need a plugin to tell MODX where our custom TV directories are. Go ahead a
 
 Now put in the Plugin code:
 
-``` php 
+``` php
 $corePath = $modx->getOption('core_path',null,MODX_CORE_PATH).'components/ourtvs/';
 switch ($modx->event->name) {
     case 'OnTVInputRenderList':
@@ -58,7 +58,7 @@ The input controller is what actually loads the markup for the custom TV input. 
 
 And inside, you can put this code:
 
-``` php 
+``` php
 <?php
 if(!class_exists('TemplateSelectInputRender')) {
     class TemplateSelectInputRender extends modTemplateVarInputRender {
@@ -80,7 +80,7 @@ Now you can see here we are specifying a "tpl" file for rendering our TV. Go ahe
 
 And make its content:
 
-``` javascript 
+``` javascript
 <select id="tv{$tv->id}" name="tv{$tv->id}" class="combobox"></select>
 <script type="text/javascript">
 // <![CDATA[
@@ -116,7 +116,7 @@ Okay, so now we want to make the output controller, let's create the file at:
 
 And the content:
 
-``` php 
+``` php
 if(!class_exists('TemplateSelectOutputRender')) {
     class TemplateSelectOutputRender extends modTemplateVarOutputRender {
         public function process($value,array $params = array()) {

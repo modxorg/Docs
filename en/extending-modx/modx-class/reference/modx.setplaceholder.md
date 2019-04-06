@@ -12,13 +12,13 @@ Sets a Placeholder value, corresponding to the "+" syntax.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::setPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholder())
 
-``` php 
+``` php
 void setPlaceholder (string $key, mixed $value)
 ```
 
 ## Example
 
-``` php 
+``` php
 $modx->setPlaceholder('name','Barry');
 ```
 

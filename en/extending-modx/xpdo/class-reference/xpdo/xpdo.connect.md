@@ -12,13 +12,13 @@ Creates a PDO database connection for use by xPDO. Returns true if the connectio
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#connect>
 
-``` php 
+``` php
 boolean connect ([array $driverOptions = array ()])
 ```
 
 ## Example
 
-``` php 
+``` php
 $xpdo->connect();
 ```
 

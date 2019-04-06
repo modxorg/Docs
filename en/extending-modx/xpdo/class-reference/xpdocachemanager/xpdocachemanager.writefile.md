@@ -12,7 +12,7 @@ Writes a file to the filesystem.
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#writeFile>
 
-``` php 
+``` php
 boolean writeFile (string $filename, string $content, [string $mode = 'wb'], [array $options = array()])
 ```
 
@@ -20,7 +20,7 @@ boolean writeFile (string $filename, string $content, [string $mode = 'wb'], [ar
 
 Write a file to the FS.
 
-``` php 
+``` php
 $str = 'The contents of the file.';
 $xpdo->cacheManager->writeFile('/path/to/the/file.txt',$str);
 ```

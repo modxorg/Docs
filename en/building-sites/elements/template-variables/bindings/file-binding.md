@@ -10,7 +10,7 @@ The @FILE Binding returns the contents of any specified file.
 
 ## Syntax
 
-``` php 
+``` php
 @FILE file_path
 ```
 

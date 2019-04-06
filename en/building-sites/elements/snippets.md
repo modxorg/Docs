@@ -11,13 +11,13 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/using-snippets"
 
 Once you have a Snippet installed, you can use it simply by putting its tags in your template, a chunk or TV, or a document's content wherever you want the Snippet's output to be displayed.
 
-``` php 
+``` php
 [[MySnippet]]
 ```
 
 If you expect the snippet code to be dynamic for different users, you can also call a snippet uncached:
 
-``` php 
+``` php
 [[!MySnippet]]
 ```
 
@@ -25,7 +25,7 @@ If you expect the snippet code to be dynamic for different users, you can also c
 
 Snippets can have [Properties](building-sites/properties-and-property-sets "Properties and Property Sets"), which can be passed in the Snippet call, like so:
 
-``` php 
+``` php
 [[!Wayfinder? &startId=`0` &level=`1`]]
 ```
 
@@ -33,13 +33,13 @@ You can also aggregate these Properties into a [Property Set](building-sites/pro
 
 Say you had a Property Set called 'Menu' with `startId` set to 0 and `level` set to 1:
 
-``` php 
+``` php
 [[!Wayfinder@Menu]]
 ```
 
 would then load those properties automatically into the Snippet. And even those properties can be overridden:
 
-``` php 
+``` php
 [[!Wayfinder@Menu? &level=`2`]]
 ```
 

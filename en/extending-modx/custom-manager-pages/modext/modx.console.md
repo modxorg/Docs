@@ -23,7 +23,7 @@ First off, the Console starts up a Polling panel that queries the Registry with 
 
 The console can easily be hooked up to nearly any processor and JS custom application in MODX. Simply instantiate a new console object:
 
-``` javascript 
+``` javascript
 var topic = '/mytopic/';
 var register = 'mgr';
 var console = MODx.load({
@@ -44,7 +44,7 @@ Note here that you fire up the console, and then load the topic that you want (m
 
 When you've got that loaded, you can send a request to your processor:
 
-``` javascript 
+``` javascript
 MODx.Ajax.request({
     url: URL_TO_MY_CONNECTOR
     ,params: {
@@ -62,7 +62,7 @@ MODx.Ajax.request({
 
 You'll need to specify the URL of your connector url, as well as the action you want to load (the processor). In your processor, you can output to the Console by using $modx->log:
 
-``` php 
+``` php
 $modx->log(modX::LOG_LEVEL_INFO,'An information message in normal colors.');
 $modx->log(modX::LOG_LEVEL_ERROR,'An error in red!');
 $modx->log(modX::LOG_LEVEL_WARN,'A warning in blue!');
@@ -70,7 +70,7 @@ $modx->log(modX::LOG_LEVEL_WARN,'A warning in blue!');
 
 Once you're done with your processor, you should do two things. One, fire off a log message with just "COMPLETED" in the body:
 
-``` php 
+``` php
 $modx->log(modX::LOG_LEVEL_INFO,'COMPLETED');
 ```
 

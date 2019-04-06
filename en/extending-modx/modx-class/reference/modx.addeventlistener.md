@@ -12,7 +12,7 @@ Add a plugin to the eventMap within the current execution cycle.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::addEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::addEventListener())
 
-``` php 
+``` php
 boolean addEventListener (string $event, integer $pluginId)
 ```
 
@@ -20,7 +20,7 @@ boolean addEventListener (string $event, integer $pluginId)
 
 Add a Plugin with ID 2 to the Event 'OnChunkPrerender':
 
-``` php 
+``` php
 $modx->addEventListener('OnChunkPrerender',12);
 ```
 

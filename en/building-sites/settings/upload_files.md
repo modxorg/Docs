@@ -4,7 +4,7 @@ _old_id: "1755"
 _old_uri: "2.x/administering-your-site/settings/system-settings/upload_files"
 ---
 
-##  upload\_files
+## upload\_files
 
  **Name**: Uploadable File Types 
 **Type**: string 

@@ -12,7 +12,7 @@ Executes validation against the object attached to this validator. May also acce
 
 API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#>
 
-``` php 
+``` php
 boolean validate ([array $parameters = array()])
 ```
 
@@ -20,7 +20,7 @@ boolean validate ([array $parameters = array()])
 
 Check to see if any validation errors occurred.
 
-``` php 
+``` php
 $validator = $obj->getValidator();
 if ($validator->validate()) {
    echo 'Errors occurred!';

@@ -18,7 +18,7 @@ For example, if a Namespace called "quip" has a path of "/www/modx/core/componen
 
 Namespaces can be used to isolate Lexicons and Lexicon Topics. For example, when loading a Lexicon, you can specify the Namespace of the topic prior to the name of the topic with a colon. For example, to load the "comment" topic for the "quip" Namespace:
 
-``` php 
+``` php
 $modx->lexicon->load('quip:comment');
 ```
 

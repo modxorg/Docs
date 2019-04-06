@@ -12,7 +12,7 @@ This function is responsible for loading a collection of object instances from *
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#loadCollection>
 
-``` php 
+``` php
 static array loadCollection(
     xPDO &$xpdo,
     string $className,

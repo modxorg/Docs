@@ -12,7 +12,7 @@ Recursively writes a directory tree of files to the filesystem.
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#writeTree>
 
-``` php 
+``` php
 boolean writeTree (string $dirname, [array $options = array()])
 ```
 
@@ -20,7 +20,7 @@ boolean writeTree (string $dirname, [array $options = array()])
 
 Create a new directory on the FS.
 
-``` php 
+``` php
 $xpdo->cacheManager->writeTree('/path/to/new/directory/');
 ```
 

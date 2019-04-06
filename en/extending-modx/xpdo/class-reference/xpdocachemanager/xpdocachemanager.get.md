@@ -17,7 +17,7 @@ Also allows for an array of options to be passed. The current available values a
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#get>
 
-``` php 
+``` php
 mixed get (string $key, [array $options = array()])
 ```
 
@@ -25,13 +25,13 @@ mixed get (string $key, [array $options = array()])
 
 Get the cache record 'test' into a string:
 
-``` php 
+``` php
 $test = $xpdo->cacheManager->get('test');
 ```
 
 Get our JSON cache data called 'myjson':
 
-``` php 
+``` php
 $myJsonData = $xpdo->cacheManager->get('myjson',array('format' => xPDO::CACHE_JSON));
 ```
 

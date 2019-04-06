@@ -19,7 +19,7 @@ note: 'This document does not describe a full workflow for using static resource
 
  For Elements, all you need is a simple "include" [snippet](extending-modx/snippets "Snippets"). The code:
 
- ``` php 
+ ``` php
 if (!file_exists($file)) return '';
 $o = include $file;
 return $o;
@@ -27,13 +27,13 @@ return $o;
 
  You can then call it like so in your Static Resources:
 
- ``` php 
+ ``` php
 [[include? &file=`/path/to/my/svn/checkout/snippet.php`]]
 ```
 
  And you're done. You can also use tags within the 'file' parameter, such as this:
 
- ``` php 
+ ``` php
 [[include? &file=`[[++assets_path]]/js/myscript.js`]]
 ```
 

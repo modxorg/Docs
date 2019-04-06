@@ -19,7 +19,7 @@ Think of a Template like a house. Your [Resource's](building-sites/resources "Re
 
 To create a Template -- Expand the "Elements" part of the tree and right click on Templates. Select "Create a New Template" then paste your HTML into the "Template Code" textarea; you can copy and paste the text below to get started with a very simple template:
 
-``` html 
+``` html
 <html>
 <head>
     <title>[[*pagetitle]]</title>
@@ -54,13 +54,13 @@ Templates can contain any tags, including [Template Variables](building-sites/el
 
 As you noticed from our Template sample code above, the fields of a Resource can be referenced using the \[\[\*fieldName\]\] syntax. A list of available Resource Fields can be [found here](building-sites/resources#Resources-ResourceFields). For example, if we wanted to show the current Resource's pagetitle in our <title> tag, we would simply do this:
 
-``` html 
+``` html
 <title>[[*pagetitle]]</title>
 ```
 
 You can also place the content of the current Resource using the "content" tag:
 
-``` html 
+``` html
 <body>
 [[*content]]
 </body>
@@ -68,7 +68,7 @@ You can also place the content of the current Resource using the "content" tag:
 
 These tags are like normal MODx tags, in that they can have [output filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") applied to them. For example, say we wanted to display the "introtext" field on a right navbar, but strip any HTML tags from it, and only display the first 400 characters - and if longer, add an ellipsis (...):
 
-``` html 
+``` html
 <div id="rightbar">
 [[*introtext:stripTags:ellipsis=`400`]]
 </div>
@@ -82,7 +82,7 @@ Template Variables allow you to have custom fields for any Resource with the spe
 
 You can then reference your "bioPhoto" TV in your content with the same tag syntax as a Resource Field:
 
-``` html 
+``` html
 <div class="photo">
 [[*bioPhoto]]
 </div>

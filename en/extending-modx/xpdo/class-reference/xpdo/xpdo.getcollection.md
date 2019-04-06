@@ -14,13 +14,13 @@ If none are found, returns an empty array.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getCollection>
 
-``` php 
+``` php
 array getCollection (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 ```
 
 Remember, if you are using xPDO map and class files that were generated from XML schema, the classname is **not** the same as your table name. If in doubt, have a look at the schema XML file, e.g.
 
-``` php 
+``` php
 <object class="MyClassName" table="my_class_name" extends="xPDOObject">
 ```
 
@@ -28,7 +28,7 @@ Remember, if you are using xPDO map and class files that were generated from XML
 
 Get a collection of Box objects with a width of 40.
 
-``` php 
+``` php
 $boxes = $xpdo->getCollection('Box',array(
    'width' => 40,
 ));
@@ -38,7 +38,7 @@ $boxes = $xpdo->getCollection('Box',array(
 
 Often getCollection is used inside MODX Snippets, so you will call it via the $modx object and you will be fetching built-in MODX object collections, such as pages.
 
-``` php 
+``` php
 $pages = $modx->getCollection('modResource', array('template' => 3));
 ```
 

@@ -16,7 +16,7 @@ This will then execute the specified processor and return a modProcessorResponse
 
 For example, this code creates a new Chunk:
 
-``` php 
+``` php
 $response = $modx->runProcessor('element/chunk/create',array(
    'name' => 'NewChunk',
    'description' => 'A test Chunk made with runProcessor.',
@@ -33,7 +33,7 @@ This block of code runs the 'element/chunk/create' processor, checks to see if i
 
 You can also create an entire user, including Extended Fields, group assignments, a generated password and email notification.
 
-``` php 
+``` php
 $groups = array();
 $groups['Group1']['usergroup'] = '7'; // ID of group
 $groups['Group1']['role'] = '1'; // ID of role

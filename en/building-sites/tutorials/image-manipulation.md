@@ -21,13 +21,13 @@ If you are on a shared server, remember excessive image processing can affect ot
 
 The most obvious usage of phpthumbof is to generate thumbnails from larger images. No longer do you have to worry about your clients providing images that are too large -- bring on those 5MB 4800x3000 photos! Let's say you want to resize your 5MB photo into something that is 960 pixels wide and 300 tall. We call the phpthumbof snippet as an [output filter](/display/revolution20/Input+and+Output+Filters "Input and Output Filters") and pass a width (w) of 960, and a height (h) of 300:
 
-``` php 
+``` php
 [[*big_image:phpthumbof=`w=960&h=300`]]
 ```
 
 Awesome, our image is now the right size. Unfortunately, unless the image is the right aspect ratio, we might have some padding in one direction. If you'd prefer to crop off the longer dimension and make the image fit to the box, you can use the zoom crop (zc) parameter:
 
-``` php 
+``` php
 [[*big_image:phpthumbof=`w=960&h=300&zc=1`]]
 ```
 
@@ -39,7 +39,7 @@ Have a bunch of images with a white (or any colour) background that you want to 
 
 For our example, we will keep it at 960x300 and take out a white (#FFFFFF) background. We'll also convert it to a png to get in on that transparency action:
 
-``` php 
+``` php
 [[*big_image:phpthumbof=`w=960&h=300&fltr[]=stc|ffffff&f=png`]]
 ```
 
@@ -49,7 +49,7 @@ Nice work!
 
 We can do a bunch of other things using phpthumb's filters as well. Let's desaturate the image by 90%.
 
-``` php 
+``` php
 [[*big_image:phpthumbof=`w=960&h=300&fltr[]=sat|-90`]]
 ```
 
@@ -59,7 +59,7 @@ Cool!
 
 Want to tint the image? We can do it! Let's tint it 30% with #ff00ff:
 
-``` php 
+``` php
 [[*big_image:phpthumbof=`w=960&h=300&fltr[]=clr|30|ff00ff`]]
 ```
 
@@ -71,7 +71,7 @@ These are all cool and all, but we can do better. The cool thing about these eff
 
 Let's completely desaturate the image, brighten it by 20%, and then tint it by 6% with #00ab86:
 
-``` php 
+``` php
 [[*big_image:phpthumbof=`w=960&h=300&fltr[]=gray&fltr[]=brit|20&fltr[]=clr|6|00ab86`]]
 ```
 

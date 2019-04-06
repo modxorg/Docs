@@ -16,7 +16,7 @@ Also allows for an array of options to be passed. The current available values a
 
 API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#set>
 
-``` php 
+``` php
 boolean set (string $key, mixed &$var, [integer $lifetime = 0], [array $options = array()])
 ```
 
@@ -24,7 +24,7 @@ boolean set (string $key, mixed &$var, [integer $lifetime = 0], [array $options 
 
 Set a cache file to the string provided, to expire in 2 hours.
 
-``` php 
+``` php
 $str = 'This will be cached.';
 $xpdo->cacheManager->set('mycachefile',$str,7200);
 ```

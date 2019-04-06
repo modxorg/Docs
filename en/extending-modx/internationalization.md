@@ -44,7 +44,7 @@ Lexicons must first be loaded if they are to be used in the front-end; however, 
 
 To use a Lexicon Entry in a tag, use the following syntax:
 
-``` php 
+``` php
 [[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
 ```
 
@@ -62,7 +62,7 @@ Note our ! prefix for the Tag; this makes sure the Tag isn't cached, since our s
 
 Using lexicons in code is fairly simple; first off you'll want to make sure the modLexicon class is loaded by instantiating it as a service:
 
-``` php 
+``` php
 $modx->getService('lexicon','modLexicon');
 ```
 
@@ -72,13 +72,13 @@ Then we'll want to load the Topic using the load() method.
 
 The syntax for the modLexicon::load method is pretty simple:
 
-``` php 
+``` php
 $modx->lexicon->load('topicname');
 ```
 
 The load() function supports Namespace-specific loading. So, say you had a Lexicon Topic named 'default' in a Namespace called 'school'. You'd simply load it like so:
 
-``` php 
+``` php
 $modx->lexicon->load('school:default');
 ```
 
@@ -86,7 +86,7 @@ This would load the 'default' Topic in the 'school' Namespace. If the Namespace 
 
 The load() function also takes an infinite number of parameters; each parameter loads a separate Topic. Example:
 
-``` php 
+``` php
 $modx->lexicon->load('chunk','user','school:playground');
 ```
 
@@ -94,7 +94,7 @@ This would load 3 Topics: 'chunk', 'user', and the 'playground' Topic from the '
 
 Furthermore, the load parameter supports language-specific loading, should you want to override the default language that is being loaded (which defaults to the current value of $this->modx->cultureKey, which is set differently depending on the Context loaded, and can be set via Settings), you could load it like so:
 
-``` php 
+``` php
 $modx->lexicon->load('es:school:playground');
 ```
 
@@ -104,13 +104,13 @@ This would load the Spanish version of the 'playground' Topic for the 'school' N
 
 Now we can use the lexicon() method on the MODX object to get our Entry with key 'school.basketball':
 
-``` php 
+``` php
 $modx->lexicon('school.basketball');
 ```
 
 If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you can pass an array as the second arguement which has key=>value pairs of your placeholder content, like so:
 
-``` php 
+``` php
 $modx->lexicon('school.basketball',array('sport' => 'basketball'));
 ```
 
@@ -118,7 +118,7 @@ $modx->lexicon('school.basketball',array('sport' => 'basketball'));
 
 In CMPs you can use the following to use lexicons.
 
-``` php 
+``` php
  _('lexicon.key')
 ```
 
@@ -126,7 +126,7 @@ Please note that this assumes you have loaded the lexicon in your connector - th
 
 If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you can pass the values for the placeholders as a javascript object, like so:
 
-``` php 
+``` php
  _('lexicon.key',{ userinput: 'amazing' })
 ```
 
@@ -141,7 +141,7 @@ This helps to prevent name collisions; keep in mind that the **$\_lang** array m
 
 To add a lexicon name and description, we'd simply add the following 2 strings into our 'default' Lexicon Topic for our 'gallery' Namespace:
 
-``` php 
+``` php
 $_lang['setting_gallery.display_thumbs'] = 'Display Thumbnails';
 $_lang['setting_gallery.display_thumbs_desc'] = 'When set to true, this will display thumbnails for the gallery.';
 ```

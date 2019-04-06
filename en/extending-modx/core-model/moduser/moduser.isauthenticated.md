@@ -14,7 +14,7 @@ Separate session contexts can allow users to login/out of specific sub-sites ind
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::isAuthenticated()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::isAuthenticated())
 
-``` php 
+``` php
 boolean isAuthenticated ([string $sessionContext = 'web'])
 ```
 
@@ -22,7 +22,7 @@ boolean isAuthenticated ([string $sessionContext = 'web'])
 
 See if the User is logged into the 'web' context. If not, deny access and send to Unauthorized Page.
 
-``` php 
+``` php
 if (!$modx->user->isAuthenticated('web')) {
    $modx->sendUnauthorizedPage();
 }

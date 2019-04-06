@@ -18,7 +18,7 @@ The options are available by passing any of the following configuration options 
 
 If the xPDO::OPT\_HYDRATE\_FIELDS option is set to true, in addition to accessing fields via the xPDOObject::get() method, all object fields will be made accessible for reading directly as public member variables of the object. An example of this is such:
 
-``` php 
+``` php
 $object->set('name',$name);
 echo $object->name;
 ```
@@ -32,7 +32,7 @@ Please note that accessing fields of the object directly provides only the "raw"
 
 If the xPDO::OPT\_HYDRATE\_ADHOC\_FIELDS option is set to true, field hydration will be enabled for arbitrary fields not defined in the class map. It takes one step further the idea of hydrating fields, and now hydrates all _ad hoc_ fields; or rather, any field that is not defined in the schema. Say we want to set an arbitrary field called 'puns' to a Person object:
 
-``` php 
+``` php
 $object->set('name','Arthur Dent');
 $object->set('puns',42);
 echo $object->get('name') .' has '. $object->get('puns') . ' puns.';
@@ -46,7 +46,7 @@ The option respects the xPDO::OPT\_HYDRATE\_FIELDS option with respect to making
 
 If the xPDO::OPT\_HYDRATE\_RELATED\_OBJECTS option is set to true, all related objects will be made available as public member variables of the object. By default, related objects are only accessible via the [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") or [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany") methods of xPDOObject, but this option (similar to xPDO::OPT\_HYDRATE\_FIELDS) makes any related objects already loaded by those methods accessible directly as variables. Example:
 
-``` php 
+``` php
 $fordPrefect->getMany('Beers');
 foreach ($fordPrefect->Beers as $beer) {
    echo $beer->get('name').'<br />';
