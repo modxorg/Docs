@@ -38,7 +38,7 @@ Since this is an early beta, a lot of things might go wrong after installing thi
 
 ## Usage
 
-### Example 1
+### Example1
 
 Using one template for mobile and full site
 
@@ -72,7 +72,7 @@ Note: modxSiteTemplate is the value of modmobile.get\_var and the same that you 
 
 Note this is optional but highly recommended.
 
-### Example 2
+### Example2
 
 Using a separate mobile template
 

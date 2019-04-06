@@ -10,7 +10,7 @@ This is the Chunk displayed with the &fileLinkTpl property on the [FileLister](e
 
 ## Default Value
 
-``` php 
+ ``` php
 <a href="[[+url]]">[[+filename]]</a>
 ```
 

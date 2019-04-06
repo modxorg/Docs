@@ -46,11 +46,11 @@ These are specific placeholders for the cmCamper snippet. Besides these, look at
 | remarks       | Stored plain, so no HTML tags. If using line ends in the remarks textarea, you may want to apply the nl2br output modifier.                       |
 | price         | Formatted using money\_format (is included if not present on your machine) using options: %!.2n                                                   |
 | status        | Status ID (0-5 inclusive), representing:                                                                                                          |
-1. Unconfirmed 
-2. Active 
-3. Favorite 
-4. Conditionally sold 
-5. Sold 
+1. Unconfirmed
+2. Active
+3. Favorite
+4. Conditionally sold
+5. Sold
 6. Inactive |
 | statusname | The translated string related to your status ID. |
 | keynr |  |
@@ -95,9 +95,8 @@ The owner object could be used as a very rudimentary customer relationships syst
 | rank        |                                                      |
 | image       | Relative URL, can be used with phpthumbof to resize. |
 
-## Also see: 
+## Also see:
 
 1. [CamperManagement.cmCamperDetails Snippet](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcamperdetails-snippet)
 2. [CamperManagement.cmCampers Snippet](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcampers-snippet)
 3. [CamperManagement.Placeholders you can use](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.placeholders-you-can-use)
-

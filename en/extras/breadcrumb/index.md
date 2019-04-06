@@ -38,14 +38,14 @@ _old_uri: "revo/breadcrumb/"
 
 ### Support, Comments, Development and Bug Reporting
 
- **Github** : <https://github.com/benjamin-vauchel/breadcrumb> 
+ **Github** : <https://github.com/benjamin-vauchel/breadcrumb>
 **Support/Comments** : <http://forums.modx.com/thread/71902/support-comments-for-breadcrumb>
 
 ## Usage
 
  The BreadCrumb snippet can be called using the tag :
 
- ``` php 
+ ``` php
 [[BreadCrumb]]
 ```
 
@@ -91,49 +91,49 @@ _old_uri: "revo/breadcrumb/"
 
  Show the breadcrumb of the current resource
 
- ``` php 
+ ``` php
 [[BreadCrumb]]
 
 ```
 
  Show the breadcrumb of the resource whose ID is 72
 
- ``` php 
+ ``` php
 [[BreadCrumb? &to=`72`]]
 
 ```
 
  Show home crumb at the start of breadcrumb
 
- ``` php 
+ ``` php
 [[BreadCrumb? &showHomeCrumb=`1`]]
 
 ```
 
  Show the breadcrumb of the resource whose ID is 72 from it's level 2 parent
 
- ``` php 
+ ``` php
 [[BreadCrumb? &from=`[[UltimateParent? &topLevel=`2`]]` &to=`72`]]
 
 ```
 
  Change the direction of the breadcrumb : rtl (Right To Left) or ltr (Left To Right)
 
- ``` php 
+ ``` php
 [[BreadCrumb? &direction=`rtl`]]
 
 ```
 
  Exclude some resources
 
- ``` php 
+ ``` php
 [[BreadCrumb? &exclude=`23,135`]]
 
 ```
 
  Use custom templates
 
- ``` php 
+ ``` php
 [[BreadCrumb? &linkCrumbTpl=`myLinkCrumbTpl`]]
 [[BreadCrumb? &linkCrumbTpl=`@INLINE <li><a href="[[+link]]">[[+pagetitle]]</a></li>`]]
 [[BreadCrumb? &linkCrumbTpl=`@FILE [[++assets_path]]my_link_crumb_tpl.html`]]
@@ -147,115 +147,115 @@ _old_uri: "revo/breadcrumb/"
  | Removed Breadcrumb properties | Previous Breadcrumbs usage | New BreadCrumb usage |
  | ----------------------------- | -------------------------- | -------------------- |
  | crumbSeparator                | Tag :                      |
-``` php 
+``` php
 [[Breadcrumbs? &crumbSeparator=`>`]]
-		
-``` | Use CSS : ``` php 
+
+``` | Use CSS : ``` php
 #breadcrumb li + li:before{
   content:  '>';
   margin:   0 2px;
 }
 		
 ``` |
-| currentAsLink | Tag : ``` php 
+| currentAsLink | Tag : ``` php
 [[Breadcrumbs? ¤tAsLink=`1`]]
 		
 ``` | Use template :  Tag :
 
- ``` php 
+ ``` php
 [[BreadCrumb? ¤tCrumbTpl=`myCurrentCrumbTpl`]]
 		
 ```
 
  Chunk _myCurrentCrumbTpl_ :
 
- ``` php 
+ ``` php
 <li><a href="[[+link]]">[[+pagetitle]]</a></li>
 		
 ``` |
-| descField | Tag : ``` php 
+| descField | Tag : ``` php
 [[Breadcrumbs? &descField=`longtitle`]]
 		
 ``` | Use template :  Tag :
 
- ``` php 
+ ``` php
 [[BreadCrumb? &linkCrumbTpl=`myLinkCrumbTpl` ¤tCrumbTpl=`myCurrentCrumbTpl`]]
 		
 ```
 
  Chunks _myLinkCrumbTpl_ and _myCurrentCrumbTpl_ :
 
- ``` php 
+ ``` php
 <li><a href="[[+link]]" title="[[+longtitle]]">[[+pagetitle]]</a></li>
 		
 ``` |
-| homeCrumbDescription | Tag : ``` php 
+| homeCrumbDescription | Tag : ``` php
 [[Breadcrumbs? &homeCrumbDescription=`Home`]]
 		
 ``` | Use template :  Tag :
 
- ``` php 
+ ``` php
 [[BreadCrumb? &containerTpl=`myContainerTpl`]]
 		
 ```
 
  Chunks _myContainerTpl_ :
 
- ``` php 
+ ``` php
 <ul>
   <li><a href="[[++site_url]]">Home</a></li>
   [[+crumbs]]
 </ul>
 		
 ``` |
-| homeCrumbTitle | Tag : ``` php 
+| homeCrumbTitle | Tag : ``` php
 [[Breadcrumbs? &homeCrumbTitle=`Home`]]
 		
 ``` | Use template :  Tag :
 
- ``` php 
+ ``` php
 [[BreadCrumb? &containerTpl=`myContainerTpl`]]
 		
 ```
 
  Chunks _myContainerTpl_ :
 
- ``` php 
+ ``` php
 <ul>
   <li><a href="[[++site_url]]" title="Home">Home</a></li>
   [[+crumbs]]
 </ul>
 		
 ``` |
-| maxDelimiter | Tag : ``` php 
+| maxDelimiter | Tag : ``` php
 [[Breadcrumbs? &maxDelimiter=`(...)`]]
 		
 ``` | Use template :  Tag :
 
- ``` php 
+ ``` php
 [[BreadCrumb? &maxCrumbTpl=`myMaxCrumbTpl`]]
 		
 ```
 
  Chunk _myMaxCrumbTpl_ :
 
- ``` php 
+ ``` php
 <li>(...)</li>
 		
 ``` |
-| titleField | Tag : ``` php 
+| titleField | Tag : ``` php
 [[Breadcrumbs? &titleField=`menutitle`]]
 		
 ``` | Use template :  Tag :
 
- ``` php 
+ ``` php
 [[BreadCrumb? &linkCrumbTpl=`myLinkCrumbTpl` ¤tCrumbTpl=`myCurrentCrumbTpl`]]
 		
 ```
 
  Chunk _myLinkCrumbTpl_ and _myCurrentCrumbTpl_ :
 
- ``` php 
+ ``` php
 <li><a href="[[+link]]">[[+menutitle]]</a></li>
 		
 ``` |

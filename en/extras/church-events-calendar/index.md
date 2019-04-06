@@ -39,13 +39,13 @@ ChurchEvents is on GitHub: <https://github.com/jgulledge19/Church-Events-Calenda
 
 To make a calendar on you page:
 
-``` php 
+``` php
 [[!ChurchEventsCalendar?]]
 ```
 
 Make a list of all prominent events with a limit of 10 on you page:
 
-``` php 
+``` php
 [[!ChurchEventsList?  &prominent=`Yes`  &limit=`10`]]
 ```
 

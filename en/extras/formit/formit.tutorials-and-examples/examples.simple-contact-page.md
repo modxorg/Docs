@@ -15,7 +15,7 @@ And finally, we want reCaptcha support. We've already setup our public and priva
 
 ## Snippet Tag
 
-``` php 
+ ``` php
 [[!FormIt?
    &hooks=`recaptcha,spam,email,redirect`
    &emailTpl=`MyEmailChunk`
@@ -33,7 +33,7 @@ And finally, we want reCaptcha support. We've already setup our public and priva
 
 ## Contact Form
 
-``` html 
+``` html
 <h2>Contact Form</h2>
 
 [[!+fi.validation_error_message:notempty=`<p>[[!+fi.validation_error_message]]</p>`]]
@@ -105,7 +105,7 @@ And finally, we want reCaptcha support. We've already setup our public and priva
 
 ## MyEmailChunk (Tpl Chunk)
 
-``` php 
+ ``` php
 This is the Formit Email Chunk.
 
 <br />[[+name]] ([[+email]]) Wrote: <br />

@@ -8,7 +8,7 @@ _old_uri: "revo/eventscalendar2/eventscalendar2.tplevent2"
 
 This chunk is a template for one event in the day.
 
-``` html 
+``` html
 <div>
         <span class="num"><b>[[+ec.num]].</b></span>
         <span class="eventdate">[[+ec.date]]</span>

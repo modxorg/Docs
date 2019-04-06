@@ -28,7 +28,7 @@ Upon installation, HitsPage creates two new [Template Variables](making-sites-wi
 
 On the [Resource](/display/revolution20/Resource "Resource") that you'd like to track hits, use the placeholder:
 
-``` php 
+ ``` php
 [[!+hitss]]
 ```
 
@@ -43,7 +43,7 @@ Once the placeholder is...in place, the "HitsPage" TV will be dynamically update
 
 A [getResources](extras/getresources "getResources") call using the following &tpl will return a list of pages displaying their Titles and the number of hits they've received:
 
-``` php 
+ ``` php
 <li>[[+pagetitle]] has been viewed [[+tv.HitsPage]] times.</li>
 ```
 

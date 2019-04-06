@@ -6,7 +6,7 @@ _old_uri: "revo/eletters/eletters.templates"
 
 ## Making a custom Template
 
-- The easiest way is to just Duplicate the EletterSample Template. Go to the Elements tab on the left panel in your MODX Manager. Expand Templates then expand Eletters. Once you see EletterSample, right click on it. A dialog will pop up and then just click on Duplicate Template. Then fill in the name you want. 
+- The easiest way is to just Duplicate the EletterSample Template. Go to the Elements tab on the left panel in your MODX Manager. Expand Templates then expand Eletters. Once you see EletterSample, right click on it. A dialog will pop up and then just click on Duplicate Template. Then fill in the name you want.
   ![](/download/attachments/39355138/duplicate.png?version=1&modificationDate=1335818884000)
 - Now review the code and then make your own code. Note you need to have all of the Eletter TVs selected otherwise the program will not generate an email.
 

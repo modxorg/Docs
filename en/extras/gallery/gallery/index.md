@@ -67,26 +67,26 @@ _old_uri: "revo/gallery/gallery.gallery/"
 
  Display a gallery of photos in the 'My Album' album:
 
- ``` php 
-[[!Gallery? 
+ ``` php
+[[!Gallery?
   &album=`My Album`
 ]]
 ```
 
  Display a gallery of photos in the 'Trucks' album, but use a custom Chunk called 'truckThumb' for the thumbnails:
 
- ``` php 
-[[!Gallery? 
-  &album=`Trucks` 
+ ``` php
+[[!Gallery?
+  &album=`Trucks`
   &thumbTpl=`truckThumb`
 ]]
 ```
 
  Display a gallery of photos with the tag 'Cool' and use the Galleriffic plugin:
 
- ``` php 
-[[!Gallery? 
-  &tag=`Cool` 
+ ``` php
+[[!Gallery?
+  &tag=`Cool`
   &plugin=`Galleriffic`
 ]]
 ```
@@ -94,9 +94,9 @@ _old_uri: "revo/gallery/gallery.gallery/"
  Grab only 3 photos from the 'Cars' album, and set it to the "gallery" placeholder.:
 
  ``` php
-[[!Gallery? 
-  &limit=`3` 
-  &album=`Cars` 
+[[!Gallery?
+  &limit=`3`
+  &album=`Cars`
   &toPlaceholder=`gallery`
 ]]
 <div class="my-gallery">
@@ -107,8 +107,8 @@ _old_uri: "revo/gallery/gallery.gallery/"
  Using &thumbProperties to set the output of the thumbnails to 90% quality jpg instead of png:
 
  ``` php
-[[!Gallery? 
-  &album=`My Album` 
+[[!Gallery?
+  &album=`My Album`
   &thumbProperties=`{"f":"jpg","q":"90%"}`
 ]]
 ```
@@ -116,19 +116,19 @@ _old_uri: "revo/gallery/gallery.gallery/"
 ## See Also
 
 1. [Gallery.Gallery](extras/gallery/gallery.gallery)
-  1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
-  2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
+     1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
+     2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
 2. [Gallery.GalleryAlbums](extras/gallery/gallery.galleryalbums)
-  1. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
-  2. [Gallery.GalleryAlbums.containerTpl](extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
+     1. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
+     2. [Gallery.GalleryAlbums.containerTpl](extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
 3. [Gallery.GalleryItem](extras/gallery/gallery.galleryitem)
-  1. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
-  2. [Gallery.GalleryItem.GalleryItemPagination](extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
-  3. [Gallery.GalleryItem.tagTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
-  4. [Gallery.GalleryItem.tpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
+     1. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
+     2. [Gallery.GalleryItem.GalleryItemPagination](extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
+     3. [Gallery.GalleryItem.tagTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
+     4. [Gallery.GalleryItem.tpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
 4. [Gallery.Plugins](extras/gallery/gallery.plugins)
-  1. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
-  2. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/gallery.plugins.slimbox)
+     1. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
+     2. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/gallery.plugins.slimbox)
 5. [Gallery.Roadmap](extras/gallery/gallery.roadmap)
 6. [Gallery.Setting Up Your Gallery](extras/gallery/gallery.setting-up-your-gallery)
 7. [Gallery.Example1](extras/gallery/gallery.example1)

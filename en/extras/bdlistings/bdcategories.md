@@ -20,43 +20,52 @@ The bdCategories snippet can be used to output a dynamic category listing based 
 | categorySeparator | Separator to use between individual categories.                                                   | line break (\\n)                                                      |
 | tplCategory       | Chunk (name) to use for displaying categories. Note that subcategories have a different template. |
 
-Placeholders you can use: 
+Placeholders you can use:
 
 - id (category ID)
 - name
 - description
 - parent (returns the ID or 0)
-- subcategories (returns all subcategories for the current category object) 
-  Default file in core / components / bdlistings / elements / chunks / bdCategories.category.tpl: 
-  ``` php 
+- subcategories (returns all subcategories for the current category object)
+  Default file in core / components / bdlistings / elements / chunks / bdCategories.category.tpl:
+
+  ``` php
   <h3>[[+name]]</h3>
   <p>[[+description]]</p>
   [[+subcategories]]
-  ``` 
-`tplInner` - Chunkname to use to wrap all subcategories in. The result of this is assigned to the subcategories placeholder in the tplCategory chunk. Could be used for <optgroup>s or some extra markup distinguishing subcategories. 
-Placeholders you can use: 
-- subcategories (returns all subcategories, each separated by the value in the subSeparator property) 
-  Default file in core / components / bdlistings / elements / chunks / `bdCategories.inner.tpl`: 
-  ``` php 
+  ```
+
+`tplInner` - Chunkname to use to wrap all subcategories in. The result of this is assigned to the subcategories placeholder in the tplCategory chunk. Could be used for <optgroup>s or some extra markup distinguishing subcategories.
+Placeholders you can use:
+
+- subcategories (returns all subcategories, each separated by the value in the subSeparator property)
+  Default file in core / components / bdlistings / elements / chunks / `bdCategories.inner.tpl`:
+
+``` php
   <p>Subcategories: [[+subcategories]]</p>
   ```
-  
-`tplOuter` - Chunk (name) to use to wrap all the categories in. The value of this is returned by the snippet. 
-Placeholders you can use: 
-- wrapper (returns all categories, each separated by the value in the categorySeparator property) 
-  Default file in core / components / bdlistings / elements / chunks / bdCategories.outer.tpl: 
-  ``` php 
+
+`tplOuter` - Chunk (name) to use to wrap all the categories in. The value of this is returned by the snippet.
+Placeholders you can use:
+
+- wrapper (returns all categories, each separated by the value in the categorySeparator property)
+  Default file in core / components / bdlistings / elements / chunks / bdCategories.outer.tpl:
+
+  ``` php
   <h2>Categories</h2>
   [[+wrapper]]
   ```
-`tplSub` - Chunk (name) to use for displaying subcategories. 
-Placeholders you can use: 
+
+`tplSub` - Chunk (name) to use for displaying subcategories.
+Placeholders you can use:
+
 - id (category ID)
 - name
 - description
-- parent (returns the parent ID) 
-  Default file in core / components / bdlistings / elements / chunks / bdCategories.outer.tpl: 
-  ``` php 
+- parent (returns the parent ID)
+  Default file in core / components / bdlistings / elements / chunks / bdCategories.outer.tpl:
+
+``` php
   <a title="[[+description:htmlentities]]">[[+name]]</a>
   ```
 
@@ -69,12 +78,12 @@ Placeholders you can use:
 Categories Structure
 
 - Different
-- Something 
+- Something
   - Something - Sub Category
 
 Resulting HTML with default templates:
 
-``` php 
+``` php
 <h2>Categories</h2>
 <h3>Different</h3>
 <p></p>
@@ -92,34 +101,34 @@ Snippet call:
 
 bdl.cat.cat chunk:
 
-``` php 
+``` php
 <option value="[[+id]]">[[+name]]</option>
    [[+subcategories]]
 ```
 
 bdl.cat.sub chunk:
 
-``` php 
+``` php
 <option value="[[+id]]">- [[+name]]</option>
 ```
 
 bdl.cat.inner chunk:
 
-``` php 
+``` php
 [[+subcategories]]
 ```
 
 bdl.cat.outer chunk:
 
-``` php 
-<select name="category"> 
+``` php
+<select name="category">
   [[+wrapper]]
 </select>
 ```
 
 Possible HTML output (depending on your category structure):
 
-``` php 
+``` php
 <select name="category">
   <option value="1">Clowns</option>
     <option value="2">- Friendly Clowns</option>

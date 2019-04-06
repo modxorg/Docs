@@ -8,16 +8,17 @@ _old_uri: "revo/boilerx/bx-bottom-close"
 
 Closes the body and html tags.
 
- ``` html 
+ ``` html
 </body>
 </html>
 ```
 
 ## See Also
+
  ``` php
- [[getResources@section? 
-    &parents=`1316` 
-    &context=`extras` 
-    &limit=`0` 
+ [[getResources@section?
+    &parents=`1316`
+    &context=`extras`
+    &limit=`0`
     &resources=`1316,[[*id]]`]]
   ```

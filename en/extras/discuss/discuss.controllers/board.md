@@ -36,14 +36,14 @@ If you don't know what the manifest is, please go back to the [Getting Started](
 - id: the post ID
 - url: the url to the last post
 - author\_link: <a> tag to author if user has access to view profiles, otherwise just the username. |
-| subBoardTpl | board/disSubForumLink | Chunk used to loop over subforums to eventually fill the "subforums" placeholder after joined together with the value of the subBoardSeparator option. This chunk gets the following placeholders: 
+| subBoardTpl | board/disSubForumLink | Chunk used to loop over subforums to eventually fill the "subforums" placeholder after joined together with the value of the subBoardSeparator option. This chunk gets the following placeholders:
 - id: the ID of the subboard
 - title: the title of the subboard |
 | subBoardSeparator | comma and line break (\\n) | Used to join together the subBoardTpl chunks to one string. |
-| categoryRowTpl | category/disCategoryLi | Chunk used to loop over categories. Gets the following placeholders: 
+| categoryRowTpl | category/disCategoryLi | Chunk used to loop over categories. Gets the following placeholders:
 - list: boards belonging to the current category, formatted with the boardRowTpl option's chunk, joined with a newline (\\n)
 - rowClass: classes to apply to the category, either "alt" or "even". |
-| boardRowTpl | board/disBoardLi | Chunk used to loop over boards. Gets the following placeholders: 
+| boardRowTpl | board/disBoardLi | Chunk used to loop over boards. Gets the following placeholders:
 - [All board fields](http://rtfm.modx.com/display/ADDON/Discuss.Database+Model#Discuss.DatabaseModel-disBoardBoards) and the following:
 - unread (1|0): if the board has been read by the user or not
 - unread-cls (dis-unread|dis-read): class that can be used for changing the view of read/unread boards.
@@ -60,24 +60,24 @@ If you don't know what the manifest is, please go back to the [Getting Started](
 
 This controller template has the following placeholders you can use, on top of the placeholders mentioned in the options above:
 
-| Placeholder    | Description                                                                                                                                     |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-|                | [All fields of the disBoard object.](http://rtfm.modx.com/display/ADDON/Discuss.Database+Model#Discuss.DatabaseModel-disBoardBoards)            |
-| posts          | The posts in this board.                                                                                                                        |
-| boards         | Sub boards of this forum, if available and enabled (see options above).                                                                         |
-| boards\_toggle | Either "display:none;" or empty depending on the value in boards.                                                                               |
-| top            | Empty unless set by plugin on OnDiscussRenderBoard event by using $modx->event->output(array('name-of-placeholder' => 'stuff'));                |
-| bottom         | See "top" placeholder.                                                                                                                          |
-| aboveThreads   | See "top" placeholder.                                                                                                                          |
-| belowBoards    | See "top" placeholder.                                                                                                                          |
-| belowThreads   | See "top" placeholder.                                                                                                                          |
-| pagination     | Pagination for this board.                                                                                                                      |
-| readers        | Users viewing this board                                                                                                                        |
-| moderators     | Moderators for this board                                                                                                                       |
-| trail          | Breadcrumbs for this board                                                                                                                      |
+| Placeholder    | Description                                                                                                                                    |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+|                | [All fields of the disBoard object.](http://rtfm.modx.com/display/ADDON/Discuss.Database+Model#Discuss.DatabaseModel-disBoardBoards)           |
+| posts          | The posts in this board.                                                                                                                       |
+| boards         | Sub boards of this forum, if available and enabled (see options above).                                                                        |
+| boards\_toggle | Either "display:none;" or empty depending on the value in boards.                                                                              |
+| top            | Empty unless set by plugin on OnDiscussRenderBoard event by using $modx->event->output(array('name-of-placeholder' => 'stuff'));               |
+| bottom         | See "top" placeholder.                                                                                                                         |
+| aboveThreads   | See "top" placeholder.                                                                                                                         |
+| belowBoards    | See "top" placeholder.                                                                                                                         |
+| belowThreads   | See "top" placeholder.                                                                                                                         |
+| pagination     | Pagination for this board.                                                                                                                     |
+| readers        | Users viewing this board                                                                                                                       |
+| moderators     | Moderators for this board                                                                                                                      |
+| trail          | Breadcrumbs for this board                                                                                                                     |
 | actionbuttons  | Actions avialable for the user. See note on actionbuttons on the [Controllers](extras/discuss/discuss.controllers "Discuss.Controllers") page. |
 
-``` html 
+``` html
 [[+top]]
 <div>
     <form action="[[~[[*id]]]]search" method="GET">

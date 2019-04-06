@@ -8,17 +8,17 @@ _old_uri: "revo/login/login.login"
 
  This component loads a simple login and logout form, and processes User authentication.
 
-## Usage 
+## Usage
 
  Example for Login:
 
- ``` php 
+ ``` php
 [[!Login]]
 ```
 
  You can also specify the template, however make sure to call the &tplType parameter also:
 
- ``` php 
+ ``` php
 [[!Login? &tplType=`modChunk` &loginTpl=`myLoginChunk`]]
 ```
 
@@ -80,7 +80,7 @@ _old_uri: "revo/login/login.login"
 
  First off, make sure your `recaptcha.public\_key` and `recaptcha.private\_key` System Settings are set with your reCaptcha API keys. Then, to add it, all you have to do is add the "recaptcha" preHook to your snippet call:
 
- ``` php 
+ ``` php
 [[!Login? &preHooks=`recaptcha`]]
 ```
 
@@ -92,12 +92,12 @@ _old_uri: "revo/login/login.login"
 
  How do I log out? You simply call the page containing your **Login** snippet call and pass specify 'logout' as the service via the URL. In this example, the Login snippet is contained on page 21:
 
- ``` php 
+ ``` php
 <a href="[[~21? &service=logout]]" title="Logout">Logout</a>
 (which automatically appends '&service=logout' to your URL)
 ```
 
-## See Also 
+## See Also
 
 1. [Login.Login](extras/login/login.login)
 2. [Login.Profile](extras/login/login.profile)

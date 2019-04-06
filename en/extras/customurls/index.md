@@ -53,48 +53,48 @@ To start with CustomUrls, go to Components > Custom URLs and add a rule.
 
 Simple text :
 
-``` php 
+``` php
 simple-text
 ```
 
 Default MODx alias :
 
-``` php 
+``` php
 [[+alias]]
 ```
 
 Resource placeholders :
 
-``` php 
+``` php
 [[+id]]-[[+alias]]
 ```
 
 TVs :
 
-``` php 
+``` php
 [[+tv.mytv]]-[[+id]]
 ```
 
 Snippets :
 
-``` php 
+``` php
 [[MySnippet? &id=`[[+id]]`]]
 ```
 
 Output filters :
 
-``` php 
+``` php
 [[+publishedon:strtotime:date=`%Y-%m-%d`]]/[[+id]]-[[+alias]]
 ```
 
 Default MODx URI :
 
-``` php 
+``` php
 [[+cu.parent_uri]]/[[+alias]]
 ```
 
 More complex URI
 
-``` php 
+``` php
 [[+cu.parent_uri]]/some-text/[[getResourceField? &id=`[[+parent]]`]]/[[+id]]-[[+alias]]
 ```

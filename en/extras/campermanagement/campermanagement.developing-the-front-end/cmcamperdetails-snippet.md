@@ -36,13 +36,13 @@ Make sure the snippet is before using the actual placeholders, as they will not 
 
 Here is an example of calling the snippet:
 
-``` php 
+``` php
 [[!cmCamperDetails? &tplImageItem=`cmDetailImage` &includeImages=`1` &includeOwner=`0`]]
 ```
 
 where cmDetailImage has the following content, which is used for a slideshow script and uses the phpthumbof snippet:
 
-``` php 
+``` php
 <li>
   <h3>[[+brand]] [[+type]] </h3>
   <span>[[+image:phpthumbof=`w=620&h=360&far=c`]]</span>
@@ -52,7 +52,7 @@ where cmDetailImage has the following content, which is used for a slideshow scr
 
 And in the template itself you simply use the placeholders like this:
 
-``` php 
+``` php
 <ul>
   <li><span>Brand</span>[[!+cm.brand:default=`&nbsp;`]]</li>
   <li><span>Type</span>[[!+cm.type:default=`&nbsp;`]]</li>

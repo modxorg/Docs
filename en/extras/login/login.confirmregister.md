@@ -8,19 +8,19 @@ _old_uri: "revo/login/login.confirmregister"
 
 ConfirmRegister is a simple snippet that confirms a registration by a User from the [Register](extras/login/login.register "Login.Register") snippet, when 'activation' in that snippet is set to 1 (the default). It is placed on a separate, "Registration Activated" page.
 
-## Usage 
+## Usage
 
 [Register](extras/login/login.register "Login.Register") by default requires the User to activate their account before logging in. The Snippet creates the modUser object and sets its "active" field to 0. The User then gets an email with a URL to activate their account with. Once the User visits the page, their account is set to "active=1", and they can then login.
 
 To enable this, you will need to create an Activation page by creating a new Resource, and putting this [ConfirmRegister](extras/login/login.confirmregister "Login.ConfirmRegister") snippet inside of it:
 
-``` php 
+ ``` php
 [[!ConfirmRegister]]
 ```
 
 An example [Register](extras/login/login.register "Login.Register") snippet call with activation would look like this:
 
-``` php 
+ ``` php
 [[!Register? 
    &activationEmailTpl=`myActivationEmailTpl`
    &activationEmailSubject=`Please activate your account!`
@@ -46,7 +46,7 @@ ConfirmRegister has some default properties packaged into it. They are:
 
 ConfirmRegister also fires the [OnUserActivate](developing-in-modx/basic-development/plugins/system-events/onuseractivate "OnUserActivate") plugin event after the User is activated, and passes in a 'user' parameter, which contains the newly-activated modUser object.
 
-## See Also 
+## See Also
 
 1. [Login.Login](extras/login/login.login)
 2. [Login.Profile](extras/login/login.profile)

@@ -20,13 +20,13 @@ _old_uri: "revo/formit/formit.hooks/"
 
  Just specify the preHook in the 'preHooks' property in your FormIt snippet call. There are no built-in preHooks, but if you had a preHook called 'loadCustomValues':
 
- ``` php 
+ ``` php
 [[!FormIt? &preHooks=`loadCustomValues`]]
 ```
 
  Would then run the 'loadCustomValues' snippet before loading the form. You could then set fields on the form like so:
 
- ``` php 
+ ``` php
 <?php
 $hook->setValue('name','John Doe');
 $hook->setValue('email','john.doe@fake-emails.com');
@@ -35,7 +35,7 @@ return true;
 
  Or alternatively using ->setValues:
 
- ``` php 
+ ``` php
 <?php
 $hook->setValues(array(
   'name' => 'John Doe',
@@ -48,7 +48,7 @@ return true;
 
  You can do whatever you want in the preHook as well. Remember to return true if your preHook or Hook is successful. If you want to add an error message to a field:
 
- ``` php 
+ ``` php
 $hook->addError('user','User not found.');
 return $hook->hasErrors();
 ```
@@ -57,7 +57,7 @@ return $hook->hasErrors();
 
  Just specify the renderHook in the 'renderHooks' property in your FormIt snippet call. There are no built-in renderHooks, but if you had a renderHook called 'buildSessionFields':
 
- ``` php 
+ ``` php
 // Get formit config & possible set values
 $formit =& $hook->formit;
 $values = $hook->getValues();
@@ -66,8 +66,8 @@ $values = $hook->getValues();
 $values = array_merge($_SESSION['preset_fields_from_session'], $values);
 $fields = array();
 foreach ($values as $value) {
-	// value = array('label' => '', 'name' => '')
-	$fields[] = $modx->getChunk('fieldChunk', $value);
+    // value = array('label' => '', 'name' => '')
+    $fields[] = $modx->getChunk('fieldChunk', $value);
 }
 $modx->toPlaceholder('extraFields', implode(PHP_EOL, $fields));
 ```
@@ -78,7 +78,7 @@ With the new hook system it's more easy to generate custom forms from sessions, 
 
 Simply specify the hook in the 'hooks' property in your FormIt snippet call. For example, this loads the spam and email hooks:
 
- ``` php 
+ ``` php
 [[!FormIt? &hooks=`spam,email`]]
 ```
 
@@ -107,14 +107,14 @@ Simply specify the hook in the 'hooks' property in your FormIt snippet call. For
 
  The Formit fields are available via the hook api. Example:
 
- ``` php 
+ ``` php
 $email = $hook->getValue('email');
 $allFormFields = $hook->getValues();
 ```
 
  If you want to **set** fields, however, you'll need to access them this way:
 
- ``` php 
+ ``` php
 $hook->setValue('email','john.doe@fake-emails.com');
 $hook->setValues(array(
   'name' => 'John Doe',
@@ -124,7 +124,7 @@ $hook->setValues(array(
 
  If you want to set an array field (i.e. a checkbox group with the same name, a select multiple field) in a preHook, you have to json\_encode the array value.
 
- ``` php 
+ ``` php
 $hook->setValue('hobbies',json_encode(array('music','films','books')));
 ```
 
@@ -132,7 +132,7 @@ $hook->setValue('hobbies',json_encode(array('music','films','books')));
 
  Properties passed to the FormIt Snippet call are available in the config property of the $formit object exposed in a Hook.
 
- ``` php 
+ ``` php
 $hook->formit->config['key']
 ```
 
@@ -142,7 +142,7 @@ $hook->formit->config['key']
 
  The fiHooks object is available in the snippet as $hook, which can be used to return generic error messages from the snippet:
 
- ``` php 
+ ``` php
 $errorMsg = 'User not found';
 $hook->addError('user',$errorMsg);
 return false;
@@ -154,8 +154,8 @@ return false;
 
  FormIt 2.0.0+ supports file-based hooks and preHooks. This means that you can point FormIt straight to a PHP file to use as a custom hook. For example:
 
- ``` php 
-[[!FormIt? 
+ ``` php
+[[!FormIt?
   &hooks=`[[++assets_path]]hooks/my.hook.php`
 ]]
 ```

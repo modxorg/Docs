@@ -41,7 +41,7 @@ This controller template has the following placeholders you can use, on top of t
 | pagination  | Generated pagination bits.                                                                                                           |
 | search      | The search term.                                                                                                                     |
 
-``` html 
+``` html
 <form class="m-fullw-form m-styled-form h-group m-search" action="[[~[[*id]]]]search/" method="get">
     <h1>[[%discuss.search? &namespace=`discuss` &topic=`web`]]</h1>
     <div class="m-panel f1-f8">

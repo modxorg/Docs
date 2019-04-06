@@ -10,7 +10,7 @@ The typical output will be something like the image on the right, though it is c
 
 TaggingAtoZ was developed by Mark Hamstra for Vierkante Meter.
 
-## History & Links
+## History& Links
 
 TaggingAtoZ was first released on October 13th, 2011 and can be downloaded from Package Management and the MODX Extras site.
 

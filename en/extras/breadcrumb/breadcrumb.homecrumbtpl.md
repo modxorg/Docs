@@ -14,7 +14,7 @@ _old_uri: "revo/breadcrumb/breadcrumb.homecrumbtpl"
 
  Templates properties can be chunk name, file path (@FILE) or chunk code (@INLINE )
 
- ``` php 
+ ``` php
 <li><a href="[[+link]]">[[+pagetitle]]</a></li>
 ```
 

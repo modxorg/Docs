@@ -16,7 +16,7 @@ _old_uri: "revo/gallery"
 - PHP5 or later
 - php-mbstring Enabled
 
-## History and Info
+## Historyand Info
 
  Gallery was written by Shaun McCormick (splittingred) as a dynamic Gallery component, and first released on February 5th, 2010.
 
@@ -34,7 +34,7 @@ _old_uri: "revo/gallery"
 
  The Gallery snippets can be called using the [tags](making-sites-with-modx/tag-syntax "Tag Syntax"):
 
- ``` php 
+ ``` php
 [[Gallery? &album=`My Album`]]
 [[GalleryAlbums? &limit=`10`]]
 ```
@@ -91,38 +91,38 @@ _old_uri: "revo/gallery"
 
  A sample code line for a Galleriffic-powered gallery for the album "My Album".
 
- ``` php 
+ ``` php
 [[!Gallery? &album=`My Album` &plugin=`galleriffic`]]
 ```
 
  Grab the first 10 photos tagged "Fun":
 
- ``` php 
+ ``` php
 [[!Gallery? &tag=`Fun`]]
 ```
 
  Grab all photos in the album "My Album" with tag "Blue":
 
- ``` php 
+ ``` php
 [[!Gallery? &album=`My Album` &tag=`blue`]]
 ```
 
 ## See Also
 
 1. [Gallery.Gallery](extras/gallery/gallery.gallery)
-  1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
-  2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
+     1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
+     2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
 2. [Gallery.GalleryAlbums](extras/gallery/gallery.galleryalbums)
-  3. [Gallery.GalleryAlbums.containerTpl](extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
-  4. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
+     1. [Gallery.GalleryAlbums.containerTpl](extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
+     2. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
 3. [Gallery.GalleryItem](extras/gallery/gallery.galleryitem)
-  5. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
-  6. [Gallery.GalleryItem.GalleryItemPagination](extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
-  7. [Gallery.GalleryItem.tagTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
-  8. [Gallery.GalleryItem.tpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
+     1. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
+     2. [Gallery.GalleryItem.GalleryItemPagination](extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
+     3. [Gallery.GalleryItem.tagTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
+     4. [Gallery.GalleryItem.tpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
 4. [Gallery.Plugins](extras/gallery/gallery.plugins)
-  9. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
-  10. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/gallery.plugins.slimbox)
+     1. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
+     2. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/gallery.plugins.slimbox)
 5. [Gallery.Roadmap](extras/gallery/gallery.roadmap)
 6. [Gallery.Setting Up Your Gallery](extras/gallery/gallery.setting-up-your-gallery)
 7. [Gallery.Example1](extras/gallery/gallery.example1)

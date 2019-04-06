@@ -12,7 +12,7 @@ Ready? Okay. Discuss is big. No really, it is. Even though you may not expect it
 
 If you installed Discuss with the demo data, you will see that we use one resource with a blank template and possibly the simplest yet most powerful snippet call in the world:
 
-``` php 
+``` php
 [[!Discuss]]
 ```
 
@@ -43,7 +43,7 @@ While the manifest brings you lot of opportunity, as a best practice it should b
 
 The general structure of the manifest is a big multi-dimensional PHP array. Whoah, lot of big words there. It's basically a three level deep collection of keys and values, written in PHP. Here's a somewhat simplified excerpt:
 
-``` php 
+``` php
 $manifest = array(
     'global' => array(
         'css' => array(

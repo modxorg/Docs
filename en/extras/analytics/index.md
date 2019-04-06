@@ -6,9 +6,9 @@ _old_uri: "revo/analytics"
 
 ## What is Analytics?
 
-Analytics is a utility tool for MODX Revolution that will insert the tracking code for Google Universal Analytics (analytics.js) and/or Google Analytics (ga.js) on your website's pages. 
+Analytics is a utility tool for MODX Revolution that will insert the tracking code for Google Universal Analytics (analytics.js) and/or Google Analytics (ga.js) on your website's pages.
 
-By default it will ignore traffic from users logged into the manager. Every context in your website can be excluded on demand, wether or not users are logged in. 
+By default it will ignore traffic from users logged into the manager. Every context in your website can be excluded on demand, wether or not users are logged in.
 The tracking code templates [can be overridden with your own chunks](#Analytics-UseYourOwnTrackingCodes).
 
 ## Requirements
@@ -26,17 +26,17 @@ The extra can be retrieved through the [Package Manager](display/revolution20/Pa
 
 ## Usage
 
-### Usage examples
+### Usageexamples
 
 Most basic call (always uncached):
 
- ``` php 
+ ``` php
 [[!Analytics? &webPropertyID=`UA-XXXXX-Y`]]
 ```
 
 Disable context filtering (cache the snippet):
 
- ``` php 
+ ``` php
 [[Analytics?
       &excludeContextList=``
       &excludeLoggedInUserContextList=``
@@ -46,7 +46,7 @@ Disable context filtering (cache the snippet):
 
 Advanced example:
 
- ``` php 
+ ``` php
 [[!Analytics?
       &debug=`1`
       &isLocalhost=`1`
@@ -100,11 +100,10 @@ Advanced example:
 
 Want to migrate you tracking code to Universal Analytics? Consult the [Universal Analytics Upgrade Center](https://developers.google.com/analytics/devguides/collection/upgrade/).
 
- ### Different ways to set properties
+### Different ways to set properties
 
  Properties can be set in many ways: via the snippet call or properties sets, in a ressource or as a context settings.
 
- 
 If you set up your site settings in a resource, you can use [getResourceField](extras/revo/getresourcefield) to retrieve the values and pass them through the snippet call.
 
 ## Use your own tracking codes

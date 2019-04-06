@@ -68,19 +68,19 @@ The properties below can be used to customize behavior in one or more of the ste
 | tplOuter           | 5       | Chunk name to use as outer (or wrapper) template. The \[\[+wrapper\]\] placeholder will be filled with the individual rows, separated by whatever is in the rowSeparator property (see below). Placeholders you can use are \[\[+count\]\] and \[\[+wrapper\]\]. |
 
 
-``` php 
+ ``` php
 <h3>[[%getrelated.pagesfound? &namespace=`getrelated` &count=`[[+count]]`]]</h3>
 <ul>
   [[+wrapper]]
 </ul>
 ``` | relatedOuter |
-| tplRow | 5 | Chunk name to use as row template, used in every related resource. 
+| tplRow | 5 | Chunk name to use as row template, used in every related resource.
 
-The placeholders you can use include the fields in your &fields property (minus TVs), as well as those in the returnFields property. The resource ID is always accessible with \[\[+id\]\], the ranking (the result of the algorithm) as \[\[+rank\]\] and the number of the result with \[\[+idx\]\]. 
+The placeholders you can use include the fields in your &fields property (minus TVs), as well as those in the returnFields property. The resource ID is always accessible with \[\[+id\]\], the ranking (the result of the algorithm) as \[\[+rank\]\] and the number of the result with \[\[+idx\]\].
 
-Default chunk (stored as file in core/components/getrelated/elements/chunks/): 
+Default chunk (stored as file in core/components/getrelated/elements/chunks/):
 
-``` php 
+ ``` php
 <li>
   <a href="[[~[[+id]]]]" title="[[+longtitle:default=`[[+pagetitle]]`]]">
     [[+longtitle:default=`[[+pagetitle]]`]] ([[+rank]])
@@ -99,7 +99,7 @@ There is absolutely no valid reason that I can think of to call this snippet unc
 
 The minimum snippet call for getRelated to use is just the tag itself.
 
-``` php 
+ ``` php
 [[getRelated]]
 ```
 
@@ -111,12 +111,12 @@ If you're getting a slow performance caused by getRelated, here's some suggestio
 
 1. Make sure the snippet is called **cached**! I wont help you figuring out slow performance if you are not caching this snippet..
 2. Do not use fields like the content as there will simply be too much
-3. It is possible the query used to collect the sample is too broad. There can be multiple causes & fixes for that: 
-  1. There is no translation for the language you use yet, resulting in the English stopwords being stripped and not stopwords in your native language. There's a real easy fix that will benefit others as well: translate [the English Lexicon](https://github.com/Mark-H/getRelated/blob/master/core/components/getrelated/lexicon/en/default.inc.php) to your language & send it back for inclusion in the addon. Do not translate the long list of stop words in there, but rather find a list of stopwords in your language from a reliable source.
-  2. All your resources use similar words (a company name, the name of a product being sold, or your editor's favorite word) resulting in the sample being distorted by that. If you enable debug (&debug=`1` in the snippet) you can see the Match Data which are the words that will be matched, so you can verify if there's any words use that it shouldn't. 
-      If that is the case, you can filter out these words by adding them to the "getrelated.stopwords" lexicon in your language. Go to System > Lexicon Management and in the dropdown that defaults to "core" select "getrelated". If not using English, select the right language from the language drop down as well. Now find the stopwords lexicon and add the words distorting the result set to the list. If you think the stopwords should be added to the main package, file a [bug report](https://github.com/Mark-H/getRelated/issues).
-4. Your site has too much related resources. If you have too much resources and have optimized what you could with the above options, you could: 
-  1. Adjust the sample sizes. The default settings resulting in test results of around 1 second which is "okay" for a first load (cause you are getting results from the cache after that, right?!), but this depends on the number of the fields you are using, whether they are resource fields or TVs and in general how the values are stored in the database. If you use a lot of TVs in your &fields property, you can bring the tvSample down to, say, 50 to only get 50 results per TV. If you use 3 TVs, that could theoretically bring down the total amount of resources being processed from 375 to 150. 
-      To make sure you still get the right results, you can change order in which the sample is fetched with tvSort and tvSortDir as well as fieldSort and fieldSortDir. By default it sorts on the createdon date, with the newest first.
+3. It is possible the query used to collect the sample is too broad. There can be multiple causes & fixes for that:
+     1. There is no translation for the language you use yet, resulting in the English stopwords being stripped and not stopwords in your native language. There's a real easy fix that will benefit others as well: translate [the English Lexicon](https://github.com/Mark-H/getRelated/blob/master/core/components/getrelated/lexicon/en/default.inc.php) to your language & send it back for inclusion in the addon. Do not translate the long list of stop words in there, but rather find a list of stopwords in your language from a reliable source.
+     2. All your resources use similar words (a company name, the name of a product being sold, or your editor's favorite word) resulting in the sample being distorted by that. If you enable debug (&debug=`1` in the snippet) you can see the Match Data which are the words that will be matched, so you can verify if there's any words use that it shouldn't.
+         If that is the case, you can filter out these words by adding them to the "getrelated.stopwords" lexicon in your language. Go to System > Lexicon Management and in the dropdown that defaults to "core" select "getrelated". If not using English, select the right language from the language drop down as well. Now find the stopwords lexicon and add the words distorting the result set to the list. If you think the stopwords should be added to the main package, file a [bug report](https://github.com/Mark-H/getRelated/issues).
+4. Your site has too much related resources. If you have too much resources and have optimized what you could with the above options, you could:
+     1. Adjust the sample sizes. The default settings resulting in test results of around 1 second which is "okay" for a first load (cause you are getting results from the cache after that, right?!), but this depends on the number of the fields you are using, whether they are resource fields or TVs and in general how the values are stored in the database. If you use a lot of TVs in your &fields property, you can bring the tvSample down to, say, 50 to only get 50 results per TV. If you use 3 TVs, that could theoretically bring down the total amount of resources being processed from 375 to 150.
+         To make sure you still get the right results, you can change order in which the sample is fetched with tvSort and tvSortDir as well as fieldSort and fieldSortDir. By default it sorts on the createdon date, with the newest first.
 5. It could be that the returnTVs property with a lot of TVs and a large result set has a performance impact. I haven't tested this extensively, but you should try to keep your result set limited (see earlier tips) and only use the TVs you really need.
 6. It's a bug! While this addon has gone through testing on various installs and site sizes, it's possible something weird is going on. Please post in the forum topic or on Github and we can see what's going on. (links above)

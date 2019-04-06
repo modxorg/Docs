@@ -14,6 +14,6 @@ Integration of any service is very simple. So, you can read about [Facebook](htt
 
 **3**. For your MODX System Setting **ha.keys.Vkontakte** (you may need to create it) the value will be
 
-``` php 
+ ``` php
 {"id":"Application ID","secret":"Secure key"}
 ```

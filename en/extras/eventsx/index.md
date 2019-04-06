@@ -21,7 +21,7 @@ EventX is a calendar extra for MODx Revolution. EventsX shows upcoming (and prev
   - german (thanks to Anselm Hannemann)
   - russian
 
-## Requirements 
+## Requirements
 
 - MODX Revolution (tested with 2.1.3pl)
 - jQuery for the calendar (you can also create your own JSON based calendar)
@@ -69,9 +69,9 @@ Go to components -> EventsX and create some events
 
 ## Templates
 
-### example _events_ calendar template
+### Example_events_ calendar template
 
-``` html 
+``` html
 <html>
 <head>
 <title>[[++site_name]] - [[*pagetitle]]</title>
@@ -89,9 +89,9 @@ Go to components -> EventsX and create some events
 </html>
 ```
 
-### example _upcoming events_ calendar template
+### Example_upcoming events_ calendar template
 
-``` html 
+``` html
 <html>
 <head>
 <title>[[++site_name]] - [[*pagetitle]]</title>
@@ -104,9 +104,9 @@ Go to components -> EventsX and create some events
 </html>
 ```
 
-### example _single event_ calendar template
+### Example_single event_ calendar template
 
-``` html 
+``` html
 [[!evxEvent?]]<html>
 <head>
 <title>[[++site_name]] - [[*pagetitle]]</title>

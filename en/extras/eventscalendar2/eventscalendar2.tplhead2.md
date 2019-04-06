@@ -14,7 +14,7 @@ _old_uri: "revo/eventscalendar2/eventscalendar2.tplhead2"
 
 This chunk is a header of the calendar.
 
-``` html 
+``` html
 <tr>
         <td class="[[+ec.class_prev]]"><a href="[[+ec.link_prev]]">&larr;</a></td>
         <td class="[[+ec.class_month]]" colspan="5" style="text-align:center;"><strong>[[+ec.month_name]] [[+ec.year]]</strong></td>
@@ -36,7 +36,7 @@ This chunk is a header of the calendar.
 | month\_next  | Name of the next month.                  |
 | year         | Current year.                            |
 
-## See Also 
+## See Also
 
 1. [eventsCalendar2.eventsCalendar2](extras/eventscalendar2/eventscalendar2.eventscalendar2)
 2. [eventsCalendar2.Generating events](extras/eventscalendar2/eventscalendar2.generating-events)

@@ -16,8 +16,9 @@ When you run the CMPGenerator fill in the database name and if needed the table 
 
 ### Basic Snippet Code Example
 
-**Example code** 
-``` php 
+**Example code**
+
+``` php
 <?php
 require_once $modx->getOption('core_path').'config/foreigndb_config.php';
 
@@ -81,28 +82,29 @@ $output .= '
 return $output;
 ```
 
-Example of schema and foreign DB from James Ehly 
-\- <http://devtrench.com/posts/first-impressions-of-xpdo-wordpress-to-modx-migration-tool> 
-\- <http://devtrench.com/posts/wordpress-to-modx-migration-part-2-schema-relationships-and-comments> 
+Example of schema and foreign DB from James Ehly
+\- <http://devtrench.com/posts/first-impressions-of-xpdo-wordpress-to-modx-migration-tool>
+\- <http://devtrench.com/posts/wordpress-to-modx-migration-part-2-schema-relationships-and-comments>
 \- <http://devtrench.com/posts/wordpress-to-modx-migration-part-3-templates-categories-and-postmeta>
 
 ### Advanced Snippet Code Example
 
 The above code will create a new connection for each snippet call. So if you have 2 or 3 snippet calls to your snippet that is using a foreign db it will lag. So I wrote a simple class that will save you db connection so you don't have to reconnect each time.
 
-**foreignconnect.class.php** 
-``` php 
+**foreignconnect.class.php**
+
+``` php
 class ForeignConnect {
     /**
      * @var (Array) of db_dsn => (Object) the xPDO instance
      */
     private static $instance = array();
-    
+
     /**
      * private constructor
      */
     private function __construct($database_dsn, $username, $password){
-        
+
     }
     public function __destruct(){
         $this->close();
@@ -123,7 +125,7 @@ class ForeignConnect {
             self::$instance[$database_dsn] = new xPDO($database_dsn,
                 $username,
                 $password );
-            
+
         }
         //$modx->log(xPDO::LOG_LEVEL_ERROR, 'Return Connection');
         return self::$instance[$database_dsn];
@@ -139,8 +141,9 @@ class ForeignConnect {
 
 Now create a config file that can be required for each snippet call:
 
-**Custom** 
-``` php 
+**Custom**
+
+``` php
 $database_type = 'mysql';
 
 $database_server = 'localhost';
@@ -155,8 +158,9 @@ $database_dsn = $database_type.':host='.$database_server.';dbname='.$dbase.';cha
 
 Then the first few lines of the snippet will looks like this instead:
 
-**Snippet** 
-``` php 
+**Snippet**
+
+``` php
 require $modx->getOption('core_path').'/config/foreign_config.inc.php';
 
 $output = '';// this is what the snippet will return

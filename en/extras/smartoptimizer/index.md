@@ -34,7 +34,7 @@ It can be downloaded from within the MODx Revolution manager via [Package Manage
 **Github** : <https://github.com/benjamin-vauchel/smartoptimizer>
 **Support/Comments** : <http://forums.modx.com/thread/72679/support-comments-for-smartoptimizer>
 
-## Usage : the snippet way
+## Usage: the snippet way
 
 If you can't edit your .htaccess or if you want to ponctually use SmartOptimizer.
 
@@ -67,7 +67,7 @@ After (with SmartOptimizer)
 <script src="[[SmartOptimizer? &files=`assets/js/file.js`]]"></script>
 ```
 
-## Usage : the output filter way
+## Usage: the output filter way
 
 If you can't edit your .htaccess or if you want to ponctually use SmartOptimizer.
 
@@ -75,7 +75,7 @@ If you can't edit your .htaccess or if you want to ponctually use SmartOptimizer
 
 Before (without SmartOptimizer)
 
-``` html                        |
+``` html                       |
 <!-- Your CSS files -->
 <link rel="stylesheet" href="[[+link_to_css]]"/>
 
@@ -93,7 +93,7 @@ After (with SmartOptimizer)
 <script src="[[+link_to_js:smartoptimizer]]"></script>
 ```
 
-## Usage : the .htaccess way
+## Usage: the .htaccess way
 
 Use this method if you want all your css and js files processed by SmartOptimizer
 

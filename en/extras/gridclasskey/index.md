@@ -44,8 +44,8 @@ _old_uri: "revo/gridclasskey"
 - Sortable: to set whether the column is sortable or not
 - Hidden: a field can be hidden from the view, but it can be shown manually by an icon tool in the grid's header
 - Editor Type: all cells are editable, except the ID.
-   On here, user can define what kind of editor they want to use to edit the content. 
-   The options are: 
+   On here, user can define what kind of editor they want to use to edit the content.
+   The options are:
   - the name of any of ExtJs and MODX's xtype editors, or
   - (since 1.0.1-rc1) a json-parameter object of a complex set of an editor, eg:
       `{xtype:"modx-combo",url:"path/to/connector",baseParams:{action:"something/getlist",combo:true}}`
@@ -65,7 +65,7 @@ _old_uri: "revo/gridclasskey"
 
  The JS file(s) will _only_ be loaded when the particular grid page is loaded. Developer can add their JS file to manipulate how the grid will perform.
 
-### Example of Custom Javascript
+### Exampleof Custom Javascript
 
 #### [Adding a dropdown filter field that can be used by clients](http://forums.modx.com/thread/92669/grid-class-key-add-a-dropdown-filter-field-that-can-be-used-by-clients)
 
@@ -86,7 +86,7 @@ _old_uri: "revo/gridclasskey"
 
  ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/acl.png)
 
-##### 2. Create the "author" Template Variable. 
+##### 2. Create the "author" Template Variable.
 
  We need to create a TV that lists users from the "Author" usergroup.
 
@@ -96,11 +96,11 @@ _old_uri: "revo/gridclasskey"
 
  We need a snippet that will list the users from this particular user group, we use [@EVAL binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding) feature for this.
 
-##### 3. Create snippet to list the authors on Template Variable's values 
+##### 3. Create snippet to list the authors on Template Variable's values
 
  On this example, let's name it "authorListTV".
 
- ``` php 
+ ``` php
 <?php
 $c = $modx->newQuery('modUser');
 $c->leftJoin('modUserProfile', 'Profile', 'Profile.internalKey = modUser.id');
@@ -139,7 +139,7 @@ return $output;
 
  ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/filetree-1.png)
 
- 4. Add a combo of users from "Author" usergroup into top of the grid
+ 1. Add a combo of users from "Author" usergroup into top of the grid
 
  We need to adjust the settings.
 
@@ -151,7 +151,7 @@ return $output;
 
  On this example, let's name it "authorNameOF".
 
- ``` php 
+ ``` php
 <?php
 $output = $input;
 if (is_numeric($input)) {
@@ -171,7 +171,7 @@ return $output;
 
  On this example, it's "../assets/components/customize-gck/js/mgr/widgets/customize-gck.js".
 
- ``` javascript 
+ ``` javascript
 // Define the combo
 GridClassKey.combo.Users = function(config) {
     config = config || {};
@@ -257,7 +257,7 @@ Ext.onReady(function() {
 
  Now we need to create a connector for the combo, "assets/components/customize-gck/connector.php"
 
- ``` php 
+ ``` php
 <?php
 // beware of the location of this file!
 require_once dirname(dirname(dirname(dirname(__FILE__)))) . '/config.core.php';
@@ -276,7 +276,7 @@ $modx->request->handleRequest(array(
 
  Now let's add the combo's processor, "core/components/customize-gck/processors/authors/getlist.class.php"
 
- ``` php 
+ ``` php
 <?php
 class AuthorUsersGetListProcessor extends modObjectGetListProcessor {
     /** @var string $objectType The object "type", this will be used in various lexicon error strings */
@@ -347,7 +347,7 @@ return 'AuthorUsersGetListProcessor';
 
   **1. Component**
 
- ``` javascript 
+ ``` javascript
 GridClassKey.combo.Availability = function (config) {
     config = config || {};
     Ext.applyIf(config, {
@@ -375,7 +375,6 @@ You can extends any available MODx's JS components.
 
  ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/gck-load-bottom-js.png)
 
-
  **3. Edit the GridClassKey's setting**
 
  Then change the Field's setting.
@@ -394,8 +393,8 @@ You can extends any available MODx's JS components.
 
  For "Text for "Back to Container" button" field, you can define a lexicon string, or just plain text on it.
 
- The "Properties" are a modx\_site\_content field to store some properties for particular plugins/extras. 
- It's a json format comma delimited properties. 
+ The "Properties" are a modx\_site\_content field to store some properties for particular plugins/extras.
+ It's a json format comma delimited properties.
  Please refer to their documentation of the parameters.
 
 ## Permissions

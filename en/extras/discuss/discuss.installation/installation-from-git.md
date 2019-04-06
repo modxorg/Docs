@@ -12,8 +12,8 @@ Discuss is maintained on Github and to properly allow external contributions, we
 
 1. Go to <http://github.com/modxcms/Discuss>
 2. Click the "Fork" button to create a fork on your own account
-3. Clone it to your local environment using the following command on terminal: 
-  git clone git@github.com:**username**/Discuss.git 
+3. Clone it to your local environment using the following command on terminal:
+  git clone git@github.com:**username**/Discuss.git
   this will create a Discuss directory in the directory you were at with the contents of the Discuss repository. You will want to make sure this is in a web accessible directory but that is not in your MODX directory.
 4. Checkout the proper branch using `git checkout <branch>`. This will likely be "develop", a theme or a release branch depending on your intentions. Please see the [Discuss Contributions Guidelines](extras/discuss/discuss.contributing "Discuss.Contributing") docs for more info on picking the right branch.
 
@@ -47,10 +47,10 @@ And that should do it for the most part.
 If you will be working on any of the installed snippets, you will want to set these up as static snippets as well.
 
 1. Create a new media source pointing to your versioned Discuss directory
-2. Edit the created snippets, mark them as static, and choose the corresponding file in path/to/versioned/Discuss/core/components/discuss/elements/snippets/ and save the page. 
+2. Edit the created snippets, mark them as static, and choose the corresponding file in path/to/versioned/Discuss/core/components/discuss/elements/snippets/ and save the page.
   Again, you only need to do that when you are changing snippet code.
 
-## 5. Have fun. 
+## 5. Have fun
 
 That's it!
 

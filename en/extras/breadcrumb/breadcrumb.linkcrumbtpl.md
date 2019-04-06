@@ -10,10 +10,10 @@ This is the chunk displayed with the &linkCrumbTpl property on the [BreadCrumb](
 
 ## Default Value
 
-Since BreadCrumb 1.3.0, linkCrumbTpl is no longer a chunk but a snippet property. 
+Since BreadCrumb 1.3.0, linkCrumbTpl is no longer a chunk but a snippet property.
  Templates properties can be chunk name, file path (@FILE:) or chunk code (@CODE:)
 
- ``` php 
+ ``` php
 <li><a href="[[+link]]">[[+pagetitle]]</a></li>
 ```
 

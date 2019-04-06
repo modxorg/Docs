@@ -16,7 +16,7 @@ The BabelTranslation snippets returns the ID of a translated resource in a given
 
 ## Example
 
-``` php 
+``` php
 [[BabelTranslation? &contextKey=`de`]]
 ```
 

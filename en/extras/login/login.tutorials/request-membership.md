@@ -75,7 +75,7 @@ You don't have to spruce up your login page, so if you're at all unsure here, sk
 
 As before, we can use the same Login Snippet:
 
-``` php 
+ ``` php
 [[!Login? 
 &loginTpl=`lgnLoginTpl` 
 &logoutTpl=`lgnLogoutTpl` 
@@ -90,7 +90,7 @@ That nifty banner link on your homepage that displays "Logout" when you are sign
 
 To make use of it, put something like the following in your homepage template (add HTML to taste):
 
-``` php 
+ ``` php
 <div id="your_header">
 [[!Personalize? &yesChunk=`header_for_members` &noChunk=`header_for_guests` &ph=`name`]]
 </div>
@@ -102,7 +102,7 @@ It's important that the **Personalize** snippet is not cached!
 
 Create a chunk that contains something like the following:
 
-``` php 
+ ``` php
 <span id="logged_in_status">Not signed in (<a href="[[~1]]">Sign in</a>)</span>
 ```
 
@@ -112,7 +112,7 @@ The important thing there is that it links back to the login form.
 
 Next create a chunk that will be displayed to members when they are logged in:
 
-``` php 
+ ``` php
 <span id="logged_in_status">Signed in: [[+name]] (<a href="[[~1? &service=`logout`]]">Sign out</a>)</span>
 ```
 
@@ -131,7 +131,7 @@ We could do the same thing for any parts of our page that need to change how the
 
 We can basically use the same Snippet call as the Basic setup, but we're going to add one more parameter: **redirectToPrior**. This will enable users to login from any page, then return to that same page after completing the login.
 
-``` php 
+ ``` php
 [[!Login? 
 &loginTpl=`lgnLoginTpl` 
 &logoutTpl=`lgnLogoutTpl` 
@@ -142,7 +142,7 @@ We can basically use the same Snippet call as the Basic setup, but we're going t
 
 We can use the same **loginTpl** Chunk to display the login form, but we want to add a link to where the user can "Request Membership" :
 
-``` html 
+``` html
 <div class="loginForm">
     <div class="loginMessage">[[+errors]]</div>
     <div class="loginLogin">
@@ -192,7 +192,7 @@ This page doesn't have to change any from the basic setup. Its purpose is simply
 
 Next, let's handle the form that allows users to apply for membership on your site. The [Register](extras/login/login.register "Login.Register") Snippet acts on a form that is included in-line on the page (as opposed to a form inside of a chunk).
 
-``` html 
+``` html
 <h2>Register</h2>
 
 [[!Register?
@@ -250,7 +250,7 @@ It needs to reference two other pages: the **Request Pending (7)** page, and the
 
 This page's job is to inform the user that their request is being processed and that they should check their email for an activation link. Here's a sample message:
 
-``` html 
+``` html
 <p>Thank you for your interest in our site! Check your email for an activation link.  
 You will need to click this link before you can log into our site.</p>
 
@@ -260,7 +260,7 @@ You will need to click this link before you can log into our site.</p>
 
 This page handles the incoming links from the emails sent by the **Register** Snippet. The **ConfirmRegister** Snippet handles this processing; in our example, we want it to redirect users to the home page (page 9 in our example):
 
-``` php 
+ ``` php
 [[ConfirmRegister? &redirectTo=`9`]]
 ```
 
@@ -314,7 +314,7 @@ The cause is almost certainly that you do not have a Chunk by the name listed fo
 
 Email configuration is unfortunately complex and differs from server to server. A good place to start is checking whether PHP can send emails. Try placing the following script on your site, then navigate to it in your browser:
 
-``` php 
+ ``` php
 <?php
  $to = "recipient@example.com";
  $subject = "Hi!";
@@ -337,7 +337,7 @@ This issue shouldn't come up on recent versions of MODX, but to verify this beha
 
 A simple test here is the following script:
 
-``` php 
+ ``` php
 if (function_exists('mb_ereg')) {
  print 'Yes, the multibyte function exists';
 }

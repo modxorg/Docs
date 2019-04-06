@@ -8,7 +8,7 @@ bdRedirect is a simple snippet that can be used to create a redirect page that t
 
 Simply create a resource, and put the uncached bdRedirect snippet call in the content:
 
-``` php 
+``` php
 [[!bdRedirect]]
 ```
 

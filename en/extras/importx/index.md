@@ -82,9 +82,9 @@ If you get any other output, see the below table and what you could do to fix it
 | \[\[+field\]\] (\[\[+int\]\] is expected to be an integer                                           | A header element was found that started with "tv", however \[\[+int\]\] is not a number and can't be used to find the TV to add data to.                                                                                  | Fix the header row element.                                                                                                                                        |
 | \[\[+field\]\] (no TV with an ID of \[\[+id\]\])                                                    | A header element referencing a TV was found, but there was no TV with that ID.                                                                                                                                            | Fix the header row element.                                                                                                                                        |
 
-### Example CSV and some CSV-related notes
+### ExampleCSV and some CSV-related notes
 
-``` php 
+ ``` php
 pagetitle;alias;isfolder
 Analysing;analysing;1
 Communicating;communicating;0

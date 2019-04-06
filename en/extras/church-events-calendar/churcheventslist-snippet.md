@@ -32,7 +32,7 @@ Version 1.0
 
 Basic this will show the next 15 events in a list
 
-``` php 
+``` php
 <ul>
 [[!ChurchEventsList]]
 </ul>
@@ -40,7 +40,7 @@ Basic this will show the next 15 events in a list
 
 Show a list of events that are marked as prominent with a limit of 10
 
-``` php 
+``` php
 [[!ChurchEventsList?
   &prominent=`Yes`
   &limit=`10`

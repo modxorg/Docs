@@ -18,31 +18,31 @@ _old_uri: "revo/formitfastpack/formitfastpack.figeneratereport"
  | `<field type="checkbox" name="are_you_vegetarian" checked="checked" />` | ```<p><strong>Are You Vegetarian:</strong> 1</p>` |
  | `<field name="companyAddress" value="VALUE" />`                         | ```<p><strong>companyAddress:</strong> VALUE</p>` |
 
- If using this hook, be careful when naming your form fields to make field names that are properly parsed by the output filters into readable labels. 
+ If using this hook, be careful when naming your form fields to make field names that are properly parsed by the output filters into readable labels.
 
 ## Usage
 
  Use as a FormIt hook before the "email" hook:
 
- ``` php 
-[[!FormIt? 
-    &hooks=`math,spam,fiGenerateReport,email,redirect` 
+ ``` php
+[[!FormIt?
+    &hooks=`math,spam,fiGenerateReport,email,redirect`
     ...
 ]]
 ```
 
  In your emailTpl (FormIt report template) or any other FormIt-parsed templates, use the figr\_values placeholder instead of having to manually place each field label and value:
 
- ``` html 
+ ``` html
  <p>A <strong>[[++site_name]]</strong> contact form submission was sent from the <strong>[[*pagetitle]]</strong> page:</p>
 [[+figr_values]]
 ```
 
  You can pass additional configuration options directly into the FormIt call:
 
- ``` php 
-[[!FormIt? 
-    &hooks=`math,spam,fiGenerateReport,email,redirect` 
+ ``` php
+[[!FormIt?
+    &hooks=`math,spam,fiGenerateReport,email,redirect`
     ...
     &figrExcludedFields=`op1,op2,operator,math`
 ]]
@@ -52,9 +52,9 @@ _old_uri: "revo/formitfastpack/formitfastpack.figeneratereport"
 
 Some (later?) versions of FormIt handle array values already, but if you have any trouble with multiple checkboxes or other array values not being output on the report, add the fiProcessArrays hood right before fiGenerateReport:
 
-``` php 
-[[!FormIt? 
-    &hooks=`math,spam,fiProcessArrays,fiGenerateReport,email,redirect` 
+ ``` php
+[[!FormIt?
+    &hooks=`math,spam,fiProcessArrays,fiGenerateReport,email,redirect`
     ...
     &figrExcludedFields=`op1,op2,operator,math`
 ]]
@@ -77,7 +77,7 @@ Some (later?) versions of FormIt handle array values already, but if you have an
 
  By default, the following formReportRow chunk contents are used:
 
- ``` php 
+ ``` php
 <p><strong>[[+field:replace=`_== `:ucwords]]:</strong> [[+value:nl2br]]</p><br>
 
 ```

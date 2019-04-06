@@ -27,7 +27,7 @@ It can be downloaded from within the MODx Revolution manager via [Package Manage
 - h = Height (in pixels)
 - zc = Zoom Cropping. Set to 1 to enable zoom cropping.
 
-## Usage Examples
+## UsageExamples
 
 Transform an image to 120px by 120px.
 

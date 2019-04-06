@@ -14,7 +14,7 @@ This example form will register a user and do the following:
 
 ## The Resource
 
-``` php 
+ ``` php
 <h2>Register</h2>
 
 [[!Register?
@@ -75,7 +75,7 @@ This example form will register a user and do the following:
 
 ## The myActivationEmailTpl Chunk
 
-``` php 
+ ``` php
 <p>[[+username]],</p>
 
 <p>Thanks for registering! To activate your new account, please click on the following link:</p>

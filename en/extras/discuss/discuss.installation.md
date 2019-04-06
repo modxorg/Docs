@@ -39,7 +39,7 @@ While Discuss includes login and sign up functionality (using the Login package)
 
 You can build these as you normally would ([see the Login documentation](extras/login "Login") for more information on them) and there are no requirements on how they look or are build. There is one important thing to include in your login, register and update profile pages, which is pre and posthooks specific to Discuss:
 
-``` php 
+``` php
  &preHooks=`preHook.DiscussLogin`
    &postHooks=`postHook.DiscussLogin`
 ```
@@ -60,7 +60,7 @@ After Friendly URLs are set up, you will need to add some specific rewrite rules
 
 Make sure to add this BEFORE the regular MODX rewrite rules in your .htaccess but AFTER the RewriteBase. If you have used a different alias than "forums" in your Discuss resource, or the forums are in the root of the site, make sure to replace all occurences of "forums" below accordingly.
 
-``` php 
+``` php
 # If imported from SMF, you can include the following lines to make sure existing urls don't break.
 RewriteRule ^forums/index.php/topic,(.*).msg(.*).html$ forums/?action=thread&thread=$1&i=1
 RewriteRule ^forums/index.php/topic,(.*).(.*).html$ forums/?action=thread&thread=$1&i=1&start=$2
@@ -84,7 +84,7 @@ Remember, change "forums" if your alias is different.
 
 Suggested set of rules (called before your main rewrite for MODX):
 
-``` php 
+``` php
   rewrite ^/forums/thread/([0-9]+)/(.*)$ /index.php?q=forums/&action=thread&thread=$1 last;
   rewrite ^/forums/u/(.+)$ /index.php?q=forums/&action=user&user=$1 last;
   rewrite ^/forums/board/([0-9]+)/(.*)$ /index.php?q=forums/&action=board&board=$1 last;
@@ -95,7 +95,7 @@ Suggested set of rules (called before your main rewrite for MODX):
 
 Here's another more extensive set of rules that also rewrites SMF rules to the proper Discuss ones.
 
-``` php 
+``` php
  # SMF rules
 rewrite ^/forums/index.php/topic,(.*).msg(.*).html$ /forums/?action=thread&thread=$1&i=1 last;
 rewrite ^/forums/index.php/topic,(.*).(.*).html$ /forums/?action=thread&thread=$1&i=1&start=$2 last;
@@ -127,7 +127,7 @@ if (!-e $request_filename){
 }
 ```
 
-### Configure Discuss to match your environment.
+### Configure Discuss to match your environment
 
 Now that friendly urls are working, we're ready to configure Discuss. As most of this configuration is done in System settings, open that through System > System settings and choose the "discuss" namespace to see Discuss specific configuration.
 
@@ -152,7 +152,7 @@ While this bit of installation is technically not a part of Discuss, here's some
 
 Make sure in your [Login](extras/login "Login") call that you specify the following as pre and post hooks:
 
-``` php 
+``` php
    &preHooks=`preHook.DiscussLogin`
    &postHooks=`postHook.DiscussLogin`
 ```
@@ -163,7 +163,7 @@ This will allow Discuss to add extra functionality to your Login methods.
 
 Make sure you add the members to the "Forum Members" User Group, so that they will have forum access. This can be done via:
 
-``` php 
+``` php
 &usergroups=`Forum Members:Member`
 ```
 
@@ -175,19 +175,19 @@ A few things need to happen with UpdateProfile.
 
 One, make sure you add the following post-hook to your UpdateProfile call:
 
-``` php 
+``` php
    &postHooks=`postHook.DiscussUpdateProfile`
 ```
 
 Then, **after** the UpdateProfile call, place this snippet call:
 
-``` php 
+``` php
 [[!DiscussUpdateProfileLoader]]
 ```
 
 Finally, there are some extra form fields you can add to allow users to modify their Discuss profile:
 
-``` html 
+``` html
 <label for="signature">Signature <span class="error">[[!+up.error.signature:stripTags=`p,b,strong,i,a,ul,li`]]</span></label>
 <textarea name="signature:allowTags" id="signature">[[!+up.signature]]</textarea>
 
@@ -212,22 +212,22 @@ The prior fields will allow your users to toggle those values in their profile.
 ## See Also
 
 1. [Discuss.Installation](extras/discuss/discuss.installation)
-  1. [Discuss.Installation from Git](extras/discuss/discuss.installation/discuss.installation-from-git)
+  `1. [Discuss.Installation from Git](extras/discuss/discuss.installation/discuss.installation-from-git)
 2. [Discuss.Getting Started](extras/discuss/discuss.getting-started)
 3. [Discuss.Creating a Discuss Theme](extras/discuss/discuss.creating-a-discuss-theme)
 4. [Discuss.Controllers](extras/discuss/discuss.controllers)
-  1. [Discuss.Controllers.board](extras/discuss/discuss.controllers/discuss.controllers.board)
+   1. [Discuss.Controllers.board](extras/discuss/discuss.controllers/discuss.controllers.board)
       1. [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
-  2. [Discuss.Controllers.home](extras/discuss/discuss.controllers/discuss.controllers.home)
-  3. [Discuss.Controllers.login](extras/discuss/discuss.controllers/discuss.controllers.login)
-  4. [Discuss.Controllers.logout](extras/discuss/discuss.controllers/discuss.controllers.logout)
-  5. [Discuss.Controllers.profile](extras/discuss/discuss.controllers/discuss.controllers.profile)
-  6. [Discuss.Controllers.register](extras/discuss/discuss.controllers/discuss.controllers.register)
-  7. [Discuss.Controllers.search](extras/discuss/discuss.controllers/discuss.controllers.search)
-  8. [Discuss.Controllers.thread](extras/discuss/discuss.controllers/discuss.controllers.thread)
-5. [Discuss.Database Model](extras/discuss/discuss.database-model)
-6. [Discuss.Contributing](extras/discuss/discuss.contributing)
-7. [Discuss.ChunkMap](extras/discuss/discuss.chunkmap)
-8. [Discuss.Features](extras/discuss/discuss.features)
-9. [Discuss.Roadmap](extras/discuss/discuss.roadmap)
-10. [Configuring Sphinx for Search](extras/discuss/configuring-sphinx-for-search)
+   2. [Discuss.Controllers.home](extras/discuss/discuss.controllers/discuss.controllers.home)
+   3. [Discuss.Controllers.login](extras/discuss/discuss.controllers/discuss.controllers.login)
+   4. [Discuss.Controllers.logout](extras/discuss/discuss.controllers/discuss.controllers.logout)
+   5. [Discuss.Controllers.profile](extras/discuss/discuss.controllers/discuss.controllers.profile)
+   6. [Discuss.Controllers.register](extras/discuss/discuss.controllers/discuss.controllers.register)
+   7. [Discuss.Controllers.search](extras/discuss/discuss.controllers/discuss.controllers.search)
+5. [Discuss.Controllers.thread](extras/discuss/discuss.controllers/discuss.controllers.thread)
+6. [Discuss.Database Model](extras/discuss/discuss.database-model)
+7. [Discuss.Contributing](extras/discuss/discuss.contributing)
+8. [Discuss.ChunkMap](extras/discuss/discuss.chunkmap)
+9. [Discuss.Features](extras/discuss/discuss.features)
+10. [Discuss.Roadmap](extras/discuss/discuss.roadmap)
+11. [Configuring Sphinx for Search](extras/discuss/configuring-sphinx-for-search)

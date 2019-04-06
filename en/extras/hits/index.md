@@ -15,7 +15,7 @@ With hits you can:
 
 Record a hit for the current resource.
 
- ``` php 
+ ``` php
 [[!Hits? &punch=`[[*id]]`]]
 ```
 

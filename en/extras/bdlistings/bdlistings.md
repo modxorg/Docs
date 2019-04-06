@@ -79,7 +79,7 @@ Wraps around all the individual items.
 
 Default:
 
-``` php 
+``` php
 [[+wrapper]]
 ```
 
@@ -94,7 +94,7 @@ Used to output a single listing.
 
 Default:
 
-``` php 
+``` php
 <div>
     <h2>
         [[+redirect_url:notempty=`<a href="[[+redirect_url]]">[[+title]]</a>`:default=`[[+title]]`]]
@@ -156,7 +156,7 @@ Used to wrap around images inside a listing. (not used for the primaryimage prop
 
 Default:
 
-``` php 
+``` php
 <img src="[[+image:phpthumbof=`w=150&h=150&zc=1`]]" alt="[[+caption]]" />
 ```
 
@@ -183,7 +183,7 @@ In the tplRow chunk there's a googlemap\_static placeholder. That's a simple ima
 | staticMapMarkerLabel | Text on the marker. Limited to 1 upper character or number.                                                                                                     | A             |
 | staticMapMarkerSize  | \[tiny                                                                                                                                                          | mid           | small | medium\] Size of the marker. | medium |
 | staticMapMarkerIcon  | Optionally an icon to use instead of the marker. Consult the Google Maps Static API for detailed usage and what you need to encode or not. An example could be: |
-``` php 
+``` php
 http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600
 ``` |  |
 | staticMapMarkerIconShadow | \["true" or "false", actual text so NOT 1 or 0\] To use shadow or not when using a custom icon. | true |
@@ -192,7 +192,7 @@ http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600
 
 Last 5 listings, simple list format:
 
-``` php 
+``` php
 <h3>Lastest 5 Ads</h3>
 <ul id="latest_ads">
 [[!bdListings? &sort=`{"createdon":"DESC"}`  &tplRow=`bdl.listings.list` &limit=`5`]]
@@ -201,7 +201,7 @@ Last 5 listings, simple list format:
 
 bdl.listings.list chunk, pointing to resource 14 (search results page which has an uncached bdListings call on it and accepts URL parameters) with the listing ID as filter, meaning it will only show the one listing.
 
-``` php 
+``` php
 <li>
   <a href="[[~14? &listings=`[[+id]]`]]" title="[[+title]]">[[+title]]</a>
 </li>

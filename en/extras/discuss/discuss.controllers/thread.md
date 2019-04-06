@@ -38,7 +38,7 @@ If you don't know what the manifest is, please go back to the [Getting Started](
 
 ## Controller Template
 
-``` html 
+``` html
 <!-- thread/index.html -->
 [[+top]]
 

@@ -10,20 +10,20 @@ Revolution makes it easy to pass [URL parameters](http://rtfm.modx.com/display/r
 
 #### OPTIONS
 
-**name** - The parameter name, defaults to "p" 
-**int** - (Opt) Set as true to only allow integer values 
-**max** - (Opt) The maximum length of the returned value, defaults to 20 
+**name** - The parameter name, defaults to "p"
+**int** - (Opt) Set as true to only allow integer values
+**max** - (Opt) The maximum length of the returned value, defaults to 20
 **default** - (Opt) The value returned if no URL parameter is found
 
 Send parameter
 
-``` php 
+ ``` php
 [[~10? &val=`5`]]
 ```
 
 Retrieve the value
 
-``` php 
+ ``` php
 [[!getUrlParam? &name=`val` &int=`1`]]
 ```
 

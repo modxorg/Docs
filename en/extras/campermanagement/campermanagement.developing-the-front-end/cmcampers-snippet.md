@@ -22,11 +22,11 @@ You can use the following properties in cmCampers to adjust its behaviour and to
 | includeOptions | 1                                                                                                                                                                                                                                                                                               | 0. Determines if the related options should be retrieved. Can save some processing time when not needed.                | 1    |
 | status         | Comma seperated list of status IDs that should be included in the results. The IDs are:                                                                                                                                                                                                         |
 
-1. Unconfirmed 
-2. Active 
-3. Favorite 
-4. Conditionally sold 
-5. Sold 
+1. Unconfirmed
+2. Active
+3. Favorite
+4. Conditionally sold
+5. Sold
 6. Inactive | 1,2,3,4 |
 | numimages | Integer indicating how many images should be retrieved. | 1 |
 | target | Integer resource ID for the camper details page. Will be used with makeUrl to create a link following friendly url settings, passing "cid" in the URL with the camper ID. | 2 |
@@ -37,24 +37,24 @@ You can use the following properties in cmCampers to adjust its behaviour and to
 | tplOptionsOuter | Chunkname. Outer template to wrap the entire options result set, called for every vehicle item. \[Placeholders|display/ADDON/CamperManagement.Placeholders+you+can+use\] | cmDefaultTplOptionsOuter |
 | tplOptionsItem | Chunkname. Template for one option item. \[Placeholders|display/ADDON/CamperManagement.Placeholders+you+can+use\] | cmDefaultTplOptionsItem |
 | tplOwner | Chunkname. Template to use for displaying owner information. \[Placeholders|display/ADDON/CamperManagement.Placeholders+you+can+use\] | cmDefaultTplOwner |
-| searchFromRequest | 1 | 0. When 1, this will also check POST and GET requests for the status to filter on, the sort field and the sort direction. Fields it looks out for and overrides the snippet properties with if found are: status, sort, dir. 
+| searchFromRequest | 1 | 0. When 1, this will also check POST and GET requests for the status to filter on, the sort field and the sort direction. Fields it looks out for and overrides the snippet properties with if found are: status, sort, dir.
 When it finds a status filter, it will set a placeholder "statusfilter" you could use in your template. | 0 |
 | locale | Locale used for the money\_format function which formats the price. | it\_IT |
 | toPlaceholder | When set it will set a placeholder, the key being what you pass to &toPlaceholder, with the result of the function. |  |
 
 ## Example usage
 
-### Example 1: Simple overview of latest additions
+### Example1: Simple overview of latest additions
 
 Override the item chunk and image item chunk, getting the last 4 added vehicles and linking to the details page with ID 12.
 
-``` php 
+``` php
 [[!cmCampers? &tplItem=`cmTplItem` &tplImageItem=`cmTplImage` &limit=`4` &target=`12`]]
 ```
 
 cmTplItem chunk:
 
-``` php 
+``` php
 <li onclick="location.href='[[+url]]'">
     <div class="status[[+status]]"></div>
     [[+images:default=`<img src="/assets/templates/lighthouse/cmimg/ph.png" />`]]
@@ -68,16 +68,16 @@ cmTplItem chunk:
 </li>
 ```
 
-With additional CSS styling, this is the result (obviously there are things that could be improved): 
+With additional CSS styling, this is the result (obviously there are things that could be improved):
 ![](/download/attachments/35586675/ex1.PNG?version=1&modificationDate=1316009636000)
 
-### Example 2: Slideshow with vehicles marked as favorite
+### Example2: Slideshow with vehicles marked as favorite
 
 This slideshow assumes you have a some kind of plugin set up to handle the slideshow, but is intended to show how you could use the different tpl properties to just get the output you need.
 
 We put this is the template (it matches our slideshow script):
 
-``` php 
+``` php
 <div id="slideshow">  
    [[!cmCampers? &status=`2` &tplOuter=`cmHomeOuter` &tplItem=`cmHomeItem` &tplImageItem=`cmHomeImage` &searchFromRequest=`0` &target=`12` ]]
 </div>
@@ -87,13 +87,13 @@ We're filtering on status 2 (favorites), and are using a few template chunks:
 
 cmHomeOuter, which only outputs the inner stuff instead of the default of an unordered list. We could actually put the div from the template (part above) in our outer template, too.
 
-``` php 
+``` php
 [[+items]]
 ```
 
 cmHomeItem, which outputs the images and the caption for one vehicle. Again, this is specific for our slideshow and your scripts may require something different.
 
-``` php 
+``` php
 <div class="slide">
   <a href="[[+url]]" title="[[+brand]] [[+type]]" >[[+images]]</a>
   <div class="slider-infobox">
@@ -104,13 +104,13 @@ cmHomeItem, which outputs the images and the caption for one vehicle. Again, thi
 
 cmHomeImage which simply puts in the image tag.
 
-``` php 
+``` php
 <img src="[[+image]]" alt="[[+brand]] [[+type]]" />
 ```
 
 All of the above gives us the following output in the front-end for one item:
 
-``` php 
+``` php
  <div class="cycle">
   <a href="aanbod/details.html?cid=12" title="TEC Siena Saphir 510 TR" ><img src="/assets/components/campermanagement/uploads/2011/12/cm25917-723.jpg" alt="TEC Siena Saphir 510 TR" /></a>
   <div class="slider-infobox">
@@ -119,10 +119,10 @@ All of the above gives us the following output in the front-end for one item:
 </div>
 ```
 
-Combined with our slideshow script and a bunch of css, we get this result, which fades in/out from vehicle to vehicle. 
+Combined with our slideshow script and a bunch of css, we get this result, which fades in/out from vehicle to vehicle.
 ![](/download/attachments/35586675/ex2.PNG?version=1&modificationDate=1316009636000)
 
-### Example 3: Horizontal row style overview
+### Example3: Horizontal row style overview
 
 Coming soon..!
 

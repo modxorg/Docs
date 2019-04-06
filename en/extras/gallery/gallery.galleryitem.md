@@ -65,7 +65,7 @@ _old_uri: "revo/gallery/gallery.galleryitem"
 
  Display the Item with ID 12, but only if it exists.
 
- ``` php 
+ ``` php
 [[!GalleryItem? &id=`12`]]
 [[!+galitem.image:notempty=`
 <div class="image">
@@ -80,21 +80,21 @@ _old_uri: "revo/gallery/gallery.galleryitem"
 
  Display the Item with ID 23, but use a Chunk called 'Photo' for display.
 
- ``` php 
-[[!GalleryItem? 
-  &id=`23` 
-  &toPlaceholders=`0` 
+ ``` php
+[[!GalleryItem?
+  &id=`23`
+  &toPlaceholders=`0`
   &tpl=`Photo`
 ]]
 ```
 
  Display the Item with ID 432 with a Chunk called 'Photo', but separate the Tags associated with it by a pipe ("|"):
 
- ``` php 
-[[!GalleryItem? 
-  &id=`432` 
-  &toPlaceholders=`0` 
-  &tpl=`Photo` 
+ ``` php
+[[!GalleryItem?
+  &id=`432`
+  &toPlaceholders=`0`
+  &tpl=`Photo`
   &tagSeparator=` | `
 ]]
 ```
@@ -102,19 +102,19 @@ _old_uri: "revo/gallery/gallery.galleryitem"
 ## See Also
 
 1. [Gallery.Gallery](extras/gallery/gallery.gallery)
-  1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
-  2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
+     1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
+     2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
 2. [Gallery.GalleryAlbums](extras/gallery/gallery.galleryalbums)
-  3. [Gallery.GalleryAlbums.containerTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
-  4. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
+     1. [Gallery.GalleryAlbums.containerTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
+     2. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
 3. [Gallery.GalleryItem](extras/gallery/gallery.galleryitem)
-  5. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
-  6. [Gallery.GalleryItem.GalleryItemPagination](extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
-  7. [Gallery.GalleryItem.tagTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
-  8. [Gallery.GalleryItem.tpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
+     1. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
+     2. [Gallery.GalleryItem.GalleryItemPagination](extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
+     3. [Gallery.GalleryItem.tagTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
+     4. [Gallery.GalleryItem.tpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
 4. [Gallery.Plugins](extras/gallery/gallery.plugins)
-  9. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
-  10. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/gallery.plugins.slimbox)
+     1. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
+     2. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/gallery.plugins.slimbox)
 5. [Gallery.Roadmap](extras/gallery/gallery.roadmap)
 6. [Gallery.Setting Up Your Gallery](extras/gallery/gallery.setting-up-your-gallery)
 7. [Gallery.Example1](extras/gallery/gallery.example1)

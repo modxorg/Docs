@@ -45,7 +45,7 @@ You will probably want to add the extended fields to your membership sign-up for
 
 Your request membership form will look a lot like what we're going to build for the Update Profile form. We're merely adding the extra fields to the form that was already in place from the previous tutorial. Here we've added a field named "custom\_field":
 
-``` html 
+``` html
 [[!Register?
     &submitVar=`registerbtn`
     &activationResourceId=`8`
@@ -108,7 +108,7 @@ Make sure you reference the correct Email Chunk in the **&activationEmailTpl** p
 
 We're gonna edit this page to use some more of features of the [UpdateProfile](extras/login/login.updateprofile "Login.UpdateProfile") Snippet. We're going to add a "custom\_field". We're going to verbosely set the **&useExtended** parameter. This ensures that any extra fields posted here end up getting tracked as extended fields.
 
-``` html 
+``` html
 [[!UpdateProfile? &excludeExtended=`email:required:email,login-updprof-btn` &useExtended=`1`]]
 
 <div class="update-profile">
@@ -151,7 +151,7 @@ Why are we using the **&excludeExtended** parameter? Well... there seems to be a
 
 As before, we will be featuring the [Profile](extras/login/login.profile "Login.Profile") Snippet. We just need to add placeholders for the extra fields. In our example we added a **custom\_field** field:
 
-``` php 
+ ``` php
 [[!Profile]]
  
 <p>Username: [[+username]]</p>
@@ -182,7 +182,7 @@ Try changing your info.
 
 The FormIt Snippet has a useful helper Snippet: [FormItCountryOptions](extras/formit/formit.formitcountryoptions "FormIt.FormItCountryOptions"). If you want to track a user's country, it can be a great way to add a country dropdown.
 
-``` php 
+ ``` php
 <select name="country">
 [[!FormItCountryOptions? &selected=`[[!+country]]` &prioritized=`US,GB,CA,AU` &prioritizedGroupText=`Frequent Visitors` &allGroupText=`Other Countries`]]
 </select>

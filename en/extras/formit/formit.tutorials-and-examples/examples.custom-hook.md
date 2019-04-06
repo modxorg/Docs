@@ -12,7 +12,7 @@ We'll base this off of a generic contact form as outlined in the [Contact Page](
 
 The only thing we need to add to the basic call here is a new **hook**: we've added a hook named **customhook**
 
-``` php 
+ ``` php
 [[!FormIt?
    &hooks=`spam,customhook,email,redirect`
    &emailTpl=`MyEmailChunk`
@@ -35,7 +35,7 @@ Remember you must return **true** if you want to consider your form validated! H
 
 The first thing you'll want to do when writing a custom hook is test it to make sure it is executing.
 
-``` php 
+ ``` php
 <?php
 $modx->log(xPDO::LOG_LEVEL_ERROR,'Testing my custom hook.');
 return true;  //<-- if you omit this or return false, your form won't validate
@@ -43,7 +43,7 @@ return true;  //<-- if you omit this or return false, your form won't validate
 
 Save your Snippet, and try submitting your form. Check the MODx system log (**Reports --> Error Log**) to ensure that your Snippet fired. You should see something like this in the logs:
 
-``` php 
+ ``` php
 [2011-10-24 11:23:20] (ERROR @ /index.php) Testing my custom hook.
 ```
 
@@ -51,7 +51,7 @@ Save your Snippet, and try submitting your form. Check the MODx system log (**Re
 
 One common thing for custom hooks to do is to calculate new field values – this emulates having a hidden field on the form. For example, your **customhook** Snippet can set a datestamp for when the form was submitted.
 
-``` php 
+ ``` php
 <?php
 $datestamp = date('Y-m-d H:i:s');
 $hook->setValue('datestamp_submitted', $datestamp);
@@ -62,7 +62,7 @@ Once you have saved this, you can update your **MyEmailChunk** chunk to include 
 
 **MyEmailChunk**:
 
-``` php 
+ ``` php
 [[+name]] ([[+email]]) <br/>
 
 Date Submitted: [[+datestamp_submitted]]<br/>
@@ -72,13 +72,13 @@ Date Submitted: [[+datestamp_submitted]]<br/>
 
 Another common thing for custom hooks to do is to read the submitted information and do something with it, e.g. write data to the database. Values can be read individually using **$hook->getValue()**, e.g.:
 
-``` php 
+ ``` php
 $email = $hook->getValue('email');
 ```
 
 Or all values can be read at once using **$hook->getValues()**:
 
-``` php 
+ ``` php
 $formFields = $hook->getValues();
 $email = $formFields['email'];
 ```

@@ -34,7 +34,7 @@ The second, **getCookieList**, simply fetches the cookie and returns the comma s
 
 The minimum call below creates a link that either says "Add to your CookieList" or "Remove from your CookieList". You'll probably want to change those labels, and you can (look at the addText and removeText properties below).
 
-``` php 
+``` php
 [[!addToCookieList]]
 ```
 
@@ -51,8 +51,7 @@ You can use the following properties:
 | removeText | Override the language-specific default "remove" label.                                                                                                                                  | "Remove from your CookieList" |
 | tpl        | Allows you to override the default chunk template. You can use link, value and label in your chunk tpl. The default (filebased) chunk looks like this:                                  |
 
-
-``` php 
+``` php
 <a href="[[+link]]" title="[[+label]]">[[+label]]</a>
 ```
 
@@ -64,7 +63,7 @@ The minimum call can be used to save the current resource ID to a cookie, which 
 
 This snippet either returns an empty string, or a comma delimited list of values stored for the user. This is a real simple snippet as there's only one way to call it..:
 
-``` php 
+``` php
 [[!getCookieList]]
 ```
 

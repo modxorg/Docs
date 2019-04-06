@@ -4,39 +4,39 @@ _old_id: "1362"
 _old_uri: "revo/getvimeo"
 ---
 
-## What is getVimeo? 
+## What is getVimeo?
 
  A simple video retrieval snippet for MODX Revolution.
 
  This snippet uses the Vimeo Simple API to search a specified channel and return requested videos and associated data.
 
-## History 
+## History
 
  getVimeo was first written by David Pede (davidpede) and released on June 12th, 2013.
 
-## Download 
+## Download
 
  It can be downloaded from within the MODX Revolution manager via [Package Management](/display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <http://modx.com/extras/package/getvimeo>
 
  The source code and build script is also availiable on GitHub: <https://github.com/tasianmedia/getVimeo>
 
-## Bugs & Feature Requests 
+## Bugs & Feature Requests
 
  Bugs, issues and feature requests can be reported in the GitHub Repository, found here: <https://github.com/tasianmedia/getVimeo/issues>
 
-## Usage 
+## Usage
 
  The getVimeo snippet can be called using the tag:
 
- ``` php 
+ ``` php
 [[getVimeo]]
 ```
 
- Calls without the &channel, &id and &tpl properties specified will output nothing. 
+ Calls without the &channel, &id and &tpl properties specified will output nothing.
 
-### Available Properties 
+### Available Properties
 
-### Selection Properties 
+### Selection Properties
 
  | Name    | Description                                                                                                           | Default Value | Added in Version |
  | ------- | --------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------- |
@@ -47,7 +47,7 @@ _old_uri: "revo/getvimeo"
  | limit   | Limits the number of Videos returned. Use `0` for unlimited results.                                                  | 0             | 1.1.0-pl         |
  | offset  | An offset of Videos to skip.                                                                                          | 0             | 1.1.0-pl         |
 
-### Templating Properties 
+### Templating Properties
 
  | Name          | Description                                                                                                                                                              | Default Value | Added in Version |
  | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ---------------- |
@@ -56,16 +56,16 @@ _old_uri: "revo/getvimeo"
  | tplWrapper    | Name of a chunk serving as a wrapper template for the output. (NOTE: Does not work with &toPlaceholder. The placeholder where the items are inserted is \[\[+output\]\]) |               | 1.0.0-pl         |
  | toPlaceholder | If set, will assign the output to this placeholder instead of outputting it directly. (NOTE: Does not work with &tplWrapper)                                             |               | 1.0.0-pl         |
 
-### Other Properties 
+### Other Properties
 
  | totalVar | Define the key of a placeholder set by getVimeo indicating the total number of Videos that would be returned, NOT considering the LIMIT value. | total | 1.1.0-pl |
  | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ----- | -------- |
 
-### Available Placeholders 
+### Available Placeholders
 
  The placeholders available to your getVimeo template Chunks are mostly dependent on the Vimeo Simple API.
 
-#### Video Placeholders 
+#### Video Placeholders
 
  | Placeholder                          | Description                              | Added in Version |
  | ------------------------------------ | ---------------------------------------- | ---------------- |
@@ -90,45 +90,45 @@ _old_uri: "revo/getvimeo"
  | \[\[+height\]\]                      | Standard definition height of the video  |                  |
  | \[\[+tags\]\]                        | Comma separated list of tags             |                  |
 
- Please see: <http://developer.vimeo.com/apis/simple#video-response> for an up to date list of video response data provided by the API. 
+ Please see: <http://developer.vimeo.com/apis/simple#video-response> for an up to date list of video response data provided by the API.
 
-#### Other Placeholders 
+#### Other Placeholders
 
  | Placeholder    | Description                                                                                               | Added in Version |
  | -------------- | --------------------------------------------------------------------------------------------------------- | ---------------- |
  | \[\[+total\]\] | Returns the total number of Videos in the output.                                                         | 1.0.1-pl         |
  | \[\[+idx\]\]   | Returns each Videos numerical position within the output. Increases with each iteration, starting with 1. | 1.1.0-pl         |
 
-## Examples 
+## Examples
 
  Output a list of ALL videos from the Vimeo 'Staff Picks' Channel, using the 'vimeoTpl' chunk:
 
- ``` php 
+ ``` php
 [[!getVimeo? &channel=`staffpicks` &id=`all` &tpl=`vimeoTpl`]]
 ```
 
  Output only the videos specified from the Vimeo 'Staff Picks' Channel, using the 'vimeoTpl' chunk:
 
- ``` php 
+ ``` php
 [[!getVimeo? &channel=`staffpicks` &id=`68688561,69239313,68146128` &tpl=`vimeoTpl`]]
 ```
 
  Output a list of ALL videos from the Vimeo 'Staff Picks' Channel, using the 'vimeoTpl' chunk and assign the output to a placeholder:
 
- ``` php 
+ ``` php
 [[!getVimeo? &channel=`staffpicks` &id=`all` &tpl=`vimeoTpl` &toPlaceholder=`videos`]]
 [[+videos:notempty=`[[+videos]]`]]
 ```
 
- You CANNOT pass a placeholder name (&toPlaceholder) to a wrapper chunk (&tplWrapper). 
+ You CANNOT pass a placeholder name (&toPlaceholder) to a wrapper chunk (&tplWrapper).
 
-## Using getPage for Pagination 
+## Using getPage for Pagination
 
  When combined with [getPage](/display/ADDON/getPage "getPage"), getVimeo allows you to do powerful and flexible pagination on your pages.
 
  Output a list of ALL videos from the Vimeo 'Staff Picks' Channel, using the 'vimeoTpl' chunk:
 
- ``` php 
+ ``` php
 [[!getPage?
   &element=`getVimeo`
   &channel=`staffpicks`

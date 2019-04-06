@@ -45,6 +45,6 @@ In your MODX Manager you will need to create a new resource.
 
 Just put this code in the page content area:
 
-``` php 
+``` php
 [[!ChurchEventsRss?]]
 ```

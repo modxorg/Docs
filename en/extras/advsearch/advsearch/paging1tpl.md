@@ -10,7 +10,7 @@ A Chunk named "**Paging1**" is provided with AdvSearch. This Chunk name is set a
 
 ## Default Value
 
-``` php 
+``` php
 [[+previouslink:isnot=``:then=`<span class="advsea-previous"><a href="[[+previouslink]]">Previous</a></span>`]]<span class="advsea-current"> [[+first]] - [[+last]] / [[+total]] </span>[[+nextlink:isnot=``:then=`<span class="advsea-next"><a href="[[+nextlink]]">Next</a></span>`]]
 ```
 

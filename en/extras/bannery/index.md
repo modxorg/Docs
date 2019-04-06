@@ -10,7 +10,7 @@ Display images with hyperlinks at designated positions in a page. Fork from Jero
 
 ## Usage
 
-``` php 
+``` php
 [[BannerY? &position=`1` &sortby=`RAND()` &limit=`1`]]
 ```
 

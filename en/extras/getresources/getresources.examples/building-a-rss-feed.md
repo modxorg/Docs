@@ -16,7 +16,7 @@ In your MODX Manager, create a new resource.
 4. Now you are ready to include the channel information (in other words: the global information about your feed) in the page content. If you are using TinyMCE or a similar rich text editor, disable it on the Page Settings tab to prevent odd things happening to the code.
 5. Paste the following code into the Content field:
 
-``` php 
+ ``` php
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <channel>
@@ -40,7 +40,7 @@ In your MODX Manager, create a new resource.
 </rss>
 ```
 
-**Warning for Articles** 
+**Warning for Articles**
  If you are using getResources to summarize blog posts from the [Articles](http://rtfm.modx.com/display/ADDON/Articles) Extra, you must set **&showHidden=`1`** – Articles are considered hidden.
 
 What this does is quite straightforward. First you declare the xml and rss version (as well as "extensions" to the rss, in this case atom and dublin core), similar to how you would declare a HTML Doctype. Next, the channel block starts which is where you give information about your feed and the website it represents.
@@ -62,7 +62,7 @@ If you would visit your feed now, it wont work properly yet as we did not yet cr
 
 In the getResources snippets we referenced a chunk called "rssItem", so let's create it now.
 
-``` php 
+ ``` php
 <item>
   <title>[[+pagetitle:htmlent]]</title>
   <link>[[~[[+id]]? &scheme=`full`]]</link>
@@ -88,13 +88,13 @@ You can modify this chunk to suit your needs and include that information you wa
 
 When you save the chunk, and go back to your feed, you should see it has loaded in the content and you're good to go. Make sure to put a link to your RSS feed on your site somewhere, and also stick it in the header with a link tag:
 
-``` php 
+ ``` php
  <link rel="alternate" type="application/rss+xml" title="Follow this website with RSS" href="[[~52]]" />
 ```
 
 Be sure to replace 52 with the ID of your RSS resource. This will make the browser recognize the feed, and put the shiny icon in the navigation bar.
 
-## Now what...
+## Now what
 
 Of course you can further customize this. Some ideas to get you started:
 

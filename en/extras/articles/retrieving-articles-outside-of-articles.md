@@ -8,7 +8,7 @@ Articles are stored as Resources in MODX, allowing you to easily utilize them in
 
 For example, this [getResources](extras/getresources "getResources") call grabs the latest 8 Articles for you in your Container with ID 10:
 
-``` php 
+``` php
 [[getResources?
   &parents=`10`
   &tpl=`myTpl`
@@ -23,7 +23,7 @@ That's all there is to it!
 
 Articles 1.4+ comes with a snippet called "Articles" that you can use to get Articles-specific placeholders for a Container on **any** Resource in your site. For example, putting this call on your Home page, targeting the Container with ID 10:
 
-``` php 
+``` php
 [[Articles? &container=`10`]]
 [[+latest_posts]]
 ```

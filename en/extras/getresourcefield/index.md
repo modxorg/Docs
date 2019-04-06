@@ -20,7 +20,7 @@ The snippet can be retrieved through the Package Manager, or downloaded manually
 
 The minimum tag is as follows:
 
-``` php 
+ ``` php
 [[getResourceField]]
 ```
 
@@ -40,19 +40,19 @@ This will output the pagetitle of the current resource.
 
 Return the pagetitle from the resource with id 123:
 
-``` php 
+ ``` php
  [[getResourceField? &id=`123`]]
 ```
 
 Return the processed TV with name myTV of the parent resource, and if it is empty output 'Sorry, no data available':
 
-``` php 
+ ``` php
  [[getResourceField? &id=`[[*parent]]` &field=`myTV` &processTV=`1` &default=`Sorry, no data available`]]
 ```
 
 Return the introtext field of the ultimate parent (note that this requires the UltimateParent snippet to be installed):
 
-``` php 
+ ``` php
  [[getResourceField? &id=`[[UltimateParent]]` &field=`introtext`]]
 ```
 
@@ -60,7 +60,7 @@ Return the introtext field of the ultimate parent (note that this requires the U
 
 One error that this Snippet is prone to is deceptively subtle: you can end up with a redirect loop. Consider the example where you've defined a template variable on your homepage, e.g. \[\[\*featured\_article\]\], and you use this in your getResourceField Snippet call:
 
-``` php 
+ ``` php
  [[getResourceField? &id=`[[*featured_article]]` &field=`content`]]
 ```
 

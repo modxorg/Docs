@@ -48,7 +48,7 @@ As you see, after first authorization you can add more services to your profile,
 
 **4**. Once you have registered, copy and past the created application credentials (**App ID** and **Secret**) into System Setting **ha.keys.Facebook** like
 
-``` php 
+ ``` php
 {"id":"1234567890","secret":"f384hf3894hf8394hf843hf"}
 ```
 

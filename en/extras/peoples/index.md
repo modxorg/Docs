@@ -29,7 +29,7 @@ Peoples comes with 3 separate snippets:
 - [PeopleGroups](extras/peoples/peoples.peoplegroups "Peoples.PeopleGroups") - Displays a list of User Groups.
 - [PeopleGroup](extras/peoples/peoples.peoplegroup "Peoples.PeopleGroup") - Displays a User Group and all Users within.
 
-## Usage Examples
+## UsageExamples
 
 List first 10 users, sorted by username.
 

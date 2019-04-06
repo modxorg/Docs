@@ -51,9 +51,9 @@ If you're passing an array of options (which will look like this `One||Two||Thre
 - Fields that have options use selective caching. To disable caching, specify &cache=`0`.
 
  Note that caching does not cache checked/ selected status or the following dynamically-generated placeholders: error, error\_class, and current\_value | auto |
-| custom\_ph | (OPTIONAL) Speed improvement. Listing your custom placeholders here or in a fieldSetDefaults call speeds up chunk processing by setting a blank default value. You do not need to list placeholders here that already have a value set somewhere else. | class,multiple,array,header, 
- default,class,outer\_class, 
- label,note,note\_class,size, 
+| custom\_ph | (OPTIONAL) Speed improvement. Listing your custom placeholders here or in a fieldSetDefaults call speeds up chunk processing by setting a blank default value. You do not need to list placeholders here that already have a value set somewhere else. | class,multiple,array,header,
+ default,class,outer\_class,
+ label,note,note\_class,size,
  title,req,message,clear\_message |
 | debug | Turn on debugging. | 0 |
 | delimiter\_template | The template for the chunk type separator. | `\<!-- [[+type]] -->` |
@@ -110,7 +110,7 @@ If you're passing an array of options (which will look like this `One||Two||Thre
 
  Here is a subset of the default &tpl chunk ( **fieldTypesTpl**):
 
- ``` html 
+ ``` html
 <!-- default -->
 <input type="[[+type]]" name="[[+name]]" id="[[+key]]" value="[[+current_value]]" class="[[+type]] [[+class]][[+error_class]]" />
 <!-- default -->
@@ -124,7 +124,7 @@ If you're passing an array of options (which will look like this `One||Two||Thre
 
  Here is the default &outer\_tpl chunk ( **fieldWrapTpl**):
 
- ``` html 
+ ``` html
 <!-- default -->
 <div class="[[+outer_class]]" id="[[+name]]_wrap">
 <label for="[[+name]]" title="[[+name:replace=`_== `:ucwords]]">[[+label:default=`[[+name:replace=`_== `:ucwords]]`]][[+req:notempty=` *`]]</label>
@@ -135,7 +135,7 @@ If you're passing an array of options (which will look like this `One||Two||Thre
 <!-- default -->
 ```
 
- The "note", "note\_field", and "req" placeholders above are examples of custom placeholders. 
+ The "note", "note\_field", and "req" placeholders above are examples of custom placeholders.
 
 ### Placeholders
 
@@ -156,7 +156,7 @@ If you're passing an array of options (which will look like this `One||Two||Thre
 
  You can write snippets to generate forms from a configuration by simply calling `$modx->runSnippet('field', $field_properties_array);` . For example:
 
- ``` php 
+ ``` php
 $output = '';
 $output .= $modx->runSnippet('field', array('name'=> 'name', 'type'=> 'text'));
 $output .= $modx->runSnippet('field', array('name'=> 'email', 'type'=> 'email'));
@@ -168,9 +168,9 @@ return $output;
  Set the defaults for all field snippets lower down
 
  ``` php
-[[!fieldSetDefaults? 
-  &prefix=`myprefix` 
-  &chunks_path=`/path/to/chunks/if/using/file/based/chunks/` 
+[[!fieldSetDefaults?
+  &prefix=`myprefix`
+  &chunks_path=`/path/to/chunks/if/using/file/based/chunks/`
   &outer_class=`ui-widget`
 ]]
 ```
@@ -184,22 +184,22 @@ return $output;
  Options use the same format as template variables: Label1==Value1||Another Label==another\_value. To use the same value for both label and value, just use Value1||Value2||Value3
 
  ``` php
-[[!field? 
-  &type=`radio` 
-  &req=`1` 
-  &name=`color` 
-  &label=`Your Favorite Color:` 
-  &default=`` 
+[[!field?
+  &type=`radio`
+  &req=`1`
+  &name=`color`
+  &label=`Your Favorite Color:`
+  &default=``
   &options=`Red==red||Blue==blue||Other==default`
 ]]
 ```
 
 ``` php
-[[!field? 
-  &type=`radio` 
-  &label=` ` 
-  &options=`Publish==publish||Save as draft==save||Preview==preview` 
-  &name=`action` 
+[[!field?
+  &type=`radio`
+  &label=` `
+  &options=`Publish==publish||Save as draft==save||Preview==preview`
+  &name=`action`
   &default=``
 ]]
 ```
@@ -207,11 +207,11 @@ return $output;
  Here, a different style of form fields is used by switching out of the default chunks. Use property sets to easily maintain various form styles around the site.
 
  ``` php
-  [[!field? 
-  &type=`text` 
-  &req=`1` 
-  &name=`email` 
-  &tpl=`aDifferentTemplate` 
+  [[!field?
+  &type=`text`
+  &req=`1`
+  &name=`email`
+  &tpl=`aDifferentTemplate`
   &outer_tpl=`ADifferentOuterTpl`
 ]]
 ```
@@ -219,9 +219,9 @@ return $output;
  You can disable the outer template:
 
  ``` php
-[[!field? 
-  &type=`hidden` 
-  &outer_tpl=`` 
+[[!field?
+  &type=`hidden`
+  &outer_tpl=``
   &name=`blank`
 ]]
 ```
@@ -236,7 +236,7 @@ return $output;
 
  ``` php
 [[!field? &type=`select` &name=`category` &req=`1` &multiple=`1` &title=`Choose some categories` &array=`1`
-    &options_element=`mySnippetToListTopics` &options_element_class=`modSnippet` 
+    &options_element=`mySnippetToListTopics` &options_element_class=`modSnippet`
     &options_element_properties=`{"tpl":"fieldOptionTopic"}`
 ]]
 ```
@@ -244,11 +244,11 @@ return $output;
  &req=`1` is an example of a custom placeholder. In this case, it can be used to add an asterisk or something similar to the label using the notempty output filter
 
  ``` php
-[[!field? 
-  &type=`textarea` 
-  &class=`elastic` 
-  &req=`1` 
-  &name=`message` 
+[[!field?
+  &type=`textarea`
+  &class=`elastic`
+  &req=`1`
+  &name=`message`
   &label=`Comment`
 ]]
 ```
@@ -256,11 +256,11 @@ return $output;
  There is no need to specify a label if you have a naming convention for your form fields. For example, use \[\[+label:default=`\[\[+name:replace=`\_== `:ucwords\]\]`\]\] to generate a label in your templates. This is already done in the default templates.
 
  ``` php
-[[!field? 
-  &type=`select` 
-  &name=`favorite_things` 
-  &multiple=`1` 
-  &array=`1` 
+[[!field?
+  &type=`select`
+  &name=`favorite_things`
+  &multiple=`1`
+  &array=`1`
   &options=`MODx==modx||Money==money||Power==power||Other==default`
 ]]
 ```
@@ -268,13 +268,13 @@ return $output;
  Here is a custom field with a custom type. If you use options with a custom type, you need to specify the type of the options fields with &option\_type.
 
  ``` php
-[[!field? 
-  &type=`customtype` 
-  &name=`custom_field_type` 
-  &_note=`Make sure you add this custom field to the &tpl chunk!` 
-  &custom_placeholder=`custom_value` 
-  &another_custom_placeholder=`And another custom value` 
-  &options=`One||Two||Three` 
+[[!field?
+  &type=`customtype`
+  &name=`custom_field_type`
+  &_note=`Make sure you add this custom field to the &tpl chunk!`
+  &custom_placeholder=`custom_value`
+  &another_custom_placeholder=`And another custom value`
+  &options=`One||Two||Three`
   &option_type=`radio`
 ]]
 ```
@@ -282,8 +282,8 @@ return $output;
  You can even use field snippets for the submit field:
 
  ``` php
-[[!field? 
-  &type=`submit` 
+[[!field?
+  &type=`submit`
   &name=`submitForm`
 ]]
 ```

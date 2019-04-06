@@ -33,7 +33,7 @@ _old_uri: "revo/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagin
  | galitem.first.\* | placeholder namespace for first item of album    |
  | galitem.last.\*  | placeholder namespace for last item of album     |
 
-### Example placeholders
+### Exampleplaceholders
 
  Below you can find some common placeholders for GalleryItemPagination that can be used in your tpl/resource.
 
@@ -55,7 +55,7 @@ _old_uri: "revo/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagin
 
  First of all you have to create the snippet. Name it 'GalleryItemPagination' and save it.
 
- ``` php 
+ ``` php
 <?php
 // First instantiate the Gallery package
 $modx->addPackage('gallery',$modx->getOption('gallery.core_path',$config,$modx->getOption('core_path').'components/gallery/').'model/');
@@ -119,7 +119,7 @@ return '';
 
  Now set up your placeholders for the navigation:
 
- ``` php 
+ ``` php
 [[!GalleryItemPagination? &album=`1`]]
 [[!If? &subject=`[[!+galitem.prev.id]]`&operator=`isnotempty` &then=`
 <a id="previmg" href="[[++site_url]]?id=[[*id]]&galItem=[[!+galitem.prev.id]]&galAlbum=1&galTag=">previous image</a>`]]
@@ -131,19 +131,19 @@ return '';
 ## See Also
 
 1. [Gallery.Gallery](extras/gallery/gallery.gallery)
-  1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
-  2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
+     1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
+     2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
 2. [Gallery.GalleryAlbums](extras/gallery/gallery.galleryalbums)
-  1. [Gallery.GalleryAlbums.containerTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
-  2. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
+     1. [Gallery.GalleryAlbums.containerTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
+     2. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
 3. [Gallery.GalleryItem](extras/gallery/gallery.galleryitem)
-  1. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
-  2. [Gallery.GalleryItem.GalleryItemPagination](extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
-  3. [Gallery.GalleryItem.tagTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
-  4. [Gallery.GalleryItem.tpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
+     1. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
+     2. [Gallery.GalleryItem.GalleryItemPagination](extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
+     3. [Gallery.GalleryItem.tagTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
+     4. [Gallery.GalleryItem.tpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
 4. [Gallery.Plugins](extras/gallery/gallery.plugins)
-  1. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
-  2. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/gallery.plugins.slimbox)
+     1. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
+     2. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/gallery.plugins.slimbox)
 5. [Gallery.Roadmap](extras/gallery/gallery.roadmap)
 6. [Gallery.Setting Up Your Gallery](extras/gallery/gallery.setting-up-your-gallery)
 7. [Gallery.Example1](extras/gallery/gallery.example1)

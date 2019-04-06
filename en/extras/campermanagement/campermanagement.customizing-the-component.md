@@ -44,13 +44,13 @@ When the user clicks the button, they will be sent to the resource you specified
 
 This is an example of what you could use:
 
-``` php 
+``` php
 [[!cmCampers? &limit=`0` &sort=`keynr` &dir=`asc` &includeImages=`false` &status=`1,2,3,4` &tplOuter=`cmVoorraadOuter` &tplItem=`cmVoorraadItem` &optionsSeparator=` / `]]
 ```
 
 cmVoorradOuter chunk:
 
-``` php 
+``` php
 <table id="voorraadPrint">
    [[+items]]
 </table>
@@ -58,20 +58,20 @@ cmVoorradOuter chunk:
 
 cmVoorraadItem chunk:
 
-``` php 
+``` php
 <tr>
   <td rowspan="2">
     <strong>[[+keynr:notempty=`Nr. [[+keynr]]`]]
       [[+plate:notempty=`<br />[[+plate]]`]]</strong>
   </td>
- 
+
   <td rowspan="2">
     [[+brand]] / [[+type]] / [[+car:notempty=`[[+car]] /`]] [[+engine:notempty=`[[+engine]] /`]] Bouwjaar [[+manufactured:eq=`0`:then=`onbekend`:else=`[[+manufactured]]`]] / Gewicht [[+weight:eq=`0`:then=`onbekend`:else=`[[+weight]]`]] /
     [[+beds]] Slaapplaatsen / Kilometerstand [[+mileage:eq=`0`:then=`onbekend`:else=`[[+mileage]]`]] / APK tot [[+periodiccheck:eq=`0`:then=`onbekend`:else=`[[+periodiccheck]]`]] /
     [[+options]]
     [[+remarks]]
   </td rowspan="2">
- 
+
   <td>
 
 [[+status:eq=`2`:then=`
@@ -87,7 +87,7 @@ cmVoorraadItem chunk:
 </tr>
 ```
 
-Which results (with some css applied) in: 
+Which results (with some css applied) in:
 ![](/download/attachments/35586669/overview.PNG?version=1&modificationDate=1316005628000)
 
 ## Custom Context Menu items

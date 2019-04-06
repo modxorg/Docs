@@ -8,7 +8,7 @@ _old_uri: "revo/eventscalendar2/eventscalendar2.generating-events"
 
 It is not built-in snippet, it example of snippet for generating events. Save this code as snippet eventsGenerator and you may used it for debugging.
 
-``` php 
+``` php
 <?php
 $year = !empty($_REQUEST['year']) ? $_REQUEST['year'] : date('Y');
 $month = !empty($_REQUEST['month']) ? $_REQUEST['month'] : date('n');
@@ -32,7 +32,7 @@ return json_encode($arr);
 
 ## Usage
 
-``` php 
+``` php
 [[!eventsCalendar2?
   &events=`[[!eventsGenerator]]`
 ]]

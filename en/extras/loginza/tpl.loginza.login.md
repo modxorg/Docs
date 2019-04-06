@@ -10,7 +10,7 @@ This is chunk for not authenticated users. It is loading Loginza script from its
 
 After validation you will be redirected back to site with action **login**, and snippet will authenticate you.
 
-``` html 
+``` html
 <script type="text/javascript" src="http://loginza.ru/js/widget.js"></script>
 Authentication through Loginza
 <a href="https://loginza.ru/api/widget?token_url=[[+login_url]]">

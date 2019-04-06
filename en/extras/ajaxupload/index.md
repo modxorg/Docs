@@ -17,7 +17,7 @@ With two Formit hooks the upload queue could be pre filled from Formit field val
 - MODx Revolution 2.2.x or later
 - PHP5.2 or later
 
-## History & Info
+## History& Info
 
 AjaxUpload was initially written in 2012 for MODX Evolution and is maintained and developed since then by [Thomas Jakobi](https://github.com/jako).
 

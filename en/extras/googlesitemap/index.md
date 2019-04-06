@@ -13,7 +13,7 @@ _old_uri: "revo/googlesitemap/"
 - MODx Revolution 2.2.x or later
 - PHP5.4 or later
 
-## History and Info
+## Historyand Info
 
  In 2016 GoogleSiteMap was completely re-written by YJ Tso (@sepiariver) based on blazing-fast sitemap code by Garry Nutting (@garryn), after it was found that the legacy Snippet would time-out when more than several thousand nodes needed to be generated.
 
@@ -46,22 +46,22 @@ _old_uri: "revo/googlesitemap/"
 
  Display a Google SiteMap for tens of thousands of Resources.
 
- ``` php 
+ ``` php
 [[!GoogleSiteMap]]
 ```
 
  Display a Google SiteMap for a more modest number of Resources, using a custom item template Chunk.
 
- ``` php 
+ ``` php
 [[!GoogleSiteMap? &itemTpl=`myCustomTpl`]]
 ```
 
- Note: the latter example would result in the legacy Snippet being called and will time-out if a huge number of nodes need to be generated. 
+ Note: the latter example would result in the legacy Snippet being called and will time-out if a huge number of nodes need to be generated.
 
 ## See Also
 
 1. [GoogleSiteMap.GoogleSiteMap](extras/googlesitemap/googlesitemap.googlesitemap)
-  1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
-  2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
+     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
+     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
 2. [GoogleSiteMapVersion1](https://rtfm.modx.com/extras/revo/googlesitemap/googlesitemapversion1)
 3. [GoogleSiteMap.Roadmap](extras/googlesitemap/googlesitemap.roadmap)

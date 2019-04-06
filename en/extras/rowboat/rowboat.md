@@ -73,7 +73,7 @@ Grab top 10 Doodles, sorted by name, from modx\_doodles that have "Test" in thei
 
 Grab only the id, name and description (with description aliased as "desc") columns from the above example: (note that non-aliased columns need a blank "" for the alias)
 
-``` php 
+ ``` php
 [[!Rowboat?
    &table=`modx_doodles`
    &tpl=`myDoodle`
@@ -86,7 +86,7 @@ Grab only the id, name and description (with description aliased as "desc") colu
 
 Grab 10 Doodles where description isn't empty **or** the name is "Test":
 
-``` php 
+ ``` php
 [[!Rowboat?
    &table=`modx_doodles`
    &tpl=`myDoodle`
@@ -102,7 +102,7 @@ More to come shortly.
 
 It's pretty simple - just make sure to set the totalVar property in your getPage call as "rowboat.total", and have cache=`0` in the getPage call. For example, this will grab all doodles where the name contains "Fun", paginate them to 10 per page, and add page navigation:
 
-``` php 
+ ``` php
 [[!getPage?
    &element=`Rowboat`
    &table=`modx_doodles`

@@ -4,23 +4,23 @@ _old_id: "772"
 _old_uri: "revo/advsearch/advsearch.advsearchform"
 ---
 
-## AdvSearchForm Snippet 
+## AdvSearchForm Snippet
 
 This snippet displays a search form for AdvSearch.
 
-## Usage 
+## Usage
 
 Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch") snippet call is located (which is where the results will display).
 
-``` php 
+ ``` php
 [[!AdvSearchForm? &landing=`82`]]
 ```
 
 If you'd like the results to show on the same page, simply place the [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch") snippet call below the AdvSearchForm call, and don't specify a 'landing' parameter.
 
-## Available Properties 
+## Available Properties
 
-### AdvSearch Features 
+### AdvSearch Features
 
 To set or unset features.
 
@@ -29,7 +29,7 @@ To set or unset features.
 | clearDefault | Clearing default text. Set this to 0 if you wouldn't like the clear default text feature. | 1       |
 | help         | To add a help link near the search form. Set 1 (displayed) or 0 (hidden).                 | 1       |
 
-### Overall AdvSearch design 
+### Overall AdvSearch design
 
 To design your own search.
 
@@ -42,7 +42,7 @@ To design your own search.
 | toPlaceholder | Whether to set the output to directly return, or set to a placeholder with this propertys name.                    |            |
 | tpl           | The chunk that will be used to display the search form.                                                            | SearchForm |
 
-### Custom installation 
+### Custom installation
 
 The parameters that could help you for a custom installation.
 
@@ -54,23 +54,23 @@ The parameters that could help you for a custom installation.
 | jsJQuery     | Url where is located the jquery javascript library                                                             | assets/components/advsearch/js/jquery-1.5.1.min.js  |
 | jsSearchForm | Url (under assets/) where is located the js library used with the form (help, clearDefault, ...)               | assets/components/advsearch/js/advsearchform.min.js |
 
-## AdvSearchForm Chunks 
+## AdvSearchForm Chunks
 
 There is 1 chunk that is processed in AdvSearchForm. Its corresponding AdvSearchForm parameter is:
 
 - [tpl](extras/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl "Advsearch.AdvSearchForm.tpl") - The Chunk to use for the search form.
 
-## Examples 
+## Examples
 
 Display the search form, without but search with POST instead of GET:
 
-``` php 
+ ``` php
 [[AdvSearchForm? &method=`POST`]]
 ```
 
 Set the search form to a 'search.form' placeholder, specify a landing page on Resource 82, and use a custom Chunk called 'MySearchForm' for the form template:
 
-``` php 
+ ``` php
 [[AdvSearchForm? &tpl=`MySearchForm` &landing=`82` &toPlaceholder=`search.form`]]
 
 <h2>Search</h2>
@@ -79,22 +79,22 @@ Set the search form to a 'search.form' placeholder, specify a landing page on Re
 
 Display two search forms, the first one (as0) without the help link and the second one (as1) without the clearDefault feature:
 
-``` php 
+ ``` php
 [[AdvSearchForm? &help=`0`]]
 ```
 
-``` php 
+ ``` php
 [[AdvSearchForm? &asId=`as1` &clearDefault=`0`]]
 ```
 
-## Errors 
+## Errors
 
 The following error message are possible:
 
 - AdvSearch runs only with charset UTF-8.
 - AdvSearch runs only with the multibyte extension on. See Lexicon and language system settings.
 
-## See Also 
+## See Also
 
 1. [AdvSearch.AdvSearch](extras/advsearch/advsearch.advsearch)
     1. [AdvSearch.AdvSearch.containerTpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl)

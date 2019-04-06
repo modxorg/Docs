@@ -12,7 +12,7 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.recaptcha"
 
  First off, add "recaptcha" to your &hooks parameter in your FormIt call. Then you'll need to include the following placeholders in your form:
 
- ``` php 
+ ``` php
 [[+formit.recaptcha_html]]
 [[!+fi.error.recaptcha]]
 ```

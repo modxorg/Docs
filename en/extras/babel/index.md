@@ -18,7 +18,7 @@ For detailed information about Babel check out the [Offical Babel project websit
 
 Babel has been developed by Jakob Class based on ideas of Sylvain Aerni and first released on December 16th, 2010.
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
 Babel is stored and developed in GitHub, and can be found here: <https://github.com/mikrobi/babel>
 
@@ -42,9 +42,9 @@ Install Babel via the package manager and set the system settings for Babel via 
 
 [![](/download/thumbnails/33587248/babel-setup.PNG)](/download/attachments/33587248/babel-setup.PNG)
 
-- **Context Keys** (_babel.contextKeys_): Comma separated list of context keys which should be used to link multilingual resources. 
-  For advanced configuration you may define several groups of context keys by using a semicolon (;) as delimiter. This is usefull if your're administrating multiple multilingual sites within one MODx instance. 
-  Example scenario: 
+- **Context Keys** (_babel.contextKeys_): Comma separated list of context keys which should be used to link multilingual resources.
+  For advanced configuration you may define several groups of context keys by using a semicolon (;) as delimiter. This is usefull if your're administrating multiple multilingual sites within one MODx instance.
+  Example scenario:
   - **site1**: en, de, fr. using contexts: _web, site1de, site1fr_
   - **site2**: en, de. using contexts: _site2en, site2de_
 

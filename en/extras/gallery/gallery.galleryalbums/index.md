@@ -48,42 +48,42 @@ _old_uri: "revo/gallery/gallery.galleryalbums/"
 
  Grab a list first 10 active, prominent albums.
 
- ``` php 
+ ``` php
 [[!GalleryAlbums]]
 ```
 
  Grab 10 alphanumerically sorted prominent albums:
 
- ``` php 
-[[!GalleryAlbums? 
-  &sort=`name` 
+ ``` php
+[[!GalleryAlbums?
+  &sort=`name`
   &dir=`ASC`
 ]]
 ```
 
  Grab most recent 3 Albums, whether prominent or not, and set to the placeholder 'albums':
 
- ``` php 
-[[!GalleryAlbums? 
-  &limit=`3` 
-  &prominentOnly=`0` 
+ ``` php
+[[!GalleryAlbums?
+  &limit=`3`
+  &prominentOnly=`0`
   &toPlaceholder=`albums`
 ]]
 ```
 
  Display the most recent 3 albums with a random cover image.
 
- ``` php 
-[[!GalleryAlbums? 
-  &limit=`3` 
+ ``` php
+[[!GalleryAlbums?
+  &limit=`3`
   &albumCoverSort=`random`
 ]]
 ```
 
  Using &thumbProperties to set the output of the album cover thumbnail to 90% quality jpg instead of png:
 
- ``` php 
-[[!GalleryAlbums? 
+ ``` php
+[[!GalleryAlbums?
   &thumbProperties=`{"f":"jpg","q":"90%"}`
 ]]
 ```
@@ -91,19 +91,19 @@ _old_uri: "revo/gallery/gallery.galleryalbums/"
 ## See Also
 
 1. [Gallery.Gallery](extras/gallery/gallery.gallery)
-  1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
-  2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
+     1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
+     2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
 2. [Gallery.GalleryAlbums](extras/gallery/gallery.galleryalbums)
-  1. [Gallery.GalleryAlbums.containerTpl](extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
-  2. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
+     1. [Gallery.GalleryAlbums.containerTpl](extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
+     2. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
 3. [Gallery.GalleryItem](extras/gallery/gallery.galleryitem)
-  1. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
-  2. [Gallery.GalleryItem.GalleryItemPagination](extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
-  3. [Gallery.GalleryItem.tagTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
-  4. [Gallery.GalleryItem.tpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
+     1. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)
+     2. [Gallery.GalleryItem.GalleryItemPagination](extras/gallery/gallery.galleryitem/gallery.galleryitem.galleryitempagination)
+     3. [Gallery.GalleryItem.tagTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl)
+     4. [Gallery.GalleryItem.tpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.tpl)
 4. [Gallery.Plugins](extras/gallery/gallery.plugins)
-  1. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
-  2. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/gallery.plugins.slimbox)
+     1. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/gallery.plugins.galleriffic)
+     2. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/gallery.plugins.slimbox)
 5. [Gallery.Roadmap](extras/gallery/gallery.roadmap)
 6. [Gallery.Setting Up Your Gallery](extras/gallery/gallery.setting-up-your-gallery)
 7. [Gallery.Example1](extras/gallery/gallery.example1)

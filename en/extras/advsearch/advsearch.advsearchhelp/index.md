@@ -11,27 +11,27 @@ _old_uri: "revo/advsearch/advsearch.advsearchhelp"
 
 
 
-## AdvSearchHelp Snippet 
+## AdvSearchHelp Snippet
 
-This snippet is used to set up the help content. 
+This snippet is used to set up the help content.
 The default English content presents the minimal query syntax supported by the release for mysql and zend engines.
 
-## Usage 
+## Usage
 
 The help is provided by an ajax request to a resource named "AdvSearch Help" which call the AdvSearchHelp snippet.
 
-``` plain 
+``` plain
 [[!AdvSearchHelp]]
 ```
 
-The "AdvSearch Help" resource is created with the package installation. 
+The "AdvSearch Help" resource is created with the package installation.
 You could move the "AdvSearch Help" resource in the MODx resource tree but as the resource is found by his name don’t change his name.
 
-## Help window content 
+## Help window content
 
 The content of the help window is provided by the lexicon file help.inc Add your own language and customize the content as you want.
 
-## See Also 
+## See Also
 
 1. [AdvSearch.AdvSearch](extras/advsearch/advsearch.advsearch)
     1. [AdvSearch.AdvSearch.containerTpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl)

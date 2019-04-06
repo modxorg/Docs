@@ -43,13 +43,13 @@ Display archives for your site, with a Month listing for Resources with parents 
 
 The call for the Month listing:
 
-``` php 
+``` php
 [[!Archivist? &parents=`54,55` &target=`123`]]
 ```
 
 And then on your archives page:
 
-``` php 
+``` php
 [[!getArchives?
    &parents=`54,55`
    &toPlaceholder=`archives`
@@ -63,7 +63,7 @@ And then on your archives page:
 ## See Also
 
 1. [Archivist.Archivist](extras/archivist/archivist.archivist)
-  1. [Archivist.Archivist.tpl](extras/archivist/archivist.archivist/archivist.archivist.tpl)
+     1. [Archivist.Archivist.tpl](extras/archivist/archivist.archivist/archivist.archivist.tpl)
 2. [Archivist.ArchivistGrouper](extras/archivist/archivist.archivistgrouper)
 3. [Archivist.getArchives](extras/archivist/archivist.getarchives)
-  2. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/archivist.getarchives.tpl)
+     1. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/archivist.getarchives.tpl)

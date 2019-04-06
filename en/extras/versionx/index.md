@@ -15,7 +15,7 @@ VersionX is an extra for MODX Revolution which adds Resource, Template, Chunk, T
 - VersionX 2.1 no longer claims Revolution 2.0 support, but instead needs Revolution 2.1 by default. It should theoretically work, but no Revolution 2.0 specific testing or patches will be released.
 - VersionX 2.2 (future release) will likely start requiring at least Revolution 2.2 to take advantage of new coding standards.
 
-### History & Legacy
+### History& Legacy
 
 VersionX was first developed in December 2010 by Mark Hamstra and made it up to VersionX 1.0.0-Alpha5 in March 2011 before time ran out to further develop and support the component. Unfortunately VersionX 1.0 did not support MODX Revolution 2.1 or up.
 
@@ -46,7 +46,7 @@ VersionX 1.0 is no longer supported or developed, but for legacy sakes you can f
 
 VersionX 2.0 has been publicly released on May 3rd 2012, is developed in a separate repository on Github: <https://github.com/Mark-H/VersionX2> - bugs & feature requests are very much welcome there as well.
 
-## Usage & Features
+## Usage& Features
 
 VersionX consists of two parts. The first part is a plugin running in the background which triggers on every Resource and Element create and update to make a copy of the data at that point. The second part is the back-end module (manager page) which may be accessed through the Components menu. This page offers you searchable grids with all the different versions stored in the database, with the possibility to open up the details. From there you are able to choose a different version to compare it with, or to revert the live resource or element from an older version.
 

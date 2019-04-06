@@ -11,7 +11,7 @@ Download: <http://modx.com/extras/package/campermanagement> (or install via Pack
 
 ![](/download/attachments/35095340/camper-grid.png?version=1&modificationDate=1307386327000)
 
-CamperManagement is a vehicle management addon for MODX Revolution, developed and tested in 2.1.0-rc3 and up by Mark Hamstra. It features a back-end management module, as well as versatile snippets for a custom, integrated user experience in the front end of the website as is to be expected within MODX. 
+CamperManagement is a vehicle management addon for MODX Revolution, developed and tested in 2.1.0-rc3 and up by Mark Hamstra. It features a back-end management module, as well as versatile snippets for a custom, integrated user experience in the front end of the website as is to be expected within MODX.
  Documentation available:
 
 - [CamperManagement.Customizing the Component](extras/campermanagement/campermanagement.customizing-the-component "CamperManagement.Customizing the Component")
@@ -22,7 +22,6 @@ CamperManagement is a vehicle management addon for MODX Revolution, developed an
 - [CamperManagement.Managing your vehicle](extras/campermanagement/campermanagement.managing-your-vehicle "CamperManagement.Managing your vehicle")
 - [CamperManagement.Module home](extras/campermanagement/campermanagement.module-home "CamperManagement.Module home")
 
- 
  The grid is fully customizable using snippets chunks and chunks, all the way down to the way images are outputted. There are so many customization options, that if you'd want to, you could create a carousel from the thumbnails in the grid view. Or just output horizontal rows with all details. Whatever you dig!
 
 ![](/download/attachments/35095340/camper-details.PNG?version=1&modificationDate=1307386332000)

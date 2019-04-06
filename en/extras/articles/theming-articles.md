@@ -51,7 +51,7 @@ If you are _outside_ the Article Template and you need to display the number of 
 
 Knowing that, we can then use [QuipCount](extras/quip/quip.quipcount "Quip.QuipCount") inside of a getResources call to retrieve the number of comments on each post, e.g.
 
-``` php 
+``` php
 [[!QuipCount? &thread=`article-b9-[[+id]]`]]
 ```
 

@@ -8,7 +8,7 @@ _old_uri: "revo/eventscalendar2/eventscalendar2.tplcell2"
 
 This chunk is a cell of calendar table.
 
-``` php 
+``` php
 <td id="[[+ec.cell_id]]" data-fulldate="[[+ec.fulldate]]"><td class="cell [[+ec.class]]" id="[[+ec.cell_id]]" data-fulldate="[[+ec.fulldate]]">
         <div class="[[+ec.class_date]]">[[+ec.day]]</div>
         <div class="[[+ec.class_event]]">[[+ec.events]]</div>

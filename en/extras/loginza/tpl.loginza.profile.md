@@ -8,7 +8,7 @@ _old_uri: "revo/loginza/tpl.loginza.profile"
 
 Chunk for display and edit user profile.
 
-``` html 
+``` html
 <form action="[[~[[*id]]]]" method="post" class="form-horizontal">
         <div class="control-group[[+error.username:notempty=` error`]]">
                 <label class="control-label">???</label>

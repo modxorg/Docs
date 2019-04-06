@@ -26,20 +26,20 @@ _old_uri: "revo/filedownload-r/filedownload-r.filedownload"
 
 ## downloadByOther
 
- available since v.1.0.0-pl 
+ available since v.1.0.0-pl
 
- Note for **&downloadByOther**: 
- Example: 
- You have the need to use javascript pop-up window to force the downloader to fill up a form before downloading. 
- Then through AJAX, you submit the form, and expect results with conditions. 
+ Note for **&downloadByOther**:
+ Example:
+ You have the need to use javascript pop-up window to force the downloader to fill up a form before downloading.
+ Then through AJAX, you submit the form, and expect results with conditions.
  If the result, for instance, returns true, the AJAX calls the download's API to start the download.
 
 ### File Chunk
 
- You need to create chunk for the file's rows. 
+ You need to create chunk for the file's rows.
  Eg: jsDownload chunk
 
- ``` html 
+ ``` html
     <tr[[+fd.class]]>
         <td style="width:16px;"><img src="[[+fd.image]]" alt="[[+fd.image]]" /></td>
         <td>
@@ -62,14 +62,14 @@ _old_uri: "revo/filedownload-r/filedownload-r.filedownload"
 
 ### HTML
 
- #downloaderForm is the basic HTML form with fields. 
- In this example, I'm also using [jQuerytools](http://jquerytools.org/)'s overlay and validator. 
- The for is placed directly under the snippet call. 
+ #downloaderForm is the basic HTML form with fields.
+ In this example, I'm also using [jQuerytools](http://jquerytools.org/)'s overlay and validator.
+ The for is placed directly under the snippet call.
  It's hidden by CSS.
 
  So the snippet call would be like this:
 
- ``` html 
+ ``` html
 [[!FileDownload?
 &getDir=`assets/downloads`
 &tplFile=`jsDownload`
@@ -102,7 +102,7 @@ _old_uri: "revo/filedownload-r/filedownload-r.filedownload"
 
 ### javascript
 
- ``` javascript 
+ ``` javascript
 $(function(){
     var c = 'assets/components/yourpackage/c.php?';
     createForm();
@@ -179,7 +179,7 @@ function fileDownload(link) {
 
  And the connector would be like this:
 
- ``` php 
+ ``` php
 <?php
 /**
  * FileDownload R's AJAX connector file
@@ -223,10 +223,10 @@ $modx->request->handleRequest(array(
 
 ### processors
 
- core/components/yourpackage/processors/web/file/get/ 
+ core/components/yourpackage/processors/web/file/get/
  example:
 
- ``` php 
+ ``` php
 <?php
 if (!$modx->loadClass('FileDownload', $modx->getOption('core_path') . 'components/filedownload/models/', true, true)) {
     $modx->log(modX::LOG_LEVEL_ERROR, '[FileDownload] Could not load FileDownload class.');
@@ -254,7 +254,7 @@ return json_encode($output);
  | -------- | ----------------------------------------------------------------------------- | ------------- | ------- |
  | saltText | This text will be added to the file's hashed link to disguise the direct path | FileDownload  | string  |
 
- The link is a hashed text of the saltText, context, and filename/dirname combination. 
+ The link is a hashed text of the saltText, context, and filename/dirname combination.
  So if you change the saltText value after a while, it will not block the content's appearance from the page, but the database will start the counter from zero again since it will not find the same hashed value.
 
 # Additional
@@ -289,7 +289,7 @@ return json_encode($output);
 
 ## Example
 
- ``` php 
+ ``` php
 [[!FileDownload?
 &getDir=`[[++core_path]]downloads-from-core/land rover, assets/downloads`
 &browseDirectories=`1`
@@ -314,7 +314,7 @@ return json_encode($output);
  | tplBreadcrumb       | Template for breadcrumb                                                        | &tplBreadcrumb =`tpl-breadcrumb` | tpl-breadcrumb                                                                              | chunk's name/ @Bindings |
  | breadcrumbSeparator | separator character for the breadcrumb                                         | &breadcrumbSeparator=` / `       | /                                                                                           | string                  |
 
- _tplWrapperDir_ & _tplWrapperFile_ (1.0.0-rc.5) are used to provide different wrappers between folders and files. 
+ _tplWrapperDir_ & _tplWrapperFile_ (1.0.0-rc.5) are used to provide different wrappers between folders and files.
  That means that they might have different headers. There are the default chunks inside **{core\_path}components/filedownload/elements/chunks/**, which are **tpl-wrapper-dir**.chunk.tpl and **tpl-wrapper file**.chunk.tpl, respectively. 
  To use them, _tplWrapper_ must be changed too or set it empty instead.
 
@@ -323,8 +323,8 @@ return json_encode($output);
 - @CODE|@INLINE
 - @FILE
 - @CHUNK (or not at all) - **default**
- 
-``` html 
+
+``` html
 [[!FileDownload?
 &getDir=`assets/downloads`
 &tplFile=`@CODE:    <tr[[+fd.class]]>
@@ -343,7 +343,7 @@ return json_encode($output);
 
 ## Example
 
- ``` php 
+ ``` php
 [[!FileDownload?
 &getDir=`assets/downloads`
 &browseDirectories=`1`

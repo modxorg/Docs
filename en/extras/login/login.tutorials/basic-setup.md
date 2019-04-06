@@ -77,7 +77,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  Put the following Snippet call on your login page:
 
- ``` php 
+ ``` php
 [[!Login? 
 &loginTpl=`lgnLoginTpl` 
 &logoutTpl=`lgnLogoutTpl` 
@@ -91,7 +91,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  The Chunk that displays the login form should also include a link to the "Forgot Password" page; this is so we only display that link to users who have not logged in yet. Here is an example of the **lgnLoginTpl** Chunk, so either create a Chunk of that name or edit the existing Chunk so it matches the following:
 
- ``` html 
+ ``` html
 <div class="loginForm">
     <div class="loginMessage">[[+errors]]</div>
     <div class="loginLogin">
@@ -123,7 +123,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  This page houses the form where users can request that their password be reset. Remember: it displays the form that allows users to say that they've forgotten their password, and the "ResetPassword" Snippet is what actually resets the password.
 
- ``` php 
+ ``` php
 [[!ForgotPassword? &resetResourceId=`3` &tpl=`lgnForgotPassTpl`]]
 ```
 
@@ -137,7 +137,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  When a user requests that his/her password be reset, they are emailed a link to this page. When a valid incoming link to this page is detected, the password is reset and the user is redirected to the login page.
 
- ``` php 
+ ``` php
 [[!ResetPassword? &loginResourceId=`1`]]
 ```
 
@@ -155,7 +155,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  This is the page that people see after a successful logout. It needs only to contain a basic message, or perhaps a link back to the Login page:
 
- ``` html 
+ ``` html
 <p>Thank you for visiting! Come again soon!</p>
 ```
 
@@ -169,13 +169,13 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  Weblink:
 
- ``` php 
+ ``` php
 [[~1? &service=`logout`]]
 ```
 
  This is effectively the same as adding a Logout link like this to your pages:
 
- ``` html 
+ ``` html
 <a href="[[~1? &service=`logout`]]" title="Logout">Logout</a>
 ```
 
@@ -189,13 +189,13 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  Also make sure that your Snippets are called uncached! Some of them will function cached, but some will not. They should use the exclamation point in front of them:
 
- ``` php 
+ ``` php
 [[!Login]]
 ```
 
  and **not**
 
- ``` php 
+ ``` php
 [[Login]]
 ```
 

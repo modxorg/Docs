@@ -8,7 +8,7 @@ This feature is available since v.1.0.0-pl
 
 ## Events
 
-There are still a few events that have been provided, because again, this is small script. 
+There are still a few events that have been provided, because again, this is small script.
 But the event spots are really useful:
 
 - **OnLoad**
@@ -24,7 +24,7 @@ But the event spots are really useful:
 
 The complete reference actually is written directly in the **core/components/filedownload/plugins/filedownloadplugin.events.php** file, including their available properties and the expected results.
 
-``` php 
+``` php
 <?php
 
 $events = array(
@@ -88,7 +88,7 @@ return $events;
 
 To call the plugins, you need to call it inside the snippet, as a JSON format, eg:
 
-``` php 
+``` php
 [[!FileDownload?
 &getDir=`assets/files`
 &plugins=`[
@@ -115,12 +115,12 @@ To call the plugins, you need to call it inside the snippet, as a JSON format, e
 ]]
 ```
 
-In this example, I'm using 2 default plugins for examples, **[FormSave](extras/formsave "FormSave")** (as file based) and **Email** (as a snippet), which are both depend on [FormIt](extras/formit "FormIt"). 
+In this example, I'm using 2 default plugins for examples, **[FormSave](extras/formsave "FormSave")** (as file based) and **Email** (as a snippet), which are both depend on [FormIt](extras/formit "FormIt").
 These plugins will do:
 
-- OnLoad 
+- OnLoad
   Checks whether FormSave and Formit are available. If not, halt.
-- AfterFileDownload 
+- AfterFileDownload
   After the file is downloaded, store the information into FormSave, and then send email to the given addresses, with the chunk as provided
 
 The email's properties are using the [FormIt](extras/formit "FormIt")'s properties, because it IS the [FormIt](extras/formit "FormIt")'s hook.

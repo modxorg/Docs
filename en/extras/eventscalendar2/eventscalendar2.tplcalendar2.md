@@ -8,7 +8,7 @@ _old_uri: "revo/eventscalendar2/eventscalendar2.tplcalendar2"
 
 This chunk is a container for calendar.
 
-``` php 
+ ``` php
 <div id='[[+calendar_id]]'>
         [[+ec.Calendar]]
         <div class='cover'></div>

@@ -45,13 +45,13 @@ Use the Cliche Snippet to show your galleries as you want
 
 Simply drop the following line in your document :
 
-``` php 
+``` php
 [[Cliche]]
 ```
 
 To show all albums list:
 
-``` php 
+``` php
 [[Cliche?
     &view=`albums`
 ]]
@@ -59,7 +59,7 @@ To show all albums list:
 
 To show a specific album:
 
-``` php 
+``` php
 [[Cliche?
     &id=`your_album_id`
     &view=`album`
@@ -68,7 +68,7 @@ To show a specific album:
 
 To show a single image:
 
-``` php 
+``` php
 [[Cliche?
     &id=`your_image_id`
     &view=`image`
@@ -96,15 +96,15 @@ To show a single image:
 
 By default, all chunks are filebased and are located in : "_core/components/cliche/controllers/web/plugins/__\[plugin\]__/__\[chunkName\].tpl_"
 
-However, you still can use any normal chunk if you want. 
-Cliche will search first for the chunk in the db and if it does not exist, the file in the plugin directory (as a \*.tpl file). 
+However, you still can use any normal chunk if you want.
+Cliche will search first for the chunk in the db and if it does not exist, the file in the plugin directory (as a \*.tpl file).
 You can bypass the search in db to use only filebased chunks by using the parameter "_use\_filebased\_chunks_"
 
 #### Default plugin
 
 ##### default/albumcover.tpl
 
-``` php 
+``` php
 <dl class="item">
     <dt class="album-icon">
         <a title="[[+albumname]]" href="[[+url]]">
@@ -116,7 +116,7 @@ You can bypass the search in db to use only filebased chunks by using the parame
 
 ##### default/albumcoverzoom.tpl
 
-``` php 
+``` php
 <dl class="item">
     <dt class="album-icon">
         <a class="zoom" title="[[+albumname]]" href="[[+image]]">
@@ -128,7 +128,7 @@ You can bypass the search in db to use only filebased chunks by using the parame
 
 ##### default/albumswrapper.tpl
 
-``` php 
+``` php
 <div class="cliche" id="albums_list">
     [[+items]]
 </div><!-- End #albums_list -->
@@ -136,7 +136,7 @@ You can bypass the search in db to use only filebased chunks by using the parame
 
 ##### default/albumwrapper.tpl
 
-``` php 
+``` php
 <div class="cliche galleryid-[[+id]]" id="album-[[+id]]">
  [[+items]]
 </div><!-- End #album-[[+id]] -->
@@ -144,7 +144,7 @@ You can bypass the search in db to use only filebased chunks by using the parame
 
 ##### default/image.tpl
 
-``` php 
+``` php
 <div class="cliche">
     <div class="item">
         <a title="[[+name]]" class="zoom" href="[[+image]]">
@@ -156,7 +156,7 @@ You can bypass the search in db to use only filebased chunks by using the parame
 
 ##### default/item.tpl
 
-``` php 
+``` php
 <dl class="item">
     <dt class="album-icon">
         <a class="zoom" title="[[+name]]" href="[[+image]]">
@@ -168,7 +168,7 @@ You can bypass the search in db to use only filebased chunks by using the parame
 
 ##### default/itemzoom.tpl
 
-``` php 
+``` php
 <dl class="item">
     <dt class="album-icon">
         <a class="zoom" title="[[+name]]" href="[[+image]]">
@@ -180,7 +180,7 @@ You can bypass the search in db to use only filebased chunks by using the parame
 
 ##### default/script.tpl
 
-``` php 
+``` php
 $("a.zoom").fancybox();
 ```
 
@@ -188,7 +188,7 @@ $("a.zoom").fancybox();
 
 ##### galleriffic/item.tpl
 
-``` php 
+``` php
 <li>
     <a class="thumb" name="leaf" href="[[+image]]" title="[[+name]]">
         <img src="[[+thumbnail]]" alt="Title #[[+id]]" />
@@ -205,7 +205,7 @@ $("a.zoom").fancybox();
 
 ##### galleriffic/script.tpl
 
-``` javascript 
+``` javascript
  jQuery(document).ready(function($) {
     $('div.navigation').css({'width' : '220px', 'float' : 'left'});
     $('div.content').css('display', 'block');
@@ -262,7 +262,7 @@ $("a.zoom").fancybox();
 
 ##### galleriffic/wrapper.tpl
 
-``` php 
+``` php
  <div id="gallery" class="content">
     <div id="controls" class="controls"></div>
     <div class="slideshow-container">

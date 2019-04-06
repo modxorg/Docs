@@ -10,7 +10,7 @@ A Chunk named "**Paging0**" is provided with AdvSearch. This Chunk name is set a
 
 ## Default Value
 
-``` php 
+``` php
 <span class="advsea-result-pages">[[%advsearch.result_pages? &namespace=`advsearch` &topic=`default`]]</span>[[+paging0]]
 ```
 
@@ -22,18 +22,18 @@ A Chunk named "**Paging0**" is provided with AdvSearch. This Chunk name is set a
 
 ## AdvSearch's pageTpl and CurrentPageTpl Chunks
 
-Two Chunks named "**PageLink**" and "**CurrentPageLink**" are provided to set up the paging type 0. 
+Two Chunks named "**PageLink**" and "**CurrentPageLink**" are provided to set up the paging type 0.
 These Chunk names are set as &pageTpl and &currentPageTpl properties on the [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch") snippet.
 
 ## Default Value for PageLink
 
-``` html 
+``` html
 <span class="advsea-page"><a href="[[+link]]">[[+text]]</a></span>
 ```
 
 ## Default Value for CurrentPageLink
 
-``` html 
+``` html
 <span class="advsea-page advsea-current-page">[[+text]]</span>
 ```
 

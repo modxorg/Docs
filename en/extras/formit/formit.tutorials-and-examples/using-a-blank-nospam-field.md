@@ -14,13 +14,13 @@ FormIt provides you with the "blank" validator, which can be used to achieve a "
 
 Simply add the following input into your form. You can change the name of the field at any time; using commonly used field names like "workemail" can be used to trick spambots into filling in the field:
 
-``` html 
+``` html
 <input type="hidden" name="workemail" value="" />
 ```
 
 Then, in your FormIt call, add the blank validation:
 
-``` php 
+ ``` php
 [[!FormIt? &validate=`workemail:blank`]]
 ```
 

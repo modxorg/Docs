@@ -48,8 +48,6 @@ Github: <https://github.com/ditsmedia/DitsNews>
 **Warning**
 Version 0.2.0 is not 100% compatible with 0.1.0! There are some database and functionality changes. As always, backup before updating! Also, the CSV import/export is missing in this release. It will be back in 0.2.1.
 
-
-
 1. Install through Package Management
 2. Add a cronjob (change paths): \*/5 \* \* \* \* /path/to/php /path/to/core/components/ditsnews/cron/cron.php
 3. Create the newsletter template (just a normal template; CSS must be in the template itself with full URL paths to images. No external CSS!)
@@ -66,7 +64,7 @@ DitsNews consists of two parts. The first part is a component for the backend wh
 **In Development**
 This section needs an update with correct naming and technical settings
 
-### Short guide 
+### Short guide
 
 1. Add a testing Group
 2. Add yourself as a subscriber (and add yourself to the testing group)
@@ -107,7 +105,7 @@ A Newsletter is fully created with MODX native templates and ressources. So firs
 
 ### available placeholders
 
-``` php 
+``` php
 [[+firstname]]
 [[+lastname]]
 [[+fullname]]
@@ -117,9 +115,9 @@ A Newsletter is fully created with MODX native templates and ressources. So firs
 
 ## Examples
 
-### Example of a Newsletter Template
+### Exampleof a Newsletter Template
 
-``` html 
+``` html
 [[!ditsnewsPlaceholders? &firstnameDefault=`Subscriber`]] <!-- Sets firstname field of email newsletter to "Subscriber" when empty -->
 <html>
     <head>

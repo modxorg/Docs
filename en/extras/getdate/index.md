@@ -26,7 +26,7 @@ Bugs, issues and feature requests can be reported in the GitHub Repository, foun
 
 The getDate snippet can be called using the tag:
 
- ``` php 
+ ``` php
 [[!getDate]]
 ```
 
@@ -56,9 +56,9 @@ getDate can be called cached or un-cached.
 
 For all relative date/time formats supported by strtotime(), please see: <http://www.php.net/manual/en/datetime.formats.relative.php>
 
-## <a name="getDate-DateFormatOptions"></a>Date Format Options
+## Date Format Options
 
-### <a name="getDate-OutputFilters"></a>Output Filters
+### Output Filters
 
 getDate outputs a unix timestamp. To format this timestamp into a human friendly format, please use the built in [MODX Output Filter 'date'](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)#InputandOutputFilters(OutputModifiers)-Stringoutputmodifiers).
 
@@ -71,23 +71,23 @@ getDate outputs a unix timestamp. To format this timestamp into a human friendly
 
 For all date formatting parameters, please see: [revolution/2.x/making-sites-with-modx/commonly-used-template-tags/date-formats#DateFormats-AllParameters](making-sites-with-modx/commonly-used-template-tags/date-formats#DateFormats-AllParameters)
 
-## <a name="getDate-Examples"></a>Examples
+## Examples
 
 Output the current unix timestamp:
 
- ``` php 
+ ``` php
 [[!getDate]]
 ```
 
 Output the current date (YYYY-MM-DD) using output filters:
 
- ``` php 
+ ``` php
 [[!getDate:date=`%Y-%m-%d`]]
 ```
 
 Output the date two months ago (YYYY-MM-DD) using output filters:
 
- ``` php 
+ ``` php
 [[getDate:date=`%Y-%m-%d`? &offset=`-2 month`]]
 ```
 
@@ -101,7 +101,7 @@ The following examples use the '&where' parameter and setting resource fields.
 
 Output only resources published within the last three months:
 
- ``` php 
+ ``` php
 [[!getResources?
   &parents=`[[*id]]`
   &tpl=`myRowTpl`
@@ -111,7 +111,7 @@ Output only resources published within the last three months:
 
 Output only resources published from the start of last month:
 
- ``` php 
+ ``` php
 [[!getResources?
   &parents=`[[*id]]`
   &tpl=`myRowTpl`
@@ -121,7 +121,7 @@ Output only resources published from the start of last month:
 
 Output only resources published in the last week and edited today:
 
- ``` php 
+ ``` php
 [[!getResources?
   &parents=`[[*id]]`
   &tpl=`myRowTpl`
@@ -129,7 +129,7 @@ Output only resources published in the last week and edited today:
 ]]
 ```
 
-### <a name="getDate-getResourcesExamplesTV"></a>Date Template Variable (TV)
+### Date Template Variable (TV)
 
 The following examples use the '&tvFilters' parameter and Date TV's.
 
@@ -137,7 +137,7 @@ Unlike Settings Resource Fields, Date TV's un-processed values are not stored in
 
 Output only resources with a custom date younger than three months ago:
 
- ``` php 
+ ``` php
 [[!getResources?
   &parents=`[[*id]]`
   &tpl=`myRowTpl`
@@ -149,7 +149,7 @@ Output only resources with a custom date younger than three months ago:
 
 Output only resources with a custom date younger than the start of last month:
 
- ``` php 
+ ``` php
 [[!getResources?
   &parents=`[[*id]]`
   &tpl=`myRowTpl`
@@ -161,7 +161,7 @@ Output only resources with a custom date younger than the start of last month:
 
 Output only resources where just the month of a custom date equals the current month:
 
- ``` php 
+ ``` php
 [[!getResources?
   &parents=`[[*id]]`
   &tpl=`myRowTpl`
@@ -173,7 +173,7 @@ Output only resources where just the month of a custom date equals the current m
 
 Output only resources with one custom date younger than last week and a second custom date younger than midnight today:
 
- ``` php 
+ ``` php
 [[!getResources?
   &parents=`[[*id]]`
   &tpl=`myRowTpl`

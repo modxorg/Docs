@@ -17,15 +17,15 @@ These placeholders are used across most pages and always use the same chunks:
 | Placeholder | Chunks |
 |-------------|--------|
 | trail | breadcrumbs/disBreadcrumbsLink |  For a crumb link  |
-| breadcrumbs/disBreadcrumbsActive |  For an active crumb text | 
+| breadcrumbs/disBreadcrumbsActive |  For an active crumb text |
 | breadcrumbs/disBreadcrumbs |  The entire crumbs wrapper |
-| boards | board/disLastPostBy |  For the "Last Post" by part | 
-| board/disSubForumLink |  For any sub-boards in the board row | 
-| category/disCategoryLi |  For the category row | 
+| boards | board/disLastPostBy |  For the "Last Post" by part |
+| board/disSubForumLink |  For any sub-boards in the board row |
+| category/disCategoryLi |  For the category row |
 | board/disBoardLi |  For each board |
 | actionbuttons | No chunks currently, but a UL tag with classes 'dis-action-btns right' and li tags for each button |
-| pagination | pagination/PaginationLink |  For a link to a page (1,2,3) | 
-| pagination/PaginationActive |  Text for the active page | 
+| pagination | pagination/PaginationLink |  For a link to a page (1,2,3) |
+| pagination/PaginationActive |  Text for the active page |
 | pagination/PaginationWrapper |  The wrapper for the pagination |
 | usermenu | disUserMenu |
 
@@ -40,7 +40,7 @@ These placeholders are used across most pages and always use the same chunks:
 
 | Placeholder | Chunks |
 |-------------|--------|
-| posts | post/disBoardPost |  For each post in an li | 
+| posts | post/disBoardPost |  For each post in an li |
 | board/disLastPostBy |  For the "last post by" part |
 | readers | Just a string of a tags |
 | moderators | Just a string of a tags |
@@ -49,11 +49,11 @@ These placeholders are used across most pages and always use the same chunks:
 
 | Placeholder | Chunks |
 |-------------|--------|
-| posts - post/disThreadPost |  For each post in the thread | 
-| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| posts - post/disThreadPost |  For each post in the thread |
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked |
 | post/disPostAttachment |  For each attachment on the post |
 | readers | Just a string of a tags |
-| threadactionbuttons - disActionButton |  For each button 
+| threadactionbuttons - disActionButton |  For each button
 | disActionButtons |  Wrapper of all buttons |
 
 ### thread/new.tpl
@@ -68,8 +68,8 @@ These placeholders are used across most pages and always use the same chunks:
 
 | Placeholder | Chunks |
 |-------------|--------|
-| thread\_posts | post/disThreadPost - For each post in the thread | 
-| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| thread\_posts | post/disThreadPost - For each post in the thread |
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked |
 | post/disPostAttachment |  For each attachment on the post |
 | attachment\_fields | post/disAttachmentFields |
 | buttons | disPostButtons |
@@ -79,8 +79,8 @@ These placeholders are used across most pages and always use the same chunks:
 
 | Placeholder | Chunks |
 |-------------|--------|
-| thread\_posts | post/disThreadPost |  For each post in the thread | 
-| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| thread\_posts | post/disThreadPost |  For each post in the thread |
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked |
 | post/disPostAttachment |  For each attachment on the post |
 | attachment\_fields | post/disAttachmentFields |
 | buttons | disPostButtons |
@@ -126,7 +126,7 @@ These placeholders are used across most pages and always use the same chunks:
 
 | Placeholder | Chunks |
 |-------------|--------|
-| boards |  disBoardCheckbox - For each board and its checkbox | 
+| boards |  disBoardCheckbox - For each board and its checkbox |
 | disBoardCategoryIb |  For each Category, with a placeholder for its nested boards |
 
 ### user/index.tpl
@@ -151,8 +151,8 @@ These placeholders are used across most pages and always use the same chunks:
 
 | Placeholder | Chunks |
 |-------------|--------|
-| thread\_posts | post/disThreadPost - For each post in the thread | 
-| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| thread\_posts | post/disThreadPost - For each post in the thread |
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked |
 | post/disPostAttachment |  For each attachment on the post |
 | attachment\_fields | post/disAttachmentFields |
 | buttons | disPostButtons |
@@ -170,8 +170,8 @@ These placeholders are used across most pages and always use the same chunks:
 
 | Placeholder | Chunks |
 |-------------|--------|
-| thread\_posts | post/disThreadPost - For each post in the thread | 
-| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| thread\_posts | post/disThreadPost - For each post in the thread |
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked |
 | post/disPostAttachment |  For each attachment on the post |
 | attachment\_fields | post/disAttachmentFields |
 | buttons | disPostButtons |
@@ -181,11 +181,11 @@ These placeholders are used across most pages and always use the same chunks:
 
 | Placeholder | Chunks |
 |-------------|--------|
-| posts |  post/disThreadPost - For each post in the thread | 
-| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked | 
+| posts |  post/disThreadPost - For each post in the thread |
+| post/disThreadPostPrint |  Replaces prior chunk if Print Thread is clicked |
 | post/disPostAttachment |  For each attachment on the post |
 | readers | Just a string of a tags |
-| threadactionbuttons | disActionButton - For each button | 
+| threadactionbuttons | disActionButton - For each button |
 | disActionButtons - Wrapper of all buttons |
 
 ### search.tpl
@@ -197,19 +197,19 @@ These placeholders are used across most pages and always use the same chunks:
 ## See Also
 
 1. [Discuss.Installation](extras/discuss/discuss.installation)
-  1. [Discuss.Installation from Git](extras/discuss/discuss.installation/discuss.installation-from-git)
+     1. [Discuss.Installation from Git](extras/discuss/discuss.installation/discuss.installation-from-git)
 2. [Discuss.Getting Started](extras/discuss/discuss.getting-started)
 3. [Discuss.Creating a Discuss Theme](extras/discuss/discuss.creating-a-discuss-theme)
 4. [Discuss.Controllers](extras/discuss/discuss.controllers)
-  2. [Discuss.Controllers.board](extras/discuss/discuss.controllers/discuss.controllers.board)
-      1. [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
-  3. [Discuss.Controllers.home](extras/discuss/discuss.controllers/discuss.controllers.home)
-  4. [Discuss.Controllers.login](extras/discuss/discuss.controllers/discuss.controllers.login)
-  5. [Discuss.Controllers.logout](extras/discuss/discuss.controllers/discuss.controllers.logout)
-  6. [Discuss.Controllers.profile](extras/discuss/discuss.controllers/discuss.controllers.profile)
-  7. [Discuss.Controllers.register](extras/discuss/discuss.controllers/discuss.controllers.register)
-  8. [Discuss.Controllers.search](extras/discuss/discuss.controllers/discuss.controllers.search)
-  9. [Discuss.Controllers.thread](extras/discuss/discuss.controllers/discuss.controllers.thread)
+     1. [Discuss.Controllers.board](extras/discuss/discuss.controllers/discuss.controllers.board)
+         1. [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml)
+     2. [Discuss.Controllers.home](extras/discuss/discuss.controllers/discuss.controllers.home)
+     3. [Discuss.Controllers.login](extras/discuss/discuss.controllers/discuss.controllers.login)
+     4. [Discuss.Controllers.logout](extras/discuss/discuss.controllers/discuss.controllers.logout)
+     5. [Discuss.Controllers.profile](extras/discuss/discuss.controllers/discuss.controllers.profile)
+     6. [Discuss.Controllers.register](extras/discuss/discuss.controllers/discuss.controllers.register)
+     7. [Discuss.Controllers.search](extras/discuss/discuss.controllers/discuss.controllers.search)
+     8. [Discuss.Controllers.thread](extras/discuss/discuss.controllers/discuss.controllers.thread)
 5. [Discuss.Database Model](extras/discuss/discuss.database-model)
 6. [Discuss.Contributing](extras/discuss/discuss.contributing)
 7. [Discuss.ChunkMap](extras/discuss/discuss.chunkmap)

@@ -33,7 +33,7 @@ Create the page, and add it to the "Members Only" Resource Group.
 
 For the content, use something like this:
 
-``` html 
+``` html
 [[!UpdateProfile? &useExtended=`0`]]
  
 <div class="update-profile">
@@ -77,7 +77,7 @@ Create the page, and add it to the "Members Only" Resource Group.
 
 For the content, use something like this:
 
-``` php 
+ ``` php
 [[!Profile]]
  
 <p>Username: [[+username]]</p>
@@ -93,7 +93,7 @@ Notice that we're putting a link in there so we can edit the profile. Remember: 
 
 This is a page where the user can change their password. It happens on a separate page. We're just following along with \[[ChangePassword](extras/login/login.changepassword "Login.ChangePassword")\] playbook.
 
-``` html 
+``` html
 <h2>Change Password</h2>
 [[!ChangePassword?
    &submitVar=`change-password`
@@ -139,7 +139,7 @@ You'll probably want to put a link to this page on your Profile Editing page.
 
 Just to be thorough, you should put a link on your Members Home Page so users can view their profile, e.g.
 
-``` php 
+ ``` php
 ...
 <p><a href="[[~11]]">View Profile</a></p>
 ```

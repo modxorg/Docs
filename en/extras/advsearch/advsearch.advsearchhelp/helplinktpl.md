@@ -10,7 +10,7 @@ A Chunk named "**helpLink**" is provided with AdvSearch. This Chunk name is used
 
 ## Default Value
 
-``` php 
+``` php
 <a id="[[+asId]]_helplink" title="[[%advsearch.help_title? &namespace=`advsearch` &topic=`default`]]" href="[[+helpId]]" class="advsea-helplink"><span>help</span></a>
 ```
 

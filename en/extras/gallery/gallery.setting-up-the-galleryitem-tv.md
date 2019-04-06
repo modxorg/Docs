@@ -28,7 +28,7 @@ From there, just click 'Choose an Image' and select a Gallery Album from the lef
 
 Once you're done editing it, just place the TV's tags in your content. For example, if your TV was named 'photo', you would place this in your content:
 
-``` php 
+ ``` php
 [[*photo]]
 ```
 

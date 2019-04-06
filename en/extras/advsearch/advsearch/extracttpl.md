@@ -10,7 +10,7 @@ A Chunk named "**extract**" is provided with AdvSearch. This Chunk name is set a
 
 ## Default Value
 
-``` php 
+``` php
 <p class="advsea-extract">[[+extract]]</p>
 ```
 

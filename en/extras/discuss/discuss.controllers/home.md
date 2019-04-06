@@ -33,21 +33,21 @@ If you don't know what the manifest is, please go back to the [Getting Started](
 |                        |                     |                                                                                                                                                                               |
 |                        |                     | **Boards**                                                                                                                                                                    |
 | lastPostTpl            | board/disLastPostBy | Fills the \[\[+lastPost\]\] placeholder. Available placeholders:                                                                                                              |
-- createdon 
-- user (disUser ID) 
-- username 
-- thread (ID) 
-- id (last post ID) 
-- url (URL to the last post0 
+- createdon
+- user (disUser ID)
+- username
+- thread (ID)
+- id (last post ID)
+- url (URL to the last post0
 - author\_link |
-|  |  | rray( 
- 'createdon' => strftime($modx->getOption('discuss.date\_format'),strtotime($board\['last\_post\_createdon'\])), 
- 'user' => $board\['last\_post\_author'\], 
- 'username' => $username, 
- 'thread' => $board\['last\_post\_thread'\], 
- 'id' => $board\['last\_post\_id'\], 
- 'url' => $board\['last\_post\_url'\], 
- 'author\_link' => $canViewProfiles ? '<a href="'.$discuss->request->makeUrl('u/'.$board\['last\_post\_username'\]).'">'.$username.'</a>' : $username, 
+|  |  | rray(
+ 'createdon' => strftime($modx->getOption('discuss.date\_format'),strtotime($board\['last\_post\_createdon'\])),
+ 'user' => $board\['last\_post\_author'\],
+ 'username' => $username,
+ 'thread' => $board\['last\_post\_thread'\],
+ 'id' => $board\['last\_post\_id'\],
+ 'url' => $board\['last\_post\_url'\],
+ 'author\_link' => $canViewProfiles ? '<a href="'.$discuss->request->makeUrl('u/'.$board\['last\_post\_username'\]).'">'.$username.'</a>' : $username,
  ); |
 |  |  |  |
 |  |  |  |

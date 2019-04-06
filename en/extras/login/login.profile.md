@@ -8,17 +8,17 @@ _old_uri: "revo/login/login.profile"
 
 Profile sets all the current User's (or a specified User's) Profile fields as placeholders, allowing you to display User Profile information on a page.
 
-## Usage 
+## Usage
 
 Simply add this Snippet to whatever page you want to set the User's Profile fields as placeholders on:
 
-``` php 
+ ``` php
 [[!Profile]]
 ```
 
 And then display them with placeholders like such:
 
-``` php 
+ ``` php
 <p>Username: [[+username]]</p>
 <p>Email: [[+email]]</p>
 <p>State: [[+state]]</p>
@@ -40,7 +40,7 @@ Profile comes with some default properties you can override. They are:
 
 Display the currently logged in user's email and username.
 
-``` php 
+ ``` php
 [[!Profile]]
 
 <p>Username: [[+username]]</p>
@@ -49,19 +49,19 @@ Display the currently logged in user's email and username.
 
 Grab the profile for the user 'marksmith', and add a prefix to the placeholders of 'user.':
 
-``` php 
+ ``` php
 [[!Profile? &user=`marksmith` &prefix=`user.`]]
 ```
 
 Display the currently logged in username's favorite color (an extended field), with the prefix of 'usr.':
 
-``` php 
+ ``` php
 [[!Profile? &prefix=`usr.`]]
 
 <p>[[+usr.username]]'s favorite color is [[+usr.color]]</p>
 ```
 
-## See Also 
+## See Also
 
 1. [Login.Login](extras/login/login.login)
 2. [Login.Profile](extras/login/login.profile)

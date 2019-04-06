@@ -4,11 +4,11 @@ _old_id: "644"
 _old_uri: "revo/formit"
 ---
 
-## What is FormIt? 
+## What is FormIt?
 
  FormIt is a dynamic form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODx Revolution. It handles a form after submission, performing validation and followup actions like sending an email. It does not generate the form, but it can repopulate it if it fails validation.
 
-## History 
+## History
 
  FormIt was written by Shaun McCormick as a form processing Extra, and first released on October 19th, 2009. It is currently maintained by the team at Sterc.
 
@@ -78,7 +78,7 @@ If any hook fails, the ones following it will not execute.
 
  For more information on hooks, see the [Hooks](extras/formit/formit.hooks "FormIt.Hooks") page.
 
-## See Also 
+## See Also
 
 1. [FormIt.Hooks](extras/formit/formit.hooks)
   1. [FormIt.Hooks.email](extras/formit/formit.hooks/formit.hooks.email)

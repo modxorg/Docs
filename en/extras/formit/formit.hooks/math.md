@@ -25,19 +25,19 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.math"
 
  Include it as a hook in your FormIt call:
 
- ``` php 
+ ``` php
 [[!FormIt? &hooks=`math`]]
 ```
 
  To make the math question required, use the call as follows:
 
- ``` php 
+ ``` php
 [[!FormIt? &hooks=`math` &validate=`math:required`]]
 ```
 
  Paste this sample HTML in the part of the form you want to include the math question:
 
- ``` html 
+ ``` html
 <label>[[!+fi.op1]] [[!+fi.operator]] [[!+fi.op2]]?</label>
 [[!+fi.error.math]]
 <input type="text" name="math" value="[[!+fi.math]]" />
@@ -54,7 +54,7 @@ NOTE: The form fields 'op1', 'op2' and 'operator' are not used anymore from Form
 
  If you don't want just "-" or "+" as the operator, and want to hide it even more from spam bots, you can use output filters to further add ambiguity to the math equation. Change the line with the equation text in it to:
 
- ``` php 
+ ``` php
 <label>[[!+fi.op1]] [[!+fi.operator:is=`-`:then=`minus`:else=`plus`]] [[!+fi.op2]]?</label>
 ```
 

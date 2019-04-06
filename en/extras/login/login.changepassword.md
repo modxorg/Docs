@@ -8,11 +8,11 @@ _old_uri: "revo/login/login.changepassword"
 
 ChangePassword is a simple Snippet that is used in conjunction with [Login](extras/login/login.login "Login.Login"), allowing users to change their password. You can place it anywhere, and it will process a form you must provide and change the user's password.
 
-## Usage 
+## Usage
 
 Simply create a Change Password form, and at the top of the page, put the snippet call. For example:
 
-``` html 
+``` html
 <h2>Change Password</h2>
 [[!ChangePassword?
    &submitVar=`change-password`
@@ -65,7 +65,7 @@ ChangePassword comes with some default properties you can override. They are:
 | successMessage          | If reloadOnSuccess is set to 0, output this message in the \[prefix\].successMessage placeholder.                                                                                                                                                         |                        |
 | placeholderPrefix       | The prefix to use for all placeholders set by this snippet.                                                                                                                                                                                               | logcp.                 |
 
-## See Also 
+## See Also
 
 1. [Login.Login](extras/login/login.login)
 2. [Login.Profile](extras/login/login.profile)

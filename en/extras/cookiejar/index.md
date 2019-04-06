@@ -28,21 +28,21 @@ _old_uri: "revo/cookiejar"
 
  The setCookie snippet can be called using the tag:
 
- ``` php 
+ ``` php
 [[seCookie]]
 ```
 
- setCookie can be called cached or un-cached. 
+ setCookie can be called cached or un-cached.
 
 ### getCookie
 
  The getCookie snippet can be called using the tag:
 
- ``` php 
+ ``` php
 [[getCookie]]
 ```
 
- getCookie can be called cached or un-cached. 
+ getCookie can be called cached or un-cached.
 
 ## Available Properties
 
@@ -59,7 +59,7 @@ _old_uri: "revo/cookiejar"
  | secure      | Indicates that the cookie should only be transmitted over a secure HTTPS connection from the client.                                                                        | 0             | 1.0.0-pl         |
  | httponly    | Indicates that the cookie will be made accessible only through the HTTP protocol. This means that the cookie wont be accessible by scripting languages, such as JavaScript. | 0             | 1.0.0-pl         |
 
-### <a name="cookieJar-AvailableProperties-getCookie"></a>getCookie
+### getCookie
 
  | Name          | Description                                                                           | Default Value | Added in Version |
  | ------------- | ------------------------------------------------------------------------------------- | ------------- | ---------------- |
@@ -73,7 +73,7 @@ _old_uri: "revo/cookiejar"
 
  Set a Session Cookie:
 
- ``` php 
+ ``` php
 [[setCookie?
   &name=`foo`
   &value=`foobar`
@@ -83,7 +83,7 @@ _old_uri: "revo/cookiejar"
 
  Set a secure Cookie that expires in one hour:
 
- ``` php 
+ ``` php
 [[setCookie?
   &name=`foo`
   &value=`foobar`
@@ -102,7 +102,7 @@ _old_uri: "revo/cookiejar"
 
  Set a secure Cookie that expires in one day:
 
- ``` php 
+ ``` php
 [[setCookie?
   &name=`foo`
   &value=`foobar`
@@ -114,7 +114,7 @@ _old_uri: "revo/cookiejar"
 
  Delete a Cookie named 'foo':
 
- ``` php 
+ ``` php
 [[!setCookie?
   &name=`foo`
   &expires=`-3600`
@@ -125,7 +125,7 @@ _old_uri: "revo/cookiejar"
 
  Output the value of a Cookie named 'foo':
 
- ``` php 
+ ``` php
 [[getCookie?
   &name=`foo`
 ]]
@@ -133,7 +133,7 @@ _old_uri: "revo/cookiejar"
 
  Output the value of a Cookie named 'foo', using a 'cookieTpl' chunk and assign the value to a placeholder:
 
- ``` php 
+ ``` php
 [[getCookie?
   &name=`foo`
   &tpl=`cookieTpl`

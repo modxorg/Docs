@@ -18,7 +18,7 @@ bdTargets is a simple snippet to output your target groups.
 | tplOuter      | Chunkname to wrap the complete result set in.   |
 Default: 
 
-``` php 
+``` php
 <h2>Target Groups</h2>
 <ul>
     [[+wrapper]]
@@ -31,7 +31,7 @@ Placeholders to use:
 `tplRow` - Chunk name to wrap individual target groups in. 
 Default: 
 
-``` php 
+``` php
 <li>[[+name]]</li>
 ```
 
@@ -45,13 +45,13 @@ Placeholders to use:
 
 Minimum call:
 
-``` php 
+``` php
 [[!bdTargets]]
 ```
 
 Result (depending on your target group data):
 
-``` php 
+``` php
 <h2>Target Groups</h2>
 <ul>
   <li>Under 5</li>
@@ -65,20 +65,20 @@ Result (depending on your target group data):
 
 Snippet call:
 
-``` php 
+``` php
 <label for="target">Target Group</label>
 [[!bdTargets? &tplRow=`bdl.target.row` &tplOuter=`bdl.target.outer`]]
 ```
 
 bdl.target.row:
 
-``` php 
+``` php
 <option value="[[+id]]">[[+name]]</option>
 ```
 
 bdl.target.outer:
 
-``` php 
+``` php
 <select name="target">
   <option value="0">Choose a Target Group</option>
   [[+wrapper]]

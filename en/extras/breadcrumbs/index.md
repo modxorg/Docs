@@ -43,7 +43,7 @@ It can be downloaded from within the MODx Revolution manager via [Package Manage
 
 The Breadcrumbs snippet can be called using the tags:
 
-``` php 
+``` php
 [[Breadcrumbs]]
 ```
 
@@ -83,7 +83,7 @@ The output is an unordered list with microdata (see <http://diveintohtml5.info/e
 
 Show breadcrumbs with a pipeline | for a separator.
 
-``` php 
+``` php
 [[Breadcrumbs? &crumbSeparator=`|`]]
 ```
 

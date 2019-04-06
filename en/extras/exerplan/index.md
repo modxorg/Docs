@@ -6,7 +6,7 @@ _old_uri: "revo/exerplan"
 
 # ExerPlan
 
-ExerPlan is en exercise planner for a health care or sport training type websites. 
+ExerPlan is en exercise planner for a health care or sport training type websites.
 Each of the workouts can have galleries (such as pictures, downloadable files, or video sources) as additional information to the members, eg: about the instructional material.
 
 ExerPlan was written by goldsky and first released on May 25th, 2013.
@@ -31,23 +31,23 @@ To understand how it works, I'll explain it backward, start from the setting.
 
 In here uses are able to set some of the basic settings for drop downs:
 
-1. Media Types 
+1. Media Types
   This option makes categorization of which file types you want to select. This is related with the **&mediaTypes** property on the snippet call.
-2. Sources 
+2. Sources
   This option is set to apply some Data/API/Embed code for some of the sources. If it's localhost, then you can ignore that requirements.
-3. Difficulty Levels 
+3. Difficulty Levels
   The level of the workout
 
 ## Workouts
 
 [![](/download/thumbnails/45940741/workouts-grid.png)](/download/attachments/45940741/workouts-grid.png)
 
-This is where the list of the workouts that will be provided for the members/usergroups of the website. 
+This is where the list of the workouts that will be provided for the members/usergroups of the website.
 On the same tab, admin/manager users can set the galleries, by clicking the "Manage Galleries" button.
 
 [![](/download/thumbnails/45940741/workouts-gallery-window.png)](/download/attachments/45940741/workouts-gallery-window.png)
 
-By selecting the left tree of workouts list, admin/manager users can see the grid/table of galleries that have been set before. 
+By selecting the left tree of workouts list, admin/manager users can see the grid/table of galleries that have been set before.
 To add new gallery, they can simply click the "Add > Add URL Address" button.
 
 This is where the admin/manager users give the URL address of the galleries, and set the Gallery Sources and Types to apply the additional Data/API/Embed code if there is any.
@@ -56,8 +56,8 @@ This is where the admin/manager users give the URL address of the galleries, and
 
 [![](/download/thumbnails/45940741/user-tree-workouts.png)](/download/attachments/45940741/user-tree-workouts.png)
 
-At last, at the first dashboard, there is the Users tree under the Usergroups tree. 
-By selecting the Usergroup name, admin/manager users can see the workouts for the Usergroups. 
+At last, at the first dashboard, there is the Users tree under the Usergroups tree.
+By selecting the Usergroup name, admin/manager users can see the workouts for the Usergroups.
 By selecting the User name, they can see the workouts for the user, based on the (multiple) usergroups they are within, and of course the additional Individual workouts for the specific user only.
 
 And how about the additional Galleries for this specific user?
@@ -70,7 +70,7 @@ And the last but not least,
 
 [![](/download/thumbnails/45940741/user-tree-assessments.png)](/download/attachments/45940741/user-tree-assessments.png)
 
-the admin/manager users/mentors can give some assessments about the members. 
+the admin/manager users/mentors can give some assessments about the members.
 FYI, at this moment, this is one way comments, so no respond will be available at the front-end.
 
 # Snippets
@@ -81,8 +81,8 @@ There are 3 snippets available:
 2. exerplan.Galleries
 3. exerplan.Assessments
 
-All of these snippets have (as the default) **&requireAuth=`1`** property is set, which then output the list that has been set for the logged in user only. 
-For all snippets, to get a brief of the placeholders, use **&toArray=`1`** property. 
+All of these snippets have (as the default) **&requireAuth=`1`** property is set, which then output the list that has been set for the logged in user only.
+For all snippets, to get a brief of the placeholders, use **&toArray=`1`** property.
 On the chunk properties, **@BINDINGs** means you can use **@FILE:** to refer the template to the physical file, or **@CODE:** or **@INLINE:** for the inline the code.
 
 ## exerplan.Exercises
@@ -163,7 +163,7 @@ This snippet show the assessments that have been set for the members, or from th
 
 # Examples
 
-``` php 
+``` php
 [[!Login]]<br>
 
 <!-- &toArray is commented out, remove _ to run -->
@@ -171,7 +171,7 @@ This snippet show the assessments that have been set for the members, or from th
 &requireAuth=`1`
 &userId=`[[+modx.user.id]]`
 &galleryMediatype=`video`
-&_toArray=`1` 
+&_toArray=`1`
 ]]
 
 [[!exerplan.Assessments?
@@ -185,7 +185,7 @@ This snippet show the assessments that have been set for the members, or from th
 
 ## exerplan.exercises.item
 
-``` html 
+``` html
 <div id="exerplan-exercise-[[+exerplan.id]]">
     <div>Exercise: [[+exerplan.name]]</div>
     <div>Description: [[+exerplan.description]]</div>
@@ -204,7 +204,7 @@ This snippet show the assessments that have been set for the members, or from th
 
 ## exerplan.exercises.wrapper
 
-``` html 
+``` html
 <div>
     [[+exerplan.items]]
 </div>
@@ -212,7 +212,7 @@ This snippet show the assessments that have been set for the members, or from th
 
 ## exerplan.gallery.item
 
-``` html 
+``` html
 <div id="exerplan-gallery-item-[[+exerplan.gallery.id]]">
     [[+exerplan.gallery.url:notempty=`
     <div>
@@ -231,7 +231,7 @@ This snippet show the assessments that have been set for the members, or from th
 
 ## exerplan.gallery.wrapper
 
-``` html 
+``` html
 <div id="exerplan-exercise-gallery-wrapper">
     [[+exerplan.gallery.items]]
 </div>
@@ -239,7 +239,7 @@ This snippet show the assessments that have been set for the members, or from th
 
 ## exerplan.assessment.item
 
-``` html 
+``` html
 <div
     id="exerplan-assessment-item-[[+exerplan.assessment.id]]"
     [[+exerplan.assessment.row_index:mod:is=`0`:then=`
@@ -262,7 +262,7 @@ This snippet show the assessments that have been set for the members, or from th
 
 ## exerplan.assessment.wrapper
 
-``` html 
+``` html
 <div id="exerplan-exercise-assessment-wrapper">
     [[+exerplan.assessment.items]]
 </div>

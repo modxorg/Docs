@@ -14,7 +14,7 @@ The descriptions in the table are just a guess!!! Someone with more experience o
 
 Simply place the snippet wherever you would like to display archive listings in, the parents to grab archives from.
 
-``` php 
+``` php
 [[!ArchivistGrouper? &parents=`12`]]
 ```
 
@@ -52,7 +52,7 @@ Almost all of the descriptions are the same properties as mentioned on the [Arch
 
 If no templates are given, the defaults are used. As it got me puzzled how to create my own template for the groups, I dived into the source and found this template that is used as monthContainer:
 
-``` php 
+``` php
 <li><a href="[[+url]]">[[+month_name]] [[+year]]</a>
 <ul>
 [[+resources]]

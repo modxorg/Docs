@@ -27,7 +27,7 @@ If either sso\_mode is disabled or no register\_resource\_id is set, the Login c
 
 There are no specific placeholders to use in this controller template.
 
-``` php 
+``` php
 [[!Register?
     &submitVar=`dis-register-btn`
     &activationResourceId=`[[*id]]`
@@ -36,6 +36,7 @@ There are no specific placeholders to use in this controller template.
     &usergroups=`Forum New Member`
 ]]
 ```
+
 ``` html
 <form class="dis-form dis-register" action="[[~[[*id]]]]register" method="post">
     <h2>[[%discuss.register? &namespace=`discuss` &topic=`web`]]</h2>

@@ -28,11 +28,11 @@ _old_uri: "revo/getyoutube"
 
  The getYoutube snippet can be called using the tag:
 
- ``` php 
+ ``` php
 [[!getYoutube]]
 ```
 
- Calls must be un-cached. '&mode' property is required. 
+ Calls must be un-cached. '&mode' property is required.
 
 ## System Settings
 
@@ -42,7 +42,7 @@ _old_uri: "revo/getyoutube"
  | ------------------- | ----------------------------------------------------------------------- |
  | getyoutube.api\_key | A valid Google Public API Key for either browser or server applications |
 
- You must provide your Google Public API Key in order to use getYoutube 
+ You must provide your Google Public API Key in order to use getYoutube
 
 ## Available Properties
 
@@ -100,7 +100,7 @@ _old_uri: "revo/getyoutube"
  | \[\[+commentCount\]\]        | # of comments                                                                                   | video           | 1.0.0-pl         |
  | \[\[+tags\]\]                | Comma separated list of tags                                                                    | video           | 1.2.0-pl         |
 
- If you require additional video data as placeholders, please request here: <https://github.com/tasianmedia/getYoutube/issues>. 
+ If you require additional video data as placeholders, please request here: <https://github.com/tasianmedia/getYoutube/issues>.
 
 ### Other Placeholders
 
@@ -114,25 +114,25 @@ _old_uri: "revo/getyoutube"
 
  Output all videos from the YouTube 'Spotlight' Channel, using the 'videoTpl' chunk:
 
- ``` php 
+ ``` php
 [[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl`]]
 ```
 
  Output all videos from the YouTube 'POP Music Playlist 2017 (Songs of All Time)' Playlist, using the 'videoTpl' chunk:
 
- ``` php 
+ ``` php
 [[!getYoutube? &mode=`playlist` &playlist=`PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj` &tpl=`videoTpl`]]
 ```
 
  Output only specified videos, using the 'videoTpl' chunk:
 
- ``` php 
+ ``` php
 [[!getYoutube? &mode=`video` &video=`_X-jSkrqYzk,FoRRybrFR0c,yXBPbnv1H-U` &tpl=`videoTpl`]]
 ```
 
  Output all videos from the YouTube 'Spotlight' Channel, using the 'videoTpl' chunk and assign the output to a placeholder:
 
- ``` php 
+ ``` php
 [[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl` &toPlaceholder=`videos`]]
 [[+videos:notempty=`[[+videos]]`]]
 ```
@@ -143,7 +143,7 @@ _old_uri: "revo/getyoutube"
 
  Output all videos from the YouTube 'Spotlight' Channel, using the 'videoTpl' chunk:
 
- ``` php 
+ ``` php
 [[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl`]]
 [[+prevPage:notempty=`<a href="[[+prevPage]]">prevPage</a><br>`]]
 [[+nextPage:notempty=`<a href="[[+nextPage]]">nextPage</a><br>`]]
@@ -152,7 +152,7 @@ Total: [[+total]]
 
  Output all videos from the YouTube 'Spotlight' Channel, 10 at a time, using the 'videoTpl' chunk:
 
- ``` php 
+ ``` php
 [[!getYoutube? &mode=`channel` &channel=`UCBR8-60-B28hp2BmDPdntcQ` &tpl=`videoTpl` &limit=`10`]]
 [[+prevPage:notempty=`<a href="[[+prevPage]]">prevPage</a><br>`]]
 [[+nextPage:notempty=`<a href="[[+nextPage]]">nextPage</a><br>`]]

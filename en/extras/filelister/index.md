@@ -13,7 +13,7 @@ FileLister is a dynamic file listing Extra for MODx Revolution. It allows you to
 - MODx Revolution 2.0.0-rc-2 or later
 - PHP5 or later
 
-## History and Info
+## Historyand Info
 
 FileLister was written by Shaun McCormick (splittingred) as a dynamic file listing component, and first released on June 30th, 2010.
 
@@ -47,25 +47,25 @@ FileLister comes with one snippet:
 
 List all the files and directories in assets/downloads.
 
-``` php 
+ ``` php
 [[!FileLister? &path=`assets/downloads/`]]
 ```
 
 List only files in the 'assets/pdfs' directory.
 
-``` php 
+ ``` php
 [[!FileLister? &path=`assets/pdfs/`]]
 ```
 
 List all files and subdirectories in '/docs/marketing', but don't allow file viewing or downloading except for users logged in and in the 'Marketing' or 'CEO' groups.
 
-``` php 
+ ``` php
 [[!FileLister? &path=`/docs/marketing/` &allowDownloadGroups=`Marketing,CEO`]]
 ```
 
 Restrict file listings in 'assets/pdfs' to only PDF files:
 
-``` php 
+ ``` php
 [[!FileLister? &path=`assets/pdfs/` &hideDirectories=`1` &showExt=`pdf`]]
 ```
 
@@ -73,7 +73,7 @@ Restrict file listings in 'assets/pdfs' to only PDF files:
 
 This is a sample of HTML that you can put inside a Resource to output your content. You'll need to have the toPlaceholder property set to 'files' for this to work, and call your FileLister snippet uncached **before** this HTML.
 
-``` html 
+``` html
 <h2>Files</h2>
 
 <p>Current Path: <span>[[+filelister.path]]</span></p>
@@ -89,7 +89,7 @@ This is a sample of HTML that you can put inside a Resource to output your conte
 <tfoot>
 <tr>
   <th colspan="3">
-    Files: [[+filelister.total.files]] 
+    Files: [[+filelister.total.files]]
     | Directories: [[+filelister.total.directories]]
   </th>
 </tr>
@@ -102,8 +102,8 @@ This is a sample of HTML that you can put inside a Resource to output your conte
 ## See Also
 
 1. [FileLister.FileLister](extras/filelister/filelister.filelister)
-  1. [FileLister.FileLister.directoryTpl](extras/filelister/filelister.filelister/filelister.filelister.directorytpl)
-  2. [FileLister.FileLister.fileLinkTpl](extras/filelister/filelister.filelister/filelister.filelister.filelinktpl)
-  3. [FileLister.FileLister.fileTpl](extras/filelister/filelister.filelister/filelister.filelister.filetpl)
-  4. [FileLister.FileLister.pathTpl](extras/filelister/filelister.filelister/filelister.filelister.pathtpl)
+     1. [FileLister.FileLister.directoryTpl](extras/filelister/filelister.filelister/filelister.filelister.directorytpl)
+     2. [FileLister.FileLister.fileLinkTpl](extras/filelister/filelister.filelister/filelister.filelister.filelinktpl)
+     3. [FileLister.FileLister.fileTpl](extras/filelister/filelister.filelister/filelister.filelister.filetpl)
+     4. [FileLister.FileLister.pathTpl](extras/filelister/filelister.filelister/filelister.filelister.pathtpl)
 2. [FileLister.Roadmap](extras/filelister/filelister.roadmap)

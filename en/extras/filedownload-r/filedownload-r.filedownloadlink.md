@@ -4,8 +4,8 @@ _old_id: "842"
 _old_uri: "revo/filedownload-r/filedownload-r.filedownloadlink"
 ---
 
-FileDownloadLink is a snippet for a single downloadable file. 
-It's just like providing the link to the direct file. 
+FileDownloadLink is a snippet for a single downloadable file.
+It's just like providing the link to the direct file.
 But in this case, FileDownloadLink will hide the real path of the file with the hashed link and count the downloading action.
 
 Basic usage is \[\[!FileDownloadLink?\]\]
@@ -24,7 +24,7 @@ Basic usage is \[\[!FileDownloadLink?\]\]
 | -------- | ----------------------------------------------------------------------------- | ------------- | ------- |
 | saltText | This text will be added to the file's hashed link to disguise the direct path | FileDownload  | string  |
 
-The link is a hashed text of the saltText, context, and filename/dirname combination. 
+The link is a hashed text of the saltText, context, and filename/dirname combination.
 So if you change the saltText value after a while, it will not block the content's appearance from the page, but the database will start the counter from zero again since it will not find the same hashed value.
 
 # Additional
@@ -41,7 +41,7 @@ So if you change the saltText value after a while, it will not block the content
 
 # Template
 
-The template for this snippet is a plain href link with FileDownloadLink's placeholders, not a chunk or a template file. 
+The template for this snippet is a plain href link with FileDownloadLink's placeholders, not a chunk or a template file.
 If you like to see the available placeholders, just initiate the &toArray=`1` parameter.
 
 | Name    | Description   | Example                                                  | Default Value                                 | Options   |
@@ -57,7 +57,7 @@ If you like to see the available placeholders, just initiate the &toArray=`1` pa
 
 # Example
 
-``` php 
+ ``` php
 [[!FileDownloadLink?
 &getFile=`[[++core_path]]downloads/Document1.doc`
 &tplCode=`

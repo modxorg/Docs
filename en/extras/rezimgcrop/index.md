@@ -29,7 +29,7 @@ _old_uri: "revo/rezimgcrop"
 - g - Color image conversion in a shade of gray,
    WxH - w = width, H = height (in pixels)
 
-## Usage Examples
+## UsageExamples
 
  Resize on width and cropping:
 

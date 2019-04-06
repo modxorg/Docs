@@ -12,19 +12,19 @@ _old_uri: "revo/formit/formit.formitretriever"
 
  Simply add this Snippet to whatever page you are redirecting from using FormIt's &redirectTo property, and set &store=`1` in the FormIt call:
 
- ``` php 
+ ``` php
 [[!FormItRetriever]]
 ```
 
  And then display your form data with placeholders relating to the names of your form fields like such:
 
- ``` php 
+ ``` php
 <p>Thanks [[!+fi.name]] for submitting. An email will be sent to you at [[!+fi.email]].</p>
 ```
 
  Remember to set &store=`1` in your FormIt call, so FormIt knows to store the value.
 
- Make sure to call the placeholders uncached. This data changes on every request, so therefore the placeholders need to change every request too. 
+ Make sure to call the placeholders uncached. This data changes on every request, so therefore the placeholders need to change every request too.
 
 ### FormItRetriever Properties
 
@@ -43,7 +43,7 @@ _old_uri: "revo/formit/formit.formitretriever"
 
  On your form page:
 
- ``` php 
+ ``` php
 [[!FormIt?
    &submitVar=`go`
    &hooks=`spam,FormItAutoResponder,redirect`
@@ -66,7 +66,7 @@ _old_uri: "revo/formit/formit.formitretriever"
 
  On your Thank You page (Resource ID 123):
 
- ``` php 
+ ``` php
 [[!FormItRetriever? &redirectToOnNotFound=`444`]]
 <p>Thanks [[!+fi.name]] for submitting. An auto-response email will be sent to you at [[!+fi.email]]. Here's a copy of your message:</p>
 [[!+fi.message]]
@@ -75,19 +75,19 @@ _old_uri: "revo/formit/formit.formitretriever"
 ## See Also
 
 1. [FormIt.Hooks](extras/formit/formit.hooks)
-  1. [FormIt.Hooks.email](extras/formit/formit.hooks/formit.hooks.email)
-  2. [FormIt.Hooks.FormItAutoResponder](extras/formit/formit.hooks/formit.hooks.formitautoresponder)
-  3. [FormIt.Hooks.math](extras/formit/formit.hooks/formit.hooks.math)
-  4. [FormIt.Hooks.recaptcha](extras/formit/formit.hooks/formit.hooks.recaptcha)
-  5. [FormIt.Hooks.redirect](extras/formit/formit.hooks/formit.hooks.redirect)
-  6. [FormIt.Hooks.spam](extras/formit/formit.hooks/formit.hooks.spam)
+     1. [FormIt.Hooks.email](extras/formit/formit.hooks/formit.hooks.email)
+     2. [FormIt.Hooks.FormItAutoResponder](extras/formit/formit.hooks/formit.hooks.formitautoresponder)
+     3. [FormIt.Hooks.math](extras/formit/formit.hooks/formit.hooks.math)
+     4. [FormIt.Hooks.recaptcha](extras/formit/formit.hooks/formit.hooks.recaptcha)
+     5. [FormIt.Hooks.redirect](extras/formit/formit.hooks/formit.hooks.redirect)
+     6. [FormIt.Hooks.spam](extras/formit/formit.hooks/formit.hooks.spam)
 2. [FormIt.Validators](extras/formit/formit.validators)
 3. [FormIt.FormItRetriever](extras/formit/formit.formitretriever)
 4. [FormIt.Tutorials and Examples](extras/formit/formit.tutorials-and-examples)
-  7. [FormIt.Examples.Custom Hook](extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
-  8. [FormIt.Examples.Simple Contact Page](extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
-  9. [FormIt.Handling Selects, Checkboxes and Radios](extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
-  10. [FormIt.Using a Blank NoSpam Field](extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
+     1. [FormIt.Examples.Custom Hook](extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
+     2. [FormIt.Examples.Simple Contact Page](extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
+     3. [FormIt.Handling Selects, Checkboxes and Radios](extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
+     4. [FormIt.Using a Blank NoSpam Field](extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
 5. [FormIt.Roadmap](extras/formit/formit.roadmap)
 6. [FormIt.FormItCountryOptions](extras/formit/formit.formitcountryoptions)
 7. [FormIt.FormItStateOptions](extras/formit/formit.formitstateoptions)

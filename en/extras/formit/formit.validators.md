@@ -6,27 +6,27 @@ _old_uri: "revo/formit/formit.validators"
 
 ## Validation in FormIt
 
- As of FormIt 2.2.9, all fields will automatically have `html_entities` applied. To allow HTML tags to be saved/stored, you will need to use the ` allowSpecialChars` validator on each field, that should save raw html tags. 
+ As of FormIt 2.2.9, all fields will automatically have `html_entities` applied. To allow HTML tags to be saved/stored, you will need to use the `allowSpecialChars` validator on each field, that should save raw html tags.
 
- As of FormIt 1.4.0, validation has changed. The old method of doing validation on the input names will still work until FormIt 2.0.0, when it will be removed. It is recommended to use the new way by using the &validate property. 
+ As of FormIt 1.4.0, validation has changed. The old method of doing validation on the input names will still work until FormIt 2.0.0, when it will be removed. It is recommended to use the new way by using the &validate property.
 
- As of FormIt 1.1.4, all fields will automatically have `stripTags` applied. To allow HTML tags to be saved/stored, you will need to use the `allowTags` validator on each field, stipulating which tags are permitted. 
+ As of FormIt 1.1.4, all fields will automatically have `stripTags` applied. To allow HTML tags to be saved/stored, you will need to use the `allowTags` validator on each field, stipulating which tags are permitted.
 
  Validation can simply be done by adding the fields to validate to the &validate property on the Snippet call. For example, to make the username field required, you could do:
 
- ``` php 
+ ``` php
 [[!FormIt? &validate=`username:required`]]
 ```
 
  Validators can also be "chained", or done in sucession. The following first checks to see if required, then strips all tags from the post:
 
- ``` php 
+ ``` php
 [[!FormIt? &validate=`text:required:stripTags`
 ```
 
  Multiple fields and validators are separated by commas:
 
- ``` php 
+ ``` php
 [[!FormIt? &validate=`date:required:isDate=^%m/%d/%Y^,
     name:required:testFormItValidator,
     email:email:required,
@@ -41,7 +41,7 @@ _old_uri: "revo/formit/formit.validators"
 
  Note: Don't use backticks ` inside a validate call. Use carets ^ instead:
 
- ``` php 
+ ``` php
 [[!FormIt? &validate=`date:required:isDate=^%m/%d/%Y^`]]
 ```
 
@@ -49,7 +49,7 @@ _old_uri: "revo/formit/formit.validators"
 
  A general error message for validators, useful if no errors are showing but validation is failing, is used with the following placeholder:
 
- ``` php 
+ ``` php
 [[!+fi.validation_error_message]]
 ```
 
@@ -57,7 +57,7 @@ _old_uri: "revo/formit/formit.validators"
 
  Also, there is a 1/0 placeholder as well:
 
- ``` php 
+ ``` php
 [[!+fi.validation_error]]
 ```
 
@@ -86,21 +86,21 @@ _old_uri: "revo/formit/formit.validators"
 
  Validators can also be custom [Snippets](developing-in-modx/basic-development/snippets "Snippets"). You can do this by simply specifying the snippet name in the customValidators property:
 
- ``` php 
+ ``` php
 [[!FormIt? &customValidators=`isBigEnough`]]
 ```
 
- As of FormIt 1.2.0, all custom validators **must** be specified in the customValidators property, or they will not be run. 
+ As of FormIt 1.2.0, all custom validators **must** be specified in the customValidators property, or they will not be run.
 
  And then as a validator on the &validate property:
 
- ``` php 
+ ``` php
 [[!FormIt? &validate=`cost:isBigEnough`]]
 ```
 
  Then in your Snippet, "isBigEnough":
 
- ``` php 
+ ``` php
 <?php
 $value = (float)$value;
 $success = $value > 1000;
@@ -143,7 +143,7 @@ return $success;
 
  You can also specify the message per-field by prefixing the field key in the property. For example, to override the "required" validator message, simply pass in your FormIt call:
 
- ``` php 
+ ``` php
 [[!FormIt?
   &vTextRequired=`Please enter a value for this field.`
   &subject.vTextRequired=`Please enter a subject.`
@@ -155,19 +155,19 @@ return $success;
 ## See Also
 
 1. [FormIt.Hooks](extras/formit/formit.hooks)
-  1. [FormIt.Hooks.email](extras/formit/formit.hooks/formit.hooks.email)
-  2. [FormIt.Hooks.FormItAutoResponder](extras/formit/formit.hooks/formit.hooks.formitautoresponder)
-  3. [FormIt.Hooks.math](extras/formit/formit.hooks/formit.hooks.math)
-  4. [FormIt.Hooks.recaptcha](extras/formit/formit.hooks/formit.hooks.recaptcha)
-  5. [FormIt.Hooks.redirect](extras/formit/formit.hooks/formit.hooks.redirect)
-  6. [FormIt.Hooks.spam](extras/formit/formit.hooks/formit.hooks.spam)
+     1. [FormIt.Hooks.email](extras/formit/formit.hooks/formit.hooks.email)
+     2. [FormIt.Hooks.FormItAutoResponder](extras/formit/formit.hooks/formit.hooks.formitautoresponder)
+     3. [FormIt.Hooks.math](extras/formit/formit.hooks/formit.hooks.math)
+     4. [FormIt.Hooks.recaptcha](extras/formit/formit.hooks/formit.hooks.recaptcha)
+     5. [FormIt.Hooks.redirect](extras/formit/formit.hooks/formit.hooks.redirect)
+     6. [FormIt.Hooks.spam](extras/formit/formit.hooks/formit.hooks.spam)
 2. [FormIt.Validators](extras/formit/formit.validators)
 3. [FormIt.FormItRetriever](extras/formit/formit.formitretriever)
 4. [FormIt.Tutorials and Examples](extras/formit/formit.tutorials-and-examples)
-  7. [FormIt.Examples.Custom Hook](extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
-  8. [FormIt.Examples.Simple Contact Page](extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
-  9. [FormIt.Handling Selects, Checkboxes and Radios](extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
-  10. [FormIt.Using a Blank NoSpam Field](extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
+     1. [FormIt.Examples.Custom Hook](extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook)
+     2. [FormIt.Examples.Simple Contact Page](extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page)
+     3. [FormIt.Handling Selects, Checkboxes and Radios](extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios)
+     4. [FormIt.Using a Blank NoSpam Field](extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field)
 5. [FormIt.Roadmap](extras/formit/formit.roadmap)
 6. [FormIt.FormItCountryOptions](extras/formit/formit.formitcountryoptions)
 7. [FormIt.FormItStateOptions](extras/formit/formit.formitstateoptions)

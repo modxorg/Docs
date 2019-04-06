@@ -24,7 +24,7 @@ BabelLinks is a snippet which displays links to other languages (contexts) in th
 
  If the &tpl parameter is not set the default chunk will be used with the follwoing code:
 
- ``` php 
+ ``` php
 <li><a href="[[+url]]" class="[[+cultureKey]][[+active:notempty=` [[+active]]`]]">[[%babel.language_[[+cultureKey]]? &topic=`default` &namespace=`babel`]]</a></li>
 ```
 

@@ -31,15 +31,16 @@ See the FormIt Email documentation for additional available properties: <http://
 2. Then put in the ID of the Resource as the value for the emailResourceID in the FormIt Snippet call.
 
 The following will send out an email of the Resource #10 after the form validated.
+
 ``` php
-[[!FormIt? 
- &submitVar=`submit` 
- &validationErrorMessage=`<h3>Please fill in all fields</h3>` 
- &validate=`email:email:required,question:required` 
- &hooks=`eletterFormItEmail` 
- &emailSubject=`Question` 
- &emailTo=`email@email.com` 
- &emailResourceID=`10` 
+[[!FormIt?
+ &submitVar=`submit`
+ &validationErrorMessage=`<h3>Please fill in all fields</h3>`
+ &validate=`email:email:required,question:required`
+ &hooks=`eletterFormItEmail`
+ &emailSubject=`Question`
+ &emailTo=`email@email.com`
+ &emailResourceID=`10`
 ]]
 ```
 

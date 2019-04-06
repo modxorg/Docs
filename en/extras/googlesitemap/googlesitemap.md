@@ -14,7 +14,7 @@ Note: if you try to view a XML sitemap with tens of thousands of nodes in your b
 
  Simply place the snippet in the Resource you want to use, and set the Resource's Template to 'blank':
 
- ``` php 
+ ``` php
 [[!GoogleSiteMap]]
 ```
 
@@ -49,19 +49,19 @@ Note: if you try to view a XML sitemap with tens of thousands of nodes in your b
 
  Display a sitemap for the current context:
 
- ``` php 
+ ``` php
 [[!GoogleSiteMap]]
 ```
 
  Display a sitemap that combines both the web and marketing contexts:
 
- ``` php 
+ ``` php
 [[!GoogleSiteMap? &context=`web,marketing`]]
 ```
 
  Limit the sitemap to only the Resources with Template named 'BlogTemplate', and exclude the Resources with IDs 123 or 78:
 
- ``` php 
+ ``` php
 [[!GoogleSiteMap?
   &allowedtemplates=`BlogTemplate`
   &templateFilter=`templatename`
@@ -74,7 +74,7 @@ NOTE: the last example would call the legacy Snippet, which will time out if man
 ## See Also
 
 1. [GoogleSiteMap.GoogleSiteMap](extras/googlesitemap/googlesitemap.googlesitemap)
-  1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
-  2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
+     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
+     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
 2. [GoogleSiteMap.GoogleSiteMapVersion1](https://rtfm.modx.com/extras/revo/googlesitemap/googlesitemapversion1)
 3. [GoogleSiteMap.Roadmap](extras/googlesitemap/googlesitemap.roadmap)

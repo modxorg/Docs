@@ -4,7 +4,7 @@ _old_id: "667"
 _old_uri: "revo/lexrating"
 ---
 
-# Description 
+# Description
 
 LexRating (by [goldsky](http://twitter.com/_goldsky)) is a jQuery's star rating plugin, based on [rateit.codeplex.com](http://rateit.codeplex.com) (by [gidon](http://twitter.com/gjunge)).
 
@@ -24,12 +24,12 @@ Think about a comment based star rating.
 
 [![](/download/thumbnails/43417740/comment%20based%20rating.jpg)](/download/attachments/43417740/comment%20based%20rating.jpg)
 
-# LexRating 
+# LexRating
 
-This snippet offers web visitor to give a rating into an object/item, based on the given name. 
+This snippet offers web visitor to give a rating into an object/item, based on the given name.
 This snippet checks the visitor's IP address, and if visitor logged in, the visitor's ID
 
-## Properties 
+## Properties
 
 | Name                                                           | Description                                                                                      | Example                                                    | Default Value                                         | Options                     |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | ----------------------------------------------------- | --------------------------- |
@@ -48,7 +48,7 @@ This snippet checks the visitor's IP address, and if visitor logged in, the visi
 | toArray                                                        | Return an array of placeholders                                                                  | &toArray=`1`                                               | null                                                  | 1                           | 0                 | null |
 | toPlaceholder                                                  | Save the output into the given name placeholder                                                  | &toPlaceholder=`my\_rating`                                | null                                                  | string                      |
 
-## Placeholders 
+## Placeholders
 
 To get the complete placeholders, just use **&toArray=`1`** to spit out the keys.
 
@@ -59,9 +59,9 @@ To get the complete placeholders, just use **&toArray=`1`** to spit out the keys
 | \[\[+lexrating.total.voters\]\] | Total number of the voters                               |
 | \[\[+lexrating.initialAjax\]\]   | The property you set in the snippet call   |
 
-## Example 
+## Example
 
-``` php 
+ ``` php
 [[LexRating?
 &name=`[[*pagetitle]]`
 &group=`articles`
@@ -71,7 +71,7 @@ To get the complete placeholders, just use **&toArray=`1`** to spit out the keys
 
 If you just want to display a rating of an item, use this
 
-``` php 
+ ``` php
 [[LexRating?
 &name=`[[*pagetitle]]`
 &group=`articles`
@@ -80,11 +80,11 @@ If you just want to display a rating of an item, use this
 ]]
 ```
 
-# LexRatingList 
+# LexRatingList
 
 This snippet retrieves the items of the LexRating's results based on the given group name.
 
-## Properties 
+## Properties
 
 | Name           | Description                                                    | Example                                 | Default Value                                         | Options                 |
 | -------------- | -------------------------------------------------------------- | --------------------------------------- | ----------------------------------------------------- | ----------------------- |
@@ -101,7 +101,7 @@ This snippet retrieves the items of the LexRating's results based on the given g
 | toArray        | Return an array of placeholders                                | &toArray=`1`                            | null                                                  | 1                       | 0                 | null |
 | toPlaceholder  | Save the output into the given name placeholder                | &toPlaceholder=`my\_rating`             | null                                                  | string                  |
 
-## Placeholders 
+## Placeholders
 
 To get the complete placeholders, just use **&toArray=`1`** to spit out the keys.
 
@@ -120,31 +120,31 @@ To get the complete placeholders, just use **&toArray=`1`** to spit out the keys
 | \[\[+lexrating.total.voters\]\] | Total number of the voters                |
 | \[\[+lexrating.initialAjax\]\]  | The property you set in the snippet call  |
 
-## Example 
+## Example
 
 `[[LexRatingList? &group=`articles`]]`
 
-# LexRatingQuipPostHook 
+# LexRatingQuipPostHook
 
-This hook requires quip's thread name. 
-This only works once for each IP Address + userID. 
+This hook requires quip's thread name.
+This only works once for each IP Address + userID.
 So any logged in user can not vote twice.
 
 On the quip's call, try to use this as an example:
 
-``` php 
+ ``` php
 [[LexRatingList? &group=`articles`]]
 ```
 
-# LexRatingQuipPostHook 
+# LexRatingQuipPostHook
 
-This hook requires quip's thread name. 
-This only works once for each IP Address + userID. 
+This hook requires quip's thread name.
+This only works once for each IP Address + userID.
 So any logged in user can not vote twice.
 
 On the quip's call, try to use this as an example:
 
-``` php 
+ ``` php
 <p>Total Rating:</p>
 [[!LexRatingList?
 &name=`threadNameHere`
@@ -164,10 +164,10 @@ On the quip's call, try to use this as an example:
 ]]
 ```
 
-You can sync the connection between the thread's name (eg:**threadNameHere**) with the **LexRating** inside the other chunk, **lexrating.quipComment**. 
+You can sync the connection between the thread's name (eg:**threadNameHere**) with the **LexRating** inside the other chunk, **lexrating.quipComment**
 Basically, it only adds up the **LexRating** call but with the proper properties to make this works:
 
-``` php 
+ ``` php
 [[!LexRating?
 &group=`Overall Rating`
 &name=`[[+thread]]`
@@ -181,12 +181,12 @@ Basically, it only adds up the **LexRating** call but with the proper properties
 ]]
 ```
 
-&group is for the title, 
-&name must be as same as the quip's thread name 
+&group is for the title,
+&name must be as same as the quip's thread name
 
 What **&extended** does is only to identify each of the vote. You can change it anything, as long as it's the same with what the **lexrating.quip** needs for its placeholder.
 
-``` php 
+ ``` php
 data-rateit-extended="[[+lexrating.extended]]"
 ```
 
@@ -194,7 +194,7 @@ You must specify different names for the quip's thread names, remember to change
 
 the duplicate of **lexrating.quipAddComment**
 
-``` html 
+``` html
 <!-- replace lexrating_groupName's value with what you have as the &group -->
 <input type="hidden" name="lexrating_groupName" value="Overall Rating" />
 
@@ -204,7 +204,7 @@ the duplicate of **lexrating.quipAddComment**
 
 the duplicate of **lexrating.quipComment**
 
-``` php 
+ ``` php
 &group=`Overall Rating` // <== replace this
 ```
 

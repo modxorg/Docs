@@ -27,17 +27,17 @@ This Snippet does nothing by itself, but rather depends on another Snippet to re
 
 The getPage snippet can be called using the tag:
 
-``` php 
-[[!getPage? 
-      &elementClass=`modSnippet` 
+ ``` php
+[[!getPage?
+      &elementClass=`modSnippet`
       &element=`getResources`
 ]]
 ```
 
-**Do Not Cache** 
+**Do Not Cache**
  The getPage snippet must never be called cacheable on a Resource that is cacheable. It is best to always call getPage with the non-cacheable token, `!`, while still caching the rest of the Resource output. The same rule applies for the placeholder represented by the `pageNavVar` property (`page.nav` by default) so that its output is not cached into the cacheable page content.
 
-**Required Properties** 
+**Required Properties**
  You must specify the element property, plus any additional properties required by the element you are calling via getPage.
 
 ### Available Properties
@@ -79,13 +79,10 @@ You can NOT modify these tpl properties from the snippet tag directly, due to th
 - Create a new property set using the Add property set button and in the window that pops up ticking the "Create new property set" checkbox.
 - Give your property set a name and click save.
 - Now you can modify the values of the properties which will not be overwritten on upgrade.
-- Finally, reference your property set name in your snippet call: ``` php 
+- Finally, reference your property set name in your snippet call: ``` php
   [[!getPage@PropertySetName? &element=`getResources` &parents=`3` ...]]
   
   ```
-
-
-
 | Name            | Description                                                                       | Default Value                                                                                                          | Added In Version |
 | --------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------- |
 | pageNavOuterTpl | A content tpl for controlling the layout of the various page navigation controls. | `[[+first]][[+prev]][[+pages]][[+next]][[+last]]`                                                                      | 1.2.0-pl         |
@@ -117,14 +114,14 @@ You can NOT modify these tpl properties from the snippet tag directly, due to th
 
 Page a list of all child Resources of the current Resource, using a chunk called 'myRowTpl':
 
-``` php 
+ ``` php
 [[!getPage? &element=`getResources` &parents=`[[*id]]` &tpl=`myRowTpl`]]
 <div class="pageNav">[[!+page.nav]]</div>
 ```
 
 Page all resources beneath the Resource with ID '5', with the exception of resource 10, using a chunk called 'myRowTpl':
 
-``` php 
+ ``` php
 [[!getPage? &element=`getResources` &parents=`5` &resources=`-10` &tpl=`myRowTpl`]]
 <div class="pageNav">[[!+page.nav]]</div>
 ```

@@ -12,13 +12,13 @@ _old_uri: "revo/formit/formit.hooks/formit.prehooks.formitloadsavedform"
 
  To use the preHook, you need to use the following snippet call
 
- ``` php 
-[[!FormIt? 
-	&preHooks=`FormItLoadSavedForm` 
-	&updateSavedForm=`true` 
-	&savedFormHashKeyField=`yourCustomGetParameter` 
-	&hooks=`FormItSaveForm` 
-	&formFields=`name,address,zipCode,town` // parameter of FormItSaveForm
+ ``` php
+[[!FormIt?
+    &preHooks=`FormItLoadSavedForm`
+    &updateSavedForm=`true`
+    &savedFormHashKeyField=`yourCustomGetParameter`
+    &hooks=`FormItSaveForm`
+    &formFields=`name,address,zipCode,town` // parameter of FormItSaveForm
 ]]
 // open the page in the browser
 // http://your-domain.com/path/to/form?yourCustomGetParameter=<FormHashFromFormItCMP>

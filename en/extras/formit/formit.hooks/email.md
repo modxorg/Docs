@@ -30,13 +30,13 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.email"
  | emailMultiWrapper       | Wraps values submitted by checkboxes/multi-selects with this value. Defaults to just the value. (1.6.0+)                                                                                                                                                                                                                                            |
  | emailMultiSeparator     | Separates checkboxes/multi-selects with this value. Defaults to a newline. (1.6.0+)                                                                                                                                                                                                                                                                 |
 
- Any of the email hook properties can have placeholders of field names from your form in them that will be evaluated. 
+ Any of the email hook properties can have placeholders of field names from your form in them that will be evaluated.
 
 ## Usage
 
  Simply specify it as a hook in your FormIt call, and then specify the email-specific properties in the FormIt call as well.
 
- ``` php 
+ ``` php
 [[!FormIt?
    ...
    &hooks=`email`
@@ -51,7 +51,7 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.email"
 
  Note the &emailTpl property points to the name of a Chunk. In that Chunk, you'll have placeholders for each field in your form. Our Chunk could look like this:
 
- ``` html 
+ ``` html
 <p>Hello,</p>
 <p>[[+name]] just purchased the CDO package: [[+cdo_package]].</p>
 <p>Their email: [[+email]]</p>
@@ -64,7 +64,7 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.email"
 
  An example is using the form to specify who to send to:
 
- ``` php 
+ ``` php
 [[!FormIt?
    ...
    &emailTo=`[[+addressTo]]`
@@ -82,7 +82,7 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.email"
 
  Let's say you have a subject field in your form. You want that to be the subject of the email sent out. The email hook has the ability to do this:
 
- ``` php 
+ ``` php
 [[!FormIt?
     ...
     &emailUseFieldForSubject=`1`
@@ -95,7 +95,7 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.email"
 
  FormIt, as of 1.6.0+, will automatically handle checkboxes and combine them into one field. You can use the &emailMultiSeparator and &emailMultiWrapper properties to specify how they are joined. For example, to wrap checkboxes in LI tags:
 
- ``` php 
+ ``` php
 [[!FormIt?
     ...
     &emailMultiWrapper=`<li>[[+value]]</li>`
@@ -104,7 +104,7 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.email"
 
  Or just to separate them with BR tags:
 
- ``` php 
+ ``` php
 [[!FormIt?
     ...
     &emailMultiSeparator=`<br />`

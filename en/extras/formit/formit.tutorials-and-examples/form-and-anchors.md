@@ -6,10 +6,9 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/form-and-anchors"
 
  Jump to the form on error validation. [(http://forums.modx.com/thread/47715/jump-to-top-of-form-on-page-on-error-validation)](http://forums.modx.com/thread/47715/jump-to-top-of-form-on-page-on-error-validation)
 
- 
  Example:
 
- ``` html 
+ ``` html
 <form action="[[~[[*id]]]]#message" method="post" class="form">
 <div id="message">
 ... Your message content here ...

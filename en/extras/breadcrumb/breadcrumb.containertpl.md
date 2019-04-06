@@ -10,11 +10,11 @@ _old_uri: "revo/breadcrumb/breadcrumb.containertpl"
 
 ## Default Value
 
- Since BreadCrumb 1.3.0, containerTpl is no longer a chunk but a snippet property. 
- Templates properties can be chunk name, file path (@FILE:) or chunk code (@CODE:) 
+ Since BreadCrumb 1.3.0, containerTpl is no longer a chunk but a snippet property.
+ Templates properties can be chunk name, file path (@FILE:) or chunk code (@CODE:)
 
- ``` php 
-@CODE : 
+ ``` php
+@CODE :
 <ul id="breadcrumb" itemprop="breadcrumb">
   <li><a href="[[++site_url]]">[[++site_name]]</a></li>
   [[+crumbs]]

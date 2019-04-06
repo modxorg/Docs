@@ -12,7 +12,7 @@ _old_uri: "revo/archivist/archivist.archivist"
 
  Simply place the snippet wherever you would like to display archive listings in, the parents to grab archives from, and a target resource to load the archives using the [getArchives](extras/archivist/archivist.getarchives "Archivist.getArchives") snippet.
 
- ``` php 
+ ``` php
 [[!Archivist? &target=`123` &parents=`4,12,33`]]
 ```
 
@@ -52,7 +52,7 @@ _old_uri: "revo/archivist/archivist.archivist"
 
  Display a list of months for archives for Resources under IDs 2, 4 & 6, and when clicked, go to page 123:
 
- ``` php 
+ ``` php
 [[!Archivist? &target=`123` &parents=`2,4,6`]]
 
 ```
@@ -60,7 +60,7 @@ _old_uri: "revo/archivist/archivist.archivist"
 ## See Also
 
 1. [Archivist.Archivist](extras/archivist/archivist.archivist)
-  1. [Archivist.Archivist.tpl](extras/archivist/archivist.archivist/archivist.archivist.tpl)
+     1. [Archivist.Archivist.tpl](extras/archivist/archivist.archivist/archivist.archivist.tpl)
 2. [Archivist.ArchivistGrouper](extras/archivist/archivist.archivistgrouper)
 3. [Archivist.getArchives](extras/archivist/archivist.getarchives)
-  1. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/archivist.getarchives.tpl)
+     1. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/archivist.getarchives.tpl)

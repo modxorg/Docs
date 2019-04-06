@@ -4,13 +4,13 @@ _old_id: "773"
 _old_uri: "revo/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl"
 ---
 
-## AdvSearchForm's tpl Chunk 
+## AdvSearchForm's tpl Chunk
 
 A Chunk named "**AdvSearchForm**" is provided with AdvSearch. This Chunk name is set as &tpl property on the [AdvSearchForm](extras/advsearch/advsearch.advsearchform "AdvSearch.AdvSearchForm") snippet.
 
-## Default Value 
+## Default Value
 
-``` html 
+``` html
 <form class="advsea-search-form" action="[[~[[+landing]]]]" method="[[+method]]">
   <fieldset>
     <input type="hidden" name="id" value="[[+landing]]" />
@@ -22,7 +22,7 @@ A Chunk named "**AdvSearchForm**" is provided with AdvSearch. This Chunk name is
 [[+resultsWindow]]
 ```
 
-## Available Placeholders 
+## Available Placeholders
 
 | Name          | Description                                                                                                        |
 | ------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -34,7 +34,7 @@ A Chunk named "**AdvSearchForm**" is provided with AdvSearch. This Chunk name is
 | searchIndex   | The REQUEST var used for the search parameter.                                                                     |
 | resultsWindow | div section where will be attached the search results window. (ajax mode)                                          |
 
-## Search form customization 
+## Search form customization
 
 The searchForm chunk should contain:
 

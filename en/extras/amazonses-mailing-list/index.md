@@ -24,7 +24,7 @@ _old_uri: "revo/amazonses-mailing-list"
 3. Set the _Amazon ID (Access Key ID)_ and _Amazon Secret_ (_Secret Access Key_) - [https://console.aws.amazon.com/iam/home?#security\_credential](https://console.aws.amazon.com/iam/home?#security_credential) - _Access Key_s
 4. Create a _MODx resource_and put under content
 
-``` php 
+``` php
 [[!aSES]]
 ```
 
@@ -34,19 +34,17 @@ _old_uri: "revo/amazonses-mailing-list"
 
  **&tpl\_error** - Chunk name with error message if email is not found in the database (default: aSESUnsubscribeError)
 
- **<a id="cron">Cron set up</a>**
+ **Cron set up**
 
  Open your crontab _(for example CentOS: crontab -e)_ and add line:
 
- ``` plain 
+ ``` plain
 * * * * * php /absoulte/path/to/modx/web/directory/assets/components/aSES/cron.php
 ```
 
-
  This will run the cron.php every minute of every hour of every day.
 
- cron.php sends 100 emails per run. It sends every email because the amazonSESMailingList gives an option for personalized emails (You can put the \[\[+name\]\] placeholder in the email ;) 
-
+ cron.php sends 100 emails per run. It sends every email because the amazonSESMailingList gives an option for personalized emails (You can put the \[\[+name\]\] placeholder in the email ;)
 
 ## Usage
 
@@ -57,12 +55,9 @@ _old_uri: "revo/amazonses-mailing-list"
 
  Don't forget to insert **\[\[+content\]\]** placeholder in the Mailing template or there will be no content when you send the mail!
 
-
  Every "from" email must be verified by Amazon SES. If your email is not verified yet, click the _Verify email with Amazon SES_ and you will receive conformation email from Amazon SES for the email.
 
-
  If you don't have an access for the **production environment** then you have to verify every email you want to send the email **to!** For more information read [here](http://aws.amazon.com/ses/#functionality).
-
 
 - _Emails_ - the list of subscribers. Since the AmazonSESMailingList is set for personalized emails every subscriber can have a name which can be called throu \[\[+name\]\] placeholder in mail.
 
@@ -70,6 +65,6 @@ _old_uri: "revo/amazonses-mailing-list"
 
  Enjoy!
 
- The AmazonSESMailingList is based on ses.php created by Dan Myer. 
+ The AmazonSESMailingList is based on ses.php created by Dan Myer.
 
  ses.php is only in beta version writen by Dan Myer. And as always - I can't _accept any responsibility_ or liability for damages arising from the usage of amazonSESMailingList package.

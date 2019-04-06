@@ -10,7 +10,7 @@ This is the Chunk displayed with the &tpl property on the [Archivist](extras/arc
 
 ## Default Value
 
-``` php 
+``` php
 <li class="[[+cls]]">
     <a href="[[+url]]" title="[[+date]]">[[+date]]</a> ([[+count]])
 </li>
@@ -36,7 +36,7 @@ This is the Chunk displayed with the &tpl property on the [Archivist](extras/arc
 ## See Also
 
 1. [Archivist.Archivist](extras/archivist/archivist.archivist)
-  1. [Archivist.Archivist.tpl](extras/archivist/archivist.archivist/archivist.archivist.tpl)
+     1. [Archivist.Archivist.tpl](extras/archivist/archivist.archivist/archivist.archivist.tpl)
 2. [Archivist.ArchivistGrouper](extras/archivist/archivist.archivistgrouper)
 3. [Archivist.getArchives](extras/archivist/archivist.getarchives)
-  1. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/archivist.getarchives.tpl)
+     1. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/archivist.getarchives.tpl)

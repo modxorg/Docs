@@ -16,13 +16,13 @@ _old_uri: "revo/formitfastpack/"
 
  Below is a simple example of using the _field_ snippet with a FormIt form. For a more detailed example, check out the [Tutorial](https://rtfm.modx.com/extras/revo/formitfastpack/formitfastpack.tutorial).
 
- ``` php 
-[[!FormIt? 
-  &hooks=`email,redirect` 
+ ``` php
+[[!FormIt?
+  &hooks=`email,redirect`
   &emailTpl=`ContactFormReport`
-  &emailTo=`[[++emailsender]]` 
-  &emailSubject=`New contact form submission` 
-  &validate=`email:email:required,message:required` 
+  &emailTo=`[[++emailsender]]`
+  &emailSubject=`New contact form submission`
+  &validate=`email:email:required,message:required`
   &redirectTo=`1`
 ]]
 <form action="[[~[[*id]]]]" method="post">

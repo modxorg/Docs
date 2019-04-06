@@ -25,7 +25,7 @@ _old_uri: "revo/formitfastpack/fieldsetdefaults"
 
  Change the &outer\_type parameter for two groups of field snippets:
 
-``` php 
+ ``` php
 [[!fieldSetDefaults? &outer_type=`personal`]]
 [[!field? &name=`first_name`]]
 [[!field? &name=`last_name`]]

@@ -27,7 +27,7 @@ If either sso\_mode is disabled or no login\_resource\_id is set, the Login cont
 
 There are no specific placeholders to use in this controller template.
 
-``` php 
+``` php
 [[!Login?
     &loginTpl=`disLoginTpl`
     &logoutTpl=`disLogoutTpl`

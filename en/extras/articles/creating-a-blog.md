@@ -50,7 +50,7 @@ If you want to change the content of either of those Templates, it's **highly** 
 
 Note the "Content" field. Currently, it looks like this:
 
-``` php 
+``` php
 [[+articles]]
 
 [[+paging]]
@@ -66,7 +66,7 @@ There are quite a few fields here, in separate vertical tabs:
 
 ![](/download/attachments/36634992/articles-tab3.png?version=1&modificationDate=1322602531000)
 
-- General Options 
+- General Options
   - **Enable Update Services** - If on, Articles will attempt to ping Ping-o-Matic whenever you publish an Article, to send out your article's title and URL to major search engines.
   - **Menu Index** - This is the order of the resource in the tree. It is usually used for ordering purposes in displaying resources dynamically. You can also change this by drag/dropping the container in the left-hand tree.
   - **Sort Field** - The field to sort by on the main and archives listing pages.
@@ -77,7 +77,7 @@ There are quite a few fields here, in separate vertical tabs:
   - **Process TVs List** - An optional comma-delimited list of TemplateVar names to include explicitly if Include TVs is on. If you leave this blank, it will process all TVs attached to the Resource\\'s Template.
   - **Other Listing Parameters** - Any other properties you would like to add to the getResources/getPage call for the Articles listing page. Put them in MODX tag syntax, as if you were adding it to the tag call (eg, &property=`value`).
 
-- Pagination Options 
+- Pagination Options
   - **Articles Per Page** - The number of Articles to show per page when listing posts.
   - **Pages Limit** - The maximum number of pages to display when rendering paging controls
   - **Page Nav Tpl** - Content representing a single page navigation control.
@@ -91,7 +91,7 @@ There are quite a few fields here, in separate vertical tabs:
   - **Total Var** - The key of a placeholder that must contain the total records in the limitable collection being paged.
   - **Page Nav Var** - The key of a placeholder to be set with the paging navigation controls.
 
-- Archives Options 
+- Archives Options
   - **Archive Listing Chunk** - The Chunk to use for each month/year that is listed.
   - **Archive Listings to Show** - The number of archive months/years to show.
   - **Archive By Month** - Whether or not to archive by month or by year. Yes will archive by month.
@@ -100,24 +100,24 @@ There are quite a few fields here, in separate vertical tabs:
   - **Group By Year** - If set to 1, will group archive results by year into a nested list. If set to 1, this will ignore the Archive By Month setting.
   - **Group By Year Chunk** - If Group By Year is set to 1, the Chunk to use for the wrapper for the archive list grouping.
 
-- Tagging Options 
+- Tagging Options
   - **Tag Listing Chunk** - The Chunk to use when displaying tags on the listing pages.
   - **Tag Listings to Show** - The number of tags to show in the popular tags listing.
   - **Tag CSS Class** - A CSS class to apply to each tag listing.
   - **Tag Alternate CSS Class** - A CSS class to apply to each alternate row for each tag listing.
 
-- RSS Options 
+- RSS Options
   - **RSS Alias (Permalink)** - The alias (permalink) for the RSS feed, appended to the blog URL. Can be a comma-separated list. For example, if you set this to "rssfeed.rss", your blog at mysite.com/blog/rssfeed.rss would show the RSS feed.
   - **Number of RSS Items** - The number of latest RSS items to show on the RSS feed.
   - **RSS Feed Chunk** - The Chunk to use for the RSS Feed template.
   - **RSS Item Chunk** - The Chunk to use for each item in the RSS Feed.
 
-- Latest Posts Options 
+- Latest Posts Options
   - **Latest Articles Chunk** - The Chunk to use for each Latest Article.
   - **Latest Articles To Show** - The number of latest Articles to show.
   - **Latest Articles Offset** - The starting index of the listing of latest Articles.
 
-- Notifications (_not shown in screenshot - new as of Articles 1.4.1_) 
+- Notifications (_not shown in screenshot - new as of Articles 1.4.1_)
   - **Send to Twitter** - If enabled, automatically posts to Twitter when Article is published.
   - **Twitter Consumer Key** - Optional security key.
   - **Secret Twitter Consumer Key** - Optional secret access token.

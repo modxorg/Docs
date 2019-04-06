@@ -18,17 +18,17 @@ _old_uri: "revo/getresources/getresources.examples/getresources.category-index-p
 
  I like to put my snippet calls in a chunk, this way the RTE doesn't turn the & into &amp;
 
- **Create a chunk and name it list-docs-thumb**
+**Create a chunk and name it list-docs-thumb**
 
- ``` php 
+ ``` php
 <div class="list-docs thumb grid">
     [[!getResources?  
-        &parents=`[[*id]]` 
+        &parents=`[[*id]]`
         &tpl=`list-docs-thumb-tpl`  
         &limit=`100`  
         &sortdir=`ASC`  
         &includeTVs=`1`  
-        &includeContent=`1`   
+        &includeContent=`1`
         &depth=`0`  
         &sortby=`menuindex`  
     ]]  
@@ -37,13 +37,13 @@ _old_uri: "revo/getresources/getresources.examples/getresources.category-index-p
 
  **Create a second chunk for the getResources template, name it: list-docs-thumb-tpl** (see what I did there? Naming conventions are your friend.)
 
- ``` php 
+ ``` php
 <div class="list-item column span-6">
     <h2>[[+pagetitle]]</h2>
-    <a href="[[~[[+id]]]]" title="[[+pagetitle]]">     
+    <a href="[[~[[+id]]]]" title="[[+pagetitle]]">
         <img src="[[+tv.page-thumb:phpthumbof=`w=153&h=200&zc=1`]]" alt="[[+pagetitle]]" />
     </a>  
-    <p>[[+introtext]]</p>   
+    <p>[[+introtext]]</p>
 </div>  <!-- eof item -->?
 ```
 

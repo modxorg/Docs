@@ -11,7 +11,8 @@ New in version 1.1 are easy API to create your own Triggers to send out emails v
 ### Snippet Code example
 
 **Snippet Example, found at: core/components/eltters/elements/snippets/elettertriggerexample.snippet.php**
-``` javascript 
+
+``` javascript
 <?php
 /**
  * Eletter Trigger/Response code example snippet

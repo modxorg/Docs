@@ -39,13 +39,13 @@ _old_uri: "revo/collections"
 - Context menu items - Customize the items in the context menu (when you right-click in the grid).
 - Buttons - Customize the buttons rendered, when using a renderer that renders buttons. Optionally add classes to each button with a colon ":" separator.
 
-#### Permanent sort 
+#### Permanent sort
 
  From version 3.2.0, new fields were added to general setting: **Permanent sort - Before** and **Permanent sort - After**. They allow adding more sort options to children's grid and they will be applied together with the default sort option (and also with sorting after clicking a column header). **Before sort** is used before the default sort, **after sort** is used after the default.
 
 **Syntax for both fields:**
 
-``` plain 
+``` plain
 sort_field_condition=sort_field:sort_dir:sort_type,sort_field_condition2=sort_field2:sort_dir2:sort_type2<br>*=sort_field:sort_dir:sort_type,sort_field_condition2=sort_field2:sort_dir2:sort_type2<br>sort_field:sort_dir,sort_field_condition2=sort_field2
 ```
 
@@ -56,7 +56,7 @@ sort_field_condition=sort_field:sort_dir:sort_type,sort_field_condition2=sort_fi
 
 **Example**
 
-``` plain 
+``` plain
 publishedon=published:asc
 -- Setting above as Permanent sort - Before will pull all unpublished resources on top of the grid when sorting by published on. Because sort_dir is present, doesn't matter if you sorting asc/desc by published on, unpublished resources will always be on top.
 ```
@@ -86,7 +86,7 @@ publishedon=published:asc
 
 ### Editors
 
- As an editor can be used any valid xtype (string) or JSON object. 
+ As an editor can be used any valid xtype (string) or JSON object.
  Examples:
 
 - textfield
@@ -97,7 +97,7 @@ publishedon=published:asc
 
 ### Renderers
 
- As a renderer, you can use any [function](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) with proper arguments. 
+ As a renderer, you can use any [function](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) with proper arguments.
  Available renderers:
 
 - **this.rendYesNo** - Yes/No (1/0) boolean values, coloured in green and red, respectively
@@ -117,20 +117,20 @@ publishedon=published:asc
 
  Selections are essentially links to other Resources in the same MODX site. You are not duplicating the original Resources when you add them to a Selections container, but simply creating another view from which to manage those Resources.
 
-### Example Use Case 1
+### ExampleUse Case 1
 
  You want to create a menu with links to Resources that are in disparate parts of the Tree. Those Resources rightfully "belong" where they are in the site's content structure, so the solution thus far has been to create a container Resource in the Tree specifically for this menu, and create Weblink Resources therein. But really the Weblinks add no value other than they can be controlled in another list. Instead, add those Resources to a Selections container, which maintains its own menuindex values for each Resource, and using the getSelections Snippet, you can list Resources sorted by those, special menuindex values.
 
-### Example Use Case 2
+### ExampleUse Case 2
 
  You want to populate a widget with links to other Resources on your site, but again the Resources come from various sections, or you wish to manually curate the widget contents rather than automate it. Selections provides an alternative to, say, MIGX, when you need a management UI for arbitrary "Selections" of Resources, no matter where they exist in the site (even if they live under a "Collections" container, for example).
 
 ### getSelections Snippet
 
  ``` php
-[[getSelections? 
-	&selections=`[[*id]]` 
-	&tpl=`myTplChunk`
+[[getSelections?
+    &selections=`[[*id]]`
+    &tpl=`myTplChunk`
 ]]
 ```
 

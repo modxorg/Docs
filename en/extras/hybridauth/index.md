@@ -12,30 +12,27 @@ _old_uri: "revo/hybridauth"
 
  In MODX we can log in to site and link our accounts on remote services to one user profile.
 
-## Installation 
+## Installation
 
  First of all watch this video
 
-   1. Register and get api keys from needed services. For example, create twitter application - <https://dev.twitter.com/apps/new>
+1. Register and get api keys from needed services. For example, create twitter application - <https://dev.twitter.com/apps/new>
+2. Open system settings in manager, switch to hybridauth and make\\update ha.keys.Servicename. In our example it will be ha.keys.Twitter
+3. You need to set your keys as json string with array.
 
- 1. Open system settings in manager, switch to hybridauth and make\\update ha.keys.Servicename. In our example it will be ha.keys.Twitter
-
- 2. You need to set your keys as json string with array.
-
- ``` json 
+ ``` json
 {"key":"your key from twitter","secret":"secret from twitter"}
-
 ```
 
  ![](/download/attachments/43417801/ha3.png?version=1&modificationDate=1356616628000)
 
  It is needed for proper initialization of the library ( <http://hybridauth.sourceforge.net/userguide/Configuration.html>).
 
- 4. Now you can run snippet `[[!HybridAuth?providers=`Twitter`]]` on any page.
+4. Now you can run snippet `[[!HybridAuth?providers=`Twitter`]]` on any page.
 
- If there are any errors on library initialization - it will be logged in system log. 
+ If there are any errors on library initialization - it will be logged in system log.
 
-## Parameters 
+## Parameters
 
  | Param            | Description                                                                                                                                                                                                | Default                             |
  | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
@@ -57,39 +54,39 @@ _old_uri: "revo/hybridauth"
  | loginResourceId  | Resource id to redirect to on successful login. By default, it is 0 - redirect to self.                                                                                                                    | 0                                   |
  | logoutResourceId | Resource id to redirect to on successful logout. By default, it is 0 - redirect to self.                                                                                                                   | 0                                   |
 
-### Examples 
+### Examples
 
  Register to group Users
 
- ``` php 
+ ``` php
 [[!HybridAuth? providers=`Google,Twitter,Facebook` &groups=`Users`]]
 ```
 
  Update profile
 
- ``` php 
+ ``` php
 [[!HybridAuth? providers=`Google,Twitter,Facebook` &action=`UpdateProfile`]]
 ```
 
  Update profile with required photo
 
- ``` php 
+ ``` php
 [[!HybridAuth? providers=`Google,Twitter,Facebook` &action=`UpdateProfile` &requiredFields=`username,email,photo` &profileFields=`username,fullname,email,photo`]]
 ```
 
-## Known issues 
+## Known issues
 
  1. Error " **You cannot access this page directly**" occurs when user session is cached by opcode-cacher, such as **php-apc**. For example, at [MODXCloud](http://modxcloud.com) this error always occurs.
 
  For solving this, you need to add to the /index.php at the root of site this line for disabling apc caching:
 
- ``` php 
+ ``` php
 ini_set('apc.cache_by_default', 0);
 ```
 
  Otherwise, your session will be cached and snippet will not working properly.
 
-## Integration of service 
+## Integration of service
 
 1. [HybridAuth.Integrating Facebook](extras/hybridauth/hybridauth.integrating-facebook)
 2. [HybridAuth.Integrating Google](extras/hybridauth/hybridauth.integrating-google)

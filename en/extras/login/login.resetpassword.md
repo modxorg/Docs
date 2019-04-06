@@ -15,14 +15,14 @@ _old_uri: "revo/login/login.resetpassword"
  the [ResetPassword](extras/login/login.resetpassword "Login.ResetPassword") snippet in. Tell it what Resource the Login snippet is 
  in - or where you'd like it to provide a link back to:
 
- ``` php 
+ ``` php
 [[!ResetPassword? &loginResourceId=`72`]]
 ```
 
  Then create another resource with the [ForgotPassword](extras/login/login.forgotpassword "Login.ForgotPassword") snippet, and tell it 
  what Resource the Reset snippet is in:
 
- ``` php 
+ ``` php
 [[!ForgotPassword? &resetResourceId=`123`]]
 ```
 

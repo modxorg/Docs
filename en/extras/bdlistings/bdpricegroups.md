@@ -18,7 +18,7 @@ bdPriceGroups is a simple snippet to output your price groups.
 | tplOuter      | Chunkname to wrap the complete result set in.   |
 Default: 
 
-``` php 
+``` php
 <h2>Price Groups</h2>
 <ul>
     [[+wrapper]]
@@ -31,7 +31,7 @@ Placeholders to use:
 | tplRow | Chunk name to wrap individual target groups in. 
 Default: 
 
-``` php 
+``` php
 <li>[[+display]]</li>
 ```
 
@@ -45,13 +45,13 @@ Placeholders to use:
 
 Minimum call:
 
-``` php 
+``` php
 [[!bdPriceGroups]]
 ```
 
 Result (depending on your price group data):
 
-``` php 
+``` php
 <h2>Price Groups</h2>
 <ul>
   <li>Cheap</li>
@@ -65,20 +65,20 @@ Result (depending on your price group data):
 
 Snippet call:
 
-``` php 
+``` php
 <label for="pricegroup">Price Group</label>
 [[!bdTargets? &tplRow=`bdl.pricegroup.row` &tplOuter=`bdl.pricegroup.outer`]]
 ```
 
 bdl.pricegroup.row:
 
-``` php 
+``` php
 <option value="[[+id]]">[[+display]]</option>
 ```
 
 bdl.pricegroup.outer:
 
-``` php 
+``` php
 <select name="pricegroup">
   <option value="0">Choose a Price Group</option>
   [[+wrapper]]

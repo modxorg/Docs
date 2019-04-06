@@ -58,7 +58,7 @@ What does this mean? If you already had a working version of GroupEletters then 
 ## How to Use
 
 - Create a Resource/Document and select the EletterSample Template.
-- Fill in the page as normal. You have the following placeholders available: (Note you need to collect this data before you can use it) 
+- Fill in the page as normal. You have the following placeholders available: (Note you need to collect this data before you can use it)
   - \[\[+trackingImage\]\]
   - \[\[+first\_name\]\]
   - \[\[+m\_name\]\]

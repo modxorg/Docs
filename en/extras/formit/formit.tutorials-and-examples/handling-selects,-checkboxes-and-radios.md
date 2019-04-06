@@ -12,7 +12,7 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/formit.handling-selects,-ch
 
  FormIt provides a utility snippet, called FormItIsSelected, which can be used as an [Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") to handle the selected="selected" part of the option. Example:
 
- ``` php 
+ ``` php
 <select name="color">
    <option value="blue" [[!+fi.color:FormItIsSelected=`blue`]] >Blue</option>
    <option value="red" [[!+fi.color:FormItIsSelected=`red`]] >Red</option>
@@ -30,10 +30,10 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/formit.handling-selects,-ch
 
  This example will handle checkboxes, persisting their values:
 
- ``` php 
+ ``` php
 <label>Color: [[!+fi.error.color]]</label>
-<input type="checkbox" name="color[]" value="blue" [[!+fi.color:FormItIsChecked=`blue`]] > Blue 
-<input type="checkbox" name="color[]" value="red" [[!+fi.color:FormItIsChecked=`red`]] > Red 
+<input type="checkbox" name="color[]" value="blue" [[!+fi.color:FormItIsChecked=`blue`]] > Blue
+<input type="checkbox" name="color[]" value="red" [[!+fi.color:FormItIsChecked=`red`]] > Red
 <input type="checkbox" name="color[]" value="green" [[!+fi.color:FormItIsChecked=`green`]] > Green
 ```
 
@@ -43,13 +43,13 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/formit.handling-selects,-ch
 
  Since HTML does not send a value if a checkbox is not checked, handling the "required" validation on a checkbox can be tricky. You'll need to add a "hidden" field before so that at least an empty value is sent:
 
- ``` html 
+ ``` html
 [[!FormIt? &validate=`color:required`]]
 ...
 <label>Color: [[!+fi.error.color]]</label>
 <input type="hidden" name="color[]" value="" />
-<input type="checkbox" name="color[]" value="blue" [[!+fi.color:FormItIsChecked=`blue`]] > Blue 
-<input type="checkbox" name="color[]" value="red" [[!+fi.color:FormItIsChecked=`red`]] > Red 
+<input type="checkbox" name="color[]" value="blue" [[!+fi.color:FormItIsChecked=`blue`]] > Blue
+<input type="checkbox" name="color[]" value="red" [[!+fi.color:FormItIsChecked=`red`]] > Red
 <input type="checkbox" name="color[]" value="green" [[!+fi.color:FormItIsChecked=`green`]] > Green
 ```
 
@@ -59,7 +59,7 @@ _old_uri: "revo/formit/formit.tutorials-and-examples/formit.handling-selects,-ch
 
  If you want to set an array field (i.e. a checkbox group with the same name, a select multiple field) in a preHook, you have to json\_encode the array value.
 
- ``` php 
+ ``` php
 $hook->setValue('hobbies',json_encode(array('music','films','books')));
 ```
 

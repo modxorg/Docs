@@ -26,13 +26,13 @@ Bugs can be filed here: <http://github.com/splittingred/If/issues>
 
 The If snippet can be called using the tags:
 
-``` php 
+ ``` php
 [[If]]
 ```
 
 or, in case your subject can be modified before the resource cache get cleared use the uncached syntax:
 
-``` php 
+ ``` php
 [[!If]]
 ```
 
@@ -67,13 +67,13 @@ or, in case your subject can be modified before the resource cache get cleared u
 
 Numeric comparison:
 
-``` php 
+ ``` php
 [[!If? &subject=`[[+total]]` &operator=`GT` &operand=`3` &then=`You have more than 3 items!`]]
 ```
 
 String comparison:
 
-``` php 
+ ``` php
 [[!If?
    &subject=`[[+name]]`
    &operator=`EQ`
@@ -85,7 +85,7 @@ String comparison:
 
 Inline snippet calls:
 
-``` php 
+ ``` php
 [[!If?
    &subject=`[[+modx.user.id]]`
    &operator=`EQ`
@@ -97,7 +97,7 @@ Inline snippet calls:
 
 When using the If snippet for checking a resource field or template variable (or other value that doesn't change before the cache does), be sure to use the **cached** snippet call to check the condition to make sure it doesn't need to process on every request.
 
-``` php 
+ ``` php
 [[If?
    &subject=`[[*hidemenu]]`
    &operator=`EQ`
@@ -109,7 +109,7 @@ When using the If snippet for checking a resource field or template variable (or
 
 Example with in\_array:
 
-``` php 
+ ``` php
 [[If?
    &subject=`[[*id]]`
    &operator=`inarray`

@@ -8,13 +8,13 @@ _old_uri: "revo/eventscalendar2/eventscalendar2.eventscalendar2"
 
 Simply displays a calendar with events that are childrens of the current resource.
 
-``` php 
+``` php
 [[!eventsCalendar2]]
 ```
 
 Display events from resources 5 and 11. Search for date in TV "date\_of\_event".
 
-``` php 
+``` php
 [[!eventsCalendar2
   &parents=`4,11`
   &dateSource=`date_of_event`
@@ -23,7 +23,7 @@ Display events from resources 5 and 11. Search for date in TV "date\_of\_event".
 
 Display [custom events](extras/eventscalendar2/eventscalendar2.generating-events "eventsCalendar2.Generating events"), independent from resources.
 
-``` php 
+``` php
 [[!eventsCalendar2
   &events=`[{"id": "1","date": "2012-01-01 00:00:00","pagetitle": "Test page"},{"id": "2","date": "2012-01-02 12:05:00","pagetitle": "Test page 2"}]`
 ]]

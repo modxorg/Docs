@@ -4,44 +4,44 @@ _old_id: "654"
 _old_uri: "revo/getresources"
 ---
 
-## What is getResources? 
+## What is getResources?
 
  A general purpose Resource listing and summarization snippet.
 
-## Requirements 
+## Requirements
 
 - MODX Revolution 2.0.0-beta5 or later
 - PHP5 or later
 
-## History 
+## History
 
  getResources was first written by Jason Coward (opengeek) and released on June 30th, 2009.
 
-### Download 
+### Download
 
  It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/552>
 
- It is NOT a replacement for Ditto, but rather an alternative component that can accomplish some of the things that the more specialized components do, i.e. Ditto, Wayfinder, Breadcrumbs; basically anything that output the properties for a list of Resources (formerly Documents in MODX Evolution). 
+ It is NOT a replacement for Ditto, but rather an alternative component that can accomplish some of the things that the more specialized components do, i.e. Ditto, Wayfinder, Breadcrumbs; basically anything that output the properties for a list of Resources (formerly Documents in MODX Evolution).
 
  Documentation and tutorials on Russian can be found here: <http://modx.by/docs/modx-add-ons/getresources/>
 
-## Usage 
+## Usage
 
  The getResources snippet can be called using the tag:
 
-``` php 
+ ``` php
 [[getResources]]
 ```
 
  Prior to version 1.6.1-pl, calls without the &tpl property specified will output an array of each Resource in the result set, and its fields. Since version 1.6.1-pl this behaviour has changed and you will have to use "&debug=`1`" to get the full result:
 
-``` php 
+ ``` php
 [[getResources? &debug=`1`]] [[getResources? &parents=`choose_an_id` &debug=`1`]]
 ```
 
-### Available Properties 
+### Available Properties
 
-#### Templating Properties 
+#### Templating Properties
 
  | Name                   | Description                                                                                                                                                                                                                                                                                                        | Default Value                      | Added in version |
  | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- | ---------------- |
@@ -62,12 +62,12 @@ _old_uri: "revo/getresources"
 
 About **@FILE and @INLINE tpls**:
 
-You can prefix any tpl property with @FILE or @INLINE to use a file-based chunk or inline markup respectively. 
+You can prefix any tpl property with @FILE or @INLINE to use a file-based chunk or inline markup respectively.
 
 - **@FILE**— This prefix allows you to provide a file instead of a Chunk in the database as the tpl. The path and filename you specify will by default, unless you specify a custom `tplPath` property, search for the @FILE tpl relative to your configured `assets_path` + `elements/chunks/`.
 - **@INLINE**— This prefix allows you to provide markup to use for your tpl directly in the property value. It is recommended you use this only when specifying the tpl\* properties in a \[Property Set\], otherwise any placeholders in your inline markup may be evaluated before the content gets passed to getResources, since cacheable nested tags in MODX Revolution are evaluated before processing of the containing tag begins. This must be followed by a space, e.g. `@INLINE [[+pagetitle]]`
 
-#### Selection Properties 
+#### Selection Properties
 
 | Name          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Default Value       | Added in version |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ---------------- |
@@ -92,19 +92,19 @@ You can prefix any tpl property with @FILE or @INLINE to use a file-based chunk 
 
 For the `&tvFilters`, the value may look like this:
 
-``` php 
+ ``` php
    mytv==somevalue||mytv==othervalue
 ```
 
 You can also use an "and" filter using a comma. This will make sure that all the conditions are met.
 
-``` php 
+ ``` php
    mytv==somevalue,othertv==othervalue
 ```
 
 For advanced filtering you can also group these. It is important to know that conditions are first separated based on the OR (||) delimiter, and after that on the AND (,) delimiter. So let's take this hypothetical example:
 
-``` php 
+ ``` php
    mytv==foo||mytv==bar,bartv==3||bartv==1
 ```
 
@@ -112,37 +112,37 @@ This will filter resources to meet one of the following conditions:
 
 - mytv is LIKE foo, or
 - mytv is LIKE bar AND bartv is LIKE 3, or
-- bartv is LIKE 1 
+- bartv is LIKE 1
 
 The examples above search for exact values. You can also use the percentage sign (%) as a wildcard. For example:
 
-``` php 
+ ``` php
    mytv==%a%
 ```
 
 Matches any resources that has an "a" in the mytv value.
 
-``` php 
-   mytv==a%	
+ ``` php
+   mytv==a%
 ```
 
 Matches any resources that have a mytv value that starts with an "a"
 
-``` php 
-   mytv==%a	
+ ``` php
+   mytv==%a
 ```
 
 Matches any resources that have a mytv value that ends with an "a".
 
 You can also combine this with the OR (||) and AND (,) delimiters explained above.
 
-It is important to know that this function **looks at the raw value of a template variable**for a specific resource. This means that **the value has been explicitly set for the resource**, and that it has not been **processed by a template variable output type** (**or is the default value** _in releases prior to 1.4.2-pl; this release adds support for filtering that includes default values_). So if you have an "autotag" tv, this means the raw value is a comma delimited list, and it is not split up in tags like you see it in the manager. 
+It is important to know that this function **looks at the raw value of a template variable**for a specific resource. This means that **the value has been explicitly set for the resource**, and that it has not been **processed by a template variable output type** (**or is the default value** _in releases prior to 1.4.2-pl; this release adds support for filtering that includes default values_). So if you have an "autotag" tv, this means the raw value is a comma delimited list, and it is not split up in tags like you see it in the manager.
 
 **New filter operators available in 1.4.2-pl**:
- 
-Starting with release 1.4.2-pl of getResources, there are a number of new comparison operators for use when creating filter conditions. In addition, when using many of these new operators, numeric comparison values are automatically CAST TV values to numeric before comparison. 
 
-Here is a list of the valid operators: 
+Starting with release 1.4.2-pl of getResources, there are a number of new comparison operators for use when creating filter conditions. In addition, when using many of these new operators, numeric comparison values are automatically CAST TV values to numeric before comparison.
+
+Here is a list of the valid operators:
 
 | Filter Operator | SQL Operator | CASTs numerics | Notes              |
 | --------------- | ------------ | -------------- | ------------------ |
@@ -165,35 +165,35 @@ It's possible to pass any resource field as sort value, such as `pagetitle`, `al
 
 You can sort randomly by specifying RAND(), like so:
 
-``` php 
+ ``` php
 &sortby=`RAND()`
 ```
 
 From version 1.3.0 this can also be a [JSON](http://json-schema.org/) array to sort on multiple fields, e.g.
 
-``` php 
+ ``` php
 &sortby=`{"publishedon":"ASC","createdon":"DESC"}`
 ```
 
 To sort in a specific order, specify a resource id-list, e.g.
 
-``` php 
+ ``` php
 &sortby=`FIELD(modResource.id, 4,7,2,5,1 )`
 ```
 
 The same thing is possible if you put the sorted IDs in a template variable, like this:
 
-``` php 
+ ``` php
 &sortby=`FIELD(modResource.id,[[*templateVariable]])`
 ```
 
 In some cases you need to (somewhat counterintuitively) specify the sort direction as well:
 
-``` php 
+ ``` php
 &sortby=`FIELD(modResource.id, 4,7,2,5,1 )` &sortdir=`ASC`
 ```
 
-#### Other Properties 
+#### Other Properties
 
 | Name            | Description                                                                                                                                                                      | Default Value | Added in version |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------- |
@@ -215,7 +215,7 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 | totalVar        | Define the key of a placeholder set by getResources indicating the total number of Resources that would be selected **not**considering the _limit_value.                         | total         |                  |
 | debug           | If true, will send the SQL query to the MODX log.                                                                                                                                | false         |                  |
 
-### Available Placeholders 
+### Available Placeholders
 
 The placeholders available to your getResources formatting Chunks are mostly dependent on the resources that you are iterating over.
 
@@ -229,109 +229,109 @@ In addition there are the following placeholders:
 | ------------ | ----------------------------------------------------------------------------------------- |
 | \[\[+idx\]\] | Increases with each iteration, starting with 1 (or the value set by the `&idx` parameter) |
 
-## Examples 
+## Examples
 
 Also see the [Examples](extras/getresources/getresources.examples "getResources.Examples") sub section of this documentation for more detailed examples and tutorials.
 
 Output a list of child Resources of the current Resource, using the 'myRowTpl' chunk:
 
-``` php 
+ ``` php
 [[getResources? &parents=`[[*id]]` &tpl=`myRowTpl`]]
 ```
 
 Output all resources beneath the Resource with ID '5', with the exception of resource 10, using the 'myRowTpl' chunk:
 
-``` php 
+ ``` php
 [[getResources? &parents=`5` &resources=`-10` &tpl=`myRowTpl`]]
 ```
 
 Output only the resources specified, using the 'myRowTpl' chunk:
 
-``` php 
+ ``` php
 [[getResources? &parents=`-1` &resources=`10,11,12` &tpl=`myRowTpl`]]
 ```
 
 Output the top 5 latest published Resources beneath the Resource with ID '5', with tpl 'blogPost':
 
-``` php 
+ ``` php
 [[getResources? &parents=`5` &limit=`5` &tpl=`blogPost` &includeContent=`1`]]
 ```
 
 Output a list of child Resources of the current Resource, based on the Resource-template:
 
-``` php 
+ ``` php
 [[getResources? &parents=`[[*id]]` &where=`{"template:=":8}` &tpl=`myRowTpl`]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1 or 2:
 
-``` php 
+ ``` php
 [[getResources? &parents=`[[*id]]` &where=`{"template:=":1, "OR:template:=":2}` &tpl=`myRowTpl`]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1, 2 or 3 (you cannot use the same key name more than once):
 
-``` php 
+ ``` php
 [[getResources? &parents=`[[*id]]` &where=`{"template:IN":[1,2,3]}` &tpl=`myRowTpl`]]
 ```
 
 Display a message when no results found (equivalent of "empty" parameter in Ditto):
 
-``` php 
+ ``` php
 [[getResources:default=`No results found`? &parents=`[[*id]]` &tpl=`myRowTpl`]]
 ```
 
 Example using an inline Tpl
 
-``` php 
+ ``` php
 [[getResources? &tpl=`@INLINE <li title="[[+longtitle]]">[[+pagetitle]]</li>`]]
 ```
 
 Wrapping a getResources result in other markup (like an &outerTpl property, which doesn't exist for getResources from version 1.6.0 you can still do it like that or use the &tplWrapper property).
 
-``` php 
+ ``` php
 [[getResources? ... &toPlaceholder=`results`]]
 [[+results:notempty=`<ol>[[+results]]</ol>`]]
 ```
 
-## Displaying Template Variables with getResources 
+## Displaying Template Variables with getResources
 
 To reduce retrieval time, getResources does not get TV values by default. If you want to display TVs, you should include the following parameters:
 
-``` php 
+ ``` php
 &includeTVs=`1` &processTVs=`1`
 ```
 
 You also need to either prefix all TVs with tv. or use this parameter in your snippet tag:
 
-``` php 
+ ``` php
 &tvPrefix=``
 ```
 
 In the Tpl chunk you use to display the getResources output, use a placeholder tag like this (but with the name of your TV):
 
-``` php 
+ ``` php
 [[+tv.my_tv]]
 ```
 
-## Using getPage for Pagination 
+## Using getPage for Pagination
 
 When combined with [getPage](extras/getpage "getPage") (or pdoPage), getResources allows you to do powerful and flexible pagination on your pages.
 
-### Examples 
+### Examples
 
 Grab first 10 Resources - sorted by publishedon - below the Resource ID 17, no more than 2 levels deep, with the tpl 'blogListPost', including the TVs and content:
 
-``` php 
-[[!getPage? 
-    &elementClass=`modSnippet` 
-    &element=`getResources` 
-    &parents=`17` 
-    &depth=`2` 
-    &limit=`10` 
-    &pageVarKey=`page` 
-    &includeTVs=`1` 
-    &includeContent=`1` 
+ ``` php
+[[!getPage?
+    &elementClass=`modSnippet`
+    &element=`getResources`
+    &parents=`17`
+    &depth=`2`
+    &limit=`10`
+    &pageVarKey=`page`
+    &includeTVs=`1`
+    &includeContent=`1`
     &tpl=`blogListPost`
 ]]
 <div class="paging">
@@ -343,7 +343,7 @@ Grab first 10 Resources - sorted by publishedon - below the Resource ID 17, no m
 
 and the chunk blogListPost:
 
-``` html 
+``` html
 <div class="blogPost">
     <div class="date">[[+publishedon:strtotime:date=`%b %d %Y`]]</div>
     <h2><a href="[[~[[+id]]]]" title="[[+pagetitle]]">[[+pagetitle]]</a></h2>
@@ -360,17 +360,17 @@ and the chunk blogListPost:
 <hr/>
 ```
 
-## Troubleshooting 
+## Troubleshooting
 
-### Nothing Happens 
+### Nothing Happens
 
 Before you go banging your head on a wall, have you checked to make sure that this extra is actually installed on your site?
 
-### Array of Attributes is Dumped 
+### Array of Attributes is Dumped
 
 **You forgot to include the `&tpl` parameter**. Without the `&tpl` parameter, the Snippet will retrieve the specified resources, but you didn't tell it how to format them. Be sure you include the `&tpl` parameter in your Snippet call, e.g.
 
-``` php 
+ ``` php
 [[!getResources? &parents=`5` &limit=`5` &tpl=`blogPost`]]
 ```
 
@@ -378,13 +378,13 @@ Or, perhaps **you misspelled the chunk name.** Perhaps you DO have a `&tpl` spec
 
 Or, even though you have correctly specified the `&tpl` parameter, you may have inadvertently forgotten the ampersand on one of your _other_parameters. E.g.
 
-```
+``` php
 limit=`5`
 ```
 
 will cause the Snippet call to fail and the attributes to be dumped. The correct format should be
 
-```
+``` php
 &limit=`5`
 ```
 
@@ -392,29 +392,29 @@ will cause the Snippet call to fail and the attributes to be dumped. The correct
 
 If you see the same resource listed multiple times, then try omitting the `&sortbyTV` parameter.
 
-### The Content isn't There 
+### The Content isn't There
 
 You are retrieving the correct resources and you are seeing _some_of the results formatting correctly, but your `[[+content]]` placeholders don't contain anything. What's going on? You must include the **&includeContent=`1`** argument to get the content.
 
-### Caching problems using tpl, tpl\_N, tpl\_nN, tplFirst, tplLast or tplOdd 
+### Caching problems using tpl, tpl\_N, tpl\_nN, tplFirst, tplLast or tplOdd
 
 If you are using this parameters you may have thought about reusing your tpl chunk to avoid repeating code. For example:
 
 Generic Tpl Chunk: \[\[$GenericTplChunk\]\]
 
-``` php 
+ ``` php
 <div>Hi [[+pagetitle]]</div>
 ```
 
 Fourth Tpl Chunk ( tpl\_nN): \[\[$4thTplChunk\]\]
 
-``` php 
+ ``` php
 <div class="highlight">[[$GenericTplChunk]]</div>
 ```
 
 If you have problems with this, having blank or strange results, is due to MODX caching. Calling the chunk uncached won't work. You have to use a trick: a dummy tag when calling the generic chunk.
 
-``` php 
+ ``` php
 <div class="highlight">[[$GenericTplChunk? &idx=`[[+idx]]` ]]</div>
 ```
 
@@ -422,6 +422,6 @@ Note: You don't need to call the chunk uncached.
 
 Seen at: <http://forums.modx.com/thread/43748/chunk-inside-getresources-template-not-processed-correctly>
 
-## See Also 
+## See Also
 
 If you only need to get a single field from a foreign resource, try using [getResourceField](extras/getresourcefield "getResourceField").

@@ -10,9 +10,9 @@ This is the chunk displayed with the &maxCrumbTpl property on the [BreadCrumb](e
 
 ## Default Value
 
-Since BreadCrumb 1.3.0, maxCrumbTpl is no longer a chunk but a snippet property. 
+Since BreadCrumb 1.3.0, maxCrumbTpl is no longer a chunk but a snippet property.
  Templates properties can be chunk name, file path (@FILE:) or chunk code (@CODE:)
 
- ``` html 
+ ``` html
 <li>...</li>
 ```

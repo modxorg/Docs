@@ -14,7 +14,7 @@ _old_uri: "revo/image"
 - PHP 5.3 or later
 - MODX Cropping Engine i.e. [pThumb](http://modx.com/extras/package/pthumb)
 
-## History & Info
+## History& Info
 
  Image+ was written by Alan Pich in early 2012, and is further maintained and developed since 2015 by [Thomas Jakobi](https://github.com/jako).
 
