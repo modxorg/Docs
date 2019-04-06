@@ -14,7 +14,7 @@ _old_uri: "revo/cachebuster"
 
  If the `cb.cachebust``System Setting` is enabled the asset will never be cached by the browser. If disabled, it will return the current version of the website obtained from the `cb.site_ver System Setting`. Adding the site version to the URL will ensure that when changes pushed to production returning visiting aren't loading stale files from their browser cache.
 
-##  Optional Settings
+## Optional Settings
 
 ### Placeholder
 

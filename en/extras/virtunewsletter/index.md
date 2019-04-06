@@ -33,15 +33,15 @@ _old_uri: "revo/virtunewsletter/"
 
  If you want to read the old docs, please see here <http://oldrtfm.modx.com/display/ADDON/virtuNewsletter>.
 
-##  Download 
+## Download 
 
  virtuNewsletter can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <http://modx.com/extras/package/virtunewsletter>
 
-##  Development and Bug Reporting 
+## Development and Bug Reporting 
 
  virtuNewsletter is stored and developed in GitHub, the reposititory can be found here: <https://github.com/virtudraft/virtuNewsletter>
 
-##  Summary
+## Summary
 
  1. Set up a newsletter format using common resource on the left tree 
  2. In the CMP, add a category, as the newsletter group. Here usergroups can also be applied to a category 
@@ -98,7 +98,7 @@ _old_uri: "revo/virtunewsletter/"
 
 ```
 
-##  "Your subscription has been activated successfully" Email
+## "Your subscription has been activated successfully" Email
 
  Update 1.6.0-beta2: Template can be created inside the CMP and adjusted to culture key. 
 
@@ -136,22 +136,22 @@ _old_uri: "revo/virtunewsletter/"
 
 #  System Settings 
 
- | Settings | Description |
-|----------|-------------|
-| virtunewsletter.usergroups | Names of usergroups, delimited by comma. These usergroups will be automatically subscribed |
-| virtunewsletter.email\_debug | Turn this on to dump the email's placeholders to MODX's error log without sending the email |
-| virtunewsletter.email\_limit | Number of emails per hour for the cron job. Please consult your webhost about email sending limits. 0 (zero) or empty value means unlimited which will send all emails in 1 (one) batch. Default: 50. |
-| virtunewsletter.email\_sender | From whom the newsletter comes from in the email's header. Default is any value in the system setting's **emailsender** |
-| virtunewsletter.subscribe\_confirmation\_tpl | Resource's ID as the email template for the new subscription, as the above template: T _hank you for your subscription_ |
-| virtunewsletter.subscribe\_succeeded\_tpl | Resource's ID as the email template for the unsubscription confirmation |
-| virtunewsletter.unsubscribe\_succeeded\_tpl | Resource's ID as the email template for the completed confirmation of the unsubscription |
-| virtunewsletter.readerpage | Resource's ID where visitor can access the newsletter via web |
+ | Settings                                     | Description                                                                                                                                                                                           |
+ | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+ | virtunewsletter.usergroups                   | Names of usergroups, delimited by comma. These usergroups will be automatically subscribed                                                                                                            |
+ | virtunewsletter.email\_debug                 | Turn this on to dump the email's placeholders to MODX's error log without sending the email                                                                                                           |
+ | virtunewsletter.email\_limit                 | Number of emails per hour for the cron job. Please consult your webhost about email sending limits. 0 (zero) or empty value means unlimited which will send all emails in 1 (one) batch. Default: 50. |
+ | virtunewsletter.email\_sender                | From whom the newsletter comes from in the email's header. Default is any value in the system setting's **emailsender**                                                                               |
+ | virtunewsletter.subscribe\_confirmation\_tpl | Resource's ID as the email template for the new subscription, as the above template: T _hank you for your subscription_                                                                               |
+ | virtunewsletter.subscribe\_succeeded\_tpl    | Resource's ID as the email template for the unsubscription confirmation                                                                                                                               |
+ | virtunewsletter.unsubscribe\_succeeded\_tpl  | Resource's ID as the email template for the completed confirmation of the unsubscription                                                                                                              |
+ | virtunewsletter.readerpage                   | Resource's ID where visitor can access the newsletter via web                                                                                                                                         |
 
 #  Resources, Snippets and Chunks
 
  You need to create 3 more resources with its own snippet in it:
 
-##  1. Subscribe 
+## 1. Subscribe 
 
  Create a resource, and put this snippet as the content.
 
@@ -162,7 +162,7 @@ _old_uri: "revo/virtunewsletter/"
 
 ```
 
-##  2. Confirm 
+## 2. Confirm 
 
  Create a resource, and put this snippet in the content.
 
@@ -173,7 +173,7 @@ _old_uri: "revo/virtunewsletter/"
 
 ```
 
-##  3. Read 
+## 3. Read 
 
  Create a resource, and put this snippet in the content.
 
@@ -193,7 +193,7 @@ _old_uri: "revo/virtunewsletter/"
 
 ```
 
-##  4. Chunk 
+## 4. Chunk 
 
  The subscribe form (can be a chunk) is simply like this:
 
@@ -214,7 +214,7 @@ _old_uri: "revo/virtunewsletter/"
 
  The name itself can be changed, but make sure you have to apply this also to the **\[\[!virtuNewsletter.subscribe? &categoryKey=`category`\]\]** onthe [Subscribe page](extras/revo/virtunewsletter#virtuNewsletter-1.Subscribe) above
 
-##  5. The Newsletters 
+## 5. The Newsletters 
 
  You are now ready to create the newsletters using the common resource.
 
@@ -252,15 +252,15 @@ Unsubscribe
 
 #  Custom Manager Page (CMP) 
 
-##  Newsletters 
+## Newsletters 
 
-###  Category 
+### Category 
 
  Category is a group of subscribers. The subscriber can be from usergroups, or anonymous subscriber from web page, whom registered using the subscription form. Because this is required for newsletter, then the subscription form **must** have category field (or anything you define which matches with \[\[!virtuNewsletter.subscriber? &categoryKey=`category`\]\] controller snippet).
 
  So in the CMP you have to create a category first.
 
-##  Subscribers 
+## Subscribers 
 
  This section shows you the registered subscribers, or the auto-registered subscribers which are set on the System Settings ( **virtunewsletter.usergroups**). Synchronize them if you like.
 

@@ -39,7 +39,7 @@ _old_uri: "revo/collections"
 - Context menu items - Customize the items in the context menu (when you right-click in the grid).
 - Buttons - Customize the buttons rendered, when using a renderer that renders buttons. Optionally add classes to each button with a colon ":" separator.
 
-####  Permanent sort 
+#### Permanent sort 
 
  From version 3.2.0, new fields were added to general setting: **Permanent sort - Before** and **Permanent sort - After**. They allow adding more sort options to children's grid and they will be applied together with the default sort option (and also with sorting after clicking a column header). **Before sort** is used before the default sort, **after sort** is used after the default.
 
@@ -113,7 +113,7 @@ publishedon=published:asc
 
  Custom renderers can be easily added by creating a JS file (and CSS file if needed) and specifying URLs to those files in system settings. JS files can contain [functions](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) (see [sample](https://github.com/modxcms/Collections/blob/develop/assets/components/collections/js/mgr/extra/collections.renderers.js) renderers here) that can then be used collectively.
 
-##  Selections (new in version 3)
+## Selections (new in version 3)
 
  Selections are essentially links to other Resources in the same MODX site. You are not duplicating the original Resources when you add them to a Selections container, but simply creating another view from which to manage those Resources.
 

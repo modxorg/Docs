@@ -4,23 +4,17 @@ _old_id: "938"
 _old_uri: "revo/moneybird/moneybird.contacts"
 ---
 
-- [Usage](#MoneyBird.Contacts-Usage)
-- [Properties](#MoneyBird.Contacts-Properties)
-- [See Also](#MoneyBird.Contacts-SeeAlso)
-
-
-
-## Usage
+# Usage
 
 Example for MoneyBird Contacts:
 
-``` php 
+``` php
 [[!MoneyBirdContacts]]
 ```
 
 You can also specify the templates:
 
-``` php 
+``` php
 [[!MoneyBirdContacts? &tpl=`mbContact` &outerTpl=`mbContacts`]]
 ```
 

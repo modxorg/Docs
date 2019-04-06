@@ -4,34 +4,9 @@ _old_id: "929"
 _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 ---
 
-- [Create varying layout-boxes with MIGX](#MIGX.Varyinglayout-boxes-CreatevaryinglayoutboxeswithMIGX)
-  - [Requirements](#MIGX.Varyinglayout-boxes-Requirements)
-  - [The Template](#MIGX.Varyinglayout-boxes-TheTemplate)
-  - [The Preview-Page](#MIGX.Varyinglayout-boxes-ThePreviewPage)
-  - [The MIGX-Tv](#MIGX.Varyinglayout-boxes-TheMIGXTv)
-      - [General Information](#MIGX.Varyinglayout-boxes-GeneralInformation)
-            - [Name](#MIGX.Varyinglayout-boxes-Name)
-      - [Input Options](#MIGX.Varyinglayout-boxes-InputOptions)
-            - [Input-type](#MIGX.Varyinglayout-boxes-Inputtype)
-            - [Form Tabs](#MIGX.Varyinglayout-boxes-FormTabs)
-            - [Grid Columns](#MIGX.Varyinglayout-boxes-GridColumns)
-            - [Preview Url](#MIGX.Varyinglayout-boxes-PreviewUrl)
-      - [Template Access](#MIGX.Varyinglayout-boxes-TemplateAccess)
-  - [The Chunks](#MIGX.Varyinglayout-boxes-TheChunks)
-      - [OneCell](#MIGX.Varyinglayout-boxes-OneCell)
-            - [Name](#MIGX.Varyinglayout-boxes-Name)
-            - [Chunk Code](#MIGX.Varyinglayout-boxes-ChunkCode)
-      - [TwoCells](#MIGX.Varyinglayout-boxes-TwoCells)
-            - [Name](#MIGX.Varyinglayout-boxes-Name)
-            - [Chunk Code](#MIGX.Varyinglayout-boxes-ChunkCode)
-      - [ThreeCells](#MIGX.Varyinglayout-boxes-ThreeCells)
-            - [Name](#MIGX.Varyinglayout-boxes-Name)
-            - [Chunk Code](#MIGX.Varyinglayout-boxes-ChunkCode)
-- [Create Pages with varying layout-boxes](#MIGX.Varyinglayout-boxes-CreatePageswithvaryinglayoutboxes)
+# MIGX.Varying layout-boxes
 
-
-
-##  Create varying layout-boxes with MIGX 
+## Create varying layout-boxes with MIGX
 
  This Tutorial will show you step by step how to setup MIGX for adding and editing variying layout-Boxes.
 
@@ -39,7 +14,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
  The Request was how to create a System in MODX where the editor can add multiple Boxes with varying layouts, in this case boxes with one, two, or three Columns. Each Column with an image, a headline and content.
 
-###  Requirements 
+### Requirements
 
  First off, you'll want to go ahead and download and install some Extras that we'll be using for this Setup. The following is a list of used Extras:
 
@@ -47,12 +22,11 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 - [TinyMCE](/extras/evo/tinymce "TinyMCE") - Richtext-Editor to edit the content-texts.
 - [phpThumbOf](/extras/phpthumbof "phpThumbOf") - For resizing the images to fit in our columns.
 
-###  The Template 
+### The Template
 
  For this Tutorial we want to create a new Template. We name it 'MultiColumn'
 
- ``` html 
-
+ ``` html
 <html>
     <head>
         <title>[[++site_name]] - [[*pagetitle]]</title>
@@ -76,10 +50,9 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
         </div>
     </body>
 </html>
-
 ```
 
-###  The Preview-Page 
+### The Preview-Page
 
  Now we create a Preview-Page. With this page created we can see a Preview of our boxes in the backend without the need to save our Resource.
 
@@ -87,25 +60,25 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
  Create a new Resource under this Folder and choose the MultiColumn-Template. You can name it 'MultiColumn Preview'
 
-###  The MIGX-Tv 
+### The MIGX-Tv
 
  Now we are ready to create our MIGX-TV. Create a new TV.
 
-####  General Information 
+#### General Information
 
-#####  Name 
+##### Name
 
  MultiColumn
 
-####  Input Options 
+#### Input Options
 
-#####  Input-type 
+##### Input-type
 
  migx
 
-#####  Form Tabs 
+##### Form Tabs
 
- ``` javascript 
+ ``` json
 [{
     "formname":"OneCell"
     ,"formtabs": [{
@@ -253,16 +226,13 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
         }]
     }]
 }]
-
 ```
 
- 
+ Make sure, you have all the same fieldnames in all formtab-setups. Unused fields in hidden-fields. Otherwise you will loose values, when you switch between formtabs.
 
- Make sure, you have all the same fieldnames in all formtab-setups. Unused fields in hidden-fields. Otherwise you will loose values, when you switch between formtabs. 
+##### Grid Columns
 
-#####  Grid Columns 
-
- ``` javascript 
+ ``` json
 [{
     "header": "Row Format"
     ,"width": "30"
@@ -290,45 +260,44 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ```
 
-#####  Preview Url 
+##### Preview Url
 
  Add here the complete Url of your created Preview-Resource.
 
-####  Template Access 
+#### Template Access
 
  our MultiColumns - Template
 
-###  The Chunks 
+### The Chunks
 
  Our last step is to create three chunks for our layout-boxes.
 
-####  OneCell 
+#### OneCell
 
-#####  Name 
+##### Name
 
  OneCell
 
-#####  Chunk Code 
+##### Chunk Code
 
- ``` html 
+ ``` html
 <div class="box grid_h_12 grid_v_4">
     <div class="grid_h_12 alpha_h omega_h grid_v_1 alpha_v"><img src="[[+cell_1_image:phpthumbof=`w=900&h=250&zc=1`]]"/></div>
     <div class="grid_h_12 alpha_h omega_h grid_v_1"><h2>[[+cell_1_headline]]</h2></div>
     <div class="grid_h_12 alpha_h omega_h grid_v_2 omega_v">[[+cell_1_content]]</div>
 </div>
 <div class="clear"></div>
-
 ```
 
-####  TwoCells 
+#### TwoCells
 
-#####  Name 
+##### Name
 
  TwoCells
 
-#####  Chunk Code 
+##### Chunk Code
 
- ``` html 
+ ``` html
 <div class="box grid_h_6 grid_v_4">
     <div class="grid_h_6 alpha_h omega_h grid_v_1 alpha_v"><img src="[[+cell_1_image:phpthumbof=`w=460&h=320&zc=1`]]"/></div>
     <div class="grid_h_6 alpha_h omega_h grid_v_1"><h2>[[+cell_1_headline]]</h2></div>
@@ -340,18 +309,17 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
     <div class="grid_h_6 alpha_h omega_h grid_v_2 omega_v">[[+cell_2_content]]</div>
 </div>
 <div class="clear"></div>
-
 ```
 
-####  ThreeCells 
+#### ThreeCells
 
-#####  Name 
+##### Name
 
  ThreeCells
 
-#####  Chunk Code 
+##### Chunk Code
 
- ``` html 
+ ``` html
 <div class="box grid_h_4 grid_v_4">
     <div class="grid_h_4 alpha_h omega_h grid_v_1 alpha_v"><img src="[[+cell_1_image:phpthumbof=`w=300&h=250&zc=1`]]"/></div>
     <div class="grid_h_4 alpha_h omega_h grid_v_1"><h2>[[+cell_1_headline]]</h2></div>
@@ -368,10 +336,9 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
     <div class="grid_h_4 alpha_h omega_h grid_v_2 omega_v">[[+cell_3_content]]</div>
 </div>
 <div class="clear"></div>
-
 ```
 
-##  Create Pages with varying layout-boxes 
+## Create Pages with varying layout-boxes
 
  Now we are ready to create resources with varying layout-boxes.
 
@@ -381,6 +348,6 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
  For Preview click the 'Preview' - Button.
 
- If you want to change the position of boxes, you can drag/drop the items directly in the grid. 
+ If you want to change the position of boxes, you can drag/drop the items directly in the grid.
 
  Don't forget to save your Resource, when you are ready with adding/editing layout-boxes with MIGX

@@ -4,6 +4,8 @@ _old_id: "919"
 _old_uri: "revo/mhpaypal/mhpaypal.snippet-usage"
 ---
 
+# mhpaypal Snippet Usage
+
 _This document provides information on the mhPayPal snippet, its properties and some example usages. If looking for more information about the mhPayPal package in which the snippet is included, please visit ?__[mhPayPal](/extras/mhpaypal "mhPayPal")_ instead.
 
 ## Introduction
@@ -33,7 +35,7 @@ The list below is a list of all the properties you may use with mhPayPal. Please
 | formTplAnonymous    | \[string\] Name of a chunk to use when there is no user logged in. Could be used to display a message or login box if you only want users with an account to make a payment or donation. When left empty (default), it will use the chunk as specified with the formTpl property. |                                                                                                | 1.1.0   |
 | errorTpl            | \[string\] Name of ac hunk to use for individual error messages.See templating for more information on how to customize this.                                                                                                                                                     | mhPayPalErrorTpl (file-based)                                                                  | 1.1.0   |
 | successTpl          | \[string\] Name of a chunk to use to display a success message. See templating for more information on how to customize this.                                                                                                                                                     | mhPayPalSuccess (file-based)                                                                   | 1.1.0   |
-| errorSeparator      | ?\[string\] String/text/markup to use in between individual error messages.                                                                                                                                                                                                       | <br />                                                                                         | 1.1.0   |
+| errorSeparator      | ?\[string\] String/text/markup to use in between individual error messages.                                                                                                                                                                                                       |                                                                                                | 1.1.0   |
 | extraRequiredFields | \[string\] Comma separated list of field names that are required and cannot be left empty, can be used to collect extra data about the user for use in a custom hook or the likes.                                                                                                |                                                                                                | 1.1.0   |
 | method              | \[GET                                                                                                                                                                                                                                                                             | POST\] Either GET or POST, indicating if the form should use URL parameters or a POST request. | POST    | 1.1.0 |
 | submitVar           | \[string\] The name of a field that needs to exist in the GET or POST (depending on &method) in order for this snippet to start processing.                                                                                                                                       | makeDonation                                                                                   | 1.1.0   |
@@ -54,7 +56,7 @@ Please also see the specific pages for hooks and templating for more detail abou
 
 Displays the default form with all default options, meaning it will allow users to fill in their desired donation with a minimum of 5 EUR/USD/GBP.
 
-``` php 
+``` php
 [[!mhPayPal]]
 ```
 
@@ -62,7 +64,7 @@ Displays the default form with all default options, meaning it will allow users 
 
 This example still uses the default form (you probably don't want that in this case), but ignores what the user choses and forces the USD currency at an amount of 15 bucks + 2.85 taxes. This also sets a description. This could be a great starting point, along with a custom chunk tpl and a hook or two, for allowing super quick check out of products.
 
-``` php 
+``` php
 [[!mhPayPal?
   &amount=`15`
   &amountTax=`2.85`

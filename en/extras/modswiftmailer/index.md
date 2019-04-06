@@ -4,23 +4,7 @@ _old_id: "682"
 _old_uri: "revo/modswiftmailer"
 ---
 
-- [What is modSwiftMailer?](#modSwiftMailer-WhatismodSwiftMailer%3F)
-  - [Roadmap](#modSwiftMailer-Roadmap)
-  - [Current version](#modSwiftMailer-Currentversion)
-- [Requirements](#modSwiftMailer-Requirements)
-- [History](#modSwiftMailer-History)
-  - [Download](#modSwiftMailer-Download)
-- [Usage](#modSwiftMailer-Usage)
-  - [A basic little e-mail](#modSwiftMailer-Abasiclittleemail)
-- [Examples](#modSwiftMailer-Examples)
-  - [Sending a simple e-mail](#modSwiftMailer-Sendingasimpleemail)
-  - [Getting more complex; multiple recipients](#modSwiftMailer-Gettingmorecomplex%3Bmultiplerecipients)
-- [Troubleshooting](#modSwiftMailer-Troubleshooting)
-  - [My e-mails are not being sent](#modSwiftMailer-Myemailsarenotbeingsent)
-  - [It wont sent my e-mails because of something called a Return-Path](#modSwiftMailer-ItwontsentmyemailsbecauseofsomethingcalledaReturnPath)
-  - [My package won't install](#modSwiftMailer-Mypackagewon%27tinstall)
-
-
+# modSwiftMailer
 
 On some poorly migrated copies of MODX the package might not install. This problem may also appear with default installations when the folders are not Apache/root assigned. Please refer to the troubleshooting section for more information.
 
@@ -67,7 +51,7 @@ I tried to make it as easy as possible to switch from modPHPMailer to modSwiftMa
 
 Firstly we're going to create a plain, little e-mail. This is a neat piece of code that you most likely will use to test a chunk of development code.
 
-``` php 
+``` php
 $modx->getService('mail', 'mail.modSwiftMailer');
 
 $modx->mail->address('to', 'recipient@domain.tld', 'Recipient');
@@ -80,7 +64,7 @@ $modx->mail->send();
 
 Hey you! Go ahead and slap that sucker into a snippet. ;) It will, if you have set up your MODX in the right manner, send you an e-mail with a subject and printed array.
 
-**You might have noticed** that next to modPHPMailer, you're missing a couple of lines of code. For example, we're missing modMail::MAIL\_FROM lines, the reply-to field, setHTML, error catching and the reset function. 
+**You might have noticed** that next to modPHPMailer, you're missing a couple of lines of code. For example, we're missing modMail::MAIL\_FROM lines, the reply-to field, setHTML, error catching and the reset function.
 What basically happens is, modSwiftMailer nativly sends UTF-8 encoded, 8bit encrypted text/html mails for your pleasure. This means that you can natively incorporate ANY chunk into modSwiftMailer without changing defaults or overriding behaviours (such as setHTML). More on that later.
 
 By now you would've recieved your first modSwiftMailer e-mail and you're ready to rock. Try expanding your e-mail with the following examples.
@@ -91,7 +75,7 @@ By now you would've recieved your first modSwiftMailer e-mail and you're ready t
 
 The following code allows you to send a e-mail to **one** recipient. If you want to use this code in a for(each) loop, you should most definitly use $modx->mail->reset() after (thus inside) each loop.
 
-``` php 
+``` php
 $modx->getService('mail', 'mail.modSwiftMailer');
 
 $modx->mail->address('to', 'recipient@domain.tld', 'Recipient');
@@ -108,13 +92,13 @@ By design, modSwiftMailer allows you to send your mail to, literally, an array o
 
 First off, start with starting the modSwiftMailer service. Really? Yes, really.
 
-``` php 
+``` php
 $modx->getService('mail', 'mail.modSwiftMailer');
 ```
 
 Now, modSwiftMailer allows to insert basically any format you wish, but each has a different output.
 
-``` php 
+``` php
 $modx->mail->address('to', 'recipient@domain.tld', 'Recipient');
 ```
 
@@ -122,7 +106,7 @@ Will add **one** e-mail, "recipient@domain.tld" with the **name** "Recipient".
 
 I like a little real work scenario with my e-mails, so lets mail the partial cast of How I Met Your Mother.
 
-``` php 
+``` php
 $modx->mail->address('to', array(
         'barneystinson@howimetyourmother.tld' => 'Barney Stison',
         'tedmosby@howimetyourmother.tld' => 'Ted Mosby'
@@ -133,7 +117,7 @@ Will add **two** e-mails, "barneystinson@howimetyourmother.tld" with the **name*
 
 Aside from that little example, there is another way to send an e-mail to the same person with multiple e-mail addresses. Granted, you will not be using this unless you're e-mailing an entire Korean family called "Li", but that's a whole different matter.
 
-``` php 
+``` php
 $modx->mail->address('to', array(
         'barneystinson@howimetyourmother.tld',
         'tedmosby@howimetyourmother.tld'
@@ -144,7 +128,7 @@ Will add **two** e-mails, "barneystinson@howimetyourmother.tld" and "tedmosby@ho
 
 Finally, imagine your form was plugged into a [FormIt](/extras/formit "FormIt") postHook which has an optional fullname (or name or username) field, which isn't always set or contains data. Your e-mails would look pretty crappy, won't they? Nay!
 
-``` php 
+``` php
 $modx->mail->address('to', array(
         'barneystinson@howimetyourmother.tld',
         'tedmosby@howimetyourmother.tld' => 'Ted Mosby'
@@ -155,13 +139,13 @@ Granted, I reckon the first, second and fourth examples will be used the most, b
 
 Again, in a poorly scripted [FormIt postHook](/extras/formit/formit.hooks "FormIt.Hooks") you also want to e-mail the same e-mail to a BCC (\*B\*lind \*C\*arbon \*C\*opy) recipient. Easy pease, exactly the same functionality as to;
 
-``` php 
+``` php
 $modx->mail->address('bcc', 'phantom@theopera.tld', 'Phantom');
 ```
 
 Now comes the part which sets your e-mail apart from those pesky, instant-coffee-like e-mails out there, the 'couple-liners' that define the origination of the e-mail.
 
-``` php 
+``` php
 $modx->mail->address('sender', 'sender@domain.tld');
 $modx->mail->address('from', 'from@domain.tld', 'Graphical sender');
 ```
@@ -170,7 +154,7 @@ The "sender" always appears in your e-mail's headers. Usually this is the webser
 
 Lastly, you **can** define a bounce address and reply-to address. If you don't provide a reply-to address, it will nativly pick up the senders or from e-mail address (depends on the program).
 
-``` php 
+``` php
 $modx->mail->bounce('bounce@domain.tld');
 $modx->mail->receipt('receipt@domain.tld');
 $modx->mail->replyto('no-reply@domain.tld');
@@ -180,7 +164,7 @@ Oh yea, I snug a little receipt in there. It isn't supported by webbrowsers but 
 
 Finally, of course, we want to send that e-mail to all defined recipients (to, cc and bcc). Oh yea, we're gonna add some content and a subject too - of course.
 
-``` php 
+``` php
 $modx->mail->subject('A subject');
 $modx->mail->body('Some content');
 

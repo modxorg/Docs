@@ -4,14 +4,7 @@ _old_id: "1785"
 _old_uri: "revo/mandrillx"
 ---
 
-- [What is MandrillX?](#MandrillX-WhatisMandrillX)
-- [Package Information](#MandrillX-Information)
-- [History](#MandrillX-History)
-- [Download](#MandrillX-Download)
-- [Development and Bug Reporting](#MandrillX-DevelopmentandBugReporting)
-- [Documentation](#MandrillX-Documentation)
- 
-## What is MandrillX?
+# What is MandrillX?
 
 MandrillX is a class for sending email through Mandrill in MODX. It completely bypasses the MODX mail system.
 
@@ -36,7 +29,7 @@ It is currently maintained by Bob Ray.
 
  MandrillX can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/mandrillx).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  MandrillX is stored and developed using GitHub, and can be found here: [MandrillX GitHub main page](https://github.com/BobRay/MandrillX).
 

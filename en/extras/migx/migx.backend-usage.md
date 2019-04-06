@@ -4,17 +4,7 @@ _old_id: "922"
 _old_uri: "revo/migx/migx.backend-usage"
 ---
 
-- [How the MIGX Custom Template Variable (TV) Works](#MIGX.Backend-Usage-HowtheMIGXCustomTemplateVariable%28TV%29Works)
-- [Creating your first MIGX TV](#MIGX.Backend-Usage-CreatingyourfirstMIGXTV)
-  - [Step 1: Create the MIGX aggregate TV](#MIGX.Backend-Usage-Step1%3ACreatetheMIGXaggregateTV)
-  - [Step 2: Configure the MIGX input type](#MIGX.Backend-Usage-Step2%3AConfiguretheMIGXinputtype)
-      - [Step 2.1 Form Tabs](#MIGX.Backend-Usage-Step2.1FormTabs)
-      - [Step 2.2 Grid Columns](#MIGX.Backend-Usage-Step2.2GridColumns)
-- [Advanced MIGX Configuration](#MIGX.Backend-Usage-AdvancedMIGXConfiguration)
-  - [Multiple Forms](#MIGX.Backend-Usage-MultipleForms)
-  - [Preview Feature](#MIGX.Backend-Usage-PreviewFeature)
- 
-
+# Backend-Usage
 
 ## How the MIGX Custom Template Variable (TV) Works
 
@@ -28,7 +18,7 @@ _old_uri: "revo/migx/migx.backend-usage"
 
  tabs.txt shows a sample implementation of a simple image gallery. The image gallery will consist of one complex data item that uses one richtext field (an image description), one image field (the image itself), and a short string (a caption). This short string will not be stored in a separate TV.
 
- "Helper" TVs still work but are no longer needed; use inputTVtype: instead of inputTV: 
+ "Helper" TVs still work but are no longer needed; use inputTVtype: instead of inputTV:
 
 ### Step 1: Create the MIGX aggregate TV
 
@@ -46,8 +36,7 @@ _old_uri: "revo/migx/migx.backend-usage"
 
  Content of tabs.txt:
 
- ``` php 
-
+ ``` json
 [
 {"caption":"Info", "fields": [
     {"field":"title","caption":"Title"},
@@ -57,7 +46,6 @@ _old_uri: "revo/migx/migx.backend-usage"
     {"field":"image","caption":"Image","inputTVtype":"image"}
 ]}
 ]
-
 ```
 
  That's a lot of JSON -- let's break it down. The first key you see is entitled "Caption". This refers to the name of the first tab. The tab will be labeled "Info".
@@ -86,13 +74,11 @@ _old_uri: "revo/migx/migx.backend-usage"
 
  Content of columns.txt:
 
- ``` php 
-
+ ``` json
 [
 {"header": "Title", "width": "160", "sortable": "true", "dataIndex": "title"},
 {"header": "Image", "width": "50", "sortable": "false", "dataIndex": "image","renderer": "this.renderImage"}
 ]
-
 ```
 
  Here is some more JSON for us to tackle! This JSON shows the caption of the image as well as a preview of it. Let's break it down.
@@ -103,7 +89,7 @@ _old_uri: "revo/migx/migx.backend-usage"
 
  We're now done specifying our first MIGX TV. Feels great, right? Make sure you click save.
 
- Don't forget to save your Resource after adding or editing MIGX items! 
+ Don't forget to save your Resource after adding or editing MIGX items!
 
  We're now half done our MIGX experience. Next step: [Data Entry](/extras/migx/migx.data-entry "MIGX.Data-Entry")
 
@@ -122,8 +108,7 @@ _old_uri: "revo/migx/migx.backend-usage"
 
  Content of switchFormTabs.txt
 
- ``` php 
-
+ ``` json
 [[
 {"formname":"image_description", "formtabs":
 [
@@ -143,7 +128,6 @@ _old_uri: "revo/migx/migx.backend-usage"
 ]}
 ]
 }]]
-
 ```
 
  here we have an additional outer array with two keys.
@@ -153,18 +137,16 @@ _old_uri: "revo/migx/migx.backend-usage"
  | formname | give each form an unique name. This is the value, which you will see in the generated dropdown to switch the form |
  | formtabs | this are the formtabs for this form                                                                               |
 
- when using multiple forms this will produce an additional field with name 'MIGX\_formname'. 
+ when using multiple forms this will produce an additional field with name 'MIGX\_formname'.
  You can use the value of this field to switch tpls in the frontend by using &tpl=`@FIELD:MIGX\_formname` and create chunks with the same names as your formnames or you can add an additional field (listbox-TV with name tpl for example) to choose the output-tpl for this item.
 
 ### Preview Feature
 
  MIGX has a preview featured that allows you to see rendered output of items in an iframe window. In order to use this preview feature, you need to create a preview resource. This resource should have content like:
 
- ``` html 
-
+ ``` php
 [[!getImageList? &tpl=`@FIELD:MIGX_formname`&tvname=`multiitemsgridTv`]]
 [[!getImageList? &tvname=`multiitemsgridTv2`]]
-
 ```
 
  If you have multiple calls on the preview resource you will also need unique values for each TV in 'Preview JsonVarKey' - default is 'migx\_outputvalue'
@@ -175,8 +157,6 @@ _old_uri: "revo/migx/migx.backend-usage"
 
  To edit fields directly within the MIGX grid, simply add "editor": "this.textEditor" or "editor": "this.listboxEditor" to the Grid Columns JSON of the field you wish to make editable:
 
- ``` html 
-
+ ``` json
 {"header": "Title", "width": "160", "sortable": "true", "dataIndex": "title", "editor": "this.textEditor"}
-
 ```

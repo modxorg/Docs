@@ -26,7 +26,7 @@ _old_uri: "revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl
  | nav.count       | The count of the Album rows.                                                                                                          |
  | albumRequestVar | The albumRequestVar parameter passed to the [GalleryAlbums](extras/revo/gallery/gallery.galleryalbums) snippet. Defaults to galAlbum. |
 
-##  Example 
+## Example 
 
  The following example shows possible placeholders. It displays a previous/next gallery navigation in an album or a gallery overview.
 

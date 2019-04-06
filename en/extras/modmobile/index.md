@@ -4,29 +4,16 @@ _old_id: "681"
 _old_uri: "revo/modmobile"
 ---
 
-- [What is modMobile?](#modMobile-WhatismodMobile%3F)
-  - [History](#modMobile-History)
-  - [Requirements](#modMobile-Requirements)
-  - [Development & Bug reporting](#modMobile-Development%26Bugreporting)
-- [Upgrading](#modMobile-Upgrading)
-- [Installation](#modMobile-Installation)
-  - [Troubleshooting](#modMobile-Troubleshooting)
-- [Usage](#modMobile-Usage)
-  - [Example 1](#modMobile-Example1)
-  - [Example 2](#modMobile-Example2)
-
-
-
-## What is modMobile?
+# What is modMobile?
 
 modMobile is a plugin that changes your template when a mobile device visits your site.
 
-### History
+## History
 
-| Version | Release date | Contributors | Remarks / highlights |
-|---------|--------------|--------------|----------------------|
-| 1.0 pl | Jan 5th, 2012 | Josh Gulledge | Added Snippet and refactored the code |
-| [0.1.0 alpha](http://modx.com/extras/package/moddef) | Mar 03, 2011 | Jeroen Kenters | Initial release. |
+| Version                                              | Release date  | Contributors   | Remarks / highlights                  |
+| ---------------------------------------------------- | ------------- | -------------- | ------------------------------------- |
+| 1.0 pl                                               | Jan 5th, 2012 | Josh Gulledge  | Added Snippet and refactored the code |
+| [0.1.0 alpha](http://modx.com/extras/package/moddef) | Mar 03, 2011  | Jeroen Kenters | Initial release.                      |
 
 ### Requirements
 
@@ -56,11 +43,11 @@ Since this is an early beta, a lot of things might go wrong after installing thi
 Using one template for mobile and full site
 
 1. Go to System -> System Settings
-2. Set the USE Placeholder to Yes 
+2. Set the USE Placeholder to Yes
   ![](/download/attachments/33948003/use-placeholder.png?version=1&modificationDate=1325800168000)
 3. Lets assume that the only difference between your standard version and the mobile version is the CSS file then in your template do something like this:
 
-``` html 
+``` php
 [[If?
       &subject=`[[+modxSiteTemplate]]`
       &operand=`mobile`
@@ -76,7 +63,7 @@ Note: modxSiteTemplate is the value of modmobile.get\_var and the same that you 
 
 1. Now just put a link in your template to the mobile version and then to the full version:
 
-``` html 
+``` html
     <!-- Moblie Link -->
     <a href="[[~[[*id]]]]?modxSiteTemplate=mobile">Mobile</a>
     <!-- Back to Full site link -->
@@ -89,13 +76,15 @@ Note this is optional but highly recommended.
 
 Using a separate mobile template
 
-1. Go to System -> System Settings 
-  1. Select modmobile, see image
-  2. Enter in your mobile template ID 
-      ![](/download/attachments/33948003/mobile-template-id.png?version=1&modificationDate=1325800055000)
+1. Go to System -> System Settings
+1.1. Select modmobile, see image
+1.2. Enter in your mobile template ID
+  ![](/download/attachments/33948003/mobile-template-id.png?version=1&modificationDate=1325800055000)
 2. Just visit your site on a mobile device like an iPhone or iPad. Your mobile theme should show up.
-3. Now just put a link in your templates a link to the mobile version and then to the full version like so: 
-  ?Note this is optional but highly recommended. ``` html 
+3. Now just put a link in your templates a link to the mobile version and then to the full version like so:
+  Note this is optional but highly recommended.
+  
+  ``` html
   <!-- Moblie Link -->
       <a href="[[~[[*id]]]]?modxSiteTemplate=mobile">Mobile</a>
       <!-- Back to Full site link -->

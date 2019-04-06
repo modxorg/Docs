@@ -4,9 +4,11 @@ _old_id: "926"
 _old_uri: "revo/migx/migx.tutorials/migx.simple-opening-hours-table"
 ---
 
+# MIGX.Simple opening hours table
+
 To allow a flexible table layout displaying opening hours, you could use MIGX.
 
-## The MIGX TV Configuration 
+## The MIGX TV Configuration
 
 We're just going to assume we want a simple table with the day, the time the store opens and the time it closes.
 
@@ -14,7 +16,7 @@ Create a new TV (we called it "operatingHours") using the MIGX TV Input Type (th
 
 So for the Form Tabs:
 
-``` php 
+``` json
 [{
     "caption":"Operating Hours",
     "fields": [
@@ -29,7 +31,7 @@ We're giving the tab (we need one) the caption of "Operating Hours", and then ad
 
 Now to display this in the resource panel, we will need to set up the Grid Columns too. We're using this:
 
-``` php 
+``` json
 [
 {"header": "Day", "width": "60", "sortable": "false", "dataIndex": "day"},
 {"header": "From", "width": "50", "sortable": "false", "dataIndex": "from"},
@@ -43,13 +45,13 @@ Finally we're setting an "Add Item" Replacement, in my case it was set to "Add n
 
 You should now be able to get the following in the Manager (though the image has terms in Dutch). ![](/download/attachments/35586346/migx+grid.PNG?version=1&modificationDate=1315272600000)
 
-## Parsing the Data 
+## Parsing the Data
 
 Now in the front-end we'll need to display that, using the getImageList snippet that comes packed with the MIGX package.
 
 Here's the snippet call to put in your template where you want it to appear:
 
-``` php 
+``` php
 <table>
 [[getImageList?
   &tvname=`operatingHours`
@@ -62,7 +64,7 @@ This will check the operatingHours TV, and parse its values with the operatingHo
 
 Here's the chunk we used:
 
-``` php 
+``` php
 <tr>
   <td>[[+day]]</td>
   [[+from:notempty=`<td>[[+from]]</td><td>[[+until]]</td>`:default=`<td colspan="2">Closed</td>`]]
@@ -75,9 +77,9 @@ Basically we're outputting a table row for every row of the TV, and we're simply
 
 If there isn't a value it will use the default output modifier, which means it will set a cell covering two columns with the text "Closed".
 
-## The Result 
+## The Result
 
-See the image below for the result. (Though we have replaced the texts with Dutch here and added some styling to the table) 
+See the image below for the result. (Though we have replaced the texts with Dutch here and added some styling to the table)
 And that's just another example of what you can do with MIGX! Of course you could go much further in this, adding more columns, multiple forms etc etc.
 
 ## ![](/download/attachments/35586346/Knipsel.PNG?version=1&modificationDate=1313929587000)

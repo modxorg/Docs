@@ -4,15 +4,15 @@ _old_id: "909"
 _old_uri: "revo/login/login.register"
 ---
 
-##  What is Register? 
+## What is Register? 
 
  Register is a registration form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets"). An example call can be found [here](/extras/login/login.register/register.example-form-1 "Register.Example Form 1").
 
-##  Usage 
+## Usage 
 
  Simply place the Register snippet in the Resource where your registration form is. (A default one called lgnRegisterForm is provided by the [Login](/extras/login "Login") 3PC.) This snippet also requires Activation by the User, so they will get an email in their inbox regarding their signup.
 
-###  Default Properties 
+### Default Properties 
 
  Register has some default properties packaged into it. They are:
 
@@ -50,11 +50,11 @@ _old_uri: "revo/login/login.register"
 | validate                          | A comma-separated list of fields to validate, with each field name as name:validator (eg: username:required,email:required). Validators can also be chained, like email:email:required. This property can be specified on multiple lines.  |                     |
 | validatePassword                  | Whether or not to validate the sent password when registering. Recommended to leave this Yes unless you are generating your own password in a hook.                                                                                        | 1                   |
 
-###  Validators 
+### Validators 
 
  Validators in Login follow the same syntax as [FormIt Validators](/extras/formit/formit.validators "FormIt.Validators"). You can use the methods described there to use them in your Login-based snippets.
 
-###  Custom Validators 
+### Custom Validators 
 
  You can also do custom validators by creating a Snippet and using that as the validator name. You **must** specify its name in the customValidators property, or it will not be run. Example: We create a Snippet called 'equalTo' and on our field, we set:
 
@@ -93,7 +93,7 @@ return true;
 - **type**: The name of the validator.
 - **validator**: A reference to the lgnValidator instance.
 
-##  Post-Validation 
+## Post-Validation 
 
  After the form has been validated, the Register snippet can do the following:
 
@@ -102,7 +102,7 @@ return true;
 - Redirect to a specific Resource (such as a "Registered!" page)
 - or, display a success message.
 
-###  Assigning User to User Groups 
+### Assigning User to User Groups 
 
  Assigning the User to specified User Groups is easy. Just specify a comma-separated list of either the name of the User Group or the User Group's ID in the "&usergroups" property. This example will assign the User to the "Marketing" and "Research" groups:
 
@@ -116,7 +116,7 @@ return true;
 [[!Register? &usergroups=`Marketing:Member,Research:Super User`]]
 ```
 
-###  Sending an Activation Email 
+### Sending an Activation Email 
 
  Register by default requires the User to activate their account before logging in. The Snippet creates the modUser object and sets its "active" field to 0. The User then gets an email with a URL to activate their account with. Once the User visits the page, their account is set to "active=1", and they can then login.
 
@@ -147,7 +147,7 @@ return true;
 
  You can also set the time-to-live for an activation email, as well. This will restrict the number of minutes until the activation window expires. You can do this by setting the value in the "activationttl" property. It defaults to 3 hours. 
 
-###  Redirecting to a Resource After Validation 
+### Redirecting to a Resource After Validation 
 
  Redirection is simple: just specify the ID of the Resource to redirect to in the "submittedResourceId" property. For example:
 
@@ -157,7 +157,7 @@ return true;
 
  Will redirect to the Resource with ID 23. It will also append "username" and "email" GET parameters to the URL.
 
-###  Display a Success Message 
+### Display a Success Message 
 
  If the "submittedResourceId" property is not specified, Register will simply display a success message to the \[\[+error.message\]\] placeholder. This is the value of the "successMsg" property. For example:
 
@@ -167,7 +167,7 @@ return true;
 
  Will display "Thanks for registering!" in the \[\[+error.message\]\] property in the Resource that your \[\[Register\]\] snippet call is in after the User submits a valid registration form.
 
-##  Typical Setup 
+## Typical Setup 
 
  It's really easy to get confused about the various pages (resources) used for registration. In a typical setup, there are four separate pages:
 
@@ -179,7 +179,7 @@ return true;
 
  **Registration Confirmed** - The page that the user is forwarded to from the Confirm Register page. This page should contain only text (no snippet tags) saying something like "Congratulations, you're now an active user"
 
-##  See Also 
+## See Also 
 
 1. [Login.Login](/extras/login/login.login)
 2. [Login.Profile](/extras/login/login.profile)

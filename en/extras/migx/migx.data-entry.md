@@ -4,13 +4,7 @@ _old_id: "923"
 _old_uri: "revo/migx/migx.data-entry"
 ---
 
-- [How to input data](#MIGX.Data-Entry-Howtoinputdata)
-  - [Step 1: Setup](#MIGX.Data-Entry-Step1%3ASetup)
-  - [Step 2: Data Entry](#MIGX.Data-Entry-Step2%3ADataEntry)
-  - [Step 3: Modifying Data](#MIGX.Data-Entry-Step3%3AModifyingData)
-  - [Step 4: Reordering Data](#MIGX.Data-Entry-Step4%3AReorderingData)
-
-
+# Data-Entry
 
 ## How to input data
 

@@ -4,11 +4,11 @@ _old_id: "907"
 _old_uri: "revo/login/login.login"
 ---
 
-##  What is Login? 
+## What is Login? 
 
  This component loads a simple login and logout form, and processes User authentication.
 
-##  Usage 
+## Usage 
 
  Example for Login:
 
@@ -24,7 +24,7 @@ _old_uri: "revo/login/login.login"
 
  See the snippet properties for more options.
 
-##  Properties 
+## Properties 
 
  Login comes with some configuration properties you can set to adjust the way Login behaves.
 
@@ -57,7 +57,7 @@ _old_uri: "revo/login/login.login"
 
  <a id="Login.Login-optionalProperties" name="Login.Login-optionalProperties"></a>
 
-##  Optional Properties (non Login) 
+## Optional Properties (non Login) 
 
  Helpful parameters which can facilitate Login.
 
@@ -67,7 +67,7 @@ _old_uri: "revo/login/login.login"
  | recaptchaTheme  | Can be used to modify the ReCaptcha theme to 'red', 'white', 'blackglass', 'clean', or others as they are introduced by Google. | clean   |
  | recaptchaWidth  | Can be used to modify the ReCaptcha iframe Width attribute size.                                                                | 500     |
 
-###  tplType Options 
+### tplType Options 
 
  The tplType and errTplType properties have a list of different options to choose from. This can be:
 
@@ -76,7 +76,7 @@ _old_uri: "revo/login/login.login"
 - _inline_ - The content of the tpl will be directly in the tpl property itself.
 - _embedded_ - The tpl is already in the page; just make the error properties be placeholders.
 
-##  Using reCaptcha 
+## Using reCaptcha 
 
  First off, make sure your `recaptcha.public\_key` and `recaptcha.private\_key` System Settings are set with your reCaptcha API keys. Then, to add it, all you have to do is add the "recaptcha" preHook to your snippet call:
 
@@ -88,7 +88,7 @@ _old_uri: "revo/login/login.login"
 
  See [See Optional Properties for ReCaptcha specific settings](#Login.Login-optionalProperties)
 
-##  Logout 
+## Logout 
 
  How do I log out? You simply call the page containing your **Login** snippet call and pass specify 'logout' as the service via the URL. In this example, the Login snippet is contained on page 21:
 
@@ -97,7 +97,7 @@ _old_uri: "revo/login/login.login"
 (which automatically appends '&service=logout' to your URL)
 ```
 
-##  See Also 
+## See Also 
 
 1. [Login.Login](/extras/login/login.login)
 2. [Login.Profile](/extras/login/login.profile)

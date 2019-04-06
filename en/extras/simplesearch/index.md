@@ -13,16 +13,16 @@ _old_uri: "revo/simplesearch"
 - [Examples](#SimpleSearch-Examples)
 - [See Also](#SimpleSearch-SeeAlso)
 
-##  What is SimpleSearch? 
+## What is SimpleSearch? 
 
  SimpleSearch is a simple search component for MODx Revolution. It supports searching Resource content and TV content.
 
-##  Requirements 
+## Requirements 
 
 - MODx Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
-##  History 
+## History 
 
  SimpleSearch was written by [Shaun McCormick](/display/~splittingred) as a simple search component, and first released on June 2nd, 2010. It is loosely based on AjaxSearch for MODx Evolution by KyleJ/coroico, without the Ajax functionality.
 
@@ -37,24 +37,24 @@ First of all: ALWAYS MAKE A BACKUP BEFORE UPDATING!
 - The namespace has been changed from sisea to simplesearch. If you're using custom System Settings, then please migrate them.
 - The ElasticSearch and SOLR drivers have been removed, because they were in need of improvements. Future drivers should be seperate addons. Feel free to ask us for help here.
 
-###  Download 
+### Download 
 
  It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/683>
 
-###  Development and Bug Reporting 
+### Development and Bug Reporting 
 
  SimpleSearch is stored and developed in GitHub, and can be found here:<https://github.com/Sterc/SimpleSearch>
 
  Bugs can be filed here: <https://github.com/Sterc/SimpleSearch/issues>
 
-##  Usage 
+## Usage 
 
  SimpleSearch has 2 snippets - one to display a form ("SimpleSearchForm"), and the other to display search results ("SimpleSearch").
 
 - [SimpleSearch](/extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch")
 - [SimpleSearchForm](/extras/simplesearch/simplesearch.simplesearchform "SimpleSearch.SimpleSearchForm")
 
-##  Examples 
+## Examples 
 
  Display a search form, and below it, the results:
 
@@ -73,7 +73,7 @@ First of all: ALWAYS MAKE A BACKUP BEFORE UPDATING!
 
 ```
 
-##  See Also 
+## See Also 
 
 1. [SimpleSearch.Roadmap](/extras/simplesearch/simplesearch.roadmap)
 2. [SimpleSearch.SimpleSearch](/extras/simplesearch/simplesearch.simplesearch)

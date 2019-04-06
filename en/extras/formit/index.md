@@ -4,11 +4,11 @@ _old_id: "644"
 _old_uri: "revo/formit"
 ---
 
-##  What is FormIt? 
+## What is FormIt? 
 
  FormIt is a dynamic form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODx Revolution. It handles a form after submission, performing validation and followup actions like sending an email. It does not generate the form, but it can repopulate it if it fails validation.
 
-##  History 
+## History 
 
  FormIt was written by Shaun McCormick as a form processing Extra, and first released on October 19th, 2009. It is currently maintained by the team at Sterc.
 
@@ -24,7 +24,7 @@ It can be downloaded from within the MODx Revolution manager via [Package Manage
 
  API Documentation can also be found here: <http://api.modx.com/formit/>
 
-###  Important changes 
+### Important changes 
 
  FormIt 3.0 introduces an update to the encryption methods used for encrypting form submissions. Prior to 3.0 mcrypt was used, which in 3.0 is replaced with openssl, due to mcrypt being deprecated as of PHP 7.2. FormIt 3.0 comes with a migration page which is accessible from the manager. 
 
@@ -32,13 +32,13 @@ It can be downloaded from within the MODx Revolution manager via [Package Manage
 
  As of FormIt 1.1.4, all fields will automatically have `stripTags` applied. To allow HTML tags to be saved/stored, you will need to use the `allowTags` validator on each field, stipulating which tags are permitted. 
 
-##  How to Use 
+## How to Use 
 
  Simply place the FormIt snippet call into the Resource that contains the form you want to use. Unlike similar predecessors (most notably eForm in MODx Evolution), you do not put the form into a Chunk and reference the Chunk in the FormIt snippet call: you literally put the snippet call along side the form you want it to process. Specify the "hooks" (or post-validation processing scripts) in the snippet call. Then add validation via the _&validate_ and _&customValidators_ parameters in the snippet tag.
 
  If you have multiple forms on a page, set the _&submitVar_ property on your Snippet call to a name of a form element within the form (ie, &submitVar=`form1-submit`). This tells FormIt to only process form requests with that POST variable. Multiple forms should be used with INPUT type="submit" name="form1-submit", button elements have been reported not working.
 
-###  Available Properties 
+### Available Properties 
 
  These are the available general properties for the FormIt call (not including hook-specific properties):
 
@@ -64,13 +64,13 @@ It can be downloaded from within the MODx Revolution manager via [Package Manage
  | allowFiles                | Specify if files are allowed to be posted. Submitted files are stored in a temporary directory to prevent files getting lost in multistep forms.                                                                                                                                                                                                                                                                     | true                                                                        |
  | attachFilesToEmail        | Attaches uploaded files in email, form needs to be set as enctype="multipart/form-data"                                                                                                                                                                                                                                                                                                                              | true                                                                        |
 
-##  Validation 
+## Validation 
 
  Validation in FormIt is done via the &validate property, and can be used to automatically handle validation on any of the fields in your form.
 
  For more information on validation in FormIt, see the [Validators](/extras/formit/formit.validators "FormIt.Validators") page.
 
-##  Hooks 
+## Hooks 
 
  Hooks are basically scripts that run during FormIt processing. The hooks always execute in the order they appear in the property. If, for example, you have an email hook followed by a validation hook, the email will be sent before the validation occurs.
 
@@ -78,7 +78,7 @@ If any hook fails, the ones following it will not execute.
 
  For more information on hooks, see the [Hooks](/extras/formit/formit.hooks "FormIt.Hooks") page.
 
-##  See Also 
+## See Also 
 
 1. [FormIt.Hooks](/extras/formit/formit.hooks)
   1. [FormIt.Hooks.email](/extras/formit/formit.hooks/formit.hooks.email)

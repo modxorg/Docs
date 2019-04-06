@@ -12,7 +12,7 @@ _old_uri: "revo/hybridauth"
 
  In MODX we can log in to site and link our accounts on remote services to one user profile.
 
-##  Installation 
+## Installation 
 
  First of all watch this video
 
@@ -35,7 +35,7 @@ _old_uri: "revo/hybridauth"
 
  If there are any errors on library initialization - it will be logged in system log. 
 
-##  Parameters 
+## Parameters 
 
  | Param            | Description                                                                                                                                                                                                | Default                             |
  | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
@@ -57,7 +57,7 @@ _old_uri: "revo/hybridauth"
  | loginResourceId  | Resource id to redirect to on successful login. By default, it is 0 - redirect to self.                                                                                                                    | 0                                   |
  | logoutResourceId | Resource id to redirect to on successful logout. By default, it is 0 - redirect to self.                                                                                                                   | 0                                   |
 
-###  Examples 
+### Examples 
 
  Register to group Users
 
@@ -77,7 +77,7 @@ _old_uri: "revo/hybridauth"
 [[!HybridAuth? providers=`Google,Twitter,Facebook` &action=`UpdateProfile` &requiredFields=`username,email,photo` &profileFields=`username,fullname,email,photo`]]
 ```
 
-##  Known issues 
+## Known issues 
 
  1. Error " **You cannot access this page directly**" occurs when user session is cached by opcode-cacher, such as **php-apc**. For example, at [MODXCloud](http://modxcloud.com) this error always occurs.
 
@@ -89,7 +89,7 @@ ini_set('apc.cache_by_default', 0);
 
  Otherwise, your session will be cached and snippet will not working properly.
 
-##  Integration of service 
+## Integration of service 
 
 1. [HybridAuth.Integrating Facebook](/extras/hybridauth/hybridauth.integrating-facebook)
 2. [HybridAuth.Integrating Google](/extras/hybridauth/hybridauth.integrating-google)

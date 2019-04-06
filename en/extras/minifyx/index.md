@@ -4,19 +4,6 @@ _old_id: "676"
 _old_uri: "revo/minifyx"
 ---
 
-- [What is MinifyX?](#MinifyX-WhatisMinifyX%3F)
-  - [Requirements](#MinifyX-Requirements)
-  - [History](#MinifyX-History)
-  - [Download & Installation](#MinifyX-Download%26Installation)
-- [What you need to know](#MinifyX-Whatyouneedtoknow)
-- [Using MinifyX in the front-end](#MinifyX-UsingMinifyXinthefrontend)
-  - [Placing the snippet](#MinifyX-Placingthesnippet)
-  - [Configuration parameters](#MinifyX-Configurationparameters)
-  - [Examples](#MinifyX-Examples)
-- [External sources](#MinifyX-Externalsources)
-
-
-
 # What is MinifyX?
 
 MinifyX is a snippet that allows you to combine JS and CSS files to reduce server load and optimize loading speed.
@@ -72,7 +59,7 @@ You can configure the snippet "MinifyX" with the following parameters:
 
 Below you see the main snippet call and the placement of the placeholders. Every parameter is optional, we have just used some possibilities of customization.
 
-``` php 
+``` php
 <html>
 <head>
 [[MinifyX?

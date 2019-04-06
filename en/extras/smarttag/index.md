@@ -4,7 +4,7 @@ _old_id: "1714"
 _old_uri: "revo/smarttag"
 ---
 
-##  Description 
+## Description 
 
   **SmartTag** is a tagging system for MODX Revolution and is intended to replace MODX's original auto-tag TV.
 
@@ -12,7 +12,7 @@ _old_uri: "revo/smarttag"
 
  From the CMP you can rename the tag, or delete it entirely from the system, on all resources. You can convert existing auto-tag TVs to be SmartTag TV, or revert SmartTag back to other tag type.
 
-##  History 
+## History 
 
  SmartTag was first written by goldsky and released on March 28, 2014.
 
@@ -30,11 +30,11 @@ _old_uri: "revo/smarttag"
 
 ## System Settings
 
- | Name | Description | Default | Version |
-|------|-------------|---------|---------|
-| smarttag.limit | Number of tags limit when listing them in Custom Manager Page | 50 |  |
-| smarttag.use\_filter | (Optional) Whether use MODX's cleanAlias function and lowercase the character when inserting new tag. 
- Set it to false if tags are in non-latin characters. | true | 1.0.2-pl |
+ | Name                                                 | Description                                                                                           | Default  | Version |
+ | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | -------- | ------- |
+ | smarttag.limit                                       | Number of tags limit when listing them in Custom Manager Page                                         | 50       |         |
+ | smarttag.use\_filter                                 | (Optional) Whether use MODX's cleanAlias function and lowercase the character when inserting new tag. |
+ | Set it to false if tags are in non-latin characters. | true                                                                                                  | 1.0.2-pl |
 
 ## Template Variable 
 
@@ -44,7 +44,7 @@ _old_uri: "revo/smarttag"
 
  
 
-###  Input Type Options 
+### Input Type Options 
 
  In input type options, they are exactly as same as [auto-tag](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types#TemplateVariableInputTypes-AutoTag) options, except the **queryLimit**.
 
@@ -52,7 +52,7 @@ _old_uri: "revo/smarttag"
 
  **(v. 1.0.4-pl)** If you want the typeahead drop-down tag TV gets all tags regardless their TVs' scopes, set **Global Tags** to true.
 
-###  Output Type Options 
+### Output Type Options 
 
  In output type options, they adapt [Delimiter](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type) and [URL TV](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type) output types.
 
@@ -78,7 +78,7 @@ _old_uri: "revo/smarttag"
 
 ## Custom Manager Page 
 
-###  TagCloud 
+### TagCloud 
 
  The CMP is used to make manager easily manages the tags.
 
@@ -92,7 +92,7 @@ _old_uri: "revo/smarttag"
 
  The Resource's titles are links, so they can be clicked (or ctrl+click or middle-mouse click) to open it.
 
-###  Converter 
+### Converter 
 
  In the second page, there's a converter utility to convert existing tag types to SmartTag or revert SmartTag TVs back to the other tag types.
 
@@ -100,24 +100,24 @@ _old_uri: "revo/smarttag"
 
  When a SmartTag TV is selected, it also can be synchronized to get all values from related resources to store them into the SmartTag's DB.
 
-##  Snippet 
+## Snippet 
 
  SmartTag also provides a snippet to list the tags, based on some filters.
 
-###  smarttagTags 
+### smarttagTags 
 
- | Name | Description | Value Type | Default Value | Since Version |
-|------|-------------|------------|---------------|---------------|
-| docIds | Comma delimited values of Documents' IDs | String |  | 1.0.0-beta1 |
-| parentIds | Comma delimited values of Parent Documents' IDs | String |  | 1.0.0-beta5 |
-| allTags | Show all tags | String |  | 1.0.0-beta5 |
-| tvNames | Explicitly define which TVs. Prerequisites: either **&docIds** or **&parentIds** | Comma separated TVs' names |  | 1.0.0-pl |
-| includeEmptyTags | Do you want to include tags without resources? | Boolean: 0|1 | 0 | 1.0.0-beta1 |
-| includeHiddenDocs | Do you want to include tags on hidden resources? | Boolean: 0|1 | 0 | 1.0.0-beta5 |
-| limit | Maximum number of list. 0 will be ignored. There is "no limit" option, as intended. If you want to list all, just put 1000000 (a million) limit, but you are responsible for any problem to the server. | Integer | 10 | 1.0.0-beta1 |
-| phsPrefix | Prefix for the placeholders | String | smarttag | 1.0.0-beta1 |
-| sort | Comma delimited multiple sorting. Format: field direction,field direction. Mind the space in between. | String | count desc,tag asc | 1.0.0-beta1 |
-| tplItem | Name of chunk for item template of the output. @BINDING enabled (eg: @FILE:\[path/to/file.tpl\]). | String | smarttagtags.item | 1.0.0-beta1 |
-| tplWrapper | Name of chunk for wrapper template of the output. @BINDING enabled (eg: @FILE:\[path/to/file.tpl\]). | String | smarttagtags.wrapper | 1.0.0-beta1 |
+ | Name              | Description                                                                                                                                                                                             | Value Type                 | Default Value        | Since Version |
+ | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------------- | ------------- |
+ | docIds            | Comma delimited values of Documents' IDs                                                                                                                                                                | String                     |                      | 1.0.0-beta1   |
+ | parentIds         | Comma delimited values of Parent Documents' IDs                                                                                                                                                         | String                     |                      | 1.0.0-beta5   |
+ | allTags           | Show all tags                                                                                                                                                                                           | String                     |                      | 1.0.0-beta5   |
+ | tvNames           | Explicitly define which TVs. Prerequisites: either **&docIds** or **&parentIds**                                                                                                                        | Comma separated TVs' names |                      | 1.0.0-pl      |
+ | includeEmptyTags  | Do you want to include tags without resources?                                                                                                                                                          | Boolean: 0                 | 1                    | 0             | 1.0.0-beta1 |
+ | includeHiddenDocs | Do you want to include tags on hidden resources?                                                                                                                                                        | Boolean: 0                 | 1                    | 0             | 1.0.0-beta5 |
+ | limit             | Maximum number of list. 0 will be ignored. There is "no limit" option, as intended. If you want to list all, just put 1000000 (a million) limit, but you are responsible for any problem to the server. | Integer                    | 10                   | 1.0.0-beta1   |
+ | phsPrefix         | Prefix for the placeholders                                                                                                                                                                             | String                     | smarttag             | 1.0.0-beta1   |
+ | sort              | Comma delimited multiple sorting. Format: field direction,field direction. Mind the space in between.                                                                                                   | String                     | count desc,tag asc   | 1.0.0-beta1   |
+ | tplItem           | Name of chunk for item template of the output. @BINDING enabled (eg: @FILE:\[path/to/file.tpl\]).                                                                                                       | String                     | smarttagtags.item    | 1.0.0-beta1   |
+ | tplWrapper        | Name of chunk for wrapper template of the output. @BINDING enabled (eg: @FILE:\[path/to/file.tpl\]).                                                                                                    | String                     | smarttagtags.wrapper | 1.0.0-beta1   |
 
  To list the tags, you **MUST** either provide docIds, parentIds, or allTags properties (parameters).

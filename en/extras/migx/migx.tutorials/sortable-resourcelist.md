@@ -4,49 +4,44 @@ _old_id: "1366"
 _old_uri: "revo/migx/migx.tutorials/migx.sortable-resourcelist"
 ---
 
-- [Sortable Resourcelist with MIGX](#MIGX.sortableresourcelist-SortableResourcelistwithMIGX)
-- [Requirements](#MIGX.sortableresourcelist-Requirements)
-- [Create the Resourceoptions - chunk](#MIGX.sortableresourcelist-CreatetheResourceoptionschunk)
-- [Create the Configuration for the MIGX-TV](#MIGX.sortableresourcelist-CreatetheConfigurationfortheMIGXTV)
-- [Create the MIGX - TV](#MIGX.sortableresourcelist-CreatetheMIGXTV)
-- [Select and sort Resources](#MIGX.sortableresourcelist-SelectandsortResources)
-- [Get the Sorted and filtered Resourcelist at frontend](#MIGX.sortableresourcelist-GettheSortedandfilteredResourcelistatfrontend)
-
-
-
-## Sortable Resourcelist with MIGX 
+# Sortable Resourcelist with MIGX
 
 In this Tutorial we will learn how we can use MIGX to select a set of Resources from a given parent and sort the ouput-order.
 
-## Requirements 
+## Requirements
 
-First off we will need to install [MIGX](/extras/migx "MIGX") by Package Management and do some [basic configurations](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration"). 
+First off we will need to install [MIGX](/extras/migx "MIGX") by Package Management and do some [basic configurations](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
 Version required: 2.5.2 +
 
-## Create the Resourceoptions - chunk 
+## Create the Resourceoptions - chunk
 
-1. Create a new chunk 
-  - name: migx\_resourceoptions
-  - content: ``` php 
-      [[migxLoopCollection? 
-          &classname=`modResource`
-          &selectfields=`id,pagetitle`
-          &where=`{"parent":"3"}`
-          &toJsonPlaceholder=`json` 
-      ]]
-      [[+json]]
-      ```
+1. Create a new chunk
+
+- name: migx\_resourceoptions
+- content:
+  
+``` php
+  [[migxLoopCollection?
+    &classname=`modResource`
+    &selectfields=`id,pagetitle`
+    &where=`{"parent":"3"}`
+    &toJsonPlaceholder=`json`
+  ]]
+  [[+json]]
+```
 
 Change the parent to the ID where you want to get the resourcelist from
 
-## Create the Configuration for the MIGX-TV 
+## Create the Configuration for the MIGX-TV
 
-1. Go to: Components->MIGX->Tab: MIGX
-2. Create a new Configuration with 'add item' 
+- Go to: Components->MIGX->Tab: MIGX
+- Create a new Configuration with 'add item'
   - name: migx\_resourcelist
-3. Click 'Done' to save the new Configuration
-4. right-click on the new configuration and select 'import/export'
-5. copy/paste this code into the textarea: ``` php 
+- Click 'Done' to save the new Configuration
+- right-click on the new configuration and select 'import/export'
+- copy/paste this code into the textarea:
+
+``` json
   {
     "formtabs":[
       {
@@ -229,31 +224,31 @@ Change the parent to the ID where you want to get the resourcelist from
   }
   ```
 
-## Create the MIGX - TV 
+## Create the MIGX - TV
 
 Create a new TV
 
-1. Tab: General Information 
+- Tab: General Information
   - name: migx\_resourcelist
-2. Tab: Input Options 
+- Tab: Input Options
   - Input Type: migx
   - Input Option Values: @CHUNK migx\_resourceoptions
   - Configurations: migx\_resourcelist
-3. Tab: Template Access 
+- Tab: Template Access
   - select the Template where you want to add this TV
 
-## Select and sort Resources 
+## Select and sort Resources
 
 Now you should be able to select Resources and sort them by drag/drop them to a new position. You can also add additional infos, like a comment.
 
-## Get the Sorted and filtered Resourcelist at frontend 
+## Get the Sorted and filtered Resourcelist at frontend
 
 Add this snippet-tag to your template/resource-content:
 
-``` php 
-[[getImageList? 
-  &tvname=`migx_input_options` 
-  &outputSeparator=`,` 
+``` php
+[[getImageList?
+  &tvname=`migx_input_options`
+  &outputSeparator=`,`
   &tpl=`@CODE:[[+id]]`
   &where=`{"active:=":"1"}`
 ]]

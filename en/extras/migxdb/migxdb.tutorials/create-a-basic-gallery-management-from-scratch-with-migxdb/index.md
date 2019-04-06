@@ -4,34 +4,19 @@ _old_id: "932"
 _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management-from-scratch-with-migxdb/"
 ---
 
-- [Creating a basic gallery-management from scratch with MIGXdb](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-CreatingabasicgallerymanagementfromscratchwithMIGXdb)
-- [Requirements](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-Requirements)
-- [Create a new Package and schema-file](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-CreateanewPackageandschemafile)
-  - [The Schema](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-TheSchema)
-  - [Parse Schema](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-ParseSchema)
-  - [Create Table(s)](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-CreateTable%28s%29)
-- [Create the Configuration](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-CreatetheConfiguration)
-- [Create the MIGXdb - TV](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-CreatetheMIGXdbTV)
-- [Adding extended fields](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-Addingextendedfields)
-- [Making some galleries.](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-Makingsomegalleries.)
-- [Adding a search-field to our grid](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-Addingasearchfieldtoourgrid)
-- [Listing the Images on Frontend.](#MIGXdb.Createabasicgallery-managementfromscratchwithMIGXdb-ListingtheImagesonFrontend.)
+# Creating a basic gallery-management from scratch with MIGXdb
 
-
-
-##  Creating a basic gallery-management from scratch with MIGXdb 
-
- In this Tutorial we will learn how to create your own gallery-management with help of MIGXdb. 
- First we will create a db-schema and its table(s). 
- Then we will create and configure a MIGXdb-TV to manage our images (db-records). 
- In the next step we will create some Resources (galleries) and add some images with our MIGXdb - TV. 
+ In this Tutorial we will learn how to create your own gallery-management with help of MIGXdb.
+ First we will create a db-schema and its table(s).
+ Then we will create and configure a MIGXdb-TV to manage our images (db-records).
+ In the next step we will create some Resources (galleries) and add some images with our MIGXdb - TV.
  At last we will show our images at frontend with a snippet.
 
-##  Requirements 
+## Requirements
 
  First off we will need to install [MIGX](/extras/migx "MIGX") by package-management and do some [basic configurations](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
 
-##  Create a new Package and schema-file 
+## Create a new Package and schema-file
 
  Go to Components->MIGX->Tab 'Package Manager'.
 
@@ -43,9 +28,9 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  Go to the tab 'xml scheme' and add this code:
 
-###  The Schema 
+### The Schema
 
- ``` xml 
+ ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="mygallery" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
         <object class="myGallery" table="migx_gallery" extends="xPDOSimpleObject" >
@@ -55,7 +40,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
         <field key="resource_ids" dbtype="text" phptype="string" null="false" default="" />
         <field key="image" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
         <field key="extended" dbtype="text" phptype="json" null="false" default="" />
-        <field key="pos" dbtype="int" precision="10" phptype="integer" null="false" default="0" />        
+        <field key="pos" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
         <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
         <field key="createdby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
         <field key="createdon" dbtype="datetime" phptype="datetime" null="true" />
@@ -66,29 +51,27 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
         <field key="deletedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
         <field key="publishedon" dbtype="datetime" phptype="datetime" null="true" />
         <field key="publishedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
-       
         <aggregate alias="Resource" class="modResource" local="resource_id" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="Creator" class="modUser" local="createdby" foreign="id" cardinality="one" owner="foreign" />
         </object>
 </model>
-
 ```
 
  by clicking 'Save Schema' we should have our schema-file created. You can test it by clicking 'Load Schema'.
 
  [Read more about creating schemas](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema "Defining a Schema")
 
-###  Parse Schema 
+### Parse Schema
 
  Create xpdo-classes and maps from schema by clicking 'Parse Schema' on the tab 'Parse Schema'.
 
-###  Create Table(s) 
+### Create Table(s)
 
  Create tables from schema by clicking 'Create Tables' on the tab 'Create Tables'. This should create our table.
 
  At this time we have only one table in our schema defined.
 
-##  Create the Configuration 
+## Create the Configuration
 
  Now we want to create our configuration for the MIGXdb-TV.
 
@@ -100,23 +83,20 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  In the opening window we add:
 
- Name: mygallery - this is the name of our configuration. Make sure to use unique configuration-names. 
- "Add Item" Replacement: Add Image - this is the text on our 'Add Item' - Button 
+ Name: mygallery - this is the name of our configuration. Make sure to use unique configuration-names.
+ "Add Item" Replacement: Add Image - this is the text on our 'Add Item' - Button
  unique MIGX ID: mygallery - Its a good idea to have a unique MIGX - id for all your MIGX-configs.
 
  Click 'Done'
 
- We should see a new created record in our grid. 
+ We should see a new created record in our grid.
  We could edit this record and add grid-columns and tabs and other stuff by right-clicking and choose 'edit', but we want to go the quick way by just importing our example-configuration.
 
  Right-Click our record and choose 'Export/Import'
 
  Add this code into the one field 'Json' :
 
- |  |
-|---|
-
-``` php 
+``` json
 {
   "formtabs":[
     {
@@ -282,15 +262,13 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
   ],
   "category":""
 }
-
-
 ```
 
  Click 'done'.
 
  You can check what it has done by right-clicking the record and choosing 'edit' and go through the tabs and their nested grids.
 
-##  Create the MIGXdb - TV 
+## Create the MIGXdb - TV
 
  Create a new Template for our gallery-pages.
 
@@ -312,7 +290,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  click 'Save' to save the new created TV.
 
-##  Adding extended fields 
+## Adding extended fields
 
  We want to add a URL to each image. This is very easy, because we can use extended-fields to store additional fields in. We just need to create a new Input-field to our Form.
 
@@ -324,15 +302,15 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  on Fields click 'Add Item'.
 
- fieldname: extended.url 
- Caption: URL 
+ fieldname: extended.url
+ Caption: URL
  inputTVtype: url
 
  Click done -> done -> done to close all windows and save the additions.
 
  Now we have created a new tab in our gallery-management-window with a new field to add a URL to our image.
 
-##  Making some galleries. 
+## Making some galleries
 
  Create a container resource in the resource-tree, 'Galleries', using your gallery-template.
 
@@ -342,47 +320,45 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  The created records should be automatically connected to our resources by the db-field 'resource\_id' and we will see only the records connected to our resource in the grid.
 
-##  Adding a search-field to our grid 
+## Adding a search-field to our grid
 
- Go to Components->MIGX 
+ Go to Components->MIGX
  right-click on our mygallery-config, choose 'Edit'.
 
  Tab 'db-filters'
 
  Click 'Add Item'
 
- filter name: search 
- filter type: textbox 
+ filter name: search
+ filter type: textbox
  getlist where:
 
- ``` php 
+ ``` json
 {"title:LIKE":"%[[+search]]%","OR:description:LIKE":"%[[+search]]%"}
-
 ```
 
  Click 'done' -> 'done'.
 
  Now we have added a nice search-field to our grid for filtering grid-items.
 
-##  Listing the Images on Frontend 
+## Listing the Images on Frontend
 
  For listing your images on the Frontend you can use the included snippet 'migxLoopCollection'
 
  Some examples:
 
- ``` php 
+ ``` php
 [[!migxLoopCollection?
 &packageName=`mygallery`
 &classname=`myGallery`
 &sortConfig=`[{"sortby":"pos","sortdir":"ASC"}]`
 &where=`{"resource_id":"[[*id]]","published":"1"}`
 ]]
-
 ```
 
  creates a printed array of all published images which belong to the active resource.
 
- ``` php 
+ ``` php
 [[!migxLoopCollection?
   &packageName=`mygallery`
   &classname=`myGallery`
@@ -390,7 +366,6 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
   &where=`{"resource_id":"[[*id]]","published":"1"}`
   &tpl=`@CODE:<img src="[[+image]]" />`
 ]]
-
 ```
 
  lists all images in random order.

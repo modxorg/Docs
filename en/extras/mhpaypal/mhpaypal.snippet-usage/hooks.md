@@ -4,6 +4,8 @@ _old_id: "920"
 _old_uri: "revo/mhpaypal/mhpaypal.snippet-usage/mhpaypal.snippet-usage.hooks"
 ---
 
+# Hooks
+
 _This document provides information on the mhPayPal snippet hooks, its properties and some example usages. If looking for more information about the mhPayPal package in which the snippet is included, please visit_ [?mhPayPal](/extras/mhpaypal "mhPayPal") _instead. If you are looking for more information on the mhPayPal snippet itself, please visit ?__[mhPayPal.Snippet Usage](/extras/mhpaypal/mhpaypal.snippet-usage "mhPayPal.Snippet Usage")__._
 
 ## Introduction
@@ -11,16 +13,6 @@ _This document provides information on the mhPayPal snippet hooks, its propertie
 By means of the &preHooks, &postHooks and &postPaymentHooks, the mhPayPal snippet allows you to customize the flow and add functionality to the mhPayPal core, without having to wreck upgrade paths.
 
 A hook is either included in mhPayPal or is a snippet installed in your MODX set up.
-
-- [Introduction](#mhPayPal.SnippetUsage.Hooks-Introduction)
-- [Built-in Hooks](#mhPayPal.SnippetUsage.Hooks-BuiltinHooks)
-  - [email, email2](#mhPayPal.SnippetUsage.Hooks-email%2Cemail2)
-  - [Redirect](#mhPayPal.SnippetUsage.Hooks-Redirect)
-- [Developing Custom Hooks](#mhPayPal.SnippetUsage.Hooks-DevelopingCustomHooks)
-  - [Examples](#mhPayPal.SnippetUsage.Hooks-Examples)
-- [More Documentation](#mhPayPal.SnippetUsage.Hooks-MoreDocumentation)
-
-
 
 ## Built-in Hooks
 
@@ -55,7 +47,7 @@ The redirect hook can be used to redirect the user to a different page. You woul
 
 ## Developing Custom Hooks
 
-// Custom hooks may not yet be fully implemented, but will be in a future release.
+Custom hooks may not yet be fully implemented, but will be in a future release.
 
 Simply call a snippet in one of the hooks properties, and it will be executed.
 

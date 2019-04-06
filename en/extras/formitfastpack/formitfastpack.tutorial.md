@@ -86,7 +86,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 <!-- default -->
 ```
 
-###  4. OPTIONAL: customize the &tpl chunk
+### 4. OPTIONAL: customize the &tpl chunk
 
  Create a chunk called **fieldTypesTpl**, where we will template the HTML for all of the field types at once.
 

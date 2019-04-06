@@ -44,11 +44,11 @@ translation: "contribute/documentation/style-guide"
  | Licence                | License              |
  | Travelling             | Traveling            |
 
-##   Writing Rules 
+##  Writing Rules 
 
  These are som rules that make documents more clear, precise, and easy to understand.
 
-###  Keep it simple 
+### Keep it simple 
 
  Use short sentences and punctuation to keep ideas clear and simple. Introduce a single idea, concept or action per sentence.
 
@@ -60,7 +60,7 @@ translation: "contribute/documentation/style-guide"
 
  The manufacturing module allows users to define the process plans, work requirements and work efforts. This section describes how processes that produce intermediate and final goods function.
 
-###  Tenses 
+### Tenses 
 
  Always use the present tense. Avoid past or future tenses if possible.
 
@@ -76,7 +76,7 @@ translation: "contribute/documentation/style-guide"
 
  Press return to reboot the system.
 
-###  Aggressive Language 
+### Aggressive Language 
 
  Avoid using aggressive descriptions.
 
@@ -88,7 +88,7 @@ translation: "contribute/documentation/style-guide"
 
  Press return to reboot the system.
 
-###  Use the active voice 
+### Use the active voice 
 
  Write using the active voice where possible.
 
@@ -104,7 +104,7 @@ translation: "contribute/documentation/style-guide"
 
  If you are writing an error message, it is acceptable to use the passive voice to avoid blaming the user.
 
-###  Use third person 
+### Use third person 
 
  Where possible, use the third person imperative. For example:
 
@@ -136,7 +136,7 @@ translation: "contribute/documentation/style-guide"
 
  Do not use an apostrophe for plural abbreviations: **Wrong**: Use the Purchase Order window to create PO's **Right**: Use the Purchase Order window to create POs
 
-###  No personal opinions 
+### No personal opinions 
 
  A manual or any other technical document is not the right place to make statements about what you think about competitors, products or the features described.
 
@@ -156,7 +156,7 @@ translation: "contribute/documentation/style-guide"
 
  Avoid over-capitalization. It can be tempting to capitalize particular words in a sentence just because they seem important, but this looks untidy and makes it hard to maintain consistency in a long document. Only proper names, menu items and proprietary names require leading capitals.
 
-###  Avoid gender discrimination 
+### Avoid gender discrimination 
 
  Readers of software documentation are men and women. Unfortunately in English there no personal or possessive pronoun that denote gender neutrality. Avoid using expressions that refer to specific gender forms. Pay special attention to the _she_, _he_, _him_ or _her_ pronouns.
 
@@ -174,7 +174,7 @@ translation: "contribute/documentation/style-guide"
 
  Remember that in English, only people have a gender. Most other nouns are neutral.
 
-###  Only describe current functionality 
+### Only describe current functionality 
 
  Avoid talking about future features or plans for a product or an application.
 
@@ -217,7 +217,7 @@ translation: "contribute/documentation/style-guide"
 
  In English, only people have a gender. Things are always neutral and take the possessive pronoun "its" (without an apostrophe).
 
-##   Bold and Italics 
+##  Bold and Italics 
 
  Because we use different documentation sources, including Mediawiki, a limited number of formatting styles are used:
 
@@ -227,7 +227,7 @@ translation: "contribute/documentation/style-guide"
 
 - _Italic._ Use it when quoting a piece of a text from another source, a piece of text in another language or to give an example, such as sample text to be typed in a text field.
 
-##  File / Menu Paths
+## File / Menu Paths
 
  File paths (i.e. particular file locations) should follow the standard 
  "Directory/subdirectory/file.extension" format.
@@ -242,11 +242,11 @@ translation: "contribute/documentation/style-guide"
 
  Select **Document > New > Template** from the **File** menu.
 
-##  Naming images andshots
+## Naming images andshots
 
  When uploading images or screenshots, name must be related to page's title. If same page contains more than a image, you can additionaly give a number. For example, in Payment Method page, images will be named as _paymentmethod01_, _paymentmethod02_, etc.
 
-##  Platform
+## Platform
 
  MODX runs on many different platforms. When documenting a feature that varies by platform, note the platform before the example or exception. Readers can then skip sections, rather than reading a paragraph before finding it is not relevant, and having to search for the correct section.
 
@@ -266,17 +266,15 @@ translation: "contribute/documentation/style-guide"
 
  To start MODX POS run the batch file start.bat either by double clicking it or by typing start.bat from the command line.
 
-##  Other Conventions
+## Other Conventions
 
-127. When describing options always start from left to right and from top to bottom. 
-  - If you have a list of items (for example a list of files to be downloaded) order them alphabetically unless there is a more obvious logical order.
+When describing options always start from left to right and from top to bottom.
+
+- If you have a list of items (for example a list of files to be downloaded) order them alphabetically unless there is a more obvious logical order.
+- Try to be consistent with the way you describe similar processes. For example don't mix mouse navigation in with keystrokes in the same procedure unless it's really necessary. In general, pick your interaction style (menus, keystrokes etc) and stick with it throughout the document.
+- Do not use contractions (don't, you're, etc).
   
-  
-  - Try to be consistent with the way you describe similar processes. For example don't mix mouse navigation in with keystrokes in the same procedure unless it's really necessary. In general, pick your interaction style (menus, keystrokes etc) and stick with it throughout the document.
-  
-  
-  - Do not use contractions (don't, you're, etc).
-##  Writing for a global audience 
+## Writing for a global audience
 
  pen source software is global by definition. Keep in mind that people from all over the globe have access to it and its related documentation.
 
@@ -319,7 +317,7 @@ translation: "contribute/documentation/style-guide"
 
  Other HTML elements such as divs, spans, blockquotes, address and etc. should not be used. This makes maintaining the documentations more difficult and can potentially create issues with layouts. Classes and IDs should not be used in markup. Special classes used when formatting in HTML are created by the Special Format macros listed above.
 
-## Final checklist 
+## Final checklist
 
  Before considering a document or change complete, it is a good idea to perform the following quick checklist:
 

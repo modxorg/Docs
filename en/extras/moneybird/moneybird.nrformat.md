@@ -4,27 +4,27 @@ _old_id: "940"
 _old_uri: "revo/moneybird/moneybird.nrformat"
 ---
 
-## Usage
+# Usage
 
 Example for MoneyBird NrFormat:
 
-``` php 
+``` php
 [[+placeholder:MoneyBirdNrFormat]]
 ```
 
 You can also specify some options:
 
-``` php 
+``` php
 [[+placeholder:MoneyBirdNrFormat=`d=2&ds=,&ts=.`]]
 ```
 
 See the properties below for more options.
 
-### Options
+## Options
 
-d - Number of decimals 
-ds - The decimal separator 
-ts - Thousands separator 
+d - Number of decimals
+ds - The decimal separator
+ts - Thousands separator
 s - Symbol before the price, with a space
 
 ## See Also

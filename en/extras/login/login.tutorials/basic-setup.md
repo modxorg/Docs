@@ -143,7 +143,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  Remember to ensure the **Forgot Password (2)** and **Reset Password Handler (3)** pages are published.
 
-###  Members Home Page (4) 
+### Members Home Page (4) 
 
  This is the page that displays to users who have successfully logged in. This page must have restricted permissions, and the users who log in must have the corresponding permissions to access this page. You can put whatever "private" content you want on it, just make sure you update the permissions on it so that it belongs to the "Members Only" resource group – just click on the page's "Access Permissions" or "Resource Groups" tab (depending on your version of MODX):
 

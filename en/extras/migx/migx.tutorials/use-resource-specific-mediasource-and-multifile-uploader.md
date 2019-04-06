@@ -4,6 +4,8 @@ _old_id: "928"
 _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-mediasource-and-multifile-uploader"
 ---
 
+# Using resource-specific mediasource and multifile-uploader with MIGX
+
 - [Use resource-specific media source and multifile-uploader](extras/revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-Useresourcespecificmediasourceandmultifileuploader)
 - [Requirements](extras/revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-Requirements)
 - [Create the dynamic resource-specific media source](extras/revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-Createthedynamicresourcespecificmediasource)
@@ -11,54 +13,59 @@ _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-mediasource-and-m
 - [Create the Configuration for the MIGX-TV](extras/revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-CreatetheConfigurationfortheMIGXTV)
 - [Have Fun](extras/revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-HaveFun)
 
+## Use resource-specific media source and multifile-uploader
 
-
-## <a name="MIGX.Useresource-specificmediasourceandmultifile-uploader-Useresourcespecificmediasourceandmultifileuploader"></a>Use resource-specific media source and multifile-uploader
-
- In this Tutorial we will learn how we can have a dynamic media source, with its own auto-created file-folder for each resource. 
- For uploading multiple files at once, we will use MODX's multiupload - dialog. 
- All uploaded files will be auto-added as items to the MIGX - grid. 
+ In this Tutorial we will learn how we can have a dynamic media source, with its own auto-created file-folder for each resource.
+ For uploading multiple files at once, we will use MODX's multiupload - dialog.
+ All uploaded files will be auto-added as items to the MIGX - grid.
  Removing Items will remove the image-file.
 
-## <a name="MIGX.Useresource-specificmediasourceandmultifile-uploader-Requirements"></a>Requirements
+## Requirements
 
  First off we will need to install [MIGX](display/ADDON/MIGX "MIGX") by Package Management.
 
-## <a name="MIGX.Useresource-specificmediasourceandmultifile-uploader-Createthedynamicresourcespecificmediasource"></a>Create the dynamic resource-specific media source
+## Create the dynamic resource-specific media source
 
-1. Go to: Tools->Media Sources
-2. Create new media source 
+- Go to: Tools->Media Sources
+- Create new media source
   - name: ResourceMediaPath
   - source type: Filesystem
-3. Update this media source 
-  - basepath and baseurl: \[\[migxResourceMediaPath? &pathTpl=`assets/resourceimages/{id}/` &createFolder=`1`\]\]
+- Update this media source
+  - basepath and baseurl:
+  
+    ``` php
+    [[migxResourceMediaPath?
+      &pathTpl=`assets/resourceimages/{id}/`
+      &createFolder=`1`
+    ]]
+    ```
 
  You may also need to create a directory with write-permissions for php: assets/resourceimages/
 
-## <a name="MIGX.Useresource-specificmediasourceandmultifile-uploader-CreatetheMIGXTV"></a>Create the MIGX - TV
+## Create the MIGX - TV
 
  Create a new TV
 
-1. Tab: General Information 
+- Tab: General Information
   - name: resourcealbum
-2. Tab: Input Options 
+- Tab: Input Options
   - Input Type: migx
   - Configurations: resourcealbum
-3. Tab: Template Access 
+- Tab: Template Access
   - select your Template for your album-resources
-4. Tab: Media Sources 
+- Tab: Media Sources
   - select the ResourceMediaPath - media source for your context (web by default)
 
-## <a name="MIGX.Useresource-specificmediasourceandmultifile-uploader-CreatetheConfigurationfortheMIGXTV"></a>Create the Configuration for the MIGX-TV
+## Create the Configuration for the MIGX-TV
 
-1. Go to: Components->MIGX->Tab: MIGX
-2. Create a new Configuration with 'add item' 
+- Go to: Components->MIGX->Tab: MIGX
+- Create a new Configuration with 'add item'
   - name: resourcealbum
-3. Click 'Done' to save the new Configuration
-4. right-click on the new configuration and select 'import/export'
-5. copy/paste this code into the textarea:
+- Click 'Done' to save the new Configuration
+- right-click on the new configuration and select 'import/export'
+- copy/paste this code into the textarea:
 
-```
+``` json
 {
   "formtabs":[
     {
@@ -262,29 +269,27 @@ _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-mediasource-and-m
     }
   ]
 }
-
-
 ```
 
-## <a name="MIGX.Useresource-specificmediasourceandmultifile-uploader-HaveFun"></a>Have Fun
+## Have Fun
 
- Now you should be able to create Album-Resources, upload images with multifile-uploader and synchronize the MIGX-items with your files. 
+ Now you should be able to create Album-Resources, upload images with multifile-uploader and synchronize the MIGX-items with your files.
  For listing them on Front-end use the getImageList - snippet like that:
 
-```
-[[getImageList? 
-  &tvname=`resourcealbum` 
-  &tpl=`@CODE:<h3>[[+title]]</h3><img src="[[+image]]" />` 
+``` php
+[[getImageList?
+  &tvname=`resourcealbum`
+  &tpl=`@CODE:<h3>[[+title]]</h3><img src="[[+image]]" />`
   &where=`{"published":"1"}`
 ]]<br></br>
 ```
 
 or if you have more complicated tpl or you are using phpthumbof at the image with a tpl-chunk
 
-```
-[[getImageList? 
-  &tvname=`resourcealbum` 
-  &tpl=`imageTpl` 
+``` php
+[[getImageList?
+  &tvname=`resourcealbum`
+  &tpl=`imageTpl`
   &where=`{"published":"1"}`
 ]]<br></br>
 ```

@@ -4,11 +4,11 @@ _old_id: "917"
 _old_uri: "revo/login/login.tutorials/login.using-pre-and-post-hooks"
 ---
 
-##  Hooking it Up with Login 
+## Hooking it Up with Login 
 
  The [Register](/extras/login/login.register "Login.Register"), [UpdateProfile](/extras/login/login.updateprofile "Login.UpdateProfile") and [Login](/extras/login/login.login "Login.Login") snippets have properties named 'preHooks' and 'postHooks'. These properties allow you to attach custom functionality to both before and after each one of those Snippets executes its main actions.
 
-##  Using Custom Hooks 
+## Using Custom Hooks 
 
  Hooks are basically Snippets that run after the form is validated. Hooks can be chained; the first hook will execute, and if succeeds, will proceed onto the next hook. The snippet should return true on success and either false or an error message on failure. If the snippet returns false, hooks listed after the snippet in the respective hooks parameter will not execute. However, if the specified snippet is not found, the hooks following it in the list will still execute.
 
@@ -17,11 +17,11 @@ _old_uri: "revo/login/login.tutorials/login.using-pre-and-post-hooks"
 - Pre-Hooks in Login are fired before the action occurs, but after field validation. If a preHook fails, the snippet wont proceed with its normal action.
 - Post-Hooks in Login are fired after the action occurs. The User is already saved at this point. However, note that getUser() will not necessarily return the active user object!
 
-##  Coding Hooks 
+## Coding Hooks 
 
  To create a custom hook, create a Snippet and reference its name in the &preHooks or &postHooks property in the Register and/or UpdateProfile snippets.
 
-###  Accessing the fields in the hook 
+### Accessing the fields in the hook 
 
  The fields in the form are available in the snippet in the 'fields' via the Hooks API. Example:
 
@@ -38,7 +38,7 @@ $email = $formFields['email'];
 
  Post-Hooks have special fields in addition to the ones passed in the form that can be accessed for each Snippet:
 
-####  Register 
+#### Register 
 
  ``` php 
 // A reference to the modUser object
@@ -49,7 +49,7 @@ $profile = $hook->getValue('register.profile');
 $usergroups = $hook->getValue('register.usergroups');
 ```
 
-####  UpdateProfile 
+#### UpdateProfile 
 
  ``` php 
 // A reference to the modUser object
@@ -60,7 +60,7 @@ $profile = $hook->getValue('updateprofile.profile');
 $changed = $hook->getValue('updateprofile.usernameChanged');
 ```
 
-###  Accessing Snippet Properties 
+### Accessing Snippet Properties 
 
  You can access properties passed to Snippets like Register and Login, like this:
 
@@ -68,7 +68,7 @@ $changed = $hook->getValue('updateprofile.usernameChanged');
 $properties = $hook->login->controller->config;
 ```
 
-###  Custom preHook return values 
+### Custom preHook return values 
 
  Snippets should return true on success. On failure, the snippet can set error messages in the preHook object's errors variable and return false. In either case, hooks listed after the custom hook in the &preHooks parameter will not execute.
 
@@ -80,9 +80,9 @@ $hook->addError('user',$errorMsg);
 return false;
 ```
 
-##  Examples
+## Examples
 
-###  Register custom email postHook 
+### Register custom email postHook 
 
  Say we want to send a custom email to communitymanager@jerrys.com every time a user signs up.
 
@@ -115,7 +115,7 @@ return true;
 
  And we're done!
 
-##  See Also 
+## See Also 
 
 1. [Login.Login](/extras/login/login.login)
 2. [Login.Profile](/extras/login/login.profile)

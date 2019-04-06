@@ -4,7 +4,7 @@ _old_id: "1712"
 _old_uri: "revo/formitfastpack/fieldsetdefaults"
 ---
 
-##  Usage
+## Usage
 
  Call before any field snippets with any parameters used by field snippets. This will update the default values of the subsequent field snippets to those passed to fieldSetDefaults for the duration of the request.
 

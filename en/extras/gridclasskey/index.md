@@ -78,7 +78,7 @@ _old_uri: "revo/gridclasskey"
 3. Reload the grid after the combobox is selected
 4. Clear the filter when the "Clear" button is selected
 
-#####  1. Set Up the "Author" usergroup.
+##### 1. Set Up the "Author" usergroup.
 
  You can choose different name, this is an example.
 
@@ -96,7 +96,7 @@ _old_uri: "revo/gridclasskey"
 
  We need a snippet that will list the users from this particular user group, we use [@EVAL binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding) feature for this.
 
-#####  3. Create snippet to list the authors on Template Variable's values 
+##### 3. Create snippet to list the authors on Template Variable's values 
 
  On this example, let's name it "authorListTV".
 

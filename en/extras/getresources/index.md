@@ -4,20 +4,20 @@ _old_id: "654"
 _old_uri: "revo/getresources"
 ---
 
-##  What is getResources? 
+## What is getResources? 
 
  A general purpose Resource listing and summarization snippet.
 
-##  Requirements 
+## Requirements 
 
 - MODX Revolution 2.0.0-beta5 or later
 - PHP5 or later
 
-##  History 
+## History 
 
  getResources was first written by Jason Coward (opengeek) and released on June 30th, 2009.
 
-###  Download 
+### Download 
 
  It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/552>
 
@@ -25,7 +25,7 @@ _old_uri: "revo/getresources"
 
  Documentation and tutorials on Russian can be found here: <http://modx.by/docs/modx-add-ons/getresources/>
 
-##  Usage 
+## Usage 
 
  The getResources snippet can be called using the tag:
 
@@ -39,9 +39,9 @@ _old_uri: "revo/getresources"
 [[getResources? &debug=`1`]] [[getResources? &parents=`choose_an_id` &debug=`1`]]
 ```
 
-###  Available Properties 
+### Available Properties 
 
-####  Templating Properties 
+#### Templating Properties 
 
  | Name                                                                                                         | Description                                                                                                                                                                                           | Default Value                      | Added in version |
  | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ---------------- |
@@ -69,7 +69,7 @@ _old_uri: "revo/getresources"
  " 
 
 
-####  Selection Properties 
+#### Selection Properties 
 
  | Name | Description | Default Value | Added in version |
 | parents | Comma-delimited list of ids serving as parents. Use -1 to ignore parents when specifying _resources_to include. If this is not done, getResources assumes &parents as the current resource and reads its children from there (plus the resources given in &resources = unexpected results). | current Resource id |  |
@@ -185,7 +185,7 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 | where | A JSON-style expression of criteria to build any additional where clauses from. See below for an example. See [display/xPDO20/xPDOQuery.where](xpdo/class-reference/xpdoquery/xpdoquery.where) |  |
 | context | Comma-delimited list of context keys to limit results by; if empty, contexts for all specified parents will be used (all contexts if 0 is specified) |  |
 
-####  Other Properties 
+#### Other Properties 
 
  | Name            | Description                                                                                                                                                                      | Default Value | Added in version |
  | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------- |
@@ -207,7 +207,7 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
  | totalVar        | Define the key of a placeholder set by getResources indicating the total number of Resources that would be selected **not**considering the _limit_value.                         | total         |                  |
  | debug           | If true, will send the SQL query to the MODX log.                                                                                                                                | false         |                  |
 
-###  Available Placeholders 
+### Available Placeholders 
 
  The placeholders available to your getResources formatting Chunks are mostly dependent on the resources that you are iterating over.
 
@@ -221,7 +221,7 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
  | ------------ | ------------------------------------------------------------------------------------------ |
  | \[\[+idx\]\] | Increases with each iteration, starting with 1 (or the value set by the **&idx**parameter) |
 
-##  Examples 
+## Examples 
 
  Also see the [Examples](/extras/getresources/getresources.examples "getResources.Examples") sub section of this documentation for more detailed examples and tutorials.
 
@@ -295,7 +295,7 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 
 ```
 
-##  Displaying Template Variables with getResources 
+## Displaying Template Variables with getResources 
 
  To reduce retrieval time, getResources does not get TV values by default. If you want to display TVs, you should include the following parameters:
 
@@ -318,11 +318,11 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 
 ```
 
-##  Using getPage for Pagination 
+## Using getPage for Pagination 
 
  When combined with [getPage](/extras/getpage "getPage"), getResources allows you to do powerful and flexible pagination on your pages.
 
-###  Examples 
+### Examples 
 
  Grab first 10 Resources - sorted by publishedon - below the Resource ID 17, no more than 2 levels deep, with the tpl 'blogListPost', including the TVs and content:
 
@@ -338,13 +338,13 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 
 ```
 
-##  Troubleshooting 
+## Troubleshooting 
 
-###  Nothing Happens 
+### Nothing Happens 
 
  Before you go banging your head on a wall, have you checked to make sure that this extra is actually installed on your site?
 
-###  Array of Attributes is Dumped 
+### Array of Attributes is Dumped 
 
  **You forgot to include the `&tpl` parameter**. Without the **&tpl**parameter, the Snippet will retrieve the specified resources, but you didn't tell it how to format them. Be sure you include the **&tpl**parameter in your Snippet call, e.g.
 
@@ -361,15 +361,15 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 
  Even though you have correctly specified the **&tpl**parameter, you may have inadvertently forgotten the ampersand on one of your _other_parameters. E.g. **limit=`5`**will cause the Snippet call to fail and the attributes to be dumped. The correct format should be **&limit=`5`**
 
-###  The same resource is output multiple times _(1.2.2 and prior releases)_
+### The same resource is output multiple times _(1.2.2 and prior releases)_
 
  If you see the same resource listed multiple times, then try omitting the **&sortbyTV**parameter.
 
-###  The Content isn't There 
+### The Content isn't There 
 
  You are retrieving the correct resources and you are seeing _some_of the results formatting correctly, but your \[\[+content\]\] placeholders don't contain anything. What's going on? You must include the **&includeContent=`1`**argument to get the content.
 
-###  Caching problems using tpl, tpl\_N, tpl\_nN, tplFirst, tplLast or tplOdd 
+### Caching problems using tpl, tpl\_N, tpl\_nN, tplFirst, tplLast or tplOdd 
 
  If you are using this parameters you may have thought about reusing your tpl chunk to avoid repeating code. For example:
 
@@ -398,6 +398,6 @@ In some cases you need to (somewhat counterintuitively) specify the sort directi
 
  Seen at: <http://forums.modx.com/thread/43748/chunk-inside-getresources-template-not-processed-correctly>
 
-##  See Also 
+## See Also 
 
  If you only need to get a single field from a foreign resource, try using [getResourceField](/extras/getresourcefield "getResourceField").

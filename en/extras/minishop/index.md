@@ -4,8 +4,9 @@ _old_id: "677"
 _old_uri: "revo/minishop"
 ---
 
- This documentation originally referred to MiniShop 1. Support for MiniShop 1 was discontinued in 2013. 
+# miniShop2
 
+This documentation originally referred to MiniShop 1. Support for MiniShop 1 was discontinued in 2013.
 
 ## Description
 
@@ -22,8 +23,6 @@ _old_uri: "revo/minishop"
  It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <https://modx.com/extras/package/minishop2><http://modx.com/extras/package/minishop>
 
 It can also be installed from the [modstore.pro](https://modstore.pro/info/eng) repository.
-
-### 
 
 ### Development and Bug Reporting
 

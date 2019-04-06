@@ -4,11 +4,11 @@ _old_id: "766"
 _old_uri: "revo/advsearch/advsearch.advsearch"
 ---
 
-##  AdvSearch Snippet 
+## AdvSearch Snippet 
 
  This snippet displays search results based on the search criteria sent.
 
-##  Usage 
+## Usage 
 
  Simply place the snippet in the Resource you would like to display search results in.
 
@@ -16,9 +16,9 @@ _old_uri: "revo/advsearch/advsearch.advsearch"
 [[!AdvSearch]]
 ```
 
-##  Available Properties 
+## Available Properties 
 
-###  Design the query 
+### Design the query 
 
  To specify where to do the search and which results you want.
 
@@ -35,7 +35,7 @@ _old_uri: "revo/advsearch/advsearch.advsearch"
  | withFields     | A comma separated list of fields where to do the search.                                                                                     | pagetitle,longtitle,alias,description,introtext,content |
  | withTVs        | A comma separated list of TV names where to do the search. TV values are added as results.                                                   |                                                         |
 
-###  Organize the search results 
+### Organize the search results 
 
  To sort and limit the search results.
 
@@ -46,7 +46,7 @@ _old_uri: "revo/advsearch/advsearch.advsearch"
  | sortby       | Comma separated list of couple "field \[ASC\]" to sort by.                                                                                                                                                      | createdon DESC |
  | showExtract  | Show the search terms highlighted in one or several extracts. String as "n : comma separated list of fields". n : maximum number of extracts by result. The search term is searched in the concatenated fields. | 1:content      |
 
-###  Design the page results 
+### Design the page results 
 
  To style the look and feel of your page results.
 
@@ -69,7 +69,7 @@ _old_uri: "revo/advsearch/advsearch.advsearch"
  | placeholderPrefix | prefix of global placeholders.                                                                  | advsearch (since 2.0.0) |
  | toPlaceholder     | Whether to set the output to directly return, or set to a placeholder with this propertys name. |                         |
 
-###  Overall AdvSearch design 
+### Overall AdvSearch design 
 
  To design your own search
 
@@ -86,7 +86,7 @@ _old_uri: "revo/advsearch/advsearch.advsearch"
  | searchIndex | The name of the REQUEST parameter that the search will use.                                                               | search  |
  | urlScheme   | Indicates in what format the URL is generated. -1, 0, 1, full, abs, http, https                                           | -1      |
 
-###  Custom installation 
+### Custom installation 
 
  The parameters that could help you for a custom installation.
 
@@ -95,7 +95,7 @@ _old_uri: "revo/advsearch/advsearch.advsearch"
  | docindexPath | the path under assets/files/ where are located Lucene document indexes | docindex/  |
  | libraryPath  | The path under assets/ where are located the Zend library              | libraries/ |
 
-##  AdvSearch Chunks 
+## AdvSearch Chunks 
 
  There are several chunks that are processed in AdvSearch. Their corresponding AdvSearch parameters are:
 
@@ -113,7 +113,7 @@ _old_uri: "revo/advsearch/advsearch.advsearch"
 - [pageTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **PageLink** : The Chunk to use for a pagination link.
 - [currentPageTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **CurrentPageLink** : The Chunk to use for the current pagination link.
 
-##  Examples 
+## Examples 
 
  These examples assume you've already sent the search query with the [AdvSearchForm](/extras/advsearch/advsearch.advsearchform "AdvSearch.AdvSearchForm") snippet. 
 
@@ -135,7 +135,7 @@ _old_uri: "revo/advsearch/advsearch.advsearch"
 [[!AdvSearch? &withFields=`introtext` &withTVs=`mytv` &fields=`pagetitle,introtext` &showExtract=`2:introtext` &toPlaceholder=`results`]]
 ```
 
-##  See Also 
+## See Also 
 
 1. [AdvSearch.AdvSearch](/extras/advsearch/advsearch.advsearch)
   1. [AdvSearch.AdvSearch.containerTpl](/extras/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl)

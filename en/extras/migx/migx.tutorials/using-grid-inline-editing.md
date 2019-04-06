@@ -11,7 +11,7 @@ raw version for now - feel free, to make it a bit nicer!
 Create MIGX-TV with editable grid-cells:
 
  Create new MIGX-TV
- In input-options put into the field 
+ In input-options put into the field
  configurations: editablegridcells
 
  assign it to your Template
@@ -19,7 +19,7 @@ Create MIGX-TV with editable grid-cells:
  Go to the MIGX-CMP to the tab MIGX
  Create a new config with
 
- Tab 'Settings' 
+ Tab 'Settings'
  name: editablegridcells
  unique MIGX ID: editablegridcells
  check the checkbox 'add items directly'
@@ -54,7 +54,7 @@ Create MIGX-TV with editable grid-cells:
 
  name: checkbox\_fallback
  check the ckeckbox: 'use as fallback'
- value: 
+ value:
  image: assets/components/migx/style/images/cb\_empty.png
 
  at the Tab 'Handlers' check 'this.handleColumnSwitch'
@@ -77,7 +77,6 @@ Create MIGX-TV with editable grid-cells:
  input TV type: checkbox
  Input Option Values: active==1
  Default Value: 0
-
 
  Inline-Editing:
  Double-click on a Cell

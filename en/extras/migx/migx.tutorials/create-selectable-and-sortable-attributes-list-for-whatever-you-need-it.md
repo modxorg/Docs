@@ -4,35 +4,30 @@ _old_id: "1365"
 _old_uri: "revo/migx/migx.tutorials/migx.create-selectable-and-sortable-attributes-list-for-whatever-you-need-it"
 ---
 
-- [Create selectable and sortable Attributes List for whatever you need it](#MIGX.CreateselectableandsortableAttributesListforwhateveryouneedit-CreateselectableandsortableAttributesListforwhateveryouneedit)
-- [Requirements](#MIGX.CreateselectableandsortableAttributesListforwhateveryouneedit-Requirements)
-- [Create the Attributes Builder](#MIGX.CreateselectableandsortableAttributesListforwhateveryouneedit-CreatetheAttributesBuilder)
-- [Create the Attributes Selector - TV](#MIGX.CreateselectableandsortableAttributesListforwhateveryouneedit-CreatetheAttributesSelectorTV)
-- [Create some Attributes](#MIGX.CreateselectableandsortableAttributesListforwhateveryouneedit-CreatesomeAttributes)
-- [Select Attributes on Resources](#MIGX.CreateselectableandsortableAttributesListforwhateveryouneedit-SelectAttributesonResources)
-- [Get the selected attributes-list at frontend](#MIGX.CreateselectableandsortableAttributesListforwhateveryouneedit-Gettheselectedattributeslistatfrontend)
+# Creating Selectable and Sortable lists for MIGX
 
+## Create selectable and sortable Attributes List for whatever you need it
 
-
-##  Create selectable and sortable Attributes List for whatever you need it 
-
- Lets say we have Resources, which are Products and each product can have different attributes and each attribut should have a title and a nice icon 
- We want also have a place where we can add as many attributes as we like to our attributes-list and we want select from this attributes-list in our product-resources. 
+ Lets say we have Resources, which are Products and each product can have different attributes and each attribut should have a title and a nice icon
+ We want also have a place where we can add as many attributes as we like to our attributes-list and we want select from this attributes-list in our product-resources.
  Additional we want to be able to add some individual extra infos for each selected attribute and we want to have this list to be sortable by drag/drop.
 
  In this Tutorial we will learn how we can use MIGX to create an attributes-list-builder where we can select from on each resource.
 
-##  Requirements 
+## Requirements
 
- First off we will need to install [MIGX](/extras/migx "MIGX") by Package Management and do some [basic configurations](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration"). 
+ First off we will need to install [MIGX](/extras/migx "MIGX") by Package Management and do some [basic configurations](/extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
  Version required: 2.5.2 +
 
-##  Create the Attributes Builder 
+## Create the Attributes Builder
 
 1. Create a new TV
-  - name: migx\_attributes\_builder
+
+- name: migx\_attributes\_builder
   - Input Type: migx
-  - formtabs:``` php 
+  - formtabs:
+  
+``` json
       [{
               "caption":"Attribute",
               "fields":[
@@ -41,47 +36,52 @@ _old_uri: "revo/migx/migx.tutorials/migx.create-selectable-and-sortable-attribut
                       {"field":"icon", "caption":"Icon", "inputTVtype":"image"}
               ]
       }]
-      
-      ```
-  - grid columns:``` php 
+```
+
+    - grid columns:
+
+  ``` json
       [
               {"header": "Attribute", "width": "50", "sortable": "true", "dataIndex": "attribute"},
               {"header": "Title", "width": "50", "sortable": "true", "dataIndex": "title"},
               {"header": "Image", "width": "50", "sortable": "false", "dataIndex": "icon","renderer": "this.renderImage"}
       ]
-      
-      ```
-2. Create a new Template with this TV assigned to it
-3. Create a new Resource with this template
+  ```
+
+- Create a new Template with this TV assigned to it
+- Create a new Resource with this template
   - This Resource is used to Create all the Attributes for our TV
 
-##  Create the Attributes Selector - TV 
+## Create the Attributes Selector - TV
 
-1. Create a new chunk
+- Create a new chunk
   - name: getAttributeOptions
-  - content:```
-      [[getImageList?
-        &tvname=`migx_attributes_builder`
-        &docid=`90`
-        &toJsonPlaceholder=`json`
-      ]]
-      [[+json]]
-      
-      
-      ```
-  - Change the Docid to our resource created above.
-2. Create a new TV
+  - content:
+
+``` php
+[getImageList?
+  &tvname=`migx_attributes_builder`
+  &docid=`90`
+  &toJsonPlaceholder=`json`
+]]
+[[+json]]
+```
+
+- Change the Docid to our resource created above.
+  
+- Create a new TV
   - name: migx\_attributes
   - Input Type: migx
   - input option values: @CHUNK getAttributeOptions
   - configs: migx\_attributes
-3. Add this TV to template(s) where you want select from our attributes-list.
-4. Create a new MIGX Configuration (Components->MIGX->Tab: MIGX -> 'add item')
+- Add this TV to template(s) where you want select from our attributes-list.
+- Create a new MIGX Configuration (Components->MIGX->Tab: MIGX -> 'add item')
   - name: migx\_attributes
-5. Click 'Done' to save the new Configuration
-6. right-click on the new configuration and select 'import/export'
-7. copy/paste this code into the textarea:
-  ``` php 
+- Click 'Done' to save the new Configuration
+- right-click on the new configuration and select 'import/export'
+- copy/paste this code into the textarea:
+
+  ``` json
   {
     "formtabs":[
       {
@@ -221,22 +221,21 @@ _old_uri: "revo/migx/migx.tutorials/migx.create-selectable-and-sortable-attribut
       }
     ]
   }
-  
   ```
 
-##  Create some Attributes 
+## Create some Attributes
 
  Go to edit the Attributes-Builder-Resource and add some Attributes
 
-##  Select Attributes on Resources 
+## Select Attributes on Resources
 
  Now you should be able to select Attributes and sort them by drag/drop to a new position. You can also add additional infos, like a individual comment.
 
-##  Get the selected attributes-list at frontend 
+## Get the selected attributes-list at frontend
 
  Add this snippet-tag to your template/resource-content:
 
-``` php 
+``` php
 <ul>
 [[getImageList?
     &tvname=`migx_attributes`
@@ -249,5 +248,4 @@ _old_uri: "revo/migx/migx.tutorials/migx.create-selectable-and-sortable-attribut
       </li> `
 ]]
 </ul>
-
 ```

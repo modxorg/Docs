@@ -4,19 +4,19 @@ _old_id: "638"
 _old_uri: "revo/fastfield"
 ---
 
-##  What is fastField? 
+## What is fastField? 
 
  fastField is a plugin which adds new type of tag \[\[#...\]\] . It can be used to display a single field, including template variables and properties, of a different resource for MODx Revolution 2.2+. It also can display the value of superglobal PHP variables $\_POST, $\_GET and others.
 
-##  History 
+## History 
 
  fastField was first released on November 29th, 2012 by [argnist](http://modx.com/extras/author/argnist).
 
-##  Download 
+## Download 
 
  The plugin can be retrieved through the Package Manager, or downloaded manually from the [Repository](http://modx.com/extras/package/fastfield).
 
-##  Usage 
+## Usage 
 
  The structure of tag is as follows: \[\[#resource\_id.field\]\]
 
@@ -26,7 +26,7 @@ _old_uri: "revo/fastfield"
 
  In general, this plugin replaces [getResourceField](/display/ADDON/getResourceField) and [getReqParam](http://modx.com/extras/package/getreqparam) snippets.
 
-##  Examples 
+## Examples 
 
  Return the pagetitle from the resource with id 123:
 
@@ -75,6 +75,6 @@ _old_uri: "revo/fastfield"
  
 **CAUTION**: **It is dangerous to use raw global variables on the page. For example, use :stripTags output filter to prevent XSS-attacks (eg. \[\[!#get.name:stripTags\]\])!** 
 
-##  How it works 
+## How it works 
 
  MODX uses modParser class for parsing default tags. This plugin adds class fastFieldParser that extends modParser. So, if modParser is modified in new version of MODX, the behaviour of plugin will be unpredictable.

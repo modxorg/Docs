@@ -4,14 +4,7 @@ _old_id: "1786"
 _old_uri: "revo/messagemanager"
 ---
 
-- [What is MessageManager?](#MessageManager-WhatisMessageManager)
-- [Package Information](#MessageManager-Information)
-- [History](#MessageManager-History)
-- [Download](#MessageManager-Download)
-- [Development and Bug Reporting](#MessageManager-DevelopmentandBugReporting)
-- [Documentation](#MessageManager-Documentation)
- 
-## What is MessageManager?
+# What is MessageManager?
 
 MessageManager allows user to read, create, and reply to MODX Manager messages in the front-end of your site. Messages can be sent to individual users, user groups, or all users. You can let users opt out of the message system based on User Group Membership.
 
@@ -34,7 +27,7 @@ It is currently maintained by Bob Ray.
 
  MessageManager can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/messagemanager).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  MessageManager is stored and developed using GitHub, and can be found here: [MessageManager GitHub main page](https://github.com/BobRay/MessageManager).
 

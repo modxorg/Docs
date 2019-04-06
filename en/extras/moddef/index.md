@@ -4,35 +4,22 @@ _old_id: "679"
 _old_uri: "revo/moddef"
 ---
 
-- [What is ModDef?](#ModDef-WhatisModDef%3F)
-  - [Features](#ModDef-Features)
-  - [History](#ModDef-History)
-  - [Requirements](#ModDef-Requirements)
-  - [Development & Bug reporting](#ModDef-Development%26Bugreporting)
-- [Installation](#ModDef-Installation)
-  - [Troubleshooting](#ModDef-Troubleshooting)
-- [Usage](#ModDef-Usage)
-- [Examples](#ModDef-Examples)
-- [Roadmap](#ModDef-Roadmap)
-
-
-
-## What is ModDef?
+# What is ModDef?
 
 ModDef is a component for managing definitions of terms used on your site. These definitions will show up as tooltips.
 
-### Features
+## Features
 
 - definitions management
 - use the same definition in multiple languages
 
-### History
+## History
 
 Being developed since Mar 02, 2011 by [Jeroen Kenters](http://modx.com/extras/author/jeroenkenters).
 
-| Version | Release date | Contributors | Remarks / highlights |
-|---------|--------------|--------------|----------------------|
-| [0.1.0 alpha](http://modx.com/extras/package/moddef) | Mar 02, 2011 | Jeroen Kenters | Initial release. |
+| Version                                              | Release date | Contributors   | Remarks / highlights |
+| ---------------------------------------------------- | ------------ | -------------- | -------------------- |
+| [0.1.0 alpha](http://modx.com/extras/package/moddef) | Mar 02, 2011 | Jeroen Kenters | Initial release.     |
 
 ### Requirements
 
@@ -66,10 +53,10 @@ Let's say you want to explain to your visitors that CMS means Content Management
 1. Go to the manager
 2. Choose ModDef from the Components menu
 3. Click on the 'New definition' button
-4. Fill in the fields; 
-  1. Language: en (or whatever language code your site uses)
-  2. Text: CMS
-  3. Definition: Content Management System
+4. Fill in the fields;
+4.1. Language: en (or whatever language code your site uses)
+4.2. Text: CMS
+4.3. Definition: Content Management System
 5. Click on save
 
 From now on the word CMS will be a tooltip on all paragraphs on your site, explaining that CMS means Content Management System.

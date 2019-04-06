@@ -4,7 +4,7 @@ _old_id: ""
 _old_uri: ""
 ---
 
-##  Maintenance
+## Maintenance
 After MODX is installed, there maybe some needs to maintain your site.
 
 This could be one of the following:

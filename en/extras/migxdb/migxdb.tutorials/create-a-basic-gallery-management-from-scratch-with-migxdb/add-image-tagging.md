@@ -4,7 +4,9 @@ _old_id: "1805"
 _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management-from-scratch-with-migxdb/add-image-tagging"
 ---
 
-##  Extend the Schema
+# Add Image-Tagging to the Gallery
+
+## Extend the Schema
 
  Go to Extras->MIGX
 
@@ -14,7 +16,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  Add this object to the existing schema:
 
- ``` xml 
+ ``` xml
     <object class="mygalTag" table="migx_gallery_tags" extends="xPDOSimpleObject">
         <field key="tag" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
         <field key="alias" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
@@ -30,7 +32,6 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
         <aggregate alias="Tag" class="mygalTag" local="tag" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="Image" class="myGallery" local="image" foreign="id" cardinality="one" owner="foreign" />
     </object>
-
 ```
 
  Save the Schema
@@ -49,9 +50,8 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  into Input Option Values of this field put:
 
- ``` php 
+ ``` php
 @EVAL return $modx->runSnippet('migxLoopCollection',array('classname'=>'mygalTag','sortConfig'=>'[{"sortby":""tag}]','tpl'=>'@CODE:[[+tag]]==[[+id]]','outputSeparator'=>'||'));
-
 ```
 
  Create another field with the fieldname 'newtag'
@@ -62,9 +62,8 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  Add this to 'Hook Snippets'
 
- ``` plain 
+ ``` json
 {"aftersave":"mygallery_aftersave","aftergetfields":"mygallery_aftergetfields"}
-
 ```
 
  Save the Config
@@ -73,12 +72,12 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  mygallery\_aftersave:
 
- ``` php 
-$object = &$modx->getOption('object',$scriptProperties,null);
+ ``` php
+ $object = &$modx->getOption('object',$scriptProperties,null);
 if ($object){
     $newtags = explode(',',$object->get('newtag'));
     $tags = explode('||',$object->get('tags'));
-	$object_id = $object->get('id');
+    $object_id = $object->get('id');
     //add new tags
     foreach ($newtags as $newtag){
         if (!empty($newtag)){
@@ -87,50 +86,49 @@ if ($object){
                 $tag = $modx->newObject('mygalTag');
                 $tag->set('tag',$newtag);
                 $tag->save();
-                $tags[] = $tag->get('id');				
+                $tags[] = $tag->get('id');
             }
         }
     }
-	//get old imagetags
-	$oldtags = array();
-	$c = $modx->newQuery('mygalTagImage');
-	$c->where(array('image'=>$object_id));
-	if ($collection = $modx->getCollection('mygalTagImage',$c)){
-		foreach ($collection as $tagimage){
-			$oldtags[$tagimage->get('tag')] = $tagimage->get('tag');
-		}
-	}
-	//add new imagetags
-	foreach ($tags as $tag){
-		if (!empty($tag)){
-			unset($oldtags[$tag]);	
-			if ($tagimage = $modx->getObject('mygalTagImage',array('image'=>$object_id,'tag'=>$tag))){
-			} else {
-				$tagimage = $modx->newObject('mygalTagImage');
-				$tagimage->set('image',$object_id);
-				$tagimage->set('tag',$tag);
-				$tagimage->save();
-			}
-		}
-	}
-	//remove removed imagetags
-	foreach ($oldtags as $tag){
-	    if ($tagimage = $modx->getObject('mygalTagImage',array('image'=>$object_id,'tag'=>$tag))){
-		    $tagimage->remove();	    
-		}		
-	}
+    //get old imagetags
+    $oldtags = array();
+    $c = $modx->newQuery('mygalTagImage');
+    $c->where(array('image'=>$object_id));
+    if ($collection = $modx->getCollection('mygalTagImage',$c)){
+    foreach ($collection as $tagimage){
+            $oldtags[$tagimage->get('tag')] = $tagimage->get('tag');
+        }
+    }
+    //add new imagetags
+    foreach ($tags as $tag){
+        if (!empty($tag)){
+            unset($oldtags[$tag]):
+            if ($tagimage = $modx->getObject('mygalTagImage',array('image'=>$object_id,'tag'=>$tag))){
+            } else {
+                $tagimage = $modx->newObject('mygalTagImage');
+                $tagimage->set('image',$object_id);
+                $tagimage->set('tag',$tag);
+                $tagimage->save();
+            }
+        }
+    }
+    //remove removed imagetags
+    foreach ($oldtags as $tag){
+        if ($tagimage = $modx->getObject('mygalTagImage',array('image'=>$object_id,'tag'=>$tag))){
+            $tagimage->remove();
+        }
+    }
 }
-
 ```
 
  mygallery\_aftergetfields:
 
- ``` php 
+ ``` php
 $object = &$modx->getOption('object',$scriptProperties,null);
 if ($object){
     $newtags = explode(',',$object->get('newtag'));
     $tags = explode('||',$object->get('tags'));
-	$object_id = $object->get('id');
+    $object_id = $object->get('id');
     //add new tags
     foreach ($newtags as $newtag){
         if (!empty($newtag)){
@@ -139,47 +137,46 @@ if ($object){
                 $tag = $modx->newObject('mygalTag');
                 $tag->set('tag',$newtag);
                 $tag->save();
-                $tags[] = $tag->get('id');				
+                $tags[] = $tag->get('id');
             }
         }
     }
-	//get old imagetags
-	$oldtags = array();
-	$c = $modx->newQuery('mygalTagImage');
-	$c->where(array('image'=>$object_id));
-	if ($collection = $modx->getCollection('mygalTagImage',$c)){
-		foreach ($collection as $tagimage){
-			$oldtags[$tagimage->get('tag')] = $tagimage->get('tag');
-		}
-	}
-	//add new imagetags
-	foreach ($tags as $tag){
-		if (!empty($tag)){
-			unset($oldtags[$tag]);	
-			if ($tagimage = $modx->getObject('mygalTagImage',array('image'=>$object_id,'tag'=>$tag))){
-			} else {
-				$tagimage = $modx->newObject('mygalTagImage');
-				$tagimage->set('image',$object_id);
-				$tagimage->set('tag',$tag);
-				$tagimage->save();
-			}
-		}
-	}
-	//remove removed imagetags
-	foreach ($oldtags as $tag){
-	    if ($tagimage = $modx->getObject('mygalTagImage',array('image'=>$object_id,'tag'=>$tag))){
-		    $tagimage->remove();	    
-		}		
-	}
+    //get old imagetags
+    $oldtags = array();
+    $c = $modx->newQuery('mygalTagImage');
+    $c->where(array('image'=>$object_id));
+    if ($collection = $modx->getCollection('mygalTagImage',$c)){
+    foreach ($collection as $tagimage){
+    $oldtags[$tagimage->get('tag')] = $tagimage->get('tag');
+        }
+    }
+    //add new imagetags
+    foreach ($tags as $tag){
+        if (!empty($tag)){
+            unset($oldtags[$tag]);
+            if ($tagimage = $modx->getObject('mygalTagImage',array('image'=>$object_id,'tag'=>$tag))){
+            } else {
+                $tagimage = $modx->newObject('mygalTagImage');
+                $tagimage->set('image',$object_id);
+                $tagimage->set('tag',$tag);
+                $tagimage->save();
+            }
+        }
+    }
+    //remove removed imagetags
+    foreach ($oldtags as $tag){
+        if ($tagimage = $modx->getObject('mygalTagImage',array('image'=>$object_id,'tag'=>$tag))){
+            $tagimage->remove();
+        }
+    }
 }
-
 ```
 
 ## Get Tags and filter by tag for the Frontend
 
  Create a new snippet 'mygallery\_prepareTagWhere' with this code:
 
- ``` php 
+ ``` php
 $tag = isset($_GET['tag']) ? (int) $_GET['tag'] : 0;
 $resource_id = $modx->getOption('resource_id',$scriptProperties,$modx->resource->get('id'));
 $output='';
@@ -197,19 +194,17 @@ if (!empty($tag)){
     }
 }
 return $output;
-
 ```
 
  Create a chunk 'mygallery\_tag\_item' with this code:
 
- ``` php 
+ ``` php
 <a href="[[~[[*id]]? &tag=`[[+Tag_id]]`]]">[[+Tag_tag]]</a><br>
-
 ```
 
  put this snippet-tags into your template:
 
- ``` php 
+ ``` php
 [[!migxLoopCollection?
   &packageName=`mygallery`
   &classname=`mygalTagImage`
@@ -227,5 +222,4 @@ return $output;
   &where=`{"resource_id":"[[*id]]","published":"1"[[!mygallery_prepareTagWhere]]}`
   &tpl=`mygallery_item`
 ]]
-
 ```

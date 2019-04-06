@@ -35,11 +35,11 @@ _old_uri: "revo/wayfinder"
 
  In case you want to read _everything_ about Wayfinder, there's a 148 page ebook written by Kongondo to be found on the forum which covers all aspects about Wayfinder. [Read about it here](http://modxcms.com/forums/index.php/topic,34176.0.html).
 
-##  History 
+## History 
 
  _Wayfinder_ has been totally re-factored from the original DropMenu navigation builder to make it easier to create custom navigation by using [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks") as output templates. By using templates, many of the parameters are no longer needed for flexible output including tables, unordered- or ordered-lists (ULs or OLs), definition lists (DLs) or in any other format you desire.
 
-###  Version history 
+### Version history 
 
  | Version        | Released      | MODX version    | Notes                          |
  | -------------- | ------------- | --------------- | ------------------------------ |
@@ -54,14 +54,14 @@ _old_uri: "revo/wayfinder"
  | 2.3.2          | Sept 20, 2011 | 2.0+            |                                |
  | 2.3.3          | Oct 31, 2011  | 2.0+            | Current release for Revolution |
 
-##  Installation 
+## Installation 
 
-###  Downloads 
+### Downloads 
 
 - Download the [latest version of Wayfinder for Revolution](http://modx.com/extras/package/wayfinder) from the [MODX Extras Repository](http://www.modx.com/extras), or install via Package Management.
 - Download [version 2.0 for Evolution](http://www.muddydogpaws.com/development/wayfinder/download.html) from MuddyDogPaws.
 
-###  Evolution (and before) 
+### Evolution (and before) 
 
  MODX version 0.9.5-1.0 includes Wayfinder by default in the installer. To add Wayfinder to an older version of MODX or to upgrade to a newer version of Wayfinder in **Evolution**:
 
@@ -71,11 +71,11 @@ _old_uri: "revo/wayfinder"
 4. Create a new folder in your file system under /assets/snippets/ and call it wayfinder.
 5. Copy the file wayfinder.inc.php to the new folder.
 
-###  Revolution 
+### Revolution 
 
  In MODX Revolution, Wayfinder can be downloaded via [Package Management](administering-your-site/installing-a-package "Package Management"). Simply load Package Management, click "Download Extras", go to Navigation -> Wayfinder and download the latest version. Then right click in your Packages grid, and click Install. After it installs, you're finished and good to go.
 
-##  Getting started 
+## Getting started 
 
  The minimum Wayfinder snippet call:
 
@@ -89,9 +89,9 @@ _old_uri: "revo/wayfinder"
 
  See [Wayfinder Introductory Examples](/extras/wayfinder/wayfinder-introductory-examples "Wayfinder Introductory Examples") for some thorough examples comparing Wayfinder snippet calls to HTML output.
 
-##  Parameters 
+## Parameters 
 
-###  General Parameters 
+### General Parameters 
 
  | Parameter       | Description                                                                                                                                | Default       |
  | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
@@ -129,7 +129,7 @@ _old_uri: "revo/wayfinder"
 | &hereId | Define the current ID to use for the snippet. Use a value of \[\[\*id\]\] if the template specified by hereTpl and activeRowParentTpl is not applied correctly to the menu item. | iterated ID |
 | &hereTpl | The hereTpl template is used when the current item is displayed in the menu. |  |
 
-###  Template Parameters 
+### Template Parameters 
 
  These parameters specify the chunks that contain the templates that will drive the generation of Wayfinder's output.
 
@@ -290,7 +290,7 @@ Revolution: [[+wf._____]]
 
 ```
 
-###  CSS Class Name Parameters 
+### CSS Class Name Parameters 
 
  You can use CSS to control the appearance (and in some cases the behavior) of various portions of the generated output. But it's up to you to tell Wayfinder the CSS classnames you want to use, and which portions of the generated output you want them associated with.
 
@@ -318,7 +318,7 @@ Revolution: [[+wf._____]]
 
 ```
 
-###  Code-Embedding Parameters 
+### Code-Embedding Parameters 
 
  If the generated output of a Wayfinder call requires the presence of certain CSS or JavaScript, you can store the CSS in one chunk and the JavaScript in another, then use these parameters to have Wayfinder copy one or both chunks into the HEAD section of the webpage in which the Wayfinder call is made.
 
@@ -327,7 +327,7 @@ Revolution: [[+wf._____]]
  | &cssTpl   | Name of a chunk containing the CSS you would like added to the page when the Wayfinder call is present.        |
  | &jsTpl    | Name of a chunk containing the JavaScript you would like added to the page when the Wayfinder call is present. |
 
-###  Default values in Revolution 
+### Default values in Revolution 
 
  | Parameter | Default value |
  | --------- | ------------- |
@@ -347,13 +347,13 @@ Revolution: [[+wf._____]]
 		
 ``` |
 
-###  
+### 
 
-##  Examples 
+## Examples 
 
  See [Wayfinder Introductory Examples](/extras/wayfinder/wayfinder-introductory-examples "Wayfinder Introductory Examples") for some thorough examples comparing Wayfinder snippet calls to HTML output.
 
-###  The Minimum Wayfinder Call 
+### The Minimum Wayfinder Call 
 
  The snippet call:
 
@@ -365,7 +365,7 @@ Revolution: [[+wf._____]]
 
  will output the HTML for a multi-level, unordered list of the entire document tree (with certain exceptions), where each list item is a link to a corresponding document in the ModX document tree.
 
-###  Replacing DropMenu with Wayfinder 
+### Replacing DropMenu with Wayfinder 
 
  Some older templates may use the deprecated DropMenu snippet instead of WayFinder. The DropMenu snippet is not included in MODX 0.9.5 or above. 
  These templates can often be easily updated to use Wayfinder by replacing the call to DropMenu as follows:

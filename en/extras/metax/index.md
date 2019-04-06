@@ -4,21 +4,7 @@ _old_id: "672"
 _old_uri: "revo/metax"
 ---
 
-- [What is MetaX?](#MetaX-WhatisMetaX%3F)
-- [Requirements](#MetaX-Requirements)
-- [History](#MetaX-History)
-- [Download](#MetaX-Download)
-  - [MODX Revolution](#MetaX-MODXRevolution)
-  - [MODX Evolution](#MetaX-MODXEvolution)
-- [Usage](#MetaX-Usage)
-  - [MODX Revolution](#MetaX-MODXRevolution)
-      - [Properties](#MetaX-Properties)
-      - [Chunk Placeholders](#MetaX-ChunkPlaceholders)
-  - [The &css Property](#MetaX-The%26cssProperty)
-
-
-
-## What is MetaX?
+# What is MetaX?
 
  MetaX is a simple meta tag generation [snippet](developing-in-modx/basic-development/snippets) to automate and simplify meta tag creation. In addition to meta tags it can also be used to generate several other commonly used head tags such as the base tag, canonical, css, rss and more.
 
@@ -47,17 +33,16 @@ _old_uri: "revo/metax"
 
  MetaX can be called as follows with the XHTML4 template used by default:
 
- ``` php 
+ ``` php
 [[!MetaX]]
-
 ```
 
 #### Properties
 
- | Name | Description | Default |
-|------|-------------|---------|
-| tpl | The name of the chunk to use for the output. This property overrides the &html property. | metax-xhtml4 |
-| html | Selects from the default chunks. Options:
+ | Name | Description                                                                              | Default      |
+ | ---- | ---------------------------------------------------------------------------------------- | ------------ |
+ | tpl  | The name of the chunk to use for the output. This property overrides the &html property. | metax-xhtml4 |
+ | html | Selects from the default chunks. Options:                                                |
 
 - 0 - XHTML4
 - 1 - HTML4
@@ -71,18 +56,18 @@ _old_uri: "revo/metax"
 
 #### Chunk Placeholders
 
- | Name | Description |
-|------|-------------|
-| metax.robots | Outputs the appropriate robots command. |
-| metax.canonical | Outputs the canonical url for the page. |
-| metax.cache | Outputs the appropriate cache command. |
-| metax.createdby | Outputs the full name of the resource's creator. |
-| metax.editedby | Outputs the full name of the resource's last editor. |
-| metax.copyyears | Outputs the copyright years dynamically based on the current year. |
-| metax.favicon | Outputs the path to your favicon, after checking if the file exists. |
-| metax.mobile | Outputs the path to your mobile icon, after checking if the file exists. |
-| metax.css | Outputs the HTML needed for your CSS file(s), after checking if each one exists. |
-| metax.rss | Outputs the HTML needed for your RSS feed(s), after checking if each resource exists. |
+ | Name            | Description                                                                           |
+ | --------------- | ------------------------------------------------------------------------------------- |
+ | metax.robots    | Outputs the appropriate robots command.                                               |
+ | metax.canonical | Outputs the canonical url for the page.                                               |
+ | metax.cache     | Outputs the appropriate cache command.                                                |
+ | metax.createdby | Outputs the full name of the resource's creator.                                      |
+ | metax.editedby  | Outputs the full name of the resource's last editor.                                  |
+ | metax.copyyears | Outputs the copyright years dynamically based on the current year.                    |
+ | metax.favicon   | Outputs the path to your favicon, after checking if the file exists.                  |
+ | metax.mobile    | Outputs the path to your mobile icon, after checking if the file exists.              |
+ | metax.css       | Outputs the HTML needed for your CSS file(s), after checking if each one exists.      |
+ | metax.rss       | Outputs the HTML needed for your RSS feed(s), after checking if each resource exists. |
 
 ### The &css Property
 
@@ -90,9 +75,8 @@ _old_uri: "revo/metax"
 
  For example:
 
- ``` php 
+ ``` php
 [[!MetaX? &css=`file1.css,file2.css:lte IE 7,file3.css:lt IE 7`]]
-
 ```
 
  In the above example:
@@ -100,7 +84,9 @@ _old_uri: "revo/metax"
 - file1 will be first and will have no IE conditional statements.
 - file2 will be next and will have lte IE 7.
 - file3 will be last and will have lt IE 7.
-- This will output the following (note the actual output of the snippet is longer, this is only the part that the &css property controls): ``` php 
+- This will output the following (note the actual output of the snippet is longer, this is only the part that the &css property controls):
+
+``` html
   <link rel="stylesheet" href="file1.css" type="text/css" />
   <!--[if lte IE 7]>
   <link rel="stylesheet" href="file2.css" type="text/css" />
@@ -108,5 +94,4 @@ _old_uri: "revo/metax"
   <!--[if lt IE 7]>
   <link rel="stylesheet" href="file3.css" type="text/css" />
   <![endif]-->
-  	
   ```

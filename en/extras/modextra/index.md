@@ -4,7 +4,7 @@ _old_id: "680"
 _old_uri: "revo/modextra"
 ---
 
-## What is modExtra?
+# What is modExtra?
 
 modExtra is a base Extra template that is useful when wanting to create a new Extra for MODx Revolution. One can git archive from this repository to start with all the file structure for beginning MODx Extra development pre-setup.
 
@@ -16,13 +16,13 @@ modExtra is meant to be 'exported' from Git, not used directly, so that you can 
 
 First, clone this repository somewhere on your development machine:
 
-``` php 
+``` php
 git clone http://github.com/splittingred/modExtra.git ./
 ```
 
 In practice, the actual command usually takes a specific folder as an argument, e.g.
 
-``` php 
+``` php
 git clone http://github.com/splittingred/modExtra.git /path/to/my/downloads/modExtra
 ```
 
@@ -32,7 +32,7 @@ Next, create the target directory where you want to house your new repo. It's im
 
 Then, navigate to the directory modExtra is now in, and do this:
 
-``` php 
+``` php
 git archive HEAD | (cd /path/where/I/want/my/new/repo/ && tar -xvf -)
 ```
 
@@ -44,7 +44,7 @@ Then you can git init or whatever in that directory, and your files will be loca
 
 Now, you'll want to change references to modExtra in the files in your new copied-from-modExtra repo to whatever name of your new Extra will be. An immensely useful command to locate instances of a string is **grep**, e.g. cd into your newly created repo and run this (\*nix and Mac systems only):
 
-``` php 
+``` php
 grep -rl 'modExtra' .
 ```
 
@@ -89,7 +89,7 @@ For the record, instances of **modExtra** appear in the following files:
 
 Finally, you'll want to update several filenames that use the name "modextra" in them. Our friendly \*nix/Mac bash command for this would be executed in the repo directory:
 
-``` php 
+``` php
 find . -name *modextra*
 ```
 

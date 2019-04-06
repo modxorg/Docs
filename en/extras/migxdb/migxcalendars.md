@@ -4,7 +4,7 @@ _old_id: "1729"
 _old_uri: "revo/migxdb/migxcalendars"
 ---
 
-## What is MigxCalendars?
+# What is MigxCalendars?
 
 MigxCalendars is a Date-Management-Extra for Revolution. It is using Adam Shaw's [fullcalendar](http://arshaw.com/fullcalendar/) and migxAngular for viewing/editing any kind of events/dates.
 
@@ -17,7 +17,7 @@ Its currently not meant to be used in production, as it needs testers, ideas, co
 - MigX – min-version: 2.6.8 pl
 - PHP5 or later
 
-#### **Optional Requirements**
+### Optional Requirements
 
 MigxAngular (For front-page editing, if desired) – min-version: 1.0.0 beta3 <https://github.com/Bruno17/migxangular/tree/master/packages>
 

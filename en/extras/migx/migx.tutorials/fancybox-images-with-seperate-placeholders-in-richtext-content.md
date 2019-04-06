@@ -4,9 +4,9 @@ _old_id: "924"
 _old_uri: "revo/migx/migx.tutorials/migx.fancybox-images-with-seperate-placeholders-in-richtext-content"
 ---
 
-##  Howto add Fancybox-images with seperate placeholders into Richtext-Content 
+# Howto add Fancybox-images with seperate placeholders into Richtext-Content
 
-###  Requirements 
+## Requirements
 
  First off, you'll want to go ahead and download and install some Extras that we'll be using for this Setup. The following is a list of used Extras:
 
@@ -16,12 +16,11 @@ _old_uri: "revo/migx/migx.tutorials/migx.fancybox-images-with-seperate-placehold
 
  You'll also download [fancybox](http://fancybox.net/home) and upload the subfolder '/fancybox/' of this package to your modx-installation to /assets/fancybox/
 
-###  The Template 
+### The Template
 
  For this Tutorial we want to create a new Template. We name it 'fancybox'
 
-``` html 
-
+``` html
 <html>
     <head>
         <title>[[++site_name]] - [[*pagetitle]]</title>
@@ -34,14 +33,14 @@ _old_uri: "revo/migx/migx.tutorials/migx.fancybox-images-with-seperate-placehold
                 $("a.fancyimg").fancybox({
              'transitionIn' : 'elastic',
              'transitionOut' : 'elastic',
-             'speedIn' : 600, 
-                    'speedOut' : 200, 
+             'speedIn' : 600,
+                    'speedOut' : 200,
                     'overlayShow' : false
                 });
 
             });
         </script>
-        <link rel="stylesheet" href="[[++base_url]]assets/js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />        
+        <link rel="stylesheet" href="[[++base_url]]assets/js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
     </head>
     <body>
         <div>
@@ -54,7 +53,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.fancybox-images-with-seperate-placehold
 
 ```
 
-###  The Input-Tvs 
+### The Input-Tvs
 
  We need some Input-Tvs, which we want to use in our Backend-Forms later.
 
@@ -63,71 +62,68 @@ _old_uri: "revo/migx/migx.tutorials/migx.fancybox-images-with-seperate-placehold
 | imageTV       | image      |               | to choose our images by filemanager                                                      |
 | placeholderTV | hidden     | img           | this is the placeholder-prefix, needed for rendering the correct placeholder in the grid |
 
- Give these TVs no Template Access. We need them only as input-types for our Forms. 
+ Give these TVs no Template Access. We need them only as input-types for our Forms.
 
-###  The MIGX-Tv 
+### The MIGX-Tv
 
  Now we are ready to create our MIGX-TV. Create a new TV.
 
-####  General Information 
+#### General Information
 
-#####  Name 
+##### Name
 
  fancyboxTv
 
-####  Input Options 
+#### Input Options
 
-#####  Input-type 
+##### Input-type
 
  migx
 
-#####  Form Tabs 
+##### Form Tabs
 
-``` javascript 
+``` json
 [
 {"caption":"Image", "fields": [
     {"field":"placeholder","caption":"Placeholder","inputTV":"placeholderTV"},
-    {"field":"title","caption":"Title","description":"Title for the image."}, 
+    {"field":"title","caption":"Title","description":"Title for the image."},
     {"field":"image","caption":"Image","inputTV":"imageTV"}
 
 ]}
 ]
-
 ```
 
-#####  Grid Columns 
+##### Grid Columns
 
-``` javascript 
+``` json
 [
 {"header": "Placeholder", "width": "10", "sortable": "true", "dataIndex": "placeholder", "renderer": "this.renderPlaceholder"},
-{"header": "Title", "width": "160", "sortable": "true", "dataIndex": "title"}, 
+{"header": "Title", "width": "160", "sortable": "true", "dataIndex": "title"},
 {"header": "Image", "width": "50", "sortable": "false", "dataIndex": "image","renderer": "this.renderImage"}
 ]
-
 ```
 
-#####  Template Access 
+##### Template Access
 
  our fancybox - Template
 
-###  The Chunk 
+### The Chunk
 
- Our last step is to create the chunk for our fancybox-images.
+Our last step is to create the chunk for our fancybox-images.
 
-#####  Name 
+##### Name
 
- fancybox
+fancybox
 
-#####  Chunk Code 
+##### Chunk Code
 
-``` html 
+``` html
 <a href="[[+image]]" class="fancyimg">
 <img src="[[+image:phpthumbof=`w=100&h=75&zc=1`]]" alt=""/>
 </a>
-
 ```
 
-##  **Add Fancybox-images with seperate placeholders into Richtext-Content**
+## Add Fancybox-images with seperate placeholders into Richtext-Content
 
  Now we are ready to create a resource and upload/choose images and add them to our Richtext-Content-Field.
 

@@ -4,23 +4,17 @@ _old_id: "939"
 _old_uri: "revo/moneybird/moneybird.invoices"
 ---
 
-- [Usage](#MoneyBird.Invoices-Usage)
-- [Properties](#MoneyBird.Invoices-Properties)
-- [See Also](#MoneyBird.Invoices-SeeAlso)
-
-
-
-## Usage
+# Usage
 
 Example for MoneyBird Invoices:
 
-``` php 
+``` php
 [[!MoneyBirdInvoices]]
 ```
 
 You can also specify the templates:
 
-``` php 
+``` php
 [[!MoneyBirdInvoices? &tpl=`mbInvoice` &outerTpl=`mbInvoices`]]
 ```
 
