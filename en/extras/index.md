@@ -6,28 +6,93 @@ _old_uri: "index"
 
 In this section of the documentation you'll find information about extras for MODX Revolution. These extras (and their documentation) are made by third party developers, so are not officially supported.
 
-## Distributing your own Extras
+## Where to find Extras
 
-Go to <https://modx.com/extras/>, log in to your MODX account (or create one), then click on the button at the bottom to "Submit an Extra". There you can upload a MODX [Transport Package](http://rtfm.modx.com/display/revolution20/Transport+Packages "Transport Packages"). This is a special kind of zip file that ensures that your add-on and all of its components are installed correctly on the target system. To make one, you need to create a [Build Script](http://rtfm.modx.com/display/revolution20/Creating+a+3rd+Party+Component+Build+Script "Creating a 3rd Party Component Build Script"). See the related pages for more info.
+The official source of extras is **MODX.com**. You can [browse hundreds of (free) extras](https://modx.com/extras/) and every installation of MODX is already configured to [download and install extras from MODX.com through the package manager](building-sites/extras).
+
+There are also third-party sources and marketplaces available, which typically offer a combination of free and premium extras. These include:
+
+| Name | # of extras | Support |
+| ---- | ----------- | ------- |
+| [modstore.pro](https://en.modstore.pro/) ([Russian](https://modstore.pro/)) | 100+ (EN), 300+ (RU) | [Community forum](https://modx.pro), and private ticketing for premium extras |
+| [modmore.com](https://www.modmore.com/extras/) | 20+ | [Community forum](https://forum.modmore.com) and email support for premium extras | 
+| [extras.io](https://extras.io/extras/) | 5 | [Email support](https://extras.io/support/) for premium extras |
+
+To use third party extra providers, you'll usually need to create an account in order to access their [Package Provider](building-sites/extras/providers). You can find more information on how to do that in the documentation for each of the mentioned vendors.
 
 ## Commonly used Extras
 
-Below you'll find a table with some commonly used extras. Please note that this is not a conclusive list, and recommended extras may change over time.
+With almost 1000 extras available, it can be hard when getting started to determine which extras you should use. The extras in the following list are considered an excellent choice depending on your project requirements. 
 
-| Category                          | Revolution (2.x)                                                                                                                                                                                                                             | Evolution (1.x)                                                                                                         |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Navigation (menu, breadcrumbs)    | [Wayfinder]([[~734]] "Wayfinder"), [Breadcrumbs]([[~611]] "Breadcrumbs"), [QuickCrumbs]([[~695]] "QuickCrumbs"), [getResources]([[~654]] "getResources")                                                                                     | [Wayfinder]([[~764]] "Wayfinder"), [Breadcrumbs]([[~611]] "Breadcrumbs"), [Ditto]([[~629]] "Ditto")                     |
-| Multi-domain solutions (contexts) | [GatewayManager]([[~648]] "GatewayManager"), [ContextRouter]([[~622]] "ContextRouter")                                                                                                                                                       |                                                                                                                         |
-| Content listing                   | [getResources]([[~654]] "getResources"), [getPage]([[~651]] "getPage") (pagination), [getResourceField]([[~653]] "getResourceField"), [Rowboat]([[~702]] "Rowboat")                                                                          | [Ditto]([[~629]] "Ditto"), getField                                                                                     |
-| Galleries                         | [Gallery]([[~647]] "Gallery")                                                                                                                                                                                                                | [MaxiGallery]([[~670]] "MaxiGallery"), [EvoGallery]([[~637]] "EvoGallery"), [Easy 2 Gallery]([[~632]] "Easy 2 Gallery") |
-| Searching                         | [SimpleSearch]([[~711]] "SimpleSearch"), [getResources]([[~654]] "getResources"), [AdvSearch]([[~600]] "AdvSearch")                                                                                                                          | [AjaxSearch]([[~601]] "AjaxSearch")                                                                                     |
-| Form processing                   | [FormIt]([[~644]] "FormIt")                                                                                                                                                                                                                  | [eForm]([[~633]] "eForm")                                                                                               |
-| Multilingual solutions            | [Babel]([[~605]] "Babel")                                                                                                                                                                                                                    | [YAMS]([[~738]] "YAMS")                                                                                                 |
-| Blogging                          | [Articles]([[~604]] "Articles") (full solution), [Quip]([[~696]] "Quip") (comments), [Archivist]([[~603]] "Archivist") (archives), [tagLister]([[~729]] "tagLister")(tagging)                                                                | Jot (comments), Reflect (archives)                                                                                      |
-| User management                   | [Login]([[~668]] "Login"), [Peoples]([[~689]] "Peoples"), [Loginza]([[~669]] "Loginza"), [HybridAuth]([[~660]])                                                                                                                              | [WebLoginPE]([[~736]] "WebLoginPE")                                                                                     |
-| Revision history                  | [VersionX]([[~732]] "VersionX")                                                                                                                                                                                                              | ContentHistory                                                                                                          |
-| eCommerce                         | [VisionCart]([[~733]] "VisionCart"), [SimpleCart](http://en.oostdesign.nl/simplecart/), [miniShop]([[~677]] "miniShop"), [Shopkeeper]([[~709]] "Shopkeeper")                                                                                 | FoxyCart (not native)                                                                                                   |
-| Feeds                             | [getResources]([[~887]] "getResources.Building a RSS feed")(generation), [getFeed]([[~650]] "getFeed")(reading), [spieFeed]([[~719]] "spieFeed")                                                                                             | [Ditto]([[~629]] "Ditto")(generation), FeedX (reading)                                                                  |
-| Creating transport packages       | [PackMan]([[~687]] "PackMan"), [modExtra]([[~680]] "modExtra")(demo package), [Doodles](http://rtfm.modx.com/display/revolution20/Developing+an+Extra+in+MODX+Revolution "Developing an Extra in MODX Revolution") (tutorial + demo package) |                                                                                                                         |
-| Spam Prevention                   | [Rampart]([[~697]] "Rampart")                                                                                                                                                                                                                |                                                                                                                         |
-| Documents                         | [FileDownload R]([[~639]] "FileDownload R"), [Upload to Users CMP]([[~731]] "Upload to Users CMP")                                                                                                                                           |                                                                                                                         |
+This does not mean however that these are your only options. Browse the repository, read the forums, and share interesting extras that you find with the community.
+
+### Navigation and content
+
+- [pdoTools](https://docs.modx.pro/en/components/pdotools) is a collection of useful snippets that aims to be a modern (and mostly drop-in) replacement for older (but still supported) extras:
+    - [pdoResources](https://docs.modx.pro/en/components/pdotools/snippets/pdoresources) is the equivalent of [getResources](extras/getresources), which can be used to list resources. These can also be used for RSS feed or Sitemap generation.
+    - [pdoMenu](https://docs.modx.pro/en/components/pdotools/snippets/pdomenu) is the equivalent of [Wayfinder](extras/wayfinder), which is used for generating (multi-level) menus from your resource tree.
+    - [pdoPage](https://docs.modx.pro/en/components/pdotools/snippets/pdopage) is the equivalent of [getPage](extras/getpage), which wraps snippets like getResources/pdoResources with pagination capabilities
+    - [pdoCrumbs](https://docs.modx.pro/en/components/pdotools/snippets/pdocrumbs) can be used in a similar way to [Breadcrumbs](extras/breadcrumbs) to create a breadcrumbs trail of the current resource. 
+- [getResourceField](extras/getresourcefield), [pdoField](https://docs.modx.pro/en/components/pdotools/snippets/pdofield) or [fastField](extras/fastfield) retrieve a single resource field.
+- [AdvSearch](extras/advsearch) or [mSearch2](https://en.modstore.pro/packages/ecommerce/msearch2) (premium extra from modstore) adds a search function to your site
+- [Collections](extras/collections) is used for large quantities of resources, such as blogs or product listings, and will list child resources in a grid instead of the tree
+
+### Rich text/code editing
+
+- [TinyMCE RTE](https://modx.com/extras/package/tinymcerichtexteditor) is a rich text editor based on TinyMCE 4. (The package called simply [TinyMCE](https://modx.com/extras/package/tinymce) uses the older TinyMCE 3)
+- [TinymceWrapper](https://modx.com/extras/package/tinymcewrapper) is a TinyMCE implementation using the latest version from CDN.
+- [Redactor](https://www.modmore.com/redactor/) (premium extra by modmore) is a MODX integration of Redactor.
+- [CKEditor](https://modx.com/extras/package/ckeditor) integrates the CKEditor RTE into MODX.
+- [Ace](https://modx.com/extras/package/ace) enables code-editing on your elements in the manager.
+
+### Media
+
+- [Gallery](extras/gallery) can be used to add image albums to your site
+- [MoreGallery](https://www.modmore.com/moregallery/) (premium extra by modmore) for managing image and video (YouTube/Vimeo) galleries, implemented as a special resource type
+
+### Forms
+
+- [FormIt](extras/formit) is the standard in handling form submissions
+- Formalicious (premium extra available from [modmore](https://www.modmore.com/formalicious/) and [modstore](https://en.modstore.pro/packages/users/formalicious)) is a form builder based on FormIt
+
+### Multi-site, multi-lingual, multi-domain, contexts
+
+- [xRouting](extras/xrouting) is a flexible context router that supports (sub)domains and directories with minimal configuration
+- [LangRouter](extras/langrouter) is a context router that chooses the context based on the visitors' language
+- [Babel](extras/babel) is used to connect translations in different contexts
+
+### E-commerce
+
+- [MiniShop2](https://modstore.pro/packages/ecommerce/minishop2) is a powerful open source ecommerce solution, with many (paid and free) extensions predominantly available from modstore
+- [Commerce](https://www.modmore.com/commerce/) is a powerful premium ecommerce solution from modmore
+- [SimpleCart](https://www.modmore.com/simplecart/) is a simpler premium ecommerce solution, originally built by OostDesign, now available from modmore
+
+### Users
+
+- [Login](extras/login) is a suite of tools to help you integrate front-end user functionality, including login and profiles.
+- [HybridAuth](extras/hybridauth) can be used to let users login through social services
+- [Personalize](extras/personalize) can show different chunks depending on if a user is logged in or not
+
+### Blogging
+
+- [Collections](extras/collections) to list child resources in a grid in the manager (instead of in the resource tree)
+- [Quip](extras/quip) or [Tickets](https://docs.modx.pro/en/components/tickets) to add commenting functionality 
+- [Tagger](extras/tagger) to add tags you can filter and search posts by
+
+### Versioning & Workflow
+
+- [VersionX](extras/versionx) keeps a copy of changes to your resources and elements for an easy restore.
+- [Preview](https://extras.io/extras/preview/) and [Workflow](https://extras.io/extras/workflow/) (premium extras from Extras.io) provide previews and publishing workflows.
+- [MagicPreview](https://www.modmore.com/extras/magicpreview/) (free extra from modmore) gives you a preview button that allows you to see your resource changes, without the changes having to be saved.
+
+### Development tools
+
+- [modDevTools](https://modx.com/extras/package/moddevtools) adds additional functionality to the manager to help developers building sites.
+
+## Distributing your own Extras
+
+Go to <https://modx.com/extras/>, log in to your MODX account (or create one), then click on the button at the bottom to "Submit an Extra". 
+
+There you can upload a MODX [Transport Package](http://rtfm.modx.com/display/revolution20/Transport+Packages "Transport Packages"). This is a special kind of zip file that ensures that your add-on and all of its components are installed correctly on the target system. To make one, you need to create a [Build Script](http://rtfm.modx.com/display/revolution20/Creating+a+3rd+Party+Component+Build+Script "Creating a 3rd Party Component Build Script"). 
+
+All extras hosted on MODX.com go through a basic review; it may take a couple of days for your submission to be processed.
