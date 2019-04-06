@@ -3,7 +3,7 @@ title: "Проблемы с WAMPServer 2.0i"
 translation: "_legacy/getting-started/problems-with-wampserver-2.0i"
 ---
 
-## Как заставить WAMPServer 2.0i работать на MODx Revolution
+# Как заставить WAMPServer 2.0i работать на MODx Revolution
 
 У Мэри (einsteinsboi) есть отличный пост в блоге об использовании WAMPServer 2.0i с MODx Revolution и о некоторых проблемах, с которыми вы можете столкнуться.
 

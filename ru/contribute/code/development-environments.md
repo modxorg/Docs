@@ -4,16 +4,16 @@ translation: "contribute/code/development-environment"
 note: "This page is old. Really old. Needs to be rewritten to explain how to set up a git-based version of MODX properly for development."
 ---
 
-## Рекомендуемые средства разработки и среды для MODX Revolution
+# Рекомендуемые средства разработки и среды для MODX Revolution
 
 При разработке MODX команда нашла следующее программное обеспечение и среды бесценными:
 
-### Netbeans
+## Netbeans
 
 - Netbeans 6.8
 - Netbeans Git plugin
 
-### Eclipse
+## Eclipse
 
 - Eclipse 3.2.+ (рекоментдуется последняя 3.5.1)
 - Web Standard Tools Project (WST) 2.0.1 (<http://download.eclipse.org/webtools/updates/>)
@@ -21,7 +21,7 @@ note: "This page is old. Really old. Needs to be rewritten to explain how to set
 - PHPEclipse 1.2.3 (<http://update.phpeclipse.net/update/nightly>)
 - Spket IDE 1.6.18 (<http://spket.com/update/>)
 
-#### Установка Eclipse
+### Установка Eclipse
 
 - Просто установите последнюю версию Eclipse Classic
 - Запустить Eclipse / выбрать рабочее пространство
@@ -38,7 +38,7 @@ note: "This page is old. Really old. Needs to be rewritten to explain how to set
   - PHPEclipse - установить все, что предлагается
   - Spket - Установить все, что предлагается
 
-### Другие инструменты
+## Другие инструменты
 
 Для Mac:
 

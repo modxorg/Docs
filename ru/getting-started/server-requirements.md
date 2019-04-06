@@ -3,14 +3,13 @@ title: "Требования к серверу"
 translation: "getting-started/server-requirements"
 ---
 
-
-### Поддерживаемые операционные системы
+# Поддерживаемые операционные системы
 
 - Linux x86, x86-64
 - Mac OS X
 - Windows XP, Server
 
-### Поддерживаемые веб-серверы
+## Поддерживаемые веб-серверы
 
 - Apache 1.3.x - 2.4.x (использует htaccess для дружественных URL)
 - IIS 6.0+
@@ -18,7 +17,7 @@ translation: "getting-started/server-requirements"
 - Zeus
 - nginx ([Руководство по настройке дружественных URL](getting-started/friendly-urls/nginx "Nginx Server Config"))
 
-### Совместимость с PHP
+## Совместимость с PHP
 
 - PHP 5.3.3 и выше (до MODX 2.4: 5.1.2 и выше, исключая 5.1.6 и 5.2.0)
 - Требуемые расширения:
@@ -36,13 +35,15 @@ translation: "getting-started/server-requirements"
 - php-mbstring on (требуется для некоторых дополнений, таких как Gallery)
 - PHP memory\_limit 24MB или больше, в зависимости от вашего сервера
 
-**Параметры конфигурации PHP** 
-``` php 
+## Параметры конфигурации PHP
+
+``` php
 ./configure --with-apxs2=/usr/local/bin/apxs --with-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 ```
 
-**Параметры конфигурации NGINX PHP** 
-``` php 
+## Параметры конфигурации NGINX PHP
+
+``` php
 ./configure --with-mysql --with-pdo-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 ```
 

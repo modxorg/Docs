@@ -3,7 +3,7 @@ title: "MODX PHP Стандарты кодирования"
 translation: "contribute/code/coding-standards"
 ---
 
-## Общие требования
+# Общие требования
 
 - Открывающие фигурные скобки не разрывает строку. Они пишутся после одного проблема после скобки, согласно традициям Unix.
 - Не пишите никакой реальной бизнес-логики в конструкторах класса. Создайте специальные методы для этого.
@@ -13,20 +13,21 @@ translation: "contribute/code/coding-standards"
 - Избегайте использования глобальных переменных по возможности.
 - Документируйте ВСЁ.
 
-## Скобки
+# Скобки
 
 - Не ставьте скобки сразу после оператора. Разделяйте пробелами.
 - Ставьте скобки сразу после имени функции.
 - Не используйте скобки в выражениях с return когда это необходимо. Например:
-  ``` php 
+
+  ``` php
   if ($test) {
   }
   while ($test == $other) {
   }
   array_push($one,$two);
   return $test;
-
   ```
+
 - **Не используйте** скобки когда используете функции include, require, include\_once, и require\_once.
 
 ## Классы
@@ -35,7 +36,7 @@ translation: "contribute/code/coding-standards"
 - Все имена методов должны быть в camelCase и начинаться со строчной буквы.
 - Все private методы и переменные должны начинаться с символа подчеркивания "_".
 
-  ``` php 
+  ``` php
   class modFactor {
       public $publicVar;
       private $_privateVar;
@@ -54,7 +55,8 @@ translation: "contribute/code/coding-standards"
 ## Аргументы функций и свойства классов
 
 - Первая буква в нижнем регистре, остальные в camelCase. Пример:
-  ``` php 
+
+  ``` php
   class modFactor {
       public function testFunc($testVar, array &$anotherTest = array()) {
           $this->_privateVar = $testVar;
@@ -70,7 +72,8 @@ translation: "contribute/code/coding-standards"
 - Имена полей в индексах массива всегда заключено в одинарные кавычки.
   
 Пример:
-``` php 
+
+``` php
 $_lang['chunk_create_text'] = 'Test';
 ```
 
@@ -87,7 +90,7 @@ $_lang['chunk_create_text'] = 'Test';
 
 - Строки словарей для компонентов должны начинаться с префикса:
 
-``` php 
+``` php
 $_lang['mycomponent.welcome_message'] = 'Welcome!';
 ```
 

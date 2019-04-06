@@ -3,8 +3,9 @@ title: "Установка"
 translation: "getting-started/installation"
 ---
 
+# Замечание
 
-Эта страница предназначена только для ** новых установок **. Если вы хотите обновить, см.[Обновление MODx](getting-started/maintenance/upgrading "Upgrading MODx").
+Эта страница предназначена только для **новых установок**. Если вы хотите обновить, см.[Обновление MODx](getting-started/maintenance/upgrading "Upgrading MODx").
 
 Перед началом установки вы должны убедиться, что ваш сервер соответствует [Требованиям к серверу](getting-started/server-requirements "Server Requirements").
 

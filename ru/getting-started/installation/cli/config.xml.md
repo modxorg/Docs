@@ -3,11 +3,11 @@ title: "Создание Установочного Xml Файла"
 translation: "getting-started/installation/cli/config.xml"
 ---
 
-## Установочный Xml Файл
+# Установочный Xml Файл
 
 Файл config.xml, используемый для установки через командную строку (CLI), имеет следующие элементы XML:
 
-### Параметры конфигурации базы данных
+## Параметры конфигурации базы данных
 
 | Ключ                          | Описание                                                                                                                        | По умолчанию      |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
@@ -21,7 +21,7 @@ translation: "getting-started/installation/cli/config.xml"
 | database\_collation           | Сопоставление базы данных                                                                                                       | utf8\_general\_ci |
 | table\_prefix                 | Префикс таблицы, используемый для всех таблиц MODX                                                                              | modx\_            |
 
-### Параметры установки
+## Параметры установки
 
 | Key                      | Description                                                                                                                                                                                                               | Default           |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
@@ -33,7 +33,7 @@ translation: "getting-started/installation/cli/config.xml"
 | cmsadminemail            | Электронный адрес новой учетной записи администратора (для новых установок)                                                                                                                                               | email@address.com |
 | remove\_setup\_directory | Следует ли удалять каталог setup/ после установки.                                                                                                                                                                        | 1                 |
 
-### Конфигурация пути
+## Конфигурация пути
 
 | Key                       | Description | Default |
 | ------------------------- | ----------- | ------- |
@@ -48,7 +48,7 @@ translation: "getting-started/installation/cli/config.xml"
 | core\_path                |             |         |
 | processors\_path          |             |         |
 
-### Другие параметры конфигурации
+## Другие параметры конфигурации
 
 | Key             | Description                                                     | Default   |
 | --------------- | --------------------------------------------------------------- | --------- |
@@ -58,17 +58,17 @@ translation: "getting-started/installation/cli/config.xml"
 
 ## Так же
 
-1. [Базовая Установка](getting-started/installation/standard)
-  1. [MODx Revolution на Debian](_legacy/getting-started/modx-revolution-on-debian)
-  2. [Гид по Lighttpd](getting-started/friendly-urls/lighttpd)
-  3. [Проблемы с WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
-  4. [Установка на сервере с запущеным ModSecurity](getting-started/installation/troubleshooting/modsecurity)
-  5. [MODX и Suhosin](_legacy/getting-started/modx-and-suhosin)
-  6. [Настройка Сервера Nginx](getting-started/friendly-urls/nginx)
-2. [Расширенная Установка](getting-started/installation/advanced)
-3. [Установка через Git](getting-started/installation/git)
-4. [Установка При Помощи Командной Строки](getting-started/installation/cli)
-  1. [Создание Установочного Xml Файла](getting-started/installation/cli/config.xml)
-5. [Устранение неполадок при установке](getting-started/installation/troubleshooting)
-6. [Успешная Установка, Что Дальше?](getting-started/getting-started)
-7. [Использование MODX Revolution от SVN](_legacy/getting-started/using-modx-revolution-from-svn)
+- [Базовая Установка](getting-started/installation/standard)
+  - [MODx Revolution на Debian](_legacy/getting-started/modx-revolution-on-debian)
+  - [Гид по Lighttpd](getting-started/friendly-urls/lighttpd)
+  - [Проблемы с WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
+  - [Установка на сервере с запущеным ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+  - [MODX и Suhosin](_legacy/getting-started/modx-and-suhosin)
+  - [Настройка Сервера Nginx](getting-started/friendly-urls/nginx)
+- [Расширенная Установка](getting-started/installation/advanced)
+- [Установка через Git](getting-started/installation/git)
+- [Установка При Помощи Командной Строки](getting-started/installation/cli)
+  - [Создание Установочного Xml Файла](getting-started/installation/cli/config.xml)
+- [Устранение неполадок при установке](getting-started/installation/troubleshooting)
+- [Успешная Установка, Что Дальше?](getting-started/getting-started)
+- [Использование MODX Revolution от SVN](_legacy/getting-started/using-modx-revolution-from-svn)

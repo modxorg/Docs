@@ -1,19 +1,19 @@
 ---
-title: "Contributing to xPDO"
+title: "Разработка c xPDO"
 translation: "contribute/code/xpdo"
 ---
 
-## Разработка xPDO и интеграция с MODX Revolution
+# Разработка xPDO и интеграция с MODX Revolution
 
 xPDO — это объектно-ориентированный фреймворк, на базе которого построена MODX Revolution. Он хранится в отдельном от MODX Revolution репозитории и внесение изменений в из xPDO в ядро MODX Revolution требует дополнительных действий.
 
 xPDO разработчики должны следовать такой же модели процесса и стратегии ветвления, как MODX разработчики. Смотрите [Руководство участника сообщества](/display/community/MODx+GitHub+Contributor%27s+Guide "Руководство участника сообщества") там описаны подробности стратегии ветвления для улучшений, релизов, быстрых правок и другие аспекты. Это руководство фокусируется на дополнительных шагах, необходимых для включения ваших правок в xPDO в MODX для тестирования перед тем, как послать pull request в репозиторий xPDO.
 
-### Копирование и клонирование полного репозитория xPDO
+## Копирование и клонирование полного репозитория xPDO
 
 Как и с MODX, разработчики должны работать напрямую со своим личным форком на GitHub. Здесь предлагается способ, как подготовить ваш локальный репозиторий для разработки полной версии проекта xPDO:
 
-``` php 
+``` php
 [repos]$ git clone git@github.com:YourGitUsername/xpdo.git
 [repos]$ cd xpdo
 [xpdo]$ git remote add upstream -f http://github.com/modxcms/xpdo.git
@@ -23,7 +23,7 @@ xPDO разработчики должны следовать такой же м
 
 Пора идти вперед и создавать локальные ветки для постоянных веток из вашего форка, который  `origin`:
 
-``` php 
+``` php
 [xpdo]$ git checkout -b master origin/master
 Switched to a new branch "master"
 [xpdo]$ git checkout -b develop origin/develop
@@ -32,7 +32,7 @@ Switched to a new branch "develop"
 
 Чтобы держать свои локальные ветки свежими относительно `develop` and `master`, обновляйтесь с репозитория `upstream`:
 
-``` php 
+``` php
 [xpdo]$ git fetch upstream
 [xpdo]$ git checkout develop
 Switched to branch "develop"
@@ -59,7 +59,7 @@ xPDO хранится в двух GitHub репозиториях. Полная 
 
 Итак, следующий шаг — скопировать и склонировать этот репозиторий как есть:
 
-``` php 
+``` php
 [repos]$ git clone git@github.com:YourGitUsername/xpdo-core.git
 [repos]$ cd xpdo-core
 [xpdo-core]$ git remote add upstream -f http://github.com/modxcms/xpdo-core.git
@@ -71,13 +71,13 @@ xPDO хранится в двух GitHub репозиториях. Полная 
 
 Чтобы обновить xpdo-core репозиторий, мы сначала должны добавить и обновить remote для вашего форка полной версии xpdo:
 
-``` php 
+``` php
 [xpdo-core]$ git remote add -f xpdo git@github.com:YourGitUsername/xpdo.git
 ```
 
 После добавления вы можете извлекать ваши коммиты с изменениями в вашем форке xpdo и с легкостью их сливать. Сначала убедитесь, что ваши ветки xpdo-core обновлены из `upstream`, например если пушится ветка с названием `xpdo/feature-1234` в ветку `upstream/develop`:
 
-``` php 
+``` php
 [xpdo-core]$ git fetch upstream
 [xpdo-core]$ git checkout develop
 Switched to branch "develop"
@@ -95,7 +95,7 @@ Switched to branch "develop"
 
 Теперь, чтобы протестировать ваши изменения в MODX Revolution вам нужно добавить как remote в ваш форк с MODX ваш форк репозитория xpdo-core и обновить его. Как только вы сделаете это, вы можете создать ветку для слияния и протестировать вашу ветку с фичей из xpdo-core. Затем измените папку к вашему форку с MODX Revolution и обновите его.
 
-``` php 
+``` php
 [revolution]$ git checkout develop
 Switched to branch "develop"
 [revolution]$ git fetch upstream
@@ -108,7 +108,7 @@ Switched to branch "develop"
 
 Если все работает, покажите вашу ветку с изменениями в xpdo-core миру вот так:
 
-``` php 
+``` php
 [revolution]$ git push origin xpdo-feature-1234
 ```
 

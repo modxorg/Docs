@@ -3,6 +3,8 @@ title: "Другие учетные записи, которые вам могу
 translation: "_legacy/community/other-accounts-you-may-need"
 ---
 
+# Другие учетные записи, которые вам могут понадобиться
+
 В дополнение к вашей учетной записи MODX:
 
 ## GitHub
