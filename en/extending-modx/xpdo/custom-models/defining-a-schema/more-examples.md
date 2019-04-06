@@ -12,8 +12,8 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
 
  Remember that xPDO _abstracts_ the database, so it's entirely possible that your model is something other than a traditional database, but for the sake of familiarity and clarity, the examples here assume you are using a MySQL database for your model. In general, it's recommended that you design your snippets/plugins etc. using a traditional database before abstracting it using xPDO.
 
- **FYI** 
- Once you've created a valid XML schema file, xPDO can generate PHP class files _and_ database tables; it is bi-directional. The purpose of this page is to juxtapose the xPDO XML schema to MySQL database tables. Some developers may prefer to write the XML schema file by hand and then let xPDO generate the tables and the class files. Other developers may prefer to first create the database tables, then [reverse engineer](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table") the XML schema and the class files. 
+ **FYI**
+ Once you've created a valid XML schema file, xPDO can generate PHP class files _and_ database tables; it is bi-directional. The purpose of this page is to juxtapose the xPDO XML schema to MySQL database tables. Some developers may prefer to write the XML schema file by hand and then let xPDO generate the tables and the class files. Other developers may prefer to first create the database tables, then [reverse engineer](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table") the XML schema and the class files.
 
 ## One to One
 
@@ -30,14 +30,14 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
 
  For this example, we are mimicking the MODx tables where we have one table for **users** and a secondary table that stores additional information about those users, named **userdata**.
 
- **FYI** 
- Unlike some ORMs (e.g. Doctrine) and even unlike MySQL's foreign-key definitions, xPDO defines a relationship on _both_ sides. You tell the children who their parents are and you also tell the parents who their children are. E.g. the parent object contains a composite relationship and the child object contains an aggregate relationship. This ensures that everybody knows who they're related to. 
+ **FYI**
+ Unlike some ORMs (e.g. Doctrine) and even unlike MySQL's foreign-key definitions, xPDO defines a relationship on _both_ sides. You tell the children who their parents are and you also tell the parents who their children are. E.g. the parent object contains a composite relationship and the child object contains an aggregate relationship. This ensures that everybody knows who they're related to.
 
 ### MySQL Table Definitions
 
  Here are abbreviated MySQL table definitions:
 
- ``` sql 
+ ``` sql
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE `userdata` (
 
  This MySQL query will show _all_ data for users (including info from the primary user table, and also from the secondary userdata table):
 
- ``` sql 
+ ``` sql
 SELECT users.*, userdata.*
 FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 ```
@@ -63,7 +63,7 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 
  And here's the corresponding XML definitions:
 
- ``` xml 
+ ``` xml
 <object class="Users" table="users" extends="xPDOObject">
         <field key="user_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="username" dbtype="varchar" precision="255" phptype="string" null="true" />
@@ -88,7 +88,7 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 
  If you were to access this data in a Snippet, you might do something like the following. This assumes that your package name is **one\_to\_one**
 
- ``` php 
+ ``` php
 <?php
         $base_path = MODX_CORE_PATH . 'components/one_to_one/';
         $modx->addPackage('one_to_one',$base_path.'model/','');
@@ -109,7 +109,7 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 
 ### MySQL Table Definitions
 
- ``` sql 
+ ``` sql
 CREATE TABLE `blogposts` (
   `blogpost_id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text,
@@ -125,7 +125,7 @@ CREATE TABLE `comments` (
 
 ### XML Schema
 
- ``` xml 
+ ``` xml
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
@@ -149,7 +149,7 @@ CREATE TABLE `comments` (
 
  Here is some sample Snippet code. It assumes your package name is **one\_to\_many**:
 
- ``` php 
+ ``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/one_to_many/';
 $modx->addPackage('one_to_many',$base_path.'model/','');
@@ -172,7 +172,7 @@ return $output;
 
 ### MySQL Table Definitions
 
- ``` sql 
+ ``` sql
 CREATE TABLE `blogposts` (
   `blogpost_id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text,
@@ -196,7 +196,7 @@ CREATE TABLE `blogposts_tags` (
 
  Note the the following schema still contains the composite relationship for the Comments table.
 
- ``` xml 
+ ``` xml
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
@@ -229,7 +229,7 @@ CREATE TABLE `blogposts_tags` (
 
  The following example assumes that the package is named **many\_to\_many**. Note that the logic displayed here traces the relationships precisely. In this example, we load up a blogpost, then trace it through the joining table to its tags. Arguably, this isn't any easier than writing a JOIN statement in MySQL.
 
- ``` php 
+ ``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/many_to_many/';
 $modx->addPackage('many_to_many',$base_path.'model/','');
@@ -252,7 +252,7 @@ return $output;
 
 ### MySQL Table Definitions
 
- ``` sql 
+ ``` sql
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) DEFAULT NULL,
@@ -266,7 +266,7 @@ CREATE TABLE `categories` (
 
  In order to define this relationship in xPDO XML, we must add 2 aggregate relationships to the object:
 
- ``` xml 
+ ``` xml
 <object class="Categories" table="categories" extends="xPDOObject">
         <field key="category_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="parent_id" dbtype="int" precision="11" phptype="integer" null="true" />
@@ -284,7 +284,7 @@ CREATE TABLE `categories` (
 
  In this example, our package is named **parent\_child\_example**. Notice that the **getMany** method relies on the alias defined for that relationship.
 
- ``` php 
+ ``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/parent_child_example/';
 $modx->addPackage('parent_child_example',$base_path.'model/','');
@@ -307,7 +307,7 @@ return $output;
 
  The field alias definition is simply defined using the `alias` element.
 
- ``` xml 
+ ``` xml
 <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
   <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
   <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -332,7 +332,7 @@ return $output;
 
  The alias _postalcode_ is now accessible as a field of an sfStore object in xPDO. It is simply a reference to the value of the _zip_ field.
 
- ``` php 
+ ``` php
 <?php
 $modx->addPackage('storefinder', MODX_CORE_PATH . 'components/storefinder/model/');
 $output = '';

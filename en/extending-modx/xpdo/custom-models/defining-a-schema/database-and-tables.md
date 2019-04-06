@@ -14,15 +14,15 @@ If you note, we added in the 'mysql' postfix to the filename, since xPDO will ev
 
 Our current XML file looks like this:
 
-``` xml 
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
-<model package="storefinder" 
-   baseClass="xPDOObject" 
-   platform="mysql" 
-   defaultEngine="MyISAM" 
-   tablePrefix="sf_" 
-   phpdoc-package="storefinder" 
-   phpdoc-subpackage="model" 
+<model package="storefinder"
+   baseClass="xPDOObject"
+   platform="mysql"
+   defaultEngine="MyISAM"
+   tablePrefix="sf_"
+   phpdoc-package="storefinder"
+   phpdoc-subpackage="model"
    version="1.1">
 ```
 
@@ -44,7 +44,7 @@ There are different schema versions. Between version 1.0 and 1.1, the biggest di
 
 Great! Now we've got our model definition. Let's add a table tag as the next line.
 
-``` xml 
+``` xml
 <object class="sfStore" table="stores" extends="xPDOSimpleObject">
 ```
 
@@ -58,7 +58,7 @@ You'll see here that this table extends "xPDOSimpleObject", rather than xPDOObje
 
 Now that we've got a table definition for our stores table, let's add some field definitions to it:
 
-``` xml 
+``` xml
 <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
 <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 <field key="city" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -83,7 +83,7 @@ As you can see here, each column in our table has a field definition tag. From t
 
 Next, we'll define the indexes (conform schema version 1.1) that we want our table to have:
 
-``` xml 
+``` xml
 <index alias="name" name="name" primary="false" unique="false" type="BTREE">
     <column key="name" length="" collation="A" null="false" />
 </index>
@@ -92,25 +92,25 @@ Next, we'll define the indexes (conform schema version 1.1) that we want our tab
 </index>
 ```
 
-**The alias element** 
+### The alias element
 
  New in xPDO 2.2 is the ability to define field aliases. This can be useful when changing table structures to maintain backwards compatibility, or for defining useful aliases for the object API without having to modify table structure. The syntax is simple with two attributes, key (the alias) and field (the target field definition).
 
 Now let's define an alias for the zip column called postalcode so the value can be accessed by either key:
 
-``` xml 
+``` xml
 <alias key="postalcode" field="zip" />
 ```
 
 And finally, we'll finish the table definition by closing the object tag:
 
-``` xml 
+``` xml
 </object>
 ```
 
 Now let's add an "sfOwner" class, which will represent any owners we have:
 
-``` xml 
+``` xml
 <object class="sfOwner" table="owners" extends="xPDOSimpleObject">
   <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
   <field key="email" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -123,7 +123,7 @@ Now let's add an "sfOwner" class, which will represent any owners we have:
 
 And since we want our stores to possibly have multiple owners, let's add a sfStoreOwner class, that will bridge the many-to-many relationship:
 
-``` xml 
+``` xml
 <object class="sfStoreOwner" table="store_owners" extends="xPDOSimpleObject">
   <field key="store" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
   <field key="owner" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
@@ -139,7 +139,7 @@ And since we want our stores to possibly have multiple owners, let's add a sfSto
 
 Let's close the model definition:
 
-``` xml 
+``` xml
 </model>
 ```
 

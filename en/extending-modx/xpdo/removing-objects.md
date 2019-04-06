@@ -8,7 +8,7 @@ _old_uri: "2.x/getting-started/using-your-xpdo-model/removing-objects"
 
 When you 'remove' an Object in xPDO, you delete its row from the database. xPDO abstracts this out into a [remove](extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/remove "remove") function, seen here:
 
-``` php 
+``` php
 $box = $xpdo->getObject('Box',134);
 
 if ($box->remove() == false) {
@@ -20,7 +20,6 @@ The remove function will return either true or false, depending on the outcome o
 
 This will also remove any **composite related objects** to this object. For example, if our Box had 4 "side" related objects that were mapped out as composites, they would be removed as well when $box->remove is called.
 
-
 ## xPDO.removeCollection($class, $criteria)
 
  This method is used to delete multiple objects.
@@ -31,7 +30,7 @@ This will also remove any **composite related objects** to this object. For exam
 
  From modSessionHandler:
 
- ``` php 
+ ``` php
 public function gc($max) {
     $max = (integer) $this->modx->getOption('session_gc_maxlifetime',null,$max);
     $maxtime= time() - $max;
@@ -40,8 +39,8 @@ public function gc($max) {
 }
 ```
 
- **Warning** 
- Careful! If you do not specify your criteria correctly, you can wipe out an entire database table! 
+ **Warning**
+ Careful! If you do not specify your criteria correctly, you can wipe out an entire database table!
 
 ### Both parameters required
 
@@ -49,7 +48,7 @@ public function gc($max) {
 
  For example, to delete all objects of type 'objectName' from the database, do the following.
 
- ``` php 
+ ``` php
 $modx->removeCollection('objectName', array());
 ```
 

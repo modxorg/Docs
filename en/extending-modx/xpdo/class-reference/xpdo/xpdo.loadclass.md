@@ -12,7 +12,7 @@ Include a class by fully qualified name. This is a handy way to perform an `incl
 
 API Docs: <http://api.modx.com/xpdo/xPDO.html#loadClass>
 
-``` php 
+``` php
 string|boolean loadClass (string $fqn, [ $path = ''], [ $ignorePkg = false], [ $transient = false])
 ```
 
@@ -25,22 +25,21 @@ which will translate to:
 > XPDO\_CORE\_PATH/om/dir\_a/dir\_b/dir\_c/dbtype/classname.class.php
 
 **Hint**
+
 - The file name you are including must include **.class.php** as its extension.
 - The path to your model must end in a trailing slash!
-
-
 
 ## Example
 
 Load a class from the path '/my/path/to/model/'.
 
-``` php 
+``` php
 $xpdo->loadClass('myBox','/my/path/to/model/');
 ```
 
 Another example:
 
-``` php 
+``` php
 if (!$xpdo->loadClass('myBox','/my/path/to/model/',true,true)) {
     die('Could not load class myBox!');
 }

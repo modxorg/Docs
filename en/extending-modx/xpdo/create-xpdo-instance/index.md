@@ -9,8 +9,9 @@ When using xPDO within MODX, the `modX` class (typically available as `$modx` or
 When using xPDO standalone, or if you want to create additional instances, use the information on this page.
 
 The constructor has the following signature:
-``` php 
-$xpdo= new xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null) 
+
+``` php
+$xpdo= new xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null)
 ```
 
 ## Parameters

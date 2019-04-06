@@ -22,7 +22,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/developing-rest-servers"
 
  First, create a `rest/index.php` file which looks something like this:
 
- ``` php 
+ ``` php
 <?php
 // Boot up MODX
 require_once dirname(dirname(__FILE__)) . '/config.core.php';
@@ -31,7 +31,7 @@ $modx = new modX();
 $modx->initialize('web');
 $modx->getService('error','error.modError', '', '');
 // Boot up any service classes or packages (models) you will need
-$path = $modx->getOption('mypackage.core_path', null, 
+$path = $modx->getOption('mypackage.core_path', null,
    $modx->getOption('core_path').'components/mypackage/') . 'model/mypackage/';
 $modx->getService('mypackage', 'myPackage', $path);
 // Load the modRestService class and pass it some basic configuration
@@ -53,9 +53,9 @@ $rest->process();
 
  With that in place, next you'll need to make sure the all requests to your `/rest/` folder are actually handled by the REST server. To do that, add the following to your `.htaccess` (or the equivalent on nginx or other systems) in the root of your site:
 
-#### Apache:
+### Apache:
 
- ``` plain 
+ ``` plain
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-s
@@ -64,9 +64,9 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^(.*)$ rest/index.php [QSA,NC,L]
 ```
 
-#### NGINX:
+### NGINX:
 
- ``` plain 
+ ``` plain
 location /rest/ {
     try_files $uri @modx_rest;
 }
@@ -77,7 +77,7 @@ location @modx_rest {
 
  If you were to open /rest/foobar in your browser now, you should get an error that indicates your API is working, yay!
 
- ``` json 
+ ``` json
 {
   success: false,
   message: "Method not allowed",
@@ -88,7 +88,7 @@ location @modx_rest {
 
  Now we can get started with the actual API building!
 
-## 2. Building API Endpoints 
+## 2. Building API Endpoints
 
  The actual API consists of a bunch of endpoints. If you want to build a proper RESTful API each endpoint would match a "resource" (not necessarily the kind from the left tree!), and the different HTTP verbs (GET, POST, PUT and DELETE) would be used to interact with specific objects. Say you're building an API for managing your to do list, you could have an endpoint "items" with the following actions:
 

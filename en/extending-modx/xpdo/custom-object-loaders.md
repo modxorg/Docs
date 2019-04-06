@@ -22,8 +22,8 @@ Overriding these methods allows you to implement additional behavior or complete
 ## < 2.0
 
 Prior to 2.0.0-pl, you can specify custom loader classes that extend or override the behavior of the default object loaders by specifying these classes in the xPDO options array when instantiating an xPDO instance.
- 
-``` php 
+
+``` php
 $xpdo = new xPDO($dsn, $username, $password, array(
     xPDO::OPT_LOADER_CLASSES => array('myCustomLoaderClass')
 ));

@@ -6,13 +6,13 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defi
 
 We're going to need to define some relationships between our tables so xPDO can communicate properly between them. xPDO deals with two types of relationships, **aggregate** and **composite**.
 
-##  Aggregate Relationships 
+## Aggregate Relationships
 
  An aggregate relationship in xPDO is relationship between two tables where the secondary table is an aggregate of the primary table in such a way that if the object in the primary table is deleted, the related object in the secondary table should still exist.
 
  A great example of this is a collection of Crayons in a Box. The relationship from the Crayons to the Box is an **aggregate** relationship. If you delete a crayon object, it's related box object should not be removed (because it might contain other crayons). Our crayon object would be defined in our XML schema like this:
 
-``` xml 
+``` xml
 <object class="myCrayon" table="crayons" extends="xPDOSimpleObject">
     <field key="box" dbtype="int" precision="10" phptype="integer" null="false" default="" />
     <aggregate alias="Box" class="myBox" local="box" foreign="id" cardinality="one" owner="foreign" />
@@ -30,21 +30,21 @@ We're going to need to define some relationships between our tables so xPDO can 
 
  So our XML here would allow us to use the following code to grab the Box for a Crayon:
 
-``` php 
+``` php
 $crayon = $xpdo->getObject('myCrayon',1);
 $box = $crayon->getOne('Box');
 echo $box->get('name');
 ```
 
-##  Composite Relationships 
+## Composite Relationships
 
- A composite relationship in xPDO is relationship between two tables where the secondary table(s) are composites of the primary table in such a way that if the object in the primary table is deleted, the related object(s) in the secondary table(s) should be removed. 
- 
+ A composite relationship in xPDO is relationship between two tables where the secondary table(s) are composites of the primary table in such a way that if the object in the primary table is deleted, the related object(s) in the secondary table(s) should be removed.
+
  If we delete a box, its related crayons should be removed as well.
 
  Back to our Crayon-Box example: The Crayons are Composites of the Box object. We'd define that in our XML schema as:
 
-``` xml 
+``` xml
 <object class="myBox" table="boxes" extends="xPDOSimpleObject">
     <composite alias="Crayons" class="myCrayon" local="id" foreign="box" cardinality="many" owner="local" />
 </object>
@@ -54,7 +54,7 @@ As you can see, a few attributes have changed. The alias now is plural, since we
 
  We can grab all the Crayons in the Box with this xPDO code:
 
-``` php 
+``` php
 $box = $xpdo->getObject('myBox',23);
 $crayons = $box->getMany('Crayons');
 foreach ($crayons as $crayon) {
@@ -64,17 +64,17 @@ foreach ($crayons as $crayon) {
 
  Remember that in a Composite relationship, should the owner of the relationship be removed, all the Composites will be removed. So, if we remove the Box object:
 
-``` php 
+``` php
 $box->remove();
 ```
 
  ...this would remove all of the related Crayons for that Box. This can be useful to cascade removal of objects, making code simpler and easier to manage.
 
-##  Relating Many-to-Many 
+## Relating Many-to-Many
 
  Let's go back to our [StoreFinder model](database-and-tables). First off, let's review our schema so far:
 
-``` xml 
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="storefinder" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="storefinder" phpdoc-subpackage="model" version="1.1">
   <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
@@ -87,9 +87,9 @@ $box->remove();
     <field key="phone" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
     <field key="fax" dbtype="varchar" precision="20" phptype="string" null="false" default="" />
     <field key="active" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
-    
+
     <alias key="postalcode" field="zip" />
-    
+
     <index alias="name" name="name" primary="false" unique="false" type="BTREE">
         <column key="name" length="" collation="A" null="false" />
     </index>
@@ -101,7 +101,7 @@ $box->remove();
   <object class="sfOwner" table="sfinder_owners" extends="xPDOSimpleObject">
     <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
     <field key="email" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-    
+
     <index alias="name" name="name" primary="false" unique="false" type="BTREE">
         <column key="name" length="" collation="A" null="false" />
     </index>
@@ -110,7 +110,7 @@ $box->remove();
   <object class="sfStoreOwner" table="sfinder_store_owners" extends="xPDOSimpleObject">
     <field key="store" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
     <field key="owner" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
-    
+
     <index alias="store" name="store" primary="false" unique="false" type="BTREE">
         <column key="store" length="" collation="A" null="false" />
     </index>
@@ -125,13 +125,13 @@ $box->remove();
 
  Those two fields contain the PK values of the Store and Owner it is relating. So let's add the relationships. In our sfStore definition, we want to add this line:
 
-``` xml 
+``` xml
 <composite alias="StoreOwners" class="sfStoreOwner" local="id" foreign="store" cardinality="many" owner="local" />
 ```
 
  And in our sfOwner definition, let's add this:
 
-``` xml 
+``` xml
 <composite alias="StoreOwners" class="sfStoreOwner" local="id" foreign="owner" cardinality="many" owner="local" />
 ```
 
@@ -139,14 +139,14 @@ $box->remove();
 
  So go to our sfStoreOwner definition, and add these two lines:
 
-``` xml 
+``` xml
 <aggregate alias="Store" class="sfStore" local="store" foreign="id" cardinality="one" owner="foreign" />
 <aggregate alias="Owner" class="sfOwner" local="owner" foreign="id" cardinality="one" owner="foreign" />
 ```
 
  Now that we've got our model defined, in our xPDO code we'll be able to do something like this:
 
-``` php 
+``` php
 $store = $xpdo->getObject('sfStore',43);
 $storeOwners = $store->getMany('StoreOwners');
 $owners = array();
@@ -162,7 +162,7 @@ foreach ($owners as $owner) {
 
  However, as you can see, that code isn't very optimized. So we're going to optimize it a bit using $xpdo->newQuery:
 
-``` php 
+``` php
 $c = $xpdo->newQuery('sfOwner');
 $c->innerJoin('sfStoreOwner','StoreOwners');
 $c->where(array(
@@ -176,13 +176,13 @@ foreach ($owners as $owner) {
 
  This block of code lets us grab all the owners of a store with only one query.
 
-##  Conclusion 
+## Conclusion
 
  Building relationships within schemas obeys some simple rules, you just have to get familiar with which directions the relationships apply. If you require more examples of how to represent your database tables in the xPDO schema, have a look at [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files").
 
  Now that we've built our schema, let's go ahead and [generate the PHP classes and maps](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code").
 
-##  See Also 
+## See Also
 
 - [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
 - [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")

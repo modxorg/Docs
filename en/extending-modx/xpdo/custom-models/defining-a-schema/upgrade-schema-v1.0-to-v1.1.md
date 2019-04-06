@@ -14,13 +14,13 @@ To make conversion of existing mysql models easier, a tool is provided in xPDO t
 
 This simple tool takes a few arguments and automatically converts your 1.0 model's index definitions to the 1.1 format and adds version="1.1" to the `model` element.
 
-- Required Arguments 
+- Required Arguments
   - **pkg** — The name of the model package being converted.
   - **pkg\_path** — The root path of the model package.
   - **schema\_name** — The xPDO schema filename to convert.
   - **schema\_path** — The path to the schema file.
 
-- Optional Arguments 
+- Optional Arguments
   - **backup\_path** — The path to write the backup schema file. If not specified, the backup is written to the same directory (schema\_path).
   - **backup\_prefix** — A string to prepend to the backup schema file. Default is '~'.
   - **dsn** — A valid PDO DSN connection string.
@@ -34,12 +34,11 @@ This simple tool takes a few arguments and automatically converts your 1.0 model
   - **error\_reporting** — Set the PHP error\_reporting level for the script. Default is -1 (does not report errors).
   - **display\_errors** — Set the PHP display\_errors setting. Default is true.
 
-**Argument Rules**
+#### Argument Rules
+
 - At least one of the four arguments, **echo**, **write**, **regen**, or **debug**, must be set.
 - The **write** argument cannot be used when the **debug** argument is true.
 - **regen** can only be used when **write** is set or the schema is already at version 1.1.
-
-
 
 ### Usage
 
@@ -50,7 +49,7 @@ All values for \_path arguments (and the include argument) are passed through re
 
 CLI arguments for the script are specified in the format:
 
-``` php 
+``` php
 --argument[=value]
 ```
 
@@ -59,7 +58,7 @@ If the equal sign and value are not provided, the argument value is set to boole
 
 Here is an example CLI usage:
 
-``` php 
+``` php
 user@hostname:/home/user/xpdo$ php xpdo/tools/schema/upgrade-mysql-1.1.php --pkg=sample --pkg_path=models/ --schema_name=sample.mysql.schema.xml --schema_path=schemas/ --echo --write --regen
 ```
 
@@ -67,7 +66,7 @@ Alternatively, you can use the include argument to set properties from an extern
 
 An example properties file, `sample.schema.properties.php`:
 
-``` php 
+``` php
 <?php
 $pkg='sample';
 $pkg_path='models/';
@@ -80,7 +79,7 @@ $regen=true;
 
 And the example CLI call to use the properties file:
 
-``` php 
+``` php
 user@hostname:/home/user/xpdo$ php xpdo/tools/schema/upgrade-mysql-1.1.php --include=sample.schema.properties.php
 ```
 
@@ -91,7 +90,7 @@ Please note that any arguments provided in the CLI call will override values set
 
 You can also execute the script as a web request, passing the arguments as $\_REQUEST variables, $\_GET, $\_POST, or $\_COOKIE. An example URL for such a call might look like this:
 
-``` php 
+``` php
 http://localhost/food/xpdo/tools/schema/upgrade-mysql-1.1.php?pkg=sample&pkg_path=models/&schema_name=sample.mysql.schema.xml&schema_path=schemas/&echo=true&write=true&regen=true
 ```
 

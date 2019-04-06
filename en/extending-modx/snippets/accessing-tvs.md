@@ -10,7 +10,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/acc
 
 ## getTVValue
 
- ``` php 
+ ``` php
 string|null getTVValue (str|integer $tv_name OR ID of TV)
 ```
 
@@ -20,14 +20,14 @@ string|null getTVValue (str|integer $tv_name OR ID of TV)
 
  Let's say we have a TV named 'bio', and we're going to retrieve page id 123 that uses this TV. Here's what our Snippet might look like:
 
- ``` php 
+ ``` php
 $page = $modx->getObject('modResource', 123);
 return $page->getTVValue('bio');
 ```
 
  getTVValue fetches values from the resource cache when available. These caches are normally cleared when saving a resource, however if you are updating TV values using the setTVValue method below, these values will not be reflected directly because of the cache. If you absolutely need the latest data, you could bypass the cache by going straight for the data and using getObject to get the TV value record.
 
- ``` php 
+ ``` php
 $tvr = $modx->getObject('modTemplateVarResource', array(
   'tmplvarid' => $tvId,
   'contentid' => $resourceId
@@ -46,7 +46,7 @@ return '';
 
  Use **setTVValue** to save a new value to a TV. Unlike some other xPDO API methods, this method stores values to the database immediately, so you do not need to invoke a separate call to a **save()** method. This method does not clear the resource cache.
 
- ``` php 
+ ``` php
 boolean setTVValue (str|integer $tv_name OR ID of TV, string $value)
 ```
 
@@ -54,7 +54,7 @@ Note that when using setTVValue, it is possible for an immediate getTVValue to r
 
 ### setTVValue Usage
 
- ``` php 
+ ``` php
 $page = $modx->getObject('modResource', 123);
 if (!$page->setTVValue('bio', 'This is my new bio...')) {
     $modx->log(xPDO::LOG_LEVEL_ERROR, 'There was a problem saving your TV...');
@@ -63,24 +63,24 @@ if (!$page->setTVValue('bio', 'This is my new bio...')) {
 
 ## See Also
 
-1. [Creating a Template Variable](building-sites/elements/template-variables/step-by-step)
-2. [Bindings](building-sites/elements/template-variables/bindings)
-  1. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
-  2. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
-  3. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
-  4. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
-  5. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
-  6. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
-  7. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
-3. [Template Variable Input Types](building-sites/elements/template-variables/input-types)
-4. [Template Variable Output Types](building-sites/elements/template-variables/output-types)
-  1. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
-  2. [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
-  3. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
-  4. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
-  5. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
-5. [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
-6. [Adding a Custom TV Input Type](_legacy/making-sites-with-modx/adding-a-custom-tv-input-type)
-7. [Adding a Custom TV Output Type](_legacy/making-sites-with-modx/adding-a-custom-tv-output-type)
-8. [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
-9. [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)
+- [Creating a Template Variable](building-sites/elements/template-variables/step-by-step)
+- [Bindings](building-sites/elements/template-variables/bindings)
+  - [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
+  - [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
+  - [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
+  - [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
+  - [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
+  - [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
+  - [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
+- [Template Variable Input Types](building-sites/elements/template-variables/input-types)
+- [Template Variable Output Types](building-sites/elements/template-variables/output-types)
+  - [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
+  - [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
+  - [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
+  - [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
+  - [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
+- [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
+- [Adding a Custom TV Input Type](_legacy/making-sites-with-modx/adding-a-custom-tv-input-type)
+- [Adding a Custom TV Output Type](_legacy/making-sites-with-modx/adding-a-custom-tv-output-type)
+- [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
+- [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)

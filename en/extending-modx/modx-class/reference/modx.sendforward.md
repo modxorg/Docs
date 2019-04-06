@@ -4,7 +4,7 @@ _old_id: "1102"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.sendforward"
 ---
 
- **modX::sendForward**
+## modX::sendForward
 
  Forwards the request to another resource without changing the URL. If the ID provided does not exist, sends to a 404 Error page.
 
@@ -12,7 +12,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendForward()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendForward())
 
- ``` php 
+ ``` php
 void sendForward (integer $id, [string|array $options = null])
 ```
 
@@ -27,7 +27,7 @@ void sendForward (integer $id, [string|array $options = null])
 
  Send the user to Resource ID 234 without actually changing the URL.
 
- ``` php 
+ ``` php
 $modx->sendForward(234);
 ```
 
