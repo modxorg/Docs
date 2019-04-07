@@ -23,7 +23,7 @@ $ git merge --ff-only upstream/2.x
 Если вы только что влили свежие изменения из ветки develop из upstream репозитория, тогда это очень просто:
 
 ``` php
-$ git checkout -b myFeatureBranchName 2.x
+git checkout -b myFeatureBranchName 2.x
 ```
 
 Если вы не получили последние изменения из апстрима и слили их локально, вам следует [сделать это сначала](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIgetandkeepmylocaldevelopbranchinsync%3F).
@@ -33,7 +33,7 @@ $ git checkout -b myFeatureBranchName 2.x
 Если вы вносите изменения, связанные с заявкой, в трекере проблем (пожалуйста, сначала отправьте заявку на любые ошибки, если ее нет), тогда вы можете назвать свою ветку "issue-xxxx", где xxxx - номер проблемы из трекера ошибок.
 
 ``` php
-$ git checkout -b issue-1234 2.4.x
+git checkout -b issue-1234 2.4.x
 ```
 
 Обратите внимание, что это не является обязательным требованием, но может помочь вам организовать ваши локальные ветки, если у вас их много.
@@ -41,7 +41,7 @@ $ git checkout -b issue-1234 2.4.x
  Если вы работаете с новой функцией, у которой нет номера, вы можете назвать ее как угодно, но избегайте имен, которые выглядят как номера версий релиза.
 
 ``` php
-$ git checkout -b myAwesomeFeature 2.x
+git checkout -b myAwesomeFeature 2.x
 ```
 
 ## Нужна ли мне новая тематическая ветка для каждой проблемы, над которой я работаю?
@@ -49,7 +49,7 @@ $ git checkout -b myAwesomeFeature 2.x
  Yes.
 
 ``` php
-$ echo 'Yes'
+echo 'Yes'
 ```
 
 ## Как мне сохранять свежесть мой ветки относительно develop ветки в upstream?

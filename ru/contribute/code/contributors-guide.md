@@ -24,7 +24,7 @@ translation: "contribute/code/contributors-guide"
 Участники MODx должны работать напрямую со своими приватными форками на GitHub. Вот предлагаемый способ подготовить ваш локальный репозиторий в качестве разработчика для участия в любом проекте MODx:
 
 ``` php
-$ git clone git@github.com:YourGitUsername/revolution.git
+git clone git@github.com:YourGitUsername/revolution.git
 $ cd revolution
 $ git remote add upstream -f http://github.com/modxcms/revolution.git
 ```
@@ -98,7 +98,7 @@ $ git rebase 2.x
 Теперь просто перенесите свою функцию в свой форк (вы можете сделать это на ранней стадии, если вы хотите поделиться своей веткой функций для совместной работы или обзора):
 
 ``` php
-$ git push origin my-bc-feature
+git push origin my-bc-feature
 ```
 
 И вы готовы [отправка pull request](http://help.github.com/pull-requests/) длы вашей feature branch.
