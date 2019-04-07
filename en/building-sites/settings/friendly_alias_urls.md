@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/friendly_alias_u
 
 ## friendly\_alias\_urls
 
-**Name**: Use Friendly URL Aliases 
-**Type**: Yes/No 
+**Name**: Use Friendly URL Aliases
+**Type**: Yes/No
 **Default**: No
 
 Turns on friendly URLs, which generate SEO-friendly URL mappings for your Resources. The URL map is determined by the Resource's place in the site tree, and its "alias" field.

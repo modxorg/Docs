@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/udperms_allowroo
 
 ## udperms\_allowroot
 
-**Name**: Allow Root Resource Creation 
-**Type**: Yes/No 
+**Name**: Allow Root Resource Creation
+**Type**: Yes/No
 **Default**: No
 
 If true, allows users to create new resources in the root of the site.

@@ -23,7 +23,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
 
 - **field**: the field's name. _(required)_
 - **name**: a unique name for this validation rule. You can have multiple validation rules for each field. _(required)_
-- **type**: can be "callback", "preg\_match" or "xPDOValidationRule" _(required)_
+- **Type**: can be "callback", "preg\_match" or "xPDOValidationRule" _(required)_
 - **rule**: varies depending on the type. For type=callback, this will be the name of the callback function. For type=preg\_match, this will be the regular expression. For type=xPDOValidationRule, a valid child class must be supplied. _(required)_
 - **value**: an optional argument to pass to the validation functions, e.g. when the type is `xPDOValidationRule` and the rule is a class that extends it. _(optional)_
 - **message**: this is a string describing the the validation rule if it fails. _(required)_ In MODX 2+, the message field contains a lexicon string which can provide language specific message translations.

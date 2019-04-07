@@ -29,7 +29,7 @@ _old_uri: "revo/rezimgcrop"
 - g - Color image conversion in a shade of gray,
    WxH - w = width, H = height (in pixels)
 
-## UsageExamples
+## Usage examples
 
  Resize on width and cropping:
 
@@ -70,9 +70,7 @@ _old_uri: "revo/rezimgcrop"
  Resize on height:
 
  ``` php
-
 [[*tv.images:rezimgcrop=`r-0x75`]]
-
 ```
 
  Resize on height:

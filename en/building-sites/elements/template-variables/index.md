@@ -9,8 +9,8 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables"
 
  **A Template Variable (TV) is a custom field**, or more specifically, it is custom field for a MODX Resource. TVs are used to extend the default attributes available for a Resource (e.g. for a Page or WebLink). A normal MODX Resource has a certain number of default fields: pagetitle, content, description, etc. If you need to add some custom fields to your pages, e.g. a second content area or a dropdown list of month names, or any other bit of custom data, you do this by adding a Template Variable to your template. MODX allows you to have a virtually unlimited number of TVs.
 
- **Why is it called a Template Variable** 
- Other content management systems call these simply "Custom Fields", so why does MODX call these "Template Variables"? Well, any time you have customized content, you will also have customized templates. Your MODX templates already have placeholders for **content** or **longtitle** because those are the built-in fields for a standard MODX "page"; the information and the template used to display that information go hand in hand. If you have a manager form with a field for entering a special date, then it stands to reason that your HTML template that you use to display that page would also have a bit dedicated to displaying that date. Likewise, you wouldn't build HTML templates with divs and tables for formatting bits of data unless the manager offered some way to edit that data. So the content is inexorably tied to the template, thus the name **Template Variable**. 
+ **Why is it called a Template Variable**
+ Other content management systems call these simply "Custom Fields", so why does MODX call these "Template Variables"? Well, any time you have customized content, you will also have customized templates. Your MODX templates already have placeholders for **content** or **longtitle** because those are the built-in fields for a standard MODX "page"; the information and the template used to display that information go hand in hand. If you have a manager form with a field for entering a special date, then it stands to reason that your HTML template that you use to display that page would also have a bit dedicated to displaying that date. Likewise, you wouldn't build HTML templates with divs and tables for formatting bits of data unless the manager offered some way to edit that data. So the content is inexorably tied to the template, thus the name **Template Variable**.
 
  When a [Resource](building-sites/resources "Resources") is displayed on the web, TV tags are replaced with the actual value entered by the user. TVs are [Template](building-sites/elements/templates "Templates")-specific, meaning they can only be used in [Templates](building-sites/elements/templates "Templates") that they are assigned to.
 
@@ -24,7 +24,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables"
 [[*bio]]
 ```
 
- To add a TV to a page, you have to think back to its template (these are _Template_ variables, remember?). Make sure you've defined the TV and attached it to the template that you're using. See the page on [Creating a Template Variable](building-sites/elements/template-variables/step-by-step "Creating a Template Variable"). 
+ To add a TV to a page, you have to think back to its template (these are _Template_ variables, remember?). Make sure you've defined the TV and attached it to the template that you're using. See the page on [Creating a Template Variable](building-sites/elements/template-variables/step-by-step "Creating a Template Variable").
 
 ### Advanced Usage
 
@@ -52,20 +52,20 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables"
 
 1. [Creating a Template Variable](building-sites/elements/template-variables/step-by-step)
 2. [Bindings](building-sites/elements/template-variables/bindings)
-  1. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
-  2. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
-  3. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
-  4. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
-  5. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
-  6. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
-  7. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
+     1. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
+     2. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
+     3. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
+     4. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
+     5. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
+     6. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
+     7. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
 3. [Template Variable Input Types](building-sites/elements/template-variables/input-types)
 4. [Template Variable Output Types](building-sites/elements/template-variables/output-types)
-  1. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
-  2. [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
-  3. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
-  4. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
-  5. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
+     1. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
+     2. [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
+     3. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
+     4. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
+     5. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
 5. [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
 6. [Adding a Custom TV Input Type](_legacy/making-sites-with-modx/adding-a-custom-tv-input-type)
 7. [Adding a Custom TV Output Type](_legacy/making-sites-with-modx/adding-a-custom-tv-output-type)

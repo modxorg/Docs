@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/ui_debug_mode"
 
 ## ui\_debug\_mode
 
-**Name**: UI Debug Mode 
-**Type**: Yes/No 
+**Name**: UI Debug Mode
+**Type**: Yes/No
 **Default**: No
 
 (2.1+ only)

@@ -107,7 +107,7 @@ return strrev($output);
 
  where '123' is the ID of the Resource to link to. You can put these tags anywhere, and MODx will dynamically render the URL for the Resource.
 
- You can also get the Link Tag by dragging a Resource from the left tree into the content panel. 
+ You can also get the Link Tag by dragging a Resource from the left tree into the content panel.
 
  Also see [Named Anchor](building-sites/integrating-templates/named-anchor "Named Anchor").
 
@@ -155,5 +155,5 @@ store/items.html?tag=Snacks&sort=Taste
 2. [Named Anchor](building-sites/integrating-templates/named-anchor)
 3. [Static Resource](building-sites/resources/static-resource)
 4. [Symlink](building-sites/resources/symlink)
-  1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
+   1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
 5. [Weblink](building-sites/resources/weblink)

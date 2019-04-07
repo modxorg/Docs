@@ -4,4 +4,3 @@ note: "While there are tutorials scattered across the web, it appears the offici
 ---
 
 Please check out the [video quick start series](video-quick-start).
-

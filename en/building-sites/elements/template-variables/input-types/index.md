@@ -254,7 +254,7 @@ Option 1==value1||Option 2==value2
 
  Note that trailing zeros are truncated, e.g. 4.50 gets trimmed to 4.5; this may make this input type unsuitable for currency fields.
 
- #### All input option names (for use in migx options-json)
+### All input option names (for use in migx options-json)
 
  ``` json
 {
@@ -299,7 +299,7 @@ Option 1==value1||Option 2==value2
 
  In the above examples, you can output a chunk or another Template Variable without the aid of an extra.
 
- #### All input option names (for use in migx options-json)
+#### All input option names (for use in migx options-json)
 
  ``` json
 {
@@ -323,7 +323,7 @@ Option 1==value1||Option 2==value2
 [{"pagetitle:!=":"Home"}]
 ```
 
- #### All input option names (for use in migx options-json)
+### All input option names (for use in migx options-json)
 
  ``` json
 {
@@ -346,7 +346,7 @@ Option 1==value1||Option 2==value2
 
  Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](building-sites/elements/template-variables/output-types/html) for formatting.
 
- #### All input option names (for use in migx options-json)
+### All input option names (for use in migx options-json)
 
  ``` json
 {
@@ -364,7 +364,7 @@ Option 1==value1||Option 2==value2
 - Max length: a number representing the number of characters that can be filled in in this field.
 - Min Length: a number representing the minimum number of characters needed to be filled in. May want to use this with the allow blank option to "no". ![](/download/attachments/33227172/tvinput.png?version=1&modificationDate=1308911612000)
 
- #### All input option names (for use in migx options-json)
+### All input option names (for use in migx options-json)
 
  ``` json
 {
@@ -380,7 +380,7 @@ Option 1==value1||Option 2==value2
 
  This is a standard _textarea_ field, with a height of 15 rows. It's the same size as the HTML Area fields, but without the WYSIWYG editor.
 
- #### All input option names (for use in migx options-json)
+### All input option names (for use in migx options-json)
 
  ``` json
 {

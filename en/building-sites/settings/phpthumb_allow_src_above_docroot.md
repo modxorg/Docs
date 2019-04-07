@@ -6,9 +6,9 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/phpthumb_allow_s
 
 ## phpthumb\_allow\_src\_above\_docroot
 
-**Name**: phpThumb Allow src Above Document Root 
-**Type**: Yes/No 
-**Default**: No 
+**Name**: phpThumb Allow src Above Document Root
+**Type**: Yes/No
+**Default**: No
 **Available In:** 2.1+
 
 Indicates if the src path is allowed outside the document root. This is useful for multi-context deployments with multiple virtual hosts.

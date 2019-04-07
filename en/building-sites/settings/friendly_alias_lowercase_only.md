@@ -6,9 +6,9 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/friendly_alias_l
 
 ## friendly\_alias\_lowercase\_only
 
-**Name**: FURL Lowercase Aliases 
-**Type**: Yes/No 
-**Default**: Yes 
+**Name**: FURL Lowercase Aliases
+**Type**: Yes/No
+**Default**: Yes
 **Available In**: Revolution 2.0.8+
 
 Determines whether to allow only lowercase characters in a Resource alias.

@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/friendly_url_suf
 
 ## friendly\_url\_suffix
 
-**Name**: Friendly URL Suffix 
-**Type**: String 
+**Name**: Friendly URL Suffix
+**Type**: String
 **Default**: .html
 
 This setting is **deprecated** and is no longer in use. See [Content Types](building-sites/resources/content-types "Content Types") for how suffixes are now handled.

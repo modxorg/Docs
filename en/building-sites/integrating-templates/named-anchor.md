@@ -10,9 +10,9 @@ A named anchor is a link to content within the current resource.
 
 A typical named anchor will be similar to:
 
-> <a name="prohibited"></a>
+> `<a name="prohibited"></a>`
 
-The problem with using named anchors with MODX and friendly URLs enabled, is that the <base href=""> tag, which is required to maintain relative urls, will confuse browsers, thinking that any anchors point to the base href page which would usually be your homepage. Luckily - nothing is impossible with MODX, and there are (at least) two ways to overcome this issue.
+The problem with using named anchors with MODX and friendly URLs enabled, is that the `<base href="">` tag, which is required to maintain relative urls, will confuse browsers, thinking that any anchors point to the base href page which would usually be your homepage. Luckily - nothing is impossible with MODX, and there are (at least) two ways to overcome this issue.
 
 ## Accessing the Named Anchor by adding the URL manually
 
@@ -35,7 +35,7 @@ Alternatively, you could use a plugin to automatically prepend a link to the cur
 Put the following code into a new plugin, and on the System Events tab assign it to the "OnWebPagePrerender" event (based on [this post](http://forums.modx.com/thread/35800/plugin-anchorsaway?page=3#dis-post-199475)).
 
 ``` php
-if($modx->resource->get('id') !=$modx->config['site_start']) {    
+if($modx->resource->get('id') !=$modx->config['site_start']) {
   $modx->resource->_output =str_replace('href="#','href="' .$modx->makeUrl($modx->resource->get('id')) .'#',$modx->resource->_output);
 }
 ```

@@ -6,15 +6,15 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/extension_packag
 
 ## extension\_packages
 
- **Name**: Extension Packages 
-**Type**: String (a JSON encoded array of key value pairs) 
+ **Name**: Extension Packages
+**Type**: String(a JSON encoded array of key value pairs)
 **Default**: Yes
 
  Use this setting to autoload packages that extend core classes, e.g. if you are extending modUser. The format should be a JSON array of key/value pairs where the key is the namespace (i.e. the package name) and the value is the path to its model.
 
  This effect here is similar to other frameworks, e.g. CodeIgniter, which allows core classes to be overridden via use of a special classname prefix "MY\_".
 
- Use this only when you are extending core classes that are used during **initialize()** 
+ Use this only when you are extending core classes that are used during **initialize()**
 
 ### Sample value
 

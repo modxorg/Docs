@@ -36,7 +36,7 @@ There's a whole page showing an example of using the EVAL binding to execute a s
 
 ### db-driven input-option-values by using rowboat
 
-Let's say we want to have a dropdown-box to select a user-id by username. 
+Let's say we want to have a dropdown-box to select a user-id by username.
 Requirements: The rowboat-snippet.
 
 First, we create a new chunk for our Options and name it 'userOption' with this code:

@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/site_status"
 
 ## site\_status
 
-**Name**: Site Status 
-**Type**: Yes/No 
+**Name**: Site Status
+**Type**: Yes/No
 **Default**: Yes
 
 If false, your visitors will see the 'Site unavailable message', and won't be able to browse the site.

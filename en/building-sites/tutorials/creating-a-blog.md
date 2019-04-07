@@ -49,8 +49,8 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 <div id="content" class="blog-post">
   <h2 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h2>
   <p class="post-info">
-  Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] | 
-  Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] | 
+  Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
+  Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
   <a href="[[~[[*id]]]]#comments" class="comments">
     Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
   </a>
@@ -97,8 +97,8 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
  ``` php
 <p class="post-info">
-Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] | 
-Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] | 
+Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
+Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
 <a href="[[~[[*id]]]]#comments" class="comments">
   Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
 </a>
@@ -151,8 +151,8 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  There's a whole bunch of other Quip settings we could change, but we'll leave you to further customization, which you can find out how to do in the [Quip docs](/extras/quip "Quip").
 
- **What is Threading?** 
- If you enable _threaded_ comments, then users can comment on other comments. Non-threaded comments allow users to only comment on the original blog post. 
+ **What is Threading?**
+ If you enable _threaded_ comments, then users can comment on other comments. Non-threaded comments allow users to only comment on the original blog post.
 
 ## Setting up Tagging
 
@@ -168,10 +168,10 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  If you want your blog to have 'Sections' (also called Categories), you'll first need to create those Resources.
 
- For this tutorial's purpose, we'll create 2 sections: "Personal" and "Technology". Go ahead and create 2 Resources in the root of your site, and make them 'containers'. You'll want to 
+ For this tutorial's purpose, we'll create 2 sections: "Personal" and "Technology". Go ahead and create 2 Resources in the root of your site, and make them 'containers'. You'll want to
  have their alias be 'personal' and 'technology', so your blog post URLs turn up nicely.
 
- We'll say from here on out that our two Section Resources have IDs of 34 and 35, for reference. 
+ We'll say from here on out that our two Section Resources have IDs of 34 and 35, for reference.
 
  Make sure you don't use the BlogPostTemplate on these, and use instead your own Base Template. These pages will end up being a way to browse all posts within a certain Section. In the content of these Resources, go ahead and put the following:
 
@@ -207,7 +207,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 <div class="post">
     <h2 class="title"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></h2>
     <p class="post-info">Posted by [[+createdby:userinfo=`fullname`]]
- [[+tv.tags:notempty=` | <span class="tags">Tags: 
+ [[+tv.tags:notempty=` | <span class="tags">Tags:
 [[!tolinks? &items=`[[+tv.tags]]` &tagKey=`tags` &target=`1`]]
 </span>`]]</p>
     <div class="entry">
@@ -272,7 +272,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Before we start, though, it's important to note that how you structure your posts within the section is totally up to you. You can add year and month container Resources to put these posts in, or just post them directly within the section. It's totally up to you.
 
- If you choose to have date/year or sub-containers, make sure they have Hide from Menus checked, so that they wont show up in your getResources calls. 
+ If you choose to have date/year or sub-containers, make sure they have Hide from Menus checked, so that they wont show up in your getResources calls.
 
  Remember, though, that whatever structure you build under the sections, that's not going to determine your navigation - [Archivist](/extras/archivist "Archivist") will handle that. What it will determine, however, is the URL of your blog posts. So have fun.
 
@@ -356,7 +356,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
  First off, you'll want to place this call wherever you want the list to appear:
 
  ``` php
-[[!getResources? 
+[[!getResources?
   &parents=`34,35`
   &hideContainers=`1`
   &tpl=`latestPostsTpl`

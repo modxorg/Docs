@@ -21,7 +21,7 @@ For now, go ahead and assign all contexts to the Source "My New Source", which w
 Often, you'll want users to select files from a specific folder when selecting a value for a TV. You can set up this restriction when you define your Media Source.
 
 1\. First, create your Media Source under **Tools -> Media Sources**
-2\. After you've created the Media Source, right-click it and select "Update Media Source" 
+2\. After you've created the Media Source, right-click it and select "Update Media Source"
 3\. Scroll down and edit the following properties:
 
 - **basePath** - set to something like "assets/images/"
@@ -46,7 +46,7 @@ Now we'll probably want to consider restricting access to this Source, so that o
 1. [Adding a Media Source](building-sites/media-sources/creating)
 2. [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs)
 3. [Securing a Media Source](building-sites/media-sources/securing)
-  1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
+   1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
 4. [Media Source Types](building-sites/media-sources/types)
-  1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
-  2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)
+   1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
+   2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)

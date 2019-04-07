@@ -6,11 +6,11 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/filemanager_path
 
 ## filemanager\_path
 
-This setting was deprecated in MODX Revolution 2.2. It has been replaced with [Media Sources](building-sites/media-sources). 
+This setting was deprecated in MODX Revolution 2.2. It has been replaced with [Media Sources](building-sites/media-sources).
 
-**Name**: File Manager Path 
-**Type**: string 
-**Default**: 
+**Name**: File Manager Path
+**Type**: string
+**Default**:
 **Available In**: Revolution 2.0.0 - 2.2.x
 
 Determines the root of the file browser for the currently-logged in user in the manager backend.

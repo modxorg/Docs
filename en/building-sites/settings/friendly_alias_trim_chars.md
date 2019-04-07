@@ -6,9 +6,9 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/friendly_alias_t
 
 ## friendly\_alias\_trim\_chars
 
-**Name**: FURL Alias Trim Characters 
-**Type**: textfield 
-**Default**: /.-\_ 
+**Name**: FURL Alias Trim Characters
+**Type**: textfield
+**Default**: /.-\_
 **Available In**: Revolution 2.0.8+
 
 Characters to trim from the ends of a provided Resource alias.

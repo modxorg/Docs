@@ -15,7 +15,7 @@ note: 'This document does not describe a full workflow for using static resource
 
  For Resources, it's simple. Just use [Static Resources](building-sites/resources/static-resource "Static Resource"), and point the content to a file in your SVN checkout.
 
- The following is relevant to older versions of MODX. For MODX 2.2.x, as with static resources, simply use [Static Elements](getting-started/maintenance/upgrading/2.2#Upgradingto2.2.x-StaticElements). Static Elements have the further advantage of being able to use [Media Sources](getting-started/maintenance/upgrading/2.2#Upgradingto2.2.x-MediaSources). 
+ The following is relevant to older versions of MODX. For MODX 2.2.x, as with static resources, simply use [Static Elements](getting-started/maintenance/upgrading/2.2#Upgradingto2.2.x-StaticElements). Static Elements have the further advantage of being able to use [Media Sources](getting-started/maintenance/upgrading/2.2#Upgradingto2.2.x-MediaSources).
 
  For Elements, all you need is a simple "include" [snippet](extending-modx/snippets "Snippets"). The code:
 

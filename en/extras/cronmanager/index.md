@@ -22,7 +22,7 @@ cd /path/to/your/modx/installation/assets/components/cronmanager/ && php cron.ph
 
 We advise you to execute it on every minute, every day in every month (\* to all: m h dom mon dow). But when you're sure there are no needs for an every minute cronjob, you could change the crontab interval by your own needs.
 
-## Usageexamples
+## Usage examples
 
 To use the component, navigate to your manager and click on "Components > Cron Manager".
 

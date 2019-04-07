@@ -35,8 +35,6 @@ Add it to the grid, and save your Source. This will allow all the Users in your 
 **Media source policy applies to files and folders it provides**
 Media source policy decides what a user can do with files provided by the media source and _not the media source itself_. "Admin" policy is for administering or managing files, while "User" is only for using or accessing files. In the above example Content Editors will be able to access files and folders provided by "My New Source", browse for them and pick them in TVs. However, they **will not be able to upload** any new files **nor create** any files and directories. For that they will need wider permissions than provided by the "Media Source User" policy. In that case the "Media Source Admin" policy should be used or a custom one with tailored permissions.
 
-
-
 That's the end of basic Media Source usage. Feel free to learn about the different [Media Source Types](building-sites/media-sources/types "Media Source Types").
 
 ## See Also
@@ -44,7 +42,7 @@ That's the end of basic Media Source usage. Feel free to learn about the differe
 1. [Adding a Media Source](building-sites/media-sources/creating)
 2. [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs)
 3. [Securing a Media Source](building-sites/media-sources/securing)
-  1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
+   1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
 4. [Media Source Types](building-sites/media-sources/types)
-  1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
-  2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)
+   1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
+   2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)

@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/session_name"
 
 ## session\_name
 
-**Name**: Session Name 
-**Type**: String 
+**Name**: Session Name
+**Type**: String
 **Default**: modxcmssession
 
 Use this setting to customize the session name used for the sessions in MODx.

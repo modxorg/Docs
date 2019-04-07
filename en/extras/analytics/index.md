@@ -26,7 +26,7 @@ The extra can be retrieved through the [Package Manager](display/revolution20/Pa
 
 ## Usage
 
-### Usageexamples
+### Usage examples
 
 Most basic call (always uncached):
 

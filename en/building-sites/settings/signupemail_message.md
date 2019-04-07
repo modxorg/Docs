@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/signupemail_mess
 
 ## signupemail\_message
 
-**Name**: Signup Email Message 
-**Type**: String 
+**Name**: Signup Email Message
+**Type**: String
 **Default**:
 
 ``` html
@@ -26,12 +26,11 @@ Site Administrator
 
 Here you can set the message sent to your users when you create an account for them and let MODx send them an e-mail containing their username and password.
 
-The following placeholders are replaced by the Content Manager when the message is sent: \[\[+sname\]\] - Name of your web site 
-\[\[+saddr\]\] - Your web site email address 
-\[\[+surl\]\] - Your site url 
-\[\[+uid\]\] - User\\'s Login name or id 
-\[\[+pwd\]\] - User\\'s password 
+The following placeholders are replaced by the Content Manager when the message is sent: \[\[+sname\]\] - Name of your web site
+\[\[+saddr\]\] - Your web site email address
+\[\[+surl\]\] - Your site url
+\[\[+uid\]\] - User\\'s Login name or id
+\[\[+pwd\]\] - User\\'s password
 \[\[+ufn\]\] - User\\'s full name.
-
 
 Leave the \[\[+uid\]\] and \[\[+pwd\]\] in the e-mail, or else the username and password won't be sent in the mail and your users won't know their username or password!

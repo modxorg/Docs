@@ -6,7 +6,7 @@ _old_uri: "2.x/case-studies-and-tutorials/quick-and-easy-modx-tutorials/automate
 
 ## Introduction
 
-Don't want to wait ten seconds for Photoshop to load? Me neither. This tutorial will introduce you to the wonderful PHP script [phpthumbof](http://phpthumb.sourceforge.net/) ported to [MODX](/extras/phpthumbof "phpThumbOf") by Shaun McCormick. 
+Don't want to wait ten seconds for Photoshop to load? Me neither. This tutorial will introduce you to the wonderful PHP script [phpthumbof](http://phpthumb.sourceforge.net/) ported to [MODX](/extras/phpthumbof "phpThumbOf") by Shaun McCormick.
 [phpthumbof](/extras/phpthumbof "phpThumbOf") allows MODX to automatically generate thumbnails of a chosen width and height for us. Additionally, there are a billion other neat features to do basic image work that are at our disposal. Let's talk about a few of the most useful ones.
 
 This tutorial assumes that you know how to create and call [template variables](building-sites/elements/template-variables "Template Variables"). Knowing about [output filters](/display/revolution20/Input+and+Output+Filters "Input and Output Filters") is handy too, but we'll still get things working even if you don't know about them (they're good stuff, though).
@@ -15,7 +15,6 @@ Each of these examples will assume that you've created an image Template Variabl
 
 **Performance Hit**
 If you are on a shared server, remember excessive image processing can affect other users. Your host may contact you and/or suspend your account if it causes problems. Reducing the picture size, even if not to the exact dimensions, will reduce the resource usage and processing time.
-
 
 ## Basic Usage (Resizing and Cropping)
 

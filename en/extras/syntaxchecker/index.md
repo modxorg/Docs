@@ -21,7 +21,7 @@ SyntaxChecker was first released on December 20, 2011.
 
 It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/syntaxchecker>
 
-## UsageExamples
+## Usage examples
 
 Once you've activated the plugin, no other action is required. Just observe that if your pages or templates have glitches in their tags, you'll see an error window pop up when you try to save.
 

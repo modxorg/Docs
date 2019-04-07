@@ -4,7 +4,7 @@ _old_id: "909"
 _old_uri: "revo/login/login.register"
 ---
 
-## What is Register? 
+## What is Register?
 
  Register is a registration form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets"). An example call can be found [here](extras/login/login.register/register.example-form-1 "Register.Example Form 1").
 
@@ -12,7 +12,7 @@ _old_uri: "revo/login/login.register"
 
  Simply place the Register snippet in the Resource where your registration form is. (A default one called lgnRegisterForm is provided by the [Login](extras/login "Login") 3PC.) This snippet also requires Activation by the User, so they will get an email in their inbox regarding their signup.
 
-### Default Properties 
+### Default Properties
 
  Register has some default properties packaged into it. They are:
 
@@ -50,11 +50,11 @@ _old_uri: "revo/login/login.register"
 | validate                          | A comma-separated list of fields to validate, with each field name as name:validator (eg: username:required,email:required). Validators can also be chained, like email:email:required. This property can be specified on multiple lines.  |                     |
 | validatePassword                  | Whether or not to validate the sent password when registering. Recommended to leave this Yes unless you are generating your own password in a hook.                                                                                        | 1                   |
 
-### Validators 
+### Validators
 
  Validators in Login follow the same syntax as [FormIt Validators](extras/formit/formit.validators "FormIt.Validators"). You can use the methods described there to use them in your Login-based snippets.
 
-### Custom Validators 
+### Custom Validators
 
  You can also do custom validators by creating a Snippet and using that as the validator name. You **must** specify its name in the customValidators property, or it will not be run. Example: We create a Snippet called 'equalTo' and on our field, we set:
 
@@ -90,10 +90,10 @@ return true;
 - **key**: The name of the field.
 - **value**: The value of the field.
 - **param**: The parameter, if applicable, passed to the validator.
-- **type**: The name of the validator.
+- **Type**: The name of the validator.
 - **validator**: A reference to the lgnValidator instance.
 
-## Post-Validation 
+## Post-Validation
 
  After the form has been validated, the Register snippet can do the following:
 
@@ -102,7 +102,7 @@ return true;
 - Redirect to a specific Resource (such as a "Registered!" page)
 - or, display a success message.
 
-### Assigning User to User Groups 
+### Assigning User to User Groups
 
  Assigning the User to specified User Groups is easy. Just specify a comma-separated list of either the name of the User Group or the User Group's ID in the "&usergroups" property. This example will assign the User to the "Marketing" and "Research" groups:
 
@@ -116,7 +116,7 @@ return true;
 [[!Register? &usergroups=`Marketing:Member,Research:Super User`]]
 ```
 
-### Sending an Activation Email 
+### Sending an Activation Email
 
  Register by default requires the User to activate their account before logging in. The Snippet creates the modUser object and sets its "active" field to 0. The User then gets an email with a URL to activate their account with. Once the User visits the page, their account is set to "active=1", and they can then login.
 
@@ -137,7 +137,7 @@ return true;
 
  This would send the User the email specified in the "myActivationEmailTpl" chunk, with the specified subject line, which will direct the User to the Resource 26 to activate their account. It will also, after sending the email, redirect the User to a "Please activate your account page" of sorts at Resource 325.
 
- Activation can be turned off by setting &activation=`0`. Note, though, that this will mean anyone - including spambots - can register and be active users in your site. 
+ Activation can be turned off by setting &activation=`0`. Note, though, that this will mean anyone - including spambots - can register and be active users in your site.
 
  The &activationEmailTpl field can be a chunk name by default. You can change the type of the field by setting &activationEmailTplType to one of the following values:
 
@@ -145,9 +145,9 @@ return true;
 - **file** - Specify a filename with an absolute path. You can use {core\_path}, {base\_path} or {assets\_path} as placeholders for this value.
 - **inline** - Specify the html straight in the property value.
 
- You can also set the time-to-live for an activation email, as well. This will restrict the number of minutes until the activation window expires. You can do this by setting the value in the "activationttl" property. It defaults to 3 hours. 
+ You can also set the time-to-live for an activation email, as well. This will restrict the number of minutes until the activation window expires. You can do this by setting the value in the "activationttl" property. It defaults to 3 hours.
 
-### Redirecting to a Resource After Validation 
+### Redirecting to a Resource After Validation
 
  Redirection is simple: just specify the ID of the Resource to redirect to in the "submittedResourceId" property. For example:
 
@@ -157,7 +157,7 @@ return true;
 
  Will redirect to the Resource with ID 23. It will also append "username" and "email" GET parameters to the URL.
 
-### Display a Success Message 
+### Display a Success Message
 
  If the "submittedResourceId" property is not specified, Register will simply display a success message to the \[\[+error.message\]\] placeholder. This is the value of the "successMsg" property. For example:
 
@@ -167,7 +167,7 @@ return true;
 
  Will display "Thanks for registering!" in the \[\[+error.message\]\] property in the Resource that your \[\[Register\]\] snippet call is in after the User submits a valid registration form.
 
-## Typical Setup 
+## Typical Setup
 
  It's really easy to get confused about the various pages (resources) used for registration. In a typical setup, there are four separate pages:
 
@@ -185,16 +185,16 @@ return true;
 2. [Login.Profile](extras/login/login.profile)
 3. [Login.UpdateProfile](extras/login/login.updateprofile)
 4. [Login.Register](extras/login/login.register)
-  1. [Register.Example Form 1](extras/login/login.register/register.example-form-1)
+   1. [Register.Example Form 1](extras/login/login.register/register.example-form-1)
 5. [Login.ConfirmRegister](extras/login/login.confirmregister)
 6. [Login.ForgotPassword](extras/login/login.forgotpassword)
 7. [Login.ResetPassword](extras/login/login.resetpassword)
 8. [Login.ChangePassword](extras/login/login.changepassword)
 9. [Login.Tutorials](extras/login/login.tutorials)
-  2. [Login.Basic Setup](extras/login/login.tutorials/login.basic-setup)
-  3. [Login.Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles)
-  4. [Login.Request Membership](extras/login/login.tutorials/login.request-membership)
-  5. [Login.User Profiles](extras/login/login.tutorials/login.user-profiles)
-  6. [Login.Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields)
-  7. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks)
+    1. [Login.Basic Setup](extras/login/login.tutorials/login.basic-setup)
+    2. [Login.Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles)
+    3. [Login.Request Membership](extras/login/login.tutorials/login.request-membership)
+    4. [Login.User Profiles](extras/login/login.tutorials/login.user-profiles)
+    5. [Login.Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields)
+    6. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks)
 10. [Login.Roadmap](extras/login/login.roadmap)

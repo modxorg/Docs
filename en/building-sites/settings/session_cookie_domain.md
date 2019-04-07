@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/session_cookie_d
 
 ## session\_cookie\_domain
 
-**Name**: Session Cookie Domain 
-**Type**: String 
+**Name**: Session Cookie Domain
+**Type**: String
 **Default**: localhost
 
 Use this setting to customize the session cookie domain.

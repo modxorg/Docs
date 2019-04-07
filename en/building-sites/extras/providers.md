@@ -23,7 +23,7 @@ From there, you can click "Add New Provider" to add another, or right-click on a
 The Service URL is the actual, absolute location of the provider file.
 
 Once you have a provider, you can connect to it by going up to the Packages grid, clicking "Add New Provider", and then select the "Select a Provider" option. This will bring up a dropdown of Provider options: ![](/download/attachments/18678072/selprovider.png?version=1&modificationDate=1260560499000)
- 
+
 Once you've selected your provider, click Next, and the download tree will be populated with the contents of that Provider's payload (ie, data). This will show you a tree of Package Versions you can download:
 
 ![](/download/attachments/18678072/pkgdownload.png?version=1&modificationDate=1260560109000)

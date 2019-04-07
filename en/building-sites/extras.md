@@ -47,8 +47,8 @@ Or, packages can be downloaded directly from a browser via MODX's Extras section
 
 Downloading Packages requires you to either have cURL or sockets installed on your web server. If you do not have these installed, the list of packages will show blank.
 
-The Official Provider of modxcms.com has a URL of: 
-<http://rest.modx.com/extras/> 
+The Official Provider of modxcms.com has a URL of:
+<http://rest.modx.com/extras/>
  and comes packaged in with MODX Revolution 2.0.0.
 
 ### Installing Packages
@@ -78,4 +78,3 @@ You can click on any package to either remove or uninstall a package. _Removing_
 Note the three modes when you uninstall a package:
 
 ![](/download/attachments/18678070/pkguninstall.png?version=1&modificationDate=1247328671000)
-

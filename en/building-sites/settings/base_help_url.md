@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/base_help_url"
 
 ## base\_help\_url
 
-**Name**: Base Help URL 
-**Type**: Textfield 
+**Name**: Base Help URL
+**Type**: Textfield
 **Default**: <http://rtfm.modx.com/display/revolution20/>
 **Available In**: Revolution 2.1+
 

@@ -68,7 +68,7 @@ Copy those to the dev/ directory.
 
 Now, you'll need to edit them.
 
-#### index.php
+### index.php
 
 Edit index.php, and find this line (near the end):
 

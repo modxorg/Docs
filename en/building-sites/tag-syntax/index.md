@@ -43,14 +43,14 @@ As of MODX Revolution 2.2 any tag found that starts with a dash (-) is ignored b
 
 A tag can contain many sub-parts within it. Below is illustrated on multiple lines a tag broken down into each part and explained:
 
-**\[\[** _(opening tags)_ 
-**!** _(optional non-cacheable flag)_ 
-**elementToken** _(optional token identifying the element type if it's not a snippet, $=chunk, \*=resource field/tv, +=placeholder, etc.)_ 
-**elementName** 
-**@propertyset** _(optional PropertySet identifier)_ 
-**:filterName=`modifier`**:... _(optional one or more output filters)_ 
-**?** _(required if properties follow, indicates beginning of property string; optional otherwise)_ 
-**&propertyName=`propertyValue`** &... _(optional; any additional properties separated by &)_ 
+**\[\[** _(opening tags)_
+**!** _(optional non-cacheable flag)_
+**elementToken** _(optional token identifying the element type if it's not a snippet, $=chunk, \*=resource field/tv, +=placeholder, etc.)_
+**elementName**
+**@propertyset** _(optional PropertySet identifier)_
+**:filterName=`modifier`**:... _(optional one or more output filters)_
+**?** _(required if properties follow, indicates beginning of property string; optional otherwise)_
+**&propertyName=`propertyValue`** &... _(optional; any additional properties separated by &)_
 **\]\]** _(closing tags)_
 
 Put these all together, and a tag with all valid parts might look like this:
@@ -70,10 +70,8 @@ Note that tags can occur either on one line, or spread out across many lines. Bo
 ]]
 ```
 
-**Take it Easy** 
+**Take it Easy**
  Just because you _can_ use complex conditional filters in MODX does not mean that you _should_. Unlike PHP, when you have invalid MODX tag syntax, there are no helpful messages with line numbers telling you where something went wrong. Having tags that require debugging defeats the purpose of having a clean view layer: keep 'em clean and simple. A good rule-of-thumb is that your tags should fit onto one line (even if you spread them out for readability). If you are relying on if-statements and other conditionals in your template tags, then you might need rethink how you're building your pages.
-
-
 
 ## Properties
 
@@ -103,12 +101,9 @@ In Evolution, Snippets that need to be processed with each request should be on 
 
 In Revolution, any tag can be called uncached by inserting an exclamation point immediately after the double-bracket: \[\[!snippet\]\], \[\[!$chunk\]\], \[\[!+placeholder\]\], \[\[!\*template\_var\]\], etc.
 
-
 If you have some kind of advanced setup in which the site\_url setting is being set per request, but your \[\[~\[\[\*id\]\]\]\] links are not being generated properly, remember that any tag can be called uncached, including the link or anchor tag: \[\[!~\[\[\*id\]\]\]\]
 
 However, you will only need that when the site\_url is set dynamically and can differ per request. Any normal usage can be cached.
-
-
 
 ### Parsing Order
 

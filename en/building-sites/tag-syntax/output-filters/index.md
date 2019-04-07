@@ -10,7 +10,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
 ## Input Filter
 
-
 ## Output Filter
 
  In Revolution, the Output Filter applies one or more of series of output modifiers, which behave similarly to PHx calls in MODx Evolution - except they're built into the core. The syntax looks like this:
@@ -228,7 +227,7 @@ Number of Logins: [[+modx.user.id:userinfo=`logincount`]]
 
 `[[!+modx.user.id]]` defaults to the currently logged in user ID. You can of course replace that with `[[*createdby]]` or other resource field or placeholders that return a numeric ID representing a user.
 
-Note that the user ID and username is already available by default in MODx, so you dont need to use the "userinfo" modifier: 
+Note that the user ID and username is already available by default in MODx, so you dont need to use the "userinfo" modifier:
 
 ``` php
 [[!+modx.user.id]] - Prints the ID

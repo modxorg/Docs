@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/site_unavailable
 
 ## site\_unavailable\_page
 
-**Name**: Unavailable Page 
-**Type**: Number 
+**Name**: Unavailable Page
+**Type**: Number
 **Default**: 1
 
 Enter the ID of the Resource you want to use as an offline page here.

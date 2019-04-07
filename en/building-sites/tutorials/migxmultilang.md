@@ -229,17 +229,16 @@ Delete everything in the "Template Code (HTML)" area and then paste in the follo
 ``` php
 [[!mmlCache?
 &element=`pdoResources`
-&parents=`0` 
-&resources=`[[*id]]` 
-&tpl=`MainTpl` 
-&includeTVs=`[[mmlGetTemplateTVs]]` 
-&prepareTVs=`1` 
+&parents=`0`
+&resources=`[[*id]]`
+&tpl=`MainTpl`
+&includeTVs=`[[mmlGetTemplateTVs]]`
+&prepareTVs=`1`
 &processTVs=`1`
-&tvPrefix=`` 
+&tvPrefix=``
 &loadModels=`migxmultilang`
 &prepareSnippet = `mmlTranslatePdoToolsRow`
 ]]
-
 ```
 
 If you named your chunk anything other than "MainTpl", make sure you update the &tpl argument.
@@ -268,7 +267,6 @@ Here is a very simple example of a possible MainTpl chunk:
 [[+mml_pagetitle]]
 [[!mml_LangLinks]]
 </body>
-
 ```
 
 Besides the normal MODX tags in the head section, you can see I've added `[[+mml_pagetitle]]` and `[[!mml_LangLinks]]`.

@@ -69,7 +69,7 @@ Go to components -> EventsX and create some events
 
 ## Templates
 
-### Example_events_ calendar template
+### example _events_ calendar template
 
 ``` html
 <html>
@@ -89,7 +89,7 @@ Go to components -> EventsX and create some events
 </html>
 ```
 
-### Example_upcoming events_ calendar template
+### example _upcoming events_ calendar template
 
 ``` html
 <html>
@@ -104,7 +104,7 @@ Go to components -> EventsX and create some events
 </html>
 ```
 
-### Example_single event_ calendar template
+### example _single event_ calendar template
 
 ``` html
 [[!evxEvent?]]<html>
