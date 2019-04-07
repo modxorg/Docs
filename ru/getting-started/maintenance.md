@@ -3,7 +3,7 @@ title: "Обслуживание"
 translation: "getting-started/maintenance"
 ---
 
-### Maintenance
+### Обслуживание
 
 После установки MODX может возникнуть необходимость поддерживать ваш сайт.
 
