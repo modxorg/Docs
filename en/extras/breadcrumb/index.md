@@ -155,48 +155,40 @@ _old_uri: "revo/breadcrumb/"
   content:  '>';
   margin:   0 2px;
 }
-		
+
 ``` |
 | currentAsLink | Tag : ``` php
 [[Breadcrumbs? ¤tAsLink=`1`]]
-		
 ``` | Use template :  Tag :
 
  ``` php
 [[BreadCrumb? ¤tCrumbTpl=`myCurrentCrumbTpl`]]
-		
 ```
 
  Chunk _myCurrentCrumbTpl_ :
 
  ``` php
 <li><a href="[[+link]]">[[+pagetitle]]</a></li>
-		
 ``` |
 | descField | Tag : ``` php
 [[Breadcrumbs? &descField=`longtitle`]]
-		
 ``` | Use template :  Tag :
 
  ``` php
 [[BreadCrumb? &linkCrumbTpl=`myLinkCrumbTpl` ¤tCrumbTpl=`myCurrentCrumbTpl`]]
-		
 ```
 
  Chunks _myLinkCrumbTpl_ and _myCurrentCrumbTpl_ :
 
  ``` php
 <li><a href="[[+link]]" title="[[+longtitle]]">[[+pagetitle]]</a></li>
-		
 ``` |
 | homeCrumbDescription | Tag : ``` php
 [[Breadcrumbs? &homeCrumbDescription=`Home`]]
-		
 ``` | Use template :  Tag :
 
  ``` php
 [[BreadCrumb? &containerTpl=`myContainerTpl`]]
-		
 ```
 
  Chunks _myContainerTpl_ :
@@ -206,16 +198,13 @@ _old_uri: "revo/breadcrumb/"
   <li><a href="[[++site_url]]">Home</a></li>
   [[+crumbs]]
 </ul>
-		
 ``` |
 | homeCrumbTitle | Tag : ``` php
 [[Breadcrumbs? &homeCrumbTitle=`Home`]]
-		
 ``` | Use template :  Tag :
 
  ``` php
 [[BreadCrumb? &containerTpl=`myContainerTpl`]]
-		
 ```
 
  Chunks _myContainerTpl_ :
@@ -225,37 +214,30 @@ _old_uri: "revo/breadcrumb/"
   <li><a href="[[++site_url]]" title="Home">Home</a></li>
   [[+crumbs]]
 </ul>
-		
 ``` |
 | maxDelimiter | Tag : ``` php
 [[Breadcrumbs? &maxDelimiter=`(...)`]]
-		
 ``` | Use template :  Tag :
 
  ``` php
 [[BreadCrumb? &maxCrumbTpl=`myMaxCrumbTpl`]]
-		
 ```
 
  Chunk _myMaxCrumbTpl_ :
 
  ``` php
 <li>(...)</li>
-		
 ``` |
 | titleField | Tag : ``` php
 [[Breadcrumbs? &titleField=`menutitle`]]
-		
 ``` | Use template :  Tag :
 
  ``` php
 [[BreadCrumb? &linkCrumbTpl=`myLinkCrumbTpl` ¤tCrumbTpl=`myCurrentCrumbTpl`]]
-		
 ```
 
  Chunk _myLinkCrumbTpl_ and _myCurrentCrumbTpl_ :
 
  ``` php
 <li><a href="[[+link]]">[[+menutitle]]</a></li>
-		
 ``` |

@@ -4,8 +4,6 @@ _old_id: "1725"
 _old_uri: "revo/collections"
 ---
 
-# Collections
-
  Collections is a MODX Revolution Extra that adds a custom `CollectionContainer` resource class with the following behaviour:
 
 1. Any direct child resource will be hidden from the Resource Tree in the Manager, and listed in a grid view (similar to Articles) under a dedicated “Children” tab.

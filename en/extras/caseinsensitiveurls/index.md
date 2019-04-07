@@ -29,7 +29,7 @@ It is currently maintained by Bob Ray.
 
  CaseInsensitiveURLs can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/caseinsensitiveurls).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  CaseInsensitiveURLs is stored and developed using GitHub, and can be found here: [CaseInsensitiveURLs GitHub main page](https://github.com/BobRay/CaseInsensitiveURLs).
 

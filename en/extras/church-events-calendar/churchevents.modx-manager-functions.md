@@ -14,7 +14,7 @@ Calendars are really just a filter that you can apply to all views (day/week/mon
 
 ### Categories
 
-Categories are an additional way to apply filters that you can apply to all views (day/week/month/year/RSS/List/iCal). You must have at least one Category for the program to work. The default Categories that are loaded are Adults, Children, Youth and General. Select a background and font color click on the button to the right of the fields in the popup view. These options are only used in the ChurchEvents\_CategoryHeadTpl Chunk. 
+Categories are an additional way to apply filters that you can apply to all views (day/week/month/year/RSS/List/iCal). You must have at least one Category for the program to work. The default Categories that are loaded are Adults, Children, Youth and General. Select a background and font color click on the button to the right of the fields in the popup view. These options are only used in the ChurchEvents\_CategoryHeadTpl Chunk.
 ![](/download/attachments/37126295/category-color.jpg?version=1&modificationDate=1324584795000)
 
 ### Buildings/Location Types

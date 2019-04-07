@@ -11,9 +11,9 @@ Blank by default, meant to be close any wrapper tags opened in bx-container-open
 ## See Also
 
  ``` php
-[[getResources@section? 
-    &parents=`1316` 
-    &context=`extras` 
-    &limit=`0` 
+[[getResources@section?
+    &parents=`1316`
+    &context=`extras`
+    &limit=`0`
     &resources=`1316,[[*id]]`
 ]]

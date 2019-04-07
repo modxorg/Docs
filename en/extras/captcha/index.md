@@ -42,7 +42,7 @@ It is currently maintained by Bob Ray.
 
  Captcha can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/captcha).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  Captcha is stored and developed using GitHub, and can be found here: [Captcha GitHub main page](https://github.com/BobRay/Captcha).
 

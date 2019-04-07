@@ -31,7 +31,7 @@ It is currently maintained by Bob Ray.
 
 ActivationEmail can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/activationemail).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
 ActivationEmail is stored and developed using GitHub, and can be found here: [ActivationEmail GitHub main page](https://github.com/BobRay/ActivationEmail).
 

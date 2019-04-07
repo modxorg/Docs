@@ -4,8 +4,6 @@ _old_id: "606"
 _old_uri: "revo/bannerx"
 ---
 
-# BannerX
-
 **Removed**
 See [BannerY](extras/bannery "BannerY")
 

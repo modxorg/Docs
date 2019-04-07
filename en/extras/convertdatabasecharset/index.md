@@ -20,7 +20,7 @@ It is currently maintained by Bob Ray.
 
  ConvertDatabaseCharset can be downloaded from the documentation page (see below).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  ConvertDatabaseCharset is stored and developed using GitHub, and can be found here: [ConvertDatabaseCharset GitHub main page](https://github.com/BobRay/ConvertDatabaseCharset).
 

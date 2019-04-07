@@ -29,13 +29,13 @@ After this changes **add two settings** in your System Settings (in manager):
 
 Assets url must be **visible** from web.
 
-Next step is creating **namespace** with name 'YourComponent', 
-**core path** 'Point to /yourcomponent/core/components/yourcomponent/' and 
+Next step is creating **namespace** with name 'YourComponent',
+**core path** 'Point to /yourcomponent/core/components/yourcomponent/' and
 **assets path** 'Point to /yourcomponent/assets/components/yourcomponent/'.
 
 After you created namespace, **add new action** under YourComponent namespace with **index controller** and without parent controller.
 
-**Place just created action** under Component menu (or where ever you want) with lexicon key 'yourcomponent' and description 'yourcomponent.menu\_desc'. 
+**Place just created action** under Component menu (or where ever you want) with lexicon key 'yourcomponent' and description 'yourcomponent.menu\_desc'.
 Then clear the cache and refresh manager page.
 
 If you want to **create default database table** provided in BxrExtra add new snippet in your manager, call it createDBTable and set it as **static**. Set media sources for Static files to '(None)' and Static file to '\[\[++yourcomponent.core\_path\]\]/elements/snippets/snippet.yourcomponentCreateDB.php'. Use 'createDBTable' snippet in any of your resources and run it. You shoud get **'Table created.'** message.
@@ -56,9 +56,9 @@ If you do not require all of this functionality, simply remove it and change the
 ### Removing Drag&Drop
 
 - delete assets/components/yourcomponent/js/mgr/extra/griddraganddrop.js
-- in core/components/yourcomponent/controllers/home.class.php 
+- in core/components/yourcomponent/controllers/home.class.php
   - remove $this->addJavascript($this->yourcomponent->config\['jsUrl'\].'mgr/extra/griddraganddrop.js');
-- in assets/components/yourcomponent/js/mgr/widgets/items.grid.js 
+- in assets/components/yourcomponent/js/mgr/widgets/items.grid.js
   - remove ddGroup config parameter
   - remove enableDragDrop config parameter, or set to false
   - remove render and beforeDestroy listeners
@@ -66,13 +66,13 @@ If you do not require all of this functionality, simply remove it and change the
 
 #### Removing position from database (position is used for sort)
 
-- in core/components/yourcomponent/model/schema/yourcomponent.mysql.schema.xml 
+- in core/components/yourcomponent/model/schema/yourcomponent.mysql.schema.xml
   - remove field with "position" key
 - remove all php files in core/component/yourcomponent/model/yourcomponent/mysql folder
-- in \_build 
+- in \_build
   - rename build.config.sample.php to build.config.php
   - edit build.config.php and set MODX\_BASE\_PATH to path to your modx location
-- run \_build/build.schema.php 
+- run \_build/build.schema.php
   - it should make new files in core/component/yourcomponent/model/yourcomponent/mysql folder
 - remove yourcomponent\_items table from database
 - run snippet that create database table (described in Setup)

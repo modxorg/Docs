@@ -11,9 +11,9 @@ Blank by default, meant to be used to add to the the head tag before it is close
 ## See Also
 
  ``` php
-[[getResources@section? 
-    &parents=`1316` 
-    &context=`extras` 
-    &limit=`0` 
+[[getResources@section?
+    &parents=`1316`
+    &context=`extras`
+    &limit=`0`
     &resources=`1316,[[*id]]`
 ]]
