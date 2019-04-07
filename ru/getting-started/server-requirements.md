@@ -3,22 +3,21 @@ title: "Требования к серверу"
 translation: "getting-started/server-requirements"
 ---
 
-
-### Поддерживаемые операционные системы
+# Поддерживаемые операционные системы
 
 - Linux x86, x86-64
 - Mac OS X
 - Windows XP, Server
 
-### Поддерживаемые веб-серверы
+## Поддерживаемые веб-серверы
 
 - Apache 1.3.x - 2.4.x (использует htaccess для дружественных URL)
 - IIS 6.0+
-- lighttpd ([Руководство по настройке дружественных URL](getting-started/installation/basic-installation/lighttpd-guide "Lighttpd Guide"))
+- lighttpd ([Руководство по настройке дружественных URL](getting-started/friendly-urls/lighttpd "Lighttpd Guide"))
 - Zeus
-- nginx ([Руководство по настройке дружественных URL](getting-started/installation/basic-installation/nginx-server-config "Nginx Server Config"))
+- nginx ([Руководство по настройке дружественных URL](getting-started/friendly-urls/nginx "Nginx Server Config"))
 
-### Совместимость с PHP
+## Совместимость с PHP
 
 - PHP 5.3.3 и выше (до MODX 2.4: 5.1.2 и выше, исключая 5.1.6 и 5.2.0)
 - Требуемые расширения:
@@ -29,20 +28,22 @@ translation: "getting-started/server-requirements"
   - PDO, конкретно pdo\_mysql (для xPDO)
   - ImageMagick (для миниатюр)
   - SimpleXML
-  - cURL (для [Управление пакетами](developing-in-modx/advanced-development/package-management "Управление пакетами"))
+  - cURL (для [Управление пакетами](extending-modx/transport-packages "Управление пакетами"))
 - safe\_mode off
 - register\_globals off
 - magic\_quotes\_gpc off
 - php-mbstring on (требуется для некоторых дополнений, таких как Gallery)
 - PHP memory\_limit 24MB или больше, в зависимости от вашего сервера
 
-**Параметры конфигурации PHP** 
-``` php 
+## Параметры конфигурации PHP
+
+``` php
 ./configure --with-apxs2=/usr/local/bin/apxs --with-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 ```
 
-**Параметры конфигурации NGINX PHP** 
-``` php 
+## Параметры конфигурации NGINX PHP
+
+``` php
 ./configure --with-mysql --with-pdo-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 ```
 
@@ -52,7 +53,7 @@ translation: "getting-started/server-requirements"
   - SELECT, INSERT, UPDATE, DELETE необходимы для нормальной работы
   - CREATE, ALTER, INDEX, DROP необходимы для установки / обновления и, возможно, для различных дополнений
   - CREATE TEMPORARY TABLES может использоваться некоторыми сторонними надстройками
-- **исключает версию 5.0.51** ([Почему не 5.0.51?](getting-started/server-requirements/mysql-5.0.51-issues "MySQL 5.0.51 Issues"))
+- **исключает версию 5.0.51** ([Почему не 5.0.51?](getting-started/installation/troubleshooting/mysql-5.0.51 "MySQL 5.0.51 Issues"))
 - MyISAM или InnoDB механизм хранения
 
 ### Поддерживаемые браузеры (для интерфейса Backend Manager)

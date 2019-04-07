@@ -1,5 +1,6 @@
 ---
 title: "Server Requirements"
+sortorder: "2"
 _old_id: "273"
 _old_uri: "2.x/getting-started/server-requirements"
 ---
@@ -14,9 +15,9 @@ _old_uri: "2.x/getting-started/server-requirements"
 
 - Apache 1.3.x - 2.4.x (uses htaccess for Friendly URLs)
 - IIS 6.0+
-- lighttpd ([Setup and Friendly URL Guide](getting-started/installation/basic-installation/lighttpd-guide "Lighttpd Guide"))
+- lighttpd ([Setup and Friendly URL Guide](getting-started/friendly-urls/lighttpd "Lighttpd Guide"))
 - Zeus
-- nginx ([Setup and Friendly URL Guide](getting-started/installation/basic-installation/nginx-server-config "Nginx Server Config"))
+- nginx ([Setup and Friendly URL Guide](getting-started/friendly-urls/nginx "Nginx Server Config"))
 
 ### PHP Compatibility
 
@@ -29,20 +30,22 @@ _old_uri: "2.x/getting-started/server-requirements"
   - PDO, specifically pdo\_mysql (for xPDO)
   - ImageMagick (for thumbnails)
   - SimpleXML
-  - cURL (for [Package Management](developing-in-modx/advanced-development/package-management "Package Management"))
+  - cURL (for [Package Management](extending-modx/transport-packages "Package Management"))
 - safe\_mode off
 - register\_globals off
 - magic\_quotes\_gpc off
 - php-mbstring on (required on some extras like Gallery)
 - PHP memory\_limit 24MB or more, depending on your server
 
-**PHP Configuration Options** 
-``` php 
+**PHP Configuration Options**:
+
+``` php
 ./configure --with-apxs2=/usr/local/bin/apxs --with-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 ```
 
-**NGINX PHP Configuration Options** 
-``` php 
+**NGINX PHP Configuration Options**:
+
+``` php
 ./configure --with-mysql --with-pdo-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
 ```
 
@@ -52,7 +55,7 @@ _old_uri: "2.x/getting-started/server-requirements"
   - SELECT, INSERT, UPDATE, DELETE are required for normal operation
   - CREATE, ALTER, INDEX, DROP are required for installation/upgrades and potentially for various add-ons
   - CREATE TEMPORARY TABLES may be used by some 3rd party add-ons
-- **excludes version 5.0.51** ([Why not 5.0.51?](getting-started/server-requirements/mysql-5.0.51-issues "MySQL 5.0.51 Issues"))
+- **excludes version 5.0.51** ([Why not 5.0.51?](getting-started/installation/troubleshooting/mysql-5.0.51 "MySQL 5.0.51 Issues"))
 - MyISAM or InnoDB storage engine
 
 ### Supported Browsers (for Backend Manager Interface)

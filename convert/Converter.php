@@ -41,11 +41,19 @@ class Converter {
         1653, // the xPDO 1.x root, we don't need this anymore
         345, // the revolution/aliases/ section
         1655, // empty index file
+
+        4, // some imported legacy
+        760, // evo root
+        1812, // 404
     ];
 
     protected static $ignoreContexts = [
+        'web',
         'evolution',
-        'extras',
+        'revolution',
+        'xpdo',
+        'contribute',
+        'community',
     ];
 
     public function __construct()
@@ -75,6 +83,8 @@ class Converter {
         $this->converter = new HtmlConverter($environment);
 
         $this->outputDir = dirname(__DIR__) . '/en/';
+
+        $this->redirects = json_decode(file_get_contents(dirname($this->outputDir) . '/redirects.json'), true);
     }
 
     public function magic()
@@ -101,7 +111,7 @@ class Converter {
 
         echo count($this->toDos) . " potential problems have been logged to todos.txt\n";
 
-        file_put_contents(dirname($this->outputDir) . '/redirects.json', json_encode($this->redirects,  JSON_PRETTY_PRINT));
+        file_put_contents(dirname($this->outputDir) . '/redirects.json', json_encode($this->redirects,  JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
         echo count($this->redirects) . " redirects have been written to redirects.json\n";
     }
 
@@ -113,7 +123,7 @@ class Converter {
         }
         // Prepare the file meta
         $fileMeta = [
-            'title' => $resource->get('pagetitle'),
+            'title' => $this->getTitle($resource),
             '_old_id' => $resource->get('id'),
             '_old_uri' => $resource->get('uri'),
         ];
@@ -144,12 +154,18 @@ class Converter {
         if (empty($name)) {
             $name = $this->modx->filterPathSegment($resource->get('pagetitle'));
         }
-        $name .= $resource->get('isfolder') ? '/index.md' : '.md';
+        // force extras into their own directory
+        $name .= $resource->get('parent') == 759 || $resource->get('isfolder')  ? '/index.md' : '.md';
 
         $childDirectory = $currentDirectory . $resource->get('alias') . '/';
         $ignoreParent = false;
         // Handle resource-specific overrides to clean things up
         switch ($resource->get('id')) {
+            case 759:
+                $childDirectory = '/extras/';
+                $ignoreParent = true;
+                break;
+
             // Home!
             case 1:
                 $currentDirectory = '/';
@@ -175,7 +191,8 @@ class Converter {
         }
 
         if (!$ignoreParent) {
-            $absFileName = $this->outputDir . $currentDirectory . $name;
+            $fullName = $this->filterParents($currentDirectory . $name);
+            $absFileName = $this->outputDir . $fullName;
             $this->ensureCanBeWritten($absFileName);
             file_put_contents($absFileName, $output);
 
@@ -204,7 +221,7 @@ class Converter {
             // Keep a list of redirects
             $oldUri = $this->modx->makeUrl($resource->get('id'), '', '', 'relative');
             $oldUri = str_replace($this->modx->getOption('site_url'), '/', $oldUri);
-            $newUri = 'en/' . ltrim($currentDirectory, '/') . $name;
+            $newUri = 'en/' . ltrim($fullName, '/');
             $newUri = str_replace('.md', '', $newUri);
             if ($oldUri !== $newUri) {
                 $this->redirects[$oldUri] = $newUri;
@@ -273,5 +290,47 @@ class Converter {
         if (!is_dir($path)) {
             mkdir($path, 0755, true);
         }
+    }
+
+    private function filterParents(string $name)
+    {
+        $parts = explode('/', $name);
+        $usedParts = [];
+        $newParts = [];
+        foreach ($parts as $part) {
+            if (strpos($part, '.') !== false) {
+                $part2 = explode('.', $part);
+                foreach ($part2 as $i => $p) {
+                    if (in_array($p, $usedParts)) {
+                        unset($part2[$i]);
+                    } else {
+                        $usedParts[] = $p;
+                    }
+                }
+                $newParts[] = implode('.', $part2);
+            }
+            else {
+                $newParts[] = $part;
+            }
+        }
+        return implode('/', $newParts);
+    }
+
+    private function getTitle(modResource $resource)
+    {
+        $title = $resource->get('pagetitle');
+//        var_dump($title);
+        if (strpos($title, '.') !== false) {
+            $parts = explode('.', $title);
+            $thisTitle = array_pop($parts);
+            $prevTitle = implode('.', $parts);
+            $parent = $resource->getOne('Parent');
+            if ($parent && $parent->get('pagetitle') == $prevTitle) {
+//                var_dump($parent->get('pagetitle'));
+                $title = $thisTitle;
+            }
+//            var_dump([$prevTitle, $thisTitle, $title]);
+        }
+        return $title;
     }
 }
