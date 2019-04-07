@@ -10,7 +10,6 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 - Part II: Handling our CRC Behavior
 - [Part III: Customizing the Controllers](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3")
 - [Part IV: Customizing the Processors](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
- 
 
  Now that we've got our class, we want to append our copyright date to it. Let's go ahead:
 

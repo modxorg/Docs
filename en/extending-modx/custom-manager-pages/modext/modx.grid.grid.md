@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 
 ## MODx.grid.Grid
 
-**Extends:** Ext.grid.EditorGridPanel 
+**Extends:** Ext.grid.EditorGridPanel
 **Key Features:** Connector functionality; easily integrate toolbar items and MODx.Window; built-in context menu functionality.
 
 When instantiating this into a tabbed interface, it's recommended to set preventRender: true in its config to prevent JS rendering issues.
@@ -101,11 +101,11 @@ MODx.grid.Grid adds a few extra events not found in Ext.grid.Grid objects:
 
 MODExt grids come with quite a few other features.
 
-#### Custom Store Exception Messages
+### Custom Store Exception Messages
 
 If the JSON returned is not a valid data store collection, and contains a "message" parameter, this will be set to the emptyText for the grid and displayed as the first row of the grid. A common usage is to use $modx->error->failure('Message here') in your processors.
 
-#### loadWindow
+### loadWindow
 
 Automatically load and show a window of any given xtype:
 
@@ -118,7 +118,7 @@ grid.loadWindow({
 
 This will, if blankValues is not set to true, automatically pass in the currently selected row's data into the Window as well, setting its values in the form (assuming your window extends [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window "MODx.Window").)
 
-#### remove
+### remove
 
 MODx.grid.Grid comes with a custom method named 'remove', which automatically fires an AJAX request to your connector set in config.url with the action of "remove", and the ID (or primaryKey set in the config) of the currently selected row. This is useful for context menus.
 
@@ -128,7 +128,7 @@ The method takes one parameter - text - which is the text to display in the conf
 grid.remove("Are you sure you want to remove this Item?");
 ```
 
-#### confirm
+### confirm
 
 The confirm method is a custom method that allows you to pop up a confirmation dialog before executing an action:
 
@@ -138,15 +138,15 @@ grid.confirm("approve","Are you sure you want to approve this article?");
 
 Similar to remove, it will take the ID/primaryKey of the currently selected row, and send it through to the processor action specified in the first parameter to the confirm method. Once finished, it will refresh the grid.
 
-#### refresh
+### refresh
 
 A custom method that will refresh the grid whenever fired.
 
-#### encodeModified
+### encodeModified
 
 This will return a JSON object of all modified (dirty) rows and fields. Useful if autosave is set to false.
 
-#### encode
+### encode
 
 This will return a JSON object of all rows.
 
@@ -154,13 +154,13 @@ This will return a JSON object of all rows.
 
 1. [MODExt MODx Object](extending-modx/custom-manager-pages/modext/modext-modx-object)
 2. [MODExt Tutorials](extending-modx/custom-manager-pages/modext/modext-tutorials)
-  1. [Ext JS Tutorial - Message Boxes](extending-modx/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
-  2. [Ext JS Tutorial - Ajax Include](extending-modx/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
-  3. [Ext JS Tutorial - Animation](extending-modx/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
-  4. [Ext JS Tutorial - Manipulating Nodes](extending-modx/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
-  5. [Ext JS Tutorial - Panels](extending-modx/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
-  6. [Ext JS Tutoral - Advanced Grid](extending-modx/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
-  7. [Ext JS Tutorial - Inside a CMP](extending-modx/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
+   1. [Ext JS Tutorial - Message Boxes](extending-modx/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
+   2. [Ext JS Tutorial - Ajax Include](extending-modx/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
+   3. [Ext JS Tutorial - Animation](extending-modx/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
+   4. [Ext JS Tutorial - Manipulating Nodes](extending-modx/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
+   5. [Ext JS Tutorial - Panels](extending-modx/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
+   6. [Ext JS Tutoral - Advanced Grid](extending-modx/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
+   7. [Ext JS Tutorial - Inside a CMP](extending-modx/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
 3. [MODx.combo.ComboBox](extending-modx/custom-manager-pages/modext/modx.combo.combobox)
 4. [MODx.Console](extending-modx/custom-manager-pages/modext/modx.console)
 5. [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel)

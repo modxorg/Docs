@@ -48,7 +48,7 @@ git checkout -b myAwesomeFeature 2.x
  Yes.
 
 ``` php
-$ echo 'Yes'
+echo 'Yes'
 ```
 
 ### How do I keep my feature branch in sync with the upstream develop branch?

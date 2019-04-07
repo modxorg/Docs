@@ -276,7 +276,7 @@ When describing options always start from left to right and from top to bottom.
 - If you have a list of items (for example a list of files to be downloaded) order them alphabetically unless there is a more obvious logical order.
 - Try to be consistent with the way you describe similar processes. For example don't mix mouse navigation in with keystrokes in the same procedure unless it's really necessary. In general, pick your interaction style (menus, keystrokes etc) and stick with it throughout the document.
 - Do not use contractions (don't, you're, etc)
-  
+
 ## Writing for a global audience
 
 ## source software is global by definition. Keep in mind that people from all over the globe have access to it and its related documentation

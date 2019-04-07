@@ -10,9 +10,9 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 
  If you are a developer looking to build an extra which includes a component, you should follow the [Developing an Extra for MODX Revolution tutorial](extending-modx/tutorials/developing-an-extra), as it walks you through all the specific steps and terminology based on an example package called doodles. This page only goes into a minimum set up for custom manager pages.
 
- The equivalent of a CMP or Component in MODX Evolution is a Module, though the technique in which they are created is quite different. 
+ The equivalent of a CMP or Component in MODX Evolution is a Module, though the technique in which they are created is quite different.
 
-## Namespaces 
+## Namespaces
 
  CMPs need a namespace in order for MODX to know where to load the files from.
 
@@ -32,7 +32,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 - {base\_path} - Resolves to the **MODX\_BASE\_PATH** variable, which contains the absolute path to the root of the MODX installations, typically something _/home/username/public\_html/modx\_location/_
 - {assets\_path} - Resolves to the **MODX\_ASSETS\_PATH** variable, which contains the absolute path to the assets directory of your MODX installation.
 
-## Using modAction and modMenu 
+## Using modAction and modMenu
 
  To point the end user to your custom manager page, you will typically want to make it available through the top menu. This is done with an Action (modAction) and a Menu item (modMenu).
 
@@ -40,7 +40,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 
  To create an Action, go to System -> Actions. Right-click your Namespace from the 'Actions' tree and select "Create Action Here. In the modal window enter your controller name (call it "index" for now), choose the namespace and set the parent controller to "No Action".
 
- Note: in MODX 2.3, actions are no longer necessary (or possible to set up through the manager interface for that matter) and instead of creating the action, you pass your Menu to the right namespace and give it an action name, which is the name of your controller. 
+ Note: in MODX 2.3, actions are no longer necessary (or possible to set up through the manager interface for that matter) and instead of creating the action, you pass your Menu to the right namespace and give it an action name, which is the name of your controller.
 
  Now that we have the Action set up, we can create a menu item. This menu item contains the title and description you can see in the top menu and is linked to the Action, which handles loading the controller (we'll get to the controller in a second).
 
@@ -204,12 +204,12 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
 ## See Also 
 
 1. [Actions and Menus](extending-modx/menus/actions)
-  1. [Action List](extending-modx/menus/action-list)
+   1. [Action List](extending-modx/menus/action-list)
 2. [Custom Manager Pages in 2.3](extending-modx/custom-manager-pages/tutorial)
 3. [Custom Manager Pages Tutorial](_legacy/developing-in-modx/custom-manager-pages-tutorial)
 4. [MODExt](extending-modx/custom-manager-pages/modext)
-  1. [MODExt MODx Object](extending-modx/custom-manager-pages/modext/modext-modx-object)
-  2. [MODExt Tutorials](extending-modx/custom-manager-pages/modext/modext-tutorials)
+   1. [MODExt MODx Object](extending-modx/custom-manager-pages/modext/modext-modx-object)
+   2. [MODExt Tutorials](extending-modx/custom-manager-pages/modext/modext-tutorials)
       1. [Ext JS Tutorial - Message Boxes](extending-modx/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
       2. [Ext JS Tutorial - Ajax Include](extending-modx/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
       3. [Ext JS Tutorial - Animation](extending-modx/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
@@ -217,11 +217,11 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
       5. [Ext JS Tutorial - Panels](extending-modx/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
       6. [Ext JS Tutoral - Advanced Grid](extending-modx/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
       7. [Ext JS Tutorial - Inside a CMP](extending-modx/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
-  3. [MODx.combo.ComboBox](extending-modx/custom-manager-pages/modext/modx.combo.combobox)
-  4. [MODx.Console](extending-modx/custom-manager-pages/modext/modx.console)
-  5. [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel)
-  6. [MODx.grid.Grid](extending-modx/custom-manager-pages/modext/modx.grid.grid)
-  7. [MODx.grid.LocalGrid](extending-modx/custom-manager-pages/modext/modx.grid.localgrid)
-  8. [MODx.msg](extending-modx/custom-manager-pages/modext/modx.msg)
-  9. [MODx.tree.Tree](extending-modx/custom-manager-pages/modext/modx.tree.tree)
-  10. [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window)
+   3. [MODx.combo.ComboBox](extending-modx/custom-manager-pages/modext/modx.combo.combobox)
+   4. [MODx.Console](extending-modx/custom-manager-pages/modext/modx.console)
+   5. [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel)
+   6. [MODx.grid.Grid](extending-modx/custom-manager-pages/modext/modx.grid.grid)
+   7. [MODx.grid.LocalGrid](extending-modx/custom-manager-pages/modext/modx.grid.localgrid)
+   8. [MODx.msg](extending-modx/custom-manager-pages/modext/modx.msg)
+   9. [MODx.tree.Tree](extending-modx/custom-manager-pages/modext/modx.tree.tree)
+   10. [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window)

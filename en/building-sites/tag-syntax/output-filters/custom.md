@@ -89,7 +89,7 @@ if ($input % 2) {
 
 ### parseLinks
 
- The parseLinks output filter finds links, and replaces them with a html <a> attribute.</a>
+ The parseLinks output filter finds links, and replaces them with a html `<a>` attribute.`</a>`
 
 ``` php
 <?php
@@ -174,6 +174,7 @@ Example:
 ```
 
 ### numberformat
+
 [PHP: number_format](http://php.net/manual/en/function.number-format.php)
 
 ``` php
