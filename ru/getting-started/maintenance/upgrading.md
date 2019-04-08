@@ -57,7 +57,7 @@ _old_uri: "2.x/administering-your-site/upgrading-modx"
 
  Если вы выполняете обновление с помощью **Расширенного обновления**, убедитесь, что у вас сняты флажки "Базовый пакет был распакован вручную" и "Файлы уже размещены", а каталоги core/, manager/ и connectors/ доступны для записи.
 
- Если во время установки возникают ошибки, прочтите [Проблемы установки] (getting-started/installation/troubleshooting "Проблемы установки") и  [Решение проблем с обновлением] (getting-started/installation/troubleshooting "Troubleshooting Installation").
+ Если во время установки возникают ошибки, прочтите [Проблемы установки](getting-started/installation/troubleshooting "Проблемы установки") и  [Решение проблем с обновлением](getting-started/installation/troubleshooting "Troubleshooting Installation").
 
 ## После установки
 
