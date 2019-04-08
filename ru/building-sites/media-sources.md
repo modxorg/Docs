@@ -13,7 +13,7 @@ translation: "building-sites/media-sources"
 
 Источник может быть разных типов - от внутренней файловой системы до Amazon S3 или Flickr. MODX по умолчанию предоставляет два типа источников файлов: файловая система и интеграция с Amazon S3. Другие источники могут быть созданы путем добавления нового типа источников или путем их загрузки их из [Управление пакетами](extending-modx/transport-packages "Управление пакетами").
 
-## ## Использование источников файлов
+## Использование источников файлов
 
 В следующих разделах описывается базовое использование источников файлов.
 
@@ -24,10 +24,10 @@ translation: "building-sites/media-sources"
 
 ## Смотрите также
 
-1. [Adding a Media Source](building-sites/media-sources/creating)
+1. [Добавление источника файлов](building-sites/media-sources/creating)
 2. [Назначение источника файлов для TV](building-sites/media-sources/assigning-to-tvs)
 3. [Защита источника файлов](building-sites/media-sources/securing)
-   1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
+   1. [Руководство по созданию источника файлов для клиентов](building-sites/media-sources/securing/clients-tutorial)
 4. [Типы источника файлов](building-sites/media-sources/types)
    1. [Типы источника файлов - Файловая система](building-sites/media-sources/types/media-source-type-file-system)
    2. [Типы источника файлов - S3](building-sites/media-sources/types/media-source-type-s3)
