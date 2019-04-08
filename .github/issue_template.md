@@ -6,9 +6,6 @@ Please provide a link to the page(s) that have an issue, or even better, the lin
 
 Be as specific as possible; is there a typo, incorrect capitalisation of MODX, or does an entire section need work? What is unclear or incorrect? If an inaccuracy or unclear description was discussed on the forums or slack, include a link to that discussion.
 
-## Relevant versions
+## Relevant context
 
-The problem affects the following version(s): 
-
-- [x] 2.x (current)
-- [ ] 3.x
+Does the problem only occur in a specific version or language? Then please include that.
