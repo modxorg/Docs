@@ -1,6 +1,6 @@
 ---
 title: "Обновление MODX сайта"
-_old_uri: "translation: "2.x/administering-your-site/upgrading-modx"
+translation: "administering-your-site/upgrading-modx"
 ---
 
 Этот документ описывает обновление для MODX версий 2.x. Если вам необходимо обновить более раннюю версию Evolution (1.x), то это официально не поддерживается в настоящее время, но материалы, которые вам помогут в этом вопросе, вы можете [найти здесь](display/revolution20/Upgrading+from+MODX+Evolution). 
