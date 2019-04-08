@@ -1,106 +1,110 @@
 ---
-title: "Upgrading MODX"
+title: "Обновление MODX сайта"
 _old_id: "321"
 _old_uri: "2.x/administering-your-site/upgrading-modx"
 ---
 
-This document is for Upgrading MODX 2.x. If you are looking to upgrade from Evolution (1.x), this is not officially supported at this time, but resources to help you in this process can be [found here](display/revolution20/Upgrading+from+MODX+Evolution). 
+Этот документ описывает обновление для MODX версий 2.x. Если вам необходимо обновить более раннюю версию Evolution (1.x), то это официально не поддерживается в настоящее время, но материалы, которые вам помогут в этом вопросе, вы можете [найти здесь](display/revolution20/Upgrading+from+MODX+Evolution). 
 
-## Upgrading MODX Revolution 2.x
+## Обновление MODX Revolution версии 2.x
 
- This document assumes you are upgrading from a standard install. For Git users, please see [Git Installation](getting-started/installation/git "Git Installation").
+ В этом документе предполагается, что вы выполняете обновление со стандартной установки. Для пользователей Git см. [Установка при помощи Git](getting-started/installation/git "Установка при помощи Git").
 
- **The latest MODX Revolution release can be downloaded at** **<http://modx.com/download/>**
+ **Последнюю версию MODX Revolution можно найти по адресу ** **<https://modx.com/download/>**
 
- Always make sure to backup your files and database before upgrading. Upgrades should go smoothly, but it is **always** a safe and smart practice to backup. 
+ Обязательно сделайте резервную копию ваших файлов и базы данных перед обновлением. Обновления должны проходить гладко, но это **всегда** безопасная и разумная практика - сделать резервную копию.
 
- When you are updating from MODX Revolution 2.0.x to 2.1.x it is VERY important to realize a lot of functions have been deprecated. Most addons will have been updated to use the new methods, however you may not always be running the latest version. So, BEFORE starting the upgrade process make sure all your packages are up to date, and working properly in 2.0.x. If you don't, you may end up being locked in some kind of limbo where the manager can not be accessed due to fatal PHP errors. While this can often be fixed by manually removing or updating the offending files, in certain server setups you may not have access to php generated files (such as files created by the package manager on install) requiring a lot more work to fix. 
+ При обновлении MODX Revolution с версий 2.0.x до 2.1.x ОЧЕНЬ важно осознавать, что многие функции устарели. Большинство дополнений будут обновлены для использования новых методов, однако, возможно вы не всегда используете последнюю версию. Итак, ДО начала процесса обновления убедитесь, что все ваши пакеты обновлены и работают должным образом в версии 2.0.x. Если вы этого не сделаете, вы можете оказаться заблокированным в каком-то подвешенном состоянии, где менеджер не может быть доступен из-за фатальных ошибок PHP. Несмотря на то, что это часто можно исправить путем удаления или обновления поврежденных файлов вручную, в некоторых серверных настройках у вас может не быть доступа к файлам, сгенерированных PHP (например, к файлам, созданным менеджером пакетов при установке), что потребует много дополнительной работы для исправления.
+ 
 
- **Pre-Upgrade Checklist:**- Upgrade any packages if needed
-- Log out of MODX (use "Flush Sessions and Log Out" from the manager menu)
-- Delete the files in your core/cache folder
+ ** Что нужно сделать перед обновлением: ** 
+- Обновите все пакеты, если это необходимо
+- Выйдите из MODX (используйте «Завершить все сеансы» из меню менеджера)
+- Удалите все содержимое из папки core/cache
 
 
+## Загрузка файлов
 
-## Uploading the Files
 
- It is generally best not to use FTP to upload files that have been extracted locally. FTP can miss or corrupt files, which will cause errors in your installation. It is also much slower than using the file manager on the server itself. If your server's file manager does not allow extraction, check in the control panel for an extraction script. 
+ Как правило, лучше не использовать FTP для загрузки файлов, которые были извлечены локально. FTP может пропустить или повредить файлы, что приведет к ошибкам в вашей установке. Это также намного медленнее, чем использование файлового менеджера на самом сервере. Если файловый менеджер вашего сервера не разрешает извлечение, проверьте в панели управления возможность извлечения скриптом.
 
- For traditional distribution users, simply upload a copy of the MODX.zip file you wish to upgrade to onto your server, and then extract the files on the server itself into a new folder.
+ Для пользователей традиционных дистрибутивов просто загрузите копию файла-архива MODX.zip, который вы хотите обновить, на свой сервер, а затем извлеките файлы на самом сервере в новую папку.
 
- Open the new folder, select all of the extracted files and merge/copy them into your MODX root/install location. You can now remove the MODX.zip file and new extracted folder from the server. Your MODX install/root folder should now contain the newly merged files plus a new "setup" folder.
+ Откройте новую папку, выберите все извлеченные файлы и объедините/скопируйте их в корневой каталог/папку установки MODX (при этом часть прежних MODX файлов будет заменена новыми). Теперь вы можете удалить файл MODX.zip и папку, в которую извлекали этот архив, с сервера. Ваша папка установки MODX теперь должна содержать вновь объединенные файлы(те,что были ранее и те, что были перезаписаны) плюс новую папку «setup».
 
- For the advanced distribution, do the same, but you'll only need to do so for the core/ and setup/ directories. With the advanced, you'll need to make sure the manager and connectors directories and files are writable.
+ Для продвинутого дистрибутива сделайте то же самое, но вам нужно будет сделать это только для директорий core/ и setup/. Вам нужно убедиться, что manager и connectors каталоги и их файлы доступны для записи.
 
- Make sure that you don't overwrite core/config/config.inc.php, and that it's writable. Also, don't overwrite or erase the core/components/ directory. 
+ Убедитесь, что вы не перезаписываете файл core/config/config.inc.php и что он доступен для записи. Кроме того, не перезаписывайте и не стирайте каталог core /components/.
 
- The trick here is to get an FTP client that supports **directory merging**. You don't want to indiscriminately **overwrite** directories: you want to insert the updated files into place inside the directories. A self-extracting MODX update mechanism is still a couple releases away, so until then, it is **extremely** handy to have an FTP program that supports directory merging or better yet, use the server's extraction script or function in the file manager as suggested above.
+ Было бы здорово использовать FTP-клиент, который поддерживает ** слияние каталогов **. Вам не нужно без разбора ** перезаписывать ** каталоги: вы хотите лишь добавить обновленные файлы внутри каталогов только туда, где это необходимо. Самораспаковывающийся механизм обновления MODX еще не реализован, так что до этого времени ** очень ** удобно иметь программу FTP, которая поддерживает слияние каталогов или, что еще лучше, использовать какой-либо скрипт извлечения на сервере либо возможности файлового менеджера, как это предложено выше.
 
- On OS X, you can purchase one of the following:
+ На OS X вы можете приобрести что-либо из следующих:
 
 - [Coda](http://panic.com/coda/)
 - [Transmit](http://panic.com/transmit/)
 
- **Do Not Overwrite Directories!** 
- Make sure your FTP program _merges_ directories and does not overwrite them! 
+ 
+  ** Не перезаписывайте директории! **
+ Убедитесь, что ваша FTP-программа _сливает вместе_ директории и не перезаписывает их!
 
 - - - - - -
 
-## Beginning Setup
+## Начало установки
 
- In your browser, navigate to [yourSite.com/setup](http://yourSite.com/setup. ) . Select your language, and follow the install/upgrade process, selecting whichever upgrade you want to perform (normal or database).
+ В вашем браузере перейдите на [yourSite.com/setup](http://yourSite.com/setup) .Выберите свой язык и следуйте процессу установки/обновления, выбирая, какое обновление вы хотите выполнить (обычное или с настройкой базы данных).
 
- Update should be pre-selected for you, however if it is not, make sure to select "Upgrade Normal" so as not to overwrite your existing database. Choosing "New Site" will overwrite your database. 
+ Обновление уже должно быть предварительно выбрано для вас, однако, если этого не произошло, убедитесь, что вы выбрали «Обновление существующей установки», чтобы не перезаписывать вашу существующую базу данных. Вариант «Новая установка» перезапишет вашу базу данных.
 
- If you are upgrading using the **Advanced** distribution, make sure you have the "Core Package has been manually unpacked" and "Files in-place" checkboxes unchecked, and that the core/, manager/ and connectors/ directories are writable.
+ Если вы выполняете обновление с помощью ** Расширенного обновления **, убедитесь, что у вас сняты флажки «Базовый пакет был распакован вручную» и «Файлы уже размещены», а каталоги core/, manager/ и connectors/ доступны для записи.
 
- If you get errors during setup, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation") and the [Troubleshooting Upgrades](getting-started/maintenance/upgrading/troubleshooting "Troubleshooting Upgrades") pages. 
+ Если во время установки возникают ошибки, прочтите [Проблемы установки] (getting-started/installation/troubleshooting "Проблемы установки") и  [Решение проблем с обновлением] (getting-started/installation/troubleshooting "Troubleshooting Installation").
 
-## After Setup
+## После установки
 
- Make sure to remove the setup/ directory via the last option after setup has completed so that no one can run setup after you and possibly break your site.
+ После завершения установки обязательно удалите каталог setup/ с помощью последней опции, чтобы никто не смог запустить установку после вас и, возможно, сломать ваш сайт.
 
- Your config.inc.php file should have CHMOD 644 permission.
+ Ваш файл config.inc.php должен иметь права доступа CHMOD 644.
 
- It's a good idea to clear your browser cache after upgrading. Browsers often cache JS and CSS, and you want to make sure you're getting the newest files in your browser after the upgrade. 
+ Хорошая идея - очистить кеш браузера после обновления. Браузеры часто кэшируют JS и CSS, а вы хотите быть уверены, что после обновления вы получаете самые новые файлы в вашем браузере.
 
-## Version-Specific Changes
 
- For changes relating to specific versions, please see the following pages:
+## Изменения в зависимости от версии
 
-- [For Upgrading to 2.2](administering-your-site/upgrading-modx/upgrading-to-2.2.x "Upgrading to 2.2.x")
-- [For Upgrading From 2.0.x to 2.1.x](administering-your-site/upgrading-modx/upgrading-from-2.0.x-to-2.1.x "Upgrading from 2.0.x to 2.1.x") **!important**
-- [For Upgrades Coming From Prior to 2.0.5](administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5 "Upgrading from Versions Earlier than 2.0.5")
-- [For Upgrades Coming From Prior to 2.0.0-rc2](administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.0-rc-2 "Upgrading to Revolution 2.0.0-rc-2")
+ Для обновлений, касающихся определенных версий, пожалуйста ознакомьтесь со следующими страницами:
 
- Upgrades after 2.0.0-rc-2 should run smoothly without issues.
+- [Обновление до версии 2.2](administering-your-site/upgrading-modx/upgrading-to-2.2.x "Обновление до 2.2.x")
+- [Обновление с версии 2.0.x до 2.1.x](administering-your-site/upgrading-modx/upgrading-from-2.0.x-to-2.1.x "Обновление с версии 2.0.x до 2.1.x") **!важно**
+- [Обновление с более ранних версий до 2.0.5](administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5 "Обновление с более ранних версий до 2.0.5")
+- [Обновление до версии MODX Revolution 2.0.0-rc-2](administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.0-rc-2 "Обновление до версии MODX Revolution 2.0.0-rc-2")
 
-## See Also
+ Обновления после 2.0.0-rc-2 должны выполняться без проблем.
 
-### Mac OS X Users
+## Смотри также
 
- If you're copying the extracted folder in Mac OS X, be careful, as OS X will "replace" folders when you drag and drop them over each other. Make sure that you use the "ditto" command from the command line, rather than drag/dropping from Finder, otherwise your core/config/config.inc.php file will be erased. A sample ditto command after you've extracted the zip could be:
+### Пользователи Mac OS X 
+
+ Если вы копируете извлеченную папку в Mac OS X, будьте осторожны, поскольку OS X будет "заменять" папки, когда вы перетаскиваете их друг на друга. Убедитесь, что вы используете команду "ditto" из командной строки, а не перетаскиваете из Finder, в противном случае ваш файл core/config/config.inc.php будет удален. Вот пример команды ditto после того, как вы распаковали zip файл:
 
  ``` php 
 ditto modx-2.1.0-pl /www/public_html/modx/
 ```
 
- The effect is the same if you use the humble **cp** command:
+ Эффект тот же, если вы используете команду ** cp **:
 
  ``` php 
 cp -fr modx-2.2.0-pl/* /www/public_html/modx
 ```
 
- The "-fr" bit forces a recursive copy (i.e. a directory merge). Using a backslash before the "cp" command lets you avoid all the prompts asking "Are you sure?" to every overwrite operation.
+ Флаг "-fr" вызывает рекурсивную копию (то есть слияние каталогов). Использование обратной косой черты перед командой "cp" позволяет избежать всех запросов, спрашивающих "Вы уверены?" для каждой операции перезаписи.
 
- See the note above about FTP clients that support directory merging.
+ См. Примечание выше о клиентах FTP, которые поддерживают слияние каталогов.
 
-### Related Articles
+### Смотрите также
 
-1. [Troubleshooting Upgrades](getting-started/maintenance/upgrading/troubleshooting)
-2. [Upgrading to 2.2.x](administering-your-site/upgrading-modx/upgrading-to-2.2.x)
-3. [Upgrading from 2.0.x to 2.1.x](administering-your-site/upgrading-modx/upgrading-from-2.0.x-to-2.1.x)
-4. [Upgrading from Versions Earlier than 2.0.5](administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5)
-5. [Upgrading to Revolution 2.0.0-rc-2](administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.0-rc-2)
-6. [Upgrading from MODX Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution)
-7. [Functional Changes from Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution)
+1. [Решение проблем с обновлением](getting-started/maintenance/upgrading/troubleshooting)
+2. [Обновление до версии 2.2.x](administering-your-site/upgrading-modx/upgrading-to-2.2.x)
+3. [Обновление с версии 2.0.x до 2.1.x](administering-your-site/upgrading-modx/upgrading-from-2.0.x-to-2.1.x)
+4. [Обновление с более ранних версий до 2.0.5](administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5)
+5. [Обновление до версии MODX Revolution 2.0.0-rc-2](administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.0-rc-2)
+6. [Обновление с MODX Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution)
+7. [Функциональные отличия от Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution)
