@@ -1,7 +1,6 @@
 ---
 title: Панели управления
-_old_id: '90'
-_old_uri: 2.x/administering-your-site/dashboards
+translation: administering-your-site/dashboards
 ---
 
 Панели доступны только в MODX 2.2 или более поздней версии.
