@@ -1,7 +1,6 @@
 ---
 title: Создание блога
-_old_id: '68'
-_old_uri: case-studies-and-tutorials/creating-a-blog-in-modx-revolution
+translation: case-studies-and-tutorials/creating-a-blog-in-modx-revolution
 ---
 
 ## Требования:
