@@ -1,7 +1,6 @@
 ---
 title: Управление вашей приборной панелью
-_old_id: '196'
-_old_uri: administering-your-site/dashboards/managing-your-dashboard
+translation: administering-your-site/dashboards/managing-your-dashboard
 ---
 
 В этой статье описывается, как редактировать панель инструментов, в том числе как назначать и размещать виджеты для этой панели.
