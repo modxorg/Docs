@@ -1,7 +1,6 @@
 ---
 title: Правила настройки формы
-_old_id: '133'
-_old_uri: 2.x/administering-your-site/form-customization/form-customization-rules
+transition: building-sites/client-proofing/form-customization/rules
 ---
 
 ## Что такое правило?

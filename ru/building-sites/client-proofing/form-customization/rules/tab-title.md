@@ -1,14 +1,13 @@
 ---
 title: Название вкладки
-_old_id: '300'
-_old_uri: 2.x/administering-your-site/form-customization/form-customization-rules/tab-title
+transition: building-sites/client-proofing/form-customization/rules/tab-title
 ---
 
 ## Правило заголовка вкладки
 
 Правило заголовка вкладки изменит название любой вкладки.
 
-## использование
+## Использование
 
 Значения для Правила должны быть следующими:
 
@@ -23,7 +22,7 @@ _old_uri: 2.x/administering-your-site/form-customization/form-customization-rule
 
 Пример правила изменения названия вкладки «Параметры страницы» для всех [пользователей](display/revolution20/Users "пользователей") на «Пользовательские поля» будет выглядеть следующим образом:
 
-![](../../../../../en/building-sites/client-proofing/form-customization/rules/download/attachments/18678095/fc-tabTitle.png?version=1&modificationDate=1280153333000)
+![](/download/attachments/18678095/fc-tabTitle.png?version=1&modificationDate=1280153333000)
 
 ## Смотрите также
 

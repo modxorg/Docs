@@ -1,7 +1,6 @@
 ---
 title: Создание виджета панели инструментов
-_old_id: '69'
-_old_uri: 2.x/administering-your-site/dashboards/creating-a-dashboard-widget
+transition: building-sites/client-proofing/dashboards/widget-types/creating-a-widget
 ---
 
 В этой статье описывается, как создать собственный виджет Dashboard, включая краткое описание различных типов виджетов Dashboard и их работу.
@@ -59,5 +58,5 @@ _old_uri: 2.x/administering-your-site/dashboards/creating-a-dashboard-widget
 4. [Типы виджетов на приборной панели](building-sites/client-proofing/dashboards/widget-types)
     1. [Тип виджета панели инструментов - Файл](building-sites/client-proofing/dashboards/widget-types/file)
     2. [Тип виджета панели инструментов - HTML](building-sites/client-proofing/dashboards/widget-types/html)
-    3. [Тип виджета Dashboard - встроенный PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+    3. [Тип виджета Dashboard - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
     4. [Тип виджета на приборной панели - фрагмент](building-sites/client-proofing/dashboards/widget-types/snippet)

@@ -1,7 +1,6 @@
 ---
 title: Переместить телевизор на вкладку
-_old_id: '1353'
-_old_uri: 2.x/administering-your-site/form-customization/form-customization-rules/move-tv-to-tab
+transition: building-sites/client-proofing/form-customization/rules/move-tv-to-tab
 ---
 
 ## Правило перемещения телевизора на вкладку
@@ -14,18 +13,18 @@ _old_uri: 2.x/administering-your-site/form-customization/form-customization-rule
 
 Список доступных вкладок:
 
-ID | Описание
---- | ---
--ресурсная-настройка MODx | Первая вкладка, или вкладка Создать / Редактировать ресурс.
-MODx-страница-настройка | Вторая вкладка или вкладка «Параметры страницы».
+| ID                     | Описание                                                    |
+| ---------------------- | ----------------------------------------------------------- |
+| modx-resource-settings | Первая вкладка, или вкладка Создать / Редактировать ресурс. |
+| modx-page-settings     | Вторая вкладка или вкладка «Параметры страницы».            |
 
-Вы также можете создать вкладку с помощью правила « [Новая вкладка»](display/revolution20/New+Tab "Новая вкладка") и перенести туда телевизор.
+Вы также можете создать вкладку с помощью правила [Новая вкладка»](display/revolution20/New+Tab "Новая вкладка") и перенести туда телевизор.
 
 ## Примеры
 
 Пример правила для перемещения TV 1 на первую вкладку на странице создания ресурса будет выглядеть так:
 
-![](../../../../../en/building-sites/client-proofing/form-customization/rules/download/attachments/18678100/rule-tvMove.png?version=1&modificationDate=1279291685000)
+![](/download/attachments/18678100/rule-tvMove.png?version=1&modificationDate=1279291685000)
 
 ## Смотрите также
 

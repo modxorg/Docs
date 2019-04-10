@@ -1,7 +1,6 @@
 ---
-title: наборы
-_old_id: '134'
-_old_uri: 2.x/administering-your-site/customizing-the-manager/form-customization-sets
+title: Наборы настроек формы
+transition: building-sites/client-proofing/form-customization/sets
 ---
 
 ## Что такое набор настроек формы?

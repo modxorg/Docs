@@ -1,12 +1,11 @@
 ---
-title: Встроенный PHP
-_old_id: '87'
-_old_uri: 2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php
+title: Inline PHP
+transition: building-sites/client-proofing/dashboards/widget-types/inline-php
 ---
 
-Виджет Inline PHP работает очень похоже на [виджет Snippet](building-sites/client-proofing/dashboards/widget-types/snippet "Тип виджета на приборной панели - фрагмент") , за исключением того, что он запускает содержимое виджета, как будто это был Snippet.
+Виджет Inline PHP работает как и [виджет Snippet](building-sites/client-proofing/dashboards/widget-types/snippet "Тип виджета на приборной панели - фрагмент"), за исключением того, что он запускает содержимое виджета, как будто это был Snippet.
 
-## использование
+## Использование
 
 Просто поместите ваш PHP-код в панель содержимого и верните вывод вашего виджета.
 
@@ -27,5 +26,5 @@ return 'Hello, World!';
 
 1. [Тип виджета панели инструментов - Файл](building-sites/client-proofing/dashboards/widget-types/file)
 2. [Тип виджета панели инструментов - HTML](building-sites/client-proofing/dashboards/widget-types/html)
-3. [Тип виджета Dashboard - встроенный PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+3. [Тип виджета Dashboard - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
 4. [Тип виджета на приборной панели - фрагмент](building-sites/client-proofing/dashboards/widget-types/snippet)

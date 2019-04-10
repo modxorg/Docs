@@ -1,7 +1,6 @@
 ---
 title: Пользовательский менеджер Темы
-_old_id: '365'
-_old_uri: 2.x/administering-your-site/customizing-the-manager/manager-templates-and-themes
+transition: building-sites/client-proofing/custom-manager-themes
 ---
 
 **Внимание** : когда вы используете пользовательские темы или шаблоны менеджера, вам необходимо убедиться, что после обновления MODX все работает должным образом. Пользовательские шаблоны менеджера нередко конфликтуют с основными изменениями.

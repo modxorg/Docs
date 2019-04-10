@@ -1,16 +1,15 @@
 ---
 title: ТВ по умолчанию
-_old_id: '313'
-_old_uri: 2.x/administering-your-site/form-customization/form-customization-rules/tv-default
+transition: building-sites/client-proofing/form-customization/rules/tv-default
 ---
 
-## Телевизионное правило по умолчанию
+## ТВ по умолчанию
 
 Правило значения по умолчанию для телевизора, если оно установлено, устанавливает значение по умолчанию для телевизора.
 
 Это работает только для действий «создать», а **не** «обновить».
 
-## использование
+## Использование
 
 Значения для Правила должны быть следующими:
 
@@ -23,7 +22,7 @@ _old_uri: 2.x/administering-your-site/form-customization/form-customization-rule
 
 Пример правила установки значения по умолчанию для телевизора с идентификатором 23 «test»:
 
-![](../../../../../en/building-sites/client-proofing/form-customization/rules/download/attachments/18678098/fc-tvDefault.png?version=1&modificationDate=1280153441000)
+![](/download/attachments/18678098/fc-tvDefault.png?version=1&modificationDate=1280153441000)
 
 ## Смотрите также
 

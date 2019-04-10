@@ -1,7 +1,6 @@
 ---
-title: Поле Видимо
-_old_id: '124'
-_old_uri: 2.x/administering-your-site/form-customization/form-customization-rules/field-visible
+title: Видимое поле
+transition: building-sites/client-proofing/form-customization/rules/field-visible
 ---
 
 ## Правило видимого поля
@@ -12,7 +11,7 @@ _old_uri: 2.x/administering-your-site/form-customization/form-customization-rule
 
 Пример правила сокрытия поля introtext от [пользователей](display/revolution20/Users "пользователей") в группе [пользователей](display/revolution20/User+Groups "Группы пользователей") «Отдел кадров» будет выглядеть так:
 
-![](../../../../../en/building-sites/client-proofing/form-customization/rules/download/attachments/18678091/fc-fieldVisible.png?version=1&modificationDate=1280153155000)
+![](/download/attachments/18678091/fc-fieldVisible.png?version=1&modificationDate=1280153155000)
 
 ## Смотрите также
 

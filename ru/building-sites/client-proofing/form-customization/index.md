@@ -1,7 +1,6 @@
 ---
 title: Настройка менеджера
-_old_id: '83'
-_old_uri: 2.x/administering-your-site/customizing-the-manager
+transition: building-sites/client-proofing/form-customization
 ---
 
 ## Что такое настройка формы?

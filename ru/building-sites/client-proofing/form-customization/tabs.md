@@ -1,7 +1,6 @@
 ---
 title: Настройка вкладок
-_old_id: '82'
-_old_uri: 2.x/administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization
+transition: building-sites/client-proofing/form-customization/tabs
 ---
 
 Когда вы используете настройку форм для настройки форм в менеджере MODX, вы можете либо разрешить / запретить доступ к определенным полям, либо разрешить / запретить доступ ко всем вкладкам или *частям* вкладок.
@@ -12,18 +11,18 @@ _old_uri: 2.x/administering-your-site/customizing-the-manager/form-customization
 
 Это различные области вкладок, видимость которых можно переключать.
 
-ID | Название вкладки по умолчанию | Описание
---- | --- | ---
--ресурсная-настройка MODx | Документ | Основная вкладка
-MODx-ресурсы Основные левый |  | 
-MODx-ресурс-главный правый |  | 
-MODx-страница-настройка | настройки | Основная вкладка
-MODx-страница-настройка-влево |  | 
-MODx-страница-настройка правой |  | 
-MODx-страница-настройка правого ящик левого |  | 
-MODx-страница-настройка правого ящик правого |  | 
-MODx-панель-ресурс-тв | Переменные шаблона | Основная вкладка
-MODx-ресурсы разрешения_доступ | Ресурсные группы | Основная вкладка
+| ID                                 | Название вкладки по умолчанию | Описание         |
+| ---------------------------------- | ----------------------------- | ---------------- |
+| modx-resource-settings             | Документ                      | Основная вкладка |
+| modx-resource-main-left            |                               |
+| modx-resource-main-right           |                               |
+| modx-page-settings                 | настройки                     | Основная вкладка |
+| modx-page-settings-left            |                               |
+| modx-page-settings-right           |                               |
+| modx-page-settings-right-box-left  |                               |
+| modx-page-settings-right-box-right |                               |
+| modx-panel-resource-tv             | Переменные шаблона            | Основная вкладка |
+| modx-resource-access-permissions   | Ресурсные группы              | Основная вкладка |
 
 ## Добавление новых вкладок
 

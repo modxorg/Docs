@@ -1,7 +1,6 @@
 ---
 title: Видимая вкладка
-_old_id: '301'
-_old_uri: 2.x/administering-your-site/form-customization/form-customization-rules/tab-visible
+transition: building-sites/client-proofing/form-customization/rules/tab-visible
 ---
 
 ## Правило видимой вкладки
@@ -12,7 +11,7 @@ _old_uri: 2.x/administering-your-site/form-customization/form-customization-rule
 
 Пример правила скрытия вкладки «Параметры страницы» для всех [пользователей](display/revolution20/Users "пользователей") будет выглядеть следующим образом:
 
-![](../../../../../en/building-sites/client-proofing/form-customization/rules/download/attachments/18678094/fc-tabVisible.png?version=1&modificationDate=1280153374000)
+![](/download/attachments/18678094/fc-tabVisible.png?version=1&modificationDate=1280153374000)
 
 ## Смотрите также
 

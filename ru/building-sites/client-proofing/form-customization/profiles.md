@@ -1,7 +1,6 @@
 ---
-title: профили
-_old_id: '132'
-_old_uri: 2.x/administering-your-site/customizing-the-manager/form-customization-profiles
+title: Профили
+transition: building-sites/client-proofing/form-customization/profiles
 ---
 
 ## Что такое профиль настройки формы?
