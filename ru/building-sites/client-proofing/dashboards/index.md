@@ -1,6 +1,6 @@
 ---
 title: Панели управления
-translation: administering-your-site/dashboards
+translation: building-sites/client-proofing/dashboards/widget-types
 ---
 
 Панели доступны только в MODX 2.2 или более поздней версии.

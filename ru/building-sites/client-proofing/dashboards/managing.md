@@ -1,6 +1,6 @@
 ---
 title: Управление вашей приборной панелью
-translation: administering-your-site/dashboards/managing-your-dashboard
+translation: building-sites/client-proofing/dashboards/widget-types/managing
 ---
 
 В этой статье описывается, как редактировать панель инструментов, в том числе как назначать и размещать виджеты для этой панели.
@@ -18,7 +18,7 @@ translation: administering-your-site/dashboards/managing-your-dashboard
 1. [Управление вашей приборной панелью](building-sites/client-proofing/dashboards/managing)
 2. [Назначение панели для группы пользователей](building-sites/client-proofing/dashboards/usergroups)
 3. [Создание виджета панели инструментов](building-sites/client-proofing/dashboards/creating-a-widget)
-4. [Типы виджетов приборной панели	](building-sites/client-proofing/dashboards/widget-types)
+4. [Типы виджетов приборной панели](building-sites/client-proofing/dashboards/widget-types)
     1. [Тип виджета панели инструментов - Файл](building-sites/client-proofing/dashboards/widget-types/file)
     2. [Тип виджета панели инструментов - HTML](building-sites/client-proofing/dashboards/widget-types/html)
     3. [Тип виджета панели инструментов - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
