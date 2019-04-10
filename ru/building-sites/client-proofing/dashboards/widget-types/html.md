@@ -29,5 +29,5 @@ Hello, [[+modx.user.username]]!
 
 1. [Тип виджета панели инструментов - Файл](building-sites/client-proofing/dashboards/widget-types/file)
 2. [Тип виджета панели инструментов - HTML](building-sites/client-proofing/dashboards/widget-types/html)
-3. [Dashboard Widget Type - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
-4. [Dashboard Widget Type - Snippet](building-sites/client-proofing/dashboards/widget-types/snippet)
+3. [Тип виджета Dashboard - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+4. [Тип виджета на приборной панели - Сниппет](building-sites/client-proofing/dashboards/widget-types/snippet)
