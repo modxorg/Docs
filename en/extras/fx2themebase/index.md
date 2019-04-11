@@ -8,7 +8,7 @@ _old_uri: "revo/fx2themebase"
 
  Hint: it's not the sequel to the 80s action-thriller film :P
 
- Like it's predecessor [FoundationX](extras/revo/foundationx), FX2 is a MODX implementation of Zurb's responsive CSS framework, Foundation.
+ Like it's predecessor [FoundationX](extras/foundationx), FX2 is a MODX implementation of Zurb's responsive CSS framework, Foundation.
 
  It provides an easy way for end users of MODX "themes" and "site templates" to customize and configure their sites, with little to no HTML or CSS knowledge. MODX developers and theme authors benefit from a suite of customized tools.
 

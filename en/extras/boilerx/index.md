@@ -120,10 +120,10 @@ _old_uri: "revo/boilerx/"
 
 ## See Also
 
-1. [bx-head-open](extras/revo/boilerx/bx-head-open)
-2. [bx-head-append](extras/revo/boilerx/bx-head-append)
-3. [bx-head-close](extras/revo/boilerx/bx-head-close)
-4. [bx-container-open](extras/revo/boilerx/bx-container-open)
-5. [bx-container-close](extras/revo/boilerx/bx-container-close)
-6. [bx-bottom-open](extras/revo/boilerx/bx-bottom-open)
-7. [bx-bottom-close](extras/revo/boilerx/bx-bottom-close)
+1. [bx-head-open](extras/boilerx/bx-head-open)
+2. [bx-head-append](extras/boilerx/bx-head-append)
+3. [bx-head-close](extras/boilerx/bx-head-close)
+4. [bx-container-open](extras/boilerx/bx-container-open)
+5. [bx-container-close](extras/boilerx/bx-container-close)
+6. [bx-bottom-open](extras/boilerx/bx-bottom-open)
+7. [bx-bottom-close](extras/boilerx/bx-bottom-close)

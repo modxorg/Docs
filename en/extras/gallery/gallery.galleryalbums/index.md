@@ -42,7 +42,7 @@ _old_uri: "revo/gallery/gallery.galleryalbums/"
  The following chunks are processed in GalleryAlbums. The corresponding GalleryAlbums parameter are:
 
 - [rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl "Gallery.GalleryAlbums.rowTpl") - The Chunk to use for each album displayed.
-- [containerTpl](extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl) - The Chunk to use for wrapping all album rows (available with 1.6.0 beta).
+- [containerTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl) - The Chunk to use for wrapping all album rows (available with 1.6.0 beta).
 
 ## Examples
 
@@ -94,7 +94,7 @@ _old_uri: "revo/gallery/gallery.galleryalbums/"
      1. [Gallery.Gallery.containerTpl](extras/gallery/gallery.gallery/gallery.gallery.containertpl)
      2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery.gallery/gallery.gallery.thumbtpl)
 2. [Gallery.GalleryAlbums](extras/gallery/gallery.galleryalbums)
-     1. [Gallery.GalleryAlbums.containerTpl](extras/revo/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
+     1. [Gallery.GalleryAlbums.containerTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.containertpl)
      2. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/gallery.galleryalbums.rowtpl)
 3. [Gallery.GalleryItem](extras/gallery/gallery.galleryitem)
      1. [Gallery.GalleryItem.albumTpl](extras/gallery/gallery.galleryitem/gallery.galleryitem.albumtpl)

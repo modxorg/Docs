@@ -104,7 +104,7 @@ Want to migrate you tracking code to Universal Analytics? Consult the [Universal
 
  Properties can be set in many ways: via the snippet call or properties sets, in a ressource or as a context settings.
 
-If you set up your site settings in a resource, you can use [getResourceField](extras/revo/getresourcefield) to retrieve the values and pass them through the snippet call.
+If you set up your site settings in a resource, you can use [getResourceField](extras/getresourcefield) to retrieve the values and pass them through the snippet call.
 
 ## Use your own tracking codes
 

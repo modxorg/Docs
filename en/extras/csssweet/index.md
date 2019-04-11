@@ -12,7 +12,7 @@ Version 2 incorporates many new features. The [full documentation site](http://s
 
 ## What do I need?
 
- Just install cssSweet via Package Manager in any MODX Revolution site, version 2.2.x or higher. You may also want to install [ClientConfig](extras/revo/clientconfig), as it allows your end users to manage global settings without having to navigate the System Settings page in the Manager.
+ Just install cssSweet via Package Manager in any MODX Revolution site, version 2.2.x or higher. You may also want to install [ClientConfig](extras/clientconfig), as it allows your end users to manage global settings without having to navigate the System Settings page in the Manager.
 
 ## How do I use it?
 

@@ -4,7 +4,7 @@ _old_id: "902"
 _old_uri: "revo/login/login.tutorials/login.basic-setup"
 ---
 
- This tutorial catalogs which pages you need to set up and the Snippets that belong on each page. At the end of this tutorial, you will have a setup which will allow users to log in via the front-end of your website, but the users must be manually created by an admin in the manager. There is a [separate tutorial](extras/revo/login/login.tutorials/login.request-membership "Login.Request Membership") for establishing a process where users can request membership themselves.
+ This tutorial catalogs which pages you need to set up and the Snippets that belong on each page. At the end of this tutorial, you will have a setup which will allow users to log in via the front-end of your website, but the users must be manually created by an admin in the manager. There is a [separate tutorial](extras/login/login.tutorials/login.request-membership "Login.Request Membership") for establishing a process where users can request membership themselves.
 
  Even a basic setup of a login portal involves a lot of inter-related parts, and the setup demonstrated here puts pretty much everything on its own page. A cleaner implementation might involve putting some of the functions listed below inside chunks or templates instead of on their own dedicated pages, but this page should give enough information to get a login portal established.
 

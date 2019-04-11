@@ -42,9 +42,9 @@ Revolution - флагманская CMS и прикладная среда MODX,
 
 ## Быстрые ссылки
 
-- [Дополнения для Revo](extras/revo/)
-- [getResources](extras/revo/getresources) документация
-- [Wayfinder](extras/revo/wayfinder) документация
+- [Дополнения для Revo](extras/)
+- [getResources](extras/getresources) документация
+- [Wayfinder](extras/wayfinder) документация
 - [Дополнения для Evo](extras/evo/)
 - [Ditto](extras/evo/ditto) документация
 - [Wayfinder](extras/evo/wayfinder) для Evo документация
