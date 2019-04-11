@@ -4,15 +4,6 @@ _old_id: "928"
 _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-mediasource-and-multifile-uploader"
 ---
 
-# Using resource-specific mediasource and multifile-uploader with MIGX
-
-- [Use resource-specific media source and multifile-uploader](extras/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-Useresourcespecificmediasourceandmultifileuploader)
-- [Requirements](extras/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-Requirements)
-- [Create the dynamic resource-specific media source](extras/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-Createthedynamicresourcespecificmediasource)
-- [Create the MIGX - TV](extras/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-CreatetheMIGXTV)
-- [Create the Configuration for the MIGX-TV](extras/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-CreatetheConfigurationfortheMIGXTV)
-- [Have Fun](extras/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader#MIGX.Useresource-specificmediasourceandmultifile-uploader-HaveFun)
-
 ## Use resource-specific media source and multifile-uploader
 
  In this Tutorial we will learn how we can have a dynamic media source, with its own auto-created file-folder for each resource.
