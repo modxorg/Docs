@@ -4,11 +4,11 @@ _old_id: "902"
 _old_uri: "revo/login/login.tutorials/login.basic-setup"
 ---
 
- This tutorial catalogs which pages you need to set up and the Snippets that belong on each page. At the end of this tutorial, you will have a setup which will allow users to log in via the front-end of your website, but the users must be manually created by an admin in the manager. There is a [separate tutorial](extras/revo/login/login.tutorials/login.request-membership "Login.Request Membership") for establishing a process where users can request membership themselves.
+ This tutorial catalogs which pages you need to set up and the Snippets that belong on each page. At the end of this tutorial, you will have a setup which will allow users to log in via the front-end of your website, but the users must be manually created by an admin in the manager. There is a [separate tutorial](extras/login/login.tutorials/login.request-membership "Login.Request Membership") for establishing a process where users can request membership themselves.
 
  Even a basic setup of a login portal involves a lot of inter-related parts, and the setup demonstrated here puts pretty much everything on its own page. A cleaner implementation might involve putting some of the functions listed below inside chunks or templates instead of on their own dedicated pages, but this page should give enough information to get a login portal established.
 
- All the pages here use a sample **page\_id** for reference. 
+ All the pages here use a sample **page\_id** for reference.
 
 ## Create the Required Pages
 
@@ -26,7 +26,9 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  MODx Revolution includes some pretty head-splitting granularity when it comes to [Permissions](administering-your-site/security/policies/permissions "Permissions"), but here is a basic schema to get you started. (Have a look at [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages "Making Member-Only Pages") for more detailed explanation.)
 
- As of MODX 2.2.3, you can skip most of this step by using the **Access Wizard**, which appears when you create a new Resource Group under **Security -> Resource Groups**. Just use the following settings: - Name: Members
+ As of MODX 2.2.3, you can skip most of this step by using the **Access Wizard**, which appears when you create a new Resource Group under **Security -> Resource Groups**. Just use the following settings:
+
+- Name: Members
 - Context: web
 - Automatically Give Adminstrator Group Access: **checked**
 - Create Parallel User Group: **checked**
@@ -78,11 +80,11 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
  Put the following Snippet call on your login page:
 
  ``` php
-[[!Login? 
-&loginTpl=`lgnLoginTpl` 
-&logoutTpl=`lgnLogoutTpl` 
-&errTpl=`lgnErrTpl` 
-&loginResourceId=`4` 
+[[!Login?
+&loginTpl=`lgnLoginTpl`
+&logoutTpl=`lgnLogoutTpl`
+&errTpl=`lgnErrTpl`
+&loginResourceId=`4`
 &logoutResourceId=`5`
 ]]
 ```
@@ -143,7 +145,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  Remember to ensure the **Forgot Password (2)** and **Reset Password Handler (3)** pages are published.
 
-### Members Home Page (4) 
+### Members Home Page (4)
 
  This is the page that displays to users who have successfully logged in. This page must have restricted permissions, and the users who log in must have the corresponding permissions to access this page. You can put whatever "private" content you want on it, just make sure you update the permissions on it so that it belongs to the "Members Only" resource group – just click on the page's "Access Permissions" or "Resource Groups" tab (depending on your version of MODX):
 

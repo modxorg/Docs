@@ -93,7 +93,7 @@ Output the date two months ago (YYYY-MM-DD) using output filters:
 
 ## Using getDate with getResources
 
-When combined with [getResources](extras/revo/getresources "getResources"), getDate allows you to apply powerful date/time based filtering to your output. This includes filtering by date using resource fields and TV's.
+When combined with [getResources](extras/getresources "getResources"), getDate allows you to apply powerful date/time based filtering to your output. This includes filtering by date using resource fields and TV's.
 
 ### Settings Resource Fields
 

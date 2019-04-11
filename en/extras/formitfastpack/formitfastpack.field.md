@@ -4,10 +4,10 @@ _old_id: "1710"
 _old_uri: "revo/formitfastpack/formitfastpack.field"
 ---
 
-- [Usage](extras/revo/formitfastpack/formitfastpack.field#Usage)
+- [Usage](extras/formitfastpack/formitfastpack.field#Usage)
 - [Snippet Parameters](http://rtfm.modx.com/extras/revo/formitfastpack/formitfastpack.field#Parameters)
-- [Templating](extras/revo/formitfastpack/formitfastpack.field#Templating)
-- [Using in PHP scripts](extras/revo/formitfastpack/formitfastpack.field#PHP)
+- [Templating](extras/formitfastpack/formitfastpack.field#Templating)
+- [Using in PHP scripts](extras/formitfastpack/formitfastpack.field#PHP)
 - [More Examples](http://rtfm.modx.com/extras/revo/formitfastpack/formitfastpack.field#Examples)
 - [Tutorial](http://rtfm.modx.com/extras/revo/formitfastpack/formitfastpack.tutorial)
 

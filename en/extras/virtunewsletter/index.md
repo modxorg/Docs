@@ -106,7 +106,7 @@ _old_uri: "revo/virtunewsletter/"
 
  At this point, the subscriber won't be removed from the system; only be deactivated.
 
-#  System Settings
+# System Settings
 
  | Settings                                     | Description                                                                                                                                                                                           |
  | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -119,7 +119,7 @@ _old_uri: "revo/virtunewsletter/"
  | virtunewsletter.unsubscribe\_succeeded\_tpl  | Resource's ID as the email template for the completed confirmation of the unsubscription                                                                                                              |
  | virtunewsletter.readerpage                   | Resource's ID where visitor can access the newsletter via web                                                                                                                                         |
 
-#  Resources, Snippets and Chunks
+# Resources, Snippets and Chunks
 
  You need to create 3 more resources with its own snippet in it:
 
@@ -174,12 +174,12 @@ _old_uri: "revo/virtunewsletter/"
 ```
 
  **NO FORMIT, NO HOOK!**
- Simply point the action to the [Subscribe page](extras/revo/virtunewsletter#virtuNewsletter-1.Subscribe) above.
+ Simply point the action to the [Subscribe page](extras/virtunewsletter#virtuNewsletter-1.Subscribe) above.
  The **category** field is _required_ to set the subscriber to the appropriate **Category** inside the CMP.
 
  Again, **MAKE SURE YOU HAVE THAT CATEGORY INSIDE THE CMP.**
 
- The name itself can be changed, but make sure you have to apply this also to the **\[\[!virtuNewsletter.subscribe? &categoryKey=`category`\]\]** onthe [Subscribe page](extras/revo/virtunewsletter#virtuNewsletter-1.Subscribe) above
+ The name itself can be changed, but make sure you have to apply this also to the **\[\[!virtuNewsletter.subscribe? &categoryKey=`category`\]\]** onthe [Subscribe page](extras/virtunewsletter#virtuNewsletter-1.Subscribe) above
 
 ## 5. The Newsletters
  You are now ready to create the newsletters using the common resource.
