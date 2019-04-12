@@ -30,12 +30,12 @@ _old_uri: "revo/addheaderfiles"
 
 ### Snippet parameter
 
- | Property     | Description                                                                                                                                            | Default                |
- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
- | addcode      | External filenames(s) or chunkname(s) separated by &sep. The external files can have a position setting or media type separated by &sepmed. See note 1 |                        |
- | sep          | Separator for files/chunknames                                                                                                                         | ;                      |
- | sepmed       | Seperator for media type or script position                                                                                                            |                        |  |
- | mediadefault | Media default for css files                                                                                                                            | screen, tv, projection |
+| Property     | Description                                                                                                                                            | Default                |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| addcode      | External filenames(s) or chunkname(s) separated by &sep. The external files can have a position setting or media type separated by &sepmed. See note 1 |                        |
+| sep          | Separator for files/chunknames                                                                                                                         | ;                      |
+| sepmed       | Seperator for media type or script position                                                                                                            |                        |  |
+| mediadefault | Media default for css files                                                                                                                            | screen, tv, projection |
 
 ## Examples
 
@@ -87,4 +87,4 @@ _old_uri: "revo/addheaderfiles"
 
 ### Notes
 
-1. If you want to insert external files with url parameters directly in the snippet call, some chars have to be masked. ? has to be masked as !q!. = has to be masked as !eq!. & has to be masked as !and!. These characters don't have to be masked in chunks.
+1. If you want to insert external files with url parameters directly in the snippet call, some chars have to be masked. `?` has to be masked as `!q!`. `=` has to be masked as `!eq!`. `&` has to be masked as `!and!`. These characters don't have to be masked in chunks.
