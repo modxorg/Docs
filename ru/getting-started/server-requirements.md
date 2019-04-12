@@ -3,7 +3,7 @@ title: "Требования к серверу"
 translation: "getting-started/server-requirements"
 ---
 
-# Поддерживаемые операционные системы
+## Поддерживаемые операционные системы
 
 - Linux x86, x86-64
 - Mac OS X
