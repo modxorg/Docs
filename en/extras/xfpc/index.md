@@ -4,7 +4,7 @@ _old_id: "737"
 _old_uri: "revo/xfpc"
 ---
 
-# What is xFPC?
+## What is xFPC?
 
 xFPC means MODX Full Page Caching.
 
@@ -37,7 +37,7 @@ xFPC requires MODX® Revolution 2.2.0 or later.
 
 Install the package through the MODX® package manager.
 
-# Read this BEFORE use!
+## Read this BEFORE use!
 
 If you don't read this, don't come complaining that stuff doesn't work, k?
 
@@ -56,7 +56,7 @@ What xFPC CAN do:
 A page will be cached after the first view. **Only for logged out users, so be sure you are logged out also from the manager!**
 (or use a different browser for testing speed).
 
-# Using xFPC
+## Using xFPC
 
 ## Using the full-page-cache
 
@@ -142,6 +142,6 @@ Head over to your system settings and find the setting "xfpc.lifetimetv" and cha
 
 Now when editing a resource you can enter a time in seconds into the TV's value field and xFPC will respect your settings.
 
-# External sources
+## External sources
 
 Developers website: <http://www.scherpontwikkeling.nl/portfolio/modx-addons/xfpc.html>

@@ -16,7 +16,7 @@ bdTargets is a simple snippet to output your target groups.
 | sortdir       | Direction to sort on. Either asc or desc.       | asc           |
 | rowSeparator  | String to use between rowTpl items.             | \\n           |
 | tplOuter      | Chunkname to wrap the complete result set in.   |
-Default: 
+Default:
 
 ``` php
 <h2>Target Groups</h2>
@@ -28,8 +28,8 @@ Default:
 Placeholders to use:
 
 - wrapper
-`tplRow` - Chunk name to wrap individual target groups in. 
-Default: 
+`tplRow` - Chunk name to wrap individual target groups in.
+Default:
 
 ``` php
 <li>[[+name]]</li>

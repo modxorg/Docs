@@ -11,8 +11,8 @@ fiProcessArrays concatenates array values into strings so that they can be used 
 To use, call the fiGenerateReport hook before the hooks that would use the converted values (such as "fiGenerateReport" and/or "email").
 
  ``` php
-[[!FormIt? 
-    &hooks=`math,spam,fiProcessArrays,fiGenerateReport,email,redirect` 
+[[!FormIt?
+    &hooks=`math,spam,fiProcessArrays,fiGenerateReport,email,redirect`
     ...
     &figrExcludedFields=`op1,op2,operator,math`
 ]]

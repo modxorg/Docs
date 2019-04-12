@@ -4,8 +4,6 @@ _old_id: "645"
 _old_uri: "revo/formsave"
 ---
 
-# What is FormSave?
-
 FormSave is a hook for FormIt that allows you to save virtually any form to the database and export the results to CSV/XML/Print view right out of the box. You can also add your own export templates to make any export format possible.
 
 FormSave is created and maintained by [SCHERP Ontwikkeling](http://www.scherpontwikkeling.nl).
@@ -25,11 +23,11 @@ FormSave requires MODX® Revolution 2.2.0 or later.
 
 Install the package through the MODX® package manager.
 
-# What you need to know
+## What you need to know
 
 FormSave is a hook for FormIt, this means you need FormIt installed and you need to know how FormIt works. Check out the RTFM for FormIt if you don't know what FormIt is.
 
-# Using FormSave in the front-end
+## Using FormSave in the front-end
 
 ## Using the snippet
 
@@ -76,7 +74,7 @@ These are the parameters you can use in the FormIt call:
 | fsFormFields    | A comma separated list of fields to save, if omitted all form fields will be saved. (example: name,email,message) |
 | fsFormPublished | Whether or not the form should have published "1" in the database. Currently unused.                              |
 
-# External sources
+## External sources
 
 Developers website: <http://scherpontwikkeling.nl/modx/formsave>
 

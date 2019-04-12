@@ -79,10 +79,12 @@ You can NOT modify these tpl properties from the snippet tag directly, due to th
 - Create a new property set using the Add property set button and in the window that pops up ticking the "Create new property set" checkbox.
 - Give your property set a name and click save.
 - Now you can modify the values of the properties which will not be overwritten on upgrade.
-- Finally, reference your property set name in your snippet call: ``` php
+- Finally, reference your property set name in your snippet call: 
+
+``` php
   [[!getPage@PropertySetName? &element=`getResources` &parents=`3` ...]]
-  
   ```
+
 | Name            | Description                                                                       | Default Value                                                                                                          | Added In Version |
 | --------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------- |
 | pageNavOuterTpl | A content tpl for controlling the layout of the various page navigation controls. | `[[+first]][[+prev]][[+pages]][[+next]][[+last]]`                                                                      | 1.2.0-pl         |

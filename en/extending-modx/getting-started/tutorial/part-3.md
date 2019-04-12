@@ -33,7 +33,7 @@ $modx->lexicon->load('chunk');
 
 First off, we include the root index.php file for the processors, which does some slight variable checking and includes licensing. Then, we load the proper lexicon topic. In MODx Revolution, i18n language files are separated into smaller files by topic, (formerly called foci). Here, we want all language strings within the 'chunk' topic. This saves processing power by only loading relevant i18n strings.
 
-**About Topics** 
+**About Topics**
  The lexicon _topics_ are similar to how the popular [gettext](http://www.gnu.org/software/gettext/) translation framework employs _contexts_ to distinguish meanings and provide subsets of translation files. We mention this only for newcomers who may be familiar with systems that use gettext (e.g. WordPress): remember that contexts are something very different in MODx.
 
 ``` php
@@ -126,7 +126,7 @@ return $modx->error->success('',$chunk->get(array('id', 'name', 'description', '
 
 Now, send a success response back to the browser. The parameters of $modx->error->success() are as follows:
 
-1: $message - A string message to send back. Used to report details about a success (or failure). 
+1: $message - A string message to send back. Used to report details about a success (or failure).
  2: $object - An xPDOObject or array of data fields to convert into JSON and send back to the browser.
 
 So basically, here, we're sending back the Chunk information - minus the content, which could be big and unnecessary and complicated to send. This will allow the UI to handle the creation properly.

@@ -4,7 +4,7 @@ _old_id: "939"
 _old_uri: "revo/moneybird/moneybird.invoices"
 ---
 
-# Usage
+## Usage
 
 Example for MoneyBird Invoices:
 

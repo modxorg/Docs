@@ -4,7 +4,7 @@ _old_id: "907"
 _old_uri: "revo/login/login.login"
 ---
 
-## What is Login? 
+## What is Login?
 
  This component loads a simple login and logout form, and processes User authentication.
 
@@ -24,7 +24,7 @@ _old_uri: "revo/login/login.login"
 
  See the snippet properties for more options.
 
-## Properties 
+## Properties
 
  Login comes with some configuration properties you can set to adjust the way Login behaves.
 
@@ -53,11 +53,7 @@ _old_uri: "revo/login/login.login"
  | toPlaceholder          | If set, will set the output of the login snippet to a placeholder of this name rather than directly outputting the return contents.                                                                                                                                                            |              |
  | redirectToOnFailedAuth | (1.6.4-pl+) redirects to a separate page on failed logins                                                                                                                                                                                                                                      |              |
 
-### 
-
- <a id="Login.Login-optionalProperties" name="Login.Login-optionalProperties"></a>
-
-## Optional Properties (non Login) 
+## Optional Properties (non Login)
 
  Helpful parameters which can facilitate Login.
 
@@ -67,7 +63,7 @@ _old_uri: "revo/login/login.login"
  | recaptchaTheme  | Can be used to modify the ReCaptcha theme to 'red', 'white', 'blackglass', 'clean', or others as they are introduced by Google. | clean   |
  | recaptchaWidth  | Can be used to modify the ReCaptcha iframe Width attribute size.                                                                | 500     |
 
-### tplType Options 
+### tplType Options
 
  The tplType and errTplType properties have a list of different options to choose from. This can be:
 
@@ -76,7 +72,7 @@ _old_uri: "revo/login/login.login"
 - _inline_ - The content of the tpl will be directly in the tpl property itself.
 - _embedded_ - The tpl is already in the page; just make the error properties be placeholders.
 
-## Using reCaptcha 
+## Using reCaptcha
 
  First off, make sure your `recaptcha.public\_key` and `recaptcha.private\_key` System Settings are set with your reCaptcha API keys. Then, to add it, all you have to do is add the "recaptcha" preHook to your snippet call:
 
@@ -88,7 +84,7 @@ _old_uri: "revo/login/login.login"
 
  See [See Optional Properties for ReCaptcha specific settings](#Login.Login-optionalProperties)
 
-## Logout 
+## Logout
 
  How do I log out? You simply call the page containing your **Login** snippet call and pass specify 'logout' as the service via the URL. In this example, the Login snippet is contained on page 21:
 
@@ -103,18 +99,18 @@ _old_uri: "revo/login/login.login"
 2. [Login.Profile](extras/login/login.profile)
 3. [Login.UpdateProfile](extras/login/login.updateprofile)
 4. [Login.Register](extras/login/login.register)
-  1. [Register.Example Form 1](extras/login/login.register/register.example-form-1)
+   1. [Register.Example Form 1](extras/login/login.register/register.example-form-1)
 5. [Login.ConfirmRegister](extras/login/login.confirmregister)
 6. [Login.ForgotPassword](extras/login/login.forgotpassword)
 7. [Login.ResetPassword](extras/login/login.resetpassword)
 8. [Login.ChangePassword](extras/login/login.changepassword)
 9. [Login.Tutorials](extras/login/login.tutorials)
-  2. [Login.Basic Setup](extras/login/login.tutorials/login.basic-setup)
-  3. [Login.Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles)
-  4. [Login.Request Membership](extras/login/login.tutorials/login.request-membership)
-  5. [Login.User Profiles](extras/login/login.tutorials/login.user-profiles)
-  6. [Login.Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields)
-  7. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks)
+   1. [Login.Basic Setup](extras/login/login.tutorials/login.basic-setup)
+   2. [Login.Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles)
+   3. [Login.Request Membership](extras/login/login.tutorials/login.request-membership)
+   4. [Login.User Profiles](extras/login/login.tutorials/login.user-profiles)
+   5. [Login.Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields)
+   6. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks)
 10. [Login.Roadmap](extras/login/login.roadmap)
 
  See also the documentation on [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages "Making Member-Only Pages")

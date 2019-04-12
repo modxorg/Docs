@@ -52,7 +52,7 @@ sort_field_condition=sort_field:sort_dir:sort_type,sort_field_condition2=sort_fi
 - sort\_dir - Direction to sort, optional, if not present sort direction from table will be used
 - sort\_type - Allows casting type to a field, optional
 
-**Example**
+### Example
 
 ``` plain
 publishedon=published:asc

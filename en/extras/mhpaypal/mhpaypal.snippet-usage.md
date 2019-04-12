@@ -4,7 +4,7 @@ _old_id: "919"
 _old_uri: "revo/mhpaypal/mhpaypal.snippet-usage"
 ---
 
-# mhpaypal Snippet Usage
+## mhpaypal Snippet Usage
 
 _This document provides information on the mhPayPal snippet, its properties and some example usages. If looking for more information about the mhPayPal package in which the snippet is included, please visit ?__[mhPayPal](extras/mhpaypal "mhPayPal")_ instead.
 

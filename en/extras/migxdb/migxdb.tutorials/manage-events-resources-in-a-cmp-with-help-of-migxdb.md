@@ -4,8 +4,6 @@ _old_id: "935"
 _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.manage-events-resources-in-a-cmp-with-help-of-migxdb"
 ---
 
-# Manage Events-Resources in a CMP with help of MIGXdb
-
  Often we have the problem with lots of Resources, in the Resource-Tree to be very confused at some point and we wish, we would have a better way to manage them in a paginated grid view.
 
  In this Tuorial we will learn how to create a CMP (custom manager page),

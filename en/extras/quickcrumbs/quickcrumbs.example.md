@@ -10,9 +10,9 @@ _old_uri: "revo/quickcrumbs/quickcrumbs.example"
         <nav class="container">
             <ul>
             [[QuickCrumbs?
-              &tpl=`Crumb` 
-              &selfTpl=`Here` 
-              &siteStartTpl=`Home` 
+              &tpl=`Crumb`
+              &selfTpl=`Here`
+              &siteStartTpl=`Home`
               &separator=``
               &hideEmptyContainers=`1`
               &showSiteStart=`1`

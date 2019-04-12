@@ -8,8 +8,6 @@ _old_uri: "revo/eventscalendar2/eventscalendar2.tplhead2"
 - [Placeholders](#placeholders)
 - [See Also](#see-also)
 
-
-
 ## Usage
 
 This chunk is a header of the calendar.

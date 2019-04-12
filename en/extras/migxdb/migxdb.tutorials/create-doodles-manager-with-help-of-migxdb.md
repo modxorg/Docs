@@ -4,8 +4,6 @@ _old_id: "933"
 _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-doodles-manager-with-help-of-migxdb"
 ---
 
-# Creating a doodles-manager with help of MIGXdb
-
  In this Tutorial we will learn how to create a doodles-manager with help of MIGXdb.
 
  The result at the end will be the same as its done here, but without doing one line of coding: [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")

@@ -4,8 +4,6 @@ _old_id: "682"
 _old_uri: "revo/modswiftmailer"
 ---
 
-# modSwiftMailer
-
 On some poorly migrated copies of MODX the package might not install. This problem may also appear with default installations when the folders are not Apache/root assigned. Please refer to the troubleshooting section for more information.
 
 ## What is modSwiftMailer?

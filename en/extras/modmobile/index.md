@@ -4,7 +4,7 @@ _old_id: "681"
 _old_uri: "revo/modmobile"
 ---
 
-# What is modMobile?
+## What is modMobile?
 
 modMobile is a plugin that changes your template when a mobile device visits your site.
 

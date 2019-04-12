@@ -33,31 +33,31 @@ _old_uri: "revo/boilerx/"
 
 ## boilerX Chunks
 
- **bx-head-open**
+> bx-head-open
 
  The bulk of the header, includes CSS and modernizr as well as meta tags.
 
- **bx-head-append**
+> bx-head-append
 
  Blank, meant to be an easy way to include CSS stylesheets, JavaScript, or meta tags before the closing head tag. This would be a good place to include MetaX.
 
- **bx-head-close**
+> bx-head-close
 
  Simply closes the body tag.
 
- **bx-container-close**
+> bx-container-close
 
  Blank, meant to be used for a wrapper div if needed.
 
- **bx-container-close**
+> bx-container-close
 
  Blank, meant to close anything including in the bx-container-open Chunk.
 
- **bx-bottom-open**
+> bx-bottom-open
 
  Deffered JavaScript and Google Analytics tracking code. **bx-bottom-close**
 
- **bx-bottom-close**
+> bx-bottom-close
 
  Closes the body and html tags.
 

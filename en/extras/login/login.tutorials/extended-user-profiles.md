@@ -58,30 +58,30 @@ Your request membership form will look a lot like what we're going to build for 
 
 <div class="register">
     <div class="registerMessage">[[+error.message]]</div>
-      
+
     <form class="form" action="[[~[[*id]]]]" method="post">
         <input type="hidden" name="nospam:blank" value="" />
-          
+
         <label for="username">[[%register.username? &namespace=`login` &topic=`register`]]
             <span class="error">[[+error.username]]</span>
         </label>
         <input type="text" name="username:required:minLength=6" id="username" value="[[+username]]" />
-          
+
         <label for="password">[[%register.password]]
             <span class="error">[[+error.password]]</span>
         </label>
         <input type="password" name="password:required:minLength=6" id="password" value="[[+password]]" />
-          
+
         <label for="password_confirm">[[%register.password_confirm]]
             <span class="error">[[+error.password_confirm]]</span>
         </label>
         <input type="password" name="password_confirm:password_confirm=`password`" id="password_confirm" value="[[+password_confirm]]" />
-          
+
         <label for="fullname">[[%register.fullname]]
             <span class="error">[[+error.fullname]]</span>
         </label>
         <input type="text" name="fullname:required" id="fullname" value="[[+fullname]]" />
-          
+
         <label for="email">[[%register.email]]
             <span class="error">[[+error.email]]</span>
         </label>
@@ -92,9 +92,8 @@ Your request membership form will look a lot like what we're going to build for 
         </label>
         <input type="text" name="custom_field" id="custom_field" value="[[+custom_field]]" />
 
-          
         <br class="clear" />
-          
+
         <div class="form-buttons">
             <input type="submit" name="registerbtn" value="Register" />
         </div>
@@ -114,28 +113,27 @@ We're gonna edit this page to use some more of features of the [UpdateProfile](e
 <div class="update-profile">
     <div class="updprof-error">[[+error.message]]</div>
     [[+login.update_success:if=`[[+login.update_success]]`:is=`1`:then=`[[%login.profile_updated? &namespace=`login` &topic=`updateprofile`]]`]]
- 
+
     <form class="form" action="[[~[[*id]]]]" method="post">
         <input type="hidden" name="nospam:blank" value="" />
- 
+
         <label for="fullname">[[!%login.fullname? &namespace=`login` &topic=`updateprofile`]]
             <span class="error">[[+error.fullname]]</span>
         </label>
         <input type="text" name="fullname" id="fullname" value="[[+fullname]]" />
- 
+
         <label for="email">[[!%login.email]]
             <span class="error">[[+error.email]]</span>
         </label>
         <input type="text" name="email:required:email" id="email" value="[[+email]]" />
- 
 
         <label for="custom_field">Custom Field
             <span class="error">[[+error.custom_field]]</span>
         </label>
         <input type="text" name="custom_field" id="custom_field" value="[[+custom_field]]" /><br/>
- 
+
                 <br class="clear" />
- 
+
         <div class="form-buttons">
             <input type="submit" name="login-updprof-btn" value="[[!%login.update_profile]]" />
         </div>
@@ -153,7 +151,7 @@ As before, we will be featuring the [Profile](extras/login/login.profile "Login.
 
  ``` php
 [[!Profile]]
- 
+
 <p>Username: [[+username]]</p>
 <p>Full Name: [[+fullname]]</p>
 <p>Email: [[+email]]</p>

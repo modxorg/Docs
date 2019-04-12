@@ -3,7 +3,7 @@ title: "Разработка c xPDO"
 translation: "contribute/code/xpdo"
 ---
 
-# Разработка xPDO и интеграция с MODX Revolution
+## Разработка xPDO и интеграция с MODX Revolution
 
 xPDO — это объектно-ориентированный фреймворк, на базе которого построена MODX Revolution. Он хранится в отдельном от MODX Revolution репозитории и внесение изменений в из xPDO в ядро MODX Revolution требует дополнительных действий.
 

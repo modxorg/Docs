@@ -35,26 +35,26 @@ For the content, use something like this:
 
 ``` html
 [[!UpdateProfile? &useExtended=`0`]]
- 
+
 <div class="update-profile">
     <div class="updprof-error">[[+error.message]]</div>
     [[+login.update_success:if=`[[+login.update_success]]`:is=`1`:then=`[[%login.profile_updated? &namespace=`login` &topic=`updateprofile`]]`]]
- 
+
     <form class="form" action="[[~[[*id]]]]" method="post">
         <input type="hidden" name="nospam:blank" value="" />
- 
+
         <label for="fullname">[[!%login.fullname? &namespace=`login` &topic=`updateprofile`]]
             <span class="error">[[+error.fullname]]</span>
         </label>
         <input type="text" name="fullname" id="fullname" value="[[+fullname]]" />
- 
+
         <label for="email">[[!%login.email]]
             <span class="error">[[+error.email]]</span>
         </label>
         <input type="text" name="email:required:email" id="email" value="[[+email]]" />
- 
+
                 <br class="clear" />
- 
+
         <div class="form-buttons">
             <input type="submit" name="login-updprof-btn" value="[[!%login.update_profile]]" />
         </div>
@@ -79,7 +79,7 @@ For the content, use something like this:
 
  ``` php
 [[!Profile]]
- 
+
 <p>Username: [[+username]]</p>
 <p>Full Name: [[+fullname]]</p>
 <p>Email: [[+email]]</p>

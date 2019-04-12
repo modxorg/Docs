@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  States whether a resource is a member of a resource group or groups. You may specify either a string name of the resource group, or an array of resource group names.
 
- This method is available with MODX v2.3 (most likely not in a patch release) 
+ This method is available with MODX v2.3 (most likely not in a patch release)
 
 ## Syntax
 

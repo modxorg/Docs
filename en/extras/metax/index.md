@@ -4,8 +4,6 @@ _old_id: "672"
 _old_uri: "revo/metax"
 ---
 
-# What is MetaX?
-
 MetaX is a simple meta tag generation [snippet](developing-in-modx/basic-development/snippets) to automate and simplify meta tag creation. In addition to meta tags it can also be used to generate several other commonly used head tags such as the base tag, canonical, css, rss and more.
 
 Requirements
@@ -39,16 +37,16 @@ MetaX can be called as follows with the XHTML4 template used by default:
 
 #### Properties
 
-| Name | Description                                                                              | Default      |
-| ---- | ---------------------------------------------------------------------------------------- | ------------ |
-| tpl  | The name of the chunk to use for the output. This property overrides the &html property. | metax-xhtml4 |
-| html | Selects from the default chunks. Options:  `0` (XHTML4), `1` (HTML4), `2` (HTML5) | 0 |
-| favicon | Path to favicon (checks to make sure the file exists). | favicon.ico |
-| mobile | Path to mobile thumbnail (checks to make sure the file exists). | mobile.png |
-| copyfrom | Year the copyright started/starts (i.e. 2003) | None |
-| copytill | Year the copyright ended/ends. | Current Year |
-| rss | Comma separated list of Document IDs that have RSS feed(s). | None |
-| css | Comma separated list of CSS file URLs and also does IE conditional statements if needed . | None |
+| Name     | Description                                                                               | Default      |
+| -------- | ----------------------------------------------------------------------------------------- | ------------ |
+| tpl      | The name of the chunk to use for the output. This property overrides the &html property.  | metax-xhtml4 |
+| html     | Selects from the default chunks. Options:  `0` (XHTML4), `1` (HTML4), `2` (HTML5)         | 0            |
+| favicon  | Path to favicon (checks to make sure the file exists).                                    | favicon.ico  |
+| mobile   | Path to mobile thumbnail (checks to make sure the file exists).                           | mobile.png   |
+| copyfrom | Year the copyright started/starts (i.e. 2003)                                             | None         |
+| copytill | Year the copyright ended/ends.                                                            | Current Year |
+| rss      | Comma separated list of Document IDs that have RSS feed(s).                               | None         |
+| css      | Comma separated list of CSS file URLs and also does IE conditional statements if needed . | None         |
 
 #### Chunk Placeholders
 

@@ -4,8 +4,6 @@ _old_id: "1359"
 _old_uri: "revo/exerplan"
 ---
 
-# ExerPlan
-
 ExerPlan is en exercise planner for a health care or sport training type websites.
 Each of the workouts can have galleries (such as pictures, downloadable files, or video sources) as additional information to the members, eg: about the instructional material.
 
@@ -19,7 +17,7 @@ It can be downloaded from within the MODx Revolution manager via [Package Manage
 
 ExerPlan is stored and developed in GitHub, and can be found here: <https://github.com/goldsky/ExerPlan>
 
-# Custom Manager Page (CMP)
+## Custom Manager Page (CMP)
 
 The admin/manager users get a very easy UI for them to manage the workouts.
 
@@ -73,7 +71,7 @@ And the last but not least,
 the admin/manager users/mentors can give some assessments about the members.
 FYI, at this moment, this is one way comments, so no respond will be available at the front-end.
 
-# Snippets
+## Snippets
 
 There are 3 snippets available:
 
@@ -161,7 +159,7 @@ This snippet show the assessments that have been set for the members, or from th
 | **toArray**      | dump the placeholders output, rather parse them in the chunk | bool                                   |                             |
 | toPlaceholder    | place the output into the given name of the placeholder      | string                                 |                             |
 
-# Examples
+## Examples
 
 ``` php
 [[!Login]]<br>
@@ -181,9 +179,9 @@ This snippet show the assessments that have been set for the members, or from th
 ]]
 ```
 
-# Default Chunks
+## Default Chunks
 
-## exerplan.exercises.item
+> exerplan.exercises.item
 
 ``` html
 <div id="exerplan-exercise-[[+exerplan.id]]">
@@ -202,7 +200,7 @@ This snippet show the assessments that have been set for the members, or from th
 </div>
 ```
 
-## exerplan.exercises.wrapper
+> exerplan.exercises.wrapper
 
 ``` html
 <div>
@@ -210,7 +208,7 @@ This snippet show the assessments that have been set for the members, or from th
 </div>
 ```
 
-## exerplan.gallery.item
+> exerplan.gallery.item
 
 ``` html
 <div id="exerplan-gallery-item-[[+exerplan.gallery.id]]">
@@ -229,7 +227,7 @@ This snippet show the assessments that have been set for the members, or from th
 </div>
 ```
 
-## exerplan.gallery.wrapper
+> exerplan.gallery.wrapper
 
 ``` html
 <div id="exerplan-exercise-gallery-wrapper">
@@ -237,7 +235,7 @@ This snippet show the assessments that have been set for the members, or from th
 </div>
 ```
 
-## exerplan.assessment.item
+> exerplan.assessment.item
 
 ``` html
 <div
@@ -260,7 +258,7 @@ This snippet show the assessments that have been set for the members, or from th
 </div>
 ```
 
-## exerplan.assessment.wrapper
+> exerplan.assessment.wrapper
 
 ``` html
 <div id="exerplan-exercise-assessment-wrapper">

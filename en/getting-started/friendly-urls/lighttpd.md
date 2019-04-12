@@ -14,14 +14,14 @@ _old_uri: "2.x/getting-started/installation/basic-installation/lighttpd-guide"
 
 lighttpd does not use the same system, or even same idea as Apache does for URL rewriting. All URL rewriting is done in the lighttpd.conf file
 
-First we need to make sure that the URL rewriting module is enabled. 
+First we need to make sure that the URL rewriting module is enabled.
 
 - So open your lighttpd.conf config file (In Linux it is usually located in /etc/lighttpd/lighttpd.conf)
 - Look for the directive server.modules.
 - Under this directive, look for an entry named "mod\_rewrite",.
 - By default it has a # in front of it. This is a comment symbol. Please remove the # from the line and save the file.
 
-Next we need to find the location in which to put the friendly URL code. So lets search for something that looks like this: 
+Next we need to find the location in which to put the friendly URL code. So lets search for something that looks like this:
 
 ``` php
     $SERVER["socket"] == ":80" {
@@ -30,7 +30,7 @@ Next we need to find the location in which to put the friendly URL code. So lets
       server.name = "yourservername"
 ```
 
-Directly under this you should add the following code. 
+Directly under this you should add the following code.
 
 ``` php
     url.rewrite-once = ( "^/(assets|manager|core|connectors)(.*)$" => "/$1/$2",
@@ -39,7 +39,7 @@ Directly under this you should add the following code.
      )
 ```
 
-This does not mean you are done! Lighttpd handles url-rewrites a bit differently. 
+This does not mean you are done! Lighttpd handles url-rewrites a bit differently.
 
 You HAVE to exclude any files or folders you do not want rewritten in the config file. Excluded dirs/files in the example above are (assets|manager|core|connectors). If you wish to add more to these, simple add another | followed by the folder or filename you wish to omit from url rewriting.
 

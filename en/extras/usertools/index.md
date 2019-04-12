@@ -48,9 +48,9 @@ _old_uri: "revo/usertools"
 [[getGroups]]
 ```
 
- getProfile, getUsers & getGroups can be called cached or un-cached. 
+ getProfile, getUsers & getGroups can be called cached or un-cached.
 
-## Usage
+### Usage
 
 ### getProfile
 

@@ -16,8 +16,8 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.addpackage"
 boolean addPackage ([string $pkg = ''], [string $path = ''], [string $tablePrefix = ''])
 ```
 
- **$pkg** corresponds to the name of a sub-folder within the specified $path. The sub-folder contains the myriad _your\_table.class.php_ files and most often a _mysql_ sub-folder which contains additional map and class files, e.g. _your\_table.class.php_ and _your\_table.map.inc.php_ 
-**$path** is the full path to the folder containing the packages, including the package name you referenced in the first argument. 
+ **$pkg** corresponds to the name of a sub-folder within the specified $path. The sub-folder contains the myriad _your\_table.class.php_ files and most often a _mysql_ sub-folder which contains additional map and class files, e.g. _your\_table.class.php_ and _your\_table.map.inc.php_
+**$path** is the full path to the folder containing the packages, including the package name you referenced in the first argument.
 **$tablePrefix** is the table prefix for your package. You MUST include contain the correct prefix when **addPackage** is called (i.e. at runtime), otherwise your package will not load correctly!
 
  This function returns **true** on success and **false** on error. Check the logs on error.

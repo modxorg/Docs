@@ -59,7 +59,7 @@ $xpdo = new xPDO($dsn, $username, $password);
 echo $o = ($xpdo->connect()) ? 'Connected' : 'Not Connected';
 
 // Issue queries against the foreign database:
-$results = $xpdo->query("SELECT id FROM some_table"); 
+$results = $xpdo->query("SELECT id FROM some_table");
 $recordCount = $results->rowCount();
 print $recordCount;
 ```
@@ -115,5 +115,5 @@ This makes sure that xPDO selects a connection with that option set to false to 
 
 ## See Also
 
-[The xPDO Constructor](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor") 
+[The xPDO Constructor](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor")
 [PDO::\_\_construct()](http://www.php.net/manual/en/pdo.construct.php)

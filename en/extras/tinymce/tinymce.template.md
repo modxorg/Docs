@@ -4,9 +4,9 @@ _old_id: "1022"
 _old_uri: "revo/tinymce/tinymce.template"
 ---
 
-# Quick guide for adding templates
+## Quick guide for adding templates
 
-Sometimes you have a piece of code that users sometimes need to add and you want the outcome to be the same everytime. 
+Sometimes you have a piece of code that users sometimes need to add and you want the outcome to be the same everytime.
 You can with Templates in TinyMCE.
 
 This is just a quick guide for adding templates to TinyMCE in Revolution (I found this in the forums after searching for an hour, so I thought it might be worth putting it here).

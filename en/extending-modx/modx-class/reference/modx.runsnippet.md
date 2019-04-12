@@ -4,13 +4,13 @@ _old_id: "1099"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet"
 ---
 
-## modX::runSnippet 
+## modX::runSnippet
 
 Process and return the output from a PHP snippet by name.
 
-## Syntax 
+## Syntax
 
-```
+``` php
 string runSnippet (string $snippetName, [array $params = array ()])
 ```
 

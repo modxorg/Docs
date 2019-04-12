@@ -4,8 +4,6 @@ _old_id: "930"
 _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes/migx.varying-layout-boxes.configurator-version"
 ---
 
-# Configurator-Version
-
 ## Create varying layout-boxes with MIGX - Configurator Version
 
  Its possible to use the MIGX - Configurator - CMP to create switchable formtabs. This Tutorial will show you, how.

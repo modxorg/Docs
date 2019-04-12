@@ -16,9 +16,9 @@ _old_uri: "revo/hybridauth"
 
  First of all watch this video
 
-1. Register and get api keys from needed services. For example, create twitter application - <https://dev.twitter.com/apps/new>
-2. Open system settings in manager, switch to hybridauth and make\\update ha.keys.Servicename. In our example it will be ha.keys.Twitter
-3. You need to set your keys as json string with array.
+1\. Register and get api keys from needed services. For example, create twitter application - <https://dev.twitter.com/apps/new>
+2\. Open system settings in manager, switch to hybridauth and make\\update ha.keys.Servicename. In our example it will be ha.keys.Twitter
+3\. You need to set your keys as json string with array.
 
  ``` json
 {"key":"your key from twitter","secret":"secret from twitter"}
@@ -28,7 +28,7 @@ _old_uri: "revo/hybridauth"
 
  It is needed for proper initialization of the library ( <http://hybridauth.sourceforge.net/userguide/Configuration.html>).
 
-4. Now you can run snippet `[[!HybridAuth?providers=`Twitter`]]` on any page.
+4\. Now you can run snippet `[[!HybridAuth?providers=`Twitter`]]` on any page.
 
  If there are any errors on library initialization - it will be logged in system log.
 

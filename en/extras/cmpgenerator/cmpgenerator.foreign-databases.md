@@ -16,7 +16,7 @@ When you run the CMPGenerator fill in the database name and if needed the table 
 
 ### Basic Snippet Code Example
 
-**Example code**
+### Example code
 
 ``` php
 <?php
@@ -91,7 +91,7 @@ Example of schema and foreign DB from James Ehly
 
 The above code will create a new connection for each snippet call. So if you have 2 or 3 snippet calls to your snippet that is using a foreign db it will lag. So I wrote a simple class that will save you db connection so you don't have to reconnect each time.
 
-**foreignconnect.class.php**
+> foreignconnect.class.php
 
 ``` php
 class ForeignConnect {
@@ -141,7 +141,7 @@ class ForeignConnect {
 
 Now create a config file that can be required for each snippet call:
 
-**Custom**
+### Custom
 
 ``` php
 $database_type = 'mysql';
@@ -158,7 +158,7 @@ $database_dsn = $database_type.':host='.$database_server.';dbname='.$dbase.';cha
 
 Then the first few lines of the snippet will looks like this instead:
 
-**Snippet**
+### Snippet
 
 ``` php
 require $modx->getOption('core_path').'/config/foreign_config.inc.php';

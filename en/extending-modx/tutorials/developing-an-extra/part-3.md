@@ -609,15 +609,16 @@ $action->fromArray(array(
     'assets' => '',
 ),'',true,true);
 ```
+
 ``` php
-$action= $modx->newObject('modAction'); 
-$action->fromArray(array( 
- 'id' => 1, 
- 'namespace' => 'doodles', 
- 'parent' => 0, 
- 'controller' => 'controllers/index', 
- 'haslayout' => true, 
- 'lang\_topics' => 'doodles:default', 
- 'assets' => '', 
+$action= $modx->newObject('modAction');
+$action->fromArray(array(
+ 'id' => 1,
+ 'namespace' => 'doodles',
+ 'parent' => 0,
+ 'controller' => 'controllers/index',
+ 'haslayout' => true,
+ 'lang\_topics' => 'doodles:default',
+ 'assets' => '',
 ),'',true,true);
 ```

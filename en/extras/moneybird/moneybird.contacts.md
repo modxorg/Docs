@@ -4,7 +4,7 @@ _old_id: "938"
 _old_uri: "revo/moneybird/moneybird.contacts"
 ---
 
-# Usage
+## Usage
 
 Example for MoneyBird Contacts:
 

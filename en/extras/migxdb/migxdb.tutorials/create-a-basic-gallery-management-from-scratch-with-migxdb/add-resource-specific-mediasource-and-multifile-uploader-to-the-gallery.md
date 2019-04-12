@@ -4,8 +4,6 @@ _old_id: "1804"
 _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management-from-scratch-with-migxdb/add-resource-specific-mediasource-and-multifile-uploader-to-the-gallery"
 ---
 
-# Add resource-specific mediasource and multifile-uploader to the gallery
-
 ## Create the dynamic resource-specific media source
 
 - Go to: Media->Media Sources

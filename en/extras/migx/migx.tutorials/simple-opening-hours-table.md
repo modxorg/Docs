@@ -4,8 +4,6 @@ _old_id: "926"
 _old_uri: "revo/migx/migx.tutorials/migx.simple-opening-hours-table"
 ---
 
-# MIGX.Simple opening hours table
-
 To allow a flexible table layout displaying opening hours, you could use MIGX.
 
 ## The MIGX TV Configuration

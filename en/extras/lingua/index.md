@@ -4,17 +4,16 @@ _old_id: "1364"
 _old_uri: "revo/lingua"
 ---
 
-
- A MODX's Lexicon switcher for front-end interface. 
- This can be downloaded from Manager's Package Manager. 
- The extra page is <http://modx.com/extras/package/lingua>. 
+ A MODX's Lexicon switcher for front-end interface.
+ This can be downloaded from Manager's Package Manager.
+ The extra page is <http://modx.com/extras/package/lingua>.
  Any issues can be reported to here: <https://github.com/goldsky/Lingua/issues>
 
 ## Background
 
  This package was written by goldsky, and first released on June 6, 2013, initially prepared for [Adam Wintle](http://forums.modx.com/u/adamwintle) of [Monogon](http://www.monogon.co) to create a Chinese and a Thai website.
 
- This add-on was made to answer the need of creating a multilingual website without messing up with contexts. 
+ This add-on was made to answer the need of creating a multilingual website without messing up with contexts.
  The concept was based on [Translations](http://modx.com/extras/package/translations) package, but independently developed from scratch and heading in different direction.
 
 ## CMP
@@ -25,23 +24,23 @@ _old_uri: "revo/lingua"
 
 ## Plugin
 
- The plugin is used to manage the cookie and session of the selected language. 
- This plugin then provides a placeholder **\[\[+lingua.cultureKey\]\]** for the page. 
+ The plugin is used to manage the cookie and session of the selected language.
+ This plugin then provides a placeholder **\[\[+lingua.cultureKey\]\]** for the page.
  But to get this value for other snippet, like language selection of a email hook, the developer can use **\[\[!lingua.cultureKey\]\]** below.
 
 ## Snippets
 
- For front-end usage, Lingua has some utility snippets. 
+ For front-end usage, Lingua has some utility snippets.
  ALL snippets have &toArray to dump all the placeholders and &toPlaceholder to hold the output and store it into the given placeholder's name.
 
 ### lingua.selector
 
- This snippet is the language selector on the front-end. 
+ This snippet is the language selector on the front-end.
  The chunks have [twitter bootstrap's dropdown-toogle style](http://getbootstrap.com/components/#dropdowns) as default, just to give an idea of how they were prepared.
 
  [![](/download/thumbnails/46137393/lingua.selector.png)](/download/attachments/46137393/lingua.selector.png)
 
- When the user clicks the link, then the page will be redirected back to the same page, but with additional REQUEST url to initiate the language session. 
+ When the user clicks the link, then the page will be redirected back to the same page, but with additional REQUEST url to initiate the language session.
  The REQUEST key can be defined in System Setting, but the default key is **_lang_**.
 
 #### Properties
@@ -94,7 +93,7 @@ _old_uri: "revo/lingua"
 
 ### lingua.cultureKey
 
- This snippet to get the current active language. 
+ This snippet to get the current active language.
  This snippet only contains
 
  ``` php
@@ -123,7 +122,7 @@ return $modx->getOption('cultureKey');
 
 ### lingua.getField
 
- This snippet is to get the value of the Lingua's language setting for the running language on the page. 
+ This snippet is to get the value of the Lingua's language setting for the running language on the page.
  The value will be switched to the selected active language.
 
 #### Properties
@@ -141,7 +140,7 @@ Created on: [[*createdon:date=`[[!lingua.getField? &field=`date_format_lite`]]`]
 
 ### lingua.getValue
 
- This snippet is to get any of resource's translated field for the running language on the page. 
+ This snippet is to get any of resource's translated field for the running language on the page.
  The value will be switched to the selected active language.
 
 #### Properties
@@ -154,7 +153,8 @@ Created on: [[*createdon:date=`[[!lingua.getField? &field=`date_format_lite`]]`]
 
 ##### Examples
 
- On your wayfinder's rowTpl, change the placeholder, like this: 
+ On your wayfinder's rowTpl, change the placeholder, like this:
+
  ``` php
 <li[[+wf.id]][[+wf.classes]]>
     <a href="[[+wf.link]]" title="[[+wf.title]]" [[+wf.attributes]]>
@@ -170,7 +170,7 @@ Created on: [[*createdon:date=`[[!lingua.getField? &field=`date_format_lite`]]`]
 
  Since version 2, Lingua now stores clone resource's content, the main content and all defined Template Variables.
 
-#### Template Variables :
+#### Template Variables:
 
  You need to go to Custom Manager Page (Components > Lingua), and define which TV that will be available for translation.
 

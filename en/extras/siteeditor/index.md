@@ -4,7 +4,7 @@ _old_id: "712"
 _old_uri: "revo/siteeditor"
 ---
 
-# What is SiteEditor?
+## What is SiteEditor?
 
 SiteEditor is a package that allows you (or your clients) to edit your MODX© website from the front-end, bypassing the manager completely.
 
@@ -26,7 +26,7 @@ SiteEditor requires MODX® Revolution 2.1.x or later.
 
 Install the package through the MODX® package manager.
 
-# Setting up SiteEditor
+## Setting up SiteEditor
 
 Before you can use the SiteEditor in the front-end you need to edit any template/chunk and add the SiteEditor to the fields you want to edit.
 
@@ -38,7 +38,7 @@ If you have a \[\[\[\*introtext\]\]\] tag that you want edit with SiteEditor, ma
 [[*introtext:siteEditorField]]
 ```
 
-And you are done with that field. You can apply the same technique to TV's and other fields. Site editor will save the field content with the **CURRENT RESOURCE**. What if you want to be able to edit other resource fields from the current resource (for example: you want to be able to edit menu items, but you are in resource ID 3 while the menu items all have their own resource ID's). Just open the chunk that shows your menu item's: 
+And you are done with that field. You can apply the same technique to TV's and other fields. Site editor will save the field content with the **CURRENT RESOURCE**. What if you want to be able to edit other resource fields from the current resource (for example: you want to be able to edit menu items, but you are in resource ID 3 while the menu items all have their own resource ID's). Just open the chunk that shows your menu item's:
 Instead of \[\[\[\*pagetitle\]\]\] we now have \[\[\[+pagetitle\]\]\]. When the tag shows a + you need to supply SiteEditor with the ID this placeholder belongs to. So replace \[\[\[+pagetitle\]\]\] with:
 
 ``` php
@@ -90,6 +90,6 @@ This is an example of a getResources rowTpl chunk:
 </li>
 ```
 
-# External sources
+## External sources
 
 Developers website: <http://www.scherpontwikkeling.nl>

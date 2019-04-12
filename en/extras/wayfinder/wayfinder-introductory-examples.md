@@ -147,7 +147,7 @@ We also included a comment in our chunk so it was clear how the output is iterat
 
 ## Outer Wrapper: formatting the `<ul>`
 
-Next, we will explicitly format the outer unordered-lists <ul> by setting the **&outerTpl** parameter.
+Next, we will explicitly format the outer unordered-lists `<ul>` by setting the **&outerTpl** parameter.
 
 Here's out sample Snippet call:
 
@@ -208,7 +208,7 @@ And here's our new Chunk "outerTpl":
 </ul>
 ```
 
-So we now have control over each item and over the format of the <ul> for each list.
+So we now have control over each item and over the format of the `<ul>` for each list.
 
 Be careful: contrary to what you might think given its name, the **outerTpl** does not necessarily format only the final outer-most wrapper, it formats _EACH_ group of items that contains children _unless an_ **_innerTpl_** _Chunk is specified!_If you want the more "expected" behavior where the **outerTpl** is used to format only the outer-most group, then you must explicitly specify the "innerTpl" parameter (see below).
 
@@ -288,9 +288,9 @@ If we had omitted the **&parentRowTpl** parameter, the **&rowTpl** Chunk would h
 ## innerTpl
 
 Before we noticed how the outerTpl parameter is used to format the outer-most group
-AND any other group of items. It basically is used as the <ul> container to wrap
-the various list items. But it's pretty common that you'd want the outer-most <ul>
-to use different formatting than the various <ul>'s that contain the sub-items.
+AND any other group of items. It basically is used as the `<ul>` container to wrap
+the various list items. But it's pretty common that you'd want the outer-most `<ul>`
+to use different formatting than the various `<ul>`'s that contain the sub-items.
 
 That's when we can use the &innerTpl.
 

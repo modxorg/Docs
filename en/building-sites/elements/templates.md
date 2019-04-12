@@ -52,7 +52,7 @@ Templates can contain any tags, including [Template Variables](building-sites/el
 
 ### Using Resource Fields in the Template
 
-As you noticed from our Template sample code above, the fields of a Resource can be referenced using the \[\[\*fieldName\]\] syntax. A list of available Resource Fields can be [found here](building-sites/resources#Resources-ResourceFields). For example, if we wanted to show the current Resource's pagetitle in our <title> tag, we would simply do this:
+As you noticed from our Template sample code above, the fields of a Resource can be referenced using the \[\[\*fieldName\]\] syntax. A list of available Resource Fields can be [found here](building-sites/resources#Resources-ResourceFields). For example, if we wanted to show the current Resource's pagetitle in our `<title>` tag, we would simply do this:
 
 ``` html
 <title>[[*pagetitle]]</title>

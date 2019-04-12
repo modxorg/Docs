@@ -17,7 +17,7 @@ _old_uri: "revo/tagger"
 
  Display and list: all tags, tags from specified group(s), omit unused tags, Resources with a given tag, etc. Supplies getResources with a &where condition, so that all the templating and sorting abilities of getResources are at your fingertips.
 
-## [](#installation)Installation
+## Installation
 
  Install via Package Management, or download the package from the [MODX Extras repository](http://modx.com/extras/)
 
@@ -25,7 +25,7 @@ _old_uri: "revo/tagger"
 
 - Content -> Content Types -> HTML (.html) -> /
 
-## [](#groups)Groups
+## Groups
 
  After installation you will need to set up some groups. Groups are representing fields that will be added to your Resource panel. Open components menu, find Tagger and go to **Groups** tab. Add new group.
 
@@ -50,7 +50,7 @@ _old_uri: "revo/tagger"
  | Tag limit                             | optional      | Will limit number of tags that users can select. Setting to 0 will allow to select infinite number of tags.                                              |
  | Show for Templates                    | required      | Comma separated list of template **ID**s for which this group should be available for editing.                                                           |
 
-#### Changing labels of Tagger places
+### Changing labels of Tagger places
 
  System Settings under Tagger namespace are available for these settings: tagger.place\_in\_tab\_label, tagger.place\_tvs\_tab\_label, tagger.place\_above\_content\_label, tagger.place\_below\_content\_label, tagger.place\_bottom\_page\_label
 
@@ -59,9 +59,9 @@ _old_uri: "revo/tagger"
 
  **Default label:** tagger.tab.label
 
-## [](#basic-usage)Basic Usage
+## Basic Usage
 
-### [](#taggergettags)TaggerGetTags
+### TaggerGetTags
 
  This Snippet allows you to list tags for resource(s), group(s) and all tags
 
@@ -134,7 +134,7 @@ _old_uri: "revo/tagger"
 - If you want to translate description add one more lexicon entry with key: **tagger.custom."group\_alias"\_desc** (in this example it will be tagger.custom.tags\_desc)
 - If you want to use those translations also on the frontend, call TaggerGetTags with option **&translate=`1`** (\[\[TaggetGetTags? &translate=`1`\]\]), new placeholders (group\_name\_translated, group\_description\_translated) will be available
 
-### [](#taggergetresourceswhere)TaggerGetResourcesWhere
+### TaggerGetResourcesWhere
 
  This snippet generate a SQL Query that can be used in a WHERE condition in the getResources snippet
 

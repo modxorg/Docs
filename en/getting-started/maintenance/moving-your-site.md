@@ -8,7 +8,7 @@ MODX Revolution is a database-driven web application, so moving it to a new serv
 
 Following is the official documentation of how to move your site to a new location. Normally, the move is to a new server, but the steps here also apply if you move your site to a new folder on your current web server.
 
-**Tip** 
+**Tip**
  It's not required, but it's a very good idea to turn off Friendly URLs (FURLS) in the Manager, if you have them on, and rename .htaccess to ht.access on your site before performing any of the steps below. Do the reverse as your last step after everything is working at the new location (rename ht.access to .htaccess and turn on FURLS). It takes a big potential source of confusion out of the picture during the transition.
 
 ## Log into the Manager: Clear your Cache and Sessions
@@ -32,7 +32,7 @@ On a UNIX style system, you can create a compressed file using the tar command:
 tar -czf /path/to/backups/modx_revo_site.tar.gz /path/to/modx_doc_root/
 ```
 
-**Forget me Not** 
+**Forget me Not**
  A good mnemonic for the "-czf" option is **C**reate **Z**ip **F**ile.
 
 Once you arrive on the other end, it's good to put the zipped file into its own directory before you extract it. The idea here is that if it explodes, it's easier to clean up the mess if it's contained in its own directory.
@@ -95,10 +95,10 @@ $modx_assets_path= '/path/to/modx_doc_root/assets/';
 $http_host='yoursite.com';
 ```
 
-If you are also moving your site into or out of a subfolder, be sure to update the variables such as **$modx\_connectors\_url,** **$modx\_manager\_url,** and **$modx\_base\_url**. They should generally 
+If you are also moving your site into or out of a subfolder, be sure to update the variables such as **$modx\_connectors\_url,** **$modx\_manager\_url,** and **$modx\_base\_url**. They should generally
  end with a slash (e.g., **$modx\_base\_url='/'** for a site not in a subfolder).
 
-**Permissions** 
+**Permissions**
  Before you can edit your config file, you may need to loosen up the permissions. After you've edited it, be sure you restore the read-only permissions on the file.
 
 There are also 3 additional configuration files that contain two PHP constants:
@@ -118,7 +118,7 @@ Make sure you update the paths in these files as well.
 
 ## Update your Database
 
-**Don't Forget the Database** 
+**Don't Forget the Database**
  MODX stores some path data in its database! When you move servers, you may have to update the workspaces table, otherwise the manager page may show a white page.
 
 _Please note that MODX can run on multiple database drivers, currently MySQL and sqlsrv. The following section is MySQL specific, however you should be able to do the same with similar commands for sqlsrv._
@@ -229,5 +229,5 @@ If you run into trouble after successfully running Setup, try manually deleting 
 
 Your site should now be up and running in its new location!
 
-**Final Checkup** 
+**Final Checkup**
  It's common for there to be problems during a site migration. There is a script available that will run tests on your MODX site to ensure that the configuration file is configured correctly. See the **test\_config.php** script available as one of the MODX utility scripts here: [https://github.com/craftsmancoding/modx\_utils](https://github.com/craftsmancoding/modx_utils). It is quite old and since MODX 2.5.x some connectors don't exists anymore. If you need a better supported check, you could try the commercial [SiteCheck](http://bobsguides.com/sitecheck-tutorial.html) package.

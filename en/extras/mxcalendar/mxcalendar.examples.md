@@ -4,8 +4,6 @@ _old_id: "941"
 _old_uri: "revo/mxcalendar/mxcalendar.examples"
 ---
 
-# Examples
-
 ## Revolution
 
 ### Listing Events

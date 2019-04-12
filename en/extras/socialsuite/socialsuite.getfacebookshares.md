@@ -38,7 +38,7 @@ Get the amount of facebook comments for a resource in a getResources tpl:
 Comments: [[!getFacebookShares? &node=`comments` &url=`[[~[[+id]]? &scheme=`full`]]`]]
 ```
 
-Get the amount of shares for the url "http://google.com/" and format it nicely using the prettyNumbers output filter that comes with SocialSuite:
+Get the amount of shares for the url "`http://google.com/`" and format it nicely using the prettyNumbers output filter that comes with SocialSuite:
 
 ``` php
 [[!getFacebookShares:prettyNumbers? &url=`http://google.com/`]]

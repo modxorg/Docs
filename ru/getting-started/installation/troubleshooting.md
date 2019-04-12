@@ -3,7 +3,7 @@ title: "Устранение неполадок при установке"
 translation: "getting-started/installation/troubleshooting"
 ---
 
-# Общие проблемы
+## Общие проблемы
 
 Прежде всего, убедитесь:
 

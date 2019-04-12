@@ -8,7 +8,7 @@ _old_uri: "2.x/class-reference/xpdomanager/xpdomanager.removeobjectcontainer"
 
  Drops a table if it exists.
 
- This will only work if there is a corresponding xPDO class for the table and its package has been loaded. MODX will not drop the table if the ORM layer has not defined the table. 
+ This will only work if there is a corresponding xPDO class for the table and its package has been loaded. MODX will not drop the table if the ORM layer has not defined the table.
 
 ## Syntax
 
@@ -34,8 +34,8 @@ $manager->removeObjectContainer('Person');
  ``` php
 $removed = $modx->exec('DROP TABLE IF EXISTS your_table');
 if ($removed === false && $modx->errorCode() !== '' && $modx->errorCode() !== PDO::ERR_NONE) {
-    print 'Could not drop table! ERROR: ' . print_r($modx->pdo->errorInfo(),true); 
-} 
+    print 'Could not drop table! ERROR: ' . print_r($modx->pdo->errorInfo(),true);
+}
 else {
     print 'Table dropped successfully.';
 }

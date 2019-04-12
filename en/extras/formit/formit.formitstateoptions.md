@@ -10,7 +10,7 @@ FormItStateOptions is an assistance snippet for [FormIt](extras/formit "FormIt")
 
 ## Usage
 
-Simply add the Snippet to your form, in a <select> call:
+Simply add the Snippet to your form, in a `<select>` call:
 
  ``` php
 <select name="state">

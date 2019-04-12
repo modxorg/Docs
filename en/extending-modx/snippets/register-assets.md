@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/adding-css-and-js-t
 
  So, you've got a Snippet that you've been writing and want to add CSS and/or JavaScript to your pages, but don't want to have to setup a custom Template Variable and edit it on every Resource your Snippet is used on. You want the Snippet to do it, dagnabbit! Well, it's pretty easy, actually, using some MODx API methods.
 
- **Other CMSs** 
+ **Other CMSs**
  This is a common need in any CMS, so if you're coming from another platform, here are some of the related functions. - **WordPress** – uses its _wp\_enqueue\_script_, _wp\_register\_script_, _wp\_enqueue\_style_, _wp\_register\_style_ functions.
 
 ## Adding to the HEAD

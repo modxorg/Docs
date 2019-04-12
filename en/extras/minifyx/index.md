@@ -4,7 +4,7 @@ _old_id: "676"
 _old_uri: "revo/minifyx"
 ---
 
-# What is MinifyX?
+## What is MinifyX?
 
 MinifyX is a snippet that allows you to combine JS and CSS files to reduce server load and optimize loading speed.
 
@@ -25,11 +25,11 @@ MinifyX requires MODX® Revolution 2.2.0 or later.
 
 Install the package through the MODX® package manager.
 
-# What you need to know
+## What you need to know
 
 MinifyX combines your files to 1 cache file and loads it from there. If you combine CSS files you should use absolute paths when using images or other URL related calls, the same goes for javascript. Some frameworks use bootloaders (like EXT) that need to be in their respective directories before they work. Be sure not to fall for this trap, could save you some time ;)
 
-# Using MinifyX in the front-end
+## Using MinifyX in the front-end
 
 ## Placing the snippet
 
@@ -81,7 +81,7 @@ Below you see the main snippet call and the placement of the placeholders. Every
 </html>
 ```
 
-# External sources
+## External sources
 
 Developers website: <http://www.scherpontwikkeling.nl/portfolio/modx-addons/minifyx.html>
 

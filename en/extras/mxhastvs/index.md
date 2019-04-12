@@ -4,8 +4,6 @@ _old_id: "1375"
 _old_uri: "revo/mxhastvs"
 ---
 
-# About mxHasTvs
-
 mxHasTvs is used to return a value based on TV value for the resource (docid). This allows you to perform quick and efficient templates to avoid the pitfalls of conditional modifiers. Useful for complex UI (template, chunk, etc.) rules to switch rendering based on a resources Template Variable(TV) value. Allows a true and false string or empty to be returned based on any matching TV value being found.
 
 ## Properties:

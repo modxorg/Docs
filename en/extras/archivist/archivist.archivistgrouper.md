@@ -4,8 +4,6 @@ _old_id: "778"
 _old_uri: "revo/archivist/archivist.archivistgrouper"
 ---
 
-# ArchivistGrouper
-
 The [Articles](extras/articles "Articles") addon 1.6.1 came with the Archivist addon 1.2.3, so I suppose this ArchivistGrouper snippet is now part of [Archivist](extras/archivist "Archivist"). No documentation yet from its creator, but I found the available properties in the snippet.
 
 The descriptions in the table are just a guess!!! Someone with more experience or the creator should confirm or adjust these!!

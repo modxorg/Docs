@@ -16,7 +16,7 @@ Validation can be done either via the XML schema, or during run-time by [xPDOVal
 
 First, let's create our model with this object:
 
-``` xml 
+``` xml
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">

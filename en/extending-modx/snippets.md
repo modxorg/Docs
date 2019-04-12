@@ -4,21 +4,21 @@ _old_id: "292"
 _old_uri: "2.x/developing-in-modx/basic-development/snippets"
 ---
 
-## Overview 
+## Overview
 
 Snippets are the method by which MODX allows you to run dynamic PHP code in any of your pages. They are the main development vehicle for most developers.
 
-### What is a Snippet? 
+### What is a Snippet?
 
 According to one definition, a "snippet" is "a short reusable piece of computer source code". Some people have a hard time distinguishing this from a "chunk", so a helpful mnemonic might lie in the p's... as in "PHP", e.g. sni-"P(h)P"-et.
 
-### How Do They Work? 
+### How Do They Work?
 
 Most Snippets are _cached_, meaning they're stored as a temporary, dynamic function in the cache. If they're flagged as uncached, then they are not parsed until the parser has done all of the other cached content.
 
 Then, once they're up to be cached, Snippets are then parsed by the MODX Parser. They have access to the $modx object.
 
-### Simple Example 
+### Simple Example
 
 Here's a basic example of what a Snippet's code might look like:
 
@@ -30,9 +30,9 @@ return 'Hello, World!';
 
 If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](building-sites/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](extending-modx/modx-class/reference/modx.runsnippet "modX.runSnippet") API method.
 
-Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output. 
+Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output.
 
-### Passing Values Into a Snippet 
+### Passing Values Into a Snippet
 
 Values are passed to your Snippet using a modifed CGI web-form type notation that follows the Snippet's name. If your Snippet were named "mySnippet", you might call it using something like this:
 
@@ -50,7 +50,7 @@ return 'My input was: ' . $input;
 
 Notice that the variable names in the calling bit need to match the variable names in the Snippet EXACTLY (case matters... i.e. 'input' not 'INPUT' or 'Input'). Secondly, don't forget the '&' in front of the would-be variable names. And last but most certainly not least, take note that those are **backticks**, not single quotes!
 
-### Reading Values in your Snippets 
+### Reading Values in your Snippets
 
 In general, you can read your values by referencing the arguments that were passed: **&someParameter** in the call translates to **$someParameter** in the PHP code.
 
@@ -71,11 +71,11 @@ Array(
 )
 ```
 
-## Database Interaction in Snippets 
+## Database Interaction in Snippets
 
 Accessing the database layer in MODx relies on an Object Relational Model (ORM) called [xPDO](extending-modx/xpdo "Home") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODx objects and methods such as [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
 
-### Why an ORM? 
+### Why an ORM?
 
 You might be asking, why use an ORM instead of just straight SQL? Well, a few reasons:
 
@@ -85,7 +85,7 @@ You might be asking, why use an ORM instead of just straight SQL? Well, a few re
 
 There are more reasons, but that's for brevity. Let's look at a few examples:
 
-### Example DB Code 
+### Example DB Code
 
 Let's get a chunk named 'LineItem', and change the placeholders in it (done with \[\[+placeholderName\]\] syntax) to some custom values:
 
@@ -121,7 +121,7 @@ Note how we first create an xPDOQuery object ($c) using $modx->newQuery(). We pa
 
 And finally, we called getCollection which - unlike getObject - returns a collection, or array, of xPDOObjects. We could then iterate over those using foreach and do whatever we want with them.
 
-### Further Database Reading 
+### Further Database Reading
 
 For further reading on xPDO, read up on these:
 
@@ -129,9 +129,9 @@ For further reading on xPDO, read up on these:
 - [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects") in xPDO
 - The [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") Object
 
-## Recommended Methods and Tips 
+## Recommended Methods and Tips
 
-### Write your Snippets outside of the MODX Manager. 
+### Write your Snippets outside of the MODX Manager.
 
 As of 2.2.0, you can simply add a "static" Snippet: just reference the static file.
 
@@ -156,9 +156,9 @@ Then you can test them to make sure they work (e.g. on the bash command line, yo
 
 Remember that a snippet in a file on your web site can be executed by anyone with a web browser, so don't leave them there on a live site unless you've placed the snippet code outside the web root so the file can't be accessed via the web. In MODX Revolution, you can put the snippet files under the core directory and move the entire directory outside the web root. You can also put a test in the snippet that makes it exit if it's not running inside MODX, but it's safest just to move the file or paste the code into a snippet in the Manager and delete the file.
 
-### Don't try to mix PHP and HTML in a Snippet. 
+### Don't try to mix PHP and HTML in a Snippet.
 
-Snippets execute PHP code. They should always begin with a **<?php** and end with a **?>** _You cannot mix PHP and HTML in a Snippet!_ For example, the following code won't work:
+Snippets execute PHP code. They should always begin with a **`<?php** and end with a **?>`** _You cannot mix PHP and HTML in a Snippet!_ For example, the following code won't work:
 
 ``` php
 <p>This is a horrible mixture of HTML and PHP</p>

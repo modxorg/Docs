@@ -28,6 +28,7 @@ translation: "building-sites/properties-and-property-sets"
 ``` php
 [[ElementName@PropertySetName]]
 ```
+
 Итак, для примера, у нас есть набор параметров с двумя параметрами - для 'debug' установлено значение true, а для 'user' установлено значение 2.
 Затем давайте вызовем набор параметров во сниппете:
 

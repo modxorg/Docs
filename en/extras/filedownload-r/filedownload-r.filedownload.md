@@ -8,7 +8,7 @@ _old_uri: "revo/filedownload-r/filedownload-r.filedownload"
 
  Basic usage is \[\[!FileDownload?\]\]
 
-# Main
+## Main
 
  | Name            | Description                                                                                                                                              | Example                                                                                                                      | Default Value | Options   |
  | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------- | --------- |
@@ -248,7 +248,7 @@ if (!$downloadFile) {
 return json_encode($output);
 ```
 
-# Salt for hash
+## Salt for hash
 
  | Name     | Description                                                                   | Default Value | Options |
  | -------- | ----------------------------------------------------------------------------- | ------------- | ------- |
@@ -257,7 +257,7 @@ return json_encode($output);
  The link is a hashed text of the saltText, context, and filename/dirname combination.
  So if you change the saltText value after a while, it will not block the content's appearance from the page, but the database will start the counter from zero again since it will not find the same hashed value.
 
-# Additional
+## Additional
 
  | Name                                           | Description                                                                                | Example                      | Default Value                               | Options             |
  | ---------------------------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------- | ------------------------------------------- | ------------------- |
@@ -270,7 +270,7 @@ return json_encode($output);
  | imgTypes                                       | A chunk name to define the associations between file extension and image                   | &imgTypes=`fdImages`         | fdImages                                    | chunk's name        |
  | imgLocat                                       | Path to the images to associate with each file extension.                                  | &imgLocat=`assets/filetypes` | assets/components/filedownload/img/filetype | web accessible path |
 
-# Sorting
+## Sorting
 
  | Name                | Description                                                                                                          | Example                  | Default Value | Options   |
  | ------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------------- | --------- |
@@ -299,7 +299,7 @@ return json_encode($output);
 
  ![](/download/attachments/35586636/browsedirectories-groupbydirectory.jpg?version=1&modificationDate=1345838638000)
 
-# Template
+## Template
 
  | Name                | Description                                                                    | Example                          | Default Value                                                                               | Options                 |
  | ------------------- | ------------------------------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------------------------------------- | ----------------------- |
@@ -312,10 +312,10 @@ return json_encode($output);
  | tplIndex            | A generated index.html file to cover up the directory from direct web access   | &tplIndex=`tpl-index`            | tpl-index                                                                                   | chunk's name/ @Bindings |
  | tplNotAllowed       | Template for forbidden access. \[\[!Login\]\] can be used in here.             | &tplNotAllowed=`tpl-notAllowed`  | @FILE: \[\[++core\_path\]\]components/filedownload/elements/chunks/tpl-notallowed.chunk.tpl | chunk's name/ @Bindings |
  | tplBreadcrumb       | Template for breadcrumb                                                        | &tplBreadcrumb =`tpl-breadcrumb` | tpl-breadcrumb                                                                              | chunk's name/ @Bindings |
- | breadcrumbSeparator | separator character for the breadcrumb                                         | &breadcrumbSeparator=` / `       | /                                                                                           | string                  |
+ | breadcrumbSeparator | separator character for the breadcrumb                                         | &breadcrumbSeparator=`/`         | /                                                                                           | string                  |
 
  _tplWrapperDir_ & _tplWrapperFile_ (1.0.0-rc.5) are used to provide different wrappers between folders and files.
- That means that they might have different headers. There are the default chunks inside **{core\_path}components/filedownload/elements/chunks/**, which are **tpl-wrapper-dir**.chunk.tpl and **tpl-wrapper file**.chunk.tpl, respectively. 
+ That means that they might have different headers. There are the default chunks inside **{core\_path}components/filedownload/elements/chunks/**, which are **tpl-wrapper-dir**.chunk.tpl and **tpl-wrapper file**.chunk.tpl, respectively.
  To use them, _tplWrapper_ must be changed too or set it empty instead.
 
  FileDownload R has [@BINDING](http://rtfm.modx.com/display/MODx096/What+are+%28at%29+Bindings) directives for the template:
@@ -355,14 +355,14 @@ return json_encode($output);
 
  ![](/download/attachments/35586636/separate-wrappers.jpg?version=1&modificationDate=1345838225000)
 
-# Headers
+## Headers
 
  | Name    | Description                                                   | Default Value                             | Options  |
  | ------- | ------------------------------------------------------------- | ----------------------------------------- | -------- |
  | fileCss | FileDownload's Cascading Style Sheet file for the page header | assets/components/filedownload/css/fd.css | web path | `disabled` to disable this |
  | fileJs  | FileDownload's Javascript file for the page header            | assets/components/filedownload/js/fd.js   | web path | `disabled` to disable this |
 
-# Style
+## Style
 
  | Name               | Description                                                                                                 | Example           | Default Value | Options        |
  | ------------------ | ----------------------------------------------------------------------------------------------------------- | ----------------- | ------------- | -------------- |

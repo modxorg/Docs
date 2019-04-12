@@ -4,7 +4,7 @@ _old_id: "680"
 _old_uri: "revo/modextra"
 ---
 
-# What is modExtra?
+## What is modExtra?
 
 modExtra is a base Extra template that is useful when wanting to create a new Extra for MODx Revolution. One can git archive from this repository to start with all the file structure for beginning MODx Extra development pre-setup.
 

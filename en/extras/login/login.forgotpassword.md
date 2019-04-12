@@ -27,19 +27,19 @@ _old_uri: "revo/login/login.forgotpassword"
 
  ForgotPassword comes with some default properties you can override. They are:
 
- | Name            | Description                                                                                                            | Default                  |
- | --------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------ |
- | tpl             | The reset password message tpl. May be the type specified by the _tplType_ property.                                   | lgnForgotPassTpl         |
- | tplType         | The type of tpl being provided by _tpl_                                                                                | modChunk                 |
- | errTpl          | The error message tpl. May be the type specified by the _errTplType_ property.                                         | lgnErrTpl                |
- | errTplType      | The type of tpls being provided by _errTpl_                                                                            | modChunk                 |
- | emailTpl        | The confirmation email message tpl.                                                                                    | lgnForgotPassEmail       |
- | emailTplAlt     | alternate confirmation email message tpl - for multi-part email with text alternative.                                 |                          |
- | emailSubject    | The subject of the email message                                                                                       | Password Retrieval Email |
- | emailTplType    | The type of tpl being provided by _emailTpl_                                                                           | modChunk                 |
- | sentTpl         | The message tpl to show when an email was successfully sent.                                                           | lgnForgotPassSentTpl     |
- | sentTplType     | The type of tpl being provided by _sentTpl_                                                                            | modChunk                 |
- | loginResourceId | The resource to direct users to on successful confirmation.                                                            | 1                        |
+ | Name            | Description                                                                                                           | Default                  |
+ | --------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+ | tpl             | The reset password message tpl. May be the type specified by the _tplType_ property.                                  | lgnForgotPassTpl         |
+ | tplType         | The type of tpl being provided by _tpl_                                                                               | modChunk                 |
+ | errTpl          | The error message tpl. May be the type specified by the _errTplType_ property.                                        | lgnErrTpl                |
+ | errTplType      | The type of tpls being provided by _errTpl_                                                                           | modChunk                 |
+ | emailTpl        | The confirmation email message tpl.                                                                                   | lgnForgotPassEmail       |
+ | emailTplAlt     | alternate confirmation email message tpl - for multi-part email with text alternative.                                |                          |
+ | emailSubject    | The subject of the email message                                                                                      | Password Retrieval Email |
+ | emailTplType    | The type of tpl being provided by _emailTpl_                                                                          | modChunk                 |
+ | sentTpl         | The message tpl to show when an email was successfully sent.                                                          | lgnForgotPassSentTpl     |
+ | sentTplType     | The type of tpl being provided by _sentTpl_                                                                           | modChunk                 |
+ | loginResourceId | The resource to direct users to on successful confirmation.                                                           | 1                        |
  | resetResourceId | The resource that contains the [Login.ResetPassword](extras/login/login.resetpassword "Login.ResetPassword") Snippet. | 1                        |
 
 ### tplType Options

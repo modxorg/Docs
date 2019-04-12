@@ -4,7 +4,7 @@ _old_id: "925"
 _old_uri: "revo/migx/migx.frontend-usage"
 ---
 
-# Frontend-Usage
+## Frontend-Usage
 
 ## Displaying MIGX Items
 

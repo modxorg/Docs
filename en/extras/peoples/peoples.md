@@ -4,14 +4,15 @@ _old_id: "949"
 _old_uri: "revo/peoples/peoples.peoples"
 ---
 
-## The Peoples Snippet 
+## The Peoples Snippet
 
 This snippet displays all the Users of a site.
 
 ## Usage
 
 `[[Peoples]]`
-## Available Properties 
+
+## Available Properties
 
 | Name | Description       | Default                                                                          |
 | ---- | ----------------- | -------------------------------------------------------------------------------- |
@@ -45,7 +46,7 @@ Show all the Users for a site.
 [[Peoples]]
 ```
 
-## Available Properties 
+## Available Properties
 
 | Name              | Description                                                                      | Default  |
 | ----------------- | -------------------------------------------------------------------------------- | -------- |

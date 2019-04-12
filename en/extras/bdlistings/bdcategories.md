@@ -35,7 +35,7 @@ Placeholders you can use:
   [[+subcategories]]
   ```
 
-`tplInner` - Chunkname to use to wrap all subcategories in. The result of this is assigned to the subcategories placeholder in the tplCategory chunk. Could be used for <optgroup>s or some extra markup distinguishing subcategories.
+`tplInner` - Chunkname to use to wrap all subcategories in. The result of this is assigned to the subcategories placeholder in the tplCategory chunk. Could be used for `<optgroup>`s or some extra markup distinguishing subcategories.
 Placeholders you can use:
 
 - subcategories (returns all subcategories, each separated by the value in the subSeparator property)

@@ -4,8 +4,6 @@ _old_id: "607"
 _old_uri: "revo/bannery"
 ---
 
-# BannerY
-
 Display images with hyperlinks at designated positions in a page. Fork from Jeroen Kenters BannerX (it was removed from MODX repository by author).
 
 ## Usage

@@ -4,8 +4,6 @@ _old_id: "684"
 _old_uri: "revo/mxcalendar"
 ---
 
-# mxCalendar
-
 ![](/download/attachments/38994084/logo-mxCalendar.png?version=1&modificationDate=1334336364000)
 
 ##### Working on finishing documentation, please visit <http://charlesmx.com/software/mxcalendar-revo.html> in the meantime, or if you have access feel free to help update

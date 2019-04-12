@@ -266,5 +266,5 @@ and the chunk blogListPost:
 
 ## See Also
 
-If you want to render properties of Resources rather than the complete output, use [getResources](extras/getresources "getResources"). 
+If you want to render properties of Resources rather than the complete output, use [getResources](extras/getresources "getResources").
 If you only need to get a single field from a foreign resource, try using [getResourceField](extras/getresourcefield "getResourceField").

@@ -37,15 +37,15 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  If you are using an older version of MODX or you just want to enhance your understanding of the process, you can follow the manual steps below:
 
- 1. **Security -> Resource Groups** : Create a new Resource Group for all the pages that will be available only to members.
+1\. **Security -> Resource Groups** : Create a new Resource Group for all the pages that will be available only to members.
 
  ![](/download/attachments/35094632/Create+Resource+Group.jpg?version=1&modificationDate=1303583586000)
 
- 2. **Security -> Access Controls** : Create User Group named "Members". Users in the "Members" group will have access to the "Members Only" resources. Make sense?
+2\. **Security -> Access Controls** : Create User Group named "Members". Users in the "Members" group will have access to the "Members Only" resources. Make sense?
 
  ![](/download/attachments/35094632/Create+User+Group.jpg?version=1&modificationDate=1303583171000)
 
- 3. On that same page (**Security -> Access Controls**), **Right Click** the newly created "Members" User Group and select "Update User Group".
+3\. On that same page (**Security -> Access Controls**), **Right Click** the newly created "Members" User Group and select "Update User Group".
 
  ![](/download/attachments/35094632/Update+User+Group.jpg?version=1&modificationDate=1303583952000)
 
@@ -60,7 +60,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  Then save.
 
- 4. **Security -> Manage Users** : Create a new "member" user so we can test whether or not our login portal works.
+4\. **Security -> Manage Users** : Create a new "member" user so we can test whether or not our login portal works.
 
  Use a simple Username and password that you can remember; the important thing here is to make sure your new user is a member of the "Members" User Group. Head to the "Access Permissions" tab and click "Add User to Group"
 

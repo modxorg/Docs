@@ -25,7 +25,7 @@ Get the amount of shares for the current resource:
 [[!getGooglePlusShares]]
 ```
 
-Get the amount of shares for the url "http://google.com/" and format it nicely using the [prettyNumbers](extras/socialsuite/socialsuite.prettynumbers "SocialSuite.prettyNumbers") output filter that comes with SocialSuite:
+Get the amount of shares for the url "`http://google.com/`" and format it nicely using the [prettyNumbers](extras/socialsuite/socialsuite.prettynumbers "SocialSuite.prettyNumbers") output filter that comes with SocialSuite:
 
 ``` php
 [[!getGooglePlusShares:prettyNumbers? &url=`http://google.com/`]]

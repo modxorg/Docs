@@ -4,8 +4,6 @@ _old_id: "1365"
 _old_uri: "revo/migx/migx.tutorials/migx.create-selectable-and-sortable-attributes-list-for-whatever-you-need-it"
 ---
 
-# Creating Selectable and Sortable lists for MIGX
-
 ## Create selectable and sortable Attributes List for whatever you need it
 
  Lets say we have Resources, which are Products and each product can have different attributes and each attribut should have a title and a nice icon

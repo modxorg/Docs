@@ -4,8 +4,6 @@ _old_id: "934"
 _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.manage-child-resources-in-a-grid-tv-with-help-of-migxdb"
 ---
 
-# Manage Child-Resources in a grid-TV with help of MIGXdb
-
  Often we have the problem with lots of Resources in the Resource-Tree to be very confused at some point and we wish, we would have a better way to manage them in a paginated grid view.
 
  In this Tuorial we will learn how to create a TV which shows a grid of child-resources,

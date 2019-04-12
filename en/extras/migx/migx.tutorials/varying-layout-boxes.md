@@ -4,8 +4,6 @@ _old_id: "929"
 _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 ---
 
-# MIGX.Varying layout-boxes
-
 ## Create varying layout-boxes with MIGX
 
  This Tutorial will show you step by step how to setup MIGX for adding and editing variying layout-Boxes.

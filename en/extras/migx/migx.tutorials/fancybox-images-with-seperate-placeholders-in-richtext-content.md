@@ -4,7 +4,7 @@ _old_id: "924"
 _old_uri: "revo/migx/migx.tutorials/migx.fancybox-images-with-seperate-placeholders-in-richtext-content"
 ---
 
-# Howto add Fancybox-images with seperate placeholders into Richtext-Content
+## Howto add Fancybox-images with seperate placeholders into Richtext-Content
 
 ## Requirements
 

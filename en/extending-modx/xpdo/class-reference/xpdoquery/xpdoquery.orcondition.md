@@ -31,8 +31,8 @@ $query->orCondition(array(
 $boxes = $xpdo->getCollection('Box',$query);
 ```
 
- **Warning** 
- The order you call the functions is important! The **orCondition** must come after the **where** method has been used. 
+ **Warning**
+ The order you call the functions is important! The **orCondition** must come after the **where** method has been used.
 
 ## Another Example
 
@@ -51,7 +51,7 @@ $criteria->where(array(
                 array(
                         'unpub_date' => 0,
                         'OR:unpub_date:>' => time(),
-                ),              
+                ),
         )
 );
 ```
@@ -62,17 +62,17 @@ Your filter parameters can reference fields in other tables.
 
  ``` php
 $query = $modx->newQuery('modUser');
-$query->innerJoin('modUserProfile','Profile'); 
+$query->innerJoin('modUserProfile','Profile');
 $query->where(array(
    'modUser.username' => $email,
 ));
 $query->orCondition(array(
    'Profile.email' => $email,
-));    
+));
 $user = $modx->getObject('modUser', $query);
 ```
 
- The filter parameters may use the class name (as in modUser above) or the alias (as the Profile above). 
+ The filter parameters may use the class name (as in modUser above) or the alias (as the Profile above).
 
 ## See Also
 

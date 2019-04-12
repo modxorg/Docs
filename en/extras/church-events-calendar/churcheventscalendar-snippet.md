@@ -18,15 +18,15 @@ Version 1.0
 
 ### The calendar grid (day/week/month/year) views share the following Chunks
 
-| Name              | Description                                                                                                                                     | Default Value                 |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| headTpl           | This is the JS/CSS for the calendar goes in the <head> and can use the results from looping categoryHeadTpl like ``` php[[+categoryHeadTpl]]``` | ChurchEvents\_HeadTpl         |
-| categoryHeadTpl   | Category CSS or JS that will go through loop and be placed in <head>                                                                            | ChurchEvents\_CategoryHeadTpl |
-| calFilterTpl      | Calendar Filter                                                                                                                                 | ChurchEvents\_CalFilterTpl    |
-| calAdminFilterTpl | Calendar Filter (added in 1.1)                                                                                                                  | ChurchEvents\_CalFilterTpl    |
-| calNavTpl         | Calendar navigation, next and previous months                                                                                                   | ChurchEvents\_CalNavTpl       |
-| calendarID        | The default calender that is displayed (added in 1.1)                                                                                           | 0                             |
-| categoryID        | The default category that is displayed (added in 1.1)                                                                                           | 0                             |
+| Name              | Description                                                                                                                                       | Default Value                 |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| headTpl           | This is the JS/CSS for the calendar goes in the `<head>` and can use the results from looping categoryHeadTpl like ``` php[[+categoryHeadTpl]]``` | ChurchEvents\_HeadTpl         |
+| categoryHeadTpl   | Category CSS or JS that will go through loop and be placed in `<head>`                                                                            | ChurchEvents\_CategoryHeadTpl |
+| calFilterTpl      | Calendar Filter                                                                                                                                   | ChurchEvents\_CalFilterTpl    |
+| calAdminFilterTpl | Calendar Filter (added in 1.1)                                                                                                                    | ChurchEvents\_CalFilterTpl    |
+| calNavTpl         | Calendar navigation, next and previous months                                                                                                     | ChurchEvents\_CalNavTpl       |
+| calendarID        | The default calender that is displayed (added in 1.1)                                                                                             | 0                             |
+| categoryID        | The default category that is displayed (added in 1.1)                                                                                             | 0                             |
 
 ### The calendar day view chunks
 
@@ -95,7 +95,7 @@ This view is only see if you have the useLocations System Setting set to Yes. It
 
 | Name                      | Description                                                                                                                                                   | Default Value                           |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| eventFormHeadTpl          | The <head> JS/CSS for the add/edit/request event form.                                                                                                        | ChurchEvents\_EventFormHeadTpl          |
+| eventFormHeadTpl          | The `<head>` JS/CSS for the add/edit/request event form.                                                                                                      | ChurchEvents\_EventFormHeadTpl          |
 | eventFormTpl              | The add/edit event form, uses FormIt                                                                                                                          | ChurchEvents\_EventFormTpl              |
 | eventFormConflictTpl      | Shows error message list of events that are conflicting, only used if the Use Locations System Setting is Yes.                                                | ChurchEvents\_EventFormConflictTpl      |
 | eventFormAdminTpl         | Event form admin section, only shows if user has permission to be admin                                                                                       | ChurchEvents\_EventFormAdminTpl         |

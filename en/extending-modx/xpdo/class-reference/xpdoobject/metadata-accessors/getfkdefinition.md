@@ -26,13 +26,13 @@ $fkdef = $document->getFKDefinition('EditedBy');
 print_r($fkdef);
 
 /* Outputs:
-Array ( 
+Array (
   [class] => User
   [key] => editedby
   [local] => editedby
   [foreign] => id
   [cardinality] => one
   [owner] => foreign
-  [type] => aggregate 
+  [type] => aggregate
 ) */
 ```

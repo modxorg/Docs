@@ -36,8 +36,7 @@ This will give us an xPDOObject-based Box object that can be [manipulated and sa
 
 In versions prior to xPDO 2.1.1-pl, if your SQL table does not exist for the object you've created, and the object class has a defined table for that class, xPDO will automatically create the table in the database for you. In 2.1.1-pl and later versions, you must set xPDO::OPT\_AUTO\_CREATE\_TABLES to true to have tables created automatically. It is recommended that you create the tables for your model explicitly in a setup script rather than depending on the auto table creation features that were not optional in earlier releases of xPDO. See [xPDOManager.createObjectContainer](extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer") for information on explicitly creating tables from the model.
 
- 
-**See Also**
+## See Also
 
 - [xPDO.newObject](extending-modx/xpdo/class-reference/xpdo/xpdo.newobject "xPDO.newObject")
 - [xPDOManager.createObjectContainer](extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer")

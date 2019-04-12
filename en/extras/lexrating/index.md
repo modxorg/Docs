@@ -4,8 +4,6 @@ _old_id: "667"
 _old_uri: "revo/lexrating"
 ---
 
-# Description
-
 LexRating (by [goldsky](http://twitter.com/_goldsky)) is a jQuery's star rating plugin, based on [rateit.codeplex.com](http://rateit.codeplex.com) (by [gidon](http://twitter.com/gjunge)).
 
 For MODX implementation, this extra uses AJAX to store the rating.
@@ -19,12 +17,12 @@ There are 2 snippets for this package:
 1. **LexRating**,
 2. **LexRatingList**, to list the rating results.
 
-There is a Quip's hook: **LexRatingQuipPostHook**, to create a star rating on each comment. 
+There is a Quip's hook: **LexRatingQuipPostHook**, to create a star rating on each comment.
 Think about a comment based star rating.
 
 [![](/download/thumbnails/43417740/comment%20based%20rating.jpg)](/download/attachments/43417740/comment%20based%20rating.jpg)
 
-# LexRating
+## LexRating
 
 This snippet offers web visitor to give a rating into an object/item, based on the given name.
 This snippet checks the visitor's IP address, and if visitor logged in, the visitor's ID
@@ -80,7 +78,7 @@ If you just want to display a rating of an item, use this
 ]]
 ```
 
-# LexRatingList
+## LexRatingList
 
 This snippet retrieves the items of the LexRating's results based on the given group name.
 
@@ -124,7 +122,7 @@ To get the complete placeholders, just use **&toArray=`1`** to spit out the keys
 
 `[[LexRatingList? &group=`articles`]]`
 
-# LexRatingQuipPostHook
+## LexRatingQuipPostHook
 
 This hook requires quip's thread name.
 This only works once for each IP Address + userID.
@@ -136,7 +134,7 @@ On the quip's call, try to use this as an example:
 [[LexRatingList? &group=`articles`]]
 ```
 
-# LexRatingQuipPostHook
+## LexRatingQuipPostHook
 
 This hook requires quip's thread name.
 This only works once for each IP Address + userID.

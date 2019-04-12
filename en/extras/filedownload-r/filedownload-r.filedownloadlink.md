@@ -10,7 +10,7 @@ But in this case, FileDownloadLink will hide the real path of the file with the 
 
 Basic usage is \[\[!FileDownloadLink?\]\]
 
-# Main
+## Main
 
 | Name       | Description                                                                                                                                              | Example                                        | Default Value | Options   |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ------------- | --------- |
@@ -18,7 +18,7 @@ Basic usage is \[\[!FileDownloadLink?\]\]
 | userGroups | This will make the download link active for users that belong to the specified groups. Multiple groups can be specified by using a comma delimited list. | &userGroups=`Administrator, Registered Member` | empty         | string    |
 | toArray    | Returns the result as an array instead, not parsed in the templates.                                                                                     | &toArray=`1`                                   | 0             | bool: 0/1 |
 
-# Salt for hash
+## Salt for hash
 
 | Name     | Description                                                                   | Default Value | Options |
 | -------- | ----------------------------------------------------------------------------- | ------------- | ------- |
@@ -27,7 +27,7 @@ Basic usage is \[\[!FileDownloadLink?\]\]
 The link is a hashed text of the saltText, context, and filename/dirname combination.
 So if you change the saltText value after a while, it will not block the content's appearance from the page, but the database will start the counter from zero again since it will not find the same hashed value.
 
-# Additional
+## Additional
 
 | Name                                           | Description                                                                        | Example                      | Default Value                               | Options             |
 | ---------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------- | ------------------------------------------- | ------------------- |
@@ -39,7 +39,7 @@ So if you change the saltText value after a while, it will not block the content
 | imgTypes                                       | A chunk name to define the associations between file extension and image           | &imgTypes=`fdImages`         | fdImages                                    | chunk's name        |
 | imgLocat                                       | Path to the images to associate with each file extension.                          | &imgLocat=`assets/filetypes` | assets/components/filedownload/img/filetype | web accessible path |
 
-# Template
+## Template
 
 The template for this snippet is a plain href link with FileDownloadLink's placeholders, not a chunk or a template file.
 If you like to see the available placeholders, just initiate the &toArray=`1` parameter.
@@ -48,14 +48,14 @@ If you like to see the available placeholders, just initiate the &toArray=`1` pa
 | ------- | ------------- | -------------------------------------------------------- | --------------------------------------------- | --------- |
 | tplCode | file template | &tplCode=`<a href="\[\[+link\]\]">\[\[+filename\]\]</a>` | <a href="\[\[+link\]\]">\[\[+filename\]\]</a> | HTML code |
 
-# Headers
+## Headers
 
 | Name    | Description                                                   | Default Value                             | Options  |
 | ------- | ------------------------------------------------------------- | ----------------------------------------- | -------- |
 | fileCss | FileDownload's Cascading Style Sheet file for the page header | assets/components/filedownload/css/fd.css | web path |
 | fileJs  | ileDownload's Javascript file for the page header             | assets/components/filedownload/js/fd.js   | web path |
 
-# Example
+## Example
 
  ``` php
 [[!FileDownloadLink?

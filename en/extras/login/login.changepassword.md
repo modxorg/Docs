@@ -4,7 +4,7 @@ _old_id: "903"
 _old_uri: "revo/login/login.changepassword"
 ---
 
-## What is ChangePassword? 
+## What is ChangePassword?
 
 ChangePassword is a simple Snippet that is used in conjunction with [Login](extras/login/login.login "Login.Login"), allowing users to change their password. You can place it anywhere, and it will process a form you must provide and change the user's password.
 
@@ -47,7 +47,7 @@ Simply create a Change Password form, and at the top of the page, put the snippe
 </form>
 ```
 
-### ChangePassword Properties 
+### ChangePassword Properties
 
 ChangePassword comes with some default properties you can override. They are:
 
@@ -71,16 +71,16 @@ ChangePassword comes with some default properties you can override. They are:
 2. [Login.Profile](extras/login/login.profile)
 3. [Login.UpdateProfile](extras/login/login.updateprofile)
 4. [Login.Register](extras/login/login.register)
-  1. [Register.Example Form 1](extras/login/login.register/register.example-form-1)
+   1. [Register.Example Form 1](extras/login/login.register/register.example-form-1)
 5. [Login.ConfirmRegister](extras/login/login.confirmregister)
 6. [Login.ForgotPassword](extras/login/login.forgotpassword)
 7. [Login.ResetPassword](extras/login/login.resetpassword)
 8. [Login.ChangePassword](extras/login/login.changepassword)
 9. [Login.Tutorials](extras/login/login.tutorials)
-  2. [Login.Basic Setup](extras/login/login.tutorials/login.basic-setup)
-  3. [Login.Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles)
-  4. [Login.Request Membership](extras/login/login.tutorials/login.request-membership)
-  5. [Login.User Profiles](extras/login/login.tutorials/login.user-profiles)
-  6. [Login.Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields)
-  7. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks)
+    1. [Login.Basic Setup](extras/login/login.tutorials/login.basic-setup)
+    2. [Login.Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles)
+    3. [Login.Request Membership](extras/login/login.tutorials/login.request-membership)
+    4. [Login.User Profiles](extras/login/login.tutorials/login.user-profiles)
+    5. [Login.Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields)
+    6. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks)
 10. [Login.Roadmap](extras/login/login.roadmap)

@@ -18,7 +18,7 @@ xPDOIterator getIterator (string $className, [xPDOCriteria|array|str|int $criter
 
  Remember, if you are using xPDO map and class files that were generated from XML schema, the classname is **not** the same as your table name. If in doubt, have a look at the schema XML file, e.g.
 
- ``` xml 
+ ``` xml
 <object class="MyClassName" table="my_class_name" extends="xPDOObject">
 ```
 

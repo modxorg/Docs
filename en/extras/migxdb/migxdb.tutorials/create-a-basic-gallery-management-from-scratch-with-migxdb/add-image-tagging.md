@@ -4,8 +4,6 @@ _old_id: "1805"
 _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management-from-scratch-with-migxdb/add-image-tagging"
 ---
 
-# Add Image-Tagging to the Gallery
-
 ## Extend the Schema
 
  Go to Extras->MIGX

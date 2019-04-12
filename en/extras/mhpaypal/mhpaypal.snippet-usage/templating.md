@@ -4,7 +4,7 @@ _old_id: "921"
 _old_uri: "revo/mhpaypal/mhpaypal.snippet-usage/mhpaypal.snippet-usage.templating"
 ---
 
-# Templating
+## Templating
 
 _This document provides information on the mhPayPal snippet templating. If looking for more information about the mhPayPal package in which the snippet is included, please visit ?_\[mhPayPal|display/ADDON/mhPayPal\] instead.
 

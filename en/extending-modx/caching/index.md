@@ -58,7 +58,7 @@ $modx->cacheManager->refresh();
  Alternatively, you can define a `$providers` array with partition `key => $partitionOptions` elements.
 
  ``` php
-// refresh the web and web2 context_settings only 
+// refresh the web and web2 context_settings only
 
 $modx - > cacheManager - > refresh(array(
     'context_settings' => array('contexts' => array('web', 'web2'))

@@ -4,8 +4,6 @@ _old_id: "1367"
 _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader"
 ---
 
-# Using resource-specific mediasource and multifile-uploader with MIGX (Old Version)
-
 ## Use resource-specific media source and multifile-uploader
 
  In this Tutorial we will learn how we can have a dynamic media source, with its own auto-created file-folder for each resource.

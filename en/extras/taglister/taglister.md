@@ -4,7 +4,7 @@ _old_id: "1015"
 _old_uri: "revo/taglister/taglister.taglister"
 ---
 
-## tagLister Snippet 
+## tagLister Snippet
 
  This snippet displays a list of the most commonly used tags on your site.
 

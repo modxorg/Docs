@@ -26,7 +26,7 @@ $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('food', 'registry.modFileRegister', array('directory' => 'food'));
 ```
 
-**Be Careful!** 
+**Be Careful!**
  Clearing the cache manually by deleting all files and folders under `core/cache/` will delete any existing modFileRegister messages as well.
 
 ### modDbRegister
@@ -253,17 +253,17 @@ Here is an example remotecommands plugin (NOTE this is for MODX 2.1, and 2.0 wou
 ``` php
 <?php
 /* RemoteCommands plugin -- register with OnWebPageComplete event */
- 
+
 /* find any remote commands to execute from the master instance */
 $instance = $_SERVER['SERVER_ADDR'];
 if (!empty($instance) && $modx->getService('registry', 'registry.modRegistry')) {
     $modx->registry->addRegister('remotes', 'registry.modDbRegister', array('directory' => 'remotes'));
     $modx->registry->remotes->connect();
- 
+
     /* register this instance */
     $modx->registry->remotes->subscribe("/distrib/instances/");
     $modx->registry->remotes->send("/distrib/instances/", array($instance => true), array('expires' => time() + 1440));
- 
+
     /* find any valid command messages for this instance and act on them */
     $modx->registry->remotes->subscribe("/distrib/commands/{$instance}/");
     $commands = $modx->registry->remotes->read(array('poll_limit' => 1, 'msg_limit' => 1));
@@ -287,7 +287,7 @@ And here is an example sendclearcache plugin for registering a remote command me
 ``` php
 <?php
 /* SendClearCache plugin -- register with OnSiteRefresh event */
- 
+
 /* read instances and write clear cache msg to each command directory */
 if ($modx->getService('registry', 'registry.modRegistry')) {
     $modx->registry->addRegister('remotes', 'registry.modDbRegister', array('directory' => 'remotes'));

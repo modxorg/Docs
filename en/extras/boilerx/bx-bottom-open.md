@@ -15,7 +15,7 @@ Deferred JavaScript and Google Analytics tracking.
         <script src="[[++assets_url]]components/boilerx/js/main.js"></script>
 
         [[++bx.show_comments:if=`[[++bx.show_comments]]`:eq=`1`:then=`<!-- Change UAXXXXXXXX1 to be your site's ID by setting bx.ga-id System Setting to auto-enable tracking -->
-`]]        
+`]]
     <[[++bx.ga-id:if=`[[++bx.ga-id]]`:eq=`UAXXXXXXXX1`:then=`!--`]]script>
         var _gaq=[ ['_setAccount','[[++bx.ga-id]]'],['_trackPageview'] ];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
@@ -25,10 +25,11 @@ Deferred JavaScript and Google Analytics tracking.
 ```
 
 ## See Also
+
  ``` php
-[[getResources@section? 
-    &parents=`1316` 
-    &context=`extras` 
-    &limit=`0` 
+[[getResources@section?
+    &parents=`1316`
+    &context=`extras`
+    &limit=`0`
     &resources=`1316,[[*id]]`
 ]]

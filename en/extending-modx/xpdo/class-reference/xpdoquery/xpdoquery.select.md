@@ -20,7 +20,7 @@ getSelectColumns($className, $tableAlias= '', $columnPrefix= '', $columns= array
 xPDOQuery select ([string $columns = '*'])
 ```
 
- When selecting fields, **always** make sure to at least include the Primary Key of the table; otherwise, xPDO will not be able to make an object from it and get lost in recursion with the error that the maximum number of nested functions of 100 has been exceeded. 
+ When selecting fields, **always** make sure to at least include the Primary Key of the table; otherwise, xPDO will not be able to make an object from it and get lost in recursion with the error that the maximum number of nested functions of 100 has been exceeded.
 
 ## Example
 

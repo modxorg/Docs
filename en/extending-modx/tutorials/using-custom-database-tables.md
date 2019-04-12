@@ -37,7 +37,7 @@ So you're developing your custom component for MODX Revolution, and you've run i
 
  In our XML file, let's start out with the first few lines:
 
- ``` xml 
+ ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="storefinder" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="storefinder" phpdoc-subpackage="model">
 ```
@@ -52,7 +52,7 @@ So you're developing your custom component for MODX Revolution, and you've run i
 
  Great! Now we've got our model definition. Let's add a table tag as the next line.
 
- ``` xml 
+ ``` xml
 <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
 ```
 
@@ -66,7 +66,7 @@ So you're developing your custom component for MODX Revolution, and you've run i
 
  Now that we've got a table definition for our stores table, let's add some field definitions to it:
 
- ``` xml 
+ ``` xml
 <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
 <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 <field key="city" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -78,7 +78,7 @@ So you're developing your custom component for MODX Revolution, and you've run i
 <field key="active" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
 ```
 
- As you can see here, each column in our table has a field definition tag. From there, we have 
+ As you can see here, each column in our table has a field definition tag. From there, we have
  attribute properties for each field. Most of these are optional, depending on the database type of the column. Some of those attribute properties are:
 
 - **key** - The key name of the column.
@@ -92,7 +92,7 @@ So you're developing your custom component for MODX Revolution, and you've run i
 
  And we'll finish by closing the object and model tags:
 
- ``` xml 
+ ``` xml
 </object>
 </model>
 ```

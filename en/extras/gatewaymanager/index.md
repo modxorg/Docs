@@ -33,8 +33,8 @@ The GatewayManager for MODX Revolution is configured to be running automatically
 
 Note: that these settings are not necessary for the default MODX "web" context, just leave that one blank
 
-http\_host - The domain without http:// and trailing slash
-site\_url - The domain including http:// and trailing slash
+http\_host - The domain without `http://` and trailing slash
+site\_url - The domain including `http://` and trailing slash
 site\_start - The id of the default startpage of the context
 
 If you wanna use the canonical tag, you can use this tag to create it completely automatic.

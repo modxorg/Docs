@@ -182,6 +182,7 @@ _old_uri: "revo/virtunewsletter/"
  The name itself can be changed, but make sure you have to apply this also to the **\[\[!virtuNewsletter.subscribe? &categoryKey=`category`\]\]** onthe [Subscribe page](extras/virtunewsletter#virtuNewsletter-1.Subscribe) above
 
 ## 5. The Newsletters
+
  You are now ready to create the newsletters using the common resource.
 
  1. Create another template that will be acting as the email's body, means without and tags.

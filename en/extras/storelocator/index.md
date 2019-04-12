@@ -4,7 +4,7 @@ _old_id: "722"
 _old_uri: "revo/storelocator"
 ---
 
-# What is StoreLocator?
+## What is StoreLocator?
 
 StoreLocator is a snippet that integrates Google Maps into MODX® to allow your users to find stores (or whatever location you want them to find) that are close to an address (their home for instance). StoreLocator is easily integrated in your website and is fully customizable.
 
@@ -26,7 +26,7 @@ StoreLocator required MODX® Revolution 2.2.0 or later.
 
 Install the package through the MODX® package manager.
 
-# Using StoreLocator in the manager
+## Using StoreLocator in the manager
 
 ## Adding stores
 
@@ -40,7 +40,7 @@ From there you can add a store by filling in the description, longitude and lati
 
 To sort stores log in to the manager and go to "Components" -> "Store Locator". You will see a grid containing all of your stores, you can just pick up a single row and drop it where you want it to be. ![](/download/attachments/37683757/sort.png?version=1&modificationDate=1331114450000)
 
-# Using StoreLocator in the front-end (user side)
+## Using StoreLocator in the front-end (user side)
 
 ## Placing the snippet
 
@@ -110,7 +110,7 @@ Below you see the main snippet call and the placement of the placeholders. Every
 
 Here's an example of the usage and placement of the snippet call: [http://www.youtube.com/watch?v=\_\_5Oi4Tqz50](http://www.youtube.com/watch?v=__5Oi4Tqz50)
 
-# StoreLocator premium
+## StoreLocator premium
 
 You have the possibility to buy StoreLocator premium through the about screen in the component. This will add the following functionality:
 
@@ -119,11 +119,11 @@ You have the possibility to buy StoreLocator premium through the about screen in
 - Possibility to get directions from the entered address to a store from the StoreLocator screen
 - A snippet that can plot directions to a specific store from an entered address.
 
-Check out the video demo: 
+Check out the video demo:
 Custom marker images: <http://www.youtube.com/watch?v=keUjHDmOJnw>
 Directions / route planner: <http://www.youtube.com/watch?v=FOAWcdoFysk>
 
-# External sources
+## External sources
 
 Developers website: <http://www.scherpontwikkeling.nl>
 

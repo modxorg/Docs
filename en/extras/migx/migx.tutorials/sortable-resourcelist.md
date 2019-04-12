@@ -4,8 +4,6 @@ _old_id: "1366"
 _old_uri: "revo/migx/migx.tutorials/migx.sortable-resourcelist"
 ---
 
-# Sortable Resourcelist with MIGX
-
 In this Tutorial we will learn how we can use MIGX to select a set of Resources from a given parent and sort the ouput-order.
 
 ## Requirements

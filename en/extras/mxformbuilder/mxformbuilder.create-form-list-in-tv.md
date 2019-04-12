@@ -4,8 +4,6 @@ _old_id: "1677"
 _old_uri: "revo/mxformbuilder/mxformbuilder.create-form-list-in-tv"
 ---
 
-# Create Form List in TV
-
 ## TV from mxFormBuilder's Form List
 
  You could create a quick TV to allow content creators to select from any of the published forms created in mxFormBuilder with the packaged **_mxfbTVFormList_** snippet.

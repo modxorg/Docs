@@ -4,7 +4,7 @@ _old_id: "710"
 _old_uri: "revo/siblingnav"
 ---
 
-# What is siblingNav?
+## What is siblingNav?
 
 siblingNav is a snippet for MODx Revolution which can generate Navigation to Resource-Siblings.
 
@@ -18,7 +18,7 @@ siblingNav was created as a Revolution snippet, and should work on all versions 
 
 Install siblingNav by Package-Management
 
-# Using siblingNav
+## Using siblingNav
 
 ## siblingNav Properties
 
@@ -64,6 +64,6 @@ Advanced calls for getting a navigation with parents and navigate between childs
 
 You should use firstChildRedirect in parent resources.
 
-# External sources
+## External sources
 
 Github repository: <https://github.com/Bruno17/siblingnav>

@@ -20,14 +20,14 @@ _old_uri: "revo/gallery/gallery.plugins/gallery.plugins.slimbox"
 
  Slimbox comes with its own custom properties. You can pass these into the [Gallery](extras/gallery "Gallery") snippet to override their defaults.
 
- | Name                     | Description                                                                                                    | Default Value                                                    |
- | ------------------------ | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
- | slimboxUseCss            | If 1, will use the provided slimbox CSS file.                                                                  | 1                                                                |
- | slimboxCss               | If slimboxUseCss is 1, will load CSS file in this property. If none is set, will use the default provided one. | {slimbox\_url}packages/slimbox/css/slimbox2.css                  |
- | slimboxRenderJsOnStartup | Load the Slimbox JS in the HEAD of the page. If set to 0, will load it at the bottom.                          | 1                                                                |
- | slimboxLoadJQuery        | If set to 1, will add JQuery to load in the page. Leave at 0 if you're already loading jQuery (recommended).   | 0                                                                |
- | slimboxJQueryUrl         | If slimboxLoadJQuery is set to 1, will load the jQuery JS file from this URL.                                  | https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js |
- | slimboxJsTpl             | The tpl chunk for the slimbox JS. You can most likely ignore this setting.                                     | slimbox/js                                                       |
+ | Name                     | Description                                                                                                    | Default Value                                                      |
+ | ------------------------ | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+ | slimboxUseCss            | If 1, will use the provided slimbox CSS file.                                                                  | 1                                                                  |
+ | slimboxCss               | If slimboxUseCss is 1, will load CSS file in this property. If none is set, will use the default provided one. | {slimbox\_url}packages/slimbox/css/slimbox2.css                    |
+ | slimboxRenderJsOnStartup | Load the Slimbox JS in the HEAD of the page. If set to 0, will load it at the bottom.                          | 1                                                                  |
+ | slimboxLoadJQuery        | If set to 1, will add JQuery to load in the page. Leave at 0 if you're already loading jQuery (recommended).   | 0                                                                  |
+ | slimboxJQueryUrl         | If slimboxLoadJQuery is set to 1, will load the jQuery JS file from this URL.                                  | `https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js` |
+ | slimboxJsTpl             | The tpl chunk for the slimbox JS. You can most likely ignore this setting.                                     | slimbox/js                                                         |
 
  There are also properties that affect how Slimbox behaves:
 

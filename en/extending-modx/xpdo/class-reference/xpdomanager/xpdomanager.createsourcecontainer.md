@@ -16,7 +16,7 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOManager.html#createSourceContainer
 void createSourceContainer (
    $dsn,
    [$username = ''],
-   [$password = ''], 
+   [$password = ''],
    [$containerOptions = null]
 )
 ```

@@ -76,12 +76,12 @@ You don't have to spruce up your login page, so if you're at all unsure here, sk
 As before, we can use the same Login Snippet:
 
  ``` php
-[[!Login? 
-&loginTpl=`lgnLoginTpl` 
-&logoutTpl=`lgnLogoutTpl` 
-&errTpl=`lgnErrTpl` 
+[[!Login?
+&loginTpl=`lgnLoginTpl`
+&logoutTpl=`lgnLogoutTpl`
+&errTpl=`lgnErrTpl`
 &logoutResourceId=`5`
-]] 
+]]
 ```
 
 ### The Homepage Template
@@ -118,12 +118,12 @@ Next create a chunk that will be displayed to members when they are logged in:
 
 Note the special format of the logout link: you trigger the logout action by passing a parameter to the _Login_ page.
 
-The syntax for passing parameters to a MODx URL tag is similar the way parameters are passed to Snippets; this ensures that the parameter gets correctly appended to the URL. The \[\[~1? &service=`logout`\]\] tag would render two different ways depending on whether friendly URLs were enabled: - <http://yoursite.com/index.php?id=1&service=logout>
+The syntax for passing parameters to a MODx URL tag is similar the way parameters are passed to Snippets; this ensures that the parameter gets correctly appended to the URL. The \[\[~1? &service=`logout`\]\] tag would render two different ways depending on whether friendly URLs were enabled:
+
+- <http://yoursite.com/index.php?id=1&service=logout>
 - <http://yoursite.com/login?service=logout>
 
 Note that MODx automatically handled the placement of the "?"
-
-
 
 We could do the same thing for any parts of our page that need to change how they look based on whether a user is logged-in or not. In the example of FoxyCart, their site also added some menu options that appeared when when a user had successfully logged in. All you would need to do is create another instance of the [Personalize](http://modx.com/extras/package/personalize) Snippet with its corresponding **yesChunk** and **noChunk**. We're going to assume you get the idea and you can repeat as needed.
 
@@ -132,12 +132,12 @@ We could do the same thing for any parts of our page that need to change how the
 We can basically use the same Snippet call as the Basic setup, but we're going to add one more parameter: **redirectToPrior**. This will enable users to login from any page, then return to that same page after completing the login.
 
  ``` php
-[[!Login? 
-&loginTpl=`lgnLoginTpl` 
-&logoutTpl=`lgnLogoutTpl` 
-&errTpl=`lgnErrTpl` 
-&logoutResourceId=`5` 
-&redirectToPrior=`1`]] 
+[[!Login?
+&loginTpl=`lgnLoginTpl`
+&logoutTpl=`lgnLogoutTpl`
+&errTpl=`lgnErrTpl`
+&logoutResourceId=`5`
+&redirectToPrior=`1`]]
 ```
 
 We can use the same **loginTpl** Chunk to display the login form, but we want to add a link to where the user can "Request Membership" :
@@ -152,14 +152,14 @@ We can use the same **loginTpl** Chunk to display the login form, but we want to
                 <label class="loginUsernameLabel">[[%login.username]]
                     <input class="loginUsername" type="text" name="username" />
                 </label>
-                
+
                 <label class="loginPasswordLabel">[[%login.password]]
                     <input class="loginPassword" type="password" name="password" />
                 </label>
                 <input class="returnUrl" type="hidden" name="returnUrl" value="[[+request_uri]]" />
 
                 [[+login.recaptcha_html]]
-                
+
                 <input class="loginLoginValue" type="hidden" name="service" value="login" />
                 <span class="loginLoginButton"><input type="submit" name="Login" value="[[+actionMsg]]" /></span>
             </fieldset>
@@ -206,37 +206,37 @@ Next, let's handle the form that allows users to apply for membership on your si
 
 <div class="register">
     <div class="registerMessage">[[+error.message]]</div>
-     
+
     <form class="form" action="[[~[[*id]]]]" method="post">
         <input type="hidden" name="nospam:blank" value="" />
-         
+
         <label for="username">[[%register.username? &namespace=`login` &topic=`register`]]
             <span class="error">[[+error.username]]</span>
         </label>
         <input type="text" name="username:required:minLength=6" id="username" value="[[+username]]" />
-         
+
         <label for="password">[[%register.password]]
             <span class="error">[[+error.password]]</span>
         </label>
         <input type="password" name="password:required:minLength=6" id="password" value="[[+password]]" />
-         
+
         <label for="password_confirm">[[%register.password_confirm]]
             <span class="error">[[+error.password_confirm]]</span>
         </label>
         <input type="password" name="password_confirm:password_confirm=`password`" id="password_confirm" value="[[+password_confirm]]" />
-         
+
         <label for="fullname">[[%register.fullname]]
             <span class="error">[[+error.fullname]]</span>
         </label>
         <input type="text" name="fullname:required" id="fullname" value="[[+fullname]]" />
-         
+
         <label for="email">[[%register.email]]
             <span class="error">[[+error.email]]</span>
         </label>
         <input type="text" name="email:email" id="email" value="[[+email]]" />
-         
+
         <br class="clear" />
-         
+
         <div class="form-buttons">
             <input type="submit" name="registerbtn" value="Register" />
         </div>

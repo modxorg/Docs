@@ -4,7 +4,7 @@ _old_id: "940"
 _old_uri: "revo/moneybird/moneybird.nrformat"
 ---
 
-# Usage
+## Usage
 
 Example for MoneyBird NrFormat:
 
