@@ -1,6 +1,6 @@
 ---
 title: Правила настройки формы
-transition: building-sites/client-proofing/form-customization/rules
+translation: building-sites/client-proofing/form-customization/rules
 ---
 
 ## Что такое правило?

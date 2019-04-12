@@ -1,6 +1,6 @@
 ---
 title: Наборы настроек формы
-transition: building-sites/client-proofing/form-customization/sets
+translation: building-sites/client-proofing/form-customization/sets
 ---
 
 ## Что такое набор настроек формы?

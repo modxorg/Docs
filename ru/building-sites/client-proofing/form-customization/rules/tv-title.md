@@ -1,6 +1,6 @@
 ---
 title: Название ТВ
-transition: building-sites/client-proofing/form-customization/rules/tv-title
+translation: building-sites/client-proofing/form-customization/rules/tv-title
 ---
 
 ## Заголовок ТВ Правило

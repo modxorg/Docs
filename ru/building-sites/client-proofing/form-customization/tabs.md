@@ -1,6 +1,6 @@
 ---
 title: Настройка вкладок
-transition: building-sites/client-proofing/form-customization/tabs
+translation: building-sites/client-proofing/form-customization/tabs
 ---
 
 Когда вы используете настройку форм для настройки форм в менеджере MODX, вы можете либо разрешить / запретить доступ к определенным полям, либо разрешить / запретить доступ ко всем вкладкам или *частям* вкладок.

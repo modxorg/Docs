@@ -1,6 +1,6 @@
 ---
 title: Видимое поле
-transition: building-sites/client-proofing/form-customization/rules/field-visible
+translation: building-sites/client-proofing/form-customization/rules/field-visible
 ---
 
 ## Правило видимого поля

@@ -1,6 +1,6 @@
 ---
 title: Типы Виджетов
-transition: building-sites/client-proofing/dashboards/widget-types
+translation: building-sites/client-proofing/dashboards/widget-types
 ---
 
 В этой статье перечислены различные типы доступных виджетов Dashboard.

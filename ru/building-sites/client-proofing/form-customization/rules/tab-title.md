@@ -1,6 +1,6 @@
 ---
 title: Название вкладки
-transition: building-sites/client-proofing/form-customization/rules/tab-title
+translation: building-sites/client-proofing/form-customization/rules/tab-title
 ---
 
 ## Правило заголовка вкладки
