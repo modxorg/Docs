@@ -1,6 +1,6 @@
 ---
 title: ТВ Видимый
-transition: building-sites/client-proofing/form-customization/rules/tv-visible
+translation: building-sites/client-proofing/form-customization/rules/tv-visible
 ---
 
 ## ТВ Видимый правила

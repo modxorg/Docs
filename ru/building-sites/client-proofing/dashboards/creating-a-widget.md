@@ -1,6 +1,6 @@
 ---
 title: Создание виджета панели инструментов
-transition: building-sites/client-proofing/dashboards/widget-types/creating-a-widget
+translation: building-sites/client-proofing/dashboards/widget-types/creating-a-widget
 ---
 
 В этой статье описывается, как создать собственный виджет Dashboard, включая краткое описание различных типов виджетов Dashboard и их работу.

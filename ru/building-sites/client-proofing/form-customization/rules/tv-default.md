@@ -1,6 +1,6 @@
 ---
 title: ТВ по умолчанию
-transition: building-sites/client-proofing/form-customization/rules/tv-default
+translation: building-sites/client-proofing/form-customization/rules/tv-default
 ---
 
 ## ТВ по умолчанию

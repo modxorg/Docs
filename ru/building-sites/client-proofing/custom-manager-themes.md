@@ -1,6 +1,6 @@
 ---
 title: Пользовательский менеджер Темы
-transition: building-sites/client-proofing/custom-manager-themes
+translation: building-sites/client-proofing/custom-manager-themes
 ---
 
 **Внимание** : когда вы используете пользовательские темы или шаблоны менеджера, вам необходимо убедиться, что после обновления MODX все работает должным образом. Пользовательские шаблоны менеджера нередко конфликтуют с основными изменениями.

@@ -1,6 +1,6 @@
 ---
 title: Inline PHP
-transition: building-sites/client-proofing/dashboards/widget-types/inline-php
+translation: building-sites/client-proofing/dashboards/widget-types/inline-php
 ---
 
 Виджет Inline PHP работает как и [виджет Snippet](building-sites/client-proofing/dashboards/widget-types/snippet "Тип виджета на приборной панели - фрагмент"), за исключением того, что он запускает содержимое виджета, как будто это был Snippet.

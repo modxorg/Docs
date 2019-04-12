@@ -1,6 +1,6 @@
 ---
 title: Переместить телевизор на вкладку
-transition: building-sites/client-proofing/form-customization/rules/move-tv-to-tab
+translation: building-sites/client-proofing/form-customization/rules/move-tv-to-tab
 ---
 
 ## Правило перемещения телевизора на вкладку

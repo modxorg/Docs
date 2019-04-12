@@ -1,6 +1,6 @@
 ---
 title: Новая вкладка
-transition: building-sites/client-proofing/form-customization/rules/new-tab
+translation: building-sites/client-proofing/form-customization/rules/new-tab
 ---
 
 Следующее относится к более старым версиям MODX. Смотрите [вкладки Настройка через настройку формы](building-sites/client-proofing/form-customization/tabs) для получения инструкций по более новым версиям MODX.
