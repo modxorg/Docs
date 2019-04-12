@@ -38,7 +38,7 @@ The target is where the plugin should redirect the visitor (or Google Bot!) to. 
 
 You can determine if the redirect is active or not with the checkbox.
 
-When you saved the redirect, you can see it in the Grid. 
+When you saved the redirect, you can see it in the Grid.
 ![](/download/attachments/18677881/redir-overview.png?version=1&modificationDate=1293980281000)
 
 Should you wish to update or remove the redirect at some point, you can simply right click the row in the grid and choose Update or Remove.

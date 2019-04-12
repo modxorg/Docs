@@ -31,7 +31,7 @@ It is currently maintained by Bob Ray.
 
  ConstantContact can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/constantcontact).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  ConstantContact is stored and developed using GitHub, and can be found here: [ConstantContact GitHub main page](https://github.com/BobRay/ConstantContact).
 

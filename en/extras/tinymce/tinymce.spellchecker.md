@@ -27,7 +27,7 @@ Now login on your manager and go to System -> System Settings and find TinyMCE i
 1. Custom Plugins (key: tiny.custom\_plugins)
 2. Custom Buttons Row X (key: tiny.custom\_buttonsx)
 
-Add "spellchecker" to the comma-seperated custom plugins list to have TinyMCE load up the spell checker during startup. 
+Add "spellchecker" to the comma-seperated custom plugins list to have TinyMCE load up the spell checker during startup.
 Also add "spellchecker" to the custom buttons row of your choice.
 
 And now you should be done.

@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins"
 
 Plugins are similar to Snippets in that they are bits of PHP code that have access to the MODx API. The big difference, however, is in _when_ the code executes. You put Snippets inside of a page or inside a template and they run when the page is viewed, whereas Plugins are set to execute during certain system events, e.g. saving a Chunk, or emptying the cache. So when a given event "fires", any Plugin "listening" for that event is executed. Once the Plugin's code has executed, control returns to the point after the spot where the System Event was triggered.
 
-**Other CMSs** 
+**Other CMSs**
  Every CMS uses some concept of "plugin", but the exact nomenclature may differ. In WordPress, for example, plugins are "hooked" to events called "actions" or "filters".
 
 Since they execute during various events, Plugins aren't limited to front-end processing. Many events are triggered by events that take place only within the MODx Manager. There is a list of MODx System Events [here](http://wiki.modxcms.com/index.php/System_Events "MODx System Events").
@@ -49,18 +49,16 @@ Plugins can be used for a variety of different applications, below are a couple 
 
 ### Message the User:
 
-**Description:** Send a custom message to the user as they create/edit a page... a custom header. 
+**Description:** Send a custom message to the user as they create/edit a page... a custom header.
 **System Events:** OnDocFormPrerender
 
 ``` php
 $modx->event->output('Hi there user!');
 ```
 
-- - - - - -
-
 ### Custom Validation
 
-**Description:** Do some custom validation on saving a page resource 
+**Description:** Do some custom validation on saving a page resource
 **System Events:** OnBeforeDocFormSave
 
 ``` php
@@ -71,16 +69,14 @@ return "This goes to the logs";
 
 The trick here is that what you want to message the user has to be passed to the **$modx->event->output()** function; any text you want to write to the logs can simply be returned by the plugin. If you pass validation, simply return null.
 
-**No HTML Allowed** 
+**No HTML Allowed**
  The output you set in **$modx->event->output()** must not contain any HTML! Use plain text only! This is because the message is passed to the user via a Javascript modal window.
 
 Return value must be a string. If your return value will be a number, concatenate it with an empty string.
 
-- - - - - -
-
 ### Word Filter
 
-**Description:** Filter words from a document before it's displayed on the web 
+**Description:** Filter words from a document before it's displayed on the web
 **System Events:** OnWebPagePrerender
 
 ``` php
@@ -89,12 +85,10 @@ $output = &$modx->resource->_output; // get a reference to the output
 $output = str_replace($words,"<b>[filtered]</b>",$output);
 ```
 
-- - - - - -
-
 ### Page-Not-Found Redirector:
 
-**Description:** Redirects a user to selected document and sends a message 
-**System Events:** OnPageNotFound 
+**Description:** Redirects a user to selected document and sends a message
+**System Events:** OnPageNotFound
 **System Settings:**
 
 - _pnf.page_: Error Resource ID

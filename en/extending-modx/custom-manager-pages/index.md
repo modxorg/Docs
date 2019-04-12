@@ -77,7 +77,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 abstract class NamespaceManagerController extends modExtraManagerController {
     /**
      * Initializes the main manager controller. You may want to load certain classes,
-     * assets that are shared across all controllers or configuration. 
+     * assets that are shared across all controllers or configuration.
      *
      * All your other controllers in this namespace should extend this one.
      *
@@ -113,7 +113,7 @@ abstract class NamespaceManagerController extends modExtraManagerController {
  * which will then handle the actual processing.
  *
  * It is important to name this class "IndexManagerController" and making sure
- * it extends the abstract class we defined above 
+ * it extends the abstract class we defined above
  */
 class IndexManagerController extends NamespaceManagerController {
     /**
@@ -201,7 +201,7 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
 
  It is also recommended to follow the [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra) tutorial as it walks you through every step needed to build a rich component.
 
-## See Also 
+## See Also
 
 1. [Actions and Menus](extending-modx/menus/actions)
    1. [Action List](extending-modx/menus/action-list)

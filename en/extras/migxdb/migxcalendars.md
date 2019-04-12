@@ -4,7 +4,7 @@ _old_id: "1729"
 _old_uri: "revo/migxdb/migxcalendars"
 ---
 
-# What is MigxCalendars?
+## What is MigxCalendars?
 
 MigxCalendars is a Date-Management-Extra for Revolution. It is using Adam Shaw's [fullcalendar](http://arshaw.com/fullcalendar/) and migxAngular for viewing/editing any kind of events/dates.
 

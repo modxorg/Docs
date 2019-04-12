@@ -2,7 +2,7 @@
 title: "Custom Models"
 ---
 
-To work with custom models, you will need to [define a schema](extending-modx/xpdo/custom-models/defining-a-schema) and [generate the model](extending-modx/xpdo/custom-models/generating-the-model) first. 
+To work with custom models, you will need to [define a schema](extending-modx/xpdo/custom-models/defining-a-schema) and [generate the model](extending-modx/xpdo/custom-models/generating-the-model) first.
 
 ## What is a Model?
 

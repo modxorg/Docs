@@ -10,7 +10,7 @@ Used to handle MODx.Browser's filesystem implementation for custom RTEs.
 
 Simply pass in a Javascript function that will handle the return url for the file selected from MODx.Browser to your RTE.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Richtext Editor
 
 ## Event Parameters

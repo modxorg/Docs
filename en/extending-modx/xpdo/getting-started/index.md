@@ -86,7 +86,6 @@ If the service instance has already been loaded in the current request, it will 
 
 ## xPDO as ORM
 
-As a PDO wrapper, xPDO can now easily use its PDO service for interacting with your relational model. Once you define an object model and generate the scaffolding classes and object/relational maps that provide the information xPDO needs, you can use its methods to interact with your objects in a great number of ways. 
+As a PDO wrapper, xPDO can now easily use its PDO service for interacting with your relational model. Once you define an object model and generate the scaffolding classes and object/relational maps that provide the information xPDO needs, you can use its methods to interact with your objects in a great number of ways.
 
 We'll explore these methods in-depth in the Custom Models section.
-

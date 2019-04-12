@@ -149,7 +149,7 @@ If you're passing an array of options (which will look like this `One||Two||Thre
  | options\_html  | Used in the tpl to position the options html (only when using &options or an options override). Example: `<select name="[[+name]]">[[+options_html]]</select>`                                     |
  | current\_value | The value of the FormIt value for the field name. Exactly the same as writing \[\[!fi.fieldname\]\] for each fieldname (if the prefix is fi.). Never gets cached.                                  |
  | error          | The value of the FormIt error message for the field name, if one is found. Exactly the same as writing \[\[!fi.error.fieldname\]\] for each fieldname (if the prefix is fi.). Never gets cached.   |
- | error\_class   | set to the value of the error\_class parameter (default is " error") ONLY if a FormIt error for the field name is found. Exactly the same as using \[\[+error:notempty=` error`\]\].               |
+ | error\_class   | set to the value of the error\_class parameter (default is " error") ONLY if a FormIt error for the field name is found. Exactly the same as using \[\[+error:notempty=`error`\]\].                |
  | key            | A unique but human-friendly identifier for each field or sub-field (useful for HTML id attributes). Generated from the key\_prefix, prefix, field name, and (only if using an option field) value. |
 
 ## Using in PHP Scripts

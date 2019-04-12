@@ -22,14 +22,14 @@ $url needs to be a proper url, which could be generated using modX::makeUrl, to 
 
 $options accepts an array with one or more of the following key/value pairs:
 
-- type, one of the following (REDIRECT\_HEADER is the default): 
+- type, one of the following (REDIRECT\_HEADER is the default):
   - **REDIRECT\_REFRESH** - Uses the header refresh method
   - **REDIRECT\_META** - Sends a a META HTTP-EQUIV="Refresh" tag to the output
   - **REDIRECT\_HEADER** - Uses the header location method
 - responseCode which needs to be the proper HTTP response, so not just "301" or "302". It defaults to HTTP/1.1 302 Moved Temporarily, but you could set it to "HTTP/1.1 301 Moved Permanently" for a 301-style redirect.
 - count\_attempts indicates the number of attempts to redirect before halting.
 
-$type, which is deprecated and should not be used, is the same as the type $options array key. 
+$type, which is deprecated and should not be used, is the same as the type $options array key.
 $responseCode, which is deprecated and should not be used, is the same as the responseCode $options array key.
 
 ## Examples

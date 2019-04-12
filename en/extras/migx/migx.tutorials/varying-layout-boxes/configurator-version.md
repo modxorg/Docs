@@ -91,7 +91,6 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes/migx.varying-layou
     ,"dataIndex": "cell_3_image"
     ,"renderer": "this.renderImage"
 }]
-
 ```
 
 ##### layout_2
@@ -99,7 +98,6 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes/migx.varying-layou
 ###### Formtabs
 
  ``` json
-
 [{"caption":"Row Format","fields":[{"field":"fake","inputTVtype":"hidden"},{"field":"cell_3_image","caption":"Image","inputTVtype":"hidden"},{"field":"cell_3_headline","caption":"Headline","inputTVtype":"hidden"},{"field":"cell_3_content","caption":"Content","inputTVtype":"hidden"}]},{"caption":"First","fields":[{"field":"cell_1_image","caption":"Image","inputTVtype":"image"},{"field":"cell_1_headline","caption":"Headline"},{"field":"cell_1_content","caption":"Content","inputTVtype":"richtext"}]},{"caption":"Second","fields":[{"field":"cell_2_image","caption":"Image","inputTVtype":"image"},{"field":"cell_2_headline","caption":"Headline"},{"field":"cell_2_content","caption":"Content","inputTVtype":"richtext"}]}]
 ```
 

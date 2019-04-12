@@ -3,7 +3,7 @@ title: "Creating a Build Script"
 _old_id: "67"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script"
 ---
- 
+
 Users using Revolution 2.0.0-beta-4 or earlier should note that the defines are different in beta5 and onward. An example: xPDOTransport::UNIQUE\_KEYS in beta5+ is XPDO\_TRANSPORT\_UNIQUE\_KEYS in beta4 and earlier. MODx recommends to just update to beta5/SVN.
 
 A build script. What is that, you might ask? This is the meat of the packaging process; here is where your component is actually put into the nice, neat .zip transport package that you find on modxcms.com or through Revolution's Package Management section.
@@ -94,8 +94,8 @@ $builder->createPackage('quip','0.1','alpha7');
 $builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
 ```
 
-The modPackageBuilder::createPackage function has 3 parameters: 
-_name_, _version_, and _release_. For us, 
+The modPackageBuilder::createPackage function has 3 parameters:
+_name_, _version_, and _release_. For us,
 we'll be doing quip-0.1-alpha7, so let's go with that.
 
 Next, we'll register a [Namespace](extending-modx/namespaces "Namespaces") to this package. Not all packages need [Namespaces](extending-modx/namespaces "Namespaces"); but all 3rd Party Components do. Basically, a Namespace is an organizing tool for MODx so that MODx can know what objects are tied to what package. This is helpful later on should we want to uninstall our package; we'd want it to remove the objects we'd install.

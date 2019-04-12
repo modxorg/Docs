@@ -91,11 +91,11 @@ Hits can be used be used with [getResources](http://rtfm.modx.com/display/ADDON/
 
 ## Optimization
 
-#### Recording Hits
+### Recording Hits
 
 Hits needs to be called uncached whenever it is punching hits. If you don’t want the processing of a hit to affect page load time you can record your hits after page load using AJAX.
 
-#### Displaying Statistics
+### Displaying Statistics
 
 When using with getResources remember that you can utilize [getCache](https://github.com/opengeek/getCache/wiki) to cache the results to the filesystem for a determined period time as well as share the cache across multiple pages. If you are displaying a “Most Visited Pages” nav in your sidebar, the results are probably going to be the same across all or multiple pages. Thus, you can utilize the getCache cacheElementKey paramater to share the cache file across multiple (in this case all) resources. Move getResources tag to a ‘getMostViewed’ Chunk.
 

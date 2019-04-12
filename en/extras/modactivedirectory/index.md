@@ -4,7 +4,7 @@ _old_id: "678"
 _old_uri: "revo/modactivedirectory"
 ---
 
-# What is modActiveDirectory?
+## What is modActiveDirectory?
 
  modActiveDirectory is a [Microsoft ActiveDirectory](http://en.wikipedia.org/wiki/Active_Directory) integration for MODx Revolution. It allows you to use ActiveDirectory to authenticate against to login to MODX.
 

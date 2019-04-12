@@ -4,8 +4,6 @@ _old_id: "674"
 _old_uri: "revo/migx"
 ---
 
-# MIGX
-
 ## What is MIGX?
 
  MIGX is a [custom](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-input-type "Adding a Custom TV Input Type") [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") (TV) input type for aggregating multiple TVs into one TV. This aggregation greatly simplifies the workflow for end users of the manager to add complex data items to the manager. A data item can consist of any number of any other TVs, including text, images, files, checkboxes, etc.

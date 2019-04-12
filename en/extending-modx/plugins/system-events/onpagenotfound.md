@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onpage
 
 Fires immediately before the user is forwarded to the error page if attempting to view a non-existent Resource.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: None
 
 ## Event Parameters

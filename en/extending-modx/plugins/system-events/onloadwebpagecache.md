@@ -4,18 +4,18 @@ _old_id: "430"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onloadwebpagecache"
 ---
 
-## Event: OnLoadWebPageCache 
+## Event: OnLoadWebPageCache
 
 Fires after a Resource is loaded from the cache. If the Resource is not cached, this event will not fire. NOTE: this event is not particularly useful until MODX 2.3 (see [Issue 9841](http://bugs.modx.com/issues/9841)).
 
-Service: 4 - Cache Service Events 
+Service: 4 - Cache Service Events
 Group: None
 
-## Event Parameters 
+## Event Parameters
 
 None.
 
-## Notes 
+## Notes
 
 This event is triggered inside the getResource() function in modrequest.class.php.
 
@@ -41,7 +41,7 @@ TVs are a trickier. They get cached as an standard array. For reading and overri
 // Reading value of TV named "my_tv"
 $my_tv = $modx->event->params['resource']->my_tv[1];
 /*
-// Where our array 
+// Where our array
 array (
     0 => 'name_of_tv',
     1 => 'Value of TV Goes here',
@@ -54,7 +54,7 @@ array (
 
 For further education, take a look at the cached files generated inside the `core/cache/resource/web/resources/` folder.
 
-## See Also 
+## See Also
 
 - [System Events](extending-modx/plugins/system-events "System Events")
 - [Plugins](extending-modx/plugins "Plugins")

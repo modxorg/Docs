@@ -4,8 +4,6 @@ _old_id: "1785"
 _old_uri: "revo/mandrillx"
 ---
 
-# What is MandrillX?
-
 MandrillX is a class for sending email through Mandrill in MODX. It completely bypasses the MODX mail system.
 
 Mandrill is an offshoot of MailChimp. It allows you to send up to 12,000 emails per month for free and provides some nice analytics. You'll need a Mandrill account and a Mandrill API key to use MandrillX.

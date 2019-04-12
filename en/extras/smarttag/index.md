@@ -42,7 +42,6 @@ _old_uri: "revo/smarttag"
 
  ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/inputtype-selection.png)![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/outputtype-selection.png)
 
-
 ### Input Type Options
 
  In input type options, they are exactly as same as [auto-tag](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types#TemplateVariableInputTypes-AutoTag) options, except the **queryLimit**.

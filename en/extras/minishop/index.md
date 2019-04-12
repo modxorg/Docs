@@ -4,8 +4,6 @@ _old_id: "677"
 _old_uri: "revo/minishop"
 ---
 
-# miniShop2
-
 This documentation originally referred to MiniShop 1. Support for MiniShop 1 was discontinued in 2013.
 
 ## Description

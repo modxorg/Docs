@@ -79,7 +79,7 @@ You can NOT modify these tpl properties from the snippet tag directly, due to th
 - Create a new property set using the Add property set button and in the window that pops up ticking the "Create new property set" checkbox.
 - Give your property set a name and click save.
 - Now you can modify the values of the properties which will not be overwritten on upgrade.
-- Finally, reference your property set name in your snippet call: 
+- Finally, reference your property set name in your snippet call:
 
 ``` php
   [[!getPage@PropertySetName? &element=`getResources` &parents=`3` ...]]

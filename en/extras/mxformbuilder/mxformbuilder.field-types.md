@@ -4,9 +4,7 @@ _old_id: "1676"
 _old_uri: "revo/mxformbuilder/mxformbuilder.field-types"
 ---
 
-# Field Types
-
- Field types provide two important functions; first they define the specific input type (user generated content) that we want to collect with full presentation code control. Then in addition each field type has what is called "field rule type" that maps to the display property. In conjunction the rule type also defines what additional constraints can be place on a given input, example a field rule type of number allows you to set a min and max number value that is validated on submission. For a complete list see [rules types](#ruletypes) below.
+Field types provide two important functions; first they define the specific input type (user generated content) that we want to collect with full presentation code control. Then in addition each field type has what is called "field rule type" that maps to the display property. In conjunction the rule type also defines what additional constraints can be place on a given input, example a field rule type of number allows you to set a min and max number value that is validated on submission. For a complete list see [rules types](#ruletypes) below.
 
 ## Properties
 

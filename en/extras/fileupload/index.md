@@ -36,7 +36,7 @@ _old_uri: "revo/fileupload"
 
  FileUpload can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/fileupload).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  FileUpload is stored and developed using GitHub, and can be found here: [FileUpload GitHub main page](https://github.com/BobRay/FileUpload).
 

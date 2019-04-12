@@ -67,7 +67,6 @@ The properties below can be used to customize behavior in one or more of the ste
 | tvSortDir          | 3       | Sort direction for the tvSort property, used in collecting the sample.                                                                                                                                                                                           | desc                                                                                                                             |
 | tplOuter           | 5       | Chunk name to use as outer (or wrapper) template. The \[\[+wrapper\]\] placeholder will be filled with the individual rows, separated by whatever is in the rowSeparator property (see below). Placeholders you can use are \[\[+count\]\] and \[\[+wrapper\]\]. |
 
-
  ``` php
 <h3>[[%getrelated.pagesfound? &namespace=`getrelated` &count=`[[+count]]`]]</h3>
 <ul>

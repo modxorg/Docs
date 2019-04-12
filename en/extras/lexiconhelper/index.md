@@ -33,7 +33,7 @@ It is currently maintained by Bob Ray.
 
  LexiconHelper can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/lexiconhelper).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  LexiconHelper is stored and developed using GitHub, and can be found here: [LexiconHelper GitHub main page](https://github.com/BobRay/LexiconHelper).
 

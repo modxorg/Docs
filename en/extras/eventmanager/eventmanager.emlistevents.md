@@ -18,8 +18,6 @@ This piece of documentation will be written in the (hopefully) near future.
 | &reserveResource | The ID of the resource your reservation form is on. The script will make this into a link passing "eid=5", wherein 5 is the ID of the event, available in ?the reservationlink placeholder.                                                                               |               |
 | &default         | The ID of the event to mark as the default. You can also use @GET to make the script look for a certain REQUEST parameter. You can reference the "default" placeholder in any output row to check against the current. See the included emRowSelectBoxTpl for a use case. | @GET eid      |
 
-
-
 ### Template Properties
 
 | Property | Description                                                                                               | Default value |

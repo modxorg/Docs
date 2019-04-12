@@ -4,7 +4,7 @@ _old_id: "931"
 _old_uri: "revo/migxdb/migxdb.configuration"
 ---
 
-# How the MIGXdb TV-input-type works
+## How the MIGXdb TV-input-type works
 
 With MIGXdb you can manage records of custom-tables.
 

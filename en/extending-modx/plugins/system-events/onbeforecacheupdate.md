@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fired before the entire site cache is cleared.
 
-Service: 4 - Cache Service Events 
+Service: 4 - Cache Service Events
 Group: None
 
 ## Event Parameters

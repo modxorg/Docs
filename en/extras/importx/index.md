@@ -20,7 +20,6 @@ Initial development started in April 2011 by Mark Hamstra.
 
 ## [![](/download/thumbnails/35094766/menu.png)](/download/attachments/35094766/menu.png)Usage
 
- 
  Using ImportX is as simple as presenting it with your CSV values and setting a few options depending on your situation.
 
 After installation through the Package Manager, refresh the page and find ImportX in the Components menu (see image to the right). Open it and have a look at what options are available. Most of it is pretty self explanatory.

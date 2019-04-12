@@ -31,7 +31,7 @@ FAQ и/или Устранение неполадок по конкретным 
 
 - [FAQ и устранение неполадок по разработке CMP](extending-modx/custom-manager-pages/troubleshooting "FAQ и устранение неполадок по разработке CMP")
 
-# 1. MODX 101
+## 1. MODX 101
 
 ## 1.1. Что такое MODX Evolution, и что такое MODX Revolution? В чем отличия?
 
@@ -55,7 +55,7 @@ MODX Revolution - это полностью переписанный MODX Evolut
 
 Прочитайте документацию по [Синтаксису тегов](building-sites/tag-syntax "Синтакс тегов"). Вы можете найти поля ресурсов, которые можно использовать в Revolution на странице [Документации по ресурсам](building-sites/resources "Ресурсы").
 
-# 2. Панель управления
+## 2. Панель управления
 
 ## 2.1. Помогите! Куда пропал сайдбар?
 
@@ -84,7 +84,7 @@ MODX Revolution - это полностью переписанный MODX Evolut
 
 Вы не обречены. [Следуйте этой инструкции для Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Ручной сброс пароля"), или [инструкции для восстановления аккаунта для Evolution](/evolution/1.0/administration/manager-users/reset-your-password-unblock-your-user "Сброс пароля - Разблокирование Пользователя").
 
-# 3. Проблемы Отображения Интерфейса
+## 3. Проблемы Отображения Интерфейса
 
 ## 3.1 Пустые страницы фронтэнда, разрешаемые очисткой кэша.
 

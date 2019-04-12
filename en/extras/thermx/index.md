@@ -29,7 +29,7 @@ It is currently maintained by Bob Ray.
 
  ThermX can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/thermx).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  ThermX is stored and developed using GitHub, and can be found here: [ThermX GitHub main page](https://github.com/BobRay/ThermX).
 

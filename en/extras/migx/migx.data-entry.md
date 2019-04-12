@@ -4,7 +4,7 @@ _old_id: "923"
 _old_uri: "revo/migx/migx.data-entry"
 ---
 
-# Data-Entry
+## Data-Entry
 
 ## How to input data
 

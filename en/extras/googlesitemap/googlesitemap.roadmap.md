@@ -19,11 +19,10 @@ _old_uri: "revo/googlesitemap/googlesitemap.roadmap"
 ### 2.0
 
 ### - Complete rewrite based on Garry's blazing fast sitemap code
+
 - Added cachemanager
 - Efforts were made to make it backwards compatible using runSnippet to call the legacy snippet if legacy features are required.
 - RC release could use some testing
- 
-
 
 ### 1.1
 

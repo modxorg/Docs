@@ -51,7 +51,7 @@ _old_uri: "revo/gridclasskey"
       `{xtype:"modx-combo",url:"path/to/connector",baseParams:{action:"something/getlist",combo:true}}`
 - Output Filter: user can modify the output value of the grid when its rendered. It's just a [MODX's Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)).
 
-##### Sorting
+#### Sorting
 
  User can define by which field the grid is sorted, and to which direction, ascending or descending.
 

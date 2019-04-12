@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/internationalization"
 
 Internationalization, or i18n, is the process of extrapolating text strings in a document to separate languages, so that the document may be viewed by a multitude of different languages without having to duplicate the page for every different language. Technically speaking, _internationalization_ refers to the process of _preparing_ code so that it can be translated; in MODX this process often boils down to isolating translatable strings into separate placeholders.
 
-**i18n** 
+**i18n**
  The abbreviation **i18n** derives from the word "internationalization". It means "**i** plus 18 letters then **n**".
 
 MODX Revolution supports i18n at the core level, through what it calls "Lexicons". A lexicon is simply a collection of the following:
@@ -134,7 +134,7 @@ If you have placeholders in your lexicon string, for example "This is \[\[+useri
 
 So say you're creating System Settings for your 3rd Party Component (3PC). The syntax for auto-loading them into the Revolution Settings grid is simple. Let's say we have a Namespace for our Component called 'gallery', and a setting called 'gallery.display\_thumbs'
 
-**Recommended Format** 
+**Recommended Format**
  The recommended format for 3PC developers is to use a prefix which identifies the parent component: $_lang\['\_name-of-component_.key-name'\] = 'Your translation here.';
 
 This helps to prevent name collisions; keep in mind that the **$\_lang** array may have thousands of entries, so you want to make sure each entry is unique.

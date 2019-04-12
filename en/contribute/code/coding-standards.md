@@ -4,8 +4,6 @@ _old_id: "1133"
 _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 ---
 
-# MODX PHP Coding Standards
-
 ## General
 
 - Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.

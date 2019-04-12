@@ -29,7 +29,7 @@ Bugs can be filed here: <https://github.com/bertoost/MODX-ForcedPasswdChange/iss
 
 ## Howto use it
 
-Just install it and edit a user (not yourself!) and find the checkbox below the "New password" fieldset. Check it and login as the editted/created user. 
+Just install it and edit a user (not yourself!) and find the checkbox below the "New password" fieldset. Check it and login as the editted/created user.
 Screenshots will be soon available
 
 ## Events

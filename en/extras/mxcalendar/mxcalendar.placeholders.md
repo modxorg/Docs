@@ -6,7 +6,7 @@ _old_uri: "revo/mxcalendar/mxcalendar.placeholders"
 
 ![](/download/attachments/42926249/mxcalendar.png?version=1&modificationDate=1352805315000)
 
-# Placeholders
+## Placeholders
 
 ## Detail View (Event)
 

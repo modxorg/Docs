@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onempt
 
 Fires after the trash is emptied for the site.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Documents
 
 ## Event Parameters

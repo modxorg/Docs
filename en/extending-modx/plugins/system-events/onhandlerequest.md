@@ -4,31 +4,31 @@ _old_id: "427"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onhandlerequest"
 ---
 
-## Event: OnHandleRequest 
+## Event: OnHandleRequest
 
 Fires at the beginning of a request handler.
 
-Service: 5 - Template Service Events 
+Service: 5 - Template Service Events
 Group: System
 
-## Event Parameters 
+## Event Parameters
 
 **None.**
 
-## Output 
+## Output
 
 Anything returned by this event will be written to the logs as an error.
 
-## Remarks 
+## Remarks
 
-| Previous event | —                                                                                                                                                                                                                   |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Previous event | —                                                                                                                                                                                             |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Next event     | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit") or [OnWebPageInit](/display/revolution20/OnWebPageInit "OnWebPageInit") (depending on context) |
-| File           | [core/model/modx/modmanagerrequest.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagerrequest.class.php)                                                                         |
-| Class          | class modManagerRequest                                                                                                                                                                                              |
-| Method         | public function handleRequest()                                                                                                                                                                                      |
+| File           | [core/model/modx/modmanagerrequest.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagerrequest.class.php)                                                   |
+| Class          | class modManagerRequest                                                                                                                                                                        |
+| Method         | public function handleRequest()                                                                                                                                                                |
 
-## See Also 
+## See Also
 
 - [System Events](extending-modx/plugins/system-events "System Events")
 - [Plugins](extending-modx/plugins "Plugins")

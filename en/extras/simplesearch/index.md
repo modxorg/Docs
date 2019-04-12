@@ -4,7 +4,7 @@ _old_id: "711"
 _old_uri: "revo/simplesearch"
 ---
 
-## What is SimpleSearch? 
+## What is SimpleSearch?
 
  SimpleSearch is a simple search component for MODx Revolution. It supports searching Resource content and TV content.
 

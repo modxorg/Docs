@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onuser
 
 Fires anytime the user properly changes their password.
 
-Service: 3 - Template Service Events 
+Service: 3 - Template Service Events
 Group: None
 
 ## Event Parameters

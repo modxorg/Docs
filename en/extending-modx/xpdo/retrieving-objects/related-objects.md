@@ -56,7 +56,7 @@ So we have our Car object, but say we want to set it a new owner that we've just
 $car = $xpdo->getObject('Car',123);
 $owner = $xpdo->getObject('Owner',array('name' => 'Mark'));
 $car->addOne($owner);
-$car->save(); 
+$car->save();
 ```
 
 Saving the Car object will save the 'owner' field on the Car row to the Owner's ID, via the relationship definition.

@@ -10,15 +10,15 @@ _old_uri: "2.x/advanced-features/object-validation/xpdomaxvaluevalidationrule"
 
 First, our model:
 
-``` xml 
+``` xml
 <model package="test" baseClass="xPDOObject" platform="mysql"
-       defaultEngine="MyISAM" tablePrefix="test_">    
+       defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">
         <field key="number" dbtype="int" precision="10"
                phptype="integer" default="0" null="false" />
-                
+
         <validation>
-            <rule field="name" 
+            <rule field="name"
                   name="myMaxValRule"
                   type="xPDOValidationRule"
                   rule="xPDOMaxValueValidationRule"

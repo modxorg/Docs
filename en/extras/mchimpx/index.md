@@ -4,8 +4,6 @@ _old_id: "671"
 _old_uri: "revo/mchimpx"
 ---
 
-# mChimpX
-
 A FormIt hook provided to subscribe an emailaddress to your Mailchimp list. Fully confiurable.
 mChimpX is developped by Bert Oost at OostDesign.nl.
 

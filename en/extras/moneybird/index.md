@@ -4,7 +4,7 @@ _old_id: "683"
 _old_uri: "revo/moneybird"
 ---
 
-# What is MoneyBird?
+## What is MoneyBird?
 
 MoneyBird is a online invoice system which is very popular in the Netherlands, but also outside. With the MoneyBird component for MODX you're able to bind MoneyBird contacts to your local MODX users and list the invoices of that user at their account page with some simple snippets and customizable chunks.
 

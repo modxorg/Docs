@@ -4,9 +4,7 @@ _old_id: "1312"
 _old_uri: "style-guide"
 ---
 
-# Documentation Guide
-
- Welcome to MODX documentation guide for authors and contributors.
+Welcome to MODX documentation guide for authors and contributors.
 
  This guide contains basic rules, tips, and suggestions for people writing or editing documentation for MODX. When different documents use the same guidelines, they are more user friendly, consistent and more simple to combine and reuse. We therefore strongly encourage all contributors to follow these guidelines for the benefit of the community.
 

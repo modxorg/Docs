@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ontemp
 
 Loaded right before removing a template variable.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Template Variables
 
 ## Event Parameters
@@ -22,7 +22,7 @@ Group: Template Variables
 
 | Previous event | —                                                                                                                                     |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | [OnTemplateVarRemove](extending-modx/plugins/system-events/ontemplatevarremove "OnTemplateVarRemove")            |
+| Next event     | [OnTemplateVarRemove](extending-modx/plugins/system-events/ontemplatevarremove "OnTemplateVarRemove")                                  |
 | File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
 | Class          | modTemplateVar                                                                                                                         |
 | Method         | public function remove(array $ancestors= array ())                                                                                     |

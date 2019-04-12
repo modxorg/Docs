@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmana
 
 Fired in the manager controller, after the processing of content and before returning it. The last event before getting response.
 
-Service: 2 - Manager Access Events 
+Service: 2 - Manager Access Events
 Group: System
 
 ## Event Parameters
@@ -19,7 +19,7 @@ Group: System
 
 ## Remarks
 
-| Previous event | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")      |
+| Previous event | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                            |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Next event     | —                                                                                                                                                 |
 | File           | [core/model/modx/modmanagercontroller.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagercontroller.class.php) |

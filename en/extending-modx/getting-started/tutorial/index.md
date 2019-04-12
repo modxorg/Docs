@@ -10,7 +10,7 @@ In these tutorials, we plan to answer those questions with YES.
 
 The codebase in Revolution has switched to [xPDO](http://www.xpdo.org/ "xPDO Homepage"), an object relational bridge modeling tool built by Jason Coward. In layman's terms, this means that all the database tables are now represented by PHP objects (as is common with any ORM). Chunks are represented by 'modChunk' objects, snippets by 'modSnippet' objects and so on.
 
-## The Simple How 
+## The Simple How
 
 So, how does one actually get an object in the new modx? Well, you used to have to rely on a handful of different functions:
 
@@ -56,13 +56,13 @@ $document = $modx->getObject('modResource',array(
 ));
 ```
 
-## The Model 
+## The Model
 
 So, you're probably asking, Where is the list of table names to object names map? It can be found in "core/model/schema/modx.mysql.schema.xml". (You'll note the 'mysql' - yes, this means that MODx will in the near future support other databases) From there you can view an XML representation of all the MODx DB tables.
 
 For example, modChunk:
 
-``` xml 
+``` xml
 <object class="modChunk" table="site_htmlsnippets" extends="modElement">
     <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
     <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default="Chunk" />
@@ -77,19 +77,19 @@ For example, modChunk:
 
 You can also define your own schemas for your own components and add them as packages - more on that in a future article. Lets go into the schema:
 
-``` xml 
+``` xml
 <object class="modChunk" table="site_htmlsnippets" extends="modElement">
 ```
 
 The _class_ property tells you what the name of the class will be. The _table_ property shows the actual MySQL table, and _extends_ shows what object it extends. modElement is a base class for all Elements in MODx - snippets, modules, chunks, templates, etc.
 
-``` xml 
+``` xml
 <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
 ```
 
 This tag represents a column in the database. Most of these attributes are pretty straightforward.
 
-``` xml 
+``` xml
 <aggregate alias="modCategory" class="modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
 ```
 
@@ -106,7 +106,7 @@ foreach ($settings as $setting) {
 
 Pretty easy, huh? We'll get into creating and removing objects, as well as more complex queries, such as inner joins, limits, sorting and others, in the \[next article\].
 
-## See Also 
+## See Also
 
 - [xPDO: Defining a Schema](extending-modx/xpdo/custom-models/defining-a-schema "Defining a Schema")
 - [xPDO: Related Objects](extending-modx/xpdo/retrieving-objects/related-objects "Working with Related Objects")

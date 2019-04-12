@@ -31,7 +31,7 @@ It is currently maintained by Bob Ray.
 
  LogPageNotFound can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/logpagenotfound).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  LogPageNotFound is stored and developed using GitHub, and can be found here: [LogPageNotFound GitHub main page](https://github.com/BobRay/LogPageNotFound).
 

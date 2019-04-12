@@ -5,7 +5,7 @@ _old_uri: "revo/simplecart"
 ---
 
  SimpleCart is a commercial e-commerce add-on for MODX Revolution.
- You can find more information about this extra on the official website: [modmore.com/simplecart/](https://www.modmore.com/simplecart/). 
+ You can find more information about this extra on the official website: [modmore.com/simplecart/](https://www.modmore.com/simplecart/).
 
 ### Documentation
 

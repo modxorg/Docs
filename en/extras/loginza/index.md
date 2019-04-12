@@ -23,7 +23,7 @@ DevelopmeDevelopment and Bug Reporting
 
 eventsCalendar2 is stored and developed in GitHub, and can be found here: <https://github.com/bezumkin/eventsCalendar2>
 
-Bugs can be filed here: <https://github.com/bezumkin/eventsCalendar2/issuesnt> and Bug Reporting 
+Bugs can be filed here: <https://github.com/bezumkin/eventsCalendar2/issuesnt> and Bug Reporting
 eventsCalendar2 is stored and developed in GitHub, and can be found here: <https://github.com/bezumkin/eventsCalendar2>
 Bugs can be filed here: <https://github.com/bezumkin/eventsCalendar2/issues>
 

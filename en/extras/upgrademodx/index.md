@@ -3,7 +3,7 @@ title: "UpgradeMODX"
 _old_id: "1803"
 _old_uri: "revo/upgrademodx"
 ---
- 
+
 ## What is UpgradeMODX?
 
 **Important: Always back up your site before upgrading.**
@@ -36,7 +36,7 @@ It is currently maintained by Bob Ray.
 
  UpgradeMODX can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/upgrademodx).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  UpgradeMODX is stored and developed using GitHub, and can be found here: [UpgradeMODX GitHub main page](https://github.com/BobRay/UpgradeMODX).
 

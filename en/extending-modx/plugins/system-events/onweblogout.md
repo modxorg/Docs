@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebl
 
 Fires right after the user logs out of a context and their context session is removed.
 
-Service: 3 - Web Access Service Events 
+Service: 3 - Web Access Service Events
 Group: None
 
 ## Event Parameters

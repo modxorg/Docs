@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onplug
 
 Occurs before the plugin modification form is rendered, but after the JS is registered. Can be used to render custom Javascript for the mgr.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Plugins
 
 ## Event Parameters

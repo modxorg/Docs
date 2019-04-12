@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onplug
 
 Happens right before a plugin is saved.
 
-Service: 2 - Manager Access Events 
+Service: 2 - Manager Access Events
 Group: modPlugin
 
 ## Event Parameters

@@ -16,7 +16,7 @@ Basic use this code:
 </div>
 ```
 
-The album\_id is the id you see in the manager like this 
+The album\_id is the id you see in the manager like this
 ![](/download/attachments/37683278/album_id.png?version=1&modificationDate=1325708634000)
 
 ## Available Properties
@@ -61,8 +61,8 @@ It is recommended to Duplicate the Chunk that you wish to change and rename it. 
 |                    | file\_width       | the width of the slide show images                           |
 |                    | file\_height      | the height of the slide show images                          |
 | slideHolderTpl,    |
- htmlCaptionTpl, 
- slideLinkTpl, 
+ htmlCaptionTpl,
+ slideLinkTpl,
  slidePaneTpl |  |  |
 |  | src | the full image URL |
 |  | id | the slide id |

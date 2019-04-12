@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ontemp
 
 Loaded right after successful removing a template variable.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Template Variables
 
 ## Event Parameters
@@ -20,12 +20,12 @@ Group: Template Variables
 
 ## Remarks
 
-| Previous event | [OnTemplateVarBeforeRemove](extending-modx/plugins/system-events/ontemplatevarbeforeremove "OnTemplateVarBeforeRemove") |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | —                                                                                                                                            |
-| File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php)        |
-| Class          | modTemplateVar                                                                                                                                |
-| Method         | public function remove(array $ancestors= array ())                                                                                            |
+| Previous event | [OnTemplateVarBeforeRemove](extending-modx/plugins/system-events/ontemplatevarbeforeremove "OnTemplateVarBeforeRemove")                |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Next event     | —                                                                                                                                     |
+| File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
+| Class          | modTemplateVar                                                                                                                         |
+| Method         | public function remove(array $ancestors= array ())                                                                                     |
 
 ## See Also
 

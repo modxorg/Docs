@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires after a form is submitted but before a User is saved in the manager.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Users
 
 ## Event Parameters

@@ -12,15 +12,15 @@ This rule verifies that a field has less than X number of chars, where X is defi
 
 First, our model:
 
-``` xml 
+``` xml
 <model package="test" baseClass="xPDOObject" platform="mysql"
-       defaultEngine="MyISAM" tablePrefix="test_">    
+       defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">
         <field key="name" dbtype="varchar" precision="255"
                phptype="string" default="" null="false" />
-                
+
         <validation>
-            <rule field="name" 
+            <rule field="name"
                   name="myMaxLenRule"
                   type="xPDOValidationRule"
                   rule="xPDOMaxLengthValidationRule"

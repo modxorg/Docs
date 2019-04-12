@@ -3,7 +3,7 @@ title: "getDynaDescription"
 _old_id: "1780"
 _old_uri: "revo/getdynadescription"
 ---
- 
+
 ## What is getDynaDescription?
 
 Conversion and rewrite of the Evolution getDynaDescription snippet.
@@ -36,7 +36,7 @@ It is currently maintained by Bob Ray.
 
  getDynaDescription can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/getdynadescription).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  getDynaDescription is stored and developed using GitHub, and can be found here: [getDynaDescription GitHub main page](https://github.com/BobRay/getDynaDescription).
 

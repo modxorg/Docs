@@ -8,7 +8,7 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
 
  The xPDO Object-Relational-Bridge (ORB) relies on a series of PHP classes to provide an interface to database tables. These PHP classes can be generated automatically by parsing a specially formatted XML file, by reverse engineering existing database tables, or they can even be written by hand (masochists only). The easiest approach when dealing with a custom database table is to reverse engineer existing MySQL database tables: MySQL has been around for a long time, and there are numerous tutorials and books out there to help you learn how to use it.
 
- If you're wanting to extend existing MODx classes, e.g. by creating [Custom Resource Classes](developing-in-modx/advanced-development/custom-resource-classes "Custom Resource Classes"), then usually you will start this process with the XML file. 
+ If you're wanting to extend existing MODx classes, e.g. by creating [Custom Resource Classes](developing-in-modx/advanced-development/custom-resource-classes "Custom Resource Classes"), then usually you will start this process with the XML file.
 
  Our process will be this:
 
@@ -37,7 +37,7 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
 
  We need a script to scan your database tables and generate the XML schema and PHP files. In general, this is a "disposable" script that you may only need to run once. You will probably need to make adjustments and run it more than once, but in concept and in function, this script is merely scaffolding.
 
- You can download a version of this script and see a tutorial that describes using this method with a simple custom DB table at [Bob's Guides](http://bobsguides.com/custom-db-tables.html). 
+ You can download a version of this script and see a tutorial that describes using this method with a simple custom DB table at [Bob's Guides](http://bobsguides.com/custom-db-tables.html).
 
  The crux of this script are 2 xPDO methods (note, however, that the methods belong to children objects):
 
@@ -270,9 +270,7 @@ function print_msg($msg) {
 /* EOF */
 ```
 
- 
-
- To check whether or not this script succeeded, take a look inside the folder that is mentioned in its output, e.g. 
+ To check whether or not this script succeeded, take a look inside the folder that is mentioned in its output, e.g.
 **/user/youruser/public\_html/core/components/yourpackage/model/yourpackage**. You should see a couple files – one for each table. If you see a TON of tables corresponding to all of MODx's tables, then try to explicitly set the database password and name – leave the following line commented out:
 
  ``` php
@@ -314,8 +312,8 @@ else {
 return $output;
 ```
 
- **Watch the Prefix!** 
-[addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") requires that you specify the correct table prefix for your package! 
+ **Watch the Prefix!**
+[addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") requires that you specify the correct table prefix for your package!
 
 ## See Also
 

@@ -4,11 +4,11 @@ _old_id: "306"
 _old_uri: "2.x/developing-in-modx/basic-development/snippets/templating-your-snippets"
 ---
 
-## Templating Snippets 
+## Templating Snippets
 
 One of the best practices in Snippet design is to make sure that you never write HTML directly in the Snippet, but template out the HTML into Chunks. This tutorial shows you how to do that in a Snippet.
 
-### Our Initial Snippet 
+### Our Initial Snippet
 
 Let's take a case scenario; say you want to iterate across the published, non-deleted Resources that are children of the Resource with ID 390, sorted by menuindex, and then output them as LI tags with the pagetitle and a link to click them.
 
@@ -42,7 +42,7 @@ return $output;
 
 This does what we want, but puts the HTML inline. We don't want that. It doesn't let the user control the markup, or change it if they want to. We want more flexibility.
 
-### Templating the Snippet 
+### Templating the Snippet
 
 First off, let's create a chunk that we'll use for each item in the result set. Call it "ResourceItem", and make this its content:
 
@@ -92,7 +92,7 @@ Now the user can call the snippet this way to override the chunk for each Resour
 
 Meaning they can template their results however they want - using LIs, or table rows, or whatever! You've now created a flexible, powerful snippet. The available placeholders depend on what array is passed to $modx->getChunk(); or $tpl->process() methods. In this example the available placeholders would be all default fields (no TVs!) of a resource like for example \[\[+pagetitle\]\], \[\[+id\]\] or \[\[+content\]\].
 
-### Adding A Row Class 
+### Adding A Row Class
 
 What if we want the user to be able to specify a CSS class for each LI row, but not have to make their own custom chunk? Simple, we just add a default property 'rowCls' to our snippet code at the top, below our first getOption call:
 
@@ -118,7 +118,7 @@ foreach ($resources as $resource) {
 
 Note how we're explicitly setting the 'rowCls' variable into our $resourceArray property array. We do this because we've already gotten the value of rowCls earlier in the snippet (with the getOption call), and we know that it's not going to vary per row.
 
-### Passing a Custom ID 
+### Passing a Custom ID
 
 What if we want the user to be able to pass in what parent to grab resources from? Again, we just add a default property 'id' to our snippet code at the top, below our getOption calls:
 
@@ -162,7 +162,7 @@ foreach ($resources as $resource) {
 return $output;
 ```
 
-## See Also 
+## See Also
 
 1. [Templating Your Snippets](extending-modx/snippets/templating)
 2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)

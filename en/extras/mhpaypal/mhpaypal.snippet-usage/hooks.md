@@ -4,7 +4,7 @@ _old_id: "920"
 _old_uri: "revo/mhpaypal/mhpaypal.snippet-usage/mhpaypal.snippet-usage.hooks"
 ---
 
-# Hooks
+## Hooks
 
 _This document provides information on the mhPayPal snippet hooks, its properties and some example usages. If looking for more information about the mhPayPal package in which the snippet is included, please visit_ [?mhPayPal](extras/mhpaypal "mhPayPal") _instead. If you are looking for more information on the mhPayPal snippet itself, please visit ?__[mhPayPal.Snippet Usage](extras/mhpaypal/mhpaypal.snippet-usage "mhPayPal.Snippet Usage")__._
 

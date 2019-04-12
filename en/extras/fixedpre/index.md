@@ -32,7 +32,7 @@ _old_uri: "revo/fixedpre"
 
  FixedPre can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/fixedpre).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  FixedPre is stored and developed using GitHub, and can be found here: [FixedPre GitHub main page](https://github.com/BobRay/FixedPre).
 

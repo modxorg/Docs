@@ -58,7 +58,7 @@ It is currently maintained by Bob Ray.
 
  SiteCheck can be obtained from the secure server at [Gumroad.com](https://gum.co/DLChj).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  Bugs and feature requests for GoRevo can be submitted [here.](https://bobsguides.com/contact-form.html)
 

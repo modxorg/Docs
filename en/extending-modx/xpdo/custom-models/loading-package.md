@@ -24,7 +24,7 @@ $xpdo->addPackage('boxpackage','/myapp/core/model/','myapp_');
 
  From then on out, any of our classes in our Package can be loaded via xPDO's retrieval methods.
 
- Using the table\_prefix is not recommended unless you have a good reason to specifically set the table prefix. 
+ Using the table\_prefix is not recommended unless you have a good reason to specifically set the table prefix.
 
 ## Conclusion
 

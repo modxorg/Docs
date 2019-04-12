@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchun
 
 Fires during the rendering of a form. Useful for rendering HTML straight into the Chunk form.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Chunks
 
 ## Event Parameters

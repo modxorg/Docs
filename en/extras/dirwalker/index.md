@@ -29,7 +29,7 @@ It is currently maintained by Bob Ray.
 
  DirWalker can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/dirwalker).
 
-## Development and Bug Reporting 
+## Development and Bug Reporting
 
  DirWalker is stored and developed using GitHub, and can be found here: [DirWalker GitHub main page](https://github.com/BobRay/DirWalker).
 

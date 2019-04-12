@@ -23,7 +23,3 @@ Wat de documentatie betreft zul je de meeste informatie in de [Engelstalige vers
 Wil je helpen met het schrijven en onderhouden van de Nederlandse (of Engelse) documentatie? [Deze documentatie is open source en te vinden op GitHub](https://github.com/Mark-H/Docs).
 
 ## Eerste stappen met MODX
-
-
-
-

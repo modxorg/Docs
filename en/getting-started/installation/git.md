@@ -46,7 +46,7 @@ git checkout -b 2.x origin/2.x
 
  And git will handle the rest.
 
- There may be other temporary branches in the repository from time to time, representing features in collaborative development, specific releases being prepared, and/or critical bug patches for supported releases. 
+ There may be other temporary branches in the repository from time to time, representing features in collaborative development, specific releases being prepared, and/or critical bug patches for supported releases.
 
 ### Run the Build
 
@@ -54,7 +54,7 @@ git checkout -b 2.x origin/2.x
 
  From the command line, change your working directory to **\_build/** and execute the command "**php transport.core.php**". If the PHP executable is not in your path, you will need to either edit the path or give the full path to the PHP executable in the command line. The build process may take an extended period of time (10 to 30 seconds likely), so be patient. (Note: on Mac Mini (1.66Ghz Intel Core Duo with 2GB RAM) running the Leopard development environment as outlined below, this only takes 5-10 seconds.)
 
- Note that you can also do this from the browser by browsing to the **\_build/transport.core.php** directory, if that directory is accessible in your web server setup. 
+ Note that you can also do this from the browser by browsing to the **\_build/transport.core.php** directory, if that directory is accessible in your web server setup.
 
  Once that script is finished executing, confirm that you now have a file named core/packages/core.transport.zip and a directory core/packages/core/ containing a manifest.php and many other files/directories.
 
@@ -62,11 +62,11 @@ git checkout -b 2.x origin/2.x
 
  Now you are ready to execute the new setup script at the setup/ URL (e.g. <http://localhost/modxrevo/setup/> if installed in a subdirectory of the web root named modxrevo/).
 
- Make sure you check both the "Core package has been manually unpacked" and "Files are already in-place" options when installing from Git. 
+ Make sure you check both the "Core package has been manually unpacked" and "Files are already in-place" options when installing from Git.
 
  If you change any paths on the Context Paths setup step, make sure and move the corresponding directories as appropriate; this is intended for installs from the core package with files not already in-place, where the installer will place the files in the specified locations (assuming the locations allow the PHP process to write to them).
 
- The actual install process requires more than the default 8M of memory allocated to PHP in many default php.ini files; if you get a blank page when you click "install", try increasing the memory\_limit configuration to 32M or more (16M may work, but why not give php a little space, eh?). 
+ The actual install process requires more than the default 8M of memory allocated to PHP in many default php.ini files; if you get a blank page when you click "install", try increasing the memory\_limit configuration to 32M or more (16M may work, but why not give php a little space, eh?).
 
 ## Upgrading Your Local Git Repository After Commits
 
@@ -79,7 +79,7 @@ git rebase origin/2.x
 
  And Git will update your install. (Substitute '2.5.x' for '2.x' if you're testing/contributing to a specific minor-version branch, or whatever branch you might be working from.)
 
- If you're working from a fork, rather than straight from the modxcms/revolution repository, you'll have to fetch from upstream, rather than origin (since origin is your fork). Please read the \[MODX GitHub Contributor's Guide\] for more information. 
+ If you're working from a fork, rather than straight from the modxcms/revolution repository, you'll have to fetch from upstream, rather than origin (since origin is your fork). Please read the \[MODX GitHub Contributor's Guide\] for more information.
 
  When a commit is made, this message might show up in the commit:
 
@@ -91,7 +91,7 @@ git rebase origin/2.x
 
  If you've fixed a bug or added an improvement, and you're working on a fork of the revolution repository, you can send a pull request to MODX and one of the Integration Managers will review your patch.
 
- You'll need to [submit a CLA](http://develop.modx.com/contribute/cla/) before we can accept your code. 
+ You'll need to [submit a CLA](http://develop.modx.com/contribute/cla/) before we can accept your code.
 
  MODX recommends you to work on features or bugs in their own separate branches. This way, if MODX doesn't accept your pull request exactly as-is, but still updates those files, you wont have to 'git checkout' the develop (or whatever) branch over again. You can just trash the bugfix/feature branch and reload from your clean develop branch.
 
@@ -110,7 +110,7 @@ git branch -d myworkflow
 
  The first step takes us back to the develop branch, and then deletes the custom branch. This allows you to easily update MODX without having to worry about invalid or no-longer used commits, and keeps your main branch clean.
 
- You can always "git merge --ff-only origin/2.x" new commits incoming from 2.x (or 2.5.x, etc) into your branch after running "git fetch origin" while having your branch checked out. 
+ You can always "git merge --ff-only origin/2.x" new commits incoming from 2.x (or 2.5.x, etc) into your branch after running "git fetch origin" while having your branch checked out.
 
  For more information on using GitHub forks, see the [GitHub Forking Help Page](http://help.github.com/forking/).
 
@@ -125,7 +125,7 @@ git checkout 2.5.x upstream/2.5.x
 
  Of course, replacing 2.5.x with the actual name of the branch you want to switch to. After you've done so, run the build and run setup/ again, since different branches might have different databases.
 
- Switching _backwards_ is not always recommended; ie, switching from 2.x (the latest features in development for next minor release) to 2.5.x (the latest patches for next patch release), since database changes cannot be executed in reverse. While no major issues should occur, be careful when doing this or keep your work in separate databases for each branch you work on. 
+ Switching _backwards_ is not always recommended; ie, switching from 2.x (the latest features in development for next minor release) to 2.5.x (the latest patches for next patch release), since database changes cannot be executed in reverse. While no major issues should occur, be careful when doing this or keep your work in separate databases for each branch you work on.
 
 ## Additional Information
 
@@ -158,7 +158,7 @@ Optionally fork [MODX Revolution on Github](https://github.com/modxcms/revolutio
 
 1. `git remote add upstream https://github.com/modxcms/revolution.git` (different URL if you're using SSH)
 2. `git remote set-url origin {your github repo url}`
-3. You may also need: ` git remote set-url --push origin {your github repo url}`
+3. You may also need: `git remote set-url --push origin {your github repo url}`
 
 Build the core:
 

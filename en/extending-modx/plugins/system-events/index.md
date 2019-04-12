@@ -32,7 +32,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/"
 
 ## Available Events
 
- This is not an exhaustive list as events are still being documented. Thank you for your patience. The TV, Template and Snippet events are still to be documented. For a complete list, please either view a Plugin in the manager and see the System Events tab, or view [here](https://github.com/modxcms/revolution/blob/develop/_build/data/transport.core.events.php). Note also that all WUsr (web-user) events have been removed. 
+ This is not an exhaustive list as events are still being documented. Thank you for your patience. The TV, Template and Snippet events are still to be documented. For a complete list, please either view a Plugin in the manager and see the System Events tab, or view [here](https://github.com/modxcms/revolution/blob/develop/_build/data/transport.core.events.php). Note also that all WUsr (web-user) events have been removed.
 
 1. [OnBeforeCacheUpdate](extending-modx/plugins/system-events/onbeforecacheupdate)
 2. [OnBeforeChunkFormDelete](extending-modx/plugins/system-events/onbeforechunkformdelete)
@@ -165,7 +165,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/"
  ``` php
 $Event = $modx->newObject('modEvent');
 $Event->set('name', 'OnMyCustomEvent');
-$Event->set('service',1); 
+$Event->set('service',1);
 $Event->set('groupname', 'Custom');
 ```
 

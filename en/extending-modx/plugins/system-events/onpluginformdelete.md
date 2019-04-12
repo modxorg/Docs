@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onplug
 
 Fires after a plugin is deleted.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Plugins
 
 ## Event Parameters

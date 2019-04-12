@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Loaded right before a manager controller is run and after checking permissions.
 
-Service: 2 - Manager Access Events 
+Service: 2 - Manager Access Events
 Group: System
 
 ## Event Parameters
@@ -20,9 +20,9 @@ Group: System
 
 ## Remarks
 
-| Previous event | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit")                              |
+| Previous event | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit")                                                    |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")      |
+| Next event     | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                            |
 | File           | [core/model/modx/modmanagercontroller.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagercontroller.class.php) |
 | Class          | abstract class modManagerController                                                                                                                |
 | Method         | public function render()                                                                                                                           |

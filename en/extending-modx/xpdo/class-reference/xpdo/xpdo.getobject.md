@@ -58,13 +58,13 @@ $box = $xpdo->getObject('Box', 134);
 
 Back in your XML schema, if your object extends _xPDOSimpleObject_, the primary key column is assumed to be named "id".
 
-``` xml 
+``` xml
 <object class="modPropertySet" table="property_set" extends="xPDOSimpleObject">
 ```
 
 Otherwise, your XML schema will tell you which column is the primary key via the _index alias="PRIMARY"_ node, e.g.
 
-``` xml 
+``` xml
  <object class="MyObject" table="my_object" extends="xPDOObject">
   <field key="object_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
   <!-- ... stuff here ... -->

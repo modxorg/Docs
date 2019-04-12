@@ -12,7 +12,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
  The Request was how to create a System in MODX where the editor can add multiple Boxes with varying layouts, in this case boxes with one, two, or three Columns. Each Column with an image, a headline and content.
 
-### Requirements
+## Requirements
 
  First off, you'll want to go ahead and download and install some Extras that we'll be using for this Setup. The following is a list of used Extras:
 
@@ -20,7 +20,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 - [TinyMCE](extras/evo/tinymce "TinyMCE") - Richtext-Editor to edit the content-texts.
 - [phpThumbOf](extras/phpthumbof "phpThumbOf") - For resizing the images to fit in our columns.
 
-### The Template
+## The Template
 
  For this Tutorial we want to create a new Template. We name it 'MultiColumn'
 
@@ -50,7 +50,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 </html>
 ```
 
-### The Preview-Page
+## The Preview-Page
 
  Now we create a Preview-Page. With this page created we can see a Preview of our boxes in the backend without the need to save our Resource.
 
@@ -58,23 +58,23 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
  Create a new Resource under this Folder and choose the MultiColumn-Template. You can name it 'MultiColumn Preview'
 
-### The MIGX-Tv
+## The MIGX-Tv
 
  Now we are ready to create our MIGX-TV. Create a new TV.
 
-#### General Information
+## General Information
 
-##### Name
+### Name
 
  MultiColumn
 
-#### Input Options
+### Input Options
 
-##### Input-type
+#### Input-type
 
  migx
 
-##### Form Tabs
+#### Form Tabs
 
  ``` json
 [{
@@ -228,7 +228,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
  Make sure, you have all the same fieldnames in all formtab-setups. Unused fields in hidden-fields. Otherwise you will loose values, when you switch between formtabs.
 
-##### Grid Columns
+#### Grid Columns
 
  ``` json
 [{
@@ -258,7 +258,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ```
 
-##### Preview Url
+#### Preview Url
 
  Add here the complete Url of your created Preview-Resource.
 

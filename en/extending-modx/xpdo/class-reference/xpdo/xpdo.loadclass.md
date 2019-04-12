@@ -24,7 +24,7 @@ which will translate to:
 
 > XPDO\_CORE\_PATH/om/dir\_a/dir\_b/dir\_c/dbtype/classname.class.php
 
-**Hint**
+### Hint
 
 - The file name you are including must include **.class.php** as its extension.
 - The path to your model must end in a trailing slash!

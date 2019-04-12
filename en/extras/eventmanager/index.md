@@ -29,7 +29,6 @@ Initial development started in February 2011 by Mark Hamstra. At this moment, pr
 | ---------- | --------- | ------------ | ----------------------------------------------------------------------------------------------------- |
 | 0.1-alpha1 | 23/3/2011 | Mark Hamstra | [From Github](https://github.com/downloads/Mark-H/EventManager/eventmanager-0.1-alpha1.transport.zip) |
 
-
 ## Usage
 
 Managing your events can be done from the Components > EventManager menu. You will see two tabs, where the first one shows the upcoming and current events and the second automatically archives older events. Rightclicking an event will reveal several options, including viewing reservations (_not in 0.1-alpha_), updating details, removing an event (_not in 0.1-alpha_) and duplicating event details (_not in 0.1-alpha_).

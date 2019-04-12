@@ -136,14 +136,14 @@ Array (
         [xtype] => textfield
         [namespace] => core
         [area] => site
-        [editedon] => 2010-10-24 21:53:55 
+        [editedon] => 2010-10-24 21:53:55
 )
 */
 ```
 
  Once you understand how to manipulate objects using MODx and xPDO, you'll be able to retrieve and modify just about everything inside of MODx, because just about everything is an object.
 
-## Retrieving a list of Related Settings 
+## Retrieving a list of Related Settings
 
  If you have noticed in the GUI above, MODx allows for some very logical grouping of system settings. The most useful groupings are **area** and by the prefix of the **key**. Using xPDO's [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") method, we can easily supply some search criteria to get the settings that we want.
 
@@ -169,7 +169,7 @@ foreach ( $relatedSettings as $Setting ) {
 
  You may not have been expecting an introduction to xPDO while you were simply trying to retrieve and set system settings, but it's in there.
 
-## Creating a System Setting Programmatically 
+## Creating a System Setting Programmatically
 
  You may desire to create a System Setting programmatically in order to provide your users with a cleaner UX/UI. In your code, you can put something like the following:
 
@@ -206,7 +206,7 @@ $_lang['setting_mykey_desc'] = 'Description of my key';
 [[!%setting_emailsender? &topic=`setting` &namespace=`core` &language=`en`]]
 ```
 
-## Types of System Settings 
+## Types of System Settings
 
  The **xtype** attribute defines what type of field the GUI will use when rendering the interface for this field:
 
@@ -223,7 +223,7 @@ $_lang['setting_mykey_desc'] = 'Description of my key';
 - **modx-combo-rte** : like the textarea, but with formatting controls
 - **modx-combo-context** : allows user to select a context
 
-## Settings List 
+## Settings List
 
  A description of each setting follows:
 

@@ -4,7 +4,7 @@ _old_id: "1661"
 _old_uri: "revo/mxformbuilder/mxformbuilder.hooks"
 ---
 
-# What are hooks?
+## What are hooks?
 
  mxFormBuilder hooks are a way to extend beyond the built-in processors and customize the form rendering or performing additional actions after a successful submission. There are two types of hooks; the first is **preHooks** which runs before a form is rendered allowing you to modify what the parser renders to the page, then the other is **hooks** which are called after a successful submission is completed.
 

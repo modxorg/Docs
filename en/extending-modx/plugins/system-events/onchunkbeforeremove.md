@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchun
 
 Fires right before a Chunk is removed.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: modChunk
 
 ## Event Parameters

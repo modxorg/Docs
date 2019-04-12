@@ -28,8 +28,8 @@ tolinks is called with the normal snippet tag, passing in an 'items' property as
 | tagKey          | &tagKey=`articlestags`           | tag group name, used in generating links                                               | tags          |
 | tagKeyVar       | &tagKeyVar=`MyCustomVar`         | sets the GET var key                                                                   |
 
- I.e., 
- \[\[tolinks? &tagKey=`articlestags` &tagKeyVar=`MyCustomVar`\]\] 
+ I.e.,
+ \[\[tolinks? &tagKey=`articlestags` &tagKeyVar=`MyCustomVar`\]\]
 
  outputs [http://f.qdn.com/somepage?MyCustomVar=articlestags&tag=theTag\\\\](http://f.qdn.com/somepage?MyCustomVar=articlestags&tag=theTag%5C) | key |
 

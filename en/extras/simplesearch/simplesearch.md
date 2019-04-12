@@ -38,7 +38,7 @@ _old_uri: "revo/simplesearch/simplesearch.simplesearch"
  | includeTVs      | Indicates if TemplateVar values should be included in the properties available to each resource template. Defaults to 0. Turning this on might make your search slower if you have lots of TVs.                                                                                                                                                                                                                             | 0                                                       |
  | includeTVList   | An optional comma-delimited list of TemplateVar names to include explicitly if includeTVs is 1.                                                                                                                                                                                                                                                                                                                             |                                                         |
  | process TVs     | Indicates if TemplateVar values should be rendered as they would on the resource being summarized. Defaults to 0. Some notes:                                                                                                                                                                                                                                                                                               |
- TVs can be accessed by their TV name \[\[+myTV\]\] By default SimpleSearch does not use a prefix, e.g. \[\[+tv.myTV\]\] will NOT render. 
+ TVs can be accessed by their TV name \[\[+myTV\]\] By default SimpleSearch does not use a prefix, e.g. \[\[+tv.myTV\]\] will NOT render.
  TVs are processed during indexing for Solr searching, so there is no need to do this here. | 0 |
 | highlightResults | Whether or not to highlight the search term in results. | 1 |
 | highlightClass | The CSS class name to add to highlighted terms in results. | simplesearch-highlight |
@@ -100,7 +100,7 @@ className:fieldName(s):packageName:packagePath:joinCriteria||class2Name:fieldNam
 
 ## Examples
 
- These examples assume you've already sent the search query with the [SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform "SimpleSearch.SimpleSearchForm") snippet. 
+ These examples assume you've already sent the search query with the [SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform "SimpleSearch.SimpleSearchForm") snippet.
 
  Display results, but just show their titles:
 

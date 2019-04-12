@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncate
 
 Happens right before a category is saved.
 
-Service: 2 - Manager Access Events 
+Service: 2 - Manager Access Events
 Group: Categories
 
 ## Event Parameters

@@ -4,8 +4,6 @@ _old_id: "673"
 _old_uri: "revo/mhpaypal"
 ---
 
-# mhPayPal
-
 mhPayPal is a simple to use snippet which enables you of receiving donations or (single product) payments. It is inspired by FormIt and has three different hooks which can be used to extend its basic functionality to virtually anything, by the use of snippets or the included hooks.
 
 Developed by [Mark Hamstra](http://www.markhamstra.com).

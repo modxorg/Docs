@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncont
 
 Fires after the context editing form has loaded.
 
-Service: 2 - Manager Access Events 
+Service: 2 - Manager Access Events
 Group: modContext
 
 ## Event Parameters

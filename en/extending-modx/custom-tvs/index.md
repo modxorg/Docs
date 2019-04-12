@@ -4,17 +4,17 @@ _old_id: "1047"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2"
 ---
 
-This tutorial is for MODX Revolution 2.2 or greater. 
+This tutorial is for MODX Revolution 2.2 or greater.
 
-## What are Custom TV Input Types? 
+## What are Custom TV Input Types?
 
 MODx Revolution allows you to create your own custom TV input types (similar to the textbox, radio, textarea, richtext, etc types already available) for your [Template Variables](building-sites/elements/template-variables "Template Variables"). This tutorial will show a very simple example by loading a simple Template dropdown for us in the mgr, and then in the frontend will render our Template ID wrapped in a special div. We'll call it "TemplateSelect". We'll also make this an Extra called "OurTVs", meaning that we'll have the files outside of the normal TV input renders directory, and put it in our own Extra's directory in core/components/ourtvs/.
 
-## Create a Namespace 
+## Create a Namespace
 
 If you haven't already, go ahead and create a Namespace called "ourtvs" with the path "{core\_path}components/ourtvs/". This will help us later on.
 
-## Creating the Pathing Plugin 
+## Creating the Pathing Plugin
 
 We'll need a plugin to tell MODX where our custom TV directories are. Go ahead and make a plugin called "OurTvsPlugin", and assign it to the following events:
 
@@ -48,9 +48,9 @@ switch ($modx->event->name) {
 
 These event handlers tell MODX to check these directories for our TV files when doing all the rendering and processing. Think of it like adding library or include paths.
 
-The pathing plugin will not be required in MODX 2.3; the Namespace will handle all the pathing. This is why we told you earlier to make the Namespace. :) 
+The pathing plugin will not be required in MODX 2.3; the Namespace will handle all the pathing. This is why we told you earlier to make the Namespace. :)
 
-## Creating the Input Controller 
+## Creating the Input Controller
 
 The input controller is what actually loads the markup for the custom TV input. Create the input controller file here:
 
@@ -108,7 +108,7 @@ And that should render us a nice template dropdown in the backend:
 
 ![](/download/attachments/39354478/ctv1.png?version=1&modificationDate=1334932146000)
 
-## Creating the Output Controller 
+## Creating the Output Controller
 
 Okay, so now we want to make the output controller, let's create the file at:
 
@@ -129,7 +129,7 @@ return 'TemplateSelectOutputRender';
 
 There we go - now when we render this in the front-end, it will display the ID of our selected Template wrapped in a div.
 
-## See Also 
+## See Also
 
 1. [Creating a Template Variable](building-sites/elements/template-variables/step-by-step)
 2. [Bindings](building-sites/elements/template-variables/bindings)

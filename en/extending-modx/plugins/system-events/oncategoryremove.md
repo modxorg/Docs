@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncate
 
 Happens after a category is removed.
 
-Service: 2 - Manager Access Events 
+Service: 2 - Manager Access Events
 Group: modCategory
 
 ## Event Parameters

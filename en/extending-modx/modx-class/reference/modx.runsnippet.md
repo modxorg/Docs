@@ -23,11 +23,11 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.h
 string runSnippet (string $snippetName, [array $params = array ()])
 ```
 
-## Example 
+## Example
 
 Run the 'Welcome' snippet with some custom parameters:
 
-## Examples 
+## Examples
 
 ``` php
 $output = $modx->runSnippet('Welcome',array(
@@ -37,9 +37,9 @@ echo $output; // prints 'Welcome John!'
 ```
 
 **Handy Hint**
-When you call a Snippet using **runSnippet**, the Snippet code is _always_ executed: the results are never returned from cache. It's equivalent to running the Snippet using the `[[!uncached]]` syntax. 
+When you call a Snippet using **runSnippet**, the Snippet code is _always_ executed: the results are never returned from cache. It's equivalent to running the Snippet using the `[[!uncached]]` syntax.
 
-## See Also 
+## See Also
 
 - [modX](extending-modx/core-model/modx "modX")
 - [Snippets](extending-modx/snippets "Snippets")

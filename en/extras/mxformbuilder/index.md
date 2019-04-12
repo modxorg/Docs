@@ -4,8 +4,6 @@ _old_id: "1659"
 _old_uri: "revo/mxformbuilder/"
 ---
 
-# mxFormBuilder
-
 ## Purpose:
 
  The goal with mxFormBuilder to to provide a consolidated and easy to user interface to manage all aspects for forms in your ModX site. Additional focus was to have built in protection for common security threats associated with forms.

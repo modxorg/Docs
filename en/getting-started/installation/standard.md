@@ -9,9 +9,9 @@ _old_uri: "2.x/getting-started/installation/basic-installation"
 
 After you've [downloaded](getting-started/installation "Installation") MODX Revolution, upload the .zip file to your server. On the server itself, either through your control panel extraction script or in the server's file manager, extract the file to its own directory. Copy or move all the files within the new extracted MODX version directory to the directory that you wish to install MODX into. You may delete the extracted folder and its contents, as well as the MODX .zip file once your installation is complete.
 
-You can install MODX into any directory you wish, although installing to the root is generally preferred for production sites. 
+You can install MODX into any directory you wish, although installing to the root is generally preferred for production sites.
 
-FTP Warning - Using FTP to transfer unpacked files to your server may result in corrupted or incomplete transfers. This can affect your installation negatively. If at all possible, use your server's unpacking script or utility to transfer or move extracted MODX installation files. 
+FTP Warning - Using FTP to transfer unpacked files to your server may result in corrupted or incomplete transfers. This can affect your installation negatively. If at all possible, use your server's unpacking script or utility to transfer or move extracted MODX installation files.
 
 ### Installing MODX With An Existing Site
 
@@ -25,7 +25,7 @@ If your existing site is static html with an index.html or similar start page, y
 
 Do not install MODX Revolution into a directory that contains another dynamically driven site or CMS until that site is removed. Use the subdirectory method to develop MODX in this case.
 
-In all cases except for a new blank site, installing MODX Revolution to a subdirectory for development is the safest method. 
+In all cases except for a new blank site, installing MODX Revolution to a subdirectory for development is the safest method.
 
 ### Pre-DNS Transfer Installation to Temporary Directory
 
@@ -35,9 +35,9 @@ If your host provides a temporary installation folder to develop in prior to DNS
 
 Start the install process by loading your web browser and running the setup script by navigating to the **setup/** folder.
 
-You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation") page. 
+You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation") page.
 
-Before running setup, make sure your core/cache/ and core/config/ directories are writable by PHP. 
+Before running setup, make sure your core/cache/ and core/config/ directories are writable by PHP.
 
 From there you will be asked to choose a language, and be presented with a welcome screen. Click Next when you're ready.
 
@@ -57,7 +57,7 @@ From here, you will get a form asking you for your database information:
 
 ![](/download/attachments/18678053/setup-db-1.png?version=1&modificationDate=1306342492000)
 
-You can create your database and user prior to this step. Make sure your database user is associated with the new database and the user is given permission for all privileges for that database. 
+You can create your database and user prior to this step. Make sure your database user is associated with the new database and the user is given permission for all privileges for that database.
 
 - Add in your database hostname, which is the URL at which your database is located. For most users, this will be 'localhost'.
 - Enter your database user name. On some hosts, your database username is prefixed with the site owner directory name such as siteOwner\_modxDatabase. In this case, the entire database name must be entered. Check your database tool in your control panel, or the database itself for such a prefix.
@@ -68,7 +68,7 @@ You can create your database and user prior to this step. Make sure your databas
 
 ### MySQL Notes
 
-If you have your MySQL server on a different port, specify it like so: "my.database.com;port=3307", with the ;port= appending the IP/hostname.  If you are running your MySQL server with networking disabled, you can specify the socket name like this: ";unix\_socket=MySQL". 
+If you have your MySQL server on a different port, specify it like so: "my.database.com;port=3307", with the ;port= appending the IP/hostname.  If you are running your MySQL server with networking disabled, you can specify the socket name like this: ";unix\_socket=MySQL".
 
 ### Microsoft SQL Server Notes
 
@@ -77,7 +77,7 @@ Support for Microsoft SQL Server was introduced in MODX Revolution 2.1  Dependin
 - Named pipe: (local)/SQLEXPRESS
 - Tcp/ip: 127.0.0.1,2301 (IP, port)
 
-Due to the way that the PDO driver for SqlSrv works, you may not get an error message or a response back after clicking 'Test database server connection and view collations'. If this happens, it is an indication that there is a problem connecting to the database, authenticating or selecting the database itself. After verifying your settings, click the Back button to go to the previous page, and then Next to get back to the Database Options page. 
+Due to the way that the PDO driver for SqlSrv works, you may not get an error message or a response back after clicking 'Test database server connection and view collations'. If this happens, it is an indication that there is a problem connecting to the database, authenticating or selecting the database itself. After verifying your settings, click the Back button to go to the previous page, and then Next to get back to the Database Options page.
 
 ### Collations and Charsets
 
@@ -87,8 +87,8 @@ This will then popup another form for setting your database charset and collatio
 
 For most users you can leave these values at what they are. However, if you need to change them, **make sure** the collation matches the charset. Click the 'Create or test selection of your database.' after you've finished.
 
-**Microsoft SQL Server Notes** 
-MODX has only been tested with SQL Server's Latin1 character set. 
+**Microsoft SQL Server Notes**
+MODX has only been tested with SQL Server's Latin1 character set.
 
 ### Creating an Administrator User
 
@@ -96,7 +96,7 @@ MODX has only been tested with SQL Server's Latin1 character set.
 
 This form will now present you with a few fields for setting up your administrator user. Specify a username that you want to be the administrator username.
 
-MODX recommends **not** using 'admin', as this is a common administrator username and is often the first username hackers check. 
+MODX recommends **not** using 'admin', as this is a common administrator username and is often the first username hackers check.
 
 From there, put in your email (or the email of your administrator) and specify a password. Click next when you're finished.
 
@@ -108,7 +108,7 @@ MODX will then proceed with a list of checks to verify that your system is ready
 
 Once you're ready, and all the checks pass, click 'Install' to proceed.
 
-If you get a blank screen or cannot proceed after clicking 'Install', verify these steps: 
+If you get a blank screen or cannot proceed after clicking 'Install', verify these steps:
 
 1. Make sure the directories "/core/packages","/core/cache", "/core/import", and "/core/export" are writable.
 2. Make sure your php.ini setting sets memory\_limit to 128M, and max\_execution\_time to 120
@@ -149,7 +149,7 @@ Debian uses outdated MySQL drivers for its PHP build that will need to be update
 
 There have been reported problems with installing Revolution on 64-bit Vista with XAMPP. We cannot guarantee a working solution on that OS and setup at this time.
 
-Some users have reported that applying a fix found here: <http://www.apachefriends.org/f/viewtopic.php?f=16&t=32617> will fix Apache crashing errors with PDO support in XAMPP. 
+Some users have reported that applying a fix found here: <http://www.apachefriends.org/f/viewtopic.php?f=16&t=32617> will fix Apache crashing errors with PDO support in XAMPP.
 
 ### Installing Packages
 

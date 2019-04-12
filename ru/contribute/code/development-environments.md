@@ -4,7 +4,7 @@ translation: "contribute/code/development-environment"
 note: "This page is old. Really old. Needs to be rewritten to explain how to set up a git-based version of MODX properly for development."
 ---
 
-# Рекомендуемые средства разработки и среды для MODX Revolution
+## Рекомендуемые средства разработки и среды для MODX Revolution
 
 При разработке MODX команда нашла следующее программное обеспечение и среды бесценными:
 

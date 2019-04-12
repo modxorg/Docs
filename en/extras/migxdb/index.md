@@ -4,7 +4,7 @@ _old_id: "675"
 _old_uri: "revo/migxdb/"
 ---
 
-# What is MIGXdb?
+## What is MIGXdb?
 
 MIGXdb (multiItems-dbGridTv for modx) is a custom-tv-input-type for managing (resource-related) records of custom-db-tables or (child)-resources or what you want in a TV.
 

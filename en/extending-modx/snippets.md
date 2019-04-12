@@ -184,15 +184,15 @@ $output = $modx->getChunk('myChunk',array(
 return $output;
 ```
 
-### Don't Work on Live Snippets 
+### Don't Work on Live Snippets
 
 If you're writing new versions of Snippets, _duplicate_ the old version! That way you can go back to the old version of the code if something doesn't work correctly! MODX doesn't inherently do versioning control, so you have to backup code yourself.
 
-### Use Default Properties 
+### Use Default Properties
 
 Consider adding default properties for your snippet into the snippet's Properties tab, so that the user can add custom [Property Sets](building-sites/properties-and-property-sets "Properties and Property Sets") to override them.
 
-## See Also 
+## See Also
 
 1. [Templating Your Snippets](extending-modx/snippets/templating)
 2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)

@@ -61,8 +61,6 @@ _old_uri: "revo/fx2themebase/fx2.how-to-use-fx2/fx2.for-theme-authors"
 
  While your end user will modify global, site-wide settings using the ClientConfig component, these System Settings modify the behaviour of ClientConfig itself, and FX2 themebase. As such, they are excluded from the available ClientConfig settings. You may notice some duplication (settings available in both areas). This is for fallback purposes. The ClientConfig settings override the System Settings.
 
- 
-
  From the main menu, go to Settings » System Settings. In the "Filter by Area" dropdown select element, choose "FoundationX2". You can optionally modify the value for the key "custom\_css\_chunk", and "custom\_css\_filename" is the name of the CSS file that will be output. At the bottom of the page there are two more settings you should be aware of now:
 
  ![](/download/attachments/6db40c3bf7b03bf43a88376d9864ff04/Screen Shot 2013-10-08 at 6.23.36 PM.png)
@@ -85,8 +83,7 @@ _old_uri: "revo/fx2themebase/fx2.how-to-use-fx2/fx2.for-theme-authors"
 
  Here's another example from this Chunk:
 
- ```
-
+ ``` css
 h1, h2, h3, h4, h5, h6 {
   font-family: "[[++header_font:default=`[[++body_font]]`:replace=`+== `]]", Helvetica, Arial, sans-serif;
   color: #[[++header_font_color]];
@@ -94,7 +91,6 @@ h1, h2, h3, h4, h5, h6 {
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     color: #[[++header_font_color:lighten=`226`]];
   }<br>
-
 ```
 
  \[\[++header\_font\]\] is a ClientConfig setting, with a list of fonts from the Google Web Font API. Here, an Output Modifier sets a default value to that of the \[\[++body\_font\]\] setting, and replaces "+"s with " " spaces to properly format the CSS declaration. The \[\[++header\_font\_color\]\] value is also being used, once on its own, and another time with the "lighten" Output Modifier, which is part of the included "cssSweet" Extra. Check out the documentation to learn more about cssSweet and its usage.

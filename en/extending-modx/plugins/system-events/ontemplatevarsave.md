@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ontemp
 
 Loaded right after successful saving a template variable to database.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Template Variables
 
 ## Event Parameters
@@ -21,12 +21,12 @@ Group: Template Variables
 
 ## Remarks
 
-| Previous event | [OnTemplateVarBeforeSave](extending-modx/plugins/system-events/ontemplatevarbeforesave "OnTemplateVarBeforeSave") |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | —                                                                                                                                      |
-| File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php)  |
-| Class          | modTemplateVar                                                                                                                          |
-| Method         | public function save($cacheFlag = null)                                                                                                 |
+| Previous event | [OnTemplateVarBeforeSave](extending-modx/plugins/system-events/ontemplatevarbeforesave "OnTemplateVarBeforeSave")                      |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Next event     | —                                                                                                                                     |
+| File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
+| Class          | modTemplateVar                                                                                                                         |
+| Method         | public function save($cacheFlag = null)                                                                                                |
 
 ## See Also
 

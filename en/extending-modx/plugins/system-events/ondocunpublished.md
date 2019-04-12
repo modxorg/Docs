@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocu
 
 Called when a Resource is unpublished via the Unpublish context menu.
 
-Service: 5 - Template Service Events 
+Service: 5 - Template Service Events
 Group: None
 
 ## Event Parameters

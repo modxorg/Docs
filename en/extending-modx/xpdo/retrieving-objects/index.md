@@ -48,8 +48,8 @@ $gu = $xpdo->getObject('GroupUser',array(
 $bigbox = $xpdo->getObject('Box',array('width' => 150));
 ```
 
- **Handy Hint** 
- If your criteria matches multiple objects, getObject will only return the _first one_. Which one will be first? It's up to the database and how its natural sort order. 
+ **Handy Hint**
+ If your criteria matches multiple objects, getObject will only return the _first one_. Which one will be first? It's up to the database and how its natural sort order.
 
  We'll discuss the third option, xPDOCriteria, later in the xPDOQuery and xPDOCriteria sections.
 
@@ -93,7 +93,7 @@ foreach ($boxes as $box) {
 // yellow
 ```
 
- Note that the index for each object when iterated over is not the primary key, unlike the array index when using getCollection. 
+ Note that the index for each object when iterated over is not the primary key, unlike the array index when using getCollection.
 
 ### [xPDO::newQuery](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
 
@@ -218,7 +218,7 @@ $boxes = $xpdo->getCollection('Box',$c);
 
 ## Graphs
 
- A graph extends the idea of an object (or objects in collections). Instead of a simple object, a graph includes references to related objects. Graphs are a useful alternative to JOINs. 
+ A graph extends the idea of an object (or objects in collections). Instead of a simple object, a graph includes references to related objects. Graphs are a useful alternative to JOINs.
 
 ### xPDO::getObjectGraph
 
@@ -239,8 +239,8 @@ if ($collection) {
 }
 ```
 
- **Aliases in JSON** 
- Remember that the JSON hash passed to getObjectGraph or getCollectionGraph needs to use _aliases_, not class names. 
+ **Aliases in JSON**
+ Remember that the JSON hash passed to getObjectGraph or getCollectionGraph needs to use _aliases_, not class names.
 
  You have direct access to all of the fields (table rows) in the Collection Graph comprised in these four tables. The alias is used to create the graph. In this example, the 'Zip' table is the primary table, so we look at that table and we define relationships from the perspective of that primary table.
 
@@ -261,8 +261,8 @@ if ($collection) {
 }
 ```
 
- **Aliases in Criteria** 
- The table names you specify in your criteria must use the _aliases_, not the class names (just like the JSON hashes). 
+ **Aliases in Criteria**
+ The table names you specify in your criteria must use the _aliases_, not the class names (just like the JSON hashes).
 
  Let's show one more example, this time using MODX tables. This is only an example: filtering on Template Variables is a bit dangerous because the values stored in the database are not always the verbatim values you experience in the manager or in your templates. But this example should help demonstrate the usage of aliases and that you must be aware of the relationships between the objects (some related objects are singular, some are arrays).
 

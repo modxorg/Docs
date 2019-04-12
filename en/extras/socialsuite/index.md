@@ -35,6 +35,6 @@ Along with the above set of snippets, SocialSuite also comes with some helpers:
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
 | prettyNumbers | For use as an [output filter](/display/revolution20/Input+and+Output+Filters "Input and Output Filters"), the prettyNumbers snippet takes in any numeric value and spits it out nicely formatted. So for example it takes in 156874, and returns it as 156k. |                  |
 
-#### A note on unofficial APIs
+### A note on unofficial APIs
 
 Some of these tools, such as getGooglePlusShares and getTwitterShares, use an unofficial API. These APIs are often used by the services internally, but are not documented or labelled as ready for the general public. This means that while they work now, there is nothing stopping these services to stop supporting it tomorrow. Of course we will try to keep them supported, but there is no guarantee on those...if you need a guarantee, complain at the service for not providing an official API! :)

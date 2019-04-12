@@ -10,7 +10,7 @@ Fires right before the user is authenticated or its session is added to the mana
 
 If its output is true, or an array where at least one index is set to true, then MODx will assume that the user has successfully logged in and bypass the default authentication via password.
 
-Service: 2 - Manager Access Events 
+Service: 2 - Manager Access Events
 Group: None
 
 ## Event Parameters

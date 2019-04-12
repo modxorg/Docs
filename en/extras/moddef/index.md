@@ -4,7 +4,7 @@ _old_id: "679"
 _old_uri: "revo/moddef"
 ---
 
-# What is ModDef?
+## What is ModDef?
 
 ModDef is a component for managing definitions of terms used on your site. These definitions will show up as tooltips.
 

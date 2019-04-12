@@ -10,15 +10,15 @@ One thing Gallery lacks out-of-box is assigning albums to a resources. To get th
 
 1\. Install [Gallery](https://rtfm.modx.com/extras/revo/gallery/gallery.gallery) extension
 
- 2. Create some galleries, and fill them with images.
+2\. Create some galleries, and fill them with images.
 
- 3. Create a chunk named "galleryDropdownList" for instance.
+3\. Create a chunk named "galleryDropdownList" for instance.
 
  ``` php
 [[+name]]==[[+id]]||
 ```
 
- 4. Create a new [tv](making-sites-with-modx/customizing-content/template-variables) with a name "assignedGallery". **Input options:**
+4\. Create a new [tv](making-sites-with-modx/customizing-content/template-variables) with a name "assignedGallery". **Input options:**
 
  Input type = Listbox (single- or multi- - depends on how many galleries you want to assign to a resource).
 

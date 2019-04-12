@@ -12,7 +12,7 @@ The graph can be an array or JSON object that describes relations from the speci
 
 The criteria can be a primary key value, an array of primary key values (for multiple primary key objects) or an xPDOCriteria object. If no $criteria parameter is specified, no class is found, or an object cannot be located by the supplied criteria, null is returned.
 
-**Hot Models** 
+**Hot Models**
  In order to use **getObjectGraph** effectively, you need to understand the data model behind your object. It pays to keep one finger on the XML schema file that defines your objects and their relations. If you attempt to join on another object when that relationship does not exist, this method will fail!
 
 ## Syntax
@@ -41,7 +41,7 @@ foreach ($page->TemplateVarResources as $tv) {
 return $output;
 ```
 
-**Heads Up!** 
+**Heads Up!**
  It's critical to understand that even though you may think you are retrieving a single object, that object may be joined to a _collection_ of related objects.
 
 You'll notice that if you use the above example to get your TV values, you'll sometimes get weird JSON encoded values that are basically unusable! The lesson? **DO NOT RELY ON getObjectGraph to retrieve Template Variable values! (Unless the TV values are simple text or integers \*and\* no TV is set to its default value).** This is important: although you may be able to retrieve some values this way, the default TV values are stored in distant corners of the database, so you should instead rely on the **getTVValue** helper function.
@@ -77,7 +77,7 @@ foreach ($box->getMany('BoxColors') as $boxColor) {
 }
 ```
 
-**No additional queries** 
+**No additional queries**
  The main benefit of using getObjectGraph is to retrieve data from related tables in a single query. No additional queries are executed when getMany() or getOne() are called on the related objects that are already loaded from the $graph.
 
 ## See Also

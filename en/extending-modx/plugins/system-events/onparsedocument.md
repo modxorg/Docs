@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onpars
 
 Fires on each time the Element tags are parsed. This can happen many times during the loading of a Resource. To reference the content of the Resource, use $modx->documentOutput.
 
-Service: 1 - Template Service Events 
+Service: 1 - Template Service Events
 Group: None
 
 ## Event Parameters
