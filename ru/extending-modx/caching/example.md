@@ -4,13 +4,13 @@ _old_id: '1381'
 _old_uri: 2.x/advanced-features/caching/caching-tutorial-basic-snippets
 ---
 
-This page is designed to demonstrate some basic principles about the xPDO/MODX cache manager and how it can be used to help you write more effective Snippets.
+Данная страница предназначена для демонстрации некоторых основных принципов работы с менеджером кэша xPDO / MODX и того, как его можно использовать для написания более эффективных сниппетов.
 
-## Create Our Snippets
+## Создадим наши сниппеты
 
-### Snippet One: Write to Cache
+### Сниппет №1: запись в кэш
 
-Here's our first Snippet, named **cacheWrite**:
+Вот наш первый сниппет с названием **cacheWrite**:
 
 ```php
 $cacheManager = $modx->getCacheManager();
@@ -19,59 +19,59 @@ $cacheManager->set('my_cache_key',$x);
 return $x;
 ```
 
-Remember that we need to use the $x variable as an intermediary because the cacheManager relies on variable references. You can't simply pass it a static value.
+Помните, что нам нужно использовать переменную $x в качестве посредника, поскольку cacheManager опирается на ссылочные переменные. Вы не можете просто передать ему статическое значение.
 
-This snippet simple stores the current timestamp to a cache key named "my_cache_key". Put this Snippet on a page in your site (CACHED), e.g. on "Page One":
+Этот фрагмент кода просто сохраняет текущую временную метку в кэше с именем ключа «my_cache_key». Поместите этот сниппет (КЭШИРУЕМЫЙ) на страницу вашего сайта, например, на странице с названием «Страница 1»:
 
 ```php
 [[writeCache]]
 ```
 
-### Snippet Two: Read from Cache
+### Сниппет №2: чтение из кэша
 
-Next, we will create simple snippet that will *read* values from the cache, named **readCache**:
+Далее мы создадим простой сниппет с названием **readCache**, который будет *читать* значения из кэша:
 
 ```php
 $cacheManager = $modx->getCacheManager();
 return $cacheManager->get('my_cache_key');
 ```
 
-And put this Snippet onto a different page on your site (UNCACHED), e.g. on "Page Two":
+И поместите этот сниппет (НЕКЭШИРУЕМЫЙ) на другую страницу вашего сайта, например, на странице с названием «Страница 2»:
 
 ```php
 [[!readCache]]
 ```
 
-## Observing our Snippets
+## Посмотрим на наши сниппеты
 
-1. First, navigate to "Page One" (or just preview that page in your site). You should see a simple timestamp, e.g. '11:44:55'.
-2. Next, navigate to "Page Two" on your site in a separate browser tab. You should see the *same* timestamp, e.g. '11:44:55'. Even if you wait 5 minutes, the timestamp should not change.
+1. Сначала перейдите к «Страница 1» (или просто просмотрите эту страницу на своем сайте). Вы должны увидеть обычную временную метку, например, «11:44:55».
+2. Затем перейдите к «Страница 2» на вашем сайте в отдельной вкладке браузера. Вы должны увидеть *ту же* метку времени, например, «11:44:55». Даже если вы подождете 5 минут, отметка времени не должна измениться.
 
-1. Clear the Site cache (Site /-> Clear Cache), then repeat this process. What do you see?
+1. Очистите кэш сайта (Сайт / -> Очистить кэш), а затем повторите этот процесс. Что вы видите?
 
-You should notice that the timestamp gets set only when you *first* visit Page One.
+Вы должны заметить, что отметка времени устанавливается только при *первом* посещении «Страница 1».
 
-Try this:
+Попробуйте следующее:
 
-1. Clear your Site Cache
-2. Visit Page Two. What happens?
+1. Очистите кэш сайта 
+2. Посетите «Страница 2». Что происходит?
 
-You should notice that Page Two and the `readCache` Snippet returns nothing when the cache is empty and the `writeCache` snippet hasn't written anything to the cache.
+Вы должны заметить, что «Страница 2» и сниппет `readCache` ничего не возвращают, когда кэш пуст, поскольку сниппет `writeCache` ещё ничего не записал в кэш.
 
-Next, try this:
+Далее попробуйте следующее:
 
-1. Edit "Page One" so that it calls `writeCache` uncached:
+1. Отредактируйте «Страница 1», чтобы она вызывала некэшируемый сниппет `writeCache`
 
 ```php
 [[!writeCache]]
 ```
 
-2. Visit "Page One" in a browser. Notice the timestamp.
-3. Refresh "Page One". Notice that the timestamp updates.
-4. Visit "Page Two" in a browser. What timestamp does it show?
+2. Посетите «Страница 1» в браузере. Обратите внимание на отметку времени.
+3. Обновите «Страница 1». Обратите внимание, что отметка времени обновляется. 
+4. Зайдите на «Страница 2» в браузере. Какую временную метку она показывает?
 
-You'll see that "Page Two" in this scenario will always show the timestamp from the last time "Page One" was accessed.
+Вы увидите, что «Страница 2» в этом сценарии всегда будет отображать отметку времени с момента последнего обращения к «Страница 1».
 
 ## Резюме
 
-This page demonstrated some basic principles of the cache manager, but even with these basic functions, you can do a lot more with your Snippets. You can write custom data to the MODX cache and have that data get cleared out when the Site's cache is cleared. This is useful when you need some extra control over your Snippet output and you don't want to go through the hassle of creating your own caching partition. Cached data in these examples has a lifetime that is the same as the other cached data for resources: it gets updated when you manually update it in your snippets, or when you clear your site's cache using the "Site -> Clear Cache" menu.
+На данной странице были продемонстрированы некоторые основные принципы работы с кэш-менеджером, но даже с этими базовыми функциями вы можете сделать намного больше с вашими сниппетами. Вы можете записать пользовательские данные в кэш MODX и очистить эти данные при очистке кэша сайта. Это полезно, когда вам нужен какой-то дополнительный контроль над выводом сниппета, и вы не хотите испытывать трудности при создании собственного раздела для кэширования. Кэшированные данные в этих примерах имеют время жизни, аналогичное другим кэшированным данным для ресурсов: они обновляются, когда вы вручную обновляете их в своих сниппетах или когда вы очищаете кэш сайта с помощью меню «Сайт -> Очистить кэш».
