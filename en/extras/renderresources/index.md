@@ -53,11 +53,26 @@ renderResources cannot be used with binary Content Types, or with modSymLink or 
 
 #### Selection Properties
 
-| Name | Description | Default Value | Added in version |
-| parents | Comma-delimited list of ids serving as parents. Use -1 to ignore parents when specifying _resources_ to include. | current Resource id |  |
-| resources | Comma-delimited list of ids to include in the results. Prefix an id with a dash to exclude the resource from the result. |  |  |
-| depth | Integer value indicating depth to search for resources from each parent | 10 |  |
-| tvFilters | Can be used to filter resources by certain TV values. These are entered as \[(_tvname_)(_operator_)\](_value_). There are two delimiters you can use to combine filter conditions.
+| Name          | Description                                                                                                                                                         |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| parents       | Comma-delimited list of ids serving as parents. Use -1 to ignore parents when specifying _resources_ to include. Default Value: current Resource id                 |
+| resources     | Comma-delimited list of ids to include in the results. Prefix an id with a dash to exclude the resource from the result.                                            |
+| depth         | Integer value indicating depth to search for resources from each parent. Default Value: 10                                                                          |
+| publishedon   |                                                                                                                                                                     |
+| sortbyAlias   | Query alias for sortby field                                                                                                                                        |
+| sortbyEscaped | Escapes the field name specified in sortby                                                                                                                          |
+| sortdir       | Order which to sort by. Default Value: DESC                                                                                                                         |
+| sortbyTV      | Template Variable to sort by                                                                                                                                        |
+| sortdirTV     | Order which to sort by when using sortbyTV. Default Value: DESC                                                                                                     |
+| sortbyTVType  | Specify the data type of the sortby TV. Possible values are string, integer, decimal, datetime. Default Value: string                                               |
+| limit         | Limits the number of resources returned. Default Value: 5                                                                                                           |
+| offset        | An offset of resources returned by the criteria to skip. Default Value: 0                                                                                           |
+| where         | A JSON-style expression of criteria to build any additional where clauses from. See below for an example. See <http://rtfm.modx.com/display/xPDO20/xPDOQuery.where> |
+| context       | Which Context should be searched in. Defaults to the current Context.                                                                                               |
+
+#### tvFilters
+
+Can be used to filter resources by certain TV values. These are entered as \[(_tvname_)(_operator_)\](_value_). There are two delimiters you can use to combine filter conditions. |
 
 You can have "OR" filters using two pipe symbols. An OR filter fetches resources that has one of the listed TV values.
 
@@ -146,18 +161,6 @@ The same thing is possible if you put the sorted IDs in a template variable, lik
 ``` php
 &sortby=`FIELD(modResource.id,[[*templateVariable]])`
 ```
-
-| publishedon |  |
-| sortbyAlias | Query alias for sortby field |  |  |
-| sortbyEscaped | Escapes the field name specified in sortby |  |  |
-| sortdir | Order which to sort by | DESC |  |
-| sortbyTV | Template Variable to sort by |  |  |
-| sortdirTV | Order which to sort by when using sortbyTV | DESC |  |
-| sortbyTVType | Specify the data type of the sortby TV. Possible values are string, integer, decimal, datetime | string |  |
-| limit | Limits the number of resources returned | 5 |  |
-| offset | An offset of resources returned by the criteria to skip | 0 |  |
-| where | A JSON-style expression of criteria to build any additional where clauses from. See below for an example. See <http://rtfm.modx.com/display/xPDO20/xPDOQuery.where> |  |  |
-| context | Which Context should be searched in. Defaults to the current Context. |  |  |
 
 #### Other Properties
 
