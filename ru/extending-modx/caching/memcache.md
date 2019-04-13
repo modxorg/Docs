@@ -9,11 +9,11 @@ _old_uri: 2.x/developing-in-modx/advanced-development/caching/setting-up-memcach
 Для начала вам понадобится следующее:
 
 - Работающий сервер memcached и адрес, на котором он работает
-- The [PHP memcached extension](http://php.net/memcached), installed on the server running MODX
+- [Расширение PHP memcached](http://php.net/memcached), установленное на сервере с MODX
 
 ## Настройка Memcache в MODX
 
-Go to System Settings, and change the "cache_handler" system setting to "cache.xPDOMemCache".
+Перейдите в системные настройки и измените системный параметр «cache_handler» на «cache.xPDOMemCache».
 
 Если на вашем сервере имеется более одного сайта MODX с обработчиком кэша cache.xPDOMemCache, вам необходимо создать новый системный параметр «cache_prefix» со значением, например «yoursite_», чтобы различать ключи кэша для разных сайтов.
 
