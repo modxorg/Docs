@@ -1,7 +1,6 @@
 ---
 title: Использование Memcache
-_old_id: '283'
-_old_uri: 2.x/developing-in-modx/advanced-development/caching/setting-up-memcache-in-modx
+translation: caching/
 ---
 
 ## Требования
