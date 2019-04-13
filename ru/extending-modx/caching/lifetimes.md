@@ -4,11 +4,11 @@ _old_id: '1382'
 _old_uri: 2.x/advanced-features/caching/caching-tutorial-lifetimes
 ---
 
-A common need is the ability to control how long a piece of data should live – how long before it expires and is no longer good?. Just like with bottles of milk, knowing the expiration date can tell us whether our data is still good or if we need to recalculate it.
+Общей необходимостью является способность контролировать, как долго должен жить фрагмент данных - как долго, прежде чем срок его действия истекает и больше не годится? Точно так же, как с бутылками молока, знание даты истечения срока действия может сказать нам, являются ли наши данные все еще хорошими или нам нужно пересчитать их.
 
-## Create a Snippet
+## Создадим сниппет
 
-In this example, we are going to create a snippet that stores a bit of data for a short period of time. Paste the following bit of code into a new Snippet named "testCache" and then save it.
+В этом примере мы собираемся создать сниппет, который хранит немного данных в течение короткого периода времени. Вставьте следующий фрагмент кода в новый сниппет с именем «testCache», а затем сохраните его.
 
 ```php
 <?php
@@ -26,22 +26,22 @@ return $payload;
 
 Хитрость в том, что вывод из cacheManager будет нулевым, если данные либо не существуют, либо истек срок их действия.
 
-## Reference the Snippet
+## Вызовем сниппет
 
-When you reference a snippet that is using custom caching like this, you *must* call it uncached. That bypasses the standard caching mechanisms and it allows your code to take caching into its own hands.
+Когда вы вызываете сниппет, использующий пользовательское кэширование, как показано ниже, вы *должны* вызвать его некэшированным. Это обходит стандартные механизмы кэширования и позволяет вашему коду взять кэширование в свои руки.
 
 ```php
 [[!testCache]]
 ```
 
-## Observations
+## Посмотрим на результат
 
-When you view your page containing the `testCache`. Refresh the page frequently. You should notice that the datestamp only refreshes every 10 seconds!
+Обновляйте часто страницу, содержащую сниппет `testCache`, и смотрите на вывод информации. Вы должны заметить, что отметка даты обновляется только каждые 10 секунд!
 
-When you clear the Site's cache, your cached data will get cleared out, so you can trigger a new datestamp by clearing your site's cache (this is a bit easier to see if you bump up your lifetime to 60 seconds or so).
+Когда вы очищаете кэш сайта, ваши кэшированные данные будут также очищаться, поэтому вы можете запустить новую метку даты, очистив кэш вашего сайта (это будет немного проще заметить, если вы увеличите время жизни до 60 секунд или около того).
 
-If you want your data to stick around even after a user has cleared the site cache, you need to set up your own caching partition – that's in a different tutorial. The example here is ideal for caching data that has something to do with pages because the cache will get cleared when a page is updated.
+Если вы хотите, чтобы ваши данные оставались неизменными даже после того, как пользователь очистил кэш сайта, вам нужно настроить собственный раздел кэширования - читайте об этом в другом разделе. Приведенный здесь пример идеально подходит для кэширования данных, имеющих отношение к страницам, поскольку кэш будет очищен при обновлении страницы.
 
 ## Резюме
 
-Setting custom lifetimes for your cached data can be a great way to help your site take a load off. Caching data for even a minute or two (or even a few seconds) can make the difference between a responsive web server and a crippled site. In our example, we are are calculating the current date for demonstration purposes, but think about how this technique can save CPU cycles when the thing than you are calculating is particularly intensive, say an intensive database query or a slow API call.
+Установка пользовательских времен жизни для ваших кэшированных данных может быть отличным способом помочь вашему сайту снять нагрузку. Кэширование данных даже на одну или две минуты (или даже на несколько секунд) может иметь значение для нагрузки на сервер. В нашем примере мы рассчитываем текущую дату в демонстрационных целях, но подумайте о том, как этот метод может сэкономить циклы процессора, когда вычисляемые вами данные особенно тяжелы, например, интенсивный запрос к базе данных или медленный вызов API.
