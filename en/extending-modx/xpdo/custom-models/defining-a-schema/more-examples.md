@@ -33,7 +33,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
  **FYI**
  Unlike some ORMs (e.g. Doctrine) and even unlike MySQL's foreign-key definitions, xPDO defines a relationship on _both_ sides. You tell the children who their parents are and you also tell the parents who their children are. E.g. the parent object contains a composite relationship and the child object contains an aggregate relationship. This ensures that everybody knows who they're related to.
 
-### MySQL Table Definitions
+> MySQL Table Definitions
 
  Here are abbreviated MySQL table definitions:
 
@@ -59,7 +59,7 @@ SELECT users.*, userdata.*
 FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 ```
 
-### XML Schema
+> XML Schema
 
  And here's the corresponding XML definitions:
 
@@ -84,7 +84,7 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 </object>
 ```
 
-### Sample Snippet Code
+> Sample Snippet Code
 
  If you were to access this data in a Snippet, you might do something like the following. This assumes that your package name is **one\_to\_one**
 
@@ -107,7 +107,7 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 
  This is the same type of relationship that exists in MODx between pages and templates: a single template might be used by hundreds of pages, but a page can only use a single template.
 
-### MySQL Table Definitions
+> MySQL Table Definitions
 
  ``` sql
 CREATE TABLE `blogposts` (
@@ -123,7 +123,7 @@ CREATE TABLE `comments` (
 ) ENGINE=MyISAM;
 ```
 
-### XML Schema
+> XML Schema
 
  ``` xml
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
@@ -145,7 +145,7 @@ CREATE TABLE `comments` (
 </object>
 ```
 
-### Sample Snippet Code
+> Sample Snippet Code
 
  Here is some sample Snippet code. It assumes your package name is **one\_to\_many**:
 
@@ -170,7 +170,7 @@ return $output;
 
  This type of relationship infers _three_ database tables: **blogposts**, **tags**, and the joining table **blogposts\_tags**. The trick here is that _two_ of the tables are acting as primary tables: both the **blogposts** and the **tags** table will contain composite definitions that point to the **blogposts\_tags**.
 
-### MySQL Table Definitions
+> MySQL Table Definitions
 
  ``` sql
 CREATE TABLE `blogposts` (
@@ -192,7 +192,7 @@ CREATE TABLE `blogposts_tags` (
 ) ENGINE=MyISAM;
 ```
 
-### XML Schema
+> XML Schema
 
  Note the the following schema still contains the composite relationship for the Comments table.
 
@@ -225,7 +225,7 @@ CREATE TABLE `blogposts_tags` (
 </object>
 ```
 
-### Sample Snippet Code
+> Sample Snippet Code
 
  The following example assumes that the package is named **many\_to\_many**. Note that the logic displayed here traces the relationships precisely. In this example, we load up a blogpost, then trace it through the joining table to its tags. Arguably, this isn't any easier than writing a JOIN statement in MySQL.
 
@@ -250,7 +250,7 @@ return $output;
 
  In this example, we are going to demonstrate how a table can define hierarchical categories using a parent/child relationship. If a parent\_id is defined for a row in our **categories** table, it means that the row represents a sub-category of the parent.
 
-### MySQL Table Definitions
+> MySQL Table Definitions
 
  ``` sql
 CREATE TABLE `categories` (
@@ -262,7 +262,7 @@ CREATE TABLE `categories` (
 ) ENGINE=MyISAM;
 ```
 
-### XML Schema
+> XML Schema
 
  In order to define this relationship in xPDO XML, we must add 2 aggregate relationships to the object:
 
@@ -280,7 +280,7 @@ CREATE TABLE `categories` (
 </object>
 ```
 
-### Sample Snippet Code
+> Sample Snippet Code
 
  In this example, our package is named **parent\_child\_example**. Notice that the **getMany** method relies on the alias defined for that relationship.
 
@@ -303,7 +303,7 @@ return $output;
 
  In this example, we are setting an alias of _postalcode_ for the _zip_ field from the **storefinder** model.
 
-### XML Schema
+> XML Schema
 
  The field alias definition is simply defined using the `alias` element.
 
@@ -328,7 +328,7 @@ return $output;
 </object>
 ```
 
-### Sample Snippet Code
+> Sample Snippet Code
 
  The alias _postalcode_ is now accessible as a field of an sfStore object in xPDO. It is simply a reference to the value of the _zip_ field.
 

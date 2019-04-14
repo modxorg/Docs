@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmana
 
 Fires anytime a user successfully logs into the manager after performing any autentification checks successfully. Doesn't affect the autentification process.
 
-Service: 2 - Manager Access Service Events 
+Service: 2 - Manager Access Service Events
 Group: None
 
 ## Event Parameters
@@ -17,9 +17,9 @@ Group: None
 | ---------- | -------------------------------------------------------------------------------- |
 | user       | A reference to the modUser object.                                               |
 | attributes | An array of: - rememberme - Boolean set if user wants password to be remembered. |
-- lifetime - The session cookie lifetime for this login.
-- loginContext - The context key this login is occurring in.
-- addContexts - Additional contexts in which the login is also occuring in. |
+|            | - lifetime - The session cookie lifetime for this login.                         |
+|            | - loginContext - The context key this login is occurring in.                     |
+|            | - addContexts - Additional contexts in which the login is also occuring in.      |
 
 ## Event Login Workflow
 

@@ -19,7 +19,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.query"
 xPDOObject|false query (string $statement)
 ```
 
-**$statement**
+> $statement
 
  The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
 
@@ -31,7 +31,7 @@ xPDOObject|false query (string $statement)
 
 `xPDOObject|false query (string $statement)`
 
-**$statement**
+> $statement
 
  The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
 
