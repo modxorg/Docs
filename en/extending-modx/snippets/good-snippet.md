@@ -62,6 +62,7 @@ return $x * $y * $z;
 ### DESCRIPTION
   
   This is where you can describe your code in more detail.
+  
 ### PROPERTIES
   
   Detail exactly which properties can be passed to your Snippet _and_ what type of data each property accepts. You should also specify whether the property is required or whether there is a default value. Here are some examples:

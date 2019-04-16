@@ -39,17 +39,17 @@ renderResources cannot be used with binary Content Types, or with modSymLink or 
 
 #### Templating Properties
 
-| Name                   | Description                                                                                                                                | Default Value | Added in version |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ---------------- |
-| tpl                    | Name of a chunk serving as a wrapper template for the Resource output. If not provided, the output of the Resource is returned directly.   |               |                  |
-| tplOdd                 | Name of a chunk serving as a wrapper template for resources with an odd idx value (see idx property)                                       |               |                  |
-| tplFirst               | Name of a chunk serving as a wrapper template for the first resource                                                                       |               |                  |
-| tplLast                | Name of a chunk serving as a wrapper template for the last resource                                                                        |               |                  |
-| tpl\_N                 | Name of a chunk serving as a wrapper template for the Nth resource, for example &tpl\_4=`tpl4th`                                           |               |                  |
-| tpl\_nN                | Name of a chunk serving as a wrapper template for every Nth resource, for example &tpl\_n4=`tpl4th` would apply to any item divisible by 4 |               |                  |
-| outputSeparator        | An optional string to separate each tpl instance                                                                                           | "\\n"         |                  |
-| toPlaceholder          | If set, will assign the result to this placeholder instead of outputting it directly.                                                      |               |                  |
-| toSeparatePlaceholders | If set, will assign EACH result to a separate placeholder named by this param suffixed with a sequential number (starting from 0).         |               |                  |
+| Name                   | Description                                                                                                                                | Default Value |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- |
+| tpl                    | Name of a chunk serving as a wrapper template for the Resource output. If not provided, the output of the Resource is returned directly.   |               |
+| tplOdd                 | Name of a chunk serving as a wrapper template for resources with an odd idx value (see idx property)                                       |               |
+| tplFirst               | Name of a chunk serving as a wrapper template for the first resource                                                                       |               |
+| tplLast                | Name of a chunk serving as a wrapper template for the last resource                                                                        |               |
+| tpl\_N                 | Name of a chunk serving as a wrapper template for the Nth resource, for example &tpl\_4=`tpl4th`                                           |               |
+| tpl\_nN                | Name of a chunk serving as a wrapper template for every Nth resource, for example &tpl\_n4=`tpl4th` would apply to any item divisible by 4 |               |
+| outputSeparator        | An optional string to separate each tpl instance                                                                                           | "\\n"         |
+| toPlaceholder          | If set, will assign the result to this placeholder instead of outputting it directly.                                                      |               |
+| toSeparatePlaceholders | If set, will assign EACH result to a separate placeholder named by this param suffixed with a sequential number (starting from 0).         |               |
 
 #### Selection Properties
 
