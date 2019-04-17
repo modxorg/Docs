@@ -10,9 +10,9 @@ Adding custom fields to manager forms - such as the Create Chunk, Update Resourc
 
 We want to add a field called 'Home' that puts an address field into the manager interface, and then stores it into the longtitle value (this is not the best place to store it, but let's go along with it for tutorial purposes :) ).
 
-To do so, we'd create a [Plugin](developing-in-modx/basic-development/plugins "Plugins") and associate it to the **OnDocFormRender** and **OnDocFormSave** events. Our code would look like this:
+To do so, we'd create a [Plugin](extending-modx/plugins "Plugins") and associate it to the **OnDocFormRender** and **OnDocFormSave** events. Our code would look like this:
 
-``` php 
+``` php
 <?php
 /**
  * Register a form field to forms

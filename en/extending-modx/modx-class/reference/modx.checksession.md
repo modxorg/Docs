@@ -12,7 +12,7 @@ Checks to see if the user has a session in the specified context.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::checkSession()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::checkSession())
 
-``` php 
+``` php
 boolean checkSession ([string $sessionContext = 'web'])
 ```
 
@@ -20,10 +20,10 @@ boolean checkSession ([string $sessionContext = 'web'])
 
 Check to see if the user has a session in the 'sports' context.
 
-``` php 
+``` php
 $modx->checkSession('sports');
 ```
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")

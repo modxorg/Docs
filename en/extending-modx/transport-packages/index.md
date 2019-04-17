@@ -4,17 +4,6 @@ _old_id: "308"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/transport-packages"
 ---
 
-- [What is a Transport Package?](#what-is-a-transport-package)
-  - [The Internals of a Transport Package](#the-internals-of-a-transport-package)
-  - [The manifest.php file](#the-manifestphp-file)
-  - [Okay, what are these Vehicles?](#okay-what-are-these-vehicles)
-    - [Inside a Vehicle's Source](#inside-a-vehicles-source)
-- [Resolvers and Validators](#resolvers-and-validators)
-  - [A Validator](#a-validator)
-  - [A Resolver](#a-resolver)
-- [Usage](#usage)
-- [Related Pages](#related-pages)
-
 ## What is a Transport Package?
 
 A Transport Package is a collection of objects and files that can be used to "transport" data from one MODx installation to another; or even to transport 3rd-Party Components in a simple, easily-manageable format. In other words, Transport Packages can transport nearly _anything_ - from database data, files and even scripts to run during its install.
@@ -114,17 +103,17 @@ Resolvers are useful for 'cleaning up' after a Vehicle is installed, or setting 
 
 ## Usage
 
-Transport Packages can be managed in the [Package Management](developing-in-modx/advanced-development/package-management "Package Management") section of the Revolution manager. They can be added to the Revolution instance by either:
+Transport Packages can be managed in the [Package Management](extending-modx/transport-packages "Package Management") section of the Revolution manager. They can be added to the Revolution instance by either:
 
 1. Uploading the file manually to core/packages/, and then clicking "Add New Package" and selecting the "Search Locally for Packages" option
-2. Downloading the package from a [Transport Provider](developing-in-modx/advanced-development/package-management/providers "Providers"). This allows updates to be remotely downloaded for a package as well.
+2. Downloading the package from a [Transport Provider](building-sites/extras/providers "Providers"). This allows updates to be remotely downloaded for a package as well.
 
 Once downloaded, they can be installed by right-clicking a package in the grid, and clicking Install. This will prompt the user to accept a License Agreement should the package come with one, and prompting to read the README should the package contain one. Then it will present a form with pre-installation options, which may or may not exist depending on the package. The user can then click 'Install' to install the package.
 
-Once installed, the user can uninstall the package at any time. Also, if the package was downloaded from a [Transport Provider](developing-in-modx/advanced-development/package-management/providers "Providers"), then the user can check for updates for the package.
+Once installed, the user can uninstall the package at any time. Also, if the package was downloaded from a [Transport Provider](building-sites/extras/providers "Providers"), then the user can check for updates for the package.
 
 ## Related Pages
 
-- [Package Management](developing-in-modx/advanced-development/package-management "Package Management")
-- [Providers](developing-in-modx/advanced-development/package-management/providers "Providers")
-- Tutorial: [Creating a 3rd Party Component Build Script](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script "Creating a 3rd Party Component Build Script")
+- [Package Management](extending-modx/transport-packages "Package Management")
+- [Providers](building-sites/extras/providers "Providers")
+- Tutorial: [Creating a 3rd Party Component Build Script](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script")

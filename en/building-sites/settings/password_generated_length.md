@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/password_generat
 
 ## password\_generated\_length
 
-**Name**: Password Auto-Generated Length 
-**Type**: Number 
+**Name**: Password Auto-Generated Length
+**Type**: Number
 **Default**: 8
 
 The length of the auto-generated password for a User.

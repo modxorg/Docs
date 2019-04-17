@@ -5,15 +5,7 @@ _old_id: "56"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/chunks"
 ---
 
-- [Create](#create)
-- [Usage](#usage)
-- [Processing Chunk via the API](#processing-chunk-via-the-api)
-  - [Modifying a Chunk Via the API](#modifying-a-chunk-via-the-api)
-- [See Also](#see-also)
-
-
-
-Chunks are bits of static text which you can reuse across your site, similar in function to include files or "blocks" in other content management systems. Common examples of Chunks might be your contact information or a copyright notice. Although Chunks cannot contain any logic directly, they can however contain calls to [Snippets](developing-in-modx/basic-development/snippets "Snippets"), which are executable bits of PHP code which produce dynamic output.
+Chunks are bits of static text which you can reuse across your site, similar in function to include files or "blocks" in other content management systems. Common examples of Chunks might be your contact information or a copyright notice. Although Chunks cannot contain any logic directly, they can however contain calls to [Snippets](extending-modx/snippets "Snippets"), which are executable bits of PHP code which produce dynamic output.
 
 ## Create
 
@@ -25,7 +17,7 @@ Before you can use a Chunk, you must first create and name one by pasting text i
 
 To use the Chunk, you reference it by name in your templates or in your page content.
 
-``` php 
+``` php
 [[$chunkName]]
 ```
 
@@ -37,7 +29,7 @@ You can also pass properties to a Chunk. Say you had a chunk named 'intro' with 
 
 You could fill those values with:
 
-``` php 
+``` php
 [[$intro? &name=`George` &messageCount=`12`]]
 ```
 
@@ -45,15 +37,15 @@ Which would output:
 
 > Hello, George. You have 12 messages.
 
-You could even take it one step further, by adding a [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") that allows the user to specify their name per Resource:
+You could even take it one step further, by adding a [Template Variable](building-sites/elements/template-variables "Template Variables") that allows the user to specify their name per Resource:
 
-``` php 
+``` php
 [[!$intro? &name=`[[*usersName]]` &messageCount=`[[*messageCount]]`]]
 ```
 
 or in the Chunk itself:
 
-``` php 
+``` php
 Hello, [[*usersName]]. You have [[*messageCount]] messages.
 ```
 
@@ -61,7 +53,7 @@ Hello, [[*usersName]]. You have [[*messageCount]] messages.
 
 Chunks are also frequently used to format the output of Snippets. A Chunk can be processed from a Snippet using the process() function; for example, given the following Chunk named 'rowTpl':
 
-``` php 
+``` php
 <tr class="[[+rowCls]]" id="row[[+id]]">
 <td>[[+pagetitle]]</td>
 <td>[[+introtext]]</td>
@@ -70,7 +62,7 @@ Chunks are also frequently used to format the output of Snippets. A Chunk can be
 
 the following Snippet code retrieves it and processes it with an array of properties for all published Resources, and returns formatted results as a table, setting the class to "alt" if for even rows:
 
-``` php 
+``` php
 $resources = $modx->getCollection('modResource',array('published' => true));
 $i = 0;
 $output = '';
@@ -88,7 +80,7 @@ return '<table><tbody>'.$output.'</tbody></table>';
 
 Chunks can also be manipulated by the MODx API:
 
-``` php 
+``` php
 <?php
 /* create a new chunk, give it some content and save it to the database */
 $chunk = $modx->newObject('modChunk');
@@ -111,4 +103,4 @@ if ($chunk) $chunk->remove();
 
 ## See Also
 
-- [modChunk](developing-in-modx/other-development-resources/class-reference/modchunk "modChunk")
+- [modChunk](extending-modx/core-model/modchunk "modChunk")

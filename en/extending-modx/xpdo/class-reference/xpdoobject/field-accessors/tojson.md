@@ -12,7 +12,7 @@ Returns a JSON representation of the object.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#toJSON>
 
-``` php 
+``` php
 string toJSON (
    [string $keyPrefix = ''],
    [boolean $rawValues = false]
@@ -21,7 +21,7 @@ string toJSON (
 
 ## Example
 
-``` php 
+``` php
 $object->set('name','Bob');
 $object->set('email','pinkdaisies@gmail.com');
 $json = $object->toJSON();
@@ -31,7 +31,7 @@ echo $json;
 
 ## See Also
 
-- [fromArray](xpdo/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
-- [toArray](xpdo/class-reference/xpdoobject/field-accessors/toarray "toArray")
-- [fromJSON](xpdo/class-reference/xpdoobject/field-accessors/fromjson "fromJSON")
-- [toJSON](xpdo/class-reference/xpdoobject/field-accessors/tojson "toJSON")
+- [fromArray](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
+- [toArray](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/toarray "toArray")
+- [fromJSON](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fromjson "fromJSON")
+- [toJSON](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/tojson "toJSON")

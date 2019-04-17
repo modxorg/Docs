@@ -8,7 +8,7 @@ MODX Revolution is a database-driven web application, so moving it to a new serv
 
 Following is the official documentation of how to move your site to a new location. Normally, the move is to a new server, but the steps here also apply if you move your site to a new folder on your current web server.
 
-**Tip** 
+**Tip**
  It's not required, but it's a very good idea to turn off Friendly URLs (FURLS) in the Manager, if you have them on, and rename .htaccess to ht.access on your site before performing any of the steps below. Do the reverse as your last step after everything is working at the new location (rename ht.access to .htaccess and turn on FURLS). It takes a big potential source of confusion out of the picture during the transition.
 
 ## Log into the Manager: Clear your Cache and Sessions
@@ -28,18 +28,18 @@ Any time you pack up a site and move, it's best to package the files into "boxes
 
 On a UNIX style system, you can create a compressed file using the tar command:
 
-``` php 
+``` php
 tar -czf /path/to/backups/modx_revo_site.tar.gz /path/to/modx_doc_root/
 ```
 
-**Forget me Not** 
+**Forget me Not**
  A good mnemonic for the "-czf" option is **C**reate **Z**ip **F**ile.
 
 Once you arrive on the other end, it's good to put the zipped file into its own directory before you extract it. The idea here is that if it explodes, it's easier to clean up the mess if it's contained in its own directory.
 
 On a UNIX style system, you can unpackage a .tar.gz file using the following commands from a command line:
 
-``` php 
+``` php
 gunzip modx_revo_site.tar.gz
 tar xvf modx_revo_site.tar
 ```
@@ -60,7 +60,7 @@ _Please note that MODX can run on multiple database drivers, currently MySQL and
 
 You can dump your MySQL database using a GUI tool such as phpMyAdmin, or you can run the command-line **mysqldump** utility.
 
-``` php 
+``` php
 mysqldump -u username -p your_revo_db > /path/to/backups/my_revo_db.sql
 ```
 
@@ -68,7 +68,7 @@ If you use _mysqldump_, be sure you use a username that has SELECT and LOCK perm
 
 On the new server, you can simply use the "mysql" command to slurp the dump file into the new target database:
 
-``` php 
+``` php
 mysql -u username -p target_db < my_revo_db.sql
 ```
 
@@ -82,7 +82,7 @@ Many server control panels offer database backup and compression tools as well.
 
 Once you've deployed files to the new server, you need to update the main configuration file: _core/config/config.inc.php_. You have to update paths to **6** different resources. Open the file and update the values for the following variables doing a find and replace:
 
-``` php 
+``` php
 /* PATHS */
 $modx_core_path= '/path/to/modx_doc_root/core/';
 $modx_processors_path= '/path/to/modx_doc_root/core/model/modx/processors/';
@@ -95,15 +95,15 @@ $modx_assets_path= '/path/to/modx_doc_root/assets/';
 $http_host='yoursite.com';
 ```
 
-If you are also moving your site into or out of a subfolder, be sure to update the variables such as **$modx\_connectors\_url,** **$modx\_manager\_url,** and **$modx\_base\_url**. They should generally 
+If you are also moving your site into or out of a subfolder, be sure to update the variables such as **$modx\_connectors\_url,** **$modx\_manager\_url,** and **$modx\_base\_url**. They should generally
  end with a slash (e.g., **$modx\_base\_url='/'** for a site not in a subfolder).
 
-**Permissions** 
+**Permissions**
  Before you can edit your config file, you may need to loosen up the permissions. After you've edited it, be sure you restore the read-only permissions on the file.
 
 There are also 3 additional configuration files that contain two PHP constants:
 
-``` php 
+``` php
 define('MODX_CORE_PATH', '/path/to/modx_doc_root/core/');
 define('MODX_CONFIG_KEY', 'config');
 ```
@@ -118,7 +118,7 @@ Make sure you update the paths in these files as well.
 
 ## Update your Database
 
-**Don't Forget the Database** 
+**Don't Forget the Database**
  MODX stores some path data in its database! When you move servers, you may have to update the workspaces table, otherwise the manager page may show a white page.
 
 _Please note that MODX can run on multiple database drivers, currently MySQL and sqlsrv. The following section is MySQL specific, however you should be able to do the same with similar commands for sqlsrv._
@@ -127,7 +127,7 @@ Sometimes developers structure their development and production servers to use t
 
 To see the path information that is stored inside the MODX database, type the following query into phpMyAdmin, the MySQL command line, or any other application that allows you to execute queries on your database:
 
-``` php 
+``` php
 SELECT `path` FROM `your_revo_db`.`workspaces`;
 ```
 
@@ -135,7 +135,7 @@ Change "your\_revo\_db" to your database name, and add an appropriate prefix to 
 
 If the path on the new server is different than on the old server, you will need to update this record. You can edit it using a GUI editor (like SQL-Yog or phpMyAdmin), or you can execute the following command (again, you need to customize the query depending on your database, prefix, and the path to your data):
 
-``` php 
+``` php
 UPDATE `your_revo_db`.`workspaces` SET path='/path/to/modx_doc_root/core/' WHERE id='1';
 ```
 
@@ -188,13 +188,13 @@ You may encounter problems when re-running Setup on the new server. Sometimes re
 
 This manifests itself as an error message like the following:
 
-``` php 
+``` php
 Fatal error: Class 'xPDODriver_' not found in /path/to/webroot/core/xpdo/xpdo.class.php on line 1823
 ```
 
 This is usually a sign that your configuration file got mangled. Re-open your core/config/config.inc.php and verify that its contents are in place. A mangled config file contains placeholders instead of values.
 
-``` php 
+``` php
 $database_type = '{database_type}';
 $database_server = '{database_server}';
 $database_user = '{database_user}';
@@ -229,5 +229,5 @@ If you run into trouble after successfully running Setup, try manually deleting 
 
 Your site should now be up and running in its new location!
 
-**Final Checkup** 
+**Final Checkup**
  It's common for there to be problems during a site migration. There is a script available that will run tests on your MODX site to ensure that the configuration file is configured correctly. See the **test\_config.php** script available as one of the MODX utility scripts here: [https://github.com/craftsmancoding/modx\_utils](https://github.com/craftsmancoding/modx_utils). It is quite old and since MODX 2.5.x some connectors don't exists anymore. If you need a better supported check, you could try the commercial [SiteCheck](http://bobsguides.com/sitecheck-tutorial.html) package.

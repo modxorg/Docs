@@ -21,7 +21,7 @@ From there the connector will verify the request, and then send it to the proper
 
 And now on to the processor:
 
-``` php 
+``` php
 <?php
 /**
  * @package modx
@@ -33,17 +33,17 @@ $modx->lexicon->load('chunk');
 
 First off, we include the root index.php file for the processors, which does some slight variable checking and includes licensing. Then, we load the proper lexicon topic. In MODx Revolution, i18n language files are separated into smaller files by topic, (formerly called foci). Here, we want all language strings within the 'chunk' topic. This saves processing power by only loading relevant i18n strings.
 
-**About Topics** 
+**About Topics**
  The lexicon _topics_ are similar to how the popular [gettext](http://www.gnu.org/software/gettext/) translation framework employs _contexts_ to distinguish meanings and provide subsets of translation files. We mention this only for newcomers who may be familiar with systems that use gettext (e.g. WordPress): remember that contexts are something very different in MODx.
 
-``` php 
+``` php
 if (!$modx->hasPermission('new_chunk')) $modx->error->failure($modx->lexicon('permission_denied'));
 
 ```
 
 This checks to make sure the user has the correct permissions to run this processor. If not, then it sends a failure response back to the browser via $modx->error->failure(). The response is a string message translated via the lexicon.
 
-``` php 
+``` php
 // default values
 if ($_POST['name'] == '') $_POST['name'] = $modx->lexicon('chunk_untitled');
 
@@ -58,7 +58,7 @@ if ($name_exists != null) return $modx->error->failure($modx->lexicon('chunk_err
 
 Note now how we're sanitizing variables, and checking to make sure there already isn't a Chunk with this name.
 
-``` php 
+``` php
 // category
 $category = $modx->getObject('modCategory',array('id' => $_POST['category']));
 if ($category == null) {
@@ -74,7 +74,7 @@ if ($category == null) {
 
 Okay, here, we allow dynamic Category creation. If the category specified exists, it will later assign it to that category. If not, then it creates the category in the database and prepares it for later association to the Chunk.
 
-``` php 
+``` php
 // invoke OnBeforeChunkFormSave event
 $modx->invokeEvent('OnBeforeChunkFormSave',array(
         'mode'  => modSystemEvent::MODE_NEW,
@@ -84,7 +84,7 @@ $modx->invokeEvent('OnBeforeChunkFormSave',array(
 
 Events are pretty much the same invoke-wise in Revolution as they were in 096 - however they are more optimized in their loading.
 
-``` php 
+``` php
 $chunk = $modx->newObject('modChunk', $_POST);
 $chunk->set('locked',isset($_POST['locked']));
 $chunk->set('snippet',$_POST['chunk']);
@@ -96,7 +96,7 @@ if ($chunk->save() === false) {
 
 Important: note the 2nd parameter of the newObject() method. This is basically the same as $obj->fromArray() - it allows you to specify an array of key-value pairs to assign to the new object.
 
-``` php 
+``` php
 // invoke OnChunkFormSave event
 $modx->invokeEvent('OnChunkFormSave',array(
    'mode' => modSystemEvent::MODE_NEW,
@@ -106,27 +106,27 @@ $modx->invokeEvent('OnChunkFormSave',array(
 
 Again, more event invoking.
 
-``` php 
+``` php
 // log manager action
 $modx->logManagerAction('chunk_create','modChunk',$chunk->get('id'));
 ```
 
 Now, how manager actions work in Revolution is a little different. This stores a lexicon string key ('chunk\_create'), the class key of the object being modified, and the actual ID of the object. This allows for more detailed manager action reporting.
 
-``` php 
+``` php
 $cacheManager= $modx->getCacheManager();
 $cacheManager->clearCache();
 ```
 
 Let's simply and easily clear the cache. Pretty easy, huh?
 
-``` php 
+``` php
 return $modx->error->success('',$chunk->get(array('id', 'name', 'description', 'locked', 'category')));
 ```
 
 Now, send a success response back to the browser. The parameters of $modx->error->success() are as follows:
 
-1: $message - A string message to send back. Used to report details about a success (or failure). 
+1: $message - A string message to send back. Used to report details about a success (or failure).
  2: $object - An xPDOObject or array of data fields to convert into JSON and send back to the browser.
 
 So basically, here, we're sending back the Chunk information - minus the content, which could be big and unnecessary and complicated to send. This will allow the UI to handle the creation properly.

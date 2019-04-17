@@ -12,7 +12,7 @@ _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/addmany"
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoobject.class.html#%5CxPDOObject::addMany()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::addMany())
 
- ``` php 
+ ``` php
 boolean addMany (
    mixed &$obj,
    [string $alias = '']
@@ -23,7 +23,7 @@ boolean addMany (
 
  Add golf clubs to a bag and save.
 
- ``` php 
+ ``` php
 $bag = $xpdo->newObject('GolfBag');
 $bag->set('name',"Chris's Bag");
 $bag->set('color','blue');
@@ -43,5 +43,5 @@ $bag->save(); // saves both the bag and all the clubs
 
  Remember that this operation is intended to be called only for objects whose relationships are defined as cardinality="many". ## See Also
 
-- [Working with Related Objects](xpdo/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")
-- [addOne()](xpdo/class-reference/xpdoobject/related-object-accessors/addone)
+- [Working with Related Objects](extending-modx/xpdo/retrieving-objects/related-objects "Working with Related Objects")
+- [addOne()](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone)

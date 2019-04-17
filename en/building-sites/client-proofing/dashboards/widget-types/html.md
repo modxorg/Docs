@@ -12,13 +12,13 @@ Simply place your HTML in the content panel, and it will load the HTML in the wi
 
 This widget type also supports cached placeholders and element calls (uncached calls will not work). So, for example, you can use:
 
-``` php 
+``` php
 Hello, [[+modx.user.username]]!
 ```
 
 To output the username of the logged-in user. You can also call Snippets, like so:
 
-``` php 
+``` php
 [[MyDashboardSnippet]]
 ```
 
@@ -26,7 +26,7 @@ Note that in snippets there is no "active resource", so snippets referencing $mo
 
 ## See Also
 
-1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
-2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)
-3. [Dashboard Widget Type - Inline PHP](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
-4. [Dashboard Widget Type - Snippet](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)
+1. [Dashboard Widget Type - File](building-sites/client-proofing/dashboards/widget-types/file)
+2. [Dashboard Widget Type - HTML](building-sites/client-proofing/dashboards/widget-types/html)
+3. [Dashboard Widget Type - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+4. [Dashboard Widget Type - Snippet](building-sites/client-proofing/dashboards/widget-types/snippet)

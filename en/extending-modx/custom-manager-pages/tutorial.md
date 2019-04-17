@@ -4,13 +4,7 @@ _old_id: "1048"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3"
 ---
 
-- [Setting the Namespace Path](#setting-the-namespace-path)
-- [Creating the Menu](#creating-the-menu)
-- [Creating the Controller File](#creating-the-controller-file)
-
-
-
- Creating MODX custom manager pages (CMPs) is **far** simpler in MODX Revolution 2.3 - you simply have to set a Namespace path, and then create PHP files. That's it.
+Creating MODX custom manager pages (CMPs) is **far** simpler in MODX Revolution 2.3 - you simply have to set a Namespace path, and then create PHP files. That's it.
 
 ## Setting the Namespace Path
 
@@ -34,7 +28,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
  Now, on to the file contents:
 
- ``` php 
+ ``` php
 <?php
 class MycmpWelcomeManagerController extends modExtraManagerController {
     public function process(array $scriptProperties = array()) {}
@@ -55,7 +49,7 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
 
  Let's make the content simple:
 
- ``` html 
+ ``` html
 <div class="container">
 <h2>Welcome!</h2>
 </div>
@@ -69,4 +63,4 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
 
  That's it! That's all you need to start making CMPs in MODX 2.3. You can see that our CMP is now accessible via /url/to/modx/manager/?action=welcome&namespace=mycmp - which is much neater than the ID-based actions of 2.2 and earlier.
 
- There's obviously more API methods that you can override in modExtraManagerController in your PHP controller class, and then you can use [MODExt](developing-in-modx/advanced-development/custom-manager-pages/modext "MODExt") and such in your actual CMP to make powerful pages, but that's beyond the scope of this tutorial.
+ There's obviously more API methods that you can override in modExtraManagerController in your PHP controller class, and then you can use [MODExt](extending-modx/custom-manager-pages/modext "MODExt") and such in your actual CMP to make powerful pages, but that's beyond the scope of this tutorial.

@@ -6,17 +6,17 @@ _old_uri: "2.x/class-reference/xpdoquery"
 
  The xPDOQuery extends the xPDOCriteria class and allows you to abstract out complex SQL queries into an OOP format. This allows encapsulation of SQL calls so that they can work in multiple database types, and be easy to read and dynamically build.
 
-1. [xPDOQuery.andCondition](xpdo/class-reference/xpdoquery/xpdoquery.andcondition)
-2. [xPDOQuery.groupby](xpdo/class-reference/xpdoquery/xpdoquery.groupby)
-3. [xPDOQuery.innerJoin](xpdo/class-reference/xpdoquery/xpdoquery.innerjoin)
-4. [xPDOQuery.leftJoin](xpdo/class-reference/xpdoquery/xpdoquery.leftjoin)
-5. [xPDOQuery.limit](xpdo/class-reference/xpdoquery/xpdoquery.limit)
-6. [xPDOQuery.orCondition](xpdo/class-reference/xpdoquery/xpdoquery.orcondition)
-7. [xPDOQuery.rightJoin](xpdo/class-reference/xpdoquery/xpdoquery.rightjoin)
-8. [xPDOQuery.select](xpdo/class-reference/xpdoquery/xpdoquery.select)
-9. [xPDOQuery.setClassAlias](xpdo/class-reference/xpdoquery/xpdoquery.setclassalias)
-10. [xPDOQuery.sortby](xpdo/class-reference/xpdoquery/xpdoquery.sortby)
-11. [xPDOQuery.where](xpdo/class-reference/xpdoquery/xpdoquery.where)
+1. [xPDOQuery.andCondition](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.andcondition)
+2. [xPDOQuery.groupby](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.groupby)
+3. [xPDOQuery.innerJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.innerjoin)
+4. [xPDOQuery.leftJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.leftjoin)
+5. [xPDOQuery.limit](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.limit)
+6. [xPDOQuery.orCondition](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.orcondition)
+7. [xPDOQuery.rightJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.rightjoin)
+8. [xPDOQuery.select](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.select)
+9. [xPDOQuery.setClassAlias](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.setclassalias)
+10. [xPDOQuery.sortby](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.sortby)
+11. [xPDOQuery.where](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.where)
 
 ## Examples
 
@@ -27,11 +27,11 @@ _old_uri: "2.x/class-reference/xpdoquery"
 3. A height that is not 2
 4. A color of 'red','blue' or 'green'
 5. sorted by the Box name, ascending and then by the Box height, descending
- 
-``` php 
+
+``` php
 $query = $xpdo->newQuery('Box');
 // Remember: syntax here is classname, your alias. Note that filters use the alias.
-$query->innerJoin('Owner','User'); 
+$query->innerJoin('Owner','User');
 // the Owner is actually a User object, defined as Owner in the relationship alias
 $query->where(array(
     'Owner.name:LIKE' => '%a%',
@@ -47,7 +47,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  You can also do more complex queries, like so:
 
- ``` php 
+ ``` php
 $query = $xpdo->newQuery('Person');
 $query->where(array(
     array(
@@ -63,9 +63,9 @@ $query->where(array(
 
  translates to:
 
- ``` php 
+ ``` php
 (
-  (      `Person`.`first_name` = 'Bob' 
+  (      `Person`.`first_name` = 'Bob'
     OR ( `Person`.`last_name` LIKE 'Boblablaw' AND `Person`.`gender` = 'M' )
   )
   AND password IS NOT NULL
@@ -74,11 +74,9 @@ $query->where(array(
 
  Note that if you're specifying the conditional in the key string, such as 'OR:disabled:!=' => true, you'll need to specify the operand as well. This means that you must specify = explicitly, such as in:  'AND:gender:=' => 'M'
 
- 
-
 ### Valid Operators
 
- ``` php 
+ ``` php
 $c = $xpdo->newQuery('Person');
 $c->where(array(
   'name:=' => 'John', /* Equal To */
@@ -97,7 +95,7 @@ $c->where(array(
 
  Sometimes you need to see what query is actually being generated. You can do this by preparing the query and outputting it using the **toSQL()** method.
 
- ``` php 
+ ``` php
 $c = $xpdo->newQuery('Person');
 // add filters here...
 $c->prepare();
@@ -106,5 +104,5 @@ print $c->toSQL();
 
 ## See Also
 
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
-- [xPDO.newQuery](xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects")
+- [xPDO.newQuery](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")

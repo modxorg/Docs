@@ -5,28 +5,14 @@ _old_id: "75"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable"
 ---
 
-- [Explanation](#explanation)
-- [Creating the Template Variable](#creating-the-template-variable)
-  - [1. Log into the MODX manager](#1-log-into-the-modx-manager)
-  - [2. Add the Template Variable](#2-add-the-template-variable)
-  - [3. Define the General Information](#3-define-the-general-information)
-  - [4. Define the Input Options](#4-define-the-input-options)
-  - [5. Configure Template Access](#5-configure-template-access)
-  - [6. Save the TV definition.](#6-save-the-tv-definition)
-  - [7. Use it: Create a Resource](#7-use-it-create-a-resource)
-  - [8. Edit the Value](#8-edit-the-value)
-- [Advanced Usage](#advanced-usage)
-- [Output Rendering Options](#output-rendering-options)
-- [Properties](#properties)
- 
- This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what about what a Template Variable is, see the page on [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables").
+This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what about what a Template Variable is, see the page on [Template Variables](building-sites/elements/template-variables "Template Variables").
 
 ## Explanation
 
  When we say "Create a Template Variable", there are two possible actions that we might be talking about: we can be referring to the action of adding some text or content to one of our existing custom fields when we edit a MODX page (i.e. a Resource), OR we can be referring to the action of defining this field so that it is available to our MODX resources. This page is all about the latter. In the first case, we would be creating an _instance_ of the Template Variable, whereas the second case is all about defining the Template Variable blueprint, which determines how each instance will behave.
 
- **A Class of Field** 
- When you create a Template Variable, you are really defining a _class_ of custom field; it acts as a blueprint for all instances of this custom field. 
+ **A Class of Field**
+ When you create a Template Variable, you are really defining a _class_ of custom field; it acts as a blueprint for all instances of this custom field.
 
 ## Creating the Template Variable
 
@@ -56,7 +42,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/cre
 
  In the picture, you can see how the settings will correspond to your pages's editor fields.
 
- The name should be unique! 
+ The name should be unique!
 
 ### 4. Define the Input Options
 
@@ -64,7 +50,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/cre
 
 - **Input Type**: Your field might be a simple text field, a dropdown, a reference to another page, or many other types of field.
 - **Input Options**: Some Input Types ignore this field, but others may require it. E.g. a dropdown list requires a list of possible values. Again, see the page on [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types") for more info.
-- **Default**: this affects what the default value for the field will be. This can be a simple value, or it can utilize one of the MODX [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings") to do things like select a value from the database or inherit a value from a parent page.
+- **Default**: this affects what the default value for the field will be. This can be a simple value, or it can utilize one of the MODX [Bindings](building-sites/elements/template-variables/bindings "Bindings") to do things like select a value from the database or inherit a value from a parent page.
 
  ![](download/attachments/18678061/create-tv-rendopt1.png?version=1&modificationDate=1268850855000)
 
@@ -106,13 +92,13 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/cre
 
  From there, we can specify any default properties we want for the TV. "How can you use properties on a TV?", you might ask. Well, let's say we're doing a textarea TV named "viewingSS". In our content, we've got this:
 
- ``` php 
+ ``` php
 Viewing: [[+subsection]]
 ```
 
  We can add a list property 'subsection' to the grid, and then allow that property to be overridden via property sets. Say we created a Property Set named 'CarsSectionTVPS' (PS for Property Set). In it, we set the 'subsection' property to "Cars". We'd then attach it to the TV in our Resource, or Template, or whereever we are using it like so:
 
- ``` php 
+ ``` php
 [[*viewingSS@CarsSectionTVPS]]
 ```
 
@@ -122,30 +108,30 @@ Viewing: [[+subsection]]
 
 ## Template and Resource Group Access
 
- We can assign TVs to [Templates](making-sites-with-modx/structuring-your-site/templates "Templates"), as well. This allows those Resources assigned to those [Templates](making-sites-with-modx/structuring-your-site/templates "Templates") to edit the TVs for each Resource.
+ We can assign TVs to [Templates](building-sites/elements/templates "Templates"), as well. This allows those Resources assigned to those [Templates](building-sites/elements/templates "Templates") to edit the TVs for each Resource.
 
  Also, TVs can be restricted to certain Resource Groups, selectable in the grid labeled "Access Permissions".
 
 ## See Also
 
-1. [Creating a Template Variable](making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
-2. [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings)
-3. [CHUNK Binding](making-sites-with-modx/customizing-content/template-variables/bindings/chunk-binding)
-4. [DIRECTORY Binding](making-sites-with-modx/customizing-content/template-variables/bindings/directory-binding)
-5. [EVAL Binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding)
-6. [FILE Binding](making-sites-with-modx/customizing-content/template-variables/bindings/file-binding)
-7. [INHERIT Binding](making-sites-with-modx/customizing-content/template-variables/bindings/inherit-binding)
-8. [RESOURCE Binding](making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding)
-9. [SELECT Binding](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding)
-10. [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types)
-11. [Template Variable Output Types](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types)
-12. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)
-13. [Delimiter TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type)
-14. [HTML Tag TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type)
-15. [Image TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type)
-16. [URL TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type)
-17. [Adding a Custom TV Type - MODX 2.2](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2)
-18. [Adding a Custom TV Input Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-input-type)
-19. [Adding a Custom TV Output Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-output-type)
-20. [Creating a multi-select box for related pages in your template](making-sites-with-modx/customizing-content/template-variables/creating-a-multi-select-box-for-related-pages-in-your-template)
-21. [Accessing Template Variable Values via the API](making-sites-with-modx/customizing-content/template-variables/accessing-template-variable-values-via-the-api)
+1. [Creating a Template Variable](building-sites/elements/template-variables/step-by-step)
+2. [Bindings](building-sites/elements/template-variables/bindings)
+3. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
+4. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
+5. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
+6. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
+7. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
+8. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
+9. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
+10. [Template Variable Input Types](building-sites/elements/template-variables/input-types)
+11. [Template Variable Output Types](building-sites/elements/template-variables/output-types)
+12. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
+13. [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
+14. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
+15. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
+16. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
+17. [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
+18. [Adding a Custom TV Input Type](_legacy/making-sites-with-modx/adding-a-custom-tv-input-type)
+19. [Adding a Custom TV Output Type](_legacy/making-sites-with-modx/adding-a-custom-tv-output-type)
+20. [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
+21. [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)

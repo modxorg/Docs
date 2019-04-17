@@ -12,7 +12,7 @@ Creates the container for a persistent data object. In this implementation, a so
 
 API Docs: [http://api.modxcms.com/xpdo/om-mysql/xPDOManager\_mysql.html#createObjectContainer](http://api.modxcms.com/xpdo/om-mysql/xPDOManager_mysql.html#createObjectContainer)
 
-``` php 
+``` php
 void createObjectContainer (string $className)
 ```
 
@@ -20,14 +20,14 @@ void createObjectContainer (string $className)
 
 Create the table for the class 'Person':
 
-``` php 
+``` php
 $manager = $xpdo->getManager();
 $manager->createObjectContainer('Person');
 ```
 
 If you need to do this in a MODX Snippet, you'd use the $modx object, and you'd have to make sure you added your package (and its model classes) first:
 
-``` php 
+``` php
 $modx->addPackage('yourpkg',MODX_CORE_PATH.'components/yourpkg/model/','prefix_');
 $manager = $modx->getManager();
 $manager->createObjectContainer('Myobject');

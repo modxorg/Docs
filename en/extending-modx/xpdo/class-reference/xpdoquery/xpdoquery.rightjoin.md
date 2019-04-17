@@ -10,13 +10,13 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.rightjoin"
 
 API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::rightJoin()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::rightJoin())
 
-``` php 
+``` php
 void rightJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunction = xPDOQuery::SQL_AND], [ $binding = null], [ $condGroup = 0])
 ```
 
 ## Example
 
-``` php 
+``` php
 $query = $xpdo->newQuery('Box');
 $query->rightJoin('Owner','Owner');
 $boxes = $xpdo->getCollection('Box',$query);
@@ -24,4 +24,4 @@ $boxes = $xpdo->getCollection('Box',$query);
 
 ## See Also
 
-- [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery")
+- [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")

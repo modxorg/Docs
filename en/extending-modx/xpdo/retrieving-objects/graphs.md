@@ -8,7 +8,7 @@ _old_uri: "2.x/getting-started/using-your-xpdo-model/retrieving-objects/getcolle
 
 getCollectionGraph allows you to automatically load up related objects by specifying a JSON style hash to its second argument (in other words, it automatically joins a table on its related tables). It's possible to nest the JSON hash so you also retrieve the related objects of the related objects, for example:
 
-``` php 
+``` php
 $blogpost = $modx->getCollectionGraph('BlogPost', '{ "Comments":{} }', 34 );
 foreach ( $blogpost->Comments as $c ) {
 /* ...do something with each comment... */
@@ -25,7 +25,7 @@ You can \*NOT\* set a limit on a getCollectionGraph when using an xPDOQuery obje
 
 The below example that specifies several related objects. In the **Zip** XML schema, there would be some sort of aggregate relationship defined for "TZ", "ST", and "CT".
 
-``` php 
+``` php
 <?php
 $out = false;
 $xpdo->setPackage('sw_zipCode', MODX_BASE_PATH.'wsw/model/', 'sw_');
@@ -37,7 +37,7 @@ foreach ($collection as $obj)
         $out = $obj->toArray();                      // 'Zip'
         $out[timezone] = $obj->TZ->get('tzname');
         $out[state] = $obj->ST->get('statename');
-        $out[county] = $obj->CT->get('countyname');        
+        $out[county] = $obj->CT->get('countyname');
     }
 }
 return $out;
@@ -48,13 +48,13 @@ Note that when you are using $xpdo->newQuery() to filter the results and have mu
 
 ### Snippet Call
 
-``` php 
+``` php
 [[!zipCollectionGraph?lookupZip=`32117`]]
 ```
 
 ### Output
 
-``` php 
+``` php
 Array
 (
     [id] => 32117
@@ -73,12 +73,13 @@ Array
 
 ### Equivalent MySQL
 
-``` php 
+``` php
 $xpdo->setPackage('sw_zipCode', MODX_BASE_PATH.'wsw/model/', 'sw_');
 $collection= $xpdo->getCollectionGraph('Zip', '{"TZ":{},"ST":{},"CT":{}}', $lookupZip);
 ```
 
 In MySQL:
+
 ``` sql
 SELECT *
 FROM `sw_zips` AS Z
@@ -92,8 +93,7 @@ WHERE Z.`id` = 32117
 
 The following schema is greatly simplified for readability and this example:
 
-Though a functional schema, this is not a final schema by any stretch of the imagination. 
-
+Though a functional schema, this is not a final schema by any stretch of the imagination.
 
 ``` xml
 <model package="sw_zipCode" version="1.0" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
@@ -122,8 +122,8 @@ Though a functional schema, this is not a final schema by any stretch of the ima
     <field key="sw_county_id" dbtype="int" precision="4" phptype="integer" null="false" index="pk"/>
     <field key="sw_states_id" dbtype="int" precision="2" phptype="integer" null="false" index="pk"/>
     <field key="sw_timezones_id" dbtype="int" precision="2" phptype="integer" null="false" index="pk"/>
-    
-    <aggregate alias="TZ" class="Timezones" local="tz_id" foreign="id" cardinality="one" owner="foreign" />    
+
+    <aggregate alias="TZ" class="Timezones" local="tz_id" foreign="id" cardinality="one" owner="foreign" />
     <aggregate alias="ST" class="County" local="sw_county_id" foreign="id" cardinality="one" owner="foreign" />
     <aggregate alias="CT" class="States" local="sw_states_id" foreign="id" cardinality="one" owner="foreign" />
 </object>
@@ -134,7 +134,7 @@ Though a functional schema, this is not a final schema by any stretch of the ima
 
 Another relation example that is common is joining MODX pages with their Template Variable values. Sometimes this does not work as expected since values are stored differently than you might expect. But here's a walk-through.
 
-``` php 
+``` php
 $pages = $modx->getCollectionGraph('modResource', '{"TemplateVarResources":{}}', array('parent'=>12));
 
 foreach ($pages as $p) {
@@ -148,7 +148,7 @@ foreach ($pages as $p) {
 
 ## Comments
 
-1. Obtain a connection via [the xPDO Constructor](/xpdo/1.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") including [Hydrating Fields](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor/hydrating-fields "Hydrating Fields")
+1. Obtain a connection via [the xPDO Constructor](/xpdo/1.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") including [Hydrating Fields](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields")
 2. Viewing the package name in the schema we set (or apply) the package to our connection, taking note of the prefix our tables are using in the database
 3. Using 'Zip' as our "view" we look at the relationships directly defined in the Zip object, in our schema, and access those via the aliases given there
 
@@ -158,14 +158,14 @@ Everything is about the schema definition. A poorly thought out and developed sc
 
 If you are having trouble with xPDO, you have two main avenues of troubleshooting:
 
-1. First and foremost -- the schema is not correct. Re thinking it from the bottom relations up, and through each relationship may help us "see" where we may be missing it.
-2. Not understanding what we are seeing is another huge issue. 
-  1. Understand the point of your schema. If your schema will eventually instantiate an object representing a single entity (such as a user) your base relationships should be ($this->user) 1: 1 or many on the other side.
-  2. A relationship tied to a many-to-many relation (as in the relations between users and groups) will probably need a for each loop to filter through the sub relation.
-  3. Aggregate relations should typically be singular. Removing them does nothing to the related data
-  4. Composite relations should typically be plural. Removing them also removes each of the related child relations.
-  5. Don't be afraid to use regular language in your schema. Instead of Cityzip, in the schema above, Cityhaszips might be a bit clearer in thinking through your schema
-  6. Don't use the same class name in multiple places in the schema. Not only will it bring confusion while coding, I suspect it also confuses xPDO. If for no other reason -- its just bad form.
-  7. xPDO is fast, very fast. If your queries are taking to long, go back to the schema and follow the indexes.
-  8. xPDO likes primary keys, so build your relations around primary keys when ever possible -- if not always.
-  9. In case you missed it '{"TZ":{},"ST":{},"CT":{}}' is JSON formatted.
+- First and foremost -- the schema is not correct. Re thinking it from the bottom relations up, and through each relationship may help us "see" where we may be missing it.
+- Not understanding what we are seeing is another huge issue.
+  - Understand the point of your schema. If your schema will eventually instantiate an object representing a single entity (such as a user) your base relationships should be ($this->user) 1: 1 or many on the other side.
+  - A relationship tied to a many-to-many relation (as in the relations between users and groups) will probably need a for each loop to filter through the sub relation.
+  - Aggregate relations should typically be singular. Removing them does nothing to the related data
+  - Composite relations should typically be plural. Removing them also removes each of the related child relations.
+  - Don't be afraid to use regular language in your schema. Instead of Cityzip, in the schema above, Cityhaszips might be a bit clearer in thinking through your schema
+  - Don't use the same class name in multiple places in the schema. Not only will it bring confusion while coding, I suspect it also confuses xPDO. If for no other reason -- its just bad form.
+  - xPDO is fast, very fast. If your queries are taking to long, go back to the schema and follow the indexes.
+  - xPDO likes primary keys, so build your relations around primary keys when ever possible -- if not always.
+  - In case you missed it '{"TZ":{},"ST":{},"CT":{}}' is JSON formatted.

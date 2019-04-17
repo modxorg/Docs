@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 
  Fires before any files are uploaded via the manager and is fired inside a foreach loop that loops throught the $\_FILES array.
 
- Service: 1 - Parser Service Events 
+ Service: 1 - Parser Service Events
  Group: None
 
 ## Event Parameters
@@ -22,5 +22,5 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events)
-- [Plugins](developing-in-modx/basic-development/plugins)
+- [System Events](extending-modx/plugins/system-events)
+- [Plugins](extending-modx/plugins)

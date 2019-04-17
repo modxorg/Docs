@@ -12,7 +12,7 @@ Get the name of a class related by foreign key to a specified field key. This is
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getFKClass>
 
-``` php 
+``` php
 void getFKClass (string $k)
 ```
 
@@ -20,7 +20,7 @@ void getFKClass (string $k)
 
 Get the name of the class related to the field 'book' on the object 'myChapter':
 
-``` php 
+``` php
 $chapter = $xpdo->getObject('myChapter',12);
 echo $chapter->getFKClass('book');
 // prints "myBook"

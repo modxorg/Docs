@@ -4,18 +4,18 @@ _old_id: "430"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onloadwebpagecache"
 ---
 
-## Event: OnLoadWebPageCache 
+## Event: OnLoadWebPageCache
 
 Fires after a Resource is loaded from the cache. If the Resource is not cached, this event will not fire. NOTE: this event is not particularly useful until MODX 2.3 (see [Issue 9841](http://bugs.modx.com/issues/9841)).
 
-Service: 4 - Cache Service Events 
+Service: 4 - Cache Service Events
 Group: None
 
-## Event Parameters 
+## Event Parameters
 
 None.
 
-## Notes 
+## Notes
 
 This event is triggered inside the getResource() function in modrequest.class.php.
 
@@ -23,25 +23,25 @@ This event is triggered inside the getResource() function in modrequest.class.ph
 
 In MODX 2.3 and later you can access the resource properties (see [Issue 9841](http://bugs.modx.com/issues/9841)):
 
-``` php 
+``` php
 // Override Output
 $modx->event->params['resource']->_content = 'Overridden...';
 ```
 
 You can access resource properties like so:
 
-``` php 
+``` php
 // Override Pagetitle
 $modx->event->params['resource']->pagetitle = 'My New Pagetitle';
 ```
 
 TVs are a trickier. They get cached as an standard array. For reading and overriding values, you will focus on element 1:
 
-``` php 
+``` php
 // Reading value of TV named "my_tv"
 $my_tv = $modx->event->params['resource']->my_tv[1];
 /*
-// Where our array 
+// Where our array
 array (
     0 => 'name_of_tv',
     1 => 'Value of TV Goes here',
@@ -54,7 +54,7 @@ array (
 
 For further education, take a look at the cached files generated inside the `core/cache/resource/web/resources/` folder.
 
-## See Also 
+## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

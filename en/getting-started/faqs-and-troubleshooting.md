@@ -13,47 +13,20 @@ This is a documentation stub, and could use your help to complete! If you don't 
 
 This document will always be a work in progress as new features are added / changed, and it could use your help in keeping it structured and up to date! If you do not have access to editing this document, [please post anything you would want to see added or updated in this topic on the forums](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
 
-_To Editors:_
-
-- _Please use the right headings (heading 2 for categories, heading 3 for questions) to make sure the table of contents et al are properly generated and make sense._
-- _Big subjects can be created as a subpage to this page, and if other pages already exist on these docs please link to it in the first section._
-- _Please make sure the numbering is correct when you add a question to allow easier scanning of the page._
-- _Make sure you link generously to further reading on the subject._
-
-_Thanks!!_
-
-
-
 ## Table of Contents
 
 FAQs and/or Troubleshooting on specific subjects elsewhere:
 
-- [Troubleshooting Installation](getting-started/installation/troubleshooting-installation "Troubleshooting Installation")
-- [Troubleshooting Upgrades](administering-your-site/upgrading-modx/troubleshooting-upgrades "Troubleshooting Upgrades")
-- [Troubleshooting Package Management](administering-your-site/installing-a-package/troubleshooting-package-management "Troubleshooting Package Management")
-- [Troubleshooting Security](administering-your-site/security/troubleshooting-security "Troubleshooting Security")
+- [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation")
+- [Troubleshooting Upgrades](getting-started/maintenance/upgrading/troubleshooting "Troubleshooting Upgrades")
+- [Troubleshooting Package Management](building-sites/extras/troubleshooting "Troubleshooting Package Management")
+- [Troubleshooting Security](building-sites/client-proofing/security/troubleshooting-security "Troubleshooting Security")
 
 Subpages dealing with specific subjects:
 
-- [CMP Development FAQs & Troubleshooting](faqs-and-troubleshooting/cmp-development-faqs-and-troubleshooting "CMP Development FAQs & Troubleshooting")
+- [CMP Development FAQs & Troubleshooting](extending-modx/custom-manager-pages/troubleshooting "CMP Development FAQs & Troubleshooting")
 
 On this page, you will find the following categories and questions:
-
-- [Table of Contents](#table-of-contents)
-- [1. MODX 101](#1-modx-101)
-  - [1.1. What is MODX Evolution, and what is MODX Revolution? What's the difference?](#11-what-is-modx-evolution-and-what-is-modx-revolution-whats-the-difference)
-  - [1.2. What different tags can I use? What is \[\[\*pagetitle\]\], \[\[Wayfinder\]\] etc?](#12-what-different-tags-can-i-use-what-is-pagetitle-wayfinder-etc)
-- [2. The Manager](#2-the-manager)
-  - [2.1. Help! Where did the sidebar go?](#21-help-where-did-the-sidebar-go)
-  - [2.2 How can I modify what resource fields are visible when creating or editing a Resource? Is there something like ManagerManager for Revolution?](#22-how-can-i-modify-what-resource-fields-are-visible-when-creating-or-editing-a-resource-is-there-something-like-managermanager-for-revolution)
-  - [2.3 What does modDocument/ modWeblink/ modSymLink/ modStaticResource mean?](#23-what-does-moddocument-modweblink-modsymlink-modstaticresource-mean)
-  - [2.4 What is the difference between a Resource and a Document?](#24-what-is-the-difference-between-a-resource-and-a-document)
-  - [2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!](#25-im-locked-out-i-cant-access-the-manager-forgot-my-password-and-recovery-doesnt-work)
-- [3. Frontend Display Issues](#3-frontend-display-issues)
-  - [3.1 Blank frontend pages resolved by Clearing Cache](#31-blank-frontend-pages-resolved-by-clearing-cache)
-  - [3.2 General Snippet Problems](#32-general-snippet-problems)
-
-
 
 ## 1. MODX 101
 
@@ -77,7 +50,7 @@ Further reading:
 
 ### 1.2. What different tags can I use? What is \[\[\*pagetitle\]\], \[\[Wayfinder\]\] etc?
 
-Check out the [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax") documentation. You can find resource fields you can use in Revolution on the [Resources Documentation](making-sites-with-modx/structuring-your-site/resources "Resources").
+Check out the [Tag Syntax](building-sites/tag-syntax "Tag Syntax") documentation. You can find resource fields you can use in Revolution on the [Resources Documentation](building-sites/resources "Resources").
 
 ## 2. The Manager
 
@@ -93,20 +66,20 @@ You can use [Form Customization](/display/revolution20/Form+Customization "Form 
 
 They are the class names of Documents, Weblinks, Symlinks and Static Resources. They are "subtypes" of Resources (class name modResource) and each have their own specific goal. They all show up in the Resource Tree and can appear anywhere in the hierarchy.
 
-- [Documents](making-sites-with-modx/structuring-your-site/resources "Resources") (commonly refered to as Resources, see 2.4 below) are regular pages and have content.
-- A [Weblink](making-sites-with-modx/structuring-your-site/resources/weblink "Weblink") redirect a user to a different Resource or an external URL.
-- A [Symlink](making-sites-with-modx/structuring-your-site/resources/symlink "Symlink") acts as a copy of a Document
-- [Static Resources](making-sites-with-modx/structuring-your-site/resources/static-resource "Static Resource") act like Documents, however their content comes from a file on the filesystem.
+- [Documents](building-sites/resources "Resources") (commonly refered to as Resources, see 2.4 below) are regular pages and have content.
+- A [Weblink](building-sites/resources/weblink "Weblink") redirect a user to a different Resource or an external URL.
+- A [Symlink](building-sites/resources/symlink "Symlink") acts as a copy of a Document
+- [Static Resources](building-sites/resources/static-resource "Static Resource") act like Documents, however their content comes from a file on the filesystem.
 
 ### 2.4 What is the difference between a Resource and a Document?
 
 Technically, a Resource (modResource) is an abstract object of which a Document (modDocument) is an implementation.
 
-Practically both terms are used to indicate the same thing: a Document which holds certain content. Coming from the technical implementation, a [Weblink](making-sites-with-modx/structuring-your-site/resources/weblink "Weblink"), [Symlink](making-sites-with-modx/structuring-your-site/resources/symlink "Symlink") or [Static Resource](making-sites-with-modx/structuring-your-site/resources/static-resource "Static Resource") are also be included when referring to "Resources" as they are also implementations of the modResource class.
+Practically both terms are used to indicate the same thing: a Document which holds certain content. Coming from the technical implementation, a [Weblink](building-sites/resources/weblink "Weblink"), [Symlink](building-sites/resources/symlink "Symlink") or [Static Resource](building-sites/resources/static-resource "Static Resource") are also be included when referring to "Resources" as they are also implementations of the modResource class.
 
 ### 2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!
 
-You're not doomed. [Check out these instructions for Revolution](administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually "Resetting a User Password Manually"), or [these instructions for recovering your user account in Evolution](/evolution/1.0/administration/manager-users/reset-your-password-unblock-your-user "Reset your Password - Unblock your User").
+You're not doomed. [Check out these instructions for Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Resetting a User Password Manually"), or [these instructions for recovering your user account in Evolution](/evolution/1.0/administration/manager-users/reset-your-password-unblock-your-user "Reset your Password - Unblock your User").
 
 ## 3. Frontend Display Issues
 

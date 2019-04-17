@@ -6,9 +6,9 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/link_tag_scheme"
 
 ## link\_tag\_scheme
 
- **Name**: URL Generation Scheme 
-**Type**: textfield 
-**Default**: -1 
+ **Name**: URL Generation Scheme
+**Type**: textfield
+**Default**: -1
 **Available In:** 2.1+
 
  URL generation scheme for tag \[\[~id\]\].
@@ -27,8 +27,6 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/link_tag_scheme"
 
 You can override the scheme in each link by passing &scheme in your links:
 
- ```
-
+ ``` php
 [[~123? &scheme=`full`]]
-
 ```

@@ -16,20 +16,20 @@ For 2.1 and earlier, you must copy the entire controllers and templates director
 
 For example, to customize just the Manager Login template, you could copy the following file into a new directory:
 
-**manager/templates/default/security/login.tpl**
+>manager/templates/default/security/login.tpl
 
 Copy that file into a new directory, for example here:
 
-**manager/templates/custom/security/login.tpl**
+>manager/templates/custom/security/login.tpl
 
 Then update your System Setting for **manager\_theme** to point to the newly created **custom** directory, and the version of the file from the **custom** directory will override the version of the file from the default directory.
 
 You'll also have to copy this directory:
 
-**manager/controllers/default**
+>manager/controllers/default
 
 to a new directory with the same name as your new custom them directory, like so:
 
-**manager/controllers/custom**
+>manager/controllers/custom
 
 This is because when you change the manager\_theme key value in System Settings it will also reference the new controllers directory. Of course you can probably change the path for that somewhere...

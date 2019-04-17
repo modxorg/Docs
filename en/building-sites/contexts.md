@@ -8,9 +8,9 @@ _old_uri: "2.x/administering-your-site/contexts"
 
  You can easily create a context from the Contexts menu under Tools. The context will then show up in your resource tree. Resources can easily be dragged between contexts to move them from one context to another.
 
- Note: there's nothing fundamentally _different_ about resources in different contexts, except that they now inherit the configuration settings of the context they are in. So, if you create a new context, you'll have to override the context settings in the context for any real, distinguishable change to appear. 
+ Note: there's nothing fundamentally _different_ about resources in different contexts, except that they now inherit the configuration settings of the context they are in. So, if you create a new context, you'll have to override the context settings in the context for any real, distinguishable change to appear.
 
-##  Creating a Context 
+## Creating a Context
 
  First, go to the Contexts page, via System -> Contexts. Then, click on "Create New" in the grid. This will prompt you for a key and description. From there, right-click on your newly-created context, and click "Update Context".
 
@@ -18,19 +18,15 @@ _old_uri: "2.x/administering-your-site/contexts"
 
  Note that new contexts don't automatically get "load" permission for Anonymous users in 2.2+ - you'll need to add that in manually.
 
- When you create a new context besides the default "web" context, you may need to apply context settings to the web context as well. 
+ When you create a new context besides the default "web" context, you may need to apply context settings to the web context as well.
 
-##  Context Settings 
+## Context Settings
 
  You can create settings for any defined context by clicking on **System -> Contexts**, then right-click any context and select "Update Context".
 
- Each context can have its own settings that override or extend the [System Settings](administering-your-site/settings/system-settings "System Settings"). Contextual settings can in turn be overridden or extended by [User Settings](administering-your-site/security/users#Users-UsersUserSettings). The hierarchy to remember is this:
+ Each context can have its own settings that override or extend the [System Settings](building-sites/settings "System Settings"). Contextual settings can in turn be overridden or extended by [User Settings](administering-your-site/security/users#Users-UsersUserSettings). The hierarchy to remember is this:
 
  System Setting -> Context Setting -> User Setting
-
- 
-
-
 
 ## Context Access
 
@@ -44,17 +40,17 @@ When creating a new context, make sure your desired user-groups have access to i
 
  In a template or Chunk:
 
-``` php 
+``` php
 [[++my_context_setting]]
 ```
 
  Programmatically in a Snippet:
 
-``` php 
+``` php
 $setting = $modx->getOption('my_context_setting');
 ```
 
-##  See Also 
+## See Also
 
-1. [Creating a Subdomain from a Folder using Virtual Hosts](administering-your-site/contexts/creating-a-subdomain-from-a-folder-using-virtual-hosts)
-2. [Using One Gateway Plugin to Manage Multiple Domains](administering-your-site/contexts/using-one-gateway-plugin-to-manage-multiple-domains)
+1. [Creating a Subdomain from a Folder using Virtual Hosts](building-sites/contexts/virtual-host)
+2. [Using One Gateway Plugin to Manage Multiple Domains](building-sites/contexts/gateway-plugin)

@@ -8,10 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmodx
 
  Invoked upon initialization of the MODX object.
 
- Service: 5 - Manager Access Events 
+ Service: 5 - Manager Access Events
  Group: System
-
-## 
 
 ## Event Parameters
 
@@ -31,5 +29,5 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmodx
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

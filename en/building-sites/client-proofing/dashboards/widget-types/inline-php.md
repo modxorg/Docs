@@ -4,7 +4,7 @@ _old_id: "87"
 _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php"
 ---
 
- The Inline PHP widget acts very similar to the [Snippet Widget](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet "Dashboard Widget Type - Snippet"), except it runs the content of the widget as if it were a Snippet.
+ The Inline PHP widget acts very similar to the [Snippet Widget](building-sites/client-proofing/dashboards/widget-types/snippet "Dashboard Widget Type - Snippet"), except it runs the content of the widget as if it were a Snippet.
 
 ## Usage
 
@@ -12,7 +12,7 @@ _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboa
 
  For example, this will display "Hello, World!":
 
- ``` php 
+ ``` php
 <?php
 return 'Hello, World!';
 ```
@@ -25,7 +25,7 @@ return 'Hello, World!';
 
 ## See Also
 
-1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
-2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)
-3. [Dashboard Widget Type - Inline PHP](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
-4. [Dashboard Widget Type - Snippet](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)
+1. [Dashboard Widget Type - File](building-sites/client-proofing/dashboards/widget-types/file)
+2. [Dashboard Widget Type - HTML](building-sites/client-proofing/dashboards/widget-types/html)
+3. [Dashboard Widget Type - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+4. [Dashboard Widget Type - Snippet](building-sites/client-proofing/dashboards/widget-types/snippet)

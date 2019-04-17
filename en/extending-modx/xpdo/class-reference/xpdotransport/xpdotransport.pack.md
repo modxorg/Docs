@@ -6,13 +6,13 @@ _old_uri: "2.x/class-reference/xpdotransport/xpdotransport.pack"
 
 ## xPDOTransport::pack
 
-Pack the [xPDOTransport](xpdo/class-reference/xpdotransport "xPDOTransport") instance in preparation for distribution. This packs the transport into a zip file in the target directory.
+Pack the [xPDOTransport](extending-modx/xpdo/class-reference/xpdotransport "xPDOTransport") instance in preparation for distribution. This packs the transport into a zip file in the target directory.
 
 ## Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/transport/xPDOTransport.html#pack>
 
-``` php 
+``` php
 boolean pack ()
 ```
 
@@ -20,10 +20,10 @@ boolean pack ()
 
 Package the transport into a zip file.
 
-``` php 
+``` php
 $transport->pack();
 ```
 
 ## See Also
 
-- [xPDOTransport](xpdo/class-reference/xpdotransport "xPDOTransport")
+- [xPDOTransport](extending-modx/xpdo/class-reference/xpdotransport "xPDOTransport")

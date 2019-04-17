@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/session_cookie_s
 
 ## session\_cookie\_secure
 
-**Name**: Session Cookie Secure 
-**Type**: Yes/No 
+**Name**: Session Cookie Secure
+**Type**: Yes/No
 **Default**: No
 
 Enable this setting to use secure session cookies.

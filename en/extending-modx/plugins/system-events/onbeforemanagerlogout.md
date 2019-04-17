@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires before a user is logged out of the manager. The logout hasn't occured yet.
 
-Service: 2 - Manager Access Service Events 
+Service: 2 - Manager Access Service Events
 Group: None
 
 ## Event Parameters
@@ -23,8 +23,8 @@ Group: None
 
 ## See Also
 
-- [OnBeforeWebLogout event](developing-in-modx/basic-development/plugins/system-events/onbeforeweblogout "OnBeforeWebLogout")
-- [OnWebLogout event](developing-in-modx/basic-development/plugins/system-events/onweblogout "OnWebLogout")
-- [OnManagerLogout event](developing-in-modx/basic-development/plugins/system-events/onmanagerlogout "OnManagerLogout")
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [OnBeforeWebLogout event](extending-modx/plugins/system-events/onbeforeweblogout "OnBeforeWebLogout")
+- [OnWebLogout event](extending-modx/plugins/system-events/onweblogout "OnWebLogout")
+- [OnManagerLogout event](extending-modx/plugins/system-events/onmanagerlogout "OnManagerLogout")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

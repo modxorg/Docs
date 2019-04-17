@@ -14,8 +14,7 @@ _old_uri: "contribute/using-git-and-github/"
 
 Read more about [GitHub's repository hosting](https://github.com/features/hosting) but also be sure to bookmark their excellent [Git Reference](http://gitref.org/) site.
 
-## Overview 
-
+## Overview
 
 Here's an overview of the workflow you'll be using to contribute changes to any MODX repository. It will help to understand this first before diving in to more detail.
 
@@ -24,10 +23,10 @@ First, you will fork a MODX code repository to your own GitHub account. This is 
 
 Here's [GitHub's tutorial on forking a repo and making a local clone of it](http://help.github.com/fork-a-repo/).
 
-
-
 **Branch and code**
-All work on a single issue (bug or feature) is to be done on a _feature branch_. ``` php 
+All work on a single issue (bug or feature) is to be done on a _feature branch_.
+
+``` php
 git checkout -b bug-1111
 ```
 
@@ -35,29 +34,25 @@ You will make changes to a file or files. Coding.. yay! You make one or several 
 
 Along the way, or when the work is done, you _push_ the branch to your fork. You'll be able to see your feature branch and your commits on the GitHub site.
 
-``` php 
+``` php
 git push myRepo bug-1111
 ```
 
 _Note: Making sure your work and your commits are based on "fresh" code will help you avoid problems and help integrators understand, review and integrate (or feed back on) your work._
 
-
-
 **Pull Request**
 When you're ready to contribute the commit or commits from your branch, you'll issue a [Pull Request](http://help.github.com/pull-requests/) from your GitHub account. Your Pull Request may be accepted as-is by an integrator or they may make changes or comment, ask questions etc. GitHub facilitates communication with in-line code comments as well as a simple discussion thread on Pull Requests.
 
+## Community Contributor's Guide
 
+With that basis in the workflow, your next step is to read the [Community Contributor's Guide](/contribute/code/contributors-guide "Community Contributor's Guide") to understand the branching model MODX is using and for more detail on putting it into practice.
 
-## Community Contributor's Guide 
+## More
 
-With that basis in the workflow, your next step is to read the [Community Contributor's Guide](/community/contribute/using-git-and-github/community-contributors-guide "Community Contributor's Guide") to understand the branching model MODX is using and for more detail on putting it into practice.
-
-## More 
-
-1. [Community Contributor's Guide](/community/contribute/using-git-and-github/community-contributors-guide)
-2. [Git FAC (Frequently Accessed Commands)](/community/contribute/using-git-and-github/git-fac-(frequently-accessed-commands))
-3. [xPDO GitHub Contributor's Guide](/community/contribute/using-git-and-github/xpdo-github-contributors-guide)
+1. [Community Contributor's Guide](contribute/code/contributors-guide)
+2. [Git FAC (Frequently Accessed Commands)](contribute/code/git-github/frequent-commands)
+3. [xPDO GitHub Contributor's Guide](contribute/code/xpdo)
 
 ## **Related**
 
-- [Install Revolution from your Git repo](getting-started/installation/git-installation "Git Installation")
+- [Install Revolution from your Git repo](getting-started/installation/git "Git Installation")

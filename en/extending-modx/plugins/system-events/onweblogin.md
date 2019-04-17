@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebl
 
 Fired anytime a user logs into a non-mgr context after performing any autentification checks successfully. Doesn't affect the autentification process.
 
-Service: 3 - Web Access Service Events 
+Service: 3 - Web Access Service Events
 Group: None
 
 ## Event Parameters
@@ -30,5 +30,5 @@ Group: None
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

@@ -12,7 +12,7 @@ Returns the debug state for the XPDO connection.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getDebug>
 
-``` php 
+``` php
 boolean getDebug ()
 ```
 
@@ -20,10 +20,10 @@ boolean getDebug ()
 
 Get whether debug mode is on or not.
 
-``` php 
+``` php
 $isDebugOn = $xpdo->getDebug();
 ```
 
 ## See Also
 
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo "xPDO")

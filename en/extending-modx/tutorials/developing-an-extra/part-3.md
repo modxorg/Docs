@@ -6,32 +6,19 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
 
 This tutorial is part of a Series:
 
-- [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
-- [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II")
+- [Part I: Getting Started and Creating the Doodles Snippet](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution")
+- [Part II: Creating our Custom Manager Page](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II")
 - Part III: Packaging Our Extra
-
-
-- [Overview](#overview)
-- [Setting Up Our Build Directory](#setting-up-our-build-directory)
-  - [The Build Script](#the-build-script)
-- [Adding in the Data](#adding-in-the-data)
-  - [Adding the Snippet](#adding-the-snippet)
-  - [Adding in Snippet Properties](#adding-in-snippet-properties)
-  - [Adding the File Resolvers](#adding-the-file-resolvers)
-  - [Adding the Menu and Action](#adding-the-menu-and-action)
-- [Adding a Resolver](#adding-a-resolver)
-- [Adding the Changelog, Readme, License and Setup Options](#adding-the-changelog-readme-license-and-setup-options)
-- [Summary](#summary)
 
 ## Overview
 
-In this tutorial, we're going to be packaging up our Extra that we made in the [past](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution") [two](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II") tutorials into a [Transport Package](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages") (TP) so that we can install it on any MODX installation, and even submit it to the Extras section on modx.com.
+In this tutorial, we're going to be packaging up our Extra that we made in the [past](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") [two](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II") tutorials into a [Transport Package](extending-modx/transport-packages "Transport Packages") (TP) so that we can install it on any MODX installation, and even submit it to the Extras section on modx.com.
 
-First off, if you're not sure what a Transport Package is, or what Package Management is, I suggest you read up on [Package Management](developing-in-modx/advanced-development/package-management "Package Management") and [Transport Packages](developing-in-modx/advanced-development/package-management/transport-packages "Transport Packages") first before proceeding.
+First off, if you're not sure what a Transport Package is, or what Package Management is, I suggest you read up on [Package Management](extending-modx/transport-packages "Package Management") and [Transport Packages](extending-modx/transport-packages "Transport Packages") first before proceeding.
 
 Our main goals for this part of the tutorial will be getting the Extra in a package: specifically our Snippet; the files in core/components and assets/components; the Action, Menu and Namespace for our CMP; making our Snippet's default properties i18n supported; and finally, adding a Resolver that creates our custom DB table in the installing user's database.
 
-For simple Extras that don't have a CMP, we could just use [PackMan](/extras/revo/packman "PackMan") to package up our Extra. However, we have a CMP, and we want to learn how to do the script. So, here we are.
+For simple Extras that don't have a CMP, we could just use [PackMan](/extras/packman "PackMan") to package up our Extra. However, we have a CMP, and we want to learn how to do the script. So, here we are.
 
 ## Setting Up Our Build Directory
 
@@ -48,7 +35,7 @@ This is what our \_build directory will look like when we're through. We're alre
 
 Let's go ahead and create a file at /www/doodles/\_build/build.transport.php, and fill it with this:
 
-``` php 
+``` php
 <?php
 $tstart = explode(' ', microtime());
 $tstart = $tstart[1] + $tstart[0];
@@ -107,7 +94,7 @@ exit ();
 
 There's a lot in there. It's helpful to note that all this is doing so far is packaging in our Namespace, and creating a "doodles-1.0-beta4.zip" transport file. Let's go deeper to understand a bit more of it.
 
-``` php 
+``` php
 $tstart = explode(' ', microtime());
 $tstart = $tstart[1] + $tstart[0];
 set_time_limit(0);
@@ -123,7 +110,7 @@ First off, we're going to get the time started for this build script so we can o
 
 Then we'll set up some defines we'll use later to determine our package's name, version and release. Next:
 
-``` php 
+``` php
 /* define build paths */
 $root = dirname(dirname(__FILE__)).'/';
 $sources = array(
@@ -151,7 +138,7 @@ Note the source\_core and source\_assets keys - it's very important to note that
 
 Finally, we'll include our build.config.php file and our modx class. Now it's time to load up the modX object:
 
-``` php 
+``` php
 $modx= new modX();
 $modx->initialize('mgr');
 echo ''; /* used for nice formatting of log messages */
@@ -182,7 +169,7 @@ That last parameter is key - note how we make it resolve to: '{core\_path}compon
 
 And now finally, the last few lines in our script:
 
-``` php 
+``` php
 /* zip up package */
 $modx->log(modX::LOG_LEVEL_INFO,'Packing up transport package zip...');
 $builder->pack();
@@ -204,7 +191,7 @@ Our Transport Package! Nice and done. However, installing it wont actually do an
 
 We're going to want to package in our Snippet in its own 'Doodles' category, to get it to be nice and separated out from other Snippets the user might be using. In our build.transport.php file, add this below our registerNamespace call at line 42:
 
-``` php 
+``` php
 $category= $modx->newObject('modCategory');
 $category->set('id',1);
 $category->set('category',PKG_NAME);
@@ -233,7 +220,7 @@ $vehicle = $builder->createVehicle($category,$attr);
 $builder->putVehicle($vehicle);
 ```
 
-Quite a bit of this is detailed [in this tutorial here](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script "Creating a 3rd Party Component Build Script"), but we'll go over it again here. First off, we create a modCategory object that has the name (category) of 'Doodles'. Great. Note how we don't ->save() on it - we just want the object. Next we have some code to package in the Snippet, but we've commented it out for now. Go ahead and ignore it - we'll come back to it.
+Quite a bit of this is detailed [in this tutorial here](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script"), but we'll go over it again here. First off, we create a modCategory object that has the name (category) of 'Doodles'. Great. Note how we don't ->save() on it - we just want the object. Next we have some code to package in the Snippet, but we've commented it out for now. Go ahead and ignore it - we'll come back to it.
 
 Next, we create this really big array of attributes, it seems. A bit more on these - they are attributes for the Vehicle for the Category. What's a Vehicle? Well, a Vehicle "carries" an Object in the Transport Package. Each object (say, a Snippet, Menu, Category, etc) needs a Vehicle to be carried in the Transport Package. So we'll create one, but first we want to assign some attributes to it to tell MODX just how this Vehicle should behave when the user installs it.
 
@@ -247,7 +234,7 @@ Next, we create this really big array of attributes, it seems. A bit more on the
 
 - **xPDOTransport::RELATED\_OBJECT\_ATTRIBUTES** - This takes in an associative array. Each index in the first depth of it tells MODX what the alias of it is - note we only have one, "Snippets". That tells MODX to look for any Related Objects in this Category that are Snippets, and then below that defines properties for those Snippets:
 
-``` php 
+``` php
 'Snippets' => array(
    xPDOTransport::PRESERVE_KEYS => false,
    xPDOTransport::UPDATE_OBJECT => true,
@@ -259,7 +246,7 @@ We're going to tell the package to not preserve the Snippet's keys (similarly to
 
 Then we hit this:
 
-``` php 
+``` php
 $vehicle = $builder->createVehicle($category,$attr);
 $builder->putVehicle($vehicle);
 ```
@@ -270,7 +257,7 @@ This packages our Category object into a nice little vehicle for us, with the at
 
 Go ahead and create a directory at /www/doodles/\_build/data/. Now let's add a file at /www/doodles/\_build/data/transport.snippets.php. Place this in there:
 
-``` php 
+``` php
 <?php
 function getSnippetContent($filename) {
     $o = file_get_contents($filename);
@@ -297,7 +284,7 @@ First off, we're going to make a little helper method that grabs our snippet we 
 
 Next, we'll actually make a new Snippet object. Note, however, we're **not** saving it - just creating it. Also, we're going to include some properties on them (more on that in a second). Finally, we return the $snippets array. Remember that part we commented out in our build.transport.php file? This part:
 
-``` php 
+``` php
 /* add snippets */
 $modx->log(modX::LOG_LEVEL_INFO,'Packaging in snippets...');
 $snippets = include $sources['data'].'transport.snippets.php';
@@ -311,7 +298,7 @@ Go ahead and uncomment it. Now our Snippets are loaded into the Category Vehicle
 
 Create a file at /www/doodles/\_build/data/properties/properties.doodles.php. Put this in it:
 
-``` php 
+``` php
 <?php
 $properties = array(
     array(
@@ -359,7 +346,7 @@ These are PHP representations of the default Properties for our Snippet. Let's l
 
 Okay, so we've got our properties. But as you can see, we've referenced a 'doodles:properties' Lexicon Topic. Let's go ahead and create that, in the file /www/doodles/core/components/doodles/lexicon/en/properties.inc.php:
 
-``` php 
+``` php
 <?php
 $_lang['prop_doodles.ascending'] = 'Ascending';
 $_lang['prop_doodles.descending'] = 'Descending';
@@ -378,13 +365,13 @@ So we want to add /www/doodles/core/components/doodles/ and /www/doodles/assets/
 
 So, in build.transport.php, right after this, where we add the Category Vehicle at line 67:
 
-``` php 
+``` php
 $vehicle = $builder->createVehicle($category,$attr);
 ```
 
 add this:
 
-``` php 
+``` php
 $modx->log(modX::LOG_LEVEL_INFO,'Adding file resolvers to category...');
 $vehicle->resolve('file',array(
     'source' => $sources['source_assets'],
@@ -410,7 +397,7 @@ If you run the build script now, it will package in your doodles/core/ and doodl
 
 Now that we've got most of our Extra nice and packaged, let's add in the Menu and Action that make up our Custom Manager Page (CMP). Add this code below the putVehicle line at line 80 for our Category:
 
-``` php 
+``` php
 $modx->log(modX::LOG_LEVEL_INFO,'Packaging in menu...');
 $menu = include $sources['data'].'transport.menu.php';
 if (empty($menu)) $modx->log(modX::LOG_LEVEL_ERROR,'Could not package in menu.');
@@ -439,7 +426,7 @@ Very similar to our Category Vehicle creation code. We've also got a related obj
 
 As you probably guessed, we need to add a transport.menu.php file. Add one at /www/doodles/\_build/data/transport.menu.php:
 
-``` php 
+``` php
 <?php
 $action= $modx->newObject('modAction');
 $action->fromArray(array(
@@ -476,7 +463,7 @@ So now our Menu and Action are all nicely packaged in.
 
 When someone installs our system, however, they're going to have 1 big problem - the database table modx\_doodles isn't going to exist! Let's write a PHP resolver to create it on install. A PHP Resolver is a PHP script that runs after the Vehicle it's attached to has been installed. We'll attach this resolver to our Menu vehicle. Right below our $builder->createVehicle call for the Menu, and before you run putVehicle for that vehicle, add this:
 
-``` php 
+``` php
 $modx->log(modX::LOG_LEVEL_INFO,'Adding in PHP resolvers...');
 $vehicle->resolve('php',array(
     'source' => $sources['resolvers'] . 'resolve.tables.php',
@@ -485,7 +472,7 @@ $vehicle->resolve('php',array(
 
 All that's passed into this PHP resolver is the 'source' field, which points to the PHP script. Let's create a file at /www/doodles/\_build/resolvers/resolve.tables.php, and put this inside:
 
-``` php 
+``` php
 <?php
 if ($object->xpdo) {
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
@@ -520,7 +507,7 @@ Let's get fancy. When installing packages in MODX, often you'll see a dialog wit
 
 Create a file in /www/doodles/core/components/doodles/docs/changelog.txt:
 
-``` php 
+``` php
 Changelog file for Doodles component.
 
 Doodles 1.0
@@ -536,7 +523,7 @@ Then create a license file (we'll let you put the content in) at /www/doodles/co
 
 Finally, create a readme.txt in the docs/ directory:
 
-``` php 
+``` php
 --------------------
 Extra: Doodles
 --------------------
@@ -547,7 +534,7 @@ A simple demo extra for creating robust 3rd-Party Components in MODx Revolution.
 
 Now that we've got our docs files, let's go to the end of our build.transport.php script, right before the $builder->pack() part, and add these lines:
 
-``` php 
+``` php
 $modx->log(modX::LOG_LEVEL_INFO,'Adding package attributes and setup options...');
 $builder->setPackageAttributes(array(
     'license' => file_get_contents($sources['docs'] . 'license.txt'),
@@ -563,7 +550,7 @@ So as you can see here, we have a setPackageAttributes() method, that allows som
 
 The new one is the 'setup-options' array. First off, it's an array with a key of 'source' (like a resolver!), that points to a path of a PHP file (also like a resolver!). Let's create this PHP file, at /www/doodles/\_build/setup.options.php:
 
-``` php 
+``` php
 <?php
 $output = '';
 switch ($options[xPDOTransport::PACKAGE_ACTION]) {
@@ -582,11 +569,11 @@ So, this looks familiar to a resolver, eh? That's because this little bit of cod
 
 Remember that $options array in our PHP resolver? If we were to put any form elements in this output, they'd be found in that array with the same key. (An input with name of 'test' would be in $options\['test'\]). That means you could make a resolver that would process the form fields you put in the Setup Options script.
 
-That means that you could have a lot of neat little fields that do pre-installation options. That's a bit beyond the scope of this tutorial, but now that you know the basics, you can probably figure it out from there. (Also, plenty of existing Extras, such as [Quip](/extras/revo/quip "Quip") do this, and you can [view their code](https://github.com/splittingred/Quip) to see how.
+That means that you could have a lot of neat little fields that do pre-installation options. That's a bit beyond the scope of this tutorial, but now that you know the basics, you can probably figure it out from there. (Also, plenty of existing Extras, such as [Quip](/extras/quip "Quip") do this, and you can [view their code](https://github.com/splittingred/Quip) to see how.
 
 ## Summary
 
-Now you can run your build.transport.php file, and you'll get a nice little doodles-1.0-beta4.zip file in your MODX install's core/packages/ directory. You can now either install that by uploading it to a MODX install's core/packages/ directory (but not the same one you just developed in!), or post it to [modx.com/extras/](http://modx.com/extras/) to be included in the official MODX Provider that hooks into [Package Management](developing-in-modx/advanced-development/package-management "Package Management"). Pretty neat?
+Now you can run your build.transport.php file, and you'll get a nice little doodles-1.0-beta4.zip file in your MODX install's core/packages/ directory. You can now either install that by uploading it to a MODX install's core/packages/ directory (but not the same one you just developed in!), or post it to [modx.com/extras/](http://modx.com/extras/) to be included in the official MODX Provider that hooks into [Package Management](extending-modx/transport-packages "Package Management"). Pretty neat?
 
 Let's recap. Over the 3 parts of this tutorial, we:
 
@@ -604,17 +591,13 @@ The Doodles Extra in this tutorial can be found on GitHub, here: <https://github
 
 This tutorial is part of a Series:
 
-- [Part I: Getting Started and Creating the Doodles Snippet](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
-- [Part II: Creating our Custom Manager Page](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II")
+- [Part I: Getting Started and Creating the Doodles Snippet](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution")
+- [Part II: Creating our Custom Manager Page](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II")
 - Part III: Packaging Our Extra
-
-
-
-
 
 the transport.menu.php modAction controller value should be just "index" and not have the preceding "controllers/" as follows when using the new abstract classes:
 
-``` php 
+``` php
 $action= $modx->newObject('modAction');
 $action->fromArray(array(
     'id' => 1,
@@ -627,13 +610,15 @@ $action->fromArray(array(
 ),'',true,true);
 ```
 
-$action= $modx->newObject('modAction'); 
-$action->fromArray(array( 
- 'id' => 1, 
- 'namespace' => 'doodles', 
- 'parent' => 0, 
- 'controller' => 'controllers/index', 
- 'haslayout' => true, 
- 'lang\_topics' => 'doodles:default', 
- 'assets' => '', 
+``` php
+$action= $modx->newObject('modAction');
+$action->fromArray(array(
+ 'id' => 1,
+ 'namespace' => 'doodles',
+ 'parent' => 0,
+ 'controller' => 'controllers/index',
+ 'haslayout' => true,
+ 'lang\_topics' => 'doodles:default',
+ 'assets' => '',
 ),'',true,true);
+```

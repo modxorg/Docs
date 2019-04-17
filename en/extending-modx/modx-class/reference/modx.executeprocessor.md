@@ -18,7 +18,7 @@ Executes a specific processor. The only argument is an array, which can take the
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::runProcessor()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runProcessor())
 
-``` php 
+``` php
 mixed executeProcessor (array $options)
 ```
 
@@ -26,7 +26,7 @@ mixed executeProcessor (array $options)
 
 Execute the Context getList processor:
 
-``` php 
+``` php
 $modx->executeProcessor(array(
     'location' => 'context',
     'action' => 'getList',
@@ -35,4 +35,4 @@ $modx->executeProcessor(array(
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")

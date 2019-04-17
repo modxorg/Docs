@@ -17,6 +17,7 @@ An example Rule of setting the default Category for a [Snippet](display/revoluti
 ![](download/attachments/18678093/fc-fieldDefault1.png?version=1&modificationDate=1280152835000)
 
 ## See Also
+
 ``` php
  [[getResources@section? &parents=`122` &context=`revolution`]]
  ```

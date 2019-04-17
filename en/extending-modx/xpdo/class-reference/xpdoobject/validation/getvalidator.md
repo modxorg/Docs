@@ -12,6 +12,6 @@ Get the xPDOValidator class configured for this instance.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getValidator>
 
-``` php 
+``` php
 string|boolean getValidator ()
 ```

@@ -226,20 +226,19 @@ Save the MainTpl chunk and then open up the BaseTemplate again.
 
 Delete everything in the "Template Code (HTML)" area and then paste in the following code:
 
-``` php 
+``` php
 [[!mmlCache?
 &element=`pdoResources`
-&parents=`0` 
-&resources=`[[*id]]` 
-&tpl=`MainTpl` 
-&includeTVs=`[[mmlGetTemplateTVs]]` 
-&prepareTVs=`1` 
+&parents=`0`
+&resources=`[[*id]]`
+&tpl=`MainTpl`
+&includeTVs=`[[mmlGetTemplateTVs]]`
+&prepareTVs=`1`
 &processTVs=`1`
-&tvPrefix=`` 
+&tvPrefix=``
 &loadModels=`migxmultilang`
 &prepareSnippet = `mmlTranslatePdoToolsRow`
 ]]
-
 ```
 
 If you named your chunk anything other than "MainTpl", make sure you update the &tpl argument.
@@ -256,7 +255,7 @@ migxMultiLang comes with a snippet called `mml_LangLinks` and we are going to ad
 
 Here is a very simple example of a possible MainTpl chunk:
 
-``` html 
+``` html
 <!doctype html>
 <html lang="en">
 <head>
@@ -268,7 +267,6 @@ Here is a very simple example of a possible MainTpl chunk:
 [[+mml_pagetitle]]
 [[!mml_LangLinks]]
 </body>
-
 ```
 
 Besides the normal MODX tags in the head section, you can see I've added `[[+mml_pagetitle]]` and `[[!mml_LangLinks]]`.

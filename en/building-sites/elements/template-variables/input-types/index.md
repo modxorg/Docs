@@ -4,44 +4,11 @@ _old_id: "489"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-input-types"
 ---
 
-- [Auto-Tag](#TemplateVariableInputTypes-AutoTag)
-- [Check Box](#TemplateVariableInputTypes-CheckBox)
-  - [Simple Usage](#TemplateVariableInputTypes-SimpleUsage)
-  - [Advanced Usage](#TemplateVariableInputTypes-AdvancedUsage)
-  - [More Advanced Usage](#TemplateVariableInputTypes-MoreAdvancedUsage)
-- [Date](#TemplateVariableInputTypes-Date)
-- [DropDown List Menu](#TemplateVariableInputTypes-DropDownListMenu)
-- [Email](#TemplateVariableInputTypes-Email)
-- [File](#TemplateVariableInputTypes-File)
-- [Hidden](#TemplateVariableInputTypes-Hidden)
-- [HTML Area](#TemplateVariableInputTypes-HTMLArea)
-- [Image](#TemplateVariableInputTypes-Image)
-- [Listbox (Single-Select)](#TemplateVariableInputTypes-Listbox%28SingleSelect%29)
-- [Listbox (Multi-Select)](#TemplateVariableInputTypes-Listbox%28MultiSelect%29)
-  - [Simple Usage](#TemplateVariableInputTypes-SimpleUsage)
-  - [Separate Options/Values](#TemplateVariableInputTypes-SeparateOptions%2FValues)
-- [Number](#TemplateVariableInputTypes-Number)
-- [Radio Options](#TemplateVariableInputTypes-RadioOptions)
-  - [Simple Usage](#TemplateVariableInputTypes-SimpleUsage)
-  - [Advanced Usage](#TemplateVariableInputTypes-AdvancedUsage)
-      - [Sidebar Example Evolution\*](#TemplateVariableInputTypes-SidebarExampleEvolution%5C)
-      - [Sidebar Example Revolution:](#TemplateVariableInputTypes-SidebarExampleRevolution%3A)
-- [Resource List](#TemplateVariableInputTypes-ResourceList)
-- [Rich Text](#TemplateVariableInputTypes-RichText)
-- [Tag](#TemplateVariableInputTypes-Tag)
-- [Text](#TemplateVariableInputTypes-Text)
-- [Textarea](#TemplateVariableInputTypes-Textarea)
-- [Textarea (Mini)](#TemplateVariableInputTypes-Textarea%28Mini%29)
-- [Textbox](#TemplateVariableInputTypes-Textbox)
-- [URL](#TemplateVariableInputTypes-URL)
+There are a number of built-in template variable types.
 
+ Some input types are deprecated depending on your MODX version.
 
-
- There are a number of built-in template variable types.
-
- Some input types are deprecated depending on your MODX version. 
-
- It's best to enter multiple Input Option values on a single line with no carriage returns. 
+ It's best to enter multiple Input Option values on a single line with no carriage returns.
 
 ## Auto-Tag (autotag)
 
@@ -50,7 +17,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
  To make auto-tag tvs useful in the front end, you will need to set the output type to "Delimiter" and specify a delimiter of your choice, and/or use an output filter to present it in the way you prefer. ![](/download/attachments/33227172/autotag.png?version=1&modificationDate=1292891676000)
  To output the tags in such a way that you each tag links to a certain resource and passes the tag in a GET parameter, you can use an output filter (snippet) as follows:
 
- ``` php 
+ ``` php
   if ($input == '') { return 'Error'; } // In case the TV is empty
   $tags = explode(', ',$input); // Based on a delimiter of ", " this will split each one up in an array
   foreach ($tags as $key => $value) { // Loop through the tags
@@ -60,9 +27,9 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
 ```
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"true",
    "maxLength":"",
@@ -78,12 +45,12 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  The basic usage of this is to simply define the field as a checkbox. You can control whether or not the box is checked by default or not by manipulating the "Input Option Values" and "Default Value" fields.
 
- **Checked by Default**
+#### Checked by Default
 
 - Input Option Values: My Option==1
 - Default Value: 1
 
- **Unchecked by Default:**
+#### Unchecked by Default:
 
 - Input Option Values: My Option==1
 - Default Value: 0
@@ -94,15 +61,15 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
  You can distinguish between separate keys and values using double-equals and double-pipes:
 
- ``` php 
+ ``` php
 option1==value1||option2==value2
 ```
 
 ### More Advanced Usage
 
- The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the option1==value1||option2==value2 format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can use a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") to select items from your database, e.g. **Input option values:**
+ The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the option1==value1||option2==value2 format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") to select items from your database, e.g. **Input option values:**
 
- ``` sql 
+ ``` sql
 @SELECT pagetitle, id FROM modx_site_content WHERE parent=35
 ```
 
@@ -129,9 +96,9 @@ option1==value1||option2==value2
 
  You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"true",
    "disabledDates":"",
@@ -150,9 +117,9 @@ option1==value1||option2==value2
 
  NOTE: this TV Input type has been deprecated since Revo 2.1.x Please see [Listbox](#TemplateVariableInputTypes-Listbox(MultiSelect)) input types below.
 
- Set input option values in the option1==value1||option2==value2||option3==value3 format. Make sure to choose an output type of delimited (or other of your liking) to be able to present this to the front-end in a certain manner. You can also use a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") binding to select 2 columns, e.g.
+ Set input option values in the option1==value1||option2==value2||option3==value3 format. Make sure to choose an output type of delimited (or other of your liking) to be able to present this to the front-end in a certain manner. You can also use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding to select 2 columns, e.g.
 
- ``` sql 
+ ``` sql
 @SELECT name, value FROM your_table
 ```
 
@@ -160,9 +127,9 @@ option1==value1||option2==value2
 
  ![](/download/attachments/33227172/dropdown.jpg?version=1&modificationDate=1295840412000)
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"true",
    "listWidth":"",
@@ -176,9 +143,9 @@ option1==value1||option2==value2
 
  ![](/download/attachments/33227172/email.jpg?version=1&modificationDate=1295840529000)
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"true",
    "maxLength":"",
@@ -192,7 +159,7 @@ option1==value1||option2==value2
 
  Take extra note of relative file paths when using friendly url paths.
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
 ## Hidden
 
@@ -210,13 +177,13 @@ option1==value1||option2==value2
 
  Creates an image input form to browse the server for a file. Files can be uploaded through the MODx File Manager then.
 
- In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](administering-your-site/media-sources "Media Sources"). 
+ In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](building-sites/media-sources "Media Sources").
 
  ![](/download/attachments/33227172/tv-image-input-options.png?version=1&modificationDate=1308558243000)
 
  1) You can declare a default value file by specifying the path to the image.
 
- 2) If you want to limit the images used for this TV to a specific folder, you can specify (since Revolution 2.1) a base-path and base-url. You can also set relative or absolute paths. Take extra note of relative file paths when using friendly url paths. 
+ 2) If you want to limit the images used for this TV to a specific folder, you can specify (since Revolution 2.1) a base-path and base-url. You can also set relative or absolute paths. Take extra note of relative file paths when using friendly url paths.
  For correct display of images in frontend and backend be sure to have correct settings in base\_url and base\_path settings!
 
  3) You can prepend URL if filepath doesn't begin with a trailing slash.
@@ -227,17 +194,17 @@ option1==value1||option2==value2
 
 ## [Image+](https://docs.modx.com/extras/revo/image) (imageplus)
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
-``` json 
+``` json
 {
-"targetWidth":"",   
-"targetHeight":"",
-"targetRatio":"",   
-"thumbnailWidth":"",   
-"allowAltTag":"true",   
-"allowCaption":"false",   
-"allowCredits":"false"
+   "targetWidth":"",
+   "targetHeight":"",
+   "targetRatio":"",
+   "thumbnailWidth":"",
+   "allowAltTag":"true",
+   "allowCaption":"false",
+   "allowCredits":"false"
 }
 ```
 
@@ -255,7 +222,7 @@ option1==value1||option2==value2
 
  Just like with the Checkbox options, you can simply specify a list of values separated by double-pipes:
 
- ``` php 
+ ``` php
 Man||Bear||Pig
 ```
 
@@ -263,13 +230,13 @@ Man||Bear||Pig
 
  Often it's nice to have a more readable label. You can display something nice and still store a different value using the double-equals and double-pipes format used by checkboxes:
 
- ``` php 
+ ``` php
 Option 1==value1||Option 2==value2
 ```
 
- **All input option names (for use in migx options-json)**
+#### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"true",
    "listWidth":"",
@@ -287,9 +254,9 @@ Option 1==value1||Option 2==value2
 
  Note that trailing zeros are truncated, e.g. 4.50 gets trimmed to 4.5; this may make this input type unsuitable for currency fields.
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"true",
    "allowDecimals":"Yes",
@@ -307,7 +274,7 @@ Option 1==value1||Option 2==value2
 
  The basic usage of this is to provide a list of radio option. You can control the default option by manipulating the "Input Option Values" and "Default Value" fields.
 
- **Selected by Default**
+#### Selected by Default
 
 - Input Option Values: My Option==1
 - Default Value: 1
@@ -332,9 +299,9 @@ Option 1==value1||Option 2==value2
 
  In the above examples, you can output a chunk or another Template Variable without the aid of an extra.
 
- **All input option names (for use in migx options-json)**
+#### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"true",
    "columns":"1"
@@ -347,18 +314,18 @@ Option 1==value1||Option 2==value2
 
  ![](/download/attachments/33227172/Resource_List.jpg?version=1&modificationDate=1297999877000)
 
- This is similar to using a [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding") binding in a DropDown list menu, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
+ This is similar to using a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding in a DropDown list menu, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
 
  This input type also accepts WHERE conditions to filter by: ![](/download/attachments/33227172/Screen+Shot+2012-05-18+at+9.04.54+PM.png?version=1&modificationDate=1337400324000)
  Another example:
 
- ``` php 
+ ``` php
 [{"pagetitle:!=":"Home"}]
 ```
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"1",
    "showNone":"1",
@@ -377,11 +344,11 @@ Option 1==value1||Option 2==value2
 
 ## Tag
 
- Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type) for formatting.
+ Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](building-sites/elements/template-variables/output-types/html) for formatting.
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"1"
 }
@@ -397,9 +364,9 @@ Option 1==value1||Option 2==value2
 - Max length: a number representing the number of characters that can be filled in in this field.
 - Min Length: a number representing the minimum number of characters needed to be filled in. May want to use this with the allow blank option to "no". ![](/download/attachments/33227172/tvinput.png?version=1&modificationDate=1308911612000)
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"true",
    "maxLength":"",
@@ -413,9 +380,9 @@ Option 1==value1||Option 2==value2
 
  This is a standard _textarea_ field, with a height of 15 rows. It's the same size as the HTML Area fields, but without the WYSIWYG editor.
 
- **All input option names (for use in migx options-json)**
+### All input option names (for use in migx options-json)
 
- ``` json 
+ ``` json
 {
    "allowBlank":"true"
 }

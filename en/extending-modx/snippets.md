@@ -4,62 +4,45 @@ _old_id: "292"
 _old_uri: "2.x/developing-in-modx/basic-development/snippets"
 ---
 
-- [Overview](#overview)
-  - [What is a Snippet?](#what-is-a-snippet)
-  - [How Do They Work?](#how-do-they-work)
-  - [Simple Example](#simple-example)
-  - [Passing Values Into a Snippet](#passing-values-into-a-snippet)
-  - [Reading Values in your Snippets](#reading-values-in-your-snippets)
-- [Database Interaction in Snippets](#database-interaction-in-snippets)
-  - [Why an ORM?](#why-an-orm)
-  - [Example DB Code](#example-db-code)
-  - [Further Database Reading](#further-database-reading)
-- [Recommended Methods and Tips](#recommended-methods-and-tips)
-  - [Write your Snippets outside of the MODX Manager.](#write-your-snippets-outside-of-the-modx-manager)
-  - [Don't try to mix PHP and HTML in a Snippet.](#dont-try-to-mix-php-and-html-in-a-snippet)
-  - [Don't Work on Live Snippets](#dont-work-on-live-snippets)
-  - [Use Default Properties](#use-default-properties)
-- [See Also](#see-also)
-
-## Overview 
+## Overview
 
 Snippets are the method by which MODX allows you to run dynamic PHP code in any of your pages. They are the main development vehicle for most developers.
 
-### What is a Snippet? 
+### What is a Snippet?
 
 According to one definition, a "snippet" is "a short reusable piece of computer source code". Some people have a hard time distinguishing this from a "chunk", so a helpful mnemonic might lie in the p's... as in "PHP", e.g. sni-"P(h)P"-et.
 
-### How Do They Work? 
+### How Do They Work?
 
 Most Snippets are _cached_, meaning they're stored as a temporary, dynamic function in the cache. If they're flagged as uncached, then they are not parsed until the parser has done all of the other cached content.
 
 Then, once they're up to be cached, Snippets are then parsed by the MODX Parser. They have access to the $modx object.
 
-### Simple Example 
+### Simple Example
 
 Here's a basic example of what a Snippet's code might look like:
 
-``` php 
+``` php
 <?php
 return 'Hello, World!';
 ?>
 ```
 
-If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet "modX.runSnippet") API method.
+If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](building-sites/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](extending-modx/modx-class/reference/modx.runsnippet "modX.runSnippet") API method.
 
-Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output. 
+Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output.
 
-### Passing Values Into a Snippet 
+### Passing Values Into a Snippet
 
 Values are passed to your Snippet using a modifed CGI web-form type notation that follows the Snippet's name. If your Snippet were named "mySnippet", you might call it using something like this:
 
-``` php 
+``` php
 [[!mySnippet? &input=`Hello World`]]
 ```
 
 And the code for your Snippet might look something like this:
 
-``` php 
+``` php
 <?php
 return 'My input was: ' . $input;
 ?>
@@ -67,7 +50,7 @@ return 'My input was: ' . $input;
 
 Notice that the variable names in the calling bit need to match the variable names in the Snippet EXACTLY (case matters... i.e. 'input' not 'INPUT' or 'Input'). Secondly, don't forget the '&' in front of the would-be variable names. And last but most certainly not least, take note that those are **backticks**, not single quotes!
 
-### Reading Values in your Snippets 
+### Reading Values in your Snippets
 
 In general, you can read your values by referencing the arguments that were passed: **&someParameter** in the call translates to **$someParameter** in the PHP code.
 
@@ -75,24 +58,24 @@ You can also read _all_ parameters by using the built-in **$scriptProperties** a
 
 For example, if you call your Snippet using a call like this:
 
-``` php 
+``` php
 [[!mySnippet? &x=`x-ray` &y=`yellow`]]
 ```
 
 Then the **$scriptProperties** array will contain this:
 
-``` php 
+``` php
 Array(
  'x' => 'x-ray',
  'y' => 'yellow'
 )
 ```
 
-## Database Interaction in Snippets 
+## Database Interaction in Snippets
 
-Accessing the database layer in MODx relies on an Object Relational Model (ORM) called [xPDO](/display/xPDO20/Home "Home") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODx objects and methods such as [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
+Accessing the database layer in MODx relies on an Object Relational Model (ORM) called [xPDO](extending-modx/xpdo "Home") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODx objects and methods such as [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
 
-### Why an ORM? 
+### Why an ORM?
 
 You might be asking, why use an ORM instead of just straight SQL? Well, a few reasons:
 
@@ -102,11 +85,11 @@ You might be asking, why use an ORM instead of just straight SQL? Well, a few re
 
 There are more reasons, but that's for brevity. Let's look at a few examples:
 
-### Example DB Code 
+### Example DB Code
 
 Let's get a chunk named 'LineItem', and change the placeholders in it (done with \[\[+placeholderName\]\] syntax) to some custom values:
 
-``` php 
+``` php
 $chunk = $modx->getObject('modChunk',array(
    'name' => 'LineItem',
 ));
@@ -117,11 +100,11 @@ return $chunk->process(array(
 ));
 ```
 
-That code would get a chunk with the name of 'LineItem', and return it processed with the placeholders set. The $chunk variable there is actually an [xPDOObject](xpdo/class-reference/xpdoobject "xPDOObject"), which is an object representation of the Resource.
+That code would get a chunk with the name of 'LineItem', and return it processed with the placeholders set. The $chunk variable there is actually an [xPDOObject](extending-modx/xpdo/class-reference/xpdoobject "xPDOObject"), which is an object representation of the Resource.
 
 What about more complex queries? Like, say, getting the first 10 Resources with a parent of 23, 24 or 25. And let's make it so they aren't hidden from menus or deleted, are published, and sort them by menuindex. That's when we use the powerful $modx->newQuery() method:
 
-``` php 
+``` php
 $c = $modx->newQuery('modResource');
 $c->where(array(
    'parent:IN' => array(23,24,25),
@@ -138,23 +121,23 @@ Note how we first create an xPDOQuery object ($c) using $modx->newQuery(). We pa
 
 And finally, we called getCollection which - unlike getObject - returns a collection, or array, of xPDOObjects. We could then iterate over those using foreach and do whatever we want with them.
 
-### Further Database Reading 
+### Further Database Reading
 
 For further reading on xPDO, read up on these:
 
 - xPDO at the [xPDO](/display/xPDO20/Home "Home") space
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects") in xPDO
-- The [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery") Object
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects") in xPDO
+- The [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") Object
 
-## Recommended Methods and Tips 
+## Recommended Methods and Tips
 
-### Write your Snippets outside of the MODX Manager. 
+### Write your Snippets outside of the MODX Manager.
 
 As of 2.2.0, you can simply add a "static" Snippet: just reference the static file.
 
 Pre 2.2.0, it's still pretty easy to do - just create an 'include' snippet, but make its content be this:
 
-``` php 
+``` php
 if (file_exists($file)) {
    $o = include $file;
 } else { $o = 'File not found at: '.$file; }
@@ -163,7 +146,7 @@ return $o;
 
 You can use the include snippet on a page like such:
 
-``` php 
+``` php
 [[!include? &file=`/absolute/path/to/my/snippet.php`]]
 ```
 
@@ -173,11 +156,11 @@ Then you can test them to make sure they work (e.g. on the bash command line, yo
 
 Remember that a snippet in a file on your web site can be executed by anyone with a web browser, so don't leave them there on a live site unless you've placed the snippet code outside the web root so the file can't be accessed via the web. In MODX Revolution, you can put the snippet files under the core directory and move the entire directory outside the web root. You can also put a test in the snippet that makes it exit if it's not running inside MODX, but it's safest just to move the file or paste the code into a snippet in the Manager and delete the file.
 
-### Don't try to mix PHP and HTML in a Snippet. 
+### Don't try to mix PHP and HTML in a Snippet.
 
-Snippets execute PHP code. They should always begin with a **<?php** and end with a **?>** _You cannot mix PHP and HTML in a Snippet!_ For example, the following code won't work:
+Snippets execute PHP code. They should always begin with a **`<?php** and end with a **?>`** _You cannot mix PHP and HTML in a Snippet!_ For example, the following code won't work:
 
-``` php 
+``` php
 <p>This is a horrible mixture of HTML and PHP</p>
 <?php
 return "<p>and PHP!  Don't try it!  It's bad architecture and it won't work!!</p>";
@@ -186,13 +169,13 @@ return "<p>and PHP!  Don't try it!  It's bad architecture and it won't work!!</p
 
 You'll find that MODX will append PHP tags to beginning and end of the snippet, creating an invalid syntax, e.g.:
 
-``` php 
+``` php
 <?php <?php //something here ?> ?>
 ```
 
-If you need to do something like this, **use a Chunk** - separate the PHP into a Snippet, load its output into a placeholder with the [modx API](developing-in-modx/other-development-resources/class-reference/modx "modX") placeholder functions or chunk processing, and include the Snippet's placeholders in the Chunk:
+If you need to do something like this, **use a Chunk** - separate the PHP into a Snippet, load its output into a placeholder with the [modx API](extending-modx/core-model/modx "modX") placeholder functions or chunk processing, and include the Snippet's placeholders in the Chunk:
 
-``` php 
+``` php
 $output = $modx->getChunk('myChunk',array(
   'placeholderOne' => 'test',
   'name' => 'Harry',
@@ -201,21 +184,21 @@ $output = $modx->getChunk('myChunk',array(
 return $output;
 ```
 
-### Don't Work on Live Snippets 
+### Don't Work on Live Snippets
 
 If you're writing new versions of Snippets, _duplicate_ the old version! That way you can go back to the old version of the code if something doesn't work correctly! MODX doesn't inherently do versioning control, so you have to backup code yourself.
 
-### Use Default Properties 
+### Use Default Properties
 
-Consider adding default properties for your snippet into the snippet's Properties tab, so that the user can add custom [Property Sets](making-sites-with-modx/customizing-content/properties-and-property-sets "Properties and Property Sets") to override them.
+Consider adding default properties for your snippet into the snippet's Properties tab, so that the user can add custom [Property Sets](building-sites/properties-and-property-sets "Properties and Property Sets") to override them.
 
-## See Also 
+## See Also
 
-1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
-2. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)
-3. [How to Write a Good Snippet](developing-in-modx/basic-development/snippets/how-to-write-a-good-snippet)
-4. [How to Write a Good Chunk](developing-in-modx/basic-development/snippets/how-to-write-a-good-chunk)
+1. [Templating Your Snippets](extending-modx/snippets/templating)
+2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
+3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
+4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)
 
-- [modX.runSnippet](developing-in-modx/other-development-resources/class-reference/modx/modx.runsnippet "modX.runSnippet")
-- [modX.setPlaceholder](developing-in-modx/other-development-resources/class-reference/modx/modx.setplaceholder "modX.setPlaceholder")
-- [modX.regClientCSS](developing-in-modx/other-development-resources/class-reference/modx/modx.regclientcss "modX.regClientCSS")
+- [modX.runSnippet](extending-modx/modx-class/reference/modx.runsnippet "modX.runSnippet")
+- [modX.setPlaceholder](extending-modx/modx-class/reference/modx.setplaceholder "modX.setPlaceholder")
+- [modX.regClientCSS](extending-modx/modx-class/reference/modx.regclientcss "modX.regClientCSS")

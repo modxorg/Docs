@@ -4,24 +4,17 @@ _old_id: "306"
 _old_uri: "2.x/developing-in-modx/basic-development/snippets/templating-your-snippets"
 ---
 
-## Templating Snippets 
+## Templating Snippets
 
 One of the best practices in Snippet design is to make sure that you never write HTML directly in the Snippet, but template out the HTML into Chunks. This tutorial shows you how to do that in a Snippet.
 
-- [Templating Snippets](#templating-snippets)
-  - [Our Initial Snippet](#our-initial-snippet)
-  - [Templating the Snippet](#templating-the-snippet)
-  - [Adding A Row Class](#adding-a-row-class)
-  - [Passing a Custom ID](#passing-a-custom-id)
-- [See Also](#see-also)
-
-### Our Initial Snippet 
+### Our Initial Snippet
 
 Let's take a case scenario; say you want to iterate across the published, non-deleted Resources that are children of the Resource with ID 390, sorted by menuindex, and then output them as LI tags with the pagetitle and a link to click them.
 
 Go ahead and create a snippet called 'ResourceLister', and put this inside:
 
-``` php 
+``` php
 /* first, build the query */
 $c = $modx->newQuery('modResource');
 /* we only want published and undeleted resources */
@@ -49,17 +42,17 @@ return $output;
 
 This does what we want, but puts the HTML inline. We don't want that. It doesn't let the user control the markup, or change it if they want to. We want more flexibility.
 
-### Templating the Snippet 
+### Templating the Snippet
 
 First off, let's create a chunk that we'll use for each item in the result set. Call it "ResourceItem", and make this its content:
 
-``` php 
+``` php
 <li><a href="[[~[[+id]]]]">[[+pagetitle]]</a></li>
 ```
 
 Basically, we make an LI tag, and put some placeholders were our content was. We have available any field in the Resource, and here we're just using the ID and pagetitle fields. The \[\[~ tells MODx to make a link from the ID passed in the \[\[+id\]\] property. Now let's add a default property to the snippet, called 'tpl', to the top of our snippet code:
 
-``` php 
+``` php
 $tpl = $modx->getOption('tpl',$scriptProperties,'ResourceItem');
 ```
 
@@ -67,7 +60,7 @@ This gets us the &tpl= property from the Snippet call, since $scriptProperties j
 
 And then, change the foreach loop in the Snippet to this:
 
-``` php 
+``` php
 foreach ($resources as $resource) {
    $resourceArray = $resource->toArray();
    $output .= $modx->getChunk($tpl,$resourceArray);
@@ -78,7 +71,7 @@ The code first turns the modResource object into an array of field=name pairs (i
 
 An alternative and slightly faster (especially helpful when looping through a big xPDO result) but also a bit longer way to do the same would be
 
-``` php 
+``` php
 // first get the template chunk in a variable
 $tpl = $this->modx->getParser()->getElement('modChunk', 'chunkName');
 $tpl->setCacheable(false);
@@ -93,29 +86,29 @@ foreach ($resources as $resource) {
 
 Now the user can call the snippet this way to override the chunk for each Resource with this call:
 
-``` php 
+``` php
 [[!ResourceLister? &tpl=`MyOwnChunk`]]
 ```
 
 Meaning they can template their results however they want - using LIs, or table rows, or whatever! You've now created a flexible, powerful snippet. The available placeholders depend on what array is passed to $modx->getChunk(); or $tpl->process() methods. In this example the available placeholders would be all default fields (no TVs!) of a resource like for example \[\[+pagetitle\]\], \[\[+id\]\] or \[\[+content\]\].
 
-### Adding A Row Class 
+### Adding A Row Class
 
 What if we want the user to be able to specify a CSS class for each LI row, but not have to make their own custom chunk? Simple, we just add a default property 'rowCls' to our snippet code at the top, below our first getOption call:
 
-``` php 
+``` php
 $rowCls = $modx->getOption('rowCls',$scriptProperties,'resource-item');
 ```
 
 This tells MODx to default the &rowCls property for the snippet to 'resource-item'. Let's go edit our ResourceItem chunk:
 
-``` php 
+``` php
 <li class="[[+rowCls]]"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></li>
 ```
 
 And finally, change our foreach loop to this:
 
-``` php 
+``` php
 foreach ($resources as $resource) {
    $resourceArray = $resource->toArray();
    $resourceArray['rowCls'] = $rowCls;
@@ -125,17 +118,17 @@ foreach ($resources as $resource) {
 
 Note how we're explicitly setting the 'rowCls' variable into our $resourceArray property array. We do this because we've already gotten the value of rowCls earlier in the snippet (with the getOption call), and we know that it's not going to vary per row.
 
-### Passing a Custom ID 
+### Passing a Custom ID
 
 What if we want the user to be able to pass in what parent to grab resources from? Again, we just add a default property 'id' to our snippet code at the top, below our getOption calls:
 
-``` php 
+``` php
 $id = (int)$modx->getOption('id',$scriptProperties,390);
 ```
 
 Basically, allow the user to override the parent ID for the Snippet - to say Resource 123, with an &id=`123` property - in their snippet call. But we want it to default to 390. And then we'll change the getChildIds line to this:
 
-``` php 
+``` php
 $children = $modx->getChildIds($id);
 ```
 
@@ -143,7 +136,7 @@ Obviously, you could add more options to this snippet, such as firstRowCls (for 
 
 For reference, our final code looks like this:
 
-``` php 
+``` php
 $tpl = $modx->getOption('tpl',$scriptProperties,'ResourceItem');
 $id = (int)$modx->getOption('id',$scriptProperties,390);
 $rowCls = $modx->getOption('rowCls',$scriptProperties,'resource-item');
@@ -169,9 +162,9 @@ foreach ($resources as $resource) {
 return $output;
 ```
 
-## See Also 
+## See Also
 
-1. [Templating Your Snippets](developing-in-modx/basic-development/snippets/templating-your-snippets)
-2. [Adding CSS and JS to Your Pages Through Snippets](developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets)
-3. [How to Write a Good Snippet](developing-in-modx/basic-development/snippets/how-to-write-a-good-snippet)
-4. [How to Write a Good Chunk](developing-in-modx/basic-development/snippets/how-to-write-a-good-chunk)
+1. [Templating Your Snippets](extending-modx/snippets/templating)
+2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
+3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
+4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)

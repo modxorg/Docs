@@ -8,13 +8,13 @@ _old_uri: "contribute/using-git-and-github/xpdo-github-contributors-guide"
 
 xPDO is an object-oriented framework on which MODX Revolution is built. It is maintained in a separate git repository from revolution and contributing to the xPDO core of MODX requires some additional work.
 
-xPDO contributors should follow the same basic process and branching strategy as those for MODX itself. See the [MODx GitHub Contributor's Guide](/display/community/MODx+GitHub+Contributor%27s+Guide "MODx GitHub Contributor's Guide") for details on the branching strategies for features, releases, hotfixes, and more. This guide will focus on the additional steps required to integrate your xPDO changes into MODX for testing before submitting Pull Requests on the xPDO repository.
+xPDO contributors should follow the same basic process and branching strategy as those for MODX itself. See the [MODx GitHub Contributor's Guide](contribute/code/contributors-guide "MODx GitHub Contributor's Guide") for details on the branching strategies for features, releases, hotfixes, and more. This guide will focus on the additional steps required to integrate your xPDO changes into MODX for testing before submitting Pull Requests on the xPDO repository.
 
 ### Forking and Cloning the Complete xPDO Repository
 
 As with MODX, this means contributors must work directly with their private forks on GitHub. Here is the suggested way to prepare your local repository as a developer for contributing back to the complete xPDO project:
 
-``` php 
+``` php
 [repos]$ git clone git@github.com:YourGitUsername/xpdo.git
 [repos]$ cd xpdo
 [xpdo]$ git remote add upstream -f http://github.com/modxcms/xpdo.git
@@ -24,7 +24,7 @@ This setup makes your fork the standard `origin` remote, and adds/fetches the "b
 
 You'll want to go ahead and create local tracking branches for the permanent branches from your fork, a.k.a. `origin`:
 
-``` php 
+``` php
 [xpdo]$ git checkout -b master origin/master
 Switched to a new branch "master"
 [xpdo]$ git checkout -b develop origin/develop
@@ -33,7 +33,7 @@ Switched to a new branch "develop"
 
 To keep your local tracking branches for `develop` and `master` up-to-date from the `upstream` repository:
 
-``` php 
+``` php
 [xpdo]$ git fetch upstream
 [xpdo]$ git checkout develop
 Switched to branch "develop"
@@ -60,7 +60,7 @@ xPDO has two GitHub repositories. The complete repository contains Unit Tests, t
 
 So the next step is to fork and clone this repository as well:
 
-``` php 
+``` php
 [repos]$ git clone git@github.com:YourGitUsername/xpdo-core.git
 [repos]$ cd xpdo-core
 [xpdo-core]$ git remote add upstream -f http://github.com/modxcms/xpdo-core.git
@@ -72,13 +72,13 @@ Whenever you have completed a feature or bugfix in the complete xPDO repository,
 
 To update the xpdo-core repository, we first need to add and fetch a remote for your fork of the complete xpdo repository:
 
-``` php 
+``` php
 [xpdo-core]$ git remote add -f xpdo git@github.com:YourGitUsername/xpdo.git
 ```
 
 Once added, you can fetch changes you commit to your xpdo fork and merge them easily. Make sure your xpdo-core branches are up-to-date from upstream first, e.g. if pushing a feature branch called xpdo/feature-1234 off of the upstream/develop branch:
 
-``` php 
+``` php
 [xpdo-core]$ git fetch upstream
 [xpdo-core]$ git checkout develop
 Switched to branch "develop"
@@ -96,7 +96,7 @@ At this point, your feature branch is in your xpdo-core fork and ready for mergi
 
 Now, to test your changes with MODX Revolution, you need to add and fetch your fork of the xpdo-core repository as a remote to your revolution fork. Once you do that, you can create a branch to merge in and test your xpdo-core feature branch. Change directory to your MODX Revolution git fork and get it up-to-date.
 
-``` php 
+``` php
 [revolution]$ git checkout develop
 Switched to branch "develop"
 [revolution]$ git fetch upstream
@@ -109,7 +109,7 @@ Switched to branch "develop"
 
 If it works, share your branch with the xpdo-core changes integrated with the world to play with:
 
-``` php 
+``` php
 [revolution]$ git push origin xpdo-feature-1234
 ```
 

@@ -15,6 +15,7 @@ An example Rule of changing the introtext's label to "Comments" for the [Users](
 ![](download/attachments/18678092/fc-fieldLabel.png?version=1&modificationDate=1280153069000)
 
 ## See Also
+
 ``` php
- [[getResources@section? &parents=`123` &context=`revolution`]]
- ```
+[[getResources@section? &parents=`123` &context=`revolution`]]
+```

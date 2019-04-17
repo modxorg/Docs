@@ -3,8 +3,7 @@ title: "Установка"
 translation: "getting-started/installation"
 ---
 
-
-Эта страница предназначена только для ** новых установок **. Если вы хотите обновить, см.[Обновление MODx](administering-your-site/upgrading-modx "Upgrading MODx").
+Эта страница предназначена только для **новых установок**. Если вы хотите обновить, см.[Обновление MODx](getting-started/maintenance/upgrading "Upgrading MODx").
 
 Перед началом установки вы должны убедиться, что ваш сервер соответствует [Требованиям к серверу](getting-started/server-requirements "Server Requirements").
 
@@ -22,22 +21,22 @@ translation: "getting-started/installation"
 
 Вы, наверное, заметили, что есть несколько разных типов пакетов на выбор. Некоторые из них помечены как «Расширенные», другие просто старые «modx-2.1.0-xxxx-#.zip». Так что же означают эти ярлыки?
 
-- Традиционный - эти пакеты представляют собой готовые снимки из Git. Вы можете просто распаковать файлы на свой сервер и следовать [Базовая установка](getting-started/installation/basic-installation "Basic Installation") руководства по установке MODX. Большинство пользователей должны выбрать эту версию.
+- Традиционный - эти пакеты представляют собой готовые снимки из Git. Вы можете просто распаковать файлы на свой сервер и следовать [Базовая установка](getting-started/installation/standard "Basic Installation") руководства по установке MODX. Большинство пользователей должны выбрать эту версию.
 
-- Расширенный - Эти пакеты немного меньше половины размера «традиционных» загрузок, поскольку содержимое «ядра» сжато. Программа установки MODX попытается распаковать или «собрать» этот пакет во время установки. Рекомендуется использовать это только в том случае, если вы планируете перемещать каталоги core, manager или connectors, у вас есть доступ по SSH и вы знакомы с тем, как сделать папки доступными для записи. Пожалуйста, следуйте документации [Расширенная установка](getting-started/installation/advanced-installation "Advanced Installation").
+- Расширенный - Эти пакеты немного меньше половины размера «традиционных» загрузок, поскольку содержимое «ядра» сжато. Программа установки MODX попытается распаковать или «собрать» этот пакет во время установки. Рекомендуется использовать это только в том случае, если вы планируете перемещать каталоги core, manager или connectors, у вас есть доступ по SSH и вы знакомы с тем, как сделать папки доступными для записи. Пожалуйста, следуйте документации [Расширенная установка](getting-started/installation/advanced "Advanced Installation").
 
 ### С Git
 
-MODX Revolution управляется на [GitHub](http://github.com/modxcms). Пожалуйста, прочитайте [Установка Git](getting-started/installation/git-installation "Git Installation") документ, чтобы узнать, как использовать MODX Revolution с Git.
+MODX Revolution управляется на [GitHub](http://github.com/modxcms). Пожалуйста, прочитайте [Установка Git](getting-started/installation/git "Git Installation") документ, чтобы узнать, как использовать MODX Revolution с Git.
 
 ## Установка MODX
 
 MODX поставляется с несколькими дистрибутивами для скачивания. Шаги установки будут отличаться в каждом дистрибутиве, поэтому, пожалуйста, выберите руководство по установке дистрибутива ниже:
 
-- Базовая установка: [Базовая установка](getting-started/installation/basic-installation "Basic Installation")
-- Расширенная установка: [Расширенная установка](getting-started/installation/advanced-installation "Advanced Installation")
-- Сборка с Git: [Git Installation](getting-started/installation/git-installation "Git Installation")
+- Базовая установка: [Базовая установка](getting-started/installation/standard "Basic Installation")
+- Расширенная установка: [Расширенная установка](getting-started/installation/advanced "Advanced Installation")
+- Сборка с Git: [Git Installation](getting-started/installation/git "Git Installation")
 
-Смотрите также страницу [Установка из командной строки](getting-started/installation/command-line-installation "Command Line Installation").
+Смотрите также страницу [Установка из командной строки](getting-started/installation/cli "Command Line Installation").
 
-После завершения установки, если у вас все еще есть проблемы, пожалуйста, прочитайте страницу [Устранение неполадок при установке](getting-started/installation/troubleshooting-installation "Troubleshooting Installation").
+После завершения установки, если у вас все еще есть проблемы, пожалуйста, прочитайте страницу [Устранение неполадок при установке](getting-started/installation/troubleshooting "Troubleshooting Installation").

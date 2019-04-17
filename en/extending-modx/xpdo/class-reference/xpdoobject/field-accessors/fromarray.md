@@ -12,7 +12,7 @@ Sets object fields from an associative array of key => value pairs.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#fromArray>
 
-``` php 
+``` php
 void fromArray(
    array $fldarray,
    [string $keyPrefix = ''],
@@ -26,7 +26,7 @@ void fromArray(
 
 Input the name of a person from an array.
 
-``` php 
+``` php
 $object->fromArray(array(
     'fname' => 'Boo',
     'lname' => 'Radley',
@@ -37,7 +37,7 @@ echo $object->get('fname').' '.$object->get('lname');
 
 Strip 'ghost\_' prefixes from the array provided:
 
-``` php 
+``` php
 $object->fromArray(array(
     'ghost_fname' => 'Nearly Headless',
     'ghost_lname' => 'Nick',
@@ -48,7 +48,7 @@ echo $object->get('fname').' '.$object->get('lname');
 
 Creating a MODX resource:
 
-``` php 
+``` php
 $page = $modx->newObject('modResource');
 
 $data = array(
@@ -63,7 +63,7 @@ $page->save();
 
 ## See Also
 
-- [fromArray](xpdo/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
-- [toArray](xpdo/class-reference/xpdoobject/field-accessors/toarray "toArray")
-- [fromJSON](xpdo/class-reference/xpdoobject/field-accessors/fromjson "fromJSON")
-- [toJSON](xpdo/class-reference/xpdoobject/field-accessors/tojson "toJSON")
+- [fromArray](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fromarray "fromArray")
+- [toArray](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/toarray "toArray")
+- [fromJSON](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fromjson "fromJSON")
+- [toJSON](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/tojson "toJSON")

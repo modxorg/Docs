@@ -16,6 +16,6 @@ An example Rule of hiding the a TV with ID of 1 for all [Users](display/revoluti
 
 ## See Also
 
-``` php 
+``` php
 [[getResources@section? &parents=`315` &context=`revolution`]]
 ```

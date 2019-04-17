@@ -12,15 +12,15 @@ This rule verifies that the field is at least X number of characters long, where
 
 First, our model:
 
-``` xml 
+``` xml
 <model package="test" baseClass="xPDOObject" platform="mysql"
-       defaultEngine="MyISAM" tablePrefix="test_">    
+       defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">
         <field key="name" dbtype="varchar" precision="255"
                phptype="string" default="" null="false" />
-                
+
         <validation>
-            <rule field="name" 
+            <rule field="name"
                   name="myMinLenRule"
                   type="xPDOValidationRule"
                   rule="xPDOMinLengthValidationRule"
@@ -34,7 +34,7 @@ First, our model:
 
 From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
 
-``` php 
+``` php
 $output = '';
 $modx->addPackage('test','/path/to/my/test/model/','test_');
 $obj = $modx->newObject('myTest');

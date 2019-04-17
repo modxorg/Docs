@@ -4,21 +4,10 @@ _old_id: "1058"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel"
 ---
 
-- [MODx.FormPanel](#modxformpanel)
-- [Unique Parameters](#unique-parameters)
-- [Custom Events](#custom-events)
-- [Other Unique Functions](#other-unique-functions)
-    - [Drop Area Fields](#drop-area-fields)
-    - [Automatic Dirty-Field Handling](#automatic-dirty-field-handling)
-    - [Field Manipulation](#field-manipulation)
-- [See Also](#see-also)
-
-
-
 ## MODx.FormPanel
 
-**Extends:** Ext.FormPanel 
-**xtype:** modx-formpanel 
+**Extends:** Ext.FormPanel
+**xtype:** modx-formpanel
 **Key Features:** Drag-and-drop functionality; changed ("dirty") field checking functionality; connector functionality.
 
 FormPanels are found throughout the MODx Manager. They can contain form fields, Grids, Trees - just about any component available.
@@ -65,11 +54,11 @@ MODx.FormPanel adds a few extra events not found in Ext.FormPanel objects:
 
 ## Other Unique Functions
 
-#### Drop Area Fields
+### Drop Area Fields
 
 All fields in MODx.FormPanel instances automatically can have items dropped into them, such as nodes from the left-hand trees. You can turn off this functionality with the allowDrop parameter.
 
-#### Automatic Dirty-Field Handling
+### Automatic Dirty-Field Handling
 
 All fields will fire the fieldChange event when they are changed. You can also use the following methods:
 
@@ -77,7 +66,7 @@ All fields will fire the fieldChange event when they are changed. You can also u
 - clearDirty - clear dirty status for all of the form
 - markDirty - mark the form dirty and fire the fieldChange event
 
-#### Field Manipulation
+### Field Manipulation
 
 You can easily manipulate fields and labels in MODx.FormPanel objects:
 
@@ -88,20 +77,20 @@ You can easily manipulate fields and labels in MODx.FormPanel objects:
 
 ## See Also
 
-1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
-2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)
-  1. [1. Ext JS Tutorial - Message Boxes](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
-  2. [2. Ext JS Tutorial - Ajax Include](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
-  3. [3. Ext JS Tutorial - Animation](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
-  4. [4. Ext JS Tutorial - Manipulating Nodes](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
-  5. [5. Ext JS Tutorial - Panels](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
-  6. [7. Ext JS Tutoral - Advanced Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
-  7. [8. Ext JS Tutorial - Inside a CMP](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
-3. [MODx.combo.ComboBox](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.combo.combobox)
-4. [MODx.Console](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.console)
-5. [MODx.FormPanel](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel)
-6. [MODx.grid.Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid)
-7. [MODx.grid.LocalGrid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.localgrid)
-8. [MODx.msg](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.msg)
-9. [MODx.tree.Tree](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.tree.tree)
-10. [MODx.Window](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window)
+1. [MODExt MODx Object](extending-modx/custom-manager-pages/modext/modext-modx-object)
+2. [MODExt Tutorials](extending-modx/custom-manager-pages/modext/modext-tutorials)
+   1. [Ext JS Tutorial - Message Boxes](extending-modx/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
+   2. [Ext JS Tutorial - Ajax Include](extending-modx/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
+   3. [Ext JS Tutorial - Animation](extending-modx/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
+   4. [Ext JS Tutorial - Manipulating Nodes](extending-modx/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
+   5. [Ext JS Tutorial - Panels](extending-modx/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
+   6. [Ext JS Tutoral - Advanced Grid](extending-modx/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
+   7. [Ext JS Tutorial - Inside a CMP](extending-modx/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
+3. [MODx.combo.ComboBox](extending-modx/custom-manager-pages/modext/modx.combo.combobox)
+4. [MODx.Console](extending-modx/custom-manager-pages/modext/modx.console)
+5. [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel)
+6. [MODx.grid.Grid](extending-modx/custom-manager-pages/modext/modx.grid.grid)
+7. [MODx.grid.LocalGrid](extending-modx/custom-manager-pages/modext/modx.grid.localgrid)
+8. [MODx.msg](extending-modx/custom-manager-pages/modext/modx.msg)
+9. [MODx.tree.Tree](extending-modx/custom-manager-pages/modext/modx.tree.tree)
+10. [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window)

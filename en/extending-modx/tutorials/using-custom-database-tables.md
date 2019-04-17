@@ -4,10 +4,7 @@ _old_id: "330"
 _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components"
 ---
 
-- [The Scenario](#the-scenario)
-- [Our Model](#our-model)
-
- So you're developing your custom component for MODX Revolution, and you've run into a dilemma. You've got some data that uses a table in your MODX database, but you want a way to use xPDO's object model to access it. This tutorial will walk you through the process of creating your own custom schema, adding it as an xPDO model package, and querying it.
+So you're developing your custom component for MODX Revolution, and you've run into a dilemma. You've got some data that uses a table in your MODX database, but you want a way to use xPDO's object model to access it. This tutorial will walk you through the process of creating your own custom schema, adding it as an xPDO model package, and querying it.
 
 ## The Scenario
 
@@ -40,7 +37,7 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  In our XML file, let's start out with the first few lines:
 
- ``` xml 
+ ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="storefinder" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="storefinder" phpdoc-subpackage="model">
 ```
@@ -55,7 +52,7 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  Great! Now we've got our model definition. Let's add a table tag as the next line.
 
- ``` xml 
+ ``` xml
 <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
 ```
 
@@ -69,7 +66,7 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  Now that we've got a table definition for our stores table, let's add some field definitions to it:
 
- ``` xml 
+ ``` xml
 <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
 <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 <field key="city" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -81,7 +78,7 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 <field key="active" dbtype="int" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
 ```
 
- As you can see here, each column in our table has a field definition tag. From there, we have 
+ As you can see here, each column in our table has a field definition tag. From there, we have
  attribute properties for each field. Most of these are optional, depending on the database type of the column. Some of those attribute properties are:
 
 - **key** - The key name of the column.
@@ -95,7 +92,7 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  And we'll finish by closing the object and model tags:
 
- ``` xml 
+ ``` xml
 </object>
 </model>
 ```
@@ -106,7 +103,7 @@ _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3
 
  Go ahead and create a 'build.config.php' file in your \_build directory. It should contain this:
 
- ``` php 
+ ``` php
 <?php
 define('MODX_BASE_PATH', dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/MODxRevolution/');
 define('MODX_CORE_PATH', MODX_BASE_PATH . 'core/');
@@ -117,7 +114,7 @@ define('MODX_ASSETS_PATH', MODX_BASE_PATH . 'assets/');
 
  ...where MODX\_BASE\_PATH will need to point to where you installed MODX Revolution. If you moved the manager or core outside of that base path, you'll need to adjust those defines as well. From here, create a 'build.schema.php' file in your \_build directory. At the top, put this:
 
- ``` php 
+ ``` php
 <?php
 /**
  * Build Schema script
@@ -151,7 +148,7 @@ $sources = array(
 
  Note that you'll want to make sure the $sources array has the correct paths defined; otherwise your script wont run. Let's add a couple more lines to our schema build script:
 
- ``` php 
+ ``` php
 $manager= $modx->getManager();
 $generator= $manager->getGenerator();
 ```
@@ -160,7 +157,7 @@ $generator= $manager->getGenerator();
 
  And finally, we want to actually parse this into a file:
 
- ``` php 
+ ``` php
 $generator->parseSchema($sources['schema'].'storefinder.mysql.schema.xml', $sources['model']);
 $mtime= microtime();
 $mtime= explode(" ", $mtime);
@@ -180,7 +177,7 @@ exit ();
 
  Before we proceed, let's enable testing of this snippet directly from MODX. Since we're developing this in a separate directory from our MODX install, let's create a snippet called 'StoreFinder' in our MODX Revolution instance, and put this inside of it (you'll need to change the first line to the correct path):
 
- ``` php 
+ ``` php
 $base_path = dirname(dirname($modx->getOption('core_path'))).'/MODx Components/tutorials/storefinder/trunk/core/components/storefinder/';
 /* change above line to your path */
 $o = '';
@@ -198,7 +195,7 @@ return $o;
 
  Okay, back to our snippet. Open up 'snippet.storefinder.php' in your editor, and add this code:
 
- ``` php 
+ ``` php
 <?php
 /**
  * @package storefinder
@@ -210,13 +207,13 @@ $base_path = !empty($base_path) ? $base_path : $modx->getOption('core_path').'co
 
  Now on to the brunt of the code. You've got your snippet working, you're in an easy development environment, and now you're ready to get that model working. First off, add these lines:
 
- ``` php 
+ ``` php
 $modx->addPackage('storefinder',$base_path.'model/');
 ```
 
- This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
+ This will add the package to xPDO, and allow you to use all of xPDO's functions with your model (See [addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for full syntax). Let's test it out:
 
- ``` php 
+ ``` php
 $stores = $modx->getCollection('sfStore');
 echo 'Total: '.count($stores);
 ```
@@ -225,7 +222,7 @@ echo 'Total: '.count($stores);
 
  Let's add a few records into the database for testing. Above the getCollection call, add:
 
- ``` php 
+ ``` php
 $store = $modx->newObject('sfStore');
 $store->fromArray(array(
     'name' => 'Store 1',
@@ -256,7 +253,7 @@ $store->save();
 
 ## See Also
 
-- [Generating the xPDO Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code")
-- [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files")
-- [Reverse Engineer xPDO Classes from Existing Database Table](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table")
+- [Generating the xPDO Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code")
+- [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files")
+- [Reverse Engineer xPDO Classes from Existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table")
 - <http://svn.modxcms.com/docs/display/revolution/PHP+Coding+in+MODx+Revolution%2C+Pt.+I>

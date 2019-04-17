@@ -4,35 +4,7 @@ _old_id: "68"
 _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 ---
 
-- [Creating a Blog in MODx Revolution](#CreatingaBloginMODxRevolution-CreatingaBloginMODxRevolution)
-- [Getting the Needed Extras](#CreatingaBloginMODxRevolution-GettingtheNeededExtras)
-  - [Needed Extras](#CreatingaBloginMODxRevolution-NeededExtras)
-  - [Optional Extras](#CreatingaBloginMODxRevolution-OptionalExtras)
-- [Creating your Blog Post Template](#CreatingaBloginMODxRevolution-CreatingyourBlogPostTemplate)
-  - [Header and Footer](#CreatingaBloginMODxRevolution-HeaderandFooter)
-  - [The Post Info](#CreatingaBloginMODxRevolution-ThePostInfo)
-  - [The Post Content](#CreatingaBloginMODxRevolution-ThePostContent)
-  - [Adding Comments to Posts](#CreatingaBloginMODxRevolution-AddingCommentstoPosts)
-- [Setting up Tagging](#CreatingaBloginMODxRevolution-SettingupTagging)
-- [Creating the Sections](#CreatingaBloginMODxRevolution-CreatingtheSections)
-  - [Setting up the blogPost Chunk](#CreatingaBloginMODxRevolution-SettinguptheblogPostChunk)
-- [Setting up Your Blog Home](#CreatingaBloginMODxRevolution-SettingupYourBlogHome)
-- [Adding Posts](#CreatingaBloginMODxRevolution-AddingPosts)
-  - [Page Structure Within the Sections](#CreatingaBloginMODxRevolution-PageStructureWithintheSections)
-  - [Adding a New Blog Post](#CreatingaBloginMODxRevolution-AddingaNewBlogPost)
-- [Setting up Your Archives](#CreatingaBloginMODxRevolution-SettingupYourArchives)
-  - [Creating the Archives Resource](#CreatingaBloginMODxRevolution-CreatingtheArchivesResource)
-  - [Setting up the Archivist Widget](#CreatingaBloginMODxRevolution-SettinguptheArchivistWidget)
-- [Advanced Options](#CreatingaBloginMODxRevolution-AdvancedOptions)
-  - [Adding a Moderator Group](#CreatingaBloginMODxRevolution-AddingaModeratorGroup)
-  - [Adding a "Latest Posts" widget](#CreatingaBloginMODxRevolution-Addinga%22LatestPosts%22widget)
-  - [Adding a "Latest Comments" widget](#CreatingaBloginMODxRevolution-Addinga%22LatestComments%22widget)
-  - [Adding a "Most Used Tags" widget](#CreatingaBloginMODxRevolution-Addinga%22MostUsedTags%22widget)
-- [Conclusion](#CreatingaBloginMODxRevolution-Conclusion)
- 
-
-
-##  Requirements:
+## Requirements:
 
 1. Extension requirements may call for FURL use and ".html" be changed to "/" : Content -> Content Types -> HTML (.html) -> /
 
@@ -40,7 +12,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
  This tutorial is here to help you setup a flexible, powerful blogging solution in MODx Revolution. Since MODx Revolution is not blogging software, but rather a full-blown Content Application Platform, it doesn't come pre-packaged with a cookie-cutter blogging solution. You'll need to setup your blog how you want it.
 
- Fortunately, the tools to do so are already there for your taking. This tutorial will walk you through how to set them up. It's recommended that you're familiar with Revolution's [Tag Syntax](making-sites-with-modx/tag-syntax "Tag Syntax") before we start.
+ Fortunately, the tools to do so are already there for your taking. This tutorial will walk you through how to set them up. It's recommended that you're familiar with Revolution's [Tag Syntax](building-sites/tag-syntax "Tag Syntax") before we start.
 
  One thing before we start, though - this tutorial is extensive, and will show you how to set up a powerful blog with posting, archiving, tagging, commenting and more. If you don't need any specific part, just skip that part. MODx is modular, and your blog can function in any scope you like. And, again, this is only one way to do it - there are tons of ways to setup a blog in MODx Revolution.
 
@@ -52,19 +24,19 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 ### Needed Extras
 
-- [getResources](/extras/revo/getresources "getResources") - For listing posts, pages and other Resources.
-- [getPage](/extras/revo/getpage "getPage") - For pagination of listings.
-- [Quip](/extras/revo/quip "Quip") - For anything and everything in commenting.
-- [tagger](/extras/revo/tagger "tagger") - For managing tags and doing tag-based navigation.
-- [Archivist](/extras/revo/archivist "Archivist") - For managing your Archives section.
+- [getResources](/extras/getresources "getResources") - For listing posts, pages and other Resources.
+- [getPage](/extras/getpage "getPage") - For pagination of listings.
+- [Quip](/extras/quip "Quip") - For anything and everything in commenting.
+- [tagger](/extras/tagger "tagger") - For managing tags and doing tag-based navigation.
+- [Archivist](/extras/archivist "Archivist") - For managing your Archives section.
 
 ### Optional Extras
 
-- [Breadcrumbs](/extras/revo/breadcrumbs "Breadcrumbs") - For displaying a breadcrumb navigation trail.
-- [Gallery](/extras/revo/gallery "Gallery") - For managing photo Galleries.
-- [SimpleSearch](/extras/revo/simplesearch "SimpleSearch") - For adding a simple search box to your site.
-- [getFeed](/extras/revo/getfeed "getFeed") - If you want to grab other feeds in your site, such as a Twitter feed.
-- [Login](/extras/revo/login "Login") - If you want to restrict commenting to logged in users only, you'll need this.
+- [Breadcrumbs](/extras/breadcrumbs "Breadcrumbs") - For displaying a breadcrumb navigation trail.
+- [Gallery](/extras/gallery "Gallery") - For managing photo Galleries.
+- [SimpleSearch](/extras/simplesearch "SimpleSearch") - For adding a simple search box to your site.
+- [getFeed](/extras/getfeed "getFeed") - If you want to grab other feeds in your site, such as a Twitter feed.
+- [Login](/extras/login "Login") - If you want to restrict commenting to logged in users only, you'll need this.
 
 ## Creating your Blog Post Template
 
@@ -72,13 +44,13 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
  We'll create one called 'BlogPostTemplate'. Our content looks something like this:
 
- ``` php 
+ ``` php
 [[$pageHeader]]
 <div id="content" class="blog-post">
   <h2 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h2>
   <p class="post-info">
-  Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] | 
-  Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] | 
+  Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
+  Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
   <a href="[[~[[*id]]]]#comments" class="comments">
     Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
   </a>
@@ -123,10 +95,10 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
  Next we get into the "info" of the post - basically the author and tags for the post. Let's look in detail:
 
- ``` php 
+ ``` php
 <p class="post-info">
-Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] | 
-Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] | 
+Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
+Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
 <a href="[[~[[*id]]]]#comments" class="comments">
   Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
 </a>
@@ -135,7 +107,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  The first part takes the publishedon Resource field, and formats it into a nice, pretty date.
 
- Secondly, we then display a Tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/revo/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
+ Secondly, we then display a Tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
 
  And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-\[\[\*id\]\]'. This means that MODx will automatically create a new thread for each new Blog Post we create. Neat!
 
@@ -145,9 +117,9 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
 ### Adding Comments to Posts
 
- Okay, now we're in the comments part of BlogPostTemplate. As you can see here, we're using [Quip](/extras/revo/quip "Quip") for our commenting system. You could feel free to use another system, such as Disqus, here if you choose. For this tutorial, we'll go with Quip. Our code is as follows:
+ Okay, now we're in the comments part of BlogPostTemplate. As you can see here, we're using [Quip](/extras/quip "Quip") for our commenting system. You could feel free to use another system, such as Disqus, here if you choose. For this tutorial, we'll go with Quip. Our code is as follows:
 
- ``` php 
+ ``` php
 <div class="post-comments" id="comments">[[!Quip?
     &thread=`blog-post-[[*id]]`
     &replyResourceId=`19`
@@ -163,9 +135,9 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 </div>
 ```
 
- Okay, cool. Note we have two Snippet calls here - one for displaying the comments for this thread ([Quip](/extras/revo/quip/quip.quip "Quip.Quip")), and another for displaying the reply form ([QuipReply](/extras/revo/quip/quip.quipreply "Quip.QuipReply")).
+ Okay, cool. Note we have two Snippet calls here - one for displaying the comments for this thread ([Quip](/extras/quip/quip.quip "Quip.Quip")), and another for displaying the reply form ([QuipReply](/extras/quip/quip.quipreply "Quip.QuipReply")).
 
- In our Quip snippet call, we've specified a thread ID in the manner we've described above, and then set some settings. Our comments are going to be threaded (the default), so we need to specify a Resource ID where our Reply to Thread post is going to be (this is detailed in the [Quip Documentation](/extras/revo/quip "Quip"). We recommend reading there for how to set it up.) with the 'replyResourceId' property. For a quick example, if your &replyResourceId points to page 123, then on page 123, you should put something like the following:
+ In our Quip snippet call, we've specified a thread ID in the manner we've described above, and then set some settings. Our comments are going to be threaded (the default), so we need to specify a Resource ID where our Reply to Thread post is going to be (this is detailed in the [Quip Documentation](/extras/quip "Quip"). We recommend reading there for how to set it up.) with the 'replyResourceId' property. For a quick example, if your &replyResourceId points to page 123, then on page 123, you should put something like the following:
 
  ``` php
 [[!QuipReply]]
@@ -177,10 +149,10 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  In our QuipReply call, we want to tell Quip to moderate all posts, and the moderators for our post can be found in the Moderators User Group (we'll explain how to set this up later in the tutorial).
 
- There's a whole bunch of other Quip settings we could change, but we'll leave you to further customization, which you can find out how to do in the [Quip docs](/extras/revo/quip "Quip").
+ There's a whole bunch of other Quip settings we could change, but we'll leave you to further customization, which you can find out how to do in the [Quip docs](/extras/quip "Quip").
 
- **What is Threading?** 
- If you enable _threaded_ comments, then users can comment on other comments. Non-threaded comments allow users to only comment on the original blog post. 
+ **What is Threading?**
+ If you enable _threaded_ comments, then users can comment on other comments. Non-threaded comments allow users to only comment on the original blog post.
 
 ## Setting up Tagging
 
@@ -196,14 +168,14 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  If you want your blog to have 'Sections' (also called Categories), you'll first need to create those Resources.
 
- For this tutorial's purpose, we'll create 2 sections: "Personal" and "Technology". Go ahead and create 2 Resources in the root of your site, and make them 'containers'. You'll want to 
+ For this tutorial's purpose, we'll create 2 sections: "Personal" and "Technology". Go ahead and create 2 Resources in the root of your site, and make them 'containers'. You'll want to
  have their alias be 'personal' and 'technology', so your blog post URLs turn up nicely.
 
- We'll say from here on out that our two Section Resources have IDs of 34 and 35, for reference. 
+ We'll say from here on out that our two Section Resources have IDs of 34 and 35, for reference.
 
  Make sure you don't use the BlogPostTemplate on these, and use instead your own Base Template. These pages will end up being a way to browse all posts within a certain Section. In the content of these Resources, go ahead and put the following:
 
- ``` php 
+ ``` php
 [[!getResourcesTag?
   &element=`getResources`
   &elementClass=`modSnippet`
@@ -223,7 +195,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 `]]
 ```
 
- Okay, let's explain this. getResourcesTag a wrapper snippet for [getResources](/extras/revo/getresources "getResources") and [getPage](/extras/revo/getpage "getPage") that automatically filters results by a 'tags' TV. So basically, we want to grab all published Resources within this section (and we can also filter by tag should we pass a '?tag=TagName' parameter into the URL.
+ Okay, let's explain this. getResourcesTag a wrapper snippet for [getResources](/extras/getresources "getResources") and [getPage](/extras/getpage "getPage") that automatically filters results by a 'tags' TV. So basically, we want to grab all published Resources within this section (and we can also filter by tag should we pass a '?tag=TagName' parameter into the URL.
 
  Below the getResourcesTag call, we put our pagination links, since by default getResourcesTag only shows 10 posts per page.
 
@@ -231,11 +203,11 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  In that call, we also have a property called 'tpl' which we set to 'blogPost'. This is our Chunk that shows each result of our blog post listings. It should contain this:
 
- ``` php 
+ ``` php
 <div class="post">
     <h2 class="title"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></h2>
     <p class="post-info">Posted by [[+createdby:userinfo=`fullname`]]
- [[+tv.tags:notempty=` | <span class="tags">Tags: 
+ [[+tv.tags:notempty=` | <span class="tags">Tags:
 [[!tolinks? &items=`[[+tv.tags]]` &tagKey=`tags` &target=`1`]]
 </span>`]]</p>
     <div class="entry">
@@ -265,7 +237,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  In our home page for our blog, which we've got in Resource ID 1 - our site start - we've got this:
 
- ``` php 
+ ``` php
 [[!getResourcesTag?
   &elementClass=`modSnippet`
   &element=`getResources`
@@ -300,9 +272,9 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Before we start, though, it's important to note that how you structure your posts within the section is totally up to you. You can add year and month container Resources to put these posts in, or just post them directly within the section. It's totally up to you.
 
- If you choose to have date/year or sub-containers, make sure they have Hide from Menus checked, so that they wont show up in your getResources calls. 
+ If you choose to have date/year or sub-containers, make sure they have Hide from Menus checked, so that they wont show up in your getResources calls.
 
- Remember, though, that whatever structure you build under the sections, that's not going to determine your navigation - [Archivist](/extras/revo/archivist "Archivist") will handle that. What it will determine, however, is the URL of your blog posts. So have fun.
+ Remember, though, that whatever structure you build under the sections, that's not going to determine your navigation - [Archivist](/extras/archivist "Archivist") will handle that. What it will determine, however, is the URL of your blog posts. So have fun.
 
 ### Adding a New Blog Post
 
@@ -318,7 +290,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Go ahead and place a Resource in your root called 'Archives', and give it an alias of 'archives'. Then inside the content, place this:
 
- ``` php 
+ ``` php
 [[!getPage?
   &element=`getArchives`
   &elementClass=`modSnippet`
@@ -342,7 +314,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 `]]
 ```
 
- Look familiar? It's very similar to getResourcesTag, described above in our Section page. This time, getPage is wrapping the [getArchives](/extras/revo/archivist "Archivist") snippet, and saying that we want to grab posts in Resources 34 and 35 (our Section pages). We'll set the result to a placeholder called 'archives' which we reference later.
+ Look familiar? It's very similar to getResourcesTag, described above in our Section page. This time, getPage is wrapping the [getArchives](/extras/archivist "Archivist") snippet, and saying that we want to grab posts in Resources 34 and 35 (our Section pages). We'll set the result to a placeholder called 'archives' which we reference later.
 
  Then, below that, we add a few placeholders that show the current browsing month and year. And finally, we have our pagination. Cool! We're done with that. Our Resource, for reference purposes, we'll say has an ID of **30**.
 
@@ -350,14 +322,14 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Okay, so now you've got a Resource to browse archives in, but you need some way of generating the months that lists posts. That's actually pretty simple - somewhere on your site (say, in your footer, put this nice little bit:
 
- ``` php 
+ ``` php
 <h3>Archives</h3>
 <ul>
 [[!Archivist? &target=`30` &parents=`34,35`]]
 </ul>
 ```
 
- So what the [Archivist](/extras/revo/archivist/archivist.archivist "Archivist.Archivist") Snippet does is generate a month-by-month list of posts (you can add all kinds of other options, but see [it's documentation](/extras/revo/archivist/archivist.archivist "Archivist.Archivist") for that). We are saying we want its links to go to our Archives Resource (30), and to only grab posts in the Resources 34 and 35 (our Section Resources).
+ So what the [Archivist](/extras/archivist/archivist.archivist "Archivist.Archivist") Snippet does is generate a month-by-month list of posts (you can add all kinds of other options, but see [it's documentation](/extras/archivist/archivist.archivist "Archivist.Archivist") for that). We are saying we want its links to go to our Archives Resource (30), and to only grab posts in the Resources 34 and 35 (our Section Resources).
 
  That's it! Archivist will actually automatically handle the rest - including all your URL generation for archives - archives/2010/05/ will show all the posts within May 2010, where archives/2009/ will show all posts in 2009. Pretty sweet, huh?
 
@@ -383,8 +355,8 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  First off, you'll want to place this call wherever you want the list to appear:
 
- ``` php 
-[[!getResources? 
+ ``` php
+[[!getResources?
   &parents=`34,35`
   &hideContainers=`1`
   &tpl=`latestPostsTpl`
@@ -393,11 +365,11 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 ]]
 ```
 
- So we're telling [getResources](/extras/revo/getresources "getResources") to display a top 5 list of Resources in your Section Resources (34,35), and sort by their publishedon date.
+ So we're telling [getResources](/extras/getresources "getResources") to display a top 5 list of Resources in your Section Resources (34,35), and sort by their publishedon date.
 
  Then, create the `latestPostsTpl` chunk, which you've specified with the 'tpl' call in the getResources snippet call. Put this as the chunk's content:
 
- ``` php 
+ ``` php
 <li>
   <a href="[[~[[+id]]]]">[[+pagetitle]]</a>
   [[+publishedon:notempty=`<br /> - [[+publishedon:strtotime:date=`%b %d, %Y`]]`]]
@@ -410,17 +382,17 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
 ### Adding a "Latest Comments" widget
 
- What about a widget that shows a few of the latest comments across your posts? Simple - Quip packages a nice little snippet called [QuipLatestComments](/extras/revo/quip/quip.quiplatestcomments "Quip.QuipLatestComments") that can handle this easily.
+ What about a widget that shows a few of the latest comments across your posts? Simple - Quip packages a nice little snippet called [QuipLatestComments](/extras/quip/quip.quiplatestcomments "Quip.QuipLatestComments") that can handle this easily.
 
  Place the call wherever you want the comment list to show:
 
- ``` php 
+ ``` php
 [[!QuipLatestComments? &tpl=`latestCommentTpl`]]
 ```
 
  Now create a chunk called 'latestCommentTpl':
 
- ``` php 
+ ``` php
 <li class="[[+cls]][[+alt]]">
     <a href="[[+url]]">[[+body:ellipsis=`[[+bodyLimit]]`]]</a>
     <br /><span class="author">by [[+name]]</span>
@@ -428,23 +400,23 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 </li>
 ```
 
- Before we proceed, there's a few things to note - QuipLatestComments will automatically truncate the comment and add an ellipsis past the &bodyLimit property passed into it, which defaults to 30 characters. Secondly, note the 'ago' [Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") we used here. This filter is built into MODx Revolution, and translates a timestamp into a nice, pretty 'two hours, 34 minutes' (or two other time metrics, such as min/sec, year/mo, mo/week) format.
+ Before we proceed, there's a few things to note - QuipLatestComments will automatically truncate the comment and add an ellipsis past the &bodyLimit property passed into it, which defaults to 30 characters. Secondly, note the 'ago' [Output Filter](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") we used here. This filter is built into MODx Revolution, and translates a timestamp into a nice, pretty 'two hours, 34 minutes' (or two other time metrics, such as min/sec, year/mo, mo/week) format.
 
  Note also that it will default to showing the 5 latest. The result:
 
  ![](/download/attachments/18678105/latestcomments.png?version=1&modificationDate=1279309243000)
 
- You can see the [documentation for the snippet](/extras/revo/quip/quip.quiplatestcomments "Quip.QuipLatestComments") for more configuration options.
+ You can see the [documentation for the snippet](/extras/quip/quip.quiplatestcomments "Quip.QuipLatestComments") for more configuration options.
 
 ### Adding a "Most Used Tags" widget
 
- This part is ridiculously easy; [tagLister](/extras/revo/taglister "tagLister") does this for you. Just place this wherever you want:
+ This part is ridiculously easy; [tagLister](/extras/taglister "tagLister") does this for you. Just place this wherever you want:
 
- ``` php 
+ ``` php
 [[!tagLister? &tv=`tags` &target=`1`]]
 ```
 
- And tagLister will check the TV 'tags', and create links that go to the target (here, Resource ID 1) with the top 10 tags being used. There's a ton more [configuration options](/extras/revo/taglister "tagLister"), but we'll leave you with this.
+ And tagLister will check the TV 'tags', and create links that go to the target (here, Resource ID 1) with the top 10 tags being used. There's a ton more [configuration options](/extras/taglister "tagLister"), but we'll leave you with this.
 
 ## Conclusion
 

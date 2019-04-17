@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/settings_version
 
 ## settings\_version
 
-**Name**: MODx Version 
-**Type**: String 
+**Name**: MODx Version
+**Type**: String
 **Default**: modx-2.0.0-pl
 
 The current version of MODx.

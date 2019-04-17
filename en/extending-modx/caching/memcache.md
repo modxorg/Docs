@@ -21,4 +21,4 @@ If your memcached server is on a separate server, you can set the path to it wit
 
 ## See Also
 
-- [Caching](developing-in-modx/advanced-development/caching "Caching")
+- [Caching](extending-modx/caching "Caching")

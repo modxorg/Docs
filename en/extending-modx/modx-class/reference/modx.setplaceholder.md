@@ -12,13 +12,13 @@ Sets a Placeholder value, corresponding to the "+" syntax.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::setPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholder())
 
-``` php 
+``` php
 void setPlaceholder (string $key, mixed $value)
 ```
 
 ## Example
 
-``` php 
+``` php
 $modx->setPlaceholder('name','Barry');
 ```
 
@@ -26,7 +26,7 @@ This causes the placeholder \[\[+name\]\] to be available inside your templates 
 
 ## See Also
 
-- [modX.getPlaceholder](developing-in-modx/other-development-resources/class-reference/modx/modx.getplaceholder "modX.getPlaceholder")
-- [modX.setPlaceholders](developing-in-modx/other-development-resources/class-reference/modx/modx.setplaceholders "modX.setPlaceholders")
-- [modX.toPlaceholder](developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholder "modX.toPlaceholder")
-- [modX.toPlaceholders](developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholders "modX.toPlaceholders")
+- [modX.getPlaceholder](extending-modx/modx-class/reference/modx.getplaceholder "modX.getPlaceholder")
+- [modX.setPlaceholders](extending-modx/modx-class/reference/modx.setplaceholders "modX.setPlaceholders")
+- [modX.toPlaceholder](extending-modx/modx-class/reference/modx.toplaceholder "modX.toPlaceholder")
+- [modX.toPlaceholders](extending-modx/modx-class/reference/modx.toplaceholders "modX.toPlaceholders")

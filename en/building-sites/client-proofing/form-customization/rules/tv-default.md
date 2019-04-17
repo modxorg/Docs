@@ -27,6 +27,6 @@ An example Rule of setting the default value for a TV with ID 23 to "test" is:
 
 ## See Also
 
-``` php 
+``` php
 [[getResources@section? &parents=`313` &context=`revolution`]]
 ```

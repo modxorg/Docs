@@ -12,7 +12,7 @@ The DIRECTORY binding reads the contents of a directory. This can really useful 
 
 When you create a Template Variable, place the following text into the **Input Option Values** box:
 
-``` php 
+``` php
 @DIRECTORY /path/to/some_directory
 ```
 
@@ -22,7 +22,7 @@ In MODx Revolution, the path used for the @DIRECTORY binding is relative to the 
 
 If you are using the @DIRECTORY binding for your template variable \[\[\*myTV\]\], you can easily imagine that your template code could have some stuff in it like:
 
-``` html 
+``` html
 <img src="[[*myTV]]" alt="" />
 ```
 
@@ -30,7 +30,7 @@ If you are using the @DIRECTORY binding for your template variable \[\[\*myTV\]\
 
 Can you filter which files are selected? E.g. using \*.jpg? The following DOES NOT WORK:
 
-``` php 
+``` php
 @DIRECTORY /list/*.jpg  # doesn't work!
 ```
 
@@ -42,5 +42,5 @@ Depending on how the file is used on the page, it may pose a security risk. Be c
 
 ## See Also
 
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
-- [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")
+- [Bindings](building-sites/elements/template-variables/bindings "Bindings")

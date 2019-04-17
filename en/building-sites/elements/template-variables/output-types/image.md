@@ -31,8 +31,8 @@ It's output options look like:
 
 ## See Also
 
-1. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)
-2. [Delimiter TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type)
-3. [HTML Tag TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type)
-4. [Image TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type)
-5. [URL TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type)
+1. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
+2. [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
+3. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
+4. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
+5. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)

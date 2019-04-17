@@ -25,8 +25,8 @@ An example Rule of changing the title for the Page Settings tab for all [Users](
 
 ![](download/attachments/18678095/fc-tabTitle.png?version=1&modificationDate=1280153333000)
 
-## <a name="TabTitle-SeeAlso"></a>See Also
+## See Also
 
-``` php 
+``` php
 [[getResources@section? &parents=`300` &context=`revolution`]]
 ```

@@ -12,6 +12,6 @@ This function is responsible for loading a collection of object instances, as we
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#loadCollectionGraph>
 
-``` php 
+``` php
 function loadCollectionGraph(& $xpdo, $className, $graph, $criteria, $cacheFlag)
 ```

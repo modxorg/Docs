@@ -4,24 +4,12 @@ _old_id: "17"
 _old_uri: "2.x/getting-started/installation/advanced-installation"
 ---
 
-- [Installation Pre-Steps](#installation-pre-steps)
-  - [Renaming or Moving the Core](#renaming-or-moving-the-core)
-  - [Changing the Configuration Key](#changing-the-configuration-key)
-- [Advanced Options](#advanced-options)
-- [Database Options](#database-options)
-  - [Collations and Charsets](#collations-and-charsets)
-  - [Creating an Administrator User](#creating-an-administrator-user)
-- [Context Configuration](#context-configuration)
-- [Pre-Installation Checks](#pre-installation-checks)
-- [Post-Installation Summary](#post-installation-summary)
-- [See Also](#see-also)
-
 This is the tutorial for the advanced distribution of MODx. It is recommended to only install this distribution if:
 
 - You plan on renaming the manager/ or connectors/ directories, or move the core/ directory
 - You have SSH access or can easily move/make writable directories on your server.
 
-You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If after reading this, you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting-installation "Troubleshooting Installation") page.
+You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If after reading this, you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation") page.
 
 ## Installation Pre-Steps
 
@@ -51,7 +39,7 @@ Specify a custom, unique config key and click next.
 
 ## Advanced Options
 
-You will now be presented with some options for install, similar to the [Basic Installation](getting-started/installation/basic-installation "Basic Installation") screen, but with two extra options at the bottom. 'New Installation' will be your only radio option available to check, which is what you want. Below that, you can choose to adjust the permissions for creating new files or folders in your MODx installation. The defaults should work fine, but if on a more restrictive server, you can change the folder/file perms to 0775/0664, respectively.
+You will now be presented with some options for install, similar to the [Basic Installation](getting-started/installation/standard "Basic Installation") screen, but with two extra options at the bottom. 'New Installation' will be your only radio option available to check, which is what you want. Below that, you can choose to adjust the permissions for creating new files or folders in your MODx installation. The defaults should work fine, but if on a more restrictive server, you can change the folder/file perms to 0775/0664, respectively.
 
 Below that, you will be presented with two checkbox options:
 
@@ -105,12 +93,12 @@ MODx will then proceed with a list of checks to verify that your system is ready
 
 Once you're ready, and all the checks pass, click 'Install' to proceed.
 
-If you get a blank screen or cannot proceed after clicking 'Install', verify these steps: 1. Make sure the directories "/\[root\]", "/core/config", "/core/packages","/core/cache", and "/core/export" are writable. (root will be the actual directory you are installing to.)
+If you get a blank screen or cannot proceed after clicking 'Install', verify these steps:
+
+1. Make sure the directories "/\[root\]", "/core/config", "/core/packages","/core/cache", and "/core/export" are writable. (root will be the actual directory you are installing to.)
 2. Make sure your php.ini setting sets memory\_limit to 128M, and max\_execution\_time to 120
 3. Ensure that MODx can create the manager and connectors directories; this is done by making the parents of those directories writable (since you can change where they are installed)
 4. Post a message in the [Revolution forum](http://modxcms.com/forums/index.php/board,280.0.html) regarding your issue. State your server setup and installation info, and we'll try and help you find a solution.
-
-
 
 ## Post-Installation Summary
 
@@ -126,17 +114,17 @@ When ready, click 'Login' to be presented with the Login form for the manager in
 
 ## See Also
 
-1. [Basic Installation](getting-started/installation/basic-installation)
-2. [MODx Revolution on Debian](getting-started/installation/basic-installation/modx-revolution-on-debian)
-3. [Lighttpd Guide](getting-started/installation/basic-installation/lighttpd-guide)
-4. [Problems with WAMPServer 2.0i](getting-started/installation/basic-installation/problems-with-wampserver-2.0i)
-5. [Installation on a server running ModSecurity](getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity)
-6. [MODX and Suhosin](getting-started/installation/basic-installation/modx-and-suhosin)
-7. [Nginx Server Config](getting-started/installation/basic-installation/nginx-server-config)
-8. [Advanced Installation](getting-started/installation/advanced-installation)
-9. [Git Installation](getting-started/installation/git-installation)
-10. [Command Line Installation](getting-started/installation/command-line-installation)
-11. [The Setup Config Xml File](getting-started/installation/command-line-installation/the-setup-config-xml-file)
-12. [Troubleshooting Installation](getting-started/installation/troubleshooting-installation)
-13. [Successful Installation, Now What Do I Do?](getting-started/installation/successful-installation,-now-what-do-i-do)
-14. [Using MODx Revolution from SVN](getting-started/installation/using-modx-revolution-from-svn)
+1. [Basic Installation](getting-started/installation/standard)
+2. [MODx Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
+3. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
+4. [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
+5. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+6. [MODX and Suhosin](_legacy/getting-started/modx-and-suhosin)
+7. [Nginx Server Config](getting-started/friendly-urls/nginx)
+8. [Advanced Installation](getting-started/installation/advanced)
+9. [Git Installation](getting-started/installation/git)
+10. [Command Line Installation](getting-started/installation/cli)
+11. [The Setup Config Xml File](getting-started/installation/cli/config.xml)
+12. [Troubleshooting Installation](getting-started/installation/troubleshooting)
+13. [Successful Installation, Now What Do I Do?](getting-started/getting-started)
+14. [Using MODx Revolution from SVN](_legacy/getting-started/using-modx-revolution-from-svn)

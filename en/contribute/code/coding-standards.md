@@ -4,22 +4,10 @@ _old_id: "1133"
 _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 ---
 
-- [General](#MODxPHPCodingStandards-General)
-- [Parenthesis](#MODxPHPCodingStandards-Parenthesis)
-- [Classes](#MODxPHPCodingStandards-Classes)
-- [Variables](#MODxPHPCodingStandards-Variables)
-- [Function Arguments and Class Variables](#MODxPHPCodingStandards-FunctionArgumentsandClassVariables)
-- [Arrays](#MODxPHPCodingStandards-Arrays)
-- [Constants](#MODxPHPCodingStandards-Constants)
-- [File Structure](#MODxPHPCodingStandards-FileStructure)
-- [Prefixing](#MODxPHPCodingStandards-Prefixing)
-
-
-
 ## General
 
 - Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.
-- Do not do any real logic in object constructors. Create class methods to do so. 
+- Do not do any real logic in object constructors. Create class methods to do so.
    null, true and false should always be lowercase.
 - Avoid embedded assignments (ex: $d = ($a = $b + $c) is bad).
 - Never use extract().
@@ -30,30 +18,33 @@ _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
 
 - Do not put parenthesis next to keywords. Put a space between.
 - Do put parenthesis next to function names.
-- Do not use parenthesis in return statements when it's not necessary. Example:``` php 
+- Do not use parenthesis in return statements when it's not necessary. Example:
+
+``` php
   if ($test) {
   }
   while ($test == $other) {
   }
   array_push($one,$two);
   return $test;
-  
-  ```
+```
+
 - Do **not** use parenthesis when using include, require, include\_once, and require\_once.
 
 ## Classes
 
 - All ''core'' classnames, unless stated otherwise for special conditions, will be prefixed with the "mod" prefix: ie, modChunk, modTemplate, etc.
 - All method names will be camelCase and will start with a lowercase letter.
-- All private methods and variables must be prefixed with the underscore \_ character.``` php 
+- All private methods and variables must be prefixed with the underscore \_ character.
+
+``` php
   class modFactor {
       public $publicVar;
       private $_privateVar;
       private function _privateFunc() { }
       public function publicFunc() { }
   }
-  
-  ```
+```
 
 ## Variables
 
@@ -64,25 +55,27 @@ Note these are not function arguments.
 
 ## Function Arguments and Class Variables
 
-- The first letter is lowercase, rest are camelCase. Example:``` php 
+- The first letter is lowercase, rest are camelCase. Example:
+
+``` php
   class modFactor {
       public function testFunc($testVar, array &$anotherTest = array()) {
           $this->_privateVar = $testVar;
           $local_variable =& $anotherTest;
       }
   }
-  
-  ```
+```
 
 ## Arrays
 
 - Array index names use the underscore \_, not the dash as their separator. This prevents errors with magic\_quotes.
 - Array index names are always lowercase. Spaces are represented by an underscore.
-- Array index names are always encapsulated with single quotes. 
-   Example:``` php 
-  $_lang['chunk_create_text'] = 'Test';
-  
-  ```
+- Array index names are always encapsulated with single quotes.
+   Example:
+
+``` php
+$_lang['chunk_create_text'] = 'Test';
+```
 
 ## Constants
 
@@ -97,10 +90,9 @@ Note these are not function arguments.
 
 - Lexicon strings for Components need to be prefixed:
 
-``` php 
+``` php
 $_lang['mycomponent.welcome_message'] = 'Welcome!';
-
 ```
 
 - Always prefix class names; eg: 'finBank', 'finTransaction', etc.
-- Always prefix [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'
+- Always prefix [Chunk](building-sites/elements/chunks "Chunks") names; eg: 'finStatement', 'finDeposit'

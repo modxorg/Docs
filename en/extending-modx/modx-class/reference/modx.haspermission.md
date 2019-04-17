@@ -12,7 +12,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::hasPermission()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::hasPermission())
 
- ``` php 
+ ``` php
 boolean hasPermission (string|array $pm)
 ```
 
@@ -20,7 +20,7 @@ boolean hasPermission (string|array $pm)
 
  Deny the user access if they don't have the permission 'edit\_chunk' in their loaded Policies.
 
- ``` php 
+ ``` php
 $pm = 'edit_chunk';
 if (!$modx->hasPermission($pm)) {
     die('Access Denied!');
@@ -29,7 +29,7 @@ if (!$modx->hasPermission($pm)) {
 
  It's also possible to check if the user has multiple permissions, like 'edit\_chunk' and 'edit\_template'. Like;
 
- ``` php 
+ ``` php
 $pm = array('edit_chunk' => true, 'edit_template' => true);
 if (!$modx->hasPermission($pm)) {
     die ('Access Denied!');
@@ -38,4 +38,4 @@ if (!$modx->hasPermission($pm)) {
 
 ## See Also
 
-- [Policies](administering-your-site/security/policies "Policies")
+- [Policies](building-sites/client-proofing/security/policies "Policies")

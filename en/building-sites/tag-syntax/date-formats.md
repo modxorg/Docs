@@ -4,12 +4,6 @@ _old_id: "91"
 _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags/date-formats"
 ---
 
-- [Common Examples.](#common-examples)
-- [All Parameters](#all-parameters)
-- [See Also](#see-also)
-
-
-
 MODx is written in PHP, and as such, it relies on the underlying PHP date functions, e.g. [strftime](http://www.php.net/manual/en/function.strftime.php). The discussion here can get quite tricky because the [strftime](http://www.php.net/manual/en/function.strftime.php) and [strtotime](http://co.php.net/strtotime) functions deploy _similar_ arguments, but they are not identical. Sorry for the confusion; date manipulation and formatting is more complex than it might at first seem.
 
 The discussion here relates primarily to the following content fields:
@@ -73,16 +67,16 @@ It's not possible to give every possible example because date formatting can be 
 - [display/revolution20/Input+and+Output+Filters+(Output+Modifiers)](display/revolution20/Input+and+Output+Filters+(Output+Modifiers))
 - [display/revolution20/Commonly+Used+Template+Tags](display/revolution20/Commonly+Used+Template+Tags)
 
-1. [Resources](making-sites-with-modx/structuring-your-site/resources)
-2. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
-3. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)
-4. [Static Resource](making-sites-with-modx/structuring-your-site/resources/static-resource)
-5. [Symlink](making-sites-with-modx/structuring-your-site/resources/symlink)
-6. [Using Resource Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink/using-resource-symlinks)
-7. [Weblink](making-sites-with-modx/structuring-your-site/resources/weblink)
-8. [Templates](making-sites-with-modx/structuring-your-site/templates)
-9. [Chunks](making-sites-with-modx/structuring-your-site/chunks)
-10. [Using Snippets](making-sites-with-modx/structuring-your-site/using-snippets)
+1. [Resources](building-sites/resources)
+2. [Content Types](building-sites/resources/content-types)
+3. [Named Anchor](building-sites/integrating-templates/named-anchor)
+4. [Static Resource](building-sites/resources/static-resource)
+5. [Symlink](building-sites/resources/symlink)
+6. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
+7. [Weblink](building-sites/resources/weblink)
+8. [Templates](building-sites/elements/templates)
+9. [Chunks](building-sites/elements/chunks)
+10. [Using Snippets](building-sites/elements/snippets)
 
 FYI for those running on Windows from the PHP site:
 

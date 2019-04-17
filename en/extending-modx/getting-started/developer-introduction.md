@@ -4,28 +4,6 @@ _old_id: "96"
 _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introduction"
 ---
 
-- [What is MODX?](#what-is-modx)
-- [What is MVC?](#what-is-mvc)
-  - [What is MVC²?](#what-is-mvc%C2%B2)
-  - [Connector/Processor Relationships](#connectorprocessor-relationships)
-- [What is xPDO?](#what-is-xpdo)
-- [What is an ORM?](#what-is-an-orm)
-- [A Brief Overview of Revolution](#a-brief-overview-of-revolution)
-  - [The Model](#the-model)
-  - [The View](#the-view)
-    - [In the front-end, they are Templates, Chunks and Resources.](#in-the-front-end-they-are-templates-chunks-and-resources)
-      - [Templates](#templates)
-      - [Chunks](#chunks)
-      - [Resources](#resources)
-    - [In the Manager](#in-the-manager)
-  - [The Controller](#the-controller)
-    - [Snippets](#snippets)
-    - [Plugins](#plugins)
-  - [The 2nd C: The Connectors](#the-2nd-c-the-connectors)
-- [See Also](#see-also)
-
-
-
 ## What is MODX?
 
 MODX Revolution is an Content Application Platform, built for developers, designers and users who want a powerful, scalable system with flexible content management built in.
@@ -72,17 +50,17 @@ Views in MODX Revolution are called 'Templates', but are used differently based 
 
 #### In the front-end, they are Templates, Chunks and Resources.
 
-##### [Templates](making-sites-with-modx/structuring-your-site/templates "Templates")
+##### [Templates](building-sites/elements/templates "Templates")
 
 Templates are what they sound like. They allow you to create templates that will encapsulate more page-specific data. Think of them like headers/footers all rolled into one (and so much more!)
 
-##### [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks")
+##### [Chunks](building-sites/elements/chunks "Chunks")
 
 Chunks are small pieces of HTML code that can be inserted anywhere. They represent View widgets, in a sense, because of their modularity and ease of insertion.
 
 ##### Resources
 
-Resources is the basic representation of a single "webpage" in MODX Revolution. They represent a single page or resource by which the client accesses content from the server. They can be files, weblinks, symlinks or just plain-old HTML pages wrapped by [Templates](making-sites-with-modx/structuring-your-site/templates "Templates").
+Resources is the basic representation of a single "webpage" in MODX Revolution. They represent a single page or resource by which the client accesses content from the server. They can be files, weblinks, symlinks or just plain-old HTML pages wrapped by [Templates](building-sites/elements/templates "Templates").
 
 #### In the Manager
 
@@ -92,11 +70,11 @@ In the manager-side of MODX Revolution, the View is handled by templates as well
 
 Controllers in MODX Revolution come in two forms. In the front-end, they are Request Handlers (via the modRequest class) and Snippets and Plugins.
 
-#### [Snippets](developing-in-modx/basic-development/snippets "Snippets")
+#### [Snippets](extending-modx/snippets "Snippets")
 
-Snippets are simply PHP code that can be placed anywhere in a page. They can be placed in [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks"), [Templates](making-sites-with-modx/structuring-your-site/templates "Templates"), or Resources. They simply execute PHP code whenever they are called, and return whatever output they would like to push to the page.
+Snippets are simply PHP code that can be placed anywhere in a page. They can be placed in [Chunks](building-sites/elements/chunks "Chunks"), [Templates](building-sites/elements/templates "Templates"), or Resources. They simply execute PHP code whenever they are called, and return whatever output they would like to push to the page.
 
-#### [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+#### [Plugins](extending-modx/plugins "Plugins")
 
 Plugins are also PHP code, but are targeted at specific System Events that occur throughout the request processing. They can occur before the webpage is rendered, after it is, before the request is handled, or many more places.
 
@@ -114,7 +92,7 @@ Connectors allow for dynamic, secure JSON requests (and eventually REST-based re
 
 ## See Also
 
-1. [Getting Started Developing](developing-in-modx/overview-of-modx-development/developer-introduction/getting-started-developing)
-2. [xPDO](/display/xPDO20/Home "Home"), the database layer for Revolution
-3. [Explanation of Directory Structure](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure "Explanation of Directory Structure")
-4. [Glossary of Revolution Terms](getting-started/an-overview-of-modx/glossary-of-revolution-terms "Glossary of Revolution Terms")
+1. [Getting Started Developing](extending-modx/getting-started)
+2. [xPDO](extending-modx/xpdo), the database layer for Revolution
+3. [Explanation of Directory Structure](getting-started/directory-structure "Explanation of Directory Structure")
+4. [Glossary of Revolution Terms](getting-started/glossary "Glossary of Revolution Terms")

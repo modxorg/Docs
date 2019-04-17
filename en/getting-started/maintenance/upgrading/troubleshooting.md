@@ -4,21 +4,12 @@ _old_id: "491"
 _old_uri: "2.x/administering-your-site/upgrading-modx/troubleshooting-upgrades"
 ---
 
-- [Common Problems](#common-problems)
-  - [Help! The only option I can choose is "New Installation", but this is an upgrade!](#help-the-only-option-i-can-choose-is-%22new-installation%22-but-this-is-an-upgrade)
-  - [Setup went well, but my manager isn't fully working.](#setup-went-well-but-my-manager-isnt-fully-working)
-  - [Some manager pages are blank due to 400 Bad Request from manager/min/](#some-manager-pages-are-blank-due-to-400-bad-request-from-managermin)
-- [Still Problems?](#still-problems)
-- [See Also](#see-also)
- 
-
-
 ## Common Problems
 
  First off, make sure:
 
 - You have eAccelerator disabled during install. eAccelerator can cause problems when doing the heavy lifting during the install process.
-- You followed all the directions on the [Upgrading MODx](administering-your-site/upgrading-modx "Upgrading MODx") page.
+- You followed all the directions on the [Upgrading MODx](getting-started/maintenance/upgrading "Upgrading MODx") page.
 - You've uploaded all the necessary files for upgrade, making sure to **merge** directories and not _replace_ them.
 - Clear your browser cache after upgrading. This will clear up a lot of common JS and CSS related errors.
 - Clear the Site Cache after upgrading. Sometimes this doesn't occur for whatever reason during setup/ because of your environment.
@@ -43,5 +34,5 @@ _old_uri: "2.x/administering-your-site/upgrading-modx/troubleshooting-upgrades"
 
 ## See Also
 
-- [Troubleshooting Installation](getting-started/installation/troubleshooting-installation "Troubleshooting Installation")
+- [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation")
 - [Additional Troubleshooting](faqs-and-troubleshooting "FAQs & Troubleshooting")

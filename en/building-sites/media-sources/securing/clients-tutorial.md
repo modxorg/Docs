@@ -4,18 +4,6 @@ _old_id: "350"
 _old_uri: "2.x/administering-your-site/media-sources/securing-a-media-source/creating-a-media-source-for-clients-tutorial"
 ---
 
-- [Introduction](#introduction)
-- [Tutorial](#tutorial)
-  - [Step 1: Create a Directory Structure](#step-1-create-a-directory-structure)
-  - [Step 2: Hide the Filesystem Media Source](#step-2-hide-the-filesystem-media-source)
-  - [Step 3: Add the Client Files Media Source](#step-3-add-the-client-files-media-source)
-  - [Step 4: Set the Default Media Source](#step-4-set-the-default-media-source)
-- [Troubleshooting: Existing Installs](#troubleshooting-existing-installs)
-- [Advanced Usage](#advanced-usage)
-  - [Different Contexts](#different-contexts)
-
-
-
 ## Introduction
 
 This tutorial will show you how to create a second media source that you can use for clients that will hide your MODX site files. This tutorial should be performed on sites before your clients have uploaded any files. If you are doing this on an existing site, please read Troubleshooting: Existing Installs at the end of this article.
@@ -94,4 +82,4 @@ Any new TVs in that context will now use that media source.
 
  ![](/download/attachments/41058455/modx5.png?version=1&modificationDate=1346438434000)
 
-Combined with [this tutorial](administering-your-site/contexts/creating-a-subdomain-from-a-folder-using-virtual-hosts "Creating a Subdomain from a Folder using Virtual Hosts"), we now have different sites on the same MODX install, each with their own unique file system. Neat!
+Combined with [this tutorial](building-sites/contexts/virtual-host "Creating a Subdomain from a Folder using Virtual Hosts"), we now have different sites on the same MODX install, each with their own unique file system. Neat!

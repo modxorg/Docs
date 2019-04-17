@@ -12,6 +12,6 @@ Validate the field values using an xPDOValidator.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#validate>
 
-``` php 
+``` php
 boolean validate ([array $options = array()])
 ```

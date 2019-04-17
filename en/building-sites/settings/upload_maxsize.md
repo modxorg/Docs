@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/upload_maxsize"
 
 ## upload\_maxsize
 
-**Name**: Maximum Upload Size 
-**Type**: Number 
+**Name**: Maximum Upload Size
+**Type**: Number
 **Default**: 1048576
 
 The maximum file size that can be uploaded via the file manager. Upload file size must be entered in bytes.

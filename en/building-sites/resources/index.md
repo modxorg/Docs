@@ -5,20 +5,11 @@ _old_id: "264"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 ---
 
-- [What is a Resource?](#what-is-a-resource)
-  - [Managing Resources](#managing-resources)
-- [Resource Fields](#resource-fields)
-  - [General Resource Fields](#general-resource-fields)
-  - [Settings Resource Fields](#settings-resource-fields)
-  - [Using Resource Fields](#using-resource-fields)
- 
-
-
 ## What is a Resource?
 
  A resource is a representation of a page in MODx. There are different types of Resources, such as documents, weblinks, symlinks, actual files, or many other things. The default Resource type is a Document, and simply represents a webpage on your site.
 
- There are 4 total types of Resources, and they are Documents, [Weblinks](making-sites-with-modx/structuring-your-site/resources/weblink "Weblink"), [Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink "Symlink"), and [Static Resources](making-sites-with-modx/structuring-your-site/resources/static-resource "Static Resource").
+ There are 4 total types of Resources, and they are Documents, [Weblinks](building-sites/resources/weblink "Weblink"), [Symlinks](building-sites/resources/symlink "Symlink"), and [Static Resources](building-sites/resources/static-resource "Static Resource").
 
  Each Resource also has a unique ID, or "Resource Identifier". This lets MODx know what Resource to fetch when you are loading a webpage. Also, when you're wanting to link between Resources, you should always use the ID to do so. That way MODx will generate the link and you will not have to worry about changed aliases, content types or anything - MODx will change your links also. Please see the Linking to Resources section below for more information on how to do this.
 
@@ -39,7 +30,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
  | Name             | Description                                                                                                                                                       |
  | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
  | id               | The ID of the Resource.                                                                                                                                           |
- | template         | A reference to the [Template](making-sites-with-modx/structuring-your-site/templates "Templates") that this Resource is using                                     |
+ | template         | A reference to the [Template](building-sites/elements/templates "Templates") that this Resource is using                                                          |
  | published        | If the Resource is Published, or viewable on the front-end.                                                                                                       |
  | pagetitle        | The title of the Resource.                                                                                                                                        |
  | longtitle        | A longer title of the Resource.                                                                                                                                   |
@@ -73,18 +64,18 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
 ### Using Resource Fields
 
- Resource fields can be accessed from anywhere by using the [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") syntax, ie:
+ Resource fields can be accessed from anywhere by using the [Template Variable](building-sites/elements/template-variables "Template Variables") syntax, ie:
 
- ``` php 
+ ``` php
 [[*pagetitle]] // renders the pagetitle.
 [[*id]] // renders the Resource's ID
 [[*createdby]] // renders the ID of the user who created this Resource
 
 ```
 
- They can also have [Output Filters](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") applied to them:
+ They can also have [Output Filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") applied to them:
 
- ``` php 
+ ``` php
 // Renders a limited version of the introtext field.
 // If it is longer than 100 chars, adds an ...
 [[*introtext:ellipsis=`100`]]
@@ -97,9 +88,9 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
 ### Accessing Resource Fields in a Snippet
 
- Grabbing the Resource Fields in a [Snippet](developing-in-modx/basic-development/snippets "Snippets") is quite easy; MODx provides you with the Resource object in any Snippet, via the $modx->resource reference. For example, this example Snippet will return the current page's pagetitle reversed:
+ Grabbing the Resource Fields in a [Snippet](extending-modx/snippets "Snippets") is quite easy; MODx provides you with the Resource object in any Snippet, via the $modx->resource reference. For example, this example Snippet will return the current page's pagetitle reversed:
 
- ``` php 
+ ``` php
 /* output the current Resource's pagetitle */
 $output = $modx->resource->get('pagetitle');
 return strrev($output);
@@ -110,27 +101,27 @@ return strrev($output);
 
  In MODx, links to Resources are dynamically managed via "Link Tags". They look like this:
 
- ``` html 
+ ``` html
 [[~123]]
 ```
 
  where '123' is the ID of the Resource to link to. You can put these tags anywhere, and MODx will dynamically render the URL for the Resource.
 
- You can also get the Link Tag by dragging a Resource from the left tree into the content panel. 
+ You can also get the Link Tag by dragging a Resource from the left tree into the content panel.
 
- Also see [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor "Named Anchor").
+ Also see [Named Anchor](building-sites/integrating-templates/named-anchor "Named Anchor").
 
 ### URL Parameters for Link Tags
 
  Adding URL parameters in your Link Tag is quite simple in Revolution. Let's say we have Resource ID 42 that resolves to a URL of 'store/items.html'. We want to add a 'tag' parameter to the URL, with a value of 'Snacks' and a 'sort' parameter of 'Taste'. Here's how you'd do it:
 
- ``` html 
+ ``` html
 [[~42? &tag=`Snacks` &sort=`Taste`]]
 ```
 
  This would render as:
 
- ``` html 
+ ``` html
 store/items.html?tag=Snacks&sort=Taste
 ```
 
@@ -140,7 +131,7 @@ store/items.html?tag=Snacks&sort=Taste
 
  You can specify the scheme for a Resource in your tag:
 
- ``` html 
+ ``` html
 [[~123? &scheme=`https`]]
 ```
 
@@ -160,9 +151,9 @@ store/items.html?tag=Snacks&sort=Taste
 
 ## See Also
 
-1. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
-2. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)
-3. [Static Resource](making-sites-with-modx/structuring-your-site/resources/static-resource)
-4. [Symlink](making-sites-with-modx/structuring-your-site/resources/symlink)
-  1. [Using Resource Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink/using-resource-symlinks)
-5. [Weblink](making-sites-with-modx/structuring-your-site/resources/weblink)
+1. [Content Types](building-sites/resources/content-types)
+2. [Named Anchor](building-sites/integrating-templates/named-anchor)
+3. [Static Resource](building-sites/resources/static-resource)
+4. [Symlink](building-sites/resources/symlink)
+   1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
+5. [Weblink](building-sites/resources/weblink)

@@ -12,7 +12,7 @@ Get an option value for this instance of an xPDOObject, using xPDO options if no
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getOption>
 
-``` php 
+``` php
 mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )
 ```
 
@@ -27,19 +27,19 @@ mixed getOption (string $key [, array|null $options [, mixed $default [, boolean
 
 Gets the config setting for xPDO::OPT\_HYDRATE\_FIELDS.
 
-``` php 
+``` php
 $hydrateFields = $xpdo->getOption(xPDO::OPT_HYDRATE_FIELDS);
 ```
 
 Gets the config option for 'test', and if not set, returns '123'.
 
-``` php 
+``` php
 $test = $xpdo->getOption('test',null,'123');
 ```
 
 Checks the $props array for the key 'depth', and if doesn't exist, then checks $xpdo->config, and if still doesn't exist, then sets to 10.
 
-``` php 
+``` php
 $props = array();
 $depth = $xpdo->getOption('depth',$props,10);
 echo $depth; // prints 10

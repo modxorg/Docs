@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/cache_disabled"
 
 ## cache\_disabled
 
-**Name**: Disable Global Cache Options 
-**Type**: Yes/No 
+**Name**: Disable Global Cache Options
+**Type**: Yes/No
 **Default**: No
 
 If true, disables all MODx caching features.

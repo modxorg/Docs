@@ -4,28 +4,19 @@ _old_id: "1198"
 _old_uri: "2.x/advanced-features/object-validation"
 ---
 
-- [What is Object Validation in xPDO?](#what-is-object-validation-in-xpdo)
-- [How is it Done?](#how-is-it-done)
-- [Example Usage](#example-usage)
-- [Rules](#rules)
-  - [The 'callable' Rule](#the-callable-rule)
-  - [The 'preg\_match' Rule](#the-pregmatch-rule)
-  - [The 'xPDOValidationRule' Rule](#the-xpdovalidationrule-rule)
-- [See Also](#see-also)
-
 ## What is Object Validation in xPDO?
 
 Object validation is done through xPDOValidator, xPDO's validation class. It's automatically accessible from any xPDOObject, via the getValidator method.
 
 ## How is it Done?
 
-Validation can be done either via the XML schema, or during run-time by [xPDOValidator](xpdo/class-reference/xpdovalidator "xPDOValidator") methods.
+Validation can be done either via the XML schema, or during run-time by [xPDOValidator](extending-modx/xpdo/class-reference/xpdovalidator "xPDOValidator") methods.
 
 ## Example Usage
 
 First, let's create our model with this object:
 
-``` xml 
+``` xml
 <model package="test" baseClass="xPDOObject" platform="mysql"
        defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">
@@ -47,7 +38,7 @@ First, let's create our model with this object:
 
 From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
 
-``` php 
+``` php
 $output = '';
 $modx->addPackage('test','/path/to/my/test/model/','test_');
 $obj = $modx->newObject('myTest');
@@ -76,7 +67,7 @@ This can be done a few ways. In the "rule" parameter of the schema, you can spec
 
 The function is passed two parameters, the first of which is the value of the column in question, and the second an array of the other attributes on the Rule field in the schema. For example, a model with a rule as such:
 
-``` php 
+``` php
 <rule field="number" name="callable2"
       type="callable" rule="myCallable"
       min="10" message="Value is too low. Must be 10 or more."
@@ -85,7 +76,7 @@ The function is passed two parameters, the first of which is the value of the co
 
 Called with the code:
 
-``` php 
+``` php
 function myCallable($value,$parameters) {
     return $value < $parameters['min'];
 }
@@ -109,7 +100,7 @@ You can also call class methods as well; if you have class A with method B, you 
 
 A preg\_match rule is simply a regular expression rule that must pass on a field in order for the object to validate. An example rule in the schema is like such - this one checks to see if the field contains the string 'php':
 
-``` php 
+``` php
 <rule field="name" name="phpMatch"
       type="preg_match" rule="/php/i"
       message="Does not contain the string 'php'." />
@@ -117,7 +108,7 @@ A preg\_match rule is simply a regular expression rule that must pass on a field
 
 And in the PHP:
 
-``` php 
+``` php
 $obj->set('name','test');
 $validator = $obj->getValidator();
 if ($validator->validate() == false) {
@@ -154,4 +145,4 @@ More documentation on these specific rules to come.
 5. [xPDOMinValueValidationRule](xpdo/advanced-features/object-validation/xpdominvaluevalidationrule)
 6. [xPDOObjectExistsValidationRule](xpdo/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
 
-- [xPDOValidator](xpdo/class-reference/xpdovalidator "xPDOValidator")
+- [xPDOValidator](extending-modx/xpdo/class-reference/xpdovalidator "xPDOValidator")

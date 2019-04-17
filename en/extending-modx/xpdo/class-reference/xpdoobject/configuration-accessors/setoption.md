@@ -12,7 +12,7 @@ Sets an option value for this instance of an xPDOObject.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#setOption>
 
-``` php 
+``` php
 void setOption(
     string $key,
     mixed $value
@@ -21,7 +21,7 @@ void setOption(
 
 ## Example
 
-``` php 
+``` php
 $object->setOption(xPDO::OPT_HYDRATE_FIELDS,true);
 ```
 

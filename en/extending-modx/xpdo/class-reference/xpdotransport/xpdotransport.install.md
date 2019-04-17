@@ -14,7 +14,7 @@ Returns true if successful.
 
 API Docs: <http://api.modxcms.com/xpdo/transport/xPDOTransport.html#install>
 
-``` php 
+``` php
 boolean install ([array $options = array ()])
 ```
 
@@ -22,10 +22,10 @@ boolean install ([array $options = array ()])
 
 Installs a transport package:
 
-``` php 
+``` php
 $transport->install();
 ```
 
 ## See Also
 
-- [xPDOTransport](xpdo/class-reference/xpdotransport "xPDOTransport")
+- [xPDOTransport](extending-modx/xpdo/class-reference/xpdotransport "xPDOTransport")

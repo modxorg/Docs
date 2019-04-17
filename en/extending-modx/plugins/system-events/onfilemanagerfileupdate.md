@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 
 Fires after updating a file via the manager.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: None
 
 ## Event Parameters
@@ -20,5 +20,5 @@ Group: None
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events)
-- [Plugins](developing-in-modx/basic-development/plugins)
+- [System Events](extending-modx/plugins/system-events)
+- [Plugins](extending-modx/plugins)

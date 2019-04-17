@@ -12,7 +12,7 @@ Set a field value by the field key or name.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#set>
 
-``` php 
+``` php
 boolean set(
    string $k,
    [mixed $v = null],
@@ -24,6 +24,6 @@ boolean set(
 
 Set the object's name:
 
-``` php 
+``` php
 $object->set('name','Billy');
 ```

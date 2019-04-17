@@ -12,16 +12,16 @@ See <http://php.net/manual/en/function.pdo-begintransaction.php>
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#beginTransaction>
 
-``` php 
+``` php
 void beginTransaction ()
 ```
 
 ## Example
 
-``` php 
+``` php
 $xpdo->beginTransaction();
 ```
 
 ## See Also
 
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo "xPDO")

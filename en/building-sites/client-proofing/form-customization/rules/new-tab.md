@@ -4,7 +4,7 @@ _old_id: "209"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-rules/new-tab"
 ---
 
- The following is relevant to older versions of MODX. See [Customizing Tabs via Form Customization](administering-your-site/customizing-the-manager/form-customization-sets/customizing-tabs-via-form-customization#CustomizingTabsviaFormCustomization-AddingNewTabs) for instructions for newer versions of MODX. 
+ The following is relevant to older versions of MODX. See [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs#CustomizingTabsviaFormCustomization-AddingNewTabs) for instructions for newer versions of MODX.
 
 ## The New Tab Rule
 
@@ -33,9 +33,7 @@ _old_uri: "2.x/administering-your-site/form-customization/form-customization-rul
  | modx-usergroup-tabs | The User Group page.           |
  | modx-context-tabs   | The Context page.              |
 
-
-
- Tab Panels on non-Resource pages are only available in 2.0.0-pl and up. 
+ Tab Panels on non-Resource pages are only available in 2.0.0-pl and up.
 
 ## Examples
 

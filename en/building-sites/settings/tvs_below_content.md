@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/tvs_below_conten
 
 ## tvs\_below\_content
 
-**Name**: TVs Below Content 
-**Type**: Yes/No 
+**Name**: TVs Below Content
+**Type**: Yes/No
 **Default**: No
 
 This controls whether Template Variables show up on their own tab or below resource content.

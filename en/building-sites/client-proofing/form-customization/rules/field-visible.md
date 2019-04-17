@@ -16,6 +16,6 @@ An example Rule of hiding the introtext field from the [Users](display/revolutio
 
 ## See Also
 
-``` php 
+``` php
 [[getResources@section? &parents=`124` &context=`revolution`]]
 ```

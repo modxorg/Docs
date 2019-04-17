@@ -4,40 +4,6 @@ _old_id: "372"
 _old_uri: "2.x/developing-in-modx/advanced-development/modx-services/modregistry"
 ---
 
-- [What is modRegistry?](#what-is-modregistry)
-- [Choosing a modRegister implementation](#choosing-a-modregister-implementation)
-  - [modFileRegister](#modfileregister)
-  - [modDbRegister](#moddbregister)
-- [Using the Registry API](#using-the-registry-api)
-  - [Connecting](#connecting)
-  - [Subscribing](#subscribing)
-  - [Sending Messages](#sending-messages)
-    - [Sending an Array of Sequenced Messages](#sending-an-array-of-sequenced-messages)
-    - [Sending an Array of Named Messages](#sending-an-array-of-named-messages)
-    - [Sending a Single Message](#sending-a-single-message)
-    - [Options for Sending Messages](#options-for-sending-messages)
-      - [delay](#delay)
-      - [ttl](#ttl)
-      - [kill](#kill)
-  - [Reading Messages](#reading-messages)
-    - [Polling for New Messages in a Topic](#polling-for-new-messages-in-a-topic)
-    - [Options for Reading Messages](#options-for-reading-messages)
-      - [poll\_limit](#polllimit)
-      - [poll\_interval](#pollinterval)
-      - [time\_limit](#timelimit)
-      - [msg\_limit](#msglimit)
-      - [remove\_read](#removeread)
-      - [include\_keys _(MODX 2.2+ only)_](#includekeys-modx-22-only)
-- [Using the Registry Processors](#using-the-registry-processors)
-  - [Sending Messages](#sending-messages-1)
-  - [Reading Messages](#reading-messages-1)
-- [Examples](#examples)
-  - [Alternative to Session Storage](#alternative-to-session-storage)
-  - [Capturing Log Messages](#capturing-log-messages)
-  - [Registering Load Balanced Web Nodes for Remote Commands](#registering-load-balanced-web-nodes-for-remote-commands)
-
-
-
 ## What is modRegistry?
 
 The modRegistry service provided with the MODX Revolution Core is a simple message queue service that developers can make use of for a wide variety of purposes. It comes with a file and database modRegister implementation, and can be extended to work with custom or external message queue implementations.
@@ -54,13 +20,13 @@ This file-based register reads and writes messages, by default, to files under t
 
 Here is how you would add a specific file-based register named _food_:
 
-``` php 
+``` php
 <?php
 $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('food', 'registry.modFileRegister', array('directory' => 'food'));
 ```
 
-**Be Careful!** 
+**Be Careful!**
  Clearing the cache manually by deleting all files and folders under `core/cache/` will delete any existing modFileRegister messages as well.
 
 ### modDbRegister
@@ -69,7 +35,7 @@ When reading and writing is expected to reach higher volumes, or you need messag
 
 Here is how you would add a specific database register named _food_:
 
-``` php 
+``` php
 <?php
 $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('food', 'registry.modDbRegister', array('directory' => 'food'));
@@ -83,7 +49,7 @@ The modRegistry service provides a very simple API for working with Registers, s
 
 Once you have obtained the modRegistry and initialized a modRegister implementation of your choice, you can now attempt to make a connection to your queue. Here is how you would connect to the _food_ register we added in the examples above.
 
-``` php 
+``` php
 <?php
 $connected = $modx->registry->food->connect();
 ```
@@ -94,7 +60,7 @@ If there is any problem connecting to the register instance, the return value wi
 
 Once you make a successful connection, it is time to subscribe to a topic for relevant messages to be sent or read. Let's subscribe to a nice topic about _beer_ in our _food_ register:
 
-``` php 
+``` php
 <?php
 $modx->registry->food->subscribe("/beer/");
 ```
@@ -109,7 +75,7 @@ You can send messages to a topic in multiple ways. They can be sent as an array 
 
 Let's say we wanted to send three messages that should be read in the same order as they were sent. We simply provide an array of those messages in the order to read them in:
 
-``` php 
+``` php
 <?php
 $modx->registry->food->send("/beer/", array("beer1", "beer2", "beer3"));
 ```
@@ -118,7 +84,7 @@ $modx->registry->food->send("/beer/", array("beer1", "beer2", "beer3"));
 
 You can also provide an associative array to send messages with specific keys that will be read according to the order of the keys:
 
-``` php 
+``` php
 <?php
 $modx->registry->food->send("/beer/", array("Heineken" => "not so good", "Pabst Blue Ribbon" => "rocks", "Molson Golden" => "ok for Canadian beer"));
 ```
@@ -129,7 +95,7 @@ These messages will be read in ascending alphabetic order, or specifically by ke
 
 Sometimes it is necessary to send a single message without a specific key. The MODX register will automatically provide a time-based key for the message so that it is read in a proper time-based order.
 
-``` php 
+``` php
 <?php
 $modx->registry->food->send("/beer/", "It's Miller Time!", array('kill' => true));
 ```
@@ -158,7 +124,7 @@ You can also read messages from a topic in a variety of ways using options passe
 
 The most common use of the registry is to look for up to x number of new messages in any subscribed topics. Here we are polling once for up to 5 new messages in the current topic, which is "/beer/":
 
-``` php 
+``` php
 <?php
 $msgs = $modx->registry->food->read(array(
     'poll_limit' => 1,
@@ -233,7 +199,7 @@ There might be times that session storage is not appropriate for persisting pers
 
 You might write a named message into a topic for retrieval by key at a later time, as done in the Login Add-On for useractivation:
 
-``` php 
+``` php
 <?php
 $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('login', 'registry.modFileRegister', array('directory' => 'login'));
@@ -246,7 +212,7 @@ $modx->registry->login->send('/useractivation/',array($user->get('username') => 
 
 And to retrieve the specific message later:
 
-``` php 
+``` php
 <?php
 $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('login','registry.modFileRegister');
@@ -260,7 +226,7 @@ $password = reset($msgs);
 
 MODX supports specifying the logTarget as a modRegister instance. This allows you to capture all log messages a message queue where you can read them later to provide user feedback, audit views, etc.
 
-``` php 
+``` php
 <?php
 $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('logging', 'registry.modFileRegister', array('directory' => 'logging'));
@@ -284,20 +250,20 @@ The first, which is attached to OnWebPageComplete, registers each server instanc
 
 Here is an example remotecommands plugin (NOTE this is for MODX 2.1, and 2.0 would be slightly different, using clearCache() instead of refresh()):
 
-``` php 
+``` php
 <?php
 /* RemoteCommands plugin -- register with OnWebPageComplete event */
- 
+
 /* find any remote commands to execute from the master instance */
 $instance = $_SERVER['SERVER_ADDR'];
 if (!empty($instance) && $modx->getService('registry', 'registry.modRegistry')) {
     $modx->registry->addRegister('remotes', 'registry.modDbRegister', array('directory' => 'remotes'));
     $modx->registry->remotes->connect();
- 
+
     /* register this instance */
     $modx->registry->remotes->subscribe("/distrib/instances/");
     $modx->registry->remotes->send("/distrib/instances/", array($instance => true), array('expires' => time() + 1440));
- 
+
     /* find any valid command messages for this instance and act on them */
     $modx->registry->remotes->subscribe("/distrib/commands/{$instance}/");
     $commands = $modx->registry->remotes->read(array('poll_limit' => 1, 'msg_limit' => 1));
@@ -318,10 +284,10 @@ if (!empty($instance) && $modx->getService('registry', 'registry.modRegistry')) 
 
 And here is an example sendclearcache plugin for registering a remote command message to each remote server instance:
 
-``` php 
+``` php
 <?php
 /* SendClearCache plugin -- register with OnSiteRefresh event */
- 
+
 /* read instances and write clear cache msg to each command directory */
 if ($modx->getService('registry', 'registry.modRegistry')) {
     $modx->registry->addRegister('remotes', 'registry.modDbRegister', array('directory' => 'remotes'));

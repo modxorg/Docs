@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/session_cookie_p
 
 ## session\_cookie\_path
 
-**Name**: Session Cookie Path 
-**Type**: String 
+**Name**: Session Cookie Path
+**Type**: String
 **Default**: /
 
 Use this setting to customize the cookie path for identifying site specific session cookies.

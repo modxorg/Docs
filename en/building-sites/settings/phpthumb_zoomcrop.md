@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/phpthumb_zoomcro
 
 ## phpthumb\_zoomcrop
 
-**Name**: phpThumb Zoom-Crop 
-**Type**: String 
+**Name**: phpThumb Zoom-Crop
+**Type**: String
 **Default**: 0
 
 The default zc setting for phpThumb when used in MODx. Defaults to 0 to prevent zoom cropping.

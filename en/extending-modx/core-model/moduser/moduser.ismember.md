@@ -12,7 +12,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#\\\\modUser::isMember()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::isMember())
 
- ``` php 
+ ``` php
 boolean isMember (mixed $groups)
 ```
 
@@ -20,25 +20,25 @@ boolean isMember (mixed $groups)
 
  Get a user object:
 
- ``` php 
+ ``` php
 $user = $modx->getObject('modUser', array('username' => 'boss'));
 ```
 
  See if the User is a member of the 'Staff' user group:
 
- ``` php 
+ ``` php
 $user->isMember('Staff');
 ```
 
  See if the User is a member of EITHER the 'Staff' or 'Investors' user group.
 
- ``` php 
+ ``` php
 $user->isMember(array('Staff','Investors'));
 ```
 
  See if the User is a member of BOTH the 'Staff' and 'Investors' user group.
 
- ``` php 
+ ``` php
 $user->isMember(array('Staff','Investors'), true);
 ```
 

@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/friendly_url_pre
 
 ## friendly\_url\_prefix
 
-**Name**: Friendly URL Prefix 
-**Type**: String 
+**Name**: Friendly URL Prefix
+**Type**: String
 **Default**:
 
 This setting is **deprecated** and is no longer available in MODx Revolution.

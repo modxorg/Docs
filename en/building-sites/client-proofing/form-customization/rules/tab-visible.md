@@ -16,6 +16,6 @@ An example Rule of hiding the Page Settings tab for all [Users](display/revoluti
 
 ## See Also
 
-``` php 
+``` php
 [[getResources@section? &parents=`301` &context=`revolution`]]
 ```

@@ -37,7 +37,7 @@ cPanel will make the necessary changes automatically when you create a new sub d
 
 Now we need to do some Apache work. (If you're not using Apache, you can at least follow the same idea and customize it to your server.) Go to Apache's httpd.conf file, and add these lines, changing where necessary for your domain name:
 
-``` php 
+``` php
 NameVirtualHost dev.modxcms.com
 <VirtualHost dev.modxcms.com>
   ServerAdmin dev@modxcms.com
@@ -68,11 +68,11 @@ Copy those to the dev/ directory.
 
 Now, you'll need to edit them.
 
-#### index.php
+### index.php
 
 Edit index.php, and find this line (near the end):
 
-``` php 
+``` php
 $modx->initialize('web');
 ```
 
@@ -82,7 +82,7 @@ Change 'web' to 'dev'. Save the file and close.
 
 You'll only need to edit one line here (and maybe not at all). Find this line (near the top):
 
-``` php 
+``` php
 RewriteBase /
 ```
 
@@ -92,13 +92,13 @@ Make sure that's set to /, not anything else. It should match the **base\_url** 
 
 What is really important here is to make sure this line points to your MODX core folder:
 
-``` php 
+``` php
  define('MODX_CORE_PATH', dirname(__FILE__) . '/core/');
 ```
 
 If the main domain is "up one level" on the filesystem, you should be able to use the following:
 
-``` php 
+``` php
  define('MODX_CORE_PATH', dirname(dirname(__FILE__)) . '/core/');
 ```
 
@@ -116,5 +116,5 @@ And you're done!
 
 ## See Also
 
-- [Contexts](administering-your-site/contexts "Contexts")
+- [Contexts](building-sites/contexts "Contexts")
 - Contexts as subfolders (from the forums: <http://modxcms.com/forums/index.php/topic,51346.0.html>)

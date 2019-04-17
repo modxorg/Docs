@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ontemp
 
 Loaded right before saving a template variable to database.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Template Variables
 
 ## Event Parameters
@@ -23,12 +23,12 @@ Group: Template Variables
 
 | Previous event | —                                                                                                                                     |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | [OnTemplateVarSave](developing-in-modx/basic-development/plugins/system-events/ontemplatevarsave "OnTemplateVarSave")                  |
+| Next event     | [OnTemplateVarSave](extending-modx/plugins/system-events/ontemplatevarsave "OnTemplateVarSave")                                        |
 | File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
 | Class          | modTemplateVar                                                                                                                         |
 | Method         | public function save($cacheFlag = null)                                                                                                |
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

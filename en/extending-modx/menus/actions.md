@@ -19,7 +19,7 @@ For example, 3rd party devs might want to create a Lexicon Topic named 'buttons'
 
 You can then load the topic via:
 
-``` php 
+``` php
 $modx->lexicon->load('tinymce:buttons');
 ```
 
@@ -31,5 +31,5 @@ Any changes to the order of 'core' menu items will be reverted during Revolution
 
 ## Related Pages
 
-- [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages")
-- [Internationalization](developing-in-modx/advanced-development/internationalization "Internationalization")
+- [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages")
+- [Internationalization](extending-modx/internationalization "Internationalization")

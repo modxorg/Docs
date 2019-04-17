@@ -10,7 +10,7 @@ Much has changed from MODx Evolution in the new Revolution release. This documen
 
 ### Tag Syntax
 
-Tags have changed their basic syntax. You can view the [Tag Syntax changes here](making-sites-with-modx/tag-syntax "Tag Syntax").
+Tags have changed their basic syntax. You can view the [Tag Syntax changes here](building-sites/tag-syntax "Tag Syntax").
 
 ### Parsing Order
 
@@ -18,7 +18,7 @@ In Evolution, pages were parsed via eval and done as a whole - in Revolution, we
 
 So what does that mean? Well, a few things:
 
-- _Don't put Snippet calls that assign placeholders at the end of a Resource, or after the Resource._ The placeholders will simply be blank, since the [Snippet](developing-in-modx/basic-development/snippets "Snippets") haven't executed yet.
+- _Don't put Snippet calls that assign placeholders at the end of a Resource, or after the Resource._ The placeholders will simply be blank, since the [Snippet](extending-modx/snippets "Snippets") haven't executed yet.
 - _Tags can now have tags within their properties._ \[\[mySnippet? &tag=`test\[\[call\]\]`\]\] is now 100% a-okay.
 - \_Using =,?,!,\* is now OK in a Snippet property.
 
@@ -26,11 +26,11 @@ So what does that mean? Well, a few things:
 
 Although this has been mostly remedied in later versions of Evolution, there is still a performance hit in those versions. This, caching-wise, has been fixed in Revolution.
 
-That said, if you're creating a site that has over 10,000 Resources, chances are you're not designing it right. Consider writing custom [Snippets](developing-in-modx/basic-development/snippets "Snippets") that pull from custom database tables instead for similar pages (such as inventories or e-commerce).
+That said, if you're creating a site that has over 10,000 Resources, chances are you're not designing it right. Consider writing custom [Snippets](extending-modx/snippets "Snippets") that pull from custom database tables instead for similar pages (such as inventories or e-commerce).
 
 ### Security
 
-The access permissions system has been completely rewritten into a new ABAC-based system. You can read more about it [here](administering-your-site/security "Security").
+The access permissions system has been completely rewritten into a new ABAC-based system. You can read more about it [here](building-sites/client-proofing/security "Security").
 
 ### Error Page vs Unauthorized Page
 
@@ -43,4 +43,4 @@ This is a change from MODx Evolution. In Revolution, if a web page is protected 
 
 ### FURL Suffixes and Prefixes -> Content Types
 
-The settings friendly\_url\_prefix and friendly\_url\_suffix are no longer applicable, as Revolution handles those now through [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types "Content Types").
+The settings friendly\_url\_prefix and friendly\_url\_suffix are no longer applicable, as Revolution handles those now through [Content Types](building-sites/resources/content-types "Content Types").

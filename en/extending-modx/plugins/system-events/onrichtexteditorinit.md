@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onrich
 
 Renders anytime a Richtext Editor could be used.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Richtext Editor
 
 ## Event Parameters
@@ -27,5 +27,5 @@ Other properties might be passed, such as:
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

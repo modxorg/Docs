@@ -12,7 +12,7 @@ Add a validation rule to an object field for this instance.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#addValidationRule>
 
-``` php 
+``` php
 void addValidationRule (
    string $field,
    string $name,

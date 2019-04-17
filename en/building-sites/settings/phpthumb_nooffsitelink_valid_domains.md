@@ -6,9 +6,9 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/phpthumb_nooffsi
 
 ## phpthumb\_nooffsitelink\_valid\_domains
 
-**Name**: phpThumb Offsite Linking Valid Domains 
-**Type**: Textfield 
-**Default**: {http\_host} 
+**Name**: phpThumb Offsite Linking Valid Domains
+**Type**: Textfield
+**Default**: {http\_host}
 **Available In:** 2.0.8+
 
 A comma-delimited list of hostnames that are valid referrers for offsite linking.

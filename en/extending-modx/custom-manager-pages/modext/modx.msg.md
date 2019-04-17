@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 
 ## MODx.msg
 
-**Extends:** Ext.Component 
+**Extends:** Ext.Component
 **Key Features:** AJAX connector features.
 
 ![](/download/attachments/18678080/confirm.png?version=1&modificationDate=1302195122000)
@@ -21,7 +21,7 @@ The MODx.msg class provides the functionality of the Ext.MessageBox class, with 
 
 Used to display an alert dialog box on the page. Example:
 
-``` javascript 
+``` javascript
 MODx.msg.alert('Warning!','You are out of space! We should clear the cache.',function() {
   MODx.clearCache();
 },MODx);
@@ -43,7 +43,7 @@ Loads a confirmation dialog that prompts the user for a Yes/No response. If Yes 
 
 An example:
 
-``` javascript 
+``` javascript
 MODx.msg.confirm({
    title: 'Are you sure?',
    text: 'Do you want to delete the world? This is irreversible.',
@@ -71,7 +71,7 @@ MODx.msg.confirm adds a few custom events that fire:
 
 ### status
 
-``` javascript 
+``` javascript
 MODx.msg.status(opt)
 ```
 
@@ -86,7 +86,7 @@ Loads a temporary status message in the top-right of the screen, that fades away
 
 You could use this in custom manager pages to provide confirmation your object was saved. You could add something like this to your FormPanel definition:
 
-``` javascript 
+``` javascript
         listeners: {
             'success': function (res) {
                 MODx.msg.status({
@@ -98,24 +98,24 @@ You could use this in custom manager pages to provide confirmation your object w
         }
 ```
 
-The 'success' listener is part of modExt and comes with [MODx.FormPanel](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel "MODx.FormPanel").
+The 'success' listener is part of modExt and comes with [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel "MODx.FormPanel").
 
 ## See Also
 
-1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
-2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)
-  1. [1. Ext JS Tutorial - Message Boxes](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
-  2. [2. Ext JS Tutorial - Ajax Include](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
-  3. [3. Ext JS Tutorial - Animation](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
-  4. [4. Ext JS Tutorial - Manipulating Nodes](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
-  5. [5. Ext JS Tutorial - Panels](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
-  6. [7. Ext JS Tutoral - Advanced Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
-  7. [8. Ext JS Tutorial - Inside a CMP](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
-3. [MODx.combo.ComboBox](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.combo.combobox)
-4. [MODx.Console](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.console)
-5. [MODx.FormPanel](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel)
-6. [MODx.grid.Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid)
-7. [MODx.grid.LocalGrid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.localgrid)
-8. [MODx.msg](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.msg)
-9. [MODx.tree.Tree](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.tree.tree)
-10. [MODx.Window](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window)
+1. [MODExt MODx Object](extending-modx/custom-manager-pages/modext/modext-modx-object)
+2. [MODExt Tutorials](extending-modx/custom-manager-pages/modext/modext-tutorials)
+   1. [Ext JS Tutorial - Message Boxes](extending-modx/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
+   2. [Ext JS Tutorial - Ajax Include](extending-modx/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
+   3. [Ext JS Tutorial - Animation](extending-modx/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
+   4. [Ext JS Tutorial - Manipulating Nodes](extending-modx/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
+   5. [Ext JS Tutorial - Panels](extending-modx/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
+   6. [Ext JS Tutoral - Advanced Grid](extending-modx/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
+   7. [Ext JS Tutorial - Inside a CMP](extending-modx/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
+3. [MODx.combo.ComboBox](extending-modx/custom-manager-pages/modext/modx.combo.combobox)
+4. [MODx.Console](extending-modx/custom-manager-pages/modext/modx.console)
+5. [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel)
+6. [MODx.grid.Grid](extending-modx/custom-manager-pages/modext/modx.grid.grid)
+7. [MODx.grid.LocalGrid](extending-modx/custom-manager-pages/modext/modx.grid.localgrid)
+8. [MODx.msg](extending-modx/custom-manager-pages/modext/modx.msg)
+9. [MODx.tree.Tree](extending-modx/custom-manager-pages/modext/modx.tree.tree)
+10. [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window)

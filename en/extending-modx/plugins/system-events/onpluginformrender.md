@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onplug
 
 Fires during the rendering of a form. Useful for rendering HTML straight into the Plugin form.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Plugins
 
 ## Event Parameters
@@ -21,5 +21,5 @@ Group: Plugins
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

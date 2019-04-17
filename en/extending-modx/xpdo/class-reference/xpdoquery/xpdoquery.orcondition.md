@@ -12,7 +12,7 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.orcondition"
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::orCondition()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::orCondition())
 
- ``` php 
+ ``` php
 void orCondition ( $conditions, [ $binding = null], [ $group = 0])
 ```
 
@@ -20,7 +20,7 @@ void orCondition ( $conditions, [ $binding = null], [ $group = 0])
 
  Grab all boxes with width 12 or 14.
 
- ``` php 
+ ``` php
 $query = $xpdo->newQuery('Box');
 $query->where(array(
    'width' => 14,
@@ -31,8 +31,8 @@ $query->orCondition(array(
 $boxes = $xpdo->getCollection('Box',$query);
 ```
 
- **Warning** 
- The order you call the functions is important! The **orCondition** must come after the **where** method has been used. 
+ **Warning**
+ The order you call the functions is important! The **orCondition** must come after the **where** method has been used.
 
 ## Another Example
 
@@ -40,7 +40,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  In the following example, a page _must_ be published (1), and the pub\_date must be either zero OR less than or equal to the current timestamp. The unpub\_date must be either zero OR greater than current timestamp.
 
- ``` php 
+ ``` php
 $criteria = $modx->newQuery('modResource');
 $criteria->where(array(
         'published' => 1,
@@ -51,7 +51,7 @@ $criteria->where(array(
                 array(
                         'unpub_date' => 0,
                         'OR:unpub_date:>' => time(),
-                ),              
+                ),
         )
 );
 ```
@@ -60,20 +60,20 @@ $criteria->where(array(
 
 Your filter parameters can reference fields in other tables.
 
- ``` php 
+ ``` php
 $query = $modx->newQuery('modUser');
-$query->innerJoin('modUserProfile','Profile'); 
+$query->innerJoin('modUserProfile','Profile');
 $query->where(array(
    'modUser.username' => $email,
 ));
 $query->orCondition(array(
    'Profile.email' => $email,
-));    
+));
 $user = $modx->getObject('modUser', $query);
 ```
 
- The filter parameters may use the class name (as in modUser above) or the alias (as the Profile above). 
+ The filter parameters may use the class name (as in modUser above) or the alias (as the Profile above).
 
 ## See Also
 
-- [xPDOQuery](xpdo/class-reference/xpdoquery "xPDOQuery")
+- [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")

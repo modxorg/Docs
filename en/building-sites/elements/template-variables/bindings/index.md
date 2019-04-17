@@ -10,8 +10,8 @@ In the context to Template Variables, a Data Source is the location of the infor
 
 - an externally generated file that is sent via FTP to the server
 - a Database table accessible to MODx
-- a [Resources](making-sites-with-modx/structuring-your-site/resources "Resources") in the resource tree
-- a [Chunk](making-sites-with-modx/structuring-your-site/chunks "Chunks") in the Elements tree
+- a [Resources](building-sites/resources "Resources") in the resource tree
+- a [Chunk](building-sites/elements/chunks "Chunks") in the Elements tree
 - the result of an evaluated PHP script
 
 These Data Sources can be tied (or "bound") to a Template Variable for formatting and displaying in document. In addition, the bound data in the TVs can be almost effortlessly formatted via the Display Controls within the TV system for some truly stunning results. The format for using the types of data source bindings available to all template variables follows:
@@ -30,7 +30,7 @@ The value returned from the data source can either be a string value (including 
 
 For example, controls that accept string values such as a radio button group or select list will attempt to convert a record set (rows and columns) into the following format:
 
-``` php 
+``` php
 col1row1Value==col2row1Value||col1row2Value==col2row2Value,...
 ```
 
@@ -42,16 +42,16 @@ When placing @ bindings inside the "Default Value" field the returned value is u
 
 ## Types
 
-- [@FILE](making-sites-with-modx/customizing-content/template-variables/bindings/file-binding "FILE Binding")
-- [@RESOURCE](making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding "RESOURCE Binding")
-- [@CHUNK](making-sites-with-modx/customizing-content/template-variables/bindings/chunk-binding "CHUNK Binding")
-- [@SELECT](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding "SELECT Binding")
-- [@EVAL](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding "EVAL Binding")
-- [@DIRECTORY](making-sites-with-modx/customizing-content/template-variables/bindings/directory-binding "DIRECTORY Binding")
-- [@INHERIT](making-sites-with-modx/customizing-content/template-variables/bindings/inherit-binding "INHERIT Binding")
+- [@FILE](building-sites/elements/template-variables/bindings/file-binding "FILE Binding")
+- [@RESOURCE](building-sites/elements/template-variables/bindings/resource-binding "RESOURCE Binding")
+- [@CHUNK](building-sites/elements/template-variables/bindings/chunk-binding "CHUNK Binding")
+- [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding")
+- [@EVAL](building-sites/elements/template-variables/bindings/eval-binding "EVAL Binding")
+- [@DIRECTORY](building-sites/elements/template-variables/bindings/directory-binding "DIRECTORY Binding")
+- [@INHERIT](building-sites/elements/template-variables/bindings/inherit-binding "INHERIT Binding")
 
-The [getResources](/extras/revo/getresources "getResources") AddOn supports an @INLINE binding.
+The [getResources](/extras/getresources "getResources") AddOn supports an @INLINE binding.
 
 ## See Also
 
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")
