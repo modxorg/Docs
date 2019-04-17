@@ -6,11 +6,11 @@ _old_uri: "revo/simplesearch"
 
 ## What is SimpleSearch?
 
- SimpleSearch is a simple search component for MODx Revolution. It supports searching Resource content and TV content.
+ SimpleSearch is a simple search component for MODX Revolution. It supports searching Resource content and TV content.
 
 ## Requirements
 
-- MODx Revolution 2.0.0-RC-2 or later
+- MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
 ## History
@@ -30,7 +30,7 @@ First of all: ALWAYS MAKE A BACKUP BEFORE UPDATING!
 
 ### Download
 
- It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/683>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/683>
 
 ### Development and Bug Reporting
 

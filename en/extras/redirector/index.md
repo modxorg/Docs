@@ -10,7 +10,7 @@ Redirector is a management tool for your 404 / 301 redirects on your site.
 
 ## Requirements
 
-- MODx Revolution 2.0.0-RC-2 or later
+- MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
 ## History
@@ -19,7 +19,7 @@ Redirector was written by [Shaun McCormick](/display/~splittingred) as a simple 
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via Package Management, or from the MODx Extras Repository, here: <http://rtfm.modx.com/extras/revo/redirector>.
+It can be downloaded from within the MODX Revolution manager via Package Management, or from the MODx Extras Repository, here: <http://rtfm.modx.com/extras/revo/redirector>.
 
 ### Development and Bug Reporting
 

@@ -10,7 +10,7 @@ A general purpose snippet for rendering the output of a collection of Resources.
 
 ## Requirements
 
-- MODx Revolution 2.1.0 or later
+- MODX Revolution 2.1.0 or later
 - PHP 5.1.2 or later
 
 ## History
@@ -19,7 +19,7 @@ renderResources was first written by Jason Coward (opengeek) and released on Mar
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/renderresources>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/renderresources>
 
 It is NOT a replacement for Ditto, but rather an alternative component that can accomplish some of the things that the more specialized components do, i.e. Ditto, Wayfinder, Breadcrumbs; basically anything that output the properties for a list of Resources (formerly Documents in MODx Evolution).
 

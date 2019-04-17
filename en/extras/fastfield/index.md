@@ -6,7 +6,7 @@ _old_uri: "revo/fastfield"
 
 ## What is fastField?
 
-fastField is a plugin which adds new type of tag \[\[#...\]\] . It can be used to display a single field, including template variables and properties, of a different resource for MODx Revolution 2.2+. It also can display the value of superglobal PHP variables $\_POST, $\_GET and others.
+fastField is a plugin which adds new type of tag \[\[#...\]\] . It can be used to display a single field, including template variables and properties, of a different resource for MODX Revolution 2.2+. It also can display the value of superglobal PHP variables $\_POST, $\_GET and others.
 
 ## History
 

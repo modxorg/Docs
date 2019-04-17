@@ -10,7 +10,7 @@ Rowboat is a custom snippet for looping over rows in any database table. Rowboat
 
 ## Requirements
 
-- MODx Revolution 2.0.7 or later
+- MODX Revolution 2.0.7 or later
 - PHP5 or later
 
 ## History
@@ -19,7 +19,7 @@ Rowboat was written by [Shaun McCormick](/display/~splittingred) and first relea
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/810>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/810>
 
 ### Development and Bug Reporting
 

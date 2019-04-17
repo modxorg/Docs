@@ -8,7 +8,7 @@ MetaX is a simple meta tag generation [snippet](developing-in-modx/basic-develop
 
 Requirements
 
-- MODx Revolution 2.0.0 or later
+- MODX Revolution 2.0.0 or later
 - PHP5 or later
 
 ## History

@@ -10,7 +10,7 @@ _old_uri: "revo/googlesitemap/"
 
 ## Requirements
 
-- MODx Revolution 2.2.x or later
+- MODX Revolution 2.2.x or later
 - PHP5.4 or later
 
 ## Historyand Info
@@ -25,7 +25,7 @@ _old_uri: "revo/googlesitemap/"
 
 ### Download
 
- It can be downloaded from within the MODx Revolution manager via \[Package Management\], or from the MODx Extras Repository, available here: <https://modx.com/extras/package/googlesitemap>
+ It can be downloaded from within the MODX Revolution manager via \[Package Management\], or from the MODx Extras Repository, available here: <https://modx.com/extras/package/googlesitemap>
 
 ### Development and Bug Reporting
 

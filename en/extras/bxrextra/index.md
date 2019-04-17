@@ -4,7 +4,7 @@ _old_id: "612"
 _old_uri: "revo/bxrextra"
 ---
 
-BxrExtra is base template for creating a new Extra for MODx Revolution. It's based on [modExtra](https://github.com/splittingred/modExtra) from [Shaun McCormick](https://github.com/splittingred).
+BxrExtra is base template for creating a new Extra for MODX Revolution. It's based on [modExtra](https://github.com/splittingred/modExtra) from [Shaun McCormick](https://github.com/splittingred).
 
 ## Setup
 

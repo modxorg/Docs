@@ -13,7 +13,7 @@ Its currently not meant to be used in production, as it needs testers, ideas, co
 
 ## Requirements
 
-- MODx Revolution
+- MODX Revolution
 - MigX – min-version: 2.6.8 pl
 - PHP5 or later
 
@@ -23,7 +23,7 @@ MigxAngular (For front-page editing, if desired) – min-version: 1.0.0 beta3 <h
 
 ## Download
 
-MigxCalendars currently is only available at <https://github.com/Bruno17/migxCalendars>. It will be added to the MODx Repository at a later date.
+MigxCalendars currently is only available at <https://github.com/Bruno17/migxCalendars>. It will be added to the MODX Repository at a later date.
 
 ## Development and Bug Reporting
 

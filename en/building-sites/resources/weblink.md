@@ -10,7 +10,7 @@ A weblink is a document of type "reference". Its template is not used to display
 
 The content of the weblink is just an URL; the parser doesn't even parse it, MODx simply redirects to the URL. As soon as it sees that it is a "reference", it just uses the content as the argument for sendRedirect($url).
 
-You can use an external URL for the content, or you can use a Resource ID to link to a Resource in your MODx Resource tree.
+You can use an external URL for the content, or you can use a Resource ID to link to a Resource in your MODX Resource tree.
 
 ## Example
 

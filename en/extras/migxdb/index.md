@@ -16,12 +16,12 @@ Its also very easy to create CMPs (Custom Manager Pages) to manage your custom-t
 
 ## Requirements
 
-- MODx Revolution 2.1 rc4 or later
+- MODX Revolution 2.1 rc4 or later
 - PHP5 or later
 
 ## Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, available here: <http://modx.com/extras/package/migx>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, available here: <http://modx.com/extras/package/migx>
 
 ## Development and Bug Reporting
 

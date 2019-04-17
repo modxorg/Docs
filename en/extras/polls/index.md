@@ -6,13 +6,13 @@ _old_uri: "revo/polls"
 
 ## What is Polls?
 
-Polls is a question and answer manager for MODx Revolution.
+Polls is a question and answer manager for MODX Revolution.
 
 With Polls you're able to create questions and answers and even link them into a category for multiple poll support. Via the manager you can easily add as many answers per question as you like and with the two snippets provided you can do mostly what is needed for viewing and voting on the questions.
 
 ### Requirements
 
-- MODx Revolution 2.0.0-RC-2 or later
+- MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
 ### History
@@ -21,7 +21,7 @@ Polls, was written by Bert Oost, a simple question and answer solution, and firs
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository on <http://modxcms.com/extras/package/783>.
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository on <http://modxcms.com/extras/package/783>.
 
 ## Development and Bug Reporting
 

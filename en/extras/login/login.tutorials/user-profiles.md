@@ -10,7 +10,7 @@ This tutorial builds the [Basic Setup](extras/login/login.tutorials/login.reques
 
 ## Create the Required Pages
 
-As with the [Basic Setup](extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), we want to make sure we have the required pages in place before we add in all the Snippets. Make sure the following **9** pages exist on your MODx Revo site (1 - 9 are the same as the previous setup, additional pages highlighted in green):
+As with the [Basic Setup](extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), we want to make sure we have the required pages in place before we add in all the Snippets. Make sure the following **9** pages exist on your MODX Revo site (1 - 9 are the same as the previous setup, additional pages highlighted in green):
 
 - **Login Page (1)** : the page containing your login form
 - **Forgot Password (2)** : the page where users can go when they forgot their password

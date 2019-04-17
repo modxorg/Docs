@@ -6,12 +6,12 @@ _old_uri: "revo/advsearch"
 
 ## What is AdvSearch?
 
- AdvSearch is an advanced search component for MODx Revolution. It allows search in dynamic contents (by using Zend Lucene search class), setting up of faceted search and searching in custom packages.
+ AdvSearch is an advanced search component for MODX Revolution. It allows search in dynamic contents (by using Zend Lucene search class), setting up of faceted search and searching in custom packages.
  It doesn't support the ajax functionality for the moment.
 
 ## Requirements
 
-- MODx Revolution 2.0.8 or later
+- MODX Revolution 2.0.8 or later
 - PHP5 or later
 - UTF-8 charset
 - php multi-bytes setting ON
@@ -24,7 +24,7 @@ _old_uri: "revo/advsearch"
 
 ### Download
 
- It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/advsearch>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/advsearch>
 
  Before to run the first search with AdvSearch, you need to install the Zend Search library first. See installation chapter below.
 

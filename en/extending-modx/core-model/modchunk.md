@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## The modChunk Class
 
-This is the Chunk base class for MODx Revolution.
+This is the Chunk base class for MODX Revolution.
 
 ## Methods
 

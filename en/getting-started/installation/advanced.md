@@ -13,11 +13,11 @@ You might want to check the [Server Requirements](getting-started/server-require
 
 ## Installation Pre-Steps
 
-After you've [downloaded](getting-started/installation "Installation") MODx Revolution's advanced distribution, upload and extract it to your server. You should be left with two directories - core/ and setup/. From here, if you plan on moving the core/ directory, proceed to the next section. If you're not going to do so, or rename the config key, browse to **setup/** in your browser and skip to the [Advanced Options](#AdvancedInstallation-AdvancedOptions) section of this document.
+After you've [downloaded](getting-started/installation "Installation") MODX Revolution's advanced distribution, upload and extract it to your server. You should be left with two directories - core/ and setup/. From here, if you plan on moving the core/ directory, proceed to the next section. If you're not going to do so, or rename the config key, browse to **setup/** in your browser and skip to the [Advanced Options](#AdvancedInstallation-AdvancedOptions) section of this document.
 
 ### Renaming or Moving the Core
 
-MODx Revolution allows you to rename and/or move the core/ directory to enhance your level of security. You can also move the core/ directory outside of the webroot to further secure your MODx installation.
+MODX Revolution allows you to rename and/or move the core/ directory to enhance your level of security. You can also move the core/ directory outside of the webroot to further secure your MODx installation.
 
 Should you choose to rename or move the core, MODx recommends doing so before installing. Simply rename or move the core, and setup/ - at the beginning - will present you with a page asking for the new location of the core:
 
@@ -115,7 +115,7 @@ When ready, click 'Login' to be presented with the Login form for the manager in
 ## See Also
 
 1. [Basic Installation](getting-started/installation/standard)
-2. [MODx Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
+2. [MODX Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
 3. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
 4. [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
 5. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
@@ -127,4 +127,4 @@ When ready, click 'Login' to be presented with the Login form for the manager in
 11. [The Setup Config Xml File](getting-started/installation/cli/config.xml)
 12. [Troubleshooting Installation](getting-started/installation/troubleshooting)
 13. [Successful Installation, Now What Do I Do?](getting-started/getting-started)
-14. [Using MODx Revolution from SVN](_legacy/getting-started/using-modx-revolution-from-svn)
+14. [Using MODX Revolution from SVN](_legacy/getting-started/using-modx-revolution-from-svn)

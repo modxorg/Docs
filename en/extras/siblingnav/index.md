@@ -6,7 +6,7 @@ _old_uri: "revo/siblingnav"
 
 ## What is siblingNav?
 
-siblingNav is a snippet for MODx Revolution which can generate Navigation to Resource-Siblings.
+siblingNav is a snippet for MODX Revolution which can generate Navigation to Resource-Siblings.
 
 siblingNav was first released on November 10, 2011 and was created by Bruno Perner for [BD Creative](http://www.bdcreative.de/).
 

@@ -6,7 +6,7 @@ _old_uri: "revo/formit"
 
 ## What is FormIt?
 
- FormIt is a dynamic form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODx Revolution. It handles a form after submission, performing validation and followup actions like sending an email. It does not generate the form, but it can repopulate it if it fails validation.
+ FormIt is a dynamic form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODX Revolution. It handles a form after submission, performing validation and followup actions like sending an email. It does not generate the form, but it can repopulate it if it fails validation.
 
 ## History
 
@@ -14,7 +14,7 @@ _old_uri: "revo/formit"
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/formit>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/formit>
 
 ### Development and Bug Reporting
 

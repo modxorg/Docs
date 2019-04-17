@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/modx-services/modfilehand
 
 ## What is modFileHandler?
 
-modFileHandler is a service class used in MODx Revolution for handling files. It abstracts basic file management actions to provide helper methods for file management.
+modFileHandler is a service class used in MODX Revolution for handling files. It abstracts basic file management actions to provide helper methods for file management.
 
 modFileHandler, modFile and modDirectory are still in their infancy stages. Many more methods will be added to them in Revolution 2.2.
 

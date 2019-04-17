@@ -6,7 +6,7 @@ _old_uri: "revo/slink"
 
 ## What is sLink?
 
-sLink (pronounced: es-link) is a simple snippet for MODx Revolution which can help create the xhtml markup for links or anchors from paramaters. sLink was first released on October 21st, 2010 and was created by Mark Hamstra.
+sLink (pronounced: es-link) is a simple snippet for MODX Revolution which can help create the xhtml markup for links or anchors from paramaters. sLink was first released on October 21st, 2010 and was created by Mark Hamstra.
 
 ## Requirements
 

@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials"
 
 ## Security Tutorials
 
-Here are some tutorials designed to help you get started with Security in MODx Revolution.
+Here are some tutorials designed to help you get started with Security in MODX Revolution.
 
 1. [Creating a Second Super Admin User](building-sites/client-proofing/security/security-tutorials/creating-a-second-super-admin-user)
 2. [Giving a User Manager Access](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)

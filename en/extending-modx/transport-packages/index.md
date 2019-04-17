@@ -14,11 +14,11 @@ Transport Packages also allow for versioning, in that they match based on a simp
 
 So, an example Transport Package might be "myextra-1.0-rc1.transport.zip". If you were to upload a "myextra-1.0-rc2.transport.zip", MODx would then interpret this as part of the same "package" but a newer version of it. It would then behave in "upgrade" mode.
 
-Transport packages are stored in .zip files, ending with ".transport.zip". They can be uploaded and installed anywhere there is a MODx Revolution instance - regardless of the server configuration.
+Transport packages are stored in .zip files, ending with ".transport.zip". They can be uploaded and installed anywhere there is a MODX Revolution instance - regardless of the server configuration.
 
 ### The Internals of a Transport Package
 
-MODx Revolution automatically "unpacks", or unzips, your transport packages for you. Once done, a subdirectory in your core/packages directory will appear with the name of the zip file (minus ".transport.zip"). This directory will contain:
+MODX Revolution automatically "unpacks", or unzips, your transport packages for you. Once done, a subdirectory in your core/packages directory will appear with the name of the zip file (minus ".transport.zip"). This directory will contain:
 
 - A manifest.php file
 - Subdirectories of each Vehicle (more on those later)

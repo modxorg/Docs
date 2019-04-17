@@ -6,11 +6,11 @@ _old_uri: "revo/peoples"
 
 ## What is Peoples?
 
-Peoples is a simple User and User Group listing component for MODx Revolution. It can be used in community sites to show who is signed up as a User for a site, and any User Groups within that site.
+Peoples is a simple User and User Group listing component for MODX Revolution. It can be used in community sites to show who is signed up as a User for a site, and any User Groups within that site.
 
 ### Requirements
 
-- MODx Revolution 2.0.0 or later
+- MODX Revolution 2.0.0 or later
 - PHP5 or later
 
 ### History
@@ -19,7 +19,7 @@ Peoples was written by [Shaun McCormick](/display/~splittingred) as a simple use
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/peoples>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/peoples>
 
 ## Snippets
 

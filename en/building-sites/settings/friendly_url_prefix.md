@@ -10,6 +10,6 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/friendly_url_pre
 **Type**: String
 **Default**:
 
-This setting is **deprecated** and is no longer available in MODx Revolution.
+This setting is **deprecated** and is no longer available in MODX Revolution.
 
 Here you can specify the prefix to use for friendly URLs. For example, a prefix setting of 'page' will turn the URL /index.php?id=2 to the friendly URL /page2.html (assuming the suffix is set to .html). This way you can specify what your users (and search engines) see for links on your site.

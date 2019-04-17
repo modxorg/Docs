@@ -47,7 +47,7 @@ The third common component here is to display a tag cloud listing all available 
 
 - A series of resources (e.g. blog posts) that utilize an auto-tag Template Variable
 - A page dedicated to displaying all resources that have been tagged with a given value (i.e. a page for search results)
-- MODx Revolution 2.0.0-RC-2 or later
+- MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
 ## History
@@ -56,7 +56,7 @@ tagLister was written by [Shaun McCormick](/display/~splittingred) and first rel
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <https://modx.com/extras/package/taglister>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <https://modx.com/extras/package/taglister>
 
 ### Development and Bug Reporting
 

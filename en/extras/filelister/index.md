@@ -6,11 +6,11 @@ _old_uri: "revo/filelister"
 
 ## What is FileLister?
 
-FileLister is a dynamic file listing Extra for MODx Revolution. It allows you to list files within a directory, as well as securely browse through subdirectories.
+FileLister is a dynamic file listing Extra for MODX Revolution. It allows you to list files within a directory, as well as securely browse through subdirectories.
 
 ## Requirements
 
-- MODx Revolution 2.0.0-rc-2 or later
+- MODX Revolution 2.0.0-rc-2 or later
 - PHP5 or later
 
 ## Historyand Info
@@ -21,7 +21,7 @@ You can view the [roadmap here](extras/filelister/filelister.roadmap "FileLister
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via \[Package Management\], or from the MODx Extras Repository, available here: <http://modxcms.com/extras/package/694>
+It can be downloaded from within the MODX Revolution manager via \[Package Management\], or from the MODx Extras Repository, available here: <http://modxcms.com/extras/package/694>
 
 ### Development and Bug Reporting
 

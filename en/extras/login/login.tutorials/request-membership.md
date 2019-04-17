@@ -48,7 +48,7 @@ Be sure to download the latest version (the one by BobRay). Bob says he may have
 
 ## Create the Required Pages
 
-As with the basic setup, we want to make sure we have the required pages in place before we add in all the Snippets. Make sure the following **9** pages exist on your MODx Revo site (1 - 5 are the same as the basic setup, additional pages highlighted in green):
+As with the basic setup, we want to make sure we have the required pages in place before we add in all the Snippets. Make sure the following **9** pages exist on your MODX Revo site (1 - 5 are the same as the basic setup, additional pages highlighted in green):
 
 - **Login Page (1)** : the page containing your login form
 - **Forgot Password (2)** : the page where users can go when they forgot their password

@@ -529,7 +529,7 @@ Extra: Doodles
 --------------------
 Version: 1.0
 
-A simple demo extra for creating robust 3rd-Party Components in MODx Revolution.
+A simple demo extra for creating robust 3rd-Party Components in MODX Revolution.
 ```
 
 Now that we've got our docs files, let's go to the end of our build.transport.php script, right before the $builder->pack() part, and add these lines:

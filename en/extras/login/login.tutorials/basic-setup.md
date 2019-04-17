@@ -12,7 +12,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
 ## Create the Required Pages
 
- Before we add all the Snippets that do all the dirty work, let's first add the following **5** pages to your MODx Revo site:
+ Before we add all the Snippets that do all the dirty work, let's first add the following **5** pages to your MODX Revo site:
 
 - **Login Page (1)** : the page containing your login form
 - **Forgot Password (2)** : the page where users can go when they forgot their password
@@ -24,7 +24,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
 ## Create the Necessary User Groups and Resource Groups
 
- MODx Revolution includes some pretty head-splitting granularity when it comes to [Permissions](administering-your-site/security/policies/permissions "Permissions"), but here is a basic schema to get you started. (Have a look at [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages "Making Member-Only Pages") for more detailed explanation.)
+ MODX Revolution includes some pretty head-splitting granularity when it comes to [Permissions](administering-your-site/security/policies/permissions "Permissions"), but here is a basic schema to get you started. (Have a look at [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages "Making Member-Only Pages") for more detailed explanation.)
 
  As of MODX 2.2.3, you can skip most of this step by using the **Access Wizard**, which appears when you create a new Resource Group under **Security -> Resource Groups**. Just use the following settings:
 

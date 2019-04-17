@@ -6,13 +6,13 @@ _old_uri: "revo/batcher"
 
 ## What is Batcher?
 
-Batcher is a batch-editing component for MODx Revolution. It allows you to perform basic actions on multiple Resources.
+Batcher is a batch-editing component for MODX Revolution. It allows you to perform basic actions on multiple Resources.
 
 [![](/download/thumbnails/16646167/batcher-ss.png)](/download/attachments/16646167/batcher-ss.png)
 
 ## Requirements
 
-- MODx Revolution 2.0.0-RC-2 or later
+- MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
 ## History
@@ -23,7 +23,7 @@ It is now developed and maintained by Sterc at <https://github.com/Sterc/Batcher
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <https://rtfm.modx.com/extras/revo/batcher>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <https://rtfm.modx.com/extras/revo/batcher>
 
 ### Development and Bug Reporting
 
