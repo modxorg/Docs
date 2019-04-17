@@ -1,5 +1,5 @@
 ---
-title: "MODX Docs"
+title: "MODX Documentation"
 _old_id: "1"
 _old_uri: "dashboard.action"
 ---
