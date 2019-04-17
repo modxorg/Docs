@@ -1,6 +1,5 @@
 ---
 title: "modUser.removeSessionCookie"
-_old_id: "1351"
 translation: "extending-modx/core-model/moduser/moduser.removesessioncookie"
 ---
 

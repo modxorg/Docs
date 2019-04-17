@@ -1,6 +1,5 @@
 ---
 title: "modChunk.getContent"
-_old_id: "1337"
 translation: "2.x/developing-in-modx/other-development-resources/class-reference/modchunk/modchunk.getcontent"
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "modResource.isMember"
-_old_id: "1718"
 translation: "2.x/developing-in-modx/other-development-resources/class-reference/modresource/modresource.ismember"
 ---
 

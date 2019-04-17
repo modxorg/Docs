@@ -1,6 +1,5 @@
 ---
 title: "modChunk.setContent"
-_old_id: "1338"
 translation: "2.x/developing-in-modx/other-development-resources/class-reference/modchunk/modchunk.setcontent"
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: "modResource"
-_old_id: "1717"
 translation: "2.x/developing-in-modx/other-development-resources/class-reference/modresource/"
 ---
 
