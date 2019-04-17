@@ -27,9 +27,6 @@ if ($chunk) {
 
 ## See Also
 
-| Page: [(at)CHUNK](/evolution/0.9.x/developers-guide/template-variables/(at)-binding/(at)chunk) |
-|------------------------------------------------------------------------------------------------|
-| Page: [(at)CHUNK](/evolution/1.0/developers-guide/template-variables/(at)-binding/(at)chunk) |
-| Page: [modChunk](extending-modx/core-model/modchunk) |
-| Page: [modChunk.setContent](extending-modx/core-model/modchunk/modchunk.setcontent) |
-| Page: [modChunk.getContent](extending-modx/core-model/modchunk/modchunk.getcontent) |
+- [modChunk](extending-modx/core-model/modchunk)
+- [modChunk.setContent](extending-modx/core-model/modchunk/modchunk.setcontent)
+- [modChunk.getContent](extending-modx/core-model/modchunk/modchunk.getcontent)
