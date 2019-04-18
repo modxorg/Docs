@@ -1,7 +1,6 @@
 ---
 title: Шаг 3 - Контроллеры
-_old_id: '72'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3
+translation: extending-modx/custom-resources/step-3-controllers
 ---
 
 Этот урок является частью серии:
