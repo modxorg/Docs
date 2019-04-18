@@ -1,7 +1,6 @@
 ---
 title: Пользовательские страницы менеджера в версии 2.3
-_old_id: '1048'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3
+translation: extending-modx/custom-manager-pages/tutorial
 ---
 
 Создание пользовательских страниц менеджера MODX (CMP) **намного** проще в MODX Revolution 2.3 - вам просто нужно задать путь к пространству имен, а затем создать файлы PHP. Вот и все.
