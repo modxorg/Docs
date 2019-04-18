@@ -6,7 +6,7 @@ _old_uri: "2.x/case-studies-and-tutorials/loading-pages-in-the-front-end-via-aja
 
 ## The Problem
 
- We want in our site to use [jQuery's tabs](http://jqueryui.com/demos/tabs/) to load our Resources via AJAX. How do we do that in MODx? This tutorial will show you just how easy it is to accomplish this in MODx Revolution.
+ We want in our site to use [jQuery's tabs](http://jqueryui.com/demos/tabs/) to load our Resources via AJAX. How do we do that in MODx? This tutorial will show you just how easy it is to accomplish this in MODX Revolution.
 
 ## Creating the Resources
 
@@ -138,4 +138,4 @@ $(function() { $("#tabs").tabs(); });
 
  Note that all you're doing is pointing the href tags to the actual document IDs, just like a normal link. The trick is you're making your Template for the Documents be blank (or minimal) so that it only loads the parsed content itself.
 
- This will successfully load your MODx Resources into jQuery tabs.
+ This will successfully load your MODX Resources into jQuery tabs.

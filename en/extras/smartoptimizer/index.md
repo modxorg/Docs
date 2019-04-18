@@ -14,7 +14,7 @@ To know more about SmartOptimizer : <http://farhadi.ir/works/smartoptimizer>.
 
 ### Requirements
 
-- MODx Revolution 2.0.x or later
+- MODX Revolution 2.0.x or later
 - PHP5 or later
 
 ### Public Releases
@@ -27,7 +27,7 @@ To know more about SmartOptimizer : <http://farhadi.ir/works/smartoptimizer>.
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/smartoptimizer>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/smartoptimizer>
 
 ### Support, Comments, Development and Bug Reporting
 

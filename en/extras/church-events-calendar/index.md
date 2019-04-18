@@ -6,7 +6,7 @@ _old_uri: "revo/church-events-calendar"
 
 ## What is Church Events Calendar?
 
-ChurchEvents is a calendar extra for MODx Revolution was initially designed specifically for churches but would be useful in many other contexts. Churchevents now supports templates and translations. There are now 3 Snippets included: ChurchEventsCalendar, ChurchEventsList and ChurchEventsRss.
+ChurchEvents is a calendar extra for MODX Revolution was initially designed specifically for churches but would be useful in many other contexts. Churchevents now supports templates and translations. There are now 3 Snippets included: ChurchEventsCalendar, ChurchEventsList and ChurchEventsRss.
 
 ## Required extra Packages
 
@@ -25,7 +25,7 @@ See a [live demo](http://www.joshua19media.com/modx-development/church-events.ht
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/churchevents>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/churchevents>
 
 ### Development and Bug Reporting
 

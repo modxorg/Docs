@@ -6,13 +6,13 @@ _old_uri: "revo/archivist"
 
 ## What is Archivist?
 
-Archivist is an archive navigation Extra for MODx Revolution. It allows for wordpress-style navigation of Resources, as well as month/year/day archive listing and automatic FURL generation.
+Archivist is an archive navigation Extra for MODX Revolution. It allows for wordpress-style navigation of Resources, as well as month/year/day archive listing and automatic FURL generation.
 
 If you are looking to create a blog, check out [Articles](extras/articles "Articles"). It includes Archivist in an easy to use form.
 
 ## Requirements
 
-- MODx Revolution 2.0.0-RC-2 or later
+- MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 - Extension requirements may call for FURL use and ".html" be changed to "/" : Content -> Content Types -> HTML (.html) -> /
 
@@ -22,7 +22,7 @@ Archivist was written by [Shaun McCormick](/display/~splittingred) as a wordpres
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/archivist>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/archivist>
 
 ### Development and Bug Reporting
 

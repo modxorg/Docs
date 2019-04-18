@@ -6,7 +6,7 @@ _old_uri: "revo/resourcewatcher"
 
 ## What is ResourceWatcher?
 
-Resource Watcher is a plugin for MODx Revolution allowing you to send notification emails when a resource is created and/or updated.
+Resource Watcher is a plugin for MODX Revolution allowing you to send notification emails when a resource is created and/or updated.
 
 ## Installation
 

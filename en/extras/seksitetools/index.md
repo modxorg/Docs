@@ -10,7 +10,7 @@ SekSiteTools is is a collection of modx snippets and chunks to perform common or
 
 ### Requirements
 
-- MODx Revolution 2.1.0-pl2 or later
+- MODX Revolution 2.1.0-pl2 or later
 - PHP5 or later
 
 ### History
@@ -19,7 +19,7 @@ SekSiteTools was written by Stephen Smith, and first released on Mar 30th, 2012.
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: [http://modx.com/extras/package/seksitetools](http://modx.com/extras/package/seksitesools).
+It can be downloaded from within the MODX Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: [http://modx.com/extras/package/seksitetools](http://modx.com/extras/package/seksitesools).
 
 ### Development and Bug Reporting
 

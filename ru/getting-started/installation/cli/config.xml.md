@@ -57,7 +57,7 @@ translation: "getting-started/installation/cli/config.xml"
 ## Так же
 
 - [Базовая Установка](getting-started/installation/standard)
-  - [MODx Revolution на Debian](_legacy/getting-started/modx-revolution-on-debian)
+  - [MODX Revolution на Debian](_legacy/getting-started/modx-revolution-on-debian)
   - [Гид по Lighttpd](getting-started/friendly-urls/lighttpd)
   - [Проблемы с WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
   - [Установка на сервере с запущеным ModSecurity](getting-started/installation/troubleshooting/modsecurity)

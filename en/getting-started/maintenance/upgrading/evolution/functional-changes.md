@@ -4,7 +4,7 @@ _old_id: "151"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution"
 ---
 
-## Changes from MODx Evolution to MODx Revolution
+## Changes from MODx Evolution to MODX Revolution
 
 Much has changed from MODx Evolution in the new Revolution release. This document will attempt to address some of the major ones.
 

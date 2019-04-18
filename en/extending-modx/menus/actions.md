@@ -5,7 +5,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/acti
 note: "Actions have been deprecated in 2.3, and will be removed in 3.0."
 ---
 
-MODx Revolution introduces an entirely new program structure for its core. The manager is also built on what are called _controllers_ and _templates_, which use AJAX processing to send data to _connectors_ that access _processors_.
+MODX Revolution introduces an entirely new program structure for its core. The manager is also built on what are called _controllers_ and _templates_, which use AJAX processing to send data to _connectors_ that access _processors_.
 
 The controllers are simply PHP files that load the correct Smarty template to display, and fetch any pre-render data for the template. Revolution abstracts these controllers into the DB as modAction's, allowing 3rd party developers to easily create custom manager pages that 'hook' into the current MODx system _without modifying the core_.
 

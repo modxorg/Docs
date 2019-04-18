@@ -10,7 +10,7 @@ An ACL, or Access Control List, is a set of [Permissions](building-sites/client-
 
 ## Usage
 
-In MODx, ACLs can be applied to any modAccessibleObject. Primarily MODx Revolution 2.0 allows for ACLs on Resources and Contexts.
+In MODx, ACLs can be applied to any modAccessibleObject. Primarily MODX Revolution 2.0 allows for ACLs on Resources and Contexts.
 
 ### Context ACL
 

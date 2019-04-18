@@ -10,7 +10,7 @@ SekFancyBox is a port of fancyBox 2.0.4 ( it can be found on the [fancyBox](http
 
 ### Requirements
 
-- MODx Revolution 2.1.0-RC-2 or later
+- MODX Revolution 2.1.0-RC-2 or later
 - PHP5 or later
 
 While I have tested in Modx 2.1, this may work in older versions. SekFancy box is a simple program, it makes no calls to any database and has no manager pages to support.
@@ -21,7 +21,7 @@ SekFancyBox was written by Stephen Smith, and first released on Feb 1st, 2012.
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: <http://modx.com/extras/package/sekfancybox>.
+It can be downloaded from within the MODX Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: <http://modx.com/extras/package/sekfancybox>.
 
 ### Development and Bug Reporting
 

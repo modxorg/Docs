@@ -127,7 +127,7 @@ $database_user = '';           // name of the user
 $database_password = '';   // password for that database user
 // if this file is not placed side by side with the config.core.php file, add the directory path
 include_once 'config.core.php';
-// OR, use your MODx Revo connection details.  Just uncomment the next line:
+// OR, use your MODX Revo connection details.  Just uncomment the next line:
 //include(MODX_CORE_PATH . 'config/' . MODX_CONFIG_KEY . '.inc.php');
 // If your tables use a prefix, this will help identify them and it ensures that
 // the class names appear "clean", without the prefix.

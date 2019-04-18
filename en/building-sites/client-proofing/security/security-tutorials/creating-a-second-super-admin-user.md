@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials/creating-a-se
 
 ## The Problem
 
-You want another MODx Revolution User to have full manager access, with all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") of an Administrator user. Perhaps it's your colleague or your client, but by creating another Administrator, you are handing over the keys to the _entire_ site. This is a simplistic scenario: the other admin would be able to modify or delete your user, so it may not be a viable solution for what you need to do. In the process of walking users through this task, this page gives a brief introduction to roles and access policies.
+You want another MODX Revolution User to have full manager access, with all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") of an Administrator user. Perhaps it's your colleague or your client, but by creating another Administrator, you are handing over the keys to the _entire_ site. This is a simplistic scenario: the other admin would be able to modify or delete your user, so it may not be a viable solution for what you need to do. In the process of walking users through this task, this page gives a brief introduction to roles and access policies.
 
 ## The Solution
 
@@ -26,7 +26,7 @@ Try it. When you try to login using the other username with only a "Member" role
 
 ![](/download/attachments/33226828/User-Group-Perms.jpg?version=1&modificationDate=1287981106000)
 
-By default, MODx Revolution has 2 contexts: **web** (the front-end) and **mgr** (the back-end). From this table, we can learn 2 things: that the _minimum_ role is the Super-User role, and the "Access Policy" in use for this context is "Administrator". Even if you don't understand what all of that means, this is a good place to start educating you about permissions.
+By default, MODX Revolution has 2 contexts: **web** (the front-end) and **mgr** (the back-end). From this table, we can learn 2 things: that the _minimum_ role is the Super-User role, and the "Access Policy" in use for this context is "Administrator". Even if you don't understand what all of that means, this is a good place to start educating you about permissions.
 
 ### Minimum Role
 
@@ -42,7 +42,7 @@ When thinking about roles, think about that access policy there. The access poli
 
 See the other tutorial about [Giving a User Manager Access](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access "Giving a User Manager Access") for an example of how to create a user with a permission level of less than you.
 
-Shaun McCormick's video on [Understanding MODx Revolution Security](http://vimeo.com/13856994) gives a detailed walk-through of setting up some complex permission schemes.
+Shaun McCormick's video on [Understanding MODX Revolution Security](http://vimeo.com/13856994) gives a detailed walk-through of setting up some complex permission schemes.
 
 1. [Giving a User Manager Access](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)
 2. [Making Member-Only Pages](building-sites/client-proofing/security/security-tutorials/making-member-only-pages)

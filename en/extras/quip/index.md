@@ -6,11 +6,11 @@ _old_uri: "revo/quip"
 
 ## What is Quip?
 
-Quip is a simple commenting [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODx Revolution. It allows you to quickly and easily put up comments on your website, including threaded support, moderation, url to link conversion, automatic thread closing, and more. It also allows for full comment management via the backend system in the Revolution manager.
+Quip is a simple commenting [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODX Revolution. It allows you to quickly and easily put up comments on your website, including threaded support, moderation, url to link conversion, automatic thread closing, and more. It also allows for full comment management via the backend system in the Revolution manager.
 
 ### Requirements
 
-- MODx Revolution 2.0.0-RC-2 or later
+- MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
 ### History
@@ -19,7 +19,7 @@ Quip was written by [Shaun McCormick](/display/~splittingred) as a simple commen
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/quip>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/quip>
 
 API Documentation for Quip can also be found here: <http://api.modx.com/quip/>
 

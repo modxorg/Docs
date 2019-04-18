@@ -9,7 +9,7 @@ note: 'This document does not describe a full workflow for using static resource
 
  When working in collaboration, teams of developers and designers often collaborate via Subversion (SVN) to make development easier between multiple people. MODx, however, stores its data in the database. This has many benefits generally, but DB-stored code cannot be version-controlled via SVN.
 
- However, the solution in MODx Revolution is quite simple.
+ However, the solution in MODX Revolution is quite simple.
 
 ## The Solution
 

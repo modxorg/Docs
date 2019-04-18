@@ -20,7 +20,7 @@ return 'Hello, World!';
  A few notes about using this:
 
 - Do not "echo" content, as it will be ignored
-- Do not use $modx->resource in your widget, as there is no active resource for the dashboard
+- Do not use `$modx->resource` in your widget, as there is no active resource for the dashboard
 - Do not put a closing PHP tag at the end of your code! For some reason, it gets parsed incorrectly (as of MODX 2.2.8)
 
 ## See Also

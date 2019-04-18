@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## The modUser Class
 
-This is the base User class for MODx Revolution.
+This is the base User class for MODX Revolution.
 
 ## Methods
 

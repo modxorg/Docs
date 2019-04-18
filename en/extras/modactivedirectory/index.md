@@ -6,7 +6,7 @@ _old_uri: "revo/modactivedirectory"
 
 ## What is modActiveDirectory?
 
- modActiveDirectory is a [Microsoft ActiveDirectory](http://en.wikipedia.org/wiki/Active_Directory) integration for MODx Revolution. It allows you to use ActiveDirectory to authenticate against to login to MODX.
+ modActiveDirectory is a [Microsoft ActiveDirectory](http://en.wikipedia.org/wiki/Active_Directory) integration for MODX Revolution. It allows you to use ActiveDirectory to authenticate against to login to MODX.
 
 ## Requirements
 
@@ -16,7 +16,7 @@ _old_uri: "revo/modactivedirectory"
 
 ## Installation
 
- It can be downloaded from within the MODx Revolution manager via \[Package Management\], or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/711>
+ It can be downloaded from within the MODX Revolution manager via \[Package Management\], or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/711>
 
  You will need to ensure the manager/controllers/security/login.php file is writable by PHP, if it is not already, before installing. modActiveDirectory patches a bug in that file that is in Revo 2.0.0-pl.
 

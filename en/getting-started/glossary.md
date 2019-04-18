@@ -62,7 +62,7 @@ A single setting for that Context that either creates a new setting or overrides
 
 ### Core Workspace
 
-Each unique MODx Core is represented by a named Workspace. When you install Revolution initially, the MODx Core used by the setup application is recorded into the MODx database as the Default MODx Workspace. In future MODx Revolution releases, there will be an ability to manage multiple Workspaces from a single database, directly from the manager application. This will make it easy to isolate upgrades to the MODx Core; by quickly adding a new Core Workspace and selecting a menu option, you'll be able to apply an entire new MODx Core installation to production sites after testing on a staging site, or quickly revert to a previous Core Workspace you know works. This will be especially important for multi-site configurations running on shared MODx Core installations.
+Each unique MODx Core is represented by a named Workspace. When you install Revolution initially, the MODx Core used by the setup application is recorded into the MODx database as the Default MODx Workspace. In future MODX Revolution releases, there will be an ability to manage multiple Workspaces from a single database, directly from the manager application. This will make it easy to isolate upgrades to the MODx Core; by quickly adding a new Core Workspace and selecting a menu option, you'll be able to apply an entire new MODx Core installation to production sites after testing on a staging site, or quickly revert to a previous Core Workspace you know works. This will be especially important for multi-site configurations running on shared MODx Core installations.
 
 - - - - - -
 
@@ -164,7 +164,7 @@ A type of container that is interpreted by the Parser to fetch content. Can have
 
 ### Resource Identifier
 
-Also called a Document ID, Resource ID, or Document Identifier; the number in parenthesis in the MODx Resource Tree in the Manager that uniquely identifies the Resource specified.
+Also called a Document ID, Resource ID, or Document Identifier; the number in parenthesis in the MODX Resource Tree in the Manager that uniquely identifies the Resource specified.
 
 - - - - - -
 
@@ -204,7 +204,7 @@ A specific type of Resource that is a direct reference to a specific file on the
 
 ### Symlink
 
-A type of Resource that references a single, local MODx Resource; the Resource's content will replace the Symlink's content.
+A type of Resource that references a single, local MODX Resource; the Resource's content will replace the Symlink's content.
 
 - - - - - -
 
@@ -246,7 +246,7 @@ A user-specific setting that either creates a new setting or overrides the simil
 
 ### Weblink
 
-A type of Resource that references a specific URL or MODx Resource, redirecting the visitor to that URL or Resource.
+A type of Resource that references a specific URL or MODX Resource, redirecting the visitor to that URL or Resource.
 
 - - - - - -
 

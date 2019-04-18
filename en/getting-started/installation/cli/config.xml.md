@@ -60,7 +60,7 @@ The config.xml file used for running setup via CLI has the following XML nodes. 
 ## See Also
 
 1. [Basic Installation](getting-started/installation/standard)
-    1. [MODx Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
+    1. [MODX Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
     2. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
     3. [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
     4. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
@@ -72,4 +72,4 @@ The config.xml file used for running setup via CLI has the following XML nodes. 
     1. [The Setup Config Xml File](getting-started/installation/cli/config.xml)
 5. [Troubleshooting Installation](getting-started/installation/troubleshooting)
 6. [Successful Installation, Now What Do I Do?](getting-started/getting-started)
-7. [Using MODx Revolution from SVN](_legacy/getting-started/using-modx-revolution-from-svn)
+7. [Using MODX Revolution from SVN](_legacy/getting-started/using-modx-revolution-from-svn)

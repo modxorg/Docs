@@ -58,7 +58,7 @@ Great! Restart your server (apachectl graceful).
 
 Now we're going to need to create the actual files to load the subdomain. Go create a "dev/" subdirectory in /home/modxcms.com/public\_html/ (or whatever base path your webroot is in).
 
-You'll need to copy 3 files from your MODx Revolution's root directory:
+You'll need to copy 3 files from your MODX Revolution's root directory:
 
 - index.php
 - .htaccess

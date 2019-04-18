@@ -13,7 +13,7 @@ The tracking code templates [can be overridden with your own chunks](#Analytics-
 
 ## Requirements
 
-- MODx Revolution 2.1.5 or later
+- MODX Revolution 2.1.5 or later
 - PHP5 or later
 
 ## History

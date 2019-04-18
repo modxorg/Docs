@@ -8,7 +8,7 @@ This tutorial is for MODX Revolution 2.2 or greater.
 
 ## What are Custom TV Input Types?
 
-MODx Revolution allows you to create your own custom TV input types (similar to the textbox, radio, textarea, richtext, etc types already available) for your [Template Variables](building-sites/elements/template-variables "Template Variables"). This tutorial will show a very simple example by loading a simple Template dropdown for us in the mgr, and then in the frontend will render our Template ID wrapped in a special div. We'll call it "TemplateSelect". We'll also make this an Extra called "OurTVs", meaning that we'll have the files outside of the normal TV input renders directory, and put it in our own Extra's directory in core/components/ourtvs/.
+MODX Revolution allows you to create your own custom TV input types (similar to the textbox, radio, textarea, richtext, etc types already available) for your [Template Variables](building-sites/elements/template-variables "Template Variables"). This tutorial will show a very simple example by loading a simple Template dropdown for us in the mgr, and then in the frontend will render our Template ID wrapped in a special div. We'll call it "TemplateSelect". We'll also make this an Extra called "OurTVs", meaning that we'll have the files outside of the normal TV input renders directory, and put it in our own Extra's directory in core/components/ourtvs/.
 
 ## Create a Namespace
 

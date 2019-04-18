@@ -65,7 +65,7 @@ MODX приступит к обновлению, по окончанию кот�
 ## Так же
 
 1. [Базовая Установка](getting-started/installation/standard)
-2. [MODx Revolution на Debian](_legacy/getting-started/modx-revolution-on-debian)
+2. [MODX Revolution на Debian](_legacy/getting-started/modx-revolution-on-debian)
 3. [Гид по Lighttpd](getting-started/friendly-urls/lighttpd)
 4. [Проблемы с WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
 5. [Установка на сервере с запущеным ModSecurity](getting-started/installation/troubleshooting/modsecurity)

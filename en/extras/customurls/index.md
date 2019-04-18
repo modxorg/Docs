@@ -14,7 +14,7 @@ For example, with CustomURLs you can add the resource's ID or publish month in t
 
 ### Requirements
 
-- MODx Revolution 2.2.x or later
+- MODX Revolution 2.2.x or later
 - PHP5 or later
 
 ### Public Releases
@@ -26,7 +26,7 @@ For example, with CustomURLs you can add the resource's ID or publish month in t
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/customurls>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/customurls>
 
 ### Support, Comments, Development and Bug Reporting
 

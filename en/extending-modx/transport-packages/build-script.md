@@ -58,7 +58,7 @@ Now, we'll need to include some files to get the build libraries we'll need. Fir
 require_once dirname(__FILE__) . '/build.config.php';
 ```
 
-In this file, we'll want to define the location of our MODx Revolution installation so that the build script can know where to get the modX class, as well as where to put the package when finished. Our file will look somewhat like this:
+In this file, we'll want to define the location of our MODX Revolution installation so that the build script can know where to get the modX class, as well as where to put the package when finished. Our file will look somewhat like this:
 
 ``` php
 <?php
@@ -72,7 +72,7 @@ define('MODX_CORE_PATH', '/absolute/path/to/modx/core/');
 define('MODX_CONFIG_KEY','config');
 ```
 
-You'll want to make sure to change the value of MODX\_CORE\_PATH to the absolute path of where your MODx Revolution core is installed. MODX\_CONFIG\_KEY can stay the same, unless you're doing a multi-domain install.
+You'll want to make sure to change the value of MODX\_CORE\_PATH to the absolute path of where your MODX Revolution core is installed. MODX\_CONFIG\_KEY can stay the same, unless you're doing a multi-domain install.
 
 Now, you'll want to include the modX class, and instantiate it. We'll also initialize it into the 'mgr' context, and set the log output to HTML to make our errors and info messages nice and formatted - unless we're doing this from the cmd line, where we'll want just standard echo messages.
 
@@ -104,7 +104,7 @@ Plus, should we want to add any [Lexicon Entries](extending-modx/internationaliz
 
 ## Packaging in Objects
 
-Objects are packaged as _Vehicles_ in MODx Revolution; basically think of a vehicle as a sort of storage system that transports the data and/or files into the zip package. Packages can contain many vehicles; vehicles can contain many objects or files - however, vehicles that contain an object must only have one reference object (or parent object, whichever you prefer) that the vehicle is based off of.
+Objects are packaged as _Vehicles_ in MODX Revolution; basically think of a vehicle as a sort of storage system that transports the data and/or files into the zip package. Packages can contain many vehicles; vehicles can contain many objects or files - however, vehicles that contain an object must only have one reference object (or parent object, whichever you prefer) that the vehicle is based off of.
 
 So, let's look at some examples for creating a vehicle before digging into our build script. This first example packages in a simple object, with some parameters:
 
@@ -407,7 +407,7 @@ We have our lexicon structured nicely in our \\core/components/quip/lexicon dire
 
 As you can see, we have a subdirectory as 'en', the IANA code for English. Then, we have a 'default.inc.php' - this represents the 'default' lexicon topic. Should we want to create separate lexicon topics, we would name them 'topicname.inc.php'.
 
-As of MODx Revolution RC-2, MODx will automatically find the lexicons in your lexicon directory, assuming that you put them in this structure in the following place: '{namespace\_path}lexicon/', where the Namespace path is the path you put for your Namespace earlier. You don't have to build in the lexicons directly at all; MODx will parse it for you.
+As of MODX Revolution RC-2, MODx will automatically find the lexicons in your lexicon directory, assuming that you put them in this structure in the following place: '{namespace\_path}lexicon/', where the Namespace path is the path you put for your Namespace earlier. You don't have to build in the lexicons directly at all; MODx will parse it for you.
 
 This is because the lexicons are cached first from your files, then any overrides from the DB are merged and cached. This allows people to 'override' your lexicons by using Lexicon Management in the Manager, should they choose to, without breaking their upgrade path for your Component.
 

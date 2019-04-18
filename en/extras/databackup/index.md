@@ -14,7 +14,7 @@ _old_uri: "revo/databackup"
 
 ### Download
 
- It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/databackup>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/databackup>
 
 ### Development and Bug Reporting
 

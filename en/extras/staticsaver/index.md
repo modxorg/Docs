@@ -6,7 +6,7 @@ _old_uri: "revo/staticsaver"
 
 ## What is StaticSaver
 
-StaticSaver is a plugin for MODx Revolution that automatically sets up the name of file and media source of element (template, chunk, snippet, TV or plugin) when wanting to make this element be static. This is a simple helper for MODX developers.
+StaticSaver is a plugin for MODX Revolution that automatically sets up the name of file and media source of element (template, chunk, snippet, TV or plugin) when wanting to make this element be static. This is a simple helper for MODX developers.
 
 ## Installation
 

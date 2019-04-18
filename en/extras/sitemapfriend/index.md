@@ -10,7 +10,7 @@ This snippet generates sitemaps such as Google XML sitemap, HTML sitemap and/or 
 
 ### Requirements
 
-- MODx Revolution 2.1.5 or later
+- MODX Revolution 2.1.5 or later
 - PHP5 or later
 
 ### History
@@ -20,7 +20,7 @@ Mihai retired from developping under Modx and the plugin is currently maintained
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the [MODx Extras Repository](http://modx.com/extras/package/sitemapfriend).
+It can be downloaded from within the MODX Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the [MODx Extras Repository](http://modx.com/extras/package/sitemapfriend).
 
 ### Development and Bug reporting
 

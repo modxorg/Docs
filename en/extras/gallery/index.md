@@ -6,13 +6,13 @@ _old_uri: "revo/gallery"
 
 ## What is Gallery?
 
- Gallery is a dynamic Gallery Extra for MODx Revolution. It allows you to quickly and easily put up galleries of images, sort them, tag them, and display them in a myriad of ways in the front-end of your site.
+ Gallery is a dynamic Gallery Extra for MODX Revolution. It allows you to quickly and easily put up galleries of images, sort them, tag them, and display them in a myriad of ways in the front-end of your site.
 
  A tutorial has been made for Gallery by the community, and can be downloaded here: [Tutorial - Gallery Component with Galleriffic.pdf](/download/attachments/13664292/Tutorial+-+Gallery+Component+with+Galleriffic.pdf?version=1&modificationDate=1288905236000)
 
 ## Requirements
 
-- MODx Revolution 2.0.0-rc-2 or later
+- MODX Revolution 2.0.0-rc-2 or later
 - PHP5 or later
 - php-mbstring Enabled
 
@@ -24,7 +24,7 @@ _old_uri: "revo/gallery"
 
 ### Download
 
- It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, available here: <http://modx.com/extras/package/gallery>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, available here: <http://modx.com/extras/package/gallery>
 
 ### Development and Bug Reporting
 

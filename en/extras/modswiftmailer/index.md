@@ -29,7 +29,7 @@ The current version supports about 90% of Swift Mailer's regular usage functiona
 
 ## Requirements
 
-- MODx Revolution 2.0.2-pl or later
+- MODX Revolution 2.0.2-pl or later
 - PHP5 or later
 - Knowledge of [modMail](developing-in-modx/advanced-development/modx-services/modmail "modMail")
 

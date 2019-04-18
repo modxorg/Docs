@@ -6,7 +6,7 @@ _old_uri: "revo/getresourcefield"
 
 ## What is getResourceField?
 
-getResourceField is a simple snippet which can be used to display a single field, including template variables, of a different resource for MODx Revolution.
+getResourceField is a simple snippet which can be used to display a single field, including template variables, of a different resource for MODX Revolution.
 
 ## History
 

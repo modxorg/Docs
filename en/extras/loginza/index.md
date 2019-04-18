@@ -12,12 +12,12 @@ Snippet Loginza register users on first login, and update profile on next. Updat
 
 ### Requirements
 
-- MODx Revolution 2.1 or later
+- MODX Revolution 2.1 or later
 - PHP5 or later
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/pagebreaker><http://modx.com/extras/package/loginza>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/pagebreaker><http://modx.com/extras/package/loginza>
 
 DevelopmeDevelopment and Bug Reporting
 

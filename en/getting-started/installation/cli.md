@@ -68,7 +68,7 @@ It provides command line options for this process. Here's a video of it in actio
 ## See Also
 
 1. [Basic Installation](getting-started/installation/standard)
-2. [MODx Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
+2. [MODX Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
 3. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
 4. [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
 5. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
@@ -80,4 +80,4 @@ It provides command line options for this process. Here's a video of it in actio
 11. [The Setup Config Xml File](getting-started/installation/cli/config.xml)
 12. [Troubleshooting Installation](getting-started/installation/troubleshooting)
 13. [Successful Installation, Now What Do I Do?](getting-started/getting-started)
-14. [Using MODx Revolution from SVN](_legacy/getting-started/using-modx-revolution-from-svn)
+14. [Using MODX Revolution from SVN](_legacy/getting-started/using-modx-revolution-from-svn)

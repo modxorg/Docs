@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/form-customization/form-customization-rul
 
 ## What is a Rule?
 
-Rules in MODx Revolution are simply generic rules that apply to any Action (manager page). They also can be tied to User Groups, wherein a Rule will only be applied if the User is part of that User Group.
+Rules in MODX Revolution are simply generic rules that apply to any Action (manager page). They also can be tied to User Groups, wherein a Rule will only be applied if the User is part of that User Group.
 
 ## What are the Rules available?
 

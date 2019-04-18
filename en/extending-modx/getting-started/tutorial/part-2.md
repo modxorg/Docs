@@ -69,7 +69,7 @@ A couple of things to note. One, note that innerJoin first passes the class name
 
 Obviously, you can go pretty wild here with complex queries. The nice thing about xPDO in MODx is that there's really a ton of different ways to do most things - you could also have used [$modx->getCollectionGraph](extending-modx/xpdo/retrieving-objects/graphs "getCollectionGraph") for this as well.
 
-In the [next article](extending-modx/getting-started/tutorial/part-3 "PHP Coding in MODx Revolution, Pt. III"), we'll talk about how this is used in the context of MODx processors with JSON.
+In the [next article](extending-modx/getting-started/tutorial/part-3 "PHP Coding in MODX Revolution, Pt. III"), we'll talk about how this is used in the context of MODx processors with JSON.
 
 ## See Also
 

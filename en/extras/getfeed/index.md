@@ -10,7 +10,7 @@ A simple snippet to retrieve an RSS feed and iterate the feed items using a Chun
 
 ## Requirements
 
-- MODx Revolution 2.0.0-RC-2 or later
+- MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
 ## History
@@ -19,7 +19,7 @@ getFeed was written by [Jason Coward](/display/~opengeek) as a simple feed readi
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via \[Package Management\], or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/690>
+It can be downloaded from within the MODX Revolution manager via \[Package Management\], or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/690>
 
 ### Development and Bug Reporting
 

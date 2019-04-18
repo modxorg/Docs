@@ -4,7 +4,7 @@ _old_id: "618"
 _old_uri: "revo/cliche"
 ---
 
-Cliche is an Image Gallery Component for MODx Revolution 2.2.
+Cliche is an Image Gallery Component for MODX Revolution 2.2.
 
 ## Installation
 

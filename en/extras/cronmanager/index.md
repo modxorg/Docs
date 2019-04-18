@@ -6,13 +6,13 @@ _old_uri: "revo/cronmanager"
 
 ## What is Cron Manager
 
-The cron manager for MODx makes it possible to execute snippets by the crontab of the server. By using the manager of MODx Revolution you can simply add new snippets to the cron list.
+The cron manager for MODx makes it possible to execute snippets by the crontab of the server. By using the manager of MODX Revolution you can simply add new snippets to the cron list.
 
 Using snippets for your cron management also requires properties and you can add properties manually by setting up key value pairs but also with a propertyset (name).
 
 ## Installation
 
-First install the package via the Package Management inside MODx Revolution.
+First install the package via the Package Management inside MODX Revolution.
 
 After that, you need to configure the cron script in your servers crontab list. On most hostings is control panel like Direct Admin available en mostly you're able to configure cronjobs via that control panel. People who have access to there server with SSH could add the cronjob with the "crontab -e" command. Add the following line as cronjob. (Note: in some cases this command needs some modifications, you could discuss it with your provider).
 

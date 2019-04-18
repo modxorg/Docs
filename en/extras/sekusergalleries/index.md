@@ -10,7 +10,7 @@ SekUserGalleries is a gallery manager designed for users to upload and manage pe
 
 ### Requirements
 
-- MODx Revolution 2.2.0-pl2 or later
+- MODX Revolution 2.2.0-pl2 or later
 - PHP5 or later
 - Current beta version of sekUserGalleries requires sekFancyBox, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository here: <http://modx.com/extras/package/sekfancybox>.
 - Current beta version of sekUserGalleries requires sekFormTools, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository here: <http://modx.com/extras/package/sekformtools>.
@@ -23,7 +23,7 @@ SekUserGalleries was written by Stephen Smith, and first released on Mar 19th, 2
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: <http://modx.com/extras/package/sekusergalleries>.
+It can be downloaded from within the MODX Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: <http://modx.com/extras/package/sekusergalleries>.
 
 ### Development and Bug Reporting
 

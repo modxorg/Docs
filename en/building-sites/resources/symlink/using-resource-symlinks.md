@@ -6,7 +6,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources/symlink/us
 
 ## Understanding a Symlink
 
-A MODx Revolution symlink simply takes the content of one resource and displays it in another. You can add a new template or what ever changes you may want to the symlink, and you can place it anywhere within the site, but you can not add additional content to it. You can create multiple Symlinks that point to the same resource, but each Symlink will have its own unique URL. Another way to think of this feature is to imagine that you have added a normal resource to MODx, but you've pasted a Snippet into the content – the Snippet grabs only the content from the other page.
+A MODX Revolution symlink simply takes the content of one resource and displays it in another. You can add a new template or what ever changes you may want to the symlink, and you can place it anywhere within the site, but you can not add additional content to it. You can create multiple Symlinks that point to the same resource, but each Symlink will have its own unique URL. Another way to think of this feature is to imagine that you have added a normal resource to MODx, but you've pasted a Snippet into the content – the Snippet grabs only the content from the other page.
 
 ## How do I use this feature?
 

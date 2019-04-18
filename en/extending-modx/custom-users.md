@@ -20,7 +20,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 
 ## Overview
 
- By extending the MODx Revolution authentication layer we can build very complex and varied user subsystems, e.g. for social networking, user management systems, or other applications not yet conceptualized. This ability to extend the modUser class is just one example of how to extend a core class – a similar approach could be used to extend any MODX core class.
+ By extending the MODX Revolution authentication layer we can build very complex and varied user subsystems, e.g. for social networking, user management systems, or other applications not yet conceptualized. This ability to extend the modUser class is just one example of how to extend a core class – a similar approach could be used to extend any MODX core class.
 
 ## Purpose
 
@@ -32,7 +32,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 
  Your extension should be used to access **your extension**. If the user (object) has not been extended, do not allow your extension to interact with them -- hence: let your extension die.
 
- MODx Revolution already handles users and probably does not need much help. While we may use your extension on \*our\* data, please do not begin writing "bloat" which is simply repeating code already provided in the modUser class. In other words use the Revolution resources for your extended users, but do not create code to replace modUser.
+ MODX Revolution already handles users and probably does not need much help. While we may use your extension on \*our\* data, please do not begin writing "bloat" which is simply repeating code already provided in the modUser class. In other words use the Revolution resources for your extended users, but do not create code to replace modUser.
 
  Lastly, get familiar with [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser"), before you begin to code. Some methods are not one-to-one as you might assume, such as attributes, which can be assigned per context, resource, etc. Typically use the modUser suggestions to access modUser methods.
 
@@ -159,7 +159,7 @@ return print_r($data->toArray(), true);
  ``` php
  <?php
 /**
- *  File        sample.class.php (requires MODx Revolution 2.x)
+ *  File        sample.class.php (requires MODX Revolution 2.x)
  * Created on    Aug 18, 2010
  * Project        shawn_wilkerson
  * @package     extendedUser
