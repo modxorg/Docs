@@ -1,7 +1,6 @@
 ---
 title: Вопросы и ответы по разработке CMP
-_old_id: '1690'
-_old_uri: 2.x/faqs-and-troubleshooting/cmp-development-faqs-and-troubleshooting
+translation: extending-modx/custom-manager-pages/troubleshooting
 ---
 
 На этой странице рассматриваются часто задаваемые вопросы и советы по устранению неполадок на страницах CMP.
