@@ -1,12 +1,12 @@
 ---
 title: MODx.tree.Tree
-_old_id: '1111'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.tree.tree
+translation: extending-modx/custom-manager-pages/modext/modx.tree.tree
 ---
 
 ## MODx.tree.Tree
 
 **Расширяет:** Ext.tree.TreePanel
+
 **Основные характеристики:** Удаленно загруженные панели инструментов; перетаскивание для полей формы; функциональность коннектора для удаления и перетаскивания/сортировки.
 
 ![](/download/attachments/18678081/modext_tree.png?version=1&modificationDate=1250518279000)
@@ -45,7 +45,7 @@ toolbarItemCls* | Класс CSS, добавляемый к загруженны
 --- | ---
 beforeSort | Запускается до того, как дерево отправит отсортированные узлы процессору сортировки. Передаются отсортированные узлы, закодированно.
 afterSort | Запускается после сортировки узла дерева. Проходит: - событие - событие бросания
-- result - Объект ответа от процессора сортировки. | 
+- result - Объект ответа от процессора сортировки. 
 
 ## Другие уникальные особенности
 
