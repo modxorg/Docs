@@ -1,0 +1,85 @@
+---
+title: MODx.Console
+_old_id: '1056'
+_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.console
+---
+
+## What is the MODx.Console?
+
+MODx.Console - это специальный виджет Ext, созданный для работы в качестве консоли вывода в виде терминала для процессоров, которые должны возвращать более подробную информацию. Его можно найти в [Управлении пакетами](extending-modx/transport-packages "Package Management"), очистке кэша или в других областях MODX:
+
+![](/download/attachments/34636260/modx-console.png?version=1&modificationDate=1302185248000)
+
+## Как это работает
+
+The Console relies on two parameters to function:
+
+- **register** - Реестр, из которого извлекается
+- **topic** - Тема в реестре для чтения
+
+Прежде всего, консоль запускает панель опроса, которая запрашивает реестр с этими двумя переменными. Она будет продолжать опрашивать реестр до тех пор, пока для объекта JS Console не будет запущено событие завершения или отправлено сообщение «COMPLETED». Как только это произойдет, консоль прекратит опрашивать реестр, и ее кнопка «ОК» будет включена. Пользователь может затем закрыть консоль или загрузить вывод в файл. Как только пользователь нажмет кнопку «ОК», на консоли будет запущено событие «shutdown».
+
+## Использование
+
+The console can easily be hooked up to nearly any processor and JS custom application in MODX. Simply instantiate a new console object:
+
+```javascript
+var topic = '/mytopic/';
+var register = 'mgr';
+var console = MODx.load({
+   xtype: 'modx-console'
+   ,register: register
+   ,topic: topic
+   ,show_filename: 0
+   ,listeners: {
+     'shutdown': {fn:function() {
+         /* выполнить код здесь, когда вы закроете консоль */
+     },scope:this}
+   }
+});
+console.show(Ext.getBody());
+```
+
+Note here that you fire up the console, and then load the topic that you want (make sure to include the beginning and ending slashes).
+
+Когда вы это загрузите, тогда сможете отправить запрос на ваш процессор:
+
+```javascript
+MODx.Ajax.request({
+    url: URL_TO_MY_CONNECTOR
+    ,params: {
+        action: MY_ACTION
+        ,register: register
+        ,topic: topic
+    }
+    ,listeners: {
+        'success':{fn:function() {
+            console.fireEvent('complete');
+        },scope:this}
+    }
+});
+```
+
+Вам нужно будет указать URL-адрес вашего коннектора, а также действие, которое вы хотите загрузить (процессор). В вашем процессоре вы можете вывести данные на консоль, используя $modx->log:
+
+```php
+$modx->log(modX::LOG_LEVEL_INFO,'Информационное сообщение нормального цвета.');
+$modx->log(modX::LOG_LEVEL_ERROR,'Ошибка в красном цвете!');
+$modx->log(modX::LOG_LEVEL_WARN,'Предупреждение в голубом цвете!');
+```
+
+Как только вы закончите с вашим процессором, вы должны сделать две вещи. Во-первых, запустите сообщение лога просто с текстом "COMPLETED" в теле:
+
+```php
+$modx->log(modX::LOG_LEVEL_INFO,'COMPLETED');
+```
+
+This tells the console to stop polling, and enables the "OK" button which closes the console.
+
+Для MODX Revolution 2.1.0-rc2 и более поздних версий вам не нужно отправлять сообщение «COMPLETED» в реестр - просто сработает событие «complete» для объекта консоли JS. Все предыдущие версии требуют сообщения COMPLETED.
+
+После этого, когда пользователь нажимает кнопку «ОК», MODx.Console запускает событие «shutdown» (выключение). Вы можете запустить любой код, который вы хотите сделать в это время.
+
+Modx.Ajax.request ожидает возврата значения ключа 'success' в json, поэтому вы должны вернуть 'success' в процессоре. Иначе событие успеха никогда не запустится.
+
+To return text, html, or anything non json, the native Ext.Ajax.request can be used.
