@@ -1,7 +1,6 @@
 ---
 title: Пользовательские страницы менеджера
-_old_id: '77'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages
+translation: developing-in-modx/advanced-development/custom-manager-pages
 ---
 
 ## Что такое CMP?
