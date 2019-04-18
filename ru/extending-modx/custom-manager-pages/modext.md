@@ -1,6 +1,6 @@
 ---
 title: MODExt
-translation: developing-in-modx/advanced-development/custom-manager-pages/modext
+translation: extending-modx/custom-manager-pages/modext
 ---
 
 ## Что такое MODExt?
