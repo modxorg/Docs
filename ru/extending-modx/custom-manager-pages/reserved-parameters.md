@@ -1,7 +1,6 @@
 ---
 title: Зарезервированные параметры
-_old_id: '259'
-_old_uri: 2.x/developing-in-modx/other-development-resources/reserved-parameters
+translation: extending-modx/custom-manager-pages/reserved-parameters
 ---
 
 ## Зарезервированные параметры GET внутри менеджера MODX
