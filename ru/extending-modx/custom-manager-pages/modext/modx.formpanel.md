@@ -1,13 +1,14 @@
 ---
 title: MODx.FormPanel
-_old_id: '1058'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel
+translation: extending-modx/advanced-development/custom-manager-pages/modext/modx.formpanel
 ---
 
 ## MODx.FormPanel
 
 **Расширяет:** Ext.FormPanel
+
 **xtype:** modx-formpanel
+
 **Основные характеристики:** Функция перетаскивания; функция проверки полей на изменения ("dirty"); функциональность коннектора.
 
 Панели FormPanels можно найти в менеджере MODX. Они могут содержать поля формы, сетки, деревья - практически любой доступный компонент.
