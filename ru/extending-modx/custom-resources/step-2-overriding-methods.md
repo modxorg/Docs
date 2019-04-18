@@ -1,7 +1,6 @@
 ---
 title: Шаг 2 - переопределение методов
-_old_id: '71'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-2
+translation: extending-modx/custom-resources/step-2-overriding-methods
 ---
 
 Этот урок является частью серии:
