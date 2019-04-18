@@ -1,7 +1,6 @@
 ---
 title: MODx.Console
-_old_id: '1056'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.console
+translation: extending-modx/advanced-development/custom-manager-pages/modext/modx.console
 ---
 
 ## Что такое MODx.Console?
