@@ -1,6 +1,6 @@
 ---
 title: 'Учебник по MODExt '
-translation: developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials
+translation: extending-modx/custom-manager-pages/modext/modext-tutorials
 ---
 
 ## Введение
