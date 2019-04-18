@@ -1,12 +1,12 @@
 ---
 title: MODx.grid.Grid
-_old_id: '1080'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid
+translation: extending-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid
 ---
 
 ## MODx.grid.Grid
 
 **Расширяет:** Ext.grid.EditorGridPanel
+
 **Основные характеристики:** функциональность коннектора; позволяет легко интегрировать элементы панели инструментов и MODx.Window; встроенная функциональность контекстного меню.
 
 При создании этого экземпляра в интерфейсе с вкладками рекомендуется установить в своей конфигурации protectRender: true, чтобы предотвратить проблемы с отображением JS.
