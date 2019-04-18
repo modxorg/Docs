@@ -1,6 +1,6 @@
 ---
 title: MODx.Console
-translation: extending-modx/advanced-development/custom-manager-pages/modext/modx.console
+translation: extending-modx/custom-manager-pages/modext/modx.console
 ---
 
 ## Что такое MODx.Console?
