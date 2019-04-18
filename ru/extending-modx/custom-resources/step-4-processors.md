@@ -1,7 +1,6 @@
 ---
 title: Шаг 4 - Процессоры
-_old_id: '73'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-4
+translation: extending-modx/custom-resources/step-4-processors 
 ---
 
 Этот урок является частью серии:
