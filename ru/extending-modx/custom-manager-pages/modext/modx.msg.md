@@ -1,12 +1,12 @@
 ---
 title: MODx.msg
-_old_id: '1088'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.msg
+translation: extending-modx/advanced-development/custom-manager-pages/modext/modx.msg
 ---
 
 ## MODx.msg
 
 **Расширяет:** Ext.Component
+
 **Основные характеристики:** Особенности коннектора AJAX.
 
 ![](/download/attachments/18678080/confirm.png?version=1&modificationDate=1302195122000)
