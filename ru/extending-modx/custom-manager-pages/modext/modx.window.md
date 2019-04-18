@@ -1,12 +1,12 @@
 ---
 title: MODx.Window
-_old_id: '1114'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window
+translation: extending-modx/custom-manager-pages/modext/modx.window
 ---
 
 ## MODx.Window
 
 **Расширяет:** Ext.Window
+
 **Основные характеристики:** Функция перетаскивания; функциональность коннектора для сохранения.
 
 ![](/download/attachments/18678082/modx-window.png?version=1&modificationDate=1303411582000)
