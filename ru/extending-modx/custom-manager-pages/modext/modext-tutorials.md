@@ -1,7 +1,6 @@
 ---
 title: 'Учебник по MODExt '
-_old_id: '1339'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials
+translation: developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials
 ---
 
 ## Введение
