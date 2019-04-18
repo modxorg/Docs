@@ -11,9 +11,9 @@ _old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modex
 
 Класс MODExt LocalGrid аналогичен классу [MODx.grid.Grid](extending-modx/custom-manager-pages/modext/modx.grid.grid "MODx.grid.Grid"), однако вместо того, чтобы использовать коннектор для заполнения его данными, он должен быть загружен через локальное хранилище.
 
-When instantiating this into a tabbed interface, it's recommended to set preventRender: true in its config to prevent JS rendering issues.
+При создании этого экземпляра в интерфейсе с вкладками рекомендуется установить в своей конфигурации protectRender: true, чтобы предотвратить проблемы с отображением JS.
 
-## See Also
+## Смотрите также
 
 1. [Объект MODExt MODx](extending-modx/custom-manager-pages/modext/modext-modx-object)
 2. [Учебник по MODExt ](extending-modx/custom-manager-pages/modext/modext-tutorials)
