@@ -1,0 +1,66 @@
+---
+title: Пользовательские страницы менеджера в версии 2.3
+_old_id: '1048'
+_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3
+---
+
+Создание пользовательских страниц менеджера MODX (CMP) **намного** проще в MODX Revolution 2.3 - вам просто нужно задать путь к пространству имен, а затем создать файлы PHP. Вот и все.
+
+## Setting the Namespace Path
+
+Во-первых, мы создадим пространство имен («Настройки»>«Пространства имен») с именем «mycmp» и установим его путь в «{core_path}components/mycmp/». Также установите его путь к ресурсам "{assets_path}components/mycmp/".
+
+![](/download/attachments/763b342992d3623156aef15b0dd5d168/create-namespace.png)
+
+**Вы можете избежать некоторых проблем, если вы назовете ваше пространство имен и ваши действия строчными символами, состоящими только из букв и цифр (без пробелов, дефисов или подчеркиваний). Ваше пространство имен должно быть строчной версией названия вашего CMP.**
+
+## Creating the Menu
+
+Now we'll need a Menu item to link to for our CMP. Go to System -> Top Menu, and create a Menu item under the "Apps" menu item that looks like this:
+
+![](/download/attachments/39354402/mycmp1.png?version=1&modificationDate=1334858685000)
+
+Как видите, мы указываем пространство имен как «mycmp», а затем «Action» как «welcome». Это означает, что наш контроллер по умолчанию будет контроллер «welcome».
+
+## Creating the Controller File
+
+Далее мы создадим файл контроллера по адресу {core_path}components/mycmp/controllers/default/welcome.class.php. Почему выбран путь "controllers/default/welcome.class.php"? Ну, MODX автоматически ищет в каталоге «controllers/» ваши контроллеры. Во-вторых, здесь по умолчанию используется текущая тема менеджера (чтобы вы могли создавать разные контроллеры для разных тем менеджера), поэтому мы создаем его в директории «default» (по умолчанию). И, наконец, «welcome.class.php» - это имя, которое соответствует нашему действию «welcome», помещенное в меню выше. Если бы мы установили действие меню на «home», мы бы вместо этого создали файл «home.class.php».
+
+Now, on to the file contents:
+
+```php
+<?php
+class MycmpWelcomeManagerController extends modExtraManagerController {
+   public function process(array $scriptProperties = array()) {}
+   public function getPageTitle() {
+       return 'Моя тестовая страница CMP';
+   }
+   public function getTemplateFile() {
+       return 'welcome.tpl';
+   }
+}
+```
+
+Как вы можете видеть здесь, мы не занимаемся бизнес-логикой, поэтому нам не нужно ничего делать в методе process(). Мы устанавливаем заголовок страницы для этого CMP, а затем сообщаем MODX, где найти соответствующий файл шаблона для этого CMP. Обратите внимание, что имя вашего класса должно начинаться с имени вашего CMP, за которым следует соответствующее действие, и что ваше пространство имен должно быть строчной версией названия вашего CMP.
+
+## Creating the Template File
+
+MODX использует шаблоны Smarty для страниц CMP. Система будет автоматически искать их в каталоге [namespace-path]templates/, поэтому все, что вам нужно сделать, это указать в контроллере, какой файл в этом каталоге искать (вы также можете указать здесь подкаталоги). Создайте файл в {{core_path}components/mycmp/templates/default/welcome.tpl
+
+Давайте сделаем содержание простым:
+
+```html
+<div class="container">
+<h2>Добро пожаловать!</h2>
+</div>
+```
+
+A simple h2, with a wrapping div that adds some padding. And that will display this on our CMP:
+
+![](/download/attachments/b0c0afd6ef1b26df1ce35159560bcfa2/2-3-CMP.jpg)
+
+We're Finished!
+
+Вот и всё! Это всё, что вам нужно, чтобы начать создавать CMP в MODX 2.3. Вы видите, что наш CMP теперь доступен через /url/to/modx/manager/?action=welcome&namespace=mycmp - что намного лучше, чем действия на основе идентификаторов версии 2.2 и ранее.
+
+Очевидно, существует больше методов API, которые вы можете переопределить в modExtraManagerController в своем классе контроллера PHP, а затем вы можете использовать [MODExt](extending-modx/custom-manager-pages/modext "MODExt") и подобные в вашем реальном CMP для создания мощных страниц, но это выходит за рамки этого руководства.
