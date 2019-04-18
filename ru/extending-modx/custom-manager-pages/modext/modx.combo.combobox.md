@@ -1,7 +1,6 @@
 ---
 title: MODx.combo.ComboBox
-_old_id: '1055'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.combo.combobox
+translation: extending-modx/advanced-development/custom-manager-pages/modext/modx.combo.combobox
 ---
 
 ## MODx.combo.ComboBox
