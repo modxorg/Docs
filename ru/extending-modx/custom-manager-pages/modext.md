@@ -1,7 +1,6 @@
 ---
 title: MODExt
-_old_id: '198'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext
+translation: developing-in-modx/advanced-development/custom-manager-pages/modext
 ---
 
 ## Что такое MODExt?
