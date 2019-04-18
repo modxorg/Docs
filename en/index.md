@@ -1,5 +1,6 @@
 ---
 title: "MODX Documentation"
+description: "Learn more about MODX Revolution, the powerful and easy to use Content Management System with a 14 year track record."
 _old_id: "1"
 _old_uri: "dashboard.action"
 ---
