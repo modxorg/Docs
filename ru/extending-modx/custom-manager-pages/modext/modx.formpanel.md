@@ -18,49 +18,49 @@ _old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modex
 
 ## Уникальные параметры
 
-MODx.FormPanel adds a few unique parameters not found in typical Ext.FormPanel objects:
+MODx.FormPanel добавляет несколько уникальных параметров, которых нет в типичных объектах Ext.FormPanel:
 
 Название | Описание | Значение по умолчанию
 --- | --- | ---
-saveMsg | The message to show in the modal wait dialog when saving. | Saving...
+saveMsg | Сообщение, отображаемое в диалоговом окне модального ожидания при сохранении. | Saving...
 allowDrop | Разрешить бросать предметы из дерева в этой форме. | true
-useLoadingMask | Set to true to use a loading mask when loading form values. | false
+useLoadingMask | Установите значение true, чтобы использовать маску загрузки при загрузке значений формы. | false
 onDirtyForm | Идентификатор формы для проверки измененного состояния формы. По умолчанию используется форма. | this.getForm()
 
-## Custom Events
+## Пользовательские события
 
-MODx.FormPanel adds a few extra events not found in Ext.FormPanel objects:
+MODx.FormPanel добавляет несколько дополнительных событий, которых нет в объектах Ext.FormPanel:
 
 Название | Описание
 --- | ---
 beforeSubmit | Вызывается перед отправкой формы с 3 параметрами: - форма - объект Ext.form.BasicForm, прикрепленный к этой FormPanel
 options | Любые параметры, переданные вызову submit()
-config | The FormPanel config object
+config | Объект конфигурации FormPanel
 failure | Вызывается при ошибке формы или реакции на ошибку процессора с 4 параметрами: - результат - объект ответа, отправленный из процессора
-form | The Ext.form.BasicForm object attached to this FormPanel
+form | Объект Ext.form.BasicForm, прикрепленный к этому FormPanel
 options | Любые параметры, переданные вызову submit()
-config | The FormPanel config object
-fieldChange | Fires whenever a field is changed, with the following parameters: - field - The Ext.Field object that is being changed
-nv | The new value of the field
-ov | The old value of the field
-form | The BasicForm attached to this FormPanel
+config | Объект конфигурации FormPanel
+fieldChange | Запускается при изменении поля со следующими параметрами: - field - объект Ext.Field, который изменяется
+nv | Новое значение поля
+ov | Старое значение поля
+form | BasicForm, прикрепленный к этой панели формы
 postReady | Запускается после запуска обработчиков события «ready» (которые должны запускаться расширением классов)
 ready | Не запускается; должен запускаться расширенными объектами MODx.FormPanel, чтобы разрешить запуск событий fieldChange/postReady.
 setup | Срабатывает в начале загрузки FormPanel и после успешной отправки.
 success | Запускается при успешной отправки формы с ответом об успешной обработке от процессора с 4 параметрами: - результат - объект ответа, отправленный из процессора
-form | The Ext.form.BasicForm object
+form | Объект Ext.form.BasicForm
 options | Любые параметры, переданные вызову submit()
-config | The FormPanel config object
+config | Объект конфигурации FormPanel
 
-## Other Unique Functions
+## Другие уникальные функции
 
-### Drop Area Fields
+### Поля области перетаскивания
 
 Все поля в экземплярах MODx.FormPanel автоматически могут содержать элементы, такие как узлы древа ресурсов слева. Вы можете отключить эту функцию с помощью параметра allowDrop.
 
 ### Автоматическая обработка измененных полей
 
-All fields will fire the fieldChange event when they are changed. You can also use the following methods:
+Все поля будут вызывать событие fieldChange при их изменении. Вы также можете использовать следующие методы:
 
 - isDirty - проверить общий статус измененного состояния
 - clearDirty - очистить измененный статус для всех форм
@@ -68,14 +68,14 @@ All fields will fire the fieldChange event when they are changed. You can also u
 
 ### Манипуляция с полями
 
-You can easily manipulate fields and labels in MODx.FormPanel objects:
+Вы можете легко манипулировать полями и метками в объектах MODx.FormPanel:
 
 - getField(name) - получает объект Ext.Field для указанного имени поля
 - hideField(name) - скрывает поле с переданным именем
 - showField(name) - показывает поле с переданным именем, если оно скрыто
 - setLabel(name, text) - установить метку поля для указанного текста.
 
-## See Also
+## Смотрите также
 
 1. [Объект MODExt MODx](extending-modx/custom-manager-pages/modext/modext-modx-object)
 2. [Учебник по MODExt ](extending-modx/custom-manager-pages/modext/modext-tutorials)
