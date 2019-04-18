@@ -9,17 +9,17 @@ _old_uri: 2.x/developing-in-modx/advanced-development/custom-resource-classes/cr
 - Часть I: Создание пользовательского класса ресурсов
 - [Часть II: Обработка нашего поведения CRC](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2")
 - [Часть III: Настройка контроллеров](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3")
-- [Part IV: Customizing the Processors](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
+- [Часть IV: Настройка процессоров](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
 
-We're going to create a sample Custom Resource Class (CRC) that does a very simple task - it outputs a copyright on the bottom of a page with the current date. Yes, something this trivial should be done by placing a [Snippet](extending-modx/snippets "Snippets") in your [Template](building-sites/elements/templates "Templates"), but we want to illustrate the concept of CRCs using something very, very simple, so bear with us. :)
+Мы собираемся создать пример пользовательского класса ресурсов (CRC), который выполняет очень простую задачу - он выводит информацию об авторском праве в нижней части страницы с текущей датой. Да, кое-что из этого должно быть сделано путем помещения [сниппета](extending-modx/snippets "Snippets") в ваш [шаблон](building-sites/elements/templates "Templates"), но мы хотим проиллюстрировать концепцию CRC, используя что-то очень, очень простое, так что оставайтесь с нами :)
 
-This page deals with Part I - creating the actual Custom Resource Class itself. [Part II](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2") will actually implement the behavior of appending the copyright. [Part III](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3") will deal with overriding the Controllers, and [Part IV](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4") will deal with overriding the Processors. The files used in this tutorial can be found on GitHub for reference: [https://github.com/modxcms/CopyrightedResource](https://github.com/modxcms/CopyrightedResource)
+На этой странице рассматривается часть I - создание самого класса пользовательских ресурсов. [Часть II](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2") фактически реализует поведение добавления авторского права. [Часть III](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3") будет иметь дело с переопределением контроллеров, а [часть IV](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4") будет связана с переопределением процессоров. Файлы, используемые в этом руководстве, для справки можно найти на GitHub: [https://github.com/modxcms/CopyrightedResource](https://github.com/modxcms/CopyrightedResource)
 
 ## Создайте свою XML-схему
 
-First, we are going to create a xPDO package using a schema (if you're not familiar on how to do this, please review the page on [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") tutorial and/or the [xPDO Defining a Schema](extending-modx/xpdo/custom-models/defining-a-schema "Defining a Schema") tutorial).
+Во-первых, мы собираемся создать пакет xPDO, используя схему (если вы не знаете, как это сделать, просмотрите страницу, посвященную [разработке дополнения в MODX Revolution](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution"), и/или [учебник по определению схемы xPDO](extending-modx/xpdo/custom-models/defining-a-schema "Defining a Schema")).
 
-If you are planning on versioning this code in Git, your paths may be different, but ultimately you want your files to end up inside the `core/components/your_component/` directory. So for this tutorial our package is named "copyrightedresource", so we will create the schema file `core/components/copyrightedresource/model/schema/copyrightedresource.mysql.schema.xml`:
+Если вы планируете создать версию этого кода в Git, ваши пути могут отличаться, но в конечном итоге вы хотите, чтобы ваши файлы оказались в каталоге `core/components/your_component/`. Поэтому для данного руководства наш пакет называется "copyrightedresource", поэтому мы создадим файл схемы `core/components/copyrightedresource/model/schema/copyrightedresource.mysql.schema.xml`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -32,17 +32,17 @@ If you are planning on versioning this code in Git, your paths may be different,
 
 ## Генерация ваших файлов классов
 
-The next step is to generate the maps and classes for the model. You can do this using your own script, you'll just want to refer to the docs on [Generating the Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code") and xPDO's [parseSchema()](extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema") function. We've provided a sample script below. It's a modified version of the script used when [Reverse Engineering xPDO classes from an existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table").
+Следующим шагом является создание карт и классов для модели. Вы можете сделать это, используя свой собственный скрипт. Вам просто нужно обратиться к документации по [ генерации кода модели](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code") и функции [parseSchema()](extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema") в xPDO. Мы предоставили образец сценария ниже. Это модифицированная версия сценария, используемая при [обратном проектировании классов xPDO](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table") из существующей таблицы базы данных.
 
-Create the script at the web root of your MODX site, then execute it by hitting that page in a browser.
+Создайте скрипт в корневом каталоге вашего сайта MODX, затем запустите его, перейдя на эту страницу в браузере.
 
-Refer to the script at [parse_schema.php](https://github.com/craftsmancoding/modx_utils/blob/master/parse_schema.php) and adjust it to your own setup.
+Обратитесь к сценарию по адресу [parse_schema.php](https://github.com/craftsmancoding/modx_utils/blob/master/parse_schema.php) и настройте его по своему усмотрению.
 
-After this script runs, a handful of PHP files should have been created inside your `core/components/copyrightedresource/model/` directory. See the image below.
+После запуска этого сценария в вашем каталоге `core/components/copyrightedresource/model/` должно быть создано несколько файлов PHP. Смотрите изображение ниже.
 
 ![](/download/attachments/36634952/copyrightedresource_class_files.png?version=1&modificationDate=1360972022000)
 
-The `copyrightedresource.class.php` file should look like this:
+Файл `copyrightedresource.class.php` должен выглядеть следующим образом:
 
 ```php
 <?php
@@ -50,16 +50,16 @@ class CopyrightedResource extends modResource {
 }
 ```
 
-If the class files did not get created, the sample script should help you identify errors (usually permissions).
+Если файлы классов не были созданы, образец сценария должен помочь вам определить ошибки (обычно проблема в разрешениях).
 
 ## Настройка вашего класса PHP
 
 Как только у нас будут созданы базовые классы PHP, нам нужно их настроить.
 
-**Be Careful!**
-Once you've got your PHP classes generated, do not re-run the Parsing Script! Doing so will destroy the changes that you're going to be making.
+**Будьте осторожны!**
+После того, как вы сгенерировали классы PHP, не запускайте скрипт синтаксического анализа заново! Это уничтожит изменения, которые вы собираетесь внести.
 
-Now we want to force the class_key of the resource, and ensure that it shows up in the Resource Create context menu (which we'll configure later on). Edit the core/components/copyrightedresource/model/copyrightedresource/copyrightedresource.class.php file to have this code:
+Теперь нам нужно вызвать class_key ресурса и убедиться, что он отображается в контекстном меню "Создать ресурс" (которое мы настроим позже). Отредактируйте файл core/components/copyrightedresource/model/copyrightedresource/copyrightedresource.class.php как показано ниже:
 
 ```php
 <?php
@@ -72,18 +72,18 @@ class CopyrightedResource extends modResource {
 }
 ```
 
-This forces the class_key to "CopyrightedResource", which is our class, and ensures our Resource class shows up in the left-hand tree's context menu. This is how we govern the value set in the modx_site_content "class_key" column.
+Это устанавливает class_key в «CopyrightedResource», который является нашим классом, и гарантирует, что наш класс ресурса обнаруживается в контекстном меню левого дерева. Вот как мы управляем значением, установленным в столбце modx_site_content "class_key".
 
-You should **never** add fields to the modResource table (yes, some Extras have done this, but it's not the proper way). Rather, create a separate related table to join into, or use Revolution 2.2.1+'s new properties field to store extra data.
+Вы не должны **никогда** добавлять поля в таблицу modResource (да, некоторые дополнения делали это, но это не совсем правильно). Вместо этого создайте отдельную связанную таблицу или используйте поле новых свойств Revolution версии 2.2.1 и выше для хранения дополнительных данных.
 
 ### Знакомство с классом интерфейса modResourceInterface
 
-For those of you geeks who want to code responsibly, it's a very good idea to look at the parent class here, so have a look inside the `core/model/modx/modresource.class.php`.
+Для тех из вас, кто хочет писать код ответственно, будет очень хорошей идеей взглянуть на родительский класс здесь, так что загляните в файл `core/model/modx/modresource.class.php`.
 
-**Code Responsibly**
-Any time you extend a PHP class, you should look at the parent class, otherwise you won't know what you are implementing!
+**Ответственный код**
+Каждый раз, когда вы расширяете класс PHP, вам нужно смотреть на родительский класс, иначе вы не будете знать, что именно вы реализуете!
 
-If you look in the modResource class file, you'll see at the top a PHP Interface that defines what methods **must** be defined for a CRC to work:
+Если вы заглянете в файл класса modResource, то увидите вверху интерфейс PHP, который определяет, какие методы **должны** быть определены для работы CRC:
 
 ```php
 interface modResourceInterface {
@@ -95,11 +95,11 @@ interface modResourceInterface {
 
 Теперь мы подробно рассмотрим каждый из этих методов и то, как они реализуют наш CRC.
 
-### Create a Namespace
+### Создайте пространство имен
 
-Before we go any further, create a [Namespace](extending-modx/namespaces "Namespaces") for your component. For the sake of clarity, the name should match the name of your package: "copyrightedresource".
+Прежде чем двигаться дальше, создайте [Пространство имен](extending-modx/namespaces "Namespaces") для вашего компонента. Для ясности имя должно совпадать с названием вашего пакета: «copyrightedresource».
 
-Log into the MODX manager and head to **System -> Namespaces**. (gear icon at upper right)
+Войдите в диспетчер MODX и перейдите в **Система -> Пространства имен**. (значок шестеренки справа вверху)
 
 ```php
 Namespace: copyrightedresource
@@ -109,11 +109,11 @@ Assets Path: {assets_path}components/copyrightedresource/
 
 ![](/download/attachments/36634952/create_namespace.png?version=1&modificationDate=1360974139000)
 
-Note the special placeholders you can use to refer to your directories.
+Обратите внимание на специальные плейсхолдеры, которые вы можете использовать для ссылки на ваши каталоги.
 
 ### Добавление метода getControllerPath
 
-Once you've added a namespace, we're going to add the getControllerPath method to our class by adding this to your `copyrightedresource.class.php` class:
+После того как вы добавили пространство имен, мы добавим метод getControllerPath в наш класс, добавив его в ваш `copyrightedresource.class.php`:
 
 ```php
 public static function getControllerPath(xPDO &$modx) {
@@ -121,13 +121,13 @@ public static function getControllerPath(xPDO &$modx) {
 }
 ```
 
-This method tells MODX to look for our manager controllers in our custom directory, thereby overriding the standard default controllers. The line first checks for a custom System Setting that shows where our CRC core directory path is (we add this setting to make our life easier when we are developing the code so we can keep it in a location that is non-standard so that we may version it more easily). If the System Setting has not been set, the code will look for our CRC path in 'core/components/copyrightedresource/'. It looks in the "controllers/" subdirectory.
+Этот метод говорит MODX искать контроллеры нашего менеджера в нашем пользовательском каталоге, переопределяя стандартные контроллеры по умолчанию. Сначала строка проверяет пользовательский параметр системы, который показывает, где находится наш путь к каталогу ядра CRC (мы добавляем этот параметр, чтобы облегчить нашу жизнь при разработке кода и позволить нам сохранить его в нестандартном месте). Если настройка системы не была установлена, код будет искать наш путь CRC в 'core/components/copyrightedresource/'. Система ищет код в поддиректории "controllers/".
 
-Great! MODX will now look for our controllers in that directory. We'll get into creating those in Step 2 of the tutorial.
+Отлично! MODX теперь будет искать наши контроллеры в этом каталоге. Мы приступим к их созданию на шаге 2 урока.
 
 ### Добавление метода getContextMenuText
 
-Go ahead and add this method to your class:
+Пройдем дальше и добавим этот метод в свой класс:
 
 ```php
 public function getContextMenuText() {
@@ -141,15 +141,15 @@ public function getContextMenuText() {
 
 Это возвращает две переведенные строки, которые MODX вставит в контекстное меню «Создать» при щелчке правой кнопкой мыши по узлу на вкладке «Ресурс» в левом дереве.
 
-You will need to create the lexicon folders and file in core/components/copyrightedresource/lexicon/en/default.inc.php with the language strings, or more simply, upload the core/components/copyrightedresource/lexicon/ folder from the [github files](https://github.com/modxcms/CopyrightedResource).
+Вам нужно будет создать папки и файл лексикона в core/components/copyrightedresource/lexicon/en/default.inc.php со строками языка или, проще, загрузить папку core/components/copyrightedresource/lexicon/ из [файлов github](https://github.com/modxcms/CopyrightedResource).
 
-Just to be clear, you don't necessarily *need* to use the MODX lexicon here. You could return the text like so:
+Просто для пояснения, вам необязательно *нужно* использовать здесь лексиконы MODX. Вы можете вернуть текст так:
 
 ```php
 public function getContextMenuText() {
  return array(
-   'text_create' => 'Copyrighted Page',
-   'text_create_here' => 'Create a Copyrighted Page Here',
+   'text_create' => 'Страница, защищенная авторским правом',
+   'text_create_here' => 'Создать страницу, защищенную авторским правом, здесь',
  );
 }
 ```
@@ -167,19 +167,19 @@ public function getResourceTypeName() {
 }
 ```
 
-Again, this could just return a string:
+Опять же, можно просто вернуть строку:
 
 ```php
 public function getResourceTypeName() {
- return 'Copyrighted Page';
+ return 'Страница, защищенная авторским правом';
 }
 ```
 
-This tells MODX to call it a "Copyrighted Page", rather than its class name, when dealing with it in the manager.
+Это говорит MODX называть ее «Защищенной авторским правом страницей», а не именем класса, когда имеешь дело с ней в менеджере.
 
 ## Добавление класса в пакеты расширения
 
-To load the CRC properly, you'll need to add it to the Extension Packages. Why? Well, MODX needs to load your CRC when it loads, so that it has a "library" of sorts of all the loaded Resource Classes available to it. MODX 2.2 provides you with an assistance method to add your package to the Extension Packages dataset:
+Чтобы правильно загрузить CRC, вам необходимо добавить его в пакеты расширений. Зачем? Ну, MODX должен загружать ваш CRC при загрузке, чтобы у него была «библиотека» всех загруженных классов ресурсов. MODX версии 2.2 предоставляет вам вспомогательный метод для добавления вашего пакета в набор данных пакетов расширений:
 
 ```php
 $modx->addExtensionPackage('copyrightedresource','/path/to/copyrightedresource/model/');
@@ -190,30 +190,30 @@ $modx->addExtensionPackage('copyrightedresource','/path/to/copyrightedresource/m
 ```php
 <?php
 /**
-* Use this script to add your extension package to MODX's "radar".
-* This should only need to be done once.
-* Note that we have to instantiate MODX: xPDO is not sufficient
-* because we're running functions that exist only in MODX, not in the
-* underlying xPDO framework.
+* Используйте этот скрипт для добавления вашего пакета расширения в 'радар' MODX.
+* Это должно быть сделано только один раз.
+* Обратите внимание, что мы должны создать экземпляр MODX: xPDO недостаточно
+* потому что мы запускаем функции, которые существуют только в MODX, а не в 
+* базовом фреймворке xPDO.
 *
-* USAGE:
-* 1. Copy this file into the docroot (web root) of your MODX installation.
-* 2. Execute the file by visiting it in a browser, e.g. <a href="http://yoursite.com/add_extension.php"> <a href="http://yoursite.com/add_extension.php"> http://yoursite.com/add_extension.php
+* ИСПОЛЬЗОВАНИЕ:
+* 1. Скопируйте этот файл в docroot (корневую веб директорию) вашей установки MODX.
+* 2. Запустите файл, посетив его в браузере, например, <a href="http://yoursite.com/add_extension.php"> <a href="http://yoursite.com/add_extension.php"> http://yoursite.com/add_extension.php
 </a>
 </a>
 */
 //------------------------------------------------------------------------------
-//! CONFIGURATION
+//! КОНФИГУРАЦИЯ
 //------------------------------------------------------------------------------
-// Your package shortname:
+// Короткое название вашего пакета:
 $package_name = 'copyrightedresource';
 //------------------------------------------------------------------------------
-//  DO NOT TOUCH BELOW THIS LINE
+// НЕ МЕНЯЙТЕ НИЧЕГО НИЖЕ ЭТОЙ ЛИНИИ
 //------------------------------------------------------------------------------
 define('MODX_API_MODE', true);
 require_once('index.php');
 if (!defined('MODX_CORE_PATH')) {
-   print '<p>MODX_CORE_PATH not defined! Did you put this script in the web root of your MODX installation?</p>';
+   print '<p>MODX_CORE_PATH не определен! Вы поместили этот скрипт в корневой каталог вашей установки MODX?</p>';
    exit;
 }
 $modx= new modX();
@@ -225,24 +225,24 @@ print 'Success!';
 ?>
 ```
 
-To test whether or not this worked, log into the MODX manager and search the System Settings for the "extension_packages" key. You should see something like this:
+Чтобы проверить, правильно ли работает этот код выше, войдите в менеджер MODX и найдите в системных настройках ключ "extension_packages". Вы должны увидеть что-то вроде этого:
 
 ```php
 [{"copyrightedresource":{"path":"[[++core_path]]components/copyrightedresource/model/"}}]
 ```
 
-Note that you can use core_path placeholder in this path: this offers way to ensure that your path will work should you ever migrate your MODX site to a different server.
+Обратите внимание, что в этом пути вы можете использовать плейсхолдер ++core_path: это позволяет быть уверенным в том, что все будет в порядке, если вы когда-нибудь перенесете свой сайт MODX на другой сервер.
 
-There's also a removeExtensionPackage as well for removing the package from MODX.
+Также есть метод removeExtensionPackage для удаления пакета из MODX.
 
-addExtensionPackage and removeExtensionPackage are very useful methods to add to a Resolver if you're building an Extra for your CRC so that this happens on install and uninstall.
+addExtensionPackage и removeExtensionPackage - очень полезные методы для добавления в резолвер, когда вы создаете дополнение для своего CRC. Они могут выполняться при установке и удалении дополнения.
 
-## Conclusion
+## Заключение
 
-Now, if you reload the page and right-click on a Resource in the tree, then move over "Create", you should see this:
+Теперь, если вы перезагрузите страницу и щелкните правой кнопкой мыши на ресурсе в древе ресурсов, а затем перейдите к «Создать», вы должны увидеть это:
 
 ![](/download/attachments/36634952/context-menu.png?version=1&modificationDate=1322512993000)
 
-You may need to clear the cache a couple of times.
+Возможно, вам придется очистить кэш пару раз.
 
-Fantastic! Now we've got our Custom Resource Class loaded, and we're ready to start actually getting into the nitty-gritty. [Proceed onto Step 2](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2")!
+Великолепно! Теперь у нас есть загруженный пользовательский класс ресурсов, и мы готовы приступить к работе. [Перейдите к шагу 2](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2")!
