@@ -13,11 +13,11 @@ _old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modex
 
 Класс MODExt ComboBox содержит все функциональные возможности обычного Ext ComboBox. Он может быть заполнен удаленно массивом объектов JSON из коннектора (по умолчанию) или локально (используя базовый массив JavaScript или Ext ArrayStore с параметром конфигурации «mode», установленным в «local»).
 
-One unique feature of the MODx ComboBox class is the built-in renderer for grids. It allows developers to use a ComboBox as a grid editor, and automatically takes care of displaying the correct displayValue in the grid cell:
+Уникальной особенностью класса MODx ComboBox является встроенный рендерер для сеток. Он позволяет разработчикам использовать ComboBox в качестве редактора сетки и автоматически обеспечивает правильное отображение displayValue в ячейке сетки:
 
 ![](/download/attachments/18678077/modext_combobox_grid.png?version=1&modificationDate=1250518045000)
 
-## Unique Parameters
+## Уникальные параметры
 
 Уникальные параметры для класса - это просто сквозные параметры к хранилищам данных для комбинации:
 
@@ -29,9 +29,9 @@ fields | Поля в формате массива ожидаются в отв�
 
 Класс также наследует все свойства [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox).
 
-## Using the Grid Renderer
+## Использование Grid Renderer
 
-MODx.combo.ComboBox also comes with a built-in renderer for usage in grids. To use in, in your grid's column model defintion, simply specify renderer: true in the editor definition, like so:
+MODx.combo.ComboBox также поставляется со встроенным средством визуализации для использования в сетках. Для использования в определении модели столбца вашей сетки просто укажите renderer: true в определении редактора, например:
 
 ```javascript
 {
@@ -73,9 +73,9 @@ Ext.extend(Doodles.combo.Units,MODx.combo.ComboBox);
 Ext.reg('doodle-combo-units',Doodles.combo.Units);
 ```
 
-'store' is used to create your 'fields' and 'data', the optional 'mode' must be set to 'local' for this method.
+«store» используется для создания ваших «полей» и «данных», необязательный «mode» должен быть установлен в «local» для этого метода.
 
-And to view that combo box:
+И чтобы просмотреть это поле со списком:
 
 ### Вызов Combo Box из сетки
 
@@ -101,4 +101,4 @@ And to view that combo box:
         }
 ```
 
-hiddenName must be set when calling from a create or update window to save the value, but is not needed in the grid view.
+hiddenName должно быть установлено при вызове из окна создания или обновления, чтобы сохранить значение, но не требуется в виде сетки.
