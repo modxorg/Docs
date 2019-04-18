@@ -6,45 +6,45 @@ _old_uri: 2.x/developing-in-modx/advanced-development/custom-resource-classes/cr
 
 Этот урок является частью серии:
 
-- [Part I: Creating a Custom Resource Class](extending-modx/custom-resources "Creating a Resource Class")
-- Part II: Handling our CRC Behavior
-- [Part III: Customizing the Controllers](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3")
-- [Part IV: Customizing the Processors](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
+- [Часть I: Создание пользовательского класса ресурсов](extending-modx/custom-resources "Creating a Resource Class")
+- Часть II: Обработка нашего поведения CRC
+- [Часть III: Настройка контроллеров](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3")
+- [Часть IV: Настройка процессоров](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
 
 Теперь, когда у нас есть наш класс, мы хотим добавить к нему дату нашего авторского права. Вперед:
 
 ## Переопределение getContent
 
-Go ahead and add this method to your CopyrightedResource class `copyrightedresource.class.php`:
+Давайте добавим этот метод в ваш класс защищенных авторскими правами `авторских прав: resource.class.php`:
 
 ```php
 public function getContent(array $options = array()) {
   $content = parent::getContent($options);
   $year = date('Y');
-  $content .= '<div class="copyright">© '.$year.'. All Rights Reserved.</div>';
+  $content .= '<div class="copyright">© '.$year.'. Все права защищены.</div>';
   return $content;
 }
 ```
 
-This will automatically append the Copyright to the bottom of every content for the Resource - not the end of the [Template](building-sites/elements/templates "Templates"), but the end of the contents of the [[*content]] placeholder.
+Это автоматически добавит авторское право в конец каждого содержимого для ресурса - не конец [шаблона](building-sites/elements/templates "Templates"), а конец содержимого плейсхолдера [[*content]].
 
 ## Следующие шаги
 
-That concludes our additions to our `CopyrightedResource` class. We could do a lot more here by overriding other functions from the parent `modResource` class, but that's beyond the scope of this tutorial.
+На этом наши дополнения к нашему классу `CopyrightedResource` заканчиваются. Мы могли бы сделать гораздо больше, переопределив другие функции из родительского класса `modResource`, но это выходит за рамки данного руководства.
 
-Here's a list of some of the functions you can override (we'll include the functions we already overrode). See core/model/modx/modresource.class.php for the parent class.
+Вот список некоторых функций, которые вы можете переопределить (мы включим функции, которые мы уже переопределили). Смотрите файл /core/model/modx/modresource.class.php родительского класса.
 
-- **getContextMenuText** – displays the text for the right-click on the tree
-- **getResourceTypeName** – simple name of the resource type
-- **prepareTreeNode** – Allows you to manipulate the tree node for a Resource before it is sent
-- **listGroups** – Get a sortable, limitable collection (and total count) of Resource Groups for a given Resource.
-- **getTemplateVarCollection** – Retrieve a collection of Template Variables for a Resource.
-- **process** – Process a resource, transforming source content to output.
-- **getContent** – Gets the raw, unprocessed source content for a resource.
-- **setContent** – Set the raw source content for this element.
+- **getContextMenuText** отображает текст для щелчка правой кнопкой мыши по дереву
+- **getResourceTypeName** – простое имя типа ресурса
+- **prepareTreeNode** позволяет манипулировать узлом древа для ресурса перед его отправкой
+- **listGroups** возвращает сортируемую, ограниченную коллекцию (и общее количество) групп ресурсов для данного ресурса.
+- **getTemplateVarCollection** возвращает коллекцию переменных шаблона для ресурса.
+- **process** обрабатывает ресурс, преобразовав исходный контент в выходной.
+- **getContent** возвращает необработанный исходный контент для ресурса.
+- **setContent** устанавливает исходный контент для данного элемента.
 
-At this point, you should be able to log into the manager and right-click the file tree and see our new CRC show up as an option to create. When you create a new "Copyrighted Resource", you should note that the URL changes inside the manager. Whereas normally when you create a page, your URL will be something like `<a href="http://yoursite.com/manager/index.php?id=1&a=55&parent=0&context_key=web">http://yoursite.com/manager/index.php?id=1&a=55&parent=0&context_key=web</a>`, now the URL includes the class_key parameter: `<a href="http://yoursite.com/manager/index.php?id=0&a=55&class_key=CopyrightedResource&parent=0&context_key=web">http://yoursite.com/manager/index.php?id=0&a=55&class_key=CopyrightedResource&parent=0&context_key=web</a>`
+На этом этапе вы можете войти в менеджер и щелкнуть правой кнопкой мыши по дереву файлов. Вы увидите наш новый CRC, отображаемый в качестве опции для создания. Когда вы создаете новый «Защищенный авторским правом ресурс», вы должны помнить, что URL-адрес изменяется внутри менеджера. В то время как обычно при создании страницы ваш URL будет выглядеть примерно так: `http://yoursite.com/manager/index.php?id=1&a=55&parent=0&context_key=web`, то теперь URL-адрес включает параметр class_key : `http://yoursite.com/manager/index.php?id=0&a=55&class_key=CopyrightedResource&parent=0&context_key=web`
 
 Однако при попытке добавить новый защищенный авторским правом ресурс вы получите только белый экран! Это нормально - мы еще не создали файлы контроллера.
 
-Now let's make things start working by [making our controller files](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3").
+Теперь давайте создадим [файлы нашего контроллера](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3").
