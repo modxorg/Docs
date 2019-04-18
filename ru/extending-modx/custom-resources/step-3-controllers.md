@@ -4,22 +4,22 @@ _old_id: '72'
 _old_uri: 2.x/developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class/creating-a-resource-class-step-3
 ---
 
-This tutorial is part of a Series:
+Этот урок является частью серии:
 
-- [Part I: Creating a Custom Resource Class](extending-modx/custom-resources "Creating a Resource Class")
-- [Part II: Handling our CRC Behavior](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2")
-- Part III: Customizing the Controllers
-- [Part IV: Customizing the Processors](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
+- [Часть I: Создание пользовательского класса ресурсов](extending-modx/custom-resources "Creating a Resource Class")
+- [Часть II: Обработка нашего поведения CRC](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2")
+- Часть III: Настройка контроллеров
+- [Часть IV: настройка процессоров](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
 
 ## Создание контроллеров ресурсов
 
-Okay, remember how in [Step 1](extending-modx/custom-resources "Creating a Resource Class") we told MODX where our controllers/ directory was, via the "getControllerPath" method? To refresh your memory, here's the code from
+Помните, как на [шаге 1](extending-modx/custom-resources "Creating a Resource Class") мы сообщили MODX, где находится наш каталог "controllers/" через метод getControllerPath? Чтобы освежить вашу память, вот этот код
 
 ```php
 return $modx->getOption('copyrightedresource.core_path',null,$modx->getOption('core_path').'components/copyrightedresource/').'controllers/';
 ```
 
-As you might have guessed, we're going to put two files into the `core/components/copyrightedresource/controllers/` directory. Create the directory if you haven't already and then create a file named **create.class.php**:
+Как вы уже догадались, мы собираемся поместить два файла в каталог `core/components/copyrightedresource/controllers/`. Создайте каталог, если вы этого еще не сделали, а затем создайте файл с именем **create.class.php**:
 
 ```php
 <?php
@@ -30,7 +30,7 @@ class CopyrightedResourceCreateManagerController extends ResourceCreateManagerCo
 }
 ```
 
-Next add **update.class.php**:
+Затем добавьте **update.class.php**:
 
 ```php
 <?php
@@ -41,19 +41,19 @@ class CopyrightedResourceUpdateManagerController extends ResourceUpdateManagerCo
 }
 ```
 
-So when we're done with that, our file structure should look something like this:
+Итак, когда мы закончим, наша файловая структура должна выглядеть примерно так:
 
 ![](/download/attachments/36634961/controllers.png?version=1&modificationDate=1360981998000)
 
-And that's all we need to get our custom controllers up and running. You don't even have to include the getLanguageTopics call, but we did so we can load our custom Lexicon for the page. Read that again: you do not need to create the **getLanguageTopics()** function! You do need to create the controllers and create the classes, but you do not need to add any functions to them. If you're confused, remember our hot tip from [Part I](extending-modx/custom-resources "Creating a Resource Class"): any time you extend a PHP class, you should review the parent class that you're extending. In this case, you can take a gander at the parent classes:
+И это все, что нужно, чтобы наши настраиваемые контроллеры были запущены и работали. Вам даже не нужно включать вызов getLanguageTopics, но мы сделали это, чтобы загрузить наш собственный словарь для страницы. Прочтите это еще раз: вам не нужно создавать функцию **getLanguageTopics()**! Вам нужно создавать контроллеры и создавать классы, но вам не нужно добавлять к ним какие-либо функции. Если вы в замешательстве, вспомните нашу подсказку из [Части I](extending-modx/custom-resources "Creating a Resource Class"): каждый раз, когда вы расширяете класс PHP, вы должны просматривать родительский класс, который вы расширяете. В этом случае вы можете взглянуть на родительские классы:
 
 - `manager/controllers/default/resource/create.class.php`
-- `manager/controllers/default/resource/update.class.php`
+- `manager/controllers/default/resource/create.class.php`
 
-In case you need a brush up on your object-oriented programming, any method in the ResourceUpdateManagerController or ResourceCreateManagerController can be overridden - a common one to override is "loadCustomCssJs", which would allow you to add in your own custom CSS/JS and such for your own custom UI for your CRC.
+В случае, если вам нужно вспомнить объектно-ориентированное программирование, любой метод в ResourceUpdateManagerController или ResourceCreateManagerController может быть переопределен - общий метод для переопределения это «loadCustomCssJs», который позволит вам добавить свой собственный CSS / JS и т.п. для вашего собственного пользовательского интерфейса вашего CRC.
 
-Now you can go to the Resource tree, and create a "Copyrighted Page", and it will load the Resource editing panel. Note, since we didn't override anything in the controller, it will look *exactly* like the normal Resource editing panel. But, after you create your page and view it in the front-end, you'll note that the copyright is automatically appended:
+Теперь вы можете перейти к древу ресурсов и создать «страницу, защищенную авторским правом». При этом загрузится панель редактирования ресурсов. Обратите внимание, поскольку мы ничего не переопределяли в контроллере, он будет выглядеть *в точности* как обычная панель редактирования ресурсов. Но после того, как вы создадите свою страницу и увидите ее в интерфейсе, вы заметите, что авторское право будет автоматически добавлено:
 
 ![](/download/attachments/36634961/fe-view.png?version=1&modificationDate=1322513681000)
 
-Wonderful! This should give you a good understanding of how resources are handled by MODX. You could stop there, but we'll go on a little bit further to describe how to [extend the processors for your CRC](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4"). That's where things get more interesting... you can customize the behavior of the manager and control where things get saved in the database, and all sorts of things...
+Замечательно! Это должно дать вам хорошее представление о том, как ресурсы обрабатываются в MODX. Вы можете на этом остановиться, но мы продолжим немного дальше, чтобы описать, как [расширить процессоры для вашего CRC](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4"). Вот где все становится особенно интересным... вы можете настроить поведение менеджера и контролировать, как всё сохраняется в базе данных, а также много другое.
