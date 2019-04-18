@@ -6,9 +6,9 @@ _old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages
 
 ## Что такое CMP?
 
-CMP stands for Custom Manager Page, and it is simply a custom page that loads in the MODX Revolution manager. It may also be called a Component or 3PC (3rd Party Component). Typically CMPs are accessed from the Extras menu in MODX, but as a developer there is a lot of freedom in where they are placed.
+CMP расшифровывается как Custom Manager Page, и это просто пользовательская страница, которая загружается в менеджер MODX Revolution. Он также может называться Компонентом или 3PC (3rd Party Component, Сторонний Компонент). Обычно к CMP можно получить доступ из меню «Пакеты» (Extras) в MODX, но в принципе у разработчика есть большая свобода в том, где разместить свои страницы.
 
-If you are a developer looking to build an extra which includes a component, you should follow the [Developing an Extra for MODX Revolution tutorial](extending-modx/tutorials/developing-an-extra), as it walks you through all the specific steps and terminology based on an example package called doodles. This page only goes into a minimum set up for custom manager pages.
+Если вы как разработчик хотите создать дополнительный компонент, включающий в себя компонент, вы должны следовать [учебному пособию по разработке дополнений для MODX Revolution](extending-modx/tutorials/developing-an-extra), поскольку он проведет вас через все конкретные шаги и терминологию на основе примера пакета, называемого doodles. Эта страница входит в минимальную настройку для пользовательских страниц менеджера.
 
 Эквивалентом CMP или Компонента в MODX Evolution является Модуль, хотя техника, в которой они создаются, совершенно иная.
 
@@ -16,9 +16,9 @@ If you are a developer looking to build an extra which includes a component, you
 
 Для CMP требуется пространство имен, чтобы MODX знал, откуда загружать файлы.
 
-To create a Namespace, go to System -> Namespaces. Hit the Create New button and give the namespace a name and a core path. In Revolution 2.2 the Assets path is not yet used, but it can't hurt to also specify it. Your namespace name should be lowercase. While you're free to organise your filesystem as you want, it is best practice to place any files in a directory with the same name as your namespace, in the core/components and assets/components directories.
+Чтобы создать пространство имен, перейдите в Система->Пространства имен. Нажмите кнопку «Создать» и присвойте пространству имен имя и основной путь. В Revolution 2.2 путь к ресурсам еще не используется, но также не помешает его указать. Ваше имя пространства имен должно быть в нижнем регистре. Хотя вы можете свободно организовывать свою файловую систему так, как вам хочется, рекомендуется размещать любые файлы в каталоге с тем же именем, что и у вашего пространства имен, в каталогах core/components и assets/components.
 
-So for example if your namespace is called "awesomestuff", your core path would be /path/to/core/components/awesomestuff/ and your assets path would be /path/to/assets/components/awesomestuff/.
+Так, например, если ваше пространство имен называется «awesomestuff», ваш основной путь будет /path/to/core/components /awesomestuff/, а путь к ресурсам будет /path/to/assets/components/awesomestuff/.
 
 Следующее окно является примером того, какая информация составляет пространство имен:
 
@@ -26,81 +26,81 @@ So for example if your namespace is called "awesomestuff", your core path would 
 
 (ПРИМЕЧАНИЕ: это изображение устарело)
 
-In the paths, you can also use placeholders which will be evaluated when MODX loads files from your namespace:
+В путях вы также можете использовать плейсхолдеры, которые будут обработаны, когда MODX загружает файлы из вашего пространства имен:
 
-- {core_path} - Resolves to the **MODX_CORE_PATH** variable, which contains the absolute path to the core directory of your MODX installation, for example */home/username/public_html/modx_location/core/*
-- {base_path} - Resolves to the **MODX_BASE_PATH** variable, which contains the absolute path to the root of the MODX installations, typically something */home/username/public_html/modx_location/*
-- {assets_path} - Resolves to the **MODX_ASSETS_PATH** variable, which contains the absolute path to the assets directory of your MODX installation.
+- {core_path} преобразовывается в переменную **MODX_CORE_PATH**, которая содержит абсолютный путь к основному каталогу вашей установки MODX, например */home/username/public_html/modx_location/core/*
+- {core_path} преобразовывается в переменную **MODX_CORE_PATH**, которая содержит абсолютный путь к основному каталогу вашей установки MODX, например */home/username/public_html/modx_location/core/*
+- {assets_path} преобразовывается в переменную **MODX_ASSETS_PATH**, которая содержит абсолютный путь к каталогу ресурсов вашей установки MODX.
 
 ## Использование modAction и modMenu
 
-To point the end user to your custom manager page, you will typically want to make it available through the top menu. This is done with an Action (modAction) and a Menu item (modMenu).
+Чтобы конечного пользователя направить на свою пользовательскую страницу менеджера, обычно ее делают доступной через верхнее меню. Это реализовывается с помощью Action (modAction) и пункта меню (modMenu).
 
-An action contains the namespace and the controller name (more on controllers in a minute). A menu item contains the name and description to display in the top menu, and is also linked to your action object.
+Действие содержит пространство имен и имя контроллера (подробнее о контроллерах через минуту). Элемент меню содержит имя и описание для отображения в верхнем меню, а также связан с вашим объектом действия.
 
-To create an Action, go to System -> Actions. Right-click your Namespace from the 'Actions' tree and select "Create Action Here. In the modal window enter your controller name (call it "index" for now), choose the namespace and set the parent controller to "No Action".
+Чтобы создать действие, перейдите в Система->Действия. Кликните правой кнопкой мыши по вашему пространству имен в дерева «Действия» и выберите «Создать действие здесь». В модальном окне введите имя вашего контроллера (пока назовем его «index»), выберите пространство имен и установите для родительского контроллера значение «Без действий».
 
-Note: in MODX 2.3, actions are no longer necessary (or possible to set up through the manager interface for that matter) and instead of creating the action, you pass your Menu to the right namespace and give it an action name, which is the name of your controller.
+Примечание: в MODX 2.3 действия больше не нужны (или их можно настроить через интерфейс менеджера), и вместо создания действия вы передаете свое меню в правильное пространство имен и присваиваете ему имя действия, которое является названием вашего контроллера.
 
 Теперь, когда у нас настроено действие, мы можем создать пункт меню. Этот пункт меню содержит заголовок и описание, которое вы можете увидеть в верхнем меню, и связан с действием, которое обрабатывает загрузку контроллера (через секунду мы доберемся до контроллера).
 
-Again in System > Actions you should see a tree with all the menu items available. Right click on an existing menu item and choose "Place Action Here" to add a menu item. As you would typically place CMPs under the Components menu, right click that one.
+Снова в меню Система>Действия вы должны увидеть дерево со всеми доступными пунктами меню. Кликните правой кнопкой мыши по существующему пункту меню и выберите «Разместить действие здесь», чтобы добавить пункт меню. Поскольку обычно CMP размещается в меню «Компоненты», щелкните по нему правой кнопкой мыши.
 
 В модальном окне вам будет предложено заполнить несколько деталей.
 
-- Lexicon Key: this can either be a lexicon key, or just the title you want to show up. When building packages that will be distributed, you should place text in lexicons so they can easily be translated. If it's a lexicon key, it needs to be in the default topic.
+- Ключ лексикона: это может быть либо ключ лексикона, либо заголовок, который вы хотите показать. При создании распространяемых пакетов вы должны размещать текст в лексиконах, чтобы их можно было легко перевести. Если это ключ лексикона, он должен быть в теме по умолчанию.
 - Описание: описание, которое появляется под пунктами меню. Может также быть ключом лексикона.
 - Действие: выберите действие, которое вы создали ранее. Он будет указан как «namespace - index», и вам, возможно, придется пролистать выпадающий список, чтобы найти его.
-- Icon: not used in 2.2
-- Parameters: not necessary currently, but you could use this if you want to pass additional URL parameters to the menu item link. Simply specify "&foo=bar" in that case.
-- Handler: instead of loading an action, it's also possible for a menu item to execute a piece of javascript when clicked. This javascript would need to be specified in the handler. Leave empty for now.
-- Permissions: only show the menu item if the user has these permissions. Note that if someone guesses the link to your action they can still access it, this only affects visibility of the menu item.
+- Иконка: не используется в 2.2
+- Параметры: в данный момент не требуется, но вы можете это использовать, если хотите передать дополнительные параметры URL в ссылку на пункт меню. Просто укажите "&foo=bar" в этом случае.
+- Обработчик: вместо того, чтобы загружать действие, для элемента меню также можно выполнить часть JavaScript при клике. Этот JavaScript должен быть указан в обработчике. Оставьте пока пустым.
+- Разрешения: показывать пункт меню, только если у пользователя есть эти разрешения. Обратите внимание, что если кто-то угадает ссылку на ваше действие, он все равно сможет получить к нему доступ, т.к. это влияет только на видимость пункта меню.
 
 ![](/download/attachments/18678076/menu-create1.png?version=1&modificationDate=1268854269000)
 
 (Примечание: изображение устарело)
 
-Hit save, and refresh the page. Your menu item should be there now! But hold on, it wont work yet, because we're missing the controllers..
+Нажмите «Сохранить» и обновите страницу. Ваш пункт меню должен быть уже на месте! Но подождите, это еще не работает, потому что нам не хватает контроллеров...
 
 ## Добавление базового контроллера
 
-Now, to make your manager page functional, it's necessary to add the controllers for it. Remember that we created an action with a controller "index"? Let's add our index controller, which will function as entry point to our other controllers.
+Теперь, чтобы сделать вашу страницу менеджера функциональной, необходимо добавить для нее контроллеры. Помните, что мы создали действие с контроллером «index»? Давайте добавим наш начальный контроллер, который будет функционировать как точка входа для других наших контроллеров.
 
-Create a new file core/components/namespace/index.class.php, with the following contents:
+Создайте новый файл core/components/namespace/index.class.php со следующим содержимым:
 
 ```php
 <?php
 /**
-* The abstract Manager Controller.
-* In this class, we define stuff we want on all of our controllers.
+* Абстрактный контроллер менеджера MODX
+* В этом классе мы определяем всё, что мы хотим выполнять с помощью своих контроллеров
 */
 abstract class NamespaceManagerController extends modExtraManagerController {
    /**
-    * Initializes the main manager controller. You may want to load certain classes,
-    * assets that are shared across all controllers or configuration.
+    * Инициализирует главный контроллер менеджера. Возможно, вы захотите загрузить определенные классы,
+    * ресурсы которых будут доступны для всех контроллеров или конфигурации.
     *
-    * All your other controllers in this namespace should extend this one.
+    * Все ваши остальные контроллеры в этом пространстве имен должны расширять данный контроллер.
     *
-    * In this case we don't do anything useful, but as you build up more complex
-    * extras, it helps to enforce this structure to make it easier to maintain.
+    * В данном случае мы не делаем ничего особенного полезного, но когда вы будете разрабатывать более сложные
+    * дополнения, это поможет упростить поддержку.
     */
    public function initialize() {
        $this->addHtml('<script type="text/javascript">
        Ext.onReady(function() {
-           // We could run some javascript here that runs on all of our controllers
-           // for example something that loads your config
+           // Мы могли бы запустить здесь какой-нибудь код JavaScript, который выполняется во всех наших контроллерах
+           // например, что-нибудь, что загружает вашу конфигурацию
        });
        </script>');
    }
    /**
-    * Defines the lexicon topics to load in our controller.
+    * Определяет темы лексиконов для загрузки в наш контроллер
     * @return array
     */
    public function getLanguageTopics() {
        return array('namespace:default');
    }
    /**
-    * We can use this to check if the user has permission to see this controller
+    * Мы можем использовать данный метод для проверки разрешения пользователя на просмотр данного контроллера
     * @return bool
     */
    public function checkPermissions() {
@@ -108,16 +108,15 @@ abstract class NamespaceManagerController extends modExtraManagerController {
    }
 }
 /**
-* The Index Manager Controller is the default one that gets called when no
-* &action parameter is passed  We use it to define the default controller
-* which will then handle the actual processing.
+* Главный контроллер менеджера - это контроллер по умолчанию, который вызывается,
+* когда не был передан параметр &action. Мы используем его для определения контроллера по умолчанию, который будет поддерживать фактическую обработку.
 *
-* It is important to name this class "IndexManagerController" and making sure
-* it extends the abstract class we defined above
+* Важно назвать данный класс как "IndexManagerController" и удостовериться,
+* что он расширяет абстрактный класс, определенный выше
 */
 class IndexManagerController extends NamespaceManagerController {
    /**
-    * Defines the name or path to the default controller to load.
+    * Определяет название или путь к контроллеру по умолчанию для его загрузки.
     * @return string
     */
    public static function getDefaultController() {
@@ -126,41 +125,41 @@ class IndexManagerController extends NamespaceManagerController {
 }
 ```
 
-So that's our base index controller. The IndexManagerController will be called when the menu item is loaded, which tells MODX to load the "home" controller by default. By passing an "action" url parameter to the page (either by adjusting the menu item "parameters" option, or by manually crafting that link) it will load a different controller instead.
+Так что это наш базовый контроллер. IndexManagerController будет вызываться при загрузке пункта меню, который требует MODX загружать «базовый» контроллер по умолчанию. Передав параметр URL «action» на страницу (либо изменив параметр пункта меню, либо вручную создав эту ссылку), MODX вместо этого загрузит другой контроллер.
 
-In this tutorial we only go into the pieces that are actually required to build a real simple manager page, but if you are looking to build a fully fledged manager page with ExtJS and more, follow the [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra) tutorial. You'll find there's an overlap between this page and Part 2 of that tutorial, but that we restrict ourselves to a simple manager page here.
+В этом уроке мы рассмотрим только те части, которые действительно необходимы для создания на самом деле простой страницы менеджера, но если вы хотите создать полноценную страницу менеджера с ExtJS и даже сложнее, перейдите на страницу учебника [Разработка дополнения в MODX Revolution](extending-modx/tutorials/developing-an-extra). Вы обнаружите, что эта страница и часть 2 этого учебного пособия частично совпадают, однако здесь мы ограничимся простой страницей менеджера.
 
-## Adding the Home controller
+## Добавление базового контроллера
 
-The Home controller is the one that is actually processed when we open the menu item.
+Базовый контроллер - это тот контроллер, который фактически обрабатывается, когда мы открываем пункт меню.
 
-Create a new file in core/components/namespace/controllers/home.class.php and give it the following contents:
+Создайте новый файл в core /components/namespace/controllers/home.class.php со следующим содержимым:
 
 ```php
 <?php
 /**
-* The name of the controller is based on the action (home) and the
-* namespace. This home controller is loaded by default because of
-* our IndexManagerController.
+* Название нашего контроллера основано на действии (home) и
+* пространстве имен. Этот базовый контроллер загружается по умолчанию посредством
+* нашего класса IndexManagerController.
 */
 class NamespaceHomeManagerController extends NamespaceManagerController {
    /**
-    * Any specific processing we want to do here. Return a string of html.
+    * Любая специфическая обработка, которую мы хотим выполнить здесь. Возвращает строку или HTML код.
     * @param array $scriptProperties
     */
    public function process(array $scriptProperties = array()) {
-       return '<h2 class="modx-page-header">It\'s alive!</h2><p>This is your first custom manager page. You are awesome!</p>';
+       return '<h2 class="modx-page-header">It\'s alive!</h2><p>Это ваша первая пользовательская страница в менеджере MODX. Вы великолепны!</p>';
    }
    /**
-    * The pagetitle to put in the <title> attribute.
+    * Заголовок страницы для помещения в атрибут <title>.
     * @return null|string
     */
    public function getPageTitle() {
        return 'My first CMP!';
    }
    /**
-    * Register needed assets. Using this method, it will automagically
-    * combine and compress them if that is enabled in system settings.
+    * Регистрирует необходимые ресурсы. Используя данный метод, система автоматически
+    * объединит и сожмет ресурсы, если это разрешено в системных настройках.
     */
    public function loadCustomCssJs() {
        $this->addCss('url/to/some/css_file.css');
@@ -168,26 +167,26 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
        $this->addLastJavascript('url/to/some/javascript_load_last.js');
        $this->addHtml('<script type="text/javascript">
        Ext.onReady(function() {
-           // We could run some javascript here
+           // Мы могли бы запустить здесь какой-нибудь код JavaScript
        });
        </script>');
    }
 }<br>
 ```
 
-We're just returning the HTML we want added to the page in the process function. Easy, right? Load the menu item now and your manager page should show up telling you that you're awesome.
+Мы просто возвращаем HTML код, который мы хотим добавить на страницу в функцию обработчика. Легко, правда? Откройте сейчас пункт меню, и ваша страница менеджера должна показать вам, что вы великолепны.
 
-If you're getting a blank page, there is likely a class name or path wrong somewhere. If you can access the PHP Error logs it will tell you exactly which one, but here are some pointers:
+Если вы получаете пустую страницу, вероятно, где-то неправильно указано имя класса или путь. Если вы посмотрите журнал ошибок PHP, то увидите, какой именно, но вот несколько подсказок:
 
 - Ваш путь к пространству имен правильный?
 - Ваш контроллер индекса называется IndexManagerController? Не используйте пространство имен в этом имени.
-- Is your home controller called "NamespaceHomeManagerController"? It's important to start with the namespace with an uppercase character, then the action ("home") with an uppercase controller, and then ManagerController, anything else is not accepted.
+- Ваш базовый контроллер называется "NamespaceHomeManagerController"? Важно начать с пространства имен с символа верхнего регистра, затем действия («home») с названием контроллера в верхнем регистре, а затем ManagerController, все остальное не принимается.
 
 ### Использование файла шаблона
 
-It's possible to use a template file for custom manager pages. Simply add a getTemplateFile method and return the absolute path to a file, and it will be loaded and processed as a Smarty template. To add placeholders for the template file, call $this->setPlaceholder($key, $value) in the process function.
+Для пользовательских страниц менеджера можно использовать файл шаблона. Просто добавьте метод getTemplateFile и верните абсолютный путь к файлу, и он будет загружен и обработан как шаблон Smarty. Чтобы добавить плейсхолдеры для файла шаблона, вызовите $this->setPlaceholder($key, $value) в функцию обработчика.
 
-Here's an example of using placeholders in the smarty template file, assuming you called $this->setPlaceholder('foo', 'Bar');
+Вот пример использования плейсхолдеров в файле шаблона smarty, предполагая, что вы вызвали $this->setPlaceholder('foo', 'Bar');
 
 ```html
 <h2 class="modx-page-header">{$foo}</h2>
@@ -195,28 +194,28 @@ Here's an example of using placeholders in the smarty template file, assuming yo
 
 Это вывело бы стандартный заголовок страницы менеджера MODX с надписью «Bar».
 
-## Going beyond plain HTML
+## Выход за рамки простого HTML кода
 
-After this tutorial you built a super simple custom manager page. If you want, you can now continue building a rich interface using [MODExt](extending-modx/custom-manager-pages/modext "MODExt"), the ExtJS integration in Revolution. More about MODExt can be found [here](extending-modx/custom-manager-pages/modext "MODExt").
+После этого урока вы создали супер простую пользовательскую страницу менеджера. Если хотите, теперь вы можете продолжить создание многофункционального интерфейса, используя [MODExt](extending-modx/custom-manager-pages/modext "MODExt"), интеграцию ExtJS в Revolution. Подробнее о MODExt можно узнать [здесь](extending-modx/custom-manager-pages/modext "MODExt").
 
-It is also recommended to follow the [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra) tutorial as it walks you through every step needed to build a rich component.
+Также рекомендуется следовать учебному пособию [Разработка дополнений в MODX Revolution](extending-modx/tutorials/developing-an-extra), так как оно проведет вас через каждый шаг, необходимый для создания многофункционального компонента.
 
 ## See Also
 
 1. [Действия и меню](extending-modx/menus/actions)
-    1. [Action List](extending-modx/menus/action-list)
-2. [Custom Manager Pages in 2.3](extending-modx/custom-manager-pages/tutorial)
-3. [Custom Manager Pages Tutorial](_legacy/developing-in-modx/custom-manager-pages-tutorial)
+    1. [Список действий](extending-modx/menus/action-list)
+2. [Пользовательские страницы менеджера в версии 2.3](extending-modx/custom-manager-pages/tutorial)
+3. [Учебник по созданию пользовательских страниц менеджера](_legacy/developing-in-modx/custom-manager-pages-tutorial)
 4. [MODExt](extending-modx/custom-manager-pages/modext)
-    1. [MODExt MODx Object](extending-modx/custom-manager-pages/modext/modext-modx-object)
-    2. [MODExt Tutorials](extending-modx/custom-manager-pages/modext/modext-tutorials)
-        1. [Ext JS Tutorial - Message Boxes](extending-modx/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
-        2. [Ext JS Tutorial - Ajax Include](extending-modx/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
-        3. [Ext JS Tutorial - Animation](extending-modx/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
-        4. [Ext JS Tutorial - Manipulating Nodes](extending-modx/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
-        5. [Ext JS Tutorial - Panels](extending-modx/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
-        6. [Ext JS Tutoral - Advanced Grid](extending-modx/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
-        7. [Ext JS Tutorial - Inside a CMP](extending-modx/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
+    1. [Объект MODExt MODx](extending-modx/custom-manager-pages/modext/modext-modx-object)
+    2. [Учебники по MODExt](extending-modx/custom-manager-pages/modext/modext-tutorials)
+        1. [Ext JS - Окна сообщений](extending-modx/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
+        2. [Ext JS - Ajax](extending-modx/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
+        3. [Ext JS - Анимация](extending-modx/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
+        4. [Ext JS - Управление узлами](extending-modx/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
+        5. [Ext JS - Панели](extending-modx/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
+        6. [Ext JS - Расширенная сетка](extending-modx/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
+        7. [Ext JS - Внутри CMP](extending-modx/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
     3. [MODx.combo.ComboBox](extending-modx/custom-manager-pages/modext/modx.combo.combobox)
     4. [MODx.Console](extending-modx/custom-manager-pages/modext/modx.console)
     5. [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel)
