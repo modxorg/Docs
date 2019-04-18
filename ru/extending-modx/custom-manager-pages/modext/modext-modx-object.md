@@ -1,6 +1,6 @@
 ---
 title: Объект MODExt MODx
-translation: developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object
+translation: extending-modx/custom-manager-pages/modext/modext-modx-object
 ---
 
 ## Объект MODx JS
