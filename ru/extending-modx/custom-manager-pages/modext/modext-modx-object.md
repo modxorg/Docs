@@ -4,17 +4,17 @@ _old_id: '370'
 _old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object
 ---
 
-## The MODx JS Object
+## Объект MODx JS
 
 MODExt поставляется с глобальным объектом MODx JS на каждой странице менеджера. Этот объект имеет несколько пользовательских методов, которые могут быть выполнены с любой пользовательской страницы менеджера с использованием MODExt, а также устанавливает некоторые настройки по умолчанию.
 
-## Custom Class Variables
+## Пользовательские переменные класса
 
-The following variables are accessible from the MODx JS object:
+Следующие переменные доступны из объекта MODx JS:
 
 ### MODx.request
 
-This is a JS object that contains all the current GET parameters for the page. Example:
+Это объект JS, который содержит все текущие параметры GET для страницы. Пример:
 
 ```javascript
 var id = MODx.request.id;
@@ -22,28 +22,28 @@ var id = MODx.request.id;
 
 ### MODx.config
 
-This object contains all the active System Settings in MODX by key:
+Этот объект содержит все активные системные настройки в MODX по ключу:
 
 ```javascript
 var tpl = MODx.config.default_template;
 ```
 
-#### Other Variables
+#### Другие переменные
 
 В объекте MODx.config есть несколько других переменных, которые не являются [системными настройками](building-sites/settings "System Settings"):
 
 Ключ | Описание
 --- | ---
-base_url | The base URL for the MODX site and/or active context.
+base_url | Базовый URL для сайта MODX и / или активного контекста.
 connectors_url | URL к каталогу коннекторов.
-manager_url | The URL to the manager.
-http_host | The HTTP host variable for the active context.
-site_url | The full Site URL for the active context.
-custom_resource_classes | An array of custom Resource classes pulled from the System Setting custom_resource_classes
+manager_url | URL к менеджеру.
+http_host | Переменная хоста HTTP для активного контекста.
+site_url | Полный URL сайта для активного контекста.
+custom_resource_classes | Массив пользовательских классов ресурсов, извлеченных из системных настроек custom_resource_classes
 
 ### MODx.action
 
-This object contains a map of all the modAction objects (or MODX manager controllers), mapped by their controller to their ID:
+Этот объект содержит карту всех объектов modAction (или контроллеров диспетчера MODX), сопоставленных их контроллером с их идентификатором:
 
 ```javascript
 var actionId = MODx.action['resource/create'];
@@ -57,18 +57,18 @@ var actionId = MODx.action['mycomponent:controllers/index'];
 
 ### MODx.version
 
-Contains MODX version information, with the following attributes:
+Содержит информацию о версии MODX со следующими атрибутами:
 
 Ключ | Пример
 --- | ---
-version | 2
+версия | 2
 major_version | 1
 minor_version | 0
-patch_level | pl
-code_name | Revolution
-distro | (traditional)
-full_version | 2.1.0-pl
-full_appname | MODX Revolution 2.1.0-pl (traditional)
+patch_level | пл
+кодовое имя | революция
+дистрибутив | (Традиционный)
+полная версия | 2.1.0-пл
+full_appname | MODX Revolution 2.1.0-pl (традиционный)
 
 Пример:
 
@@ -78,7 +78,7 @@ var fv = MODx.version.full_version;
 
 ### MODx.user
 
-This object will contain the two following properties for the currently logged-in manager user:
+Этот объект будет содержать два следующих свойства для текущего пользователя администратора, вошедшего в систему:
 
 MODx.user.id | The ID of the user.
 --- | ---
@@ -94,16 +94,16 @@ var userId = MODx.user.id;
 
 Название | Описание
 --- | ---
-MODx.perm.resource_tree | To view the Resources tree.
-MODx.perm.element_tree | To view the Elements tree.
-MODx.perm.file_tree | To view the Files tree.
+MODx.perm.resource_tree | Для просмотра дерева ресурсов.
+MODx.perm.element_tree | Для просмотра дерева элементов.
+MODx.perm.file_tree | Для просмотра дерева файлов.
 MODx.perm.file_upload | Загружать файлы.
-MODx.perm.file_manager | To use the MODX file browser.
-MODx.perm.new_chunk | To create a new Chunk.
-MODx.perm.new_plugin | To create a new Plugin.
+MODx.perm.file_manager | Использовать файловый браузер MODX.
+MODx.perm.new_chunk | Создать новый чанк.
+MODx.perm.new_plugin | Создать новый плагин.
 MODx.perm.new_snippet | Создать новый сниппет.
-MODx.perm.new_template | To create a new Template.
-MODx.perm.new_tv | To create a new Template Variable.
+MODx.perm.new_template | Создать новый шаблон.
+MODx.perm.new_tv | Создать новую переменную шаблона.
 MODx.perm.directory_create | Создать каталог в файловой системе.
 
 ```javascript
@@ -112,11 +112,11 @@ if (MODx.perm.file_upload) { /* ...код... */ }
 
 ## Пользовательские методы
 
-The MODx object also has quite a few custom methods available to it:
+Объект MODx также имеет довольно много пользовательских методов:
 
 ### MODx.load
 
-This method will create a new object of any specified xtype and passed in configuration parameters. Example:
+Этот метод создаст новый объект любого указанного xtype и переданный в параметрах конфигурации. Пример:
 
 ```javascript
 var w = MODx.load({
@@ -127,7 +127,7 @@ w.setValues({ name: 'My Namespace' });
 w.show();
 ```
 
-Any defined class that has a registered xtype can be loaded from this method.
+Любой определенный класс, имеющий зарегистрированный тип xtype, может быть загружен из этого метода.
 
 ### MODx.clearCache
 
@@ -135,7 +135,7 @@ Any defined class that has a registered xtype can be loaded from this method.
 
 ### MODx.releaseLock
 
-This will release the lock on the current active Resource. This method should not be fired on non-Resource editing pages. It will fire the 'beforeReleaseLocks' and 'afterReleaseLocks' events on the MODx object.
+Это снимет блокировку с текущего активного ресурса. Этот метод не должен запускаться на страницах редактирования, не относящихся к ресурсам. Он будет запускать события beforeReleaseLocks и afterReleaseLocks объекта MODx.
 
 ### MODx.sleep
 
@@ -161,11 +161,11 @@ MODx.loadHelpPane();
 
 ### MODx.preview
 
-Loads the current MODX site for the active Context.
+Загружает текущий сайт MODX для активного контекста.
 
 ### MODx.isEmpty
 
-Checks to see if the specified variable is "empty" (in the PHP sense). This means it is either:
+Проверяет, является ли указанная переменная «пустой» (в смысле PHP). Это означает, что это либо:
 
 - false, 'false', или 'FALSE'
 - 0 или '0'
