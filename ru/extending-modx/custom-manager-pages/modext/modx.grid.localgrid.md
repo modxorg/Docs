@@ -1,12 +1,12 @@
 ---
 title: MODx.grid.LocalGrid
-_old_id: '1081'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.localgrid
+translation: extending-modx/advanced-development/custom-manager-pages/modext/modx.grid.localgrid
 ---
 
 ## MODx.grid.LocalGrid
 
 **Расширяет:** Ext.grid.EditorGridPanel
+
 **Основные характеристики:** Аналогично MODx.grid.Grid.
 
 Класс MODExt LocalGrid аналогичен классу [MODx.grid.Grid](extending-modx/custom-manager-pages/modext/modx.grid.grid "MODx.grid.Grid"), однако вместо того, чтобы использовать коннектор для заполнения его данными, он должен быть загружен через локальное хранилище.
