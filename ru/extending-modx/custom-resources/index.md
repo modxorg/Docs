@@ -1,7 +1,6 @@
 ---
 title: Создание класса ресурса
-_old_id: '70'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-resource-classes/creating-a-resource-class
+translation: extending-modx/custom-resources/
 ---
 
 Этот урок является частью серии:
@@ -198,9 +197,7 @@ $modx->addExtensionPackage('copyrightedresource','/path/to/copyrightedresource/m
 *
 * ИСПОЛЬЗОВАНИЕ:
 * 1. Скопируйте этот файл в docroot (корневую веб директорию) вашей установки MODX.
-* 2. Запустите файл, посетив его в браузере, например, <a href="http://yoursite.com/add_extension.php"> <a href="http://yoursite.com/add_extension.php"> http://yoursite.com/add_extension.php
-</a>
-</a>
+* 2. Запустите файл, посетив его в браузере, например, http://yoursite.com/add_extension.php
 */
 //------------------------------------------------------------------------------
 //! КОНФИГУРАЦИЯ
