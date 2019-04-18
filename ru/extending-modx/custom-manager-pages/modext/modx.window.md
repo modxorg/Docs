@@ -13,33 +13,33 @@ _old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modex
 
 Окна MODExt - это удобный способ отображения данных записи из сетки или AJAX-запроса на редактирование. Окна автоматически включают FormPanel, в которую можно добавлять поля формы (и другие компоненты). Отправка/сохранение окна фактически отправляет FormPanel и инициирует запрос AJAX к вашему коннектору.
 
-## Unique Parameters
+## Уникальные параметры
 
 Название | Описание | Значение по умолчанию
 --- | --- | ---
-action | If baseParams is not set, will use this as the action to the controller. | 
-allowDrop | Whether or not to allow dropping of tree items onto the form fields. | 1
-baseParams | An object of parameters to send along with the window form on save. | {}
-blankValues | If true, will reset the values of the form each time it is shown. | 0
-cancelBtnText | The text of the cancel button for the window. | Cancel
-fields | An array of fields for the form, similar to Ext.form.FormPanel's fields definition. | []
+action | Если baseParams не установлен, будет использовать это как действие для контроллера. | 
+allowDrop | Разрешить или нет перетаскивание элементов дерева на поля формы. | 1
+baseParams | Объект параметров для отправки вместе с формой окна при сохранении. | {}
+blankValues | Если true, будет сбрасывать значения формы каждый раз, когда она отображается. | 0
+cancelBtnText | Текст кнопки отмены для окна. | Cancel
+fields | Массив полей для формы, аналогичный определению полей Ext.form.FormPanel. | []
 fileUpload | Если true, форма будет создана с возможностью приема файлов. | 0
-formFrame | Whether or not to add a ext-style frame to the window. | 1
-labelAlign | The alignment of the labels on the form. | right
-labelWidth | The width, in pixels, of the labels on the form. | 100
-record | A JSON object of default values (in name: value format) to set to the form when first loading the window. | {}
-saveBtnText | The text of the save button for the window. | Save
+formFrame | Добавлять или нет рамку ext-style в окно. | 1
+labelAlign | Выравнивание надписей на форме. | right
+labelWidth | Ширина в пикселях надписей на форме. | 100
+record | Объект JSON со значениями по умолчанию (в формате name: value) для установки в форму при первой загрузке окна. | {}
+saveBtnText | Текст кнопки сохранения для окна. | Save
 url | URL-адрес коннектора для отправки формы окна. | 
 
-## Custom Events
+## Пользовательские события
 
 Название | Описание
 --- | ---
-success | If the form submission returns a success response.
-failure | If the form submission returns a failure response.
+success | Если отправка формы возвращает успешный ответ.
+failure | Если отправка формы возвращает ответ об ошибке.
 beforeSubmit | Перед тем, как форма отправляет свои значения в коннектор, но после прохождения проверки.
 
-## Unique Functionality
+## Уникальная функциональность
 
 ### Запуск метода отправки формы
 
@@ -52,7 +52,7 @@ w.submit(true); /* отправить и закрыть окно */
 
 ### setValues
 
-The MODx.Window class comes with a setValues method, that will set the form values of the window:
+Класс MODx.Window поставляется с методом setValues, который устанавливает значения формы окна:
 
 ```javascript
 var w = Ext.getCmp('my-window-id');
@@ -64,16 +64,16 @@ w.setValues({
 
 ### reset
 
-You can run the reset method to empty (reset) all the fields on the form:
+Вы можете запустить метод сброса, чтобы очистить (сбросить) все поля в форме:
 
 ```javascript
 var w = Ext.getCmp('my-window-id');
 w.reset();
 ```
 
-### Hiding and Showing Fields
+### Скрытие и отображение полей
 
-MODx.Window comes with a few assistance methods for making fields in its forms visible or hidden:
+MODx.Window поставляется с несколькими вспомогательными методами для создания полей в своих формах видимыми или скрытыми
 
 ```javascript
 var w = Ext.getCmp('my-window-id');
@@ -81,7 +81,7 @@ w.hideField('email');
 w.showField('comments');
 ```
 
-## See Also
+## Смотрите также
 
 1. [Объект MODExt MODx](extending-modx/custom-manager-pages/modext/modext-modx-object)
 2. [Учебник по MODExt ](extending-modx/custom-manager-pages/modext/modext-tutorials)
