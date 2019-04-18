@@ -9,7 +9,7 @@ _old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modex
 **Расширяет:** Ext.grid.EditorGridPanel
 **Основные характеристики:** функциональность коннектора; позволяет легко интегрировать элементы панели инструментов и MODx.Window; встроенная функциональность контекстного меню.
 
-When instantiating this into a tabbed interface, it's recommended to set preventRender: true in its config to prevent JS rendering issues.
+При создании этого экземпляра в интерфейсе с вкладками рекомендуется установить в своей конфигурации protectRender: true, чтобы предотвратить проблемы с отображением JS.
 
 ![](/download/attachments/18678079/grid.png?version=1&modificationDate=1302187849000)
 
@@ -30,7 +30,7 @@ foreach( $items as $item ) {
 }
 ```
 
-The above code would create a context menu for each item with the text being the lexicon key matching "my_lexicon," and the handler being the myHandler function registered to your Grid object.
+Приведенный выше код создает контекстное меню для каждого элемента, текст которого является ключом лексикона, соответствующим «my_lexicon», а обработчик - функцией myHandler, зарегистрированной в вашем объекте Grid.
 
 Альтернативно (и предпочтительно) меню могут быть созданы путем расширения вашей сетки JS и добавления метода «getMenu»:
 
@@ -45,11 +45,11 @@ getMenu: function() {
 }
 ```
 
-Returning an array of items in the getMenu method will automatically add the items to the context menu.
+Возвращение массива элементов в методе getMenu автоматически добавит элементы в контекстное меню.
 
 Сетки Revolution 2.0.x не могут просто вернуть массив - им нужно будет вызвать «this.addContextMenuItem(m);» перед концом функции. Возвращающий массив был добавлен в версии 2.1.
 
-## MODExt-Specific Parameters
+## Специфичные для MODExt параметры
 
 Прежде всего, MODx.grid.Grid извлекает свои данные удаленно через параметр конфигурации "url". Он также загружает baseParams в вызов, который по умолчанию выглядит как:
 
@@ -57,49 +57,49 @@ Returning an array of items in the getMenu method will automatically add the ite
 baseParams: { action: 'getList' }
 ```
 
-You can override the baseParams in your config parameter.
+Вы можете переопределить baseParams в параметре конфигурации.
 
-MODx.grid.Grid adds a few unique parameters not found in typical Ext.grid.Grid objects:
+MODx.grid.Grid добавляет несколько уникальных параметров, которых нет в типичных объектах Ext.grid.Grid:
 
 Название | Описание | Значение по умолчанию
 --- | --- | ---
-url | URL-адрес коннектора для загрузки этой сетки. | 
+URL | URL-адрес коннектора для загрузки этой сетки. | 
 paging | Если true, включит постраничное разделение и автоматически добавит PagingToolbar внизу сетки. | true
-pageSize | The number of items to page by, if paging == true. Defaults to the System Setting of "default_per_page", which is 20. | 20
+pageSize | Количество элементов на странице, если paging == true. По умолчанию используется системная настройка default_per_page, которая равна 20. | 20
 pageStart | Начальный индекс постраничного разбиения. | 0
-showPerPage | Whether or not to show the "Per Page" textbox. Defaults to true. | true
-pagingItems | Any items to add to the right of the "Per Page" textbox on the paging toolbar. Useful for adding extra buttons. | []
-grouping | If true, will automatically enable grouping on this grid. | false
-groupBy | The column to group by. Note that the column must be in the column model. | name
+showPerPage | Показывать или нет текстовое поле «На страницу». По умолчанию true. | true
+pagingItems | Любые элементы, добавляемые справа от текстового поля «На страницу» на панели инструментов подкачки. Полезно для добавления дополнительных кнопок. | []
+grouping | Если true, автоматически включит группировку по этой сетке. | false
+groupBy | Столбец для группировки. Обратите внимание, что столбец должен быть в модели столбца. | name
 pluralText | Текст для множества элементов в сгруппированном столбце, например: «Строки» | Records
-singleText | The text for a single amount of items in the grouped column, ie: "Row" | Record
+singleText | Текст для одного количества элементов в сгруппированном столбце, а именно: «Строка» | Record
 sortBy | Столбец по умолчанию для сортировки при группировке и remoteSort установленном в true. | id
 sortDir | Направление сортировки по умолчанию при группировке и remoteSort установленном в true | ASC
-preventRender | Prevent the grid from rendering. Useful when putting the grid in panels or tabs. | 1
+preventRender | Предотвратить рендеринг сетки. Полезно при размещении сетки на панелях или вкладках. | 1
 autosave | Если установлено значение true, будет автоматически запускаться процессор 'updateFromGrid' (или процессор в параметре конфигурации saveUrl) для этого коннектора при выполнении встроенного редактирования в сетке. | false
-saveUrl | URL-адрес коннектора для вызова при встроенном редактировании с включенным автосохранением. | The value of config.url
-save_action | The processor action to call when inline-editing with autosave on. | updateFromGrid
-saveParams | A JS object of parameters to also send to the saveUrl when auto-saving or when using MODx.grid.Grid's remove method. | {}
-save_callback | After auto-saving, run this method. | null
+saveUrl | URL-адрес коннектора для вызова при встроенном редактировании с включенным автосохранением. | Значение config.url
+save_action | Действие процессора для вызова при inline-редактировании с включенным автосохранением | updateFromGrid
+saveParams | JS-объект параметров, который также отправляется в saveUrl при автосохранении или при использовании метода удаления MODx.grid.Grid. | {}
+save_callback | После автосохранения запустите этот метод. | null
 preventSaveRefresh | Если автосохранение имеет значение true, после сохранения будет препятствовать обновлению сетки. Используется для более плавного редактирования. | 1
-primaryKey | If your grid items have a primary key that's not ID, set it here. | id
+primaryKey | Если у ваших элементов сетки есть первичный ключ, который не является идентификатором, установите его здесь. | id
 storeId | Пользовательский идентификатор для предоставления хранилища в данной сетке. По умолчанию будет использоваться уникальный Ext ID. | Ext.id()
 
 Полный список всех параметров, не перечисленных здесь, см. в документации [ExtJS](http://sencha.com).
 
-## Custom Events
+## Пользовательские события
 
-MODx.grid.Grid adds a few extra events not found in Ext.grid.Grid objects:
+MODx.grid.Grid добавляет несколько дополнительных событий, не найденных в объектах Ext.grid.Grid:
 
 Название | Описание
 --- | ---
 beforeRemoveRow | Запускается перед удалением строки при вызове метода remove() в сетке (обычно это делается в контекстном меню)
 afterRemoveRow | Запускается после удаления строки при вызове метода remove() в сетке (обычно это делается в контекстном меню)
-afterAutoSave | Fires after an inline-edit save is done, if autosave is set to true.
+afterAutoSave | Запускается после сохранения с помощью встроенного редактирования, если для автосохранения установлено значение true.
 
-## Other Unique Functions
+## Другие уникальные функции
 
-MODExt grids come with quite a few other features.
+Сетки MODExt имеют довольно много других функций.
 
 ### Пользовательские сообщения об исключениях
 
@@ -122,7 +122,7 @@ grid.loadWindow({
 
 MODx.grid.Grid поставляется с пользовательским методом под названием «remove», который автоматически запускает AJAX-запрос к вашему коннектору, установленному в config.url с действием «remove», и ID (или primaryKey, установленный в конфигурации) выбранной строки. Это полезно для контекстных меню.
 
-The method takes one parameter - text - which is the text to display in the confirm dialog that prompts the user if they want to remove the row before actually doing so. The beforeRemoveRow event is fired before the confirm dialog is loaded.
+Метод принимает один параметр - текст - текст, отображаемый в диалоговом окне подтверждения, которое запрашивает пользователя, хотят ли они удалить строку перед тем, как это сделать. Событие beforeRemoveRow вызывается до загрузки диалогового окна подтверждения.
 
 ```javascript
 grid.remove("Вы уверены, что хотите удалить этот объект?");
@@ -140,7 +140,7 @@ grid.confirm("approve","Вы уверены, что хотите принять 
 
 ### refresh
 
-A custom method that will refresh the grid whenever fired.
+Пользовательский метод, который будет обновлять сетку при каждом запуске.
 
 ### encodeModified
 
@@ -150,7 +150,7 @@ A custom method that will refresh the grid whenever fired.
 
 Метод вернет объект JSON для всех строк.
 
-## See Also
+## Смотрите также
 
 1. [Объект MODExt MODx](extending-modx/custom-manager-pages/modext/modext-modx-object)
 2. [Учебник по MODExt ](extending-modx/custom-manager-pages/modext/modext-tutorials)
