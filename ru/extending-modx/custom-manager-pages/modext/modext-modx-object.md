@@ -1,7 +1,6 @@
 ---
 title: Объект MODExt MODx
-_old_id: '370'
-_old_uri: 2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object
+translation: developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object
 ---
 
 ## Объект MODx JS
@@ -64,11 +63,11 @@ var actionId = MODx.action['mycomponent:controllers/index'];
 версия | 2
 major_version | 1
 minor_version | 0
-patch_level | пл
-кодовое имя | революция
-дистрибутив | (Традиционный)
+patch_level | pl
+кодовое имя | Revolution
+дистрибутив | (Traditional)
 полная версия | 2.1.0-пл
-full_appname | MODX Revolution 2.1.0-pl (традиционный)
+full_appname | MODX Revolution 2.1.0-pl (Traditional)
 
 Пример:
 
