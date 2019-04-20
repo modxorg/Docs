@@ -18,7 +18,7 @@ MODX permissions are always additive: if a permission exists on "Access Policy A
 
 In practice, Access Policies are associated with User Groups (not with individual users). Access Policies are associated with a User Group, and users may be added to the group.
 
-Access Policies (ACLs) define lists of permissions (see Security --> Access Controls). These lists contain groups of permissions that belong together.
+Access Policies (ACLs) define lists of permissions (see Menu --> Access Controls). These lists contain groups of permissions that belong together.
 
 1. [Permissions - Administrator Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy)
 2. [Permissions - Resource Policy](building-sites/client-proofing/security/policies/permissions/resource-policy)
