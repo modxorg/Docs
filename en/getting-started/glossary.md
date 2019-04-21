@@ -14,7 +14,7 @@ A MODx Third-party Component (3PC) that does not modify the Core or extend any o
 
 ### Asset
 
-Any type of file resource that is usually located in the /assets directory, as defined by the constant MODX\_ASSETS\_PATH; can include Third-party Components, libraries, image files, css files, JavaScript files, class files, etc.
+Any type of file resource that is usually located in the /assets directory, as defined by the constant `MODX\_ASSETS\_PATH;` can include Third-party Components, libraries, image files, css files, JavaScript files, class files, etc.
 
 - - - - - -
 
@@ -32,7 +32,7 @@ An optional classifying name that can be attached to any Element or PropertySet 
 
 ### Chunk Tags
 
-Tags in the form \[\[$ChunkName\]\] that can be used in reference to Chunks.
+Tags in the form `[[$ChunkName]]` that can be used in reference to Chunks.
 
 - - - - - -
 
@@ -98,7 +98,7 @@ A type of xPDOVehicle Resolver that copies files from the source location to the
 
 ### Language Tags
 
-Tags in the form \[\[%LanguageStringKey\]\] that reference MODx Lexicon entries.
+Tags in the form `[[%LanguageStringKey]]` that reference MODx Lexicon entries.
 
 - - - - - -
 
@@ -116,7 +116,7 @@ A set of Lexicon Entries focused on a particular subject. Revolution only loads 
 
 ### Link Tags
 
-Tags in the form \[\[~ResourceId\]\] that reference the URL of a particular Resource.
+Tags in the form `[[~ResourceId]]` that reference the URL of a particular Resource.
 
 - - - - - -
 
@@ -134,13 +134,13 @@ An organizational tag for Components to use to identify Lexicon Entries, Setting
 
 ### Placeholder Tags
 
-Tags in the form \[\[+PlaceholderName\]\] that reference MODx Placeholders, usually set with $modx->setPlaceholder('placeholderName','value') in a Snippet or Plugin.
+Tags in the form `[[+PlaceholderName]]` that reference MODx Placeholders, usually set with `$modx->setPlaceholder('placeholderName','value')` in a Snippet or Plugin.
 
 - - - - - -
 
 ### Resource Field
 
-Any of the fields of the site\_content table, such as pagetitle, longtitle, introtext, alias, menuindex, etc. Some fields are available on the Document Create/Edit screen and via Resource Tags; Others can only be accessed via the documentObject.
+Any of the fields of the `site_content` table, such as pagetitle, longtitle, introtext, alias, menuindex, etc. Some fields are available on the Document Create/Edit screen and via Resource Tags; Others can only be accessed via the documentObject.
 
 - - - - - -
 
@@ -170,7 +170,7 @@ Also called a Document ID, Resource ID, or Document Identifier; the number in pa
 
 ### Resource Tags
 
-Tags in the form \[\[\*ResourceField/TV\]\], which can be used to refer to Resource Fields, or Template Variables.
+Tags in the form `[[*ResourceField/TV]]`, which can be used to refer to Resource Fields, or Template Variables.
 
 - - - - - -
 
@@ -180,19 +180,19 @@ Post-processor: a script or predefined action that is evaluated after a Vehicle 
 
 An example of a PHP Resolver is one that attaches Plugin Events to a newly-installed Plugin.
 
-An example of a file Resolver is one that copies the assets/ditto directory in the xPDOVehicle path to /modx/assets/ditto.
+An example of a file Resolver is one that copies the assets/ditto directory in the xPDOVehicle path to `/modx/assets/ditto`.
 
 - - - - - -
 
 ### Setting Tags
 
-Tags in the form \[\[++SettingName\]\] that reference MODx System Settings, Context Settings, and User Settings.
+Tags in the form `[[++SettingName]]` that reference MODx System Settings, Context Settings, and User Settings.
 
 - - - - - -
 
 ### Snippet Tags
 
-Tags in the form \[\[SnippetName\]\], also referred to as Snippet Calls.
+Tags in the form `[[SnippetName]]`, also referred to as Snippet Calls.
 
 - - - - - -
 
