@@ -26,7 +26,7 @@ string getChunk (string $chunkName, [array $properties = array ()])
 $properties = array('key' => 'value');
 ```
 
-Which would cause the \[\[+key\]\] placeholders to be replaced by the 'value'.
+Which would cause the `[[+key]]` placeholders to be replaced by the 'value'.
 
 However, **$properties** can also be a more deeply nested array such as the kind that might be returned from certain getObject or getCollection queries, e.g.
 
@@ -44,7 +44,7 @@ $properties['document']['id'] = 27;
 // [[+document.id]]
 ```
 
-In cases where a multi-dimensional array is used, the placeholder syntax changes to use a dot for each node in the array, e.g. \[\[+user.id\]\] and \[\[+document.id\]\]
+In cases where a multi-dimensional array is used, the placeholder syntax changes to use a dot for each node in the array, e.g. `[[+user.id]]` and `[[+document.id]]`
 
 ## Examples
 
@@ -65,7 +65,7 @@ $output = $modx->getChunk('WelcomeChunk',array(
 return $output;
 ```
 
-So every key in the associative array passed to the **getChunk** method corresponds to an available placeholder inside the chunk, e.g. \[\[+name\]\]
+So every key in the associative array passed to the **getChunk** method corresponds to an available placeholder inside the chunk, e.g. `[[+name]]`
 
 This code outputs this:
 

@@ -108,7 +108,7 @@ Clear your site cache again, refresh the Resource tree, and click 'Preview' on y
 
 > <http://dev.modxcms.com/>
 
-Create a \[\[~135\]\] link to the "Dev Docs" Resource in the "Dev Home" Resource. Reload your page. Note the link properly builds to:
+Create a `[[~135]]` link to the "Dev Docs" Resource in the "Dev Home" Resource. Reload your page. Note the link properly builds to:
 
 > <http://dev.modxcms.com/documentation.html>
 

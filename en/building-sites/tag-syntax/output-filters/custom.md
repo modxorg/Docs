@@ -43,13 +43,13 @@ $options; // optional values passed via backticks
 
  This will pass these properties to the snippet:
 
-| Param   | Value                             | Example Result                           |
-| ------- | --------------------------------- | ---------------------------------------- |
-| input   | The element's value.              | The value of \[\[+file\]\]               |
-| options | Any value passed to the modifier. | 'notitle'                                |
-| token   | The type of the parent element.   | + (the token on `file`)                  |
-| name    | The name of the parent element.   | file                                     |
-| tag     | The complete parent tag.          | \[\[+file:makeDownloadLink=`notitle`\]\] |
+| Param   | Value                             | Example Result                         |
+| ------- | --------------------------------- | -------------------------------------- |
+| input   | The element's value.              | The value of `[[+file]]`               |
+| options | Any value passed to the modifier. | 'notitle'                              |
+| token   | The type of the parent element.   | + (the token on `file`)                |
+| name    | The name of the parent element.   | file                                   |
+| tag     | The complete parent tag.          | `[[+file:makeDownloadLink=`notitle`]]` |
 
  The most important (and perhaps the most obvious) of these parameters is the **$input** parameter. Your Snippet could do something as simple as this:
 

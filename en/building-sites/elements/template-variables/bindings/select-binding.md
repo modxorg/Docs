@@ -63,7 +63,7 @@ What if you need to write a query that accesses the template variables associate
 First, have a look at the following tables (you may have prefixes to your table names):
 
 - _site\_templates_ - contains the actual template code used for the site (lots of HTML appears in the content field).
-- _site\_tmplvars_ - contains the name of template variable. The "name" field is what triggers the substitution. E.g. A name of "my\_template\_variable" should be used as "\[\[\*my\_template\_variable\]\]". If you care to think of this architecturally, this table defines the variable class: the name and type of variable that a series of pages will have.
+- _site\_tmplvars_ - contains the name of template variable. The "name" field is what triggers the substitution. E.g. A name of "my\_template\_variable" should be used as `[[*my_templat_variable]]`. If you care to think of this architecturally, this table defines the variable class: the name and type of variable that a series of pages will have.
 - _site\_tmplvar\_contentvalues_ - contains the values of the template variables for each page that uses them. The database table has 4 fields: id, tmplvarid (foreign key back to site\_tmplvars.id), contentid (foreign key back to site\_content.id), value (a text field). Architecturally, this table represents _instances_ of the particular class. In other words, one row in the _site\_tmplvars_ table might have multiple rows in this table (one row for each instance of the variable).
 - _site\_tmplvar\_templates_ - This is a mapping table which associates a Template Variable with a Template (maps site\_template:id to site\_tmplvars:id). Contains 3 fields: tmplvarid, templateid, rank.
 

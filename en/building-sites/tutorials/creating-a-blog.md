@@ -109,11 +109,11 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Secondly, we then display a Tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
 
- And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-\[\[\*id\]\]'. This means that MODx will automatically create a new thread for each new Blog Post we create. Neat!
+ And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-`[[*id]]`'. This means that MODx will automatically create a new thread for each new Blog Post we create. Neat!
 
 ### The Post Content
 
- Okay, back to our Template. We're in the content section now - note how we start with \[\[\*introtext\]\]. This is a useful MODX Resource field - think of it like a beginning excerpt for a blog post, that will show up on our main page when we're listing the latest blog posts.
+ Okay, back to our Template. We're in the content section now - note how we start with `[[*introtext]]`. This is a useful MODX Resource field - think of it like a beginning excerpt for a blog post, that will show up on our main page when we're listing the latest blog posts.
 
 ### Adding Comments to Posts
 

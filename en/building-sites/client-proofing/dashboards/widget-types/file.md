@@ -13,11 +13,11 @@ The File Dashboard Widget Type runs a file on the filesystem, which can either:
 
 Simply place the name of the file in the content textarea of the widget. You can use the following placeholders to reference the widget path:
 
-- \[\[++base\_path\]\]
-- \[\[++core\_path\]\]
-- \[\[++manager\_path\]\]
-- \[\[++assets\_path\]\]
-- \[\[++manager\_theme\]\]
+- `[[++base_path]]`
+- `[[++core_path]]`
+- `[[++manager_path]]`
+- `[[++assets_path]]`
+- `[[++manager_theme]]`
 
 ### Returning the Output
 

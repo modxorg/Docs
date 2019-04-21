@@ -22,7 +22,7 @@ void setPlaceholder (string $key, mixed $value)
 $modx->setPlaceholder('name','Barry');
 ```
 
-This causes the placeholder \[\[+name\]\] to be available inside your templates or page content.
+This causes the placeholder `[[+name]]` to be available inside your templates or page content.
 
 ## See Also
 

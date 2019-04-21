@@ -16,7 +16,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/"
 - [Types of System Settings](#SystemSettings-TypesofSystemSettings)
 - [Settings List](#SystemSettings-SettingsList)
 
- MODx comes with a flexible amount of system settings. They are found in System -> System Settings, and can easily be edited and changed. All system settings are available in your templates by using the \[\[++placeholder\]\] notation. See [Template Tags](building-sites/tag-syntax/common) for more information.
+ MODx comes with a flexible amount of system settings. They are found in System -> System Settings, and can easily be edited and changed. All system settings are available in your templates by using the `[[++placeholder]]` notation. See [Template Tags](building-sites/tag-syntax/common) for more information.
 
 ## Overriding Settings (Inheritance)
 
@@ -37,7 +37,7 @@ Basically, when a setting is requested in the session of a specific user, the se
 
 ### Parameters
 
-- Key: This is ultimately the unique name of your \[\[++placeholder\]\]
+- Key: This is ultimately the unique name of your `[[++placeholder]]`
 - Name: This is the label displayed in the "Name" column while viewing all system settings. This value can be localized (see below).
 - Field Type: There are currently 3 supported input types: TextField, TextArea, Yes/No
 - Namespace: as with [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages"), the namespace defines a folder inside core/components/.
@@ -52,7 +52,7 @@ Basically, when a setting is requested in the session of a specific user, the se
 - Name: `setting_` + _Key_
 - Description: `setting_` + _Key_ + `_desc`
 
- For example, if we look at Quip's \[\[++quip.emailsFrom\]\] setting, we see that it uses the the **quip** namespace. The expected folder structure is to look for localization files in the namespace's folder, then in a "lexicon" folder, then in folders divided by language codes, and then in the **default.inc.php** file, for example **core/components/quip/lexicon/en/default.inc.php**
+ For example, if we look at Quip's `[[++quip.emailsFrom]]` setting, we see that it uses the the **quip** namespace. The expected folder structure is to look for localization files in the namespace's folder, then in a "lexicon" folder, then in folders divided by language codes, and then in the **default.inc.php** file, for example **core/components/quip/lexicon/en/default.inc.php**
 
  In our Quip example, we see a name of _setting\_quip.emailsFrom_ and a description of _setting\_quip.emailsFrom\_desc_. These two values correspond to keys in the **$\_lang** array inside of **default.inc.php**:
 

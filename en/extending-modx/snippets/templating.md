@@ -50,7 +50,7 @@ First off, let's create a chunk that we'll use for each item in the result set. 
 <li><a href="[[~[[+id]]]]">[[+pagetitle]]</a></li>
 ```
 
-Basically, we make an LI tag, and put some placeholders were our content was. We have available any field in the Resource, and here we're just using the ID and pagetitle fields. The \[\[~ tells MODx to make a link from the ID passed in the \[\[+id\]\] property. Now let's add a default property to the snippet, called 'tpl', to the top of our snippet code:
+Basically, we make an LI tag, and put some placeholders were our content was. We have available any field in the Resource, and here we're just using the ID and pagetitle fields. The `[[~` tells MODx to make a link from the ID passed in the `[[+id]]` property. Now let's add a default property to the snippet, called 'tpl', to the top of our snippet code:
 
 ``` php
 $tpl = $modx->getOption('tpl',$scriptProperties,'ResourceItem');
@@ -90,7 +90,7 @@ Now the user can call the snippet this way to override the chunk for each Resour
 [[!ResourceLister? &tpl=`MyOwnChunk`]]
 ```
 
-Meaning they can template their results however they want - using LIs, or table rows, or whatever! You've now created a flexible, powerful snippet. The available placeholders depend on what array is passed to $modx->getChunk(); or $tpl->process() methods. In this example the available placeholders would be all default fields (no TVs!) of a resource like for example \[\[+pagetitle\]\], \[\[+id\]\] or \[\[+content\]\].
+Meaning they can template their results however they want - using LIs, or table rows, or whatever! You've now created a flexible, powerful snippet. The available placeholders depend on what array is passed to $modx->getChunk(); or $tpl->process() methods. In this example the available placeholders would be all default fields (no TVs!) of a resource like for example `[[+pagetitle]]`, `[[+id]]` or `[[+content]]`.
 
 ### Adding A Row Class
 

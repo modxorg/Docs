@@ -28,7 +28,7 @@ return 'Hello, World!';
 ?>
 ```
 
-If you named this _"helloWorld"_, you could call this snippet by using \[\[helloWorld\]\] in your documents, templates, or Chunks (see [Tag Syntax](building-sites/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](extending-modx/modx-class/reference/modx.runsnippet "modX.runSnippet") API method.
+If you named this _"helloWorld"_, you could call this snippet by using `[[helloWorld]]` in your documents, templates, or Chunks (see [Tag Syntax](building-sites/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](extending-modx/modx-class/reference/modx.runsnippet "modX.runSnippet") API method.
 
 Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output.
 
@@ -87,7 +87,7 @@ There are more reasons, but that's for brevity. Let's look at a few examples:
 
 ### Example DB Code
 
-Let's get a chunk named 'LineItem', and change the placeholders in it (done with \[\[+placeholderName\]\] syntax) to some custom values:
+Let's get a chunk named 'LineItem', and change the placeholders in it (done with `[[+placeholderName]]` syntax) to some custom values:
 
 ``` php
 $chunk = $modx->getObject('modChunk',array(

@@ -32,7 +32,7 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 
  ![](download/attachments/18678061/create-tv-general1.png?version=1&modificationDate=1268850848000)
 
-- **Variable Name**: This corresponds to the placeholders that will be used in your templates, e.g. **bio** = \[\[\*bio\]\]. _This name should be **unique**_!
+- **Variable Name**: This corresponds to the placeholders that will be used in your templates, e.g. **bio** = `[[*bio]]`. _This name should be **unique**_!
 - **Caption**: This is the primary label for your variable that appears when you edit a resource that uses this TV
 - **Description**: This is the secondary label for your variable
 - **Category**: This affects which sub-tab the variable appears on
