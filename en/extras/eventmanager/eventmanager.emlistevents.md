@@ -29,4 +29,4 @@ This piece of documentation will be written in the (hopefully) near future.
 - reservationlink (link to &reservationResource with &eid=5 passed to it)
 - default (string, see &default property above)
 - capacity (int)
-- last\_signup (int) | emRowTpl (included in package): <p>\[\[+date\]\]</p> <p>\[\[+title\]\]</p> <p>\[\[+description\]\]<br />\[\[+reservationlink\]\]</p> |
+- last\_signup (int) | emRowTpl (included in package): <p>`[[+date]]`</p> <p>`[[+title]]`</p> <p>`[[+description]]`<br />`[[+reservationlink]]`</p> |

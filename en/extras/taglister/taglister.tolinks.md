@@ -16,7 +16,7 @@ tolinks is called with the normal snippet tag, passing in an 'items' property as
 
 | Name            | Example usage                    | Description                                                                            | Default Value |
 | --------------- | -------------------------------- | -------------------------------------------------------------------------------------- | ------------- |
-| items           | &items=`\[\[\*myTemplateVar\]\]` | The items to turn into links.                                                          |               |
+| items           | &items=`[[*myTemplateVar]]`      | The items to turn into links.                                                          |               |
 | tpl             | &tpl=`linkTpl`                   | Name of a Chunk that will be used for each result.                                     | link          |
 | target          | &target=`6`                      | The ID of the Resource that links will point to.                                       | 1             |
 | inputDelim      | &inputDelim=`,`                  | The delimiter that is used on the items property. Defaults to a comma.                 | ,             |
@@ -29,7 +29,7 @@ tolinks is called with the normal snippet tag, passing in an 'items' property as
 | tagKeyVar       | &tagKeyVar=`MyCustomVar`         | sets the GET var key                                                                   |
 
  I.e.,
- \[\[tolinks? &tagKey=`articlestags` &tagKeyVar=`MyCustomVar`\]\]
+ `[[tolinks? &tagKey=`articlestags` &tagKeyVar=`MyCustomVar`]]`
 
  outputs [http://f.qdn.com/somepage?MyCustomVar=articlestags&tag=theTag\\\\](http://f.qdn.com/somepage?MyCustomVar=articlestags&tag=theTag%5C) | key |
 
@@ -49,7 +49,7 @@ Change the TV value of 'tags' into links that point to the URL of Resource 123 w
 ```
 
 **Be Careful**
-**toLinks** will generate _relative_ URLs to the resource indicated by the **&target** parameter, so if you are having trouble getting the links to point to the correct URL, add a Chunk containing something like the following for use by the **&tpl** parameter: [\[\[+item\]\]]([[++site_url]][[+url]])
+**toLinks** will generate _relative_ URLs to the resource indicated by the **&target** parameter, so if you are having trouble getting the links to point to the correct URL, add a Chunk containing something like the following for use by the **&tpl** parameter: [`[[+item]]`]([[++site_url]][[+url]])
 
 Alternatively, set the **&useTagsFurl** property.
 

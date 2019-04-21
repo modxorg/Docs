@@ -56,32 +56,32 @@ Within the templates for this snippet you can use the following placeholders to 
 
 ### tplVote
 
-| Placeholder             | Description                                                                           |
-| ----------------------- | ------------------------------------------------------------------------------------- |
-| \[\[+id\]\]             | The question id of the current poll view                                              |
-| \[\[+question\]\]       | The question text                                                                     |
-| \[\[+publishdate\]\]    | The publishdate of the question                                                       |
-| \[\[+unpublishdate\]\]  | The unpublishdate of the question                                                     |
-| \[\[+totalVotes\]\]     | The total number of votes on this poll                                                |
-| \[\[+category\_name\]\] | The name of the poll category _(only availbale when using the category property)_     |
-| \[\[+results\_url\]\]   | The URL of the results view _(only available when using the resultResource property)_ |
-| \[\[+answers\]\]        | Contains the output of the answers generated for this poll question                   |
+| Placeholder          | Description                                                                           |
+| -------------------- | ------------------------------------------------------------------------------------- |
+| `[[+id]]`            | The question id of the current poll view                                              |
+| `[[+question]]`      | The question text                                                                     |
+| `[[+publishdate]]`   | The publishdate of the question                                                       |
+| `[[+unpublishdate]]` | The unpublishdate of the question                                                     |
+| `[[+totalVotes]]`    | The total number of votes on this poll                                                |
+| `[[+category_name]]` | The name of the poll category _(only availbale when using the category property)_     |
+| `[[+results_url]]`   | The URL of the results view _(only available when using the resultResource property)_ |
+| `[[+answers]]`       | Contains the output of the answers generated for this poll question                   |
 
 ### tplVoteAnswers
 
-| Placeholder      | Description                                           |
-| ---------------- | ----------------------------------------------------- |
-| \[\[+id\]\]      | The id of the answer record                           |
-| \[\[+idx\]\]     | The loop number of the answers list (start: 1)        |
-| \[\[+answer\]\]  | The answer text                                       |
-| \[\[+votes\]\]   | The number of votes for this answer                   |
-| \[\[+percent\]\] | The percentage of the number of votes for this answer |
+| Placeholder    | Description                                           |
+| -------------- | ----------------------------------------------------- |
+| `[[+id]]`      | The id of the answer record                           |
+| `[[+idx]]`     | The loop number of the answers list (start: 1)        |
+| `[[+answer]]`  | The answer text                                       |
+| `[[+votes]]`   | The number of votes for this answer                   |
+| `[[+percent]]` | The percentage of the number of votes for this answer |
 
 Note: for the results view of this snippet, the same placeholders as above are available, including this extra one.
 
-| Placeholder      | Description                                                           |
-| ---------------- | --------------------------------------------------------------------- |
-| \[\[+logdate\]\] | The datetime of the vote of the current visitor (based on IP address) |
+| Placeholder    | Description                                                           |
+| -------------- | --------------------------------------------------------------------- |
+| `[[+logdate]]` | The datetime of the vote of the current visitor (based on IP address) |
 
 ## Examples
 

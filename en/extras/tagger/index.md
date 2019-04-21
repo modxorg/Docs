@@ -67,27 +67,27 @@ _old_uri: "revo/tagger"
 
  **PROPERTIES:**
 
- | **Property**     | **Type** | **Required?** | **Description**                                                                                                                                    | **Default**      |
- | ---------------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
- | &resources       | string   | optional      | Comma separated list of resources for which Tags will be listed                                                                                    |                  |
- | &groups          | string   | optional      | Comma separated list of Tagger Groups for which Tags will be listed                                                                                |                  |
- | &parents         | int      | optional      | Comma separated list of resource IDs whose children should be scanned to build the list of tags                                                    |                  |
- | &rowTpl          | string   | optional      | Name of a chunk that will be used for each Tag. If no chunk is given, array with available placeholders will be rendered                           |                  |
- | &tpl\_N          | string   | optional      | Name of chunk that will be used for every Nth tag                                                                                                  |                  |
- | &outTpl          | string   | optional      | Name of a chunk that will be used for wrapping all tags. If no chunk is given, tags will be rendered without a wrapper. Placeholder: \[\[+tags\]\] |                  |
- | &separator       | string   | optional      | String separator, that will be used for separating Tags                                                                                            |                  |
- | &limit           | int      | optional      | Limit number of returned Tags                                                                                                                      | 0                |
- | &offset          | int      | optional      | Offset the output by this number of Tags                                                                                                           | 0                |
- | &totalPh         | string   | optional      | Placeholder to output the total number of Tags regardless of &limit and &offset                                                                    | tags\_total      |
- | &target          | int      | optional      | An ID of a resource that will be used for generating URI for a Tag. If no ID is given, current Resource ID will be used                            | current resource |
- | &showUnused      | int      | optional      | If set to 1, Tags that are not assigned to any Resource will be included to the output as well                                                     | 0                |
- | &toPlaceholder   | string   | optional      | If set, output will return in a placeholder with given name                                                                                        |                  |
- | &showDeleted     | int      | optional      | If set to 1, Tags that are assigned only to deleted Resources will be included in the output as well                                               | 0                |
- | &showUnpublished | int      | optional      | If set to 1, Tags that are assigned only to unpublished Resources will be included in the output as well                                           | 0                |
- | &contexts        | string   | optional      | If set, will display only tags for resources in given contexts. Contexts can be separated by a comma                                               |                  |
- | &wrapIfEmpty     | int      | optional      | If set to 1, outTpl will be used even if there will be no tags to display.                                                                         | 1                |
- | &translate       | int      | optional      | If set, group\_name\_translated and group\_description\_translated will be added as a placeholders to rowChunk                                     | 0                |
- | &sort            | string   | optional      | Sort options in JSON. Example {"tag": "ASC"} or multiple sort options {"group\_id": "ASC", "tag": "ASC"}                                           |                  |
+ | **Property**     | **Type** | **Required?** | **Description**                                                                                                                                  | **Default**      |
+ | ---------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
+ | &resources       | string   | optional      | Comma separated list of resources for which Tags will be listed                                                                                  |                  |
+ | &groups          | string   | optional      | Comma separated list of Tagger Groups for which Tags will be listed                                                                              |                  |
+ | &parents         | int      | optional      | Comma separated list of resource IDs whose children should be scanned to build the list of tags                                                  |                  |
+ | &rowTpl          | string   | optional      | Name of a chunk that will be used for each Tag. If no chunk is given, array with available placeholders will be rendered                         |                  |
+ | &tpl\_N          | string   | optional      | Name of chunk that will be used for every Nth tag                                                                                                |                  |
+ | &outTpl          | string   | optional      | Name of a chunk that will be used for wrapping all tags. If no chunk is given, tags will be rendered without a wrapper. Placeholder: `[[+tags]]` |                  |
+ | &separator       | string   | optional      | String separator, that will be used for separating Tags                                                                                          |                  |
+ | &limit           | int      | optional      | Limit number of returned Tags                                                                                                                    | 0                |
+ | &offset          | int      | optional      | Offset the output by this number of Tags                                                                                                         | 0                |
+ | &totalPh         | string   | optional      | Placeholder to output the total number of Tags regardless of &limit and &offset                                                                  | tags\_total      |
+ | &target          | int      | optional      | An ID of a resource that will be used for generating URI for a Tag. If no ID is given, current Resource ID will be used                          | current resource |
+ | &showUnused      | int      | optional      | If set to 1, Tags that are not assigned to any Resource will be included to the output as well                                                   | 0                |
+ | &toPlaceholder   | string   | optional      | If set, output will return in a placeholder with given name                                                                                      |                  |
+ | &showDeleted     | int      | optional      | If set to 1, Tags that are assigned only to deleted Resources will be included in the output as well                                             | 0                |
+ | &showUnpublished | int      | optional      | If set to 1, Tags that are assigned only to unpublished Resources will be included in the output as well                                         | 0                |
+ | &contexts        | string   | optional      | If set, will display only tags for resources in given contexts. Contexts can be separated by a comma                                             |                  |
+ | &wrapIfEmpty     | int      | optional      | If set to 1, outTpl will be used even if there will be no tags to display.                                                                       | 1                |
+ | &translate       | int      | optional      | If set, group\_name\_translated and group\_description\_translated will be added as a placeholders to rowChunk                                   | 0                |
+ | &sort            | string   | optional      | Sort options in JSON. Example {"tag": "ASC"} or multiple sort options {"group\_id": "ASC", "tag": "ASC"}                                         |                  |
 
  **OUTPUT PLACEHOLDERS AND EXAMPLE VALUES:**
 
@@ -132,7 +132,7 @@ _old_uri: "revo/tagger"
 - Select **Tagger** namespace and **custom** topic
 - Add new lexicon entry to this namespace and topic with a key: **tagger.custom."group\_alias"** (in this example it will be tagger.custom.tags)
 - If you want to translate description add one more lexicon entry with key: **tagger.custom."group\_alias"\_desc** (in this example it will be tagger.custom.tags\_desc)
-- If you want to use those translations also on the frontend, call TaggerGetTags with option **&translate=`1`** (\[\[TaggetGetTags? &translate=`1`\]\]), new placeholders (group\_name\_translated, group\_description\_translated) will be available
+- If you want to use those translations also on the frontend, call TaggerGetTags with option **&translate=`1`** (`[[TaggetGetTags? &translate=`1`]]`), new placeholders (group\_name\_translated, group\_description\_translated) will be available
 
 ### TaggerGetResourcesWhere
 

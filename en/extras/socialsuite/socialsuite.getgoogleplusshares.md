@@ -10,12 +10,12 @@ getGooglePlusSharesis a [snippet](developing-in-modx/basic-development/snippets 
 
 ## Snippet Properties
 
-| Property                    | Default Value           | Description                                                                                                                                                                      |
-| --------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| url                         | url of current resource | The url to find the amount of shares for. Note that this needs to be a full url, so when generating URLs using the \[\[~\]\] syntax, make sure to add &scheme=`full`, like this: |
-| \[\[~15? &scheme=`full`\]\] |
-| cache                       | true                    | If the result should be cached or not, on by default. Set to 0 to disable (not advised).                                                                                         |
-| cacheExpires                | 3600                    | Time (in seconds) the cache is considered valid, and new data is retrieved from facebook.                                                                                        |
+| Property                  | Default Value           | Description                                                                                                                                                                    |
+| ------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| url                       | url of current resource | The url to find the amount of shares for. Note that this needs to be a full url, so when generating URLs using the `[[~]]` syntax, make sure to add &scheme=`full`, like this: |
+| `[[~15? &scheme=`full`]]` |
+| cache                     | true                    | If the result should be cached or not, on by default. Set to 0 to disable (not advised).                                                                                       |
+| cacheExpires              | 3600                    | Time (in seconds) the cache is considered valid, and new data is retrieved from facebook.                                                                                      |
 
 ## Basic Usage
 

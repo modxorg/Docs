@@ -58,7 +58,7 @@ Return the introtext field of the ultimate parent (note that this requires the U
 
 ## Errors
 
-One error that this Snippet is prone to is deceptively subtle: you can end up with a redirect loop. Consider the example where you've defined a template variable on your homepage, e.g. \[\[\*featured\_article\]\], and you use this in your getResourceField Snippet call:
+One error that this Snippet is prone to is deceptively subtle: you can end up with a redirect loop. Consider the example where you've defined a template variable on your homepage, e.g. `[[*featured_article]]`, and you use this in your getResourceField Snippet call:
 
  ``` php
  [[getResourceField? &id=`[[*featured_article]]` &field=`content`]]

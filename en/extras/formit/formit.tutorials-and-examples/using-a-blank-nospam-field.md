@@ -24,7 +24,7 @@ Then, in your FormIt call, add the blank validation:
 [[!FormIt? &validate=`workemail:blank`]]
 ```
 
-If you wish to provide an error message to be displayed, you can do so in the normal FormIt syntax (this example would be \[\[+fi.error.workemail\]\]).
+If you wish to provide an error message to be displayed, you can do so in the normal FormIt syntax (this example would be `[[+fi.error.workemail]]`).
 
 Make sure not to use an existing field name in your form for the nospam field! This will prevent FormIt from processing your form.
 

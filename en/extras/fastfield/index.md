@@ -6,7 +6,7 @@ _old_uri: "revo/fastfield"
 
 ## What is fastField?
 
-fastField is a plugin which adds new type of tag \[\[#...\]\] . It can be used to display a single field, including template variables and properties, of a different resource for MODX Revolution 2.2+. It also can display the value of superglobal PHP variables $\_POST, $\_GET and others.
+fastField is a plugin which adds new type of tag `[[#...]]` . It can be used to display a single field, including template variables and properties, of a different resource for MODX Revolution 2.2+. It also can display the value of superglobal PHP variables $\_POST, $\_GET and others.
 
 ## History
 
@@ -18,7 +18,7 @@ The plugin can be retrieved through the Package Manager, or downloaded manually 
 
 ## Usage
 
-The structure of tag is as follows: \[\[#resource\_id.field\]\]
+The structure of tag is as follows: `[[#resource_id.field]]`
 
 where resource\_id is an ID of necessary resource, eg. "123", and field is a resource field, eg. "pagetitle". For Template Variables the field should be prepended by "tv.". For Resource Properties it should be prepended by "properties." or "property.".
 
@@ -70,9 +70,9 @@ Return the value of $\_POST\['myVar'\]:
 [[!#post.myVar]]
 ```
 
-Supported global arrays: $\_GET, $\_POST, $\_REQUEST, $\_SERVER, $\_FILES, $\_COOKIE, $\_SESSION. The type of array after # is case-insensitive. The name of array element is case-sensitive. You should use uncached tag, eg. \[\[!#get.name\]\], for cached resources.
+Supported global arrays: `$_GET`, `$_POST`, `$_REQUEST`, `$_SERVER`, `$_FILES`, `$_COOKIE`, `$_SESSION`. The type of array after # is case-insensitive. The name of array element is case-sensitive. You should use uncached tag, eg. `[[!#get.name]]`, for cached resources.
 
-**CAUTION**: **It is dangerous to use raw global variables on the page. For example, use :stripTags output filter to prevent XSS-attacks (eg. \[\[!#get.name:stripTags\]\])!**
+**CAUTION**: **It is dangerous to use raw global variables on the page. For example, use :stripTags output filter to prevent XSS-attacks (eg. `[[!#get.name:stripTags]]`)!**
 
 ## How it works
 

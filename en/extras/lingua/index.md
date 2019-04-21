@@ -25,8 +25,8 @@ _old_uri: "revo/lingua"
 ## Plugin
 
  The plugin is used to manage the cookie and session of the selected language.
- This plugin then provides a placeholder **\[\[+lingua.cultureKey\]\]** for the page.
- But to get this value for other snippet, like language selection of a email hook, the developer can use **\[\[!lingua.cultureKey\]\]** below.
+ This plugin then provides a placeholder **`[[+lingua.cultureKey]]`** for the page.
+ But to get this value for other snippet, like language selection of a email hook, the developer can use **`[[!lingua.cultureKey]]`** below.
 
 ## Snippets
 
@@ -49,16 +49,16 @@ _old_uri: "revo/lingua"
  | ---------- | ------------------------------------------------------------------------ | ----------------------- | -------------------------------------- | ---------------------------------------------------- |
  | tplWrapper | the wrapper template chunk                                               | &tplWrapper=`chunkName` | lingua.selector.wrapper                | chunk's name, @BINDINGs enabled                      |
  | tplItem    | the item template chunk                                                  | &tplItem=`chunkName`    | lingua.selector.item                   | chunk's name, @BINDINGs enabled                      |
- | sortby     | sort the output by a field name                                          | &tplItem=`lcid\_string` | id                                     | id, local\_name, lang\_code, lcid\_string, lcid\_dec |
+ | sortby     | sort the output by a field name                                          | &tplItem=`lcid_string`  | id                                     | id, local\_name, lang\_code, lcid\_string, lcid\_dec |
  | sortdir    | the direction of the sorting                                             | &sortdir=`ASC`          | asc                                    | asc, desc                                            |
  | phsPrefix  | placeholder's prefix to avoid conflict with other packages' placeholders | &phsPrefix=`lingua.`    | lingua.                                | (string)                                             |
- | codeField  | the field of which will be used as the value of the options              | &codeField=`lang\_code` | System Setting's **lingua.code.field** | id, local\_name, lang\_code, lcid\_string, lcid\_dec |
+ | codeField  | the field of which will be used as the value of the options              | &codeField=`lang_code`  | System Setting's **lingua.code.field** | id, local\_name, lang\_code, lcid\_string, lcid\_dec |
 
  @BINDING in chunks means the developer can use:
 
 - chunk name
-- @FILE:\[\[++core\_path\]\]path/to/chunk/file.tpl
-- @CODE:  \[\[+lingua.languages\]\]
+- @FILE:`[[++core_path]]`path/to/chunk/file.tpl
+- @CODE:  `[[+lingua.languages]]`
 
 #### Default Chunks
 
@@ -145,11 +145,11 @@ Created on: [[*createdon:date=`[[!lingua.getField? &field=`date_format_lite`]]`]
 
 #### Properties
 
- | Name                            | Description                                                      | Example                         | Default Value    | Options                                                                                                                                |
- | ------------------------------- | ---------------------------------------------------------------- | ------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
- | **field**                       | the "key" name, or the field's name in database. **required \*** | &field=`pagetitle`              |                  | Main fields: pagetitle, longtitle, description, alias, link\_attributes, introtext, content, menutitle, uri, uri\_override, properties |
+ | Name                            | Description                                                      | Example                       | Default Value    | Options                                                                                                                                |
+ | ------------------------------- | ---------------------------------------------------------------- | ----------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+ | **field**                       | the "key" name, or the field's name in database. **required \*** | &field=`pagetitle`            |                  | Main fields: pagetitle, longtitle, description, alias, link\_attributes, introtext, content, menutitle, uri, uri\_override, properties |
  | or any Template Variable's name |
- | id                              | The id of the resource to get the value from                     | &id=`\[\[+snippetPrefix.id\]\]` | Current resource | integer                                                                                                                                |
+ | id                              | The id of the resource to get the value from                     | &id=``[[+snippetPrefix.id]]`` | Current resource | integer                                                                                                                                |
 
 ##### Examples
 

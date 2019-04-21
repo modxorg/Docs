@@ -13,7 +13,7 @@ GroupEletters is a Addon for MODX Revolution that allows you to create & send be
 - Easy group and subscriber management
 - Allow users to subscribe through a contact form (FormIt)
 - Users must confirm subscription (link in email message)
-- User get an unsubscribe link in newsletters (\[\[+unsubscribeUrl\]\])
+- User get an unsubscribe link in newsletters (`[[+unsubscribeUrl]]`)
 - Select what groups users can subscribe to, one or many.
 - CSV Import for subscribers
 - Message queue, via the the System Settings chose your batch size and the time in between each email sent
@@ -43,11 +43,11 @@ First you will need to install through Package Management and then do the follow
 
 - Create a signup page look at the example in the GroupEletterSignup Chunk
 - Optional - Create a "Thank you" page (and set it as 'redirectTo' in your signup page FormIt snippet call)
-- Create a confirm / opt-in page just add in the \[\[!GroupEletterConfirm\]\] Snippet and set this pages id in the signup page FormIt snippet call
-- Create a unsubscribe page, just add in the \[\[!GroupEletterUnsubscribe\]\] Snippet. Make sure you add a link to this page in your newsletter template \[\[+unsubscribeUrl\]\]
+- Create a confirm / opt-in page just add in the `[[!GroupEletterConfirm]]` Snippet and set this pages id in the signup page FormIt snippet call
+- Create a unsubscribe page, just add in the `[[!GroupEletterUnsubscribe]]` Snippet. Make sure you add a link to this page in your newsletter template `[[+unsubscribeUrl]]`
 - Go to System->System Setting and select Eletters and change the settings to match what you want and the pages you just created.
 - Go to Components -> Eletters and add some groups and if you want add some subscribers
-- Install CronManager Now add the GroupEletterQueue to CronManager. If you are unable to set up CronManager you could put the \[\[!GroupEletterQueue\]\] Snippet in a document and call it manual, but that page will take a couple of minutes to load!
+- Install CronManager Now add the GroupEletterQueue to CronManager. If you are unable to set up CronManager you could put the `[[!GroupEletterQueue]]` Snippet in a document and call it manual, but that page will take a couple of minutes to load!
 
 ## Updating GroupEletters 1.0 to Eletters 1.1+
 
@@ -59,22 +59,22 @@ What does this mean? If you already had a working version of GroupEletters then 
 
 - Create a Resource/Document and select the EletterSample Template.
 - Fill in the page as normal. You have the following placeholders available: (Note you need to collect this data before you can use it)
-  - \[\[+trackingImage\]\]
-  - \[\[+first\_name\]\]
-  - \[\[+m\_name\]\]
-  - \[\[+last\_name\]\]
-  - \[\[+fullname\]\] - this is just \[\[+first\_name\]\] and \[\[+last\_name\]\] together
-  - \[\[+company\]\]
-  - \[\[+address\]\]
-  - \[\[+city\]\]\]
-  - \[\[+state\]\]
-  - \[\[+zip\]\]
-  - \[\[+country\]\]
-  - \[\[+email\]\]
-  - \[\[+phone\]\]
-  - \[\[+cell\]\]
-  - \[\[+crm\_id\]\]
-  - \[\[+date\_created\]\]
+  - `[[+trackingImage]]`
+  - `[[+first_name]]`
+  - `[[+m_name]]`
+  - `[[+last_name]]`
+  - `[[+fullname]]` - this is just `[[+first_name]]` and `[[+last_name]]` together
+  - `[[+company]]`
+  - `[[+address]]`
+  - `[[+city]]`
+  - `[[+state]]`
+  - `[[+zip]]`
+  - `[[+country]]`
+  - `[[+email]]`
+  - `[[+phone]]`
+  - `[[+cell]]`
+  - `[[+crm_id]]`
+  - `[[+date_created]]`
 - Select the Template Variables tab. You will need to select and fill out the information:
 
 ![](/download/attachments/39355133/TVs.png?version=1&modificationDate=1335812378000)

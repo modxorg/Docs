@@ -30,7 +30,7 @@ Simple create a new resource with the following attributes:
 - Pagetitle: Forums
 - Template: empty
 - Alias: forums
-- Content: \[\[!Discuss\]\]
+- Content: `[[!Discuss]]`
 - Container (on the Settings tab): Yes
 
 You can change the alias to suit something else if you want, but keep in mind that you will need to adjust the custom rewrite rules as shown in the next step to match your alias.

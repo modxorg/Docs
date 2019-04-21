@@ -118,7 +118,7 @@ Next create a chunk that will be displayed to members when they are logged in:
 
 Note the special format of the logout link: you trigger the logout action by passing a parameter to the _Login_ page.
 
-The syntax for passing parameters to a MODx URL tag is similar the way parameters are passed to Snippets; this ensures that the parameter gets correctly appended to the URL. The \[\[~1? &service=`logout`\]\] tag would render two different ways depending on whether friendly URLs were enabled:
+The syntax for passing parameters to a MODx URL tag is similar the way parameters are passed to Snippets; this ensures that the parameter gets correctly appended to the URL. The `[[~1? &service=`logout`]]` tag would render two different ways depending on whether friendly URLs were enabled:
 
 - <http://yoursite.com/index.php?id=1&service=logout>
 - <http://yoursite.com/login?service=logout>
@@ -287,7 +287,7 @@ Also check your spam filters on your your email account, and keep in mind it may
 
 1. **CHECK:** Did you get the confirmation email? You can customize the text of the email by changing the content of the **ActivationEmailTpl** Chunk.
 2. **CHECK:** Is the confirmation link in the email correct? When you click it, does it take you to the **Membership Confirmation Handler (8)** page? If the link is not correct, double-check the **&activationResourceId** parameter and make sure it's pointing to your **Membership Confirmation Handler (8)** page.
-3. **CHECK:** Make sure that the **ConfirmRegister** Snippet on the **Membership Confirmation Handler (8)** page works: if your template isn't displaying \[\[**content\]\] correctly, then the \*ConfirmRegister** Snippet may never execute. The expected behavior is that clicking the activation link in your email message should take to to the **Membership Confirmation Handler (8)** page, which should _immediately_ redirect to the home page (check the **&redirectTo** parameter in the **ConfirmRegister** Snippet.
+3. **CHECK:** Make sure that the **ConfirmRegister** Snippet on the **Membership Confirmation Handler (8)** page works: if your template isn't displaying `[[**content]]` correctly, then the \*ConfirmRegister** Snippet may never execute. The expected behavior is that clicking the activation link in your email message should take to to the **Membership Confirmation Handler (8)** page, which should _immediately_ redirect to the home page (check the **&redirectTo** parameter in the **ConfirmRegister** Snippet.
 4. **CHECK:** Verify that your new user is not set to **Active** under **Security -> Manage Users**. This confirms that the user was activated!
 
 ### Login

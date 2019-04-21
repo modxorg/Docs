@@ -8,7 +8,7 @@ _old_uri: "revo/gallery/gallery.galleryalbums/"
 
  This snippet displays a list of Albums. It by default only grabs "prominent" albums.
 
- You can display a thumbnail for each album of an image in the album by setting the "rowTpl" property to "galAlbumRowWithCoverTpl", or using \[\[+image\]\] in your custom rowTpl.
+ You can display a thumbnail for each album of an image in the album by setting the "rowTpl" property to "galAlbumRowWithCoverTpl", or using `[[+image]]` in your custom rowTpl.
 
 ## Properties
 

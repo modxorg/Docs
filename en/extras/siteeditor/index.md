@@ -32,14 +32,14 @@ Before you can use the SiteEditor in the front-end you need to edit any template
 
 **Currently you need to be logged into the manager before you can edit your website in the front-end. So log in to the manager, then go back to your website to see the SiteEditor fields.**
 
-If you have a \[\[\[\*introtext\]\]\] tag that you want edit with SiteEditor, make it look like this:
+If you have a `[[*introtext]]` tag that you want edit with SiteEditor, make it look like this:
 
 ``` php
 [[*introtext:siteEditorField]]
 ```
 
 And you are done with that field. You can apply the same technique to TV's and other fields. Site editor will save the field content with the **CURRENT RESOURCE**. What if you want to be able to edit other resource fields from the current resource (for example: you want to be able to edit menu items, but you are in resource ID 3 while the menu items all have their own resource ID's). Just open the chunk that shows your menu item's:
-Instead of \[\[\[\*pagetitle\]\]\] we now have \[\[\[+pagetitle\]\]\]. When the tag shows a + you need to supply SiteEditor with the ID this placeholder belongs to. So replace \[\[\[+pagetitle\]\]\] with:
+Instead of `[[*pagetitle]]` we now have `[[+pagetitle]]`. When the tag shows a + you need to supply SiteEditor with the ID this placeholder belongs to. So replace `[[[+pagetitle]]`\] with:
 
 ``` php
 [[+pagetitle:siteEditorField=`resource=[[+id]]`]]
@@ -51,7 +51,7 @@ In case of wayfinder, the placeholder actually has a different name, you can sol
 [[+wf.linktext:siteEditorField=`resource=[[+wf.docid]]&field=pagetitle`]]
 ```
 
-This tells SiteEditor the field is the pagetitle of resource \[\[+wf.docid\]\]. Now you can edit your menu titles from the front-end, how cool is that? :)
+This tells SiteEditor the field is the pagetitle of resource `[[+wf.docid]]`. Now you can edit your menu titles from the front-end, how cool is that? :)
 
 You can add these anywhere on your site, as long as you supply SiteEditor with the resource ID and in case of a different placeholder name a field name. Add this to any getResources row TPL:
 

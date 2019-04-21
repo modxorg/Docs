@@ -38,7 +38,7 @@ After you created namespace, **add new action** under YourComponent namespace wi
 **Place just created action** under Component menu (or where ever you want) with lexicon key 'yourcomponent' and description 'yourcomponent.menu\_desc'.
 Then clear the cache and refresh manager page.
 
-If you want to **create default database table** provided in BxrExtra add new snippet in your manager, call it createDBTable and set it as **static**. Set media sources for Static files to '(None)' and Static file to '\[\[++yourcomponent.core\_path\]\]/elements/snippets/snippet.yourcomponentCreateDB.php'. Use 'createDBTable' snippet in any of your resources and run it. You shoud get **'Table created.'** message.
+If you want to **create default database table** provided in BxrExtra add new snippet in your manager, call it createDBTable and set it as **static**. Set media sources for Static files to '(None)' and Static file to '`[[++yourcomponent.core_path]]`/elements/snippets/snippet.yourcomponentCreateDB.php'. Use 'createDBTable' snippet in any of your resources and run it. You shoud get **'Table created.'** message.
 
 Now you should have fully working extra with functions described below.
 
@@ -57,7 +57,7 @@ If you do not require all of this functionality, simply remove it and change the
 
 - delete assets/components/yourcomponent/js/mgr/extra/griddraganddrop.js
 - in core/components/yourcomponent/controllers/home.class.php
-  - remove $this->addJavascript($this->yourcomponent->config\['jsUrl'\].'mgr/extra/griddraganddrop.js');
+  - remove `$this->addJavascript($this->yourcomponent->config['jsUrl'].'mgr/extra/griddraganddrop.js');`
 - in assets/components/yourcomponent/js/mgr/widgets/items.grid.js
   - remove ddGroup config parameter
   - remove enableDragDrop config parameter, or set to false

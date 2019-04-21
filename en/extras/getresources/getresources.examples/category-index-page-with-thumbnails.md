@@ -49,7 +49,7 @@ _old_uri: "revo/getresources/getresources.examples/getresources.category-index-p
 
 ## Installation
 
- Now just paste \[\[$list-docs-thumb\]\] into any page with child pages and TV's set and away you go.
+ Now just paste `[[$list-docs-thumb]]` into any page with child pages and TV's set and away you go.
 
  You should be able to pick up a little bit of speed by omitting the &includeContent parameter if you're not using the content in the template :)
 

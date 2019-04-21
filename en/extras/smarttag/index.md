@@ -56,7 +56,7 @@ _old_uri: "revo/smarttag"
 
  The difference is that in adding link for tags, you need to define the "href" of the link. This is required for link.
 
- The content can be \[\[~pageId\]\] or <http://www.domain.com>
+ The content can be `[[~pageId]]` or <http://www.domain.com>
 
  If the Output Type not set, the output will be raw values delimited by double pipelines "||".
 

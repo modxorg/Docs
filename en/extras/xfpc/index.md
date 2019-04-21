@@ -99,10 +99,10 @@ You can configure xFPCAjax snippet with the following properties:
 | showStaticContent | Wether or not to show the content in static text as well             | 1 = yes, 0 = no | 1             |
 
 Here we have an example case:
-Imagine you have a random quote on your webpage from your clients saying how awesome you are. You used to do this with a snippet called \[\[!getRandomAwesomeQuote\]\].
+Imagine you have a random quote on your webpage from your clients saying how awesome you are. You used to do this with a snippet called `[[!getRandomAwesomeQuote]]`.
 Since you are using xFPC the quote is static, since it cached your complete page. We can fix this.
 
-Create a new resource, give it a blank empty template and place the \[\[!getRandomAwesomeQuote\]\] snippet inside it's content field. Let's say the new resource
+Create a new resource, give it a blank empty template and place the `[[!getRandomAwesomeQuote]]` snippet inside it's content field. Let's say the new resource
 got the ID "300". You can hide this resource from the menu, but be sure to publish it.
 Now back to the place where the \[!getRandomAwesomeQuote\] used to be and replace this call with:
 

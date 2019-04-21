@@ -19,22 +19,22 @@ The Thread (thread/index) controller is the one that shows an entire thread of p
 
 If you don't know what the manifest is, please go back to the [Getting Started](extras/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "board" options array of the manifest.
 
-| Key                     | Default                | Description                                                                           |
-| ----------------------- | ---------------------- | ------------------------------------------------------------------------------------- |
-| showPosts               | true                   | To show posts.. you'll want this enabled. Posts go into \[\[+posts\]\]                |
-| limit                   | 10                     | Amount of posts per page                                                              |
-| discuss.post\_sort\_dir | ASC                    | The sort order for posts: ASC or DESC                                                 |
-| sortAnswerFirst         | false                  | If enabled, Q&A threads will sort posts marked as answer on top.                      |
-| postAttachmentRowTpl    | post/disPostAttachment | Chunk to wrap each attachment in.                                                     |
-| postTpl                 | post/disThreadPost     | The chunk to wrap individual posts in.                                                |
-| rowCls                  | dis-post               | A class to add to the post row                                                        |
-| childrenCls             | dis-board-post         |                                                                                       |
-| actionLinkTpl           | disActionLink          | Tpl chunk for the action links.                                                       |
-| rowSeparator            | line break             | separator to use between rows                                                         |
-| showViewing             |                        | Show the readers based on sessions. Makes the \[\[+readers\]\] placeholder available. |
-| showBreadcrumbs         |                        | Show breadcrumbs on this controller.                                                  |
-| showTitleInBreadcrumbs  |                        |                                                                                       |
-| showPaginationIfOnePage | true                   | Wether 1 page pagination should show up or not.                                       |
+| Key                     | Default                | Description                                                                         |
+| ----------------------- | ---------------------- | ----------------------------------------------------------------------------------- |
+| showPosts               | true                   | To show posts.. you'll want this enabled. Posts go into `[[+posts]]`                |
+| limit                   | 10                     | Amount of posts per page                                                            |
+| discuss.post\_sort\_dir | ASC                    | The sort order for posts: ASC or DESC                                               |
+| sortAnswerFirst         | false                  | If enabled, Q&A threads will sort posts marked as answer on top.                    |
+| postAttachmentRowTpl    | post/disPostAttachment | Chunk to wrap each attachment in.                                                   |
+| postTpl                 | post/disThreadPost     | The chunk to wrap individual posts in.                                              |
+| rowCls                  | dis-post               | A class to add to the post row                                                      |
+| childrenCls             | dis-board-post         |                                                                                     |
+| actionLinkTpl           | disActionLink          | Tpl chunk for the action links.                                                     |
+| rowSeparator            | line break             | separator to use between rows                                                       |
+| showViewing             |                        | Show the readers based on sessions. Makes the `[[+readers]]` placeholder available. |
+| showBreadcrumbs         |                        | Show breadcrumbs on this controller.                                                |
+| showTitleInBreadcrumbs  |                        |                                                                                     |
+| showPaginationIfOnePage | true                   | Wether 1 page pagination should show up or not.                                     |
 
 ## Controller Template
 

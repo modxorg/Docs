@@ -49,12 +49,12 @@ _old_uri: "revo/getvimeo"
 
 ### Templating Properties
 
- | Name          | Description                                                                                                                                                              | Default Value | Added in Version |
- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ---------------- |
- | tpl           | Name of a chunk serving as a template. (REQUIRED)                                                                                                                        |               | 1.0.0-pl         |
- | tplAlt        | Name of a chunk serving as a template for every other Video.                                                                                                             |               | 1.0.0-pl         |
- | tplWrapper    | Name of a chunk serving as a wrapper template for the output. (NOTE: Does not work with &toPlaceholder. The placeholder where the items are inserted is \[\[+output\]\]) |               | 1.0.0-pl         |
- | toPlaceholder | If set, will assign the output to this placeholder instead of outputting it directly. (NOTE: Does not work with &tplWrapper)                                             |               | 1.0.0-pl         |
+ | Name          | Description                                                                                                                                                            | Default Value | Added in Version |
+ | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------- |
+ | tpl           | Name of a chunk serving as a template. (REQUIRED)                                                                                                                      |               | 1.0.0-pl         |
+ | tplAlt        | Name of a chunk serving as a template for every other Video.                                                                                                           |               | 1.0.0-pl         |
+ | tplWrapper    | Name of a chunk serving as a wrapper template for the output. (NOTE: Does not work with &toPlaceholder. The placeholder where the items are inserted is `[[+output]]`) |               | 1.0.0-pl         |
+ | toPlaceholder | If set, will assign the output to this placeholder instead of outputting it directly. (NOTE: Does not work with &tplWrapper)                                           |               | 1.0.0-pl         |
 
 ### Other Properties
 
@@ -67,37 +67,37 @@ _old_uri: "revo/getvimeo"
 
 #### Video Placeholders
 
- | Placeholder                          | Description                              | Added in Version |
- | ------------------------------------ | ---------------------------------------- | ---------------- |
- | \[\[+title\]\]                       | Video title                              |                  |
- | \[\[+url\]\]                         | URL to the Video Page                    |                  |
- | \[\[+id\]\]                          | Video ID                                 |                  |
- | \[\[+description\]\]                 | The description of the video             |                  |
- | \[\[+thumbnail\_small\]\]            | URL to a small version of the thumbnail  |                  |
- | \[\[+thumbnail\_medium\]\]           | URL to a medium version of the thumbnail |                  |
- | \[\[+thumbnail\_large\]\]            | URL to a large version of the thumbnail  |                  |
- | \[\[+user\_name\]\]                  | The user name of the video’s uploader   |                  |
- | \[\[+user\_url\]\]                   | The URL to the user profile              |                  |
- | \[\[+upload\_date\]\]                | The date/time the video was uploaded on  |                  |
- | \[\[+user\_portrait\_small\]\]       | Small user portrait (30px)               |                  |
- | \[\[+user\_portrait\_medium\]\]      | Medium user portrait (100px)             |                  |
- | \[\[+user\_portrait\_large\]\]       | Large user portrait (300px)              |                  |
- | \[\[+stats\_number\_of\_likes\]\]    | # of likes                               |                  |
- | \[\[+stats\_number\_of\_views\]\]    | # of views                               |                  |
- | \[\[+stats\_number\_of\_comments\]\] | # of comments                            |                  |
- | \[\[+duration\]\]                    | Duration of the video in seconds         |                  |
- | \[\[+width\]\]                       | Standard definition width of the video   |                  |
- | \[\[+height\]\]                      | Standard definition height of the video  |                  |
- | \[\[+tags\]\]                        | Comma separated list of tags             |                  |
+ | Placeholder                     | Description                              | Added in Version |
+ | ------------------------------- | ---------------------------------------- | ---------------- |
+ | `[[+title]]`                    | Video title                              |                  |
+ | `[[+url]]`                      | URL to the Video Page                    |                  |
+ | `[[+id]]`                       | Video ID                                 |                  |
+ | `[[+description]]`              | The description of the video             |                  |
+ | `[[+thumbnail_small]]`          | URL to a small version of the thumbnail  |                  |
+ | `[[+thumbnail_medium]]`         | URL to a medium version of the thumbnail |                  |
+ | `[[+thumbnail_large]]`          | URL to a large version of the thumbnail  |                  |
+ | `[[+user_name]]`                | The user name of the video’s uploader   |                  |
+ | `[[+user_url]]`                 | The URL to the user profile              |                  |
+ | `[[+upload_date]]`              | The date/time the video was uploaded on  |                  |
+ | `[[+user_portrait_small]]`      | Small user portrait (30px)               |                  |
+ | `[[+user_portrait_medium]]`     | Medium user portrait (100px)             |                  |
+ | `[[+user_portrait_large]]`      | Large user portrait (300px)              |                  |
+ | `[[+stats_number_of_likes]]`    | # of likes                               |                  |
+ | `[[+stats_number_of_views]]`    | # of views                               |                  |
+ | `[[+stats_number_of_comments]]` | # of comments                            |                  |
+ | `[[+duration]]`                 | Duration of the video in seconds         |                  |
+ | `[[+width]]`                    | Standard definition width of the video   |                  |
+ | `[[+height]]`                   | Standard definition height of the video  |                  |
+ | `[[+tags]]`                     | Comma separated list of tags             |                  |
 
  Please see: <http://developer.vimeo.com/apis/simple#video-response> for an up to date list of video response data provided by the API.
 
 #### Other Placeholders
 
- | Placeholder    | Description                                                                                               | Added in Version |
- | -------------- | --------------------------------------------------------------------------------------------------------- | ---------------- |
- | \[\[+total\]\] | Returns the total number of Videos in the output.                                                         | 1.0.1-pl         |
- | \[\[+idx\]\]   | Returns each Videos numerical position within the output. Increases with each iteration, starting with 1. | 1.1.0-pl         |
+ | Placeholder  | Description                                                                                               | Added in Version |
+ | ------------ | --------------------------------------------------------------------------------------------------------- | ---------------- |
+ | `[[+total]]` | Returns the total number of Videos in the output.                                                         | 1.0.1-pl         |
+ | `[[+idx]]`   | Returns each Videos numerical position within the output. Increases with each iteration, starting with 1. | 1.1.0-pl         |
 
 ## Examples
 

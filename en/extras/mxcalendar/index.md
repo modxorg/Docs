@@ -54,7 +54,7 @@ In the manager menu, select **Components** -> **mxCalendar**. Select the **Event
 
 Select a context. Leave blank for all contexts. Give the event a name, select a calendar to associate the event with, a category, and start and end date/times.
 
-Enter your event description in the rich text editor. This populates the \[\[\*content\]\] for the event detail view.
+Enter your event description in the rich text editor. This populates the `[[*content]]` for the event detail view.
 ![](/download/attachments/38994084/mxCalendarAddEvent.jpg?version=2&modificationDate=1352869709000)
 
 In the Location tab, name the location and enter the address. Check "Display Map" to output a Google Map for the address that you entered.

@@ -29,33 +29,33 @@ This snippet checks the visitor's IP address, and if visitor logged in, the visi
 
 ## Properties
 
-| Name                                                           | Description                                                                                      | Example                                                    | Default Value                                         | Options                     |
-| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- | ----------------------------------------------------- | --------------------------- |
-| name                                                           | Defines the name of the rating's item                                                            | &name=`\[\[\*pagetitle\]\]`                                | \[\[\*id\]\]                                          | string                      |
+| Name                                                           | Description                                                                                      | Example                                                | Default Value                                         | Options                     |
+| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------ | ----------------------------------------------------- | --------------------------- |
+| name                                                           | Defines the name of the rating's item                                                            | &name=``[[*pagetitle]]``                               | `[[*id]]`                                             | string                      |
 | group                                                          | Defines the rating's group name.                                                                 |
-| This will be useful to compare the results using LexRatingList | &group=`articles`                                                                                | modResource                                                | string                                                |
-| userGroups                                                     | Defines who is able to vote.                                                                     | &userGroups=`Members`                                      | empty                                                 | comma separated group names |
-| extended                                                       | (@since 1.0.0-beta.2) To set and get an additional extended parameter of individual vote account | &extended=`{"quipReplyId":"\[\[+idprefix\]\]\[\[+id\]\]"}` | empty                                                 | practically any string      |
-| initialAjax                                                    | Load the initial values using Ajax                                                               | &initialAjax=`1`                                           | 1                                                     | 1                           | 0                 |
-| readOnly                                                       | (@since 1.0.0-beta.2) read only mode                                                             | &readOnly=`1`                                              | 1                                                     | 1                           | 0                 |
-| tpl                                                            | Template chunk for the output, can be chunk or file based chunk.                                 | &tpl=`\[\[++core\_path\]\]templates/blabla.tpl`            | lexrating                                             | chunk name or file path     |
-| css                                                            | CSS filename                                                                                     | &css=`assets/templates/css/blabla.css`                     | assets/components/lexrating/default/css/lexrating.css | string                      | empty - disabling |
-| js                                                             | Javascript filename                                                                              | &css=`assets/templates/js/blabla.js`                       | assets/components/lexrating/default/js/lexrating.js   | string                      | empty - disabling |
-| loadjQuery                                                     | Auto load/disable jQuery                                                                         | &loadjQuery=`0`                                            | 1                                                     | 1                           | 0                 |
-| phsPrefix                                                      | Prefix for placeholders                                                                          | &phsPrefix=`blabla.`                                       | lexrating.                                            | string                      |
-| toArray                                                        | Return an array of placeholders                                                                  | &toArray=`1`                                               | null                                                  | 1                           | 0                 | null |
-| toPlaceholder                                                  | Save the output into the given name placeholder                                                  | &toPlaceholder=`my\_rating`                                | null                                                  | string                      |
+| This will be useful to compare the results using LexRatingList | &group=`articles`                                                                                | modResource                                            | string                                                |
+| userGroups                                                     | Defines who is able to vote.                                                                     | &userGroups=`Members`                                  | empty                                                 | comma separated group names |
+| extended                                                       | (@since 1.0.0-beta.2) To set and get an additional extended parameter of individual vote account | &extended=`{"quipReplyId":"`[[+idprefix]]``[[+id]]`"}` | empty                                                 | practically any string      |
+| initialAjax                                                    | Load the initial values using Ajax                                                               | &initialAjax=`1`                                       | 1                                                     | 1                           | 0                 |
+| readOnly                                                       | (@since 1.0.0-beta.2) read only mode                                                             | &readOnly=`1`                                          | 1                                                     | 1                           | 0                 |
+| tpl                                                            | Template chunk for the output, can be chunk or file based chunk.                                 | &tpl=``[[++core_path]]`templates/blabla.tpl`           | lexrating                                             | chunk name or file path     |
+| css                                                            | CSS filename                                                                                     | &css=`assets/templates/css/blabla.css`                 | assets/components/lexrating/default/css/lexrating.css | string                      | empty - disabling |
+| js                                                             | Javascript filename                                                                              | &css=`assets/templates/js/blabla.js`                   | assets/components/lexrating/default/js/lexrating.js   | string                      | empty - disabling |
+| loadjQuery                                                     | Auto load/disable jQuery                                                                         | &loadjQuery=`0`                                        | 1                                                     | 1                           | 0                 |
+| phsPrefix                                                      | Prefix for placeholders                                                                          | &phsPrefix=`blabla.`                                   | lexrating.                                            | string                      |
+| toArray                                                        | Return an array of placeholders                                                                  | &toArray=`1`                                           | null                                                  | 1                           | 0                 | null |
+| toPlaceholder                                                  | Save the output into the given name placeholder                                                  | &toPlaceholder=`my_rating`                             | null                                                  | string                      |
 
 ## Placeholders
 
 To get the complete placeholders, just use **&toArray=`1`** to spit out the keys.
 
-| Name                                                       | Description                                                             |
-| ------------------ ------------------------------- ------- | ---------- ----------------------------------------- ------------------ |
-| \[\[+lexrating.name\]\]                 | The name you specify in the snippet             |
-| \[\[+lexrating.group\]\]               | The group name you specify in the snippet |
-| \[\[+lexrating.total.voters\]\] | Total number of the voters                               |
-| \[\[+lexrating.initialAjax\]\]   | The property you set in the snippet call   |
+| Name                          | Description                               |
+| ----------------------------- | ----------------------------------------- |
+| `[[+lexrating.name]]`         | The name you specify in the snippet       |
+| `[[+lexrating.group]]`        | The group name you specify in the snippet |
+| `[[+lexrating.total.voters]]` | Total number of the voters                |
+| `[[+lexrating.initialAjax]]`  | The property you set in the snippet call  |
 
 ## Example
 
@@ -105,18 +105,18 @@ To get the complete placeholders, just use **&toArray=`1`** to spit out the keys
 
 **WRAPPER**:
 
-| Name                          | Description                         |
-| ----------------------------- | ----------------------------------- |
-| \[\[+lexrating.list.items\]\] | The holder of the list of the items |
+| Name                        | Description                         |
+| --------------------------- | ----------------------------------- |
+| `[[+lexrating.list.items]]` | The holder of the list of the items |
 
 **LIST**:
 
-| Name                            | Description                               |
-| ------------------------------- | ----------------------------------------- |
-| \[\[+lexrating.name\]\]         | The name you specify in the snippet       |
-| \[\[+lexrating.group\]\]        | The group name you specify in the snippet |
-| \[\[+lexrating.total.voters\]\] | Total number of the voters                |
-| \[\[+lexrating.initialAjax\]\]  | The property you set in the snippet call  |
+| Name                          | Description                               |
+| ----------------------------- | ----------------------------------------- |
+| `[[+lexrating.name]]`         | The name you specify in the snippet       |
+| `[[+lexrating.group]]`        | The group name you specify in the snippet |
+| `[[+lexrating.total.voters]]` | Total number of the voters                |
+| `[[+lexrating.initialAjax]]`  | The property you set in the snippet call  |
 
 ## Example
 

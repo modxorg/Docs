@@ -8,7 +8,7 @@ FileDownloadLink is a snippet for a single downloadable file.
 It's just like providing the link to the direct file.
 But in this case, FileDownloadLink will hide the real path of the file with the hashed link and count the downloading action.
 
-Basic usage is \[\[!FileDownloadLink?\]\]
+Basic usage is `[[!FileDownloadLink?]]`
 
 ## Main
 
@@ -44,9 +44,9 @@ So if you change the saltText value after a while, it will not block the content
 The template for this snippet is a plain href link with FileDownloadLink's placeholders, not a chunk or a template file.
 If you like to see the available placeholders, just initiate the &toArray=`1` parameter.
 
-| Name    | Description   | Example                                                  | Default Value                                 | Options   |
-| ------- | ------------- | -------------------------------------------------------- | --------------------------------------------- | --------- |
-| tplCode | file template | &tplCode=`<a href="\[\[+link\]\]">\[\[+filename\]\]</a>` | <a href="\[\[+link\]\]">\[\[+filename\]\]</a> | HTML code |
+| Name    | Description   | Example                                              | Default Value                             | Options   |
+| ------- | ------------- | ---------------------------------------------------- | ----------------------------------------- | --------- |
+| tplCode | file template | &tplCode=`<a href="`[[+link]]`">`[[+filename]]`</a>` | <a href="`[[+link]]`">`[[+filename]]`</a> | HTML code |
 
 ## Headers
 

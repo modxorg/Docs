@@ -6,7 +6,7 @@ _old_uri: "revo/campermanagement/campermanagement.developing-the-front-end/campe
 
 Both the cmCampers and cmCamperDetail snippets work with the same data and allow you to include/exclude certain objects with properties. This page will give you an overview of the different placeholders you can use. In some chunks (eg tplImageItem) you should be able to use any of the parent chunks as well, for example camper details.
 
-When using cmCampers, you should use the placeholders in your chunks CACHED to prevent weird behaviour. Example: \[\[+brand\]\] When using cmCamperDetails, you should use the placeholders prefixed with cm. (don't forget the dot), and make sure you are calling them UNCACHED. Example: \[\[!+cm.brand\]\]
+When using cmCampers, you should use the placeholders in your chunks CACHED to prevent weird behaviour. Example: `[[+brand]]` When using cmCamperDetails, you should use the placeholders prefixed with cm. (don't forget the dot), and make sure you are calling them UNCACHED. Example: `[[!+cm.brand]]`
 
 ## Snippet specific: cmCamper
 

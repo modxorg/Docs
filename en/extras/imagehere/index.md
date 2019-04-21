@@ -20,11 +20,11 @@ Since: November 2nd, 2012
 
 Use imageHERE by calling the chunk into your template or content, like this:
 
-\[\[$imageHERE\]\]
+`[[$imageHERE]]`
 
 An example with options:
 
-\[\[$imageHERE?
+`[[$imageHERE?
 
  &w=`600`
 
@@ -38,7 +38,7 @@ An example with options:
 
  &alt=`alt text here`
 
-\]\]
+]]`
 
 - &w => width of placeholder. Defaults to 300.
 - &h => height of placeholder. Defaults to 200.
@@ -49,6 +49,6 @@ An example with options:
 
 Not shown here is the &attr property which allows you to insert any attribute you wish into the image element. For example: &attr=`class="myClass"`.
 
-You can also set these properties in the Chunk properties tab, and then every usage of the Chunk will use that property set by default. Set multiple property sets and call them like this: \[\[$imageHERE@myPropertySet\]\]
+You can also set these properties in the Chunk properties tab, and then every usage of the Chunk will use that property set by default. Set multiple property sets and call them like this: `[[$imageHERE@myPropertySet]]`
 
 When you're done prototyping, disable the imageHERE plugin so that holder.js is no longer included in your page. Or, uninstall imageHERE via Package Management.

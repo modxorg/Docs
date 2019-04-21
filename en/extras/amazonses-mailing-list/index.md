@@ -44,7 +44,7 @@ _old_uri: "revo/amazonses-mailing-list"
 
  This will run the cron.php every minute of every hour of every day.
 
- cron.php sends 100 emails per run. It sends every email because the amazonSESMailingList gives an option for personalized emails (You can put the \[\[+name\]\] placeholder in the email ;)
+ cron.php sends 100 emails per run. It sends every email because the amazonSESMailingList gives an option for personalized emails (You can put the `[[+name]]` placeholder in the email ;)
 
 ## Usage
 
@@ -53,13 +53,13 @@ _old_uri: "revo/amazonses-mailing-list"
 - _Mails_ - the list of mails that you are preparing/sending or were sent. You also can see the basic information about each mail
 - _Basic settings_- the most important part of mailing list. From here you set the Sender name and email.
 
- Don't forget to insert **\[\[+content\]\]** placeholder in the Mailing template or there will be no content when you send the mail!
+ Don't forget to insert **`[[+content]]` placeholder in the Mailing template or there will be no content when you send the mail!
 
  Every "from" email must be verified by Amazon SES. If your email is not verified yet, click the _Verify email with Amazon SES_ and you will receive conformation email from Amazon SES for the email.
 
  If you don't have an access for the **production environment** then you have to verify every email you want to send the email **to!** For more information read [here](http://aws.amazon.com/ses/#functionality).
 
-- _Emails_ - the list of subscribers. Since the AmazonSESMailingList is set for personalized emails every subscriber can have a name which can be called throu \[\[+name\]\] placeholder in mail.
+- _Emails_ - the list of subscribers. Since the AmazonSESMailingList is set for personalized emails every subscriber can have a name which can be called throu `[[+name]]`laceholder in mail.
 
  Create new mail and open it with double-click. Add the subject and some content. Save and go back to previous page. Under tab _Emails_ add new email and put your email in it. Select the tab _Mails_ and the newly created email has now a subject. Right click on it and select _Send mail_ from the menu. That's it! If the cron job is set correctly you will receive the email shortly!
 

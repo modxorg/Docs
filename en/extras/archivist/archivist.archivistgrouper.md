@@ -57,4 +57,4 @@ If no templates are given, the defaults are used. As it got me puzzled how to cr
 </ul>
 ```
 
-Notice the placeholder **\[\[+resources\]\]** that passes on the results to the itemTpl.
+Notice the placeholder **`[[+resources]]`** that passes on the results to the itemTpl.

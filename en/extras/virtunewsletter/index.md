@@ -46,7 +46,7 @@ _old_uri: "revo/virtunewsletter/"
 
  Update 1.6.0-beta2: Template can be created inside the CMP and adjusted to culture key.
 
- Update 1.6.0-beta-1: \[\[+virtuNewsletter.email.subid\]\] = \[\[+virtuNewsletter.email.id\]\]
+ Update 1.6.0-beta-1: `[[+virtuNewsletter.email.subid]]` = `[[+virtuNewsletter.email.id]]`
 
 ``` php
 <p>Hello [[+virtuNewsletter.email.name:default=`[[+virtuNewsletter.email.email]]`]],</p>
@@ -179,7 +179,7 @@ _old_uri: "revo/virtunewsletter/"
 
  Again, **MAKE SURE YOU HAVE THAT CATEGORY INSIDE THE CMP.**
 
- The name itself can be changed, but make sure you have to apply this also to the **\[\[!virtuNewsletter.subscribe? &categoryKey=`category`\]\]** onthe [Subscribe page](extras/virtunewsletter#virtuNewsletter-1.Subscribe) above
+ The name itself can be changed, but make sure you have to apply this also to the **`[[!virtuNewsletter.subscribe? &categoryKey=`category`]]`** onthe [Subscribe page](extras/virtunewsletter#virtuNewsletter-1.Subscribe) above
 
 ## 5. The Newsletters
 
@@ -191,7 +191,7 @@ _old_uri: "revo/virtunewsletter/"
 
  3. You might also want to add these placeholders as the unsubscribe link, or link to read this on your website:
 
- Update 1.6.0-beta-1: \[\[+virtuNewsletter.email.newsid\]\] = \[\[+virtuNewsletter.email.id\]\]
+ Update 1.6.0-beta-1: `[[+virtuNewsletter.email.newsid]]` = `[[+virtuNewsletter.email.id]]`
 
 ``` php
 <!-- unsubscribe link -->
@@ -222,7 +222,7 @@ Unsubscribe
 
 ### Category
 
- Category is a group of subscribers. The subscriber can be from usergroups, or anonymous subscriber from web page, whom registered using the subscription form. Because this is required for newsletter, then the subscription form **must** have category field (or anything you define which matches with \[\[!virtuNewsletter.subscriber? &categoryKey=`category`\]\] controller snippet).
+ Category is a group of subscribers. The subscriber can be from usergroups, or anonymous subscriber from web page, whom registered using the subscription form. Because this is required for newsletter, then the subscription form **must** have category field (or anything you define which matches with `[[!virtuNewsletter.subscriber? &categoryKey=`category`]]` controller snippet).
 
  So in the CMP you have to create a category first.
 
