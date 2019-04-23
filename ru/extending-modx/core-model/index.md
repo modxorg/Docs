@@ -1,6 +1,6 @@
 ---
 title: "Модель ядра"
-translation: "extending-modx/core-model/index"
+translation: "extending-modx/core-model"
 ---
 
 1. [modX](extending-modx/core-model/modx)
