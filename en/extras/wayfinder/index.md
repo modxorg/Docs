@@ -10,7 +10,7 @@ _old_uri: "revo/wayfinder"
 
  Since you can make multiple calls to _Wayfinder_ on a single page, and each call can specify a different section of the document tree, you can have multiple navigational menus or document lists on a single page. For example you may wish to have a main menu at the top of the page, then along the sides have secondary menus for products, services, teams, roles, etc. Each pertaining to a different section of the document tree.
 
- Please note that since the release of Revolution there are two types of Wayfinder snippets available, one for each version. For clarity, this page uses the Evolution syntax when showing examples. Generally speaking the functionality between the two versions are the same, and so are the parameters. Mind that in Revolution, snippets must be called with \[\[Wayfinder? &...\]\] instead of \[!Wayfinder? &...!\].
+ Please note that since the release of Revolution there are two types of Wayfinder snippets available, one for each version. For clarity, this page uses the Evolution syntax when showing examples. Generally speaking the functionality between the two versions are the same, and so are the parameters. Mind that in Revolution, snippets must be called with `[[Wayfinder? &...]]` instead of \[!Wayfinder? &...!\].
 
  For Wayfinder discussions on the MODX forums see <http://modxcms.com/forums/index.php/board,182.0.html>.
 
@@ -98,14 +98,14 @@ _old_uri: "revo/wayfinder"
  | &sortBy         | Which field to sort by e.g. 'published'                                                                                                                                                                                                                                                                                                                                                                                     |               |
  | &sortOrder      | The sorting order, 'ASC' or 'DESC'                                                                                                                                                                                                                                                                                                                                                                                          |               |
  | &where          | JSON style filtering option. For example when trying to hide blog or news from the Articles addon: &where=`\[{"class\_key:!=": "Article"}\]`                                                                                                                                                                                                                                                                                |               |
- | &hereId         | Define the current ID to use for the snippet. Use a value of \[\[\*id\]\] if the template specified by hereTpl and activeRowParentTpl is not applied correctly to the menu item.                                                                                                                                                                                                                                            | iterated ID   |
+ | &hereId         | Define the current ID to use for the snippet. Use a value of `[[*id]]` if the template specified by hereTpl and activeRowParentTpl is not applied correctly to the menu item.                                                                                                                                                                                                                                               | iterated ID   |
  | &hereTpl        | The hereTpl template is used when the current item is displayed in the menu.                                                                                                                                                                                                                                                                                                                                                |               |
 
 ### Template Parameters
 
  These parameters specify the chunks that contain the templates that will drive the generation of Wayfinder's output.
 
- With the current version of WayFinder in Revolution, you can access your own custom TVs by using a placeholder _without_ the 'wf.' prefix, e.g. \[\[+my\_TV\]\]
+ With the current version of WayFinder in Revolution, you can access your own custom TVs by using a placeholder _without_ the 'wf.' prefix, e.g. `[[+my\_TV]]`
 
  As of this writing, only the raw TV value will be returned: it will not be formatted. E.g. if your TV is an image, normal use of the TV inside your template would return the full image tag, but inside of a WayFinder tpl, only the path to the image will be returned.
 
@@ -190,8 +190,8 @@ Evolution: [+wf._____+]
 Revolution: [[+wf._____]]
 ```
 
- Since version 2.3.0 you can use placeholders for all fields of a Resource, such as \[\[+introtext\]\], \[\[+menutitle\]\], \[\[+published\]\], etc.
- Since version 2.3.2 placeholder \[\[+protected\]\] is added that is 1 if Resource is protected by a [Resource Group](administering-your-site/security/resource-groups).
+ Since version 2.3.0 you can use placeholders for all fields of a Resource, such as `[[+introtext]]`, `[[+menutitle]]`, `[[+published]]`, etc.
+ Since version 2.3.2 placeholder `[[+protected]]` is added that is 1 if Resource is protected by a [Resource Group](administering-your-site/security/resource-groups).
 
  Examples of a &rowTpl (or related) chunk:
 

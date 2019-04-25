@@ -159,13 +159,13 @@ return true;
 
 ### Display a Success Message
 
- If the "submittedResourceId" property is not specified, Register will simply display a success message to the \[\[+error.message\]\] placeholder. This is the value of the "successMsg" property. For example:
+ If the "submittedResourceId" property is not specified, Register will simply display a success message to the `[[+error.message]]` placeholder. This is the value of the "successMsg" property. For example:
 
  ``` php
 [[!Register? &successMsg=`Thanks for registering!`]]
 ```
 
- Will display "Thanks for registering!" in the \[\[+error.message\]\] property in the Resource that your \[\[Register\]\] snippet call is in after the User submits a valid registration form.
+ Will display "Thanks for registering!" in the `[[+error.message]]` property in the Resource that your `[[Register]]` snippet call is in after the User submits a valid registration form.
 
 ## Typical Setup
 

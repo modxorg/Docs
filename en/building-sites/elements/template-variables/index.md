@@ -30,7 +30,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables"
 
  TVs can also have Properties. Say you had a TV called 'intromsg' with the value:
 
-> Hello \[\[+name\]\], you have \[\[+messageCount\]\] messages.
+> Hello `[[+name]]`, you have `[[+messageCount]]` messages.
 
  You could fill the data with the call:
 

@@ -6,7 +6,7 @@ _old_uri: "revo/modextra"
 
 ## What is modExtra?
 
-modExtra is a base Extra template that is useful when wanting to create a new Extra for MODx Revolution. One can git archive from this repository to start with all the file structure for beginning MODx Extra development pre-setup.
+modExtra is a base Extra template that is useful when wanting to create a new Extra for MODX Revolution. One can git archive from this repository to start with all the file structure for beginning MODx Extra development pre-setup.
 
 ## Usage
 
@@ -108,7 +108,7 @@ And for the record, these are the files whose names you should change to reflect
 - ./core/components/modextra/model/modextra/request/modextracontrollerrequest.class.php
 - ./core/components/modextra/model/schema/modextra.mysql.schema.xml
 
-Once you've done all of that, you can create some [System Settings](administering-your-site/settings/system-settings "System Settings") back in your MODx Revo site:
+Once you've done all of that, you can create some [System Settings](administering-your-site/settings/system-settings "System Settings") back in your MODX Revo site:
 
 - 'mynamespace.core\_path' - Point to /path/to/my/extra/core/components/extra/
 - 'mynamespace.assets\_url' - /path/to/my/extra/assets/components/extra/
@@ -121,4 +121,4 @@ If you made a mistake in any of that, you can trash the whole repo there and exp
 
 ### Copyright Information
 
-modExtra is distributed as GPL (as MODx Revolution is), but the copyright owner (Shaun McCormick) grants all users of modExtra the ability to modify, distribute, dual license and use modExtra in derivative works (not copies of modExtra) as they see fit, as long as attribution is given somewhere in the distributed source of all derivative works.
+modExtra is distributed as GPL (as MODX Revolution is), but the copyright owner (Shaun McCormick) grants all users of modExtra the ability to modify, distribute, dual license and use modExtra in derivative works (not copies of modExtra) as they see fit, as long as attribution is given somewhere in the distributed source of all derivative works.

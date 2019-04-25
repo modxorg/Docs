@@ -52,7 +52,7 @@ Luckily, there's an easy way for you to figure out what markup is coming from wh
 <!-- /End: board/disBoardLi -->
 ```
 
-The entire page is wrapped by **pages/wrapper.tpl** with the controller specific page template placed in the \[\[+content\]\] placeholder.
+The entire page is wrapped by **pages/wrapper.tpl** with the controller specific page template placed in the `[[+content]]` placeholder.
 
 The controller specific page template is by default the file in the /pages/ directory with the same name as the controller (and to some extent the URL). For example the home controller uses the pages/home.tpl template, while viewing the recent thread posts uses pages/thread/recent.tpl.
 

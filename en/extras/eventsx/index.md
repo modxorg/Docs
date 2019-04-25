@@ -8,7 +8,7 @@ Please note: Use this documentation on your own risk as it's not revised yet by 
 
 ## What is EventsX?
 
-EventX is a calendar extra for MODx Revolution. EventsX shows upcoming (and previous) events on a (jQuery) calendar and/or upcoming events list.
+EventX is a calendar extra for MODX Revolution. EventsX shows upcoming (and previous) events on a (jQuery) calendar and/or upcoming events list.
 
 ## Features
 
@@ -32,7 +32,7 @@ EventX was written by Jeroen Kenters and had its initial release Dec, 1st 2011.
 
 ## Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/eventsx>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/eventsx>
 
 ## Development and Bug Reporting
 

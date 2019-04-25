@@ -6,7 +6,7 @@ _old_uri: "revo/quickcrumbs"
 
 ## What is QuickCrumbs
 
-QuickCrumbs is a quick and efficient breadcrumb-generation [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODx Revolution. It supports [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks") tpl's for the crumbs, has a configurable separator and much more.
+QuickCrumbs is a quick and efficient breadcrumb-generation [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODX Revolution. It supports [Chunks](making-sites-with-modx/structuring-your-site/chunks "Chunks") tpl's for the crumbs, has a configurable separator and much more.
 
 ### History
 

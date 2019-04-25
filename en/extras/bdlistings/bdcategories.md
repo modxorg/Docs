@@ -73,7 +73,7 @@ Placeholders you can use:
 
 ### Minimum call:
 
-\[\[!bdCategories\]\]
+`[[!bdCategories]]`
 
 Categories Structure
 
@@ -97,7 +97,7 @@ Resulting HTML with default templates:
 
 Snippet call:
 
-\[\[!bdCategories? &tplCategory=`bdl.cat.cat` &tplSub=`bdl.cat.sub` &tplInner=`bdl.cat.inner` &tplOuter=`bdl.cat.outer` &subSeparator=`` &includeSub=`1` \]\]
+`[[!bdCategories? &tplCategory=`bdl.cat.cat` &tplSub=`bdl.cat.sub` &tplInner=`bdl.cat.inner` &tplOuter=`bdl.cat.outer` &subSeparator=`` &includeSub=`1` ]]`
 
 bdl.cat.cat chunk:
 

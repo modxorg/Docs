@@ -14,7 +14,7 @@ For example, with CustomURLs you can add the resource's ID or publish month in t
 
 ### Requirements
 
-- MODx Revolution 2.2.x or later
+- MODX Revolution 2.2.x or later
 - PHP5 or later
 
 ### Public Releases
@@ -26,7 +26,7 @@ For example, with CustomURLs you can add the resource's ID or publish month in t
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/customurls>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/customurls>
 
 ### Support, Comments, Development and Bug Reporting
 
@@ -39,15 +39,15 @@ To start with CustomUrls, go to Components > Custom URLs and add a rule.
 
 ### Rules properties
 
-| Name             | Description                                                                                                                                                               | Example                    |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
-| Pattern          | Your custom URL pattern built from text, resource fields, TV, snippet and output filters. You also can use _cu.parent_ placeholder to get the complete parent alias path. | \[\[+id\]\]-\[\[+alias\]\] |
-| Constraint field | Can be any resource field : id, parent, template ...                                                                                                                      | template                   |
-| Constraint value |                                                                                                                                                                           | 2                          |
-| User group       | User group for whom rule is active                                                                                                                                        | Administrators             |
-| URI              | By default, an alias is created but you can choose to create URI instead                                                                                                  | false                      |
-| Override         | Override alias or URI when resource is updated.                                                                                                                           | true                       |
-| Active           | Is the rule active ?                                                                                                                                                      | true                       |
+| Name             | Description                                                                                                                                                               | Example                |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Pattern          | Your custom URL pattern built from text, resource fields, TV, snippet and output filters. You also can use _cu.parent_ placeholder to get the complete parent alias path. | `[[+id]]`-`[[+alias]]` |
+| Constraint field | Can be any resource field : id, parent, template ...                                                                                                                      | template               |
+| Constraint value |                                                                                                                                                                           | 2                      |
+| User group       | User group for whom rule is active                                                                                                                                        | Administrators         |
+| URI              | By default, an alias is created but you can choose to create URI instead                                                                                                  | false                  |
+| Override         | Override alias or URI when resource is updated.                                                                                                                           | true                   |
+| Active           | Is the rule active ?                                                                                                                                                      | true                   |
 
 ## Pattern examples
 

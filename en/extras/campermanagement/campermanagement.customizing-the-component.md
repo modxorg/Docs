@@ -26,7 +26,7 @@ The good thing about Lexicon Management is that your overrides are saved in the 
 
 Now you may get overly excited and check out the result, but **you will first have to clear the cache**. Lexicons are cached by default and a cache refresh is needed to make anything appear. So go to Site > Clear Cache and then refresh your component page. If you changed anything to the menu item (either key campermgmt or campermgmt.description) you will also need to force that to refresh, which doesn't always seem to be refreshed by a regular cache refresh. Simple remove the file in core/cache/menu/mgr/menus/ and that will be updated when you refresh the page again.
 
-Now you can go ahead and change other strings. If you don't have a "Plate" field, but could use a "Capacity" field, you can change the "Place" lexicon to "Capacity" to change that in the component. The actual field name to use in setting up the front-end do not change (that will stay \[\[+plate\]\]) but nobody will look at that after development anyway.
+Now you can go ahead and change other strings. If you don't have a "Plate" field, but could use a "Capacity" field, you can change the "Place" lexicon to "Capacity" to change that in the component. The actual field name to use in setting up the front-end do not change (that will stay `[[+plate]]`) but nobody will look at that after development anyway.
 
 #### Status names
 
@@ -96,4 +96,4 @@ There is support built in for up to 2 custom context menu items. These were incl
 
 This works the same way as the custom button, and uses the campermanagement.ctxmenu1 and campermanagement.ctxmenu2 system settings with the ID of a resource as its value. The lexicon keys to change are campermgmt.ctxmenu1 and campermgmt.ctxmenu2. They will send the user to the siteurl + index.php?id= + the id in the system setting + &cid= + the ID of the vehicle. Advised usage is with the cmCamperDetails snippet that looks out for the cid parameter. If your site uses different gateway settings (not index.php, or a different parameter for the ID) you will need to modify the assets/components/campermanagement/js/mgr/widgets/grids/grid.campers.js file - around half-way the page the menu is built up.
 
-Just call \[\[!cmCamperDetails\]\] in the resource, and use the \[\[!+cm.<fieldname>\]\] placeholders in the content. You are the limit!
+Just call `[[!cmCamperDetails]]`n the resource, and use the `[[!+cm.<fieldname>]]`ceholders in the content. You are the limit!

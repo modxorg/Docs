@@ -25,7 +25,7 @@ That reference is then replaced with the contents of the Chunk.
 
 You can also pass properties to a Chunk. Say you had a chunk named 'intro' with the contents:
 
-> Hello, \[\[+name\]\]. You have \[\[+messageCount\]\] messages.
+> Hello, `[[+name]]`. You have `[[+messageCount]]` messages.
 
 You could fill those values with:
 

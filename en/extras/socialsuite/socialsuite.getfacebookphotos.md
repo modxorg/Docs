@@ -80,7 +80,7 @@ These are all the placeholders to use in the photoTpl chunk. Some may not be ava
 | position           | int         | The position of the photo in the album.                                                                                                                       |
 | album\_object\_id  | int         | The object\_id of the album the photo belongs to.                                                                                                             |
 | place\_id          | int         | Facebook ID of the place associated with the photo, if any.                                                                                                   |
-| images             | array       | An array of objects containing width, height, source each representing the various photo sizes. Use as \[\[+images.2.source\]\].                              |
+| images             | array       | An array of objects containing width, height, source each representing the various photo sizes. Use as `[[+images.2.source]]`.                                |
 | like\_info         | object      | The like information of the photo being queried. This is an object containing can\_like, like\_count, and user\_likes                                         |
 | comment\_info      | object      | The comment information of the photo being queried. This is an object containing can\_comment and comment\_count                                              |
 | can\_delete        | bool        | true if the viewer is able to delete the photo                                                                                                                |

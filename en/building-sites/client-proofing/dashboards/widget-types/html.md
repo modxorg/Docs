@@ -22,7 +22,7 @@ To output the username of the logged-in user. You can also call Snippets, like s
 [[MyDashboardSnippet]]
 ```
 
-Note that in snippets there is no "active resource", so snippets referencing $modx->resource will have issues.
+Note that in snippets there is no "active resource", so snippets referencing `$modx->resource` will have issues.
 
 ## See Also
 

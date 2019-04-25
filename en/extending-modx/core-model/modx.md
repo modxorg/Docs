@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## The modX Class
 
-This is the base class of MODx Revolution; it is used for many of the main processing methods of MODx. It extends the [xPDO](/xpdo/1.x/class-reference/xpdo "xPDO") class.
+This is the base class of MODX Revolution; it is used for many of the main processing methods of MODx. It extends the [xPDO](/xpdo/1.x/class-reference/xpdo "xPDO") class.
 
 ## Methods
 

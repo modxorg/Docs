@@ -52,9 +52,9 @@ The 'language', 'topic', and 'namespace' properties are optional; if the tag has
 
 It is preferable not to use the 'language' property for every tag should you be changing languages; this is best done through a System or Context Setting for the entire site or context. The best option is different contexts for each language. But again, MODX leaves you with the preference.
 
-If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you simply specify the key ("userinput") as tag property and pass what you want it replaced with in the value. Example:
+If you have placeholders in your lexicon string, for example "This is `[[+userinput]]`!", you simply specify the key ("userinput") as tag property and pass what you want it replaced with in the value. Example:
 
-\[\[!%key? &topic=`topicname` &namespace=`namespace\_name` &language=`en` &userinput=`amazing`\]\]
+`[[!%key? &topic=`topicname` &namespace=`namespace\_name` &language=`en` &userinput=`amazing`]]`
 
 Note our ! prefix for the Tag; this makes sure the Tag isn't cached, since our string might be changing before the page cache does.
 
@@ -108,7 +108,7 @@ Now we can use the lexicon() method on the MODX object to get our Entry with key
 $modx->lexicon('school.basketball');
 ```
 
-If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you can pass an array as the second arguement which has key=>value pairs of your placeholder content, like so:
+If you have placeholders in your lexicon string, for example "This is `[[+userinput]]`!", you can pass an array as the second arguement which has key=>value pairs of your placeholder content, like so:
 
 ``` php
 $modx->lexicon('school.basketball',array('sport' => 'basketball'));
@@ -124,7 +124,7 @@ In CMPs you can use the following to use lexicons.
 
 Please note that this assumes you have loaded the lexicon in your connector - there is (at least to my knowledge at this time ~Mark H.) no way to dynamically load other lexicon topics through JavaScript.
 
-If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you can pass the values for the placeholders as a javascript object, like so:
+If you have placeholders in your lexicon string, for example "This is `[[+userinput]]`!", you can pass the values for the placeholders as a javascript object, like so:
 
 ``` php
  _('lexicon.key',{ userinput: 'amazing' })

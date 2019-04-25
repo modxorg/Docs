@@ -25,11 +25,11 @@ This sets the default Template for Containers and Articles as you create them.
 
 Our container template, or "BlogTemplate", has some placeholders that are provided to it by Articles. They are:
 
-- \[\[+latest\_posts\]\] - This shows the "Latest Posts" widget on the right-hand side of the sample template.
-- \[\[+latest\_comments\]\] - This shows the "Latest Comments" widget on the right-hand side of the sample template.
-- \[\[+comments\_enabled\]\] - This will be 1 or 0, depending on if you enabled comments for this container.
-- \[\[+tags\]\] - This shows a list of the most commonly used tags across your blog.
-- \[\[+archives\]\] - This shows a list of the latest months (or years) in archive format that you've made posts to.
+- `[[+latest_posts]]` - This shows the "Latest Posts" widget on the right-hand side of the sample template.
+- `[[+latest_comments]]` This shows the "Latest Comments" widget on the right-hand side of the sample template.
+- `[[+comments_enabled]]` This will be 1 or 0, depending on if you enabled comments for this container.
+- `[[+tags]]` This shows a list of the most commonly used tags across your blog.
+- `[[+archives]]` This shows a list of the latest months (or years) in archive format that you've made posts to.
 
 You can move these placeholders around to adjust your new template to however you like it!
 
@@ -37,15 +37,15 @@ You can move these placeholders around to adjust your new template to however yo
 
 Our article template, or "BlogPostTemplate", has some placeholders as well:
 
-- \[\[+latest\_posts\]\] - This shows the "Latest Posts" widget on the right-hand side of the sample template.
-- \[\[+comments\]\] - The comments, provided by [Quip](extras/quip "Quip"), for this article, if comments are enabled.
-- \[\[+comments\_count\]\] - a count of the number of comments made on the current article (i.e. on the current post). Relies on [QuipCount](extras/quip/quip.quipcount "Quip.QuipCount").
-- \[\[+comments\_form\]\] - The reply form, provided by [Quip](extras/quip "Quip"), if comments are enabled.
-- \[\[\*articlestags\]\] - Used with the "notempty" output filter, this can trigger whether or not you show the \[\[+article\_tags\]\] placeholder (note the \* instead of the +)
-- \[\[+article\_tags\]\] - contains a list of all tags that the current article has been tagged with.
-- \[\[\*articles\_container\]\] - The ID of the Container that our Article is in. Note the \* instead of the +
+- `[[+latest_posts]]` This shows the "Latest Posts" widget on the right-hand side of the sample template.
+- `[[+comments]]` The comments, provided by [Quip](extras/quip "Quip"), for this article, if comments are enabled.
+- `[[+comments_count]]` a count of the number of comments made on the current article (i.e. on the current post). Relies on [QuipCount](extras/quip/quip.quipcount "Quip.QuipCount").
+- `[[+comments_form]]` The reply form, provided by [Quip](extras/quip "Quip"), if comments are enabled.
+- `[[*articlestags]]` Used with the "notempty" output filter, this can trigger whether or not you show the `[[+article\_tags]]]]`ceholder (note the \* instead of the +)
+- `[[+article_tags]]` contains a list of all tags that the current article has been tagged with.
+- `[[*articles_container]]` The ID of the Container that our Article is in. Note the \* instead of the +
 
-If you are _outside_ the Article Template and you need to display the number of comments that were made on a given post (e.g. if you want to display the number of comments on each post in your list of "Latest Posts"), then you cannot use the \[\[+comments\_count\]\] placeholder. You must instead use [QuipCount](extras/quip/quip.quipcount "Quip.QuipCount"). Go to the **Components -> Quip** page and take a look at the thread names that Articles gives each post automatically. It follows this format: article-b{page-id-of-blog}-{page-id-of-post}, e.g. **article-b12-37**
+If you are _outside_ the Article Template and you need to display the number of comments that were made on a given post (e.g. if you want to display the number of comments on each post in your list of "Latest Posts"), then you cannot use the `[[+comments\_count]]`laceholder. You must instead use [QuipCount](extras/quip/quip.quipcount "Quip.QuipCount"). Go to the **Components -> Quip** page and take a look at the thread names that Articles gives each post automatically. It follows this format: article-b{page-id-of-blog}-{page-id-of-post}, e.g. **article-b12-37**
 
 ![](/download/attachments/36635030/Quip-Thread-Names.jpg?version=1&modificationDate=1341982338000)
 

@@ -133,7 +133,7 @@ fancybox
 
  Add as many images as you want to add to your Content.
 
- Now write your content to your Richtext-Field and add placeholders like \[\[+img.0\]\] , \[\[+img.1\]\], \[\[+img.2\]\] to your Text.
+ Now write your content to your Richtext-Field and add placeholders like `[[+img.0]]` , `[[+img.1]]`, `[[+img.2]]` to your Text.
 
  When you view the result on your frontpage you will see small image-thumbnails in your text, where you did add these placeholders.
 

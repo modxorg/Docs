@@ -6,7 +6,7 @@ _old_uri: "revo/selflink"
 
 ## What is selfLink?
 
-selfLink is a simple snippet for MODx Revolution which can help create links or anchors to a page by direction like 'up', 'next' and 'previous'.
+selfLink is a simple snippet for MODX Revolution which can help create links or anchors to a page by direction like 'up', 'next' and 'previous'.
 
 selfLink was first released on March 8, 2011 and was created by Bert Oost.
 

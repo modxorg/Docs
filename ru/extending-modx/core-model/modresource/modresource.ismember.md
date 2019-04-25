@@ -1,6 +1,5 @@
 ---
 title: "modResource.isMember"
-translation: "2.x/developing-in-modx/other-development-resources/class-reference/modresource/modresource.ismember"
 ---
 
 ## modResource::isMember

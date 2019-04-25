@@ -74,13 +74,13 @@ _old_uri: "revo/login/login.login"
 
 ## Using reCaptcha
 
- First off, make sure your `recaptcha.public\_key` and `recaptcha.private\_key` System Settings are set with your reCaptcha API keys. Then, to add it, all you have to do is add the "recaptcha" preHook to your snippet call:
+ First off, make sure your `recaptcha.public_key` and `recaptcha.private_key` System Settings are set with your reCaptcha API keys. Then, to add it, all you have to do is add the "recaptcha" preHook to your snippet call:
 
  ``` php
 [[!Login? &preHooks=`recaptcha`]]
 ```
 
- And make sure that the \[\[+login.recaptcha\_html\]\] placeholder is in your loginTpl chunk. This will make reCaptcha be required for login.
+ And make sure that the `[[+login.recaptcha_html]]` placeholder is in your loginTpl chunk. This will make reCaptcha be required for login.
 
  See [See Optional Properties for ReCaptcha specific settings](#Login.Login-optionalProperties)
 

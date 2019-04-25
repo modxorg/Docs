@@ -12,6 +12,6 @@ mxExtendedMenu was built to boost large content menus by reducing the processing
 
 | Parameter     | Type   | Default         | Purpose/Use                                                        |
 | ------------- | ------ | --------------- | ------------------------------------------------------------------ |
-| docid         | int    | \[\[\*id\]\]    | Specify the starting resource id to build the menu from            |
+| docid         | int    | `[[*id]]`       | Specify the starting resource id to build the menu from            |
 | depth         | int    | 10              | Max depth the menu should be built to                              |
 | contextFilter | string | current context | Used to over ride and use external context resources to build menu |

@@ -58,7 +58,7 @@ Great! Restart your server (apachectl graceful).
 
 Now we're going to need to create the actual files to load the subdomain. Go create a "dev/" subdirectory in /home/modxcms.com/public\_html/ (or whatever base path your webroot is in).
 
-You'll need to copy 3 files from your MODx Revolution's root directory:
+You'll need to copy 3 files from your MODX Revolution's root directory:
 
 - index.php
 - .htaccess
@@ -108,7 +108,7 @@ Clear your site cache again, refresh the Resource tree, and click 'Preview' on y
 
 > <http://dev.modxcms.com/>
 
-Create a \[\[~135\]\] link to the "Dev Docs" Resource in the "Dev Home" Resource. Reload your page. Note the link properly builds to:
+Create a `[[~135]]` link to the "Dev Docs" Resource in the "Dev Home" Resource. Reload your page. Note the link properly builds to:
 
 > <http://dev.modxcms.com/documentation.html>
 

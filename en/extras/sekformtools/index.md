@@ -10,7 +10,7 @@ SekFormTools is a quick way to add combo boxes with a customized appearance, aut
 
 ### Requirements
 
-- MODx Revolution 2.2.0-pl2 or later
+- MODX Revolution 2.2.0-pl2 or later
 - PHP5 or later
 
 ### History
@@ -19,7 +19,7 @@ SekFormTools was written by Stephen Smith, and first released on May 3th, 2012.
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: <http://modx.com/extras/package/sekformtools>.
+It can be downloaded from within the MODX Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: <http://modx.com/extras/package/sekformtools>.
 
 ### Development and Bug Reporting
 
@@ -38,7 +38,7 @@ The sekFormTools is called through several snippets using the below tags?
 - [sekFormTools.input.datepicker](extras/sekformtools/sekformtools.input.datepicker "sekFormTools.input.datepicker") - A jquery date picker field.
 - [sekFormTools.input.textfield](extras/sekformtools/sekformtools.input.textfield "sekFormTools.input.textfield") - A jquery text field with suggestion overlay.
 - [sekFormTools.input.helper](extras/sekformtools/sekformtools.input.helper "sekFormTools.input.helper") - Called from a blank page, used to fill auto-complete and combo boxes from a database.
-- spellchecker - Call the \[\[spellchecker\]\] snippet from anywhere on a page will load spelling and grammar checking on every textarea.
+- spellchecker - Call the `[[spellchecker]]` snippet from anywhere on a page will load spelling and grammar checking on every textarea.
 
 For more complex setups, try [Advanced Examples](extras/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples").
 

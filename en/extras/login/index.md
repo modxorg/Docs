@@ -6,7 +6,7 @@ _old_uri: "revo/login"
 
 ## What is Login?
 
-Login is a security Extra for MODx Revolution, that allows for front-end login capabilities, as well as profile updating, registration, and forgot password functionality.
+Login is a security Extra for MODX Revolution, that allows for front-end login capabilities, as well as profile updating, registration, and forgot password functionality.
 
 ## History
 
@@ -14,7 +14,7 @@ Login was written by Shaun McCormick as a login/security Extra, and first releas
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/login>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/login>
 
 ### Development and Bug Reporting
 

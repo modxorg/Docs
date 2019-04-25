@@ -54,7 +54,7 @@ _old_uri: "revo/getresources"
  | tplCondition           | Defines a field of the resource to evaluate against keys defined in the &conditionalTpls property. Must be a resource field; does not work with Template Variables.                                                                                                                                                |                                    | 1.5.0            |
  | conditionalTpls        | A JSON object defining a map of field values and the associated tpl Chunks to use when the field defined by &tplCondition matches the value _:_ &conditionalTpls=`{"1":"tplA","2":"tplB","3":"tplC"}` _\[NOTE: tplOdd, tplFirst, tplLast, \* and tpl\_{n} will take precedence over any defined conditionalTpls\]_ |                                    | 1.5.0            |
  | tplPath                | An optional directory to look for file-based chunks when using @FILE                                                                                                                                                                                                                                               | _assets\_path_+ "elements/chunks/" |                  |
- | tplWrapper             | Name of a chunk serving as a wrapper template for the output \[NOTE: Does not work with toSeparatePlaceholders\]. The placeholder where the items are inserted is \[\[+output\]\].                                                                                                                                 |                                    | 1.6.0            |
+ | tplWrapper             | Name of a chunk serving as a wrapper template for the output \[NOTE: Does not work with toSeparatePlaceholders\]. The placeholder where the items are inserted is `[[+output]]`.                                                                                                                                   |                                    | 1.6.0            |
  | wrapIfEmpty            | If true, will output the wrapper specified in &tplWrapper even if the output is empty.                                                                                                                                                                                                                             | false                              | 1.6.0            |
  | outputSeparator        | An optional string to separate each tpl instance (delimiter)                                                                                                                                                                                                                                                       | "\\n"                              |                  |
  | toPlaceholder          | If set, will assign the result to this placeholder instead of outputting it directly.                                                                                                                                                                                                                              |                                    |                  |
@@ -225,9 +225,9 @@ If your resource has template variables, those will have corresponding placehold
 
 In addition there are the following placeholders:
 
-| Placeholder  | Description                                                                               |
-| ------------ | ----------------------------------------------------------------------------------------- |
-| \[\[+idx\]\] | Increases with each iteration, starting with 1 (or the value set by the `&idx` parameter) |
+| Placeholder | Description                                                                               |
+| ----------- | ----------------------------------------------------------------------------------------- |
+| `[[+idx]]`  | Increases with each iteration, starting with 1 (or the value set by the `&idx` parameter) |
 
 ## Examples
 
@@ -400,13 +400,13 @@ You are retrieving the correct resources and you are seeing _some_of the results
 
 If you are using this parameters you may have thought about reusing your tpl chunk to avoid repeating code. For example:
 
-Generic Tpl Chunk: \[\[$GenericTplChunk\]\]
+Generic Tpl Chunk: `[[$GenericTplChunk]]`
 
  ``` php
 <div>Hi [[+pagetitle]]</div>
 ```
 
-Fourth Tpl Chunk ( tpl\_nN): \[\[$4thTplChunk\]\]
+Fourth Tpl Chunk ( tpl\_nN): `[[$4thTplChunk]]`
 
  ``` php
 <div class="highlight">[[$GenericTplChunk]]</div>

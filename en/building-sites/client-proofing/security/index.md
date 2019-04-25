@@ -4,9 +4,9 @@ _old_id: "488"
 _old_uri: "2.x/administering-your-site/security"
 ---
 
-## Security in MODx Revolution
+## Security in MODX Revolution
 
-Security in MODx Revolution is primarily driven by an Attribute-Based Access Control (ABAC) paradigm.
+Security in MODX Revolution is primarily driven by an Attribute-Based Access Control (ABAC) paradigm.
 
 Each user in MODx has a [User](building-sites/client-proofing/security/users "Users") object, which can be assigned to any number of [User Groups](building-sites/client-proofing/security/user-groups "User Groups"). Each User Group then has attributes assigned to it via [Access Control Lists](building-sites/client-proofing/security/policies/acls "ACLs") (ACLs). These ACLs take a variety of names depending on how they are applied, but all share one common principle - they contain a list of [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions"). These Permissions allow access to different areas or actions within MODx.
 

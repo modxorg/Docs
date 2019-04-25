@@ -39,23 +39,23 @@ Within the templates for this snippet you can use the following placeholders to 
 
 ### tpl
 
-| Placeholder             | Description                                                                       |
-| ----------------------- | --------------------------------------------------------------------------------- |
-| \[\[+id\]\]             | The question id of the current poll view                                          |
-| \[\[+question\]\]       | The question text                                                                 |
-| \[\[+totalVotes\]\]     | The total number of votes on this poll                                            |
-| \[\[+category\_name\]\] | The name of the poll category _(only availbale when using the category property)_ |
-| \[\[+answers\]\]        | Contains the output of the answers generated for this poll question               |
+| Placeholder          | Description                                                                       |
+| -------------------- | --------------------------------------------------------------------------------- |
+| `[[+id]]`            | The question id of the current poll view                                          |
+| `[[+question]]`      | The question text                                                                 |
+| `[[+totalVotes]]`    | The total number of votes on this poll                                            |
+| `[[+category_name]]` | The name of the poll category _(only availbale when using the category property)_ |
+| `[[+answers]]`       | Contains the output of the answers generated for this poll question               |
 
 ### tplAnswers
 
-| Placeholder      | Description                                                           |
-| ---------------- | --------------------------------------------------------------------- |
-| \[\[+id\]\]      | The id of the answer record                                           |
-| \[\[+answer\]\]  | The answer text                                                       |
-| \[\[+votes\]\]   | The number of votes for this answer                                   |
-| \[\[+percent\]\] | The percentage of the number of votes for this answer                 |
-| \[\[+logdate\]\] | The datetime of the vote of the current visitor (based on IP address) |
+| Placeholder    | Description                                                           |
+| -------------- | --------------------------------------------------------------------- |
+| `[[+id]]`      | The id of the answer record                                           |
+| `[[+answer]]`  | The answer text                                                       |
+| `[[+votes]]`   | The number of votes for this answer                                   |
+| `[[+percent]]` | The percentage of the number of votes for this answer                 |
+| `[[+logdate]]` | The datetime of the vote of the current visitor (based on IP address) |
 
 ## Examples
 

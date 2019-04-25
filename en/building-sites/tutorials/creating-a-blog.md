@@ -8,13 +8,13 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 1. Extension requirements may call for FURL use and ".html" be changed to "/" : Content -> Content Types -> HTML (.html) -> /
 
-## Creating a Blog in MODx Revolution
+## Creating a Blog in MODX Revolution
 
- This tutorial is here to help you setup a flexible, powerful blogging solution in MODx Revolution. Since MODx Revolution is not blogging software, but rather a full-blown Content Application Platform, it doesn't come pre-packaged with a cookie-cutter blogging solution. You'll need to setup your blog how you want it.
+ This tutorial is here to help you setup a flexible, powerful blogging solution in MODX Revolution. Since MODX Revolution is not blogging software, but rather a full-blown Content Application Platform, it doesn't come pre-packaged with a cookie-cutter blogging solution. You'll need to setup your blog how you want it.
 
  Fortunately, the tools to do so are already there for your taking. This tutorial will walk you through how to set them up. It's recommended that you're familiar with Revolution's [Tag Syntax](building-sites/tag-syntax "Tag Syntax") before we start.
 
- One thing before we start, though - this tutorial is extensive, and will show you how to set up a powerful blog with posting, archiving, tagging, commenting and more. If you don't need any specific part, just skip that part. MODx is modular, and your blog can function in any scope you like. And, again, this is only one way to do it - there are tons of ways to setup a blog in MODx Revolution.
+ One thing before we start, though - this tutorial is extensive, and will show you how to set up a powerful blog with posting, archiving, tagging, commenting and more. If you don't need any specific part, just skip that part. MODx is modular, and your blog can function in any scope you like. And, again, this is only one way to do it - there are tons of ways to setup a blog in MODX Revolution.
 
  This tutorial was based on the blog setup at [splittingred.com](http://splittingred.com/). If you'd like a demo before reading, try there.
 
@@ -109,11 +109,11 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Secondly, we then display a Tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
 
- And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-\[\[\*id\]\]'. This means that MODx will automatically create a new thread for each new Blog Post we create. Neat!
+ And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-`[[*id]]`'. This means that MODx will automatically create a new thread for each new Blog Post we create. Neat!
 
 ### The Post Content
 
- Okay, back to our Template. We're in the content section now - note how we start with \[\[\*introtext\]\]. This is a useful MODx Resource field - think of it like a beginning excerpt for a blog post, that will show up on our main page when we're listing the latest blog posts.
+ Okay, back to our Template. We're in the content section now - note how we start with `[[*introtext]]`. This is a useful MODX Resource field - think of it like a beginning excerpt for a blog post, that will show up on our main page when we're listing the latest blog posts.
 
 ### Adding Comments to Posts
 
@@ -400,7 +400,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 </li>
 ```
 
- Before we proceed, there's a few things to note - QuipLatestComments will automatically truncate the comment and add an ellipsis past the &bodyLimit property passed into it, which defaults to 30 characters. Secondly, note the 'ago' [Output Filter](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") we used here. This filter is built into MODx Revolution, and translates a timestamp into a nice, pretty 'two hours, 34 minutes' (or two other time metrics, such as min/sec, year/mo, mo/week) format.
+ Before we proceed, there's a few things to note - QuipLatestComments will automatically truncate the comment and add an ellipsis past the &bodyLimit property passed into it, which defaults to 30 characters. Secondly, note the 'ago' [Output Filter](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") we used here. This filter is built into MODX Revolution, and translates a timestamp into a nice, pretty 'two hours, 34 minutes' (or two other time metrics, such as min/sec, year/mo, mo/week) format.
 
  Note also that it will default to showing the 5 latest. The result:
 

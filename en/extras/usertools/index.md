@@ -89,7 +89,7 @@ _old_uri: "revo/usertools"
 | photo | Photo of the user. |  | 1.0.0-pl |
 | comment | Comments on the User. |  | 1.0.0-pl |
 | website | Website of the user. |  | 1.0.0-pl |
-| extended | Extended fields of the user. Access the placeholder by prefixing 'extended.' to the required field name: \[\[+extended.myField\]\] |  | 1.0.0-pl |
+| extended | Extended fields of the user. Access the placeholder by prefixing 'extended.' to the required field name: `[[+extended.myField]]` |  | 1.0.0-pl |
 
 ### getUsers
 

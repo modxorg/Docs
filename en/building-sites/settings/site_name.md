@@ -8,6 +8,6 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/site_name"
 
 **Name**: Site Name
 **Type**: String
-**Default**: MODx Revolution
+**Default**: MODX Revolution
 
 The name of your MODx site.

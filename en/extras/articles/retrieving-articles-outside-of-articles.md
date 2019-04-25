@@ -30,10 +30,10 @@ Articles 1.4+ comes with a snippet called "Articles" that you can use to get Art
 
 ...will show the latest Articles posts for that Container. The snippet makes available all the placeholders in the default Template, which are:
 
-- \[\[+latest\_posts\]\] - This shows the "Latest Posts" widget on the right-hand side of the sample template.
-- \[\[+latest\_comments\]\] - This shows the "Latest Comments" widget on the right-hand side of the sample template.
-- \[\[+comments\_enabled\]\] - This will be 1 or 0, depending on if you enabled comments for this container.
-- \[\[+tags\]\] - This shows a list of the most commonly used tags across your blog.
-- \[\[+archives\]\] - This shows a list of the latest months (or years) in archive format that you've made posts to.
+- `[[+latest_posts]]` - This shows the "Latest Posts" widget on the right-hand side of the sample template.
+- `[[+latest_comments]]` This shows the "Latest Comments" widget on the right-hand side of the sample template.
+- `[[+comments_enabled]]` This will be 1 or 0, depending on if you enabled comments for this container.
+- `[[+tags]]` This shows a list of the most commonly used tags across your blog.
+- `[[+archives]]` This shows a list of the latest months (or years) in archive format that you've made posts to.
 
 Also, you can use the &placeholderPrefix property on the Articles snippet to add a prefix to the above placeholders, allowing you to have multiple Articles snippet calls on one page.

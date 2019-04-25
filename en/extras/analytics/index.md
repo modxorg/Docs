@@ -13,7 +13,7 @@ The tracking code templates [can be overridden with your own chunks](#Analytics-
 
 ## Requirements
 
-- MODx Revolution 2.1.5 or later
+- MODX Revolution 2.1.5 or later
 - PHP5 or later
 
 ## History
@@ -108,7 +108,7 @@ If you set up your site settings in a resource, you can use [getResourceField](e
 
 ## Use your own tracking codes
 
-Create your own chunks named "ua\_tracking" and "ga\_tracking". Optionnaly use the placeholders \[\[+ua\_options\]\] and \[\[+ga\_options\]\].
+Create your own chunks named "ua\_tracking" and "ga\_tracking". Optionnaly use the placeholders `[[+ua_options]]` and `[[+ga_options]]`.
 
 ## Troubleshooting
 

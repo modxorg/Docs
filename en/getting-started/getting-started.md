@@ -1,5 +1,5 @@
 ---
-title: "Successful Installation, Now What Do I Do?"
+title: "Successful installation, now what?"
 sortorder: "4"
 _old_id: "1688"
 _old_uri: "2.x/getting-started/installation/successful-installation,-now-what-do-i-do"

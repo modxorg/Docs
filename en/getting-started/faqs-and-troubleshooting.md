@@ -48,7 +48,7 @@ Further reading:
 - "What are the basic differences between Evolution and Revolution?" <http://modx.com/revolution/product/faq/#q1>
 - There's a number of big topics on the forums as well discussing evo and revo which may be interesting if you're looking for more in-depth discussing of the differences. As Revolution has been over three years in development, do check out the date something was posted to be sure they are still relevant.
 
-### 1.2. What different tags can I use? What is \[\[\*pagetitle\]\], \[\[Wayfinder\]\] etc?
+### 1.2. What different tags can I use? What is `[[*pagetitle]]`, `[[Wayfinder]]` etc?
 
 Check out the [Tag Syntax](building-sites/tag-syntax "Tag Syntax") documentation. You can find resource fields you can use in Revolution on the [Resources Documentation](building-sites/resources "Resources").
 

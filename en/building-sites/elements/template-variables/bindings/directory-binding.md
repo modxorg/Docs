@@ -18,9 +18,9 @@ When you create a Template Variable, place the following text into the **Input O
 
 Frequently, this is coupled with an Input Type of "DropDown List Menu" to allow the user to select a file from the list.
 
-In MODx Revolution, the path used for the @DIRECTORY binding is relative to the site's root. It is **not** an absolute file path. If you want to list files above your site's root, you must use the ".." syntax, e.g. **@DIRECTORY /../dir\_above\_root** This binding will work with or without a trailing slash in the directory name.
+In MODX Revolution, the path used for the @DIRECTORY binding is relative to the site's root. It is **not** an absolute file path. If you want to list files above your site's root, you must use the ".." syntax, e.g. **@DIRECTORY /../dir\_above\_root** This binding will work with or without a trailing slash in the directory name.
 
-If you are using the @DIRECTORY binding for your template variable \[\[\*myTV\]\], you can easily imagine that your template code could have some stuff in it like:
+If you are using the @DIRECTORY binding for your template variable `[[*myTV]]`, you can easily imagine that your template code could have some stuff in it like:
 
 ``` html
 <img src="[[*myTV]]" alt="" />

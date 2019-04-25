@@ -40,17 +40,17 @@ _old_uri: "revo/getrtimages"
 
 ### **Available Placeholders**
 
- | \[\[+src\]\]   | The "src" attribute of the img element.                           |
- | -------------- | ----------------------------------------------------------------- |
- | \[\[+alt\]\]   | The "alt" attribute...                                            |
- | \[\[+title\]\] | The "title" attribute...                                          |
- | \[\[+index\]\] | The value from the attribute defined in the "indexAttr" property. |
+ | `[[+src]]`   | The "src" attribute of the img element.                           |
+ | ------------ | ----------------------------------------------------------------- |
+ | `[[+alt]]`   | The "alt" attribute...                                            |
+ | `[[+title]]` | The "title" attribute...                                          |
+ | `[[+index]]` | The value from the attribute defined in the "indexAttr" property. |
 
 ### **Properties**
 
  | Property             | Description                                                                                  | Required? | Default                                       |
  | -------------------- | -------------------------------------------------------------------------------------------- | --------- | --------------------------------------------- |
- | **&id**              | ID of the Resource from which to get the TV value.                                           | Yes       | Current Resource: \[\[\*id\]\]                |
+ | **&id**              | ID of the Resource from which to get the TV value.                                           | Yes       | Current Resource: `[[*id]]`                   |
  | **&tv**              | Name of TV from which to extract images.                                                     | Yes       | null (snippet will return nothing if not set) |
  | **&tpl**             | Name of Chunk to use as output template.                                                     | No        | null (snippet will print an array of results) |
  | **&outputSeparator** | Separate each result with this character/string.                                             | No        | PHP\_EOL                                      |

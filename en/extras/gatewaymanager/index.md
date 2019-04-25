@@ -10,7 +10,7 @@ With the GatewayManager you're able to make your domains available for certain c
 
 ### Requirements
 
-- MODx Revolution 2.0.0-RC-2 or later
+- MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
 ### History

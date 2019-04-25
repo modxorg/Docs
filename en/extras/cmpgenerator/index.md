@@ -23,7 +23,7 @@ CMPGenerator was written by Josh Gulledge to simply creating and adding custom t
 
 ### Install
 
-Install CMPGenerator from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"). See the extras page: <http://modx.com/extras/package/cmpgenerator>.
+Install CMPGenerator from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"). See the extras page: <http://modx.com/extras/package/cmpgenerator>.
 
 ### Development and Bug Reporting
 

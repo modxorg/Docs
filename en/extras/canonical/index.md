@@ -8,7 +8,7 @@ _old_uri: "revo/canonical"
 
 The Canonical snippet puts a canonical link tag in the head section of your HTML. It executes only for Symlinks, and prevents search engines from penalizing you for duplicate content.
 
-\[\[!Canonical\]\]
+`[[!Canonical]]`
 
 ## Package Information
 

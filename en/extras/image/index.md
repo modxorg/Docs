@@ -6,11 +6,11 @@ _old_uri: "revo/image"
 
 ## What is Image+?
 
- Image+ is an advanced image custom template variable type for MODx Revolution. The dimensions for the uploaded image can (optionally) be configured to constrain a minimal width and/or height. The image crop could be forced to remain at a pre-set ratio. A graphical tool could be used to crop the image to the required dimensions/proportions.
+ Image+ is an advanced image custom template variable type for MODX Revolution. The dimensions for the uploaded image can (optionally) be configured to constrain a minimal width and/or height. The image crop could be forced to remain at a pre-set ratio. A graphical tool could be used to crop the image to the required dimensions/proportions.
 
 ## Requirements
 
-- MODx Revolution 2.2.4 or later
+- MODX Revolution 2.2.4 or later
 - PHP 5.3 or later
 - MODX Cropping Engine i.e. [pThumb](http://modx.com/extras/package/pthumb)
 

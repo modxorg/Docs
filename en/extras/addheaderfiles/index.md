@@ -12,12 +12,12 @@ _old_uri: "revo/addheaderfiles"
 
 ### Requirements
 
-- MODx Revolution 2.2.x or later
+- MODX Revolution 2.2.x or later
 - PHP5.2 or later
 
 ### Download
 
- It can be downloaded from within the MODx Revolution manager via [Package Management](display/revolution20/Package+Management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/addheaderfiles>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Package+Management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/addheaderfiles>
 
 ### Support and Bug Reporting
 

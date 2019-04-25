@@ -26,7 +26,7 @@ public function getContent(array $options = array()) {
 }
 ```
 
- This will automatically append the Copyright to the bottom of every content for the Resource - not the end of the [Template](building-sites/elements/templates "Templates"), but the end of the contents of the \[\[\*content\]\] placeholder.
+ This will automatically append the Copyright to the bottom of every content for the Resource - not the end of the [Template](building-sites/elements/templates "Templates"), but the end of the contents of the `[[*content]]` placeholder.
 
 ## Next Steps
 

@@ -19,7 +19,7 @@ MoneyBird was written by Bert Oost as a MoneyBird invoice listing Extra, and fir
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/moneybird>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/moneybird>
 
 ### Development and Bug Reporting
 

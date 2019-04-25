@@ -5,25 +5,25 @@ _old_id: "302"
 _old_uri: "2.x/making-sites-with-modx/tag-syntax"
 ---
 
-To simplify parsing logic, improve parsing performance and avoid confusion with many new adopters, all tags are now of a single format, differentiated by a token or a set of tokens which appear before a string which identifies the Content Element or Content Tag to be processed; e.g. \[\[_tokenIdentifier_\]\].
+To simplify parsing logic, improve parsing performance and avoid confusion with many new adopters, all tags are now of a single format, differentiated by a token or a set of tokens which appear before a string which identifies the Content Element or Content Tag to be processed; e.g. `[[_tokenIdentifier_]]`.
 
 ## Tag Format Changes for Content Elements and Content Tags
 
-| **_Content Elements_**                                                                | Evolution (Old)         |     | Revolution (New)                                                                                     | Example for Revolution                                                                   |
-| ------------------------------------------------------------------------------------- | ----------------------- | --- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [Templates](building-sites/elements/templates "Templates")                            | no tag representation   |     | no tag representation                                                                                |                                                                                          |
-| Resource Fields                                                                       | \[\*_field_\*\]         |     | \[\[\*field\]\]                                                                                      | \[\[\*pagetitle\]\]                                                                      |
-| [Template Variables](building-sites/elements/template-variables "Template Variables") | \[\*_templatevar_\*\]   |     | \[\[\*_templatevar_\]\]                                                                              | \[\[\*tags\]\]                                                                           |
-| [Chunks](building-sites/elements/chunks "Chunks")                                     | {{_chunk_ }}            |     | \[\[$_chunk_\]\]                                                                                     | \[\[$header\]\]                                                                          |
-| [Snippets](extending-modx/snippets "Snippets")                                        | \[\[_snippet_\]\]       |     | \[\[_snippet_\]\]                                                                                    | \[\[getResources\]\]                                                                     |
-| [Plugins](extending-modx/plugins "Plugins")                                           | no tag representation   |     | no tag representation                                                                                |                                                                                          |
-| [Modules](/evolution/1.0/developers-guide/modules "Modules")                          | no tag representation   |     | does not exist in Revolution, use [CMPs](extending-modx/custom-manager-pages "Custom Manager Pages") |                                                                                          |
-| **_Content Tags_**                                                                    |                         |     |                                                                                                      |                                                                                          |
-| Placeholders                                                                          | \[+_placeholder_+\]     |     | \[\[+_placeholder_\]\]                                                                               | \[\[+modx.user.id\]\]                                                                    |
-| [Links](building-sites/resources "Resources")                                         | \[~_link_~\]            |     | \[\[~_link_\]\]                                                                                      | \[\[~\[\[\*id\]\]? &scheme=`full`\]\]                                                    |
-| [System Settings](building-sites/settings "System Settings")                          | \[(_system\_setting_)\] |     | \[\[++_system\_setting_\]\]                                                                          | \[\[++site\_start\]\]                                                                    |
-| [Language](extending-modx/internationalization "Internationalization")                | no tag representation   |     | \[\[%_language\_string\_key_\]\]                                                                     | \[\[%LanguageStringKey? &language=`en` &namespace=`NameSpaceName` &topic=`TopicName`\]\] |
-| Comment (see note below)                                                              |                         |     | \[\[-this is a comment\]\]                                                                           |                                                                                          |
+| **_Content Elements_**                                                                | Evolution (Old)         | Revolution (New)                                                                                     | Example for Revolution                                                                 |
+| ------------------------------------------------------------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [Templates](building-sites/elements/templates "Templates")                            | no tag representation   | no tag representation                                                                                |                                                                                        |
+| Resource Fields                                                                       | \[\*_field_\*\]         | `[[*field]]`                                                                                         | `[[*pagetitle]]`                                                                       |
+| [Template Variables](building-sites/elements/template-variables "Template Variables") | \[\*_templatevar_\*\]   | `[[*_templatevar_]]`                                                                                 | `[[*tags]]`                                                                            |
+| [Chunks](building-sites/elements/chunks "Chunks")                                     | {{_chunk_ }}            | `[[$_chunk_]]`                                                                                       | `[[$header]]`                                                                          |
+| [Snippets](extending-modx/snippets "Snippets")                                        | `[[_snippet_]]`         | `[[_snippet_]]`                                                                                      | `[[getResources]]`                                                                     |
+| [Plugins](extending-modx/plugins "Plugins")                                           | no tag representation   | no tag representation                                                                                |                                                                                        |
+| [Modules](/evolution/1.0/developers-guide/modules "Modules")                          | no tag representation   | does not exist in Revolution, use [CMPs](extending-modx/custom-manager-pages "Custom Manager Pages") |                                                                                        |
+| **_Content Tags_**                                                                    |                         |                                                                                                      |                                                                                        |
+| Placeholders                                                                          | \[+_placeholder_+\]     | `[[+_placeholder_]]`                                                                                 | `[[+modx.user.id]]`                                                                    |
+| [Links](building-sites/resources "Resources")                                         | \[~_link_~\]            | `[[~_link_]]`                                                                                        | `[[~`[[*id]]`? &scheme=`full`]]`                                                       |
+| [System Settings](building-sites/settings "System Settings")                          | \[(_system\_setting_)\] | `[[++_system_setting_]]`                                                                             | `[[++site\_start]]`                                                                    |
+| [Language](extending-modx/internationalization "Internationalization")                | no tag representation   | `[[%_language_string\_key_]]`                                                                        | `[[%LanguageStringKey? &language=`en` &namespace=`NameSpaceName` &topic=`TopicName`]]` |
+| Comment (see note below)                                                              |                         | `[[-this is a comment]]`                                                                             |                                                                                        |
 
 Adopting this simplified format allows the new parser to be fully-recursive, following a source-order mechanism that does not depend on regular expressions.
 
@@ -43,7 +43,7 @@ As of MODX Revolution 2.2 any tag found that starts with a dash (-) is ignored b
 
 A tag can contain many sub-parts within it. Below is illustrated on multiple lines a tag broken down into each part and explained:
 
-**\[\[** _(opening tags)_
+**```[[** _(opening tags)_
 **!** _(optional non-cacheable flag)_
 **elementToken** _(optional token identifying the element type if it's not a snippet, $=chunk, \*=resource field/tv, +=placeholder, etc.)_
 **elementName**
@@ -51,7 +51,7 @@ A tag can contain many sub-parts within it. Below is illustrated on multiple lin
 **:filterName=`modifier`**:... _(optional one or more output filters)_
 **?** _(required if properties follow, indicates beginning of property string; optional otherwise)_
 **&propertyName=`propertyValue`** &... _(optional; any additional properties separated by &)_
-**\]\]** _(closing tags)_
+**]]```** _(closing tags)_
 
 Put these all together, and a tag with all valid parts might look like this:
 
@@ -99,9 +99,9 @@ The syntax for properties follows the same syntax as 096/Evolution snippet prope
 
 In Evolution, Snippets that need to be processed with each request should be on an uncached page or the Snippet itself should be called uncached: \[!snippet!\]
 
-In Revolution, any tag can be called uncached by inserting an exclamation point immediately after the double-bracket: \[\[!snippet\]\], \[\[!$chunk\]\], \[\[!+placeholder\]\], \[\[!\*template\_var\]\], etc.
+In Revolution, any tag can be called uncached by inserting an exclamation point immediately after the double-bracket: `[[!snippet]]`, `[[!$chunk]]`, `[[!+placeholder]]`, `[[!*template_var]]`, etc.
 
-If you have some kind of advanced setup in which the site\_url setting is being set per request, but your \[\[~\[\[\*id\]\]\]\] links are not being generated properly, remember that any tag can be called uncached, including the link or anchor tag: \[\[!~\[\[\*id\]\]\]\]
+If you have some kind of advanced setup in which the site\_url setting is being set per request, but your `[[~`[[*id]]`]]` links are not being generated properly, remember that any tag can be called uncached, including the link or anchor tag: `[[!~`[[*id]]`]]`
 
 However, you will only need that when the site\_url is set dynamically and can differ per request. Any normal usage can be cached.
 

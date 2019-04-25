@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 
 ## What is MODExt?
 
-MODExt is an extension of the [ExtJS3 JavaScript Framework](http://www.sencha.com/products/extjs) that provides extra, customized-to-MODx functionality. It drives MODx Revolution's manager interface, and it is also available to developers wanting to use it in their CMP development. A developer simply needs to use Ext.extend on the MODx.\* class to instantly get the benefit of custom MODExt components.
+MODExt is an extension of the [ExtJS3 JavaScript Framework](http://www.sencha.com/products/extjs) that provides extra, customized-to-MODx functionality. It drives MODX Revolution's manager interface, and it is also available to developers wanting to use it in their CMP development. A developer simply needs to use Ext.extend on the MODx.\* class to instantly get the benefit of custom MODExt components.
 
 Why Ext JS? There are lots of Javascript libraries and frameworks out there, and all of them let you manipulate the DOM, but only a couple of them offer a mature UI library (the Yahoo User Interface and Ext JS are the biggest players in the field). Ext JS is well suited to creating a rich internet application such as the MODX manager.
 

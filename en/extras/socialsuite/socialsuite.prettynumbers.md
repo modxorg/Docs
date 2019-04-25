@@ -10,7 +10,7 @@ prettyNumbers is an [output filter](/display/revolution20/Input+and+Output+Filte
 
 ## Basic Usage
 
-Assuming \[\[+count\]\] returns a number, you just add the prettyNumbers output filter to it:
+Assuming `[[+count]]` returns a number, you just add the prettyNumbers output filter to it:
 
 ``` php
 [[+count:prettyNumbers]]

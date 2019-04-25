@@ -6,13 +6,13 @@ _old_uri: "revo/breadcrumb/"
 
 ## What is BreadCrumb?
 
- Breadcrumb is a snippet for MODx Revolution, inspired by the [Breadcrumbs](extras/breadcrumbs "Breadcrumbs") snippet.
+ Breadcrumb is a snippet for MODX Revolution, inspired by the [Breadcrumbs](extras/breadcrumbs "Breadcrumbs") snippet.
 
  As the original [Breadcrumbs](extras/breadcrumbs "Breadcrumbs"), this snippet will create a breadcrumb navigation (no kidding !! ) but also add some new features like template properties or specific resource ID property.
 
 ### Requirements
 
-- MODx Revolution 2.0.x or later
+- MODX Revolution 2.0.x or later
 - PHP5 or later
 
 ### Public Releases
@@ -34,7 +34,7 @@ _old_uri: "revo/breadcrumb/"
 
 ### Download
 
- It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/breadcrumb>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/breadcrumb>
 
 ### Support, Comments, Development and Bug Reporting
 

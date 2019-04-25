@@ -6,11 +6,11 @@ _old_uri: "revo/breadcrumbs"
 
 ## What is Breadcrumbs?
 
-Breadcrumbs is a simple navigation trail [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODx Revolution. With it, you can easily add a simple breadcrumb trail anywhere in your pages.
+Breadcrumbs is a simple navigation trail [Snippet](developing-in-modx/basic-development/snippets "Snippets") for MODX Revolution. With it, you can easily add a simple breadcrumb trail anywhere in your pages.
 
 ## Requirements
 
-- MODx Revolution 2.0.0-beta5 or later
+- MODX Revolution 2.0.0-beta5 or later
 - PHP5 or later
 
 ## History
@@ -37,7 +37,7 @@ Breadcrumbs has been around since the start of MODx 0.9.1, or MODx Evolution, wi
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/54>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/54>
 
 ## Usage
 

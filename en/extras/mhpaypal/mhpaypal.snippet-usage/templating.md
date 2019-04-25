@@ -45,15 +45,15 @@ Default:
 
 Available Placeholders
 
-| Placeholder \[\[+name here\]\] | Description                                                                                                                                      |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| config.\_\_\_                  | The value of the snippet property identified with the \_\_. See \[mhPayPal\] for all snippet properties available.                               |
-| action                         | An URL to the current page to make sure it posts to itself.                                                                                      |
-| amount                         | The filled in amount (if any).                                                                                                                   |
-| currency                       | The chosen currency (if any).                                                                                                                    |
-| currency\_CURRENCYKEY          | The chosen currency key will get this placeholder set to 1, for example currency\_USD. This can help with selectboxes like in the default above. |
-| \_\_\_\_\_.error               | Where \_\_\_\_\_ is the name of a field, this placeholder contains an error for it.                                                              |
-| errors                         | A collection of errors as fieldname: error, separated by the &errorSeparator property.                                                           |
+| Placeholder `[[+name here]]` | Description                                                                                                                                      |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| config.\_\_\_                | The value of the snippet property identified with the \_\_. See \[mhPayPal\] for all snippet properties available.                               |
+| action                       | An URL to the current page to make sure it posts to itself.                                                                                      |
+| amount                       | The filled in amount (if any).                                                                                                                   |
+| currency                     | The chosen currency (if any).                                                                                                                    |
+| currency\_CURRENCYKEY        | The chosen currency key will get this placeholder set to 1, for example currency\_USD. This can help with selectboxes like in the default above. |
+| \_\_\_\_\_.error             | Where \_\_\_\_\_ is the name of a field, this placeholder contains an error for it.                                                              |
+| errors                       | A collection of errors as fieldname: error, separated by the &errorSeparator property.                                                           |
 
 ### Examples
 
@@ -69,9 +69,9 @@ Default:
 
 Placeholders:
 
-| Placeholder \[\[+name here\]\] | Description        |
-| ------------------------------ | ------------------ |
-| error                          | The error message. |
+| Placeholder `[[+name here]]` | Description        |
+| ---------------------------- | ------------------ |
+| error                        | The error message. |
 
 ## successTpl
 
@@ -84,6 +84,6 @@ Default:
 </div>
 ```
 
-| Placeholder \[\[+name here\]\] | Description             |
-| ------------------------------ | ----------------------- |
-| Any data fields' name          | The data fields' value. |
+| Placeholder `[[+name here]]` | Description             |
+| ---------------------------- | ----------------------- |
+| Any data fields' name        | The data fields' value. |

@@ -21,7 +21,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-
   - name: ResourceMediaPath
   - source type: Filesystem
 - Update this media source
-  - basepath and baseurl: \[\[migxResourceMediaPath? &pathTpl=`assets/resourceimages/{id}/`\]\]
+  - basepath and baseurl: `[[migxResourceMediaPath? &pathTpl=`assets/resourceimages/{id}/`]]`
   - if you add the &createFolder=`1` property it will automatically create the {id} folder if it doesn't already exist.
 - Add three new settings to the media source:
   - thumbX: 200

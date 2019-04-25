@@ -16,7 +16,7 @@ mxCalendar is a extra created for both Evolution and Revolution to allow for ful
 
 ### ModX Revolution
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/mxcalendar2>. When using the Package Management for direct download you can simply click on the "Install" button after download completes. If you choose to download from the extras site you will then need to FTP, or otherwise move, the transport package zip file to your "/core/packages/" folder first. After you have copied the transport zip file to your packages folder you will then need to launch Package Management from inside the Manager (ver 2.2.x) and then select the down arrow next to "Download Extras" and select the last option "Search Locally for Packages" and then find "mxcalendars" in the list of packages and choose "install".
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/mxcalendar2>. When using the Package Management for direct download you can simply click on the "Install" button after download completes. If you choose to download from the extras site you will then need to FTP, or otherwise move, the transport package zip file to your "/core/packages/" folder first. After you have copied the transport zip file to your packages folder you will then need to launch Package Management from inside the Manager (ver 2.2.x) and then select the down arrow next to "Download Extras" and select the last option "Search Locally for Packages" and then find "mxcalendars" in the list of packages and choose "install".
 
 ### ModX Evolution
 
@@ -54,7 +54,7 @@ In the manager menu, select **Components** -> **mxCalendar**. Select the **Event
 
 Select a context. Leave blank for all contexts. Give the event a name, select a calendar to associate the event with, a category, and start and end date/times.
 
-Enter your event description in the rich text editor. This populates the \[\[\*content\]\] for the event detail view.
+Enter your event description in the rich text editor. This populates the `[[*content]]` for the event detail view.
 ![](/download/attachments/38994084/mxCalendarAddEvent.jpg?version=2&modificationDate=1352869709000)
 
 In the Location tab, name the location and enter the address. Check "Display Map" to output a Google Map for the address that you entered.

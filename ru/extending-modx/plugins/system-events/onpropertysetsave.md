@@ -1,12 +1,11 @@
 ---
 title: "OnPropertySetSave"
-_old_id: "454"
 translation: "extending-modx/plugins/system-events/onpropertysetsave"
 ---
 
 ## Событие: OnPropertySetSave
 
-Fires right after a Property Set is saved.
+Срабатывает сразу после сохранения набора свойств.
 
 Служба: 1 - Parser Service Events
 

@@ -40,19 +40,19 @@ getDate can be called cached or un-cached.
  | ------ | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------- |
  | offset | The period of time to add or subtract from the current timestamp. Use relative date/time formats that the strtotime() parser understands. | now           | 1.0.0-pl         |
 
-| Example Offset | Example Snippet Call                 |
-| -------------- | ------------------------------------ |
-| +5 Hours       | \[\[!getDate? &offset=`5 hour`\]\]   |
-| +4 Days        | \[\[!getDate? &offset=`4 day`\]\]    |
-| +3 Weeks       | \[\[!getDate? &offset=`3 weeks`\]\]  |
-| +2 Months      | \[\[!getDate? &offset=`2 month`\]\]  |
-| +1 Year        | \[\[!getDate? &offset=`1 year`\]\]   |
+| Example Offset | Example Snippet Call               |
+| -------------- | ---------------------------------- |
+| +5 Hours       | `[[!getDate? &offset=`5 hour`]]`   |
+| +4 Days        | `[[!getDate? &offset=`4 day`]]`    |
+| +3 Weeks       | `[[!getDate? &offset=`3 weeks`]]`  |
+| +2 Months      | `[[!getDate? &offset=`2 month`]]`  |
+| +1 Year        | `[[!getDate? &offset=`1 year`]]`   |
 |                |
-| -5 Hours       | \[\[!getDate? &offset=`-5 hour`\]\]  |
-| -4 Days        | \[\[!getDate? &offset=`-4 day`\]\]   |
-| -3 Weeks       | \[\[!getDate? &offset=`-3 weeks`\]\] |
-| -2 Months      | \[\[!getDate? &offset=`-2 month`\]\] |
-| -1 Year        | \[\[!getDate? &offset=`-1 year`\]\]  |
+| -5 Hours       | `[[!getDate? &offset=`-5 hour`]]`  |
+| -4 Days        | `[[!getDate? &offset=`-4 day`]]`   |
+| -3 Weeks       | `[[!getDate? &offset=`-3 weeks`]]` |
+| -2 Months      | `[[!getDate? &offset=`-2 month`]]` |
+| -1 Year        | `[[!getDate? &offset=`-1 year`]]`  |
 
 For all relative date/time formats supported by strtotime(), please see: <http://www.php.net/manual/en/datetime.formats.relative.php>
 
@@ -62,12 +62,12 @@ For all relative date/time formats supported by strtotime(), please see: <http:/
 
 getDate outputs a unix timestamp. To format this timestamp into a human friendly format, please use the built in [MODX Output Filter 'date'](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)#InputandOutputFilters(OutputModifiers)-Stringoutputmodifiers).
 
- | Example Output            | The Filter Parameters                 |
- | ------------------------- | ------------------------------------- |
- | 22 November 2013          | \[\[!getDate:date=`%e %B %Y`\]\]      |
- | Fri Nov 22, 2013          | \[\[!getDate:date=`%a %b %e, %Y`\]\]  |
- | Friday, November 22, 2013 | \[\[!getDate:date=`%A, %B %e, %Y`\]\] |
- | 2013-11-22                | \[\[!getDate:date=`%Y-%m-%d`\]\]      |
+ | Example Output            | The Filter Parameters               |
+ | ------------------------- | ----------------------------------- |
+ | 22 November 2013          | `[[!getDate:date=`%e %B %Y`]]`      |
+ | Fri Nov 22, 2013          | `[[!getDate:date=`%a %b %e, %Y`]]`  |
+ | Friday, November 22, 2013 | `[[!getDate:date=`%A, %B %e, %Y`]]` |
+ | 2013-11-22                | `[[!getDate:date=`%Y-%m-%d`]]`      |
 
 For all date formatting parameters, please see: [revolution/2.x/making-sites-with-modx/commonly-used-template-tags/date-formats#DateFormats-AllParameters](making-sites-with-modx/commonly-used-template-tags/date-formats#DateFormats-AllParameters)
 

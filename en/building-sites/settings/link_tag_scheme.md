@@ -11,7 +11,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/link_tag_scheme"
 **Default**: -1
 **Available In:** 2.1+
 
- URL generation scheme for tag \[\[~id\]\].
+ URL generation scheme for tag `[[~id]]`.
 
  The available schemes are:
 

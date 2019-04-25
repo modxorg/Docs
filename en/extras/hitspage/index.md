@@ -18,7 +18,7 @@ HitsPage was written by Valentine Rasulov and released October 27th, 2011
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here:
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here:
 
 <http://modx.com/extras/package/hitspage>
 

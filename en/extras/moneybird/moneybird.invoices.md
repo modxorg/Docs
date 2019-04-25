@@ -27,7 +27,7 @@ MoneyBirdInvoices comes with some configuration properties you can set to adjust
 | Name            | Description                                                                                                          | Default    |
 | --------------- | -------------------------------------------------------------------------------------------------------------------- | ---------- |
 | tpl             | (Req.) The template chunk for each single invoice entry                                                              | mbInvoice  |
-| outerTpl        | (Opt.) The outer template for all invoice entries in the list (Use \[\[+wrapper\]\])                                 | mbInvoices |
+| outerTpl        | (Opt.) The outer template for all invoice entries in the list (Use `[[+wrapper]]`)                                   | mbInvoices |
 | toPlaceholder   | (Opt.) A placeholder name to set with the output instead of returning it                                             |            |
 | outputSeparator | (Opt.) How to separate the content from the next. Default to newline ("\\n")                                         |            |
 | limit           | (Opt.) To limit the results. Only applied when greater then 0.                                                       | 0          |

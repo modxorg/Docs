@@ -10,7 +10,7 @@ Rampart is a robust anti-spam tool for MODX Revolution. It can be used to help p
 
 ## Requirements
 
-- MODx Revolution 2.0.7 or later
+- MODX Revolution 2.0.7 or later
 - PHP5 or later
 - mcrypt PHP extension
 - [Login](extras/login "Login") Extra, version 1.5.2 or later
@@ -21,7 +21,7 @@ Rampart was written by [Shaun McCormick](/display/~splittingred) and first relea
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via \[Package Management\], or from the MODx Extras Repository, here: <http://modx.com/extras/package/rampart>
+It can be downloaded from within the MODX Revolution manager via \[Package Management\], or from the MODx Extras Repository, here: <http://modx.com/extras/package/rampart>
 
 ### Development and Bug Reporting
 

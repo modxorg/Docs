@@ -14,16 +14,16 @@ _old_uri: "revo/eletters/eletters.templates"
 
 All MODX tags and elements as you would in a normal template are available. These placeholders are also available within any TV or the content area.
 
-Example usage: \[\[+manageSubscriptionsUrl\]\]
+Example usage: `[[+manageSubscriptionsUrl]]`
 
-| Name                                                        | Description                                                                                                                                                                               |
-| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| trackingImage                                               | Use \[\[+trackingImage\]\] for an image, you can also put a custom image/banner doing this: \[\[+trackingImage\]\]image=test.jpg then put the image in assets/components/eletters/images/ |
-| Example useage: <img src="\[\[+trackingImage\]\]" alt="" /> |
-| manageSubscriptionsUrl                                      | The URL that allows the subscriber to manager their subscriptions, the generated links has unique subscriber code                                                                         |
-| unsubscribeUrl                                              | The URL that allows the subscriber to unsubscribe from your eletters, the generated links has unique subscriber code                                                                      |
-| manageSubscriptionsID                                       | The page ID of the manage subscriptions page                                                                                                                                              |
-| unsubscribeID                                               | The page ID of the unsubscribe page                                                                                                                                                       |
+| Name                                                      | Description                                                                                                                                                                           |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| trackingImage                                             | Use `[[+trackingImage]]` for an image, you can also put a custom image/banner doing this: `[[+trackingImage]]`image=test.jpg then put the image in assets/components/eletters/images/ |
+| Example useage: <img src="`[[+trackingImage]]`" alt="" /> |
+| manageSubscriptionsUrl                                    | The URL that allows the subscriber to manager their subscriptions, the generated links has unique subscriber code                                                                     |
+| unsubscribeUrl                                            | The URL that allows the subscriber to unsubscribe from your eletters, the generated links has unique subscriber code                                                                  |
+| manageSubscriptionsID                                     | The page ID of the manage subscriptions page                                                                                                                                          |
+| unsubscribeID                                             | The page ID of the unsubscribe page                                                                                                                                                   |
 
 ### Subscriber Personal Information Placeholders
 

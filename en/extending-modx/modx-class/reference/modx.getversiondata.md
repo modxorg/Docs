@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::getVersionData
 
-Gets the modX core version data. The array contains the following keys (examples for version "MODx Revolution 2.0.0-beta-3"):
+Gets the modX core version data. The array contains the following keys (examples for version "MODX Revolution 2.0.0-beta-3"):
 
 - **version** - The current version number, eg: 2
 - **major\_version** - The current major version number, eg: 0
@@ -14,7 +14,7 @@ Gets the modX core version data. The array contains the following keys (examples
 - **patch\_level** - The current release level, eg: 'beta-3'
 - **code\_name** - The code name for the product, eg: 'Revolution'
 - **full\_version** - A compiled full version name, eg: '2.0.0-beta-3'
-- **full\_appname** - The entire version name, eg: 'MODx Revolution 2.0.0-beta-3'
+- **full\_appname** - The entire version name, eg: 'MODX Revolution 2.0.0-beta-3'
 
 ## Syntax
 

@@ -24,15 +24,15 @@ You assign the properties mentioned below to the mhPayPal snippet itself.
 
 When using the email2 hook, make sure to append a "2" to the property, eg emailTo becomes emailTo2.
 
-| &property     | Description                                                                                                                                                             | Default value                    | Version |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | ------- |
-| emailTpl      | \[string\] Name of a chunk to use for the email contents.                                                                                                               | mhPayPalEmail (file-based)       | 1.1.0   |
-| emailSubject  | \[string\] The subject of the email to send. Can include all properties included in the data returned.                                                                  | Thank you for your Donation!     | 1.1.0   |
-| emailTo       | \[string\] Comma separated list of emails to send the email to. Can use \[\[+email\]\] in this property, which will be replaced with the email as received from PayPal. | The "emailsender" system setting | 1.1.0   |
-| emailCC       | \[string\] Comma separated list of emails to CC the email to.                                                                                                           |                                  | 1.1.0   |
-| emailBCC      | \[string\] Comma separated list of emails to BCC the email to.                                                                                                          |                                  | 1.1.0   |
-| emailFrom     | \[string\] Email address to set up as "from" email.                                                                                                                     | The "emailsender" system setting | 1.1.0   |
-| emailFromName | \[string\] The name to attach to the "from" email.                                                                                                                      | The "site\_name" system setting. | 1.1.0   |
+| &property     | Description                                                                                                                                                           | Default value                    | Version |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- | ------- |
+| emailTpl      | \[string\] Name of a chunk to use for the email contents.                                                                                                             | mhPayPalEmail (file-based)       | 1.1.0   |
+| emailSubject  | \[string\] The subject of the email to send. Can include all properties included in the data returned.                                                                | Thank you for your Donation!     | 1.1.0   |
+| emailTo       | \[string\] Comma separated list of emails to send the email to. Can use `[[+email]]` in this property, which will be replaced with the email as received from PayPal. | The "emailsender" system setting | 1.1.0   |
+| emailCC       | \[string\] Comma separated list of emails to CC the email to.                                                                                                         |                                  | 1.1.0   |
+| emailBCC      | \[string\] Comma separated list of emails to BCC the email to.                                                                                                        |                                  | 1.1.0   |
+| emailFrom     | \[string\] Email address to set up as "from" email.                                                                                                                   | The "emailsender" system setting | 1.1.0   |
+| emailFromName | \[string\] The name to attach to the "from" email.                                                                                                                    | The "site\_name" system setting. | 1.1.0   |
 
 ### Redirect
 

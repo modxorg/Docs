@@ -53,7 +53,7 @@ _old_uri: "revo/formit/formit.validators"
 [[!+fi.validation_error_message]]
 ```
 
- This will contain a validation error message, which can be set using the &validationErrorMessage property, and using \[\[+errors\]\] in the property value, which will be replaced by all the field errors.
+ This will contain a validation error message, which can be set using the &validationErrorMessage property, and using `[[+errors]]` in the property value, which will be replaced by all the field errors.
 
  Also, there is a 1/0 placeholder as well:
 

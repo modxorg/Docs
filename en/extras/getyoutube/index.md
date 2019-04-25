@@ -77,38 +77,38 @@ _old_uri: "revo/getyoutube"
 
 ### Video Placeholders
 
- | Placeholder                  | Description                                                                                     | Mode            | Added in Version |
- | ---------------------------- | ----------------------------------------------------------------------------------------------- | --------------- | ---------------- |
- | \[\[+id\]\]                  | Video ID                                                                                        | N/A             | 1.0.0-pl         |
- | \[\[+title\]\]               | Video title                                                                                     | N/A             | 1.0.0-pl         |
- | \[\[+description\]\]         | The description for the video                                                                   | N/A             | 1.0.0-pl         |
- | \[\[+url\]\]                 | URL to the videos YouTube Page                                                                  | N/A             | 1.0.0-pl         |
- | \[\[+embed\_url\]\]          | URL to use when embedding videos                                                                | N/A             | 1.1.0-pl         |
- | \[\[+publish\_date\]\]       | The date/time the video was published ( [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format) | N/A             | 1.0.0-pl         |
- | \[\[+thumbnail\_small\]\]    | URL to a small version of the thumbnail (120 x 90px)                                            | N/A             | 1.0.0-pl         |
- | \[\[+thumbnail\_medium\]\]   | URL to a medium version of the thumbnail (320 x 180px)                                          | N/A             | 1.0.0-pl         |
- | \[\[+thumbnail\_large\]\]    | URL to a large version of the thumbnail (480 x 360px)                                           | N/A             | 1.0.0-pl         |
- | \[\[+thumbnail\_standard\]\] | URL to a standard version of the thumbnail (640 x 480px)                                        | video, playlist | 1.1.1-pl         |
- | \[\[+thumbnail\_maxres\]\]   | URL to a max resolution version of the thumbnail (1280 x 720px)                                 | video, playlist | 1.1.1-pl         |
- | \[\[+channel\_title\]\]      | Channel title                                                                                   | N/A             | 1.0.0-pl         |
- | \[\[+playlist\_id\]\]        | Playlist ID                                                                                     | playlist        | 1.1.0-pl         |
- | \[\[+duration\]\]            | Duration of the video ( [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) format)    | video           | 1.0.0-pl         |
- | \[\[+viewCount\]\]           | # of views                                                                                      | video           | 1.0.0-pl         |
- | \[\[+likeCount\]\]           | # of likes                                                                                      | video           | 1.0.0-pl         |
- | \[\[+dislikeCount\]\]        | # of dislikes                                                                                   | video           | 1.0.0-pl         |
- | \[\[+favoriteCount\]\]       | # of favorites                                                                                  | video           | 1.0.0-pl         |
- | \[\[+commentCount\]\]        | # of comments                                                                                   | video           | 1.0.0-pl         |
- | \[\[+tags\]\]                | Comma separated list of tags                                                                    | video           | 1.2.0-pl         |
+ | Placeholder               | Description                                                                                     | Mode            | Added in Version |
+ | ------------------------- | ----------------------------------------------------------------------------------------------- | --------------- | ---------------- |
+ | `[[+id]]`                 | Video ID                                                                                        | N/A             | 1.0.0-pl         |
+ | `[[+title]]`              | Video title                                                                                     | N/A             | 1.0.0-pl         |
+ | `[[+description]]`        | The description for the video                                                                   | N/A             | 1.0.0-pl         |
+ | `[[+url]]`                | URL to the videos YouTube Page                                                                  | N/A             | 1.0.0-pl         |
+ | `[[+embed_url]]`          | URL to use when embedding videos                                                                | N/A             | 1.1.0-pl         |
+ | `[[+publish_date]]`       | The date/time the video was published ( [ISO 8601](https://www.w3.org/TR/NOTE-datetime) format) | N/A             | 1.0.0-pl         |
+ | `[[+thumbnail_small]]`    | URL to a small version of the thumbnail (120 x 90px)                                            | N/A             | 1.0.0-pl         |
+ | `[[+thumbnail_medium]]`   | URL to a medium version of the thumbnail (320 x 180px)                                          | N/A             | 1.0.0-pl         |
+ | `[[+thumbnail_large]]`    | URL to a large version of the thumbnail (480 x 360px)                                           | N/A             | 1.0.0-pl         |
+ | `[[+thumbnail_standard]]` | URL to a standard version of the thumbnail (640 x 480px)                                        | video, playlist | 1.1.1-pl         |
+ | `[[+thumbnail_maxres]]`   | URL to a max resolution version of the thumbnail (1280 x 720px)                                 | video, playlist | 1.1.1-pl         |
+ | `[[+channel_title]]`      | Channel title                                                                                   | N/A             | 1.0.0-pl         |
+ | `[[+playlist_id]]`        | Playlist ID                                                                                     | playlist        | 1.1.0-pl         |
+ | `[[+duration]]`           | Duration of the video ( [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) format)    | video           | 1.0.0-pl         |
+ | `[[+viewCount]]`          | # of views                                                                                      | video           | 1.0.0-pl         |
+ | `[[+likeCount]]`          | # of likes                                                                                      | video           | 1.0.0-pl         |
+ | `[[+dislikeCount]]`       | # of dislikes                                                                                   | video           | 1.0.0-pl         |
+ | `[[+favoriteCount]]`      | # of favorites                                                                                  | video           | 1.0.0-pl         |
+ | `[[+commentCount]]`       | # of comments                                                                                   | video           | 1.0.0-pl         |
+ | `[[+tags]]`               | Comma separated list of tags                                                                    | video           | 1.2.0-pl         |
 
  If you require additional video data as placeholders, please request here: <https://github.com/tasianmedia/getYoutube/issues>.
 
 ### Other Placeholders
 
- | Placeholder       | Description                                                              | Mode | Added in Version |
- | ----------------- | ------------------------------------------------------------------------ | ---- | ---------------- |
- | \[\[+total\]\]    | Returns the total number of Videos in the output                         | N/A  | 1.0.0-pl         |
- | \[\[+nextPage\]\] | URL to the next 50 results in the output (See pagination docs below)     | N/A  | 1.0.0-pl         |
- | \[\[+prevPage\]\] | URL to the previous 50 results in the output (See pagination docs below) | N/A  | 1.0.0-pl         |
+ | Placeholder     | Description                                                              | Mode | Added in Version |
+ | --------------- | ------------------------------------------------------------------------ | ---- | ---------------- |
+ | `[[+total]]`    | Returns the total number of Videos in the output                         | N/A  | 1.0.0-pl         |
+ | `[[+nextPage]]` | URL to the next 50 results in the output (See pagination docs below)     | N/A  | 1.0.0-pl         |
+ | `[[+prevPage]]` | URL to the previous 50 results in the output (See pagination docs below) | N/A  | 1.0.0-pl         |
 
 ## Examples
 

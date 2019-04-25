@@ -336,7 +336,7 @@ These are PHP representations of the default Properties for our Snippet. Let's l
 
 - **name** - This is the name, or key, of the property. We've got tpl, sort, and dir. For example, in our tpl property, we're telling it to default to 'rowTpl'. When someone wants to use the property, it would look like this in their snippet call:
 
-> \[\[Doodles? &tpl=`rowTpl`\]\]
+> `[[Doodles? &tpl=`rowTpl`]]`
 
 - **desc** - The description of our property. This can either be the actual description, or, if the 'lexicon' attribute on this property is set, a Lexicon key. We've got it as a Lexicon key, because we're going to i18n our properties.
 - **type** - This is the 'xtype' of the property. Currently, the 4 available values are "textfield", "textarea", "combo-boolean" (Yes/No) and "list". We've got two textfields here, and a list type.
@@ -529,7 +529,7 @@ Extra: Doodles
 --------------------
 Version: 1.0
 
-A simple demo extra for creating robust 3rd-Party Components in MODx Revolution.
+A simple demo extra for creating robust 3rd-Party Components in MODX Revolution.
 ```
 
 Now that we've got our docs files, let's go to the end of our build.transport.php script, right before the $builder->pack() part, and add these lines:

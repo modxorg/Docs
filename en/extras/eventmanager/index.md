@@ -16,7 +16,7 @@ EventManager is an addon for MODX Revolution which can be used to manage a list 
 
 ## Requirements
 
-- MODx Revolution 2.0.0-beta5 or later
+- MODX Revolution 2.0.0-beta5 or later
 - PHP5 or later
 
 ## History

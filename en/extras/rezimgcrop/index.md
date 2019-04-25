@@ -6,12 +6,12 @@ _old_uri: "revo/rezimgcrop"
 
 ## What is RezImgCrop?
 
- RezImgCrop is a custom [Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") for MODx Revolution that can reduce images, cut off and grayscale them.
+ RezImgCrop is a custom [Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") for MODX Revolution that can reduce images, cut off and grayscale them.
  It is often while articles or news are being added on a site that images turn out different, in design accurate images very well look. This filter does not break a proportion of the image and creates a folder "rezcrop" in a image folder and saves images with a unique name, so that the system at repeated reversal could give already processed result even if a storage cache was cleared.
 
 ### Requirements
 
-- MODx Revolution 2.2.x or later
+- MODX Revolution 2.2.x or later
 - TV output Type: the Text
 
 ### History
@@ -20,7 +20,7 @@ _old_uri: "revo/rezimgcrop"
 
 ### Download
 
- It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/rezimgcrop2>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/rezimgcrop2>
 
 ### Attributes
 

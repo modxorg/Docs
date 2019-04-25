@@ -22,7 +22,7 @@ Now we can add some settings in the Settings tab. Simply click the Add Setting b
 
 Settings contain a number of fixed options:
 
-- **key**: the key that you will use to reference the setting when retrieving the setting values: \[\[++key\]\] or $modx->getOption('key') in code.
+- **key**: the key that you will use to reference the setting when retrieving the setting values: `[[++key]]` or $modx->getOption('key') in code.
 - **label**: the visible name of the field.
 - **xtype** (field type): a valid field type; see specifics below.
 - **description**: description of the field to provide extra context for the field. Visible on hover over the field.
@@ -32,9 +32,9 @@ Settings contain a number of fixed options:
 - **group**: the group this field should be shown in
 - **options**: field-specific configuration; only available for a subset of the field types. See specifics below.
 
-After creating the settings and saving them, they will be available as \[\[++key\]\] or with $modx->getOption('key') in code.
+After creating the settings and saving them, they will be available as `[[++key]]`or with $modx->getOption('key') in code.
 
-If there are system settings or context settings with the same \[\[++key\]\], the settings in ClientConfig will override those.
+If there are system settings or context settings with the same `[[++key]]` the settings in ClientConfig will override those.
 
 ## Field Types
 

@@ -20,7 +20,7 @@ This package is meant to be used once to quick-start MODX website projects. It w
 
 ## About
 
-"Flexibility" is a HTML5/CSS3/jQuery based frontend MODx Revolution template based on the "Foundation 3.2" (<http://foundation.zurb.com/>).
+"Flexibility" is a HTML5/CSS3/jQuery based frontend MODX Revolution template based on the "Foundation 3.2" (<http://foundation.zurb.com/>).
 With this package you will have a fully functional website with a dropdown nav, contact form, slider and a image gallery.
 
 "Flexibility" is designed and coded by Menno Pietersen
@@ -41,7 +41,7 @@ Twitter: MennoPP <https://twitter.com/MennoPP>
 
 ### Manual installation
 
-1. Install MODx Revolution on your website.
+1. Install MODX Revolution on your website.
 2. download the package and upload the "flexibility-3.0.6-rc.transport.zip" file to "<your\_modx\_install>/core/packages/" (You only need the transport.zip file, do not unzip it yourself)
 3. Install the "Flexibility" package: Go to "System" > "Package Management" > "Add New Package" > "Search Locally for Packages" > "Yes" (be sure to clear your cache > "Site" > "Clear Cache")
 

@@ -10,7 +10,7 @@ With the ForcedPasswdChange you can create or update an user and activate the fo
 
 ### Requirements
 
-- MODx Revolution 2.0.0-RC-2 or later
+- MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
 ### History

@@ -22,5 +22,5 @@ Tasks in purple are already finished in Git. Ones in green are finished in beta/
 - Sorts directories on top now
 - Added placeholders for number of directories and files, and total objects
 - Allow filelister placeholder prefix to be configurable
-- Added clickable path links placeholder via \[\[+filelister.path\]\]
+- Added clickable path links placeholder via `[[+filelister.path]]`
 - Added secure browsing via salted hash

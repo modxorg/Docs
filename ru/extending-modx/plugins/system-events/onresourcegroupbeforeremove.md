@@ -1,12 +1,11 @@
 ---
 title: "OnResourceGroupBeforeRemove"
-_old_id: "455"
 translation: "extending-modx/plugins/system-events/onresourcegroupbeforeremove"
 ---
 
 ## Событие: OnResourceGroupBeforeRemove
 
-Fires right before a Resource Group is removed.
+Запускается прямо перед удалением группы ресурсов.
 
 Служба: 1 - Parser Service Events
 

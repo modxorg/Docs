@@ -6,11 +6,11 @@ _old_uri: "revo/phpthumbof"
 
 ## What is phpThumbOf?
 
-phpThumbOf is a secure, custom [Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") for MODx Revolution that allows you to use phpThumb on any image URL specified in a placeholder.
+phpThumbOf is a secure, custom [Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") for MODX Revolution that allows you to use phpThumb on any image URL specified in a placeholder.
 
 ### Requirements
 
-- MODx Revolution 2.0.4 or later
+- MODX Revolution 2.0.4 or later
 - PHP5 or later
 
 ### History
@@ -19,7 +19,7 @@ phpThumbOf was written by [Shaun McCormick](/display/~splittingred) as a secure 
 
 ### Download
 
-It can be downloaded from within the MODx Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/phpthumbof>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/phpthumbof>
 
 ### Attributes
 

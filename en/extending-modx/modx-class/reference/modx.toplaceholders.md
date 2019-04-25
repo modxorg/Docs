@@ -39,7 +39,7 @@ $modx->toPlaceholders(array(
 ));
 ```
 
- Corresponds to placeholders such as \[\[+document.pagetitle\]\]
+ Corresponds to placeholders such as `[[+document.pagetitle]]`
 
  Note that using a $prefix on nested placeholders adds the $prefix to the front of _each key_. For example:
 
@@ -52,7 +52,7 @@ $modx->toPlaceholders(
 );
 ```
 
- Would have placeholders such as \[\[+tmp.test\]\] and \[\[+tmp.document.pagetitle\]\]
+ Would have placeholders such as `[[+tmp.test]]` and `[[+tmp.document.pagetitle]]`
 
 ## See Also
 

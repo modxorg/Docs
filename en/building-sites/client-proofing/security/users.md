@@ -6,13 +6,13 @@ _old_uri: "2.x/administering-your-site/security/users"
 
 ## What is a User?
 
- A User is simply a representation of a login in MODx Revolution.
+ A User is simply a representation of a login in MODX Revolution.
 
  Users can also be assigned to User Groups, which can have [ACLs](building-sites/client-proofing/security/policies/acls "ACLs") attached to them to provide Access Controls.
 
 ## User Settings
 
- User Settings in MODx Revolution will automatically override any System or Context settings with the same key for that user. They can also be completely unique settings as well. The order of inheritance for Settings is:
+ User Settings in MODX Revolution will automatically override any System or Context settings with the same key for that user. They can also be completely unique settings as well. The order of inheritance for Settings is:
 
 `System Settings -> Context Settings -> User Settings`
 

@@ -26,7 +26,7 @@ Slideshow Manager is on GitHub: <https://github.com/jgulledge19/Slideshowmanager
 
 ## Update
 
-Update through the Package Manager in MODX. If the package manager does not see the update you can download the latest version as you would for a new package. If you went from a version previous to 1.1.0pl you may also need to run the \[\[updateSlideshow\]\] Snippet one time before you can manage the slides and albums.
+Update through the Package Manager in MODX. If the package manager does not see the update you can download the latest version as you would for a new package. If you went from a version previous to 1.1.0pl you may also need to run the `[[updateSlideshow]]` Snippet one time before you can manage the slides and albums.
 
 ## Install
 

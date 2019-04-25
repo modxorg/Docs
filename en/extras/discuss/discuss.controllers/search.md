@@ -21,11 +21,11 @@ The actual searching is done by the search class. This is configured with the di
 
 If you don't know what the manifest is, please go back to the [Getting Started](extras/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "search" options array of the manifest.
 
-| Key          | Default                                   | Description                                                                                                                                                                                                                                     |
-| ------------ | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| resultRowTpl | disSearchResult                           | The name of a (file based) chunk to wrap each result in. Placeholders include all \[Discuss.Database+Model\] fields, as well as \[\[+username\]\], \[\[\\+board\_name\]\], \[\[+replies\]\], \[\[+relevancy\]\], \[\[+cls\]\], \[\[+toggle\]\]. |
-| toggle       | +                                         | A string to show as toggle button                                                                                                                                                                                                               |
-| limit        | value of discuss.threads\_per\_page or 20 | Amount of results per page                                                                                                                                                                                                                      |
+| Key          | Default                                   | Description                                                                                                                                                                                                                      |
+| ------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| resultRowTpl | disSearchResult                           | The name of a (file based) chunk to wrap each result in. Placeholders include all \[Discuss.Database+Model\] fields, as well as `[[+username]]`, `[[+board_name]]`, `[[+replies]]`, `[[+relevancy]]`, `[[+cls]]`, `[[+toggle]]`. |
+| toggle       | +                                         | A string to show as toggle button                                                                                                                                                                                                |
+| limit        | value of discuss.threads\_per\_page or 20 | Amount of results per page                                                                                                                                                                                                       |
 
 ## Controller Template
 

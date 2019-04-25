@@ -39,7 +39,7 @@ The Template tab consists of templating options for your blog, such as selecting
 The fields for this tab are:
 
 1. **Uses Template** - The [Template](making-sites-with-modx/structuring-your-site/templates "Templates") for your Blog. Articles provides a sample Template, but if you want to change this, you can.
-2. **Content** - The "content" of the blog - here you can rearrange how the \[\[\*content\]\] field will render in your Articles Container Template.
+2. **Content** - The "content" of the blog - here you can rearrange how the `[[*content]]` field will render in your Articles Container Template.
 3. **Article Template** - The default Template to select for your Articles (this can be overridden per article).
 4. **Article Row Chunk** - The Chunk to use when displaying posts on the front page or archive pages. This will default to a sample provided Chunk.
 5. **Articles Per Page** - The number of posts to show when listing posts on your blog. This will default to 10.
@@ -121,7 +121,7 @@ There are quite a few fields here, in separate vertical tabs:
   - **Send to Twitter** - If enabled, automatically posts to Twitter when Article is published.
   - **Twitter Consumer Key** - Optional security key.
   - **Secret Twitter Consumer Key** - Optional secret access token.
-  - **Twitter Template** - The template to use for each tweet. Available placeholders are: \[\[+title\]\], \[\[+url\]\] and \[\[+hashtags\]\]
+  - **Twitter Template** - The template to use for each tweet. Available placeholders are: `[[+title]]``[[+url]]]]` `[[+hashtags]]]]]]`
   - **Twitter Template (hashtags)** - If hashtags placeholder is used, this sets the maximum number of tags to include.
   - **URL Shortener** - The service to use for shortening URLs. Can be set to blank for no shortening.
 
