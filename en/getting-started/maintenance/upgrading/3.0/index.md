@@ -18,6 +18,7 @@ In general, you can follow the [standard upgrading process](getting-started/main
 - `modParser095`, `modTranslate095`, and `modTranslator` have been removed. Those were utilities for migrating templates from Evolution syntax. [14133](https://github.com/modxcms/revolution/pull/14133)
 - `/manager/min/` directory has been removed; was unused since 2.5. [#12778](https://github.com/modxcms/revolution/pull/12778), [#13194](https://github.com/modxcms/revolution/pull/13194), [#14416](https://github.com/modxcms/revolution/pull/14416)
 - `@EVAL` binding has been removed from TVs [#13865](https://github.com/modxcms/revolution/pull/13865)
+- The `modResource.content_ft_idx` FULLTEXT index has been removed, as core does not use it [#14558](https://github.com/modxcms/revolution/pull/14558)
 
 ## Notable changes and improvements
  
