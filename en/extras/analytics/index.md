@@ -108,7 +108,7 @@ If you set up your site settings in a resource, you can use [getResourceField](e
 
 ## Use your own tracking codes
 
-Create your own chunks named "ua\_tracking" and "ga\_tracking". Optionnaly use the placeholders `[[+ua_options]]` and `[[+ga_options]]`.
+Create your own chunks named `ua_tracking` and `ga_tracking`. Optionnaly use the placeholders `[[+ua_options]]` and `[[+ga_options]]`.
 
 ## Troubleshooting
 
