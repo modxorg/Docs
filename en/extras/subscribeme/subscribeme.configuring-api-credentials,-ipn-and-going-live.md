@@ -1,4 +1,4 @@
-g---
+---
 title: "Configuring API Credentials, IPN and going Live"
 _old_id: "1011"
 _old_uri: "revo/subscribeme/subscribeme.configuring-api-credentials,-ipn-and-going-live"
