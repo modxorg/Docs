@@ -31,7 +31,7 @@ translation: extending-modx/custom-resources/
 
 ## Генерация ваших файлов классов
 
-Следующим шагом является создание карт и классов для модели. Вы можете сделать это, используя свой собственный скрипт. Вам просто нужно обратиться к документации по [ генерации кода модели](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code") и функции [parseSchema()](extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema") в xPDO. Мы предоставили образец сценария ниже. Это модифицированная версия сценария, используемая при [обратном проектировании классов xPDO](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table") из существующей таблицы базы данных.
+Следующим шагом является создание карт и классов для модели. Вы можете сделать это, используя свой собственный скрипт. Вам просто нужно обратиться к документации по [генерации кода модели](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code") и функции [parseSchema()](extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema") в xPDO. Мы предоставили образец сценария ниже. Это модифицированная версия сценария, используемая при [обратном проектировании классов xPDO](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table") из существующей таблицы базы данных.
 
 Создайте скрипт в корневом каталоге вашего сайта MODX, затем запустите его, перейдя на эту страницу в браузере.
 

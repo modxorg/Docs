@@ -16,7 +16,7 @@ translation: extending-modx/custom-manager-pages/modext/modx.grid.localgrid
 ## Смотрите также
 
 1. [Объект MODExt MODx](extending-modx/custom-manager-pages/modext/modext-modx-object)
-2. [Учебник по MODExt ](extending-modx/custom-manager-pages/modext/modext-tutorials)
+2. [Учебник по MODExt](extending-modx/custom-manager-pages/modext/modext-tutorials)
     1. [Ext JS - Окна сообщений](extending-modx/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
     2. [Ext JS - Ajax](extending-modx/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
     3. [Ext JS - Анимация](extending-modx/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
