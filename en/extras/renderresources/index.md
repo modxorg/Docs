@@ -181,49 +181,72 @@ The same thing is possible if you put the sorted IDs in a template variable, lik
 Output a list of child Resources of the current Resource, using the 'myRowTpl' chunk:
 
 ``` php
-[[!renderResources? &parents=`[[*id]]` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`[[*id]]`
+&tpl=`myRowTpl`]]
 ```
 
 Output all resources beneath the Resource with ID '5', with the exception of resource 10, using the 'myRowTpl' chunk:
 
 ``` php
-[[!renderResources? &parents=`5` &resources=`-10` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`5`
+&resources=`-10`
+&tpl=`myRowTpl`]]
 ```
 
 Output only the resources specified, using the 'myRowTpl' chunk:
 
 ``` php
-[[!renderResources? &parents=`-1` &resources=`10,11,12` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`-1`
+&resources=`10,11,12`
+&tpl=`myRowTpl`]]
 ```
 
 Output the top 5 latest published Resources beneath the Resource with ID '5', with tpl 'blogPost':
 
 ``` php
-[[!renderResources? &parents=`5` &limit=`5` &tpl=`blogPost` &includeContent=`1`]]
+[[!renderResources?
+&parents=`5`
+&limit=`5`
+&tpl=`blogPost`
+&includeContent=`1`]]
 ```
 
 Output a list of child Resources of the current Resource, based on the Resource-template:
 
 ``` php
-[[!renderResources? &parents=`[[*id]]` &where=`{"template:=":8}` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`[[*id]]`
+&where=`{"template:=":8}`
+&tpl=`myRowTpl`]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1 or 2:
 
 ``` php
-[[!renderResources? &parents=`[[*id]]` &where=`{"template:=":1, "OR:template:=":2}` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`[[*id]]`
+&where=`{"template:=":1, "OR:template:=":2}`
+&tpl=`myRowTpl`]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1, 2 or 3 (you cannot use the same key name more than once):
 
 ``` php
-[[!renderResources? &parents=`[[*id]]` &where=`{"template:IN":[1,2,3]}` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`[[*id]]`
+&where=`{"template:IN":[1,2,3]}`
+&tpl=`myRowTpl`]]
 ```
 
 Display a message when no results found (equivalent of "empty" parameter in Ditto):
 
 ``` php
-[[!renderResources:default=`No results found`? &parents=`[[*id]]` &tpl=`myRowTpl`]]
+[[!renderResources:default=`No results found`?
+&parents=`[[*id]]`
+&tpl=`myRowTpl`]]
 ```
 
 ## Using getPage for Pagination
