@@ -96,6 +96,7 @@ This does not mean however that these are your only options. Browse the reposito
 - [MyComponent](https://bobsguides.com/mycomponent-tutorial.html) is a complete development environment for creating MODX extras.
 
 ### Diagnostic tools
+
 - [SiteCheck](https://bobsguides.com/sitecheck-tutorial.html) (premium extra from Bob Ray) performs thousands of checks on the integrity of your site.
 
 ### Updrading MODX
