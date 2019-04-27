@@ -72,7 +72,7 @@ renderResources cannot be used with binary Content Types, or with modSymLink or 
 
 #### tvFilters
 
-Can be used to filter resources by certain TV values. These are entered as \[(_tvname_)(_operator_)\](_value_). There are two delimiters you can use to combine filter conditions. |
+Can be used to filter resources by certain TV values. These are entered as \[(_tvname_)(_operator_)\](_value_). There are two delimiters you can use to combine filter conditions.
 
 You can have "OR" filters using two pipe symbols. An OR filter fetches resources that has one of the listed TV values.
 
@@ -124,6 +124,7 @@ This will filter resources to meet one of the following conditions:
   **Available filter operators**:
   
   There are a number of comparison operators for use when creating filter conditions. In addition, when using many of these operators, numeric comparison values are automatically CAST TV values to numeric before comparison. Here is a list of the valid operators:
+
 | Filter Operator |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | SQL Operator |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
 | !==             | !=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes          |
