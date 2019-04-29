@@ -1,5 +1,5 @@
 ---
-title: "Название вкладкиv
+title: "Название вкладки"
 translation: "building-sites/client-proofing/form-customization/rules/tab-title"
 ---
 
