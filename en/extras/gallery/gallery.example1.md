@@ -14,29 +14,28 @@ Simply paste this code into your Resource.
 [[!GalleryAlbums? &toPlaceholder=`galleries`]]
 
 <div style="float: right">
-<h2>Galleries</h2>
-<ul>
-[[+galleries]]
-</ul>
+    <h2>Galleries</h2>
+    <ul>
+        [[+galleries]]
+    </ul>
 </div>
 
 <h2>Item</h2>
 
 [[!+galitem.image:notempty=`
 <div class="image">
-  <a href="[[+galitem.image]]"><img class="[[+galitem.imgCls]]" src="[[+galitem.image]]" alt="[[+galitem.name]]" /></a>
-  <br />Albums: [[+galitem.albums]]
-  <br />Tags: [[+galitem.tags]]
+    <a href="[[+galitem.image]]"><img class="[[+galitem.imgCls]]" src="[[+galitem.image]]" alt="[[+galitem.name]]" /></a>
+    <br />Albums: [[+galitem.albums]]
+    <br />Tags: [[+galitem.tags]]
 </div>
 `]]
-
 
 <hr />
 
 [[!+gallery:notempty=`
-<h1><a href="[[~[[*id]]]]">[[+gallery.name]]</a></h1>
-<h2>[[+gallery.description]]</h2>
-
-[[+gallery]]
+    <h1><a href="[[~[[*id]]]]">[[+gallery.name]]</a></h1>
+    <h2>[[+gallery.description]]</h2>
+    
+    [[+gallery]]
 `]]
 ```

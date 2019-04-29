@@ -6,17 +6,17 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 
 ## Event: OnFileManagerFileCreate
 
- Fires after creating a new file via the manager.
+Fires after creating a new file via the manager.
 
- Service: 1 - Parser Service Events 
- Group: None
+- Service: 1 - Parser Service Events 
+- Group: None
 
 ## Event Parameters
 
- | Name   | Description                                       |
- | ------ | ------------------------------------------------- |
- | path   | Contains the full path to the newly created file. |
- | source | Contains the mediasource object.                  |
+| Name   | Description                                       |
+| ------ | ------------------------------------------------- |
+| path   | Contains the full path to the newly created file. |
+| source | Contains the mediasource object.                  |
 
 ## See Also
 

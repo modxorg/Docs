@@ -6,17 +6,17 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 
 ## Event: OnFileManagerDirRemove
 
- Fires after removing a directory via the manager.
+Fires after removing a directory via the manager.
 
- Service: 1 - Parser Service Events
- Group: None
+- Service: 1 - Parser Service Events
+- Group: None
 
 ## Event Parameters
 
- | Name      | Description                                                    |
- | --------- | -------------------------------------------------------------- |
- | directory | Contains the full path of the directory that has been removed. |
- | source    | Contains the mediasource object.                               |
+| Name      | Description                                                    |
+| --------- | -------------------------------------------------------------- |
+| directory | Contains the full path of the directory that has been removed. |
+| source    | Contains the mediasource object.                               |
 
 ## See Also
 

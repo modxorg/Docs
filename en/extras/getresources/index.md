@@ -15,50 +15,51 @@ _old_uri: "revo/getresources"
 
 ## History
 
- getResources was first written by Jason Coward (opengeek) and released on June 30th, 2009.
+getResources was first written by Jason Coward (opengeek) and released on June 30th, 2009.
 
 ### Download
 
- It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/552>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/552>
 
- It is NOT a replacement for Ditto, but rather an alternative component that can accomplish some of the things that the more specialized components do, i.e. Ditto, Wayfinder, Breadcrumbs; basically anything that output the properties for a list of Resources (formerly Documents in MODX Evolution).
+It is NOT a replacement for Ditto, but rather an alternative component that can accomplish some of the things that the more specialized components do, i.e. Ditto, Wayfinder, Breadcrumbs; basically anything that output the properties for a list of Resources (formerly Documents in MODX Evolution).
 
- Documentation and tutorials on Russian can be found here: <http://modx.by/docs/modx-add-ons/getresources/>
+Documentation and tutorials on Russian can be found here: <http://modx.by/docs/modx-add-ons/getresources/>
 
 ## Usage
 
- The getResources snippet can be called using the tag:
+The getResources snippet can be called using the tag:
 
- ``` php
+``` php
 [[getResources]]
 ```
 
- Prior to version 1.6.1-pl, calls without the &tpl property specified will output an array of each Resource in the result set, and its fields. Since version 1.6.1-pl this behaviour has changed and you will have to use "&debug=`1`" to get the full result:
+Prior to version 1.6.1-pl, calls without the &tpl property specified will output an array of each Resource in the result set, and its fields. Since version 1.6.1-pl this behaviour has changed and you will have to use "&debug=`1`" to get the full result:
 
- ``` php
-[[getResources? &debug=`1`]] [[getResources? &parents=`choose_an_id` &debug=`1`]]
+``` php
+[[getResources? &debug=`1`]]
+[[getResources? &parents=`choose_an_id` &debug=`1`]]
 ```
 
 ### Available Properties
 
 #### Templating Properties
 
- | Name                   | Description                                                                                                                                                                                                                                                                                                        | Default Value                      | Added in version |
- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- | ---------------- |
- | tpl                    | Name of a chunk serving as a resource template. If not provided, properties are dumped to output for each resource                                                                                                                                                                                                 |                                    |                  |
- | tplOdd                 | Name of a chunk serving as resource template for resources with an odd idx value (see idx property)                                                                                                                                                                                                                |                                    |                  |
- | tplFirst               | Name of a chunk serving as resource template for the first resource                                                                                                                                                                                                                                                |                                    |                  |
- | tplLast                | Name of a chunk serving as resource template for the last resource                                                                                                                                                                                                                                                 |                                    |                  |
- | tpl\_N                 | Name of a chunk serving as resource template for the Nth resource, for example &tpl\_4=`tpl4th`                                                                                                                                                                                                                    |                                    |                  |
- | tpl\_nN                | Name of a chunk serving as resource template for every Nth resource, for example &tpl\_n4=`tpl4th` would apply to any item divisible by 4                                                                                                                                                                          |                                    | 1.4.1            |
- | tplCondition           | Defines a field of the resource to evaluate against keys defined in the &conditionalTpls property. Must be a resource field; does not work with Template Variables.                                                                                                                                                |                                    | 1.5.0            |
- | conditionalTpls        | A JSON object defining a map of field values and the associated tpl Chunks to use when the field defined by &tplCondition matches the value _:_ &conditionalTpls=`{"1":"tplA","2":"tplB","3":"tplC"}` _\[NOTE: tplOdd, tplFirst, tplLast, \* and tpl\_{n} will take precedence over any defined conditionalTpls\]_ |                                    | 1.5.0            |
- | tplPath                | An optional directory to look for file-based chunks when using @FILE                                                                                                                                                                                                                                               | _assets\_path_+ "elements/chunks/" |                  |
- | tplWrapper             | Name of a chunk serving as a wrapper template for the output \[NOTE: Does not work with toSeparatePlaceholders\]. The placeholder where the items are inserted is `[[+output]]`.                                                                                                                                   |                                    | 1.6.0            |
- | wrapIfEmpty            | If true, will output the wrapper specified in &tplWrapper even if the output is empty.                                                                                                                                                                                                                             | false                              | 1.6.0            |
- | outputSeparator        | An optional string to separate each tpl instance (delimiter)                                                                                                                                                                                                                                                       | "\\n"                              |                  |
- | toPlaceholder          | If set, will assign the result to this placeholder instead of outputting it directly.                                                                                                                                                                                                                              |                                    |                  |
- | toSeparatePlaceholders | If set, will assign EACH result to a separate placeholder named by this param suffixed with a sequential number (starting from 0).                                                                                                                                                                                 |                                    | 1.3.0            |
+| Name                   | Description                                                                                                                                                                                                                                                                                                        | Default Value                      | Added in version |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------- | ---------------- |
+| tpl                    | Name of a chunk serving as a resource template. If not provided, properties are dumped to output for each resource                                                                                                                                                                                                 |                                    |                  |
+| tplOdd                 | Name of a chunk serving as resource template for resources with an odd idx value (see idx property)                                                                                                                                                                                                                |                                    |                  |
+| tplFirst               | Name of a chunk serving as resource template for the first resource                                                                                                                                                                                                                                                |                                    |                  |
+| tplLast                | Name of a chunk serving as resource template for the last resource                                                                                                                                                                                                                                                 |                                    |                  |
+| tpl\_N                 | Name of a chunk serving as resource template for the Nth resource, for example &tpl\_4=`tpl4th`                                                                                                                                                                                                                    |                                    |                  |
+| tpl\_nN                | Name of a chunk serving as resource template for every Nth resource, for example &tpl\_n4=`tpl4th` would apply to any item divisible by 4                                                                                                                                                                          |                                    | 1.4.1            |
+| tplCondition           | Defines a field of the resource to evaluate against keys defined in the &conditionalTpls property. Must be a resource field; does not work with Template Variables.                                                                                                                                                |                                    | 1.5.0            |
+| conditionalTpls        | A JSON object defining a map of field values and the associated tpl Chunks to use when the field defined by &tplCondition matches the value _:_ &conditionalTpls=`{"1":"tplA","2":"tplB","3":"tplC"}` _\[NOTE: tplOdd, tplFirst, tplLast, \* and tpl\_{n} will take precedence over any defined conditionalTpls\]_ |                                    | 1.5.0            |
+| tplPath                | An optional directory to look for file-based chunks when using @FILE                                                                                                                                                                                                                                               | _assets\_path_+ "elements/chunks/" |                  |
+| tplWrapper             | Name of a chunk serving as a wrapper template for the output \[NOTE: Does not work with toSeparatePlaceholders\]. The placeholder where the items are inserted is `[[+output]]`.                                                                                                                                   |                                    | 1.6.0            |
+| wrapIfEmpty            | If true, will output the wrapper specified in &tplWrapper even if the output is empty.                                                                                                                                                                                                                             | false                              | 1.6.0            |
+| outputSeparator        | An optional string to separate each tpl instance (delimiter)                                                                                                                                                                                                                                                       | "\\n"                              |                  |
+| toPlaceholder          | If set, will assign the result to this placeholder instead of outputting it directly.                                                                                                                                                                                                                              |                                    |                  |
+| toSeparatePlaceholders | If set, will assign EACH result to a separate placeholder named by this param suffixed with a sequential number (starting from 0).                                                                                                                                                                                 |                                    | 1.3.0            |
 
 About **@FILE and @INLINE tpls**:
 
@@ -92,19 +93,19 @@ You can prefix any tpl property with @FILE or @INLINE to use a file-based chunk 
 
 For the `&tvFilters`, the value may look like this:
 
- ``` php
+``` php
    mytv==somevalue||mytv==othervalue
 ```
 
 You can also use an "and" filter using a comma. This will make sure that all the conditions are met.
 
- ``` php
+``` php
    mytv==somevalue,othertv==othervalue
 ```
 
 For advanced filtering you can also group these. It is important to know that conditions are first separated based on the OR (||) delimiter, and after that on the AND (,) delimiter. So let's take this hypothetical example:
 
- ``` php
+``` php
    mytv==foo||mytv==bar,bartv==3||bartv==1
 ```
 
@@ -116,19 +117,19 @@ This will filter resources to meet one of the following conditions:
 
 The examples above search for exact values. You can also use the percentage sign (%) as a wildcard. For example:
 
- ``` php
+``` php
    mytv==%a%
 ```
 
 Matches any resources that has an "a" in the mytv value.
 
- ``` php
+``` php
    mytv==a%
 ```
 
 Matches any resources that have a mytv value that starts with an "a"
 
- ``` php
+``` php
    mytv==%a
 ```
 
@@ -165,31 +166,31 @@ It's possible to pass any resource field as sort value, such as `pagetitle`, `al
 
 You can sort randomly by specifying RAND(), like so:
 
- ``` php
+``` php
 &sortby=`RAND()`
 ```
 
 From version 1.3.0 this can also be a [JSON](http://json-schema.org/) array to sort on multiple fields, e.g.
 
- ``` php
+``` php
 &sortby=`{"publishedon":"ASC","createdon":"DESC"}`
 ```
 
 To sort in a specific order, specify a resource id-list, e.g.
 
- ``` php
+``` php
 &sortby=`FIELD(modResource.id, 4,7,2,5,1 )`
 ```
 
 The same thing is possible if you put the sorted IDs in a template variable, like this:
 
- ``` php
+``` php
 &sortby=`FIELD(modResource.id,[[*templateVariable]])`
 ```
 
 In some cases you need to (somewhat counterintuitively) specify the sort direction as well:
 
- ``` php
+``` php
 &sortby=`FIELD(modResource.id, 4,7,2,5,1 )` &sortdir=`ASC`
 ```
 
@@ -235,61 +236,61 @@ Also see the [Examples](extras/getresources/getresources.examples "getResources.
 
 Output a list of child Resources of the current Resource, using the 'myRowTpl' chunk:
 
- ``` php
+``` php
 [[getResources? &parents=`[[*id]]` &tpl=`myRowTpl`]]
 ```
 
 Output all resources beneath the Resource with ID '5', with the exception of resource 10, using the 'myRowTpl' chunk:
 
- ``` php
+``` php
 [[getResources? &parents=`5` &resources=`-10` &tpl=`myRowTpl`]]
 ```
 
 Output only the resources specified, using the 'myRowTpl' chunk:
 
- ``` php
+``` php
 [[getResources? &parents=`-1` &resources=`10,11,12` &tpl=`myRowTpl`]]
 ```
 
 Output the top 5 latest published Resources beneath the Resource with ID '5', with tpl 'blogPost':
 
- ``` php
+``` php
 [[getResources? &parents=`5` &limit=`5` &tpl=`blogPost` &includeContent=`1`]]
 ```
 
 Output a list of child Resources of the current Resource, based on the Resource-template:
 
- ``` php
+``` php
 [[getResources? &parents=`[[*id]]` &where=`{"template:=":8}` &tpl=`myRowTpl`]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1 or 2:
 
- ``` php
+``` php
 [[getResources? &parents=`[[*id]]` &where=`{"template:=":1, "OR:template:=":2}` &tpl=`myRowTpl`]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1, 2 or 3 (you cannot use the same key name more than once):
 
- ``` php
+``` php
 [[getResources? &parents=`[[*id]]` &where=`{"template:IN":[1,2,3]}` &tpl=`myRowTpl`]]
 ```
 
 Display a message when no results found (equivalent of "empty" parameter in Ditto):
 
- ``` php
+``` php
 [[getResources:default=`No results found`? &parents=`[[*id]]` &tpl=`myRowTpl`]]
 ```
 
 Example using an inline Tpl
 
- ``` php
+``` php
 [[getResources? &tpl=`@INLINE <li title="[[+longtitle]]">[[+pagetitle]]</li>`]]
 ```
 
 Wrapping a getResources result in other markup (like an &outerTpl property, which doesn't exist for getResources from version 1.6.0 you can still do it like that or use the &tplWrapper property).
 
- ``` php
+``` php
 [[getResources? ... &toPlaceholder=`results`]]
 [[+results:notempty=`<ol>[[+results]]</ol>`]]
 ```
@@ -298,19 +299,19 @@ Wrapping a getResources result in other markup (like an &outerTpl property, whic
 
 To reduce retrieval time, getResources does not get TV values by default. If you want to display TVs, you should include the following parameters:
 
- ``` php
+``` php
 &includeTVs=`1` &processTVs=`1`
 ```
 
 You also need to either prefix all TVs with tv. or use this parameter in your snippet tag:
 
- ``` php
+``` php
 &tvPrefix=``
 ```
 
 In the Tpl chunk you use to display the getResources output, use a placeholder tag like this (but with the name of your TV):
 
- ``` php
+``` php
 [[+tv.my_tv]]
 ```
 
@@ -322,7 +323,7 @@ When combined with [getPage](extras/getpage "getPage") (or pdoPage), getResource
 
 Grab first 10 Resources - sorted by publishedon - below the Resource ID 17, no more than 2 levels deep, with the tpl 'blogListPost', including the TVs and content:
 
- ``` php
+``` html
 [[!getPage?
     &elementClass=`modSnippet`
     &element=`getResources`
@@ -370,7 +371,7 @@ Before you go banging your head on a wall, have you checked to make sure that th
 
 **You forgot to include the `&tpl` parameter**. Without the `&tpl` parameter, the Snippet will retrieve the specified resources, but you didn't tell it how to format them. Be sure you include the `&tpl` parameter in your Snippet call, e.g.
 
- ``` php
+``` php
 [[!getResources? &parents=`5` &limit=`5` &tpl=`blogPost`]]
 ```
 
@@ -402,19 +403,19 @@ If you are using this parameters you may have thought about reusing your tpl chu
 
 Generic Tpl Chunk: `[[$GenericTplChunk]]`
 
- ``` php
+``` html
 <div>Hi [[+pagetitle]]</div>
 ```
 
 Fourth Tpl Chunk ( tpl\_nN): `[[$4thTplChunk]]`
 
- ``` php
+``` html
 <div class="highlight">[[$GenericTplChunk]]</div>
 ```
 
 If you have problems with this, having blank or strange results, is due to MODX caching. Calling the chunk uncached won't work. You have to use a trick: a dummy tag when calling the generic chunk.
 
- ``` php
+``` html
 <div class="highlight">[[$GenericTplChunk? &idx=`[[+idx]]` ]]</div>
 ```
 

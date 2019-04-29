@@ -11,7 +11,7 @@ Basic use this code:
 ``` html
 <div id="slideShow">
 [[!jgSlideshow?
-  &album_id=`1`
+    &album_id=`1`
 ]]
 </div>
 ```
@@ -37,13 +37,13 @@ Version 1.1
 
 It is recommended to Duplicate the Chunk that you wish to change and rename it. Then you will not lose your changes when a new update is out. For organization it would be also recommend that you create a new folder to put your custom Chunks into.
 
- | Name           | Description                                                                              | Default Value        |
- | -------------- | ---------------------------------------------------------------------------------------- | -------------------- |
- | headTpl        | This is the JS/CSS for the slideshow it goes in the and can use the results from looping | nivo\_headTpl        |
- | slideHolderTpl | The holder for the slide panes                                                           | nivo\_slideHolder    |
- | htmlCaptionTpl | HTML Caption Option                                                                      | nivo\_htmlCaptionTpl |
- | slideLinkTpl   | A slide pane wrapped in an anchor                                                        | nivo\_slideLinkTpl   |
- | slidePaneTpl   | The actual pane or image                                                                 | nivo\_slidePaneTpl   |
+| Name           | Description                                                                              | Default Value        |
+| -------------- | ---------------------------------------------------------------------------------------- | -------------------- |
+| headTpl        | This is the JS/CSS for the slideshow it goes in the and can use the results from looping | nivo\_headTpl        |
+| slideHolderTpl | The holder for the slide panes                                                           | nivo\_slideHolder    |
+| htmlCaptionTpl | HTML Caption Option                                                                      | nivo\_htmlCaptionTpl |
+| slideLinkTpl   | A slide pane wrapped in an anchor                                                        | nivo\_slideLinkTpl   |
+| slidePaneTpl   | The actual pane or image                                                                 | nivo\_slidePaneTpl   |
 
 ### Placeholders available for Chunks
 
@@ -60,10 +60,7 @@ It is recommended to Duplicate the Chunk that you wish to change and rename it. 
 |                    | file\_size\_limit | the max allowed file size limit for the album                |
 |                    | file\_width       | the width of the slide show images                           |
 |                    | file\_height      | the height of the slide show images                          |
-| slideHolderTpl,    |
- htmlCaptionTpl,
- slideLinkTpl,
- slidePaneTpl |  |  |
+| slideHolderTpl, htmlCaptionTpl, slideLinkTpl, slidePaneTpl |  |  |
 |  | src | the full image URL |
 |  | id | the slide id |
 |  | slideshow\_album\_id | the album id |
@@ -90,15 +87,15 @@ Multiple slideshows:
 
 ``` html
 <div id="slider-wrapper">
- [[!jgSlideShow?
-   &album_id=`1`
- ]]
+    [[!jgSlideShow?
+        &album_id=`1`
+    ]]
 </div>
 <!-- Make sure you use a different ID for each instance: -->
 <div id="slider-wrapper2">
- [[!jgSlideShow?
-   &album_id=`8`
-   &slide_div_id=`slider2`
- ]]
+    [[!jgSlideShow?
+        &album_id=`8`
+        &slide_div_id=`slider2`
+    ]]
 </div>
 ```

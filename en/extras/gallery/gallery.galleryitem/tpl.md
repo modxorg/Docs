@@ -6,11 +6,11 @@ _old_uri: "revo/gallery/gallery.galleryitem/gallery.galleryitem.tpl"
 
 ## GalleryItem's tpl Chunk
 
- This chunk is used when &toPlaceholders is set to 0 on the [GalleryItem](extras/gallery/gallery.galleryitem "Gallery.GalleryItem") snippet.
+This chunk is used when &toPlaceholders is set to 0 on the [GalleryItem](extras/gallery/gallery.galleryitem "Gallery.GalleryItem") snippet.
 
 ## Default Value
 
- ``` php
+``` php
 <a href="[[+url:is=``:then=`[[+image]]`:else=`[[+url]]`]]">
     <img src="[[+thumbnail]]" alt="[[+name]]" />
 </a>
@@ -18,17 +18,17 @@ _old_uri: "revo/gallery/gallery.galleryitem/gallery.galleryitem.tpl"
 
 ## Available Placeholders
 
- | Name        | Description                                                                                                                                |
- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
- | name        | The name of the Item.                                                                                                                      |
- | filename    | The filename of the item. This will be relative to the path where the files are stored, which is usually assets/components/gallery/files/. |
- | description | The description of the item.                                                                                                               |
- | mediatype   | The media type of the Item. Currently this is only 'image'.                                                                                |
- | createdon   | The timestamp that this Item was created on.                                                                                               |
- | createdby   | The User ID of the creator of this Item.                                                                                                   |
- | active      | If this Item is active or not. Can be 1 or 0.                                                                                              |
- | albums      | A list of Albums this Item is in.                                                                                                          |
- | tags        | A list of Tags associated with this Item.                                                                                                  |
+| Name        | Description                                                                                                                                |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| name        | The name of the Item.                                                                                                                      |
+| filename    | The filename of the item. This will be relative to the path where the files are stored, which is usually assets/components/gallery/files/. |
+| description | The description of the item.                                                                                                               |
+| mediatype   | The media type of the Item. Currently this is only 'image'.                                                                                |
+| createdon   | The timestamp that this Item was created on.                                                                                               |
+| createdby   | The User ID of the creator of this Item.                                                                                                   |
+| active      | If this Item is active or not. Can be 1 or 0.                                                                                              |
+| albums      | A list of Albums this Item is in.                                                                                                          |
+| tags        | A list of Tags associated with this Item.                                                                                                  |
 
 ## See Also
 

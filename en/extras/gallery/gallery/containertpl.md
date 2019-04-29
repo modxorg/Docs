@@ -6,21 +6,21 @@ _old_uri: "revo/gallery/gallery.gallery/gallery.gallery.containertpl"
 
 ## Gallery's containerTpl Chunk
 
- This chunk is used when &containerTpl is set on the [Gallery](extras/gallery "Gallery") snippet.
+This chunk is used when &containerTpl is set on the [Gallery](extras/gallery "Gallery") snippet.
 
- It's recommended to actually not use this property, and just wrap your output in your Resource or Chunk; that will allow you more flexibility in the future.
+It's recommended to actually not use this property, and just wrap your output in your Resource or Chunk; that will allow you more flexibility in the future.
 
 ## Default Value
 
- There is no default value for the &containerTpl; if none is specified, the output will not be wrapped with any container.
+There is no default value for the &containerTpl; if none is specified, the output will not be wrapped with any container.
 
 ## Available Placeholders
 
- | Name               | Description                           |
- | ------------------ | ------------------------------------- |
- | thumbnails         | The generated thumbnails.             |
- | album\_name        | The name of the current Album.        |
- | album\_description | The description of the current Album. |
+| Name               | Description                           |
+| ------------------ | ------------------------------------- |
+| thumbnails         | The generated thumbnails.             |
+| album\_name        | The name of the current Album.        |
+| album\_description | The description of the current Album. |
 
 ## See Also
 

@@ -27,7 +27,7 @@ Then, click on either the "Upload Item" or "Batch Upload" button and upload some
 
 First, off, paste this code in your Resource:
 
- ``` php
+``` html
 <div style="float: right">
 <h2>Galleries</h2>
 <ul>
@@ -61,7 +61,7 @@ That's it! It will work now. Let's go through each part.
 
 So the code we're using to display our Gallery Albums is this:
 
- ``` php
+``` html
 <div style="float: right">
 <h2>Galleries</h2>
 <ul>
@@ -76,7 +76,7 @@ We're first off running the GalleryAlbums snippet. Then in our HTML we've floate
 
 Okay, now once you've clicked them, we want Gallery to display all the images from that album. Luckily, the Gallery snippet works in tandem with the GalleryAlbums snippet to do just this - without any customizing:
 
- ``` php
+``` html
 [[!Gallery? &album=`1` &toPlaceholder=`gallery`]]
 <h1><a href="[[~[[*id]] &galAlbum=`[[+gallery.id]]`]]">[[+gallery.name]]</a></h1>
 <p>[[+gallery.description]]</p>
@@ -90,7 +90,7 @@ So, we've set the Gallery album to by default display the Album with ID 1. If we
 
 Now we've got our thumbnails, but we want when they're clicked to show a big image. Simple: the GalleryItem snippet will automatically handle this:
 
- ``` php
+``` html
 [[!GalleryItem]]
 [[!+galitem.image:notempty=`
 <div class="image">
