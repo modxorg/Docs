@@ -1,15 +1,15 @@
 ---
-title: Название ТВ
-translation: building-sites/client-proofing/form-customization/rules/tv-title
+title: "Название ТВ"
+translation: "building-sites/client-proofing/form-customization/rules/tv-title"
 ---
 
-## Заголовок ТВ Правило
+## Заголовок TV правило
 
-Правило заголовка ТВ изменит название телевизора.
+Правило заголовка TV изменит название TV.
 
 ## Примеры
 
-Пример правила установки метки на «Boo!» для телевизора с идентификатором 1 для всех [пользователи](display/revolution20/Users "пользователей") будут выглядеть так:
+Пример правила установки метки на «Boo!» для TV с идентификатором 1 для всех [пользователи](display/revolution20/Users "пользователей") будут выглядеть так:
 
 ![](/download/attachments/18678097/rule-tvLabel.png?version=1&modificationDate=1252015831000)
 

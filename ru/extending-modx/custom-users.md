@@ -1,6 +1,6 @@
 ---
-title: Расширения для пользователей
-translation: extending-modx/custom-users
+title: "Расширения для пользователей"
+translation: "extending-modx/custom-users"
 ---
 
 ## Целевая аудитория

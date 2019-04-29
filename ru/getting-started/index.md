@@ -1,6 +1,6 @@
 ---
 title: "Начало работы"
-translation: "getting-started/"
+translation: "getting-started"
 ---
 
 Добро пожаловать в MODX Revolution. В этом разделе представлены руководства по установке, базовые понятия о MODX и общая информация о том, с чего можно начать.

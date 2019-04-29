@@ -1,6 +1,6 @@
 ---
-title: Зарезервированные параметры
-translation: extending-modx/custom-manager-pages/reserved-parameters
+title: "Зарезервированные параметры"
+translation: "extending-modx/custom-manager-pages/reserved-parameters"
 ---
 
 ## Зарезервированные параметры GET внутри менеджера MODX

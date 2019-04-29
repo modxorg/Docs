@@ -1,6 +1,6 @@
 ---
-title: Интернационализация
-translation: extending-modx/internationalization
+title: "Интернационализация"
+translation: "extending-modx/internationalization"
 ---
 
 ## Общее представление

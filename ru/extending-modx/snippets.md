@@ -1,6 +1,6 @@
 ---
-title: Написание сниппетов
-translation: extending-modx/snippets
+title: "Написание сниппетов"
+translation: "extending-modx/snippets"
 ---
 
 ## Общее представление

@@ -1,6 +1,6 @@
 ---
-title: Настройка менеджера
-translation: building-sites/client-proofing/form-customization
+title: "Настройка менеджера"
+translation: "building-sites/client-proofing/form-customization"
 ---
 
 ## Что такое настройка формы?

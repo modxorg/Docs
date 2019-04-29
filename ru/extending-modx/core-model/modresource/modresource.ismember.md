@@ -1,5 +1,6 @@
 ---
 title: "modResource.isMember"
+translation: "ru/extending-modx/core-model/modresource/modresource.ismember"
 ---
 
 ## modResource::isMember

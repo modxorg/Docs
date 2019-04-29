@@ -1,6 +1,6 @@
 ---
-title: Полевая Метка
-translation: building-sites/client-proofing/form-customization/rules/field-label
+title: "Полевая Метка"
+translation: "building-sites/client-proofing/form-customization/rules/field-label"
 ---
 
 ## Правило метки поля

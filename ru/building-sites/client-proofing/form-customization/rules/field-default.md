@@ -1,6 +1,6 @@
 ---
-title: Поле по умолчанию
-translation: building-sites/client-proofing/form-customization/rules/field-default
+title: "Поле по-умолчанию"
+translation: "building-sites/client-proofing/form-customization/rules/field-default"
 ---
 
 ## Правило по умолчанию для поля

@@ -1,6 +1,6 @@
 ---
-title: Разработка RESTful API
-translation: extending-modx/developing-restful-api
+title: "Разработка RESTful API"
+translation: "extending-modx/developing-restful-api"
 ---
 
 В MODX 2.3 появился удобный метод разработки API-интерфейсов RESTful поверх MODX. Это делается с помощью класса modRestService и производных modRestController. Он поддерживает множество интересных функций для взаимодействия с экземплярами xPDOObject. Цель этого документа - предоставить вам информацию, необходимую для создания собственного API.

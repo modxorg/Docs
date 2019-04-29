@@ -1,6 +1,6 @@
 ---
-title: Сниппет
-translation: building-sites/client-proofing/dashboards/widget-types/snippet
+title: "Сниппет"
+translation: "building-sites/client-proofing/dashboards/widget-types/snippet"
 ---
 
 Тип виджета «Панель инструментов Snippet» запускает фрагмент кода MODX и помещает возвращаемое значение в панель виджетов.

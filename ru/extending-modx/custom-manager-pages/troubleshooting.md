@@ -1,6 +1,6 @@
 ---
-title: Вопросы и ответы по разработке CMP
-translation: extending-modx/custom-manager-pages/troubleshooting
+title: "Вопросы и ответы по разработке CMP"
+translation: "extending-modx/custom-manager-pages/troubleshooting"
 ---
 
 На этой странице рассматриваются часто задаваемые вопросы и советы по устранению неполадок на страницах CMP.

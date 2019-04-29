@@ -1,6 +1,6 @@
 ---
-title: Пользовательские страницы менеджера
-translation: extending-modx/custom-manager-pages/
+title: "Пользовательские страницы менеджера"
+translation: "extending-modx/custom-manager-pages"
 ---
 
 ## Что такое CMP?

@@ -1,6 +1,6 @@
 ---
-title: Написание плагинов
-translation: extending-modx/plugins
+title: "Написание плагинов"
+translation: "extending-modx/plugins"
 ---
 
 ## Что такое плагин?

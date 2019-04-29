@@ -1,6 +1,6 @@
 ---
-title: MODExt
-translation: extending-modx/custom-manager-pages/modext
+title: "MODExt"
+translation: "extending-modx/custom-manager-pages/modext"
 ---
 
 ## Что такое MODExt?
