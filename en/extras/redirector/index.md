@@ -15,7 +15,7 @@ Redirector is a management tool for your 404 / 301 redirects on your site.
 
 ## History
 
-Redirector was written by [Shaun McCormick](/display/~splittingred) as a simple redirection management component, and first released on May 7th, 2010.
+Redirector was written by [Shaun McCormick](https://github.com/splittingred) as a simple redirection management component, and first released on May 7th, 2010.
 
 ### Download
 

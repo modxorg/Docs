@@ -27,7 +27,7 @@ From there, you'll need to setup two System Settings before beginning:
 
 ### History
 
-modActiveDirectory was written by [Shaun McCormick](/display/~splittingred) and first released on August 6th, 2010.
+modActiveDirectory was written by [Shaun McCormick](https://github.com/splittingred) and first released on August 6th, 2010.
 
 ### Development and Bug Reporting
 

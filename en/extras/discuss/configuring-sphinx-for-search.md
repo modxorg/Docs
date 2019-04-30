@@ -96,7 +96,7 @@ You can read more about delta index updates and merging to main index from offic
 
 ## Setting Sphinx to Discuss Settings
 
-Go to [System Settings](administering-your-site/settings/system-settings "System Settings") and change the following settings:
+Go to [System Settings](building-sites/settings "System Settings") and change the following settings:
 
 - **discuss.search\_class** -> Change to disSphinxSearch
 - **discuss.sphinx.host\_name** -> Set to hostname where Sphinx server is running

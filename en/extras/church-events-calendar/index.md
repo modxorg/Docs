@@ -49,7 +49,7 @@ Make a list of all prominent events with a limit of 10 on you page:
 [[!ChurchEventsList?  &prominent=`Yes`  &limit=`10`]]
 ```
 
-### [System Settings](administering-your-site/settings/system-settings "System Settings")
+### [System Settings](building-sites/settings "System Settings")
 
 These need to be created if they do not exist.
 

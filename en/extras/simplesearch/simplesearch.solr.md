@@ -24,7 +24,7 @@ Those who installed SimpleSearch prior to 1.4.0-pl will need to update their sch
 
 ## Configuring SimpleSearch to use Solr
 
-Go to [System Settings](administering-your-site/settings/system-settings "System Settings") and change the following settings:
+Go to [System Settings](building-sites/settings "System Settings") and change the following settings:
 
 - **sisea.driver\_class** -> Change to "SimpleSearchDriverSolr"
 - **sisea.driver\_db\_specific** -> Change to "No", since Solr does not depend on SQL databases

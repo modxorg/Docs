@@ -18,7 +18,7 @@ If you are looking to create a blog, check out [Articles](extras/articles "Artic
 
 ## History
 
-Archivist was written by [Shaun McCormick](/display/~splittingred) as a wordpress-style archiving component, and first released on June 3rd, 2010.
+Archivist was written by [Shaun McCormick](https://github.com/splittingred) as a wordpress-style archiving component, and first released on June 3rd, 2010.
 
 ### Download
 

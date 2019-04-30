@@ -12,15 +12,15 @@ Please note that this document deals with **web** controllers, not mgr controlle
 
 Please don't forget to read past this list to see common options and placeholders in the controller templates.
 
-- [Discuss.Controllers.board](extras/discuss/discuss.controllers/discuss.controllers.board "Discuss.Controllers.board")
-  - [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml "Discuss.Controllers.board.xml")
-- [Discuss.Controllers.home](extras/discuss/discuss.controllers/discuss.controllers.home "Discuss.Controllers.home")
-- [Discuss.Controllers.login](extras/discuss/discuss.controllers/discuss.controllers.login "Discuss.Controllers.login")
-- [Discuss.Controllers.logout](extras/discuss/discuss.controllers/discuss.controllers.logout "Discuss.Controllers.logout")
-- [Discuss.Controllers.profile](extras/discuss/discuss.controllers/discuss.controllers.profile "Discuss.Controllers.profile")
-- [Discuss.Controllers.register](extras/discuss/discuss.controllers/discuss.controllers.register "Discuss.Controllers.register")
-- [Discuss.Controllers.search](extras/discuss/discuss.controllers/discuss.controllers.search "Discuss.Controllers.search")
-- [Discuss.Controllers.thread](extras/discuss/discuss.controllers/discuss.controllers.thread "Discuss.Controllers.thread")
+- [Discuss.Controllers.board](extras/discuss/discuss.controllers/board "Discuss.Controllers.board")
+  - [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/board/xml "Discuss.Controllers.board.xml")
+- [Discuss.Controllers.home](extras/discuss/discuss.controllers/home "Discuss.Controllers.home")
+- [Discuss.Controllers.login](extras/discuss/discuss.controllers/login "Discuss.Controllers.login")
+- [Discuss.Controllers.logout](extras/discuss/discuss.controllers/logout "Discuss.Controllers.logout")
+- [Discuss.Controllers.profile](extras/discuss/discuss.controllers/profile "Discuss.Controllers.profile")
+- [Discuss.Controllers.register](extras/discuss/discuss.controllers/register "Discuss.Controllers.register")
+- [Discuss.Controllers.search](extras/discuss/discuss.controllers/search "Discuss.Controllers.search")
+- [Discuss.Controllers.thread](extras/discuss/discuss.controllers/thread "Discuss.Controllers.thread")
 
 ## Options
 

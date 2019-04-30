@@ -17,7 +17,7 @@ Batcher is a batch-editing component for MODX Revolution. It allows you to perfo
 
 ## History
 
-Batcher was written by [Shaun McCormick](/display/~splittingred) as a simple search component, and first released on June 2nd, 2010.
+Batcher was written by [Shaun McCormick](https://github.com/splittingred) as a simple search component, and first released on June 2nd, 2010.
 
 It is now developed and maintained by Sterc at <https://github.com/Sterc/Batcher>
 
@@ -37,4 +37,4 @@ After installing, simply reload the page, and the 'Batcher' menu option should b
 
 ## See Also
 
-1. [Batcher.Roadmap](extras/batcher/batcher.roadmap)
+1. [Batcher.Roadmap](extras/batcher/roadmap)

@@ -15,7 +15,7 @@ Peoples is a simple User and User Group listing component for MODX Revolution. I
 
 ### History
 
-Peoples was written by [Shaun McCormick](/display/~splittingred) as a simple user and usergroup listing component, and first released on October 19th, 2010.
+Peoples was written by [Shaun McCormick](https://github.com/splittingred) as a simple user and usergroup listing component, and first released on October 19th, 2010.
 
 ### Download
 

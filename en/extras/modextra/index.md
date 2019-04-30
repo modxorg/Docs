@@ -108,7 +108,7 @@ And for the record, these are the files whose names you should change to reflect
 - ./core/components/modextra/model/modextra/request/modextracontrollerrequest.class.php
 - ./core/components/modextra/model/schema/modextra.mysql.schema.xml
 
-Once you've done all of that, you can create some [System Settings](administering-your-site/settings/system-settings "System Settings") back in your MODX Revo site:
+Once you've done all of that, you can create some [System Settings](building-sites/settings "System Settings") back in your MODX Revo site:
 
 - 'mynamespace.core\_path' - Point to /path/to/my/extra/core/components/extra/
 - 'mynamespace.assets\_url' - /path/to/my/extra/assets/components/extra/

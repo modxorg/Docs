@@ -46,18 +46,18 @@ These are specific placeholders for the cmCamper snippet. Besides these, look at
 | remarks       | Stored plain, so no HTML tags. If using line ends in the remarks textarea, you may want to apply the nl2br output modifier.                       |
 | price         | Formatted using money\_format (is included if not present on your machine) using options: %!.2n                                                   |
 | status        | Status ID (0-5 inclusive), representing:                                                                                                          |
-1. Unconfirmed
-2. Active
-3. Favorite
-4. Conditionally sold
-5. Sold
-6. Inactive |
-| statusname | The translated string related to your status ID. |
-| keynr |  |
-| owner | Owner object relational ID, not further information. |
-| id | Camper object unique ID |
-| added | d/m/Y formatted timestamp the object was added. |
-| archived | d/m/Y formatted timestamp the object was archived. |
+|               | 1. Unconfirmed                                                                                                                                    |
+|               | 2. Active                                                                                                                                         |
+|               | 3. Favorite                                                                                                                                       |
+|               | 4. Conditionally sold                                                                                                                             |
+|               | 5. Sold                                                                                                                                           |
+|               | 6. Inactive                                                                                                                                       |
+| statusname    | The translated string related to your status ID.                                                                                                  |
+| keynr         |                                                                                                                                                   |
+| owner         | Owner object relational ID, not further information.                                                                                              |
+| id            | Camper object unique ID                                                                                                                           |
+| added         | d/m/Y formatted timestamp the object was added.                                                                                                   |
+| archived      | d/m/Y formatted timestamp the object was archived.                                                                                                |
 
 ## Options (Class: cmOption, many-to-many class: cmCamperOptions)
 
@@ -97,6 +97,6 @@ The owner object could be used as a very rudimentary customer relationships syst
 
 ## Also see:
 
-1. [CamperManagement.cmCamperDetails Snippet](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcamperdetails-snippet)
-2. [CamperManagement.cmCampers Snippet](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcampers-snippet)
-3. [CamperManagement.Placeholders you can use](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.placeholders-you-can-use)
+1. [CamperManagement.cmCamperDetails Snippet](extras/campermanagement/campermanagement.developing-the-front-end/cmcamperdetails-snippet)
+2. [CamperManagement.cmCampers Snippet](extras/campermanagement/campermanagement.developing-the-front-end/cmcampers-snippet)
+3. [CamperManagement.Placeholders you can use](extras/campermanagement/campermanagement.developing-the-front-end/placeholders-you-can-use)

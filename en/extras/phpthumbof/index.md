@@ -15,7 +15,7 @@ phpThumbOf is a secure, custom [Output Filter](making-sites-with-modx/customizin
 
 ### History
 
-phpThumbOf was written by [Shaun McCormick](/display/~splittingred) as a secure phpThumb output filter, and first released on November 3rd, 2010.
+phpThumbOf was written by [Shaun McCormick](https://github.com/splittingred) as a secure phpThumb output filter, and first released on November 3rd, 2010.
 
 ### Download
 

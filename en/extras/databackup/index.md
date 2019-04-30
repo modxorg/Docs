@@ -44,7 +44,7 @@ _old_uri: "revo/databackup"
 ]]
 ```
 
-### [System Settings](administering-your-site/settings/system-settings "System Settings")
+### [System Settings](building-sites/settings "System Settings")
 
  These need to be created if they do not exist.
 

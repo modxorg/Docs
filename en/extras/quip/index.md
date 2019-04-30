@@ -15,7 +15,7 @@ Quip is a simple commenting [Snippet](developing-in-modx/basic-development/snipp
 
 ### History
 
-Quip was written by [Shaun McCormick](/display/~splittingred) as a simple commenting component, and first released on May 7th, 2009.
+Quip was written by [Shaun McCormick](https://github.com/splittingred) as a simple commenting component, and first released on May 7th, 2009.
 
 ### Download
 
