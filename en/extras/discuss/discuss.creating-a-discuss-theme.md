@@ -20,7 +20,7 @@ The default theme included in Discuss is loosely based on the official MODX Foru
 
 Just like any other MODX Extra, Discuss gives you infinite markup freedom. This does mean there's a lot of different templates in use for various bits of the template. To give you an idea, here's a visual view of the forum home breakdown.
 
-![](https://www.evernote.com/shard/s265/sh/14aa5e38-ec33-4a44-be2d-ba2698f1d6ab/b9f56412352884f8e6f9522a638d45ea/res/35d30b10-9174-4430-a8c4-286c203cfae5/skitch.png)
+![](basic-theme-structure.png)
 
 Luckily, there's an easy way for you to figure out what markup is coming from what template file. Simply enable the **discuss.debug\_templates** system setting, and every referenced chunk template will be pre- and suffixed with a HTML comment indicating what chunk (and its filename) was referenced. Example:
 

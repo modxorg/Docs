@@ -9,7 +9,7 @@ _old_uri: "revo/collections"
 1. Any direct child resource will be hidden from the Resource Tree in the Manager, and listed in a grid view (similar to Articles) under a dedicated “Children” tab.
 2. Any children that themselves have children will be shown in the Tree, to be managed normally.
 
- ![Collections Children Grid](http://modx.com/assets/i/blogs/yj/Collections-Grid-View.png)
+ ![Collections Children Grid](collections-grid-view.png)
 
 ### Sub Collections
 
@@ -139,12 +139,12 @@ publishedon=published:asc
 
 ### Selection's settings
 
- ![](http://rtfm.modx.com/download/attachments/6db40c3bf7b03bf43a88376d9864ff04/Screenshot%202014-11-25%2015.40.15.png)
+ ![](screenshot-2014-11-25-15.40.15.png)
 
 - New link's button label - Customize label text on the "New Link" button.
 
 ## Additional Resources
 
-[Collections: Customizable Views for Content Types](http://modx.com/blog/2014/09/30/collections-easily-customizable-admin-views-for-content-types/)
-[Collections 3](http://www.bxr.cz/blog/collections-3/)
-[Collections: Enhanced sort](http://www.bxr.cz/blog/collections-enhanced-sort/)
+- [Collections: Customizable Views for Content Types](http://modx.com/blog/2014/09/30/collections-easily-customizable-admin-views-for-content-types/)
+- [Collections 3](http://www.bxr.cz/blog/collections-3/)
+- [Collections: Enhanced sort](http://www.bxr.cz/blog/collections-enhanced-sort/)

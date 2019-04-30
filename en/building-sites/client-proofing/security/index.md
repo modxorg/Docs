@@ -28,7 +28,7 @@ Demonstrates by applying concepts to the MODx Sample Site to:
 - Create a 'secure' context for Directors and up only
 - Restrict some element categories to administrators only
 
-![](http://assets.modx.com/docs/understanding-revo-acls.jpg)
+![](understanding-revo-acls.jpg)
 
 ### Example: Context Access
 

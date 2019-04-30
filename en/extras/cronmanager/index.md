@@ -22,6 +22,14 @@ cd /path/to/your/modx/installation/assets/components/cronmanager/ && php cron.ph
 
 We advise you to execute it on every minute, every day in every month (\* to all: m h dom mon dow). But when you're sure there are no needs for an every minute cronjob, you could change the crontab interval by your own needs.
 
+![](cron-setup.png)
+
+You can also call the cron.php directly, like so:
+
+``` php
+php -q public_html/assets/components/cronmanager/cron.php
+```
+
 ## Usage examples
 
 To use the component, navigate to your manager and click on "Components > Cron Manager".
@@ -57,23 +65,3 @@ The log is a simple overview of all the return messages, and also a timestamp is
 The Cron Manager is developped in GitHub on: [https://github.com/bertoost/MODx-CronManager/](http://github.com/bertoost/MODx-CronManager/)
 
 Bugs and new ideas could be entered here: [https://github.com/bertoost/MODx-CronManager/issues/](http://github.com/bertoost/MODx-CronManager/issues/)
-
-## Comments (1)
-
-1. ![User icon: jgulledge19](/s/1911/69/_/images/icons/profilepics/anonymous.png "jgulledge19")
-  
-  Sep 28, 2012
-  
-### [Josh Gulledge](/display/~jgulledge19) says:
-  
-  This might help some that have shared hosting. For my blog site the host is usi...
-  
-  This might help some that have shared hosting.
-  
-  For my blog site the host is using cPanel, this was the command that was needed to work:
-
-``` php
-php -q public\_html/assets/components/cronmanager/cron.php
-```
-
-  ![](cron-setup.png)

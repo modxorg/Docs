@@ -6,7 +6,9 @@ _old_uri: "revo/boilerx/"
 
 ## What is boilerX?
 
-![](http://jpdevries.s3.amazonaws.com/assets/uploads/rtfm/HTML5_Logo_512.png)[HTML5 Boilerplate](https://github.com/jpdevries/boilerx) helps you build fast, robust, and adaptable web apps or sites. Kick-start your project with the combined knowledge and effort of 100s of developers, all in one little package.
+![](html5.png)
+
+[HTML5 Boilerplate](https://github.com/jpdevries/boilerx) helps you build fast, robust, and adaptable web apps or sites. Kick-start your project with the combined knowledge and effort of 100s of developers, all in one little package.
 
 boilerX makes getting up and running with HTML5 Boilerplate a click away and is configurable using System Settings. Upon installation boilerplate assets are automatically placed in your assets folder.
 
