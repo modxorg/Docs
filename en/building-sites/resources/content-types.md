@@ -18,7 +18,7 @@ instead of test.html. This allows you to create any type of file from [Resources
 
 When editing a Resource, simply select the Content Type that you'd like to use:
 
-![](/download/attachments/18678068/content-type1.png?version=1&modificationDate=1268852969000)
+![](content-type1.png)
 
 Then save the [Resources](building-sites/resources "Resources"). This will automatically associate that [Resources](building-sites/resources "Resources") with the selected Content Type.
 
@@ -26,7 +26,7 @@ Then save the [Resources](building-sites/resources "Resources"). This will autom
 
 First, go to System -> Content Types. You'll see a grid populated with all the current Content Types. Click on 'New Content Type', and a window will appear:
 
-![](/download/attachments/18678068/content-type-new1.png?version=1&modificationDate=1268852967000)
+![](content-type-new1.png)
 
 The fields that appear are as follows:
 

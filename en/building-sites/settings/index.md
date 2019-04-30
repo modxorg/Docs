@@ -33,7 +33,7 @@ Basically, when a setting is requested in the session of a specific user, the se
 
  To create a new system setting, click the "Create New Settings" link under System -> System Settings.
 
- ![](/download/attachments/18678127/system+settings+annotated.png?version=1&modificationDate=1303174387000)
+ ![](system+settings+annotated.png)
 
 ### Parameters
 

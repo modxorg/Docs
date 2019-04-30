@@ -11,7 +11,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 
 When instantiating this into a tabbed interface, it's recommended to set preventRender: true in its config to prevent JS rendering issues.
 
-![](/download/attachments/18678079/grid.png?version=1&modificationDate=1302187849000)
+![](grid.png)
 
 MODExt Grids are used to display tabular data, complete with a ColumnModel, top toolbar (tbar) and bottom toolbar (bbar). It has built-in support for paging as well. Grids are populated remotely from a connector request returning a JSON object. Displaying a right-click context menu for each row can easily be achieved by including a "menu" key for each data row in your processor:
 

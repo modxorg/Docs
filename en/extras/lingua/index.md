@@ -20,7 +20,7 @@ The concept was based on [Translations](http://modx.com/extras/package/translati
 
 The Custom Manager Page is provided to manage the list of languages and their settings.
 
-![](/download/attachments/46137393/Lingua_CMP.png)
+![](lingua_cmp.png)
 
 ## Plugin
 
@@ -38,7 +38,7 @@ ALL snippets have &toArray to dump all the placeholders and &toPlaceholder to ho
 This snippet is the language selector on the front-end.
 The chunks have [twitter bootstrap's dropdown-toogle style](http://getbootstrap.com/components/#dropdowns) as default, just to give an idea of how they were prepared.
 
-![](/download/attachments/46137393/lingua.selector.png)
+![](lingua.selector.png)
 
 When the user clicks the link, then the page will be redirected back to the same page, but with additional REQUEST url to initiate the language session.
 The REQUEST key can be defined in System Setting, but the default key is **_lang_**.
@@ -183,17 +183,17 @@ On your resource tree navigation > right click > edit context.
 
 **Right click** on the context where Lingua should run, then click "**Edit context**":
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/select-context.png)
+![](select-context.png)
 
 Then add this setting on the "Context Settings" tag:
 
 - key: **modRequest.class**, value: **LinguaRequest**
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/new-context-setting.png)
+![](new-context-setting.png)
 
 After it is saved, you will see the setting on the grid like this.
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/lingua_context_settings.png)
+![](lingua_context_settings.png)
 
 #### Multiple contexts :
 
@@ -211,13 +211,13 @@ On its "Properties" tab, click "Default Properties Locked" button, and change th
 
 - name: **lingua.contexts**, value: **web**, **your\_other\_context1**, **your\_other\_context2**
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/lingua_plugin_settings.png)
+![](lingua_plugin_settings.png)
 
 #### Version 2.0.0-rc1
 
 On this version, the settings have been moved over to MODX's System Settings instead, to avoid overriding on upgrading.
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/system-settings.png)
+![](system-settings.png)
 
 ### Template Variable's Cloning Patterns
 
@@ -231,7 +231,7 @@ You will find pre-existing core TVs' patterns, and MIGX's patterns as example.
 
 You can either create a new one, or duplicate existing one by right-click select the row.
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/lingua-cloning-patterns-update.png)
+![](lingua-cloning-patterns-update.png)
 
 To find out what IDs you need to set, you need to find them out from the TV's template.
 

@@ -15,7 +15,7 @@ A MODX Revolution symlink simply takes the content of one resource and displays 
 
 ## Example:
 
-![](/download/attachments/18678065/Revolution_Symlink.png?version=1&modificationDate=1258411274000)
+![](revolution_symlink.png)
 
 For my site this example would feed the contents of my college degrees page to the me.html
 

@@ -170,7 +170,7 @@ If MODX does not find a config.inc.php file during setup, it will not offer you 
 
 ## Updating your Extras settings
 
-![](/download/attachments/22183945/modx-namespaces.png)
+![](modx-namespaces.png)
 
 Some extras, such as Gallery, store information on where certain files can be found in their own settings. To take Gallery as the example, it stores the path to its assets, core, files and phpthumb folders on the filesystem. Depending on your setup these will change when moving and in order to keep using these addons you will need to update those paths. While every addon can decide for itself where to store paths, one of the popular locations is in the system settings.
 
@@ -213,11 +213,11 @@ $driver_options = {driver_options};
 
 This can be a bad omen: the Installation Summary page does not describe messages. This can be a sign that permissions are not correct somewhere.
 
-![](/download/attachments/22183945/2013-01-24_14-39-36.png?version=2&modificationDate=1359073561000)
+![](2013-01-24_14-39-36.png)
 
 When that page is working correctly, you should see messages next to each "Ok":
 
-![](/download/attachments/22183945/2013-01-24_15-35-56.png?version=2&modificationDate=1359073584000)
+![](2013-01-24_15-35-56.png)
 
 #### Check your Database Encoding
 

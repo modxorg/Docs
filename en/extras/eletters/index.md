@@ -77,7 +77,7 @@ What does this mean? If you already had a working version of GroupEletters then 
   - `[[+date_created]]`
 - Select the Template Variables tab. You will need to select and fill out the information:
 
-![](/download/attachments/39355133/TVs.png?version=1&modificationDate=1335812378000)
+![](tvs.png)
 
 - When you are read you must check Send a Test - this is a requried step and if you make a change in the content area you will need to send another test.
 - If you have CronManager set up then it will send out on the Publish Date or if it is published the next time CronManager runs.

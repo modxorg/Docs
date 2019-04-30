@@ -35,7 +35,7 @@ Leave **basePathRelative** and **baseUrlRelative** set to "Yes". That's the most
 
 Now, when you edit that TV in a Resource, you'll notice that it uses the Source we created earlier:
 
-![](/download/attachments/35586538/20110907-pd72jtn9bhdbn5q5qb7wadku5a.jpeg?version=1&modificationDate=1315428297000)
+![](20110907-pd72jtn9bhdbn5q5qb7wadku5a.jpeg)
 
 Clicking the dropdown will load the MODx.Browser window using the Source that we specified - note that our source here only loads the contents of the assets/ directory.
 

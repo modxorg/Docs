@@ -27,7 +27,7 @@ Now, in your dashboard widget content, go ahead and put this:
 
 Our widget should look like this:
 
-![](/download/attachments/35586570/dashboard-create1.png?version=1&modificationDate=1315489054000)
+![](dashboard-create1.png)
 
 Go ahead and save the Widget.
 
@@ -37,7 +37,7 @@ Now that we've got our widget, let's assign it to the Default Dashboard, by goin
 
 From here, click the "Place Widget" button above the Widgets grid on this page. Select our "Hello World" widget from the dropdown, and click save. Now our Widget is on the Dashboard! Let's go ahead and place it in position #2 by dragging it between the "Configuration Check" widget and the "MODX News Feed" widget:
 
-![](/download/attachments/35586570/dashboard-create2.png?version=1&modificationDate=1315489054000)
+![](dashboard-create2.png)
 
 Save your Dashboard.
 
@@ -45,7 +45,7 @@ Save your Dashboard.
 
 Now, if you click the "Dashboard" top menu item on the page, you can see your new dashboard widget in place!
 
-![](/download/attachments/35586570/dashboard-create3.png?version=1&modificationDate=1315489054000)
+![](dashboard-create3.png)
 
 ## Other Widget Types
 

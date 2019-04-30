@@ -10,11 +10,11 @@ This tutorial will show you how to create a second media source that you can use
 
 Let's get to it! By default, your file manager should look something like this:
 
-![](/download/attachments/41058455/modx1.png?version=1&modificationDate=1346437884000)
+![](modx1.png)
 
 That's cool and all, but we can probably make it more meaningful by preventing users from viewing files they will never use. Let's make it look something like this:
 
-![](/download/attachments/41058455/modx2.png?version=1&modificationDate=1346437945000)
+![](modx2.png)
 
 ## Tutorial
 
@@ -22,7 +22,7 @@ That's cool and all, but we can probably make it more meaningful by preventing u
 
 Great. Let's make a folder in /assets/ called "files". Inside that, two more, one called "pdf" and the other "images". All of the files that our clients upload will go into these folders. Let's CHMOD the three folders we've created to 777. Your filesystem media source should look like this:
 
-![](/download/attachments/41058455/modx3.png?version=1&modificationDate=1346438045000)
+![](modx3.png)
 
 ### Step 2: Hide the Filesystem Media Source
 
@@ -76,10 +76,10 @@ That should be it!
 
 It's easy to set up a different media source for each context. For each context, create a new setting called "default\_media\_source" and fill in the ID of the media source.
 
-![](/download/attachments/41058455/modx4.png?version=1&modificationDate=1346438389000)
+![](modx4.png)
 
 Any new TVs in that context will now use that media source.
 
- ![](/download/attachments/41058455/modx5.png?version=1&modificationDate=1346438434000)
+ ![](modx5.png)
 
 Combined with [this tutorial](building-sites/contexts/virtual-host "Creating a Subdomain from a Folder using Virtual Hosts"), we now have different sites on the same MODX install, each with their own unique file system. Neat!

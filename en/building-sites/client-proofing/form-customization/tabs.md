@@ -30,7 +30,7 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager/form-customizatio
 
  Adding a new tab is quite simple. Edit your Set, and open the Regions tab. Click the Create New Tab button, give it an ID like "my-new-tab" and a description.
 
-![](/download/attachments/a173647e0c2b1aeb7f1021e4f14784bc/fc_new_tab.jpg)
+![](fc_new_tab.jpg)
 
 Any time you need to refer to the tab region, for example if moving Template Variables into the new tab, use the ID you gave it.
 

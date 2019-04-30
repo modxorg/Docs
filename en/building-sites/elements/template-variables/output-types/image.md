@@ -12,7 +12,7 @@ This output-type allows you to wrap an img-tag around the input (normally should
 
 It's output options look like:
 
-![](/download/attachments/35095498/tv-image-output-options2.png?version=1&modificationDate=1308560369000)
+![](tv-image-output-options2.png)
 
 | Name           | Description                                                           | Value |
 | -------------- | --------------------------------------------------------------------- | ----- |

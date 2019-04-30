@@ -11,7 +11,7 @@ Templates typically contain the HTML markup tags that determine the layout and a
 
 Think of a Template like a house. Your [Resource's](building-sites/resources "Resources") content, then, is a person. A person can have many different houses, but only live in one house at a time.
 
-![](/download/attachments/18678060/template-info1.jpg?version=1&modificationDate=1280149156000)
+![](template-info1.jpg)
 
 [Resources](building-sites/resources "Resources") can only use one Template at a time, however, a Resource can switch Templates at any time, just as a person can move from house to house at any time. The Template, just like a house, also changes the main way a page is displayed. A Template usually contains the header and footer of a page - and/or a sidebar, navigation bar, etc.
 

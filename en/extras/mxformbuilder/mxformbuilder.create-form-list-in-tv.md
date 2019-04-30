@@ -24,7 +24,7 @@ _old_uri: "revo/mxformbuilder/mxformbuilder.create-form-list-in-tv"
 
  This should look something like below
 
- ![](/download/attachments/73fcdf0007b17bddad5cc696dfe4eb85/mxfb-tv-create.png)
+ ![](mxfb-tv-create.png)
 
  By default only active forms and forms that are have blank (non-set) context and/or current context are listed.
  Specify the &context or &active to change default filtering as needed.
@@ -36,7 +36,7 @@ Ex: **$modx->runSnippet('mxfbTvFormList', _array('context'=>'web')_ )**
 
  After you have saved your new TV load a resource that uses any of the templates that you allowed access to the TV. Default rendering of the TV in the new resource will now be displayed in the **Template Variables** tab of the resource.
 
- ![](/download/attachments/73fcdf0007b17bddad5cc696dfe4eb85/mxfb-tv-example.jpeg)
+ ![](mxfb-tv-example.jpeg)
 
  Example TV was placed in a category called mxFormBuilder; this will depend on your specific category assigned during creating the TV and any Form Customization.
 

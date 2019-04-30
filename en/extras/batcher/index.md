@@ -8,7 +8,7 @@ _old_uri: "revo/batcher"
 
 Batcher is a batch-editing component for MODX Revolution. It allows you to perform basic actions on multiple Resources.
 
-![](/download/attachments/16646167/batcher-ss.png)
+![](batcher-ss.png)
 
 ## Requirements
 

@@ -8,7 +8,7 @@ _old_uri: "revo/articles/articles.creating-a-blog"
 
 Creating a Blog is simple: just right-click on any node in the Resources tree on the left-hand side, and mouse over to the "Create" option. Then click on "Create Articles Here":
 
-![](/download/attachments/36634992/articles-cm.png?version=1&modificationDate=1322602208000)
+![](articles-cm.png)
 
 This will load a screen to create a Articles Container - which is basically a blog - that can contain any number of articles (blog posts) you want.
 
@@ -16,7 +16,7 @@ This will load a screen to create a Articles Container - which is basically a bl
 
 From there, you'll see a new editing screen that looks like this:
 
-![](/download/attachments/36634992/articles-tab1.png?version=1&modificationDate=1322602300000)
+![](articles-tab1.png)
 
 There are a few fields on the first tab that you can set:
 
@@ -34,7 +34,7 @@ Go ahead and give your Articles Container a title called "My Blog", and an alias
 
 The Template tab consists of templating options for your blog, such as selecting the Template to use, and other listing options.
 
-![](/download/attachments/36634992/articles-tab2.png?version=1&modificationDate=1322602370000)
+![](articles-tab2.png)
 
 The fields for this tab are:
 
@@ -64,7 +64,7 @@ Go ahead and click on the "Advanced Settings" tab.
 
 There are quite a few fields here, in separate vertical tabs:
 
-![](/download/attachments/36634992/articles-tab3.png?version=1&modificationDate=1322602531000)
+![](articles-tab3.png)
 
 - General Options
   - **Enable Update Services** - If on, Articles will attempt to ping Ping-o-Matic whenever you publish an Article, to send out your article's title and URL to major search engines.

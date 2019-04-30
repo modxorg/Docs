@@ -8,7 +8,7 @@ _old_uri: "revo/gallery/gallery.setting-up-your-gallery"
 
 This quick reference shows you how to setup a barebones gallery on your site that displays a list of Albums, then once an album is selected, displays the images from that album. Once a thumbnail is clicked, it shows a bigger version of that album:
 
-![](/download/attachments/32243714/gallery-demo.png?version=1&modificationDate=1286546262000)
+![](gallery-demo.png)
 
 ## Uploading Your Photos
 

@@ -18,7 +18,7 @@ Below is a list of the field type properties that you can set.
 
 **Exmaple option format (label==value):**
 Good==good||Fair==fair||Bad==bad
-![](/download/attachments/73fcdf0007b17bddad5cc696dfe4eb85/Selection_030.png) |  |
+![](selection_030.png) |  |
 | Content | The content is the inputs HTML that is rendered in the output. This will also contain the placeholders used for the field and provide you with complete control of the rendered HTML structure. |  |
 | Context | Use the context to restrict the rule to use on specific context in the system. This would allow you to create for example a complete set of field types for mobile that are only visible when a manager is in the mobile context of the site. By default, empty, would mean that the field type is accessible to all context of the application. |  |
 | Active | When checked the field will be visible in the form field "_rule type_" drop down list. |  |

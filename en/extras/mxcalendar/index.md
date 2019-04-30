@@ -4,7 +4,7 @@ _old_id: "684"
 _old_uri: "revo/mxcalendar"
 ---
 
-![](/download/attachments/38994084/logo-mxCalendar.png?version=1&modificationDate=1334336364000)
+![](logo-mxcalendar.png)
 
 ##### Working on finishing documentation, please visit <http://charlesmx.com/software/mxcalendar-revo.html> in the meantime, or if you have access feel free to help update
 
@@ -40,13 +40,13 @@ You will need to download from the ModX Extras Repository, here <http://modx.com
 
 In the manager menu, select **Components** -> **mxCalendar**. Select the **Calendars** tab, click **Create New Calendar**. Name your calendar, check the active checkbox (if unchecked) and save.
 
-? ![](/download/attachments/38994084/mxCalendarCreateCalendar.jpg?version=1&modificationDate=1352869552000)
+? ![](mxcalendarcreatecalendar.jpg)
 
 ## Creating Categories
 
 In the manager menu, select **Components** -> **mxCalendar**. Select the **Categories** tab, click **Create New Category**. Name the category and enter options, save.
 
-? ![](/download/attachments/38994084/mxCalendarCreateCategory.jpg?version=1&modificationDate=1352871857000)
+? ![](mxcalendarcreatecategory.jpg)
 
 ## Creating New Events
 
@@ -55,18 +55,18 @@ In the manager menu, select **Components** -> **mxCalendar**. Select the **Event
 Select a context. Leave blank for all contexts. Give the event a name, select a calendar to associate the event with, a category, and start and end date/times.
 
 Enter your event description in the rich text editor. This populates the `[[*content]]` for the event detail view.
-![](/download/attachments/38994084/mxCalendarAddEvent.jpg?version=2&modificationDate=1352869709000)
+![](mxcalendaraddevent.jpg)
 
 In the Location tab, name the location and enter the address. Check "Display Map" to output a Google Map for the address that you entered.
 The example shown is the default Google Map display in a styled modal window (tplDetail or tplDetailModal).
 
- ![](/download/attachments/38994084/mxCalendarEventLocation.jpg?version=1&modificationDate=1352869570000)
+ ![](mxcalendareventlocation.jpg)
 
-![](/download/attachments/38994084/mxCalendarGoogleMapModalView.jpg?version=1&modificationDate=1352871182000)
+![](mxcalendargooglemapmodalview.jpg)
 
 In the event tab, enter the event link URL.
 
-![](/download/attachments/38994084/mxCalendarAddEventLink.jpg?version=1&modificationDate=1352870583000)
+![](mxcalendaraddeventlink.jpg)
 Form Tab documentation forthcoming...
 
 ## Using mxCalendar

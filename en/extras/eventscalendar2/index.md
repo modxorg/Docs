@@ -4,7 +4,7 @@ _old_id: "635"
 _old_uri: "revo/eventscalendar2"
 ---
 
-![](/download/attachments/39354637/eventsCalendar2.png)
+![](eventscalendar2.png)
 
 ## Description
 

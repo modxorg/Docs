@@ -24,13 +24,13 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 
  On the left-hand resource-tree pane, click on the **Elements** tab
 
- ![](download/attachments/18678061/MODx+Create+TV.png?version=1&modificationDate=1308130781000)
+ ![](modx+create+tv.png)
 
 ### 3. Define the General Information
 
  When we define a TV, we have to define a lot of information about the behavior of this custom field. The "General Information" tab contains the basic information for this variable.
 
- ![](download/attachments/18678061/create-tv-general1.png?version=1&modificationDate=1268850848000)
+ ![](create-tv-general1.png)
 
 - **Variable Name**: This corresponds to the placeholders that will be used in your templates, e.g. **bio** = `[[*bio]]`. _This name should be **unique**_!
 - **Caption**: This is the primary label for your variable that appears when you edit a resource that uses this TV
@@ -38,7 +38,7 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 - **Category**: This affects which sub-tab the variable appears on
 - **Sort Order**: If you're using more than one TV, this will determine which appear at the top (1 = top, bigger numbers sink to the bottom)
 
- ![](download/attachments/18678061/MODX+__+Template+Variable_+bio-1.png?version=1&modificationDate=1308136915000)
+ ![](modx+__+template+variable_+bio-1.png)
 
  In the picture, you can see how the settings will correspond to your pages's editor fields.
 
@@ -52,7 +52,7 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 - **Input Options**: Some Input Types ignore this field, but others may require it. E.g. a dropdown list requires a list of possible values. Again, see the page on [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types") for more info.
 - **Default**: this affects what the default value for the field will be. This can be a simple value, or it can utilize one of the MODX [Bindings](building-sites/elements/template-variables/bindings "Bindings") to do things like select a value from the database or inherit a value from a parent page.
 
- ![](download/attachments/18678061/create-tv-rendopt1.png?version=1&modificationDate=1268850855000)
+ ![](create-tv-rendopt1.png)
 
 ### 5. Configure Template Access
 
@@ -84,7 +84,7 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 
  Next, we'll select the output rendering options. We'll select 'Date' as well, and as you'll note, below this box (depending on the Output Render selected) some form fields will show:
 
- ![](download/attachments/18678061/create-tv-outtype1.png?version=1&modificationDate=1268850851000)
+ ![](create-tv-outtype1.png)
 
  Allowing us to edit more fine-grained options for that Output Render.
 

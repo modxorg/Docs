@@ -45,7 +45,7 @@ _old_uri: "2.x/administering-your-site/security/policies"
 
  An example would be to assign the "Resource" policy to a Resource Group called 'HR Documents'. Then, you would give a User Group called "HR Department" access to this Resource Group via the Resource ACL:
 
- ![](/download/attachments/18678084/acl-rg1.png?version=1&modificationDate=1280162069000)
+ ![](acl-rg1.png)
 
  This would restrict all Resources in the "HR Documents" Resource Group to Users only in the "HR Department" group.
 
@@ -53,7 +53,7 @@ _old_uri: "2.x/administering-your-site/security/policies"
 
  Elements can be restricted from view by ACLs on Categories. For example, if you had a User Group called 'Developers', and wanted Users in that group to be the only Group that could see Elements in the Category 'Gallery', you would create an ACL like such, in the "Element Category Access" tab when editing the User Group:
 
- ![](/download/attachments/18678084/acl-ecat1.png?version=1&modificationDate=1280162231000)
+ ![](acl-ecat1.png)
 
  This would allow only Users in the "Developers" User Group access to see Elements in the "Gallery" Category.
 
@@ -61,11 +61,11 @@ _old_uri: "2.x/administering-your-site/security/policies"
 
  Here's an example custom policy:
 
- ![](/download/attachments/18678084/policy1.png?version=1&modificationDate=1268850255000)
+ ![](policy1.png)
 
  and its permissions:
 
- ![](/download/attachments/18678084/policy1-perm.png?version=1&modificationDate=1268850259000)
+ ![](policy1-perm.png)
 
  Any User that had access to this Policy would have the permissions 'view\_accounts' and 'save\_accounts'.
 

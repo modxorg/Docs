@@ -106,7 +106,7 @@ You don't have to use the ExtJS code as shown here to have a custom input type. 
 
 And that should render us a nice template dropdown in the backend:
 
-![](/download/attachments/39354478/ctv1.png?version=1&modificationDate=1334932146000)
+![](ctv1.png)
 
 ## Creating the Output Controller
 

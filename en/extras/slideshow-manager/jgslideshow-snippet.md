@@ -17,7 +17,7 @@ Basic use this code:
 ```
 
 The album\_id is the id you see in the manager like this
-![](/download/attachments/37683278/album_id.png?version=1&modificationDate=1325708634000)
+![](album_id.png)
 
 ## Available Properties
 

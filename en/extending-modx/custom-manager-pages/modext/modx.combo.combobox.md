@@ -9,13 +9,13 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 **Extends:**[Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox)
 **Key Features:** Remote and local data stores; grid renderer.
 
-![](/download/attachments/18678077/modext_combobox.png?version=1&modificationDate=1250517993000)
+![](modext_combobox.png)
 
 The MODExt ComboBox class contains all of the functionality of a regular Ext ComboBox. It may be populated remotely by an array of JSON objects from a connector (default), or locally (using a basic Javascript array or an Ext ArrayStore, with the "mode" config option set to "local").
 
 One unique feature of the MODx ComboBox class is the built-in renderer for grids. It allows developers to use a ComboBox as a grid editor, and automatically takes care of displaying the correct displayValue in the grid cell:
 
-![](/download/attachments/18678077/modext_combobox_grid.png?version=1&modificationDate=1250518045000)
+![](modext_combobox_grid.png)
 
 ## Unique Parameters
 

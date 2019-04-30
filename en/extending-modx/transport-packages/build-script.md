@@ -14,7 +14,7 @@ This tutorial will guide you through how to create one of those scripts. We'll b
 
 First off, let's take a quick look at our directory structure. This isn't always how you have to do it - this one is specifically built this way for SVN; but it's definitely recommended, especially with the _assets/components/quip/_ and _core/components/quip/_ structures, since that makes creating the transport package much easier.
 
-![](/download/attachments/18678073/quip-dir1.png?version=1&modificationDate=1273237771000)
+![](quip-dir1.png)
 
 ## Starting the Build Script
 
@@ -403,7 +403,7 @@ So now we've got a package with system settings, actions, menus, snippets, chunk
 
 We have our lexicon structured nicely in our \\core/components/quip/lexicon directory:
 
-![](/download/attachments/18678073/quip-dir2.png?version=1&modificationDate=1273237861000)
+![](quip-dir2.png)
 
 As you can see, we have a subdirectory as 'en', the IANA code for English. Then, we have a 'default.inc.php' - this represents the 'default' lexicon topic. Should we want to create separate lexicon topics, we would name them 'topicname.inc.php'.
 
@@ -493,7 +493,7 @@ As you can see, some new constants here. These are available to all setup option
 
 Basically, we're presenting them with a form before install that looks like this:
 
-![](/download/attachments/18678073/setupopt.png?version=1&modificationDate=1247328432000)
+![](setupopt.png)
 
 So that they can set or update the values of the emailsTo, emailsFrom, and emailsReplyTo system settings before they install the package. Now, the script will first check to see if those settings already exist; and if so, we'll fill them in with those values. This allows for upgrades to go gracefully, persisting the user's custom settings for those values. Pretty cool, huh?
 

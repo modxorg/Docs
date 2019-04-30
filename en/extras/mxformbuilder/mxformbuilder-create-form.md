@@ -9,7 +9,7 @@ _old_uri: "revo/mxformbuilder/mxformbuilder-create-form"
  Now that we have our package installed you will need to refresh your browser window if you have not already done so, this will update the Components menu adding in the menu for mxFormBuilder. Now we can select "Components" -> "mxFormBuilder" from the menu to load our form builder panel. Next follow the steps to create a sample contact form for use on your site.
 
 1. In the Contact Forms tab select the "Create New" button on the right
-  ![](/download/attachments/73fcdf0007b17bddad5cc696dfe4eb85/mxfb-00-initial-load.png)
+  ![](mxfb-00-initial-load.png)
 2. Now that we have our form window we can start looking at the options:
    - **Name** - This is a friendly name of the form that will be used in the default form wrapper as a heading tag and also used to identify the form in email communications and log records
    - **Owners** - Select any ModX user(s) that you would like to receive email notifications on new submissions. Should you leave this blank then no emails will be sent for notifications.
@@ -22,4 +22,4 @@ _old_uri: "revo/mxformbuilder/mxformbuilder-create-form"
    - **Context** - Allows you to filter which context are allowed to display this form. Leaving it empty will allow all context to display the given form.
    - **Success Message** - Custom message to display to users after the form has been submitted successfully (passed all validation rules). If left empty then the lexicon `[[%mxformbuilder.msg.success]]` will be used as the default success message. (only displayed if not using the success redirect option (5,6))
    - **Max Submissions Reached Notice** - Provides you with the option to display a custom message to users if they view the form after the max number of submissions (7) has been reached. This will over ride the lexicon entry `[[%mxformbuilder.msg.maxreachedmessage]]` in the rendering. If left empty the form will display the lexicon content.
-      ![](download/attachments/73fcdf0007b17bddad5cc696dfe4eb85/mxfb-01-form-create.png)
+      ![](mxfb-01-form-create.png)

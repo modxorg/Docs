@@ -23,7 +23,7 @@ _old_uri: "revo/collections"
 
 ### General Settings
 
- ![](/download/attachments/6db40c3bf7b03bf43a88376d9864ff04/Screenshot 2014-11-25 15.35.06.png)
+ ![](screenshot-2014-11-25-15.35.06.png)
 
 - Set as default view - If "Yes", this Collections View Template (CVT) will be used as a last fallback.
 - Default for templates - This will be the default CVT for Resources using these MODX Templates. Can be overridden on a per-resource basis in the Collections vertical-tab of the Collections resource's Settings.
@@ -61,7 +61,7 @@ publishedon=published:asc
 
 ### Collection's settings
 
- ![](/download/attachments/6db40c3bf7b03bf43a88376d9864ff04/Screenshot 2014-11-25 15.36.58.png)
+ ![](screenshot-2014-11-25-15.36.58.png)
 
 - Resource type selection - Enable Resource type selection when creating a new Resource using the "New Child" button.
 - Default children's resource type - Set a default Resource type for newly created child Resources.
@@ -71,7 +71,7 @@ publishedon=published:asc
 
 ### Columns
 
- ![](/download/attachments/6db40c3bf7b03bf43a88376d9864ff04/Screenshot 2014-11-25 15.41.40.png)
+ ![](screenshot-2014-11-25-15.41.40.png)
 
 - Label - String or lexicon entry key (you can add your own lexicon entries under the collections namespace into the topic templates) that will be used as a column label.
 - Name - Name of the field; can be any field from modResource, any TV name (prefixed with tv\_, **TV name must NOT contain a dot**) or any Tagger group alias (prefixed with tagger\_)

@@ -10,7 +10,7 @@ First off, find the User Group that you would like to assign the Dashboard to, a
 
 From there, you can simply click on the "Dashboard" dropdown, and select the Dashboard you want to assign to this User Group. All users in this group that have this group as their Primary Group will load that Dashboard instead of the Default now.
 
-![](/download/attachments/35586562/dashboard-assign.png?version=1&modificationDate=1315431845000)
+![](dashboard-assign.png)
 
 ## See Also
 

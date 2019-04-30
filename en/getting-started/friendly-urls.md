@@ -13,7 +13,7 @@ MODX supplies an ht.access file for you to edit to match your server settings It
 
 The .htaccess file can be anywhere above the MODX installation but the usual location is in the MODX site root (along with the ht.access file, and the assets, manager and connectors directories as shown in the image below). For most installs, you don't have to make any changes at all to the file in order to get FURLs working. There is one change you should make, but get FURLs working first and we'll cover that change at the end of this page.
 
-![](/download/attachments/18678057/shawnwilkerson_09_01.jpg?version=1&modificationDate=1299237799000)
+![](shawnwilkerson_09_01.jpg)
 
 Here is the ht.access file that comes with one version of MODX (your version may be slightly different).
 
@@ -120,7 +120,7 @@ If you do not see all of the MODX FURL settings, simply change the "Area" drop-d
 
 You will not find friendly\_url\_prefix and friendly\_url\_suffix among the settings in the image below - these have been deprecated in favor of extensions defined by [Content Types](building-sites/resources/content-types "Content Types") and container\_suffix (for Container Resources with Content Types having a mime\_type of text/html).  The default Container Suffix setting is now "/" which results in the urls of container resources instead of the content type of the container (in other words, the URLs of resources marked as containers will be / instead of something like .html). If you want your container resources to show as their content type (e.g., .html), remove the "/" from this setting. If you have issues with packages that utilize the container suffix for FURLS (such as [Articles](/extras/articles "Articles")), return this setting to "/".
 
-![](/download/attachments/18678057/furl_settings.png?version=4&modificationDate=1327431457000)
+![](furl_settings.png)
 
 The Use Friendly Alias Path (use\_alias\_path) setting allows the site to display directory structures. If it is set to "No" all of the documents on the site will appear in the URLs as if they are directly off of the root, disregarding the paths. It the setting is set to "Yes" (the default), you will see a full path to the current page in the URLs.
 

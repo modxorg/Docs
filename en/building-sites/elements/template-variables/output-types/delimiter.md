@@ -14,7 +14,7 @@ The output type will split the value on each double-bar (||), and then output it
 
 It's output properties look like:
 
-![](/download/attachments/20119608/tvot.delim.png?version=1&modificationDate=1281374552000)
+![](tvot.delim.png)
 
 | Name      | Description                              |
 | --------- | ---------------------------------------- |

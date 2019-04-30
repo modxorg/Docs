@@ -4,7 +4,7 @@ _old_id: "728"
 _old_uri: "revo/taggingatoz"
 ---
 
-![](/download/attachments/36634655/taggingatoz1.PNG)
+![](taggingatoz1.png)
 TaggingAtoZ is a snippet that lists tags (or theoretically other TV content as well) in groups from A to Z and an optional 0-9 group with customizable header. It can collect data from multiple TV sources.
 The typical output will be something like the image on the right, though it is completely customizable and you would probably want a bit more styling and useful tags.:)
 

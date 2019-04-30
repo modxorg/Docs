@@ -38,7 +38,7 @@ All snippets and chunks inside the resource will be processed. e.g: getResources
 
 This diagram explains which resources are for what:
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/virtunewsletter-bpml.jpg)
+![](virtunewsletter-bpml.jpg)
 
 ## "Thank you for your subscription" Email
 

@@ -294,7 +294,7 @@ Multiple sorting orders are applied as these orders:
 ]]
 ```
 
-![](/download/attachments/35586636/browsedirectories-groupbydirectory.jpg?version=1&modificationDate=1345838638000)
+![](browsedirectories-groupbydirectory.jpg)
 
 ## Template
 
@@ -350,7 +350,7 @@ FileDownload R has [@BINDING](http://rtfm.modx.com/display/MODx096/What+are+%28a
 ]]
 ```
 
-![](/download/attachments/35586636/separate-wrappers.jpg?version=1&modificationDate=1345838225000)
+![](separate-wrappers.jpg)
 
 ## Headers
 

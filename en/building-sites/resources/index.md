@@ -17,7 +17,7 @@ Each Resource also has a unique ID, or "Resource Identifier". This lets MODx kno
 
 Resources are shown in the Resources tree in the left-hand navigation of the manager. To edit one, simply click on the page you would like to edit. You can alternatively right-click the Resource and click 'Edit Resource'. This will load the Resource Edit page:
 
-[![](/download/attachments/bf9f8ccf5036b4f4bf8b248f7748d0c3/resource-edit1_v2.3.png)](/download/attachments/bf9f8ccf5036b4f4bf8b248f7748d0c3/resource-edit1_v2.3.png)
+[![](resource-edit1_v2.3.png)](resource-edit1_v2.3.png)
 
 The content of the Resource can then be edited in the large content field in the bottom area. Other fields related to each Resource can also be edited via the tabs on the top of the page.
 

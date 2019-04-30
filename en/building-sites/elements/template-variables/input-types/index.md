@@ -14,7 +14,7 @@ It's best to enter multiple Input Option values on a single line with no carriag
 
 Auto-Tag is a convenient template variable for using tags when blogging, have multiple categories a resource can belong to, or anytime you need a list of tags that have been used before. Every time you edit or create a resource with access to an auto-tag template variable, you will see the tags that were used before. You can easily click on priorly used tags to chose them in the list.
 
-To make auto-tag tvs useful in the front end, you will need to set the output type to "Delimiter" and specify a delimiter of your choice, and/or use an output filter to present it in the way you prefer. ![](/download/attachments/33227172/autotag.png?version=1&modificationDate=1292891676000)
+To make auto-tag tvs useful in the front end, you will need to set the output type to "Delimiter" and specify a delimiter of your choice, and/or use an output filter to present it in the way you prefer. ![](autotag.png)
 To output the tags in such a way that you each tag links to a certain resource and passes the tag in a GET parameter, you can use an output filter (snippet) as follows:
 
 ``` php
@@ -72,7 +72,7 @@ The Check Box input type allows multiple checkboxes to be displayed with a singl
 @SELECT pagetitle, id FROM modx_site_content WHERE parent=35
 ```
 
-![](/download/attachments/33227172/checkboxes.jpg?version=1&modificationDate=1295839664000)
+![](checkboxes.jpg)
 
 If you are using multiple checkboxes like this, you will probably need to set the **Output Type** to "Delimiter" (e.g. a comma) so you can distinguish the values contained in each checkbox.
 
@@ -80,7 +80,7 @@ If you are using multiple checkboxes like this, you will probably need to set th
 
 This allows you to set both a date and a time.
 
-![](/download/attachments/33227172/date.jpg?version=1&modificationDate=1295840279000)
+![](date.jpg)
 
 If you like to have a default set date you can put one of the following keywords inside the default value field (without quotes!). The "strange" logic behind the -X/+X values (which intuitively would be - for back and + for future) comes probably from a subtraction in the code somewhere, eg. now() - value, so if value is +72 this means now() - (+72), but - and + is -, so a positive value gets subtracted while with now() - (-72), - and - equals +, a negative value is added.
 
@@ -124,7 +124,7 @@ Set input option values in the option1==value1||option2==value2||option3==value3
 
 Also see Resource List TV type.
 
-![](/download/attachments/33227172/dropdown.jpg?version=1&modificationDate=1295840412000)
+![](dropdown.jpg)
 
 ### All input option names (for use in migx options-json)
 
@@ -140,7 +140,7 @@ Also see Resource List TV type.
 
 This is a text field that comes with its own validation: only text that's in a valid email format will be accepted.
 
-![](/download/attachments/33227172/email.jpg?version=1&modificationDate=1295840529000)
+![](email.jpg)
 
 ### All input option names (for use in migx options-json)
 
@@ -168,17 +168,17 @@ A hidden field does not show up in the manager, so it's rare that you'd use this
 
 This gives you a small WSYIWYG editor for the field. It looks exactly like the Richtext fields.
 
-![](/download/attachments/33227172/html_area.jpg?version=1&modificationDate=1298000899000)
+![](html_area.jpg)
 
 ## Image
 
-![](/download/attachments/33227172/tv-image-new.png?version=1&modificationDate=1308558236000)
+![](tv-image-new.png)
 
 Creates an image input form to browse the server for a file. Files can be uploaded through the MODx File Manager then.
 
 In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](building-sites/media-sources "Media Sources").
 
-![](/download/attachments/33227172/tv-image-input-options.png?version=1&modificationDate=1308558243000)
+![](tv-image-input-options.png)
 
 1) You can declare a default value file by specifying the path to the image.
 
@@ -215,7 +215,7 @@ This has the same options available to it as the Listbox (Multi-Select) – see 
 
 This behaves similar to the checkbox fields: you can select multiple items, and this field can be powered by a @SELECT binding in its "Input Option Values" parameter. Like checkboxes, you probably want to set the "Output Type" to delimiter so you can distinguish between values.
 
-![](/download/attachments/33227172/Listbox_multi.jpg?version=1&modificationDate=1298000556000)
+![](listbox_multi.jpg)
 
 ### Simple Usage
 
@@ -311,11 +311,11 @@ In the above examples, you can output a chunk or another Template Variable witho
 
 Supply the definition with a resource ID, and you'll end up with a drop down list of all pages/resources that are children of that resource. The value stored after you've made a selection is the ID of the single selected resource.
 
-![](/download/attachments/33227172/Resource_List.jpg?version=1&modificationDate=1297999877000)
+![](resource_list.jpg)
 
 This is similar to using a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding in a DropDown list menu, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
 
-This input type also accepts WHERE conditions to filter by: ![](/download/attachments/33227172/Screen+Shot+2012-05-18+at+9.04.54+PM.png?version=1&modificationDate=1337400324000)
+This input type also accepts WHERE conditions to filter by: ![](screen+shot+2012-05-18+at+9.04.54+pm.png)
 Another example:
 
 ``` php
@@ -361,7 +361,7 @@ As of MODX 2.1, there are three input options you can set for this TV:
 
 - Allow Blank: yes/no, when "no" the resource cannot be saved without it being filled in.
 - Max length: a number representing the number of characters that can be filled in in this field.
-- Min Length: a number representing the minimum number of characters needed to be filled in. May want to use this with the allow blank option to "no". ![](/download/attachments/33227172/tvinput.png?version=1&modificationDate=1308911612000)
+- Min Length: a number representing the minimum number of characters needed to be filled in. May want to use this with the allow blank option to "no". ![](tvinput.png)
 
 ### All input option names (for use in migx options-json)
 
@@ -399,4 +399,4 @@ This appears to be exactly the same as the vanilla Text field.
 
 This is a guided text field, which a dropdown option to select the protocol: none, <http://>, <https://>, <ftp://,> or [](mailto:). No validation is performed to ensure the correctness of the URL structure.
 
-![](/download/attachments/33227172/URL.jpg?version=1&modificationDate=1298001576000)
+![](url.jpg)

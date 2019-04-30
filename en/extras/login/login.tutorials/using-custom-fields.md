@@ -60,7 +60,7 @@ Simple as that!
   <input type="hidden" name="january[Misc]" value="" />
 ```
 
-![](/download/attachments/21135392/login.extendedUserContainers.png?version=1&modificationDate=1329484036000)
+![](login.extendedusercontainers.png)
 
 ### Excluding Fields from Saving as Extended
 
@@ -76,7 +76,7 @@ Extended fields can also be edited and added from within the Manager, by editing
 
 Also, if you have an extended field in a container, such as in this example, where you have test -> boo:
 
-![](/download/attachments/21135392/login.extended.nest.png?version=1&modificationDate=1281708667000)
+![](login.extended.nest.png)
 
 You can access them with the . syntax:
 

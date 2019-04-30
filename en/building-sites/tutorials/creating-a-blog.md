@@ -160,7 +160,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Go ahead and create a TV called 'tags', and give it a description of "Comma delimited tags for the current Resource." Next, make sure it has access to the 'BlogPostTemplate' Template we created earlier.
 
- ![](/download/attachments/18678105/tags-tv1.png?version=1&modificationDate=1279311829000)
+ ![](tags-tv1.png)
 
  That's it! Now you'll be able to add tags to any blog post we create, simply when editing your Resource by specifying a comma-separated list of tags.
 
@@ -231,7 +231,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  After that, we have a nice little 'read more' link which links to the post, and then our comments and publishedon date. That's it!
 
- ![](/download/attachments/18678105/blogpost-tpl1.png?version=1&modificationDate=1279311929000)
+ ![](blogpost-tpl1.png)
 
 ## Setting up Your Blog Home
 
@@ -345,7 +345,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  What this does is allow anyone in the 'Moderators' usergroup to moderate posts in your threads, and also notifies them via email when new posts are made. They can then either login to the manager to moderate comments, or click on links directly in the emails to approve or reject the comments. Your ACL should look something like this:
 
- ![](/download/attachments/18678105/moderator-group.png?version=1&modificationDate=1279308769000)
+ ![](moderator-group.png)
 
  Save your User Group, and that's it! You might have to flush sessions (Security -> Flush Sessions) and re-login to reload your permissions, but Quip will handle the rest.
 
@@ -378,7 +378,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  And boom! Latest blog posts displaying on your site:
 
- ![](/download/attachments/18678105/latestposts.png?version=1&modificationDate=1279308815000)
+ ![](latestposts.png)
 
 ### Adding a "Latest Comments" widget
 
@@ -404,7 +404,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Note also that it will default to showing the 5 latest. The result:
 
- ![](/download/attachments/18678105/latestcomments.png?version=1&modificationDate=1279309243000)
+ ![](latestcomments.png)
 
  You can see the [documentation for the snippet](/extras/quip/quip.quiplatestcomments "Quip.QuipLatestComments") for more configuration options.
 
@@ -422,7 +422,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  So we've got a full blog setup! It should look something like this in our tree now:
 
- ![](/download/attachments/18678105/blog-tree2.png?version=1&modificationDate=1279307462000)
+ ![](blog-tree2.png)
 
  Again, there's far more customization and things you could add to your blog. This tutorial is meant as a starting point, but feel free to customize and add things to your liking - the great part about MODx is that you can very easily customize, tweak and scale any solution: including a blog!
 

@@ -31,7 +31,7 @@ We're not creating any new pages here, but for reference, here are the pages we'
 
 Just so you know what we're talking about here, we're talking about a user's _extended_ fields. If you edit a user, e.g. the one you created while testing out your login process (**Security -> Manage Users -> Right-click your user**), head over to the Extended Fields tab and you can see any custom user fields.
 
-![](/download/attachments/39355781/user_extended_fields.jpg?version=1&modificationDate=1339739076000)
+![](user_extended_fields.jpg)
 
 In the screenshot, you can see that our earlier shenanigans created a few extra fields! See this [forum post](http://forums.modx.com/thread/72395/update-profile-created-bogus-extended-fields#dis-post-426733).
 

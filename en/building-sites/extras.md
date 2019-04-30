@@ -13,19 +13,19 @@ Downloading packages through [Package Management](extending-modx/transport-packa
 
 Go to Extras -> [Installer](extending-modx/transport-packages "Package Management").
 
-![](/download/attachments/23c66e1935073aec60f9d9ea342a5b6b/modx-package-management-1.jpg)
+![](modx-package-management-1.jpg)
 
 Then click the Download Extras button.
 
-![](/download/attachments/23c66e1935073aec60f9d9ea342a5b6b/modx-package-management-2.jpg)
+![](modx-package-management-2.jpg)
 
 Browse the available packages, opening the folders to expose the individual packages. Click Download to download whichever packages you'd like to download. You may download multiple packages at one time.
 
-![](/download/attachments/23c66e1935073aec60f9d9ea342a5b6b/modx-package-management-3.jpg)
+![](modx-package-management-3.jpg)
 
 The package will be downloaded to the proper directories in your MODx installation. Now you can view your new package, and click Install to choose to install it.
 
-![](/download/attachments/23c66e1935073aec60f9d9ea342a5b6b/modx-package-management-4.jpg)
+![](modx-package-management-4.jpg)
 
 [Providers](building-sites/extras/providers "Providers")
 
@@ -59,7 +59,7 @@ If the package should have a License Agreement, you'll need to agree to it befor
 
 Finally, the package may or may not have some pre-install options and settings for you to set, such as:
 
-![](/download/attachments/18678070/pkgsetupopt.png?version=1&modificationDate=1247328671000)
+![](pkgsetupopt.png)
 
 The package should then install on your MODx installation.
 
@@ -77,4 +77,4 @@ You can click on any package to either remove or uninstall a package. _Removing_
 
 Note the three modes when you uninstall a package:
 
-![](/download/attachments/18678070/pkguninstall.png?version=1&modificationDate=1247328671000)
+![](pkguninstall.png)

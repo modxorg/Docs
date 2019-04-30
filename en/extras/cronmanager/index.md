@@ -30,7 +30,7 @@ To use the component, navigate to your manager and click on "Components > Cron M
 
 Here you can create a new cronjob by clicking on the "new" button.
 
-![](/download/attachments/35095318/create-new-cronjob.JPG)
+![](create-new-cronjob.jpg)
 
 You see the fields "Snippet", "Minutes" and "Snippet properties".
 
@@ -48,7 +48,7 @@ In the overview of the cronjobs you're able to see directly wich snippets are in
 
 Each snippet in a cronjob could return some values, for testing purposes or something like that. Every return value of a snippet will be logged to the cronjob log inside MODx. You can view this log by clicking with the right mouse button on the record you want to view the log from.
 
-![](/download/attachments/35095318/viewlog-action.JPG?version=1&modificationDate=1307298900000)
+![](viewlog-action.jpg)
 
 The log is a simple overview of all the return messages, and also a timestamp is shown there.
 
@@ -76,4 +76,4 @@ Bugs and new ideas could be entered here: [https://github.com/bertoost/MODx-Cron
 php -q public\_html/assets/components/cronmanager/cron.php
 ```
 
-  ![](/download/attachments/35095318/cron-setup.png?version=1&modificationDate=1348836956000)
+  ![](cron-setup.png)

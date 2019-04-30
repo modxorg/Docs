@@ -49,7 +49,7 @@ Sometimes you want to have certain countries appear at the top of the list, in a
 
 Will output a list that looks like this:
 
-![](download/attachments/35586160/20110707-ckb8i6wtgk9gwrtds59nra4smh.jpeg?version=1&modificationDate=1310046984000)
+![](20110707-ckb8i6wtgk9gwrtds59nra4smh.jpeg)
 
 You simply pass the ISO codes of the countries you wish to prioritize in the &prioritized parameter. You can also adjust the text of the option groups with the `&prioritizedGroupText` and `&allGroupText` properties.
 

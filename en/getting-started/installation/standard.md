@@ -45,7 +45,7 @@ From there you will be asked to choose a language, and be presented with a welco
 
 After this, you'll be presented with a screen with some Install Options:
 
-![](/download/attachments/18678053/setup-opt1.png?version=2&modificationDate=1280259765000)
+![](setup-opt1.png)
 
 The New Installation option should be the only available option for you to choose. If you need to adjust the file permissions for your webserver, you can do so in the textfields below. Most servers will be fine with the default values.
 
@@ -55,7 +55,7 @@ When you're finished, click Next to proceed.
 
 From here, you will get a form asking you for your database information:
 
-![](/download/attachments/18678053/setup-db-1.png?version=1&modificationDate=1306342492000)
+![](setup-db-1.png)
 
 You can create your database and user prior to this step. Make sure your database user is associated with the new database and the user is given permission for all privileges for that database.
 
@@ -83,7 +83,7 @@ Due to the way that the PDO driver for SqlSrv works, you may not get an error me
 
 This will then popup another form for setting your database charset and collation:
 
-![](/download/attachments/18678053/setup-db2.png?version=1&modificationDate=1280264244000)
+![](setup-db2.png)
 
 For most users you can leave these values at what they are. However, if you need to change them, **make sure** the collation matches the charset. Click the 'Create or test selection of your database.' after you've finished.
 
@@ -92,7 +92,7 @@ MODX has only been tested with SQL Server's Latin1 character set.
 
 ### Creating an Administrator User
 
-![](/download/attachments/18678053/setup-db3.png?version=1&modificationDate=1280264231000)
+![](setup-db3.png)
 
 This form will now present you with a few fields for setting up your administrator user. Specify a username that you want to be the administrator username.
 
@@ -121,7 +121,7 @@ MODX will then let you know if any errors occurred during install, and prompt yo
 
 When install is successful, click 'Next' to proceed, and you'll be presented with one final option:
 
-![](/download/attachments/18678053/setup-cleanup1.png?version=1&modificationDate=1280264548000)
+![](setup-cleanup1.png)
 
 MODX recommends that you make sure to remove the setup/ directory after installing, to safeguard your site from anyone else trying to run setup on your site. You can do this by clicking the 'Check this to DELETE the setup directory from the filesystem.' checkbox.
 

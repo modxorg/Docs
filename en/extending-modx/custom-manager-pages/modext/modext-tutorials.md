@@ -18,7 +18,7 @@ In order to help you understand MODExt and Ext JS, I invite you to think about w
 
 A fantastic reference for Ext JS is Jesus Garcia's [Ext JS in Action](http://www.amazon.com/Ext-JS-Action-Jesus-Garcia/dp/1935182110/ref=sr_1_1?ie=UTF8&qid=1370295075&sr=8-1&keywords=Ext+JS+in+Action).
 
-![](/download/attachments/46137364/ext_js_cover.jpg?version=1&modificationDate=1370295179000)
+![](ext_js_cover.jpg)
 
 Never mind the weird cover of a 19th-century breakdancing Frankenstein – this is a good reference. It's good for MODX in particular because it covers Ext JS version 3. It was updated in 2011.
 

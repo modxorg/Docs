@@ -23,7 +23,7 @@ The values for the Rule should be as follows:
 
 An example Rule of setting the default value for a TV with ID 23 to "test" is:
 
-![](download/attachments/18678098/fc-tvDefault.png?version=1&modificationDate=1280153441000)
+![](fc-tvdefault.png)
 
 ## See Also
 

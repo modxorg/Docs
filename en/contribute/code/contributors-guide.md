@@ -128,6 +128,6 @@ git push origin bug-XXXX
 
  Log into your Github account, find your MODX fork, then hit the button at the top that says "Pull Request".
 
- ![](/download/attachments/33948128/github_modx_pull_request.jpg?version=1&modificationDate=1370290791000)
+ ![](github_modx_pull_request.jpg)
 
  Make sure you select the "base branch" – you want to issue the pull request to the branch you originally branched from (2.4.x in the above example).

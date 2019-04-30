@@ -24,7 +24,7 @@ After logging into your site's manager, do the following:
 
 Try it. When you try to login using the other username with only a "Member" role, permission will be denied. But why? It has to do with [Context Access](building-sites/contexts "Contexts") and [Access Policies](building-sites/client-proofing/security/policies "Policies"), which get a lot more complicated in a hurry. If you have a look at Security -> Access Controls and then right-click the Administrator User Group -> Update User Group, then click on the **Context Access** tab. You'll see something like this:
 
-![](/download/attachments/33226828/User-Group-Perms.jpg?version=1&modificationDate=1287981106000)
+![](user-group-perms.jpg)
 
 By default, MODX Revolution has 2 contexts: **web** (the front-end) and **mgr** (the back-end). From this table, we can learn 2 things: that the _minimum_ role is the Super-User role, and the "Access Policy" in use for this context is "Administrator". Even if you don't understand what all of that means, this is a good place to start educating you about permissions.
 

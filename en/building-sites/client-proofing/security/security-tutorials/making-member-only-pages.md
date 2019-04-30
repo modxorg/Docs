@@ -25,7 +25,7 @@ MODX 2.2.2 ships with an access wizard that simplifies this process. The step-by
 
 ### 1. Create a Resource Group
 
-Go to Security -> Resouce Groups and click the Create Resource Group. A window similar to this should pop up: ![](/download/attachments/18678352/create-resource-group.png?version=1&modificationDate=1348848806000)
+Go to Security -> Resouce Groups and click the Create Resource Group. A window similar to this should pop up: ![](create-resource-group.png)
 
 Let's go over each section:
 
@@ -54,7 +54,7 @@ We now have our resources in a resource group, and users in a user group. Done? 
 
 ### 4. Add Context Access to the User Group
 
-Go to Security > Access Controls. Right click on the protected user group. Select "Update user group". Go to the Context Access tab. Click "Add Context". We are presented with a dialog such as the one below. Let's break it down: ![](/download/attachments/18678352/context-access.png?version=1&modificationDate=1348853336000)
+Go to Security > Access Controls. Right click on the protected user group. Select "Update user group". Go to the Context Access tab. Click "Add Context". We are presented with a dialog such as the one below. Let's break it down: ![](context-access.png)
 
 | Section       | Explanation                                                                                                                                                                                                                            | Tutorial Default |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |

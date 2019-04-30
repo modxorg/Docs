@@ -39,6 +39,6 @@ _old_uri: "2.x/administering-your-site/form-customization/form-customization-rul
 
  An example rule for creating a new tab in the Resource edit page would look like so:
 
- ![](download/attachments/18678099/rule-tabNew.png?version=1&modificationDate=1279290789000)
+ ![](rule-tabnew.png)
 
 ## See Also

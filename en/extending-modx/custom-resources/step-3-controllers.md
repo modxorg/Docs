@@ -43,7 +43,7 @@ class CopyrightedResourceUpdateManagerController extends ResourceUpdateManagerCo
 
 So when we're done with that, our file structure should look something like this:
 
-![](/download/attachments/36634961/controllers.png?version=1&modificationDate=1360981998000)
+![](controllers.png)
 
 And that's all we need to get our custom controllers up and running. You don't even have to include the getLanguageTopics call, but we did so we can load our custom Lexicon for the page. Read that again: you do not need to create the **getLanguageTopics()** function! You do need to create the controllers and create the classes, but you do not need to add any functions to them. If you're confused, remember our hot tip from [Part I](extending-modx/custom-resources "Creating a Resource Class"): any time you extend a PHP class, you should review the parent class that you're extending. In this case, you can take a gander at the parent classes:
 
@@ -54,6 +54,6 @@ In case you need a brush up on your object-oriented programming, any method in t
 
 Now you can go to the Resource tree, and create a "Copyrighted Page", and it will load the Resource editing panel. Note, since we didn't override anything in the controller, it will look _exactly_ like the normal Resource editing panel. But, after you create your page and view it in the front-end, you'll note that the copyright is automatically appended:
 
-![](/download/attachments/36634961/fe-view.png?version=1&modificationDate=1322513681000)
+![](fe-view.png)
 
 Wonderful! This should give you a good understanding of how resources are handled by MODX. You could stop there, but we'll go on a little bit further to describe how to [extend the processors for your CRC](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4"). That's where things get more interesting... you can customize the behavior of the manager and control where things get saved in the database, and all sorts of things...

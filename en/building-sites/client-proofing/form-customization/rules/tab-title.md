@@ -23,7 +23,7 @@ For a list of tabs available for each page, see [Form Customization Pages](displ
 
 An example Rule of changing the title for the Page Settings tab for all [Users](display/revolution20/Users "Users") to "Custom Fields" would look like this:
 
-![](download/attachments/18678095/fc-tabTitle.png?version=1&modificationDate=1280153333000)
+![](fc-tabtitle.png)
 
 ## See Also
 

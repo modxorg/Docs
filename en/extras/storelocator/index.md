@@ -32,13 +32,13 @@ Install the package through the MODX® package manager.
 
 To add a store, simply log in to the manager and click "Components" -> "Store Locator". Once in the StoreLocator you will see the page "Manage stores". Now click the button "Add store location" and you will see the following window:
 
-![](/download/attachments/37683757/store_location.png?version=1&modificationDate=1331114145000)
+![](store_location.png)
 
 From there you can add a store by filling in the description, longitude and latitude coordinates and select the resource you want to link this store to. The resource will be assigned to the storeRowTpl so you can use all it's data to show the needed placeholders in the front-end. If you don't want to enter the coordinates by hand simply type the address next to the "Address:" box and click search. The script will then post your query to Google Maps and get the coordinates for you.
 
 ## Sorting stores
 
-To sort stores log in to the manager and go to "Components" -> "Store Locator". You will see a grid containing all of your stores, you can just pick up a single row and drop it where you want it to be. ![](/download/attachments/37683757/sort.png?version=1&modificationDate=1331114450000)
+To sort stores log in to the manager and go to "Components" -> "Store Locator". You will see a grid containing all of your stores, you can just pick up a single row and drop it where you want it to be. ![](sort.png)
 
 ## Using StoreLocator in the front-end (user side)
 

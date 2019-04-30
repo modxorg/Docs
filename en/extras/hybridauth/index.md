@@ -24,7 +24,7 @@ First of all watch this video
 {"key":"your key from twitter","secret":"secret from twitter"}
 ```
 
-![](/download/attachments/43417801/ha3.png?version=1&modificationDate=1356616628000)
+![](ha3.png)
 
 It is needed for proper initialization of the library ( <http://hybridauth.sourceforge.net/userguide/Configuration.html>).
 

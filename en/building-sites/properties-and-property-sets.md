@@ -52,17 +52,17 @@ From Tools -> Property Sets, right-click on the property set and choose "Attach 
 
 For example, here's an image of a property set named 'TestPropertySet' in a snippet's editing page:
 
-![](/download/attachments/18678075/prop-grid1.png?version=1&modificationDate=1268853879000)
+![](prop-grid1.png)
 
 As you can see here, there is a property set loaded with some properties. Properties in green are default properties that have been overridden in the property set. Properties that are purple are properties that do not exist in the Element's default properties, but are defined in the Property Set. Properties can also have descriptions, as shown by the + icon to the left. When clicked, the description will appear below.
 
 To add a property set to an Element, you'll simply click the "Add Property Set" toolbar item in the top right of the grid. It will show a window like this:
 
-![](/download/attachments/18678075/propset-add1.png?version=1&modificationDate=1268853882000)
+![](propset-add1.png)
 
 From there, you can select the property set you want to add. If you'd like to create a completely new Property Set and automatically attach it to this element, you can do so by checking the "Create New Property Set" checkbox, and these fields will show:
 
-![](/download/attachments/18678075/propset-new1.png?version=1&modificationDate=1268853886000)
+![](propset-new1.png)
 
 Then once you save your new Property Set, it will be automatically attached to that Element.
 
@@ -70,7 +70,7 @@ Then once you save your new Property Set, it will be automatically attached to t
 
 To create a Property in a Property Set, you'll simply need to just load the Property Set you want to work on, and then click "Create Property". That will load this window:
 
-![](/download/attachments/18678075/prop-create1.png?version=1&modificationDate=1268853875000)
+![](prop-create1.png)
 
 From there, you can create a property and associated options. Note here that we are creating a property of type "List", which is a dropdown property. You can add options to that property from the grid. Once you save the property, it will be added to the property set.
 

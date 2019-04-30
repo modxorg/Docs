@@ -40,7 +40,7 @@ Bugs, issues and feature requests can be reported in the GitHub Repository, foun
 
 When creating the TV, you need to select the proper input type and output type.
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/inputtype-selection.png)![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/outputtype-selection.png)
+![](inputtype-selection.png)![](outputtype-selection.png)
 
 ### Input Type Options
 
@@ -80,11 +80,11 @@ If you just want to add new tag, just hit **\[ENTER\]** before **1 second**.
 
 The CMP is used to make manager easily manages the tags.
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/tag-cloud-2.png)
+![](tag-cloud-2.png)
 
 If the button is clicked, then a new tab will be opened containing all resources that are using that clicked tag.
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/tag-resources.png)
+![](tag-resources.png)
 
 On here, you can then delete, rename, or remove the tag from the selected resources.
 
@@ -94,7 +94,7 @@ The Resource's titles are links, so they can be clicked (or ctrl+click or middle
 
 In the second page, there's a converter utility to convert existing tag types to SmartTag or revert SmartTag TVs back to the other tag types.
 
-![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/sync.png)
+![](sync.png)
 
 When a SmartTag TV is selected, it also can be synchronized to get all values from related resources to store them into the SmartTag's DB.
 

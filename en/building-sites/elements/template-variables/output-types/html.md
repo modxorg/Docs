@@ -12,7 +12,7 @@ This type allows you to wrap an HTML tag around the input. It is specifically in
 
 Its output properties look like:
 
-![](/download/attachments/20119610/tvot.htmltag.png?version=1&modificationDate=1281387052000)
+![](tvot.htmltag.png)
 
 | Name       | Description                                      |
 | ---------- | ------------------------------------------------ |

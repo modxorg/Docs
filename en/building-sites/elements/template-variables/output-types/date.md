@@ -12,7 +12,7 @@ This type allows you to output any TV input as a Date, formatted in the way you 
 
 It's output properties look like:
 
-![](/download/attachments/20119603/tvot.date.png?version=1&modificationDate=1281374106000)
+![](tvot.date.png)
 
 | Name        | Description                                                                                                  |
 | ----------- | ------------------------------------------------------------------------------------------------------------ |

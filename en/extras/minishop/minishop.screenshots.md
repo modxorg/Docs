@@ -4,10 +4,10 @@ _old_id: "937"
 _old_uri: "revo/minishop/minishop.screenshots"
 ---
 
-![](/download/attachments/39355119/1.png) ![](/download/attachments/39355119/2.png) ![](/download/attachments/39355119/3.png) ![](/download/attachments/39355119/4.png)
+![](1.png) ![](2.png) ![](3.png) ![](4.png)
 
-![](/download/attachments/39355119/5.png) ![](/download/attachments/39355119/6.png) ![](/download/attachments/39355119/7.png) ![](/download/attachments/39355119/8.png)
+![](5.png) ![](6.png) ![](7.png) ![](8.png)
 
-![](/download/attachments/39355119/9.png) ![](/download/attachments/39355119/10.png) ![](/download/attachments/39355119/11.png) ![](/download/attachments/39355119/12.png)
+![](9.png) ![](10.png) ![](11.png) ![](12.png)
 
-![](/download/attachments/39355119/13.png) ![](/download/attachments/39355119/14.png) ![](/download/attachments/39355119/15.png) ![](/download/attachments/39355119/16.png)
+![](13.png) ![](14.png) ![](15.png) ![](16.png)

@@ -10,7 +10,7 @@ Creating MODX custom manager pages (CMPs) is **far** simpler in MODX Revolution 
 
  First off, we'll create a Namespace (Settings > Namespaces) called "mycmp", and set its path to "{core\_path}components/mycmp/". Set its Assets Path to "{assets\_path}components/mycmp/" as well.
 
- ![](/download/attachments/763b342992d3623156aef15b0dd5d168/create-namespace.png)
+ ![](create-namespace.png)
 
  **You can avoid some problems if you make your namespace and your action all lowercase with only alphanumeric characters (no spaces, hyphens, or underscores). Your namespace should be a lowercase version of the name of your CMP.**
 
@@ -18,7 +18,7 @@ Creating MODX custom manager pages (CMPs) is **far** simpler in MODX Revolution 
 
  Now we'll need a Menu item to link to for our CMP. Go to System -> Top Menu, and create a Menu item under the "Apps" menu item that looks like this:
 
- ![](/download/attachments/39354402/mycmp1.png?version=1&modificationDate=1334858685000)
+ ![](mycmp1.png)
 
  As you can see, we're specifying the Namespace as "mycmp", and then the Action as "welcome". This means our default controller will be the "welcome" controller.
 
@@ -57,7 +57,7 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
 
  A simple h2, with a wrapping div that adds some padding. And that will display this on our CMP:
 
- ![](/download/attachments/b0c0afd6ef1b26df1ce35159560bcfa2/2-3-CMP.jpg)
+ ![](2-3-cmp.jpg)
 
  We're Finished!
 

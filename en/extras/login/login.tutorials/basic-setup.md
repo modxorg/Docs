@@ -39,17 +39,17 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
 1\. **Security -> Resource Groups** : Create a new Resource Group for all the pages that will be available only to members.
 
- ![](/download/attachments/35094632/Create+Resource+Group.jpg?version=1&modificationDate=1303583586000)
+ ![](create+resource+group.jpg)
 
 2\. **Security -> Access Controls** : Create User Group named "Members". Users in the "Members" group will have access to the "Members Only" resources. Make sense?
 
- ![](/download/attachments/35094632/Create+User+Group.jpg?version=1&modificationDate=1303583171000)
+ ![](create+user+group.jpg)
 
 3\. On that same page (**Security -> Access Controls**), **Right Click** the newly created "Members" User Group and select "Update User Group".
 
- ![](/download/attachments/35094632/Update+User+Group.jpg?version=1&modificationDate=1303583952000)
+ ![](update+user+group.jpg)
 
- ![](/download/attachments/35094632/Update+User+Group+-+Detail.jpg?version=1&modificationDate=1303584122000)
+ ![](update+user+group+-+detail.jpg)
 
  Then Add a Resource Group to this User Group. At a minimum, the Resource Group should have the following settings:
 
@@ -64,7 +64,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  Use a simple Username and password that you can remember; the important thing here is to make sure your new user is a member of the "Members" User Group. Head to the "Access Permissions" tab and click "Add User to Group"
 
- ![](/download/attachments/35094632/New+User+as+Group+Member.jpg?version=1&modificationDate=1303584433000)
+ ![](new+user+as+group+member.jpg)
 
 - **User Group:** Members
 - **Role:** Member
@@ -131,7 +131,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  Here's what the flow looks like, just so you can follow what we're doing here:
 
- ![](/download/attachments/35094632/Password+Reset+Flow.jpg?version=1&modificationDate=1303582738000)
+ ![](password+reset+flow.jpg)
 
 ### Reset Password Handler (3)
 
@@ -149,7 +149,7 @@ _old_uri: "revo/login/login.tutorials/login.basic-setup"
 
  This is the page that displays to users who have successfully logged in. This page must have restricted permissions, and the users who log in must have the corresponding permissions to access this page. You can put whatever "private" content you want on it, just make sure you update the permissions on it so that it belongs to the "Members Only" resource group – just click on the page's "Access Permissions" or "Resource Groups" tab (depending on your version of MODX):
 
- ![](/download/attachments/35094632/Setting+Access+Permissions.jpg?version=1&modificationDate=1303598934000)
+ ![](setting+access+permissions.jpg)
 
  and check the box for "Members Only".
 
