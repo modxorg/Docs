@@ -99,19 +99,19 @@ The parameters that could help you for a custom installation.
 
 There are several chunks that are processed in AdvSearch. Their corresponding AdvSearch parameters are:
 
-- [tpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.tpl "AdvSearch.AdvSearch.tpl") - **AdvSearchResult** : The Chunk to use for each result displayed.
-- [containerTpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.containertpl "AdvSearch.AdvSearch.containerTpl") - **AdvSearchResults** : The Chunk that will be used to wrap all the search results, pagination and message.
+- [tpl](extras/advsearch/advsearch/tpl "AdvSearch.AdvSearch.tpl") - **AdvSearchResult** : The Chunk to use for each result displayed.
+- [containerTpl](extras/advsearch/advsearch/containertpl "AdvSearch.AdvSearch.containerTpl") - **AdvSearchResults** : The Chunk that will be used to wrap all the search results, pagination and message.
 
 Depending the paging type:
 Paging type 1:
 
-- [paging1Tpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl "AdvSearch.Advsearch.paging1Tpl") - **Paging1** : The Chunk to use for the pagination type 1.
+- [paging1Tpl](en/extras/advsearch/advsearch/paging1tpl "AdvSearch.Advsearch.paging1Tpl") - **Paging1** : The Chunk to use for the pagination type 1.
 
 Paging type 0:
 
-- [paging0Tpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **Paging0** : The Chunk that will be used to wrap all paging type 0 elements.
-- [pageTpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **PageLink** : The Chunk to use for a pagination link.
-- [currentPageTpl](extras/advsearch/advsearch.advsearch/advsearch.advsearch.paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **CurrentPageLink** : The Chunk to use for the current pagination link.
+- [paging0Tpl](extras/advsearch/advsearch/paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **Paging0** : The Chunk that will be used to wrap all paging type 0 elements.
+- [pageTpl](extras/advsearch/advsearch/paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **PageLink** : The Chunk to use for a pagination link.
+- [currentPageTpl](extras/advsearch/advsearch/paging0tpl "AdvSearch.AdvSearch.paging0Tpl") - **CurrentPageLink** : The Chunk to use for the current pagination link.
 
 ## Examples
 
@@ -120,7 +120,7 @@ These examples assume you've already sent the search query with the [AdvSearchFo
 Display results, but just show their titles:
 
 ``` php
-[[!AdvSearch? 
+[[!AdvSearch?
     &showExtract=`0`
 ]]
 ```
@@ -128,9 +128,9 @@ Display results, but just show their titles:
 Display all results but only in children Resources of 15 and hide possible container Resources - and highlight tags with a 'strong' tag:
 
 ``` php
-[[!AdvSearch? 
-    &ids=`[[!GetIds? &ids=`c15`]]` 
-    &hideContainers=`1` 
+[[!AdvSearch?
+    &ids=`[[!GetIds? &ids=`c15`]]`
+    &hideContainers=`1`
     &highlightTag=`strong`
 ]]
 ```
@@ -138,8 +138,8 @@ Display all results but only in children Resources of 15 and hide possible conta
 Do a search in the field 'introtext' and in the tv named 'mytv'. Display as results the fields 'pagetitle', 'longtitle' and 'introtext'. Setup an extract with the 'introtext' field. Show a maximum of 2 extracts by result. And finally set the results to the placeholder 'results':
 
 ``` php
-[[!AdvSearch? 
-    &withFields=`introtext` 
+[[!AdvSearch?
+    &withFields=`introtext`
     &withTVs=`mytv`
     &fields=`pagetitle,introtext`
     &showExtract=`2:introtext`

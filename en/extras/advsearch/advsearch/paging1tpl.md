@@ -6,7 +6,7 @@ _old_uri: "revo/advsearch/advsearch.advsearch/advsearch.advsearch.paging1tpl"
 
 ## AdvSearch's paging1Tpl Chunk
 
-A Chunk named "**Paging1**" is provided with AdvSearch. This Chunk name is set as &paging1Tpl property on the [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch") snippet.
+A Chunk named "**Paging1**" is provided with AdvSearch. This Chunk name is set as &paging1Tpl property on the [AdvSearch](extras/advsearch/advsearch "AdvSearch.AdvSearch") snippet.
 
 ## Default Value
 

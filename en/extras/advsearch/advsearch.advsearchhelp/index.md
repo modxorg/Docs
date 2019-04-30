@@ -4,11 +4,6 @@ _old_id: "774"
 _old_uri: "revo/advsearch/advsearch.advsearchhelp"
 ---
 
-- [AdvSearchHelp Snippet](#advsearchhelp-snippet)
-- [Usage](#usage)
-- [Help window content](#help-window-content)
-- [See Also](#see-also)
-
 ## AdvSearchHelp Snippet
 
 This snippet is used to set up the help content.

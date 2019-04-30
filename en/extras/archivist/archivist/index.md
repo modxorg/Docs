@@ -46,7 +46,7 @@ Simply place the snippet wherever you would like to display archive listings in,
 
 There is 1 chunk that is processed in Archivist. Its corresponding Archivist parameter is:
 
-- [tpl](extras/archivist/archivist.archivist/archivist.archivist.tpl "Archivist.Archivist.tpl") - The Chunk to use for each result displayed.
+- [tpl](extras/archivist/archivist/tpl "Archivist.Archivist.tpl") - The Chunk to use for each result displayed.
 
 ## Examples
 
@@ -59,8 +59,8 @@ Display a list of months for archives for Resources under IDs 2, 4 & 6, and when
 
 ## See Also
 
-1. [Archivist.Archivist](extras/archivist/archivist.archivist)
- 1. [Archivist.Archivist.tpl](extras/archivist/archivist.archivist/archivist.archivist.tpl)
+1. [Archivist.Archivist](extras/archivist/archivist)
+   1. [Archivist.Archivist.tpl](extras/archivist/archivist/tpl)
 2. [Archivist.ArchivistGrouper](extras/archivist/archivist.archivistgrouper)
 3. [Archivist.getArchives](extras/archivist/archivist.getarchives)
- 1. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/archivist.getarchives.tpl)
+   1. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/tpl)

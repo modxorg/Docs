@@ -6,7 +6,7 @@ _old_uri: "revo/advsearch/advsearch.advsearch/advsearch.advsearch.extracttpl"
 
 ## AdvSearch's extractTpl Chunk
 
-A Chunk named "**extract**" is provided with AdvSearch. This Chunk name is set as &extractTpl property on the [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch") snippet.
+A Chunk named "**extract**" is provided with AdvSearch. This Chunk name is set as &extractTpl property on the [AdvSearch](extras/advsearch/advsearch "AdvSearch.AdvSearch") snippet.
 
 ## Default Value
 

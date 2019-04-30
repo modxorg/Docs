@@ -10,13 +10,13 @@ This snippet displays a search form for AdvSearch.
 
 ## Usage
 
-Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch") snippet call is located (which is where the results will display).
+Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [AdvSearch](extras/advsearch/advsearch "AdvSearch.AdvSearch") snippet call is located (which is where the results will display).
 
  ``` php
 [[!AdvSearchForm? &landing=`82`]]
 ```
 
-If you'd like the results to show on the same page, simply place the [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch") snippet call below the AdvSearchForm call, and don't specify a 'landing' parameter.
+If you'd like the results to show on the same page, simply place the [AdvSearch](extras/advsearch/advsearch "AdvSearch.AdvSearch") snippet call below the AdvSearchForm call, and don't specify a 'landing' parameter.
 
 ## Available Properties
 
@@ -58,7 +58,7 @@ The parameters that could help you for a custom installation.
 
 There is 1 chunk that is processed in AdvSearchForm. Its corresponding AdvSearchForm parameter is:
 
-- [tpl](extras/advsearch/advsearch.advsearchform/advsearch.advsearchform.tpl "Advsearch.AdvSearchForm.tpl") - The Chunk to use for the search form.
+- [tpl](extras/advsearch/advsearch.advsearchform/tpl "Advsearch.AdvSearchForm.tpl") - The Chunk to use for the search form.
 
 ## Examples
 
