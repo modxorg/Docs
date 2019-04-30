@@ -129,7 +129,7 @@ For more information on the Commenting settings, read up on the [Quip](extras/qu
 
 Again, if you plan to change any of the Chunks here, remember to duplicate them or select a different Chunk, rather than editing the "sample" ones, as they will be overwritten during upgrades.
 
-See the the page on [Theming Articles](extras/articles/articles.theming-articles "Articles.Theming Articles") for how to display other information inside your templates.
+See the the page on [Theming Articles](extras/articles/theming-articles "Articles.Theming Articles") for how to display other information inside your templates.
 
 ## Conclusion
 

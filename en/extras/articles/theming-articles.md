@@ -65,7 +65,7 @@ Articles also provides some basic Chunks for various display settings for your C
 
 Articles allows simple, MODX-style Templating and easy editing, without breaking upgradability. Theming your blog has never been easier.
 
-1. [Articles.Creating a Blog](extras/articles/articles.creating-a-blog)
-2. [Articles.Retrieving Articles Outside of Articles](extras/articles/articles.retrieving-articles-outside-of-articles)
-3. [Articles.Roadmap](extras/articles/articles.roadmap)
-4. [Articles.Theming Articles](extras/articles/articles.theming-articles)
+1. [Articles.Creating a Blog](extras/articles/creating-a-blog)
+2. [Articles.Retrieving Articles Outside of Articles](extras/articles/retrieving-articles-outside-of-articles)
+3. [Articles.Roadmap](extras/articles/roadmap)
+4. [Articles.Theming Articles](extras/articles/theming-articles)
