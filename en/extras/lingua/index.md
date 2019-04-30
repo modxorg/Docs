@@ -20,7 +20,7 @@ The concept was based on [Translations](http://modx.com/extras/package/translati
 
 The Custom Manager Page is provided to manage the list of languages and their settings.
 
-[![](/download/thumbnails/46137393/Lingua_CMP.png)](/download/attachments/46137393/Lingua_CMP.png)
+![](/download/attachments/46137393/Lingua_CMP.png)
 
 ## Plugin
 
@@ -38,7 +38,7 @@ ALL snippets have &toArray to dump all the placeholders and &toPlaceholder to ho
 This snippet is the language selector on the front-end.
 The chunks have [twitter bootstrap's dropdown-toogle style](http://getbootstrap.com/components/#dropdowns) as default, just to give an idea of how they were prepared.
 
-[![](/download/thumbnails/46137393/lingua.selector.png)](/download/attachments/46137393/lingua.selector.png)
+![](/download/attachments/46137393/lingua.selector.png)
 
 When the user clicks the link, then the page will be redirected back to the same page, but with additional REQUEST url to initiate the language session.
 The REQUEST key can be defined in System Setting, but the default key is **_lang_**.

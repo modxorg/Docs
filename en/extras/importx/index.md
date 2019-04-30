@@ -18,7 +18,9 @@ Development was funded by Working Party, a Sydney based Digital Agency.
 
 Initial development started in April 2011 by Mark Hamstra.
 
-## [![](/download/thumbnails/35094766/menu.png)](/download/attachments/35094766/menu.png)Usage
+## Usage
+
+![](/download/attachments/35094766/menu.png)
 
  Using ImportX is as simple as presenting it with your CSV values and setting a few options depending on your situation.
 
@@ -44,7 +46,7 @@ ImportX doesn't really care about what format your CSV is, as long as:
 
 ### Default Settings
 
-The Default Settings tab contains a couple of settings you can set by default. [![](/download/thumbnails/35094766/import-tab.png)](/download/attachments/35094766/import-tab.png)
+The Default Settings tab contains a couple of settings you can set by default. ![](/download/attachments/35094766/import-tab.png)
 
 It is important to note that this sets the default behavior - also when you did not specify it, as it will then default to being false!
 

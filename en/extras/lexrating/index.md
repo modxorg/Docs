@@ -20,7 +20,7 @@ There are 2 snippets for this package:
 There is a Quip's hook: **LexRatingQuipPostHook**, to create a star rating on each comment.
 Think about a comment based star rating.
 
-[![](/download/thumbnails/43417740/comment%20based%20rating.jpg)](/download/attachments/43417740/comment%20based%20rating.jpg)
+![](/download/attachments/43417740/comment%20based%20rating.jpg)
 
 ## LexRating
 

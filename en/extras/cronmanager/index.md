@@ -30,7 +30,7 @@ To use the component, navigate to your manager and click on "Components > Cron M
 
 Here you can create a new cronjob by clicking on the "new" button.
 
-[![](/download/thumbnails/35095318/create-new-cronjob.JPG)](/download/attachments/35095318/create-new-cronjob.JPG)
+![](/download/attachments/35095318/create-new-cronjob.JPG)
 
 You see the fields "Snippet", "Minutes" and "Snippet properties".
 

@@ -33,11 +33,11 @@ Bugs can be filed here: <https://github.com/bertoost/MODx-Polls/issues>
 
 Below a screenshot of the manager pages. More screenshots will be added later.
 
-[![](/download/thumbnails/33587281/polls-screenshot1.jpg)](/download/attachments/33587281/polls-screenshot1.jpg)
-[![](/download/thumbnails/33587281/polls-screenshot2.jpg)](/download/attachments/33587281/polls-screenshot2.jpg)
-[![](/download/thumbnails/33587281/polls-screenshot3.jpg)](/download/attachments/33587281/polls-screenshot3.jpg)
-[![](/download/thumbnails/33587281/polls-screenshot4.jpg)](/download/attachments/33587281/polls-screenshot4.jpg)
-[![](/download/thumbnails/33587281/polls-screenshot5.jpg)](/download/attachments/33587281/polls-screenshot5.jpg)
+![](/download/attachments/33587281/polls-screenshot1.jpg)
+![](/download/attachments/33587281/polls-screenshot2.jpg)
+![](/download/attachments/33587281/polls-screenshot3.jpg)
+![](/download/attachments/33587281/polls-screenshot4.jpg)
+![](/download/attachments/33587281/polls-screenshot5.jpg)
 
 ## See also
 

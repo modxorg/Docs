@@ -33,7 +33,7 @@ When using your own chunk to display the language links you can use the followin
 | Name       | Description                                                                                                                                                                                                             |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | url        | Url to linked translation (or site\_url of specific language if there is no translated resource available).                                                                                                             |
-| cultureKey | Culture key of translation (e.g en, de, fr oder es). You may use the babel lexicon to display the language's name: `[[%babel.language_`[[+cultureKey]]`? &topic=`default` &namespace=`babel`]]`                         |
+| cultureKey | Culture key of translation (e.g en, de, fr oder es). You may use the babel lexicon to display the language's name: ```[[%babel.language_`[[+cultureKey]]`? &topic=`default` &namespace=`babel`]]```                     |
 | active     | If link points to a resource of the current active language (context) this placeholder is set to the active CSS class name specified by the &activeCls parameter (default=active). Otherwise this placeholder is empty. |
 | id         | ID of tranlated resource. If no translation is available this placeholder is empty ('').                                                                                                                                |
 

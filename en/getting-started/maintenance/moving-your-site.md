@@ -168,7 +168,9 @@ Whenever changes are made to a MODX Revolution site in regards to installs, upgr
 
 If MODX does not find a config.inc.php file during setup, it will not offer you the option of doing an upgrade install. Do not proceed unless you can check the "Upgrade Install" checkbox. It the config.inc.php file is there but MODX is not finding it, check the path specified in the config.core.php files described above in the Updating Your Config Files section. MODX uses that path to find the config.inc.php file.
 
-## Updating your Extras settings [![](/download/thumbnails/22183945/modx-namespaces.png)](/download/attachments/22183945/modx-namespaces.png)
+## Updating your Extras settings
+
+![](/download/attachments/22183945/modx-namespaces.png)
 
 Some extras, such as Gallery, store information on where certain files can be found in their own settings. To take Gallery as the example, it stores the path to its assets, core, files and phpthumb folders on the filesystem. Depending on your setup these will change when moving and in order to keep using these addons you will need to update those paths. While every addon can decide for itself where to store paths, one of the popular locations is in the system settings.
 
