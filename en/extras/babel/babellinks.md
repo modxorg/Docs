@@ -47,7 +47,7 @@ When using your own chunk to display the language links you can use the followin
 
 ## See also
 
-1. [Babel.BabelLinks](extras/babel/babel.babellinks)
-2. [Babel.BabelTranslation](extras/babel/babel.babeltranslation)
+1. [Babel.BabelLinks](extras/babel/babellinks)
+2. [Babel.BabelTranslation](extras/babel/babeltranslation)
 
 [Offical Babel project website: Multilingual websites with MODX](http://www.multilingual-modx.com/)
