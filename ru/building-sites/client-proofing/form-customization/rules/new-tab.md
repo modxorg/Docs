@@ -1,6 +1,6 @@
 ---
-title: Новая вкладка
-translation: building-sites/client-proofing/form-customization/rules/new-tab
+title: "Новая вкладка"
+translation: "building-sites/client-proofing/form-customization/rules/new-tab"
 ---
 
 Следующее относится к более старым версиям MODX. Смотрите [вкладки Настройка через настройку формы](building-sites/client-proofing/form-customization/tabs) для получения инструкций по более новым версиям MODX.
@@ -20,7 +20,7 @@ translation: building-sites/client-proofing/form-customization/rules/new-tab
 
 Вот идентификаторы для соответствующих панелей вкладок на различных страницах менеджера.
 
-| Я БЫ                | Соответствующая страница                    |
+| id                  | Соответствующая страница                    |
 | ------------------- | ------------------------------------------- |
 | modx-resource-tabs  | Страница редактирования / создания ресурса. |
 | modx-chunk-tabs     | Страница чанка.                             |
@@ -39,5 +39,3 @@ translation: building-sites/client-proofing/form-customization/rules/new-tab
 Пример правила для создания новой вкладки на странице редактирования ресурса будет выглядеть так:
 
 ![](/download/attachments/18678099/rule-tabNew.png?version=1&modificationDate=1279290789000)
-
-## Смотрите также

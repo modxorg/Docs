@@ -187,6 +187,3 @@ which without any customization results in the following output:
 <!-- ... -->
 ```
 
-... which then looks like something like this:
-
-![](http://markh.nl/s/q3/juB.png)

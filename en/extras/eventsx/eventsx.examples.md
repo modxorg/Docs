@@ -33,7 +33,7 @@ Add this snippet call on your template or resource where you would like to displ
 
 A screenshot could look like this. Note that I've styled the time element individually.
 
-![](/download/attachments/37683422/eventsx.png?version=1&modificationDate=1326443860000)
+![](eventsx.png)
 
 ## See Also
 

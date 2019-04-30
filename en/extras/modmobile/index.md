@@ -44,7 +44,7 @@ Using one template for mobile and full site
 
 1. Go to System -> System Settings
 2. Set the USE Placeholder to Yes
-  ![](/download/attachments/33948003/use-placeholder.png?version=1&modificationDate=1325800168000)
+  ![](use-placeholder.png)
 3. Lets assume that the only difference between your standard version and the mobile version is the CSS file then in your template do something like this:
 
 ``` php
@@ -79,7 +79,7 @@ Using a separate mobile template
 1. Go to System -> System Settings
 1.1. Select modmobile, see image
 1.2. Enter in your mobile template ID
-  ![](/download/attachments/33948003/mobile-template-id.png?version=1&modificationDate=1325800055000)
+  ![](mobile-template-id.png)
 2. Just visit your site on a mobile device like an iPhone or iPad. Your mobile theme should show up.
 3. Now just put a link in your templates a link to the mobile version and then to the full version like so:
   Note this is optional but highly recommended.

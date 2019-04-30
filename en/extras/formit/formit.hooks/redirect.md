@@ -39,11 +39,11 @@ That will build the URL with those params. Say the Resource ID 212 is at books.h
 
 ## See Also
 
-1. [FormIt.Hooks.email](extras/formit/formit.hooks/formit.hooks.email)
-2. [FormIt.Hooks.FormItAutoResponder](extras/formit/formit.hooks/formit.hooks.formitautoresponder)
-3. [FormIt.Hooks.math](extras/formit/formit.hooks/formit.hooks.math)
-4. [FormIt.Hooks.recaptcha](extras/formit/formit.hooks/formit.hooks.recaptcha)
-5. [FormIt.Hooks.redirect](extras/formit/formit.hooks/formit.hooks.redirect)
-6. [FormIt.Hooks.spam](extras/formit/formit.hooks/formit.hooks.spam)
-7. [FormIt.Hooks.FormItSaveForm](http://rtfm.modx.com/extras/revo/formit/formit.hooks/formit.hooks.formitsaveform)
-8. [FormIt.PreHooks.FormItLoadSavedForm](https://docs.modx.com/extras/revo/formit/formit.hooks/formit.prehooks.formitloadsavedform)
+1. [FormIt.Hooks.email](extras/formit/formit.hooks/email)
+2. [FormIt.Hooks.FormItAutoResponder](extras/formit/formit.hooks/formitautoresponder)
+3. [FormIt.Hooks.FormItSaveForm](extras/formit/formit.hooks/formitsaveform)
+4. [FormIt.Hooks.math](extras/formit/formit.hooks/math)
+5. [FormIt.Hooks.recaptcha](extras/formit/formit.hooks/recaptcha)
+6. [FormIt.Hooks.redirect](extras/formit/formit.hooks/redirect)
+7. [FormIt.Hooks.spam](extras/formit/formit.hooks/spam)
+8. [FormIt.PreHooks.FormItLoadSavedForm](extras/formit/formit.hooks/prehooks.formitloadsavedform)

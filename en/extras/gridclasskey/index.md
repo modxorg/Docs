@@ -12,7 +12,7 @@ _old_uri: "revo/gridclasskey"
 
  Any bugs or feature requests can be reported to here: <https://github.com/goldsky/GridClassKey/issues>
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/children.jpg)
+ ![](children.jpg)
 
 ## Settings
 
@@ -20,7 +20,7 @@ _old_uri: "revo/gridclasskey"
 
 ### Fields
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/settings-field.png)
+ ![](settings-field.png)
 
  In here, user can define what data they want to have on their grid.
 
@@ -57,7 +57,7 @@ _old_uri: "revo/gridclasskey"
 
 ### Container's Settings
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/settings-container.png)
+ ![](settings-container.png)
 
  User can change page's style, javascript's behavior, or change some buttons of the grid's manager.
 
@@ -69,7 +69,7 @@ _old_uri: "revo/gridclasskey"
 
 #### [Adding a dropdown filter field that can be used by clients](http://forums.modx.com/thread/92669/grid-class-key-add-a-dropdown-filter-field-that-can-be-used-by-clients)
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/add-combo.png)
+ ![](add-combo.png)
 
  The requirements:
 
@@ -84,7 +84,7 @@ _old_uri: "revo/gridclasskey"
 
  Make sure to sync the name with other files that refer to this name.
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/acl.png)
+ ![](acl.png)
 
 ##### 2. Create the "author" Template Variable.
 
@@ -92,7 +92,7 @@ _old_uri: "revo/gridclasskey"
 
  On this example, let's named it "author".
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/authorTV.png)
+ ![](authortv.png)
 
  We need a snippet that will list the users from this particular user group, we use [@EVAL binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding) feature for this.
 
@@ -129,7 +129,7 @@ return $output;
 
  This will list the users from this specific user group on resource.
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/authorTVResource.png)
+ ![](authortvresource.png)
 
 ##### 4. Prepare files for the Feature
 
@@ -137,13 +137,13 @@ return $output;
 
  On this example, let's say it as "customize-gck".
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/filetree-1.png)
+ ![](filetree-1.png)
 
  1. Add a combo of users from "Author" usergroup into top of the grid
 
  We need to adjust the settings.
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/example-settings-field.png)
+ ![](example-settings-field.png)
 
  From the "Add TV Field", select "author" to add it to the grid.
 
@@ -167,7 +167,7 @@ return $output;
 
  Then go to the "Container's Settings" tab to define our custom Javascript file.
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/example-settings-container.png)
+ ![](example-settings-container.png)
 
  On this example, it's "../assets/components/customize-gck/js/mgr/widgets/customize-gck.js".
 
@@ -327,7 +327,7 @@ return 'AuthorUsersGetListProcessor';
 
  If you change the drop down, because it's listening to "select" event, the grid will be filtered out to the selected user.
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/user-filtered-result.png)
+ ![](user-filtered-result.png)
 
  Click the "Clear" button to clear the filter(s).
 
@@ -337,7 +337,7 @@ return 'AuthorUsersGetListProcessor';
 
  This example is a simple one, you can adjust more in your Javascript's class file.
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/gck-custom-editor.png)
+ ![](gck-custom-editor.png)
 
  What it needs is the definition of the editor.
 
@@ -373,13 +373,13 @@ You can extends any available MODx's JS components.
 
  Let's say we save the above code as "**../assets/components/customize-gck/js/mgr/widgets/combo.availability.js**"
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/gck-load-bottom-js.png)
+ ![](gck-load-bottom-js.png)
 
  **3. Edit the GridClassKey's setting**
 
  Then change the Field's setting.
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/gck-custom-field-setting.png)
+ ![](gck-custom-field-setting.png)
 
  And it's done.
 
@@ -389,7 +389,7 @@ You can extends any available MODx's JS components.
 
  Again, only applies when it is being created, not being updated.
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/settings-children.png)
+ ![](settings-children.png)
 
  For "Text for "Back to Container" button" field, you can define a lexicon string, or just plain text on it.
 
@@ -407,11 +407,11 @@ You can extends any available MODx's JS components.
 
  On Access Control page, you will see that it added a Policy named "GridClassKey".
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/access-policies.png)
+ ![](access-policies.png)
 
  If you **Right Click > Update Policy**, you will see that actually it only manages 2 permissions: accesses to Batch Actions and Advanced Search buttons.
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/access-policies-update.png)
+ ![](access-policies-update.png)
 
  So if you are setting up some usergroups, make sure you add this permission for the usergroup that is allowed to access those buttons.
 
@@ -423,8 +423,8 @@ You can extends any available MODx's JS components.
 
  Set up the the window form like this:
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/acl-context-window.png)
+ ![](acl-context-window.png)
 
  Then after you save it, you will see a new permission appears to the specified usergroup on manager context.
 
- ![](/download/attachments/3c7aceb2105f8370062ab6139e964a8a/acl-context-grid.png)
+ ![](acl-context-grid.png)

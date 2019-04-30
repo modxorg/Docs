@@ -20,7 +20,7 @@ _If you're running into permission errors while trying to delete and/or upload f
 
 ## Configuring TinyMCE
 
-![](/download/attachments/33947937/tinymce.PNG?version=1&modificationDate=1298060383000)
+![](tinymce.png)
 
 Now login on your manager and go to System -> System Settings and find TinyMCE in the namespace dropdown (see image to the right). You will need to modify two settings:
 

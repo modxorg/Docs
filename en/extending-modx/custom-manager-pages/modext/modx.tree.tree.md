@@ -9,7 +9,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 **Extends:** Ext.tree.TreePanel
 **Key Features:** Remotely-loaded toolbars; drag-and-drop to form fields functionality; connector functionality for removing and dragging/sorting.
 
-![](/download/attachments/18678081/modext_tree.png?version=1&modificationDate=1250518279000)
+![](modext_tree.png)
 
 Trees provide a quick and easy way to display multiple levels of objects which have a parent-child relationship, such as users or resources.
 

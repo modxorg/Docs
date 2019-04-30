@@ -22,7 +22,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 
  The following window is an example of what information makes up a Namespace:
 
- ![](/download/attachments/18678076/namespace-create1.png?version=1&modificationDate=1268854276000)
+ ![](namespace-create1.png)
 
  (NOTE: This image is outdated)
 
@@ -56,7 +56,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 - Handler: instead of loading an action, it's also possible for a menu item to execute a piece of javascript when clicked. This javascript would need to be specified in the handler. Leave empty for now.
 - Permissions: only show the menu item if the user has these permissions. Note that if someone guesses the link to your action they can still access it, this only affects visibility of the menu item.
 
- ![](/download/attachments/18678076/menu-create1.png?version=1&modificationDate=1268854269000)
+ ![](menu-create1.png)
 
  (Note: image is outdated)
 

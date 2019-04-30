@@ -21,7 +21,7 @@ MODX Revolution allows you to rename and/or move the core/ directory to enhance 
 
 Should you choose to rename or move the core, MODx recommends doing so before installing. Simply rename or move the core, and setup/ - at the beginning - will present you with a page asking for the new location of the core:
 
-![](/download/attachments/18678479/setup-corefinder.png?version=1&modificationDate=1280289614000)
+![](setup-corefinder.png)
 
 Enter into the textfield the absolute path to where you have moved the core directory. If MODx is able to find the core from there, you will proceed normally with the installation. If MODx still cannot find the directory from the path you specified, check if you have typed it correctly, that it is an absolute path, and that you've made the directory readable (and the core/cache/ file writable).
 
@@ -33,7 +33,7 @@ From here, MODx will ask you to choose a language. Do so at this time. MODx will
 
 To change it, simply click the link the install tells you to change the config key, and you'll be presented with a textfield:
 
-![](/download/attachments/18678479/setup-configKey.png?version=1&modificationDate=1280289975000)
+![](setup-configkey.png)
 
 Specify a custom, unique config key and click next.
 
@@ -43,7 +43,7 @@ You will now be presented with some options for install, similar to the [Basic I
 
 Below that, you will be presented with two checkbox options:
 
-![](/download/attachments/18678479/setup-advopt.png?version=1&modificationDate=1280290324000)
+![](setup-advopt.png)
 
 These will be grayed out during new installations. (During upgrades, it is recommended that you uncheck these as well.) Click 'Next' to proceed to the next step.
 
@@ -51,7 +51,7 @@ These will be grayed out during new installations. (During upgrades, it is recom
 
 From here, you will get a form asking you for your database information:
 
-![](/download/attachments/18678479/setup-db1.png?version=1&modificationDate=1280290454000)
+![](setup-db1.png)
 
 Add in your database hostname, which is the URL at which your database is located. For most users, this will be 'localhost'. If you have your MySQL server on a different port, specify it like so: "my.database.com;port=3307", with the ;port= appending the IP/hostname.
 
@@ -63,13 +63,13 @@ When finished, click the 'Test database server connection and view collations' l
 
 This will then popup another form for setting your database charset and collation:
 
-![](/download/attachments/18678479/setup-db2.png?version=1&modificationDate=1280290459000)
+![](setup-db2.png)
 
 For most users you can leave these values at what they are. However, if you need to change them, **make sure** the collation matches the charset. Click the 'Create or test selection of your database.' after you've finished.
 
 ### Creating an Administrator User
 
-![](/download/attachments/18678479/setup-db3.png?version=1&modificationDate=1280290462000)
+![](setup-db3.png)
 
 This form will now present you with a few fields for setting up your administrator user. Specify a username that you want to be the administrator username.
 
@@ -106,7 +106,7 @@ MODx will then let you know if any errors occurred during install, and prompt yo
 
 When install is successful, click 'Next' to proceed, and you'll be presented with one final option:
 
-![](/download/attachments/18678479/setup-cleanup1.png?version=1&modificationDate=1280290901000)
+![](setup-cleanup1.png)
 
 MODx recommends that you make sure to remove the setup/ directory after installing, to safeguard your site from anyone else trying to run setup on your site. You can do this by clicking the 'Check this to DELETE the setup directory from the filesystem.' checkbox.
 

@@ -25,7 +25,7 @@ You can also create a tab with the [New Tab](display/revolution20/New+Tab "New T
 
 An example rule for moving the TV 1 to the first tab in the Resource create page would look like so:
 
-![](download/attachments/18678100/rule-tvMove.png?version=1&modificationDate=1279291685000)
+![](rule-tvmove.png)
 
 ## See Also
 

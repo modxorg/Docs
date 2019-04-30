@@ -1,6 +1,6 @@
 ---
-title: Пространства имен
-translation: extending-modx/namespaces
+title: "Пространства имен"
+translation: "extending-modx/namespaces"
 ---
 
 ## Что такое пространства имен?

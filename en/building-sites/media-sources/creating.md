@@ -10,13 +10,13 @@ This article describes how to add a [Media Source](building-sites/media-sources 
 
 First find your way to the Media Sources page, often located under "Tools". From here, you will see a grid of your currently available media sources:
 
-![](/download/attachments/35586535/20110907-8gp9xhgh2dphmhbnwsihtxaeya.jpeg?version=1&modificationDate=1315427096000)
+![](20110907-8gp9xhgh2dphmhbnwsihtxaeya.jpeg)
 
 Before we proceed, it is important to note the difference between a "Media Source" and a "Media Source Type" - a source type is a classification of a Source, such as a S3 Source Type, or a Filesystem Source Type. These types point the Source to different media storage systems.
 
 For now, go ahead and create a Media Source by clicking on the "Create New Media Source" button above the grid. This should pop up a window with a basic form for the source:
 
-![](/download/attachments/35586535/20110907-bmtk5qd8b27w8rfhyn4xftw2wj.jpeg?version=1&modificationDate=1315427096000)
+![](20110907-bmtk5qd8b27w8rfhyn4xftw2wj.jpeg)
 
 Go ahead and choose the Filesystem source type for now, and give it a nice name. For information on creating an S3 Media Source, [click here](building-sites/media-sources/types/media-source-type-s3 "Media Source Type - S3"). Once that's done, you'll see your Media Source in the grid. Right-click on it, and click "Update Media Source".
 

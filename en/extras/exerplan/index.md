@@ -25,7 +25,7 @@ To understand how it works, I'll explain it backward, start from the setting.
 
 ## Settings
 
-[![](/download/thumbnails/45940741/settings.png)](/download/attachments/45940741/settings.png)
+![](settings.png)
 
 In here uses are able to set some of the basic settings for drop downs:
 
@@ -38,12 +38,12 @@ In here uses are able to set some of the basic settings for drop downs:
 
 ## Workouts
 
-[![](/download/thumbnails/45940741/workouts-grid.png)](/download/attachments/45940741/workouts-grid.png)
+![](workouts-grid.png)
 
 This is where the list of the workouts that will be provided for the members/usergroups of the website.
 On the same tab, admin/manager users can set the galleries, by clicking the "Manage Galleries" button.
 
-[![](/download/thumbnails/45940741/workouts-gallery-window.png)](/download/attachments/45940741/workouts-gallery-window.png)
+![](workouts-gallery-window.png)
 
 By selecting the left tree of workouts list, admin/manager users can see the grid/table of galleries that have been set before.
 To add new gallery, they can simply click the "Add > Add URL Address" button.
@@ -52,7 +52,7 @@ This is where the admin/manager users give the URL address of the galleries, and
 
 ## Users
 
-[![](/download/thumbnails/45940741/user-tree-workouts.png)](/download/attachments/45940741/user-tree-workouts.png)
+![](user-tree-workouts.png)
 
 At last, at the first dashboard, there is the Users tree under the Usergroups tree.
 By selecting the Usergroup name, admin/manager users can see the workouts for the Usergroups.
@@ -60,13 +60,13 @@ By selecting the User name, they can see the workouts for the user, based on the
 
 And how about the additional Galleries for this specific user?
 
-[![](/download/thumbnails/45940741/user-tree-galleries.png)](/download/attachments/45940741/user-tree-galleries.png)
+![](user-tree-galleries.png)
 
 Admin/manager users can show the members some videos/pictures/documents from any website sources, eg: the members' own captured video for evaluation.
 
 And the last but not least,
 
-[![](/download/thumbnails/45940741/user-tree-assessments.png)](/download/attachments/45940741/user-tree-assessments.png)
+![](user-tree-assessments.png)
 
 the admin/manager users/mentors can give some assessments about the members.
 FYI, at this moment, this is one way comments, so no respond will be available at the front-end.

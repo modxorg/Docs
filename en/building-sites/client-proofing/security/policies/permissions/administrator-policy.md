@@ -119,7 +119,7 @@ This policy is packaged into MODx and is given to users on the 'mgr' context who
 
 If you have created your own actions and menu items (e.g. if you have created a [Custom Manager Page](_legacy/developing-in-modx/custom-manager-pages-tutorial "Custom Manager Pages Tutorial")), then you can define custom permission items when you create the menu item (System --> Actions --> Create Menu) that correspond to permissions listed here.
 
-![](/download/attachments/18678342/MODX+Custom+Permission.jpg?version=1&modificationDate=1331314961000)
+![](modx+custom+permission.jpg)
 
 ## See Also
 

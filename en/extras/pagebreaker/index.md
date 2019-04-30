@@ -43,7 +43,7 @@ And two Chunks:
 
 When you installed pagebreaker, it is overwrite built-in TinyMCE plugin [pagebreak](http://www.tinymce.com/wiki.php/Plugin:pagebreak).
 
-[![](/download/thumbnails/39355041/pagebreaker_1.png)](/download/attachments/39355041/pagebreaker_1.png)
+![](pagebreaker_1.png)
 
 You need to enable this plugin and additional buttons in in system settings.
 Go to **System** -> **System Settings**, switch filter of namespaces to **timymce** and enter to **Custom Buttons Row 3**
@@ -58,7 +58,7 @@ Then add in **Custom Plugins**
 pagebreak
 ```
 
- [![](/download/thumbnails/39355041/pagebreaker_2.png)](/download/attachments/39355041/pagebreaker_2.png)
+![](pagebreaker_2.png)
 
 Now we have 4 new additional buttons in TinyMCE:
 If you have only one button - you just need to reinstall Pagebreaker. It happends when you install TinyMCE **after** Pagebreaker.

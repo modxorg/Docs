@@ -46,7 +46,7 @@ There's only one other setting, a System Setting, that needs to be modified in o
 
 From the Dashboard, click on the Quick Button labelled "Site Style Settings". This takes you to the Edit page of a special FoundationX [Resource](/display/revolution20/Resource "Resource") designed to make it easy for you to customize the look and feel of your site. There are four tabs in the FoundationX CSS resource:
 
-![](/download/attachments/43417672/fx1.png?version=1&modificationDate=1354615007000)
+![](fx1.png)
 
 Navigate to the 3rd tab, "Template Variables" - this is where all the fun begins!
 
@@ -66,19 +66,19 @@ The first category of TVs you'll see is the Colors category. You can edit the co
 
 FoundationX comes with the [ColorPicker](http://modx.com/extras/package/colorpicker) custom TV, so you can pick colors using a graphical color picker interface. Due to a bug in the Extra, the ColorPicker TV doesn't render when you install FoundationX from a Snapshot. You need to re-activate the Addon on the Package Management page:
 
-![](/download/attachments/43417672/fx2.png?version=1&modificationDate=1354615111000)
+![](fx2.png)
 
 1. In the top menu of the Manager, go to System » Package Management.
 2. Find the package called "ColorPicker" and click the "Reinstall" button.
 3. Click "Continue" on the next screen, then "OK" in the confirmation window. ColorPicker should now render correctly.
 
-Now when you go to Edit the FoundationX CSS Resource, the Template Variables should look like this: ![](/download/attachments/43417672/fx3.png?version=1&modificationDate=1354615142000)
+Now when you go to Edit the FoundationX CSS Resource, the Template Variables should look like this: ![](fx3.png)
 
 Click on the drop-down arrows to open up a visual color picker. Select your color and the hex value will be entered into the TV automagically. Remember to save your changes.
 
 ### Foundation
 
-Under the Foundation category, there's only one TV as of version 1.0.4-beta, and that's the logo image uploader: ![](/download/attachments/43417672/fx4.png?version=2&modificationDate=1354615586000)
+Under the Foundation category, there's only one TV as of version 1.0.4-beta, and that's the logo image uploader: ![](fx4.png)
 
 Click on the dropdown arrows in the "Site Logo" select element. The MODX Browser will appear, and it should default to the /assets/foundation/images/ folder. If not, select it in the file tree on the left. To upload, click the Upload button (circled above). In the resulting "Upload Files" window, click the "Add" button, select a file from your computer, click "Upload" and when the upload completes you can close the window.
 
@@ -86,7 +86,7 @@ Back in the MODX Browser, select the logo thumbnail and click "OK". The URL will
 
 ### Look and Feel
 
-The third, but most powerful category of FoundationX TVs is "Look and Feel": ![](/download/attachments/43417672/fx5.png?version=1&modificationDate=1354616291000)
+The third, but most powerful category of FoundationX TVs is "Look and Feel": ![](fx5.png)
 
 - **Include CSS:** To include separate CSS files, add @font-face declarations, and any CSS that must be inserted at the top of the final concatenated stylesheet. If you don't know what that means, you don't need to use this :)
 - **Content Width:** This sets a pixel value for the main content container. The rendered size will actually vary depending on the device and browser width, but this will be the default.

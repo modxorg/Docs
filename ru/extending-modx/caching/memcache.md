@@ -1,6 +1,6 @@
 ---
-title: Использование Memcache
-translation: extending-modx/caching/memcache
+title: "Использование Memcache"
+translation: "extending-modx/caching/memcache"
 ---
 
 ## Требования

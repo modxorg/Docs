@@ -1,6 +1,6 @@
 ---
-title: Профили
-translation: building-sites/client-proofing/form-customization/profiles
+title: "Профили"
+translation: "building-sites/client-proofing/form-customization/profiles"
 ---
 
 ## Что такое профиль настройки формы?

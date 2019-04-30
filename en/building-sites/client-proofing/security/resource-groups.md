@@ -18,13 +18,13 @@ Go to Security -> Resource Groups. From there you will see a list of all defined
 
 Drag the Resources from the right tree directly into Resource Groups in the left tree:
 
-![](/download/attachments/18678088/drag-resource-into-group1.png?version=1&modificationDate=1268849238000)
+![](drag-resource-into-group1.png)
 
 ### Option 2
 
 When you are editing a Resource directly, click on its "Access Permissions" tab, and check which Resource Groups it is a member of.
 
-![](/download/attachments/18678088/resource_groups_edit.jpg?version=1&modificationDate=1271555832000)
+![](resource_groups_edit.jpg)
 
 ## See Also
 

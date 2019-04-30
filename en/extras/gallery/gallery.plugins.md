@@ -6,7 +6,7 @@ _old_uri: "revo/gallery/gallery.plugins"
 
 ## Available Plugins for Gallery
 
- This is a list of the currently available plugins for Gallery:
+This is a list of the currently available plugins for Gallery:
 
 1. [Gallery.Plugins.Galleriffic](extras/gallery/gallery.plugins/galleriffic)
 2. [Gallery.Plugins.Slimbox](extras/gallery/gallery.plugins/slimbox)

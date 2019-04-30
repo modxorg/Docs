@@ -6,49 +6,49 @@ _old_uri: "revo/usertools"
 
 ## What is userTools?
 
- This extra includes a set of MODX Revolution snippets for retrieving Users and User related information.
+This extra includes a set of MODX Revolution snippets for retrieving Users and User related information.
 
 ## History
 
- userTools was first written by David Pede (davidpede) and released on March 24, 2017.
+userTools was first written by David Pede (davidpede) and released on March 24, 2017.
 
 ## Download
 
- It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <http://modx.com/extras/package/usertools>
+It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <http://modx.com/extras/package/usertools>
 
- The source code and build script is also available on GitHub: <https://github.com/tasianmedia/usertools>
+The source code and build script is also available on GitHub: <https://github.com/tasianmedia/usertools>
 
 ## Bugs & Feature Requests
 
- Bugs, issues and feature requests can be reported in the GitHub Repository, found here: <https://github.com/tasianmedia/usertools/issues>
+Bugs, issues and feature requests can be reported in the GitHub Repository, found here: <https://github.com/tasianmedia/usertools/issues>
 
 ## Available Snippets
 
 ### getProfile
 
- The getProfile snippet can be called using the tag:
+The getProfile snippet can be called using the tag:
 
- ``` php
+``` php
 [[getProfile]]
 ```
 
 ### getUsers
 
- The getUsers snippet can be called using the tag:
+The getUsers snippet can be called using the tag:
 
- ``` php
+``` php
 [[getUsers]]
 ```
 
 ### getGroups
 
- The getGroups snippet can be called using the tag:
+The getGroups snippet can be called using the tag:
 
- ``` php
+``` php
 [[getGroups]]
 ```
 
- getProfile, getUsers & getGroups can be called cached or un-cached.
+getProfile, getUsers & getGroups can be called cached or un-cached.
 
 ### Usage
 
@@ -56,14 +56,14 @@ _old_uri: "revo/usertools"
 
 #### Available Properties
 
- | Name | Description | Default Value | Added in Version |
+| Name | Description | Default Value | Added in Version |
 |------|-------------|---------------|------------------|
 | id | Comma-seperated list of numeric User ID's. If not set, will return Current User. |  | 1.0.0-pl |
 | tpl | Name of a chunk serving as a template. \[REQUIRED\] |  | 1.0.0-pl |
 
 ### Available Placeholders
 
- | Name | Description | Default Value | Added in Version |
+| Name | Description | Default Value | Added in Version |
 |------|-------------|---------------|------------------|
 | internalKey | ID of the user. |  | 1.0.0-pl |
 | fullname | Full name of the user. |  | 1.0.0-pl |
@@ -95,7 +95,7 @@ _old_uri: "revo/usertools"
 
 #### Available Properties
 
- | Name | Description | Default Value | Added in Version |
+| Name | Description | Default Value | Added in Version |
 |------|-------------|---------------|------------------|
 | id | Comma-seperated list of numeric User ID's. If not set, will return Current User. |  | 1.0.0-pl |
 | tpl | Name of a chunk serving as a template. \[REQUIRED\] |  | 1.0.0-pl |

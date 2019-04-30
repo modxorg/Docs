@@ -31,14 +31,14 @@ var tpl = MODx.config.default_template;
 
 В объекте MODx.config есть несколько других переменных, которые не являются [системными настройками](building-sites/settings "System Settings"):
 
-Ключ | Описание
---- | ---
-base_url | Базовый URL для сайта MODX и / или активного контекста.
-connectors_url | URL к каталогу коннекторов.
-manager_url | URL к менеджеру.
-http_host | Переменная хоста HTTP для активного контекста.
-site_url | Полный URL сайта для активного контекста.
-custom_resource_classes | Массив пользовательских классов ресурсов, извлеченных из системных настроек custom_resource_classes
+| Ключ                    | Описание                                                                                            |
+| ----------------------- | --------------------------------------------------------------------------------------------------- |
+| base_url                | Базовый URL для сайта MODX и / или активного контекста.                                             |
+| connectors_url          | URL к каталогу коннекторов.                                                                         |
+| manager_url             | URL к менеджеру.                                                                                    |
+| http_host               | Переменная хоста HTTP для активного контекста.                                                      |
+| site_url                | Полный URL сайта для активного контекста.                                                           |
+| custom_resource_classes | Массив пользовательских классов ресурсов, извлеченных из системных настроек custom_resource_classes |
 
 ### MODx.action
 
@@ -58,16 +58,16 @@ var actionId = MODx.action['mycomponent:controllers/index'];
 
 Содержит информацию о версии MODX со следующими атрибутами:
 
-Ключ | Пример
---- | ---
-версия | 2
-major_version | 1
-minor_version | 0
-patch_level | pl
-кодовое имя | Revolution
-дистрибутив | (Traditional)
-полная версия | 2.1.0-пл
-full_appname | MODX Revolution 2.1.0-pl (Traditional)
+| Ключ          | Пример                                 |
+| ------------- | -------------------------------------- |
+| версия        | 2                                      |
+| major_version | 1                                      |
+| minor_version | 0                                      |
+| patch_level   | pl                                     |
+| кодовое имя   | Revolution                             |
+| дистрибутив   | (Traditional)                          |
+| полная версия | 2.1.0-пл                               |
+| full_appname  | MODX Revolution 2.1.0-pl (Traditional) |
 
 Пример:
 
@@ -79,9 +79,9 @@ var fv = MODx.version.full_version;
 
 Этот объект будет содержать два следующих свойства для текущего пользователя администратора, вошедшего в систему:
 
-MODx.user.id | The ID of the user.
---- | ---
-MODx.user.username | Имя пользователя.
+| MODx.user.id       | The ID of the user. |
+| ------------------ | ------------------- |
+| MODx.user.username | Имя пользователя.   |
 
 ```javascript
 var userId = MODx.user.id;
@@ -91,19 +91,19 @@ var userId = MODx.user.id;
 
 Будет содержать следующие разрешения, если они будут предоставлены пользователю (они не будут существовать, если у пользователя нет разрешения):
 
-Название | Описание
---- | ---
-MODx.perm.resource_tree | Для просмотра дерева ресурсов.
-MODx.perm.element_tree | Для просмотра дерева элементов.
-MODx.perm.file_tree | Для просмотра дерева файлов.
-MODx.perm.file_upload | Загружать файлы.
-MODx.perm.file_manager | Использовать файловый браузер MODX.
-MODx.perm.new_chunk | Создать новый чанк.
-MODx.perm.new_plugin | Создать новый плагин.
-MODx.perm.new_snippet | Создать новый сниппет.
-MODx.perm.new_template | Создать новый шаблон.
-MODx.perm.new_tv | Создать новую переменную шаблона.
-MODx.perm.directory_create | Создать каталог в файловой системе.
+| Название                   | Описание                            |
+| -------------------------- | ----------------------------------- |
+| MODx.perm.resource_tree    | Для просмотра дерева ресурсов.      |
+| MODx.perm.element_tree     | Для просмотра дерева элементов.     |
+| MODx.perm.file_tree        | Для просмотра дерева файлов.        |
+| MODx.perm.file_upload      | Загружать файлы.                    |
+| MODx.perm.file_manager     | Использовать файловый браузер MODX. |
+| MODx.perm.new_chunk        | Создать новый чанк.                 |
+| MODx.perm.new_plugin       | Создать новый плагин.               |
+| MODx.perm.new_snippet      | Создать новый сниппет.              |
+| MODx.perm.new_template     | Создать новый шаблон.               |
+| MODx.perm.new_tv           | Создать новую переменную шаблона.   |
+| MODx.perm.directory_create | Создать каталог в файловой системе. |
 
 ```javascript
 if (MODx.perm.file_upload) { /* ...код... */ }

@@ -1,6 +1,6 @@
 ---
 title: "Разработка сайтов"
-translation: "building-sites"
+translation: "building-sites/index"
 ---
 
 Этот раздел содержит информацию о разработке сайта на MODX.

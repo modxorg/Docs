@@ -1,6 +1,6 @@
 ---
-title: Шаг 4 - Процессоры
-translation: extending-modx/custom-resources/step-4-processors 
+title: "Шаг 4 - Процессоры"
+translation: "extending-modx/custom-resources/step-4-processors"
 ---
 
 Этот урок является частью серии:

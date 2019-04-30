@@ -22,6 +22,14 @@ cd /path/to/your/modx/installation/assets/components/cronmanager/ && php cron.ph
 
 We advise you to execute it on every minute, every day in every month (\* to all: m h dom mon dow). But when you're sure there are no needs for an every minute cronjob, you could change the crontab interval by your own needs.
 
+![](cron-setup.png)
+
+You can also call the cron.php directly, like so:
+
+``` php
+php -q public_html/assets/components/cronmanager/cron.php
+```
+
 ## Usage examples
 
 To use the component, navigate to your manager and click on "Components > Cron Manager".
@@ -30,7 +38,7 @@ To use the component, navigate to your manager and click on "Components > Cron M
 
 Here you can create a new cronjob by clicking on the "new" button.
 
-[![](/download/thumbnails/35095318/create-new-cronjob.JPG)](/download/attachments/35095318/create-new-cronjob.JPG)
+![](create-new-cronjob.jpg)
 
 You see the fields "Snippet", "Minutes" and "Snippet properties".
 
@@ -48,7 +56,7 @@ In the overview of the cronjobs you're able to see directly wich snippets are in
 
 Each snippet in a cronjob could return some values, for testing purposes or something like that. Every return value of a snippet will be logged to the cronjob log inside MODx. You can view this log by clicking with the right mouse button on the record you want to view the log from.
 
-![](/download/attachments/35095318/viewlog-action.JPG?version=1&modificationDate=1307298900000)
+![](viewlog-action.jpg)
 
 The log is a simple overview of all the return messages, and also a timestamp is shown there.
 
@@ -57,23 +65,3 @@ The log is a simple overview of all the return messages, and also a timestamp is
 The Cron Manager is developped in GitHub on: [https://github.com/bertoost/MODx-CronManager/](http://github.com/bertoost/MODx-CronManager/)
 
 Bugs and new ideas could be entered here: [https://github.com/bertoost/MODx-CronManager/issues/](http://github.com/bertoost/MODx-CronManager/issues/)
-
-## Comments (1)
-
-1. ![User icon: jgulledge19](/s/1911/69/_/images/icons/profilepics/anonymous.png "jgulledge19")
-  
-  Sep 28, 2012
-  
-### [Josh Gulledge](/display/~jgulledge19) says:
-  
-  This might help some that have shared hosting. For my blog site the host is usi...
-  
-  This might help some that have shared hosting.
-  
-  For my blog site the host is using cPanel, this was the command that was needed to work:
-
-``` php
-php -q public\_html/assets/components/cronmanager/cron.php
-```
-
-  ![](/download/attachments/35095318/cron-setup.png?version=1&modificationDate=1348836956000)

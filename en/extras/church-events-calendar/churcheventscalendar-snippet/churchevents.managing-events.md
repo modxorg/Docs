@@ -10,7 +10,7 @@ Below are instructions based on the default template, if you have customized you
 
 1. Login to MODX and go to the calendar(front end) page.
 2. Look for the date you wish to add an event to and click on the \[ + \] link.
-  ![](/download/attachments/37126224/add-plus.gif?version=1&modificationDate=1323800921000)
+  ![](add-plus.gif)
 3. Now fill out the form.
 
 ### Choosing a day and time
@@ -73,7 +73,7 @@ Monthly repeating can seem a little overwhelming until you understand how it wor
 1. Select the monthly option
 2. Chose how often you want the month to repeat, from Every month to Every sixth month
 3. Now you want to select the days and week that your event will be on. On the grid you will see on the top the names of the days and on the left corresponds to the position of day, first to fifth in the month. Let’s look at December 2011 for example the **first Sunday** in December is the 4th and so on. If you were to take December 2011 and put it into this grid this is what it would look like:
-  ![](/download/attachments/37126224/month-repeat-explain.png?version=1&modificationDate=1323800921000)
+  ![](month-repeat-explain.png)
 4. Now select the day that the event starts on
 5. Select the day that the event ends on
 
@@ -93,7 +93,7 @@ Monthly repeating can seem a little overwhelming until you understand how it wor
 1. From the calendar view click on the event title
 2. You should now see the event description page and if you are logged in and have permissions you will see an Edit this event link, click on it.
 3. All options should be the same as Add an event except if the event is a repeating event you will have an additional option.
-  ![](/download/attachments/37126224/save-repeat-option.png?version=1&modificationDate=1323801905000)
+  ![](save-repeat-option.png)
   Selecting the Override all option will update and possibly override events if you have updated them that are connected.
 
 ## Delete an event
@@ -101,7 +101,7 @@ Monthly repeating can seem a little overwhelming until you understand how it wor
 1. From the calendar view click on the event title
 2. You should now see the event description page and if you are logged in and have permissions you will see a Remove this event link, click on it.
 3. You will now have to confirm that you want to delete the event. If the event is a repeating event you will need to select if you want to delete all or only the selected instance.
-  ![](/download/attachments/37126224/delete-repeat-option.png?version=1&modificationDate=1323802223000)
+  ![](delete-repeat-option.png)
 
 ## Requesting an event
 

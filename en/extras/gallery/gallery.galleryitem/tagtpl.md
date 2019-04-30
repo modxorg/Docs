@@ -6,21 +6,21 @@ _old_uri: "revo/gallery/gallery.galleryitem/gallery.galleryitem.tagtpl"
 
 ## GalleryItem's tagTpl Chunk
 
- This chunk is used for each Tag associated with the Item pulled by the [GalleryItem](extras/gallery/gallery.galleryitem "Gallery.GalleryItem") snippet, via the &tagTpl property.
+This chunk is used for each Tag associated with the Item pulled by the [GalleryItem](extras/gallery/gallery.galleryitem "Gallery.GalleryItem") snippet, via the &tagTpl property.
 
 ## Default Value
 
- ``` php
+``` php
 <span class="gal-item-tag"><a href="[[~[[*id]]]]?[[+tagRequestVar]]=[[+tag]]">[[+tag]]</a></span>
 ```
 
 ## Available Placeholders
 
- | Name          | Description                                                                                                                                    |
- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
- | tag           | The Tag value.                                                                                                                                 |
- | item          | The ID of the Item.                                                                                                                            |
- | tagRequestVar | The tagRequestVar parameter passed to the [GalleryItem](extras/gallery/gallery.galleryitem "Gallery.GalleryItem") snippet. Defaults to galTag. |
+| Name          | Description                                                                                                                                    |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| tag           | The Tag value.                                                                                                                                 |
+| item          | The ID of the Item.                                                                                                                            |
+| tagRequestVar | The tagRequestVar parameter passed to the [GalleryItem](extras/gallery/gallery.galleryitem "Gallery.GalleryItem") snippet. Defaults to galTag. |
 
 ## See Also
 

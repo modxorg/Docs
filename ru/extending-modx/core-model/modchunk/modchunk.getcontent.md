@@ -1,5 +1,6 @@
 ---
 title: "modChunk.getContent"
+translation: "extending-modx/core-model/modchunk/modchunk.getcontent"
 ---
 
 ## modChunk::getContent

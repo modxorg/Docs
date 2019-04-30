@@ -47,7 +47,7 @@ Our article template, or "BlogPostTemplate", has some placeholders as well:
 
 If you are _outside_ the Article Template and you need to display the number of comments that were made on a given post (e.g. if you want to display the number of comments on each post in your list of "Latest Posts"), then you cannot use the `[[+comments\_count]]`laceholder. You must instead use [QuipCount](extras/quip/quip.quipcount "Quip.QuipCount"). Go to the **Components -> Quip** page and take a look at the thread names that Articles gives each post automatically. It follows this format: article-b{page-id-of-blog}-{page-id-of-post}, e.g. **article-b12-37**
 
-![](/download/attachments/36635030/Quip-Thread-Names.jpg?version=1&modificationDate=1341982338000)
+![](quip-thread-names.jpg)
 
 Knowing that, we can then use [QuipCount](extras/quip/quip.quipcount "Quip.QuipCount") inside of a getResources call to retrieve the number of comments on each post, e.g.
 
@@ -65,7 +65,7 @@ Articles also provides some basic Chunks for various display settings for your C
 
 Articles allows simple, MODX-style Templating and easy editing, without breaking upgradability. Theming your blog has never been easier.
 
-1. [Articles.Creating a Blog](extras/articles/articles.creating-a-blog)
-2. [Articles.Retrieving Articles Outside of Articles](extras/articles/articles.retrieving-articles-outside-of-articles)
-3. [Articles.Roadmap](extras/articles/articles.roadmap)
-4. [Articles.Theming Articles](extras/articles/articles.theming-articles)
+1. [Articles.Creating a Blog](extras/articles/creating-a-blog)
+2. [Articles.Retrieving Articles Outside of Articles](extras/articles/retrieving-articles-outside-of-articles)
+3. [Articles.Roadmap](extras/articles/roadmap)
+4. [Articles.Theming Articles](extras/articles/theming-articles)

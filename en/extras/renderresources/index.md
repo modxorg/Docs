@@ -72,7 +72,7 @@ renderResources cannot be used with binary Content Types, or with modSymLink or 
 
 #### tvFilters
 
-Can be used to filter resources by certain TV values. These are entered as \[(_tvname_)(_operator_)\](_value_). There are two delimiters you can use to combine filter conditions. |
+Can be used to filter resources by certain TV values. These are entered as \[(_tvname_)(_operator_)\](_value_). There are two delimiters you can use to combine filter conditions.
 
 You can have "OR" filters using two pipe symbols. An OR filter fetches resources that has one of the listed TV values.
 
@@ -124,19 +124,20 @@ This will filter resources to meet one of the following conditions:
   **Available filter operators**:
   
   There are a number of comparison operators for use when creating filter conditions. In addition, when using many of these operators, numeric comparison values are automatically CAST TV values to numeric before comparison. Here is a list of the valid operators:
-  |        | Filter Operator                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |     | SQL Operator |  | CASTs numerics |  | Notes |  |  | <=> | <=> | Yes | _NULL safe equals_ |  | === | = | Yes |  |
-  | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- | ------------ |
-  | !==    | !=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |
-  | <>     | <>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |
-  | ==     | LIKE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | No  |              |
-  | !=     | NOT LIKE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | No  |              |
-  | <<     | <                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Yes |              |
-  | <=     | <=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |
-  | =<     | =<                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |
-  | >>     | >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Yes |              |
-  | >=     | >=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |
-  | =>     | =>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes |              |  |                |  |       |
-  | sortby | [Any Resource Field](making-sites-with-modx/structuring-your-site/resources#Resources-ResourcesResourceFields) (excluding Template Variables) to sort by. Some common fields to sort on are publishedon, menuindex, pagetitle etc, but see the Resources documentation for all fields. Specify fields with the name only, not using the tag syntax. Note that when using fields like template, publishedby and the likes for sorting, it will be sorted on the raw values, so the template or user ID, and NOT their names. |
+
+| Filter Operator |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | SQL Operator |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| !==             | !=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes          |
+| <>              | <>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes          |
+| ==              | LIKE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | No           |
+| !=              | NOT LIKE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | No           |
+| <<              | <                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Yes          |
+| <=              | <=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes          |
+| =<              | =<                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes          |
+| >>              | >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Yes          |
+| >=              | >=                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes          |
+| =>              | =>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Yes          |
+| sortby          | [Any Resource Field](making-sites-with-modx/structuring-your-site/resources#Resources-ResourcesResourceFields) (excluding Template Variables) to sort by. Some common fields to sort on are publishedon, menuindex, pagetitle etc, but see the Resources documentation for all fields. Specify fields with the name only, not using the tag syntax. Note that when using fields like template, publishedby and the likes for sorting, it will be sorted on the raw values, so the template or user ID, and NOT their names. |              |
 
 You can also sort randomly by specifying RAND(), like so:
 
@@ -164,66 +165,89 @@ The same thing is possible if you put the sorted IDs in a template variable, lik
 
 #### Other Properties
 
-| Name            | Description                                                                                                                                                   | Default Value | Added in version |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------- |
-| showUnpublished | If true, will also show Resources if they are unpublished.                                                                                                    | 0             |                  |
-| showDeleted     | If true, will also show Resources regardless if they are deleted.                                                                                             | 0             |                  |
-| showHidden      | If true, will show Resources regardless if they are hidden from the menus.                                                                                    | 0             |                  |
-| hideContainers  | If set, will not show any Resources marked as a container (is\_folder).                                                                                       | 0             |                  |
-| idx             | You can define the starting idx of the resources, which is an property that is incremented as each resource is rendered                                       | 1             |                  |
-| first           | Define the idx which represents the first resource                                                                                                            | 1             |                  |
-| last            | Define the idx which represents the last resource. Default is # of resources being summarized + first - 1                                                     |               |                  |
-| totalVar        | Define the key of a placeholder set by renderResources indicating the total number of Resources that would be selected **not** considering the _limit_ value. | total         |                  |
-| debug           | If true, will send the SQL query to the MODx log.                                                                                                             | false         |                  |
+| Name            | Description                                                                                                                                                   | Default Value |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| showUnpublished | If true, will also show Resources if they are unpublished.                                                                                                    | 0             |
+| showDeleted     | If true, will also show Resources regardless if they are deleted.                                                                                             | 0             |
+| showHidden      | If true, will show Resources regardless if they are hidden from the menus.                                                                                    | 0             |
+| hideContainers  | If set, will not show any Resources marked as a container (is\_folder).                                                                                       | 0             |
+| idx             | You can define the starting idx of the resources, which is an property that is incremented as each resource is rendered                                       | 1             |
+| first           | Define the idx which represents the first resource                                                                                                            | 1             |
+| last            | Define the idx which represents the last resource. Default is # of resources being summarized + first - 1                                                     |               |
+| totalVar        | Define the key of a placeholder set by renderResources indicating the total number of Resources that would be selected **not** considering the _limit_ value. | total         |
+| debug           | If true, will send the SQL query to the MODx log.                                                                                                             | false         |
 
 ## Examples
 
 Output a list of child Resources of the current Resource, using the 'myRowTpl' chunk:
 
 ``` php
-[[!renderResources? &parents=`[[*id]]` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`[[*id]]`
+&tpl=`myRowTpl`]]
 ```
 
 Output all resources beneath the Resource with ID '5', with the exception of resource 10, using the 'myRowTpl' chunk:
 
 ``` php
-[[!renderResources? &parents=`5` &resources=`-10` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`5`
+&resources=`-10`
+&tpl=`myRowTpl`]]
 ```
 
 Output only the resources specified, using the 'myRowTpl' chunk:
 
 ``` php
-[[!renderResources? &parents=`-1` &resources=`10,11,12` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`-1`
+&resources=`10,11,12`
+&tpl=`myRowTpl`]]
 ```
 
 Output the top 5 latest published Resources beneath the Resource with ID '5', with tpl 'blogPost':
 
 ``` php
-[[!renderResources? &parents=`5` &limit=`5` &tpl=`blogPost` &includeContent=`1`]]
+[[!renderResources?
+&parents=`5`
+&limit=`5`
+&tpl=`blogPost`
+&includeContent=`1`]]
 ```
 
 Output a list of child Resources of the current Resource, based on the Resource-template:
 
 ``` php
-[[!renderResources? &parents=`[[*id]]` &where=`{"template:=":8}` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`[[*id]]`
+&where=`{"template:=":8}`
+&tpl=`myRowTpl`]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1 or 2:
 
 ``` php
-[[!renderResources? &parents=`[[*id]]` &where=`{"template:=":1, "OR:template:=":2}` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`[[*id]]`
+&where=`{"template:=":1, "OR:template:=":2}`
+&tpl=`myRowTpl`]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1, 2 or 3 (you cannot use the same key name more than once):
 
 ``` php
-[[!renderResources? &parents=`[[*id]]` &where=`{"template:IN":[1,2,3]}` &tpl=`myRowTpl`]]
+[[!renderResources?
+&parents=`[[*id]]`
+&where=`{"template:IN":[1,2,3]}`
+&tpl=`myRowTpl`]]
 ```
 
 Display a message when no results found (equivalent of "empty" parameter in Ditto):
 
 ``` php
-[[!renderResources:default=`No results found`? &parents=`[[*id]]` &tpl=`myRowTpl`]]
+[[!renderResources:default=`No results found`?
+&parents=`[[*id]]`
+&tpl=`myRowTpl`]]
 ```
 
 ## Using getPage for Pagination

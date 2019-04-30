@@ -28,12 +28,12 @@ Demonstrates by applying concepts to the MODx Sample Site to:
 - Create a 'secure' context for Directors and up only
 - Restrict some element categories to administrators only
 
-![](http://assets.modx.com/docs/understanding-revo-acls.jpg)
+![](understanding-revo-acls.jpg)
 
 ### Example: Context Access
 
 A good example is creating a Context named 'test', and assigning an ACL to it. This can be done by editing the Context, and going to the 'Access Permissions' tab. From here, you can give a User Group (say, 'HR Dept') explicit access to this Context by selecting the User Group, the 'Administrator' Access Policy, and specifying a required Authority (say, 9999 for 'Member') to have:
 
-![](/download/attachments/18678085/sec-ugctx1.png?version=1&modificationDate=1280173915000)
+![](sec-ugctx1.png)
 
 This will restrict the 'test' Context to users who are a Member (or [Role](building-sites/client-proofing/security/roles "Roles") with more authority) of the 'HR Dept' User Group.

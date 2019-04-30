@@ -64,7 +64,6 @@ Versions created as a result of the snapshot during setup will have a "mode" set
 
 If you use MODX 2.2.0 or up, you may be pleased to find VersionX comes with a dashboard widget that shows you the latest resource changes right on the dashboard for a quick overview of what is happening. This widget could potentially replace the existing "Recently edited resources" that only shows recently edited resources for the currently logged in user.
 
-![](http://markh.nl/s/04/KO9.png)
 To set up the VersionX Dashboard Widget, please see the instructions on [Managing your Dashboard](administering-your-site/dashboards/managing-your-dashboard "Managing Your Dashboard").
 
 If you installed VersionX in Revolution 2.1.x and upgraded to Revolution 2.2+ afterwards, re-run the VersionX installer to add the widget to the system.

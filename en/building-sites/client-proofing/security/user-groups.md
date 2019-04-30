@@ -46,7 +46,7 @@ _old_uri: "2.x/administering-your-site/security/user-groups"
 
  Then, you'll just add a Resource Policy (the packaged-in-with-modx one will do fine) to the Resource Group you want to restrict access to. It will look something like this:
 
- ![](/download/attachments/18678087/ug-rg-grid1.png?version=1&modificationDate=1268850005000)
+ ![](ug-rg-grid1.png)
 
  And you've got a role-based access permission! This specific ACL will limit all Resources (aka Documents) in the web context and in the resource group "TestResourceGroup4" to only Users in the "HR Department" User Group with at least a Role of Supervisor. Roles with lower authority numbers would also inherit access - say you had a Coordinator Role with an authority of 2; Users in this User Group would have access to this ACL as well.
 

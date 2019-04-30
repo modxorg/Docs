@@ -12,7 +12,7 @@ This output-type allows you to wrap an link (a-tag) around the input (normally s
 
 It's output options look like:
 
-![](/download/attachments/35095501/tv-url-output.png?version=1&modificationDate=1308561292000)
+![](tv-url-output.png)
 
 | Name         | Description                                                     | Value |
 | ------------ | --------------------------------------------------------------- | ----- |

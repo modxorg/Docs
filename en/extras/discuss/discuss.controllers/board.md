@@ -15,8 +15,6 @@ The board controller builds an overview of threads in a board.
 | Controller Template   | pages/board.tpl                 |
 | Manifest Name         | board                           |
 
-![](https://img.skitch.com/20120916-fqd33t11u3en2xrscqe4kyu8j4.jpg)
-
 ## Options
 
 If you don't know what the manifest is, please go back to the [Getting Started](extras/discuss/discuss.getting-started "Discuss.Getting Started") document. The options below need to go into the "board" options array of the manifest.

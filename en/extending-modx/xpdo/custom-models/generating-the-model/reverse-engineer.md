@@ -25,7 +25,7 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
 
  In the image below, it's important to realize that you can start with any one component, and the other 2 can be automatically generated.
 
- ![](/download/attachments/33226895/xPDO_Forward_and_Reverse.jpg?version=1&modificationDate=1322284979000)
+ ![](xpdo_forward_and_reverse.jpg)
 
  Arguably, the easiest "access point" to the xPDO technology is to start with some existing database tables and use those to generate the XML schema file and PHP classes, and that's what this page demonstrates.
 

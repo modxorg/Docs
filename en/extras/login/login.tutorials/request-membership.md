@@ -18,19 +18,19 @@ The steps go something like this:
 
 1\. **Visit the homepage as a guest:** the header displays a link to the login page.
 
-![](/download/attachments/35094671/Foxy+Cart+Header.jpg?version=1&modificationDate=1303606748000)
+![](foxy+cart+header.jpg)
 
 2\. **Login:** The Login page contains links to the "Forgot Password" and to a "Apply for Membership" page.
 
-![](/download/attachments/35094671/The+FoxyCart+Forum+-+Sign+In.jpg?version=1&modificationDate=1303606758000)
+![](the+foxycart+forum+-+sign+in.jpg)
 
 3\. **Redirect to the Homepage:** after a successful login, you are returned to the homepage, but this time, additional functionality is unlocked.
 
-![](/download/attachments/35094671/The+FoxyCart+Forum+-+Logged+In.jpg?version=1&modificationDate=1303606753000)
+![](the+foxycart+forum+-+logged+in.jpg)
 
 4\. **Logout:** When you're done visiting the site, you can click the "Logout" link and land on the "Come Again" page.
 
-![](/download/attachments/35094671/The+FoxyCart+Forum+-+Sign+Out.jpg?version=1&modificationDate=1303606763000)
+![](the+foxycart+forum+-+sign+out.jpg)
 
 Make sense? It's pretty similar to what we did before in the [Basic Setup](extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), but there are a few extra things going on, so we need a few extra pages. Most importantly, we'll need to integrate both the [Register](extras/login/login.register "Login.Register") and the [Personalize](http://modx.com/extras/package/personalize) Snippets, and we'll need to shuffle around a couple other components from the [Basic Setup](extras/login/login.tutorials/login.basic-setup "Login.Basic Setup") tutorial.
 
@@ -42,7 +42,7 @@ Let's get started!
 
 We're augmenting the functionality offered by the default Login snippet, so make sure that you also download the [Personalize](http://modx.com/extras/package/personalize) Snippet. It is available via package management.
 
-![](/download/attachments/35094671/Personalize+Snippet.jpg?version=1&modificationDate=1303607956000)
+![](personalize+snippet.jpg)
 
 Be sure to download the latest version (the one by BobRay). Bob says he may have goofed when submitting his upgrade, so it shows up as a separate package.
 
@@ -277,7 +277,7 @@ If the page doesn't redirect correctly, verify that you have a valid page ID for
 1. **CHECK:** After submitting the form, you should be redirected to the **Request Pending (7)** page.
 2. **CHECK:** After submitting the form, you should see the new user created under **Security --> Manage Users**. It will be grayed out because the user is not yet active until they confirm their email address by clicking the link that was emailed to them.
 
-![](/download/attachments/35094671/New_inactive_user.jpg?version=1&modificationDate=1339727602000)
+![](new_inactive_user.jpg)
 
 ### Check for Verification Email
 

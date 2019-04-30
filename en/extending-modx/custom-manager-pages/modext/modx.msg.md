@@ -9,7 +9,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 **Extends:** Ext.Component
 **Key Features:** AJAX connector features.
 
-![](/download/attachments/18678080/confirm.png?version=1&modificationDate=1302195122000)
+![](confirm.png)
 
 The MODx.msg class provides the functionality of the Ext.MessageBox class, with the added benefit of using an AJAX callback function (for confirmation dialogs). Simply provide a URL and optional parameters and a connector request will be sent after the user confirms the prompt. It defaults to a minimum width of 200px.
 

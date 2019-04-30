@@ -40,7 +40,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 
  After this script runs, a handful of PHP files should have been created inside your `core/components/copyrightedresource/model/` directory. See the image below.
 
- ![](/download/attachments/36634952/copyrightedresource_class_files.png?version=1&modificationDate=1360972022000)
+ ![](copyrightedresource_class_files.png)
 
  The `copyrightedresource.class.php` file should look like this:
 
@@ -107,7 +107,7 @@ Core Path: {core_path}components/copyrightedresource/
 Assets Path: {assets_path}components/copyrightedresource/
 ```
 
- ![](/download/attachments/36634952/create_namespace.png?version=1&modificationDate=1360974139000)
+ ![](create_namespace.png)
 
  Note the special placeholders you can use to refer to your directories.
 
@@ -241,7 +241,7 @@ print 'Success!';
 
  Now, if you reload the page and right-click on a Resource in the tree, then move over "Create", you should see this:
 
- ![](/download/attachments/36634952/context-menu.png?version=1&modificationDate=1322512993000)
+ ![](context-menu.png)
 
 You may need to clear the cache a couple of times.
 

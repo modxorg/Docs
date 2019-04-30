@@ -12,7 +12,7 @@ We'll base this off of a generic contact form as outlined in the [Contact Page](
 
 The only thing we need to add to the basic call here is a new **hook**: we've added a hook named **customhook**
 
- ``` php
+``` php
 [[!FormIt?
    &hooks=`spam,customhook,email,redirect`
    &emailTpl=`MyEmailChunk`

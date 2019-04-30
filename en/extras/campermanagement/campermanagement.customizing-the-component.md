@@ -14,14 +14,14 @@ In this example we will change the title of the component ("CamperManagement") a
 
 ### First look at using Lexicon Management
 
-We will first need to move to the "campermanagement" [namespace](developing-in-modx/advanced-development/namespaces "Namespaces"). When you're in the Lexicon Management screen, you should see a dropdown that defaults to "core". Open that and choose the campermanagement one. ![](/download/attachments/35586669/screenlexmgmt.PNG?version=1&modificationDate=1316005628000)
+We will first need to move to the "campermanagement" [namespace](developing-in-modx/advanced-development/namespaces "Namespaces"). When you're in the Lexicon Management screen, you should see a dropdown that defaults to "core". Open that and choose the campermanagement one. ![](screenlexmgmt.png)
 Every string has a name (also called the key) which is being called from the code to display certain text. These names are usually quite recognizable and make sense. The button that says "Back to Overview" (on a camper listing page in the top right) has a key of "campermgmt.button.backtooverview", and the title of the "Options" tab has a key of "campermgmt.tab.options". If you can't find the right one, just enter the text you are seeing in the search box to the right of the screen.
 
 ### Changing some Strings
 
 We will change the title of the addon to "Used Equipment Management". The title is the "campermgmt" string. Simply double click the value there, and type in your preferred value.
 
-If you were to refresh the grid (there's a refresh button at the bottom) you will see it is now listed in green, and has a "Last modifed on" date set. ![](/download/attachments/35586669/screenlexmgmt2.PNG?version=1&modificationDate=1316005628000)
+If you were to refresh the grid (there's a refresh button at the bottom) you will see it is now listed in green, and has a "Last modifed on" date set. ![](screenlexmgmt2.png)
 The good thing about Lexicon Management is that your overrides are saved in the database. That means that even if you update your addon or MODX itself, the lexicon overrides should remain the same and are not being discarded in the process. Changing the lexicon files which are shipped with the component would be discarded when updating that.
 
 Now you may get overly excited and check out the result, but **you will first have to clear the cache**. Lexicons are cached by default and a cache refresh is needed to make anything appear. So go to Site > Clear Cache and then refresh your component page. If you changed anything to the menu item (either key campermgmt or campermgmt.description) you will also need to force that to refresh, which doesn't always seem to be refreshed by a regular cache refresh. Simple remove the file in core/cache/menu/mgr/menus/ and that will be updated when you refresh the page again.
@@ -88,7 +88,7 @@ cmVoorraadItem chunk:
 ```
 
 Which results (with some css applied) in:
-![](/download/attachments/35586669/overview.PNG?version=1&modificationDate=1316005628000)
+![](overview.png)
 
 ## Custom Context Menu items
 

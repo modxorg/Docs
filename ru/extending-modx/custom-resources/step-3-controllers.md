@@ -1,6 +1,6 @@
 ---
-title: Шаг 3 - Контроллеры
-translation: extending-modx/custom-resources/step-3-controllers
+title: "Шаг 3 - Контроллеры"
+translation: "extending-modx/custom-resources/step-3-controllers"
 ---
 
 Этот урок является частью серии:

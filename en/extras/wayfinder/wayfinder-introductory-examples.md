@@ -10,13 +10,13 @@ Wayfinder is easily one of the single most important Snippets for your MODx site
 
 For the following examples, we will be referring to the following sample resources:
 
-![](/download/attachments/35095352/MODx+Resources.jpg?version=1&modificationDate=1307535321000)
+![](modx+resources.jpg)
 
 ### Diagram
 
 Here is a graphical representation of the various formatting chunks we covered in these examples:
 
-![](/download/attachments/35095352/WF+Regions.png?version=1&modificationDate=1307535321000)
+![](wf+regions.png)
 
 This may seem complex at first glance, but if you refer back to this diagram as you read through the below examples, it should help make things clear.
 

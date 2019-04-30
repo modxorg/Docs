@@ -69,7 +69,7 @@ cmTplItem chunk:
 ```
 
 With additional CSS styling, this is the result (obviously there are things that could be improved):
-![](/download/attachments/35586675/ex1.PNG?version=1&modificationDate=1316009636000)
+![](ex1.png)
 
 ### Example2: Slideshow with vehicles marked as favorite
 
@@ -120,7 +120,7 @@ All of the above gives us the following output in the front-end for one item:
 ```
 
 Combined with our slideshow script and a bunch of css, we get this result, which fades in/out from vehicle to vehicle.
-![](/download/attachments/35586675/ex2.PNG?version=1&modificationDate=1316009636000)
+![](ex2.png)
 
 ### Example3: Horizontal row style overview
 

@@ -1,6 +1,6 @@
 ---
-title: Название вкладки
-translation: building-sites/client-proofing/form-customization/rules/tab-title
+title: "Название вкладки"
+translation: "building-sites/client-proofing/form-customization/rules/tab-title"
 ---
 
 ## Правило заголовка вкладки

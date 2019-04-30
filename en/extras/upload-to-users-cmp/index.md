@@ -22,7 +22,7 @@ It would be useful for setting up specific folers to each of logged in users, an
 
 Since version 1.0-pl, this package added database table to store additional information about the files, so it can be used later on to replace the filename on the list, and even better, add description into the list.
 
-![](/download/attachments/41058348/uploadtousers-1.0-pl.jpg?version=1&modificationDate=1345753736000)
+![](uploadtousers-1.0-pl.jpg)
 
 ## Upload to Users Snippet
 
@@ -69,7 +69,7 @@ to, for instance:
 
 The result of the FileDownload output will be changed like this:
 
-![](/download/attachments/41058348/FDL-U2U.jpg?version=1&modificationDate=1345754441000)
+![](fdl-u2u.jpg)
 
 ## Properties
 

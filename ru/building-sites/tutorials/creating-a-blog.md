@@ -1,6 +1,6 @@
 ---
-title: Создание блога
-translation: case-studies-and-tutorials/creating-a-blog-in-modx-revolution
+title: "Создание блога"
+translation: "case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 ---
 
 ## Требования:
@@ -193,7 +193,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 `]]
 ```
 
-Хорошо, давайте объясним это: getResourcesTag фрагмент обёртки для [getResources](/extras/getresources "getResources") и [getPage](/extras/getpage "getPage") который автоматически фильтрует результаты по телевизору с тегами. Таким образом, в основном, мы хотим захватить все опубликованные ресурсы в этом разделе (и мы также можем фильтровать по тегам, если мы передадим в URL параметр '?tag=TagName').
+Хорошо, давайте объясним это: getResourcesTag фрагмент обёртки для [getResources](/extras/getresources "getResources") и [getPage](/extras/getpage "getPage") который автоматически фильтрует результаты по TVу с тегами. Таким образом, в основном, мы хотим захватить все опубликованные ресурсы в этом разделе (и мы также можем фильтровать по тегам, если мы передадим в URL параметр '?tag=TagName').
 
 Ниже вызова getResourcesTag мы размещаем наши ссылки на страницы, так как по умолчанию getResourcesTag показывает только 10 сообщений на страницу.
 

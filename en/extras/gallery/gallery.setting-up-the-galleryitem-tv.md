@@ -8,7 +8,7 @@ _old_uri: "revo/gallery/gallery.setting-up-the-galleryitem-tv"
 
 Gallery comes packaged with custom input and output types for TVs in Revolution. This allows you to get some cool image placement in your Resources. You can crop, resize, rotate and do other functions on images with the TV:
 
-![](/download/attachments/18677869/gallery-crop-ss.png?version=1&modificationDate=1279902856000)
+![](gallery-crop-ss.png)
 
 ## Setting up the TV
 

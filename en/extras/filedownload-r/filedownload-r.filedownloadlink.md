@@ -72,4 +72,4 @@ If you like to see the available placeholders, just initiate the &toArray=`1` pa
 ]]
 ```
 
-![](/download/attachments/35586646/filedownloadlink.jpg?version=1&modificationDate=1315759899000)
+![](filedownloadlink.jpg)

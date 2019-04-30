@@ -1,6 +1,6 @@
 ---
-title: Создание класса ресурса
-translation: extending-modx/custom-resources/
+title: "Создание класса ресурса"
+translation: "extending-modx/custom-resources"
 ---
 
 Этот урок является частью серии:
@@ -31,7 +31,7 @@ translation: extending-modx/custom-resources/
 
 ## Генерация ваших файлов классов
 
-Следующим шагом является создание карт и классов для модели. Вы можете сделать это, используя свой собственный скрипт. Вам просто нужно обратиться к документации по [ генерации кода модели](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code") и функции [parseSchema()](extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema") в xPDO. Мы предоставили образец сценария ниже. Это модифицированная версия сценария, используемая при [обратном проектировании классов xPDO](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table") из существующей таблицы базы данных.
+Следующим шагом является создание карт и классов для модели. Вы можете сделать это, используя свой собственный скрипт. Вам просто нужно обратиться к документации по [генерации кода модели](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code") и функции [parseSchema()](extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema "xPDOGenerator.parseSchema") в xPDO. Мы предоставили образец сценария ниже. Это модифицированная версия сценария, используемая при [обратном проектировании классов xPDO](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table") из существующей таблицы базы данных.
 
 Создайте скрипт в корневом каталоге вашего сайта MODX, затем запустите его, перейдя на эту страницу в браузере.
 
@@ -192,7 +192,7 @@ $modx->addExtensionPackage('copyrightedresource','/path/to/copyrightedresource/m
 * Используйте этот скрипт для добавления вашего пакета расширения в 'радар' MODX.
 * Это должно быть сделано только один раз.
 * Обратите внимание, что мы должны создать экземпляр MODX: xPDO недостаточно
-* потому что мы запускаем функции, которые существуют только в MODX, а не в 
+* потому что мы запускаем функции, которые существуют только в MODX, а не в
 * базовом фреймворке xPDO.
 *
 * ИСПОЛЬЗОВАНИЕ:

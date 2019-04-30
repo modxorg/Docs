@@ -1,6 +1,6 @@
 ---
-title: Видимая вкладка
-translation: building-sites/client-proofing/form-customization/rules/tab-visible
+title: "Видимая вкладка"
+translation: "building-sites/client-proofing/form-customization/rules/tab-visible"
 ---
 
 ## Правило видимой вкладки

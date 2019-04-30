@@ -16,7 +16,7 @@ Go ahead and edit our "My New Source" source that we created in the [Adding a Me
 
 We're going to first lock down our new source so that it can only be seen and edited by Administrators. Click on the "Add User Group" button above the grid. This should pop up a window:
 
-![](/download/attachments/35586541/20110907-jje3b536kann962u778as3gxj5.jpeg?version=1&modificationDate=1315428999000)
+![](20110907-jje3b536kann962u778as3gxj5.jpeg)
 
 Fill it out as shown above, noting that there are two available [Access Policies](building-sites/client-proofing/security/policies "Policies"). The "Media Source Admin" policy is what we want - it allows full access to the media source, including viewing, editing, removing and listing. The other - Media Source User - only allows viewing and listing of the source (basically a read-only policy). Since we're assigning this to our Administrator group, we want them to have full access.
 
@@ -28,7 +28,7 @@ If a non-administrator attempts to view or edit a TV in a Resource using your no
 
 Now that you've added an ACL for the Admins, let's also add one for our Content Editors group. Add another ACL:
 
-![](/download/attachments/35586541/Screen+shot+2011-09-07+at+3.54.11+PM.png?version=1&modificationDate=1315428999000)
+![](screen+shot+2011-09-07+at+3.54.11+pm.png)
 
 Add it to the grid, and save your Source. This will allow all the Users in your Content Editors User Group to be able to see and use your Source, but not alter the Source. They'll be able to add it to TVs, view it in the Files tree, and browse the Source - but not edit the Source itself, nor remove it.
 

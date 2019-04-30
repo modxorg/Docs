@@ -6,43 +6,43 @@ _old_uri: "revo/login/login.resetpassword"
 
 ## What is ResetPassword?
 
- ResetPassword is a simple Snippet that is used in conjunction with [ForgotPassword](extras/login/login.forgotpassword "Login.ForgotPassword"), allowing users to retrieve and reset their password. This Snippet is placed on the page the User will receive in an email, which when they visit will reset their password.
+ResetPassword is a simple Snippet that is used in conjunction with [ForgotPassword](extras/login/login.forgotpassword "Login.ForgotPassword"), allowing users to retrieve and reset their password. This Snippet is placed on the page the User will receive in an email, which when they visit will reset their password.
 
 ## Usage
 
- To use the password retrieval functionality, first create the Resource the
- user will log in to should they click on the confirmation email, and put
- the [ResetPassword](extras/login/login.resetpassword "Login.ResetPassword") snippet in. Tell it what Resource the Login snippet is
- in - or where you'd like it to provide a link back to:
+To use the password retrieval functionality, first create the Resource the
+user will log in to should they click on the confirmation email, and put
+the [ResetPassword](extras/login/login.resetpassword "Login.ResetPassword") snippet in. Tell it what Resource the Login snippet is
+in - or where you'd like it to provide a link back to:
 
- ``` php
+``` php
 [[!ResetPassword? &loginResourceId=`72`]]
 ```
 
- Then create another resource with the [ForgotPassword](extras/login/login.forgotpassword "Login.ForgotPassword") snippet, and tell it
- what Resource the Reset snippet is in:
+Then create another resource with the [ForgotPassword](extras/login/login.forgotpassword "Login.ForgotPassword") snippet, and tell it
+what Resource the Reset snippet is in:
 
- ``` php
+``` php
 [[!ForgotPassword? &resetResourceId=`123`]]
 ```
 
 ### ResetPassword Properties
 
- ResetPassword comes with some default properties you can override. They are:
+ResetPassword comes with some default properties you can override. They are:
 
- | Name                | Description                                                                          | Default                   |
- | ------------------- | ------------------------------------------------------------------------------------ | ------------------------- |
- | tpl                 | The reset password message tpl. May be the type specified by the _tplType_ property. | lgnResetPassTpl           |
- | tplType             | The type of tpl being provided by _tpl_                                              | modChunk                  |
- | loginResourceId     | The resource to direct users to on successful reset.                                 | 1                         |
- | expiredTpl          | The temporary password has expired tpl.                                              | lgnExpiredTpl             |
- | changePasswordTpl   | The change password form tpl.                                                        | lgnResetPassChangePassTpl |
- | autoLogin           | Immediately log in the user upon clicking the reset link from email.                 | false                     |
- | forceChangePassword | Require immediate password change upon clicking the reset link from email.           | false                     |
+| Name                | Description                                                                          | Default                   |
+| ------------------- | ------------------------------------------------------------------------------------ | ------------------------- |
+| tpl                 | The reset password message tpl. May be the type specified by the _tplType_ property. | lgnResetPassTpl           |
+| tplType             | The type of tpl being provided by _tpl_                                              | modChunk                  |
+| loginResourceId     | The resource to direct users to on successful reset.                                 | 1                         |
+| expiredTpl          | The temporary password has expired tpl.                                              | lgnExpiredTpl             |
+| changePasswordTpl   | The change password form tpl.                                                        | lgnResetPassChangePassTpl |
+| autoLogin           | Immediately log in the user upon clicking the reset link from email.                 | false                     |
+| forceChangePassword | Require immediate password change upon clicking the reset link from email.           | false                     |
 
 ### tplType Options
 
- The tplType property takes a different options. They can be:
+The tplType property takes a different options. They can be:
 
 - _modChunk_ - The tpl provided must be the name of a chunk.
 - _file_ - Must be an absolute path to the tpl file.

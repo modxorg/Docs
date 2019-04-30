@@ -14,7 +14,7 @@ Next, in the Resource Tree (to the left) create a "Dev Home" Resource. Place it 
 
 Your tree should look something like this:
 
-![](/download/attachments/18678054/subctx1.png?version=1&modificationDate=1269522960000)
+![](subctx1.png)
 
 From there, go ahead and right-click on the "dev" Context in the tree, and click "Edit Context". From here we'll see a Context Settings tab. Click on it, and you'll need to add a few settings:
 

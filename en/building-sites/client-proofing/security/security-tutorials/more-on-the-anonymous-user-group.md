@@ -8,13 +8,13 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials/more-on-the-a
 
 Anyone who visits the site and is not logged in belongs to the Anonymous [User Group](building-sites/client-proofing/security/user-groups "User Groups").
 
-You can edit the User Group by navigating to the top menu item Security » Access Controls, User Groups tab. Then right-click on the Anonymous User Group's name and select "Update User Group". ![](/download/attachments/42565753/Access+Controls.png?version=1&modificationDate=1350716439000)
+You can edit the User Group by navigating to the top menu item Security » Access Controls, User Groups tab. Then right-click on the Anonymous User Group's name and select "Update User Group". ![](access+controls.png)
 
 ## What Can Anonymous Users Do?
 
 By default, Anonymous Users are granted Load Only permissions in every [Context](building-sites/contexts "Contexts") except the "mgr" Context. Without Load Only permissions, requests to the Context would result in a 404 Page Not Found response.
 
-![](/download/attachments/42565753/User+Group_+anonymous.png?version=2&modificationDate=1350710081000)
+![](user+group_+anonymous.png)
 
 Load Only permissions doesn't necessarily mean they can View the Resource (see below).
 
@@ -26,7 +26,7 @@ When you create protected Resource Groups, the Anonymous User Group won't have L
 
 You can do this in the Resource Group Access tab of the Anonymous User Group editing page.
 
-![](/download/attachments/42565753/Screen+Shot+2012-10-19+at+11.43.46+PM.png?version=1&modificationDate=1350715791000)
+![](screen+shot+2012-10-19+at+11.43.46+pm.png)
 
 Click on "Add Resource Group", select the protected Resource Group in the dropdown, select the Context in which you want to grant access (don't select the "mgr" context) and choose Load Only as the Access Policy. Click "Save" and you're done.
 

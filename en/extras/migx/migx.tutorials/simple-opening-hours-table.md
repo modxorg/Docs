@@ -41,7 +41,7 @@ We're setting three columns ("Day", "From", and "Until") and giving them a width
 
 Finally we're setting an "Add Item" Replacement, in my case it was set to "Add new line".
 
-You should now be able to get the following in the Manager (though the image has terms in Dutch). ![](/download/attachments/35586346/migx+grid.PNG?version=1&modificationDate=1315272600000)
+You should now be able to get the following in the Manager (though the image has terms in Dutch). ![](migx+grid.png)
 
 ## Parsing the Data
 
@@ -80,4 +80,4 @@ If there isn't a value it will use the default output modifier, which means it w
 See the image below for the result. (Though we have replaced the texts with Dutch here and added some styling to the table)
 And that's just another example of what you can do with MIGX! Of course you could go much further in this, adding more columns, multiple forms etc etc.
 
-## ![](/download/attachments/35586346/Knipsel.PNG?version=1&modificationDate=1313929587000)
+## ![](knipsel.png)

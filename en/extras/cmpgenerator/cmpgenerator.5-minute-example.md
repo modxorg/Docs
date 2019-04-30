@@ -19,9 +19,9 @@ CREATE TABLE `modx_test` (
 
 1. Go to the Manager then CMPGenerator and click on Create Package
    Fill in the table info we just created and pick a package name:
-  ![](/download/attachments/37683291/create-package2.2.png?version=2&modificationDate=1331827781000)
+  ![](create-package2.2.png)
 2. Once you hit save all the files are created in /your MODX/core/components/mytest/
-  ![](/download/attachments/37683291/created-folders-files.png?version=1&modificationDate=1325784884000)
+  ![](created-folders-files.png)
 3. Now go lets see if this worked and create a simple snippet to test out our newly created table.
    Name the Snippet: mytest and insert the following code:
 
@@ -96,4 +96,4 @@ return $output;
 ```
 
 You should see something like this (note my test page has CSS assigned to tables):
-![](/download/attachments/37683291/snippet-output.png?version=1&modificationDate=1325784884000)
+![](snippet-output.png)

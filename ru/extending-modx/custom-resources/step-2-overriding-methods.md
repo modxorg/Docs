@@ -1,6 +1,6 @@
 ---
-title: Шаг 2 - переопределение методов
-translation: extending-modx/custom-resources/step-2-overriding-methods
+title: "Шаг 2 - переопределение методов"
+translation: "extending-modx/custom-resources/step-2-overriding-methods"
 ---
 
 Этот урок является частью серии:

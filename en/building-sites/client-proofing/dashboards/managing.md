@@ -12,7 +12,7 @@ Go to the main Dashboards page, which can be found in the top menu via "Dashboar
 
 You will see a name and description field, and below, a grid of Widgets assigned to the dashboard. You can drag the widgets around to rearrange them, add widgets by clicking the "Place Widget" button, or remove widgets by right-clicking on a widget:
 
-![](/download/attachments/35586558/dashboard-edit.png?version=1&modificationDate=1315431495000)
+![](dashboard-edit.png)
 
 ## See Also
 

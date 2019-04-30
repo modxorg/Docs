@@ -9,7 +9,7 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/"
 
 MODX is a Content Application Platform. What does this mean? Well, that depends on who you are:
 
-![](/download/attachments/18678475/avgjoe.png?version=1&modificationDate=1280336319000)
+![](avgjoe.png)
 
 ### End-Users (Average Joe)
 
@@ -19,7 +19,7 @@ You can setup everything from a simple site, to a blog, to a full-scale web pres
 
 MODX helps you organize your content the way you want it, and get stellar built-in SEO results. MODX is fully, 100% Friendly URL compatible, so getting mysite.com/my/own/custom/url.html is incredibly simple, and as easy as structuring your site that way.
 
-![](/download/attachments/18678475/coolcarl.png?version=1&modificationDate=1280336319000)
+![](coolcarl.png)
 
 ### Designers (Cool Carl)
 
@@ -27,7 +27,7 @@ Ever wanted complete freedom with your HTML and CSS? Tired of hacking existing s
 
 You can use MODX as your Content Management System (CMS) of choice, as MODX offers completely flexible templating and no-holds-barred content delivery. Put your CSS and images where you want them. And once you're done designing, either hand off the development duties to your developer, or point-and-click install Extras straight from within the manager. Simple.
 
-![](/download/attachments/18678475/badassbilly.png?version=1&modificationDate=1280336319000)
+![](badassbilly.png)
 
 ### Developers (Badass Billy)
 

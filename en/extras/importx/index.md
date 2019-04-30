@@ -18,7 +18,9 @@ Development was funded by Working Party, a Sydney based Digital Agency.
 
 Initial development started in April 2011 by Mark Hamstra.
 
-## [![](/download/thumbnails/35094766/menu.png)](/download/attachments/35094766/menu.png)Usage
+## Usage
+
+![](menu.png)
 
  Using ImportX is as simple as presenting it with your CSV values and setting a few options depending on your situation.
 
@@ -26,7 +28,7 @@ After installation through the Package Manager, refresh the page and find Import
 
 ### CSV Input tab
 
-![](/download/attachments/35094766/import.png?version=1&modificationDate=1305658581000)
+![](import.png)
 
 The image to the left shows the screen available to you (ImportX 1.0-rc). Most notably, you can find a big textarea where you can enter raw CSV or choose to upload a csv file in the input field below that.
 
@@ -44,7 +46,7 @@ ImportX doesn't really care about what format your CSV is, as long as:
 
 ### Default Settings
 
-The Default Settings tab contains a couple of settings you can set by default. [![](/download/thumbnails/35094766/import-tab.png)](/download/attachments/35094766/import-tab.png)
+The Default Settings tab contains a couple of settings you can set by default. ![](import-tab.png)
 
 It is important to note that this sets the default behavior - also when you did not specify it, as it will then default to being false!
 
@@ -59,7 +61,7 @@ As of 1.0.0-rc you can set:
 
 After clicking the "Start Import" button, the script will get to action and start parsing your CSV. If all is good, this is how the resulting output could look:
 
-![](/download/attachments/35094766/console.png?version=1&modificationDate=1305658576000)
+![](console.png)
  At that point you can choose to download the output, or just close the window. The resource tree will refresh automagically after that to show what has happened.
 
 If you get any other output, see the below table and what you could do to fix it.

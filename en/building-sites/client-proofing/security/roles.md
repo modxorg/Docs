@@ -26,7 +26,7 @@ One common example is to create Roles that mimic a basic employee position struc
 - Supervisor - 3
 - Employee - 9999
 
-![](/download/attachments/18678086/roles-grid.png?version=1&modificationDate=1268850084000)
+![](roles-grid.png)
 
 We can then create a User Group called "HR Department". Within that User Group, we'll assign Users to those Roles (you can have multiple Users per Role, as well).
 
@@ -37,7 +37,7 @@ Now, let's say John has a Role of Coordinator. Mark has a Role of Supervisor. We
 
 We've assigned this Policy to the "web" context for our User Group "HR Department". We then set its Minimum Role value to "Supervisor":
 
-![](/download/attachments/18678086/ug-ctx-grid1.png?version=1&modificationDate=1268850154000)
+![](ug-ctx-grid1.png)
 
 This means that Mark has these Permissions, since he's in the User Group, and has at least the Role of "Supervisor" (which is the Role he has, specifically).
 

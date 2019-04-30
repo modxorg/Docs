@@ -9,7 +9,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 **Extends:** Ext.Window
 **Key Features:** Drag-and-drop functionality; connector functionality for saving.
 
-![](/download/attachments/18678082/modx-window.png?version=1&modificationDate=1303411582000)
+![](modx-window.png)
 
 MODExt Windows are a convenient way to display record data from a Grid or AJAX request for editing. Windows automatically include a FormPanel which you can add form fields (and other components) to. Submitting/saving a Window actually submits the FormPanel, and initiates an AJAX request to your connector.
 

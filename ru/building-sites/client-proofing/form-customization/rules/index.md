@@ -1,6 +1,6 @@
 ---
-title: Правила настройки формы
-translation: building-sites/client-proofing/form-customization/rules
+title: "Правила настройки формы"
+translation: "building-sites/client-proofing/form-customization/rules"
 ---
 
 ## Что такое правило?

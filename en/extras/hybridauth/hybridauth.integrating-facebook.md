@@ -10,31 +10,31 @@ Now, let`s go together, step-by-step!
 
 First of all, you need to specify alailable providers for your site. For example: \*Facebook, Google, Twitter\*.
 
-[![](/download/thumbnails/43417862/ha_1.png)](/download/attachments/43417862/ha_1.png)
+![](ha_1.png)
 
 Then You need to edit chunks, and add links to Facebook authorization.
 
-[![](/download/thumbnails/43417862/ha_fb5.png)](/download/attachments/43417862/ha_fb5.png) [![](/download/thumbnails/43417862/ha_fb6.png)](/download/attachments/43417862/ha_fb6.png)
+![](ha_fb5.png) ![](ha_fb6.png)
 
 And now we need to register our application on Facebook and receive **id** and **secret**
 
-[![](/download/thumbnails/43417862/ha_fb1.png)](/download/attachments/43417862/ha_fb1.png) [![](/download/thumbnails/43417862/ha_fb2.png)](/download/attachments/43417862/ha_fb2.png) [![](/download/thumbnails/43417862/ha_fb3.png)](/download/attachments/43417862/ha_fb3.png)
+[![](ha_fb1.png) ![](ha_fb2.png) ![](ha_fb3.png)
 
 Important - **specifying url of our site**
 
-[![](/download/thumbnails/43417862/ha_fb3.png)](/download/attachments/43417862/ha_fb3.png)
+![](ha_fb3.png)
 
 Finaly adding credentials to system settings
 
-[![](/download/thumbnails/43417862/ha_fb4.png)](/download/attachments/43417862/ha_fb4.png)
+![](ha_fb4.png)
 
 And now we can login
 
-[![](/download/thumbnails/43417862/ha_2.png)](/download/attachments/43417862/ha_2.png) [![](/download/thumbnails/43417862/ha_fb7.png)](/download/attachments/43417862/ha_fb7.png) [![](/download/thumbnails/43417862/ha_fb8.png)](/download/attachments/43417862/ha_fb8.png)
+![](ha_2.png) ![](ha_fb7.png) ![](ha_fb8.png)
 
 Thats all!
 
-[![](/download/thumbnails/43417862/ha_fb9.png)](/download/attachments/43417862/ha_fb9.png)
+![](ha_fb9.png)
 
 As you see, after first authorization you can add more services to your profile, and already added will be inactive.
 
