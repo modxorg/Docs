@@ -59,7 +59,6 @@ _old_uri: "2.x/administering-your-site/security/user-groups"
 // Get modUser object
 $user = $modx->getObject('modUser', array('username' => $username));
 if( $user ){
-    $user->save();
     // Assign new user to User Group / Role
     $user->joinGroup('UserGroupNameOrId','OptionalRoleNameOrId');}
 ?>
