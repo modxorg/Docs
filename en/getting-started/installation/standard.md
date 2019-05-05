@@ -133,17 +133,9 @@ When ready, click 'Login' to be presented with the Login form for the manager in
 
 Some other special cases:
 
-### WAMPServer 2.0i
-
-Please see this article: [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i "Problems with WAMPServer 2.0i")
-
 ### MAMP on MacOSX
 
 MAMP (including latest 1.8.4) works fine with MODX Revolution, with one exception. You cannot use eAccelerator as the caching system, as the drivers compiled with MAMP are faulty with regards to PDO and will cause Apache kernel errors. Select the 'xCache' caching drivers to remedy this.
-
-### Debian
-
-Debian uses outdated MySQL drivers for its PHP build that will need to be updated; please see the [MODX Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian "MODX Revolution on Debian") article for more information.
 
 ### Vista and XAMPP
 
@@ -157,10 +149,7 @@ For information on installing 3rd-party packages, see the [How to Install Packag
 
 ### See Also
 
-1. [MODX Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
-2. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
-3. [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
-4. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
-5. [MODX and Suhosin](_legacy/getting-started/modx-and-suhosin)
-6. [Nginx Server Config](getting-started/friendly-urls/nginx)
-7. [YouTube video by a MODX Ambassador](http://www.youtube.com/watch?v=Wwrq-3CWFVU)
+1. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
+2. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+3. [Nginx Server Config](getting-started/friendly-urls/nginx)
+4. [YouTube video by a MODX Ambassador](http://www.youtube.com/watch?v=Wwrq-3CWFVU)
