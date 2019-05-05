@@ -61,8 +61,8 @@ This does not mean however that these are your only options. Browse the reposito
 
 ### Multi-site, multi-lingual, multi-domain, contexts
 
-- [xRouting](extras/xrouting) is a flexible context router that supports (sub)domains and directories with minimal configuration
-- [LangRouter](extras/langrouter) is a context router that chooses the context based on the visitors' language
+- [xRouting](https://modx.com/extras/package/xrouting) is a flexible context router that supports (sub)domains and directories with minimal configuration
+- [LangRouter](https://modx.com/extras/package/LangRouter) is a context router that chooses the context based on the visitors' language
 - [Babel](extras/babel) is used to connect translations in different contexts
 
 ### E-commerce
