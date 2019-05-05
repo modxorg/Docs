@@ -20,6 +20,6 @@ Naast deze documentatie zijn er verschillende plekken om hulp te krijgen met MOD
 
 Wat de documentatie betreft zul je de meeste informatie in de [Engelstalige versie](/current/en/index) vinden. Het doel is om de informatie die nodig is om MODX te leren in het Nederlands beschikbaar te maken. Voor de diepere kennis en het uitbreiden van het platform zul je de Engelse documentatie moeten raadplegen. 
 
-Wil je helpen met het schrijven en onderhouden van de Nederlandse (of Engelse) documentatie? [Deze documentatie is open source en te vinden op GitHub](https://github.com/Mark-H/Docs).
+Wil je helpen met het schrijven en onderhouden van de Nederlandse (of Engelse) documentatie? [Deze documentatie is open source en te vinden op GitHub](https://github.com/modxorg/Docs).
 
 ## Eerste stappen met MODX
