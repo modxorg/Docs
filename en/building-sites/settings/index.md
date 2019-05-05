@@ -4,17 +4,14 @@ _old_id: "299"
 _old_uri: "2.x/administering-your-site/settings/system-settings/"
 ---
 
-- [Creating new System Settings (via the GUI)](#SystemSettings-CreatingnewSystemSettings%28viatheGUI%29)
-  - [Parameters](#SystemSettings-Parameters)
-  - [Localization](#SystemSettings-Localization)
-- [Using System Settings in your Code](#SystemSettings-UsingSystemSettingsinyourCode)
-  - [Getting a System Setting (programmatically)](#SystemSettings-GettingaSystemSetting%28programmatically%29)
-  - [Saving a System Setting (programmatically)](#SystemSettings-SavingaSystemSetting%28programmatically%29)
-  - [Retrieving a Setting's Meta Data](#SystemSettings-RetrievingaSetting%27sMetaData)
-- [Retrieving a list of Related Settings](#SystemSettings-RetrievingalistofRelatedSettings)
-- [Creating a System Setting Programmatically](#SystemSettings-CreatingaSystemSettingProgrammatically)
-- [Types of System Settings](#SystemSettings-TypesofSystemSettings)
-- [Settings List](#SystemSettings-SettingsList)
+- [Overriding Settings (Inheritance)](#overriding-settings-inheritance)
+- [Creating new System Settings (via the GUI)](#creating-new-system-settings-via-the-gui)
+  - [Parameters](#parameters)
+  - [Localization](#localization)
+  - [Saving a System Setting (programmatically)](#saving-a-system-setting-programmatically)
+  - [Retrieving a Setting's Meta Data](#retrieving-a-settings-meta-data)
+- [Types of System Settings](#types-of-system-settings)
+- [Settings List](#settings-list)
 
  MODx comes with a flexible amount of system settings. They are found in System -> System Settings, and can easily be edited and changed. All system settings are available in your templates by using the `[[++placeholder]]` notation. See [Template Tags](building-sites/tag-syntax/common) for more information.
 
@@ -62,10 +59,6 @@ $_lang['setting_quip.emailsFrom_desc'] = 'The email address to send system email
 ```
 
  We encourage you to right-click an existing system setting and choose to "Update System Setting" to get an idea of how this works.
-
-## Using System Settings in your Code
-
- Frequently, you'll want to be able to retrieve the values for your system settings in your Snippets or Plugins. There's more information [on this page](_legacy/administering-your-site/settings "Settings").
 
 ### Getting a System Setting (programmatically)
 

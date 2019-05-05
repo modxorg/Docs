@@ -25,4 +25,3 @@ $modx->lexicon->load('quip:comment');
 Assuming we're in English, this will look for the lexicon/en/comment.inc.php file in the Namespace path for Quip. This allows Lexicon topics to be loaded dynamically based on the Namespace path, rather than requiring the topic files to be put inside the MODX core directories.
 
 - [Internationalization](extending-modx/internationalization "Internationalization")
-- [Settings](_legacy/administering-your-site/settings "Settings")

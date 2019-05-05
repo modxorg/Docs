@@ -110,7 +110,7 @@ A cow says "[[+cow]]" and a pig says "[[+pig]]".
 
  **Variable Names:** Whatever your coding style, be consistent. If you want to use camelCase variable names, then make sure all your variables use that style.
 
- **Indents:** Use the same indenting style throughout. See the MODX [Code Standards](_legacy/developing-in-modx/code-standards) for some great recommendations on how to structure your code.
+ **Indents:** Use the same indenting style throughout.
 
 ## Log Errors and Info
 
@@ -128,8 +128,7 @@ $modx->log(modX::LOG_LEVEL_DEBUG, '[mySnippet] was called with the following pro
 
 ## See Also
 
-- [Code Standards](_legacy/developing-in-modx/code-standards "Code Standards")
-  1. [Templating Your Snippets](extending-modx/snippets/templating)
-  2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
-  3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
-  4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)
+1. [Templating Your Snippets](extending-modx/snippets/templating)
+2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
+3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
+4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)

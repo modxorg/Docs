@@ -25,5 +25,4 @@ $modx->reloadConfig();
 ## See Also
 
 - [modX](extending-modx/core-model/modx "modX")
-- [Settings](_legacy/administering-your-site/settings "Settings")
 - [System Settings](building-sites/settings "System Settings")
