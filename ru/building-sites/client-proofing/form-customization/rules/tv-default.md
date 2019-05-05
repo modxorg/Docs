@@ -22,7 +22,7 @@ translation: "building-sites/client-proofing/form-customization/rules/tv-default
 
 Пример правила установки значения по умолчанию для TV с идентификатором 23 «test»:
 
-![](/download/attachments/18678098/fc-tvDefault.png?version=1&modificationDate=1280153441000)
+![](fc-tvDefault.png)
 
 ## Смотрите также
 

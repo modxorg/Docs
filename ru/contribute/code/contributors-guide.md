@@ -126,6 +126,6 @@ git push origin bug-XXXX
 
 Войдите в свою учетную запись Github, найдите форк MODX и нажмите кнопку на которой написано "Pull Request".
 
-![](/download/attachments/33948128/github_modx_pull_request.jpg?version=1&modificationDate=1370290791000)
+![](github_modx_pull_request.jpg)
 
 Убедитесь, что вы выбрали «базовую ветвь» - вы хотите отправить запрос на получение ветки, из которой вы изначально разветвились (2.4.x в приведенном выше примере).
