@@ -37,8 +37,9 @@ Revolution is MODX's flagship CMS and application framework, lovingly called "Re
 
 - [Get the Latest Release](http://modx.com/download/)
 - [Download Add-ons](http://modx.com/extras/)
+- [MODX сообщество](https://community.modx.com)
 - [Forum Discussions](http://forums.modx.com/board/?board=264)
-- [Bugs & Feature Requests](http://tracker.modx.com/projects/revo)
+- [Bugs & Feature Requests](https://github.com/modxcms/revolution/issues)
 
 ### Extras
 
@@ -60,7 +61,7 @@ xPDO is the object-relational bridge (ORB) that powers MODX. If you know what th
 
 - [Get the Latest Release](http://xpdo.org/downloads.html)
 - [Forum Discussions](http://forums.modx.com/board/46/developing-with-xpdo)
-- [Bugs & Feature Requests](http://tracker.modx.com/projects/xpdo)
+- [Bugs & Feature Requests](https://github.com/modxcms/xpdo/issues)
 
 ### Contributor Guide
 
