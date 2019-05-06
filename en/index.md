@@ -37,7 +37,7 @@ Revolution is MODX's flagship CMS and application framework, lovingly called "Re
 
 - [Get the Latest Release](http://modx.com/download/)
 - [Download Add-ons](http://modx.com/extras/)
-- [MODX сообщество](https://community.modx.com)
+- [MODX Community](https://community.modx.com)
 - [Forum Discussions](http://forums.modx.com/board/?board=264)
 - [Bugs & Feature Requests](https://github.com/modxcms/revolution/issues)
 
