@@ -1,5 +1,5 @@
 ---
-title: "Documentation Guide"
+title: "Content Style Guide"
 _old_id: "1312"
 _old_uri: "style-guide"
 ---
@@ -9,8 +9,6 @@ Welcome to MODX documentation guide for authors and contributors.
 This guide contains basic rules, tips, and suggestions for people writing or editing documentation for MODX. When different documents use the same guidelines, they are more user friendly, consistent and more simple to combine and reuse. We therefore strongly encourage all contributors to follow these guidelines for the benefit of the community.
 
 This guide does not attempt to cover all aspects of technical writing. The objective is to be concise and focused for MODX documentation writers.
-
-The Documentation Guide is in development. If you have suggestions for improving it, please email [hello@modx.com](http://mailto:hello@modx.com).
 
 ## Use US English
 
