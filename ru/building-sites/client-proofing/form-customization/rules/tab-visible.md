@@ -11,7 +11,7 @@ translation: "building-sites/client-proofing/form-customization/rules/tab-visibl
 
 Пример правила скрытия вкладки «Параметры страницы» для всех [пользователей](display/revolution20/Users "пользователей") будет выглядеть следующим образом:
 
-![](fc-tabVisible.png)
+![](/2.x/en/building-sites/client-proofing/form-customization/rules/fc-tabvisible.png)
 
 ## Смотрите также
 

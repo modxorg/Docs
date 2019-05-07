@@ -11,7 +11,7 @@ translation: "building-sites/client-proofing/form-customization/rules/field-visi
 
 Пример правила сокрытия поля introtext от [пользователей](display/revolution20/Users "пользователей") в группе [пользователей](display/revolution20/User+Groups "Группы пользователей") «Отдел кадров» будет выглядеть так:
 
-![](fc-fieldVisible.png)
+![](/2.x/en/building-sites/client-proofing/form-customization/rules/fc-fieldvisible.png)
 
 ## Смотрите также
 

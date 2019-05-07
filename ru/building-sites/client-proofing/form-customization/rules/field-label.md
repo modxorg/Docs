@@ -11,7 +11,7 @@ translation: "building-sites/client-proofing/form-customization/rules/field-labe
 
 Пример правила изменения метки интротекста на «Комментарии» для [пользователей](display/revolution20/Users "пользователей") в группе [пользователей](display/revolution20/User+Groups "Группы пользователей") «Маркетинг» будет выглядеть следующим образом:
 
-![](fc-fieldLabel.png)
+![](/2.x/en/building-sites/client-proofing/form-customization/rules/fc-fieldlabel.png)
 
 ## Смотрите также
 

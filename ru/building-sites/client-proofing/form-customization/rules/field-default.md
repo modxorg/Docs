@@ -13,7 +13,7 @@ translation: "building-sites/client-proofing/form-customization/rules/field-defa
 
 Пример правила установки категории по умолчанию для [сниппета](display/revolution20/Snippets "сниппет") для всех [пользователей](display/revolution20/Users "пользователей") в отделе кадров группы пользователей будет выглядеть следующим образом:
 
-![](fc-fieldDefault1.png)
+![](/2.x/en/building-sites/client-proofing/form-customization/rules/fc-fielddefault1.png)
 
 ## Смотрите также
 

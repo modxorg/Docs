@@ -11,19 +11,19 @@ translation: "building-sites/extras"
 
 Перейдите в Пакеты -> [Установщик](extending-modx/transport-packages "Управление пакетами").
 
-![](modx-package-management-1.jpg)
+![](/2.x/en/building-sites/extras/modx-package-management-1.jpg)
 
 Затем нажмите кнопку "Загрузить пакеты".
 
-![](modx-package-management-2.jpg)
+![](/2.x/en/building-sites/extras/modx-package-management-2.jpg)
 
 Просмотрите доступные пакеты, развернув категории. Нажмите "Загрузить", чтобы загрузить любой пакет, который вы хотите загрузить. Вы также можете загрузить несколько пакетов одновременно.
 
-![](modx-package-management-3.jpg)
+![](/2.x/en/building-sites/extras/modx-package-management-3.jpg)
 
 Пакет будет загружен в соответствующий каталог MODX. Теперь вы можете просмотреть новый пакет и нажать "Установить", чтобы установить его.
 
-![](modx-package-management-4.jpg)
+![](/2.x/en/building-sites/extras/modx-package-management-4.jpg)
 
 [Поставщики](building-sites/extras/providers "Поставщики")
 
@@ -57,7 +57,7 @@ translation: "building-sites/extras"
 
 Наконец, пакет может запросить или не запросить некоторые предустановочные параметры и настройки для вас, такие как:
 
-![](pkgsetupopt.png)
+![](/2.x/en/building-sites/extras/pkgsetupopt.png)
 
 Затем пакет будет установлен в вашей системе MODX.
 
@@ -75,4 +75,4 @@ translation: "building-sites/extras"
 
 Обратите внимание на три метода деинсталляции пакета:
 
-![](pkguninstall.png)
+![](/2.x/en/building-sites/extras/pkguninstall.png)

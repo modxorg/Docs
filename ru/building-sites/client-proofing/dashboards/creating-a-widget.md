@@ -26,7 +26,7 @@ translation: "building-sites/client-proofing/dashboards/creating-a-widget"
 
 Наш виджет должен выглядеть так:
 
-![](dashboard-create1.png)
+![](/2.x/en/building-sites/client-proofing/dashboards/dashboard-create1.png)
 
 Теперь сохраните виджет.
 
@@ -37,7 +37,7 @@ translation: "building-sites/client-proofing/dashboards/creating-a-widget"
 
 Здесь нажмите кнопку "Добавить виджет" над списком виджетов. Выберите наш виджет "Hello World" из выпадающего списка и нажмите "Сохранить". Теперь наш виджет на панели управления! Давайте изменим его позицию, перетащив ее между другими виджетами.
 
-![](dashboard-create2.png)
+![](/2.x/en/building-sites/client-proofing/dashboards/dashboard-create2.png)
 
 Сохраните свою панель управления.
 
@@ -45,7 +45,7 @@ translation: "building-sites/client-proofing/dashboards/creating-a-widget"
 
 Теперь, если вы перейдете на панель управления, вы сможете увидеть свой новый виджет!
 
-![](dashboard-create3.png)
+![](/2.x/en/building-sites/client-proofing/dashboards/dashboard-create3.png)
 
 ## Другие типы виджетов
 
