@@ -5,48 +5,52 @@ _old_id: "1688"
 _old_uri: "2.x/getting-started/installation/successful-installation,-now-what-do-i-do"
 ---
 
-After a successful installation, you'll be presented with the Manager login page. Use the login and password you specified during the installation, log in. You will be presented with something like this
+After completing a successful installation, you will be presented with the Manager login page. Proceed to log into the MODX manager using the credentials specified during the installation. Upon successful log in a screen will be presented:  
 
 ![](first_login.png)
 
-Since Revolution RC1 doesn't come with any default content, there aren't any pages, which is why this list of error messages. Therefore, the first thing to do is create a page to make these errors go away.
+## Basic security
 
-## Creating the first page
+You will immediately encounter any security concerns which could, and should, be addressed in order to help harden your MODX system. Initial warnings usually refer to either ensuring that the setup folder has been deleted, or that the core folder is accessible  by the public. These issues can be addressed by checking that the 'setup' folder has been deleted and renaming the 'ht.access' file located in the core folder to '.htaccess'. 
 
-This being MODx, there are several ways to create a new resource (document). The main Site menu has a "New Document" menu item, the Tree View block on the left will have the first section, Web Resources, open (if it's not open, click on the Web Resources bar to open it) with its menu bar so you can use the Create Resource button (the third from the left, the yellow folder with the green plus sign on it), or you can right-click on the web context icon, choose Create, then Create a Document Here.
+## Editing the default Resource
 
-The New Document window will appear. On the right, taking up most of the page, will be the document's fields. To begin with, just give the document a title, Home, a Menu Title, First Document, and some content. Make sure to check the Published check box. Click on the floating Save button to save your new document.
+By default MODX initially creates a starter resource located in the 'Resources' tab, and a starter template located in the 'Elements' tab under templates. To view the current state of the MODX site navigate the top menu replicating these steps 'Content -> Preview Site'. Alternatively, right click on the default resource and select 'View', or click on the resource itself and select the 'View' button. 
 
-![](first_document.png)
+To edit the content of this resource, click on the resource itself in the 'Resources' tab and proceed to edit the content located in the 'Content' box. From here you can also proceed to edit the page title, description, summary, if it should be published or not and the alias ['friendly url'](getting-started/friendly-urls "Learn about 'Friendly URLs'")
 
-And now, if you view the tree on the left, you'll see your new document listed. Go to the main Site menu, click the Preview menu item, and view your page in all its glory!
+After the edits have been made click the 'Save' button located in the top right, or use the handy keyboard shortcut 'Ctrl + S' to save the updated resource. Once the page has finished saving view the changes made by clicking the 'View' button.  
 
-## Creating a Template
+## Editing the default Template
 
-Obviously, the page alone is missing something. We need to create a template to give it some structure and style. Click on the Tree View's 'Elements' tab. This will open a selection of elements you can create and manage to add dynamic content to your page. Right-click on the Template element, and you'll see two choices for creating a new template, New Template and Quick Create Template.
-
-- The Quick Create Template opens a pop-up window to allow for quickly creating a template without moving from the page you're working on.
-- The New Template changes the right panel to a more complex form for creating a new template.
-
-In either case, give the template a name, My Template, a description, First Revolution Template, and then the HTML code for the template. MODx templates are basically just HTML pages, with the content parts replaced with MODx tags. So to begin with, let's just create a really simple template.
+In addition to shipping with a starter resource MODX also provides a starter template titled 'BaseTemplate'. This template is located in the 'Elements' tab under 'Templates'. Editing this template can be accomplished by clicking on the template itself, 'BaseTemplate'. From here edits can be made to the template name, description and content such as the example below. 
 
  ``` php
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My First Revolutionary Page</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style type="text/css" media="screen">
-        #content{width:80%;margin:auto;border:5px groove #a484ce;}
-        #content h1{color:#a484ce;padding:10px 20px;text-align:center;}
-        #content p{padding:20px;text-align:center;}
-    </style>
+    <meta charset="UTF-8">
+    <base href="[[!++site_url]]" />
+    <title>[[*pagetitle]]</title>
+    <!-- Continue to insert your css, scripts and other assets here --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-    <div id="content">
-        [[*content]]
-    </div>
+    <main>
+        [[*content]] 
+    </main>
 </body>
 </html>
 ```
 
-Save the new template. Now if you open your first document for editing, you'll see that it's been assigned the template (since it's the only one, and the document didn't have one). Go back to the site and refresh the page. And now, if you click the main Home menu, you'll get the Manager home page without that long list of errors!
+In the example template above there are a few odd looking string surrounded by square brackets. These are MODX tags which serve a specific purpose. The 'content' tag for example indicates to MODX that it needs to feed the content tab you edited in the default resource into this location. The 'pagetitle' tag refers to the page title field we also edited in that resource. Learn more about the different tags syntax, their purpose and how to use them by [visiting this page](building-sites/tag-syntax "Learn more about the MODX tag syntax").  
+
+Once the template has been updated click the 'Save' button, or 'Ctrl + S', and continue to view the site to check out the changes.
+
+## Creating a new Resource
+
+To create a new Resource click on the 'Resources' tab and then locate the '+' icon next to the 'Website' text. Alternatively, a new Resource can be created by right clicking on the 'Website' text and selecting either 'Create -> Document' or 'Quick Create -> Document'. From here proceed to edit the Resource as documented earlier.
+
+## Creating a new Template
+
+To create a new Template click on the 'Elements' tab and then locate the '+' icon next to the 'Templates' text. Alternatively, a new Template can be created by right click on the 'Templates' text and selecting either 'New Template' or 'Quick Create Template'. From here proceed to edit the Template as documented earlier.
