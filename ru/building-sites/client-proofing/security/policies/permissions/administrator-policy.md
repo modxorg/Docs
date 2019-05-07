@@ -1,7 +1,6 @@
 ---
 title: Политика Администратора
-_old_id: '218'
-_old_uri: building-sites/client-proofing/security/policies/permissions/administrator-policy
+translation: building-sites/client-proofing/security/policies/permissions/administrator-policy
 ---
 
 ## Политика Администратора

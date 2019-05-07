@@ -1,6 +1,6 @@
 ---
 title: "Глоссарий Revolution"
-_old_uri: "getting-started/glossary"
+translation: "getting-started/glossary"
 ---
 
 ## Дополнение
