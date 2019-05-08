@@ -302,7 +302,6 @@ There is a limited set of formatting elements in order to make it easy for edito
 | Table          | (TBD)                                                                                                                                        |         |
 | Links          | (TBD)                                                                                                                                        |         |
 | Text-Alignment | Reserve text-alignment for table cells. It should not be used to center, right or jusitfy text. Paragraph and headings must be left-aligned. |         |
-| Links          | (TBD)                                                                                                                                        |         |
 
 ### Special Formats
 
