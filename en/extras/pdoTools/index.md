@@ -1,5 +1,5 @@
 ---
-title: "Quick start"
+title: "pdoTools"
 ---
 
 After creating a fresh MODX install, the next step is often to install a number of extras to add functionality to the site.
