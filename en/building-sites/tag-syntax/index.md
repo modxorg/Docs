@@ -5,63 +5,56 @@ _old_id: "302"
 _old_uri: "2.x/making-sites-with-modx/tag-syntax"
 ---
 
-To simplify parsing logic, improve parsing performance and avoid confusion with many new adopters, all tags are now of a single format, differentiated by a token or a set of tokens which appear before a string which identifies the Content Element or Content Tag to be processed; e.g. `[[_tokenIdentifier_]]`.
+## MODX tag variants
 
-## Tag Format Changes for Content Elements and Content Tags
+MODX provides a handy array of tags differentiated by a token, or set of tokens, which appear before a string. The below table identifies these tokens and where and how they are likely to be used. 
 
-| **_Content Elements_**                                                                | Evolution (Old)         | Revolution (New)                                                                                     | Example for Revolution                                                                 |
-| ------------------------------------------------------------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Templates](building-sites/elements/templates "Templates")                            | no tag representation   | no tag representation                                                                                |                                                                                        |
-| Resource Fields                                                                       | \[\*_field_\*\]         | `[[*field]]`                                                                                         | `[[*pagetitle]]`                                                                       |
-| [Template Variables](building-sites/elements/template-variables "Template Variables") | \[\*_templatevar_\*\]   | `[[*_templatevar_]]`                                                                                 | `[[*tags]]`                                                                            |
-| [Chunks](building-sites/elements/chunks "Chunks")                                     | {{_chunk_ }}            | `[[$_chunk_]]`                                                                                       | `[[$header]]`                                                                          |
-| [Snippets](extending-modx/snippets "Snippets")                                        | `[[_snippet_]]`         | `[[_snippet_]]`                                                                                      | `[[getResources]]`                                                                     |
-| [Plugins](extending-modx/plugins "Plugins")                                           | no tag representation   | no tag representation                                                                                |                                                                                        |
-| [Modules](/evolution/1.0/developers-guide/modules "Modules")                          | no tag representation   | does not exist in Revolution, use [CMPs](extending-modx/custom-manager-pages "Custom Manager Pages") |                                                                                        |
-| **_Content Tags_**                                                                    |                         |                                                                                                      |                                                                                        |
-| Placeholders                                                                          | \[+_placeholder_+\]     | `[[+_placeholder_]]`                                                                                 | `[[+modx.user.id]]`                                                                    |
-| [Links](building-sites/resources "Resources")                                         | \[~_link_~\]            | `[[~_link_]]`                                                                                        | `[[~`[[*id]]`? &scheme=`full`]]`                                                       |
-| [System Settings](building-sites/settings "System Settings")                          | \[(_system\_setting_)\] | `[[++_system_setting_]]`                                                                             | `[[++site\_start]]`                                                                    |
-| [Language](extending-modx/internationalization "Internationalization")                | no tag representation   | `[[%_language_string\_key_]]`                                                                        | `[[%LanguageStringKey? &language=`en` &namespace=`NameSpaceName` &topic=`TopicName`]]` |
-| Comment (see note below)                                                              |                         | `[[-this is a comment]]`                                                                             |                                                                                        |
 
-Adopting this simplified format allows the new parser to be fully-recursive, following a source-order mechanism that does not depend on regular expressions.
+| Type              	| Token 	| Example             	| Usage                                                                                             	|
+|-------------------	|-------	|---------------------	|---------------------------------------------------------------------------------------------------	|
+| Comment           	| `-`   	| `[[- Comment ]]`    	| Defines an un-parsed comment.  *eg: `[[- This is a comment]]`*                                     	|
+| Resource Field    	| `*`   	| `[[*fieldName]]`    	| Outputs the value of a field related to the current resource.  *eg: `[[*pagetitle]]`*             	|
+| Template Variable 	| `*`   	| `[[*tvName]]`       	| Output the value of a template variable.  *eg: `[[*tags]]`*                                        	|
+| Chunk             	| `$`   	| `[[$chunkName]]`    	| Defines a static chunk of code to be rendered.  *eg: `[[$header]]`*                                	|
+| Snippet           	|       	| `[[snippetName]]`   	| Defines a PHP snippet of code to be executed.  *eg: `[[getResources]]`*                            	|
+| Placeholder       	| `+`   	| `[[+placeholder]]`  	| Defines a placeholder for value(s) from the return of a query.  *eg: `[[+pagetitle]]`*             	|
+| Link              	| `~`   	| `[[~link]]`         	| Returns a link derived from a value.  *eg: `[[~1? &scheme=full]]`*                                	|
+| Setting           	| `++`  	| `[[++settingName]]` 	| Defines a placeholder specifically for values defined in system settings.  *eg: `[[++site_name]]`* 	|
+| Language          	| `%`   	| `[[%language]]`     	| *eg: `[[%string? &language=en &namespace=generic &topic=topic]]`*                                 	|
 
-Previously, each tag set was parsed independently in a specific order, one level at a time, with any embedded tags delayed until the next pass. Now tags are parsed as they are encountered regardless of the element types they represent, and embedded tags are parsed before the outer tag to allow much more complex tags to be composed. Combined with the ability to use the previously reserved ? & and = symbols in tag strings (when escaped by the infamous backtick, e.g. `¶m=`?=&is ok now, wow!?&=``), MODx Content Tags offer a powerful new set of capabilities for mashing up your content.
+## Deconstruction of a MODX Tag
 
-### Comment tags
+A MODX tag can be extended with optional indicators and properties. The table below deconstructs a MODX tag in its entirely and illustrates how and where these optional indiciators and properties could be used.
 
-[This discussion on the forums](http://modxcms.com/forums/index.php/topic,49368.0.html) shows that some people feel the need for a comments tag. The default behavior when encountering a tag that represents an element that does not exist, is to silently discard the tag completely. Utilizing this behavior you can add comments throughout your templates, chunks and content and none of it would be visible on the front-end.
+| Type                      	| Usage                                                                                                                                     	|
+|---------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------	|
+| `[[`                      	| Defines the opening of a MODX tag.                                                                                                        	|
+| `!`                       	| *Optional* non-caching flag                                                                                                               	|
+| `Token`                   	| *Optional* Defines element type.  `$` = Chunk,  `*` = Resource field / Template variable,  `+` = Placeholder *See above for more variants* 	|
+| `Name`                    	| Name value of requested element.                                                                                                          	|
+| `@propertyset`            	| Defines a property set to be used.                                                                                                        	|
+| ``` :modifier=`value` ``` 	| Defines an output filter or modifier to be used. *eg:  ``` :gt=`0`:then=`Now available!`  ``` *                                           	|
+| `?`                       	| Indicates to MODX that properties accompany this call.  *Required if properties present*                                                  	|
+| ``` &property=`value` ``` 	| Defines a property and value to be used with the call. Each property set separated by `&`.  ``` *eg: &prop1=`1` &prop2=`2`* ```           	|
+| `]]`                      	| Defines the closing of a MODX tag.                                                                                                        	|
 
-As of MODX Revolution 2.2 any tag found that starts with a dash (-) is ignored by the parser, and any tags it includes will be silently discarded. Before that, you can use the same however any tags within the comment would be parsed and it would be a tad more resource intensive to do so.
+## Construction of a MODX Tag
 
-``` php
- [[- This is a comment, and will be removed from the output. ]]
+Utilising and combining all of the information above we could create a complex MODX tag which would look like the following:
+
+```
+[[!MySnippet@myPropSet:filter1:filter2=`modifier`? &prop1=`x` &prop2=`y`]]
 ```
 
-## Structure of a Tag
+However, although MODX allows the use of complex conditional filters users should be cautious when constructing complicated tag logic. Unlike PHP, when you have invalid MODX tag syntax there are no helpful messages with line numbers indicating the location of an error. 
 
-A tag can contain many sub-parts within it. Below is illustrated on multiple lines a tag broken down into each part and explained:
+Having tags that require debugging defeats the purpose of having a clean view layer. Keep 'em clean and simple. 
 
-**```[[** _(opening tags)_
-**!** _(optional non-cacheable flag)_
-**elementToken** _(optional token identifying the element type if it's not a snippet, $=chunk, \*=resource field/tv, +=placeholder, etc.)_
-**elementName**
-**@propertyset** _(optional PropertySet identifier)_
-**:filterName=`modifier`**:... _(optional one or more output filters)_
-**?** _(required if properties follow, indicates beginning of property string; optional otherwise)_
-**&propertyName=`propertyValue`** &... _(optional; any additional properties separated by &)_
-**]]```** _(closing tags)_
+A good rule-of-thumb is that your tags should fit onto one line, even if you multi-line them out for legibility. If you are reliant upon if statements and other conditionals in your MODX tags then a reconsideration of flow logic may be merited. 
 
-Put these all together, and a tag with all valid parts might look like this:
+**Note** MODX is ambiguous to white space meaning both of the examples below would also be acceptable:
 
-``` php
-[[MySnippet@myPropSet:filter1:filter2=`modifier`? &prop1=`x` &prop2=`y`]]
 ```
-
-Note that tags can occur either on one line, or spread out across many lines. Both of these are acceptable:
-
-``` php
 [[!getResources? &parents=`123` &limit=`5`]]
 
 [[!getResources?
@@ -70,38 +63,34 @@ Note that tags can occur either on one line, or spread out across many lines. Bo
 ]]
 ```
 
-**Take it Easy**
- Just because you _can_ use complex conditional filters in MODX does not mean that you _should_. Unlike PHP, when you have invalid MODX tag syntax, there are no helpful messages with line numbers telling you where something went wrong. Having tags that require debugging defeats the purpose of having a clean view layer: keep 'em clean and simple. A good rule-of-thumb is that your tags should fit onto one line (even if you spread them out for readability). If you are relying on if-statements and other conditionals in your template tags, then you might need rethink how you're building your pages.
-
 ## Properties
 
-All MODX Revo tags can accept properties (not just Snippets). For example, let's say we had a Chunk named 'Hello' with the content:
+All MODX tags can accept properties, not just Snippets. 
+
+In the example below we have a simple chunk named 'Hello'.
 
 ``` php
 Hello [[+name]]!
 ```
 
-You'll note the new placeholder syntax. So, we'll definitely want to parse that Chunk's property. In Evolution, you would need to do this with a Snippet; no longer. You can simply pass a property for the Chunk:
+Inside this chunk we have the `[[+name]]` placeholder setup for a value to be rendered. We can pass this value directly into our chunk with the following code:
 
 ``` php
-[[$Hello?name=`George`]]
+[[$Hello? name=`George`]]
 ```
 
-This would output:
+This call would render as follows: 
 
 ``` php
 Hello George!
 ```
 
-The syntax for properties follows the same syntax as 096/Evolution snippet properties.
-
 ## Caching
 
-In Evolution, Snippets that need to be processed with each request should be on an uncached page or the Snippet itself should be called uncached: \[!snippet!\]
+Any tag can be called uncached by inserting an exclamation point immediately after the opening double-bracket: 
+`[[!snippet]]`, `[[!$chunk]]`, `[[!+placeholder]]`, `[[!*template_var]]`, etc.
 
-In Revolution, any tag can be called uncached by inserting an exclamation point immediately after the double-bracket: `[[!snippet]]`, `[[!$chunk]]`, `[[!+placeholder]]`, `[[!*template_var]]`, etc.
-
-If you have some kind of advanced setup in which the site\_url setting is being set per request, but your `[[~`[[*id]]`]]` links are not being generated properly, remember that any tag can be called uncached, including the link or anchor tag: `[[!~`[[*id]]`]]`
+If you have some kind of advanced setup in which the site_url setting is being set per request, but your `[[~`[[*id]]`]]` links are not being generated properly, remember that any tag can be called uncached, including the link or anchor tag: `[[!~`[[*id]]`]]`
 
 However, you will only need that when the site\_url is set dynamically and can differ per request. Any normal usage can be cached.
 
