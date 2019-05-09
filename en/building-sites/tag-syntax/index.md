@@ -11,7 +11,7 @@ MODX provides a handy array of tags differentiated by a token, or set of tokens,
 
 
 | Type              	| Token 	| Example             	| Usage                                                                                             	|
-|-------------------	|-------	|---------------------	|---------------------------------------------------------------------------------------------------	|
+|------------------- |------- | --------------------- | --------------------------------------------------------------------------------------------------- |
 | Comment           	| `-`   	| `[[- Comment ]]`    	| Defines an un-parsed comment.  *eg: `[[- This is a comment]]`*                                     	|
 | Resource Field    	| `*`   	| `[[*fieldName]]`    	| Outputs the value of a field related to the current resource.  *eg: `[[*pagetitle]]`*             	|
 | Template Variable 	| `*`   	| `[[*tvName]]`       	| Output the value of a template variable.  *eg: `[[*tags]]`*                                        	|
@@ -27,7 +27,7 @@ MODX provides a handy array of tags differentiated by a token, or set of tokens,
 A MODX tag can be extended with optional indicators and properties. The table below deconstructs a MODX tag in its entirely and illustrates how and where these optional indiciators and properties could be used.
 
 | Type                      	| Usage                                                                                                                                     	|
-|---------------------------	|-------------------------------------------------------------------------------------------------------------------------------------------	|
+| --------------------------- | ---------------------------- |
 | `[[`                      	| Defines the opening of a MODX tag.                                                                                                        	|
 | `!`                       	| *Optional* non-caching flag                                                                                                               	|
 | `Token`                   	| *Optional* Defines element type.  `$` = Chunk,  `*` = Resource field / Template variable,  `+` = Placeholder *See above for more variants* 	|
@@ -76,7 +76,7 @@ Hello [[+name]]!
 Inside this chunk we have the `[[+name]]` placeholder setup for a value to be rendered. We can pass this value directly into our chunk with the following code:
 
 ``` php
-[[$Hello? name=`George`]]
+[[$Hello? &name=`George`]]
 ```
 
 This call would render as follows: 
@@ -90,13 +90,13 @@ Hello George!
 Any tag can be called uncached by inserting an exclamation point immediately after the opening double-bracket: 
 `[[!snippet]]`, `[[!$chunk]]`, `[[!+placeholder]]`, `[[!*template_var]]`, etc.
 
-If you have some kind of advanced setup in which the site_url setting is being set per request, but your `[[~`[[*id]]`]]` links are not being generated properly, remember that any tag can be called uncached, including the link or anchor tag: `[[!~`[[*id]]`]]`
+If you have some kind of advanced setup in which the site_url setting is being set per request, but your `[[~[[*id]]]]` links are not being generated properly, remember that any tag can be called uncached, including the link or anchor tag: `[[!~[[*id]]]]`
 
-However, you will only need that when the site\_url is set dynamically and can differ per request. Any normal usage can be cached.
+However, you will only need that when the site\_url is set dynamically, can differ per request, and you are generating full URLs instead of relative ones. Any normal usage can be cached.
 
 ### Parsing Order
 
-If you call an uncached Snippet, it will be executed last in the parsing order.
+If you call an uncached Snippet, it will be executed after all cached tags have been processed.
 
 If you have cached placeholders below that, they will be evaluated before that Snippet is executed - meaning they'll get the last value that was stored in the cache by that Snippet previously (or empty, if not set yet).
 
@@ -117,8 +117,6 @@ There are several timing tags in MODX:
 - **\[^t^\]** - Total Time - Shows the total time taken to parse/render the page
 - **\[^s^\]** - Source - Shows the source of page, whether is database or cache
 - **\[^m^\]** - Memory Usage - Shows the total memory taken to parse/render the page
-
-For example, for this page, MySQL queries took 0.0000 seconds for 0 queries(s), document parsing took 0.3043 seconds, for a total time of 0.3043 seconds, and retrieved from cache.
 
 ### Additional Help
 
