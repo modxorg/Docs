@@ -39,8 +39,8 @@ _old_uri: "revo/googlesitemap/"
 
  GoogleSiteMap comes with two snippets:
 
-- [GoogleSiteMap](extras/googlesitemap/googlesitemap.googlesitemap "GoogleSiteMap.GoogleSiteMap")
-- [GoogleSiteMapVersion1](https://rtfm.modx.com/extras/revo/googlesitemap/googlesitemapversion1)
+- [GoogleSiteMap](extras/googlesitemap/googlesitemap "GoogleSiteMap")
+- [GoogleSiteMapVersion1](extras/googlesitemap/googlesitemapversion1)
 
 ## Examples
 
@@ -60,8 +60,8 @@ _old_uri: "revo/googlesitemap/"
 
 ## See Also
 
-1. [GoogleSiteMap.GoogleSiteMap](extras/googlesitemap/googlesitemap.googlesitemap)
-     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
-     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
-2. [GoogleSiteMapVersion1](https://rtfm.modx.com/extras/revo/googlesitemap/googlesitemapversion1)
+1. [GoogleSiteMap.GoogleSiteMap](extras/googlesitemap/googlesitemap)
+     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap/containertpl)
+     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap/itemtpl)
+2. [GoogleSiteMapVersion1](extras/googlesitemap/googlesitemap/googlesitemapversion1)
 3. [GoogleSiteMap.Roadmap](extras/googlesitemap/googlesitemap.roadmap)

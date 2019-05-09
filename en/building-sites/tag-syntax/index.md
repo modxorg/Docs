@@ -7,54 +7,53 @@ _old_uri: "2.x/making-sites-with-modx/tag-syntax"
 
 ## MODX tag variants
 
-MODX provides a handy array of tags differentiated by a token, or set of tokens, which appear before a string. The below table identifies these tokens and where and how they are likely to be used. 
+MODX provides a handy array of tags differentiated by a token, or set of tokens, which appear before a string. The below table identifies these tokens and where and how they are likely to be used.
 
-
-| Type              	| Token 	| Example             	| Usage                                                                                             	|
-|------------------- |------- | --------------------- | --------------------------------------------------------------------------------------------------- |
-| Comment           	| `-`   	| `[[- Comment ]]`    	| Defines an un-parsed comment.  *eg: `[[- This is a comment]]`*                                     	|
-| Resource Field    	| `*`   	| `[[*fieldName]]`    	| Outputs the value of a field related to the current resource.  *eg: `[[*pagetitle]]`*             	|
-| Template Variable 	| `*`   	| `[[*tvName]]`       	| Output the value of a template variable.  *eg: `[[*tags]]`*                                        	|
-| Chunk             	| `$`   	| `[[$chunkName]]`    	| Defines a static chunk of code to be rendered.  *eg: `[[$header]]`*                                	|
-| Snippet           	|       	| `[[snippetName]]`   	| Defines a PHP snippet of code to be executed.  *eg: `[[getResources]]`*                            	|
-| Placeholder       	| `+`   	| `[[+placeholder]]`  	| Defines a placeholder for value(s) from the return of a query.  *eg: `[[+pagetitle]]`*             	|
-| Link              	| `~`   	| `[[~link]]`         	| Returns a link derived from a value.  *eg: `[[~1? &scheme=full]]`*                                	|
-| Setting           	| `++`  	| `[[++settingName]]` 	| Defines a placeholder specifically for values defined in system settings.  *eg: `[[++site_name]]`* 	|
-| Language          	| `%`   	| `[[%language]]`     	| *eg: `[[%string? &language=en &namespace=generic &topic=topic]]`*                                 	|
+| Type              | Token | Example             | Usage                                                                                              |
+| ----------------- | ----- | ------------------- | -------------------------------------------------------------------------------------------------- |
+| Comment           | `-`   | `[[- Comment ]]`    | Defines an un-parsed comment.  *eg: `[[- This is a comment]]`*                                     |
+| Resource Field    | `*`   | `[[*fieldName]]`    | Outputs the value of a field related to the current resource.  *eg: `[[*pagetitle]]`*              |
+| Template Variable | `*`   | `[[*tvName]]`       | Output the value of a template variable.  *eg: `[[*tags]]`*                                        |
+| Chunk             | `$`   | `[[$chunkName]]`    | Defines a static chunk of code to be rendered.  *eg: `[[$header]]`*                                |
+| Snippet           |       | `[[snippetName]]`   | Defines a PHP snippet of code to be executed.  *eg: `[[getResources]]`*                            |
+| Placeholder       | `+`   | `[[+placeholder]]`  | Defines a placeholder for value(s) from the return of a query.  *eg: `[[+pagetitle]]`*             |
+| Link              | `~`   | `[[~link]]`         | Returns a link derived from a value.  *eg: `[[~1? &scheme=full]]`*                                 |
+| Setting           | `++`  | `[[++settingName]]` | Defines a placeholder specifically for values defined in system settings.  *eg: `[[++site_name]]`* |
+| Language          | `%`   | `[[%language]]`     | *eg: `[[%string? &language=en &namespace=generic &topic=topic]]`*                                  |
 
 ## Deconstruction of a MODX Tag
 
 A MODX tag can be extended with optional indicators and properties. The table below deconstructs a MODX tag in its entirely and illustrates how and where these optional indiciators and properties could be used.
 
-| Type                      	| Usage                                                                                                                                     	|
-| --------------------------- | ---------------------------- |
-| `[[`                      	| Defines the opening of a MODX tag.                                                                                                        	|
-| `!`                       	| *Optional* non-caching flag                                                                                                               	|
-| `Token`                   	| *Optional* Defines element type.  `$` = Chunk,  `*` = Resource field / Template variable,  `+` = Placeholder *See above for more variants* 	|
-| `Name`                    	| Name value of requested element.                                                                                                          	|
-| `@propertyset`            	| Defines a property set to be used.                                                                                                        	|
-| ``` :modifier=`value` ``` 	| Defines an output filter or modifier to be used. *eg:  ``` :gt=`0`:then=`Now available!`  ``` *                                           	|
-| `?`                       	| Indicates to MODX that properties accompany this call.  *Required if properties present*                                                  	|
-| ``` &property=`value` ``` 	| Defines a property and value to be used with the call. Each property set separated by `&`.  ``` *eg: &prop1=`1` &prop2=`2`* ```           	|
-| `]]`                      	| Defines the closing of a MODX tag.                                                                                                        	|
+| Type                     | Usage                                                                                                                                      |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `[[`                     | Defines the opening of a MODX tag.                                                                                                         |
+| `!`                      | *Optional* non-caching flag                                                                                                                |
+| `Token`                  | *Optional* Defines element type.  `$` = Chunk,  `*` = Resource field / Template variable,  `+` = Placeholder *See above for more variants* |
+| `Name`                   | Name value of requested element.                                                                                                           |
+| `@propertyset`           | Defines a property set to be used.                                                                                                         |
+| ```:modifier=`value` ``` | Defines an output filter or modifier to be used. *eg:  ```:gt=`0`:then=`Now available!` ``` *                                              |
+| `?`                      | Indicates to MODX that properties accompany this call.  *Required if properties present*                                                   |
+| ```&property=`value` ``` | Defines a property and value to be used with the call. Each property set separated by `&`.  ```*eg: &prop1=`1` &prop2=`2`*```              |
+| `]]`                     | Defines the closing of a MODX tag.                                                                                                         |
 
 ## Construction of a MODX Tag
 
 Utilising and combining all of the information above we could create a complex MODX tag which would look like the following:
 
-```
+```php
 [[!MySnippet@myPropSet:filter1:filter2=`modifier`? &prop1=`x` &prop2=`y`]]
 ```
 
-However, although MODX allows the use of complex conditional filters users should be cautious when constructing complicated tag logic. Unlike PHP, when you have invalid MODX tag syntax there are no helpful messages with line numbers indicating the location of an error. 
+However, although MODX allows the use of complex conditional filters users should be cautious when constructing complicated tag logic. Unlike PHP, when you have invalid MODX tag syntax there are no helpful messages with line numbers indicating the location of an error.
 
-Having tags that require debugging defeats the purpose of having a clean view layer. Keep 'em clean and simple. 
+Having tags that require debugging defeats the purpose of having a clean view layer. Keep 'em clean and simple.
 
-A good rule-of-thumb is that your tags should fit onto one line, even if you multi-line them out for legibility. If you are reliant upon if statements and other conditionals in your MODX tags then a reconsideration of flow logic may be merited. 
+A good rule-of-thumb is that your tags should fit onto one line, even if you multi-line them out for legibility. If you are reliant upon if statements and other conditionals in your MODX tags then a reconsideration of flow logic may be merited.
 
 **Note** MODX is ambiguous to white space meaning both of the examples below would also be acceptable:
 
-```
+```php
 [[!getResources? &parents=`123` &limit=`5`]]
 
 [[!getResources?
@@ -65,7 +64,7 @@ A good rule-of-thumb is that your tags should fit onto one line, even if you mul
 
 ## Properties
 
-All MODX tags can accept properties, not just Snippets. 
+All MODX tags can accept properties, not just Snippets.
 
 In the example below we have a simple chunk named 'Hello'.
 
@@ -79,7 +78,7 @@ Inside this chunk we have the `[[+name]]` placeholder setup for a value to be re
 [[$Hello? &name=`George`]]
 ```
 
-This call would render as follows: 
+This call would render as follows:
 
 ``` php
 Hello George!
@@ -87,7 +86,7 @@ Hello George!
 
 ## Caching
 
-Any tag can be called uncached by inserting an exclamation point immediately after the opening double-bracket: 
+Any tag can be called uncached by inserting an exclamation point immediately after the opening double-bracket:
 `[[!snippet]]`, `[[!$chunk]]`, `[[!+placeholder]]`, `[[!*template_var]]`, etc.
 
 If you have some kind of advanced setup in which the site_url setting is being set per request, but your `[[~[[*id]]]]` links are not being generated properly, remember that any tag can be called uncached, including the link or anchor tag: `[[!~[[*id]]]]`

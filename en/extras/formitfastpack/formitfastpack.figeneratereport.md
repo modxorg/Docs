@@ -12,11 +12,11 @@ Labels are generated simply by using output filters on the field name submitted 
 
 Examples for the default row template:
 
-| Example Form Field                                                      | Generated Label                                   |
-| ----------------------------------------------------------------------- | ------------------------------------------------- |
-| `<field name="first_name" value="VALUE" />`                             | ```<p><strong>First Name:</strong> VALUE</p>`     |
-| `<field type="checkbox" name="are_you_vegetarian" checked="checked" />` | ```<p><strong>Are You Vegetarian:</strong> 1</p>` |
-| `<field name="companyAddress" value="VALUE" />`                         | ```<p><strong>companyAddress:</strong> VALUE</p>` |
+| Example Form Field                                                      | Generated Label                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------- |
+| `<field name="first_name" value="VALUE" />`                             | `<p><strong>First Name:</strong> VALUE</p>`     |
+| `<field type="checkbox" name="are_you_vegetarian" checked="checked" />` | `<p><strong>Are You Vegetarian:</strong> 1</p>` |
+| `<field name="companyAddress" value="VALUE" />`                         | `<p><strong>companyAddress:</strong> VALUE</p>` |
 
 If using this hook, be careful when naming your form fields to make field names that are properly parsed by the output filters into readable labels.
 
