@@ -18,7 +18,7 @@ MODX provides a handy array of tags differentiated by a token, or set of tokens,
 | [Snippet](building-sites/elements/snippets)                     |       | `[[snippetName]]`   | Defines a PHP snippet of code to be executed.<br>*eg:* `[[getResources]]`                            |
 | Placeholder                                                     | `+`   | `[[+placeholder]]`  | Defines a placeholder for value(s) from the return of a query.<br>*eg:* `[[+pagetitle]]`             |
 | Link                                                            | `~`   | `[[~link]]`         | Returns a link derived from a value.<br>*eg:* `[[~1? &scheme=full]]`                                 |
-| [Setting](en/building-sites/settings)                           | `++`  | `[[++settingName]]` | Defines a placeholder specifically for values defined in system settings.<br>*eg:* `[[++site_name]]` |
+| [Setting](building-sites/settings)                           | `++`  | `[[++settingName]]` | Defines a placeholder specifically for values defined in system settings.<br>*eg:* `[[++site_name]]` |
 | [Language](extending-modx/internationalization)                 | `%`   | `[[%language]]`     | *eg:* `[[%string? &language=en &namespace=generic &topic=topic]]`                                    |
 
 ## Deconstruction of a MODX Tag
