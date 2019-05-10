@@ -97,7 +97,7 @@ To rectify this in MODX, you have to clear the cache. At the very least the syst
 ``` php
 $cacheRefreshOptions =  [
     'system_settings' => [],
-    'resources => [],
+    'resource' => [],
 ];
 $modx->cacheManager->refresh($cacheRefreshOptions);
 ```
