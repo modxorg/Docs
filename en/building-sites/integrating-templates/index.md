@@ -101,7 +101,7 @@ In the case of creating a blog post we may wish to also include a side bar, and 
 
 The below example illustrates placing the header, footer and aside into a chunk.   
 
-``` html
+```php
 [[$headerHTML]]
 	<main>
 		[[*content]]
@@ -122,6 +122,7 @@ MODX offers a lot of dynamics out of the box but [Snippets](building-sites/eleme
     &level=`1`
 ]]
 ```
+
 *The above example uses pdoMenu. For additional functionality and properties that can be applied, including the dictation of the html output, please check the [documentation](extras/pdoTools/Snippets/pdoMenu).* 
 
 However, snippets are not limited to pre exisiting extras and can be created and then included in your template to perform any dynamic function the PHP language allows. Read more about [Snippets](building-sites/elements/snippets).
