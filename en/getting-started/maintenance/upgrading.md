@@ -68,10 +68,10 @@ It's a good idea to clear your browser cache after upgrading. Browsers often cac
 
 For changes relating to specific versions, please see the following pages:
 
-- [For Upgrading to 2.2](administering-your-site/upgrading-modx/upgrading-to-2.2.x "Upgrading to 2.2.x")
-- [For Upgrading From 2.0.x to 2.1.x](administering-your-site/upgrading-modx/upgrading-from-2.0.x-to-2.1.x "Upgrading from 2.0.x to 2.1.x") **!important**
-- [For Upgrades Coming From Prior to 2.0.5](administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5 "Upgrading from Versions Earlier than 2.0.5")
-- [For Upgrades Coming From Prior to 2.0.0-rc2](administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.0-rc-2 "Upgrading to Revolution 2.0.0-rc-2")
+- [For Upgrading to 2.2](getting-started/maintenance/upgrading/2.2 "Upgrading to 2.2.x")
+- [For Upgrading From 2.0.x to 2.1.x](getting-started/maintenance/upgrading/2.1 "Upgrading from 2.0.x to 2.1.x") **!important**
+- [For Upgrades Coming From Prior to 2.0.5](getting-started/maintenance/upgrading/2.0.5 "Upgrading from Versions Earlier than 2.0.5")
+- [For Upgrades Coming From Prior to 2.0.0-rc2](getting-started/maintenance/upgrading/2.0.0-rc2 "Upgrading to Revolution 2.0.0-rc-2")
 
 Upgrades after 2.0.0-rc-2 should run smoothly without issues.
 
@@ -98,9 +98,9 @@ See the note above about FTP clients that support directory merging.
 ### Related Articles
 
 1. [Troubleshooting Upgrades](getting-started/maintenance/upgrading/troubleshooting)
-2. [Upgrading to 2.2.x](administering-your-site/upgrading-modx/upgrading-to-2.2.x)
-3. [Upgrading from 2.0.x to 2.1.x](administering-your-site/upgrading-modx/upgrading-from-2.0.x-to-2.1.x)
-4. [Upgrading from Versions Earlier than 2.0.5](administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5)
-5. [Upgrading to Revolution 2.0.0-rc-2](administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.0-rc-2)
-6. [Upgrading from MODX Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution)
-7. [Functional Changes from Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution)
+2. [Upgrading to 2.2.x](getting-started/maintenance/upgrading/2.2)
+3. [Upgrading from 2.0.x to 2.1.x](getting-started/maintenance/upgrading/2.1)
+4. [Upgrading from Versions Earlier than 2.0.5](getting-started/maintenance/upgrading/2.0.5)
+5. [Upgrading to Revolution 2.0.0-rc-2](getting-started/maintenance/upgrading/2.0.0-rc2)
+6. [Upgrading from MODX Evolution](getting-started/maintenance/upgrading/evolution)
+7. [Functional Changes from Evolution](getting-started/maintenance/upgrading/evolution/functional-changes)
