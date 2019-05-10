@@ -4,7 +4,7 @@ _old_id: "321"
 _old_uri: "2.x/administering-your-site/upgrading-modx"
 ---
 
-This document is for Upgrading MODX 2.x. If you are looking to upgrade from Evolution (1.x), this is not officially supported at this time, but resources to help you in this process can be [found here](display/revolution20/Upgrading+from+MODX+Evolution).
+This document is for Upgrading MODX 2.x. If you are looking to upgrade from Evolution (1.x), this is not officially supported at this time, but resources to help you in this process can be [found here](getting-started/maintenance/upgrading/evolution).
 
 ## Upgrading MODX Revolution 2.x
 
