@@ -9,33 +9,33 @@ _old_uri: "2.x/making-sites-with-modx/tag-syntax"
 
 MODX provides a handy array of tags differentiated by a token, or set of tokens, which appear before a string. The below table identifies these tokens and where and how they are likely to be used.
 
-| Type              | Token | Example             | Usage                                                                                              |
-| ----------------- | ----- | ------------------- | -------------------------------------------------------------------------------------------------- |
-| Comment           | `-`   | `[[- Comment ]]`    | Defines an un-parsed comment.  *eg: `[[- This is a comment]]`*                                     |
-| Resource Field    | `*`   | `[[*fieldName]]`    | Outputs the value of a field related to the current resource.  *eg: `[[*pagetitle]]`*              |
-| Template Variable | `*`   | `[[*tvName]]`       | Output the value of a template variable.  *eg: `[[*tags]]`*                                        |
-| Chunk             | `$`   | `[[$chunkName]]`    | Defines a static chunk of code to be rendered.  *eg: `[[$header]]`*                                |
-| Snippet           |       | `[[snippetName]]`   | Defines a PHP snippet of code to be executed.  *eg: `[[getResources]]`*                            |
-| Placeholder       | `+`   | `[[+placeholder]]`  | Defines a placeholder for value(s) from the return of a query.  *eg: `[[+pagetitle]]`*             |
-| Link              | `~`   | `[[~link]]`         | Returns a link derived from a value.  *eg: `[[~1? &scheme=full]]`*                                 |
-| Setting           | `++`  | `[[++settingName]]` | Defines a placeholder specifically for values defined in system settings.  *eg: `[[++site_name]]`* |
-| Language          | `%`   | `[[%language]]`     | *eg: `[[%string? &language=en &namespace=generic &topic=topic]]`*                                  |
+| Type                                                            | Token | Example             | Usage                                                                                                |
+|-----------------------------------------------------------------|-------|---------------------|------------------------------------------------------------------------------------------------------|
+| Comment                                                         | `-`   | `[[- Comment ]]`    | Defines an un-parsed comment.<br>*eg:* `[[- This is a comment]]`                                     |
+| [Resource Field](building-sites/tag-syntax/common)              | `*`   | `[[*fieldName]]`    | Outputs the value of a field related to the current resource.<br>*eg:* `[[*pagetitle]]`              |
+| [Template Variable](building-sites/elements/template-variables) | `*`   | `[[*tvName]]`       | Output the value of a template variable.<br>*eg:* `[[*tags]]`                                        |
+| [Chunk](building-sites/elements/chunks)                         | `$`   | `[[$chunkName]]`    | Defines a static chunk of code to be rendered.<br>*eg:* `[[$header]]`                                |
+| [Snippet](building-sites/elements/snippets)                     |       | `[[snippetName]]`   | Defines a PHP snippet of code to be executed.<br>*eg:* `[[getResources]]`                            |
+| Placeholder                                                     | `+`   | `[[+placeholder]]`  | Defines a placeholder for value(s) from the return of a query.<br>*eg:* `[[+pagetitle]]`             |
+| Link                                                            | `~`   | `[[~link]]`         | Returns a link derived from a value.<br>*eg:* `[[~1? &scheme=full]]`                                 |
+| [Setting](en/building-sites/settings)                           | `++`  | `[[++settingName]]` | Defines a placeholder specifically for values defined in system settings.<br>*eg:* `[[++site_name]]` |
+| [Language](extending-modx/internationalization)                 | `%`   | `[[%language]]`     | *eg:* `[[%string? &language=en &namespace=generic &topic=topic]]`                                    |
 
 ## Deconstruction of a MODX Tag
 
-A MODX tag can be extended with optional indicators and properties. The table below deconstructs a MODX tag in its entirely and illustrates how and where these optional indiciators and properties could be used.
+A MODX tag can be extended with optional indicators and properties. The table below deconstructs a MODX tag in its entirety and illustrates how and where these optional indiciators and properties could be used.
 
-| Type                     | Usage                                                                                                                                      |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `[[`                     | Defines the opening of a MODX tag.                                                                                                         |
-| `!`                      | *Optional* non-caching flag                                                                                                                |
-| `Token`                  | *Optional* Defines element type.  `$` = Chunk,  `*` = Resource field / Template variable,  `+` = Placeholder *See above for more variants* |
-| `Name`                   | Name value of requested element.                                                                                                           |
-| `@propertyset`           | Defines a property set to be used.                                                                                                         |
-| ```:modifier=`value` ``` | Defines an output filter or modifier to be used. *eg:  ```:gt=`0`:then=`Now available!` ``` *                                              |
-| `?`                      | Indicates to MODX that properties accompany this call.  *Required if properties present*                                                   |
-| ```&property=`value` ``` | Defines a property and value to be used with the call. Each property set separated by `&`.  ```*eg: &prop1=`1` &prop2=`2`*```              |
-| `]]`                     | Defines the closing of a MODX tag.                                                                                                         |
+| Type                      | Usage                                                                                                                                                                            |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `[[`                      | Defines the opening of a MODX tag.                                                                                                                                               |
+| `!`                       | *Optional* non-caching flag                                                                                                                                                      |
+| `Token`                   | *Optional* Defines element type.<br>`$` = Chunk,<br>`*` = Resource field / Template variable,<br>`+` = Placeholder *See above for more variants*                                 |
+| `Name`                    | Name value of requested element.                                                                                                                                                 |
+| `@propertyset`            | Defines a [property set](building-sites/properties-and-property-sets) to be used.                                                                                                |
+| ``` :modifier=`value` ``` | Defines an output filter or modifier to be used.<br>*eg:*  ```:gt=`0`:then=`Now available!` ```                                                                                  |
+| `?`                       | Indicates to MODX that properties accompany this call.<br>*Required if properties present*                                                                                       |
+| ``` &property=`value` ``` | Defines a [property](building-sites/properties-and-property-sets) and value to be used with the call. Each property set separated by `&`.<br>*eg:* ``` &prop1=`1` &prop2=`2` ``` |
+| `]]`                      | Defines the closing of a MODX tag.                                                                                                                                               |
 
 ## Construction of a MODX Tag
 
@@ -64,7 +64,7 @@ A good rule-of-thumb is that your tags should fit onto one line, even if you mul
 
 ## Properties
 
-All MODX tags can accept properties, not just Snippets.
+All MODX tags can accept [properties](building-sites/properties-and-property-sets), not just Snippets.
 
 In the example below we have a simple chunk named 'Hello'.
 
@@ -87,6 +87,7 @@ Hello George!
 ## Caching
 
 Any tag can be called uncached by inserting an exclamation point immediately after the opening double-bracket:
+
 `[[!snippet]]`, `[[!$chunk]]`, `[[!+placeholder]]`, `[[!*template_var]]`, etc.
 
 If you have some kind of advanced setup in which the site_url setting is being set per request, but your `[[~[[*id]]]]` links are not being generated properly, remember that any tag can be called uncached, including the link or anchor tag: `[[!~[[*id]]]]`
