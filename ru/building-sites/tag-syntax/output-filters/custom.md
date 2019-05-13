@@ -1,5 +1,5 @@
 ---
-title: "Custom Output Filter Examples"
+title: "Примеры пользовательских фильтров вывода"
 translation: "building-sites/tag-syntax/output-filters/custom"
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Output Filter/Modifiers"
+title: "Выходной фильтр/модификаторы"
 translation: "building-sites/tag-syntax/output-filters"
 ---
 
