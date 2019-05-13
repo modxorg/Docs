@@ -1,5 +1,5 @@
 ---
-title: "Building Templates"
+title: "Integrating Templates"
 ---
 
 ## Building Templates
@@ -9,14 +9,13 @@ The integration of a site into MODX will often start with defining which element
 The example below demonstrates a simple template where content, populated in each individual resource by the content field, can be injected into the `[[*content]]` tag, which in turn is surrounded by markup defined as the [Template](building-sites/elements/templates).
 
 ``` html
-<!-- *NOTE*: Remove MODX comments on production -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Organization">
 <head>
    <meta charset="UTF-8">
    <base href="[[!++site_url]]" />
    <title>[[*pagetitle]]</title>
-   <!-- [MODX] Continue to insert your css, scripts and other assets here -->
+   [[- Continue to insert your CSS, Scripts and other assets here. ]]
 </head>
 <body>
     <!-- Header Start -->
@@ -52,14 +51,13 @@ Additional templates may also be necessary as the structure of a page differs.
 In the case of creating a blog post we may wish to also include a side bar, and whilst there are many options available to us to add this in such as creating a [Template Variable](building-sites/elements/template-variables) to toggle the sidebar on and off, it may be more convenient for the site editor to simply select a template for blog posts which contains a sidebar already. Therefore, in this instance it may be a good idea to setup a secondary template.
 
 ``` html
-<!-- *NOTE*: Remove MODX comments on production -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Organization">
 <head>
    <meta charset="UTF-8">
    <base href="[[!++site_url]]" />
    <title>[[*pagetitle]]</title>
-   <!-- [MODX] Continue to insert your css, scripts and other assets here -->
+   [[- Continue to insert your CSS, Scripts and other assets here. ]]
 </head>
 <body>
     <!-- Header Start -->
@@ -133,15 +131,14 @@ Chunks are not limited to a top level include, they can also be nested inside of
 We could now embed this chunk inside of our existing `headerHTML` chunk:
 
 ``` php
-<!-- *NOTE*: Remove MODX comments on production -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Organization">
 <head>
    <meta charset="UTF-8">
    <base href="[[!++site_url]]" />
    <title>[[*pagetitle]]</title>
-   [[$metaData]] <!-- [MODX] Embedded Chunk -->
-   <!-- [MODX] Continue to insert your css, scripts and other assets here -->
+   [[$metaData]]
+   [[- Continue to insert your CSS, Scripts and other assets here. ]]
 </head>
 <body>
     <!-- Header Start -->
@@ -164,25 +161,23 @@ MODX offers a lot of dynamics out of the box but [Snippets](building-sites/eleme
 To use this Snippet insert it in replacement of the current static menu in the `headerHTML` Chunk. 
 
 ``` php
-<!-- *NOTE*: Remove MODX comments on production -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Organization">
 <head>
    <meta charset="UTF-8">
    <base href="[[!++site_url]]" />
    <title>[[*pagetitle]]</title>
-   [[$metaData]] <!-- [MODX] Embedded Chunk -->
-   <!-- [MODX] Continue to insert your css, scripts and other assets here -->
+   [[$metaData]]
+   [[- Continue to insert your CSS, Scripts and other assets here. ]]
 </head>
 <body>
     <!-- Header Start -->
     <header>
         <nav>
-        	<!-- [MODX] Insert Snipped here -->
             [[pdoMenu?
-			    &parents=`0`
-			    &level=`1`
-			]]
+      			    &parents=`0`
+      			    &level=`1`
+      			]]
         </nav>
     </header>
     <!-- Header End -->
@@ -223,12 +218,38 @@ The result of this Snippet would render on the front end like this:
 <aside>
     <section>
         <h4>Current Weather</h4>
-        Drizzle <!-- [MODX] At the time of writing this it displays Drizzle. -->
+        Drizzle
     </section>
 </aside>
 ```
 
-The result of this Snippet value will be cached as we have called it without the uncache token `!`. Therefore it's possible that the current result `Drizzle` would also display for a user that is not experiencing Drizzle. This particular Snippet should be called uncached using the `!` token to prevent this issue. To call the snippet uncached place the token in front of the Snippet name `[[!getWeather]]`. 
+The result of this Snippet at the time of writing outputs a value of `Drizzle`. This value from the API will be cached in MODX as the Snippet was called without the uncache flag `!`. However in this use case it could be problematic as the cached value `Drizzle` may persist even after the weather has changed. This particular Snippet should be called uncached using the `!` flag to prevent this issue. To call the snippet uncached place the flag in front of the Snippet name `[[!getWeather]]`. 
+
+This snippet could also be further extended with the use of another Snippet which get's the users location from a different API. The result of which could then be passed into the `getWeather` Snippet as a parameter. 
+
+``` php
+[[!getWeather? &location=`[[!getLocation]]`]]
+```
+
+The `getWeather` Snippet could then be updated to capture the property and set the location value in the API call.
+
+``` php
+// Get properties
+$location = $modx->getOption('location', $scriptProperties);
+
+// Stash API URL
+$jsonurl = "https://samples.openweathermap.org/data/2.5/weather?q=" . $location . "&appid=b6907d289e10d714a6e88b30761fae22";
+
+// Call API
+$json = file_get_contents($jsonurl);
+
+// Stash results
+$weather = json_decode($json);
+
+// Return weather description
+return $weather->weather[0]->main;
+
+```
 
 Read more about [Snippets](building-sites/elements/snippets).
 
