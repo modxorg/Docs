@@ -1,5 +1,9 @@
 # MODX Documentation
 
+[![Contributors](https://img.shields.io/github/contributors/modxorg/Docs.svg?style=flat-square)](https://github.com/modxorg/Docs/graphs/contributors)
+[![Contributors](https://img.shields.io/github/commit-activity/w/modxorg/Docs.svg?style=flat-square)](https://github.com/modxorg/Docs/graphs/contributors)
+[![Slack Chat](https://img.shields.io/badge/chat_in_slack-online-green.svg?longCache=true&style=flat&logo=slack)](https://modx.org) 
+
 This repository contains the MODX documentation in Markdown format. This is part of an effort to [replace the official documentation with a markdown-system that allows easier management and more community involvement](https://github.com/modxcms/mab-recommendations/pull/19/files).
 
 This new documentation is currently available from [docs.modx.org](https://docs.modx.org)
