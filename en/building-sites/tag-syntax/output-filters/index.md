@@ -12,7 +12,7 @@ Filters in Revolution allow you to manipulate the way data is presented or parse
 
 ## Output Filter
 
-In Revolution, the Output Filter applies one or more of series of output modifiers, which behave similarly to PHx calls in MODx Evolution - except they're built into the core. The syntax looks like this:
+In Revolution, the Output Filter applies one or more of series of output modifiers, which behave similarly to PHx calls in MODX Evolution - except they're built into the core. The syntax looks like this:
 
 ``` php
 [[element:modifier=`value`]]
@@ -42,7 +42,7 @@ If you have longer code in a :then=``:else=`` statement and you want to make it 
 
 ## Output Modifiers
 
-The following table lists some of the existing modifiers and shows examples of their use. Although the examples below are placeholder tags, the output modifiers can be used with any MODx tag. **Make sure that the placeholder used are actually receiving data.**
+The following table lists some of the existing modifiers and shows examples of their use. Although the examples below are placeholder tags, the output modifiers can be used with any MODX tag. **Make sure that the placeholder used are actually receiving data.**
 
 ### Conditional output modifiers
 
@@ -223,7 +223,7 @@ Number of Logins: [[+modx.user.id:userinfo=`logincount`]]
 
 `[[!+modx.user.id]]` defaults to the currently logged in user ID. You can of course replace that with `[[*createdby]]` or other resource field or placeholders that return a numeric ID representing a user.
 
-Note that the user ID and username is already available by default in MODx, so you dont need to use the "userinfo" modifier:
+Note that the user ID and username is already available by default in MODX, so you dont need to use the "userinfo" modifier:
 
 ``` php
 [[!+modx.user.id]] - Prints the ID

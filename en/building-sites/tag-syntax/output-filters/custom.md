@@ -6,7 +6,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
 ## Introduction
 
- Custom Output Filters are MODx Snippets dedicated to formatting placeholder output in the view layer (in a Template or in a Chunk). If a raw placeholder, e.g.
+ Custom Output Filters are MODX Snippets dedicated to formatting placeholder output in the view layer (in a Template or in a Chunk). If a raw placeholder, e.g.
 
 ``` php
 [[*pagetitle]]
@@ -59,7 +59,7 @@ return strtolower($input);
 
 ## Examples
 
- As the examples to be found below are not included in the core, you will need to add these yourself. Luckily, MODx makes this ridiculously easy. You can simply use snippets as output filters, so the process of adding a custom output filter is merely adding a new snippet! To use the output filter, you reference the snippet name.
+ As the examples to be found below are not included in the core, you will need to add these yourself. Luckily, MODX makes this ridiculously easy. You can simply use snippets as output filters, so the process of adding a custom output filter is merely adding a new snippet! To use the output filter, you reference the snippet name.
 
  To documentation contributors: please add examples in alphabetical order.
 
