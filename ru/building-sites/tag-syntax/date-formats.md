@@ -26,13 +26,13 @@ MODX написан на PHP и, как таковой, опирается на 
 
 Невозможно привести все возможные примеры, но вот несколько распространенных способов форматирования дат с использованием выходных фильтров MODX.
 
-| Пример вывода           | Параметры фильтра                                           |
-| ----------------------- | ----------------------------------------------------------- |
-| Thu Apr 14, 2011        | `[[*createdon:strtotime:date=`%a %b %d, %Y`]]`              |
-| 18 April 2011           | `[[*createdon:strtotime:date=`%d %B %Y`]]`                  |
-| Monday, April 18, 2011  | `[[*createdon:strtotime:date=`%A, %B %d, %Y`]]`             |
-| 2011-04-18              | `[[*createdon:strtotime:date=`%Y-%m-%d`]]`                  |
-| Зависит от конфигурации | `[[*createdon:strtotime:date=`[[++manager_date_format]]`]]` |
+| Пример вывода           | Параметры фильтра                                               |
+| ----------------------- | --------------------------------------------------------------- |
+| Thu Apr 14, 2011        | ```[[*createdon:strtotime:date=`%a %b %d, %Y`]]```              |
+| 18 April 2011           | ```[[*createdon:strtotime:date=`%d %B %Y`]]```                  |
+| Monday, April 18, 2011  | ```[[*createdon:strtotime:date=`%A, %B %d, %Y`]]```             |
+| 2011-04-18              | ```[[*createdon:strtotime:date=`%Y-%m-%d`]]```                  |
+| Зависит от конфигурации | ```[[*createdon:strtotime:date=`[[++manager_date_format]]`]]``` |
 
 ## Все параметры
 

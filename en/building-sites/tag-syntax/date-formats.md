@@ -4,7 +4,7 @@ _old_id: "91"
 _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags/date-formats"
 ---
 
-MODX is written in PHP, and as such, it relies on the underlying PHP date functions, e.g. [strftime](http://www.php.net/manual/en/function.strftime.php). The discussion here can get quite tricky because the [strftime](http://www.php.net/manual/en/function.strftime.php) and [strtotime](http://co.php.net/strtotime) functions deploy _similar_ arguments, but they are not identical. 
+MODX is written in PHP, and as such, it relies on the underlying PHP date functions, e.g. [strftime](http://www.php.net/manual/en/function.strftime.php). The discussion here can get quite tricky because the [strftime](http://www.php.net/manual/en/function.strftime.php) and [strtotime](http://co.php.net/strtotime) functions deploy _similar_ arguments, but they are not identical.
 
 The discussion here relates primarily to the following content fields:
 
@@ -21,25 +21,25 @@ Depending on the source and method of retrieving a value, you may either receive
 
 In MODX, the `date` [output modifier](building-sites/tag-syntax/output-filters), which is used to format dates using PHP's `strftime()` function, **expects a unix timestamp**. In order to turn a formatted date into a unix timestamp, you will use the `strtotime` output modifier.
 
-So if a value, say `[[*createdon]]`, returns a formatted date, you need to first transform it to a unix timestamp with `[[*createdon:strtotime]]` before you can format it with `date`. But, if a value immediately returns a unix timestamp, you can skip that. 
+So if a value, say `[[*createdon]]`, returns a formatted date, you need to first transform it to a unix timestamp with `[[*createdon:strtotime]]` before you can format it with `date`. But, if a value immediately returns a unix timestamp, you can skip that.
 
 ## Common Examples
 
 It's not possible to give every possible example, but here are some common ways of formatting dates using the MODX output filters.
 
-| Example Output           | The Filter Parameters                           |
-| ------------------------ | ----------------------------------------------- |
-| Thu Apr 14, 2011         | `[[*createdon:strtotime:date=`%a %b %d, %Y`]]`  |
-| 18 April 2011            | `[[*createdon:strtotime:date=`%d %B %Y`]]`      |
-| Monday, April 18, 2011   | `[[*createdon:strtotime:date=`%A, %B %d, %Y`]]` |
-| 2011-04-18               | `[[*createdon:strtotime:date=`%Y-%m-%d`]]`      |
-| Depends on configuration | `[[*createdon:strtotime:date=`[[++manager_date_format]]`]]` |
+| Example Output           | The Filter Parameters                                           |
+| ------------------------ | --------------------------------------------------------------- |
+| Thu Apr 14, 2011         | ```[[*createdon:strtotime:date=`%a %b %d, %Y`]]```              |
+| 18 April 2011            | ```[[*createdon:strtotime:date=`%d %B %Y`]]```                  |
+| Monday, April 18, 2011   | ```[[*createdon:strtotime:date=`%A, %B %d, %Y`]]```             |
+| 2011-04-18               | ```[[*createdon:strtotime:date=`%Y-%m-%d`]]```                  |
+| Depends on configuration | ```[[*createdon:strtotime:date=`[[++manager_date_format]]`]]``` |
 
 ## All Parameters
 
-The date output modifier internally runs the [PHP strftime function](https://php.net/strftime), so all documentation about strftime applies to the date output modifier as well. 
+The date output modifier internally runs the [PHP strftime function](https://php.net/strftime), so all documentation about strftime applies to the date output modifier as well.
 
-To change the language used by the `date` output modifier (e.g. for the name of days and months), configure the `locale` [system setting](building-sites/settings) in MODX appropriately. 
+To change the language used by the `date` output modifier (e.g. for the name of days and months), configure the `locale` [system setting](building-sites/settings) in MODX appropriately.
 
 | Code              | Display                                                      | Example                 |
 | ----------------- | ------------------------------------------------------------ | ----------------------- |
