@@ -175,9 +175,9 @@ To use this Snippet insert it in replacement of the current static menu in the `
     <header>
         <nav>
             [[pdoMenu?
-      			&parents=`0`
-      			&level=`1`
-      		]]
+              &parents=`0`
+              &level=`1`
+            ]]
         </nav>
     </header>
     <!-- Header End -->
