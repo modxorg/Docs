@@ -116,7 +116,7 @@ The below example illustrates placing the header, footer and aside into a chunk.
 
 The `headerHTML` chunk has replaced the markup that was previously in the header, including the DOCTYPE and head tag. The `footerHTML` chunk has now replaced the footer mark up, including the closing body and html tag. In the case described above regarding the change of the link text it would now only need to be performed once in the chunk.
 
-Chunks are not limited to a top level include, they can also be nested inside of other Chunks. In the below example we have created a new Chunk called `metaData` and filled it with some common meta data. 
+Chunks are not limited to a top level include, they can also be nested inside of other Chunks. In the below example we have created a new Chunk called `metaData` and filled it with some common meta data.
 
 ``` php
   <!-- SEO Microdata (Schema.org variant) - Google, Bing, Yahoo -->
@@ -156,9 +156,9 @@ We could now embed this chunk inside of our existing `headerHTML` chunk:
 
 ## Using Snippets
 
-MODX offers a lot of dynamics out of the box but [Snippets](building-sites/elements/snippets) are a way of extending that dynamic. Inside of our `headerHTML` chunk we have a navigation which could be made and managed dynamically with the use of a snippet or extra such as [Wayfinder](extras/wayfinder) or [pdoMenu](extras/pdoTools/Snippets/pdoMenu). Both Wayfinder and pdoMenu are extras rich in functionality that can automatically populate your menu based on the resources that exist in your site. In addition they can also handle the 'active' class as the user navigates through the site as well as a plethora of other functions. 
+MODX offers a lot of dynamics out of the box but [Snippets](building-sites/elements/snippets) are a way of extending that dynamic. Inside of our `headerHTML` chunk we have a navigation which could be made and managed dynamically with the use of a snippet or extra such as [Wayfinder](extras/wayfinder) or [pdoMenu](extras/pdoTools/Snippets/pdoMenu). Both Wayfinder and pdoMenu are extras rich in functionality that can automatically populate your menu based on the resources that exist in your site. In addition they can also handle the 'active' class as the user navigates through the site as well as a plethora of other functions.
 
-To use this Snippet insert it in replacement of the current static menu in the `headerHTML` Chunk. 
+To use this Snippet insert it in replacement of the current static menu in the `headerHTML` Chunk.
 
 ``` php
 <!DOCTYPE html>
@@ -201,7 +201,7 @@ $weather = json_decode($json);
 return $weather->weather[0]->main;
 ```  
 
-From here the Snippet can be called inside of our `aside` to serve as a widget to get the current weather description. 
+From here the Snippet can be called inside of our `aside` to serve as a widget to get the current weather description.
 
 ``` php
 <aside>
@@ -223,9 +223,9 @@ The result of this Snippet would render on the front end like this:
 </aside>
 ```
 
-The result of this Snippet at the time of writing outputs a value of `Drizzle`. This value from the API will be cached in MODX as the Snippet was called without the uncache flag `!`. However in this use case it could be problematic as the cached value `Drizzle` may persist even after the weather has changed. This particular Snippet should be called uncached using the `!` flag to prevent this issue. To call the snippet uncached place the flag in front of the Snippet name `[[!getWeather]]`. 
+The result of this Snippet at the time of writing outputs a value of `Drizzle`. This value from the API will be cached in MODX as the Snippet was called without the uncache flag `!`. However in this use case it could be problematic as the cached value `Drizzle` may persist even after the weather has changed. This particular Snippet should be called uncached using the `!` flag to prevent this issue. To call the snippet uncached place the flag in front of the Snippet name `[[!getWeather]]`.
 
-This snippet could also be further extended with the use of another Snippet which get's the users location from a different API. The result of which could then be passed into the `getWeather` Snippet as a parameter. 
+This snippet could also be further extended with the use of another Snippet which get's the users location from a different API. The result of which could then be passed into the `getWeather` Snippet as a parameter.
 
 ``` php
 [[!getWeather? &location=`[[!getLocation]]`]]
@@ -248,7 +248,6 @@ $weather = json_decode($json);
 
 // Return weather description
 return $weather->weather[0]->main;
-
 ```
 
 Read more about [Snippets](building-sites/elements/snippets).
