@@ -9,7 +9,7 @@ _old_uri: "2.x/case-studies-and-tutorials/quick-and-easy-modx-tutorials/automate
 Don't want to wait ten seconds for Photoshop to load? Me neither. This tutorial will introduce you to the wonderful PHP script [phpthumbof](http://phpthumb.sourceforge.net/) ported to [MODX](/extras/phpthumbof "phpThumbOf") by Shaun McCormick.
 [phpthumbof](/extras/phpthumbof "phpThumbOf") allows MODX to automatically generate thumbnails of a chosen width and height for us. Additionally, there are a billion other neat features to do basic image work that are at our disposal. Let's talk about a few of the most useful ones.
 
-This tutorial assumes that you know how to create and call [template variables](building-sites/elements/template-variables "Template Variables"). Knowing about [output filters](/display/revolution20/Input+and+Output+Filters "Input and Output Filters") is handy too, but we'll still get things working even if you don't know about them (they're good stuff, though).
+This tutorial assumes that you know how to create and call [template variables](building-sites/elements/template-variables "Template Variables"). Knowing about [output filters](building-sites/tag-syntax/output-filters "Input and Output Filters") is handy too, but we'll still get things working even if you don't know about them (they're good stuff, though).
 
 Each of these examples will assume that you've created an image Template Variable called "big\_image", that it's applied to the current document, that you've filled in a valid image, and that you're ready to impress the pants off of your clients, friends, and families. Let's get started.
 
@@ -18,7 +18,7 @@ If you are on a shared server, remember excessive image processing can affect ot
 
 ## Basic Usage (Resizing and Cropping)
 
-The most obvious usage of phpthumbof is to generate thumbnails from larger images. No longer do you have to worry about your clients providing images that are too large -- bring on those 5MB 4800x3000 photos! Let's say you want to resize your 5MB photo into something that is 960 pixels wide and 300 tall. We call the phpthumbof snippet as an [output filter](/display/revolution20/Input+and+Output+Filters "Input and Output Filters") and pass a width (w) of 960, and a height (h) of 300:
+The most obvious usage of phpthumbof is to generate thumbnails from larger images. No longer do you have to worry about your clients providing images that are too large -- bring on those 5MB 4800x3000 photos! Let's say you want to resize your 5MB photo into something that is 960 pixels wide and 300 tall. We call the phpthumbof snippet as an [output filter](building-sites/tag-syntax/output-filters "Input and Output Filters") and pass a width (w) of 960, and a height (h) of 300:
 
 ``` php
 [[*big_image:phpthumbof=`w=960&h=300`]]
