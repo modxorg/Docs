@@ -23,7 +23,7 @@ AjaxUpload was initially written in 2012 for MODX Evolution and is maintained an
 
 ### Download
 
-AjaxUpload can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODx Extras Repository, available on <http://modx.com/extras/package/ajaxupload2>
+AjaxUpload can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, available on <http://modx.com/extras/package/ajaxupload2>
 
 [](http://modx.com/extras/package/ajaxupload2)
 

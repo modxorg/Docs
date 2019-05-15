@@ -32,7 +32,7 @@ EventX was written by Jeroen Kenters and had its initial release Dec, 1st 2011.
 
 ## Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/eventsx>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/eventsx>
 
 ## Development and Bug Reporting
 

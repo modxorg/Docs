@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/security/policies/permissions/permissions
 
 ## The Administrator Policy
 
-This policy is packaged into MODx and is given to users on the 'mgr' context who want to have full access to managing MODx content.
+This policy is packaged into MODX and is given to users on the 'mgr' context who want to have full access to managing MODX content.
 
 ## Default Permissions
 
@@ -53,7 +53,7 @@ This policy is packaged into MODx and is given to users on the 'mgr' context who
 | file\_manager               | To use the file manager, including creating/deleting files.                                                                      |
 | file\_tree                  | To view the Files Tree on the left nav.                                                                                          |
 | flush\_sessions             | Can flush Sessions across the site.                                                                                              |
-| frames                      | To use the MODx Manager UI at all.                                                                                               |
+| frames                      | To use the MODX Manager UI at all.                                                                                               |
 | help                        | To view the Help page.                                                                                                           |
 | home                        | To view the Welcome page.                                                                                                        |
 | import\_static              | To view or use the Import pages.                                                                                                 |

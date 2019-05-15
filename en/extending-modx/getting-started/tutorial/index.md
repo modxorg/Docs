@@ -58,7 +58,7 @@ $document = $modx->getObject('modResource',array(
 
 ## The Model
 
-So, you're probably asking, Where is the list of table names to object names map? It can be found in "core/model/schema/modx.mysql.schema.xml". (You'll note the 'mysql' - yes, this means that MODx will in the near future support other databases) From there you can view an XML representation of all the MODx DB tables.
+So, you're probably asking, Where is the list of table names to object names map? It can be found in "core/model/schema/modx.mysql.schema.xml". (You'll note the 'mysql' - yes, this means that MODX will in the near future support other databases) From there you can view an XML representation of all the MODX DB tables.
 
 For example, modChunk:
 
@@ -81,7 +81,7 @@ You can also define your own schemas for your own components and add them as pac
 <object class="modChunk" table="site_htmlsnippets" extends="modElement">
 ```
 
-The _class_ property tells you what the name of the class will be. The _table_ property shows the actual MySQL table, and _extends_ shows what object it extends. modElement is a base class for all Elements in MODx - snippets, modules, chunks, templates, etc.
+The _class_ property tells you what the name of the class will be. The _table_ property shows the actual MySQL table, and _extends_ shows what object it extends. modElement is a base class for all Elements in MODX - snippets, modules, chunks, templates, etc.
 
 ``` xml
 <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />

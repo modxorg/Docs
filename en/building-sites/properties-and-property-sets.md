@@ -42,7 +42,7 @@ This example would call the snippet "TestSnippet", load the Property Set 'DebugM
 
 So, if the default property of 'user' was 0, then it would then be set to 2 by the property set, and then to 1 by the call. The property set can also contain properties not defined in either the default element properties, or in the tag call. This can be useful to load Elements across the site without having to repeat the tag syntax across the site - and make it much easier to manage your tag calls.
 
-Properties will be passed into the Element just as they were in MODx 0.9.6, but they are also passed in via the $scriptProperties array, for those of you wanting more flexibility with knowing what properties are passed in.
+Properties will be passed into the Element just as they were in MODX 0.9.6, but they are also passed in via the $scriptProperties array, for those of you wanting more flexibility with knowing what properties are passed in.
 
 ## Assigning Property Sets to Elements
 

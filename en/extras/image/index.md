@@ -20,7 +20,7 @@ _old_uri: "revo/image"
 
 ### Download
 
- Image+ can be installed from within the MODX Revolution manager via Package Management, or from the MODx Extras Repository, available on <http://modx.com/extras/package/imageplustvinput>
+ Image+ can be installed from within the MODX Revolution manager via Package Management, or from the MODX Extras Repository, available on <http://modx.com/extras/package/imageplustvinput>
 
 ### Development & Bug Reporting
 

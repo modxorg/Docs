@@ -6,7 +6,7 @@ _old_uri: "revo/babel"
 
 ## What is Babel?
 
-Babel is an Extra for MODX Revolution that helps you managing your multilingual websites using different contexts. Babel even supports managing several different multilingual websites within one MODx instance by using so called context groups.
+Babel is an Extra for MODX Revolution that helps you managing your multilingual websites using different contexts. Babel even supports managing several different multilingual websites within one MODX instance by using so called context groups.
 
 Babel maintains links between translated resources. In the manager you can use the Babel Box to easily switch between the different language versions of your resources. Translations can be created automatically by Babel or defined manually.
 
@@ -34,7 +34,7 @@ Be sure that your context switches work well.
 
 ### Download
 
-babel can be downloaded from within the MODX Revolution manager via [Package Management](building-sites/extras "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/781>
+babel can be downloaded from within the MODX Revolution manager via [Package Management](building-sites/extras "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/781>
 
 ### Setup
 
@@ -43,7 +43,7 @@ Install Babel via the package manager and set the system settings for Babel via 
 ![](babel-setup.png)
 
 - **Context Keys** (_babel.contextKeys_): Comma separated list of context keys which should be used to link multilingual resources.
-  For advanced configuration you may define several groups of context keys by using a semicolon (;) as delimiter. This is usefull if your're administrating multiple multilingual sites within one MODx instance.
+  For advanced configuration you may define several groups of context keys by using a semicolon (;) as delimiter. This is usefull if your're administrating multiple multilingual sites within one MODX instance.
   Example scenario:
   - **site1**: en, de, fr. using contexts: _web, site1de, site1fr_
   - **site2**: en, de. using contexts: _site2en, site2de_
@@ -83,7 +83,7 @@ Currently there are two snippets available for Babel: [BabelLinks](extras/babel/
 
 ## Change Babel Settings after Installation
 
-You may change your Babel settings after setup. For example if you want to define a new TV which should be synchronized or add a new context. For doing this go to System/Settings in your MODx manager and select the babel namespace. Now you can edit all Babel related settings:
+You may change your Babel settings after setup. For example if you want to define a new TV which should be synchronized or add a new context. For doing this go to System/Settings in your MODX manager and select the babel namespace. Now you can edit all Babel related settings:
 
 ![](babel-settings.png)
 

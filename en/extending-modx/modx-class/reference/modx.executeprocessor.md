@@ -11,7 +11,7 @@ This method is removed in 2.1, and replaced by $modX->runProcessor
 Executes a specific processor. The only argument is an array, which can take the following values:
 
 - **action** - The action to take, similar to connector handling.
-- **processors\_path** - If specified, will override the default MODx processors path.
+- **processors\_path** - If specified, will override the default MODX processors path.
 - **location** - A prefix to load processor files from, will prepend to the action parameter.
 
 ## Syntax

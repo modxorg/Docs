@@ -16,7 +16,7 @@ selfLink was created as a Revolution snippet, and should function on all version
 
 ## Download & Installation
 
-To get started using the selfLink snippet, simply go to System -> Package Manager -> Add new extra -> provider: modxcms.com -> MODx add-ons -> Content and find selfLink. Download the package, and install it in the main package manager workspace.
+To get started using the selfLink snippet, simply go to System -> Package Manager -> Add new extra -> provider: modxcms.com -> MODX add-ons -> Content and find selfLink. Download the package, and install it in the main package manager workspace.
 
 ## Using selfLink
 

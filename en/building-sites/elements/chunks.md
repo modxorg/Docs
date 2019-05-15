@@ -9,7 +9,7 @@ Chunks are bits of static text which you can reuse across your site, similar in 
 
 ## Create
 
-Before you can use a Chunk, you must first create and name one by pasting text into the MODx manager (Elements --> Chunks --> New Chunk):
+Before you can use a Chunk, you must first create and name one by pasting text into the MODX manager (Elements --> Chunks --> New Chunk):
 
 ![](chunk_example.jpg)
 
@@ -78,7 +78,7 @@ return '<table><tbody>'.$output.'</tbody></table>';
 
 ### Modifying a Chunk Via the API
 
-Chunks can also be manipulated by the MODx API:
+Chunks can also be manipulated by the MODX API:
 
 ``` php
 <?php

@@ -50,7 +50,7 @@ First off, let's create a chunk that we'll use for each item in the result set. 
 <li><a href="[[~[[+id]]]]">[[+pagetitle]]</a></li>
 ```
 
-Basically, we make an LI tag, and put some placeholders were our content was. We have available any field in the Resource, and here we're just using the ID and pagetitle fields. The `[[~` tells MODx to make a link from the ID passed in the `[[+id]]` property. Now let's add a default property to the snippet, called 'tpl', to the top of our snippet code:
+Basically, we make an LI tag, and put some placeholders were our content was. We have available any field in the Resource, and here we're just using the ID and pagetitle fields. The `[[~` tells MODX to make a link from the ID passed in the `[[+id]]` property. Now let's add a default property to the snippet, called 'tpl', to the top of our snippet code:
 
 ``` php
 $tpl = $modx->getOption('tpl',$scriptProperties,'ResourceItem');
@@ -67,7 +67,7 @@ foreach ($resources as $resource) {
 }
 ```
 
-The code first turns the modResource object into an array of field=name pairs (ie, $resourceArray\['pagetitle'\] is the pagetitle) via the toArray() method. Then, we use $modx->getChunk() to pass our tpl Chunk and the resource array into it as properties. MODx parses the chunk, replaces the properties, and returns us some content.
+The code first turns the modResource object into an array of field=name pairs (ie, $resourceArray\['pagetitle'\] is the pagetitle) via the toArray() method. Then, we use $modx->getChunk() to pass our tpl Chunk and the resource array into it as properties. MODX parses the chunk, replaces the properties, and returns us some content.
 
 An alternative and slightly faster (especially helpful when looping through a big xPDO result) but also a bit longer way to do the same would be
 
@@ -100,7 +100,7 @@ What if we want the user to be able to specify a CSS class for each LI row, but 
 $rowCls = $modx->getOption('rowCls',$scriptProperties,'resource-item');
 ```
 
-This tells MODx to default the &rowCls property for the snippet to 'resource-item'. Let's go edit our ResourceItem chunk:
+This tells MODX to default the &rowCls property for the snippet to 'resource-item'. Let's go edit our ResourceItem chunk:
 
 ``` php
 <li class="[[+rowCls]]"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></li>

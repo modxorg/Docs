@@ -6,7 +6,7 @@ _old_uri: "revo/modextra"
 
 ## What is modExtra?
 
-modExtra is a base Extra template that is useful when wanting to create a new Extra for MODX Revolution. One can git archive from this repository to start with all the file structure for beginning MODx Extra development pre-setup.
+modExtra is a base Extra template that is useful when wanting to create a new Extra for MODX Revolution. One can git archive from this repository to start with all the file structure for beginning MODX Extra development pre-setup.
 
 ## Usage
 
@@ -28,7 +28,7 @@ git clone http://github.com/splittingred/modExtra.git /path/to/my/downloads/modE
 
 Note that the git clone command expects to _create_ the target directory, so the path you specify should indicate a folder that doesn't yet exist.
 
-Next, create the target directory where you want to house your new repo. It's important that you house your repo outside of the MODx document root: this helps avoid confusion between GIT repositories. One plausible location in in the folder _above_ your document root.
+Next, create the target directory where you want to house your new repo. It's important that you house your repo outside of the MODX document root: this helps avoid confusion between GIT repositories. One plausible location in in the folder _above_ your document root.
 
 Then, navigate to the directory modExtra is now in, and do this:
 
@@ -113,7 +113,7 @@ Once you've done all of that, you can create some [System Settings](building-sit
 - 'mynamespace.core\_path' - Point to /path/to/my/extra/core/components/extra/
 - 'mynamespace.assets\_url' - /path/to/my/extra/assets/components/extra/
 
-Then clear the cache. This will tell the Extra to look for the files located in these directories, allowing you to develop outside of the MODx webroot!
+Then clear the cache. This will tell the Extra to look for the files located in these directories, allowing you to develop outside of the MODX webroot!
 
 If you made a mistake in any of that, you can trash the whole repo there and export the git head again.
 

@@ -37,7 +37,7 @@ Now, when you edit that TV in a Resource, you'll notice that it uses the Source 
 
 ![](20110907-pd72jtn9bhdbn5q5qb7wadku5a.jpeg)
 
-Clicking the dropdown will load the MODx.Browser window using the Source that we specified - note that our source here only loads the contents of the assets/ directory.
+Clicking the dropdown will load the MODX.Browser window using the Source that we specified - note that our source here only loads the contents of the assets/ directory.
 
 Now we'll probably want to consider restricting access to this Source, so that our Content Editors can't accidentally edit it and mess it up. Read the [next article](building-sites/media-sources/securing "Securing a Media Source") to find out how.
 

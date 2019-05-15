@@ -15,11 +15,11 @@ A simple snippet to retrieve an RSS feed and iterate the feed items using a Chun
 
 ## History
 
-getFeed was written by [Jason Coward](/display/~opengeek) as a simple feed reading component, and first released on June 11th, 2010.
+getFeed was written by [Jason Coward](https://github.com/opengeek) as a simple feed reading component, and first released on June 11th, 2010.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via \[Package Management\], or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/690>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/690>
 
 ### Development and Bug Reporting
 

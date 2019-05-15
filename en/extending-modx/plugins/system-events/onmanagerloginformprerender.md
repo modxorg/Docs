@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmana
 
 ## Event: OnManagerLoginFormPrerender
 
-Fires before the login form is rendered for the MODx manager.
+Fires before the login form is rendered for the MODX manager.
 
 Service: 2 - Manager Access Events
 Group: None

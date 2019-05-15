@@ -4,7 +4,7 @@ _old_id: "735"
 _old_uri: "revo/wayfinder/wayfinder-introductory-examples"
 ---
 
-Wayfinder is easily one of the single most important Snippets for your MODx site because nearly **every** site will use menus.
+Wayfinder is easily one of the single most important Snippets for your MODX site because nearly **every** site will use menus.
 
 ## Before You Start
 

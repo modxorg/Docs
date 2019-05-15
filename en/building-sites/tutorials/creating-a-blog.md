@@ -14,7 +14,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
  Fortunately, the tools to do so are already there for your taking. This tutorial will walk you through how to set them up. It's recommended that you're familiar with Revolution's [Tag Syntax](building-sites/tag-syntax "Tag Syntax") before we start.
 
- One thing before we start, though - this tutorial is extensive, and will show you how to set up a powerful blog with posting, archiving, tagging, commenting and more. If you don't need any specific part, just skip that part. MODx is modular, and your blog can function in any scope you like. And, again, this is only one way to do it - there are tons of ways to setup a blog in MODX Revolution.
+ One thing before we start, though - this tutorial is extensive, and will show you how to set up a powerful blog with posting, archiving, tagging, commenting and more. If you don't need any specific part, just skip that part. MODX is modular, and your blog can function in any scope you like. And, again, this is only one way to do it - there are tons of ways to setup a blog in MODX Revolution.
 
  This tutorial was based on the blog setup at [splittingred.com](http://splittingred.com/). If you'd like a demo before reading, try there.
 
@@ -85,7 +85,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 [[$pageFooter]]
 ```
 
- So let's examine the Template, shall we? As we go, remember this - you can move any of these pieces around, change their parameters, and adjust their placing. This is solely a base structure - if you want your tags at the bottom, for instance, move them there! MODx doesn't restrict you from doing that.
+ So let's examine the Template, shall we? As we go, remember this - you can move any of these pieces around, change their parameters, and adjust their placing. This is solely a base structure - if you want your tags at the bottom, for instance, move them there! MODX doesn't restrict you from doing that.
 
 ### Header and Footer
 
@@ -109,7 +109,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Secondly, we then display a Tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
 
- And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-`[[*id]]`'. This means that MODx will automatically create a new thread for each new Blog Post we create. Neat!
+ And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-`[[*id]]`'. This means that MODX will automatically create a new thread for each new Blog Post we create. Neat!
 
 ### The Post Content
 
@@ -424,6 +424,6 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  ![](blog-tree2.png)
 
- Again, there's far more customization and things you could add to your blog. This tutorial is meant as a starting point, but feel free to customize and add things to your liking - the great part about MODx is that you can very easily customize, tweak and scale any solution: including a blog!
+ Again, there's far more customization and things you could add to your blog. This tutorial is meant as a starting point, but feel free to customize and add things to your liking - the great part about MODX is that you can very easily customize, tweak and scale any solution: including a blog!
 
  Remember, this tutorial was based off of [splittingred.com](http://splittingred.com), if you'd like to see a full-scale demo of it in action.

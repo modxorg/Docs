@@ -20,4 +20,4 @@ This setting is useful to change if you are running multiple Contexts on one top
 
 will allow all MODX sessions to persist across any \*.mydomain.com site, allowing logins to work across subdomains.
 
-This setting isn't in MODx by default, as it's best to let PHP calculate this on its own. Only set this if you are sure of what you are doing.
+This setting isn't in MODX by default, as it's best to let PHP calculate this on its own. Only set this if you are sure of what you are doing.

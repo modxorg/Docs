@@ -15,7 +15,7 @@ _old_uri: "revo/simplesearch"
 
 ## History
 
- SimpleSearch was written by [Shaun McCormick](https://github.com/splittingred) as a simple search component, and first released on June 2nd, 2010. It is loosely based on AjaxSearch for MODx Evolution by KyleJ/coroico, without the Ajax functionality.
+ SimpleSearch was written by [Shaun McCormick](https://github.com/splittingred) as a simple search component, and first released on June 2nd, 2010. It is loosely based on AjaxSearch for MODX Evolution by KyleJ/coroico, without the Ajax functionality.
 
 ## Upgrade risks
 
@@ -30,7 +30,7 @@ First of all: ALWAYS MAKE A BACKUP BEFORE UPDATING!
 
 ### Download
 
- It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/683>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/683>
 
 ### Development and Bug Reporting
 

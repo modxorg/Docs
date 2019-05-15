@@ -6,9 +6,9 @@ _old_uri: "2.x/administering-your-site/security/roles"
 
 ## What is a Role?
 
-A role is a position or status held within a certain situation. In MODx, it can be used to group Users into a position or status within a User Group, e.g. "Editor" or "Front-end Read Only".
+A role is a position or status held within a certain situation. In MODX, it can be used to group Users into a position or status within a User Group, e.g. "Editor" or "Front-end Read Only".
 
-Roles in MODx use an integer value called "Authority". **Lower numbers represent a stronger authority.** E.g. a Role with Authority 10 will inherit any and all Group Policies assigned to itself and to any roles defined with Authority 11, but a user Role with Authority 11 does NOT inherit any of the Group Policies from Role 10.
+Roles in MODX use an integer value called "Authority". **Lower numbers represent a stronger authority.** E.g. a Role with Authority 10 will inherit any and all Group Policies assigned to itself and to any roles defined with Authority 11, but a user Role with Authority 11 does NOT inherit any of the Group Policies from Role 10.
 
 Be sure you clarify your language when talking about Authority because this inverse relationship can lead to some confusing sentences.
 

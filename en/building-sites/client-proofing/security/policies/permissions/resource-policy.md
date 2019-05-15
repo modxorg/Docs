@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/security/policies/permissions/permissions
 
 ## The Resource Policy
 
-This policy is packaged into MODx and is given to users on any context who want to have basic object access to content. The Permissions are generic and apply across all MODx objects.
+This policy is packaged into MODX and is given to users on any context who want to have basic object access to content. The Permissions are generic and apply across all MODX objects.
 
 ## Default Permissions
 

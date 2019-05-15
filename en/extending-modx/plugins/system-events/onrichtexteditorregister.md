@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onrich
 
 ## Event: OnRichTextEditorRegister
 
-Renders during any dropdown or select for available richtext editors for MODx.
+Renders during any dropdown or select for available richtext editors for MODX.
 
 If you are developing a custom RTE, simply return the name of the RTE that you are developing. This will then be matched to the System Setting 'which\_editor', which will allow users to select your RTE to use.
 

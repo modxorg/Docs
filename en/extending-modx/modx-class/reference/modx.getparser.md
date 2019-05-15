@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::getParser
 
-Gets the MODx parser.
+Gets the MODX parser.
 
 Returns an instance of modParser responsible for parsing tags in element content, performing actions, returning content and/or sending other responses in the process.
 
@@ -20,7 +20,7 @@ object getParser()
 
 ## Example
 
-Get the MODx Parser object.
+Get the MODX Parser object.
 
 ``` php
 $parser = $modx->getParser();

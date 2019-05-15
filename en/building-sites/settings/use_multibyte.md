@@ -10,6 +10,6 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/use_multibyte"
 **Type**: Yes/No
 **Default**: Determined at Install
 
-Set to true if you want to use the mbstring extension for multibyte characters in your MODx installation. Only set to true if you have the mbstring PHP extension installed.
+Set to true if you want to use the mbstring extension for multibyte characters in your MODX installation. Only set to true if you have the mbstring PHP extension installed.
 
 Turning this on will use the [modx\_charset](building-sites/settings/modx_charset "modx_charset") setting for the charset in the mb\_ PHP functions.

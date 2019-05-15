@@ -21,7 +21,7 @@ void regClientHTMLBlock (string $html)
 Inject a footer into the page.
 
 ``` php
-$modx->regClientHTMLBlock('<div id="footer">(c) 2009 MODx</div>');
+$modx->regClientHTMLBlock('<div id="footer">(c) 2009 MODX</div>');
 ```
 
 ## See Also

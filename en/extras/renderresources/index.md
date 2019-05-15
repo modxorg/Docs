@@ -19,9 +19,9 @@ renderResources was first written by Jason Coward (opengeek) and released on Mar
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/renderresources>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/renderresources>
 
-It is NOT a replacement for Ditto, but rather an alternative component that can accomplish some of the things that the more specialized components do, i.e. Ditto, Wayfinder, Breadcrumbs; basically anything that output the properties for a list of Resources (formerly Documents in MODx Evolution).
+It is NOT a replacement for Ditto, but rather an alternative component that can accomplish some of the things that the more specialized components do, i.e. Ditto, Wayfinder, Breadcrumbs; basically anything that output the properties for a list of Resources (formerly Documents in MODX Evolution).
 
 ## Usage
 
@@ -175,7 +175,7 @@ The same thing is possible if you put the sorted IDs in a template variable, lik
 | first           | Define the idx which represents the first resource                                                                                                            | 1             |
 | last            | Define the idx which represents the last resource. Default is # of resources being summarized + first - 1                                                     |               |
 | totalVar        | Define the key of a placeholder set by renderResources indicating the total number of Resources that would be selected **not** considering the _limit_ value. | total         |
-| debug           | If true, will send the SQL query to the MODx log.                                                                                                             | false         |
+| debug           | If true, will send the SQL query to the MODX log.                                                                                                             | false         |
 
 ## Examples
 

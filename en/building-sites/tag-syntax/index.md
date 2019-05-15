@@ -10,7 +10,7 @@ _old_uri: "2.x/making-sites-with-modx/tag-syntax"
 MODX provides a handy array of tags differentiated by a token, or set of tokens, which appear before a string. The below table identifies these tokens and where and how they are likely to be used.
 
 | Type                                                            | Token | Example             | Usage                                                                                                |
-|-----------------------------------------------------------------|-------|---------------------|------------------------------------------------------------------------------------------------------|
+| --------------------------------------------------------------- | ----- | ------------------- | ---------------------------------------------------------------------------------------------------- |
 | Comment                                                         | `-`   | `[[- Comment ]]`    | Defines an un-parsed comment.<br>*eg:* `[[- This is a comment]]`                                     |
 | [Resource Field](building-sites/tag-syntax/common)              | `*`   | `[[*fieldName]]`    | Outputs the value of a field related to the current resource.<br>*eg:* `[[*pagetitle]]`              |
 | [Template Variable](building-sites/elements/template-variables) | `*`   | `[[*tvName]]`       | Output the value of a template variable.<br>*eg:* `[[*tags]]`                                        |
@@ -18,7 +18,7 @@ MODX provides a handy array of tags differentiated by a token, or set of tokens,
 | [Snippet](building-sites/elements/snippets)                     |       | `[[snippetName]]`   | Defines a PHP snippet of code to be executed.<br>*eg:* `[[getResources]]`                            |
 | Placeholder                                                     | `+`   | `[[+placeholder]]`  | Defines a placeholder for value(s) from the return of a query.<br>*eg:* `[[+pagetitle]]`             |
 | Link                                                            | `~`   | `[[~link]]`         | Returns a link derived from a value.<br>*eg:* `[[~1? &scheme=full]]`                                 |
-| [Setting](building-sites/settings)                           | `++`  | `[[++settingName]]` | Defines a placeholder specifically for values defined in system settings.<br>*eg:* `[[++site_name]]` |
+| [Setting](building-sites/settings)                              | `++`  | `[[++settingName]]` | Defines a placeholder specifically for values defined in system settings.<br>*eg:* `[[++site_name]]` |
 | [Language](extending-modx/internationalization)                 | `%`   | `[[%language]]`     | *eg:* `[[%string? &language=en &namespace=generic &topic=topic]]`                                    |
 
 ## Deconstruction of a MODX Tag
@@ -111,7 +111,7 @@ Hello [[!+username]],
 
 There are several timing tags in MODX:
 
-- **\[^qt^\]** - Query Time - Shows how long MODx took talking to the database
+- **\[^qt^\]** - Query Time - Shows how long MODX took talking to the database
 - **\[^q^\]** - Query Count -Shows how many database queries MODX made
 - **\[^p^\]** - Parse Time - Shows how long MODX took to parse the page
 - **\[^t^\]** - Total Time - Shows the total time taken to parse/render the page

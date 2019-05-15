@@ -10,7 +10,7 @@ Discuss has only few requirements to work with Sphinx search:
 
 - Sphinx 2.0 or newer installed on server (current Discuss version tested on 2.0.8)
 - Configured sources and indexes for discuss post table (Configuration example below)
-- Configured MODx system settings correctly
+- Configured MODX system settings correctly
 
 For more how to install Sphinx can be found from [official Sphinx documentation](http://sphinxsearch.com/docs/)
 

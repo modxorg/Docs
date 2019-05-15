@@ -40,7 +40,7 @@ _old_uri: "2.x/administering-your-site/security/user-groups"
 
 ## Roles in User Groups
 
- Users can have specific Roles within a User Group, should you choose. They can also exist in the User Group without a Role. Roles allow you to fine-tune your permissions more than in previous MODx versions.
+ Users can have specific Roles within a User Group, should you choose. They can also exist in the User Group without a Role. Roles allow you to fine-tune your permissions more than in previous MODX versions.
 
  Say you want to only allow Supervisors in the "HR Department" User Group access to some Resources; no problem. Just create a Role called "Supervisor", set its authority to some number below 9999 (let's say 3), and then add in the Users to the User Group "HR Department" (via the User Group editing screen), setting any would-be supervisors to the Supervisor Role.
 

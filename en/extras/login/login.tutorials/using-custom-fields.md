@@ -6,7 +6,7 @@ _old_uri: "revo/login/login.tutorials/login.using-custom-fields"
 
 ## What are Custom Fields?
 
-Login supports setting custom (or, "Extended") fields using Revolution's User Profile "extended" field. Basically, MODx stores the field data in a JSON object, which can be retrieved at any time.
+Login supports setting custom (or, "Extended") fields using Revolution's User Profile "extended" field. Basically, MODX stores the field data in a JSON object, which can be retrieved at any time.
 
 Login does it quite simply: using the &useExtended property on the [Register](extras/login/login.register "Login.Register"), [UpdateProfile](extras/login/login.updateprofile "Login.UpdateProfile") and [Profile](extras/login/login.profile "Login.Profile") snippets. It is set enabled by default.
 

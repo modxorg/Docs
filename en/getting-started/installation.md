@@ -5,7 +5,7 @@ _old_id: "165"
 _old_uri: "2.x/getting-started/installation"
 ---
 
-This page is for **new installations only**. To upgrade MODX please refer to the [Upgrading MODx](getting-started/maintenance/upgrading "Upgrading MODX") documentation.
+This page is for **new installations only**. To upgrade MODX please refer to the [Upgrading MODX](getting-started/maintenance/upgrading "Upgrading MODX") documentation.
 
 Before installing please ensure the server meets the [Server Requirements](getting-started/server-requirements "Server Requirements").
 

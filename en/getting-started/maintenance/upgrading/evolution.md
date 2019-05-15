@@ -1,5 +1,5 @@
 ---
-title: "Upgrading from MODx Evolution"
+title: "Upgrading from MODX Evolution"
 _old_id: "320"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-from-modx-evolution"
 ---

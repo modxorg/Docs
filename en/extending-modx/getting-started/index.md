@@ -30,7 +30,7 @@ _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introdu
 
 ## [Plugins](extending-modx/plugins "Plugins")
 
- [Plugins](extending-modx/plugins "Plugins") are similar to snippets in that they are snippets of code that have access to the MODX API - however the big difference is that plugins are associated to specific system events. For example, in an average MODx page request, several events happen at certain points within the page parsing process and plugins can be attached to any of these events to fulfill a desired function. [Plugins](extending-modx/plugins "Plugins") aren't just limited to front-end processing though, there are many events that are available in the MODX Manager.
+ [Plugins](extending-modx/plugins "Plugins") are similar to snippets in that they are snippets of code that have access to the MODX API - however the big difference is that plugins are associated to specific system events. For example, in an average MODX page request, several events happen at certain points within the page parsing process and plugins can be attached to any of these events to fulfill a desired function. [Plugins](extending-modx/plugins "Plugins") aren't just limited to front-end processing though, there are many events that are available in the MODX Manager.
 
 ## [Properties and Property Sets](building-sites/properties-and-property-sets "Properties and Property Sets")
 
@@ -46,7 +46,7 @@ _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introdu
 
 ## Using MODX Externally
 
- Using the MODx object (and all of its respective classes) is quite simple. All you need is this code:
+ Using the MODX object (and all of its respective classes) is quite simple. All you need is this code:
 
  ``` php
 require_once '/absolute/path/to/modx/config.core.php';

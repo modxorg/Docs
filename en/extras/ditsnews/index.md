@@ -143,7 +143,7 @@ A Newsletter is fully created with MODX native templates and ressources. So firs
 
 All of the following features will come up in later versions:
 
-- move settings to MODx System Settings
+- move settings to MODX System Settings
 - make message queue batch size editable (fixed at 50 for now)
 - statistics (views, bounces, etc.)
 - handle bounces

@@ -9,7 +9,7 @@ _old_uri: "2.x/administering-your-site/upgrading-modx/troubleshooting-upgrades"
  First off, make sure:
 
 - You have eAccelerator disabled during install. eAccelerator can cause problems when doing the heavy lifting during the install process.
-- You followed all the directions on the [Upgrading MODx](getting-started/maintenance/upgrading "Upgrading MODx") page.
+- You followed all the directions on the [Upgrading MODX](getting-started/maintenance/upgrading "Upgrading MODX") page.
 - You've uploaded all the necessary files for upgrade, making sure to **merge** directories and not _replace_ them.
 - Clear your browser cache after upgrading. This will clear up a lot of common JS and CSS related errors.
 - Clear the Site Cache after upgrading. Sometimes this doesn't occur for whatever reason during setup/ because of your environment.

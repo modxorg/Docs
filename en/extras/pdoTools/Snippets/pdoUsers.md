@@ -27,7 +27,7 @@ It uses all [General Settings of pdoTools][1] except the specific class *modReso
 
 | Name         | Default    | Description                                                                                                                       |
 | ------------ | ---------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **&class**   | modUser    | The base User class for MODx Revolution                                                                                           |
+| **&class**   | modUser    | The base User class for MODX Revolution                                                                                           |
 | **&sortby**  | modUser.id | Any user field for sorting. You can specify a JSON string with an array of multiple fields. To randomly select the sort «RAND ()» |
 | **&sortdir** | ASC        | Sorting direction: Descending «DESC» or Ascending «ASC» .                                                                         |
 All default templates are empty. To display the result as HTML, you must specify at least the value of the template in **&tpl**.

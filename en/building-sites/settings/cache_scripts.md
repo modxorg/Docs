@@ -10,4 +10,4 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/cache_scripts"
 **Type**: Yes/No
 **Default**: Yes
 
-When enabled, MODx will cache all Scripts (Snippets and Plugins) to file to reduce load times. MODx recommends leaving this set to 'Yes'.
+When enabled, MODX will cache all Scripts (Snippets and Plugins) to file to reduce load times. MODX recommends leaving this set to 'Yes'.

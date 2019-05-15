@@ -53,7 +53,7 @@ Then create a dropdown-type TV with this input-options:
 
 ## Security
 
-The eval() statement raises an eyebrow with anyone concerned with security: eval statements are notorious for being exploited, so it's recommended that you find another way of doing whatever you are trying to do, but this context is supported by MODx. If I let my cynical mind wander, allow me to paint one disasterous circumstance: some web user of your MODx application logs in and has access to a field that gets executed by an EVAL binding. This nefarious user could eval some nasty _unlink()_ or _rmdir()_ statements and destroy your web server files, or read sensitive files **anywhere** on the web-server that PHP has access to. Be careful with these!
+The eval() statement raises an eyebrow with anyone concerned with security: eval statements are notorious for being exploited, so it's recommended that you find another way of doing whatever you are trying to do, but this context is supported by MODX. If I let my cynical mind wander, allow me to paint one disasterous circumstance: some web user of your MODX application logs in and has access to a field that gets executed by an EVAL binding. This nefarious user could eval some nasty _unlink()_ or _rmdir()_ statements and destroy your web server files, or read sensitive files **anywhere** on the web-server that PHP has access to. Be careful with these!
 
 Thankfully, I've been unsuccessful in my attempts to unlink() a file using the @EVAL binding... but I'm sure there are people out there more clever than me...
 

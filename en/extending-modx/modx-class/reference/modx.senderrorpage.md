@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::sendErrorPage
 
-Send the user to a MODx virtual error page.
+Send the user to a MODX virtual error page.
 
 ## Syntax
 

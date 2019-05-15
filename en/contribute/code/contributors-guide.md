@@ -22,7 +22,7 @@ _old_uri: "contribute/using-git-and-github/community-contributors-guide"
 
 ## Working with your GitHub fork
 
- MODx contributors must work directly with their private forks on GitHub. Here is the suggested way to prepare your local repository as a developer for contributing back to any MODx project:
+ MODX contributors must work directly with their private forks on GitHub. Here is the suggested way to prepare your local repository as a developer for contributing back to any MODX project:
 
  ``` php
 git clone git@github.com:YourGitUsername/revolution.git

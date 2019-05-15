@@ -6,7 +6,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources/static-res
 
 ## What is a Static Resource?
 
- A Static Resource is a Resource abstraction of an actual file on the filesystem. You can think of the abstraction as a virtual representation of any file on your webserver. Like other MODx resources, this abstraction can have permissions associated with it and it shows up in the MODx manager in the resource tree, which allows it to show up in dynamic menus and search results. A MODx Static Resource can represent any file on your webserver (permissions permitting).
+ A Static Resource is a Resource abstraction of an actual file on the filesystem. You can think of the abstraction as a virtual representation of any file on your webserver. Like other MODX resources, this abstraction can have permissions associated with it and it shows up in the MODX manager in the resource tree, which allows it to show up in dynamic menus and search results. A MODX Static Resource can represent any file on your webserver (permissions permitting).
 
  Static Resources can also have tags inside their content fields to determine the path of the file - so you can specify custom paths to set as System Settings, or use [Snippets](extending-modx/snippets "Snippets") to dynamically find the path.
 

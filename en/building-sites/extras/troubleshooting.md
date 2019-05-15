@@ -14,7 +14,7 @@ Most issues can be resolved by making sure you have cURL installed, and that the
 
 If you've downloaded a package, but are getting 'archiveTo'-related errors or a "Package Not Found" error after downloading, make sure you're running at least Revolution 2.0.1, and then go to System Settings and set the **archive\_with** setting to "Yes", or 1.
 
-This will force MODx to use PCLZip instead of ZipArchive, as your environment most likely has a broken ZipArchive configuration or version that is causing the error:
+This will force MODX to use PCLZip instead of ZipArchive, as your environment most likely has a broken ZipArchive configuration or version that is causing the error:
 
 See these tickets for more information:
 

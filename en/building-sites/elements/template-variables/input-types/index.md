@@ -154,7 +154,7 @@ This is a text field that comes with its own validation: only text that's in a v
 
 ## File
 
-Creates a file input form to browse the server for a file. Files can be uploaded through the MODx File Manager. You can declare a default value file by specifying the path to the file.
+Creates a file input form to browse the server for a file. Files can be uploaded through the MODX File Manager. You can declare a default value file by specifying the path to the file.
 
 Take extra note of relative file paths when using friendly url paths.
 
@@ -174,7 +174,7 @@ This gives you a small WSYIWYG editor for the field. It looks exactly like the R
 
 ![](tv-image-new.png)
 
-Creates an image input form to browse the server for a file. Files can be uploaded through the MODx File Manager then.
+Creates an image input form to browse the server for a file. Files can be uploaded through the MODX File Manager then.
 
 In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](building-sites/media-sources "Media Sources").
 

@@ -23,7 +23,7 @@ It is now developed and maintained by Sterc at <https://github.com/Sterc/Batcher
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <https://rtfm.modx.com/extras/revo/batcher>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://rtfm.modx.com/extras/revo/batcher>
 
 ### Development and Bug Reporting
 

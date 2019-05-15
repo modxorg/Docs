@@ -25,7 +25,7 @@ _old_uri: "revo/googlesitemap/"
 
 ### Download
 
- It can be downloaded from within the MODX Revolution manager via \[Package Management\], or from the MODx Extras Repository, available here: <https://modx.com/extras/package/googlesitemap>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <https://modx.com/extras/package/googlesitemap>
 
 ### Development and Bug Reporting
 

@@ -7,11 +7,11 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
 ## What is a Resource?
 
-A resource is a representation of a page in MODx. There are different types of Resources, such as documents, weblinks, symlinks, actual files, or many other things. The default Resource type is a Document, and simply represents a webpage on your site.
+A resource is a representation of a page in MODX. There are different types of Resources, such as documents, weblinks, symlinks, actual files, or many other things. The default Resource type is a Document, and simply represents a webpage on your site.
 
 There are 4 total types of Resources, and they are Documents, [Weblinks](building-sites/resources/weblink "Weblink"), [Symlinks](building-sites/resources/symlink "Symlink"), and [Static Resources](building-sites/resources/static-resource "Static Resource").
 
-Each Resource also has a unique ID, or "Resource Identifier". This lets MODx know what Resource to fetch when you are loading a webpage. Also, when you're wanting to link between Resources, you should always use the ID to do so. That way MODx will generate the link and you will not have to worry about changed aliases, content types or anything - MODx will change your links also. Please see the Linking to Resources section below for more information on how to do this.
+Each Resource also has a unique ID, or "Resource Identifier". This lets MODX know what Resource to fetch when you are loading a webpage. Also, when you're wanting to link between Resources, you should always use the ID to do so. That way MODX will generate the link and you will not have to worry about changed aliases, content types or anything - MODX will change your links also. Please see the Linking to Resources section below for more information on how to do this.
 
 ### Managing Resources
 
@@ -86,7 +86,7 @@ They can also have [Output Filters](building-sites/tag-syntax/output-filters) "I
 
 ### Accessing Resource Fields in a Snippet
 
-Grabbing the Resource Fields in a [Snippet](extending-modx/snippets "Snippets") is quite easy; MODx provides you with the Resource object in any Snippet, via the $modx->resource reference. For example, this example Snippet will return the current page's pagetitle reversed:
+Grabbing the Resource Fields in a [Snippet](extending-modx/snippets "Snippets") is quite easy; MODX provides you with the Resource object in any Snippet, via the $modx->resource reference. For example, this example Snippet will return the current page's pagetitle reversed:
 
 ``` php
 /* output the current Resource's pagetitle */
@@ -96,13 +96,13 @@ return strrev($output);
 
 ## Linking to a Resource
 
-In MODx, links to Resources are dynamically managed via "Link Tags". They look like this:
+In MODX, links to Resources are dynamically managed via "Link Tags". They look like this:
 
 ``` html
 [[~123]]
 ```
 
-where '123' is the ID of the Resource to link to. You can put these tags anywhere, and MODx will dynamically render the URL for the Resource.
+where '123' is the ID of the Resource to link to. You can put these tags anywhere, and MODX will dynamically render the URL for the Resource.
 
 You can also get the Link Tag by dragging a Resource from the left tree into the content panel.
 

@@ -6,7 +6,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources/content-ty
 
 ## What are Content Types?
 
-Content types are specific filesystem types for your resources. They are associated with file extensions and tell the MODx Parser what type of extension to render the page with.
+Content types are specific filesystem types for your resources. They are associated with file extensions and tell the MODX Parser what type of extension to render the page with.
 
 For example, a [Resources](building-sites/resources "Resources") with an alias of 'test' and Content Type "CSS" that has a file extension of ".css" will render as:
 

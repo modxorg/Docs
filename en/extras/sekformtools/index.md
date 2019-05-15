@@ -19,7 +19,7 @@ SekFormTools was written by Stephen Smith, and first released on May 3th, 2012.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: <http://modx.com/extras/package/sekformtools>.
+It can be downloaded from within the MODX Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODX Extras Repository, here: <http://modx.com/extras/package/sekformtools>.
 
 ### Development and Bug Reporting
 

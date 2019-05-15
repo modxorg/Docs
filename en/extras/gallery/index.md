@@ -24,7 +24,7 @@ You can view the [roadmap here](extras/gallery/gallery.roadmap "Gallery.Roadmap"
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, available here: <http://modx.com/extras/package/gallery>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <http://modx.com/extras/package/gallery>
 
 ### Development and Bug Reporting
 

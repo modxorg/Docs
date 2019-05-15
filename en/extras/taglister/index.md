@@ -56,7 +56,7 @@ tagLister was written by [Shaun McCormick](https://github.com/splittingred) and 
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <https://modx.com/extras/package/taglister>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/taglister>
 
 ### Development and Bug Reporting
 

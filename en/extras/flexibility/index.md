@@ -73,7 +73,7 @@ ALL supporters and contributors:
 - <http://foundation.zurb.com/>
 - <http://html5boilerplate.com/> (not used but got me started....)
 - the MODX Revolution team for the whole MODX system
-- Anselm Hannemann for the MODx Boilerplate, <http://anselm.novolo.de/>
+- Anselm Hannemann for the MODX Boilerplate, <http://anselm.novolo.de/>
 - The MODX community for all the great tips and support!
 
 ## Bugs and feature rquests

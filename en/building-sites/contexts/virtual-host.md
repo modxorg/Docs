@@ -26,7 +26,7 @@ From there, go ahead and right-click on the "dev" Context in the tree, and click
 You can add other context-specific settings, such as error\_page, unauthorized\_page, cultureKey, and others if you so choose. All system settings can be overridden by setting them on a context.
 
 **Note: LINKING BETWEEN CONTEXTS**
-If you're going to be **linking back to the 'web' context from this context ('dev')**, you'll want to **add those same Context Settings (with 'web'-specific values, of course) to the 'web' context**. This allows MODx to know where to redirect 'web' context URLs back to.
+If you're going to be **linking back to the 'web' context from this context ('dev')**, you'll want to **add those same Context Settings (with 'web'-specific values, of course) to the 'web' context**. This allows MODX to know where to redirect 'web' context URLs back to.
 
 After creating the settings, clear your site cache.
 

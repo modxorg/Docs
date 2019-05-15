@@ -7,7 +7,7 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/templates"
 
 ## What are Templates?
 
-Templates typically contain the HTML markup tags that determine the layout and appearance of your site. When a document is requested, MODx loads the document and its template, and MODx finds all the special placeholders in the template and replaces them with the corresponding values from the document before sending the finished page off to the user's browser.
+Templates typically contain the HTML markup tags that determine the layout and appearance of your site. When a document is requested, MODX loads the document and its template, and MODX finds all the special placeholders in the template and replaces them with the corresponding values from the document before sending the finished page off to the user's browser.
 
 Think of a Template like a house. Your [Resource's](building-sites/resources "Resources") content, then, is a person. A person can have many different houses, but only live in one house at a time.
 
@@ -40,11 +40,11 @@ MenuTitle: [[*menutitle]]
 </html>
 ```
 
-Note the important `[[*content]]` tag; this tag tells MODx where to put the Resource's content.
+Note the important `[[*content]]` tag; this tag tells MODX where to put the Resource's content.
 
 MODX defaults to storing templates in its database, if you are using a version prior to 2.2.x this is your only option. In MODX 2.2.x and newer you have the option of storing templates as static files using Media Sources.
 
-Remember that simply _creating_ a template doesn't mean that it is automatically put to use: you have to edit each [Resources](building-sites/resources "Resources") and specify which Template it uses. This is different from some content management systems where each template has one or many pages. Each MODx page has a single Template that it uses to format output.
+Remember that simply _creating_ a template doesn't mean that it is automatically put to use: you have to edit each [Resources](building-sites/resources "Resources") and specify which Template it uses. This is different from some content management systems where each template has one or many pages. Each MODX page has a single Template that it uses to format output.
 
 After you've created one or more Templates, you can edit any Resource and choose a Template for it by selecting one from the "Uses Template" drop-down list.
 
@@ -66,7 +66,7 @@ You can also place the content of the current Resource using the "content" tag:
 </body>
 ```
 
-These tags are like normal MODx tags, in that they can have [output filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") applied to them. For example, say we wanted to display the "introtext" field on a right navbar, but strip any HTML tags from it, and only display the first 400 characters - and if longer, add an ellipsis (...):
+These tags are like normal MODX tags, in that they can have [output filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") applied to them. For example, say we wanted to display the "introtext" field on a right navbar, but strip any HTML tags from it, and only display the first 400 characters - and if longer, add an ellipsis (...):
 
 ``` html
 <div id="rightbar">

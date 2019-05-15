@@ -15,7 +15,7 @@ FormIt2db and db2FormIt are two small FormIt Hooks to save xPDO objects during F
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/formit2db>
+It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/formit2db>
 
 ### Bug Reporting
 
