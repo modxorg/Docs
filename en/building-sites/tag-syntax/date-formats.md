@@ -8,12 +8,12 @@ MODX is written in PHP, and as such, it relies on the underlying PHP date functi
 
 The discussion here relates primarily to the following content fields:
 
-- `createdon`
-- `deletedon`
-- `editedon`
-- `publishedon`
-- `pub_date`
-- `unpub_date`
+- `createdon` - creation date;
+- `deletedon` - date of deletion;
+- `editedon` - the date of the last edit;
+- `publishedon` - the date when the resource was published;
+- `pub_date` - the date when the resource should appear in the publication;
+- `unpub_date` - date of removal from the publication.
 
 ## Unix timestamps and formatted dates
 
