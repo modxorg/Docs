@@ -23,7 +23,7 @@ PDO is the standard data access layer for PHP, and it's capabilities are at the 
 
 And though it doesn't extend PDO directly, it does provide the same methods as PDO, which allows xPDO to mediate all database calls. This makes it possible to use result set caching and other advanced techniques to optimize how your applications interact with the database (i.e. by caching db results to file or memory, you can avoid even making the database connection if everything requested is found in the cache).
 
-Finally, by simply extending xPDO yourself, you can further customize the class to serve the purposes you need it to. For instance, you can add domain-specific methods or extend core methods in your derivative and use instances as a central domain object for interacting with your model. This is how the MODX Revolution 2.0 Content Management System was built; the central class: modX, extends xPDO and adds the methods that form the MODx application domain.
+Finally, by simply extending xPDO yourself, you can further customize the class to serve the purposes you need it to. For instance, you can add domain-specific methods or extend core methods in your derivative and use instances as a central domain object for interacting with your model. This is how the MODX Revolution 2.0 Content Management System was built; the central class: modX, extends xPDO and adds the methods that form the MODX application domain.
 
 You'll start off by extending the class like so:
 

@@ -24,7 +24,7 @@ translation: "building-sites/client-proofing/form-customization/rules/move-tv-to
 
 Пример правила для перемещения TV 1 на первую вкладку на странице создания ресурса будет выглядеть так:
 
-![](/download/attachments/18678100/rule-tvMove.png?version=1&modificationDate=1279291685000)
+![](/2.x/en/building-sites/client-proofing/form-customization/rules/rule-tvmove.png)
 
 ## Смотрите также
 

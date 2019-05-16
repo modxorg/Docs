@@ -52,11 +52,11 @@ The third common component here is to display a tag cloud listing all available 
 
 ## History
 
-tagLister was written by [Shaun McCormick](/display/~splittingred) and first released on June 14th, 2010.
+tagLister was written by [Shaun McCormick](https://github.com/splittingred) and first released on June 14th, 2010.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <https://modx.com/extras/package/taglister>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/taglister>
 
 ### Development and Bug Reporting
 

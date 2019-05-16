@@ -10,6 +10,6 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/cache_disabled"
 **Type**: Yes/No
 **Default**: No
 
-If true, disables all MODx caching features.
+If true, disables all MODX caching features.
 
-This feature is **experimental**. MODx recommends not turning off caching site-wide, as it can significantly slow down your site.
+This feature is **experimental**. MODX recommends not turning off caching site-wide, as it can significantly slow down your site.

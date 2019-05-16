@@ -22,7 +22,7 @@ translation: "building-sites/client-proofing/form-customization/rules/tab-title"
 
 Пример правила изменения названия вкладки «Параметры страницы» для всех [пользователей](display/revolution20/Users "пользователей") на «Пользовательские поля» будет выглядеть следующим образом:
 
-![](/download/attachments/18678095/fc-tabTitle.png?version=1&modificationDate=1280153333000)
+![](/2.x/en/building-sites/client-proofing/form-customization/rules/fc-tabtitle.png)
 
 ## Смотрите также
 

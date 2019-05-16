@@ -8,20 +8,20 @@ _old_uri: "2.x/administering-your-site/security"
 
 Security in MODX Revolution is primarily driven by an Attribute-Based Access Control (ABAC) paradigm.
 
-Each user in MODx has a [User](building-sites/client-proofing/security/users "Users") object, which can be assigned to any number of [User Groups](building-sites/client-proofing/security/user-groups "User Groups"). Each User Group then has attributes assigned to it via [Access Control Lists](building-sites/client-proofing/security/policies/acls "ACLs") (ACLs). These ACLs take a variety of names depending on how they are applied, but all share one common principle - they contain a list of [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions"). These Permissions allow access to different areas or actions within MODx.
+Each user in MODX has a [User](building-sites/client-proofing/security/users "Users") object, which can be assigned to any number of [User Groups](building-sites/client-proofing/security/user-groups "User Groups"). Each User Group then has attributes assigned to it via [Access Control Lists](building-sites/client-proofing/security/policies/acls "ACLs") (ACLs). These ACLs take a variety of names depending on how they are applied, but all share one common principle - they contain a list of [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions"). These Permissions allow access to different areas or actions within MODX.
 
 ACLs usually have the following:
 
-- **Principal** - The object that is getting the access permissions. This is in MODx, by default, a User Group.
+- **Principal** - The object that is getting the access permissions. This is in MODX, by default, a User Group.
 - **Target** - The object they apply to, for example, a Context or Resource Group.
 - **Access Policy** - The list of Permissions that is gained by this ACL.
 - **Authority** - The minimum Authority level required to use this ACL (see [Roles](building-sites/client-proofing/security/roles "Roles")).
 
-Access is **allow/deny** in MODx, meaning that access is "open" by default. Once an ACL is applied to an object, such as a Context or Resource Group, those Contexts or Resource Groups will now only be accessible to the objects with appropriate Permissions.
+Access is **allow/deny** in MODX, meaning that access is "open" by default. Once an ACL is applied to an object, such as a Context or Resource Group, those Contexts or Resource Groups will now only be accessible to the objects with appropriate Permissions.
 
 ### Security Tutorial Video
 
-Demonstrates by applying concepts to the MODx Sample Site to:
+Demonstrates by applying concepts to the MODX Sample Site to:
 
 - Restrict RSS feed to Directors and up
 - Restrict Blog to Staff only

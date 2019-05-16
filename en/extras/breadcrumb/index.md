@@ -34,7 +34,7 @@ As the original [Breadcrumbs](extras/breadcrumbs "Breadcrumbs"), this snippet wi
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/breadcrumb>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/breadcrumb>
 
 ### Support, Comments, Development and Bug Reporting
 

@@ -249,7 +249,7 @@ return;
 
 ## Suggested additional considerations
 
- The model files can be edited with methods and descriptions. Take a look at much of the MODx / xPDO models and you will see this done extensively.
+ The model files can be edited with methods and descriptions. Take a look at much of the MODX / xPDO models and you will see this done extensively.
 
  This process can be automated and captured upon user login. For the sake of brevity, it is best to refer you to splittingred's github, where he provides a real world application:
 

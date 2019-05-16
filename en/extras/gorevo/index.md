@@ -6,7 +6,9 @@ _old_uri: "revo/gorevo"
 
 ## What is GoRevo?
 
- GoRevo is a commercial extra that performs an intelligent migration of MODX Evolution sites to MODX Revolution. ### Features
+ GoRevo is a commercial extra that performs an intelligent migration of MODX Evolution sites to MODX Revolution. 
+ 
+ ### Features
 
 **Transfers:**
 

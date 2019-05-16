@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 Send the user to a type-specific core error page and halt PHP execution.
 
-The parameter 'type' can be any field, which will load the template file in core/error. MODx comes prepackaged with 2 default error pages; these are 'unavailable' (the default), and 'fatal'.
+The parameter 'type' can be any field, which will load the template file in core/error. MODX comes prepackaged with 2 default error pages; these are 'unavailable' (the default), and 'fatal'.
 
 ## Syntax
 

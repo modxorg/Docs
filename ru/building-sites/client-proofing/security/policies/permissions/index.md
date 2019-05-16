@@ -1,4 +1,4 @@
-  ---
+---
 title: "Разрешения"
 translation: "building-sites/client-proofing/security/policies/permissions"
 ---

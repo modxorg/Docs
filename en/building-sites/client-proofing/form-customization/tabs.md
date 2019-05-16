@@ -36,8 +36,7 @@ Any time you need to refer to the tab region, for example if moving Template Var
 
 ## See Also
 
-1. [Customizing the Manager via Plugins](_legacy/administering-your-site/customizing-the-manager-via-plugins)
-2. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
-3. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
+1. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
+2. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
    1. [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs)
-4. [Manager Templates and Themes](building-sites/client-proofing/custom-manager-themes)
+3. [Manager Templates and Themes](building-sites/client-proofing/custom-manager-themes)

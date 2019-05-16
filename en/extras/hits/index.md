@@ -9,7 +9,7 @@ Hits tracks pagehits with a punch by counting MODX Revolution page view and stor
 With hits you can:
 
 - record page hits based on a provided hit\_key (such as a resource id)
-- Returns the results of a hit query and [use with getResources]([[~[[*id]]]]#with-getresources)
+- Returns the results of a hit query and use with getResources (`[[~[[*id]]]]`)
 
 ## Usage
 
@@ -73,7 +73,7 @@ Knockout resource 3 then add 2 hits (knockout zeros value before adding punches)
 | limit           | The amount of results to return.                                                                                               | 5                | 1.0.0            |
 | sort            | Property to sort results on. Available options are hit\_count, hit\_key or id.                                                 | hit\_count       | 1.0.0            |
 | dir             | Direction to sort properties on.                                                                                               | DESC             | 1.0.0            |
-| outputSeparator | An optional string to separate each tpl instance.                                                                              | “\\n”          | 1.0.0            |
+| outputSeparator | An optional string to separate each tpl instance.                                                                              | “\\n”            | 1.0.0            |
 | toPlaceholder   | If set, will assign the result to this placeholder rather than outputting.                                                     |                  | 1.0.0            |
 | offset          | Optionally offset results                                                                                                      |                  | 1.1.0            |
 | knockout        | Set to 1 to zero hit\_count of punched record before incrementing by amount                                                    |                  | 1.2.0            |

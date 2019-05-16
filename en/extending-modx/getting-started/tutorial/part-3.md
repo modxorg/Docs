@@ -5,13 +5,13 @@ _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i/p
 note: 'Some of the details about connectors and processors relate to MODX before 2.3.'
 ---
 
-In MODx, form processing is handled by 'Processors', which are isolated files located in the MODX core directory. They are accessed through 'Connectors', which handle AJAX requests from the User Interface (UI), which require a REQUEST variable named 'action' that specifies which processor to send to. Processors are sent the sanitized REQUEST data, and then when finished respond with a JSON message back to the browser. This allows for quick, easy requests that reduce the load on the server and the browser. You can also do multiple, asynchronous requests to processors in this method.
+In MODX, form processing is handled by 'Processors', which are isolated files located in the MODX core directory. They are accessed through 'Connectors', which handle AJAX requests from the User Interface (UI), which require a REQUEST variable named 'action' that specifies which processor to send to. Processors are sent the sanitized REQUEST data, and then when finished respond with a JSON message back to the browser. This allows for quick, easy requests that reduce the load on the server and the browser. You can also do multiple, asynchronous requests to processors in this method.
 
 You can think of processors a bit like models in an MVC framework. MODX has a "model", but it is dominated by the classes that handle the ORM layer -- it's not a traditional model layer in other words. Processors are often tapped to fill the gap.
 
 We'll look in-depth at the processor for creating a Chunk, and show you how MODX processors work.
 
-First off, let's assume that we're sending the following data into the POST array to the connector, which has the REQUEST "action" variable set to 'create', loading the proper create.php variable. In the JS, the connector is MODx.config.connectors\_url+'element/chunk.php, which resolves to (in our default setup):
+First off, let's assume that we're sending the following data into the POST array to the connector, which has the REQUEST "action" variable set to 'create', loading the proper create.php variable. In the JS, the connector is MODX.config.connectors\_url+'element/chunk.php, which resolves to (in our default setup):
 
 > /modx/connectors/element/chunk.php
 
@@ -34,7 +34,7 @@ $modx->lexicon->load('chunk');
 First off, we include the root index.php file for the processors, which does some slight variable checking and includes licensing. Then, we load the proper lexicon topic. In MODX Revolution, i18n language files are separated into smaller files by topic, (formerly called foci). Here, we want all language strings within the 'chunk' topic. This saves processing power by only loading relevant i18n strings.
 
 **About Topics**
- The lexicon _topics_ are similar to how the popular [gettext](http://www.gnu.org/software/gettext/) translation framework employs _contexts_ to distinguish meanings and provide subsets of translation files. We mention this only for newcomers who may be familiar with systems that use gettext (e.g. WordPress): remember that contexts are something very different in MODx.
+ The lexicon _topics_ are similar to how the popular [gettext](http://www.gnu.org/software/gettext/) translation framework employs _contexts_ to distinguish meanings and provide subsets of translation files. We mention this only for newcomers who may be familiar with systems that use gettext (e.g. WordPress): remember that contexts are something very different in MODX.
 
 ``` php
 if (!$modx->hasPermission('new_chunk')) $modx->error->failure($modx->lexicon('permission_denied'));
@@ -131,4 +131,4 @@ Now, send a success response back to the browser. The parameters of $modx->error
 
 So basically, here, we're sending back the Chunk information - minus the content, which could be big and unnecessary and complicated to send. This will allow the UI to handle the creation properly.
 
-Next, we'll talk about how to create your own schemas and add them dynamically into the MODx framework, without having to modify the core.
+Next, we'll talk about how to create your own schemas and add them dynamically into the MODX framework, without having to modify the core.

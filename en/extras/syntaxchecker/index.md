@@ -19,7 +19,7 @@ SyntaxChecker was first released on December 20, 2011.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/syntaxchecker>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/syntaxchecker>
 
 ## Usage examples
 

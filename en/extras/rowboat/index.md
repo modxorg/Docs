@@ -15,7 +15,7 @@ Rowboat is a custom snippet for looping over rows in any database table. Rowboat
 
 ## History
 
-Rowboat was written by [Shaun McCormick](/display/~splittingred) and first released on February 18th, 2011.
+Rowboat was written by [Shaun McCormick](https://github.com/splittingred) and first released on February 18th, 2011.
 
 ### Download
 

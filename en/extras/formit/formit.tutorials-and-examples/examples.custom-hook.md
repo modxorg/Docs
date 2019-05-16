@@ -27,7 +27,7 @@ The only thing we need to add to the basic call here is a new **hook**: we've ad
 
 ## customhook Snippet
 
-The name of the hook corresponds to the name of a Snippet. So we create a Snippet named **customhook**. It's useful when writing a custom hook to do some testing first, to make sure it is firing. Since the custom hook is only supposed to _return_ either a true or false value, it's not easy to print out debugging information. Instead, we can write something to the MODx log using the [$modx->log()](http://rtfm.modx.com/display/xPDO20/xPDO.log) function.
+The name of the hook corresponds to the name of a Snippet. So we create a Snippet named **customhook**. It's useful when writing a custom hook to do some testing first, to make sure it is firing. Since the custom hook is only supposed to _return_ either a true or false value, it's not easy to print out debugging information. Instead, we can write something to the MODX log using the [$modx->log()](http://rtfm.modx.com/display/xPDO20/xPDO.log) function.
 
 Remember you must return **true** if you want to consider your form validated! Here's our sample code for our new **customhook** Snippet:
 
@@ -41,7 +41,7 @@ $modx->log(xPDO::LOG_LEVEL_ERROR,'Testing my custom hook.');
 return true;  //<-- if you omit this or return false, your form won't validate
 ```
 
-Save your Snippet, and try submitting your form. Check the MODx system log (**Reports --> Error Log**) to ensure that your Snippet fired. You should see something like this in the logs:
+Save your Snippet, and try submitting your form. Check the MODX system log (**Reports --> Error Log**) to ensure that your Snippet fired. You should see something like this in the logs:
 
  ``` php
 [2011-10-24 11:23:20] (ERROR @ /index.php) Testing my custom hook.

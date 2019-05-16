@@ -33,7 +33,7 @@ You can use MODX as your Content Management System (CMS) of choice, as MODX offe
 
 You've looked at different CMSes, but have found developing in them to be either a mishmash of too many unconnected code pieces, or simply not powerful or elegant enough. You've looked at PHP frameworks, and have found they have the power, but don't do Content Management nor have a good enough UI for your clients. You want the power and flexibility of a framework, with the UI and content management of a CMS.
 
-Enter MODX Revolution. A completely flexible, powerful and robust API, built on OOP principles and using a PDO-powered Object Relational Model (ORM) called [xPDO](/display/xPDO20/Home "Home"). Add in a rich, [Sencha](http://sencha.com)-powered UI for your clients, that's fully customizable. Custom properties and sets. Internationalization support. Package distribution built-in so you can pack up your code, and distribute it across any Revolution install. Add custom manager pages to run entire applications within MODX.
+Enter MODX Revolution. A completely flexible, powerful and robust API, built on OOP principles and using a PDO-powered Object Relational Model (ORM) called [xPDO](extending-modx/xpdo). Add in a rich, [Sencha](http://sencha.com)-powered UI for your clients, that's fully customizable. Custom properties and sets. Internationalization support. Package distribution built-in so you can pack up your code, and distribute it across any Revolution install. Add custom manager pages to run entire applications within MODX.
 
 ## Basic Concepts
 

@@ -3,7 +3,7 @@ title: "Обновление MODX сайта"
 translation: "getting-started/maintenance/upgrading"
 ---
 
-Этот документ описывает обновление для MODX версий 2.x. Если вам необходимо обновить более раннюю версию Evolution (1.x), то это официально не поддерживается в настоящее время, но материалы, которые вам помогут в этом вопросе, вы можете [найти здесь](display/revolution20/Upgrading+from+MODX+Evolution).
+Этот документ описывает обновление для MODX версий 2.x. Если вам необходимо обновить более раннюю версию Evolution (1.x), то это официально не поддерживается в настоящее время, но материалы, которые вам помогут в этом вопросе, вы можете [найти здесь](getting-started/maintenance/upgrading/evolution).
 
 ## Обновление MODX Revolution версии 2.x
 
@@ -65,10 +65,10 @@ translation: "getting-started/maintenance/upgrading"
 
  Для обновлений, касающихся определенных версий, пожалуйста ознакомьтесь со следующими страницами:
 
-- [Обновление до версии 2.2](administering-your-site/upgrading-modx/upgrading-to-2.2.x "Обновление до 2.2.x")
-- [Обновление с версии 2.0.x до 2.1.x](administering-your-site/upgrading-modx/upgrading-from-2.0.x-to-2.1.x "Обновление с версии 2.0.x до 2.1.x") **!важно**
-- [Обновление с более ранних версий до 2.0.5](administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5 "Обновление с более ранних версий до 2.0.5")
-- [Обновление до версии MODX Revolution 2.0.0-rc-2](administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.0-rc-2 "Обновление до версии MODX Revolution 2.0.0-rc-2")
+- [Обновление до версии 2.2](getting-started/maintenance/upgrading/2.2 "Обновление до 2.2.x")
+- [Обновление с версии 2.0.x до 2.1.x](getting-started/maintenance/upgrading/2.1 "Обновление с версии 2.0.x до 2.1.x") **!важно**
+- [Обновление с более ранних версий до 2.0.5](getting-started/maintenance/upgrading/2.0.5 "Обновление с более ранних версий до 2.0.5")
+- [Обновление до версии MODX Revolution 2.0.0-rc-2](getting-started/maintenance/upgrading/2.0.0-rc2 "Обновление до версии MODX Revolution 2.0.0-rc-2")
 
  Обновления после 2.0.0-rc-2 должны выполняться без проблем.
 
@@ -95,9 +95,9 @@ cp -fr modx-2.2.0-pl/* /www/public_html/modx
 ### Смотрите также
 
 1. [Решение проблем с обновлением](getting-started/maintenance/upgrading/troubleshooting)
-2. [Обновление до версии 2.2.x](administering-your-site/upgrading-modx/upgrading-to-2.2.x)
-3. [Обновление с версии 2.0.x до 2.1.x](administering-your-site/upgrading-modx/upgrading-from-2.0.x-to-2.1.x)
-4. [Обновление с более ранних версий до 2.0.5](administering-your-site/upgrading-modx/upgrading-from-versions-earlier-than-2.0.5)
-5. [Обновление до версии MODX Revolution 2.0.0-rc-2](administering-your-site/upgrading-modx/upgrading-to-revolution-2.0.0-rc-2)
-6. [Обновление с MODX Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution)
-7. [Функциональные отличия от Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution)
+2. [Обновление до версии 2.2.x](getting-started/maintenance/upgrading/2.2)
+3. [Обновление с версии 2.0.x до 2.1.x](getting-started/maintenance/upgrading/2.1)
+4. [Обновление с более ранних версий до 2.0.5](getting-started/maintenance/upgrading/2.0.5)
+5. [Обновление до версии MODX Revolution 2.0.0-rc-2](getting-started/maintenance/upgrading/2.0.0-rc2)
+6. [Обновление с MODX Evolution](getting-started/maintenance/upgrading/evolution)
+7. [Функциональные отличия от Evolution](getting-started/maintenance/upgrading/evolution/functional-changes)

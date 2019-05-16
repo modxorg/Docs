@@ -21,11 +21,10 @@ translation: "building-sites/client-proofing/form-customization"
 
 Более подробную информацию о каждой части настройки формы можно найти на соответствующей странице каждой части:
 
-1. [Настройка менеджера с помощью плагинов](_legacy/administering-your-site/customizing-the-manager-via-plugins)
-2. [Профили настройки формы](building-sites/client-proofing/form-customization/profiles)
-3. [Наборы настроек формы](building-sites/client-proofing/form-customization/sets)
+1. [Профили настройки формы](building-sites/client-proofing/form-customization/profiles)
+2. [Наборы настроек формы](building-sites/client-proofing/form-customization/sets)
     1. [Настройка вкладок с помощью настройки формы](building-sites/client-proofing/form-customization/tabs)
-4. [Шаблоны и темы менеджера](building-sites/client-proofing/custom-manager-themes)
+3. [Шаблоны и темы менеджера](building-sites/client-proofing/custom-manager-themes)
 
 ### Какие формы я могу настроить?
 
@@ -33,8 +32,7 @@ translation: "building-sites/client-proofing/form-customization"
 
 ## Смотрите также
 
-1. [Настройка менеджера с помощью плагинов](_legacy/administering-your-site/customizing-the-manager-via-plugins)
-2. [Профили настройки формы](building-sites/client-proofing/form-customization/profiles)
-3. [Наборы настроек формы](building-sites/client-proofing/form-customization/sets)
+1. [Профили настройки формы](building-sites/client-proofing/form-customization/profiles)
+2. [Наборы настроек формы](building-sites/client-proofing/form-customization/sets)
     1. [Настройка вкладок с помощью настройки формы](building-sites/client-proofing/form-customization/tabs)
-4. [Шаблоны и темы менеджера](building-sites/client-proofing/custom-manager-themes)
+3. [Шаблоны и темы менеджера](building-sites/client-proofing/custom-manager-themes)

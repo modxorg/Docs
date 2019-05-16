@@ -20,11 +20,11 @@ _old_uri: "revo/advsearch"
 
 ## History
 
- AdvSearch was written by [Coroico](/display/~coroico) and first released on August 14th, 2011. It is loosely based on AjaxSearch for MODx Evolution by KyleJ/Coroico, minus dynamic content search based on Zend search library.
+ AdvSearch was written by [Coroico](https://github.com/coroico) and first released on August 14th, 2011. It is loosely based on AjaxSearch for MODX Evolution by KyleJ/Coroico, minus dynamic content search based on Zend search library.
 
 ### Download
 
- It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/advsearch>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/advsearch>
 
  Before to run the first search with AdvSearch, you need to install the Zend Search library first. See installation chapter below.
 

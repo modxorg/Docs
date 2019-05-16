@@ -5,7 +5,7 @@ translation: "extending-modx/core-model/modx"
 
 ## modX Класс
 
-Это базовый класс MODX Revolution: он используется для многих основных методов MODX. Это расширяет [xPDO](/xpdo/1.x/class-reference/xpdo "xPDO") класс.
+Это базовый класс MODX Revolution: он используется для многих основных методов MODX. Это расширяет [xPDO](extending-modx/xpdo "Home") класс.
 
 ## Методы
 

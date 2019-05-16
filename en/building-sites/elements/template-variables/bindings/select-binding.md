@@ -58,7 +58,7 @@ Just be aware that the sort order here may force your empty option somewhere int
 
 ## More Complex Example: Template Variables
 
-What if you need to write a query that accesses the template variables associated with a particular page? Those variables aren't directly stored in the _site\_content_ table, they are stored in other tables. This forces you to write a JOIN statement. Here's a more tangible example: let's say all the pages in a particular folder have a template variable for _opening\_date_... that field doesn't exist in the "site\_content" table. Hold onto your butts, because this gets complicated. You have to look at MODx's gory plumbing in order to pull this off. You have to understand how MODx extends the data stored in the "site\_content" table and makes use of the custom fields known as "Template Variables". This is open to some debate, but unfortunately, MODx's database schema doesn't follow the strict best practices for foreign keys... it's not always clear which table is being referenced by a particular column... it's not even always clear that a column ''is'' a foreign key, but rest assured, it is possible... it just takes a bit of patience to figure out.
+What if you need to write a query that accesses the template variables associated with a particular page? Those variables aren't directly stored in the _site\_content_ table, they are stored in other tables. This forces you to write a JOIN statement. Here's a more tangible example: let's say all the pages in a particular folder have a template variable for _opening\_date_... that field doesn't exist in the "site\_content" table. Hold onto your butts, because this gets complicated. You have to look at MODX's gory plumbing in order to pull this off. You have to understand how MODX extends the data stored in the "site\_content" table and makes use of the custom fields known as "Template Variables". This is open to some debate, but unfortunately, MODX's database schema doesn't follow the strict best practices for foreign keys... it's not always clear which table is being referenced by a particular column... it's not even always clear that a column ''is'' a foreign key, but rest assured, it is possible... it just takes a bit of patience to figure out.
 
 First, have a look at the following tables (you may have prefixes to your table names):
 
@@ -84,7 +84,7 @@ WHERE
 ;
 ```
 
-MODx uses the MyISAM table engine, not InnoDB, so it does not rigidly enforce the foreign key constraints that are inferred by the table structure.
+MODX uses the MyISAM table engine, not InnoDB, so it does not rigidly enforce the foreign key constraints that are inferred by the table structure.
 
 ## Errors
 
@@ -92,7 +92,7 @@ What if your MySQL statement executes perfectly, but once you put it in your SEL
 
 - Your query **MUST** appear on one line. Newline characters cause the @SELECT binding to choke.
 - Delete all MySQL comments /\* this style \*/ and -- this style
-- Make sure you have entered the table names correctly! Many sites use table-prefixes, so it is imperative that you test your queries before trying to use them in a @SELECT Binding. If your query has an error, MODx will log the error to the error log.
+- Make sure you have entered the table names correctly! Many sites use table-prefixes, so it is imperative that you test your queries before trying to use them in a @SELECT Binding. If your query has an error, MODX will log the error to the error log.
 
 ## Next Step: Formatting
 

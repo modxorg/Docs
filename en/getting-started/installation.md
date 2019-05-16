@@ -5,27 +5,27 @@ _old_id: "165"
 _old_uri: "2.x/getting-started/installation"
 ---
 
-This page is for **new installations only**. If you're looking to upgrade, see [Upgrading MODx](getting-started/maintenance/upgrading "Upgrading MODx").
+This page is for **new installations only**. To upgrade MODX please refer to the [Upgrading MODX](getting-started/maintenance/upgrading "Upgrading MODX") documentation.
 
-Before starting your installation, you should ensure your server meets the [Server Requirements](getting-started/server-requirements "Server Requirements").
+Before installing please ensure the server meets the [Server Requirements](getting-started/server-requirements "Server Requirements").
 
 ## Downloading MODX
 
-To download MODX Revolution 2.x, you have two options: the MODX Site or via Git:
+MODX Revolution 2.x can be downloaded either directly from [the MODX site](https://modx.com/download) or via [Git](http://github.com/modxcms).
 
 ### From the MODX Site
 
-The quickest way to get your Revolution site up and running is to grab a copy directly from the [MODX Downloads](https://modx.com/download/) page. There you will find downloads for MODX Revolution.
+The quickest way to download MODX Revolution is to download a copy directly from the [MODX Downloads](https://modx.com/download/) page.
 
-It's worth noting that these packages are basically snapshots from Git, our version control software, at the time they were packaged. A lot may have changed since then, including bugfixes and the addition of new features. Note the release date for each package. Git will always have the latest up-to-date snapshot of Revolution.
+Please note that the packages listed on this page are snapshots from Git, our version control software, from the time they were packaged. However, Git will always have the latest up-to-date snapshot of Revolution which may contain various bugfixes and additional new features.
 
 #### "Traditional" vs. "Advanced"
 
-You have probably noticed that there are a few different _types_ of packages to choose from. Some are labeled as "Advanced," others are just a plain old "modx-2.1.0-xxxx-#.zip". So what do these labels mean?
+There are two distinct top level versions of MODX, "Advanced" and "Traditional".
 
-- Traditional - These packages are pre-built snapshots from Git. You can simply extract the files to your server and follow the [Basic Installation](getting-started/installation/standard "Basic Installation") guide to install MODX. Most users should choose this version.
+- Traditional - These packages are pre-built snapshots from Git. Simply extract the files to your server and follow the [Basic Installation](getting-started/installation/standard "Basic Installation") guide to install MODX. Most users should choose this version.
 
-- Advanced - These packages are slightly less than half the size of the "Traditional" downloads, since the "core" contents are compressed. MODX Setup will try to unpack or "build" this package during install. It's recommended you only use this if you plan to move the core, manager or connectors directories, and you have SSH access and are familiar with making folders writable. Please follow the [Advanced Installation](getting-started/installation/advanced "Advanced Installation") document for this distribution.
+- Advanced - These packages are slightly less than half the size of the "Traditional" downloads, since the "core" contents are compressed. MODX Setup will try to unpack or "build" this package during install. It's recommended to use of this version if there are plans to move the core, manager or connectors directories. SSH access and a familiarity with making folders writable will be required. Please follow the [Advanced Installation](getting-started/installation/advanced "Advanced Installation") document for this distribution.
 
 ### From Git
 
@@ -33,7 +33,7 @@ MODX Revolution is managed on [GitHub](http://github.com/modxcms). Please read t
 
 ## Installing MODX
 
-MODX comes with multiple distributions for download. Installation steps will differ in each distribution, so please select the distribution's installation guide below:
+MODX comes with multiple distributions for download and installation steps will differ in each distribution. Please select the relevant distribution's installation guide using the links below:
 
 - Traditional Distribution: [Basic Installation](getting-started/installation/standard "Basic Installation")
 - Advanced Distribution: [Advanced Installation](getting-started/installation/advanced "Advanced Installation")

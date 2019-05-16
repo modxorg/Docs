@@ -22,7 +22,7 @@ _old_uri: "revo/amazonses-mailing-list"
 1. Install the package via _Package Management_
 2. Open _System Settings_ and filter the settings by _Namespace **aSES**_
 3. Set the _Amazon ID (Access Key ID)_ and _Amazon Secret_ (_Secret Access Key_) - [https://console.aws.amazon.com/iam/home?#security\_credential](https://console.aws.amazon.com/iam/home?#security_credential) - _Access Key_s
-4. Create a _MODx resource_and put under content
+4. Create a _MODX resource_and put under content
 
 ``` php
 [[!aSES]]

@@ -15,11 +15,11 @@ Quip is a simple commenting [Snippet](developing-in-modx/basic-development/snipp
 
 ### History
 
-Quip was written by [Shaun McCormick](/display/~splittingred) as a simple commenting component, and first released on May 7th, 2009.
+Quip was written by [Shaun McCormick](https://github.com/splittingred) as a simple commenting component, and first released on May 7th, 2009.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/quip>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/quip>
 
 API Documentation for Quip can also be found here: <http://api.modx.com/quip/>
 

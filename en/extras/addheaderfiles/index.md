@@ -17,7 +17,7 @@ _old_uri: "revo/addheaderfiles"
 
 ### Download
 
- It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Package+Management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/addheaderfiles>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/addheaderfiles>
 
 ### Support and Bug Reporting
 

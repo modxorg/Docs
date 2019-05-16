@@ -17,11 +17,11 @@ Rampart is a robust anti-spam tool for MODX Revolution. It can be used to help p
 
 ## History
 
-Rampart was written by [Shaun McCormick](/display/~splittingred) and first released on January 26th, 2011.
+Rampart was written by [Shaun McCormick](https://github.com/splittingred) and first released on January 26th, 2011.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via \[Package Management\], or from the MODx Extras Repository, here: <http://modx.com/extras/package/rampart>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/rampart>
 
 ### Development and Bug Reporting
 

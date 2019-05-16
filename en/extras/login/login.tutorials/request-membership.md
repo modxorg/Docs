@@ -12,7 +12,7 @@ Do not try to use extended user fields yet. First get the registration process w
 
 A good example for what we're trying to accomplish in this tutorial is visible on the [FoxyCart Forum](http://forum.foxycart.com/): when you're viewing the forums as a guest, the header displays a login link, but after you've signed in, additional functionality is unlocked. You've seen this type of thing on many sites.
 
-The FoxyCart forum is not running MODx: we're just using a simplified version of their login flow as an example.
+The FoxyCart forum is not running MODX: we're just using a simplified version of their login flow as an example.
 
 The steps go something like this:
 
@@ -118,12 +118,12 @@ Next create a chunk that will be displayed to members when they are logged in:
 
 Note the special format of the logout link: you trigger the logout action by passing a parameter to the _Login_ page.
 
-The syntax for passing parameters to a MODx URL tag is similar the way parameters are passed to Snippets; this ensures that the parameter gets correctly appended to the URL. The `[[~1? &service=`logout`]]` tag would render two different ways depending on whether friendly URLs were enabled:
+The syntax for passing parameters to a MODX URL tag is similar the way parameters are passed to Snippets; this ensures that the parameter gets correctly appended to the URL. The `[[~1? &service=`logout`]]` tag would render two different ways depending on whether friendly URLs were enabled:
 
 - <http://yoursite.com/index.php?id=1&service=logout>
 - <http://yoursite.com/login?service=logout>
 
-Note that MODx automatically handled the placement of the "?"
+Note that MODX automatically handled the placement of the "?"
 
 We could do the same thing for any parts of our page that need to change how they look based on whether a user is logged-in or not. In the example of FoxyCart, their site also added some menu options that appeared when when a user had successfully logged in. All you would need to do is create another instance of the [Personalize](http://modx.com/extras/package/personalize) Snippet with its corresponding **yesChunk** and **noChunk**. We're going to assume you get the idea and you can repeat as needed.
 
@@ -310,7 +310,7 @@ Triple-check the page ID you have set the **&submittedResourceId** parameter. If
 
 The cause is almost certainly that you do not have a Chunk by the name listed for the **&activationEmailTpl** parameter. The default install of the Login package uses a Chunk named **lgnActivateEmailTpl**, whereas the tutorial here used one named **ActivateEmailTpl**.
 
-### I never get the Emails that MODx sends!
+### I never get the Emails that MODX sends!
 
 Email configuration is unfortunately complex and differs from server to server. A good place to start is checking whether PHP can send emails. Try placing the following script on your site, then navigate to it in your browser:
 

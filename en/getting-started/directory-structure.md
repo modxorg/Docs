@@ -14,9 +14,7 @@ For example, when we create a resource, we request connectors/resource/index.php
 
 ### Notable Files
 
-- **connectors/index.php**- This file is particularly useful in creating your own connectors. Simply include this file in your connectors, and then handle the request using $modx->request->handleRequest();
-
-- - - - - -
+- **connectors/index.php**- This file is particularly useful in creating your own connectors. Simply include this file in your connectors, and then handle the request using `$modx->request->handleRequest()`;
 
 ## core/
 
@@ -44,7 +42,7 @@ A cache of every RSS feed in MODX.
 
 Unlike the cache in MODX Evolution, the MODX Revolution cache is split up into several parts. Every context (ie. web and mgr) has a context.cache.php file. This file is like the config.cache.php file, except that it only caches settings that have been overridden from their default System Setting. Any context can override a system setting.
 
-Additionally, the web context cache will contain separate directories for resources and elements. A resource with ID 12 will be found at cache/web/resources/12.cache.php. This new caching mechanism means that loading times will decrease, and the limit on the number of cacheable resources will disappear.
+Additionally, the web context cache will contain separate directories for resources and elements. A resource with ID 12 will be found at `cache/web/resources/12.cache.php`. This new caching mechanism means that loading times will decrease, and the limit on the number of cacheable resources will disappear.
 
 ### core/components/
 
@@ -97,9 +95,9 @@ So, MODX does model sort-of similar. We actually do a MVC/C model, in which we a
 
 #### core/model/modx/
 
-"Wait! I thought we were already in a modx dir? Why another modx subdirectory?" Good question. Well, MODX Revolution uses xPDO for its database management. xPDO uses the idea of 'packages' for different connections to different models. So, if I wanted to create my custom tables, I'd create a new xPDO package, and add it in at runtime. This way I could use the maps and classes created without having to modify the MODX core. This is shown in the [Crea ting a 3rd Party Component](extending-modx/tutorials/developing-an-extra "Writing a 3rd Party Component in MODX Revolution, Pt. I") tutorial.
+"Wait! I thought we were already in a modx dir? Why another modx subdirectory?" Good question. Well, MODX Revolution uses xPDO for its database management. xPDO uses the idea of 'packages' for different connections to different models. So, if I wanted to create my custom tables, I'd create a new xPDO package, and add it in at runtime. This way I could use the maps and classes created without having to modify the MODX core. This is shown in the [Creating a 3rd Party Component](extending-modx/tutorials/developing-an-extra "Writing a 3rd Party Component in MODX Revolution, Pt. I") tutorial.
 
-So, that said, it can be inferred that the core/model/modx directory is referring to the "modx" package. Let's go inside it, and you'll see a ton of classes. These are the classes that are either xPDOObjects - which are PHP classes that represent tables in the DB (ie, modsnippet.class.php is a PHP class that is an object of modx\_site\_snippets), or they are functional classes, such as modcachemanager.class.php.
+So, that said, it can be inferred that the core/model/modx directory is referring to the "modx" package. Let's go inside it, and you'll see a ton of classes. These are the classes that are either xPDOObjects - which are PHP classes that represent tables in the DB (ie, modsnippet.class.php is a PHP class that is an object of modx\_site\_snippets), or they are functional classes, such as `modcachemanager.class.php`.
 
 The subdirectories in this folder - not including mysql or processors - are subcategories of classes, that are loaded like: $modx->loadClass('transport.modPackageBuilder'); with the "." being the separation of directories.
 
@@ -147,12 +145,10 @@ These classes are used by MODX internally, and developers should never need to d
 
 ### Notable Files
 
-- **core/cache/config.cache.php**- This is the cache file for all of the [System Settings](building-sites/settings "System Settings") in MODX. Their database equivalents are found in the \_system\_settings table, and their xPDO equivalents are modSystemSetting objects.
-  - **_Tip_** - If you ever get locked out by the CAPTCHA component, you can edit this file and set _use\_captcha_to '0' to disable CAPTCHA. Then you can log in and disable CAPTCHA in [System Settings](building-sites/settings "System Settings").
-- **core/cache/sitePublishing.idx.php**- In MODX Evolution, this file contained the cache data for all documents, chunks, and snippets. In Revolution, this is no longer the case, and this file now keeps track of cache refresh intervals.
-- **core/cache/mgr/actions.cache.php**- a map of all modAction objects.
-
-- - - - - -
+- **core/cache/config.cache.php** - This is the cache file for all of the [System Settings](building-sites/settings "System Settings") in MODX. Their database equivalents are found in the \_system\_settings table, and their xPDO equivalents are modSystemSetting objects.
+  - **_Tip_** - If you ever get locked out by the CAPTCHA component, you can edit this file and set _use\_captcha_ to '0' to disable CAPTCHA. Then you can log in and disable CAPTCHA in [System Settings](building-sites/settings "System Settings").
+- **core/cache/sitePublishing.idx.php** - In MODX Evolution, this file contained the cache data for all documents, chunks, and snippets. In Revolution, this is no longer the case, and this file now keeps track of cache refresh intervals.
+- **core/cache/mgr/actions.cache.php** - a map of all modAction objects.
 
 ## manager/
 
@@ -172,15 +168,11 @@ This directory contains the template files for each manager page. They do not co
 
 ### Notable Files
 
-- **manager/assets/ext2/ext-all.js**- This is the main Ext library file, which must be included on all Manager pages (or any page using Ext). It's compressed to save space, decrease download time, and speed up page loads. However, if you're doing a lot of JavaScript work, you're bound to run into some cryptic errors because of the compression. The best way to deal with this is to simply rename this file, and then rename the ext-all.js file to ext-all-debug.js to use the uncompressed version during development. Just be sure to switch them back afterwards!
-
-- - - - - -
+- **manager/assets/ext2/ext-all.js** - This is the main Ext library file, which must be included on all Manager pages (or any page using Ext). It's compressed to save space, decrease download time, and speed up page loads. However, if you're doing a lot of JavaScript work, you're bound to run into some cryptic errors because of the compression. The best way to deal with this is to simply rename this file, and then rename the ext-all.js file to ext-all-debug.js to use the uncompressed version during development. Just be sure to switch them back afterwards!
 
 ## setup/
 
-This directory is the equivalent of the "install" directory in MODX Evolution. It contains the necessary files needed to run Setup and perform a [Fresh Installation](/display/revolution20/Fresh+Installation "Fresh Installation") or an [Upgrade](administering-your-site/upgrading-modx/upgrading-from-modx-evolution "Upgrading from MODX Evolution").
-
-- - - - - -
+This directory contains the necessary files needed to run Setup and perform a [Fresh Installation](getting-started/installation "Fresh Installation") or Update.
 
 ## \_build/
 
@@ -188,13 +180,11 @@ This directory is only present in version of MODX Revolution downloaded from the
 
 ### Notable Files
 
-- **\_build/transport.core.php**- This file must be executed after downloading MODX Revolution, and prior to running Setup. After completion, you should notice a "core" directory inside your core/packages/ directory, which will contain all of the necessary \[Vehicles\]for installing MODX Revolution.
-
-- - - - - -
+- **\_build/transport.core.php** - This file must be executed after downloading MODX Revolution, and prior to running Setup. After completion, you should notice a "core" directory inside your core/packages/ directory, which will contain all of the necessary \[Vehicles\]for installing MODX Revolution.
 
 ## assets/
 
-This directory is not present in MODX Revolution by default, but like in MODX Evolution, it is common to place images, CSS, JavaScript, and other media in here.
+This directory is not present in MODX Revolution by default, but it is common to place images, CSS, JavaScript, and other media in here.
 
 ### assets/components/
 

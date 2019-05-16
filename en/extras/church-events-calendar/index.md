@@ -25,7 +25,7 @@ See a [live demo](http://www.joshua19media.com/modx-development/church-events.ht
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/churchevents>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/churchevents>
 
 ### Development and Bug Reporting
 
@@ -49,7 +49,7 @@ Make a list of all prominent events with a limit of 10 on you page:
 [[!ChurchEventsList?  &prominent=`Yes`  &limit=`10`]]
 ```
 
-### [System Settings](administering-your-site/settings/system-settings "System Settings")
+### [System Settings](building-sites/settings "System Settings")
 
 These need to be created if they do not exist.
 

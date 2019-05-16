@@ -8,12 +8,12 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
 
  The xPDO Object-Relational-Bridge (ORB) relies on a series of PHP classes to provide an interface to database tables. These PHP classes can be generated automatically by parsing a specially formatted XML file, by reverse engineering existing database tables, or they can even be written by hand (masochists only). The easiest approach when dealing with a custom database table is to reverse engineer existing MySQL database tables: MySQL has been around for a long time, and there are numerous tutorials and books out there to help you learn how to use it.
 
- If you're wanting to extend existing MODx classes, e.g. by creating [Custom Resource Classes](developing-in-modx/advanced-development/custom-resource-classes "Custom Resource Classes"), then usually you will start this process with the XML file.
+ If you're wanting to extend existing MODX classes, e.g. by creating [Custom Resource Classes](developing-in-modx/advanced-development/custom-resource-classes "Custom Resource Classes"), then usually you will start this process with the XML file.
 
  Our process will be this:
 
 1. Create a database table (or tables) using MySQL (this can be done via the mysql command line or any number of MySQL GUI clients, e.g. phpMyAdmin or SQL-Yog).
-2. Copy the "reverse-engineering" script (provided below) to your webserver. Put it at the root of your MODx install (this is important so the script can find xPDO). This script uses the xPDO classes to sniff out the definition of the table you just created.
+2. Copy the "reverse-engineering" script (provided below) to your webserver. Put it at the root of your MODX install (this is important so the script can find xPDO). This script uses the xPDO classes to sniff out the definition of the table you just created.
 3. If needed, modify the generated XML definition file to define foreign key relationships, then re-run the script to regenerate the class files.
 4. Connect your newly created class and schema files to a Snippet or Custom Manager Page.
 
@@ -67,7 +67,7 @@ Doctrine_Core::generateModelsFromDb();
   have been created, the purpose of this script has been served, though you will need to run it again if you modify your schema.
 
   USAGE:
-  1. Upload this file to the root of your MODx installation
+  1. Upload this file to the root of your MODX installation
   2. Set the configuration details below
   3. Navigate to this script in a browser to execute it,
   e.g. http://yoursite.com/thisscript.php
@@ -271,7 +271,7 @@ function print_msg($msg) {
 ```
 
  To check whether or not this script succeeded, take a look inside the folder that is mentioned in its output, e.g.
-**/user/youruser/public\_html/core/components/yourpackage/model/yourpackage**. You should see a couple files – one for each table. If you see a TON of tables corresponding to all of MODx's tables, then try to explicitly set the database password and name – leave the following line commented out:
+**/user/youruser/public\_html/core/components/yourpackage/model/yourpackage**. You should see a couple files – one for each table. If you see a TON of tables corresponding to all of MODX's tables, then try to explicitly set the database password and name – leave the following line commented out:
 
  ``` php
 //include('core/config/config.inc.php');

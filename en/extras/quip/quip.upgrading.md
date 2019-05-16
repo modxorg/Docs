@@ -6,7 +6,7 @@ _old_uri: "revo/quip/quip.upgrading"
 
 ## Upgrading Quip
 
-Upgrading Quip is a simple process. Just right-click on Quip in the \[Package Management\], and click 'Check for Updates'. Then click update, and Quip will take you through the upgrade process.
+Upgrading Quip is a simple process. Just right-click on Quip in the [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), and click 'Check for Updates'. Then click update, and Quip will take you through the upgrade process.
 
 ## Version-Specific Issues
 

@@ -18,7 +18,7 @@ The help is provided by an ajax request to a resource named "AdvSearch Help" whi
 ```
 
 The "AdvSearch Help" resource is created with the package installation.
-You could move the "AdvSearch Help" resource in the MODx resource tree but as the resource is found by his name don’t change his name.
+You could move the "AdvSearch Help" resource in the MODX resource tree but as the resource is found by his name don’t change his name.
 
 ## Help window content
 

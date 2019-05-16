@@ -1,12 +1,11 @@
 ---
 title: Политика Администратора
-_old_id: '218'
-_old_uri: building-sites/client-proofing/security/policies/permissions/administrator-policy
+translation: building-sites/client-proofing/security/policies/permissions/administrator-policy
 ---
 
 ## Политика Администратора
 
-Эта политика упакована в MODx и предоставляется пользователям в контексте mgr, которые хотят иметь полный доступ к управлению содержимым MODx
+Эта политика упакована в MODX и предоставляется пользователям в контексте mgr, которые хотят иметь полный доступ к управлению содержимым MODX
 
 ## Разрешения по умолчанию
 
@@ -53,7 +52,7 @@ _old_uri: building-sites/client-proofing/security/policies/permissions/administr
 | file_manager              | Использовать файловый менеджер, в том числе создание / удаление файлов.                                                                                                                                     |
 | file_tree                 | Для просмотра дерева файлов на левой панели.                                                                                                                                                                |
 | flush_sessions            | Может сбрасывать сеансы по всему сайту.                                                                                                                                                                     |
-| frames                    | Чтобы использовать интерфейс диспетчера MODx на всех.                                                                                                                                                       |
+| frames                    | Чтобы использовать интерфейс диспетчера MODX на всех.                                                                                                                                                       |
 | help                      | Для просмотра страницы справки.                                                                                                                                                                             |
 | home                      | Для просмотра страницы приветствия.                                                                                                                                                                         |
 | import_static             | Для просмотра или использования страниц импорта.                                                                                                                                                            |
@@ -119,7 +118,7 @@ _old_uri: building-sites/client-proofing/security/policies/permissions/administr
 
 Если вы создали свои собственные действия и пункты меню (например, если вы создали [страницу настраиваемого менеджера](_legacy/developing-in-modx/custom-manager-pages-tutorial "Пользовательский менеджер страниц Учебник") ), то вы можете определить настраиваемые элементы разрешений при создании элемента меню (Система -> Действия -> Создать меню), который соответствует разрешения перечислены здесь.
 
-![](/download/attachments/18678342/MODX+Custom+Permission.jpg?version=1&modificationDate=1331314961000)
+![](/2.x/en/building-sites/client-proofing/security/policies/permissions/modx+custom+permission.jpg)
 
 ## Смотрите также
 

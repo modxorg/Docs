@@ -15,7 +15,7 @@ Breadcrumbs is a simple navigation trail [Snippet](developing-in-modx/basic-deve
 
 ## History
 
-Breadcrumbs has been around since the start of MODx 0.9.1, or MODx Evolution, with its first release on June 30th, 2006. It has had many different authors since its inception.
+Breadcrumbs has been around since the start of MODX 0.9.1, or MODX Evolution, with its first release on June 30th, 2006. It has had many different authors since its inception.
 
 ### Public Releases
 
@@ -37,7 +37,7 @@ Breadcrumbs has been around since the start of MODx 0.9.1, or MODx Evolution, wi
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/54>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/54>
 
 ## Usage
 

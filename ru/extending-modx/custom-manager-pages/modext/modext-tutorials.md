@@ -17,7 +17,7 @@ translation: extending-modx/custom-manager-pages/modext/modext-tutorials
 
 Фантастическая ссылка на Ext JS - [Ext JS в действии Иисуса Гарсии](http://www.amazon.com/Ext-JS-Action-Jesus-Garcia/dp/1935182110/ref=sr_1_1?ie=UTF8&qid=1370295075&sr=8-1&keywords=Ext+JS+in+Action).
 
-![](/download/attachments/46137364/ext_js_cover.jpg?version=1&modificationDate=1370295179000)
+![](ext_js_cover.jpg)
 
 Не берите в голову странную обложку с Франкенштейном 19-го века, танцующим брейк-данс - это на самом деле хорошая ссылка. Это полезно для MODX, в частности, потому что он охватывает Ext JS версии 3. Он был обновлен в 2011 году.
 

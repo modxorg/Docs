@@ -1,5 +1,5 @@
 ---
-title: "Upgrading from MODx Evolution"
+title: "Upgrading from MODX Evolution"
 _old_id: "320"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-from-modx-evolution"
 ---
@@ -34,6 +34,6 @@ Some Extras in Evolution have been discontinued or are no longer in active devel
 
 ## See Also
 
-1. [Functional Changes from Evolution](administering-your-site/upgrading-modx/upgrading-from-modx-evolution/functional-changes-from-evolution)
+1. [Functional Changes from Evolution](getting-started/maintenance/upgrading/evolution/functional-changes-from-evolution)
 
 - [Bob's Guide to Upgrading to Revolution](http://bobsguides.com/migrating-revolution.html)

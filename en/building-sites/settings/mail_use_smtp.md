@@ -10,4 +10,4 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/mail_use_smtp"
 **Type**: Yes/No
 **Default**: No
 
-If true, MODx will attempt to use SMTP in mail functions.
+If true, MODX will attempt to use SMTP in mail functions.

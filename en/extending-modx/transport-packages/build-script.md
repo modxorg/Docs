@@ -4,7 +4,7 @@ _old_id: "67"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script"
 ---
 
-Users using Revolution 2.0.0-beta-4 or earlier should note that the defines are different in beta5 and onward. An example: xPDOTransport::UNIQUE\_KEYS in beta5+ is XPDO\_TRANSPORT\_UNIQUE\_KEYS in beta4 and earlier. MODx recommends to just update to beta5/SVN.
+Users using Revolution 2.0.0-beta-4 or earlier should note that the defines are different in beta5 and onward. An example: xPDOTransport::UNIQUE\_KEYS in beta5+ is XPDO\_TRANSPORT\_UNIQUE\_KEYS in beta4 and earlier. MODX recommends to just update to beta5/SVN.
 
 A build script. What is that, you might ask? This is the meat of the packaging process; here is where your component is actually put into the nice, neat .zip transport package that you find on modxcms.com or through Revolution's Package Management section.
 
@@ -98,9 +98,9 @@ The modPackageBuilder::createPackage function has 3 parameters:
 _name_, _version_, and _release_. For us,
 we'll be doing quip-0.1-alpha7, so let's go with that.
 
-Next, we'll register a [Namespace](extending-modx/namespaces "Namespaces") to this package. Not all packages need [Namespaces](extending-modx/namespaces "Namespaces"); but all 3rd Party Components do. Basically, a Namespace is an organizing tool for MODx so that MODx can know what objects are tied to what package. This is helpful later on should we want to uninstall our package; we'd want it to remove the objects we'd install.
+Next, we'll register a [Namespace](extending-modx/namespaces "Namespaces") to this package. Not all packages need [Namespaces](extending-modx/namespaces "Namespaces"); but all 3rd Party Components do. Basically, a Namespace is an organizing tool for MODX so that MODX can know what objects are tied to what package. This is helpful later on should we want to uninstall our package; we'd want it to remove the objects we'd install.
 
-Plus, should we want to add any [Lexicon Entries](extending-modx/internationalization "Internationalization") to this package (which we will), MODx does so by relating it to it's Namespace. Our package builder will assign our Lexicon Entries to the Namespace, so we can easily manage _just_ our Lexicon Entries; not any others.
+Plus, should we want to add any [Lexicon Entries](extending-modx/internationalization "Internationalization") to this package (which we will), MODX does so by relating it to it's Namespace. Our package builder will assign our Lexicon Entries to the Namespace, so we can easily manage _just_ our Lexicon Entries; not any others.
 
 ## Packaging in Objects
 
@@ -121,11 +121,11 @@ $vehicle = $builder->createVehicle($snippet,array(
 
 So, first off, we created a snippet object. Note that you'll have to specify an arbitrary ID for it, even though we wont keep it later. This is required. Then, we used the 'createVehicle' function in modPackageBuilder to create the vehicle object. Let's look at those attributes options more closely:
 
-- **xPDOTransport::UNIQUE\_KEY** _(string/array)_ - Here you'd place the unique key that identifies the object you're creating. This will tell MODx to search for the modSnippet with the 'name' equal to the packaged in name (here, 'Test') when updating or removing the object. For most objects, this will be 'name'; others require different settings. Some might even require an array of two or more fields.
-- **xPDOTransport::UPDATE\_OBJECT** _(boolean)_ - Either true or false, this tells MODx whether or not to update the object if it is found in the DB upon install (or update). Sometimes, if the object is already there, you may not want to update it - the update might erase the user's current settings for that object.
-- **xPDOTransport::PRESERVE\_KEYS** _(boolean)_ - Either true or false, this tells MODx whether or not to rewrite the primary keys when the object is found. This can be useful if you're wanting the PKs to stay the same when you update - some PKs are auto\_increment, and if you're wanting those to stay the same number, you'd set this to true. Note: If the object already exists, this feature only works if xPDOTransport::UPDATE\_OBJECT is set to true as well. If the object is not found, it will work regardless.
+- **xPDOTransport::UNIQUE\_KEY** _(string/array)_ - Here you'd place the unique key that identifies the object you're creating. This will tell MODX to search for the modSnippet with the 'name' equal to the packaged in name (here, 'Test') when updating or removing the object. For most objects, this will be 'name'; others require different settings. Some might even require an array of two or more fields.
+- **xPDOTransport::UPDATE\_OBJECT** _(boolean)_ - Either true or false, this tells MODX whether or not to update the object if it is found in the DB upon install (or update). Sometimes, if the object is already there, you may not want to update it - the update might erase the user's current settings for that object.
+- **xPDOTransport::PRESERVE\_KEYS** _(boolean)_ - Either true or false, this tells MODX whether or not to rewrite the primary keys when the object is found. This can be useful if you're wanting the PKs to stay the same when you update - some PKs are auto\_increment, and if you're wanting those to stay the same number, you'd set this to true. Note: If the object already exists, this feature only works if xPDOTransport::UPDATE\_OBJECT is set to true as well. If the object is not found, it will work regardless.
 
-Simple enough? So our example tells it to look for a Snippet named 'Test', and if it finds it, update its contents. If it doesnt find it, create it. However, if it does find it; we told MODx not to update its PK - there's no need to adjust that in this situation.
+Simple enough? So our example tells it to look for a Snippet named 'Test', and if it finds it, update its contents. If it doesnt find it, create it. However, if it does find it; we told MODX not to update its PK - there's no need to adjust that in this situation.
 
 Now, what about related objects? What if I want to package in my modMenu, along with its Action associated with the modMenu? Here's a bit more complex scenario:
 
@@ -168,7 +168,7 @@ $vehicle= $builder->createVehicle($menu,array (
 
 Okay, a bit more meat here. We're introducing 2 new parameters:
 
-- **xPDOTransport::RELATED\_OBJECTS** _(boolean)_ - Either true or false, this will tell MODx we want to search for related objects to this object. This must be set for the next parameter to work.
+- **xPDOTransport::RELATED\_OBJECTS** _(boolean)_ - Either true or false, this will tell MODX we want to search for related objects to this object. This must be set for the next parameter to work.
 - **xPDOTransport::RELATED\_OBJECT\_ATTRIBUTES** _(array)_ - This defines the types and details of the related objects we want to grab. If you note, the format is simply an associative array of attributes - similar to the parent object's attributes - where the key is the "alias" of the related object we want to grab. The aliases can be found in the Schema, located in _core/model/schema/modx.mysql.schema.xml_.
 
 So our example above tells us on the modAction (found by looking for the modAction with a namespace of 'quip' and a controller of 'index') to include the related modAction object that we package in. We packaged them in manually using xPDO's addOne function on the modAction.
@@ -387,7 +387,7 @@ $builder->putVehicle($vehicle);
 Okay, first things first. File resolvers take two options:
 
 - **source** - This is the target directory or script. If it's a file resolver, it must not end with a trailing slash and must be a valid directory. If it's a PHP script resolver, it must be a valid and accessible file.
-- **target** - Only applicable to file resolvers, this tells MODx where to install the source files. It is an eval()'ed statement, so must be used as in the example. The standard MODx defines are available to you; use those to grab base paths to target.
+- **target** - Only applicable to file resolvers, this tells MODX where to install the source files. It is an eval()'ed statement, so must be used as in the example. The standard MODX defines are available to you; use those to grab base paths to target.
 
 So in our examples, we simply move all the files in our source core directory to modx/core/components/quip/ (since our directory that we're moving is named "quip"), and all the files in our source assets directory to modx/assets/components/quip/.
 
@@ -407,7 +407,7 @@ We have our lexicon structured nicely in our \\core/components/quip/lexicon dire
 
 As you can see, we have a subdirectory as 'en', the IANA code for English. Then, we have a 'default.inc.php' - this represents the 'default' lexicon topic. Should we want to create separate lexicon topics, we would name them 'topicname.inc.php'.
 
-As of MODX Revolution RC-2, MODx will automatically find the lexicons in your lexicon directory, assuming that you put them in this structure in the following place: '{namespace\_path}lexicon/', where the Namespace path is the path you put for your Namespace earlier. You don't have to build in the lexicons directly at all; MODx will parse it for you.
+As of MODX Revolution RC-2, MODX will automatically find the lexicons in your lexicon directory, assuming that you put them in this structure in the following place: '{namespace\_path}lexicon/', where the Namespace path is the path you put for your Namespace earlier. You don't have to build in the lexicons directly at all; MODX will parse it for you.
 
 This is because the lexicons are cached first from your files, then any overrides from the DB are merged and cached. This allows people to 'override' your lexicons by using Lexicon Management in the Manager, should they choose to, without breaking their upgrade path for your Component.
 
@@ -415,7 +415,7 @@ This is because the lexicons are cached first from your files, then any override
 
 Each package has what are called 'package attributes', which can be passed to any resolver or validator. You could pass pretty much anything you want into the function modPackageBuilder::setPackageAttributes(), in an array format. There are, however, three special keys that we'll deal with.
 
-- **license** (string) - This represents your license agreement. Should MODx find this not empty during install, it will prompt the user to agree to it before they can proceed to install the package.
+- **license** (string) - This represents your license agreement. Should MODX find this not empty during install, it will prompt the user to agree to it before they can proceed to install the package.
 - **readme** (string) - This holds the readme. Before installing, if this is not empty, the user will be able to view the readme. This can be useful to make sure people see any requirements before they install.
 - **setup-options** (string) - And here is the best part - this can be an HTML form (minus the form tags) that will pass any user-inputted options to the resolvers or validators. This means that you can take in user input before install, and process it during install!
 

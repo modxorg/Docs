@@ -57,11 +57,8 @@ translation: "getting-started/installation/cli/config.xml"
 ## Так же
 
 - [Базовая Установка](getting-started/installation/standard)
-  - [MODX Revolution на Debian](_legacy/getting-started/modx-revolution-on-debian)
   - [Гид по Lighttpd](getting-started/friendly-urls/lighttpd)
-  - [Проблемы с WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
   - [Установка на сервере с запущеным ModSecurity](getting-started/installation/troubleshooting/modsecurity)
-  - [MODX и Suhosin](_legacy/getting-started/modx-and-suhosin)
   - [Настройка Сервера Nginx](getting-started/friendly-urls/nginx)
 - [Расширенная Установка](getting-started/installation/advanced)
 - [Установка через Git](getting-started/installation/git)
@@ -69,4 +66,3 @@ translation: "getting-started/installation/cli/config.xml"
   - [Создание Установочного Xml Файла](getting-started/installation/cli/config.xml)
 - [Устранение неполадок при установке](getting-started/installation/troubleshooting)
 - [Успешная Установка, Что Дальше?](getting-started/getting-started)
-- [Использование MODX Revolution от SVN](_legacy/getting-started/using-modx-revolution-from-svn)

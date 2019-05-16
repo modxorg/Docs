@@ -6,7 +6,7 @@ _old_uri: "2.x/case-studies-and-tutorials/loading-pages-in-the-front-end-via-aja
 
 ## The Problem
 
- We want in our site to use [jQuery's tabs](http://jqueryui.com/demos/tabs/) to load our Resources via AJAX. How do we do that in MODx? This tutorial will show you just how easy it is to accomplish this in MODX Revolution.
+ We want in our site to use [jQuery's tabs](http://jqueryui.com/demos/tabs/) to load our Resources via AJAX. How do we do that in MODX? This tutorial will show you just how easy it is to accomplish this in MODX Revolution.
 
 ## Creating the Resources
 

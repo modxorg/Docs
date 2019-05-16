@@ -11,7 +11,7 @@ translation: "building-sites/client-proofing/dashboards/managing"
 
 Вы увидите поля имя и описания, а ниже - список виджетов, назначенных для панели управления. Вы можете перетаскивать виджеты, чтобы изменить их порядок, добавлять виджеты, или удалять виджеты, нажав правой кнопкой мыши на нужный:
 
-![](/download/attachments/35586558/dashboard-edit.png?version=1&modificationDate=1315431495000)
+![](/2.x/en/building-sites/client-proofing/dashboards/dashboard-edit.png)
 
 ## Смотрите также
 

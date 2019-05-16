@@ -20,7 +20,7 @@ _old_uri: "revo/rezimgcrop"
 
 ### Download
 
- It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/rezimgcrop2>
+ It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/rezimgcrop2>
 
 ### Attributes
 

@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::sendUnauthorizedPage
 
- Send the user to the MODx unauthorized page.
+ Send the user to the MODX unauthorized page.
 
 ## Syntax
 

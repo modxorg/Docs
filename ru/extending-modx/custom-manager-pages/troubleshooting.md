@@ -24,7 +24,6 @@ translation: "extending-modx/custom-manager-pages/troubleshooting"
 
 - [Документация по ExtJS 3.4.0](http://docs.sencha.com/ext-js/3-4/)
 - [Пользовательские страницы менеджера](extending-modx/custom-manager-pages "Custom Manager Pages")
-- [Учебник по созданию пользовательских страниц менеджера](_legacy/developing-in-modx/custom-manager-pages-tutorial "Custom Manager Pages Tutorial")
 - [Разработка дополнения в MODX Revolution](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") (в частности, [часть 2](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II"))
 
 ## 1. Общая информация

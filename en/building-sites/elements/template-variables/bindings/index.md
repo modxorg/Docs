@@ -9,7 +9,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/bin
 In the context to Template Variables, a Data Source is the location of the information to be displayed. A Data source can come from any of the following sources:
 
 - an externally generated file that is sent via FTP to the server
-- a Database table accessible to MODx
+- a Database table accessible to MODX
 - a [Resources](building-sites/resources "Resources") in the resource tree
 - a [Chunk](building-sites/elements/chunks "Chunks") in the Elements tree
 - the result of an evaluated PHP script

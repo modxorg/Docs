@@ -18,7 +18,7 @@ HitsPage was written by Valentine Rasulov and released October 27th, 2011
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here:
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here:
 
 <http://modx.com/extras/package/hitspage>
 
@@ -26,7 +26,7 @@ It can be downloaded from within the MODX Revolution manager via [Package Manage
 
 Upon installation, HitsPage creates two new [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables"), "HitsPage" and "hits". At the time of this writing, the "hits" TV is redundant.
 
-On the [Resource](/display/revolution20/Resource "Resource") that you'd like to track hits, use the placeholder:
+On the [Resource](building-sites/resources "Resource") that you'd like to track hits, use the placeholder:
 
  ``` php
 [[!+hitss]]

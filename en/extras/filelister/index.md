@@ -21,7 +21,7 @@ You can view the [roadmap here](extras/filelister/filelister.roadmap "FileLister
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via \[Package Management\], or from the MODx Extras Repository, available here: <http://modxcms.com/extras/package/694>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <http://modxcms.com/extras/package/694>
 
 ### Development and Bug Reporting
 
@@ -101,9 +101,9 @@ This is a sample of HTML that you can put inside a Resource to output your conte
 
 ## See Also
 
-1. [FileLister.FileLister](extras/filelister/filelister.filelister)
-     1. [FileLister.FileLister.directoryTpl](extras/filelister/filelister.filelister/filelister.filelister.directorytpl)
-     2. [FileLister.FileLister.fileLinkTpl](extras/filelister/filelister.filelister/filelister.filelister.filelinktpl)
-     3. [FileLister.FileLister.fileTpl](extras/filelister/filelister.filelister/filelister.filelister.filetpl)
-     4. [FileLister.FileLister.pathTpl](extras/filelister/filelister.filelister/filelister.filelister.pathtpl)
+1. [FileLister.FileLister](extras/filelister)
+     1. [FileLister.FileLister.directoryTpl](extras/filelister/filelister/directorytpl)
+     2. [FileLister.FileLister.fileLinkTpl](extras/filelister/filelister/filelinktpl)
+     3. [FileLister.FileLister.fileTpl](extras/filelister/filelister/filetpl)
+     4. [FileLister.FileLister.pathTpl](extras/filelister/filelister/pathtpl)
 2. [FileLister.Roadmap](extras/filelister/filelister.roadmap)

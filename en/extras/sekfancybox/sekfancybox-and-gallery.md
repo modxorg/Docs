@@ -10,9 +10,9 @@ This is just a simple example of how you might use sekFancyBox with the Gallery 
 
 ### Requirements
 
-- sekFancyBox, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository here: <http://modx.com/extras/package/sekfancybox>.
-- Gallery, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: <http://modx.com/extras/package/gallery>.
-- getPage, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODx Extras Repository, here: <http://modx.com/extras/package/getpage>.
+- sekFancyBox, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODX Extras Repository here: <http://modx.com/extras/package/sekfancybox>.
+- Gallery, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODX Extras Repository, here: <http://modx.com/extras/package/gallery>.
+- getPage, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODX Extras Repository, here: <http://modx.com/extras/package/getpage>.
 
 #### The Snippet Call
 

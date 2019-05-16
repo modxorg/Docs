@@ -117,7 +117,7 @@ A more complete solution:
 
 ### I can't login to the manager after installing!
 
-If you're redirecting back to the login screen every time, try setting this in your .htaccess file in the root of your MODx install:
+If you're redirecting back to the login screen every time, try setting this in your .htaccess file in the root of your MODX install:
 
 ``` php
 php_value session.auto_start 0

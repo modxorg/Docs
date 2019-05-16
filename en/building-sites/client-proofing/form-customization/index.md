@@ -22,11 +22,10 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager"
 
  More information about each of the parts of Form Customization can be found in each part's respective page:
 
-1. [Customizing the Manager via Plugins](_legacy/administering-your-site/customizing-the-manager-via-plugins)
-2. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
-3. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
+1. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
+2. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
    1. [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs)
-4. [Manager Templates and Themes](building-sites/client-proofing/custom-manager-themes)
+3. [Manager Templates and Themes](building-sites/client-proofing/custom-manager-themes)
 
 ### What Forms can I Customize?
 
@@ -34,8 +33,7 @@ _old_uri: "2.x/administering-your-site/customizing-the-manager"
 
 ## See Also
 
-1. [Customizing the Manager via Plugins](_legacy/administering-your-site/customizing-the-manager-via-plugins)
-2. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
-3. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
+1. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
+2. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
    1. [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs)
-4. [Manager Templates and Themes](building-sites/client-proofing/custom-manager-themes)
+3. [Manager Templates and Themes](building-sites/client-proofing/custom-manager-themes)

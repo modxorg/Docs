@@ -10,7 +10,7 @@ This is the Chunk displayed with the &itemTpl property on the [GoogleSiteMap](ex
 
 ## Default Value
 
- ``` php
+ ``` xml
 <url>
     <loc>[[+url]]</loc>
     <lastmod>[[+date]]</lastmod>
@@ -30,7 +30,7 @@ This is the Chunk displayed with the &itemTpl property on the [GoogleSiteMap](ex
 
 ## See Also
 
-1. [GoogleSiteMap.GoogleSiteMap](extras/googlesitemap/googlesitemap.googlesitemap)
-     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.containertpl)
-     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl)
+1. [GoogleSiteMap.GoogleSiteMap](extras/googlesitemap/googlesitemap)
+     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap/containertpl)
+     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap/itemtpl)
 2. [GoogleSiteMap.Roadmap](extras/googlesitemap/googlesitemap.roadmap)

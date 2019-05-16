@@ -308,7 +308,7 @@ return $output;
 
  Now, to preserve our custom System Setting-based paths we did earlier, we're not going to want to actually create a Doodles snippet in our manager, and paste its code in there. That'd make it pretty annoying to develop - lots of copy+paste, etc. So, we're going to make a static snippet .
 
- Create a new snippet, and check the Is Static checkbox. This will display two new fields. First, the Media Source for Static File field. This will offer a list of media sources to use as the base. Since our Doodles is not in the MODx webspace, we'll need to set this to "None". Now, we need to put in the path to the actual snippet file. We'll use that magic path setting we added to the System Settings for the base of the path, and add the rest of the path to the actual snippet file.
+ Create a new snippet, and check the Is Static checkbox. This will display two new fields. First, the Media Source for Static File field. This will offer a list of media sources to use as the base. Since our Doodles is not in the MODX webspace, we'll need to set this to "None". Now, we need to put in the path to the actual snippet file. We'll use that magic path setting we added to the System Settings for the base of the path, and add the rest of the path to the actual snippet file.
 
  ``` php
 [[++doodles.core_path]]elements/snippets/snippet.doodles.php

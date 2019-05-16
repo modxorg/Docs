@@ -6,7 +6,7 @@ _old_uri: "revo/smartoptimizer"
 
 ## What is SmartOptimizer?
 
-This extra is a MODx version of SmartOptimizer by _Ali Farhadi_ :
+This extra is a MODX version of SmartOptimizer by _Ali Farhadi_ :
 
 "_SmartOptimizer (previously named JSmart) is a PHP library that enhances your website performance by optimizing the front end using techniques such as minifying, compression, caching, concatenation and embedding. All the work is done on the fly on demand._"
 
@@ -27,7 +27,7 @@ To know more about SmartOptimizer : <http://farhadi.ir/works/smartoptimizer>.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/smartoptimizer>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/smartoptimizer>
 
 ### Support, Comments, Development and Bug Reporting
 

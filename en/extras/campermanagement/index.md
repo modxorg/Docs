@@ -6,7 +6,7 @@ _old_uri: "revo/campermanagement"
 
 **CamperManagement is no longer supported. Do not use unless you're a developer that's willing to take over development of the project.**
 
-Download: <http://modx.com/extras/package/campermanagement> (or install via Package Manager) 
+Download: <http://modx.com/extras/package/campermanagement> (or install via Package Manager)
  Source & Bugs: <https://github.com/Mark-H/CamperManagement>
 
 ![](camper-grid.png)
@@ -16,9 +16,9 @@ CamperManagement is a vehicle management addon for MODX Revolution, developed an
 
 - [CamperManagement.Customizing the Component](extras/campermanagement/campermanagement.customizing-the-component "CamperManagement.Customizing the Component")
 - [CamperManagement.Developing the front-end](extras/campermanagement/campermanagement.developing-the-front-end "CamperManagement.Developing the front-end")
-  - [CamperManagement.cmCamperDetails Snippet](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcamperdetails-snippet "CamperManagement.cmCamperDetails Snippet")
-  - [CamperManagement.cmCampers Snippet](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.cmcampers-snippet "CamperManagement.cmCampers Snippet")
-  - [CamperManagement.Placeholders you can use](extras/campermanagement/campermanagement.developing-the-front-end/campermanagement.placeholders-you-can-use "CamperManagement.Placeholders you can use")
+  - [CamperManagement.cmCamperDetails Snippet](extras/campermanagement/campermanagement.developing-the-front-end/cmcamperdetails-snippet "CamperManagement.cmCamperDetails Snippet")
+  - [CamperManagement.cmCampers Snippet](extras/campermanagement/campermanagement.developing-the-front-end/cmcampers-snippet "CamperManagement.cmCampers Snippet")
+  - [CamperManagement.Placeholders you can use](extras/campermanagement/campermanagement.developing-the-front-end/placeholders-you-can-use "CamperManagement.Placeholders you can use")
 - [CamperManagement.Managing your vehicle](extras/campermanagement/campermanagement.managing-your-vehicle "CamperManagement.Managing your vehicle")
 - [CamperManagement.Module home](extras/campermanagement/campermanagement.module-home "CamperManagement.Module home")
 

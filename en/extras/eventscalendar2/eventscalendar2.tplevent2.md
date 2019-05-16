@@ -25,7 +25,7 @@ This chunk is a template for one event in the day.
 | url  | Link to resource of this event. |
 | date | Date of event.                  |
 
-You can use all placeholders from MODx resources. See it [there](http://rtfm.modx.com/display/revolution20/Resources).
+You can use all placeholders from MODX resources. See it [there](http://rtfm.modx.com/display/revolution20/Resources).
 
 If you displaying events from custom source (param &events=``) all properties in events array will be converted to placeholders.
 

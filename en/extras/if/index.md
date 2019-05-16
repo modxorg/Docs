@@ -6,7 +6,7 @@ _old_uri: "revo/if"
 
 ## What is If?
 
-A logical conditional snippet that allows for conditionals in MODx.
+A logical conditional snippet that allows for conditionals in MODX.
 
 ## History
 
@@ -14,7 +14,7 @@ If was written by Jason Coward (opengeek) and Shaun McCormick (splittingred) and
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modxcms.com/extras/package/600>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/600>
 
 ### Development and Bug Reporting
 

@@ -28,7 +28,7 @@ translation: "building-sites/client-proofing/form-customization/tabs"
 
 Добавить новую вкладку довольно просто. Отредактируйте свой Набор и откройте вкладку Регионы. Нажмите кнопку «Создать новую вкладку», присвойте ей идентификатор, например «my-new-tab», и описание.
 
-![](/download/attachments/a173647e0c2b1aeb7f1021e4f14784bc/fc_new_tab.jpg)
+![](/2.x/en/building-sites/client-proofing/form-customization/fc_new_tab.jpg)
 
 Каждый раз, когда вам нужно обратиться к области вкладки, например, при перемещении переменных шаблона на новую вкладку, используйте идентификатор, который вы ей дали.
 

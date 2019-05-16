@@ -15,11 +15,11 @@ phpThumbOf is a secure, custom [Output Filter](making-sites-with-modx/customizin
 
 ### History
 
-phpThumbOf was written by [Shaun McCormick](/display/~splittingred) as a secure phpThumb output filter, and first released on November 3rd, 2010.
+phpThumbOf was written by [Shaun McCormick](https://github.com/splittingred) as a secure phpThumb output filter, and first released on November 3rd, 2010.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/phpthumbof>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/phpthumbof>
 
 ### Attributes
 

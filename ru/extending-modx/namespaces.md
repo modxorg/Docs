@@ -24,4 +24,3 @@ $modx->lexicon->load('quip:comment');
 Предполагая, что мы используем английский язык, система будет искать файл lexicon/en/comment.inc.php в пути пространства имен для Quip. Это позволяет динамически загружать темы Lexicon в соответствии с путем к пространству имен, а не требовать помещения файлов тем в основные каталоги MODX.
 
 - [Интернационализация](extending-modx/internationalization "Internationalization")
-- [Настройки](_legacy/administering-your-site/settings "Settings")

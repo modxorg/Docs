@@ -80,7 +80,5 @@ if (!$page->setTVValue('bio', 'This is my new bio...')) {
   - [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
   - [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
 - [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
-- [Adding a Custom TV Input Type](_legacy/making-sites-with-modx/adding-a-custom-tv-input-type)
-- [Adding a Custom TV Output Type](_legacy/making-sites-with-modx/adding-a-custom-tv-output-type)
 - [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
 - [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)

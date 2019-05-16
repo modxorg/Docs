@@ -50,6 +50,6 @@ Supported mobile/tablet browsers:
 - Chrome for Android (last)
 - Safari on iOS (last)
 
-The manager might work fine on older or different browsers, but they are not officially supported. 
+The manager might work fine on older or different browsers, but they are not officially supported.
 
 Note that these requirements are only for the manager. What browsers your website supports is up to you!

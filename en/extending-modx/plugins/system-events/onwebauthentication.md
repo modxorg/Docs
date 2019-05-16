@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onweba
 
 Fires right before the user is authenticated or its session is added for any non-manager context. This event can be used to provide external authentication support. This event is used to ALLOW login.
 
-If its output is true, or an array where at least one index is set to true, then MODx will assume that the user has successfully logged in and bypass the default authentication via password.
+If its output is true, or an array where at least one index is set to true, then MODX will assume that the user has successfully logged in and bypass the default authentication via password.
 
 Service: 3 - Web Access Events
 Group: None

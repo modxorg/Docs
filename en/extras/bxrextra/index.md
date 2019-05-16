@@ -14,7 +14,7 @@ Create directory 'yourcomponent'. Clone BxrExtra to yourcomponent directory by r
 
 You can delete '.git' folder now.
 
-Edit 'config.core.php' file and point 'MODX\_CORE\_PATH' constant **to your** MODx core location.
+Edit 'config.core.php' file and point 'MODX\_CORE\_PATH' constant **to your** MODX core location.
 
 Now you want to **rename BxrExtra to YourComponent**, co first of all edit 'rename\_it.sh' and set 'repl1' to 'YourComponent', 'repl2' to 'yourcomponent' and 'path' to './yourcomponent'.
 

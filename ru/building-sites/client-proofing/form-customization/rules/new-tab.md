@@ -38,4 +38,4 @@ translation: "building-sites/client-proofing/form-customization/rules/new-tab"
 
 Пример правила для создания новой вкладки на странице редактирования ресурса будет выглядеть так:
 
-![](/download/attachments/18678099/rule-tabNew.png?version=1&modificationDate=1279290789000)
+![](/2.x/en/building-sites/client-proofing/form-customization/rules/rule-tabnew.png)

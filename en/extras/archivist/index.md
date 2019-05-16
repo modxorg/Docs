@@ -18,11 +18,11 @@ If you are looking to create a blog, check out [Articles](extras/articles "Artic
 
 ## History
 
-Archivist was written by [Shaun McCormick](/display/~splittingred) as a wordpress-style archiving component, and first released on June 3rd, 2010.
+Archivist was written by [Shaun McCormick](https://github.com/splittingred) as a wordpress-style archiving component, and first released on June 3rd, 2010.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/archivist>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/archivist>
 
 ### Development and Bug Reporting
 

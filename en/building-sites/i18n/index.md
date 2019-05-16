@@ -35,6 +35,8 @@ echo $modx->lexicon('key');
 
 To  build multi-lingual sites, there are typically 2 approaches you can take in MODX.
 
-The first involves setting up a [context per language](../contexts). You route the visitor to the right context by (sub)domain or subfolder using a [gateway plugin](../contexts/gateway-plugin) or third party extra like xRouting or LangRouter. With this approach, the Babel third party extra can be useful to connect translations across contexts. This allows you to use lexicons by configuring context settings appropriately.
+The first involves setting up a [context per language](building-sites/contexts). You route the visitor to the right context by (sub)domain or subfolder using a [gateway plugin](building-sites/contexts/gateway-plugin), [virtual host](building-sites/contexts/virtual-host), or third party extra like xRouting or LangRouter. 
 
-The second approach involves combining the languages into a single context. This requires third party extras like Lingua.
+With the multi-context approach, the [Babel third party extra](extras/babel) can be useful to connect translations across contexts. You can also use lexicons in your templates with different contexts, by creating the appropriate `cultureKey` and `locale` context settings.
+
+Another approach is to manage all languages from a single context. This requires third party extras, like [Lingua](extras/lingua). 

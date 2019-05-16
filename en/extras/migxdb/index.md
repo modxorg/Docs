@@ -21,7 +21,7 @@ Its also very easy to create CMPs (Custom Manager Pages) to manage your custom-t
 
 ## Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, available here: <http://modx.com/extras/package/migx>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <http://modx.com/extras/package/migx>
 
 ## Development and Bug Reporting
 

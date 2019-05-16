@@ -31,17 +31,17 @@ _old_uri: "2.x/administering-your-site/security/policies"
 
 ## Usage
 
- Policies can be used in a myriad of different ways. Here are 3 example usages that come by default in MODx:
+ Policies can be used in a myriad of different ways. Here are 3 example usages that come by default in MODX:
 
 ### Context Access
 
  Access Policies can be assigned as [Access Control Lists](building-sites/client-proofing/security/policies/acls "ACLs") (ACLs) to a Context and User Group, with a specified Minimum [Role](building-sites/client-proofing/security/roles "Roles"). When done, this means that all the Users in that User Group with at least the Role specified as the Minimum Role can use the Permissions in the Policy in the Context specified in the [ACL](building-sites/client-proofing/security/policies/acls "ACLs").
 
- MODx comes with a default ["Administrator" Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy "Permissions - Administrator Policy") that contains all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") one would use in a Context ACL. It's best to duplicate this policy when creating a custom access policy for restricting manager users.
+ MODX comes with a default ["Administrator" Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy "Permissions - Administrator Policy") that contains all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") one would use in a Context ACL. It's best to duplicate this policy when creating a custom access policy for restricting manager users.
 
 ### Resource Group Access
 
- They can also be Resource ACLs, that limit access to Resources based on Roles and Resource Groups. MODx comes packaged with a default ["Resource" Policy](building-sites/client-proofing/security/policies/permissions/resource-policy "Permissions - Resource Policy") that contains all the basic Permissions one would use in a Resource Group ACL.
+ They can also be Resource ACLs, that limit access to Resources based on Roles and Resource Groups. MODX comes packaged with a default ["Resource" Policy](building-sites/client-proofing/security/policies/permissions/resource-policy "Permissions - Resource Policy") that contains all the basic Permissions one would use in a Resource Group ACL.
 
  An example would be to assign the "Resource" policy to a Resource Group called 'HR Documents'. Then, you would give a User Group called "HR Department" access to this Resource Group via the Resource ACL:
 

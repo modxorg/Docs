@@ -6,13 +6,13 @@ _old_uri: "2.x/developing-in-modx/advanced-development/package-management/transp
 
 ## What is a Transport Package?
 
-A Transport Package is a collection of objects and files that can be used to "transport" data from one MODx installation to another; or even to transport 3rd-Party Components in a simple, easily-manageable format. In other words, Transport Packages can transport nearly _anything_ - from database data, files and even scripts to run during its install.
+A Transport Package is a collection of objects and files that can be used to "transport" data from one MODX installation to another; or even to transport 3rd-Party Components in a simple, easily-manageable format. In other words, Transport Packages can transport nearly _anything_ - from database data, files and even scripts to run during its install.
 
 Transport Packages also allow for versioning, in that they match based on a simple format, complying with PHP version number standards:
 
 > packagename-version-release.transport.zip
 
-So, an example Transport Package might be "myextra-1.0-rc1.transport.zip". If you were to upload a "myextra-1.0-rc2.transport.zip", MODx would then interpret this as part of the same "package" but a newer version of it. It would then behave in "upgrade" mode.
+So, an example Transport Package might be "myextra-1.0-rc1.transport.zip". If you were to upload a "myextra-1.0-rc2.transport.zip", MODX would then interpret this as part of the same "package" but a newer version of it. It would then behave in "upgrade" mode.
 
 Transport packages are stored in .zip files, ending with ".transport.zip". They can be uploaded and installed anywhere there is a MODX Revolution instance - regardless of the server configuration.
 
@@ -29,9 +29,9 @@ It may also contain a "preserved.php" file, if the package is an upgrade from a 
 
 The manifest basically stores all the relevant information for the package, including the locations of files and information about them. If you open the manifest.php file, you'll see that it contains a giant PHP array being returned. Within that are some keys you might be interested in:
 
-- **manifest-version** - This tells us what version the manifest definition is. MODx uses it to determine how to interpret the manifest and make it easier for future MODx versions to be backwards-compatible.
+- **manifest-version** - This tells us what version the manifest definition is. MODX uses it to determine how to interpret the manifest and make it easier for future MODX versions to be backwards-compatible.
 
-- **manifest-attributes** - These are any custom attributes that were set on the package when it was being built. The most common are 'license', 'readme' and 'setup-options', which MODx interprets during install time.
+- **manifest-attributes** - These are any custom attributes that were set on the package when it was being built. The most common are 'license', 'readme' and 'setup-options', which MODX interprets during install time.
 
 - **manifest-vehicles** - These are the Vehicles metadata, in array format.
 
@@ -50,7 +50,7 @@ In the 'manifest-vehicles' array, you'll see these keys for each vehicle:
 - **guid** - A randomly generated GUID for the vehicle.
 - **native\_key** - If the vehicle is a database object, this will be its primary key by which it is identified.
 - **filename** - Where the vehicle's source file can be found within the transport package's folder.
-- **namespace** - Certain packages use the 'namespace' field to group vehicles and other objects to make them uniquely identifiable within a MODx installation.
+- **namespace** - Certain packages use the 'namespace' field to group vehicles and other objects to make them uniquely identifiable within a MODX installation.
 
 So now that we've seen what the vehicles represent in the manifest, let's open up a Vehicle by looking a filename and diving in.
 

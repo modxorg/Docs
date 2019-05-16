@@ -8,7 +8,7 @@ Media Sources are only available in MODX Revolution 2.2 or later.
 
 ## What are Media Sources?
 
-Media Sources are a feature in MODX Revolution, where one can specify the "source" of media in their MODX installation. This is visualized in many ways - the most common being in the left-hand Files tree, the MODx.Browser window, and file and image TVs.
+Media Sources are a feature in MODX Revolution, where one can specify the "source" of media in their MODX installation. This is visualized in many ways - the most common being in the left-hand Files tree, the MODX.Browser window, and file and image TVs.
 
 ![](sources-tree2.png)
 

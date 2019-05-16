@@ -12,15 +12,15 @@ Please note that this document deals with **web** controllers, not mgr controlle
 
 Please don't forget to read past this list to see common options and placeholders in the controller templates.
 
-- [Discuss.Controllers.board](extras/discuss/discuss.controllers/discuss.controllers.board "Discuss.Controllers.board")
-  - [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/discuss.controllers.board/discuss.controllers.board.xml "Discuss.Controllers.board.xml")
-- [Discuss.Controllers.home](extras/discuss/discuss.controllers/discuss.controllers.home "Discuss.Controllers.home")
-- [Discuss.Controllers.login](extras/discuss/discuss.controllers/discuss.controllers.login "Discuss.Controllers.login")
-- [Discuss.Controllers.logout](extras/discuss/discuss.controllers/discuss.controllers.logout "Discuss.Controllers.logout")
-- [Discuss.Controllers.profile](extras/discuss/discuss.controllers/discuss.controllers.profile "Discuss.Controllers.profile")
-- [Discuss.Controllers.register](extras/discuss/discuss.controllers/discuss.controllers.register "Discuss.Controllers.register")
-- [Discuss.Controllers.search](extras/discuss/discuss.controllers/discuss.controllers.search "Discuss.Controllers.search")
-- [Discuss.Controllers.thread](extras/discuss/discuss.controllers/discuss.controllers.thread "Discuss.Controllers.thread")
+- [Discuss.Controllers.board](extras/discuss/discuss.controllers/board "Discuss.Controllers.board")
+  - [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/board/xml "Discuss.Controllers.board.xml")
+- [Discuss.Controllers.home](extras/discuss/discuss.controllers/home "Discuss.Controllers.home")
+- [Discuss.Controllers.login](extras/discuss/discuss.controllers/login "Discuss.Controllers.login")
+- [Discuss.Controllers.logout](extras/discuss/discuss.controllers/logout "Discuss.Controllers.logout")
+- [Discuss.Controllers.profile](extras/discuss/discuss.controllers/profile "Discuss.Controllers.profile")
+- [Discuss.Controllers.register](extras/discuss/discuss.controllers/register "Discuss.Controllers.register")
+- [Discuss.Controllers.search](extras/discuss/discuss.controllers/search "Discuss.Controllers.search")
+- [Discuss.Controllers.thread](extras/discuss/discuss.controllers/thread "Discuss.Controllers.thread")
 
 ## Options
 
@@ -32,20 +32,20 @@ The Controller template is basically the content field of a controller. This con
 
 On the subpages of this document all the different controllers are documented. These contain placeholders specific to that controller. On top of that, some placeholders are available in most (if not all) controllers, and are discussed in this section of this page.
 
-| Placeholder     | Description                                                                                                                                                                                                                                                                                                                                                                               |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| actionbuttons   | Buttons generated from the chunks/disactionbutton.chunk.tpl chunk, wrapped in the chunks/disactionbuttons.chunk.tpl chunk. Actions are controller specific and can include login, logout, reply, subscribe, etc. All action buttons are assigned a class of dis-action-action\_name where action\_name is the name of the action; this can be used to style specific buttons differently. |
-| discuss.user.\* | Call uncached. If logged in, the discuss.user.field\_name placeholder will contain information about the currently logged in user. Available fields:                                                                                                                                                                                                                                      |
-- id
-- username
-- fullname
-- name\_first
-- name\_last
-- email
-- posts
-- posts\_formatted
-- avatar\_url
-- isModerator (1 or 0)
-- ... and much more TBA |
-| discuss\_version | The current version of Discuss installed. |
-| discuss.pagetitle | Call uncached. Contains the title of the current controller. |
+| Placeholder       | Description                                                                                                                                                                                                                                                                                                                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| actionbuttons     | Buttons generated from the chunks/disactionbutton.chunk.tpl chunk, wrapped in the chunks/disactionbuttons.chunk.tpl chunk. Actions are controller specific and can include login, logout, reply, subscribe, etc. All action buttons are assigned a class of dis-action-action\_name where action\_name is the name of the action; this can be used to style specific buttons differently. |
+| discuss.user.\*   | Call uncached. If logged in, the discuss.user.field\_name placeholder will contain information about the currently logged in user. Available fields:                                                                                                                                                                                                                                      |
+|                   | - id                                                                                                                                                                                                                                                                                                                                                                                      |
+|                   | - username                                                                                                                                                                                                                                                                                                                                                                                |
+|                   | - fullname                                                                                                                                                                                                                                                                                                                                                                                |
+|                   | - name\_first                                                                                                                                                                                                                                                                                                                                                                             |
+|                   | - name\_last                                                                                                                                                                                                                                                                                                                                                                              |
+|                   | - email                                                                                                                                                                                                                                                                                                                                                                                   |
+|                   | - posts                                                                                                                                                                                                                                                                                                                                                                                   |
+|                   | - posts\_formatted                                                                                                                                                                                                                                                                                                                                                                        |
+|                   | - avatar\_url                                                                                                                                                                                                                                                                                                                                                                             |
+|                   | - isModerator (1 or 0)                                                                                                                                                                                                                                                                                                                                                                    |
+|                   | - ... and much more TBA                                                                                                                                                                                                                                                                                                                                                                   |
+| discuss\_version  | The current version of Discuss installed.                                                                                                                                                                                                                                                                                                                                                 |
+| discuss.pagetitle | Call uncached. Contains the title of the current controller.                                                                                                                                                                                                                                                                                                                              |

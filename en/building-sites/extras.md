@@ -9,7 +9,7 @@ note: "This page is the result of different pages getting combined, which needs 
 
 This page will guide you through the process of installing a Package via [Package Management](extending-modx/transport-packages "Package Management").
 
-Downloading packages through [Package Management](extending-modx/transport-packages "Package Management") requires cURL or PHP Sockets. MODx will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](building-sites/extras/troubleshooting "Troubleshooting Package Management").
+Downloading packages through [Package Management](extending-modx/transport-packages "Package Management") requires cURL or PHP Sockets. MODX will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](building-sites/extras/troubleshooting "Troubleshooting Package Management").
 
 Go to Extras -> [Installer](extending-modx/transport-packages "Package Management").
 
@@ -23,7 +23,7 @@ Browse the available packages, opening the folders to expose the individual pack
 
 ![](modx-package-management-3.jpg)
 
-The package will be downloaded to the proper directories in your MODx installation. Now you can view your new package, and click Install to choose to install it.
+The package will be downloaded to the proper directories in your MODX installation. Now you can view your new package, and click Install to choose to install it.
 
 ![](modx-package-management-4.jpg)
 
@@ -61,13 +61,13 @@ Finally, the package may or may not have some pre-install options and settings f
 
 ![](pkgsetupopt.png)
 
-The package should then install on your MODx installation.
+The package should then install on your MODX installation.
 
 ### Updating Packages
 
-You can easily update any package that has been downloaded from a provider. Simply click the 'Check for Updates' context menu item (after right-clicking on the package), and MODx will load a window showing any newer versions. Should your package be already up-to-date, a message will appear.
+You can easily update any package that has been downloaded from a provider. Simply click the 'Check for Updates' context menu item (after right-clicking on the package), and MODX will load a window showing any newer versions. Should your package be already up-to-date, a message will appear.
 
-You can then select the version you would like to install, and MODx will download the package and start the install process.
+You can then select the version you would like to install, and MODX will download the package and start the install process.
 
 Now, if you want to revert back, you'll simply uninstall the package, and click the 'Revert' option, which will revert back to the prior package that was installed.
 

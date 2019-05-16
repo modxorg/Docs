@@ -59,7 +59,7 @@ The following properties are available for the QuickCrumbs Snippet.
 | ------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
 | separator     | A string to use as a separator between crumbs.                                                                            | Defaults to `»`           |
 | toPlaceholder | If not empty, the output is saved to a placeholder with the specified name instead of returned directly from the Snippet. | Default is empty.         |
-| debug         | If true, debugging information will be sent to the MODx log.                                                              | Defaults to 0 (or false). |
+| debug         | If true, debugging information will be sent to the MODX log.                                                              | Defaults to 0 (or false). |
 
 ### Parent-Titles properties
 
