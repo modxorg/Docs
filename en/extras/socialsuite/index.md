@@ -31,9 +31,9 @@ Please drill down these pages for more information for each of the snippets and 
 
 Along with the above set of snippets, SocialSuite also comes with some helpers:
 
-| Name          | Description                                                                                                                                                                                                                                                  | More information |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
-| prettyNumbers | For use as an [output filter](/display/revolution20/Input+and+Output+Filters "Input and Output Filters"), the prettyNumbers snippet takes in any numeric value and spits it out nicely formatted. So for example it takes in 156874, and returns it as 156k. |                  |
+| Name          | Description                                                                                                                                                                                                                                            | More information |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
+| prettyNumbers | For use as an [output filter](building-sites/tag-syntax/output-filters "Input and Output Filters"), the prettyNumbers snippet takes in any numeric value and spits it out nicely formatted. So for example it takes in 156874, and returns it as 156k. |                  |
 
 ### A note on unofficial APIs
 
