@@ -25,11 +25,11 @@ DitsNews is a component for managing Newsletters with MODX Revolution.
 
 Being developed since December 2010 by [ditsmedia](http://modx.com/extras/author/ditsmedia).
 
-| Version                                                                                 | Release date | Contributors | Remarks / highlights |
-| --------------------------------------------------------------------------------------- | ------------ | ------------ | -------------------- |
-| [0.1.0 alpha](http://modx.com/extras/package/ditsnews?version=4d556d0fb2b083396d000fa4) | 24 Dec 2010  | ditsmedia    | Initial release.     |
-| [0.1.0 alpha2](http://modx.com/extras/package/ditsnews)                                 | 11 Jan 2011  | ditsmedia    | several issues fixed |
-| [0.2.0 alpha](http://modx.com/extras/package/ditsnews)                                  | soon!        | ditsmedia    | New codebase         |
+| Version                                                 | Release date | Contributors | Remarks / highlights |
+| ------------------------------------------------------- | ------------ | ------------ | -------------------- |
+| [0.1.0 alpha](http://modx.com/extras/package/ditsnews)  | 24 Dec 2010  | ditsmedia    | Initial release.     |
+| [0.1.0 alpha2](http://modx.com/extras/package/ditsnews) | 11 Jan 2011  | ditsmedia    | several issues fixed |
+| [0.2.0 alpha](http://modx.com/extras/package/ditsnews)  | soon!        | ditsmedia    | New codebase         |
 
 ### Requirements
 
