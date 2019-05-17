@@ -51,7 +51,7 @@ These will be grayed out during new installations. (During upgrades, it is recom
 
 From here, you will get a form asking you for your database information:
 
-![](setup-db1.png)
+![](setup-db-1.png)
 
 Add in your database hostname, which is the URL at which your database is located. For most users, this will be 'localhost'. If you have your MySQL server on a different port, specify it like so: "my.database.com;port=3307", with the ;port= appending the IP/hostname.
 
