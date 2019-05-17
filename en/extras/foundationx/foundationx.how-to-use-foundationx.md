@@ -44,7 +44,7 @@ There's only one other setting, a System Setting, that needs to be modified in o
 
 ## Manage Style Settings
 
-From the Dashboard, click on the Quick Button labelled "Site Style Settings". This takes you to the Edit page of a special FoundationX [Resource](/display/revolution20/Resource "Resource") designed to make it easy for you to customize the look and feel of your site. There are four tabs in the FoundationX CSS resource:
+From the Dashboard, click on the Quick Button labelled "Site Style Settings". This takes you to the Edit page of a special FoundationX [Resource](building-sites/resources "Resource") designed to make it easy for you to customize the look and feel of your site. There are four tabs in the FoundationX CSS resource:
 
 ![](fx1.png)
 

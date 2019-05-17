@@ -44,8 +44,6 @@ On OS X, you can purchase one of the following:
 **Do Not Overwrite Directories!**
 Make sure your FTP program _merges_ directories and does not overwrite them!
 
-- - - - - -
-
 ## Beginning Setup
 
 In your browser, navigate to [yourSite.com/setup](http://yourSite.com/setup. ) . Select your language, and follow the install/upgrade process, selecting whichever upgrade you want to perform (normal or database).

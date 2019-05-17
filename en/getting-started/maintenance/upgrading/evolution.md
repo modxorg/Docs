@@ -27,13 +27,12 @@ Some Extras in Evolution have been discontinued or are no longer in active devel
 | SiteMap     | [GoogleSiteMap](/extras/googlesitemap "GoogleSiteMap")                                                                                                                            |
 | MaxiGallery | [Gallery](/extras/gallery "Gallery")                                                                                                                                              |
 | eForm       | [FormIt](/extras/formit "FormIt")                                                                                                                                                 |
-| Wayfinder   | [Wayfinder](/extras/evo/wayfinder "Wayfinder")                                                                                                                                    |
+| Wayfinder   | [Wayfinder](/extras/wayfinder "Wayfinder")                                                                                                                                        |
 | DocManager  | [Batcher](/extras/batcher "Batcher")                                                                                                                                              |
 | AjaxSearch  | [SimpleSearch](/extras/simplesearch "SimpleSearch")                                                                                                                               |
 | WebLogin    | [Login](/extras/login "Login")                                                                                                                                                    |
 
 ## See Also
 
-1. [Functional Changes from Evolution](getting-started/maintenance/upgrading/evolution/functional-changes-from-evolution)
-
+- [Functional Changes from Evolution](getting-started/maintenance/upgrading/evolution/functional-changes)
 - [Bob's Guide to Upgrading to Revolution](http://bobsguides.com/migrating-revolution.html)

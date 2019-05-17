@@ -68,7 +68,7 @@ pdo_mysql.default_socket=/path/to/my/mysql.sock
 
 ### The login page keeps redirecting me back to the login screen with no error
 
-This can happen with older Revolution beta installs. To fix it, delete the following 3 system settings from the DB table `\[prefix\]\_system\_settings` (where prefix is your table prefix):
+This can happen with older Revolution beta installs. To fix it, delete the following 3 system settings from the DB table `[prefix]_system_settings` (where prefix is your table prefix):
 
 - session\_name
 - session\_cookie\_path

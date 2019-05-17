@@ -23,7 +23,7 @@ cd revolution
 git remote add upstream -f http://github.com/modxcms/revolution.git
 ```
 
- Форк в свою учетную запись GitHub, позволит вам внести свой вклад в MODX, отправляя "Pull Request". Это можно сделать нажав на кнопку "Pull Request"  на своей странице GitHub. (Вам нужно [принять CLA](http://develop.modx.com/contribute/cla/), прежде чем мы сможем принять ваш код.) Если вы решите участвовать в разработке вам может пригодиться наша [Инструкция для разработчиков Git](/display/community/MODX+GitHub+Contributor%27s+Guide "MODX GitHub Инструкция для разработчиков") для того чтобы поддерживать ваш форк в актуальном состоянии.
+ Форк в свою учетную запись GitHub, позволит вам внести свой вклад в MODX, отправляя "Pull Request". Это можно сделать нажав на кнопку "Pull Request"  на своей странице GitHub. (Вам нужно [принять CLA](http://develop.modx.com/contribute/cla/), прежде чем мы сможем принять ваш код.) Если вы решите участвовать в разработке вам может пригодиться наша [Инструкция для разработчиков Git](contribute/code/contributors-guide "MODX GitHub Инструкция для разработчиков") для того чтобы поддерживать ваш форк в актуальном состоянии.
 
  Если вы не знакомы с Git, прочитайте руководство от [GitHub](http://learn.github.com/) и ознакомьтесь с  [Справка по GitHub](http://help.github.com).
 
