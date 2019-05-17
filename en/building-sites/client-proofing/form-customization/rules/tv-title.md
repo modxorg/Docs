@@ -10,7 +10,7 @@ The TV Title Rule will change the title of a TV.
 
 ## Examples
 
-An example Rule of setting the label to "Boo!" for a TV with ID of 1 for all [Users](display/revolution20/Users "Users") would look like this:
+An example Rule of setting the label to "Boo!" for a TV with ID of 1 for all [Users](building-sites/client-proofing/security/users "Users") would look like this:
 
 ![](rule-tvlabel.png)
 

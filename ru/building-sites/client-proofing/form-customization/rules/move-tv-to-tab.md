@@ -18,7 +18,7 @@ translation: "building-sites/client-proofing/form-customization/rules/move-tv-to
 | modx-resource-settings | Первая вкладка, или вкладка Создать / Редактировать ресурс. |
 | modx-page-settings     | Вторая вкладка или вкладка «Параметры страницы».            |
 
-Вы также можете создать вкладку с помощью правила [Новая вкладка»](display/revolution20/New+Tab "Новая вкладка") и перенести туда TV.
+Вы также можете создать вкладку с помощью правила [Новая вкладка»](building-sites/client-proofing/form-customization/rules/new-tab "Новая вкладка") и перенести туда TV.
 
 ## Примеры
 
