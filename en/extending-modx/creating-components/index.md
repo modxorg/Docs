@@ -10,7 +10,7 @@ In this course, from [Vasily Naumkin](https://github.com/bezumkin) we will write
 Approximate plan of the first course:
 
 - [Setting up the workplace and IDE PhpStorm](extending-modx/creating-components/customize-the-workplace)
-- Analysis of the structure of the component, why do we need assets, core and others?
+- [Analysis of the structure of the component, why do we need assets, core and others?](extending-modx/creating-components/component-structure)
 - Git basics and the first commit of component procurement on Github
 - We think over the logic of work, we define the scheme and model of the table in the database
 - The first sketches of logic, build and install the alpha version of the package

@@ -10,7 +10,7 @@ translation: "extending-modx/creating-components"
 Приблизительный план первого курса:
 
 - [Настройка рабочего места и IDE PhpStorm](extending-modx/creating-components/customize-the-workplace)
-- Разбор структуры компонента, зачем нужны assets, core и остальные?
+- [Разбор структуры компонента, зачем нужны assets, core и остальные?](extending-modx/creating-components/component-structure)
 - Основы Git и первый коммит заготовки компонента на Github
 - Продумываем логику работы, определяем схему и модель таблицы в БД
 - Первые наброски логики, собираем и устанавливаем альфа-версию пакета
