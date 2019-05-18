@@ -76,7 +76,7 @@ If you need to open something from the browser, there are assets for this.
 
 ### Directory assets
 
-Directory accessible from the browser for requests. Files are stored here `*.js, *.css и php-коннекторы` for their admin requests.
+Directory accessible from the browser for requests. Files are stored here `*.js, *.css and php-connectors` for their admin requests.
 
 By default, the connector is only one; it is the one that the admin pages will access to perform some tasks.
 There is nothing special to tell here, everything is clear.
@@ -128,9 +128,9 @@ Therefore, I rewrote the installation scripts so that all the basic settings wer
 
 Thus, all the work on configuring the package and adding deletes can be divided into 4 stages:
 
-1. We add the necessary objects in `_build` in `/data/transport.типобъекта.php` (about it just below)
+1. We add the necessary objects in `_build` in `/data/transport.objecttype.php` (about it just below)
 2. Specify how to install them in the config
-3. We add revolver in `_build/resolvers/resolve.любоеимя.php`
+3. We add revolver in `_build/resolvers/resolve.anyname.php`
 4. Specify the name of the resolver in the config
 
 Obviously, with such a collector structure, it will be very easy for us to include (or exclude) different objects in the package.
@@ -147,8 +147,8 @@ So here is a standard single-chunk array for **modExtra**:
 ``` php
 $tmp = array(
     'tpl.modExtra.item' => array(
-        'file' => 'item',   // Имя файла в /core/components/имя/chunks/
-        'description' => '',    // Описание - будет видно в соотв. поле в админке
+        'file' => 'item',   // File name in /core/components/имя/chunks/
+        'description' => '',    // Description - will be visible in the corresponding field in the admin panel
     ),
 );
 ```
