@@ -11,7 +11,7 @@ translation: "extending-modx/creating-components/git-basics"
 
 После того, как мы связали наш локальный проект с удалённым сервером, в PhpStorm появились новые пункты в контектном меню:
 
-![](git-basics-1.jpg)
+![](git-basics-1.png)
 
 * Выгрузить файлы на сервер
 * Скачать файлы с сервера

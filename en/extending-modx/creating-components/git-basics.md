@@ -11,7 +11,7 @@ Today we need to upload the stub to the server, rename it, create a repository o
 
 After we connected our local project with a remote server, new items in the context menu appeared in PhpStorm:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-1.jpg)
+![](/2.x/ru/extending-modx/creating-components/git-basics-1.png)
 
 * Upload files to server
 * Download files from server
@@ -101,7 +101,7 @@ All files turned brown, which means that they are not added to the repository. W
 
 ![](/2.x/ru/extending-modx/creating-components/git-basics-13.png)
 
-Probably, it is time to briefly tell you what is a version control system? Roughly speaking, any version control system is a program that stores changes to your files, with the ability to roll back. There are a lot of systems, but the most popular is now [Git](http://ru.wikipedia.org/wiki/Git), which came up with [Linus Torvalds](http://ru.wikipedia.org/wiki/%D2%EE%F0%E2%E0%EB%FC%E4%F1,_%CB%E8%ED%F3%F1) for developing the Linux kernel.
+Probably, it is time to briefly tell you what is a version control system? Roughly speaking, any version control system is a program that stores changes to your files, with the ability to roll back. There are a lot of systems, but the most popular is now [Git](http://ru.wikipedia.org/wiki/Git), which came up with [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) for developing the Linux kernel.
 
 The main difference from competitors is the convenient creation of branches and their merging. That is, for each change you can create a new branch, chemize something there, and then inject these changes into the main project, resolving conflicts (if any).
 
@@ -109,7 +109,7 @@ If you have never worked with this, it may be difficult to enter. Therefore, I a
 
 **Once again I remind**, it is not at all necessary to develop add-ons in MODX - it is just a useful skill that can make your life much easier.
 
-Another difference with Git is the storage format. It does not climb into your files, saving everything you need in one directory **. Git **. In fact, `Sendex/.git` is the repository. That is why we needed to delete the old directory, which was the modExtra repository.
+Another difference with Git is the storage format. It does not climb into your files, saving everything you need in one directory **.Git**. In fact, `Sendex/.git` is the repository. That is why we needed to delete the old directory, which was the modExtra repository.
 
 Now we have created a new, clean Git repository, in which no changes have been saved. This repository is **local**, it is not yet attached to GitHub, but is fully operational. You can copy the project to a USB flash drive, carry it back and forth and at the same time its history of changes will be there.
 
