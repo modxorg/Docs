@@ -1,5 +1,5 @@
 ---
-title: "Customize the workplace"
+title: "Customize the workplace: MODXCloud + PhpStorm"
 translation: "extending-modx/creating-components/customize-the-workplace"
 ---
 

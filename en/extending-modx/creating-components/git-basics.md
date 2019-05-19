@@ -1,5 +1,5 @@
 ---
-title: "Git Basics"
+title: "Git basics and the first commit of a component on Github"
 translation: "extending-modx/creating-components/git-basics"
 ---
 

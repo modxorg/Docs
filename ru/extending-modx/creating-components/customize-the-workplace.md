@@ -1,5 +1,5 @@
 ---
-title: "Настраиваем рабочее место"
+title: "Настраиваем рабочее место: MODXCloud + PhpStorm"
 translation: "extending-modx/creating-components/customize-the-workplace"
 ---
 
