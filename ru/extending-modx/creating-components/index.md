@@ -13,7 +13,7 @@ translation: "extending-modx/creating-components"
 - [Разбор структуры компонента, зачем нужны assets, core и остальные?](extending-modx/creating-components/component-structure)
 - [Основы Git и первый коммит заготовки компонента на Github](extending-modx/creating-components/git-basics)
 - [Продумываем логику работы, определяем схему и модель таблицы в БД](extending-modx/creating-components/work-logic)
-- Первые наброски логики, собираем и устанавливаем альфа-версию пакета
+- [Первые наброски логики, собираем и устанавливаем альфа-версию пакета](extending-modx/creating-components/package-build)
 - Интерфейс админки на ExtJS. Создаём группы рассылок и подписываем на них пользователей.
 - Интерфейс админки на ExtJS. Создаём рассылку и привязываем её к группе.
 - Проверяем работу нашего интерфейса, пробуем что-то разослать.

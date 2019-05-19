@@ -151,7 +151,7 @@ We don’t need the files that are in `/model/sendex/mysql/`, moreover, they wil
 
 ``` php
 if ($newsletter = $modx->getObject('sxNewsletter', 1)) {
-    echo $newsletter->имяМетода('options');
+    echo $newsletter->nameMethod ('options');
 }
 ```
 

@@ -13,7 +13,7 @@ Approximate plan of the first course:
 - [Analysis of the structure of the component, why do we need assets, core and others?](extending-modx/creating-components/component-structure)
 - [Git basics and the first commit of component procurement on Github](extending-modx/creating-components/git-basics)
 - [We think over the logic of work, we define the scheme and model of the table in the database](extending-modx/creating-components/work-logic)
-- The first sketches of logic, build and install the alpha version of the package
+- [The first sketches of logic, build and install the alpha version of the package](extending-modx/creating-components/package-build)
 - Admin Interface on ExtJS. Create mailing groups and subscribe users to them.
 - Admin Interface on ExtJS. Create a newsletter and bind it to the group.
 - We check the work of our interface, we try to distribute something.
