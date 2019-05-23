@@ -1,5 +1,5 @@
 ---
-title: "Structure of the component, why we need assets, core and _build"
+title: "Structure of the component"
 translation: "extending-modx/creating-components"
 ---
 
@@ -30,7 +30,7 @@ Now we need to transfer files and directories to our project. It is located on y
 
 It should turn out like this:
 
-![](/2.x/ru/extending-modx/creating-components/structure-1.png)
+![](/2.x/ru/extending-modx/creating-components/component-structure/structure-1.png)
 
 test.php can be safely removed.
 
@@ -159,7 +159,7 @@ If you are at least familiar with php - there will be no questions, just look at
 
 All MODX elements can be assigned parameters - they will be visible on the corresponding tab when viewing an element.
 
-![](/2.x/ru/extending-modx/creating-components/structure-2.png)
+![](/2.x/ru/extending-modx/creating-components/component-structure/structure-2.png)
 
 The rule of good tone: always prescribe parameters to snippets, for the rest they are not really needed.
 

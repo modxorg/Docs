@@ -11,7 +11,7 @@ Today we need to upload the stub to the server, rename it, create a repository o
 
 After we connected our local project with a remote server, new items in the context menu appeared in PhpStorm:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-1.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-1.png)
 
 * Upload files to server
 * Download files from server
@@ -22,9 +22,9 @@ Basically, it is better to use synchronization - it will show the differences in
 
 We upload the project for the first time, there is nothing to overwrite there - so feel free to click **Upload to MODXCloud**. After that, you can check the presence of files in the admin panel.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-2.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-2.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-3.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-3.png)
 
 Now we need to rename the modExtra stub into Sendex. To do this, use the `rename_it.php` script. On my server, the link is this:
 
@@ -50,11 +50,11 @@ We can even assemble and install it right now, but then it will create us unnece
 
 In the admin panel you can already see new files, but in the project everything is as before. So they need to be synchronized. Given that we have not changed anything in the local project, you can click **Download from MODXCloud** - the IDE will warn you that it can overwrite files. Thank you, we know.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-4.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-4.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-5.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-5.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-6.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-6.png)
 
 Now delete the old unnecessary files and directories:
 
@@ -65,7 +65,7 @@ Now delete the old unnecessary files and directories:
 
 If you prudently activate the Automatic upload item in the Deployment settings, then all changes will be synchronized immediately:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-7.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-7.png)
 
 Please remember that automatic synchronization works in one direction - from the local computer to the server. If you edit project files through the site admin panel - you need to synchronize these changes manually.
 
@@ -81,7 +81,7 @@ Therefore [register on GitHub](https://github.com/join) and [download their app]
 
 After installation, go back to PhpStorm and run to the settings. There is a search in which we enter git and see the matches:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-8.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-8.png)
 
 We enter and check the access data on GitHub, and then specify and check the path to the git executable file (I don’t know where it will be on Windows - I’ll have to search).
 
@@ -89,17 +89,17 @@ If you haven’t deleted the `Sendex/.git` directory, now is the time to do it, 
 
 Click on the menu **VCS → Enable version control**, select git and save.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-9.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-9.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-10.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-10.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-11.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-11.png)
 
 All files turned brown, which means that they are not added to the repository. We need to add them through the context menu, in which a new Git item has appeared, and they will turn green.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-12.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-12.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-13.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-13.png)
 
 Probably, it is time to briefly tell you what is a version control system? Roughly speaking, any version control system is a program that stores changes to your files, with the ability to roll back. There are a lot of systems, but the most popular is now [Git](http://ru.wikipedia.org/wiki/Git), which came up with [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) for developing the Linux kernel.
 
@@ -123,23 +123,23 @@ The **README.md** file at the root of the project will serve as a brief descript
 
 PhpStorm makes it easy. Open the **Changes** tab at the bottom of the IDE, and select **Commit changes** in the context menu. before sending changes to the IDE repository, shows us all the changed files (and this is the whole project now), and asks to enter a description of the changes.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-14.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-14.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-15.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-15.png)
 
 There are no changes in the first commit, so we write “First commit”. Next, click commit and ignore error warnings in the code - it hurts too clever this PhpStorm! On the tab **Version control** there will be a log of Git work - well, suddenly, I wonder?
 
 Everything, changes are saved in our local repository, and from this point on each change of the project file it will turn blue. This means that changes have been made to it that were not saved in the repository — you need to commit it.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-17.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-17.png)
 
 Well, now we just have to link our remote project with GitHub and send changes to it so that everyone can see them. Unfortunately, I did not find how to do this directly in PhpStorm, so I’ll have to go through the command line.
 
 There is nothing terrible in this, because we still need to first create a new project on Github - and he will already tell you what commands you need to enter.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-18.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-18.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-19.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-19.png)
 
 As you can see, to send the existing repository (and this is our case), you need to run in the command line:
 
@@ -150,19 +150,19 @@ git push -u origin master
 
 Moreover, the second team can be run already from PhpStorm. Be sure to mark the **master** branch to which you want to send our commit:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-20.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-20.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-21.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-21.png)
 
 Well here [our project and on GitHub](https://github.com/bezumkin/Sendex)! In theory, you can now make yourself forks (branches) and send me your commits, but that's enough for today.
 
 You can also add a local repository to the GitHub client, and from there start it up to a remote server.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-22.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-22.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-23.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-23.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics-24.png)
+![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-24.png)
 
 Also a good option.
 

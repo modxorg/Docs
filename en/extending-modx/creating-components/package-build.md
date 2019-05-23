@@ -13,9 +13,9 @@ If in a config `build.config.php` set constant `PKG_AUTO_INSTALL`, the component
 
 So i run `c2263.paas2.ams.modxcloud.com/Sendex/_build/build.transport.php` and in the config I have automatic installation enabled, so immediately after building the package, it can already be used.
 
-![](/2.x/ru/extending-modx/creating-components/package-build-1.png)
+![](/2.x/ru/extending-modx/creating-components/package-build/package-build-1.png)
 
-![](/2.x/ru/extending-modx/creating-components/package-build-2.png)
+![](/2.x/ru/extending-modx/creating-components/package-build/package-build-2.png)
 
 Otherwise, it would be necessary to go into package management, search them locally, and install. I collect packages often, and I’ve gotten tired of doing it every time.
 
@@ -66,13 +66,13 @@ And here we have 2 options: after each change, assemble and install the package,
 
 Of course, the second option is preferable, so go to **System → Namespace** and do this:
 
-![](/2.x/ru/extending-modx/creating-components/package-build-3.png)
+![](/2.x/ru/extending-modx/creating-components/package-build/package-build-3.png)
 
 This will allow MODX to access the source in our directory. And now you need to create the system settings `sendex_core_path` and `sendex_assets_url` (and the `sendex_some_setting` demo setting can be deleted):
 
-![](/2.x/ru/extending-modx/creating-components/package-build-4.png)
+![](/2.x/ru/extending-modx/creating-components/package-build/package-build-4.png)
 
-![](/2.x/ru/extending-modx/creating-components/package-build-5.png)
+![](/2.x/ru/extending-modx/creating-components/package-build/package-build-5.png)
 
 `sendex_assets_path` optional, but also useful. We need these settings to know where to look for our files.
 
@@ -153,11 +153,11 @@ Personally, I did all this, so we just check and copy and paste my files.: [inde
 
 If you did everything correctly, you can synchronize the project just in case, clean the caches everywhere and go to the Sendex page in the admin panel:
 
-![](/2.x/ru/extending-modx/creating-components/package-build-6.png)
+![](/2.x/ru/extending-modx/creating-components/package-build/package-build-6.png)
 
 This is a page from modExtra, it calls its controllers, with its objects (which we deleted), so errors should appear in the MODX log:
 
-![](/2.x/ru/extending-modx/creating-components/package-build-7.png)
+![](/2.x/ru/extending-modx/creating-components/package-build/package-build-7.png)
 
 This is normal, they will be lost when we rewrite the processors.
 
@@ -173,7 +173,7 @@ die;
 
 Save and update the page in admin panel:
 
-![](/2.x/ru/extending-modx/creating-components/package-build-8.png)
+![](/2.x/ru/extending-modx/creating-components/package-build/package-build-8.png)
 
 If you see the same thing as me - all is well.
 
@@ -187,7 +187,7 @@ It is necessary to tell a little more about the methods of the home.class.php co
 
 Text output for the CMP page title tag. Now there sendex is derived from the lexicon, so we see it in the title:
 
-![](/2.x/ru/extending-modx/creating-components/package-build-9.png)
+![](/2.x/ru/extending-modx/creating-components/package-build/package-build-9.png)
 
 ### getTemplateFile
 
@@ -207,7 +207,7 @@ This method returns an array of dictionaries that will be used by the component.
 
 Check whether or not the rights to access the page. We can specify them in the menu setting:
 
-![](/2.x/ru/extending-modx/creating-components/package-build-10.png)
+![](/2.x/ru/extending-modx/creating-components/package-build/package-build-10.png)
 
 to close the page from someone. For example, you can specify `save_document` to start only the user with the right to edit documents.
 

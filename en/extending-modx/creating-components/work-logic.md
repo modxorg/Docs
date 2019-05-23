@@ -92,7 +92,7 @@ And finally - the relationship of objects to each other:
 
 For a visual representation of the scheme, I advise you to use the service from [Jeroen Kenters](http://schemaviewer.dev.kenters.com/52845fee82d721.76762690)
 
-![](/2.x/ru/extending-modx/creating-components/work-logic-1.png)
+![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-1.png)
 
 In the course of development, the scheme will change several times, so it should become clearer further.
 
@@ -105,30 +105,30 @@ Let's generate a model and see what happens there:
 1 Copy-paste [current chart](https://github.com/bezumkin/Sendex/blob/b3a2eb0fb56ae8151b4686840e21bad18afd4fb5/core/components/sendex/model/schema/sendex.mysql.schema.xml) in your project and save. Changes should be synchronized with the server.
 2 Delete old unnecessary files from modExtra model
 
-![](/2.x/ru/extending-modx/creating-components/work-logic-2.png)
+![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-2.png)
 
 3 Execute file `build.model.php` on server. I have it `c2263.paas2.ams.modxcloud.com/Sendex/_build/build.model.php` — on server. In the first generation we will have only **done**, and in subsequent ones - messages that the existing objects will not be overwritten.
 4 New files were created on the server - you need to synchronize the **model** directory (click on the two green arrows at the top).
 
-![](/2.x/ru/extending-modx/creating-components/work-logic-3.png)
+![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-3.png)
 
-![](/2.x/ru/extending-modx/creating-components/work-logic-4.png)
+![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-4.png)
 
 5 Model uploaded to us in the project. The files are still brown, as they have not yet been added to Git. Add them through the context menu and see green (new) files:
 
-![](/2.x/ru/extending-modx/creating-components/work-logic-5.png)
+![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-5.png)
 
-![](/2.x/ru/extending-modx/creating-components/work-logic-6.png)
+![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-6.png)
 
 6 Add the creation of new objects when installing a component in `/_build/resolvers/resolve.tables.php`
 
-![](/2.x/ru/extending-modx/creating-components/work-logic-7.png)
+![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-7.png)
 
 See the white bar to the left of the line numbers? This version control system shows us where the lines were changed. The file immediately turns blue - it contains their changes that were not saved in Git.
 
 7 Send changes to the repository
 
-![](/2.x/ru/extending-modx/creating-components/work-logic-8.png)
+![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-8.png)
 
 In the lower left window we see the old file, in the lower right window - the new one. You can check all changes before submitting.
 
