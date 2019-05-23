@@ -1,6 +1,6 @@
 ---
 title: "Разбор структуры компонента"
-translation: "extending-modx/creating-components"
+translation: "extending-modx/creating-components/component-structure/index"
 ---
 
 Все приличные дополнения в MODX распространяются транспортными пакетами — это такие zip файлы с определенной структурой.
@@ -30,7 +30,7 @@ git clone https://github.com/bezumkin/modExtra.git
 
 Должно получиться вот так:
 
-![](/structure-1.png)
+![](structure-1.png)
 
 test.php можно смело удалить.
 
@@ -159,7 +159,7 @@ $tmp = array(
 
 У всех элементов MODX можно прописывать параметры — они будут видны на соответствующей вкладке при просмотре элемента.
 
-![](/structure-2.png)
+![](structure-2.png)
 
 Правило хорошего тона: всегда прописывать параметры сниппетам, для остальных они не особо нужны.
 

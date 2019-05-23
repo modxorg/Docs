@@ -1,6 +1,6 @@
 ---
 title: "Настраиваем рабочее место: MODXCloud + PhpStorm"
-translation: "extending-modx/creating-components/customize-the-workplace"
+translation: "extending-modx/creating-components/customize-the-workplace/index"
 ---
 
 Для комфротной разработки нам нужно хорошее окружение. Лично я использую локальный веб-сервер Nginx + Php5-fpm + Mysql на MacOS X, но это далеко не обычная конфигурация.
