@@ -193,3 +193,17 @@ if ($subscriber = $this->xpdo->getObject('sxSubscriber', array('code' => $code))
 Как только пользователь подписался, можно генерирвоать письма через админку или api и отпарвлять. На следующем занятии мы набросаем скрипты для автоматической постановки писем в очередь при разных событиях, и отправки по cron.
 
 После этого, я думаю, вы позадаёте мне вопросы, и наши занятия закончатся, потому что первая бета-версия компонента будет готова.
+
+## Узнать больше
+
+* [Настройка рабочего места: MODXCloud + PhpStorm](extending-modx/creating-components/customize-the-workplace)
+* [Разбор структуры компонента, зачем нужны assets, core и остальные?](extending-modx/creating-components/component-structure)
+* [Основы Git и первый коммит заготовки компонента на Github](extending-modx/creating-components/git-basics/)
+* [Логика работы, схему и модель таблицы в БД](extending-modx/creating-components/work-logic)
+* [Сборка и установка первой версии пакета](extending-modx/creating-components/package-build)
+* [Пишем интерфейс: виджеты ExtJS и процессоры](extending-modx/creating-components/extjs-widgets)
+* [Пишем интерфейс: таблица подписок и окошко создания](extending-modx/creating-components/letter-queue-table)
+* [Пишем интерфейс: окно редактирования подписки](extending-modx/creating-components/subscription-edit-window)
+* [Сниппет Sendex и формы подписки\отписки](extending-modx/creating-components/snippet-sendex)
+* [Самостоятельная подписка\отписка пользователя](extending-modx/creating-components/subscription-table)
+* [Рассылка по расписанию](extending-modx/creating-components/scheduled-newsletter)
