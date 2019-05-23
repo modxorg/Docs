@@ -85,7 +85,7 @@ There is nothing special to tell here, everything is clear.
 
 Probably the most interesting part of modExtra. Unlike standard MODX build scripts, everything in modExtra is very flexible.
 
-### Конфигурация
+### Configuration
 
 This is a service directory, it will not be in the final package, because it is her scripts that build the package.
 
