@@ -14,8 +14,8 @@ translation: "extending-modx/creating-components"
 - [Основы Git и первый коммит заготовки компонента на Github](extending-modx/creating-components/git-basics)
 - [Продумываем логику работы, определяем схему и модель таблицы в БД](extending-modx/creating-components/work-logic)
 - [Первые наброски логики, собираем и устанавливаем альфа-версию пакета](extending-modx/creating-components/package-build)
-- Интерфейс админки на ExtJS. Создаём группы рассылок и подписываем на них пользователей.
-- Интерфейс админки на ExtJS. Создаём рассылку и привязываем её к группе.
+- [Интерфейс админки на ExtJS. Создаём группы рассылок и подписываем на них пользователей.](extending-modx/creating-components/extjs-widgets)
+- [Интерфейс админки на ExtJS. Создаём рассылку и привязываем её к группе.](extending-modx/creating-components/subscription-table)
 - Проверяем работу нашего интерфейса, пробуем что-то разослать.
 - Фронтент. Сниппет вывода доступных подписок пользователю.
 - Фронтент. Работа с подпиской и отпиской от рассылки.
