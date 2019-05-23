@@ -1,6 +1,6 @@
 ---
 title: 'Внести свой вклад в документацию'
-translation: 'contribute/code/documentation/index'
+translation: 'contribute/documentation'
 ---
 
 Хотите помочь написать документацию? Пожалуйста, сделай!

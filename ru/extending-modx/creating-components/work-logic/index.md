@@ -1,6 +1,6 @@
 ---
 title: "Логика работы, определяем схему и модель БД"
-translation: "extending-modx/creating-components/work-logic/index"
+translation: "extending-modx/creating-components/work-logic"
 ---
 
 Подготовительные работы закончены, и сегодня мы приступаем непосредственно к разработке компонента.

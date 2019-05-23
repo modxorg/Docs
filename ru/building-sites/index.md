@@ -1,6 +1,6 @@
 ---
 title: "Разработка сайтов"
-translation: "building-sites/index"
+translation: "building-sites"
 ---
 
 Этот раздел содержит информацию о создании вашего сайта с использованием MODX. Для новых пользователей [введение интеграции шаблонов](building-sites/integrating-templates) будет хорошим местом для начала.

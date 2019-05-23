@@ -1,6 +1,6 @@
 ---
 title: "Разбор структуры компонента"
-translation: "extending-modx/creating-components/component-structure/index"
+translation: "extending-modx/creating-components/component-structure"
 ---
 
 Все приличные дополнения в MODX распространяются транспортными пакетами — это такие zip файлы с определенной структурой.

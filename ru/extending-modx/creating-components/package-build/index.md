@@ -1,6 +1,6 @@
 ---
 title: "Собираем и устанавливаем первую версию пакета"
-translation: "extending-modx/creating-components/package-build/index"
+translation: "extending-modx/creating-components/package-build"
 ---
 
 На прошлом занятии мы определились с примерным функционалом, написали схему таблиц и сгенерировали модель xPDO для работы с БД MySql.

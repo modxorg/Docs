@@ -1,6 +1,6 @@
 ---
 title: "Руководство по стилю контента"
-translation: "contribute/code/documentation/style-guide"
+translation: "contribute/documentation/style-guide"
 ---
 
 Добро пожаловать в руководство по документации MODX для авторов и участников.

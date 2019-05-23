@@ -1,6 +1,6 @@
 ---
 title: "Таблица подписок и окошко создания"
-translation: "extending-modx/creating-components/subscription-table/index"
+translation: "extending-modx/creating-components/subscription-table"
 ---
 
 В принципе, всё необходимое для написания приличного дополнения к MODX я уже рассказал.

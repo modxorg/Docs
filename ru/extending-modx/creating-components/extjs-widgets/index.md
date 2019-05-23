@@ -1,6 +1,6 @@
 ---
 title: "Виджеты ExtJS и процессоры"
-translation: "extending-modx/creating-components/extjs-widgets/index"
+translation: "extending-modx/creating-components/extjs-widgets"
 ---
 
 На прошлом уроке мы разобрались с контроллерами Custom Manager Page (CMP) нашего компонента, и выяснили, что основной смысл их существования — подготовить все нужные файлы для вывода страницы.

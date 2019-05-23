@@ -1,6 +1,6 @@
 ---
 title: "modResource"
-translation: "extending-modx/core-model/modresource/index"
+translation: "extending-modx/core-model/modresource"
 ---
 
 ## modResource класс

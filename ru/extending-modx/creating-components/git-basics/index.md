@@ -1,6 +1,6 @@
 ---
 title: "Основы Git и первый коммит компонента на Github"
-translation: "extending-modx/creating-components/git-basics/index"
+translation: "extending-modx/creating-components/git-basics"
 ---
 
 Заканчиваем с подготовкой к началу активной разработки.

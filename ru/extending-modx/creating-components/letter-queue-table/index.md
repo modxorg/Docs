@@ -1,6 +1,6 @@
 ---
 title: "Таблица очереди писем"
-translation: "extending-modx/creating-components/letter-queue-table/index"
+translation: "extending-modx/creating-components/letter-queue-table"
 ---
 
 На этом уроке мы закрепляем работу с ExtJS. Здесь не будет ничего нового, мы рисуем очередную таблицу и задаём для неё процессоры.
