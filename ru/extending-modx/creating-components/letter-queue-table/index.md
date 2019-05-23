@@ -371,3 +371,16 @@ public function prepareQueryBeforeCount(xPDOQuery $c) {
 Нам осталось написать сниппеты для подписки и отписки пользователей на сайте. Ну и добавить отправку писем по расписанию в cron.
 
 После этого, на мой взгляд, первая версия компонента Sendex будет готова, и его можно будет выпускать для бета-тестирования.
+
+## Узнать больше
+
+* [Настройка рабочего места: MODXCloud + PhpStorm](extending-modx/creating-components/customize-the-workplace)
+* [Разбор структуры компонента, зачем нужны assets, core и остальные?](extending-modx/creating-components/component-structure)
+* [Основы Git и первый коммит заготовки компонента на Github](extending-modx/creating-components/git-basics/)
+* [Логика работы, схему и модель таблицы в БД](extending-modx/creating-components/work-logic)
+* [Сборка и установка первой версии пакета](extending-modx/creating-components/package-build)
+* [Пишем интерфейс: виджеты ExtJS и процессоры](extending-modx/creating-components/extjs-widgets)
+* [Пишем интерфейс: окно редактирования подписки](extending-modx/creating-components/subscription-edit-window)
+* [Сниппет Sendex и формы подписки\отписки](extending-modx/creating-components/snippet-sendex)
+* [Самостоятельная подписка\отписка пользователя](extending-modx/creating-components/subscription-table)
+* [Рассылка по расписанию](extending-modx/creating-components/scheduled-newsletter)
