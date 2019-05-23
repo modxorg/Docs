@@ -1,5 +1,5 @@
 ---
-title: "Пишем интерфейс: окно редактирования подписки"
+title: "Окно редактирования подписки"
 translation: "extending-modx/creating-components/subscription-edit-window/"
 ---
 

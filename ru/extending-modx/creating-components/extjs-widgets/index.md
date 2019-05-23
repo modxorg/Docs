@@ -1,5 +1,5 @@
 ---
-title: "Пишем интерфейс: виджеты ExtJS и процессоры"
+title: "Виджеты ExtJS и процессоры"
 translation: "extending-modx/creating-components/extjs-widgets"
 ---
 

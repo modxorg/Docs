@@ -1,5 +1,5 @@
 ---
-title: "Пишем интерфейс: таблица очереди писем"
+title: "Таблица очереди писем"
 translation: "extending-modx/creating-components/letter-queue-table/"
 ---
 

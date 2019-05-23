@@ -1,5 +1,5 @@
 ---
-title: "Разбор структуры компонента, зачем нужны assets, core и _build"
+title: "Разбор структуры компонента"
 translation: "extending-modx/creating-components"
 ---
 

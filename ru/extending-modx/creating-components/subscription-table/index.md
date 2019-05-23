@@ -1,5 +1,5 @@
 ---
-title: "Пишем интерфейс: таблица подписок и окошко создания"
+title: "Таблица подписок и окошко создания"
 translation: "extending-modx/creating-components/subscription-table"
 ---
 

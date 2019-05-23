@@ -1,5 +1,5 @@
 ---
-title: "Продумываем логику работы, определяем схему и модель БД"
+title: "Логика работы, определяем схему и модель БД"
 translation: "extending-modx/creating-components/work-logic"
 ---
 

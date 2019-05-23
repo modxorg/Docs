@@ -1,5 +1,5 @@
 ---
-title: "Analysis of the structure of the component, why we need assets, core and _build"
+title: "Structure of the component, why we need assets, core and _build"
 translation: "extending-modx/creating-components"
 ---
 
