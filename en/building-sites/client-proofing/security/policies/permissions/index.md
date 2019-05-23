@@ -10,7 +10,7 @@ A Permission in Revolution is a single access control that allows or denies exec
 
 An example Permission is "content\_types" - if a user's Policy does not contain this Permission, then the user will not be able to perform that action. In this case, the user can not view the Content Types page.
 
-Normally you don't deal with permissions individually, but in groups called [Access Policies](/display/revolution20/Policies "Policies"). An [Access Policy](/display/revolution20/Policies "Policies") is a list of individual permissions (also called an Access Control List or ACL). For example, if you need to grant users the permissions necessary to edit content in the manager, you can assign them to use the "Content Editor" policy.
+Normally you don't deal with permissions individually, but in groups called [Access Policies](building-sites/client-proofing/security/policies "Policies"). An [Access Policy](building-sites/client-proofing/security/policies "Policies") is a list of individual permissions (also called an Access Control List or ACL). For example, if you need to grant users the permissions necessary to edit content in the manager, you can assign them to use the "Content Editor" policy.
 
 MODX permissions are always additive: if a permission exists on "Access Policy A" and not on "Access Policy B" and you add both policies to a user, the effective policy is a collection of all the permissions defined in both policies. Adding more policies will never remove permissions for a user. For example, if you add a limited "Load Only" policy to an administrator user, the administrator user will still be able to do all the things defined in the Administrator policy.
 
@@ -42,8 +42,7 @@ Access Policies (ACLs) define lists of permissions (see Menu --> Access Controls
     4. [Restricting an Element from Users](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
     5. [More on the Anonymous User Group](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)
 7. [Hardening MODX Revolution](getting-started/maintenance/securing-modx)
-8. [Security Standards](administering-your-site/security/security-standards)
-9. [Troubleshooting Security](building-sites/client-proofing/security/troubleshooting-security)
+8. [Troubleshooting Security](building-sites/client-proofing/security/troubleshooting-security)
     1. [Resetting a User Password Manually](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)
 
 There are also "Policy Templates" -- these help organize the lists of permission in the Access Policies. An Access Policy is a list of checkboxes, the Policy Templates define which checkboxes are available for an Access Policy. Because the full list of permissions may be quite long, it's not efficient to define Access Policies while having to wade through hundreds of checkboxes. Policy Templates allow you to narrow down the options available to an Access Policy.

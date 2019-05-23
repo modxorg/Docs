@@ -1,6 +1,6 @@
 ---
 title: "modChunk.setContent"
-translation: "extending-modx/core-model/modchunk/modchunk.setContent"
+translation: "extending-modx/core-model/modchunk/modchunk.setcontent"
 ---
 
 ## modChunk::setContent

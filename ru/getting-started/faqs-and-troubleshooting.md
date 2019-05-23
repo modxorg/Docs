@@ -59,11 +59,11 @@ MODX Revolution - это полностью переписанный MODX Evolut
 
 ## 2.1. Помогите! Куда пропал сайдбар?
 
-Скорее всего вы его скрыли. В левой части экрана есть тонкая стрелка ([смотрите картинку](/download/attachments/36634926/subtlearrow.PNG?version=1&modificationDate=1322402411000)), которую можно кликнуть чтобы вернуть его. В некоторых случаях для правильной загрузки содержимого боковой панели потребуется обновить страницу.
+Скорее всего вы его скрыли. В левой части экрана есть тонкая стрелка ([смотрите картинку](/download/attachments/36634926/subtlearrow.PNG)), которую можно кликнуть чтобы вернуть его. В некоторых случаях для правильной загрузки содержимого боковой панели потребуется обновить страницу.
 
-### 2.2  Как изменить видимые поля ресурсов при создании или редактировании [Ресурса](/display/revolution20/Resource "Ресурс")? Это что-то вроде [ManagerManager](http://modx.com/extras/package/managermanager) для Revolution?
+### 2.2  Как изменить видимые поля ресурсов при создании или редактировании [Ресурса](building-sites/resources "Ресурс")? Это что-то вроде [ManagerManager](http://modx.com/extras/package/managermanager) для Revolution?
 
-Вы можете использовать [Настройку форм](/display/revolution20/Form+Customization "Настройка форм") (находится в меню "Система") для изменения полей. Она не предоставляет все возможности плагина ManagerManager (Evolution), но дает многие из них.
+Вы можете использовать [Настройку форм](building-sites/client-proofing/form-customization "Настройка форм") (находится в меню "Система") для изменения полей. Она не предоставляет все возможности плагина ManagerManager (Evolution), но дает многие из них.
 
 ## 2.3 Что означает modDocument/ modWeblink/ modSymLink/ modStaticResource?
 
@@ -82,7 +82,7 @@ MODX Revolution - это полностью переписанный MODX Evolut
 
 ## 2.5 Я заблокирован! Я не могу попасть в панель управления! "Забыли пароль" и восстановление не работает
 
-Вы не обречены. [Следуйте этой инструкции для Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Ручной сброс пароля"), или [инструкции для восстановления аккаунта для Evolution](/evolution/1.0/administration/manager-users/reset-your-password-unblock-your-user "Сброс пароля - Разблокирование Пользователя").
+Вы не обречены. [Следуйте этой инструкции для Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Ручной сброс пароля").
 
 ## 3. Проблемы отображения интерфейса
 

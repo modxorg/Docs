@@ -34,7 +34,7 @@ $modx->addPackage('mypkg',MODX_CORE_PATH.'components/mypkg/model/','mypkg_');
 
  Pictured is the file structure of the FormIt Snippet.
 
- ![](/download/attachments/12615848/Path_to_models.jpg?version=1&modificationDate=1282514633000)
+ ![](/download/attachments/12615848/Path_to_models.jpg)
 
  If you were to load one of its packages using the addPackage() method, you could use one of the three available packages (formit, recaptcha, or stopforumspam) as the first argument, and the path to the containing folder as the second argument, e.g.
 

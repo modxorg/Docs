@@ -10,7 +10,7 @@ The TV Visible Rule, if set to 0, will hide a TV from a User.
 
 ## Examples
 
-An example Rule of hiding the a TV with ID of 1 for all [Users](display/revolution20/Users "Users") would look like this:
+An example Rule of hiding the a TV with ID of 1 for all [Users](building-sites/client-proofing/security/users "Users") would look like this:
 
 ![](rule-tvvisible.png)
 

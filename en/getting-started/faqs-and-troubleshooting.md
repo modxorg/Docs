@@ -56,11 +56,11 @@ Check out the [Tag Syntax](building-sites/tag-syntax "Tag Syntax") documentation
 
 ### 2.1. Help! Where did the sidebar go?
 
-You probably hid it at some point. There's a subtle arrow on the left side of the screen ([see this image](/download/attachments/36634926/subtlearrow.PNG?version=1&modificationDate=1322402411000)) that you can click to bring it back. In some cases you will need to refresh the page for the contents of the sidebar to load properly.
+You probably hid it at some point. There's a subtle arrow on the left side of the screen ([see this image](/download/attachments/36634926/subtlearrow.PNG)) that you can click to bring it back. In some cases you will need to refresh the page for the contents of the sidebar to load properly.
 
-### 2.2 How can I modify what resource fields are visible when creating or editing a [Resource](/display/revolution20/Resource "Resource")? Is there something like [ManagerManager](http://modx.com/extras/package/managermanager) for Revolution?
+### 2.2 How can I modify what resource fields are visible when creating or editing a [Resource](building-sites/resources "Resource")? Is there something like [ManagerManager](http://modx.com/extras/package/managermanager) for Revolution?
 
-You can use [Form Customization](/display/revolution20/Form+Customization "Form Customization") (found under the Security menu) to change the fields. It doesn't offer all of the (Evolution) ManagerManager plugin but comes pretty far.
+You can use [Form Customization](building-sites/client-proofing/form-customization "Form Customization") (found under the Security menu) to change the fields. It doesn't offer all of the (Evolution) ManagerManager plugin but comes pretty far.
 
 ### 2.3 What does modDocument/ modWeblink/ modSymLink/ modStaticResource mean?
 
@@ -79,7 +79,7 @@ Practically both terms are used to indicate the same thing: a Document which hol
 
 ### 2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!
 
-You're not doomed. [Check out these instructions for Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Resetting a User Password Manually"), or [these instructions for recovering your user account in Evolution](/evolution/1.0/administration/manager-users/reset-your-password-unblock-your-user "Reset your Password - Unblock your User").
+You're not doomed. [Check out these instructions for Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Resetting a User Password Manually").
 
 ## 3. Frontend Display Issues
 

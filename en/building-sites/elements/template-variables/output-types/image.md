@@ -27,7 +27,6 @@ It's output options look like:
 | ID             | CSS ID to attach the img tag                                          |       |
 | Style          | Any CSS style-attributes to add to the tag                            |       |
 | Attributes     | any other HTML-attributes you want to add to the tag                  |       |
-|                |                                                                       |       |
 
 ## See Also
 

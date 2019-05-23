@@ -19,7 +19,7 @@ The list of available tabs is:
 | modx-resource-settings | The first tab, or Create/Edit resource tab. |
 | modx-page-settings     | The second tab, or Page Settings tab.       |
 
-You can also create a tab with the [New Tab](display/revolution20/New+Tab "New Tab") rule and move a TV there.
+You can also create a tab with the [New Tab](building-sites/client-proofing/form-customization/rules/new-tab "New Tab") rule and move a TV there.
 
 ## Examples
 

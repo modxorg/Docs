@@ -31,7 +31,7 @@ So you're developing your custom component for MODX Revolution, and you've run i
 
  Let's take a quick look at our directory structure. This isn't always how you have to do it - this one is specifically built this way for SVN; but it's definitely recommended, especially with the _core/components/storefinder/_ structures, since that makes creating the transport package (should we want to distribute this via Package Management) much easier.
 
- ![](/download/attachments/18678102/sfdirstructure1.png?version=1&modificationDate=1248206139000)
+ ![](/download/attachments/18678102/sfdirstructure1.png)
 
  Now, on to the model file. In our \_build directory, let's create a "schema" subfolder. Then, from there, we'll create a file called "storefinder.mysql.schema.xml". Note that "mysql" is in there - yes, eventually xPDO and Revolution will support other database platforms. But for now, we're going to do this in MySQL.
 

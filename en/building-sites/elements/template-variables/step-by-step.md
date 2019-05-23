@@ -46,10 +46,10 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 
 ### 4. Define the Input Options
 
- Next, click on the **Input Options** tab: you need to choose which kind of field this will be, e.g. a text field, a dropdown field, a WYSIWYG, etc. See the page for See the [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types") for a full list of possible input types.
+ Next, click on the **Input Options** tab: you need to choose which kind of field this will be, e.g. a text field, a dropdown field, a WYSIWYG, etc. See the page for See the [Template Variable Input Types](building-sites/elements/template-variables/input-types "Template Variable Input Types") for a full list of possible input types.
 
 - **Input Type**: Your field might be a simple text field, a dropdown, a reference to another page, or many other types of field.
-- **Input Options**: Some Input Types ignore this field, but others may require it. E.g. a dropdown list requires a list of possible values. Again, see the page on [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types "Template Variable Input Types") for more info.
+- **Input Options**: Some Input Types ignore this field, but others may require it. E.g. a dropdown list requires a list of possible values. Again, see the page on [Template Variable Input Types](building-sites/elements/template-variables/input-types "Template Variable Input Types") for more info.
 - **Default**: this affects what the default value for the field will be. This can be a simple value, or it can utilize one of the MODX [Bindings](building-sites/elements/template-variables/bindings "Bindings") to do things like select a value from the database or inherit a value from a parent page.
 
  ![](create-tv-rendopt1.png)

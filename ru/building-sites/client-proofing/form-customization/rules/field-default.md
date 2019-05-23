@@ -11,7 +11,7 @@ translation: "building-sites/client-proofing/form-customization/rules/field-defa
 
 ## Примеры
 
-Пример правила установки категории по умолчанию для [сниппета](display/revolution20/Snippets "сниппет") для всех [пользователей](display/revolution20/Users "пользователей") в отделе кадров группы пользователей будет выглядеть следующим образом:
+Пример правила установки категории по умолчанию для [сниппета](extending-modx/snippets "сниппет") для всех [пользователей](building-sites/client-proofing/security/users "пользователей") в отделе кадров группы пользователей будет выглядеть следующим образом:
 
 ![](/2.x/en/building-sites/client-proofing/form-customization/rules/fc-fielddefault1.png)
 

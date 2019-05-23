@@ -10,7 +10,7 @@ The Field Visible Rule, when set, will declare a field "visible" or not to a use
 
 ## Examples
 
-An example Rule of hiding the introtext field from the [Users](display/revolution20/Users "Users") in the [User Group](display/revolution20/User+Groups "User Groups") "HR Department" would look like this:
+An example Rule of hiding the introtext field from the [Users](building-sites/client-proofing/security/users "Users") in the [User Group](building-sites/client-proofing/security/user-groups "User Groups") "HR Department" would look like this:
 
 ![](fc-fieldvisible.png)
 

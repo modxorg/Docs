@@ -9,7 +9,7 @@ translation: "building-sites/client-proofing/form-customization/rules/tv-title"
 
 ## Примеры
 
-Пример правила установки метки на «Boo!» для TV с идентификатором 1 для всех [пользователи](display/revolution20/Users "пользователей") будут выглядеть так:
+Пример правила установки метки на «Boo!» для TV с идентификатором 1 для всех [пользователи](building-sites/client-proofing/security/users "пользователей") будут выглядеть так:
 
 ![](/2.x/en/building-sites/client-proofing/form-customization/rules/rule-tvlabel.png)
 

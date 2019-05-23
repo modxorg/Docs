@@ -6,7 +6,7 @@ _old_uri: "revo/socialsuite/socialsuite.prettynumbers"
 
 [SocialSuite](extras/socialsuite "SocialSuite")is a collection of useful tools for integrating various social media into your MODX website.
 
-prettyNumbers is an [output filter](/display/revolution20/Input+and+Output+Filters "Input and Output Filters"), part of SocialSuite, which formats numbers nicely depending on the size of the number. It can also be used as a standalone snippet by passing a number into the **input** property.
+prettyNumbers is an [output filter](building-sites/tag-syntax/output-filters "Input and Output Filters"), part of SocialSuite, which formats numbers nicely depending on the size of the number. It can also be used as a standalone snippet by passing a number into the **input** property.
 
 ## Basic Usage
 

@@ -24,7 +24,7 @@ cd revolution
 git remote add upstream -f http://github.com/modxcms/revolution.git
 ```
 
- Forking it with your GitHub account will allow you to contribute back to MODX by sending pull requests by clicking the "Pull Request" button on your GitHub page. (You'll need to [submit a CLA](http://develop.modx.com/contribute/cla/) before we can accept your code, though.) If you decide to fork, it'd be helpful for you to read our [Git Contributors Guide](/display/community/MODX+GitHub+Contributor%27s+Guide "MODX GitHub Contributor's Guide") for detailed information on keeping your fork up-to-date.
+ Forking it with your GitHub account will allow you to contribute back to MODX by sending pull requests by clicking the "Pull Request" button on your GitHub page. (You'll need to [submit a CLA](http://develop.modx.com/contribute/cla/) before we can accept your code, though.) If you decide to fork, it'd be helpful for you to read our [Git Contributors Guide](contribute/code/contributors-guide "MODX GitHub Contributor's Guide") for detailed information on keeping your fork up-to-date.
 
  If you're not familiar with Git, please read the excellent tutorial from [GitHub](http://learn.github.com/) and view the [GitHub help pages](http://help.github.com).
 

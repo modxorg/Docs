@@ -8,7 +8,7 @@ _old_uri: "revo/gallery"
 
 Gallery is a dynamic Gallery Extra for MODX Revolution. It allows you to quickly and easily put up galleries of images, sort them, tag them, and display them in a myriad of ways in the front-end of your site.
 
-A tutorial has been made for Gallery by the community, and can be downloaded here: [Tutorial - Gallery Component with Galleriffic.pdf](/download/attachments/13664292/Tutorial+-+Gallery+Component+with+Galleriffic.pdf?version=1&modificationDate=1288905236000)
+A tutorial has been made for Gallery by the community, and can be downloaded here: [Tutorial - Gallery Component with Galleriffic.pdf](/download/attachments/13664292/Tutorial+-+Gallery+Component+with+Galleriffic.pdf)
 
 ## Requirements
 

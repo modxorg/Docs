@@ -9,7 +9,7 @@ TV Видимый правила, если установлено значени
 
 ## Примеры
 
-Пример правила сокрытия TV с идентификатором 1 для всех [пользователей](display/revolution20/Users "пользователей") будет выглядеть так:
+Пример правила сокрытия TV с идентификатором 1 для всех [пользователей](building-sites/client-proofing/security/users "пользователей") будет выглядеть так:
 
 ![](/2.x/en/building-sites/client-proofing/form-customization/rules/rule-tvvisible.png)
 

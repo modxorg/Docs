@@ -17,11 +17,11 @@ The values for the Rule should be as follows:
 - **Rule**: Tab Title
 - **Value**: The new text to change the tab title to.
 
-For a list of tabs available for each page, see [Form Customization Pages](display/revolution20/Form+Customization+Pages "Form Customization Pages").
+For a list of tabs available for each page, see [Form Customization Pages](building-sites/client-proofing/form-customization "Form Customization Pages").
 
 ## Examples
 
-An example Rule of changing the title for the Page Settings tab for all [Users](display/revolution20/Users "Users") to "Custom Fields" would look like this:
+An example Rule of changing the title for the Page Settings tab for all [Users](building-sites/client-proofing/security/users "Users") to "Custom Fields" would look like this:
 
 ![](fc-tabtitle.png)
 

@@ -9,7 +9,7 @@ translation: "building-sites/client-proofing/form-customization/rules/field-labe
 
 ## Примеры
 
-Пример правила изменения метки интротекста на «Комментарии» для [пользователей](display/revolution20/Users "пользователей") в группе [пользователей](display/revolution20/User+Groups "Группы пользователей") «Маркетинг» будет выглядеть следующим образом:
+Пример правила изменения метки интротекста на «Комментарии» для [пользователей](building-sites/client-proofing/security/users "пользователей") в группе [пользователей](building-sites/client-proofing/security/user-groups "Группы пользователей") «Маркетинг» будет выглядеть следующим образом:
 
 ![](/2.x/en/building-sites/client-proofing/form-customization/rules/fc-fieldlabel.png)
 

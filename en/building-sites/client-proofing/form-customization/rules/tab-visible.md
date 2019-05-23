@@ -10,7 +10,7 @@ The Tab Visible Rule, if set to 0, will hide a tab from a User.
 
 ## Examples
 
-An example Rule of hiding the Page Settings tab for all [Users](display/revolution20/Users "Users") would look like this:
+An example Rule of hiding the Page Settings tab for all [Users](building-sites/client-proofing/security/users "Users") would look like this:
 
 ![](fc-tabvisible.png)
 
