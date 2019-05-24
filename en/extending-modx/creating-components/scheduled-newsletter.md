@@ -1,5 +1,5 @@
 ---
-title: "We assemble and install the first version of the package."
+title: "Scheduled Newsletter"
 translation: "extending-modx/creating-components/scheduled-newsletter"
 ---
 

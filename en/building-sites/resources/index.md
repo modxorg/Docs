@@ -86,7 +86,7 @@ They can also have [Output Filters](building-sites/tag-syntax/output-filters) "I
 
 ### Accessing Resource Fields in a Snippet
 
-Grabbing the Resource Fields in a [Snippet](extending-modx/snippets "Snippets") is quite easy; MODX provides you with the Resource object in any Snippet, via the $modx->resource reference. For example, this example Snippet will return the current page's pagetitle reversed:
+Grabbing the Resource Fields in a [Snippet](extending-modx/snippets "Snippets") is quite easy; MODX provides you with the Resource object in any Snippet, via the `$modx->resource` reference. For example, this example Snippet will return the current page's pagetitle reversed:
 
 ``` php
 /* output the current Resource's pagetitle */
@@ -98,7 +98,7 @@ return strrev($output);
 
 In MODX, links to Resources are dynamically managed via "Link Tags". They look like this:
 
-``` html
+``` php
 [[~123]]
 ```
 
@@ -112,13 +112,13 @@ Also see [Named Anchor](building-sites/integrating-templates/named-anchor "Named
 
 Adding URL parameters in your Link Tag is quite simple in Revolution. Let's say we have Resource ID 42 that resolves to a URL of 'store/items.html'. We want to add a 'tag' parameter to the URL, with a value of 'Snacks' and a 'sort' parameter of 'Taste'. Here's how you'd do it:
 
-``` html
+``` php
 [[~42? &tag=`Snacks` &sort=`Taste`]]
 ```
 
 This would render as:
 
-``` html
+``` php
 store/items.html?tag=Snacks&sort=Taste
 ```
 
@@ -128,7 +128,7 @@ Note that those are **backticks** instead of apostrophes.
 
 You can specify the scheme for a Resource in your tag:
 
-``` html
+``` php
 [[~123? &scheme=`https`]]
 ```
 
@@ -152,5 +152,5 @@ The available schemes are:
 2. [Named Anchor](building-sites/integrating-templates/named-anchor)
 3. [Static Resource](building-sites/resources/static-resource)
 4. [Symlink](building-sites/resources/symlink)
-1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
+    1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
 5. [Weblink](building-sites/resources/weblink)
