@@ -1,5 +1,5 @@
 ---
-title: "Самостоятельная подписка\отписка пользователя"
+title: "Самостоятельная подписка \ отписка пользователя"
 translation: "extending-modx/creating-components/self-subscribe"
 ---
 
