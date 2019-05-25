@@ -4,7 +4,7 @@ note: "Этот документ является заглушкой, пожал
 translation: "building-sites/i18n"
 ---
 
-MODX поставляется с концепцией _Лексиконов_ to aid with internationalisation (i18n). They are key => value pairs, per language, that can be accessed in a variety of ways.
+MODX поставляется с концепцией _Лексиконов_ которая помочь с интернационализацией (i18n). Они представляют собой пары `key=>value` для каждого языка, к которым можно получить доступ различными способами.
 
 ## Соответствующие настройки
 
