@@ -14,7 +14,7 @@ translation: "building-sites/resources/symlink/using-resource-symlinks"
 
 ## Пример:
 
-![](revolution_symlink.png)
+![](/2.x/en/building-sites/resources/revolution_symlink.png)
 
 Для моего сайта этот пример будет передавать содержимое моей страницы об образовании в me.html.
 

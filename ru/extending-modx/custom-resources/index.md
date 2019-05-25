@@ -39,7 +39,7 @@ translation: "extending-modx/custom-resources"
 
 После запуска этого сценария в вашем каталоге `core/components/copyrightedresource/model/` должно быть создано несколько файлов PHP. Смотрите изображение ниже.
 
-![](copyrightedresource_class_files.png)
+![](/2.x/en/extending-modx/custom-resources/copyrightedresource_class_files.png)
 
 Файл `copyrightedresource.class.php` должен выглядеть следующим образом:
 
@@ -106,7 +106,7 @@ Core Path: {core_path}components/copyrightedresource/
 Assets Path: {assets_path}components/copyrightedresource/
 ```
 
-![](create_namespace.png)
+![](/2.x/en/extending-modx/custom-resources/create_namespace.png)
 
 Обратите внимание на специальные плейсхолдеры, которые вы можете использовать для ссылки на ваши каталоги.
 
@@ -238,7 +238,7 @@ addExtensionPackage и removeExtensionPackage - очень полезные ме
 
 Теперь, если вы перезагрузите страницу и щелкните правой кнопкой мыши на ресурсе в древе ресурсов, а затем перейдите к «Создать», вы должны увидеть это:
 
-![](context-menu.png)
+![](/2.x/en/extending-modx/custom-resources/context-menu.png)
 
 Возможно, вам придется очистить кэш пару раз.
 

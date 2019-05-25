@@ -17,7 +17,7 @@ translation: "building-sites/resources/content-type"
 
 При редактировании ресурса, во вкладке «Настройки» выберите тип содержимого, который вы хотите использовать:
 
-![](content-type1.png)
+![](/2.x/en/building-sites/resources/content-type1.png)
 
 Затем сохраните [Ресурс](building-sites/resources "Ресурсы"). Это автоматически свяжет [Ресурсы](building-sites/resources "Ресурсы") с выбранным типом контента.
 
@@ -25,7 +25,7 @@ translation: "building-sites/resources/content-type"
 
 Сначала в верхнем меню MODX, наведите мышку на раздел «Содержимое» и выберите подраздел «Типы содержимого». Вы увидите сетку, заполненную всеми текущими типами содержимого. Нажмите на кнопку «Новый тип содержимого», и появится окно:
 
-![](content-type-new1.png)
+![](/2.x/en/building-sites/resources/content-type-new1.png)
 
 Вы увидите следующие поля:
 

@@ -7,7 +7,7 @@ translation: extending-modx/custom-manager-pages/modext/modx.console
 
 MODx.Console - это специальный виджет Ext, созданный для работы в качестве консоли вывода в виде терминала для процессоров, которые должны возвращать более подробную информацию. Его можно найти в [Управлении пакетами](extending-modx/transport-packages "Package Management"), очистке кэша или в других областях MODX:
 
-![](modx-console.png)
+![](/2.x/en/extending-modx/custom-manager-pages/modext/modx-console.png)
 
 ## Как это работает
 
