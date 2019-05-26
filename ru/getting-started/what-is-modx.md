@@ -71,7 +71,5 @@ MODX загружает запрошенный [Ресурс](building-sites/res
 
 ## Смотрите также
 
-1. [Словарь терминов Revolution](getting-started/an-overview-of-modx/glossary-of-revolution-terms)
-    1. [Объяснение структуры каталогов](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure)
-2. [Roadmap](getting-started/an-overview-of-modx/roadmap)
-3. [MODX Revolution Framework идеология структуры](getting-started/an-overview-of-modx/modx-revolution-framework-structure-ideology)
+1. [Словарь терминов Revolution](getting-started/glossary)
+    1. [Объяснение структуры каталогов](getting-started/directory-structure)
