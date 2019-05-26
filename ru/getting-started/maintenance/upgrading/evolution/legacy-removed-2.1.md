@@ -1,6 +1,6 @@
 ---
 title: "Наследие удалено в 2.1"
-translation: "2.x/developing-in-modx/other-development-resources/summary-of-legacy-code-removed-in-2.1"
+translation: "getting-started/maintenance/upgrading/evolution/legacy-removed-2.1"
 ---
 
 ## Функциональность
