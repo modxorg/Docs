@@ -9,7 +9,7 @@ _old_uri: "2.x/administering-your-site/installing-a-package/troubleshooting-pack
 
 Большинство проблем можно решить, убедившись, что у вас установлен cURL, и что директория `core/packages/` доступна для записи PHP.
 
-### ошибки archiveTo/extractTo
+### Ошибки archiveTo/extractTo
 
 Если вы загрузили пакет, но после загрузки получаете ошибки, связанные с «archiveTo», или ошибку «Package Not Found», убедитесь, что вы используете хотя бы Revolution 2.0.1, а затем перейдите в Системные настройки» и установите настройку **archive\_with** в "Да", или 1.
 
