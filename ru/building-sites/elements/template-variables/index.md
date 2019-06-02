@@ -1,5 +1,5 @@
 ---
-title: "Template Variables"
+title: "Переменные шаблона TV"
 sortorder: "2"
 translation: "building-sites/elements/template-variables"
 ---
