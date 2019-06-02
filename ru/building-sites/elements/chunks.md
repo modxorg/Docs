@@ -1,56 +1,56 @@
 ---
-title: "Chunks"
+title: "Чанки"
 sortorder: "3"
 translation: "building-sites/elements/chunks"
 ---
 
-Chunks are bits of static text which you can reuse across your site, similar in function to include files or "blocks" in other content management systems. Common examples of Chunks might be your contact information or a copyright notice. Although Chunks cannot contain any logic directly, they can however contain calls to [Snippets](extending-modx/snippets "Snippets"), which are executable bits of PHP code which produce dynamic output.
+Чанки - это кусочки статического текста, которые вы можете повторно использовать на своем сайте. По функциям они похожи на файлы или «блоки» в других системах управления контентом. Типичными примерами чанков могут быть ваша контактная информация или уведомление об авторских правах. Хотя чанки не могут содержать никакой логики напрямую, они могут содержать вызовы [Сниппетов](extending-modx/snippets "Сниппеты"), которые являются исполняемыми битами кода PHP, которые производят динамический вывод.
 
-## Create
+## Создание
 
-Before you can use a Chunk, you must first create and name one by pasting text into the MODX manager (Elements --> Chunks --> New Chunk):
+Прежде чем вы сможете использовать чанк, вы должны сначала создать и назвать его, вставив текст в менеджер MODX (Элементы --> Чанки --> Новый чанк):
 
 ![](chunk_example.jpg)
 
-## Usage
+## Использование
 
-To use the Chunk, you reference it by name in your templates or in your page content.
+Чтобы использовать Чанк, вы ссылаетесь на него по имени в ваших шаблонах или в содержимом вашей страницы.
 
 ``` php
 [[$chunkName]]
 ```
 
-That reference is then replaced with the contents of the Chunk.
+Эта ссылка затем заменяется содержимым Чанка.
 
-You can also pass properties to a Chunk. Say you had a chunk named 'intro' with the contents:
+Вы также можете передать свойства в чанк. Скажем, у вас был чанк с именем intro и содержимым:
 
-> Hello, `[[+name]]`. You have `[[+messageCount]]` messages.
+> Привет, `[[+name]]`. У тебя есть `[[+messageCount]]` сообщений.
 
-You could fill those values with:
+Вы можете заполнить эти значения с:
 
 ``` php
 [[$intro? &name=`George` &messageCount=`12`]]
 ```
 
-Which would output:
+Который будет выводить:
 
-> Hello, George. You have 12 messages.
+> Привет, George. У тебя есть 12 сообщений.
 
-You could even take it one step further, by adding a [Template Variable](building-sites/elements/template-variables "Template Variables") that allows the user to specify their name per Resource:
+Вы могли бы сделать еще один шаг, добавив [Переменные шаблона](building-sites/elements/template-variables "Переменные шаблона") что позволяет пользователю указать свое имя для каждого ресурса:
 
 ``` php
 [[!$intro? &name=`[[*usersName]]` &messageCount=`[[*messageCount]]`]]
 ```
 
-or in the Chunk itself:
+или в самом чанке:
 
 ``` php
-Hello, [[*usersName]]. You have [[*messageCount]] messages.
+Привет, [[*usersName]]. У тебя есть [[*messageCount]] сообщений.
 ```
 
-## Processing Chunk via the API
+## Обработка чанка через API
 
-Chunks are also frequently used to format the output of Snippets. A Chunk can be processed from a Snippet using the process() function; for example, given the following Chunk named 'rowTpl':
+Чанки также часто используются для форматирования вывода сниппетоы. Чанк может быть обработан из сниппета с помощью функции `process();`  например, с учетом следующего чанка с именем rowTpl:
 
 ``` php
 <tr class="[[+rowCls]]" id="row[[+id]]">
@@ -59,7 +59,7 @@ Chunks are also frequently used to format the output of Snippets. A Chunk can be
 </tr>
 ```
 
-the following Snippet code retrieves it and processes it with an array of properties for all published Resources, and returns formatted results as a table, setting the class to "alt" if for even rows:
+следующий сниппет кода извлекает его и обрабатывает его с массивом свойств для всех опубликованных ресурсов и возвращает отформатированные результаты в виде таблицы, устанавливая класс «alt» для четных строк:
 
 ``` php
 $resources = $modx->getCollection('modResource',array('published' => true));
@@ -75,9 +75,9 @@ foreach ($resources as $resource) {
 return '<table><tbody>'.$output.'</tbody></table>';
 ```
 
-### Modifying a Chunk Via the API
+### Модификация чанка через API
 
-Chunks can also be manipulated by the MODX API:
+Чанками также можно манипулировать с помощью MODX API:
 
 ``` php
 <?php
@@ -100,6 +100,6 @@ if ($chunk) $chunk->remove();
 ?>
 ```
 
-## See Also
+## Смотрите также
 
 - [modChunk](extending-modx/core-model/modchunk "modChunk")
