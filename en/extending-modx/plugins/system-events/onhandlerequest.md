@@ -21,6 +21,7 @@ Anything returned by this event will be written to the logs as an error.
 
 ## Remarks
 
+
 | Previous event | —                                                                                                                                                                                             |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Next event     | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit") or [OnWebPageInit](/display/revolution20/OnWebPageInit "OnWebPageInit") (depending on context) |
