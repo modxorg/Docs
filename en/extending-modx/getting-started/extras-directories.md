@@ -14,6 +14,6 @@ Why the separation? Well, since MODX users can move the core outside the webroot
 ## See Also
 
 1. [Developer Introduction](developing-in-modx/overview-of-modx-development/developer-introduction)
-2. [Getting Started Developing](developing-in-modx/overview-of-modx-development/developer-introduction/getting-started-developing)
+2. [Getting Started Developing](extending-modx/getting-started)
 3. [Extras Directories](developing-in-modx/overview-of-modx-development/extras-directories)
 4. [Setting up a Development Environment](developing-in-modx/overview-of-modx-development/setting-up-a-development-environment)

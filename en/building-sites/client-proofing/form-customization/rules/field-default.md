@@ -12,11 +12,12 @@ This will only work on "create" pages, **not** "update" pages.
 
 ## Examples
 
-An example Rule of setting the default Category for a [Snippet](display/revolution20/Snippets "Snippets") for all [Users](display/revolution20/Users "Users") in the User Group HR Department would look like this:
+An example Rule of setting the default Category for a [Snippet](extending-modx/snippets "Snippets") for all [Users](building-sites/client-proofing/security/users "Users") in the User Group HR Department would look like this:
 
-![](download/attachments/18678093/fc-fieldDefault1.png?version=1&modificationDate=1280152835000)
+![](fc-fielddefault1.png)
 
 ## See Also
+
 ``` php
  [[getResources@section? &parents=`122` &context=`revolution`]]
  ```

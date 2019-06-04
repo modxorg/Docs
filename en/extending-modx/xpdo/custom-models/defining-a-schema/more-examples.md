@@ -4,37 +4,16 @@ _old_id: "1196"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files"
 ---
 
-- [Goal](#MoreExamplesofxPDOXMLSchemaFiles-Goal)
-- [One to One](#MoreExamplesofxPDOXMLSchemaFiles-OnetoOne)
-  - [MySQL Table Definitions](#MoreExamplesofxPDOXMLSchemaFiles-MySQLTableDefinitions)
-  - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
-  - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
-- [One to Many](#MoreExamplesofxPDOXMLSchemaFiles-OnetoMany)
-  - [MySQL Table Definitions](#MoreExamplesofxPDOXMLSchemaFiles-MySQLTableDefinitions)
-  - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
-  - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
-- [Many to Many: Joining Tables](#MoreExamplesofxPDOXMLSchemaFiles-ManytoMany%3AJoiningTables)
-  - [MySQL Table Definitions](#MoreExamplesofxPDOXMLSchemaFiles-MySQLTableDefinitions)
-  - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
-  - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
-- [Parent ID: Self Join](#MoreExamplesofxPDOXMLSchemaFiles-ParentID%3ASelfJoin)
-  - [MySQL Table Definitions](#MoreExamplesofxPDOXMLSchemaFiles-MySQLTableDefinitions)
-  - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
-  - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
-- [Using Field Aliases _(xPDO 2.2+ only)_](#MoreExamplesofxPDOXMLSchemaFiles-UsingFieldAliases%28xPDO2.2%5Conly%29)
-  - [XML Schema](#MoreExamplesofxPDOXMLSchemaFiles-XMLSchema)
-  - [Sample Snippet Code](#MoreExamplesofxPDOXMLSchemaFiles-SampleSnippetCode)
- 
 ## Goal
 
  This page contains examples that juxtapose MySQL database tables with their xPDO XML schema counterparts in order to teach developers how to define the foreign-key relationships between tables in xPDO XML schemas by using a series of common database relational patterns as examples.
 
- Database relations can be complex, so it's no surprise that the XML schema files that describe those relations reflect that complexity. Although xPDO schema files _already_ exist for built-in MODx tables inside of **core/model/schema/modx.mysql.schema.xml**, we don't recommend that developers rely on those XML files as their only examples of how to relate tables because they are often too complex to be used for educational purposes.
+ Database relations can be complex, so it's no surprise that the XML schema files that describe those relations reflect that complexity. Although xPDO schema files _already_ exist for built-in MODX tables inside of **core/model/schema/modx.mysql.schema.xml**, we don't recommend that developers rely on those XML files as their only examples of how to relate tables because they are often too complex to be used for educational purposes.
 
  Remember that xPDO _abstracts_ the database, so it's entirely possible that your model is something other than a traditional database, but for the sake of familiarity and clarity, the examples here assume you are using a MySQL database for your model. In general, it's recommended that you design your snippets/plugins etc. using a traditional database before abstracting it using xPDO.
 
- **FYI** 
- Once you've created a valid XML schema file, xPDO can generate PHP class files _and_ database tables; it is bi-directional. The purpose of this page is to juxtapose the xPDO XML schema to MySQL database tables. Some developers may prefer to write the XML schema file by hand and then let xPDO generate the tables and the class files. Other developers may prefer to first create the database tables, then [reverse engineer](case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table "Reverse Engineer xPDO Classes from Existing Database Table") the XML schema and the class files. 
+ **FYI**
+ Once you've created a valid XML schema file, xPDO can generate PHP class files _and_ database tables; it is bi-directional. The purpose of this page is to juxtapose the xPDO XML schema to MySQL database tables. Some developers may prefer to write the XML schema file by hand and then let xPDO generate the tables and the class files. Other developers may prefer to first create the database tables, then [reverse engineer](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table") the XML schema and the class files.
 
 ## One to One
 
@@ -42,23 +21,23 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/more
 
  The tricky thing about one-to-one relationships is that both tables are _not_ equal. Like the movie Highlander, there can be only one primary table: you must decide which table is the primary (or master) table, and which is the secondary (or slave) table.
 
- A good example of this type of relationship exists in the MODx database between the **users** and the **user\_attributes** tables: the **users** table is the primary table, and the **user\_attributes** is the secondary table. If you delete a user from the **users** table, the extra attributes in the **user\_attributes** table should also be deleted, but the opposite is not necessarily true. The documentation on [relationships](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships") stresses this primary/secondary relationship.
+ A good example of this type of relationship exists in the MODX database between the **users** and the **user\_attributes** tables: the **users** table is the primary table, and the **user\_attributes** is the secondary table. If you delete a user from the **users** table, the extra attributes in the **user\_attributes** table should also be deleted, but the opposite is not necessarily true. The documentation on [relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships") stresses this primary/secondary relationship.
 
  When defining relationships, you must first learn about **aggregate** and **composite** relationships; you may not understand the usage of these particular words, but when defining this type of relationship, simply remember the following:
 
 - The primary table's XML definition lists a **_composite_** relationship to the the secondary table.
 - The secondary table's XML definition lists an **_aggregate_** relationship to the primary table.
 
- For this example, we are mimicking the MODx tables where we have one table for **users** and a secondary table that stores additional information about those users, named **userdata**.
+ For this example, we are mimicking the MODX tables where we have one table for **users** and a secondary table that stores additional information about those users, named **userdata**.
 
- **FYI** 
- Unlike some ORMs (e.g. Doctrine) and even unlike MySQL's foreign-key definitions, xPDO defines a relationship on _both_ sides. You tell the children who their parents are and you also tell the parents who their children are. E.g. the parent object contains a composite relationship and the child object contains an aggregate relationship. This ensures that everybody knows who they're related to. 
+ **FYI**
+ Unlike some ORMs (e.g. Doctrine) and even unlike MySQL's foreign-key definitions, xPDO defines a relationship on _both_ sides. You tell the children who their parents are and you also tell the parents who their children are. E.g. the parent object contains a composite relationship and the child object contains an aggregate relationship. This ensures that everybody knows who they're related to.
 
-### MySQL Table Definitions
+> MySQL Table Definitions
 
  Here are abbreviated MySQL table definitions:
 
- ``` sql 
+ ``` sql
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
@@ -75,16 +54,16 @@ CREATE TABLE `userdata` (
 
  This MySQL query will show _all_ data for users (including info from the primary user table, and also from the secondary userdata table):
 
- ``` sql 
+ ``` sql
 SELECT users.*, userdata.*
 FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 ```
 
-### XML Schema
+> XML Schema
 
  And here's the corresponding XML definitions:
 
- ``` xml 
+ ``` xml
 <object class="Users" table="users" extends="xPDOObject">
         <field key="user_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="username" dbtype="varchar" precision="255" phptype="string" null="true" />
@@ -105,11 +84,11 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 </object>
 ```
 
-### Sample Snippet Code
+> Sample Snippet Code
 
  If you were to access this data in a Snippet, you might do something like the following. This assumes that your package name is **one\_to\_one**
 
- ``` php 
+ ``` php
 <?php
         $base_path = MODX_CORE_PATH . 'components/one_to_one/';
         $modx->addPackage('one_to_one',$base_path.'model/','');
@@ -126,11 +105,11 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 
  This is a common pattern that occurs when a secondary table contains a foreign key. For example, you might have a primary table containing blog posts, and a secondary table containing comments. Each blog post might have zero or many comments, but each comment can belong to one and _only_ one blog post.
 
- This is the same type of relationship that exists in MODx between pages and templates: a single template might be used by hundreds of pages, but a page can only use a single template.
+ This is the same type of relationship that exists in MODX between pages and templates: a single template might be used by hundreds of pages, but a page can only use a single template.
 
-### MySQL Table Definitions
+> MySQL Table Definitions
 
- ``` sql 
+ ``` sql
 CREATE TABLE `blogposts` (
   `blogpost_id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text,
@@ -144,9 +123,9 @@ CREATE TABLE `comments` (
 ) ENGINE=MyISAM;
 ```
 
-### XML Schema
+> XML Schema
 
- ``` xml 
+ ``` xml
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
@@ -166,11 +145,11 @@ CREATE TABLE `comments` (
 </object>
 ```
 
-### Sample Snippet Code
+> Sample Snippet Code
 
  Here is some sample Snippet code. It assumes your package name is **one\_to\_many**:
 
- ``` php 
+ ``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/one_to_many/';
 $modx->addPackage('one_to_many',$base_path.'model/','');
@@ -191,9 +170,9 @@ return $output;
 
  This type of relationship infers _three_ database tables: **blogposts**, **tags**, and the joining table **blogposts\_tags**. The trick here is that _two_ of the tables are acting as primary tables: both the **blogposts** and the **tags** table will contain composite definitions that point to the **blogposts\_tags**.
 
-### MySQL Table Definitions
+> MySQL Table Definitions
 
- ``` sql 
+ ``` sql
 CREATE TABLE `blogposts` (
   `blogpost_id` int(11) NOT NULL AUTO_INCREMENT,
   `content` text,
@@ -213,11 +192,11 @@ CREATE TABLE `blogposts_tags` (
 ) ENGINE=MyISAM;
 ```
 
-### XML Schema
+> XML Schema
 
  Note the the following schema still contains the composite relationship for the Comments table.
 
- ``` xml 
+ ``` xml
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
@@ -246,11 +225,11 @@ CREATE TABLE `blogposts_tags` (
 </object>
 ```
 
-### Sample Snippet Code
+> Sample Snippet Code
 
  The following example assumes that the package is named **many\_to\_many**. Note that the logic displayed here traces the relationships precisely. In this example, we load up a blogpost, then trace it through the joining table to its tags. Arguably, this isn't any easier than writing a JOIN statement in MySQL.
 
- ``` php 
+ ``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/many_to_many/';
 $modx->addPackage('many_to_many',$base_path.'model/','');
@@ -267,13 +246,13 @@ return $output;
 
 ## Parent ID: Self Join
 
- Another common pattern used to indicate hierarchy is the self-join. This is when one column in a table contains a reference to that table's own primary key. We are familiar with this in the MODx database when we put pages into folders: there is a parent/child relationship where each page may be the child of another page.
+ Another common pattern used to indicate hierarchy is the self-join. This is when one column in a table contains a reference to that table's own primary key. We are familiar with this in the MODX database when we put pages into folders: there is a parent/child relationship where each page may be the child of another page.
 
  In this example, we are going to demonstrate how a table can define hierarchical categories using a parent/child relationship. If a parent\_id is defined for a row in our **categories** table, it means that the row represents a sub-category of the parent.
 
-### MySQL Table Definitions
+> MySQL Table Definitions
 
- ``` sql 
+ ``` sql
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) DEFAULT NULL,
@@ -283,11 +262,11 @@ CREATE TABLE `categories` (
 ) ENGINE=MyISAM;
 ```
 
-### XML Schema
+> XML Schema
 
  In order to define this relationship in xPDO XML, we must add 2 aggregate relationships to the object:
 
- ``` xml 
+ ``` xml
 <object class="Categories" table="categories" extends="xPDOObject">
         <field key="category_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="parent_id" dbtype="int" precision="11" phptype="integer" null="true" />
@@ -301,11 +280,11 @@ CREATE TABLE `categories` (
 </object>
 ```
 
-### Sample Snippet Code
+> Sample Snippet Code
 
  In this example, our package is named **parent\_child\_example**. Notice that the **getMany** method relies on the alias defined for that relationship.
 
- ``` php 
+ ``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/parent_child_example/';
 $modx->addPackage('parent_child_example',$base_path.'model/','');
@@ -324,11 +303,11 @@ return $output;
 
  In this example, we are setting an alias of _postalcode_ for the _zip_ field from the **storefinder** model.
 
-### XML Schema
+> XML Schema
 
  The field alias definition is simply defined using the `alias` element.
 
- ``` xml 
+ ``` xml
 <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
   <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
   <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -349,11 +328,11 @@ return $output;
 </object>
 ```
 
-### Sample Snippet Code
+> Sample Snippet Code
 
  The alias _postalcode_ is now accessible as a field of an sfStore object in xPDO. It is simply a reference to the value of the _zip_ field.
 
- ``` php 
+ ``` php
 <?php
 $modx->addPackage('storefinder', MODX_CORE_PATH . 'components/storefinder/model/');
 $output = '';

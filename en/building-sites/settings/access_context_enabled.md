@@ -6,9 +6,9 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/access_context_e
 
 ## access\_context\_enabled
 
-**Name**: Check Context Access 
-**Type**: Yes/No 
-**Default**: Yes 
+**Name**: Check Context Access
+**Type**: Yes/No
+**Default**: Yes
 **Available In**: Revolution 2.1+
 
 Use this to enable or disable Context ACL checks.

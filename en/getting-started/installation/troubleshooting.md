@@ -4,26 +4,6 @@ _old_id: "311"
 _old_uri: "2.x/getting-started/installation/troubleshooting-installation"
 ---
 
-- [Common Problems](#common-problems)
-- [PDO Error Messages](#pdo-error-messages)
-- [Common Errors](#common-errors)
-  - ["I get a blank white screen instead of the options page!"](#%22i-get-a-blank-white-screen-instead-of-the-options-page%22)
-  - ["I clicked install and got a blank white screen!"](#%22i-clicked-install-and-got-a-blank-white-screen%22)
-  - ["Cannot connect to database" in the database options page](#%22cannot-connect-to-database%22-in-the-database-options-page)
-  - [Warning: PDO::\_\_construct() \[pdo.--construct\]: \[2002\] Argument invalid (trying to connect via unix://) OR "Checking database:Could not connect to the mysql server."](#warning-pdoconstruct-pdo--construct-2002-argument-invalid-trying-to-connect-via-unix-or-%22checking-databasecould-not-connect-to-the-mysql-server%22)
-  - [The login page keeps redirecting me back to the login screen with no error](#the-login-page-keeps-redirecting-me-back-to-the-login-screen-with-no-error)
-  - [Things sometimes don't load, the page flakes out, etc (eAccelerator)](#things-sometimes-dont-load-the-page-flakes-out-etc-eaccelerator)
-  - [General weirdness in the Manager (not eAccelerator)](#general-weirdness-in-the-manager-not-eaccelerator)
-  - [Resource / Elements / File tree not appearing](#resource--elements--file-tree-not-appearing)
-  - [I can't login to the manager after installing!](#i-cant-login-to-the-manager-after-installing)
-  - [Could not connect to the database server. Check the connection properties and try again. Access Denied...](#could-not-connect-to-the-database-server-check-the-connection-properties-and-try-again-access-denied)
-  - [The manager displays as plain text after installation](#the-manager-displays-as-plain-text-after-installation)
-  - [The Manager displays as plain text, Manager parts are missing, or there are JavaScript 400 Errors in the Manager](#the-manager-displays-as-plain-text-manager-parts-are-missing-or-there-are-javascript-400-errors-in-the-manager)
-  - [Manager parts are missing, undefined language strings, or there are JavaScript 500 Errors in the Manager](#manager-parts-are-missing-undefined-language-strings-or-there-are-javascript-500-errors-in-the-manager)
-- [Still Having Issues?](#still-having-issues)
-
-
-
 ## Common Problems
 
 First off, make sure:
@@ -39,7 +19,7 @@ First off, make sure:
 
 If you are getting PDO-related error messages during install, before proceeding to specific error messages as below, please confirm that your PDO configuration is setup correctly. You can do so by running this code (replace user/password/database/host with your setup):
 
-``` php 
+``` php
 <?php
 /* Connect to an ODBC database using driver invocation */
 $dsn = 'mysql:dbname=testdb;host=localhost';
@@ -80,7 +60,7 @@ One of the common causes of this problem is that you're using a non-standard por
 
 This means your MySQL socket is incorrectly configured. Usually this can be remedied by adding to (or updating) your php.ini:
 
-``` php 
+``` php
 mysql.default_socket=/path/to/my/mysql.sock
 mysqli.default_socket=/path/to/my/mysql.sock
 pdo_mysql.default_socket=/path/to/my/mysql.sock
@@ -88,7 +68,7 @@ pdo_mysql.default_socket=/path/to/my/mysql.sock
 
 ### The login page keeps redirecting me back to the login screen with no error
 
-This can happen with older Revolution beta installs. To fix it, delete the following 3 system settings from the DB table `\[prefix\]\_system\_settings` (where prefix is your table prefix):
+This can happen with older Revolution beta installs. To fix it, delete the following 3 system settings from the DB table `[prefix]_system_settings` (where prefix is your table prefix):
 
 - session\_name
 - session\_cookie\_path
@@ -102,7 +82,7 @@ Unless, of course, you've changed these explicitly for some purpose of your own.
 
 Are you running eAccelerator? In some server configurations, this can cause problems. You might need to disable it. You can do so via your php.ini:
 
-``` php 
+``` php
 eaccelerator.enable = 0;
 eaccelerator.optimizer = 0;
 eaccelerator.debug = 0;
@@ -110,7 +90,7 @@ eaccelerator.debug = 0;
 
 or in your .htaccess in the modx root directory, if your server supports php\_flag server directives:
 
-``` php 
+``` php
 php_flag eaccelerator.enable 0
 php_flag eaccelerator.optimizer 0
 php_flag eaccelerator.debug 0
@@ -137,9 +117,9 @@ A more complete solution:
 
 ### I can't login to the manager after installing!
 
-If you're redirecting back to the login screen every time, try setting this in your .htaccess file in the root of your MODx install:
+If you're redirecting back to the login screen every time, try setting this in your .htaccess file in the root of your MODX install:
 
-``` php 
+``` php
 php_value session.auto_start 0
 ```
 

@@ -13,17 +13,17 @@ The File Dashboard Widget Type runs a file on the filesystem, which can either:
 
 Simply place the name of the file in the content textarea of the widget. You can use the following placeholders to reference the widget path:
 
-- \[\[++base\_path\]\]
-- \[\[++core\_path\]\]
-- \[\[++manager\_path\]\]
-- \[\[++assets\_path\]\]
-- \[\[++manager\_theme\]\]
+- `[[++base_path]]`
+- `[[++core_path]]`
+- `[[++manager_path]]`
+- `[[++assets_path]]`
+- `[[++manager_theme]]`
 
 ### Returning the Output
 
 There are two methods in your external file to return the content of the widget. The first is simply returning the output, like so:
 
-``` php 
+``` php
 <?php
 return 'Hello, world!';
 ```
@@ -36,8 +36,8 @@ You can also return a class name of a class you have defined in your external fi
 
 An example class-based widget would look like this:
 
-``` php 
-class modDashboardWidgetHelloWorld extends modDashboardWidgetInterface { 
+``` php
+class modDashboardWidgetHelloWorld extends modDashboardWidgetInterface {
     public $version = '1.0';
 
     public function render() {
@@ -61,7 +61,7 @@ File-based widgets have the following PHP variables available to them:
 
 ## See Also
 
-1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
-2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)
-3. [Dashboard Widget Type - Inline PHP](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
-4. [Dashboard Widget Type - Snippet](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)
+1. [Dashboard Widget Type - File](building-sites/client-proofing/dashboards/widget-types/file)
+2. [Dashboard Widget Type - HTML](building-sites/client-proofing/dashboards/widget-types/html)
+3. [Dashboard Widget Type - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+4. [Dashboard Widget Type - Snippet](building-sites/client-proofing/dashboards/widget-types/snippet)

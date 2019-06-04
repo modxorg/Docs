@@ -12,7 +12,7 @@ Get an xPDO configuration option value by key.
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getOption>
 
-``` php 
+``` php
 mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )
 ```
 
@@ -28,17 +28,17 @@ $skipEmpty: when set to true, the $default will also be returned if the $key's v
 
 Get the table prefix:
 
-``` php 
+``` php
 $tablePrefix = $xpdo->getOption(xPDO::OPT_TABLE_PREFIX);
 ```
 
 Get an option from a user-specified array, and if not set, check for it in $xpdo->config. If it's not set there, return false as its default value:
 
-``` php 
+``` php
 $mySetting = $xpdo->getOption('my_setting',$myConfig,false);
 ```
 
 ## See Also
 
-- [xPDO.setOption](xpdo/class-reference/xpdo/xpdo.setoption "xPDO.setOption")
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO.setOption](extending-modx/xpdo/class-reference/xpdo/xpdo.setoption "xPDO.setOption")
+- [xPDO](extending-modx/xpdo "xPDO")

@@ -4,28 +4,6 @@ _old_id: "166"
 _old_uri: "2.x/getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity"
 ---
 
-- [ModSecurity (aka mod\_security or mod\_sec)](#InstallationonaserverrunningModSecurity-ModSecurity%28akamodsecurityormodsec%29)
-- [How Do I Know if I have ModSecurity Installed?](#InstallationonaserverrunningModSecurity-HowDoIKnowifIhaveModSecurityInstalled%3F)
-  - [Checking on a WHM Server](#InstallationonaserverrunningModSecurity-CheckingonaWHMServer)
-  - [Checking via the Command Line](#InstallationonaserverrunningModSecurity-CheckingviatheCommandLine)
-  - [Other Recon](#InstallationonaserverrunningModSecurity-OtherRecon)
-- [Log Files](#InstallationonaserverrunningModSecurity-LogFiles)
-  - [Sample Error](#InstallationonaserverrunningModSecurity-SampleError)
-- [Whitelisting a Rule for a Domain](#InstallationonaserverrunningModSecurity-WhitelistingaRuleforaDomain)
-  - [Rebuild the Apache Configuration](#InstallationonaserverrunningModSecurity-RebuildtheApacheConfiguration)
-  - [Edit the Virtual Hosts file](#InstallationonaserverrunningModSecurity-EdittheVirtualHostsfile)
-- [Add the Whitelist Rule](#InstallationonaserverrunningModSecurity-AddtheWhitelistRule)
-  - [Generic Example](#InstallationonaserverrunningModSecurity-GenericExample)
-  - [Specific Example](#InstallationonaserverrunningModSecurity-SpecificExample)
-  - [Broader Example](#InstallationonaserverrunningModSecurity-BroaderExample)
-- [Restart Apache](#InstallationonaserverrunningModSecurity-RestartApache)
-  - [cPanel: Rebuild Conf file](#InstallationonaserverrunningModSecurity-cPanel%3ARebuildConffile)
-  - [Restart Apache](#InstallationonaserverrunningModSecurity-RestartApache)
-- [Static Resources](#InstallationonaserverrunningModSecurity-StaticResources)
-- [See Also](#InstallationonaserverrunningModSecurity-SeeAlso)
-
-
-
 This document covers a fairly technical topic and it's not recommended that amateurs attempt this. Command-line noobs best leave this to a professional system admin or to their hosting company. Editing configuration files via the command line can be dangerous and you can destroy your server!
 
 ## ModSecurity (aka mod\_security or mod\_sec)
@@ -51,7 +29,7 @@ Many VPS's include the WHM/cPanel administration panels. It's relatively easy to
 2. Find the "Plugins" section in the left navigation
 3. If ModSecurity is installed, you'll see **Mod Security** listed under your plugins.
 
-![](/download/attachments/36634874/modSecurity+WHM.jpg?version=1&modificationDate=1321901219000)
+![](modsecurity+whm.jpg)
 
 A handy cPanel/WHM mod\_security module is available for visually editing your rules here: <http://configserver.com/>
 
@@ -59,25 +37,25 @@ A handy cPanel/WHM mod\_security module is available for visually editing your r
 
 If you have SSH access to your server, you can check to see which modules Apache loads on startup. To print out which modules are loaded into Apache, you can use the **apachectl** utility on \*NIX systems, e.g.
 
-``` php 
+``` php
 apachectl -t -D DUMP_MODULES
 ```
 
 Or, if your **apachectl** command is not in your current $PATH, then you may need to specify a full path to the utility. To find the path, you can search for it using the **find** command:
 
-``` php 
+``` php
 find / -name apachectl
 ```
 
 Then once you've found the full path to the utility, you can run the command verbosely, e.g.:
 
-``` php 
+``` php
 /usr/local/apache/bin/apachectl -t -D DUMP_MODULES
 ```
 
 The output will be something like this:
 
-``` php 
+``` php
 Loaded Modules:
  core_module (static)
  rewrite_module (static)
@@ -101,7 +79,7 @@ After you've verified that are in fact running ModSecurity, you'll want to monit
 
 The primary log you'll want to monitor is your Apache error log. The exact location is configured in your Apache configuration file, but often it resides inside of **/usr/local/apache/logs/error\_log** A good way to watch this file is by using the **tail** utility. You can monitor the file in real-time by using the **-f** flag, e.g.
 
-``` php 
+``` php
 tail -f /usr/local/apache/logs/error_log
 ```
 
@@ -115,7 +93,7 @@ If you do see that errors are being tripped inside the Apache error log when you
 
 Here is a sample error from the Apache error log:
 
-``` php 
+``` php
 [Sat Nov 19 19:16:32 2011] [error] [client 123.123.123.123] ModSecurity: Access denied with code 500 (phase 2).
 Pattern match "(insert[[:space:]]+into.+values|select.*from.+[a-z|A-Z|0-9]|select.+from|bulk[[:space:]]+insert|union.+select|convert.+\\\\(.*from)"
 at ARGS:els.
@@ -132,7 +110,7 @@ at ARGS:els.
 
 From this error, we need 3 pieces of information in order to whitelist a particular action. Take note of the following 3 items:
 
-``` php 
+``` php
 [id "300016"]
 [hostname "yoursite.com"]
 [uri "/connectors/element/tv.php"]
@@ -148,14 +126,14 @@ Whitelisting a rule for a specific domain is accomplished through an "includes" 
 
 The first thing to do is to back up and rebuild the httpd.conf file to make sure there are no errors (run the following commands one at a time)
 
-``` php 
+``` php
 cd /usr/local/apache/conf
 cp -p httpd.conf httpd.conf.backup
 ```
 
 If you're on a cPanel server, you can then rebuild the file by running the following command:
 
-``` php 
+``` php
 /scripts/rebuildhttpdconf
 ```
 
@@ -165,7 +143,7 @@ The goal here is to verify that your existing Apache configuration file is backe
 
 Many setups (include cPanel setups) don't want you messing directly with the main Apache configuration file. Instead, you'll edit the vhosts file for a given domain. Look through your main Apache configuration file (**httpd.conf**) and search for your domain name to see where it has outsourced its configuration files. You should find some references to it inside of a **VirtualHost** block.
 
-``` php 
+``` php
 <VirtualHost 123.123.123.123>
     ServerName yoursite.com
     ServerAlias www.yoursite.com
@@ -193,7 +171,7 @@ That's where Apache will look for additional configurations. If you know you don
 
 The general whitelist rule looks like this:
 
-``` php 
+``` php
 <LocationMatch "/path/to/URI">
   <IfModule mod_security2.c>
     SecRuleRemoveById (Rule number)
@@ -210,7 +188,7 @@ You can modify this and add it to your VirtualHosts directive (either in your ma
 
 Give our sample error message earlier which identified the following error:
 
-``` php 
+``` php
 [id "300016"]
 [hostname "yoursite.com"]
 [uri "/connectors/element/tv.php"]
@@ -218,7 +196,7 @@ Give our sample error message earlier which identified the following error:
 
 We would go to the VirtualHosts directive for **yoursite.com** and add a rule like the following:
 
-``` php 
+``` php
 <LocationMatch "/connectors/element/tv.php">
   <IfModule mod_security2.c>
     SecRuleRemoveById 300016
@@ -235,7 +213,7 @@ If you move your site to a new directory or if you move your **connectors** dire
 
 It can be maddening going through MODX functionality one admin screen at a time, but there seems to be some difficulty in white-listing entire directories. Consider renaming your "connectors" directory (see [Hardening MODX Revolution](administering-your-site/security/hardening-modx-revolution "Hardening MODX Revolution")).
 
-``` php 
+``` php
 <LocationMatch "/manager/index.php">
 SecRuleRemoveById 300016
 </LocationMatch>
@@ -259,7 +237,7 @@ If you're not on a cPanel server, skip this step and just restart Apache.
 
 On a cPanel server, you'll want to re-run the **rebuildhttpdconf** utility:
 
-``` php 
+``` php
 cd /usr/local/apache/conf
 /scripts/rebuildhttpdconf
 ```
@@ -270,7 +248,7 @@ Then you can check to see that the edits you made in your external files got slu
 
 Once you're edits have been made, restart the Apache process:
 
-``` php 
+``` php
 /etc/init.d/httpd restart
 ```
 
@@ -290,7 +268,7 @@ The configuration details that can affect your downloads are the following:
 
 An easy solution is to bypass ModSecurity entirely for downloads like this:
 
-``` php 
+``` php
 SecRequestBodyAccess Off
 ```
 
@@ -302,9 +280,6 @@ Another cause of this enigmatic symptom can be a conflict between web servers: f
 
 [ModSecurity Configuration Reference](http://www.modsecurity.org/documentation/modsecurity-apache/2.1.0/modsecurity2-apache-reference.html)
 
-1. [MODx Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
-2. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
-3. [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
-4. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
-5. [MODX and Suhosin](_legacy/getting-started/modx-and-suhosin)
-6. [Nginx Server Config](getting-started/friendly-urls/nginx)
+1. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
+2. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+3. [Nginx Server Config](getting-started/friendly-urls/nginx)

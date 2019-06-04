@@ -4,18 +4,9 @@ _old_id: "1127"
 _old_uri: "contribute/becoming-a-contributor"
 ---
 
-- [**The Contributor License Agreement**](#BecomingaContributor-)
-- [I've submitted my CLA, now what? I want to commit!](#BecomingaContributor-I%27vesubmittedmyCLA%2Cnowwhat%3FIwanttocommit%5C%21)
-  - [In a Nutshell](#BecomingaContributor-InaNutshell)
-- [Using Git and GitHub and the MODX Branching Strategy](#BecomingaContributor-UsingGitandGitHubandtheMODXBranchingStrategy)
-- [My code contribution was rejected! What?!](#BecomingaContributor-Mycodecontributionwasrejected%5C%21What%3F%5C%21)
-- [See Also](#BecomingaContributor-SeeAlso)
-
-
-
 So, you're itching to get in on the development or documentation of MODX Revolution or MODX Evolution. But, to your dismay, you're confused on how to start that process. This article will help you get to your level of commitment in development - be it an active coder or a tester who submits patches.
 
-## **The Contributor License Agreement**
+## The Contributor License Agreement
 
 If you want to work on bugs or features and actually commit some code to MODX, or contribute to the documentation, the first step is to fill out and send in a **[Contributor License Agreement (CLA)](http://develop.modx.com/contribute/cla/)** after creating your MODX account. A CLA protects your contributions, but also gives MODX and its user base clear permission to use those contributions any way that is compliant with the MODX license (GPL), and it's based on--more like copied directly from--the same one used by Apache and the Dojo Foundation.
 
@@ -43,7 +34,7 @@ Every once in a while, a contribution submitted doesn't make it into the core. I
 
 Sometimes a contribution you submit won't make it in. That may be for a myriad of reasons:
 
-- A contribution doesn't follow [Code Standards](developing-in-modx/code-standards "Code Standards")
+- A contribution doesn't follow [Code Standards](_legacy/developing-in-modx/code-standards "Code Standards")
 - The contribution will be moved to a component rather than the core
 - The contribution will be deferred to a later release
 - We used a different contribution to fix the issue

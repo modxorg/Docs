@@ -12,7 +12,7 @@ Gets a collection of objects related by aggregate or composite relations.
 
 API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoobject.class.html#%5CxPDOObject::getMany()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::getMany())
 
-``` php 
+``` php
 array &getMany (
    string $alias,
    [object $criteria = null],
@@ -24,7 +24,7 @@ array &getMany (
 
 Get all the Chunks in a Category and output their names.
 
-``` php 
+``` php
 $category = $xpdo->getObject('Category',1);
 $chunks = $category->getMany('Chunk');
 foreach ($chunks as $chunk) {
@@ -34,5 +34,5 @@ foreach ($chunks as $chunk) {
 
 ## See Also
 
-- [getOne](xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
-- [Working with Related Objects](xpdo/getting-started/using-your-xpdo-model/working-with-related-objects "Working with Related Objects")
+- [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
+- [Working with Related Objects](extending-modx/xpdo/retrieving-objects/related-objects "Working with Related Objects")

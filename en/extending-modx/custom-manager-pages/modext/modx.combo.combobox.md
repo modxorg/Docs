@@ -9,13 +9,13 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 **Extends:**[Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox)
 **Key Features:** Remote and local data stores; grid renderer.
 
-![](/download/attachments/18678077/modext_combobox.png?version=1&modificationDate=1250517993000)
+![](modext_combobox.png)
 
 The MODExt ComboBox class contains all of the functionality of a regular Ext ComboBox. It may be populated remotely by an array of JSON objects from a connector (default), or locally (using a basic Javascript array or an Ext ArrayStore, with the "mode" config option set to "local").
 
 One unique feature of the MODx ComboBox class is the built-in renderer for grids. It allows developers to use a ComboBox as a grid editor, and automatically takes care of displaying the correct displayValue in the grid cell:
 
-![](/download/attachments/18678077/modext_combobox_grid.png?version=1&modificationDate=1250518045000)
+![](modext_combobox_grid.png)
 
 ## Unique Parameters
 
@@ -33,7 +33,7 @@ The class also inherits all [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.
 
 MODx.combo.ComboBox also comes with a built-in renderer for usage in grids. To use in, in your grid's column model defintion, simply specify renderer: true in the editor definition, like so:
 
-``` javascript 
+``` javascript
 {
   header: _('usergroup')
   ,dataIndex: 'usergroup'
@@ -44,8 +44,9 @@ MODx.combo.ComboBox also comes with a built-in renderer for usage in grids. To u
 
 An example of a local data combo box would be:
 
-**Units Combo Box**
-``` javascript 
+### Units Combo Box
+
+``` javascript
 Doodles.combo.Units = function(config) {
     config = config || {};
     Ext.applyIf(config,{
@@ -76,8 +77,9 @@ Ext.reg('doodle-combo-units',Doodles.combo.Units);
 
 And to view that combo box:
 
-**Combo Call From Grid**
-``` javascript 
+### Combo Call From Grid
+
+``` javascript
        {
             header: _('unit')
             ,dataIndex: 'unit'
@@ -87,8 +89,9 @@ And to view that combo box:
         }
 ```
 
-**Combo Call From Window**
-``` javascript 
+### Combo Call From Window
+
+``` javascript
        {
             xtype: 'doodle-combo-units'
             ,fieldLabel: _('unit')

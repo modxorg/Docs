@@ -14,15 +14,15 @@ Here we want to make sure no category ID is assigned to our object that doesnt h
 
 First, our model:
 
-``` xml 
+``` xml
 <model package="test" baseClass="xPDOObject" platform="mysql"
-       defaultEngine="MyISAM" tablePrefix="test_">    
+       defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">
         <field key="category" dbtype="int" precision="10" attributes="unsigned"
                phptype="integer" default="0" null="false" index="index" />
-                
+
         <validation>
-            <rule field="name" 
+            <rule field="name"
                   name="preventBlank"
                   type="xPDOValidationRule"
                   rule="xPDOForeignKeyConstraint"
@@ -34,7 +34,7 @@ First, our model:
              />
         </validation>
 
-        <aggregate alias="Category" class="modCategory" 
+        <aggregate alias="Category" class="modCategory"
                    local="category" foreign="id"
                    cardinality="one" owner="foreign" />
     </object>
@@ -43,7 +43,7 @@ First, our model:
 
 From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
 
-``` php 
+``` php
 $output = '';
 $modx->addPackage('test','/path/to/my/test/model/','test_');
 $obj = $modx->newObject('myTest');

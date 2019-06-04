@@ -12,7 +12,7 @@ Returns all registered startup CSS, JavaScript, or HTML blocks.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getRegisteredClientStartupScripts()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getRegisteredClientStartupScripts())
 
-``` php 
+``` php
 string getRegisteredClientStartupScripts ()
 ```
 
@@ -20,10 +20,10 @@ string getRegisteredClientStartupScripts ()
 
 Get all registered startup scripts into an array.
 
-``` php 
+``` php
 $startupScripts = $modx->getRegisteredClientStartupScripts();
 ```
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")

@@ -4,15 +4,6 @@ _old_id: "307"
 _old_uri: "2.x/getting-started/installation/command-line-installation/the-setup-config-xml-file"
 ---
 
-- [The XML Configuration File](#the-xml-configuration-file)
-  - [Database Configuration Options](#database-configuration-options)
-  - [Installation Configuration Options](#installation-configuration-options)
-  - [Path Configuration Options](#path-configuration-options)
-  - [Other Configuration Options](#other-configuration-options)
-- [See Also](#see-also)
-
-
-
 ## The XML Configuration File
 
 The config.xml file used for running setup via CLI has the following XML nodes. They are described and outlined below:
@@ -69,16 +60,12 @@ The config.xml file used for running setup via CLI has the following XML nodes. 
 ## See Also
 
 1. [Basic Installation](getting-started/installation/standard)
-  1. [MODx Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
-  2. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
-  3. [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
-  4. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
-  5. [MODX and Suhosin](_legacy/getting-started/modx-and-suhosin)
-  6. [Nginx Server Config](getting-started/friendly-urls/nginx)
+    1. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
+    2. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+    3. [Nginx Server Config](getting-started/friendly-urls/nginx)
 2. [Advanced Installation](getting-started/installation/advanced)
 3. [Git Installation](getting-started/installation/git)
 4. [Command Line Installation](getting-started/installation/cli)
-  1. [The Setup Config Xml File](getting-started/installation/cli/config.xml)
+    1. [The Setup Config Xml File](getting-started/installation/cli/config.xml)
 5. [Troubleshooting Installation](getting-started/installation/troubleshooting)
 6. [Successful Installation, Now What Do I Do?](getting-started/getting-started)
-7. [Using MODx Revolution from SVN](_legacy/getting-started/using-modx-revolution-from-svn)

@@ -12,15 +12,15 @@ This rule makes sure that the value of the field is at least X, where X is defin
 
 First, our model:
 
-``` xml 
+``` xml
 <model package="test" baseClass="xPDOObject" platform="mysql"
-       defaultEngine="MyISAM" tablePrefix="test_">    
+       defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">
         <field key="number" dbtype="int" precision="10"
                phptype="integer" default="0" null="false" />
-                
+
         <validation>
-            <rule field="name" 
+            <rule field="name"
                   name="myMinValRule"
                   type="xPDOValidationRule"
                   rule="xPDOMinValueValidationRule"
@@ -34,7 +34,7 @@ First, our model:
 
 From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
 
-``` php 
+``` php
 $output = '';
 $modx->addPackage('test','/path/to/my/test/model/','test_');
 $obj = $modx->newObject('myTest');

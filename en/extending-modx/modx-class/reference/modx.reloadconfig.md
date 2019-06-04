@@ -12,18 +12,17 @@ Reload the config settings. Useful in cases where you've loaded some Settings dy
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::reloadConfig()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::reloadConfig())
 
-``` php 
+``` php
 array reloadConfig ()
 ```
 
 ## Example
 
-``` php 
+``` php
 $modx->reloadConfig();
 ```
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
-- [Settings](administering-your-site/settings "Settings")
-- [System Settings](administering-your-site/settings/system-settings "System Settings")
+- [modX](extending-modx/core-model/modx "modX")
+- [System Settings](building-sites/settings "System Settings")

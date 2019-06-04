@@ -4,27 +4,17 @@ _old_id: "1157"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/database-connections-and-xpdo"
 ---
 
-- [xPDO Database Connections](#xpdo-database-connections)
-  - [Example Connection](#example-connection)
-- [Defining Multiple Connections _(xPDO 2.2+)_](#defining-multiple-connections-xpdo-22)
-  - [xPDO::OPT\_CONNECTIONS](#xpdooptconnections)
-  - [xPDO::OPT\_CONN\_MUTABLE](#xpdooptconnmutable)
-  - [xPDO::OPT\_CONN\_INIT](#xpdooptconninit)
-- [See Also](#see-also)
-
-
-
 ## xPDO Database Connections
 
 Database connectivity in xPDO is done in the constructor. The xPDO object can only hold one database connection per instance, but you are free to instantiate as many xPDO instances as you need. The syntax of the constructor is such:
 
-``` php 
+``` php
 function xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null)
 ```
 
 So let's say we want to connect to a localhost database named 'test' on port 3306, with a utf-8 charset:
 
-``` php 
+``` php
 $dsn = 'mysql:host=localhost;dbname=test;port=3306;charset=utf8';
 $xpdo = new xPDO($dsn,'username','password');
 ```
@@ -33,21 +23,21 @@ And you're done!
 
 Optionally verify the connection, by simply adding the following line afterward
 
-``` php 
+``` php
 echo $o=($xpdo->connect()) ? 'Connected' : 'Not Connected';
 ```
 
 xPDO creates a PDO object, and thus connects to the database, only when a PDO method is called and the connection is needed. This connect-on-demand feature allows xPDO caching to work without a database connection being required (assuming everything is cached).
 
-More information on these parameters can be found on [The xPDO Constructor](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") page.
+More information on these parameters can be found on [The xPDO Constructor](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor") page.
 
-Once you're connected, you'll need to [load your package](xpdo/getting-started/using-your-xpdo-model/loading-packages "Loading Packages").
+Once you're connected, you'll need to [load your package](extending-modx/xpdo/custom-models/loading-package "Loading Packages").
 
 ### Example Connection
 
 Here's an example script that can be used to connect to a foreign database:
 
-``` php 
+``` php
 <?php
 
 define('MODX_CORE_PATH', '/path/to/revo/core/');
@@ -69,7 +59,7 @@ $xpdo = new xPDO($dsn, $username, $password);
 echo $o = ($xpdo->connect()) ? 'Connected' : 'Not Connected';
 
 // Issue queries against the foreign database:
-$results = $xpdo->query("SELECT id FROM some_table"); 
+$results = $xpdo->query("SELECT id FROM some_table");
 $recordCount = $results->rowCount();
 print $recordCount;
 ```
@@ -82,7 +72,7 @@ xPDO 2.2 introduces the ability to define multiple connections, and includes con
 
 To define additional connections for an xPDO instance, you can pass an array of connection configuration arrays in the `$options` parameter of the xPDO constructor. Each connection array defines the same parameters as an xPDO constructor call. Here is an example constructor call with multiple read-only connections specified:
 
-``` php 
+``` php
 $xpdo = new xPDO('mysql:host=127.0.0.1:19570;dbname=xpdotest;charset=utf8', 'username', 'password' array(
     xPDO::OPT_CONN_MUTABLE => true,
     xPDO::OPT_CONN_INIT => array(xPDO::OPT_CONN_MUTABLE => false),
@@ -117,7 +107,7 @@ This option defines the mutability of a defined connection, i.e. is it a read-on
 
 This option defines criteria that a connection must meet to be considered for use as the initial connection created by xPDO. In master/slave configurations, a typical value for this option (which is specified only once in the main configuration options) would indicate to initialize a read-only or immutable connection.
 
-``` php 
+``` php
 xPDO::OPT_CONN_INIT => array(xPDO::_OPT_CONN_MUTABLE => false)
 ```
 
@@ -125,5 +115,5 @@ This makes sure that xPDO selects a connection with that option set to false to 
 
 ## See Also
 
-[The xPDO Constructor](xpdo/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") 
+[The xPDO Constructor](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor")
 [PDO::\_\_construct()](http://www.php.net/manual/en/pdo.construct.php)

@@ -4,23 +4,12 @@ _old_id: "1111"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modx.tree.tree"
 ---
 
-- [MODx.tree.Tree](#modxtreetree)
-- [Unique Parameters](#unique-parameters)
-- [Custom Events](#custom-events)
-- [Other Unique Features](#other-unique-features)
-    - [Sorting](#sorting)
-    - [Remote Toolbar Loading](#remote-toolbar-loading)
-    - [Drag/Drop to MODx.FormPanel Fields](#dragdrop-to-modxformpanel-fields)
-- [See Also](#see-also)
-
-
-
 ## MODx.tree.Tree
 
-**Extends:** Ext.tree.TreePanel 
+**Extends:** Ext.tree.TreePanel
 **Key Features:** Remotely-loaded toolbars; drag-and-drop to form fields functionality; connector functionality for removing and dragging/sorting.
 
-![](/download/attachments/18678081/modext_tree.png?version=1&modificationDate=1250518279000)
+![](modext_tree.png)
 
 Trees provide a quick and easy way to display multiple levels of objects which have a parent-child relationship, such as users or resources.
 
@@ -60,19 +49,19 @@ The custom events fired by MODx.tree.Tree are:
 
 ## Other Unique Features
 
-#### Sorting
+### Sorting
 
 Sorting is automatically enabled by default in MODx.tree.Tree objects. To disable, set enableDD to false in your config. After a drag/drop, the tree will fire off the encoded nodes to a sort processor, with the same connector as the tree URL.
 
-#### Remote Toolbar Loading
+### Remote Toolbar Loading
 
 Toolbars can be loaded remotely, using the remoteToolbar config parameter. This will load the data from a processor loaded by the remoteToolbarAction config var, which defaults to "getToolbar".
 
-#### Drag/Drop to MODx.FormPanel Fields
+### Drag/Drop to MODx.FormPanel Fields
 
 Nodes can be dragged into MODx.FormPanel fields, assuming that the following is passed into the config var:
 
-``` javascript 
+``` javascript
 ,enableDD: true
 ,ddGroup: 'modx-treedrop-dd'
 ```
@@ -81,20 +70,20 @@ and that the node has an attribute of 'type', which is one of the following valu
 
 ## See Also
 
-1. [MODExt MODx Object](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object)
-2. [MODExt Tutorials](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials)
-  1. [1. Ext JS Tutorial - Message Boxes](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
-  2. [2. Ext JS Tutorial - Ajax Include](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
-  3. [3. Ext JS Tutorial - Animation](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
-  4. [4. Ext JS Tutorial - Manipulating Nodes](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
-  5. [5. Ext JS Tutorial - Panels](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
-  6. [7. Ext JS Tutoral - Advanced Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
-  7. [8. Ext JS Tutorial - Inside a CMP](developing-in-modx/advanced-development/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
-3. [MODx.combo.ComboBox](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.combo.combobox)
-4. [MODx.Console](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.console)
-5. [MODx.FormPanel](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.formpanel)
-6. [MODx.grid.Grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid)
-7. [MODx.grid.LocalGrid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.localgrid)
-8. [MODx.msg](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.msg)
-9. [MODx.tree.Tree](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.tree.tree)
-10. [MODx.Window](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.window)
+1. [MODExt MODx Object](extending-modx/custom-manager-pages/modext/modext-modx-object)
+2. [MODExt Tutorials](extending-modx/custom-manager-pages/modext/modext-tutorials)
+   1. [Ext JS Tutorial - Message Boxes](extending-modx/custom-manager-pages/modext/modext-tutorials/1.-ext-js-tutorial-message-boxes)
+   2. [Ext JS Tutorial - Ajax Include](extending-modx/custom-manager-pages/modext/modext-tutorials/2.-ext-js-tutorial-ajax-include)
+   3. [Ext JS Tutorial - Animation](extending-modx/custom-manager-pages/modext/modext-tutorials/3.-ext-js-tutorial-animation)
+   4. [Ext JS Tutorial - Manipulating Nodes](extending-modx/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes)
+   5. [Ext JS Tutorial - Panels](extending-modx/custom-manager-pages/modext/modext-tutorials/5.-ext-js-tutorial-panels)
+   6. [Ext JS Tutoral - Advanced Grid](extending-modx/custom-manager-pages/modext/modext-tutorials/7.-ext-js-tutoral-advanced-grid)
+   7. [Ext JS Tutorial - Inside a CMP](extending-modx/custom-manager-pages/modext/modext-tutorials/8.-ext-js-tutorial-inside-a-cmp)
+3. [MODx.combo.ComboBox](extending-modx/custom-manager-pages/modext/modx.combo.combobox)
+4. [MODx.Console](extending-modx/custom-manager-pages/modext/modx.console)
+5. [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel)
+6. [MODx.grid.Grid](extending-modx/custom-manager-pages/modext/modx.grid.grid)
+7. [MODx.grid.LocalGrid](extending-modx/custom-manager-pages/modext/modx.grid.localgrid)
+8. [MODx.msg](extending-modx/custom-manager-pages/modext/modx.msg)
+9. [MODx.tree.Tree](extending-modx/custom-manager-pages/modext/modx.tree.tree)
+10. [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window)

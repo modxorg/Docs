@@ -6,54 +6,15 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/
 
 The root directory of MODX is split into several subdirectories, each with its own set of responsibilities and tasks. Some of these directories can be renamed and moved, and their locations can be configured during setup.
 
-- [connectors/](#ExplanationofDirectoryStructure-connectors%2F)
-  - [Notable Files](#ExplanationofDirectoryStructure-NotableFiles)
-- [core/](#ExplanationofDirectoryStructure-core%2F)
-  - [core/cache/](#ExplanationofDirectoryStructure-core%2Fcache%2F)
-      - [core/cache/logs/](#ExplanationofDirectoryStructure-core%2Fcache%2Flogs%2F)
-      - [core/cache/mgr/](#ExplanationofDirectoryStructure-core%2Fcache%2Fmgr%2F)
-      - [core/cache/rss/](#ExplanationofDirectoryStructure-core%2Fcache%2Frss%2F)
-      - [core/cache/web/](#ExplanationofDirectoryStructure-core%2Fcache%2Fweb%2F)
-  - [core/components/](#ExplanationofDirectoryStructure-core%2Fcomponents%2F)
-  - [core/config/](#ExplanationofDirectoryStructure-core%2Fconfig%2F)
-  - [core/docs/](#ExplanationofDirectoryStructure-core%2Fdocs%2F)
-  - [core/error/](#ExplanationofDirectoryStructure-core%2Ferror%2F)
-  - [core/export/](#ExplanationofDirectoryStructure-core%2Fexport%2F)
-  - [core/import/](#ExplanationofDirectoryStructure-core%2Fimport%2F)
-  - [core/lexicon/](#ExplanationofDirectoryStructure-core%2Flexicon%2F)
-  - [core/model/](#ExplanationofDirectoryStructure-core%2Fmodel%2F)
-      - [core/model/modx/](#ExplanationofDirectoryStructure-core%2Fmodel%2Fmodx%2F)
-            - [core/model/modx/mysql/](#ExplanationofDirectoryStructure-core%2Fmodel%2Fmodx%2Fmysql%2F)
-            - [core/model/modx/processors/](#ExplanationofDirectoryStructure-core%2Fmodel%2Fmodx%2Fprocessors%2F)
-      - [core/model/schema/](#ExplanationofDirectoryStructure-core%2Fmodel%2Fschema%2F)
-      - [core/model/smarty/](#ExplanationofDirectoryStructure-core%2Fmodel%2Fsmarty%2F)
-  - [core/packages/](#ExplanationofDirectoryStructure-core%2Fpackages%2F)
-  - [core/xpdo/](#ExplanationofDirectoryStructure-core%2Fxpdo%2F)
-  - [Notable Files](#ExplanationofDirectoryStructure-NotableFiles)
-- [manager/](#ExplanationofDirectoryStructure-manager%2F)
-  - [manager/assets/](#ExplanationofDirectoryStructure-manager%2Fassets%2F)
-  - [manager/controllers/](#ExplanationofDirectoryStructure-manager%2Fassets%2Fcontrollers%2F)
-  - [manager/templates/](#ExplanationofDirectoryStructure-manager%2Fassets%2Ftemplates%2F)
-  - [Notable Files](#ExplanationofDirectoryStructure-NotableFiles)
-- [setup/](#ExplanationofDirectoryStructure-setup%2F)
-- [\_build/](#ExplanationofDirectoryStructure-%5Cbuild%2F)
-  - [Notable Files](#ExplanationofDirectoryStructure-NotableFiles)
-- [assets/](#ExplanationofDirectoryStructure-assets%2F)
-  - [assets/components/](#ExplanationofDirectoryStructure-assets%2Fcomponents%2F)
-
-
-
 ## connectors/
 
 Connectors are essentially entry points for AJAX requests in MODX. They don't do any database manipulation on their own; they simply load up the main MODX class, sanitize any request data, and then handle the request by pointing to the appropriate Processor file.
 
-For example, when we create a resource, we request connectors/resource/index.php?action=create. The index.php file will include the base connector file (connectors/index.php) which instantiates the main MODX object, handle any custom [Context](administering-your-site/contexts "Contexts") switching, and sanitize the GET or POST request. The connectors/resource/index.php will then "handle" the request and call the correct Processor file, which we will discuss later.
+For example, when we create a resource, we request connectors/resource/index.php?action=create. The index.php file will include the base connector file (connectors/index.php) which instantiates the main MODX object, handle any custom [Context](building-sites/contexts "Contexts") switching, and sanitize the GET or POST request. The connectors/resource/index.php will then "handle" the request and call the correct Processor file, which we will discuss later.
 
 ### Notable Files
 
-- **connectors/index.php**- This file is particularly useful in creating your own connectors. Simply include this file in your connectors, and then handle the request using $modx->request->handleRequest();
-
-- - - - - -
+- **connectors/index.php**- This file is particularly useful in creating your own connectors. Simply include this file in your connectors, and then handle the request using `$modx->request->handleRequest()`;
 
 ## core/
 
@@ -81,7 +42,7 @@ A cache of every RSS feed in MODX.
 
 Unlike the cache in MODX Evolution, the MODX Revolution cache is split up into several parts. Every context (ie. web and mgr) has a context.cache.php file. This file is like the config.cache.php file, except that it only caches settings that have been overridden from their default System Setting. Any context can override a system setting.
 
-Additionally, the web context cache will contain separate directories for resources and elements. A resource with ID 12 will be found at cache/web/resources/12.cache.php. This new caching mechanism means that loading times will decrease, and the limit on the number of cacheable resources will disappear.
+Additionally, the web context cache will contain separate directories for resources and elements. A resource with ID 12 will be found at `cache/web/resources/12.cache.php`. This new caching mechanism means that loading times will decrease, and the limit on the number of cacheable resources will disappear.
 
 ### core/components/
 
@@ -117,13 +78,13 @@ Second, all lexicons are stored in the MODX database, and later cached on-demand
 
 To load a lexicon, one would use a format such as this:
 
- ``` php 
+ ``` php
     $modx->lexicon->load( 'lang:namespace:topic' );
 ```
 
 \# **lang**- the 2-digit IANA code. This is optional, and defaults to 'en'.
 
-1. **namespace**- Each lexicon has its own [Namespace](developing-in-modx/advanced-development/namespaces "Namespaces"). The built-in namespace for MODX is "core". Package creators will also be able to create a custom namespace, and Manager users can also create their own namespaces as well.
+1. **namespace**- Each lexicon has its own [Namespace](extending-modx/namespaces "Namespaces"). The built-in namespace for MODX is "core". Package creators will also be able to create a custom namespace, and Manager users can also create their own namespaces as well.
 2. **topic**- The specific topic/file you want to load.
 
 ### core/model/
@@ -134,9 +95,9 @@ So, MODX does model sort-of similar. We actually do a MVC/C model, in which we a
 
 #### core/model/modx/
 
-"Wait! I thought we were already in a modx dir? Why another modx subdirectory?" Good question. Well, MODX Revolution uses xPDO for its database management. xPDO uses the idea of 'packages' for different connections to different models. So, if I wanted to create my custom tables, I'd create a new xPDO package, and add it in at runtime. This way I could use the maps and classes created without having to modify the MODX core. This is shown in the [Crea ting a 3rd Party Component](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Writing a 3rd Party Component in MODX Revolution, Pt. I") tutorial.
+"Wait! I thought we were already in a modx dir? Why another modx subdirectory?" Good question. Well, MODX Revolution uses xPDO for its database management. xPDO uses the idea of 'packages' for different connections to different models. So, if I wanted to create my custom tables, I'd create a new xPDO package, and add it in at runtime. This way I could use the maps and classes created without having to modify the MODX core. This is shown in the [Creating a 3rd Party Component](extending-modx/tutorials/developing-an-extra "Writing a 3rd Party Component in MODX Revolution, Pt. I") tutorial.
 
-So, that said, it can be inferred that the core/model/modx directory is referring to the "modx" package. Let's go inside it, and you'll see a ton of classes. These are the classes that are either xPDOObjects - which are PHP classes that represent tables in the DB (ie, modsnippet.class.php is a PHP class that is an object of modx\_site\_snippets), or they are functional classes, such as modcachemanager.class.php.
+So, that said, it can be inferred that the core/model/modx directory is referring to the "modx" package. Let's go inside it, and you'll see a ton of classes. These are the classes that are either xPDOObjects - which are PHP classes that represent tables in the DB (ie, modsnippet.class.php is a PHP class that is an object of modx\_site\_snippets), or they are functional classes, such as `modcachemanager.class.php`.
 
 The subdirectories in this folder - not including mysql or processors - are subcategories of classes, that are loaded like: $modx->loadClass('transport.modPackageBuilder'); with the "." being the separation of directories.
 
@@ -152,7 +113,7 @@ This directory contains the individual processor files used in database manipula
 
 #### core/model/schema/
 
-The schema is the XML representation of the MODX database. This is used in building new maps and classes, but is never actually read or parsed when MODX is running. For the most part, you can ignore this directory, as it is mainly used for development work. The tutorials on [creating 3rd party components](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Writing a 3rd Party Component in MODX Revolution, Pt. I") teach more about schemas.
+The schema is the XML representation of the MODX database. This is used in building new maps and classes, but is never actually read or parsed when MODX is running. For the most part, you can ignore this directory, as it is mainly used for development work. The tutorials on [creating 3rd party components](extending-modx/tutorials/developing-an-extra "Writing a 3rd Party Component in MODX Revolution, Pt. I") teach more about schemas.
 
 #### core/model/smarty/
 
@@ -162,7 +123,7 @@ Smarty is an intelligent, object-oriented templating engine that uses dynamic, m
 
 When you edit a resource (often a document) in the Manager, for example, you're looking at a page generated by the controller at manager/controllers/resource/staticresource/update.php. After setting the characteristics of the resource in the $resource array, this code renders the page:
 
- ``` php 
+ ``` php
     $modx->smarty->assign('resource',$resource); return $modx->smarty->fetch('resource/staticresource/update.tpl');
 ```
 
@@ -184,12 +145,10 @@ These classes are used by MODX internally, and developers should never need to d
 
 ### Notable Files
 
-- **core/cache/config.cache.php**- This is the cache file for all of the [System Settings](administering-your-site/settings/system-settings "System Settings") in MODX. Their database equivalents are found in the \_system\_settings table, and their xPDO equivalents are modSystemSetting objects.
-  - **_Tip_** - If you ever get locked out by the CAPTCHA component, you can edit this file and set _use\_captcha_to '0' to disable CAPTCHA. Then you can log in and disable CAPTCHA in [System Settings](administering-your-site/settings/system-settings "System Settings").
-- **core/cache/sitePublishing.idx.php**- In MODX Evolution, this file contained the cache data for all documents, chunks, and snippets. In Revolution, this is no longer the case, and this file now keeps track of cache refresh intervals.
-- **core/cache/mgr/actions.cache.php**- a map of all modAction objects.
-
-- - - - - -
+- **core/cache/config.cache.php** - This is the cache file for all of the [System Settings](building-sites/settings "System Settings") in MODX. Their database equivalents are found in the \_system\_settings table, and their xPDO equivalents are modSystemSetting objects.
+  - **_Tip_** - If you ever get locked out by the CAPTCHA component, you can edit this file and set _use\_captcha_ to '0' to disable CAPTCHA. Then you can log in and disable CAPTCHA in [System Settings](building-sites/settings "System Settings").
+- **core/cache/sitePublishing.idx.php** - In MODX Evolution, this file contained the cache data for all documents, chunks, and snippets. In Revolution, this is no longer the case, and this file now keeps track of cache refresh intervals.
+- **core/cache/mgr/actions.cache.php** - a map of all modAction objects.
 
 ## manager/
 
@@ -209,15 +168,11 @@ This directory contains the template files for each manager page. They do not co
 
 ### Notable Files
 
-- **manager/assets/ext2/ext-all.js**- This is the main Ext library file, which must be included on all Manager pages (or any page using Ext). It's compressed to save space, decrease download time, and speed up page loads. However, if you're doing a lot of JavaScript work, you're bound to run into some cryptic errors because of the compression. The best way to deal with this is to simply rename this file, and then rename the ext-all.js file to ext-all-debug.js to use the uncompressed version during development. Just be sure to switch them back afterwards!
-
-- - - - - -
+- **manager/assets/ext2/ext-all.js** - This is the main Ext library file, which must be included on all Manager pages (or any page using Ext). It's compressed to save space, decrease download time, and speed up page loads. However, if you're doing a lot of JavaScript work, you're bound to run into some cryptic errors because of the compression. The best way to deal with this is to simply rename this file, and then rename the ext-all.js file to ext-all-debug.js to use the uncompressed version during development. Just be sure to switch them back afterwards!
 
 ## setup/
 
-This directory is the equivalent of the "install" directory in MODX Evolution. It contains the necessary files needed to run Setup and perform a [Fresh Installation](/display/revolution20/Fresh+Installation "Fresh Installation") or an [Upgrade](administering-your-site/upgrading-modx/upgrading-from-modx-evolution "Upgrading from MODX Evolution").
-
-- - - - - -
+This directory contains the necessary files needed to run Setup and perform a [Fresh Installation](getting-started/installation "Fresh Installation") or Update.
 
 ## \_build/
 
@@ -225,13 +180,11 @@ This directory is only present in version of MODX Revolution downloaded from the
 
 ### Notable Files
 
-- **\_build/transport.core.php**- This file must be executed after downloading MODX Revolution, and prior to running Setup. After completion, you should notice a "core" directory inside your core/packages/ directory, which will contain all of the necessary \[Vehicles\]for installing MODX Revolution.
-
-- - - - - -
+- **\_build/transport.core.php** - This file must be executed after downloading MODX Revolution, and prior to running Setup. After completion, you should notice a "core" directory inside your core/packages/ directory, which will contain all of the necessary \[Vehicles\]for installing MODX Revolution.
 
 ## assets/
 
-This directory is not present in MODX Revolution by default, but like in MODX Evolution, it is common to place images, CSS, JavaScript, and other media in here.
+This directory is not present in MODX Revolution by default, but it is common to place images, CSS, JavaScript, and other media in here.
 
 ### assets/components/
 

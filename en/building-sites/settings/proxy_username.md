@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/proxy_username"
 
 ## proxy\_username
 
-**Name**: Proxy Username 
-**Type**: String 
+**Name**: Proxy Username
+**Type**: String
 **Default**:
 
 The username to authenticate against with your proxy server.

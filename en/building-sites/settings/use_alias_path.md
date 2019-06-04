@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/use_alias_path"
 
 ## use\_alias\_path
 
-**Name**: Use Friendly Alias Path 
-**Type**: Yes/No 
+**Name**: Use Friendly Alias Path
+**Type**: Yes/No
 **Default**: No
 
 Setting this option to 'yes' will display the full path to the document if the document has an alias.

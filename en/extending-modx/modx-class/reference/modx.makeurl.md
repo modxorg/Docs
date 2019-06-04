@@ -22,7 +22,7 @@ The scheme indicates in what format the URL is generated.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::makeUrl()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::makeUrl())
 
-``` php 
+``` php
 string makeUrl (integer $id, [string $context = ''], [string|array $args = ''], [mixed $scheme = -1])
 ```
 
@@ -30,25 +30,25 @@ string makeUrl (integer $id, [string $context = ''], [string|array $args = ''], 
 
 Make a URL for the Resource with ID 4.
 
-``` php 
+``` php
 $url = $modx->makeUrl(4);
 ```
 
 Make a URL for the Resource with ID 12, but make sure it's in HTTPS.
 
-``` php 
+``` php
 $url = $modx->makeUrl(12,'','','https');
 ```
 
 Make a URL to Resource with ID 56, but add a ?hello=world to the URL.
 
-``` php 
+``` php
 $url = $modx->makeUrl(25, '', array('hello' => 'world'));
 $url = $modx->makeUrl(25, '', 'hello=world');
 ```
 
 Note that the arguments available to this function can be passed to the `[[~link]]` tags, e.g.
 
-``` php 
+``` php
 [[~123? &scheme=`full`]]
 ```

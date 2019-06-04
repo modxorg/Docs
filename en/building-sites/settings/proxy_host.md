@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/proxy_host"
 
 ## proxy\_host
 
-**Name**: Proxy Host 
-**Type**: String 
+**Name**: Proxy Host
+**Type**: String
 **Default**:
 
-The hostname of your proxy server. If this is specified, MODx will attempt to use the proxy when connecting to the RSS feeds or [Package Management](extending-modx/transport-packages "Package Management").
+The hostname of your proxy server. If this is specified, MODX will attempt to use the proxy when connecting to the RSS feeds or [Package Management](extending-modx/transport-packages "Package Management").

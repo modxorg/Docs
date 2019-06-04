@@ -6,9 +6,9 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/phpthumb_nooffsi
 
 ## phpthumb\_nooffsitelink\_require\_refer
 
-**Name**: phpThumb Offsite Linking Require Referrer 
-**Type**: Yes/No 
-**Default**: No 
+**Name**: phpThumb Offsite Linking Require Referrer
+**Type**: Yes/No
+**Default**: No
 **Available In:** 2.0.8+
 
 If enabled, any offsite linking attempts will be rejected without a valid referrer header.

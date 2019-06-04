@@ -4,31 +4,17 @@ _old_id: "353"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)/custom-output-filter-examples"
 ---
 
-- [Introduction](#introduction)
-- [Creating a Custom Output Modifier](#creating-a-custom-output-modifier)
-- [Porting PHx to Custom Output Filters](#porting-phx-to-custom-output-filters)
-- [Examples](#examples)
-  - [alternateClass](#alternateclass)
-  - [parseLinks](#parselinks)
-  - [parseTags](#parsetags)
-  - [parseTags](#parsetags-1)
-  - [shorten](#shorten)
-  - [substring](#substring)
-  - [numberformat](#numberformat)
+## Introduction
 
+ Custom Output Filters are MODX Snippets dedicated to formatting placeholder output in the view layer (in a Template or in a Chunk). If a raw placeholder, e.g.
 
-
-##  Introduction 
-
- Custom Output Filters are MODx Snippets dedicated to formatting placeholder output in the view layer (in a Template or in a Chunk). If a raw placeholder, e.g.
-
-``` php 
+``` php
 [[*pagetitle]]
 ```
 
  returns a string of text, you can modify it via a custom Output Filter, e.g.
 
-``` php 
+``` php
 [[*pagetitle:myOutputFilter]]
 ```
 
@@ -36,58 +22,52 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  In the above example, the pagetitle value will be modified by a Snippet named **myOutputFilter**
 
- Check the page on MODX's [built-in output filters](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers) "Input and Output Filters (Output Modifiers)") before writing your own filter.
+ Check the page on MODX's [built-in output filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") before writing your own filter.
 
-##  Creating a Custom Output Modifier 
+## Creating a Custom Output Modifier
 
  When writing your own Output Modifier, your Snippet can take the following inputs:
 
-``` php 
+``` php
 $input; // the value that is being formatted/filtered
 $options; // optional values passed via backticks
 ```
 
- A custom output filter is simply a [Snippet](developing-in-modx/basic-development/snippets "Snippets") that is earmarked to modify content. Simply put the [Snippet](developing-in-modx/basic-development/snippets "Snippets") name instead of the modifier.
+ A custom output filter is simply a [Snippet](extending-modx/snippets "Snippets") that is earmarked to modify content. Simply put the [Snippet](extending-modx/snippets "Snippets") name instead of the modifier.
 
  The syntax is that the Snippet name comes after a colon. Example with a snippet named 'makeDownloadLink':
 
-``` php 
+``` php
 [[+file:makeDownloadLink=`notitle`]]
 ```
 
  This will pass these properties to the snippet:
 
-| Param   | Value                             | Example Result                           |
-| ------- | --------------------------------- | ---------------------------------------- |
-| input   | The element's value.              | The value of \[\[+file\]\]               |
-| options | Any value passed to the modifier. | 'notitle'                                |
-| token   | The type of the parent element.   | + (the token on `file`)                  |
-| name    | The name of the parent element.   | file                                     |
-| tag     | The complete parent tag.          | \[\[+file:makeDownloadLink=`notitle`\]\] |
+| Param   | Value                             | Example Result                             |
+| ------- | --------------------------------- | ------------------------------------------ |
+| input   | The element's value.              | The value of `[[+file]]`                   |
+| options | Any value passed to the modifier. | 'notitle'                                  |
+| token   | The type of the parent element.   | + (the token on `file`)                    |
+| name    | The name of the parent element.   | file                                       |
+| tag     | The complete parent tag.          | ```[[+file:makeDownloadLink=`notitle`]]``` |
 
  The most important (and perhaps the most obvious) of these parameters is the **$input** parameter. Your Snippet could do something as simple as this:
 
-``` php 
+``` php
 return strtolower($input);
 ```
 
-##  Porting PHx to Custom Output Filters 
+## Examples
 
- PHx is a popular MODX Evolution extra that offers similar functionality as output filters in Revolution, however they are not exactly the same. The most important thing to remember when porting PHx code to a custom output filter in Revolution is probably that the input (the tag's content being processed) is now available in the $input variable, contrary to the $output one which was the case in PHx.
-
- That said, you can have a look at [this page with PHx examples](http://wiki.modxcms.com/index.php/PHx/CustomModifiers) and convert them to Revolution easily when needed. Could you add them to this page when you did that, too? Thanks! :)
-
-##  Examples 
-
- As the examples to be found below are not included in the core, you will need to add these yourself. Luckily, MODx makes this ridiculously easy. You can simply use snippets as output filters, so the process of adding a custom output filter is merely adding a new snippet! To use the output filter, you reference the snippet name.
+ As the examples to be found below are not included in the core, you will need to add these yourself. Luckily, MODX makes this ridiculously easy. You can simply use snippets as output filters, so the process of adding a custom output filter is merely adding a new snippet! To use the output filter, you reference the snippet name.
 
  To documentation contributors: please add examples in alphabetical order.
 
-###  alternateClass 
+### alternateClass
 
  alternateClass simply checks if an integer (for example, a counting placeholder) passed can be divided by two. If that is possible, it returns the class you specify as the output filter's property.
 
-``` php 
+``` php
 <?php
 /*
  * Based on phx:alternateClass by Smashingred
@@ -103,15 +83,15 @@ if ($input % 2) {
 
  Use like this:
 
-``` php 
+``` php
 [[+component.idx:alternateClass=`alt`]]
 ```
 
-###  parseLinks 
+### parseLinks
 
- The parseLinks output filter finds links, and replaces them with a html <a> attribute.</a>
+ The parseLinks output filter finds links, and replaces them with a html `<a>` attribute.`</a>`
 
-``` php 
+``` php
 <?php
 /*
  * Based on phx:parseLinks
@@ -126,7 +106,7 @@ return $t;
 
 This parseTags takes input as a comma delimited list, and makes all individual tags a link to resource 9 with tag=tagname query parameter appended to the link.
 
-``` php 
+``` php
 <?php
 /*
  * Based on phx:parseLinks
@@ -141,7 +121,7 @@ return $t;
 
 This parseTags takes input as a comma delimited list, and makes all individual tags a link to resource 9 with tag=tagname query parameter appended to the link.
 
-``` php 
+``` php
 <?php
 /*
  * parseTags output filter
@@ -160,7 +140,7 @@ if ($input == '') { return ''; } // Output filters are also processed when the i
 
 This shortens the input like :ellipsis but it does not truncate words. Defaults to the length of max. 50 characters. Based on code by gOmp.
 
-``` php 
+``` php
 <?php
 $output = '';
 $options = !empty($options)?$options:50;
@@ -180,7 +160,7 @@ return $output;
 
 Get a substring of the input.
 
-``` php 
+``` php
 <?php
 $options=explode(',',$options);
 return count($options)>1 ? substr($input,$options[0],$options[1]) : substr($input,$options[0]);
@@ -189,14 +169,15 @@ return count($options)>1 ? substr($input,$options[0],$options[1]) : substr($inpu
 
 Example:
 
-``` php 
+``` php
 <span>[[*introtext:substring=`0,1`]]</span>[[*introtext:substring=`1`]]
 ```
 
 ### numberformat
+
 [PHP: number_format](http://php.net/manual/en/function.number-format.php)
 
-``` php 
+``` php
 <?php
 $number = floatval($input);
 $optionsXpld = @explode('&', $options);
@@ -217,7 +198,8 @@ $output = number_format($number, $decimals, $dec_point, $thousands_sep);
 return $output;
 ```
 
- Example:
-``` php 
+### Example:
+
+``` php
 [[+price:numberformat=`&decimals=2&dec_point=,&thousands_sep=.`]]
 ```

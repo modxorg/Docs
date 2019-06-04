@@ -4,19 +4,13 @@ _old_id: "1048"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-in-2.3"
 ---
 
-- [Setting the Namespace Path](#setting-the-namespace-path)
-- [Creating the Menu](#creating-the-menu)
-- [Creating the Controller File](#creating-the-controller-file)
-
-
-
- Creating MODX custom manager pages (CMPs) is **far** simpler in MODX Revolution 2.3 - you simply have to set a Namespace path, and then create PHP files. That's it.
+Creating MODX custom manager pages (CMPs) is **far** simpler in MODX Revolution 2.3 - you simply have to set a Namespace path, and then create PHP files. That's it.
 
 ## Setting the Namespace Path
 
  First off, we'll create a Namespace (Settings > Namespaces) called "mycmp", and set its path to "{core\_path}components/mycmp/". Set its Assets Path to "{assets\_path}components/mycmp/" as well.
 
- ![](/download/attachments/763b342992d3623156aef15b0dd5d168/create-namespace.png)
+ ![](create-namespace.png)
 
  **You can avoid some problems if you make your namespace and your action all lowercase with only alphanumeric characters (no spaces, hyphens, or underscores). Your namespace should be a lowercase version of the name of your CMP.**
 
@@ -24,7 +18,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
  Now we'll need a Menu item to link to for our CMP. Go to System -> Top Menu, and create a Menu item under the "Apps" menu item that looks like this:
 
- ![](/download/attachments/39354402/mycmp1.png?version=1&modificationDate=1334858685000)
+ ![](mycmp1.png)
 
  As you can see, we're specifying the Namespace as "mycmp", and then the Action as "welcome". This means our default controller will be the "welcome" controller.
 
@@ -34,7 +28,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/cust
 
  Now, on to the file contents:
 
- ``` php 
+ ``` php
 <?php
 class MycmpWelcomeManagerController extends modExtraManagerController {
     public function process(array $scriptProperties = array()) {}
@@ -55,7 +49,7 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
 
  Let's make the content simple:
 
- ``` html 
+ ``` html
 <div class="container">
 <h2>Welcome!</h2>
 </div>
@@ -63,10 +57,10 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
 
  A simple h2, with a wrapping div that adds some padding. And that will display this on our CMP:
 
- ![](/download/attachments/b0c0afd6ef1b26df1ce35159560bcfa2/2-3-CMP.jpg)
+ ![](2-3-cmp.jpg)
 
  We're Finished!
 
  That's it! That's all you need to start making CMPs in MODX 2.3. You can see that our CMP is now accessible via /url/to/modx/manager/?action=welcome&namespace=mycmp - which is much neater than the ID-based actions of 2.2 and earlier.
 
- There's obviously more API methods that you can override in modExtraManagerController in your PHP controller class, and then you can use [MODExt](developing-in-modx/advanced-development/custom-manager-pages/modext "MODExt") and such in your actual CMP to make powerful pages, but that's beyond the scope of this tutorial.
+ There's obviously more API methods that you can override in modExtraManagerController in your PHP controller class, and then you can use [MODExt](extending-modx/custom-manager-pages/modext "MODExt") and such in your actual CMP to make powerful pages, but that's beyond the scope of this tutorial.

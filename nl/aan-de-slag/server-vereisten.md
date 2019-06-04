@@ -5,11 +5,11 @@ translation: "getting-started/server-requirements"
 
 MODX werkt prima op de meeste shared/cloud servers, en ook VPS en dedicated servers zijn geen probleem. MODX is geschreven in PHP, gebruikt in de meeste configuraties een MySQL database, en heeft een webserver als Apache of nginx nodig om de web requests te behandelen.
 
-## PHP 
+## PHP
 
 MODX 2.x vereist een PHP versie van tenminste 5.3.3, maar het is aan te raden om minstens versie 7.1 te gebruiken. 7.2 en 7.3 zijn ook ondersteund.
- 
-In MODX 3.0 zal de minimale ondersteunde versie van PHP verhoogd worden, waarschijnlijk naar 7.1. 
+
+In MODX 3.0 zal de minimale ondersteunde versie van PHP verhoogd worden, waarschijnlijk naar 7.1.
 
 (MODX 2.7.0 en 2.7.1 hebben PHP 5.4 nodig; in 2.7.2 is dat hersteld naar PHP 5.3.3)
 
@@ -48,6 +48,6 @@ Op mobiele/tablet apparaten:
 - Chrome for Android (laatste)
 - Safari on iOS (laatste)
 
-De manager werkt mogelijk prima op oudere/andere browsers, maar die zijn niet officieel ondersteund. 
+De manager werkt mogelijk prima op oudere/andere browsers, maar die zijn niet officieel ondersteund.
 
-Denk erom dat deze vereisten alleen gelden voor de manager. Welke browsers je voor de site wilt ondersteunen hangt helemaal af van wat je daar zelf voor wilt. 
+Denk erom dat deze vereisten alleen gelden voor de manager. Welke browsers je voor de site wilt ondersteunen hangt helemaal af van wat je daar zelf voor wilt.

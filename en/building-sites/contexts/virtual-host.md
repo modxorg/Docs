@@ -14,7 +14,7 @@ Next, in the Resource Tree (to the left) create a "Dev Home" Resource. Place it 
 
 Your tree should look something like this:
 
-![](/download/attachments/18678054/subctx1.png?version=1&modificationDate=1269522960000)
+![](subctx1.png)
 
 From there, go ahead and right-click on the "dev" Context in the tree, and click "Edit Context". From here we'll see a Context Settings tab. Click on it, and you'll need to add a few settings:
 
@@ -26,7 +26,7 @@ From there, go ahead and right-click on the "dev" Context in the tree, and click
 You can add other context-specific settings, such as error\_page, unauthorized\_page, cultureKey, and others if you so choose. All system settings can be overridden by setting them on a context.
 
 **Note: LINKING BETWEEN CONTEXTS**
-If you're going to be **linking back to the 'web' context from this context ('dev')**, you'll want to **add those same Context Settings (with 'web'-specific values, of course) to the 'web' context**. This allows MODx to know where to redirect 'web' context URLs back to.
+If you're going to be **linking back to the 'web' context from this context ('dev')**, you'll want to **add those same Context Settings (with 'web'-specific values, of course) to the 'web' context**. This allows MODX to know where to redirect 'web' context URLs back to.
 
 After creating the settings, clear your site cache.
 
@@ -37,7 +37,7 @@ cPanel will make the necessary changes automatically when you create a new sub d
 
 Now we need to do some Apache work. (If you're not using Apache, you can at least follow the same idea and customize it to your server.) Go to Apache's httpd.conf file, and add these lines, changing where necessary for your domain name:
 
-``` php 
+``` php
 NameVirtualHost dev.modxcms.com
 <VirtualHost dev.modxcms.com>
   ServerAdmin dev@modxcms.com
@@ -58,7 +58,7 @@ Great! Restart your server (apachectl graceful).
 
 Now we're going to need to create the actual files to load the subdomain. Go create a "dev/" subdirectory in /home/modxcms.com/public\_html/ (or whatever base path your webroot is in).
 
-You'll need to copy 3 files from your MODx Revolution's root directory:
+You'll need to copy 3 files from your MODX Revolution's root directory:
 
 - index.php
 - .htaccess
@@ -68,11 +68,11 @@ Copy those to the dev/ directory.
 
 Now, you'll need to edit them.
 
-#### index.php
+### index.php
 
 Edit index.php, and find this line (near the end):
 
-``` php 
+``` php
 $modx->initialize('web');
 ```
 
@@ -82,7 +82,7 @@ Change 'web' to 'dev'. Save the file and close.
 
 You'll only need to edit one line here (and maybe not at all). Find this line (near the top):
 
-``` php 
+``` php
 RewriteBase /
 ```
 
@@ -92,13 +92,13 @@ Make sure that's set to /, not anything else. It should match the **base\_url** 
 
 What is really important here is to make sure this line points to your MODX core folder:
 
-``` php 
+``` php
  define('MODX_CORE_PATH', dirname(__FILE__) . '/core/');
 ```
 
 If the main domain is "up one level" on the filesystem, you should be able to use the following:
 
-``` php 
+``` php
  define('MODX_CORE_PATH', dirname(dirname(__FILE__)) . '/core/');
 ```
 
@@ -108,7 +108,7 @@ Clear your site cache again, refresh the Resource tree, and click 'Preview' on y
 
 > <http://dev.modxcms.com/>
 
-Create a \[\[~135\]\] link to the "Dev Docs" Resource in the "Dev Home" Resource. Reload your page. Note the link properly builds to:
+Create a `[[~135]]` link to the "Dev Docs" Resource in the "Dev Home" Resource. Reload your page. Note the link properly builds to:
 
 > <http://dev.modxcms.com/documentation.html>
 
@@ -116,5 +116,5 @@ And you're done!
 
 ## See Also
 
-- [Contexts](administering-your-site/contexts "Contexts")
+- [Contexts](building-sites/contexts "Contexts")
 - Contexts as subfolders (from the forums: <http://modxcms.com/forums/index.php/topic,51346.0.html>)

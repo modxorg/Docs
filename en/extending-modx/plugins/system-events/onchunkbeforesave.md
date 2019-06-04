@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchun
 
 Fires right before a Chunk is saved.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: modChunk
 
 ## Event Parameters
@@ -19,5 +19,5 @@ Group: modChunk
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires after a form is submitted but before a Snippet is saved in the manager.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: Snippets
 
 ## Event Parameters
@@ -21,5 +21,5 @@ Group: Snippets
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

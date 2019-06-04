@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/feed_modx_securi
 
 ## feed\_modx\_security
 
-**Name**: MODx Security Feed URL 
-**Type**: String 
+**Name**: MODX Security Feed URL
+**Type**: String
 **Default**: <http://feeds.feedburner.com/modxsecurity>
 
-Set the URL for the RSS feed for the MODx Security panel in the manager.
+Set the URL for the RSS feed for the MODX Security panel in the manager.

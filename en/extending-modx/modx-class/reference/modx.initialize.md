@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::initialize
 
-Initializes the modX engine into a [Context](administering-your-site/contexts "Contexts").
+Initializes the modX engine into a [Context](building-sites/contexts "Contexts").
 
 This includes preparing the session, pre-loading some common classes and objects, the current site and context settings, extension packages used to override session handling, error handling, or other initialization classes.
 
@@ -14,7 +14,7 @@ This includes preparing the session, pre-loading some common classes and objects
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::initialize()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::initialize())
 
-``` php 
+``` php
 void initialize ([string $contextKey = 'web'])
 ```
 
@@ -22,10 +22,10 @@ void initialize ([string $contextKey = 'web'])
 
 Initialize the 'sports' Context.
 
-``` php 
+``` php
 $modx->initialize('sports');
 ```
 
 ## See Also
 
-- [Contexts](administering-your-site/contexts "Contexts")
+- [Contexts](building-sites/contexts "Contexts")

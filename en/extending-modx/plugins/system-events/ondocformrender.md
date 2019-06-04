@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocf
 
 Fires after a Resource editing form is loaded in the manager. Useful for inserting HTML into forms, and as of 2.4 for setting several default values on new resources
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
  Group: Documents
 
 ## Event Parameters
@@ -36,7 +36,7 @@ It is advised to only do this on new resources, as any values you set **will** o
 
 Here is how you might use it:
 
-``` php 
+``` php
 switch ($modx->event->name) {
   case 'OnDocFormRender':
     if ($mode === 'new') {
@@ -49,5 +49,5 @@ switch ($modx->event->name) {
 
 See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

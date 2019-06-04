@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onuser
 
 Fires after a User is deleted.
 
-Service: 1 - Parser Service Events 
+Service: 1 - Parser Service Events
 Group: modUser
 
 ## Event Parameters
@@ -20,5 +20,5 @@ Group: modUser
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

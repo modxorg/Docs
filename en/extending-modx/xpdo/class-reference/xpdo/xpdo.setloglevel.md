@@ -16,10 +16,10 @@ API Docs: <http://api.modxcms.com/xpdo/xPDO.html#setLogLevel>
 
 Set the log level to show log messages with at least INFO status.
 
-``` php 
+``` php
 $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 ```
 
 ## See Also
 
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO](extending-modx/xpdo "xPDO")

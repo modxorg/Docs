@@ -10,7 +10,7 @@ The @RESOURCE Binding returns the parsed contents of any specified Resource.
 
 ## Syntax
 
-``` php 
+``` php
 @RESOURCE resource_id
 ```
 
@@ -20,11 +20,11 @@ Binds the variable to a Resource, where resource\_id is the ID of the Resource. 
 
 To output the contents of a Resource with ID of 12:
 
-``` php 
+``` php
 @RESOURCE 12
 ```
 
 ## See Also
 
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
-- [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")
+- [Bindings](building-sites/elements/template-variables/bindings "Bindings")

@@ -24,8 +24,8 @@ To redirect the browser to a custom manager page controller named "update" in th
 
 ``` javascript
 MODx.loadPage(MODx.action['mycomponent:update'], 'foo=bar&bar=foo');
-// Prior to Revo 2.2 you would need to use this, but risked collisions with core or other packages 
-MODx.loadPage(MODx.action['update'], 'foo=bar&bar=foo'); 
+// Prior to Revo 2.2 you would need to use this, but risked collisions with core or other packages
+MODx.loadPage(MODx.action['update'], 'foo=bar&bar=foo');
 ```
 
 ### Revolution 2.3+

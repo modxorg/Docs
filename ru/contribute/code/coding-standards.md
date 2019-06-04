@@ -3,18 +3,6 @@ title: "MODX PHP Стандарты кодирования"
 translation: "contribute/code/coding-standards"
 ---
 
-- [Общие требования](#%D0%BE%D0%B1%D1%89%D0%B8%D0%B5-%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
-- [Скобки](#%D1%81%D0%BA%D0%BE%D0%B1%D0%BA%D0%B8)
-- [Классы](#%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D1%8B)
-- [Переменные](#%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5)
-- [Аргументы функций и свойства классов](#%D0%B0%D1%80%D0%B3%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9-%D0%B8-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BE%D0%B2)
-- [Массивы](#%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2%D1%8B)
-- [Константы](#%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D1%8B)
-- [Структура файла](#%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0)
-- [Префиксы](#%D0%BF%D1%80%D0%B5%D1%84%D0%B8%D0%BA%D1%81%D1%8B)
-
-
-
 ## Общие требования
 
 - Открывающие фигурные скобки не разрывает строку. Они пишутся после одного проблема после скобки, согласно традициям Unix.
@@ -30,15 +18,16 @@ translation: "contribute/code/coding-standards"
 - Не ставьте скобки сразу после оператора. Разделяйте пробелами.
 - Ставьте скобки сразу после имени функции.
 - Не используйте скобки в выражениях с return когда это необходимо. Например:
-  ``` php 
+
+  ``` php
   if ($test) {
   }
   while ($test == $other) {
   }
   array_push($one,$two);
   return $test;
-
   ```
+
 - **Не используйте** скобки когда используете функции include, require, include\_once, и require\_once.
 
 ## Классы
@@ -47,7 +36,7 @@ translation: "contribute/code/coding-standards"
 - Все имена методов должны быть в camelCase и начинаться со строчной буквы.
 - Все private методы и переменные должны начинаться с символа подчеркивания "_".
 
-  ``` php 
+  ``` php
   class modFactor {
       public $publicVar;
       private $_privateVar;
@@ -66,7 +55,8 @@ translation: "contribute/code/coding-standards"
 ## Аргументы функций и свойства классов
 
 - Первая буква в нижнем регистре, остальные в camelCase. Пример:
-  ``` php 
+
+  ``` php
   class modFactor {
       public function testFunc($testVar, array &$anotherTest = array()) {
           $this->_privateVar = $testVar;
@@ -82,7 +72,8 @@ translation: "contribute/code/coding-standards"
 - Имена полей в индексах массива всегда заключено в одинарные кавычки.
   
 Пример:
-``` php 
+
+``` php
 $_lang['chunk_create_text'] = 'Test';
 ```
 
@@ -99,7 +90,7 @@ $_lang['chunk_create_text'] = 'Test';
 
 - Строки словарей для компонентов должны начинаться с префикса:
 
-``` php 
+``` php
 $_lang['mycomponent.welcome_message'] = 'Welcome!';
 ```
 

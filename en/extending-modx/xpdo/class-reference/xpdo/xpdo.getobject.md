@@ -14,7 +14,7 @@ The criteria can be a primary key value, an array of primary key values (for mul
 
 API Docs: <http://api.modx.com/xpdo/xPDO.html#getObject>
 
-``` php 
+``` php
 xPDOObject|null getObject (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 ```
 
@@ -24,7 +24,7 @@ xPDOObject|null getObject (string $className, [xPDOCriteria|array|str|int $crite
 
 You can use **getObject** to retrieve MODX resources (e.g. a page) by its page ID:
 
-``` php 
+``` php
 $page = $modx->getObject('modResource', 555);
 $output = $page->get('pagetitle');
 ```
@@ -44,7 +44,7 @@ You can retrieve any MODX object this way, just by knowing its object name – u
 
 See **core/model/schema/modx.mysql.schema.xml** file for a full definition of all MODX objects.
 
-If you need to retrieve other attributes for these objects (e.g. TVs for a page), then you may need to look at [getObjectGraph](xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
+If you need to retrieve other attributes for these objects (e.g. TVs for a page), then you may need to look at [getObjectGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
 
 ### Simplest Example (Custom Objects)
 
@@ -52,19 +52,19 @@ The simplest example is when you retrieve an object by its primary key.
 
 E.g. get a Box object with ID 134.
 
-``` php 
+``` php
 $box = $xpdo->getObject('Box', 134);
 ```
 
 Back in your XML schema, if your object extends _xPDOSimpleObject_, the primary key column is assumed to be named "id".
 
-``` xml 
+``` xml
 <object class="modPropertySet" table="property_set" extends="xPDOSimpleObject">
 ```
 
 Otherwise, your XML schema will tell you which column is the primary key via the _index alias="PRIMARY"_ node, e.g.
 
-``` xml 
+``` xml
  <object class="MyObject" table="my_object" extends="xPDOObject">
   <field key="object_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
   <!-- ... stuff here ... -->
@@ -78,7 +78,7 @@ Otherwise, your XML schema will tell you which column is the primary key via the
 
 You can also provide more verbose criteria to the 2nd parameter, e.g.
 
-``` php 
+``` php
 $box = $xpdo->getObject('Box', array('id'=>134));
 ```
 
@@ -86,15 +86,15 @@ $box = $xpdo->getObject('Box', array('id'=>134));
 
 You don't have to retrieve based on just the primary key, you can also search on other columns:
 
-``` php 
+``` php
 $box = $xpdo->getObject('Box', array('color'=>'blue'));
 ```
 
 ### Complex Criteria
 
-You can specify more complex selection criteria using an [xPDO query](xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery"):
+You can specify more complex selection criteria using an [xPDO query](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery"):
 
-``` php 
+``` php
 $query = $modx->newQuery('MyObject');
 $query->where( array('wheels:>=' => 3) );
 $myobj = $xpdo->getObject('MyObject', $query);
@@ -102,11 +102,11 @@ $myobj = $xpdo->getObject('MyObject', $query);
 
 ## See Also
 
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects")
-- [xPDO.getObjectGraph](xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
-- [xPDO.getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
-- [xPDO.getCollectionGraph](xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
-- [xPDO.getIterator](xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects")
+- [xPDO.getObjectGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
+- [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
+- [xPDO.getCollectionGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
+- [xPDO.getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
 - \[xPDO.load\]
-- [xPDO.query](xpdo/class-reference/xpdo/xpdo.query "xPDO.query")
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO.query](extending-modx/xpdo/class-reference/xpdo/xpdo.query "xPDO.query")
+- [xPDO](extending-modx/xpdo "xPDO")

@@ -6,7 +6,7 @@ _old_uri: "2.x/getting-started/installation/basic-installation/nginx-server-conf
 
 Here is an example config for a MODX installation on an nginx server (php-fpm is required for nginx servers). This example enables MODX FURLs as well.
 
-``` php 
+``` php
 server {
         listen 80;
         server_name example.com www.example.com;
@@ -47,7 +47,7 @@ An alternative server configuration was suggested [in this forum topic](http://f
 
 Thanks for posting this, complete with FURL support :)
 
-Question: With **root /home/sites/example.com;** defined at the server level, is it necessary to include again in the first location block? 
+Question: With **root /home/sites/example.com;** defined at the server level, is it necessary to include again in the first location block?
  My understanding is that nginx configs are inherited from the top down, and therefore it could be removed in this case...
 
 In some cases (my guts say older versions of nginx) you might need to comment out the fastcgi\_split\_path\_info directive.

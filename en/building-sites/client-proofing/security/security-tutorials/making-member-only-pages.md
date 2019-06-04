@@ -4,30 +4,11 @@ _old_id: "186"
 _old_uri: "2.x/administering-your-site/security/security-tutorials/making-member-only-pages"
 ---
 
-- [Introduction](#introduction)
-- [Access Wizard explanation (2.2.2 and later)](#access-wizard-explanation-222-and-later)
-  - [1. Create a Resource Group](#1-create-a-resource-group)
-  - [2. Add Resources to the Resource Group](#2-add-resources-to-the-resource-group)
-  - [3. Add Users to the User Group](#3-add-users-to-the-user-group)
-  - [4. Add Context Access to the User Group](#4-add-context-access-to-the-user-group)
-  - [5. Flush Permissions](#5-flush-permissions)
-- [Step-by-step explanation (pre-2.2.2)](#step-by-step-explanation-pre-222)
-  - [1. Create a Resource Group](#1-create-a-resource-group-1)
-  - [2. Link your member-only resource to the Resource Group](#2-link-your-member-only-resource-to-the-resource-group)
-  - [3. Create a User Group](#3-create-a-user-group)
-  - [4. Add Resource Group access](#4-add-resource-group-access)
-  - [5. Add users to the user group](#5-add-users-to-the-user-group)
-  - [6. Flush permissions](#6-flush-permissions)
-- [Help! I can't get this to work, still!](#help-i-cant-get-this-to-work-still)
-- [See Also](#see-also)
-
-
-
 ## Introduction
 
 MODX Revolution uses a whole new set of security systems to allow you more flexibility while giving your users access (or denying) to Manager and Web resources. As there seems to be need for a proper tutorial to get you into the basics of working with this advanced system this document has been written.
 
-It's common to have pages in the front end of a site that can only be seen by certain users. This tutorial describes how to do that in MODX Revolution. It assumes that you already know how to let users register and log in using the components in the [Login](/extras/revo/login "Login") package. The process described below will have no effect on which resources users can see or edit in the MODX Manager.
+It's common to have pages in the front end of a site that can only be seen by certain users. This tutorial describes how to do that in MODX Revolution. It assumes that you already know how to let users register and log in using the components in the [Login](/extras/login "Login") package. The process described below will have no effect on which resources users can see or edit in the MODX Manager.
 
 For those that are savvy enough, below follows a simple list to help you through the maze or to remind you how it works. If you need more information and would like some examples, scroll down to the related subsection below.
 
@@ -44,7 +25,7 @@ MODX 2.2.2 ships with an access wizard that simplifies this process. The step-by
 
 ### 1. Create a Resource Group
 
-Go to Security -> Resouce Groups and click the Create Resource Group. A window similar to this should pop up: ![](/download/attachments/18678352/create-resource-group.png?version=1&modificationDate=1348848806000)
+Go to Security -> Resouce Groups and click the Create Resource Group. A window similar to this should pop up: ![](create-resource-group.png)
 
 Let's go over each section:
 
@@ -73,7 +54,7 @@ We now have our resources in a resource group, and users in a user group. Done? 
 
 ### 4. Add Context Access to the User Group
 
-Go to Security > Access Controls. Right click on the protected user group. Select "Update user group". Go to the Context Access tab. Click "Add Context". We are presented with a dialog such as the one below. Let's break it down: ![](/download/attachments/18678352/context-access.png?version=1&modificationDate=1348853336000)
+Go to Security > Access Controls. Right click on the protected user group. Select "Update user group". Go to the Context Access tab. Click "Add Context". We are presented with a dialog such as the one below. Let's break it down: ![](context-access.png)
 
 | Section       | Explanation                                                                                                                                                                                                                            | Tutorial Default |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
@@ -97,7 +78,7 @@ If you're not quite as savvy, or would rather also know what happens when you se
 
 ### 1. Create a Resource Group
 
-A [Resource Group](administering-your-site/security/resource-groups "Resource Groups") is a collection of resources which you can link to user groups and access list entries. When you have created a resource group, you can easily classify pages to be only visible for certain user groups, or roles within user groups.
+A [Resource Group](building-sites/client-proofing/security/resource-groups "Resource Groups") is a collection of resources which you can link to user groups and access list entries. When you have created a resource group, you can easily classify pages to be only visible for certain user groups, or roles within user groups.
 
 To create a resource group, navigate to Security -> Resource Groups and click on the Create Resource Group button. In the popup you are prompted to enter a name for the resource group. In the tutorial we expect you named it "Protected".
 
@@ -148,6 +129,6 @@ Bob's permissions guide: <http://bobsguides.com/revolution-permissions.html>
 
 Forum topic discussing this tutorial: <http://modxcms.com/forums/index.php/topic,51259.0.html>
 
-Using the Login Snippet to set up a basic "Members Only" area: [Login.Basic Setup](/extras/revo/login/login.tutorials/login.basic-setup "Login.Basic Setup")
+Using the Login Snippet to set up a basic "Members Only" area: [Login.Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup")
 
-Security: [Security](administering-your-site/security "Security")
+Security: [Security](building-sites/client-proofing/security "Security")

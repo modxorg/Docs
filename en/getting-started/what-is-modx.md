@@ -9,7 +9,7 @@ _old_uri: "2.x/getting-started/an-overview-of-modx/"
 
 MODX is a Content Application Platform. What does this mean? Well, that depends on who you are:
 
-![](/download/attachments/18678475/avgjoe.png?version=1&modificationDate=1280336319000)
+![](avgjoe.png)
 
 ### End-Users (Average Joe)
 
@@ -19,7 +19,7 @@ You can setup everything from a simple site, to a blog, to a full-scale web pres
 
 MODX helps you organize your content the way you want it, and get stellar built-in SEO results. MODX is fully, 100% Friendly URL compatible, so getting mysite.com/my/own/custom/url.html is incredibly simple, and as easy as structuring your site that way.
 
-![](/download/attachments/18678475/coolcarl.png?version=1&modificationDate=1280336319000)
+![](coolcarl.png)
 
 ### Designers (Cool Carl)
 
@@ -27,13 +27,13 @@ Ever wanted complete freedom with your HTML and CSS? Tired of hacking existing s
 
 You can use MODX as your Content Management System (CMS) of choice, as MODX offers completely flexible templating and no-holds-barred content delivery. Put your CSS and images where you want them. And once you're done designing, either hand off the development duties to your developer, or point-and-click install Extras straight from within the manager. Simple.
 
-![](/download/attachments/18678475/badassbilly.png?version=1&modificationDate=1280336319000)
+![](badassbilly.png)
 
 ### Developers (Badass Billy)
 
 You've looked at different CMSes, but have found developing in them to be either a mishmash of too many unconnected code pieces, or simply not powerful or elegant enough. You've looked at PHP frameworks, and have found they have the power, but don't do Content Management nor have a good enough UI for your clients. You want the power and flexibility of a framework, with the UI and content management of a CMS.
 
-Enter MODX Revolution. A completely flexible, powerful and robust API, built on OOP principles and using a PDO-powered Object Relational Model (ORM) called [xPDO](/display/xPDO20/Home "Home"). Add in a rich, [Sencha](http://sencha.com)-powered UI for your clients, that's fully customizable. Custom properties and sets. Internationalization support. Package distribution built-in so you can pack up your code, and distribute it across any Revolution install. Add custom manager pages to run entire applications within MODX.
+Enter MODX Revolution. A completely flexible, powerful and robust API, built on OOP principles and using a PDO-powered Object Relational Model (ORM) called [xPDO](extending-modx/xpdo). Add in a rich, [Sencha](http://sencha.com)-powered UI for your clients, that's fully customizable. Custom properties and sets. Internationalization support. Package distribution built-in so you can pack up your code, and distribute it across any Revolution install. Add custom manager pages to run entire applications within MODX.
 
 ## Basic Concepts
 
@@ -45,19 +45,19 @@ MODX, in essence, has a ton of moving parts. But the basics parts are:
 
 ### Templates
 
-[Templates](making-sites-with-modx/structuring-your-site/templates "Templates") are the house a Resource lives in. They usually contain the footer and header for a page.
+[Templates](building-sites/elements/templates "Templates") are the house a Resource lives in. They usually contain the footer and header for a page.
 
 ### Template Variables
 
-[Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables") (TVs) are custom fields for a Template that allow the user to assign dynamic values to a Resource. A great example would be a 'tags' TV that allows you to specify tags for a Resource. You can have an unlimited number of TVs per page.
+[Template Variables](building-sites/elements/template-variables "Template Variables") (TVs) are custom fields for a Template that allow the user to assign dynamic values to a Resource. A great example would be a 'tags' TV that allows you to specify tags for a Resource. You can have an unlimited number of TVs per page.
 
 ### Chunks
 
-[Chunks](building-sites/elements/chunks "Chunks") are simply small blocks of content, be it whatever you want inside it. They can contain [Snippets](developing-in-modx/basic-development/snippets "Snippets"), or any other Element type (Snippet, Chunk, TV, etc).
+[Chunks](building-sites/elements/chunks "Chunks") are simply small blocks of content, be it whatever you want inside it. They can contain [Snippets](extending-modx/snippets "Snippets"), or any other Element type (Snippet, Chunk, TV, etc).
 
 ### Snippets
 
-[Snippets](developing-in-modx/basic-development/snippets "Snippets") are dynamic bits of PHP code that run when the page is loaded. They can do anything you can code, including building custom menus, grabbing custom data, tagging elements, processing forms, grabbing tweets, etc.
+[Snippets](extending-modx/snippets "Snippets") are dynamic bits of PHP code that run when the page is loaded. They can do anything you can code, including building custom menus, grabbing custom data, tagging elements, processing forms, grabbing tweets, etc.
 
 ### Plugins
 
@@ -69,11 +69,9 @@ System Settings give you near infinite configuration options. Most of these are 
 
 ## So What Happens on a Request?
 
-MODX loads the requested [Resource](building-sites/resources "Resources"), fetches that Resource's [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), and then places the Resource's content in that Template. MODX then parses the resulting combined content, including any tags that might be in it, in the order they are reached. From there, it outputs the response to the user's browser.
+MODX loads the requested [Resource](building-sites/resources "Resources"), fetches that Resource's [Template](building-sites/elements/templates "Templates"), and then places the Resource's content in that Template. MODX then parses the resulting combined content, including any tags that might be in it, in the order they are reached. From there, it outputs the response to the user's browser.
 
 ## See Also
 
 1. [Glossary of Revolution Terms](getting-started/an-overview-of-modx/glossary-of-revolution-terms)
-  1. [Explanation of Directory Structure](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure)
-2. [Roadmap](getting-started/an-overview-of-modx/roadmap)
-3. [MODx Revolution Framework Structure Ideology](getting-started/an-overview-of-modx/modx-revolution-framework-structure-ideology)
+    1. [Explanation of Directory Structure](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure)

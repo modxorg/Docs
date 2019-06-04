@@ -4,24 +4,16 @@ _old_id: "265"
 _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-existing-database-table"
 ---
 
-- [Introduction](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-Introduction)
-  - [Access Points](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-AccessPoints)
-- [Creating a MySQL table](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-CreatingaMySQLtable)
-- [Create Reverse Engineering Script](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-CreateReverseEngineeringScript)
-- [Defining Key Relationships](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-DefiningKeyRelationships)
-- [Accessing your Data](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-AccessingyourData)
-- [See Also](#ReverseEngineerxPDOClassesfromExistingDatabaseTable-SeeAlso)
- 
 ## Introduction
 
  The xPDO Object-Relational-Bridge (ORB) relies on a series of PHP classes to provide an interface to database tables. These PHP classes can be generated automatically by parsing a specially formatted XML file, by reverse engineering existing database tables, or they can even be written by hand (masochists only). The easiest approach when dealing with a custom database table is to reverse engineer existing MySQL database tables: MySQL has been around for a long time, and there are numerous tutorials and books out there to help you learn how to use it.
 
- If you're wanting to extend existing MODx classes, e.g. by creating [Custom Resource Classes](developing-in-modx/advanced-development/custom-resource-classes "Custom Resource Classes"), then usually you will start this process with the XML file. 
+ If you're wanting to extend existing MODX classes, e.g. by creating [Custom Resource Classes](developing-in-modx/advanced-development/custom-resource-classes "Custom Resource Classes"), then usually you will start this process with the XML file.
 
  Our process will be this:
 
 1. Create a database table (or tables) using MySQL (this can be done via the mysql command line or any number of MySQL GUI clients, e.g. phpMyAdmin or SQL-Yog).
-2. Copy the "reverse-engineering" script (provided below) to your webserver. Put it at the root of your MODx install (this is important so the script can find xPDO). This script uses the xPDO classes to sniff out the definition of the table you just created.
+2. Copy the "reverse-engineering" script (provided below) to your webserver. Put it at the root of your MODX install (this is important so the script can find xPDO). This script uses the xPDO classes to sniff out the definition of the table you just created.
 3. If needed, modify the generated XML definition file to define foreign key relationships, then re-run the script to regenerate the class files.
 4. Connect your newly created class and schema files to a Snippet or Custom Manager Page.
 
@@ -33,7 +25,7 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
 
  In the image below, it's important to realize that you can start with any one component, and the other 2 can be automatically generated.
 
- ![](/download/attachments/33226895/xPDO_Forward_and_Reverse.jpg?version=1&modificationDate=1322284979000)
+ ![](xpdo_forward_and_reverse.jpg)
 
  Arguably, the easiest "access point" to the xPDO technology is to start with some existing database tables and use those to generate the XML schema file and PHP classes, and that's what this page demonstrates.
 
@@ -45,7 +37,7 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
 
  We need a script to scan your database tables and generate the XML schema and PHP files. In general, this is a "disposable" script that you may only need to run once. You will probably need to make adjustments and run it more than once, but in concept and in function, this script is merely scaffolding.
 
- You can download a version of this script and see a tutorial that describes using this method with a simple custom DB table at [Bob's Guides](http://bobsguides.com/custom-db-tables.html). 
+ You can download a version of this script and see a tutorial that describes using this method with a simple custom DB table at [Bob's Guides](http://bobsguides.com/custom-db-tables.html).
 
  The crux of this script are 2 xPDO methods (note, however, that the methods belong to children objects):
 
@@ -54,14 +46,14 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
 
  Together, they behave similarly to other ORM's, e.g. Doctrine
 
- ``` php 
+ ``` php
 // Sample Doctrine code:
 Doctrine_Core::generateModelsFromDb();
 ```
 
  Here's a reverse-engineering script that allows a bit of configuration and does a little error checking:
 
- ``` php 
+ ``` php
 <?php /* ------------------------------------------------------------------------------
   ================================================================================
   === Reverse Engineer Existing MySQL Database Tables to xPDO Maps and Classes ===
@@ -75,7 +67,7 @@ Doctrine_Core::generateModelsFromDb();
   have been created, the purpose of this script has been served, though you will need to run it again if you modify your schema.
 
   USAGE:
-  1. Upload this file to the root of your MODx installation
+  1. Upload this file to the root of your MODX installation
   2. Set the configuration details below
   3. Navigate to this script in a browser to execute it,
   e.g. http://yoursite.com/thisscript.php
@@ -135,7 +127,7 @@ $database_user = '';           // name of the user
 $database_password = '';   // password for that database user
 // if this file is not placed side by side with the config.core.php file, add the directory path
 include_once 'config.core.php';
-// OR, use your MODx Revo connection details.  Just uncomment the next line:
+// OR, use your MODX Revo connection details.  Just uncomment the next line:
 //include(MODX_CORE_PATH . 'config/' . MODX_CONFIG_KEY . '.inc.php');
 // If your tables use a prefix, this will help identify them and it ensures that
 // the class names appear "clean", without the prefix.
@@ -278,12 +270,10 @@ function print_msg($msg) {
 /* EOF */
 ```
 
- 
+ To check whether or not this script succeeded, take a look inside the folder that is mentioned in its output, e.g.
+**/user/youruser/public\_html/core/components/yourpackage/model/yourpackage**. You should see a couple files – one for each table. If you see a TON of tables corresponding to all of MODX's tables, then try to explicitly set the database password and name – leave the following line commented out:
 
- To check whether or not this script succeeded, take a look inside the folder that is mentioned in its output, e.g. 
-**/user/youruser/public\_html/core/components/yourpackage/model/yourpackage**. You should see a couple files – one for each table. If you see a TON of tables corresponding to all of MODx's tables, then try to explicitly set the database password and name – leave the following line commented out:
-
- ``` php 
+ ``` php
 //include('core/config/config.inc.php');
 ```
 
@@ -291,11 +281,11 @@ function print_msg($msg) {
 
 ## Defining Key Relationships
 
- Once you have your XML schema file generated, you may need to edit it manually to define any foreign key relationships between your tables. It's best if you create a backup of the XML schema file, then add in your aggregate and composite relationships (see [Schema Files and Relations](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files") for more info).
+ Once you have your XML schema file generated, you may need to edit it manually to define any foreign key relationships between your tables. It's best if you create a backup of the XML schema file, then add in your aggregate and composite relationships (see [Schema Files and Relations](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files") for more info).
 
  In the scaffolding script above, set the following:
 
- ``` php 
+ ``` php
 $regenerate_schema = false;
 ```
 
@@ -305,7 +295,7 @@ $regenerate_schema = false;
 
  Once you've created the required xPDO classes, you need to use xPDO's methods to access them (e.g. in a Snippet or in a Custom Manager Page). In order for xPDO to access the objects, you have to load up the corresponding PHP classes using the **addPackage** method. **addPackage** is what triggers the PHP classes to be included.
 
- ``` php 
+ ``` php
 if(!$modx->addPackage('mypackage','/full/path/to/core/components/mypackage/model/','mp_')) {
     return 'There was a problem adding your package!  Check the logs for more info!';
 }
@@ -322,17 +312,17 @@ else {
 return $output;
 ```
 
- **Watch the Prefix!** 
-[addPackage](xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") requires that you specify the correct table prefix for your package! 
+ **Watch the Prefix!**
+[addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") requires that you specify the correct table prefix for your package!
 
 ## See Also
 
-- [Schema Files and Relations](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files") Looking at XML schema file relations
-- [addPackage](xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for loading up your schema
-- [getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") for loading up a single object
-- [getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") for loading up a collection of objects.
-- [xPDO: Creating Objects](xpdo/getting-started/using-your-xpdo-model/creating-objects "Creating Objects")
-- [Retrieving Objects](xpdo/getting-started/using-your-xpdo-model/retrieving-objects "Retrieving Objects") a demonstration of how to retrieve objects using xPDO
-- [Generating the Model Code](xpdo/getting-started/creating-a-model-with-xpdo/generating-the-model-code "Generating the Model Code") – offers a streamlined version of the script provided here, but you can also change your class templates.
-- [More Examples of xPDO XML Schema Files](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/more-examples-of-xpdo-xml-schema-files "More Examples of xPDO XML Schema Files") – juxtaposes MySQL database tables with xPDO XML schemas
+- [Schema Files and Relations](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files") Looking at XML schema file relations
+- [addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") for loading up your schema
+- [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") for loading up a single object
+- [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") for loading up a collection of objects.
+- [xPDO: Creating Objects](extending-modx/xpdo/creating-objects "Creating Objects")
+- [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects") a demonstration of how to retrieve objects using xPDO
+- [Generating the Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code") – offers a streamlined version of the script provided here, but you can also change your class templates.
+- [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files") – juxtaposes MySQL database tables with xPDO XML schemas
 - [Build script: Reverse-engineering tables / forward-engineering classes / maps](http://forums.modx.com/thread/31778/build-script-reverse-engineering-tables-forward-engineering-classes-maps) – another example by Jason.

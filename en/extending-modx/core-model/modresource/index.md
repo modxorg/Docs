@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## The modResource Class
 
- This is the base resource object class for MODx Revolution.
+ This is the base resource object class for MODX Revolution.
 
 ## Methods
 

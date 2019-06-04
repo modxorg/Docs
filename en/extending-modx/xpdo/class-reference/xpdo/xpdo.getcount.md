@@ -10,11 +10,11 @@ Retrieves a count of xPDOObjects by the specified array or xPDOCriteria.
 
 If you are specifying the select(), don't use getCount(), just run the query and get the results normally. getCount() is a shortcut that replaces your select() with COUNT(DISTINCT primaryKeyField) automatically, based on the primary key definition of the class you specify. Group by should work, as long as it makes sense with the COUNT(DISTINCT primaryKeyField) select clause.
 
-**Syntax**
+### Syntax
 
 API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getCount>
 
-``` php 
+``` php
 integer getCount (string $className, [mixed $criteria = null])
 ```
 
@@ -22,7 +22,7 @@ integer getCount (string $className, [mixed $criteria = null])
 
 Get a count of all the Box objects with width 20.
 
-``` php 
+``` php
 $total = $xpdo->getCount('Box',array(
    'width' => 20,
 ));
@@ -30,7 +30,7 @@ $total = $xpdo->getCount('Box',array(
 
 Note that if you pass this function a query object for the second parameter, the **limit** criteria may be ignored.
 
-``` php 
+``` php
 $query = $modx->newQuery('States');
 $query->limit(10, 0);  // <-- probably you want to put this line AFTER the getCount
 
@@ -42,6 +42,6 @@ $modx->log(modX::LOG_LEVEL_ERROR, "Total States: $total_states");
 
 ## See Also
 
-- [xPDO.getObject](xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
-- [xPDO.getCollection](xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
-- [xPDO](xpdo/class-reference/xpdo "xPDO")
+- [xPDO.getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
+- [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
+- [xPDO](extending-modx/xpdo "xPDO")

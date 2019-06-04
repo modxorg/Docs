@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/request_param_al
 
 ## request\_param\_alias
 
-**Name**: Request Alias Parameter 
-**Type**: String 
+**Name**: Request Alias Parameter
+**Type**: String
 **Default**: q
 
 The name of the GET parameter to identify Resource aliases when redirecting with FURLs.

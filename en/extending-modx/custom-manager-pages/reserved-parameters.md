@@ -4,30 +4,25 @@ _old_id: "259"
 _old_uri: "2.x/developing-in-modx/other-development-resources/reserved-parameters"
 ---
 
-## Reserved GET Parameters Inside the MODX Manager
+You can typically use any parameters you'd like when creating [custom manager pages](extending-modx/custom-manager-pages "Custom Manager Pages") or other integrations, but there are a couple of exceptions. 
 
-The following is a list (currently incomplete) of GET parameters used by the MODX Manager. You should avoid using any of these parameters in [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages"):
+## Reserved parameters in the manager
 
-- **a** – used to define an action or controller
-- **namespace** -- indicates what namespace the action belongs to
-- **context\_key** – specifies one of your contexts (e.g. "web" or "mgr")
-- **class\_key** – specifies a class name, e.g. when creating a Weblink or static resource
-- **id** -- specifies a page\_id
+The following parameters are used by the manager for various purposes. 
 
-## Reserved $\_SESSION variables (2.1.1-pl and later)
+- `a` – used to define an action or controller
+- `namespace` - indicates what namespace the action belongs to; when not specified defaults to `core`
+- `context_key` – specifies one of your contexts (e.g. "web" or "mgr")
+- `wctx` - specifies the "working context" which is the context the current "thing" belongs to, rather than the context "mgr". 
+- `class_key` – specifies a class name, e.g. when creating a Weblink or static resource
+- `id` - specifies the ID a certain action or controller defaults to.
 
-- cultureKey
-- and anything prefixed with modx.\*
+## Reserved parameters in the front-end
 
-## Reserved $\_SESSION variables (before 2.1.1-pl)
+- `q` - used when friendly URLs are enabled for routing a request to the right resource. Can be changed with the `request_param_alias` system setting, but recommended to leave unchanged.
+- `id` - used when friendly URLs are disabled for fetching the current resource. Can be changed with the `request_param_id` system setting, but recommended to leave unchanged.
 
-$\_SESSION vars in italics were removed in 2.1.1-pl
+## Reserved `$_SESSION` variables
 
-- _webValidated_
-- _mgrValidated_
-- _webInternalKey_
-- _mgrInternalKey_
-- _webShortname_
-- _mgrShortname_
-- cultureKey
-- and anything prefixed with modx.\*
+- `cultureKey`
+- all parameters prefixed with `modx.`

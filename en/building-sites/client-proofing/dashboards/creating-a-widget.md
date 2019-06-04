@@ -4,14 +4,6 @@ _old_id: "69"
 _old_uri: "2.x/administering-your-site/dashboards/creating-a-dashboard-widget"
 ---
 
-- [Creating a Basic Widget](#creating-a-basic-widget)
-  - [Assigning the Widget to the Default Dashboard](#assigning-the-widget-to-the-default-dashboard)
-  - [Viewing the Widget](#viewing-the-widget)
-- [Other Widget Types](#other-widget-types)
-- [See Also](#see-also)
-
-
-
 This article describes how to create a custom Dashboard Widget, including a short description of the different Dashboard Widget types and how they work.
 
 ## Creating a Basic Widget
@@ -29,13 +21,13 @@ You'll note that as you type the name of the widget, text appears below it follo
 
 Now, in your dashboard widget content, go ahead and put this:
 
-``` php 
+``` php
 <p>Hello, world!</p>
 ```
 
 Our widget should look like this:
 
-![](/download/attachments/35586570/dashboard-create1.png?version=1&modificationDate=1315489054000)
+![](dashboard-create1.png)
 
 Go ahead and save the Widget.
 
@@ -45,7 +37,7 @@ Now that we've got our widget, let's assign it to the Default Dashboard, by goin
 
 From here, click the "Place Widget" button above the Widgets grid on this page. Select our "Hello World" widget from the dropdown, and click save. Now our Widget is on the Dashboard! Let's go ahead and place it in position #2 by dragging it between the "Configuration Check" widget and the "MODX News Feed" widget:
 
-![](/download/attachments/35586570/dashboard-create2.png?version=1&modificationDate=1315489054000)
+![](dashboard-create2.png)
 
 Save your Dashboard.
 
@@ -53,19 +45,19 @@ Save your Dashboard.
 
 Now, if you click the "Dashboard" top menu item on the page, you can see your new dashboard widget in place!
 
-![](/download/attachments/35586570/dashboard-create3.png?version=1&modificationDate=1315489054000)
+![](dashboard-create3.png)
 
 ## Other Widget Types
 
-Obviously, there are more widget types to create. See the [Dashboard Widget Types](administering-your-site/dashboards/dashboard-widget-types "Dashboard Widget Types") section for more information on creating different types of widgets.
+Obviously, there are more widget types to create. See the [Dashboard Widget Types](building-sites/client-proofing/dashboards/widget-types "Dashboard Widget Types") section for more information on creating different types of widgets.
 
 ## See Also
 
-1. [Managing Your Dashboard](administering-your-site/dashboards/managing-your-dashboard)
-2. [Assigning a Dashboard to a User Group](administering-your-site/dashboards/assigning-a-dashboard-to-a-user-group)
-3. [Creating a Dashboard Widget](administering-your-site/dashboards/creating-a-dashboard-widget)
-4. [Dashboard Widget Types](administering-your-site/dashboards/dashboard-widget-types)
-  1. [Dashboard Widget Type - File](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file)
-  2. [Dashboard Widget Type - HTML](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html)
-  3. [Dashboard Widget Type - Inline PHP](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php)
-  4. [Dashboard Widget Type - Snippet](administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet)
+1. [Managing Your Dashboard](building-sites/client-proofing/dashboards/managing)
+2. [Assigning a Dashboard to a User Group](building-sites/client-proofing/dashboards/usergroups)
+3. [Creating a Dashboard Widget](building-sites/client-proofing/dashboards/creating-a-widget)
+4. [Dashboard Widget Types](building-sites/client-proofing/dashboards/widget-types)
+    1. [Dashboard Widget Type - File](building-sites/client-proofing/dashboards/widget-types/file)
+    2. [Dashboard Widget Type - HTML](building-sites/client-proofing/dashboards/widget-types/html)
+    3. [Dashboard Widget Type - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+    4. [Dashboard Widget Type - Snippet](building-sites/client-proofing/dashboards/widget-types/snippet)

@@ -12,7 +12,7 @@ Add a validation message to the stack.
 
 API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#addMessage>
 
-``` php 
+``` php
 void addMessage (string $field, string $name, [mixed $message = null])
 ```
 
@@ -20,7 +20,7 @@ void addMessage (string $field, string $name, [mixed $message = null])
 
 Do our own validation, but still use the validator object.
 
-``` php 
+``` php
 $validator = $obj->getValidator();
 if ($obj->get('name') == '') {
    $validator->addMessage('name','emptyName','Please enter a valid name.');
@@ -34,7 +34,7 @@ foreach ($errors as $error) {
 
 ## See Also
 
-1. [xPDOValidator.addMessage](xpdo/class-reference/xpdovalidator/xpdovalidator.addmessage)
-2. [xPDOValidator.getMessages](xpdo/class-reference/xpdovalidator/xpdovalidator.getmessages)
-3. [xPDOValidator.hasMessages](xpdo/class-reference/xpdovalidator/xpdovalidator.hasmessages)
-4. [xPDOValidator.validate](xpdo/class-reference/xpdovalidator/xpdovalidator.validate)
+1. [xPDOValidator.addMessage](extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.addmessage)
+2. [xPDOValidator.getMessages](extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.getmessages)
+3. [xPDOValidator.hasMessages](extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.hasmessages)
+4. [xPDOValidator.validate](extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.validate)

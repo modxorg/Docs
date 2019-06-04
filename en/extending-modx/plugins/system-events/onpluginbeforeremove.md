@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onplug
 
 Happens right before a plugin is removed.
 
-Service: 2 - Manager Access Events 
+Service: 2 - Manager Access Events
 Group: modPlugin
 
 ## Event Parameters
@@ -19,5 +19,5 @@ Group: modPlugin
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

@@ -4,12 +4,11 @@ _old_id: "493"
 _old_uri: "2.x/developing-in-modx/advanced-development/using-runprocessor"
 ---
 
-The usage of runProcessor described here only work in Revolution 2.0.8 and later. Users prior to that will have to use the deprecated [executeProcessor](developing-in-modx/other-development-resources/class-reference/modx/modx.executeprocessor "modX.executeProcessor") method. 
-- [Using runProcessor](#using-runprocessor)
+The usage of runProcessor described here only work in Revolution 2.0.8 and later. Users prior to that will have to use the deprecated [executeProcessor](extending-modx/modx-class/reference/modx.executeprocessor "modX.executeProcessor") method.
 
 ## Using runProcessor
 
-MODX has a specific method that allows you to run processors straight from any PHP file, such as a [Plugin](developing-in-modx/basic-development/plugins "Plugins"), [Snippet](developing-in-modx/basic-development/snippets "Snippets") or externally. This can be done with the following syntax:
+MODX has a specific method that allows you to run processors straight from any PHP file, such as a [Plugin](extending-modx/plugins "Plugins"), [Snippet](extending-modx/snippets "Snippets") or externally. This can be done with the following syntax:
 
 > $response = $modx->runProcessor('action/path/to/processor',$arrayOfProperties,$otherOptions);
 
@@ -17,7 +16,7 @@ This will then execute the specified processor and return a modProcessorResponse
 
 For example, this code creates a new Chunk:
 
-``` php 
+``` php
 $response = $modx->runProcessor('element/chunk/create',array(
    'name' => 'NewChunk',
    'description' => 'A test Chunk made with runProcessor.',
@@ -34,7 +33,7 @@ This block of code runs the 'element/chunk/create' processor, checks to see if i
 
 You can also create an entire user, including Extended Fields, group assignments, a generated password and email notification.
 
-``` php 
+``` php
 $groups = array();
 $groups['Group1']['usergroup'] = '7'; // ID of group
 $groups['Group1']['role'] = '1'; // ID of role
@@ -44,7 +43,7 @@ $fields = array();
 $fields['active'] = true;
 $fields['passwordgenmethod'] = 'g';
 $fields['passwordnotifymethod'] = 'e';
-$fields['email'] = $email; 
+$fields['email'] = $email;
 $fields['username'] = $username;
 $fields['fullname'] = $fullname;
 $fields['extended']['container']['name'] = $value;

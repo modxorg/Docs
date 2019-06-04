@@ -21,27 +21,11 @@ _To Editors:_
 
 _Thanks!!_
 
-
-## Table of Contents
-
-- [Table of Contents](#table-of-contents)
-- [1. General](#1-general)
-  - [1.1. What are connectors and processors? And what is a controller?](#11-what-are-connectors-and-processors-and-what-is-a-controller)
-  - [1.2. Why do I need all those different parts in my manager page? Can't I just echo some values in my controller and build stuff from there?](#12-why-do-i-need-all-those-different-parts-in-my-manager-page-cant-i-just-echo-some-values-in-my-controller-and-build-stuff-from-there)
-  - [1.3. What version of ExtJS does MODX Revolution use? When will MODX Revolution update to ExtJS 4.0?](#13-what-version-of-extjs-does-modx-revolution-use-when-will-modx-revolution-update-to-extjs-40)
-  - [1.4. Can I use ExtJS widgets that MODX uses in the Manager in my own CMP as well?](#14-can-i-use-extjs-widgets-that-modx-uses-in-the-manager-in-my-own-cmp-as-well)
-- [2. ExtJS / modExt Troubleshooting](#2-extjs--modext-troubleshooting)
-  - [2.1. Error: Syntax Error: Unexpected Token '<' on ext-all.js Line 7](#21-error-syntax-error-unexpected-token--on-ext-alljs-line-7)
-  - [2.2. Why does my grid send out two requests when I refresh it / changePage / filter?](#22-why-does-my-grid-send-out-two-requests-when-i-refresh-it--changepage--filter)
-
-
-
 Other Resources:
 
 - [ExtJS 3.4.0 Documentation](http://docs.sencha.com/ext-js/3-4/)
-- [Custom Manager Pages](developing-in-modx/advanced-development/custom-manager-pages "Custom Manager Pages")
-- [Custom Manager Pages Tutorial](developing-in-modx/advanced-development/custom-manager-pages/custom-manager-pages-tutorial "Custom Manager Pages Tutorial")
-- [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution") (Specifically [part 2](case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-ii "Developing an Extra in MODX Revolution, Part II"))
+- [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages")
+- [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra "Developing an Extra in MODX Revolution") (Specifically [part 2](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II"))
 
 ## 1. General
 
@@ -88,6 +72,6 @@ When received after initiating an AJAX request to a connector/processor, this er
 
 Often this is caused by a PHP Fatal Error in the processor code. Inspect the outgoing request using Firebug or Developer Tools to see what it returns and where the error in the PHP side of things is.
 
-### 2.2. Why does my [grid](developing-in-modx/advanced-development/custom-manager-pages/modext/modx.grid.grid "MODx.grid.Grid") send out two requests when I refresh it / changePage / filter?
+### 2.2. Why does my [grid](extending-modx/custom-manager-pages/modext/modx.grid.grid "MODx.grid.Grid") send out two requests when I refresh it / changePage / filter?
 
 This was caused by a legacy bug fixed for MODX 2.2-rc1. If you are still experiencing a number of requests that are not needed, make sure you don't have listeners calling another refresh/load, changePage(0) and refresh() or in another way are explicitely calling a request twice.

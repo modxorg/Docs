@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/phpthumb_cache_s
 
 ## phpthumb\_cache\_source\_enabled
 
-**Name**: phpThumb Cache Source Files 
-**Type**: Yes/No 
+**Name**: phpThumb Cache Source Files
+**Type**: Yes/No
 **Default**: No
 
 Whether or not to cache source files as they are loaded. Recommended to leave at No.

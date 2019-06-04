@@ -10,7 +10,7 @@ The @SELECT binding calls a database query based on the provided value and retur
 
 ## Syntax
 
-``` php 
+``` sql
 @SELECT `pagetitle` AS `name`,`id` FROM `[[+PREFIX]]site_content` WHERE `published` = 1 AND `deleted` = 0
 ```
 
@@ -24,7 +24,7 @@ All you need to do is after you've got a working MySQL query is:
 
 You can place this binding in one of two places:
 
-- On a page (edit the page in the manager). The page where you want to put this binding must be using a valid template, and that template must have the correct template variable(s) associated with it. If you've created the [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") and associated it with a [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), and the page you're working on is using that [Template](making-sites-with-modx/structuring-your-site/templates "Templates"), then you'll have a place to enter in some text for that variable when you edit the page. Paste the "@SELECT ..." stuff in there. It sounds more complicated than it is, but this section is written verbosely for the sake of clear documentation.
+- On a page (edit the page in the manager). The page where you want to put this binding must be using a valid template, and that template must have the correct template variable(s) associated with it. If you've created the [Template Variable](building-sites/elements/template-variables "Template Variables") and associated it with a [Template](building-sites/elements/templates "Templates"), and the page you're working on is using that [Template](building-sites/elements/templates "Templates"), then you'll have a place to enter in some text for that variable when you edit the page. Paste the "@SELECT ..." stuff in there. It sounds more complicated than it is, but this section is written verbosely for the sake of clear documentation.
 - You can also place the query into the "Default Value" box for the Template Variable. If you replace the default text of a Template Variable that's already in use, be careful, because your pages might require a specific type of output, e.g. the output type that a @SELECT binding returns.
 
 REMEMBER: The query must be on ONE LINE. No returns!
@@ -33,15 +33,15 @@ You'll need to select only 2 columns - the first being the display value, the se
 
 For example, to grab a list of active users in a SELECT box:
 
-``` sql 
+``` sql
 @SELECT `username` AS `name`,`id` FROM `[[+PREFIX]]users` WHERE `active` = 1
 ```
 
 ## Alternatives
 
-Before we get any more complicated, consider doing this a different way. A [Snippet](developing-in-modx/basic-development/snippets "Snippets") might do the job more easily than a binding.
+Before we get any more complicated, consider doing this a different way. A [Snippet](extending-modx/snippets "Snippets") might do the job more easily than a binding.
 
-If your query needs to work with template variables and you need specialized formatting for the output, the @SELECT binding is probably not the way to go. Pretty much everything that's done with the bindings is also possible with [Snippets](developing-in-modx/basic-development/snippets "Snippets"); the bindings just provide a shortcut. When you start over-using the shortcut, you may run into headaches.
+If your query needs to work with template variables and you need specialized formatting for the output, the @SELECT binding is probably not the way to go. Pretty much everything that's done with the bindings is also possible with [Snippets](extending-modx/snippets "Snippets"); the bindings just provide a shortcut. When you start over-using the shortcut, you may run into headaches.
 
 ## Having a blank Option
 
@@ -49,8 +49,8 @@ Select queries are a great way to power a listbox dropdown, but since they ALWAY
 
 Consider the following query:
 
-``` sql 
-@SELECT '-none-' AS username, 0 AS id UNION ALL 
+``` sql
+@SELECT '-none-' AS username, 0 AS id UNION ALL
 SELECT `username`,`id` FROM `[[+PREFIX]]users` WHERE `active` = 1 ORDER BY username ASC
 ```
 
@@ -58,18 +58,18 @@ Just be aware that the sort order here may force your empty option somewhere int
 
 ## More Complex Example: Template Variables
 
-What if you need to write a query that accesses the template variables associated with a particular page? Those variables aren't directly stored in the _site\_content_ table, they are stored in other tables. This forces you to write a JOIN statement. Here's a more tangible example: let's say all the pages in a particular folder have a template variable for _opening\_date_... that field doesn't exist in the "site\_content" table. Hold onto your butts, because this gets complicated. You have to look at MODx's gory plumbing in order to pull this off. You have to understand how MODx extends the data stored in the "site\_content" table and makes use of the custom fields known as "Template Variables". This is open to some debate, but unfortunately, MODx's database schema doesn't follow the strict best practices for foreign keys... it's not always clear which table is being referenced by a particular column... it's not even always clear that a column ''is'' a foreign key, but rest assured, it is possible... it just takes a bit of patience to figure out.
+What if you need to write a query that accesses the template variables associated with a particular page? Those variables aren't directly stored in the _site\_content_ table, they are stored in other tables. This forces you to write a JOIN statement. Here's a more tangible example: let's say all the pages in a particular folder have a template variable for _opening\_date_... that field doesn't exist in the "site\_content" table. Hold onto your butts, because this gets complicated. You have to look at MODX's gory plumbing in order to pull this off. You have to understand how MODX extends the data stored in the "site\_content" table and makes use of the custom fields known as "Template Variables". This is open to some debate, but unfortunately, MODX's database schema doesn't follow the strict best practices for foreign keys... it's not always clear which table is being referenced by a particular column... it's not even always clear that a column ''is'' a foreign key, but rest assured, it is possible... it just takes a bit of patience to figure out.
 
 First, have a look at the following tables (you may have prefixes to your table names):
 
 - _site\_templates_ - contains the actual template code used for the site (lots of HTML appears in the content field).
-- _site\_tmplvars_ - contains the name of template variable. The "name" field is what triggers the substitution. E.g. A name of "my\_template\_variable" should be used as "\[\[\*my\_template\_variable\]\]". If you care to think of this architecturally, this table defines the variable class: the name and type of variable that a series of pages will have.
+- _site\_tmplvars_ - contains the name of template variable. The "name" field is what triggers the substitution. E.g. A name of "my\_template\_variable" should be used as `[[*my_templat_variable]]`. If you care to think of this architecturally, this table defines the variable class: the name and type of variable that a series of pages will have.
 - _site\_tmplvar\_contentvalues_ - contains the values of the template variables for each page that uses them. The database table has 4 fields: id, tmplvarid (foreign key back to site\_tmplvars.id), contentid (foreign key back to site\_content.id), value (a text field). Architecturally, this table represents _instances_ of the particular class. In other words, one row in the _site\_tmplvars_ table might have multiple rows in this table (one row for each instance of the variable).
 - _site\_tmplvar\_templates_ - This is a mapping table which associates a Template Variable with a Template (maps site\_template:id to site\_tmplvars:id). Contains 3 fields: tmplvarid, templateid, rank.
 
 In our example, we want to filter based on a custom date field named "opening\_date", but if you look closely, the site\_tmplvar\_contentvalues.value field is a _text_ field. MySQL won't automatically recognize arbitrary text as a date value, so you'll have to make use of MySQL's [str\_to\_date()](http://dev.mysql.com/doc/refman/5.0/en/date-and-time-functions.html#function_str-to-date) function. You may think that the site\_tmplvars.display\_params is a savior here, but it's not... you end up smashing your nose directly into the nasty truth that the formats used by PHP's [strftime()](http://www.php.net/strftime) (stored in site\_tmplvars.display\_params) are **not** the same as what MySQL can use in its STR\_TO\_DATE() function. There may be a way to automatically do this, but it's easier to just hard-code it. You might end up with a query like this:
 
-``` sql 
+``` sql
 SELECT
         page.alias,
         tv_val.value,
@@ -84,7 +84,7 @@ WHERE
 ;
 ```
 
-MODx uses the MyISAM table engine, not InnoDB, so it does not rigidly enforce the foreign key constraints that are inferred by the table structure.
+MODX uses the MyISAM table engine, not InnoDB, so it does not rigidly enforce the foreign key constraints that are inferred by the table structure.
 
 ## Errors
 
@@ -92,11 +92,11 @@ What if your MySQL statement executes perfectly, but once you put it in your SEL
 
 - Your query **MUST** appear on one line. Newline characters cause the @SELECT binding to choke.
 - Delete all MySQL comments /\* this style \*/ and -- this style
-- Make sure you have entered the table names correctly! Many sites use table-prefixes, so it is imperative that you test your queries before trying to use them in a @SELECT Binding. If your query has an error, MODx will log the error to the error log.
+- Make sure you have entered the table names correctly! Many sites use table-prefixes, so it is imperative that you test your queries before trying to use them in a @SELECT Binding. If your query has an error, MODX will log the error to the error log.
 
 ## Next Step: Formatting
 
-Ok, so you can return a bunch of data from the database... now what? If you need to format it intelligently, you might get some mileage out of the Output Renders, but you might find the available options limiting to you. You can write your own [Snippet](developing-in-modx/basic-development/snippets "Snippets") that formats the value of a Template Variable.
+Ok, so you can return a bunch of data from the database... now what? If you need to format it intelligently, you might get some mileage out of the Output Renders, but you might find the available options limiting to you. You can write your own [Snippet](extending-modx/snippets "Snippets") that formats the value of a Template Variable.
 
 ## Security
 
@@ -104,5 +104,5 @@ Does this binding let you execute UPDATE, INSERT, or DELETE queries (or, **gasp*
 
 ## See Also
 
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
-- [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")
+- [Bindings](building-sites/elements/template-variables/bindings "Bindings")

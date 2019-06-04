@@ -4,16 +4,9 @@ _old_id: "65"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources/content-types"
 ---
 
-- [What are Content Types?](#what-are-content-types)
-- [Usage](#usage)
-  - [Creating New Content Types](#creating-new-content-types)
-- [See Also](#see-also)
-
-
-
 ## What are Content Types?
 
-Content types are specific filesystem types for your resources. They are associated with file extensions and tell the MODx Parser what type of extension to render the page with.
+Content types are specific filesystem types for your resources. They are associated with file extensions and tell the MODX Parser what type of extension to render the page with.
 
 For example, a [Resources](building-sites/resources "Resources") with an alias of 'test' and Content Type "CSS" that has a file extension of ".css" will render as:
 
@@ -25,7 +18,7 @@ instead of test.html. This allows you to create any type of file from [Resources
 
 When editing a Resource, simply select the Content Type that you'd like to use:
 
-![](/download/attachments/18678068/content-type1.png?version=1&modificationDate=1268852969000)
+![](content-type1.png)
 
 Then save the [Resources](building-sites/resources "Resources"). This will automatically associate that [Resources](building-sites/resources "Resources") with the selected Content Type.
 
@@ -33,7 +26,7 @@ Then save the [Resources](building-sites/resources "Resources"). This will autom
 
 First, go to System -> Content Types. You'll see a grid populated with all the current Content Types. Click on 'New Content Type', and a window will appear:
 
-![](/download/attachments/18678068/content-type-new1.png?version=1&modificationDate=1268852967000)
+![](content-type-new1.png)
 
 The fields that appear are as follows:
 

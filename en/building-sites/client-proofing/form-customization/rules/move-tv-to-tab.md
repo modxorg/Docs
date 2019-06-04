@@ -19,18 +19,16 @@ The list of available tabs is:
 | modx-resource-settings | The first tab, or Create/Edit resource tab. |
 | modx-page-settings     | The second tab, or Page Settings tab.       |
 
-
-
-You can also create a tab with the [New Tab](display/revolution20/New+Tab "New Tab") rule and move a TV there.
+You can also create a tab with the [New Tab](building-sites/client-proofing/form-customization/rules/new-tab "New Tab") rule and move a TV there.
 
 ## Examples
 
 An example rule for moving the TV 1 to the first tab in the Resource create page would look like so:
 
-![](download/attachments/18678100/rule-tvMove.png?version=1&modificationDate=1279291685000)
+![](rule-tvmove.png)
 
 ## See Also
 
-``` php 
+``` php
 [[getResources@section? &parents=`1353` &context=`revolution`]]
 ```

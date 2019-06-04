@@ -3,26 +3,6 @@ title: "Устранение неполадок при установке"
 translation: "getting-started/installation/troubleshooting"
 ---
 
-- [Общие проблемы](#TroubleshootingInstallation-CommonProblems)
-- [Сообщения об ошибках PDO](#TroubleshootingInstallation-PDOErrorMessages)
-- [Распространенные ошибки](#TroubleshootingInstallation-CommonErrors)
-  - ["Я получаю пустой белый экран вместо страницы настроек!"](#TroubleshootingInstallation-%22Igetablankwhitescreeninsteadoftheoptionspage%5C%21%22)
-  - ["Я нажал Установить и получил пустой белый экран!"](#TroubleshootingInstallation-%22Iclickedinstallandgotablankwhitescreen%5C%21%22)
-  - ["Не удается подключиться к базе данных" на странице настроек базы данных](#TroubleshootingInstallation-%22Cannotconnecttodatabase%22inthedatabaseoptionspage)
-  - [Предупреждение: PDO::\_\_construct() \[pdo.--construct\]: \[2002\] Argument invalid (trying to connect via unix://) ИЛИ "Checking database:Could not connect to the mysql server."](#TroubleshootingInstallation-Warning%3APDO%3A%3Aconstruct%28%29%5Cpdo.construct%5C%3A%5C2002%5CArgumentinvalid%28tryingtoconnectviaunix%3A%2F%2F%29OR%22Checkingdatabase%3ACouldnotconnecttothemysqlserver.%22)
-  - [Страница входа продолжает перенаправлять меня обратно на экран входа без показа ошибки](#TroubleshootingInstallation-Theloginpagekeepsredirectingmebacktotheloginscreenwithnoerror)
-  - [Иногда что-то не загружается, страница вылетает и т.д. (eAccelerator)](#TroubleshootingInstallation-Thingssometimesdon%27tload%2Cthepageflakesout%2Cetc%28eAccelerator%29)
-  - [Необъяснимые неполадки в Панели управления (не eAccelerator)](#TroubleshootingInstallation-GeneralweirdnessintheManager%28noteAccelerator%29)
-  - [Вкладки Ресурсы/Элементы/Файлы не отображаются в дереве](#TroubleshootingInstallation-Resource%2FElements%2FFiletreenotappearing)
-  - [Я не могу войти в Панель управления после установки!](#TroubleshootingInstallation-Ican%27tlogintothemanagerafterinstalling%5C%21)
-  - [Не удалось подключиться к серверу базы данных. Проверьте свойства подключения и попробуйте снова. Доступ запрещён...](#TroubleshootingInstallation-Couldnotconnecttothedatabaseserver.Checktheconnectionpropertiesandtryagain.AccessDenied...)
-  - [Панель управления выводится в виде текста после установки](#TroubleshootingInstallation-Themanagerdisplaysasplaintextafterinstallation)
-  - [Панель управления отображается в виде обычного текста, отдельные элементы отсутствуют или выводятся ошибки JavaScript 400](#TroubleshootingInstallation-TheManagerdisplaysasplaintext%2CManagerpartsaremissing%2CorthereareJavaScript400ErrorsintheManager)
-  - [Отсутствуют элементы Панели управления, неопределенные языковые строки или выводятся ошибки JavaScript 500](#TroubleshootingInstallation-Managerpartsaremissing%2Cundefinedlanguagestrings%2CorthereareJavaScript500ErrorsintheManager)
-- [Все еще остались проблемы?](#TroubleshootingInstallation-StillHavingIssues%3F)
-
-
-
 ## Общие проблемы
 
 Прежде всего, убедитесь:
@@ -38,7 +18,7 @@ translation: "getting-started/installation/troubleshooting"
 
 Если вы получаете сообщения об ошибках, связанных с PDO, во время установки, прежде чем переходить к конкретным сообщениям об ошибках, как показано ниже, убедитесь, что ваша конфигурация PDO настроена правильно. Вы можете это сделать, запустив следующий код (замените user/password/database/host вашей настройкой):
 
-``` php 
+``` php
 <?php
 /* Connect to an ODBC database using driver invocation */
 $dsn = 'mysql:dbname=testdb;host=localhost';
@@ -69,7 +49,7 @@ try {
 
 Убедитесь, что в вашей настройке 'memory\_limit' в php.ini установлено значение не менее 32M. Для более медленных серверов вам может потребоваться увеличение до 64M.
 
-### "Не удается подключиться к базе данных" на странице настроек базы данных 
+### "Не удается подключиться к базе данных" на странице настроек базы данных
 
 Одной из распространенных причин этой проблемы является то, что вы используете нестандартный порт для MySQL. Попробуйте вставить этот синтаксис в поле имени хоста (заменив данные хостом и портом вашего сервера mysql):
 
@@ -79,7 +59,7 @@ try {
 
 Это означает, что ваш сокет MySQL неправильно настроен. Обычно это можно исправить, добавив (или обновив) ваш php.ini:
 
-``` php 
+``` php
 mysql.default_socket=/path/to/my/mysql.sock
 mysqli.default_socket=/path/to/my/mysql.sock
 pdo_mysql.default_socket=/path/to/my/mysql.sock
@@ -101,7 +81,7 @@ pdo_mysql.default_socket=/path/to/my/mysql.sock
 
 Вы используете eAccelerator? В некоторых конфигурациях сервера это может вызвать проблемы. Возможно, вам придется отключить его. Вы можете сделать это через ваш php.ini:
 
-``` php 
+``` php
 eaccelerator.enable = 0;
 eaccelerator.optimizer = 0;
 eaccelerator.debug = 0;
@@ -109,7 +89,7 @@ eaccelerator.debug = 0;
 
 или в вашем .htaccess в корневом каталоге modx, если ваш сервер поддерживает серверные директивы php\_flag:
 
-``` php 
+``` php
 php_flag eaccelerator.enable 0
 php_flag eaccelerator.optimizer 0
 php_flag eaccelerator.debug 0
@@ -134,15 +114,15 @@ php_flag eaccelerator.debug 0
 3. Эти действия приведут к общему сбросу и выходу из Панели управления
 4. Последний шаг Очистите кеш браузера
 
-### Я не могу войти в Панель управления после установки!
+### Я не могу войти в Панель управления после установки
 
-Если вас каждый раз перенаправляет обратно на экран входа в систему, попробуйте добавить эту настройку в файле .htaccess в корне вашей установки MODx:
+Если вас каждый раз перенаправляет обратно на экран входа в систему, попробуйте добавить эту настройку в файле .htaccess в корне вашей установки MODX:
 
-``` php 
+``` php
 php_value session.auto_start 0
 ```
 
-### Не удалось подключиться к серверу базы данных. Проверьте свойства подключения и попробуйте снова. Доступ запрещён...
+### Не удалось подключиться к серверу базы данных. Проверьте свойства подключения и попробуйте снова. Доступ запрещён
 
 Часто на виртуальном хостинге, если вы создаете имя пользователя для вашей базы данных с подчеркиванием (\_), это вызывает проблемы. Убедитесь, что имя пользователя вашей базы данных не содержит подчеркивания, и повторите попытку.
 

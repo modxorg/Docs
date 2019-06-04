@@ -1,0 +1,20 @@
+---
+title: "Видимое поле"
+translation: "building-sites/client-proofing/form-customization/rules/field-visible"
+---
+
+## Правило видимого поля
+
+Правило видимости поля, если оно установлено, будет объявлять поле «видимым» или нет для пользователя.
+
+## Примеры
+
+Пример правила сокрытия поля introtext от [пользователей](building-sites/client-proofing/security/users "пользователей") в группе [пользователей](building-sites/client-proofing/security/user-groups "Группы пользователей") «Отдел кадров» будет выглядеть так:
+
+![](/2.x/en/building-sites/client-proofing/form-customization/rules/fc-fieldvisible.png)
+
+## Смотрите также
+
+```php
+[[getResources@section? &parents=`124` &context=`revolution`]]
+```

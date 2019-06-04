@@ -4,13 +4,6 @@ _old_id: "344"
 _old_uri: "2.x/developing-in-modx/advanced-development/internationalization/adding-a-translation"
 ---
 
-- [The Core Manager Lexicon](#the-core-manager-lexicon)
-- [The Setup Lexicon](#the-setup-lexicon)
-- [Extras Lexicons](#extras-lexicons)
-- [Contributing Translations](#contributing-translations)
-
-
-
 Adding translations is fairly simple in MODX.
 
 ## The Core Manager Lexicon
@@ -29,7 +22,7 @@ A similar process can be done for the installer, if you so choose. Just copy the
 
 ## Extras Lexicons
 
-Often, Extras lexicons can be found in their respective directories in the core/components/ directory. For example, [Quip's](/extras/revo/quip "Quip") is found here:
+Often, Extras lexicons can be found in their respective directories in the core/components/ directory. For example, [Quip's](/extras/quip "Quip") is found here:
 
 `core/components/quip/lexicon/en/`
 

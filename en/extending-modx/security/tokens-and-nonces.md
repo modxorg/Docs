@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/validating-requests-token
 
  If you are working on Custom Manager Pages (CMPs), you may see values like the following that are included in the post data under a key named HTTP\_MODAUTH:
 
- ``` php 
+ ``` php
 $_POST['HTTP_MODAUTH'] => modx12345xxxx.9887_abcdef1234.0987654
 ```
 
@@ -16,7 +16,7 @@ $_POST['HTTP_MODAUTH'] => modx12345xxxx.9887_abcdef1234.0987654
 
 For example, here's how you might test a form that was posted from somewhere in the manager.
 
- ``` php 
+ ``` php
 $token = $modx->getOption('HTTP_MODAUTH', $_POST);
 if ($token != $modx->user->getUserToken($modx->context->get('key')) {
     // ERROR! Invalid request

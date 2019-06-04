@@ -12,7 +12,7 @@ Invokes a specified Event with an optional array of parameters.
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::invokeEvent()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::invokeEvent())
 
-``` php 
+``` php
 void invokeEvent (string $eventName, [array $params = array ()])
 ```
 
@@ -20,7 +20,7 @@ void invokeEvent (string $eventName, [array $params = array ()])
 
 Invoke the OnChunkRender event:
 
-``` php 
+``` php
 $modx->invokeEvent('OnChunkRender',array(
    'id' => $chunk->get('id'),
 ));
@@ -28,4 +28,4 @@ $modx->invokeEvent('OnChunkRender',array(
 
 ## See Also
 
-- [modX](developing-in-modx/other-development-resources/class-reference/modx "modX")
+- [modX](extending-modx/core-model/modx "modX")

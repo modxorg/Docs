@@ -10,7 +10,7 @@ Fires when a user is not found during login.
 
 Can be used to provide external authentication by returning an array, where one of the indexes in the array is an instance of (or extending) a modUser object.
 
-Service: 6 - User Defined Events 
+Service: 6 - User Defined Events
 Group: modUser
 
 ## Event Parameters
@@ -33,5 +33,5 @@ Group: modUser
 
 ## See Also
 
-- [System Events](developing-in-modx/basic-development/plugins/system-events "System Events")
-- [Plugins](developing-in-modx/basic-development/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

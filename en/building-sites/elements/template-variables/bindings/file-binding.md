@@ -10,7 +10,7 @@ The @FILE Binding returns the contents of any specified file.
 
 ## Syntax
 
-``` php 
+``` php
 @FILE file_path
 ```
 
@@ -28,13 +28,13 @@ First, we might create a new Template Variable. We then add the @FILE command in
 
 Let's say each headline in the headline\_news.txt file is separated by a new-line (lf or \\n) character. We can use the Delimiter render to separate each item and display them one at a time. Our fields will look like this:
 
-![](/download/attachments/18678209/tv-file-input-opt.png?version=1&modificationDate=1330458315000)
+![](tv-file-input-opt.png)
 
-![](/download/attachments/18678209/tv-file-output-opt.png?version=1&modificationDate=1330458328000)
+![](tv-file-output-opt.png)
 
 And voila! We have our dynamically rendering @FILE binding.
 
 ## See Also
 
-- [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables")
-- [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings "Bindings")
+- [Template Variables](building-sites/elements/template-variables "Template Variables")
+- [Bindings](building-sites/elements/template-variables/bindings "Bindings")

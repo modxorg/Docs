@@ -4,37 +4,6 @@ _old_id: "361"
 _old_uri: "2.x/administering-your-site/security/hardening-modx-revolution"
 ---
 
-- [Overview](#overview)
-- [Everything but MODX](#everything-but-modx)
-  - [Your Computer](#your-computer)
-  - [Your Connection](#your-connection)
-  - [Your Server](#your-server)
-  - [Passwords and Logins](#passwords-and-logins)
-  - [Keep it Clean](#keep-it-clean)
-  - [Backups](#backups)
-  - [Social Engineering](#social-engineering)
-- [Locking down MODX](#locking-down-modx)
-  - [Changing Default Paths](#changing-default-paths)
-    - [core](#core)
-    - [manager](#manager)
-    - [connectors](#connectors)
-    - [assets](#assets)
-  - [Path Followup](#path-followup)
-  - [Change your Login Page](#change-your-login-page)
-  - [Changing Default Database Prefixes](#changing-default-database-prefixes)
-  - [Use a unique name for the Admin User](#use-a-unique-name-for-the-admin-user)
-  - [Force a Password Policy](#force-a-password-policy)
-  - [Set up a dedicated 404 page](#set-up-a-dedicated-404-page)
-- [Forcing SFTP Access](#forcing-sftp-access)
-- [Adding an SSL Certificate to your Manager](#adding-an-ssl-certificate-to-your-manager)
-  - [Using a shared Certificate](#using-a-shared-certificate)
-  - [Using a self-signed Certificate](#using-a-self-signed-certificate)
-  - [Using a proper certificate](#using-a-proper-certificate)
-  - [Forcing SSL connections to the Manager](#forcing-ssl-connections-to-the-manager)
-- [Monitoring your Site and Server](#monitoring-your-site-and-server)
-
-
-
 ## Overview
 
 Hardening any web application, including MODX Revolution, involves auditing all layers of your site, including your server, all of its services, and the application itself. Make no mistake: it's a war out there. If you're not afraid, then you aren't paying attention. The simple act of having a website online will ensure that you will be targeted by hacks. Their motives vary, but the weakest link will be sought out and exploited.
@@ -117,7 +86,7 @@ The manager is arguably the second most important path to change. After all, if 
 
 Choose a randomly generated alphanumeric bit of text to use as your new manager folder. For maximum compatibility, it should use only lowercase letters. Then update the **core/config/config.inc.php** file to something like the following:
 
-``` php 
+``` php
 $modx_manager_path = '/home/youruser/public_html/r4nd0m/';
 $modx_manager_url = '/r4nd0m/';
 ```
@@ -130,7 +99,7 @@ You can also lock down access to the manager by configuring your server and/or i
 
 Just as with the manager directory, choose a random alphanumeric name for your **connectors** directory, and then update your core/config/config.inc.php to reflect the new location, e.g.
 
-``` php 
+``` php
 $modx_connectors_path = '/home/youruser/public_html/0therp4th/';
 $modx_connectors_url = '/0therp4th/';
 ```
@@ -141,7 +110,7 @@ As with the manager, this could also potentially live on a separate domain, howe
 
 The assets URL can be changed, but this is the lowest priority change because anyone visiting your site will be able to examine the source HTML and see the paths to this directory. But it's good to change anyway, simply to confuse any efforts at fingerprinting.
 
-``` php 
+``` php
 $modx_assets_path = '/home/youruser/public_html/4ssetsh3r3/';
 $modx_assets_url = '/4ssetsh3r3/';
 ```
@@ -210,7 +179,7 @@ Inside your manager's folder (which you've changed by now from the default /mana
 
 Here is a sample **.htaccess** file to put inside your manager directory:
 
-``` php 
+``` php
 RewriteEngine On
 RewriteBase /
 RewriteCond %{SERVER_PORT} 80
@@ -223,4 +192,4 @@ Test this by trying to navigate to the non-secure url, e.g. <http://yoursite.com
 
 Once you've locked down your site and server, you'll benefit from regular monitoring of it. There are some free services available. The best ones will monitor specific files and report any changes made to them. If your index.php suddenly changed, then that might indicate that somebody maliciously modified it.
 
-Changing the [Manager Templates](administering-your-site/customizing-the-manager/manager-templates-and-themes "Manager Templates and Themes") as per the documentation is a nice way to customize your login page!
+Changing the [Manager Templates](building-sites/client-proofing/custom-manager-themes "Manager Templates and Themes") as per the documentation is a nice way to customize your login page!

@@ -12,7 +12,7 @@ Drops a physical data container, if it exists.
 
 API Docs: [http://api.modxcms.com/xpdo/om-mysql/xPDOManager\_mysql.html#removeSourceContainer](http://api.modxcms.com/xpdo/om-mysql/xPDOManager_mysql.html#removeSourceContainer)
 
-``` php 
+``` php
 int removeSourceContainer (string $dsn, string $username, string $password)
 ```
 
@@ -20,7 +20,7 @@ int removeSourceContainer (string $dsn, string $username, string $password)
 
 Drop a database called 'MyDatabase'.
 
-``` php 
+``` php
 $newDatabaseName = 'MyDatabase';
 $dsn = 'mysql:host=localhost;dbname='.$newDatabaseName.';charset=utf8';
 $manager = $xpdo->getManager();

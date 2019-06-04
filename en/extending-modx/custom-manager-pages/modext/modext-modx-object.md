@@ -4,28 +4,6 @@ _old_id: "370"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/modext/modext-modx-object"
 ---
 
-- [The MODx JS Object](#the-modx-js-object)
-- [Custom Class Variables](#custom-class-variables)
-  - [MODx.request](#modxrequest)
-  - [MODx.config](#modxconfig)
-    - [Other Variables](#other-variables)
-  - [MODx.action](#modxaction)
-  - [MODx.version](#modxversion)
-  - [MODx.user](#modxuser)
-  - [MODx.perm](#modxperm)
-- [Custom Methods](#custom-methods)
-  - [MODx.load](#modxload)
-  - [MODx.clearCache](#modxclearcache)
-  - [MODx.releaseLock](#modxreleaselock)
-  - [MODx.sleep](#modxsleep)
-  - [MODx.logout](#modxlogout)
-  - [MODx.loadHelpPane](#modxloadhelppane)
-  - [MODx.preview](#modxpreview)
-  - [MODx.isEmpty](#modxisempty)
-  - [MODx.debug](#modxdebug)
-
-
-
 ## The MODx JS Object
 
 MODExt comes with a global MODx JS object on each manager page. This object has a few custom methods that can be executed from any custom manager page using MODExt, and also sets up some default settings and customizations.
@@ -38,7 +16,7 @@ The following variables are accessible from the MODx JS object:
 
 This is a JS object that contains all the current GET parameters for the page. Example:
 
-``` javascript 
+``` javascript
 var id = MODx.request.id;
 ```
 
@@ -46,13 +24,13 @@ var id = MODx.request.id;
 
 This object contains all the active System Settings in MODX by key:
 
-``` javascript 
+``` javascript
 var tpl = MODx.config.default_template;
 ```
 
 #### Other Variables
 
-There are a few other variables available on the MODx.config object that are not [System Settings](administering-your-site/settings/system-settings "System Settings"):
+There are a few other variables available on the MODx.config object that are not [System Settings](building-sites/settings "System Settings"):
 
 | Key                       | Description                                                                                  |
 | ------------------------- | -------------------------------------------------------------------------------------------- |
@@ -67,13 +45,13 @@ There are a few other variables available on the MODx.config object that are not
 
 This object contains a map of all the modAction objects (or MODX manager controllers), mapped by their controller to their ID:
 
-``` javascript 
+``` javascript
 var actionId = MODx.action['resource/create'];
 ```
 
 As of MODX 2.2, the non-core Actions are prefixed with their namespace. Prior to 2.2 it would just be the action controller. For example a "controllers/index" action in a "mycomponent" namespace would be retrievable using the following in 2.2 and up:
 
-``` javascript 
+``` javascript
 var actionId = MODx.action['mycomponent:controllers/index'];
 ```
 
@@ -94,7 +72,7 @@ Contains MODX version information, with the following attributes:
 
 Example:
 
-``` javascript 
+``` javascript
 var fv = MODx.version.full_version;
 ```
 
@@ -106,7 +84,7 @@ This object will contain the two following properties for the currently logged-i
 | ------------------ | ------------------------- |
 | MODx.user.username | The username of the user. |
 
-``` javascript 
+``` javascript
 var userId = MODx.user.id;
 ```
 
@@ -128,7 +106,7 @@ This will contain the following permissions should they be granted to the user (
 | MODx.perm.new\_tv           | To create a new Template Variable.                  |
 | MODx.perm.directory\_create | To be able to create a directory on the filesystem. |
 
-``` javascript 
+``` javascript
 if (MODx.perm.file_upload) { /* ...code... */ }
 ```
 
@@ -140,7 +118,7 @@ The MODx object also has quite a few custom methods available to it:
 
 This method will create a new object of any specified xtype and passed in configuration parameters. Example:
 
-``` javascript 
+``` javascript
 var w = MODx.load({
   xtype: 'modx-window-namespace-create'
   ,blankValues: true
@@ -153,7 +131,7 @@ Any defined class that has a registered xtype can be loaded from this method.
 
 ### MODx.clearCache
 
-This fires up the console that clears the MODX cache. It will also fire the 'beforeClearCache' and 'afterClearCache' events on the MODx object. If the System Setting [clear\_cache\_refresh\_trees](administering-your-site/settings/system-settings/clear_cache_refresh_trees "clear_cache_refresh_trees") is set to 1, it will also refresh all the active left-hand trees.
+This fires up the console that clears the MODX cache. It will also fire the 'beforeClearCache' and 'afterClearCache' events on the MODx object. If the System Setting [clear\_cache\_refresh\_trees](building-sites/settings/clear_cache_refresh_trees "clear_cache_refresh_trees") is set to 1, it will also refresh all the active left-hand trees.
 
 ### MODx.releaseLock
 
@@ -163,7 +141,7 @@ This will release the lock on the current active Resource. This method should no
 
 This method will cause JavaScript to sleep (or halt) for a specified number of seconds:
 
-``` javascript 
+``` javascript
 MODx.sleep(3); /* sleep for 3 seconds */
 ```
 
@@ -175,7 +153,7 @@ This method will automatically logout the active manager user. It fires the 'bef
 
 This will load the current Help screen for the active page. Normally this is set by default on the modAction record for the page, and its URL can be found by the MODx.config.help\_url property. You can, however, override this to fire up any URL into the panel:
 
-``` javascript 
+``` javascript
 /* show the modx.com site in the Help modal */
 MODx.config.help_url = 'http://modx.com/';
 MODx.loadHelpPane();
@@ -199,4 +177,4 @@ Checks to see if the specified variable is "empty" (in the PHP sense). This mean
 
 (2.1+ only)
 
-This will send off a debug message if and only if the MODX [System Setting](administering-your-site/settings "Settings") [ui\_debug\_mode](administering-your-site/settings/system-settings/ui_debug_mode "ui_debug_mode") is set to Yes/1. The debug message will use console.log to output to the console. This can be useful to add debugging and assertions to your code without breaking it in production sites (which would presumably have [ui\_debug\_mode](administering-your-site/settings/system-settings/ui_debug_mode "ui_debug_mode") off).
+This will send off a debug message if and only if the MODX [System Setting](_legacy/administering-your-site/settings "Settings") [ui\_debug\_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") is set to Yes/1. The debug message will use console.log to output to the console. This can be useful to add debugging and assertions to your code without breaking it in production sites (which would presumably have [ui\_debug\_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") off).

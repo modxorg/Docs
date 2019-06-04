@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/server_offset_ti
 
 ## server\_offset\_time
 
-**Name**: Server Offset Time 
-**Type**: Number 
+**Name**: Server Offset Tim
+**Type**: Number
 **Default**: 0
 
 MODX uses this setting to show dates and times (e.g. the Published On, Publish Date, Unpublish Date of a Resource) to Manager users in their Local Time. The intent is to free users from having to consider the server time when reading or setting dates and times. As a System Setting, it applies to all users automatically, but can be overridden per-user with a User Setting.

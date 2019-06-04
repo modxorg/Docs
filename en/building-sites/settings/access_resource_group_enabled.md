@@ -6,9 +6,9 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/access_resource_
 
 ## access\_resource\_group\_enabled
 
-**Name**: Check Resource Group Access 
-**Type**: Yes/No 
-**Default**: Yes 
+**Name**: Check Resource Group Access
+**Type**: Yes/No
+**Default**: Yes
 **Available In**: Revolution 2.1+
 
 Use this to enable or disable Resource Group ACL checks (per Context).

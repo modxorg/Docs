@@ -6,6 +6,6 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/editor_css_selec
 
 ## editor\_css\_selectors
 
-**Name**: CSS Selectors for Editor 
-**Type**: String 
+**Name**: CSS Selectors for Editor
+**Type**: String
 **Default**:

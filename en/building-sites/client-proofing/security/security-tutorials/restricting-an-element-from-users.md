@@ -4,21 +4,6 @@ _old_id: "486"
 _old_uri: "2.x/administering-your-site/security/security-tutorials/restricting-an-element-from-users"
 ---
 
-- [Introduction](#introduction)
-  - [Brief Summary](#brief-summary)
-- [Step-by-step Explanation](#step-by-step-explanation)
-  - [1. Create a Category](#1-create-a-category)
-  - [2. Place the Element into the Category](#2-place-the-element-into-the-category)
-  - [3. Create a User Group](#3-create-a-user-group)
-  - [4. Add the Users to the User Group](#4-add-the-users-to-the-user-group)
-  - [5. Add the Element Category ACL](#5-add-the-element-category-acl)
-  - [6. Flush Permissions](#6-flush-permissions)
-- [Hiding Specific Elements from Certain Users](#hiding-specific-elements-from-certain-users)
-- [Special Case for Templates](#special-case-for-templates)
-- [See Also](#see-also)
-
-
-
 ## Introduction
 
 This tutorial teaches you how to restrict any Element (such as a Template, Snippet, etc) from view in the MODX manager. It uses Element Category ACLs to accomplish the task, which allow you to protect any Elements in Categories from view. Users in the Editors User Group will be able to see the elements, but they will be hidden from users outside the group.
@@ -79,7 +64,7 @@ Sometimes, you want to hide elements from all users who are not in the Administr
 
 - Go to the Administrator User Group edit page (Security -> Access Controls -> User Groups -> right click on "Administrator" and select Update User Group) For Revolution 2.3.x this is Access Control Lists in the Admin menu (the gear icon).
 - Find the Element Category Access tab
-- Add the following ACL entry, by clicking on "Add Category": 
+- Add the following ACL entry, by clicking on "Add Category":
   - Category: your Category you made/selected earlier
   - Minimum Role: admin Super User
   - Access Policy: Element
@@ -97,7 +82,7 @@ Lets say you restricted a Template with the method above. But you also want anot
 
 - Go to the Editors User Group edit page (Security -> Access Controls -> User Groups -> right click on "Editors" and select Update User Group)
 - Find the Element Category Access tab
-- Add the following ACL entry, by clicking on "Add Category": 
+- Add the following ACL entry, by clicking on "Add Category":
   - Category: your Category you made/selected earlier
   - Minimum Role: Member
   - Access Policy: Load Only
@@ -111,8 +96,8 @@ Done! Your Editors will now be able to see and edit TVs for the Template in the 
 
 ## See Also
 
-1. [Giving a User Manager Access](administering-your-site/security/security-tutorials/giving-a-user-manager-access)
-2. [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages)
-3. [Creating a Second Super Admin User](administering-your-site/security/security-tutorials/creating-a-second-super-admin-user)
-4. [Restricting an Element from Users](administering-your-site/security/security-tutorials/restricting-an-element-from-users)
-5. [More on the Anonymous User Group](administering-your-site/security/security-tutorials/more-on-the-anonymous-user-group)
+1. [Giving a User Manager Access](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)
+2. [Making Member-Only Pages](building-sites/client-proofing/security/security-tutorials/making-member-only-pages)
+3. [Creating a Second Super Admin User](building-sites/client-proofing/security/security-tutorials/creating-a-second-super-admin-user)
+4. [Restricting an Element from Users](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
+5. [More on the Anonymous User Group](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)

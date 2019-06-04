@@ -12,7 +12,7 @@ This page is designed to demonstrate some basic principles about the xPDO/MODX c
 
 Here's our first Snippet, named **cacheWrite**:
 
-``` php 
+``` php
 $cacheManager = $modx->getCacheManager();
 $x = date('H:i:s');
 $cacheManager->set('my_cache_key',$x);
@@ -23,7 +23,7 @@ Remember that we need to use the $x variable as an intermediary because the cach
 
 This snippet simple stores the current timestamp to a cache key named "my\_cache\_key". Put this Snippet on a page in your site (CACHED), e.g. on "Page One":
 
-``` php 
+``` php
 [[writeCache]]
 ```
 
@@ -31,20 +31,20 @@ This snippet simple stores the current timestamp to a cache key named "my\_cache
 
 Next, we will create simple snippet that will _read_ values from the cache, named **readCache**:
 
-``` php 
+``` php
 $cacheManager = $modx->getCacheManager();
 return $cacheManager->get('my_cache_key');
 ```
 
 And put this Snippet onto a different page on your site (UNCACHED), e.g. on "Page Two":
 
-``` php 
+``` php
 [[!readCache]]
 ```
 
 ## Observing our Snippets
 
-1\. First, navigate to "Page One" (or just preview that page in your site). You should see a simple timestamp, e.g. '11:44:55'. 
+1\. First, navigate to "Page One" (or just preview that page in your site). You should see a simple timestamp, e.g. '11:44:55'.
 2\. Next, navigate to "Page Two" on your site in a separate browser tab. You should see the _same_ timestamp, e.g. '11:44:55'. Even if you wait 5 minutes, the timestamp should not change.
 
 1. Clear the Site cache (Site /-> Clear Cache), then repeat this process. What do you see?
@@ -53,7 +53,7 @@ You should notice that the timestamp gets set only when you _first_ visit Page O
 
 Try this:
 
-1\. Clear your Site Cache 
+1\. Clear your Site Cache
 2\. Visit Page Two. What happens?
 
 You should notice that Page Two and the `readCache` Snippet returns nothing when the cache is empty and the `writeCache` snippet hasn't written anything to the cache.
@@ -62,12 +62,12 @@ Next, try this:
 
 1\. Edit "Page One" so that it calls `writeCache` uncached:
 
-``` php 
+``` php
 [[!writeCache]]
 ```
 
-2\. Visit "Page One" in a browser. Notice the timestamp. 
-3\. Refresh "Page One". Notice that the timestamp updates. 
+2\. Visit "Page One" in a browser. Notice the timestamp.
+3\. Refresh "Page One". Notice that the timestamp updates.
 4\. Visit "Page Two" in a browser. What timestamp does it show?
 
 You'll see that "Page Two" in this scenario will always show the timestamp from the last time "Page One" was accessed.

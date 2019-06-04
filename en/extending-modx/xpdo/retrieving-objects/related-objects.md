@@ -4,30 +4,30 @@ _old_id: "1228"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/working-with-related-objects"
 ---
 
-Related objects in xPDO can be accessed via newQuery, as shown earlier, or through xPDOObject's helper functions, [getOne](xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") and [getMany](xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany") (depending on the relationship.
+Related objects in xPDO can be accessed via newQuery, as shown earlier, or through xPDOObject's helper functions, [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") and [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany") (depending on the relationship.
 
 ## Retrieving Objects
 
 First off, let's look at the related object retrieval methods:
 
-### [getOne](xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
+### [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
 
 Let's say we have a Car object, that has an Owner related object. Each Car can have only one Owner, which is a table with ID, name, and email. We want to grab the Owner, given that we have the Car object:
 
-``` php 
+``` php
 $car = $xpdo->getObject('Car',123);
 
 $owner = $car->getOne('Owner');
 echo 'The owner of this car is: '.$owner->get('name');
 ```
 
-[getOne](xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") also takes a $criteria and $cacheFlag parameter, similar to getObject and getCollection. This allows you to do a bit more filtering should you so desire.
+[getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") also takes a $criteria and $cacheFlag parameter, similar to getObject and getCollection. This allows you to do a bit more filtering should you so desire.
 
-### [getMany](xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
+### [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
 
 Now say we have Wheel objects for our Car - obviously there can be more than one Wheel per Car, and we want to grab the whole collection of them. The Wheel object has 'id' and 'position' fields:
 
-``` php 
+``` php
 $car = $xpdo->getObject('Car',123);
 
 $wheels = $car->getMany('Wheel');
@@ -48,22 +48,22 @@ As you can see, this allows us to quickly and easily grab related objects with e
 
 xPDO also has methods for adding related objects to an existing Object, to make saving easier:
 
-### [addOne](xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne")
+### [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne")
 
-So we have our Car object, but say we want to set it a new owner that we've just created. We can use [addOne](xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") to easily add it in:
+So we have our Car object, but say we want to set it a new owner that we've just created. We can use [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") to easily add it in:
 
-``` php 
+``` php
 $car = $xpdo->getObject('Car',123);
 $owner = $xpdo->getObject('Owner',array('name' => 'Mark'));
 $car->addOne($owner);
-$car->save(); 
+$car->save();
 ```
 
 Saving the Car object will save the 'owner' field on the Car row to the Owner's ID, via the relationship definition.
 
-You can also do this with new (unsaved) objects; the [save](xpdo/class-reference/xpdoobject/persistence-methods/save "save") function will cascade and save both objects. Let's say we have a Car object, but we're adding an entirely new Owner:
+You can also do this with new (unsaved) objects; the [save](extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/save "save") function will cascade and save both objects. Let's say we have a Car object, but we're adding an entirely new Owner:
 
-``` php 
+``` php
 $car = $xpdo->getObject('Car',324);
 
 $owner = $xpdo->newObject('Owner');
@@ -76,20 +76,20 @@ $car->save();
 
 This will save both the Car and the Owner object, and relate them together.
 
-Both [addOne](xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany") take a 2nd parameter, called 'alias'. This should be used when an object has more than one relationship with a single class. For example, adding an Owner and Seller relationships, which are both User objects:
+Both [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany") take a 2nd parameter, called 'alias'. This should be used when an object has more than one relationship with a single class. For example, adding an Owner and Seller relationships, which are both User objects:
 
-``` php 
+``` php
 $car->addOne($ownerUser,'Owner');
 $car->addOne($sellerUser,'Seller');
 ```
 
 This helps xPDO differentiate between which object belongs to which relationship.
 
-### [addMany](xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany")
+### [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany")
 
-Objects with one-to-many relationships can also be batch added via the [addMany](xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany") method. Let's say we want to add all the Wheel objects with width of 10 to our Car:
+Objects with one-to-many relationships can also be batch added via the [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany") method. Let's say we want to add all the Wheel objects with width of 10 to our Car:
 
-``` php 
+``` php
 $wheels = $xpdo->getCollection('Wheel',array(
    'width' => 10,
 ));
@@ -102,8 +102,8 @@ This will add all the 10-width Wheels and save the relationships.
 
 ## See Also
 
-- [getOne](xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
-- [getMany](xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
-- [addOne](xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne")
-- [addMany](xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany")
-- [Defining Relationships](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema/defining-relationships "Defining Relationships")
+- [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne")
+- [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany")
+- [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne")
+- [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany")
+- [Defining Relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships")

@@ -4,17 +4,17 @@ _old_id: "1047"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2"
 ---
 
-This tutorial is for MODX Revolution 2.2 or greater. 
+This tutorial is for MODX Revolution 2.2 or greater.
 
-## What are Custom TV Input Types? 
+## What are Custom TV Input Types?
 
-MODx Revolution allows you to create your own custom TV input types (similar to the textbox, radio, textarea, richtext, etc types already available) for your [Template Variables](making-sites-with-modx/customizing-content/template-variables "Template Variables"). This tutorial will show a very simple example by loading a simple Template dropdown for us in the mgr, and then in the frontend will render our Template ID wrapped in a special div. We'll call it "TemplateSelect". We'll also make this an Extra called "OurTVs", meaning that we'll have the files outside of the normal TV input renders directory, and put it in our own Extra's directory in core/components/ourtvs/.
+MODX Revolution allows you to create your own custom TV input types (similar to the textbox, radio, textarea, richtext, etc types already available) for your [Template Variables](building-sites/elements/template-variables "Template Variables"). This tutorial will show a very simple example by loading a simple Template dropdown for us in the mgr, and then in the frontend will render our Template ID wrapped in a special div. We'll call it "TemplateSelect". We'll also make this an Extra called "OurTVs", meaning that we'll have the files outside of the normal TV input renders directory, and put it in our own Extra's directory in core/components/ourtvs/.
 
-## Create a Namespace 
+## Create a Namespace
 
 If you haven't already, go ahead and create a Namespace called "ourtvs" with the path "{core\_path}components/ourtvs/". This will help us later on.
 
-## Creating the Pathing Plugin 
+## Creating the Pathing Plugin
 
 We'll need a plugin to tell MODX where our custom TV directories are. Go ahead and make a plugin called "OurTvsPlugin", and assign it to the following events:
 
@@ -26,7 +26,7 @@ We'll need a plugin to tell MODX where our custom TV directories are. Go ahead a
 
 Now put in the Plugin code:
 
-``` php 
+``` php
 $corePath = $modx->getOption('core_path',null,MODX_CORE_PATH).'components/ourtvs/';
 switch ($modx->event->name) {
     case 'OnTVInputRenderList':
@@ -48,9 +48,9 @@ switch ($modx->event->name) {
 
 These event handlers tell MODX to check these directories for our TV files when doing all the rendering and processing. Think of it like adding library or include paths.
 
-The pathing plugin will not be required in MODX 2.3; the Namespace will handle all the pathing. This is why we told you earlier to make the Namespace. :) 
+The pathing plugin will not be required in MODX 2.3; the Namespace will handle all the pathing. This is why we told you earlier to make the Namespace. :)
 
-## Creating the Input Controller 
+## Creating the Input Controller
 
 The input controller is what actually loads the markup for the custom TV input. Create the input controller file here:
 
@@ -58,7 +58,7 @@ The input controller is what actually loads the markup for the custom TV input. 
 
 And inside, you can put this code:
 
-``` php 
+``` php
 <?php
 if(!class_exists('TemplateSelectInputRender')) {
     class TemplateSelectInputRender extends modTemplateVarInputRender {
@@ -80,7 +80,7 @@ Now you can see here we are specifying a "tpl" file for rendering our TV. Go ahe
 
 And make its content:
 
-``` javascript 
+``` javascript
 <select id="tv{$tv->id}" name="tv{$tv->id}" class="combobox"></select>
 <script type="text/javascript">
 // <![CDATA[
@@ -106,9 +106,9 @@ You don't have to use the ExtJS code as shown here to have a custom input type. 
 
 And that should render us a nice template dropdown in the backend:
 
-![](/download/attachments/39354478/ctv1.png?version=1&modificationDate=1334932146000)
+![](ctv1.png)
 
-## Creating the Output Controller 
+## Creating the Output Controller
 
 Okay, so now we want to make the output controller, let's create the file at:
 
@@ -116,7 +116,7 @@ Okay, so now we want to make the output controller, let's create the file at:
 
 And the content:
 
-``` php 
+``` php
 if(!class_exists('TemplateSelectOutputRender')) {
     class TemplateSelectOutputRender extends modTemplateVarOutputRender {
         public function process($value,array $params = array()) {
@@ -129,26 +129,24 @@ return 'TemplateSelectOutputRender';
 
 There we go - now when we render this in the front-end, it will display the ID of our selected Template wrapped in a div.
 
-## See Also 
+## See Also
 
-1. [Creating a Template Variable](making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable)
-2. [Bindings](making-sites-with-modx/customizing-content/template-variables/bindings)
-3. [CHUNK Binding](making-sites-with-modx/customizing-content/template-variables/bindings/chunk-binding)
-4. [DIRECTORY Binding](making-sites-with-modx/customizing-content/template-variables/bindings/directory-binding)
-5. [EVAL Binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding)
-6. [FILE Binding](making-sites-with-modx/customizing-content/template-variables/bindings/file-binding)
-7. [INHERIT Binding](making-sites-with-modx/customizing-content/template-variables/bindings/inherit-binding)
-8. [RESOURCE Binding](making-sites-with-modx/customizing-content/template-variables/bindings/resource-binding)
-9. [SELECT Binding](making-sites-with-modx/customizing-content/template-variables/bindings/select-binding)
-10. [Template Variable Input Types](making-sites-with-modx/customizing-content/template-variables/template-variable-input-types)
-11. [Template Variable Output Types](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types)
-12. [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type)
-13. [Delimiter TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/delimiter-tv-output-type)
-14. [HTML Tag TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/html-tag-tv-output-type)
-15. [Image TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type)
-16. [URL TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/url-tv-output-type)
-17. [Adding a Custom TV Type - MODX 2.2](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2)
-18. [Adding a Custom TV Input Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-input-type)
-19. [Adding a Custom TV Output Type](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-output-type)
-20. [Creating a multi-select box for related pages in your template](making-sites-with-modx/customizing-content/template-variables/creating-a-multi-select-box-for-related-pages-in-your-template)
-21. [Accessing Template Variable Values via the API](making-sites-with-modx/customizing-content/template-variables/accessing-template-variable-values-via-the-api)
+1. [Creating a Template Variable](building-sites/elements/template-variables/step-by-step)
+2. [Bindings](building-sites/elements/template-variables/bindings)
+3. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
+4. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
+5. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
+6. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
+7. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
+8. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
+9. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
+10. [Template Variable Input Types](building-sites/elements/template-variables/input-types)
+11. [Template Variable Output Types](building-sites/elements/template-variables/output-types)
+12. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
+13. [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
+14. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
+15. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
+16. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
+17. [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
+18. [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
+19. [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)

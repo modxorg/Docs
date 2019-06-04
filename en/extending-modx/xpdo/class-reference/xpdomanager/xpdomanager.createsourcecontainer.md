@@ -12,11 +12,11 @@ Creates the physical data container represented by a data source.
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOManager.html#createSourceContainer>
 
-``` php 
+``` php
 void createSourceContainer (
    $dsn,
    [$username = ''],
-   [$password = ''], 
+   [$password = ''],
    [$containerOptions = null]
 )
 ```
@@ -25,7 +25,7 @@ void createSourceContainer (
 
 Create a database called 'MyDatabase'.
 
-``` php 
+``` php
 $newDatabaseName = 'MyDatabase';
 $dsn = 'mysql:host=localhost;dbname='.$newDatabaseName.';charset=utf8';
 $manager = $xpdo->getManager();

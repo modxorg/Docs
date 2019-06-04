@@ -22,11 +22,11 @@ migxMultiLang is built on the MIGX and pdoTools extras and requires both to be i
 
 Click on "Installer" in the Extras menu at the top.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/1modified.png)
+![](1modified.png)
 
 Click on the "Download Extras" button.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/2modified.png)
+![](2modified.png)
 
 Search for and download:
 
@@ -38,11 +38,11 @@ Install them all leaving migxMultiLang for last.
 
 When installing migxMultiLang, you will be asked if you want to place it in the top navigation bar or the Extras drop-down menu. See the below screenshot. This is completely up to your personal preference and can be changed easily later on in the MODX 'Menus' control panel if you happen to change your mind.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/3modified.png)
+![](3modified.png)
 
 If you chose to install migxMultiLang in the Extras menu, you should see it when you open the menu now.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/4modified.png)
+![](4modified.png)
 
 ### Step 2: Add Your Languages
 
@@ -52,7 +52,7 @@ You will see a page with three tabs at the top. The first tab is "Languages" and
 
 Click on the "Add Language" button. We will be doing this twice because in this tutorial we will only be using two languages, however you can theoretically use as many as you like.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/5modified.png)
+![](5modified.png)
 
 Clicking on the Add Language button will open a MIGx window with three fields: Language, Lang Key and Lang Direction.
 
@@ -62,7 +62,7 @@ The second field holds the language key migxMultiLang will use to switch languag
 
 English goes from left to right so the third field can be left as "ltr".
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/6modified.png)
+![](6modified.png)
 
 Click on the "Done" button down the bottom to save and close the window.
 
@@ -78,7 +78,7 @@ In the Lang Key field enter "zh".
 
 Keep the Lang Direction field "ltr".
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/7modified.png)
+![](7modified.png)
 
 Again, click the Done button to save and close the window.
 
@@ -90,19 +90,19 @@ We are now finished with the Languages tab.
 
 Click on the "Form Manager" tab at the top and then click on the "Import Configurations" button.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/8modified.png)
+![](8modified.png)
 
 You will see an example configuration appear in the grid. You may like to duplicate it and create your own, however for this tutorial we will just go with the example.
 
 Click on the "Edit" button as we need to make some changes to the configuration.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/9modified.png)
+![](9modified.png)
 
 Clicking on the Edit button will bring up a window with two tabs: "Form" and "Settings".
 
 Click on the Settings tab and then check "Use as Default Formtabs for all other templates".
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/10modified2.png)
+![](10modified2.png)
 
 Click Done and the window should save and close.
 
@@ -110,7 +110,7 @@ Now that we have changed the configuration, we need to create the TVs.
 
 Click on the "Create TVs" button that is right near the Edit button we pressed before.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/11modified.png)
+![](11modified.png)
 
 If you now have a look in the Template Variables section of your Elements tree, you'll see the newly created TVs.
 
@@ -122,7 +122,7 @@ If you now have a look in the Template Variables section of your Elements tree, 
 
 These are the migxMultiLang versions of the typical fields on a resource.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/12modified.png)
+![](12modified.png)
 
 We now need to create the main translation Template Variable.
 
@@ -130,7 +130,7 @@ First, create a new category by clicking on the "New Category" icon at the top o
 
 A New Category window will appear. Name it "Translations" and click the Save button.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/13modified.png)
+![](13modified.png)
 
 Now click on the "New TV" icon at the top of the Elements tree and a new page will be displayed.
 
@@ -144,7 +144,7 @@ Description - Enter the translations for this resource here:
 
 Category - Translations
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/14modified.png)
+![](14modified.png)
 
 Once that information has been entered, click on the "Input Options" tab at the top.
 
@@ -158,7 +158,7 @@ The Configurations should be:
 mml_translations:migxmultilang,mml_translate:migxmultilang
 ```
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/15modified.png)
+![](15modified.png)
 
 Ok, we are almost done with this. Now click on the "Template Access" tab at the top.
 
@@ -166,13 +166,13 @@ Check the box in the "Access" column for the BaseTemplate.
 
 Now click the Save button up the top right.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/16modified.png)
+![](16modified.png)
 
 Now go to your resource tree and select a resource using the BaseTemplate. In our case we only have the Home resource.
 
 Select the Template Variable tab on the resource and you will see the TV we just created.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/17modified.png)
+![](17modified.png)
 
 Translations won't work yet though, there are still a few things we need to do.
 
@@ -184,7 +184,7 @@ Select pdotools from the combo-box and you will see two settings appear.
 
 There is a setting with the name of: FQN of pdoFetch. Change the value of this setting to `pdotools.mmlfetch`
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/21modified.png)
+![](21modified.png)
 
 Excellent! This step is complete.
 
@@ -202,7 +202,7 @@ The MIGX Package Manager will appear.
 
 In the field "Package Name", type: `migxmultilang`
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/22modified.png)
+![](22modified.png)
 
 Now select the "create Tables" tab below that.
 
@@ -210,7 +210,7 @@ There will only be one button under this tab named "create Tables". Click it.
 
 It should tell you the tables were created successfully.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/23modified.png)
+![](23modified.png)
 
 ## Step 6: Creating the Templates For The Front End
 
@@ -226,25 +226,24 @@ Save the MainTpl chunk and then open up the BaseTemplate again.
 
 Delete everything in the "Template Code (HTML)" area and then paste in the following code:
 
-``` php 
+``` php
 [[!mmlCache?
 &element=`pdoResources`
-&parents=`0` 
-&resources=`[[*id]]` 
-&tpl=`MainTpl` 
-&includeTVs=`[[mmlGetTemplateTVs]]` 
-&prepareTVs=`1` 
+&parents=`0`
+&resources=`[[*id]]`
+&tpl=`MainTpl`
+&includeTVs=`[[mmlGetTemplateTVs]]`
+&prepareTVs=`1`
 &processTVs=`1`
-&tvPrefix=`` 
+&tvPrefix=``
 &loadModels=`migxmultilang`
 &prepareSnippet = `mmlTranslatePdoToolsRow`
 ]]
-
 ```
 
 If you named your chunk anything other than "MainTpl", make sure you update the &tpl argument.
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/18modified.png)
+![](18modified.png)
 
 The BaseTemplate is now ready to load your MainTpl chunk as though it were the template.
 
@@ -256,7 +255,7 @@ migxMultiLang comes with a snippet called `mml_LangLinks` and we are going to ad
 
 Here is a very simple example of a possible MainTpl chunk:
 
-``` html 
+``` html
 <!doctype html>
 <html lang="en">
 <head>
@@ -268,7 +267,6 @@ Here is a very simple example of a possible MainTpl chunk:
 [[+mml_pagetitle]]
 [[!mml_LangLinks]]
 </body>
-
 ```
 
 Besides the normal MODX tags in the head section, you can see I've added `[[+mml_pagetitle]]` and `[[!mml_LangLinks]]`.
@@ -299,7 +297,7 @@ We set English as our default language so that's the one that appears first.
 
 Your page should look like this:
 
-![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/test.png)
+![](test.png)
 
 If you click on the Chinese link the text will change to "This is the Chinese Version".
 

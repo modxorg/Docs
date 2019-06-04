@@ -12,7 +12,7 @@ Get a foreign key definition for a specific classname. This is generally used to
 
 API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getFKDefinition>
 
-``` php 
+``` php
 array getFKDefinition (string $alias)
 ```
 
@@ -20,19 +20,19 @@ array getFKDefinition (string $alias)
 
 Get the FK definition of a User who just edited the Document.
 
-``` php 
+``` php
 $document = $xpdo->getObject('Document',1);
 $fkdef = $document->getFKDefinition('EditedBy');
 print_r($fkdef);
 
 /* Outputs:
-Array ( 
+Array (
   [class] => User
   [key] => editedby
   [local] => editedby
   [foreign] => id
   [cardinality] => one
   [owner] => foreign
-  [type] => aggregate 
+  [type] => aggregate
 ) */
 ```

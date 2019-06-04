@@ -6,15 +6,6 @@ _old_uri: "2.x/getting-started/installation/command-line-installation"
 
 CLI Installation is available only for MODX Revolution versions 2.2 and later.
 
-- [Installing MODX via the PHP Command Line](#installing-modx-via-the-php-command-line)
-- [New CLI Installations](#new-cli-installations)
-- [Doing a Basic Upgrade MODX via CLI](#doing-a-basic-upgrade-modx-via-cli)
-- [Doing an Advanced Upgrade MODX via CLI](#doing-an-advanced-upgrade-modx-via-cli)
-- [Using a Helper Script](#using-a-helper-script)
-- [See Also](#see-also)
-
-
-
 ## Installing MODX via the PHP Command Line
 
 MODX allows you to do upgrades and installations via the command line (CLI) while using a config XML file. (More info on this file can be found [here](getting-started/installation/command-line-installation/the-setup-config-xml-file "The Setup Config Xml File").) This allows users to create simple batch scripts to update their MODX installations.
@@ -27,7 +18,7 @@ First off, [download MODX](http://modx.com/download/) and extract the files to y
 
 Next, edit the XML file and set the appropriate database information, MODX paths, and other configuration parameters, and then in your command line prompt, browse to the MODX setup/ directory, and type:
 
-``` php 
+``` php
 php ./index.php --installmode=new
 ```
 
@@ -35,7 +26,7 @@ MODX will proceed to install, and when finished will display the time it took to
 
 Note : if your core folder is in a "non-standard" location, you might want to use :
 
-``` php 
+``` php
 --core_path=/path/to/core/
 ```
 
@@ -50,7 +41,7 @@ Follow the same steps as new installations, but this time in your XML file you n
 
 And any other attributes you would like to change during the upgrade. There is an example upgrade xml file named "config.dist.upgrade.xml". Then, once you are ready, browse to the MODX setup directory, and type:
 
-``` php 
+``` php
 php ./index.php --installmode=upgrade
 ```
 
@@ -62,7 +53,7 @@ Follow the same steps as basic upgrade, but this time in your XML file you need 
 
 Then, once you are ready, browse to the MODX setup directory, and type:
 
-``` php 
+``` php
 php ./index.php --installmode=upgrade-advanced
 ```
 
@@ -77,16 +68,12 @@ It provides command line options for this process. Here's a video of it in actio
 ## See Also
 
 1. [Basic Installation](getting-started/installation/standard)
-2. [MODx Revolution on Debian](_legacy/getting-started/modx-revolution-on-debian)
-3. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
-4. [Problems with WAMPServer 2.0i](_legacy/getting-started/problems-with-wampserver-2.0i)
-5. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
-6. [MODX and Suhosin](_legacy/getting-started/modx-and-suhosin)
-7. [Nginx Server Config](getting-started/friendly-urls/nginx)
-8. [Advanced Installation](getting-started/installation/advanced)
-9. [Git Installation](getting-started/installation/git)
-10. [Command Line Installation](getting-started/installation/cli)
-11. [The Setup Config Xml File](getting-started/installation/cli/config.xml)
-12. [Troubleshooting Installation](getting-started/installation/troubleshooting)
-13. [Successful Installation, Now What Do I Do?](getting-started/getting-started)
-14. [Using MODx Revolution from SVN](_legacy/getting-started/using-modx-revolution-from-svn)
+2. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
+3. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+4. [Nginx Server Config](getting-started/friendly-urls/nginx)
+5. [Advanced Installation](getting-started/installation/advanced)
+6. [Git Installation](getting-started/installation/git)
+7. [Command Line Installation](getting-started/installation/cli)
+8. [The Setup Config Xml File](getting-started/installation/cli/config.xml)
+9. [Troubleshooting Installation](getting-started/installation/troubleshooting)
+10. [Successful Installation, Now What Do I Do?](getting-started/getting-started)

@@ -6,9 +6,9 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/phpthumb_nohotli
 
 ## phpthumb\_nohotlink\_valid\_domains
 
-**Name**: phpThumb Hotlinking Valid Domains 
-**Type**: Textfield 
-**Default**: {http\_host} 
+**Name**: phpThumb Hotlinking Valid Domains
+**Type**: Textfield
+**Default**: {http\_host}
 **Available In:** 2.0.8+
 
 A comma-delimited list of hostnames that are valid in src URLs.

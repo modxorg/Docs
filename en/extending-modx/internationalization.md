@@ -4,26 +4,11 @@ _old_id: "168"
 _old_uri: "2.x/developing-in-modx/advanced-development/internationalization"
 ---
 
-- [An Overview](#an-overview)
-  - [Locales](#locales)
-- [Lexicon Entries](#lexicon-entries)
-- [Loading and Using Lexicons](#loading-and-using-lexicons)
-  - [Lexicons via Tag (in content, chunks, templates etc)](#lexicons-via-tag-in-content-chunks-templates-etc)
-  - [Lexicons in PHP](#lexicons-in-php)
-    - [Loading lexicon topics with modLexicon::load()](#loading-lexicon-topics-with-modlexiconload)
-    - [Displaying translated content with modX::lexicon()](#displaying-translated-content-with-modxlexicon)
-  - [Lexicons in JavaScript (within MODX)](#lexicons-in-javascript-within-modx)
-- [Lexicons for Settings](#lexicons-for-settings)
-- [Conclusion](#conclusion)
-- [See Also](#see-also)
-
-
-
 ## An Overview
 
 Internationalization, or i18n, is the process of extrapolating text strings in a document to separate languages, so that the document may be viewed by a multitude of different languages without having to duplicate the page for every different language. Technically speaking, _internationalization_ refers to the process of _preparing_ code so that it can be translated; in MODX this process often boils down to isolating translatable strings into separate placeholders.
 
-**i18n** 
+**i18n**
  The abbreviation **i18n** derives from the word "internationalization". It means "**i** plus 18 letters then **n**".
 
 MODX Revolution supports i18n at the core level, through what it calls "Lexicons". A lexicon is simply a collection of the following:
@@ -38,7 +23,7 @@ Furthermore, the modNamespace class is used to further separate Lexicon Topics i
 
 ### Locales
 
-Some translation frameworks (such as [gettext](http://www.gnu.org/software/gettext/)) rely on a specific _locale_ and a context to help distinguish between meanings. For example "football" has a different meaning depending on locale (Britain or the United States). MODX willl likely not support locales in the core, but you can handle setting locales however you need to based on your site organization and i18n approach. The most logical place would probably be using a plugin tied to the [OnInitCulture](developing-in-modx/basic-development/plugins/system-events/oninitculture "OnInitCulture") event.
+Some translation frameworks (such as [gettext](http://www.gnu.org/software/gettext/)) rely on a specific _locale_ and a context to help distinguish between meanings. For example "football" has a different meaning depending on locale (Britain or the United States). MODX willl likely not support locales in the core, but you can handle setting locales however you need to based on your site organization and i18n approach. The most logical place would probably be using a plugin tied to the [OnInitCulture](extending-modx/plugins/system-events/oninitculture "OnInitCulture") event.
 
 You could set a locale in the MODX system settings (or in the context settings, if you use i.e. Babel). But be sure that the MODX system locale uses an utf8 charset (i.e. de\_DE.utf8), otherwise the MODX backend will show some glitches.
 
@@ -59,7 +44,7 @@ Lexicons must first be loaded if they are to be used in the front-end; however, 
 
 To use a Lexicon Entry in a tag, use the following syntax:
 
-``` php 
+``` php
 [[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
 ```
 
@@ -67,9 +52,9 @@ The 'language', 'topic', and 'namespace' properties are optional; if the tag has
 
 It is preferable not to use the 'language' property for every tag should you be changing languages; this is best done through a System or Context Setting for the entire site or context. The best option is different contexts for each language. But again, MODX leaves you with the preference.
 
-If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you simply specify the key ("userinput") as tag property and pass what you want it replaced with in the value. Example:
+If you have placeholders in your lexicon string, for example "This is `[[+userinput]]`!", you simply specify the key ("userinput") as tag property and pass what you want it replaced with in the value. Example:
 
-\[\[!%key? &topic=`topicname` &namespace=`namespace\_name` &language=`en` &userinput=`amazing`\]\]
+`[[!%key? &topic=`topicname` &namespace=`namespace\_name` &language=`en` &userinput=`amazing`]]`
 
 Note our ! prefix for the Tag; this makes sure the Tag isn't cached, since our string might be changing before the page cache does.
 
@@ -77,7 +62,7 @@ Note our ! prefix for the Tag; this makes sure the Tag isn't cached, since our s
 
 Using lexicons in code is fairly simple; first off you'll want to make sure the modLexicon class is loaded by instantiating it as a service:
 
-``` php 
+``` php
 $modx->getService('lexicon','modLexicon');
 ```
 
@@ -87,13 +72,13 @@ Then we'll want to load the Topic using the load() method.
 
 The syntax for the modLexicon::load method is pretty simple:
 
-``` php 
+``` php
 $modx->lexicon->load('topicname');
 ```
 
 The load() function supports Namespace-specific loading. So, say you had a Lexicon Topic named 'default' in a Namespace called 'school'. You'd simply load it like so:
 
-``` php 
+``` php
 $modx->lexicon->load('school:default');
 ```
 
@@ -101,7 +86,7 @@ This would load the 'default' Topic in the 'school' Namespace. If the Namespace 
 
 The load() function also takes an infinite number of parameters; each parameter loads a separate Topic. Example:
 
-``` php 
+``` php
 $modx->lexicon->load('chunk','user','school:playground');
 ```
 
@@ -109,7 +94,7 @@ This would load 3 Topics: 'chunk', 'user', and the 'playground' Topic from the '
 
 Furthermore, the load parameter supports language-specific loading, should you want to override the default language that is being loaded (which defaults to the current value of $this->modx->cultureKey, which is set differently depending on the Context loaded, and can be set via Settings), you could load it like so:
 
-``` php 
+``` php
 $modx->lexicon->load('es:school:playground');
 ```
 
@@ -119,13 +104,13 @@ This would load the Spanish version of the 'playground' Topic for the 'school' N
 
 Now we can use the lexicon() method on the MODX object to get our Entry with key 'school.basketball':
 
-``` php 
+``` php
 $modx->lexicon('school.basketball');
 ```
 
-If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you can pass an array as the second arguement which has key=>value pairs of your placeholder content, like so:
+If you have placeholders in your lexicon string, for example "This is `[[+userinput]]`!", you can pass an array as the second arguement which has key=>value pairs of your placeholder content, like so:
 
-``` php 
+``` php
 $modx->lexicon('school.basketball',array('sport' => 'basketball'));
 ```
 
@@ -133,15 +118,15 @@ $modx->lexicon('school.basketball',array('sport' => 'basketball'));
 
 In CMPs you can use the following to use lexicons.
 
-``` php 
+``` php
  _('lexicon.key')
 ```
 
 Please note that this assumes you have loaded the lexicon in your connector - there is (at least to my knowledge at this time ~Mark H.) no way to dynamically load other lexicon topics through JavaScript.
 
-If you have placeholders in your lexicon string, for example "This is \[\[+userinput\]\]!", you can pass the values for the placeholders as a javascript object, like so:
+If you have placeholders in your lexicon string, for example "This is `[[+userinput]]`!", you can pass the values for the placeholders as a javascript object, like so:
 
-``` php 
+``` php
  _('lexicon.key',{ userinput: 'amazing' })
 ```
 
@@ -149,14 +134,14 @@ If you have placeholders in your lexicon string, for example "This is \[\[+useri
 
 So say you're creating System Settings for your 3rd Party Component (3PC). The syntax for auto-loading them into the Revolution Settings grid is simple. Let's say we have a Namespace for our Component called 'gallery', and a setting called 'gallery.display\_thumbs'
 
-**Recommended Format** 
+**Recommended Format**
  The recommended format for 3PC developers is to use a prefix which identifies the parent component: $_lang\['\_name-of-component_.key-name'\] = 'Your translation here.';
 
 This helps to prevent name collisions; keep in mind that the **$\_lang** array may have thousands of entries, so you want to make sure each entry is unique.
 
 To add a lexicon name and description, we'd simply add the following 2 strings into our 'default' Lexicon Topic for our 'gallery' Namespace:
 
-``` php 
+``` php
 $_lang['setting_gallery.display_thumbs'] = 'Display Thumbnails';
 $_lang['setting_gallery.display_thumbs_desc'] = 'When set to true, this will display thumbnails for the gallery.';
 ```
@@ -169,4 +154,4 @@ Lexicons provide MODX Revolution users with a plethora of avenues and options to
 
 ## See Also
 
-- [modX.lexicon](developing-in-modx/other-development-resources/class-reference/modx/modx.lexicon "modX.lexicon")
+- [modX.lexicon](extending-modx/modx-class/reference/modx.lexicon "modX.lexicon")

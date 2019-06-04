@@ -5,62 +5,55 @@ _old_id: "273"
 _old_uri: "2.x/getting-started/server-requirements"
 ---
 
-### Supported Operating Systems
+MODX will run fine on most shared/cloud hosting, as well as VPS and dedicated boxes. MODX is written in PHP, typically uses a MySQL database, and needs a webserver like Apache or nginx to serve web requests.
 
-- Linux x86, x86-64
-- Mac OS X
-- Windows XP, Server
+| Component | Minimum            | Recommended                                     |
+| --------- | ------------------ | ----------------------------------------------- |
+| PHP       | 5.6.x              | 7.2 or 7.3                                      |
+| Database  | Latest MySQL 5.6.x | MariaDB 10.1.x or Percona Server 5.6.x or above |
+| Webserver | *                  | NGINX 1.8 or Apache 2.4                         |
 
-### Supported Web Servers
+## PHP
 
-- Apache 1.3.x - 2.4.x (uses htaccess for Friendly URLs)
-- IIS 6.0+
-- lighttpd ([Setup and Friendly URL Guide](getting-started/friendly-urls/lighttpd "Lighttpd Guide"))
-- Zeus
-- nginx ([Setup and Friendly URL Guide](getting-started/friendly-urls/nginx "Nginx Server Config"))
+MODX 2.x requires PHP 5.3.3 or higher, with exceptions for 2.7.0 and 2.7.1 which require php 5.4 (but that's been fixed for 2.7.2)
 
-### PHP Compatibility
+The following extensions are required by MODX, or are commonly required by extras: `zlib`, `json`, `gd`, `pdo` (specifically `pdo_mysql`), `imagick`, `simplexml`, `curl`, and `mbstring`. These are common extensions, and are usually enabled by default.
 
-- PHP 5.3.3 and above (prior to MODX 2.4: 5.1.2 and above, excluding 5.1.6 and 5.2.0)
-- Required extensions:
-  - zlib
-  - JSON (or PECL library)
-  - mod\_rewrite (for friendly URLs/.htaccess)
-  - GD lib (required for captcha and file browser)
-  - PDO, specifically pdo\_mysql (for xPDO)
-  - ImageMagick (for thumbnails)
-  - SimpleXML
-  - cURL (for [Package Management](extending-modx/transport-packages "Package Management"))
-- safe\_mode off
-- register\_globals off
-- magic\_quotes\_gpc off
-- php-mbstring on (required on some extras like Gallery)
-- PHP memory\_limit 24MB or more, depending on your server
+A `memory_limit` of at least 64M or higher is recommended.
 
-**PHP Configuration Options** 
-``` php 
-./configure --with-apxs2=/usr/local/bin/apxs --with-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
-```
+## Database
 
-**NGINX PHP Configuration Options** 
-``` php 
-./configure --with-mysql --with-pdo-mysql --prefix=/usr/local --with-pdo-mysql --with-zlib
-```
+MODX supports different database drivers, including `mysql`, `sqlsrv`, and a third-party `postgres` implementation is available. It is important to note that extras also need to implement different drivers for their custom database tables, which is often only done for `mysql`, making that your best bet.
 
-### MySQL Database Requirements
+The minimum supported MySQL version is 4.1.20, but 5.6 or up is recommended. It is also possible to use clusters like Galera.
 
-- 4.1.20 or newer, with the following permissions:
-  - SELECT, INSERT, UPDATE, DELETE are required for normal operation
-  - CREATE, ALTER, INDEX, DROP are required for installation/upgrades and potentially for various add-ons
-  - CREATE TEMPORARY TABLES may be used by some 3rd party add-ons
-- **excludes version 5.0.51** ([Why not 5.0.51?](getting-started/installation/troubleshooting/mysql-5.0.51 "MySQL 5.0.51 Issues"))
-- MyISAM or InnoDB storage engine
+Both MyISAM and InnoDB storage engines are supported, as are utf8 and utf8mb character sets.
 
-### Supported Browsers (for Backend Manager Interface)
+The following permissions are required:
 
-- Google Chrome
-- Mozilla Firefox 3.0 and above
-- Apple Safari 3.1.2 and above
-- Microsoft Internet Explorer 8 and above
+- `SELECT`, `INSERT`, `UPDATE`, `DELETE` for normal operations,
+- `CREATE`, `ALTER`, `INDEX`, `DROP` for installations and upgrades of the core and installable extras,
+- `CREATE TEMPORARY TABLES` by some third party extras.
 
-This list of supported browsers is ONLY for using the backend manager interface. MODX does not control the site visitor's experience and thus supports whatever browser(s) your site's markup is designed for.
+## Web servers
+
+Apache 2.4 or NGINX 1.8 are recommended. It's also possible to use lighttpd, IIS, Zeus, Valet, and other web servers.
+
+## Browser Support for the Manager
+
+To use the back-end interface, the following desktop browsers are supported:
+
+- Internet Explorer 11
+- Edge (last 2)
+- Chrome (last 2)
+- Firefox (last 2)
+- Safari (last 2)
+
+Supported mobile/tablet browsers:
+
+- Chrome for Android (last)
+- Safari on iOS (last)
+
+The manager might work fine on older or different browsers, but they are not officially supported.
+
+Note that these requirements are only for the manager. What browsers your website supports is up to you!

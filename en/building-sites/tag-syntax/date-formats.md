@@ -4,34 +4,42 @@ _old_id: "91"
 _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags/date-formats"
 ---
 
-- [Common Examples.](#common-examples)
-- [All Parameters](#all-parameters)
-- [See Also](#see-also)
-
-
-
-MODx is written in PHP, and as such, it relies on the underlying PHP date functions, e.g. [strftime](http://www.php.net/manual/en/function.strftime.php). The discussion here can get quite tricky because the [strftime](http://www.php.net/manual/en/function.strftime.php) and [strtotime](http://co.php.net/strtotime) functions deploy _similar_ arguments, but they are not identical. Sorry for the confusion; date manipulation and formatting is more complex than it might at first seem.
+MODX is written in PHP, and as such, it relies on the underlying PHP date functions, e.g. [strftime](http://www.php.net/manual/en/function.strftime.php). The discussion here can get quite tricky because the [strftime](http://www.php.net/manual/en/function.strftime.php) and [strtotime](http://co.php.net/strtotime) functions deploy _similar_ arguments, but they are not identical.
 
 The discussion here relates primarily to the following content fields:
 
-- createdon
-- deletedon
-- editedon
-- publishedon
-- unpub\_date
+- `createdon` - creation date;
+- `deletedon` - date of deletion;
+- `editedon` - the date of the last edit;
+- `publishedon` - the date when the resource was published;
+- `pub_date` - the date when the resource should appear in the publication;
+- `unpub_date` - date of removal from the publication.
 
-## Common Examples.
+## Unix timestamps and formatted dates
 
-It's not possible to give every possible example because date formatting can be complex, and it varies from region to region. Here are a few common examples that demonstrate how to use the output filters below.
+Depending on the source and method of retrieving a value, you may either receive a **UNIX timestamp** or a **formatted date**. A unix timestamp is recognised as a large integer number (representing the number of seconds sinds January 1st 1970).
 
-| Example Output         | The Filter Parameters                           |
-| ---------------------- | ----------------------------------------------- |
-| Thu Apr 14, 2011       | `[[*createdon:strtotime:date=`%a %b %e, %Y`]]`  |
-| 18 April 2011          | `[[*createdon:strtotime:date=`%e %B %Y`]]`      |
-| Monday, April 18, 2011 | `[[*createdon:strtotime:date=`%A, %B %e, %Y`]]` |
-| 2011-04-18             | `[[*createdon:strtotime:date=`%Y-%m-%d`]]`      |
+In MODX, the `date` [output modifier](building-sites/tag-syntax/output-filters), which is used to format dates using PHP's `strftime()` function, **expects a unix timestamp**. In order to turn a formatted date into a unix timestamp, you will use the `strtotime` output modifier.
+
+So if a value, say `[[*createdon]]`, returns a formatted date, you need to first transform it to a unix timestamp with `[[*createdon:strtotime]]` before you can format it with `date`. But, if a value immediately returns a unix timestamp, you can skip that.
+
+## Common Examples
+
+It's not possible to give every possible example, but here are some common ways of formatting dates using the MODX output filters.
+
+| Example Output           | The Filter Parameters                                           |
+| ------------------------ | --------------------------------------------------------------- |
+| Thu Apr 14, 2011         | ```[[*createdon:strtotime:date=`%a %b %d, %Y`]]```              |
+| 18 April 2011            | ```[[*createdon:strtotime:date=`%d %B %Y`]]```                  |
+| Monday, April 18, 2011   | ```[[*createdon:strtotime:date=`%A, %B %d, %Y`]]```             |
+| 2011-04-18               | ```[[*createdon:strtotime:date=`%Y-%m-%d`]]```                  |
+| Depends on configuration | ```[[*createdon:strtotime:date=`[[++manager_date_format]]`]]``` |
 
 ## All Parameters
+
+The date output modifier internally runs the [PHP strftime function](https://php.net/strftime), so all documentation about strftime applies to the date output modifier as well.
+
+To change the language used by the `date` output modifier (e.g. for the name of days and months), configure the `locale` [system setting](building-sites/settings) in MODX appropriately.
 
 | Code              | Display                                                      | Example                 |
 | ----------------- | ------------------------------------------------------------ | ----------------------- |
@@ -67,25 +75,15 @@ It's not possible to give every possible example because date formatting can be 
 | %Z or %z          | Time zone offset or name                                     | -005 or EST             |
 | %%                | A literal % character                                        | %                       |
 
+### Server compatibility note
+
+Not all servers support all the formatting parameters, in particular on Windows `%e` is not supported and `%z` and `%Z` return the timezone name instead of the offset. On Mac, `%P` is not supported.  
+
 ## See Also
 
-- The above were gleaned from one of Bob's helpful forum posts: <http://modxcms.com/forums/index.php?topic=56339.0>
-- [display/revolution20/Input+and+Output+Filters+(Output+Modifiers)](display/revolution20/Input+and+Output+Filters+(Output+Modifiers))
-- [display/revolution20/Commonly+Used+Template+Tags](display/revolution20/Commonly+Used+Template+Tags)
-
-1. [Resources](building-sites/resources)
-2. [Content Types](making-sites-with-modx/structuring-your-site/resources/content-types)
-3. [Named Anchor](making-sites-with-modx/structuring-your-site/resources/named-anchor)
-4. [Static Resource](building-sites/resources/static-rsource)
-5. [Symlink](building-sites/resources/symlink)
-6. [Using Resource Symlinks](making-sites-with-modx/structuring-your-site/resources/symlink/using-resource-symlinks)
-7. [Weblink](building-sites/resources/weblink)
-8. [Templates](making-sites-with-modx/structuring-your-site/templates)
-9. [Chunks](building-sites/elements/chunks)
-10. [Using Snippets](making-sites-with-modx/structuring-your-site/using-snippets)
-
-FYI for those running on Windows from the PHP site:
-
-Additionally, not all platforms support negative timestamps, so your date range may be limited to no earlier than the Unix epoch. This means that %e, %T, %R and, %D (and possibly others) - as well as dates prior to _Jan 1, 1970_ - will not work on Windows, some Linux distributions, and a few other operating systems. For Windows systems, a complete overview of supported conversion specifiers can be found at [» MSDN](http://msdn.microsoft.com/en-us/library/fe06s4ak.aspx).
-
-So the first 3 common examples given do not work on Windows!
+- [strftime() documentation on PHP.net](https://php.net/strftime)
+- [Output modifiers](building-sites/tag-syntax/output-filters)
+- [Common template tags](building-sites/tag-syntax/common)
+- [Resources](building-sites/resources)
+- [Templates](building-sites/elements/templates)
+- [Chunks](building-sites/elements/chunks)

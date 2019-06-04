@@ -4,32 +4,21 @@ _old_id: "308"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/transport-packages"
 ---
 
-- [What is a Transport Package?](#what-is-a-transport-package)
-  - [The Internals of a Transport Package](#the-internals-of-a-transport-package)
-  - [The manifest.php file](#the-manifestphp-file)
-  - [Okay, what are these Vehicles?](#okay-what-are-these-vehicles)
-    - [Inside a Vehicle's Source](#inside-a-vehicles-source)
-- [Resolvers and Validators](#resolvers-and-validators)
-  - [A Validator](#a-validator)
-  - [A Resolver](#a-resolver)
-- [Usage](#usage)
-- [Related Pages](#related-pages)
-
 ## What is a Transport Package?
 
-A Transport Package is a collection of objects and files that can be used to "transport" data from one MODx installation to another; or even to transport 3rd-Party Components in a simple, easily-manageable format. In other words, Transport Packages can transport nearly _anything_ - from database data, files and even scripts to run during its install.
+A Transport Package is a collection of objects and files that can be used to "transport" data from one MODX installation to another; or even to transport 3rd-Party Components in a simple, easily-manageable format. In other words, Transport Packages can transport nearly _anything_ - from database data, files and even scripts to run during its install.
 
 Transport Packages also allow for versioning, in that they match based on a simple format, complying with PHP version number standards:
 
 > packagename-version-release.transport.zip
 
-So, an example Transport Package might be "myextra-1.0-rc1.transport.zip". If you were to upload a "myextra-1.0-rc2.transport.zip", MODx would then interpret this as part of the same "package" but a newer version of it. It would then behave in "upgrade" mode.
+So, an example Transport Package might be "myextra-1.0-rc1.transport.zip". If you were to upload a "myextra-1.0-rc2.transport.zip", MODX would then interpret this as part of the same "package" but a newer version of it. It would then behave in "upgrade" mode.
 
-Transport packages are stored in .zip files, ending with ".transport.zip". They can be uploaded and installed anywhere there is a MODx Revolution instance - regardless of the server configuration.
+Transport packages are stored in .zip files, ending with ".transport.zip". They can be uploaded and installed anywhere there is a MODX Revolution instance - regardless of the server configuration.
 
 ### The Internals of a Transport Package
 
-MODx Revolution automatically "unpacks", or unzips, your transport packages for you. Once done, a subdirectory in your core/packages directory will appear with the name of the zip file (minus ".transport.zip"). This directory will contain:
+MODX Revolution automatically "unpacks", or unzips, your transport packages for you. Once done, a subdirectory in your core/packages directory will appear with the name of the zip file (minus ".transport.zip"). This directory will contain:
 
 - A manifest.php file
 - Subdirectories of each Vehicle (more on those later)
@@ -40,9 +29,9 @@ It may also contain a "preserved.php" file, if the package is an upgrade from a 
 
 The manifest basically stores all the relevant information for the package, including the locations of files and information about them. If you open the manifest.php file, you'll see that it contains a giant PHP array being returned. Within that are some keys you might be interested in:
 
-- **manifest-version** - This tells us what version the manifest definition is. MODx uses it to determine how to interpret the manifest and make it easier for future MODx versions to be backwards-compatible.
+- **manifest-version** - This tells us what version the manifest definition is. MODX uses it to determine how to interpret the manifest and make it easier for future MODX versions to be backwards-compatible.
 
-- **manifest-attributes** - These are any custom attributes that were set on the package when it was being built. The most common are 'license', 'readme' and 'setup-options', which MODx interprets during install time.
+- **manifest-attributes** - These are any custom attributes that were set on the package when it was being built. The most common are 'license', 'readme' and 'setup-options', which MODX interprets during install time.
 
 - **manifest-vehicles** - These are the Vehicles metadata, in array format.
 
@@ -61,7 +50,7 @@ In the 'manifest-vehicles' array, you'll see these keys for each vehicle:
 - **guid** - A randomly generated GUID for the vehicle.
 - **native\_key** - If the vehicle is a database object, this will be its primary key by which it is identified.
 - **filename** - Where the vehicle's source file can be found within the transport package's folder.
-- **namespace** - Certain packages use the 'namespace' field to group vehicles and other objects to make them uniquely identifiable within a MODx installation.
+- **namespace** - Certain packages use the 'namespace' field to group vehicles and other objects to make them uniquely identifiable within a MODX installation.
 
 So now that we've seen what the vehicles represent in the manifest, let's open up a Vehicle by looking a filename and diving in.
 
@@ -117,14 +106,14 @@ Resolvers are useful for 'cleaning up' after a Vehicle is installed, or setting 
 Transport Packages can be managed in the [Package Management](extending-modx/transport-packages "Package Management") section of the Revolution manager. They can be added to the Revolution instance by either:
 
 1. Uploading the file manually to core/packages/, and then clicking "Add New Package" and selecting the "Search Locally for Packages" option
-2. Downloading the package from a [Transport Provider](developing-in-modx/advanced-development/package-management/providers "Providers"). This allows updates to be remotely downloaded for a package as well.
+2. Downloading the package from a [Transport Provider](building-sites/extras/providers "Providers"). This allows updates to be remotely downloaded for a package as well.
 
 Once downloaded, they can be installed by right-clicking a package in the grid, and clicking Install. This will prompt the user to accept a License Agreement should the package come with one, and prompting to read the README should the package contain one. Then it will present a form with pre-installation options, which may or may not exist depending on the package. The user can then click 'Install' to install the package.
 
-Once installed, the user can uninstall the package at any time. Also, if the package was downloaded from a [Transport Provider](developing-in-modx/advanced-development/package-management/providers "Providers"), then the user can check for updates for the package.
+Once installed, the user can uninstall the package at any time. Also, if the package was downloaded from a [Transport Provider](building-sites/extras/providers "Providers"), then the user can check for updates for the package.
 
 ## Related Pages
 
 - [Package Management](extending-modx/transport-packages "Package Management")
-- [Providers](developing-in-modx/advanced-development/package-management/providers "Providers")
-- Tutorial: [Creating a 3rd Party Component Build Script](developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script "Creating a 3rd Party Component Build Script")
+- [Providers](building-sites/extras/providers "Providers")
+- Tutorial: [Creating a 3rd Party Component Build Script](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script")
