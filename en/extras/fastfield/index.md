@@ -58,7 +58,7 @@ Return TV image from the resource with id 10:
 [[#10.tv.image]]
 ```
 
-Return property articlesPerPage from the resource with id 1 of custom resource type [Articles](/display/ADDON/Articles)
+Return property articlesPerPage from the resource with id 1 of custom resource type [Articles](extras/articles)
 
 ``` php
 [[#1.properties.articles.articlesPerPage]]

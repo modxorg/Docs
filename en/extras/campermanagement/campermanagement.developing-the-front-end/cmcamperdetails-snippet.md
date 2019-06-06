@@ -5,7 +5,7 @@ _old_uri: "revo/campermanagement/campermanagement.developing-the-front-end/campe
 ---
 
 The cmCamperDetails snippet can be used to provide a "Vehicle Details" page. The snippet itself will not actually return any information, but instead it will set a bunch of placeholders to use in your template. See the
-[Placeholders page for information on placeholders](display/ADDON/CamperManagement.Placeholders+you+can+use)
+[Placeholders page for information on placeholders](extras/campermanagement/campermanagement.developing-the-front-end/placeholders-you-can-use)
 
 The cmCamperDetails snippet requires a "cid" url or post parameter being available, which is used to identify the vehicle to display. If it is not present it can either send the user to a certain resource, or the snippet will return an error message. As your template will look very empty without, I suggest setting up a "Camper does not exist"-kind of page. Also see the cid\*Action properties.
 

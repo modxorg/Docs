@@ -23,7 +23,7 @@ GalleryItemPagination uses the following properties:
 
 ## Placeholders
 
-GalleryItemPagination sets placeholders for the current, previous, next, first and last item in an album. You can find the namespaces for that in the table below. You can use the same fields the [GalleryItem placeholders](display/ADDON/Gallery.GalleryItem#Gallery.GalleryItem-DefaultPlaceholders), minus album and tags.
+GalleryItemPagination sets placeholders for the current, previous, next, first and last item in an album. You can find the namespaces for that in the table below. You can use the same fields the [GalleryItem placeholders](extras/gallery/gallery.galleryitem/tpl), minus album and tags.
 
 | Name             | Description                                      |
 | ---------------- | ------------------------------------------------ |
