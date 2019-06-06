@@ -34,4 +34,4 @@ Screenshots will be soon available
 
 ## Events
 
-After the user has changed the password, the event [OnUserChangePassword](http://rtfm.modx.com/display/revolution20/OnUserChangePassword) will be fired.
+After the user has changed the password, the event [OnUserChangePassword](extending-modx/plugins/system-events/onuserchangepassword) will be fired.

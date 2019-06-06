@@ -85,7 +85,7 @@ Doctrine_Core::generateModelsFromDb();
 
   SEE ALSO:
   http://modxcms.com/forums/index.php?topic=40174.0
-  http://rtfm.modx.com/display/revolution20/Using+Custom+Database+Tables+in+your+3rd+Party+Components
+  https://docs.modx.org/current/en/extending-modx/tutorials/using-custom-database-tables
   http://rtfm.modx.com/display/xPDO20/xPDOGenerator.writeSchema
   ------------------------------------------------------------------------------ */
 

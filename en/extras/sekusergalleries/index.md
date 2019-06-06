@@ -12,10 +12,10 @@ SekUserGalleries is a gallery manager designed for users to upload and manage pe
 
 - MODX Revolution 2.2.0-pl2 or later
 - PHP5 or later
-- Current beta version of sekUserGalleries requires sekFancyBox, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODX Extras Repository here: <http://modx.com/extras/package/sekfancybox>.
-- Current beta version of sekUserGalleries requires sekFormTools, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODX Extras Repository here: <http://modx.com/extras/package/sekformtools>.
-- Current beta version of sekUserGalleries requires sekSiteTools, which can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODX Extras Repository here: <http://modx.com/extras/package/seksitetools>.
-- Login is recommended to manage users and can be downloaded via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODX Extras Repository, here: <http://modx.com/extras/package/login> (Login may have its own prerequisites).
+- Current beta version of sekUserGalleries requires sekFancyBox, which can be downloaded via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository here: <http://modx.com/extras/package/sekfancybox>.
+- Current beta version of sekUserGalleries requires sekFormTools, which can be downloaded via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository here: <http://modx.com/extras/package/sekformtools>.
+- Current beta version of sekUserGalleries requires sekSiteTools, which can be downloaded via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository here: <http://modx.com/extras/package/seksitetools>.
+- Login is recommended to manage users and can be downloaded via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/login> (Login may have its own prerequisites).
 
 ### History
 
@@ -23,7 +23,7 @@ SekUserGalleries was written by Stephen Smith, and first released on Mar 19th, 2
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODX Extras Repository, here: <http://modx.com/extras/package/sekusergalleries>.
+It can be downloaded from within the MODX Revolution manager via [[Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/sekusergalleries>.
 
 ### Development and Bug Reporting
 
@@ -76,7 +76,7 @@ Ensure that the page resource id for each snippet is entered into the Settings (
 
 ### Group Settings
 
-The group settings uses modx's user group's and role's to manage the permissions for using the gallery. By default, anyone can view the galleries, but only a user with matching user group and role defined in the Group Settings can create, edit, or delete images and albums. To learn more about how Modx manages user groups view the [User Groups](http://rtfm.modx.com/display/revolution20/User+Groups) section.
+The group settings uses modx's user group's and role's to manage the permissions for using the gallery. By default, anyone can view the galleries, but only a user with matching user group and role defined in the Group Settings can create, edit, or delete images and albums. To learn more about how Modx manages user groups view the [User Groups](building-sites/client-proofing/security/user-groups) section.
 
 | Setting    | Description                                                                                                                                                                                           | Version |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |

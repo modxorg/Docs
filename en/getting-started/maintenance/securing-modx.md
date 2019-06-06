@@ -32,7 +32,7 @@ If possible, use _only_ wired connections (no Wifi). Never use public Wifi, and 
 
 No matter how secure all other elements are, it amounts to nothing if your server is not adequately secure. If your FTP password is cracked, then there's nothing you can do to guarantee the integrity of your site. Turn off all unnecessary services and if possible, turn off FTP entirely in favor of SFTP. Consider turning off password authentication entirely in favour of [SSH keyed logins](http://tipsfor.us/2009/06/15/securing-a-linux-server-ssh-and-brute-force-attacks/), and if you use an SSH key, make sure you use a complex passphrase.
 
-Make sure that your server has a good firewall installed and some form of intrusion detection that dynamically detects hacking attempts. [ModSecurity](http://rtfm.modx.com/display/revolution20/Installation+on+a+server+running+ModSecurity) is a security module for Apache, and it helps deter a number of malicious attacks.
+Make sure that your server has a good firewall installed and some form of intrusion detection that dynamically detects hacking attempts. [ModSecurity](getting-started/installation/troubleshooting/modsecurity) is a security module for Apache, and it helps deter a number of malicious attacks.
 
 Update your server and its technologies often! If any weak link is discovered in any part of your server, it could be the crack in the dam that floods your entire site with a world of hurt. Keep your server patched!
 
@@ -74,7 +74,7 @@ This is perhaps the most important path to change. Move your core directory **ou
 - /config.core.php (at the site root)
 - /connectors/config.core.php
 - /manager/config.core.php
-- The **modx\_workspaces** database table (this is only necessary in older versions of MODX) – this is best done by re-running the setup as you might do when [moving your site](http://rtfm.modx.com/display/revolution20/Moving+Your+Site+to+a+New+Server)
+- The **modx\_workspaces** database table (this is only necessary in older versions of MODX) – this is best done by re-running the setup as you might do when [moving your site](getting-started/maintenance/moving-your-site)
 
 **Important:** If you move and/or rename the core, you'll also have to modify the processors path ($modx\_processors\_path) in the config.inc.php file unless it is defined relative to the core directory, since the processors directory is under the core directory.
 
@@ -125,7 +125,7 @@ Doing this will make your site more secure, but updating your site will become m
 
 ### Change your Login Page
 
-You can also mask your manager login page so it's not obvious that you're running MODX. See the page on [Manager Templates](http://rtfm.modx.com/display/revolution20/Manager+Templates+and+Themes) for more information.
+You can also mask your manager login page so it's not obvious that you're running MODX. See the page on [Manager Templates](building-sites/client-proofing/custom-manager-themes) for more information.
 
 ### Changing Default Database Prefixes
 

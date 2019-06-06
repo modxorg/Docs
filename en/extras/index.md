@@ -108,6 +108,6 @@ This does not mean however that these are your only options. Browse the reposito
 
 Go to <https://modx.com/extras/>, log in to your MODX account (or create one), then click on the button at the bottom to "Submit an Extra".
 
-There you can upload a MODX [Transport Package](http://rtfm.modx.com/display/revolution20/Transport+Packages "Transport Packages"). This is a special kind of zip file that ensures that your add-on and all of its components are installed correctly on the target system. To make one, you need to create a [Build Script](http://rtfm.modx.com/display/revolution20/Creating+a+3rd+Party+Component+Build+Script "Creating a 3rd Party Component Build Script").
+There you can upload a MODX [Transport Package](extending-modx/transport-packages "Transport Packages"). This is a special kind of zip file that ensures that your add-on and all of its components are installed correctly on the target system. To make one, you need to create a [Build Script](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script").
 
 All extras hosted on MODX.com go through a basic review; it may take a couple of days for your submission to be processed.

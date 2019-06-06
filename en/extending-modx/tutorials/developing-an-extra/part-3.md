@@ -27,7 +27,7 @@ This is what our \_build directory will look like when we're through. We're alre
 ![](/download/attachments/33947702/doodles-build-dir1.png)
 
 - **data** - This is where we're going to put all of our data-packaging scripts. We'll get into that shortly.
-- **resolvers** - A directory containing our [resolvers](http://rtfm.modx.com/display/revolution20/Transport+Packages#TransportPackages-AResolver) for our Transport Package.
+- **resolvers** - A directory containing our [resolvers](extending-modx/transport-packages) for our Transport Package.
 - **build.transport.php** - This is our main build script. Running it will create the Transport Package. We'll be heavily looking at this file.
 - **setup.options.php** - While we won't use this extensively for our TP, we'll look at it briefly to show what's possible with it.
 

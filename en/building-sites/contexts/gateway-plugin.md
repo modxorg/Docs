@@ -45,5 +45,4 @@ Note that you could also just copy the index.php in the same directory and renam
 
 You can also still use a custom core location in either of these scenarios; this is independent of the context-driven multi-site capabilities.
 
-Checkout the GatewayManager component
-<http://rtfm.modx.com/display/ADDON/GatewayManager>
+Checkout the [GatewayManager component](extras/gatewaymanager)

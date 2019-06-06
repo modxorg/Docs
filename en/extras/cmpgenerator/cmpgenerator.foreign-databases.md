@@ -58,7 +58,7 @@ $output .= '
         <th>Description</th>
     </tr>';
 
-// Note for all HTML you should be using Chunks see: <a href="http://rtfm.modx.com/display/revolution20/Chunks#Chunks-ProcessingChunkviatheAPI"> http://rtfm.modx.com/display/revolution20/Chunks#...</a>
+// Note for all HTML you should be using Chunks see: <a href="https://docs.modx.org/current/en/building-sites/elements/chunks"> https://docs.modx.org/current/en/building-sites/elements/chunks...</a>
 /* build query */
 $query = $foreignDB->newQuery('EventName');
 $rows = $foreignDB->getIterator('EventName', $query);

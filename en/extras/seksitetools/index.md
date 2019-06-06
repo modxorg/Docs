@@ -19,7 +19,7 @@ SekSiteTools was written by Stephen Smith, and first released on Mar 30th, 2012.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the MODX Extras Repository, here: [http://modx.com/extras/package/seksitetools](http://modx.com/extras/package/seksitesools).
+It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: [http://modx.com/extras/package/seksitetools](http://modx.com/extras/package/seksitesools).
 
 ### Development and Bug Reporting
 
