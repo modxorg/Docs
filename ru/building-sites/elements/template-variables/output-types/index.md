@@ -1,5 +1,5 @@
 ---
-title: "Типы вывода TV"
+title: "Типы вывода переменных шаблона TV"
 translation: "building-sites/elements/template-variables/output-types"
 ---
 
