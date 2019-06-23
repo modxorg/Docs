@@ -17,7 +17,6 @@ translation: "extras/migx/migx.tutorials/creating-tables-through-migx"
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="electrica" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="" phpdoc-subpackage="" version="1.1">
-
     <object class="electricaItem" table="electrica_items" extends="xPDOSimpleObject">
         <field key="title" dbtype="varchar" phptype="string" precision="100" null="false" default="" />
         <field key="description" dbtype="text" phptype="string" null="false" default="" />
@@ -37,7 +36,7 @@ translation: "extras/migx/migx.tutorials/creating-tables-through-migx"
 
 ``` php
 <?php
-//Добавляем пакет
+// Добавляем пакет
 if(!$modx->addPackage('electrica', MODX_CORE_PATH . 'components/electrica/model/')){
     return 'false';
 }
@@ -51,7 +50,7 @@ $array = [
 $table->fromArray($array);
 $table->save();
 
-//Делаем выборку
+// Делаем выборку
 $response = $modx->getIterator('electricaItem');
 
 foreach($response as $res){

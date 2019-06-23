@@ -17,7 +17,6 @@ We will create a simple example table:
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="electrica" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="" phpdoc-subpackage="" version="1.1">
-
     <object class="electricaItem" table="electrica_items" extends="xPDOSimpleObject">
         <field key="title" dbtype="varchar" phptype="string" precision="100" null="false" default="" />
         <field key="description" dbtype="text" phptype="string" null="false" default="" />
@@ -37,21 +36,21 @@ Everything. Now we can work with our table.
 
 ``` php
 <?php
-//Добавляем пакет
+// Add a package
 if(!$modx->addPackage('electrica', MODX_CORE_PATH . 'components/electrica/model/')){
     return 'false';
 }
-// Создаем запись
+// Create a record
 $table = $modx->newObject('electricaItem');
 $array = [
-    'title' => 'Какой то заголовок',
-    'description' => 'Какое то описание'
+    'title' => 'What is the title',
+    'description' => 'What is the description'
     ];
 
 $table->fromArray($array);
 $table->save();
 
-//Делаем выборку
+// Do a sample
 $response = $modx->getIterator('electricaItem');
 
 foreach($response as $res){
