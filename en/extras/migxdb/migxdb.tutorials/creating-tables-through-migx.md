@@ -1,5 +1,6 @@
 ---
 title: "Creating tables through MIGX"
+translation: "extras/migxdb/migxdb.tutorials/creating-tables-through-migx"
 ---
 
 Beginners often have a question about how you can quickly create some kind of table and start working with it using the example from the snippet. I have always done through the modExtra package, cutting out from it what I do not need. But it is long and not very convenient if you need one or two tablets. MIGX solves this problem.
