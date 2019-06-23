@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/overview-of-modx-development/developer-introdu
 
 ## Programming in MODX Revolution
 
- MODX Revolution is an OOP Framework, built around the database ORM [xPDO](/display/xPDO20/Home "Home").
+ MODX Revolution is an OOP Framework, built around the database ORM [xPDO](extending-modx/xpdo "Home").
 
 ## 3rd-Party Components (3PCs)
 
