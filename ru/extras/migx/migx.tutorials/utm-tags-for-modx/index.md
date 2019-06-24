@@ -21,10 +21,10 @@ translation: "extras/migx/migx.tutorials/utm-tags-for-modx"
 
 Вкладка **Settings**
 
-**Name** — utm
-**Замена «Добавить элемент»** — Добавить метку
-**Form Caption** — Добавить/редактировать метку
-**Window Title** — Добавить/редактировать метку
+- **Name** — utm
+- **Замена «Добавить элемент»** — Добавить метку
+- **Form Caption** — Добавить/редактировать метку
+- **Window Title** — Добавить/редактировать метку
 
 Вкладка **Formtabs**
 

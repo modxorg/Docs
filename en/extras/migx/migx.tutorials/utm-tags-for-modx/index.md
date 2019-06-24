@@ -21,10 +21,10 @@ We need to go to the MIGX component page and create a configuration.
 
 Tab **Settings**
 
-**Name** — utm
-**Замена «Добавить элемент»** — Add tag
-**Form Caption** — Add/Edit Tag
-**Window Title** — Add/Edit Tag
+- **Name** — utm
+- **Replace "Add Item"** — Add tag
+- **Form Caption** — Add/Edit Tag
+- **Window Title** — Add/Edit Tag
 
 Tab **Formtabs**
 
@@ -58,7 +58,7 @@ Tab **Columns**
 2 Метка
 
 - Tab **Column**
-  - **Header** — Label УТП
+  - **Header** — Label UTM
   - **Field** — utm
 - Tab **Cell Editor**
   - **Editor** — this.textEditor
