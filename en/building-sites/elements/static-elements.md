@@ -39,4 +39,3 @@ When an element is removed or renamed, the associated file is removed as well.
 ### File structure
 
 Files will be created at the path: `{static_elements_basepath}/{type}/{category}/{filename}.{extension}` within the specified media source. For example: `components/site/elements/chunks/html/footer.chunk.tpl`.
-

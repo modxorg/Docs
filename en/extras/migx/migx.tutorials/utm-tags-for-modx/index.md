@@ -55,7 +55,7 @@ Tab **Columns**
   - **Renderer** — this.renderChunk
   - **renderChunk template** — `<a href="[[~[[#GET.id]]]]?utm=[[+utm]]" target="_blank">Look</a>`
 
-2 Метка
+2 Label
 
 - Tab **Column**
   - **Header** — Label UTM
