@@ -82,7 +82,7 @@ First off, make sure your `recaptcha.public_key` and `recaptcha.private_key` Sys
 
 And make sure that the `[[+login.recaptcha_html]]` placeholder is in your loginTpl chunk. This will make reCaptcha be required for login.
 
-See [See Optional Properties for ReCaptcha specific settings](#Login.Login-optionalProperties)
+See [See Optional Properties for ReCaptcha specific settings](extras/login/login)
 
 ## Logout
 
