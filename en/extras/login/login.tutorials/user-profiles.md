@@ -6,11 +6,11 @@ _old_uri: "revo/login/login.tutorials/login.user-profiles"
 
 ## Outline
 
-This tutorial builds the [Basic Setup](extras/login/login.tutorials/login.request-membership "Login.Request Membership") tutorial (which in turn was based on the [Basic Setup](extras/login/login.tutorials/login.basic-setup "Login.Basic Setup")). Do not attempt this tutorial until you've gotten the other login flows setup and working on your site!
+This tutorial builds the [Basic Setup](extras/login/login.tutorials/request-membership "Login.Request Membership") tutorial (which in turn was based on the [Basic Setup](extras/login/login.tutorials/basic-setup "Login.Basic Setup")). Do not attempt this tutorial until you've gotten the other login flows setup and working on your site!
 
 ## Create the Required Pages
 
-As with the [Basic Setup](extras/login/login.tutorials/login.basic-setup "Login.Basic Setup"), we want to make sure we have the required pages in place before we add in all the Snippets. Make sure the following **9** pages exist on your MODX Revo site (1 - 9 are the same as the previous setup, additional pages highlighted in green):
+As with the [Basic Setup](extras/login/login.tutorials/basic-setup "Login.Basic Setup"), we want to make sure we have the required pages in place before we add in all the Snippets. Make sure the following **9** pages exist on your MODX Revo site (1 - 9 are the same as the previous setup, additional pages highlighted in green):
 
 - **Login Page (1)** : the page containing your login form
 - **Forgot Password (2)** : the page where users can go when they forgot their password
@@ -162,4 +162,4 @@ Try changing your info.
 
 ## Next
 
-If you've got this working, try the next tutorial on [Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles "Login.Extended User Profiles"). See also the tutorial on [Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields "Login.Using Custom Fields")
+If you've got this working, try the next tutorial on [Extended User Profiles](extras/login/login.tutorials/extended-user-profiles "Login.Extended User Profiles"). See also the tutorial on [Using Custom Fields](extras/login/login.tutorials/using-custom-fields "Login.Using Custom Fields")

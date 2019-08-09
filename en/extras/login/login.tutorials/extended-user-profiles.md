@@ -6,9 +6,9 @@ _old_uri: "revo/login/login.tutorials/login.extended-user-profiles"
 
 ## Outline
 
-This tutorial builds the [Basic Setup](extras/login/login.tutorials/login.user-profiles "Login.User Profiles") and [User Profiles](extras/login/login.tutorials/login.user-profiles "Login.User Profiles") tutorials. Do not attempt this tutorial until you've gotten the other login flows setup and working on your site! In this tutorial, you will see how to add extended fields to your users' profiles.
+This tutorial builds the [Basic Setup](extras/login/login.tutorials/user-profiles "Login.User Profiles") and [User Profiles](extras/login/login.tutorials/user-profiles "Login.User Profiles") tutorials. Do not attempt this tutorial until you've gotten the other login flows setup and working on your site! In this tutorial, you will see how to add extended fields to your users' profiles.
 
-So what going to do in this tutorial is to modify the Snippets that we've already put in place in the standard [User Profiles](extras/login/login.tutorials/login.user-profiles "Login.User Profiles") tutorial.
+So what going to do in this tutorial is to modify the Snippets that we've already put in place in the standard [User Profiles](extras/login/login.tutorials/user-profiles "Login.User Profiles") tutorial.
 
 ## Verify that you have the Required Pages
 

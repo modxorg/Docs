@@ -1,20 +1,23 @@
 ---
-title: "Template Variable Input Types"
+title: "Типы ввода переменных шаблона TV"
 translation: "building-sites/elements/template-variables/input-types"
 ---
 
-There are a number of built-in template variable types.
+Существует несколько встроенных типов шаблонных переменных.
 
-Some input types are deprecated depending on your MODX version.
+Некоторые типы ввода не рекомендуются в зависимости от версии MODX.
 
-It's best to enter multiple Input Option values on a single line with no carriage returns.
+Лучше всего вводить несколько значений параметра ввода в одной строке без возврата каретки.
 
-## Auto-Tag (autotag)
+## Автоматический тег (autotag)
 
-Auto-Tag is a convenient template variable for using tags when blogging, have multiple categories a resource can belong to, or anytime you need a list of tags that have been used before. Every time you edit or create a resource with access to an auto-tag template variable, you will see the tags that were used before. You can easily click on priorly used tags to chose them in the list.
+Автоматический тег - это удобная переменная шаблона для использования тегов при ведении блога, наличии нескольких категорий, к которым может принадлежать ресурс, или вкогда вам нужен список тегов, которые использовались ранее. Каждый раз, когда вы редактируете или создаете ресурс с доступом к переменной шаблона автоматического тега, вы увидите теги, которые использовались ранее. Вы можете легко нажать на ранее использованные теги, чтобы выбрать их в списке.
 
-To make auto-tag tvs useful in the front end, you will need to set the output type to "Delimiter" and specify a delimiter of your choice, and/or use an output filter to present it in the way you prefer. ![](autotag.png)
-To output the tags in such a way that you each tag links to a certain resource and passes the tag in a GET parameter, you can use an output filter (snippet) as follows:
+Чтобы сделать Автоматический тег TV, вам нужно будет установить тип вывода на «Разделитель» и указать разделитель по вашему выбору, и / или использовать фильтр вывода, чтобы представить его так, как вы предпочитаете.
+
+![](autotag.png)
+
+Чтобы вывести теги таким образом, чтобы каждый тег связывался с определенным ресурсом и передавал тег в параметре GET, вы можете использовать выходной фильтр (фрагмент) следующим образом:
 
 ``` php
 if ($input == '') { return 'Error'; } // In case the TV is empty
@@ -25,7 +28,7 @@ foreach ($tags as $key => $value) { // Loop through the tags
 return implode(', ',$output); // Merge the output array and output
 ```
 
-### All input option names (for use in migx options-json)
+### Все имена опций ввода (для использования в migx options-json)
 
 ``` json
 {
@@ -37,64 +40,64 @@ return implode(', ',$output); // Merge the output array and output
 }
 ```
 
-## Check Box (checkbox)
+## Флажок (checkbox)
 
-### Simple Usage
+### Пример использования
 
-The basic usage of this is to simply define the field as a checkbox. You can control whether or not the box is checked by default or not by manipulating the "Input Option Values" and "Default Value" fields.
+Основное назначение этого - просто определить поле как флажок. Вы можете контролировать, установлен ли флажок по умолчанию или нет, манипулируя полями «Значения параметра ввода» и «Значение по умолчанию».
 
-#### Checked by Default
+#### Отмечено по умолчанию
 
-- Input Option Values: My Option==1
-- Default Value: 1
+- Значения параметров ввода: My Option==1
+- Значение по умолчанию: 1
 
-#### Unchecked by Default:
+#### Не отмеченно по умолчанию:
 
-- Input Option Values: My Option==1
-- Default Value: 0
+- Значения параметров ввода: My Option==1
+- Значение по умолчанию: 0
 
-The box will be checked by default as long as the value following the "==" matches the default value. If you want to set default of a check box template variable to multiple values, you have to separate the values with the "||" delimiter.
+Поле будет установлено по умолчанию до тех пор, пока значение после "==" соответствует значению по умолчанию. Если вы хотите установить значение по умолчанию для переменной шаблона флажка в несколько значений, вы должны разделить значения с помощью "||" delimiter.
 
-### Advanced Usage
+### Продвинутое использование
 
-You can distinguish between separate keys and values using double-equals and double-pipes:
+Вы можете различать отдельные ключи и значения, используя двойное равенство и двойные каналы:
 
 ``` php
 option1==value1||option2==value2
 ```
 
-### More Advanced Usage
+### Другой пример продвинутого использования
 
-The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the option1==value1||option2==value2 format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") to select items from your database, e.g. **Input option values:**
+Тип ввода Флажок позволяет отображать несколько флажков на одном TV. Установите значения параметров ввода в формате `option1==value1||option2==value2`. Чтобы объявить флажки по умолчанию, укажите в поле значения по умолчанию имена опций, разделенные двумя каналами (||). Вы можете использовать [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Привязку") для выбора элементо из вашей базы данных, например: **Значения параметров ввода:**
 
- ``` sql
+``` sql
 @SELECT pagetitle, id FROM modx_site_content WHERE parent=35
 ```
 
 ![](checkboxes.jpg)
 
-If you are using multiple checkboxes like this, you will probably need to set the **Output Type** to "Delimiter" (e.g. a comma) so you can distinguish the values contained in each checkbox.
+Если вы используете несколько таких флажков, вам, вероятно, потребуется установить **Тип вывода** на «Разделитель» (например, запятую), чтобы вы могли различать значения, содержащиеся в каждом флажке.
 
-## Date (date)
+## Дата (date)
 
-This allows you to set both a date and a time.
+Это позволяет вам установить дату и время.
 
 ![](date.jpg)
 
-If you like to have a default set date you can put one of the following keywords inside the default value field (without quotes!). The "strange" logic behind the -X/+X values (which intuitively would be - for back and + for future) comes probably from a subtraction in the code somewhere, eg. now() - value, so if value is +72 this means now() - (+72), but - and + is -, so a positive value gets subtracted while with now() - (-72), - and - equals +, a negative value is added.
+Если вы хотите установить дату по умолчанию, вы можете поместить одно из следующих ключевых слов в поле значения по умолчанию (без кавычек!). «Странная» логика, лежащая в основе значений -X/+X (которые были бы интуитивно понятны - для «назад» и «+ для будущего»), вероятно, происходит из какого-то вычитания в коде, например: `now()` - значение, поэтому, если value равно +72, это означает `now() - (+72)`, но - и + is -, так что положительное значение вычитается, тогда как `now() - (-72)`, - и - равно +, добавляется отрицательное значение
 
-| Default value | Function                                                                                 |
-| ------------- | ---------------------------------------------------------------------------------------- |
-| yesterday     | Displays the day before todays date, time 12:00pm                                        |
-| today         | Displays todays date, time 12:00pm                                                       |
-| now           | Displays todays date, current time                                                       |
-| tomorrow      | Displays the day after todays date, time 12:00pm                                         |
-| +X            | X is an amount of hours BACK from the current time, eg. +72 means "3 days back from now" |
-| -X            | X is an amount of hours IN THE FUTURE from the current time, eg. -72 means "in 3 days"   |
+| Значение по умолчанию | Функция                                                                               |
+| --------------------- | ------------------------------------------------------------------------------------- |
+| yesterday             | Отображение дня до сегодняшней даты, времени 12:00pm                                  |
+| today                 | Отображает сегодняшнюю дату, время 12:00pm                                            |
+| now                   | Отображает текущую дату, текущее время                                                |
+| tomorrow              | Отображает день после сегодняшней даты, время 12:00pm                                 |
+| +X                    | X количество часов BACK от текущего времени, например +72 означает «3 дня назад»      |
+| -X                    | X количество часов в БУДУЩЕМ от текущего времени, например -72 означает "через 3 дня" |
 
-You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
+Вы используете [Тип вывода Дата TV](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Тип вывода Дата TV") изменить формат возвращаемой даты.
 
-### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
  ``` json
 {
@@ -111,21 +114,21 @@ You use the [Date TV Output Type](making-sites-with-modx/customizing-content/tem
 }
 ```
 
-## DropDown List Menu
+## DropDown список меню
 
-NOTE: this TV Input type has been deprecated since Revo 2.1.x Please see [Listbox](#TemplateVariableInputTypes-Listbox(MultiSelect)) input types below.
+**ПРИМЕЧАНИЕ**: этот тип ввода TV устарел начиная с Revo 2.1.x Пожалуйста, смотрите [Listbox](#TemplateVariableInputTypes-Listbox(MultiSelect)) типы ввода ниже.
 
-Set input option values in the option1==value1||option2==value2||option3==value3 format. Make sure to choose an output type of delimited (or other of your liking) to be able to present this to the front-end in a certain manner. You can also use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding to select 2 columns, e.g.
+Установите значения параметров ввода в формате `option1==value1||option2==value2||option3==value3`. Убедитесь, что вы выбрали выходной тип с разделителями (или другой тип по своему вкусу), чтобы иметь возможность представить его пользователю определенным образом.. Ты можешь использовать [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") привязку для выбора 2 столбцов, например,
 
 ``` sql
 @SELECT name, value FROM your_table
 ```
 
-Also see Resource List TV type.
+Также см. Список ресурсов ТВ типа.
 
 ![](dropdown.jpg)
 
-### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
 ``` json
 {
@@ -137,11 +140,11 @@ Also see Resource List TV type.
 
 ## Email
 
-This is a text field that comes with its own validation: only text that's in a valid email format will be accepted.
+Это текстовое поле, имеющее собственную проверку: будет принят только текст в допустимом формате электронной почты.
 
 ![](email.jpg)
 
-### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
 ``` json
 {
@@ -153,29 +156,29 @@ This is a text field that comes with its own validation: only text that's in a v
 
 ## File
 
-Creates a file input form to browse the server for a file. Files can be uploaded through the MODX File Manager. You can declare a default value file by specifying the path to the file.
+Создает форму ввода файла для просмотра файла на сервере. Файлы могут быть загружены через файловый менеджер MODX. Вы можете объявить файл значений по умолчанию, указав путь к файлу.
 
-Take extra note of relative file paths when using friendly url paths.
+При использовании дружественных URL-адресов обратите особое внимание на относительные пути к файлам.
 
-### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
-## Hidden
+## Скрытый
 
-A hidden field does not show up in the manager, so it's rare that you'd use this option. You can set a default value that can be retrieved on all pages using this variable. Another possibility is to store a Snippet that takes a page's ID as input.
+Скрытое поле не отображается в менеджере, поэтому вы редко используете эту опцию. Вы можете установить значение по умолчанию, которое можно получить на всех страницах, используя эту переменную. Другая возможность - сохранить фрагмент, который принимает идентификатор страницы в качестве ввода.
 
-## HTML Area (richtext)
+## HTML область (richtext)
 
-This gives you a small WSYIWYG editor for the field. It looks exactly like the Richtext fields.
+Это дает вам небольшой редактор WSYIWYG для поля. Это выглядит точно так же, как поля Richtext.
 
 ![](html_area.jpg)
 
-## Image
+## Изображение
 
 ![](tv-image-new.png)
 
-Creates an image input form to browse the server for a file. Files can be uploaded through the MODX File Manager then.
+Создает форму ввода изображения для просмотра файла на сервере. Файлы могут быть загружены через файловый менеджер MODX.
 
-In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](building-sites/media-sources "Media Sources").
+В MODX 2.2+ больше нет параметров ввода для TV с изображениями. Вместо этого перейдите на вкладку «Источники мультимедиа» и выберите источник мультимедиа, который нужно назначить этому TV для каждого контекста. Вы можете настроить базовые пути и т.п. в [Медиа Источнике](building-sites/media-sources "Медиа Источнике").
 
 ![](tv-image-input-options.png)
 
@@ -192,7 +195,7 @@ This input type returns the link (to be used as src attribute) to the image. You
 
 ## [Image+](https://docs.modx.com/extras/revo/image) (imageplus)
 
-### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
 ``` json
 {
@@ -232,7 +235,7 @@ Often it's nice to have a more readable label. You can display something nice an
 Option 1==value1||Option 2==value2
 ```
 
-#### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
 ``` json
 {
@@ -252,7 +255,7 @@ This is another text field with some pre-emptive validation. You literally canno
 
 Note that trailing zeros are truncated, e.g. 4.50 gets trimmed to 4.5; this may make this input type unsuitable for currency fields.
 
-### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
 ``` json
 {
@@ -297,7 +300,7 @@ Set your input option values using the format **Title==value** format, but use t
 
 In the above examples, you can output a chunk or another Template Variable without the aid of an extra.
 
-#### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
  ``` json
 {
@@ -321,7 +324,7 @@ Another example:
 [{"pagetitle:!=":"Home"}]
 ```
 
-### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
 ``` json
 {
@@ -344,7 +347,7 @@ See _HTML Area_.
 
 Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](building-sites/elements/template-variables/output-types/html) for formatting.
 
-### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
 ``` json
 {
@@ -362,7 +365,7 @@ As of MODX 2.1, there are three input options you can set for this TV:
 - Max length: a number representing the number of characters that can be filled in in this field.
 - Min Length: a number representing the minimum number of characters needed to be filled in. May want to use this with the allow blank option to "no". ![](tvinput.png)
 
-### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
 ``` json
 {
@@ -378,7 +381,7 @@ As of MODX 2.1, there are three input options you can set for this TV:
 
 This is a standard _textarea_ field, with a height of 15 rows. It's the same size as the HTML Area fields, but without the WYSIWYG editor.
 
-### All input option names (for use in migx options-json)
+### Все имена параметров ввода (для использования в migx options-json)
 
 ``` json
 {

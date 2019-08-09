@@ -26,7 +26,7 @@ Bugs can be filed here: <https://github.com/modxcms/Login/issues>
 
 The Login Extra is composed of 10 Snippets:
 
-- [Login](extras/login/login.login "Login.Login") - For login forms.
+- [Login](extras/login/login. "Login.Login") - For login forms.
 - [UpdateProfile](extras/login/login.updateprofile "Login.UpdateProfile") - For adding front-end profile editing.
 - [Profile](extras/login/login.profile "Login.Profile") - Sets Profile fields as placeholders, which allows you to display a User's Profile.
 - [ForgotPassword](extras/login/login.forgotpassword "Login.ForgotPassword") - For retrieving lost passwords.
@@ -41,25 +41,25 @@ The Login Extra is composed of 10 Snippets:
 
 You can also see these articles for implementing different functionality in the Login package:
 
-- [Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields "Login.Using Custom Fields")
-- [Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks "Login.Using Pre and Post Hooks")
+- [Using Custom Fields](extras/login/login.tutorials/using-custom-fields "Login.Using Custom Fields")
+- [Using Pre and Post Hooks](extras/login/login.tutorials/using-pre-and-post-hooks "Login.Using Pre and Post Hooks")
 
 ## See Also
 
-1. [Login.Login](extras/login/login.login)
+1. [Login.Login](extras/login/login)
 2. [Login.Profile](extras/login/login.profile)
 3. [Login.UpdateProfile](extras/login/login.updateprofile)
 4. [Login.Register](extras/login/login.register)
-   1. [Register.Example Form 1](extras/login/login.register/register.example-form-1)
+   1. [Register.Example Form 1](extras/login/login.register/example-form-1)
 5. [Login.ConfirmRegister](extras/login/login.confirmregister)
 6. [Login.ForgotPassword](extras/login/login.forgotpassword)
 7. [Login.ResetPassword](extras/login/login.resetpassword)
 8. [Login.ChangePassword](extras/login/login.changepassword)
 9. [Login.Tutorials](extras/login/login.tutorials)
-    1. [Login.Basic Setup](extras/login/login.tutorials/login.basic-setup)
-    2. [Login.Extended User Profiles](extras/login/login.tutorials/login.extended-user-profiles)
-    3. [Login.Request Membership](extras/login/login.tutorials/login.request-membership)
-    4. [Login.User Profiles](extras/login/login.tutorials/login.user-profiles)
-    5. [Login.Using Custom Fields](extras/login/login.tutorials/login.using-custom-fields)
-10. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/login.using-pre-and-post-hooks)
+    1. [Login.Basic Setup](extras/login/login.tutorials/basic-setup)
+    2. [Login.Extended User Profiles](extras/login/login.tutorials/extended-user-profiles)
+    3. [Login.Request Membership](extras/login/login.tutorials/request-membership)
+    4. [Login.User Profiles](extras/login/login.tutorials/user-profiles)
+    5. [Login.Using Custom Fields](extras/login/login.tutorials/using-custom-fields)
+10. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/using-pre-and-post-hooks)
 11. [Login.Roadmap](extras/login/login.roadmap)
