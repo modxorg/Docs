@@ -3,7 +3,7 @@ title: "modRest"
 translation: "extending-modx/services/modrest"
 ---
 
-## Built-in curl client for sending requests to third-party services (RESTful and others)
+Built-in curl client for sending requests to third-party services (RESTful and others)
 
 Since third-party services are increasingly being used in the daily development of sites, for these purposes MODX has a built-in client with which you can send requests:
 
@@ -20,7 +20,7 @@ $array = $response->process();
 
 The following are ways to work with the client.
 
-### Sending a request with parameters
+## Sending a request with parameters
 
 We write down the parameters that we want to send to our service
 
@@ -34,7 +34,7 @@ $response = $client->get($url, $params);
 $data = $response->process(); // Will return an array
 ```
 
-### Checking Method Availability
+## Checking Method Availability
 
 To check the existence of a method or want to know the existence of a page, we can check the status code of the page in a variable `responseInfo`:
 
@@ -50,7 +50,7 @@ if (property_exists($response->responseInfo, 'scalar')) {
 echo $code; // 200 - method is available, 404 - method or page does not exist
 ```
 
-### Checking Service Availability
+## Checking Service Availability
 
 Sometimes services fall or respond too long, for this there is a variable `responseError` where errors are written.
 
@@ -65,7 +65,7 @@ if ($response->responseError) {
 }
 ```
 
-### Login
+## Login
 
 For authorization in the service by means `CURLOPT_HTTPHEADER`, must specify in options `username` and `password`
 
@@ -84,7 +84,7 @@ if (property_exists($response->responseInfo, 'scalar')) {
 echo $code; // 200 - authorized, 403 - authorization failed
 ```
 
-### Read header
+## Read header
 
 For the service to return the headers, you must specify before sending the request `$client->setOption('header', true);` then in the variable `$response->responseHeaders` we will see response headers from the service
 
@@ -97,7 +97,7 @@ $response = $client->get($url);
 echo '<pre>' . print_r($response->responseHeaders) . '</pre>;
 ```
 
-### Record in header
+## Record in header
 
 To send the service our parameters in the headers:
 
@@ -117,7 +117,7 @@ $client = $this->modx->getService('rest', 'rest.modRest', array('headers' => $he
 `$response = $client->get($url, array(), $headers);`
 ```
 
-### For components
+## For components
 
 If an error occurs in the console in the form
 
