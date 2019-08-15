@@ -94,8 +94,7 @@ $url = 'http://site.ru/rest/mymethod';
 $client = $modx->getService('rest', 'rest.modRest');
 $client->setOption('header', true);
 $response = $client->get($url);
-echo '<pre>';
-print_r($response->responseHeaders); die;
+echo '<pre>' . print_r($response->responseHeaders) . '</pre>;
 ```
 
 ### Record in header
@@ -120,18 +119,18 @@ $client = $this->modx->getService('rest', 'rest.modRest', array('headers' => $he
 
 ### For components
 
-If an error occurs in the console in the form:
+If an error occurs in the console in the form
 
 ```php
 modRestClient::__construct is deprecated since version 2.3.0. Use the modRest classes instead.
 ```
 
-That must be used:
+the following class has to be used in the code
 
 ```php
 $client = $this->modx->getService('rest', 'rest.modRest');
 ```
 
-because `modRestClient` deprecated function.
+because `modRestClient` is a deprecated class.
 
 For more information about all the features of the class, see the file: `core/model/modx/rest/modrest.class.php`
