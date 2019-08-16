@@ -94,7 +94,7 @@ $url = 'http://site.ru/rest/mymethod';
 $client = $modx->getService('rest', 'rest.modRest');
 $client->setOption('header', true);
 $response = $client->get($url);
-echo '<pre>' . print_r($response->responseHeaders) . '</pre>;
+echo '<pre>' . print_r($response->responseHeaders, true) . '</pre>;
 ```
 
 ## Record in header
