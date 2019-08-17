@@ -10,9 +10,9 @@ Since third-party services are increasingly being used in the daily development 
 ```php
 /* @var modRest $client */
 $client = $modx->getService('rest', 'rest.modRest');
-$response = $client->get('GET запрос');
+$response = $client->get('GET request');
 # or
-$response = $client->post('POST запрос');
+$response = $client->post('POST request');
 
 // Processing the received data in json or xml format and converting them into an array
 $array = $response->process();
