@@ -129,6 +129,6 @@ Bob's permissions guide: <http://bobsguides.com/revolution-permissions.html>
 
 Forum topic discussing this tutorial: <http://modxcms.com/forums/index.php/topic,51259.0.html>
 
-Using the Login Snippet to set up a basic "Members Only" area: [Login.Basic Setup](/extras/login/login.tutorials/login.basic-setup "Login.Basic Setup")
+Using the Login Snippet to set up a basic "Members Only" area: [Login.Basic Setup](/extras/login/login.tutorials/basic-setup "Login.Basic Setup")
 
 Security: [Security](building-sites/client-proofing/security "Security")
