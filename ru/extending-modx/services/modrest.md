@@ -30,6 +30,7 @@ $params = array('limit' => 100);
 /* @var modRest $client */
 $client = $modx->getService('rest', 'rest.modRest');
 // $client->setOption('format','JSON'); // Формат полученных данных принимает json или xml (по умолчанию json) для преобразования в массив
+// $client->setOption('suppressSuffix','true'); // иначе при использовании format=json в конец url добавится http://site.ru/method.json
 $response = $client->get($url, $params);
 $data = $response->process(); // Вернет массив
 ```
