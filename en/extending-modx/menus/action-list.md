@@ -4,11 +4,11 @@ _old_id: "342"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/actions-and-menus/action-list"
 ---
 
- MODX Revolution uses the **a** parameter in the $\_GET array to define actions in the manager. Before MODX 2.3 each action has its own ID, but as of MODX 2.3 actions have been deprecated and are no longer used. Instead, as of Revolution 2.3, the action name is passed in the **a** parameter directly.
+ MODX Revolution uses the **a** parameter in the `$_GET` array to define actions in the manager. Before MODX 2.3 each action has its own ID, but as of MODX 2.3 actions have been deprecated and are no longer used. Instead, as of Revolution 2.3, the action name is passed in the **a** parameter directly.
 
 ## Actions in JavaScript
 
-Within the Manager, you can access a list of actions with the MODx.action variable. Do NOT rely on any list with manager action IDs as these IDs are not hardcoded in the MODX Core, but instead they are dynamically created during setup and just happen to have a certain ID.
+Within the Manager, you can access a list of actions with the `MODx.action` variable. Do NOT rely on any list with manager action IDs as these IDs are not hardcoded in the MODX Core, but instead they are dynamically created during setup and just happen to have a certain ID.
 
 Back in Evolution there was indeed a fixed list, but there has never been one in Revolution.
 
