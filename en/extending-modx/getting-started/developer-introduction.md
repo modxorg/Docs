@@ -22,7 +22,7 @@ Connectors are simply gateway files that hook into specific Processors. They are
 
 ## What is xPDO?
 
-[xPDO](/display/xPDO20/Home "Home") is our name for open eXtensions to PDO. It's a light-weight ORB (object-relational bridge) library that works on PHP 4 and 5, and takes advantage of the newly adopted standard for database persistence in PHP 5.1+, PDO. It implements the very simple, but effective Active Record pattern for data access, as well as a flexible domain model that allows you to isolate domain logic from database-specific logic, or not, depending on your needs.
+[xPDO](extending-modx/xpdo "xPDO") is our name for open eXtensions to PDO. It's a light-weight ORB (object-relational bridge) library that works on PHP 4 and 5, and takes advantage of the newly adopted standard for database persistence in PHP 5.1+, PDO. It implements the very simple, but effective Active Record pattern for data access, as well as a flexible domain model that allows you to isolate domain logic from database-specific logic, or not, depending on your needs.
 
 ## What is an ORM?
 

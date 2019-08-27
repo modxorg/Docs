@@ -124,7 +124,7 @@ $resources = $modx->getCollection('modResource',$c);
 
 Чтобы узнать больше о xPDO, прочитайте следующее:
 
-- xPDO в пространстве [xPDO](/display/xPDO20/Home "Home")
+- xPDO в пространстве [xPDO](extending-modx/xpdo "xPDO")
 - [Получение объектов](extending-modx/xpdo/retrieving-objects "Retrieving Objects") в xPDO
 - Объект [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")
 

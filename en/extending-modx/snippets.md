@@ -125,7 +125,7 @@ And finally, we called getCollection which - unlike getObject - returns a collec
 
 For further reading on xPDO, read up on these:
 
-- xPDO at the [xPDO](/display/xPDO20/Home "Home") space
+- xPDO at the [xPDO](extending-modx/xpdo "xPDO") space
 - [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects") in xPDO
 - The [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") Object
 

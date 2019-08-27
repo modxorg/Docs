@@ -148,7 +148,7 @@ $output = '';
 return $output;
 ```
 
- Cool. Now we want to use [xPDO](/display/xPDO20/Home "Home") to query the database to grab our records...oops. We haven't made an xPDO model for them yet. We should do that.
+ Cool. Now we want to use [xPDO](extending-modx/xpdo "xPDO") to query the database to grab our records...oops. We haven't made an xPDO model for them yet. We should do that.
 
 ### Making the Model
 
