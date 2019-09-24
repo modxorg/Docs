@@ -12,7 +12,7 @@ First off, make sure:
 - You followed all the directions [here](getting-started/installation "Installation") for your distribution.
 - You are using at least PHP 5.1.1+, but not 5.1.6 or 5.2.0
 - You are using MySQL later than 4.1.20, but not any iteration of MySQL 5.0.51 (including 5.0.51a).
-- Clear the core/cache/ directory entirely before starting setup; sometimes improper file permissions can cause issues.
+- Clear the `core/cache/` directory entirely before starting setup; sometimes improper file permissions can cause issues.
 - Clear your browser cache and cookies
 
 ## PDO Error Messages
@@ -42,13 +42,13 @@ Here are some common problems that might occur during installation and their sol
 
 ### "I get a blank white screen instead of the options page!"
 
-You probably copied config.inc.tpl to config.inc.php, which is incorrect. Make the config.inc.php file an empty, writable file.
+You probably copied `config.inc.tpl` to `config.inc.php`, which is incorrect. Make the config.inc.php file an empty, writable file.
 
-If you renamed the config.inc.tpl to config.inc.php, rename it back to config.inc.tpl and create a blank file named config.inc.php that is writable.
+If you renamed the `config.inc.tpl` to `config.inc.php`, rename it back to `config.inc.tpl` and create a blank file named config.inc.php that is writable.
 
 ### "I clicked install and got a blank white screen!"
 
-Make sure your 'memory\_limit' setting in php.ini is set to at least 32M. For slower servers, you might need to up it to 64M.
+Make sure your `memory_limit` setting in php.ini is set to at least 32M. For slower servers, you might need to up it to 64M.
 
 ### "Cannot connect to database" in the database options page
 
@@ -70,11 +70,11 @@ pdo_mysql.default_socket=/path/to/my/mysql.sock
 
 This can happen with older Revolution beta installs. To fix it, delete the following 3 system settings from the DB table `[prefix]_system_settings` (where prefix is your table prefix):
 
-- session\_name
-- session\_cookie\_path
-- session\_cookie\_domain
+- `session_name`
+- `session_cookie_path`
+- `session_cookie_domain`
 
-Then delete the core/cache/config.cache.php file.
+Then delete the `core/cache/config.cache.php` file.
 
 Unless, of course, you've changed these explicitly for some purpose of your own.
 
@@ -88,7 +88,7 @@ eaccelerator.optimizer = 0;
 eaccelerator.debug = 0;
 ```
 
-or in your .htaccess in the modx root directory, if your server supports php\_flag server directives:
+or in your .htaccess in the modx root directory, if your server supports `php_flag` server directives:
 
 ``` php
 php_flag eaccelerator.enable 0
@@ -98,9 +98,9 @@ php_flag eaccelerator.debug 0
 
 ### General weirdness in the Manager (not eAccelerator)
 
-On some systems, especially with shared hosting, there can be a problem with the compress\_js and/or compress\_css System Settings. Go to System -> System Settings and type 'compress' (without the quotes) in the search box at the upper right. Turn the two settings off, then log out, delete all files in the core/cache directory, clear your browser cache and cookies, and log back in.
+On some systems, especially with shared hosting, there can be a problem with the `compress_js` and/or `compress_css` System Settings. Go to System -> System Settings and type 'compress' (without the quotes) in the search box at the upper right. Turn the two settings off, then log out, delete all files in the `core/cache` directory, clear your browser cache and cookies, and log back in.
 
-If the Manager is messed up enough that you can't change the settings, see the note below about changing the two System Settings in the modx\_system\_settings table in the database with PhpMyAdmin.
+If the Manager is messed up enough that you can't change the settings, see the note below about changing the two System Settings in the `modx_system_settings` table in the database with PhpMyAdmin.
 
 ### Resource / Elements / File tree not appearing
 
@@ -137,9 +137,9 @@ The MODX manager loads compressed CSS and JS assets. Some server configuration S
 
 If your MODX manager is not loading properly due to 400 errors in the manager when trying to load the Google Minify-compressed JavaScript code, this is likely due to a server misconfiguration on your end. If this cannot be rectified from a server angle, you can manually disable JS and CSS compression the following way:
 
-1. Go into the DB using PhpMyAdmin and find the \[table\_prefix\]\_system\_settings table (table\_prefix is usually modx).
-2. Find the rows with key "compress\_js" and "compress\_css" and set their value to 0 and save them.
-3. Empty your core/cache/ directory.
+1. Go into the DB using PhpMyAdmin and find the `table_prefix_system_settings` table (`table_prefix` is usually modx).
+2. Find the rows with key `compress_js` and `compress_css` and set their value to 0 and save them.
+3. Empty your `core/cache/` directory.
 4. Clear your browser cache and cookies
 5. Log in to the manager.
 
@@ -147,7 +147,7 @@ This will allow you to use the manager without JS and CSS compression.
 
 ### Manager parts are missing, undefined language strings, or there are JavaScript 500 Errors in the Manager
 
-1. Make sure your connectors/ folder has 0755 permission
+1. Make sure your `connectors/` folder has 0755 permission
 
 ## Still Having Issues?
 
