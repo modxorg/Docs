@@ -154,7 +154,7 @@ option1==value1||option2==value2
 }
 ```
 
-## File
+## Файл
 
 Создает форму ввода файла для просмотра файла на сервере. Файлы могут быть загружены через файловый менеджер MODX. Вы можете объявить файл значений по умолчанию, указав путь к файлу.
 
@@ -182,18 +182,18 @@ option1==value1||option2==value2
 
 ![](tv-image-input-options.png)
 
-1) You can declare a default value file by specifying the path to the image.
+1) Вы можете объявить файл значений по умолчанию, указав путь к изображению.
 
-2) If you want to limit the images used for this TV to a specific folder, you can specify (since Revolution 2.1) a base-path and base-url. You can also set relative or absolute paths. Take extra note of relative file paths when using friendly url paths.
-For correct display of images in frontend and backend be sure to have correct settings in base\_url and base\_path settings!
+2) Если вы хотите ограничить изображения, используемые для этого телевизора, определенной папкой, вы можете указать (начиная с Revolution 2.1) base-path и base-url. Вы также можете установить относительные или абсолютные пути. При использовании дружественных URL-адресов обратите особое внимание на относительные пути к файлам.
+Для правильного отображения изображений в интерфейсе и бэкэнде убедитесь, что в настройках `base_url` и `base_path` указаны правильные настройки!
 
-3) You can prepend URL if filepath doesn't begin with a trailing slash.
+3) Вы можете добавить URL, если путь к файлу не начинается с завершающей косой черты.
 
-4) You can specify file extensions that can be selected.
+4) Вы можете указать расширения файлов, которые могут быть выбраны.
 
-This input type returns the link (to be used as src attribute) to the image. You can also set the whole [html-img-tag as a output-type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type "Image TV Output Type").
+Этот тип ввода возвращает ссылку (которая будет использоваться в качестве атрибута src) на изображение. Вы также можете установить весь [html-img-tag как тип вывода](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type "Тип TV-вывода изображения").
 
-## [Image+](https://docs.modx.com/extras/revo/image) (imageplus)
+## [Image+](extras/image) (imageplus)
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
@@ -209,19 +209,19 @@ This input type returns the link (to be used as src attribute) to the image. You
 }
 ```
 
-## Listbox (Single-Select) (listbox)
+## Список (одиночный выбор)
 
-This has the same options available to it as the Listbox (Multi-Select) – see below.
+Для него доступны те же параметры, что и для списка (Multi-Select) - см. ниже.
 
-## Listbox (Multi-Select) (listbox-multiple)
+## Список (множественный выбор)
 
-This behaves similar to the checkbox fields: you can select multiple items, and this field can be powered by a @SELECT binding in its "Input Option Values" parameter. Like checkboxes, you probably want to set the "Output Type" to delimiter so you can distinguish between values.
+Это ведет себя подобно полям флажков: вы можете выбрать несколько элементов, и это поле может быть запитано связыванием `@SELECT` в его параметре «Значения параметра ввода». Как и флажки, вы, вероятно, хотите установить «Тип вывода» в качестве разделителя, чтобы вы могли различать значения.
 
 ![](listbox_multi.jpg)
 
-### Simple Usage
+### Как использовать
 
-Just like with the Checkbox options, you can simply specify a list of values separated by double-pipes:
+Как и в случае с флажками, вы можете просто указать список значений, разделенных двойными каналами:
 
 ``` php
 Man||Bear||Pig
@@ -229,9 +229,9 @@ Man||Bear||Pig
 
 ### Separate Options/Values
 
-Often it's nice to have a more readable label. You can display something nice and still store a different value using the double-equals and double-pipes format used by checkboxes:
+Часто приятно иметь более читаемый ярлыки. Вы можете отобразить что-то приятное и при этом сохранить другое значение, используя формат двойного равенства и двойной трубы, используемый флажками:
 
- ``` php
+``` php
 Option 1==value1||Option 2==value2
 ```
 
@@ -249,11 +249,11 @@ Option 1==value1||Option 2==value2
 }
 ```
 
-## Number
+## Число
 
-This is another text field with some pre-emptive validation. You literally cannot type anything but the digits 0 to 9, the minus sign (-) , and a period (i.e. a decimal point). A validation error is triggered if you enter more than one decimal point or minus sign. Complex numbers (e.g. using radicals "^" or "e" are **not** supported).
+Это еще одно текстовое поле с преимущественной проверкой. Вы буквально не можете набрать ничего, кроме цифр от 0 до 9, знака минус (-) и точки (то есть десятичной точки). Ошибка проверки возникает, если вы вводите более одной десятичной точки или знак минус. Комплексные числа (например, использование радикалов «^» или «e» **не** поддерживаются).
 
-Note that trailing zeros are truncated, e.g. 4.50 gets trimmed to 4.5; this may make this input type unsuitable for currency fields.
+Обратите внимание, что конечные нули обрезаются, например, 4,50 обрезается до 4,5, это может сделать этот тип ввода неподходящим для полей валюты.
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
@@ -269,36 +269,31 @@ Note that trailing zeros are truncated, e.g. 4.50 gets trimmed to 4.5; this may 
 }
 ```
 
-## Radio Options (option)
+## Переключатели (radio)
 
-### Simple Usage
+### Пример использования
 
-The basic usage of this is to provide a list of radio option. You can control the default option by manipulating the "Input Option Values" and "Default Value" fields.
+Основное использование этого - предоставить список опций радио. Вы можете управлять опцией по умолчанию, манипулируя полями «Значения опций ввода» и «Значение по умолчанию».
 
-#### Selected by Default
+#### Выбран по умолчанию
 
-- Input Option Values: My Option==1
-- Default Value: 1
+- Значения параметров ввода: Моя опция==1
+- Значение по умолчанию: 1
 
-The option will be selected by default as long as the value following the "==" matches the default value.
+Эта опция будет выбрана по умолчанию, если значение после «==» соответствует значению по умолчанию.
 
-### Advanced Usage
+### Расширенное использование
 
-The radio option can be used to output more than simple numerical values. One such example is using the radio option to determine the chunk used for a sidebar.
+Опция радио может использоваться для вывода более простых числовых значений. Одним из таких примеров является использование опции радио для определения порции, используемой для боковой панели.
 
-Set your input option values using the format **Title==value** format, but use the chunk placeholders as your values. To declare multiple options use two pipes (||) after the value, before the next options title.
+Установите значения параметров ввода, используя формат **Заголовок == значение**, но используйте плейсхолдеры чанков в качестве значений. Чтобы объявить несколько параметров, используйте два канала (||) после значения перед заголовком следующего параметра.
 
-#### Sidebar Example Evolution\*
+#### Пример боковой панели Revolution
 
-- Input Option Values: Related==`related-call]]||Content==``<span class="error">[\*sidebar-txt\*]</span>``||Twitter=={{twitter`
-- Default Value: ?`related-call`
+- Значения параметров ввода: Related==`[[$my_related_chunk]]||Content==[[*sidebar-txt]]||Twitter==[[$my_twitter_chunk]]`
+- Значение по умолчанию: `[[$my_related_chunk]]`
 
-#### Sidebar Example Revolution:
-
-- Input Option Values: Related==\[\[$my\_related\_chunk\]\]||Content==\[\[\*sidebar-txt\]\]||Twitter==\[\[$my\_twitter\_chunk\]\]
-- Default Value: \[\[$my\_related\_chunk\]\]
-
-In the above examples, you can output a chunk or another Template Variable without the aid of an extra.
+В приведенных выше примерах вы можете вывести чанк или другую переменную шаблона без помощи дополнительного.
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
@@ -309,16 +304,19 @@ In the above examples, you can output a chunk or another Template Variable witho
 }
 ```
 
-## Resource List (resourcelist)
+## Список ресурсов
 
-Supply the definition with a resource ID, and you'll end up with a drop down list of all pages/resources that are children of that resource. The value stored after you've made a selection is the ID of the single selected resource.
+Укажите определение с идентификатором ресурса, и вы получите выпадающий список всех страниц/ресурсов, которые являются дочерними для этого ресурса. Значение, сохраненное после того, как вы сделали выбор, является идентификатором единственного выбранного ресурса.
 
 ![](resource_list.jpg)
 
-This is similar to using a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding in a DropDown list menu, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
+Это похоже на использование [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") привязки в меню списка DropDown, но список ресурсов будет проходить через весь браузер ресурсов, в то время как при привязке `@SELECT` вам придется обновить запрос, чтобы получить список дочерних элементов каждого из родителей.
 
-This input type also accepts WHERE conditions to filter by: ![](screen+shot+2012-05-18+at+9.04.54+pm.png)
-Another example:
+Этот тип ввода также принимает условия WHERE для фильтрации по:
+
+![](screen+shot+2012-05-18+at+9.04.54+pm.png)
+
+### Другой пример
 
 ``` php
 [{"pagetitle:!=":"Home"}]
@@ -339,13 +337,13 @@ Another example:
 }
 ```
 
-## Rich Text
+## Текстовый редактор
 
-See _HTML Area_.
+Смотрите _HTML Area_.
 
-## Tag
+## Тег
 
-Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](building-sites/elements/template-variables/output-types/html) for formatting.
+Несколько тегов, разделенных || символами будут разделяться и выводиться отдельно при использовании с [типом вывода HTMLTag](building-sites/elements/template-variables/output-types/html) для форматирования.
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
@@ -355,15 +353,17 @@ Multiple tags separated by || characters will be separated and output individual
 }
 ```
 
-## Text
+## Текст
 
-This is a vanilla text field.
+Это ванильное текстовое поле.
 
-As of MODX 2.1, there are three input options you can set for this TV:
+Начиная с MODX 2.1, для этого телевизора можно установить три варианта ввода:
 
-- Allow Blank: yes/no, when "no" the resource cannot be saved without it being filled in.
-- Max length: a number representing the number of characters that can be filled in in this field.
-- Min Length: a number representing the minimum number of characters needed to be filled in. May want to use this with the allow blank option to "no". ![](tvinput.png)
+- Разрешить пустое: да / нет, когда «нет» ресурс не может быть сохранен без его заполнения.
+- Максимальная длина: число, представляющее количество символов, которые можно заполнить в этом поле.
+- Минимальная длина: число, представляющее минимальное количество символов, которое необходимо заполнить. Возможно, вы захотите использовать его с опцией разрешения пробела «Нет».
+
+![](tvinput.png)
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
@@ -377,9 +377,9 @@ As of MODX 2.1, there are three input options you can set for this TV:
 }
 ```
 
-## Textarea
+## Текстовая область
 
-This is a standard _textarea_ field, with a height of 15 rows. It's the same size as the HTML Area fields, but without the WYSIWYG editor.
+Это стандартное поле _textarea_, высотой 15 строк. Он имеет тот же размер, что и поля HTML Area, но без редактора WYSIWYG.
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
@@ -389,16 +389,12 @@ This is a standard _textarea_ field, with a height of 15 rows. It's the same siz
 }
 ```
 
-## Textarea (Mini) (deprecated)
+## Текстовое окно
 
-This is a smaller _textarea_ field, with a height of only 5 rows.
-
-## Textbox
-
-This appears to be exactly the same as the vanilla Text field.
+Это выглядит точно так же, как в текстовое поле.
 
 ## URL
 
-This is a guided text field, which a dropdown option to select the protocol: none, <http://>, <https://>, <ftp://,> or [](mailto:). No validation is performed to ensure the correctness of the URL structure.
+Это текстовое поле с инструкциями, в раскрывающемся списке которого можно выбрать протокол: нет, `http://`, `https://`, `ftp://` или `mailto:`. Проверка правильности структуры URL не выполняется.
 
 ![](url.jpg)

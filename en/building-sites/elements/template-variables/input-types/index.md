@@ -191,7 +191,7 @@ For correct display of images in frontend and backend be sure to have correct se
 
 This input type returns the link (to be used as src attribute) to the image. You can also set the whole [html-img-tag as a output-type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type "Image TV Output Type").
 
-## [Image+](https://docs.modx.com/extras/revo/image) (imageplus)
+## [Image+](extras/image) (imageplus)
 
 ### All input option names (for use in migx options-json)
 
@@ -286,15 +286,10 @@ The radio option can be used to output more than simple numerical values. One su
 
 Set your input option values using the format **Title==value** format, but use the chunk placeholders as your values. To declare multiple options use two pipes (||) after the value, before the next options title.
 
-#### Sidebar Example Evolution\*
-
-- Input Option Values: Related==`related-call]]||Content==``<span class="error">[\*sidebar-txt\*]</span>``||Twitter=={{twitter`
-- Default Value: ?`related-call`
-
 #### Sidebar Example Revolution:
 
-- Input Option Values: Related==\[\[$my\_related\_chunk\]\]||Content==\[\[\*sidebar-txt\]\]||Twitter==\[\[$my\_twitter\_chunk\]\]
-- Default Value: \[\[$my\_related\_chunk\]\]
+- Input Option Values: `[[$my_related_chunk]]||Content==[[*sidebar-txt]]||Twitter==[[$my_twitter_chunk]]`
+- Default Value: `[[$my_related_chunk]]`
 
 In the above examples, you can output a chunk or another Template Variable without the aid of an extra.
 
@@ -315,7 +310,10 @@ Supply the definition with a resource ID, and you'll end up with a drop down lis
 
 This is similar to using a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding in a DropDown list menu, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
 
-This input type also accepts WHERE conditions to filter by: ![](screen+shot+2012-05-18+at+9.04.54+pm.png)
+This input type also accepts WHERE conditions to filter by: 
+
+![](screen+shot+2012-05-18+at+9.04.54+pm.png)
+
 Another example:
 
 ``` php
@@ -361,7 +359,9 @@ As of MODX 2.1, there are three input options you can set for this TV:
 
 - Allow Blank: yes/no, when "no" the resource cannot be saved without it being filled in.
 - Max length: a number representing the number of characters that can be filled in in this field.
-- Min Length: a number representing the minimum number of characters needed to be filled in. May want to use this with the allow blank option to "no". ![](tvinput.png)
+- Min Length: a number representing the minimum number of characters needed to be filled in. May want to use this with the allow blank option to "no". 
+ 
+![](tvinput.png)
 
 ### All input option names (for use in migx options-json)
 
