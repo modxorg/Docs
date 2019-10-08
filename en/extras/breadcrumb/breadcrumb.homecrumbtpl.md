@@ -23,5 +23,6 @@ Templates properties can be chunk name, file path (@FILE) or chunk code (@INLINE
 | Name                                             | Description                                                                            |
 | ------------------------------------------------ | -------------------------------------------------------------------------------------- |
 | link                                             | A link to the resource of the crumb.                                                   |
+| position                                         | The order of the item (to support [BreadcrumbList](https://schema.org/BreadcrumbList). |
 | useWebLinkUrl                                    | If you use the _&useWebLinkUrl=`1`_ property, the link will be the resource linked and |
 | id pagetitle longtitle description menutitle ... | All properties of the resource are output to their appropriate placeholders.           |

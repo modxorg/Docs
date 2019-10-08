@@ -19,6 +19,7 @@ As the original [Breadcrumbs](extras/breadcrumbs "Breadcrumbs"), this snippet wi
 
 | Version     | Date              | Author              | Product    |
 | ----------- | ----------------- | ------------------- | ---------- |
+| 1.4.4-pl    | October 1, 2019   | ------------------- | Revolution |
 | 1.4.3-pl    | March 7, 2015     | ben\_omycode & Jako | Revolution |
 | 1.4.2-pl    | August 12, 2014   | ben\_omycode        | Revolution |
 | 1.4.1-pl    | August 7, 2014    | ben\_omycode        | Revolution |
@@ -38,8 +39,8 @@ It can be downloaded from within the MODX Revolution manager via [Package Manage
 
 ### Support, Comments, Development and Bug Reporting
 
-**Github** : <https://github.com/benjamin-vauchel/breadcrumb>
-**Support/Comments** : <http://forums.modx.com/thread/71902/support-comments-for-breadcrumb>
+- Github: [BreadCrumb](https://github.com/JoshuaLuckers/BreadCrumb)
+- Support: [MODX Community](https://community.modx.com/c/support/extras)
 
 ## Usage
 
