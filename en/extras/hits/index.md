@@ -84,7 +84,7 @@ Hits can be used be used with [getResources](http://rtfm.modx.com/display/ADDON/
 
 ``` php
 [[getResources?
-    &resources=`[[!Hits? &parents=`0` &depth=`10` &limit=`10` &outSeperator=`,`]]`
+    &resources=`[[!Hits? &parents=`0` &depth=`10` &limit=`10` &outputSeparator=`,`]]`
     ...
 ]]
 ```
