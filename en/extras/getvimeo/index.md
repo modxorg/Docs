@@ -55,7 +55,7 @@ Calls without the &channel, &id and &tpl properties specified will output nothin
 | tplAlt        | Name of a chunk serving as a template for every other Video.                                                                                                           |               | 1.0.0-pl         |
 | tplWrapper    | Name of a chunk serving as a wrapper template for the output. (NOTE: Does not work with &toPlaceholder. The placeholder where the items are inserted is `[[+output]]`) |               | 1.0.0-pl         |
 | toPlaceholder | If set, will assign the output to this placeholder instead of outputting it directly. (NOTE: Does not work with &tplWrapper)                                           |               | 1.0.0-pl         |
-| totalVar | Define the key of a placeholder set by getVimeo indicating the total number of Videos that would be returned, NOT considering the LIMIT value. | total | 1.1.0-pl |
+| totalVar      | Define the key of a placeholder set by getVimeo indicating the total number of Videos that would be returned, NOT considering the LIMIT value.                         | total         | 1.1.0-pl         |
 
 ### Available Placeholders
 
@@ -72,7 +72,7 @@ The placeholders available to your getVimeo template Chunks are mostly dependent
 | `[[+thumbnail_small]]`          | URL to a small version of the thumbnail  |                  |
 | `[[+thumbnail_medium]]`         | URL to a medium version of the thumbnail |                  |
 | `[[+thumbnail_large]]`          | URL to a large version of the thumbnail  |                  |
-| `[[+user_name]]`                | The user name of the video’s uploader   |                  |
+| `[[+user_name]]`                | The user name of the video’s uploader    |                  |
 | `[[+user_url]]`                 | The URL to the user profile              |                  |
 | `[[+upload_date]]`              | The date/time the video was uploaded on  |                  |
 | `[[+user_portrait_small]]`      | Small user portrait (30px)               |                  |
@@ -120,7 +120,7 @@ You CANNOT pass a placeholder name (&toPlaceholder) to a wrapper chunk (&tplWrap
 
 ## Using getPage for Pagination
 
-When combined with [getPage](/display/ADDON/getPage "getPage"), getVimeo allows you to do powerful and flexible pagination on your pages.
+When combined with [getPage](extras/getpage "getPage"), getVimeo allows you to do powerful and flexible pagination on your pages.
 
 Output a list of ALL videos from the Vimeo 'Staff Picks' Channel, using the 'vimeoTpl' chunk:
 

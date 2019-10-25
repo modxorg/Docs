@@ -20,7 +20,7 @@ Mihai retired from developping under Modx and the plugin is currently maintained
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](http://rtfm.modx.com/display/revolution20/Package+Management), or from the [MODX Extras Repository](http://modx.com/extras/package/sitemapfriend).
+It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the [MODX Extras Repository](http://modx.com/extras/package/sitemapfriend).
 
 ### Development and Bug reporting
 

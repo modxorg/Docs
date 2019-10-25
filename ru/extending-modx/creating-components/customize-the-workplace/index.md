@@ -145,3 +145,16 @@ print_r($modx->config);
 Итак, мы создали хостинг, создали проект, настроили IDE и синхронизацию файлов. Правильное рабочее окружение — очень важно, от него зависит комфорт и удовольствие при разработке.
 
 На следующем занятии мы склонируем [modExtra из репозитория](https://github.com/bezumkin/modExtra) и разберем его структуру.
+
+## Узнать больше
+
+* [Разбор структуры компонента, зачем нужны assets, core и остальные?](extending-modx/creating-components/component-structure)
+* [Основы Git и первый коммит заготовки компонента на Github](extending-modx/creating-components/git-basics/)
+* [Логика работы, схему и модель таблицы в БД](extending-modx/creating-components/work-logic)
+* [Сборка и установка первой версии пакета](extending-modx/creating-components/package-build)
+* [Пишем интерфейс: виджеты ExtJS и процессоры](extending-modx/creating-components/extjs-widgets)
+* [Пишем интерфейс: таблица подписок и окошко создания](extending-modx/creating-components/letter-queue-table)
+* [Пишем интерфейс: окно редактирования подписки](extending-modx/creating-components/subscription-edit-window)
+* [Сниппет Sendex и формы подписки\отписки](extending-modx/creating-components/snippet-sendex)
+* [Самостоятельная подписка\отписка пользователя](extending-modx/creating-components/subscription-table)
+* [Рассылка по расписанию](extending-modx/creating-components/scheduled-newsletter)

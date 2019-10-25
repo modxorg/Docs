@@ -60,8 +60,8 @@ From here, you will get a form asking you for your database information:
 You can create your database and user prior to this step. Make sure your database user is associated with the new database and the user is given permission for all privileges for that database.
 
 - Add in your database hostname, which is the URL at which your database is located. For most users, this will be 'localhost'.
-- Enter your database user name. On some hosts, your database username is prefixed with the site owner directory name such as siteOwner\_modxDatabase. In this case, the entire database name must be entered. Check your database tool in your control panel, or the database itself for such a prefix.
-- Your username may also be prefixed with the same site owner directory name. If so, you must prefix your username here the same. i.e. siteOwner\_databaseUserName.
+- Enter your database user name. On some hosts, your database username is prefixed with the site owner directory name such as `siteOwner_modxDatabase`. In this case, the entire database name must be entered. Check your database tool in your control panel, or the database itself for such a prefix.
+- Your username may also be prefixed with the same site owner directory name. If so, you must prefix your username here the same. i.e. `siteOwner_databaseUserName`.
 - Enter your password.
 - Also, if you want, you can specify a different table prefix here. This tells MODX to prefix the tables with this value - this is useful should you want to make multiple MODX installations on one database.
 - When finished, click the 'Test database server connection and view collations' link. Should you have any errors, they will show below. If you do have errors, check to make sure your database username and password are correct. Also, if your user does not have access to create a database, you might need to do that manually.
@@ -111,7 +111,7 @@ Once you're ready, and all the checks pass, click 'Install' to proceed.
 If you get a blank screen or cannot proceed after clicking 'Install', verify these steps:
 
 1. Make sure the directories "/core/packages","/core/cache", "/core/import", and "/core/export" are writable.
-2. Make sure your php.ini setting sets memory\_limit to 128M, and max\_execution\_time to 120
+2. Make sure your php.ini setting sets `memory_limit` to 128M, and `max_execution_time` to 120
 3. Create a blank file "/core/config/config.inc.php" and make it writable. **DO NOT COPY config.inc.tpl! Just make it a blank file!**
 4. Post a message in the [Revolution forum](http://modxcms.com/forums/index.php/board,280.0.html) regarding your issue. State your server setup and installation info, and we'll try and help you find a solution.
 
@@ -123,7 +123,7 @@ When install is successful, click 'Next' to proceed, and you'll be presented wit
 
 ![](setup-cleanup1.png)
 
-MODX recommends that you make sure to remove the setup/ directory after installing, to safeguard your site from anyone else trying to run setup on your site. You can do this by clicking the 'Check this to DELETE the setup directory from the filesystem.' checkbox.
+MODX recommends that you make sure to remove the `setup/` directory after installing, to safeguard your site from anyone else trying to run setup on your site. You can do this by clicking the 'Check this to DELETE the setup directory from the filesystem.' checkbox.
 
 **WARNING**: the setup application grants powerful and far-reaching control over your server. DO NOT leave it in place, after you've finished installing MODX.
 

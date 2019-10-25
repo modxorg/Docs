@@ -107,6 +107,6 @@ translation: "extras"
 
 Перейдите на страницу [https://modx.com/extras/](https://modx.com/extras/), войдите в свою учетную запись MODX (или создайте ее), затем нажмите кнопку внизу, чтобы «Отправить дополнение».
 
-Там вы можете загрузить MODX [транспортный пакет](http://rtfm.modx.com/display/revolution20/Transport+Packages "Transport Packages"). Это специальный вид zip-файла, который гарантирует, что ваше дополнение и все его компоненты правильно установлены в целевой системе. Чтобы создать его, вам нужно создать [скрипт сборки](http://rtfm.modx.com/display/revolution20/Creating+a+3rd+Party+Component+Build+Script "Creating a 3rd Party Component Build Script")
+Там вы можете загрузить MODX [транспортный пакет](extending-modx/transport-packages "Транспортный пакет"). Это специальный вид zip-файла, который гарантирует, что ваше дополнение и все его компоненты правильно установлены в целевой системе. Чтобы создать его, вам нужно создать [скрипт сборки](http://rtfm.modx.com/display/revolution20/Creating+a+3rd+Party+Component+Build+Script "Creating a 3rd Party Component Build Script")
 
 Все дополнения, размещенные на MODX.com, проходят базовый обзор; обработка вашего заявления может занять несколько дней.

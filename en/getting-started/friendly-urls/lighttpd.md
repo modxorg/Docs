@@ -16,9 +16,9 @@ lighttpd does not use the same system, or even same idea as Apache does for URL 
 
 First we need to make sure that the URL rewriting module is enabled.
 
-- So open your lighttpd.conf config file (In Linux it is usually located in /etc/lighttpd/lighttpd.conf)
+- So open your lighttpd.conf config file (In Linux it is usually located in `/etc/lighttpd/lighttpd.conf`)
 - Look for the directive server.modules.
-- Under this directive, look for an entry named "mod\_rewrite",.
+- Under this directive, look for an entry named `mod_rewrite`,.
 - By default it has a # in front of it. This is a comment symbol. Please remove the # from the line and save the file.
 
 Next we need to find the location in which to put the friendly URL code. So lets search for something that looks like this:

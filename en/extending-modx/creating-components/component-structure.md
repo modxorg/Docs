@@ -38,12 +38,12 @@ test.php can be safely removed.
 
 A regular package consists of 3 directories:
 
-`_build` — scripts to build the component into the transport package
-`assets` — files that must be accessible from outside
-`core` — files that are needed for the internal logic of the component
-`README.md` — The file with the general description of the component is needed for the future repository on GitHub
-`rename_it.php` — new script rename billet php
-`rename_it.sh` — old script rename perl
+- `_build` — scripts to build the component into the transport package
+- `assets` — files that must be accessible from outside
+- `core` — files that are needed for the internal logic of the component
+- `README.md` — The file with the general description of the component is needed for the future repository on GitHub
+- `rename_it.php` — new script rename billet php
+- `rename_it.sh` — old script rename perl
 
 ### Directory core
 

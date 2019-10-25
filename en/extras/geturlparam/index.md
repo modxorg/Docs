@@ -6,7 +6,7 @@ _old_uri: "revo/geturlparam"
 
 A simple snippet that will return a value passed through a URL parameter. The Parameter is sanitized and kept below a set size.
 
-Revolution makes it easy to pass [URL parameters](http://rtfm.modx.com/display/revolution20/Resources#Resources-URLParametersforResourceTags). This snippet makes it simple to use that URL parameter.
+Revolution makes it easy to pass [URL parameters](building-sites/resources). This snippet makes it simple to use that URL parameter.
 
 #### OPTIONS
 

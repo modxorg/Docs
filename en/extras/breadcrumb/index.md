@@ -19,6 +19,7 @@ As the original [Breadcrumbs](extras/breadcrumbs "Breadcrumbs"), this snippet wi
 
 | Version     | Date              | Author              | Product    |
 | ----------- | ----------------- | ------------------- | ---------- |
+| 1.4.4-pl    | October 1, 2019   | ------------------- | Revolution |
 | 1.4.3-pl    | March 7, 2015     | ben\_omycode & Jako | Revolution |
 | 1.4.2-pl    | August 12, 2014   | ben\_omycode        | Revolution |
 | 1.4.1-pl    | August 7, 2014    | ben\_omycode        | Revolution |
@@ -38,8 +39,8 @@ It can be downloaded from within the MODX Revolution manager via [Package Manage
 
 ### Support, Comments, Development and Bug Reporting
 
-**Github** : <https://github.com/benjamin-vauchel/breadcrumb>
-**Support/Comments** : <http://forums.modx.com/thread/71902/support-comments-for-breadcrumb>
+- Github: [BreadCrumb](https://github.com/JoshuaLuckers/BreadCrumb)
+- Support: [MODX Community](https://community.modx.com/c/support/extras)
 
 ## Usage
 
@@ -51,21 +52,21 @@ The BreadCrumb snippet can be called using the tag :
 
 ### Breadcrumb properties
 
-| Name                 | Description                                                                                                                                                                                                                                     | Default             | Version     |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----------- |
-| from                 | Resource ID from which breadcrumb is created                                                                                                                                                                                                    | 0                   | 1.1.0-pl    |
-| to                   | Resource ID whose breadcrumb is created                                                                                                                                                                                                         | current resource ID | 1.1.0-pl    |
-| exclude              | Comma separated list of resources to exclude from breadcumb                                                                                                                                                                                     |                     | 1.4.0-pl    |
-| maxCrumbs            | Max crumbs shown in breadcrumb. Max delimiter template can be customize with property maxCrumbTpl                                                                                                                                               | 100                 |             |
-| showHidden           | Show hidden resources in breadcrumb                                                                                                                                                                                                             | 1                   |             |
-| showContainer        | Show container resources in breadcrumb                                                                                                                                                                                                          | 1                   |             |
-| showUnPub            | Show unpublished resources in breadcrumb                                                                                                                                                                                                        | 1                   |             |
-| showCurrentCrumb     | Show current resource as a crumb                                                                                                                                                                                                                | 1                   |             |
-| showBreadCrumbAtHome | Show BreadCrumb on the home page                                                                                                                                                                                                                | 1                   |             |
-| showHomeCrumb        | Show the home page as a crumb. Since 1.4.0-pl, the home crumb usage was simplified. The &showHomeCrumb=1 property adds the home crumb at the start of breadcrumb and &showHomeCrumb=0 hides it if present.                                      | 1                   |             |
-| useWebLinkUrl        | Use the weblink url instead of the url to the weblink                                                                                                                                                                                           | 1                   | 1.0.0-beta3 |
-| direction            | Direction or breadcrumb : Left To Right (ltr) or Right To Left (rtl) for Arabic language for example                                                                                                                                            | ltr                 |             |
-| scheme               | Format for how URLs are generated. Possible values are (based on makeURL API call : [http://rtfm.modx.com/display/revolution20/modX.makeUrl](developing-in-modx/other-development-resources/class-reference/modx/modx.makeurl "modX.makeUrl")): |
+| Name                 | Description                                                                                                                                                                                                | Default             | Version     |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ----------- |
+| from                 | Resource ID from which breadcrumb is created                                                                                                                                                               | 0                   | 1.1.0-pl    |
+| to                   | Resource ID whose breadcrumb is created                                                                                                                                                                    | current resource ID | 1.1.0-pl    |
+| exclude              | Comma separated list of resources to exclude from breadcumb                                                                                                                                                |                     | 1.4.0-pl    |
+| maxCrumbs            | Max crumbs shown in breadcrumb. Max delimiter template can be customize with property maxCrumbTpl                                                                                                          | 100                 |             |
+| showHidden           | Show hidden resources in breadcrumb                                                                                                                                                                        | 1                   |             |
+| showContainer        | Show container resources in breadcrumb                                                                                                                                                                     | 1                   |             |
+| showUnPub            | Show unpublished resources in breadcrumb                                                                                                                                                                   | 1                   |             |
+| showCurrentCrumb     | Show current resource as a crumb                                                                                                                                                                           | 1                   |             |
+| showBreadCrumbAtHome | Show BreadCrumb on the home page                                                                                                                                                                           | 1                   |             |
+| showHomeCrumb        | Show the home page as a crumb. Since 1.4.0-pl, the home crumb usage was simplified. The &showHomeCrumb=1 property adds the home crumb at the start of breadcrumb and &showHomeCrumb=0 hides it if present. | 1                   |             |
+| useWebLinkUrl        | Use the weblink url instead of the url to the weblink                                                                                                                                                      | 1                   | 1.0.0-beta3 |
+| direction            | Direction or breadcrumb : Left To Right (ltr) or Right To Left (rtl) for Arabic language for example                                                                                                       | ltr                 |             |
+| scheme               | Format for how URLs are generated. Possible values are (based on makeURL API call : [modX.makeUrl](extending-modx/modx-class/reference/modx.makeurl "modX.makeUrl")):                                      |
 - -1 : (default value) URL is relative to site\_url
 - 0 : see http
 - 1 : see https

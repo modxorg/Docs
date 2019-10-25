@@ -75,4 +75,4 @@ The getImageList-snippet needs this field to work correctly.
 
 The best way to learn how to setup MIGXdb is, to walk thrue all steps in a little tutorial from creating the db-schema and a table to its management by a MIGXdb-TV.
 
-see [MIGXdb-Tutorials](/display/ADDON/MIGXdb.Tutorials "MIGXdb.Tutorials")
+see [MIGXdb-Tutorials](extras/migxdb/migxdb.tutorials "MIGXdb.Tutorials")

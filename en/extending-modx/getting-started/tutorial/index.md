@@ -104,7 +104,7 @@ foreach ($settings as $setting) {
 }
 ```
 
-Pretty easy, huh? We'll get into creating and removing objects, as well as more complex queries, such as inner joins, limits, sorting and others, in the \[next article\].
+Pretty easy, huh? We'll get into creating and removing objects, as well as more complex queries, such as inner joins, limits, sorting and others, in the [next article](extending-modx/getting-started/tutorial/part-2).
 
 ## See Also
 

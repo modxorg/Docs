@@ -13,7 +13,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-mediasource-and-m
 
 ## Requirements
 
- First off we will need to install [MIGX](display/ADDON/MIGX "MIGX") by Package Management.
+ First off we will need to install [MIGX](extras/migx "MIGX") by Package Management.
 
 ## Create the dynamic resource-specific media source
 

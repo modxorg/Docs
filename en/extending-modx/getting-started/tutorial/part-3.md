@@ -11,7 +11,7 @@ You can think of processors a bit like models in an MVC framework. MODX has a "m
 
 We'll look in-depth at the processor for creating a Chunk, and show you how MODX processors work.
 
-First off, let's assume that we're sending the following data into the POST array to the connector, which has the REQUEST "action" variable set to 'create', loading the proper create.php variable. In the JS, the connector is MODX.config.connectors\_url+'element/chunk.php, which resolves to (in our default setup):
+First off, let's assume that we're sending the following data into the POST array to the connector, which has the REQUEST "action" variable set to 'create', loading the proper create.php variable. In the JS, the connector is `MODX.config.connectors_url+'element/chunk.php`, which resolves to (in our default setup):
 
 > /modx/connectors/element/chunk.php
 
@@ -28,20 +28,18 @@ And now on to the processor:
  * @subpackage processors.element.chunk
  */
 $modx->lexicon->load('chunk');
-
 ```
 
 First off, we include the root index.php file for the processors, which does some slight variable checking and includes licensing. Then, we load the proper lexicon topic. In MODX Revolution, i18n language files are separated into smaller files by topic, (formerly called foci). Here, we want all language strings within the 'chunk' topic. This saves processing power by only loading relevant i18n strings.
 
 **About Topics**
- The lexicon _topics_ are similar to how the popular [gettext](http://www.gnu.org/software/gettext/) translation framework employs _contexts_ to distinguish meanings and provide subsets of translation files. We mention this only for newcomers who may be familiar with systems that use gettext (e.g. WordPress): remember that contexts are something very different in MODX.
+The lexicon _topics_ are similar to how the popular [gettext](http://www.gnu.org/software/gettext/) translation framework employs _contexts_ to distinguish meanings and provide subsets of translation files. We mention this only for newcomers who may be familiar with systems that use gettext (e.g. WordPress): remember that contexts are something very different in MODX.
 
 ``` php
 if (!$modx->hasPermission('new_chunk')) $modx->error->failure($modx->lexicon('permission_denied'));
-
 ```
 
-This checks to make sure the user has the correct permissions to run this processor. If not, then it sends a failure response back to the browser via $modx->error->failure(). The response is a string message translated via the lexicon.
+This checks to make sure the user has the correct permissions to run this processor. If not, then it sends a failure response back to the browser via `$modx->error->failure()`. The response is a string message translated via the lexicon.
 
 ``` php
 // default values
@@ -77,8 +75,8 @@ Okay, here, we allow dynamic Category creation. If the category specified exists
 ``` php
 // invoke OnBeforeChunkFormSave event
 $modx->invokeEvent('OnBeforeChunkFormSave',array(
-        'mode'  => modSystemEvent::MODE_NEW,
-        'id'    => $_POST['id'],
+    'mode'  => modSystemEvent::MODE_NEW,
+    'id'    => $_POST['id'],
 ));
 ```
 
@@ -94,7 +92,7 @@ if ($chunk->save() === false) {
 }
 ```
 
-Important: note the 2nd parameter of the newObject() method. This is basically the same as $obj->fromArray() - it allows you to specify an array of key-value pairs to assign to the new object.
+Important: note the 2nd parameter of the `newObject()` method. This is basically the same as `$obj->fromArray()` - it allows you to specify an array of key-value pairs to assign to the new object.
 
 ``` php
 // invoke OnChunkFormSave event
@@ -124,10 +122,10 @@ Let's simply and easily clear the cache. Pretty easy, huh?
 return $modx->error->success('',$chunk->get(array('id', 'name', 'description', 'locked', 'category')));
 ```
 
-Now, send a success response back to the browser. The parameters of $modx->error->success() are as follows:
+Now, send a success response back to the browser. The parameters of `$modx->error->success()` are as follows:
 
 1: $message - A string message to send back. Used to report details about a success (or failure).
- 2: $object - An xPDOObject or array of data fields to convert into JSON and send back to the browser.
+2: $object - An `xPDOObject` or array of data fields to convert into JSON and send back to the browser.
 
 So basically, here, we're sending back the Chunk information - minus the content, which could be big and unnecessary and complicated to send. This will allow the UI to handle the creation properly.
 

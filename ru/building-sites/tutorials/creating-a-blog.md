@@ -3,7 +3,7 @@ title: "Создание блога"
 translation: "building-sites/tutorials/creating-a-blog"
 ---
 
-## Требования:
+## Требования
 
 1. Требования расширения могут требовать использования FURL, и ".html" можно изменить на "/": Content -> Types -> HTML (.html) -> /
 

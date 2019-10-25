@@ -31,7 +31,7 @@ if ($template->save() === false) {
 }
 ```
 
-A row is never actually added to the database until the object's save() command is run.
+A row is never actually added to the database until the object's `save()` command is run.
 
 ## Removing an Object
 
@@ -41,21 +41,21 @@ To remove an object from the database, we use the **remove** command:
 $template->remove();
 ```
 
-This will also remove any composite relationships defined in the object's schema. In the previous example with modTemplates, these are the modTemplateVarTemplate objects, which map Templates to TVs. Those will cascade and be removed.
+This will also remove any composite relationships defined in the object's schema. In the previous example with `modTemplates`, these are the `modTemplateVarTemplate` objects, which map Templates to TVs. Those will cascade and be removed.
 
 ## More Complex Queries
 
-Okay, so pretty soon you are going to need to do some more complex queries than we've dealt with. That's where the xPDOQuery object comes in. This allows you to build abstract query objects that emulate more advanced SQL commands. So, lets try to grab the third 10 resources (so 21-30), ordered by menuindex, that are either 1) published and searchable, or 2) created by the user with username 'george123'.
+Okay, so pretty soon you are going to need to do some more complex queries than we've dealt with. That's where the `xPDOQuery` object comes in. This allows you to build abstract query objects that emulate more advanced SQL commands. So, lets try to grab the third 10 resources (so 21-30), ordered by menuindex, that are either 1) published and searchable, or 2) created by the user with username 'george123'.
 
 ``` php
 $c = $modx->newQuery('modResource');
 $c->leftJoin('modUser','PublishedBy');
 $c->where(array(
-        'modResource.published' => 1,
-        'modResource.searchable' => 1,
+    'modResource.published' => 1,
+    'modResource.searchable' => 1,
 ));
 $c->orCondition(array(
-        'PublishedBy.username' => 'george123',
+    'PublishedBy.username' => 'george123',
 ),null,1);
 $c->sortby('menuindex','ASC');
 $c->limit(10,20);

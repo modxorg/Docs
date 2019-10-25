@@ -55,10 +55,10 @@ Other reason that can cause FormIt silently failing is the lack of the "name" at
 
 ## See Also
 
-1. [FormIt.Hooks](extras/formit/FormIt.Hooks)
-2. [FormIt.Validators](extras/formit/FormIt.Validators)
-3. [FormIt.FormItRetriever](extras/formit/FormIt.FormItRetriever)
-4. [FormIt.Tutorials and Examples](extras/formit/formit.Tutorials-and-Examples)
-5. [FormIt.Roadmap](extras/formit/FormIt.Roadmap)
-6. [FormIt.FormItCountryOptions](extras/formit/FormIt.FormItCountryOptions)
-7. [FormIt.FormItStateOptions](extras/formit/FormIt.FormItStateOptions)
+1. [FormIt.Hooks](extras/formit/formit.hooks)
+2. [FormIt.Validators](extras/formit/formit.validators)
+3. [FormIt.FormItRetriever](extras/formit/formit.formitretriever)
+4. [FormIt.Tutorials and Examples](extras/formit/formit.tutorials-and-examples)
+5. [FormIt.Roadmap](extras/formit/formit.roadmap)
+6. [FormIt.FormItCountryOptions](extras/formit/formit.formitcountryoptions)
+7. [FormIt.FormItStateOptions](extras/formit/formit.formitstateoptions)

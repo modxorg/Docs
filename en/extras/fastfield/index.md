@@ -24,7 +24,7 @@ where resource\_id is an ID of necessary resource, eg. "123", and field is a res
 
 For usage with global arrays you must replace resource\_id by array name, eg. "post" and field by the name of a variable.
 
-In general, this plugin replaces [getResourceField](/display/ADDON/getResourceField) and [getReqParam](http://modx.com/extras/package/getreqparam) snippets.
+In general, this plugin replaces [getResourceField](extras/getresourcefield) and [getReqParam](http://modx.com/extras/package/getreqparam) snippets.
 
 ## Examples
 
@@ -58,7 +58,7 @@ Return TV image from the resource with id 10:
 [[#10.tv.image]]
 ```
 
-Return property articlesPerPage from the resource with id 1 of custom resource type [Articles](/display/ADDON/Articles)
+Return property articlesPerPage from the resource with id 1 of custom resource type [Articles](extras/articles)
 
 ``` php
 [[#1.properties.articles.articlesPerPage]]

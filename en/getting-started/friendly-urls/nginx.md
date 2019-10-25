@@ -37,9 +37,9 @@ server {
 
 ```
 
-FastCGI connectivity between nginx and PHP as expressed on the line "fastcgi\_pass 127.0.0.1:9000;" _**may need to be set**_ to something like "fastcgi\_pass unix:/var/run/php5-fpm.sock;"
+FastCGI connectivity between nginx and PHP as expressed on the line `fastcgi_pass 127.0.0.1:9000;` _**may need to be set**_ to something like `fastcgi_pass unix:/var/run/php5-fpm.sock;`
 
-This is _**codependent**_ on how the www.conf (usually located at /etc/php5/fpm/pool.d ) file is configured. How is the "listen" directive set up in _**that**_ file: TCP or unix socket (i.e. /var/run/php5-fpm.sock ) ?
+This is _**codependent**_ on how the www.conf (usually located at `/etc/php5/fpm/pool.d` ) file is configured. How is the "listen" directive set up in _**that**_ file: TCP or unix socket (i.e. `/var/run/php5-fpm.sock` ) ?
 
 The nginx config file needs to specify the _**same**_ connection in _**both**_ files! \[NB: theoretically unix sockets will be faster, but in such case both resources need to be on the _**same**_ host. TCP is useful in a distributed environment. \]
 
@@ -47,7 +47,7 @@ An alternative server configuration was suggested [in this forum topic](http://f
 
 Thanks for posting this, complete with FURL support :)
 
-Question: With **root /home/sites/example.com;** defined at the server level, is it necessary to include again in the first location block?
+Question: With **root /home/sites/example.com;** defined at the server level, is it necessary to include again in the first `location` block?
  My understanding is that nginx configs are inherited from the top down, and therefore it could be removed in this case...
 
-In some cases (my guts say older versions of nginx) you might need to comment out the fastcgi\_split\_path\_info directive.
+In some cases (my guts say older versions of nginx) you might need to comment out the `fastcgi_split_path_info` directive.

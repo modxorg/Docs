@@ -124,7 +124,7 @@ $resources = $modx->getCollection('modResource',$c);
 
 Чтобы узнать больше о xPDO, прочитайте следующее:
 
-- xPDO в пространстве [xPDO](/display/xPDO20/Home "Home")
+- xPDO в пространстве [xPDO](extending-modx/xpdo "xPDO")
 - [Получение объектов](extending-modx/xpdo/retrieving-objects "Retrieving Objects") в xPDO
 - Объект [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")
 
@@ -169,7 +169,7 @@ return "<p>и PHP!  Не пытайтесь делать так! Это плох
 Вы обнаружите, что MODX будет добавлять теги PHP в начало и конец сниппета, создавая неверный синтаксис, например:
 
 ```php
-<?php <?php //что-нибудь тут ?> ?>
+<?php //что-нибудь тут ?>
 ```
 
 Если вам нужно сделать что-то вроде этого, **используйте чанк** - выделите PHP в сниппет, загрузите его вывод в плейсхолдер с помощью функций-плейсхолдеров [MODX API](extending-modx/core-model/modx "modX") или обработайте сниппетом, и включите плейсхолдеры сниппета в чанк:

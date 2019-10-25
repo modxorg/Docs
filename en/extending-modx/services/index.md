@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/modx-services"
 
 A service is any object that is loaded via [$modx->getService](extending-modx/modx-class/reference/modx.getservice "modX.getService"). It can be a custom class provided by the user, or by MODX itself.
 
-Once an object is loaded with getService, it is accessible via $modx->(servicename). So, for example:
+Once an object is loaded with getService, it is accessible via `$modx->(servicename)`. So, for example:
 
 ``` php
 $modx->getService('twitter','myTwitter','/path/to/twitter/model/',array(  

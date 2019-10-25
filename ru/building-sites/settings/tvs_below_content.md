@@ -15,10 +15,10 @@ translation: "building-sites/settings/tvs_below_content"
 
 Все TV отображаются под контентом Resource, как и для MODX Evolution.
 
-![](tvs+below+content.jpg)
+![](/2.x/en/building-sites/settings/tvs+below+content.jpg)
 
 ### Нет
 
 TV появляются на собственной вкладке.
 
-![](tvs+not+below+content.jpg)
+![](/2.x/en/building-sites/settings/tvs+not+below+content.jpg)

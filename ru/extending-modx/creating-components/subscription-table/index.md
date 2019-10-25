@@ -377,3 +377,16 @@ public function beforeSet() {
 Ну и конечно не помешает документация по [Ext.grid.GridPanel](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.GridPanel), по [Ext.Window](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.Window) и по [Ext.form.Combo](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.form.ComboBox). Правда, нужно дойти до определённого уровня понимания предмета, чтобы она начала приносить пользу. Лично у меня это произошло далеко не сразу.
 
 На следующем занятии мы будем делать окошко с редактированием подписки и назначать ей юзеров.
+
+## Узнать больше
+
+* [Настройка рабочего места: MODXCloud + PhpStorm](extending-modx/creating-components/customize-the-workplace)
+* [Разбор структуры компонента, зачем нужны assets, core и остальные?](extending-modx/creating-components/component-structure)
+* [Основы Git и первый коммит заготовки компонента на Github](extending-modx/creating-components/git-basics/)
+* [Логика работы, схему и модель таблицы в БД](extending-modx/creating-components/work-logic)
+* [Сборка и установка первой версии пакета](extending-modx/creating-components/package-build)
+* [Пишем интерфейс: виджеты ExtJS и процессоры](extending-modx/creating-components/extjs-widgets)
+* [Пишем интерфейс: таблица подписок и окошко создания](extending-modx/creating-components/letter-queue-table)
+* [Пишем интерфейс: окно редактирования подписки](extending-modx/creating-components/subscription-edit-window)
+* [Сниппет Sendex и формы подписки\отписки](extending-modx/creating-components/snippet-sendex)
+* [Рассылка по расписанию](extending-modx/creating-components/scheduled-newsletter)

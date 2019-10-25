@@ -16,17 +16,16 @@ The following input types were removed:
 
 Many constants, variables and api methods have been long deprecated, marked for removal in 2.0 or 2.1 and are now finally removed from the MODX Revolution 2.1 codebase.
 
-| Item Removed                  | Notes on Replacement or Potential Workaround                        |
-| ----------------------------- | ------------------------------------------------------------------- |
-| IN\_PARSER\_MODE              | check context is not mgr                                            |
-| IN\_MANAGER\_MODE             | check context is mgr                                                |
-| IN\_MANAGER\_MODE             | check context is mgr                                                |
-| `$_SESSION["mgrValidated"]`   | modX->user->isAuthenticated('mgr')                                  |
-| `_SESSION["webValidated"]`    | modX->user->isAuthenticated('web')                                  |
-| `$_SESSION["mgrInternalKey"]` | modX->user->get('id') when modX->user->isAuthenticated('mgr')       |
-| `$_SESSION["webInternalKey"]` | modX->user->get('id') when modX->user->isAuthenticated('web')       |
-| `$_SESSION["mgrShortname"]`   | modX->user->get('username') when modX->user->isAuthenticated('mgr') |
-| `$_SESSION["webShortname"]`   | modX->user->get('username') when modX->user->isAuthenticated('web') |
+| Item Removed                  | Notes on Replacement or Potential Workaround                            |
+| ----------------------------- | ----------------------------------------------------------------------- |
+| IN\_PARSER\_MODE              | check context is not mgr                                                |
+| IN\_MANAGER\_MODE             | check context is mgr                                                    |
+| `$_SESSION["mgrValidated"]`   | `modX->user->isAuthenticated('mgr')`                                    |
+| `_SESSION["webValidated"]`    | `modX->user->isAuthenticated('web')`                                    |
+| `$_SESSION["mgrInternalKey"]` | `modX->user->get('id')` when `modX->user->isAuthenticated('mgr')`       |
+| `$_SESSION["webInternalKey"]` | `modX->user->get('id')` when `modX->user->isAuthenticated('web')`       |
+| `$_SESSION["mgrShortname"]`   | `modX->user->get('username')` when `modX->user->isAuthenticated('mgr')` |
+| `$_SESSION["webShortname"]`   | `modX->user->get('username')` when `modX->user->isAuthenticated('web')` |
 
 DBAPI: `modX->db`
 

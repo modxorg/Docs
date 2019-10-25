@@ -72,8 +72,6 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 
  Once your MODX Resource (i.e. page) is using the template that contains your template variable, you can add data to this attribute by clicking on the page's "Template Variables" tab.
 
-- - - - - -
-
 ## Advanced Usage
 
  IN PROGRESS ...
@@ -116,20 +114,20 @@ Viewing: [[+subsection]]
 
 1. [Creating a Template Variable](building-sites/elements/template-variables/step-by-step)
 2. [Bindings](building-sites/elements/template-variables/bindings)
-3. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
-4. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
-5. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
-6. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
-7. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
-8. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
-9. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
-10. [Template Variable Input Types](building-sites/elements/template-variables/input-types)
-11. [Template Variable Output Types](building-sites/elements/template-variables/output-types)
-12. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
-13. [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
-14. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
-15. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
-16. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
-17. [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
-18. [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
-19. [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)
+   1. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
+   2. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
+   3. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
+   4. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
+   5. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
+   6. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
+   7. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
+3. [Template Variable Input Types](building-sites/elements/template-variables/input-types)
+4. [Template Variable Output Types](building-sites/elements/template-variables/output-types)
+   1. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
+   2. [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
+   3. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
+   4. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
+   5. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
+5. [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
+6. [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
+7. [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)

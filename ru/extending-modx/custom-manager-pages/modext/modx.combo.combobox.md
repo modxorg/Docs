@@ -8,13 +8,13 @@ translation: extending-modx/custom-manager-pages/modext/modx.combo.combobox
 **Расширяет:** [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox)
 **Основные характеристики:** Удаленные и локальные хранилища данных; рендерер сетки.
 
-![](modext_combobox.png)
+![](/2.x/en/extending-modx/custom-manager-pages/modext/modext_combobox.png)
 
 Класс MODExt ComboBox содержит все функциональные возможности обычного Ext ComboBox. Он может быть заполнен удаленно массивом объектов JSON из коннектора (по умолчанию) или локально (используя базовый массив JavaScript или Ext ArrayStore с параметром конфигурации «mode», установленным в «local»).
 
 Уникальной особенностью класса MODx ComboBox является встроенный рендерер для сеток. Он позволяет разработчикам использовать ComboBox в качестве редактора сетки и автоматически обеспечивает правильное отображение displayValue в ячейке сетки:
 
-![](modext_combobox_grid.png)
+![](/2.x/en/extending-modx/custom-manager-pages/modext/modext_combobox_grid.png)
 
 ## Уникальные параметры
 
