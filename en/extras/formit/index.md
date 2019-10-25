@@ -20,7 +20,7 @@ It can be downloaded from within the MODX Revolution manager via [Package Manage
 
  FormIt is stored and developed in GitHub, and can be found here: <https://github.com/Sterc/FormIt>
 
- Bugs can be filed here: <https://github.com/Sterc/FormIt/issues>[](http://bugs.modx.com/projects/FormIt/issues)
+ Bugs can be filed here: <https://github.com/Sterc/FormIt/issues>
 
  API Documentation can also be found here: <http://api.modx.com/formit/>
 
