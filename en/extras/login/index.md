@@ -26,7 +26,7 @@ Bugs can be filed here: <https://github.com/modxcms/Login/issues>
 
 The Login Extra is composed of 10 Snippets:
 
-- [Login](extras/login/login. "Login.Login") - For login forms.
+- [Login](extras/login/login "Login.Login") - For login forms.
 - [UpdateProfile](extras/login/login.updateprofile "Login.UpdateProfile") - For adding front-end profile editing.
 - [Profile](extras/login/login.profile "Login.Profile") - Sets Profile fields as placeholders, which allows you to display a User's Profile.
 - [ForgotPassword](extras/login/login.forgotpassword "Login.ForgotPassword") - For retrieving lost passwords.
