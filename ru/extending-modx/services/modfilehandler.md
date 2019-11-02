@@ -13,7 +13,7 @@ translation: "extending-modx/services/modfilehandler"
 
 Основная идея, стоящая за `modFileHandler` заключается в его методе `make`. Когда прошел путь в `modFileHandler->make()`, он вернет либо `modDirectory` или `modFile` объекты, в зависимости от того, что было передано внутри него.
 
-Например, простой фрагмент, который делает объект `modDirectory` из переданного свойства "path" (по умолчанию "/www/test/") и затем удаляет каталог:
+Например, простой сниппет, который делает объект `modDirectory` из переданного свойства "path" (по умолчанию "/www/test/") и затем удаляет каталог:
 
 ``` php
 if (!isset($path)) $path = '/www/test/';

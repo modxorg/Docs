@@ -24,7 +24,7 @@ translation: "building-sites/client-proofing/form-customization/rules/new-tab"
 | ------------------- | ------------------------------------------- |
 | modx-resource-tabs  | Страница редактирования / создания ресурса. |
 | modx-chunk-tabs     | Страница чанка.                             |
-| modx-snippet-tabs   | Страница фрагмента.                         |
+| modx-snippet-tabs   | Страница сниппета.                          |
 | modx-plugin-tabs    | Страница плагинов.                          |
 | modx-template-tabs  | Страница шаблона.                           |
 | modx-tv-tabs        | Страница переменной шаблона.                |

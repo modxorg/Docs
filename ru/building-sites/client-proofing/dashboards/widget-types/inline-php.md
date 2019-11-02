@@ -3,7 +3,7 @@ title: "Inline PHP"
 translation: "building-sites/client-proofing/dashboards/widget-types/inline-php"
 ---
 
-Виджет Inline PHP работает как и [виджет Snippet](building-sites/client-proofing/dashboards/widget-types/snippet "Тип виджета на приборной панели - фрагмент"), за исключением того, что он запускает содержимое виджета, как будто это был Snippet.
+Виджет Inline PHP работает как и [виджет Snippet](building-sites/client-proofing/dashboards/widget-types/snippet "Тип виджета на приборной панели - сниппет"), за исключением того, что он запускает содержимое виджета, как будто это был Snippet.
 
 ## Использование
 
@@ -27,4 +27,4 @@ return 'Hello, World!';
 1. [Тип виджета панели инструментов - Файл](building-sites/client-proofing/dashboards/widget-types/file)
 2. [Тип виджета панели инструментов - HTML](building-sites/client-proofing/dashboards/widget-types/html)
 3. [Тип виджета Dashboard - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
-4. [Тип виджета на приборной панели - фрагмент](building-sites/client-proofing/dashboards/widget-types/snippet)
+4. [Тип виджета на приборной панели - сниппет](building-sites/client-proofing/dashboards/widget-types/snippet)
