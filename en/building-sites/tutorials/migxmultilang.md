@@ -114,11 +114,11 @@ Click on the "Create TVs" button that is right near the Edit button we pressed b
 
 If you now have a look in the Template Variables section of your Elements tree, you'll see the newly created TVs.
 
-- mml\_content
-- mml\_introtext
-- mml\_longtitle
-- mml\_menutitle
-- mml\_pagetitle
+- `mml_content`
+- `mml_introtext`
+- `mml_longtitle`
+- `mml_menutitle`
+- `mml_pagetitle`
 
 These are the migxMultiLang versions of the typical fields on a resource.
 
@@ -192,7 +192,7 @@ Note for newer versions of pdoTools:
 you will need this system-settings:
 
 pdoFetch.class: migxmultilang.mmlfetch
-pdofetch\_class\_path: {core\_path}components/migxmultilang/model/
+`pdofetch_class_path`: `{core_path}components/migxmultilang/model/`
 
 ## Step 5: Create Database Tables
 
