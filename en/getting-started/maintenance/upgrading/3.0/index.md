@@ -1,26 +1,24 @@
 ---
 title: "Upgrading from 2.x to 3.0"
-note: "This is a living document as MODX 3.0 is still in development."
+note: "This is a living document as MODX 3.0 is still in development. At this time it's not yet recommended to upgrade sites to MODX 3.0 unless you're a developer looking to test, and prepare, your extras. "
 sortorder: 1
 ---
 
 This document details the changes made between 2.x and 3.0 that may affect upgrades. It's not a full list of all changes (see the [changelog for that](https://github.com/modxcms/revolution/blob/3.x/core/docs/changelog.txt)), but rather a reference of (breaking) changes that may affect extras and sites. 
 
+## Upgrade to 3.0
+
 In general, you can follow the [standard upgrading process](getting-started/maintenance/upgrading) when upgrading to 3.0. It's recommended to first upgrade to the latest 2.7 release, which will log deprecated functionality your site depends on to the MODX log. 
 
-## Server Requirements
+After upgrading the core and upgrading your extras, you may encounter some breaking changes that need to be addressed in extras or custom code. 
 
-- PHP requirement increased from PHP 5.3.3 to PHP 7.0 [#14488](https://github.com/modxcms/revolution/pull/14488)
+- Important: [MODX 3.0 requires at least PHP 7.1](getting-started/maintenance/upgrading/3.0/requirements)
+- [A list of breaking changes can be found here](getting-started/maintenance/upgrading/3.0/breaking-changes), most notably [many core classes have been moved and renamed](getting-started/maintenance/upgrading/3.0/class-names). 
+- [The manager language is now dynamic](getting-started/maintenance/upgrading/3.0/manager-language)
+- [Various system settings have been removed or changed](getting-started/maintenance/upgrading/3.0/system-settings)
 
-## Removed functionality
+## Other notable changes and improvements
 
-- `modResource->contentType` field has been removed; that was replaced in Revolution 2.0 with a `content_type` field that maps to a `modContentType` instance. [#14057](https://github.com/modxcms/revolution/pull/14057)
-- `modParser095`, `modTranslate095`, and `modTranslator` have been removed. Those were utilities for migrating templates from Evolution syntax. [14133](https://github.com/modxcms/revolution/pull/14133)
-- `/manager/min/` directory has been removed; was unused since 2.5. [#12778](https://github.com/modxcms/revolution/pull/12778), [#13194](https://github.com/modxcms/revolution/pull/13194), [#14416](https://github.com/modxcms/revolution/pull/14416)
-- `@EVAL` binding has been removed from TVs [#13865](https://github.com/modxcms/revolution/pull/13865)
-
-## Notable changes and improvements
- 
 ### Manager/Interface
 
 - Manager has been redesigned.
@@ -42,23 +40,3 @@ In general, you can follow the [standard upgrading process](getting-started/main
 
 - Resources can now get an icon based on their content type [#14383](https://github.com/modxcms/revolution/pull/14383)
 - New output modifiers related to files: `dirname`, `basename`, `filename`, `extensions` [#14198](https://github.com/modxcms/revolution/pull/14198)
-
-## System Settings
-
-The default value for a number of settings have changed. These only apply to new installations, but may expose different behaviour by default on new installations of 3.0.
-
-- `automatic_template_assignment` defaults to `sibling` instead of `parent` [#14328](https://github.com/modxcms/revolution/pull/14328)
-- `enable_gravatar` is disabled on new installations [#14215](https://github.com/modxcms/revolution/pull/14215)
-- `manager_favicon_url` defaults to a new favicon, included in the MODX download, with the MODX logo. [#14324](https://github.com/modxcms/revolution/pull/14324)
-- `manager_time_format` uses 24hr format (`H:i`) instead of am/pm (`g:i a`) by default [#14325](https://github.com/modxcms/revolution/pull/14325)
-- `preserve_menuindex` defaults to `false` instead of `true` [#14328](https://github.com/modxcms/revolution/pull/14328)
-- `resource_tree_node_name_fallback` defaults to `alias` instead of `pagetitle` [#14328](https://github.com/modxcms/revolution/pull/14328)
-
-### Removed settings
-
-- `allow_tv_eval` [#13865](https://github.com/modxcms/revolution/pull/13865)
-- `compress_js_max_files`, `manager_js_zlib_output_compression`, which related to the old dynamic manager js minification [#13859](https://github.com/modxcms/revolution/pull/13859)
-- `upload_flash` [#14252](https://github.com/modxcms/revolution/pull/14252)
-- `manager_language` [#13786](https://github.com/modxcms/revolution/pull/13786), replaced by dynamic language switching [#14046](https://github.com/modxcms/revolution/pull/14046)
-
-
