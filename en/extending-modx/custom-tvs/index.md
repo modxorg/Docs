@@ -135,7 +135,6 @@ There we go - now when we render this in the front-end, it will display the ID o
 2. [Bindings](building-sites/elements/template-variables/bindings)
 3. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
 4. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
-5. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
 6. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
 7. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
 8. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)

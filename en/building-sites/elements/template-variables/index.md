@@ -54,7 +54,6 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables"
 2. [Bindings](building-sites/elements/template-variables/bindings)
      1. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
      2. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
-     3. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
      4. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
      5. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
      6. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
