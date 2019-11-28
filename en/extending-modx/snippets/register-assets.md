@@ -19,13 +19,13 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/adding-css-and-js-t
 
  This function lets you register any CSS file to the HEAD of the content by providing the URL in the method:
 
- ``` php
+``` php
 $modx->regClientCSS('assets/css/my-custom.css');
 ```
 
  Or, more correctly, you would use the **MODX\_ASSETS\_URL** constant so your Snippet or plugin would work even on a site that was configured to use a non-standard assets location.
 
- ``` php
+``` php
 $modx->regClientCSS(MODX_ASSETS_URL.'css/my-custom.css');
 ```
 
@@ -33,11 +33,11 @@ $modx->regClientCSS(MODX_ASSETS_URL.'css/my-custom.css');
 
  This function lets you register any custom JavaScript to the HEAD of the document:
 
- ``` php
+``` php
 $modx->regClientStartupScript('assets/js/site.js');
 ```
 
- ``` php
+``` php
 $modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
 ```
 
@@ -49,7 +49,7 @@ $modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
 
  This function is useful if you need to set some JS variables, or output some HTML into the HEAD:
 
- ``` php
+``` php
 $modx->regClientStartupHTMLBlock('
 <meta tag="here" />
 <script type="text/javascript">
@@ -65,11 +65,11 @@ var myCustomJSVar = 123;
 
  Similar to [regClientStartupScript](#AddingCSSandJStoYourPagesThroughSnippets-regClientStartupScript) except that it runs before the closing BODY tag:
 
- ``` php
+``` php
 $modx->regClientScript('assets/js/footer.js');
 ```
 
- ``` php
+``` php
 $modx->regClientScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
 ```
 
@@ -81,7 +81,7 @@ $modx->regClientScript('http://code.jquery.com/jquery-latest.min.js');
 
  Similar to [regClientStartupHTMLBlock](#AddingCSSandJStoYourPagesThroughSnippets-regClientStartupHTMLBlock) except that it runs before the closing BODY tag:
 
- ``` php
+``` php
 $modx->regClientHTMLBlock('
 <div>custom stuff here</div>
 <script type="text/javascript">

@@ -58,7 +58,7 @@ _old_uri: "revo/login/login.register"
 
  You can also do custom validators by creating a Snippet and using that as the validator name. You **must** specify its name in the customValidators property, or it will not be run. Example: We create a Snippet called 'equalTo' and on our field, we set:
 
- ``` php
+``` php
 <label>
   Boxes:<span class="error">[[+error.boxes]]</span>
   <input type="text" name="boxes" id="boxes" value="[[+boxes]]" />
@@ -67,7 +67,7 @@ _old_uri: "revo/login/login.register"
 
  And in our Register call:
 
- ``` php
+``` php
 [[!Register?
   &validate=`boxes:equalTo=^123^`
   &customValidators=`equalTo`
@@ -76,7 +76,7 @@ _old_uri: "revo/login/login.register"
 
  Now, in our snippet, our code would look like so:
 
- ``` php
+``` php
 <?php
 if ($scriptProperties['value'] !== $scriptProperties['param']) {
     return 'Value not equal to: '.$scriptProperties['param'];
@@ -106,13 +106,13 @@ return true;
 
  Assigning the User to specified User Groups is easy. Just specify a comma-separated list of either the name of the User Group or the User Group's ID in the "&usergroups" property. This example will assign the User to the "Marketing" and "Research" groups:
 
- ``` php
+``` php
 [[!Register? &usergroups=`Marketing,Research`]]
 ```
 
  Alternatively, you can also specify the Role you would like to add the user to in the User Group by adding it after the User Group name with a colon, like so:
 
- ``` php
+``` php
 [[!Register? &usergroups=`Marketing:Member,Research:Super User`]]
 ```
 
@@ -126,7 +126,7 @@ return true;
 
  An example Register snippet call with activation would look like this:
 
- ``` php
+``` php
 [[!Register?
    &activationEmailTpl=`myActivationEmailTpl`
    &activationEmailSubject=`Please activate your account!`
@@ -151,7 +151,7 @@ return true;
 
  Redirection is simple: just specify the ID of the Resource to redirect to in the "submittedResourceId" property. For example:
 
- ``` php
+``` php
 [[!Register? &submittedResourceId=`23`]]
 ```
 
@@ -161,7 +161,7 @@ return true;
 
  If the "submittedResourceId" property is not specified, Register will simply display a success message to the `[[+error.message]]` placeholder. This is the value of the "successMsg" property. For example:
 
- ``` php
+``` php
 [[!Register? &successMsg=`Thanks for registering!`]]
 ```
 

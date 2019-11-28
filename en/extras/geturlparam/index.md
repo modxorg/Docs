@@ -17,13 +17,13 @@ Revolution makes it easy to pass [URL parameters](building-sites/resources). Thi
 
 Send parameter
 
- ``` php
+``` php
 [[~10? &val=`5`]]
 ```
 
 Retrieve the value
 
- ``` php
+``` php
 [[!getUrlParam? &name=`val` &int=`1`]]
 ```
 

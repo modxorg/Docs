@@ -44,7 +44,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
  We'll create one called 'BlogPostTemplate'. Our content looks something like this:
 
- ``` php
+``` php
 [[$pageHeader]]
 <div id="content" class="blog-post">
   <h2 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h2>
@@ -95,7 +95,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
  Next we get into the "info" of the post - basically the author and tags for the post. Let's look in detail:
 
- ``` php
+``` php
 <p class="post-info">
 Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
 Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
@@ -119,7 +119,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Okay, now we're in the comments part of BlogPostTemplate. As you can see here, we're using [Quip](/extras/quip "Quip") for our commenting system. You could feel free to use another system, such as Disqus, here if you choose. For this tutorial, we'll go with Quip. Our code is as follows:
 
- ``` php
+``` php
 <div class="post-comments" id="comments">[[!Quip?
     &thread=`blog-post-[[*id]]`
     &replyResourceId=`19`
@@ -139,7 +139,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  In our Quip snippet call, we've specified a thread ID in the manner we've described above, and then set some settings. Our comments are going to be threaded (the default), so we need to specify a Resource ID where our Reply to Thread post is going to be (this is detailed in the [Quip Documentation](/extras/quip "Quip"). We recommend reading there for how to set it up.) with the 'replyResourceId' property. For a quick example, if your &replyResourceId points to page 123, then on page 123, you should put something like the following:
 
- ``` php
+``` php
 [[!QuipReply]]
 <br />
 [[!Quip]]
@@ -175,7 +175,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Make sure you don't use the BlogPostTemplate on these, and use instead your own Base Template. These pages will end up being a way to browse all posts within a certain Section. In the content of these Resources, go ahead and put the following:
 
- ``` php
+``` php
 [[!getResourcesTag?
   &element=`getResources`
   &elementClass=`modSnippet`
@@ -203,7 +203,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  In that call, we also have a property called 'tpl' which we set to 'blogPost'. This is our Chunk that shows each result of our blog post listings. It should contain this:
 
- ``` php
+``` php
 <div class="post">
     <h2 class="title"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></h2>
     <p class="post-info">Posted by [[+createdby:userinfo=`fullname`]]
@@ -237,7 +237,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  In our home page for our blog, which we've got in Resource ID 1 - our site start - we've got this:
 
- ``` php
+``` php
 [[!getResourcesTag?
   &elementClass=`modSnippet`
   &element=`getResources`
@@ -290,7 +290,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Go ahead and place a Resource in your root called 'Archives', and give it an alias of 'archives'. Then inside the content, place this:
 
- ``` php
+``` php
 [[!getPage?
   &element=`getArchives`
   &elementClass=`modSnippet`
@@ -322,7 +322,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Okay, so now you've got a Resource to browse archives in, but you need some way of generating the months that lists posts. That's actually pretty simple - somewhere on your site (say, in your footer, put this nice little bit:
 
- ``` php
+``` php
 <h3>Archives</h3>
 <ul>
 [[!Archivist? &target=`30` &parents=`34,35`]]
@@ -355,7 +355,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  First off, you'll want to place this call wherever you want the list to appear:
 
- ``` php
+``` php
 [[!getResources?
   &parents=`34,35`
   &hideContainers=`1`
@@ -369,7 +369,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Then, create the `latestPostsTpl` chunk, which you've specified with the 'tpl' call in the getResources snippet call. Put this as the chunk's content:
 
- ``` php
+``` php
 <li>
   <a href="[[~[[+id]]]]">[[+pagetitle]]</a>
   [[+publishedon:notempty=`<br /> - [[+publishedon:strtotime:date=`%b %d, %Y`]]`]]
@@ -386,13 +386,13 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  Place the call wherever you want the comment list to show:
 
- ``` php
+``` php
 [[!QuipLatestComments? &tpl=`latestCommentTpl`]]
 ```
 
  Now create a chunk called 'latestCommentTpl':
 
- ``` php
+``` php
 <li class="[[+cls]][[+alt]]">
     <a href="[[+url]]">[[+body:ellipsis=`[[+bodyLimit]]`]]</a>
     <br /><span class="author">by [[+name]]</span>
@@ -412,7 +412,7 @@ Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`
 
  This part is ridiculously easy; [tagLister](/extras/taglister "tagLister") does this for you. Just place this wherever you want:
 
- ``` php
+``` php
 [[!tagLister? &tv=`tags` &target=`1`]]
 ```
 

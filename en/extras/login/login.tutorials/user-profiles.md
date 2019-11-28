@@ -77,7 +77,7 @@ Create the page, and add it to the "Members Only" Resource Group.
 
 For the content, use something like this:
 
- ``` php
+``` php
 [[!Profile]]
 
 <p>Username: [[+username]]</p>
@@ -139,7 +139,7 @@ You'll probably want to put a link to this page on your Profile Editing page.
 
 Just to be thorough, you should put a link on your Members Home Page so users can view their profile, e.g.
 
- ``` php
+``` php
 ...
 <p><a href="[[~11]]">View Profile</a></p>
 ```

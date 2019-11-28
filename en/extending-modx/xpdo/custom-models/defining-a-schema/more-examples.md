@@ -63,7 +63,7 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 
  And here's the corresponding XML definitions:
 
- ``` xml
+``` xml
 <object class="Users" table="users" extends="xPDOObject">
         <field key="user_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="username" dbtype="varchar" precision="255" phptype="string" null="true" />
@@ -88,7 +88,7 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 
  If you were to access this data in a Snippet, you might do something like the following. This assumes that your package name is **one\_to\_one**
 
- ``` php
+``` php
 <?php
         $base_path = MODX_CORE_PATH . 'components/one_to_one/';
         $modx->addPackage('one_to_one',$base_path.'model/','');
@@ -125,7 +125,7 @@ CREATE TABLE `comments` (
 
 > XML Schema
 
- ``` xml
+``` xml
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
@@ -149,7 +149,7 @@ CREATE TABLE `comments` (
 
  Here is some sample Snippet code. It assumes your package name is **one\_to\_many**:
 
- ``` php
+``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/one_to_many/';
 $modx->addPackage('one_to_many',$base_path.'model/','');
@@ -196,7 +196,7 @@ CREATE TABLE `blogposts_tags` (
 
  Note the the following schema still contains the composite relationship for the Comments table.
 
- ``` xml
+``` xml
 <object class="Blogposts" table="blogposts" extends="xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
@@ -229,7 +229,7 @@ CREATE TABLE `blogposts_tags` (
 
  The following example assumes that the package is named **many\_to\_many**. Note that the logic displayed here traces the relationships precisely. In this example, we load up a blogpost, then trace it through the joining table to its tags. Arguably, this isn't any easier than writing a JOIN statement in MySQL.
 
- ``` php
+``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/many_to_many/';
 $modx->addPackage('many_to_many',$base_path.'model/','');
@@ -266,7 +266,7 @@ CREATE TABLE `categories` (
 
  In order to define this relationship in xPDO XML, we must add 2 aggregate relationships to the object:
 
- ``` xml
+``` xml
 <object class="Categories" table="categories" extends="xPDOObject">
         <field key="category_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="parent_id" dbtype="int" precision="11" phptype="integer" null="true" />
@@ -284,7 +284,7 @@ CREATE TABLE `categories` (
 
  In this example, our package is named **parent\_child\_example**. Notice that the **getMany** method relies on the alias defined for that relationship.
 
- ``` php
+``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/parent_child_example/';
 $modx->addPackage('parent_child_example',$base_path.'model/','');
@@ -307,7 +307,7 @@ return $output;
 
  The field alias definition is simply defined using the `alias` element.
 
- ``` xml
+``` xml
 <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
   <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
   <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -332,7 +332,7 @@ return $output;
 
  The alias _postalcode_ is now accessible as a field of an sfStore object in xPDO. It is simply a reference to the value of the _zip_ field.
 
- ``` php
+``` php
 <?php
 $modx->addPackage('storefinder', MODX_CORE_PATH . 'components/storefinder/model/');
 $output = '';

@@ -12,7 +12,7 @@ FormItStateOptions is an assistance snippet for [FormIt](extras/formit "FormIt")
 
 Simply add the Snippet to your form, in a `<select>` call:
 
- ``` php
+``` php
 <select name="state">
 [[!FormItStateOptions? &selected=`[[!+fi.state]]`]]
 </select>

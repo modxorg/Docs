@@ -161,7 +161,7 @@ translation: "extending-modx/plugins/system-events/"
 
   Создание события с использованием API MODX будет выглядеть примерно так:
 
- ``` php
+``` php
 $Event = $modx->newObject('modEvent');
 $Event->set('name', 'OnMyCustomEvent');
 $Event->set('service',1);
@@ -170,13 +170,13 @@ $Event->set('groupname', 'Custom');
 
  Тогда ваш код может вызвать событие по имени:
 
- ``` php
+``` php
 $modx->invokeEvent('OnMyCustomEvent', $options);
 ```
 
  Наконец, можно установить плагин для прослушивания этого события. В этом случае он может получать параметры, переданные ему.
 
- ``` php
+``` php
 //... TODO...
 ```
 

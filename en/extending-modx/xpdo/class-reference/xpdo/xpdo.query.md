@@ -15,7 +15,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.query"
 
  API Docs: see <http://php.net/manual/en/pdo.query.php>
 
- ``` php
+``` php
 xPDOObject|false query (string $statement)
 ```
 
@@ -41,7 +41,7 @@ xPDOObject|false query (string $statement)
 
  Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](/display/xPDO20/xPDO.getObject "xPDO.getObject") or [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
 
- ``` php
+``` php
 $result = $modx->query("SELECT * FROM modx_users WHERE id=1");
 if (!is_object($result)) {
    return 'No result!';
@@ -54,7 +54,7 @@ else {
 
  Use the **PDO::FETCH\_ASSOC** will force the result to be an associative array:
 
- ``` php
+``` php
 Array
 (
     [id] => 1
@@ -66,7 +66,7 @@ Array
 
  Without it, the results are a mix of an associative and a regular array:
 
- ``` php
+``` php
 Array
 (
     [id] => 1
@@ -87,7 +87,7 @@ Array
 
  PDO uses a lazy-loader, so you can't simply print out all of the results at once. Instead, you iterate over each result in the set using a loop, e.g.
 
- ``` php
+``` php
 $results = $xpdo->query("SELECT * FROM some_table");
 while ($r = $results->fetch(PDO::FETCH_ASSOC)) {
         print_r($r); exit;
@@ -98,7 +98,7 @@ while ($r = $results->fetch(PDO::FETCH_ASSOC)) {
 
  For single queries that rely on user input, you should [manually quote](http://php.net/manual/en/pdo.quote.php) the input strings.
 
- ``` php
+``` php
 $username = $modx->quote($username);
 $sql = "SELECT * FROM modx_users WHERE username = $username";
 $result = $modx->query($sql);
@@ -123,7 +123,7 @@ return print_r($row, true);
 
  Here's a simple query to fetch multiple rows from the database. Note that you would normally use [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to retrive data from MODX tables.
 
- ``` php
+``` php
 $output = '';
 $sql = "SELECT * FROM modx_users";
 foreach ($modx->query($sql) as $row) {
@@ -134,7 +134,7 @@ return $output;
 
  You can also use the fetchAll() method to return an array of arrays (i.e. a recordset):
 
- ``` php
+``` php
 $output = '';
 $sql = "SELECT * FROM modx_users";
 $result = $modx->query($sql);

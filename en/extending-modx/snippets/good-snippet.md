@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets/how-to-write-a-good
 
 ## Our Example Snippet
 
- ``` php
+``` php
 <?php
 /**
  * mySnippet
@@ -79,7 +79,7 @@ return $x * $y * $z;
 
  Set default properties in the snippet's Properties tab. You can read properties passed to the Snippet and set default properties using the **getOption** method. Remember that all Snippets are passed an array of $scriptProperties.
 
- ``` php
+``` php
 $headTpl = $modx->getOption('headTpl', $scriptProperties, 'myHeadTpl');
 ```
 
@@ -87,7 +87,7 @@ $headTpl = $modx->getOption('headTpl', $scriptProperties, 'myHeadTpl');
 
  Your Snippet should be as clean from HTML as possible. If you need to format the output, use a Chunk to format the output. This is an important architectural principle!
 
- ``` php
+``` php
 $props = array(
     'cow' => 'Moo',
     'pig' => 'Oink',
@@ -116,13 +116,13 @@ A cow says "[[+cow]]" and a pig says "[[+pig]]".
 
  MODX has a logging function: _use it_. See [xPDO::log()](extending-modx/xpdo/class-reference/xpdo/xpdo.log). If your users forgot to include a required property, log an error so your users will know it.
 
- ``` php
+``` php
 $modx->log(modX::LOG_LEVEL_ERROR, '[mySnippet] missing the &xyz property!');
 ```
 
  You can also log debugging info, which is useful for users who are debugging things. This will only be written to the error log when the log\_level system setting is set to the appropriate level.
 
- ``` php
+``` php
 $modx->log(modX::LOG_LEVEL_DEBUG, '[mySnippet] was called with the following properties: '.print_r($scriptProperties,true));
 ```
 

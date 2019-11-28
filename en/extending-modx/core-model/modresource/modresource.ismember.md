@@ -14,7 +14,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modresource.class.html#\\\\modResource::isMember()](http://api.modx.com/revolution/2.2/db_core_model_modx_modresource.class.html#\\modResource::isMember())
 
- ``` php
+``` php
 boolean isMember (mixed $groups)
 ```
 
@@ -22,25 +22,25 @@ boolean isMember (mixed $groups)
 
  Get a resource object:
 
- ``` php
+``` php
 $resource = $modx->getObject('modResource', array('id' => 2));
 ```
 
  See if the resource is a member of the 'Marketing' resource group:
 
- ``` php
+``` php
 $resource->isMember('Marketing');
 ```
 
  See if the resource is a member of EITHER the 'Marketing' or 'Finances' resource group.
 
- ``` php
+``` php
 $resource->isMember(array('Marketing', 'Finances'));
 ```
 
  See if the resource is a member of BOTH the 'Marketing' and 'Finances' resource group (by default it's enough to be in one resource group to get back true).
 
- ``` php
+``` php
 $resource->isMember(array('Marketing', 'Finances'), true);
 ```
 

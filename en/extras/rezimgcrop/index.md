@@ -33,54 +33,54 @@ _old_uri: "revo/rezimgcrop"
 
  Resize on width and cropping:
 
- ``` php
+``` php
 [[*tv.images:rezimgcrop=`r-150x,c-150x75`]]
 ```
 
  We do resize images, then cropping and a shade of gray:
 
- ``` php
+``` php
 [[*tv.images:rezimgcrop=`r-150x,c-150x75,g-`]]
 ```
 
  Resize min 150px:
 
- ``` php
+``` php
 [[*tv.images:rezimgcrop=`min-150`]]
 ```
 
  Resize min 150px, then cropping:
 
- ``` php
+``` php
 [[*tv.images:rezimgcrop=`min-150,c-150x150`]]
 ```
 
  Resize on width:
 
- ``` php
+``` php
 [[*tv.images:rezimgcrop=`r-150x`]]
 ```
 
  Resize on width:
 
- ``` php
+``` php
 [[*tv.images:rezimgcrop=`r-150x0`]]
 ```
 
  Resize on height:
 
- ``` php
+``` php
 [[*tv.images:rezimgcrop=`r-0x75`]]
 ```
 
  Resize on height:
 
- ``` php
+``` php
 [[*tv.images:rezimgcrop=`r-x75`]]
 ```
 
  If we specify two parameters of reduction of the image the image to decrease not proportionally, it is necessary to specify better width, then to apply crop.
 
- ``` php
+``` php
 [[*tv.images:rezimgcrop=`r-150x75`]]
 ```

@@ -8,7 +8,7 @@ This is an example usage of Gallery. This page will first show a list of Gallery
 
 Simply paste this code into your Resource.
 
- ``` php
+``` php
 [[!Gallery? &toPlaceholder=`gallery`]]
 [[!GalleryItem]]
 [[!GalleryAlbums? &toPlaceholder=`galleries`]]

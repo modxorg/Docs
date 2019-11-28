@@ -8,7 +8,7 @@ _old_uri: "revo/boilerx/bx-head-open"
 
 The bulk of the header, includes CSS and modernizr as well as meta tags.
 
- ``` html
+``` html
     <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
     <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
     <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -29,7 +29,7 @@ The bulk of the header, includes CSS and modernizr as well as meta tags.
 
 ## See Also
 
- ``` php
+``` php
 [[getResources@section?
     &parents=`1316`
     &context=`extras`

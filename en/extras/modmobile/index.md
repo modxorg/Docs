@@ -84,7 +84,7 @@ Using a separate mobile template
 3. Now just put a link in your templates a link to the mobile version and then to the full version like so:
   Note this is optional but highly recommended.
   
-  ``` html
+ ``` html
   <!-- Moblie Link -->
       <a href="[[~[[*id]]]]?modxSiteTemplate=mobile">Mobile</a>
       <!-- Back to Full site link -->

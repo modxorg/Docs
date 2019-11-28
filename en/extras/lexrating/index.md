@@ -59,7 +59,7 @@ To get the complete placeholders, just use **&toArray=`1`** to spit out the keys
 
 ## Example
 
- ``` php
+``` php
 [[LexRating?
 &name=`[[*pagetitle]]`
 &group=`articles`
@@ -69,7 +69,7 @@ To get the complete placeholders, just use **&toArray=`1`** to spit out the keys
 
 If you just want to display a rating of an item, use this
 
- ``` php
+``` php
 [[LexRating?
 &name=`[[*pagetitle]]`
 &group=`articles`
@@ -130,7 +130,7 @@ So any logged in user can not vote twice.
 
 On the quip's call, try to use this as an example:
 
- ``` php
+``` php
 [[LexRatingList? &group=`articles`]]
 ```
 
@@ -142,7 +142,7 @@ So any logged in user can not vote twice.
 
 On the quip's call, try to use this as an example:
 
- ``` php
+``` php
 <p>Total Rating:</p>
 [[!LexRatingList?
 &name=`threadNameHere`
@@ -165,7 +165,7 @@ On the quip's call, try to use this as an example:
 You can sync the connection between the thread's name (eg:**threadNameHere**) with the **LexRating** inside the other chunk, **lexrating.quipComment**
 Basically, it only adds up the **LexRating** call but with the proper properties to make this works:
 
- ``` php
+``` php
 [[!LexRating?
 &group=`Overall Rating`
 &name=`[[+thread]]`
@@ -184,7 +184,7 @@ Basically, it only adds up the **LexRating** call but with the proper properties
 
 What **&extended** does is only to identify each of the vote. You can change it anything, as long as it's the same with what the **lexrating.quip** needs for its placeholder.
 
- ``` php
+``` php
 data-rateit-extended="[[+lexrating.extended]]"
 ```
 
@@ -202,7 +202,7 @@ the duplicate of **lexrating.quipAddComment**
 
 the duplicate of **lexrating.quipComment**
 
- ``` php
+``` php
 &group=`Overall Rating` // <== replace this
 ```
 

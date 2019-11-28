@@ -25,13 +25,13 @@ _old_uri: "revo/login/login.tutorials/login.using-pre-and-post-hooks"
 
  The fields in the form are available in the snippet in the 'fields' via the Hooks API. Example:
 
- ``` php
+``` php
 $email = $hook->getValue('email');
 ```
 
  You can also grab all the values of the form:
 
- ``` php
+``` php
 $formFields = $hook->getValues();
 $email = $formFields['email'];
 ```
@@ -40,7 +40,7 @@ $email = $formFields['email'];
 
 #### Register
 
- ``` php
+``` php
 // A reference to the modUser object
 $user = $hook->getValue('register.user');
 // A reference to the modUserProfile object
@@ -51,7 +51,7 @@ $usergroups = $hook->getValue('register.usergroups');
 
 #### UpdateProfile
 
- ``` php
+``` php
 // A reference to the modUser object
 $user = $hook->getValue('updateprofile.user');
 // A reference to the modUserProfile object
@@ -64,7 +64,7 @@ $changed = $hook->getValue('updateprofile.usernameChanged');
 
  You can access properties passed to Snippets like Register and Login, like this:
 
- ``` php
+``` php
 $properties = $hook->login->controller->config;
 ```
 
@@ -74,7 +74,7 @@ $properties = $hook->login->controller->config;
 
  The $hook object is available in the snippet in the 'hook' member of the $scriptProperties array. It can be used to return generic error messages to the preHook from the snippet:
 
- ``` php
+``` php
 $errorMsg = 'User not found';
 $hook->addError('user',$errorMsg);
 return false;
@@ -88,7 +88,7 @@ return false;
 
  We'd create a snippet named 'hookComEmail', and use this code:
 
- ``` php
+``` php
 $message = 'Hi, a new User signed up: '.$hook->getValue('username')
  . ' with email '.$hook->getValue('email').'.';
 $modx->getService('mail', 'mail.modPHPMailer');
@@ -109,7 +109,7 @@ return true;
 
  Then we'd adjust our Register snippet call to load the postHook:
 
- ``` php
+``` php
 [[!Register? &postHooks=`hookComEmail`]]
 ```
 

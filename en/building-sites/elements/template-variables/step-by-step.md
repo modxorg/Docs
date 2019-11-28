@@ -90,13 +90,13 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 
  From there, we can specify any default properties we want for the TV. "How can you use properties on a TV?", you might ask. Well, let's say we're doing a textarea TV named "viewingSS". In our content, we've got this:
 
- ``` php
+``` php
 Viewing: [[+subsection]]
 ```
 
  We can add a list property 'subsection' to the grid, and then allow that property to be overridden via property sets. Say we created a Property Set named 'CarsSectionTVPS' (PS for Property Set). In it, we set the 'subsection' property to "Cars". We'd then attach it to the TV in our Resource, or Template, or whereever we are using it like so:
 
- ``` php
+``` php
 [[*viewingSS@CarsSectionTVPS]]
 ```
 
@@ -116,11 +116,10 @@ Viewing: [[+subsection]]
 2. [Bindings](building-sites/elements/template-variables/bindings)
    1. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
    2. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
-   3. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
-   4. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
-   5. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
-   6. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
-   7. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
+   3. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
+   4. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
+   5. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
+   6. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
 3. [Template Variable Input Types](building-sites/elements/template-variables/input-types)
 4. [Template Variable Output Types](building-sites/elements/template-variables/output-types)
    1. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)

@@ -8,7 +8,7 @@ _old_uri: "revo/loginza/tpl.loginza.logout"
 
 This is chunk for authenticated users. It is display full name of logged in user and link to exit.
 
- ``` php
+``` php
 Wellcome, [[+fullname]]!
 <br/><br/>
 <a href='[[+logout_url]]'>Logout</a>

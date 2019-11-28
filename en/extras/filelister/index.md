@@ -47,25 +47,25 @@ FileLister comes with one snippet:
 
 List all the files and directories in assets/downloads.
 
- ``` php
+``` php
 [[!FileLister? &path=`assets/downloads/`]]
 ```
 
 List only files in the 'assets/pdfs' directory.
 
- ``` php
+``` php
 [[!FileLister? &path=`assets/pdfs/`]]
 ```
 
 List all files and subdirectories in '/docs/marketing', but don't allow file viewing or downloading except for users logged in and in the 'Marketing' or 'CEO' groups.
 
- ``` php
+``` php
 [[!FileLister? &path=`/docs/marketing/` &allowDownloadGroups=`Marketing,CEO`]]
 ```
 
 Restrict file listings in 'assets/pdfs' to only PDF files:
 
- ``` php
+``` php
 [[!FileLister? &path=`assets/pdfs/` &hideDirectories=`1` &showExt=`pdf`]]
 ```
 

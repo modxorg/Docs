@@ -68,7 +68,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 
  Create a new file core/components/namespace/index.class.php, with the following contents:
 
- ``` php
+``` php
 <?php
 /**
  * The abstract Manager Controller.
@@ -136,7 +136,7 @@ class IndexManagerController extends NamespaceManagerController {
 
  Create a new file in core/components/namespace/controllers/home.class.php and give it the following contents:
 
- ``` php
+``` php
 <?php
 /**
  * The name of the controller is based on the action (home) and the
@@ -189,7 +189,7 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
 
  Here's an example of using placeholders in the smarty template file, assuming you called $this->setPlaceholder('foo', 'Bar');
 
- ``` html
+``` html
 <h2 class="modx-page-header">{$foo}</h2>
 ```
 

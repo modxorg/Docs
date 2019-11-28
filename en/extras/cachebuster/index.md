@@ -8,7 +8,7 @@ _old_uri: "revo/cachebuster"
 
 ## Using Cachebuster
 
- ``` html
+``` html
 <link rel="stylesheet" href="[[++assets_url]]css/styles.css?nc=[[$smartcache]]">
 ```
 
@@ -20,7 +20,7 @@ _old_uri: "revo/cachebuster"
 
  Cachebuster can set to a placeholder rather than returning a value. Simply pass the name of the placeholder you'd like to use as seen below.
 
- ``` php
+``` php
 [[$smartcache? &placeholder=`cbtime`]]
 ```
 
@@ -28,7 +28,7 @@ _old_uri: "revo/cachebuster"
 
  To append a URL parameter to the result use the param paramater as seen below.
 
- ``` php
+``` php
 [[$smartcache? &param=`?cb`]]
 ```
 

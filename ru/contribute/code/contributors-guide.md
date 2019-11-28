@@ -31,7 +31,7 @@ $ git remote add upstream -f http://github.com/modxcms/revolution.git
 
 Вы захотите пойти дальше и создать локальные ветви отслеживания для ветви основной версии и/или ветви вспомогательной версии, с которой вы хотите работать, из своего форка, a.k.a. `origin`:
 
- ``` php
+``` php
 $ git checkout -b 2.x origin/2.x
 Switched to a new branch "2.x"
 $ git checkout -b 2.4.x origin/2.4.x
@@ -40,7 +40,7 @@ Switched to a new branch "2.4.x"
 
 Чтобы ваши локальные ветви отслеживания для `2.x` и `2.4.x` были актуальными из репозитория `upstream`:
 
- ``` php
+``` php
 $ git fetch upstream
 $ git checkout 2.4.x
 Switched to branch "2.4.x"
@@ -72,7 +72,7 @@ Feature branches существуют в ветвях разработчика, 
 
 Когда вы начнете работать с новой функцией, отойдите от основной ветки, на которую вы нацелены, например, `2.x`.
 
- ``` php
+``` php
 $ git checkout -b my-bc-feature 2.x
 Switched to a new branch "my-bc-feature"
 ```
@@ -109,7 +109,7 @@ git push origin my-bc-feature
 
 Прежде чем вы начнете работать над написанием кода своего исправления, создайте новую ветку, посвященную вашей исходной цели (где XXXX - номер ошибки):
 
- ``` php
+``` php
 git checkout -b bug-XXXX 2.4.x
 ```
 
@@ -117,7 +117,7 @@ git checkout -b bug-XXXX 2.4.x
 
 После исправления ошибки вы можете зафиксировать свои изменения и перенести ветку исправления ошибок в форк:
 
- ``` php
+``` php
 git commit .
 git push origin bug-XXXX
 ```

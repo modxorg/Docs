@@ -43,7 +43,7 @@ MODX поставляется с гибким набором системных 
 
 В нашем примере Quip мы видим имя _setting\_quip.emailsFrom_ и описание _setting\_quip.emailsFrom\_desc_. Эти два значения соответствуют ключам в **$\_lang** массив внутри **default.inc.php**:
 
- ``` php
+``` php
 $_lang['setting_quip.emailsFrom'] = 'From Email';
 $_lang['setting_quip.emailsFrom_desc'] = 'The email address to send system emails from.';
 ```
@@ -54,7 +54,7 @@ $_lang['setting_quip.emailsFrom_desc'] = 'The email address to send system email
 
 Чтобы получить значение настройки из фрагмента, плагина или другого PHP-кода, вы используете [getOption](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") функции и передачи ей уникальный ключ для опции, например:
 
- ``` php
+``` php
 $siteStartId = $modx->getOption('site_start');
 ```
 
@@ -72,7 +72,7 @@ $siteStartId = $modx->getOption('site_start');
 
 Если мы хотим обновить настройки системы, мы используем мощный xPDO [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") функция. Итак, давайте вернемся к нашему поиску простой настройки сайта и сравним ее рядом с более подробным (и более гибким) аналогом xPDO:
 
- ``` php
+``` php
 echo $modx->getOption('site_name');
 // prints the same thing as this:
 $setting = $modx->getObject('modSystemSetting', 'site_name');
@@ -83,7 +83,7 @@ if ($setting) {
 
 Разница в том, что использование **getObject** извлекает объект из базы данных без кэширования, и мы можем делать с объектом гораздо больше вещей, включая сохранение этого объекта. Итак, вот как мы должны получить и сохранить настройки системы:
 
- ``` php
+``` php
 $setting = $modx->getObject('modSystemSetting', 'site_name');
 $setting->set('value', 'My New Site Name');
 $setting->save();
@@ -107,7 +107,7 @@ $modx->cacheManager->refresh($cacheRefreshOptions);
 
 Как только мы начнем извлекать _Objects_, которые представляют системные настройки, а не только их значение, мы можем увидеть все метаданные для любого заданного параметра (то есть все атрибуты). Посмотрите на этот код в качестве примера:
 
- ``` php
+``` php
 $Setting = $modx->getObject('modSystemSetting', 'site_name');
 print_r( $Setting->toArray() );
 /*
@@ -131,7 +131,7 @@ Array (
 
 Вот как мы можем получить все настройки из области «Почта»:
 
- ``` php
+``` php
 $relatedSettings = $modx->getCollection('modSystemSetting', array('area'=>'Mail'));
 foreach ( $relatedSettings as $Setting ) {
         print $Setting->get('value');
@@ -140,7 +140,7 @@ foreach ( $relatedSettings as $Setting ) {
 
 Это естественным образом приводит нас к одной из других особенностей xPDO: [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") объект. Мы можем использовать его для передачи более сложных критериев нашему **вызову getCollection**. Вот как мы можем получить все настройки, которые используют префикс «quip»:
 
- ``` php
+``` php
 $query = $modx->newQuery('modSystemSetting');
 $query->where(array('key:LIKE' => 'quip.%') );
 $relatedSettings = $modx->getCollection('modSystemSetting', $query);
@@ -155,7 +155,7 @@ foreach ( $relatedSettings as $Setting ) {
 
 Возможно, вы захотите создать Системные настройки программно, чтобы предоставить вашим пользователям более чистый UX / UI. В своем коде вы можете поместить что-то вроде следующего:
 
- ``` php
+``` php
 $MySetting = $modx->newObject('modSystemSetting');
 $MySetting->set('key', 'mykey');
 $MySetting->set('value', 'my_value');

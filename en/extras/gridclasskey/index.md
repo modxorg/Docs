@@ -100,7 +100,7 @@ _old_uri: "revo/gridclasskey"
 
  On this example, let's name it "authorListTV".
 
- ``` php
+``` php
 <?php
 $c = $modx->newQuery('modUser');
 $c->leftJoin('modUserProfile', 'Profile', 'Profile.internalKey = modUser.id');
@@ -151,7 +151,7 @@ return $output;
 
  On this example, let's name it "authorNameOF".
 
- ``` php
+``` php
 <?php
 $output = $input;
 if (is_numeric($input)) {
@@ -171,7 +171,7 @@ return $output;
 
  On this example, it's "../assets/components/customize-gck/js/mgr/widgets/customize-gck.js".
 
- ``` javascript
+``` javascript
 // Define the combo
 GridClassKey.combo.Users = function(config) {
     config = config || {};
@@ -257,7 +257,7 @@ Ext.onReady(function() {
 
  Now we need to create a connector for the combo, "assets/components/customize-gck/connector.php"
 
- ``` php
+``` php
 <?php
 // beware of the location of this file!
 require_once dirname(dirname(dirname(dirname(__FILE__)))) . '/config.core.php';
@@ -276,7 +276,7 @@ $modx->request->handleRequest(array(
 
  Now let's add the combo's processor, "core/components/customize-gck/processors/authors/getlist.class.php"
 
- ``` php
+``` php
 <?php
 class AuthorUsersGetListProcessor extends modObjectGetListProcessor {
     /** @var string $objectType The object "type", this will be used in various lexicon error strings */
@@ -347,7 +347,7 @@ return 'AuthorUsersGetListProcessor';
 
   **1. Component**
 
- ``` javascript
+``` javascript
 GridClassKey.combo.Availability = function (config) {
     config = config || {};
     Ext.applyIf(config, {

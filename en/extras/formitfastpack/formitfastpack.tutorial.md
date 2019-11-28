@@ -8,7 +8,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 
 ### 1. Call FormIt as usual, but use **field** snippets to manage the form HTML.
 
- ``` php
+``` php
 [[!FormIt?
     &hooks=`math,spam,email,redirect`
     &emailTpl=`ContactFormReport`
@@ -46,7 +46,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 
  A. Add the fiGenerateReport right before the "email" hook.
 
- ``` php
+``` php
 [[!FormIt?
   &hooks=`math,spam,fiGenerateReport,email,redirect`
   ...
@@ -55,7 +55,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 
  B. Add the &figrExcludedFields parameter to exclude the special fields used by the math and spam fields from the email report.
 
- ``` php
+``` php
 [[!FormIt?
   &hooks=`math,spam,fiGenerateReport,email,redirect`
   &figrExcludedFields=`op1,op2,operator,math`
@@ -64,7 +64,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 
  C. In your emailTpl template chunk (called "ContactFormReport" in the above example, use the figr\_values placeholder to output a dynamic list of fields:
 
- ``` php
+``` php
 <p>A <strong>[[++site_name]]</strong> contact form submission was sent from the <strong>[[*pagetitle]]</strong> page:</p>
 [[+figr_values]]
 ```
@@ -75,7 +75,7 @@ _old_uri: "revo/formitfastpack/formitfastpack.tutorial"
 
  Important: the tpl and outer\_tpl chunks use special comments to separate the HTML for different field types. Make sure each type is surrounded above and below by an HTML comment of the type name as shown below, or you might get more output than you expected!
 
- ``` php
+``` php
 <!-- default -->
 <div class="[[+outer_class:default=`field_wrap`]] [[+type]]_wrap" id="[[+name]]_wrap">
 <label for="[[+name]]" title="[[+name:replace=`_== `:ucwords]]">[[+label:default=`[[+name:replace=`_== `:ucwords]]`]][[+req:notempty=` *`]]</label>

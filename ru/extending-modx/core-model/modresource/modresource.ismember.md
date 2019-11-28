@@ -13,7 +13,7 @@ translation: "extending-modx/core-model/modresource/modresource.ismember"
 
  API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modresource.class.html#\\\\modResource::isMember()](http://api.modx.com/revolution/2.2/db_core_model_modx_modresource.class.html#\\modResource::isMember())
 
- ``` php
+``` php
 boolean isMember (mixed $groups)
 ```
 
@@ -21,25 +21,25 @@ boolean isMember (mixed $groups)
 
 Получить объект ресурса:
 
- ``` php
+``` php
 $resource = $modx->getObject('modResource', array('id' => 2));
 ```
 
 Посмотрите, является ли ресурс членом группы ресурсов 'Marketing':
 
- ``` php
+``` php
 $resource->isMember('Marketing');
 ```
 
 Посмотрите, является ли ресурс членом ЛИБО группы ресурсов 'Marketing' или 'Finances'.
 
- ``` php
+``` php
 $resource->isMember(array('Marketing', 'Finances'));
 ```
 
 Посмотрите, является ли ресурс членом BOTH и группы ресурсов 'Marketing' и 'Finances' (по умолчанию достаточно быть в одной группе ресурсов, чтобы вернуть true).
 
- ``` php
+``` php
 $resource->isMember(array('Marketing', 'Finances'), true);
 ```
 

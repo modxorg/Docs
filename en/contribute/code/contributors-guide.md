@@ -24,7 +24,7 @@ _old_uri: "contribute/using-git-and-github/community-contributors-guide"
 
  MODX contributors must work directly with their private forks on GitHub. Here is the suggested way to prepare your local repository as a developer for contributing back to any MODX project:
 
- ``` php
+``` php
 git clone git@github.com:YourGitUsername/revolution.git
 cd revolution
 git remote add upstream -f http://github.com/modxcms/revolution.git
@@ -43,7 +43,7 @@ Switched to a new branch "2.4.x"
 
  To keep your local tracking branches for `2.x` and `2.4.x` up-to-date from the `upstream` repository:
 
- ``` php
+``` php
 $ git fetch upstream
 $ git checkout 2.4.x
 Switched to branch "2.4.x"
@@ -74,7 +74,7 @@ $ git push origin 2.4.x 2.x
 
  When starting work on a new feature, branch off from the major-version branch you are targeting, e.g. `2.x`.
 
- ``` php
+``` php
 $ git checkout -b my-bc-feature 2.x
 Switched to a new branch "my-bc-feature"
 ```
@@ -83,7 +83,7 @@ Switched to a new branch "my-bc-feature"
 
  Once you have completed development of a feature on your branch, you should first make sure your work is replayed over the latest updates from `develop`:
 
- ``` php
+``` php
 $ git fetch upstream
 $ git checkout 2.x
 Switched to branch "2.x"
@@ -111,7 +111,7 @@ git push origin my-bc-feature
 
  Before you begin work on coding your fix, create a new branch devoted to your upstream target (where XXXX is the bug number):
 
- ``` php
+``` php
 git checkout -b bug-XXXX 2.4.x
 ```
 
@@ -119,7 +119,7 @@ git checkout -b bug-XXXX 2.4.x
 
  Once the bug is fixed, you can commit your changes and push your bugfix branch to your fork:
 
- ``` php
+``` php
 git commit .
 git push origin bug-XXXX
 ```

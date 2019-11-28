@@ -12,7 +12,7 @@ This snippet displays a search form for AdvSearch.
 
 Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [AdvSearch](extras/advsearch/advsearch "AdvSearch.AdvSearch") snippet call is located (which is where the results will display).
 
- ``` php
+``` php
 [[!AdvSearchForm? &landing=`82`]]
 ```
 
@@ -64,13 +64,13 @@ There is 1 chunk that is processed in AdvSearchForm. Its corresponding AdvSearch
 
 Display the search form, without but search with POST instead of GET:
 
- ``` php
+``` php
 [[AdvSearchForm? &method=`POST`]]
 ```
 
 Set the search form to a 'search.form' placeholder, specify a landing page on Resource 82, and use a custom Chunk called 'MySearchForm' for the form template:
 
- ``` php
+``` php
 [[AdvSearchForm? &tpl=`MySearchForm` &landing=`82` &toPlaceholder=`search.form`]]
 
 <h2>Search</h2>
@@ -79,11 +79,11 @@ Set the search form to a 'search.form' placeholder, specify a landing page on Re
 
 Display two search forms, the first one (as0) without the help link and the second one (as1) without the clearDefault feature:
 
- ``` php
+``` php
 [[AdvSearchForm? &help=`0`]]
 ```
 
- ``` php
+``` php
 [[AdvSearchForm? &asId=`as1` &clearDefault=`0`]]
 ```
 

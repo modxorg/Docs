@@ -47,7 +47,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  You can also do more complex queries, like so:
 
- ``` php
+``` php
 $query = $xpdo->newQuery('Person');
 $query->where(array(
     array(
@@ -63,7 +63,7 @@ $query->where(array(
 
  translates to:
 
- ``` php
+``` php
 (
   (      `Person`.`first_name` = 'Bob'
     OR ( `Person`.`last_name` LIKE 'Boblablaw' AND `Person`.`gender` = 'M' )
@@ -76,7 +76,7 @@ $query->where(array(
 
 ### Valid Operators
 
- ``` php
+``` php
 $c = $xpdo->newQuery('Person');
 $c->where(array(
   'name:=' => 'John', /* Equal To */
@@ -95,7 +95,7 @@ $c->where(array(
 
  Sometimes you need to see what query is actually being generated. You can do this by preparing the query and outputting it using the **toSQL()** method.
 
- ``` php
+``` php
 $c = $xpdo->newQuery('Person');
 // add filters here...
 $c->prepare();

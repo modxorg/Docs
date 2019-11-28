@@ -44,7 +44,7 @@ For example, if we look at Quip's `[[++quip.emailsFrom]]` setting, we see that i
 
 In our Quip example, we see a name of _setting\_quip.emailsFrom_ and a description of _setting\_quip.emailsFrom\_desc_. These two values correspond to keys in the **$\_lang** array inside of **default.inc.php**:
 
- ``` php
+``` php
 $_lang['setting_quip.emailsFrom'] = 'From Email';
 $_lang['setting_quip.emailsFrom_desc'] = 'The email address to send system emails from.';
 ```
@@ -55,7 +55,7 @@ We encourage you to right-click an existing system setting and choose to "Update
 
 To get a setting value from a snippet, plugin, or other PHP-code, you use the [getOption](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") function and passing it the unique key for the option, for example:
 
- ``` php
+``` php
 $siteStartId = $modx->getOption('site_start');
 ```
 
@@ -73,7 +73,7 @@ This is for architectural reasons: the system settings are meant to defined as _
 
 If we want to update a system setting, we use the powerful xPDO [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") function. So let's revisit our retrieval of a simple site setting and compare it side by side with the more verbose (and more flexible) xPDO counterpart:
 
- ``` php
+``` php
 echo $modx->getOption('site_name');
 // prints the same thing as this:
 $setting = $modx->getObject('modSystemSetting', 'site_name');
@@ -84,7 +84,7 @@ if ($setting) {
 
 The difference is that using **getObject** retrieves the object from the database uncached, and we can do far more things with an object, including saving that object. So here's how we would retrieve and save a system setting:
 
- ``` php
+``` php
 $setting = $modx->getObject('modSystemSetting', 'site_name');
 $setting->set('value', 'My New Site Name');
 $setting->save();
@@ -108,7 +108,7 @@ In WordPress, the comparable API function is **update\_option()**.
 
 Once we start retrieving the _Objects_ that represent the system settings instead of just their value, we can see all of the meta data for any given setting (i.e. all of the attributes). Look at this code as an example:
 
- ``` php
+``` php
 $Setting = $modx->getObject('modSystemSetting', 'site_name');
 print_r( $Setting->toArray() );
 /*
@@ -132,7 +132,7 @@ If you have noticed in the GUI above, MODX allows for some very logical grouping
 
 Here's how we would pull up all settings from the 'Mail' area:
 
- ``` php
+``` php
 $relatedSettings = $modx->getCollection('modSystemSetting', array('area'=>'Mail'));
 foreach ( $relatedSettings as $Setting ) {
         print $Setting->get('value');
@@ -141,7 +141,7 @@ foreach ( $relatedSettings as $Setting ) {
 
 This leads us naturally to one of xPDO's other features: the [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") object. We can use it to pass more complex criteria to our **getCollection call**. Here's how we would pull up all settings that used the prefix of "quip.":
 
- ``` php
+``` php
 $query = $modx->newQuery('modSystemSetting');
 $query->where(array('key:LIKE' => 'quip.%') );
 $relatedSettings = $modx->getCollection('modSystemSetting', $query);
@@ -156,7 +156,7 @@ You may not have been expecting an introduction to xPDO while you were simply tr
 
 You may desire to create a System Setting programmatically in order to provide your users with a cleaner UX/UI. In your code, you can put something like the following:
 
- ``` php
+``` php
 $MySetting = $modx->newObject('modSystemSetting');
 $MySetting->set('key', 'mykey');
 $MySetting->set('value', 'my_value');

@@ -27,7 +27,7 @@ This Snippet does nothing by itself, but rather depends on another Snippet to re
 
 The getPage snippet can be called using the tag:
 
- ``` php
+``` php
 [[!getPage?
       &elementClass=`modSnippet`
       &element=`getResources`
@@ -116,14 +116,14 @@ You can NOT modify these tpl properties from the snippet tag directly, due to th
 
 Page a list of all child Resources of the current Resource, using a chunk called 'myRowTpl':
 
- ``` php
+``` php
 [[!getPage? &element=`getResources` &parents=`[[*id]]` &tpl=`myRowTpl`]]
 <div class="pageNav">[[!+page.nav]]</div>
 ```
 
 Page all resources beneath the Resource with ID '5', with the exception of resource 10, using a chunk called 'myRowTpl':
 
- ``` php
+``` php
 [[!getPage? &element=`getResources` &parents=`5` &resources=`-10` &tpl=`myRowTpl`]]
 <div class="pageNav">[[!+page.nav]]</div>
 ```

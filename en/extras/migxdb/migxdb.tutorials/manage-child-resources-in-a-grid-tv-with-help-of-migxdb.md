@@ -165,7 +165,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.manage-child-resources-in-a-grid-
 
 >/core/components/migx/configs/childstutorial.config.inc.php
 
- ``` php
+``` php
 <?php
 $this->customconfigs['includeTVs'] = 1;
 $this->customconfigs['includeTVList'] = 'price,images,categories';
@@ -216,7 +216,7 @@ $this->customconfigs['includeTVList'] = 'price,images,categories';
  filter type: combobox
  getlist-where:
 
- ``` php
+``` php
 tvFilter::categories=inArray=[[+category]]
 ```
 

@@ -14,7 +14,7 @@ Login does it quite simply: using the &useExtended property on the [Register](ex
 
 Basically, to start using extended fields, all you have to do is add a form field to your [Register](extras/login/login.register "Login.Register") and [UpdateProfile](extras/login/login.updateprofile "Login.UpdateProfile") forms. That's it. The snippets will automatically then check for any fields in the POST that aren't in the User table, and if found, store them as extended (custom) fields. They will then be expanded when using the [Profile](extras/login/login.profile "Login.Profile") snippet. For example, a Register form that has this in it:
 
- ``` php
+``` php
 [[!Register? &submitVar=`go`]]
 ...
 <label>Favorite Color:
@@ -31,7 +31,7 @@ Login won't store the field named in the &submitVar property. In this example, "
 
 Then, you can use [Profile](extras/login/login.profile "Login.Profile") to display this data somewhere on a page:
 
- ``` php
+``` php
 [[!Profile]]
 
 <p>[[+username]]'s Favorite Color: [[+color]]</p>
@@ -39,7 +39,7 @@ Then, you can use [Profile](extras/login/login.profile "Login.Profile") to displ
 
 Or even when using the [UpdateProfile](extras/login/login.updateprofile "Login.UpdateProfile") snippet:
 
- ``` php
+``` php
 [[!UpdateProfile]]
 ...
 <label>Favorite Color:
@@ -52,7 +52,7 @@ Simple as that!
 
 ### Directly Creating and Populating Attribute Containers
 
- ``` php
+``` php
   <input type="hidden" name="january[Spaces]" value="" />
   <input type="hidden" name="january[Tables]" value="" />
   <input type="hidden" name="january[Chairs]" value="" />
@@ -66,7 +66,7 @@ Simple as that!
 
 Both the [Register](extras/login/login.register "Login.Register") and [UpdateProfile](extras/login/login.updateprofile "Login.UpdateProfile") snippets have a property called "excludeExtended" that takes a comma-separated list of field names to exclude from being saved as extended fields. So, say you had fields named 'nospam' and 'customProp', that you didn't want to be saved as custom fields in Register. You'd simply call Register like so:
 
- ``` php
+``` php
 [[!Register? &excludeExtended=`nospam,customProp`]]
 ```
 
@@ -80,7 +80,7 @@ Also, if you have an extended field in a container, such as in this example, whe
 
 You can access them with the . syntax:
 
- ``` php
+``` php
 [[!Profile]]
 
 Value of nested attribute: [[+test.below]]

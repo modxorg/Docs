@@ -24,7 +24,7 @@ The Beta Provider has been discontinued. Please use the official MODX.com reposi
 
 Clone the repo at <https://github.com/Mark-H/HandyMan> to your local host.
 
- ``` php
+``` php
 git clone https://github.com/Mark-H/HandyMan.git
 ```
 

@@ -24,7 +24,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/extension_packag
 
  You can make use of the
 
- ``` php
+``` php
 [[++core_path]]
 ```
 
@@ -44,13 +44,13 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/extension_packag
 
 ### addExtensionPackage
 
- ``` php
+``` php
 boolean addExtensionPackage ([string $pkg = ''], [string $modelpath = ''], [array $options = array()])
 ```
 
  The $pkg argument really specifies a subfolder in the named model directory. In most packages, this name is the same as the package's namespace, but other packages may specify multiple sub-folders in their model. Note that the $options array can specify a "tablePrefix" key, e.g.
 
- ``` php
+``` php
 $modx->addExtensionPackage('mypkg', '/path/to/core/components/mypkg/model/', array('tablePrefix'=>'mypre_'));
 ```
 
@@ -58,6 +58,6 @@ $modx->addExtensionPackage('mypkg', '/path/to/core/components/mypkg/model/', arr
 
 When it's time to clean up, remove your node from the **extension\_packages** array using this convenience function:
 
- ``` php
+``` php
 boolean removeExtensionPackage (string $pkg = '')
 ```

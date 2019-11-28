@@ -24,7 +24,7 @@ You can change user-specific settings only _after_ you've created the user. The 
 
 When a user is logged into the frontend of your site, their username and ID can be accessed by the following [Properties](building-sites/properties-and-property-sets "Properties and Property Sets"):
 
- ``` php
+``` php
 [[+modx.user.id]] - Prints the ID
 [[+modx.user.username]] - Prints the username
 ```

@@ -67,7 +67,7 @@ The properties below can be used to customize behavior in one or more of the ste
 | tvSortDir          | 3       | Sort direction for the tvSort property, used in collecting the sample.                                                                                                                                                                                        | desc                                                                                                                             |
 | tplOuter           | 5       | Chunk name to use as outer (or wrapper) template. The `[[+wrapper]]` placeholder will be filled with the individual rows, separated by whatever is in the rowSeparator property (see below). Placeholders you can use are `[[+count]]` and `[[+wrapper]]`.    |
 
- ``` php
+``` php
 <h3>[[%getrelated.pagesfound? &namespace=`getrelated` &count=`[[+count]]`]]</h3>
 <ul>
   [[+wrapper]]
@@ -79,7 +79,7 @@ The placeholders you can use include the fields in your &fields property (minus 
 
 Default chunk (stored as file in core/components/getrelated/elements/chunks/):
 
- ``` php
+``` php
 <li>
   <a href="[[~[[+id]]]]" title="[[+longtitle:default=`[[+pagetitle]]`]]">
     [[+longtitle:default=`[[+pagetitle]]`]] ([[+rank]])
@@ -98,7 +98,7 @@ There is absolutely no valid reason that I can think of to call this snippet unc
 
 The minimum snippet call for getRelated to use is just the tag itself.
 
- ``` php
+``` php
 [[getRelated]]
 ```
 

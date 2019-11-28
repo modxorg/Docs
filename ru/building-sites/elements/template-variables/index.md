@@ -19,7 +19,7 @@ translation: "building-sites/elements/template-variables"
 
 Допустим, у нас есть TV под названием bio, это текстовое поле TV, которое мы создали. Мы присвоили его нашему шаблону «Страницы биографии» и хотим показать его на нашей странице. Для этого мы просто поместим этот тег в наши шаблоны:
 
- ``` php
+``` php
 [[*bio]]
 ```
 
@@ -33,7 +33,7 @@ TVs также могут иметь свойства. Скажем, у вас �
 
 Вы можете заполнить данные с помощью вызова:
 
- ``` php
+``` php
 [[*intromsg?name=`George` &messageCount=`123`]]
 ```
 
@@ -43,7 +43,7 @@ TVs также могут иметь свойства. Скажем, у вас �
 
  [Выходные фильтры](building-sites/elements/template-variables/step-by-step "Фильтры ввода и вывода (модификаторы вывода)") также отличные инструменты для применения к TV. Скажем, вы хотите ограничить вывод TV до 100 символов. Вы бы просто использовали выходной фильтр «limit»:
 
- ``` php
+``` php
 [[*bioMessage:limit=`100`]]
 ```
 
@@ -53,11 +53,10 @@ TVs также могут иметь свойства. Скажем, у вас �
 2. [Привязки](building-sites/elements/template-variables/bindings)
    1. [CHUNK привязка](building-sites/elements/template-variables/bindings/chunk-binding)
    2. [DIRECTORY привязка](building-sites/elements/template-variables/bindings/directory-binding)
-   3. [EVAL привязка](building-sites/elements/template-variables/bindings/eval-binding)
-   4. [FILE привязка](building-sites/elements/template-variables/bindings/file-binding)
-   5. [INHERIT привязка](building-sites/elements/template-variables/bindings/inherit-binding)
-   6. [RESOURCE привязка](building-sites/elements/template-variables/bindings/resource-binding)
-   7. [SELECT привязка](building-sites/elements/template-variables/bindings/select-binding)
+   3. [FILE привязка](building-sites/elements/template-variables/bindings/file-binding)
+   4. [INHERIT привязка](building-sites/elements/template-variables/bindings/inherit-binding)
+   5. [RESOURCE привязка](building-sites/elements/template-variables/bindings/resource-binding)
+   6. [SELECT привязка](building-sites/elements/template-variables/bindings/select-binding)
 3. [Типы ввода переменных шаблона TV](building-sites/elements/template-variables/input-types)
 4. [Типы вывода переменных шаблона TV](building-sites/elements/template-variables/output-types)
     1. [Тип вывода TV - Дата](building-sites/elements/template-variables/output-types/date)

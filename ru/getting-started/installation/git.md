@@ -71,7 +71,7 @@ git checkout -b 2.x origin/2.x
 
 Вам необходимо выполнить две команды:
 
- ``` php
+``` php
 git fetch origin
 git rebase origin/2.x
 ```
@@ -100,7 +100,7 @@ git checkout -b myworkflow 2.x
 
 ...после чего внесёте ваш код. Как только вы закончили, вы добавляете код в ваш форк и делаете Pull Request. Как только MODX интегрирует ваш код (или отклонит его), вы можете удалить ветку следующим образом:
 
- ``` php
+``` php
 git checkout 2.x
 git branch -d myworkflow
 ```
@@ -115,7 +115,7 @@ git branch -d myworkflow
 
 Если вы хотите переключиться на другую ветку (которую вы уже проверили локально), просто введите эти команды:
 
- ``` php
+``` php
 git fetch upstream
 git checkout 2.5.x upstream/2.5.x
 ```

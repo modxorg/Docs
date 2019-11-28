@@ -85,7 +85,7 @@ If you get any other output, see the below table and what you could do to fix it
 
 ### ExampleCSV and some CSV-related notes
 
- ``` php
+``` php
 pagetitle;alias;isfolder
 Analysing;analysing;1
 Communicating;communicating;0

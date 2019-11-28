@@ -115,7 +115,6 @@ translation: "building-sites/elements/template-variables/step-by-step"
 2. [Привязки](building-sites/elements/template-variables/bindings)
    1. [CHUNK привязка](building-sites/elements/template-variables/bindings/chunk-binding)
    2. [DIRECTORY привязка](building-sites/elements/template-variables/bindings/directory-binding)
-   3. [EVAL привязка](building-sites/elements/template-variables/bindings/eval-binding)
    4. [FILE привязка](building-sites/elements/template-variables/bindings/file-binding)
    5. [INHERIT привязка](building-sites/elements/template-variables/bindings/inherit-binding)
    6. [RESOURCE привязка](building-sites/elements/template-variables/bindings/resource-binding)

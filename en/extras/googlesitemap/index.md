@@ -46,13 +46,13 @@ _old_uri: "revo/googlesitemap/"
 
  Display a Google SiteMap for tens of thousands of Resources.
 
- ``` php
+``` php
 [[!GoogleSiteMap]]
 ```
 
  Display a Google SiteMap for a more modest number of Resources, using a custom item template Chunk.
 
- ``` php
+``` php
 [[!GoogleSiteMap? &itemTpl=`myCustomTpl`]]
 ```
 

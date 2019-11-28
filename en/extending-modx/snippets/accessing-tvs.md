@@ -10,7 +10,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/acc
 
 ## getTVValue
 
- ``` php
+``` php
 string|null getTVValue (str|integer $tv_name OR ID of TV)
 ```
 
@@ -20,14 +20,14 @@ string|null getTVValue (str|integer $tv_name OR ID of TV)
 
  Let's say we have a TV named 'bio', and we're going to retrieve page id 123 that uses this TV. Here's what our Snippet might look like:
 
- ``` php
+``` php
 $page = $modx->getObject('modResource', 123);
 return $page->getTVValue('bio');
 ```
 
  getTVValue fetches values from the resource cache when available. These caches are normally cleared when saving a resource, however if you are updating TV values using the setTVValue method below, these values will not be reflected directly because of the cache. If you absolutely need the latest data, you could bypass the cache by going straight for the data and using getObject to get the TV value record.
 
- ``` php
+``` php
 $tvr = $modx->getObject('modTemplateVarResource', array(
   'tmplvarid' => $tvId,
   'contentid' => $resourceId
@@ -46,7 +46,7 @@ return '';
 
  Use **setTVValue** to save a new value to a TV. Unlike some other xPDO API methods, this method stores values to the database immediately, so you do not need to invoke a separate call to a **save()** method. This method does not clear the resource cache.
 
- ``` php
+``` php
 boolean setTVValue (str|integer $tv_name OR ID of TV, string $value)
 ```
 
@@ -54,7 +54,7 @@ Note that when using setTVValue, it is possible for an immediate getTVValue to r
 
 ### setTVValue Usage
 
- ``` php
+``` php
 $page = $modx->getObject('modResource', 123);
 if (!$page->setTVValue('bio', 'This is my new bio...')) {
     $modx->log(xPDO::LOG_LEVEL_ERROR, 'There was a problem saving your TV...');
