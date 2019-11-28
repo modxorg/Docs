@@ -23,7 +23,7 @@ translation: building-sites/client-proofing/security/policies/policytemplates
 
 ### ObjectTemplate
 
-Общие разрешения xPDOObject использующиеся для любого 'modAccessibleObject'.
+Общие разрешения `xPDOObject` использующиеся для любого `modAccessibleObject`.
 
 ### ResourceTemplate
 
