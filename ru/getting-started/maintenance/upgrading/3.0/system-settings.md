@@ -10,7 +10,7 @@ MODX 3.0 очистил значительное количество стары
 - `allow_tv_eval`, привязка `@EVAL` больше не поддерживается для TVs по соображениям безопасности [#13865](https://github.com/modxcms/revolution/pull/13865)
 - `compress_js_max_files`, `manager_js_zlib_output_compression`, что связано со старым динамическим менеджером JS minification [#13859](https://github.com/modxcms/revolution/pull/13859)
 - `upload_flash`, набор `upload_files` или `upload_images` или `allowedFileTypes` вместо этого в источнике мультимедиа. [#14252](https://github.com/modxcms/revolution/pull/14252)
-- `manager_language` [#13786](https://github.com/modxcms/revolution/pull/13786), заменено на автоматическое определение языка и переключение на лету в менеджере [#14046](https://github.com/modxcms/revolution/pull/14046). [Узнайте больше о языке менеджера в версии 3.0](./manager-language)
+- `manager_language` [#13786](https://github.com/modxcms/revolution/pull/13786), заменено на автоматическое определение языка и переключение на лету в менеджере [#14046](https://github.com/modxcms/revolution/pull/14046). [Узнайте больше о языке менеджера в версии 3.0](getting-started/maintenance/upgrading/3.0/manager-language)
 
 ## Измененные значения по умолчанию
 
