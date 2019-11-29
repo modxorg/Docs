@@ -8,7 +8,7 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.where"
 
  Add a WHERE condition to the query. In general, the way this works is you append an operator to an attribute after a colon.
 
- ``` php
+``` php
 array('attribute:operator' => 'value')
 ```
 
@@ -30,7 +30,7 @@ array('attribute:operator' => 'value')
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::where()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::where())
 
- ``` php
+``` php
 xPDOQuery where ([mixed $conditions = ''],
  [string $conjunction = xPDOQuery::SQL_AND],
  [mixed $binding = null],
@@ -41,7 +41,7 @@ xPDOQuery where ([mixed $conditions = ''],
 
  Get all Boxes with width of 15.
 
- ``` php
+``` php
 $query = $xpdo->newQuery('Box');
 $query->where(array(
    'width' => 15,
@@ -51,7 +51,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  Get all boxes with a width of 15 or 10.
 
- ``` php
+``` php
 $query = $xpdo->newQuery('Box');
 $query->where(array('width' => 15));
 $query->where(array('width' => 10),xPDOQuery::SQL_OR); // you can use orCondition here as well
@@ -60,7 +60,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  An alternative method to get boxes with a width of 15 or 10.
 
- ``` php
+``` php
 $query = $xpdo->newQuery('Box');
 $query->where(array(
    array( // two arrays used to contain the OR statement within the listed conditions
@@ -75,7 +75,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  Next alternative method to get boxes with a width of 15 or 10.
 
- ``` php
+``` php
 $query = $xpdo->newQuery('Box');
 $query->where(array(
    array(
@@ -90,7 +90,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  Grab all boxes with a width greater than or equal to 15, but not with a width of 23.
 
- ``` php
+``` php
 $query = $xpdo->newQuery('Box');
 $query->where(array(
    'width:>=' => 15,
@@ -101,7 +101,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  Get all boxes with a name with the letter 'q' in it:
 
- ``` php
+``` php
 $query = $xpdo->newQuery('Box');
 $query->where(array(
    'name:LIKE' => '%q%',
@@ -111,7 +111,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  Using and & or in the same query to get all boxes with a width of 15 or 10 and a height between 10 and 15.
 
- ``` php
+``` php
 $query = $xpdo->newQuery('Box');
 $query->where(array(
    array(
@@ -130,7 +130,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
  If you have a more complex model with many joined tables, the where method should refer _only to the_ **_class alias_** (not the class name) that contains the attribute. Below is an example of a query passed to the [getCollectionGraph](extending-modx/xpdo/retrieving-objects/graphs "getCollectionGraph") method, where you can see that myTable object is joined through to the user profile information.
 
- ``` php
+``` php
 $query = $modx->newQuery('myTable');
 $query->where(array('Profile.fullname:LIKE' => '%Company%'));
 $records = $this->ParentCMS->getCollectionGraph('myTable', '{"modUser": {"Profile":{} } }',$query);
@@ -138,7 +138,7 @@ $records = $this->ParentCMS->getCollectionGraph('myTable', '{"modUser": {"Profil
 
  Another method is to pass a $criteria array immediately as the 2nd argument to newQuery. Notice how the alias "Resource" is used since that's what is listed as the alias in the schema definition for the modTemplateVarResource object:
 
- ``` php
+``` php
 $criteria = array();
 $criteria['modTemplateVarResource.tmplvarid'] = 9;
 $criteria['modTemplateVarResource.value:IN'] = array('Red','Green','Blue');

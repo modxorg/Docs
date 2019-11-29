@@ -33,7 +33,7 @@ FormSave is a hook for FormIt, this means you need FormIt installed and you need
 
 As an example we'll use the call from FormIt's example contact page which looks like this:
 
- ``` php
+``` php
 [[!FormIt?
    &hooks=`recaptcha,spam,email,redirect`
    &emailTpl=`MyEmailChunk`
@@ -50,7 +50,7 @@ As an example we'll use the call from FormIt's example contact page which looks 
 
 But now we want to save the form to the database to view the results later. To do this we simply add the hook and a parameter to the FormIt call:
 
- ``` php
+``` php
 [[!FormIt?
    &hooks=`recaptcha,spam,FormSave,email,redirect`      <-- added the hook here after spam and recaptcha check
    &emailTpl=`MyEmailChunk`

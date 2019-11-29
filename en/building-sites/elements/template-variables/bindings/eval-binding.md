@@ -24,7 +24,7 @@ Simply put a PHP statement after the @EVAL tag:
 @EVAL return "The time stamp is now ".time();
 ```
 
- ``` php
+``` php
 @EVAL $a = 'dog'; return $a;
 ```
 

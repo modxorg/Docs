@@ -20,7 +20,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables"
 
  Let's say we have a TV named 'bio', that is a textarea TV that we've created. We've assigned it to our 'Biography Pages' Template, and want to show it on our page. To do so, we'd simply place this tag into our templates:
 
- ``` php
+``` php
 [[*bio]]
 ```
 
@@ -34,7 +34,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables"
 
  You could fill the data with the call:
 
- ``` php
+``` php
 [[*intromsg?name=`George` &messageCount=`123`]]
 ```
 
@@ -44,7 +44,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables"
 
  [Output Filters](building-sites/elements/template-variables/step-by-step "Input and Output Filters (Output Modifiers)") are also great tools to be applied to TVs. Say you wanted to limit a TV's output to 100 chars. You'd simply use the 'limit' output filter:
 
- ``` php
+``` php
 [[*bioMessage:limit=`100`]]
 ```
 

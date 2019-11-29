@@ -34,7 +34,7 @@ First create a category for your TV's, let's call it "Search Tools", it will hel
 
 Create a new chunk and call it: google-sitemap-tpl
 
- ``` php
+``` php
 <url>
   <loc>[[~[[+id]]? &scheme=`full`]]</loc>
   <lastmod>[[+editedon]]</lastmod>
@@ -47,7 +47,7 @@ Create a new chunk and call it: google-sitemap-tpl
 
 Create a page in the root of your site and name it "sitemap.xml". Check the Hide From Menus box. Set the template to `<empty>`. In Page Settings change the content type to xml. Paste in the below code and you should be good to go. When you have saved it, confirm the resource alias field is 'sitemap.xml' and the resource is published.
 
- ``` php
+``` php
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
 [[getResources?

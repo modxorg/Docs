@@ -25,7 +25,7 @@ Just include the redirect hook in your &hooks property on the FormIt call. Then 
 
 You can specify parameters to redirect with when using this hook. Simply use the &redirectParams property:
 
- ``` php
+``` php
 [[!FormIt?
    &hooks=`redirect`
    &redirectTo=`212`

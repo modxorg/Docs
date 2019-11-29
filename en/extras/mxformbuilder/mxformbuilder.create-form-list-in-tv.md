@@ -18,7 +18,7 @@ _old_uri: "revo/mxformbuilder/mxformbuilder.create-form-list-in-tv"
 
  Now select the **Input Options** tab and select your input type you want the users to interact with; I always select Listbox (Single-Select). Then we need to tell the TV that we want to use the renderings from our snippet to populate the content for the select list, so in our **Input Options Values** content area place the following:
 
- ``` php
+``` php
 @EVAL return '-- Select --||' . $modx->runSnippet('mxfbTvFormList');
 ```
 
@@ -44,7 +44,7 @@ Ex: **$modx->runSnippet('mxfbTvFormList', _array('context'=>'web')_ )**
 
  Now that we've got our TV and a Resource set with a selected form lets actually display the form. In the area that you want to display the form we need to call the **mxfb** snippet and pass the **_&formid_** parameter value of the TV.
 
- ``` php
+``` php
 [[!mxfb? &formid=`[[*mxform]]` ]]
 ```
 

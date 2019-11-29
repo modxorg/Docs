@@ -23,7 +23,7 @@ translation: "building-sites/settings/extension_packages"
 
 Вы можете использовать
 
- ``` php
+``` php
 [[++core_path]]
 ```
 
@@ -43,13 +43,13 @@ translation: "building-sites/settings/extension_packages"
 
 ### addExtensionPackage
 
- ``` php
+``` php
 boolean addExtensionPackage ([string $pkg = ''], [string $modelpath = ''], [array $options = array()])
 ```
 
 Аргумент `$pkg` действительно указывает подпапку в названной директории модели. В большинстве пакетов это имя совпадает с пространством имен пакета, но другие пакеты могут указывать несколько подпапок в своей модели. Обратите внимание, что массив `$options` может указывать ключ "tablePrefix", например:
 
- ``` php
+``` php
 $modx->addExtensionPackage('mypkg', '/path/to/core/components/mypkg/model/', array('tablePrefix'=>'mypre_'));
 ```
 
@@ -57,6 +57,6 @@ $modx->addExtensionPackage('mypkg', '/path/to/core/components/mypkg/model/', arr
 
 Когда пришло время для очистки, удалите ваш узел из **extension\_packages** массива, используя эту вспомогательную функцию:
 
- ``` php
+``` php
 boolean removeExtensionPackage (string $pkg = '')
 ```

@@ -75,7 +75,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.manage-events-resources-in-a-cmp-
 
  Create a template with some basic content and place at least this placeholders somewhere in this template:
 
- ``` php
+``` php
 [[*eventstart]],[[*eventend]],[[*location]],[[*pagetitle]],[[*content]]
 ```
 
@@ -132,7 +132,7 @@ $this->customconfigs['includeTVList'] = 'eventstart,eventend,location';
  Name: migxFilterevents
  content:
 
- ``` php
+``` php
 $now = strftime('%Y-%m-%d %H:%M:%S');
 switch ($_REQUEST['eventsfilter']){
     case 'current':
@@ -163,7 +163,7 @@ return '';
  filter type: combobox
  getlist-where:
 
- ``` php
+``` php
 [[migxFilterevents]]
 ```
 
@@ -179,7 +179,7 @@ return '';
  empty text: search...
  getlist-where:
 
- ``` php
+``` php
 {"pagetitle:LIKE":"%[[+search]]%","OR:longtitle:LIKE":"%[[+search]]%","OR:content:LIKE":"%[[+search]]%"}
 ```
 

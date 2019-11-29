@@ -229,7 +229,7 @@ Man||Bear||Pig
 
 Often it's nice to have a more readable label. You can display something nice and still store a different value using the double-equals and double-pipes format used by checkboxes:
 
- ``` php
+``` php
 Option 1==value1||Option 2==value2
 ```
 

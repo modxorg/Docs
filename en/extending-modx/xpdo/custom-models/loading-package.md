@@ -18,7 +18,7 @@ The addPackage method takes 3 parameters: 'name', 'path' and an optional 'table\
 
  And our table prefix is 'myapp\_'. So, we'll pass the first parameter as the package name - in this case 'boxpackage' - and the model path as the 2nd parameter:
 
- ``` php
+``` php
 $xpdo->addPackage('boxpackage','/myapp/core/model/','myapp_');
 ```
 

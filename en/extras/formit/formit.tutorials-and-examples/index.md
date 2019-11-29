@@ -43,7 +43,7 @@ For example, if your form reads in part:
 
 Then the following validation rule will not work (for a full example of the Snippet call, see [here](extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page "FormIt.Examples.Simple Contact Page")):
 
- ``` php
+``` php
 ...
 &validate=`name:required`
 ...

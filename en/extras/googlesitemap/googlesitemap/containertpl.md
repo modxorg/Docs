@@ -10,7 +10,7 @@ This is the Chunk displayed with the &containerTpl property on the [GoogleSiteMa
 
 ## Default Value
 
- ``` xml
+``` xml
 <urlset xmlns="[[+schema]]">
 [[+items]]
 </urlset>

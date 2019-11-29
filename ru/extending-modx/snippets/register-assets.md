@@ -1,7 +1,6 @@
 ---
 title: "Adding CSS and JS"
-_old_id: "13"
-_old_uri: "2.x/developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets"
+translation: "extending-modx/snippets/register-assets"
 ---
 
 ## Learning How to Register CSS and JS
@@ -47,7 +46,7 @@ $modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
 
 ### regClientStartupHTMLBlock
 
-This function is useful if you need to set some JS variables, or output some HTML into the HEAD:
+ This function is useful if you need to set some JS variables, or output some HTML into the HEAD:
 
 ``` php
 $modx->regClientStartupHTMLBlock('
@@ -79,7 +78,7 @@ $modx->regClientScript('http://code.jquery.com/jquery-latest.min.js');
 
 ### regClientHTMLBlock
 
-Similar to [regClientStartupHTMLBlock](#AddingCSSandJStoYourPagesThroughSnippets-regClientStartupHTMLBlock) except that it runs before the closing BODY tag:
+ Similar to [regClientStartupHTMLBlock](#AddingCSSandJStoYourPagesThroughSnippets-regClientStartupHTMLBlock) except that it runs before the closing BODY tag:
 
 ``` php
 $modx->regClientHTMLBlock('
@@ -93,9 +92,9 @@ runAnalytics();
 
 MODX offers Extras developers many options on how to insert custom CSS/JS into their pages at the Snippet level. However, MODX also recommends in any Extras you are distributing, to make sure inserting CSS or JS into a page is a toggleable option, so that the user can customize the content or javascript framework should they so choose.
 
-## See Also
+## Смотрите также
 
-1. [Templating Your Snippets](extending-modx/snippets/templating)
-2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
-3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
-4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)
+1. [Создание шаблонов сниппетов](extending-modx/snippets/templating)
+2. [Добавление CSS и JS на ваши страницы через сниппеты](extending-modx/snippets/register-assets)
+3. [Как написать хороший Сниппет](extending-modx/snippets/good-snippet)
+4. [Как написать хороший чанк](extending-modx/snippets/good-chunk)

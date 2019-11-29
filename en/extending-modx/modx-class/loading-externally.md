@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/loading-modx-exter
 
  Using the modX object (and all of its respective classes) is quite simple. All you need is this code:
 
- ``` php
+``` php
 require_once '/absolute/path/to/modx/config.core.php';
 require_once MODX_CORE_PATH.'model/modx/modx.class.php';
 $modx = new modX();
@@ -24,7 +24,7 @@ $modx->getService('error','error.modError', '', '');
 
  Build scripts are a great place to see MODX loaded up from the command line. They usually begin with something like this:
 
- ``` php
+``` php
 if (!defined('MODX_CORE_PATH')) {
         define('MODX_CORE_PATH', '/path/to/core/');
 }
@@ -42,7 +42,7 @@ $modx->initialize('mgr');
 
  In You can also use MODX in its API mode, and then include the primary index.php file for your site:
 
-  ``` php
+ ``` php
 define('MODX_API_MODE', true);
 // Full path to the index
 require_once('/path/to/modx/public_html/index.php');

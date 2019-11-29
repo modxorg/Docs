@@ -105,13 +105,13 @@ This will filter resources to meet one of the following conditions:
 
   Matches any resources that has an "a" in the mytv value.
 
-  ``` php
+ ``` php
   mytv==a%
   ```
 
   Matches any resources that have a mytv value that starts with an a, and anything after that.
 
-  ``` php
+ ``` php
   mytv==%a
   ```
 

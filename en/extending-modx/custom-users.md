@@ -46,7 +46,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 
  The simplest example we could imagine is that we want to add a single extra attribute to the user data – so in the database, this would mean we have a separate table with 2 columns: one for the foreign key relation back to the **modx\_users** table, and the other column containing our new "extra" attribute, e.g. a _fackbook\_url_:
 
- ``` xml
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="extendeduser" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" tablePrefix="ext_">
         <!-- extend the modUser class -->
@@ -70,7 +70,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 
  Note that the _index="unique"_ bit has been deprecated – the index declaration should go into its own node as in the example above.
 
- ``` xml
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="extendeduser" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" tablePrefix="ext_">
     <!-- inherit the modx user and extend it -->
@@ -102,7 +102,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 
  Edit the extuser.class.php file created when you generated the model. The specific file is the one found in the top of the model tree (you should see a mysql directory) in this same folder. Edit the file to resemble the following:
 
- ``` php
+``` php
  <?php
 /**
  * @package extendeduser
@@ -123,7 +123,7 @@ class extUser extends modUser {
 
  **If the key already exists**, add inside the json array
 
- ``` php
+``` php
 ,{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}}
 ```
 
@@ -146,7 +146,7 @@ class extUser extends modUser {
 
  Here's how you might interact with your extended data in a Snippet:
 
- ``` php
+``` php
 $modx->addPackage('extendeduser', MODX_CORE_PATH . 'components/extendeduser/model/', 'ext_');
 $user = $modx->getObject('extUser', 123); // where 123 is the id of a user
 $data = $user->getOne('Data'); // use the alias from the schema
@@ -156,7 +156,7 @@ return print_r($data->toArray(), true);
 
 #### More complex example
 
- ``` php
+``` php
  <?php
 /**
  *  File        sample.class.php (requires MODX Revolution 2.x)
@@ -219,7 +219,7 @@ if (!class_exists('Sampleclass')) {
 
  In our example we will be accessing our extended user throughout our site, therefore we load it as a service as shown in the following example:
 
- ``` php
+``` php
 <?php
 $x = $modx->getService('extendeduser','Sampleclass',$modx->getOption('core_path',null, MODX_CORE_PATH).'components/extendeduser/',$scriptProperties);
 if (!($x instanceof Extendeduser)) {
@@ -272,7 +272,7 @@ return;
 
  Whenever you modify the class\_key for a built-in MODX object, you need to be aware of how behavior changes. The class\_key affects what aggregates and composites are available to the object. For example, if a user has a class\_key "extUser", you can still retrieve the object using the parent class:
 
- ``` php
+``` php
 // both of these work when class_key is "extUser":
 $User = $modx->getObject('modUser', 123);
 $User = $modx->getObject('extUser', 123);
@@ -280,7 +280,7 @@ $User = $modx->getObject('extUser', 123);
 
  However, the aggregates or composite relationships depend on the _stored value_ of the class\_key.
 
- ``` php
+``` php
 $Data = $modx->newObject('Userdata');
 $Data->set('facebook_url',$url); // ... etc ...
 $User->addOne($Data);

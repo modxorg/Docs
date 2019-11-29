@@ -125,7 +125,7 @@ publishedon=published:asc
 
 ### getSelections Snippet
 
- ``` php
+``` php
 [[getSelections?
     &selections=`[[*id]]`
     &tpl=`myTplChunk`

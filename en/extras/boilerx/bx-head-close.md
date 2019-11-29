@@ -8,13 +8,13 @@ _old_uri: "revo/boilerx/bx-head-close"
 
 Closes the head tag.
 
- ``` html
+``` html
 </head>
 ```
 
 ## See Also
 
- ``` php
+``` php
 [[getResources@section?
     &parents=`1316`
     &context=`extras`

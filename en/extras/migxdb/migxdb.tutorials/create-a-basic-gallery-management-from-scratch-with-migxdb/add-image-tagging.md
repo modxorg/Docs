@@ -14,7 +14,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  Add this object to the existing schema:
 
- ``` xml
+``` xml
     <object class="mygalTag" table="migx_gallery_tags" extends="xPDOSimpleObject">
         <field key="tag" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
         <field key="alias" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
@@ -48,7 +48,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  into Input Option Values of this field put:
 
- ``` php
+``` php
 @EVAL return $modx->runSnippet('migxLoopCollection',array('classname'=>'mygalTag','sortConfig'=>'[{"sortby":""tag}]','tpl'=>'@CODE:[[+tag]]==[[+id]]','outputSeparator'=>'||'));
 ```
 
@@ -70,7 +70,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  mygallery\_aftersave:
 
- ``` php
+``` php
  $object = &$modx->getOption('object',$scriptProperties,null);
 if ($object){
     $newtags = explode(',',$object->get('newtag'));
@@ -121,7 +121,7 @@ if ($object){
 
  mygallery\_aftergetfields:
 
- ``` php
+``` php
 $object = &$modx->getOption('object',$scriptProperties,null);
 if ($object){
     $newtags = explode(',',$object->get('newtag'));
@@ -174,7 +174,7 @@ if ($object){
 
  Create a new snippet 'mygallery\_prepareTagWhere' with this code:
 
- ``` php
+``` php
 $tag = isset($_GET['tag']) ? (int) $_GET['tag'] : 0;
 $resource_id = $modx->getOption('resource_id',$scriptProperties,$modx->resource->get('id'));
 $output='';
@@ -196,13 +196,13 @@ return $output;
 
  Create a chunk 'mygallery\_tag\_item' with this code:
 
- ``` php
+``` php
 <a href="[[~[[*id]]? &tag=`[[+Tag_id]]`]]">[[+Tag_tag]]</a><br>
 ```
 
  put this snippet-tags into your template:
 
- ``` php
+``` php
 [[!migxLoopCollection?
   &packageName=`mygallery`
   &classname=`mygalTagImage`

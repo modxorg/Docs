@@ -10,7 +10,7 @@ This is the Chunk displayed with the &directoryTpl property on the [FileLister](
 
 ## Default Value
 
- ``` php
+``` php
 <tr class="[[+cls]]">
     <td colspan="3" class="feo-dirname">[[+link]]</td>
 </tr>

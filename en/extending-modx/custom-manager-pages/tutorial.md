@@ -28,7 +28,7 @@ Creating MODX custom manager pages (CMPs) is **far** simpler in MODX Revolution 
 
  Now, on to the file contents:
 
- ``` php
+``` php
 <?php
 class MycmpWelcomeManagerController extends modExtraManagerController {
     public function process(array $scriptProperties = array()) {}
@@ -49,7 +49,7 @@ class MycmpWelcomeManagerController extends modExtraManagerController {
 
  Let's make the content simple:
 
- ``` html
+``` html
 <div class="container">
 <h2>Welcome!</h2>
 </div>

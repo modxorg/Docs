@@ -22,7 +22,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebp
 **Description:** Filter words from a document before it's displayed on the web
 **System Events:** OnWebPagePrerender
 
- ``` php
+``` php
 $words = array("snippet", "template"); // words to filter
 $output = &$modx->resource->_output; // get a reference to the output
 $output = str_replace($words,"<b>[filtered]</b>",$output);

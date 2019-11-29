@@ -24,7 +24,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-mediasource-and-m
 - Update this media source
   - basepath and baseurl:
   
-    ``` php
+   ``` php
     [[migxResourceMediaPath?
       &pathTpl=`assets/resourceimages/{id}/`
       &createFolder=`1`

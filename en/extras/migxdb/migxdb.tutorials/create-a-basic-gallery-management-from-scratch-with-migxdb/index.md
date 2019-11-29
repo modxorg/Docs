@@ -28,7 +28,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
 ### The Schema
 
- ``` xml
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="mygallery" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
         <object class="myGallery" table="migx_gallery" extends="xPDOSimpleObject" >
@@ -345,7 +345,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  Some examples:
 
- ``` php
+``` php
 [[!migxLoopCollection?
 &packageName=`mygallery`
 &classname=`myGallery`
@@ -356,7 +356,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  creates a printed array of all published images which belong to the active resource.
 
- ``` php
+``` php
 [[!migxLoopCollection?
   &packageName=`mygallery`
   &classname=`myGallery`

@@ -29,7 +29,7 @@ Placeholders you can use:
 - subcategories (returns all subcategories for the current category object)
   Default file in core / components / bdlistings / elements / chunks / bdCategories.category.tpl:
 
-  ``` php
+ ``` php
   <h3>[[+name]]</h3>
   <p>[[+description]]</p>
   [[+subcategories]]
@@ -51,7 +51,7 @@ Placeholders you can use:
 - wrapper (returns all categories, each separated by the value in the categorySeparator property)
   Default file in core / components / bdlistings / elements / chunks / bdCategories.outer.tpl:
 
-  ``` php
+ ``` php
   <h2>Categories</h2>
   [[+wrapper]]
   ```

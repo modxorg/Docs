@@ -30,7 +30,7 @@ This will also remove any **composite related objects** to this object. For exam
 
  From modSessionHandler:
 
- ``` php
+``` php
 public function gc($max) {
     $max = (integer) $this->modx->getOption('session_gc_maxlifetime',null,$max);
     $maxtime= time() - $max;
@@ -48,7 +48,7 @@ public function gc($max) {
 
  For example, to delete all objects of type 'objectName' from the database, do the following.
 
- ``` php
+``` php
 $modx->removeCollection('objectName', array());
 ```
 

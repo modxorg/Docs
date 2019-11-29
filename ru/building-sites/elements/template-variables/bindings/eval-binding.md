@@ -23,7 +23,7 @@ translation: "building-sites/elements/template-variables/bindings/eval-binding"
 @EVAL return "The time stamp is now ".time();
 ```
 
- ``` php
+``` php
 @EVAL $a = 'dog'; return $a;
 ```
 

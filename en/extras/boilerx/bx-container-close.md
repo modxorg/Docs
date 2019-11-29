@@ -10,7 +10,7 @@ Blank by default, meant to be close any wrapper tags opened in bx-container-open
 
 ## See Also
 
- ``` php
+``` php
 [[getResources@section?
     &parents=`1316`
     &context=`extras`

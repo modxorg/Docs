@@ -21,7 +21,7 @@ translation: "extending-modx/plugins/system-events/onwebpageprerender"
 **Описаниие:** Отфильтруйте слова из документа перед его отображением в Интернете
 **Системное событие:** OnWebPagePrerender
 
- ``` php
+``` php
 $words = array("snippet", "template"); // words to filter
 $output = &$modx->resource->_output; // get a reference to the output
 $output = str_replace($words,"<b>[filtered]</b>",$output);

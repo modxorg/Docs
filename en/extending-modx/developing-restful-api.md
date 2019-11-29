@@ -22,7 +22,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/developing-rest-servers"
 
  First, create a `rest/index.php` file which looks something like this:
 
- ``` php
+``` php
 <?php
 // Boot up MODX
 require_once dirname(dirname(__FILE__)) . '/config.core.php';
@@ -102,7 +102,7 @@ location @modx_rest {
 
  To create your Items endpoint , you will need to create the Items controller. Based on the configuration we passed to the modRestService earlier, and the defaults, each controller needs to start with MyController, be placed in a `/rest/Controllers/` directory and the file must match the endpoint name suffixed with `.php`. So create a new file `/rest/Controllers/Items.php`. Give it the following contents:
 
- ``` php
+``` php
 class MyControllerItems extends modRestController {
     public $classKey = 'ToDoItem';
     public $defaultSortField = 'sortorder';

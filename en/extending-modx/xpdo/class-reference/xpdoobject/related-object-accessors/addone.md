@@ -12,7 +12,7 @@ _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/addone"
 
  API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoobject.class.html#%5CxPDOObject::addOne()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::addOne())
 
- ``` php
+``` php
 boolean addOne (
    mixed &$obj,
    [string $alias = '']
@@ -23,7 +23,7 @@ boolean addOne (
 
  Add a Rank to a newly-created Person, then save both through cascading.
 
- ``` php
+``` php
 $person = $xpdo->newObject('Person',1);
 $person->set('fname','Johnny');
 $person->set('lname','Benjamins');
@@ -38,7 +38,7 @@ $person->save(); // will save both person and rank
 
  If you're having trouble using this function, it's helpful to increase the logging level:
 
- ``` php
+``` php
 $modx->setLogLevel(4); // show all debugging info
 ```
 

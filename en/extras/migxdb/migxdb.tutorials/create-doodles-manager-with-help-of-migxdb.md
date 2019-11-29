@@ -30,7 +30,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-doodles-manager-with-help-
 
  Go to the tab 'xml schema' and add this code:
 
- ``` xml
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="doodles" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
     <object class="Doodle" table="doodles" extends="xPDOSimpleObject">

@@ -10,7 +10,7 @@ This is the Chunk displayed with the &itemTpl property on the [GoogleSiteMap](ex
 
 ## Default Value
 
- ``` xml
+``` xml
 <url>
     <loc>[[+url]]</loc>
     <lastmod>[[+date]]</lastmod>

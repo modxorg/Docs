@@ -19,7 +19,7 @@ translation: "contribute/code/coding-standards"
 - Ставьте скобки сразу после имени функции.
 - Не используйте скобки в выражениях с return когда это необходимо. Например:
 
-  ``` php
+ ``` php
   if ($test) {
   }
   while ($test == $other) {
@@ -36,7 +36,7 @@ translation: "contribute/code/coding-standards"
 - Все имена методов должны быть в camelCase и начинаться со строчной буквы.
 - Все private методы и переменные должны начинаться с символа подчеркивания "_".
 
-  ``` php
+ ``` php
   class modFactor {
       public $publicVar;
       private $_privateVar;
@@ -56,7 +56,7 @@ translation: "contribute/code/coding-standards"
 
 - Первая буква в нижнем регистре, остальные в camelCase. Пример:
 
-  ``` php
+ ``` php
   class modFactor {
       public function testFunc($testVar, array &$anotherTest = array()) {
           $this->_privateVar = $testVar;

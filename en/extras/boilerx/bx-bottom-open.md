@@ -8,7 +8,7 @@ _old_uri: "revo/boilerx/bx-bottom-open"
 
 Deferred JavaScript and Google Analytics tracking.
 
- ``` html
+``` html
         <script src="ajax.googleapis.com/ajax/libs/jquery/[[++bx.jquery_version]]/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="[[++assets_url]]components/boilerx/js/vendor/jquery-[[++bx.jquery_version]].min.js"><\/script>')</script>
         <script src="[[++assets_url]]components/boilerx/js/plugins.js"></script>
@@ -26,7 +26,7 @@ Deferred JavaScript and Google Analytics tracking.
 
 ## See Also
 
- ``` php
+``` php
 [[getResources@section?
     &parents=`1316`
     &context=`extras`

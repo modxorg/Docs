@@ -8,7 +8,7 @@ _old_uri: "revo/boilerx/bx-container-open"
 
 Opens the body tag and in acts Chrome frame for unsupported browsers.
 
- ``` php
+``` php
     [[++bx.show_comments:if=`[[++bx.show_comments]]`:eq=`1`:then=`    <!-- Use these body classes to target any combination of specific templates, ids, children, and class_keys -->
     `]]    <body class="t-[[*template]] id-[[*id]] p-[[*parent]] ck-[[*class_key]]">
     <!--[if lt IE [[++bx.chrome_frame_version:add=`1`]]]>
@@ -18,7 +18,7 @@ Opens the body tag and in acts Chrome frame for unsupported browsers.
 
 ## See Also
 
- ``` php
+``` php
 [[getResources@section?
     &parents=`1316`
     &context=`extras`

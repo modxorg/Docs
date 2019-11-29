@@ -14,13 +14,13 @@ ConfirmRegister is a simple snippet that confirms a registration by a User from 
 
 To enable this, you will need to create an Activation page by creating a new Resource, and putting this [ConfirmRegister](extras/login/login.confirmregister "Login.ConfirmRegister") snippet inside of it:
 
- ``` php
+``` php
 [[!ConfirmRegister]]
 ```
 
 An example [Register](extras/login/login.register "Login.Register") snippet call with activation would look like this:
 
- ``` php
+``` php
 [[!Register?
    &activationEmailTpl=`myActivationEmailTpl`
    &activationEmailSubject=`Please activate your account!`

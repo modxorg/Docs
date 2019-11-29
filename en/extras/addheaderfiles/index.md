@@ -41,7 +41,7 @@ _old_uri: "revo/addheaderfiles"
 
 ### Direct call
 
- ``` php
+``` php
 [[AddHeaderfiles?
 &addcode=`/assets/js/jquery.js;
 /assets/js/colorbox.js|end;/assets/css/colorbox.css;
@@ -51,7 +51,7 @@ _old_uri: "revo/addheaderfiles"
 
  shows:
 
- ``` html
+``` html
 ...
     <script type="text/javascript" src="/assets/js/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/colorbox.css" media="screen, tv, projection" />
@@ -63,14 +63,14 @@ _old_uri: "revo/addheaderfiles"
 
  Fill a chunk (i.e. 'headerColorbox') by:
 
- ``` php
+``` php
 /assets/js/jquery.js;
 /assets/js/colorbox.js|end;/assets/css/colorbox.css
 ```
 
  and call it like this:
 
- ``` php
+``` php
 [[!AddHeaderfiles?
 &addcode=`headerColorbox`
 ]]
@@ -78,7 +78,7 @@ _old_uri: "revo/addheaderfiles"
 
  Parts of the addcode parameterchain could point to chunks too (recursive). The parts of the chunks that are not pointing to other chunks or to files/uri should contain the complete ... or ... code.
 
- ``` php
+``` php
 [[!AddHeaderfiles?
 &addcode=`headerColorbox;
 /assets/css/test.css|print`

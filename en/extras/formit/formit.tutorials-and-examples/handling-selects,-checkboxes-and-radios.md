@@ -43,7 +43,7 @@ Note that the `[]` is stripped when setting the "fi.error.color" placeholder.
 
 Since HTML does not send a value if a checkbox is not checked, handling the "required" validation on a checkbox can be tricky. You'll need to add a "hidden" field before so that at least an empty value is sent:
 
- ``` html
+``` html
 [[!FormIt? &validate=`color:required`]]
 ...
 <label>Color: [[!+fi.error.color]]</label>

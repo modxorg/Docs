@@ -26,7 +26,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
  Create a snippet with name 'addmediasourcepath' with this code:
 
- ``` php
+``` php
 $output = str_replace('./','',$input);
 if ($mediasource = $modx->getObject('sources.modMediaSource',$options)){
     $output = $mediasource->prepareOutputUrl($output);
@@ -36,13 +36,13 @@ return '/' . $output;
 
  In your tpl change the image-placeholder to something like that:
 
- ``` php
+``` php
 [[+image:addmediasourcepath=`3`]]
 ```
 
  In case, you are using pthumb for image-resizing, to something like that:
 
- ``` php
+``` php
 [[+image:addmediasourcepath=`3`:pthumb=`w=500`]]
 ```
 

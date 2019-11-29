@@ -24,7 +24,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
  For this Tutorial we want to create a new Template. We name it 'MultiColumn'
 
- ``` html
+``` html
 <html>
     <head>
         <title>[[++site_name]] - [[*pagetitle]]</title>
@@ -278,7 +278,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ##### Chunk Code
 
- ``` html
+``` html
 <div class="box grid_h_12 grid_v_4">
     <div class="grid_h_12 alpha_h omega_h grid_v_1 alpha_v"><img src="[[+cell_1_image:phpthumbof=`w=900&h=250&zc=1`]]"/></div>
     <div class="grid_h_12 alpha_h omega_h grid_v_1"><h2>[[+cell_1_headline]]</h2></div>
@@ -295,7 +295,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ##### Chunk Code
 
- ``` html
+``` html
 <div class="box grid_h_6 grid_v_4">
     <div class="grid_h_6 alpha_h omega_h grid_v_1 alpha_v"><img src="[[+cell_1_image:phpthumbof=`w=460&h=320&zc=1`]]"/></div>
     <div class="grid_h_6 alpha_h omega_h grid_v_1"><h2>[[+cell_1_headline]]</h2></div>
@@ -317,7 +317,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ##### Chunk Code
 
- ``` html
+``` html
 <div class="box grid_h_4 grid_v_4">
     <div class="grid_h_4 alpha_h omega_h grid_v_1 alpha_v"><img src="[[+cell_1_image:phpthumbof=`w=300&h=250&zc=1`]]"/></div>
     <div class="grid_h_4 alpha_h omega_h grid_v_1"><h2>[[+cell_1_headline]]</h2></div>

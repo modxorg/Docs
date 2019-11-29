@@ -39,7 +39,7 @@ site\_start - The id of the default startpage of the context
 
 If you wanna use the canonical tag, you can use this tag to create it completely automatic.
 
- ``` php
+``` php
 [[!+gateway.canonical:notempty=`<link rel="canonical" href="[[+gateway.canonical]]" />`]]
 ```
 

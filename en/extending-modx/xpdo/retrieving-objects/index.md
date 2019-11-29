@@ -26,7 +26,7 @@ _old_uri: "2.x/getting-started/using-your-xpdo-model/retrieving-objects"
 
  We'll get back to the third option later. First, an example of the first option:
 
- ``` php
+``` php
 $box23 = $xpdo->getObject('Box',23);
 ```
 
@@ -34,7 +34,7 @@ $box23 = $xpdo->getObject('Box',23);
 
  You can specify multiple filter criteria inside your 2nd argument:
 
- ``` php
+``` php
 // GroupUser is a table with 2 PKs - 'user' and 'group'
 $gu = $xpdo->getObject('GroupUser',array(
    'user' => 12,
@@ -44,7 +44,7 @@ $gu = $xpdo->getObject('GroupUser',array(
 
  Or, let's say we wanted to grab the first Box object we find with a width of 150:
 
- ``` php
+``` php
 $bigbox = $xpdo->getObject('Box',array('width' => 150));
 ```
 
@@ -59,7 +59,7 @@ $bigbox = $xpdo->getObject('Box',array('width' => 150));
 
  Let's say we wanted to grab all the Box objects with width of 14:
 
- ``` php
+``` php
 // assume we have 3 boxes
 $boxes = $xpdo->getCollection('Box',array(
   'width' => 14,
@@ -79,7 +79,7 @@ foreach ($boxes as $box) {
 
  The code for iterating over the Box objects with width of 14 is almost identical to that of getCollection:
 
- ``` php
+``` php
 // assume we have 3 boxes, with colors 'red','blue' and 'yellow'
 $boxes = $xpdo->getIterator('Box', array(
   'width' => 14,
@@ -105,7 +105,7 @@ foreach ($boxes as $box) {
 
  First, let's just show how you might use newQuery to define the criteria we used before: width = 14. We'll just add a sorting option to sort the results.
 
- ``` php
+``` php
 $c = $xpdo->newQuery('Box');
 $c->where(array('width' => 14));
 $c->sortby('name','ASC');
@@ -116,7 +116,7 @@ $boxes = $xpdo->getCollection('Box',$c);
 
  Next, let's use the query to join on a related table using [xPDOQuery.innerJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"). Let's create an example query using [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") that will grab the first 5 Boxes with width of 5 and an owner of ID 2, sorted by their name. Our "Box" table has a many-to-many relationship with the "BoxOwner" table.
 
- ``` php
+``` php
 $c = $xpdo->newQuery('Box');
 $c->innerJoin('BoxOwner','Owner'); // arguments are className, alias
 $c->where(array(
@@ -130,7 +130,7 @@ $boxes = $xpdo->getCollection('Box',$c);
 
  We can join on 3rd table ("Owner") by using another call to [xPDOQuery.innerJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"). Let's also grab the 2nd 5 Boxes by specifying an offset – it's a 2nd argument to the limit() function:
 
- ``` php
+``` php
 $c = $xpdo->newQuery('Box');
 $c->innerJoin('BoxOwner','Owner'); // arguments are: className, alias
 $c->innerJoin('User','User','Owner.user = User.id');
@@ -154,7 +154,7 @@ The xml schema can be found in your MODX installation's core folder, here: model
 
  Often it can be confusing to rely on an ORM layer, so you can force xPDO to print out the raw database queries.
 
- ``` php
+``` php
 $c = $xpdo->newQuery('Box');
 // ... add some more criteria...
 $c->prepare();
@@ -171,7 +171,7 @@ print $c->toSQL();
 
  First, let's just show how you might use newQuery to define the criteria we used before: width = 14. We'll just add a sorting option to sort the results.
 
- ``` php
+``` php
 $c = $xpdo->newQuery('Box');
 $c->where(array('width' => 14));
 $c->sortby('name','ASC');
@@ -182,7 +182,7 @@ $boxes = $xpdo->getCollection('Box',$c);
 
  Next, let's use the query to join on a related table using [xPDOQuery.innerJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"). Let's create an example query using [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") that will grab the first 5 Boxes with width of 5 and an owner of ID 2, sorted by their name. Our "Box" table has a many-to-many relationship with the "BoxOwner" table.
 
- ``` php
+``` php
 $c = $xpdo->newQuery('Box');
 $c->innerJoin('BoxOwner','Owner'); // arguments are className, alias
 $c->where(array(
@@ -196,7 +196,7 @@ $boxes = $xpdo->getCollection('Box',$c);
 
  We can join on 3rd table ("Owner") by using another call to [xPDOQuery.innerJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"). Let's also grab the 2nd 5 Boxes by specifying an offset – it's a 2nd argument to the limit() function:
 
- ``` php
+``` php
 $c = $xpdo->newQuery('Box');
 $c->innerJoin('BoxOwner','Owner'); // arguments are: className, alias
 $c->innerJoin('User','User','Owner.user = User.id');
@@ -226,7 +226,7 @@ $boxes = $xpdo->getCollection('Box',$c);
 
 ### xPDO::getCollectionGraph
 
- ``` php
+``` php
 $collection= $xpdo->getCollectionGraph('Zip', '{"TZ":{},"ST":{},"CT":{}}');
 if ($collection) {
         foreach ($collection as $obj) {
@@ -246,7 +246,7 @@ if ($collection) {
 
  As with getObject and getCollection, we can supply a $criteria object to getCollectionGraph. Let's add some criteria to our getCollectionGraph() query. In this example, we can search for zipcodes in California (CA)
 
- ``` php
+``` php
 $criteria = $modx->newQuery('Zip');
 $criteria->where(array('ST.statename' => 'CA'));
 $collection= $xpdo->getCollectionGraph('Zip', '{"TZ":{},"ST":{},"CT":{}}', $criteria);
@@ -266,7 +266,7 @@ if ($collection) {
 
  Let's show one more example, this time using MODX tables. This is only an example: filtering on Template Variables is a bit dangerous because the values stored in the database are not always the verbatim values you experience in the manager or in your templates. But this example should help demonstrate the usage of aliases and that you must be aware of the relationships between the objects (some related objects are singular, some are arrays).
 
- ``` php
+``` php
 $criteria = array();
 $criteria['modResource.id:IN'] = array(1,2,3);
 $criteria['TemplateVarResources.tmplvarid'] = 5;

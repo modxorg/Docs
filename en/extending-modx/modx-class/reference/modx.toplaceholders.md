@@ -14,7 +14,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
  API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::toPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholders())
 
- ``` php
+``` php
 array toPlaceholders (array|object  $subject, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])
 ```
 
@@ -22,7 +22,7 @@ array toPlaceholders (array|object  $subject, [string $prefix = ''], [string $se
 
  Set an array of placeholders and prefix with 'my.' Returns a multi-dimensional array containing up to two elements: 'keys' which always contains an array of placeholder keys that were set, and optionally, if the restore parameter is true, 'restore' containing an array of placeholder values that were overwritten by the method.
 
- ``` php
+``` php
 $modx->toPlaceholders(array(
   'name' => 'John',
   'email' => 'jdoe@gmail.com',
@@ -33,7 +33,7 @@ $modx->toPlaceholders(array(
 
  Using nested data as the **$placeholders**:
 
- ``` php
+``` php
 $modx->toPlaceholders(array(
   'document' => array('pagetitle' => 'My Page')
 ));
@@ -43,7 +43,7 @@ $modx->toPlaceholders(array(
 
  Note that using a $prefix on nested placeholders adds the $prefix to the front of _each key_. For example:
 
- ``` php
+``` php
 $modx->toPlaceholders(
   array(
     'test' => 'this',

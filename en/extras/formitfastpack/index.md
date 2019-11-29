@@ -16,7 +16,7 @@ _old_uri: "revo/formitfastpack/"
 
  Below is a simple example of using the _field_ snippet with a FormIt form. For a more detailed example, check out the [Tutorial](extras/formitfastpack/formitfastpack.tutorial).
 
- ``` php
+``` php
 [[!FormIt?
   &hooks=`email,redirect`
   &emailTpl=`ContactFormReport`

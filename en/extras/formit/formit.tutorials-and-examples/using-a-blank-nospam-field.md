@@ -20,7 +20,7 @@ Simply add the following input into your form. You can change the name of the fi
 
 Then, in your FormIt call, add the blank validation:
 
- ``` php
+``` php
 [[!FormIt? &validate=`workemail:blank`]]
 ```
 

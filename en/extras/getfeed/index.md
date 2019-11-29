@@ -31,7 +31,7 @@ Bugs can be filed here: <http://github.com/splittingred/getFeed/issues>
 
 getFeed is used by placing the Snippet call into your content and passing a 'url' parameter:
 
- ``` php
+``` php
 [[!getFeed? &url=`http://path.com/to/my/rss.feed.rss`]]
 ```
 

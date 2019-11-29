@@ -17,7 +17,7 @@ This tutorial shows you how to add Twitter feeds to your site through [getFeed](
 
 First off, after you've downloaded and installed getFeed, place this Snippet call wherever you want the Twitter feed to show up:
 
- ``` php
+``` php
 <ul>
 [[!getFeed?
    &url=`http://twitter.com/statuses/user_timeline/123456789.rss`
@@ -31,7 +31,7 @@ Make sure to change the number there to your own Twitter user ID or username.
 
 So we're calling this snippet uncached, and pointing it to our public Twitter timeline. Then we only want the latest 3 tweets. From there, create a 'twitterFeedTpl' Chunk, and put this in it:
 
- ``` php
+``` php
 <div class="tweet">
     <p>[[+description]]
     <br /><a href="[[+link]]">[[+pubDate:ago]]</a> via [[+twitter.source]]</p>

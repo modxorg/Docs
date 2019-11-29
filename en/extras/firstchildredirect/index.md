@@ -16,7 +16,7 @@ FirstChildRedirect is also available for MODX Evolution, however that does not s
 
 The snippet is really easy to use, just call uncached it in the content or template of the container resource you want to redirect to its first child.
 
- ``` php
+``` php
 [[!FirstChildRedirect]]
 ```
 

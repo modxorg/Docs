@@ -57,7 +57,7 @@ If you like to see the available placeholders, just initiate the &toArray=`1` pa
 
 ## Example
 
- ``` php
+``` php
 [[!FileDownloadLink?
 &getFile=`[[++core_path]]downloads/Document1.doc`
 &tplCode=`
