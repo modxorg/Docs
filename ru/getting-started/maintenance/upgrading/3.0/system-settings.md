@@ -22,3 +22,4 @@ MODX 3.0 очистил значительное количество стары
 - `manager_time_format` использует 24-часовой формат (`H:i`) вместо am/pm (`g:i a`) по умолчанию [#14325](https://github.com/modxcms/revolution/pull/14325)
 - `preserve_menuindex` по умолчанию `false` вместо `true` [#14328](https://github.com/modxcms/revolution/pull/14328)
 - `resource_tree_node_name_fallback` по умолчанию `alias` вместо `pagetitle` [#14328](https://github.com/modxcms/revolution/pull/14328)
+- `editor_css_path` и `editor_css_selectors` был удален [#14843](https://github.com/modxcms/revolution/pull/14843). Эти настройки могут быть в [TinyMCE](https://github.com/modxcms/TinyMCE/issues/30) или других сторонних дополнениях, которые могут потребоваться для настройки недоступных настроек.
