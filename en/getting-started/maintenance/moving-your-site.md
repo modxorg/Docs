@@ -6,6 +6,15 @@ _old_uri: "2.x/administering-your-site/moving-your-site-to-a-new-server"
 
 MODX Revolution is a database-driven web application, so moving it to a new server involves the typical porting over of both the database and all the site's files. In Revolution, it's more or less the same process, but there are couple extra tidbits to watch out for due to Revolution's thorough caching mechanisms and how certain server-specific data is stored in its database.
 
+This is a wrong heading type
+----------------------------
+
+* This is a list 
+* Which has 
+  * insufficient indentation
+  * for proper parsing
+* testing
+
 Following is the official documentation of how to move your site to a new location. Normally, the move is to a new server, but the steps here also apply if you move your site to a new folder on your current web server.
 
 **Tip**
