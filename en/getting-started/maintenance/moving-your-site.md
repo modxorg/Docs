@@ -15,6 +15,8 @@ This is a wrong heading type
   * for proper parsing
 * testing
 
+[Empty link]()
+
 Following is the official documentation of how to move your site to a new location. Normally, the move is to a new server, but the steps here also apply if you move your site to a new folder on your current web server.
 
 **Tip**
