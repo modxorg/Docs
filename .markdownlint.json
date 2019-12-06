@@ -1,15 +1,19 @@
 {
   "default": true,
+  "heading-style": "atx",
   "whitespace": false,
   "line_length": false,
   "ul-start-left": false,
-  "ul-indent": false,
+  "ul-indent": {
+    "indent": 4
+  },
+  "ol-prefix": "one_or_ordered",
   "no-inline-html": false,
-  "no-bare-urls": false,
   "fenced-code-language": false,
-  "first-line-h1": false,
   "no-alt-text": false,
   "single-trailing-newline": false,
-  "no-trailing-punctuation": false,
+  "no-trailing-punctuation": {
+    "punctuation": ".,;:!"
+  },
   "no-duplicate-header": false
 }
