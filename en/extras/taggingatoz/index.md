@@ -35,35 +35,20 @@ General Discussion on the forum: <http://forums.modx.com/thread/71008/taggingato
 | tagSeparator       | Separator to use between tplTag results.                                                                                                                                                                                                                                             | \\n                                                                                                    |
 | groupSeparator     | Separator to use between tplGroup results.                                                                                                                                                                                                                                           | \\n                                                                                                    |
 | limit              | Limit the results **per group**.                                                                                                                                                                                                                                                     | 5                                                                                                      |
-| toLower            | 1                                                                                                                                                                                                                                                                                    | 0 Transform tags to lower case (allows case-insensitive counting/viewing) _Defaults to 1 since 1.1.0._ | 1 |
+| toLower            | \[1\|0\] Transform tags to lower case (allows case-insensitive counting/viewing) | 1  (since v1.1) |
 | encoding           | When use\_multibyte is 1, use this encoding for transforming to lower case.                                                                                                                                                                                                          | UTF-8                                                                                                  |
 | use\_multibyte     | Use multibyte function in transforming to lower case.                                                                                                                                                                                                                                | 0                                                                                                      |
-| groupNumeric       | 1                                                                                                                                                                                                                                                                                    | 0 Group numeric keys into one group when 1                                                             | 1 |
+| groupNumeric       |  \[1\|0\] Group numeric keys into one group when 1                                                             | 1 |
 | numericHeader      | Header (string) to use for the numberic group                                                                                                                                                                                                                                        | 0-9                                                                                                    |
 | toPlaceholder      | When set, it will output the results to the placeholder in this property                                                                                                                                                                                                             |                                                                                                        |
 | groups             | Limit the output to certain groups. Specify them as a comma separated lists, such as: a,b,c,d,e,f. Use the value in numbericHeader if you want to include those, like 0-9,a,b,c,d,e,f.                                                                                               |                                                                                                        |
 | parents            | Comma separated list of parent resource IDs to search in for values.                                                                                                                                                                                                                 |                                                                                                        |
 | depth              | Depth to check for values (only used with &parents).                                                                                                                                                                                                                                 |                                                                                                        |
-| includeDeleted     | \[1                                                                                                                                                                                                                                                                                  | 0\] If you want to include deleted resources as well, set this to 1.                                   | 0 |
-| includeUnpublished | \[1                                                                                                                                                                                                                                                                                  | 0\] If you want to include unpublished resources as well, set this to 1.                               | 0 |
-| tplTag             | Template chunk to use for every tag.                                                                                                                                                                                                                                                 |
-Placeholders you can use:
-- tag: the tag name
-- tagKey: the tagKey property's value
-- count: number of times this tag occured
-- target: target property's value
-- cls: the classes as calculated based on the cls and \*Cls properties.
-- idx: the tag counter for this group. | atozTag |
-| tplGroup | Template chunk to use for every group.
-Placeholders you can use:
-- group: the group name
-- count: number of tags in this group (NOTE: this is the total amount. If you have more tags in this group than your limit property allows, this will be bigger than the number shown.
-- wrapper: will be replaced with the individual tags parsed by the tplTag properties. | atozGroup |
-| tplOuter | Template chunk to use to wrap all the results in.
-Properties you can use
-- countgroups: number of groups being displayed
-- counttags: total number of tags (not neccessarily the same amount as being displayed)
-- wrapper: will be replaced with individual groups parsed by the tplGroup properties | atozOuter |
+| includeDeleted     | \[1\|0\] If you want to include deleted resources as well, set this to 1.                                   | 0 |
+| includeUnpublished |  \[1\|0\] If you want to include unpublished resources as well, set this to 1.                               | 0 |
+| tplTag             | Template chunk to use for every tag. See below for placeholders. | atozTag |
+| tplGroup | Template chunk to use for every group. See below for placeholders. | atozGroup |
+| tplOuter | Template chunk to use to wrap all the results in. See below for placeholders. | atozOuter |
 | cls | Class to add to every item. |  |
 | altCls | Class to use for odd items. | alt |
 | firstCls | Class to use for the first tag. | first |
@@ -71,6 +56,27 @@ Properties you can use
 | weights | (int) Used in weighing tags with the weightCls property. | 0 |
 | weightCls | Class to prefix for weights. |  |
 | debug | Set to 1 to dump debug information. | 0 |
+
+### Placeholders for tplTag
+
+- tag: the tag name
+- tagKey: the tagKey property's value
+- count: number of times this tag occured
+- target: target property's value
+- cls: the classes as calculated based on the cls and \*Cls properties.
+- idx: the tag counter for this group. 
+
+### Placeholders for tplGroup
+
+- group: the group name
+- count: number of tags in this group (NOTE: this is the total amount. If you have more tags in this group than your limit property allows, this will be bigger than the number shown.
+- wrapper: will be replaced with the individual tags parsed by the tplTag properties.
+
+### Placeholders for tplOuter
+
+- countgroups: number of groups being displayed
+- counttags: total number of tags (not neccessarily the same amount as being displayed)
+- wrapper: will be replaced with individual groups parsed by the tplGroup properties
 
 ## Usage
 

@@ -10,5 +10,6 @@
   "first-line-h1": false,
   "no-alt-text": false,
   "single-trailing-newline": false,
-  "no-trailing-punctuation": false
+  "no-trailing-punctuation": false,
+  "no-duplicate-header": false
 }
