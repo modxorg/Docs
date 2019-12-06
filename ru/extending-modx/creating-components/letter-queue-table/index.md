@@ -15,7 +15,7 @@ translation: "extending-modx/creating-components/letter-queue-table"
 
 В итоге у меня получилась вот такая таблица:
 
-![](etter-queue-table-1.png)
+![](letter-queue-table-1.png)
 
 ## Корректировки
 
@@ -285,7 +285,7 @@ public function prepareQueryBeforeCount(xPDOQuery $c) {
 
 Получается вот так:
 
-![](etter-queue-table-2.png)
+![](letter-queue-table-2.png)
 
 При выборе строки в комбобоксе запускается метод `createQueues()` таблицы:
 

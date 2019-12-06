@@ -1,6 +1,6 @@
 ---
 title: "ACL (Список контроля доступа)"
-translation: building-sites/client-proofing/security/policies/acls
+translation: "building-sites/client-proofing/security/policies/acls"
 ---
 
 ## Что такое ACL (список контроля доступа)?

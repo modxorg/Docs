@@ -1,6 +1,6 @@
 ---
 title: "MODX сервисы"
-translation: "ru/extending-modx/services"
+translation: "extending-modx/services"
 ---
 
 ## Что такое сервис?

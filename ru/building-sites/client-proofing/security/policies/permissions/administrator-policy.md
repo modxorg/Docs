@@ -1,6 +1,6 @@
 ---
-title: Политика Администратора
-translation: building-sites/client-proofing/security/policies/permissions/administrator-policy
+title: "Политика Администратора"
+translation: "building-sites/client-proofing/security/policies/permissions/administrator-policy"
 ---
 
 ## Политика Администратора

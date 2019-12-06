@@ -1,6 +1,6 @@
 ---
 title: "Шаблоны политик"
-translation: building-sites/client-proofing/security/policies/policytemplates
+translation: "building-sites/client-proofing/security/policies/policytemplates"
 ---
 
 ## Что такое шаблоны политики?

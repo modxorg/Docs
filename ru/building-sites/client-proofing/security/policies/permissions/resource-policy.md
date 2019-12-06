@@ -1,6 +1,6 @@
 ---
 title: "Ресурсная политика"
-translation: building-sites/client-proofing/security/policies/permissions/resource-policy
+translation: "building-sites/client-proofing/security/policies/permissions/resource-policy"
 ---
 
 ## Ресурсная политика

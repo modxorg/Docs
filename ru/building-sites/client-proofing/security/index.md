@@ -1,6 +1,7 @@
 ---
 title: "Безопасность (ACLs)"
-translation: building-sites/client-proofing/security/security
+translation: "building-sites/client-proofing/security"
+
 ---
 
 ## Безопасность в MODX Revolution
