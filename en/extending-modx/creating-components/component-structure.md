@@ -60,7 +60,7 @@ This directory should be copied to the working site, so it looks like this:
 
 That is, the directory structure is such that it is copied to the correct place `/core` of the site.
 
-#### Main directories:
+#### Main directories
 
 - **controllers** — files for the preparation of admin pages. Download the necessary scripts and styles.
 - **docs** — change history, instruction and license. These files are involved in the package description.

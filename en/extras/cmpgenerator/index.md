@@ -34,13 +34,13 @@ CMPGenerator is on GitHub: <https://github.com/jgulledge19/CMPGenerator>, report
 - Create your database tables(s) via your preferred method - phpmyadmin, SQLYog, ect..
   Note your auto increment primary key should be named id
 - Now create a new Package
-  - Choose a unique name, it is a good idea to create a prefix for your packages.
+    - Choose a unique name, it is a good idea to create a prefix for your packages.
       Example you could use your initials like First Middle Last: fmlMyCustomPackage
       Also make sure you only use alphanumberic values
-  - List the tables that you just created via a comma separated list
-  - Put in the prefix for the table if any. It is best practice to use the same prefix as your MODX install does.
-  - Select if you want to build the schema. If you don't do this you can't use your tables.
-  - Select build Package and this will generate all necessary files.
+    - List the tables that you just created via a comma separated list
+    - Put in the prefix for the table if any. It is best practice to use the same prefix as your MODX install does.
+    - Select if you want to build the schema. If you don't do this you can't use your tables.
+    - Select build Package and this will generate all necessary files.
 - Once the files are created and if you are using tables that have a relationship you will want to manually add that code in the file: core/components/YOUR-CMP/model/YOUR-CMP/YOUR-CMP.mysql.custom.schema.xml. See Documentation on Defining Relationships for more info: <http://rtfm.modx.com/display/xPDO20/Defining+Relationships>.
   Once you have updated this file to show the relationships you can now regenerate the package. Set the Build Scheme to No and set Build Package to Yes and save.
 

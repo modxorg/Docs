@@ -82,9 +82,7 @@ $events = array(
 return $events;
 ```
 
-## Properties
-
-**&plugins**
+## &plugins Property
 
 To call the plugins, you need to call it inside the snippet, as a JSON format, eg:
 

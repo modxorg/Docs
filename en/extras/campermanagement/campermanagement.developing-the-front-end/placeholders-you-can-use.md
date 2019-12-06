@@ -95,7 +95,7 @@ The owner object could be used as a very rudimentary customer relationships syst
 | rank        |                                                      |
 | image       | Relative URL, can be used with phpthumbof to resize. |
 
-## Also see:
+## Also see
 
 1. [CamperManagement.cmCamperDetails Snippet](extras/campermanagement/campermanagement.developing-the-front-end/cmcamperdetails-snippet)
 2. [CamperManagement.cmCampers Snippet](extras/campermanagement/campermanagement.developing-the-front-end/cmcampers-snippet)

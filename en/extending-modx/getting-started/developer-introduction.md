@@ -48,7 +48,7 @@ This also includes what Revolution calls "processors", which are scripts that ha
 
 Views in MODX Revolution are called 'Templates', but are used differently based on what context we're talking about.
 
-#### In the front-end, they are Templates, Chunks and Resources.
+In the front-end, they are Templates, Chunks and Resources.
 
 ##### [Templates](building-sites/elements/templates "Templates")
 

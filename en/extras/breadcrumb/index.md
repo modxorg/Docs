@@ -66,14 +66,17 @@ The BreadCrumb snippet can be called using the tag :
 | showHomeCrumb        | Show the home page as a crumb. Since 1.4.0-pl, the home crumb usage was simplified. The &showHomeCrumb=1 property adds the home crumb at the start of breadcrumb and &showHomeCrumb=0 hides it if present. | 1                   |             |
 | useWebLinkUrl        | Use the weblink url instead of the url to the weblink                                                                                                                                                      | 1                   | 1.0.0-beta3 |
 | direction            | Direction or breadcrumb : Left To Right (ltr) or Right To Left (rtl) for Arabic language for example                                                                                                       | ltr                 |             |
-| scheme               | Format for how URLs are generated. Possible values are (based on makeURL API call : [modX.makeUrl](extending-modx/modx-class/reference/modx.makeurl "modX.makeUrl")):                                      |
+| scheme               | Format for how URLs are generated. Possible values are [based on modX.makeUrl](extending-modx/modx-class/reference/modx.makeurl "modX.makeUrl")):                                      | | modx link\_tag\_scheme setting | 1.2.0-pl |
+
+Valid scheme values:
+
 - -1 : (default value) URL is relative to site\_url
 - 0 : see http
 - 1 : see https
 - full : URL is absolute, prepended with site\_url from config
 - abs : URL is absolute, prepended with base\_url from config
 - http : URL is absolute, forced to http scheme
-- https : URL is absolute, forced to https scheme | modx link\_tag\_scheme setting | 1.2.0-pl |
+- https : URL is absolute, forced to https scheme
 
 ### Templating properties
 
