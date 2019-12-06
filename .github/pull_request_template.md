@@ -1,14 +1,11 @@
-## Description of improvements
+## Description
 
-Any specific reason for this change? If a recent change in the MODX core caused the change, please include a link to the relevant pull request. 
+What does this change, and why is the change needed? 
 
 ## Affected versions
 
-Please make sure your pull request targets the **lowest** affected version. Mark other relevant versions with an X below.
-
-- [ ] 2.x (current)
-- [ ] 3.x
+Is the change relevant to 2.x, 3.x, or both?
 
 ## Relevant issues
 
-If available, provide the link or ID of relevant issues so that they can be closed once your improvement has been merged.
+Please link to any relevant issues or pull requests.
