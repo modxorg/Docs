@@ -13,7 +13,7 @@
   "no-alt-text": false,
   "single-trailing-newline": false,
   "no-trailing-punctuation": {
-    "punctuation": ".,;:!"
+    "punctuation": ".,;:"
   },
   "no-duplicate-header": false
 }
