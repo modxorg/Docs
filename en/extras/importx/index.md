@@ -121,7 +121,7 @@ This can be achieved by writing a new class (see core/components/importx/process
 
 At this point there's only the CSV file, but I will very very very much appreciate someone coming up with XML or other formats. Feel free to contact me (hello@markhamstra.com) if you're interested but need some help figuring out what to do.
 
-## And now...
+## And now
 
 Go use it!
 

@@ -56,7 +56,7 @@ After Friendly URLs are set up, you will need to add some specific rewrite rules
 
 #### For .htaccess (Apache, mod\_rewrite enabled)
 
-**Rewrite rules are not necessary since 1.2.1 (relased on 23rd of July 2013)**
+##### Rewrite rules are not necessary since 1.2.1 (relased on 23rd of July 2013)
 
 Make sure to add this BEFORE the regular MODX rewrite rules in your .htaccess but AFTER the RewriteBase. If you have used a different alias than "forums" in your Discuss resource, or the forums are in the root of the site, make sure to replace all occurences of "forums" below accordingly.
 

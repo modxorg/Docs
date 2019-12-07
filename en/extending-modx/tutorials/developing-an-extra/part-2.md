@@ -848,4 +848,6 @@ I have made a couple of custom components and I have setupped a "afterSaveEvent"
 
 So I have figured out that this $objectType is not required to let the processors work properly. When you leave that, MODX falls back on "object" so you will have $scriptProperties\['object'\] in your plugin, instead of many different type names.
 
-_Note: saves about 30 bytes disk space per processor :-)_
+## Note
+
+Saves about 30 bytes disk space per processor :-)

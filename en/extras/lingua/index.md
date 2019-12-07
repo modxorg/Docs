@@ -170,11 +170,11 @@ On your wayfinder's rowTpl, change the placeholder, like this:
 
 Since version 2, Lingua now stores clone resource's content, the main content and all defined Template Variables.
 
-#### Template Variables:
+### Template Variables
 
 You need to go to Custom Manager Page (Components > Lingua), and define which TV that will be available for translation.
 
-#### Standard MODX fields (pagetitle, content, etc.) :
+#### Standard MODX fields (pagetitle, content, etc.)
 
 You also **need** to define additional setting for particular context that will use Lingua.
 On your resource tree navigation > right click > edit context.
@@ -195,7 +195,7 @@ After it is saved, you will see the setting on the grid like this.
 
 ![](lingua_context_settings.png)
 
-#### Multiple contexts :
+#### Multiple contexts
 
 To have different languages set for different context, you can add this setting as well:
 

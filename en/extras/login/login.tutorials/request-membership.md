@@ -331,7 +331,7 @@ _\* Script from [About.com](http://email.about.com/od/emailprogrammingtips/qt/Ho
 
 You can also try configuring your site to use SMTP to send emails; this is often preferable because it relies on a dedicated email server (e.g. yahoo.com or google.com) to send your messages. Under System->Settings, search for SMTP, and you'll find a handful of settings that can help you set that up.
 
-### After submitting the registration form, I get a white page.
+### After submitting the registration form, I get a white page
 
 This issue shouldn't come up on recent versions of MODX, but to verify this behavior, try visiting your "Request Membership" sign-up page and submit the form without any data in it. If you get nothing but a completely empty blank white page, the cause may be due to your PHP configuration.
 
