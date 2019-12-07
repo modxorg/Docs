@@ -12,7 +12,7 @@ translation: "building-sites/resources/symlink/using-resource-symlinks"
 1\) Создайте символическую ссылку с именем, псевдонимом и ссылкой на сам «master» документ.
 2\) Если вы этого не видите - попробуйте очистить кеш сайта / кеш документов.
 
-## Пример:
+## Пример
 
 ![](/2.x/en/building-sites/resources/revolution_symlink.png)
 

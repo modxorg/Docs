@@ -7,7 +7,7 @@ translation: "extending-modx/creating-components"
 
 В данном курсе от [Василия Наумкина](https://github.com/bezumkin) мы будем писать не абы что, а нужный и полезный компонент рассылок по юзерам сайта, который мы потом подарим всем пользователям MODX.
 
-## План курса:
+## План курса
 
 - [Настройка рабочего места: MODXCloud + PhpStorm](extending-modx/creating-components/customize-the-workplace)
 - [Разбор структуры компонента, зачем нужны assets, core и остальные?](extending-modx/creating-components/component-structure)
