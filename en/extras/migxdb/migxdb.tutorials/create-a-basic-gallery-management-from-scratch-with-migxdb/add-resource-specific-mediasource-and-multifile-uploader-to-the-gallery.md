@@ -8,10 +8,10 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
 - Go to: Media->Media Sources
 - Create new media source
-  - name: ResourceMediaPath
-  - source type: Filesystem
+    - name: ResourceMediaPath
+    - source type: Filesystem
 - Update this media source
-  - basepath and baseurl: `[[migxResourceMediaPath? &pathTpl=`assets/mygallery/{id}/` &createFolder=`1`]]`
+    - basepath and baseurl: `[[migxResourceMediaPath? &pathTpl=`assets/mygallery/{id}/` &createFolder=`1`]]`
 
  You may also need to create a directory with write-permissions for php: assets/mygallery/
 

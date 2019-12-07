@@ -123,7 +123,7 @@ If you're redirecting back to the login screen every time, try setting this in y
 php_value session.auto_start 0
 ```
 
-### Could not connect to the database server. Check the connection properties and try again. Access Denied...
+### Could not connect to the database server. Check the connection properties and try again. Access Denied
 
 Often on shared hosting, if you create a username for your database with an underscore (\_) in it, it will cause problems. Ensure your database username does not contain an underscore, and try again.
 

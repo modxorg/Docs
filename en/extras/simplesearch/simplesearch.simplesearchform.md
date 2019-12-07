@@ -63,7 +63,7 @@ There were no search results for the search "". Please try using more general te
 
 Then that probably means that the **SimpleSearch** isn't looking in the right place in the $_POST or $\_GET array for your search term. If you created a custom **&tpl** for your **SimpleSearchForm** tpl, make sure that the name used for your search term variable is properly identified in your corresponding **SimpleSearch** Snippet call, e.g. note here how **my\_custom\_search\_field** is used in the **SimpleSearchForm** tpl \_and_ it's specified in the **&searchIndex** parameter of the **SimpleSearch** call:
 
-### SimpleSearchForm tpl:
+### SimpleSearchForm tpl
 
 ``` html
 <form id="my_id" action="[[~[[+landing:default=`[[*id]]`]]]]" method="[[+method:default=`get`]]">
@@ -73,7 +73,7 @@ Then that probably means that the **SimpleSearch** isn't looking in the right pl
 </form>
 ```
 
-### SimpleSearch Snippet call:
+### SimpleSearch Snippet call
 
 ``` php
 [[!SimpleSearch? &searchIndex=`my_custom_search_field`]]

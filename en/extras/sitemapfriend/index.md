@@ -126,7 +126,7 @@ The default chunk used for each result item.
 </li>
 ```
 
-**Available placeholders**
+##### Available placeholders
 
 | Name       | Description                                                                                                                                                                                 |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -176,7 +176,7 @@ The default chunk used for XML sitemaps as an outer container for the entire sit
 
 The default chunk used for XML sitemaps for each result item.
 
-**Default Value**
+#### Default Value
 
 ``` php
 <url>

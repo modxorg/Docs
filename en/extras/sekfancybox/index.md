@@ -110,7 +110,7 @@ For more information on how to customize fancyBox, check out their [website](htt
 | prevMethod | Method that handles transition. |  | changeOut | yes | 1.0.0 |
 | helpers | Object containing enabled helpers and options for each of the, this accepts a json string. |  |  | yes | 1.0.0 |
 
-#### Helpers Options
+### Helpers Options
 
 There are several options and sub options that can be set in the helpers properties.
 
