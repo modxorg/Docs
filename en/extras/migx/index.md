@@ -48,13 +48,13 @@ _old_uri: "revo/migx"
 - Refresh the page
 - Find the Components category from the list of top menu items on the right. Right click on it.
 - Click "Place Action Here"
-  - Lexicon Key: migx
-  - Description: Configurator and Package Manager
-  - Action: migx - index (there are multiple pages sorted alphabetically. Make sure you go past all the core actions)
-  - Icon: (leave blank)
-  - Parameters: &configs=packagemanager||migxconfigs||setup
-  - Handler: (leave blank)
-  - Permissions: (leave blank)
+    - Lexicon Key: migx
+    - Description: Configurator and Package Manager
+    - Action: migx - index (there are multiple pages sorted alphabetically. Make sure you go past all the core actions)
+    - Icon: (leave blank)
+    - Parameters: &configs=packagemanager||migxconfigs||setup
+    - Handler: (leave blank)
+    - Permissions: (leave blank)
 - Click "save"
 - Refresh the page
 - Open the "Components" menu

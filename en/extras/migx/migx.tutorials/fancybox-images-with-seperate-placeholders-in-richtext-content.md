@@ -111,7 +111,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.fancybox-images-with-seperate-placehold
 
 Our last step is to create the chunk for our fancybox-images.
 
-##### Name
+#### Name
 
 fancybox
 

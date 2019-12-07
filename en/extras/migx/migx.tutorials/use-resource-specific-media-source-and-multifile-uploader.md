@@ -6,49 +6,49 @@ _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-
 
 ## Use resource-specific media source and multifile-uploader
 
- In this Tutorial we will learn how we can have a dynamic media source, with its own auto-created file-folder for each resource.
- For uploading multiple files at once, we will use MIGX's multiupload - feature.
- We will also be able to synchronize all migx items with files in that media source directory.
+In this Tutorial we will learn how we can have a dynamic media source, with its own auto-created file-folder for each resource.
+For uploading multiple files at once, we will use MIGX's multiupload - feature.
+We will also be able to synchronize all migx items with files in that media source directory.
 
 ## Requirements
 
- First off we will need to install [MIGX](extras/migx "MIGX") by Package Management and do some [basic configurations](extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
+First off we will need to install [MIGX](extras/migx "MIGX") by Package Management and do some [basic configurations](extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
 
 ## Create the dynamic resource-specific media source
 
 - Go to: Tools->Media Sources
 - Create new media sourc
-  - name: ResourceMediaPath
-  - source type: Filesystem
+    - name: ResourceMediaPath
+    - source type: Filesystem
 - Update this media source
-  - basepath and baseurl: `[[migxResourceMediaPath? &pathTpl=`assets/resourceimages/{id}/`]]`
-  - if you add the &createFolder=`1` property it will automatically create the {id} folder if it doesn't already exist.
+    - basepath and baseurl: `[[migxResourceMediaPath? &pathTpl=`assets/resourceimages/{id}/`]]`
+    - if you add the &createFolder=`1` property it will automatically create the {id} folder if it doesn't already exist.
 - Add three new settings to the media source:
-  - thumbX: 200
-  - thumbY: 200
-  - maxFiles: 20
+    - thumbX: 200
+    - thumbY: 200
+    - maxFiles: 20
 
- You may need to create a directory with write-permissions for php: assets/resourceimages/
+You may need to create a directory with write-permissions for php: assets/resourceimages/
 
 ## Create the MIGX - TV
 
- Create a new TV
+Create a new TV
 
 - Tab: General Information
-  - name: resourcealbum
+    - name: resourcealbum
 - Tab: Input Options
-  - Input Type: migx
-  - Configurations: resourcealbum
+    - Input Type: migx
+    - Configurations: resourcealbum
 - Tab: Template Access
-  - select your Template for your album-resources
+    - select your Template for your album-resources
 - Tab: Media Sources
-  - select the ResourceMediaPath - media source for your context (web by default)
+    - select the ResourceMediaPath - media source for your context (web by default)
 
 ## Create the Configuration for the MIGX-TV
 
 - Go to: Components->MIGX->Tab: MIGX
 - Create a new Configuration with 'add item'
-  - name: resourcealbum
+    - name: resourcealbum
 - Click 'Done' to save the new Configuration
 - right-click on the new configuration and select 'import/export'
 - copy/paste this code into the textarea:
@@ -60,5 +60,5 @@ _old_uri: "revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-
 
 ## Have Fun
 
- Now you should be able to create Album-Resources, upload images with multifile-uploader and synchronize the MIGX-items with your files.
- For listing them on Front-end use the getImageList - snippet.
+Now you should be able to create Album-Resources, upload images with multifile-uploader and synchronize the MIGX-items with your files.
+For listing them on Front-end use the getImageList - snippet.

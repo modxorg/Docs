@@ -13,7 +13,7 @@ Please note that this document deals with **web** controllers, not mgr controlle
 Please don't forget to read past this list to see common options and placeholders in the controller templates.
 
 - [Discuss.Controllers.board](extras/discuss/discuss.controllers/board "Discuss.Controllers.board")
-  - [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/board/xml "Discuss.Controllers.board.xml")
+    - [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/board/xml "Discuss.Controllers.board.xml")
 - [Discuss.Controllers.home](extras/discuss/discuss.controllers/home "Discuss.Controllers.home")
 - [Discuss.Controllers.login](extras/discuss/discuss.controllers/login "Discuss.Controllers.login")
 - [Discuss.Controllers.logout](extras/discuss/discuss.controllers/logout "Discuss.Controllers.logout")
