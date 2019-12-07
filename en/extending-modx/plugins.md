@@ -47,7 +47,7 @@ switch($eventName) {
 
 Plugins can be used for a variety of different applications, below are a couple of examples:
 
-### Message the User:
+### Message the User
 
 **Description:** Send a custom message to the user as they create/edit a page... a custom header.
 **System Events:** OnDocFormPrerender
@@ -85,7 +85,7 @@ $output = &$modx->resource->_output; // get a reference to the output
 $output = str_replace($words,"<b>[filtered]</b>",$output);
 ```
 
-### Page-Not-Found Redirector:
+### Page-Not-Found Redirector
 
 **Description:** Redirects a user to selected document and sends a message
 **System Events:** OnPageNotFound

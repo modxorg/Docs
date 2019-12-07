@@ -45,8 +45,8 @@ Install Babel via the package manager and set the system settings for Babel via 
 - **Context Keys** (_babel.contextKeys_): Comma separated list of context keys which should be used to link multilingual resources.
   For advanced configuration you may define several groups of context keys by using a semicolon (;) as delimiter. This is usefull if your're administrating multiple multilingual sites within one MODX instance.
   Example scenario:
-  - **site1**: en, de, fr. using contexts: _web, site1de, site1fr_
-  - **site2**: en, de. using contexts: _site2en, site2de_
+    - **site1**: en, de, fr. using contexts: _web, site1de, site1fr_
+    - **site2**: en, de. using contexts: _site2en, site2de_
 
 You would set _babel.contextKeys_ to "_web_**_,_**_site1de_**_,_**_site1fr_**_;_**_site2en_**_,_**_site2de_".
 

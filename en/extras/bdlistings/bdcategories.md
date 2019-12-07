@@ -71,7 +71,7 @@ Placeholders you can use:
 
 ## Examples
 
-### Minimum call:
+### Minimum call
 
 `[[!bdCategories]]`
 
@@ -79,7 +79,7 @@ Categories Structure
 
 - Different
 - Something
-  - Something - Sub Category
+    - Something - Sub Category
 
 Resulting HTML with default templates:
 

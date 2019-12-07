@@ -16,9 +16,9 @@ _old_uri: "revo/getresources/getresources.examples/getresources.category-index-p
 
 ## The Chunks
 
- I like to put my snippet calls in a chunk, this way the RTE doesn't turn the & into &amp;
+I like to put my snippet calls in a chunk, this way the RTE doesn't turn the & into &amp;
 
-**Create a chunk and name it list-docs-thumb**
+Create a chunk and name it list-docs-thumb.
 
 ``` php
 <div class="list-docs thumb grid">

@@ -13,7 +13,7 @@ A MODX Revolution symlink simply takes the content of one resource and displays 
 1\) Create the symlink with a name, an alias and a reference to the "master" document itself.
 2\) If you do not see it -- try clearing the site cache / document cache.
 
-## Example:
+## Example
 
 ![](revolution_symlink.png)
 

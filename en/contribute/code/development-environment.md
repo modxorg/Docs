@@ -34,10 +34,10 @@ In developing MODX, the team has found the following software and environments i
 - Click OK
 - Repeat for each of the links above as necessary
 - Individual notes:
-  - WST - select the latest Web Tools Platform (takes quite a while)
-  - Subclipse - simply install the Subclipse option
-  - PHPEclipse - install everything offered
-  - Spket - Install everything offered
+    - WST - select the latest Web Tools Platform (takes quite a while)
+    - Subclipse - simply install the Subclipse option
+    - PHPEclipse - install everything offered
+    - Spket - Install everything offered
 
 ### Other Tools
 

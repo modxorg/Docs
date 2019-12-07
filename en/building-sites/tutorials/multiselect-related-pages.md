@@ -197,7 +197,7 @@ An example of the relatedPagesTpl could be:
 
 This creates a list item with a link to the resource and its pagetitle as the title attribute. It will try to use the longtitle for the link text, but defaults to the pagetitle if the longtitle doesn't exist. It also uses the userinfo output modifier to add the fullname of the author of the resource to the list item. You can use any default resource field there.
 
-## Further reading..
+## Further reading
 
 - [Template Variable Input Types](building-sites/elements/template-variables/input-types "Template Variable Input Types")
 - [Input and Output Filters](building-sites/tag-syntax/output-filters "Input and Output Filters")

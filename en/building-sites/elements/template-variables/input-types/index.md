@@ -49,7 +49,7 @@ The basic usage of this is to simply define the field as a checkbox. You can con
 - Input Option Values: My Option==1
 - Default Value: 1
 
-#### Unchecked by Default:
+#### Unchecked by Default
 
 - Input Option Values: My Option==1
 - Default Value: 0
@@ -286,7 +286,7 @@ The radio option can be used to output more than simple numerical values. One su
 
 Set your input option values using the format **Title==value** format, but use the chunk placeholders as your values. To declare multiple options use two pipes (||) after the value, before the next options title.
 
-#### Sidebar Example Revolution:
+#### Sidebar Example Revolution
 
 - Input Option Values: `[[$my_related_chunk]]||Content==[[*sidebar-txt]]||Twitter==[[$my_twitter_chunk]]`
 - Default Value: `[[$my_related_chunk]]`

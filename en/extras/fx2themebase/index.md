@@ -61,4 +61,3 @@ _old_uri: "revo/fx2themebase"
 
  Customize your username, fullname and email address. Then down on the bottom right of the screen, enable the “New Password” options. Select your options and save your user profile. You can now login with your own username and password, and the "Forgot Login" feature will send password reset info to your email address.
 
-## Next Steps...

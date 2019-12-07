@@ -34,11 +34,11 @@ _old_uri: "revo/amazonses-mailing-list"
 
  **&tpl\_error** - Chunk name with error message if email is not found in the database (default: aSESUnsubscribeError)
 
- **Cron set up**
+## Cron set up
 
  Open your crontab _(for example CentOS: crontab -e)_ and add line:
 
- ``` plain
+``` plain
 * * * * * php /absoulte/path/to/modx/web/directory/assets/components/aSES/cron.php
 ```
 

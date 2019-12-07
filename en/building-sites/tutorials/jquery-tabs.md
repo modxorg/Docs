@@ -31,7 +31,7 @@ $(function() { $("#tabs").tabs(); });
 
 Great! So this loads the pages via Ajax.
 
-## Wait, I want the Page Titles as the tab headers!
+## Using Page Titles as tab headers
 
 There are a few ways you can do this; one, you can use [getResources](/extras/getresources "getResources"), [Wayfinder](/extras/wayfinder "Wayfinder"), or use a getField snippet.
 

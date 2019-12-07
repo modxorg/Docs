@@ -23,8 +23,8 @@ translation: "contribute/code/contributors-guide"
 
 ``` php
 git clone git@github.com:YourGitUsername/revolution.git
-$ cd revolution
-$ git remote add upstream -f http://github.com/modxcms/revolution.git
+cd revolution
+git remote add upstream -f https://github.com/modxcms/revolution.git
 ```
 
 Эта настройка делает ваш форк стандартным `origin` удаленным и добавляет/извлекает "благословенный" репозиторий как удаленный `upstream`. Возможно, вы захотите добавить другие ремоты в другие ветки разработчика, и я бы назвал эти ремоты соответствующим образом, чтобы вы могли отслеживать каждый из них.
@@ -32,23 +32,19 @@ $ git remote add upstream -f http://github.com/modxcms/revolution.git
 Вы захотите пойти дальше и создать локальные ветви отслеживания для ветви основной версии и/или ветви вспомогательной версии, с которой вы хотите работать, из своего форка, a.k.a. `origin`:
 
 ``` php
-$ git checkout -b 2.x origin/2.x
-Switched to a new branch "2.x"
-$ git checkout -b 2.4.x origin/2.4.x
-Switched to a new branch "2.4.x"
+git checkout -b 2.x origin/2.x
+git checkout -b 2.4.x origin/2.4.x
 ```
 
 Чтобы ваши локальные ветви отслеживания для `2.x` и `2.4.x` были актуальными из репозитория `upstream`:
 
 ``` php
-$ git fetch upstream
-$ git checkout 2.4.x
-Switched to branch "2.4.x"
-$ git merge --ff-only upstream/2.4.x
-$ git checkout 2.x
-Switched to branch "2.x"
-$ git merge --ff-only upstream/2.x
-$ git push origin 2.4.x 2.x
+git fetch upstream
+git checkout 2.4.x
+git merge --ff-only upstream/2.4.x
+git checkout 2.x
+git merge --ff-only upstream/2.x
+git push origin 2.4.x 2.x
 ```
 
 Тем не менее, обратите внимание, что push предназначен главным образом для показа, так как постоянные ветви никогда не должны быть целью коммитов участника, даже в форках. `2.4.x` и `2.x` в вашей ветке должны соответствовать ветвям `upstream` с тем же именем. Ожидается, что все вклады будут отправлены через отдельную ветвь, происходящую из соответствующей современной ветки основной версии, или ветку с исправлением ошибок, происходящую из ветви минорной версии в вышестоящем репозитории.
@@ -82,13 +78,11 @@ Switched to a new branch "my-bc-feature"
 После того, как вы завершили разработку функции в своей ветке, вы должны сначала убедиться, что ваша работа воспроизводится поверх последних обновлений от `develop`:
 
 ``` php
-$ git fetch upstream
-$ git checkout 2.x
-Switched to branch "2.x"
-$ git merge --ff-only upstream/2.x
-$ git checkout my-bc-feature
-Switched to branch "my-bc-feature"
-$ git rebase 2.x
+git fetch upstream
+git checkout 2.x
+git merge --ff-only upstream/2.x
+git checkout my-bc-feature
+git rebase 2.x
 ```
 
 Это поможет интеграторам без труда включать вашу работу.

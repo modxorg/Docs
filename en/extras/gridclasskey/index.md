@@ -46,8 +46,8 @@ _old_uri: "revo/gridclasskey"
 - Editor Type: all cells are editable, except the ID.
    On here, user can define what kind of editor they want to use to edit the content.
    The options are:
-  - the name of any of ExtJs and MODX's xtype editors, or
-  - (since 1.0.1-rc1) a json-parameter object of a complex set of an editor, eg:
+    - the name of any of ExtJs and MODX's xtype editors, or
+    - (since 1.0.1-rc1) a json-parameter object of a complex set of an editor, eg:
       `{xtype:"modx-combo",url:"path/to/connector",baseParams:{action:"something/getlist",combo:true}}`
 - Output Filter: user can modify the output value of the grid when its rendered. It's just a [MODX's Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)).
 
@@ -78,7 +78,7 @@ _old_uri: "revo/gridclasskey"
 3. Reload the grid after the combobox is selected
 4. Clear the filter when the "Clear" button is selected
 
-##### 1. Set Up the "Author" usergroup.
+##### 1. Set Up the "Author" usergroup
 
  You can choose different name, this is an example.
 
@@ -86,7 +86,7 @@ _old_uri: "revo/gridclasskey"
 
  ![](acl.png)
 
-##### 2. Create the "author" Template Variable.
+##### 2. Create the "author" Template Variable
 
  We need to create a TV that lists users from the "Author" usergroup.
 
@@ -345,7 +345,7 @@ return 'AuthorUsersGetListProcessor';
 2. Load the file
 3. Edit the GridClassKey's setting
 
-  **1. Component**
+##### 1. Component
 
 ``` javascript
 GridClassKey.combo.Availability = function (config) {
@@ -369,13 +369,13 @@ On here, this component extends "MODx.combo.Boolean" with obvious values, just f
 
 You can extends any available MODx's JS components.
 
- **2. Load the file**
+##### 2. Load the file
 
  Let's say we save the above code as "**../assets/components/customize-gck/js/mgr/widgets/combo.availability.js**"
 
  ![](gck-load-bottom-js.png)
 
- **3. Edit the GridClassKey's setting**
+##### 3. Edit the GridClassKey's setting
 
  Then change the Field's setting.
 

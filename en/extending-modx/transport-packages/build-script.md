@@ -487,9 +487,9 @@ return $output;
 As you can see, some new constants here. These are available to all setup options forms and resolvers:
 
 - **xPDOTransport::PACKAGE\_ACTION** - This tells us what action is being performed on the package; it is one of the following 3 values:
-  - **xPDOTransport::ACTION\_INSTALL** - This is set when the package is being executed as an install.
-  - **xPDOTransport::ACTION\_UPGRADE** - This is set when the package is being upgraded.
-  - **xPDOTransport::ACTION\_UNINSTALL** - This is set when the package is being uninstalled. This doesn't apply to setup-options, obviously, since nothing is being set up. In future Revolution releases, it will allow you to do specific options for uninstall; but not yet.
+    - **xPDOTransport::ACTION\_INSTALL** - This is set when the package is being executed as an install.
+    - **xPDOTransport::ACTION\_UPGRADE** - This is set when the package is being upgraded.
+    - **xPDOTransport::ACTION\_UNINSTALL** - This is set when the package is being uninstalled. This doesn't apply to setup-options, obviously, since nothing is being set up. In future Revolution releases, it will allow you to do specific options for uninstall; but not yet.
 
 Basically, we're presenting them with a form before install that looks like this:
 
