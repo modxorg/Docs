@@ -75,7 +75,7 @@ Tab **Columns**
 
 - Tab **Column**
     - **Header** — Headline H1
-  - **Field** — pagetitle
+    - **Field** — pagetitle
 - Tab **Cell Editor**
     - **Editor** — this.textEditor
 

@@ -66,7 +66,7 @@ Tasks in purple are already finished in Git. Ones in green are finished in beta/
 
 ### Quip 0.5.1
 
-- Auto-fix URLs without http:// prefix
+- Auto-fix URLs without <http://> prefix
 - Added Russian translation
 
 ### Quip 0.5

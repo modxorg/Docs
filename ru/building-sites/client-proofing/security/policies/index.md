@@ -5,7 +5,7 @@ translation: "building-sites/client-proofing/security/policies"
 
 ## Что такое политика доступа?
 
- Политика доступа - это набор [Разрешений](building-sites/client-proofing/security/policies/permissions "Разрешения") содержащий одно или несколько Разрешений, определённых в панели управления. По умолчанию в MODX определены следующие политики доступа:
+Политика доступа - это набор [Разрешений](building-sites/client-proofing/security/policies/permissions "Разрешения") содержащий одно или несколько Разрешений, определённых в панели управления. По умолчанию в MODX определены следующие политики доступа:
 
 - **Administrator**: Политика администрирования контекста со всеми разрешениями по умолчанию.
 - **Content Editor**: Политика администрирования контекста с ограниченными разрешениями, относящимися к редактированию контента, но без разрешений на публикацию.
@@ -43,7 +43,7 @@ translation: "building-sites/client-proofing/security/policies"
 
 Доступ к ресурсам так же может быть разграничен с использованием ролей и групп ресурсов. По умолчанию MODX имеет [Ресурсную политику](building-sites/client-proofing/security/policies/permissions/resource-policy "Разрешения - Ресурсная политика"), содержащую все основные разрешения, которые можно использовать в ACL групп ресурсов.
 
- Примером может быть назначение политики "Resource" группе ресурсов под названием "Documents HR". Затем вы предоставили бы группе пользователей под названием «Отдел кадров» доступ к этой группе ресурсов через ACL ресурса:
+Примером может быть назначение политики "Resource" группе ресурсов под названием "Documents HR". Затем вы предоставили бы группе пользователей под названием «Отдел кадров» доступ к этой группе ресурсов через ACL ресурса:
 
 ![](acl-rg1.png)
 
@@ -77,8 +77,8 @@ translation: "building-sites/client-proofing/security/policies"
 4. [Роли](building-sites/client-proofing/security/roles)
 5. [Политики](building-sites/client-proofing/security/policies)
     1. [Права Доступа](building-sites/client-proofing/security/policies/permissions)
-      1. [Права Доступа - Политика Администратора](building-sites/client-proofing/security/policies/permissions/administrator-policy)
-      2. [Права Доступа - Политика Ресурса](building-sites/client-proofing/security/policies/permissions/resource-policy)
+        1. [Права Доступа - Политика Администратора](building-sites/client-proofing/security/policies/permissions/administrator-policy)
+        2. [Права Доступа - Политика Ресурса](building-sites/client-proofing/security/policies/permissions/resource-policy)
     2. [КД](building-sites/client-proofing/security/policies/acls)
     3. [Шаблоны Политик](building-sites/client-proofing/security/policies/policytemplates)
 6. [Уроки безопасности](building-sites/client-proofing/security/security-tutorials)
