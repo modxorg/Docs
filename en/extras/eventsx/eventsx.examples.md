@@ -15,7 +15,7 @@ Go to components -> EventsX and create some events
 ### create your chunk "upcomingEvents"
 
 ``` php
-        <li>[[+location:htmlentities]]: <a href="[[+url]]" title="[[+name:htmlentities]]">[[+name:htmlentities]]</a> <time datetime="[[+startdate:strtotime:date=`%Y-%m-%d`]]" title="event is scheduled on [[+startdate:strtotime:date=`%d.%m.%Y`]]">[[+startdate:strtotime:date=%d.%m.%Y`]]</time></li>
+<li>[[+location:htmlentities]]: <a href="[[+url]]" title="[[+name:htmlentities]]">[[+name:htmlentities]]</a> <time datetime="[[+startdate:strtotime:date=`%Y-%m-%d`]]" title="event is scheduled on [[+startdate:strtotime:date=`%d.%m.%Y`]]">[[+startdate:strtotime:date=%d.%m.%Y`]]</time></li>
 ```
 
 ### create snippet call
@@ -23,10 +23,10 @@ Go to components -> EventsX and create some events
 Add this snippet call on your template or resource where you would like to display the list of events.
 
 ``` php
-        <h2>next events:</h2>
-        <ol id="eventcal">
-                [[!EventsX? &tpl=`upcomingEvents` &limit=`10`]]
-        </ol>
+<h2>next events:</h2>
+<ol id="eventcal">
+    [[!EventsX? &tpl=`upcomingEvents` &limit=`10`]]
+</ol>
 ```
 
 ### screenshot

@@ -32,7 +32,7 @@ A MODX tag can be extended with optional indicators and properties. The table be
 | `Token`                   | *Optional* Defines element type.<br>`$` = Chunk,<br>`*` = Resource field / Template variable,<br>`+` = Placeholder *See above for more variants*                                 |
 | `Name`                    | Name value of requested element.                                                                                                                                                 |
 | `@propertyset`            | Defines a [property set](building-sites/properties-and-property-sets) to be used.                                                                                                |
-| ``` :modifier=`value` ``` | Defines an output filter or modifier to be used.<br>*eg:*  ```:gt=`0`:then=`Now available!` ```                                                                                  |
+| ``` :modifier=`value` ``` | Defines an output filter or modifier to be used.<br>*eg:*```:gt=`0`:then=`Now available!` ```                                                                                    |
 | `?`                       | Indicates to MODX that properties accompany this call.<br>*Required if properties present*                                                                                       |
 | ``` &property=`value` ``` | Defines a [property](building-sites/properties-and-property-sets) and value to be used with the call. Each property set separated by `&`.<br>*eg:* ``` &prop1=`1` &prop2=`2` ``` |
 | `]]`                      | Defines the closing of a MODX tag.                                                                                                                                               |

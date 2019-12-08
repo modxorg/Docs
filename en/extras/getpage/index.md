@@ -83,7 +83,7 @@ You can NOT modify these tpl properties from the snippet tag directly, due to th
 
 ``` php
   [[!getPage@PropertySetName? &element=`getResources` &parents=`3` ...]]
-  ```
+```
 
 | Name            | Description                                                                       | Default Value                                                                                                          | Added In Version |
 | --------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------- |

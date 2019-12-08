@@ -40,8 +40,8 @@ While Discuss includes login and sign up functionality (using the Login package)
 You can build these as you normally would ([see the Login documentation](extras/login "Login") for more information on them) and there are no requirements on how they look or are build. There is one important thing to include in your login, register and update profile pages, which is pre and posthooks specific to Discuss:
 
 ``` php
- &preHooks=`preHook.DiscussLogin`
-   &postHooks=`postHook.DiscussLogin`
+&preHooks=`preHook.DiscussLogin`
+&postHooks=`postHook.DiscussLogin`
 ```
 
 So be sure to add those to your snippet calls.
@@ -85,24 +85,24 @@ Remember, change "forums" if your alias is different.
 Suggested set of rules (called before your main rewrite for MODX):
 
 ``` php
-  rewrite ^/forums/thread/([0-9]+)/(.*)$ /index.php?q=forums/&action=thread&thread=$1 last;
-  rewrite ^/forums/u/(.+)$ /index.php?q=forums/&action=user&user=$1 last;
-  rewrite ^/forums/board/([0-9]+)/(.*)$ /index.php?q=forums/&action=board&board=$1 last;
-  rewrite ^/forums/category/([0-9]+)/(.*)$ /index.php?q=forums/&category=$1 last;
-  rewrite ^/forums/(.+)$ /index.php?q=forums/&action=$1 last;
-  rewrite ^/forums/(.+)/$ /index.php?q=forums/&action=$1 last;
+rewrite ^/forums/thread/([0-9]+)/(.*)$ /index.php?q=forums/&action=thread&thread=$1 last;
+rewrite ^/forums/u/(.+)$ /index.php?q=forums/&action=user&user=$1 last;
+rewrite ^/forums/board/([0-9]+)/(.*)$ /index.php?q=forums/&action=board&board=$1 last;
+rewrite ^/forums/category/([0-9]+)/(.*)$ /index.php?q=forums/&category=$1 last;
+rewrite ^/forums/(.+)$ /index.php?q=forums/&action=$1 last;
+rewrite ^/forums/(.+)/$ /index.php?q=forums/&action=$1 last;
 ```
 
 Here's another more extensive set of rules that also rewrites SMF rules to the proper Discuss ones.
 
 ``` php
- # SMF rules
+# SMF rules
 rewrite ^/forums/index.php/topic,(.*).msg(.*).html$ /forums/?action=thread&thread=$1&i=1 last;
 rewrite ^/forums/index.php/topic,(.*).(.*).html$ /forums/?action=thread&thread=$1&i=1&start=$2 last;
 
 rewrite ^/forums/index.php\?topic=(.*).(.*)$ /forums/?action=thread&thread=$1&i=1 last;
 if ($args ~* topic=(.*).(.*)){
-  set $args action=thread&thread=$1&i=1;
+    set $args action=thread&thread=$1&i=1;
 }
 rewrite ^/forums/\?topic=(.*).(.*)$ /forums/?action=thread&thread=$1&i=1 last;
 
@@ -118,12 +118,12 @@ rewrite ^/forums/category/([0-9]+)/(.*)$ /forums/?category=$1 last;
 
 rewrite ^/forums/index.php?action=unread$ /forums/thread/unread last;
 if ($args ~* action=unread){
-  set $args action=thread/unread;
+    set $args action=thread/unread;
 }
 
 # Discuss main FURL
 if (!-e $request_filename){
-  rewrite ^/forums/(.*)$ /forums/?action=$1 last;
+    rewrite ^/forums/(.*)$ /forums/?action=$1 last;
 }
 ```
 
@@ -153,8 +153,8 @@ While this bit of installation is technically not a part of Discuss, here's some
 Make sure in your [Login](extras/login "Login") call that you specify the following as pre and post hooks:
 
 ``` php
-   &preHooks=`preHook.DiscussLogin`
-   &postHooks=`postHook.DiscussLogin`
+&preHooks=`preHook.DiscussLogin`
+&postHooks=`postHook.DiscussLogin`
 ```
 
 This will allow Discuss to add extra functionality to your Login methods.
@@ -176,7 +176,7 @@ A few things need to happen with UpdateProfile.
 One, make sure you add the following post-hook to your UpdateProfile call:
 
 ``` php
-   &postHooks=`postHook.DiscussUpdateProfile`
+&postHooks=`postHook.DiscussUpdateProfile`
 ```
 
 Then, **after** the UpdateProfile call, place this snippet call:

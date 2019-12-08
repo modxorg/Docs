@@ -6,7 +6,7 @@ _old_uri: "revo/articles"
 
 ## What is Articles?
 
- Articles is a Custom Resource Type for MODX 2.2 and later, that adds a custom Article Resource to MODX that streamlines blogging, commenting, archiving, tagging and other features of MODX into one unified interface.
+Articles is a Custom Resource Type for MODX 2.2 and later, that adds a custom Article Resource to MODX that streamlines blogging, commenting, archiving, tagging and other features of MODX into one unified interface.
 
 ### Requirements
 
@@ -16,7 +16,7 @@ _old_uri: "revo/articles"
 
 ### History
 
- Articles was written by Shaun McCormick as a blogging and news event Custom Resource Class, and was first released on November 29th, 2011. You can also view the [Roadmap](extras/articles/roadmap "Articles.Roadmap") for future features to be added to Articles.
+Articles was written by Shaun McCormick as a blogging and news event Custom Resource Class, and was first released on November 29th, 2011. You can also view the [Roadmap](extras/articles/roadmap "Articles.Roadmap") for future features to be added to Articles.
 
 ### Download
 
@@ -24,13 +24,13 @@ _old_uri: "revo/articles"
 
 ### Bugs and Issues
 
- Bugs and issue reporting can be done in the Articles Redmine project, found here: <https://github.com/modxcms/Articles/issues>
+Bugs and issue reporting can be done in the Articles Redmine project, found here: <https://github.com/modxcms/Articles/issues>
 
- Also, a forum is setup for discussing Articles here: <http://forums.modx.com/board?board=265>
+Also, a forum is setup for discussing Articles here: <http://forums.modx.com/board?board=265>
 
 ## Getting Started
 
- Here are some tutorials to get you started with Articles:
+Here are some tutorials to get you started with Articles:
 
 - [Creating a Blog](extras/articles/creating-a-blog "Articles.Creating a Blog")
 - [Theming Articles](extras/articles/theming-articles "Articles.Theming Articles")

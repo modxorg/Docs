@@ -96,4 +96,5 @@ return $output;
 ```
 
 You should see something like this (note my test page has CSS assigned to tables):
+
 ![](snippet-output.png)

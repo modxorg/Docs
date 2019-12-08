@@ -4,26 +4,26 @@ _old_id: "1725"
 _old_uri: "revo/collections"
 ---
 
- Collections is a MODX Revolution Extra that adds a custom `CollectionContainer` resource class with the following behaviour:
+Collections is a MODX Revolution Extra that adds a custom `CollectionContainer` resource class with the following behaviour:
 
 1. Any direct child resource will be hidden from the Resource Tree in the Manager, and listed in a grid view (similar to Articles) under a dedicated “Children” tab.
 2. Any children that themselves have children will be shown in the Tree, to be managed normally.
 
- ![Collections Children Grid](collections-grid-view.png)
+![Collections Children Grid](collections-grid-view.png)
 
 ### Sub Collections
 
- Just like the MODX Resource Tree itself, Collections supports nesting. You can create a Collection within another Collection. Sub Collection Containers will be displayed in the resource tree and their children will be displayed in the grid view.
+Just like the MODX Resource Tree itself, Collections supports nesting. You can create a Collection within another Collection. Sub Collection Containers will be displayed in the resource tree and their children will be displayed in the grid view.
 
 ### Drag n Drop
 
- You can drag n drop Resources into a Collections container and if they don’t have children of their own they will be listed in the grid. If they do have children, they’ll just remain in the Tree as usual.
+You can drag n drop Resources into a Collections container and if they don’t have children of their own they will be listed in the grid. If they do have children, they’ll just remain in the Tree as usual.
 
 ## Collections Templates (new in version 2)
 
 ### General Settings
 
- ![](screenshot-2014-11-25-15.35.06.png)
+![](screenshot-2014-11-25-15.35.06.png)
 
 - Set as default view - If "Yes", this Collections View Template (CVT) will be used as a last fallback.
 - Default for templates - This will be the default CVT for Resources using these MODX Templates. Can be overridden on a per-resource basis in the Collections vertical-tab of the Collections resource's Settings.
@@ -39,7 +39,7 @@ _old_uri: "revo/collections"
 
 #### Permanent sort
 
- From version 3.2.0, new fields were added to general setting: **Permanent sort - Before** and **Permanent sort - After**. They allow adding more sort options to children's grid and they will be applied together with the default sort option (and also with sorting after clicking a column header). **Before sort** is used before the default sort, **after sort** is used after the default.
+From version 3.2.0, new fields were added to general setting: **Permanent sort - Before** and **Permanent sort - After**. They allow adding more sort options to children's grid and they will be applied together with the default sort option (and also with sorting after clicking a column header). **Before sort** is used before the default sort, **after sort** is used after the default.
 
 **Syntax for both fields:**
 
@@ -61,7 +61,7 @@ publishedon=published:asc
 
 ### Collection's settings
 
- ![](screenshot-2014-11-25-15.36.58.png)
+![](screenshot-2014-11-25-15.36.58.png)
 
 - Resource type selection - Enable Resource type selection when creating a new Resource using the "New Child" button.
 - Default children's resource type - Set a default Resource type for newly created child Resources.
@@ -71,7 +71,7 @@ publishedon=published:asc
 
 ### Columns
 
- ![](screenshot-2014-11-25-15.41.40.png)
+![](screenshot-2014-11-25-15.41.40.png)
 
 - Label - String or lexicon entry key (you can add your own lexicon entries under the collections namespace into the topic templates) that will be used as a column label.
 - Name - Name of the field; can be any field from modResource, any TV name (prefixed with tv\_, **TV name must NOT contain a dot**) or any Tagger group alias (prefixed with tagger\_)
@@ -84,19 +84,21 @@ publishedon=published:asc
 
 ### Editors
 
- As an editor can be used any valid xtype (string) or JSON object.
- Examples:
+As an editor can be used any valid xtype (string) or JSON object.
+
+Examples:
 
 - textfield
 - textarea
 - modx-combo-boolean
 - numberfield
-- {"xtype":"numberfield","allowDecimals":false,"allowNegative":false}
+- `{"xtype":"numberfield","allowDecimals":false,"allowNegative":false}`
 
 ### Renderers
 
- As a renderer, you can use any [function](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) with proper arguments.
- Available renderers:
+As a renderer, you can use any [function](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) with proper arguments.
+
+Available renderers:
 
 - **this.rendYesNo** - Yes/No (1/0) boolean values, coloured in green and red, respectively
 - **Collections.renderer.qtip** - On hover will show a qtip with value (useful for longer values)
@@ -109,19 +111,19 @@ publishedon=published:asc
 
 #### Custom renderers
 
- Custom renderers can be easily added by creating a JS file (and CSS file if needed) and specifying URLs to those files in system settings. JS files can contain [functions](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) (see [sample](https://github.com/modxcms/Collections/blob/develop/assets/components/collections/js/mgr/extra/collections.renderers.js) renderers here) that can then be used collectively.
+Custom renderers can be easily added by creating a JS file (and CSS file if needed) and specifying URLs to those files in system settings. JS files can contain [functions](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) (see [sample](https://github.com/modxcms/Collections/blob/develop/assets/components/collections/js/mgr/extra/collections.renderers.js) renderers here) that can then be used collectively.
 
 ## Selections (new in version 3)
 
- Selections are essentially links to other Resources in the same MODX site. You are not duplicating the original Resources when you add them to a Selections container, but simply creating another view from which to manage those Resources.
+Selections are essentially links to other Resources in the same MODX site. You are not duplicating the original Resources when you add them to a Selections container, but simply creating another view from which to manage those Resources.
 
 ### ExampleUse Case 1
 
- You want to create a menu with links to Resources that are in disparate parts of the Tree. Those Resources rightfully "belong" where they are in the site's content structure, so the solution thus far has been to create a container Resource in the Tree specifically for this menu, and create Weblink Resources therein. But really the Weblinks add no value other than they can be controlled in another list. Instead, add those Resources to a Selections container, which maintains its own menuindex values for each Resource, and using the getSelections Snippet, you can list Resources sorted by those, special menuindex values.
+You want to create a menu with links to Resources that are in disparate parts of the Tree. Those Resources rightfully "belong" where they are in the site's content structure, so the solution thus far has been to create a container Resource in the Tree specifically for this menu, and create Weblink Resources therein. But really the Weblinks add no value other than they can be controlled in another list. Instead, add those Resources to a Selections container, which maintains its own menuindex values for each Resource, and using the getSelections Snippet, you can list Resources sorted by those, special menuindex values.
 
 ### ExampleUse Case 2
 
- You want to populate a widget with links to other Resources on your site, but again the Resources come from various sections, or you wish to manually curate the widget contents rather than automate it. Selections provides an alternative to, say, MIGX, when you need a management UI for arbitrary "Selections" of Resources, no matter where they exist in the site (even if they live under a "Collections" container, for example).
+You want to populate a widget with links to other Resources on your site, but again the Resources come from various sections, or you wish to manually curate the widget contents rather than automate it. Selections provides an alternative to, say, MIGX, when you need a management UI for arbitrary "Selections" of Resources, no matter where they exist in the site (even if they live under a "Collections" container, for example).
 
 ### getSelections Snippet
 
@@ -132,14 +134,14 @@ publishedon=published:asc
 ]]
 ```
 
- getSelections is a wrapper Snippet for getResources, so it relies on getResources being installed. Any / all of the getResources properties available in the version of getResources that you have installed will also be available as properties for getSelections. Additionally here are the properties specific to getSelections:
+getSelections is a wrapper Snippet for getResources, so it relies on getResources being installed. Any / all of the getResources properties available in the version of getResources that you have installed will also be available as properties for getSelections. Additionally here are the properties specific to getSelections:
 
 - &selections - the ID of the Selections container Resource.
 - &getResourcesSnippet - You can optionally name another listing Snippet to call with getSelections, but this has not been thoroughly tested with other Snippets, and should probably only be used if you're able to troubleshoot both getSelections and the Snippet you're calling.
 
 ### Selection's settings
 
- ![](screenshot-2014-11-25-15.40.15.png)
+![](screenshot-2014-11-25-15.40.15.png)
 
 - New link's button label - Customize label text on the "New Link" button.
 

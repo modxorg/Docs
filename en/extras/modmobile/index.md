@@ -89,4 +89,4 @@ Using a separate mobile template
       <a href="[[~[[*id]]]]?modxSiteTemplate=mobile">Mobile</a>
       <!-- Back to Full site link -->
       <a href="[[~[[*id]]]]?modxSiteTemplate=full">Full Site View</a>
-  ```
+```

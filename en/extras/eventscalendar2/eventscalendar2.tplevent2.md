@@ -10,10 +10,10 @@ This chunk is a template for one event in the day.
 
 ``` html
 <div>
-        <span class="num"><b>[[+ec.num]].</b></span>
-        <span class="eventdate">[[+ec.date]]</span>
-        <span class="link"><a href="[[+ec.url]]">[[+ec.longtitle:default=`[[+ec.pagetitle]]`]]</a></span>
-        <span class="notice">[[+ec.introtext]]</span>
+    <span class="num"><b>[[+ec.num]].</b></span>
+    <span class="eventdate">[[+ec.date]]</span>
+    <span class="link"><a href="[[+ec.url]]">[[+ec.longtitle:default=`[[+ec.pagetitle]]`]]</a></span>
+    <span class="notice">[[+ec.introtext]]</span>
 </div>
 ```
 

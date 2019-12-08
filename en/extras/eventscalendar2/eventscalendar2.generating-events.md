@@ -19,12 +19,12 @@ $end = strtotime("$year-$month-$days") + 60*60*23;
 
 $arr = array();
 for ($i = 1; $i <= 10; $i++) {
-        $arr[] = array(
-                'date' => strftime('%Y-%m-%d %H:%M:%S', rand($start, $end))
-                ,'pagetitle' => 'Testing news '.$i
-                ,'introtext' => 'Lorem ipsum dolar'
-        );
-
+    $arr[] = array(
+            'date' => strftime('%Y-%m-%d %H:%M:%S', rand($start, $end))
+            ,'pagetitle' => 'Testing news '.$i
+            ,'introtext' => 'Lorem ipsum dolar'
+    );
+    
 }
 
 return json_encode($arr);
