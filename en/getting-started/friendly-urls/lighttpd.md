@@ -24,10 +24,10 @@ First we need to make sure that the URL rewriting module is enabled.
 Next we need to find the location in which to put the friendly URL code. So lets search for something that looks like this:
 
 ``` php
-    $SERVER["socket"] == ":80" {
-    $HTTP["host"] =~ "yourdomainname.com" {
-      server.document-root = "/path/to/your/doc/root"
-      server.name = "yourservername"
+$SERVER["socket"] == ":80" {
+$HTTP["host"] =~ "yourdomainname.com" {
+    server.document-root = "/path/to/your/doc/root"
+    server.name = "yourservername"
 ```
 
 Directly under this you should add the following code.

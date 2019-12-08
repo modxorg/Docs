@@ -57,12 +57,12 @@ translation: "getting-started/installation/cli/config.xml"
 ## Так же
 
 - [Базовая Установка](getting-started/installation/standard)
-  - [Гид по Lighttpd](getting-started/friendly-urls/lighttpd)
-  - [Установка на сервере с запущеным ModSecurity](getting-started/installation/troubleshooting/modsecurity)
-  - [Настройка Сервера Nginx](getting-started/friendly-urls/nginx)
+    - [Гид по Lighttpd](getting-started/friendly-urls/lighttpd)
+    - [Установка на сервере с запущеным ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+    - [Настройка Сервера Nginx](getting-started/friendly-urls/nginx)
 - [Расширенная Установка](getting-started/installation/advanced)
 - [Установка через Git](getting-started/installation/git)
 - [Установка При Помощи Командной Строки](getting-started/installation/cli)
-  - [Создание Установочного Xml Файла](getting-started/installation/cli/config.xml)
+    - [Создание Установочного Xml Файла](getting-started/installation/cli/config.xml)
 - [Устранение неполадок при установке](getting-started/installation/troubleshooting)
 - [Успешная Установка, Что Дальше?](getting-started/getting-started)
