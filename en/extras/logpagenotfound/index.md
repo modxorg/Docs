@@ -23,22 +23,22 @@ When examining the log, you'll also see evildoers looking for a variety of secur
 
 - Author: Bob Ray [Bob's Guides](https://bobsguides.com)
 
- This version of the LogPageNotFound extra was developed by Bob Ray. It was first posted to GitHub on Dec 07, 2011. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 18 commits, and had been downloaded 2,339 times. The LogPageNotFound package consists of 225 separate files, containing 2,703 lines of code.
+This version of the LogPageNotFound extra was developed by Bob Ray. It was first posted to GitHub on Dec 07, 2011. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 18 commits, and had been downloaded 2,339 times. The LogPageNotFound package consists of 225 separate files, containing 2,703 lines of code.
 
 It is currently maintained by Bob Ray.
 
 ## Download
 
- LogPageNotFound can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/logpagenotfound).
+LogPageNotFound can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/logpagenotfound).
 
 ## Development and Bug Reporting
 
- LogPageNotFound is stored and developed using GitHub, and can be found here: [LogPageNotFound GitHub main page](https://github.com/BobRay/LogPageNotFound).
+LogPageNotFound is stored and developed using GitHub, and can be found here: [LogPageNotFound GitHub main page](https://github.com/BobRay/LogPageNotFound).
 
- Bugs and feature requests can be filed here: [LogPageNotFound issues page.](https://github.com/BobRay/LogPageNotFound/issues).
+Bugs and feature requests can be filed here: [LogPageNotFound issues page.](https://github.com/BobRay/LogPageNotFound/issues).
 
 Questions about how to use LogPageNotFound should be posted on the [MODX Forums](https://forums.modx.com).
 
 ## Documentation
 
- The full documentation for LogPageNotFound can be found at the author's web site (Bob's Guides): [LogPageNotFound Documentation](https://bobsguides.com/logpagenotfound-tutorial.html).
+The full documentation for LogPageNotFound can be found at the author's web site (Bob's Guides): [LogPageNotFound Documentation](https://bobsguides.com/logpagenotfound-tutorial.html).

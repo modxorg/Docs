@@ -29,8 +29,8 @@ The getPage snippet can be called using the tag:
 
 ``` php
 [[!getPage?
-      &elementClass=`modSnippet`
-      &element=`getResources`
+    &elementClass=`modSnippet`
+    &element=`getResources`
 ]]
 ```
 
@@ -82,7 +82,7 @@ You can NOT modify these tpl properties from the snippet tag directly, due to th
 - Finally, reference your property set name in your snippet call:
 
 ``` php
-  [[!getPage@PropertySetName? &element=`getResources` &parents=`3` ...]]
+[[!getPage@PropertySetName? &element=`getResources` &parents=`3` ...]]
 ```
 
 | Name            | Description                                                                       | Default Value                                                                                                          | Added In Version |

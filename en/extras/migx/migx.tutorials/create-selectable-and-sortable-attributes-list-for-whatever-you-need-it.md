@@ -14,7 +14,7 @@ In this Tutorial we will learn how we can use MIGX to create an attributes-list-
 
 ## Requirements
 
- First off we will need to install [MIGX](extras/migx "MIGX") by Package Management and do some [basic configurations](extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
+First off we will need to install [MIGX](extras/migx "MIGX") by Package Management and do some [basic configurations](extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
  Version required: 2.5.2 +
 
 ## Create the Attributes Builder
@@ -27,22 +27,46 @@ In this Tutorial we will learn how we can use MIGX to create an attributes-list-
   
 ``` json
 [{
-    "caption":"Attribute",
-    "fields":[
-        {"field":"attribute",   "caption":"Attribute"},
-        {"field":"title", "caption":"Title"},
-        {"field":"icon", "caption":"Icon", "inputTVtype":"image"}
-    ]
+  "caption": "Attribute",
+  "fields": [{
+      "field": "attribute",
+      "caption": "Attribute"
+    },
+    {
+      "field": "title",
+      "caption": "Title"
+    },
+    {
+      "field": "icon",
+      "caption": "Icon",
+      "inputTVtype": "image"
+    }
+  ]
 }]
 ```
 
 - grid columns:
 
 ``` json
-[
-    {"header": "Attribute", "width": "50", "sortable": "true", "dataIndex": "attribute"},
-    {"header": "Title", "width": "50", "sortable": "true", "dataIndex": "title"},
-    {"header": "Image", "width": "50", "sortable": "false", "dataIndex": "icon","renderer": "this.renderImage"}
+[{
+    "header": "Attribute",
+    "width": "50",
+    "sortable": "true",
+    "dataIndex": "attribute"
+  },
+  {
+    "header": "Title",
+    "width": "50",
+    "sortable": "true",
+    "dataIndex": "title"
+  },
+  {
+    "header": "Image",
+    "width": "50",
+    "sortable": "false",
+    "dataIndex": "icon",
+    "renderer": "this.renderImage"
+  }
 ]
 ```
 
@@ -58,9 +82,9 @@ In this Tutorial we will learn how we can use MIGX to create an attributes-list-
 
 ``` php
 [getImageList?
-  &tvname=`migx_attributes_builder`
-  &docid=`90`
-  &toJsonPlaceholder=`json`
+    &tvname=`migx_attributes_builder`
+    &docid=`90`
+    &toJsonPlaceholder=`json`
 ]]
 [[+json]]
 ```

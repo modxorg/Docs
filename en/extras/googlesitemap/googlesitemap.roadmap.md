@@ -6,9 +6,9 @@ _old_uri: "revo/googlesitemap/googlesitemap.roadmap"
 
 ## GoogleSiteMap Roadmap
 
- This is a work-in-progress roadmap for GoogleSiteMap.
+This is a work-in-progress roadmap for GoogleSiteMap.
 
- Tasks in purple are already finished in Git. Ones in green are finished in beta/rc versions.
+Tasks in purple are already finished in Git. Ones in green are finished in beta/rc versions.
 
 ## Future Versions
 

@@ -67,13 +67,12 @@ The REQUEST key can be defined in System Setting, but the default key is **_lang
 ``` php
 <div class="container">
     <div class="btn-group">
-        <button
-                class="btn btn-link btn-mini dropdown-toggle"
+        <button class="btn btn-link btn-mini dropdown-toggle"
                 data-toggle="dropdown"
                 >[[%lingua.select_language]]
         </button>
         <ul class="dropdown-menu">
-                [[+lingua.languages]]
+            [[+lingua.languages]]
         </ul>
     </div>
 </div>
@@ -84,7 +83,7 @@ The REQUEST key can be defined in System Setting, but the default key is **_lang
 ``` php
 [[+lingua.cultureKey:is=`[[+lingua.lang_code]]`:then=``:else=`<li>
     <a href="[[+lingua.url]]" title="[[+lingua.local_name]]">
-            <img src="[[+lingua.flag]]" alt=""/> [[+lingua.local_name]]
+        <img src="[[+lingua.flag]]" alt=""/> [[+lingua.local_name]]
     </a>
 </li>`]]
 ```

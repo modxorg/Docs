@@ -72,7 +72,7 @@ class CopyrightedResource extends modResource {
 }
 ```
 
- This forces the class\_key to "CopyrightedResource", which is our class, and ensures our Resource class shows up in the left-hand tree's context menu. This is how we govern the value set in the modx\_site\_content "class\_key" column.
+ This forces the class\_key to "CopyrightedResource", which is our class, and ensures our Resource class shows up in the left-hand tree's context menu. This is how we govern the value set in the `modx_site_content` "class\_key" column.
 
  You should **never** add fields to the modResource table (yes, some Extras have done this, but it's not the proper way). Rather, create a separate related table to join into, or use Revolution 2.2.1+'s new properties field to store extra data.
 

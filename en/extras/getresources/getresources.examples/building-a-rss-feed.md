@@ -41,7 +41,7 @@ In your MODX Manager, create a new resource.
 ```
 
 **Warning for Articles**
- If you are using getResources to summarize blog posts from the [Articles](http://rtfm.modx.com/display/ADDON/Articles) Extra, you must set **&showHidden=`1`** – Articles are considered hidden.
+If you are using getResources to summarize blog posts from the [Articles](http://rtfm.modx.com/display/ADDON/Articles) Extra, you must set **&showHidden=`1`** – Articles are considered hidden.
 
 What this does is quite straightforward. First you declare the xml and rss version (as well as "extensions" to the rss, in this case atom and dublin core), similar to how you would declare a HTML Doctype. Next, the channel block starts which is where you give information about your feed and the website it represents.
 
@@ -89,7 +89,7 @@ You can modify this chunk to suit your needs and include that information you wa
 When you save the chunk, and go back to your feed, you should see it has loaded in the content and you're good to go. Make sure to put a link to your RSS feed on your site somewhere, and also stick it in the header with a link tag:
 
 ``` php
- <link rel="alternate" type="application/rss+xml" title="Follow this website with RSS" href="[[~52]]" />
+<link rel="alternate" type="application/rss+xml" title="Follow this website with RSS" href="[[~52]]" />
 ```
 
 Be sure to replace 52 with the ID of your RSS resource. This will make the browser recognize the feed, and put the shiny icon in the navigation bar.

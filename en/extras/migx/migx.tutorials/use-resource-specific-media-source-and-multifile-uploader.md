@@ -54,8 +54,38 @@ Create a new TV
 - copy/paste this code into the textarea:
 
 ``` json
-
-{"formtabs":"[{\"MIGX_id\":\"1\",\"caption\":\"Image\",\"fields\":[{\"field\":\"title\",\"caption\":\"Title\",\"MIGX_id\":1},{\"MIGX_id\":\"2\",\"field\":\"image\",\"caption\":\"Image\",\"inputTV\":\"\",\"inputTVtype\":\"image\",\"configs\":\"\",\"sourceFrom\":\"migx\",\"sources\":\"\",\"inputOptionValues\":\"\",\"default\":\"\"},{\"MIGX_id\":\"3\",\"field\":\"description\",\"caption\":\"Description\",\"inputTV\":\"\",\"inputTVtype\":\"\",\"configs\":\"\",\"sourceFrom\":\"config\",\"sources\":\"\",\"inputOptionValues\":\"\",\"default\":\"\"}]}]","contextmenus":"","actionbuttons":"upload||loadfromsource","columnbuttons":"","filters":"","extended":{"migx_add":"Add Image","formcaption":"Image","win_id":"resourcegallery","multiple_formtabs":"","packageName":"","classname":"","task":"","getlistsort":"","getlistsortdir":"","use_custom_prefix":"0","prefix":"","grid":"","gridload_mode":"1","check_resid":"1","check_resid_TV":"","join_alias":"","getlistwhere":"","joins":"","cmpmaincaption":"","cmptabcaption":"","cmptabdescription":"","cmptabcontroller":""},"columns":"[{\"MIGX_id\":\"1\",\"header\":\"ID\",\"dataIndex\":\"MIGX_id\",\"width\":\"10\",\"renderer\":\"\",\"sortable\":\"false\",\"show_in_grid\":\"1\"},{\"MIGX_id\":\"2\",\"header\":\"Title\",\"dataIndex\":\"title\",\"width\":\"20\",\"renderer\":\"\",\"sortable\":\"false\",\"show_in_grid\":\"1\"},{\"MIGX_id\":\"3\",\"header\":\"Image\",\"dataIndex\":\"image\",\"width\":\"20\",\"renderer\":\"this.renderImage\",\"sortable\":\"false\",\"show_in_grid\":\"1\"},{\"MIGX_id\":\"4\",\"header\":\"Deleted\",\"dataIndex\":\"deleted\",\"width\":\"10\",\"renderer\":\"this.renderCrossTick\",\"sortable\":\"false\",\"show_in_grid\":\"1\"}]"}
+{
+  "formtabs": "[{\"MIGX_id\":\"1\",\"caption\":\"Image\",\"fields\":[{\"field\":\"title\",\"caption\":\"Title\",\"MIGX_id\":1},{\"MIGX_id\":\"2\",\"field\":\"image\",\"caption\":\"Image\",\"inputTV\":\"\",\"inputTVtype\":\"image\",\"configs\":\"\",\"sourceFrom\":\"migx\",\"sources\":\"\",\"inputOptionValues\":\"\",\"default\":\"\"},{\"MIGX_id\":\"3\",\"field\":\"description\",\"caption\":\"Description\",\"inputTV\":\"\",\"inputTVtype\":\"\",\"configs\":\"\",\"sourceFrom\":\"config\",\"sources\":\"\",\"inputOptionValues\":\"\",\"default\":\"\"}]}]",
+  "contextmenus": "",
+  "actionbuttons": "upload||loadfromsource",
+  "columnbuttons": "",
+  "filters": "",
+  "extended": {
+    "migx_add": "Add Image",
+    "formcaption": "Image",
+    "win_id": "resourcegallery",
+    "multiple_formtabs": "",
+    "packageName": "",
+    "classname": "",
+    "task": "",
+    "getlistsort": "",
+    "getlistsortdir": "",
+    "use_custom_prefix": "0",
+    "prefix": "",
+    "grid": "",
+    "gridload_mode": "1",
+    "check_resid": "1",
+    "check_resid_TV": "",
+    "join_alias": "",
+    "getlistwhere": "",
+    "joins": "",
+    "cmpmaincaption": "",
+    "cmptabcaption": "",
+    "cmptabdescription": "",
+    "cmptabcontroller": ""
+  },
+  "columns": "[{\"MIGX_id\":\"1\",\"header\":\"ID\",\"dataIndex\":\"MIGX_id\",\"width\":\"10\",\"renderer\":\"\",\"sortable\":\"false\",\"show_in_grid\":\"1\"},{\"MIGX_id\":\"2\",\"header\":\"Title\",\"dataIndex\":\"title\",\"width\":\"20\",\"renderer\":\"\",\"sortable\":\"false\",\"show_in_grid\":\"1\"},{\"MIGX_id\":\"3\",\"header\":\"Image\",\"dataIndex\":\"image\",\"width\":\"20\",\"renderer\":\"this.renderImage\",\"sortable\":\"false\",\"show_in_grid\":\"1\"},{\"MIGX_id\":\"4\",\"header\":\"Deleted\",\"dataIndex\":\"deleted\",\"width\":\"10\",\"renderer\":\"this.renderCrossTick\",\"sortable\":\"false\",\"show_in_grid\":\"1\"}]"
+}
 ```
 
 ## Have Fun

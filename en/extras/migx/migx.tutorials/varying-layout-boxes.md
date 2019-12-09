@@ -6,15 +6,15 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ## Create varying layout-boxes with MIGX
 
- This Tutorial will show you step by step how to setup MIGX for adding and editing variying layout-Boxes.
+This Tutorial will show you step by step how to setup MIGX for adding and editing variying layout-Boxes.
 
- This example was created during [this discussion](http://forums.modx.com/thread/31581/tv-s-for-varying-page-layouts).
+This example was created during [this discussion](http://forums.modx.com/thread/31581/tv-s-for-varying-page-layouts).
 
- The Request was how to create a System in MODX where the editor can add multiple Boxes with varying layouts, in this case boxes with one, two, or three Columns. Each Column with an image, a headline and content.
+The Request was how to create a System in MODX where the editor can add multiple Boxes with varying layouts, in this case boxes with one, two, or three Columns. Each Column with an image, a headline and content.
 
 ## Requirements
 
- First off, you'll want to go ahead and download and install some Extras that we'll be using for this Setup. The following is a list of used Extras:
+First off, you'll want to go ahead and download and install some Extras that we'll be using for this Setup. The following is a list of used Extras:
 
 - [MIGX](extras/migx "MIGX") - For creating and fill the boxes in MODX-backend and for listing them on the frontend. ADDON/TinyMCE
 - [TinyMCE](extras/evo/tinymce "TinyMCE") - Richtext-Editor to edit the content-texts.
@@ -22,7 +22,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ## The Template
 
- For this Tutorial we want to create a new Template. We name it 'MultiColumn'
+For this Tutorial we want to create a new Template. We name it 'MultiColumn'
 
 ``` html
 <html>
@@ -52,31 +52,31 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ## The Preview-Page
 
- Now we create a Preview-Page. With this page created we can see a Preview of our boxes in the backend without the need to save our Resource.
+Now we create a Preview-Page. With this page created we can see a Preview of our boxes in the backend without the need to save our Resource.
 
- Create a new Folder in your Resource-Tree, which is hidden from menue, you can name it: 'MIGX-previews'.
+Create a new Folder in your Resource-Tree, which is hidden from menue, you can name it: 'MIGX-previews'.
 
- Create a new Resource under this Folder and choose the MultiColumn-Template. You can name it 'MultiColumn Preview'
+Create a new Resource under this Folder and choose the MultiColumn-Template. You can name it 'MultiColumn Preview'
 
 ## The MIGX-Tv
 
- Now we are ready to create our MIGX-TV. Create a new TV.
+Now we are ready to create our MIGX-TV. Create a new TV.
 
 ## General Information
 
 ### Name
 
- MultiColumn
+MultiColumn
 
 ### Input Options
 
 #### Input-type
 
- migx
+migx
 
 #### Form Tabs
 
- ``` json
+``` json
 [{
     "formname":"OneCell"
     ,"formtabs": [{
@@ -226,11 +226,11 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 }]
 ```
 
- Make sure, you have all the same fieldnames in all formtab-setups. Unused fields in hidden-fields. Otherwise you will loose values, when you switch between formtabs.
+Make sure, you have all the same fieldnames in all formtab-setups. Unused fields in hidden-fields. Otherwise you will loose values, when you switch between formtabs.
 
 #### Grid Columns
 
- ``` json
+``` json
 [{
     "header": "Row Format"
     ,"width": "30"
@@ -260,21 +260,21 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 #### Preview Url
 
- Add here the complete Url of your created Preview-Resource.
+Add here the complete Url of your created Preview-Resource.
 
 #### Template Access
 
- our MultiColumns - Template
+our MultiColumns - Template
 
 ### The Chunks
 
- Our last step is to create three chunks for our layout-boxes.
+Our last step is to create three chunks for our layout-boxes.
 
 #### OneCell
 
 ##### Name
 
- OneCell
+OneCell
 
 ##### Chunk Code
 
@@ -291,7 +291,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ##### Name
 
- TwoCells
+TwoCells
 
 ##### Chunk Code
 
@@ -313,7 +313,7 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ##### Name
 
- ThreeCells
+ThreeCells
 
 ##### Chunk Code
 
@@ -338,14 +338,14 @@ _old_uri: "revo/migx/migx.tutorials/migx.varying-layout-boxes"
 
 ## Create Pages with varying layout-boxes
 
- Now we are ready to create resources with varying layout-boxes.
+Now we are ready to create resources with varying layout-boxes.
 
- Create new Resource. Choose the MultiColumn - Template. Go to the tab 'Template Variables'.
+Create new Resource. Choose the MultiColumn - Template. Go to the tab 'Template Variables'.
 
- In your MultiColumns-TV, click 'Add Item' and choose one of the layouts. Fill the fields on the tabs 'First','Second','Third'.
+In your MultiColumns-TV, click 'Add Item' and choose one of the layouts. Fill the fields on the tabs 'First','Second','Third'.
 
- For Preview click the 'Preview' - Button.
+For Preview click the 'Preview' - Button.
 
- If you want to change the position of boxes, you can drag/drop the items directly in the grid.
+If you want to change the position of boxes, you can drag/drop the items directly in the grid.
 
- Don't forget to save your Resource, when you are ready with adding/editing layout-boxes with MIGX
+Don't forget to save your Resource, when you are ready with adding/editing layout-boxes with MIGX.

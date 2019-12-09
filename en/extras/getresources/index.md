@@ -6,7 +6,7 @@ _old_uri: "revo/getresources"
 
 ## What is getResources?
 
- A general purpose Resource listing and summarization snippet.
+A general purpose Resource listing and summarization snippet.
 
 ## Requirements
 

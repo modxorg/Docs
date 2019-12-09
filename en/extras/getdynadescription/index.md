@@ -28,22 +28,22 @@ Download using Package Manager
 - Original Author: Unknown
 - Revolution Author: Bob Ray [Bob's Guides](https://bobsguides.com)
 
- This version of the getDynaDescription extra was developed by Bob Ray. It was first posted to GitHub on Jun 12, 2011. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 10 commits, and had been downloaded 928 times. The getDynaDescription package consists of 120 separate files, containing 2,073 lines of code.
+This version of the getDynaDescription extra was developed by Bob Ray. It was first posted to GitHub on Jun 12, 2011. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 10 commits, and had been downloaded 928 times. The getDynaDescription package consists of 120 separate files, containing 2,073 lines of code.
 
 It is currently maintained by Bob Ray.
 
 ## Download
 
- getDynaDescription can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/getdynadescription).
+getDynaDescription can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/getdynadescription).
 
 ## Development and Bug Reporting
 
- getDynaDescription is stored and developed using GitHub, and can be found here: [getDynaDescription GitHub main page](https://github.com/BobRay/getDynaDescription).
+getDynaDescription is stored and developed using GitHub, and can be found here: [getDynaDescription GitHub main page](https://github.com/BobRay/getDynaDescription).
 
- Bugs and feature requests can be filed here: [getDynaDescription issues page.](https://github.com/BobRay/getDynaDescription/issues).
+Bugs and feature requests can be filed here: [getDynaDescription issues page.](https://github.com/BobRay/getDynaDescription/issues).
 
 Questions about how to use getDynaDescription should be posted on the [MODX Forums](https://forums.modx.com).
 
 ## Documentation
 
- The full documentation for getDynaDescription can be found at the author's web site (Bob's Guides): [getDynaDescription Documentation](https://bobsguides.com/getdynadescription-snippet-tutorial.html).
+The full documentation for getDynaDescription can be found at the author's web site (Bob's Guides): [getDynaDescription Documentation](https://bobsguides.com/getdynadescription-snippet-tutorial.html).
