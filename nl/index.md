@@ -9,6 +9,14 @@ MODX Revolution is een krachtig content management systeem (CMS) en framework. I
 
 Na het bouwen van een website, is het bijhouden van de content eenvoudig te doen via de "Manager", de back-end van MODX.
 
+## Headers should not end in a dot.
+
+Hello.
+
+**Dont use emphasis to replace headers**
+
+What up
+
 ## Vragen over MODX?
 
 Naast deze documentatie zijn er verschillende plekken om hulp te krijgen met MODX. 
