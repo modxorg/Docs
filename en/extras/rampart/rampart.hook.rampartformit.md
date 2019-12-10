@@ -10,9 +10,9 @@ To enable Rampart spam prevention on your FormIt forms, simply add hook.RampartF
 
 ``` php
 [[!FormIt?
-  &hook=`hook.RampartFormIt`
-  &rptErrorField=`rampart`
-  &submitVar=`contact_me`
+    &hook=`hook.RampartFormIt`
+    &rptErrorField=`rampart`
+    &submitVar=`contact_me`
 ]]
 
 /* somewhere in my form */

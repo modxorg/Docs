@@ -100,30 +100,30 @@ This will filter resources to meet one of the following conditions:
   The examples above search for exact values. If you want, you can also use the percentage sign (%) as a wildcard. For example:
 
 ``` php
-  mytv==%a%
+mytv==%a%
 ```
 
-  Matches any resources that has an "a" in the mytv value.
+Matches any resources that has an "a" in the mytv value.
 
- ``` php
-  mytv==a%
+``` php
+mytv==a%
 ```
 
-  Matches any resources that have a mytv value that starts with an a, and anything after that.
+Matches any resources that have a mytv value that starts with an a, and anything after that.
 
- ``` php
-  mytv==%a
+``` php
+mytv==%a
 ```
 
-  Matches any resources that have a mytv value that ends with an a, but can have anything in front of it.
+Matches any resources that have a mytv value that ends with an a, but can have anything in front of it.
   
-  Of course you can also combine this with the OR (||) and AND (,) delimiters explained above.
+Of course you can also combine this with the OR (||) and AND (,) delimiters explained above.
   
-  It is important to know that this function **looks at the raw value of a template variable** for a specific resource. This means that **the value has been explicitly set for the resource**, and that it has not been **processed by a template variable output type**. So if you have an "autotag" tv, this means the raw value is a comma delimited list, and it is not split up in tags like you see it in the manager.
+It is important to know that this function **looks at the raw value of a template variable** for a specific resource. This means that **the value has been explicitly set for the resource**, and that it has not been **processed by a template variable output type**. So if you have an "autotag" tv, this means the raw value is a comma delimited list, and it is not split up in tags like you see it in the manager.
   
-  **Available filter operators**:
+**Available filter operators**:
   
-  There are a number of comparison operators for use when creating filter conditions. In addition, when using many of these operators, numeric comparison values are automatically CAST TV values to numeric before comparison. Here is a list of the valid operators:
+There are a number of comparison operators for use when creating filter conditions. In addition, when using many of these operators, numeric comparison values are automatically CAST TV values to numeric before comparison. Here is a list of the valid operators:
 
 | Filter Operator |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | SQL Operator |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
@@ -183,71 +183,79 @@ Output a list of child Resources of the current Resource, using the 'myRowTpl' c
 
 ``` php
 [[!renderResources?
-&parents=`[[*id]]`
-&tpl=`myRowTpl`]]
+    &parents=`[[*id]]`
+    &tpl=`myRowTpl`
+]]
 ```
 
 Output all resources beneath the Resource with ID '5', with the exception of resource 10, using the 'myRowTpl' chunk:
 
 ``` php
 [[!renderResources?
-&parents=`5`
-&resources=`-10`
-&tpl=`myRowTpl`]]
+    &parents=`5`
+    &resources=`-10`
+    &tpl=`myRowTpl`
+]]
 ```
 
 Output only the resources specified, using the 'myRowTpl' chunk:
 
 ``` php
 [[!renderResources?
-&parents=`-1`
-&resources=`10,11,12`
-&tpl=`myRowTpl`]]
+    &parents=`-1`
+    &resources=`10,11,12`
+    &tpl=`myRowTpl`
+]]
 ```
 
 Output the top 5 latest published Resources beneath the Resource with ID '5', with tpl 'blogPost':
 
 ``` php
 [[!renderResources?
-&parents=`5`
-&limit=`5`
-&tpl=`blogPost`
-&includeContent=`1`]]
+    &parents=`5`
+    &limit=`5`
+    &tpl=`blogPost`
+    &includeContent=`1`
+]]
 ```
 
 Output a list of child Resources of the current Resource, based on the Resource-template:
 
 ``` php
 [[!renderResources?
-&parents=`[[*id]]`
-&where=`{"template:=":8}`
-&tpl=`myRowTpl`]]
+    &parents=`[[*id]]`
+    &where=`{"template:=":8}`
+    &tpl=`myRowTpl`
+]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1 or 2:
 
 ``` php
 [[!renderResources?
-&parents=`[[*id]]`
-&where=`{"template:=":1, "OR:template:=":2}`
-&tpl=`myRowTpl`]]
+    &parents=`[[*id]]`
+    &where=`{"template:=":1, "OR:template:=":2}`
+    &tpl=`myRowTpl`
+]]
 ```
 
 Output a list of child Resources of the current Resource, where the Resource-template ID is 1, 2 or 3 (you cannot use the same key name more than once):
 
 ``` php
 [[!renderResources?
-&parents=`[[*id]]`
-&where=`{"template:IN":[1,2,3]}`
-&tpl=`myRowTpl`]]
+    &parents=`[[*id]]`
+    &where=`{"template:IN":[1,2,3]}`
+    &tpl=`myRowTpl`
+]]
 ```
 
 Display a message when no results found (equivalent of "empty" parameter in Ditto):
 
 ``` php
 [[!renderResources:default=`No results found`?
-&parents=`[[*id]]`
-&tpl=`myRowTpl`]]
+    &parents=`[[*id]]`
+    &tpl=`myRowTpl`
+]]
 ```
 
 ## Using getPage for Pagination

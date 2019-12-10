@@ -108,7 +108,7 @@ Now back to the place where the \[!getRandomAwesomeQuote\] used to be and replac
 
 ``` php
 [[xFPCAjax?
-   &resource=`300`
+    &resource=`300`
 ]]
 ```
 
@@ -126,7 +126,7 @@ And your new template looks like this: (You have moved your dynamic snippet to a
 ``` php
 <div class="awesome-quote">
 [[xFPCAjax?
-   &resource=`300`
+    &resource=`300`
 ]]
 </div>
 ```

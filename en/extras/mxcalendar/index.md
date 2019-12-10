@@ -67,6 +67,7 @@ The example shown is the default Google Map display in a styled modal window (tp
 In the event tab, enter the event link URL.
 
 ![](mxcalendaraddeventlink.jpg)
+
 Form Tab documentation forthcoming...
 
 ## Using mxCalendar

@@ -68,17 +68,17 @@ This is just an example template with SiteEditor fields:
 
 ``` php
 <html>
-        <head>
-        </head>
-        <body>
-                <h1>[[*pagetitle:siteEditorField]]</h1>
-                <p>
-                        [[*introtext:siteEditorField]]
-                </p>
-                [[*content:siteEditorField]]
-                <hr />
-                [[*footerTv:siteEditorField]]
-        </body>
+    <head>
+    </head>
+    <body>
+        <h1>[[*pagetitle:siteEditorField]]</h1>
+        <p>
+                [[*introtext:siteEditorField]]
+        </p>
+        [[*content:siteEditorField]]
+        <hr />
+        [[*footerTv:siteEditorField]]
+    </body>
 </html>
 ```
 
@@ -86,7 +86,7 @@ This is an example of a getResources rowTpl chunk:
 
 ``` php
 <li>
-        <a href="[[~[[+id]]]]">[[+pagetitle:siteEditorField=`resource=[[+id]]`]]</a>
+    <a href="[[~[[+id]]]]">[[+pagetitle:siteEditorField=`resource=[[+id]]`]]</a>
 </li>
 ```
 

@@ -48,22 +48,22 @@ SPForm is a simple, spam-proof contact form that gives you a standard, working, 
 
 - Author: Bob Ray [Bob's Guides](https://bobsguides.com)
 
- This version of the SPForm extra was developed by Bob Ray. It was first posted to GitHub on Jan 11, 2011. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 116 commits, and had been downloaded 10,813 times. The SPForm package consists of 692 separate files, containing 9,630 lines of code.
+This version of the SPForm extra was developed by Bob Ray. It was first posted to GitHub on Jan 11, 2011. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 116 commits, and had been downloaded 10,813 times. The SPForm package consists of 692 separate files, containing 9,630 lines of code.
 
 It is currently maintained by Bob Ray.
 
 ## Download
 
- SPForm can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/spform).
+SPForm can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/spform).
 
 ## Development and Bug Reporting
 
- SPForm is stored and developed using GitHub, and can be found here: [SPForm GitHub main page](https://github.com/BobRay/SPForm).
+SPForm is stored and developed using GitHub, and can be found here: [SPForm GitHub main page](https://github.com/BobRay/SPForm).
 
- Bugs and feature requests can be filed here: [SPForm issues page.](https://github.com/BobRay/SPForm/issues).
+Bugs and feature requests can be filed here: [SPForm issues page.](https://github.com/BobRay/SPForm/issues).
 
 Questions about how to use SPForm should be posted on the [MODX Forums](https://forums.modx.com).
 
 ## Documentation
 
- The full documentation for SPForm can be found at the author's web site (Bob's Guides): [SPForm Documentation](https://bobsguides.com/spform-tutorial.html).
+The full documentation for SPForm can be found at the author's web site (Bob's Guides): [SPForm Documentation](https://bobsguides.com/spform-tutorial.html).

@@ -48,8 +48,8 @@ Default value (from core/components/subscribeme/elements/chunks/smListProducts.o
 
 ``` php
 [[!FormIt?
-  &hooks=`smNewSubscription`
-  &optionsResource=`4`
+    &hooks=`smNewSubscription`
+    &optionsResource=`4`
 ]]
 <p>Choose the product you would like to subscribe to:</p>
 <ul>

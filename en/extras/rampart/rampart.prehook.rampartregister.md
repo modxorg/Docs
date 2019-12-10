@@ -10,11 +10,11 @@ To enable Rampart spam prevention on your Register forms, simply add preHook.Ram
 
 ``` php
 [[!Register?
-  &preHooks=`math,preHook.RampartRegister`
-  &moderatedResourceId=`217`
-  &submittedResourceId=`194`
-  &activationResourceId=`193`
-  &submitVar=`login-register-btn`
+    &preHooks=`math,preHook.RampartRegister`
+    &moderatedResourceId=`217`
+    &submittedResourceId=`194`
+    &activationResourceId=`193`
+    &submitVar=`login-register-btn`
 ]]
 ```
 

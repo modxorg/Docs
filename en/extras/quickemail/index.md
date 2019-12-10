@@ -27,22 +27,22 @@ When you preview the page, you should receive an email. If not, change the tag t
 
 - Author: Bob Ray [Bob's Guides](https://bobsguides.com)
 
- This version of the QuickEmail extra was developed by Bob Ray. It was first posted to GitHub on Dec 07, 2010. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 27 commits, and had been downloaded 8,202 times. The QuickEmail package consists of 276 separate files, containing 2,359 lines of code.
+This version of the QuickEmail extra was developed by Bob Ray. It was first posted to GitHub on Dec 07, 2010. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 27 commits, and had been downloaded 8,202 times. The QuickEmail package consists of 276 separate files, containing 2,359 lines of code.
 
 It is currently maintained by Bob Ray.
 
 ## Download
 
- QuickEmail can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/quickemail).
+QuickEmail can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/quickemail).
 
 ## Development and Bug Reporting
 
- QuickEmail is stored and developed using GitHub, and can be found here: [QuickEmail GitHub main page](https://github.com/BobRay/QuickEmail).
+QuickEmail is stored and developed using GitHub, and can be found here: [QuickEmail GitHub main page](https://github.com/BobRay/QuickEmail).
 
- Bugs and feature requests can be filed here: [QuickEmail issues page.](https://github.com/BobRay/QuickEmail/issues).
+Bugs and feature requests can be filed here: [QuickEmail issues page.](https://github.com/BobRay/QuickEmail/issues).
 
 Questions about how to use QuickEmail should be posted on the [MODX Forums](https://forums.modx.com).
 
 ## Documentation
 
- The full documentation for QuickEmail can be found at the author's web site (Bob's Guides): [QuickEmail Documentation](https://bobsguides.com/quickemail-snippet-tutorial.html).
+The full documentation for QuickEmail can be found at the author's web site (Bob's Guides): [QuickEmail Documentation](https://bobsguides.com/quickemail-snippet-tutorial.html).

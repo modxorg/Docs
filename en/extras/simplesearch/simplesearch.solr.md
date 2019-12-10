@@ -53,9 +53,9 @@ These properties on the SimpleSearch snippet will be ignored if you are using So
 
 Due to a bug in MODX 2.1.0-rc4 and earlier, you will need to patch the file here:
 
-core/model/modx/processors/resource/unpublish.php
+`core/model/modx/processors/resource/unpublish.php`
 
-Find the string "OnDocUnpublished" in the invokeEvent call. Replace it with: "OnDocUnPublished" (note the capital P). This will allow Solr to reindex the Resource if it gets unpublished via the tree.
+Find the string "OnDocUnpublished" in the invokeEvent call. Replace it with: `OnDocUnPublished` (note the capital P). This will allow Solr to reindex the Resource if it gets unpublished via the tree.
 
 This issue has been fixed in MODX Revolution 2.1.0-pl and later.
 
@@ -63,11 +63,11 @@ This issue has been fixed in MODX Revolution 2.1.0-pl and later.
 
 1. [SimpleSearch.Roadmap](extras/simplesearch/simplesearch.roadmap)
 2. [SimpleSearch.SimpleSearch](extras/simplesearch/simplesearch.simplesearch)
-     1. [SimpleSearch.SimpleSearch.containerTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
-     2. [SimpleSearch.SimpleSearch.currentPageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
-     3. [SimpleSearch.SimpleSearch.pageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
-     4. [SimpleSearch.SimpleSearch.tpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
-     5. [SimpleSearch.Faceted Search Through PostHooks](extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
+    1. [SimpleSearch.SimpleSearch.containerTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
+    2. [SimpleSearch.SimpleSearch.currentPageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
+    3. [SimpleSearch.SimpleSearch.pageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
+    4. [SimpleSearch.SimpleSearch.tpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
+    5. [SimpleSearch.Faceted Search Through PostHooks](extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
 3. [SimpleSearch.SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform)
-     1. [SimpleSearch.SimpleSearchForm.tpl](extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
+    1. [SimpleSearch.SimpleSearchForm.tpl](extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
 4. [SimpleSearch.Solr](extras/simplesearch/simplesearch.solr)

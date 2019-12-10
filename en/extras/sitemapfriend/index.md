@@ -165,7 +165,7 @@ The default chunk used for XML sitemaps as an outer container for the entire sit
 
 #### Default Value
 
-``` php
+``` xml
 <?xml version="1.0" encoding="[[++modx_charset]]"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 [[+items]]
@@ -178,7 +178,7 @@ The default chunk used for XML sitemaps for each result item.
 
 #### Default Value
 
-``` php
+``` xml
 <url>
     <loc>[[+url]]</loc>
     <lastmod>[[+lastmod]]</lastmod>

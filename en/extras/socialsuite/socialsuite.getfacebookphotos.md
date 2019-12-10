@@ -147,8 +147,8 @@ Snippet call:
 
 ``` php
 [[!getFacebookPhotos?
-  &user=`modxcms`
-  &perAlbum=`1`
+    &user=`modxcms`
+    &perAlbum=`1`
 ]]
 ```
 

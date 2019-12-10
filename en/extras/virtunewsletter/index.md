@@ -53,11 +53,11 @@ Update 1.6.0-beta-1: `[[+virtuNewsletter.email.subid]]` = `[[+virtuNewsletter.em
 <p>Thank you for your subscription.</p>
 <p>To complete this, please click this link to activate your account:
     <a href="[[~62?
-       &subid=`[[+virtuNewsletter.email.subid]]`
-       &h=`[[+virtuNewsletter.email.hash]]`
-       &act=`subscribe`
-       &scheme=`full`]]"
-       target="_blank">activate</a>.
+        &subid=`[[+virtuNewsletter.email.subid]]`
+        &h=`[[+virtuNewsletter.email.hash]]`
+        &act=`subscribe`
+        &scheme=`full`]]"
+        target="_blank">activate</a>.
 </p>
 <p>You can unsubscribe back later if it is required.</p>
 <p> </p>

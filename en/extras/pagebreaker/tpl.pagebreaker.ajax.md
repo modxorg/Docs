@@ -16,16 +16,17 @@ You need to specify id of element on webpage where content is.
 <script type='text/javascript'>
   var elem = '#content'; // HTML element on webpage in which will be loaded new block of text
 
-  $(document).ready(function() {
-    $('.load_page').live('click', function() {
+  $(document).ready(function () {
+    $('.load_page').live('click', function () {
       var href = $(this).attr('href');
-      $.post(href, {'action': 'PageBreakLoad'}, function(data) {
-              $(elem).html(data);
+      $.post(href, {
+        'action': 'PageBreakLoad'
+      }, function (data) {
+        $(elem).html(data);
       })
       return false;
     })
   })
-
 </script>
 ```
 

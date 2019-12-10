@@ -28,9 +28,9 @@ a true response on resource id 1.
 
 ``` php
 [[!mxhastvs?
-  &tvIds=`11,20`
-  &true=`[[$doSomethingChunkName]]`
-  &false=``
-  &forceTrueResource=`1`
+    &tvIds=`11,20`
+    &true=`[[$doSomethingChunkName]]`
+    &false=``
+    &forceTrueResource=`1`
 ]]
 ```
