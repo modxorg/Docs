@@ -1,6 +1,6 @@
 ---
-title: MODx.grid.LocalGrid
-translation: extending-modx/custom-manager-pages/modext/modx.grid.localgrid
+title: "MODx.grid.LocalGrid"
+translation: "extending-modx/custom-manager-pages/modext/modx.grid.localgrid"
 ---
 
 ## MODx.grid.LocalGrid

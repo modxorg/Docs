@@ -4,7 +4,7 @@ _old_id: "169"
 _old_uri: "2.x/getting-started/installation/basic-installation/lighttpd-guide"
 ---
 
-## Lighttpd Guide for Setup and Friendly URLs.
+## Lighttpd Guide for Setup and Friendly URLs
 
 - This is still a work in progress, and currently only covers the URL rewriting aspect.
 - This guide assumes you already have a working lighttpd, mysql, and PHP installation.
@@ -24,10 +24,10 @@ First we need to make sure that the URL rewriting module is enabled.
 Next we need to find the location in which to put the friendly URL code. So lets search for something that looks like this:
 
 ``` php
-    $SERVER["socket"] == ":80" {
-    $HTTP["host"] =~ "yourdomainname.com" {
-      server.document-root = "/path/to/your/doc/root"
-      server.name = "yourservername"
+$SERVER["socket"] == ":80" {
+$HTTP["host"] =~ "yourdomainname.com" {
+    server.document-root = "/path/to/your/doc/root"
+    server.name = "yourservername"
 ```
 
 Directly under this you should add the following code.

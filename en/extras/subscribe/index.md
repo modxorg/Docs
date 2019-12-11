@@ -22,7 +22,7 @@ Features
 - Popup "Why Subscribe" and "Privacy Policy" dialogs
 - Internationalized
 
- Note: Unlike Mark Hamstra's SubscribeMe extra, Subscribe has no PayPal function.
+Note: Unlike Mark Hamstra's SubscribeMe extra, Subscribe has no PayPal function.
 
 ## Package Information
 
@@ -35,22 +35,22 @@ Features
 
 - Author: Bob Ray [Bob's Guides](https://bobsguides.com)
 
- This version of the Subscribe extra was developed by Bob Ray. It was first posted to GitHub on Mar 11, 2012. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 159 commits, and had been downloaded 3,116 times. The Subscribe package consists of 1,757 separate files, containing 15,502 lines of code.
+This version of the Subscribe extra was developed by Bob Ray. It was first posted to GitHub on Mar 11, 2012. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 159 commits, and had been downloaded 3,116 times. The Subscribe package consists of 1,757 separate files, containing 15,502 lines of code.
 
 It is currently maintained by Bob Ray.
 
 ## Download
 
- Subscribe can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/usersubscriptionsignupsystem).
+Subscribe can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/usersubscriptionsignupsystem).
 
 ## Development and Bug Reporting
 
- Subscribe is stored and developed using GitHub, and can be found here: [Subscribe GitHub main page](https://github.com/BobRay/Subscribe).
+Subscribe is stored and developed using GitHub, and can be found here: [Subscribe GitHub main page](https://github.com/BobRay/Subscribe).
 
- Bugs and feature requests can be filed here: [Subscribe issues page.](https://github.com/BobRay/Subscribe/issues).
+Bugs and feature requests can be filed here: [Subscribe issues page.](https://github.com/BobRay/Subscribe/issues).
 
 Questions about how to use Subscribe should be posted on the [MODX Forums](https://forums.modx.com).
 
 ## Documentation
 
- The full documentation for Subscribe can be found at the author's web site (Bob's Guides): [Subscribe Documentation](https://bobsguides.com/subscribe-tutorial.html).
+The full documentation for Subscribe can be found at the author's web site (Bob's Guides): [Subscribe Documentation](https://bobsguides.com/subscribe-tutorial.html).

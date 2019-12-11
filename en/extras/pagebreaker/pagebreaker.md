@@ -13,8 +13,8 @@ Plugin have two modes of work.
 
 ## Properties
 
-- pb\_ajax - enable changing pages trought ajax? By default: no. See chunk [tpl.PageBreaker.ajax](extras/pagebreaker/tpl.pagebreaker.ajax "tpl.PageBreaker.ajax")
-- pb\_load\_jquery - need to include jquery library? By default: no.
+- `pb_ajax` - enable changing pages trought ajax? By default: no. See chunk [tpl.PageBreaker.ajax](extras/pagebreaker/tpl.pagebreaker.ajax "tpl.PageBreaker.ajax")
+- `pb_load_jquery` - need to include jquery library? By default: no.
 
 I do not recommend to enable ajax mode in due to decreasing count of pages hits and worse indexing this pages by crawlers. Also it is complicate users to bookmark reading page.
 

@@ -22,7 +22,7 @@ Initial development started in April 2011 by Mark Hamstra.
 
 ![](menu.png)
 
- Using ImportX is as simple as presenting it with your CSV values and setting a few options depending on your situation.
+Using ImportX is as simple as presenting it with your CSV values and setting a few options depending on your situation.
 
 After installation through the Package Manager, refresh the page and find ImportX in the Components menu (see image to the right). Open it and have a look at what options are available. Most of it is pretty self explanatory.
 
@@ -62,7 +62,8 @@ As of 1.0.0-rc you can set:
 After clicking the "Start Import" button, the script will get to action and start parsing your CSV. If all is good, this is how the resulting output could look:
 
 ![](console.png)
- At that point you can choose to download the output, or just close the window. The resource tree will refresh automagically after that to show what has happened.
+
+At that point you can choose to download the output, or just close the window. The resource tree will refresh automagically after that to show what has happened.
 
 If you get any other output, see the below table and what you could do to fix it.
 
@@ -121,7 +122,7 @@ This can be achieved by writing a new class (see core/components/importx/process
 
 At this point there's only the CSV file, but I will very very very much appreciate someone coming up with XML or other formats. Feel free to contact me (hello@markhamstra.com) if you're interested but need some help figuring out what to do.
 
-## And now...
+## And now
 
 Go use it!
 

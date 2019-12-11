@@ -33,38 +33,38 @@ Currently, it can only be used by [FileDownload R](extras/filedownload-r "FileDo
 To use the snippet, user need to change the FileDownload's template from the original:
 
 ``` html
-    <tr[[+fd.class]]>
-        <td style="width:16px;"><img src="[[+fd.image]]" alt="[[+fd.image]]" /></td>
-        <td><a href="[[+fd.link]]"[[+fd.linkAttribute]]>[[+fd.filename]]</a>
-            <span style="font-size:80%">([[+fd.count]] downloads)</span>
-        </td>
-        <td>[[+fd.sizeText]]</td>
-        <td>[[+fd.date]]</td>
-    </tr>
-    [[-- This is the description row if the &chkDesc=`chunkName` is provided --]]
-    [[+fd.description:notempty=`<tr>
-        <td></td>
-        <td colspan="3">[[+fd.description]]</td>
-    </tr>`:default=``]]
+<tr[[+fd.class]]>
+    <td style="width:16px;"><img src="[[+fd.image]]" alt="[[+fd.image]]" /></td>
+    <td><a href="[[+fd.link]]"[[+fd.linkAttribute]]>[[+fd.filename]]</a>
+        <span style="font-size:80%">([[+fd.count]] downloads)</span>
+    </td>
+    <td>[[+fd.sizeText]]</td>
+    <td>[[+fd.date]]</td>
+</tr>
+[[-- This is the description row if the &chkDesc=`chunkName` is provided --]]
+[[+fd.description:notempty=`<tr>
+    <td></td>
+    <td colspan="3">[[+fd.description]]</td>
+</tr>`:default=``]]
 ```
 
 to, for instance:
 
 ``` html
-    <tr[[+fd.class]]>
-        <td style="width:16px;"><img src="[[+fd.image]]" alt="[[+fd.image]]" /></td>
-        <td><a href="[[+fd.link]]"[[+fd.linkAttribute]]>
-                [[!uploadtousers:default=`[[+fd.filename]]`? &path=`[[+fd.fullPath]]` &field=`title`]]
-            </a>
-            <span style="font-size:80%">([[+fd.count]] downloads)</span>
-        </td>
-        <td>[[+fd.sizeText]]</td>
-        <td>[[+fd.date]]</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td colspan="3">[[!uploadtousers? &path=`[[+fd.fullPath]]` &field=`description`]]</td>
-    </tr>
+<tr[[+fd.class]]>
+    <td style="width:16px;"><img src="[[+fd.image]]" alt="[[+fd.image]]" /></td>
+    <td><a href="[[+fd.link]]"[[+fd.linkAttribute]]>
+            [[!uploadtousers:default=`[[+fd.filename]]`? &path=`[[+fd.fullPath]]` &field=`title`]]
+        </a>
+        <span style="font-size:80%">([[+fd.count]] downloads)</span>
+    </td>
+    <td>[[+fd.sizeText]]</td>
+    <td>[[+fd.date]]</td>
+</tr>
+<tr>
+    <td></td>
+    <td colspan="3">[[!uploadtousers? &path=`[[+fd.fullPath]]` &field=`description`]]</td>
+</tr>
 ```
 
 The result of the FileDownload output will be changed like this:

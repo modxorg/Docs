@@ -63,17 +63,17 @@ There were no search results for the search "". Please try using more general te
 
 Then that probably means that the **SimpleSearch** isn't looking in the right place in the $_POST or $\_GET array for your search term. If you created a custom **&tpl** for your **SimpleSearchForm** tpl, make sure that the name used for your search term variable is properly identified in your corresponding **SimpleSearch** Snippet call, e.g. note here how **my\_custom\_search\_field** is used in the **SimpleSearchForm** tpl \_and_ it's specified in the **&searchIndex** parameter of the **SimpleSearch** call:
 
-### SimpleSearchForm tpl:
+### SimpleSearchForm tpl
 
 ``` html
 <form id="my_id" action="[[~[[+landing:default=`[[*id]]`]]]]" method="[[+method:default=`get`]]">
-        <input id="searchField" class="my_class" type="text" name="my_custom_search_field" value="[[+searchValue:default=`Search the site`]]"/>
-        <input id="searchIcon" class="utilityButton" type="image" alt="Search" src="/assets/templates/my/images/searchButton.png">
-        <input type="hidden" name="id" value="[[+landing:default=[[*id]]]]" />
+    <input id="searchField" class="my_class" type="text" name="my_custom_search_field" value="[[+searchValue:default=`Search the site`]]"/>
+    <input id="searchIcon" class="utilityButton" type="image" alt="Search" src="/assets/templates/my/images/searchButton.png">
+    <input type="hidden" name="id" value="[[+landing:default=[[*id]]]]" />
 </form>
 ```
 
-### SimpleSearch Snippet call:
+### SimpleSearch Snippet call
 
 ``` php
 [[!SimpleSearch? &searchIndex=`my_custom_search_field`]]
@@ -82,12 +82,12 @@ Then that probably means that the **SimpleSearch** isn't looking in the right pl
 ## See Also
 
 1. [SimpleSearch.Roadmap](extras/simplesearch/simplesearch.roadmap)
-2. [SimpleSearch.SimpleSearch](extras/simplesearch/simplesearch.simplesearch)
-     1. [SimpleSearch.SimpleSearch.containerTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl)
-     2. [SimpleSearch.SimpleSearch.currentPageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl)
-     3. [SimpleSearch.SimpleSearch.pageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl)
-     4. [SimpleSearch.SimpleSearch.tpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl)
-     5. [SimpleSearch.Faceted Search Through PostHooks](extras/simplesearch/simplesearch.simplesearch/simplesearch.faceted-search-through-posthooks)
+2. [SimpleSearch.SimpleSearch](extras/simplesearch/simplesearch)
+    1. [SimpleSearch.SimpleSearch.containerTpl](extras/simplesearch/simplesearch/containertpl)
+    2. [SimpleSearch.SimpleSearch.currentPageTpl](extras/simplesearch/simplesearch/currentpagetpl)
+    3. [SimpleSearch.SimpleSearch.pageTpl](extras/simplesearch/simplesearch/pagetpl)
+    4. [SimpleSearch.SimpleSearch.tpl](extras/simplesearch/simplesearch/tpl)
+    5. [SimpleSearch.Faceted Search Through PostHooks](extras/simplesearch/simplesearch/faceted-search-through-posthooks)
 3. [SimpleSearch.SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform)
-     1. [SimpleSearch.SimpleSearchForm.tpl](extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl)
+    1. [SimpleSearch.SimpleSearchForm.tpl](extras/simplesearch/simplesearch.simplesearchform/tpl)
 4. [SimpleSearch.Solr](extras/simplesearch/simplesearch.solr)

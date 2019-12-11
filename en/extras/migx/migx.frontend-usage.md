@@ -8,20 +8,20 @@ _old_uri: "revo/migx/migx.frontend-usage"
 
 ## Displaying MIGX Items
 
- MIGX includes a snippet named getImageList that is used to output information from MIGX TVs. Despite the snippet name, non-images can be retrieved as well. Think of it as the ever-popular snippet [getResources](extras/getresources "getResources") but for MIGX.
+MIGX includes a snippet named getImageList that is used to output information from MIGX TVs. Despite the snippet name, non-images can be retrieved as well. Think of it as the ever-popular snippet [getResources](extras/getresources "getResources") but for MIGX.
 
- Here are some sample uses of getImageList:
+Here are some sample uses of getImageList:
 
 - image galleries
 - image or HTML sliders
 - tabular data
 - CSV or XML output
 
- Let's get to it!
+Let's get to it!
 
 ## Sample Usage
 
- Let's display some images that we input in Step 3. Paste this code wherever you would like to display the images:
+Let's display some images that we input in Step 3. Paste this code wherever you would like to display the images:
 
 ``` php
 <ul>
@@ -32,9 +32,9 @@ _old_uri: "revo/migx/migx.frontend-usage"
 </ul>
 ```
 
- Let's break this down. The first parameter, &tvname, refers to the name of the MIGX TV that we created in Backend Usage, Step 2. &tpl refers to either a code string for which to use with the MIGX items or the name of a chunk. If you're using a code string, make sure to prepend the code as above with @CODE.
+Let's break this down. The first parameter, &tvname, refers to the name of the MIGX TV that we created in Backend Usage, Step 2. &tpl refers to either a code string for which to use with the MIGX items or the name of a chunk. If you're using a code string, make sure to prepend the code as above with @CODE.
 
- If you're using [phpthumbof](extras/phpthumbof "phpThumbOf"), you will need to use a chunk and not a code string.
+If you're using [phpthumbof](extras/phpthumbof "phpThumbOf"), you will need to use a chunk and not a code string.
 
 ``` php
 <ul>
@@ -55,7 +55,7 @@ _old_uri: "revo/migx/migx.frontend-usage"
 
 ## Using MIGX with getResources
 
- You can call getImageList from [getResources](extras/getresources "getResources") to build a gallery of galleries.
+You can call getImageList from [getResources](extras/getresources "getResources") to build a gallery of galleries.
 
 ``` php
 <li>
@@ -69,13 +69,13 @@ _old_uri: "revo/migx/migx.frontend-usage"
 </li>
 ```
 
- … and that's that! You now have your very own MIGX image gallery.
+… and that's that! You now have your very own MIGX image gallery.
 
 ### Using getResources values in a MIGX call
 
- If you would like to use getResources values in your chunk called by getImageList, you can do so by including them as parameters in the getImageList snippet call and refer to them by the +property placeholder.
+If you would like to use getResources values in your chunk called by getImageList, you can do so by including them as parameters in the getImageList snippet call and refer to them by the +property placeholder.
 
- Include them in the snippet call:
+Include them in the snippet call:
 
 ``` html
 [[getImageList?
@@ -89,7 +89,7 @@ _old_uri: "revo/migx/migx.frontend-usage"
 
 ```
 
- and then refer to them in the chunk, prepended with "+property.":
+and then refer to them in the chunk, prepended with "+property.":
 
 ``` html
   <li>
@@ -98,7 +98,7 @@ _old_uri: "revo/migx/migx.frontend-usage"
   </li>
 ```
 
- Here's another [example from the forum post](http://forums.modx.com/thread/78950/odd-issue-with-migx#dis-post-435072) that lead to the above example.
+Here's another [example from the forum post](http://forums.modx.com/thread/78950/odd-issue-with-migx#dis-post-435072) that lead to the above example.
 
 ## Properties
 
@@ -141,7 +141,7 @@ _old_uri: "revo/migx/migx.frontend-usage"
 
 ### Switching Template
 
- Using &tpl=`@FIELD:` you can use any field as the template name to switch template from item to item
+Using &tpl=`@FIELD:` you can use any field as the template name to switch template from item to item
 
 ``` php
   [[getImageList?
@@ -150,4 +150,4 @@ _old_uri: "revo/migx/migx.frontend-usage"
   ]]
 ```
 
- If you have specified a field name "tpl" from the MIGX TV setup, getImageList will use the value of this field for the items's tpl. The value must be exactly what you would put in the &tpl property - a chunk name, @CODE:... @FILE...
+If you have specified a field name "tpl" from the MIGX TV setup, getImageList will use the value of this field for the items's tpl. The value must be exactly what you would put in the &tpl property - a chunk name, @CODE:... @FILE...

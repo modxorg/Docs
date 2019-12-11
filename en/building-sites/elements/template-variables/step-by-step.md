@@ -60,7 +60,7 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 
  Any time you create a Resource that uses a template to which a TV has been attached, the TV will be available for editing. **Make sure you attached the TV to at least one template.**
 
-### 6. Save the TV definition.
+### 6. Save the TV definition
 
  When you edit a page that uses a template associated to this TV, you'll be able to add data to that TV field.
 

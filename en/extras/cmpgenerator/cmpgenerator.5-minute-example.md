@@ -25,7 +25,7 @@ CREATE TABLE `modx_test` (
 3. Now go lets see if this worked and create a simple snippet to test out our newly created table.
    Name the Snippet: mytest and insert the following code:
 
-**mytest Snippet Code**
+mytest Snippet Code:
 
 ``` php
 <?php
@@ -96,4 +96,5 @@ return $output;
 ```
 
 You should see something like this (note my test page has CSS assigned to tables):
+
 ![](snippet-output.png)

@@ -18,16 +18,16 @@ Example for input.autocomplete using an object:
 
 ## Properties
 
-| Name            | Description                                                        | Default | Required | Version |
-| --------------- | ------------------------------------------------------------------ | ------- | -------- | ------- |
-| input\_id       | The id to assign to the input box.                                 |         |          | >0.0.1  |
-| name            | The name to assign to the input box.                               |         |          | >0.0.1  |
-| value           | The value to assign to the input box.                              |         |          | >0.0.1  |
-| object          | JSON array of options to return a combobox list.                   |         | Yes      | >0.0.1  |
-| filter          | JSON array to filter the combo list.                               |         |          | >0.0.1  |
-| helper\_snippet | Name of the snippet to call by ajax request to change option list. |         |          | >0.0.1  |
-| min\_length     | Minimum number of characters typed before executing filter.        | 2       |          | >0.0.1  |
-| max\_rows       | Maximum number of rows to return and display in the list           | 15      |          | >0.0.1  |
+| Name             | Description                                                        | Default | Required | Version |
+| ---------------- | ------------------------------------------------------------------ | ------- | -------- | ------- |
+| `input_id`       | The id to assign to the input box.                                 |         |          | >0.0.1  |
+| `name`           | The name to assign to the input box.                               |         |          | >0.0.1  |
+| `value`          | The value to assign to the input box.                              |         |          | >0.0.1  |
+| `object`         | JSON array of options to return a combobox list.                   |         | Yes      | >0.0.1  |
+| `filter`         | JSON array to filter the combo list.                               |         |          | >0.0.1  |
+| `helper_snippet` | Name of the snippet to call by ajax request to change option list. |         |          | >0.0.1  |
+| `min_length`     | Minimum number of characters typed before executing filter.        | 2       |          | >0.0.1  |
+| `max_rows`       | Maximum number of rows to return and display in the list           | 15      |          | >0.0.1  |
 
 ### object
 
@@ -61,8 +61,8 @@ Grabbing data by a table object is simple and straight forward. Using a json str
 
 ``` php
 [[!input.autocomplete?
-      &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
-    ]]
+    &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
+]]
 ```
 
 The auto-complete can also be filtered live using jquery. please view the [Advanced Examples](extras/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples") for more information.

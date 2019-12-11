@@ -6,9 +6,9 @@ _old_uri: "revo/addheaderfiles"
 
 ## What is AddHeaderfiles?
 
- With this tool the MODX regClient functions are used to insert Javascript and CSS styles at the appropriate positions of the current page. Since those functions don't insert the same filename twice, the snippet could be called everywhere in the template, document or in chunks to collect all needed Javascripts and CSS styles together.
+With this tool the MODX regClient functions are used to insert Javascript and CSS styles at the appropriate positions of the current page. Since those functions don't insert the same filename twice, the snippet could be called everywhere in the template, document or in chunks to collect all needed Javascripts and CSS styles together.
 
- Works well with [minifyRegistered](http://modx.com/extras/package/minifyregistered).
+Works well with [minifyRegistered](http://modx.com/extras/package/minifyregistered).
 
 ### Requirements
 
@@ -17,7 +17,7 @@ _old_uri: "revo/addheaderfiles"
 
 ### Download
 
- It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/addheaderfiles>
+It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/addheaderfiles>
 
 ### Support and Bug Reporting
 
@@ -26,7 +26,7 @@ _old_uri: "revo/addheaderfiles"
 
 ## Usage
 
- The snippet could be called in the page template, in the document content or in a template chunk.
+The snippet could be called in the page template, in the document content or in a template chunk.
 
 ### Snippet parameter
 
@@ -49,7 +49,7 @@ _old_uri: "revo/addheaderfiles"
 ]]
 ```
 
- shows:
+shows:
 
 ``` html
 ...
@@ -61,14 +61,14 @@ _old_uri: "revo/addheaderfiles"
 </body>
 ```
 
- Fill a chunk (i.e. 'headerColorbox') by:
+Fill a chunk (i.e. 'headerColorbox') by:
 
 ``` php
 /assets/js/jquery.js;
 /assets/js/colorbox.js|end;/assets/css/colorbox.css
 ```
 
- and call it like this:
+and call it like this:
 
 ``` php
 [[!AddHeaderfiles?
@@ -76,7 +76,7 @@ _old_uri: "revo/addheaderfiles"
 ]]
 ```
 
- Parts of the addcode parameterchain could point to chunks too (recursive). The parts of the chunks that are not pointing to other chunks or to files/uri should contain the complete ... or ... code.
+Parts of the addcode parameterchain could point to chunks too (recursive). The parts of the chunks that are not pointing to other chunks or to files/uri should contain the complete ... or ... code.
 
 ``` php
 [[!AddHeaderfiles?

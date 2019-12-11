@@ -6,72 +6,71 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-a-basic-gallery-management
 
 ## Extend the Schema
 
- Go to Extras->MIGX
+Go to Extras->MIGX
 
- Package Name: mygallery
+Package Name: mygallery
 
- Tab 'XML Schema' -> Load Schema
+Tab 'XML Schema' -> Load Schema
 
- Add this object to the existing schema:
+Add this object to the existing schema:
 
 ``` xml
-    <object class="mygalTag" table="migx_gallery_tags" extends="xPDOSimpleObject">
-        <field key="tag" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
-        <field key="alias" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
-        <composite alias="Images" class="mygalTagImage" local="id" foreign="tag" cardinality="many" owner="local" />
-    </object>
-    <object class="mygalTagImage" table="migx_gallery_tag_images" extends="xPDOObject">
-        <field key="tag" dbtype="integer" attributes="unsigned" precision="10" phptype="int" null="false" index="pk" />
-        <field key="image" dbtype="integer" attributes="unsigned" precision="10" phptype="int" null="false" index="pk" />
-        <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE">
-            <column key="tag" length="" collation="A" null="false" />
-            <column key="image" length="" collation="A" null="false" />
-        </index>
-        <aggregate alias="Tag" class="mygalTag" local="tag" foreign="id" cardinality="one" owner="foreign" />
-        <aggregate alias="Image" class="myGallery" local="image" foreign="id" cardinality="one" owner="foreign" />
-    </object>
+<object class="mygalTag" table="migx_gallery_tags" extends="xPDOSimpleObject">
+    <field key="tag" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
+    <field key="alias" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
+    <composite alias="Images" class="mygalTagImage" local="id" foreign="tag" cardinality="many" owner="local" />
+</object>
+<object class="mygalTagImage" table="migx_gallery_tag_images" extends="xPDOObject">
+    <field key="tag" dbtype="integer" attributes="unsigned" precision="10" phptype="int" null="false" index="pk" />
+    <field key="image" dbtype="integer" attributes="unsigned" precision="10" phptype="int" null="false" index="pk" />
+    <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE">
+        <column key="tag" length="" collation="A" null="false" />
+        <column key="image" length="" collation="A" null="false" />
+    </index>
+    <aggregate alias="Tag" class="mygalTag" local="tag" foreign="id" cardinality="one" owner="foreign" />
+    <aggregate alias="Image" class="myGallery" local="image" foreign="id" cardinality="one" owner="foreign" />
+</object>
 ```
 
- Save the Schema
-
- Go to the Tab 'Create Tables' -> Click 'Create Tables'
+Save the Sch
+Go to the Tab 'Create Tables' -> Click 'Create Tables'
 
 ## Add Tagger Fields to the Formtabs
 
- Edit the MIGX-config 'mygallery'
+Edit the MIGX-config 'mygallery'
 
- Go to the Tab 'Formtabs'
+Go to the Tab 'Formtabs'
 
- Add a new Tab with caption 'Tags'
+Add a new Tab with caption 'Tags'
 
- Add new Field to this Tab with fieldname 'tags' and inputTVtype 'listbox-multiple'
+Add new Field to this Tab with fieldname 'tags' and inputTVtype 'listbox-multiple'
 
- into Input Option Values of this field put:
+into Input Option Values of this field put:
 
 ``` php
 @EVAL return $modx->runSnippet('migxLoopCollection',array('classname'=>'mygalTag','sortConfig'=>'[{"sortby":""tag}]','tpl'=>'@CODE:[[+tag]]==[[+id]]','outputSeparator'=>'||'));
 ```
 
- Create another field with the fieldname 'newtag'
+Create another field with the fieldname 'newtag'
 
- Save the Fields and the Tab with 'Done'
+Save the Fields and the Tab with 'Done'
 
- Go to the Tab 'MIGXdb - Settings'
+Go to the Tab 'MIGXdb - Settings'
 
- Add this to 'Hook Snippets'
+Add this to 'Hook Snippets'
 
- ``` json
+``` json
 {"aftersave":"mygallery_aftersave","aftergetfields":"mygallery_aftergetfields"}
 ```
 
- Save the Config
+Save the Config
 
- Create two new snippets
+Create two new snippets
 
- mygallery\_aftersave:
+mygallery\_aftersave:
 
 ``` php
- $object = &$modx->getOption('object',$scriptProperties,null);
+$object = &$modx->getOption('object',$scriptProperties,null);
 if ($object){
     $newtags = explode(',',$object->get('newtag'));
     $tags = explode('||',$object->get('tags'));
@@ -119,7 +118,7 @@ if ($object){
 }
 ```
 
- mygallery\_aftergetfields:
+mygallery\_aftergetfields:
 
 ``` php
 $object = &$modx->getOption('object',$scriptProperties,null);
@@ -172,7 +171,7 @@ if ($object){
 
 ## Get Tags and filter by tag for the Frontend
 
- Create a new snippet 'mygallery\_prepareTagWhere' with this code:
+Create a new snippet 'mygallery\_prepareTagWhere' with this code:
 
 ``` php
 $tag = isset($_GET['tag']) ? (int) $_GET['tag'] : 0;
@@ -194,13 +193,13 @@ if (!empty($tag)){
 return $output;
 ```
 
- Create a chunk 'mygallery\_tag\_item' with this code:
+Create a chunk 'mygallery\_tag\_item' with this code:
 
 ``` php
 <a href="[[~[[*id]]? &tag=`[[+Tag_id]]`]]">[[+Tag_tag]]</a><br>
 ```
 
- put this snippet-tags into your template:
+put this snippet-tags into your template:
 
 ``` php
 [[!migxLoopCollection?

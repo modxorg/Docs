@@ -4,39 +4,39 @@ _old_id: "1707"
 _old_uri: "revo/gridclasskey"
 ---
 
- GridClassKey is a custom class key for MODX Revolution's Manager to hide child resources inside container's grid.
+GridClassKey is a custom class key for MODX Revolution's Manager to hide child resources inside container's grid.
 
- You can switch the current resource to be this class key, AND it can be reverted back to the usual modResource by changing the Resource Type inside the Settings tab.
+You can switch the current resource to be this class key, AND it can be reverted back to the usual modResource by changing the Resource Type inside the Settings tab.
 
- It only hides the child resources, and display them in the grid. Everything else is just as same as the usual modResource's form.
+It only hides the child resources, and display them in the grid. Everything else is just as same as the usual modResource's form.
 
- Any bugs or feature requests can be reported to here: <https://github.com/goldsky/GridClassKey/issues>
+Any bugs or feature requests can be reported to here: <https://github.com/goldsky/GridClassKey/issues>
 
- ![](children.jpg)
+![](children.jpg)
 
 ## Settings
 
- "Settings" are the place to configure the table/grid how it looks, and some of mouse-clicking behaviors.
+"Settings" are the place to configure the table/grid how it looks, and some of mouse-clicking behaviors.
 
 ### Fields
 
- ![](settings-field.png)
+![](settings-field.png)
 
- In here, user can define what data they want to have on their grid.
+In here, user can define what data they want to have on their grid.
 
 - As default, GCK sets _id, pagetitle, longtitle,_ and _description_ fields into the grid.
 - To delete the field, just click the red "delete" button on the right side.
 - To add new field, just select "**Add Main Field**", or "**Add TV** (Template Variable) **Field**", or "**Add Snippet Field**", then click the "_Add_" button to add the selected field into the _fields grid_.
 
- Main field is the MODX's original fields of modx\_site\_content table.
+Main field is the MODX's original fields of `modx_site_content` table.
 
- To have TV or Snippet field, [you must make sure that there is no dots on its name](https://github.com/goldsky/GridClassKey/issues/9)!
+To have TV or Snippet field, [you must make sure that there is no dots on its name](https://github.com/goldsky/GridClassKey/issues/9)!
 
- User can re-align the sorting by dragging-dropping the row of the field.
+User can re-align the sorting by dragging-dropping the row of the field.
 
- Each of the columns presents the variables/parameters attached to the fields of the resource grid.
+Each of the columns presents the variables/parameters attached to the fields of the resource grid.
 
- User can define different values for the parameters, by double-clicking the cell:
+User can define different values for the parameters, by double-clicking the cell:
 
 - Lexicon: user can set a MODX's lexicon string for a multilingual manager, or they can just set a plain text, eg: "Page Title"
 - Width: the width of the column
@@ -46,59 +46,59 @@ _old_uri: "revo/gridclasskey"
 - Editor Type: all cells are editable, except the ID.
    On here, user can define what kind of editor they want to use to edit the content.
    The options are:
-  - the name of any of ExtJs and MODX's xtype editors, or
-  - (since 1.0.1-rc1) a json-parameter object of a complex set of an editor, eg:
+    - the name of any of ExtJs and MODX's xtype editors, or
+    - (since 1.0.1-rc1) a json-parameter object of a complex set of an editor, eg:
       `{xtype:"modx-combo",url:"path/to/connector",baseParams:{action:"something/getlist",combo:true}}`
 - Output Filter: user can modify the output value of the grid when its rendered. It's just a [MODX's Output Filter](making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)).
 
 #### Sorting
 
- User can define by which field the grid is sorted, and to which direction, ascending or descending.
+User can define by which field the grid is sorted, and to which direction, ascending or descending.
 
 ### Container's Settings
 
- ![](settings-container.png)
+![](settings-container.png)
 
- User can change page's style, javascript's behavior, or change some buttons of the grid's manager.
+User can change page's style, javascript's behavior, or change some buttons of the grid's manager.
 
- The CSS file will be loaded for all Manager's pages, eg: the user wants to [change the icons of resource tree](https://github.com/goldsky/GridClassKey/issues/72).
+The CSS file will be loaded for all Manager's pages, eg: the user wants to [change the icons of resource tree](https://github.com/goldsky/GridClassKey/issues/72).
 
- The JS file(s) will _only_ be loaded when the particular grid page is loaded. Developer can add their JS file to manipulate how the grid will perform.
+The JS file(s) will _only_ be loaded when the particular grid page is loaded. Developer can add their JS file to manipulate how the grid will perform.
 
 ### Exampleof Custom Javascript
 
 #### [Adding a dropdown filter field that can be used by clients](http://forums.modx.com/thread/92669/grid-class-key-add-a-dropdown-filter-field-that-can-be-used-by-clients)
 
- ![](add-combo.png)
+![](add-combo.png)
 
- The requirements:
+The requirements:
 
 1. Each of resource contains a TV of the users from the "Author" usergroup
 2. Add a combo of users from "Author" usergroup into top of the grid
 3. Reload the grid after the combobox is selected
 4. Clear the filter when the "Clear" button is selected
 
-##### 1. Set Up the "Author" usergroup.
+##### 1. Set Up the "Author" usergroup
 
- You can choose different name, this is an example.
+You can choose different name, this is an example.
 
- Make sure to sync the name with other files that refer to this name.
+Make sure to sync the name with other files that refer to this name.
 
- ![](acl.png)
+![](acl.png)
 
-##### 2. Create the "author" Template Variable.
+##### 2. Create the "author" Template Variable
 
- We need to create a TV that lists users from the "Author" usergroup.
+We need to create a TV that lists users from the "Author" usergroup.
 
- On this example, let's named it "author".
+On this example, let's named it "author".
 
- ![](authortv.png)
+![](authortv.png)
 
- We need a snippet that will list the users from this particular user group, we use [@EVAL binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding) feature for this.
+We need a snippet that will list the users from this particular user group, we use [@EVAL binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding) feature for this.
 
 ##### 3. Create snippet to list the authors on Template Variable's values
 
- On this example, let's name it "authorListTV".
+On this example, let's name it "authorListTV".
 
 ``` php
 <?php
@@ -127,29 +127,29 @@ $output = implode('||', $output);
 return $output;
 ```
 
- This will list the users from this specific user group on resource.
+This will list the users from this specific user group on resource.
 
- ![](authortvresource.png)
+![](authortvresource.png)
 
 ##### 4. Prepare files for the Feature
 
- We will create some files for this additional feature.
+We will create some files for this additional feature.
 
- On this example, let's say it as "customize-gck".
+On this example, let's say it as "customize-gck".
 
- ![](filetree-1.png)
+![](filetree-1.png)
 
- 1. Add a combo of users from "Author" usergroup into top of the grid
+1. Add a combo of users from "Author" usergroup into top of the grid
 
- We need to adjust the settings.
+We need to adjust the settings.
 
- ![](example-settings-field.png)
+![](example-settings-field.png)
 
- From the "Add TV Field", select "author" to add it to the grid.
+From the "Add TV Field", select "author" to add it to the grid.
 
- On the Output Filter of the "author" field, double click the cell, and define a snippet name that will convert the value of the TV, which is actually an ID, to be _some name_ to make it convenient for users to see the output.
+On the Output Filter of the "author" field, double click the cell, and define a snippet name that will convert the value of the TV, which is actually an ID, to be _some name_ to make it convenient for users to see the output.
 
- On this example, let's name it "authorNameOF".
+On this example, let's name it "authorNameOF".
 
 ``` php
 <?php
@@ -165,11 +165,11 @@ if (is_numeric($input)) {
 return $output;
 ```
 
- Then go to the "Container's Settings" tab to define our custom Javascript file.
+Then go to the "Container's Settings" tab to define our custom Javascript file.
 
- ![](example-settings-container.png)
+![](example-settings-container.png)
 
- On this example, it's "../assets/components/customize-gck/js/mgr/widgets/customize-gck.js".
+On this example, it's "../assets/components/customize-gck/js/mgr/widgets/customize-gck.js".
 
 ``` javascript
 // Define the combo
@@ -255,7 +255,7 @@ Ext.onReady(function() {
 });
 ```
 
- Now we need to create a connector for the combo, "assets/components/customize-gck/connector.php"
+Now we need to create a connector for the combo, "assets/components/customize-gck/connector.php"
 
 ``` php
 <?php
@@ -274,7 +274,7 @@ $modx->request->handleRequest(array(
 ));
 ```
 
- Now let's add the combo's processor, "core/components/customize-gck/processors/authors/getlist.class.php"
+Now let's add the combo's processor, "core/components/customize-gck/processors/authors/getlist.class.php"
 
 ``` php
 <?php
@@ -323,29 +323,29 @@ class AuthorUsersGetListProcessor extends modObjectGetListProcessor {
 return 'AuthorUsersGetListProcessor';
 ```
 
- And now ALL are set.
+And now ALL are set.
 
- If you change the drop down, because it's listening to "select" event, the grid will be filtered out to the selected user.
+If you change the drop down, because it's listening to "select" event, the grid will be filtered out to the selected user.
 
- ![](user-filtered-result.png)
+![](user-filtered-result.png)
 
- Click the "Clear" button to clear the filter(s).
+Click the "Clear" button to clear the filter(s).
 
 #### [Custom Inline Editor](https://github.com/goldsky/GridClassKey/issues/110)
 
- If you want to create a custom inline editor, you can also do similar thing like above.
+If you want to create a custom inline editor, you can also do similar thing like above.
 
- This example is a simple one, you can adjust more in your Javascript's class file.
+This example is a simple one, you can adjust more in your Javascript's class file.
 
- ![](gck-custom-editor.png)
+![](gck-custom-editor.png)
 
- What it needs is the definition of the editor.
+What it needs is the definition of the editor.
 
 1. Create the component
 2. Load the file
 3. Edit the GridClassKey's setting
 
-  **1. Component**
+##### 1. Component
 
 ``` javascript
 GridClassKey.combo.Availability = function (config) {
@@ -369,62 +369,62 @@ On here, this component extends "MODx.combo.Boolean" with obvious values, just f
 
 You can extends any available MODx's JS components.
 
- **2. Load the file**
+##### 2. Load the file
 
- Let's say we save the above code as "**../assets/components/customize-gck/js/mgr/widgets/combo.availability.js**"
+Let's say we save the above code as "**../assets/components/customize-gck/js/mgr/widgets/combo.availability.js**"
 
- ![](gck-load-bottom-js.png)
+![](gck-load-bottom-js.png)
 
- **3. Edit the GridClassKey's setting**
+##### 3. Edit the GridClassKey's setting
 
- Then change the Field's setting.
+Then change the Field's setting.
 
- ![](gck-custom-field-setting.png)
+![](gck-custom-field-setting.png)
 
- And it's done.
+And it's done.
 
 ### Children's Settings
 
- This settings try to override the specified settings of the child resource **when it is being created** under this grid container.
+This settings try to override the specified settings of the child resource **when it is being created** under this grid container.
 
- Again, only applies when it is being created, not being updated.
+Again, only applies when it is being created, not being updated.
 
- ![](settings-children.png)
+![](settings-children.png)
 
- For "Text for "Back to Container" button" field, you can define a lexicon string, or just plain text on it.
+For "Text for "Back to Container" button" field, you can define a lexicon string, or just plain text on it.
 
- The "Properties" are a modx\_site\_content field to store some properties for particular plugins/extras.
- It's a json format comma delimited properties.
- Please refer to their documentation of the parameters.
+The "Properties" are a `modx_site_content` field to store some properties for particular plugins/extras.
+It's a json format comma delimited properties.
+Please refer to their documentation of the parameters.
 
 ## Permissions
 
- GridClassKey has some set of permissions.
+GridClassKey has some set of permissions.
 
- On the grid, if the user does not have permission to delete, edit, or publish, then the Action Icon regarding to the permission will be disappeared.
+On the grid, if the user does not have permission to delete, edit, or publish, then the Action Icon regarding to the permission will be disappeared.
 
- There is also permission to limit user to access "Batch Actions" and the "Advanced Search" buttons.
+There is also permission to limit user to access "Batch Actions" and the "Advanced Search" buttons.
 
- On Access Control page, you will see that it added a Policy named "GridClassKey".
+On Access Control page, you will see that it added a Policy named "GridClassKey".
 
- ![](access-policies.png)
+![](access-policies.png)
 
- If you **Right Click > Update Policy**, you will see that actually it only manages 2 permissions: accesses to Batch Actions and Advanced Search buttons.
+If you **Right Click > Update Policy**, you will see that actually it only manages 2 permissions: accesses to Batch Actions and Advanced Search buttons.
 
- ![](access-policies-update.png)
+![](access-policies-update.png)
 
- So if you are setting up some usergroups, make sure you add this permission for the usergroup that is allowed to access those buttons.
+So if you are setting up some usergroups, make sure you add this permission for the usergroup that is allowed to access those buttons.
 
- From the top menu " **Security**", select "**Access Controls**".
+From the top menu " **Security**", select "**Access Controls**".
 
- Then on the specified usergroup, **Right Click > Update User Group**
+Then on the specified usergroup, **Right Click > Update User Group**
 
- On the **Context Access** tab, click the "**Add Context**" button.
+On the **Context Access** tab, click the "**Add Context**" button.
 
- Set up the the window form like this:
+Set up the the window form like this:
 
- ![](acl-context-window.png)
+![](acl-context-window.png)
 
- Then after you save it, you will see a new permission appears to the specified usergroup on manager context.
+Then after you save it, you will see a new permission appears to the specified usergroup on manager context.
 
- ![](acl-context-grid.png)
+![](acl-context-grid.png)

@@ -40,13 +40,13 @@ You will need to download from the ModX Extras Repository, here <http://modx.com
 
 In the manager menu, select **Components** -> **mxCalendar**. Select the **Calendars** tab, click **Create New Calendar**. Name your calendar, check the active checkbox (if unchecked) and save.
 
-? ![](mxcalendarcreatecalendar.jpg)
+![](mxcalendarcreatecalendar.jpg)
 
 ## Creating Categories
 
 In the manager menu, select **Components** -> **mxCalendar**. Select the **Categories** tab, click **Create New Category**. Name the category and enter options, save.
 
-? ![](mxcalendarcreatecategory.jpg)
+![](mxcalendarcreatecategory.jpg)
 
 ## Creating New Events
 
@@ -60,20 +60,21 @@ Enter your event description in the rich text editor. This populates the `[[*con
 In the Location tab, name the location and enter the address. Check "Display Map" to output a Google Map for the address that you entered.
 The example shown is the default Google Map display in a styled modal window (tplDetail or tplDetailModal).
 
- ![](mxcalendareventlocation.jpg)
+![](mxcalendareventlocation.jpg)
 
 ![](mxcalendargooglemapmodalview.jpg)
 
 In the event tab, enter the event link URL.
 
 ![](mxcalendaraddeventlink.jpg)
+
 Form Tab documentation forthcoming...
 
 ## Using mxCalendar
 
 Now to the best part, using mxCalendar to manage and display events.
 
-## Basic Use:
+## Basic Use
 
 After installation you should be able to call the default view (calendar) in your resource using:
 
@@ -96,7 +97,7 @@ Now when you reload your primary page with the mxcalendar snippet call, not the 
 
 | **Parameters**                         | **Type**                                     | **Default**                                                        | **Scope**                    | **Description**                                                                                                                                                                                                                                                                                |
 | -------------------------------------- | -------------------------------------------- | ------------------------------------------------------------------ | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| theme                                  | string                                       | default                                                            | calendar, mini, list, detail | Set the theme to use; looks for theme files in the “/assets/components/mxcalendars/theme/” folder. You can create a new one by simply copying the default or traditional folder and modify then update the parater to your folder name.                                                      |
+| theme                                  | string                                       | default                                                            | calendar, mini, list, detail | Set the theme to use; looks for theme files in the “/assets/components/mxcalendars/theme/” folder. You can create a new one by simply copying the default or traditional folder and modify then update the parater to your folder name.                                                        |
 | resourceId                             | int                                          | (current resource)                                                 | calendar, mini, list, detail | This sets the resource ID to use when creating links that use the non-ajax parameter                                                                                                                                                                                                           |
 | isLocked                               | boolean                                      | 0 (FALSE)                                                          | calendar, mini, list, detail | When set to true the display type for this snippet call will not be changed regardless of any passed parameters or query string values; used when you have multiple snippet calls on a single page                                                                                             |
 | displayType                            | string                                       | calendar                                                           | default                      | Set the default display mode when not passed in snippet call or query string                                                                                                                                                                                                                   |
@@ -104,7 +105,7 @@ Now when you reload your primary page with the mxcalendar snippet call, not the 
 | elEndDate                              | date                                         | +4 weeks                                                           | list                         | Set the last date you want as the filter for returning dates in the future; uses PHP strtotime function                                                                                                                                                                                        |
 | tplListItem                            | String (chunk)                               | el.itemclean                                                       | list                         | The chunk you want to use for each individual event item returned in the list                                                                                                                                                                                                                  |
 | tplListHeading                         | String (chunk)                               | el.listheading                                                     | list                         | The chunk you want to use for month heading sperator in list view; to display the monthly heading make it empty                                                                                                                                                                                |
-| tplListWrap                            | String (chunk)                               | el.wrap                                                            | list                         | The chunk that is the outer most wrapper for the list view, often contains the global heading “Upcoming Events”                                                                                                                                                                              |
+| tplListWrap                            | String (chunk)                               | el.wrap                                                            | list                         | The chunk that is the outer most wrapper for the list view, often contains the global heading “Upcoming Events”                                                                                                                                                                                |
 | eventListlimit                         | int                                          | 5                                                                  | list                         | Set the max number of event items to display in the events list this includes the repeating events for a given event                                                                                                                                                                           |
 | sort                                   | string (column name)                         | startdate                                                          | calendar, mini, list, detail | Set the default sorting order, often this is not modified and helps performance when dealing with the limits                                                                                                                                                                                   |
 | dir                                    | string (ASC, DESC)                           | ASC                                                                | calendar, mini, list, detail | Set the sort direction to use                                                                                                                                                                                                                                                                  |

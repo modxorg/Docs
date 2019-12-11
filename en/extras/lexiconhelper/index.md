@@ -25,22 +25,22 @@ Note: LexiconHelper is not a utility for translators.
 
 - Author: Bob Ray [Bob's Guides](https://bobsguides.com)
 
- This version of the LexiconHelper extra was developed by Bob Ray. It was first posted to GitHub on Dec 01, 2011. As of Jun 22, 2017 it had been last updated on Dec. 1, 2011, had 11 commits, and had been downloaded 1,022 times. The LexiconHelper package consists of 133 separate files, containing 1,999 lines of code.
+This version of the LexiconHelper extra was developed by Bob Ray. It was first posted to GitHub on Dec 01, 2011. As of Jun 22, 2017 it had been last updated on Dec. 1, 2011, had 11 commits, and had been downloaded 1,022 times. The LexiconHelper package consists of 133 separate files, containing 1,999 lines of code.
 
 It is currently maintained by Bob Ray.
 
 ## Download
 
- LexiconHelper can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/lexiconhelper).
+LexiconHelper can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/lexiconhelper).
 
 ## Development and Bug Reporting
 
- LexiconHelper is stored and developed using GitHub, and can be found here: [LexiconHelper GitHub main page](https://github.com/BobRay/LexiconHelper).
+LexiconHelper is stored and developed using GitHub, and can be found here: [LexiconHelper GitHub main page](https://github.com/BobRay/LexiconHelper).
 
- Bugs and feature requests can be filed here: [LexiconHelper issues page.](https://github.com/BobRay/LexiconHelper/issues).
+Bugs and feature requests can be filed here: [LexiconHelper issues page.](https://github.com/BobRay/LexiconHelper/issues).
 
 Questions about how to use LexiconHelper should be posted on the [MODX Forums](https://forums.modx.com).
 
 ## Documentation
 
- The full documentation for LexiconHelper can be found at the author's web site (Bob's Guides): [LexiconHelper Documentation](https://bobsguides.com/lexiconhelper-tutorial.html).
+The full documentation for LexiconHelper can be found at the author's web site (Bob's Guides): [LexiconHelper Documentation](https://bobsguides.com/lexiconhelper-tutorial.html).

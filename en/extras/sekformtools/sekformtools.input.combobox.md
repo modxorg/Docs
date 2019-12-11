@@ -24,16 +24,16 @@ Example for input.combobox using an object:
 
 ## Properties
 
-| Name            | Description                                                                                       | Default | Required | Version |
-| --------------- | ------------------------------------------------------------------------------------------------- | ------- | -------- | ------- |
-| input\_id       | The id to assign to the input box. While not required, it is best to give all fields an input id. |         |          | >0.0.1  |
-| name            | The name to assign to the input box.                                                              |         |          | >0.0.1  |
-| value           | The value to assign to the input box.                                                             |         |          | >0.0.1  |
-| object          | JSON array of options to return a combobox list.                                                  |         |          | >0.0.1  |
-| snippet         | A snippet call to return a custom JSON list.                                                      |         |          | >0.0.1  |
-| value\_list     | Create a custom list for the combobox.                                                            |         |          | >0.0.1  |
-| filter          | JSON array to filter the combo list.                                                              |         |          | >0.0.1  |
-| helper\_snippet | Name of the snippet to call by ajax request to change option list.                                |         |          | >0.0.1  |
+| Name             | Description                                                                                       | Default | Required | Version |
+| ---------------- | ------------------------------------------------------------------------------------------------- | ------- | -------- | ------- |
+| `input_id`       | The id to assign to the input box. While not required, it is best to give all fields an input id. |         |          | >0.0.1  |
+| `name`           | The name to assign to the input box.                                                              |         |          | >0.0.1  |
+| `value`          | The value to assign to the input box.                                                             |         |          | >0.0.1  |
+| `object`         | JSON array of options to return a combobox list.                                                  |         |          | >0.0.1  |
+| `snippet`        | A snippet call to return a custom JSON list.                                                      |         |          | >0.0.1  |
+| `value_list`     | Create a custom list for the combobox.                                                            |         |          | >0.0.1  |
+| `filter`         | JSON array to filter the combo list.                                                              |         |          | >0.0.1  |
+| `helper_snippet` | Name of the snippet to call by ajax request to change option list.                                |         |          | >0.0.1  |
 
 ### object
 
@@ -72,7 +72,8 @@ The simplest way to create a quick combo box.
 { "value": "102", "label": "Chocolate" },
 { "value": "103", "label": "Blueberry" },
 { "value": "104", "label": "Devil's Food"}
-]`]]
+]`
+]]
 ```
 
 ### Object
@@ -81,26 +82,26 @@ Grabbing data by a table object is simple and straight forward. Using a json str
 
 ``` php
 [[!input.combobox?
-      &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
-    ]]
+    &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
+]]
 ```
 
 You can even filter the data by using the filter option. Here we just want to grab all the cities with the state id of 62, which in this case is Kansas.
 
 ``` php
 [[!input.combobox?
-      &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
-      &filter=`{"field": "state_id", "value": "62"}`
-    ]]
+    &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
+    &filter=`{"field": "state_id", "value": "62"}`
+]]
 ```
 
 We can also filter the combo box using xpdo's powerful relational filters. Here we use the filter->name field to grab the states table. The field we filter on is the abbreviation, and the value we want to filter "KS". XPDO will then do the work by finding the relationship between the two tables ( the "id" of the states table and the "state\_id" field of the city table ) and return the filtered list by state.
 
 ``` php
 [[!input.combobox?
-      &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
-      &filter=`{"name": "sekftStates", "field": "state_abbr", "value": "KS"}`
-    ]]
+    &object=`{"name": "sekftUSCities", "sortby": "city_name", "value": "city_name", "label": "city_name"}`
+    &filter=`{"name": "sekftStates", "field": "state_abbr", "value": "KS"}`
+]]
 ```
 
 The combo box can also be filter live using jquery. please view the [Advanced Examples](extras/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples") for more information.
@@ -119,11 +120,11 @@ The snippet must must return a json array.
 $items = $modx->getCollection('sekftStates');
 $itemListArray = array();
 foreach ($items as $item) {
-  $itemArray = $item->toArray();
-  $itemList = array();
-  $itemList['value'] = $itemArray['id'];
-  $itemList['label'] = $itemArray['state_name'];
-  $itemListArray[] = $itemList;
+    $itemArray = $item->toArray();
+    $itemList = array();
+    $itemList['value'] = $itemArray['id'];
+    $itemList['label'] = $itemArray['state_name'];
+    $itemListArray[] = $itemList;
 }
 return $modx->toJSON($itemListArray);
 ```
@@ -138,22 +139,22 @@ The snippet must must return a json array.
 
 ``` php
 $itemListArray = array(
-  array(
-    'value' => '1',
-    'label' => 'One'
-  ),
-  array(
-    'value' => '2',
-    'label' => 'Two'
-  ),
-  array(
-    'value' => '3',
-    'label' => 'Three'
-  ),
-  array(
-    'value' => '4',
-    'label' => 'Four'
-  )
+    array(
+        'value' => '1',
+        'label' => 'One'
+    ),
+    array(
+        'value' => '2',
+        'label' => 'Two'
+    ),
+    array(
+        'value' => '3',
+        'label' => 'Three'
+    ),
+    array(
+        'value' => '4',
+        'label' => 'Four'
+    )
 );
 return $modx->toJSON($itemListArray);
 ```

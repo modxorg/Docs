@@ -56,8 +56,8 @@ This widget would return as its content:
 
 File-based widgets have the following PHP variables available to them:
 
-- $modx - A reference to the MODX instance.
-- $scriptProperties - An array of properties of this Dashboard Widget, as if toArray() were run on the widget object.
+- `$modx` - A reference to the MODX instance.
+- `$scriptProperties` - An array of properties of this Dashboard Widget, as if `toArray()` were run on the widget object.
 
 ## See Also
 

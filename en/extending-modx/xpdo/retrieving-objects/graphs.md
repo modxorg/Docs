@@ -152,7 +152,7 @@ foreach ($pages as $p) {
 2. Viewing the package name in the schema we set (or apply) the package to our connection, taking note of the prefix our tables are using in the database
 3. Using 'Zip' as our "view" we look at the relationships directly defined in the Zip object, in our schema, and access those via the aliases given there
 
-## Additional Notes:
+## Additional Notes
 
 Everything is about the schema definition. A poorly thought out and developed schema may very well lead to many hours of frustration.
 
@@ -160,12 +160,12 @@ If you are having trouble with xPDO, you have two main avenues of troubleshootin
 
 - First and foremost -- the schema is not correct. Re thinking it from the bottom relations up, and through each relationship may help us "see" where we may be missing it.
 - Not understanding what we are seeing is another huge issue.
-  - Understand the point of your schema. If your schema will eventually instantiate an object representing a single entity (such as a user) your base relationships should be ($this->user) 1: 1 or many on the other side.
-  - A relationship tied to a many-to-many relation (as in the relations between users and groups) will probably need a for each loop to filter through the sub relation.
-  - Aggregate relations should typically be singular. Removing them does nothing to the related data
-  - Composite relations should typically be plural. Removing them also removes each of the related child relations.
-  - Don't be afraid to use regular language in your schema. Instead of Cityzip, in the schema above, Cityhaszips might be a bit clearer in thinking through your schema
-  - Don't use the same class name in multiple places in the schema. Not only will it bring confusion while coding, I suspect it also confuses xPDO. If for no other reason -- its just bad form.
-  - xPDO is fast, very fast. If your queries are taking to long, go back to the schema and follow the indexes.
-  - xPDO likes primary keys, so build your relations around primary keys when ever possible -- if not always.
-  - In case you missed it '{"TZ":{},"ST":{},"CT":{}}' is JSON formatted.
+    - Understand the point of your schema. If your schema will eventually instantiate an object representing a single entity (such as a user) your base relationships should be ($this->user) 1: 1 or many on the other side.
+    - A relationship tied to a many-to-many relation (as in the relations between users and groups) will probably need a for each loop to filter through the sub relation.
+    - Aggregate relations should typically be singular. Removing them does nothing to the related data
+    - Composite relations should typically be plural. Removing them also removes each of the related child relations.
+    - Don't be afraid to use regular language in your schema. Instead of Cityzip, in the schema above, Cityhaszips might be a bit clearer in thinking through your schema
+    - Don't use the same class name in multiple places in the schema. Not only will it bring confusion while coding, I suspect it also confuses xPDO. If for no other reason -- its just bad form.
+    - xPDO is fast, very fast. If your queries are taking to long, go back to the schema and follow the indexes.
+    - xPDO likes primary keys, so build your relations around primary keys when ever possible -- if not always.
+    - In case you missed it '{"TZ":{},"ST":{},"CT":{}}' is JSON formatted.

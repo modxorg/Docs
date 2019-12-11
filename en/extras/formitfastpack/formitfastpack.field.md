@@ -17,12 +17,12 @@ For example:
 &label=`Enter your name:`]]
 ```
 
-### Managing Defaults:
+### Managing Defaults
 
 - You can call the **fieldSetDefaults** snippet with any of the **field** snippet parameters to set the default values for _subsequently-processed_ **field** snippets.
 - There is a complete property set in the dummy **fieldPropSetExample** snippet. You can copy this to the **field** snippet if desired. However, any property sets on the **field** snippet prevent the **fieldSetDefaults** snippet from working for those properties.
 
-### Simple Example Form:
+### Simple Example Form
 
 ``` php
 [[!FormIt? &prefix=`myprefix.` &submitVar=`submitForm`]]

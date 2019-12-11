@@ -15,24 +15,23 @@ To make conversion of existing mysql models easier, a tool is provided in xPDO t
 This simple tool takes a few arguments and automatically converts your 1.0 model's index definitions to the 1.1 format and adds version="1.1" to the `model` element.
 
 - Required Arguments
-  - **pkg** — The name of the model package being converted.
-  - **pkg\_path** — The root path of the model package.
-  - **schema\_name** — The xPDO schema filename to convert.
-  - **schema\_path** — The path to the schema file.
-
+    - **pkg** — The name of the model package being converted.
+    - **pkg\_path** — The root path of the model package.
+    - **schema\_name** — The xPDO schema filename to convert.
+    - **schema\_path** — The path to the schema file.
 - Optional Arguments
-  - **backup\_path** — The path to write the backup schema file. If not specified, the backup is written to the same directory (schema\_path).
-  - **backup\_prefix** — A string to prepend to the backup schema file. Default is '~'.
-  - **dsn** — A valid PDO DSN connection string.
-  - **dbuser** — A valid database user with access to the specified DSN.
-  - **dbpass** — The password for the specified dbuser.
-  - **regen** — If true, will regenerate the model after the schema is updated.
-  - **write** — If true, will write the updated schema to file and backup the original.
-  - **echo** — If true, will echo the updated schema to STDOUT.
-  - **debug** — Sets the debug level of xPDO; if true, **echo** is automatically set true.
-  - **include** — An external properties file to include arguments from.
-  - **error\_reporting** — Set the PHP error\_reporting level for the script. Default is -1 (does not report errors).
-  - **display\_errors** — Set the PHP display\_errors setting. Default is true.
+    - **backup\_path** — The path to write the backup schema file. If not specified, the backup is written to the same directory (schema\_path).
+    - **backup\_prefix** — A string to prepend to the backup schema file. Default is '~'.
+    - **dsn** — A valid PDO DSN connection string.
+    - **dbuser** — A valid database user with access to the specified DSN.
+    - **dbpass** — The password for the specified dbuser.
+    - **regen** — If true, will regenerate the model after the schema is updated.
+    - **write** — If true, will write the updated schema to file and backup the original.
+    - **echo** — If true, will echo the updated schema to STDOUT.
+    - **debug** — Sets the debug level of xPDO; if true, **echo** is automatically set true.
+    - **include** — An external properties file to include arguments from.
+    - **error\_reporting** — Set the PHP error\_reporting level for the script. Default is -1 (does not report errors).
+    - **display\_errors** — Set the PHP display\_errors setting. Default is true.
 
 #### Argument Rules
 

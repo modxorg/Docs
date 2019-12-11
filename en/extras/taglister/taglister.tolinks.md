@@ -57,24 +57,24 @@ The resource ID referenced by the **&target** parameter should contain something
 
 ``` php
 [[!getResourcesTag?
- &element=`getResources`
- &elementClass=`modSnippet`
- &tpl=`blogPost`
- &hideContainers=`1`
- &pageVarKey=`page`
- &parents=`59`
- &includeTVs=`1`
- &includeContent=`1` ]]
- [[!+page.nav:notempty=`
+    &element=`getResources`
+    &elementClass=`modSnippet`
+    &tpl=`blogPost`
+    &hideContainers=`1`
+    &pageVarKey=`page`
+    &parents=`59`
+    &includeTVs=`1`
+    &includeContent=`1` ]]
+    [[!+page.nav:notempty=`
     [[!+page.nav]]
- `]]
+`]]
 ```
 
 ## See Also
 
 1. [tagLister.getResourcesTag](extras/taglister/taglister.getresourcestag)
 2. [tagLister.tagLister](extras/taglister/taglister.taglister)
-     1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
-     2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
+    1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
+    2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
 3. [tagLister.tolinks](extras/taglister/taglister.tolinks)
-     1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+    1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)

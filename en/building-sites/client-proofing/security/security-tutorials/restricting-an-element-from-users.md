@@ -65,11 +65,11 @@ Sometimes, you want to hide elements from all users who are not in the Administr
 - Go to the Administrator User Group edit page (Security -> Access Controls -> User Groups -> right click on "Administrator" and select Update User Group) For Revolution 2.3.x this is Access Control Lists in the Admin menu (the gear icon).
 - Find the Element Category Access tab
 - Add the following ACL entry, by clicking on "Add Category":
-  - Category: your Category you made/selected earlier
-  - Minimum Role: admin Super User
-  - Access Policy: Element
-  - Context: mgr
-  - Click on the "Save" button in the dialog
+    - Category: your Category you made/selected earlier
+    - Minimum Role: admin Super User
+    - Access Policy: Element
+    - Context: mgr
+    - Click on the "Save" button in the dialog
 - Click on the "Save" button at the upper right
 
 - click Security -> Flush All Sessions in the top menu. For Revolution 2.3.x this is Manage -> Logout All Users.
@@ -83,11 +83,11 @@ Lets say you restricted a Template with the method above. But you also want anot
 - Go to the Editors User Group edit page (Security -> Access Controls -> User Groups -> right click on "Editors" and select Update User Group)
 - Find the Element Category Access tab
 - Add the following ACL entry, by clicking on "Add Category":
-  - Category: your Category you made/selected earlier
-  - Minimum Role: Member
-  - Access Policy: Load Only
-  - Context: mgr
-  - Click on the "Save" button in the dialog
+    - Category: your Category you made/selected earlier
+    - Minimum Role: Member
+    - Access Policy: Load Only
+    - Context: mgr
+    - Click on the "Save" button in the dialog
 - Click on the "Save" button at the upper right
 
 - Have the users in the Editors User Group logout and log back in, or alternatively click Security -> Flush Sessions in the top menu

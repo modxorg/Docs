@@ -23,7 +23,7 @@ translation: "building-sites/tag-syntax/output-filters"
 [[element:modifier:anothermodifier=`value`:andanothermodifier:yetanother=`value2`]]
 ```
 
-Вы также можете использовать их для изменения вывода сниппеты. Обратите внимание, что модификатор идет после имени фрагмента и перед знаком вопроса, например:
+Вы также можете использовать их для изменения вывода сниппеты. Обратите внимание, что модификатор идет после имени сниппета и перед знаком вопроса, например:
 
 ``` php
 [[mySnippet:modifier=`value`? &mySnippetParam=`something`]]
@@ -77,10 +77,11 @@ translation: "building-sites/tag-syntax/output-filters"
 | ucase, uppercase, strtoupper             | Преобразует строки в верхний регистр. Похож на PHP [strtoupper](http://www.php.net/manual/en/function.strtoupper.php)                                                                                                                                                                | `[[+headline:ucase]]`                              |
 | ucwords                                  | Преобразует первую букву слова в верхний регистр. Похож на PHP [ucwords](http://www.php.net/manual/en/function.ucwords.php)                                                                                                                                                          | `[[+title:ucwords]]`                               |
 | ucfirst                                  | Преобразует первую букву строки в верхний регистр. Похож на PHP [ucfirst](http://www.php.net/manual/en/function.ucfirst.php)                                                                                                                                                         | `[[+name:ucfirst]]`                                |
-| htmlent, htmlentities                    | Замените любой символ, имеющий HTML-сущность, этой сущностью. Похож на PHP [htmlentities](http://www.php.net/manual/en/function.htmlentities.php). Uses the current value the system setting "modx\_charset" with flag ENT\_QUOTES                                                   | `[[+email:htmlent]]`                               |
+| htmlent, htmlentities                    | Замените любой символ, имеющий HTML-сущность, этой сущностью. Похож на PHP [htmlentities](http://www.php.net/manual/en/function.htmlentities.php). Uses the current value the system setting `modx_charset` with flag `ENT_QUOTES`                                                   | `[[+email:htmlent]]`                               |
 | esc,escape                               | Безопасно экранирует значения символов, используя регулярные выражения и str\_replace.                                                                                                                                                                                               | Также убирает \[, \] и `[[+email:escape]]`         |
 | strip                                    | Заменить все разрывы строк, табуляции и несколько пробелов одним пробелом                                                                                                                                                                                                            | `[[+textdocument:strip]]`                          |
 | stripString                              | Удаляет строку указанного значения                                                                                                                                                                                                                                                   | ```[[+name:stripString=`Mr.`]]```                  |
+| stripmodxtags                            | Удаляет теги MODX из ввода. (Добавлено в v2.7)                                                                                                                                                                                                                                       | ```[[+code:stripmodxtags]]```                      |
 | replace                                  | Заменяет одно значение другим                                                                                                                                                                                                                                                        | ```[[+pagetitle:replace=`Mr.==Mrs.`]]```           |
 | striptags, stripTags,notags,strip\_tags  | Удаляет HTML-теги из ввода. Опционально принимает значение, чтобы указать, какие теги разрешить. Похож на PHP [strip\_tags](http://www.php.net/manual/en/function.strip-tags.php)                                                                                                    | ```[[+code:strip\_tags=`  `]]```                   |
 | len,length, strlen                       | Подсчитывает длину пропущенной строки. Похож на PHP [strlen](http://www.php.net/manual/en/function.strlen.php)                                                                                                                                                                       | `[[+longstring:strlen]]`                           |
@@ -132,7 +133,7 @@ translation: "building-sites/tag-syntax/output-filters"
 
 Это означает, что **может** иногда быть пустым, а иногда нет. Почему вы хотите, чтобы это кэшировалось? Это исключило бы точку модификатора вывода.
 
-Иногда выходные модификаторы можно использовать в кешированном заполнителе, но только если вы вызываете фрагмент, который также устанавливает их в кеширование. В противном случае вы выполняете нелогичный маневр - пытаетесь статически кешировать что-то, что никогда не было статичным.
+Иногда выходные модификаторы можно использовать в кешированном заполнителе, но только если вы вызываете сниппет, который также устанавливает их в кеширование. В противном случае вы выполняете нелогичный маневр - пытаетесь статически кешировать что-то, что никогда не было статичным.
 
 В общем правило is: Если вы установите плейсхолдер в некэшированном сниппете, плейсхолдер также необходимо будет кэшировать, если вы ожидаете, что содержимое плейсхолдера будет отличаться.
 

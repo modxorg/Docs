@@ -16,9 +16,9 @@ CamperManagement is a vehicle management addon for MODX Revolution, developed an
 
 - [CamperManagement.Customizing the Component](extras/campermanagement/campermanagement.customizing-the-component "CamperManagement.Customizing the Component")
 - [CamperManagement.Developing the front-end](extras/campermanagement/campermanagement.developing-the-front-end "CamperManagement.Developing the front-end")
-  - [CamperManagement.cmCamperDetails Snippet](extras/campermanagement/campermanagement.developing-the-front-end/cmcamperdetails-snippet "CamperManagement.cmCamperDetails Snippet")
-  - [CamperManagement.cmCampers Snippet](extras/campermanagement/campermanagement.developing-the-front-end/cmcampers-snippet "CamperManagement.cmCampers Snippet")
-  - [CamperManagement.Placeholders you can use](extras/campermanagement/campermanagement.developing-the-front-end/placeholders-you-can-use "CamperManagement.Placeholders you can use")
+    - [CamperManagement.cmCamperDetails Snippet](extras/campermanagement/campermanagement.developing-the-front-end/cmcamperdetails-snippet "CamperManagement.cmCamperDetails Snippet")
+    - [CamperManagement.cmCampers Snippet](extras/campermanagement/campermanagement.developing-the-front-end/cmcampers-snippet "CamperManagement.cmCampers Snippet")
+    - [CamperManagement.Placeholders you can use](extras/campermanagement/campermanagement.developing-the-front-end/placeholders-you-can-use "CamperManagement.Placeholders you can use")
 - [CamperManagement.Managing your vehicle](extras/campermanagement/campermanagement.managing-your-vehicle "CamperManagement.Managing your vehicle")
 - [CamperManagement.Module home](extras/campermanagement/campermanagement.module-home "CamperManagement.Module home")
 

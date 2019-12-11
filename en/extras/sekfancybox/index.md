@@ -39,27 +39,23 @@ There are several properties that must be set based on the type of modal window 
 
 ## Available Properties
 
-| Name                                            | Description                                                     | Type   | Default | Optional | Version |
-| ----------------------------------------------- | --------------------------------------------------------------- | ------ | ------- | -------- | ------- |
-| type                                            | This defines what kind of window will open.                     |
-| Options: inline, iframe, document, media, jcode |                                                                 | inline | yes     |          |
-| link                                            | If calling only one inline modal, this does not need to be set. |
-If calling multiple inline modals on a single page, each call must have a unique one word name.
-If using in any other type, this must by the url of the item to view. |  | sekfancybox | inline only |  |
-| linktext | Text to display as the link on the page. |  |  |  |  |
-| text | Text to display in the modal window. | inline only |  |  |  |
-| header | Heading that will appear in modal window above the text with `<h3></h3>` tag. | inline only |  | yes |  |
-| modalwidth | Change the width of the modal window displayed on screen. (note, this property does not work well, in version 1.0.0 use the new property width) | inline only | 400 | yes |  |
-| title | Title displays below the modal window, useful for images. Default behavior can be changed using the helpers options. |  |  | yes |  |
-| modalclass | This changes the class name of the modal box. This must be used if using different options on multiple modals on a single page.
-(i.e. using thumbnailhelper for a group of images set to one class, and using buttonhelper on a group of images of another class.)
-It is good practice to assign a class to all modal windows to prevent future problems if another modal is added to the page. |  | fancybox | yes |  |
+| Name                                                                  | Description                                                                                                                                                    | Type        | Default     | Optional | Version |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ----------- | -------- | ------- |
+| type                                                                  | This defines what kind of window will open.                                                                                                                    |
+| Options: inline, iframe, document, media, jcode                       |                                                                                                                                                                | inline      | yes         |          |
+| link                                                                  | If calling only one inline modal, this does not need to be set.If calling multiple inline modals on a single page, each call must have a unique one word name. |
+| If using in any other type, this must by the url of the item to view. |                                                                                                                                                                | sekfancybox | inline only |          |
+| linktext                                                              | Text to display as the link on the page.                                                                                                                       |             |             |          |         |
+| text                                                                  | Text to display in the modal window.                                                                                                                           | inline only |             |          |         |
+| header                                                                | Heading that will appear in modal window above the text with `<h3></h3>` tag.                                                                                  | inline only |             | yes      |         |
+| modalwidth                                                            | Change the width of the modal window displayed on screen. (note, this property does not work well, in version 1.0.0 use the new property width)                | inline only | 400         | yes      |         |
+| title                                                                 | Title displays below the modal window, useful for images. Default behavior can be changed using the helpers options.                                           |             |             | yes      |         |
+| modalclass                                                            | This changes the class name of the modal box. This must be used if using different options on multiple modals on a single page. (i.e. using thumbnailhelper for a group of images set to one class, and using buttonhelper on a group of images of another class.) It is good practice to assign a class to all modal windows to prevent future problems if another modal is added to the page. |  | fancybox | yes |  |
 | group | Used to group images on a page together. This will create a modal slideshow. | media only |  | yes |  |
 | mousewheel | Will allow the mousewheel to scroll through the images of a group. Set to 1 to use. | media only | 0 | yes |  |
 | buttonhelper | Adds buttons above the modal window to help navigate images in a group. Set to 1 to use. | media only | 0 | yes |  |
 | thumbnailhelper | Adds thumbnails below modal window of all the images of a group. Set to 1 to use. | media only | 0 | yes |  |
-| customjs | For advanced use, custom javascript can be made, place the url of the js in this property.
-For more information on how to customize fancyBox, check out their [website](http://fancyapps.com/fancybox/). |  |  | yes |  |
+| customjs | For advanced use, custom javascript can be made, place the url of the js in this property. For more information on how to customize fancyBox, check out their [website](http://fancyapps.com/fancybox/). |  |  | yes |  |
 | customcss | To customize the appearance of the modal window, supply the url of the css file to use. |  |  | yes |  |
 | custombuttonscss | To customize the appearance of the modal button helper, supply the url of the css file to use. |  |  | yes | 1.0.0 |
 | customthumbnailcss | To customize the appearance of the modal thumbnail helper, supply the url of the css file to use. |  |  | yes | 1.0.0 |
@@ -110,7 +106,7 @@ For more information on how to customize fancyBox, check out their [website](htt
 | prevMethod | Method that handles transition. |  | changeOut | yes | 1.0.0 |
 | helpers | Object containing enabled helpers and options for each of the, this accepts a json string. |  |  | yes | 1.0.0 |
 
-#### Helpers Options
+### Helpers Options
 
 There are several options and sub options that can be set in the helpers properties.
 

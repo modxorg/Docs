@@ -13,10 +13,10 @@ Once the user is finished with PayPal they will be returned the confirmation pag
 <p>The following data was retrieved from user profile, and updated based on your PayPal account. If your subscription includes shipping, <strong>make sure all details below are correct</strong>. Your details will then be updated on your user profile (PayPal will not be changed). </p>
 
 [[!Formit?
-  &preHooks=`smGetUserDataFromPayPal`
-  &hooks=`smUpdateUserProfile,smCompletePayPalSubscription`
-  &completedResource=`8`
-  &errorResource=`7`
+    &preHooks=`smGetUserDataFromPayPal`
+    &hooks=`smUpdateUserProfile,smCompletePayPalSubscription`
+    &completedResource=`8`
+    &errorResource=`7`
 ]]
 <form action="[[~[[*id]]]]" method="post">
 <input type="text" name="fullname" value="[[!+fi.fullname]]" /> Name<br />

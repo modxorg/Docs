@@ -59,22 +59,22 @@ What does this mean? If you already had a working version of GroupEletters then 
 
 - Create a Resource/Document and select the EletterSample Template.
 - Fill in the page as normal. You have the following placeholders available: (Note you need to collect this data before you can use it)
-  - `[[+trackingImage]]`
-  - `[[+first_name]]`
-  - `[[+m_name]]`
-  - `[[+last_name]]`
-  - `[[+fullname]]` - this is just `[[+first_name]]` and `[[+last_name]]` together
-  - `[[+company]]`
-  - `[[+address]]`
-  - `[[+city]]`
-  - `[[+state]]`
-  - `[[+zip]]`
-  - `[[+country]]`
-  - `[[+email]]`
-  - `[[+phone]]`
-  - `[[+cell]]`
-  - `[[+crm_id]]`
-  - `[[+date_created]]`
+    - `[[+trackingImage]]`
+    - `[[+first_name]]`
+    - `[[+m_name]]`
+    - `[[+last_name]]`
+    - `[[+fullname]]` - this is just `[[+first_name]]` and `[[+last_name]]` together
+    - `[[+company]]`
+    - `[[+address]]`
+    - `[[+city]]`
+    - `[[+state]]`
+    - `[[+zip]]`
+    - `[[+country]]`
+    - `[[+email]]`
+    - `[[+phone]]`
+    - `[[+cell]]`
+    - `[[+crm_id]]`
+    - `[[+date_created]]`
 - Select the Template Variables tab. You will need to select and fill out the information:
 
 ![](tvs.png)

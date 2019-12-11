@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/security/policies"
 
 ## What is an Access Policy?
 
- An Access Policy is a set of [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") containing one or many Permissions, as defined in the manager. By default MODX comes with pre-configured Access Policies:
+An Access Policy is a set of [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") containing one or many Permissions, as defined in the manager. By default MODX comes with pre-configured Access Policies:
 
 - **Administrator**: Context administration policy with all default permissions.
 - **Context Editor**: Context administration policy with limited, content-editing related Permissions, but no publishing Permissions.
@@ -19,55 +19,55 @@ _old_uri: "2.x/administering-your-site/security/policies"
 - **Object**: An Object policy with all permissions.
 - **Resource**: MODX Resource Policy with all attributes.
 
- If you customize any of the above default Access Policies, duplicate (and rename) them before customizing! If you don't do that all customizations will be lost when updating MODX to a newer version as they get overridden by the setup script.
+If you customize any of the above default Access Policies, duplicate (and rename) them before customizing! If you don't do that all customizations will be lost when updating MODX to a newer version as they get overridden by the setup script.
 
 ## Creating and Editing
 
- To create an Access Policy in the manager, navigate to
+To create an Access Policy in the manager, navigate to
 
 > Security -> Access Controls -> Access Policies
 
- From there you can add new policies. To edit an Access Policy in the manager, simply right-click the Policy you want to edit.
+From there you can add new policies. To edit an Access Policy in the manager, simply right-click the Policy you want to edit.
 
 ## Usage
 
- Policies can be used in a myriad of different ways. Here are 3 example usages that come by default in MODX:
+Policies can be used in a myriad of different ways. Here are 3 example usages that come by default in MODX:
 
 ### Context Access
 
- Access Policies can be assigned as [Access Control Lists](building-sites/client-proofing/security/policies/acls "ACLs") (ACLs) to a Context and User Group, with a specified Minimum [Role](building-sites/client-proofing/security/roles "Roles"). When done, this means that all the Users in that User Group with at least the Role specified as the Minimum Role can use the Permissions in the Policy in the Context specified in the [ACL](building-sites/client-proofing/security/policies/acls "ACLs").
+Access Policies can be assigned as [Access Control Lists](building-sites/client-proofing/security/policies/acls "ACLs") (ACLs) to a Context and User Group, with a specified Minimum [Role](building-sites/client-proofing/security/roles "Roles"). When done, this means that all the Users in that User Group with at least the Role specified as the Minimum Role can use the Permissions in the Policy in the Context specified in the [ACL](building-sites/client-proofing/security/policies/acls "ACLs").
 
- MODX comes with a default ["Administrator" Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy "Permissions - Administrator Policy") that contains all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") one would use in a Context ACL. It's best to duplicate this policy when creating a custom access policy for restricting manager users.
+MODX comes with a default ["Administrator" Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy "Permissions - Administrator Policy") that contains all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") one would use in a Context ACL. It's best to duplicate this policy when creating a custom access policy for restricting manager users.
 
 ### Resource Group Access
 
- They can also be Resource ACLs, that limit access to Resources based on Roles and Resource Groups. MODX comes packaged with a default ["Resource" Policy](building-sites/client-proofing/security/policies/permissions/resource-policy "Permissions - Resource Policy") that contains all the basic Permissions one would use in a Resource Group ACL.
+They can also be Resource ACLs, that limit access to Resources based on Roles and Resource Groups. MODX comes packaged with a default ["Resource" Policy](building-sites/client-proofing/security/policies/permissions/resource-policy "Permissions - Resource Policy") that contains all the basic Permissions one would use in a Resource Group ACL.
 
- An example would be to assign the "Resource" policy to a Resource Group called 'HR Documents'. Then, you would give a User Group called "HR Department" access to this Resource Group via the Resource ACL:
+An example would be to assign the "Resource" policy to a Resource Group called 'HR Documents'. Then, you would give a User Group called "HR Department" access to this Resource Group via the Resource ACL:
 
- ![](acl-rg1.png)
+![](acl-rg1.png)
 
- This would restrict all Resources in the "HR Documents" Resource Group to Users only in the "HR Department" group.
+This would restrict all Resources in the "HR Documents" Resource Group to Users only in the "HR Department" group.
 
 ### Element Category Access
 
- Elements can be restricted from view by ACLs on Categories. For example, if you had a User Group called 'Developers', and wanted Users in that group to be the only Group that could see Elements in the Category 'Gallery', you would create an ACL like such, in the "Element Category Access" tab when editing the User Group:
+Elements can be restricted from view by ACLs on Categories. For example, if you had a User Group called 'Developers', and wanted Users in that group to be the only Group that could see Elements in the Category 'Gallery', you would create an ACL like such, in the "Element Category Access" tab when editing the User Group:
 
- ![](acl-ecat1.png)
+![](acl-ecat1.png)
 
- This would allow only Users in the "Developers" User Group access to see Elements in the "Gallery" Category.
+This would allow only Users in the "Developers" User Group access to see Elements in the "Gallery" Category.
 
 ## Examples
 
- Here's an example custom policy:
+Here's an example custom policy:
 
- ![](policy1.png)
+![](policy1.png)
 
- and its permissions:
+and its permissions:
 
- ![](policy1-perm.png)
+![](policy1-perm.png)
 
- Any User that had access to this Policy would have the permissions 'view\_accounts' and 'save\_accounts'.
+Any User that had access to this Policy would have the permissions 'view\_accounts' and 'save\_accounts'.
 
 ## See Also
 
@@ -77,8 +77,8 @@ _old_uri: "2.x/administering-your-site/security/policies"
 4. [Roles](building-sites/client-proofing/security/roles)
 5. [Policies](building-sites/client-proofing/security/policies)
    1. [Permissions](building-sites/client-proofing/security/policies/permissions)
-      1. [Permissions - Administrator Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy)
-      2. [Permissions - Resource Policy](building-sites/client-proofing/security/policies/permissions/resource-policy)
+        1. [Permissions - Administrator Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy)
+        2. [Permissions - Resource Policy](building-sites/client-proofing/security/policies/permissions/resource-policy)
    2. [ACLs](building-sites/client-proofing/security/policies/acls)
    3. [PolicyTemplates](building-sites/client-proofing/security/policies/policytemplates)
 6. [Security Tutorials](building-sites/client-proofing/security/security-tutorials)

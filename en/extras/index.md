@@ -31,10 +31,10 @@ This does not mean however that these are your only options. Browse the reposito
 ### Navigation and content
 
 - [pdoTools](https://docs.modx.pro/en/components/pdotools) is a collection of useful snippets that aims to be a modern (and mostly drop-in) replacement for older (but still supported) extras:
-  - [pdoResources](https://docs.modx.pro/en/components/pdotools/snippets/pdoresources) is the equivalent of [getResources](extras/getresources), which can be used to list resources. These can also be used for RSS feed or Sitemap generation.
-  - [pdoMenu](https://docs.modx.pro/en/components/pdotools/snippets/pdomenu) is the equivalent of [Wayfinder](extras/wayfinder), which is used for generating (multi-level) menus from your resource tree.
-  - [pdoPage](https://docs.modx.pro/en/components/pdotools/snippets/pdopage) is the equivalent of [getPage](extras/getpage), which wraps snippets like getResources/pdoResources with pagination capabilities
-  - [pdoCrumbs](https://docs.modx.pro/en/components/pdotools/snippets/pdocrumbs) can be used in a similar way to [Breadcrumbs](extras/breadcrumbs) to create a breadcrumbs trail of the current resource.
+    - [pdoResources](https://docs.modx.pro/en/components/pdotools/snippets/pdoresources) is the equivalent of [getResources](extras/getresources), which can be used to list resources. These can also be used for RSS feed or Sitemap generation.
+    - [pdoMenu](https://docs.modx.pro/en/components/pdotools/snippets/pdomenu) is the equivalent of [Wayfinder](extras/wayfinder), which is used for generating (multi-level) menus from your resource tree.
+    - [pdoPage](https://docs.modx.pro/en/components/pdotools/snippets/pdopage) is the equivalent of [getPage](extras/getpage), which wraps snippets like getResources/pdoResources with pagination capabilities
+    - [pdoCrumbs](https://docs.modx.pro/en/components/pdotools/snippets/pdocrumbs) can be used in a similar way to [Breadcrumbs](extras/breadcrumbs) to create a breadcrumbs trail of the current resource.
 - [getResourceField](extras/getresourcefield), [pdoField](https://docs.modx.pro/en/components/pdotools/snippets/pdofield) or [fastField](extras/fastfield) retrieve a single resource field.
 - [AdvSearch](extras/advsearch) or [mSearch2](https://en.modstore.pro/packages/ecommerce/msearch2) (premium extra from modstore) adds a search function to your site
 - [Collections](extras/collections) is used for large quantities of resources, such as blogs or product listings, and will list child resources in a grid instead of the tree

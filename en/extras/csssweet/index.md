@@ -39,6 +39,6 @@ Assuming the default values shown above, whenever the Site » Clear Cache menu i
 
 The contents of that file will have all spaces, tabs and line breaks stripped down to a single space, since the csss.minify\_custom\_css setting is 'true'.
 
-## I could really use this feature...
+## I could really use this feature
 
 cssSweet is open-source and free to use. If you'd like to chip in to the development, please submit issues or feature requests at the [repo on GitHub](https://github.com/sepiariver/cssSweet) or better yet fork it and code away! PRs are welcome and will be respectfully considered.

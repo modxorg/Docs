@@ -40,7 +40,9 @@ Bugs, issues and feature requests can be reported in the GitHub Repository, foun
 
 When creating the TV, you need to select the proper input type and output type.
 
-![](inputtype-selection.png)![](outputtype-selection.png)
+![](inputtype-selection.png)
+
+![](outputtype-selection.png)
 
 ### Input Type Options
 

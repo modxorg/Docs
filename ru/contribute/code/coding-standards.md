@@ -26,7 +26,7 @@ translation: "contribute/code/coding-standards"
   }
   array_push($one,$two);
   return $test;
-  ```
+```
 
 - **Не используйте** скобки когда используете функции include, require, include\_once, и require\_once.
 
@@ -43,7 +43,7 @@ translation: "contribute/code/coding-standards"
       private function _privateFunc() { }
       public function publicFunc() { }
   }
-  ```
+```
 
 ## Переменные
 
@@ -63,7 +63,7 @@ translation: "contribute/code/coding-standards"
           $local_variable =& $anotherTest;
       }
   }
-  ```
+```
 
 ## Массивы
 

@@ -41,19 +41,19 @@ This will output the pagetitle of the current resource.
 Return the pagetitle from the resource with id 123:
 
 ``` php
- [[getResourceField? &id=`123`]]
+[[getResourceField? &id=`123`]]
 ```
 
 Return the processed TV with name myTV of the parent resource, and if it is empty output 'Sorry, no data available':
 
 ``` php
- [[getResourceField? &id=`[[*parent]]` &field=`myTV` &processTV=`1` &default=`Sorry, no data available`]]
+[[getResourceField? &id=`[[*parent]]` &field=`myTV` &processTV=`1` &default=`Sorry, no data available`]]
 ```
 
 Return the introtext field of the ultimate parent (note that this requires the UltimateParent snippet to be installed):
 
 ``` php
- [[getResourceField? &id=`[[UltimateParent]]` &field=`introtext`]]
+[[getResourceField? &id=`[[UltimateParent]]` &field=`introtext`]]
 ```
 
 ## Errors

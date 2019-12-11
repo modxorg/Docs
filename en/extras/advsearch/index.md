@@ -6,8 +6,8 @@ _old_uri: "revo/advsearch"
 
 ## What is AdvSearch?
 
- AdvSearch is an advanced search component for MODX Revolution. It allows search in dynamic contents (by using Zend Lucene search class), setting up of faceted search and searching in custom packages.
- It doesn't support the ajax functionality for the moment.
+AdvSearch is an advanced search component for MODX Revolution. It allows search in dynamic contents (by using Zend Lucene search class), setting up of faceted search and searching in custom packages.
+It doesn't support the ajax functionality for the moment.
 
 ## Requirements
 
@@ -20,24 +20,24 @@ _old_uri: "revo/advsearch"
 
 ## History
 
- AdvSearch was written by [Coroico](https://github.com/coroico) and first released on August 14th, 2011. It is loosely based on AjaxSearch for MODX Evolution by KyleJ/Coroico, minus dynamic content search based on Zend search library.
+AdvSearch was written by [Coroico](https://github.com/coroico) and first released on August 14th, 2011. It is loosely based on AjaxSearch for MODX Evolution by KyleJ/Coroico, minus dynamic content search based on Zend search library.
 
 ### Download
 
- It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/advsearch>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/advsearch>
 
- Before to run the first search with AdvSearch, you need to install the Zend Search library first. See installation chapter below.
+Before to run the first search with AdvSearch, you need to install the Zend Search library first. See installation chapter below.
 
 ### Development and Bug Reporting
 
- AdvSearch is stored and developed in GitHub, and can be found here:<http://github.com/coroico/AdvSearch>
+AdvSearch is stored and developed in GitHub, and can be found here:<http://github.com/coroico/AdvSearch>
 
- Bugs can be filed here: <http://github.com/coroico/AdvSearch/issues>
+Bugs can be filed here: <http://github.com/coroico/AdvSearch/issues>
 
 ## Installation of the Zend Search class
 
- Even if AdvSearch addon is fully installable through the package management, the first time you install AdvSearch you need to install the Zend Search class.
- This installation is done only one time and will be valid for all the following re-installation of the addon.
+Even if AdvSearch addon is fully installable through the package management, the first time you install AdvSearch you need to install the Zend Search class.
+This installation is done only one time and will be valid for all the following re-installation of the addon.
 
 - go to the Zend Framework download page at <http://framework.zend.com/download/latest/>
 - register you and download the free Zend Framework. Minimal release is enough.
@@ -48,18 +48,18 @@ _old_uri: "revo/advsearch"
 
 ## Usage
 
- AdvSearch has mainly 2 snippets - one to display a form ("AdvSearchForm") and the other to display search results ("AdvSearch").
- A third snippet ("AdvSearchHelp") is used to display a help window for the presentation of the query syntax.
+AdvSearch has mainly 2 snippets - one to display a form ("AdvSearchForm") and the other to display search results ("AdvSearch").
+A third snippet ("AdvSearchHelp") is used to display a help window for the presentation of the query syntax.
 
 - [AdvSearchForm](extras/advsearch/advsearch.advsearchform "AdvSearch.AdvSearchForm")
 - [AdvSearchHelp](extras/advsearch/advsearch.advsearchhelp "AdvSearch.AdvSearchHelp")
 - [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch")
 
- All the templates used by default to set up the form and display the results are provided as chunks. These chunks are installed through the package management.
+All the templates used by default to set up the form and display the results are provided as chunks. These chunks are installed through the package management.
 
 ## Examples
 
- Display a search form, and below it, the results:
+Display a search form, and below it, the results:
 
 ``` php
 [[!AdvSearchForm]]
@@ -68,7 +68,7 @@ _old_uri: "revo/advsearch"
 [[!AdvSearch]]
 ```
 
- Display a Search form that sends you to a results page in Resource 82 (which has the AdvSearch call in it):
+Display a Search form that sends you to a results page in Resource 82 (which has the AdvSearch call in it):
 
 ``` php
 [[!AdvSearchForm? &landing=`82`]]

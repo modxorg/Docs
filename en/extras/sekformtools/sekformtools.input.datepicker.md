@@ -18,16 +18,16 @@ Example for input.datepicker:
 
 ## Properties
 
-| Name         | Description                                                   | Default | Required | Version |
-| ------------ | ------------------------------------------------------------- | ------- | -------- | ------- |
-| input\_id    | The id to assign to the input box.                            |         |          | >0.0.1  |
-| name         | The name to assign to the input box.                          |         |          | >0.0.1  |
-| value        | The value to assign to the input box.                         |         |          | >0.0.1  |
-| menu         | Enter "1" to add year and month drop down to the date picker. |         |          | >0.0.1  |
-| date\_format | Add year and month drop down to the date picker.              |         |          | >0.0.1  |
-| min\_date    | Set the minimum date to use.                                  |         |          | >0.0.1  |
-| max\_date    | Set the maximum date that can be used.                        |         |          | >0.0.1  |
-| animation    | The method the calendar is displayed.                         | show    |          | >0.0.1  |
+| Name          | Description                                                   | Default | Required | Version |
+| ------------- | ------------------------------------------------------------- | ------- | -------- | ------- |
+| `input_id`    | The id to assign to the input box.                            |         |          | >0.0.1  |
+| `name`        | The name to assign to the input box.                          |         |          | >0.0.1  |
+| `value`       | The value to assign to the input box.                         |         |          | >0.0.1  |
+| `menu`        | Enter "1" to add year and month drop down to the date picker. |         |          | >0.0.1  |
+| `date_format` | Add year and month drop down to the date picker.              |         |          | >0.0.1  |
+| `min_date`    | Set the minimum date to use.                                  |         |          | >0.0.1  |
+| `max_date`    | Set the maximum date that can be used.                        |         |          | >0.0.1  |
+| `animation`   | The method the calendar is displayed.                         | show    |          | >0.0.1  |
 
 ### date\_format
 

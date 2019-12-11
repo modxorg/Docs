@@ -9,8 +9,8 @@ Shopping cart and order management for MODX Revolution.
 ## Installation
 
 1. Download and install
-      1. You can download the extra in manager. To do this, go to "System" -> "Package Management". Press the button "Download extras". Then go "Extras" -> "E-commerce" and the line "Shopkeeper" click "Download", then "Finish" button.
-      2. If you downloaded the file from modx.com (<http://modx.com/extras/package/shopkeeper2>), load file "shopkeeper-2.0-\*.transport.zip" in folder /core/packages/ of your site. In manager go to "System" -> "Package Management" -> "Search Locally for Packages" -> "Download extras" -> "Yes".
+   1. You can download the extra in manager. To do this, go to "System" -> "Package Management". Press the button "Download extras". Then go "Extras" -> "E-commerce" and the line "Shopkeeper" click "Download", then "Finish" button.
+   2. If you downloaded the file from modx.com (<http://modx.com/extras/package/shopkeeper2>), load file "shopkeeper-2.0-\*.transport.zip" in folder /core/packages/ of your site. In manager go to "System" -> "Package Management" -> "Search Locally for Packages" -> "Download extras" -> "Yes".
 2. The table package will package "shopkeeper". Click "Install" button.
 3. Complete the installation.
 
@@ -20,7 +20,8 @@ Shopping cart and order management for MODX Revolution.
 2. Press button "Add Property Set", mark checkbox "Create New Property Set" and fill fields.
 3. In the list on the left to select a set of established and if necessary, change the settings.
 4. In the template in a place where you want to display a shopping cart, call Shopkeeper snippet with name of Property Set.
-  Example:
+
+Example:
 
 ``` php
 [[!Shopkeeper@catalog?propertySetName=`catalog`]]

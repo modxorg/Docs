@@ -4,7 +4,7 @@ _old_id: "68"
 _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 ---
 
-## Requirements:
+## Requirements
 
 1. Extension requirements may call for FURL use and ".html" be changed to "/" : Content -> Content Types -> HTML (.html) -> /
 

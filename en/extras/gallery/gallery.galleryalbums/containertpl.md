@@ -56,7 +56,7 @@ The following example shows possible placeholders. It displays a previous/next g
 ## See Also
 
 1. [Gallery.Gallery](extras/gallery/gallery/index)
-   1. [Gallery.Gallery.containerTpl](extras/gallery/gallery/containertpl)
+    1. [Gallery.Gallery.containerTpl](extras/gallery/gallery/containertpl)
 2. [Gallery.Gallery.thumbTpl](extras/gallery/gallery/thumbtpl)
 3. [Gallery.GalleryAlbums](extras/gallery/gallery.galleryalbums)
    1. [Gallery.GalleryAlbums.rowTpl](extras/gallery/gallery.galleryalbums/rowtpl)

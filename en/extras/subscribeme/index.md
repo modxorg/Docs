@@ -16,7 +16,7 @@ This addon has been developed by Mark Hamstra and was made possible by Jared Lom
 
 - [1. History, Source, Bugs & Feature Requests](#1-history-source-bugs--feature-requests)
 - [2. Getting Started](#2-getting-started)
-- [3. Stuck? Here's some tips.](#3-stuck-heres-some-tips)
+- [3. Stuck? Here's some tips](#3-stuck-heres-some-tips)
 
 ## 1. History, Source, Bugs & Feature Requests
 
@@ -38,7 +38,7 @@ These resources should help you get started swiftly with SubscribeMe, monetizing
 - Component Features and how to work with them
 - [Configuring API Credentials, IPN and going live!](extras/subscribeme/subscribeme.configuring-api-credentials,-ipn-and-going-live "SubscribeMe.Configuring API Credentials, IPN and going Live")
 
-## 3. Stuck? Here's some tips.
+## 3. Stuck? Here's some tips
 
 - If you are stuck with PayPal and it is giving an unsupported response, or just a generic message first enable debugging (if you haven't yet) via the SubscribeMe System Settings. As that is a global switch it will affect snippets, the plugin and IPN messages so be prepared to get a quickly filling error.log file. **DO NOT** leave debug on in production! Important information or errors will be logged anyhow, and keeping the debug mode on will probably kill something, be it the manager when viewing the error log or your server its disk space. Anyway - with the information from the debug, you should be able to do a targeted search. If your findings indicate a bug, [please file it](https://github.com/Mark-H/SubscribeMe/issues) so it can be fixed in a future release.
 - If you are getting endless save loops or empty pages in the manager, load up a tool like Firebug to see what's going on and google for that, or find assistance on the forum / the SubscribeMe repository.

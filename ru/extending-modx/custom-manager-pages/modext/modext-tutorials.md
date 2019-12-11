@@ -1,6 +1,6 @@
 ---
-title: 'Учебник по MODExt '
-translation: extending-modx/custom-manager-pages/modext/modext-tutorials
+title: "Учебник по MODExt"
+translation: "extending-modx/custom-manager-pages/modext/modext-tutorials"
 ---
 
 ## Введение

@@ -42,21 +42,24 @@ Default value (from core/components/subscribeme/elements/chunks/smcheckout.payme
 
 ``` html
 <style type="text/css">
-    #paymentoptions {
-    width: 600px;
-    }
-    #paymentoptions td {
-    width: 50%;
-    vertical-align: top;
-    padding: 10px;
-    text-align: center;
-    }
-    .paypal {
-    border: 2px solid #ff9900;
-    }
-    .manual {
-    border: 2px solid #000;
-    }
+#paymentoptions {
+  width: 600px;
+}
+
+#paymentoptions td {
+  width: 50%;
+  vertical-align: top;
+  padding: 10px;
+  text-align: center;
+}
+
+.paypal {
+  border: 2px solid #ff9900;
+}
+
+.manual {
+  border: 2px solid #000;
+}
 </style>
 <table id="paymentoptions">
     <tr>

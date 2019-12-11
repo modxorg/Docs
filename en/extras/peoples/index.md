@@ -56,9 +56,9 @@ Display the User Group "HR Department", and output the Users in the group to the
 ## See Also
 
 - [Peoples.PeopleGroup](extras/peoples/peoples.peoplegroup)
-  - [Peoples.PeopleGroup.userTpl](extras/peoples/peoples.peoplegroup/peoples.peoplegroup.usertpl)
+    - [Peoples.PeopleGroup.userTpl](extras/peoples/peoples.peoplegroup/peoples.peoplegroup.usertpl)
 - [Peoples.PeopleGroups](extras/peoples/peoples.peoplegroups)
-  - [Peoples.PeopleGroups.tpl](extras/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
+    - [Peoples.PeopleGroups.tpl](extras/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
 - [Peoples.Peoples](extras/peoples/peoples.peoples)
-  - [Peoples.Peoples.tpl](extras/peoples/peoples.peoples/peoples.peoples.tpl)
+    - [Peoples.Peoples.tpl](extras/peoples/peoples.peoples/peoples.peoples.tpl)
 - [Peoples.Roadmap](extras/peoples/peoples.roadmap)

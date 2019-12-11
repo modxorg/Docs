@@ -16,12 +16,20 @@ So for the Form Tabs:
 
 ``` json
 [{
-    "caption":"Operating Hours",
-    "fields": [
-        {"field":"day", "caption":"Day"},
-        {"field":"from", "caption":"From"},
-        {"field":"until","caption":"Until"}
-    ]
+  "caption": "Operating Hours",
+  "fields": [{
+      "field": "day",
+      "caption": "Day"
+    },
+    {
+      "field": "from",
+      "caption": "From"
+    },
+    {
+      "field": "until",
+      "caption": "Until"
+    }
+  ]
 }]
 ```
 
@@ -30,10 +38,24 @@ We're giving the tab (we need one) the caption of "Operating Hours", and then ad
 Now to display this in the resource panel, we will need to set up the Grid Columns too. We're using this:
 
 ``` json
-[
-{"header": "Day", "width": "60", "sortable": "false", "dataIndex": "day"},
-{"header": "From", "width": "50", "sortable": "false", "dataIndex": "from"},
-{"header": "Until", "width": "50", "sortable": "false", "dataIndex": "until"}
+[{
+    "header": "Day",
+    "width": "60",
+    "sortable": "false",
+    "dataIndex": "day"
+  },
+  {
+    "header": "From",
+    "width": "50",
+    "sortable": "false",
+    "dataIndex": "from"
+  },
+  {
+    "header": "Until",
+    "width": "50",
+    "sortable": "false",
+    "dataIndex": "until"
+  }
 ]
 ```
 
@@ -80,4 +102,4 @@ If there isn't a value it will use the default output modifier, which means it w
 See the image below for the result. (Though we have replaced the texts with Dutch here and added some styling to the table)
 And that's just another example of what you can do with MIGX! Of course you could go much further in this, adding more columns, multiple forms etc etc.
 
-## ![](knipsel.png)
+![](knipsel.png)

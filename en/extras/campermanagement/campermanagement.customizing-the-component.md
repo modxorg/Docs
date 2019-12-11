@@ -88,6 +88,7 @@ cmVoorraadItem chunk:
 ```
 
 Which results (with some css applied) in:
+
 ![](overview.png)
 
 ## Custom Context Menu items

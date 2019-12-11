@@ -11,7 +11,7 @@ Don't want to wait ten seconds for Photoshop to load? Me neither. This tutorial 
 
 This tutorial assumes that you know how to create and call [template variables](building-sites/elements/template-variables "Template Variables"). Knowing about [output filters](building-sites/tag-syntax/output-filters "Input and Output Filters") is handy too, but we'll still get things working even if you don't know about them (they're good stuff, though).
 
-Each of these examples will assume that you've created an image Template Variable called "big\_image", that it's applied to the current document, that you've filled in a valid image, and that you're ready to impress the pants off of your clients, friends, and families. Let's get started.
+Each of these examples will assume that you've created an image Template Variable called `big_image`, that it's applied to the current document, that you've filled in a valid image, and that you're ready to impress the pants off of your clients, friends, and families. Let's get started.
 
 **Performance Hit**
 If you are on a shared server, remember excessive image processing can affect other users. Your host may contact you and/or suspend your account if it causes problems. Reducing the picture size, even if not to the exact dimensions, will reduce the resource usage and processing time.

@@ -22,22 +22,22 @@ StageCoach creates a "staged" version of the Resource that will replace the orig
 - Author: Bob Ray [Bob's Guides](https://bobsguides.com)
 - Contributors: Michael Snow [SnowCreative](https://snowcreative.com/)
 
- This version of the StageCoach extra was developed by Bob Ray. It was first posted to GitHub on Dec 24, 2012. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 67 commits, and had been downloaded 1,407 times. The StageCoach package consists of 648 separate files, containing 5,844 lines of code.
+This version of the StageCoach extra was developed by Bob Ray. It was first posted to GitHub on Dec 24, 2012. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 67 commits, and had been downloaded 1,407 times. The StageCoach package consists of 648 separate files, containing 5,844 lines of code.
 
 It is currently maintained by Bob Ray.
 
 ## Download
 
- StageCoach can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/stagecoach).
+StageCoach can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/stagecoach).
 
 ## Development and Bug Reporting
 
- StageCoach is stored and developed using GitHub, and can be found here: [StageCoach GitHub main page](https://github.com/BobRay/StageCoach).
+StageCoach is stored and developed using GitHub, and can be found here: [StageCoach GitHub main page](https://github.com/BobRay/StageCoach).
 
- Bugs and feature requests can be filed here: [StageCoach issues page.](https://github.com/BobRay/StageCoach/issues).
+Bugs and feature requests can be filed here: [StageCoach issues page.](https://github.com/BobRay/StageCoach/issues).
 
 Questions about how to use StageCoach should be posted on the [MODX Forums](https://forums.modx.com).
 
 ## Documentation
 
- The full documentation for StageCoach can be found at the author's web site (Bob's Guides): [StageCoach Documentation](https://bobsguides.com/stagecoach-tutorial.html).
+The full documentation for StageCoach can be found at the author's web site (Bob's Guides): [StageCoach Documentation](https://bobsguides.com/stagecoach-tutorial.html).

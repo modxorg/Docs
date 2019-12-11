@@ -1,6 +1,6 @@
 ---
-title: Объект MODExt MODx
-translation: extending-modx/custom-manager-pages/modext/modext-modx-object
+title: "Объект MODExt MODX"
+translation: "extending-modx/custom-manager-pages/modext/modext-modx-object"
 ---
 
 ## Объект MODx JS

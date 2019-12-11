@@ -131,7 +131,7 @@ For further reading on xPDO, read up on these:
 
 ## Recommended Methods and Tips
 
-### Write your Snippets outside of the MODX Manager.
+### Write your Snippets outside of the MODX Manager
 
 As of 2.2.0, you can simply add a "static" Snippet: just reference the static file.
 
@@ -156,7 +156,7 @@ Then you can test them to make sure they work (e.g. on the bash command line, yo
 
 Remember that a snippet in a file on your web site can be executed by anyone with a web browser, so don't leave them there on a live site unless you've placed the snippet code outside the web root so the file can't be accessed via the web. In MODX Revolution, you can put the snippet files under the core directory and move the entire directory outside the web root. You can also put a test in the snippet that makes it exit if it's not running inside MODX, but it's safest just to move the file or paste the code into a snippet in the Manager and delete the file.
 
-### Don't try to mix PHP and HTML in a Snippet.
+### Don't mix PHP and HTML in a Snippet
 
 Snippets execute PHP code. They should always begin with a **`<?php** and end with a **?>`** _You cannot mix PHP and HTML in a Snippet!_ For example, the following code won't work:
 

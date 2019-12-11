@@ -11,8 +11,8 @@ For proper i18n support, configure the following settings:
 
 - For the manager, set the `manager_language` setting to the 2 character language code.
 - For the frontend:
-  - Set the `cultureKey` setting to the 2 character language code to indicate what lexicon should be loaded.
-  - Set the `locale` setting to the full locale (e.g. `de_DE.UTF8`) to use the locale for time/date/number formats, among other things.
+    - Set the `cultureKey` setting to the 2 character language code to indicate what lexicon should be loaded.
+    - Set the `locale` setting to the full locale (e.g. `de_DE.UTF8`) to use the locale for time/date/number formats, among other things.
 
 ## Lexicons
 

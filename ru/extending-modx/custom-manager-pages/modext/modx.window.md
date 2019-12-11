@@ -1,6 +1,6 @@
 ---
-title: MODx.Window
-translation: extending-modx/custom-manager-pages/modext/modx.window
+title: "MODx.Window"
+translation: "extending-modx/custom-manager-pages/modext/modx.window"
 ---
 
 ## MODx.Window

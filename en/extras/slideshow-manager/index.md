@@ -30,7 +30,7 @@ Update through the Package Manager in MODX. If the package manager does not see 
 
 ## Install
 
-\# Install via the package manager
+Install via the package manager
 
 ### How to use
 

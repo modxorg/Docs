@@ -4,17 +4,17 @@ _old_id: "1675"
 _old_uri: "revo/csssweet/csssweet.prefix"
 ---
 
- Output modifier that adds basic browser prefixes to $input strings
+Output modifier that adds basic browser prefixes to $input strings
 
- Examples:
+Examples:
 
 ``` php
 [[+my_radius_css:prefix]]
 ```
 
- Where the value of the placeholder is 'border-radius: 3px;'
+Where the value of the placeholder is 'border-radius: 3px;'
 
- Results:
+Results:
 
 ``` css
 -webkit-border-radius: 3px;
@@ -26,7 +26,7 @@ border-radius: 3px;
 [[prefix?to=`transition: all 300ms ease;` &options=`all`]]
 ```
 
- Results:
+Results:
 
 ``` css
 -webkit-transition: all 300ms ease;

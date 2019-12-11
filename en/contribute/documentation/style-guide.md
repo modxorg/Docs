@@ -251,17 +251,17 @@ MODX runs on many different platforms. When documenting a feature that varies by
 
 Phrase language and layout in a way that allows future editors familiar with a platform to add valid examples. Platform variations are a sensitive topic, keep language neutral and factual. For example:
 
-#### Wrong
+### Wrong
 
 To start MODX POS double click start.bat
 
-#### Correct
+### Correct
 
-### Linux
+#### Linux
 
 To start MODX POS run the shell script start.sh either by clicking it or by typing ./start.sh from a shell.
 
-### Windows
+#### Windows
 
 To start MODX POS run the batch file start.bat either by double clicking it or by typing start.bat from the command line.
 
