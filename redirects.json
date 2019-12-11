@@ -1,5 +1,11 @@
 {
     "/": "en/index",
+    "/current": "en/index",
+    "/en": "en/index",
+    "/current/en": "en/index",
+    "/ru": "ru/index",
+    "/current/nl": "nl/index",
+    "/nl": "nl/index",
     "/revolution/2.x/administering-your-site/contexts": "en/building-sites/contexts",
     "/en/administering-your-site/contexts": "en/building-sites/contexts",
     "/revolution/2.x/administering-your-site/contexts/using-one-gateway-plugin-to-manage-multiple-domains": "en/building-sites/contexts/gateway-plugin",
