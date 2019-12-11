@@ -2009,5 +2009,11 @@
     "/extras/revo/wayfinder": "en/extras/wayfinder/index",
     "/extras/revo/wayfinder/wayfinder-introductory-examples": "en/extras/wayfinder/wayfinder-introductory-examples",
     "/extras/revo/xfpc": "en/extras/xfpc/index",
-    "/extras/revo/bbbx": "en/extras/bbbx/index"
+    "/extras/revo/bbbx": "en/extras/bbbx/index",
+    "/display": "en/index",
+    "/display/ADDON": "en/extras",
+    "/display/revolution20/resources": "en/building-sites/resources",
+    "/display/addon/getresourcefield": "en/extras/getresourcefield",
+    "/revolution/2.x": "en/index",
+    "/en/_legacy/making-sites-with-modx/adding-a-custom-tv-output-type": "en/extending-modx/custom-tvs"
 }
