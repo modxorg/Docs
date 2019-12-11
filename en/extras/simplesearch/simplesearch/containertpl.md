@@ -6,7 +6,7 @@ _old_uri: "revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch
 
 ## SimpleSearch's containerTpl Chunk
 
-This is the Chunk displayed with the &containerTpl property on the [SimpleSearch](extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet. It contains the search results, pagination and count message.
+This is the Chunk displayed with the &containerTpl property on the [SimpleSearch](extras/simplesearch/simplesearch "SimpleSearch.SimpleSearch") snippet. It contains the search results, pagination and count message.
 
 ## Default Value
 

@@ -42,7 +42,7 @@ Bugs can be filed here: <https://github.com/Sterc/SimpleSearch/issues>
 
 SimpleSearch has 2 snippets - one to display a form ("SimpleSearchForm"), and the other to display search results ("SimpleSearch").
 
-- [SimpleSearch](extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch")
+- [SimpleSearch](extras/simplesearch/simplesearch "SimpleSearch.SimpleSearch")
 - [SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform "SimpleSearch.SimpleSearchForm")
 
 ## Examples

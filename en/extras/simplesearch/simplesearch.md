@@ -69,10 +69,10 @@ TVs are processed during indexing for Solr searching, so there is no need to do 
 
 There are 4 chunks that are processed in SimpleSearch. Their corresponding SimpleSearch parameters are:
 
-- [tpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.tpl "SimpleSearch.SimpleSearch.tpl") - The Chunk to use for each result displayed.
-- [containerTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.containertpl "SimpleSearch.SimpleSearch.containerTpl") - The Chunk that will be used to wrap all the search results, pagination and message.
-- [pageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.pagetpl "SimpleSearch.SimpleSearch.pageTpl") - The Chunk to use for a pagination link.
-- [currentPageTpl](extras/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch.currentpagetpl "SimpleSearch.SimpleSearch.currentPageTpl") - The Chunk to use for the current pagination link.
+- [tpl](extras/simplesearch/simplesearch/tpl "SimpleSearch.SimpleSearch.tpl") - The Chunk to use for each result displayed.
+- [containerTpl](extras/simplesearch/simplesearch/containertpl "SimpleSearch.SimpleSearch.containerTpl") - The Chunk that will be used to wrap all the search results, pagination and message.
+- [pageTpl](extras/simplesearch/simplesearch/pagetpl "SimpleSearch.SimpleSearch.pageTpl") - The Chunk to use for a pagination link.
+- [currentPageTpl](extras/simplesearch/simplesearch/currentpagetpl "SimpleSearch.SimpleSearch.currentPageTpl") - The Chunk to use for the current pagination link.
 
 ## Searching Custom Tables
 

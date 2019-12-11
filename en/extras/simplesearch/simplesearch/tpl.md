@@ -6,7 +6,7 @@ _old_uri: "revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch
 
 ## SimpleSearch's tpl Chunk
 
-This is the Chunk displayed with the &tpl property on the [SimpleSearch](extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet.
+This is the Chunk displayed with the &tpl property on the [SimpleSearch](extras/simplesearch/simplesearch "SimpleSearch.SimpleSearch") snippet.
 
 ## Default Value
 

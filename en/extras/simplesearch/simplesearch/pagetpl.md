@@ -6,7 +6,7 @@ _old_uri: "revo/simplesearch/simplesearch.simplesearch/simplesearch.simplesearch
 
 ## SimpleSearch's pageTpl Chunk
 
-This is the Chunk displayed with the &pageTpl property on the [SimpleSearch](extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet. It contains a simple, inactive pagination link.
+This is the Chunk displayed with the &pageTpl property on the [SimpleSearch](extras/simplesearch/simplesearch "SimpleSearch.SimpleSearch") snippet. It contains a simple, inactive pagination link.
 
 ## Default Value
 
