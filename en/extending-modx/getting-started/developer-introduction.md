@@ -48,17 +48,17 @@ This also includes what Revolution calls "processors", which are scripts that ha
 
 Views in MODX Revolution are called 'Templates', but are used differently based on what context we're talking about.
 
-#### In the front-end, they are Templates, Chunks and Resources.
+In the front-end, they are Templates, Chunks and Resources.
 
-##### [Templates](building-sites/elements/templates "Templates")
+#### [Templates](building-sites/elements/templates "Templates")
 
 Templates are what they sound like. They allow you to create templates that will encapsulate more page-specific data. Think of them like headers/footers all rolled into one (and so much more!)
 
-##### [Chunks](building-sites/elements/chunks "Chunks")
+#### [Chunks](building-sites/elements/chunks "Chunks")
 
 Chunks are small pieces of HTML code that can be inserted anywhere. They represent View widgets, in a sense, because of their modularity and ease of insertion.
 
-##### Resources
+#### Resources
 
 Resources is the basic representation of a single "webpage" in MODX Revolution. They represent a single page or resource by which the client accesses content from the server. They can be files, weblinks, symlinks or just plain-old HTML pages wrapped by [Templates](building-sites/elements/templates "Templates").
 

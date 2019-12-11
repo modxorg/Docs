@@ -60,7 +60,7 @@ test.php можно смело удалить.
 
 То есть, структура директорий такова, чтобы скопироваться в нужное место `/core` сайта.
 
-#### Основные директории:
+#### Основные директории
 
 - **controllers** — файлы для подготовки страниц админки. Загружают нужные скрипты и стили.
 - **docs** — история изменений, инструкция и лицензия. Эти файлы участвуют в описании пакета.
@@ -206,13 +206,13 @@ return true;
 
 ## Узнать больше
 
-* [Настройка рабочего места: MODXCloud + PhpStorm](extending-modx/creating-components/customize-the-workplace)
-* [Основы Git и первый коммит заготовки компонента на Github](extending-modx/creating-components/git-basics/)
-* [Логика работы, схему и модель таблицы в БД](extending-modx/creating-components/work-logic)
-* [Сборка и установка первой версии пакета](extending-modx/creating-components/package-build)
-* [Пишем интерфейс: виджеты ExtJS и процессоры](extending-modx/creating-components/extjs-widgets)
-* [Пишем интерфейс: таблица подписок и окошко создания](extending-modx/creating-components/letter-queue-table)
-* [Пишем интерфейс: окно редактирования подписки](extending-modx/creating-components/subscription-edit-window)
-* [Сниппет Sendex и формы подписки\отписки](extending-modx/creating-components/snippet-sendex)
-* [Самостоятельная подписка\отписка пользователя](extending-modx/creating-components/subscription-table)
-* [Рассылка по расписанию](extending-modx/creating-components/scheduled-newsletter)
+- [Настройка рабочего места: MODXCloud + PhpStorm](extending-modx/creating-components/customize-the-workplace)
+- [Основы Git и первый коммит заготовки компонента на Github](extending-modx/creating-components/git-basics/)
+- [Логика работы, схему и модель таблицы в БД](extending-modx/creating-components/work-logic)
+- [Сборка и установка первой версии пакета](extending-modx/creating-components/package-build)
+- [Пишем интерфейс: виджеты ExtJS и процессоры](extending-modx/creating-components/extjs-widgets)
+- [Пишем интерфейс: таблица подписок и окошко создания](extending-modx/creating-components/letter-queue-table)
+- [Пишем интерфейс: окно редактирования подписки](extending-modx/creating-components/subscription-edit-window)
+- [Сниппет Sendex и формы подписки\отписки](extending-modx/creating-components/snippet-sendex)
+- [Самостоятельная подписка\отписка пользователя](extending-modx/creating-components/subscription-table)
+- [Рассылка по расписанию](extending-modx/creating-components/scheduled-newsletter)

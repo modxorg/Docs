@@ -5,7 +5,7 @@ translation: "extending-modx/plugins/system-events/onbeforechunkformdelete"
 
 ## Событие: OnBeforeChunkFormDelete
 
-Запускается до удаления фрагмента.
+Запускается до удаления сниппета.
 
 Сервис: 1 - Парсер Сервис событий
 Группа: Chunks

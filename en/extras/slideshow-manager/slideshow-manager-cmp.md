@@ -18,7 +18,8 @@ An album is just a collection of slides or an individual slide show.
 2. Click on the Album Tab
 3. Click on the Create an Album button
 4. Fill out the form and save it. The Width and Height are in pixels and must be numeric. Currently Slideshow Manager will not allow images to be uploaded that do not match the criteria.
-  ![](add-album.png)
+   
+![](add-album.png)
 
 ## Slides
 

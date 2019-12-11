@@ -41,22 +41,22 @@ Be sure to call the snippet uncached -- it takes a while to run.
 
 - Author: Bob Ray [Bob's Guides](https://bobsguides.com)
 
- This version of the ObjectExplorer extra was developed by Bob Ray. It was first posted to GitHub on Nov 26, 2011. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 34 commits, and had been downloaded 1,054 times. The ObjectExplorer package consists of 201 separate files, containing 10,152 lines of code.
+This version of the ObjectExplorer extra was developed by Bob Ray. It was first posted to GitHub on Nov 26, 2011. As of Jun 22, 2017 it had been last updated on Jun 22, 2017, had 34 commits, and had been downloaded 1,054 times. The ObjectExplorer package consists of 201 separate files, containing 10,152 lines of code.
 
 It is currently maintained by Bob Ray.
 
 ## Download
 
- ObjectExplorer can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/objectexplorer).
+ObjectExplorer can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/objectexplorer).
 
 ## Development and Bug Reporting
 
- ObjectExplorer is stored and developed using GitHub, and can be found here: [ObjectExplorer GitHub main page](https://github.com/BobRay/ObjectExplorer).
+ObjectExplorer is stored and developed using GitHub, and can be found here: [ObjectExplorer GitHub main page](https://github.com/BobRay/ObjectExplorer).
 
- Bugs and feature requests can be filed here: [ObjectExplorer issues page.](https://github.com/BobRay/ObjectExplorer/issues).
+Bugs and feature requests can be filed here: [ObjectExplorer issues page.](https://github.com/BobRay/ObjectExplorer/issues).
 
 Questions about how to use ObjectExplorer should be posted on the [MODX Forums](https://forums.modx.com).
 
 ## Documentation
 
- The full documentation for ObjectExplorer can be found at the author's web site (Bob's Guides): [ObjectExplorer Documentation](https://bobsguides.com/objectexplorer-tutorial.html).
+The full documentation for ObjectExplorer can be found at the author's web site (Bob's Guides): [ObjectExplorer Documentation](https://bobsguides.com/objectexplorer-tutorial.html).

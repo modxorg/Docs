@@ -14,10 +14,10 @@ Example for easytabs:
 
 ``` php
 [[easytabs? &tabContent=`
-                [{"tab_id":"one","tab_name":"One","tab_content":"Content 1"},
-                {"tab_id":"two","tab_name":"Two","tab_content":"Content 2"},
-                {"tab_id":"three","tab_name":"Three","tab_content":"$chunkName"}]
-            `]]
+    [{"tab_id":"one","tab_name":"One","tab_content":"Content 1"},
+    {"tab_id":"two","tab_name":"Two","tab_content":"Content 2"},
+    {"tab_id":"three","tab_name":"Three","tab_content":"$chunkName"}]
+`]]
 ```
 
 See the snippet properties for more options.

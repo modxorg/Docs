@@ -37,14 +37,27 @@ The Form Tabs define the structure that end users will use to input their data.
 Content of tabs.txt:
 
 ``` json
-[
-{"caption":"Info", "fields": [
-{"field":"title","caption":"Title"},
-{"field":"description","caption":"Description","inputTVtype":"richtext"}
-]},
-{"caption":"Image", "fields":[
-{"field":"image","caption":"Image","inputTVtype":"image"}
-]}
+[{
+    "caption": "Info",
+    "fields": [{
+        "field": "title",
+        "caption": "Title"
+      },
+      {
+        "field": "description",
+        "caption": "Description",
+        "inputTVtype": "richtext"
+      }
+    ]
+  },
+  {
+    "caption": "Image",
+    "fields": [{
+      "field": "image",
+      "caption": "Image",
+      "inputTVtype": "image"
+    }]
+  }
 ]
 ```
 
@@ -76,9 +89,18 @@ Content of columns.txt:
 
 ``` json
 [
-{"header": "Title", "width": "160", "sortable": "true", "dataIndex": "title"},
-{"header": "Image", "width": "50", "sortable": "false", "dataIndex": "image","renderer": "this.renderImage"}
-]
+{
+  "header": "Title",
+  "width": "160",
+  "sortable": "true",
+  "dataIndex": "title"
+}, {
+  "header": "Image",
+  "width": "50",
+  "sortable": "false",
+  "dataIndex": "image",
+  "renderer": "this.renderImage"
+}]
 ```
 
 Here is some more JSON for us to tackle! This JSON shows the caption of the image as well as a preview of it. Let's break it down.
@@ -109,25 +131,56 @@ The keys for this grid are listed here:
 Content of switchFormTabs.txt
 
 ``` json
-[[
-{"formname":"image_description", "formtabs":
 [
-{"caption":"Info", "fields": [
-{"field":"title","caption":"Title"},
-{"field":"tpl","caption":"Tpl","inputTV":"tplDropdown"},  {"field":"description","caption":"Description","inputTV":"richtext"}
-]},
-{"caption":"Image", "fields":[
-{"field":"image","caption":"Image","inputTV":"image"}
-]}
+  [{
+    "formname": "image_description",
+    "formtabs": [{
+        "caption": "Info",
+        "fields": [{
+            "field": "title",
+            "caption": "Title"
+          },
+          {
+            "field": "tpl",
+            "caption": "Tpl",
+            "inputTV": "tplDropdown"
+          }, {
+            "field": "description",
+            "caption": "Description",
+            "inputTV": "richtext"
+          }
+        ]
+      },
+      {
+        "caption": "Image",
+        "fields": [{
+          "field": "image",
+          "caption": "Image",
+          "inputTV": "image"
+        }]
+      }
+    ]
+  }, {
+    "formname": "textonly",
+    "formtabs": [{
+      "caption": "Info",
+      "fields": [{
+          "field": "title",
+          "caption": "Title"
+        },
+        {
+          "field": "tpl",
+          "caption": "Tpl",
+          "inputTV": "tplDropdown"
+        }, {
+          "field": "description",
+          "caption": "Description",
+          "inputTV": "richtext"
+        }
+      ]
+    }]
+  }]
 ]
-},{"formname":"textonly", "formtabs":
-[
-{"caption":"Info", "fields": [
-{"field":"title","caption":"Title"},
-{"field":"tpl","caption":"Tpl","inputTV":"tplDropdown"}, {"field":"description","caption":"Description","inputTV":"richtext"}
-]}
-]
-}]]
 ```
 
 here we have an additional outer array with two keys.

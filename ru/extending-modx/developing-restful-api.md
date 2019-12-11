@@ -52,7 +52,7 @@ $rest->process();
 
 После этого вам необходимо убедиться, что все запросы к вашей папке `/rest/` действительно обрабатываются сервером REST. Чтобы сделать это, добавьте следующее в ваш`.htaccess` (или эквивалент в nginx или других системах) в корне вашего сайта:
 
-### Apache:
+### Apache
 
 ```plain
 RewriteEngine On
@@ -63,7 +63,7 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^(.*)$ rest/index.php [QSA,NC,L]
 ```
 
-### NGINX:
+### NGINX
 
 ```plain
 location /rest/ {

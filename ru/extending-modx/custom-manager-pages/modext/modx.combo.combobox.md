@@ -1,6 +1,6 @@
 ---
-title: MODx.combo.ComboBox
-translation: extending-modx/custom-manager-pages/modext/modx.combo.combobox
+title: "MODx.combo.ComboBox"
+translation: "extending-modx/custom-manager-pages/modext/modx.combo.combobox"
 ---
 
 ## MODx.combo.ComboBox

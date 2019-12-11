@@ -26,6 +26,6 @@ This is the Chunk displayed with the &containerTpl property on the [GoogleSiteMa
 ## See Also
 
 1. [GoogleSiteMap.GoogleSiteMap](extras/googlesitemap/googlesitemap)
-     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap/containertpl)
-     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap/itemtpl)
+    1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap/containertpl)
+    2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap/itemtpl)
 2. [GoogleSiteMap.Roadmap](extras/googlesitemap/googlesitemap.roadmap)

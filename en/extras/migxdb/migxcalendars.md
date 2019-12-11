@@ -27,16 +27,16 @@ MigxCalendars currently is only available at <https://github.com/Bruno17/migxCal
 
 ## Development and Bug Reporting
 
-migxCalendars is currently in beta and still being developed. MigxCalendars is stored and developed in GitHub, and can be found here:<https://github.com/Bruno17/migxCalendars>[](https://github.com/Bruno17/migx)
+migxCalendars is currently in beta and still being developed. MigxCalendars is stored and developed in GitHub, and can be found here: [migxCalendars](https://github.com/Bruno17/migxCalendars) [migx](https://github.com/Bruno17/migx)
 
 ## Installation
 
 1. MigxCalendars requires the MIGX Extra. Install MIGX first.
-2. Download the latest package from [https://github.com/Bruno17/migxCalendars/tree/mast...](https://github.com/Bruno17/migxCalendars/tree/master/packages)
+2. Download the latest package from [migxCalendars](https://github.com/Bruno17/migxCalendars/tree/master/packages)
 3. Upload the migxCalendars package to your Package Manager
 4. Follow the instructions at <http://www.webcmsolutions.de/en/modx-extras/migxcalendars/installation.html>
 
-[](https://github.com/Bruno17/migxCalendars/tree/master/packages)
+[migxCalendars](https://github.com/Bruno17/migxCalendars/tree/master/packages)
 
 ## Usage
 

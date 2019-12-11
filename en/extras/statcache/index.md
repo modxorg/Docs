@@ -16,7 +16,7 @@ The statcache extra is made up of a Plugin for MODX Revolution that writes out s
 GitHub: <https://github.com/opengeek/statcache>
 Issues: <https://github.com/opengeek/statcache/issues>
 
-**Install via Package Manager**
+Install statcache via the Package Manager.
 
 ### Web Server Configuration for nginx
 

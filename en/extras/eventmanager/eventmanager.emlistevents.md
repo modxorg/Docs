@@ -20,13 +20,13 @@ This piece of documentation will be written in the (hopefully) near future.
 
 ### Template Properties
 
-| Property | Description                                                                                               | Default value |
-| -------- | --------------------------------------------------------------------------------------------------------- | ------------- |
-| &rowTpl  | The name of a chunk used to iterate over the events. Available placeholders: - eventid (int, primary key) |
-- date (time, formatted with strftime('%A %e/%m, %H:%M'))
-- title (string)
-- description (string)
-- reservationlink (link to &reservationResource with &eid=5 passed to it)
-- default (string, see &default property above)
-- capacity (int)
-- last\_signup (int) | emRowTpl (included in package): <p>`[[+date]]`</p> <p>`[[+title]]`</p> <p>`[[+description]]`<br />`[[+reservationlink]]`</p> |
+| Property                        | Description                                                                                               | Default value                                                             |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| &rowTpl                         | The name of a chunk used to iterate over the events. Available placeholders: - eventid (int, primary key) | - date (time, formatted with strftime('%A %e/%m, %H:%M'))                 |
+|                                 |                                                                                                           | - title (string)                                                          |
+|                                 |                                                                                                           | - description (string)                                                    |
+|                                 |                                                                                                           | - reservationlink (link to &reservationResource with &eid=5 passed to it) |
+|                                 |                                                                                                           | - default (string, see &default property above)                           |
+|                                 |                                                                                                           | - capacity (int)                                                          |
+|                                 |                                                                                                           | - last\_signup `(i|nt)`                                                   |
+| &emRowTpl (included in package) | `<p>[[+date]]</p> <p></p>[[+title]]</p> <p>[[+description]]<br />[[+reservationlink]]</p>`                |                                                                           |

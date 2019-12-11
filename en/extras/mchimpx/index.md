@@ -50,6 +50,6 @@ True or false to return 'not subscribed' error to the front-end form. defaults t
 mcFailOnMissingRequired
 True or false to return 'missing required' error to the front-end form. defaults to false.
 
-## Github:
+## Github
 
 For development and bug reports go to: <https://github.com/bertoost/MODX-mChimpX>

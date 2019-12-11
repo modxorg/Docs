@@ -119,7 +119,7 @@ Now that all settings are done, you will need to flush permissions (Security -> 
 
 Please note that in some cases it is also necessary to clear the site cache, specifically for the mgr (manager) context, as elements and resources may cache their permissions.
 
-## Help! I can't get this to work, still!
+## Still can't get it to work?
 
 Make sure you followed everything step by step and that you flushed permissions properly. If everything seems to be alright, check again and then go to the Forums to ask for help. If you think the tutorial is misleading or inaccurate, please visit the forum topic (linked below) and post about what is incorrect so it can be fixed.
 

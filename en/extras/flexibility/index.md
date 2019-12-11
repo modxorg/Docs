@@ -61,7 +61,7 @@ Your MODX website needs three main thing:
    - Activate the slider on any page under: "Template Variables".
 5. Other page content is added the normal way on each resource, see the "Template Variables" tab on each resource for extra options.
 
-## Update instructions:
+## Update instructions
 
 - All sub-packages (like Wayfinder) are installed by Flexibility and you will be able to remove/update each sub-package under "System" > "Package Management".
 - You can update the package via package installer, Flexibility will not override excisiting Resources.

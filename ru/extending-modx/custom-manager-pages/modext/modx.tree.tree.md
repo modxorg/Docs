@@ -1,6 +1,6 @@
 ---
-title: MODx.tree.Tree
-translation: extending-modx/custom-manager-pages/modext/modx.tree.tree
+title: "MODx.tree.Tree"
+translation: "extending-modx/custom-manager-pages/modext/modx.tree.tree"
 ---
 
 ## MODx.tree.Tree

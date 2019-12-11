@@ -18,11 +18,12 @@ Display a generic list of events from all calendars and all categories with clic
 
 ``` php
 [[!mxcalendar?
-&eventListlimit=`8`
-&displayType=`list`
-&ajaxResourceId=`49`
-&modalView=`1`
-&dir=`ASC`]]
+    &eventListlimit=`8`
+    &displayType=`list`
+    &ajaxResourceId=`49`
+    &modalView=`1`
+    &dir=`ASC`
+]]
 ```
 
 - Add parameters to display further ahead (default is +4 weeks)
@@ -47,14 +48,15 @@ Example:
 
 ``` php
 [[!mxcalendar?
-&displayType=`list`
-&elDirectional=`past`
-&isLocked=`1`
-&resourceId=`71`
-&tplListHeading=``
-&tplListItem=`tplListItemNewChunk`
-&calendarFilter=`2`
-&elStartDate=`now`
-&tplListWrap=`tplListWrapNewChunk`
-&dir=`DESC`]]
+    &displayType=`list`
+    &elDirectional=`past`
+    &isLocked=`1`
+    &resourceId=`71`
+    &tplListHeading=``
+    &tplListItem=`tplListItemNewChunk`
+    &calendarFilter=`2`
+    &elStartDate=`now`
+    &tplListWrap=`tplListWrapNewChunk`
+    &dir=`DESC`
+]]
 ```

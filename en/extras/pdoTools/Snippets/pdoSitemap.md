@@ -28,7 +28,7 @@ The sitemap generation is more effective if resources are excluded from the outp
 
 ### Templates
 
-**&tpl**
+#### &tpl
 
 ```xml
 @INLINE <url>\n\t
@@ -39,7 +39,7 @@ The sitemap generation is more effective if resources are excluded from the outp
 </url>
 ```
 
-**&tplWrapper**
+#### &tplWrapper
 
 ```xml
 @INLINE <?xml version=\"1.0\" encoding=\"[[++modx_charset]]\"?>\n<urlset xmlns=\"[[+schema]]\">\n[[+output]]\n</urlset>

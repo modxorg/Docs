@@ -49,35 +49,35 @@ Tab **Columns**
 1 Link (will be needed so that the click manager can see how the page will look, this is convenient)
 
 - Tab **Column**
-  - **Header** — Link
-  - **Field** — link
+    - **Header** — Link
+    - **Field** — link
 - Tab **Renderer**
-  - **Renderer** — this.renderChunk
-  - **renderChunk template** — `<a href="[[~[[#GET.id]]]]?utm=[[+utm]]" target="_blank">Look</a>`
+    - **Renderer** — this.renderChunk
+    - **renderChunk template** — `<a href="[[~[[#GET.id]]]]?utm=[[+utm]]" target="_blank">Look</a>`
 
 2 Label
 
 - Tab **Column**
-  - **Header** — Label UTM
-  - **Field** — utm
+    - **Header** — Label UTM
+    - **Field** — utm
 - Tab **Cell Editor**
-  - **Editor** — this.textEditor
+    - **Editor** — this.textEditor
 
 3 Page title
 
 - Tab **Column**
-  - **Header** — Page title
-  - **Field** — title
+    - **Header** — Page title
+    - **Field** — title
 - Tab **Cell Editor**
 **Editor** — this.textEditor
 
 4 Headline H1
 
 - Tab **Column**
-  - **Header** — Headline H1
-  - **Field** — pagetitle
+    - **Header** — Headline H1
+    - **Field** — pagetitle
 - Tab **Cell Editor**
-  - **Editor** — this.textEditor
+    - **Editor** — this.textEditor
 
 We go and create TV utm with the type of input migx, in the Configuration field we write the name of our configuration, i.e. utm, assign the necessary templates and open the resource for editing, or create it.
 

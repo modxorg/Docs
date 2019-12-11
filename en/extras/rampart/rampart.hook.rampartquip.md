@@ -10,7 +10,7 @@ To enable Rampart spam prevention on your Quip comments, simply add hook.Rampart
 
 ``` php
 [[!Quip?
-  &preHook=`hook.RampartQuip`
+    &preHook=`hook.RampartQuip`
 ]]
 ```
 

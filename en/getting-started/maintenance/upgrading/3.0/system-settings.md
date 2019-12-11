@@ -11,7 +11,7 @@ MODX 3.0 cleaned up a significant number of old system settings and changed the 
 - `editor_css_path` and `editor_css_selectors` have been removed [#14843](https://github.com/modxcms/revolution/pull/14843). These settings may be in by [TinyMCE](https://github.com/modxcms/TinyMCE/issues/30) or other third-party extras which may need to accommodate the setting not being available.)
 - `manager_language` [#13786](https://github.com/modxcms/revolution/pull/13786), replaced by automatic language detection and on-the-fly switching in the manager [#14046](https://github.com/modxcms/revolution/pull/14046). [Learn more about the manager language in 3.0](getting-started/maintenance/upgrading/3.0/manager-language)
 - `resolve_hostnames` and `server_protocol` have been removed [#14877](https://github.com/modxcms/revolution/pull/14877). Deprecated settings from MODX Evolution.
-- `upload_flash`, set `upload_files` or `upload_images` or the `allowedFileTypes` on the media source instead. [#14252](https://github.com/modxcms/revolution/pull/14252
+- `upload_flash`, set `upload_files` or `upload_images` or the `allowedFileTypes` on the media source instead. [#14252](https://github.com/modxcms/revolution/pull/14252)
 
 ## Changed default values
 

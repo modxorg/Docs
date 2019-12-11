@@ -106,8 +106,8 @@ I like a little real work scenario with my e-mails, so lets mail the partial cas
 
 ``` php
 $modx->mail->address('to', array(
-        'barneystinson@howimetyourmother.tld' => 'Barney Stison',
-        'tedmosby@howimetyourmother.tld' => 'Ted Mosby'
+    'barneystinson@howimetyourmother.tld' => 'Barney Stison',
+    'tedmosby@howimetyourmother.tld' => 'Ted Mosby'
 ));
 ```
 
@@ -117,8 +117,8 @@ Aside from that little example, there is another way to send an e-mail to the sa
 
 ``` php
 $modx->mail->address('to', array(
-        'barneystinson@howimetyourmother.tld',
-        'tedmosby@howimetyourmother.tld'
+    'barneystinson@howimetyourmother.tld',
+    'tedmosby@howimetyourmother.tld'
 ), 'How I Met Your Mother cast');
 ```
 
@@ -128,8 +128,8 @@ Finally, imagine your form was plugged into a [FormIt](extras/formit "FormIt") p
 
 ``` php
 $modx->mail->address('to', array(
-        'barneystinson@howimetyourmother.tld',
-        'tedmosby@howimetyourmother.tld' => 'Ted Mosby'
+    'barneystinson@howimetyourmother.tld',
+    'tedmosby@howimetyourmother.tld' => 'Ted Mosby'
 ));
 ```
 

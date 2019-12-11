@@ -29,17 +29,16 @@ Alternatively, you can download the transport package from the [repository](http
 
 sLink is an easy to use snippet which can be used in a few different ways using the parameters.
 
-| ?Parameter | Description                                                                                       | Possible values            | Default value       |
-| ---------- | ------------------------------------------------------------------------------------------------- | -------------------------- | ------------------- |
-| &to        | Required. This parameter describes where the link points to, either a resource id or regular url. | (int) doc id               | (string) url/anchor |  |
-| &title     | Optional.                                                                                         | See below                  | longtitle           |
-| &link      | Optional. Same as &title except this parameter describes the link text.                           | See below                  | menutitle           |
-| &name      | Optional. Can be used to create an in-page anchor.                                                | (string) the anchor        | (none)              |
-| &class     | Optional. Can be used to add a css class to the link.                                             | (string) the css class(es) | (none)              |
-| &debug     | Optional. Used to debug your snippet call if needed. Debug levels: 0, 1 or 2. See below           |
-0: off (if there's an error, nothing will be shown on the page)
-1: on, will only show the amount of errors encountered
-2: advanced, shows the errors as well as the parameter values that were calculated. If no errors are found, this outputs nothing. | (int) 0, 1 or 2 | 1 |
+| ?Parameter | Description                                                                                                                       | Possible values                                                 | Default value       |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------------- |
+| &to        | Required. This parameter describes where the link points to, either a resource id or regular url.                                 | (int) doc id                                                    | (string) url/anchor |  |
+| &title     | Optional.                                                                                                                         | See below                                                       | longtitle           |
+| &link      | Optional. Same as &title except this parameter describes the link text.                                                           | See below                                                       | menutitle           |
+| &name      | Optional. Can be used to create an in-page anchor.                                                                                | (string) the anchor                                             | (none)              |
+| &class     | Optional. Can be used to add a css class to the link.                                                                             | (string) the css class(es)                                      | (none)              |
+| &debug     | Optional. Used to debug your snippet call if needed. Debug levels: 0, 1 or 2. See below                                           | 0: off (if there's an error, nothing will be shown on the page) |
+|            | 1: on, will only show the amount of errors encountered                                                                            |                                                                 |
+|            | 2: advanced, shows the errors as well as the parameter values that were calculated. If no errors are found, this outputs nothing. | (int) 0, 1 or 2                                                 | 1                   |
 
 ### &title and &link usage
 

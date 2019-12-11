@@ -30,10 +30,10 @@ translation: "extras"
 ### Навигация и контент
 
 - [pdoTools](https://docs.modx.pro/en/components/pdotools) представляет собой набор полезных сниппетов, который призван стать современной (в основном) заменой старых (но все еще поддерживаемых) дополнений:
-  - [pdoResources](https://docs.modx.pro/en/components/pdotools/snippets/pdoresources) является эквивалентом [getResources](extras/getresources), который может быть использован для перечисления ресурсов. Их также можно использовать для подачи RSS или создания Sitemap.
-  - [pdoMenu](https://docs.modx.pro/en/components/pdotools/snippets/pdomenu) является эквивалентом [Wayfinder](extras/wayfinder), который используется для создания (многоуровневых) меню из вашего дерева ресурсов.
-  - [pdoPage](https://docs.modx.pro/en/components/pdotools/snippets/pdopage) является эквивалентом [getPage](extras/getpage), который обертывает сниппеты, такие как getResources / pdoResources с возможностями разбиения на страницы
-  - [pdoCrumbs](https://docs.modx.pro/en/components/pdotools/snippets/pdocrumbs) может быть использован аналогично[Breadcrumbs](extras/breadcrumbs) создать хлебные крошки текущего ресурса.
+    - [pdoResources](https://docs.modx.pro/en/components/pdotools/snippets/pdoresources) является эквивалентом [getResources](extras/getresources), который может быть использован для перечисления ресурсов. Их также можно использовать для подачи RSS или создания Sitemap.
+    - [pdoMenu](https://docs.modx.pro/en/components/pdotools/snippets/pdomenu) является эквивалентом [Wayfinder](extras/wayfinder), который используется для создания (многоуровневых) меню из вашего дерева ресурсов.
+    - [pdoPage](https://docs.modx.pro/en/components/pdotools/snippets/pdopage) является эквивалентом [getPage](extras/getpage), который обертывает сниппеты, такие как getResources / pdoResources с возможностями разбиения на страницы
+    - [pdoCrumbs](https://docs.modx.pro/en/components/pdotools/snippets/pdocrumbs) может быть использован аналогично[Breadcrumbs](extras/breadcrumbs) создать хлебные крошки текущего ресурса.
 - [getResourceField](extras/getresourcefield), [pdoField](https://docs.modx.pro/en/components/pdotools/snippets/pdofield) или [fastField](extras/fastfield) для получения одного поля ресурса.
 - [AdvSearch](extras/advsearch) или [mSearch2](https://en.modstore.pro/packages/ecommerce/msearch2) (премиум дополнение от modstore) добавляет функцию поиска на ваш сайт
 - [Collections](extras/collections) используется для большого количества ресурсов, таких как блоги или списки продуктов, и будет перечислять дочерние ресурсы в сетке вместо дерева

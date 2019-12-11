@@ -75,7 +75,7 @@ $document = $modx->getObject('modResource',array(
 <object class="modChunk" table="site_htmlsnippets" extends="modElement">
 ```
 
-Свойство _class_ сообщает вам, каким будет имя класса. Свойство _table_ показывает фактическую таблицу MySQL, а _extends_ показывает, какой объект он расширяет. modElement является базовым классом для всех элементов в MODX - фрагментов, модулей, блоков, шаблонов и т.д.
+Свойство _class_ сообщает вам, каким будет имя класса. Свойство _table_ показывает фактическую таблицу MySQL, а _extends_ показывает, какой объект он расширяет. modElement является базовым классом для всех элементов в MODX - сниппетов, модулей, блоков, шаблонов и т.д.
 
 ``` xml
 <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />

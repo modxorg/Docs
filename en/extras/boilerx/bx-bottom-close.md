@@ -16,9 +16,10 @@ Closes the body and html tags.
 ## See Also
 
 ``` php
- [[getResources@section?
+[[getResources@section?
     &parents=`1316`
     &context=`extras`
     &limit=`0`
-    &resources=`1316,[[*id]]`]]
-  ```
+    &resources=`1316,[[*id]]`
+]]
+```

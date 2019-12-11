@@ -16,10 +16,10 @@ EventX is a calendar extra for MODX Revolution. EventsX shows upcoming (and prev
 - every event has a start and end date (can be the same date for single day events)
 - jQuery calendar included
 - languages:
-  - english
-  - dutch
-  - german (thanks to Anselm Hannemann)
-  - russian
+    - english
+    - dutch
+    - german (thanks to Anselm Hannemann)
+    - russian
 
 ## Requirements
 
@@ -51,7 +51,7 @@ EventX has its issues and feature-requests on GitHub: <https://github.com/jkente
 
 ## How to use
 
-### To create a calendar on your page:
+### Create a calendar on your page
 
 Go to components -> EventsX and create some events
 

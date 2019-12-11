@@ -92,7 +92,7 @@ Grab a list of tags specified in the TV 'blog-tags', which are separated by spac
 
 1. [tagLister.getResourcesTag](extras/taglister/taglister.getresourcestag)
 2. [tagLister.tagLister](extras/taglister/taglister.taglister)
-     1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
-     2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
+    1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
+    2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
 3. [tagLister.tolinks](extras/taglister/taglister.tolinks)
-     1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+    1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)

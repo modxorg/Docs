@@ -16,10 +16,10 @@ First off, you'll want to have a place to show your results
 
 ``` php
 [[!SimpleSearch?
-  &toPlaceholder=`sisea.results`
-  &perPage=`10`
-  &postHooks=`PeopleFacetHook`
-  &facetLimit=`5`
+    &toPlaceholder=`sisea.results`
+    &perPage=`10`
+    &postHooks=`PeopleFacetHook`
+    &facetLimit=`5`
 ]]
 
 <h2>Search Results</h2>
@@ -38,10 +38,10 @@ Then at the bottom, we'll have a page that links to another page (ID 123) that w
 
 ``` php
 [[!SimpleSearch?
-  &toPlaceholder=`sisea.results`
-  &perPage=`20`
-  &postHooks=`PeopleFacetHook`
-  &facetLimit=`5`
+    &toPlaceholder=`sisea.results`
+    &perPage=`20`
+    &postHooks=`PeopleFacetHook`
+    &facetLimit=`5`
 ]]
 
 <h2>Search Results</h2>
@@ -105,11 +105,11 @@ Let's say we wanted a separate chunk template for our "people" results, rather t
 
 ``` php
 [[!SimpleSearch?
-  &toPlaceholder=`sisea.results`
-  &perPage=`20`
-  &postHooks=`PeopleFacetHook`
-  &tplpeople=`OurPeopleChunk`
-  &facetLimit=`5`
+    &toPlaceholder=`sisea.results`
+    &perPage=`20`
+    &postHooks=`PeopleFacetHook`
+    &tplpeople=`OurPeopleChunk`
+    &facetLimit=`5`
 ]]
 
 <h2>Search Results</h2>

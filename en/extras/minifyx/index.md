@@ -64,13 +64,13 @@ Below you see the main snippet call and the placement of the placeholders. Every
 <head>
 [[MinifyX?
   &jsSources=`
-     /assets/myframework.js,
-     /assets/lightbox.js,
-     /assets/script.js
+    /assets/myframework.js,
+    /assets/lightbox.js,
+    /assets/script.js
 `
   &cssSources=`
-     /assets/style1.css,
-     /assets/style2.css
+    /assets/style1.css,
+    /assets/style2.css
 `
 ]]
 

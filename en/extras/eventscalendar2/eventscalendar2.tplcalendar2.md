@@ -10,8 +10,8 @@ This chunk is a container for calendar.
 
 ``` php
 <div id='[[+calendar_id]]'>
-        [[+ec.Calendar]]
-        <div class='cover'></div>
+    [[+ec.Calendar]]
+    <div class='cover'></div>
 </div>
 ```
 

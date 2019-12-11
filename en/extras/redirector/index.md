@@ -32,15 +32,14 @@ Bugs can be filed here: <https://github.com/modxcms/Redirector/issues>
 After installing, simply reload the page, and the 'Redirector' menu option should be available through the top Components menu.
 
 To add a new redirect, simply hit the "New Redirect" button. You should see the below popup. ![](redir-new.png)
- The pattern is what the plugin will look for when a resource cannot be found. For example, type in contact.html.
+The pattern is what the plugin will look for when a resource cannot be found. For example, type in contact.html.
 
 The target is where the plugin should redirect the visitor (or Google Bot!) to. You can enter this as an actual URL (eg new/location/for/contact.html), or use the MODX resource tag syntax, for example `[[~28]]` if your resource identifier is 28. This will keep the redirect updated if the alias changes again.
 
 You can determine if the redirect is active or not with the checkbox.
 
 When you saved the redirect, you can see it in the Grid.
+
 ![](redir-overview.png)
 
 Should you wish to update or remove the redirect at some point, you can simply right click the row in the grid and choose Update or Remove.
-
-## See Also

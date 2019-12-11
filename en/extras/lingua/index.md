@@ -67,13 +67,12 @@ The REQUEST key can be defined in System Setting, but the default key is **_lang
 ``` php
 <div class="container">
     <div class="btn-group">
-        <button
-                class="btn btn-link btn-mini dropdown-toggle"
+        <button class="btn btn-link btn-mini dropdown-toggle"
                 data-toggle="dropdown"
                 >[[%lingua.select_language]]
         </button>
         <ul class="dropdown-menu">
-                [[+lingua.languages]]
+            [[+lingua.languages]]
         </ul>
     </div>
 </div>
@@ -84,7 +83,7 @@ The REQUEST key can be defined in System Setting, but the default key is **_lang
 ``` php
 [[+lingua.cultureKey:is=`[[+lingua.lang_code]]`:then=``:else=`<li>
     <a href="[[+lingua.url]]" title="[[+lingua.local_name]]">
-            <img src="[[+lingua.flag]]" alt=""/> [[+lingua.local_name]]
+        <img src="[[+lingua.flag]]" alt=""/> [[+lingua.local_name]]
     </a>
 </li>`]]
 ```
@@ -170,11 +169,11 @@ On your wayfinder's rowTpl, change the placeholder, like this:
 
 Since version 2, Lingua now stores clone resource's content, the main content and all defined Template Variables.
 
-#### Template Variables:
+### Template Variables
 
 You need to go to Custom Manager Page (Components > Lingua), and define which TV that will be available for translation.
 
-#### Standard MODX fields (pagetitle, content, etc.) :
+#### Standard MODX fields (pagetitle, content, etc.)
 
 You also **need** to define additional setting for particular context that will use Lingua.
 On your resource tree navigation > right click > edit context.
@@ -195,7 +194,7 @@ After it is saved, you will see the setting on the grid like this.
 
 ![](lingua_context_settings.png)
 
-#### Multiple contexts :
+#### Multiple contexts
 
 To have different languages set for different context, you can add this setting as well:
 

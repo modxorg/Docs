@@ -51,5 +51,3 @@ As you see, after first authorization you can add more services to your profile,
 ``` php
 {"id":"1234567890","secret":"f384hf3894hf8394hf843hf"}
 ```
-
-## See Also

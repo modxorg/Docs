@@ -6,7 +6,7 @@ _old_uri: "revo/mxhastvs"
 
 mxHasTvs is used to return a value based on TV value for the resource (docid). This allows you to perform quick and efficient templates to avoid the pitfalls of conditional modifiers. Useful for complex UI (template, chunk, etc.) rules to switch rendering based on a resources Template Variable(TV) value. Allows a true and false string or empty to be returned based on any matching TV value being found.
 
-## Properties:
+## Properties
 
 | Parameter              | Type     | Description                                                                                                                                                                                                               |
 | ---------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -20,7 +20,7 @@ mxHasTvs is used to return a value based on TV value for the resource (docid). T
 | @forceFalseTemplate    | (mixed)  | Comma separated list of Template Ids to force a false response on                                                                                                                                                         |
 | @forcePriorityResrouce | (int)    | Use 1 (one), default, to have resource TV forced check first, or set to 0 (zero) to have the template forced TV check have priority.                                                                                      |
 
-## Example:
+## Example
 
 Returns the chunk as success or has matched TV values in the resource
 if no value(s) found for TV items then the response is empty. Also forces
@@ -28,9 +28,9 @@ a true response on resource id 1.
 
 ``` php
 [[!mxhastvs?
-  &tvIds=`11,20`
-  &true=`[[$doSomethingChunkName]]`
-  &false=``
-  &forceTrueResource=`1`
+    &tvIds=`11,20`
+    &true=`[[$doSomethingChunkName]]`
+    &false=``
+    &forceTrueResource=`1`
 ]]
 ```

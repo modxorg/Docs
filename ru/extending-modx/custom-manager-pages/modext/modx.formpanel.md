@@ -1,6 +1,6 @@
 ---
-title: MODx.FormPanel
-translation: extending-modx/custom-manager-pages/modext/modx.formpanel
+title: "MODx.FormPanel"
+translation: "extending-modx/custom-manager-pages/modext/modx.formpanel"
 ---
 
 ## MODx.FormPanel

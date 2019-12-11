@@ -120,6 +120,7 @@ All of the above gives us the following output in the front-end for one item:
 ```
 
 Combined with our slideshow script and a bunch of css, we get this result, which fades in/out from vehicle to vehicle.
+
 ![](ex2.png)
 
 ### Example3: Horizontal row style overview

@@ -83,11 +83,11 @@ And finally - the relationship of objects to each other:
 
 * **Composite** - an object is the main one, in relation to another. When you delete such an object, all child objects associated with it here will be deleted.
 * **Aggregate** - an object is subject to another object. When it is deleted, the main thing will be nothing.
-  * **alias** is a pseudonym for communications. Used in `$object->getMany('Subscribers');` or `$object-> addOne ('Template');`
-  * **class** is the real name of the class with which the current object is associated.
-  * **local** - field of the current object, which is connected
-  * **foreign** - fields of the object with which we are associated.
-  * **cardinality** is a type of connection. One to one, or one to several. Typically, a bond aggregate is one, and a composite has many, that is, the parent has many children, and the descendants have only one parent. But there are exceptions.
+    * **alias** is a pseudonym for communications. Used in `$object->getMany('Subscribers');` or `$object-> addOne ('Template');`
+    * **class** is the real name of the class with which the current object is associated.
+    * **local** - field of the current object, which is connected
+    * **foreign** - fields of the object with which we are associated.
+    * **cardinality** is a type of connection. One to one, or one to several. Typically, a bond aggregate is one, and a composite has many, that is, the parent has many children, and the descendants have only one parent. But there are exceptions.
   If the connection is many, it uses `addMany()` and `getMany()`, if one is, then `addOne()` and `getOne()`.
 
 For a visual representation of the scheme, I advise you to use the service from [Jeroen Kenters](http://schemaviewer.dev.kenters.com/52845fee82d721.76762690)

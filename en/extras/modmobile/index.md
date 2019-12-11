@@ -44,19 +44,20 @@ Using one template for mobile and full site
 
 1. Go to System -> System Settings
 2. Set the USE Placeholder to Yes
+   
   ![](use-placeholder.png)
 3. Lets assume that the only difference between your standard version and the mobile version is the CSS file then in your template do something like this:
 
 ``` php
 [[If?
-      &subject=`[[+modxSiteTemplate]]`
-      &operand=`mobile`
-      &then=`<link rel="stylesheet" type="text/css" media="all" href="/assets/templates/css/mobileLayout.css" />`
-      &else=`<link rel="stylesheet" type="text/css" media="all" href="/assets/templates/css/commonLayout.css" />
-        <!--[if IE 6]>
-            <link rel="stylesheet" type="text/css" media="all" href="/assets/templates/css/ie6.css" />
-        <![endif]-->`
-    ]]
+    &subject=`[[+modxSiteTemplate]]`
+    &operand=`mobile`
+    &then=`<link rel="stylesheet" type="text/css" media="all" href="/assets/templates/css/mobileLayout.css" />`
+    &else=`<link rel="stylesheet" type="text/css" media="all" href="/assets/templates/css/commonLayout.css" />
+    <!--[if IE 6]>
+        <link rel="stylesheet" type="text/css" media="all" href="/assets/templates/css/ie6.css" />
+    <![endif]-->`
+]]
 ```
 
 Note: modxSiteTemplate is the value of modmobile.get\_var and the same that you will need to send to the url to switch templates. You must also install the If extra for this example to work!
@@ -64,10 +65,10 @@ Note: modxSiteTemplate is the value of modmobile.get\_var and the same that you 
 1. Now just put a link in your template to the mobile version and then to the full version:
 
 ``` html
-    <!-- Moblie Link -->
-    <a href="[[~[[*id]]]]?modxSiteTemplate=mobile">Mobile</a>
-    <!-- Back to Full site link -->
-    <a href="[[~[[*id]]]]?modxSiteTemplate=full">Full Site View</a>
+<!-- Moblie Link -->
+<a href="[[~[[*id]]]]?modxSiteTemplate=mobile">Mobile</a>
+<!-- Back to Full site link -->
+<a href="[[~[[*id]]]]?modxSiteTemplate=full">Full Site View</a>
 ```
 
 Note this is optional but highly recommended.
@@ -85,8 +86,8 @@ Using a separate mobile template
   Note this is optional but highly recommended.
   
  ``` html
-  <!-- Moblie Link -->
-      <a href="[[~[[*id]]]]?modxSiteTemplate=mobile">Mobile</a>
-      <!-- Back to Full site link -->
-      <a href="[[~[[*id]]]]?modxSiteTemplate=full">Full Site View</a>
-  ```
+<!-- Moblie Link -->
+<a href="[[~[[*id]]]]?modxSiteTemplate=mobile">Mobile</a>
+<!-- Back to Full site link -->
+<a href="[[~[[*id]]]]?modxSiteTemplate=full">Full Site View</a>
+```

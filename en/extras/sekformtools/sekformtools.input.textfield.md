@@ -18,10 +18,10 @@ Example for input.textfield:
 
 ## Properties
 
-| Name        | Description                                                               | Default | Required | Version |
-| ----------- | ------------------------------------------------------------------------- | ------- | -------- | ------- |
-| input\_id   | The id to assign to the input box.                                        |         |          | >0.0.1  |
-| name        | The name to assign to the input box.                                      |         |          | >0.0.1  |
-| value       | The value to assign to the input box.                                     |         |          | >0.0.1  |
-| input\_type | Text, password, or textarea.                                              | text    |          | >0.0.1  |
-| title       | Title will be rendered over the text input or text area as a user prompt. |         |          | >0.0.1  |
+| Name         | Description                                                               | Default | Required | Version |
+| ------------ | ------------------------------------------------------------------------- | ------- | -------- | ------- |
+| `input_id`   | The id to assign to the input box.                                        |         |          | >0.0.1  |
+| `name`       | The name to assign to the input box.                                      |         |          | >0.0.1  |
+| `value`      | The value to assign to the input box.                                     |         |          | >0.0.1  |
+| `input_type` | Text, password, or textarea.                                              | text    |          | >0.0.1  |
+| `title`      | Title will be rendered over the text input or text area as a user prompt. |         |          | >0.0.1  |

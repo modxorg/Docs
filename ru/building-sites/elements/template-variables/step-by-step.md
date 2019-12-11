@@ -59,7 +59,7 @@ translation: "building-sites/elements/template-variables/step-by-step"
 
 Каждый раз, когда вы создаете Ресурс, который использует шаблон, к которому был подключен телевизор, он будет доступен для редактирования. **Убедитесь, что вы подключили TV хотя бы к одному шаблону.**
 
-### 6. Сохраните определение TV.
+### 6. Сохраните определение TV
 
 Когда вы редактируете страницу, которая использует шаблон, связанный с этим TV, вы сможете добавлять данные в это поле TV.
 
@@ -115,10 +115,10 @@ translation: "building-sites/elements/template-variables/step-by-step"
 2. [Привязки](building-sites/elements/template-variables/bindings)
    1. [CHUNK привязка](building-sites/elements/template-variables/bindings/chunk-binding)
    2. [DIRECTORY привязка](building-sites/elements/template-variables/bindings/directory-binding)
-   4. [FILE привязка](building-sites/elements/template-variables/bindings/file-binding)
-   5. [INHERIT привязка](building-sites/elements/template-variables/bindings/inherit-binding)
-   6. [RESOURCE привязка](building-sites/elements/template-variables/bindings/resource-binding)
-   7. [SELECT привязка](building-sites/elements/template-variables/bindings/select-binding)
+   3. [FILE привязка](building-sites/elements/template-variables/bindings/file-binding)
+   4. [INHERIT привязка](building-sites/elements/template-variables/bindings/inherit-binding)
+   5. [RESOURCE привязка](building-sites/elements/template-variables/bindings/resource-binding)
+   6. [SELECT привязка](building-sites/elements/template-variables/bindings/select-binding)
 3. [Типы ввода переменных шаблона TV](building-sites/elements/template-variables/input-types)
 4. [Типы вывода переменных шаблона TV](building-sites/elements/template-variables/output-types)
     1. [Тип вывода TV - Дата](building-sites/elements/template-variables/output-types/date)

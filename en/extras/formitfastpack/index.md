@@ -6,15 +6,15 @@ _old_uri: "revo/formitfastpack/"
 
 ## What is FormitFastPack?
 
- FFP simplifies the management of HTML associated with form-processing snippets like FormIt and Login.
+FFP simplifies the management of HTML associated with form-processing snippets like FormIt and Login.
 
 ## Installation
 
- Install from the [MODX package manager](http://modx.com/extras/package/formitfastpack).
+Install from the [MODX package manager](http://modx.com/extras/package/formitfastpack).
 
 ## Getting Started
 
- Below is a simple example of using the _field_ snippet with a FormIt form. For a more detailed example, check out the [Tutorial](extras/formitfastpack/formitfastpack.tutorial).
+Below is a simple example of using the _field_ snippet with a FormIt form. For a more detailed example, check out the [Tutorial](extras/formitfastpack/formitfastpack.tutorial).
 
 ``` php
 [[!FormIt?
@@ -34,25 +34,25 @@ _old_uri: "revo/formitfastpack/"
 
 ## Included Snippets
 
- [**field**](extras/formitfastpack/formitfastpack.field): One snippet call generates the HTML for a single form field. The HTML for all fields of a single design can be managed with only two chunks (one outer and one inner), and dynamic values such as the current field value and error messages are processed correctly. Selective caching speeds up option processing.
+[**field**](extras/formitfastpack/formitfastpack.field): One snippet call generates the HTML for a single form field. The HTML for all fields of a single design can be managed with only two chunks (one outer and one inner), and dynamic values such as the current field value and error messages are processed correctly. Selective caching speeds up option processing.
 
- [**fieldSetDefaults**](extras/formitfastpack/fieldsetdefaults): This snippet outputs nothing, but any parameters passed to it will change the default value for all subsequently-processed field snippets. This method of setting defaults will not work if a property set is used with the field snippet.
+[**fieldSetDefaults**](extras/formitfastpack/fieldsetdefaults): This snippet outputs nothing, but any parameters passed to it will change the default value for all subsequently-processed field snippets. This method of setting defaults will not work if a property set is used with the field snippet.
 
- **fieldPropSetExample**: This is a dummy snippet that holds a complete property set for the "field" snippet. Because property sets cannot work with fieldSetDefaults, the field snippet does not come with a property set. This property set is provided for those who prefer to use property sets over fieldSetDefaults.
+**fieldPropSetExample**: This is a dummy snippet that holds a complete property set for the "field" snippet. Because property sets cannot work with fieldSetDefaults, the field snippet does not come with a property set. This property set is provided for those who prefer to use property sets over fieldSetDefaults.
 
- [**fiGenerateReport**](extras/formitfastpack/formitfastpack.figeneratereport): A FormIt hook which generates an email report by iterating all field submitted names and values through a row template chunk.
+[**fiGenerateReport**](extras/formitfastpack/formitfastpack.figeneratereport): A FormIt hook which generates an email report by iterating all field submitted names and values through a row template chunk.
 
- [fiProcessArrays](extras/formitfastpack/fiprocessarrays): A FormIt hook which transforms array values into concatenated strings. Later versions of FormIt now provide similar functionality.
+[fiProcessArrays](extras/formitfastpack/fiprocessarrays): A FormIt hook which transforms array values into concatenated strings. Later versions of FormIt now provide similar functionality.
 
- _formCollectErrors_ (coming soon): Outputs a list of form errors.
+_formCollectErrors_ (coming soon): Outputs a list of form errors.
 
 ## Automatic Labels
 
- By naming your fields properly, you can use FFP's method of generating labels from field names. Alternatively, you can manually specify labels.
+By naming your fields properly, you can use FFP's method of generating labels from field names. Alternatively, you can manually specify labels.
 
- The labels are generated using simple output filters that can be customized: `[[+name:replace=`_== `:ucwords]]`
+The labels are generated using simple output filters that can be customized: `[[+name:replace=`_== `:ucwords]]`
 
-  _Example results:_  
+_Example results:_  
 
 | **Field Name**        | **Generated Label** |
 | --------------------- | ------------------- |

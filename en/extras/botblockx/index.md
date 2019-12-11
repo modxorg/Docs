@@ -24,22 +24,22 @@ BotBlockX creates a lot of files in the block/ directory, but they are all zero-
 - Author: Alex Kemp [bot-block](http://biostatisticien.eu/www.searchlores.org/bot-block.php.txt)
 - Author: Bob Ray [Bob's Guides](http://bobsguides.com)
 
- This version of the BotBlockX extra was developed by Bob Ray. It was first posted to GitHub on Oct 28, 2011. As of Jun 22, 2017 it had been last updated on Jun 12, 2017, had 51 commits, and had been downloaded 1,494 times. The BotBlockX package consists of 296 separate files, containing 8,988 lines of code.
+This version of the BotBlockX extra was developed by Bob Ray. It was first posted to GitHub on Oct 28, 2011. As of Jun 22, 2017 it had been last updated on Jun 12, 2017, had 51 commits, and had been downloaded 1,494 times. The BotBlockX package consists of 296 separate files, containing 8,988 lines of code.
 
 It is currently maintained by Bob Ray.
 
 ## Download
 
- BotBlockX can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/botblockx).
+BotBlockX can be downloaded and installed from within the MODX Revolution Manager via [Package Manager](developing-in-modx/advanced-development/package-management "Package Manager") (Extras -> Installer), or from the [MODX Extras Repository](https://modx.com/extras/package/botblockx).
 
 ## Development and Bug Reporting
 
- BotBlockX is stored and developed using GitHub, and can be found here: [BotBlockX GitHub main page](https://github.com/BobRay/BotBlockX).
+BotBlockX is stored and developed using GitHub, and can be found here: [BotBlockX GitHub main page](https://github.com/BobRay/BotBlockX).
 
- Bugs and feature requests can be filed here: [BotBlockX issues page.](https://github.com/BobRay/BotBlockX/issues).
+Bugs and feature requests can be filed here: [BotBlockX issues page.](https://github.com/BobRay/BotBlockX/issues).
 
 Questions about how to use BotBlockX should be posted on the [MODX Forums](https://forums.modx.com).
 
 ## Documentation
 
- The full documentation for BotBlockX can be found at the author's web site (Bob's Guides): [BotBlockX Documentation](https://bobsguides.com/botblockx-tutorial.html).
+The full documentation for BotBlockX can be found at the author's web site (Bob's Guides): [BotBlockX Documentation](https://bobsguides.com/botblockx-tutorial.html).

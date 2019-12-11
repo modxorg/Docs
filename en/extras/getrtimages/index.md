@@ -24,7 +24,7 @@ In the end, this is only one of many slideshow & gallery management options in M
 
 ### **Examples**
 
-#### Snippet Call:
+#### Snippet Call
 
 ``` php
 [[getRTImages? &tv=`rich_text_TV` &tpl=`image_list_tpl`]]
@@ -32,7 +32,7 @@ In the end, this is only one of many slideshow & gallery management options in M
 
  This would extract all html img elements, grab the "src", "alt", "title", and "data-index" attributes and make them available as placeholders in the &tpl Chunk. Up to 10 images will be returned by default, but that can be modified using the &limit property.
 
-#### Template Chunk:
+#### Template Chunk
 
 ``` html
 <li><a href="[[+src]]" title="[[+title]]"><img src="[[+src]]" alt="[[+alt]]"></a></li>

@@ -70,7 +70,7 @@ This example still uses the default form (you probably don't want that in this c
   &amountTax=`2.85`
   &description=`Product XYZ ([[+currency]][[+amount]])`
   &currencies=`USD`
-  ]]
+]]
 ```
 
 ## More mhPayPal documentation

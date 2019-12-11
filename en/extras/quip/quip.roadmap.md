@@ -66,19 +66,19 @@ Tasks in purple are already finished in Git. Ones in green are finished in beta/
 
 ### Quip 0.5.1
 
-- Auto-fix URLs without http:// prefix
+- Auto-fix URLs without <http://> prefix
 - Added Russian translation
 
 ### Quip 0.5
 
 - Comment Moderation
-  - Access Policy based
-  - Notification email to moderators
-  - Usergroup-based moderatorship
-  - Single parameter-passed moderator usernames
-  - Allow 1st-time-only moderation to comments
-  - Allow users to see their unapproved comments
-  - Allow notification to users when their comments are approved
+    - Access Policy based
+    - Notification email to moderators
+    - Usergroup-based moderatorship
+    - Single parameter-passed moderator usernames
+    - Allow 1st-time-only moderation to comments
+    - Allow users to see their unapproved comments
+    - Allow notification to users when their comments are approved
 - Batch actions on Comments (incl. approve/reject)
 - Auto-close thread on X date or X days after current resource's publishedon date
 - Auto-convert URL links to html href tags.
@@ -89,7 +89,7 @@ Tasks in purple are already finished in Git. Ones in green are finished in beta/
 ### Quip 0.4
 
 - Toggleable threaded comments
-  - Restrict threading to X levels deep
+    - Restrict threading to X levels deep
 - Separate snippet into separate QuipReply and Quip snippets
 - Add latest comments snippet
 - Add email notifications

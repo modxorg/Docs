@@ -1,6 +1,6 @@
 ---
-title: MODx.msg
-translation: extending-modx/custom-manager-pages/modext/modx.msg
+title: "MODx.msg"
+translation: "extending-modx/custom-manager-pages/modext/modx.msg"
 ---
 
 ## MODx.msg

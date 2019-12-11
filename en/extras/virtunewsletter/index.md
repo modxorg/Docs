@@ -29,7 +29,7 @@ Note: MODX Cloud currently does not provide cron jobs as a service.
 
 Read more about how to set it up in the cron section below.
 
-# Email Templates
+## Email Templates
 
 You will need to provide some email templates for confirmations. These templates are resources, not chunks or standard templates. They can be left unpublished or hidden, it doesn't matter.
 The **pagetitle** will be the _subject_ of the email and the **content** will be the _body_ of the email.
@@ -40,7 +40,7 @@ This diagram explains which resources are for what:
 
 ![](virtunewsletter-bpml.jpg)
 
-## "Thank you for your subscription" Email
+### "Thank you for your subscription" Email
 
 Email template for subscribe confirmation. The default is in **core/components/virtunewsletter/elements/emails/activation-email.tpl**
 
@@ -53,11 +53,11 @@ Update 1.6.0-beta-1: `[[+virtuNewsletter.email.subid]]` = `[[+virtuNewsletter.em
 <p>Thank you for your subscription.</p>
 <p>To complete this, please click this link to activate your account:
     <a href="[[~62?
-       &subid=`[[+virtuNewsletter.email.subid]]`
-       &h=`[[+virtuNewsletter.email.hash]]`
-       &act=`subscribe`
-       &scheme=`full`]]"
-       target="_blank">activate</a>.
+        &subid=`[[+virtuNewsletter.email.subid]]`
+        &h=`[[+virtuNewsletter.email.hash]]`
+        &act=`subscribe`
+        &scheme=`full`]]"
+        target="_blank">activate</a>.
 </p>
 <p>You can unsubscribe back later if it is required.</p>
 <p> </p>
@@ -72,7 +72,7 @@ The ID# **62** should be replaced with the resource's ID for the confirmation pa
 [[!virtuNewsletter.confirm]]
 ```
 
-## "Your subscription has been activated successfully" Email
+### "Your subscription has been activated successfully" Email
 
 Update 1.6.0-beta2: Template can be created inside the CMP and adjusted to culture key.
 
@@ -87,7 +87,7 @@ Email template for confirmed subscription. The default is in **core/components/v
 <p><a href="http://www.example.com" target="_blank">Example.com</a></p>
 ```
 
-## "You have been unsubscribed successfully" Email
+### "You have been unsubscribed successfully" Email
 
 Update 1.6.0-beta2: Template can be created inside the CMP and adjusted to culture key.
 
@@ -106,7 +106,7 @@ In each newsletter and user can click an unsubscription link. This link will go 
 
 At this point, the subscriber won't be removed from the system; only be deactivated.
 
-# System Settings
+## System Settings
 
 | Settings                                     | Description                                                                                                                                                                                           |
 | -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -119,11 +119,11 @@ At this point, the subscriber won't be removed from the system; only be deactiva
 | virtunewsletter.unsubscribe\_succeeded\_tpl  | Resource's ID as the email template for the completed confirmation of the unsubscription                                                                                                              |
 | virtunewsletter.readerpage                   | Resource's ID where visitor can access the newsletter via web                                                                                                                                         |
 
-# Resources, Snippets and Chunks
+## Resources, Snippets and Chunks
 
 You need to create 3 more resources with its own snippet in it:
 
-## 1. Subscribe
+### 1. Subscribe
 
 Create a resource, and put this snippet as the content.
 
@@ -133,7 +133,7 @@ Create a resource, and put this snippet as the content.
 [[!virtuNewsletter.subscribe]]
 ```
 
-## 2. Confirm
+### 2. Confirm
 
 Create a resource, and put this snippet in the content.
 
@@ -143,7 +143,7 @@ Create a resource, and put this snippet in the content.
 [[!virtuNewsletter.confirm]]
 ```
 
-## 3. Read
+### 3. Read
 
 Create a resource, and put this snippet in the content.
 
@@ -161,7 +161,7 @@ To dump the placeholders, use this
 [[!virtuNewsletter.reader? &toArray=`1`]]
 ```
 
-## 4. Chunk
+### 4. Chunk
 
 The subscribe form (can be a chunk) is simply like this:
 
@@ -182,7 +182,7 @@ Again, **MAKE SURE YOU HAVE THAT CATEGORY INSIDE THE CMP.**
 
 The name itself can be changed, but make sure you have to apply this also to the **`[[!virtuNewsletter.subscribe? &categoryKey=`category`]]`** onthe [Subscribe page](extras/virtunewsletter#virtuNewsletter-1.Subscribe) above
 
-## 5. The Newsletters
+### 5. The Newsletters
 
 You are now ready to create the newsletters using the common resource.
 
@@ -217,17 +217,17 @@ Note: Either &e **or** &h is pre-requisite. You just need one of them.
 
 Just remember to always put **&scheme=`full`** to all link tags, so they will be appended with the full URL of the website.
 
-# Custom Manager Page (CMP)
+## Custom Manager Page (CMP)
 
-## Newsletters
+### Newsletters
 
-### Category
+#### Category
 
 Category is a group of subscribers. The subscriber can be from usergroups, or anonymous subscriber from web page, whom registered using the subscription form. Because this is required for newsletter, then the subscription form **must** have category field (or anything you define which matches with `[[!virtuNewsletter.subscriber? &categoryKey=`category`]]` controller snippet).
 
 So in the CMP you have to create a category first.
 
-## Subscribers
+### Subscribers
 
 This section shows you the registered subscribers, or the auto-registered subscribers which are set on the System Settings ( **virtunewsletter.usergroups**). Synchronize them if you like.
 

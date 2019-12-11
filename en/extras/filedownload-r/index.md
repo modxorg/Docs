@@ -4,8 +4,6 @@ _old_id: "639"
 _old_uri: "revo/filedownload-r"
 ---
 
-# FileDownload R
-
 FileDownload R is a snippet that will display a list of files from user's directory.
 
 This snippet is a complete rewrite of the [Kyles Jabber](http://muddydogpaws.com/)'s [FileDownload](http://wiki.modxcms.com/index.php/FileDownload) for MODX Evolution.

@@ -21,21 +21,21 @@ VersionX was first developed in December 2010 by Mark Hamstra and made it up to 
 
 In August 2011, the first steps towards a complete rewrite were made, which happened mostly in private repositories until late November. With the first version of the 2.0.0 branch released on May 3rd, 2012, VersionX is now future-proof, flexible and able of versioning all elements and resources.
 
-| Version      | Release date | Remarks / highlights                                                                              |
-| ------------ | ------------ | ------------------------------------------------------------------------------------------------- |
-| 1.0.0-alpha  | 9 Jan 2011   | Initial release.                                                                                  |
-| 1.0.0-alpha2 | 11 Jan 2011  | Several fatal issues fixed, German translation added                                              |
-| 1.0.0-alpha3 | 14 Jan 2011  | Important fixes filed, usability improvements, French and Russian translated added                |
-| 1.0.0-alpha4 | 18 Mar 2011  | Many bugfixes.                                                                                    |
-| 1.0.0-alpha5 | 24 Mar 2011  | Few fatal bugfixes.                                                                               |
-| 2.0.0-rc1    | 03 May 2012  | Complete rewrite including versioning of Elements and actually functional restoring of resources. |
-Compatible with Revolution 2.0.8 - 2.2.x (excluding 2.2.0-pl2, including basic support for Custom Resource Classes).
-Tabs added to Resource and Templates. |
-| 2.0.0-rc2 | 28 May 2012 | Bugfixes, dashboard widget, DE and RU translations. Fixes critical bug with static resources. |
-| 2.0.0-rc3 | 08 July 2012 | Bugfixes, UI improvements and plugin and snippet versioning UIs added. |
-| 2.0.0-rc4 | 19 July 2012 | Critical bugfix for specific browsers. |
-| 2.0.0-pl | 29 October 2012 | Bugfixes, better UTF-8 support, ability to revert Resources. |
-| 2.1.0-pl | 14 January 2013 | Bugfixes, ability to revert all elements, remember open tabs in component. |
+| Version      | Release date    | Remarks / highlights                                                                                                 |
+| ------------ | --------------- | -------------------------------------------------------------------------------------------------------------------- |
+| 1.0.0-alpha  | 9 Jan 2011      | Initial release.                                                                                                     |
+| 1.0.0-alpha2 | 11 Jan 2011     | Several fatal issues fixed, German translation added                                                                 |
+| 1.0.0-alpha3 | 14 Jan 2011     | Important fixes filed, usability improvements, French and Russian translated added                                   |
+| 1.0.0-alpha4 | 18 Mar 2011     | Many bugfixes.                                                                                                       |
+| 1.0.0-alpha5 | 24 Mar 2011     | Few fatal bugfixes.                                                                                                  |
+| 2.0.0-rc1    | 03 May 2012     | Complete rewrite including versioning of Elements and actually functional restoring of resources.                    |
+|              |                 | Compatible with Revolution 2.0.8 - 2.2.x (excluding 2.2.0-pl2, including basic support for Custom Resource Classes). |
+|              |                 | Tabs added to Resource and Templates.                                                                                |
+| 2.0.0-rc2    | 28 May 2012     | Bugfixes, dashboard widget, DE and RU translations. Fixes critical bug with static resources.                        |
+| 2.0.0-rc3    | 08 July 2012    | Bugfixes, UI improvements and plugin and snippet versioning UIs added.                                               |
+| 2.0.0-rc4    | 19 July 2012    | Critical bugfix for specific browsers.                                                                               |
+| 2.0.0-pl     | 29 October 2012 | Bugfixes, better UTF-8 support, ability to revert Resources.                                                         |
+| 2.1.0-pl     | 14 January 2013 | Bugfixes, ability to revert all elements, remember open tabs in component.                                           |
 
 **VersionX 1.0 and 2.0 are NOT compatible with eachother**
 Due to the severity of the rewrite, VersionX 1.0 and 2.0 are not compatible with eachother. However, considering the huge advantages of 2.0 over 1.0, VersionX 2.0 will be pushed out as an update to 1.0 and the update process should be pretty smooth.. **minus the fact that your stored revisions will not be imported to VersionX 2.0** and you will not be able to interact with them through the Manager after updating to 2.0. You can, however, access your old data by opening up the extra\_versionx table in a tool such as PhpMyAdmin. An import is not planned, however during the setup procedure of VersionX 2.0 you are presented with options to create a snapshot of the current data. See for more information under Usage & Features.

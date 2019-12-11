@@ -6,15 +6,15 @@ _old_uri: "revo/login/login.register"
 
 ## What is Register?
 
- Register is a registration form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets"). An example call can be found [here](extras/login/login.register/example-form-1 "Register.Example Form 1").
+Register is a registration form processing [Snippet](developing-in-modx/basic-development/snippets "Snippets"). An example call can be found [here](extras/login/login.register/example-form-1 "Register.Example Form 1").
 
 ## Usage
 
- Simply place the Register snippet in the Resource where your registration form is. (A default one called lgnRegisterForm is provided by the [Login](extras/login "Login") 3PC.) This snippet also requires Activation by the User, so they will get an email in their inbox regarding their signup.
+Simply place the Register snippet in the Resource where your registration form is. (A default one called lgnRegisterForm is provided by the [Login](extras/login "Login") 3PC.) This snippet also requires Activation by the User, so they will get an email in their inbox regarding their signup.
 
 ### Default Properties
 
- Register has some default properties packaged into it. They are:
+Register has some default properties packaged into it. They are:
 
 | Name                              | Description                                                                                                                                                                                                                                | Default             |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------- |
@@ -52,11 +52,11 @@ _old_uri: "revo/login/login.register"
 
 ### Validators
 
- Validators in Login follow the same syntax as [FormIt Validators](extras/formit/formit.validators "FormIt.Validators"). You can use the methods described there to use them in your Login-based snippets.
+Validators in Login follow the same syntax as [FormIt Validators](extras/formit/formit.validators "FormIt.Validators"). You can use the methods described there to use them in your Login-based snippets.
 
 ### Custom Validators
 
- You can also do custom validators by creating a Snippet and using that as the validator name. You **must** specify its name in the customValidators property, or it will not be run. Example: We create a Snippet called 'equalTo' and on our field, we set:
+You can also do custom validators by creating a Snippet and using that as the validator name. You **must** specify its name in the customValidators property, or it will not be run. Example: We create a Snippet called 'equalTo' and on our field, we set:
 
 ``` php
 <label>
@@ -65,7 +65,7 @@ _old_uri: "revo/login/login.register"
 </label>
 ```
 
- And in our Register call:
+And in our Register call:
 
 ``` php
 [[!Register?
@@ -74,7 +74,7 @@ _old_uri: "revo/login/login.register"
 ]]
 ```
 
- Now, in our snippet, our code would look like so:
+Now, in our snippet, our code would look like so:
 
 ``` php
 <?php
@@ -85,7 +85,7 @@ return true;
 ?>
 ```
 
- Returning true will make the field valid. Any other return value will be the error message. Snippets get passed the following parameters in the $scriptProperties array:
+Returning true will make the field valid. Any other return value will be the error message. Snippets get passed the following parameters in the $scriptProperties array:
 
 - **key**: The name of the field.
 - **value**: The value of the field.
@@ -95,7 +95,7 @@ return true;
 
 ## Post-Validation
 
- After the form has been validated, the Register snippet can do the following:
+After the form has been validated, the Register snippet can do the following:
 
 - Assign the user to usergroups
 - Send an activation email
@@ -104,13 +104,13 @@ return true;
 
 ### Assigning User to User Groups
 
- Assigning the User to specified User Groups is easy. Just specify a comma-separated list of either the name of the User Group or the User Group's ID in the "&usergroups" property. This example will assign the User to the "Marketing" and "Research" groups:
+Assigning the User to specified User Groups is easy. Just specify a comma-separated list of either the name of the User Group or the User Group's ID in the "&usergroups" property. This example will assign the User to the "Marketing" and "Research" groups:
 
 ``` php
 [[!Register? &usergroups=`Marketing,Research`]]
 ```
 
- Alternatively, you can also specify the Role you would like to add the user to in the User Group by adding it after the User Group name with a colon, like so:
+Alternatively, you can also specify the Role you would like to add the user to in the User Group by adding it after the User Group name with a colon, like so:
 
 ``` php
 [[!Register? &usergroups=`Marketing:Member,Research:Super User`]]
@@ -118,13 +118,13 @@ return true;
 
 ### Sending an Activation Email
 
- Register by default requires the User to activate their account before logging in. The Snippet creates the modUser object and sets its "active" field to 0. The User then gets an email with a URL to activate their account with. Once the User visits the page, their account is set to "active=1", and they can then login.
+Register by default requires the User to activate their account before logging in. The Snippet creates the modUser object and sets its "active" field to 0. The User then gets an email with a URL to activate their account with. Once the User visits the page, their account is set to "active=1", and they can then login.
 
- To enable this, you will need to create an Activation page by creating a new Resource, and putting the [ConfirmRegister](extras/login/login.confirmregister "Login.ConfirmRegister") snippet inside of it.
+To enable this, you will need to create an Activation page by creating a new Resource, and putting the [ConfirmRegister](extras/login/login.confirmregister "Login.ConfirmRegister") snippet inside of it.
 
- Next, you'll need to specify an email template chunk to use for the email being sent to the user. An example one is provided with the name: lgnActivateEmailTpl.
+Next, you'll need to specify an email template chunk to use for the email being sent to the user. An example one is provided with the name: lgnActivateEmailTpl.
 
- An example Register snippet call with activation would look like this:
+An example Register snippet call with activation would look like this:
 
 ``` php
 [[!Register?
@@ -135,49 +135,49 @@ return true;
 ]]
 ```
 
- This would send the User the email specified in the "myActivationEmailTpl" chunk, with the specified subject line, which will direct the User to the Resource 26 to activate their account. It will also, after sending the email, redirect the User to a "Please activate your account page" of sorts at Resource 325.
+This would send the User the email specified in the "myActivationEmailTpl" chunk, with the specified subject line, which will direct the User to the Resource 26 to activate their account. It will also, after sending the email, redirect the User to a "Please activate your account page" of sorts at Resource 325.
 
- Activation can be turned off by setting &activation=`0`. Note, though, that this will mean anyone - including spambots - can register and be active users in your site.
+Activation can be turned off by setting &activation=`0`. Note, though, that this will mean anyone - including spambots - can register and be active users in your site.
 
- The &activationEmailTpl field can be a chunk name by default. You can change the type of the field by setting &activationEmailTplType to one of the following values:
+The &activationEmailTpl field can be a chunk name by default. You can change the type of the field by setting &activationEmailTplType to one of the following values:
 
 - **modChunk** - The default. A name of a chunk.
 - **file** - Specify a filename with an absolute path. You can use {core\_path}, {base\_path} or {assets\_path} as placeholders for this value.
 - **inline** - Specify the html straight in the property value.
 
- You can also set the time-to-live for an activation email, as well. This will restrict the number of minutes until the activation window expires. You can do this by setting the value in the "activationttl" property. It defaults to 3 hours.
+You can also set the time-to-live for an activation email, as well. This will restrict the number of minutes until the activation window expires. You can do this by setting the value in the "activationttl" property. It defaults to 3 hours.
 
 ### Redirecting to a Resource After Validation
 
- Redirection is simple: just specify the ID of the Resource to redirect to in the "submittedResourceId" property. For example:
+Redirection is simple: just specify the ID of the Resource to redirect to in the "submittedResourceId" property. For example:
 
 ``` php
 [[!Register? &submittedResourceId=`23`]]
 ```
 
- Will redirect to the Resource with ID 23. It will also append "username" and "email" GET parameters to the URL.
+Will redirect to the Resource with ID 23. It will also append "username" and "email" GET parameters to the URL.
 
 ### Display a Success Message
 
- If the "submittedResourceId" property is not specified, Register will simply display a success message to the `[[+error.message]]` placeholder. This is the value of the "successMsg" property. For example:
+If the "submittedResourceId" property is not specified, Register will simply display a success message to the `[[+error.message]]` placeholder. This is the value of the "successMsg" property. For example:
 
 ``` php
 [[!Register? &successMsg=`Thanks for registering!`]]
 ```
 
- Will display "Thanks for registering!" in the `[[+error.message]]` property in the Resource that your `[[Register]]` snippet call is in after the User submits a valid registration form.
+Will display "Thanks for registering!" in the `[[+error.message]]` property in the Resource that your `[[Register]]` snippet call is in after the User submits a valid registration form.
 
 ## Typical Setup
 
- It's really easy to get confused about the various pages (resources) used for registration. In a typical setup, there are four separate pages:
+It's really easy to get confused about the various pages (resources) used for registration. In a typical setup, there are four separate pages:
 
- **Register** - The page containing the Registration form - forwards to the "Thanks for Registering" page. This page contains the form and the Register snippet tag.
+**Register** - The page containing the Registration form - forwards to the "Thanks for Registering" page. This page contains the form and the Register snippet tag.
 
- **Thanks for Registering** - The page that the user is forwarded to from the Registration form - This page should contain only text (no snippet tags) saying "Thank you for Registering - you'll get an email" - etc.
+**Thanks for Registering** - The page that the user is forwarded to from the Registration form - This page should contain only text (no snippet tags) saying "Thank you for Registering - you'll get an email" - etc.
 
- **Confirm Register** - The page the link in the registration email points to. (The user never sees this page.) It activates the user and forwards to the Registration Confirmed page. This page should contain only the ConfirmRegister snippet tag.
+**Confirm Register** - The page the link in the registration email points to. (The user never sees this page.) It activates the user and forwards to the Registration Confirmed page. This page should contain only the ConfirmRegister snippet tag.
 
- **Registration Confirmed** - The page that the user is forwarded to from the Confirm Register page. This page should contain only text (no snippet tags) saying something like "Congratulations, you're now an active user"
+**Registration Confirmed** - The page that the user is forwarded to from the Confirm Register page. This page should contain only text (no snippet tags) saying something like "Congratulations, you're now an active user"
 
 ## See Also
 

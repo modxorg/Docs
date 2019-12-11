@@ -77,7 +77,7 @@ class CopyrightedResourceUpdateProcessor extends modResourceUpdateProcessor {
 
 ## Extra Attributes
 
- There are some attributes that are not in the **modx\_site\_content** table. See the comments in the **modresource.class.php** file for a list of attributes. You can set them in your resource class via the set method, e.g.:
+ There are some attributes that are not in the **`modx_site_content`** table. See the comments in the **modresource.class.php** file for a list of attributes. You can set them in your resource class via the set method, e.g.:
 
 ``` php
 $this->set('show_in_tree',false);

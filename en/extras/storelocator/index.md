@@ -38,7 +38,9 @@ From there you can add a store by filling in the description, longitude and lati
 
 ## Sorting stores
 
-To sort stores log in to the manager and go to "Components" -> "Store Locator". You will see a grid containing all of your stores, you can just pick up a single row and drop it where you want it to be. ![](sort.png)
+To sort stores log in to the manager and go to "Components" -> "Store Locator". You will see a grid containing all of your stores, you can just pick up a single row and drop it where you want it to be. 
+
+![](sort.png)
 
 ## Using StoreLocator in the front-end (user side)
 
@@ -82,25 +84,25 @@ Below you see the main snippet call and the placement of the placeholders. Every
 
 ``` php
 [[!StoreLocator?
-  &searchZoom=`10`
-  &zoom=`7`
-  &markerImage=`/assets/mcdonalds.png`
-  &width=`640`
-  &height=`480`
-  &centerLongitude=`5.509644`
-  &centerLatitude=`52.469397`
+    &searchZoom=`10`
+    &zoom=`7`
+    &markerImage=`/assets/mcdonalds.png`
+    &width=`640`
+    &height=`480`
+    &centerLongitude=`5.509644`
+    &centerLatitude=`52.469397`
 ]]
 
 <table>
    <tr>
       <td style="width: 640px;">
-         [[+StoreLocator.map]]        <!-- This shows the google map -->
+        [[+StoreLocator.map]]        <!-- This shows the google map -->
       </td>
       <td style="vertical-align: top;">
-         [[+StoreLocator.form]]       <!-- This shows the search form -->
-         <hr />
-         [[+StoreLocator.matchedStores]] / [[+StoreLocator.totalStores]] <!-- This shows number of found stores / total stores -->
-         [[+StoreLocator.storeList]]  <!-- This shows the list of stores and search results -->
+        [[+StoreLocator.form]]       <!-- This shows the search form -->
+        <hr />
+        [[+StoreLocator.matchedStores]] / [[+StoreLocator.totalStores]] <!-- This shows number of found stores / total stores -->
+        [[+StoreLocator.storeList]]  <!-- This shows the list of stores and search results -->
       </td>
    </tr>
 </table>

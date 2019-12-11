@@ -46,38 +46,38 @@ This gets much easier once you understand which parameters should reference list
 
 The simplest WayFinder call uses built-in formatting:
 
-### Snippet call:
+### Snippet call
 
 ``` php
 [[Wayfinder? &startId=`55` ]]
 ```
 
-### Output example:
+### Output example
 
 ``` html
 <ul>
-        <li class="first"><a href="media-hub/news" title="HG in the News" >HG in the News</a></li>
-        <li><a href="media-hub/events" title="HG Events" >HG Events</a></li>
-        <li><a href="media-hub/press" title="Press Releases" >Press Releases</a></li>
-        <li><a href="media-hub/blog/" title="HG Blog" >HG Blog</a>
+    <li class="first"><a href="media-hub/news" title="HG in the News">HG in the News</a></li>
+    <li><a href="media-hub/events" title="HG Events">HG Events</a></li>
+    <li><a href="media-hub/press" title="Press Releases">Press Releases</a></li>
+    <li><a href="media-hub/blog/" title="HG Blog">HG Blog</a>
 
-                <ul>
-                        <li class="first"><a href="media-hub/blog/test-section/" title="Blog Test Section" >Blog Test Section</a>
+    <ul>
+        <li class="first"><a href="media-hub/blog/test-section/" title="Blog Test Section">Blog Test Section</a>
 
-                                <ul>
-                                        <li class="first"><a href="media-hub/blog/test-section/test-post" title="Test Post" >Test Post</a></li>
-                                        <li><a href="media-hub/blog/test-section/other-post" title="Other Post" >Other Post</a></li>
-                                        <li class="last"><a href="media-hub/blog/test-section/third-post" title="Third Post" >Third Post</a></li>
-                                </ul>
-
-                        </li>
-                        <li class="last"><a href="media-hub/blog/archives" title="Blog Archives" >Archives</a></li>
-                </ul>
+        <ul>
+            <li class="first"><a href="media-hub/blog/test-section/test-post" title="Test Post">Test Post</a></li>
+            <li><a href="media-hub/blog/test-section/other-post" title="Other Post">Other Post</a></li>
+            <li class="last"><a href="media-hub/blog/test-section/third-post" title="Third Post">Third Post</a></li>
+        </ul>
 
         </li>
-        <li><a href="media-hub/fast-facts" title="HG Fast Facts" >HG Fast Facts</a></li>
-        <li><a href="media-hub/publications" title="HG Publications" >HG Publications</a></li>
-        <li class="last"><a href="media-hub/media-contact" title="Media Contact" >Media Contact</a></li>
+        <li class="last"><a href="media-hub/blog/archives" title="Blog Archives">Archives</a></li>
+    </ul>
+
+    </li>
+    <li><a href="media-hub/fast-facts" title="HG Fast Facts">HG Fast Facts</a></li>
+    <li><a href="media-hub/publications" title="HG Publications">HG Publications</a></li>
+    <li class="last"><a href="media-hub/media-contact" title="Media Contact">Media Contact</a></li>
 </ul>
 ```
 
@@ -101,44 +101,44 @@ We set our "rowTpl" Chunk to look like this:
 </li>
 ```
 
-### Output Example:
+### Output Example
 
 ``` html
 <ul>
+    <!-- rowTpl -->
+    <li class="first"><a href="media-hub/news" title="HG in the News">HG in the News</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/events" title="HG Events">HG Events</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/press" title="Press Releases">Press Releases</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/blog/" title="HG Blog">HG Blog</a>
+
+    <ul>
         <!-- rowTpl -->
-        <li class="first"><a href="media-hub/news" title="HG in the News" >HG in the News</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/events" title="HG Events" >HG Events</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/press" title="Press Releases" >Press Releases</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/blog/" title="HG Blog" >HG Blog</a>
+        <li class="first"><a href="media-hub/blog/test-section/" title="Blog Test Section">Blog Test Section</a>
 
         <ul>
-                <!-- rowTpl -->
-                <li class="first"><a href="media-hub/blog/test-section/" title="Blog Test Section" >Blog Test Section</a>
-
-                        <ul>
-                                <!-- rowTpl -->
-                                <li class="first"><a href="media-hub/blog/test-section/test-post" title="Test Post" >Test Post</a></li>
-                                <!-- rowTpl -->
-                                <li><a href="media-hub/blog/test-section/other-post" title="Other Post" >Other Post</a></li>
-                                <!-- rowTpl -->
-                                <li class="last"><a href="media-hub/blog/test-section/third-post" title="Third Post" >Third Post</a></li>
-                        </ul>
-
-                </li>
-                <!-- rowTpl -->
-                <li class="last"><a href="media-hub/blog/archives" title="Blog Archives" >Archives</a></li>
+            <!-- rowTpl -->
+            <li class="first"><a href="media-hub/blog/test-section/test-post" title="Test Post">Test Post</a></li>
+            <!-- rowTpl -->
+            <li><a href="media-hub/blog/test-section/other-post" title="Other Post">Other Post</a></li>
+            <!-- rowTpl -->
+            <li class="last"><a href="media-hub/blog/test-section/third-post" title="Third Post">Third Post</a></li>
         </ul>
 
         </li>
         <!-- rowTpl -->
-        <li><a href="media-hub/fast-facts" title="HG Fast Facts" >HG Fast Facts</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/publications" title="HG Publications" >HG Publications</a></li>
-        <!-- rowTpl -->
-        <li class="last"><a href="media-hub/media-contact" title="Media Contact" >Media Contact</a></li>
+        <li class="last"><a href="media-hub/blog/archives" title="Blog Archives">Archives</a></li>
+    </ul>
+
+    </li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/fast-facts" title="HG Fast Facts">HG Fast Facts</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/publications" title="HG Publications">HG Publications</a></li>
+    <!-- rowTpl -->
+    <li class="last"><a href="media-hub/media-contact" title="Media Contact">Media Contact</a></li>
 </ul>
 ```
 
@@ -164,47 +164,47 @@ And here's our new Chunk "outerTpl":
 </ul>
 ```
 
-### Sample output:
+### Sample output
 
 ``` html
 <!-- outerTpl -->
 <ul class="topnav">
+    <!-- rowTpl -->
+    <li class="first"><a href="media-hub/news" title="HG in the News">HG in the News</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/events" title="HG Events">HG Events</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/press" title="Press Releases">Press Releases</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/blog/" title="HG Blog">HG Blog</a>
+
+    <!-- outerTpl -->
+    <ul class="topnav">
         <!-- rowTpl -->
-        <li class="first"><a href="media-hub/news" title="HG in the News" >HG in the News</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/events" title="HG Events" >HG Events</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/press" title="Press Releases" >Press Releases</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/blog/" title="HG Blog" >HG Blog</a>
+        <li class="first"><a href="media-hub/blog/test-section/" title="Blog Test Section">Blog Test Section</a>
 
         <!-- outerTpl -->
         <ul class="topnav">
-                <!-- rowTpl -->
-                <li class="first"><a href="media-hub/blog/test-section/" title="Blog Test Section" >Blog Test Section</a>
-
-                        <!-- outerTpl -->
-                        <ul class="topnav">
-                                <!-- rowTpl -->
-                                <li class="first"><a href="media-hub/blog/test-section/test-post" title="Test Post" >Test Post</a></li>
-                                <!-- rowTpl -->
-                                <li><a href="media-hub/blog/test-section/other-post" title="Other Post" >Other Post</a></li>
-                                <!-- rowTpl -->
-                                <li class="last"><a href="media-hub/blog/test-section/third-post" title="Third Post" >Third Post</a></li>
-                        </ul>
-
-                </li>
-                <!-- rowTpl -->
-                <li class="last"><a href="media-hub/blog/archives" title="Blog Archives" >Archives</a></li>
+            <!-- rowTpl -->
+            <li class="first"><a href="media-hub/blog/test-section/test-post" title="Test Post">Test Post</a></li>
+            <!-- rowTpl -->
+            <li><a href="media-hub/blog/test-section/other-post" title="Other Post">Other Post</a></li>
+            <!-- rowTpl -->
+            <li class="last"><a href="media-hub/blog/test-section/third-post" title="Third Post">Third Post</a></li>
         </ul>
 
         </li>
         <!-- rowTpl -->
-        <li><a href="media-hub/fast-facts" title="HG Fast Facts" >HG Fast Facts</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/publications" title="HG Publications" >HG Publications</a></li>
-        <!-- rowTpl -->
-        <li class="last"><a href="media-hub/media-contact" title="Media Contact" >Media Contact</a></li>
+        <li class="last"><a href="media-hub/blog/archives" title="Blog Archives">Archives</a></li>
+    </ul>
+
+    </li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/fast-facts" title="HG Fast Facts">HG Fast Facts</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/publications" title="HG Publications">HG Publications</a></li>
+    <!-- rowTpl -->
+    <li class="last"><a href="media-hub/media-contact" title="Media Contact">Media Contact</a></li>
 </ul>
 ```
 
@@ -220,7 +220,7 @@ Did you notice how in our **outerTpl** we explicitly set the CSS class? You don'
 
 This time around we are going to specify a different formatting chunk for the items that are folders with children (i.e. "containers" as the documentation calls them). In our example image, this applies to the "HG Blog (59)" and to the "Blog Test Section (100)" pages.
 
-### Sample Snippet Call:
+### Sample Snippet Call
 
 ``` php
 [[Wayfinder? &startId=`55` &rowTpl=`rowTpl` &outerTpl=`outerTpl` &parentRowTpl=`parentRow`]]
@@ -236,50 +236,50 @@ Here's what we have in our "parentRow" Chunk:
 </li>
 ```
 
-### Sample Output:
+### Sample Output
 
 And here is our sample output.
 
 ``` html
 <!-- outerTpl -->
 <ul class="topnav">
-        <!-- rowTpl -->
-        <li class="first"><a href="media-hub/news" title="HG in the News" >HG in the News</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/events" title="HG Events" >HG Events</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/press" title="Press Releases" >Press Releases</a></li>
+    <!-- rowTpl -->
+    <li class="first"><a href="media-hub/news" title="HG in the News">HG in the News</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/events" title="HG Events">HG Events</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/press" title="Press Releases">Press Releases</a></li>
+    <!-- ParentRow -->
+    <li><a href="media-hub/blog/">HG Blog</a> - HG Blog
+
+    <!-- outerTpl -->
+    <ul class="topnav">
         <!-- ParentRow -->
-        <li><a href="media-hub/blog/">HG Blog</a> - HG Blog
+        <li><a href="media-hub/blog/test-section/">Blog Test Section</a> -
 
-                <!-- outerTpl -->
-                <ul class="topnav">
-                        <!-- ParentRow -->
-                        <li><a href="media-hub/blog/test-section/">Blog Test Section</a> -
-
-                                <!-- outerTpl -->
-                                <ul class="topnav">
-                                        <!-- rowTpl -->
-                                        <li class="first">
-                                        <a href="media-hub/blog/test-section/test-post" title="Test Post" >Test Post</a></li>
-                                        <!-- rowTpl -->
-                                        <li><a href="media-hub/blog/test-section/other-post" title="Other Post" >Other Post</a></li>
-                                        <!-- rowTpl -->
-                                        <li class="last"><a href="media-hub/blog/test-section/third-post" title="Third Post" >Third Post</a></li>
-                                </ul>
-
-                        </li>
-                        <!-- rowTpl -->
-                        <li class="last"><a href="media-hub/blog/archives" title="Blog Archives" >Archives</a></li>
-                </ul>
+        <!-- outerTpl -->
+        <ul class="topnav">
+            <!-- rowTpl -->
+            <li class="first">
+            <a href="media-hub/blog/test-section/test-post" title="Test Post">Test Post</a></li>
+            <!-- rowTpl -->
+            <li><a href="media-hub/blog/test-section/other-post" title="Other Post">Other Post</a></li>
+            <!-- rowTpl -->
+            <li class="last"><a href="media-hub/blog/test-section/third-post" title="Third Post">Third Post</a></li>
+        </ul>
 
         </li>
         <!-- rowTpl -->
-        <li><a href="media-hub/fast-facts" title="HG Fast Facts" >HG Fast Facts</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/publications" title="HG Publications" >HG Publications</a></li>
-        <!-- rowTpl -->
-        <li class="last"><a href="media-hub/media-contact" title="Media Contact" >Media Contact</a></li>
+        <li class="last"><a href="media-hub/blog/archives" title="Blog Archives">Archives</a></li>
+    </ul>
+
+    </li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/fast-facts" title="HG Fast Facts">HG Fast Facts</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/publications" title="HG Publications">HG Publications</a></li>
+    <!-- rowTpl -->
+    <li class="last"><a href="media-hub/media-contact" title="Media Contact">Media Contact</a></li>
 </ul>
 ```
 
@@ -298,47 +298,47 @@ That's when we can use the &innerTpl.
 [[Wayfinder? &startId=`55` &rowTpl=`rowTpl` &outerTpl=`outerTpl` &parentRowTpl=`parentRow` &innerTpl=`innerTpl`]]
 ```
 
-### Sample Output:
+### Sample Output
 
 ``` html
 <!-- outerTpl -->
 <ul class="topnav">
-        <!-- rowTpl -->
-        <li class="first"><a href="media-hub/news" title="HG in the News" >HG in the News</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/events" title="HG Events" >HG Events</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/press" title="Press Releases" >Press Releases</a></li>
+    <!-- rowTpl -->
+    <li class="first"><a href="media-hub/news" title="HG in the News">HG in the News</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/events" title="HG Events">HG Events</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/press" title="Press Releases">Press Releases</a></li>
+    <!-- ParentRow -->
+    <li><a href="media-hub/blog/">HG Blog</a> - HG Blog
+
+    <!-- innerTpl: outerTpl is used if this is not specified -->
+    <ul class="topnav">
         <!-- ParentRow -->
-        <li><a href="media-hub/blog/">HG Blog</a> - HG Blog
+        <li><a href="media-hub/blog/test-section/">Blog Test Section</a> -
 
-                <!-- innerTpl: outerTpl is used if this is not specified -->
-                <ul class="topnav">
-                        <!-- ParentRow -->
-                        <li><a href="media-hub/blog/test-section/">Blog Test Section</a> -
-
-                                <!-- innerTpl: outerTpl is used if this is not specified -->
-                                <ul class="topnav">
-                                        <!-- rowTpl -->
-                                        <li class="first"><a href="media-hub/blog/test-section/test-post" title="Test Post" >Test Post</a></li>
-                                        <!-- rowTpl -->
-                                        <li><a href="media-hub/blog/test-section/other-post" title="Other Post" >Other Post</a></li>
-                                        <!-- rowTpl -->
-                                        <li class="last"><a href="media-hub/blog/test-section/third-post" title="Third Post" >Third Post</a></li>
-                                </ul>
-
-                        </li>
-                        <!-- rowTpl -->
-                        <li class="last"><a href="media-hub/blog/archives" title="Blog Archives" >Archives</a></li>
-                </ul>
+        <!-- innerTpl: outerTpl is used if this is not specified -->
+        <ul class="topnav">
+            <!-- rowTpl -->
+            <li class="first"><a href="media-hub/blog/test-section/test-post" title="Test Post">Test Post</a></li>
+            <!-- rowTpl -->
+            <li><a href="media-hub/blog/test-section/other-post" title="Other Post">Other Post</a></li>
+            <!-- rowTpl -->
+            <li class="last"><a href="media-hub/blog/test-section/third-post" title="Third Post">Third Post</a></li>
+        </ul>
 
         </li>
         <!-- rowTpl -->
-        <li><a href="media-hub/fast-facts" title="HG Fast Facts" >HG Fast Facts</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/publications" title="HG Publications" >HG Publications</a></li>
-        <!-- rowTpl -->
-        <li class="last"><a href="media-hub/media-contact" title="Media Contact" >Media Contact</a></li>
+        <li class="last"><a href="media-hub/blog/archives" title="Blog Archives">Archives</a></li>
+    </ul>
+
+    </li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/fast-facts" title="HG Fast Facts">HG Fast Facts</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/publications" title="HG Publications">HG Publications</a></li>
+    <!-- rowTpl -->
+    <li class="last"><a href="media-hub/media-contact" title="Media Contact">Media Contact</a></li>
 </ul>
 ```
 
@@ -368,42 +368,42 @@ And here's the outputed HTML:
 ``` html
 <!-- outerTpl -->
 <ul class="topnav">
-        <!-- rowTpl -->
-        <li class="first"><a href="media-hub/news" title="HG in the News" >HG in the News</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/events" title="HG Events" >HG Events</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/press" title="Press Releases" >Press Releases</a></li>
+    <!-- rowTpl -->
+    <li class="first"><a href="media-hub/news" title="HG in the News">HG in the News</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/events" title="HG Events">HG Events</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/press" title="Press Releases">Press Releases</a></li>
+    <!-- ParentRow -->
+    <li><a href="media-hub/blog/">HG Blog</a> - HG Blog
+
+    <!-- innerTpl: outerTpl is used if this is not specified -->
+    <ul class="topnav">
         <!-- ParentRow -->
-        <li><a href="media-hub/blog/">HG Blog</a> - HG Blog
+        <li><a href="media-hub/blog/test-section/">Blog Test Section</a> -
 
-                <!-- innerTpl: outerTpl is used if this is not specified -->
-                <ul class="topnav">
-                        <!-- ParentRow -->
-                        <li><a href="media-hub/blog/test-section/">Blog Test Section</a> -
+        <!-- innerTpl: outerTpl is used if this is not specified -->
+        <ul class="topnav">
+            <!-- innerRowTpl -->
+            <li><a href="media-hub/blog/test-section/test-post">Test Post</a></li>
+            <!-- innerRowTpl -->
+            <li><a href="media-hub/blog/test-section/other-post">Other Post</a></li>
+            <!-- innerRowTpl -->
+            <li><a href="media-hub/blog/test-section/third-post">Third Post</a></li>
+        </ul>
 
-                        <!-- innerTpl: outerTpl is used if this is not specified -->
-                        <ul class="topnav">
-                                <!-- innerRowTpl -->
-                                <li><a href="media-hub/blog/test-section/test-post">Test Post</a></li>
-                                <!-- innerRowTpl -->
-                                <li><a href="media-hub/blog/test-section/other-post">Other Post</a></li>
-                                <!-- innerRowTpl -->
-                                <li><a href="media-hub/blog/test-section/third-post">Third Post</a></li>
-                        </ul>
-
-                        </li>
-                        <!-- innerRowTpl -->
-                        <li><a href="media-hub/blog/archives">Archives</a></li>
-
-                </ul>
         </li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/fast-facts" title="HG Fast Facts" >HG Fast Facts</a></li>
-        <!-- rowTpl -->
-        <li><a href="media-hub/publications" title="HG Publications" >HG Publications</a></li>
-        <!-- rowTpl -->
-        <li class="last"><a href="media-hub/media-contact" title="Media Contact" >Media Contact</a></li>
+        <!-- innerRowTpl -->
+        <li><a href="media-hub/blog/archives">Archives</a></li>
+
+    </ul>
+    </li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/fast-facts" title="HG Fast Facts">HG Fast Facts</a></li>
+    <!-- rowTpl -->
+    <li><a href="media-hub/publications" title="HG Publications">HG Publications</a></li>
+    <!-- rowTpl -->
+    <li class="last"><a href="media-hub/media-contact" title="Media Contact">Media Contact</a></li>
 </ul>
 ```
 
@@ -454,42 +454,45 @@ And here's what our sample output looks like:
 ``` php
 <!-- outerTpl -->
 <ul id="topnav" class="my_outer_class">
-        <!-- rowTpl -->
-        <li class="my_row_class my_first_class"><a href="media-hub/news" title="HG in the News" >HG in the News</a></li>
-        <!-- rowTpl -->
-        <li class="my_row_class"><a href="media-hub/events" title="HG Events" >HG Events</a></li>
-        <!-- rowTpl -->
-        <li class="my_row_class"><a href="media-hub/press" title="Press Releases" >Press Releases</a></li>
-        <!-- rowTpl -->
-        <li class="my_row_class"><a href="media-hub/blog/" title="HG Blog" >HG Blog</a>
+    <!-- rowTpl -->
+    <li class="my_row_class my_first_class"><a href="media-hub/news" title="HG in the News">HG in the News</a></li>
+    <!-- rowTpl -->
+    <li class="my_row_class"><a href="media-hub/events" title="HG Events">HG Events</a></li>
+    <!-- rowTpl -->
+    <li class="my_row_class"><a href="media-hub/press" title="Press Releases">Press Releases</a></li>
+    <!-- rowTpl -->
+    <li class="my_row_class"><a href="media-hub/blog/" title="HG Blog">HG Blog</a>
 
-                <!-- outerTpl -->
-                <ul id="topnav">
-                        <!-- rowTpl -->
-                        <li class="my_row_class my_first_class">
-                                <a href="media-hub/blog/test-section/" title="Blog Test Section" >Blog Test Section</a>
+    <!-- outerTpl -->
+    <ul id="topnav">
+        <!-- rowTpl -->
+        <li class="my_row_class my_first_class">
+        <a href="media-hub/blog/test-section/" title="Blog Test Section">Blog Test Section</a>
 
-                                <!-- outerTpl -->
-                                <ul id="topnav">
-                                        <!-- rowTpl -->
-                                        <li class="my_row_class my_first_class"><a href="media-hub/blog/test-section/test-post" title="Test Post" >Test Post</a></li>
-                                        <!-- rowTpl -->
-                                        <li class="my_row_class"><a href="media-hub/blog/test-section/other-post" title="Other Post" >Other Post</a></li>
-                                        <!-- rowTpl -->
-                                        <li class="my_row_class my_last_class"><a href="media-hub/blog/test-section/third-post" title="Third Post" >Third Post</a></li>
-                                </ul>
-                        </li>
-
-                        <!-- rowTpl -->
-                        <li class="my_row_class my_last_class"><a href="media-hub/blog/archives" title="Blog Archives" >Archives</a></li>
-                </ul>
+        <!-- outerTpl -->
+        <ul id="topnav">
+            <!-- rowTpl -->
+            <li class="my_row_class my_first_class"><a href="media-hub/blog/test-section/test-post" title="Test Post">Test
+                Post</a></li>
+            <!-- rowTpl -->
+            <li class="my_row_class"><a href="media-hub/blog/test-section/other-post" title="Other Post">Other Post</a>
+            </li>
+            <!-- rowTpl -->
+            <li class="my_row_class my_last_class"><a href="media-hub/blog/test-section/third-post"
+                title="Third Post">Third Post</a></li>
+        </ul>
         </li>
+
         <!-- rowTpl -->
-        <li class="my_row_class"><a href="media-hub/fast-facts" title="HG Fast Facts" >HG Fast Facts</a></li>
-        <!-- rowTpl -->
-        <li class="my_row_class"><a href="media-hub/publications" title="HG Publications" >HG Publications</a></li>
-        <!-- rowTpl -->
-        <li class="my_row_class my_last_class"><a href="media-hub/media-contact" title="Media Contact" >Media Contact</a></li>
+        <li class="my_row_class my_last_class"><a href="media-hub/blog/archives" title="Blog Archives">Archives</a></li>
+    </ul>
+    </li>
+    <!-- rowTpl -->
+    <li class="my_row_class"><a href="media-hub/fast-facts" title="HG Fast Facts">HG Fast Facts</a></li>
+    <!-- rowTpl -->
+    <li class="my_row_class"><a href="media-hub/publications" title="HG Publications">HG Publications</a></li>
+    <!-- rowTpl -->
+    <li class="my_row_class my_last_class"><a href="media-hub/media-contact" title="Media Contact">Media Contact</a></li>
 </ul>
 ```
 
