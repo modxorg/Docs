@@ -10,10 +10,10 @@ This document details the changes made between 2.x and 3.0 that may affect upgra
 
 In general, you can follow the [standard upgrading process](getting-started/maintenance/upgrading) when upgrading to 3.0. It's recommended to first upgrade to the latest 2.7 release, which will log deprecated functionality your site depends on to the MODX log.
 
-After upgrading the core and upgrading your extras, you may encounter some breaking changes that need to be addressed in extras or custom code. 
+After upgrading the core and upgrading your extras, you may encounter some breaking changes that need to be addressed in extras or custom code.
 
 - Important: [MODX 3.0 requires at least PHP 7.1](getting-started/maintenance/upgrading/3.0/requirements)
-- [A list of breaking changes can be found here](getting-started/maintenance/upgrading/3.0/breaking-changes), most notably [many core classes have been moved and renamed](getting-started/maintenance/upgrading/3.0/class-names).
+- [A list of breaking changes can be found here](getting-started/maintenance/upgrading/3.0/breaking-changes), most notably [many core classes have been moved and renamed](getting-started/maintenance/upgrading/3.0/class-names)
 - [The manager language is now dynamic](getting-started/maintenance/upgrading/3.0/manager-language)
 - [Various system settings have been removed or changed](getting-started/maintenance/upgrading/3.0/system-settings)
 
@@ -21,9 +21,10 @@ After upgrading the core and upgrading your extras, you may encounter some break
 
 ### Manager/Interface
 
-- Manager has been redesigned.
+- Redesigned installer [#14507](https://github.com/modxcms/revolution/pull/14507) and login [#13773](https://github.com/modxcms/revolution/pull/13773).
+- Manager has been redesigned. Improved manager on mobile devices [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735). Changed resource styles in the tree [#14832](https://github.com/modxcms/revolution/pull/14832)
 - Language can now be switched on the fly [#14046](https://github.com/modxcms/revolution/pull/14046)
-- All manager permissions are automatically made available in `MODx.perm` [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425),
+- All manager permissions are automatically made available in `MODx.perm` [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425)
 - Google translations are now disabled in the manager [#14414](https://github.com/modxcms/revolution/pull/14414)
 - More consistent resource/element duplication [#14411](https://github.com/modxcms/revolution/pull/14411)
 
