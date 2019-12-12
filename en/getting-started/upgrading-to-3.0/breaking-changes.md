@@ -2,6 +2,7 @@
 title: Breaking Changes
 description: 'Breaking changes in MODX3 that may affect site upgrades and packages.'
 sortorder: 1
+note: 'This document is not yet complete.'
 ---
 
 As a major release, MODX 3.0 comes with a number of breaking changes. There is always a balance to be kept between breaking changes that cleanup technical debt, and not breaking things unnecessarily.
@@ -10,8 +11,9 @@ As a major release, MODX 3.0 comes with a number of breaking changes. There is a
 
 The biggest breaking changes can be summarised as follows:
 
-- [Minimum supported PHP version has been increased to 7.1](getting-started/maintenance/upgrading/3.0/requirements)
-- [A large number of (previously unnamespaced) classes have been renamed and moved](getting-started/maintenance/upgrading/3.0/class-names), including processors and model classes.
+- [Minimum supported PHP version has been increased to 7.1](getting-started/upgrading-to-3.0/requirements)
+- [A large number of (previously unnamespaced) classes have been renamed and moved](getting-started/upgrading-to-3.0/class-names), including processors and model classes.
+- [All processors have been renamed, including base processors](getting-started/upgrading-to-3.0/processors)
 
 ## Legacy functionality cleanup
 

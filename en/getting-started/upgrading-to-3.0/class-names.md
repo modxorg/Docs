@@ -11,7 +11,7 @@ You may encounter warnings or errors (including fatal errors) in certain cases:
 - when extending one of these classes
 - when type hinting against these classes
 
-## Note about Model & Service Classes
+## Model & Service Classes
 
 Most model and service classes that are loaded through `$modx->loadClass` (which includes the xPDO Query builder for model classes) or `$modx->getService` will still work, as `loadClass` internally translates these to their new class names.
 
@@ -23,7 +23,7 @@ It is important to note that if you're **type checking** the result of such a ca
 
 You can type check against non-existant classes without a warning in PHP, so you could resolve that by type checking for both the 2.x and 3.0 class name. (e.g. `if (($foo instanceof modResource) || $foo instanceof \MODX\Revolution\modResource))`
 
-## Soft Changes
+## Changed classes, with upgrade path
 
 The following class names were changed, but have been aliased in 3.0 to help alleviate upgrade pains as they are commonly used. The aliases are automatically included through the autoloader.
 
@@ -45,23 +45,12 @@ This layer of backwards compatibility is likely to be fully removed in MODX 4.0.
 | \xPDO\Transport\xPDOTransport     | \xPDOTransport     |
 | \xPDO\Transport\xPDOObjectVehicle | \xPDOObjectVehicle |
 
-### MODX Core & Processors
+### MODX Core & Controllers
 
 | New Class                                     | Old Class                     |
 | --------------------------------------------- | ----------------------------- |
 | \MODX\Revolution\modX                         | \modX                         |
-| \MODX\Revolution\modProcessor                 | \modProcessor                 |
-| \MODX\Revolution\modObjectProcessor           | \modObjectProcessor           |
-| \MODX\Revolution\modObjectCreateProcessor     | \modObjectCreateProcessor     |
-| \MODX\Revolution\modObjectExportProcessor     | \modObjectExportProcessor     |
-| \MODX\Revolution\modObjectGetListProcessor    | \modObjectGetListProcessor    |
-| \MODX\Revolution\modObjectGetProcessor        | \modObjectGetProcessor        |
-| \MODX\Revolution\modObjectImportProcessor     | \modObjectImportProcessor     |
-| \MODX\Revolution\modObjectRemoveProcessor     | \modObjectRemoveProcessor     |
-| \MODX\Revolution\modObjectSoftRemoveProcessor | \modObjectSoftRemoveProcessor |
-| \MODX\Revolution\modObjectUpdateProcessor     | \modObjectUpdateProcessor     |
 | \MODX\Revolution\modParsedManagerController   | \modParsedManagerController   |
-| \MODX\Revolution\modObjectDuplicateProcessor  | \modObjectDuplicateProcessor  |
 | \MODX\Revolution\modExtraManagerController    | \modExtraManagerController    |
 
 ### MODX Model Classes
@@ -70,8 +59,22 @@ This layer of backwards compatibility is likely to be fully removed in MODX 4.0.
 | ---------------------------- | ------------ |
 | \MODX\Revolution\modResource | \modResource |
 
-## Hard Changes
+### Processors
 
-The class name changes in this section **do not** have a separate compatibility layer, are immediately unavailable in 3.0. These are (relatively) unused in extended classes but may be used for typehinting.
+All processors have been renamed and moved, including the base processor classes. Flat-file processors are also no longer supported. [See the dedicated processors documentation](getting-started/upgrading-to-3.0/processors)
 
-... all processors ...
+## Changed classes, without upgrade path
+
+All other model and service classes do not include an automatic alias. This includes utilities like the parser (`\MODX\Revolution\modParser`)
+
+## Removed classes
+
+These classes were permanently removed from 3.0 with no alternative:
+
+- `modDeprecatedProcessor`
+- `modParser095`
+- `modTranslate095`
+- `modTranslator`
+- All classes and functions related to the `xmlrss` service/utility: `Snoopy`, `MagpieRSS`, `modRSSParser`, `RSSCache`, function `parse_w3cdtf`, function `fetch_rss`. To fetch RSS feeds, you can now use SimplePie.
+- All classes and functions related to the `xmlrpc` and `jsonrpc` services/utilities: `modXMLRPCResponse`, `modJSONRPCResponse`, `modXMLRPCResource` (+ platform classes), `modJSONRPCResource` (+ platform classes)
+
