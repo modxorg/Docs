@@ -7,9 +7,14 @@ _old_uri: "2.x/administering-your-site/using-friendly-urls"
 
 You can have friendly URLs fully functioning in under two minutes by following a simple four step process.
 
-## 1) Working .htaccess sample
+If you're using a webserver other than apache, enabling the rewrite rules will be slightly different. See:
 
-MODX supplies an ht.access file for you to edit to match your server settings It is located in the root of the MODX site. This file will be ignored by the server until you rename it or (better) copy it to a file called .htaccess. Whenever a browser requests a page, the server checks for a file called .htaccess, which can contain information about how various URLs should be handled.
+- [Friendly URLs on nginx](getting-started/friendly-urls/nginx)
+- [Friendly URLs on lighttpd](getting-started/friendly-urls/lighttpd)
+
+## 1. Enable rewrite rules 
+
+MODX supplies an ht.access file for you to edit to match your server settings. It is located in the root of the MODX site. This file will be ignored by the server until you rename it or (better) copy it to a file called .htaccess. Whenever a browser requests a page, the server checks for a file called .htaccess, which can contain information about how various URLs should be handled.
 
 The .htaccess file can be anywhere above the MODX installation but the usual location is in the MODX site root (along with the ht.access file, and the assets, manager and connectors directories as shown in the image below). For most installs, you don't have to make any changes at all to the file in order to get FURLs working. There is one change you should make, but get FURLs working first and we'll cover that change at the end of this page.
 
@@ -112,7 +117,7 @@ Be aware some hosts like to write their own .htaccess just above the site level,
 
 The RewriteBase line should end with a / for root installations  The RewriteBase for a subdirectory installation may have to be entered as: RewriteBase /subdirectoryName/ although this is normally only necessary on localhost installs.The RewriteBase line should almost always end with a slash.
 
-## 2) Configure MODX Revolution
+## 2. Configure Friendly URLs in MODX 
 
 Next, change the settings in the Friendly URLs Area of the MODX System Settings (see the following image). In MODX 2.3, click on the gear icon at the upper right and select "System Settings." In earlier versions, go to System -> System Settings. In the "Search by key" box at the upper right of the grid, type "friendly" (without the quotes), and press Enter. That will display all the Friendly URL settings. The main one you want is toward the bottom: Use Friendly URLs (friendly\_urls). Double click on the "No" and change it to "Yes".
 
@@ -126,26 +131,27 @@ The Use Friendly Alias Path (use\_alias\_path) setting allows the site to displa
 
 The friendly\_alias\_urls setting was removed in MODX 2.1+. Enabling friendly\_urls implies you are using friendly\_alias\_urls in 2.1+ and this setting was no longer useful or necessary.
 
-## 3) Edit your template(s)
+## 3. Add the base href tag to the head
 
-Make sure you have the following tag in the head section of all your templates. If you have only one front-end context (e.g., 'web') you can usually leave out the exclamation point to speed of page loads:
+Make sure you have the following tag in the head section of all your templates. 
 
 ``` html
 <base href="[[!++site_url]]" />
 ```
 
-## 4) Clear the site cache
+This is necessary so that any relative URLs (`some/resource`) are resolved from the root of the site. 
+
+## 4. Clear the site cache
 
 And you're done!
 
 The easiest way to take advantage of using fully qualified Friendly URLs, is to allow MODX to build the links using link tags, described on this page: [link tag syntax](building-sites/resources "Linking to a Resources") to create links to different resources, is easy as tying in the link tag below (where 1 is the Resource ID of the page you want to link to). This has the added benefit of being able to move resources around a web project, without needing to fix a bunch of broken links, as MODX will simply update links created in this manner automatically.
 
 ``` html
-    <a href="[[~1]]" title="some title">Some Page</a>
-
+<a href="[[~1]]" title="some title">Some Page</a>
 ```
 
-## 5) Convert WWW URLs to non-WWW or Vice Versa
+## 5. (Optional) Convert WWW URLs to non-WWW or Vice Versa
 
 Earlier, we mentioned one change that you should always make to the .htaccess file once you have FURLs working. It concerns URLs that start with 'www' (or not). A user can reach most sites with the domain name, or the domain name preceded by 'www.' You should always convert the URL to one or the other. The reasons are complicated, but if you don't do this, odd things can happen on your site. Users who are logged in, for example, can suddenly lose that status.
 

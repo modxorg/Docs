@@ -7,11 +7,10 @@ _old_uri: "2.x/getting-started/server-requirements"
 
 MODX will run fine on most shared/cloud hosting, as well as VPS and dedicated boxes. MODX is written in PHP, typically uses a MySQL database, and needs a webserver like Apache or nginx to serve web requests. 
 
-| Component | Minimum | Recommended |
+| Component | Supported | Recommended |
 | --- | --- | --- |
-| PHP | 7.0 | 7.2 or 7.3 |
-| Database | MySQL 5.5 | MariaDB 10.1 or MySQL 5.7 |
-| Webserver | * | nginx 1.8 or Apache 2.4 |
+| PHP | 7.1-7.4 | 7.3 |
+| Database | MySQL 5.5+ | MariaDB 10.1 or MySQL 5.7 |
 
 ## PHP 
 
@@ -33,7 +32,9 @@ The following permissions are required: `SELECT`, `INSERT`, `UPDATE`, `DELETE` f
 
 ## Web servers
 
-Apache 2.4 or nginx 1.8 are recommended. It's also possible to use lighttpd, IIS, Zeus, Valet, and other web servers. 
+MODX will run on most web servers available today. Apache 2.4+ or nginx 1.8+ are recommended.
+
+In order to use [friendly urls](getting-started/friendly-urls), you may need additional configuration depending on the web server. Instructions are available for [nginx](getting-started/friendly-urls/nginx) and [lighttpd](getting-started/friendly-urls/lighttpd).
 
 ## Browser Support for the Manager
 
