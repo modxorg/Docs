@@ -1,5 +1,6 @@
 ---
 title: "Explanation of Directory Structure"
+sortorder: 6
 _old_id: "108"
 _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure"
 ---

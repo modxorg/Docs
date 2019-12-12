@@ -2009,5 +2009,10 @@
     "/extras/revo/wayfinder": "en/extras/wayfinder/index",
     "/extras/revo/wayfinder/wayfinder-introductory-examples": "en/extras/wayfinder/wayfinder-introductory-examples",
     "/extras/revo/xfpc": "en/extras/xfpc/index",
-    "/extras/revo/bbbx": "en/extras/bbbx/index"
+    "/extras/revo/bbbx": "en/extras/bbbx/index",
+    "en/getting-started/maintenance/upgrading/3.0/": "en/getting-started/upgrading-to-3.0",
+    "en/getting-started/maintenance/upgrading/3.0/breaking-changes": "en/getting-started/upgrading-to-3.0/breaking-changes",
+    "en/getting-started/maintenance/upgrading/3.0/class-names": "en/getting-started/upgrading-to-3.0/class-names",
+    "en/getting-started/maintenance/upgrading/3.0/manager-language": "en/getting-started/upgrading-to-3.0/manager-language",
+    "en/getting-started/maintenance/upgrading/3.0/system-settings": "en/getting-started/upgrading-to-3.0/system-settings"
 }
