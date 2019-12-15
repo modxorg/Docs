@@ -26,7 +26,7 @@ Alternatively, though Pull Requests are preferred first and other external git r
 
 ## Using Git and GitHub and the MODX Branching Strategy
 
-If you can code, but source/version control and collaborating is new to you, don't panic! The section on [Using Git and GitHub](/community/contribute/using-git-and-github/ "Using Git and GitHub") will fill you in on how to get started and also explains the branching strategy used by MODX and what that means for contributors.
+If you can code, but source/version control and collaborating is new to you, don't panic! The section on [Using Git and GitHub](contribute/code/git-github "Using Git and GitHub") will fill you in on how to get started and also explains the branching strategy used by MODX and what that means for contributors.
 
 ## My code contribution was rejected! What?!
 
@@ -34,7 +34,7 @@ Every once in a while, a contribution submitted doesn't make it into the core. I
 
 Sometimes a contribution you submit won't make it in. That may be for a myriad of reasons:
 
-- A contribution doesn't follow [Code Standards](_legacy/developing-in-modx/code-standards "Code Standards")
+- A contribution doesn't follow [Code Standards](contribute/code/coding-standards "Code Standards")
 - The contribution will be moved to a component rather than the core
 - The contribution will be deferred to a later release
 - We used a different contribution to fix the issue
@@ -45,5 +45,5 @@ So don't take offense. We really appreciate _any and all_ contributions to MODX,
 
 ## See Also
 
-1. [Development Environments](/contribute/code/development-environment)
-2. [MODX PHP Coding Standards](/contribute/code/coding-standards)
+1. [Development Environments](contribute/code/development-environment)
+2. [MODX PHP Coding Standards](contribute/code/coding-standards)

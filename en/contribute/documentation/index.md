@@ -59,4 +59,4 @@ The name of your file (and thus, the documentation URL) does **not** have to mat
 
 If you're new to git or GitHub, or more of a visual learner, the following screencast will show you how you can edit the documentation with just the browser.
 
-<iframe sandbox="allow-same-origin allow-forms allow-popups" src="https://player.vimeo.com/video/330122657?byline=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/330122657?byline=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
