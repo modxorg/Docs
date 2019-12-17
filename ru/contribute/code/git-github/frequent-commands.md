@@ -8,10 +8,10 @@ translation: "contribute/code/git-github/frequent-commands"
 Во-первых, с помощью модели сотрудничества и ветвления MODX вы не будете делать коммиты в свою ветку Major-версии, поэтому легко поддерживать ее в актуальном состоянии. Предположим, вы работаете с `2.x`:
 
 ``` php
-$ git fetch upstream
-$ git checkout 2.x
+git fetch upstream
+git checkout 2.x
 Switched to branch "2.x"
-$ git merge --ff-only upstream/2.x
+git merge --ff-only upstream/2.x
 ```
 
 Это означает, что modxcms или другой репозиторий установлен как `upstream` в remote. (git remote manpage: <http://www.kernel.org/pub/software/scm/git/docs/git-remote.html>)
@@ -24,7 +24,7 @@ $ git merge --ff-only upstream/2.x
 git checkout -b myFeatureBranchName 2.x
 ```
 
-Если вы не получили последние изменения из апстрима и слили их локально, вам следует [сделать это сначала](#GitFAC%28FrequentlyAccessedCommands%29-HowdoIgetandkeepmylocaldevelopbranchinsync%3F).
+Если вы не получили последние изменения из апстрима и слили их локально, вам следует обратится к первому пункту статьи (Как мне создать и держать свежей локальную ветку develop?).
 
 ## Существует ли соглашение об именах для ветвей функций?
 
@@ -44,7 +44,7 @@ git checkout -b myAwesomeFeature 2.x
 
 ## Нужна ли мне новая тематическая ветка для каждой проблемы, над которой я работаю?
 
- Yes.
+Yes.
 
 ``` php
 echo 'Yes'
@@ -57,20 +57,20 @@ echo 'Yes'
 На самом деле, это, как правило, хорошая идея сделать перед тем, как сделать окончательный коммит на ваш форк и сделать Pull Request.
 
 ``` php
-$ git fetch upstream
-$ git checkout 2.x
+git fetch upstream
+git checkout 2.x
 Switched to branch "2.x"
-$ git merge --ff-only upstream/2.x
-$ git checkout my-bc-feature
+git merge --ff-only upstream/2.x
+git checkout my-bc-feature
 Switched to branch "my-bc-feature"
-$ git rebase 2.x
+git rebase 2.x
 ```
 
- Чтобы узнать больше, вот страница помощи git rebase: <http://www.kernel.org/pub/software/scm/git/docs/git-rebase.html>
+Чтобы узнать больше, вот страница помощи git rebase: <http://www.kernel.org/pub/software/scm/git/docs/git-rebase.html>
 
 ## Мне действительно нужно беспокоиться о ветке минорной версии?
 
- Нет, не совсем. Но если вы исправляете ошибки, которые должны быть включены в выпуск патча, как можно скорее, вы можете рассмотреть возможность ветвления и нацеливания на ветви с второстепенным выпуском, а не на основные, в случае необходимости их переноса из-за конфликтов в изменениях между основными и незначительный. Но это совсем не критично для рабочего процесса участника.
+Нет, не совсем. Но если вы исправляете ошибки, которые должны быть включены в выпуск патча, как можно скорее, вы можете рассмотреть возможность ветвления и нацеливания на ветви с второстепенным выпуском, а не на основные, в случае необходимости их переноса из-за конфликтов в изменениях между основными и незначительный. Но это совсем не критично для рабочего процесса участника.
 
 ``` php
 $
