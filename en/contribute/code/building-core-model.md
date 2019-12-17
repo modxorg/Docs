@@ -8,7 +8,7 @@ If you're working on the core model and need to re-generate the model based on t
 
 Building `modx.mysql.schema.xml`:
 
-````
+```` bash
 core/vendor/bin/xpdo parse-schema --config=core/model/schema/config.php --psr4=MODX\\ --update=1 mysql core/model/schema/modx.mysql.schema.xml core/src/
 ````
 
@@ -17,6 +17,6 @@ core/vendor/bin/xpdo parse-schema --config=core/model/schema/config.php --psr4=M
 
 Building `modx.sqlsrv.schema.xml`:
 
-````
+```` bash
 core/vendor/bin/xpdo parse-schema --config=core/model/schema/config.php --psr4=MODX\\ --update=1 sqlsrv core/model/schema/modx.sqlsrv.schema.xml core/src/
 ````
