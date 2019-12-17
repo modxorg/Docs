@@ -44,31 +44,31 @@ MODX contributors must work directly with their private forks on GitHub.
 
 First, clone your Fork on your local machine, into the directory which will be your webroot.
 
-**Please note:** in the examples below, you'll notice SSH-url's (git@github.com:YOURNAME/revolution.git). Github also offers HTTPS-links, which are easier to use if you're a newbie (https://github.com/YOURNAME/revolution.git). You can simply replace them in the examples.
+**Please note:** in the examples below, you'll notice SSH-url's (git@github.com:YOURNAME/revolution.git). Github also offers HTTPS-links, which are easier to use if you're a newbie <https://github.com/YOURNAME/revolution.git>. You can simply replace them in the examples.
 
 MODX contributors must work directly with their private forks on GitHub. Here is the suggested way to prepare your local repository as a developer for contributing back to any MODX project:
 
 ``` plain
-$ git clone git@github.com:YOURNAME/revolution.git
-$ cd revolution
+git clone git@github.com:YOURNAME/revolution.git
+cd revolution
 ```
 
 Next, add the original modxcms/revolution reposition as your upstream. We'll discuss the use of this later. Right now, just do it.
 
 ``` plain
-$ git remote add upstream git@github.com:modxcms/revolution.git
+git remote add upstream git@github.com:modxcms/revolution.git
 ```
 
 Now we need to checkout (read: download) the current development-branch, which is `2.7.x` at the time of writing.
 
 ``` plain
-$ git checkout 2.7.x
+git checkout 2.7.x
 ```
 
 Make sure your repository is still 'clean'. Make sure you haven't made any changes.
 
 ``` plain
-$ git status
+git status
 On branch 2.7.x
 Your branch is up-to-date with 'origin/2.7.x'.
 nothing to commit, working tree clean
@@ -79,8 +79,8 @@ If you see the above message, you're totally fine. If you do see changes, you've
 If you don't have a clean branch 2.7.x at that moment, you could rebase your 2.7.x local branch with `upstream/2.7.x` using the following command. You are losing your local changes with that command, so please stash your changes or save them in a new branch:
 
 ``` plain
-$ git fetch upstream
-$ git rebase upstream/2.7.x
+git fetch upstream
+git rebase upstream/2.7.x
 First, rewinding head to replay your work on top of it...
 Fast-forwarded 2.7.x to upstream/2.7.x.
 ```
@@ -90,16 +90,16 @@ Next we'll have to do something weird. The git-version of MODX doesn't contain a
 Cd into the _build-folder and make sure you're there ;-) You can do this by using the 'pwd' command. It will show the current path.
 
 ``` plain
-$ cd _build
-$ pwd
+cd _build
+pwd
 /your-absolute-path-here/revolution/_build
 ```
 
 Next, we need to copy (DO NOT RENAME THEM) the following 2 files:
 
 ``` plain
-$ cp build.config.sample.php build.config.php
-$ cp build.properties.sample.php build.properties.php
+cp build.config.sample.php build.config.php
+cp build.properties.sample.php build.properties.php
 ```
 
 Typically you don't have to change the contents of these files, they just need to exist there.
@@ -107,7 +107,7 @@ Typically you don't have to change the contents of these files, they just need t
 The next step requires you to have PHP in your path. Check if you have PHP in your path by doing the following:
 
 ``` plain
-$ php -v
+php -v
 PHP 7.0.15 (cli) (built: Jan 22 2017 08:51:45) ( NTS )
 Copyright (c) 1997-2017 The PHP Group
 Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
@@ -118,7 +118,7 @@ Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
 To build the MODX-core, do the following from within the _build-folder:
 
 ``` plain
-$ php transport.core.php
+php transport.core.php
 [2017-02-24 11:52:17] (INFO @ transport.core.php) Beginning build script processes...
 [2017-02-24 11:52:17] (INFO @ transport.core.php) Removed pre-existing core/ and core.transport.zip.
 [2017-02-24 11:52:17] (INFO @ transport.core.php) Core transport package created.
@@ -183,12 +183,12 @@ We've got 2 workflows worked out for you: bug fixing (doing development yourself
 
 Something along the lines of: "I'm going to try and fix this today."
 
-#### 3. Next, create a branch from your current development branch (2.6.x), to start working in your own environment.
+#### 3. Next, create a branch from your current development branch (2.6.x), to start working in your own environment
 
 If the issue you want to fix is a feature, name it feature-ISSUENUMBER. If it is a bug, name it bug-ISSUENUMBER. In this example we'll fix a broken link in the docs. The issue can be [found here](https://github.com/modxcms/revolution/issues/13309). It has issue number 13309.
 
 ```plain
-$ git checkout -b bug-13309
+git checkout -b bug-13309
 ```
 
 Next, we'll fix our issue and change some code. If you're confident about your changes, we want to commit it back to Github. We changed the file ```core/lexicon/en/about.inc.php```
@@ -196,7 +196,7 @@ Next, we'll fix our issue and change some code. If you're confident about your c
 Before doing this, we need to check if git is only trying to commit the files you had in mind. Sometimes, another file you don't know of is added to your repo.
 
 ```plain
-$ git status
+git status
 On branch bug-13309
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -210,9 +210,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 If the files you want added to MODX are also in the status-report above, you did well. You're all set! We need to add it to our commit and push it to our online fork on Github. Use the hashtag to reference the issue and/or to tag it for stuff like the MODX Bug Hunt.
 
 ```plain
-$ git add .
-$ git commit -m "Fixed issue #13309 #modxbughunt"
-$ git push origin
+git add .
+git commit -m "Fixed issue #13309 #modxbughunt"
+git push origin
 git push --set-upstream origin bug-13309
 Counting objects: 4, done.
 Delta compression using up to 8 threads.
@@ -221,7 +221,7 @@ Writing objects: 100% (4/4), 1.69 KiB | 0 bytes/s, done.
 Total 4 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 1 local objects.
 To github.com:gpsietzema/revolution.git
- * [new branch]      bug-13309 -> bug-13309
+* [new branch]      bug-13309 -> bug-13309
 Branch bug-13309 set up to track remote branch bug-13309 from origin.
 ```
 
@@ -246,10 +246,10 @@ Congratulations, you did it!
 If you want to fix another bug, we first need to be on the `2.6.x` branch again. To do this, we first want to make sure that our Fork's `2.6.x` branch is in sync with the original `modxcms/2.6.x` branch. Do the following to accomplish this:
 
 ```plain
-$ git fetch upstream 2.6.x
-$ git fetch origin 2.6.x
-$ git checkout 2.6.x
-$ git pull upstream 2.6.x
+git fetch upstream 2.6.x
+git fetch origin 2.6.x
+git checkout 2.6.x
+git pull upstream 2.6.x
 ```
 
 If in the last step, you get a text editor with a merge message. Just save and quit the editor and you are all fine. If this editor is VI, just hit Escape to exit type-mode, then type `:wq` and hit enter.
@@ -267,7 +267,7 @@ Pick a pull request from the current [PR-list on Github](https://github.com/modx
 Read the PR and check if this is something you might be able to test. Check if the issue is still existent and you can reproduce in the current development branch:
 
 ```plain
-$ git checkout 2.6.x
+git checkout 2.6.x
 ```
 
 If you can reproduce it, comment in the PR that you are going to test it. If you can't reproduce it, mention that as-well and mention the user who made the PR. Don't forget to mention the #modxbughunt tag in your comment.
@@ -279,9 +279,9 @@ To pull this PR, you need to add the fork of the PR-owner to your remotes. In th
 After adding the remote, fetch it and checkout the PR-branch. In this case ```patch-ellipsis```.
 
 ```plain
-$ git remote add goldsky git@github.com:goldsky/revolution.git
-$ git fetch goldsky
-$ git checkout patch-ellipsis
+git remote add goldsky git@github.com:goldsky/revolution.git
+git fetch goldsky
+git checkout patch-ellipsis
 Branch patch-ellipsis set up to track remote branch patch-ellipsis from goldsky.
 Switched to a new branch 'patch-ellipsis'
 ```
