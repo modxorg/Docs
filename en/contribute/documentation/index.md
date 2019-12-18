@@ -13,7 +13,7 @@ To edit pages, you'll need a GitHub account. [Sign up if you don't already have 
 
 When you spot an error while browsing the documentation, you can quickly edit the right file by clicking on the _Edit this page_ link. That link is shown right below the title of the page, as well as in the footer. 
 
-If you want to add new pages or you're [already browsing the sources on GitHub](https://github.com/modxorg/Docs), make sure to first select the right branch (2.x or 3.x). Then you can navigate the language folders  
+If you want to add new pages or you're [already browsing the sources on GitHub](https://github.com/modxorg/Docs), make sure to first select the right branch (2.x or 3.x). Then you can navigate the language folders to find the right directory.
 
 ## Creating new files
 
@@ -34,18 +34,32 @@ For a new folder to show up in the navigation, there either needs to be an `inde
 
 To set a title and/or meta description, add front matter to the top of the file. This is strongly encouraged for all files:
 
-```
+``` plain
 ---
 title: 'Excellent Documentation'
 description: 'This meta data description will be used by search engines.'
 ---
 ```
 
-## Translations
+### Menu ordering
+
+To affect the order in the navigation, add a `sortorder`: 
+
+``` plain
+---
+title: 'Excellent Documentation'
+description: 'This meta data description will be used by search engines.'
+sortorder: 3
+---
+```
+
+Any document without a sortorder will be added after documents with a sortorder, and will use a natural sort based on the filename.
+
+### Translations
 
 To connect a translation to the original (English) version of the documentation, add a `translation` entry to the frontmatter. Provide the path, **without version or language prefix**, like:
 
-```
+``` plain
 ---
 title: "Friendly URLs in my language"
 translation: "getting-started/friendly-urls"
@@ -54,7 +68,9 @@ translation: "getting-started/friendly-urls"
 
 The name of your file (and thus, the documentation URL) does **not** have to match the source file.
 
-[The application](https://github.com/modxorg/DocsApp) needs to reindex translations before they show up. That's done automatically when a pull request is accepted. To test the translation is properly connected, you'll need to run the application on a local environment and execute `php docs.php index:translations`. See the DocsApp repository for more.
+[The application running this documentation site](https://github.com/modxorg/DocsApp) needs to reindex translations before they show up. That's done automatically when a pull request is accepted. 
+
+To test if a translation is properly connected, you'll need to run the application on a local environment and execute `php docs.php index:translations`. See the DocsApp repository for more.
 
 ## Screencast
 
