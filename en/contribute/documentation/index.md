@@ -1,5 +1,6 @@
 ---
-title: 'Contribute to the Documentation'
+title: 'Write Documentation'
+sortorder: 2
 ---
 
 Want to help write the documentation? Please do!

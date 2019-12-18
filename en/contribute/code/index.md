@@ -1,7 +1,8 @@
 ---
-title: "Contributing to the Code"
+title: "Write & Test Code"
 _old_id: "1127"
 _old_uri: "contribute/becoming-a-contributor"
+sortorder: 1
 ---
 
 So, you're itching to get in on the development or documentation of MODX Revolution or MODX Evolution. But, to your dismay, you're confused on how to start that process. This article will help you get to your level of commitment in development - be it an active coder or a tester who submits patches.

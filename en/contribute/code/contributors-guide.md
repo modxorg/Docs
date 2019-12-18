@@ -1,26 +1,54 @@
 ---
-title: "Community Contributor's Guide"
+title: "Contributor's Guide"
 _old_id: "1128"
 _old_uri: "contribute/using-git-and-github/community-contributors-guide"
 ---
 
-## A GitHub-based branching strategy for collaborative development
+Development for MODX [happens on GitHub](https://github.com/modxcms/revolution). Everyone is invited to improve MODX, and in this guide we explain some of the common processes. 
 
-In order to facilitate collaborative development on the MODX source code managed at GitHub, a clear and consistent branching strategy has been adopted. This strategy consists of maintaining a major-version branch, e.g. `2.x`, that represents work to be incorporated into the "next significant release". If the current stable release of version 2 is 2.7.1, the work in the `2.x` branch would incorporate work intended for the 2.7.0 release.
+## Branches
 
-In addition, there is a branch maintained for the current stable minor release of each major-version. If this is 2.2, then the branch would be `2.2.x`. This would represent development intended for the next patch release of 2.7. Following Semantic Versioning, only bug fixes would target these temporary minor release branches.
+Development is focused on [2 branches](https://github.com/modxcms/revolution/branches). `2.x`, which contains the latest version of the 2.x series (e.g. 2.7 at time of writing), and `3.x`, which contains MODX 3. 
 
-## The major-version branches
+From time to time there may be other branches. For example there may be a branch `2.6.x` if there are any changes that need to be back-ported specifically to an older versions. Or if development for a version 2.8 is on-going while 2.7 is the latest released version, there may be a separate `2.7.x` branch for that.
 
-The major-version branch, e.g. `2.x` and `3.x` is essentially a virtual `master` branch for each major release of MODX Revolution. This branch has an infinite lifetime and contains new features that do not break backwards compatiblity intended for the next minor release. You can think of this as the "integration branch" where all changes are delivered for the next significant release.
+This is in line with [semantic versioning](https://semver.org/). 
+
+When you're planning an improvement, here's how to determine which branch you should target for it.
+
+1. If the improvement **breaks backwards compatibility**, it needs to target the branch for the next major release (e.g. `3.x` or `4.x`).
+2. If the improvement **introduces new functionality or includes changes that affect how users work with MODX**, it needs to target the branch for the _next_ minor release if that branch is available (e.g. `2.8.x` if 2.7 is the latest), or the branch for the current major release (e.g. `2.x`).
+3. If the improvement **fixes a bug**, it needs to target the branch for the _current_ minor release if that branch is available (e.g. `2.7.x` if 2.7 is the latest), or the branch for the current major release (e.g. `2.x`)
+
+We'll discuss the different branches that may be available in a bit more detail.
+
+### Major version branches
+
+The major-version branch, e.g. `2.x` and `3.x` is essentially a virtual `master` branch for each major release of MODX Revolution. This branch is always available and contains new features that do not break backwards compatiblity intended for the next minor release. You can think of this as the "integration branch" where all changes are delivered for the next significant release.
 
 When the code in these branches reaches a stable point and is ready to be released, a commit is tagged with a new minor release number, e.g. `v2.7.0`, and the release is produced from that tag.
 
-## The minor-version branches
+### Minor version branches
 
-There are supporting temporary branches in our process that are used to aid in collaborative development of bugfixes and translation updates which can be quickly applied to patch releases. These branches are referred to as minor-version branches and have a limited lifetime as long as their parent minor release is the current stable release. They contain only bugfixes and translation updates. Following the rules of semantic versioning, new features that do not break backwards compatibility, must go in the next minor release; never in a minor-version branch from which patch releases will be produced.
+Minor version branches are not always available. 
 
-## Working with your GitHub fork
+They are used when the major version branch has moved forward with new functionality for the next minor version, but bug fixes are still accepted for the latest minor version. 
+
+### l10n branches
+
+From time to time, you'll see branches prefixed with `l10n_` followed by a version. Those are _localisation_ branches, automatically created and updated by CrowdIn. 
+
+To submit lexicon (translation) changes for any language except English, [please use the CrowdIn platform](http://translate.modx.com/) instead of GitHub. 
+
+## Your Fork on GitHub
+
+The first step to contributing to the official repository is to fork it. This means you'll create a copy of the repository under your own name, which allows you to make changes to the code.
+
+When you've finished a fix or improvement, you'll use a _Pull Request_ to propose your change to be included in the next release. The integrators team will review your proposal and work with you to get it incorporated.
+
+To create your fork, [click on the fork button at the top right of the official repository](https://github.com/modxcms/revolution). If you don't have a GitHub account yet, you'll need to sign up first.
+
+
 
 ### 1. Tools
 
@@ -255,48 +283,3 @@ git pull upstream 2.6.x
 If in the last step, you get a text editor with a merge message. Just save and quit the editor and you are all fine. If this editor is VI, just hit Escape to exit type-mode, then type `:wq` and hit enter.
 
 You now have updated your Fork. Next you can go back to step 1 in 6a. Rinse and repeat!
-
-### 6B. Test workflow
-
-#### 1. Pick a pull request
-
-Pick a pull request from the current [PR-list on Github](https://github.com/modxcms/revolution/pulls).
-
-#### 2. Read the PR
-
-Read the PR and check if this is something you might be able to test. Check if the issue is still existent and you can reproduce in the current development branch:
-
-```plain
-git checkout 2.6.x
-```
-
-If you can reproduce it, comment in the PR that you are going to test it. If you can't reproduce it, mention that as-well and mention the user who made the PR. Don't forget to mention the #modxbughunt tag in your comment.
-
-#### 3. Get the PR locally
-
-To pull this PR, you need to add the fork of the PR-owner to your remotes. In this example I'm using a random PR. In this case, one by goldsky. In hte example below, you'll see the 'git remote add goldsky' part. 'goldsky' is the name of remote. This can be anything, but we recommend to use the Git-username to make it easy to remember. The 'goldsky:patch-ellipsis' part is the Github-URL of Goldsky's modxcms-fork.
-
-After adding the remote, fetch it and checkout the PR-branch. In this case ```patch-ellipsis```.
-
-```plain
-git remote add goldsky git@github.com:goldsky/revolution.git
-git fetch goldsky
-git checkout patch-ellipsis
-Branch patch-ellipsis set up to track remote branch patch-ellipsis from goldsky.
-Switched to a new branch 'patch-ellipsis'
-```
-
-#### 4. Clear both your MODX and browser cache
-
-#### 5. Test whether the bug is really fixed or not
-
-#### 6. Is it fixed or not?
-
-Is it fixed? Let the integrators and fixer know by mentioning them in your comment. 
-Not fixed? Let the fixer know by mentioning him in a comment.
-
-Don't forget to mention the #modxbughunt tag in your comment.
-
-### Problems, issues, help needed?
-
-Just ask in the [MODX Community Slack #development](https://modx.org/) or on the [MODX Community Forums](https://community.modx.com/).
