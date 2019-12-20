@@ -25,7 +25,7 @@ You can type check against non-existant classes without a warning in PHP, so you
 
 ## Changed classes, with upgrade path
 
-The following class names were changed, but have been aliased in 3.0 to help alleviate upgrade pains as they are commonly used. The aliases are automatically included through the autoloader.
+The following class names were changed, but have been aliased in 3.0 to help alleviate upgrade pains as they are commonly used. The aliases are automatically in `modX::loadConfig` if `load_deprecated_global_class_aliases` is true, which is the default. It's possible to disable by adding the key with a value of `false` to your `$config_options` in `core/config/config.inc.php`. 
 
 **The aliases will no longer be automatically available in MODX 3.3.** If you have not yet updated relevant code by then, you can manually require `core/include/deprecated.php` to temporarily resolve that, but you should still make sure to update the code to the new classes.
 
