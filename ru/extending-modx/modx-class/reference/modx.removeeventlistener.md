@@ -1,0 +1,28 @@
+---
+title: "modX.removeEventListener"
+translation: "extending-modx/modx-class/reference/modx.removeeventlistener"
+---
+
+## modX::removeEventListener
+
+Удаляет событие из карты событий, чтобы оно не вызывалось.
+
+## Синтаксис
+
+API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
+
+``` php
+boolean removeEventListener (string $event)
+```
+
+## Пример
+
+Предотвратите любые события от стрельбы 'OnChunkRender':
+
+``` php
+$modx->removeEventListener('OnChunkRender');
+```
+
+## Смотрите также
+
+- [modX](extending-modx/core-model/modx "modX")

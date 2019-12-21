@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 Sends a redirect to the specified URL using the specified method.
 
-## **Syntax**
+## Syntax
 
 API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendRedirect()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendRedirect())
 
@@ -18,19 +18,18 @@ void sendRedirect (string $url, [array $options = false], [string $type = ''], [
 
 Please note that the $type and $responseCode have been deprecated and will likely be removed in an upcoming release. **Do not rely on those**.
 
-$url needs to be a proper url, which could be generated using modX::makeUrl, to redirect to.
+`$url` needs to be a proper url, which could be generated using `modX::makeUrl`, to redirect to.
+`$options` accepts an array with one or more of the following key/value pairs:
 
-$options accepts an array with one or more of the following key/value pairs:
+- `type`, one of the following (`REDIRECT_HEADER` is the default):
+    - `REDIRECT_REFRESH` - Uses the header refresh method
+    - `REDIRECT_META` - Sends a a META HTTP-EQUIV="Refresh" tag to the output
+    - `REDIRECT_HEADER` - Uses the header location method
+- `responseCode` which needs to be the proper HTTP response, so not just "301" or "302". It defaults to HTTP/1.1 302 Moved Temporarily, but you could set it to "HTTP/1.1 301 Moved Permanently" for a 301-style redirect.
+- `count_attempts` indicates the number of attempts to redirect before halting.
 
-- type, one of the following (REDIRECT\_HEADER is the default):
-    - **REDIRECT\_REFRESH** - Uses the header refresh method
-    - **REDIRECT\_META** - Sends a a META HTTP-EQUIV="Refresh" tag to the output
-    - **REDIRECT\_HEADER** - Uses the header location method
-- responseCode which needs to be the proper HTTP response, so not just "301" or "302". It defaults to HTTP/1.1 302 Moved Temporarily, but you could set it to "HTTP/1.1 301 Moved Permanently" for a 301-style redirect.
-- count\_attempts indicates the number of attempts to redirect before halting.
-
-$type, which is deprecated and should not be used, is the same as the type $options array key.
-$responseCode, which is deprecated and should not be used, is the same as the responseCode $options array key.
+`$type`, which is deprecated and should not be used, is the same as the type $options array key.
+`$responseCode`, which is deprecated and should not be used, is the same as the responseCode $options array key.
 
 ## Examples
 

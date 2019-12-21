@@ -19,7 +19,7 @@ API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.h
 void setPlaceholders (array|object  $placeholders, [string $namespace = ''])
 ```
 
-Unlike \[getChunk\], the **$placeholders** array can _not_ be deeply nested. It must be a simple associative array.
+Unlike `getChunk`, the `$placeholders` array can _not_ be deeply nested. It must be a simple associative array.
 
 ## Example
 
