@@ -10,10 +10,10 @@ Returns the state of the SESSION being used by modX.
 
 The possible values for session state are:
 
-- modX::SESSION\_STATE\_UNINITIALIZED
-- modX::SESSION\_STATE\_UNAVAILABLE
-- modX::SESSION\_STATE\_EXTERNAL
-- modX::SESSION\_STATE\_INITIALIZED
+- `modX::SESSION_STATE_UNINITIALIZED`
+- `modX::SESSION_STATE_UNAVAILABLE`
+- `modX::SESSION_STATE_EXTERNAL`
+- `modX::SESSION_STATE_INITIALIZED`
 
 ## Syntax
 

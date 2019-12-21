@@ -8,13 +8,13 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 Gets the modX core version data. The array contains the following keys (examples for version "MODX Revolution 2.0.0-beta-3"):
 
-- **version** - The current version number, eg: 2
-- **major\_version** - The current major version number, eg: 0
-- **minor\_version** - The current minor version number, eg: 0
-- **patch\_level** - The current release level, eg: 'beta-3'
-- **code\_name** - The code name for the product, eg: 'Revolution'
-- **full\_version** - A compiled full version name, eg: '2.0.0-beta-3'
-- **full\_appname** - The entire version name, eg: 'MODX Revolution 2.0.0-beta-3'
+- `version` - The current version number, eg: 2
+- `major_version` - The current major version number, eg: 0
+- `minor_version` - The current minor version number, eg: 0
+- `patch_level` - The current release level, eg: 'beta-3'
+- `code_name` - The code name for the product, eg: 'Revolution'
+- `full_version` - A compiled full version name, eg: '2.0.0-beta-3'
+- `full_appname` - The entire version name, eg: 'MODX Revolution 2.0.0-beta-3'
 
 ## Syntax
 

@@ -6,14 +6,14 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::runProcessor
 
- Loads and runs a specific processor. The method takes 3 arguments:
+Loads and runs a specific processor. The method takes 3 arguments:
 
-- **action** - The action to take (the processor to run), this is the path to the processor (without the file extension) realtive to the core/model/modx/processors/ directory (by default).
-- **scriptProperties** - An array of properties passed to the processor.
-- **options** - An array of options passed to the processor.
+- `action` - The action to take (the processor to run), this is the path to the processor (without the file extension) realtive to the core/model/modx/processors/ directory (by default).
+- `scriptProperties` - An array of properties passed to the processor.
+- `options` - An array of options passed to the processor.
     - _processors\_path_ - If specified, will override the default MODX processors path (core/model/modx/processors/) where MODX is looking for the processor. This is helpful if you write your own custom processors and place them for example in your core/components/yourextra/processors/ directory.
 
- This method replaces $modX->executeProcessor() prior to version 2.1
+This method replaces `$modX->executeProcessor()` prior to version 2.1
 
 ## Syntax
 
@@ -25,7 +25,7 @@ mixed runProcessor(string $action = '', array $scriptProperties = array(), array
 
 ## Example
 
- Run the ResourceGroup create processor:
+Run the ResourceGroup create processor:
 
 ``` php
 // create new resource group programatically

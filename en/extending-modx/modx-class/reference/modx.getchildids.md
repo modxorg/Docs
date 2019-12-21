@@ -24,7 +24,7 @@ Get all the children IDs for the Resource 23. Limit to 6 levels deep. Only in th
 $array_ids = $modx->getChildIds(23,6,array('context' => 'web'));
 ```
 
-Note that when using this method in the manager (to collect input options for a TV for example), you need to define the context with the third options parameter as it defaults to the current context (in that scenario the manager).
+Note that when using this method in the manager (to collect input options for a TV for example), you need to define the context with the third `options` parameter as it defaults to the current context (in that scenario the manager).
 
 ## See Also
 

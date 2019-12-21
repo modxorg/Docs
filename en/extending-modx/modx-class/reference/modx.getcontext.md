@@ -7,9 +7,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 ## modX::getContext
 
 Retrieve a context by name without initializing it.
-
-Within a request, contexts retrieved using this function will cache the context data into the modX::$contexts array to avoid loading the same context multiple times.
-
+Within a request, contexts retrieved using this function will cache the context data into the `modX::$contexts` array to avoid loading the same context multiple times.
 If you merely want to check the current context, you can return the context key:
 
 ``` php
@@ -34,7 +32,6 @@ $ctx = $modx->getContext('sports');
 
 ## See Also
 
-| Page: [modX](extending-modx/core-model/modx) |
-|---------------------------------------------------------------------------------------------------|
-| Page: [Contexts](building-sites/contexts) |
-| Page: [modX.getContext](extending-modx/modx-class/reference/modx.getcontext) |
+- [modX](extending-modx/core-model/modx)
+- [Contexts](building-sites/contexts)
+- [modX.getContext](extending-modx/modx-class/reference/modx.getcontext)

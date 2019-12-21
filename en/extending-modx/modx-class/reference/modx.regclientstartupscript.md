@@ -6,11 +6,11 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::regClientStartupScript
 
- Register JavaScript to be injected inside the HEAD tag of a resource.
+Register JavaScript to be injected inside the HEAD tag of a resource.
 
 ## Syntax
 
- API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientStartupScript()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupScript())
+API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientStartupScript()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupScript())
 
 ``` php
 void regClientStartupScript (string $src, [boolean $plaintext = false])
@@ -18,7 +18,7 @@ void regClientStartupScript (string $src, [boolean $plaintext = false])
 
 ## Example
 
- Register some JS to the start of the page:
+Register some JS to the start of the page:
 
 ``` php
 $modx->regClientStartupScript('assets/js/onload.js');

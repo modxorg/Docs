@@ -36,7 +36,8 @@ $output = $modx->runSnippet('Welcome',array(
 echo $output; // prints 'Welcome John!'
 ```
 
-**Handy Hint**
+### Handy Hint
+
 When you call a Snippet using **runSnippet**, the Snippet code is _always_ executed: the results are never returned from cache. It's equivalent to running the Snippet using the `[[!uncached]]` syntax.
 
 ## See Also

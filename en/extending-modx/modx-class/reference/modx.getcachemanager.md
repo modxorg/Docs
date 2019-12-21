@@ -6,9 +6,9 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::getCacheManager
 
-Get an extended xPDOCacheManager instance responsible for MODX caching.
+Get an extended `xPDOCacheManager` instance responsible for MODX caching.
 
-Overrides xPDO::getCacheManager.
+Overrides `xPDO::getCacheManager`.
 
 ## Syntax
 
