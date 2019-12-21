@@ -6,13 +6,13 @@ translation: "extending-modx/modx-class/reference/modx.setplaceholders"
 ## modX::setPlaceholders
 
 Устанавливает коллекцию плейсхолдеров, хранящихся в массиве или в виде объектных переменных.
-Необязательный параметр пространства имен может быть добавлен перед каждым ключом-заполнителем в коллекции, чтобы изолировать коллекцию-заполнители.
+Необязательный параметр пространства имен может быть добавлен перед каждым ключом-плейсхолдера в коллекции, чтобы изолировать коллекцию-плейсхолдеров.
 
-Обратите внимание, что в отличие от [modX.toPlaceholders](extending-modx/modx-class/reference/modx.toplaceholders "modX.toPlaceholders") и [modX.getChunk](extending-modx/modx-class/reference/modx.getchunk "modX.getChunk"), эта функция не добавляет разделители между пространством имен и ключом-заполнителем. Используйте [toPlaceholders()](extending-modx/modx-class/reference/modx.toplaceholders "modX.toPlaceholders") при работе с многомерными массивами или объектами с переменными, отличными от скаляров, поэтому каждый уровень разделяется разделителем.
+Обратите внимание, что в отличие от [modX.toPlaceholders](extending-modx/modx-class/reference/modx.toplaceholders "modX.toPlaceholders") и [modX.getChunk](extending-modx/modx-class/reference/modx.getchunk "modX.getChunk"), эта функция не добавляет разделители между пространством имен и ключом-плейсхолдера. Используйте [toPlaceholders()](extending-modx/modx-class/reference/modx.toplaceholders "modX.toPlaceholders") при работе с многомерными массивами или объектами с переменными, отличными от скаляров, поэтому каждый уровень разделяется разделителем.
 
 ## Синтаксис
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::setPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholders())
+API Doc: [modX::setPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholders())
 
 ``` php
 void setPlaceholders (array|object  $placeholders, [string $namespace = ''])

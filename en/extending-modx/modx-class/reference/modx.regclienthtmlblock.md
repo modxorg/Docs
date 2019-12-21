@@ -10,7 +10,7 @@ Register HTML to be injected before the closing BODY tag.
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::regClientHTMLBlock()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientHTMLBlock())
+API Doc: [modX::regClientHTMLBlock()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientHTMLBlock())
 
 ``` php
 void regClientHTMLBlock (string $html)

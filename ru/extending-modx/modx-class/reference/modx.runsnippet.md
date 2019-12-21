@@ -16,7 +16,7 @@ string runSnippet (string $snippetName, [array $params = array ()])
 - `$snippetName` _(string)_ Имя сниппета, который вы хотите назвать. **обязательный**
 - `$parameters` _(array)_ Пары ключевых значений параметров для передачи в сниппет, эквивалентные `&key=`value``
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::runSnippet()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runSnippet())
+API Doc: [modX::runSnippet()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runSnippet())
 
 ``` php
 string runSnippet (string $snippetName, [array $params = array ()])

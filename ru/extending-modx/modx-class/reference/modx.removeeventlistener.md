@@ -9,7 +9,7 @@ translation: "extending-modx/modx-class/reference/modx.removeeventlistener"
 
 ## Синтаксис
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
+API Doc: [modX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
 
 ``` php
 boolean removeEventListener (string $event)

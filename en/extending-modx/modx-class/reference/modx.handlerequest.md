@@ -10,7 +10,7 @@ Initialize, cleanse, and process a request made to a modX site.
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::handleRequest()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::handleRequest())
+API Doc: [modX::handleRequest()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::handleRequest())
 
 ``` php
 mixed handleRequest ()

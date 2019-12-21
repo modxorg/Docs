@@ -9,7 +9,7 @@ translation: "extending-modx/modx-class/reference/modx.unsetplaceholders"
 
 ## Синтаксис
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::unsetPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::unsetPlaceholders())
+API Doc: [modX::unsetPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::unsetPlaceholders())
 
 ``` php
 void unsetPlaceholders (string|array $keys)

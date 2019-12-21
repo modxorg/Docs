@@ -17,7 +17,7 @@ string runSnippet (string $snippetName, [array $params = array ()])
 - `$snippetName` _(string)_ The name of the Snippet you wish to call. **required**
 - `$parameters` _(array)_ Key value pairs of parameters to pass to the snippet, equivalent to `&key=`value``
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::runSnippet()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runSnippet())
+API Doc: [modX::runSnippet()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runSnippet())
 
 ``` php
 string runSnippet (string $snippetName, [array $params = array ()])

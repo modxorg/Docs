@@ -7,11 +7,11 @@ translation: "extending-modx/modx-class/reference/modx.parsechunk"
 
 Разобрать чанк, используя ассоциативный массив переменных замещения.
 
-**parseChunk** просто выполняет `str_replace` для значений передаваемого им ассоциативного массива, поэтому вы не можете использовать выходные фильтры или другие сложные модификаторы заполнителей здесь. Если вам требуется больше функциональности от парсера, смотрите [modX.getChunk](extending-modx/modx-class/reference/modx.getchunk "modX.getChunk").
+**parseChunk** просто выполняет `str_replace` для значений передаваемого им ассоциативного массива, поэтому вы не можете использовать выходные фильтры или другие сложные модификаторы плейсхолдеров здесь. Если вам требуется больше функциональности от парсера, смотрите [modX.getChunk](extending-modx/modx-class/reference/modx.getchunk "modX.getChunk").
 
 ## Синтаксис
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::parseChunk()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::parseChunk())
+API Doc: [modX::parseChunk()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::parseChunk())
 
 ``` php
 string parseChunk (string $chunkName, array $chunkArr, [string $prefix = '[[+'], [string $suffix = ']]'])

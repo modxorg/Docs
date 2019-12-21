@@ -9,7 +9,7 @@ translation: "extending-modx/modx-class/reference/modx.setdebug"
 
 ## Синтаксис
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::setDebug()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setDebug())
+API Doc: [modX::setDebug()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setDebug())
 
 ``` php
 boolean|int setDebug ([boolean|int $debug = true], [boolean $stopOnNotice = false])

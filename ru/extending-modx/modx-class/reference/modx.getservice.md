@@ -11,7 +11,7 @@ translation: "extending-modx/modx-class/reference/modx.getservice"
 
 ## Синтаксис
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#\\modX::getService()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getService())
+API Doc: [modX::getService()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getService())
 
 ``` php
 object getService (string $name, [string $class = ''], [string $path = ''], [array $params = array ()])

@@ -10,7 +10,7 @@ Get a site tree from a single or multiple modResource instances.
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getTree()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getTree())
+API Doc: [modX::getTree()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getTree())
 
 ``` php
 array getTree ([int|array $id = null], [int $depth = 10])

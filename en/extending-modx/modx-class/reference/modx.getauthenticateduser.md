@@ -10,7 +10,7 @@ Gets the user authenticated in the specified context.
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getAuthenticatedUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getAuthenticatedUser())
+API Doc: [modX::getAuthenticatedUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getAuthenticatedUser())
 
 ``` php
 unknown getAuthenticatedUser ([string $contextKey = ''])

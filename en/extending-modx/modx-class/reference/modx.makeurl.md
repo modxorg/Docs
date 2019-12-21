@@ -20,7 +20,7 @@ The scheme indicates in what format the URL is generated.
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::makeUrl()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::makeUrl())
+API Doc: [modX::makeUrl()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::makeUrl())
 
 ``` php
 string makeUrl (integer $id, [string $context = ''], [string|array $args = ''], [mixed $scheme = -1])

@@ -9,7 +9,7 @@ translation: "extending-modx/modx-class/reference/modx.toplaceholder"
 
 ## Синтаксис
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::toPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholder())
+API Doc: [modX::toPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholder())
 
 ``` php
 array toPlaceholder (string $key, mixed $value, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])
@@ -17,7 +17,7 @@ array toPlaceholder (string $key, mixed $value, [string $prefix = ''], [string $
 
 ## Пример
 
-Установите плейсхолдер и добавьте префикс "my". Возвращает многомерный массив массива, содержащий до двух элементов: «keys», который всегда содержит массив ключей-заполнителей, которые были установлены, и при необходимости, если для параметра restore задано значение true, «restore», содержащий массив значений-заполнителей, которые были перезаписаны по методу.
+Установите плейсхолдер и добавьте префикс "my". Возвращает многомерный массив массива, содержащий до двух элементов: «keys», который всегда содержит массив ключей-плейсхолдеров, которые были установлены, и при необходимости, если для параметра restore задано значение true, «restore», содержащий массив значений-плейсхолдеров, которые были перезаписаны по методу.
 
 ``` php
 $modx->toPlaceholder('name','John','my');

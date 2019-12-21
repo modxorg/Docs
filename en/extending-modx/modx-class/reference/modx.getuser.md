@@ -10,7 +10,7 @@ Get the current authenticated User and assigns it to the modX instance.
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getUser())
+API Doc: [modX::getUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getUser())
 
 ``` php
 modUser getUser ([string $contextKey = ''])

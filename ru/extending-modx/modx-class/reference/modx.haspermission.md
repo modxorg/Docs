@@ -9,7 +9,7 @@ translation: "extending-modx/modx-class/reference/modx.haspermission"
 
 ## Синтаксис
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::hasPermission()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::hasPermission())
+API Doc: [modX::hasPermission()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::hasPermission())
 
 ``` php
 boolean hasPermission (string|array $pm)

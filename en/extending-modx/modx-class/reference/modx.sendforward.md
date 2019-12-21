@@ -10,7 +10,7 @@ Forwards the request to another resource without changing the URL. If the ID pro
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendForward()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendForward())
+API Doc: [modX::sendForward()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendForward())
 
 ``` php
 void sendForward (integer $id, [string|array $options = null])

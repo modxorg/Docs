@@ -9,7 +9,7 @@ translation: "extending-modx/modx-class/reference/modx.sendredirect"
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendRedirect()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendRedirect())
+API Doc: [modX::sendRedirect()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendRedirect())
 
 ``` php
 void sendRedirect (string $url, [array $options = false], [string $type = ''], [string $responseCode])

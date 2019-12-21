@@ -14,19 +14,19 @@ translation: "extending-modx/modx-class/reference/modx.getchunk"
 
 ## Синтаксис
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getChunk()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getChunk())
+API Doc: [modX::getChunk()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getChunk())
 
 ``` php
 string getChunk (string $chunkName, [array $properties = array ()])
 ```
 
-**$properties** is usually a standard associative array, e.g.
+`$properties` обычно это стандартный ассоциативный массив, например:
 
 ``` php
 $properties = array('key' => 'value');
 ```
 
-Что приведет к замене заполнителей `[[+key]]` на `value`.
+Что приведет к замене плейсхолдеров `[[+key]]` на `value`.
 
 Однако `$properties` также может быть более глубоко вложенным массивом, таким как тип, который может быть возвращен из определенных запросов `getObject` или `getCollection`, например
 
@@ -44,7 +44,7 @@ $properties['document']['id'] = 27;
 // [[+document.id]]
 ```
 
-В тех случаях, когда используется многомерный массив, синтаксис заполнителя изменяется, чтобы использовать точку для каждого узла в массиве, например `[[+user.id]]` и `[[+document.id]]`
+В тех случаях, когда используется многомерный массив, синтаксис плейсхолдера изменяется, чтобы использовать точку для каждого узла в массиве, например `[[+user.id]]` и `[[+document.id]]`
 
 ## Примеры
 
@@ -65,7 +65,7 @@ $output = $modx->getChunk('WelcomeChunk',array(
 return $output;
 ```
 
-Таким образом, каждый ключ в ассоциативном массиве, переданном методу `getChunk`, соответствует доступному заполнителю внутри блока, например `[[+name]]`
+Таким образом, каждый ключ в ассоциативном массиве, переданном методу `getChunk`, соответствует доступному плейсхолдеру внутри блока, например `[[+name]]`
 
 Этот код выводит следующее:
 
@@ -73,7 +73,7 @@ return $output;
 <p>Привет, John!</p>
 ```
 
-### Вложенные $properties
+### Вложенные `$properties`
 
 В нашем чанке:
 

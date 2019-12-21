@@ -11,7 +11,7 @@ translation: "extending-modx/modx-class/reference/modx.toplaceholders"
 
 ## Синтаксис
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::toPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholders())
+API Doc: [modX::toPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholders())
 
 ``` php
 array toPlaceholders (array|object  $subject, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])
@@ -19,7 +19,7 @@ array toPlaceholders (array|object  $subject, [string $prefix = ''], [string $se
 
 ## Пример
 
-Установите массив заполнителей и префикс «my». Возвращает многомерный массив, содержащий до двух элементов: «keys», который всегда содержит массив ключей-заполнителей, которые были установлены, и при необходимости, если для параметра restore задано значение true, «restore», содержащий массив значений-заполнителей, которые были перезаписаны метод.
+Установите массив плейсхолдеров и префикс «my». Возвращает многомерный массив, содержащий до двух элементов: «keys», который всегда содержит массив ключей-плейсхолдеров, которые были установлены, и при необходимости, если для параметра restore задано значение true, «restore», содержащий массив значений-плейсхолдеров, которые были перезаписаны метод.
 
 ``` php
 $modx->toPlaceholders(array(
@@ -39,7 +39,7 @@ $modx->toPlaceholders(array(
 ```
 
 Соответствует плейсхолдерам, таким как `[[+ document.pagetitle]]`
-Обратите внимание, что использование префикса $ во вложенных заполнителях добавляет префикс $ в начало _each key_. Например:
+Обратите внимание, что использование префикса $ во вложенных плейсхолдерах добавляет префикс $ в начало _each key_. Например:
 
 ``` php
 $modx->toPlaceholders(

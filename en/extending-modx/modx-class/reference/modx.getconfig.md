@@ -10,7 +10,7 @@ Get the configuration for the site.
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getConfig()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getConfig())
+API Doc: [modX::getConfig()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getConfig())
 
 ``` php
 array getConfig ()
