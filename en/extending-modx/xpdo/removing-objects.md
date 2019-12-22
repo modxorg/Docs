@@ -22,13 +22,13 @@ This will also remove any **composite related objects** to this object. For exam
 
 ## xPDO.removeCollection($class, $criteria)
 
- This method is used to delete multiple objects.
+This method is used to delete multiple objects.
 
- <http://api.modxcms.com/xpdo/xPDO.html#removeCollection>
+<http://api.modxcms.com/xpdo/xPDO.html#removeCollection>
 
 ## Examples
 
- From modSessionHandler:
+From modSessionHandler:
 
 ``` php
 public function gc($max) {
@@ -39,14 +39,14 @@ public function gc($max) {
 }
 ```
 
- **Warning**
- Careful! If you do not specify your criteria correctly, you can wipe out an entire database table!
+**Warning**
+Careful! If you do not specify your criteria correctly, you can wipe out an entire database table!
 
 ### Both parameters required
 
- Note that the both parameters (object type and the array of selectors) are required. If you want to delete everything in a table, pass 'array()' as the second parameter and this will match and delete all items.
+Note that the both parameters (object type and the array of selectors) are required. If you want to delete everything in a table, pass 'array()' as the second parameter and this will match and delete all items.
 
- For example, to delete all objects of type 'objectName' from the database, do the following.
+For example, to delete all objects of type 'objectName' from the database, do the following.
 
 ``` php
 $modx->removeCollection('objectName', array());

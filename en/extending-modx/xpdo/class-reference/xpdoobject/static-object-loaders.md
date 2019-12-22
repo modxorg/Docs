@@ -4,7 +4,7 @@ _old_id: "1213"
 _old_uri: "2.x/class-reference/xpdoobject/static-object-loaders"
 ---
 
-There are several static functions provided by xPDOObject that are responsible for loading a row, or a collection of rows into the appropriate derivative classes in your model.
+There are several static functions provided by `xPDOObject` that are responsible for loading a row, or a collection of rows into the appropriate derivative classes in your model.
 
 1. [\_loadRows](extending-modx/xpdo/class-reference/xpdoobject/static-object-loaders/loadrows)
 2. [\_loadInstance](extending-modx/xpdo/class-reference/xpdoobject/static-object-loaders/loadinstance)

@@ -16,10 +16,10 @@ API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getOption>
 mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )
 ```
 
-- $key: the key of the setting or option to load.
-- $options: the source of the setting or option. Either null (which attempts to find the key in the main configuration) or an array of options.
-- $default: the value to return when the key was not found.
-- $skipEmpty: when set to true, the $default will also be returned if the $key's value is an empty string. **_Added in xPDO 2.2.1 / MODX 2.2.0-rc2_**.
+- `$key`: the key of the setting or option to load.
+- `$options`: the source of the setting or option. Either null (which attempts to find the key in the main configuration) or an array of options.
+- `$default`: the value to return when the key was not found.
+- `$skipEmpty`: when set to true, the $default will also be returned if the $key's value is an empty string. **_Added in xPDO 2.2.1 / MODX 2.2.0-rc2_**.
 
 ## Examples
 

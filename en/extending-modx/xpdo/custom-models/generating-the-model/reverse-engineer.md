@@ -6,52 +6,52 @@ _old_uri: "2.x/case-studies-and-tutorials/reverse-engineer-xpdo-classes-from-exi
 
 ## Introduction
 
- The xPDO Object-Relational-Bridge (ORB) relies on a series of PHP classes to provide an interface to database tables. These PHP classes can be generated automatically by parsing a specially formatted XML file, by reverse engineering existing database tables, or they can even be written by hand (masochists only). The easiest approach when dealing with a custom database table is to reverse engineer existing MySQL database tables: MySQL has been around for a long time, and there are numerous tutorials and books out there to help you learn how to use it.
+The xPDO Object-Relational-Bridge (ORB) relies on a series of PHP classes to provide an interface to database tables. These PHP classes can be generated automatically by parsing a specially formatted XML file, by reverse engineering existing database tables, or they can even be written by hand (masochists only). The easiest approach when dealing with a custom database table is to reverse engineer existing MySQL database tables: MySQL has been around for a long time, and there are numerous tutorials and books out there to help you learn how to use it.
 
- If you're wanting to extend existing MODX classes, e.g. by creating [Custom Resource Classes](developing-in-modx/advanced-development/custom-resource-classes "Custom Resource Classes"), then usually you will start this process with the XML file.
+If you're wanting to extend existing MODX classes, e.g. by creating [Custom Resource Classes](developing-in-modx/advanced-development/custom-resource-classes "Custom Resource Classes"), then usually you will start this process with the XML file.
 
- Our process will be this:
+Our process will be this:
 
 1. Create a database table (or tables) using MySQL (this can be done via the mysql command line or any number of MySQL GUI clients, e.g. phpMyAdmin or SQL-Yog).
 2. Copy the "reverse-engineering" script (provided below) to your webserver. Put it at the root of your MODX install (this is important so the script can find xPDO). This script uses the xPDO classes to sniff out the definition of the table you just created.
 3. If needed, modify the generated XML definition file to define foreign key relationships, then re-run the script to regenerate the class files.
 4. Connect your newly created class and schema files to a Snippet or Custom Manager Page.
 
- Even if you plan to deploy your code and its associated data models onto multiple other other platforms, it's generally considered **much** easier to develop it with a single database in mind. Once you've done that, you can then focus on abstraction later. You can of course jump right into the xPDO definitions and classes that will define database-agnostic classes and schemas, but it is more difficult for the novice precisely because it deals with abstractions. The further you get from concrete examples, the more difficult the development becomes.
+Even if you plan to deploy your code and its associated data models onto multiple other other platforms, it's generally considered **much** easier to develop it with a single database in mind. Once you've done that, you can then focus on abstraction later. You can of course jump right into the xPDO definitions and classes that will define database-agnostic classes and schemas, but it is more difficult for the novice precisely because it deals with abstractions. The further you get from concrete examples, the more difficult the development becomes.
 
 ### Access Points
 
- xPDO is the engine behind this database abstraction – ultimately it needs PHP classes that describe the data model. You can supply an XML schema which will generate the PHP files which will in turn generate the necessary tables – this is how third-party components are distributed because it provides a predictable and unified way of creating new database tables. But in this example, we're going to start with a database table and use that to generate the XML schema, which will in turn generate the necessary PHP classes.
+xPDO is the engine behind this database abstraction – ultimately it needs PHP classes that describe the data model. You can supply an XML schema which will generate the PHP files which will in turn generate the necessary tables – this is how third-party components are distributed because it provides a predictable and unified way of creating new database tables. But in this example, we're going to start with a database table and use that to generate the XML schema, which will in turn generate the necessary PHP classes.
 
- In the image below, it's important to realize that you can start with any one component, and the other 2 can be automatically generated.
+In the image below, it's important to realize that you can start with any one component, and the other 2 can be automatically generated.
 
- ![](xpdo_forward_and_reverse.jpg)
+![](xpdo_forward_and_reverse.jpg)
 
- Arguably, the easiest "access point" to the xPDO technology is to start with some existing database tables and use those to generate the XML schema file and PHP classes, and that's what this page demonstrates.
+Arguably, the easiest "access point" to the xPDO technology is to start with some existing database tables and use those to generate the XML schema file and PHP classes, and that's what this page demonstrates.
 
 ## Creating a MySQL table
 
- One of the easiest ways to create a MySQL table is to use one of the many GUI editors available. SQL-Yog is a great desktop application for MySQL management on Windows, Macs offer Sequel Pro. If you are using a web application, phpMyAdmin is nearly ubiquitous.
+One of the easiest ways to create a MySQL table is to use one of the many GUI editors available. SQL-Yog is a great desktop application for MySQL management on Windows, Macs offer Sequel Pro. If you are using a web application, phpMyAdmin is nearly ubiquitous.
 
 ## Create Reverse Engineering Script
 
- We need a script to scan your database tables and generate the XML schema and PHP files. In general, this is a "disposable" script that you may only need to run once. You will probably need to make adjustments and run it more than once, but in concept and in function, this script is merely scaffolding.
+We need a script to scan your database tables and generate the XML schema and PHP files. In general, this is a "disposable" script that you may only need to run once. You will probably need to make adjustments and run it more than once, but in concept and in function, this script is merely scaffolding.
 
- You can download a version of this script and see a tutorial that describes using this method with a simple custom DB table at [Bob's Guides](http://bobsguides.com/custom-db-tables.html).
+You can download a version of this script and see a tutorial that describes using this method with a simple custom DB table at [Bob's Guides](http://bobsguides.com/custom-db-tables.html).
 
- The crux of this script are 2 xPDO methods (note, however, that the methods belong to children objects):
+The crux of this script are 2 xPDO methods (note, however, that the methods belong to children objects):
 
 - writeSchema
 - parseSchema
 
- Together, they behave similarly to other ORM's, e.g. Doctrine
+Together, they behave similarly to other ORM's, e.g. Doctrine
 
 ``` php
 // Sample Doctrine code:
 Doctrine_Core::generateModelsFromDb();
 ```
 
- Here's a reverse-engineering script that allows a bit of configuration and does a little error checking:
+Here's a reverse-engineering script that allows a bit of configuration and does a little error checking:
 
 ``` php
 <?php /* ------------------------------------------------------------------------------
@@ -270,20 +270,20 @@ function print_msg($msg) {
 /* EOF */
 ```
 
- To check whether or not this script succeeded, take a look inside the folder that is mentioned in its output, e.g.
+To check whether or not this script succeeded, take a look inside the folder that is mentioned in its output, e.g.
 **/user/youruser/public\_html/core/components/yourpackage/model/yourpackage**. You should see a couple files – one for each table. If you see a TON of tables corresponding to all of MODX's tables, then try to explicitly set the database password and name – leave the following line commented out:
 
 ``` php
 //include('core/config/config.inc.php');
 ```
 
- See <http://modxcms.com/forums/index.php?topic=40174.0> for more discussion on this script.
+See <http://modxcms.com/forums/index.php?topic=40174.0> for more discussion on this script.
 
 ## Defining Key Relationships
 
- Once you have your XML schema file generated, you may need to edit it manually to define any foreign key relationships between your tables. It's best if you create a backup of the XML schema file, then add in your aggregate and composite relationships (see [Schema Files and Relations](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files") for more info).
+Once you have your XML schema file generated, you may need to edit it manually to define any foreign key relationships between your tables. It's best if you create a backup of the XML schema file, then add in your aggregate and composite relationships (see [Schema Files and Relations](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files") for more info).
 
- In the scaffolding script above, set the following:
+In the scaffolding script above, set the following:
 
 ``` php
 $regenerate_schema = false;
@@ -293,7 +293,7 @@ $regenerate_schema = false;
 
 ## Accessing your Data
 
- Once you've created the required xPDO classes, you need to use xPDO's methods to access them (e.g. in a Snippet or in a Custom Manager Page). In order for xPDO to access the objects, you have to load up the corresponding PHP classes using the **addPackage** method. **addPackage** is what triggers the PHP classes to be included.
+Once you've created the required xPDO classes, you need to use xPDO's methods to access them (e.g. in a Snippet or in a Custom Manager Page). In order for xPDO to access the objects, you have to load up the corresponding PHP classes using the **addPackage** method. **addPackage** is what triggers the PHP classes to be included.
 
 ``` php
 if(!$modx->addPackage('mypackage','/full/path/to/core/components/mypackage/model/','mp_')) {
@@ -312,7 +312,7 @@ else {
 return $output;
 ```
 
- **Watch the Prefix!**
+**Watch the Prefix!**
 [addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage "xPDO.addPackage") requires that you specify the correct table prefix for your package!
 
 ## See Also

@@ -10,8 +10,8 @@ Get a value from a cache provider by key.
 
 Also allows for an array of options to be passed. The current available values are:
 
-- **format** - If equals XPDO\_CACHE\_JSON, will simply get the contents of the array. This is useful if you set() the cache with XPDO\_CACHE\_JSON, to better handle JSON data.
-- **removeIfEmpty** - If set to true, will remove the cache file if it's empty. This is the default action.
+- `format` - If equals `XPDO_CACHE_JSON`, will simply get the contents of the array. This is useful if you `set()` the cache with `XPDO_CACHE_JSON`, to better handle JSON data.
+- `removeIfEmpty` - If set to true, will remove the cache file if it's empty. This is the default action.
 
 ## Syntax
 

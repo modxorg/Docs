@@ -7,7 +7,7 @@ note: "This is a stub. You can help by expanding it."
 
 ## Complex Queries
 
-xPDOCriteria and xPDOQuery allow you to create complex queries via an OOP paradigm.
+`xPDOCriteria` and `xPDOQuery` allow you to create complex queries via an OOP paradigm.
 
 ## See Also
 

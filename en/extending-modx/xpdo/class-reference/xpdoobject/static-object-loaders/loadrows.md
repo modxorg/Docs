@@ -10,7 +10,7 @@ This function is responsible for loading a result set from the database and retu
 
 ## Syntax
 
-API Doc: [http://api.modx.com/xpdo/om/xPDOObject.html#\_loadRows](http://api.modx.com/xpdo/om/xPDOObject.html#_loadRows)
+API Doc: [_loadRows](http://api.modx.com/xpdo/om/xPDOObject.html#_loadRows)
 
 ``` php
 static PDOStatement|null _loadRows(

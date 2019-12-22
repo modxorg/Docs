@@ -6,7 +6,7 @@ _old_uri: "2.x/class-reference/xpdoobject/configuration-accessors/setoption"
 
 ## xPDOObject::setOption()
 
-Sets an option value for this instance of an xPDOObject.
+Sets an option value for this instance of an `xPDOObject`.
 
 ## Syntax
 

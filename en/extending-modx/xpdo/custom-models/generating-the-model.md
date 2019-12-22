@@ -56,7 +56,7 @@ $generator->mapHeader= <<<EOD
 EOD;
 ```
 
-Note the \[phpdoc-package\] tag that we've built. This is taken from our "model" tag's attribute we defined earlier in the schema. These templates will provide us with the base for our class and map files, with PHPDoc comments.
+Note the phpdoc-package tag that we've built. This is taken from our "model" tag's attribute we defined earlier in the schema. These templates will provide us with the base for our class and map files, with PHPDoc comments.
 
 ## Generating the Files
 

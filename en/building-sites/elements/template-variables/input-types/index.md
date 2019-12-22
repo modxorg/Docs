@@ -68,7 +68,7 @@ option1==value1||option2==value2
 
 The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the option1==value1||option2==value2 format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") to select items from your database, e.g. **Input option values:**
 
- ``` sql
+``` sql
 @SELECT pagetitle, id FROM modx_site_content WHERE parent=35
 ```
 

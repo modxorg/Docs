@@ -21,17 +21,14 @@ array toArray(
 )
 ```
 
-**keyPrefix:** an optional prefix to prepend to each fields' keys.
-
-**rawValues**: optional flag to get the raw value (true) or to use xPDOObject->get(). Typically will want to use ->get().
-
-**excludeLazy**: An option flag indicating if you want to exclude lazy fields from the resulting array; the default behavior is to include them which means the object will query the database for the lazy fields before providing the value.
-
-**includeRelated**: Describes if and how to include loaded related object fields.
-\* As an integer all loaded related objects in the graph up to that level of depth will be included.
-\* As a string, only loaded related objects matching the JSON graph representation will be included.
-\* As an array, only loaded related objects matching the graph array will be included.
-\* As boolean true, all currently loaded related objects will be included.
+- `keyPrefix`: an optional prefix to prepend to each fields' keys.
+- `rawValues`: optional flag to get the raw value (true) or to use xPDOObject->get(). Typically will want to use ->get().
+- `excludeLazy`: An option flag indicating if you want to exclude lazy fields from the resulting array; the default behavior is to include them which means the object will query the database for the lazy fields before providing the value.
+- `includeRelated`: Describes if and how to include loaded related object fields.
+    - As an integer all loaded related objects in the graph up to that level of depth will be included.
+    - As a string, only loaded related objects matching the JSON graph representation will be included.
+    - As an array, only loaded related objects matching the graph array will be included.
+    - As boolean true, all currently loaded related objects will be included.
 
 ## Examples
 

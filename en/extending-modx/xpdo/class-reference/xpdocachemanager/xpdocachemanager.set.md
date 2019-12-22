@@ -10,7 +10,7 @@ Set a key-value pair in a cache provider.
 
 Also allows for an array of options to be passed. The current available values are:
 
-- **format** - If equals XPDO\_CACHE\_JSON, will set the string as the only data in file (rather than a return of the string. This is useful if you want more proper parsing of JSON data.
+- `format` - If equals `XPDO_CACHE_JSON`, will set the string as the only data in file (rather than a return of the string. This is useful if you want more proper parsing of JSON data.
 
 ## Syntax
 

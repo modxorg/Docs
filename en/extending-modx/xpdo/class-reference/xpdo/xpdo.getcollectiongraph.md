@@ -6,7 +6,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getcollectiongraph"
 
 ## xPDO::getCollectionGraph
 
-Retrieves a collection of xPDOObjects and related objects by the specified xPDOCriteria.
+Retrieves a collection of `xPDOObjects` and related objects by the specified `xPDOCriteria`.
 
 If none are found, returns an empty array.
 
@@ -38,7 +38,7 @@ foreach ($boxes as $box) {
 ```
 
 **No additional queries**
-The main benefit of using getCollectionGraph is to retrieve data from related tables in a single query. No additional queries are executed when getMany() or getOne() are called on the related objects that are already loaded from the $graph. Graph's are a useful alternative to using xPDO joins.
+The main benefit of using getCollectionGraph is to retrieve data from related tables in a single query. No additional queries are executed when `getMany()` or `getOne()` are called on the related objects that are already loaded from the $graph. Graph's are a useful alternative to using xPDO joins.
 
 ## Debugging
 

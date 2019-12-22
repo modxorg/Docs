@@ -6,14 +6,14 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.query"
 
 ## xPDO::query
 
- Executes an SQL statement, returning a result set as a PDOStatement object.
+Executes an SQL statement, returning a result set as a PDOStatement object.
 
- **Tip**
- This can be a good way to issue reporting queries without having to worry about the complex syntax normally required by xPDO.
+**Tip**
+This can be a good way to issue reporting queries without having to worry about the complex syntax normally required by xPDO.
 
 ## Syntax
 
- API Docs: see <http://php.net/manual/en/pdo.query.php>
+API Docs: see <http://php.net/manual/en/pdo.query.php>
 
 ``` php
 xPDOObject|false query (string $statement)
@@ -21,25 +21,25 @@ xPDOObject|false query (string $statement)
 
 > $statement
 
- The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
+The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
 
 ## Examples
 
 ### Select a Single Record
 
- Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") or [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
+Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") or [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
 
 `xPDOObject|false query (string $statement)`
 
 > $statement
 
- The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
+The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
 
 ## Examples
 
 ### Select a Single Record
 
- Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](/display/xPDO20/xPDO.getObject "xPDO.getObject") or [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
+Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](/display/xPDO20/xPDO.getObject "xPDO.getObject") or [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
 
 ``` php
 $result = $modx->query("SELECT * FROM modx_users WHERE id=1");
@@ -52,7 +52,7 @@ else {
 }
 ```
 
- Use the **PDO::FETCH\_ASSOC** will force the result to be an associative array:
+Use the **PDO::FETCH\_ASSOC** will force the result to be an associative array:
 
 ``` php
 Array
@@ -64,7 +64,7 @@ Array
 )
 ```
 
- Without it, the results are a mix of an associative and a regular array:
+Without it, the results are a mix of an associative and a regular array:
 
 ``` php
 Array
@@ -79,13 +79,14 @@ Array
 )
 ```
 
- **No One-Liners!**
- The one-line method-chaining available to PDO is not possible with xPDO. The following **will not work**:
+**No One-Liners!**
+The one-line method-chaining available to PDO is not possible with xPDO. The following **will not work**:
+
 `$row = $modx->query("SELECT * FROM cms_users WHERE id=1")->fetch();`
 
 ### Selecting Multiple Records
 
- PDO uses a lazy-loader, so you can't simply print out all of the results at once. Instead, you iterate over each result in the set using a loop, e.g.
+PDO uses a lazy-loader, so you can't simply print out all of the results at once. Instead, you iterate over each result in the set using a loop, e.g.
 
 ``` php
 $results = $xpdo->query("SELECT * FROM some_table");
@@ -96,7 +97,7 @@ while ($r = $results->fetch(PDO::FETCH_ASSOC)) {
 
 ### Quoting Inputs
 
- For single queries that rely on user input, you should [manually quote](http://php.net/manual/en/pdo.quote.php) the input strings.
+For single queries that rely on user input, you should [manually quote](http://php.net/manual/en/pdo.quote.php) the input strings.
 
 ``` php
 $username = $modx->quote($username);
@@ -106,10 +107,10 @@ $row = $result->fetch(PDO::FETCH_ASSOC);
 return print_r($row,true);
 ```
 
- The \[quote\] function can take a 2nd argument, which you can use to quote integers specifically
+ The quote function can take a 2nd argument, which you can use to quote integers specifically
 
-- **PDO::PARAM\_INT** for quoting integers
-- **PDO::PARAM\_STR** for quoting strings (default)
+- `PDO::PARAM_INT` for quoting integers
+- `PDO::PARAM_STR` for quoting strings (default)
 
 ``` php
 $id = $modx->quote(1, PDO::PARAM_INT);
@@ -121,7 +122,7 @@ return print_r($row, true);
 
 ### Select a Collection
 
- Here's a simple query to fetch multiple rows from the database. Note that you would normally use [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to retrive data from MODX tables.
+Here's a simple query to fetch multiple rows from the database. Note that you would normally use [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to retrive data from MODX tables.
 
 ``` php
 $output = '';
@@ -132,7 +133,7 @@ foreach ($modx->query($sql) as $row) {
 return $output;
 ```
 
- You can also use the fetchAll() method to return an array of arrays (i.e. a recordset):
+You can also use the `fetchAll()` method to return an array of arrays (i.e. a recordset):
 
 ``` php
 $output = '';
@@ -144,20 +145,20 @@ return $data;
 
 ### Fetch Style
 
- From <http://php.net/manual/en/pdostatement.fetch.php>, these are the available constants that affect how your results are returned:
+From <http://php.net/manual/en/pdostatement.fetch.php>, these are the available constants that affect how your results are returned:
 
-- PDO::FETCH\_ASSOC: returns an array indexed by column name as returned in your result set
-- PDO::FETCH\_BOTH (default): returns an array indexed by both column name and 0-indexed column number as returned in your result set
-- PDO::FETCH\_BOUND: returns TRUE and assigns the values of the columns in your result set to the PHP variables to which they were bound with the PDOStatement::bindColumn() method
-- PDO::FETCH\_CLASS: returns a new instance of the requested class, mapping the columns of the result set to named properties in the class. If fetch\_style includes PDO::FETCH\_CLASSTYPE (e.g. PDO::FETCH\_CLASS | PDO::FETCH\_CLASSTYPE) then the name of the class is determined from a value of the first column.
-- PDO::FETCH\_INTO: updates an existing instance of the requested class, mapping the columns of the result set to named properties in the class
-- PDO::FETCH\_LAZY: combines PDO::FETCH\_BOTH and PDO::FETCH\_OBJ, creating the object variable names as they are accessed
-- PDO::FETCH\_NUM: returns an array indexed by column number as returned in your result set, starting at column 0
-- PDO::FETCH\_OBJ: returns an anonymous object with property names that correspond to the column names returned in your result set
+- `PDO::FETCH_ASSOC`: returns an array indexed by column name as returned in your result set
+- `PDO::FETCH_BOTH` (default): returns an array indexed by both column name and 0-indexed column number as returned in your result set
+- `PDO::FETCH_BOUND`: returns TRUE and assigns the values of the columns in your result set to the PHP variables to which they were bound with the PDOStatement::bindColumn() method
+- `PDO::FETCH_CLASS`: returns a new instance of the requested class, mapping the columns of the result set to named properties in the class. If fetch\_style includes `PDO::FETCH_CLASSTYPE` (e.g. `PDO::FETCH_CLASS | PDO::FETCH_CLASSTYPE`) then the name of the class is determined from a value of the first column.
+- `PDO::FETCH_INTO`: updates an existing instance of the requested class, mapping the columns of the result set to named properties in the class
+- `PDO::FETCH_LAZY`: combines `PDO::FETCH_BOTH` and `PDO::FETCH_OBJ`, creating the object variable names as they are accessed
+- `PDO::FETCH_NUM`: returns an array indexed by column number as returned in your result set, starting at column 0
+- `PDO::FETCH_OBJ`: returns an anonymous object with property names that correspond to the column names returned in your result set
 
 ### Prepared Statements
 
- See
+See
 
 - <http://php.net/manual/en/pdo.prepare.php>
 - <http://php.net/manual/en/pdostatement.execute.php>

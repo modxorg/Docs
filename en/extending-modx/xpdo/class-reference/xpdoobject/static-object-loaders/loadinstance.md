@@ -10,7 +10,7 @@ This function is responsible for turning a result set row into an xPDOObject ins
 
 ## Syntax
 
-API Doc: [http://api.modx.com/xpdo/om/xPDOObject.html#\_loadInstance](http://api.modx.com/xpdo/om/xPDOObject.html#_loadInstance)
+API Doc: [_loadInstance](http://api.modx.com/xpdo/om/xPDOObject.html#_loadInstance)
 
 ``` php
 static xPDOObject _loadInstance(

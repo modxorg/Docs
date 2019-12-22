@@ -6,7 +6,7 @@ _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.getcacheprovide
 
 ## xPDOCacheManager::getCacheProvider
 
-Get an instance of a provider which implements the xPDOCache interface. Defaults to xPDOFileCache.
+Get an instance of a provider which implements the `xPDOCache` interface. Defaults to xPDOFileCache.
 
 ## Syntax
 
