@@ -25,7 +25,7 @@ The only thing we need to add to the basic call here is a new **hook**: we've ad
 ]]
 ```
 
-Note, however, that the order in which **customhook** appears in the &hooks parameter may be significant. See below, under **MyEmailChunk**, for more information.
+Note that the order in which **customhook** appears in the `&hooks` parameter is important. Hooks are executed in the order they are listed. 
 
 ## customhook Snippet
 
@@ -70,7 +70,7 @@ Once you have saved this, you can update your **MyEmailChunk** chunk to include 
 Date Submitted: [[+datestamp_submitted]]<br/>
 ```
 
-Please note, however, that this will only work if 'customhook' precedes 'email' in the &hooks parameter in your FormIt call. The order in which snippets appear in the &hooks parameter determines the order of execution. As shown above under 'Snippet Tag', the hooks appear in the correct order. If the order were reversed, then the order of execution would also be reversed. The 'email' snippet would then execute prior to the 'customhook' snippet, your **MyEmailChunk** would be processed before 'datestamp_submitted' has been assigned a value, and the resulting tag in **MyEmailChunk** would resolve as empty. 
+For this to work, the `customhook` hook must be listed **before** `email` in the &hooks parameter in your FormIt call. The order in which snippets appear in the &hooks parameter determines the order of execution. If the `email` hook would be executed before the custom hook, then the `datestamp_submitted` placeholder in the chunk would stay empty.
 
 ### Reading Values
 
