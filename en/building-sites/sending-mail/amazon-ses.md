@@ -17,7 +17,7 @@ Once that's done, go to Identify Management > Email Addresses and click the butt
 Still in the Amazon SES dashboard, go to Email Sending > SMTP Settings.
 
 - You'll see the server name listed; add that to the `mail_smtp_hosts` system setting.
-- Use one of the provided ports for the `mail_smtp_port` system setting. Any of them should work, 465 definitely does.
+- Use one of the provided ports for the `mail_smtp_port` system setting. Any of them should work, typically 465 or 587.
 - As it indicates TLS is enabled, set `mail_smtp_prefix` to `tls` (or `ssl`). 
 
 Next, click the "Create My SMTP Credentials" button. That's a convenient shortcut to adding an IAM user, which otherwise is a fairly complex process.
