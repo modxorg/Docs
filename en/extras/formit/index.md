@@ -36,7 +36,7 @@ As of FormIt 1.1.4, all fields will automatically have `stripTags` applied. To a
 
 Simply place the FormIt snippet call into the Resource that contains the form you want to use. Unlike similar predecessors (most notably eForm in MODX Evolution), you do not put the form into a Chunk and reference the Chunk in the FormIt snippet call: you literally put the snippet call along side the form you want it to process. Specify the "hooks" (or post-validation processing scripts) in the snippet call. Then add validation via the _&validate_ and _&customValidators_ parameters in the snippet tag.
 
-If you have multiple forms on a page, set the _&submitVar_ property on your Snippet call to a name of a form element within the form (ie, &submitVar=`form1-submit`). This tells FormIt to only process form requests with that POST variable. Multiple forms should be used with INPUT type="submit" name="form1-submit", button elements have been reported not working.
+If you have multiple forms on a page, set the _&submitVar_ property on your Snippet call to a name of a form element within the form (ie, ``&submitVar=`form1-submit` ``). This tells FormIt to only process form requests with that POST variable. Multiple forms should be used with INPUT type="submit" name="form1-submit", button elements have been reported not working.
 
 ### Available Properties
 
