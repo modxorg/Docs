@@ -38,13 +38,9 @@ Use QuickEmail [as described in the mail documentation](building-sites/sending-m
 
 Important: email sending might not work until your domain and email verification completed. Amazon also enforces limits on email sending by new users. 
 
-In the SES service dashboard, under Domains and by clicking on your domain, you can find more information about authenticating your sending. 
+In the SES service dashboard, under Domains and by clicking on your domain, you can find more information about authenticating your emails. 
 
 - In the Verification section you'll find the TXT record for verification. This needs to stay on the domain for as long as you use Amazon SES.
 - In the DKIM section, you'll find a list of DNS records that will [enable DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail). 
 - In the MAIL FROM Domain section, you can set up a dedicated FROM domain. When configured, this will show your own domain (rather than amazonses.com) as the sender. 
-
-In the Email ADdresses
-
-
 
