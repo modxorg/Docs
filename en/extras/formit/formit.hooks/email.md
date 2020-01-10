@@ -29,6 +29,9 @@ The email hook will email out your form contents to any email(s).
 | emailBCCName            | Optional. A comma-separated list of names to pair with the emailBCC values.                                                                                                                                                                                                                                                                         |
 | emailMultiWrapper       | Wraps values submitted by checkboxes/multi-selects with this value. Defaults to just the value. (1.6.0+)                                                                                                                                                                                                                                            |
 | emailMultiSeparator     | Separates checkboxes/multi-selects with this value. Defaults to a newline. (1.6.0+)                                                                                                                                                                                                                                                                 |
+| emailSelectField        | The name of the form field, that selects the email addresses to send to. (4.2.5+)                                                                                                                                                                                                                                                                 |
+| emailSelectTo           | A semicolon separated list of comma separated email addresses to send to. (4.2.5+)                                                                                                                                                                                                                                                                 |
+| emailSelectToName       | A semicolon separated list of comma separated email names to send to. (4.2.5+)                                                                                                                                                                                                                                                                 |
 
 Any of the email hook properties can have placeholders of field names from your form in them that will be evaluated.
 
@@ -110,6 +113,27 @@ Or just to separate them with BR tags:
     &emailMultiSeparator=`<br />`
 ]]
 ```
+
+### Select the receiver of the mail by a select dropdown without offering the receiver mail in the form
+
+FormIt, as of 4.2.5+, could select the receiver of the mail by a select dropdown. By doing this, you could avoid to create a spoofable form field, where a frontend user could enter an own mail addresses quite easily. The frontend user would only see a numbered list of receivers that are translated to email addresses inside of formit by FormIt properties.
+
+For this, you could use the following FormIt properties
+```
+&emailSelectTo=`mail1@my.domain,mail2@my.domain;different@my.domain`
+&emailSelectToName=`Mail1,Mail2;Different`
+&emailSelectField=`emailselect`
+```
+
+and the following form field
+```
+<select name="emailselect">
+    <option value="1" [[!+fi.emailselect:FormItIsSelected=`1`]]>Address 1</option>
+    <option value="2" [[!+fi.emailselect:FormItIsSelected=`2`]]>Address 2</option>
+</select>
+```
+
+If Address 1 is selected, the mail would be sent to `mail1@my.domain,mail2@my.domain`, if Address 2 is selected, the mail would be sent to `different@my.domain`
 
 ## See Also
 
