@@ -114,9 +114,9 @@ Or just to separate them with BR tags:
 ]]
 ```
 
-### Select the receiver of the mail by a select dropdown without offering the receiver mail in the form
+### Select the receiver of the mail by a select dropdown without showing the receiver mail address in the form
 
-FormIt, as of 4.2.5+, could select the receiver of the mail by a select dropdown. By doing this, you could avoid to create a spoofable form field, where a frontend user could enter an own mail addresses quite easily. The frontend user would only see a numbered list of receivers that are translated to email addresses inside of formit by FormIt properties.
+FormIt, as of 4.2.5+, could select the receiver of the mail by a select dropdown. By doing this, you could avoid to create a spoofable form field, where a frontend user could enter an own mail addresses quite easily. The frontend user would only see a numbered list of receivers that are translated to email addresses by FormIt properties.
 
 For this, you could use the following FormIt properties
 
