@@ -17,22 +17,18 @@ With two Formit hooks the upload queue could be pre filled from Formit field val
 - MODX Revolution 2.2.x or later
 - PHP5.2 or later
 
-## History& Info
+## History & Info
 
 AjaxUpload was initially written in 2012 for MODX Evolution and is maintained and developed since then by [Thomas Jakobi](https://github.com/jako).
 
 ### Download
 
-AjaxUpload can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, available on <http://modx.com/extras/package/ajaxupload2>
-
-[](http://modx.com/extras/package/ajaxupload2)
+AjaxUpload can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, available on <https://modx.com/extras/package/ajaxupload2>
 
 ### Documentation
 
-The package documentation can be found at <http://jako.github.io/AjaxUpload/>
+The package documentation can be found at <https://jako.github.io/AjaxUpload/>
 
 ### Development & Bug Reporting
 
-AjaxUpload has a GitHub repository to file bugs and get support at <https://github.com/Jako/AjaxUpload>
-
-It has also a forum thread at <http://forums.modx.com/thread/86791/support-comments-for-ajaxupload>
+AjaxUpload is on GitHub to file bugs and get support at <https://github.com/Jako/AjaxUpload>
