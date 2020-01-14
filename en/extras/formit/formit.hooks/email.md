@@ -63,23 +63,28 @@ Note the &emailTpl property points to the name of a Chunk. In that Chunk, you'll
 
 This assumes, of course, that you have the fields "name", "cdo\_package" and "email" in your form.
 
-### Specifying a Dynamic To Address
+### Specifying Dynamic To Addresses
 
-An example is using the form to specify who to send to:
+FormIt, as of 4.2.5+, could select the receiver of the mail by the numeric value of a field i.e. by the option value of a select. By doing this, you could avoid to create a spoofable form field, where a frontend user could submit any mail address quite easily. The frontend user would only see a numbered list of receivers that are translated to email addresses by FormIt properties.
+
+For this, you could use the following FormIt properties
 
 ``` php
-[[!FormIt?
-    ...
-    &emailTo=`[[+addressTo]]`
-]]
-...
-<select name="addressTo">
-<option value="john@doe.com" [[!+fi.addressTo:FormItIsSelected=`john@doe.com`]]>John</option>
-<option value="jane@doe.com" [[!+fi.addressTo:FormItIsSelected=`jane@doe.com`]]>Jane</option>
+&emailSelectTo=`mail1@my.domain,mail2@my.domain;different@my.domain`
+&emailSelectToName=`Mail1,Mail2;Different`
+&emailSelectField=`emailselect`
+```
+
+and the following form field
+
+``` php
+<select name="emailselect">
+    <option value="1" [[!+fi.emailselect:default=`1`:FormItIsSelected=`1`]]>Address 1</option>
+    <option value="2" [[!+fi.emailselect:default=`1`:FormItIsSelected=`2`]]>Address 2</option>
 </select>
 ```
 
-This will send the email to whoever is selected in the "addressTo" field.
+If Address 1 is selected, the mail would be sent to `mail1@my.domain,mail2@my.domain`, if Address 2 is selected, the mail would be sent to `different@my.domain`.
 
 ### Using a Subject Field as the Email Subject Line
 
@@ -113,29 +118,6 @@ Or just to separate them with BR tags:
     &emailMultiSeparator=`<br />`
 ]]
 ```
-
-### Select the receiver of the mail by a select dropdown without showing the receiver mail address in the form
-
-FormIt, as of 4.2.5+, could select the receiver of the mail by a select dropdown. By doing this, you could avoid to create a spoofable form field, where a frontend user could enter an own mail addresses quite easily. The frontend user would only see a numbered list of receivers that are translated to email addresses by FormIt properties.
-
-For this, you could use the following FormIt properties
-
-``` php
-&emailSelectTo=`mail1@my.domain,mail2@my.domain;different@my.domain`
-&emailSelectToName=`Mail1,Mail2;Different`
-&emailSelectField=`emailselect`
-```
-
-and the following form field
-
-``` php
-<select name="emailselect">
-    <option value="1" [[!+fi.emailselect:FormItIsSelected=`1`]]>Address 1</option>
-    <option value="2" [[!+fi.emailselect:FormItIsSelected=`2`]]>Address 2</option>
-</select>
-```
-
-If Address 1 is selected, the mail would be sent to `mail1@my.domain,mail2@my.domain`, if Address 2 is selected, the mail would be sent to `different@my.domain`
 
 ## See Also
 
