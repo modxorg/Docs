@@ -59,7 +59,4 @@ Some signatures have slightly changed:
 
 - `modAccessAction` (`access_actions` table)
 - `modAction` (`actions` table)
-- 
-
-
 
