@@ -80,14 +80,14 @@ But xPDO is a little more than a simple pattern implementation. It's also a way 
 
 When developing **xPDO** uses several design patterns that are well described in Martin Fowler’s book [«Enterprise Software Architecture»](http://design-pattern.ru/patterns) [«Patterns of Enterprise Application Architecture»](http://www.martinfowler.com/eaaCatalog/). Among them are the following and not only:
 
-* Domain Model
-* Active Record
-* Data Mapper
-* Lazy Load
-* Identity Field
-* Single Table Inheritance
-* Metadata Mapping
-* Query Object
+- Domain Model
+- Active Record
+- Data Mapper
+- Lazy Load
+- Identity Field
+- Single Table Inheritance
+- Metadata Mapping
+- Query Object
 
 Before programming using **xPDO** it will be very useful to familiarize yourself with these patterns (and others from the Fowler catalog). An understanding of these concepts will help not only in learning **xPDO**, but in many other things related to programming.
 
