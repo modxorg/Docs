@@ -1,6 +1,6 @@
 ---
 title: "Зачем использовать xPDO?"
-translation: "extending-modx/benefits"
+translation: "extending-modx/xpdo/benefits"
 note: "Этот документ был написан в 2008 году или около того. Хотя многие из этих преимуществ остаются в силе, но это требует обновления."
 ---
 
