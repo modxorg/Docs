@@ -53,7 +53,7 @@ A third snippet ("AdvSearchHelp") is used to display a help window for the prese
 
 - [AdvSearchForm](extras/advsearch/advsearch.advsearchform "AdvSearch.AdvSearchForm")
 - [AdvSearchHelp](extras/advsearch/advsearch.advsearchhelp "AdvSearch.AdvSearchHelp")
-- [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch")
+- [AdvSearch](extras/advsearch/advsearch "AdvSearch.AdvSearch")
 
 All the templates used by default to set up the form and display the results are provided as chunks. These chunks are installed through the package management.
 
