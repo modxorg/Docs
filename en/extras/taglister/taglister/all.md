@@ -29,8 +29,8 @@ This is the Chunk displayed with the &all property on the [tagLister](extras/tag
 ## See Also
 
 1. [tagLister.getResourcesTag](extras/taglister/taglister.getresourcestag)
-2. [tagLister.tagLister](extras/taglister/taglister.taglister)
-    1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
-    2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
+2. [tagLister.tagLister](extras/taglister/taglister)
+    1. [tagLister.tagLister.all](extras/taglister/taglister/all)
+    2. [tagLister.tagLister.tpl](extras/taglister/taglister/tpl)
 3. [tagLister.tolinks](extras/taglister/taglister.tolinks)
-    1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+    1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/tpl)
