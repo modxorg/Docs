@@ -10,7 +10,7 @@ This is the Chunk displayed with the &tpl property on the [tagLister](extras/tag
 
 ## Default Value
 
-``` php
+```php
 <li class="[[+cls]]">
 <a href="[[~[[+target]]? &[[+tagVar]]=`[[+tag]]`]]">[[+tag]]</a> ([[+count]])
 </li>

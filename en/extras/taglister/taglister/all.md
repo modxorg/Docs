@@ -10,7 +10,7 @@ This is the Chunk displayed with the &all property on the [tagLister](extras/tag
 
 ## Default Value
 
-``` php
+```php
 <li class="[[+cls]]">
 <a href="[[~[[+target]]? &[[+tagVar]]=``]]">[[+tag]]</a> ([[+count]])
 </li>
