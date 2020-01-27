@@ -6,7 +6,7 @@ _old_uri: "revo/taglister/taglister.taglister/taglister.taglister.all"
 
 ## tagLister's all Chunk
 
-This is the Chunk displayed with the &all property on the [tagLister](extras/taglister/taglister.taglister "tagLister.tagLister") snippet.
+This is the Chunk displayed with the &all property on the [tagLister](extras/taglister/taglister "tagLister") snippet.
 
 ## Default Value
 
