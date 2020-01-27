@@ -70,7 +70,7 @@ tagLister has 1 snippet that displays a list of used tags, grabbed from the spec
 
 tagLister comes with three Snippets:
 
-- [tagLister](extras/taglister/taglister.taglister "tagLister.tagLister") - Lists most commonly used tags.
+- [tagLister](extras/taglister/taglister "tagLister") - Lists most commonly used tags.
 - [getResourcesTag](extras/taglister/taglister.getresourcestag "tagLister.getResourcesTag") - For grabbing Resources filtered by tags.
 - [tolinks](extras/taglister/taglister.tolinks "tagLister.tolinks") - For converting a comma-separated list into links.
 
@@ -91,8 +91,8 @@ Grab a list of tags specified in the TV 'blog-tags', which are separated by spac
 ## See Also
 
 1. [tagLister.getResourcesTag](extras/taglister/taglister.getresourcestag)
-2. [tagLister.tagLister](extras/taglister/taglister.taglister)
-    1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
-    2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
+2. [tagLister.tagLister](extras/taglister/taglister)
+    1. [tagLister.tagLister.all](extras/taglister/taglister/taglister/all)
+    2. [tagLister.tagLister.tpl](extras/taglister/taglister/taglister/tpl)
 3. [tagLister.tolinks](extras/taglister/taglister.tolinks)
-    1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+    1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/tpl)
