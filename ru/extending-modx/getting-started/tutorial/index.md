@@ -9,7 +9,7 @@ translation: "extending-modx/getting-started/tutorial"
 
 Итак, как на самом деле получить объект в новом modx? Ну, вы привыкли полагаться на несколько различных функций:
 
-``` php
+```php
 // Старый способ работы в MODx 1.x и более ранних версиях
 $doc = $modx->getDocument(23);
 $doc = $modx->getDocument(45,'pagetitle,introtext');
@@ -28,7 +28,7 @@ return $users;
 
 Уже нет. Все гораздо проще, и на самом деле вам нужно всего несколько функций. Давайте посмотрим на некоторые примеры:
 
-``` php
+```php
 // получение чанка с ID 43
 $chunk = $modx->getObject('modChunk',43);
 
@@ -56,7 +56,7 @@ $document = $modx->getObject('modResource',array(
 
 Например, modChunk:
 
-``` xml
+```xml
 <object class="modChunk" table="site_htmlsnippets" extends="modElement">
     <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
     <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default="Chunk" />
@@ -71,25 +71,25 @@ $document = $modx->getObject('modResource',array(
 
 Вы также можете определить свои собственные схемы для своих компонентов и добавить их в виде пакетов - подробнее об этом в следующей статье. Давайте перейдем в схему:
 
-``` xml
+```xml
 <object class="modChunk" table="site_htmlsnippets" extends="modElement">
 ```
 
 Свойство _class_ сообщает вам, каким будет имя класса. Свойство _table_ показывает фактическую таблицу MySQL, а _extends_ показывает, какой объект он расширяет. modElement является базовым классом для всех элементов в MODX - сниппетов, модулей, блоков, шаблонов и т.д.
 
-``` xml
+```xml
 <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
 ```
 
 Этот тег представляет столбец в базе данных. Большинство из этих атрибутов довольно просты.
 
-``` xml
+```xml
 <aggregate alias="modCategory" class="modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
 ```
 
 Хорошо, вот где мы вступаем в отношения с БД. Отношение **Aggregate** - это отношение, в котором, с точки зрения непрофессионалов, если бы вы удалили этот чанк, он не удалил бы категорию, к которой он относится. Если бы это были **Композитные** отношения, это было бы. В составных отношениях есть «зависимость», которая связана с другим объектом. Для примера, давайте получим все `modContextSettings` для modContext:
 
-``` php
+```php
 $context = $modx->getObject('modContext','web');
 $settings = $context->getMany('ContextSetting');
 foreach ($settings as $setting) {
@@ -102,5 +102,5 @@ foreach ($settings as $setting) {
 
 ## Смотри также
 
-- [xPDO: Определение схемы](extending-modx/xpdo/custom-models/defining-a-schema "Определение схемы")
-- [xPDO: Связанные объекты](extending-modx/xpdo/retrieving-objects/related-objects "Работа со связанными объектами")
+-   [xPDO: Определение схемы](extending-modx/xpdo/custom-models/defining-a-schema "Определение схемы")
+-   [xPDO: Связанные объекты](extending-modx/xpdo/retrieving-objects/related-objects "Работа со связанными объектами")
