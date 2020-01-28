@@ -77,4 +77,9 @@ These classes were permanently removed from 3.0 with no alternative:
 - `modTranslator`
 - All classes and functions related to the `xmlrss` service/utility: `Snoopy`, `MagpieRSS`, `modRSSParser`, `RSSCache`, function `parse_w3cdtf`, function `fetch_rss`. To fetch RSS feeds, you can now use SimplePie.
 - All classes and functions related to the `xmlrpc` and `jsonrpc` services/utilities: `modXMLRPCResponse`, `modJSONRPCResponse`, `modXMLRPCResource` (+ platform classes), `modJSONRPCResource` (+ platform classes)
+- `modManagerControllerDeprecated`
 
+## Signature changes
+
+- `modResponse::_construct` (and inherited `modManagerResponse`/`modConnectorResponse`) is now marked `public` and no longer includes the ampersand as objects are always passed by reference.
+- `Processor::getInstance` and `modManagerController::getInstance` no longer use the ampersand for passing modX as reference.

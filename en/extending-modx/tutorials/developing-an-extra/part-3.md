@@ -2,6 +2,7 @@
 title: "Developing an Extra, Part III"
 _old_id: "354"
 _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution/developing-an-extra-in-modx-revolution,-part-iii"
+note: "This guide still references modAction, which has been removed in MODX 3.0."
 ---
 
 This tutorial is part of a Series:

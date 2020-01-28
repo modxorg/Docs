@@ -14,6 +14,7 @@ The biggest breaking changes can be summarised as follows:
 - [Minimum supported PHP version has been increased to 7.1](getting-started/upgrading-to-3.0/requirements)
 - [A large number of (previously unnamespaced) classes have been renamed and moved](getting-started/upgrading-to-3.0/class-names), including processors and model classes.
 - [All processors have been renamed, including base processors](getting-started/upgrading-to-3.0/processors)
+- [modAction and related functionality has been removed](getting-started/upgrading-to-3.0/actions)
 
 ## Legacy functionality cleanup
 
