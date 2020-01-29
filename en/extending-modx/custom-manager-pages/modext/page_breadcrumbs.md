@@ -4,7 +4,7 @@ title: "MODx.util.getHeaderBreadCrumbs"
 
 ## MODx.util.getHeaderBreadCrumbs
 
-For som epages you might want to show breadcrubs as a quick way to navigate in the hierarchy. Under `MODx.util` there's a function `getHeaderBreadCrumbs` that'll stub out a breadcrumb header for your page.
+For some pages you might want to show breadcrubs as a quick way to navigate in the hierarchy. Under `MODx.util` there's a function `getHeaderBreadCrumbs` that'll stub out a breadcrumb header for your page.
 
 ## Parameters
 

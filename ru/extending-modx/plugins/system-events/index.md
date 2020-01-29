@@ -5,33 +5,33 @@ translation: "extending-modx/plugins/system-events/"
 
 ## Что такое системные события?
 
- Системные события - это события в MODX, которые [Plugins](extending-modx/plugins "Plugins") зарегистрированы в. Они «запускаются» по всему коду MODX, что позволяет плагинам взаимодействовать с кодом MODX и добавлять пользовательские функции без взлома основного кода.
+Системные события - это события в MODX, которые [Плагины](extending-modx/plugins "Плагины") зарегистрированы в. Они «запускаются» по всему коду MODX, что позволяет плагинам взаимодействовать с кодом MODX и добавлять пользовательские функции без взлома основного кода.
 
 ## Модель системного события
 
-Таблица системных событий находится в {table\_prefix}\_system\_eventnames, и имеет следующие поля:
+Таблица системных событий находится в {table_prefix}\_system_eventnames, и имеет следующие поля:
 
-- **id** - The unique ID of the event.
-- **name** - Название мероприятия. Это то, как они упоминаются в коде, через метод [modX.invokeEvent](extending-modx/modx-class/reference/modx.invokeevent "modX.invokeEvent").
-- **service** - Какого типа системного события это событие.
-- **groupname** - Используется для пользовательских интерфейсов, прежде всего для фильтрации, группировки и сортировки событий. Не используется явно в модели modx.
+-   **id** - The unique ID of the event.
+-   **name** - Название мероприятия. Это то, как они упоминаются в коде, через метод [modX.invokeEvent](extending-modx/modx-class/reference/modx.invokeevent "modX.invokeEvent").
+-   **service** - Какого типа системного события это событие.
+-   **groupname** - Используется для пользовательских интерфейсов, прежде всего для фильтрации, группировки и сортировки событий. Не используется явно в модели modx.
 
 ### Service Types
 
 Поле 'service' в системном событии является числом; числа указывают на различные типы системных событий. Они есть:
 
-- 1 - Parser Service Events
-- 2 - Manager Access Events
-- 3 - Web Access Service Events
-- 4 - Cache Service Events
-- 5 - Template Service Events
-- 6 - User Defined Events
+-   1 - Parser Service Events
+-   2 - Manager Access Events
+-   3 - Web Access Service Events
+-   4 - Cache Service Events
+-   5 - Template Service Events
+-   6 - User Defined Events
 
- 3 не запускается в контексте 'mgr', 2 не запускается ни в каком контексте, кроме 'mgr'.
+3 не запускается в контексте 'mgr', 2 не запускается ни в каком контексте, кроме 'mgr'.
 
 ## Доступные события
 
- Это не исчерпывающий список, так как события все еще документируются. Спасибо за терпеливость. События TV, Template и Snippet еще не задокументированы. Для получения полного списка, пожалуйста, либо посмотрите плагин в менеджере и посмотрите вкладку Системные события, либо просмотрите [here](https://github.com/modxcms/revolution/blob/develop/_build/data/transport.core.events.php). Также обратите внимание, что все события WUsr (веб-пользователя) были удалены.
+Это не исчерпывающий список, так как события все еще документируются. Спасибо за терпеливость. События TV, Template и Snippet еще не задокументированы. Для получения полного списка, пожалуйста, либо посмотрите плагин в менеджере и посмотрите вкладку Системные события, либо просмотрите [here](https://github.com/modxcms/revolution/blob/develop/_build/data/transport.core.events.php). Также обратите внимание, что все события WUsr (веб-пользователя) были удалены.
 
 1. [OnBeforeCacheUpdate](extending-modx/plugins/system-events/onbeforecacheupdate)
 2. [OnBeforeChunkFormDelete](extending-modx/plugins/system-events/onbeforechunkformdelete)
@@ -153,36 +153,36 @@ translation: "extending-modx/plugins/system-events/"
 
 ## Кастомные события
 
- Вы можете создавать свои собственные пользовательские события, но в настоящее время для этого нет графического интерфейса; вместо этого вы должны использовать API. События имеют следующие атрибуты:
+Вы можете создавать свои собственные пользовательские события, но в настоящее время для этого нет графического интерфейса; вместо этого вы должны использовать API. События имеют следующие атрибуты:
 
-- **name** - уникальное имя события.
-- **service** - неудачная попытка сгруппировать события для определенных областей. 1,2,4,5,6 загружаются внутри менеджера, тогда как 1,3,4,5,6 загружаются вне менеджера. (см. `getEventMap()`)
-- **groupname** - Используется для визуальной группировки событий в менеджере MODX (отображается как вкладка плагина).
+-   **name** - уникальное имя события.
+-   **service** - неудачная попытка сгруппировать события для определенных областей. 1,2,4,5,6 загружаются внутри менеджера, тогда как 1,3,4,5,6 загружаются вне менеджера. (см. `getEventMap()`)
+-   **groupname** - Используется для визуальной группировки событий в менеджере MODX (отображается как вкладка плагина).
 
-  Создание события с использованием API MODX будет выглядеть примерно так:
+Создание события с использованием API MODX будет выглядеть примерно так:
 
-``` php
+```php
 $Event = $modx->newObject('modEvent');
 $Event->set('name', 'OnMyCustomEvent');
 $Event->set('service',1);
 $Event->set('groupname', 'Custom');
 ```
 
- Тогда ваш код может вызвать событие по имени:
+Тогда ваш код может вызвать событие по имени:
 
-``` php
+```php
 $modx->invokeEvent('OnMyCustomEvent', $options);
 ```
 
- Наконец, можно установить плагин для прослушивания этого события. В этом случае он может получать параметры, переданные ему.
+Наконец, можно установить плагин для прослушивания этого события. В этом случае он может получать параметры, переданные ему.
 
-``` php
+```php
 //... TODO...
 ```
 
 ## Смотри также
 
-1. [System Events](extending-modx/plugins/system-events)
+1. [Системные события](extending-modx/plugins/system-events)
 2. [OnBeforeCacheUpdate](extending-modx/plugins/system-events/onbeforecacheupdate)
 3. [OnBeforeChunkFormDelete](extending-modx/plugins/system-events/onbeforechunkformdelete)
 4. [OnBeforeChunkFormSave](extending-modx/plugins/system-events/onbeforechunkformsave)
