@@ -47,8 +47,8 @@ Simply place the snippet anywhere you want to show a list of commonly-used tags,
 
 There are 2 chunks that are processed in tagLister. Their corresponding parameters are:
 
--   [tpl](extras/taglister/taglister.taglister/tpl "tpl") - The Chunk to use for each tag listed.
--   [allTpl](extras/taglister/taglister.taglister/all "all") - The Chunk to use for the 'All Tags' link.
+-   [tpl](extras/taglister/taglister/tpl "tpl") - The Chunk to use for each tag listed.
+-   [allTpl](extras/taglister/taglister/all "all") - The Chunk to use for the 'All Tags' link.
 
 ## Examples
 
