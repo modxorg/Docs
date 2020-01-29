@@ -1,6 +1,6 @@
 ---
 title: Язык Панели управления
-translation: "getting-started/upgrading-to-3/manager-language"
+translation: "(getting-started/upgrading-to-3.0/manager-language"
 ---
 
 В MODX 2.x, язык менеджера управлялся с помощью системного параметра `manager_language` (и необязательно переопределялся на уровне контекста или пользователя). В MODX 3 этот параметр был удален, и язык диспетчера вместо этого сохраняется в сеансе пользователя.

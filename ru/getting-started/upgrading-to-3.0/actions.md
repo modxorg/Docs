@@ -1,6 +1,6 @@
 ---
 title: "modAction и связанные"
-translation: "getting-started/upgrading-to-3/actions"
+translation: "(getting-started/upgrading-to-3.0/actions"
 ---
 
 Вся функциональность, связанная с `modAction`, была удалена в MODX3. Это сопровождалось очисткой классов `modManagerResponse` и`modManagerController`.

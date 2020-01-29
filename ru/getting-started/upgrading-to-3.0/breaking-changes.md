@@ -2,7 +2,7 @@
 title: Критические изменения
 description: "Критические изменения в MODX 3, которые могут повлиять на обновления и пакеты сайта."
 sortorder: 1
-translation: "getting-started/upgrading-to-3/breaking-changes"
+translation: "(getting-started/upgrading-to-3.0/breaking-changes"
 ---
 
 В качестве основного релиза MODX 3.0 поставляется с рядом критических изменений. Всегда есть баланс, который нужно поддерживать между разрушительными изменениями, которые очищают технический долг,и не нарушают вещи без необходимости.
@@ -11,8 +11,8 @@ translation: "getting-started/upgrading-to-3/breaking-changes"
 
 Самые большие критические изменения можно суммировать следующим образом:
 
--   [Минимальная поддерживаемая версия PHP была увеличена до 7.1](getting-started/upgrading-to-3/requirements)
--   [Большое количество классов (ранее не размещенных в пространстве имен) были переименованы и перемещены](getting-started/upgrading-to-3/class-names), включая процессоры и классы моделей.
+-   [Минимальная поддерживаемая версия PHP была увеличена до 7.1]((getting-started/upgrading-to-3.0/requirements)
+-   [Большое количество классов (ранее не размещенных в пространстве имен) были переименованы и перемещены]((getting-started/upgrading-to-3.0/class-names), включая процессоры и классы моделей.
 -   [Все процессоры были переименованы, включая базовые процессоры](getting-started/upgrading-to-3.0/processors)
 -   [modAction и связанные с ним функции были удалены](getting-started/upgrading-to-3.0/actions)
 

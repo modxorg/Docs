@@ -1,6 +1,6 @@
 ---
 title: Процессоры
-translation: "getting-started/upgrading-to-3/processors"
+translation: "(getting-started/upgrading-to-3.0/processors"
 ---
 
 В MODX 3.0 все процессоры были **переименованы** и **перемещены** по сравнению с 2.x. Это также включает в себя базовые процессоры (`modObject...Processor`).
