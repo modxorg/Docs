@@ -1,6 +1,6 @@
 ---
 title: Требования К Серверу
-translation: "(getting-started/upgrading-to-3.0/requirements"
+translation: "getting-started/upgrading-to-3.0/requirements"
 ---
 
 Минимальная версия PHP, поддерживаемая для MODX 3.0 - это **PHP 7.1** (ранее это был PHP 5.3). Ожидается, что минимальные требования будут более точно соответствовать [официальным датам поддержки PHP](https://www.php.net/supported-versions.php) в будущем.

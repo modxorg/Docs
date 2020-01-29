@@ -5,7 +5,7 @@ sortorder: 1
 translation: "getting-started/upgrading-to-3"
 ---
 
-Этот документ подробно описывает изменения, внесенные между 2.x и 3.0, которые могут повлиять на обновления. Это не полный список всех изменений (см. [changelog для этого](https://github.com/modxcms/revolution/blob/3.x/core/docs/changelog.txt)), но [нарушение изменений]((getting-started/upgrading-to-3.0/breaking-changes), которые могут повлиять на дополнения и сайты.
+Этот документ подробно описывает изменения, внесенные между 2.x и 3.0, которые могут повлиять на обновления. Это не полный список всех изменений (см. [changelog для этого](https://github.com/modxcms/revolution/blob/3.x/core/docs/changelog.txt)), но [нарушение изменений](getting-started/upgrading-to-3.0/breaking-changes), которые могут повлиять на дополнения и сайты.
 
 ## Обновление до 3.0
 
@@ -13,10 +13,10 @@ translation: "getting-started/upgrading-to-3"
 
 После обновления ядра и дополнительных компонентов могут возникнуть некоторые критические изменения, которые необходимо устранить в дополнительном коде или пользовательском коде.
 
--   Важно: [MODX 3.0 требует как минимум PHP 7.1]((getting-started/upgrading-to-3.0/requirements)
--   [Список изменений можно найти здесь]((getting-started/upgrading-to-3.0/breaking-changes), в частности [многие основные классы были перемещены и переименованы]((getting-started/upgrading-to-3.0/class-names).
--   [Язык менеджера теперь динамический]((getting-started/upgrading-to-3.0/manager-language)
--   [Различные системные настройки были удалены или изменены]((getting-started/upgrading-to-3.0/system-settings)
+-   Важно: [MODX 3.0 требует как минимум PHP 7.1](getting-started/upgrading-to-3.0/requirements)
+-   [Список изменений можно найти здесь](getting-started/upgrading-to-3.0/breaking-changes), в частности [многие основные классы были перемещены и переименованы](getting-started/upgrading-to-3.0/class-names).
+-   [Язык менеджера теперь динамический](getting-started/upgrading-to-3.0/manager-language)
+-   [Различные системные настройки были удалены или изменены](getting-started/upgrading-to-3.0/system-settings)
 
 ## Другие заметные изменения и улучшения
 
