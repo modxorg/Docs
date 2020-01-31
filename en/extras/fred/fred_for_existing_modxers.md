@@ -19,7 +19,7 @@ Users will frequently interact with the Sidebar, accessed by clicking the main M
 ![Fred Sidebar](media/fred-sidebar.png)
 
 The “Site” menus is like the Manager tree, but only shows Fred-enabled pages.
-en\extras\fred\blueprints.md
+
 The “Blueprints” menu gives you the ability to create and use [Blueprints](extras/fred/blueprints).
 
 The “Elements” menu gives you access to use [Elements](extras/fred/elements) to construct or add to a page.
