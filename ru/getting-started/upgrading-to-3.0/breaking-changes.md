@@ -13,8 +13,8 @@ translation: "getting-started/upgrading-to-3.0/breaking-changes"
 
 -   [Минимальная поддерживаемая версия PHP была увеличена до 7.1](getting-started/upgrading-to-3.0/requirements)
 -   [Большое количество классов (ранее не размещенных в пространстве имен) были переименованы и перемещены](getting-started/upgrading-to-3.0/class-names), включая процессоры и классы моделей.
--   [Все процессоры были переименованы, включая базовые процессоры]getting-started/upgrading-to-3.0/processors)
--   [modAction и связанные с ним функции были удалены]getting-started/upgrading-to-3.0/actions)
+-   [Все процессоры были переименованы, включая базовые процессоры](getting-started/upgrading-to-3.0/processors)
+-   [modAction и связанные с ним функции были удалены](getting-started/upgrading-to-3.0/actions)
 
 ## Очистка устаревших функций
 
