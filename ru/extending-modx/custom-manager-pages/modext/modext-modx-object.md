@@ -134,11 +134,11 @@ MODx.sleep(3); /* остановиться на 3 секунды */
 
 ### MODx.logout
 
-Этот метод автоматически выведет из менеджера активного пользователя. Он запускает события beforeLogout и afterLogout объекта MODx. Если оба события успешны, он перенаправит пользователя на экран входа в систему.
+Этот метод автоматически выведет из менеджера активного пользователя. Он запускает события `beforeLogout` и `afterLogout` объекта MODx. Если оба события успешны, он перенаправит пользователя на экран входа в систему.
 
 ### MODx.loadHelpPane
 
-This will load the current Help screen for the active page. Its URL is set from the `MODx.config.help_url` property; you can override this to fire up any URL into the panel:
+Это загрузит текущий экран справки для активной страницы. Его URL задается из свойства `MODx.config.help_url`. Вы можете переопределить это, чтобы запустить любой URL в панели:
 
 ```javascript
 /* Показать сайт в модальном окне справки */

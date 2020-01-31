@@ -10,7 +10,7 @@ New in MODX 2.4 is the ability to define package dependencies in transport packa
 
 Package Dependencies are added to the package attributes, which were already used for the license, readme and changelog contents, typically looking like this toward the end of your [build script](extending-modx/transport-packages/build-script). If you use a different way of creating packages, you might need to check that documentation to see if it supports these attributes and how you can defined the dependencies there.
 
-``` php
+```php
 $builder->setPackageAttributes(array(
     'license' => file_get_contents($sources['docs'].'license.txt'),
     'readme' => file_get_contents($sources['docs'].'readme.txt'),
@@ -25,7 +25,7 @@ To add the package dependencies, simply add the `requires` option, providing an 
 
 For example to indicate a package requires FormIt 2.2 or higher:
 
-``` php
+```php
 $builder->setPackageAttributes(array(
     'license' => file_get_contents($sources['docs'].'license.txt'),
     'readme' => file_get_contents($sources['docs'].'readme.txt'),
