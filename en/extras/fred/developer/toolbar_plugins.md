@@ -4,7 +4,7 @@ title: "Toolbar Plugins"
 
 Fred supports adding functionality to individual Elements by registering new buttons in the toolbar above each Element.
 
-![Element Toolbar](/media/toolbar.png)
+![Element Toolbar](../media/toolbar.png)
 
 Plugins are distributed as MODX Transport Packages, which can be submitted to the [MODX Extras repository](https://modx.com/extras) or uploaded manually from the Installer inside the Manager. You can learn more about [how to build Transport Packages](https://docs.modx.com/revolution/2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution) in the MODX Documentation, or use a tool like [Git Package Management](https://theboxer.github.io/Git-Package-Management/) to help create Transport Packages.
 

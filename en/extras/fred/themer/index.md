@@ -6,7 +6,7 @@ Fred themers should have a basic understanding of MODX, be proficient with HTML/
 
 Intermediate Fred themers will use [Twig](https://twig.symfony.com/doc/2.x/) to create conditional logic in Elements. This can be used to show or hide things based on the settings of the controls in Option Sets.
 
-Advanced Fred themers will need to know Javascript to advanced elements with [JS Events](extras/fred/elements/js_events).
+Advanced Fred themers will need to know Javascript to advanced elements with [JS Events](extras/fred/themer/elements/js_events).
 
 ## Suggested Workflow
 
@@ -18,4 +18,4 @@ We strongly suggest installing the [Ace Extra](https://modx.com/extras/package/a
 
 If you have Ace installed as suggested above, attribute-completion and code hints are available when working in the Manager for Fred by installing the [Fred Ace Integration](https://modx.com/extras/package/fredaceintegration) Extra. When creating or editing an Element, start typing `data-` or `fred` and the press `ctrl+space` to show list of all available Fred attributes.
 
-![Ace Integration](/media/ace_integration_dialog.png)
+![Ace Integration](../media/ace_integration_dialog.png)

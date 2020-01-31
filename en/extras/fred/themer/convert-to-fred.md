@@ -10,7 +10,7 @@ Here are some tips for converting your site to Fred.
 
 ### Default Element
 
-When converting existing pages to Fred, you will want to specify a _Default Element_ in the Themes grid, [see documentation](extras/fred/cmp/themes). Without a default element set, your content will disappear when switching a resource to Fred.
+When converting existing pages to Fred, you will want to specify a _Default Element_ in the Themes grid, [see documentation](extras/fred/themer/cmp/themes). Without a default element set, your content will disappear when switching a resource to Fred.
 
 The Default Element works by detecting there are no Fred elements currently in place, then selecting the default element and putting any content from the resource into the object specified by the `data-fred-name` option.
 
