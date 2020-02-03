@@ -14,7 +14,7 @@ MODX will run fine on most shared/cloud hosting, as well as VPS and dedicated bo
 
 ## PHP 
 
-MODX 3 requires at least PHP 7.0, but 7.2 or 7.3 is recommended.
+MODX 3 requires at least PHP 7.1, but higher is recommended.
 
 The following extensions are required by MODX, or are commonly required by extras: `zlib`, `json`, `gd`, `pdo` (specifically `pdo_mysql`), `imagick`, `simplexml`, `curl`, and `mbstring`. These are common extensions, and are usually enabled by default.
 
