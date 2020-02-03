@@ -72,7 +72,7 @@ Save this Element, go back to the front-end of your Resource, and refresh the pa
 Click on the orange Elements stacked boxes icon or the MODX icon in the launcher at the bottom left of the page. In the sidebar Elements tab, you should now see the categories you created earlier in step 4. Hover the `Text` category to see your freshly created `H1 Heading` Element and drag it into the empty dropzone.
 
 <video width="640" height="480" controls>
-  <source src="../media/basic-use.mp4" type="video/mp4">
+  <source src="extras/fred/media/basic-use.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
@@ -89,7 +89,7 @@ Let’s create another Element for a single paragraph:
 5. Change the text and save
 
 <video width="640" height="480" controls>
-  <source src="../media/basic-use-2.mp4" type="video/mp4">
+  <source src="extras/fred/media/basic-use-2.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
