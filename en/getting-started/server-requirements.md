@@ -34,7 +34,7 @@ The following permissions are required: `SELECT`, `INSERT`, `UPDATE`, `DELETE` f
 
 MODX will run on most web servers available today. Apache 2.4+ or nginx 1.8+ are recommended.
 
-In order to use [friendly urls](getting-started/friendly-urls), you may need additional configuration depending on the web server. Instructions are available for [nginx](getting-started/friendly-urls/nginx) and [lighttpd](getting-started/friendly-urls/lighttpd).
+In order to use [friendly urls](getting-started/friendly-urls), you may need additional configuration depending on the web server. Instructions are available for [apache](getting-started/friendly-urls/apache), [nginx](getting-started/friendly-urls/nginx) and [lighttpd](getting-started/friendly-urls/lighttpd).
 
 ## Browser Support for the Manager
 
