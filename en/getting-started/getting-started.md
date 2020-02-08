@@ -60,9 +60,9 @@ MODX has a powerful user and group management and also allows to change the
 login method. You should pay some attention to set up users, do manager form
 customization and other stuff: 
  
- * [User and group management](../building-sites/client-proofing/security/users.md)
- * [Manager customization](../building-sites/client-proofing/form-customization)
- * [Manager theme](../building-sites/client-proofing/custom-manager-themes.md)
- * [Passwordless login](../building-sites/client-proofing/security/passwordless-login)
+ * [User and group management](building-sites/client-proofing/security/users.md)
+ * [Manager customization](building-sites/client-proofing/form-customization)
+ * [Manager theme](building-sites/client-proofing/custom-manager-themes.md)
+ * [Passwordless login](building-sites/client-proofing/security/passwordless-login)
  
  
