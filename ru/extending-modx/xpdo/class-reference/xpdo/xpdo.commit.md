@@ -5,7 +5,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.commit"
 
 ## xPDO::commit
 
-See <http://php.net/manual/en/function.pdo-commit.php>
+Смотри <http://php.net/manual/en/function.pdo-commit.php>
 
 ## Синтаксис
 

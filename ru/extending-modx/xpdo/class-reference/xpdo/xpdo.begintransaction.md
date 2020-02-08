@@ -5,7 +5,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.begintransaction"
 
 ## xPDO::beginTransaction
 
-See <http://php.net/manual/en/function.pdo-begintransaction.php>
+Смотри <http://php.net/manual/en/function.pdo-begintransaction.php>
 
 ## Синтаксис
 
