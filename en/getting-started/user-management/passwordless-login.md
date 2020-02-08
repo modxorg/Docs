@@ -5,7 +5,7 @@ sortorder: 0
 
 ## Passwordless Login
 
-MODX3 has a new feature named "passwordless login", which can be activated
+MODX3 has a new feature named "passwordless login", which can be activated by a system setting. Once you have activated that feature, it is no longer needed to enter a password and a username to login. Instead, you simply enter your account's email address, and the system will send you an email with a one-time login link. By clicking on that link you will then be immediately being logged into the manager.
 by a system setting. Once you have activated that feature, it is no longer
 needed to enter a password and a username to login. Instead, you simply
 enter your account's email address, and the system will send you an email
@@ -51,4 +51,3 @@ itself.
 Be aware that there will be _no error message_ if you enter an unknown email
 address during login. This is a well-known and intended behaviour 
 to prevent user-enumeration attempts.
-
