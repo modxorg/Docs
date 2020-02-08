@@ -48,6 +48,13 @@ personal login link.
 ![](passwordless-email.png)
  
 ### Configure link expiration
+
+You can configure the expiration time of the login link via the system setting `passwordless_expiration`. By default it is set to 3600 seconds, which should be way enough for everyone to login. If you are paranoid, you can easily set it to a lower value, e.g. 600 to allow usage of the link only for 10 minutes. The validity period will also be shown in the email
+itself. 
+
+### Additional notes
+
+Be aware that there will be _no error message_ if you enter an unknown email address during login. This is a well-known and intended behavior to prevent user-enumeration attempts.
 You can configure the expiration time of the login link via the system
 setting `passwordless_expiration`. By default it is set to 3600 seconds,
 which should be way enough for everyone to login. If you are paranoid, 
