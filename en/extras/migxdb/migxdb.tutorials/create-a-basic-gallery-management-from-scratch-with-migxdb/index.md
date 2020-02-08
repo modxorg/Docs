@@ -16,15 +16,15 @@ First off we will need to install [MIGX](extras/migx "MIGX") by package-manageme
 
 ## Create a new Package and schema-file
 
-Go to Components->MIGX->Tab 'Package Manager'.
+Go to Components->MIGX->Tab _Package Manager_.
 
-Add a name for your new package into the field 'packageName:'. For our example we use 'mygallery'.
+Add a name for your new package into the field _packageName:_. For our example we use `mygallery`.
 
-Click 'Create Package' This should create a directory under your core-path with an empty schema-file in its correct place.
+Click _Create Package_ This should create a directory under your core-path with an empty schema-file in its correct place.
 
-Still having 'mygallery' in the field packageName, we want to fill the textarea-field 'schema'.
+Still having `mygallery` in the field packageName, we want to fill the textarea-field _schema_.
 
-Go to the tab 'xml scheme' and add this code:
+Go to the tab _xml scheme_ and add this code:
 
 ### The Schema
 
@@ -55,17 +55,17 @@ Go to the tab 'xml scheme' and add this code:
 </model>
 ```
 
-by clicking 'Save Schema' we should have our schema-file created. You can test it by clicking 'Load Schema'.
+by clicking _Save Schema_ we should have our schema-file created. You can test it by clicking _Load Schema_.
 
 [Read more about creating schemas](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema "Defining a Schema")
 
 ### Parse Schema
 
-Create xpdo-classes and maps from schema by clicking 'Parse Schema' on the tab 'Parse Schema'.
+Create xpdo-classes and maps from schema by clicking _Parse Schema_ on the tab _Parse Schema_.
 
 ### Create Table(s)
 
-Create tables from schema by clicking 'Create Tables' on the tab 'Create Tables'. This should create our table.
+Create tables from schema by clicking _Create Tables_ on the tab _Create Tables_. This should create our table.
 
 At this time we have only one table in our schema defined.
 
@@ -73,26 +73,26 @@ At this time we have only one table in our schema defined.
 
 Now we want to create our configuration for the MIGXdb-TV.
 
-Go to the main-tab 'MIGX'
+Go to the main-tab _MIGX_
 
 There should be an empty grid with some buttons.
 
-We click 'Add item'
+We click _Add item_
 
 In the opening window we add:
 
-Name: mygallery - this is the name of our configuration. Make sure to use unique configuration-names.
-"Add Item" Replacement: Add Image - this is the text on our 'Add Item' - Button
-unique MIGX ID: mygallery - Its a good idea to have a unique MIGX - id for all your MIGX-configs.
+- _Name_: `mygallery` - this is the name of our configuration. Make sure to use unique configuration-names.
+- _Add Item Replacement_: `Add Image` - this is the text on our 'Add Item' - Button
+- _unique MIGX ID_: `mygallery` - Its a good idea to have a unique MIGX - id for all your MIGX-configs.
 
-Click 'Done'
+Click _Done_
 
 We should see a new created record in our grid.
-We could edit this record and add grid-columns and tabs and other stuff by right-clicking and choose 'edit', but we want to go the quick way by just importing our example-configuration.
+We could edit this record and add grid-columns and tabs and other stuff by right-clicking and choose _edit_, but we want to go the quick way by just importing our example-configuration.
 
-Right-Click our record and choose 'Export/Import'
+Right-Click our record and choose _Export/Import_
 
-Add this code into the one field 'Json' :
+Add this code into the one field _Json_ :
 
 ``` json
 {
@@ -257,9 +257,9 @@ Add this code into the one field 'Json' :
 }
 ```
 
-Click 'done'.
+Click _Done_.
 
-You can check what it has done by right-clicking the record and choosing 'edit' and go through the tabs and their nested grids.
+You can check what it has done by right-clicking the record and choosing _edit_ and go through the tabs and their nested grids.
 
 ## Create the MIGXdb - TV
 
@@ -269,37 +269,37 @@ Now we create our MIGXdb - TV.
 
 Create a new TV.
 
-Name: mygallery
+_Name_: `mygallery`
 
-Go to the tab: 'Input Options'.
+Go to the tab: _Input Options_
 
-Select the Input Type: migxdb
+Select the _Input Type_: `migxdb`
 
-Under 'Configurations' add: 'mygallery'.
+Under _Configurations_ add: `mygallery`.
 
-This tells MIGX to search for configurations with the name 'mygallery' This can be configuration-records as we have done above or php-files as it is done for the MIGX-configs-CMP. The MIGX-config-CMP is nothing else as a MIGXdb-CMP itself.
+This tells MIGX to search for configurations with the name _mygallery_ This can be configuration-records as we have done above or php-files as it is done for the MIGX-configs-CMP. The MIGX-config-CMP is nothing else as a MIGXdb-CMP itself.
 
 Add this TV to our gallery-template.
 
-click 'Save' to save the new created TV.
+click _Save_ to save the new created TV.
 
 ## Adding extended fields
 
 We want to add a URL to each image. This is very easy, because we can use extended-fields to store additional fields in. We just need to create a new Input-field to our Form.
 
-Go to Components->MIGX. Right-click on our mygallery-config, choose 'Edit'.
+Go to _Components->MIGX_. Right-click on our _mygallery_-config, choose _Edit_.
 
-Go to the Tab 'Formtabs', and click 'Add Item'.
+Go to the Tab _Formtabs_, and click _Add Item_.
 
-caption: 'Extended Fields'
+_caption_: `Extended Fields`
 
-on Fields click 'Add Item'.
+on _Fields_ click _Add Item_.
 
-fieldname: extended.url
-Caption: URL
-inputTVtype: url
+- _fieldname_: `extended.url`
+- _Caption_: `URL`
+- _inputTVtype_: `url`
 
-Click done -> done -> done to close all windows and save the additions.
+Click _Done_ -> _Done_ -> _Done_ to close all windows and save the additions.
 
 Now we have created a new tab in our gallery-management-window with a new field to add a URL to our image.
 
@@ -309,34 +309,30 @@ Create a container resource in the resource-tree, 'Galleries', using your galler
 
 Create Resources under this folder using the same gallery-template.
 
-By clicking 'Load grid' this should load our db-grid where we can add,edit,delete records with images.
+By clicking _Load grid_ this should load our db-grid where we can add, edit, and delete records with images.
 
 The created records should be automatically connected to our resources by the db-field 'resource\_id' and we will see only the records connected to our resource in the grid.
 
 ## Adding a search-field to our grid
 
-Go to Components->MIGX
-right-click on our mygallery-config, choose 'Edit'.
+Go to _Components->MIGX_
+right-click on our _mygallery_-config, choose _Edit_.
 
-Tab 'db-filters'
+Tab _db-filters_
 
-Click 'Add Item'
+Click _Add Item_
 
-filter name: search
-filter type: textbox
-getlist where:
+- _filter name_: `search`
+- _filter type_: `textbox`
+- _getlist where_: `{"title:LIKE":"%[[+search]]%","OR:description:LIKE":"%[[+search]]%"}`
 
-``` json
-{"title:LIKE":"%[[+search]]%","OR:description:LIKE":"%[[+search]]%"}
-```
-
-Click 'done' -> 'done'.
+Click _Done_ -> _Done_.
 
 Now we have added a nice search-field to our grid for filtering grid-items.
 
 ## Listing the Images on Frontend
 
-For listing your images on the Frontend you can use the included snippet 'migxLoopCollection'
+For listing your images on the Frontend you can use the included snippet _migxLoopCollection_
 
 Some examples:
 
