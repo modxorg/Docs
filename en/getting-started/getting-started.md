@@ -56,13 +56,13 @@ To create a new Resource click on the 'Resources' tab and then locate the '+' ic
 To create a new Template click on the 'Elements' tab and then locate the '+' icon next to the 'Templates' text. Alternatively, a new Template can be created by right click on the 'Templates' text and selecting either 'New Template' or 'Quick Create Template'. From here proceed to edit the Template as documented earlier.
 
 ## Change user experience and security settings
+
 MODX has a powerful user and group management and also allows to change the
 login method. You should pay some attention to set up users, do manager form
 customization and other stuff: 
  
- * [User and group management](building-sites/client-proofing/security/users.md)
- * [Manager customization](building-sites/client-proofing/form-customization)
- * [Manager theme](building-sites/client-proofing/custom-manager-themes.md)
- * [Passwordless login](building-sites/client-proofing/security/passwordless-login)
- 
+* [User and group management](building-sites/client-proofing/security/users.md)
+* [Manager customization](building-sites/client-proofing/form-customization)
+* [Manager theme](building-sites/client-proofing/custom-manager-themes.md)
+* [Passwordless login](building-sites/client-proofing/security/passwordless-login)
  
