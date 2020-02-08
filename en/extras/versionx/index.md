@@ -14,6 +14,7 @@ VersionX is an extra for MODX Revolution which adds Resource, Template, Chunk, T
 - VersionX 2.0 supported Revolution 2.0-2.2.
 - VersionX 2.1 no longer claims Revolution 2.0 support, but instead needs Revolution 2.1 by default. It should theoretically work, but no Revolution 2.0 specific testing or patches will be released.
 - VersionX 2.2 (future release) will likely start requiring at least Revolution 2.2 to take advantage of new coding standards.
+- VersionX 2.3 supports MODX 3 (alpha2+)
 
 ### History& Legacy
 
