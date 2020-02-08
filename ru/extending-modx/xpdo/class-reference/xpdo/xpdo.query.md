@@ -12,13 +12,13 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.query"
 
 ## Синтаксис
 
-API Docs: see <http://php.net/manual/en/pdo.query.php>
+API Docs: Смотри <http://php.net/manual/en/pdo.query.php>
 
 ```php
 xPDOObject|false query (string $statement)
 ```
 
-> \$statement
+> `$statement`
 
 Оператор SQL для подготовки и выполнения. Данные внутри запроса должны быть [правильно экранированы](http://php.net/manual/en/pdo.quote.php).
 
@@ -30,7 +30,7 @@ xPDOObject|false query (string $statement)
 
 `xPDOObject|false query (string $statement)`
 
-> \$statement
+> `$statement`
 
 Оператор SQL для подготовки и выполнения. Данные внутри запроса должны быть [правильно экранированы](http://php.net/manual/en/pdo.quote.php).
 
