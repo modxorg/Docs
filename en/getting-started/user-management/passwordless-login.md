@@ -17,7 +17,7 @@ Additionally, if passwordless login is enabled, no passwords are stored any more
 
 In order to activate the passwordless login, you need to set the system setting `passwordless_activated` in the area "Authentication and Security" of the core system settings to "Yes". The next time you login you will be presented the following login screen:
 
-![](passwordless-login-screen.png)
+![](passwordless-login-screen.jpg)
  
 Just enter your account's email address and you will receive an email with a
  personal login link.
