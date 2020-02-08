@@ -35,6 +35,7 @@ more in the MODX database. Then there is no more theoretical risk of
 passwords being stolen by a database breach (regardless of any encryption).
 
 ### How to enable passwordless login
+
 In order to activate the passwordless login, you need to set the system
 setting `passwordless_activated` in the area "Authentication and Security"
 of the core system settings to "Yes". The next time you login you will 
@@ -49,20 +50,9 @@ personal login link.
  
 ### Configure link expiration
 
-You can configure the expiration time of the login link via the system setting `passwordless_expiration`. By default it is set to 3600 seconds, which should be way enough for everyone to login. If you are paranoid, you can easily set it to a lower value, e.g. 600 to allow usage of the link only for 10 minutes. The validity period will also be shown in the email
-itself. 
+You can configure the expiration time of the login link via the system
+ setting `passwordless_expiration`. By default it is set to 3600 seconds, which should be way enough for everyone to login. If you are paranoid, you can easily set it to a lower value, e.g. 600 to allow usage of the link only for 10 minutes. The validity period will also be shown in the email itself. 
 
 ### Additional notes
 
 Be aware that there will be _no error message_ if you enter an unknown email address during login. This is a well-known and intended behavior to prevent user-enumeration attempts.
-You can configure the expiration time of the login link via the system
-setting `passwordless_expiration`. By default it is set to 3600 seconds,
-which should be way enough for everyone to login. If you are paranoid, 
-you can easily set it to a lower value, e.g. 600 to allow usage of the link
-only for 10 minutes. The validity period will also be shown in the email
-itself. 
-
-### Additional notes
-Be aware that there will be _no error message_ if you enter an unknown email
-address during login. This is a well-known and intended behaviour 
-to prevent user-enumeration attempts.
