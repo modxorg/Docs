@@ -4,7 +4,7 @@ _old_id: "316"
 _old_uri: "2.x/administering-your-site/settings/system-settings/tvs_below_content"
 ---
 
-## tvs\_below\_content
+## tvs_below_content
 
 **Name**: TVs Below Content
 **Type**: Yes/No
@@ -16,10 +16,10 @@ This controls whether Template Variables show up on their own tab or below resou
 
 All TVs appear below the Resource content, just like they did for MODX Evolution.
 
-![](tvs+below+content.jpg)
+![](tvs_below_content.jpg)
 
 ### No
 
 TVs appear on their own tab.
 
-![](tvs+not+below+content.jpg)
+![](tvs_not_below_content.jpg)

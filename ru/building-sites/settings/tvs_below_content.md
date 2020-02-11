@@ -3,7 +3,7 @@ title: "tvs_below_content"
 translation: "building-sites/settings/tvs_below_content"
 ---
 
-## tvs\_below\_content
+## tvs_below_content
 
 **Имя**: TVs Below Content
 **Тип**: Да/Нет
@@ -15,7 +15,7 @@ translation: "building-sites/settings/tvs_below_content"
 
 Все TV отображаются под контентом Resource, как и для MODX Evolution.
 
-![](/2.x/en/building-sites/settings/tvs+below+content.jpg)
+![](/2.x/en/building-sites/settings/tvs_below_content.jpg)
 
 ### Нет
 
