@@ -3,10 +3,10 @@ title: "cache_default"
 translation: "building-sites/settings/cache_default"
 ---
 
-## cache\_default
+## cache_default
 
-**Имя**: Cacheable Default
-**Тип**: Да/Нет
-**По умолчанию**: Да
+-   **Имя**: Кэшируемый по умолчанию
+-   **Тип**: Да/Нет
+-   **По умолчанию**: Да
 
 Делает все новые ресурсы кэшируемыми по умолчанию.

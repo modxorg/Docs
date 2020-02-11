@@ -3,10 +3,10 @@ title: "mail_smtp_keepalive"
 translation: "building-sites/settings/mail_smtp_keepalive"
 ---
 
-## mail\_smtp\_keepalive
+## mail_smtp_keepalive
 
-**Имя**: SMTP User
-**Тип**: Да/Нет
-**По умолчанию**: Нет
+-   **Имя**: SMTP удержание соединения
+-   **Тип**: Да/Нет
+-   **По умолчанию**: Нет
 
 Предотвращает закрытие SMTP-соединения после каждой отправки почты. Не рекомендуется.

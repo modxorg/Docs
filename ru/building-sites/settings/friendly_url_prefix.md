@@ -3,11 +3,11 @@ title: "friendly_url_prefix"
 translation: "building-sites/settings/friendly_url_prefix"
 ---
 
-## friendly\_url\_prefix
+## friendly_url_prefix
 
-**Имя**: Friendly URL Prefix
-**Тип**: String
-**По умолчанию**:
+-   **Имя**: Дружественный URL-префикс
+-   **Тип**: String
+-   **По умолчанию**:
 
 Этот параметр **устарел** и больше не доступен в MODX Revolution.
 

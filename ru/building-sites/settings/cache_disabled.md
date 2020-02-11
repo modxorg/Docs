@@ -3,11 +3,11 @@ title: "cache_disabled"
 translation: "building-sites/settings/cache_disabled"
 ---
 
-## cache\_disabled
+## cache_disabled
 
-**Имя**: Disable Global Cache Options
-**Тип**: Да/Нет
-**По умолчанию**: Нет
+-   **Имя**: Отключить глобальные параметры кэша
+-   **Тип**: Да/Нет
+-   **По умsолчанию**: Нет
 
 Если true, отключает все функции кэширования MODX.
 

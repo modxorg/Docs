@@ -3,10 +3,10 @@ title: "mail_smtp_timeout"
 translation: "building-sites/settings/mail_smtp_timeout"
 ---
 
-## mail\_smtp\_timeout
+## mail_smtp_timeout
 
-**Имя**: SMTP Timeout
-**Тип**: Number
-**По умолчанию**: 10
+-   **Имя**: SMTP таймаут
+-   **Тип**: Number
+-   **По умолычанию**: 10
 
 Устанавливает время ожидания SMTP-сервера в секундах. Эта функция не будет работать на серверах win32.

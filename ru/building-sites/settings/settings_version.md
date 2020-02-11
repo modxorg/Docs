@@ -3,11 +3,11 @@ title: "settings_version"
 translation: "building-sites/settings/settings_version"
 ---
 
-## settings\_version
+## settings_version
 
-**Имя**: MODX Version
-**Тип**: String
-**По умолчанию**: modx-2.0.0-pl
+-   **Имя**: MODX версия
+-   **Тип**: String
+-   **По умолчанию**: 2.7.2-pl
 
 Текущая версия MODX.
 

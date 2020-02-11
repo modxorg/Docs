@@ -3,24 +3,16 @@ title: "signupemail_message"
 translation: "building-sites/settings/signupemail_message"
 ---
 
-## signupemail\_message
+## signupemail_message
 
-**Имя**: Signup Email Message
-**Тип**: String
-**По умолчанию**:
+-   **Имя**: Письмо регистрации
+-   **Тип**: String
+-   **По умолчанию**:
 
-``` html
-Hello [[+uid]]
-
-Here are your login details for [[+sname]] Content Manager:
-
-Username: [[+uid]]
-Password: [[+pwd]]
-
-Once you log into the Content Manager ([[+surl]]), you can change your password.
-
-Regards,
-Site Administrator
+```html
+Hello [[+uid]] Here are your login details for [[+sname]] Content Manager:
+Username: [[+uid]] Password: [[+pwd]] Once you log into the Content Manager
+([[+surl]]), you can change your password. Regards, Site Administrator
 ```
 
 Здесь вы можете установить сообщение, отправляемое вашим пользователям, когда вы создаете для них учетную запись, и позволить MODX отправить им электронное письмо, содержащее их имя пользователя и пароль.

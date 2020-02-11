@@ -3,12 +3,12 @@ title: "session_enabled"
 translation: "building-sites/settings/session_enabled"
 ---
 
-## session\_enabled
+## session_enabled
 
-**Имя**: If sessions for the context the setting is added should be enabled or not
-**Тип**: Да/Нет
-**По умолчанию**: Да
-**Доступно в**: 2.2.1+
+-   **Имя**: Если сеансы для контекста добавлены, параметр должен быть включен или нет
+-   **Тип**: Да/Нет
+-   **По умолчанию**: Да
+-   **Доступно в**: 2.2.1+
 
 Используйте это только как контекстную настройку, если вы добавите это к основным системным настройкам и установите для него значение Нет, вы заблокируете себя из менеджера!
 
@@ -16,7 +16,7 @@ translation: "building-sites/settings/session_enabled"
 
 Если вы отключите сеансы, функция предварительного просмотра из менеджера больше не будет работать (так как у вас больше нет сеанса, который позволяет вам просматривать неопубликованные ресурсы). Это исправлено в ветке разработки для 2.3.
 
-## Посмотрите также
+## Смотрите также
 
-- [MODX Blog Session-less contexts](http://develop.modx.com/blog/2012/04/05/new-for-2.2.1-session-less-contexts/)
-- [Forum Thread](http://forums.modx.com/thread/?thread=75651)
+-   [MODX Blog Session-less contexts](http://develop.modx.com/blog/2012/04/05/new-for-2.2.1-session-less-contexts/)
+-   [Forum Thread](http://forums.modx.com/thread/?thread=75651)

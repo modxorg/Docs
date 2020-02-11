@@ -3,10 +3,10 @@ title: "mail_smtp_user"
 translation: "building-sites/settings/mail_smtp_user"
 ---
 
-## mail\_smtp\_user
+## mail_smtp_user
 
-**Имя**: SMTP User
-**Тип**: String
-**По умолчанию**:
+-   **Имя**: SMTP пользователь
+-   **Тип**: String
+-   **По умолчанию**:
 
 Пользователь для аутентификации на SMTP.

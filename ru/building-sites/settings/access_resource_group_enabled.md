@@ -3,12 +3,12 @@ title: "access_resource_group_enabled"
 translation: "building-sites/settings/access_resource_group_enabled"
 ---
 
-## access\_resource\_group\_enabled
+## access_resource_group_enabled
 
-**Имя**: Check Resource Group Access
-**Тип**: Да/Нет
-**По умолчанию**: Да
-**Доступно в**: Revolution 2.1+
+-   **Имя**: Проверять доступ к группам ресурсов
+-   **Тип**: Да/Нет
+-   **По умолчанию**: Да
+-   **Доступно в**: Revolution 2.1+
 
 Используйте это для включения или отключения проверок ACL группы ресурсов (для контекста).
 

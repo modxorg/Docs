@@ -3,10 +3,10 @@ title: "proxy_port"
 translation: "building-sites/settings/proxy_port"
 ---
 
-## proxy\_port
+## proxy_port
 
-**Имя**: Proxy Port
-**Тип**: String
-**По умолчанию**:
+-   **Имя**: Прокси порт
+-   **Тип**: String
+-   **По умолчанию**:
 
 Порт для вашего прокси-сервера.

@@ -3,11 +3,11 @@ title: "allow_tags_in_post"
 translation: "building-sites/settings/allow_tags_in_post"
 ---
 
-## allow\_tags\_in\_post
+## allow_tags_in_post
 
-**Имя**: Allow Tags in Post
-**Тип**: Да/Нет
-**По умолчанию**: Да
+-   **Имя**: Разрешить передачу HTML тегов в POST запросах
+-   **Тип**: Да/Нет
+-   **По умолчанию**: Да
 
 Если установлено значение true, запросы POST будут содержать теги HTML-формы.
 
