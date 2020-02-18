@@ -46,7 +46,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 ``` php
 [[$pageHeader]]
-<div id="content" class="blog-post">
+<main id="content" class="blog-post">
   <h2 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h2>
   <p class="post-info">
     Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
@@ -55,11 +55,11 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
     Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
   </a>
   </p>
-  <div class="entry">
+  <article class="entry">
     <p>[[*introtext]]</p>
     <hr />
     [[*content]]
-  </div>
+  </article>
   <div class="postmeta">
     [[*tags:notempty=`
       <span class="tags">Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]</span>
@@ -82,7 +82,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
       &closeAfter=`30`
     ]]
   </div>
-</div>
+</main>
 [[$pageFooter]]
 ```
 
@@ -98,11 +98,11 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 ``` php
 <p class="post-info">
-Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
-Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
-<a href="[[~[[*id]]]]#comments" class="comments">
-  Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
-</a>
+  Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
+  Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
+  <a href="[[~[[*id]]]]#comments" class="comments">
+    Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
+  </a>
 </p>
 ```
 
