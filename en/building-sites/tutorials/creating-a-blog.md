@@ -50,7 +50,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
   <a href="#content" class="visually-hidden">skip to main content</a>
   <h2 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h2>
   <p class="post-info">
-    Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
+    Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time> |
     Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
     <a href="[[~[[*id]]]]#comments" class="comments">
       Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
