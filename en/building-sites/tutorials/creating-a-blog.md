@@ -314,11 +314,11 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 <h3>[[+arc_month_name]] [[+arc_year]] Archives</h3>
 [[+archives]]
 [[!+page.nav:notempty=`
-<div class="paging">  
-<ul class="pageList">  
-  [[!+page.nav]]  
-</ul>  
-</div>
+<nav class="paging" role="Archives">  
+  <ul class="pageList">  
+    [[!+page.nav]]  
+  </ul>  
+</nav>
 `]]
 ```
 
