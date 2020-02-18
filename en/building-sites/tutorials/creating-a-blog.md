@@ -190,11 +190,11 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
   &includeContent=`1`
 ]]
 [[!+page.nav:notempty=`
-<div class="paging">  
-<ul class="pageList">  
-  [[!+page.nav]]  
-</ul>  
-</div>
+<nav class="paging" role="Blog Posts">  
+  <ul class="pageList">  
+    [[!+page.nav]]  
+  </ul>  
+</nav>
 `]]
 ```
 
