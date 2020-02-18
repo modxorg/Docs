@@ -30,7 +30,7 @@ You can also use these to modify Snippet output; note that the modifier comes af
 [[mySnippet:modifier=`value`? &mySnippetParam=`something`]]
 ```
 
-If you have longer code in a :then=``:else=`` statement and you want to make it more readable by putting it on multiple lines, it has to be done like this:
+If you have longer code in a ``:then=`...`:else=`...` `` statement and you want to make it more readable by putting it on multiple lines, it has to be done like this:
 
 ``` php
 [[+placeholder:is=`0`:then=`
@@ -62,7 +62,7 @@ The following table lists some of the existing modifiers and shows examples of t
 | in, IN, inarray, inArray                                     | Check to see if the value is in an array (comma seperated)                                                              | ```[[+id:in=`5,15,22`:then=`Yes in array`]]```                                                               |
 | hide                                                         | Will check earlier conditions, and hide the element if the conditions were met.                                         | ```[[+numbooks:lt=`1`:hide]]```                                                                              |
 | show                                                         | Will check earlier conditions, and show the element if the conditions were met.                                         | ```[[+numbooks:gt=`0`:show]]```                                                                              |
-| then                                                         | Conditional usage.                                                                                                      | ```[[+numbooks:gt=`0`:then=`Now available!`]]```                                                             |
+| then                                                         | Conditional usage.                                                                                                       | ```[[+numbooks:gt=`0`:then=`Now available!`]]```                                                             |
 | else                                                         | Conditional usage, together with then.                                                                                  | ```[[+numbooks:gt=`0`:then=`Now available!`:else=`Sorry, currently sold out.`]]```                           |
 | select                                                       | Output a replacement, if the value is found in the list of values before the equal sign. Otherwise the result is empty. | ```[[+numbooks:select=`0=Value 0&1=Value 1&2=Value 2`]]```                                                   |
 | memberof, ismember, mo                                       | Checks if the user is a member of the specified group(s).                                                               | ```[[+modx.user.id:memberof=`Administrator`]]```                                                             |
