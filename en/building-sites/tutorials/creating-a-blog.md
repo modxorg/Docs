@@ -121,19 +121,21 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
  Okay, now we're in the comments part of BlogPostTemplate. As you can see here, we're using [Quip](/extras/quip "Quip") for our commenting system. You could feel free to use another system, such as Disqus, here if you choose. For this tutorial, we'll go with Quip. Our code is as follows:
 
 ``` php
-<div class="post-comments" id="comments">[[!Quip?
+<section class="post-comments" id="comments">
+  [[!Quip?
     &thread=`blog-post-[[*id]]`
-    &replyResourceId=`19`
+    &replyResourceId=`123`
     &closeAfter=`30`
   ]]
   <br /><br />
   [[!QuipReply?
-     &thread=`blog-post-[[*id]]`
-     &moderate=`1`
-     &moderatorGroup=`Moderators`
-     &closeAfter=`30`
+    &thread=`blog-post-[[*id]]`
+    &notifyEmails=`my@email.com`
+    &moderate=`1`
+    &moderatorGroup=`Moderators`
+    &closeAfter=`30`
   ]]
-</div>
+</section>
 ```
 
  Okay, cool. Note we have two Snippet calls here - one for displaying the comments for this thread ([Quip](/extras/quip/quip.quip "Quip.Quip")), and another for displaying the reply form ([QuipReply](/extras/quip/quip.quipreply "Quip.QuipReply")).
