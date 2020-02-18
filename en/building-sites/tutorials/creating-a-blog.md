@@ -99,7 +99,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 ``` php
 <p class="post-info">
-  Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
+  Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time> |
   Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
   <a href="[[~[[*id]]]]#comments" class="comments">
     Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
@@ -107,7 +107,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 </p>
 ```
 
- The first part takes the publishedon Resource field, and formats it into a nice, pretty date.
+ The first part takes the publishedon Resource field, and formats it into a nice, pretty date. The `<time>` tag gives more context to search engines and screen readers.
 
  Secondly, we then display a Tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
 
