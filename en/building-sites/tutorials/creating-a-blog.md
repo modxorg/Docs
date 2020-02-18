@@ -190,7 +190,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
   &includeContent=`1`
 ]]
 [[!+page.nav:notempty=`
-<nav class="paging" role="Blog Posts">  
+<nav class="paging" role="Blog>  
   <ul class="pageList">  
     [[!+page.nav]]  
   </ul>  
@@ -207,7 +207,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
  In that call, we also have a property called 'tpl' which we set to 'blogPost'. This is our Chunk that shows each result of our blog post listings. It should contain this:
 
 ``` php
-<div class="post">
+<article class="post">
     <h2 class="title"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></h2>
     <p class="post-info">Posted by [[+createdby:userinfo=`fullname`]]
  [[+tv.tags:notempty=` | <span class="tags">Tags:
@@ -222,10 +222,10 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 | <a href="[[~[[+id]]]]#comments" class="comments">
     Comments ([[!QuipCount? &thread=`blog-post-[[+id]]`]])
   </a>
-| <span class="date">[[+publishedon:strtotime:date=`%b %d, %Y`]]</span>
+| <date datetime="[[+publishedon:strtotime:date=`%Y-%m-%d`]]" class="date">[[+publishedon:strtotime:date=`%b %d, %Y`]]</date>
       </span>
     </p>
-</div>
+</article>
 ```
 
  Cool - let's dive in. We start out by making a clickable link to the post with the pagetitle as the title. Then, we set our 'posted by' part and tag listing (similar to how we did it earlier in BlogPostTemplate).
