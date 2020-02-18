@@ -49,8 +49,8 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 <div id="content" class="blog-post">
   <h2 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h2>
   <p class="post-info">
-  Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
-  Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
+    Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
+    Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
   <a href="[[~[[*id]]]]#comments" class="comments">
     Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
   </a>
@@ -59,26 +59,27 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
     <p>[[*introtext]]</p>
     <hr />
     [[*content]]
-   </div>
+  </div>
   <div class="postmeta">
     [[*tags:notempty=`
-<span class="tags">Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]</span>
+      <span class="tags">Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]</span>
     `]]
     <br class="clear" />
   </div>
   <hr />
-  <div class="post-comments" id="comments">[[!Quip?
+  <div class="post-comments" id="comments">
+    [[!Quip?
       &thread=`blog-post-[[*id]]`
       &replyResourceId=`123`
       &closeAfter=`30`
     ]]
     <br /><br />
     [[!QuipReply?
-       &thread=`blog-post-[[*id]]`
-       ¬ifyEmails=`my@email.com`
-       &moderate=`1`
-       &moderatorGroup=`Moderators`
-       &closeAfter=`30`
+      &thread=`blog-post-[[*id]]`
+      &notifyEmails=`my@email.com`
+      &moderate=`1`
+      &moderatorGroup=`Moderators`
+      &closeAfter=`30`
     ]]
   </div>
 </div>
