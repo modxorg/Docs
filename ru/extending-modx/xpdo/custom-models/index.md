@@ -1,5 +1,6 @@
 ---
 title: "Произвольные модели"
+translation: "extending-modx/xpdo/custom-models"
 ---
 
 Для работы с произвольными моделями вам необходимо прежде всего [определить схему](extending-modx/xpdo/custom-models/defining-a-schema) и [сгенерировать модель](extending-modx/xpdo/custom-models/generating-the-model).
