@@ -260,11 +260,11 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
   &pageVarKey=`page`
 ]]
 [[!+page.nav:notempty=`
-<div class="paging">  
+<nav class="paging" role="Blog">  
   <ul class="pageList">  
     [[!+page.nav]]  
   </ul>  
-</div>
+</nav>
 `]]
 ```
 
