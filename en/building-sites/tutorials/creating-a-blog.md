@@ -208,23 +208,28 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 ``` php
 <article class="post">
-    <h2 class="title"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></h2>
-    <p class="post-info">Posted by [[+createdby:userinfo=`fullname`]]
- [[+tv.tags:notempty=` | <span class="tags">Tags:
+  <h2 class="title">
+    <a href="[[~[[+id]]]]">[[+pagetitle]]</a>
+  </h2>
+  <p class="post-info">Posted by [[+createdby:userinfo=`fullname`]]
+    [[+tv.tags:notempty=` | <span class="tags">Tags:
 [[!tolinks? &items=`[[+tv.tags]]` &tagKey=`tags` &target=`1`]]
-</span>`]]</p>
-    <div class="entry">
-        <p>[[+introtext]]</p>
-    </div>
-    <p class="postmeta">
-      <span class="links">
-<a href="[[~[[+id]]]]" class="readmore">Read more</a>
-| <a href="[[~[[+id]]]]#comments" class="comments">
-    Comments ([[!QuipCount? &thread=`blog-post-[[+id]]`]])
-  </a>
-| <date datetime="[[+publishedon:strtotime:date=`%Y-%m-%d`]]" class="date">[[+publishedon:strtotime:date=`%b %d, %Y`]]</date>
-      </span>
-    </p>
+</span>`]]
+  </p>
+  <div class="entry">
+    <p>[[+introtext]]</p>
+  </div>
+  <footer class="postmeta">
+    <span class="links">
+      <a href="[[~[[+id]]]]" class="readmore">Read more</a> | 
+      <a href="[[~[[+id]]]]#comments" class="comments">
+        Comments ([[!QuipCount? &thread=`blog-post-[[+id]]`]])
+      </a> | 
+      <time datetime="[[+publishedon:strtotime:date=`%Y-%m-%d`]]" class="date">
+        [[+publishedon:strtotime:date=`%b %d, %Y`]]
+      </time>
+    </span>
+  </footer>
 </article>
 ```
 
