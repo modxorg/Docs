@@ -46,7 +46,8 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 ``` php
 [[$pageHeader]]
-<main id="content" class="blog-post">
+<main class="blog-post">
+  <a href="#content" class="visually-hidden">skip to main content</a>
   <h2 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h2>
   <p class="post-info">
     Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
@@ -55,7 +56,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
       Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
     </a>
   </p>
-  <article class="entry">
+  <article class="entry" id="content">
     <p>[[*introtext]]</p>
     <hr />
     [[*content]]
@@ -198,7 +199,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 `]]
 ```
 
- Okay, let's explain this. getResourcesTag a wrapper snippet for [getResources](/extras/getresources "getResources") and [getPage](/extras/getpage "getPage") that automatically filters results by a 'tags' TV. So basically, we want to grab all published Resources within this section (and we can also filter by tag should we pass a '?tag=TagName' parameter into the URL.
+ Okay, let's explain this. getResourcesTag a wrapper snippet for [getResources](/extras/getresources "getResources") and [getPage](/extras/getpage "getPage") that automatically filters results by a 'tags' TV. So basically, we want to grab all published Resources within this section (and we can also filter by tag should we pass a `?tag=TagName` parameter into the URL).
 
  Below the getResourcesTag call, we put our pagination links, since by default getResourcesTag only shows 10 posts per page.
 
