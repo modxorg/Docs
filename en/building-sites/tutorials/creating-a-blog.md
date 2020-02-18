@@ -333,7 +333,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 ``` php
 <h3>Archives</h3>
 <ul>
-[[!Archivist? &target=`30` &parents=`34,35`]]
+  [[!Archivist? &target=`30` &parents=`34,35`]]
 </ul>
 ```
 
@@ -402,9 +402,9 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 ``` php
 <li class="[[+cls]][[+alt]]">
-    <a href="[[+url]]">[[+body:ellipsis=`[[+bodyLimit]]`]]</a>
-    <br /><span class="author">by [[+name]]</span>
-    <br /><span class="ago">[[+createdon:ago]]</span>
+  <a href="[[+url]]">[[+body:ellipsis=`[[+bodyLimit]]`]]</a>
+  <br /><span class="author">by [[+name]]</span>
+  <br /><span class="ago">[[+createdon:ago]]</span>
 </li>
 ```
 
