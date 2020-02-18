@@ -51,23 +51,23 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
   <p class="post-info">
     Posted on [[*publishedon:strtotime:date=`%b %d, %Y`]] |
     Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
-  <a href="[[~[[*id]]]]#comments" class="comments">
-    Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
-  </a>
+    <a href="[[~[[*id]]]]#comments" class="comments">
+      Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
+    </a>
   </p>
   <article class="entry">
     <p>[[*introtext]]</p>
     <hr />
     [[*content]]
   </article>
-  <div class="postmeta">
+  <aside class="postmeta">
     [[*tags:notempty=`
       <span class="tags">Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]</span>
     `]]
     <br class="clear" />
-  </div>
+  </aside>
   <hr />
-  <div class="post-comments" id="comments">
+  <section class="post-comments" id="comments">
     [[!Quip?
       &thread=`blog-post-[[*id]]`
       &replyResourceId=`123`
@@ -81,7 +81,7 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
       &moderatorGroup=`Moderators`
       &closeAfter=`30`
     ]]
-  </div>
+  </section>
 </main>
 [[$pageFooter]]
 ```
