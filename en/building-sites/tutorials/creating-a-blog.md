@@ -52,7 +52,7 @@ We'll create one called 'BlogPostTemplate'. Our content looks something like thi
   <p class="post-info">
     Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time> |
     [[*tags:notempty=`
-    Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |
+      Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |
     `]]
     <a href="[[~[[*id]]]]#comments" class="comments">
       Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
@@ -102,7 +102,9 @@ Next we get into the "info" of the post - basically the author and tags for the 
 ```php
 <p class="post-info">
   Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time> |
-  Tags: [[*tags:notempty=`[[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]`]] |
+  [[*tags:notempty=`
+    Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |
+  `]]
   <a href="[[~[[*id]]]]#comments" class="comments">
     Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
   </a>
