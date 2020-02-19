@@ -52,7 +52,7 @@ We'll create one called 'BlogPostTemplate'. Our content looks something like thi
   <p class="post-info">
     Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time> |
     [[*tags:notempty=`
-      Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |
+       | Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]
     `]]
     <a href="[[~[[*id]]]]#comments" class="comments">
       Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
@@ -101,9 +101,9 @@ Next we get into the "info" of the post - basically the author and tags for the 
 
 ```php
 <p class="post-info">
-  Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time> |
+  Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time>
   [[*tags:notempty=`
-    Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |
+     | Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |
   `]]
   <a href="[[~[[*id]]]]#comments" class="comments">
     Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
@@ -216,10 +216,12 @@ In that call, we also have a property called 'tpl' which we set to 'blogPost'. T
   <h2 class="title">
     <a href="[[~[[+id]]]]">[[+pagetitle]]</a>
   </h2>
-  <p class="post-info">Posted by [[+createdby:userinfo=`fullname`]]
-    [[+tv.tags:notempty=` | <span class="tags">Tags:
-[[!tolinks? &items=`[[+tv.tags]]` &tagKey=`tags` &target=`1`]]
-</span>`]]
+  <p class="post-info">
+    Posted by [[+createdby:userinfo=`fullname`]]
+    [[+tv.tags:notempty=`
+      | <span class="tags">Tags: [[!tolinks? &items=`[[+tv.tags]]` &tagKey=`tags` &target=`1`]]
+      </span>
+    `]]
   </p>
   <div class="entry">
     <p>[[+introtext]]</p>
