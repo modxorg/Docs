@@ -51,7 +51,9 @@ We'll create one called 'BlogPostTemplate'. Our content looks something like thi
   <h2 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h2>
   <p class="post-info">
     Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time> |
-    [[*tags:notempty=`Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |`]]
+    [[*tags:notempty=`
+    Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |
+    `]]
     <a href="[[~[[*id]]]]#comments" class="comments">
       Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
     </a>
@@ -74,7 +76,7 @@ We'll create one called 'BlogPostTemplate'. Our content looks something like thi
       &replyResourceId=`123`
       &closeAfter=`30`
     ]]
-    <br /><br />
+    <br />
     [[!QuipReply?
       &thread=`blog-post-[[*id]]`
       &notifyEmails=`my@email.com`
