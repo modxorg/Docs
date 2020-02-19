@@ -132,7 +132,7 @@ Okay, now we're in the comments part of BlogPostTemplate. As you can see here, w
     &replyResourceId=`123`
     &closeAfter=`30`
   ]]
-  <br /><br />
+  <hr />
   [[!QuipReply?
     &thread=`blog-post-[[*id]]`
     &notifyEmails=`my@email.com`
