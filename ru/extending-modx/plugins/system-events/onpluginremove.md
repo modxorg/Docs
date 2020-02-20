@@ -5,7 +5,7 @@ translation: "extending-modx/plugins/system-events/onpluginremove"
 
 ## Событие: OnPluginRemove
 
-Происходит сразу после удаления плагина.
+Срабатывает сразу после удаления плагина из базы данных.
 
 Служба: 2 - Manager Access Events
 Группа: modPlugin
@@ -18,5 +18,5 @@ translation: "extending-modx/plugins/system-events/onpluginremove"
 
 ## Смотри также
 
-- [System Events](extending-modx/plugins/system-events "System Events")
-- [Plugins](extending-modx/plugins "Plugins")
+-   [System Events](extending-modx/plugins/system-events "System Events")
+-   [Plugins](extending-modx/plugins "Plugins")
