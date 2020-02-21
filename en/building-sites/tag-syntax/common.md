@@ -75,7 +75,7 @@ This page lists the most commonly used MODX Revolution tags as an aid to anyone 
 | **`[[*uri_override]]`**    | int 0/1               | Freeze URI                                                                                                                     |                                                                                                                                                      |
 | **`[[*uri]]`**             | string                | URI                                                                                                                            |                                                                                                                                                      |
 
- Just to clarify on `pub_date` – it's only set when the user sets a future date for publication in the Publish On field. And when the doc is actually published, it's zeroed out.  The publishedon field always contains the most recent date that the resource changed form unpublished to published (or the date a new doc was saved with Publish checked).
+ Just to clarify on `pub_date` – it's only set when the user sets a future date for publication in the Publish On field. And when the doc is actually published, it's zeroed out.  The publishedon field always contains the most recent date that the resource changed from unpublished to published (or the date a new doc was saved with Publish checked).
 
 ## See Also
 
