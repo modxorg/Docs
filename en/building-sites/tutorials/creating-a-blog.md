@@ -167,9 +167,9 @@ If you enable _threaded_ comments, then users can comment on other comments. Non
 
 ## Setting up Tagging
 
-Now that we've got our Template all setup, we need to setup the 'tags' Template Variable that we'll be using for our Tagging.
+Now that we've got our Template all setup, we need to setup the 'tags' Template Variable that we'll be using for our tagging.
 
-Go ahead and create a TV called 'tags', and give it a description of "Comma delimited tags for the current Resource." Next, make sure it has access to the 'BlogPostTemplate' Template we created earlier.
+Go ahead and create a Templat Variable called 'tags', and give it a description of "Comma delimited tags for the current Resource." Next, make sure it has access to the 'BlogPostTemplate' Template we created earlier.
 
 ![](tags-tv1.png)
 
@@ -206,36 +206,36 @@ Make sure you don't use the BlogPostTemplate on these, and use instead your own 
 `]]
 ```
 
-Okay, let's explain this. getResourcesTag a wrapper snippet for [getResources](/extras/getresources "getResources") and [getPage](/extras/getpage "getPage") that automatically filters results by a 'tags' TV. So basically, we want to grab all published Resources within this section (and we can also filter by tag should we pass a `?tag=TagName` parameter into the URL).
+Okay, let's explain this. [getResourcesTag](/extras/taglister/taglister.getresourcestag) is a wrapper snippet for [getResources](/extras/getresources "getResources") and [getPage](/extras/getpage "getPage") that automatically filters results by a 'tags' Template Variable. We want to grab all published Resources within this section (and we can also filter by tag should we pass a `?tag=TagName` parameter into the URL).
 
 Below the getResourcesTag call, we put our pagination links, since by default getResourcesTag only shows 10 posts per page.
 
 ### Setting up the blogPost Chunk
 
-In that call, we also have a property called 'tpl' which we set to 'blogPost'. This is our Chunk that shows each result of our blog post listings. It should contain this:
+In that call, we also have a property called '&tpl' which we set to 'blogPost'. This is our Chunk that shows each result of our blog post listings. It should contain this:
 
 ```php
-<article class="post">
-  <h2 class="title">
+<article>
+  <h2>
     <a href="[[~[[+id]]]]">[[+pagetitle]]</a>
   </h2>
-  <p class="post-info">
+  <p>
     Posted by [[+createdby:userinfo=`fullname`]]
     [[+tv.tags:notempty=`
       | <span class="tags">Tags: [[!tolinks? &items=`[[+tv.tags]]` &tagKey=`tags` &target=`1`]]
       </span>
     `]]
   </p>
-  <div class="entry">
+  <div>
     <p>[[+introtext]]</p>
   </div>
-  <footer class="postmeta">
-    <span class="links">
-      <a href="[[~[[+id]]]]" class="readmore">Read more</a> |
-      <a href="[[~[[+id]]]]#comments" class="comments">
+  <footer class="meta">
+    <span>
+      <a href="[[~[[+id]]]]">Read more</a> |
+      <a href="[[~[[+id]]]]#comments">
         Comments ([[!QuipCount? &thread=`blog-post-[[+id]]`]])
       </a> |
-      <time datetime="[[+publishedon:strtotime:date=`%Y-%m-%d`]]" class="date">
+      <time datetime="[[+publishedon:strtotime:date=`%Y-%m-%d`]]">
         [[+publishedon:strtotime:date=`%b %d, %Y`]]
       </time>
     </span>
@@ -278,7 +278,7 @@ In our home page for our blog, which we've got in Resource ID 1 - our site start
 `]]
 ```
 
-This allows us to show all posts from the two sections we've made, in Resources 34 and 35. It also allows us to filter by tag (since all our 'tolinks' and 'tagLister' calls have a target of 1 (this Resource's ID). In other words, by putting our getResourcesTag call here, we have automatic tagging!
+This allows us to show all posts from the two sections we've made, in Resources 34 and 35. It also allows us to filter by tag (since all our 'tolinks' and 'tagLister' calls have a default target of 1 (this Resource's ID). In other words, by putting our getResourcesTag call here, we have automatic tagging!
 
 You could easily make this another page than your site_start (or ID 1) - just make sure to change the 'target' properties in your tagLister and tolinks Snippet calls to reflect that.
 
