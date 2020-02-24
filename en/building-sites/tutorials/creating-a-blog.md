@@ -79,7 +79,7 @@ We'll create one called 'BlogPostTemplate'. Our content looks something like thi
       &replyResourceId=`123`
       &closeAfter=`30`
     ]]
-    <br />
+    <hr />
     [[!QuipReply?
       &thread=`blog-post-[[*id]]`
       &notifyEmails=`my@email.com`
@@ -114,11 +114,11 @@ Next we get into the "info" of the post - basically the author and tags for the 
 </p>
 ```
 
-The first part takes the publishedon Resource field, and formats it into a nice, pretty date. The `<time>` tag gives more context to search engines and screen readers, [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time).
+The first part takes the publishedon resource field, and [formats](en/building-sites/tag-syntax/date-formats) it into a nice, pretty date. The `<time>` tag gives more context to search engines and screen readers, [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time).
 
-Secondly, we then display a Tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
+Secondly, we then display a tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
 
-And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our 'thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-`[[*id]]`'. This means that MODX will automatically create a new thread for each new Blog Post we create. Neat!
+And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our '&thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-`[[*id]]`'. This means that MODX will automatically create a new thread for each new Blog Post we create. Neat!
 
 ### The Post Content
 
@@ -148,7 +148,7 @@ Okay, now we're in the comments part of BlogPostTemplate. As you can see here, w
 
 Okay, cool. Note we have two Snippet calls here - one for displaying the comments for this thread ([Quip](/extras/quip/quip.quip "Quip.Quip")), and another for displaying the reply form ([QuipReply](/extras/quip/quip.quipreply "Quip.QuipReply")).
 
-In our Quip snippet call, we've specified a thread ID in the manner we've described above, and then set some settings. Our comments are going to be threaded (the default), so we need to specify a Resource ID where our Reply to Thread post is going to be (this is detailed in the [Quip Documentation](/extras/quip "Quip"). We recommend reading there for how to set it up.) with the 'replyResourceId' property. For a quick example, if your `&replyResourceId` points to page 123, then on page 123, you should put something like the following:
+In our Quip snippet call, we've specified a thread ID in the manner we've described above, and then set some settings. Our comments are going to be threaded (the default), so we need to specify a Resource ID where our Reply to Thread post is going to be (this is detailed in the [Quip Documentation](/extras/quip "Quip"). We recommend reading there for how to set it up.) with the '&replyResourceId' property. For a quick example, if your `&replyResourceId` points to page 123, then on page 123, you should put something like the following:
 
 ```php
 [[!QuipReply]]
@@ -296,7 +296,7 @@ Remember, though, that whatever structure you build under the sections, that's n
 
 ### Adding a New Blog Post
 
-Okay - go ahead and create a new Resource, and set it's Template to 'BlogPostTemplate'. Then you can start writing your post. You can specify in the 'introtext' field the excerpt for the blog post, and then write the full body in the content field.
+Okay - go ahead and create a new Resource, and set it's Template to 'BlogPostTemplate'. Then you can start writing your post. You can specify in the 'introtext' field the excerpt for the blog post, and then write the full body in the 'content' field.
 
 And finally, when you're done, make sure to specify the tags for your post in your newly created 'tags' TV!
 
@@ -306,7 +306,7 @@ Great - you have your first blog post! And, you've got it so you can browse it i
 
 ### Creating the Archives Resource
 
-Go ahead and place a Resource in your root called 'Archives', and give it an alias of 'archives'. Then inside the content, place this:
+Go ahead and place a Resource in your root called 'Archives', and give it a placeholder of 'archives'. Then inside the content, place this:
 
 ```php
 [[!getPage?
