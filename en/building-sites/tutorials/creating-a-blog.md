@@ -46,31 +46,34 @@ We'll create one called 'BlogPostTemplate'. Our content looks something like thi
 
 ```php
 [[$pageHeader]]
-<main class="blog-post">
+<main id="post-[[*id]]">
   <a href="#content" class="visually-hidden">skip to main content</a>
-  <h2 class="title"><a href="[[~[[*id]]]]">[[*pagetitle]]</a></h2>
+  <h2>
+	<a href="[[~[[*id]]]]">[[*pagetitle]]</a>
+  </h2>
   <p class="post-info">
     Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time> |
     [[*tags:notempty=`
        | Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]
     `]]
-    <a href="[[~[[*id]]]]#comments" class="comments">
+    <a href="[[~[[*id]]]]#comments">
       Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
-    </a>
+	</a>
   </p>
-  <article class="entry" id="content">
-    <p>[[*introtext]]</p>
+  <article id="content">
+	<p>[[*introtext]]</p>
     <hr />
     [[*content]]
   </article>
-  <aside class="postmeta">
+  <aside id="tags">
     [[*tags:notempty=`
-      <span class="tags">Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]</span>
+	  <span class="tags">
+	    Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]
+	  </span>
     `]]
-    <br/>
   </aside>
   <hr />
-  <section class="post-comments" id="comments">
+  <section id="comments">
     [[!Quip?
       &thread=`blog-post-[[*id]]`
       &replyResourceId=`123`
@@ -105,7 +108,7 @@ Next we get into the "info" of the post - basically the author and tags for the 
   [[*tags:notempty=`
      | Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |
   `]]
-  <a href="[[~[[*id]]]]#comments" class="comments">
+  <a href="[[~[[*id]]]]#comments">
     Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
   </a>
 </p>
