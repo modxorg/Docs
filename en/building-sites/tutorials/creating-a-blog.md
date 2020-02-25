@@ -12,11 +12,11 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 This tutorial will help you setup a flexible, powerful blogging solution in MODX Revolution. Since MODX Revolution is not blogging software, but rather a full-blown Content Application Platform, it doesn't come pre-packaged with a cookie-cutter blogging solution. You'll need to setup your blog how you want it.
 
-Fortunately, the tools to do so are already there for your taking. This tutorial will walk you through how to set them up. It's recommended that you're familiar with Revolution's [Tag Syntax](building-sites/tag-syntax "Tag Syntax") before we start.
+Fortunately, the tools to do so are already there for your taking. This tutorial will walk you through how to set them up. It's recommended that you're familiar with Revolution's [Tag Syntax](/building-sites/tag-syntax "Tag Syntax") before we start.
 
-One thing before we start, though - this tutorial is extensive, and will show you how to set up a powerful blog with posting, archiving, tagging, commenting and more. If you don't need any specific part, just skip that part. MODX is modular, and your blog can function in any scope you like. And, again, this is only one way to do it - there are tons of ways to setup a blog in MODX Revolution.
+One thing before we start, this tutorial is extensive, and will show you how to set up a powerful blog with posting, archiving, tagging, commenting and more. If you don't need any specific part, just skip that part. MODX is modular, and your blog can function in any scope you like. And, again, this is only one way to do it - there are tons of ways to setup a blog in MODX Revolution.
 
-This tutorial was originally based on the blog setup at [splittingred.com](http://splittingred.com/), but their site has since been updated.
+This tutorial was originally based on the blog setup at [splittingred.com](http://splittingred.com/), but since their site has been redesigned, the examples no longer reflect their site.
 
 ## Getting the Needed Extras
 
@@ -52,10 +52,7 @@ We'll create one called 'BlogPostTemplate'. Our content looks something like thi
 	<a href="[[~[[*id]]]]">[[*pagetitle]]</a>
   </h2>
   <p class="post-info">
-    Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time> |
-    [[*tags:notempty=`
-       | Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]]
-    `]]
+    Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time> | 
     <a href="[[~[[*id]]]]#comments">
       Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
 	</a>
@@ -105,9 +102,6 @@ Next we get into the "info" of the post - basically the author and tags for the 
 ```php
 <p class="post-info">
   Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time>
-  [[*tags:notempty=`
-     | Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |
-  `]]
   <a href="[[~[[*id]]]]#comments">
     Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
   </a>
@@ -116,9 +110,7 @@ Next we get into the "info" of the post - basically the author and tags for the 
 
 The first part takes the publishedon resource field, and [formats](/building-sites/tag-syntax/date-formats) it into a nice, pretty date. The `<time>` tag gives more context to search engines and screen readers, [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time).
 
-Secondly, we then display a tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
-
-And finally, we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our '&thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-`[[*id]]`'. This means that MODX will automatically create a new thread for each new Blog Post we create. Neat!
+Then,  we load a quick count of the number of comments, along with a clickable anchor tag link to load them. Note how our '&thread' property in the QuipCount snippet call (and later on in the Quip call) uses 'blog-post-`[[*id]]`'. This means that MODX will automatically create a new thread for each new Blog Post we create. Neat!
 
 ### The Post Content
 
@@ -169,18 +161,36 @@ If you enable _threaded_ comments, then users can comment on other comments. Non
 
 Now that we've got our Template all setup, we need to setup the 'tags' Template Variable that we'll be using for our tagging.
 
-Go ahead and create a Templat Variable called 'tags', and give it a description of "Comma delimited tags for the current Resource." Next, make sure it has access to the 'BlogPostTemplate' Template we created earlier.
+Go ahead and create a Template Variable called 'tags', and give it a description of "Comma delimited tags for the current Resource." Next, make sure it has access to the 'BlogPostTemplate' Template we created earlier.
 
 ![](tags-tv1.png)
 
 That's it! Now you'll be able to add tags to any blog post we create, simply when editing your Resource by specifying a comma-separated list of tags.
 
+Let's add this to our 'Post Info' section in our BlogPostTemplate:
+
+```php
+<p class="post-info">
+  Posted on <time datetime="[[*publishedon:strtotime:date=`%Y-%m-%d`]]">[[*publishedon:strtotime:date=`%b %d, %Y`]]</time>
++  [[*tags:notempty=`
++     | Tags: [[!tolinks? &items=`[[*tags]]` &tagKey=`tag` &target=`1`]] |
++  `]]
+  <a href="[[~[[*id]]]]#comments">
+    Comments ([[!QuipCount? &thread=`blog-post-[[*id]]`]])
+  </a>
+</p>
+```
+
+_Notice how on the "tags" template variable there is a `:notempty`? Learn more about that [here](https://docs.modx.com/current/en/building-sites/tag-syntax/output-filters)_
+
+[tagLister](/extras/taglister/ "tagLister") comes with a snippet [tolinks](/extras/taglister/taglister.tolinks/ "tagLister.tolinks") that translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource with id 1, our home page. If your blog was in another page besides home, you'd change the ID number there.
+
+
 ## Creating the Sections
 
 If you want your blog to have 'Sections' (also called Categories), you'll first need to create those Resources.
 
-For this tutorial's purpose, we'll create 2 sections: "Personal" and "Technology". Go ahead and create 2 Resources in the root of your site, and make them 'containers'. You'll want to
-have their alias be 'personal' and 'technology', so your blog post URLs turn up nicely.
+For this tutorial's purpose, we'll create 2 sections: "Personal" and "Technology". Go ahead and create 2 Resources in the root of your site, and make them 'containers'. You'll want to have their alias be 'personal' and 'technology', then the posts url will look like `website.com/personal/...`.
 
 We'll say from here on out that our two Section Resources have IDs of 34 and 35, for reference.
 
@@ -434,7 +444,7 @@ This part is ridiculously easy; [tagLister](/extras/taglister "tagLister") does 
 [[!tagLister? &tv=`tags` &target=`1`]]
 ```
 
-And tagLister will check the TV 'tags', and create links that go to the target (here, Resource ID 1) with the top 10 tags being used. There's a ton more [configuration options](/extras/taglister "tagLister"), but we'll leave you with this.
+And tagLister will check the TV 'tags', and create links that go to the target (here, Resource ID 1) with the top 10 tags being used. There's a ton more [configuration options](/extras/taglister#properties "tagLister"), but we'll leave you with this.
 
 ## Conclusion
 
