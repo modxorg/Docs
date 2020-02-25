@@ -183,7 +183,7 @@ Let's add this to our "Post Info" section from our BlogPostTemplate:
 
 _Notice how on the "tags" template variable there is a `:notempty`? Learn more about that [here](https://docs.modx.com/current/en/building-sites/tag-syntax/output-filters)_
 
-[tagLister](/extras/taglister/ "tagLister") comes with a snippet [tolinks](/extras/taglister/taglister.tolinks/ "tagLister.tolinks") that translates delimited tags into links. This means our tags become clickable! We've specified a "target" Resource with id 1, our home page. If your blog was in another page besides home, you'd change the ID number there.
+[tagLister](/extras/taglister "tagLister") comes with a snippet [tolinks](/extras/taglister/taglister.tolinks "tagLister.tolinks") that translates delimited tags into links. This means our tags become clickable! We've specified a "target" Resource with id 1, our home page. If your blog was in another page besides home, you'd change the ID number there.
 
 
 ## Creating the Sections
