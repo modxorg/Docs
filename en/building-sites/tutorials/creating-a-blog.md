@@ -10,13 +10,13 @@ _old_uri: "2.x/case-studies-and-tutorials/creating-a-blog-in-modx-revolution"
 
 ## Creating a Blog in MODX Revolution
 
-This tutorial is here to help you setup a flexible, powerful blogging solution in MODX Revolution. Since MODX Revolution is not blogging software, but rather a full-blown Content Application Platform, it doesn't come pre-packaged with a cookie-cutter blogging solution. You'll need to setup your blog how you want it.
+This tutorial will help you setup a flexible, powerful blogging solution in MODX Revolution. Since MODX Revolution is not blogging software, but rather a full-blown Content Application Platform, it doesn't come pre-packaged with a cookie-cutter blogging solution. You'll need to setup your blog how you want it.
 
 Fortunately, the tools to do so are already there for your taking. This tutorial will walk you through how to set them up. It's recommended that you're familiar with Revolution's [Tag Syntax](building-sites/tag-syntax "Tag Syntax") before we start.
 
 One thing before we start, though - this tutorial is extensive, and will show you how to set up a powerful blog with posting, archiving, tagging, commenting and more. If you don't need any specific part, just skip that part. MODX is modular, and your blog can function in any scope you like. And, again, this is only one way to do it - there are tons of ways to setup a blog in MODX Revolution.
 
-This tutorial was based on the blog setup at [splittingred.com](http://splittingred.com/). If you'd like a demo before reading, try there.
+This tutorial was originally based on the blog setup at [splittingred.com](http://splittingred.com/), but their site has since been updated.
 
 ## Getting the Needed Extras
 
@@ -114,7 +114,7 @@ Next we get into the "info" of the post - basically the author and tags for the 
 </p>
 ```
 
-The first part takes the publishedon resource field, and [formats](en/building-sites/tag-syntax/date-formats) it into a nice, pretty date. The `<time>` tag gives more context to search engines and screen readers, [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time).
+The first part takes the publishedon resource field, and [formats](/building-sites/tag-syntax/date-formats) it into a nice, pretty date. The `<time>` tag gives more context to search engines and screen readers, [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time).
 
 Secondly, we then display a tag listing for this Blog Post. You can see how we reference a "tags" Template Variable - we haven't created this just yet, so dont worry - and then pass it as a property to the 'tolinks' snippet. The tolinks snippet comes with [tagLister](/extras/taglister "tagLister"), and translates delimited tags into links. This means our tags become clickable! We've specified a 'target' Resource of 1, or our home page. If your blog was in another page besides home, you'd change the ID number there.
 
