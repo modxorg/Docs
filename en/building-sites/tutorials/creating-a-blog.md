@@ -430,7 +430,7 @@ Place the call wherever you want the comment list to show:
 Now create a chunk called "latestCommentTpl":
 
 ```php
-<li class="[[+cls]][[+alt]]">
+<li class="[[+cls]] [[+alt]]">
   <a href="[[+url]]">[[+body:ellipsis=`[[+bodyLimit]]`]]</a>
   <br /><span class="author">by [[+name]]</span>
   <br /><span class="ago">[[+createdon:ago]]</span>
