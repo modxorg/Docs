@@ -111,7 +111,7 @@ $headers=  array(
 
 // we pass our headers immediately to the class
 /* @var modRest $client */
-$client = $this->modx->getService('rest', 'rest.modRest', array('headers' => $headers);
+$client = $this->modx->getService('rest', 'rest.modRest', array('headers' => $headers));
 
 # or write headers in the request
 `$response = $client->get($url, array(), $headers);`
