@@ -111,7 +111,7 @@ Therefore, the transport package is essentially another special object. — `mod
 
 In theory, in the installation script (`build.transport.php`) The behavior of all installed objects must be specified:
 
-- Kateogoriya to which the object belongs
+- Category to which the object belongs
 - Its primary key to identify duplicates?
 - What to do if such a key already exists: overwrite or not? (update chunks and snippets?)
 - Properties of child objects (if any)
