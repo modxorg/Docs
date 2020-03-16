@@ -1,7 +1,6 @@
 ---
 title: "Валидация объектов"
-_old_id: "1198"
-_old_uri: "2.x/advanced-features/object-validation"
+translation: "extending-modx/xpdo/custom-models/validation"
 ---
 
 ## Что такое валидация объектов в xPDO?
