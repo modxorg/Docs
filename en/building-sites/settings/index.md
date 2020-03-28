@@ -205,6 +205,7 @@ The **xtype** attribute defines what type of field the GUI will use when renderi
 -   **modx-combo-charset** : allows user to select a character set
 -   **modx-combo-rte** : like the textarea, but with formatting controls
 -   **modx-combo-context** : allows user to select a context
+-   **modx-combo-namespace** : allows user to select a namespace
 
 ## Settings List
 
