@@ -18,7 +18,7 @@ For example, if a Namespace called "quip" has a path of "/www/modx/core/componen
 
 Namespaces can be used to isolate Lexicons and Lexicon Topics. For example, when loading a Lexicon, you can specify the Namespace of the topic prior to the name of the topic with a colon. For example, to load the "comment" topic for the "quip" Namespace:
 
-``` php
+```php
 $modx->lexicon->load('quip:comment');
 ```
 
@@ -41,19 +41,19 @@ In the `bootstrap.php` file, you have access to:
 
 To add a PSR4 autoloader pointing to the `src` directory in your namespace:
 
-```
+```php
 \MODX\Revolution\modX::getLoader()->addPsr4('My\\Component\\', $namespace['path'] . 'src/');
 ```
 
 To load an xPDO model:
 
-```
+```php
 $modx->addPackage('My\\Component\\Model', $namespace['path'] . 'src/', null, 'My\\Component\\');
 ```
 
 To register a service into the [dependency injection container](extending-modx/di-container):
 
-```
+```php
 $modx->services->add('my_service', function($c) use ($modx) {
     return new My\Component\MyService($modx);
 });
