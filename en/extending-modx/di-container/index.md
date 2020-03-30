@@ -34,8 +34,8 @@ Or:
 ```php
 $service = null;
 try {
-    if ($modx->services->has('custom-service')) {
-        $service = $modx->services->get('custom-service');
+    if ($modx->services->has('custom_service')) {
+        $service = $modx->services->get('custom_service');
     }
 }
 catch (ContainerExceptionInterface $e) {
@@ -51,32 +51,32 @@ The recommended way to inject or overwrite services in an extension is through a
 
 For example, you may call:
 
-``` php
-$modx->services->add('myservice', function($c) use ($modx) {
+```php
+$modx->services->add('my_service', function($c) use ($modx) {
     return new MyPackage\MyService($modx);
 });
 ```
 
 You can use proper dependency injection by passing in the required services. Hypothetical example:
 
-``` php
-$modx->services->add('myservice', function($c) use ($modx) {
+```php
+$modx->services->add('my_service', function($c) use ($modx) {
     return new MyPackage\MyService($c['sessions'], $c['parser']);
 });
 ```
 
 If you require a new instance to be returned for each service request, use the `factory()` method:
 
-``` php
-$modx->services->factory('myservice', function($c) use ($modx) {
+```php
+$modx->services->factory('my_service', function($c) use ($modx) {
     return new MyPackage\MyService($modx);
 });
 ```
 
 To extend a previously defined service, use extend:
 
-``` php
-$modx->services->extend('existing-service', function($existing, $c) use ($modx) {
+```php
+$modx->services->extend('existing_service', function($existing, $c) use ($modx) {
     $existing->...();
     return $existing;
 });
