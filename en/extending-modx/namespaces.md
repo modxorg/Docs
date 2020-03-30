@@ -54,7 +54,7 @@ $modx->addPackage('My\\Component\\Model', $namespace['path'] . 'src/', null, 'My
 To register a service into the [dependency injection container](extending-modx/di-container):
 
 ```
-$modx->services->add('myservice', function($c) use ($modx) {
+$modx->services->add('my_service', function($c) use ($modx) {
     return new My\Component\MyService($modx);
 });
 ```
