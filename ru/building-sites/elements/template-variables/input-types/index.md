@@ -19,7 +19,7 @@ translation: "building-sites/elements/template-variables/input-types"
 
 Чтобы вывести теги таким образом, чтобы каждый тег связывался с определенным ресурсом и передавал тег в параметре GET, вы можете использовать выходной фильтр (сниппет) следующим образом:
 
-``` php
+```php
 if ($input == '') { return 'Error'; } // In case the TV is empty
 $tags = explode(', ',$input); // Based on a delimiter of ", " this will split each one up in an array
 foreach ($tags as $key => $value) { // Loop through the tags
@@ -30,13 +30,13 @@ return implode(', ',$output); // Merge the output array and output
 
 ### Все имена опций ввода (для использования в migx options-json)
 
-``` json
+```json
 {
-   "allowBlank":"true",
-   "maxLength":"",
-   "minLength":"",
-   "regex":"",
-   "regexText":""
+    "allowBlank": "true",
+    "maxLength": "",
+    "minLength": "",
+    "regex": "",
+    "regexText": ""
 }
 ```
 
@@ -48,13 +48,13 @@ return implode(', ',$output); // Merge the output array and output
 
 #### Отмечено по умолчанию
 
-- Значения параметров ввода: My Option==1
-- Значение по умолчанию: 1
+-   Значения параметров ввода: My Option==1
+-   Значение по умолчанию: 1
 
 #### Не отмеченно по умолчанию
 
-- Значения параметров ввода: My Option==1
-- Значение по умолчанию: 0
+-   Значения параметров ввода: My Option==1
+-   Значение по умолчанию: 0
 
 Поле будет установлено по умолчанию до тех пор, пока значение после "==" соответствует значению по умолчанию. Если вы хотите установить значение по умолчанию для переменной шаблона флажка в несколько значений, вы должны разделить значения с помощью "||" delimiter.
 
@@ -62,7 +62,7 @@ return implode(', ',$output); // Merge the output array and output
 
 Вы можете различать отдельные ключи и значения, используя двойное равенство и двойные каналы:
 
-``` php
+```php
 option1==value1||option2==value2
 ```
 
@@ -70,7 +70,7 @@ option1==value1||option2==value2
 
 Тип ввода Флажок позволяет отображать несколько флажков на одном TV. Установите значения параметров ввода в формате `option1==value1||option2==value2`. Чтобы объявить флажки по умолчанию, укажите в поле значения по умолчанию имена опций, разделенные двумя каналами (||). Вы можете использовать [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Привязку") для выбора элементо из вашей базы данных, например: **Значения параметров ввода:**
 
-``` sql
+```sql
 @SELECT pagetitle, id FROM modx_site_content WHERE parent=35
 ```
 
@@ -99,28 +99,28 @@ option1==value1||option2==value2
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
- ``` json
+```json
 {
-   "allowBlank":"true",
-   "disabledDates":"",
-   "disabledDays":"",
-   "minDateValue":"",
-   "minTimeValue":"",
-   "maxDateValue":"",
-   "maxTimeValue":"",
-   "startDay":"",
-   "timeIncrement":"",
-   "hideTime":"false"
+    "allowBlank": "true",
+    "disabledDates": "",
+    "disabledDays": "",
+    "minDateValue": "",
+    "minTimeValue": "",
+    "maxDateValue": "",
+    "maxTimeValue": "",
+    "startDay": "",
+    "timeIncrement": "",
+    "hideTime": "false"
 }
 ```
 
 ## DropDown список меню
 
-**ПРИМЕЧАНИЕ**: этот тип ввода TV устарел начиная с Revo 2.1.x Пожалуйста, смотрите [Listbox](#TemplateVariableInputTypes-Listbox(MultiSelect)) типы ввода ниже.
+**ПРИМЕЧАНИЕ**: этот тип ввода TV устарел начиная с Revo 2.1.x Пожалуйста, смотрите [Listbox](<#TemplateVariableInputTypes-Listbox(MultiSelect)>) типы ввода ниже.
 
 Установите значения параметров ввода в формате `option1==value1||option2==value2||option3==value3`. Убедитесь, что вы выбрали выходной тип с разделителями (или другой тип по своему вкусу), чтобы иметь возможность представить его пользователю определенным образом.. Ты можешь использовать [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") привязку для выбора 2 столбцов, например,
 
-``` sql
+```sql
 @SELECT name, value FROM your_table
 ```
 
@@ -130,11 +130,11 @@ option1==value1||option2==value2
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
-``` json
+```json
 {
-   "allowBlank":"true",
-   "listWidth":"",
-   "listHeight":""
+    "allowBlank": "true",
+    "listWidth": "",
+    "listHeight": ""
 }
 ```
 
@@ -146,11 +146,11 @@ option1==value1||option2==value2
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
-``` json
+```json
 {
-   "allowBlank":"true",
-   "maxLength":"",
-   "minLength":""
+    "allowBlank": "true",
+    "maxLength": "",
+    "minLength": ""
 }
 ```
 
@@ -182,14 +182,14 @@ option1==value1||option2==value2
 
 ![](tv-image-input-options.png)
 
-1) Вы можете объявить файл значений по умолчанию, указав путь к изображению.
+1. Вы можете объявить файл значений по умолчанию, указав путь к изображению.
 
-2) Если вы хотите ограничить изображения, используемые для этого телевизора, определенной папкой, вы можете указать (начиная с Revolution 2.1) base-path и base-url. Вы также можете установить относительные или абсолютные пути. При использовании дружественных URL-адресов обратите особое внимание на относительные пути к файлам.
-Для правильного отображения изображений в интерфейсе и бэкэнде убедитесь, что в настройках `base_url` и `base_path` указаны правильные настройки!
+2. Если вы хотите ограничить изображения, используемые для этого TV, определенной папкой, вы можете указать (начиная с Revolution 2.1) base-path и base-url. Вы также можете установить относительные или абсолютные пути. При использовании дружественных URL-адресов обратите особое внимание на относительные пути к файлам.
+   Для правильного отображения изображений в интерфейсе и бэкэнде убедитесь, что в настройках `base_url` и `base_path` указаны правильные настройки!
 
-3) Вы можете добавить URL, если путь к файлу не начинается с завершающей косой черты.
+3. Вы можете добавить URL, если путь к файлу не начинается с завершающей косой черты.
 
-4) Вы можете указать расширения файлов, которые могут быть выбраны.
+4. Вы можете указать расширения файлов, которые могут быть выбраны.
 
 Этот тип ввода возвращает ссылку (которая будет использоваться в качестве атрибута src) на изображение. Вы также можете установить весь [html-img-tag как тип вывода](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type "Тип TV-вывода изображения").
 
@@ -197,15 +197,15 @@ option1==value1||option2==value2
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
-``` json
+```json
 {
-   "targetWidth":"",
-   "targetHeight":"",
-   "targetRatio":"",
-   "thumbnailWidth":"",
-   "allowAltTag":"true",
-   "allowCaption":"false",
-   "allowCredits":"false"
+    "targetWidth": "",
+    "targetHeight": "",
+    "targetRatio": "",
+    "thumbnailWidth": "",
+    "allowAltTag": "true",
+    "allowCaption": "false",
+    "allowCredits": "false"
 }
 ```
 
@@ -223,7 +223,7 @@ option1==value1||option2==value2
 
 Как и в случае с флажками, вы можете просто указать список значений, разделенных двойными каналами:
 
-``` php
+```php
 Man||Bear||Pig
 ```
 
@@ -231,21 +231,21 @@ Man||Bear||Pig
 
 Часто приятно иметь более читаемый ярлыки. Вы можете отобразить что-то приятное и при этом сохранить другое значение, используя формат двойного равенства и двойной трубы, используемый флажками:
 
-``` php
+```php
 Option 1==value1||Option 2==value2
 ```
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
-``` json
+```json
 {
-   "allowBlank":"true",
-   "listWidth":"",
-   "title":"",
-   "typeAhead":"false",
-   "typeAheadDelay":"250",
-   "listEmptyText":"",
-   "stackItems":"false"
+    "allowBlank": "true",
+    "listWidth": "",
+    "title": "",
+    "typeAhead": "false",
+    "typeAheadDelay": "250",
+    "listEmptyText": "",
+    "stackItems": "false"
 }
 ```
 
@@ -257,15 +257,15 @@ Option 1==value1||Option 2==value2
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
-``` json
+```json
 {
-   "allowBlank":"true",
-   "allowDecimals":"Yes",
-   "allowNegative":"Yes",
-   "decimalPrecision":"2",
-   "decimalSeparator":".",
-   "maxValue":"",
-   "minValue":""
+    "allowBlank": "true",
+    "allowDecimals": "Yes",
+    "allowNegative": "Yes",
+    "decimalPrecision": "2",
+    "decimalSeparator": ".",
+    "maxValue": "",
+    "minValue": ""
 }
 ```
 
@@ -277,8 +277,8 @@ Option 1==value1||Option 2==value2
 
 #### Выбран по умолчанию
 
-- Значения параметров ввода: Моя опция==1
-- Значение по умолчанию: 1
+-   Значения параметров ввода: Моя опция==1
+-   Значение по умолчанию: 1
 
 Эта опция будет выбрана по умолчанию, если значение после «==» соответствует значению по умолчанию.
 
@@ -290,17 +290,17 @@ Option 1==value1||Option 2==value2
 
 #### Пример боковой панели Revolution
 
-- Значения параметров ввода: Related==`[[$my_related_chunk]]||Content==[[*sidebar-txt]]||Twitter==[[$my_twitter_chunk]]`
-- Значение по умолчанию: `[[$my_related_chunk]]`
+-   Значения параметров ввода: Related==`[[$my_related_chunk]]||Content==[[*sidebar-txt]]||Twitter==[[$my_twitter_chunk]]`
+-   Значение по умолчанию: `[[$my_related_chunk]]`
 
 В приведенных выше примерах вы можете вывести чанк или другую переменную шаблона без помощи дополнительного.
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
- ``` json
+```json
 {
-   "allowBlank":"true",
-   "columns":"1"
+    "allowBlank": "true",
+    "columns": "1"
 }
 ```
 
@@ -318,22 +318,22 @@ Option 1==value1||Option 2==value2
 
 ### Другой пример
 
-``` php
+```php
 [{"pagetitle:!=":"Home"}]
 ```
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
-``` json
+```json
 {
-   "allowBlank":"1",
-   "showNone":"1",
-   "parents":"",
-   "depth":"10",
-   "includeParent":"1",
-   "limitRelatedContext":"0",
-   "where":"[{\"isfolder: = \":\"1\"},{\"hidemenu\":\"0\",\"OR:hidemenu:=\":\"1\"}]",
-   "limit":"0"
+    "allowBlank": "1",
+    "showNone": "1",
+    "parents": "",
+    "depth": "10",
+    "includeParent": "1",
+    "limitRelatedContext": "0",
+    "where": "[{\"isfolder: = \":\"1\"},{\"hidemenu\":\"0\",\"OR:hidemenu:=\":\"1\"}]",
+    "limit": "0"
 }
 ```
 
@@ -347,9 +347,9 @@ Option 1==value1||Option 2==value2
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
-``` json
+```json
 {
-   "allowBlank":"1"
+    "allowBlank": "1"
 }
 ```
 
@@ -357,23 +357,23 @@ Option 1==value1||Option 2==value2
 
 Это ванильное текстовое поле.
 
-Начиная с MODX 2.1, для этого телевизора можно установить три варианта ввода:
+Начиная с MODX 2.1, для этого TV можно установить три варианта ввода:
 
-- Разрешить пустое: да / нет, когда «нет» ресурс не может быть сохранен без его заполнения.
-- Максимальная длина: число, представляющее количество символов, которые можно заполнить в этом поле.
-- Минимальная длина: число, представляющее минимальное количество символов, которое необходимо заполнить. Возможно, вы захотите использовать его с опцией разрешения пробела «Нет».
+-   Разрешить пустое: да / нет, когда «нет» ресурс не может быть сохранен без его заполнения.
+-   Максимальная длина: число, представляющее количество символов, которые можно заполнить в этом поле.
+-   Минимальная длина: число, представляющее минимальное количество символов, которое необходимо заполнить. Возможно, вы захотите использовать его с опцией разрешения пробела «Нет».
 
 ![](tvinput.png)
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
-``` json
+```json
 {
-   "allowBlank":"true",
-   "maxLength":"",
-   "minLength":"",
-   "regex":"",
-   "regexText":""
+    "allowBlank": "true",
+    "maxLength": "",
+    "minLength": "",
+    "regex": "",
+    "regexText": ""
 }
 ```
 
@@ -383,9 +383,9 @@ Option 1==value1||Option 2==value2
 
 ### Все имена параметров ввода (для использования в migx options-json)
 
-``` json
+```json
 {
-   "allowBlank":"true"
+    "allowBlank": "true"
 }
 ```
 
