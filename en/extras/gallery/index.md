@@ -10,6 +10,8 @@ Gallery is a dynamic Gallery Extra for MODX Revolution. It allows you to quickly
 
 A tutorial has been made for Gallery by the community, and can be downloaded here: [Tutorial - Gallery Component with Galleriffic.pdf](/download/attachments/13664292/Tutorial+-+Gallery+Component+with+Galleriffic.pdf)
 
+Another small tutorial about setting up an album with Gallery can be found here: https://www.sitsol.be/blog/modx-gallery. 
+
 ## Requirements
 
 - MODX Revolution 2.0.0-rc-2 or later
