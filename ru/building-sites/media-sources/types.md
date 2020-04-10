@@ -1,5 +1,5 @@
 ---
-title: "Media Source Types"
+title: "Типы медиа источников"
 translation: "building-sites/media-sources/types"
 ---
 
