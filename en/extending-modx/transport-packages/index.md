@@ -18,10 +18,10 @@ Transport packages are stored in .zip files, ending with ".transport.zip". They 
 
 ### The Internals of a Transport Package
 
-MODX Revolution automatically "unpacks", or unzips, your transport packages for you. Once done, a subdirectory in your core/packages directory will appear with the name of the zip file (minus ".transport.zip"). This directory will contain:
+MODX Revolution automatically "unpacks", or unzips, your transport packages for you. Once done, a subdirectory in your _core/packages_ directory will appear with the name of the zip file (minus ".transport.zip"). This directory will contain:
 
-- A manifest.php file
-- Subdirectories of each Vehicle (more on those later)
+-   A manifest.php file
+-   Subdirectories of each Vehicle (more on those later)
 
 It may also contain a "preserved.php" file, if the package is an upgrade from a prior package, which contains the metadata for the install to be restored. And finally, there might be a 'setup-options.php' file if the package has packaged one inside.
 
@@ -29,28 +29,28 @@ It may also contain a "preserved.php" file, if the package is an upgrade from a 
 
 The manifest basically stores all the relevant information for the package, including the locations of files and information about them. If you open the manifest.php file, you'll see that it contains a giant PHP array being returned. Within that are some keys you might be interested in:
 
-- **manifest-version** - This tells us what version the manifest definition is. MODX uses it to determine how to interpret the manifest and make it easier for future MODX versions to be backwards-compatible.
+-   **manifest-version** - This tells us what version the manifest definition is. MODX uses it to determine how to interpret the manifest and make it easier for future MODX versions to be backwards-compatible.
 
-- **manifest-attributes** - These are any custom attributes that were set on the package when it was being built. The most common are 'license', 'readme' and 'setup-options', which MODX interprets during install time.
+-   **manifest-attributes** - These are any custom attributes that were set on the package when it was being built. The most common are 'license', 'readme' and 'setup-options', which MODX interprets during install time.
 
-- **manifest-vehicles** - These are the Vehicles metadata, in array format.
+-   **manifest-vehicles** - These are the Vehicles metadata, in array format.
 
 ### Okay, what are these Vehicles?
 
 Transport Vehicles are the parts of a Transport Package. A package can contain as many Vehicles as it likes. Vehicles also come in different types; the currently available ones are:
 
-- xPDOObjectVehicle - For transporting database data
-- xPDOFileVehicle - For transporting files
+-   xPDOObjectVehicle - For transporting database data
+-   xPDOFileVehicle - For transporting files
 
 In the 'manifest-vehicles' array, you'll see these keys for each vehicle:
 
-- **vehicle\_package** - This tells us what type of package is holding these vehicles. Currently the only type is 'transport'.
-- **vehicle\_class** - The class name of the type of Vehicle this is.
-- **class** - The class name of the DB object being transported, or xPDOFileVehicle if it's a file vehicle.
-- **guid** - A randomly generated GUID for the vehicle.
-- **native\_key** - If the vehicle is a database object, this will be its primary key by which it is identified.
-- **filename** - Where the vehicle's source file can be found within the transport package's folder.
-- **namespace** - Certain packages use the 'namespace' field to group vehicles and other objects to make them uniquely identifiable within a MODX installation.
+-   **vehicle_package** - This tells us what type of package is holding these vehicles. Currently the only type is 'transport'.
+-   **vehicle_class** - The class name of the type of Vehicle this is.
+-   **class** - The class name of the DB object being transported, or xPDOFileVehicle if it's a file vehicle.
+-   **guid** - A randomly generated GUID for the vehicle.
+-   **native_key** - If the vehicle is a database object, this will be its primary key by which it is identified.
+-   **filename** - Where the vehicle's source file can be found within the transport package's folder.
+-   **namespace** - Certain packages use the 'namespace' field to group vehicles and other objects to make them uniquely identifiable within a MODX installation.
 
 So now that we've seen what the vehicles represent in the manifest, let's open up a Vehicle by looking a filename and diving in.
 
@@ -58,30 +58,30 @@ So now that we've seen what the vehicles represent in the manifest, let's open u
 
 Vehicles can actually have a few different files grouped with them, but we'll first concern ourselves with the main vehicle file, which is specified in the manifest and often ends with '.vehicle'.
 
-Again, it looks like a big PHP array, with similar keys. It has some extra keys though, which are important. xPDOFileVehicle and xPDOObjectVehicle can have different keys. Let's go over the common ones:
+Again, it looks like a big PHP array, with similar keys. It has some extra keys though, which are important. `xPDOFileVehicle` and `xPDOObjectVehicle` can have different keys. Let's go over the common ones:
 
-- **class** - Similar to the manifest, the class type of the vehicle.
-- **object** - An array that contains the object information. For DB objects this will most likely be a JSON array representation of the DB table. For files, it will be a PHP array with the source, target and name of the vehicle.
-- **vehicle\_class** - Similar to the manifest, the class name of the vehicle.
-- **vehicle\_package** - Similar to the manifest, the transport type of the vehicle.
-- **guid** - Similar to the manifest, a unique identifier for the vehicle.
-- **package** - Only applicable to xPDOObjectVehicles, this will most likely be 'modx' or blank.
-- **signature** - The filename signature for this vehicle.
-- **native\_key** - Similar to the manifest. If the vehicle is a database object, this will be its primary key by which it is identified.
+-   **class** - Similar to the manifest, the class type of the vehicle.
+-   **object** - An array that contains the object information. For DB objects this will most likely be a JSON array representation of the DB table. For files, it will be a PHP array with the source, target and name of the vehicle.
+-   **vehicle_class** - Similar to the manifest, the class name of the vehicle.
+-   **vehicle_package** - Similar to the manifest, the transport type of the vehicle.
+-   **guid** - Similar to the manifest, a unique identifier for the vehicle.
+-   **package** - Only applicable to xPDOObjectVehicles, this will most likely be 'modx' or blank.
+-   **signature** - The filename signature for this vehicle.
+-   **native_key** - Similar to the manifest. If the vehicle is a database object, this will be its primary key by which it is identified.
 
 The xPDOObjectVehicle, or database vehicles, often have these extra keys:
 
-- **preserve\_keys** - If true, the vehicle will try and preserve the primary key of the database record on install.
-- **update\_object** - If true, the vehicle will UPDATE the object if it's found already in the database during install. If false, it will be skipped.
-- **unique\_key** - The column name by which the database object can be uniquely identified - often this is not the primary key, as auto-incrementing fields often do not match across different databases.
-- **related\_objects** - A complex array of any related objects to this vehicle's main database object. Sometimes, it may be necessary to package in "related" objects to achieve the desired end result. A great example is if the packager wants to put all of his Snippets in a Category. He would make the vehicle's object be the Category, and then add related objects - the snippets - to it.
-- **related\_object\_attributes** - The attributes for the above related objects.
-- **namespace** - Similar to the manifest; a grouping value for the objects in a transport package.
+-   **preserve_keys** - If true, the vehicle will try and preserve the primary key of the database record on install.
+-   **update_object** - If true, the vehicle will UPDATE the object if it's found already in the database during install. If false, it will be skipped.
+-   **unique_key** - The column name by which the database object can be uniquely identified - often this is not the primary key, as auto-incrementing fields often do not match across different databases.
+-   **related_objects** - A complex array of any related objects to this vehicle's main database object. Sometimes, it may be necessary to package in "related" objects to achieve the desired end result. A great example is if the packager wants to put all of his Snippets in a Category. He would make the vehicle's object be the Category, and then add related objects - the snippets - to it.
+-   **related_object_attributes** - The attributes for the above related objects.
+-   **namespace** - Similar to the manifest; a grouping value for the objects in a transport package.
 
 There are also some optional ones, which may or may not be set:
 
-- **validate** - An array of arrays which contain validators, explained later.
-- **resolve** - An array of arrays which contain resolvers, explained later.
+-   **validate** - An array of arrays which contain validators, explained later.
+-   **resolve** - An array of arrays which contain resolvers, explained later.
 
 In xPDOFileVehicles, you will also see a directory with the same filename as the vehicle, minus the ".vehicle". If you open it, there will be the files for the vehicle.
 
@@ -114,6 +114,6 @@ Once installed, the user can uninstall the package at any time. Also, if the pac
 
 ## Related Pages
 
-- [Package Management](extending-modx/transport-packages "Package Management")
-- [Providers](building-sites/extras/providers "Providers")
-- Tutorial: [Creating a 3rd Party Component Build Script](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script")
+-   [Package Management](extending-modx/transport-packages "Package Management")
+-   [Providers](building-sites/extras/providers "Providers")
+-   Tutorial: [Creating a 3rd Party Component Build Script](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script")

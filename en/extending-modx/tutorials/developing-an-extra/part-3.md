@@ -493,7 +493,7 @@ if ($object->xpdo) {
 return true;
 ```
 
-Great. So here we're doing a few things. Note the initial check for `$object->xpdo`. `$object` is our Menu, since we attached this to the Menu's vehicle. Then we want to check for the xpdo var on it (which is also MODX). We then run into a switch statement, that checks a mysterious `PACKAGE_ACTION` const in the `$options` array. This little switch tells us to only run this code during **new** installs, or ACTION_INSTALL.
+Great. So here we're doing a few things. Note the initial check for `$object->xpdo`. `$object` is our Menu, since we attached this to the Menu's vehicle. Then we want to check for the xpdo var on it (which is also MODX). We then run into a switch statement, that checks a mysterious `PACKAGE_ACTION` const in the `$options` array. This little switch tells us to only run this code during **new** installs, or `ACTION_INSTALL`.
 
 Further in the switch, we are assigning `$modx` as a reference to `$object->xpdo`, for easier typing. Then we'll find our Doodles' model path via our friendly getOption calls, and then run the addPackage call to add our xpdo schema to the database (remember that from Part I?). Finally, we'll run `$modx->getManager()`, which gets an `xPDOManager` instance, and call `$manager->createObjectContainer('Doodle')` on it.
 
@@ -546,7 +546,7 @@ $builder->setPackageAttributes(array(
 ));
 ```
 
-So as you can see here, we have a setPackageAttributes() method, that allows some attributes. They're pretty self-explanatory - license takes in text for the license (which we grab using file_get_contents), readme takes in text for the readme, and changelog takes in text for the changelog.
+So as you can see here, we have a `setPackageAttributes()` method, that allows some attributes. They're pretty self-explanatory - license takes in text for the license (which we grab using file_get_contents), readme takes in text for the readme, and changelog takes in text for the changelog.
 
 The new one is the 'setup-options' array. First off, it's an array with a key of 'source' (like a resolver!), that points to a path of a PHP file (also like a resolver!). Let's create this PHP file, at /www/doodles/\_build/setup.options.php:
 

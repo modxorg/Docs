@@ -108,7 +108,7 @@ Click Save and you'll see your menu item added to the tree under 'Extras'.
 
 Lexicon strings are collected in files called 'Lexicon Topics'. This means your strings can be isolated by a specific area (similar to how the core/lexicon/ directory does it), and makes it so you don't have to load _all_ the strings for your Extra when you may only want to load a few.
 
-If you wanted to use your Lexicons in a Snippet, you could use \$modx->lexicon->load('doodles:default'). This would load the 'default' topic from the 'doodles' Namespace. For CMPs, however, this is a little different; you load it in the Controller class via the getLanguageTopics method. This method expects an array to return that will specify the Lexicon Topics to load so we can easily access them.
+If you wanted to use your Lexicons in a Snippet, you could use `$modx->lexicon->load('doodles:default')`. This would load the 'default' topic from the 'doodles' Namespace. For CMPs, however, this is a little different; you load it in the Controller class via the getLanguageTopics method. This method expects an array to return that will specify the Lexicon Topics to load so we can easily access them.
 
 But we haven't actually _made_ that Lexicon Topic file, so let's go do this now. Lexicons on the filesystem are structured thus:
 
@@ -510,9 +510,9 @@ This file will do nothing on its own when access. Loading it directly will give 
 }
 ```
 
-There's a few reasons for this. One is that the connectors are locked down and don't allow anyone without a MODX manager session to access them. Secondly, all requests to connectors **must** pass a unique-to-your-site authorization key that prevents CRSF attacks. It can either be passed in the HTTP headers as 'modAuth', or in a REQUEST var as HTTP_MODAUTH. The value will be \$modx->siteId, which is set on a new install, and loaded when MODX is loaded.
+There's a few reasons for this. One is that the connectors are locked down and don't allow anyone without a MODX manager session to access them. Secondly, all requests to connectors **must** pass a unique-to-your-site authorization key that prevents CRSF attacks. It can either be passed in the HTTP headers as 'modAuth', or in a REQUEST var as HTTP_MODAUTH. The value will be `$modx->siteId`, which is set on a new install, and loaded when MODX is loaded.
 
-Don't ever paste or share with anyone your \$modx->siteId or HTTP_MODAUTH key. It keeps your site secure.
+Don't ever paste or share with anyone your `$modx->siteId` or HTTP_MODAUTH key. It keeps your site secure.
 
 The great thing, though, is you won't have to worry about this. MODX already handles this in MODExt - all HTTP requests made by ExtJS in MODX pass this variable in via their HTTP headers.
 
@@ -536,11 +536,11 @@ return 'DoodleGetListProcessor';
 
 Great. So a few things. You'll note that we're in a class again - MODX 2.2 has new shiny Processor classes, including an assistance class named `modObjectGetListProcessor` that we're extending here. This class automatically does all the basic logic for handling normal CRUD processor actions, such as this one. All we have to do is specify some class variables on the class - such as `$classKey`, `$objectType`, and more. Let's dig into those:
 
--   **\$classKey** - This tells the Processor what MODX Class to grab. We want to grab our Doodle objects.
--   **\$languageTopics** - An array of language topics to load for this processor.
--   **\$defaultSortField** - The default sort field to use when grabbing the data.
--   **\$defaultSortDirection** - The default sort direction to do when grabbing the data.
--   **\$objectType** - This is often used to determine what error lexicon strings to load when grabbing data. Since in our lexicon file we have all the strings as `$_lang['doodles.doodle_blahblah']` and such, we'll specify the prefix here of "doodles.doodle". MODX then will prefix standard error messages with that prefix.
+-   `$classKey` - This tells the Processor what MODX Class to grab. We want to grab our Doodle objects.
+-   `$languageTopics` - An array of language topics to load for this processor.
+-   `$defaultSortField` - The default sort field to use when grabbing the data.
+-   `$defaultSortDirection` - The default sort direction to do when grabbing the data.
+-   `$objectType` - This is often used to determine what error lexicon strings to load when grabbing data. Since in our lexicon file we have all the strings as `$_lang['doodles.doodle_blahblah']` and such, we'll specify the prefix here of "doodles.doodle". MODX then will prefix standard error messages with that prefix.
 
 The assistance class handles the rest, so we don't have to worry about it! All we have to do is "return" the name of the Processor class so MODX knows where to find it.
 
@@ -882,11 +882,11 @@ This tutorial is part of a Series:
 -   Part II: Creating our Custom Manager Page
 -   [Part III: Packaging Our Extra](extending-modx/tutorials/developing-an-extra/part-3 "Developing an Extra in MODX Revolution, Part III")
 
-The \$objectType shown in all processors is not necessary to set.
+The `$objectType` shown in all processors is not necessary to set.
 
 I have made a couple of custom components and I have setupped a "afterSaveEvent" and "afterRemoveEvent" etc. But then there isn't a name like "object" passed to your plugin (containing your object). The name passed is based on the `$objectType` value. So when you have Doodles.. you will get a "doodles.doodle" passed into your plugin. With 10 components, 10 different types, this is very un-wanted.
 
-So I have figured out that this \$objectType is not required to let the processors work properly. When you leave that, MODX falls back on "object" so you will have `$scriptProperties['object']` in your plugin, instead of many different type names.
+So I have figured out that this `$objectType` is not required to let the processors work properly. When you leave that, MODX falls back on "object" so you will have `$scriptProperties['object']` in your plugin, instead of many different type names.
 
 ## Note
 
