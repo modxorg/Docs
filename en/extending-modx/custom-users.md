@@ -44,7 +44,7 @@ The first thing we need to accomplish, is to create an extended user schema whic
 
 #### Simple Example
 
-The simplest example we could imagine is that we want to add a single extra attribute to the user data – so in the database, this would mean we have a separate table with 2 columns: one for the foreign key relation back to the **modx\_users** table, and the other column containing our new "extra" attribute, e.g. a _fackbook\_url_:
+The simplest example we could imagine is that we want to add a single extra attribute to the user data – so in the database, this would mean we have a separate table with 2 columns: one for the foreign key relation back to the **modx\_users** table, and the other column containing our new "extra" attribute, e.g. a _facebook\_url_:
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
