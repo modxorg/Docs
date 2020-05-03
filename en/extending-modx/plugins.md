@@ -138,6 +138,7 @@ if ($modx->event->name == 'OnPageNotFound') {
 [OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit)
 [OnBeforePluginFormDelete](extending-modx/plugins/system-events/onbeforepluginformdelete)
 [OnBeforePluginFormSave](extending-modx/plugins/system-events/onbeforepluginformsave)
+[OnBeforeRegisterClientScripts](extending-modx/plugins/system-events/onbeforeregisterclientscripts)
 [OnBeforeSaveWebPageCache](extending-modx/plugins/system-events/onbeforesavewebpagecache)
 [OnBeforeSnipFormDelete](extending-modx/plugins/system-events/onbeforesnipformdelete)
 [OnBeforeSnipFormSave](extending-modx/plugins/system-events/onbeforesnipformsave)
