@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires before the trash is emptied for the site.
 
-Service: 1 - Parser Service Events
-Group: Documents
+- Service: 1 - Parser Service Events
+- Group: Documents
 
 ## Event Parameters
 

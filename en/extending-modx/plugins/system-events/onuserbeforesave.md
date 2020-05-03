@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onuser
 
 Fires right before a User is saved.
 
-Service: 1 - Parser Service Events
-Group: modUser
+- Service: 1 - Parser Service Events
+- Group: modUser
 
 ## Event Parameters
 

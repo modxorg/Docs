@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocp
 
 Called when a Resource is published via the Publish context menu.
 
-Service: 5 - Template Service Events
-Group: None
+- Service: 5 - Template Service Events
+- Group: None
 
 ## Event Parameters
 

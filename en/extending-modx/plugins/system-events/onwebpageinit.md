@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebp
 
 Fires during the initialization process of a Resource, after modRequest::beforeRequest is called, but before config placeholders are set and any 404 or unauthorized page checking are done, or a response is sent.
 
-Service: 5 - Template Service Events
- Group: None
+- Service: 5 - Template Service Events
+- Group: None
 
 ## Event Parameters
 

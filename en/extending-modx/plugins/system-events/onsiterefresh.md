@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onsite
 
 Fires after the cache for the entire site is cleared.
 
-Service: 1 - Parser Service Events
-Group: None
+- Service: 1 - Parser Service Events
+- Group: None
 
 ## Event Parameters
 

@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmana
 
 Fired in the manager controller, after the processing of content and before returning it. The last event before getting response.
 
-Service: 2 - Manager Access Events
-Group: System
+- Service: 2 - Manager Access Events
+- Group: System
 
 ## Event Parameters
 

@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onreso
 
 Fires after a Resource Group is removed.
 
-Service: 1 - Parser Service Events
+- Service: 1 - Parser Service Events
 
 ## Event Parameters
 

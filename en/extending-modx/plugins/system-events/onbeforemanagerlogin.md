@@ -16,8 +16,8 @@ $modx->event->output(true);
 $modx->event->_output = true;
 ```
 
-Service: 2 - Manager Access Events
-Group: None
+- Service: 2 - Manager Access Events
+- Group: None
 
 ## Event Parameters
 

@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires before a plugin is deleted in the manager.
 
-Service: 1 - Parser Service Events
-Group: Plugins
+- Service: 1 - Parser Service Events
+- Group: Plugins
 
 ## Event Parameters
 

@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onuser
 
 Fires after a User is created or updated via the manager form.
 
-Service: 1 - Parser Service Events
-Group: modUser
+- Service: 1 - Parser Service Events
+- Group: modUser
 
 ## Event Parameters
 

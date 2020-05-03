@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onpage
 
 Fires immediately before the user is forwarded to the unauthorized page if attempting to view a non-accessible Resource.
 
-Service: 1 - Parser Service Events
-Group: None
+- Service: 1 - Parser Service Events
+- Group: None
 
 ## Event Parameters
 

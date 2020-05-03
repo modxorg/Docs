@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fired after the Resource is loaded and before the Resource is cached. If the Resource is not cacheable, this event will not fire.
 
-Service: 4 - Cache Service Events 
-Group: None
+- Service: 4 - Cache Service Events 
+- Group: None
 
 ## Event Parameters
 
