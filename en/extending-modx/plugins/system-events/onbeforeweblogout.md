@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires right before a user logs out of a non-mgr context. The logout hasn't occured yet.
 
-Service: 3 - Web Access Service Events
+Service: 3 - Web Access Events
 Group: None
 
 ## Event Parameters
