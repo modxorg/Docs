@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires before a user is logged out of the manager. The logout hasn't occured yet.
 
-Service: 2 - Manager Access Service Events
+Service: 2 - Manager Access Events
 Group: None
 
 ## Event Parameters
