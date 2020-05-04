@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ontemp
 
 Loaded right after successful saving a template variable to database.
 
-Service: 1 - Parser Service Events
-Group: Template Variables
+- Service: 1 - Parser Service Events
+- Group: Template Variables
 
 ## Event Parameters
 

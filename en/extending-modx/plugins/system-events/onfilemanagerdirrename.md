@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 
 Fires after renaming a directory via the manager. The old directory name can be retrieved using the $\_POST variable.
 
-Service: 1 - Parser Service Events
-Group: None
+- Service: 1 - Parser Service Events
+- Group: None
 
 ## Event Parameters
 

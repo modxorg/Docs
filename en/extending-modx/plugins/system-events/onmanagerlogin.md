@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmana
 
 Fires anytime a user successfully logs into the manager after performing any autentification checks successfully. Doesn't affect the autentification process.
 
-Service: 2 - Manager Access Events
-Group: None
+- Service: 2 - Manager Access Events
+- Group: None
 
 ## Event Parameters
 

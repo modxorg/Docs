@@ -10,8 +10,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebp
 
  Content Type headers have not yet been sent, nor has the output been flushed.
 
- Service: 5 - Template Service Events
- Group: None
+ - Service: 5 - Template Service Events
+- Group: None
 
 ## Event Parameters
 

@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onload
 
 Fires after a Resource is loaded from the cache. If the Resource is not cached, this event will not fire. NOTE: this event is not particularly useful until MODX 2.3 (see [Issue 9841](http://bugs.modx.com/issues/9841)).
 
-Service: 4 - Cache Service Events
-Group: None
+- Service: 4 - Cache Service Events
+- Group: None
 
 ## Event Parameters
 

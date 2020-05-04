@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocf
 
 Fires before a Resource editing form is loaded in the manager.
 
-Service: 1 - Parser Service Events
-Group: Documents
+- Service: 1 - Parser Service Events
+- Group: Documents
 
 ## Event Parameters
 

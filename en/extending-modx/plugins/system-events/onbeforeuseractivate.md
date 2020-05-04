@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Never fired in MODX core; can be used by 3rd Party Components (such as [Login](/extras/login "Login")) when a User is being activated.
 
-Service: 1 - Parser Service Events
-Group: modUser
+- Service: 1 - Parser Service Events
+- Group: modUser
 
 ## Event Parameters
 

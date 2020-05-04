@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires after a form is submitted but before a Template is saved in the manager.
 
-Service: 1 - Parser Service Events
-Group: Templates
+- Service: 1 - Parser Service Events
+- Group: Templates
 
 ## Event Parameters
 

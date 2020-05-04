@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oninit
 
 Fires after a Culture and Lexicon has been initialized.
 
-Service: 1 - Parser Service Events
-Group: None
+- Service: 1 - Parser Service Events
+- Group: None
 
 ## Event Parameters
 

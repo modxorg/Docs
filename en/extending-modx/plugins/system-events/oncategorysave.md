@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncate
 
 Happens after a category is saved.
 
-Service: 2 - Manager Access Events
-Group: modCategory
+- Service: 2 - Manager Access Events
+- Group: modCategory
 
 ## Event Parameters
 

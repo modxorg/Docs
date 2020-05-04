@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires before a Resource is saved in the manager via the editing form. This allows code to prevent the saving of a document.
 
-Service: 1 - Parser Service Events
- Group: Documents
+- Service: 1 - Parser Service Events
+- Group: Documents
 
 **Be Careful with TVs**
  Changing or inserting TV values is better done [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave "OnDocFormSave") as the process for saving TVs during onBeforeDocFormSave is more complicated due to TV values being rendered.

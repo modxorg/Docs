@@ -10,8 +10,8 @@ Can be used by 3rd Party Components (such as [Login](/extras/login "Login")) whe
 
 Also fired when a user is set to "active" from within the manager
 
-Service: 1 - Parser Service Events
- Group: modUser
+- Service: 1 - Parser Service Events
+- Group: modUser
 
 ## Event Parameters
 

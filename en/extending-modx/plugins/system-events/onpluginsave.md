@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onplug
 
 Fires just after the database is altered
 
-Service: 2 - Manager Access Events
-Group: modPlugin
+- Service: 2 - Manager Access Events
+- Group: modPlugin
 
 ## Event Parameters
 

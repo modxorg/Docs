@@ -6,8 +6,8 @@ title: "OnBeforeRegisterClientScripts"
 
 Fired before the registered client scripts are added to the web page output.
 
-Service: 5 - Template Service Events
-Group: None
+- Service: 5 - Template Service Events
+- Group: None
 
 ## Event Parameters
 

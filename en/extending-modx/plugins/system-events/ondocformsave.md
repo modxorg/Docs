@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocf
 
 Fires after a Resource is saved in the manager via the editing form.
 
-Service: 1 - Parser Service Events
-Group: Documents
+- Service: 1 - Parser Service Events
+- Group: Documents
 
 **TVs are best Modified Here**
 If you need to modify TV values, it's best to modify them here and not during [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave").

@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onreso
 
 Fires after a Resource Group is saved.
 
-Service: 1 - Parser Service Events
-Group: modResourceGroup
+- Service: 1 - Parser Service Events
+- Group: modResourceGroup
 
 ## Event Parameters
 

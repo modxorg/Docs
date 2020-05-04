@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchun
 
 Happens after a chunk is saved.
 
-Service: 2 - Manager Access Events
-Group: modChunk
+- Service: 2 - Manager Access Events
+- Group: modChunk
 
 ## Event Parameters
 

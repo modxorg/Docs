@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 
 Fires after creating a new directory in the manager.
 
-Service: 1 - Parser Service Events
-Group: None
+- Service: 1 - Parser Service Events
+- Group: None
 
 ## Event Parameters
 

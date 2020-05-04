@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Loaded right before a manager controller is run and after checking permissions.
 
-Service: 2 - Manager Access Events
-Group: System
+- Service: 2 - Manager Access Events
+- Group: System
 
 ## Event Parameters
 
