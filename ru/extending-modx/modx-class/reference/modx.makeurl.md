@@ -17,6 +17,9 @@ translation: "extending-modx/modx-class/reference/modx.makeurl"
 - `http`: URL является абсолютным, принудительно по схеме http
 - `https`: URL является абсолютным, принудительно по схеме https
 
+Примечание:
+URL-адреса в мультиконтекстных сайтах принудительно приводятся к абсолютному значению URL, для избегания этого поведения используйте `$modx->switchContext('context_key');`
+
 ## Синтаксис
 
 API Doc: [modX::makeUrl()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::makeUrl())
