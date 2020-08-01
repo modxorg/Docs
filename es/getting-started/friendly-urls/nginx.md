@@ -1,5 +1,6 @@
 ---
-title: "Nginx Server Config"
+title: "Configuración del servidor Nginx
+"
 _old_id: "376"
 _old_uri: "2.x/getting-started/installation/basic-installation/nginx-server-config"
 ---
