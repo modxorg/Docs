@@ -13,7 +13,7 @@ MODX proporciona un archivo ht.access para que lo edites coincidiendo con la con
 
 El archivo .htaccess puede estar en cualquier lugar dentro de la instalación de MODX, pero la ubicación habitual es en la raíz del sitio MODX (junto con el archivo ht.access y los directorios de assets, manager y connectors, como se muestra en la imagen a continuación). Para la mayoría de las instalaciones, no es necesario realizar ningún cambio en el archivo para que las FURL funcionen. Debes hacer un cambio, pero primero haz que las FURL funcionen y trataremos sobre ese cambio al final de esta página.
 
-![](shawnwilkerson_09_01.jpg)
+![](files_tree.png)
 
 Aquí está el archivo ht.access que viene con la versión 2.7.3 de MODX (tu versión puede ser ligeramente diferente).
 
