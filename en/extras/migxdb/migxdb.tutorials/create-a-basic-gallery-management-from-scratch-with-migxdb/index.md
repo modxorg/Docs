@@ -57,7 +57,7 @@ Go to the tab _xml scheme_ and add this code:
 
 by clicking _Save Schema_ we should have our schema-file created. You can test it by clicking _Load Schema_.
 
-[Read more about creating schemas](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema "Defining a Schema")
+[Read more about creating schemas](extending-modx/xpdo/custom-models/defining-a-schema/database-and-tables "Defining a Schema")
 
 ### Parse Schema
 
