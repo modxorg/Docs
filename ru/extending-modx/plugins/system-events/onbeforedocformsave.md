@@ -11,7 +11,7 @@ translation: "extending-modx/plugins/system-events/onbeforedocformsave"
 Группа: Documents
 
 **Будь осторожен с TVs**
- Изменение или вставка значений TV лучше сделать [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave "OnDocFormSave") поскольку процесс сохранения TV во время onBeforeDocFormSave более сложен из-за визуализации значений TV.
+Изменение или вставка значений TV лучше сделать [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave "OnDocFormSave") поскольку процесс сохранения TV во время onBeforeDocFormSave более сложен из-за визуализации значений TV.
 
 Плагины, привязанные к этому событию, должны вернуть **null** в случае успеха. Любое возвращенное значение будет отправлено в журналы как ошибка (но страница все равно будет сохранена).
 
@@ -34,8 +34,8 @@ translation: "extending-modx/plugins/system-events/onbeforedocformsave"
 
 ``` php
 if (empty($resource->longtitle)) {
-        $modx->event->output('Long title is required!'); // to modal window
-        return '[MyPlugin] Failed to save page id '.$id.' due to missing longtitle'; // to the error log
+    $modx->event->output('Требуется расширенное название!'); // to modal window
+    return '[MyPlugin] Не удалось сохранить id страницы '.$id.' из-за отсутствия длинного заголовка'; // в журнал ошибок
 }
 ```
 
@@ -43,12 +43,45 @@ if (empty($resource->longtitle)) {
 
 ``` php
 if ($resource->get('parent') == 123) {
-        $resource->set('template', 4);
+    $resource->set('template', 4);
+}
+```
+
+Такой плагин не разрешит создавать новые ресурсы, и не будет сохранять ресурсы, у которых не заполнено `introtext`:
+
+``` php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforeDocFormSave':
+        if ($mode == modSystemEvent::MODE_UPD) {
+            //если не заполнен introtext
+            if (!$resource->get('introtext')){
+                $modx->event->output("Голову ты дома не забыл, а про 'Ключевые слова' забыл!");
+            }
+        } elseif ($mode == modSystemEvent::MODE_NEW) {
+            $modx->event->output("Вам нельзя создавать ресурсы!");
+        }
+        break;
+}
+```
+
+Такой плагин установит значение поля `template=1` у всех ресурсов находящийхся в корне т.е `parent=0`:
+
+``` php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforeDocFormSave':
+        if ($resource->get('parent') == 0) {
+            $resource->set('template', '1');
+        }
+        break;
 }
 ```
 
 **Автоматическое сохранение**
- Нет необходимости запускать  `$resource->save()` метод, так как это происходит автоматически.
+Нет необходимости запускать  `$resource->save()` метод, так как это происходит автоматически.
 
 ## Смотри также
 

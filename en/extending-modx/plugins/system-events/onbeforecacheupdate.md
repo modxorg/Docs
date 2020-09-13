@@ -15,6 +15,20 @@ Fired before the entire site cache is cleared.
 
 None.
 
+## Example
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforeCacheUpdate':
+        $modx->log(modX::LOG_LEVEL_ERROR, "Let's start!");
+        break;
+}
+```
+
+Now refresh the cache and you will see "Let's start!"
+
 ## See Also
 
 - [System Events](extending-modx/plugins/system-events "System Events")
