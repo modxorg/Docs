@@ -15,13 +15,13 @@ Fires before a user is logged out of the manager. The logout hasn't occured yet.
 
 | Name               | Description                                                                          |
 | ------------------ | ------------------------------------------------------------------------------------ |
-| **&** user         | A reference to the modUser object of the user. **Passed by reference**               |
+| user         | A reference to the modUser object of the user. **Passed by reference**               |
 | userid             | The user ID of the user. (deprecated)                                                |
 | username           | The username of the user. (deprecated)                                               |
-| **&** loginContext | The context key this logout is occurring in. **Passed by reference**                 |
-| **&** addContexts  | Additional contexts in which the logout is also occuring in. **Passed by reference** |
+| loginContext | The context key this logout is occurring in. **Passed by reference**                 |
+| addContexts  | Additional contexts in which the logout is also occuring in. **Passed by reference** |
 
-## Примеры
+## Examples of
 
 Such a plugin will write to the "Error log" the id of the logged out user and where he left from:
 

@@ -28,7 +28,7 @@ $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnBeforeChunkFormDelete':
         if ($id == 69){
-            $modx->event->output("Нельзя удалять чанк ".$chunk->get('name'));
+            $modx->event->output("Chunk cannot be deleted ".$chunk->get('name'));
         }
         break;
 }
