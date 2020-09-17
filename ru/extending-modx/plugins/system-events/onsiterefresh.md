@@ -16,6 +16,20 @@ translation: "extending-modx/plugins/system-events/onsiterefresh"
 | ------- | ------------------- |
 | results | Массив результатов. |
 
+## Пример
+
+Такой плагин выведет в консоли массив того, что было очищено:
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnSiteRefresh':
+        $modx->log(modX::LOG_LEVEL_ERROR, 'Кэш очищен '.print_r($partitions));
+        break;
+}
+```  
+
 ## Смотри также
 
 - [System Events](extending-modx/plugins/system-events "System Events")

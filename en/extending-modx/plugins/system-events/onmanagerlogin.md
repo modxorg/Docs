@@ -28,6 +28,21 @@ Fires anytime a user successfully logs into the manager after performing any aut
 3. _[OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication)_ || _[OnManagerAuthentication](extending-modx/plugins/system-events/onmanagerauthentication)_ - Inside this event the developer can check for parameters which will **override the default checking by password** and **allow** further logging in process. If one of the plugins executed from this event return true, the user is considered verified and logged in.
 4. _[OnWebLogin](extending-modx/plugins/system-events/onweblogin)_ || **_OnManagerLogin_** - This event is fired after the logging in process has finished and the user is considered logged in. It **doesn't change** the logging in process **behaviour**.
 
+## Example
+
+Such a plugin will write to the "Error log" who logged in and where:
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnManagerLogin':
+        $id = $user->get('id');
+        $modx->log(modX::LOG_LEVEL_ERROR, 'User logged in with id '.$id.print_r($attributes));
+        break;
+}
+```
+
 ## See Also
 
 - [System Events](extending-modx/plugins/system-events "System Events")

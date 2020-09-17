@@ -5,10 +5,10 @@ translation: "extending-modx/plugins/system-events/ondocformrender"
 
 ## Событие: OnDocFormRender
 
-Запускается после загрузки формы редактирования ресурса в диспетчере. Полезно для вставки HTML в формы, а с 2.4 для установки нескольких значений по умолчанию для новых ресурсов
+Запускается в форме редактирования диспетчера. Удобно для вставки HTML в формах и 2.4+ для установки значений по умолчанию на новые ресурсы
 
 Служба: 1 - Parser Service Events
- Группа: Documents
+Группа: Documents
 
 ## Параметры события
 
@@ -31,19 +31,23 @@ translation: "extending-modx/plugins/system-events/ondocformrender"
 - alias
 - menutitle
 
-Рекомендуется делать это только на новых ресурсах, так как любые значения, которые вы установите, будут перезаписывать существующие значения ресурсов.
+Рекомендуется для установки на новые ресурсы, для существующих значения будут перезаписаны.
 
 Вот как вы можете использовать это:
 
 ``` php
-switch ($modx->event->name) {
-  case 'OnDocFormRender':
-    if ($mode === 'new') {
-      $resource->set('pagetitle', 'This is a default pagetitle');
-    }
-    break;
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnDocFormRender':
+        if ($mode == modSystemEvent::MODE_NEW) {
+            //устанавливаем значения по умолчанию
+            $resource->set('pagetitle', 'Заголовок');
+            $resource->set('description', 'Описание');
+            $resource->set('content', 'Контент');
+        }
+        break;
 }
-
 ```
 
 ## Смотрите также

@@ -21,6 +21,21 @@ Fires after a user is logged out of the manager and their context session is rem
 | **&** loginContext | The context key this logout is occurring in. **Passed by reference**                 |
 | **&** addContexts  | Additional contexts in which the logout is also occuring in. **Passed by reference** |
 
+## Example
+
+Such a plugin will write to the "Error log" who came out and where:
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnManagerLogout':
+        $id = $user->get('id');
+        $modx->log(modX::LOG_LEVEL_ERROR, 'User logged out with id '.$id.' out of context '.$loginContext.' and these more '.print_r($addContexts));
+        break;
+}
+```
+
 ## See Also
 
 - [OnBeforeWebLogout event](extending-modx/plugins/system-events/onbeforeweblogout "OnBeforeWebLogout")

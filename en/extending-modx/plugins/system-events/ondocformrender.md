@@ -37,14 +37,17 @@ It is advised to only do this on new resources, as any values you set **will** o
 Here is how you might use it:
 
 ``` php
-switch ($modx->event->name) {
-  case 'OnDocFormRender':
-    if ($mode === 'new') {
-      $resource->set('pagetitle', 'This is a default pagetitle');
-    }
-    break;
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnDocFormRender':
+        if ($mode == modSystemEvent::MODE_NEW) {
+            //устанавливаем значения по умолчанию
+            $resource->set('pagetitle', 'Heading');
+            $resource->set('description', 'Description');
+            $resource->set('content', 'Content');
+        }
+        break;
 }
-
 ```
 
 See Also
