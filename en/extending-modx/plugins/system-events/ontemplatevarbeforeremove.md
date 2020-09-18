@@ -27,6 +27,22 @@ Loaded right before removing a template variable.
 | Class          | modTemplateVar                                                                                                                         |
 | Method         | public function remove(array $ancestors= array ())                                                                                     |
 
+
+## Example
+
+Such a plugin will display the remote TV data in the "Error log":
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnTemplateVarBeforeRemove':
+        //array tv, with all parameters
+        print_r($templateVar->toArray());
+        break;
+}
+```
+
 ## See Also
 
 - [System Events](extending-modx/plugins/system-events "System Events")

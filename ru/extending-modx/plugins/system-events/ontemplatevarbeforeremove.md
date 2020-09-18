@@ -26,6 +26,21 @@ Group: Template Variables
 | Class              | modTemplateVar                                                                                                                         |
 | Method             | public function remove(array $ancestors= array ())                                                                                     |
 
+## Пример
+
+Такой плагин выведет в "Журнал ошибок" данные удаленного ТВ:
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnTemplateVarBeforeRemove':
+        //массив твшки, со всеми параметрами
+        print_r($templateVar->toArray());
+        break;
+}
+```
+
 ## Смотри также
 
 - [System Events](extending-modx/plugins/system-events "System Events")

@@ -30,6 +30,24 @@ $output = str_replace($words,"<b>[filtered]</b>",$output);
 
 Be careful if your OnWebPagePrerender plugin is a static element and it includes or requires files using _relative paths_. The plugin code executes from its cached file, e.g. `core/cache/includes/elements/modplugin/7.include.cache.php`, not from the original static element file. See [Bug 11129](https://github.com/modxcms/revolution/issues/11129)
 
+## Example
+
+Such a plugin will replace the words on pages:
+
+```php
+<?php
+switch($eventName) {
+    case 'OnWebPagePrerender': 
+        // words to be replaced
+        $words = array("Product", "Price");
+        // get access to the page content
+        $output = &$modx->resource->_output;
+        // we replace words
+        $output = str_replace($words,"changed",$output); 
+        break;
+}
+```
+
 ## See Also
 
 -   [System Events](extending-modx/plugins/system-events "System Events")
