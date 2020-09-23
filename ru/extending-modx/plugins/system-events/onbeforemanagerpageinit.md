@@ -17,7 +17,7 @@ translation: "extending-modx/plugins/system-events/onbeforemanagerpageinit"
 | action   | Конфигурационный массив текущего контроллера менеджера.         |
 | filename | Имя файла загружаемого контроллера. (**устарело с версии 2.2**) |
 
-## Remarks
+## Замечания
 
 | Предыдущее событие | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit")                                                    |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -25,6 +25,20 @@ translation: "extending-modx/plugins/system-events/onbeforemanagerpageinit"
 | File               | [core/model/modx/modmanagercontroller.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagercontroller.class.php) |
 | Class              | абстрактный класс modManagerController                                                                                                             |
 | Method             | public function render()                                                                                                                           |
+
+## Пример
+
+Такой плагин выведет в "Журнал ошибок" какой контроллер загрузился:
+
+``` php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforeManagerPageInit':
+        print_r($action);
+        break;
+}
+```
 
 ## Смотри также
 

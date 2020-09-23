@@ -27,6 +27,20 @@ Loaded right before a manager controller is run and after checking permissions.
 | Class          | abstract class modManagerController                                                                                                                |
 | Method         | public function render()                                                                                                                           |
 
+## Example
+
+Such a plugin will display in the "Error log" which controller has loaded:
+
+``` php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforeManagerPageInit':
+        print_r($action);
+        break;
+}
+```
+
 ## See Also
 
 - [System Events](extending-modx/plugins/system-events "System Events")

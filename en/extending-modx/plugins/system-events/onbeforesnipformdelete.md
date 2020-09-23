@@ -18,6 +18,19 @@ Fires before a Snippet is deleted in the manager.
 | snippet | A reference to the modSnippet object. |
 | id      | The ID of the Snippet.                |
 
+## Example
+
+Such a plugin will display a message stating that you cannot delete snippets:
+
+``` php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforeSnipFormDelete':
+        $modx->event->output("You cannot delete snippets!?");
+        break;
+}
+
 ## See Also
 
 - [System Events](extending-modx/plugins/system-events "System Events")
