@@ -9,9 +9,10 @@ MODX will run fine on most shared/cloud hosting, as well as VPS and dedicated bo
 
 | Component | Minimum            | Recommended                                     |
 | --------- | ------------------ | ----------------------------------------------- |
-| PHP       | 5.6.x              | 7.2 or 7.3                                      |
+| PHP       | 5.6.x              | 7.2 or higher                                   |
 | Database  | Latest MySQL 5.6.x | MariaDB 10.1.x or Percona Server 5.6.x or above |
 | Webserver | *                  | NGINX 1.8 or Apache 2.4                         |
+
 
 ## PHP
 
