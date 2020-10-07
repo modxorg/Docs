@@ -89,6 +89,5 @@ On your Thank You page (Resource ID 123):
     2. [FormIt.Examples.Simple Contact Page](extras/formit/formit.tutorials-and-examples/examples.simple-contact-page)
     3. [FormIt.Handling Selects, Checkboxes and Radios](extras/formit/formit.tutorials-and-examples/handling-selects,-checkboxes-and-radios)
     4. [FormIt.Using a Blank NoSpam Field](extras/formit/formit.tutorials-and-examples/using-a-blank-nospam-field)
-5. [FormIt.Roadmap](extras/formit/formit.roadmap)
-6. [FormIt.FormItCountryOptions](extras/formit/formit.formitcountryoptions)
-7. [FormIt.FormItStateOptions](extras/formit/formit.formitstateoptions)
+5. [FormIt.FormItCountryOptions](extras/formit/formit.formitcountryoptions)
+6. [FormIt.FormItStateOptions](extras/formit/formit.formitstateoptions)
