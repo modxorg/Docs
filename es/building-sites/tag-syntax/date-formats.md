@@ -4,7 +4,7 @@ _old_id: "91"
 _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags/date-formats"
 ---
 
-MODX está escrito en PHP y, como tal, se basa en las funciones de fecha subyacentes de PHP, por ej. [strftime](http://www.php.net/manual/es/function.strftime.php). La discusión aquí puede volverse bastante complicada porque las funciones [strftime](http://www.php.net/manual/es/function.strftime.php) y [strtotime] (https://www.php.net/manual/es/function.strtotime.php) utilizan argumentos _similares_, pero no son idénticos.
+MODX está escrito en PHP y, como tal, se basa en las funciones de fecha subyacentes de PHP, por ej. [strftime](http://www.php.net/manual/es/function.strftime.php). La discusión aquí puede volverse bastante complicada porque las funciones [strftime](http://www.php.net/manual/es/function.strftime.php) y [strtotime](https://www.php.net/manual/es/function.strtotime.php) utilizan argumentos _similares_, pero no son idénticos.
 
 La discusión aquí se relaciona principalmente con los siguientes campos de contenido:
 

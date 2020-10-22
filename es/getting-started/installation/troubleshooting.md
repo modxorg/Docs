@@ -56,7 +56,7 @@ Una de las causas comunes de este problema es que estés utilizando un puerto no
 
 > my.basededatos.com;port=3307
 
-### Warning: PDO::\_\_construct() \[pdo.--construct\]: \[2002\] Argumento no válido (intentando conectarse a través de unix: //) o "Checking database:Could not connect to the mysql server".
+### Warning: PDO::\_\_construct() \[pdo.--construct\]: \[2002\] Argumento no válido (intentando conectarse a través de unix: //) o "Checking database:Could not connect to the mysql server"
 
 Esto significa que tu socket MySQL está configurado incorrectamente. Por lo general, esto se puede solucionar agregando (o actualizando) tu php.ini:
 

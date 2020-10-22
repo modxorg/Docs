@@ -78,7 +78,7 @@ Prácticamente ambos términos se usan para indicar lo mismo: un documento que c
 
 No estás condenado [Consulta estas instrucciones para Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Restablecer una contraseña de usuario manualmente").
 
-## 3. Problemas de visualización del sitio web público.
+## 3. Problemas de visualización del sitio web público
 
 ### 3.1 Páginas en blanco en el sitio resueltas Borrando Caché
 

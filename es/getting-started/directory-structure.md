@@ -89,7 +89,8 @@ $modx->lexicon->load( 'lang:namespace:topic' );
 
 Aquí estás el modelo. ¿Y qué es un modelo, dirás? Bueno, es la M en MVC (model-view-controller), que es un paradigma OO que establece que debe haber al menos tres partes en una aplicación. El modelo, que contiene la estructura de la base de datos y los enganches ("hooks") en ella; la Vista, que es la parte GUI de la aplicación que no contiene lógica, solo presentación; y los Controladores, que conectan el modelo a la vista.
 Por lo tanto, MODX hace un modelo similar. Realmente hacemos un modelo MVC/C, en el que agregamos un punto de acceso de conector y procesadores al modelo. Lo explicaremos a medida que nos acerquemos a ello. Lo que necesitas saber es que el modelo contiene todas las clases de PHP que ejecutan Revolution, incluidos los procesadores que manejan funciones específicas, como guardar fragmentos, eliminar fragmentos, etc.
-#### core/model/modx/
+
+### core/model/modx/
 
 "¡Espera! ¡Pensé que ya estábamos en un directorio modx? ¿Por qué otro subdirectorio modx?" Buena pregunta. Bueno, MODX Revolution usa xPDO para la gestión de su base de datos.xPDO utiliza la idea de 'paquetes' para diferentes conexiones a diferentes modelos. Entonces, si yo quisiera crear mis propias tablas personalizadas, crearía un nuevo paquete xPDO y lo agregaría en tiempo de ejecución. De esta manera, podría usar los mapas y las clases creadas sin tener que modificar el núcleo MODX. Esto se explica en el tutorial [Crear un componente de terceros](extending-modx/tutorials/developing-an-extra "Escribir un componente de terceros en MODX Revolution, Pt. I").
 
@@ -97,7 +98,7 @@ Dicho esto, se puede inferir que el directorio core/model/modx se refiere al paq
 
 Los subdirectorios en esta carpeta - sin incluir mysql o processors - are subcategories of classes, son subcategorías de clases, que se cargan como: `$modx->loadClass('transport.modPackageBuilder');` con "." como separación de directorios.
 
-##### core/model/modx/mysql/
+#### core/model/modx/mysql/
 
 Este directorio contiene los archivos de clase y mapa para cada objeto xPDO. Los mapas son simplemente matrices PHP que contienen la estructura de la tabla de la base de datos a la que hacen referencia.
 
@@ -176,6 +177,7 @@ Este directorio solo está presente en la versión de MODX Revolution descargada
 ### Archivos destacables
 
 - **\_build/transport.core.php** - Este archivo debe ejecutarse después de descargar MODX Revolution y antes de ejecutar el programa de instalación. Después de la finalización, debe aparecer un directorio "core" dentro del directorio core/packages/, que contendrá todos los valores necesarios para instalar MODX Revolution.
+
 ## assets/
 
 Este directorio no está presente en MODX Revolution de forma predeterminada, pero es común colocar imágenes, CSS, JavaScript y otros medios aquí.
