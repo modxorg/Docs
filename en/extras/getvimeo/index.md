@@ -16,7 +16,7 @@ getVimeo was first written by David Pede (davidpede) and released on June 12th, 
 
 ## Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](/display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <http://modx.com/extras/package/getvimeo>
+It can be downloaded from within the MODX Revolution manager via [Package Management](/display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <https://modx.com/extras/package/getvimeo>
 
 The source code and build script is also availiable on GitHub: <https://github.com/tasianmedia/getVimeo>
 

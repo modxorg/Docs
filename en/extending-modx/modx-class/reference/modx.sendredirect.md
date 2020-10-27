@@ -43,13 +43,13 @@ $modx->sendRedirect($url);
 Send a redirect to modx.com. Do so via the META HTTP-EQUIV refresh tag.
 
 ``` php
-$modx->sendRedirect('http://modx.com',array('type' => 'REDIRECT_META'));
+$modx->sendRedirect('https://modx.com',array('type' => 'REDIRECT_META'));
 ```
 
 Send a 301 Moved Permanently response code instead of the default 302 Moved Temporarily response code.
 
 ``` php
-$modx->sendRedirect('http://modx.com',array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
+$modx->sendRedirect('https://modx.com',array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
 ```
 
 ## See Also

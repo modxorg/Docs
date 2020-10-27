@@ -26,7 +26,7 @@ For example, with CustomURLs you can add the resource's ID or publish month in t
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <http://modx.com/extras/package/customurls>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository, here: <https://modx.com/extras/package/customurls>
 
 ### Support, Comments, Development and Bug Reporting
 

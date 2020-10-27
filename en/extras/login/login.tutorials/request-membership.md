@@ -32,7 +32,7 @@ The steps go something like this:
 
 ![](the+foxycart+forum+-+sign+out.jpg)
 
-Make sense? It's pretty similar to what we did before in the [Basic Setup](extras/login/login.tutorials/basic-setup "Login.Basic Setup"), but there are a few extra things going on, so we need a few extra pages. Most importantly, we'll need to integrate both the [Register](extras/login/login.register "Login.Register") and the [Personalize](http://modx.com/extras/package/personalize) Snippets, and we'll need to shuffle around a couple other components from the [Basic Setup](extras/login/login.tutorials/basic-setup "Login.Basic Setup") tutorial.
+Make sense? It's pretty similar to what we did before in the [Basic Setup](extras/login/login.tutorials/basic-setup "Login.Basic Setup"), but there are a few extra things going on, so we need a few extra pages. Most importantly, we'll need to integrate both the [Register](extras/login/login.register "Login.Register") and the [Personalize](https://modx.com/extras/package/personalize) Snippets, and we'll need to shuffle around a couple other components from the [Basic Setup](extras/login/login.tutorials/basic-setup "Login.Basic Setup") tutorial.
 
 This tutorial makes use of related and complimentary Snippets!
 
@@ -40,7 +40,7 @@ Let's get started!
 
 ## Download the Necessary Snippets
 
-We're augmenting the functionality offered by the default Login snippet, so make sure that you also download the [Personalize](http://modx.com/extras/package/personalize) Snippet. It is available via package management.
+We're augmenting the functionality offered by the default Login snippet, so make sure that you also download the [Personalize](https://modx.com/extras/package/personalize) Snippet. It is available via package management.
 
 ![](personalize+snippet.jpg)
 
@@ -86,7 +86,7 @@ As before, we can use the same Login Snippet:
 
 ### The Homepage Template
 
-That nifty banner link on your homepage that displays "Logout" when you are signed in and "Login" when you're not can be accomplished via the [Personalize](http://modx.com/extras/package/personalize) Snippet.
+That nifty banner link on your homepage that displays "Logout" when you are signed in and "Login" when you're not can be accomplished via the [Personalize](https://modx.com/extras/package/personalize) Snippet.
 
 To make use of it, put something like the following in your homepage template (add HTML to taste):
 
@@ -125,7 +125,7 @@ The syntax for passing parameters to a MODX URL tag is similar the way parameter
 
 Note that MODX automatically handled the placement of the "?"
 
-We could do the same thing for any parts of our page that need to change how they look based on whether a user is logged-in or not. In the example of FoxyCart, their site also added some menu options that appeared when when a user had successfully logged in. All you would need to do is create another instance of the [Personalize](http://modx.com/extras/package/personalize) Snippet with its corresponding **yesChunk** and **noChunk**. We're going to assume you get the idea and you can repeat as needed.
+We could do the same thing for any parts of our page that need to change how they look based on whether a user is logged-in or not. In the example of FoxyCart, their site also added some menu options that appeared when when a user had successfully logged in. All you would need to do is create another instance of the [Personalize](https://modx.com/extras/package/personalize) Snippet with its corresponding **yesChunk** and **noChunk**. We're going to assume you get the idea and you can repeat as needed.
 
 ### Login Page (1)
 
@@ -348,4 +348,4 @@ else {
 
 The solution involves recompiling PHP. You must have the **mbstring** library installed and you must ensure that you have not included the _--disable-mbregex_ option.
 
-See [this forum post](http://modxcms.com/forums/index.php/topic,63778.0.html) for more details.
+See [this forum post](https://forums.modx.com/index.php/topic,63778.0.html) for more details.

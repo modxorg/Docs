@@ -37,7 +37,7 @@ Esta página enumera las etiquetas de MODX Revolution normalmente utilizadas, co
 
 ## Todas las etiquetas
 
- A medida que aumente tu comprensión de cómo funcionan las plantillas de MODX, querrás tener a tu disposición la lista completa de campos de contenido disponibles. Aquí está la lista completa de todas las etiquetas, obtenida de esta [publicación de blog](http://modxcms.com/forums/index.php/topic,63481.0/topicseen.html).
+ A medida que aumente tu comprensión de cómo funcionan las plantillas de MODX, querrás tener a tu disposición la lista completa de campos de contenido disponibles. Aquí está la lista completa de todas las etiquetas, obtenida de esta [publicación de blog](https://forums.modx.com/index.php/topic,63481.0/topicseen.html).
 
 | Etiqueta                        | Tipo de datos             | Descripción                                                                                                                    | Ejemplos de uso                                                                                                                                        |
 | -------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |

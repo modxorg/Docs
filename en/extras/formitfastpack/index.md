@@ -10,7 +10,7 @@ FFP simplifies the management of HTML associated with form-processing snippets l
 
 ## Installation
 
-Install from the [MODX package manager](http://modx.com/extras/package/formitfastpack).
+Install from the [MODX package manager](https://modx.com/extras/package/formitfastpack).
 
 ## Getting Started
 

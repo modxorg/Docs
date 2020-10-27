@@ -42,13 +42,13 @@ $modx->sendRedirect($url);
 Отправить редирект на modx.com. сделайте это с помощью метатега HTTP-EQUIV refresh.
 
 ``` php
-$modx->sendRedirect('http://modx.com',array('type' => 'REDIRECT_META'));
+$modx->sendRedirect('https://modx.com',array('type' => 'REDIRECT_META'));
 ```
 
 Отправьте код ответа "301 перемещенный постоянно" вместо кода ответа "302 перемещенного временно" по умолчанию.
 
 ``` php
-$modx->sendRedirect('http://modx.com',array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
+$modx->sendRedirect('https://modx.com',array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));
 ```
 
 ## Смотрите также

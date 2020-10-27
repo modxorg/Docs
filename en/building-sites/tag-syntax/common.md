@@ -37,7 +37,7 @@ This page lists the most commonly used MODX Revolution tags as an aid to anyone 
 
 ## All Tags
 
- As you increase your understanding of how MODX templates work, you'll want to have at your disposal the complete list of available content fields. Here is the complete list of all tags, gleaned from this [blog post](http://modxcms.com/forums/index.php/topic,63481.0/topicseen.html).
+ As you increase your understanding of how MODX templates work, you'll want to have at your disposal the complete list of available content fields. Here is the complete list of all tags, gleaned from this [blog post](https://forums.modx.com/index.php/topic,63481.0/topicseen.html).
 
 | Tag                        | Data Type             | Description                                                                                                                    | Example Usage                                                                                                                                        |
 | -------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |

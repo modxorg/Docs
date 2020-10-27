@@ -29,7 +29,7 @@ The package will be downloaded to the proper directories in your MODX installati
 
 [Providers](building-sites/extras/providers "Providers")
 
-You can select the location from which to download packages, add a new location, or select packages on your local machine. Use the Add New Package link, to the left of the Download Extras link. By default, the modxcms.com/extras repository is available as a remote provider.
+You can select the location from which to download packages, add a new location, or select packages on your local machine. Use the Add New Package link, to the left of the Download Extras link. By default, the modx.com/extras repository is available as a remote provider.
 
 ## Manual Installation
 
@@ -39,15 +39,15 @@ If you prefer, you can manually copy the package into the core/packages director
 
 ### Downloading Packages
 
-You have a few options: you can download remotely via the Provider option, by selecting the modxcms.com provider from the menu (or just by clicking 'Download Extras' in the grid toolbar).
+You have a few options: you can download remotely via the Provider option, by selecting the modx.com provider from the menu (or just by clicking 'Download Extras' in the grid toolbar).
 
 To download the packages, simply select the package you wish to download and click the "Download" button.
 
-Or, packages can be downloaded directly from a browser via MODX's Extras section, located at <http://modx.com/extras/>. The package zips are loaded simply by uploading them to your core/packages/ directory, and then running the Package Management section of the manager. From there, click on "Add New Package", and select the "Search Locally for Packages" option. MODX will then scan the core package directory, and add any packages you have.
+Or, packages can be downloaded directly from a browser via MODX's Extras section, located at <https://modx.com/extras/>. The package zips are loaded simply by uploading them to your core/packages/ directory, and then running the Package Management section of the manager. From there, click on "Add New Package", and select the "Search Locally for Packages" option. MODX will then scan the core package directory, and add any packages you have.
 
 Downloading Packages requires you to either have cURL or sockets installed on your web server. If you do not have these installed, the list of packages will show blank.
 
-The Official Provider of modxcms.com has a URL of:
+The Official Provider of modx.com has a URL of:
 <http://rest.modx.com/extras/>
  and comes packaged in with MODX Revolution 2.0.0.
 

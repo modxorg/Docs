@@ -5,7 +5,7 @@ translation: "contribute/modx-account"
 
 Ваша учетная запись MODX дает вам доступ к
 
-- [MODX сайту (modx.com)](http://modx.com/)
+- [MODX сайту (modx.com)](https://modx.com/)
 - [MODX форумам (forums.modx.com)](http://forums.modx.com)
 
-Просто зарегистрируйтесь здесь: <http://modx.com/login/>
+Просто зарегистрируйтесь здесь: <https://modx.com/login/>

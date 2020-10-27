@@ -18,7 +18,7 @@ To setup a Transport Provider, simply go to the Package Management page, and fro
 
 ![](providers.png)
 
-From there, you can click "Add New Provider" to add another, or right-click on any provider to get more options. Providers must be valid JSON files, web-accessible, and in the correct Provider format. Note that the Extras section of modxcms.com is a Provider.
+From there, you can click "Add New Provider" to add another, or right-click on any provider to get more options. Providers must be valid JSON files, web-accessible, and in the correct Provider format. Note that the Extras section of modx.com is a Provider.
 
 The Service URL is the actual, absolute location of the provider file.
 

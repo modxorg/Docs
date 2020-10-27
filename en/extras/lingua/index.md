@@ -6,7 +6,7 @@ _old_uri: "revo/lingua"
 
 A MODX's Lexicon switcher for front-end interface.
 This can be downloaded from Manager's Package Manager.
-The extra page is <http://modx.com/extras/package/lingua>.
+The extra page is <https://modx.com/extras/package/lingua>.
 Any issues can be reported to here: <https://github.com/goldsky/Lingua/issues>
 
 ## Background
@@ -14,7 +14,7 @@ Any issues can be reported to here: <https://github.com/goldsky/Lingua/issues>
 This package was written by goldsky, and first released on June 6, 2013, initially prepared for [Adam Wintle](http://forums.modx.com/u/adamwintle) of [Monogon](http://www.monogon.co) to create a Chinese and a Thai website.
 
 This add-on was made to answer the need of creating a multilingual website without messing up with contexts.
-The concept was based on [Translations](http://modx.com/extras/package/translations) package, but independently developed from scratch and heading in different direction.
+The concept was based on [Translations](https://modx.com/extras/package/translations) package, but independently developed from scratch and heading in different direction.
 
 ## CMP
 

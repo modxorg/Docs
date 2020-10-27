@@ -64,7 +64,7 @@ As you can see, there are 3 categories of TVs in FoundationX:
 
 The first category of TVs you'll see is the Colors category. You can edit the color scheme of your site by entering the hex values. HOWEVER there's a better way.
 
-FoundationX comes with the [ColorPicker](http://modx.com/extras/package/colorpicker) custom TV, so you can pick colors using a graphical color picker interface. Due to a bug in the Extra, the ColorPicker TV doesn't render when you install FoundationX from a Snapshot. You need to re-activate the Addon on the Package Management page:
+FoundationX comes with the [ColorPicker](https://modx.com/extras/package/colorpicker) custom TV, so you can pick colors using a graphical color picker interface. Due to a bug in the Extra, the ColorPicker TV doesn't render when you install FoundationX from a Snapshot. You need to re-activate the Addon on the Package Management page:
 
 ![](fx2.png)
 

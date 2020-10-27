@@ -10,7 +10,7 @@ This document is for Upgrading MODX 2.x. If you are looking to upgrade from Evol
 
 This document assumes you are upgrading from a standard install. For Git users, please see [Git Installation](getting-started/installation/git "Git Installation").
 
-**The latest MODX Revolution release can be downloaded at** **<http://modx.com/download/>**
+**The latest MODX Revolution release can be downloaded at** **<https://modx.com/download/>**
 
 Always make sure to backup your files and database before upgrading. Upgrades should go smoothly, but it is **always** a safe and smart practice to backup.
 

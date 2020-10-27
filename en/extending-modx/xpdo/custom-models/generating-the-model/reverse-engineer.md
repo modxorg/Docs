@@ -84,7 +84,7 @@ Here's a reverse-engineering script that allows a bit of configuration and does 
   core/components/$package_name/schema/$package_name.mysql.schema.xml
 
   SEE ALSO:
-  http://modxcms.com/forums/index.php?topic=40174.0
+  https://forums.modx.com/index.php?topic=40174.0
   https://docs.modx.org/current/en/extending-modx/tutorials/using-custom-database-tables
   http://rtfm.modx.com/display/xPDO20/xPDOGenerator.writeSchema
   ------------------------------------------------------------------------------ */
@@ -277,7 +277,7 @@ To check whether or not this script succeeded, take a look inside the folder tha
 //include('core/config/config.inc.php');
 ```
 
-See <http://modxcms.com/forums/index.php?topic=40174.0> for more discussion on this script.
+See <https://forums.modx.com/index.php?topic=40174.0> for more discussion on this script.
 
 ## Defining Key Relationships
 

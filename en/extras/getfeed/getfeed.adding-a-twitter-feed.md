@@ -7,7 +7,7 @@ _old_uri: "revo/getfeed/getfeed.adding-a-twitter-feed"
 **Do NOT use this method for showing a twitter feed!**
 Twitter has deprecated their API v1.0 (which this tutorial makes use of) and it will be disabled COMPLETELY starting June 11th. See <https://dev.twitter.com/blog/api-blackout-testing-continues-may-22-2013> for more information from Twitter.
 
-You can use JSONDerulo (<http://modx.com/extras/package/jsonderulo>) or TwitterX (<http://modx.com/extras/package/twitterx>) to show twitter feeds instead.
+You can use JSONDerulo (<https://modx.com/extras/package/jsonderulo>) or TwitterX (<https://modx.com/extras/package/twitterx>) to show twitter feeds instead.
 
 ## Adding Twitter to Your Site
 

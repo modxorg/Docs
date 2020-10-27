@@ -17,7 +17,7 @@ Snippet Loginza register users on first login, and update profile on next. Updat
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/pagebreaker><http://modx.com/extras/package/loginza>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/pagebreaker><https://modx.com/extras/package/loginza>
 
 DevelopmeDevelopment and Bug Reporting
 

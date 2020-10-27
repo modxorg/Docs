@@ -11,4 +11,4 @@ In there, find and add the following:
 - tiny.custom\_plugins: Add 'table' somewhere in there, making sure it stays a proper comma delimited list.
 - tiny.custom\_buttonsN: Any of the 5 settings where you want the table controls to be shown, for example tiny.custom\_buttons3, and add 'tablecontrols' while making sure it stays a proper comma delimited list.
 
-From: <http://modxcms.com/forums/index.php/topic,65609.msg370576.html#msg370576>
+From: <https://forums.modx.com/index.php/topic,65609.msg370576.html#msg370576>

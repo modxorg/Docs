@@ -120,4 +120,4 @@ Hay varias etiquetas para el cronometraje en MODX:
 
 ### Ayuda adicional
 
-Debido a que la sintaxis de las etiqueta es problemática para muchos recién llegados, existen herramientas disponibles para ayudar a resaltar los problemas. Consulta el plugin [SyntaxChecker](http://modx.com/extras/package/syntaxchecker).
+Debido a que la sintaxis de las etiqueta es problemática para muchos recién llegados, existen herramientas disponibles para ayudar a resaltar los problemas. Consulta el plugin [SyntaxChecker](https://modx.com/extras/package/syntaxchecker).

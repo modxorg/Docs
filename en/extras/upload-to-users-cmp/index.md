@@ -8,7 +8,7 @@ _old_uri: "revo/upload-to-users-cmp"
 
 A Custom Manager Page (CMP) to upload file to registered members to a specified parent folder.
 
-The extra link is <http://modx.com/extras/package/uploadtouserscmp> .
+The extra link is <https://modx.com/extras/package/uploadtouserscmp> .
 The GitHub link is <https://github.com/goldsky/UploadToUsers> .
 
 It would be useful for setting up specific folers to each of logged in users, and use FileLister or FileDownload R (>=1.0.0-rc.4) snippet to get the folder using user's ID or username to their own folders.

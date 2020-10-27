@@ -8,7 +8,7 @@ _old_uri: "revo/addheaderfiles"
 
 With this tool the MODX regClient functions are used to insert Javascript and CSS styles at the appropriate positions of the current page. Since those functions don't insert the same filename twice, the snippet could be called everywhere in the template, document or in chunks to collect all needed Javascripts and CSS styles together.
 
-Works well with [minifyRegistered](http://modx.com/extras/package/minifyregistered).
+Works well with [minifyRegistered](https://modx.com/extras/package/minifyregistered).
 
 ### Requirements
 
@@ -17,7 +17,7 @@ Works well with [minifyRegistered](http://modx.com/extras/package/minifyregister
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/addheaderfiles>
+It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/addheaderfiles>
 
 ### Support and Bug Reporting
 

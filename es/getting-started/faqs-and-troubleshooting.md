@@ -41,8 +41,8 @@ En este momento, hay tres tipos de productos MODX :
 
 Otras lecturas:
 
-- "La Evolución de una Revolución" <http://modx.com/about/blog/the-evolution-of-a-revolution/>
-- "¿Cuáles son las diferencias básicas entre Evolución y Revolución?" <http://modx.com/revolution/product/faq/#q1>
+- "La Evolución de una Revolución" <https://modx.com/about/blog/the-evolution-of-a-revolution/>
+- "¿Cuáles son las diferencias básicas entre Evolución y Revolución?" <https://modx.com/revolution/product/faq/#q1>
 - Hay una gran cantidad de temas importantes en los foros, además de discutir evo y revo, que pueden ser interesantes si buscas una discusión más profunda de las diferencias. Dado que Revolution lleva más de tres años en desarrollo, revise la fecha en que se publicó algo para asegurarse de que sigan siendo relevantes.
 
 ### 1.2. ¿Qué etiquetas diferentes puedo usar? Que es `[[*pagetitle]]`, `[[Wayfinder]]` etc?
@@ -55,7 +55,7 @@ Consulta la documentación de [Sintáxis de Etiquetas](building-sites/tag-syntax
 
 Probablemente la escondiste en algún momento. Hay una flecha sutil en el lado izquierdo de la pantalla ([ver esta imagen](/download/attachments/36634926/subtlearrow.PNG)) en la que puedes hacer clic para recuperarla. En algunos casos, deberás actualizar la página para que los contenidos de la barra lateral se carguen correctamente.
 
-### 2.2 ¿Cómo puedo modificar los campos de recursos que son visibles al crear o editar un [Recurso](building-sites/resources "Recurso")? ¿Existe algo como [Administrador del Manager](http://modx.com/extras/package/managermanager) en Revolution?
+### 2.2 ¿Cómo puedo modificar los campos de recursos que son visibles al crear o editar un [Recurso](building-sites/resources "Recurso")? ¿Existe algo como [Administrador del Manager](https://modx.com/extras/package/managermanager) en Revolution?
 
 Puede usar la [Personalización de formularios](building-sites/client-proofing/form-customization "Personalización de Formularios") (que se encuentra bajo el menú de Seguridad) para cambiar los campos. No ofrece todo el complemento ManagerManager (Evolution) pero llega bastante lejos.
 

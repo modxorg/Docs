@@ -12,9 +12,9 @@ Since you can make multiple calls to _Wayfinder_ on a single page, and each call
 
 Please note that since the release of Revolution there are two types of Wayfinder snippets available, one for each version. For clarity, this page uses the Evolution syntax when showing examples. Generally speaking the functionality between the two versions are the same, and so are the parameters. Mind that in Revolution, snippets must be called with `[[Wayfinder? &...]]` instead of \[!Wayfinder? &...!\].
 
-For Wayfinder discussions on the MODX forums see <http://modxcms.com/forums/index.php/board,182.0.html>.
+For Wayfinder discussions on the MODX forums see <https://forums.modx.com/index.php/board,182.0.html>.
 
-In case you want to read _everything_ about Wayfinder, there's a 148 page ebook written by Kongondo to be found on the forum which covers all aspects about Wayfinder. [Read about it here](http://modxcms.com/forums/index.php/topic,34176.0.html).
+In case you want to read _everything_ about Wayfinder, there's a 148 page ebook written by Kongondo to be found on the forum which covers all aspects about Wayfinder. [Read about it here](https://forums.modx.com/index.php/topic,34176.0.html).
 
 ## History
 
@@ -39,7 +39,7 @@ _Wayfinder_ has been totally re-factored from the original DropMenu navigation b
 
 ### Downloads
 
-- Download the [latest version of Wayfinder for Revolution](http://modx.com/extras/package/wayfinder) from the [MODX Extras Repository](http://www.modx.com/extras), or install via Package Management.
+- Download the [latest version of Wayfinder for Revolution](https://modx.com/extras/package/wayfinder) from the [MODX Extras Repository](http://www.modx.com/extras), or install via Package Management.
 - Download [version 2.0 for Evolution](http://www.muddydogpaws.com/development/wayfinder/download.html) from MuddyDogPaws.
 
 ### Evolution (and before)

@@ -15,12 +15,12 @@ This snippet generates sitemaps such as Google XML sitemap, HTML sitemap and/or 
 
 ### History
 
-sitemapFriend was written by Mihai Sucan and is based on the [GoogleSiteMap](http://modx.com/extras/package/googlesitemap) snippet by Shaun McCormick. It was released on November 16, 2010.
+sitemapFriend was written by Mihai Sucan and is based on the [GoogleSiteMap](https://modx.com/extras/package/googlesitemap) snippet by Shaun McCormick. It was released on November 16, 2010.
 Mihai retired from developping under Modx and the plugin is currently maintained by Jérôme Perrin.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the [MODX Extras Repository](http://modx.com/extras/package/sitemapfriend).
+It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the [MODX Extras Repository](https://modx.com/extras/package/sitemapfriend).
 
 ### Development and Bug reporting
 
@@ -42,7 +42,7 @@ HTML sitemap:
 
 To generate a sitemap in some custom format, create your own chunks and tell the snippet to use them. Check the list of available templates below.
 
-Hint: use the [getCache](http://modx.com/extras/package/getcache) snippet for custom caching control of your sitemaps.
+Hint: use the [getCache](https://modx.com/extras/package/getcache) snippet for custom caching control of your sitemaps.
 
 ``` php
 [[!getCache? &element=`sitemapFriend` &cacheKey=`sitemap` &cacheExpires=`21600` &type=`html`]]

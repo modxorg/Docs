@@ -33,7 +33,7 @@ translation: "building-sites/elements/template-variables/bindings/directory-bind
 @DIRECTORY /list/*.jpg  # doesn't work!
 ```
 
-Существуют сниппеты кода PHP, которые эмулируют эту функцию. Смотрите следующую ветку форума: <http://modxcms.com/forums/index.php/topic,3124.0.html>
+Существуют сниппеты кода PHP, которые эмулируют эту функцию. Смотрите следующую ветку форума: <https://forums.modx.com/index.php/topic,3124.0.html>
 
 ## Безопасность
 

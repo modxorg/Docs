@@ -6,7 +6,7 @@ _old_uri: "revo/syntaxchecker"
 
 ## What is SyntaxChecker?
 
-[SyntaxChecker](http://modx.com/extras/package/syntaxchecker) is a plugin that checks the syntax of your MODX tags and alerts you to problems. This helps ensure that your documents and templates render the way you expect them to.
+[SyntaxChecker](https://modx.com/extras/package/syntaxchecker) is a plugin that checks the syntax of your MODX tags and alerts you to problems. This helps ensure that your documents and templates render the way you expect them to.
 
 ### Requirements
 
@@ -19,7 +19,7 @@ SyntaxChecker was first released on December 20, 2011.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/syntaxchecker>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/syntaxchecker>
 
 ## Usage examples
 

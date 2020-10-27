@@ -11,7 +11,7 @@ MODX Revolution (Revo) es un sistema de gestión de contenido (CMS) fácil de us
 
 Además de este sitio de documentación, la [Comunidad MODX] (<https://community.modx.com>) es vibrante y siempre está dispuesta a ayudar. Prueba a hacer preguntas allí: te sorprenderás gratamente de la capacidad de respuesta de la base de usuarios de MODX.
 
-Experimentados [Profesionales de MODX](http://modx.com/professionals) y [soporte comercial respaldado por el proveedor](http://modx.com/support/) están siempre disponibles, así que, sin importar tus necesidades y requerimientos, estás cubierto.
+Experimentados [Profesionales de MODX](https://modx.com/professionals) y [soporte comercial respaldado por el proveedor](https://modx.com/support/) están siempre disponibles, así que, sin importar tus necesidades y requerimientos, estás cubierto.
 
 ## Empezando
 
@@ -35,8 +35,8 @@ Revolution es el marco de aplicaciones y CMS insignia de MODX, llamado con cari�
 
 ### Otros recursos
 
-- [Obtén la última versión](http://modx.com/download/)
-- [Descargar Extras](http://modx.com/extras/)
+- [Obtén la última versión](https://modx.com/download/)
+- [Descargar Extras](https://modx.com/extras/)
 - [Comunidad MODX](https://community.modx.com)
 - [Foro de discusión](http://forums.modx.com/board/?board=264)
 - [Errores y solicitudes de funciones](https://github.com/modxcms/revolution/issues)
@@ -45,7 +45,7 @@ Revolution es el marco de aplicaciones y CMS insignia de MODX, llamado con cari�
 
 Los extras de MODX amplían la funcionalidad principal del software de MODX. Otros CMS se refieren a ellos como "Complementos" o "Módulos". Muchos de los Extras son desarrollados por el equipo principal de MODX, mientras que otros son de terceros. Aunque de ninguna manera es una referencia exhaustiva, la mayoría de los Extras más populares están documentados aquí.
 
-- [Descargar Extras](http://modx.com/extras/?product=revolution)
+- [Descargar Extras](https://modx.com/extras/?product=revolution)
 - [Aprender más sobre la instalación de Extras](building-sites/extras)
 
 ## xPDO

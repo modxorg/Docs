@@ -10,7 +10,7 @@ QuickCrumbs is a quick and efficient breadcrumb-generation [Snippet](developing-
 
 ### History
 
-Being developed since October 11, 2010 by [Jason Coward](http://modx.com/extras/author/opengeek).
+Being developed since October 11, 2010 by [Jason Coward](https://modx.com/extras/author/opengeek).
 
 ### Requirements
 

@@ -18,7 +18,7 @@ This is an example of the default created slideshow: [Joshua19Media.com](http://
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via Package Management, or from the [MODX Extras Repository](http://modx.com/extras/package/slideshowmanager).
+It can be downloaded from within the MODX Revolution manager via Package Management, or from the [MODX Extras Repository](https://modx.com/extras/package/slideshowmanager).
 
 ### Development and Bug Reporting
 

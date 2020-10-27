@@ -23,7 +23,7 @@ MetaX is actively developed for MODX Revolution by it's creator. You can find th
 
 ### MODX Revolution
 
-The Revolution version can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/metax>
+The Revolution version can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/metax>
 
 ### Usage
 

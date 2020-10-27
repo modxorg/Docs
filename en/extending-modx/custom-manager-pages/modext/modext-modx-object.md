@@ -155,7 +155,7 @@ This will load the current Help screen for the active page. Normally this is set
 
 ``` javascript
 /* show the modx.com site in the Help modal */
-MODx.config.help_url = 'http://modx.com/';
+MODx.config.help_url = 'https://modx.com/';
 MODx.loadHelpPane();
 ```
 

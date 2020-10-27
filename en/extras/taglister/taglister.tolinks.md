@@ -6,7 +6,7 @@ _old_uri: "revo/taglister/taglister.tolinks"
 
 ## tolinks Snippet
 
-Converts a delimited list into a list of linkable tags: typically, this would be used on a page that has been tagged with various taxonomical tags and you want to link to other pages that have been tagged by those same tags. For an example, see <http://modxcms.com/forums/index.php/topic,61744.0/topicseen.html>
+Converts a delimited list into a list of linkable tags: typically, this would be used on a page that has been tagged with various taxonomical tags and you want to link to other pages that have been tagged by those same tags. For an example, see <https://forums.modx.com/index.php/topic,61744.0/topicseen.html>
 
 ## Usage
 

@@ -14,7 +14,7 @@ Source Code: <https://github.com/Mark-H/SocialSuite> (currently private)
 Bugs & Feature Requests: <https://github.com/Mark-H/SocialSuite><https://github.com/Mark-H/SocialSuite/issues>, please make sure that you mention the tool you are using! (currently private)
 Documentation: what do you think you're looking at?
 
-Originally developed by [Mark Hamstra](http://www.markhamstra.com/), Senior Developer at [MODX](http://modx.com).
+Originally developed by [Mark Hamstra](http://www.markhamstra.com/), Senior Developer at [MODX](https://modx.com).
 
 ## Available Tools
 

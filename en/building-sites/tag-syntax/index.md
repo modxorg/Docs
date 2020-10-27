@@ -120,4 +120,4 @@ There are several timing tags in MODX:
 
 ### Additional Help
 
-Because the tag syntax is problematic for many newcomers, there are tools available to help highlight problems. Check out the [SyntaxChecker](http://modx.com/extras/package/syntaxchecker) plugin.
+Because the tag syntax is problematic for many newcomers, there are tools available to help highlight problems. Check out the [SyntaxChecker](https://modx.com/extras/package/syntaxchecker) plugin.

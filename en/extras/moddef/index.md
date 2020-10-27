@@ -15,11 +15,11 @@ ModDef is a component for managing definitions of terms used on your site. These
 
 ## History
 
-Being developed since Mar 02, 2011 by [Jeroen Kenters](http://modx.com/extras/author/jeroenkenters).
+Being developed since Mar 02, 2011 by [Jeroen Kenters](https://modx.com/extras/author/jeroenkenters).
 
 | Version                                              | Release date | Contributors   | Remarks / highlights |
 | ---------------------------------------------------- | ------------ | -------------- | -------------------- |
-| [0.1.0 alpha](http://modx.com/extras/package/moddef) | Mar 02, 2011 | Jeroen Kenters | Initial release.     |
+| [0.1.0 alpha](https://modx.com/extras/package/moddef) | Mar 02, 2011 | Jeroen Kenters | Initial release.     |
 
 ### Requirements
 
