@@ -17,7 +17,7 @@ The MODX manager may simply quietly fail if one of its actions is blocked by mod
 
 ## How Do I Know if I have ModSecurity Installed?
 
-Before we discuss how to make ModSecurity and MODX play nicely together, you need to know whether or not you actually have this software installed. The easy solution is to ask your hosting provider, and presumably they will know (if they don't know what software they are running, it's probably time to [find another hosting company](http://modx.com/partners/hosting-saas/)).
+Before we discuss how to make ModSecurity and MODX play nicely together, you need to know whether or not you actually have this software installed. The easy solution is to ask your hosting provider, and presumably they will know (if they don't know what software they are running, it's probably time to [find another hosting company](https://modx.com/partners/hosting-saas/)).
 
 If you are running your own server (e.g. one born of a VPS template), then you can log into the server and check this for yourself.
 

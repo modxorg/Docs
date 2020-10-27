@@ -4,7 +4,7 @@ _old_id: "623"
 _old_uri: "revo/cookielist"
 ---
 
-[CookieList](http://modx.com/extras/package/cookielist) is a generic addon that can be used for keeping wishlists, user favorites and other similar content. It allows you to define the value that needs to be saved which means it is not restricted to Resources, but may also be used to provide wishlist functionality for custom components. As the name indicates, it stores data in a Cookie.
+[CookieList](https://modx.com/extras/package/cookielist) is a generic addon that can be used for keeping wishlists, user favorites and other similar content. It allows you to define the value that needs to be saved which means it is not restricted to Resources, but may also be used to provide wishlist functionality for custom components. As the name indicates, it stores data in a Cookie.
 
 ## Credits, Links & More
 
@@ -16,7 +16,7 @@ There is a general forum topic for this addon at <http://forums.modx.com/thread/
 
 Feel free to fork it and add further functionality if you need it - a pull request would be very much appreciated if it adds value to the package as a whole.
 
-CookieList is installable via the Package Manager or [on the MODX site](http://modx.com/extras/package/cookielist) and was developed for MODX Revolution. Though not extensively tested on lower versions it should work from 2.0 up.
+CookieList is installable via the Package Manager or [on the MODX site](https://modx.com/extras/package/cookielist) and was developed for MODX Revolution. Though not extensively tested on lower versions it should work from 2.0 up.
 
 | Version  | Released On         | Notes                 |
 | -------- | ------------------- | --------------------- |

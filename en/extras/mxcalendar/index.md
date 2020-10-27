@@ -16,11 +16,11 @@ mxCalendar is a extra created for both Evolution and Revolution to allow for ful
 
 ### ModX Revolution
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/mxcalendar2>. When using the Package Management for direct download you can simply click on the "Install" button after download completes. If you choose to download from the extras site you will then need to FTP, or otherwise move, the transport package zip file to your "/core/packages/" folder first. After you have copied the transport zip file to your packages folder you will then need to launch Package Management from inside the Manager (ver 2.2.x) and then select the down arrow next to "Download Extras" and select the last option "Search Locally for Packages" and then find "mxcalendars" in the list of packages and choose "install".
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/mxcalendar2>. When using the Package Management for direct download you can simply click on the "Install" button after download completes. If you choose to download from the extras site you will then need to FTP, or otherwise move, the transport package zip file to your "/core/packages/" folder first. After you have copied the transport zip file to your packages folder you will then need to launch Package Management from inside the Manager (ver 2.2.x) and then select the down arrow next to "Download Extras" and select the last option "Search Locally for Packages" and then find "mxcalendars" in the list of packages and choose "install".
 
 ### ModX Evolution
 
-You will need to download from the ModX Extras Repository, here <http://modx.com/extras/package/mxcalendar>. After you have downloaded you will need to follow these steps.
+You will need to download from the ModX Extras Repository, here <https://modx.com/extras/package/mxcalendar>. After you have downloaded you will need to follow these steps.
 
 1. Unzip folder to your favorite place
 2. Upload mxCalendar folder to your sites root /assets/modules/ folder

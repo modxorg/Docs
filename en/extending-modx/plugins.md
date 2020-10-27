@@ -11,7 +11,7 @@ Plugins are similar to Snippets in that they are bits of PHP code that have acce
 **Other CMSs**
 Every CMS uses some concept of "plugin", but the exact nomenclature may differ. In WordPress, for example, plugins are "hooked" to events called "actions" or "filters".
 
-Since they execute during various events, Plugins aren't limited to front-end processing. Many events are triggered by events that take place only within the MODX Manager. There is a list of MODX System Events [here](http://wiki.modxcms.com/index.php/System_Events "MODX System Events").
+Since they execute during various events, Plugins aren't limited to front-end processing. Many events are triggered by events that take place only within the MODX Manager. There is a list of MODX System Events [here](https://docs.modx.com/current/en/extending-modx/plugins/system-events "MODX System Events").
 
 Any closing PHP tag ?> will be stripped from your plugin code when it is saved. It's unnecessary (and unwanted) because the plugin code will end up inside other PHP code when executed.
 

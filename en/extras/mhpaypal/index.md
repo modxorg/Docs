@@ -18,7 +18,7 @@ Further reading:
 
 ## Getting Started
 
-mhPayPal is available as a free package for MODX Revolution and can be downloaded via ?[Package Management](developing-in-modx/advanced-development/package-management "Package Management") or from the [MODX Extras website](http://modx.com/extras/package/mhpaypal). will be released publicly soon.
+mhPayPal is available as a free package for MODX Revolution and can be downloaded via ?[Package Management](developing-in-modx/advanced-development/package-management "Package Management") or from the [MODX Extras website](https://modx.com/extras/package/mhpaypal). will be released publicly soon.
 
 ### Requirements
 

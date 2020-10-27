@@ -106,4 +106,4 @@ Of course you can further customize this. Some ideas to get you started:
 
 Is your feed not showing anything? Try viewing the page source. If there is content in there, but it is not being parsed properly there is probably an error in the syntax somewhere. Use the [W3C Feed Validator](https://validator.w3.org/feed/) to validate your feed and eliminate any errors.
 
-This page has been partly based on [this forum post by Ryan Thrash](http://modxcms.com/forums/index.php/topic,59632.msg339285.html#msg339285).
+This page has been partly based on [this forum post by Ryan Thrash](https://forums.modx.com/index.php/topic,59632.msg339285.html#msg339285).

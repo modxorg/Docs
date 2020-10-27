@@ -19,7 +19,7 @@ phpThumbOf was written by [Shaun McCormick](https://github.com/splittingred) as 
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/phpthumbof>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/phpthumbof>
 
 ### Attributes
 

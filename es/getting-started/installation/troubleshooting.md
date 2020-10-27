@@ -149,4 +149,4 @@ Esto te permitirá usar el Manager sin compresión JS y CSS.
 
 ## ¿Aún tienes problemas??
 
-Si todavía tienes problemas, publica tu error y la información del entorno del servidor en [nuestros foros aquí](http://modxcms.com/forums/index.php/board,378.0.html), e intentaremos y solucionar tu problema lo antes posible.
+Si todavía tienes problemas, publica tu error y la información del entorno del servidor en [nuestros foros aquí](https://forums.modx.com/index.php/board,378.0.html), e intentaremos y solucionar tu problema lo antes posible.

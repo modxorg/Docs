@@ -18,11 +18,11 @@ The tracking code templates [can be overridden with your own chunks](#Analytics-
 
 ## History
 
-Analytics was first released on February 5th, 2012 by [yogoo](https://twitter.com/yogoo). The idea of making this extra emerged after reading [Mark Hamstra](http://modx.com/extras/author/MarkH)'s blog post: [Hiding code for MODX Manager users](http://www.markhamstra.com/modx-blog/2012/01/hiding-google-analytics-code-from-manager-users/).
+Analytics was first released on February 5th, 2012 by [yogoo](https://twitter.com/yogoo). The idea of making this extra emerged after reading [Mark Hamstra](https://modx.com/extras/author/MarkH)'s blog post: [Hiding code for MODX Manager users](http://www.markhamstra.com/modx-blog/2012/01/hiding-google-analytics-code-from-manager-users/).
 
 ### Download
 
-The extra can be retrieved through the [Package Manager](display/revolution20/Package+Management), or downloaded manually from the [repository](http://modx.com/extras/package/analytics).
+The extra can be retrieved through the [Package Manager](display/revolution20/Package+Management), or downloaded manually from the [repository](https://modx.com/extras/package/analytics).
 
 ## Usage
 

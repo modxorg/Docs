@@ -19,7 +19,7 @@ spieFeed integration was written by [goldsky](/display/~goldsky) as the RSS/Atom
 
 ## Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/738> or here: <http://modx.com/extras/package/spiefeed>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/spiefeed> or here: <https://modx.com/extras/package/spiefeed>
 
 ## Development and Bug Reporting
 

@@ -10,7 +10,7 @@ If you want to read the old docs, please see here <http://oldrtfm.modx.com/displ
 
 ## Download
 
-virtuNewsletter can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <http://modx.com/extras/package/virtunewsletter>
+virtuNewsletter can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <https://modx.com/extras/package/virtunewsletter>
 
 ## Development and Bug Reporting
 

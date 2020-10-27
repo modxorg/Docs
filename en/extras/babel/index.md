@@ -34,7 +34,7 @@ Be sure that your context switches work well.
 
 ### Download
 
-babel can be downloaded from within the MODX Revolution manager via [Package Management](building-sites/extras "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/781>
+babel can be downloaded from within the MODX Revolution manager via [Package Management](building-sites/extras "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/babel>
 
 ### Setup
 

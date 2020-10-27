@@ -573,7 +573,7 @@ That means that you could have a lot of neat little fields that do pre-installat
 
 ## Summary
 
-Now you can run your build.transport.php file, and you'll get a nice little doodles-1.0-beta4.zip file in your MODX install's core/packages/ directory. You can now either install that by uploading it to a MODX install's core/packages/ directory (but not the same one you just developed in!), or post it to [modx.com/extras/](http://modx.com/extras/) to be included in the official MODX Provider that hooks into [Package Management](extending-modx/transport-packages "Package Management"). Pretty neat?
+Now you can run your build.transport.php file, and you'll get a nice little doodles-1.0-beta4.zip file in your MODX install's core/packages/ directory. You can now either install that by uploading it to a MODX install's core/packages/ directory (but not the same one you just developed in!), or post it to [modx.com/extras/](https://modx.com/extras/) to be included in the official MODX Provider that hooks into [Package Management](extending-modx/transport-packages "Package Management"). Pretty neat?
 
 Let's recap. Over the 3 parts of this tutorial, we:
 

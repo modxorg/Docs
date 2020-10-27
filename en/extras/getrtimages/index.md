@@ -70,7 +70,7 @@ In the end, this is only one of many slideshow & gallery management options in M
 
 ## Additional Resources
 
-- [MODX Extras Repo](http://modx.com/extras/package/getrtimages)
+- [MODX Extras Repo](https://modx.com/extras/package/getrtimages)
 - [getRTImages blog post](http://www.sepiariver.ca/blog/modx-web/getrtimages-list-and-sort-images-from-rich-text-field)
 - [GitHub repo](https://github.com/sepiariver/getRTImages/)
 - [More information on PHP array sorting](http://php.net/manual/en/array.sorting.php)

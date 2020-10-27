@@ -18,7 +18,7 @@ Demo-site: <http://minishop2.com/>
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/minishop2><http://modx.com/extras/package/minishop>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/minishop2><https://modx.com/extras/package/minishop>
 
 It can also be installed from the [modstore.pro](https://modstore.pro/info/eng) repository.
 

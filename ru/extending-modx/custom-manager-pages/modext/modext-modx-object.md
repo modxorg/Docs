@@ -154,7 +154,7 @@ MODx.sleep(3); /* остановиться на 3 секунды */
 
 ```javascript
 /* Показать сайт в модальном окне справки */
-MODx.config.help_url = 'http://modx.com/';
+MODx.config.help_url = 'https://modx.com/';
 MODx.loadHelpPane();
 ```
 

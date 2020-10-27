@@ -24,7 +24,7 @@ AdvSearch was written by [Coroico](https://github.com/coroico) and first release
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/advsearch>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/advsearch>
 
 Before to run the first search with AdvSearch, you need to install the Zend Search library first. See installation chapter below.
 

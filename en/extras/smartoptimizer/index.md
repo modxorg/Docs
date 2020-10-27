@@ -27,7 +27,7 @@ To know more about SmartOptimizer : <http://farhadi.ir/works/smartoptimizer>.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/smartoptimizer>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/smartoptimizer>
 
 ### Support, Comments, Development and Bug Reporting
 

@@ -47,8 +47,8 @@ MODX Revolution - это полностью переписанный MODX Evolut
 
 Дополнительно к прочтению:
 
-- "The Evolution of a Revolution" <http://modx.com/about/blog/the-evolution-of-a-revolution/>
-- "What are the basic differences between Evolution and Revolution?" <http://modx.com/revolution/product/faq/#q1>
+- "The Evolution of a Revolution" <https://modx.com/about/blog/the-evolution-of-a-revolution/>
+- "What are the basic differences between Evolution and Revolution?" <https://modx.com/revolution/product/faq/#q1>
 - На форумах также есть несколько больших тем, в которых обсуждаются evo и revo. Они могут быть интересны, если вы ищете более глубокое обсуждение различий. Поскольку Revo была более трех лет в разработке, проверьте дату их публикации, чтобы убедиться, что они по-прежнему актуальны.
 
 ## 1.2. Какие теги я могу использовать? Что означает `[[*pagetitle]]`, `[[Wayfinder]]` и так далее?
@@ -61,7 +61,7 @@ MODX Revolution - это полностью переписанный MODX Evolut
 
 Скорее всего вы его скрыли. В левой части экрана есть тонкая стрелка ([смотрите картинку](/download/attachments/36634926/subtlearrow.PNG)), которую можно кликнуть чтобы вернуть его. В некоторых случаях для правильной загрузки содержимого боковой панели потребуется обновить страницу.
 
-### 2.2  Как изменить видимые поля ресурсов при создании или редактировании [Ресурса](building-sites/resources "Ресурс")? Это что-то вроде [ManagerManager](http://modx.com/extras/package/managermanager) для Revolution?
+### 2.2  Как изменить видимые поля ресурсов при создании или редактировании [Ресурса](building-sites/resources "Ресурс")? Это что-то вроде [ManagerManager](https://modx.com/extras/package/managermanager) для Revolution?
 
 Вы можете использовать [Настройку форм](building-sites/client-proofing/form-customization "Настройка форм") (находится в меню "Система") для изменения полей. Она не предоставляет все возможности плагина ManagerManager (Evolution), но дает многие из них.
 

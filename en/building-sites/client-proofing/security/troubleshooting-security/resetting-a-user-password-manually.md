@@ -16,7 +16,7 @@ In MODX 2.1+, users are created by default with the a hashing algorithm called P
 UPDATE modx_users SET hash_class = 'hashing.modMD5', password = MD5('the-new-password') WHERE username = 'theusername';
 ```
 
-If you want to then have the user password automatically converted back to PBKDF2, you can install the [pbkdf2Convert Plugin](http://modx.com/extras/package/pbkdf2convert) available from Package Management.
+If you want to then have the user password automatically converted back to PBKDF2, you can install the [pbkdf2Convert Plugin](https://modx.com/extras/package/pbkdf2convert) available from Package Management.
 
 ### Resetting Password in MODX 2.0.x
 

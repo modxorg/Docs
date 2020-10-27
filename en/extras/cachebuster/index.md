@@ -4,7 +4,7 @@ _old_id: "1390"
 _old_uri: "revo/cachebuster"
 ---
 
- [Cachebuster](http://modx.com/extras/package/cachebuster) allows you to easily control whether or not assets are loaded fresh from the server or versioned by a site version setting. Simply append the smartcache Chunk to the end of your asset URLs as seen below.
+ [Cachebuster](https://modx.com/extras/package/cachebuster) allows you to easily control whether or not assets are loaded fresh from the server or versioned by a site version setting. Simply append the smartcache Chunk to the end of your asset URLs as seen below.
 
 ## Using Cachebuster
 

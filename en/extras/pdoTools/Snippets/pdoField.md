@@ -48,5 +48,5 @@ But it is better to use a normal snippet call - it is faster and more convenient
 ]]
 ```
 
-[2]: http://modx.com/extras/package/ultimateparent
+[2]: https://modx.com/extras/package/ultimateparent
 [3]: https://rtfm.modx.com/revolution/2.x/making-sites-with-modx/customizing-content/input-and-output-filters-%28output-modifiers%29

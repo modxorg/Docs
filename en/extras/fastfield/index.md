@@ -10,11 +10,11 @@ fastField is a plugin which adds new type of tag `[[#...]]` . It can be used to 
 
 ## History
 
-fastField was first released on November 29th, 2012 by [argnist](http://modx.com/extras/author/argnist).
+fastField was first released on November 29th, 2012 by [argnist](https://modx.com/extras/author/argnist).
 
 ## Download
 
-The plugin can be retrieved through the Package Manager, or downloaded manually from the [Repository](http://modx.com/extras/package/fastfield).
+The plugin can be retrieved through the Package Manager, or downloaded manually from the [Repository](https://modx.com/extras/package/fastfield).
 
 ## Usage
 
@@ -24,7 +24,7 @@ where resource\_id is an ID of necessary resource, eg. "123", and field is a res
 
 For usage with global arrays you must replace resource\_id by array name, eg. "post" and field by the name of a variable.
 
-In general, this plugin replaces [getResourceField](extras/getresourcefield) and [getReqParam](http://modx.com/extras/package/getreqparam) snippets.
+In general, this plugin replaces [getResourceField](extras/getresourcefield) and [getReqParam](https://modx.com/extras/package/getreqparam) snippets.
 
 ## Examples
 
@@ -40,7 +40,7 @@ Return the introtext of a parent of a current resource and display description f
 [[#[[*parent]].introtext:default=`[[#[[*parent]].description]]`]]
 ```
 
-Or, more efficiently (see [this MODX blog article](http://modx.com/blog/2012/09/14/tags-as-the-result-or-how-conditionals-are-like-mosquitoes/)):
+Or, more efficiently (see [this MODX blog article](https://modx.com/blog/2012/09/14/tags-as-the-result-or-how-conditionals-are-like-mosquitoes/)):
 
 ``` php
 [[[[#[[*parent]].introtext:default=`#[[*parent]].description`]]]]

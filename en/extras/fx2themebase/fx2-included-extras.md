@@ -44,11 +44,11 @@ Usage: [FX2 Documentation](extras/fx2themebase/fx2.how-to-use-fx2)
 
 - #### Ace
   
-Usage: [Ace in the Extras Repo](http://modx.com/extras/package/ace)
+Usage: [Ace in the Extras Repo](https://modx.com/extras/package/ace)
 
 - #### CKEditor
   
-Usage: [CKEditor in the Extras Repo](http://modx.com/extras/package/ckeditor)
+Usage: [CKEditor in the Extras Repo](https://modx.com/extras/package/ckeditor)
 
 ### Packages
 

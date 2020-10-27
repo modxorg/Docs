@@ -138,7 +138,7 @@ $this->modx->regClientScript()
 $this->modx->regClientStartupHTMLBlock()
 ```
 
-If you want your component to be friends with [AjaxManager](http://modx.com/extras/package/ajaxmanager) — they need to be replaced by:
+If you want your component to be friends with [AjaxManager](https://modx.com/extras/package/ajaxmanager) — they need to be replaced by:
 
 ```php
 $this->addCss()

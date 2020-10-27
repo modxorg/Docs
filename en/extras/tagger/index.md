@@ -19,7 +19,7 @@ Display and list: all tags, tags from specified group(s), omit unused tags, Reso
 
 ## Installation
 
-Install via Package Management, or download the package from the [MODX Extras repository](http://modx.com/extras/)
+Install via Package Management, or download the package from the [MODX Extras repository](https://modx.com/extras/)
 
 **Tagger FURLs are currently not working when using any resource extensions (.html,...) except /.** Please change your extension to **/** at least on the resource where the TaggerGetResourcesWhere snippet is called.
 

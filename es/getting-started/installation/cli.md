@@ -12,7 +12,7 @@ Al ejecutar actualizaciones, se recomienda **siempre** hacer una copia de seguri
 
 ## Nuevas instalaciones CLI
 
-En primer lugar, [descargar MODX](http://modx.com/download/) y extraer los archivos a tu servidor. En el directorio setup/, copia el archivo "config.dist.new.xml" y cámbiale el nombre a "config.xml". MODX buscará automáticamente el archivo setup/config.xml durante la instalación. Puedes moverlo fuera del directorio setup/ (y de la raíz web MODX, si lo deseas) y especificar su ubicación con el argumento "--config =/ruta/a/config.xml".
+En primer lugar, [descargar MODX](https://modx.com/download/) y extraer los archivos a tu servidor. En el directorio setup/, copia el archivo "config.dist.new.xml" y cámbiale el nombre a "config.xml". MODX buscará automáticamente el archivo setup/config.xml durante la instalación. Puedes moverlo fuera del directorio setup/ (y de la raíz web MODX, si lo deseas) y especificar su ubicación con el argumento "--config =/ruta/a/config.xml".
 
 A continuación, edita el archivo XML y establezca la información de la base de datos adecuada, las rutas MODX y otros parámetros de configuración, y luego en el indicador de línea de comandos, vete hasta el directorio setup/ de MODX y escribe:
 

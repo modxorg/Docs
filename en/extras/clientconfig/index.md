@@ -6,7 +6,7 @@ _old_uri: "revo/clientconfig"
 
 ClientConfig is an extra for MODX Revolution 2.2 and up, allowing administrators to set up easy configuration options for clients. Define groups (tabs) and settings with various input types and let your clients do the rest, while using settings in templates or in code.
 
-ClientConfig is maintained by Mark Hamstra on Github, please file your bugs and feature request there. Pull requests are welcomed as well! <https://github.com/Mark-H/ClientConfig>. The first release was on December 9th, 2012 and is available from [MODX.com](http://modx.com/extras/package/clientconfig).
+ClientConfig is maintained by Mark Hamstra on Github, please file your bugs and feature request there. Pull requests are welcomed as well! <https://github.com/Mark-H/ClientConfig>. The first release was on December 9th, 2012 and is available from [MODX.com](https://modx.com/extras/package/clientconfig).
 
 [Discuss ClientConfig on the Forums](http://forums.modx.com/thread/81490/clientconfig-custom-configuration-cmp-for-clients#dis-post-449423).
 

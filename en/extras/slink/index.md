@@ -23,7 +23,7 @@ sLink was created as a Revolution snippet, and should function on all versions s
 
 To get started using the sLink snippet, simply go to System -> Package Manager -> Add new extra -> provider: modxcms.com -> MODX add-ons -> Content and find sLink. Download the package, and install it in the main package manager workspace.
 
-Alternatively, you can download the transport package from the [repository](http://modxcms.com/extras/package/741), upload it to your server in the core/packages folder and install through the workspace.
+Alternatively, you can download the transport package from the [repository](https://modx.com/extras/package/slink), upload it to your server in the core/packages folder and install through the workspace.
 
 ## Using sLink
 
@@ -74,6 +74,6 @@ sLink is not actively being developed at this point. Others are encouraged to "b
 
 ## External sources
 
-Forum topic for sLink 1.0-rc1: <http://modxcms.com/forums/index.php/topic,56101.0.html>
+Forum topic for sLink 1.0-rc1: <https://forums.modx.com/index.php/topic,56101.0.html>
 
-Repository page: <http://modxcms.com/extras/package/741>
+Repository page: <https://modx.com/extras/package/simplesearch>

@@ -191,7 +191,7 @@ if (file_exists($f)) {
 return $o;
 ```
 
- This little helper code allows us to do our development in our own code editor of choice until we're ready to package and distribute our Component. Then we'll simply delete this 'StoreFinder' snippet from our MODX Revolution instance, and install our package. You can find more about building packages by going [here](http://modxcms.com/about/blog/shaun-mccormick/creating-3rd-party-component-build-script.html). If you don't want to build a transport package (we recommend doing so, it makes upgrades FAR easier!), you can simply just copy the files to their proper directories in the manager.
+ This little helper code allows us to do our development in our own code editor of choice until we're ready to package and distribute our Component. Then we'll simply delete this 'StoreFinder' snippet from our MODX Revolution instance, and install our package. You can find more about building packages by going [here](https://modx.com/blog/creating-a-3rd-party-component-build-script). If you don't want to build a transport package (we recommend doing so, it makes upgrades FAR easier!), you can simply just copy the files to their proper directories in the manager.
 
  Okay, back to our snippet. Open up 'snippet.storefinder.php' in your editor, and add this code:
 

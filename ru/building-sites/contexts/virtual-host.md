@@ -117,4 +117,4 @@ define('MODX_CORE_PATH', dirname(dirname(__FILE__)) . '/core/');
 ## Смотрите также
 
 - [Контексты](building-sites/contexts "Контексты")
-- Контексты как подпапки (на форуме: <http://modxcms.com/forums/index.php/topic,51346.0.html>)
+- Контексты как подпапки (на форуме: <https://forums.modx.com/index.php/topic,51346.0.html>)

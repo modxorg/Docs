@@ -15,7 +15,7 @@ Amazon SES Mailing list is a complete mailing list which uses [Amazon SES](http:
 
 ## Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management), or from the MODX Extras Repository, here: <http://modx.com/extras/package/amazonsesmailinglist>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management), or from the MODX Extras Repository, here: <https://modx.com/extras/package/amazonsesmailinglist>
 
 ## Installation
 

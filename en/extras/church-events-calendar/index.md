@@ -25,7 +25,7 @@ See a [live demo](http://www.joshua19media.com/modx-development/church-events.ht
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/churchevents>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/churchevents>
 
 ### Development and Bug Reporting
 
