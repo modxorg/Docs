@@ -8,7 +8,7 @@ _old_uri: "revo/gallery"
 
 Gallery is a dynamic Gallery Extra for MODX Revolution. It allows you to quickly and easily put up galleries of images, sort them, tag them, and display them in a myriad of ways in the front-end of your site.
 
-A tutorial has been made for Gallery by the community, and can be downloaded here: [Tutorial - Gallery Component with Galleriffic.pdf](extras/gallery/galery.pdf)
+A tutorial has been made for Gallery by the community, and can be downloaded here: [Tutorial - Gallery Component with Galleriffic.pdf](https://github.com/modxorg/Docs/raw/2.x/en/extras/gallery/galery.pdf)
 
 Another small tutorial about setting up an album with Gallery can be found here: <https://www.sitsol.be/blog/modx-gallery>
 
@@ -77,7 +77,7 @@ Gallery comes packaged with a custom TV input and output type for managing Galle
 
 ### Gallery Plugins
 
-Gallery allows you to display your galleries either straight as thumbnail images in the front-end, or using jQuery plugins. You can pass a plugin name through the Gallery snippet. Currently, the only available plugin is for [Galleriffic]((extras/gallery/gallery.plugins/galleriffic "Gallery.Plugins.Galleriffic").
+Gallery allows you to display your galleries either straight as thumbnail images in the front-end, or using jQuery plugins. You can pass a plugin name through the Gallery snippet. Currently, the only available plugin is for [Galleriffic](extras/gallery/gallery.plugins/galleriffic "Gallery.Plugins.Galleriffic").
 
 ### Gallery manager page
 
