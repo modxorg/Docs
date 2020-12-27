@@ -38,7 +38,7 @@ The following permissions are required:
 
 ## Web servers
 
-Apache 2.4 or NGINX 1.8 are recommended. It's also possible to use lighttpd, IIS, Zeus, Valet, and other web servers.
+Apache 2.4 or NGINX 1.18.x are recommended. It's also possible to use lighttpd, IIS, Zeus, Valet, and other web servers.
 
 ## Browser Support for the Manager
 
