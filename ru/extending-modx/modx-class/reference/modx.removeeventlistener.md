@@ -17,7 +17,7 @@ boolean removeEventListener (string $event)
 
 ## Пример
 
-Предотвратите любые события от стрельбы 'OnChunkRender':
+Предотвратить запуск любых событий на `OnChunkRender`:
 
 ``` php
 $modx->removeEventListener('OnChunkRender');

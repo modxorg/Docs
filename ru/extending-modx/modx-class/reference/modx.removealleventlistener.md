@@ -17,7 +17,7 @@ void removeAllEventListener ()
 
 ## Пример
 
-Исключите любые другие события из стрельбы:
+Предотвратить запуск любых событий:
 
 ``` php
 $modx->removeAllEventListener();
