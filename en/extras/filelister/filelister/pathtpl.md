@@ -6,7 +6,7 @@ _old_uri: "revo/filelister/filelister.filelister/filelister.filelister.pathtpl"
 
 ## FileLister's pathTpl Chunk
 
-This is the Chunk displayed with the &pathTpl property on the [FileLister](extras/filelister/filelister.filelister "FileLister.FileLister") snippet.
+This is the Chunk displayed with the &pathTpl property on the [FileLister](extras/filelister/filelister "FileLister.FileLister") snippet.
 
 ## Default Value
 

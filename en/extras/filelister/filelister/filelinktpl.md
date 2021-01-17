@@ -6,7 +6,7 @@ _old_uri: "revo/filelister/filelister.filelister/filelister.filelister.filelinkt
 
 ## FileLister's fileLinkTpl Chunk
 
-This is the Chunk displayed with the &fileLinkTpl property on the [FileLister](extras/filelister/filelister.filelister "FileLister.FileLister") snippet. Used for the links for each result.
+This is the Chunk displayed with the &fileLinkTpl property on the [FileLister](extras/filelister/filelister "FileLister.FileLister") snippet. Used for the links for each result.
 
 ## Default Value
 

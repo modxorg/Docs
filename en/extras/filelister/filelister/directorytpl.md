@@ -6,7 +6,7 @@ _old_uri: "revo/filelister/filelister.filelister/filelister.filelister.directory
 
 ## FileLister's directoryTpl Chunk
 
-This is the Chunk displayed with the &directoryTpl property on the [FileLister](extras/filelister/filelister.filelister "FileLister.FileLister") snippet. Used for directories that are listed.
+This is the Chunk displayed with the &directoryTpl property on the [FileLister](extras/filelister/filelister "FileLister.FileLister") snippet. Used for directories that are listed.
 
 ## Default Value
 
@@ -23,7 +23,7 @@ This is the Chunk displayed with the &directoryTpl property on the [FileLister](
 | link         | The link to browse the directory.                                                                                                               |
 | filename     | The basename of the directory.                                                                                                                  |
 | path         | The absolute path to the directory.                                                                                                             |
-| relativePath | The relative path to the 'path' property passed into the [FileLister](extras/filelister/filelister.filelister "FileLister.FileLister") snippet. |
+| relativePath | The relative path to the 'path' property passed into the [FileLister](extras/filelister/filelister "FileLister.FileLister") snippet. |
 | navKey       | The navKey being used for link generation.                                                                                                      |
 
 ## See Also
