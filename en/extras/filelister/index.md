@@ -35,7 +35,7 @@ FileLister can be called via the Snippet tags, and passing a 'path' argument.
 
 FileLister comes with one snippet:
 
-- [FileLister](extras/filelister/filelister.filelister "FileLister.FileLister")
+- [FileLister](extras/filelister/filelister "FileLister.FileLister")
 
 ### System Settings
 
