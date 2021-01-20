@@ -141,8 +141,7 @@ And you're done!
 The easiest way to take advantage of using fully qualified Friendly URLs, is to allow MODX to build the links using link tags, described on this page: [link tag syntax](building-sites/resources "Linking to a Resources") to create links to different resources, is easy as tying in the link tag below (where 1 is the Resource ID of the page you want to link to). This has the added benefit of being able to move resources around a web project, without needing to fix a bunch of broken links, as MODX will simply update links created in this manner automatically.
 
 ``` html
-    <a href="[[~1]]" title="some title">Some Page</a>
-
+<a href="[[~1]]" title="some title">Some Page</a>
 ```
 
 ## 5) Convert WWW URLs to non-WWW or Vice Versa
@@ -172,3 +171,12 @@ RewriteRule (.*) http://yoursite.com/$1 [R=301,L]
 Notice that we didn't uncomment the first line. It's a real comment. Uncommenting would make the server treat it like code and that might crash the server.
 
 Severs can be quite touchy about what's in an .htaccess file. Always back up a working .htaccess file before modifying it. That way, if your work crashes the server, you can just copy the saved version back to .htaccess and start again.
+
+## 6) Rewrite to fix duplicates of the main page
+
+Search engines will index each page (index.php, index.html, index.htm, etc.) and will react poorly to duplicate content.
+
+``` php
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.(php|html|htm)\ HTTP/
+RewriteRule ^(.*)index\.(php|html|htm)$ $1 [R=301,L]
+```
