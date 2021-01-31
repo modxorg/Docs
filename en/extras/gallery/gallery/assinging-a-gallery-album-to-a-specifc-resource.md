@@ -27,6 +27,7 @@ Input Option Values (just copy-paste the following code):
 ``` php
 $output = $modx->runSnippet("GalleryAlbums",array("rowTpl"=>"galleryDropdownList"))."none==0"; return $output;
 ```
+
 OR as an alternative to point 3 and 4, use this Select as Input Option Values (benefit: no need of @EVAL and no need of a chunk):
 
 ``` sql
