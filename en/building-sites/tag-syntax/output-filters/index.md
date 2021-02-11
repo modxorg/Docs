@@ -200,7 +200,6 @@ Directly accessing the `modx_user_attributes` table in the database using output
 User Internal Key: [[!+modx.user.id:userinfo=`internalKey`]]<br />
 User name: [[!+modx.user.id:userinfo=`username`]]<br />
 Full Name: [[!+modx.user.id:userinfo=`fullname`]]<br />
-Role:  [[!+modx.user.id:userinfo=`role`]]<br />
 E-mail: [[!+modx.user.id:userinfo=`email`]]<br />
 Phone: [[!+modx.user.id:userinfo=`phone`]]<br />
 Mobile Phone: [[!+modx.user.id:userinfo=`mobilephone`]]<br />
