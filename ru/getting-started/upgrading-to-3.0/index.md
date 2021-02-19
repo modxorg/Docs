@@ -1,6 +1,6 @@
 ---
 title: "Обновление с 2.x до 3.0"
-note: "Это живой документ, так как MODX 3.0 все еще находится в разработке. В настоящее время еще не рекомендуется обновлять сайты до MODX 3.0, Если вы не являетесь разработчиком, который хочет протестировать и подготовить свои дополнения"
+note: "Это живой документ, так как MODX 3.0 все еще находится в разработке. В настоящее время еще не рекомендуется обновлять сайты до MODX 3.0, если вы не являетесь разработчиком, который хочет протестировать и подготовить свои дополнения".
 sortorder: 1
 translation: "getting-started/upgrading-to-3"
 ---
@@ -22,8 +22,8 @@ translation: "getting-started/upgrading-to-3"
 
 ### Панель управления/Интерфейс
 
--   Переработан установщик [#14507](https://github.com/modxcms/revolution/pull/14507) и вход в панель упралвения [#13773](https://github.com/modxcms/revolution/pull/13773).
--   Панель управления была переработана, а также улучшена для раюботы на мобильных устройствах [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735). Изменены стили ресурсов в дереве [#14832](https://github.com/modxcms/revolution/pull/14832)- Язык теперь можно переключать на лету [#14046](https://github.com/modxcms/revolution/pull/14046)
+-   Переработан установщик [#14507](https://github.com/modxcms/revolution/pull/14507) и вход в панель управления [#13773](https://github.com/modxcms/revolution/pull/13773).
+-   Панель управления была переработана, а также улучшена для работы на мобильных устройствах [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735). Изменены стили ресурсов в дереве [#14832](https://github.com/modxcms/revolution/pull/14832)- Язык теперь можно переключать на лету [#14046](https://github.com/modxcms/revolution/pull/14046)
 -   Все разрешения менеджера автоматически становятся доступными в `MODx.perm` [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425),
 -   Перевод Гугла теперь отключен в диспетчере [#14414](https://github.com/modxcms/revolution/pull/14414)
 -   Более последовательное дублирование ресурсов/элементов [#14411](https://github.com/modxcms/revolution/pull/14411)
