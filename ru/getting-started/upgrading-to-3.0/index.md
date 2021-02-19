@@ -5,11 +5,11 @@ sortorder: 1
 translation: "getting-started/upgrading-to-3"
 ---
 
-Этот документ подробно описывает изменения, внесенные между 2.x и 3.0, которые могут повлиять на обновления. Это не полный список всех изменений (см. [changelog для этого](https://github.com/modxcms/revolution/blob/3.x/core/docs/changelog.txt)), но [нарушение изменений](getting-started/upgrading-to-3.0/breaking-changes), которые могут повлиять на дополнения и сайты.
+Этот документ подробно описывает изменения, внесенные между 2.x и 3.0, которые могут повлиять на обновления. Это не полный список всех изменений (см. [changelog для этого](https://github.com/modxcms/revolution/blob/3.x/core/docs/changelog.txt)), но есть [критические изменения](getting-started/upgrading-to-3.0/breaking-changes), которые могут повлиять на дополнения и сайты.
 
 ## Обновление до 3.0
 
-В общем случае при обновлении до версии 3.0 можно следовать [стандартному процессу обновления](getting-started/maintenance/upgrading). Рекомендуется сначала обновить до последней версии 2.7, которая будет регистрировать устаревшие функции, от которых зависит ваш сайт, в журнале MODX.
+В общем случае при обновлении до версии 3.0 можно следовать [стандартному процессу обновления](getting-started/maintenance/upgrading). Рекомендуется сначала обновить до последней версии 2.8, которая будет регистрировать устаревшие функции, от которых зависит ваш сайт, в журнале MODX.
 
 После обновления ядра и дополнительных компонентов могут возникнуть некоторые критические изменения, которые необходимо устранить в дополнительном коде или пользовательском коде.
 
@@ -23,7 +23,9 @@ translation: "getting-started/upgrading-to-3"
 ### Панель управления/Интерфейс
 
 -   Переработан установщик [#14507](https://github.com/modxcms/revolution/pull/14507) и вход в панель управления [#13773](https://github.com/modxcms/revolution/pull/13773).
--   Панель управления была переработана, а также улучшена для работы на мобильных устройствах [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735). Изменены стили ресурсов в дереве [#14832](https://github.com/modxcms/revolution/pull/14832)- Язык теперь можно переключать на лету [#14046](https://github.com/modxcms/revolution/pull/14046)
+-   Панель управления была переработана, а также улучшена для работы на мобильных устройствах [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735).
+-   Изменены стили ресурсов в дереве [#14832](https://github.com/modxcms/revolution/pull/14832)
+-   Язык теперь можно переключать на лету [#14046](https://github.com/modxcms/revolution/pull/14046)
 -   Все разрешения менеджера автоматически становятся доступными в `MODx.perm` [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425),
 -   Перевод Гугла теперь отключен в диспетчере [#14414](https://github.com/modxcms/revolution/pull/14414)
 -   Более последовательное дублирование ресурсов/элементов [#14411](https://github.com/modxcms/revolution/pull/14411)
