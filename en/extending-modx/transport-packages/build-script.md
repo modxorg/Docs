@@ -156,6 +156,7 @@ $vehicle= $builder->createVehicle($menu,array (
 ## Related objects
 
 When packing in related objects, you need 2 new parameters:
+
 -   `xPDOTransport::RELATED_OBJECTS` _(boolean)_ - Either true or false, this will tell MODX we want to search for related objects to this object. This must be set for the next parameter to work.
 -   `xPDOTransport::RELATED_OBJECT_ATTRIBUTES` _(array)_ - This defines the types and details of the related objects we want to grab. If you note, the format is simply an associative array of attributes - similar to the parent object's attributes - where the key is the "alias" of the related object we want to grab. The aliases can be found in the Schema, located in _core/model/schema/modx.mysql.schema.xml_.
 
