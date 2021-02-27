@@ -1,0 +1,13 @@
+name: Validate redirects
+
+on: [push, pull_request]
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate redirects file
+        uses: docker://orrosenblatt/validate-json-action:latest
+        env:
+          INPUT_SCHEMA: ./redirects.schema.json
+          INPUT_JSONS: ./redirects.json
