@@ -1,5 +1,5 @@
 ---
-title: "Write & Test Code"
+title: "Code"
 _old_id: "1127"
 _old_uri: "contribute/becoming-a-contributor"
 sortorder: 1

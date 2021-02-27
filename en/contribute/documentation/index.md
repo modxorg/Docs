@@ -1,5 +1,5 @@
 ---
-title: 'Write Documentation'
+title: 'Documentation'
 sortorder: 2
 ---
 
