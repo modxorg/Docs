@@ -1,6 +1,6 @@
-name: CI
+name: Validate markdown
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: markdown syntax
+    - uses: actions/checkout@v2
+    - name: Validate markdown syntax in touched files
       uses: nosborn/github-action-markdown-cli@v1.1.1
       with:
         files: .
