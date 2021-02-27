@@ -1614,7 +1614,7 @@
     "/extras/revo/boilerx/bx-container-close": "en/extras/boilerx/bx-container-close",
     "/extras/revo/boilerx/bx-bottom-open": "en/extras/boilerx/bx-bottom-open",
     "/extras/revo/boilerx/bx-bottom-close": "en/extras/boilerx/bx-bottom-close",
-    "/extras/revo/breadcrumb/": "en/extras/breadcrumb/index",
+    "/extras/revo/breadcrumb": "en/extras/breadcrumb/index",
     "/extras/revo/breadcrumb/breadcrumb.containertpl": "en/extras/breadcrumb/breadcrumb.containertpl",
     "/extras/revo/breadcrumb/breadcrumb.currentcrumbtpl": "en/extras/breadcrumb/breadcrumb.currentcrumbtpl",
     "/extras/revo/breadcrumb/breadcrumb.linkcrumbtpl": "en/extras/breadcrumb/breadcrumb.linkcrumbtpl",
