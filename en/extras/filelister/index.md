@@ -21,7 +21,7 @@ You can view the [roadmap here](extras/filelister/filelister.roadmap "FileLister
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <http://modxcms.com/extras/package/694>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <https://modx.com/extras/package/filelister>
 
 ### Development and Bug Reporting
 

@@ -12,7 +12,7 @@ Returns an instance of modParser responsible for parsing tags in element content
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getParser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getParser())
+API Doc: [modX::getParser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getParser())
 
 ``` php
 object getParser()

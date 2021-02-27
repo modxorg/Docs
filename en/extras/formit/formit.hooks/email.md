@@ -29,6 +29,9 @@ The email hook will email out your form contents to any email(s).
 | emailBCCName            | Optional. A comma-separated list of names to pair with the emailBCC values.                                                                                                                                                                                                                                                                         |
 | emailMultiWrapper       | Wraps values submitted by checkboxes/multi-selects with this value. Defaults to just the value. (1.6.0+)                                                                                                                                                                                                                                            |
 | emailMultiSeparator     | Separates checkboxes/multi-selects with this value. Defaults to a newline. (1.6.0+)                                                                                                                                                                                                                                                                 |
+| emailSelectField        | The name of the form field, that selects the email addresses to send to. (4.2.5+)                                                                                                                                                                                                                                                                   |
+| emailSelectTo           | A semicolon separated list of comma separated email addresses to send to. (4.2.5+)                                                                                                                                                                                                                                                                  |
+| emailSelectToName       | A semicolon separated list of comma separated email names to send to. (4.2.5+)                                                                                                                                                                                                                                                                      |
 
 Any of the email hook properties can have placeholders of field names from your form in them that will be evaluated.
 
@@ -60,23 +63,28 @@ Note the &emailTpl property points to the name of a Chunk. In that Chunk, you'll
 
 This assumes, of course, that you have the fields "name", "cdo\_package" and "email" in your form.
 
-### Specifying a Dynamic To Address
+### Specifying Dynamic To Addresses
 
-An example is using the form to specify who to send to:
+FormIt, as of 4.2.5+, could select the receiver of the mail by the numeric value of a field i.e. by the option value of a select. By doing this, you could avoid to create a spoofable form field, where a frontend user could submit any mail address quite easily. The frontend user would only see a numbered list of receivers that are translated to email addresses by FormIt properties.
+
+For this, you could use the following FormIt properties
 
 ``` php
-[[!FormIt?
-    ...
-    &emailTo=`[[+addressTo]]`
-]]
-...
-<select name="addressTo">
-<option value="john@doe.com" [[!+fi.addressTo:FormItIsSelected=`john@doe.com`]]>John</option>
-<option value="jane@doe.com" [[!+fi.addressTo:FormItIsSelected=`jane@doe.com`]]>Jane</option>
+&emailSelectTo=`mail1@my.domain,mail2@my.domain;different@my.domain`
+&emailSelectToName=`Mail1,Mail2;Different`
+&emailSelectField=`emailselect`
+```
+
+and the following form field
+
+``` php
+<select name="emailselect">
+    <option value="1" [[!+fi.emailselect:default=`1`:FormItIsSelected=`1`]]>Address 1</option>
+    <option value="2" [[!+fi.emailselect:default=`1`:FormItIsSelected=`2`]]>Address 2</option>
 </select>
 ```
 
-This will send the email to whoever is selected in the "addressTo" field.
+If Address 1 is selected, the mail would be sent to `mail1@my.domain,mail2@my.domain`, if Address 2 is selected, the mail would be sent to `different@my.domain`.
 
 ### Using a Subject Field as the Email Subject Line
 

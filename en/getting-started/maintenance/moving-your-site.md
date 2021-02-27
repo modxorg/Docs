@@ -164,7 +164,7 @@ Whenever changes are made to a MODX Revolution site in regards to installs, upgr
 - Make sure you are running the setup version from the same version of MODX Revolution you will be using.
 - Get the transferred site functional before attempting any version upgrades.
 
-[Download Previous Versions of MODX Revolution](http://modx.com/download/previous-releases/)
+[Download Previous Versions of MODX Revolution](https://modx.com/download/previous-releases/)
 
 If MODX does not find a config.inc.php file during setup, it will not offer you the option of doing an upgrade install. Do not proceed unless you can check the "Upgrade Install" checkbox. It the config.inc.php file is there but MODX is not finding it, check the path specified in the config.core.php files described above in the Updating Your Config Files section. MODX uses that path to find the config.inc.php file.
 

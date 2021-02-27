@@ -9,7 +9,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/internationalization"
 Internationalization, or i18n, is the process of extrapolating text strings in a document to separate languages, so that the document may be viewed by a multitude of different languages without having to duplicate the page for every different language. Technically speaking, _internationalization_ refers to the process of _preparing_ code so that it can be translated; in MODX this process often boils down to isolating translatable strings into separate placeholders.
 
 **i18n**
- The abbreviation **i18n** derives from the word "internationalization". It means "**i** plus 18 letters then **n**".
+The abbreviation **i18n** derives from the word "internationalization". It means "**i** plus 18 letters then **n**".
 
 MODX Revolution supports i18n at the core level, through what it calls "Lexicons". A lexicon is simply a collection of the following:
 

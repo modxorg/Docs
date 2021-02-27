@@ -19,7 +19,7 @@ Display and list: all tags, tags from specified group(s), omit unused tags, Reso
 
 ## Installation
 
-Install via Package Management, or download the package from the [MODX Extras repository](http://modx.com/extras/)
+Install via Package Management, or download the package from the [MODX Extras repository](https://modx.com/extras/)
 
 **Tagger FURLs are currently not working when using any resource extensions (.html,...) except /.** Please change your extension to **/** at least on the resource where the TaggerGetResourcesWhere snippet is called.
 
@@ -147,10 +147,8 @@ This snippet generate a SQL Query that can be used in a WHERE condition in the g
 | &groups                                                                                                         | string   | optional      | Comma separated list of Tagger Groups. Only from those groups will Tags be allowed                                                                 |             |
 | &where                                                                                                          | string   | optional      | Original getResources WHERE property. If you used WHERE property in your current getResources call, move it here.                                  |             |
 | &likeComparison                                                                                                 | int      | optional      | If set to 1, tags will compare using LIKE which will match partial strings instead of only exact matches.                                          | 0           |
-| &tagField                                                                                                       | string   | optional      | Field that will be used to compare with given tags.                                                                                                |
-| If you want to match against the 'full text' of the tag name you've entered, this will need to be set to 'tag'. | alias    |
-| &matchAll                                                                                                       | int      | optional      | If set to 1, resource must have all specified tags (an 'AND' match).                                                                               |
-| If set to 0 or left out, it can match any one of the tags (an 'OR' match).                                      | 0        |
+| &tagField                                                                                                       | string   | optional      | Field that will be used to compare with given tags. If you want to match against the 'full text' of the tag name you've entered, this will need to be set to 'tag'. | alias    |
+| &matchAll                                                                                                       | int      | optional      | If set to 1, resource must have all specified tags (an 'AND' match). If set to 0 or left out, it can match any one of the tags (an 'OR' match).                                      | 0        |
 | &field                                                                                                          | string   | optional      | modResource field that will be used to compare with assigned resource ID                                                                           | id          |
 
 **EXAMPLE USAGE:**

@@ -10,7 +10,7 @@ Creates the container for a persistent data object. In this implementation, a so
 
 ## Syntax
 
-API Docs: [http://api.modxcms.com/xpdo/om-mysql/xPDOManager\_mysql.html#createObjectContainer](http://api.modxcms.com/xpdo/om-mysql/xPDOManager_mysql.html#createObjectContainer)
+API Docs: [createObjectContainer](http://api.modxcms.com/xpdo/om-mysql/xPDOManager_mysql.html#createObjectContainer)
 
 ``` php
 void createObjectContainer (string $className)

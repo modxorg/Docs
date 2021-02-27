@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onload
 
 Fires after a Resource is loaded from the cache. If the Resource is not cached, this event will not fire. NOTE: this event is not particularly useful until MODX 2.3 (see [Issue 9841](http://bugs.modx.com/issues/9841)).
 
-Service: 4 - Cache Service Events
-Group: None
+- Service: 4 - Cache Service Events
+- Group: None
 
 ## Event Parameters
 
@@ -50,6 +50,31 @@ array (
     4 => 'text', // <-- TV type
 )
 */
+```
+
+Such a plugin will replace pagetitle, TV and content meaning:
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnLoadWebPageCache':
+        $modx->event->params['resource']->pagetitle = 'New title';
+        // меняем значение ТВ
+        $tv = $modx->event->params['resource']->price[1] = '128';
+        /*
+        // массив значений ТВ 
+        array (
+            0 => 'name', //название ТВ
+            1 => 'значение', //значение ТВ
+            2 => 'default', //параметры вывода ТВ
+            3 => NULL,
+            4 => 'text', //тип ТВ
+        )
+        */
+        $modx->event->params['resource']->_content = 'New content'.$tv;
+        break;
+}
 ```
 
 For further education, take a look at the cached files generated inside the `core/cache/resource/web/resources/` folder.

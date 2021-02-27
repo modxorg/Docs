@@ -21,7 +21,7 @@ Polls, was written by Bert Oost, a simple question and answer solution, and firs
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository on <http://modxcms.com/extras/package/783>.
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODx Extras Repository on <https://modx.com/extras/package/polls>.
 
 ## Development and Bug Reporting
 

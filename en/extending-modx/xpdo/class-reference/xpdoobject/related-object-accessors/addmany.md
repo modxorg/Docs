@@ -6,13 +6,13 @@ _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/addmany"
 
 ## xPDOObject::addMany()
 
- Adds an object or collection of objects related to this class.
+Adds an object or collection of objects related to this class.
 
 ## Syntax
 
- API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoobject.class.html#%5CxPDOObject::addMany()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::addMany())
+API Docs: [xPDOObject::addMany()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::addMany()>)
 
-``` php
+```php
 boolean addMany (
    mixed &$obj,
    [string $alias = '']
@@ -21,9 +21,9 @@ boolean addMany (
 
 ## Example
 
- Add golf clubs to a bag and save.
+Add golf clubs to a bag and save.
 
-``` php
+```php
 $bag = $xpdo->newObject('GolfBag');
 $bag->set('name',"Chris's Bag");
 $bag->set('color','blue');
@@ -37,11 +37,13 @@ $bag->addMany($clubs);
 $bag->save(); // saves both the bag and all the clubs
 ```
 
- **Nested Calls** You can nest one addMany() call inside another and thus create all your related data via a single save() operation.
+**Nested Calls** You can nest one addMany() call inside another and thus create all your related data via a single save() operation.
 
 ## Troubleshooting
 
- Remember that this operation is intended to be called only for objects whose relationships are defined as cardinality="many". ## See Also
+Remember that this operation is intended to be called only for objects whose relationships are defined as cardinality="many".
 
-- [Working with Related Objects](extending-modx/xpdo/retrieving-objects/related-objects "Working with Related Objects")
-- [addOne()](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone)
+## See Also
+
+-   [Working with Related Objects](extending-modx/xpdo/retrieving-objects/related-objects "Working with Related Objects")
+-   [addOne()](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone)

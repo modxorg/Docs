@@ -39,7 +39,7 @@ modSwiftMailer was created and programmed by Mark Ernst (ReSpawN) and released o
 
 ### Download
 
-modSwiftMailer is available in the [MODX Extras repository](http://modx.com/extras/package/modswiftmailer) (direct link) and in your MODX Revolution' [Package Management](developing-in-modx/advanced-development/package-management "Package Management").
+modSwiftMailer is available in the [MODX Extras repository](https://modx.com/extras/package/modswiftmailer) (direct link) and in your MODX Revolution' [Package Management](developing-in-modx/advanced-development/package-management "Package Management").
 
 ## Usage
 
@@ -195,4 +195,4 @@ This might be a small glitch on my part. Try setting the model/modx/mail directo
 
 Bug reporting isn't up yet. Please submit your bugs via the MODX forum! :)
 
-<http://modxcms.com/forums/index.php/topic,66815.0.html>
+<https://forums.modx.com/index.php/topic,66815.0.html>

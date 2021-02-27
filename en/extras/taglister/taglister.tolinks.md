@@ -6,7 +6,7 @@ _old_uri: "revo/taglister/taglister.tolinks"
 
 ## tolinks Snippet
 
-Converts a delimited list into a list of linkable tags: typically, this would be used on a page that has been tagged with various taxonomical tags and you want to link to other pages that have been tagged by those same tags. For an example, see <http://modxcms.com/forums/index.php/topic,61744.0/topicseen.html>
+Converts a delimited list into a list of linkable tags: typically, this would be used on a page that has been tagged with various taxonomical tags and you want to link to other pages that have been tagged by those same tags. For an example, see <https://forums.modx.com/index.php/topic,61744.0/topicseen.html>
 
 ## Usage
 
@@ -28,22 +28,22 @@ tolinks is called with the normal snippet tag, passing in an 'items' property as
 | tagKey          | &tagKey=`articlestags`           | tag group name, used in generating links                                               | tags          |
 | tagKeyVar       | &tagKeyVar=`MyCustomVar`         | sets the GET var key                                                                   |
 
- I.e.,
- `[[tolinks? &tagKey=`articlestags` &tagKeyVar=`MyCustomVar`]]`
+I.e.,
+`[[tolinks? &tagKey=`articlestags`&tagKeyVar=`MyCustomVar`]]`
 
- outputs [http://f.qdn.com/somepage?MyCustomVar=articlestags&tag=theTag\\\\](http://f.qdn.com/somepage?MyCustomVar=articlestags&tag=theTag%5C) | key |
+outputs [http://f.qdn.com/somepage?MyCustomVar=articlestags&tag=theTag\\\\](http://f.qdn.com/somepage?MyCustomVar=articlestags&tag=theTag%5C) | key |
 
 ## tolinks Chunks
 
 There is 1 chunk that is processed in tolinks. Its corresponding parameters are:
 
-- [tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl "tagLister.tolinks.tpl") - The Chunk to use for each link generated.
+-   [tpl](extras/taglister/taglister.tolinks/tpl "tpl") - The Chunk to use for each link generated.
 
 ## Examples
 
 Change the TV value of 'tags' into links that point to the URL of Resource 123 with the GET param of 'tag':
 
-``` php
+```php
 [[!tolinks? &items=`[[*tags]]` &key=`tag` &target=`123`]]
 
 ```
@@ -55,7 +55,7 @@ Alternatively, set the **&useTagsFurl** property.
 
 The resource ID referenced by the **&target** parameter should contain something like the following that lists the posts tagged:
 
-``` php
+```php
 [[!getResourcesTag?
     &element=`getResources`
     &elementClass=`modSnippet`
@@ -73,8 +73,8 @@ The resource ID referenced by the **&target** parameter should contain something
 ## See Also
 
 1. [tagLister.getResourcesTag](extras/taglister/taglister.getresourcestag)
-2. [tagLister.tagLister](extras/taglister/taglister.taglister)
-    1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
-    2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
+2. [tagLister.tagLister](extras/taglister/taglister)
+    1. [tagLister.tagLister.all](extras/taglister/taglister/all)
+    2. [tagLister.tagLister.tpl](extras/taglister/taglister/tpl)
 3. [tagLister.tolinks](extras/taglister/taglister.tolinks)
-    1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+    1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/tpl)

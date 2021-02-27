@@ -6,7 +6,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.newquery"
 
 ## xPDO::newQuery
 
-Creates an new xPDOQuery for a specified xPDOObject class.
+Creates an new `xPDOQuery` for a specified `xPDOObject` class.
 
 ## Syntax
 

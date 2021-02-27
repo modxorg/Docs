@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ontemp
 
 Loaded right before removing a template variable.
 
-Service: 1 - Parser Service Events
-Group: Template Variables
+- Service: 1 - Parser Service Events
+- Group: Template Variables
 
 ## Event Parameters
 
@@ -26,6 +26,22 @@ Group: Template Variables
 | File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
 | Class          | modTemplateVar                                                                                                                         |
 | Method         | public function remove(array $ancestors= array ())                                                                                     |
+
+
+## Example
+
+Such a plugin will display the remote TV data in the "Error log":
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnTemplateVarBeforeRemove':
+        //array tv, with all parameters
+        print_r($templateVar->toArray());
+        break;
+}
+```
 
 ## See Also
 

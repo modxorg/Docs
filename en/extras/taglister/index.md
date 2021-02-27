@@ -20,12 +20,12 @@ Create a page dedicated to showing all pages tagged with a given term. On that p
 
 If you are tagging only resources in a certain folder, reference the folder's page ID in the **&parents** argument, otherwise use "0" to search the entire site.
 
-``` php
+```php
 [[!getResourcesTag? &parents=`0` &tagKey=`my_tags` &tpl=`result_tpl`]]
 ```
 
-- **&tagKey** is the unique name of the Template Variable containing the tags
-- **&tpl** is a chunk used to format each result (just like you would use for **getResources**)
+-   **&tagKey** is the unique name of the Template Variable containing the tags
+-   **&tpl** is a chunk used to format each result (just like you would use for **getResources**)
 
 Remember the page ID of this page: we will use it in the next step.
 
@@ -33,7 +33,7 @@ Remember the page ID of this page: we will use it in the next step.
 
 The next component here is showing all the given tags that appear on a given page. For this component, we rely on the **toLinks** Snippet. This will point to the page ID we created in step 1.
 
-``` php
+```php
 [[!toLinks? &items=`[[*my_tags]]` &target=`123`]]
 ```
 
@@ -45,10 +45,10 @@ The third common component here is to display a tag cloud listing all available 
 
 ## Requirements
 
-- A series of resources (e.g. blog posts) that utilize an auto-tag Template Variable
-- A page dedicated to displaying all resources that have been tagged with a given value (i.e. a page for search results)
-- MODX Revolution 2.0.0-RC-2 or later
-- PHP5 or later
+-   A series of resources (e.g. blog posts) that utilize an auto-tag Template Variable
+-   A page dedicated to displaying all resources that have been tagged with a given value (i.e. a page for search results)
+-   MODX Revolution 2.0.0-RC-2 or later
+-   PHP5 or later
 
 ## History
 
@@ -70,29 +70,29 @@ tagLister has 1 snippet that displays a list of used tags, grabbed from the spec
 
 tagLister comes with three Snippets:
 
-- [tagLister](extras/taglister/taglister.taglister "tagLister.tagLister") - Lists most commonly used tags.
-- [getResourcesTag](extras/taglister/taglister.getresourcestag "tagLister.getResourcesTag") - For grabbing Resources filtered by tags.
-- [tolinks](extras/taglister/taglister.tolinks "tagLister.tolinks") - For converting a comma-separated list into links.
+-   [tagLister](extras/taglister/taglister "tagLister") - Lists most commonly used tags.
+-   [getResourcesTag](extras/taglister/taglister.getresourcestag "tagLister.getResourcesTag") - For grabbing Resources filtered by tags.
+-   [tolinks](extras/taglister/taglister.tolinks "tagLister.tolinks") - For converting a comma-separated list into links.
 
 ## Examples
 
 Grab a list of tags specified in the TV 'tags', which are separated by commas, and make the links go to the home page:
 
-``` php
+```php
 [[!tagLister? &tv=`tags`]]
 ```
 
 Grab a list of tags specified in the TV 'blog-tags', which are separated by spaces, and make the links go to Resource ID 123:
 
-``` php
+```php
 [[!tagLister? &tv=`blog-tags` &tvDelimiter=` ` &target=`123`]]
 ```
 
 ## See Also
 
 1. [tagLister.getResourcesTag](extras/taglister/taglister.getresourcestag)
-2. [tagLister.tagLister](extras/taglister/taglister.taglister)
-    1. [tagLister.tagLister.all](extras/taglister/taglister.taglister/taglister.taglister.all)
-    2. [tagLister.tagLister.tpl](extras/taglister/taglister.taglister/taglister.taglister.tpl)
+2. [tagLister.tagLister](extras/taglister/taglister)
+    1. [tagLister.tagLister.all](extras/taglister/taglister/all)
+    2. [tagLister.tagLister.tpl](extras/taglister/taglister/tpl)
 3. [tagLister.tolinks](extras/taglister/taglister.tolinks)
-    1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/taglister.tolinks.tpl)
+    1. [tagLister.tolinks.tpl](extras/taglister/taglister.tolinks/tpl)

@@ -3,15 +3,15 @@ title: "container_suffix"
 translation: "building-sites/settings/container_suffix"
 ---
 
-## container\_suffix
+## container_suffix
 
-**Имя**: Container Suffix
-**Тип**: String
-**По умолчанию**: /
+-   **Имя**: Суффикс контейнера
+-   **Тип**: String
+-   **По умолчанию**: /
 
 Устанавливает суффикс контейнера для сайта. Это суффикс, добавляемый к дружественному URL-адресу, когда ресурс отмечен как контейнер.
 
-## Example
+## Пример
 
 Суффикс контейнера / отобразит Ресурс с псевдонимом «test» следующим образом:
 

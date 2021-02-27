@@ -8,12 +8,12 @@ _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile"
 
 Copies a file from a source file to a target directory. Takes the following options as an optional 3rd parameter:
 
-- **copy\_newer\_only** - If the source file is older than the target, it will not copy the file.
-- **copy\_preserve\_permissions** - xPDO will attempt to copy over the permission structure from the source file to the target. Defaults to false.
-- **copy\_preserve\_filemtime** - xPDO will attempt to copy over the modified time from the source file to the target file. Defaults to true.
-- **copy\_return\_file\_stat** - Setting to true will return the php [stat()](http://www.php.net/stat) information in the return array. Defaults to false.
-- **new\_dir\_permissions** - The permissions to set any new directories to that were created in the target. (Can also be the 4th parameter of copyFile.) Defaults to 0775.
-- **new\_file\_permissions** - The permissions to set the new file to if copy\_preserve\_permissions is false. Defaults to 0664.
+- `copy_newer_only` - If the source file is older than the target, it will not copy the file.
+- `copy_preserve_permissions` - xPDO will attempt to copy over the permission structure from the source file to the target. Defaults to false.
+- `copy_preserve_filemtime` - xPDO will attempt to copy over the modified time from the source file to the target file. Defaults to true.
+- `copy_return_file_stat` - Setting to true will return the php [stat()](http://www.php.net/stat) information in the return array. Defaults to false.
+- `new_dir_permissions` - The permissions to set any new directories to that were created in the target. (Can also be the 4th parameter of copyFile.) Defaults to 0775.
+- `new_file_permissions` - The permissions to set the new file to if  `copy_preserve_permissions` is false. Defaults to 0664.
 
 ## Syntax
 

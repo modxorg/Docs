@@ -3,11 +3,11 @@ title: "session_name"
 translation: "building-sites/settings/session_name"
 ---
 
-## session\_name
+## session_name
 
-**Имя**: Session Name
-**Тип**: String
-**По умолчанию**: modxcmssession
+-   **Имя**: Имя сессии
+-   **Тип**: String
+-   **По умолчанию**: modxcmssession
 
 Используйте этот параметр, чтобы настроить имя сеанса, используемое для сеансов в MODX.
 

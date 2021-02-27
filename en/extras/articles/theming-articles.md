@@ -41,11 +41,11 @@ Our article template, or "BlogPostTemplate", has some placeholders as well:
 - `[[+comments]]` The comments, provided by [Quip](extras/quip "Quip"), for this article, if comments are enabled.
 - `[[+comments_count]]` a count of the number of comments made on the current article (i.e. on the current post). Relies on [QuipCount](extras/quip/quip.quipcount "Quip.QuipCount").
 - `[[+comments_form]]` The reply form, provided by [Quip](extras/quip "Quip"), if comments are enabled.
-- `[[*articlestags]]` Used with the "notempty" output filter, this can trigger whether or not you show the `[[+article\_tags]]]]`ceholder (note the \* instead of the +)
+- `[[*articlestags]]` Used with the "notempty" output filter, this can trigger whether or not you show the `[[+article_tags]]` placeholder (note the * instead of the +)
 - `[[+article_tags]]` contains a list of all tags that the current article has been tagged with.
-- `[[*articles_container]]` The ID of the Container that our Article is in. Note the \* instead of the +
+- `[[*articles_container]]` The ID of the Container that our Article is in. Note the * instead of the +
 
-If you are _outside_ the Article Template and you need to display the number of comments that were made on a given post (e.g. if you want to display the number of comments on each post in your list of "Latest Posts"), then you cannot use the `[[+comments\_count]]`laceholder. You must instead use [QuipCount](extras/quip/quip.quipcount "Quip.QuipCount"). Go to the **Components -> Quip** page and take a look at the thread names that Articles gives each post automatically. It follows this format: article-b{page-id-of-blog}-{page-id-of-post}, e.g. **article-b12-37**
+If you are _outside_ the Article Template and you need to display the number of comments that were made on a given post (e.g. if you want to display the number of comments on each post in your list of "Latest Posts"), then you cannot use the `[[+comments_count]]` placeholder. You must instead use [QuipCount](extras/quip/quip.quipcount "Quip.QuipCount"). Go to the **Components -> Quip** page and take a look at the thread names that Articles gives each post automatically. It follows this format: article-b{page-id-of-blog}-{page-id-of-post}, e.g. **article-b12-37**
 
 ![](quip-thread-names.jpg)
 

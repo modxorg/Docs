@@ -6,11 +6,11 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::getUser
 
- Get the current authenticated User and assigns it to the modX instance.
+Get the current authenticated User and assigns it to the modX instance.
 
 ## Syntax
 
- API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getUser())
+API Doc: [modX::getUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getUser())
 
 ``` php
 modUser getUser ([string $contextKey = ''])
@@ -18,14 +18,14 @@ modUser getUser ([string $contextKey = ''])
 
 ## Example
 
- Get the current auth'ed user and print out its username.
+Get the current auth'ed user and print out its username.
 
 ``` php
 $user = $modx->getUser();
 echo $user->get('username');
 ```
 
- Get the user's email address (stored in their profile):
+Get the user's email address (stored in their profile):
 
 ``` php
 $user = $modx->getUser();
@@ -35,7 +35,7 @@ if (!$profile) return '';
 print $profile->get('email');
 ```
 
- Get an extended field from the user.
+Get an extended field from the user.
 
 ``` php
 $user = $modx->getUser();

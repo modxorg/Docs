@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onhand
 
 Fires at the beginning of a request handler.
 
-Service: 5 - Template Service Events
-Group: System
+- Service: 5 - Template Service Events
+- Group: System
 
 ## Event Parameters
 

@@ -16,8 +16,8 @@ $modx->event->output(true);
 $modx->event->_output = true;
 ```
 
-Service: 3 - Web Access Events
-Group: None
+- Service: 3 - Web Access Events
+- Group: None
 
 ## Event Parameters
 

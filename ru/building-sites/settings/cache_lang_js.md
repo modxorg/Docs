@@ -3,12 +3,12 @@ title: "cache_lang_js"
 translation: "building-sites/settings/cache_lang_js"
 ---
 
-## cache\_lang\_js
+## cache_lang_js
 
-**Имя**: Cache Lexicon JS Strings
-**Тип**: Да/Нет
-**По умолчанию**: Да
-**Доступно в**: Revolution 2.0.6+
+-   **Имя**: Cache Lexicon JS Strings
+-   **Тип**: Да/Нет
+-   **По умолчанию**: Да
+-   **Доступно в**: Revolution 2.0.6+
 
 Если установлено значение true, это будет использовать заголовки сервера для кэширования строк лексикона, загруженных в JavaScript для интерфейса менеджера.
 

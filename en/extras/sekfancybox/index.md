@@ -21,7 +21,7 @@ SekFancyBox was written by Stephen Smith, and first released on Feb 1st, 2012.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/sekfancybox>.
+It can be downloaded from within the MODX Revolution manager via [Package Management](extending-modx/transport-packages "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/sekfancybox>.
 
 ### Development and Bug Reporting
 

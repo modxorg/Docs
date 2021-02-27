@@ -6,11 +6,11 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::hasPermission
 
- Returns true if user has the specified policy permission.
+Returns true if user has the specified policy permission.
 
 ## Syntax
 
- API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::hasPermission()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::hasPermission())
+API Doc: [modX::hasPermission()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::hasPermission())
 
 ``` php
 boolean hasPermission (string|array $pm)
@@ -18,7 +18,7 @@ boolean hasPermission (string|array $pm)
 
 ## Example
 
- Deny the user access if they don't have the permission 'edit\_chunk' in their loaded Policies.
+Deny the user access if they don't have the permission 'edit\_chunk' in their loaded Policies.
 
 ``` php
 $pm = 'edit_chunk';
@@ -27,7 +27,7 @@ if (!$modx->hasPermission($pm)) {
 }
 ```
 
- It's also possible to check if the user has multiple permissions, like 'edit\_chunk' and 'edit\_template'. Like;
+It's also possible to check if the user has multiple permissions, like 'edit\_chunk' and 'edit\_template'. Like;
 
 ``` php
 $pm = array('edit_chunk' => true, 'edit_template' => true);

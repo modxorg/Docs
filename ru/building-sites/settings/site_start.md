@@ -3,11 +3,11 @@ title: "site_start"
 translation: "building-sites/settings/site_start"
 ---
 
-## site\_start
+## site_start
 
-**Имя**: Site Start
-**Тип**: Number
-**По умолчанию**: 1
+-   **Имя**: Главная страница сайта
+-   **Тип**: Number
+-   **По умолчанию**: 1
 
 Идентификатор ресурса, который вы хотите использовать в качестве домашней страницы.
 

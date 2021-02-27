@@ -10,7 +10,7 @@ Drops a physical data container, if it exists.
 
 ## Syntax
 
-API Docs: [http://api.modxcms.com/xpdo/om-mysql/xPDOManager\_mysql.html#removeSourceContainer](http://api.modxcms.com/xpdo/om-mysql/xPDOManager_mysql.html#removeSourceContainer)
+API Docs: [removeSourceContainer](http://api.modxcms.com/xpdo/om-mysql/xPDOManager_mysql.html#removeSourceContainer)
 
 ``` php
 int removeSourceContainer (string $dsn, string $username, string $password)

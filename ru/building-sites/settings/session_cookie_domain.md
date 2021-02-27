@@ -3,11 +3,11 @@ title: "session_cookie_domain"
 translation: "building-sites/settings/session_cookie_domain"
 ---
 
-## session\_cookie\_domain
+## session_cookie_domain
 
-**Имя**: Session Cookie Domain
-**Тип**: String
-**По умолчанию**: localhost
+-   **Имя**: Домен для сессионных куки
+-   **Тип**: String
+-   **По умолчанию**: localhost
 
 Используйте этот параметр для настройки домена cookie сеанса.
 Вам нужно будет очистить локальные куки в вашем браузере после изменения этого параметра.

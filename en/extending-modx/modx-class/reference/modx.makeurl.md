@@ -10,17 +10,17 @@ Generates a URL representing a specified resource.
 
 The scheme indicates in what format the URL is generated.
 
-- -1 : (default value) URL is relative to site\_url
-- 0 : see http
-- 1 : see https
-- full : URL is absolute, prepended with site\_url from config
-- abs : URL is absolute, prepended with base\_url from config
-- http : URL is absolute, forced to http scheme
-- https : URL is absolute, forced to https scheme
+- `-1`: (default value) URL is relative to `site_url`
+- `0`: see http
+- `1`: see https
+- `full`: URL is absolute, prepended with `site_url` from config
+- `abs`: URL is absolute, prepended with `base_url` from config
+- `http`: URL is absolute, forced to http scheme
+- `https`: URL is absolute, forced to https scheme
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::makeUrl()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::makeUrl())
+API Doc: [modX::makeUrl()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::makeUrl())
 
 ``` php
 string makeUrl (integer $id, [string $context = ''], [string|array $args = ''], [mixed $scheme = -1])
@@ -40,7 +40,7 @@ Make a URL for the Resource with ID 12, but make sure it's in HTTPS.
 $url = $modx->makeUrl(12,'','','https');
 ```
 
-Make a URL to Resource with ID 56, but add a ?hello=world to the URL.
+Make a URL to Resource with ID 56, but add a `?hello=world` to the URL.
 
 ``` php
 $url = $modx->makeUrl(25, '', array('hello' => 'world'));

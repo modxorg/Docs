@@ -6,13 +6,13 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::getService
 
- Load and return a named service class instance. Returns either a reference to the service class instance or null if it could not be loaded. You can think of this is a simple dependency injector.
+Load and return a named service class instance. Returns either a reference to the service class instance or null if it could not be loaded. You can think of this is a simple dependency injector.
 
- Note that the class is instantiated only once: subsequent calls return a reference to the stored instance.
+Note that the class is instantiated only once: subsequent calls return a reference to the stored instance.
 
 ## Syntax
 
- API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#\\modX::getService()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getService())
+API Doc: [modX::getService()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getService())
 
 ``` php
 object getService (string $name, [string $class = ''], [string $path = ''], [array $params = array ()])
@@ -25,13 +25,13 @@ object getService (string $name, [string $class = ''], [string $path = ''], [arr
 
 ## Examples
 
- Get the modSmarty service.
+Get the modSmarty service.
 
 ``` php
 $modx->getService('smarty','smarty.modSmarty');
 ```
 
- Get a custom, user-defined service called 'modTwitter' from a custom path ('/path/to/modtwitter.class.php'), and pass in some custom parameters.
+Get a custom, user-defined service called 'modTwitter' from a custom path ('/path/to/modtwitter.class.php'), and pass in some custom parameters.
 
 ``` php
 $modx->getService('twitter','modTwitter','/path/to/',array(

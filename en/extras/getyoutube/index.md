@@ -16,7 +16,7 @@ getYoutube was first written by David Pede (@davepede) and released on April 14t
 
 ## Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <http://modx.com/extras/package/getYoutube>
+It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <https://modx.com/extras/package/getYoutube>
 
 The source code and build script is also available on GitHub: <https://github.com/tasianmedia/getYoutube>
 

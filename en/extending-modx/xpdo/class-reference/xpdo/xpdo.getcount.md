@@ -6,9 +6,9 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getcount"
 
 ## xPDO::getCount
 
-Retrieves a count of xPDOObjects by the specified array or xPDOCriteria.
+Retrieves a count of `xPDOObjects` by the specified array or `xPDOCriteria`.
 
-If you are specifying the select(), don't use getCount(), just run the query and get the results normally. getCount() is a shortcut that replaces your select() with COUNT(DISTINCT primaryKeyField) automatically, based on the primary key definition of the class you specify. Group by should work, as long as it makes sense with the COUNT(DISTINCT primaryKeyField) select clause.
+If you are specifying the `select()`, don't use `getCount()`, just run the query and get the results normally. `getCount()` is a shortcut that replaces your `select()` with `COUNT(DISTINCT primaryKeyField)` automatically, based on the primary key definition of the class you specify. Group by should work, as long as it makes sense with the `COUNT(DISTINCT primaryKeyField)` select clause.
 
 ### Syntax
 

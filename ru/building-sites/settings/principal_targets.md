@@ -3,12 +3,12 @@ title: "principal_targets"
 translation: "building-sites/settings/principal_targets"
 ---
 
-## principal\_targets
+## principal_targets
 
-**Имя**: ACL Targets to Load
-**Тип**: textfield
-**По умолчанию**: modAccessContext,modAccessResourceGroup,modAccessCategory
-*Доступно в**: 2.1+
+-   **Имя**: Целевые классы для загрузки списков контроля доступа
+-   **Тип**: textfield
+-   **По умолчанию**: modAccessContext,modAccessResourceGroup,modAccessCategory,sources.modAccessMediaSource,modAccessNamespace
+-   **Доступно в**: 2.1+
 
 Настройте цели ACL для загрузки для пользователей MODX.
 

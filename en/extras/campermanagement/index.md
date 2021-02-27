@@ -6,7 +6,7 @@ _old_uri: "revo/campermanagement"
 
 **CamperManagement is no longer supported. Do not use unless you're a developer that's willing to take over development of the project.**
 
-Download: <http://modx.com/extras/package/campermanagement> (or install via Package Manager)
+Download: <https://modx.com/extras/package/campermanagement> (or install via Package Manager)
  Source & Bugs: <https://github.com/Mark-H/CamperManagement>
 
 ![](camper-grid.png)

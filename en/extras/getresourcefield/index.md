@@ -10,11 +10,11 @@ getResourceField is a simple snippet which can be used to display a single field
 
 ## History
 
-getResourceField was first released on September 16th, 2010 by [paulmerchant](http://modxcms.com/extras/author/paulmerchant), co-authored by Shaun McCormick.
+getResourceField was first released on September 16th, 2010 by [paulmerchant](https://modx.com/extras/package/getresourcefield), co-authored by Shaun McCormick.
 
 ### Download
 
-The snippet can be retrieved through the Package Manager, or downloaded manually from the [Repository](http://modxcms.com/extras/package/702).
+The snippet can be retrieved through the Package Manager, or downloaded manually from the [Repository](https://modx.com/extras/package/getresourcefield).
 
 ## Usage
 

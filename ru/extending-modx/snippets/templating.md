@@ -1,36 +1,36 @@
 ---
-title: "Templating"
+title: "Шаблонирование"
 translation: "extending-modx/snippets/templating"
 ---
 
-## Templating Snippets
+## Шаблонные сниппеты
 
-One of the best practices in Snippet design is to make sure that you never write HTML directly in the Snippet, but template out the HTML into Chunks. This tutorial shows you how to do that in a Snippet.
+Одна из лучших практик в дизайне сниппета - убедиться, что вы никогда не пишете HTML непосредственно в сниппете, а разбиваете HTML на куски. Из этого туториала вы узнаете, как это сделать в сниппете.
 
-### Our Initial Snippet
+### Наш начальный сниппет
 
-Let's take a case scenario; say you want to iterate across the published, non-deleted Resources that are children of the Resource with ID 390, sorted by menuindex, and then output them as LI tags with the pagetitle and a link to click them.
+Давайте рассмотрим сценарий случая: допустим, вы хотите перебрать опубликованные не удаленные Ресурсы, которые являются потомками Ресурса с идентификатором 390, отсортированными по `menuindex`, а затем вывести их в виде тегов `li` с заголовком страницы и ссылкой для их щелчка.
 
-Go ahead and create a snippet called 'ResourceLister', and put this inside:
+Идем дальше и создаем сниппет под названием 'ResourceLister', и вставляем это внутрь:
 
 ``` php
-/* first, build the query */
+/* во-первых, построить запрос */
 $c = $modx->newQuery('modResource');
-/* we only want published and undeleted resources */
+/* нам нужны только опубликованные и неопубликованные ресурсы */
 $c->where(array(
   'published' => true,
   'deleted' => false,
 ));
-/* get all the children of ID 390 */
+/* получить всех детей с ID 390 */
 $children = $modx->getChildIds(390);
 if (count($children) > 0) {
     $c->where(array(
         'id:IN' => $children,
     ));
 }
-/* sort by menuindex ascending */
+/* сортировать по menuindex по возрастанию */
 $c->sortby('menuindex','ASC');
-/* get the resources as xPDOObjects */
+/* получить ресурсы как xPDOObjects */
 $resources = $modx->getCollection('modResource',$c);
 $output = '';
 foreach ($resources as $resource) {
@@ -39,25 +39,25 @@ foreach ($resources as $resource) {
 return $output;
 ```
 
-This does what we want, but puts the HTML inline. We don't want that. It doesn't let the user control the markup, or change it if they want to. We want more flexibility.
+Это делает то, что мы хотим, но вставляет HTML. Мы этого не хотим. Он не позволяет пользователю контролировать разметку или изменять ее, если он этого хочет. Мы хотим больше гибкости.
 
-### Templating the Snippet
+### Шаблонный сниппет
 
-First off, let's create a chunk that we'll use for each item in the result set. Call it "ResourceItem", and make this its content:
+Прежде всего, давайте создадим чанк, который мы будем использовать для каждого элемента в наборе результатов. Назовите его «ResourceItem» и вставьте следующее содержимое:
 
 ``` php
 <li><a href="[[~[[+id]]]]">[[+pagetitle]]</a></li>
 ```
 
-Basically, we make an LI tag, and put some placeholders were our content was. We have available any field in the Resource, and here we're just using the ID and pagetitle fields. The `[[~` tells MODX to make a link from the ID passed in the `[[+id]]` property. Now let's add a default property to the snippet, called 'tpl', to the top of our snippet code:
+По сути, мы делаем тег `li` и помещаем некоторые плейсхолдеры, где был наш контент. У нас есть любое поле в Ресурсе, и здесь мы просто используем поля `ID` и `Pagetitle`. `[[~` говорит MODX сделать ссылку из идентификатора, переданного в свойстве `[[+id]]`. Теперь давайте добавим свойство по умолчанию к сниппету, называемое «tpl», в начало нашего сниппета кода:
 
 ``` php
 $tpl = $modx->getOption('tpl',$scriptProperties,'ResourceItem');
 ```
 
-This gets us the &tpl= property from the Snippet call, since $scriptProperties just holds all the properties in the Snippet call. If 'tpl' doesn't exist, getOption defaults the value to ResourceItem (the Chunk we just made).
+Это возвращает нам свойство `&tpl =` из вызова сниппета, поскольку `$scriptProperties` просто содержит все свойства в вызове Сниппета. Если `tpl` не существует, `getOption` по умолчанию принимает значение `ResourceItem` (блок, который мы только что создали).
 
-And then, change the foreach loop in the Snippet to this:
+А затем измените цикл `foreach` в сниппете следующим образом:
 
 ``` php
 foreach ($resources as $resource) {
@@ -66,46 +66,46 @@ foreach ($resources as $resource) {
 }
 ```
 
-The code first turns the modResource object into an array of field=name pairs (ie, $resourceArray\['pagetitle'\] is the pagetitle) via the toArray() method. Then, we use $modx->getChunk() to pass our tpl Chunk and the resource array into it as properties. MODX parses the chunk, replaces the properties, and returns us some content.
+Сначала код превращает объект `modResource` в массив пар `field=name` (т.е. `$resourceArray['pagetitle']` - это заголовок страницы) с помощью метода `toArray()`. Затем мы используем `$modx->getChunk()`, чтобы передать наш `tpl` чанка и массив ресурсов в него в качестве свойств. MODX анализирует блок, заменяет свойства и возвращает нам некоторый контент.
 
-An alternative and slightly faster (especially helpful when looping through a big xPDO result) but also a bit longer way to do the same would be
+Альтернативный и немного более быстрый (особенно полезный при циклическом просмотре большого результата xPDO), но также более длинный способ сделать то же самое
 
 ``` php
-// first get the template chunk in a variable
+// сначала получить шаблон чанка в переменной
 $tpl = $this->modx->getParser()->getElement('modChunk', 'chunkName');
 $tpl->setCacheable(false);
 
-// now loop trough the result collection
+// Теперь перебрать коллекцию результатов
 foreach ($resources as $resource) {
    $resourceArray = $resource->toArray();
-   $tpl->_processed = false; // This line is important!
+   $tpl->_processed = false; // Эта линия важна!
    $output .= $tpl->process($resourceArray);
 }
 ```
 
-Now the user can call the snippet this way to override the chunk for each Resource with this call:
+Теперь пользователь может вызвать сниппет таким образом, чтобы переопределить блок для каждого ресурса с помощью этого вызова:
 
 ``` php
 [[!ResourceLister? &tpl=`MyOwnChunk`]]
 ```
 
-Meaning they can template their results however they want - using LIs, or table rows, or whatever! You've now created a flexible, powerful snippet. The available placeholders depend on what array is passed to $modx->getChunk(); or $tpl->process() methods. In this example the available placeholders would be all default fields (no TVs!) of a resource like for example `[[+pagetitle]]`, `[[+id]]` or `[[+content]]`.
+Это означает, что они могут шаблонировать свои результаты так, как они хотят - используя `li`, или строки таблицы, или что угодно! Вы создали гибкий и мощный сниппет. Доступные плейсхолдеры зависят от того, какой массив передается `$modx->getChunk()` или `$tpl->process()`. В этом примере доступными плейсхолдерами будут все поля по умолчанию (без TV!) ресурса, как, например, `[[+pagetitle]]`, `[[+id]]` или `[[+content]]`.
 
-### Adding A Row Class
+### Добавление класса строки
 
-What if we want the user to be able to specify a CSS class for each LI row, but not have to make their own custom chunk? Simple, we just add a default property 'rowCls' to our snippet code at the top, below our first getOption call:
+Что если мы хотим, чтобы пользователь мог указывать класс CSS для каждой строки `li`, но не должен создавать свой собственный сниппет? Проще говоря, мы просто добавляем свойство по умолчанию 'rowCls' в наш сниппет вверху, ниже нашего первого вызова `getOption`:
 
 ``` php
 $rowCls = $modx->getOption('rowCls',$scriptProperties,'resource-item');
 ```
 
-This tells MODX to default the &rowCls property for the snippet to 'resource-item'. Let's go edit our ResourceItem chunk:
+Это говорит MODX по умолчанию для свойства `&rowCls` для сниппета 'resource-item'. Давайте отредактируем наш чанк ResourceItem:
 
 ``` php
 <li class="[[+rowCls]]"><a href="[[~[[+id]]]]">[[+pagetitle]]</a></li>
 ```
 
-And finally, change our foreach loop to this:
+И наконец, измените наш цикл foreach на это:
 
 ``` php
 foreach ($resources as $resource) {
@@ -115,25 +115,26 @@ foreach ($resources as $resource) {
 }
 ```
 
-Note how we're explicitly setting the 'rowCls' variable into our $resourceArray property array. We do this because we've already gotten the value of rowCls earlier in the snippet (with the getOption call), and we know that it's not going to vary per row.
+Обратите внимание, как мы явно устанавливаем переменную `rowCls` в наш массив свойств `$resourceArray`. Мы делаем это, потому что мы уже получили значение `rowCls` ранее в сниппете (с помощью вызова `getOption`), и мы знаем, что оно не будет изменяться для каждой строки.
 
-### Passing a Custom ID
+### Передача пользовательского идентификатора
 
-What if we want the user to be able to pass in what parent to grab resources from? Again, we just add a default property 'id' to our snippet code at the top, below our getOption calls:
+Что, если мы хотим, чтобы пользователь мог передать, от какого родителя захватывать ресурсы? 
+Опять же, мы просто добавляем свойство `id` по умолчанию в наш сниппет кода вверху, ниже наших вызовов `getOption`:
 
 ``` php
 $id = (int)$modx->getOption('id',$scriptProperties,390);
 ```
 
-Basically, allow the user to override the parent ID for the Snippet - to say Resource 123, with an &id=`123` property - in their snippet call. But we want it to default to 390. And then we'll change the getChildIds line to this:
+По сути, пользователь может переопределить родительский идентификатор для сниппета - скажем, Resource 123 со свойством &id = `123` - в своем вызове сниппета. Но мы хотим установить значение по умолчанию 390. И тогда мы изменим строку `getChildIds на` эту:
 
 ``` php
 $children = $modx->getChildIds($id);
 ```
 
-Obviously, you could add more options to this snippet, such as firstRowCls (for only the first row in the results), lastRowCls, firstRowTpl, sortBy, sortDir, limit, or anything else you could dream up. We could even make it so the 'published' filter is a property as well, or hide resources that are folders, etc. The important part is that now you have the general idea.
+Очевидно, что вы можете добавить дополнительные опции к этому сниппету, такие как `firstRowCls` (только для первой строки в результатах), `lastRowCls`, `firstRowTpl`, `sortBy`, `sortDir`, `limit` или что-либо еще, что вы можете придумать. Мы могли бы даже сделать так, чтобы «опубликованный» фильтр также был свойством, или скрыть ресурсы, которые являются папками и т.д. Важной частью является то, что теперь у вас есть общее представление.
 
-For reference, our final code looks like this:
+Для справки, наш окончательный код выглядит так:
 
 ``` php
 $tpl = $modx->getOption('tpl',$scriptProperties,'ResourceItem');

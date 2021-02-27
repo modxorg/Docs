@@ -13,13 +13,13 @@ Note that unlike [modX.toPlaceholders](extending-modx/modx-class/reference/modx.
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::setPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholders())
+API Doc: [modX::setPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholders())
 
 ``` php
 void setPlaceholders (array|object  $placeholders, [string $namespace = ''])
 ```
 
-Unlike \[getChunk\], the **$placeholders** array can _not_ be deeply nested. It must be a simple associative array.
+Unlike `getChunk`, the `$placeholders` array can _not_ be deeply nested. It must be a simple associative array.
 
 ## Example
 

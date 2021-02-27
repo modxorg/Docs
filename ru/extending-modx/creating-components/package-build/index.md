@@ -138,7 +138,7 @@ $this->modx->regClientScript()
 $this->modx->regClientStartupHTMLBlock()
 ```
 
-Если вы хотите, чтобы ваш компонент дружил с [AjaxManager](http://modx.com/extras/package/ajaxmanager) — их нужно заменить на:
+Если вы хотите, чтобы ваш компонент дружил с [AjaxManager](https://modx.com/extras/package/ajaxmanager) — их нужно заменить на:
 
 ```php
 $this->addCss()

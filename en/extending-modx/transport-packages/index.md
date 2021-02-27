@@ -18,7 +18,7 @@ Transport packages are stored in .zip files, ending with ".transport.zip". They 
 
 ### The Internals of a Transport Package
 
-MODX Revolution automatically "unpacks", or unzips, your transport packages for you. Once done, a subdirectory in your core/packages directory will appear with the name of the zip file (minus ".transport.zip"). This directory will contain:
+MODX Revolution automatically "unpacks", or unzips, your transport packages for you. Once done, a subdirectory in your _core/packages_ directory will appear with the name of the zip file (minus ".transport.zip"). This directory will contain:
 
 -   A manifest.php file
 -   Subdirectories of each Vehicle (more on those later)

@@ -78,6 +78,19 @@ Take a look at the various subsections to learn more about specific aspects of x
 
 But xPDO is a little more than a simple pattern implementation. It's also a way to abstract business objects from the actual SQL queries and prepared statements used to access a relational database structure representing them, and a way to easily describe and provide optimized implementations of an object model for multiple target database platforms.
 
+When developing **xPDO** uses several design patterns that are well described in Martin Fowler’s book [«Enterprise Software Architecture»](http://design-pattern.ru/patterns) [«Patterns of Enterprise Application Architecture»](http://www.martinfowler.com/eaaCatalog/). Among them are the following and not only:
+
+- Domain Model
+- Active Record
+- Data Mapper
+- Lazy Load
+- Identity Field
+- Single Table Inheritance
+- Metadata Mapping
+- Query Object
+
+Before programming using **xPDO** it will be very useful to familiarize yourself with these patterns (and others from the Fowler catalog). An understanding of these concepts will help not only in learning **xPDO**, but in many other things related to programming.
+
 ## Why it Was Created
 
 xPDO was inspired by the need to quickly provide scaffolding for a web application that is easy to extend into a full-blown object model that could be optimized as much as possible for the database platform it was being deployed on without creating platform-dependencies, or maintenance nightmares. And it needed to provide this with as small a code footprint as possible; implementing an effective object-relational persistence framework in PHP demands this.

@@ -72,6 +72,38 @@ switch ($modx->event->name) {
 }
 ```
 
+Такой плагин выведет в "Журнал ошибок" массив сохраняемого ресурса:
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnDocFormSave':
+        $modx->log(MODX_LOG_LEVEL_ERROR, print_r($resource->toArray(),true) );
+        break;
+}
+```
+
+Такой плагин установит значение ТВ price текущего ресурса равным 128, при ошибке в "Журнал ошибок" добавится запись:
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnDocFormSave':
+        //если у ресурса шаблон=5
+        if ($resource->get('template') == 5) {  
+            // после сохранения значение ТВ price=128
+            if(!$resource->setTVValue('price', '128')) {
+                $modx->log(modX::LOG_LEVEL_ERROR, 'Возникли проблемы при установке значения ТВ.');
+            }
+        }
+        break;
+}
+```
+
+И не важно заполнено ли поле price перед сохранением, или нет. Плагин запишет 128.
+
 **Автоматическое сохранение**
 Нет необходимости запускать `$resource->save()` метод, так как это происходит автоматически.
 

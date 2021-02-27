@@ -6,11 +6,11 @@ _old_uri: "2.x/class-reference/xpdoobject/persistence-methods/save"
 
 ## xPDOObject::save()
 
- Persist new or changed objects to the database container. Will also cascade and save any objects that have been added to it via related object addition methods (addOne, addMany).
+Persist new or changed objects to the database container. Will also cascade and save any objects that have been added to it via related object addition methods (addOne, addMany).
 
 ## Syntax
 
- API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#save>
+API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#save>
 
 ``` php
 boolean save ([boolean|integer $cacheFlag = null])
@@ -18,7 +18,7 @@ boolean save ([boolean|integer $cacheFlag = null])
 
 ## Examples
 
- Save a wand, along with its owner and parts.
+Save a wand, along with its owner and parts.
 
 ``` php
 $owner = $xpdo->newObject('Wizard');
@@ -36,7 +36,7 @@ if ($wand->save() == false) {
 }
 ```
 
- This can get a bit tricky when dealing with related objects, but you can skip a few steps (provided that you have defined your relation properly). For example, normally when dealing with join tables, you need to know the primary key from the related tables before you can add a row there. However, with xPDO, you can omit the primary key from one table when you reference the related table via addMany() or addOne().
+This can get a bit tricky when dealing with related objects, but you can skip a few steps (provided that you have defined your relation properly). For example, normally when dealing with join tables, you need to know the primary key from the related tables before you can add a row there. However, with xPDO, you can omit the primary key from one table when you reference the related table via addMany() or addOne().
 
 ``` php
 $Product = $modx->newObject('Product');
@@ -49,7 +49,7 @@ $Product->addMany($related);
 $Product->save();
 ```
 
- If the operation did create a new record (instead of updating an existing one), you can tie into the underlying [PDO::lastInsertId()](http://php.net/manual/en/pdo.lastinsertid.php) method:
+If the operation did create a new record (instead of updating an existing one), you can tie into the underlying [PDO::lastInsertId()](http://php.net/manual/en/pdo.lastinsertid.php) method:
 
 ``` php
 $modx->lastInsertId();
@@ -59,11 +59,11 @@ $object->getPrimaryKey();
 $object->get('id'); // <-- or whatever the primary field is named
 ```
 
- _Success may vary depending on the underlying driver._
+_Success may vary depending on the underlying driver._
 
 ## Validation Messages
 
- You can do more than just react to a boolean yes/no of whether your object saved correctly. You can also return some messages about what exactly was problematic.
+You can do more than just react to a boolean yes/no of whether your object saved correctly. You can also return some messages about what exactly was problematic.
 
 ``` php
 // save object and report validation errors
@@ -78,9 +78,9 @@ if (!$object->save()) {
 }
 ```
 
- Ultimately, adding a field error adds messages onto the MODX error stack ($modx->errors). Each message is an associative array with an id and a msg.
+Ultimately, adding a field error adds messages onto the MODX error stack ($modx->errors). Each message is an associative array with an id and a msg.
 
- You can be a bit more concise using code like this (cleanup needed):
+You can be a bit more concise using code like this (cleanup needed):
 
 ``` php
 if ($object->save() == false) {
@@ -89,4 +89,4 @@ if ($object->save() == false) {
 }
 ```
 
- See modProcessor::addFieldError() in **modprocessor.class.php** and modError::addField() in **error/moderror.class.php**
+See `modProcessor::addFieldError()` in **modprocessor.class.php** and `modError::addField()` in **error/moderror.class.php**

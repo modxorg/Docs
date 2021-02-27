@@ -6,7 +6,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
 
 ## Overview
 
- Your XML schema can define validation rules using nodes in the XML that follow this pattern
+Your XML schema can define validation rules using nodes in the XML that follow this pattern
 
 ``` xml
 <validation>
@@ -19,7 +19,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
 </validation>
 ```
 
- The **rule** may have have these attributes:
+The **rule** may have have these attributes:
 
 - **field**: the field's name. _(required)_
 - **name**: a unique name for this validation rule. You can have multiple validation rules for each field. _(required)_
@@ -34,7 +34,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
 
 ## Regex Validation
 
- Let's take this example from the modChunk schema:
+Let's take this example from the modChunk schema:
 
 ``` xml
     <object class="modChunk" table="site_htmlsnippets" extends="modElement">
@@ -48,11 +48,11 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
 
 ## Callback Validation
 
- You can use your own functions for validation purposes by using "callback" as the type -- this relies on PHP's [call\_user\_func()](http://php.net/manual/en/function.call-user-func.php) function. Because the function name is defined in XML where it is impossible to reference an object instance, you can only reference a regular PHP function like `my_function` or a static class method, e.g. `MyClass::myFunction`. Likewise, you cannot pass parameters to these functions (?).
+You can use your own functions for validation purposes by using "callback" as the type -- this relies on PHP's [call\_user\_func()](http://php.net/manual/en/function.call-user-func.php) function. Because the function name is defined in XML where it is impossible to reference an object instance, you can only reference a regular PHP function like `my_function` or a static class method, e.g. `MyClass::myFunction`. Likewise, you cannot pass parameters to these functions (?).
 
 ## xPDOValidationRule Validation
 
- This is how you can tie-into the built-in MODX validation rules. See the classes available inside the `core/xpdo/validation/xpdovalidator.class.php` file:
+This is how you can tie-into the built-in MODX validation rules. See the classes available inside the `core/xpdo/validation/xpdovalidator.class.php` file:
 
 - **xPDOMinLengthValidationRule**
 - **xPDOMaxLengthValidationRule**
@@ -61,7 +61,7 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
 - **xPDOObjectExistsValidationRule**
 - **xPDOForeignKeyConstraint**
 
- For example, look a the the rule defined for the `modContentType`
+For example, look a the the rule defined for the `modContentType`
 
 ``` xml
     <object class="modContentType" table="content_type" extends="xPDOSimpleObject">
@@ -75,9 +75,9 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/vali
 
 ## Using xPDOValidator
 
- You can use the xPDOValidator to pre-validate the current state of an `xPDOObject` or you can allow `save()` to call validation (see `xPDO::OPT_VALIDATE_ON_SAVE`) itself and fail if validation fails.
+You can use the xPDOValidator to pre-validate the current state of an `xPDOObject` or you can allow `save()` to call validation (see `xPDO::OPT_VALIDATE_ON_SAVE`) itself and fail if validation fails.
 
- An example of pre-validation from MODX Revolution's `modObjectCreateProcessor` class:
+An example of pre-validation from MODX Revolution's `modObjectCreateProcessor` class:
 
 ``` php
 /* run object validation */
@@ -92,7 +92,7 @@ if (!$this->object->validate()) {
 }
 ```
 
- An example of examining the validation messages after `save()` failure from MODX Revolution's `modError` class:
+An example of examining the validation messages after `save()` failure from MODX Revolution's `modError` class:
 
 ``` php
 /* save object and report validation errors */

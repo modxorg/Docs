@@ -5,7 +5,7 @@ translation: "extending-modx/plugins/system-events/onbeforecacheupdate"
 
 ## Событие: OnBeforeCacheUpdate
 
-Запускается до очистки всего кэша сайта.
+Запускается перед обновлением кэша.
 
 Сервис: 4 - События сервиса кэша
 Группа: Нет
@@ -13,6 +13,20 @@ translation: "extending-modx/plugins/system-events/onbeforecacheupdate"
 ## Параметры события
 
 Нет.
+
+## Example
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforeCacheUpdate':
+        $modx->log(modX::LOG_LEVEL_ERROR, "Стартуем!");
+        break;
+}
+```
+
+Теперь обновите кэш, и увидите "Стартуем!"
 
 ## Смотри также
 

@@ -4,7 +4,7 @@ _old_id: "1289"
 _old_uri: "2.x/class-reference/xpdoquery"
 ---
 
- The xPDOQuery extends the xPDOCriteria class and allows you to abstract out complex SQL queries into an OOP format. This allows encapsulation of SQL calls so that they can work in multiple database types, and be easy to read and dynamically build.
+The `xPDOQuery` extends the `xPDOCriteria` class and allows you to abstract out complex SQL queries into an OOP format. This allows encapsulation of SQL calls so that they can work in multiple database types, and be easy to read and dynamically build.
 
 1. [xPDOQuery.andCondition](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.andcondition)
 2. [xPDOQuery.groupby](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.groupby)
@@ -20,7 +20,7 @@ _old_uri: "2.x/class-reference/xpdoquery"
 
 ## Examples
 
- Grab the first 4 Boxes with:
+Grab the first 4 Boxes with:
 
 1. Owners that have the letter 'a' in their names
 2. A width of at least 10
@@ -45,7 +45,7 @@ $query->limit(4);
 $boxes = $xpdo->getCollection('Box',$query);
 ```
 
- You can also do more complex queries, like so:
+You can also do more complex queries, like so:
 
 ``` php
 $query = $xpdo->newQuery('Person');
@@ -61,7 +61,7 @@ $query->where(array(
 ));
 ```
 
- translates to:
+translates to:
 
 ``` php
 (
@@ -72,7 +72,7 @@ $query->where(array(
 )
 ```
 
- Note that if you're specifying the conditional in the key string, such as 'OR:disabled:!=' => true, you'll need to specify the operand as well. This means that you must specify = explicitly, such as in:  'AND:gender:=' => 'M'
+Note that if you're specifying the conditional in the key string, such as 'OR:disabled:!=' => true, you'll need to specify the operand as well. This means that you must specify = explicitly, such as in:  'AND:gender:=' => 'M'
 
 ### Valid Operators
 
@@ -93,7 +93,7 @@ $c->where(array(
 
 ## Debugging
 
- Sometimes you need to see what query is actually being generated. You can do this by preparing the query and outputting it using the **toSQL()** method.
+Sometimes you need to see what query is actually being generated. You can do this by preparing the query and outputting it using the **toSQL()** method.
 
 ``` php
 $c = $xpdo->newQuery('Person');

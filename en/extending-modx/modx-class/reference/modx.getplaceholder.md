@@ -10,7 +10,7 @@ Get a placeholder value by key.
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getPlaceholder())
+API Doc: [modX::getPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getPlaceholder())
 
 ``` php
 mixed getPlaceholder (string $key)

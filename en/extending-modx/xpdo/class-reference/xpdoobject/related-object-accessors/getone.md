@@ -12,7 +12,7 @@ Use this for 1:? (one:zero-or-one) or 1:1 relationships, which you can distingui
 
 ## Syntax
 
-API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoobject.class.html#%5CxPDOObject::getOne()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::getOne())
+API Docs: [xPDOObject::getOne()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::getOne())
 
 ``` php
 xPDOObject|null &getOne (

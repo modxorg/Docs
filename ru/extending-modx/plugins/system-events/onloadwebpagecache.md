@@ -51,6 +51,31 @@ array (
 */
 ```
 
+Такой плагин заменит pagetitle, значение ТВ и контента:
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnLoadWebPageCache':
+        $modx->event->params['resource']->pagetitle = 'Новый заголовок';
+        // меняем значение ТВ
+        $tv = $modx->event->params['resource']->price[1] = '128';
+        /*
+        // массив значений ТВ 
+        array (
+            0 => 'name', //название ТВ
+            1 => 'значение', //значение ТВ
+            2 => 'default', //параметры вывода ТВ
+            3 => NULL,
+            4 => 'text', //тип ТВ
+        )
+        */
+        $modx->event->params['resource']->_content = 'Новый контент'.$tv;
+        break;
+}
+```
+
 Для дальнейшего обучения, посмотрите на кэшированные файлы, созданные внутри папки `core/cache/resource/web/resources/`.
 
 ## Смотри также

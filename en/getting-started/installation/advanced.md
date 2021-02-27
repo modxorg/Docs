@@ -98,7 +98,7 @@ If you get a blank screen or cannot proceed after clicking 'Install', verify the
 1. Make sure the directories "/\[root\]", "/core/config", "/core/packages","/core/cache", and "/core/export" are writable. (root will be the actual directory you are installing to.)
 2. Make sure your php.ini setting sets memory\_limit to 128M, and max\_execution\_time to 120
 3. Ensure that MODX can create the manager and connectors directories; this is done by making the parents of those directories writable (since you can change where they are installed)
-4. Post a message in the [Revolution forum](http://modxcms.com/forums/index.php/board,280.0.html) regarding your issue. State your server setup and installation info, and we'll try and help you find a solution.
+4. Post a message in the [Revolution forum](https://forums.modx.com/index.php/board,280.0.html) regarding your issue. State your server setup and installation info, and we'll try and help you find a solution.
 
 ## Post-Installation Summary
 

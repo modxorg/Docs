@@ -75,7 +75,7 @@ There are quite a few fields here, in separate vertical tabs:
     - **Include TVs List** - An optional comma-delimited list of TemplateVar names to include explicitly if Include TVs is on. If you leave this blank, it will include all TVs attached to the Resource\\'s Template.
     - **Process TVs in Listing** - If on, will process the TV values in the listing chunks.
     - **Process TVs List** - An optional comma-delimited list of TemplateVar names to include explicitly if Include TVs is on. If you leave this blank, it will process all TVs attached to the Resource\\'s Template.
-    - **Other Listing Parameters** - Any other properties you would like to add to the getResources/getPage call for the Articles listing page. Put them in MODX tag syntax, as if you were adding it to the tag call (eg, &property=`value`).
+    - **Other Listing Parameters** - Any other properties you would like to add to the getResources/getPage call for the Articles listing page. Put them in MODX tag syntax, as if you were adding it to the tag call (eg, `` &property=`value` ``).
 - Pagination Options
     - **Articles Per Page** - The number of Articles to show per page when listing posts.
     - **Pages Limit** - The maximum number of pages to display when rendering paging controls
@@ -115,7 +115,7 @@ There are quite a few fields here, in separate vertical tabs:
     - **Send to Twitter** - If enabled, automatically posts to Twitter when Article is published.
     - **Twitter Consumer Key** - Optional security key.
     - **Secret Twitter Consumer Key** - Optional secret access token.
-    - **Twitter Template** - The template to use for each tweet. Available placeholders are: `[[+title]]``[[+url]]]]` `[[+hashtags]]]]]]`
+    - **Twitter Template** - The template to use for each tweet. Available placeholders are: `[[+title]]` `[[+url]]` `[[+hashtags]]`
     - **Twitter Template (hashtags)** - If hashtags placeholder is used, this sets the maximum number of tags to include.
     - **URL Shortener** - The service to use for shortening URLs. Can be set to blank for no shortening.
 

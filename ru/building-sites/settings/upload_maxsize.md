@@ -3,11 +3,11 @@ title: "upload_maxsize"
 translation: "building-sites/settings/upload_maxsize"
 ---
 
-## upload\_maxsize
+## upload_maxsize
 
-**Имя**: Maximum Upload Size
-**Тип**: Number
-**По умолчанию**: 1048576
+-   **Имя**: Максимальный размер загрузки
+-   **Тип**: Number
+-   **По умолчанию**: 1048576
 
 Максимальный размер файла, который можно загрузить через файловый менеджер. Размер загружаемого файла должен быть указан в байтах.
 

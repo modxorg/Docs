@@ -12,7 +12,7 @@ This snippet displays all the comments for a given thread.
 
 Simply place the snippet wherever you would like to display a comment thread, and specify what the name of that thread will be.
 
-``` php
+```php
 [[!Quip? &thread=`myThread`]]
 ```
 
@@ -65,51 +65,51 @@ Simply place the snippet wherever you would like to display a comment thread, an
 
 There are 4 chunks that are processed in Quip. Their corresponding parameters are:
 
-- [tplComment](extras/quip/quip.quip/quip.quip.tplcomment "Quip.Quip.tplComment")
-- [tplCommentOptions](extras/quip/quip.quip/quip.quip.tplcommentoptions "Quip.Quip.tplCommentOptions")
-- [tplComments](extras/quip/quip.quip/quip.quip.tplcomments "Quip.Quip.tplComments")
-- [tplReport](extras/quip/quip.quip/quip.quip.tplreport "Quip.Quip.tplReport")
+-   [tplComment](extras/quip/quip/tplcomment "Quip.Quip.tplComment")
+-   [tplCommentOptions](extras/quip/quip/tplcommentoptions "Quip.Quip.tplCommentOptions")
+-   [tplComments](extras/quip/quip/tplcomments "Quip.Quip.tplComments")
+-   [tplReport](extras/quip/quip/tplreport "Quip.Quip.tplReport")
 
 ## Examples
 
 A sample code line for a blog post that's on a Resource with no threading:
 
-``` php
+```php
 [[!Quip? &thread=`blog-post-[[*id]]` &threaded=`0`]]
 ```
 
 A threaded comment thread, but only allowed to go 3 levels deep, and auto-close after 21 days:
 
-``` php
+```php
 [[!Quip? &thread=`blog-post-[[*id]]` &maxDepth=`3` &closeAfter=`21`]]
 ```
 
 A comment thread, with threading, with Gravatars disabled, and only allowing logged-in comments:
 
-``` php
+```php
 [[!Quip? &thread=`blog-post-[[*id]]` &useGravatar=`0` &requireAuth=`1`]]
 ```
 
 A comment thread, pagination enabled, having only 5 root comments per page, and a class on each pagination link li tag called 'pageLink':
 
-``` php
+```php
 [[!Quip? &thread=`blog-post-[[*id]]` &limit=`5` &pageCls=`pageLink`]]
 ```
 
 ## See Also
 
-1. [Quip.Quip](extras/quip/quip.quip)
-   1. [Quip.Quip.tplComment](extras/quip/quip.quip/quip.quip.tplcomment)
-   2. [Quip.Quip.tplCommentOptions](extras/quip/quip.quip/quip.quip.tplcommentoptions)
-   3. [Quip.Quip.tplComments](extras/quip/quip.quip/quip.quip.tplcomments)
-   4. [Quip.Quip.tplReport](extras/quip/quip.quip/quip.quip.tplreport)
+1. [Quip.Quip](extras/quip/quip)
+    1. [Quip.Quip.tplComment](extras/quip/quip/tplcomment)
+    2. [Quip.Quip.tplCommentOptions](extras/quip/quip/tplcommentoptions)
+    3. [Quip.Quip.tplComments](extras/quip/quip/tplcomments)
+    4. [Quip.Quip.tplReport](extras/quip/quip/tplreport)
 2. [Quip.QuipCount](extras/quip/quip.quipcount)
 3. [Quip.QuipLatestComments](extras/quip/quip.quiplatestcomments)
 4. [Quip.QuipReply](extras/quip/quip.quipreply)
-   1. [Quip.QuipReply.tplAddComment](extras/quip/quip.quipreply/quip.quipreply.tpladdcomment)
-   2. [Quip.QuipReply.tplLoginToComment](extras/quip/quip.quipreply/quip.quipreply.tpllogintocomment)
-   3. [Quip.QuipReply.tplPreview](extras/quip/quip.quipreply/quip.quipreply.tplpreview)
+    1. [Quip.QuipReply.tplAddComment](extras/quip/quip.quipreply/tpladdcomment)
+    2. [Quip.QuipReply.tplLoginToComment](extras/quip/quip.quipreply/tpllogintocomment)
+    3. [Quip.QuipReply.tplPreview](extras/quip/quip.quipreply/tplpreview)
 5. [Quip.QuipRss](extras/quip/quip.quiprss)
 6. [Quip.Roadmap](extras/quip/quip.roadmap)
 7. [Quip.Upgrading](extras/quip/quip.upgrading)
-   1. [Quip.Upgrading to 1.0.1](extras/quip/quip.upgrading/quip.upgrading-to-1.0.1)
+    1. [Quip.Upgrading to 1.0.1](extras/quip/quip.upgrading/upgrading-to-1.0.1)

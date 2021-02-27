@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ontemp
 
 Loaded right after successful saving a template variable to database.
 
-Service: 1 - Parser Service Events
-Group: Template Variables
+- Service: 1 - Parser Service Events
+- Group: Template Variables
 
 ## Event Parameters
 
@@ -27,6 +27,27 @@ Group: Template Variables
 | File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
 | Class          | modTemplateVar                                                                                                                         |
 | Method         | public function save($cacheFlag = null)                                                                                                |
+
+## Example
+
+Such a plugin will display the data of the saved TV in the "Error log":
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnTemplateVarSave':
+        //array tv, with all parameters
+        print_r($templateVar->toArray());
+        //checking for updating or creating the tv itself
+        if ($mode == modSystemEvent::MODE_NEW){
+            echo 'New TV has been saved';
+        } elseif ($mode == modSystemEvent::MODE_UPD){
+            echo 'Old TV was kept';
+        }
+        break;
+}
+```
 
 ## See Also
 

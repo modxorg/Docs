@@ -10,7 +10,7 @@ Sets a SQL alias for the table represented by the main class.
 
 ## Syntax
 
-API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::setClassAlias()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::setClassAlias())
+API Docs: [xPDOQuery::setClassAlias()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::setClassAlias())
 
 ``` php
 xPDOQuery setClassAlias ([string $alias = ''])

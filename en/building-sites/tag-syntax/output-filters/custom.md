@@ -109,21 +109,6 @@ This parseTags takes input as a comma delimited list, and makes all individual t
 ``` php
 <?php
 /*
- * Based on phx:parseLinks
- */
-$t = $input;
-$t = ereg_replace("[a-zA-Z]+://([.]?[a-zA-Z0-9_/-])*", "<a href=\"\\0\">\\0</a>", $t);
-$t = ereg_replace("(^| |\n)(www([.]?[a-zA-Z0-9_/-])*)", "\\1<a href=\"http://\\2\">\\2</a>", $t);
-return $t;
-```
-
-### parseTags
-
-This parseTags takes input as a comma delimited list, and makes all individual tags a link to resource 9 with tag=tagname query parameter appended to the link.
-
-``` php
-<?php
-/*
  * parseTags output filter
  * by Mark Hamstra (http://www.markhamstra.nl)
  * free to use / modify / distribute to your will

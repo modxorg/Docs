@@ -3,10 +3,15 @@ title: "mail_smtp_prefix"
 translation: "building-sites/settings/mail_smtp_prefix"
 ---
 
-## mail\_smtp\_prefix
+## mail_smtp_prefix
 
-**Имя**: SMTP Connection Prefix
-**Тип**: String
-**По умолчанию**:
+-   **Имя**: SMTP префикс для соединений
+-   **Тип**: String
+-   **По умолчанию**:
 
-Устанавливает префикс подключения. Варианты "", "ssl" или "tls".
+Устанавливает префикс подключения.
+Варианты:
+
+-   "",
+-   "ssl"
+-   "tls".

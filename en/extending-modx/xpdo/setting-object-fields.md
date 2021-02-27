@@ -39,7 +39,7 @@ $myBox->set('dimension','','setDim');
 
 ### fromArray
 
-Another way Objects can be set in xPDO is through the fromArray() method:
+Another way Objects can be set in xPDO is through the `fromArray()` method:
 
 ``` php
 $myBox->fromArray(array(
@@ -48,7 +48,7 @@ $myBox->fromArray(array(
 ));
 ```
 
-xPDOObject::fromArray takes 5 parameters in total. We've seen the first in use. The second is $keyPrefix, which when set, will strip the passed value from the array you are passing in the first parameter. A good example of this is when passing $\_POST vars to an Object:
+`xPDOObject::fromArray` takes 5 parameters in total. We've seen the first in use. The second is `$keyPrefix`, which when set, will strip the passed value from the array you are passing in the first parameter. A good example of this is when passing `$_POST` vars to an Object:
 
 ``` php
 // Let us say that:
@@ -61,7 +61,7 @@ $myBox->fromArray($_POST,'test_');
 echo $myBox->get('w'); // prints '12'
 ```
 
-The third parameter, $setPrimaryKeys, is a boolean value that defaults to false. When set, it will allow Primary Keys in the object to be set. This is useful for creating new objects that you want to specify the ID of:
+The third parameter, `$setPrimaryKeys`, is a boolean value that defaults to false. When set, it will allow Primary Keys in the object to be set. This is useful for creating new objects that you want to specify the ID of:
 
 ``` php
 $myBox = $xpdo->newObject('Box');
@@ -74,9 +74,9 @@ $myBox->fromArray(array(
 echo $myBox->get('id'); // prints '23'
 ```
 
-The fourth parameter, $rawValues, is set to false by default. If true, the object will set its values without calling set() internally. What does this mean? Well, it means field type validation wont happen; nor will that field be set as 'dirty'.
+The fourth parameter, `$rawValues`, is set to false by default. If true, the object will set its values without calling set() internally. What does this mean? Well, it means field type validation wont happen; nor will that field be set as 'dirty'.
 
-The fifth parameter, $adhocValues, when true, will automatically set any passed values as object vars, regardless of whether or not they are actually fields in the object. For example:
+The fifth parameter, `$adhocValues`, when true, will automatically set any passed values as object vars, regardless of whether or not they are actually fields in the object. For example:
 
 ``` php
 $myBox->fromArray(array(
@@ -85,7 +85,7 @@ $myBox->fromArray(array(
 ),'',false,false,true);
 ```
 
-The last field can be overridden by passing xPDO::OPT\_HYDRATE\_ADHOC\_FIELDS as 'true' into the xPDO config. If that setting is true, the 5th parameter will always be true.
+The last field can be overridden by passing `xPDO::OPT_HYDRATE_ADHOC_FIELDS` as 'true' into the xPDO config. If that setting is true, the 5th parameter will always be true.
 
 ### save
 

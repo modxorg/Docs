@@ -23,7 +23,7 @@ MIGX stands for **M**ulti**I**tems**G**ridtv for MOD**X**.
 
 ## Download
 
-MIGX can be downloaded from within the Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <http://modx.com/extras/package/migx>
+MIGX can be downloaded from within the Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <https://modx.com/extras/package/migx>
 
 ## Installation Instructions
 

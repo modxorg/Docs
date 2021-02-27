@@ -8,7 +8,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onprop
 
 Fires right after a Property Set is saved.
 
-Service: 1 - Parser Service Events
+- Service: 1 - Parser Service Events
 
 ## Event Parameters
 

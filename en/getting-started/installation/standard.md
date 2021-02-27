@@ -113,7 +113,7 @@ If you get a blank screen or cannot proceed after clicking 'Install', verify the
 1. Make sure the directories "/core/packages","/core/cache", "/core/import", and "/core/export" are writable.
 2. Make sure your php.ini setting sets `memory_limit` to 128M, and `max_execution_time` to 120
 3. Create a blank file "/core/config/config.inc.php" and make it writable. **DO NOT COPY config.inc.tpl! Just make it a blank file!**
-4. Post a message in the [Revolution forum](http://modxcms.com/forums/index.php/board,280.0.html) regarding your issue. State your server setup and installation info, and we'll try and help you find a solution.
+4. Post a message in the [Revolution forum](https://forums.modx.com/index.php/board,280.0.html) regarding your issue. State your server setup and installation info, and we'll try and help you find a solution.
 
 ## Post-Installation Summary
 

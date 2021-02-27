@@ -7,10 +7,11 @@ _old_uri: "2.x/getting-started/server-requirements"
 
 MODX will run fine on most shared/cloud hosting, as well as VPS and dedicated boxes. MODX is written in PHP, typically uses a MySQL database, and needs a webserver like Apache or nginx to serve web requests. 
 
-| Component | Supported | Recommended |
-| --- | --- | --- |
-| PHP | 7.1-7.4 | 7.3 |
-| Database | MySQL 5.5+ | MariaDB 10.1 or MySQL 5.7 |
+| Component | Minimum            | Recommended                                     |
+| --------- | ------------------ | ----------------------------------------------- |
+| PHP       | 7.1                | 7.3 or higher                                      |
+| Database  | Latest MySQL 5.6.x | MariaDB 10.1.x or Percona Server 5.6.x or above |
+| Webserver | *                  | NGINX 1.8 or Apache 2.4                         |
 
 ## PHP 
 

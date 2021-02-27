@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires before a plugin is deleted in the manager.
 
-Service: 1 - Parser Service Events
-Group: Plugins
+- Service: 1 - Parser Service Events
+- Group: Plugins
 
 ## Event Parameters
 
@@ -17,6 +17,23 @@ Group: Plugins
 | ------ | ------------------------------------ |
 | plugin | A reference to the modPlugin object. |
 | id     | The ID of the Plugin.                |
+
+
+## Example
+
+Such a plugin displays a message stating that the plugin cannot be removed:
+
+``` php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforePluginFormDelete':
+        // if plugin id = 18, display a message
+        if ($id == 18){
+            $modx->event->output("What are you doing !? Plugin cannot be deleted ".$plugin->get('name'));
+        }
+        break;
+}
 
 ## See Also
 

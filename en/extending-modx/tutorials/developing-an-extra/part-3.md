@@ -23,7 +23,7 @@ For simple Extras that don't have a CMP, we could just use [PackMan](/extras/pac
 
 ## Setting Up Our Build Directory
 
-This is what our \_build directory will look like when we're through. We're already familiar with the `build.config.php` and `build.schema.php` files from Part I. For now, let's just explain a few things about it:
+This is what our `_build` directory will look like when we're through. We're already familiar with the `build.config.php` and `build.schema.php` files from Part I. For now, let's just explain a few things about it:
 
 ![](/download/attachments/33947702/doodles-build-dir1.png)
 
@@ -34,7 +34,7 @@ This is what our \_build directory will look like when we're through. We're alre
 
 ### The Build Script
 
-Let's go ahead and create a file at /www/doodles/\_build/build.transport.php, and fill it with this:
+Let's go ahead and create a file at `/www/doodles/_build/build.transport.php`, and fill it with this:
 
 ```php
 <?php
@@ -160,7 +160,7 @@ Then we get into 2 interesting methods: `createPackage` and `registerNamespace`.
 
 > \$modx->createPackage(key,version,release)
 
-Here's where the name for our TP gets created. We'll want to pass the name of our Extra (in lower case with no dots or hyphens!) in the first parameter. Then we'll want to pass a version and a release number. We chose '1.0' and 'beta4' back when we did our defines (remember that?). Now, modTransportPackage has an assistance method to automatically package in our Namespace for us:
+Here's where the name for our TP gets created. We'll want to pass the name of our Extra (in lower case with no dots or hyphens!) in the first parameter. Then we'll want to pass a version and a release number. We chose '1.0' and 'beta4' back when we did our defines (remember that?). Now, `modTransportPackage` has an assistance method to automatically package in our Namespace for us:
 
 > \$builder->registerNamespace(namespace_name,autoincludes,packageNamespace,namespacePath)
 
@@ -496,7 +496,7 @@ return true;
 
 Great. So here we're doing a few things. Note the initial check for `$object->xpdo`. `$object` is our Menu, since we attached this to the Menu's vehicle. Then we want to check for the xpdo var on it (which is also MODX). We then run into a switch statement, that checks a mysterious `PACKAGE_ACTION` const in the `$options` array. This little switch tells us to only run this code during **new** installs, or `ACTION_INSTALL`.
 
-Further in the switch, we are assigning `$modx` as a reference to `$object->xpdo`, for easier typing. Then we'll find our Doodles' model path via our friendly getOption calls, and then run the `addPackage` call to add our xpdo schema to the database (remember that from Part I?). Finally, we'll run `$modx->getManager()`, which gets an xPDOManager instance, and call `$manager->createObjectContainer('Doodle')` on it.
+Further in the switch, we are assigning `$modx` as a reference to `$object->xpdo`, for easier typing. Then we'll find our Doodles' model path via our friendly getOption calls, and then run the `addPackage` call to add our xpdo schema to the database (remember that from Part I?). Finally, we'll run `$modx->getManager()`, which gets an `xPDOManager` instance, and call `$manager->createObjectContainer('Doodle')` on it.
 
 This method tells MODX to run the SQL to create the database table for the Doodle class, which is what we want. And at the end of the resolver, we'll return true so that MODX knows everything went smoothly.
 
@@ -506,7 +506,7 @@ If you build the package, and install it now, it will create our database table.
 
 Let's get fancy. When installing packages in MODX, often you'll see a dialog with a license, readme, and changelog. We want that in our package! First off, let's add those files.
 
-Create a file in _/www/doodles/core/components/doodles/docs/changelog.txt_:
+Create a file in `/www/doodles/core/components/doodles/docs/changelog.txt`:
 
 ```php
 Changelog file for Doodles component.
@@ -520,7 +520,7 @@ Doodles 1.0
 - Initial commit
 ```
 
-Then create a license file (we'll let you put the content in) at _/www/doodles/core/components/doodles/docs/license.txt_.
+Then create a license file (we'll let you put the content in) at `/www/doodles/core/components/doodles/docs/license.txt`.
 
 Finally, create a readme.txt in the docs/ directory:
 
@@ -568,13 +568,13 @@ return $output;
 
 So, this looks familiar to a resolver, eh? That's because this little bit of code allows us to present 'Setup Options' to the user on installation. Right now we're just going to output a pretty message to tell people thanks for installing Doodles.
 
-Remember that `$options` array in our PHP resolver? If we were to put any form elements in this output, they'd be found in that array with the same key. (An input with name of 'test' would be in `$options['test']`). That means you could make a resolver that would process the form fields you put in the Setup Options script.
+Remember that `$options` array in our PHP resolver? If we were to put any form elements in this output, they'd be found in that array with the same key. (An input with name of 'test' would be in `$options['test']`)`. That means you could make a resolver that would process the form fields you put in the Setup Options script.
 
 That means that you could have a lot of neat little fields that do pre-installation options. That's a bit beyond the scope of this tutorial, but now that you know the basics, you can probably figure it out from there. (Also, plenty of existing Extras, such as [Quip](/extras/quip "Quip") do this, and you can [view their code](https://github.com/splittingred/Quip) to see how.
 
 ## Summary
 
-Now you can run your build.transport.php file, and you'll get a nice little doodles-1.0-beta4.zip file in your MODX install's _core/packages/_ directory. You can now either install that by uploading it to a MODX install's _core/packages/_ directory (but not the same one you just developed in!), or post it to [modx.com/extras/](http://modx.com/extras/) to be included in the official MODX Provider that hooks into [Package Management](extending-modx/transport-packages "Package Management"). Pretty neat?
+Now you can run your build.transport.php file, and you'll get a nice little doodles-1.0-beta4.zip file in your MODX install's _core/packages/_ directory. You can now either install that by uploading it to a MODX install's _core/packages/_ directory (but not the same one you just developed in!), or post it to [modx.com/extras/](https://modx.com/extras/) to be included in the official MODX Provider that hooks into [Package Management](extending-modx/transport-packages "Package Management"). Pretty neat?
 
 Let's recap. Over the 3 parts of this tutorial, we:
 

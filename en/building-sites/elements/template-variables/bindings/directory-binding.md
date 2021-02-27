@@ -34,7 +34,7 @@ Can you filter which files are selected? E.g. using \*.jpg? The following DOES N
 @DIRECTORY /list/*.jpg  # doesn't work!
 ```
 
-There are PHP code snippets out there that emulate this functionality. See the following forum thread: <http://modxcms.com/forums/index.php/topic,3124.0.html>
+There are PHP code snippets out there that emulate this functionality. See the following forum thread: <https://forums.modx.com/index.php/topic,3124.0.html>
 
 ## Security
 

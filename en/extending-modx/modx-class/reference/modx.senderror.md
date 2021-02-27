@@ -12,7 +12,7 @@ The parameter 'type' can be any field, which will load the template file in core
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::sendError()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendError())
+API Doc: [modX::sendError()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendError())
 
 ``` php
 void sendError ([string $type = ''], [array $options = array()])

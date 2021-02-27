@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbefo
 
 Fires before a chunk is deleted.
 
-Service: 1 - Parser Service Events
-Group: Chunks
+- Service: 1 - Parser Service Events
+- Group: Chunks
 
 ## Event Parameters
 
@@ -17,6 +17,22 @@ Group: Chunks
 | ----- | ----------------------------------- |
 | chunk | A reference to the modChunk object. |
 | id    | The ID of the Chunk.                |
+
+## Example
+
+Such a plugin will display a message stating that you cannot delete a chunk:
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforeChunkFormDelete':
+        if ($id == 69){
+            $modx->event->output("Chunk cannot be deleted ".$chunk->get('name'));
+        }
+        break;
+}
+```
 
 ## See Also
 

@@ -10,7 +10,7 @@ Add an AND condition to the WHERE clause.
 
 ## Syntax
 
-API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::andCondition()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::andCondition())
+API Docs: [xPDOQuery::andCondition()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::andCondition())
 
 ``` php
 void andCondition ( $conditions, [ $binding = null], [ $group = 0])

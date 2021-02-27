@@ -5,9 +5,9 @@ translation: "building-sites/settings/emailsender"
 
 ## emailsender
 
-**Имя**: Site Admin Email Address
-**Тип**: String
-**По умолчанию**: Установить при установке (см. Примечания ниже)
+-   **Имя**: Адрес электронной почты
+-   **Тип**: String
+-   **По умолчанию**: Установить при установке (см. Примечания ниже)
 
 Адрес электронной почты, используемый при отправке пользователям их имен пользователей и паролей.
 
@@ -15,4 +15,4 @@ translation: "building-sites/settings/emailsender"
 
 ### Посмотрите также
 
- [modMail](extending-modx/services/modmail) для отправки писем.
+[modMail](extending-modx/services/modmail) для отправки писем.

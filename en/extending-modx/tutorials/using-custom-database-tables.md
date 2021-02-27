@@ -10,7 +10,7 @@ So you're developing your custom component for MODX Revolution, and you've run i
 
 So let's say we want to create a custom component called "StoreFinder" that takes a zip code from a textfield and then looks up all the store locations with that zip code and returns them in a table. Currently we'll have one table for this: (note the prefix `modx_` - this is specific to your DB connection, done in Revolution setup.)
 
--   _modx_sfinder_stores_
+-   modx_sfinder_stores
 
 Our component will grab all the stores with the specified zip code. Our store table will have the following fields:
 
@@ -191,7 +191,7 @@ if (file_exists($f)) {
 return $o;
 ```
 
-This little helper code allows us to do our development in our own code editor of choice until we're ready to package and distribute our Component. Then we'll simply delete this 'StoreFinder' snippet from our MODX Revolution instance, and install our package. You can find more about building packages by going [here](http://modxcms.com/about/blog/shaun-mccormick/creating-3rd-party-component-build-script.html). If you don't want to build a transport package (we recommend doing so, it makes upgrades FAR easier!), you can simply just copy the files to their proper directories in the manager.
+This little helper code allows us to do our development in our own code editor of choice until we're ready to package and distribute our Component. Then we'll simply delete this 'StoreFinder' snippet from our MODX Revolution instance, and install our package. You can find more about building packages by going [here](https://modx.com/blog/creating-a-3rd-party-component-build-script). If you don't want to build a transport package (we recommend doing so, it makes upgrades FAR easier!), you can simply just copy the files to their proper directories in the manager.
 
 Okay, back to our snippet. Open up 'snippet.storefinder.php' in your editor, and add this code:
 
@@ -203,7 +203,7 @@ Okay, back to our snippet. Open up 'snippet.storefinder.php' in your editor, and
 $base_path = !empty($base_path) ? $base_path : $modx->getOption('core_path').'components/storefinder/';
 ```
 
-You'll see here that we're setting a `$base_path` variable if and only if it's not already set. Why? Well, this allows us to do development outside our target directory (like we're doing now). If no base*path is set, then we simply point it to where the component will be installed: \_core/components/storefinder/*
+You'll see here that we're setting a `$base_path` variable if and only if it's not already set. Why? Well, this allows us to do development outside our target directory (like we're doing now). If no base_path is set, then we simply point it to where the component will be installed: core/components/storefinder/
 
 Now on to the brunt of the code. You've got your snippet working, you're in an easy development environment, and now you're ready to get that model working. First off, add these lines:
 

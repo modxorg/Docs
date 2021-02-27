@@ -8,8 +8,8 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocf
 
 Fires after a Resource is saved in the manager via the editing form.
 
-Service: 1 - Parser Service Events
-Group: Documents
+- Service: 1 - Parser Service Events
+- Group: Documents
 
 **TVs are best Modified Here**
 If you need to modify TV values, it's best to modify them here and not during [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave").
@@ -72,6 +72,38 @@ switch ($modx->event->name) {
         break;
 }
 ```
+
+Such a plugin will display an array of the saved resource in the "Error log":
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnDocFormSave':
+        $modx->log(MODX_LOG_LEVEL_ERROR, print_r($resource->toArray(),true) );
+        break;
+}
+```
+
+Such a plugin will set the value of the TV price of the current resource equal to 128, in case of an error an entry will be added to the "Error log":
+
+```php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnDocFormSave':
+        //if the resource has a template=5
+        if ($resource->get('template') == 5) {  
+            // after saving the TV value price=128
+            if(!$resource->setTVValue('price', '128')) {
+                $modx->log(modX::LOG_LEVEL_ERROR, 'Having problems setting the TV value.');
+            }
+        }
+        break;
+}
+```
+
+It doesn't matter if the price field is filled in before saving or not. The plugin will write 128.
 
 **Saving Happens Automatically**
 No need to run the `$resource->save()` method as that happens automatically.

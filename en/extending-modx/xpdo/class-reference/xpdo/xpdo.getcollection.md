@@ -6,7 +6,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getcollection"
 
 ## xPDO::getCollection
 
-Retrieves a collection of xPDOObjects by the specified xPDOCriteria.
+Retrieves a collection of `xPDOObjects` by the specified `xPDOCriteria`.
 
 If none are found, returns an empty array.
 

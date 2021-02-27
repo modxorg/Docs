@@ -7,15 +7,15 @@ translation: "building-sites/elements/template-variables/bindings/chunk-binding"
 
 Привязка @CHUNK возвращает проанализированный контент любого указанного чанка, если @CHUNK используется в переменной шаблона (TV).
 
-Другими словами, если @CHUNK Hello - это значение телевизора с именем MyChunk, следующий тег в шаблоне или в поле Resource Content ресурса будет заменен содержимым блока Hello:
+Другими словами, если @CHUNK Hello - это значение TV с именем MyChunk, следующий тег в шаблоне или в поле Resource Content ресурса будет заменен содержимым блока Hello:
 
-``` php
+```php
 [[*MyChunk]]
 ```
 
 ## Синтаксис
 
-``` php
+```php
 @CHUNK chunk_name
 ```
 
@@ -25,11 +25,11 @@ translation: "building-sites/elements/template-variables/bindings/chunk-binding"
 
 ## Использование
 
-``` php
+```php
 @CHUNK MycontactForm
 ```
 
 ## Смотрите также
 
-- [Переменные шаблона](building-sites/elements/template-variables "Переменные шаблона")
-- [Привязки](building-sites/elements/template-variables/bindings "Привязки")
+-   [Переменные шаблона](building-sites/elements/template-variables "Переменные шаблона")
+-   [Привязки](building-sites/elements/template-variables/bindings "Привязки")

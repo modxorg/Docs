@@ -31,12 +31,12 @@ returns the following:
 ``` php
 name = MODX
 is_published = 1
-website = http://modx.com/
+website = https://modx.com/
 username = modxcms
 founded = November 2004
 company_overview = MODX is the Content Management System that gives developers, designers and end-users the creative freedom and power to build and maintain websites and online applications with ease. Lose the limitations. There’s no steep learning curve, no cumbersome template language, and no awkward or restrictive structures forced on your site. MODX gives you the freedom to work your way and get things done.
 products = MODX Evolution, MODX Revolution
-about = MODX CMS is the Content Management System, framework and platform. http://modx.com/ MODX Revolution http://modx.com/download/
+about = MODX CMS is the Content Management System, framework and platform. https://modx.com/ MODX Revolution https://modx.com/download/
 talking_about_count = 45
 category = Software
 id = 19110642979

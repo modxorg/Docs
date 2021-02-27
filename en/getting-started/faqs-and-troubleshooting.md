@@ -45,8 +45,8 @@ There are three kinds of MODX products at this point:
 
 Further reading:
 
-- "The Evolution of a Revolution" <http://modx.com/about/blog/the-evolution-of-a-revolution/>
-- "What are the basic differences between Evolution and Revolution?" <http://modx.com/revolution/product/faq/#q1>
+- "The Evolution of a Revolution" <https://modx.com/about/blog/the-evolution-of-a-revolution/>
+- "What are the basic differences between Evolution and Revolution?" <https://modx.com/revolution/product/faq/#q1>
 - There's a number of big topics on the forums as well discussing evo and revo which may be interesting if you're looking for more in-depth discussing of the differences. As Revolution has been over three years in development, do check out the date something was posted to be sure they are still relevant.
 
 ### 1.2. What different tags can I use? What is `[[*pagetitle]]`, `[[Wayfinder]]` etc?
@@ -59,7 +59,7 @@ Check out the [Tag Syntax](building-sites/tag-syntax "Tag Syntax") documentation
 
 You probably hid it at some point. There's a subtle arrow on the left side of the screen ([see this image](/download/attachments/36634926/subtlearrow.PNG)) that you can click to bring it back. In some cases you will need to refresh the page for the contents of the sidebar to load properly.
 
-### 2.2 How can I modify what resource fields are visible when creating or editing a [Resource](building-sites/resources "Resource")? Is there something like [ManagerManager](http://modx.com/extras/package/managermanager) for Revolution?
+### 2.2 How can I modify what resource fields are visible when creating or editing a [Resource](building-sites/resources "Resource")? Is there something like [ManagerManager](https://modx.com/extras/package/managermanager) for Revolution?
 
 You can use [Form Customization](building-sites/client-proofing/form-customization "Form Customization") (found under the Security menu) to change the fields. It doesn't offer all of the (Evolution) ManagerManager plugin but comes pretty far.
 

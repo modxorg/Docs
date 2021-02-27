@@ -24,7 +24,7 @@ AdvSearch was written by [Coroico](https://github.com/coroico) and first release
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/advsearch>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/advsearch>
 
 Before to run the first search with AdvSearch, you need to install the Zend Search library first. See installation chapter below.
 
@@ -53,7 +53,7 @@ A third snippet ("AdvSearchHelp") is used to display a help window for the prese
 
 - [AdvSearchForm](extras/advsearch/advsearch.advsearchform "AdvSearch.AdvSearchForm")
 - [AdvSearchHelp](extras/advsearch/advsearch.advsearchhelp "AdvSearch.AdvSearchHelp")
-- [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch")
+- [AdvSearch](extras/advsearch/advsearch "AdvSearch.AdvSearch")
 
 All the templates used by default to set up the form and display the results are provided as chunks. These chunks are installed through the package management.
 

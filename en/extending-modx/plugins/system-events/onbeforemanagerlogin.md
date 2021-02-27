@@ -16,8 +16,8 @@ $modx->event->output(true);
 $modx->event->_output = true;
 ```
 
-Service: 2 - Manager Access Events
-Group: None
+- Service: 2 - Manager Access Events
+- Group: None
 
 ## Event Parameters
 
@@ -37,6 +37,36 @@ Group: None
 2. _[OnUserNotFound](extending-modx/plugins/system-events/onusernotfound)_ - This event is executed only if the provided username is not found inside MODX database. The developer can provide it's own modUser object in the event output to continue the login process.
 3. _[OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication)_ || _[OnManagerAuthentication](extending-modx/plugins/system-events/onmanagerauthentication)_ - Inside this event the developer can check for parameters which will **override the default checking by password** and **allow** further logging in process. If one of the plugins executed from this event return true, the user is considered verified and logged in.
 4. _[OnWebLogin](extending-modx/plugins/system-events/onweblogin)_ || _[OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin)_ - This event is fired after the logging in process has finished and the user is considered logged in. It **doesn't change** the logging in process **behaviour**.
+
+## Examples of
+
+Such a plugin will display in the "Error log" who, with what password, and where he tried to enter:
+
+``` php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforeManagerLogin':
+        $modx->log(modX::LOG_LEVEL_ERROR, 'A user with a name tried to log in '.$username.' and password '.$password.print_r($attributes));
+        break;
+}
+```
+                
+This will make the user inactive when he tries to log in:
+
+``` php
+<?php
+$eventName = $modx->event->name;
+switch($eventName) {
+    case 'OnBeforeManagerLogin':
+        if ($username == 'manager'){
+            $user = $modx->getObject('modUser', array('username' => $username));
+            $user->set('active', '0');
+            $user->save();
+        }
+        break;
+}
+```         
 
 ## See Also
 

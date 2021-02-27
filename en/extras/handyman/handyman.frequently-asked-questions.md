@@ -68,4 +68,4 @@ In 1.0.0 we support 2.0.8, 2.1.x and currently to a limited extend 2.2.
 
 ## Does HandyMan support logging in using a captcha?
 
-At this point HandyMan does NOT support logging into when the [Captcha plugin](http://modx.com/extras/package/captcha) is enabled. It [has been filed in the bug tracker](http://tracker.modx.com/issues/6620) and may come in a future release..
+At this point HandyMan does NOT support logging into when the [Captcha plugin](https://modx.com/extras/package/captcha) is enabled. It [has been filed in the bug tracker](http://tracker.modx.com/issues/6620) and may come in a future release..

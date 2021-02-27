@@ -10,7 +10,7 @@ Attempt to load the response handler class, if not already loaded. Defaults to m
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::getResponse()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getResponse())
+API Doc: [modX::getResponse()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getResponse())
 
 ``` php
 boolean getResponse ([$string $class = 'modResponse'], [$path $path = ''])

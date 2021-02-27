@@ -3,10 +3,10 @@ title: "manager_time_format"
 translation: "building-sites/settings/manager_time_format"
 ---
 
-## manager\_time\_format
+## manager_time_format
 
-**Имя**: Manager Time Format
-**Тип**: String
-**По умолчанию**: g:i a
+-   **Имя**: Формат времени в панели управления
+-   **Тип**: String
+-   **По умолчанию**: `g:i a`
 
-Строка формата в формате PHP date() для настроек времени, представленных в менеджере.
+Строка формата в формате PHP `date()` для настроек времени, представленных в менеджере.

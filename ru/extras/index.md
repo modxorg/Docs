@@ -31,12 +31,12 @@ translation: "extras"
 
 - [pdoTools](https://docs.modx.pro/en/components/pdotools) представляет собой набор полезных сниппетов, который призван стать современной (в основном) заменой старых (но все еще поддерживаемых) дополнений:
     - [pdoResources](https://docs.modx.pro/en/components/pdotools/snippets/pdoresources) является эквивалентом [getResources](extras/getresources), который может быть использован для перечисления ресурсов. Их также можно использовать для подачи RSS или создания Sitemap.
-    - [pdoMenu](https://docs.modx.pro/en/components/pdotools/snippets/pdomenu) является эквивалентом [Wayfinder](extras/wayfinder), который используется для создания (многоуровневых) меню из вашего дерева ресурсов.
-    - [pdoPage](https://docs.modx.pro/en/components/pdotools/snippets/pdopage) является эквивалентом [getPage](extras/getpage), который обертывает сниппеты, такие как getResources / pdoResources с возможностями разбиения на страницы
-    - [pdoCrumbs](https://docs.modx.pro/en/components/pdotools/snippets/pdocrumbs) может быть использован аналогично[Breadcrumbs](extras/breadcrumbs) создать хлебные крошки текущего ресурса.
-- [getResourceField](extras/getresourcefield), [pdoField](https://docs.modx.pro/en/components/pdotools/snippets/pdofield) или [fastField](extras/fastfield) для получения одного поля ресурса.
-- [AdvSearch](extras/advsearch) или [mSearch2](https://en.modstore.pro/packages/ecommerce/msearch2) (премиум дополнение от modstore) добавляет функцию поиска на ваш сайт
-- [Collections](extras/collections) используется для большого количества ресурсов, таких как блоги или списки продуктов, и будет перечислять дочерние ресурсы в сетке вместо дерева
+    - [pdoMenu](https://docs.modx.pro/en/components/pdotools/snippets/pdomenu) является эквивалентом [Wayfinder](en/extras/wayfinder), который используется для создания (многоуровневых) меню из вашего дерева ресурсов.
+    - [pdoPage](https://docs.modx.pro/en/components/pdotools/snippets/pdopage) является эквивалентом [getPage](en/extras/getpage), который обертывает сниппеты, такие как getResources / pdoResources с возможностями разбиения на страницы
+    - [pdoCrumbs](https://docs.modx.pro/en/components/pdotools/snippets/pdocrumbs) может быть использован аналогично [Breadcrumbs](en/extras/breadcrumbs) создать хлебные крошки текущего ресурса.
+- [getResourceField](en/extras/getresourcefield), [pdoField](https://docs.modx.pro/en/components/pdotools/snippets/pdofield) или [fastField](en/extras/fastfield) для получения одного поля ресурса.
+- [AdvSearch](en/extras/advsearch) или [mSearch2](https://en.modstore.pro/packages/ecommerce/msearch2) (премиум дополнение от modstore) добавляет функцию поиска на ваш сайт
+- [Collections](en/extras/collections) используется для большого количества ресурсов, таких как блоги или списки продуктов, и будет перечислять дочерние ресурсы в сетке вместо дерева
 - [NewsPublisher](https://bobsguides.com/newspublisher-tutorial.html) позволяет пользователям создавать ресурсы в front-end без необходимости доступа к MODX Manager (включая редактирование текста и браузер файлов/изображений).
 
 ### Редактирование кода/текста
@@ -49,38 +49,38 @@ translation: "extras"
 
 ### Медиа
 
-- [Gallery](extras/gallery) может быть использована для добавления альбомов изображений на ваш сайт
-- [MoreGallery](https://www.modmore.com/moregallery/) (премиум дополнение от Modmore)для управления галереями изображений и видео (YouTube / Vimeo), реализованными как специальный тип ресурса
+- [Gallery](en/extras/gallery) может быть использована для добавления альбомов изображений на ваш сайт
+- [MoreGallery](https://www.modmore.com/moregallery/) (премиум дополнение от Modmore) для управления галереями изображений и видео (YouTube / Vimeo), реализованными как специальный тип ресурса
 
 ### Формы
 
-- [FormIt](extras/formit) является стандартом в обработке форм
+- [FormIt](en/extras/formit) является стандартом в обработке форм
 - Formalicious ((Премиум дополнение от [modmore](https://www.modmore.com/formalicious/) и [modstore](https://en.modstore.pro/packages/users/formalicious))это конструктор форм на основе FormIt
 - [SPForm](https://bobsguides.com/spform-tutorial.html) простая, защищенная от спама контактная форма
 
 ### Мультисайтовый, многоязычный, мультидоменный, контексты
 
-- [xRouting](extras/xrouting) это гибкий контекстный маршрутизатор, который поддерживает (суб) домены и каталоги с минимальной конфигурацией
+- [xRouting](en/extras/xrouting) это гибкий контекстный маршрутизатор, который поддерживает (суб) домены и каталоги с минимальной конфигурацией
 - [LangRouter](extras/langrouter) это контекстный маршрутизатор, который выбирает контекст на основе языка посетителей
-- [Babel](extras/babel) используется для соединения переводов в разных контекстах
+- [Babel](en/extras/babel) используется для соединения переводов в разных контекстах
 
 ### Электронная коммерция
 
-- [MiniShop2](https://modstore.pro/packages/ecommerce/minishop2) представляет собой мощное решение для электронной коммерции с открытым исходным кодом, со многими (платными и бесплатными) расширениями, доступными преимущественно из modstore
+- [MiniShop2](https://modstore.pro/packages/ecommerce/minishop2) представляет собой мощное решение для электронной коммерции с открытым исходным кодом, со многими (платными и бесплатными) расширениями, доступными преимущественно из [Modstore](https://modstore.pro)
 - [Commerce](https://www.modmore.com/commerce/) это мощное решение для электронной коммерции премиум-класса от modmore
 - [SimpleCart](https://www.modmore.com/simplecart/) представляет собой более простое решение для электронной коммерции премиум-класса, изначально разработанное OostDesign и доступное в настоящее время от modmore
 
 ### Пользователи
 
-- [Login](extras/login) представляет собой набор инструментов, которые помогут вам интегрировать функциональность интерфейсного пользователя, включая вход в систему и профили.
-- [HybridAuth](extras/hybridauth) может использоваться для входа пользователей через социальные сети
-- [Personalize](extras/personalize) может отображать разные чанки в зависимости от того, вошел ли пользователь в систему или нет
+- [Login](en/extras/login) представляет собой набор инструментов, которые помогут вам интегрировать функциональность интерфейсного пользователя, включая вход в систему и профили.
+- [HybridAuth](en/extras/hybridauth) может использоваться для входа пользователей через социальные сети
+- [Personalize](en/extras/personalize) может отображать разные чанки в зависимости от того, вошел ли пользователь в систему или нет
 
 ### Ведение блога
 
-- [Collections](extras/collections) перечислить дочерние ресурсы в сетке в диспетчере (а не в дереве ресурсов)
-- [Quip](extras/quip) и [Tickets](https://docs.modx.pro/en/components/tickets) для добавления функциональности комментирования
-- [Tagger](extras/tagger) для добавления тегов, которые вы можете фильтровать и искать посты
+- [Collections](en/extras/collections) перечислить дочерние ресурсы в сетке в диспетчере (а не в дереве ресурсов)
+- [Quip](en/extras/quip) и [Tickets](https://docs.modx.pro/en/components/tickets) для добавления функциональности комментирования
+- [Tagger](en/extras/tagger) для добавления тегов, которые вы можете фильтровать и искать посты
 
 ### Управление версиями и рабочий процесс
 
@@ -107,6 +107,6 @@ translation: "extras"
 
 Перейдите на страницу [https://modx.com/extras/](https://modx.com/extras/), войдите в свою учетную запись MODX (или создайте ее), затем нажмите кнопку внизу, чтобы «Отправить дополнение».
 
-Там вы можете загрузить MODX [транспортный пакет](extending-modx/transport-packages "Транспортный пакет"). Это специальный вид zip-файла, который гарантирует, что ваше дополнение и все его компоненты правильно установлены в целевой системе. Чтобы создать его, вам нужно создать [скрипт сборки](http://rtfm.modx.com/display/revolution20/Creating+a+3rd+Party+Component+Build+Script "Creating a 3rd Party Component Build Script")
+Там вы можете загрузить MODX [транспортный пакет](en/extending-modx/transport-packages "Транспортный пакет"). Это специальный вид zip-файла, который гарантирует, что ваше дополнение и все его компоненты правильно установлены в целевой системе. Чтобы создать его, вам нужно создать [скрипт сборки](http://rtfm.modx.com/display/revolution20/Creating+a+3rd+Party+Component+Build+Script "Creating a 3rd Party Component Build Script")
 
 Все дополнения, размещенные на MODX.com, проходят базовый обзор; обработка вашего заявления может занять несколько дней.

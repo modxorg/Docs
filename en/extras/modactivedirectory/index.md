@@ -16,7 +16,7 @@ modActiveDirectory is a [Microsoft ActiveDirectory](http://en.wikipedia.org/wiki
 
 ## Installation
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modxcms.com/extras/package/711>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/modactivedirectory>
 
 You will need to ensure the manager/controllers/security/login.php file is writable by PHP, if it is not already, before installing. modActiveDirectory patches a bug in that file that is in Revo 2.0.0-pl.
 

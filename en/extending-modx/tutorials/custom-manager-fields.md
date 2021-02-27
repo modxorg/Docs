@@ -12,7 +12,7 @@ We want to add a field called 'Home' that puts an address field into the manager
 
 To do so, we'd create a [Plugin](extending-modx/plugins "Plugins") and associate it to the **OnDocFormRender** and **OnDocFormSave** events. Our code would look like this:
 
-``` php
+```php
 <?php
 /**
  * Register a form field to forms

@@ -25,6 +25,8 @@ The only thing we need to add to the basic call here is a new **hook**: we've ad
 ]]
 ```
 
+Note that the order in which **customhook** appears in the `&hooks` parameter is important. Hooks are executed in the order they are listed. 
+
 ## customhook Snippet
 
 The name of the hook corresponds to the name of a Snippet. So we create a Snippet named **customhook**. It's useful when writing a custom hook to do some testing first, to make sure it is firing. Since the custom hook is only supposed to _return_ either a true or false value, it's not easy to print out debugging information. Instead, we can write something to the MODX log using the [$modx->log()](http://rtfm.modx.com/display/xPDO20/xPDO.log) function.
@@ -67,6 +69,8 @@ Once you have saved this, you can update your **MyEmailChunk** chunk to include 
 
 Date Submitted: [[+datestamp_submitted]]<br/>
 ```
+
+For this to work, the `customhook` hook must be listed **before** `email` in the &hooks parameter in your FormIt call. The order in which snippets appear in the &hooks parameter determines the order of execution. If the `email` hook would be executed before the custom hook, then the `datestamp_submitted` placeholder in the chunk would stay empty.
 
 ### Reading Values
 

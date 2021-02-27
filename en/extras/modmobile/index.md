@@ -13,7 +13,7 @@ modMobile is a plugin that changes your template when a mobile device visits you
 | Version                                              | Release date  | Contributors   | Remarks / highlights                  |
 | ---------------------------------------------------- | ------------- | -------------- | ------------------------------------- |
 | 1.0 pl                                               | Jan 5th, 2012 | Josh Gulledge  | Added Snippet and refactored the code |
-| [0.1.0 alpha](http://modx.com/extras/package/moddef) | Mar 03, 2011  | Jeroen Kenters | Initial release.                      |
+| [0.1.0 alpha](https://modx.com/extras/package/moddef) | Mar 03, 2011  | Jeroen Kenters | Initial release.                      |
 
 ### Requirements
 

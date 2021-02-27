@@ -3,10 +3,10 @@ title: "server_protocol"
 translation: "building-sites/settings/server_protocol"
 ---
 
-## server\_protocol
+## server_protocol
 
-**Имя**: Server Protocol
-**Тип**: String
-**По умолчанию**: http
+-   **Имя**: Тип сервера
+-   **Тип**: String
+-   **По умолчанию**: http
 
-Если ваш сайт находится на обычном http или защищенном https соединении.
+Если ваш сайт использует защищенное https соединение, укажите это.

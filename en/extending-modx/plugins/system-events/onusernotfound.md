@@ -10,8 +10,8 @@ Fires when a user is not found during login.
 
 Can be used to provide external authentication by returning an array, where one of the indexes in the array is an instance of (or extending) a modUser object.
 
-Service: 6 - User Defined Events
-Group: modUser
+- Service: 6 - User Defined Events
+- Group: modUser
 
 ## Event Parameters
 

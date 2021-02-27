@@ -45,7 +45,7 @@ There are hundreds if not thousands of MODX sites out there that have been corru
 
 One of the things that distinguishes MODX is that its view layer is clean (or it should be anyway). Implementing complex HTML and CSS is a breeze in MODX. Compare this to WordPress, Drupal, or Joomla: bids on eLance say it all. It is a lot more work to integrate templates using those other systems _because they all put logic into their view layers_. When you do that, you are defeating the entire purpose of the MODX MVC architecture.
 
-If you really do need to use them, here is [an excellent article](http://modx.com/blog/2012/09/14/tags-as-the-result-or-how-conditionals-are-like-mosquitoes/) describing how to use Output Modifiers as conditionals with a minimum of overhead.
+If you really do need to use them, here is [an excellent article](https://modx.com/blog/2012/09/14/tags-as-the-result-or-how-conditionals-are-like-mosquitoes/) describing how to use Output Modifiers as conditionals with a minimum of overhead.
 
 ## The Right Way to Do It
 

@@ -10,7 +10,7 @@ Checks for locking on a page. A page is "locked" if another user is already view
 
 ## Syntax
 
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modx.class.html#%5CmodX::checkForLocks()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::checkForLocks())
+API Doc: [modX::checkForLocks()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::checkForLocks())
 
 ``` php
 void checkForLocks (integer $id, string $action, string $type)

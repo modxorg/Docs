@@ -16,36 +16,36 @@ First off, you'll want to have a place to show your results
 
 ``` php
 [[!SimpleSearch?
-    &toPlaceholder=`sisea.results`
+    &toPlaceholder=`simplesearch.results`
     &perPage=`10`
     &postHooks=`PeopleFacetHook`
     &facetLimit=`5`
 ]]
 
 <h2>Search Results</h2>
-[[+sisea.results]]
+[[+simplesearch.results]]
 
 <br />
-<h2>People Results ([[+sisea.people.total]])</h2>
-<ol>[[+sisea.people.results]]</ol>
+<h2>People Results ([[+simplesearch.people.total]])</h2>
+<ol>[[+simplesearch.people.results]]</ol>
 
-<a href="[[~123]]?facet=people&search=[[!+sisea.query]]">Get more Peoples...</a>
+<a href="[[~123]]?facet=people&search=[[!+simplesearch.query]]">Get more Peoples...</a>
 ```
 
-Note we have the standard 'sisea.results' placeholder, but we've also added a 'sisea.people.results' placeholder. This will have the top results from our postHook's search in it. The 'people' in between the placeholder name is the name of our custom facet. We only want to grab the top 5 results out of our custom facet search, so we used facetLimit to set it to 5.
+Note we have the standard 'simplesearch.results' placeholder, but we've also added a 'simplesearch.people.results' placeholder. This will have the top results from our postHook's search in it. The 'people' in between the placeholder name is the name of our custom facet. We only want to grab the top 5 results out of our custom facet search, so we used facetLimit to set it to 5.
 
 Then at the bottom, we'll have a page that links to another page (ID 123) that will let us fine-grain our search results, showing only People results, and showing 20 at a time:
 
 ``` php
 [[!SimpleSearch?
-    &toPlaceholder=`sisea.results`
+    &toPlaceholder=`simplesearch.results`
     &perPage=`20`
     &postHooks=`PeopleFacetHook`
     &facetLimit=`5`
 ]]
 
 <h2>Search Results</h2>
-[[+sisea.results]]
+[[+simplesearch.results]]
 ```
 
 ## Setting up the PostHook
@@ -105,7 +105,7 @@ Let's say we wanted a separate chunk template for our "people" results, rather t
 
 ``` php
 [[!SimpleSearch?
-    &toPlaceholder=`sisea.results`
+    &toPlaceholder=`simplesearch.results`
     &perPage=`20`
     &postHooks=`PeopleFacetHook`
     &tplpeople=`OurPeopleChunk`
@@ -113,10 +113,10 @@ Let's say we wanted a separate chunk template for our "people" results, rather t
 ]]
 
 <h2>Search Results</h2>
-[[+sisea.results]]
+[[+simplesearch.results]]
 
 <h2>People</h2>
-[[+sisea.people.results]]
+[[+simplesearch.people.results]]
 ```
 
 It will default to the standard &tpl if no facet-specific tpl is specified.

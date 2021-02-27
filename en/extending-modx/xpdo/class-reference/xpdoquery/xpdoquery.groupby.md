@@ -10,7 +10,7 @@ Add a GROUP BY clause to the query.
 
 ## Syntax
 
-API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoquery.class.html#\\xPDOQuery::groupby()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::groupby())
+API Docs: [xPDOQuery::groupby()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::groupby())
 
 ``` php
 xPDOQuery groupby (string $column, [string $direction = ''])

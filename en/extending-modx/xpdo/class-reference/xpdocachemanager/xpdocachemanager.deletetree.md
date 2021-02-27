@@ -10,11 +10,11 @@ Recursively deletes a directory tree of files.
 
 The options array has the following parameters available:
 
-- **deleteTop** - If true, will delete the top directory that is specified. Defaults to false.
-- **skipDirs** - If true, will not delete the directories; just the files. Defaults to false.
-- **extensions** - An array of file extensions to filter by - will only delete files with those extensions. Set to null or false to delete all files.
-- **delete\_exclude\_items** - An array of names of files to skip.
-- **delete\_exclude\_patterns** - An array or string of patterns to exclude by.
+- `deleteTop` - If true, will delete the top directory that is specified. Defaults to false.
+- `skipDirs` - If true, will not delete the directories; just the files. Defaults to false.
+- `extensions` - An array of file extensions to filter by - will only delete files with those extensions. Set to null or false to delete all files.
+- `delete_exclude_items` - An array of names of files to skip.
+- `delete_exclude_patterns` - An array or string of patterns to exclude by.
 
 ## Syntax
 
@@ -30,7 +30,7 @@ boolean deleteTree (string $dirname, [array $options = array(
 
 ## Example
 
-Delete the /modx/assets/videos/ directory (assuming the constant MODX\_ASSETS\_PATH is set) and all the files in it:
+Delete the `/modx/assets/videos/` directory (assuming the constant `MODX_ASSETS_PATH` is set) and all the files in it:
 
 ``` php
 $xpdo->cacheManager->deleteTree(MODX_ASSETS_PATH.'videos/',array(

@@ -3,12 +3,12 @@ title: "access_category_enabled"
 translation: "building-sites/settings/access_category_enabled"
 ---
 
-## access\_category\_enabled
+## access_category_enabled
 
-**Имя**: Check Category Access
-**Тип**: Да/Нет
-**По умолчанию**: Да
-**Доступно в**: Revolution 2.1+
+-   **Имя**: Проверять доступ к категориям
+-   **Тип**: Да/Нет
+-   **По умолчанию**: Да
+-   **Доступно в**: Revolution 2.1+
 
 Используйте это, чтобы включить или отключить проверки категорий ACL (для каждого контекста).
 

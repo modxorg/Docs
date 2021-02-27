@@ -10,7 +10,7 @@ Shopping cart and order management for MODX Revolution.
 
 1. Download and install
    1. You can download the extra in manager. To do this, go to "System" -> "Package Management". Press the button "Download extras". Then go "Extras" -> "E-commerce" and the line "Shopkeeper" click "Download", then "Finish" button.
-   2. If you downloaded the file from modx.com (<http://modx.com/extras/package/shopkeeper2>), load file "shopkeeper-2.0-\*.transport.zip" in folder /core/packages/ of your site. In manager go to "System" -> "Package Management" -> "Search Locally for Packages" -> "Download extras" -> "Yes".
+   2. If you downloaded the file from modx.com (<https://modx.com/extras/package/shopkeeper2>), load file "shopkeeper-2.0-\*.transport.zip" in folder /core/packages/ of your site. In manager go to "System" -> "Package Management" -> "Search Locally for Packages" -> "Download extras" -> "Yes".
 2. The table package will package "shopkeeper". Click "Install" button.
 3. Complete the installation.
 
@@ -33,7 +33,7 @@ Default properties of snippet edit is not recommended because these may change a
 
 In the admin panel in the configuration of the component (the "System" -> "System Settings" -> "shopkeeper") set "Default snippet Property Set". This set of parameters to be used when sending the order.
 
-Products are created as resources. For convenience, you can use the component **Group Edit** (<http://modx.com/extras/package/groupedit>).
+Products are created as resources. For convenience, you can use the component **Group Edit** (<https://modx.com/extras/package/groupedit>).
 
 ## Additional options products
 

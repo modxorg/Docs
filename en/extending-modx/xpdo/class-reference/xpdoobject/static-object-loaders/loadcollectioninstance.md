@@ -10,7 +10,7 @@ This function is responsible for loading an xPDOObject instance into a collectio
 
 ## Syntax
 
-API Doc: [http://api.modx.com/xpdo/om/xPDOObject.html#\_loadCollectionInstance](http://api.modx.com/xpdo/om/xPDOObject.html#_loadCollectionInstance)
+API Doc: [_loadCollectionInstance](http://api.modx.com/xpdo/om/xPDOObject.html#_loadCollectionInstance)
 
 ``` php
 static boolean _loadCollectionInstance(

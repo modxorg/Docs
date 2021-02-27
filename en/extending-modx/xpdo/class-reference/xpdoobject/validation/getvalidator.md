@@ -6,7 +6,7 @@ _old_uri: "2.x/class-reference/xpdoobject/validation/getvalidator"
 
 ## xPDOObject::getValidator()
 
-Get the xPDOValidator class configured for this instance.
+Get the `xPDOValidator` class configured for this instance.
 
 ## Syntax
 

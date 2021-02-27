@@ -44,7 +44,7 @@ The first thing we need to accomplish, is to create an extended user schema whic
 
 #### Simple Example
 
-The simplest example we could imagine is that we want to add a single extra attribute to the user data – so in the database, this would mean we have a separate table with 2 columns: one for the foreign key relation back to the **modx\_users** table, and the other column containing our new "extra" attribute, e.g. a _fackbook\_url_:
+The simplest example we could imagine is that we want to add a single extra attribute to the user data – so in the database, this would mean we have a separate table with 2 columns: one for the foreign key relation back to the **modx\_users** table, and the other column containing our new "extra" attribute, e.g. a _facebook\_url_:
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -245,7 +245,7 @@ return;
     $this->modx->getCount('extPhones');
 ```
 
- It is completely possible to have multiple extended modUser systems active at the same time. It would even be feasible to extend Jason Coward's rpx extension into a hybrid system utilizing the benefits of both systems. It is also completely possible to have multiple extended modUser applications running autonomously. This is simply done by following this process for each of your extensions, changing only the "class\_key" field to reflect the extended class belonging to each respective user.
+It is completely possible to have multiple extended modUser systems active at the same time. It would even be feasible to extend Jason Coward's rpx extension into a hybrid system utilizing the benefits of both systems. It is also completely possible to have multiple extended modUser applications running autonomously. This is simply done by following this process for each of your extensions, changing only the "class\_key" field to reflect the extended class belonging to each respective user.
 
 ## Suggested additional considerations
 

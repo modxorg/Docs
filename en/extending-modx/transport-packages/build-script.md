@@ -35,7 +35,7 @@ $tstart = $mtime;
 set_time_limit(0); /* makes sure our script doesnt timeout */
 ```
 
-Now let's define some basic paths. We can define these up top into a "sources" array to make them easier to reach later in the build script. Note how the 'source*core' and 'source_assets' directories do \_not* post-fix a foreslash onto their paths. This is required.
+Now let's define some basic paths. We can define these up top into a "sources" array to make them easier to reach later in the build script. Note how the 'source\_core' and 'source\_assets' directories do _not_ post-fix a foreslash onto their paths. This is required.
 
 ```php
 $root = dirname(dirname(__FILE__)).'/';
@@ -125,9 +125,9 @@ $vehicle = $builder->createVehicle($snippet,array(
 
 So, first off, we created a snippet object. Note that you'll have to specify an arbitrary ID for it, even though we wont keep it later. This is required. Then, we used the 'createVehicle' function in modPackageBuilder to create the vehicle object. Let's look at those attributes options more closely:
 
--   **xPDOTransport::UNIQUE_KEY** _(string/array)_ - Here you'd place the unique key that identifies the object you're creating. This will tell MODX to search for the modSnippet with the 'name' equal to the packaged in name (here, 'Test') when updating or removing the object. For most objects, this will be 'name'; others require different settings. Some might even require an array of two or more fields.
--   **xPDOTransport::UPDATE_OBJECT** _(boolean)_ - Either true or false, this tells MODX whether or not to update the object if it is found in the DB upon install (or update). Sometimes, if the object is already there, you may not want to update it - the update might erase the user's current settings for that object.
--   **xPDOTransport::PRESERVE_KEYS** _(boolean)_ - Either true or false, this tells MODX whether or not to rewrite the primary keys when the object is found. This can be useful if you're wanting the PKs to stay the same when you update - some PKs are auto_increment, and if you're wanting those to stay the same number, you'd set this to true. Note: If the object already exists, this feature only works if xPDOTransport::UPDATE_OBJECT is set to true as well. If the object is not found, it will work regardless.
+-   `xPDOTransport::UNIQUE_KEY` _(string/array)_ - Here you'd place the unique key that identifies the object you're creating. This will tell MODX to search for the modSnippet with the 'name' equal to the packaged in name (here, 'Test') when updating or removing the object. For most objects, this will be 'name'; others require different settings. Some might even require an array of two or more fields.
+-   `xPDOTransport::UPDATE_OBJECT` _(boolean)_ - Either true or false, this tells MODX whether or not to update the object if it is found in the DB upon install (or update). Sometimes, if the object is already there, you may not want to update it - the update might erase the user's current settings for that object.
+-   `xPDOTransport::PRESERVE_KEYS` _(boolean)_ - Either true or false, this tells MODX whether or not to rewrite the primary keys when the object is found. This can be useful if you're wanting the PKs to stay the same when you update - some PKs are auto_increment, and if you're wanting those to stay the same number, you'd set this to true. Note: If the object already exists, this feature only works if `xPDOTransport::UPDATE_OBJECT` is set to true as well. If the object is not found, it will work regardless.
 
 Simple enough? So our example tells it to look for a Snippet named 'Test', and if it finds it, update its contents. If it doesnt find it, create it. However, if it does find it; we told MODX not to update its PK - there's no need to adjust that in this situation.
 
@@ -156,9 +156,8 @@ $vehicle= $builder->createVehicle($menu,array (
 ## Related objects
 
 When packing in related objects, you need 2 new parameters:
-
--   **xPDOTransport::RELATED_OBJECTS** _(boolean)_ - Either true or false, this will tell MODX we want to search for related objects to this object. This must be set for the next parameter to work.
--   **xPDOTransport::RELATED_OBJECT_ATTRIBUTES** _(array)_ - This defines the types and details of the related objects we want to grab. If you note, the format is simply an associative array of attributes - similar to the parent object's attributes - where the key is the "alias" of the related object we want to grab. The aliases can be found in the Schema, located in _core/model/schema/modx.mysql.schema.xml_.
+-   `xPDOTransport::RELATED_OBJECTS` _(boolean)_ - Either true or false, this will tell MODX we want to search for related objects to this object. This must be set for the next parameter to work.
+-   `xPDOTransport::RELATED_OBJECT_ATTRIBUTES` _(array)_ - This defines the types and details of the related objects we want to grab. If you note, the format is simply an associative array of attributes - similar to the parent object's attributes - where the key is the "alias" of the related object we want to grab. The aliases can be found in the Schema, located in _core/model/schema/modx.mysql.schema.xml_.
 
 You need to associate related objects to eachother with the `addOne` or `addMany` functions before calling `$builder->createVehicle`. This can be nested as deep as you need.
 
@@ -370,7 +369,7 @@ Okay, first things first. File resolvers take two options:
 -   **source** - This is the target directory or script. If it's a file resolver, it must not end with a trailing slash and must be a valid directory. If it's a PHP script resolver, it must be a valid and accessible file.
 -   **target** - Only applicable to file resolvers, this tells MODX where to install the source files. It is an eval()'ed statement, so must be used as in the example. The standard MODX defines are available to you; use those to grab base paths to target.
 
-So in our examples, we simply move all the files in our source core directory to modx/core/components/quip/ (since our directory that we're moving is named "quip"), and all the files in our source assets directory to _modx/assets/components/quip/_.
+So in our examples, we simply move all the files in our source core directory to _modx/core/components/quip/_ (since our directory that we're moving is named "quip"), and all the files in our source assets directory to _modx/assets/components/quip/_.
 
 You might be asking why we're moving these to two directories. Well, in practice, it's best to keep non-web-accessible files - such as PHP scripts, tpl files, docs, etc - in the core (which can be placed outside the webroot) so that they are kept secure from web visitors. This keeps only the files that need to be accessed through the web by your Component in the web-accessible part of your site.
 
@@ -394,7 +393,7 @@ This is because the lexicons are cached first from your files, then any override
 
 ## Package Attributes: License, Readme and Setup Options
 
-Each package has what are called 'package attributes', which can be passed to any resolver or validator. You could pass pretty much anything you want into the function modPackageBuilder::setPackageAttributes(), in an array format. There are, however, three special keys that we'll deal with.
+Each package has what are called 'package attributes', which can be passed to any resolver or validator. You could pass pretty much anything you want into the function `modPackageBuilder::setPackageAttributes()`, in an array format. There are, however, three special keys that we'll deal with.
 
 -   **license** (string) - This represents your license agreement. Should MODX find this not empty during install, it will prompt the user to agree to it before they can proceed to install the package.
 -   **readme** (string) - This holds the readme. Before installing, if this is not empty, the user will be able to view the readme. This can be useful to make sure people see any requirements before they install.
@@ -467,10 +466,10 @@ return $output;
 
 As you can see, some new constants here. These are available to all setup options forms and resolvers:
 
--   **xPDOTransport::PACKAGE_ACTION** - This tells us what action is being performed on the package; it is one of the following 3 values:
-    -   **xPDOTransport::ACTION_INSTALL** - This is set when the package is being executed as an install.
-    -   **xPDOTransport::ACTION_UPGRADE** - This is set when the package is being upgraded.
-    -   **xPDOTransport::ACTION_UNINSTALL** - This is set when the package is being uninstalled. This doesn't apply to setup-options, obviously, since nothing is being set up. In future Revolution releases, it will allow you to do specific options for uninstall; but not yet.
+-   `xPDOTransport::PACKAGE_ACTION` - This tells us what action is being performed on the package; it is one of the following 3 values:
+    -   `xPDOTransport::ACTION_INSTALL` - This is set when the package is being executed as an install.
+    -   `xPDOTransport::ACTION_UPGRADE` - This is set when the package is being upgraded.
+    -   `xPDOTransport::ACTION_UNINSTALL` - This is set when the package is being uninstalled. This doesn't apply to setup-options, obviously, since nothing is being set up. In future Revolution releases, it will allow you to do specific options for uninstall; but not yet.
 
 Basically, we're presenting them with a form before install that looks like this:
 

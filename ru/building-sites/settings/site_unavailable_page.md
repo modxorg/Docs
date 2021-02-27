@@ -3,16 +3,16 @@ title: "site_unavailable_page"
 translation: "building-sites/settings/site_unavailable_page"
 ---
 
-## site\_unavailable\_page
+## site_unavailable_page
 
-**Имя**: Unavailable Page
-**Тип**: Number
-**По умолчанию**: 1
+-   **Имя**: Страница «Сайт недоступен»
+-   **Тип**: Number
+-   **По умолчанию**: 1
 
 Введите идентификатор ресурса, который вы хотите использовать в качестве автономной страницы здесь.
 
 Убедитесь, что введенный вами идентификатор принадлежит опубликованному ресурсу!
 
-## Посмотрите также
+## Смотрите также
 
-[unauthorized\_page](building-sites/settings/unauthorized_page "unauthorized_page")
+[unauthorized_page](building-sites/settings/unauthorized_page "unauthorized_page")

@@ -3,10 +3,10 @@ title: "phpthumb_cache_maxage"
 translation: "building-sites/settings/phpthumb_cache_maxage"
 ---
 
-## phpthumb\_cache\_maxage
+## phpthumb_cache_maxage
 
-**Имя**: phpThumb Max Cache Age
-**Тип**: Number
-**По умолчанию**: 30 (days)
+-   **Имя**: phpThumb Максимальное время жизни кэша
+-   **Тип**: Number
+-   **По умолчанию**: 30 (дней)
 
-Удалите кэшированные миниатюры, к которым не было доступа более X дней.
+Удалять кэшированных миниатюр, к которым не было доступа более X дней.

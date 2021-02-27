@@ -19,7 +19,7 @@ getPage was first written by Jason Coward (opengeek) and released on March 19, 2
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <http://modx.com/extras/package/getpage>
+It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/getpage>
 
 This Snippet does nothing by itself, but rather depends on another Snippet to return the output for a specified page (or range of data within a complete set). For example, the [getResources](extras/getresources "getResources"), [getFeed](extras/getfeed "getFeed"), and [Archivist](http://rtfm.modx.com/display/ADDON/archivist) Snippets can both be wrapped by getPage.
 
@@ -89,7 +89,7 @@ You can NOT modify these tpl properties from the snippet tag directly, due to th
 | --------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------- |
 | pageNavOuterTpl | A content tpl for controlling the layout of the various page navigation controls. | `[[+first]][[+prev]][[+pages]][[+next]][[+last]]`                                                                      | 1.2.0-pl         |
 | pageNavTpl      | A content tpl representing a single page navigation control.                      | `<li[[+classes]]><a[[+classes]][[+title]] href="[[+href]]">[[+pageNo]]</a></li>`                                       |                  |
-| pageActiveTpl   | A content tpl representing the current page navigation control.                   | `<li[[+activeClasses]]><a[[+activeClasses:default=` class="active"`]][[+title]] href="[[+href]]">[[+pageNo]]</a></li>` |                  |
+| pageActiveTpl   | A content tpl representing the current page navigation control.                   | ```<li[[+activeClasses]]><a[[+activeClasses:default=` class="active"`]][[+title]] href="[[+href]]">[[+pageNo]]</a></li>``` |                  |
 | pageFirstTpl    | A content tpl representing the first page navigation control.                     | `<li class="control"><a[[+classes]][[+title]] href="[[+href]]">First</a></li>`                                         |                  |
 | pageLastTpl     | A content tpl representing the last page navigation control.                      | `<li class="control"><a[[+classes]][[+title]] href="[[+href]]">Last</a></li>`                                          |                  |
 | pagePrevTpl     | A content tpl representing the previous page navigation control.                  | `<li class="control"><a[[+classes]][[+title]] href="[[+href]]"><<</a></li>`                                            |                  |

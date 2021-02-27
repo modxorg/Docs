@@ -8,7 +8,7 @@ _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.delete"
 
 Delete a key-value pair from a cache provider. Also allows for extra options:
 
-- **cache\_ext** - Defaults to '.cache.php'. Useful if you're wanting to delete non-cache files from the cache/ directory.
+- `cache_ext` - Defaults to '.cache.php'. Useful if you're wanting to delete non-cache files from the cache/ directory.
 
 ## Syntax
 

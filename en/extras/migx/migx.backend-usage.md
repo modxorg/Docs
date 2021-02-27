@@ -191,7 +191,7 @@ here we have an additional outer array with two keys.
 | formtabs | this are the formtabs for this form                                                                               |
 
 when using multiple forms this will produce an additional field with name 'MIGX\_formname'.
-You can use the value of this field to switch tpls in the frontend by using &tpl=`@FIELD:MIGX\_formname` and create chunks with the same names as your formnames or you can add an additional field (listbox-TV with name tpl for example) to choose the output-tpl for this item.
+You can use the value of this field to switch tpls in the frontend by using ``` &tpl=`@FIELD:MIGX_formname` ``` and create chunks with the same names as your formnames or you can add an additional field (listbox-TV with name tpl for example) to choose the output-tpl for this item.
 
 ### Preview Feature
 

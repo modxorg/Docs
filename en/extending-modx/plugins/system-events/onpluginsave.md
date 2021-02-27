@@ -6,10 +6,10 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onplug
 
 ## Event: OnPluginSave
 
-Happens right after a plugin is removed.
+Fires just after the database is altered
 
-Service: 2 - Manager Access Events
-Group: modPlugin
+- Service: 2 - Manager Access Events
+- Group: modPlugin
 
 ## Event Parameters
 
@@ -19,5 +19,5 @@ Group: modPlugin
 
 ## See Also
 
-- [System Events](extending-modx/plugins/system-events "System Events")
-- [Plugins](extending-modx/plugins "Plugins")
+-   [System Events](extending-modx/plugins/system-events "System Events")
+-   [Plugins](extending-modx/plugins "Plugins")

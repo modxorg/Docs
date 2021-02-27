@@ -4,7 +4,7 @@ _old_id: "1287"
 _old_uri: "2.x/class-reference/xpdoobject"
 ---
 
-Most of the magic of xPDO is packed into the class xPDOObject. This class is the base persistence class which every domain class and table class you create with xPDO will derive it's properties and behavior from. xPDOObject is a domain class and an Active Record pattern implementation, where each instance represents a row in a specific database table.
+Most of the magic of xPDO is packed into the class `xPDOObject`. This class is the base persistence class which every domain class and table class you create with xPDO will derive it's properties and behavior from. `xPDOObject` is a domain class and an Active Record pattern implementation, where each instance represents a row in a specific database table.
 
 - [Static Object Loaders](extending-modx/xpdo/class-reference/xpdoobject/static-object-loaders)
     - [\_loadRows](extending-modx/xpdo/class-reference/xpdoobject/static-object-loaders/loadrows)

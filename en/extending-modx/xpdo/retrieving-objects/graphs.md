@@ -6,7 +6,7 @@ _old_uri: "2.x/getting-started/using-your-xpdo-model/retrieving-objects/getcolle
 
 ## Overview
 
-getCollectionGraph allows you to automatically load up related objects by specifying a JSON style hash to its second argument (in other words, it automatically joins a table on its related tables). It's possible to nest the JSON hash so you also retrieve the related objects of the related objects, for example:
+`getCollectionGraph` allows you to automatically load up related objects by specifying a JSON style hash to its second argument (in other words, it automatically joins a table on its related tables). It's possible to nest the JSON hash so you also retrieve the related objects of the related objects, for example:
 
 ``` php
 $blogpost = $modx->getCollectionGraph('BlogPost', '{ "Comments":{} }', 34 );
@@ -19,7 +19,7 @@ $TFR = $modx->getCollectionGraph('TrackingformsResources', '{ "Resources":{ "Mas
 
 xPDO translates this all into the necessary database query that joins on the appropriate tables (e.g. perhaps named trackingforms\_resources, resources, and units) – like most of the xPDO methods, you refer to a model's tables/classes via their aliases.
 
-You can \*NOT\* set a limit on a getCollectionGraph when using an xPDOQuery object - you will be limiting the total number of rows fetched, which is not the same as the total number of top level (eg BlogPost) objects. You can get very unexpected results by doing so.
+You can *NOT* set a limit on a getCollectionGraph when using an xPDOQuery object - you will be limiting the total number of rows fetched, which is not the same as the total number of top level (eg BlogPost) objects. You can get very unexpected results by doing so.
 
 ## Sample Snippet
 
@@ -44,7 +44,7 @@ return $out;
 ?>
 ```
 
-Note that when you are using $xpdo->newQuery() to filter the results and have multiple field names which are the same, for example an "id" field, in one or more of the different classes you join, xPDO will fail to return any result. Simply prefix your fieldname with the classname in that case, for example myClassName.id
+Note that when you are using `$xpdo->newQuery()` to filter the results and have multiple field names which are the same, for example an "id" field, in one or more of the different classes you join, xPDO will fail to return any result. Simply prefix your fieldname with the classname in that case, for example myClassName.id
 
 ### Snippet Call
 

@@ -4,11 +4,11 @@ _old_id: "319"
 translation: "building-sites/settings/unauthorized_page"
 ---
 
-## unauthorized\_page
+## unauthorized_page
 
-**Имя**: Unauthorized Page
-**Тип**: Number
-**По умолчанию**: 1
+-   **Имя**: Страница ошибки 403 «Доступ запрещен»
+-   **Тип**: Number
+-   **По умолчанию**: 1
 
 Идентификатор ресурса, на который вы хотите отправлять пользователей, если они запросили защищенный или неавторизованный ресурс, то есть виртуальный HTTP 403.
 
@@ -16,6 +16,6 @@ translation: "building-sites/settings/unauthorized_page"
 
 Убедитесь, что введенный вами идентификатор принадлежит существующему ресурсу, который был опубликован и общедоступен!
 
-## Посмотрите также
+## Смотрите также
 
-[site\_unavailable\_page](building-sites/settings/site_unavailable_page "site_unavailable_page")
+[site_unavailable_page](building-sites/settings/site_unavailable_page "site_unavailable_page")

@@ -10,7 +10,7 @@ It's suggested to use [XRouting](https://modx.com/extras/package/xrouting) inste
 
 ## Installation & Configuration
 
-Simply install ContextRouter through package management or from the [MODX Extras](http://modx.com/extras/package/contextrouter) site. There's no manager component or configuration you need to manage, however ContextRouter does depend on your individual contexts being configured properly and it has several system settings you can enable if needed.
+Simply install ContextRouter through package management or from the [MODX Extras](https://modx.com/extras/package/contextrouter) site. There's no manager component or configuration you need to manage, however ContextRouter does depend on your individual contexts being configured properly and it has several system settings you can enable if needed.
 
 ### Context Configuration
 

@@ -3,12 +3,12 @@ title: "access_context_enabled"
 translation: "building-sites/settings/access_context_enabled"
 ---
 
-## access\_context\_enabled
+## access_context_enabled
 
-**Имя**: Check Context Access
-**Тип**: Да/Нет
-**По умолчанию**: Да
-**Доступно в**: Revolution 2.1+
+-   **Имя**: Проверять доступ к контекстам
+-   **Тип**: Да/Нет
+-   **По умолчанию**: Да
+-   **Доступно в**: Revolution 2.1+
 
 Используйте это, чтобы включить или отключить контекстные проверки ACL.
 

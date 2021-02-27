@@ -3,10 +3,10 @@ title: "search_default"
 translation: "building-sites/settings/search_default"
 ---
 
-## search\_default
+## search_default
 
-**Имя**: Published Default
-**Тип**: Да/Нет
-**По умолчанию**: Да
+-   **Имя**: «Доступен для поиска» по умолчанию
+-   **Тип**: Да/Нет
+-   **По умолчанию**: Да
 
 Если true, все новые ресурсы доступны для поиска по умолчанию.

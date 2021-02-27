@@ -3,10 +3,10 @@ title: "compress_js"
 translation: "building-sites/settings/compress_js"
 ---
 
-## compress\_js
+## compress_js
 
-**Имя**: Use Compressed Javascript Libraries
-**По умолчанию**: Да
+-   **Имя**: Использовать сжатые JavaScript-библиотеки
+-   **По умолчанию**: Да
 
 Когда это включено, MODX будет использовать сжатую версию своих пользовательских библиотек JavaScript. Это значительно снижает нагрузку и время выполнения. Отключайте, только если вы изменяете основные элементы.
 

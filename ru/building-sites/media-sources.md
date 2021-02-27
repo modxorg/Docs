@@ -17,17 +17,17 @@ translation: "building-sites/media-sources"
 
 В следующих разделах описывается базовое использование источников файлов.
 
-- [Добавление источника файлов](building-sites/media-sources/creating "Добавление источника файлов")
-- [Назначение источника файлов для TV](building-sites/media-sources/assigning-to-tvs "Назначение источника файлов для TV")
-- [Защита источника файлов](building-sites/media-sources/securing "Защита источника файлов")
-- [Типы источника файлов](building-sites/media-sources/types "Типы источника файлов")
+-   [Добавление источника файлов](building-sites/media-sources/creating "Добавление источника файлов")
+-   [Назначение источника файлов для TV](building-sites/media-sources/assigning-to-tvs "Назначение источника файлов для TV")
+-   [Защита источника файлов](building-sites/media-sources/securing "Защита источника файлов")
+-   [Типы источника файлов](building-sites/media-sources/types "Типы источника файлов")
 
 ## Смотрите также
 
 1. [Добавление источника файлов](building-sites/media-sources/creating)
 2. [Назначение источника файлов для TV](building-sites/media-sources/assigning-to-tvs)
 3. [Защита источника файлов](building-sites/media-sources/securing)
-   1. [Руководство по созданию источника файлов для клиентов](building-sites/media-sources/securing/clients-tutorial)
+    1. [Руководство по созданию источника файлов для клиентов](building-sites/media-sources/securing/clients-tutorial)
 4. [Типы источника файлов](building-sites/media-sources/types)
-   1. [Типы источника файлов - Файловая система](building-sites/media-sources/types/media-source-type-file-system)
-   2. [Типы источника файлов - S3](building-sites/media-sources/types/media-source-type-s3)
+    1. [Типы источника файлов - Файловая система](building-sites/media-sources/types/media-source-type-file-system)
+    2. [Типы источника файлов - S3](building-sites/media-sources/types/media-source-type-s3)

@@ -15,7 +15,7 @@ With MODX3, the platform has been modernised, and also offers a redesigned manag
 
 In addition to this documentation site, the [MODX Community](https://community.modx.com) is vibrant and always willing to help. Go ahead and ask questions there - you'll be pleasantly surprised at the responsiveness of the MODX user base.
 
-Experienced [MODX Professionals](http://modx.com/professionals) and [vendor-backed commercial support](http://modx.com/support/) options are also available, so no matter your needs and requirements - you're covered.
+Experienced [MODX Professionals](https://modx.com/professionals) and [vendor-backed commercial support](https://modx.com/support/) options are also available, so no matter your needs and requirements - you're covered.
 
 ## Getting started
 
@@ -39,8 +39,8 @@ Revolution is MODX's flagship CMS and application framework, lovingly called "Re
 
 ### Other Resources
 
-- [Get the Latest Release](http://modx.com/download/)
-- [Download Add-ons](http://modx.com/extras/)
+- [Get the Latest Release](https://modx.com/download/)
+- [Download Add-ons](https://modx.com/extras/)
 - [MODX Community](https://community.modx.com)
 - [Forum Discussions](http://forums.modx.com/board/?board=264)
 - [Bugs & Feature Requests](https://github.com/modxcms/revolution/issues)
@@ -49,7 +49,7 @@ Revolution is MODX's flagship CMS and application framework, lovingly called "Re
 
 MODX Extras extend the core functionality of the MODX software. Other CMSs refer to them as "Plugins" or "Modules". Many of the Extras are developed by the MODX core team, while others are by third parties. Although by no means an exhaustive reference, the majority of the most popular Extras are documented here.
 
-- [Download Extras](http://modx.com/extras/?product=revolution)
+- [Download Extras](https://modx.com/extras/?product=revolution)
 - [Learn more about installing Extras](building-sites/extras)
 
 ## xPDO
