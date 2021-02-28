@@ -23,7 +23,7 @@ Besides developing fixes or features:
 The MODX Community is active in many areas and in many ways, including:
 
 - [MODX Community](https://community.modx.com/) - MODX has one of the liveliest, friendliest communities around.
-- [GitHub](https://github.com/modxcms/) - MODX and it's associated open source projects have git code repositories and more hosted on GitHub
+- [GitHub](https://github.com/modxcms/) - MODX and its associated open source projects have git code repositories and more hosted on GitHub
 - [Issues on GitHub](https://github.com/modxcms/revolution/issues) - the place to report and discuss bugs and feature requests
 - [Translations](https://modx.com/community/translate) -  become a translator and let the world know about MODX.
 - [Documentation](https://docs.modx.com/) - find MODX documentation and tutorials (you are here already!)
