@@ -2,6 +2,7 @@
 title: "Development Environments"
 _old_id: "1129"
 _old_uri: "contribute/becoming-a-contributor/development-environments"
+sortorder: 1
 ---
 
 When developing bug fixes or features for MODX Revolution, you'll need to have a local development environment. 

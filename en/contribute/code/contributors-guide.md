@@ -2,6 +2,7 @@
 title: "Contributor's Guide"
 _old_id: "1128"
 _old_uri: "contribute/using-git-and-github/community-contributors-guide"
+sortorder: 5
 ---
 
 Development for MODX [happens on GitHub](https://github.com/modxcms/revolution). Everyone is invited to improve MODX, and in this guide we explain some of the common processes. 

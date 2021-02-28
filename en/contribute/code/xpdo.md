@@ -2,6 +2,7 @@
 title: "Contributing to xPDO"
 _old_id: "1136"
 _old_uri: "contribute/using-git-and-github/xpdo-github-contributors-guide"
+sortorder: 3
 ---
 
 ## Contributing to xPDO and Integrating with MODX Revolution

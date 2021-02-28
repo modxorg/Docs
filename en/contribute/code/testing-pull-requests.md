@@ -1,5 +1,6 @@
 ---
 title: Testing Pull Requests
+sortorder: 2
 ---
 
 Contributors around the world are always [creating new pull requests](https://github.com/modxcms/revolution/pulls) with bug fixes, new features, and other improvements. 
