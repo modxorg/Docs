@@ -4,9 +4,8 @@ _old_id: "1137"
 _old_uri: "contribute/your-modx-account-and-how-to-get-one"
 ---
 
-Your MODX account gives you access to
+You'll need an account on [MODX.com](https://modx.com) to manage your extras, discuss ideas or problems on [the community forum](http://community.modx.com), or to [sign the contributors license agreement](https://modx.com/community/cla/).
 
-- [MODX website (modx.com)](https://modx.com/)
-- [MODX Forums (forums.modx.com)](http://forums.modx.com)
+[Create a MODX account here](https://modx.com/login/create-account).
 
-Simply signup here: <https://modx.com/login/>
+Everything else (contributing to [code](contribute/code), [issues](contribute/issues), or the [documentation](contribute/documentation)), typically requires a GitHub account. 

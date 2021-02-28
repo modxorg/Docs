@@ -4,9 +4,13 @@ _old_id: "1131"
 _old_uri: "contribute/using-git-and-github/git-fac-(frequently-accessed-commands)"
 ---
 
-### How do I get and keep my local develop branch in sync?
+This page briefly goes over some common scenarios when using Git for MODX development. 
 
-First, with MODX's collaboration and branching model, you won't be making commits to your major-version branch, so it's easy to keep it up to date. Let's assume you are working with `2.x`:
+## How do I get and keep my local develop branch in sync?
+
+First you should make sure to **never commit directly to a version branch**. That alone will make working with git much more pleasant.
+
+To update your local development copy, for example of the 2.x major version branch, run:
 
 ``` php
 git fetch upstream
@@ -15,64 +19,60 @@ Switched to branch "2.x"
 git merge --ff-only upstream/2.x
 ```
 
-This assumes that the modxcms or _blessed_ repo is set up as a remote named upstream. (git remote manpage: <http://www.kernel.org/pub/software/scm/git/docs/git-remote.html>)
+This assumes that the official repository is added as "upstream", and that you have a fork added as "origin". [Learn more about remotes](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
 
-### How do I create a feature branch?
+## How do I create a feature branch?
 
-If you've just merged in the upstream repo's latet changes to the major-version branch you are targeting, then it's simple:
+Make sure your local copy of the version branch (e.g. `2.x`) is up-to-date, first. See the previous section.
+
+Then, run:
 
 ``` php
 git checkout -b myFeatureBranchName 2.x
 ```
 
-If you have not received the latest changes from the upstream and merged them locally, you should refer to the first paragraph of the article (How can I create and keep the local develop branch fresh?).
+## Is there a naming convention for feature branches?
 
-### Is there a naming convention for feature branches?
+Typically one of: `issue-1234` or `feature-1234` or `fix-1234`, where `1234` is the ID Of the relevant issue on GitHub. 
 
-If you are making changes related to a ticket in the issue tracker (please file a ticket for any bugs first if there isn't one) then you could name your branch "issue-xxxx" where xxxx is the issue number from the bug tracker.
+If there is no issue for what you plan to work on, considering creating one to discuss it, or use a descriptive branch name like `feature-magic-resources`. 
 
-``` php
-git checkout -b issue-1234 2.4.x
-```
-
-Note that this is not requirement, but might help you organize your local branches if you have many of them.
-
-If you are working on a feature which does not have a ticket, you can name it anything you want, but avoid names that look like release version numbers.
+Avoid names that resemble release version numbers. 
 
 ``` php
 git checkout -b myAwesomeFeature 2.x
 ```
 
-### Do I need a new feature branch for every issue that I work on?
+## Do I need a new feature branch for every issue that I work on?
 
-Yes.
+Yes. Never commit directly to the version branch. Always create a separate branch for each feature or issue you work on.
 
-``` php
-echo 'Yes'
-```
+## How do I keep my feature branch in sync with the upstream version branch?
 
-### How do I keep my feature branch in sync with the upstream develop branch?
+If you're working on a feature that's taking a while, you may need to keep in sync with upstream changes. 
 
-If you're working on a feature that's taking a while, you may find it beneficial to keep in sync with upstream changes. Git allows you to "replay" your commits over top of changes in the develop branch using the rebase command.
+While it's tempting to use `git merge` to pull in the changes from upstream, that adds additional redundant commits to your changes. 
 
-In fact, it's generally a good idea to do this before any final commits to your fork and issuing a Pull Request.
+It's better to "replay" your commits using `git rebase`.
+
+On your feature branch, run:
 
 ``` php
 git fetch upstream
-git checkout 2.x
-Switched to branch "2.x"
-git merge --ff-only upstream/2.x
-git checkout my-bc-feature
-Switched to branch "my-bc-feature"
-git rebase 2.x
+git rebase upstream/2.x
+```
+
+If you've diverged further from the release branch, using interactive mode is useful to help you address any conflicts one-at-a-time. 
+
+``` php
+git fetch upstream
+git rebase upstream/2.x
 ```
 
 To learn more, here's the git rebase manpage: <http://www.kernel.org/pub/software/scm/git/docs/git-rebase.html>
 
-### Do I really need to worry about the minor-version branch?
+## Do I really need to worry about basing off the right (version) branch?
 
-No, not really. But if you are fixing bugs that should be included in a patch release as soon as possible, you might consider branching from and targeting the minor-release branches instead of the major in case in needs to be backported due to conflicts in changes between major and minor. But it's not critical to the workflow of a contributor at all.
+Yes. The core integrators much prefer spending their time reviewing and accepting great contributions, rather than having to jump through complicated hoops and merge conflicts to get your change applied to the right branch.
 
-``` php
-$
-```
+[See the contributors guide for guidance on which branches to use](contribute/code/contributors-guide), and ask in the [Slack community](https://modx.org) or [forum](https://community.modx.com) if you're not sure what branch is appropriate. 

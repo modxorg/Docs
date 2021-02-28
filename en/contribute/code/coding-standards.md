@@ -2,7 +2,10 @@
 title: "MODX PHP Coding Standards"
 _old_id: "1133"
 _old_uri: "contribute/becoming-a-contributor/modx-php-coding-standards"
+sortorder: 6
 ---
+
+These coding standards primarily apply to PHP code.
 
 ## General
 
