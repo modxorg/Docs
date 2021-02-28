@@ -32,54 +32,21 @@ During realtime events such as bug hunts, it's useful (and sometimes necessary t
 
 ## 3. Run the pull request locally
 
-In order to test the pull request, you will need to patch a [local git installation](getting-started/installation/git) of MODX with the proposed changes.
+In order to test the pull request, you will need to patch a [local development site](contribute/code/development-environment) of MODX with the proposed changes.
 
+The simplest way to do that is using the [GitHub CLI "gh"](https://cli.github.com/). In your local development site, run the command `gh pr checkout <id of pull request>`, e.g. `gh pr checkout 12345`. That will instantly load the code from the pull request. 
 
-### Access the pull request branch
+The checkout command does not automatically rebase or merge the changes, so you'll need to do that in order to spot conflicts with recent changes:
 
-How to access the pull request depends on how often you expect you'll test pull requests. 
+````bash 
+git rebase upstream/2.x
+````
 
-If you only want to test this one pull request, use the manual checkout. 
+Replace 2.x with the relevant base branch.
 
-If however you want to test pull requests more often, there is a trick to make it a lot quicker and easier to pull in all pull requests no matter who created it; that just requires a bit of setup. 
+### Alternative without GitHub CLI: PR branches
 
-#### Option 1: Manual Checkout
-
-To do a manual checkout of a pull request, you will need to add the repository of the person that created the pull request to your local git installation. Don't worry, this doesn't give them any access, you just need to tell git specifically where to find it.
-
-This is called adding a _remote_. 
-
-You can list your current remotes with `git remote -v`; that will show  you their names and URLs. It should look something like this:
-
-``` bash
-$ git remote -v
-origin    git@github.com:YourUserName/revolution.git (fetch)
-origin    git@github.com:YourUserName/revolution.git (push)
-upstream  git@github.com:modxcms/revolution.git (fetch)
-upstream  git@github.com:modxcms/revolution.git (push)
-```
-
-**If you only see `origin`, pointing to `modxcms/revolution`, but no upstream**, make sure to replace references to `upstream` in this guide with `origin`. 
-
-Now add the remote for the person that created the pull request. Let's say their username is `janedoe`, then we'll add a remote with their name and repository url:
-
-``` bash
-git remote add janedoe git@github.com:janedoe/revolution.git
-```
-
-Now we can fetch information from their repository:
-
-``` bash
-git fetch janedoe
-```
-
-At this point we can access the pull request branch with a checkout or a merge attempt. 
-
-#### Option 2: Fetching all pull requests
-
-To make it easier to fetch pull request branches, you can make a small tweak to your git configuration. With this trick, you wont have to manually add any remotes.
-
-Using a text editor or the terminal, edit the `.git/config` file. For example use `nano .git/config` from the root of your local copy of MODX.
+Using a text editor or the terminal, edit the `.git/config` file in your repository. For example use `nano .git/config` from the root of your local copy of MODX.
 
 Find the `[remote "upstream"]` section  (or `[remote "origin"]` if you don't have a separate upstream remote). It should look like this:
 
@@ -121,11 +88,7 @@ From github.com:modxcms/revolution
 
 The first time you run this, it will include what's called a "ref" for every pull request ever created. That's a long list, and may take a minute, but it'll only fetch changes the next time you run it.
 
-To access the changes in a pull request, we can simply checkout or merge it with the special `upstream/pr/<id of pull request>` reference.
-
-### Merge the changes 
-
-To test the changes, there are two things you can do now. Either you can use `git checkout` to see the exact changes in the pull request, or you can do a merge. 
+With the special branches in place, you can now checkout or merge them directly with Git.
 
 > In the commands below, **replace `name-of-branch`** with either the name of the pull request branch as created by the pull request author (shown at the top of the pull request view), or the special `upstream/pr/<id-of-pr>` ref if you've used the trick to fetch pull requests.
 
@@ -135,22 +98,22 @@ The benefit of using `git checkout` is that you're loading a specific version th
 git checkout name-of-branch
 ```
 
-The downside of checking out is that any changes made to the official branches since the contributor started on their change **will be discarded**. 
+The downside of checking out is that any changes made to the official base branches since the contributor started on their change **will be discarded**. 
 
 This means the code may be different when merged compared to the proposal, which is why merging would be preferred when testing. 
 
-The downside: you may run into merge conflicts and need to take extra care not to commit any changes.
+The downside: you may run into merge conflicts and need to take extra care not to actually commit the changes.
 
 To merge a pull request locally, execute:
 
 ``` bash
-$ git merge --no-ff --no-commit name-of-branch
-Automatic merge went well; stopped before committing as requested
+git merge --no-ff --no-commit name-of-branch
 ```
 
-Ideally, you'll see the merge went well, but it is possible to run into errors at this stage.
+Ideally, you'll see the merge went well ("Automatic merge went well; stopped before committing as requested
+"), but it is possible to run into errors at this stage.
 
-- If you see the message `error: Your local changes to the following files would be overwritten by merge:`, you have local, uncommitted, changes. You can [stash any changes you want to keep](https://git-scm.com/docs/git-stash), or do a hard reset to _discard all changes_ with `git reset --hard upstream/2.x` (replace `2.x` with the version branch you're using). Run the merge command again.
+- If you see the message `error: Your local changes to the following files would be overwritten by merge:`, you have local, uncommitted, changes. You can [stash any changes you want to keep](https://git-scm.com/docs/git-stash), or do a hard reset to _discard all changes_ with `git reset --hard upstream/2.x` (replace `2.x` with the version branch you're using) and/or `git checkout -- .` - then run the merge command again.
 - If the message reports **merge conflicts**, git tried to apply the changes from the pull request, but failed to determine how conflicting changes should be applied. The message should point you to the specific files; in there you'll find blocks of duplicated code that you'll need to manually correct. 
 
 At this point, you're running the proposed change. Yay!
@@ -167,15 +130,15 @@ Depending on the pull request and what it changed, you may need to do one (or mo
 
 ## 5. Testing pull requests
 
-Look back at the pull request and issues to determine how to best test the changes. 
+Now look back at the pull request and issues to determine how to best test the changes. 
 
-For bug fixes you'll want to try reproducing the bug again, which hopefully wont work because it's fixed. For new features you'll want to make sure it works as described by the pull request author. 
+For bug fixes you'll want to try reproducing the bug before doing the merge and then again after the merge, which hopefully wont work because it's fixed. For new features you'll want to make sure it works as described by the pull request author. 
 
 It's also fun to try to break a change. Is there a way you can manipulate the change so that it no longer does what it should? What happens when you provide invalid values? That type of testing can point to potential security issues or new bugs, and are best to catch early. 
 
 If you're comfortable with the programming language used in the change (typically PHP, JavaScript, or Sass/CSS), you can also do a code review.
 
-How much and what type of testing you can do will depend on your skills. If you're a hardcore hacker you may be better at testing for security issues, while others may be better suited to comment on design changes. 
+How much and what type of testing you can do will depend on your skills. If you're a hardcore hacker you may be better at testing for security issues, while others may be better suited to comment on design changes. All skillsets are useful.
 
 ## 6. Report your findings
 
