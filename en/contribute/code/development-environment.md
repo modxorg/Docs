@@ -36,9 +36,6 @@ You can now use `git fetch upstream` to get the latest commits and update your l
 1. Disable the `cache_lexicon_topics` system setting (in System > System Settings) to make sure lexicon changes are immediately visible when developing.
 2. ....
 
-## Step 6: ...
-
-
 
 ## Other Tools
 
