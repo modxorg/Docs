@@ -2,67 +2,45 @@
 title: "Development Environments"
 _old_id: "1129"
 _old_uri: "contribute/becoming-a-contributor/development-environments"
-note: "This page is old. Really old. Needs to be rewritten to explain how to set up a git-based version of MODX properly for development."
+sortorder: 1
 ---
 
-## Recommended Development Tools and Environments for MODX Revolution
+When developing bug fixes or features for MODX Revolution, you'll need to have a local development environment. 
 
-In developing MODX, the team has found the following software and environments invaluable:
+At the time of writing MODX3 was in development, so you'd typically end up with a 2.x and 3.x development environment to be able of working on both without constantly having to rebuild. 
 
-### Netbeans
+> To do any of this, you'll also need a functional web server running on your local machine. This document does not describe how to set that up, as that will depend on your machine and preferences. Common options are using development tools like MAMP (Mac), XAMMP (Windows), Docker (Mac, Windows, Linux) or native local solutions. [See the Server Requirements](getting-started/server-requirements).
 
-- Netbeans 6.8
-- Netbeans Git plugin
+## Step 1: preparing a _Fork_
 
-### Eclipse
+First things first, click the _Fork_ button at the top right of the [official repository](https://github.com/modxcms/revolution) and create the fork (if you haven't done that before) on your account. 
 
-- Eclipse 3.2.+ (recommend latest 3.5.1)
-- Web Standard Tools Project (WST) 2.0.1 (<http://download.eclipse.org/webtools/updates/>)
-- eGit
-- PHPEclipse 1.2.3 (<http://update.phpeclipse.net/update/nightly>)
-- Spket IDE 1.6.18 (<http://spket.com/update/>)
+You will not have access to commit directly to the official repository, so will do most of your work in a fork of your own. You have full control over this fork and will send a pull request to the official repository with proposed changes.
 
-#### Eclipse Installation
+## Step 2: install MODX from your fork
 
-- Simply install the latest Eclipse Classic
-- Start up eclipse / select a workspace
-- Use the Install Software option under the help menu
-- Right click and copy each of the links above (doing them in order doesn't hurt)
-- Click the "Add" button
-- Name the "repo" WST, Subclipse, PHPEclipse, or Spket, as it relates to the URL
-- Paste the URL
-- Click OK
-- Repeat for each of the links above as necessary
-- Individual notes:
-    - WST - select the latest Web Tools Platform (takes quite a while)
-    - Subclipse - simply install the Subclipse option
-    - PHPEclipse - install everything offered
-    - Spket - Install everything offered
+[Follow the installation from git instructions](getting-started/installation/git) to clone your fork (make sure to use your own repository url, not the official repository), and install it.  
 
-### Other Tools
+## Step 3: connect the upstream
 
-For Mac:
+In order to easily update your fork from the official repository, add it as the "upstream" remote:
 
-- [PhpStorm](http://www.jetbrains.com/phpstorm/) - IDE
-- [TextMate](http://macromates.com/) - IDE
-- [Coda](http://www.panic.com/coda/) - IDE
+````bash 
+git remote add upstream https://github.com/modxcms/revolution.git
+````
 
-For PC:
+You can now use `git fetch upstream` to get the latest commits and update your local clone with a pull, reset, or rebase.
 
-- [PhpStorm](http://www.jetbrains.com/phpstorm/) - IDE
-- [UltraEdit](http://www.ultraedit.com/) - IDE
-- [E](http://www.e-texteditor.com/) - IDE
-- [msysgit](http://code.google.com/p/msysgit/) - git in a linux-like shell
+## Step 4: configure MODX for easier development
 
-For Linux:
+1. Disable the `cache_lexicon_topics` system setting (in System > System Settings) to make sure lexicon changes are immediately visible when developing.
+2. ....
 
-- [PhpStorm](http://www.jetbrains.com/phpstorm/) - IDE
-- [Kate](http://kate-editor.org/) - IDE for Linux / KDE
 
-## Development Server Environments
+## Other Tools
 
-We also use MacPorts, XAMPP and MAMP, and the following tools/libraries in the development of MODX Revolution:
+Many MODX developers use [PhpStorm](http://www.jetbrains.com/phpstorm/) as their editor (IDE) of choice. It's very powerful and available for Mac, Windows and Linux.  
 
-- **PHPUnit** - this drives the PHP 5.1+ unit testing framework for xPDO, and we'll be adding a more robust test harness to MODX soon
-- **PHPDocumentor** - all of the classes in MODX Revolution are documented in PHPDoc format, and we'll be developing tutorials and other extended documentation for inclusion in the PHPDocs in DocBook XML format
-- **Phing** - will be used to allow automation of nightly builds, various distribution builds, unit testing, and many other development tasks
+[The GitHub CLI](https://cli.github.com/) is useful if you're doing a lot of work with GitHub. 
+
+For various tooling specific to MODX development (e.g. building assets and running tests), see [tooling](contribute/code/tooling).
