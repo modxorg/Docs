@@ -2,13 +2,12 @@
 title: "EVAL Binding"
 _old_id: "107"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding"
+note: "The @EVAL binding has been deprecated and removed in MODX 3.0."
 ---
 
 ## What is the @EVAL Binding?
 
 The @EVAL Binding executes the specified PHP code. It should be used with careful security precautions.
-
-**Important: the @EVAL binding has been deprecated and removed in MODX 3.0.**
 
 ## Syntax
 
@@ -53,9 +52,7 @@ Then create a dropdown-type TV with this input-options:
 
 ## Security
 
-The eval() statement raises an eyebrow with anyone concerned with security: eval statements are notorious for being exploited, so it's recommended that you find another way of doing whatever you are trying to do, but this context is supported by MODX. If I let my cynical mind wander, allow me to paint one disasterous circumstance: some web user of your MODX application logs in and has access to a field that gets executed by an EVAL binding. This nefarious user could eval some nasty _unlink()_ or _rmdir()_ statements and destroy your web server files, or read sensitive files **anywhere** on the web-server that PHP has access to. Be careful with these!
-
-Thankfully, I've been unsuccessful in my attempts to unlink() a file using the @EVAL binding... but I'm sure there are people out there more clever than me...
+The use of `eval()` is a security sensitive binding and should be used with caution. For this reason it has also been removed in 3.0 and can be disabled sooner with the `allow_tv_eval` system setting.
 
 ## See Also
 
