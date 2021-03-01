@@ -20,7 +20,7 @@ These Data Sources can be tied (or "bound") to a Template Variable for formattin
 - @RESOURCE resource\_id
 - @CHUNK chunk\_name
 - @SELECT sql\_query
-- @EVAL php\_code
+- @EVAL php\_code - **Important:** `@EVAL` has been removed in 3.0.
 - @DIRECTORY path\_relative\_to\_base\_path
 - @INLINE available in some Extras (e.g. getResources), this specifies a formatting chunk in-line as a string.
 
