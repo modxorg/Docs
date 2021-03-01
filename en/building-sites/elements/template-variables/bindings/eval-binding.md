@@ -8,4 +8,4 @@ The `@EVAL` binding was present in earlier versions of MODX and allowed executin
 
 Due to the related security concerns, this has been removed in 3.0.
 
-As an alternative, you can use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding) or [@CHUNK](building-sites/elements/template-variables/bindings/chunk-binding) binding, where the latter could 
+As an alternative, you can use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding) or [@CHUNK](building-sites/elements/template-variables/bindings/chunk-binding) binding, where the latter could be used to for example run a snippet.
