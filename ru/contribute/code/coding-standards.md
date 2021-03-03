@@ -1,15 +1,18 @@
 ---
 title: "MODX PHP Стандарты кодирования"
 translation: "contribute/code/coding-standards"
+sortorder: 6
 ---
+
+Эти стандарты кодирования в первую очередь относятся к коду PHP.
 
 ## Общие требования
 
 - Открывающие фигурные скобки не разрывает строку. Они пишутся после одного проблема после скобки, согласно традициям Unix.
 - Не пишите никакой реальной бизнес-логики в конструкторах класса. Создайте специальные методы для этого.
 - null, true and false всегда должны быть в нижнем регистре.
-- Избегайте вложенных вычислений (например:$d = ($a = $b + $c) так делать плохо).
-- Никогда не используйте extract().
+- Избегайте вложенных вычислений (например: `$d = ($a = $b + $c)` так делать плохо).
+- Никогда не используйте `extract()`.
 - Избегайте использования глобальных переменных по возможности.
 - Документируйте ВСЁ.
 
@@ -20,15 +23,15 @@ translation: "contribute/code/coding-standards"
 - Не используйте скобки в выражениях с return когда это необходимо. Например:
 
  ``` php
-  if ($test) {
-  }
-  while ($test == $other) {
-  }
-  array_push($one,$two);
-  return $test;
+if ($test) {
+}
+while ($test == $other) {
+}
+array_push($one,$two);
+return $test;
 ```
 
-- **Не используйте** скобки когда используете функции include, require, include\_once, и require\_once.
+- **Не используйте** скобки когда используете функции `include`, `require`, `include_once`, и `require_once`.
 
 ## Классы
 
@@ -37,12 +40,12 @@ translation: "contribute/code/coding-standards"
 - Все private методы и переменные должны начинаться с символа подчеркивания "_".
 
  ``` php
-  class modFactor {
-      public $publicVar;
-      private $_privateVar;
-      private function _privateFunc() { }
-      public function publicFunc() { }
-  }
+class modFactor {
+    public $publicVar;
+    private $_privateVar;
+    private function _privateFunc() { }
+    public function publicFunc() { }
+}
 ```
 
 ## Переменные
@@ -54,23 +57,23 @@ translation: "contribute/code/coding-standards"
 
 ## Аргументы функций и свойства классов
 
-- Первая буква в нижнем регистре, остальные в camelCase. Пример:
+- Первая буква в нижнем регистре, остальные в **camelCase**. Пример:
 
  ``` php
-  class modFactor {
-      public function testFunc($testVar, array &$anotherTest = array()) {
-          $this->_privateVar = $testVar;
-          $local_variable =& $anotherTest;
-      }
-  }
+class modFactor {
+    public function testFunc($testVar, array &$anotherTest = array()) {
+        $this->_privateVar = $testVar;
+        $local_variable =& $anotherTest;
+    }
+}
 ```
 
 ## Массивы
 
-- В именах полей в индексах массива используйте подчеркивание "_", а не тире "-" в качестве разделителя. Это предотвратит ошибки с magic_quotes.
+- В именах полей в индексах массива используйте подчеркивание "_", а не тире "-" в качестве разделителя. Это предотвратит ошибки с `magic\_quotes`.
 - Имена полей в индексах массива всегда в нижнем регистре. Пробелы представлены в виде подчеркиваний.
 - Имена полей в индексах массива всегда заключено в одинарные кавычки.
-  
+
 Пример:
 
 ``` php

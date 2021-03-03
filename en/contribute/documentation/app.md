@@ -6,4 +6,4 @@ title: 'Build the DocsApp'
 
 If you'd like to improve the documentation site (rather than the content), [start by reading the DocsApp Readme](https://github.com/modxorg/DocsApp/#docsapp-for-modx).
 
-The documentation at docs.modx.com is hosted on a MODX-sponsored server. The mirror at docs.modx.org is hosted on a modmore-sponsored server and occasionally used as a staging environment for new features or improvements.
+The documentation at <https://docs.modx.com> is hosted on a MODX-sponsored server. The mirror at <https://docs.modx.org> is hosted on a modmore-sponsored server and occasionally used as a staging environment for new features or improvements.
