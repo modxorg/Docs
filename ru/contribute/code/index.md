@@ -4,84 +4,84 @@ translation: "contribute/code"
 sortorder: 1
 ---
 
-So, you want to help developing MODX Revolution? Just having that idea already makes you, like, the best person ever. <3
+Итак, вы хотите помочь в разработке MODX Revolution? Эта идея уже делает вас лучшим человеком на свете. =)
 
-There's plenty of work to around, so your involvement in the core code will be greatly appreciated and can have a real impact on future releases of MODX. No pressure - just excited you're even reading this.
+Здесь много работы, поэтому ваше участие в основном коде будет весьма признательно и может оказать реальное влияние на будущие выпуски MODX. Никакого давления - просто рад, что ты даже это читаешь.
 
-In this section we'll walk you through some of the processes of developing a fix or new feature for MODX.
+В этом разделе мы проведем вас через некоторые процессы разработки исправления или новой функции для MODX.
 
-> Not really the development type, but still want to help with code? Learn how you can help by [testing contributions from others](contribute/code/testing-pull-requests), [triaging issues](contribute/issues), or [translating MODX into different languages](contribute/translate).
+> Вы не совсем разработчик, но все же хотите помочь с кодом? Узнайте, как вы можете помочь, [тестируя вклад других](contribute/code/testing-pull-requests), [сортируя проблемы](contribute/issues), или [переводя MODX на разные языки](contribute/translate).
 
-## The Contributor License Agreement
+## Лицензионное соглашение участника
 
-First of all, some legalese. Before any improvement can be accepted, the MODX project needs you to (digitally) sign a _Contributors License Agreement_ (commonly shortened to CLA), which basically means you give the MODX project the right to take your contributor and share it. You'll only have to do this once and it wont take more than a few minutes.
+Во-первых, немного легального. Прежде чем какое-либо улучшение может быть принято, проект MODX требует, чтобы вы подписали (в цифровой форме) _Лицензионное соглашение с участниками_ (сокращенно CLA), что в основном означает, что вы даете проекту MODX право взять своего участника и поделиться им. Вам нужно будет сделать это только один раз, и это не займет больше нескольких минут.
 
-When creating a pull request the helpful `@cla-bot` will automatically check if you've signed the CLA before, so you can also forget about it now and get back to it when prompted by the bot.
+При создании pull request полезный `@cla-bot` автоматически проверит, подписывали ли вы CLA раньше, так что вы также можете забыть об этом сейчас и вернуться к нему, когда будет предложено ботом.
 
-[Sign the CLA here](https://modx.com/community/cla/).
+[Подпишите CLA здесь](https://modx.com/community/cla/).
 
-## Step 1: find something to work on
+## Шаг 1: найдите над чем поработать
 
-If you've come to this page with the idea to fix something that's been bugging you: congrats, you just completed this step! :) Skip ahead to step 2, below.
+Если вы пришли на эту страницу с идеей исправить что-то, что вас беспокоит: поздравляю, вы только что выполнили этот шаг! :) Перейдите к шагу 2 ниже.
 
-But if you don't have a specific task in mind yet, [start by browsing the issue tracker on GitHub](https://github.com/modxcms/revolution/issues). There's literally hundreds of open issues awaiting someone to take up the initiative and fix it.
+Но если у вас еще нет конкретной задачи, [начните с просмотра системы отслеживания проблем на GitHub](https://github.com/modxcms/revolution/issues). Буквально сотни открытых проблем ждут, когда кто-то возьмет на себя инициативу и исправит их.
 
-What issue is right for you obviously depends on your skill set. To help narrow things down, use the _Label_ and _Milestone_ filters.
+Очевидно, что вопрос, который вам подходит, зависит от ваших скилов. Чтобы сузить круг вопросов, используйте фильтры _Label_ и _Milestone_.
 
-If you're looking for a somewhat straightforward issue for your first contribution, **select the next patch release in the Milestones dropdown**. Issues assigned to a milestone are usually pretty detailed and a matter of just fixing it, without a ton of internal debugging. Plus, the people [triaging issues](contribute/issues) have already determined that to be a good one to tackle in a certain releae.
+Если вы ищете несколько очевидную проблему для вашего первого взноса, **выберите следующий выпуск исправления в раскрывающемся списке Milestones**. Проблемы, назначенные для вехи, обычно довольно подробны, и их нужно просто исправить, без тонны внутренней отладки. Кроме того, люди [сортировка проблем](contribute/issues) уже определили, что это хороший вариант для решения в определенном выпуске.
 
-The `state/confirmed` and `state/accepting-pull-request` labels are also useful. That label means the problem was confirmed by someone doing triage and definitely worthy of a fix. (That label being missing does not however indicate an issue is not worthy of being fixed!)
+Также полезны метки `state/confirmed` и `state/accepting-pull-request`. Этот ярлык означает, что проблема была подтверждена кем-то, проводившим сортировку, и определенно заслуживает исправления. (Однако отсутствие метки не означает, что проблема не заслуживает исправления!)
 
-There are also priority labels (`priority-1-urgent`, `priority-2-high`) that may be more impactful issues.
+Существуют также ярлыки приоритета (`priority-1-urgent`, `priority-2-high`), которые могут быть более важными проблемами.
 
-Finally, just searching for a topic you're comfortable with can help get an idea of what to work on. Perhaps "extjs", "design", "frontend"...
+Наконец, простой поиск темы, которая вам удобна, может помочь понять, над чем работать. Возможно, "extjs", "design", "frontend"...
 
-When you found your target, it's time to start coding!
+Когда вы нашли свою цель, пора начинать кодить!
 
-## Step 2: choosing the base branch
+## Шаг 2: выбор базовой ветки
 
-If this is your first time working on the Revolution code, [you'll need to get your development environment set up correctly](contribute/code/development-environment). That's basically a [MODX instance that was installed directly from git](getting-started/installation/git), with some additional tweaks to make developing easier. You'd typically have one environment per major release (2.x and 3.x) to avoid switching between them repeatedly.
+Если вы впервые работаете над кодом Revolution, [вам необходимо правильно настроить среду разработки](contribute/code/development-environment). По сути, это [экземпляр MODX, который был установлен непосредственно из git](getting-started/installation/git), с некоторыми дополнительными настройками, упрощающими разработку. Обычно у вас будет одна среда для каждой основной версии (2.x и 3.x), чтобы избежать многократного переключения между ними.
 
-Next is choosing the base branch to use. Generally speaking:
+Далее следует выбрать базовую ветку для использования. В общем:
 
-- **Bug fixes go in the branch for the current path release**, for example `2.8.x` (or `2.x` if `2.8.x` doesn't exist). Which branches are available will differ from time-to-time, but the right one should be fairly simple to spot.
-- **New features go in the branch for the current _minor_ release**, for example `2.x`. When a new minor version is released, a new patch release branch is created from that (eg `2.9.x`).
-- **Breaking changes go in the next major branch**, for example `3.x`.
+- **Исправления ошибок помещаются в ветку для текущей версии**, например, `2.8.x` (или` 2.x`, если `2.8.x` не существует). Такие ветки будут доступны, время от времени будут отличаться, но правильное должно быть довольно легко определить.
+- **Новые функции помещаются в ветку для текущего _minor_ выпуска**, например `2.x`. Когда выпускается новая минорная версия, из нее создается новая ветка выпуска патча (например, `2.9.x`).
+- **Критические изменения вносятся в следующую основную ветку**, например, `3.x`.
 
-> Note: at the time of writing (Feb 2021), the primary focus is on MODX3. This means that bug fixes for the current release should go into `2.x`, while new features should be built for the `3.x` branch. There's also a big focus on fixing bugs in `3.x`. That's a temporary deviation from the guidelines above, and a bit confusing.
+> Примечание: на момент написания (февраль 2021 г.) основное внимание уделялось MODX3. Это означает, что исправления ошибок для текущего выпуска должны быть помещены в `2.x`, а новые функции должны быть созданы для ветки` 3.x`. Также большое внимание уделяется исправлению ошибок в `3.x`. Это временное отклонение от приведенных выше рекомендаций и немного сбивает с толку.
 >
-> After 3.0 comes out, we'll add a separate `3.0.x` branch for 3.0 bug fixes, while new features will then target `3.x.` as described above.
+> После выхода версии 3.0 мы добавим отдельную ветку `3.0.x` для исправлений ошибок версии 3.0, а новые функции будут нацелены на` 3.x.`, как описано выше.
 
-Not sure if something is a bug fix or a new feature? Check if there's already been a milestone assigned to an issue to give you a hint, or bring it up in the issue or on Slack.
+Не уверены, что это исправление ошибки или новая функция? Проверьте, не назначена ли уже веха для проблемы, чтобы дать вам подсказку или поднять ее в проблеме или в Slack.
 
-## Step 3: get coding!
+## Шаг 3: приступайте к программированию!
 
-Now that you've figured out what you're going to work on, and what branch to base it off, it's time to get to work.
+Теперь, когда вы определились, над чем собираетесь работать и на какой ветке это будет основано, пора приступить к работе.
 
-> Haven't set up a development environment yet? [Follow these instructions first.](contribute/code/development-environment)
+> Еще не настроили среду разработки? [Сначала следуйте этим инструкциям.](contribute/code/development-environment)
 
-Start by creating a new issue/feature branch in your local git installation. The convention is to use the format `bug-{issue_number}`, `feature-{issue_number}` or `issue-{issue_number}`, but you're free to choose something else.
+Начните с создания новой ветки проблемы/функции в вашей локальной установке git. По соглашению используется формат `bug-{issue_number}`, `feature-{issue_number}` или `issue-{issue_number}`, но вы можете выбрать что-то другое.
 
 ```bash
 git fetch upstream
 git checkout -b bug-12345 upstream/2.x
 ```
 
-Make sure to adjust `upstream/2.x` to the right base branch if needed.
+Не забудьте настроить upstream/2.x на feature/bug ветвь, если это необходимо.
 
-Now work on the task at hand. Depending on what you're working on, there is [tooling available](contribute/code/tooling) to build assets, models, etc.
+Теперь займитесь поставленной задачей. В зависимости от того, над чем вы работаете, есть [доступные инструменты](contribute/code/tooling) для создания ресурсов, моделей и т.д.
 
-When the problem is resolved or the feature added, commit your changes to your feature/bug branch. Use `git status`, `git add .` or `git add file1 file2` and `git commit -m "commit message goes here"`.
+Когда проблема решена или функция добавлена, зафиксируйте изменения в ветке feature/bug. Используйте `git status`,` git add .` или `git add file1 file2` и` git commit -m "здесь идет сообщение о фиксации" `.
 
-On a particularly large piece of work, committing often (whenever you have a portion working) is useful. It may be necessary to squash commits later, or integrators can squash it when merging.
+На особенно большой части работы полезно часто совершать коммит (когда у вас есть часть работы). Возможно, позже потребуется раздавить коммиты, или интеграторы могут раздавить их при слиянии.
 
-Next, send your commits **to your own fork**, typically called the `origin`. By specifying `-u` in the command below, it's set up to "track the remote branch", meaning you can simply do `git push` without specific arguments next time.
+Затем отправьте свои коммиты **в свой собственный форк**, обычно называемый `origin`. Указав `-u` в приведенной ниже команде, он настроен на «track the remote branch», что означает, что в следующий раз вы можете просто выполнить` git push` без конкретных аргументов.
 
 ````bash
 git push -u origin bug-12345
 ````
 
-The output of that command will look something like this:
+Результат этой команды будет выглядеть примерно так:
 
 ````bash
 Counting objects: 18, done.
@@ -98,51 +98,51 @@ To github.com:YourUsername/revolution.git
  * [new branch]      bug-12345 -> bug-12345
 ````
 
-See that helpful link there to create a pull request? When you're happy with your work, click it to immediately go and create a pull request.
+Видите эту полезную ссылку для создания запроса на перенос? Когда вы довольны своей работой, щелкните ее, чтобы сразу перейти и создать запрос на перенос.
 
-## Step 4: create a Pull Request
+## Шаг 4: создайте Pull Request
 
-> If you didn't follow the "create a pull request" link from the previous step, you can also navigate your fork on GitHub, select the branch on the Code tab, and click on the Pull Request or Compare links in the gray bar below the branch selector.
+> Если вы не перешли по ссылке «create a pull request» на предыдущем шаге, вы также можете перейти со своего форка на GitHub, выбрать ветку на вкладке «Code» и щелкнуть ссылки «Pull Request» или «Compare» на серой панели под селектором ветки.
 
-When creating the pull request, make sure that the _Base Repository_ is set to `modxcms/revolution` and that the _base_ is set to the branch you chose as your base branch before. GitHub does not always pre-select the right base branch automatically.
+При создании запроса на перенос убедитесь, что для _Base Repository_ установлено значение `modxcms/revolution`, а для _base_ установлено значение ветки, которую вы ранее выбрали в качестве базовой. GitHub не всегда автоматически выбирает правильную базовую ветку.
 
-The _head repository_ and _head_ need to point to your changes, which should be prefilled.
+_Head repository_ и _head_ должны указывать на ваши изменения, которые должны быть предварительно заполнены.
 
-Click the big green button to create the pull request to get to the prefilled pull request template. Please fill that out completely to make sure the reviewers have all the information they need. Especially instructions on how to test your contribution and any relevant issues is important to have in one place.
+Нажмите большую зеленую кнопку, чтобы создать pull request, чтобы перейти к предварительно заполненному шаблону pull request. Пожалуйста, заполните его полностью, чтобы убедиться, что у рецензентов есть вся необходимая информация. Особенно важно иметь в одном месте инструкции о том, как проверить свой вклад, и любые соответствующие вопросы.
 
-## Step 5: see it through until the merge
+## Шаг 5: доведите до слияния
 
-When you've created the pull request, it's out of your hands (mostly). It will now need to be reviewed by the core integrators and [testers](contribute/code/testing-pull-requests), which can sometimes take longer than we'd like.
+Когда вы создали pull request, он (в основном) не в ваших руках. Теперь он должен быть рассмотрен основными интеграторами и [тестировщиками](contribute/code/testing-pull-requests), что иногда может занять больше времени, чем хотелось бы.
 
-Be sure to keep an eye on any comments or questions on your pull request, as it's possible we need some help to understand what you've done or that there are small tweaks that are needed. Of the pull requests that don't make it into the core, a very large portion ends up being closed because the author no longer responds to repeated requests for changes.
+Обязательно следите за любыми комментариями или вопросами по вашему запросу на перенос, поскольку возможно, нам понадобится помощь, чтобы понять, что вы сделали, или что необходимо внести небольшие изменения. Из запросов на вытягивание, которые не попадают в ядро, очень большая часть закрывается, потому что автор больше не отвечает на повторяющиеся запросы на изменения.
 
-But when your pull request does get merged, congrats! :) You're now part of the permanent history of MODX, and a pretty awesome human being, too.
+Но когда ваш pull request действительно объединяется, поздравляю! :) Теперь вы являетесь частью постоянной истории MODX, а также довольно крутым человеком.
 
-## Step 6: rinse and repeat
+## Шаг 6: промыть и повторить
 
-Especially the first pull request may feel like a lot of work. Filling out templates, git, base and head branches... it can be daunting.
+Первый запрос на включение может показаться трудоемким. Заполнение шаблонов, git, base и head веток ... это может быть непросто.
 
-That'll get easier with experience.
+С опытом станет легче.
 
-If you do get stuck (_especially_ when you're only just getting started!) please ask for help. [Slack](https://modxcommunity.slack.com/) ([request an invite here](https://modx.org)) is a useful place and is filled to the brim with enthusiastic people, including core developers and integrators.
+Если вы застряли (особенно когда вы только начинаете!), Обратитесь за помощью. [Slack](<https://modxcommunity.slack.com/>) ([запросите приглашение здесь](<https://modx.org>)) - полезное место, которое до краев заполнено энтузиастами, включая разработчиков ядра и интеграторы.
 
-Our shared goal is making MODX better, so your help in doing so - no matter how big or small - is greatly appreciated.
+Наша общая цель - сделать MODX лучше, поэтому мы будем благодарны вам за вашу помощь, независимо от того, насколько она велика или мала.
 
-## More information and tips
+## Дополнительная информация и советы
 
-- New to git and github entirely? [See this page for more generic information](contribute/code/git-github) and [common git commands/scenarios](contribute/code/git-github/frequent-commands).
-    - There's also a plethora of online resources, such as [GitHub's Git Handbook](https://guides.github.com/introduction/git-handbook/), [cheatsheets](https://training.github.com/), and [interactive git branching demos](https://learngitbranching.js.org/).
-    - While there are also user interfaces for git (including built-in in many code editors), if you're completely new, it may be better to first learn git on the terminal. Once you've got a grasp of the concept, you can transfer knowledge of git on the terminal to a visual user interface quite easily, but the other way around is more tricky.
-- Want to know how your pull request is reviewed? [Learn more about testing pull requests](contribute/code/testing-pull-requests).
-- [Coding standards can be found here](contribute/code/coding-standards). Generally speaking, stick to the coding standards used in the code you're editing.
+- Новичок в git и github? [См. Эту страницу для получения более общей информации](contribute/code/git-github) и [общие команды/сценарии git](contribute/code/git-github/frequent-commands).
+    - Также есть множество онлайн-ресурсов, таких как [GitHub's Git Handbook](https://guides.github.com/introduction/git-handbook/), [cheatsheets](https://training.github.com/), и [интерактивные демонстрации ветвления git](https://learngitbranching.js.org/).
+    - Хотя существуют также пользовательские интерфейсы для git (включая встроенные во многие редакторы кода), если вы совершенно новичок, возможно, лучше сначала изучить git на терминале. Как только вы усвоите концепцию, вы можете довольно легко перенести знания о git с терминала в визуальный пользовательский интерфейс, но наоборот - сложнее.
+- Хотите знать, как проверяется ваш pull request? [Подробнее о тестировании запросов на вытягивание ...](contribute/code/testing-pull-requests).
+- [Стандарты кодирования можно найти здесь](contribute/code/coding-standards). Вообще говоря, придерживайтесь стандартов кодирования, используемых в коде, который вы редактируете.
 
-## What are the chances of a pull request getting accepted?
+## Каковы шансы на принятие pull request?
 
-Generally, pretty high, but the core integrators do review pull requests carefully. Once a pull request is accepted, it becomes official and will need to be maintained for the foreseeable future, so integrators can sometimes be careful.
+Как правило, довольно много, но основные интеграторы тщательно проверяют pull requests. Как только запрос на вытягивание принят, он становится официальным, и его нужно будет поддерживать в обозримом будущем, поэтому интеграторы иногда могут быть осторожны.
 
-To improve your odds:
+Чтобы улучшить свои шансы:
 
-- One fix or feature per pull request.
-- Be responsive if questions are asked or changed are requested.
-- Be respectful. We're all volunteering our time here.
-- Make sure there's consensus before doing the work, especially when it comes to new features. Has it been extensively discussed before, and if so what was the outcome of that? Different people may have different ideas, but we only have one core.
+- Одно исправление или функция для каждого pull request.
+- Будьте отзывчивы, если вам задают вопросы или изменяют их.
+- Быть почтительным. Мы все проводим здесь свое время добровольно.
+- Прежде чем приступить к работе, убедитесь, что есть консенсус, особенно когда речь идет о новых функциях. Обсуждалось ли это раньше, и если да, то каков был результат? У разных людей могут быть разные идеи, но ядро у нас только одно.
