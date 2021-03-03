@@ -1,7 +1,10 @@
 ---
 title: "MODX PHP Стандарты кодирования"
 translation: "contribute/code/coding-standards"
+sortorder: 6
 ---
+
+Эти стандарты кодирования в первую очередь относятся к коду PHP.
 
 ## Общие требования
 
