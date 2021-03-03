@@ -1,5 +1,6 @@
 ---
 title: 'Документация'
+translation: "contribute/documentation"
 sortorder: 2
 ---
 

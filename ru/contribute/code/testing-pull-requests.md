@@ -1,6 +1,6 @@
 ---
 title: Тестирование Pull Requests
-translation: "contribute/testing-pull-requests"
+translation: "contribute/code/testing-pull-requests"
 sortorder: 2
 ---
 
