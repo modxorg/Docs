@@ -6,7 +6,7 @@ _old_uri: "2.x/advanced-features/object-validation"
 
 ## What is Object Validation in xPDO?
 
-Object validation is done through xPDOValidator, xPDO's validation class. It's automatically accessible from any xPDOObject, via the getValidator method.
+Object validation is done through `xPDOValidator`, xPDO's validation class. It's automatically accessible from any `xPDOObject`, via the `getValidator` method.
 
 ## How is it Done?
 
@@ -17,19 +17,18 @@ Validation can be done either via the XML schema, or during run-time by [xPDOVal
 First, let's create our model with this object:
 
 ``` xml
-<model package="test" baseClass="xPDOObject" platform="mysql"
-       defaultEngine="MyISAM" tablePrefix="test_">
+<model package="test" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">
         <field key="name" dbtype="varchar" precision="255"
-               phptype="string" default="" null="false" />
+            phptype="string" default="" null="false" />
 
         <validation>
             <rule field="name"
-                  name="preventBlank"
-                  type="xPDOValidationRule"
-                  rule="xPDOMinLengthValidationRule"
-                  value="1"
-                  message="Please specify a name."
+                name="preventBlank"
+                type="xPDOValidationRule"
+                rule="xPDOMinLengthValidationRule"
+                value="1"
+                message="Please specify a name."
              />
         </validation>
     </object>
@@ -57,20 +56,20 @@ This will output:
 
 ## Rules
 
-There are three different types of rules, 'callable', 'preg\_match', and 'xPDOValidationRule'.
+There are three different types of rules, `callable, `preg_match`, and `xPDOValidationRule`.
 
 ### The 'callable' Rule
 
 A callable rule simply is a rule based upon a function that you pass.
 
-This can be done a few ways. In the "rule" parameter of the schema, you can specify a function name, let's say, 'myCallable', and then make sure to define the function before you call validate().
+This can be done a few ways. In the "rule" parameter of the schema, you can specify a function name, let's say, 'myCallable', and then make sure to define the function before you call `validate()`.
 
 The function is passed two parameters, the first of which is the value of the column in question, and the second an array of the other attributes on the Rule field in the schema. For example, a model with a rule as such:
 
 ``` php
 <rule field="number" name="callable2"
-      type="callable" rule="myCallable"
-      min="10" message="Value is too low. Must be 10 or more."
+    type="callable" rule="myCallable"
+    min="10" message="Value is too low. Must be 10 or more."
 />
 ```
 
@@ -98,7 +97,7 @@ You can also call class methods as well; if you have class A with method B, you 
 
 ### The 'preg\_match' Rule
 
-A preg\_match rule is simply a regular expression rule that must pass on a field in order for the object to validate. An example rule in the schema is like such - this one checks to see if the field contains the string 'php':
+A `preg_match` rule is simply a regular expression rule that must pass on a field in order for the object to validate. An example rule in the schema is like such - this one checks to see if the field contains the string 'php':
 
 ``` php
 <rule field="name" name="phpMatch"
