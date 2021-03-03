@@ -1,5 +1,5 @@
 ---
-title: Сборка assets
+title: Сборка ресурсов
 translation: "contribute/code/tooling/assets"
 ---
 
@@ -13,6 +13,6 @@ translation: "contribute/code/tooling/assets"
 - `_build/templates/default/sass/` содержит исходные файлы Sass (в формате scss),
 - `manager/assets/` содержит все файлы javascript, связанные с менеджером. Файлы, необходимые на каждой странице, объединяются и сжимаются в процессе сборки в `_build/templates/default`.
 
-## Сборка assets
+## Сборка ресурсов
 
 [Подробную информацию об установке и запуске рабочего процесса ресурсов можно найти на GitHub](https://github.com/modxcms/revolution/blob/2.x/_build/templates/default/README.md)
