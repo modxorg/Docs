@@ -5,7 +5,7 @@ sortorder: 4
 
 If you speak any languages other than English, you can help translate MODX into your language.
 
-[Translations are managed via CrowdIn at translate.modx.com](http://translate.modx.com/). 
+[Translations are managed via CrowdIn](https://crowdin.com/project/modx-revolution). 
 
 First create a CrowdIn account if you don't have one, and then start translating.
 
