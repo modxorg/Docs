@@ -12,8 +12,8 @@ These coding standards primarily apply to PHP code.
 - Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.
 - Do not do any real logic in object constructors. Create class methods to do so.
    null, true and false should always be lowercase.
-- Avoid embedded assignments (ex: $d = ($a = $b + $c) is bad).
-- Never use extract().
+- Avoid embedded assignments (ex: `$d = ($a = $b + $c)` is bad).
+- Never use `extract()`.
 - Avoid using global variables if at all possible.
 - Document EVERYTHING.
 
@@ -24,15 +24,15 @@ These coding standards primarily apply to PHP code.
 - Do not use parenthesis in return statements when it's not necessary. Example:
 
 ``` php
-  if ($test) {
-  }
-  while ($test == $other) {
-  }
-  array_push($one,$two);
-  return $test;
+if ($test) {
+}
+while ($test == $other) {
+}
+array_push($one,$two);
+return $test;
 ```
 
-- Do **not** use parenthesis when using include, require, include\_once, and require\_once.
+- Do **not** use parenthesis when using `include`, `require`, `include_once`, and `require_once`.
 
 ## Classes
 
@@ -41,12 +41,12 @@ These coding standards primarily apply to PHP code.
 - All private methods and variables must be prefixed with the underscore \_ character.
 
 ``` php
-  class modFactor {
-      public $publicVar;
-      private $_privateVar;
-      private function _privateFunc() { }
-      public function publicFunc() { }
-  }
+class modFactor {
+    public $publicVar;
+    private $_privateVar;
+    private function _privateFunc() { }
+    public function publicFunc() { }
+}
 ```
 
 ## Variables
@@ -61,17 +61,17 @@ Note these are not function arguments.
 - The first letter is lowercase, rest are camelCase. Example:
 
 ``` php
-  class modFactor {
-      public function testFunc($testVar, array &$anotherTest = array()) {
-          $this->_privateVar = $testVar;
-          $local_variable =& $anotherTest;
-      }
-  }
+class modFactor {
+    public function testFunc($testVar, array &$anotherTest = array()) {
+        $this->_privateVar = $testVar;
+        $local_variable =& $anotherTest;
+    }
+}
 ```
 
 ## Arrays
 
-- Array index names use the underscore \_, not the dash as their separator. This prevents errors with magic\_quotes.
+- Array index names use the underscore \_, not the dash as their separator. This prevents errors with `magic\_quotes`.
 - Array index names are always lowercase. Spaces are represented by an underscore.
 - Array index names are always encapsulated with single quotes.
    Example:
