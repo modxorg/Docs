@@ -159,6 +159,7 @@ Optionally fork [MODX Revolution on Github](https://github.com/modxcms/revolutio
 1. `git remote add upstream https://github.com/modxcms/revolution.git` (different URL if you're using SSH)
 2. `git remote set-url origin {your github repo url}`
 3. You may also need: `git remote set-url --push origin {your github repo url}`
+4. Install dependencies with `composer install`
 
 Build the core:
 
