@@ -1,23 +1,31 @@
 ---
-title: "FormIt.Examples.Simple Contact Page"
+title: "Simple Contact Page"
 _old_id: "851"
 _old_uri: "revo/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page"
 ---
 
-A simple Contact page with email sending, validation and redirection to Resource with ID 123.
+Here we will give a simple example of Contact page. 
 
-Will also strip tags from the message, validate the email as a real email address, and make sure none of the fields are blank.
+We presume that you have already installed Formit component via [Package Management](developing-in-modx/advanced-development/package-management "Package Management") and got acquainted Formit [How To Use](/extras/formit#how-to-use "How To Use") section. 
 
-And finally, we want reCaptcha support. We've already setup our public and private keys for reCaptcha via the following System Settings:
+This example Contact form will validate input data, send an email and finally redirect to Resource with ID 123. 
+
+Validation process (see how it works [here](extras/formit/formit.validators), in short - each hook executes some kind of logic, if successful - transfers processing to the next hook ) in this example does the following: also strip tags from the message, validate the email as a real email address, and make sure none of the fields are blank. All this is specified in &validate parameter.
+
+And finally, we want [reCaptcha](https://www.google.com/recaptcha/about/) support. We've already setup our public and private keys for reCaptcha via the following System Settings:
 
 - formit.recaptcha\_public\_key
 - formit.recaptcha\_private\_key
 
 ## Snippet Tag
 
+You can call this snippet anywhere: inside template, chunk, page content body, or even call programmatically via [runSnippet](extending-modx/modx-class/reference/modx.runsnippet). 
+
+There is only one condition - Formit must be launched on the page where data from Contact form below will be sent (see "action" field value).
+
 ``` php
 [[!FormIt?
-   &hooks=`recaptcha,spam,email,redirect`
+   &hooks=`recaptcha,email,redirect`
    &emailTpl=`MyEmailChunk`
    &emailTo=`user@example.com`
    &redirectTo=`123`
@@ -32,6 +40,8 @@ And finally, we want reCaptcha support. We've already setup our public and priva
 ```
 
 ## Contact Form
+
+This HTML code must be called on website page where you want to see Contact Form. "Action" field value points to the page where the snippet call is located, in our case we call it on the same page, so we use [~ tag](building-sites/tag-syntax/common#default-resource-content-field-tags) to generate a link for the current page.  
 
 ``` html
 <h2>Contact Form</h2>
@@ -105,6 +115,8 @@ And finally, we want reCaptcha support. We've already setup our public and priva
 
 ## MyEmailChunk (Tpl Chunk)
 
+Below is email chunk(from _&emailTpl_) that we send to specified in _&emailTo_ Formit parameter after form data receipt and validation.
+
 ``` php
 This is the Formit Email Chunk.
 
@@ -112,3 +124,10 @@ This is the Formit Email Chunk.
 
 [[+text]]
 ```
+
+## See Also
+
+1. [AjaxForm](https://modx.com/extras/package/ajaxform) Submit any form via Ajax (FormIt wrapper extra)
+2. [FormItAutoResponder](extras/formit/formit.hooks/formitautoresponder)
+3. What is [Google Recaptcha](https://www.google.com/recaptcha/about/)
+4. [ReCaptchaV2](https://modx.com/extras/package/recaptchav2) Google Recaptcha(V2 and V3 supported) extra for MODX 
