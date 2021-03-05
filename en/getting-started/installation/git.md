@@ -12,13 +12,13 @@ Here are some notes on participating in MODX Revolution testing and/or developme
 
 Git clone the revolution repository on GitHub at: <http://github.com/modxcms/revolution/> using this syntax:
 
-``` php
+``` bash
 git clone http://github.com/modxcms/revolution.git
 ```
 
 Or, if you'd like to contribute back, [fork it in your GitHub repository](http://help.github.com/forking/) and clone that repository as "origin" and add the modxcms/revolution repository as a remote called "upstream":
 
-``` php
+``` bash
 git clone git@github.com:yourgitusernamehere/revolution.git
 cd revolution
 git remote add upstream -f http://github.com/modxcms/revolution.git
@@ -40,7 +40,7 @@ From there, make sure you are working on the **2.x** branch, if you're wanting t
 
 To create a local tracking branch from one in the origin remote; after cloning, just type:
 
-``` php
+``` bash
 git checkout -b 2.x origin/2.x
 ```
 
@@ -72,7 +72,7 @@ The actual install process requires more than the default 8M of memory allocated
 
 Simply run these two commands:
 
-``` php
+``` bash
 git fetch origin
 git rebase origin/2.x
 ```
@@ -97,13 +97,13 @@ MODX recommends you to work on features or bugs in their own separate branches. 
 
 For example, lets say you want to add a feature for workflow for MODX. You'd create a local branch from the '2.x' branch called 'myworkflow' with:
 
-``` php
+``` bash
 git checkout -b myworkflow 2.x
 ```
 
 ...and then do your coding there. Once you're done, you'd push that branch to your fork, and then send the Pull Request over. Once MODX has integrated your code (or rejected it and you're finished with it), you can then delete the branch like so:
 
-``` php
+``` bash
 git checkout 2.x
 git branch -d myworkflow
 ```
@@ -118,7 +118,7 @@ For more information on using GitHub forks, see the [GitHub Forking Help Page](h
 
 If you want to switch to a different branch (that you have already checked out locally), simply type these commands:
 
-``` php
+``` bash
 git fetch upstream
 git checkout 2.5.x upstream/2.5.x
 ```
@@ -135,15 +135,129 @@ If you use MAMP on Mac OS X, you may get problems (errors about DYLD libraries n
 
 To adjust the dynamic linker library path to include the MAMP PHP libraries, run the following command via the terminal:
 
-``` php
+``` bash
 export DYLD_LIBRARY_PATH=/Applications/MAMP/Library/lib:$\{DYLD_LIBRARY_PATH\}
 ```
 
 You can then execute `transport.core.php` by using the absolute path to the MAMP PHP executable:
 
-``` php
+``` bash
 /Applications/MAMP/bin/php5/bin/php transport.core.php
 ```
+
+### Git Install MODX3
+
+The other way to get MODX3 is by using Github to get the files, then build the core and execute setup.
+
+``` bash
+git clone git@github.com:modxcms/revolution.git -b 3.x www
+```
+
+This will clone the MODX3 brach (3.x) into a folder called 'www'. You can change this folder to whatever you want. In the root-folder of your site, you need to install all dependencies:
+
+``` bash
+$ composer install
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 21 installs, 0 updates, 0 removals
+
+- Installing psr/log (1.0.2): Loading from cache
+- Installing symfony/debug (v4.0.6): Loading from cache
+- Installing symfony/polyfill-mbstring (v1.7.0): Loading from cache
+- Installing symfony/console (v3.4.6): Loading from cache
+- Installing psr/container (1.0.0): Loading from cache
+- Installing container-interop/container-interop (1.2.0): Loading from cache
+- Installing xpdo/xpdo (3.x-dev 5801782): Cloning 58017821d0 from cache
+- Installing mtdowling/jmespath.php (2.4.0): Loading from cache
+- Installing psr/http-message (1.0.1): Loading from cache
+- Installing guzzlehttp/psr7 (1.4.2): Loading from cache
+- Installing guzzlehttp/promises (v1.3.1): Loading from cache
+- Installing guzzlehttp/guzzle (6.3.0): Loading from cache
+- Installing aws/aws-sdk-php (3.52.30): Downloading (100%)
+- Installing league/flysystem (1.0.43): Loading from cache
+- Installing league/flysystem-aws-s3-v3 (1.0.18): Loading from cache
+- Installing psr/cache (1.0.1): Loading from cache
+- Installing league/flysystem-cached-adapter (1.0.6): Loading from cache
+- Installing phpmailer/phpmailer (v6.0.3): Loading from cache
+- Installing smarty/smarty (v3.1.31): Loading from cache
+- Installing james-heinrich/phpthumb (v1.7.14): Loading from cache
+- Installing pelago/emogrifier (v2.0.0): Loading from cache
+symfony/console suggests installing symfony/event-dispatcher ()
+symfony/console suggests installing symfony/lock ()
+symfony/console suggests installing symfony/process ()
+xpdo/xpdo suggests installing ext-redis (Allows caching using Redis)
+aws/aws-sdk-php suggests installing aws/aws-php-sns-message-validator (To validate incoming SNS notifications)
+aws/aws-sdk-php suggests installing doctrine/cache (To use the DoctrineCacheAdapter)
+league/flysystem suggests installing league/flysystem-aws-s3-v2 (Allows you to use S3 storage with AWS SDK v2)
+league/flysystem suggests installing league/flysystem-azure (Allows you to use Windows Azure Blob storage)
+league/flysystem suggests installing league/flysystem-eventable-filesystem (Allows you to use EventableFilesystem)
+league/flysystem suggests installing league/flysystem-rackspace (Allows you to use Rackspace Cloud Files)
+league/flysystem suggests installing league/flysystem-sftp (Allows you to use SFTP server storage via phpseclib)
+league/flysystem suggests installing league/flysystem-webdav (Allows you to use WebDAV storage)
+league/flysystem suggests installing league/flysystem-ziparchive (Allows you to use ZipArchive adapter)
+league/flysystem suggests installing spatie/flysystem-dropbox (Allows you to use Dropbox storage)
+league/flysystem suggests installing srmklive/flysystem-dropbox-v2 (Allows you to use Dropbox storage for PHP 5 applications)
+league/flysystem-cached-adapter suggests installing ext-phpredis (Pure C implemented extension for PHP)
+phpmailer/phpmailer suggests installing league/oauth2-google (Needed for Google XOAUTH2 authentication)
+phpmailer/phpmailer suggests installing hayageek/oauth2-yahoo (Needed for Yahoo XOAUTH2 authentication)
+phpmailer/phpmailer suggests installing stevenmaguire/oauth2-microsoft (Needed for Microsoft XOAUTH2 authentication)
+Writing lock file
+Generating autoload files
+After this you 'cd' to the _build folder and copy config files there.
+```
+
+``` bash
+cd www/_build
+cp build.config.sample.php build.config.php
+cp build.properties.sample.php build.properties.php
+```
+
+The next step requires you to have PHP in your path. Check if you have PHP in your path by doing the following:
+
+``` bash
+$ php -v
+PHP 7.2.3 (cli) (built: Mar 8 2018 10:30:06) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+ with Zend OPcache v7.2.3, Copyright (c) 1999-2018, by Zend Technologies
+If you do not get something like the above, please ask someone or Google on how to get it installed.
+```
+
+To build the MODX-core, do the following from within the _build-folder:
+
+``` bash
+$ php transport.core.php
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Beginning build script processes...
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Removed pre-existing core/ and core.transport.zip.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Core transport package created.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Core Namespace packaged.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Default workspace packaged.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged modx.com transport provider.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged in 2 modMenus.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged all default modContentTypes.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged all default modClassMap objects.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged in 189 default events.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged in 225 default system settings.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged in 2 default context settings.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged in 1 default user groups.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged in 1 default dashboards.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged in 1 default media sources.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged in 5 default dashboard widgets.
+[2018-03-22 07:38:12] (INFO @ transport.core.php) Packaged in 2 default roles Member and SuperUser.
+[2018-03-22 07:38:13] (INFO @ transport.core.php) Packaged in 6 default Access Policy Template Groups.
+[2018-03-22 07:38:13] (INFO @ transport.core.php) Packaged in 7 default Access Policy Templates.
+[2018-03-22 07:38:13] (INFO @ transport.core.php) Packaged in 12 default Access Policies.
+[2018-03-22 07:38:13] (INFO @ transport.core.php) Packaged in web context.
+[2018-03-22 07:38:13] (INFO @ transport.core.php) Packaged in mgr context.
+[2018-03-22 07:38:13] (INFO @ transport.core.php) Packaged in connectors.
+[2018-03-22 07:38:13] (INFO @ transport.core.php) Beginning to zip up transport package...
+[2018-03-22 07:38:14] (INFO @ transport.core.php) Transport zip created. Build script finished.
+
+Execution time: 1.8067 s
+```
+
+After building the core, just go to <http://your-path-to-modx.tld/setup/> to do the usual MODX installation.
+
 
 ### Git Install for 3.x Development
 
@@ -165,4 +279,4 @@ Build the core:
 1. `cp build.config.sample.php build.config.php && cp build.properties.sample.php build.properties.php`
 2. Edit those two files, adding your paths and database credentials
 3. Then run: `php transport.core.php`
-4. Run the installer in a browser.
+4. After building the core, just go to <http://your-path-to-modx.tld/setup/> to do the usual MODX installation.
