@@ -4,156 +4,46 @@ _old_id: "154"
 _old_uri: "2.x/getting-started/installation/git-installation"
 ---
 
-## Installation Process
+Installing MODX from git is a great way to have the very latest version, and is also required if you're planning to contribute to the development of MODX. It does require a few more steps than a standard installation.
 
-Here are some notes on participating in MODX Revolution testing and/or development. Unlike previous versions of MODX, Revolution will not install directly from Git. Because of the nature of the new packaging and installation system, you must first create the core installation package using a PHP build script before running the setup.
+## Installation process
 
-### Git Location
+You'll need to:
 
-Git clone the revolution repository on GitHub at: <http://github.com/modxcms/revolution/> using this syntax:
+- get the files from GitHub
+- install composer dependencies 
+- build the core package
+- run the standard setup
+
+Each step is discussed below in detail.
+
+### Get the files from GitHub
+
+Git clone the [revolution repository on GitHub](http://github.com/modxcms/revolution) using this syntax:
 
 ``` bash
-git clone http://github.com/modxcms/revolution.git
+git clone http://github.com/modxcms/revolution.git -b 3.x www
 ```
 
-Or, if you'd like to contribute back, [fork it in your GitHub repository](http://help.github.com/forking/) and clone that repository as "origin" and add the modxcms/revolution repository as a remote called "upstream":
+Note that it's preselecting the 3.x branch and installs into the `www` directory, you may tweak that to match your desired setup.
+
+Or, if you'd like to contribute back: [fork modxcms/revolution to your own GitHub account](http://help.github.com/forking/), clone that repository as "origin" and add the modxcms/revolution repository as a remote called "upstream":
 
 ``` bash
 git clone git@github.com:yourgitusernamehere/revolution.git
 cd revolution
-git remote add upstream -f http://github.com/modxcms/revolution.git
+git remote add upstream -f http://github.com/modxcms/revolution.git -b 3.x www
 ```
 
-Forking it with your GitHub account will allow you to contribute back to MODX by sending pull requests by clicking the "Pull Request" button on your GitHub page. (You'll need to [submit a CLA](http://develop.modx.com/contribute/cla/) before we can accept your code, though.) If you decide to fork, it'd be helpful for you to read our [Git Contributors Guide](contribute/code/contributors-guide "MODX GitHub Contributor's Guide") for detailed information on keeping your fork up-to-date.
+You can switch to a different branch using `git checkout <name-of-branch>` or `git checkout -b 3.x upstream/3.x`
 
-If you're not familiar with Git, please read the excellent tutorial from [GitHub](http://learn.github.com/) and view the [GitHub help pages](http://help.github.com).
+### Install dependencies with Composer
 
-From there, make sure you are working on the **2.x** branch, if you're wanting the latest bugfixes and features targeted for the next release. There are two significant branches in the modxcms/revolution GitHub repository related to the version 2 releases of MODX Revolution:
+MODX uses Composer to manage internal dependencies that are necessary to run 3.x.
 
-#### Major-Version Branch
+If you do not yet have Composer installed on your system [find the installation instructions here](https://getcomposer.org/download/). The command below assumes you've installed Composer globally, for example by running `mv composer.phar /usr/local/bin/composer` after the installation instructions linked above. 
 
-- **2.x** - The latest development branch for MODX Revolution version 2; all new features and bugfixes targeted for the next minor release will exist here.
-
-#### Minor-Version Branch
-
-- **2.5.x** - A minor version branch for current stable minor releases; contains only bug fixes targeted for the next patch release.
-
-To create a local tracking branch from one in the origin remote; after cloning, just type:
-
-``` bash
-git checkout -b 2.x origin/2.x
-```
-
-And git will handle the rest.
-
-There may be other temporary branches in the repository from time to time, representing features in collaborative development, specific releases being prepared, and/or critical bug patches for supported releases.
-
-### Run the Build
-
-If this is the first time you are building from Git, copy the file `**_build/build.config.sample.php**` to `**_build/build.config.php**` and edit the properties to point at a valid database with proper credentials (since Revolution 2.1.x, you either need to copy & edit the same way `**_build/build.properties.sample.php**` to `**_build/build.properties.php**`). NOTE that this database does not have to contain anything; the build script just needs to be able to make a connection to a MySQL database.
-
-From the command line, change your working directory to `**_build/**` and execute the command `**php transport.core.php**`. If the PHP executable is not in your path, you will need to either edit the path or give the full path to the PHP executable in the command line. The build process may take an extended period of time (10 to 30 seconds likely), so be patient. (Note: on Mac Mini (1.66Ghz Intel Core Duo with 2GB RAM) running the Leopard development environment as outlined below, this only takes 5-10 seconds.)
-
-Note that you can also do this from the browser by browsing to the `**_build/transport.core.php**` directory, if that directory is accessible in your web server setup.
-
-Once that script is finished executing, confirm that you now have a file named core/packages/core.transport.zip and a directory `core/packages/core/` containing a manifest.php and many other files/directories.
-
-### Run Setup
-
-Now you are ready to execute the new setup script at the `setup/` URL (e.g. <http://localhost/modxrevo/setup/> if installed in a subdirectory of the web root named modxrevo/).
-
-Make sure you check both the "Core package has been manually unpacked" and "Files are already in-place" options when installing from Git.
-
-If you change any paths on the Context Paths setup step, make sure and move the corresponding directories as appropriate; this is intended for installs from the core package with files not already in-place, where the installer will place the files in the specified locations (assuming the locations allow the PHP process to write to them).
-
-The actual install process requires more than the default 8M of memory allocated to PHP in many default php.ini files; if you get a blank page when you click "install", try increasing the `memory_limit` configuration to 32M or more (16M may work, but why not give php a little space, eh?).
-
-## Upgrading Your Local Git Repository After Commits
-
-Simply run these two commands:
-
-``` bash
-git fetch origin
-git rebase origin/2.x
-```
-
-And Git will update your install. (Substitute '2.5.x' for '2.x' if you're testing/contributing to a specific minor-version branch, or whatever branch you might be working from.)
-
-If you're working from a fork, rather than straight from the modxcms/revolution repository, you'll have to fetch from upstream, rather than origin (since origin is your fork). Please read the [MODX GitHub Contributor's Guide](contribute/code/contributors-guide "MODX GitHub Contributor's Guide") for more information.
-
-When a commit is made, this message might show up in the commit:
-
-- **\[ReUp\]** - If your updates require a core transport rebuild (such as anything modified in the `_build` directory, database model changes, or default data changes), then prefix your commit message with this. If you see this message, simply rebuild the core transport and run `setup/` again.
-
-If this message does not show up, you're done after you fetch and rebase.
-
-### Contributing By Sending Pull Requests
-
-If you've fixed a bug or added an improvement, and you're working on a fork of the revolution repository, you can send a pull request to MODX and one of the Integration Managers will review your patch.
-
-You'll need to [submit a CLA](http://develop.modx.com/contribute/cla/) before we can accept your code.
-
-MODX recommends you to work on features or bugs in their own separate branches. This way, if MODX doesn't accept your pull request exactly as-is, but still updates those files, you wont have to 'git checkout' the develop (or whatever) branch over again. You can just trash the bugfix/feature branch and reload from your clean develop branch.
-
-For example, lets say you want to add a feature for workflow for MODX. You'd create a local branch from the '2.x' branch called 'myworkflow' with:
-
-``` bash
-git checkout -b myworkflow 2.x
-```
-
-...and then do your coding there. Once you're done, you'd push that branch to your fork, and then send the Pull Request over. Once MODX has integrated your code (or rejected it and you're finished with it), you can then delete the branch like so:
-
-``` bash
-git checkout 2.x
-git branch -d myworkflow
-```
-
-The first step takes us back to the develop branch, and then deletes the custom branch. This allows you to easily update MODX without having to worry about invalid or no-longer used commits, and keeps your main branch clean.
-
-You can always `git merge --ff-only origin/2.x` new commits incoming from 2.x (or 2.5.x, etc) into your branch after running `git fetch origin` while having your branch checked out.
-
-For more information on using GitHub forks, see the [GitHub Forking Help Page](http://help.github.com/forking/).
-
-### Switching Branches
-
-If you want to switch to a different branch (that you have already checked out locally), simply type these commands:
-
-``` bash
-git fetch upstream
-git checkout 2.5.x upstream/2.5.x
-```
-
-Of course, replacing 2.5.x with the actual name of the branch you want to switch to. After you've done so, run the build and run `setup/` again, since different branches might have different databases.
-
-Switching _backwards_ is not always recommended; ie, switching from 2.x (the latest features in development for next minor release) to 2.5.x (the latest patches for next patch release), since database changes cannot be executed in reverse. While no major issues should occur, be careful when doing this or keep your work in separate databases for each branch you work on.
-
-## Additional Information
-
-### Using MAMP on Mac OS X
-
-If you use MAMP on Mac OS X, you may get problems (errors about DYLD libraries not being included) when trying to execute `transport.core.php` from the terminal. This is because the MAMP PHP libraries won't be on the dynamic linker path by default.
-
-To adjust the dynamic linker library path to include the MAMP PHP libraries, run the following command via the terminal:
-
-``` bash
-export DYLD_LIBRARY_PATH=/Applications/MAMP/Library/lib:$\{DYLD_LIBRARY_PATH\}
-```
-
-You can then execute `transport.core.php` by using the absolute path to the MAMP PHP executable:
-
-``` bash
-/Applications/MAMP/bin/php5/bin/php transport.core.php
-```
-
-### Git Install MODX3
-
-The other way to get MODX3 is by using Github to get the files, then build the core and execute setup.
-
-``` bash
-git clone git@github.com:modxcms/revolution.git -b 3.x www
-```
-
-This will clone the MODX3 brach (3.x) into a folder called 'www'. You can change this folder to whatever you want. In the root-folder of your site, you need to install all dependencies:
+Run `composer install` in the root of the `www` directory.
 
 ``` bash
 $ composer install
@@ -203,8 +93,13 @@ phpmailer/phpmailer suggests installing hayageek/oauth2-yahoo (Needed for Yahoo 
 phpmailer/phpmailer suggests installing stevenmaguire/oauth2-microsoft (Needed for Microsoft XOAUTH2 authentication)
 Writing lock file
 Generating autoload files
-After this you 'cd' to the _build folder and copy config files there.
 ```
+
+It may be necessary from time-to-time to run `composer update` to make sure you're up-to-date.
+
+### Run the build
+
+After the dependencies are installed, `cd` to the `_build` folder and copy config files there.
 
 ``` bash
 cd www/_build
@@ -212,18 +107,9 @@ cp build.config.sample.php build.config.php
 cp build.properties.sample.php build.properties.php
 ```
 
-The next step requires you to have PHP in your path. Check if you have PHP in your path by doing the following:
+Typically, no changes to these files are necessary, but you can change the database connection settings if needed.
 
-``` bash
-$ php -v
-PHP 7.2.3 (cli) (built: Mar 8 2018 10:30:06) ( NTS )
-Copyright (c) 1997-2018 The PHP Group
-Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
- with Zend OPcache v7.2.3, Copyright (c) 1999-2018, by Zend Technologies
-If you do not get something like the above, please ask someone or Google on how to get it installed.
-```
-
-To build the MODX-core, do the following from within the _build-folder:
+Next, run `php transport.core.php`  within the `_build` folder:
 
 ``` bash
 $ php transport.core.php
@@ -256,28 +142,111 @@ $ php transport.core.php
 Execution time: 1.8067 s
 ```
 
-After building the core, just go to <http://your-path-to-modx.tld/setup/> to do the usual MODX installation.
+You can also run this from the project root as `php _build/transport.core.php` if you're previously created the configuration files.
 
+### Run Setup
 
-### Git Install for 3.x Development
+Now you are ready to execute the standard setup through the browser, e.g. `http://localhost/setup/`.
 
-This assumes you have a local web server, pointed at the directory herein referred to as "your\_directory".
+Make sure you check both the "Core package has been manually unpacked" and "Files are already in-place" options when installing from Git. Typically, these are pre-selected for you.
 
-1. Locally cd into the directory, from which you want to deploy modx into a subfolder: `cd /path/to/parent/directory`
-2. Run: `composer create-project modx/revolution your_directory 3.x-dev`
-3. Change directory and checkout the 3.x branch: `cd your_directory && git checkout 3.x`
-4. Checkout a feature branch: `git checkout -b 3.x-myfeaturebranch`
+Continue with the setup and then you're all set!
 
-Optionally fork [MODX Revolution on Github](https://github.com/modxcms/revolution/) to your own Github account, at which point you'll want to do the following:
+## Upgrading Your Local Git Repository After Commits
 
-1. `git remote add upstream https://github.com/modxcms/revolution.git` (different URL if you're using SSH)
+Run the following to update your local git repository after commits.
+
+``` bash
+git fetch upstream
+git rebase upstream/3.x
+```
+
+If you cloned directly from `modxcms/revolution`, use `origin`:
+
+``` bash
+git fetch origin
+git rebase origin/3.x
+```
+
+You can replace `3.x` with any other branch.
+
+It may be necessary to run the build step and setup again after loading changes. 
+
+## Contributing By Sending Pull Requests
+
+If you've fixed a bug or added an improvement, and you're working on a fork of the revolution repository, you can send a pull request to MODX which will be reviewed by the core integrators. 
+
+[See the Contribute section for more information](contribute/code).
+
+## Switching Branches
+
+If you want to switch to a different branch (that you have already checked out locally), simply type these commands:
+
+``` bash
+git fetch upstream
+git checkout 2.5.x upstream/2.5.x
+```
+
+Of course, replacing 2.5.x with the actual name of the branch you want to switch to. After you've done so, run the build and run `setup/` again, since different branches might have different databases.
+
+Switching _backwards_ is not always recommended; ie, switching from 2.x (the latest features in development for next minor release) to 2.5.x (the latest patches for next patch release), since database changes cannot be executed in reverse. While no major issues should occur, be careful when doing this or keep your work in separate databases for each branch you work on.
+
+## Additional Information
+
+### Alternative: using create-project
+
+The `composer create-project` command will clone, install dependencies, and build the core in one step.
+
+From the parent directory into which you want to install MODX, run the following command where `your_directory` is the directory you want MODX installed into. (This can also be `.` to install into the current, empty, directory.)
+
+```bash
+composer create-project modx/revolution your_directory 3.x-dev
+cd your_directory
+```
+
+If you want to point git at your own fork to contribute back to MODX:
+
+1. `git remote add upstream https://github.com/modxcms/revolution.git`
 2. `git remote set-url origin {your github repo url}`
 3. You may also need: `git remote set-url --push origin {your github repo url}`
-4. Install dependencies with `composer install`
 
-Build the core:
+Now navigate to the standard setup, e.g. `http://localhost/setup/` to configure and install MODX.
 
-1. `cp build.config.sample.php build.config.php && cp build.properties.sample.php build.properties.php`
-2. Edit those two files, adding your paths and database credentials
-3. Then run: `php transport.core.php`
-4. After building the core, just go to <http://your-path-to-modx.tld/setup/> to do the usual MODX installation.
+### DYLD error with MAMP on Mac OS X
+
+If you use MAMP on Mac OS X, you may get problems (errors about DYLD libraries not being included) when trying to execute `transport.core.php` from the terminal. This is because the MAMP PHP libraries won't be on the dynamic linker path by default.
+
+To adjust the dynamic linker library path to include the MAMP PHP libraries, run the following command via the terminal:
+
+``` bash
+export DYLD_LIBRARY_PATH=/Applications/MAMP/Library/lib:$\{DYLD_LIBRARY_PATH\}
+```
+
+You can then execute `transport.core.php` by using the absolute path to the MAMP PHP executable:
+
+``` bash
+/Applications/MAMP/bin/php5/bin/php transport.core.php
+```
+
+### Making sure `php` is in your PATH
+
+If you're encountering issues with running the composer or build steps, check if PHP is in your PATH by doing the following:
+
+``` bash
+$ php -v
+PHP 7.2.3 (cli) (built: Mar 8 2018 10:30:06) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+ with Zend OPcache v7.2.3, Copyright (c) 1999-2018, by Zend Technologies
+```
+
+If you do not get something like the above, please ask someone or Google on how to get it installed.
+
+In some local development environments (e.g. MAMP, XAMMP), you may also want to verify which version of PHP you're using. 
+
+``` bash
+$ which php
+/Applications/MAMP/bin/php/php7.4.12/bin/php
+```
+
+If that does not return the path you're expecting, edit the `$PATH` in your `~/.bash_profile` or `~/.zshrc`. 
