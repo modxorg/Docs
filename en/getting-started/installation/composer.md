@@ -2,8 +2,6 @@
 title: "Installation with composer"
 ---
 
-## Installation Process
-
 The easiest way for a developer to try out MODX3 is using composer with the following command:
 
 ``` bash
