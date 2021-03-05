@@ -14,19 +14,19 @@ When running upgrades, it is **always** recommended to backup your files before 
 
 ## New CLI Installations
 
-First off, [download MODX](https://modx.com/download/) and extract the files to your server. In the setup/ directory, copy the file "config.dist.new.xml" and rename it to "config.xml". MODX will automatically look for the setup/config.xml file during installation. You can move it outside of the setup/ directory (and the MODX webroot, if you choose), and specify its location with the "--config=/path/to/config.xml" argument.
+First off, [download MODX](https://modx.com/download/) and extract the files to your server. In the `setup/` directory, copy the file `config.dist.new.xml` and rename it to `config.xml`. MODX will automatically look for the `setup/config.xml` file during installation. You can move it outside of the `setup/` directory (and the MODX webroot, if you choose), and specify its location with the "--config=/path/to/config.xml" argument.
 
-Next, edit the XML file and set the appropriate database information, MODX paths, and other configuration parameters, and then in your command line prompt, browse to the MODX setup/ directory, and type:
+Next, edit the XML file and set the appropriate database information, MODX paths, and other configuration parameters, and then in your command line prompt, browse to the MODX `setup/` directory, and type:
 
 ``` php
 php ./index.php --installmode=new
 ```
 
-MODX will proceed to install, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
+MODX will proceed to install, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in `core/cache/logs/`).
 
 Note : if your core folder is in a "non-standard" location, you might want to use :
 
-``` php
+``` shell
 --core_path=/path/to/core/
 ```
 
@@ -34,18 +34,18 @@ Note : if your core folder is in a "non-standard" location, you might want to us
 
 Follow the same steps as new installations, but this time in your XML file you need only specify the following attributes:
 
-- inplace
-- unpacked
-- language
-- remove\_setup\_directory
+- `inplace`
+- `unpacked`
+- `language`
+- `remove_setup_directory`
 
 And any other attributes you would like to change during the upgrade. There is an example upgrade xml file named "config.dist.upgrade.xml". Then, once you are ready, browse to the MODX setup directory, and type:
 
-``` php
+``` shell
 php ./index.php --installmode=upgrade
 ```
 
-This will upgrade your MODX installation, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
+This will upgrade your MODX installation, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in `core/cache/logs/`).
 
 ## Doing an Advanced Upgrade MODX via CLI
 
@@ -53,17 +53,17 @@ Follow the same steps as basic upgrade, but this time in your XML file you need 
 
 Then, once you are ready, browse to the MODX setup directory, and type:
 
-``` php
+``` shell
 php ./index.php --installmode=upgrade-advanced
 ```
 
-This will upgrade your MODX installation, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in core/cache/logs/).
+This will upgrade your MODX installation, and when finished will display the time it took to run the installation, as well as any errors that occurred (which will also be logged in an install log file in `core/cache/logs/`).
 
 ## Using a Helper Script
 
 There is a helper script **installmodx.php** available on Github: [https://github.com/craftsmancoding/modx\_utils/blob/master/installmodx.php](https://github.com/craftsmancoding/modx_utils/blob/master/installmodx.php)
 
-It provides command line options for this process. Here's a video of it in action:
+It provides command line options for this process.
 
 ## See Also
 
