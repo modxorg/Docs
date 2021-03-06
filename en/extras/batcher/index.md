@@ -34,7 +34,3 @@ Bugs can be filed here: <https://github.com/Sterc/Batcher/issues>
 ## Usage
 
 After installing, simply reload the page, and the 'Batcher' menu option should be available through the top Components menu.
-
-## See Also
-
-1. [Batcher.Roadmap](extras/batcher/roadmap)

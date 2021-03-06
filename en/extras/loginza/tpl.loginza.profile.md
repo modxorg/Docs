@@ -35,7 +35,7 @@ Chunk for display and edit user profile.
     </div>
     <input type="hidden" name="action" value="updateProfile" />
     <div class="form-actions">
-        <button type="submit" class="btn btn-primary">????????</button>
+        <button type="submit" class="btn btn-primary">Update profile</button>
     </div>
 </form>
 [[+success:is=`1`:then=`<div class="alert alert-block">Profile was successfully updated</div>`]]
@@ -48,7 +48,7 @@ Placeholders from modUser and modUserProfile.
 
 ## See Also
 
-1. [Loginza.Loginza](extras/loginza/loginza.loginza)
+1. [Loginza.Loginza](extras/loginza/loginza)
 2. [tpl.Loginza.login](extras/loginza/tpl.loginza.login)
 3. [tpl.Loginza.logout](extras/loginza/tpl.loginza.logout)
 4. [tpl.Loginza.profile](extras/loginza/tpl.loginza.profile)

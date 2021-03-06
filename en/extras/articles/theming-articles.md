@@ -67,5 +67,4 @@ Articles allows simple, MODX-style Templating and easy editing, without breaking
 
 1. [Articles.Creating a Blog](extras/articles/creating-a-blog)
 2. [Articles.Retrieving Articles Outside of Articles](extras/articles/retrieving-articles-outside-of-articles)
-3. [Articles.Roadmap](extras/articles/roadmap)
-4. [Articles.Theming Articles](extras/articles/theming-articles)
+3. [Articles.Theming Articles](extras/articles/theming-articles)

@@ -64,4 +64,3 @@ Note: the latter example would result in the legacy Snippet being called and wil
     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap/containertpl)
     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap/itemtpl)
 2. [GoogleSiteMapVersion1](extras/googlesitemap/googlesitemap/googlesitemapversion1)
-3. [GoogleSiteMap.Roadmap](extras/googlesitemap/googlesitemap.roadmap)

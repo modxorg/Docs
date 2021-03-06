@@ -29,7 +29,3 @@ Just install and load up the PackMan Custom Manager Page, under Components -> "P
 Specify a name for your Package. All your Elements that you choose to package will be stored in a Category with this name. You can optionally specify a README or License file to add into your package. Finally, specify a version and release number.
 
 Then select the Templates, Chunks, Snippets, and Subpackages you'd like to add in. When finished, click 'Export Transport Package' in the top right, and the transport zip will be downloaded to your browser.
-
-## See Also
-
-1. [PackMan.Roadmap](extras/packman/packman.roadmap)

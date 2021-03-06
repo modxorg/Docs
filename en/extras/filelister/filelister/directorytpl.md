@@ -33,4 +33,3 @@ This is the Chunk displayed with the &directoryTpl property on the [FileLister](
     2. [FileLister.FileLister.fileLinkTpl](extras/filelister/filelister/filelinktpl)
     3. [FileLister.FileLister.fileTpl](extras/filelister/filelister/filetpl)
     4. [FileLister.FileLister.pathTpl](extras/filelister/filelister/pathtpl)
-2. [FileLister.Roadmap](extras/filelister/filelister.roadmap)

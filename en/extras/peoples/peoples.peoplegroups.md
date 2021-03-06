@@ -70,4 +70,3 @@ Show the first 10 User Groups for the User with ID 15:
     - [Peoples.PeopleGroups.tpl](extras/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
 - [Peoples.Peoples](extras/peoples/peoples.peoples)
     - [Peoples.Peoples.tpl](extras/peoples/peoples.peoples/peoples.peoples.tpl)
-- [Peoples.Roadmap](extras/peoples/peoples.roadmap)

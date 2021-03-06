@@ -77,4 +77,3 @@ NOTE: the last example would call the legacy Snippet, which will time out if man
     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap/containertpl)
     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap/itemtpl)
 2. [GoogleSiteMap.GoogleSiteMapVersion1](extras/googlesitemap/googlesitemap/googlesitemapversion1)
-3. [GoogleSiteMap.Roadmap](extras/googlesitemap/googlesitemap.roadmap)

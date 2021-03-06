@@ -91,5 +91,3 @@ You may change your Babel settings after setup. For example if you want to defin
 
 1. [Babel.BabelLinks](extras/babel/babellinks)
 2. [Babel.BabelTranslation](extras/babel/babeltranslation)
-
-[Offical Babel project website: Multilingual websites with MODX](http://www.multilingual-modx.com/)
