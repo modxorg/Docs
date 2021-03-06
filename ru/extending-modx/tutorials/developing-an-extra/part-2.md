@@ -22,7 +22,7 @@ We've got our snippet and our basic directory structure. Now we need to setup a 
 
  We'll want to create ours. Go ahead and click on the Namespaces submenu item in the System menu represented by the “cog” icon:
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/1-namespace-menu.png)
+ ![](img/1-namespace-menu.png)
 
 From there, go ahead and click the 'Create New' button above the grid to load a Create Namespace window. Input these values into the form:
 
@@ -60,11 +60,11 @@ Now go to the System Settings, and edit the two settings you added for doodles.c
 
  Go back to the System menu and select the menu item called Menus.
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/2-menus-menu.png)
+ ![](img/2-menus-menu.png)
 
  You'll be presented with the following screen. Click on the Create Menu button above the menu tree.
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/3-menu-screen.png)
+ ![](img/3-menu-screen.png)
 
  In the Create Menu window that appears, there are a few fields to fill out.
 
@@ -98,7 +98,7 @@ And let's explain each field:
 
  **Icon** - If you wish, you can add an icon here to be used by your menu item.
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/4-creating-menu.png)
+ ![](img/4-creating-menu.png)
 
  Click Save and you'll see your menu item added to the tree under 'Extras'.
 
@@ -351,7 +351,7 @@ Okay, this is going to load our first tab with a tab title translated to 'Doodle
 
 Let's load the page and take a look now. You may need to refresh the Manager page to get the Doodles component loaded into the Components menu.
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/16.png)
+ ![](img/16.png)
 
 Cool! We've got a MODX-styled panel going. Unfortunately, it's pretty useless. We need to add a grid to manage our Doodles. Let's go ahead and do that now.
 
@@ -513,7 +513,7 @@ The assistance class handles the rest, so we don't have to worry about it! All w
 
 That's it. Now let's load up our grid:
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/d1.png)
+ ![](img/d1.png)
 
 Great! We've got a working grid. Now, let's add some functionality to it, since right now all it does is list Doodles.
 
@@ -585,7 +585,7 @@ The modObjectGetListProcessor assistance class lets us extend the prepareQueryBe
 
 Now load your grid, and you'll get:
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/d2.png)
+ ![](img/d2.png)
 
 And there's our searchable grid. Now let's work on updating records.
 
@@ -668,7 +668,7 @@ Similar to what you've seen in the grids, except this time we have 'fields' as t
 
 MODx.Window wraps Ext.Window, but provides a form inside that will automatically try and connect to the url: param with the baseParams: parameters, as well as the fields' values. It also automatically provides OK/Cancel buttons. Right-click on a record in the grid, and your window should look like this now:
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/26.png)
+ ![](img/26.png)
 
 Excellent! We've got a nice little update window. Now as you probably noticed in our baseParams, we're looking now for the 'mgr/doodle/update' processor. So let's create a file at: /www/doodles/core/components/doodles/processors/mgr/doodle/update.class.php:
 
@@ -738,7 +738,7 @@ So we've got R, U and D of our CRUD interface. What about C? Let's work on a cre
 }
 ```
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/18.png)
+ ![](img/18.png)
 
  MODExt allows you to pass JSON objects into the handler: method on toolbars. What this does is loads the Window with the xtype 'doodles-window-doodle-create', makes sure its values are blanked on load, and runs this.success on a successful window form submit (basically shortcuts the stuff we've been doing). That's what we want, so let's now define the window at the end of our file:
 
@@ -797,7 +797,7 @@ Also, we have a bit of form validation beforehand - we're going to make sure the
 1. Check to see if the name is empty and if so, add a field-specific error to the "name" field saying so
 2. Otherwise, see if a Doodle already exists (using the helper doesAlreadyExist method, which takes in a criteria array to search for), and if so, return a field-specific error to the "name" field saying so
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/d3.png)
+ ![](img/d3.png)
 
 Pretty neat, huh? Field-specific validation, built right in. And we've got a working create form!
 
