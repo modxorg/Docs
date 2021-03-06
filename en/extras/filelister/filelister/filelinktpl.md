@@ -28,4 +28,3 @@ This is the Chunk displayed with the &fileLinkTpl property on the [FileLister](e
    2. [FileLister.FileLister.fileLinkTpl](extras/filelister/filelister/filelinktpl)
    3. [FileLister.FileLister.fileTpl](extras/filelister/filelister/filetpl)
 2. [FileLister.FileLister.pathTpl](extras/filelister/filelister/pathtpl)
-3. [FileLister.Roadmap](extras/filelister/filelister.roadmap)

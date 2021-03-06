@@ -250,5 +250,5 @@ Lingua is not compatible with any custom Template Variables that store the value
 
 It's known incompatible with:
 
-- SmartTag
+- [SmartTag](extras/smarttag)
 - [ContentBlock](https://www.modmore.com/extras/contentblocks/)
