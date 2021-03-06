@@ -57,5 +57,4 @@ Please see the [Roadmap](extras/discuss/discuss.roadmap "Discuss.Roadmap"). Reme
 6. [Discuss.Contributing](extras/discuss/discuss.contributing)
 7. [Discuss.ChunkMap](extras/discuss/discuss.chunkmap)
 8. [Discuss.Features](extras/discuss/discuss.features)
-9. [Discuss.Roadmap](extras/discuss/discuss.roadmap)
-10. [Configuring Sphinx for Search](extras/discuss/configuring-sphinx-for-search)
+9. [Configuring Sphinx for Search](extras/discuss/configuring-sphinx-for-search)

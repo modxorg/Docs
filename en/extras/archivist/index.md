@@ -34,8 +34,8 @@ Bugs can be filed here: <http://tracker.modx.com/projects/archivist>
 
 Archivist has 2 snippets - one to display the month/year/day listing ("Archivist"), and the other to display archive results ("getArchives").
 
-- [Archivist.Archivist](extras/archivist/archivist.archivist "Archivist.Archivist") - Displays archive navigation links.
-- [Archivist.getArchives](extras/archivist/archivist.getarchives "Archivist.getArchives") - Displays results of archives.
+- [Archivist](extras/archivist/archivist "Archivist") - Displays archive navigation links.
+- [getArchives](extras/archivist/archivist.getarchives "getArchives") - Displays results of archives.
 
 ## Examples
 

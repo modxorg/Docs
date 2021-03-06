@@ -111,6 +111,5 @@ How do I log out? You simply call the page containing your **Login** snippet cal
    4. [Login.User Profiles](extras/login/login.tutorials/user-profiles)
    5. [Login.Using Custom Fields](extras/login/login.tutorials/using-custom-fields)
    6. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/using-pre-and-post-hooks)
-10. [Login.Roadmap](extras/login/login.roadmap)
 
 See also the documentation on [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages "Making Member-Only Pages")

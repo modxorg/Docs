@@ -12,7 +12,6 @@ Further information:
 
 - [HandyMan.Frequently Asked Questions](extras/handyman/handyman.frequently-asked-questions "HandyMan.Frequently Asked Questions")
 - [HandyMan.Installation](extras/handyman/handyman.installation "HandyMan.Installation")
-- [HandyMan.Roadmap](extras/handyman/handyman.roadmap "HandyMan.Roadmap")
 
 ## Links
 

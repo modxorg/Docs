@@ -43,5 +43,4 @@ See how you can create an Articles weblog from scratch in 5 minutes. You can als
 
 1. [Articles.Creating a Blog](extras/articles/creating-a-blog)
 2. [Articles.Retrieving Articles Outside of Articles](extras/articles/retrieving-articles-outside-of-articles)
-3. [Articles.Roadmap](extras/articles/roadmap)
-4. [Articles.Theming Articles](extras/articles/theming-articles)
+3. [Articles.Theming Articles](extras/articles/theming-articles)

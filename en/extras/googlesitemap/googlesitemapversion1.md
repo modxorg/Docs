@@ -75,4 +75,3 @@ Limit the sitemap to only the Resources with Template named 'BlogTemplate', and 
 1. [GoogleSiteMap.GoogleSiteMap](extras/googlesitemap/googlesitemap)
     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap/containertpl)
     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap/itemtpl)
-2. [GoogleSiteMap.Roadmap](extras/googlesitemap/googlesitemap.roadmap)

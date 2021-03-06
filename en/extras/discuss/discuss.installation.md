@@ -229,5 +229,4 @@ The prior fields will allow your users to toggle those values in their profile.
 7. [Discuss.Contributing](extras/discuss/discuss.contributing)
 8. [Discuss.ChunkMap](extras/discuss/discuss.chunkmap)
 9. [Discuss.Features](extras/discuss/discuss.features)
-10. [Discuss.Roadmap](extras/discuss/discuss.roadmap)
-11. [Configuring Sphinx for Search](extras/discuss/configuring-sphinx-for-search)
+10. [Configuring Sphinx for Search](extras/discuss/configuring-sphinx-for-search)

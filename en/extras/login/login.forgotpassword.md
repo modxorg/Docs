@@ -69,4 +69,3 @@ The tplType property takes a different options. They can be:
     4. [Login.User Profiles](extras/login/login.tutorials/user-profiles)
     5. [Login.Using Custom Fields](extras/login/login.tutorials/using-custom-fields)
     6. [Login.Using Pre and Post Hooks](extras/login/login.tutorials/using-pre-and-post-hooks)
-10. [Login.Roadmap](extras/login/login.roadmap)

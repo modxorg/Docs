@@ -37,7 +37,7 @@ Bugs can be filed here: <https://github.com/bezumkin/modx-loginza/issues>
 
 [L](extras/pagebreaker/pagebreaker.pagebreaker "PageBreaker.PageBreaker")oginza currently comes with one Snippet:
 
-- [Loginza](extras/loginza/loginza.loginza "Loginza.Loginza")
+- [Loginza](extras/loginza/loginza/loginza "Loginza.Loginza")
 
 And two Chunks:
 

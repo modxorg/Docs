@@ -59,7 +59,7 @@ Here is this [snippet on Github](https://github.com/bezumkin/modx-loginza/blob/m
 
 ## See Also
 
-1. [Loginza.Loginza](extras/loginza/loginza.loginza)
+1. [Loginza.Loginza](extras/loginza/loginza/loginza)
 2. [tpl.Loginza.login](extras/loginza/tpl.loginza.login)
 3. [tpl.Loginza.logout](extras/loginza/tpl.loginza.logout)
 4. [tpl.Loginza.profile](extras/loginza/tpl.loginza.profile)

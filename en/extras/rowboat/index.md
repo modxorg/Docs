@@ -35,4 +35,4 @@ Rowboat currently comes with one Snippet:
 
 ## See Also
 
-1. [Rowboat.Rowboat](extras/rowboat/rowboat.rowboat)
+1. [Rowboat.Rowboat](extras/rowboat/rowboat/rowboat)
