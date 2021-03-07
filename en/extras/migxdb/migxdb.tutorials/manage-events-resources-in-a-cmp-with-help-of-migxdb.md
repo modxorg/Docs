@@ -14,12 +14,10 @@ In this Tuorial we will learn how to create a CMP (custom manager page),
 First off we will need to install [MIGX](extras/migx "MIGX") by package-management, if not allready done, and do some [basic configurations](extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
 Minimum Required version: MIGX 2.3.2 (10.09.2012)
 
-Download and install this package:
-
-[https://github.com/Bruno17/migxchildresources/tree...](https://github.com/Bruno17/migxchildresources/tree/master/packages)
+Download and install this package: [migxchildresources](https://github.com/Bruno17/migxchildresources/tree/master/packages)
 
 rename the folder core/components/migxchildresources/ to core/components/migxresourceevents/
-[migxchildresources](https://github.com/Bruno17/migxchildresources/tree/master/packages)
+
 
 ## Create the Configuration
 
