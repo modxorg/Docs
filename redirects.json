@@ -2212,5 +2212,16 @@
     "/xpdo/1.x/getting-started/using-your-xpdo-model/setting-object-fields": "en/extending-modx/xpdo/setting-object-fields",
     "/xpdo/1.x/getting-started/using-your-xpdo-model/working-with-related-objects": "en/extending-modx/xpdo/retrieving-objects/related-objects",
     "/xpdo/1.x/overview/why-i-would-want-to-use-it": "en/extending-modx/xpdo/benefits",
-    "/xpdo/1.x/xpdo-development/documentation-and-tutorials": "en/extending-modx/xpdo/more-resources"
+    "/xpdo/1.x/xpdo-development/documentation-and-tutorials": "en/extending-modx/xpdo/more-resources",
+    "/display/revolution20/Resource+Groups": "building-sites/client-proofing/security/resource-groups",
+    "/display/revolution20/Content+Types": "building-sites/resources/content-types",
+    "/display/revolution20/Media+Sources": "building-sites/media-sources",
+    "/display/revolution20/Package+Management": "building-sites/extras",
+    "/display/revolution20/Settings": "building-sites/settings",
+    "/display/revolution20/Dashboards": "building-sites/client-proofing/dashboards",
+    "/display/revolution20/Contexts": "building-sites/contexts",
+    "/display/revolution20/Actions+and+Menus": "extending-modx/menus/actions",
+    "/display/revolution20/Properties+and+Property+Sets": "building-sites/properties-and-property-sets",
+    "/display/revolution20/Internationalization": "extending-modx/internationalization",
+    "/display/revolution20/Namespaces": "extending-modx/namespaces"
 }
