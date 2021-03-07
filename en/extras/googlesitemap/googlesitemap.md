@@ -43,7 +43,7 @@ Don't forget to set the content type to 'xml'.
 
 There is 1 chunk processed with GoogleSiteMap:
 
-- [containerTpl]((extras/googlesitemap/googlesitemap/containertpl) "GoogleSiteMap.GoogleSiteMap.containerTpl") - The Chunk to use for wrapping the results.
+- [containerTpl](extras/googlesitemap/googlesitemap/containertpl) - The Chunk to use for wrapping the results.
 
 ## Examples
 
