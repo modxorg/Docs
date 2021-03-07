@@ -37,13 +37,13 @@ Don't forget to set the content type to 'xml'.
 | sortByAlias      | The class to use as the alias for the sortBy property.                                                                                                                                                                                       | modResource                                 |
 | sortDir          | The direction to sort in.                                                                                                                                                                                                                    | ASC                                         |
 | templateFilter   | The modTemplate column to filter by.                                                                                                                                                                                                         | id                                          |
-| where            | A JSON-style expression or array of criteria to select/filter resources to output. See <http://rtfm.modx.com/display/xPDO20/xPDOQuery.where> for more detail. Somewhere is a bug, that doesn't show up anything for resources in containers. |                                             |
+| where            | A JSON-style expression or array of criteria to select/filter resources to output. See [xpdoquery.where](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.where) for more detail. Somewhere is a bug, that doesn't show up anything for resources in containers. |                                             |
 
 ## GoogleSiteMap Chunks
 
 There are 2 chunks that are processed in GoogleSiteMap. Their corresponding parameters are:
 
-- [itemTpl](extras/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesitemap.itemtpl "GoogleSiteMap.GoogleSiteMap.itemTpl") - The Chunk to use for each result listed.
+- [itemTpl](extras/googlesitemap/googlesitemap/itemtpl "GoogleSiteMap.GoogleSiteMap.itemTpl") - The Chunk to use for each result listed.
 - [containerTpl](extras/googlesitemap/googlesitemap/containertpl) - The Chunk to use for wrapping the results.
 
 ## Examples
