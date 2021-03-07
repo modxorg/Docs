@@ -6,7 +6,7 @@ _old_uri: "revo/googlesitemap/googlesitemap.googlesitemap"
 
 ## GoogleSiteMap Snippet
 
-This snippet displays a Google Sitemap. Version 2 is many times faster than Version 1, but with less options. If params are specified that depend on the old version, it will be called. Check [this page](extras/googlesitemap/googlesitemap/googlesitemapversion1) for the properties available in the old version.
+This snippet displays a Google Sitemap. Version 2 is many times faster than Version 1, but with less options. If params are specified that depend on the old version, it will be called. Check [this page](extras/googlesitemap/googlesitemapversion1) for the properties available in the old version.
 
 Note: if you try to view a XML sitemap with tens of thousands of nodes in your browser, it will take a good long while to render it. However the server response should be a few seconds or less. More testing would be welcome. Please file issues here: <https://github.com/modxcms/GoogleSiteMap/issues>
 
@@ -76,4 +76,4 @@ NOTE: the last example would call the legacy Snippet, which will time out if man
 1. [GoogleSiteMap.GoogleSiteMap](extras/googlesitemap/googlesitemap)
     1. [GoogleSiteMap.GoogleSiteMap.containerTpl](extras/googlesitemap/googlesitemap/containertpl)
     2. [GoogleSiteMap.GoogleSiteMap.itemTpl](extras/googlesitemap/googlesitemap/itemtpl)
-2. [GoogleSiteMap.GoogleSiteMapVersion1](extras/googlesitemap/googlesitemap/googlesitemapversion1)
+2. [GoogleSiteMap.GoogleSiteMapVersion1](extras/googlesitemap/googlesitemapversion1)
