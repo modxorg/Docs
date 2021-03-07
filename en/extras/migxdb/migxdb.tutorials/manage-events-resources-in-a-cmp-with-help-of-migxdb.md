@@ -16,7 +16,7 @@ Minimum Required version: MIGX 2.3.2 (10.09.2012)
 
 Download and install this package: [migxchildresources](https://github.com/Bruno17/migxchildresources/tree/master/packages)
 
-rename the folder core/components/migxchildresources/ to core/components/migxresourceevents/
+rename the folder `core/components/migxchildresources/` to `core/components/migxresourceevents/`
 
 
 ## Create the Configuration
