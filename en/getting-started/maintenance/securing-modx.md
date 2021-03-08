@@ -10,17 +10,21 @@ Any publicly viewable website will be targeted by hackers and [script kiddies](h
 
 Hardening any web application, including MODX Revolution, involves paying attention to _all_ layers of your site. This includes your server, all of its services, and the application itself. 
 
-This is a huge topic so this page seeks to help you both harden MODX and inform you of other important areas.
+This is a huge topic so this page seeks to help you both harden MODX and inform you of other important areas. 
 
-## Locking down MODX
+## Top Four Ways to Harden MODX
 
 This is only one part of the security hardening process. Before you do any of this, though, make a backup of your site and your database!
 
-### Protecting the Core
+The top three things you should tackle are 1) blocking the core from being web accessible, blocking the `manager` on the public domains and use a subdomain for the Manager, and 3) put a WAF in front of your website. The other items will further help make MODX more difficult to identify and provide incremental layers of of secuirty or obsfuscation, but the tradeoff is increased time and complexity for updating or moving your website.
 
-This is perhaps the most important step to take because the MODX core contains code that can do _very bad things™_ in the hands of a malicious user. You don’t want anyone poking around in there via a browser and exploiting any potential weaknesses.
+### Protect the Core
 
-While previous versions of MODX Revoution allowed you to move the core outside of the web root, this is not currently possible due to how Composer and Autoloading work in MODX 3.0. However, you can accomplish the same level of security by denying public web access to the `core` directory. The following examples block the `core` and anything within it from from being publicly accessed. Note, this is returning a 404 (not found) vs a 403 (unauthorized) response on purpose:
+This is perhaps the most important step to take because the MODX core contains code that can do _very bad things™_ in the hands of malicious users. You don’t want anyone poking around via a browser and finding or exploiting potential weaknesses.
+
+While previous versions of MODX Revoution allowed you to move the core outside of the web root, this is not currently possible due to how Composer and Autoloading work in MODX 3.0. However, you can accomplish the same level of security by denying public web access to the `core` directory.
+
+The following examples block the `core` and anything within it from from being publicly accessed. Note, this is returning a 404 (not found) vs a 403 (unauthorized) response on purpose:
 
 For Apache, add the following to you `.htaccess` file:
 
@@ -36,7 +40,7 @@ location ^~ /core {
 }
 ```
 
-Note: this will return an NGINX 404 error page, which almost certainly won’t match the MODX-specified Error Page. You may wish wish to make a custom error page that matches your MODX error page for an extra layer of obsfuscation. Create raw HTML files in your web root and add the following to your NGINX web rules. As a bonus, the custom 500 error page can contain important contact information and a branded logo if your site is erroring or if the database is overloading causing a 502 or 504. You may also want to create more custom error pages for the various other [4xx and 5xx error codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status):
+Note: this will return an NGINX 404 error page, which almost certainly won’t match your MODX-specified Error Page. You may wish to make a custom error page that matches your MODX error page for an extra layer of obsfuscation. Create raw HTML files in your web root and add the following to your NGINX web rules. As a bonus, the custom 500 error page can contain important contact information and a branded logo if your site is erroring or if the database is overloading causing a 502 or 504. You may also want to create more custom error pages for the various other [4xx and 5xx error codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status):
 
 ```
 error_page 404 /custom_404.html;
@@ -45,7 +49,7 @@ error_page 500 502 503 504 /custom_500.html;
 
 See [example code for a custom error page](https://gist.github.com/jaygilmore/8a56e0f58c9ae50b82d349c26067eec4).
 
-### Protecting the Manager
+### Protect the Manager
 
 The MODX Manager directory is arguably the second most important path to protect. If someone finds a nice MODX login page at <http://example.com/manager/> it won’t take a genius to determine that it runs MODX and the brute-force hacking attempts can begin.
 
@@ -61,7 +65,7 @@ if ($mgrcheck ~* "((www.|promos.|blog.)?example.com/manager") {
 }
 ```
 
-For Apache, add the following to you `.htaccess` file:
+For Apache, add the following to your `.htaccess` file:
 
 ```
 RewriteCond %{HTTP_HOST} ^(www\.)?example\.com$ [OR]
@@ -80,9 +84,28 @@ include 'error404.html';
 
 You can also further lock down access to the Manager by configuring your server and/or its firewall to allow access to the Manager URL only from specific IP addresses. E.g. if your site is only accessed by workers in an office, you could configure your server to deny requests from outside the office’s IP addresses. Another tactic would be to put an .htaccess password on the manager directory. This would mean that users would have to enter 2 separate passwords before entering the MODX Manager. Perhaps that is inconvenient, but it is more secure.
 
-### Changing Common Paths
 
-Easily identifyable paths can be used as a way to fingerprint your site. While security through obscurity is not a strong tactic, it doesn’t make it simple for script kiddies using automated tools to attack your site if a future zero-day compromise is released.
+### Deploy a Firewall or WAF
+
+Make sure that your server has a good firewall installed with intrusion detection to dynamically detects and blocks common hacking attempts. [ModSecurity](getting-started/installation/troubleshooting/modsecurity) is a security module for both Apache and NGINX that helps deter a number of malicious attacks. You can also use a WAF (web application firewall) service from vendors like Cloudflare, Fastly, Imperva, StackPath, and others to block many brute force attackers and known bad actors.
+
+### Update Your Server
+
+No matter how secure all other elements are, it amounts to nothing if your server is not adequately secure. If your server is compromised there is nothing you can do to guarantee the integrity of your site or even the entire server itself.
+
+Always stay on top of server stack maintenance, including the software that powers encryption, your web server, your database, and remote connections. Patching your server software and core OS weekly, if not daily, is not uncommon. **Keep your server patched!**
+
+Turn off all unnecessary services and if possible, and especially turn off FTP entirely in favor of SFTP. 
+
+Also turn off password authentication entirely in favour of [SSH keyed logins](http://tipsfor.us/2009/06/15/securing-a-linux-server-ssh-and-brute-force-attacks/). When using SSH keys, make sure to use a complex passphrase.
+
+## Other Ways to Protect MODX
+
+You can go to extremes to obsfuscate and further harden MODX—even so far as to make MODX look and respond like a completely different CMS platform. The following are some additional ways to protect MODX and make it more time consuming and difficult for hackers to succeed.
+
+### Change Common Paths
+
+Easily identifiable paths can be used as a way to fingerprint your site. While security through obscurity is not a strong tactic, it doesn’t make it simple for script kiddies using automated tools to attack your site if a future zero-day compromise is released.
 
 The Advanced Distribution and Git Installs of MODX Revolution allow you to specify the names and locations of the various directories during the install, but these won’t install successfully on some hosts.
 
@@ -101,14 +124,12 @@ $modx_manager_url = '/r4nd0m/';
 
 #### connectors
 
-Just as with the manager directory, choose a random alphanumeric name for your `connectors` directory, and then update your core/config/config.inc.php to reflect the new location, e.g.
+Just as with the `manager` directory, choose a random alphanumeric name for your `connectors` directory, and then update your core/config/config.inc.php to reflect the new location, e.g.:
 
 ``` php
 $modx_connectors_path = '/home/youruser/public_html/0therp4th/';
 $modx_connectors_url = '/0therp4th/';
 ```
-
-While some files within the `connectors` can be blocked from the public 
 
 As with the Manager, this could also _potentially_ live on a separate domain. However as the Manager uses the connectors as AJAX endpoints, this needs to be on the same domain as the Manager unless you also allow cross origin requests.
 
@@ -123,25 +144,13 @@ $modx_assets_url = '/4ssetsh3r3/';
 
 Again, this could potentially live on another domain (e.g. one optimized to serve up static content). As extras install their javascript here for back-end components, this will typically need to share the same domain (origin), unless you set up cross origin requests. You can use Media Sources in MODX to place your front-end assets or uploads anywhere, so keeping the assets on the same domain as the manager is usually best.
 
-## Other MODX-related Security Strategies
-
-In addition to changing paths and restricting access to the `core` and `manager` directories, you can also take additional measures to make it more time consuming and difficult for hackers to succeed.
-
 ### Change your Manager Login Page Template
 
 You can mask your Manager login page so it’s not obvious that your site is powered by MODX. See the page on [Manager Templates](building-sites/client-proofing/custom-manager-themes) for more information.
 
-### Changing Default Database Prefixes
+### Change the Default Database Prefixes
 
 This is best done when you first install MODX, but it’s always a good habit to avoid the defaults and choose a custom database prefix for your tables instead of the default `modx_` prefix. If a hacker is somehow able to issue arbitrary SQL commands via a SQL injection attack, using custom table prefixes will make the attack a bit more difficult.
-
-### Use a Unique Name for the Admin User
-
-If your admin username is hard to guess, it will slow down any attempt at a brute-force hack. A randomly generated series of characters would make for the most secure username. Never use a name that is easy to guess (do NOT EVER use a username like **admin**, **manager**, or a name that matches the site’s name as they’re very easy to guess). Remember that a big part of hacking is [social engineering](http://en.wikipedia.org/wiki/Social_engineering_(security)) – you want to make it virtually impossible for someone to guess your admin user name.
-
-### Force a Password Policy
-
-Delete any stagnant users from your site (e.g. if you created a login for a developer when you first setup the site, be sure to deactivate that user once his/her work is done). Ensure that each user is using a complex password.
 
 ### Set up a Dedicated 404 Page
 
@@ -153,63 +162,29 @@ You don’t want your site to get any undue attention because a scanner thinks t
 
 There are **many** aspects to hardening that have nothing to do with MODX. While we make perfunctory mention of them here, this page is primarily focused on how to harden MODX itself. A thorough security audit will take the entire environment into account, so do not neglect to consider the following aspects:
 
-### Your Computer
+### Backups
 
-Using any version of Windows prior to Windows Vista is almost a death-wish. Hardening older Windows systems is a herculean effort and unless you are _extremely_ skilled and vigilant, your pre-Vista computer will likely contain severe security holes.
+One of _the most important things you can do for your web site_ is to have multiple, incremental, off-site backups, on redundant storage like S3. There is never a guarantee that you won’t get hacked, so the best thing you can do is to ensure that at a minimum, you have backups to restore your site if and when it gets nuked. If this happens, make sure you quickly update the MODX version and all Extras before putting it back online, and use a malicious file scanning tool to make sure there are no obvious backdoors laying around. Learn more about [recovering from a site hack](https://modx.com/blog/recovering-from-a-hacked-site-part-1) in the MODX Blog.
 
-But don’t be fooled: _ANY_ operating system can be hacked. Don’t think you’re impervious if you’re on a Mac or Linux. Run as a user with limited permissions and keep your system patched and run dynamic intrusion detection software to protect you from key-loggers or screen-capture viruses. Never save your passwords or other login info as plain text, use secure software like your Browser’s or a third-party Password Manager to store your passwords.
+### Use a Unique Name for the Admin User
 
-NEVER use a public computer: for all you know, that computer is logging everything, including every username and password, you type.
+If your admin username is hard to guess, it will slow down any attempt at a brute-force hack. A randomly generated series of characters would make for the most secure username. Never use a name that is easy to guess (do NOT EVER use a username like **admin**, **manager**, or a name that matches the site’s name as they’re very easy to guess). Remember that a big part of hacking is [social engineering](http://en.wikipedia.org/wiki/Social_engineering_(security)) – you want to make it virtually impossible for someone to guess your admin user name.
 
-### Your Connection
+### Force a Password Policy
 
-Assume that someone is monitoring what you do any time you’re connected to a public wifi network.
+Delete any stagnant users from your site (e.g. if you created a login for a developer when you first setup the site, be sure to deactivate that user once his/her work is done). Ensure that each user is using a complex password.
 
-If possible, use _only_ wired connections (no Wifi). Never use public Wifi, and never use a wireless connection that uses anything less than [WPA2](http://en.wikipedia.org/wiki/Wpa2#WPA2) encryption. It’s far too easy to intercept packets as they travel across a router. With only modest hacking skills, someone can read your usernames and passwords as they travel get beamed around the coffeeshop.
+### Force SSH/SFTP Access
 
-### Your Server
-
-No matter how secure all other elements are, it amounts to nothing if your server is not adequately secure. If your server is compromised there is nothing you can do to guarantee the integrity of your site and the entire server itself.
-
-Always stay on top of server stack maintenance, including the software that powers encryption, your web server, your database, and remote connections. Patching your server software and core OS weekly, if not daily, is not uncommon. Keep your server patched!
-
-Turn off all unnecessary services and if possible, and especially turn off FTP entirely in favor of SFTP. 
-
-Consider turning off password authentication entirely in favour of [SSH keyed logins](http://tipsfor.us/2009/06/15/securing-a-linux-server-ssh-and-brute-force-attacks/). If you use an SSH key, make sure to use a complex passphrase.
-
-### Firewalls and WAFs
-
-Make sure that your server has a good firewall installed and some form of intrusion detection that dynamically detects hacking attempts. [ModSecurity](getting-started/installation/troubleshooting/modsecurity) is a security module for both Apache and NGINX, and it helps deter a number of malicious attacks. You can also use a WAF (web application firewall) service from vendors like Cloudflare, StackPath, Fastly, and Snapt to block many brute force attackers and know bad actors.
-
-### Passwords and Logins
-
-Choose long, randomly generated passwords and update them regularly. Longer passwords are usually more mathematically complex than shorter passwords, even if your passwords use special characters. [Salting](http://en.wikipedia.org/wiki/Salt_(cryptography)) your passwords with a easily-remembered phrase to increase the password length is a good technique to reduce the odds of a brute-force attack succeeding. Again, you **MUST** store your passwords securely, in some sort of encrypted format. It’s far better to write your passwords in a notebook that you keep in a locked filing cabinet than it is to keep them in a plaintext file on your computer.
-
-Very important: **never use the same password twice.** Frequently hacks succeed because one service is compromised and the password deciphered, and a user has ignorantly or lazily used the same password for other sites or services. **DO NOT BE LAZY!!!**
-
-### Keep it Clean
-
-Delete anything unnecessary from your site. Delete any unused images or javascript files. Especially bad are any lingering PHP scripts or god-forbid, any backups or zip files inside of your document root. Think of your site as a sinking airship: if you don’t need it, throw it out before you crash and burn. If you’re not using a particular Plugin, Snippet, or Template, for example, then delete its files from your server. Just because it’s not activated doesn’t mean it can’t be exploited!
+It bears repeating, never use plain FTP: it is insecure by design. Even better is only using SFTP with SSH keypairs. If your server doesn’t support SFTP or connecting over a secure shell, you’d be better off finding a different host.
 
 ### DB Admin Tools
 
 Tools like Adminer and phpMyAdmin can be very useful for quick fixes to your site. As soon as you’re done, delete them, or it’s possible that a clever hacker could do the same to your website.
 
-### Backups
-
-One of _the most important things you can do for your web site_ is to have multiple, incremental, off-site backups, on redundant storage like S3. There is never a guarantee that you won’t get hacked, so the best thing you can do is to ensure that at a minimum, you have backups to restore your site if and when it gets nuked. If this happens, make sure you quickly update the MODX version and all Extras before putting it back online, and use a malicious file scanning tool to make sure there are no obvious backdoors laying around. Learn more about [recovering from a site hack](https://modx.com/blog/recovering-from-a-hacked-site-part-1) in the MODX Blog.
-
-### Social Engineering
-
-Many hacks involve some plain old trickery: someone calling or emailing you and asking for information under false pretexts. Don’t be fooled! Are you SURE it’s your client asking you for their password? Or is it someone who got into their email account? For a good read, check out Kevin Mitnick’s [Ghost in the Wires](http://www.amazon.com/Ghost-Wires-Adventures-Worlds-Wanted/dp/0316037702): he was able to get the source code from many LARGE companies merely by placing believable phone-calls to the right person.
-
-## Force SSH/SFTP Access
-
-It bears repeating, never use plain FTP: it is insecure by design. Even better is only using SFTP with SSH keypairs. If your server doesn’t support SFTP or connecting over a secure shell, you’d be better off finding a different host.
-
 ## Always Use SSL
 
-Serving your site over via [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) is table stakes for the web today. Even Google penalizes sites not served over HTTPS in their SERP algorithm. Obtain, install, and keep your server running a modern SSL cypher and renew your SSL certificates frequently. 
+Serving your site via an [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) connection is table stakes for the web today. Even Google penalizes sites not served over HTTPS in their SERP algorithm. Obtain, install, and keep your server running a modern SSL cypher and renew your SSL certificates frequently. 
 
 Once you’ve verified that HTTPS works, you can force all connections to communicate over port 443 (i.e. over a secure connection).
 
@@ -242,9 +217,36 @@ Test this by trying to navigate to the non-secure url, e.g. <http://yoursite.com
 
 If you’re unsure about how to isntall an SSL certificate and always force serving over HTTPS, contact your hosting provider.
 
-
 ## Monitoring your Site and Server
 
 Once you’ve locked down your site and server, you’ll benefit from regular monitoring of it. There are some free services available. The best ones will monitor specific files and report any changes made to them. If your index.php suddenly changed, then that might indicate that somebody maliciously modified it.
+
+### Passwords and Logins
+
+Choose long, randomly generated passwords and update them regularly. Longer passwords are usually more mathematically complex than shorter passwords, even if your passwords use special characters. [Salting](http://en.wikipedia.org/wiki/Salt_(cryptography)) your passwords with a easily-remembered phrase to increase the password length is a good technique to reduce the odds of a brute-force attack succeeding. Again, you **MUST** store your passwords securely, in some sort of encrypted format. It’s far better to write your passwords in a notebook that you keep in a locked filing cabinet than it is to keep them in a plaintext file on your computer.
+
+Very important: **never use the same password twice.** Frequently hacks succeed because one service is compromised and the password deciphered, and a user has ignorantly or lazily used the same password for other sites or services. **DO NOT BE LAZY!!!**
+
+### Your Computer
+
+Using any version of Windows prior to Windows Vista is almost a death-wish. Hardening older Windows systems is a herculean effort and unless you are _extremely_ skilled and vigilant, your pre-Vista computer will likely contain severe security holes.
+
+But don’t be fooled: _ANY_ operating system can be hacked. Don’t think you’re impervious if you’re on a Mac or Linux. Run as a user with limited permissions and keep your system patched and run dynamic intrusion detection software to protect you from key-loggers or screen-capture viruses. Never save your passwords or other login info as plain text, use secure software like your Browser’s or a third-party Password Manager to store your passwords.
+
+NEVER use a public computer: for all you know, that computer is logging everything, including every username and password, you type.
+
+### Your Connection
+
+Assume that someone is monitoring what you do any time you’re connected to a public wifi network.
+
+If possible, use _only_ wired connections (no Wifi). Never use public Wifi, and never use a wireless connection that uses anything less than [WPA2](http://en.wikipedia.org/wiki/Wpa2#WPA2) encryption. It’s far too easy to intercept packets as they travel across a router. With only modest hacking skills, someone can read your usernames and passwords as they beam around the coffeeshop.
+
+### Keep it Clean
+
+Delete anything unnecessary from your site. Delete any unused images or javascript files. Especially bad are any lingering PHP scripts or god-forbid, any backups or zip files inside of your document root. Think of your site as a sinking airship: if you don’t need it, throw it out before you crash and burn. If you’re not using a particular Plugin, Snippet, or Template, for example, then delete its files from your server. Just because it’s not activated doesn’t mean it can’t be exploited!
+
+### Social Engineering
+
+Many hacks involve some plain old trickery: someone calling or emailing you and asking for information under false pretexts. Don’t be fooled! Are you SURE it’s your client asking you for their password? Or is it someone who got into their email account? For a good read, check out Kevin Mitnick’s [Ghost in the Wires](http://www.amazon.com/Ghost-Wires-Adventures-Worlds-Wanted/dp/0316037702): he was able to get the source code from many LARGE companies merely by placing believable phone-calls to the right person.
 
 Securing a website is a continuous and constant requirement today. Be vigilant, review the considerations above, lock down MODX, and always keep up with updates to both MODX and your server.
