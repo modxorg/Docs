@@ -11,4 +11,4 @@ _old_uri: "revo/migx/migx.tutorials/"
     - [MIGX.Varying layout-boxes.Configurator-Version](extras/migx/migx.tutorials/varying-layout-boxes)
 - [Creating Selectable and Sortable lists for MIGX](extras/migx/migx.tutorials/create-selectable-and-sortable-attributes-list-for-whatever-you-need-it)
 - [MIGX.sortable resourcelist](extras/migx/migx.tutorials/sortable-resourcelist)
-- [Using resource-specific mediasource and multifile-uploader with MIGX](extras/migx/migx.tutorials/use-resource-specific-media-source-and-multifile-uploader)
+- [Using resource-specific mediasource and multifile-uploader with MIGX](extras/migx/migx.tutorials/use-resource-specific-mediasource-and-multifile-uploader)
