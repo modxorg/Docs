@@ -227,9 +227,9 @@ You can also show the status of this field in the grid by adding a new column:
 
 ## Create a menu to your CMP
 
-**System -> Actions**
+Go to the menu **System -> Actions**
 
-menu-tree: **Components->MIGX->right-click->Place** Action here
+menu-tree: Components -> MIGX -> right-click->Place Action here
 
 - Lexicon-key: **Events Manager**
 - Action: `migx-index`
