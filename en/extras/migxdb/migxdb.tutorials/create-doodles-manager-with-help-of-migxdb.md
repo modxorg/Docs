@@ -54,7 +54,7 @@ If you had already created the doodles-table you can add these fields to your ex
 
 Of course you can create your own processors under your own processor-path.
 
-[Read more about creating schemas](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema "Defining a Schema")
+[Read more about creating schemas](extending-modx/xpdo/custom-models/defining-a-schema "Defining a Schema")
 
 ### Parse Schema
 
