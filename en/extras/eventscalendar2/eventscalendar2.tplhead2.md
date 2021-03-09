@@ -36,7 +36,7 @@ This chunk is a header of the calendar.
 
 ## See Also
 
-1. [eventsCalendar2.eventsCalendar2](extras/eventscalendar2/eventscalendar2.eventscalendar2)
+1. [eventsCalendar2.eventsCalendar2](extras/eventscalendar2/eventscalendar2)
 2. [eventsCalendar2.Generating events](extras/eventscalendar2/eventscalendar2.generating-events)
 3. [eventsCalendar2.tplCalendar2](extras/eventscalendar2/eventscalendar2.tplcalendar2)
 4. [eventsCalendar2.tplCell2](extras/eventscalendar2/eventscalendar2.tplcell2)
