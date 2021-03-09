@@ -2230,6 +2230,12 @@
     "/display/ADDON/Discuss.Contributing": "en/extras/discuss/discuss.contributing",
     "/display/ADDON/CronManager": "en/extras/cronmanager",
     "/display/revolution20/MySQL+5.0.51+Issues": "en/getting-started/installation/troubleshooting/mysql-5.0.51",
-    "/revolution/2.x/developing-in-modx/overview-of-modx-development": "en/getting-started"
-
+    "/revolution/2.x/developing-in-modx/overview-of-modx-development": "en/getting-started",
+    "/display/ADDON/renderResources": "en/extras/renderresources",
+    "/display/ADDON/mxCalendar.Placeholders": "en/extras/mxcalendar",
+    "/display/ADDON/mxCalendar": "en/extras/mxCalendar",
+    "/display/ADDON/modSwiftMailer": "en/extras/modSwiftMailer",
+    "/display/ADDON/modMobile": "en/extras/modMobile",
+    "/display/ADDON/mChimpX": "en/extras/mChimpX",
+    "/display/ADDON/eventsCalendar2.eventsCalendar2": "en/extras/eventscalendar2"
 }
