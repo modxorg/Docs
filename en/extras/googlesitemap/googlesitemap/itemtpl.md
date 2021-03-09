@@ -6,7 +6,7 @@ _old_uri: "revo/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesi
 
 ## GoogleSiteMap's itemTpl Chunk
 
-This is the Chunk displayed with the &itemTpl property on the [GoogleSiteMap](extras/googlesitemap/googlesitemap.googlesitemap "GoogleSiteMap.GoogleSiteMap") snippet. Used for each result item that is listed.
+This is the Chunk displayed with the &itemTpl property on the [GoogleSiteMap](en/extras/googlesitemap/googlesitemap "GoogleSiteMap.GoogleSiteMap") snippet. Used for each result item that is listed.
 
 ## Default Value
 

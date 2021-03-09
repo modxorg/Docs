@@ -6,7 +6,7 @@ _old_uri: "revo/googlesitemap/googlesitemap.googlesitemap/googlesitemap.googlesi
 
 ## GoogleSiteMap's containerTpl Chunk
 
-This is the Chunk displayed with the &containerTpl property on the [GoogleSiteMap](extras/googlesitemap/googlesitemap.googlesitemap "GoogleSiteMap.GoogleSiteMap") snippet. Used for directories that are listed.
+This is the Chunk displayed with the &containerTpl property on the [GoogleSiteMap](en/extras/googlesitemap/googlesitemap "GoogleSiteMap.GoogleSiteMap") snippet. Used for directories that are listed.
 
 ## Default Value
 
