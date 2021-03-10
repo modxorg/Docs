@@ -2255,5 +2255,15 @@
     "/display/ADDON/FormIt.Validators": "en/extras/formit/formit.validators",
     "/display/revolution20/Upgrading+to+2.2.x": "en/getting-started/maintenance/upgrading/2.2",
     "/display/revolution20/modX.regClientScript": "en/extending-modx/modx-class/reference/modx.regclientscript",
-    "/display/ADDON/CookieList": "en/extras/cookielist"
+    "/display/ADDON/CookieList": "en/extras/cookielist",
+    "/display/ADDON/mhPayPal": "en/extras/mhpaypal",
+    "/display/ADDON/SimpleSearch.SimpleSearch.containerTpl": "en/extras/simplesearch/simplesearch/containertpl",
+    "/display/ADDON/Login.Using+Pre+and+Post+Hooks": "en/extras/login/login.tutorials/using-pre-and-post-hooks",
+    "/display/ADDON/AdvSearch.AdvSearch": "en/extras/advsearch/advsearch",
+    "/display/revolution20/Structuring+Your+Site": "en/getting-started",
+    "/display/revolution20/Accessing+Template+Variable+Values+via+the+API": "en/extending-modx/snippets/accessing-tvs",
+    "/display/ADDON/Home": "en/extras",
+    "/display/ADDON/Babel.BabelTranslation": "en/extras/babel/babeltranslation",
+    "/display/ADDON/siblingNav": "en/extras/siblingnav",
+    "/display/revolution20/Creating+a+Resource+Class": "en/extending-modx/custom-resources"
 }
