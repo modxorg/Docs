@@ -2248,5 +2248,12 @@
     "/2.x/en/extras/googlesitemap/googlesitemap.roadmap": "en/extras/googlesitemap/googlesitemap",
     "/display/community/Community+Contributor%27s+Guide": "en/contribute/code/contributors-guide",
     "/display/ADDON/DitsNews": "en/extras/ditsnews",
-    "/display/revolution20/Extending+modUser": "en/extending-modx/custom-users"
+    "/display/revolution20/Extending+modUser": "en/extending-modx/custom-users",
+    "/display/revolution21/Upgrading+MODX": "en/getting-started/maintenance/upgrading",
+    "/display/ADDON/Eletters": "en/extras/eletters",
+    "/display/ADDON/Cliche": "en/extras/cliche",
+    "/display/ADDON/FormIt.Validators": "en/extras/formit/formit.validators",
+    "/display/revolution20/Upgrading+to+2.2.x": "en/getting-started/maintenance/upgrading/2.2",
+    "/display/revolution20/modX.regClientScript": "en/extending-modx/modx-class/reference/modx.regclientscript",
+    "/display/ADDON/CookieList": "en/extras/cookielist"
 }
