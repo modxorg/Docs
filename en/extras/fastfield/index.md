@@ -72,7 +72,7 @@ Return the value of $\_POST\['myVar'\]:
 
 Supported global arrays: `$_GET`, `$_POST`, `$_REQUEST`, `$_SERVER`, `$_FILES`, `$_COOKIE`, `$_SESSION`. The type of array after # is case-insensitive. The name of array element is case-sensitive. You should use uncached tag, eg. `[[!#get.name]]`, for cached resources.
 
-**CAUTION**: **It is dangerous to use raw global variables on the page. For example, use :stripTags [output filter](/building-sites/tag-syntax/output-filters) to prevent XSS-attacks (eg. `[[!#get.name:stripTags]]`)!**
+**CAUTION**: **It is dangerous to use raw global variables on the page. For example, use `:stripTags` [output filter](/building-sites/tag-syntax/output-filters) to prevent XSS-attacks (eg. `[[!#get.name:stripTags]]`)!**
 
 ## How it works
 
