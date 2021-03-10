@@ -1,6 +1,7 @@
 ---
 title: "fastField"
 translation: "extras/fastfield"
+description: "fastField помогает получить значение поля, включая TV переменные и свойства, другого ресурса, а также может добыть значения суперглобальных переменных PHP"
 ---
 
 ## Что такое fastField?
