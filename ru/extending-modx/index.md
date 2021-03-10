@@ -1,6 +1,7 @@
 ---
 title: "Разработка с MODX"
 translation: "extending-modx"
+sortorder: 3
 ---
 
 
