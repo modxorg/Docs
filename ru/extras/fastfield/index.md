@@ -63,7 +63,7 @@ fastField был впервые вышел в свет 29 Ноября 2012 го
 [[#1.properties.articles.articlesPerPage]]
 ```
 
-Вернуть значение $\_POST\['myVar'\]:
+Вернуть значение `$_POST['myVar']`:
 
 ``` php
 [[!#post.myVar]]
