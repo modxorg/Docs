@@ -20,7 +20,7 @@ The plugin can be retrieved through the Package Manager, or downloaded manually 
 
 The structure of tag is as follows: `[[#resource_id.field]]`
 
-where `resource\_id` is an ID of necessary resource, eg. "123", and field is a resource field, eg. "pagetitle". For Template Variables the field should be prepended by "tv.". For Resource Properties it should be prepended by "properties." or "property.".
+where `resource_id` is an ID of necessary resource, eg. "123", and field is a resource field, eg. "pagetitle". For Template Variables the field should be prepended by "tv.". For Resource Properties it should be prepended by "properties." or "property.".
 
 For usage with global arrays you must replace `resource\_id` by array name, eg. "post" and field by the name of a variable.
 
