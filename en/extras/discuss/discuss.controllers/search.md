@@ -33,7 +33,7 @@ This controller template has the following placeholders you can use, on top of t
 
 | Placeholder | Description                                                                                                                          |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-|             | [All fields of the disBoard object.](http://rtfm.modx.com/display/ADDON/Discuss.Database+Model#Discuss.DatabaseModel-disBoardBoards) |
+|             | [All fields of the disBoard object.](extras/discuss/discuss.database-model) |
 | results     | The search results or an error message.                                                                                              |
 | total       | Amount of results.                                                                                                                   |
 | start       | Number of results this page starts on.                                                                                               |

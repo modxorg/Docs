@@ -27,7 +27,7 @@ Bugs can be filed here: <https://github.com/jgulledge19/DataBackup/issues>
 1. Install via the package manager
 2. Set the databackup.folder setting to something that is above your web root. The default is core/components/databackup/dumps/
 3. Set the purge time option (databackup.pruge) if you want this to be different, the default is 1814400, which is 21 days.
-4. Set up Cron Manager: [display/ADDON/CronManager](extras/cronmanager) and then Create a new job.
+4. Set up Cron Manager: [CronManager](extras/cronmanager) and then Create a new job.
 5. Select the backup snippet and then select in minutes how often you would like this to run. Every 24 hours is 1440 minutes.
 
 ### How to use snippet with getCache

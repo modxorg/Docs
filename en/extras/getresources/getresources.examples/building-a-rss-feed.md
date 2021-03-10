@@ -41,7 +41,7 @@ In your MODX Manager, create a new resource.
 ```
 
 **Warning for Articles**
-If you are using getResources to summarize blog posts from the [Articles](http://rtfm.modx.com/display/ADDON/Articles) Extra, you must set **&showHidden=`1`** – Articles are considered hidden.
+If you are using getResources to summarize blog posts from the [Articles](extras/articles) Extra, you must set **&showHidden=`1`** – Articles are considered hidden.
 
 What this does is quite straightforward. First you declare the xml and rss version (as well as "extensions" to the rss, in this case atom and dublin core), similar to how you would declare a HTML Doctype. Next, the channel block starts which is where you give information about your feed and the website it represents.
 

@@ -50,7 +50,7 @@ Some of the xPDO-specific parameters use custom defines that you can use, such a
 - `xPDO::OPT_CACHE_PATH` — If set, will set a custom cachePath class variable to the xPDO object that can be used in caching.
 - `xPDO::OPT_CACHE_ATTEMPTS` — If set, defines the number attempts `xPDOFileCache` will attempt to lock an existing cache entry for writing; default is 1. _(2.1 only)_
 - `xPDO::OPT_CACHE_ATTEMPT_DELAY` — If set, defines the number microseconds to delay each attempt to lock existing cache entries for writing; default is 10000. _(2.1 only)_
-- `xPDO::OPT_CONNECTIONS` — Optionally defines a pool of [additional connections](http://rtfm.modx.com/display/xPDO20/Database+Connections+and+xPDO#DatabaseConnectionsandxPDO-DefiningMultipleConnections%28xPDO2.2%29) to select from when instantiating xPDO. _(2.2 only)_
+- `xPDO::OPT_CONNECTIONS` — Optionally defines a pool of [additional connections](extending-modx/xpdo/create-xpdo-instance/connections) to select from when instantiating xPDO. _(2.2 only)_
 - `xPDO::OPT_CONN_INIT` — Defines options a connection must have to be selected as the initial connection; applicable when multiple connections are defined. _(2.2 only)_
 - `xPDO::OPT_CONN_MUTABLE` — Defines if data from a connection can be changed, i.e. is writable. _(2.2 only)_
 - `xPDO::OPT_HYDRATE_FIELDS` — If true, fields will be [hydrated](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields").

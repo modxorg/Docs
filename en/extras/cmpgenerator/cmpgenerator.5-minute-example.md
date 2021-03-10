@@ -65,7 +65,7 @@ $output .= '
         <th>Description</th>
     </tr>';
 
-// Note for all HTML you should be using Chunks see: <a href="display/revolution20/Chunks#Chunks-ProcessingChunkviatheAPI"> display/revolution20/Chunks#...</a>
+// Note for all HTML you should be using Chunks see: <a href="https://docs.modx.com/current/en/building-sites/elements/chunks"> chunks</a>
 /* build query */
 $query = $modx->newQuery('Test');
 $rows = $modx->getIterator('Test', $query);

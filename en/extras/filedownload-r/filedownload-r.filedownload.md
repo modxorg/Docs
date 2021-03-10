@@ -21,7 +21,7 @@ Basic usage is `[[!FileDownload?]]`
 | downloadByOther | Disable the downloading action by this snippet, to use different way                                                                                     | &downloadByOther=`1`                                                                                                     | 0             | bool: 0/1 |
 | directLink      | Use file's direct path, rather than the hashed link. Make sure it is web accessible                                                                      | &directLink=`1`                                                                                                          | 0             | bool: 0/1 |
 | fdlid           | Set an ID to each of the snippet calls if there are more than once.                                                                                      | &fdlid=`1`                                                                                                               | null          | string    |
-| plugins         | [Read the doc.](http://rtfm.modx.com/display/ADDON/FileDownload+R.Plugins)                                                                               |                                                                                                                          |               |           |
+| plugins         | [Read the doc.](extras/filedownload-r/filedownload-r.plugins)                                                                               |                                                                                                                          |               |           |
 | prefix          | prefix for the placeholders                                                                                                                              |                                                                                                                          | 'fd.'         |           |
 
 ## downloadByOther
@@ -315,7 +315,7 @@ _tplWrapperDir_ & _tplWrapperFile_ (1.0.0-rc.5) are used to provide different wr
 That means that they might have different headers. There are the default chunks inside **{core\_path}components/filedownload/elements/chunks/**, which are **tpl-wrapper-dir**.chunk.tpl and **tpl-wrapper file**.chunk.tpl, respectively.
 To use them, _tplWrapper_ must be changed too or set it empty instead.
 
-FileDownload R has [@BINDING](http://rtfm.modx.com/display/MODx096/What+are+%28at%29+Bindings) directives for the template:
+FileDownload R has [@BINDING](building-sites/elements/template-variables/bindings) directives for the template:
 
 - @CODE|@INLINE
 - @FILE

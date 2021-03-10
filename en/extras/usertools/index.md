@@ -14,7 +14,7 @@ userTools was first written by David Pede (davidpede) and released on March 24, 
 
 ## Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <https://modx.com/extras/package/usertools>
+It can be downloaded from within the MODX Revolution manager via [Package Management](en/building-sites/extras), or from the MODX Extras Repository, here: <https://modx.com/extras/package/usertools>
 
 The source code and build script is also available on GitHub: <https://github.com/tasianmedia/usertools>
 

@@ -13,10 +13,6 @@ The RSS/Atom feeder based on [SimplePie](http://simplepie.org/) 1.2 which is alr
 - MODX Revolution 2.0.0-RC-2 or later
 - PHP5 or later
 
-## History
-
-spieFeed integration was written by [goldsky](/display/~goldsky) as the RSS/Atom feeder, and first released on Oct 18, 2010.
-
 ## Download
 
 It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/spiefeed> or here: <https://modx.com/extras/package/spiefeed>
