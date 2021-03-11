@@ -1919,7 +1919,7 @@
     "/extras/revo/quip/quip.quipreply/quip.quipreply.tpllogintocomment": "en/extras/quip/quip.quipreply/tpllogintocomment",
     "/extras/revo/quip/quip.quipreply/quip.quipreply.tplpreview": "en/extras/quip/quip.quipreply/tplpreview",
     "/extras/revo/quip/quip.quiprss": "en/extras/quip/quip.quiprss",
-    "/extras/revo/quip/quip.roadmap": "en/extras/quip/quip.roadmap",
+    "/extras/revo/quip/quip.roadmap": "en/extras/quip",
     "/extras/revo/quip/quip.upgrading": "en/extras/quip/quip.upgrading",
     "/extras/revo/quip/quip.upgrading/quip.upgrading-to-1.0.1": "en/extras/quip/quip.upgrading/upgrading-to-1.0.1",
     "/extras/revo/rampart": "en/extras/rampart/index",
@@ -2014,7 +2014,7 @@
     "/extras/revo/tinymce/tinymce.template": "en/extras/tinymce/tinymce.template",
     "/extras/revo/upload-to-users-cmp": "en/extras/upload-to-users-cmp/index",
     "/extras/revo/versionx": "en/extras/versionx/index",
-    "/extras/revo/versionx/versionx.roadmap": "en/extras/versionx/versionx.roadmap",
+    "/extras/revo/versionx/versionx.roadmap": "en/extras/versionx",
     "/extras/revo/virtunewsletter": "en/extras/virtunewsletter/index",
     "/extras/revo/virtunewsletter/mailgun-integration": "en/extras/virtunewsletter/mailgun-integration",
     "/extras/revo/wayfinder": "en/extras/wayfinder/index",
@@ -2265,5 +2265,13 @@
     "/display/ADDON/Home": "en/extras",
     "/display/ADDON/Babel.BabelTranslation": "en/extras/babel/babeltranslation",
     "/display/ADDON/siblingNav": "en/extras/siblingnav",
-    "/display/revolution20/Creating+a+Resource+Class": "en/extending-modx/custom-resources"
+    "/display/revolution20/Creating+a+Resource+Class": "en/extending-modx/custom-resources",
+    "/display/ADDON/Wayfinder+Introductory+Examples": "en/extras/wayfinder/wayfinder-introductory-examples",
+    "/display/ADDON/Breadcrumbs": "en/extras/breadcrumbs",
+    "/display/revolution20/Advanced+Installation": "en/getting-started/installation/advanced",
+    "/display/ADDON/HandyMan.Roadmap": "en/extras/handyman",
+    "/display/ADDON/sekFancyBox": "en/extras/sekfancybox",
+    "/display/ADDON/Babel": "en/extras/babel",
+    "/display/ADDON/archivist": "en/extras/archivist",
+    "/display/revolution20/Creating+a+3rd+Party+Component+Build+Script": "en/extending-modx/transport-packages/build-script"
 }
