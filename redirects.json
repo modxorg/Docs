@@ -2277,5 +2277,6 @@
     "/display/ADDON/modExtra": "en/extras/modextra",
     "/display/xPDO20/Retrieving+Objects": "en/extending-modx/xpdo/retrieving-objects",
     "/display/ADDON/SiteEditor": "en/extras/siteeditor",
-    "/display/ADDON/imageHERE": "en/extras/imagehere"
+    "/display/ADDON/imageHERE": "en/extras/imagehere",
+    "/display/ADDON/FormIt.Tutorials+and+Examples": "en/extras/formit/formit.tutorials-and-examples"
 }
