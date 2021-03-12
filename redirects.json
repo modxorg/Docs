@@ -1859,8 +1859,7 @@
     "/extras/revo/migxdb/migxdb.tutorials/migxdb.manage-events-resources-in-a-cmp-with-help-of-migxdb": "en/extras/migxdb/migxdb.tutorials/manage-events-resources-in-a-cmp-with-help-of-migxdb",
     "/extras/revo/migxdb/migxcalendars": "en/extras/migxdb/migxcalendars",
     "/extras/revo/minifyx": "en/extras/minifyx/index",
-    "/extras/revo/minishop": "en/extras/minishop/index",
-    "/extras/revo/minishop/minishop.screenshots": "en/extras/minishop/minishop.screenshots",
+    "/extras/revo/minishop": "en/extras/minishop2",
     "/extras/revo/modactivedirectory": "en/extras/modactivedirectory/index",
     "/extras/revo/moddef": "en/extras/moddef/index",
     "/extras/revo/modextra": "en/extras/modextra/index",
@@ -2273,5 +2272,10 @@
     "/display/ADDON/sekFancyBox": "en/extras/sekfancybox",
     "/display/ADDON/Babel": "en/extras/babel",
     "/display/ADDON/archivist": "en/extras/archivist",
-    "/display/revolution20/Creating+a+3rd+Party+Component+Build+Script": "en/extending-modx/transport-packages/build-script"
+    "/display/revolution20/Creating+a+3rd+Party+Component+Build+Script": "en/extending-modx/transport-packages/build-script",
+    "/display/revolution20/Templates": "en/building-sites/elements/templates",
+    "/display/ADDON/modExtra": "en/extras/modextra",
+    "/display/xPDO20/Retrieving+Objects": "en/extending-modx/xpdo/retrieving-objects",
+    "/display/ADDON/SiteEditor": "en/extras/siteeditor",
+    "/display/ADDON/imageHERE": "en/extras/imagehere"
 }
