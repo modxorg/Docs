@@ -23,7 +23,7 @@ A Chunk named "**Paging0**" is provided with AdvSearch. This Chunk name is set a
 ## AdvSearch's pageTpl and CurrentPageTpl Chunks
 
 Two Chunks named "**PageLink**" and "**CurrentPageLink**" are provided to set up the paging type 0.
-These Chunk names are set as &pageTpl and &currentPageTpl properties on the [AdvSearch](extras/advsearch/advsearch.advsearch "AdvSearch.AdvSearch") snippet.
+These Chunk names are set as `&pageTpl` and `&currentPageTpl` properties on the [AdvSearch](extras/advsearch/advsearch "AdvSearch.AdvSearch") snippet.
 
 ## Default Value for PageLink
 
