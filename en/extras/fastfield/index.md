@@ -2,6 +2,7 @@
 title: "fastField"
 _old_id: "638"
 _old_uri: "revo/fastfield"
+description: "fastField extra helps to get single field, including Template Variables and Properties, of a different resource, also it can display superglobal PHP variables"
 ---
 
 ## What is fastField?

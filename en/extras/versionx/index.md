@@ -2,6 +2,7 @@
 title: "VersionX"
 _old_id: "732"
 _old_uri: "revo/versionx"
+description: "VersionX extra implements version management for Resources, Templates, Chunks, Template Variables, as well as Snippets and Plugins"
 ---
 
 ## What is VersionX
@@ -13,10 +14,10 @@ VersionX is an extra for MODX Revolution which adds Resource, Template, Chunk, T
 - VersionX 1.0 only worked in Revolution 2.0.x and is no longer supported.
 - VersionX 2.0 supported Revolution 2.0-2.2.
 - VersionX 2.1 no longer claims Revolution 2.0 support, but instead needs Revolution 2.1 by default. It should theoretically work, but no Revolution 2.0 specific testing or patches will be released.
-- VersionX 2.2 (future release) will likely start requiring at least Revolution 2.2 to take advantage of new coding standards.
-- VersionX 2.3 supports MODX 3 (alpha2+)
+- VersionX 2.2 required at least Revolution 2.2 to take advantage of new coding standards.
+- VersionX 2.3.2 current version, supports MODX 3 (alpha2+)
 
-### History& Legacy
+### History & Legacy
 
 VersionX was first developed in December 2010 by Mark Hamstra and made it up to VersionX 1.0.0-Alpha5 in March 2011 before time ran out to further develop and support the component. Unfortunately VersionX 1.0 did not support MODX Revolution 2.1 or up.
 
@@ -38,16 +39,16 @@ In August 2011, the first steps towards a complete rewrite were made, which happ
 | 2.0.0-pl     | 29 October 2012 | Bugfixes, better UTF-8 support, ability to revert Resources.                                                         |
 | 2.1.0-pl     | 14 January 2013 | Bugfixes, ability to revert all elements, remember open tabs in component.                                           |
 
-**VersionX 1.0 and 2.0 are NOT compatible with eachother**
-Due to the severity of the rewrite, VersionX 1.0 and 2.0 are not compatible with eachother. However, considering the huge advantages of 2.0 over 1.0, VersionX 2.0 will be pushed out as an update to 1.0 and the update process should be pretty smooth.. **minus the fact that your stored revisions will not be imported to VersionX 2.0** and you will not be able to interact with them through the Manager after updating to 2.0. You can, however, access your old data by opening up the extra\_versionx table in a tool such as PhpMyAdmin. An import is not planned, however during the setup procedure of VersionX 2.0 you are presented with options to create a snapshot of the current data. See for more information under Usage & Features.
+**VersionX 1.0 and 2.0 are NOT compatible with each other**
+Due to the severity of the rewrite, VersionX 1.0 and 2.0 are not compatible with each other. However, considering the huge advantages of 2.0 over 1.0, VersionX 2.0 will be pushed out as an update to 1.0 and the update process should be pretty smooth.. **minus the fact that your stored revisions will not be imported to VersionX 2.0** and you will not be able to interact with them through the Manager after updating to 2.0. You can, however, access your old data by opening up the `extra_versionx` table in a tool such as PhpMyAdmin. An import is not planned, however during the setup procedure of VersionX 2.0 you are presented with options to create a snapshot of the current data. See for more information under Usage & Features.
 
 ## Development & Bug reporting
 
-VersionX 1.0 is no longer supported or developed, but for legacy sakes you can find the source on Github: <https://github.com/Mark-H/VersionX> - you will have to switch branches, but it's still there!
+VersionX 1.0 is no longer supported or developed.
 
-VersionX 2.0 has been publicly released on May 3rd 2012, is developed in a separate repository on Github: <https://github.com/Mark-H/VersionX2> - bugs & feature requests are very much welcome there as well.
+VersionX 2.0 has been publicly released on May 3rd 2012, is developed in a separate repository on Github: <https://github.com/modmore/VersionX> - bugs & feature requests are very much welcome there as well.
 
-## Usage& Features
+## Usage & Features
 
 VersionX consists of two parts. The first part is a plugin running in the background which triggers on every Resource and Element create and update to make a copy of the data at that point. The second part is the back-end module (manager page) which may be accessed through the Components menu. This page offers you searchable grids with all the different versions stored in the database, with the possibility to open up the details. From there you are able to choose a different version to compare it with, or to revert the live resource or element from an older version.
 
