@@ -2278,5 +2278,17 @@
     "/display/xPDO20/Retrieving+Objects": "en/extending-modx/xpdo/retrieving-objects",
     "/display/ADDON/SiteEditor": "en/extras/siteeditor",
     "/display/ADDON/imageHERE": "en/extras/imagehere",
-    "/display/ADDON/FormIt.Tutorials+and+Examples": "en/extras/formit/formit.tutorials-and-examples"
+    "/display/ADDON/FormIt.Tutorials+and+Examples": "en/extras/formit/formit.tutorials-and-examples",
+    "/display/xPDO20/Creating+a+Model+With+xPDO": "en/extending-modx/xpdo/creating-objects",
+    "/display/ADDON/Login.Basic+Setup": "en/extras/login/login.tutorials/basic-setup",
+    "/display/ADDON/GoogleSiteMap.GoogleSiteMap": "en/extras/googlesitemap",
+    "/display/revolution20/4.+Ext+JS+Tutorial+-+Manipulating+Nodes": "en/extending-modx/custom-manager-pages/modext/modext-tutorials/4.-ext-js-tutorial-manipulating-nodes",
+    "/display/revolution20/Adding+a+Media+Source": "en/building-sites/media-sources/creating",
+    "/display/ADDON/ObfuscateEmail-Revo": "en/extras/obfuscateemail-revo",
+    "/display/revolution20/Using+Friendly+URLs": "en/getting-started/friendly-urls",
+    "/extras/evo/wayfinder": "en/extras/wayfinder",
+    "/display/revolution20/Troubleshooting+Installation": "en/getting-started/installation/troubleshooting",
+    "/display/revolution20/Bindings": "en/building-sites/elements/template-variables/bindings",
+    "/display/revolution20/Security": "en/building-sites/client-proofing/security",
+    "/display/ADDON/FormIt.Hooks.spam": "en/extras/formit/formit.hooks/spam"
 }
