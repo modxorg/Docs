@@ -2296,5 +2296,6 @@
     "/display/revolution20/Troubleshooting+Installation": "en/getting-started/installation/troubleshooting",
     "/display/revolution20/Bindings": "en/building-sites/elements/template-variables/bindings",
     "/display/revolution20/Security": "en/building-sites/client-proofing/security",
-    "/display/ADDON/FormIt.Hooks.spam": "en/extras/formit/formit.hooks/spam"
+    "/display/ADDON/FormIt.Hooks.spam": "en/extras/formit/formit.hooks/spam",
+    "/3.x/en/index": "en/"
 }
