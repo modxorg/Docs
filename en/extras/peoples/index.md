@@ -61,4 +61,3 @@ Display the User Group "HR Department", and output the Users in the group to the
     - [Peoples.PeopleGroups.tpl](extras/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
 - [Peoples.Peoples](extras/peoples/peoples.peoples)
     - [Peoples.Peoples.tpl](extras/peoples/peoples.peoples/peoples.peoples.tpl)
-- [Peoples.Roadmap](extras/peoples/peoples.roadmap)

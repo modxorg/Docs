@@ -16,9 +16,7 @@ To begin with we will need to install [MIGX](extras/migx "MIGX") using the Packa
 
 ## Create a new Package and schema-file
 
-Go to Components->MIGX-> Tab 'Package Manager'
-
-add a name for your new package into the field 'packageName:'. For our example we use 'doodles'.
+Go to Components->MIGX-> Tab 'Package Manager' add a name for your new package into the field 'packageName:'. For our example we use 'doodles'.
 
 Click 'Create Package'
 
@@ -41,7 +39,7 @@ Go to the tab 'xml schema' and add this code:
         <field key="editedon" dbtype="datetime" phptype="datetime" null="true"/>
         <field key="editedby" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" />
         <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
-        <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />  
+        <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="false" default="0" />
         <aggregate alias="CreatedBy" class="modUser" local="createdby" foreign="id" cardinality="one" owner="foreign"/>
         <aggregate alias="EditedBy" class="modUser" local="editedby" foreign="id" cardinality="one" owner="foreign"/>
     </object>
@@ -56,7 +54,7 @@ If you had already created the doodles-table you can add these fields to your ex
 
 Of course you can create your own processors under your own processor-path.
 
-[Read more about creating schemas](xpdo/getting-started/creating-a-model-with-xpdo/defining-a-schema "Defining a Schema")
+[Read more about creating schemas](extending-modx/xpdo/custom-models/defining-a-schema "Defining a Schema")
 
 ### Parse Schema
 
@@ -81,8 +79,7 @@ In the opening window we add:
 ### Settings
 
 Name: doodles - this is the name of our configuration. Make sure to use unique configuration-names.
-"Add Item" Replacement: Add Doodle - this is the text on our 'Add Item' - Button
-unique MIGX ID: doodles - Its a good idea to have a unique MIGX - id for all your MIGX-configs.
+"Add Item" Replacement: Add Doodle - this is the text on our 'Add Item' - Button unique MIGX ID: doodles - Its a good idea to have a unique MIGX - id for all your MIGX-configs.
 
 ### CMP-Settings
 
@@ -93,45 +90,45 @@ Tab Description: Manage your doodles here. You can edit them by either double-cl
 
 click 'add item' for four columns:
 
-Header: ID
-field: id
+- Header: **ID**
+- field: **id**
 
-Header: Name
-field: name
+- Header: **Name**
+- field: **name**
 
-Header: Description
-field: description
+- Header: **Description**
+- field: **description**
 
-field: deleted
-show in grid: no
+- field: **deleted**
+- show in grid: **no**
 
 ### Formtabs
 
 click 'add item' to add a new formtab
 
-Caption: Doodle
+- Caption: **Doodle**
 
-We add two fields to our tab:
-click 'add item'
+We add two fields to our tab: click 'add item'
 
-fieldname: name
-Caption: Name
+- fieldname: **name**
+- Caption: **Name**
 
-fieldname: description
-Caption: Desription
-inputTVtype: textarea
+- fieldname: **description**
+- Caption: **Desription**
+- inputTVtype: **textarea**
 
 ### MIGXdb-Settings
 
-package: doodles
-classname: Doodle
+- package: **doodles**
+- classname: **Doodle**
 
 ### db-filters
 
 click 'add item'
-filter name: search
-filter type: textbox
-getlist where:
+
+- filter name: **search**
+- filter type: **textbox**
+- getlist where:
 
 ``` json
 {"name:LIKE":"%[[+search]]%","OR:description:LIKE":"%[[+search]]%"}
@@ -139,7 +136,7 @@ getlist where:
 
 ### Contextmenues
 
-check: update , recall\_remove\_delete
+check: update , `recall_remove_delete`
 
 ### Actionbuttons
 
@@ -154,11 +151,12 @@ Tools (gear icon) -> Menus
 'Create Menu' button
 
 Enter values:
-Parent: choose where you want the menu item to appear
-Lexicon-key: doodles (or what you'd like the menu item to be named if you're not using a Lexicon)
-Action: index
-Parameters: &configs=doodles (note: 'doodles' should be the value of the 'name' field of your config as opposed to the 'unique MIGX ID')
-Namespace: migx
+
+- Parent: choose where you want the menu item to appear
+- Lexicon-key: doodles (or what you'd like the menu item to be named if you're not using a Lexicon)
+- Action: **index**
+- Parameters: `&configs=doodles` (note: 'doodles' should be the value of the 'name' field of your config as opposed to the 'unique MIGX ID')
+- Namespace: **migx**
 
 Click 'Save' button
 
@@ -169,9 +167,10 @@ System -> Actions
 In the menu-tree select: Components->MIGX->right-click->Place Action here
 
 Enter values:
-Lexicon-key: doodles
-Action: migx-index
-Parameters: &configs=doodles (note: 'doodles' should be the value of the 'name' field of your config as opposed to the 'unique MIGX ID')
+
+- Lexicon-key: **doodles**
+- Action: **migx-index**
+- Parameters: `&configs=doodles` (note: 'doodles' should be the value of the 'name' field of your config as opposed to the 'unique MIGX ID')
 
 Click 'Save' button
 

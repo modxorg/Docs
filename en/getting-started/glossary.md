@@ -153,9 +153,9 @@ Custom Resource Fields created by the user on the Document Create/Edit Screen an
 
 A packaged and zipped collection of Transport Vehicles, that can be easily distributed ("transported") from one Core Workspace to another.
 
-## Transport Provider (formerly Provisioner)
+## Package Management
 
-A web service that enables remote installation of Transport Packages directly from the MODX manager application.
+A web service that enables remote [installation](building-sites/extras) of Transport Packages directly from the Manager.
 
 ## Transport Vehicles
 

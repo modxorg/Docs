@@ -154,4 +154,3 @@ MAMP (включая последнюю версию 1.8.4) отлично ра�
 1. [Руководство Lighttpd](getting-started/friendly-urls/lighttpd)
 2. [Установка на сервер под управлением ModSecurity](getting-started/installation/troubleshooting/modsecurity)
 3. [Конфигурация сервера Nginx](getting-started/friendly-urls/nginx)
-4. [Видео на YouTube от MODX Ambassador](http://www.youtube.com/watch?v=Wwrq-3CWFVU)

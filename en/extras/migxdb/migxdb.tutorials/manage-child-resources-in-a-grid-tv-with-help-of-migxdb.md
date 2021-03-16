@@ -6,8 +6,7 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.manage-child-resources-in-a-grid-
 
 Often we have the problem with lots of Resources in the Resource-Tree to be very confused at some point and we wish, we would have a better way to manage them in a paginated grid view.
 
-In this Tuorial we will learn how to create a TV which shows a grid of child-resources,
-where you can add, delete, remove, edit, publish, unpublish, filter, bulk-update child-resources of the currently edited Resource (parent-folder)
+In this Tuorial we will learn how to create a TV which shows a grid of child-resources, where you can add, delete, remove, edit, publish, unpublish, filter, bulk-update child-resources of the currently edited Resource (parent-folder)
 
 First we will create a basic Configuration where we can just add new Child-Resources and edit the pagetitle, longtitle and Content-field of our Children.
 Later we want to add one or more TVs, which we want to have editable and we want to add some filters, where we can filter our children.
@@ -58,7 +57,7 @@ Create another template for the Parent resource. This template will be the one u
 
 now we create our MIGXdb - TV.
 Create a new TV.
-Name: childstutorial
+Name: **childstutorial**
 
 Go to the tab: 'Input Options'
 
@@ -95,9 +94,10 @@ In this step we want to add three TVs to our form:
 ### The MIGX-TV for some images
 
 Create a new TV:
-Name: images
-Type: migx
-Formtabs:
+
+- Name: **images**
+- Type: **migx**
+- Formtabs:
 
 ``` json
 [
@@ -126,41 +126,38 @@ Type: text
 
 ### Multiselect-TV for choosing one or more Categories for our child-resource
 
-Name: categories
-Type: listbox multiple
-Input-option-values:
-\---==||categoryA||categoryB||categoryC||categoryD
+- Name: **categories**
+- Type: **listbox multiple**
+- Input-option-values: `---==||categoryA||categoryB||categoryC||categoryD`
 
 Add this TVs to your child-resources-template, but not to your parent-resource-template!
 
 ### Adding the TVs to our Form
 
-Go to the MIGX-Management-Component into the TAB 'MIGX'
--> right click to the record 'childstutorial' -> click 'edit'
--> go to 'Formtabs'
--> click 'Add Item'
-caption: TVs
-fields: -> Add three items
+Go to the MIGX-Management-Component into the TAB 'MIGX' -> right click to the record 'childstutorial' -> click 'edit' -> go to 'Formtabs' -> click 'Add Item'
 
-fieldname: price
-caption: Price
+- caption: **TVs**
+- fields: -> Add three items
 
-fieldname: images
-caption: Images
-iputTV: images
+- fieldname: **price**
+- caption: **Price**
 
-fieldname: categories
-Caption: Categories
-inputTV: categories
+- fieldname: **images**
+- caption: **Images**
+- iputTV: **images**
+
+- fieldname: **categories**
+- Caption: **Categories**
+- inputTV: **categories**
 
 to save them, click ->Done
 
 ### Register the TVs for our processors (getlist,fields)
 
 We need to register TVs to include them in the getlist- and fields-processors.
-Todo so we need a new config-file under /core/components/migx/configs/
+Todo so we need a new config-file under `/core/components/migx/configs/`
 
-with the same name as our MIGX-configuration: childstutorial.config.inc.php (should already be installed with the MIGX-package) and this content:
+with the same name as our MIGX-configuration: `childstutorial.config.inc.php` (should already be installed with the MIGX-package) and this content:
 
 >/core/components/migx/configs/childstutorial.config.inc.php
 
@@ -176,12 +173,12 @@ Pay attention on how you name the TVs and fields, they should not contain any do
 
 ## Add a sortable price-column to the grid
 
-Go to the TAB 'Columns'
--> click 'Add Item'
-Header: Price
-Field: price
-width: 20
-sortable: yes
+Go to the TAB 'Columns' -> click 'Add Item'
+
+- Header: **Price**
+- Field: **price**
+- width: **20**
+- sortable: **yes**
 
 Now we should be able to update this TVs in our grids-editor-window.
 
@@ -189,19 +186,17 @@ Now we should be able to update this TVs in our grids-editor-window.
 
 In this step we add some filters to our grid.
 
-- Textbox-filter to search in pagetitle,longtitle and content
+- Textbox-filter to search in `pagetitle,longtitle` and `content`
 - dropdown-filter to filter by category
 
-Go to MIGX-Management and open our configuration (childstutorial)
-Open the TAB 'DB-Filters'
-Click 'Add Item' to add a new filter.
+Go to MIGX-Management and open our configuration (childstutorial), open the TAB **DB-Filters**, click **Add Item** to add a new filter.
 
 ### Textbox Filter for searching in some fields
 
-filter Name: search
-label: search
-empty text: search...
-getlist-where:
+- filter Name: **search**
+- label: **search**
+- empty text: **search...**
+- getlist-where:
 
 ``` json
 {"pagetitle:LIKE":"%[[+search]]%","OR:longtitle:LIKE":"%[[+search]]%","OR:content:LIKE":"%[[+search]]%"}
@@ -209,20 +204,20 @@ getlist-where:
 
 ### Dropdown Filter for filtering by categories
 
-filter Name: category
-label: category
-empty text: - category filter -
-filter type: combobox
-getlist-where:
+- filter Name: **category**
+- label: **category**
+- empty text: **- category filter -**
+- filter type: **combobox**
+- getlist-where:
 
 ``` php
 tvFilter::categories=inArray=[[+category]]
 ```
 
-getcombo processor: getTVcombo
-getcombo textfield: categories (this is used in our getTVcombo-processor to get the input-options of the TV 'categories' for our filter-dropdown)
+- getcombo processor: **getTVcombo**
+- getcombo textfield: categories (this is used in our getTVcombo-processor to get the input-options of the TV **categories** for our filter-dropdown)
 
-Save them all with clicking 'Done' on all windows
+Save them all with clicking **Done** on all windows
 
 Now you should be able to filter the child-resources by searching and/or choosing a category
 
@@ -232,15 +227,14 @@ Hiding our child-resources from resource-tree is very easy.
 
 go to the MIGX-Configurator and add a new field to one of the formtabs:
 
-Fieldname: show\_in\_tree
-Caption: Show in Tree
-inputTVtype: listbox
-
-inputOptionValues: no==0||yes==1
+- Fieldname: `show_in_tree`
+- Caption: **Show in Tree**
+- inputTVtype: **listbox**
+- inputOptionValues: `no==0||yes==1`
 
 You can also show the status of this field in the grid by adding a new column:
 
-Header: Show in Tree
-Field: show\_in\_tree
-width: 20
-Renderer: this.RenderCrossTick
+- Header: **Show in Tree**
+- Field: `show_in_tree`
+- width: `20`
+- Renderer: `this.RenderCrossTick`

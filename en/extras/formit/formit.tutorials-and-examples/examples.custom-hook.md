@@ -25,11 +25,11 @@ The only thing we need to add to the basic call here is a new **hook**: we've ad
 ]]
 ```
 
-Note that the order in which **customhook** appears in the `&hooks` parameter is important. Hooks are executed in the order they are listed. 
+Note that the order in which **customhook** appears in the `&hooks` parameter is important. Hooks are executed in the order they are listed.
 
 ## customhook Snippet
 
-The name of the hook corresponds to the name of a Snippet. So we create a Snippet named **customhook**. It's useful when writing a custom hook to do some testing first, to make sure it is firing. Since the custom hook is only supposed to _return_ either a true or false value, it's not easy to print out debugging information. Instead, we can write something to the MODX log using the [$modx->log()](http://rtfm.modx.com/display/xPDO20/xPDO.log) function.
+The name of the hook corresponds to the name of a Snippet. So we create a Snippet named **customhook**. It's useful when writing a custom hook to do some testing first, to make sure it is firing. Since the custom hook is only supposed to _return_ either a true or false value, it's not easy to print out debugging information. Instead, we can write something to the MODX log using the [$modx->log()](extending-modx/xpdo/class-reference/xpdo/xpdo.log) function.
 
 Remember you must return **true** if you want to consider your form validated! Here's our sample code for our new **customhook** Snippet:
 

@@ -32,7 +32,7 @@ $generator= $manager->getGenerator();
 $xml= $generator->writeSchema('/path/to/my/new/packagename.schema.xml','mypackage', 'xPDOObject','mydb_');
 ```
 
-Примечание: генерация схемы XML не генерирует совокупные и составные отношения - только определения полей и объектов. Вам нужно будет указать эти отношения самостоятельно. Прочти [Defining Relationships](http://rtfm.modx.com/display/xPDO20/Defining+Relationships) для получения подробностей.
+Примечание: генерация схемы XML не генерирует совокупные и составные отношения - только определения полей и объектов. Вам нужно будет указать эти отношения самостоятельно. Прочти [Defining Relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships) для получения подробностей.
 
 ## Смотрите также
 

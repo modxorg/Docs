@@ -12,7 +12,7 @@ StaticSaver is a plugin for MODX Revolution that automatically sets up the name 
 
 First install the package via the Package Management or download from [Repository](https://modx.com/extras/package/staticsaver).
 
-After that, you need to configure [Media Sources](display/revolution20/Adding+a+Media+Source) and [System Settings](display/revolution20/System+Settings). You should filter system settings by namespace "staticsaver" to get all related settings.
+After that, you need to configure [Media Sources](building-sites/media-sources) and [System Settings](building-sites/settings). You should filter system settings by namespace "staticsaver" to get all related settings.
 
 You can see detailed video of configuring [StaticSaver at YouTube](http://www.youtube.com/watch?v=l3ObHPfFKTM).
 

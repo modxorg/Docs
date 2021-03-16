@@ -32,7 +32,7 @@ _old_uri: "2.x/case-studies-and-tutorials/developing-an-extra-in-modx-revolution
 
  In here, we'll have quite a few directories:
 
- ![](/download/attachments/7be5a431a826c4c2097f6e6bdd67b307/doodles-dir-structure.png)
+ ![](img/doodles-dir-structure.png)
 
  Let's note a few things. The main 3 directories are **core/**, **assets/** and **\_build/**. Typically, MODX Extras are separated into 2 different directories when installed: core/components/doodles/ and assets/components/doodles/. Why? This lets us separate web-specific assets (JavaScript files, CSS, images, connectors etc.) into a location inside of the webroot, whereas all PHP files (connectors have to stay in assets) are put into core/components/ which can (and should) be outside of the webroot for security reasons.
 
@@ -152,7 +152,7 @@ return $output;
 
 ### Making the Model
 
- xPDO OOP query methods to access the database. It currently is beginning to support multiple databases, and it does that by the abstraction of DB queries. Also, it allows you to keep your DB rows in nice, clean classes and do all kinds of neat things in very short lines of code. But to do that, we have to add an xPDO model to our Snippet (via the $modx->addPackage method). But first we have to build that model, using an xPDO Schema. There's a [nice long tutorial here](/display/xPDO20/Creating+a+Model+With+xPDO) on how to do that, but we'll go over it fast for now.
+ xPDO OOP query methods to access the database. It currently is beginning to support multiple databases, and it does that by the abstraction of DB queries. Also, it allows you to keep your DB rows in nice, clean classes and do all kinds of neat things in very short lines of code. But to do that, we have to add an xPDO model to our Snippet (via the $modx->addPackage method). But first we have to build that model, using an xPDO Schema. There's a [nice long tutorial here](extending-modx/xpdo/custom-models) on how to do that, but we'll go over it fast for now.
 
  Go ahead and make a xml file in /www/doodles/core/components/doodles/model/schema/doodles.mysql.schema.xml. Put this in it:
 
@@ -253,7 +253,7 @@ define('MODX_ASSETS_URL', MODX_BASE_URL . 'assets/');
 
  That should run and generate you some nice pretty class files and maps:
 
- ![](/download/attachments/33587481/doodles-maps.png)
+ ![](img/doodles-maps.png)
 
  Bravo! You've just made your maps and classes. Let's go make an adjustment to our Doodles base class, so it automatically adds in the Doodles xPDO package whenever we load the class. Add this line after the $this->config = array\_merge part, at the end of the constructor:
 
@@ -415,7 +415,7 @@ foreach ($doodles as $doodle) {
  So, what this does is iterates over all the Doodle objects we got with the getCollection call, and creates a PHP array from their values with the toArray method. Then, it uses getChunk and that array to set values to the Chunk for each row, and append that to the $output variable. So we get a bunch of \\
 
 1. tags (as many as you added rows in the DB for). It should look something like this:
-\\> ![](/download/attachments/33587481/doodleoutput1.png)
+\\> ![](img/doodleoutput1.png)
 
  Cool, huh? You can obviously change that Chunk to whatever you want - and people can pass in a name of a Chunk to &tpl in their Snippet call to use whatever Chunk they want. Templatability in your Snippet! Hooray!
 

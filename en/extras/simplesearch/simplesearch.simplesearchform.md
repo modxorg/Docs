@@ -10,13 +10,13 @@ This snippet displays a search form for SimpleSearch.
 
 ## Usage
 
-Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [SimpleSearch](extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet call is located (which is where the results will display).
+Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [SimpleSearch](extras/simplesearch/simplesearch "SimpleSearch.SimpleSearch") snippet call is located (which is where the results will display).
 
 ``` php
 [[!SimpleSearchForm? &landing=`123`]]
 ```
 
-If you'd like the results to show on the same page, simply place the [SimpleSearch](extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet call below the SimpleSearchForm call, and don't specify a 'landing' parameter.
+If you'd like the results to show on the same page, simply place the [SimpleSearch](extras/simplesearch/simplesearch "SimpleSearch.SimpleSearch") snippet call below the SimpleSearchForm call, and don't specify a 'landing' parameter.
 
 ## Available Properties
 
@@ -81,13 +81,12 @@ Then that probably means that the **SimpleSearch** isn't looking in the right pl
 
 ## See Also
 
-1. [SimpleSearch.Roadmap](extras/simplesearch/simplesearch.roadmap)
-2. [SimpleSearch.SimpleSearch](extras/simplesearch/simplesearch)
+1. [SimpleSearch.SimpleSearch](extras/simplesearch/simplesearch)
     1. [SimpleSearch.SimpleSearch.containerTpl](extras/simplesearch/simplesearch/containertpl)
     2. [SimpleSearch.SimpleSearch.currentPageTpl](extras/simplesearch/simplesearch/currentpagetpl)
     3. [SimpleSearch.SimpleSearch.pageTpl](extras/simplesearch/simplesearch/pagetpl)
     4. [SimpleSearch.SimpleSearch.tpl](extras/simplesearch/simplesearch/tpl)
     5. [SimpleSearch.Faceted Search Through PostHooks](extras/simplesearch/simplesearch/faceted-search-through-posthooks)
-3. [SimpleSearch.SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform)
+2. [SimpleSearch.SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform)
     1. [SimpleSearch.SimpleSearchForm.tpl](extras/simplesearch/simplesearch.simplesearchform/tpl)
-4. [SimpleSearch.Solr](extras/simplesearch/simplesearch.solr)
+3. [SimpleSearch.Solr](extras/simplesearch/simplesearch.solr)

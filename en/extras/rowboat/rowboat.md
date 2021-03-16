@@ -126,4 +126,4 @@ Be careful about the &columns argument: if you list a column that does not exist
 
 ## See Also
 
-1. [Rowboat.Rowboat](extras/rowboat/rowboat.rowboat)
+1. [Rowboat.Rowboat](extras/rowboat/rowboat)

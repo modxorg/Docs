@@ -67,7 +67,7 @@ renderResources cannot be used with binary Content Types, or with modSymLink or 
 | sortbyTVType  | Specify the data type of the sortby TV. Possible values are string, integer, decimal, datetime. Default Value: string                                               |
 | limit         | Limits the number of resources returned. Default Value: 5                                                                                                           |
 | offset        | An offset of resources returned by the criteria to skip. Default Value: 0                                                                                           |
-| where         | A JSON-style expression of criteria to build any additional where clauses from. See below for an example. See <http://rtfm.modx.com/display/xPDO20/xPDOQuery.where> |
+| where         | A JSON-style expression of criteria to build any additional where clauses from. See below for an example. See [xpdoquery.where](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.where) |
 | context       | Which Context should be searched in. Defaults to the current Context.                                                                                               |
 
 #### tvFilters
@@ -116,13 +116,13 @@ mytv==%a
 ```
 
 Matches any resources that have a mytv value that ends with an a, but can have anything in front of it.
-  
+
 Of course you can also combine this with the OR (||) and AND (,) delimiters explained above.
-  
+
 It is important to know that this function **looks at the raw value of a template variable** for a specific resource. This means that **the value has been explicitly set for the resource**, and that it has not been **processed by a template variable output type**. So if you have an "autotag" tv, this means the raw value is a comma delimited list, and it is not split up in tags like you see it in the manager.
-  
+
 **Available filter operators**:
-  
+
 There are a number of comparison operators for use when creating filter conditions. In addition, when using many of these operators, numeric comparison values are automatically CAST TV values to numeric before comparison. Here is a list of the valid operators:
 
 | Filter Operator |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | SQL Operator |

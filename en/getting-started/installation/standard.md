@@ -152,4 +152,3 @@ For information on installing 3rd-party packages, see the [How to Install Packag
 1. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
 2. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
 3. [Nginx Server Config](getting-started/friendly-urls/nginx)
-4. [YouTube video by a MODX Ambassador](http://www.youtube.com/watch?v=Wwrq-3CWFVU)

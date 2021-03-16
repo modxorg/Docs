@@ -22,7 +22,7 @@ translation: "extending-modx/plugins/system-events/onhandlerequest"
 
 | Предыдущее событие | —                                                                                                                                                                                                    |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Следующее событие  | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit") или [OnWebPageInit](/display/revolution20/OnWebPageInit "OnWebPageInit") (в зависимости от контекста) |
+| Следующее событие  | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit") или [OnWebPageInit](extending-modx/plugins/system-events/onwebpageinit "OnWebPageInit") (в зависимости от контекста) |
 | File               | [core/model/modx/modmanagerrequest.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagerrequest.class.php)                                                          |
 | Class              | class modManagerRequest                                                                                                                                                                               |
 | Method             | public function handleRequest()                                                                                                                                                                       |

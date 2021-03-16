@@ -23,7 +23,7 @@ The EletterFormItEmail hook, which is just a snippet, aims to be a drop in repla
 | emailFiles        | Boolean, default true - on true will send any files attachments that a newsletter resource may have, these would be added via the Manager TVs                                      |
 | emailLog          | Boolean, default true - on true will save output email content to database and allow a you to create a link to View as Webpage. Will also log any error if email is not delivered. |
 
-See the FormIt Email documentation for additional available properties: <http://rtfm.modx.com/display/ADDON/FormIt.Hooks.email>
+See the FormIt Email documentation for additional available properties: [FormIt email Hook](extras/formit/formit.hooks/email)
 
 #### Example
 

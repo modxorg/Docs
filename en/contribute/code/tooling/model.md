@@ -2,7 +2,7 @@
 title: Building model/schema
 ---
 
-Changes to the core model (adding/changing/removing database fields or tables), need to be applied to one of the XML schema files in `core/model/schema/`. 
+Changes to the core model (adding/changing/removing database fields or tables), need to be applied to the XML schema files in `core/model/schema/`. 
 
 Once changes are made in the schema, they need to build to the model files for xPDO to use.
 
@@ -12,10 +12,14 @@ If you haven't already, make sure you've copied `_build/build.properties.sample.
 
 ## Building
 
-On the command line, run the `core/model/schema/build.modx.php` file with `php`:
+Use Composer to run the build script for all schema files and build the model files:
 
 ``` bash
-php core/model/schema/build.modx.php
+composer run-script parse-schema
 ```
 
-That parses all schema files. 
+or 
+
+``` bash
+php composer.phar run-script parse-schema
+```

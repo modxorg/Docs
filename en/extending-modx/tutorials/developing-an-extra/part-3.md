@@ -25,7 +25,7 @@ For simple Extras that don't have a CMP, we could just use [PackMan](/extras/pac
 
 This is what our `_build` directory will look like when we're through. We're already familiar with the `build.config.php` and `build.schema.php` files from Part I. For now, let's just explain a few things about it:
 
-![](/download/attachments/33947702/doodles-build-dir1.png)
+![](img/doodles-build-dir1.png)
 
 -   **data** - This is where we're going to put all of our data-packaging scripts. We'll get into that shortly.
 -   **resolvers** - A directory containing our [resolvers](extending-modx/transport-packages) for our Transport Package.
@@ -184,7 +184,7 @@ exit ();
 
 The pack() method tells MODX to go ahead and make the Transport Package zip with our built package so far. The rest of the lines after that just display how long it took to do the build. That's it! If you run this via the browser (on mine, [http://localhost/doodles/\_build/build.transport.php](http://localhost/doodles/_build/build.transport.php)) you'll get some debugging info displayed, and then in your MODX's _core/packages/_ directory, you'll find this:
 
-![](/download/attachments/33947702/doodles-zip1.png)
+![](img/doodles-zip1.png)
 
 Our Transport Package! Nice and done. However, installing it wont actually do anything. Let's try and solve that.
 

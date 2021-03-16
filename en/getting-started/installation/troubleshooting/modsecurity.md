@@ -10,20 +10,20 @@ This document covers a fairly technical topic and it's not recommended that amat
 
 [ModSecurity](http://www.modsecurity.org/) is an open source web application firewall that runs as an Apache server module. It implements a comprehensive set of rules that implement general-purpose hardening, and thereby helps patch common web application security issues. It establishes an external security layer that increases security, detects, and prevents attacks before they reach web applications. It is commonly available on cPanel systems as an EasyApache module. It is a well-respected security module and can really help lock down your site from common attack vectors.
 
-We discuss ModSecurity explicitly here because the MODX Revolution manager issues many requests that can run afoul of mod\_security rules.
+We discuss ModSecurity explicitly here because the MODX Revolution manager issues many requests that can run afoul of `mod_security` rules.
 
 **The Silent Killer**
 The MODX manager may simply quietly fail if one of its actions is blocked by mod\_security. Know your server! Check your Apache error logs! Your sanity is at stake!
 
 ## How Do I Know if I have ModSecurity Installed?
 
-Before we discuss how to make ModSecurity and MODX play nicely together, you need to know whether or not you actually have this software installed. The easy solution is to ask your hosting provider, and presumably they will know (if they don't know what software they are running, it's probably time to [find another hosting company](https://modx.com/partners/hosting-saas/)).
+Before we discuss how to make ModSecurity and MODX play nicely together, you need to know whether or not you actually have this software installed. The easy solution is to ask your hosting provider, and presumably they will know (if they don't know what software they are running, it's probably time to [find another hosting company](https://modx.com/partners/hosting-saas/).
 
 If you are running your own server (e.g. one born of a VPS template), then you can log into the server and check this for yourself.
 
 ### Checking on a WHM Server
 
-Many VPS's include the WHM/cPanel administration panels. It's relatively easy to see if you are running mod\_security on a WHM server.
+Many VPS's include the WHM/cPanel administration panels. It's relatively easy to see if you are running `mod_security` on a WHM server.
 
 1. Log into your WHM instance (typically at <https://yoursite.com:2087/>)
 2. Find the "Plugins" section in the left navigation
@@ -31,7 +31,7 @@ Many VPS's include the WHM/cPanel administration panels. It's relatively easy to
 
 ![](modsecurity+whm.jpg)
 
-A handy cPanel/WHM mod\_security module is available for visually editing your rules here: <http://configserver.com/>
+A handy cPanel/WHM `mod_security` module is available for visually editing your rules here: <http://configserver.com/>
 
 ### Checking via the Command Line
 
@@ -64,7 +64,7 @@ Loaded Modules:
  security2_module (shared)  # <--- this is ModSecurity
 ```
 
-The mod\_security module is listed as **security2\_module**
+The `mod_security` module is listed as **security2\_module**
 
 ### Other Recon
 
@@ -85,7 +85,7 @@ tail -f /usr/local/apache/logs/error_log
 
 Keep that window open as you navigate the MODX manager and be alert if any errors appear in that file. (Press ctrl-C to close the utility).
 
-You may also want to watch the contents of the mod\_security log. Again, the location is configurable, but often this is stored in **/usr/local/apache/logs/modsec\_audit.log**
+You may also want to watch the contents of the `mod_security` log. Again, the location is configurable, but often this is stored in **/usr/local/apache/logs/modsec\_audit.log**
 
 ### Sample Error
 

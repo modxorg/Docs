@@ -2,6 +2,7 @@
 title: "EVAL Binding"
 _old_id: "107"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding"
+note: "The @EVAL binding has been deprecated and removed in MODX 3.0."
 ---
 
 The `@EVAL` binding was present in earlier versions of MODX and allowed executing arbitrary code to populate a template variable.

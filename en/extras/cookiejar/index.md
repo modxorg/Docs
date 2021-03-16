@@ -14,7 +14,7 @@ cookieJar was first written by David Pede and last released on December 13, 2018
 
 ## Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <https://modx.com/extras/package/cookiejar>
+It can be downloaded from within the MODX Revolution manager via [Package Management](en/building-sites/extras), or from the MODX Extras Repository, here: <https://modx.com/extras/package/cookiejar>
 
 The source code and build script is also available on GitHub: <https://github.com/tasianmedia/cookiejar>
 

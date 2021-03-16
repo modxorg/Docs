@@ -150,6 +150,5 @@ This is the Chunk displayed with the &tplAddComment property on the [Quip.QuipRe
     2. [Quip.QuipReply.tplLoginToComment](extras/quip/quip.quipreply/tpllogintocomment)
     3. [Quip.QuipReply.tplPreview](extras/quip/quip.quipreply/tplpreview)
 5. [Quip.QuipRss](extras/quip/quip.quiprss)
-6. [Quip.Roadmap](extras/quip/quip.roadmap)
-7. [Quip.Upgrading](extras/quip/quip.upgrading)
+6. [Quip.Upgrading](extras/quip/quip.upgrading)
     1. [Quip.Upgrading to 1.0.1](extras/quip/quip.upgrading/upgrading-to-1.0.1)

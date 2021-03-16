@@ -12,7 +12,7 @@ Your XML schema can define validation rules using nodes in the XML that follow t
 <validation>
     <rule field="$name_of_field"
         name="$name_of_rule"
-        type="callback|preg_match|xPDOValidationRule"
+        type="callable|preg_match|xPDOValidationRule"
         rule="$various"
         value="$optional_parameter"
         message="string" />
@@ -23,8 +23,8 @@ The **rule** may have have these attributes:
 
 - **field**: the field's name. _(required)_
 - **name**: a unique name for this validation rule. You can have multiple validation rules for each field. _(required)_
-- **Type**: can be "callback", "preg\_match" or "xPDOValidationRule" _(required)_
-- **rule**: varies depending on the type. For type=callback, this will be the name of the callback function. For type=preg\_match, this will be the regular expression. For type=xPDOValidationRule, a valid child class must be supplied. _(required)_
+- **Type**: can be "callable", "preg\_match" or "xPDOValidationRule" _(required)_
+- **rule**: varies depending on the type. For type=callable, this will be the name of the callback function. For type=preg\_match, this will be the regular expression. For type=xPDOValidationRule, a valid child class must be supplied. _(required)_
 - **value**: an optional argument to pass to the validation functions, e.g. when the type is `xPDOValidationRule` and the rule is a class that extends it. _(optional)_
 - **message**: this is a string describing the the validation rule if it fails. _(required)_ In MODX 2+, the message field contains a lexicon string which can provide language specific message translations.
 
@@ -46,9 +46,9 @@ Let's take this example from the modChunk schema:
     </object>
 ```
 
-## Callback Validation
+## Callable Validation
 
-You can use your own functions for validation purposes by using "callback" as the type -- this relies on PHP's [call\_user\_func()](http://php.net/manual/en/function.call-user-func.php) function. Because the function name is defined in XML where it is impossible to reference an object instance, you can only reference a regular PHP function like `my_function` or a static class method, e.g. `MyClass::myFunction`. Likewise, you cannot pass parameters to these functions (?).
+You can use your own functions for validation purposes by using "callable" as the type -- this relies on PHP's [call\_user\_func()](http://php.net/manual/en/function.call-user-func.php) function. Because the function name is defined in XML where it is impossible to reference an object instance, you can only reference a regular PHP function like `my_function` or a static class method, e.g. `MyClass::myFunction`. Additionally check this ['callable' Rule](extending-modx/xpdo/custom-models/validation#the-callable-rule)
 
 ## xPDOValidationRule Validation
 

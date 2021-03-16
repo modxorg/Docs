@@ -6,7 +6,7 @@ _old_uri: "revo/virtunewsletter/"
 
 virtuNewsletter is a newsletter system for MODX Revolution.
 
-If you want to read the old docs, please see here <http://oldrtfm.modx.com/display/ADDON/virtuNewsletter>.
+If you want to read the old docs, please see here [virtunewsletter](extras/virtunewsletter).
 
 ## Download
 

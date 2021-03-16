@@ -5,37 +5,33 @@ translation: "extending-modx/xpdo/custom-models/validation"
 
 ## Что такое валидация объектов в xPDO?
 
-Проверка (или валидация) объекта выполняется с помощью xPDOValidator, класса проверки в xPDO. Он автоматически доступен из любого xPDOObject объекта через метод getValidator.
+Проверка (или валидация) объекта выполняется с помощью `xPDOValidator`, класса проверки в xPDO. Он автоматически доступен из любого `xPDOObject` объекта через метод `getValidator`.
 
 ## Как это делается?
 
-Валидация может быть выполнена либо при помощи XML схемы, либо во время выполнения с помощью методов [xPDOValidator] (ru/extending-modx/xpdo/class-reference/xpdovalidator "xPDOValidator").
+Валидация может быть выполнена либо при помощи XML схемы, либо во время выполнения с помощью методов [xPDOValidator](ru/extending-modx/xpdo/class-reference/xpdovalidator "xPDOValidator").
 
 ## Пример использования
 
 Преждем всего давайте создадим нашу модель с этим объектом:
 
 ``` xml
-<model package="test" baseClass="xPDOObject" platform="mysql"
-       defaultEngine="MyISAM" tablePrefix="test_">
+<model package="test" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" tablePrefix="test_">
     <object class="myTest" table="test" extends="xPDOSimpleObject">
-        <field key="name" dbtype="varchar" precision="255"
-               phptype="string" default="" null="false" />
+        <field key="name" dbtype="varchar" precision="255" phptype="string" default="" null="false" />
 
         <validation>
             <rule field="name"
-                  name="preventBlank"
-                  type="xPDOValidationRule"
-                  rule="xPDOMinLengthValidationRule"
-                  value="1"
-                  message="Пожалуйста укажите имя"
+                name="preventBlank"
+                type="xPDOValidationRule"
+                rule="xPDOMinLengthValidationRule"
+                value="1"
+                message="Пожалуйста укажите имя"
              />
         </validation>
     </object>
 </model>
 ```
-
-From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
 
 Идем дальше и генерируем модель из XML схемы. А теперь в сниппете вызываем Test:
 
@@ -58,20 +54,20 @@ if ($validator->validate() == false) {
 
 ## Правила
 
-Существует три вида правил, 'callable', 'preg\_match', and 'xPDOValidationRule'.
+Существует три вида правил, `callable`, `preg_match`, и `xPDOValidationRule`.
 
 ### Правило 'callable'
 
 Это правило, основанное на функции, которую вы передаете.
 
-Это можно сделать несколькими способами. В параметре "rule" схемы вы можете указать имя функции, например "myCallable", а затем обязательно определить функцию, прежде чем вызывать validate() функцию.
+Это можно сделать несколькими способами. В параметре "rule" схемы вы можете указать имя функции, например "myCallable", а затем обязательно определить функцию, прежде чем вызывать `validate()` функцию.
 
 В функцию передаются два параметра, первый из которых является значением соответствующего столбца, а второй - массив других атрибутов в поле правила в схеме. Например, модель с правилом может быть следующей:
 
 ``` php
 <rule field="number" name="callable2"
-      type="callable" rule="myCallable"
-      min="10" message="Значение слишком маленькое. Может быть 10 или больше"
+    type="callable" rule="myCallable"
+    min="10" message="Значение слишком маленькое. Может быть 10 или больше"
 />
 ```
 
@@ -95,7 +91,7 @@ if ($validator->validate() == false) {
 
 > Произошла ошибка в поле "number": Callable failed.
 
-Вы также можете вызывать методы класса; если у вас есть класс A с методом B, вы можете сделать xml атрибут правила вида "A::B" для доступа к функции.
+Вы также можете вызывать методы класса; если у вас есть класс A с методом B, вы можете сделать xml атрибут правила вида `A::B` для доступа к функции.
 
 ### Правило 'preg\_match'
 
@@ -103,8 +99,8 @@ if ($validator->validate() == false) {
 
 ``` php
 <rule field="name" name="phpMatch"
-      type="preg_match" rule="/php/i"
-      message="Не содержит строку 'php'." />
+    type="preg_match" rule="/php/i"
+    message="Не содержит строку 'php'." />
 ```
 
 А в PHP следующий вызов:
@@ -124,9 +120,9 @@ if ($validator->validate() == false) {
 
 > Произошла ошибка в поле "name": Не содержит строку 'php'.
 
-### Правило 'xPDOValidationRule' 
+### Правило 'xPDOValidationRule'
 
-Это определенный тип правила, основанный на расширении класса класса xPDOValidationRule. Это позволяет делать более сложные правила, а также использовать встроенные. Встроенные правила включают в себя:
+Это определенный тип правила, основанный на расширении класса класса `xPDOValidationRule`. Это позволяет делать более сложные правила, а также использовать встроенные. Встроенные правила включают в себя:
 
 1. [xPDOForeignKeyConstraint](ru/xpdo/advanced-features/object-validation/xpdoforeignkeyconstraint)
 2. [xPDOMaxLengthValidationRule](ru/xpdo/advanced-features/object-validation/xpdomaxlengthvalidationrule)

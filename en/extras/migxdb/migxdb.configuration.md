@@ -45,30 +45,26 @@ System->Actions
 
 right-click 'Components' ->Place Action here
 
-lexicon key: migx
-action: migx - index
-parameters: &configs=packagemanager||migxconfigs||setup
+- lexicon key: **migx**
+- action: **migx - index**
+- parameters: `&configs=packagemanager||migxconfigs||setup`
 
 ### Setup for Revo 2.3 +
 
-System->Top Menu
-select 'Components'
-click 'Create Menu'
+System->Top Menu, select 'Components', click 'Create Menu'
 
-lexicon key: migx
-action: index
-parameters: &configs=packagemanager||migxconfigs||setup
-namespace: migx
+- lexicon key: **migx**
+- action: **index**
+- parameters: `&configs=packagemanager||migxconfigs||setup`
+- namespace: **migx**
 
 to make sure the configuration-table is created and up to date,
 go to components -> migx -> setup-tab -> click 'setup'
 
 ## Upgrading from MIGX - versions prior 2.0
 
-first, make a backup of your db-tables, specially the modx\_site\_tmplvar\_contentvalues - table
-go to components -> migx -> setup-tab
-go to tab upgrade. click 'upgrade'.
-This will add a new autoincrementing field MIGX\_id to all your MIGX-TV-items
+first, make a backup of your db-tables, specially the modx\_site\_tmplvar\_contentvalues - table, go to components -> migx -> setup-tab, go to tab upgrade. click 'upgrade'.
+This will add a new autoincrementing field `MIGX_id` to all your MIGX-TV-items
 The getImageList-snippet needs this field to work correctly.
 
 ## Configure your first MIGXdb - setup
