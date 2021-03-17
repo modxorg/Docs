@@ -4,7 +4,7 @@ _old_id: "901"
 _old_uri: "revo/hybridauth/hybridauth.integrating-vk.com"
 ---
 
-Integration of any service is very simple. So, you can read about [Facebook](http://rtfm.modx.com/display/ADDON/HybridAuth.Integrating+Google), first, then look to screenshots and everything must be clear.
+Integration of any service is very simple. So, you can read about [Facebook](extras/hybridauth/hybridauth.integrating-google), first, then look to screenshots and everything must be clear.
 
 #### Registering application
 

@@ -86,7 +86,7 @@ Here's a reverse-engineering script that allows a bit of configuration and does 
   SEE ALSO:
   https://forums.modx.com/index.php?topic=40174.0
   https://docs.modx.org/current/en/extending-modx/tutorials/using-custom-database-tables
-  http://rtfm.modx.com/display/xPDO20/xPDOGenerator.writeSchema
+  https://docs.modx.com/current/en/extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.writeschema
   ------------------------------------------------------------------------------ */
 
 /* ------------------------------------------------------------------------------

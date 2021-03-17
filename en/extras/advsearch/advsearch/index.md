@@ -105,7 +105,7 @@ There are several chunks that are processed in AdvSearch. Their corresponding Ad
 Depending the paging type:
 Paging type 1:
 
-- [paging1Tpl](en/extras/advsearch/advsearch/paging1tpl "AdvSearch.Advsearch.paging1Tpl") - **Paging1** : The Chunk to use for the pagination type 1.
+- [paging1Tpl](extras/advsearch/advsearch/paging1tpl "AdvSearch.Advsearch.paging1Tpl") - **Paging1** : The Chunk to use for the pagination type 1.
 
 Paging type 0:
 

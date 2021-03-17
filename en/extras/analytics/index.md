@@ -9,7 +9,7 @@ _old_uri: "revo/analytics"
 Analytics is a utility tool for MODX Revolution that will insert the tracking code for Google Universal Analytics (analytics.js) and/or Google Analytics (ga.js) on your website's pages.
 
 By default it will ignore traffic from users logged into the manager. Every context in your website can be excluded on demand, wether or not users are logged in.
-The tracking code templates [can be overridden with your own chunks](#use-your-own-tracking-codes).
+The tracking code templates can be overridden with your own chunk.
 
 ## Requirements
 
@@ -80,7 +80,7 @@ Advanced example:
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
 | webPropertyID           | [trackingId](https://developers.google.com/analytics/devguides/collection/analyticsjs/method-reference#create) parameter.                                                                                                                                | yes      |         |
 | displayfeatures         | [Display Features plugin](https://developers.google.com/analytics/devguides/collection/analyticsjs/display-features). This will enable [Display Advertising Features](https://support.google.com/analytics/answer/3450482?hl=en&ref_topic=3413645&rd=1). | no       | 1       |
-| enhancedLinkAttribution | see [Shared Properties](#shared-properties) above.                                                                                                                                                                                              | no       | 1       |
+| enhancedLinkAttribution | see Shared Properties above.                                                                                                                                                                                              | no       | 1       |
 | forceSSL                | [forceSSL](https://developers.google.com/analytics/devguides/collection/analyticsjs/advanced#ssl) field.                                                                                                                                                 | no       | 0       |
 | anonymizeIP             | [anonymizeIp](https://developers.google.com/analytics/devguides/collection/analyticsjs/advanced#anonymizeip) field.                                                                                                                                      | no       | 0       |
 | cookieDomain            | [cookieDomain](https://developers.google.com/analytics/devguides/collection/analyticsjs/domains#auto) field.                                                                                                                                             | no       | auto    |
@@ -93,7 +93,7 @@ Advanced example:
 | Name                    | Description                                                                                                                                                                                                   | Required | Default |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ------- |
 | setAccount              | [\_setAccount](https://developers.google.com/analytics/devguides/collection/gajs/methods/gaJSApiBasicConfiguration?csw=1#_gat.GA_Tracker_._setAccount) parameter.                                             | yes      |         |
-| enhancedLinkAttribution | see [Shared Properties](#shared-properties) above.                                                                                                                                                   | no       | 1       |
+| enhancedLinkAttribution | see Shared Properties above.                                                                                                                                                   | no       | 1       |
 | setDomainName           | [\_setDomainName](https://developers.google.com/analytics/devguides/collection/gajs/methods/gaJSApiDomainDirectory?csw=1#_gat.GA_Tracker_._setDomainName) parameter.                                          | no       |         |
 | setCookiePath           | \[deprecated\] Use of this property is [highly discouraged](https://developers.google.com/analytics/devguides/collection/analyticsjs/domains#configure) and will be removed in a future release of Analytics. | no       |         |
 | trackPageview           | [\_trackPageview](https://developers.google.com/analytics/devguides/collection/gajs/methods/gaJSApiBasicConfiguration#_gat.GA_Tracker_._trackPageview) parameter.                                             | no       |         |

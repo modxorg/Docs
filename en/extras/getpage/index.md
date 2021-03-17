@@ -21,7 +21,7 @@ getPage was first written by Jason Coward (opengeek) and released on March 19, 2
 
 It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/getpage>
 
-This Snippet does nothing by itself, but rather depends on another Snippet to return the output for a specified page (or range of data within a complete set). For example, the [getResources](extras/getresources "getResources"), [getFeed](extras/getfeed "getFeed"), and [Archivist](http://rtfm.modx.com/display/ADDON/archivist) Snippets can both be wrapped by getPage.
+This Snippet does nothing by itself, but rather depends on another Snippet to return the output for a specified page (or range of data within a complete set). For example, the [getResources](extras/getresources "getResources"), [getFeed](extras/getfeed "getFeed"), and [Archivist](extras/archivist/archivist) Snippets can both be wrapped by getPage.
 
 ## Usage
 
@@ -138,4 +138,4 @@ Had a couple of issues with getting it all to work ... check out this resources 
 
 1. [Preparing Custom Snippets for getPage](http://www.markhamstra.com/modx-blog/2011/12/preparing-custom-snippets-for-getpage/)
 2. [getPage: pagination returns empty 2nd page](http://forums.modx.com/thread/74678/getpage-pagination-returns-empty-2nd-page#dis-post-424931)
-3. [xPDO.getCount & xPDO.limit](http://rtfm.modx.com/display/xPDO20/xPDO.getCount)
+3. [xPDO.getCount & xPDO.limit](extending-modx/xpdo/class-reference/xpdo/xpdo.getcount)

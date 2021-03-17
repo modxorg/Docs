@@ -65,7 +65,7 @@ And lest we forget...
 
 ## Ensure Basic Permissions are in Place
 
-In case you haven't already, you'll want to prepare the necessary rights and permissions for users and resources on your site as described in the [Basic Setup](http://rtfm.modx.com/display/ADDON/Login.Basic+Setup#Login.BasicSetup-CreatetheNecessaryUserGroupsandResourceGroups). This must be in place before continuing!
+In case you haven't already, you'll want to prepare the necessary rights and permissions for users and resources on your site as described in the [Basic Setup](extras/login/login.tutorials/basic-setup). This must be in place before continuing!
 
 ## Add Snippets
 
@@ -251,7 +251,7 @@ It needs to reference two other pages: the **Request Pending (7)** page, and the
 This page's job is to inform the user that their request is being processed and that they should check their email for an activation link. Here's a sample message:
 
 ``` html
-<p>Thank you for your interest in our site! Check your email for an activation link.  
+<p>Thank you for your interest in our site! Check your email for an activation link.
 You will need to click this link before you can log into our site.</p>
 
 ```
