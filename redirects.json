@@ -2290,5 +2290,12 @@
     "/display/revolution20/Troubleshooting+Installation": "en/getting-started/installation/troubleshooting",
     "/display/revolution20/Bindings": "en/building-sites/elements/template-variables/bindings",
     "/display/revolution20/Security": "en/building-sites/client-proofing/security",
-    "/display/ADDON/FormIt.Hooks.spam": "en/extras/formit/formit.hooks/spam"
+    "/display/ADDON/FormIt.Hooks.spam": "en/extras/formit/formit.hooks/spam",
+    "/display/xPDO20/xPDOQuery": "en/extending-modx/xpdo/class-reference/xpdoquery",
+    "/display/xPDO20/Caching": "en/extending-modx/xpdo/caching",
+    "/display/ADDON/Gallery.GalleryItem": "en/extras/gallery/gallery.galleryitem",
+    "/display/xPDO20/xPDO.getCollectionGraph": "en/extending-modx/xpdo/retrieving-objects/graphs",
+    "/display/ADDON/Login.UpdateProfile": "en/extras/login/login.updateprofile",
+    "/display/ADDON/EvoForcedPasswdChangeGallery": "en/extras/forcedpasswdchange",
+    "/display/ADDON/FormIt.FormItRetriever": "en/extras/formit/formit.formitretriever"
 }
