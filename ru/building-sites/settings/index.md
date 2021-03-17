@@ -291,9 +291,6 @@ MODX заполняет значения для имени и описания �
 79. [global_duplicate_uri_check](building-sites/settings/global_duplicate_uri_check)
 80. [hidemenu_default](building-sites/settings/hidemenu_default)
 81. [link_tag_scheme](building-sites/settings/link_tag_scheme)
-
-81. [link_tag_scheme](building-sites/settings/link_tag_scheme)
-
 82. [mail_charset](building-sites/settings/mail_charset)
 83. [mail_encoding](building-sites/settings/mail_encoding)
 84. [mail_smtp_auth](building-sites/settings/mail_smtp_auth)
