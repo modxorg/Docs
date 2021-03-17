@@ -41,7 +41,7 @@ CMPGenerator is on GitHub: <https://github.com/jgulledge19/CMPGenerator>, report
     - Put in the prefix for the table if any. It is best practice to use the same prefix as your MODX install does.
     - Select if you want to build the schema. If you don't do this you can't use your tables.
     - Select build Package and this will generate all necessary files.
-- Once the files are created and if you are using tables that have a relationship you will want to manually add that code in the file: core/components/YOUR-CMP/model/YOUR-CMP/YOUR-CMP.mysql.custom.schema.xml. See Documentation on Defining Relationships for more info: <http://rtfm.modx.com/display/xPDO20/Defining+Relationships>.
+- Once the files are created and if you are using tables that have a relationship you will want to manually add that code in the file: core/components/YOUR-CMP/model/YOUR-CMP/YOUR-CMP.mysql.custom.schema.xml. See Documentation on Defining Relationships for more info: [Defining Relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships).
   Once you have updated this file to show the relationships you can now regenerate the package. Set the Build Scheme to No and set Build Package to Yes and save.
 
 **Build Scheme** this creates or recreates the xml file. Make sure you set this option to No if you made any modifications to the file.

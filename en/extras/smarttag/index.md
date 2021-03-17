@@ -20,7 +20,7 @@ Collaborator: [Adam Wintle](http://www.monogon.co).
 
 ## Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <https://modx.com/extras/package/smarttag>
+It can be downloaded from within the MODX Revolution manager via [Package Management](en/building-sites/extras), or from the MODX Extras Repository, here: <https://modx.com/extras/package/smarttag>
 
 The source code and build script is also available on GitHub: <https://github.com/goldsky/SmartTag>[](https://github.com/tasianmedia/getDate)
 

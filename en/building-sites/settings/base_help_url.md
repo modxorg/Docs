@@ -9,7 +9,7 @@ description: "The base URL by which to build the Help links in the top right of 
 
 **Name**: Base Help URL
 **Type**: Textfield
-**Default**: <//docs.modx.com/2.x/en/index>
+**Default**: <https://docs.modx.com/current/en/index>
 **Available In**: Revolution 2.1+
 
 The base URL by which to build the Help links in the top right of pages in the manager.

@@ -14,7 +14,7 @@ getDate was first written by David Pede (davidpede) and released on November 22,
 
 ## Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](display/revolution20/Installing+a+Package), or from the MODX Extras Repository, here: <https://modx.com/extras/package/getDate>
+It can be downloaded from within the MODX Revolution manager via [Package Management](en/building-sites/extras), or from the MODX Extras Repository, here: <https://modx.com/extras/package/getDate>
 
 The source code and build script is also available on GitHub: <https://github.com/tasianmedia/getDate>
 

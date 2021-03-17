@@ -37,7 +37,7 @@ Bugs can be filed here: <https://github.com/bezumkin/eventsCalendar2/issues>
 
 eventsCalendar2 currently comes with one Snippet:
 
-- [eventsCalendar2](http://rtfm.modx.com/display/ADDON/eventsCalendar2.eventsCalendar2) - For generate calendar with events.
+- [eventsCalendar2](extras/eventscalendar2) - For generate calendar with events.
 
 And four Chunks:
 

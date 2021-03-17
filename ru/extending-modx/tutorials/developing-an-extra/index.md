@@ -152,7 +152,7 @@ return $output;
 
 ### Making the Model
 
- xPDO OOP query methods to access the database. It currently is beginning to support multiple databases, and it does that by the abstraction of DB queries. Also, it allows you to keep your DB rows in nice, clean classes and do all kinds of neat things in very short lines of code. But to do that, we have to add an xPDO model to our Snippet (via the $modx->addPackage method). But first we have to build that model, using an xPDO Schema. There's a [nice long tutorial here](/display/xPDO20/Creating+a+Model+With+xPDO) on how to do that, but we'll go over it fast for now.
+ xPDO OOP query methods to access the database. It currently is beginning to support multiple databases, and it does that by the abstraction of DB queries. Also, it allows you to keep your DB rows in nice, clean classes and do all kinds of neat things in very short lines of code. But to do that, we have to add an xPDO model to our Snippet (via the $modx->addPackage method). But first we have to build that model, using an xPDO Schema. There's a [nice long tutorial here](extending-modx/xpdo/custom-models) on how to do that, but we'll go over it fast for now.
 
  Go ahead and make a xml file in /www/doodles/core/components/doodles/model/schema/doodles.mysql.schema.xml. Put this in it:
 

@@ -80,7 +80,7 @@ Knockout resource 3 then add 2 hits (knockout zeros value before adding punches)
 
 ## With getResources
 
-Hits can be used be used with [getResources](http://rtfm.modx.com/display/ADDON/getResources) to list the most or least visited pages. This will pass a comma seperated list of ids of the 10 most visited pages according to Hits into getResources.
+Hits can be used be used with [getResources](extras/getresources) to list the most or least visited pages. This will pass a comma seperated list of ids of the 10 most visited pages according to Hits into getResources.
 
 ``` php
 [[getResources?

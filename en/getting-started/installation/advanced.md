@@ -6,26 +6,26 @@ _old_uri: "2.x/getting-started/installation/advanced-installation"
 
 This is the tutorial for the advanced distribution of MODX. It is recommended to only install this distribution if:
 
-- You plan on renaming the manager/ or connectors/ directories, or move the core/ directory
+- You plan on renaming the `manager/` or `connectors/` directories, or move the core/ directory
 - You have SSH access or can easily move/make writable directories on your server.
 
 You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If after reading this, you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation") page.
 
 ## Installation Pre-Steps
 
-After you've [downloaded](getting-started/installation "Installation") MODX Revolution's advanced distribution, upload and extract it to your server. You should be left with two directories - core/ and setup/. From here, if you plan on moving the core/ directory, proceed to the next section. If you're not going to do so, or rename the config key, browse to **setup/** in your browser and skip to the [Advanced Options](#AdvancedInstallation-AdvancedOptions) section of this document.
+After you've [downloaded](getting-started/installation "Installation") MODX Revolution's advanced distribution, upload and extract it to your server. You should be left with two directories - `core/` and `setup/`. From here, if you plan on moving the `core/` directory, proceed to the next section. If you're not going to do so, or rename the config key, browse to **setup/** in your browser and skip to the **Advanced Options** section of this document.
 
 ### Renaming or Moving the Core
 
-MODX Revolution allows you to rename and/or move the core/ directory to enhance your level of security. You can also move the core/ directory outside of the webroot to further secure your MODX installation.
+MODX Revolution allows you to rename and/or move the `core/` directory to enhance your level of security. You can also move the `core/` directory outside of the webroot to further secure your MODX installation.
 
-Should you choose to rename or move the core, MODX recommends doing so before installing. Simply rename or move the core, and setup/ - at the beginning - will present you with a page asking for the new location of the core:
+Should you choose to rename or move the core, MODX recommends doing so before installing. Simply rename or move the core, and `setup/` - at the beginning - will present you with a page asking for the new location of the core:
 
 ![](setup-corefinder.png)
 
-Enter into the textfield the absolute path to where you have moved the core directory. If MODX is able to find the core from there, you will proceed normally with the installation. If MODX still cannot find the directory from the path you specified, check if you have typed it correctly, that it is an absolute path, and that you've made the directory readable (and the core/cache/ file writable).
+Enter into the textfield the absolute path to where you have moved the core directory. If MODX is able to find the core from there, you will proceed normally with the installation. If MODX still cannot find the directory from the path you specified, check if you have typed it correctly, that it is an absolute path, and that you've made the directory readable (and the `core/cache/` file writable).
 
-MODX might also ask you to make the setup/includes/core.config.php file writable. This is required to change the core path, and you should do so before proceeding.
+MODX might also ask you to make the `setup/includes/core.config.php` file writable. This is required to change the core path, and you should do so before proceeding.
 
 ### Changing the Configuration Key
 
@@ -39,7 +39,7 @@ Specify a custom, unique config key and click next.
 
 ## Advanced Options
 
-You will now be presented with some options for install, similar to the [Basic Installation](getting-started/installation/standard "Basic Installation") screen, but with two extra options at the bottom. 'New Installation' will be your only radio option available to check, which is what you want. Below that, you can choose to adjust the permissions for creating new files or folders in your MODX installation. The defaults should work fine, but if on a more restrictive server, you can change the folder/file perms to 0775/0664, respectively.
+You will now be presented with some options for install, similar to the [Basic Installation](getting-started/installation/standard "Basic Installation") screen, but with two extra options at the bottom. 'New Installation' will be your only radio option available to check, which is what you want. Below that, you can choose to adjust the permissions for creating new files or folders in your MODX installation. The defaults should work fine, but if on a more restrictive server, you can change the folder/file perms to **0775/0664**, respectively.
 
 Below that, you will be presented with two checkbox options:
 
@@ -53,7 +53,7 @@ From here, you will get a form asking you for your database information:
 
 ![](setup-db-1.png)
 
-Add in your database hostname, which is the URL at which your database is located. For most users, this will be 'localhost'. If you have your MySQL server on a different port, specify it like so: "my.database.com;port=3307", with the ;port= appending the IP/hostname.
+Add in your database hostname, which is the URL at which your database is located. For most users, this will be 'localhost'. If you have your MySQL server on a different port, specify it like so: `my.database.com;port=3307`, with the ;port= appending the IP/hostname.
 
 Also, if you want, you can specify a different table prefix here. This tells MODX to prefix the tables with this value - this is useful should you want to make multiple MODX installations on one database.
 
@@ -79,9 +79,9 @@ From there, put in your email (or the email of your administrator) and specify a
 
 ## Context Configuration
 
-MODX will now present you with a detailed context installation screen. This is where you can configure the paths to your web context (the main context), as well as the directories for your connectors/ and manager/ folders. MODX recommends leaving the web/ context paths as they are, unless you have a special reason not to.
+MODX will now present you with a detailed context installation screen. This is where you can configure the paths to your web context (the main context), as well as the directories for your `connectors/` and `manager/` folders. MODX recommends leaving the web/ context paths as they are, unless you have a special reason not to.
 
-Renaming your manager/ and connectors/ directories, however, can add an extra level of security to your site. Simply change the paths and URLs in the textfields provided. Note: If you do change the directories, the directories **above** any of those paths must be writable to allow MODX to write the manager/ and/or connectors/ directories to them.
+Renaming your `manager/` and `connectors/` directories, however, can add an extra level of security to your site. Simply change the paths and URLs in the textfields provided. Note: If you do change the directories, the directories **above** any of those paths must be writable to allow MODX to write the `manager/` and/or `connectors/` directories to them.
 
 Make sure you change **both** the path and URL!
 

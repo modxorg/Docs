@@ -10,13 +10,13 @@ This snippet displays a search form for SimpleSearch.
 
 ## Usage
 
-Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [SimpleSearch](extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet call is located (which is where the results will display).
+Simply place wherever you want a SearchForm to render, and add the 'landing' property to the call to specify the Resource where the [SimpleSearch](extras/simplesearch/simplesearch "SimpleSearch.SimpleSearch") snippet call is located (which is where the results will display).
 
 ``` php
 [[!SimpleSearchForm? &landing=`123`]]
 ```
 
-If you'd like the results to show on the same page, simply place the [SimpleSearch](extras/simplesearch/simplesearch.simplesearch "SimpleSearch.SimpleSearch") snippet call below the SimpleSearchForm call, and don't specify a 'landing' parameter.
+If you'd like the results to show on the same page, simply place the [SimpleSearch](extras/simplesearch/simplesearch "SimpleSearch.SimpleSearch") snippet call below the SimpleSearchForm call, and don't specify a 'landing' parameter.
 
 ## Available Properties
 

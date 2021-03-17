@@ -44,4 +44,4 @@ $modx->initialize('aContextNameOfYourChoice');
 
 Вы также можете использовать пользовательское расположение ядра в любом из этих сценариев; это не зависит от контекстно-управляемых многосайтовых возможностей.
 
-Оформить заказ на компонент GatewayManager <http://rtfm.modx.com/display/ADDON/GatewayManager>
+Оформить заказ на компонент [GatewayManager](extras/gatewaymanager)
