@@ -59,11 +59,11 @@ xPDO is the object-relational bridge (ORB) that powers MODX. If you know what th
 
 ### Other Resources
 
-- [Get the Latest Release](http://xpdo.org/downloads.html)
-- [Forum Discussions](http://forums.modx.com/board/46/developing-with-xpdo)
+- [Get the Latest Release](http://xpdo.org/downloads/)
+- [Old Forum Discussions](http://forums.modx.com/board/46/developing-with-xpdo)
 - [Bugs & Feature Requests](https://github.com/modxcms/xpdo/issues)
 
-### Contributor Guide
+## Contributor Guide
 
 Love MODX? Learn how to get involved in the Community and contribute to the open source project.
 
