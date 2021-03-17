@@ -2,12 +2,11 @@
 title: "password_generated_length"
 _old_id: "215"
 _old_uri: "2.x/administering-your-site/settings/system-settings/password_generated_length"
+description: "The length of the auto-generated password for a User"
 ---
 
-## password\_generated\_length
-
-**Name**: Password Auto-Generated Length
-**Type**: Number
-**Default**: 8
+**Name**: Password Auto-Generated Length  
+**Type**: Number  
+**Default**: 10
 
 The length of the auto-generated password for a User.
