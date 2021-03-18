@@ -1,5 +1,6 @@
 ---
 title: 'upload_translit'
+translation: 'building-sites/settings/upload_translit'
 description: 'Транслитерация имен загружаемых файлов для предотвращения проблем с неправильными символами в имени файла.'
 ---
 
