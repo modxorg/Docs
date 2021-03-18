@@ -1,14 +1,11 @@
 ---
 title: "principal_targets"
-_old_id: "245"
-_old_uri: "2.x/administering-your-site/settings/system-settings/principal_targets"
+description: "Customize the ACL targets to load for MODX Users"
 ---
 
-## principal\_targets
-
-**Name**: ACL Targets to Load
-**Type**: textfield
-**Default**: modAccessContext,modAccessResourceGroup,modAccessCategory
+**Name**: ACL Targets to Load  
+**Type**: textfield  
+**Default**: modAccessContext,modAccessResourceGroup,modAccessCategory,sources.modAccessMediaSource,modAccessNamespace  
 **Available In:** 2.1+
 
 Customize the ACL targets to load for MODX Users.
