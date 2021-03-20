@@ -177,8 +177,8 @@ $modx->cacheManager->refresh($cacheRefreshOptions);
 Таким образом, в этом примере вам необходимо добавить следующие записи лексикона в загруженный вами лексикон:
 
 ```php
-$_lang['setting_mykey'] = 'Name of My Setting';
-$_lang['setting_mykey_desc'] = 'Description of my key';
+$_lang['setting_mykey'] = 'Имя моей настройки';
+$_lang['setting_mykey_desc'] = 'Описание моего ключа';
 ```
 
 MODX заполняет значения для имени и описания на основе этих записей лексики.
@@ -213,7 +213,7 @@ MODX заполняет значения для имени и описания �
 
 1. [access_category_enabled](building-sites/settings/access_category_enabled)
 1. [access_context_enabled](building-sites/settings/access_context_enabled)
-1. [access_resource_group_enabled](building-sites/settings/access_resource_group_enable)
+1. [access_resource_group_enabled](building-sites/settings/access_resource_group_enabled)
 1. [allow_duplicate_alias](building-sites/settings/allow_duplicate_alias)
 1. [allow_forward_across_contexts](building-sites/settings/allow_forward_across_contexts)
 1. [allow_manager_login_forgot_password](building-sites/settings/allow_manager_login_forgot_password)

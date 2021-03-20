@@ -1,9 +1,8 @@
 ---
 title: "mail_encoding"
 translation: "building-sites/settings/mail_encoding"
+description: "Устанавливает кодировку сообщения"
 ---
-
-## mail_encoding
 
 -   **Имя**: Формат кодирования
 -   **Тип**: String

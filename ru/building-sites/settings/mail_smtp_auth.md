@@ -1,9 +1,8 @@
 ---
 title: "mail_smtp_auth"
 translation: "building-sites/settings/mail_smtp_auth"
+description: "Устанавливает аутентификацию SMTP"
 ---
-
-## mail_smtp_auth
 
 -   **Имя**: Использовать SMTP аутентификацию
 -   **Тип**: Да/Нет

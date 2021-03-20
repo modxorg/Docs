@@ -1,9 +1,8 @@
 ---
 title: "compress_js"
 translation: "building-sites/settings/compress_js"
+description: "Когда это включено, MODX будет использовать сжатую версию своих пользовательских библиотек JavaScript"
 ---
-
-## compress_js
 
 -   **Имя**: Использовать сжатые JavaScript-библиотеки
 -   **По умолчанию**: Да

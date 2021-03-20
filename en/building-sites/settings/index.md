@@ -214,7 +214,7 @@ A description of each setting follows:
 
 1. [access_category_enabled](building-sites/settings/access_category_enabled)
 1. [access_context_enabled](building-sites/settings/access_context_enabled)
-1. [access_resource_group_enabled](building-sites/settings/access_resource_group_enable)
+1. [access_resource_group_enabled](building-sites/settings/access_resource_group_enabled)
 1. [allow_duplicate_alias](building-sites/settings/allow_duplicate_alias)
 1. [allow_forward_across_contexts](building-sites/settings/allow_forward_across_contexts)
 1. [allow_manager_login_forgot_password](building-sites/settings/allow_manager_login_forgot_password)

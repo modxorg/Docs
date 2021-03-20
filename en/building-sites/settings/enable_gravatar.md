@@ -9,4 +9,4 @@ description: "Enable Gravatar usage"
 **Default**: Yes  
 **Available In**: Revolution 2.3.1+
 
-Enable Gravatar usage
+Enable [Gravatar](https://en.gravatar.com/) usage

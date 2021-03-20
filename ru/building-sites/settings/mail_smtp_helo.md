@@ -1,9 +1,8 @@
 ---
 title: "mail_smtp_helo"
 translation: "building-sites/settings/mail_smtp_helo"
+description: "Устанавливает SMTP HELO сообщения"
 ---
-
-## mail_smtp_helo
 
 -   **Имя**: SMTP Helo сообщение
 -   **Тип**: String

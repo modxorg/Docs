@@ -1,11 +1,11 @@
 ---
 title: "manager_theme"
 translation: "building-sites/settings/manager_theme"
-description: "Текущая тема для бэкэнд-менеджера"
+description: "Текущая Тема для Менеджера"
 ---
 
--   **Имя**: Шаблон панели управления  
+-   **Имя**: Тема Менеджера  
 -   **Тип**: modx-combo-manager-theme  
 -   **По умолчанию**: default
 
-Текущая тема для бэкэнд-менеджера.
+Текущая Тема для Менеджера.

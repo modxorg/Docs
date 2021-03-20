@@ -1,9 +1,8 @@
 ---
 title: "mail_smtp_port"
 translation: "building-sites/settings/mail_smtp_port"
+description: "Устанавливает порт SMTP-сервера по умолчанию"
 ---
-
-## mail_smtp_port
 
 -   **Имя**: SMTP порт
 -   **Тип**: String
