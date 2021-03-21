@@ -15,8 +15,9 @@ description: "Использовать все членства в Группах
 **Внимание:** установка значения в `Да` может вызвать ошибки с конфликтующими Наборами НФ.
 
 ---
-## Посмотрите также
+
+## Посмотрите также 
 
 -   [Наборы Настроек Форм](building-sites/client-proofing/form-customization/sets)
 -   [Настройка Форм](building-sites/client-proofing/form-customization)
--   [ACL(Контроль Доступа)](building-sites/client-proofing/security/policies/acls)
+-   [ACL Контроль Доступа](building-sites/client-proofing/security/policies/acls)
