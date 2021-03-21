@@ -8,4 +8,9 @@ description: "The container used to pull all records for the user menu"
 **Default**: usernav  
 
 
-The container used to pull all records for the user menu.
+The Container used to pull all records for the User Menu.
+
+## See also
+
+-   [Menu](extending-modx/menus)
+-   [main_nav_parent](building-sites/settings/main_nav_parent)

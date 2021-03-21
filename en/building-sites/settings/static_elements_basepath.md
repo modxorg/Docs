@@ -1,5 +1,5 @@
 ---
-title: "setting_static_elements_basepath"
+title: "static_elements_basepath"
 description: "Basepath of where to store the static elements files."
 ---
 

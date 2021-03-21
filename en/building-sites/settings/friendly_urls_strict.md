@@ -10,4 +10,10 @@ description: "When friendly URLs are enabled, this option forces non-canonical r
 
 When friendly URLs are enabled, this option forces non-canonical requests that match a Resource to 301 redirect to the canonical URI for that Resource. 
 
-**WARNING:** Do not enable if you use custom rewrite rules which do not match at least the beginning of the canonical URI. For example, a canonical URI of *foo/* with custom rewrites for *foo/bar.html* would work, but attempts to rewrite *bar/foo.html* as *foo/* would force a redirect to *foo/* with this option enabled
+**WARNING:** Do not enable if you use custom rewrite rules which do not match at least the beginning of the canonical URI. For example, a canonical URI of `foo/` with custom rewrites for `foo/bar.html` would work, but attempts to rewrite `bar/foo.html` as `foo/` would force a redirect to `foo/` with this option enabled
+
+## See also
+
+-   [Friendly URL](https://en.wikipedia.org/wiki/Clean_URL)
+-   [friendly_urls](building-sites/settings/friendly_urls)
+-   [friendly_alias_urls](building-sites/settings/friendly_alias_urls)
