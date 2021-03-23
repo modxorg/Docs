@@ -1,5 +1,6 @@
 ---
 title: "FormIt"
+translation: "extras/formit"
 description: "Сниппет FormIt для обработки и отправки форм. Все параметры, примеры использования"
 ---
 
