@@ -96,6 +96,6 @@ FormIt 3.0 представляет обновление методов шифр
     1. [Пользовательский произвольный хук](extras/formit/formit.tutorials-and-examples/examples.custom-hook)
     2. [Пример простой формы](extras/formit/formit.tutorials-and-examples/examples.simple-contact-page)
     3. [Обработка выпадающих списков, чекбоксов и радио кнопок](extras/formit/formit.tutorials-and-examples/handling-selects,-checkboxes-and-radios)
-    4. [Использование пустого NoSpam поля](extras/formit/formit.tutorials-and-examples/using-a-blank-nospam-field)
+    4. [Использование пустого поля для защиты от спама](extras/formit/formit.tutorials-and-examples/using-a-blank-nospam-field)
 5. [FormItCountryOptions](extras/formit/formit.formitcountryoptions)
 6. [FormItStateOptions](extras/formit/formit.formitstateoptions)
