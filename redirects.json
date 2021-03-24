@@ -2298,5 +2298,5 @@
     "/display/ADDON/Login.UpdateProfile": "en/extras/login/login.updateprofile",
     "/display/ADDON/EvoForcedPasswdChangeGallery": "en/extras/forcedpasswdchange",
     "/display/ADDON/FormIt.FormItRetriever": "en/extras/formit/formit.formitretriever",
-	"/display/revolution20/display/revolution20/Setting+up+a+Development+Environment": "en/extending-modx/development-environment"
+    "/display/revolution20/display/revolution20/Setting+up+a+Development+Environment": "en/extending-modx/development-environment"
 }
