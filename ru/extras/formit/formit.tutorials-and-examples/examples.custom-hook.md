@@ -6,7 +6,7 @@ description: "Пользовательский произвольный хук"
 
 Часто отправка формы должна включать различную информацию для ведения статистики обращений, например, такую как IP адрес посетителя или дату отправки формы. Вы можете распечатать эту информацию как скрытые поля в вашей форме, но в этом примере мы покажем вам, как добавить эти значения с помощью настраиваемого хука.
 
-Мы будем основывать это на общей контактной форме, как указано в [Примере простой формы] (extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page). 
+Мы будем основывать это на общей контактной форме, как указано в [Примере простой формы](extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page). 
 
 ## Тег сниппета
 
@@ -93,4 +93,3 @@ $email = $formFields['email'];
 2. [Пример простой формы](extras/formit/formit.tutorials-and-examples/examples.simple-contact-page)
 3. [Использование пустого поля для защиты от спама](extras/formit/formit.tutorials-and-examples/using-a-blank-nospam-field)
 4. [Валидаторы](extras/formit/formit.validators "Валидаторы")
-
