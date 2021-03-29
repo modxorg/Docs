@@ -8,7 +8,9 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getobject"
 
 Retrieves a single object instance by the specified criteria.
 
-The criteria can be a primary key value, an array of primary key values (for multiple primary key objects) or an xPDOCriteria object. If no $criteria parameter is specified, no class is found, or an object cannot be located by the supplied criteria, null is returned.
+The criteria can be a primary key value, an array of primary key values (for multiple primary key objects), an xPDOCriteria object or **raw SQL**. If no $criteria parameter is specified, no class is found, or an object cannot be located by the supplied criteria, null is returned.
+
+> **Important:** do not pass untrusted input into the criteria parameter. **Always sanitize the value, cast the value to integer for a primary key, or provide it in array form** if it comes from any sort of user input to prevent potential SQL injections or returning data not supposed to be accessible. xPDO attempts to identify and prevent SQL injections, however as it also supports providing raw SQL criteria, not sanitizing the criteria may make your code vulnerable. 
 
 ## Syntax
 
@@ -25,7 +27,7 @@ xPDOObject|null getObject (string $className, [xPDOCriteria|array|str|int $crite
 You can use **getObject** to retrieve MODX resources (e.g. a page) by its page ID:
 
 ``` php
-$page = $modx->getObject('modResource', 555);
+$page = $modx->getObject('modResource', ['id' => 555]);
 $output = $page->get('pagetitle');
 ```
 
@@ -50,11 +52,14 @@ If you need to retrieve other attributes for these objects (e.g. TVs for a page)
 
 The simplest example is when you retrieve an object by its primary key.
 
-E.g. get a Box object with ID 134.
+E.g. get a Box object with ID 134, either by using array syntax or only the ID. 
 
 ``` php
-$box = $xpdo->getObject('Box', 134);
+$box = $xpdo->getObject('Box', ['id' => 134]);
+$box = $xpdo->getObject('Box', 134); //
 ```
+
+When using the syntax where you provide the primary key (id) directly, **always cast user input to an integer**, e.g. `(int)$property` to avoid user-provided SQL from being used in the query.
 
 Back in your XML schema, if your object extends _xPDOSimpleObject_, the primary key column is assumed to be named "id".
 
@@ -74,14 +79,6 @@ Otherwise, your XML schema will tell you which column is the primary key via the
  </object>
 ```
 
-### More Verbose Simple Example
-
-You can also provide more verbose criteria to the 2nd parameter, e.g.
-
-``` php
-$box = $xpdo->getObject('Box', array('id'=>134));
-```
-
 ### Other Columns
 
 You don't have to retrieve based on just the primary key, you can also search on other columns:
@@ -90,13 +87,17 @@ You don't have to retrieve based on just the primary key, you can also search on
 $box = $xpdo->getObject('Box', array('color'=>'blue'));
 ```
 
+When querying based on other fields, make sure to add the appropriate index for performance. 
+
 ### Complex Criteria
 
 You can specify more complex selection criteria using an [xPDO query](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery"):
 
 ``` php
 $query = $modx->newQuery('MyObject');
-$query->where( array('wheels:>=' => 3) );
+$query->where([
+    'wheels:>=' => 3
+]);
 $myobj = $xpdo->getObject('MyObject', $query);
 ```
 
