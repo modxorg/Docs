@@ -4,7 +4,7 @@ _old_id: "166"
 _old_uri: "2.x/getting-started/installation/basic-installation/installation-on-a-server-running-modsecurity"
 ---
 
-This document covers a fairly technical topic and it's not recommended that amateurs attempt this. Command-line noobs best leave this to a professional system admin or to their hosting company. Editing configuration files via the command line can be dangerous and you can destroy your server!
+This document covers a fairly technical topic. If you're not comfortable working on the command line, it's best to leave this to a system admin or the hosting company. Editing configuration files via the command line can be dangerous and bring down a server.
 
 ## ModSecurity (aka mod\_security or mod\_sec)
 
