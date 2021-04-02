@@ -35,3 +35,9 @@ And now you should be done.
 ## Troubleshooting
 
 You will need to clear the browser cache in Internet Explorer to see the result. You will probably need a force refresh for other browsers, too.
+
+## See also
+
+1. [Template](extras/tinymce/tinymce.template)
+2. [Table controls](extras/tinymce/tinymce.table-controls)
+3. [TinyMCE](extras/tinymce)
