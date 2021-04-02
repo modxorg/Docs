@@ -1,5 +1,6 @@
 ---
 title: "MODX дополнения"
+description: "Все о MODX дополнениях - репозитории, функционал, разработка собственных"
 translation: "extras"
 sortorder: 5
 ---
@@ -14,8 +15,8 @@ sortorder: 5
 
 | Имя                                                                         | Количество дополнений    | Поддержка                                                                                               |
 | --------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------- |
-| [modx.com/extras/](https://modx.com/extras/)                                | Болле **800** дополнений | [Форум сообщества](https://community.modx.com/)                                                         |
-| [modstore.pro](https://en.modstore.pro/) ([Russian](https://modstore.pro/)) | 100+ (EN), 300+ (RU)     | [Форум сообщества](https://modx.pro), и создание запросов на дополнительные услуги                      |
+| [modx.com/extras/](https://modx.com/extras/)                                | Более **800** дополнений | [Форум сообщества](https://community.modx.com/)                                                         |
+| [modstore.pro](https://en.modstore.pro/) ([Russian](https://modstore.pro/)) | 100+ (EN), 400+ (RU)     | [Форум сообщества](https://modx.pro), и создание запросов на дополнительные услуги                      |
 | [modmore.com](https://www.modmore.com/extras/)                              | 20+                      | [Форум сообщества](https://forum.modmore.com) и поддержка по электронной почте для дополнительных услуг |
 | [extras.io](https://extras.io/extras/)                                      | 5                        | [Email поддержка](https://extras.io/support/) для премиальных дополнений                                |
 | [bobsguides.com](https://bobsguides.com/guide-to-packages.html)             | 47                       | [Email поддержка для Bob Ray's дополнений](https://bobsguides.com/contact-form.html)                    |
@@ -36,7 +37,7 @@ sortorder: 5
     - [pdoPage](https://docs.modx.pro/components/pdotools/snippets/pdopage) является эквивалентом [getPage](extras/getpage), который обертывает сниппеты, такие как getResources / pdoResources с возможностями разбиения на страницы
     - [pdoCrumbs](https://docs.modx.pro/components/pdotools/snippets/pdocrumbs) может быть использован аналогично [Breadcrumbs](extras/breadcrumbs) создать хлебные крошки текущего ресурса.
 - [getResourceField](extras/getresourcefield), [pdoField](https://docs.modx.pro/components/pdotools/snippets/pdofield) или [fastField](extras/fastfield) для получения одного поля ресурса.
-- [AdvSearch](extras/advsearch) или [mSearch2](https://en.modstore.pro/packages/ecommerce/msearch2) (премиум дополнение от modstore) добавляет функцию поиска на ваш сайт
+- [AdvSearch](extras/advsearch), [SimpleSearch](extras/simplesearch) или [mSearch2](https://en.modstore.pro/packages/ecommerce/msearch2) (премиум дополнение от modstore) добавляют функцию поиска на ваш сайт
 - [Collections](extras/collections) используется для большого количества ресурсов, таких как блоги или списки продуктов, и будет перечислять дочерние ресурсы в сетке вместо дерева
 - [NewsPublisher](https://bobsguides.com/newspublisher-tutorial.html) позволяет пользователям создавать ресурсы в front-end без необходимости доступа к MODX Manager (включая редактирование текста и браузер файлов/изображений).
 
@@ -61,8 +62,8 @@ sortorder: 5
 
 ### Мультисайтовый, многоязычный, мультидоменный, контексты
 
-- [xRouting](extras/xrouting) это гибкий контекстный маршрутизатор, который поддерживает (суб) домены и каталоги с минимальной конфигурацией
-- [LangRouter](extras/langrouter) это контекстный маршрутизатор, который выбирает контекст на основе языка посетителей
+- [xRouting](https://modx.com/extras/package/xrouting) это гибкий контекстный маршрутизатор, который поддерживает (суб) домены и каталоги с минимальной конфигурацией
+- [LangRouter](https://modx.com/extras/package/LangRouter) это контекстный маршрутизатор, который выбирает контекст на основе языка посетителей
 - [Babel](extras/babel) используется для соединения переводов в разных контекстах
 
 ### Электронная коммерция
@@ -110,4 +111,4 @@ sortorder: 5
 
 Там вы можете загрузить MODX [транспортный пакет](extending-modx/transport-packages "Транспортный пакет"). Это специальный вид zip-файла, который гарантирует, что ваше дополнение и все его компоненты правильно установлены в целевой системе. Чтобы создать его, вам нужно создать [скрипт сборки](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script")
 
-Все дополнения, размещенные на MODX.com, проходят базовый обзор; обработка вашего заявления может занять несколько дней.
+Все дополнения, размещенные на MODX.com, проходят базовую проверку: обработка вашего заявления может занять несколько дней.

@@ -1,7 +1,6 @@
 ---
 title: "AjaxUpload"
-_old_id: "1664"
-_old_uri: "revo/ajaxupload"
+description: "Dynamic files form upload via Ajax"
 ---
 
 ## What is AjaxUpload?
