@@ -2299,5 +2299,18 @@
     "/display/ADDON/EvoForcedPasswdChangeGallery": "en/extras/forcedpasswdchange",
     "/display/ADDON/FormIt.FormItRetriever": "en/extras/formit/formit.formitretriever",
     "/display/revolution20/display/revolution20/Setting+up+a+Development+Environment": "en/extending-modx/development-environment",
-	"/display/ADDON/Archivist": "current/en/extras/archivist/archivist"
+    "/display/ADDON/Archivist": "current/en/extras/archivist/archivist"
+    "/display/revolution20/manager_favicon_url": "en/building-sites/settings/manager_favicon_url",
+    "/display/ADDON/advSearch": "en/extras/advsearch/advsearch",
+    "/display/ADDON/importx": "en/extras/importx",
+    "/display/ADDON/Quip.QuipCount": "en/extras/quip/quip.quipcount",
+    "/display/ADDON/Quip.Roadmap": "en/extras/quip",
+    "/display/ADDON/Rowboat.Rowboat": "en/extras/rowboat/rowboat",
+    "/display/ADDON/SimpleSearch": "en/extras/simplesearch",
+    "/display/ADDON/SimpleSearch.Faceted+Search+Through+PostHooks": "en/extras/simplesearch/simplesearch/faceted-search-through-posthooks",
+    "/display/revolution20/Command+Line+Installation": "en/getting-started/installation/cli",
+    "/display/ADDON/MIGX.Tutorials": "en/extras/migx/migx.tutorials",
+    "/display/ADDON/ClientConfig": "en/extras/clientconfig",
+    "/revolution/2.x/revolution/2.x/developing-in-modx/advanced-development/internationalization": "en/extending-modx/internationalization",
+    "/display/revolution20/modX.getRegisteredClientScripts": "en/extending-modx/modx-class/reference/modx.getregisteredclientscripts"
 }
