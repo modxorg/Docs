@@ -10,7 +10,7 @@ getResourceField - это простой Сниппет, который можн
 
 ## История
 
-getResourceField был впервые выпущен 16 сентября 2010 года автором [paulmerchant] (https://modx.com/extras/package/getresourcefield), соавтором которого является Shaun McCormick.
+getResourceField был впервые выпущен 16 сентября 2010 года автором [paulmerchant](https://modx.com/extras/package/getresourcefield), соавтором которого является Shaun McCormick.
 
 ### Скачать
 
