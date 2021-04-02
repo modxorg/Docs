@@ -16,7 +16,7 @@ sortorder: 5
 | Имя                                                                         | Количество дополнений    | Поддержка                                                                                               |
 | --------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------- |
 | [modx.com/extras/](https://modx.com/extras/)                                | Более **800** дополнений | [Форум сообщества](https://community.modx.com/)                                                         |
-| [modstore.pro](https://en.modstore.pro/) ([Russian](https://modstore.pro/)) | 100+ (EN), 300+ (RU)     | [Форум сообщества](https://modx.pro), и создание запросов на дополнительные услуги                      |
+| [modstore.pro](https://en.modstore.pro/) ([Russian](https://modstore.pro/)) | 100+ (EN), 400+ (RU)     | [Форум сообщества](https://modx.pro), и создание запросов на дополнительные услуги                      |
 | [modmore.com](https://www.modmore.com/extras/)                              | 20+                      | [Форум сообщества](https://forum.modmore.com) и поддержка по электронной почте для дополнительных услуг |
 | [extras.io](https://extras.io/extras/)                                      | 5                        | [Email поддержка](https://extras.io/support/) для премиальных дополнений                                |
 | [bobsguides.com](https://bobsguides.com/guide-to-packages.html)             | 47                       | [Email поддержка для Bob Ray's дополнений](https://bobsguides.com/contact-form.html)                    |
