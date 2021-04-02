@@ -30,3 +30,14 @@ Apparently you can use a snippet that contains the list, but I couldn't get it t
 \- Add the value '**template**' to one of the button lists (select '**Custom buttons**' in the 'Filter-by-area' selection box).
 
 Don't forget to upload the template-code in the path you just entered.
+
+---
+title: "TinyMCE"
+description: "Maybe the most popular WYSIWYG editor for MODX backend"
+---
+
+## See also
+
+1. [Spellchecker](extras/tinymce/tinymce.spellchecker)
+2. [Table controls](extras/tinymce/tinymce.table-controls)
+3. [TinyMCE](extras/tinymce)

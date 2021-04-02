@@ -1,7 +1,6 @@
 ---
 title: "Glossary of Revolution Terms"
-_old_id: "157"
-_old_uri: "2.x/getting-started/an-overview-of-MODX/glossary-of-revolution-terms"
+description: "Full list of MODX terms can be found here"
 ---
 
 ## Add-on
@@ -88,6 +87,10 @@ The back-end of the MODX interface.
 
 An organizational tag for Components to use to identify Lexicon Entries, Settings, and other objects related to the Component in a Revolution site. Also specifies an absolute path in which the Component may be found.
 
+## Package Management
+
+A web service that enables remote [installation](building-sites/extras) of Transport Packages directly from the Manager.
+
 ## Placeholder Tags
 
 Tags in the form `[[+PlaceholderName]]` that reference MODX Placeholders, usually set with `$MODX->setPlaceholder('placeholderName','value')` in a Snippet or Plugin.
@@ -152,10 +155,6 @@ Custom Resource Fields created by the user on the Document Create/Edit Screen an
 
 A packaged and zipped collection of Transport Vehicles, that can be easily distributed ("transported") from one Core Workspace to another.
 
-## Package Management
-
-A web service that enables remote [installation](building-sites/extras) of Transport Packages directly from the Manager.
-
 ## Transport Vehicles
 
 An intelligent container that encapsulates any artifact that can be distributed in a Transport Package. Transport Vehicles store their payloads in a portable format.
@@ -164,15 +163,15 @@ An intelligent container that encapsulates any artifact that can be distributed 
 
 A user-specific setting that either creates a new setting or overrides the similar Context Setting and System Setting. Used to provide unique settings to that user.
 
-## Weblink
-
-A type of Resource that references a specific URL or MODX Resource, redirecting the visitor to that URL or Resource.
-
 ## Validator (for xPDOVehicles)
 
 Pre-processor: a script or predefined action that executes prior to the vehicle being installed or uninstalled. If the validator returns true, the install/uninstall action will proceed as normal. If the validator returns false, MODX will not uninstall or install the package.
 
 A Validator could be used to determine if a directory exists and is writable, to see if other MODX elements are already installed, or to determine if a certain version of MySQL and PHP are used on a server.
+
+## Weblink
+
+A type of Resource that references a specific URL or MODX Resource, redirecting the visitor to that URL or Resource.
 
 ## xPDOVehicle
 
