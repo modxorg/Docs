@@ -36,7 +36,7 @@ This does not mean however that these are your only options. Browse the reposito
     - [pdoPage](https://docs.modx.pro/en/components/pdotools/snippets/pdopage) is the equivalent of [getPage](extras/getpage), which wraps snippets like getResources/pdoResources with pagination capabilities
     - [pdoCrumbs](https://docs.modx.pro/en/components/pdotools/snippets/pdocrumbs) can be used in a similar way to [Breadcrumbs](extras/breadcrumbs) to create a breadcrumbs trail of the current resource.
 - [getResourceField](extras/getresourcefield), [pdoField](https://docs.modx.pro/en/components/pdotools/snippets/pdofield) or [fastField](extras/fastfield) retrieve a single resource field.
-- [AdvSearch](extras/advsearch) or [mSearch2](https://en.modstore.pro/packages/ecommerce/msearch2) (premium extra from modstore) adds a search function to your site
+- [AdvSearch](extras/advsearch), [SimpleSearch](extras/simplesearch) or [mSearch2](https://en.modstore.pro/packages/ecommerce/msearch2) (premium extra from modstore) add a search function to your site
 - [Collections](extras/collections) is used for large quantities of resources, such as blogs or product listings, and will list child resources in a grid instead of the tree
 - [NewsPublisher](https://bobsguides.com/newspublisher-tutorial.html) allows users to create resources in the front-end without needing access to the MODX Manager (includes rich text editing and file/image browser).
 
