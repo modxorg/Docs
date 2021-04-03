@@ -15,7 +15,7 @@ There are also third-party sources and marketplaces available, which typically o
 | Name                                                                        | # of extras          | Support                                                                           |
 | --------------------------------------------------------------------------- | -------------------- | --------------------------------------------------------------------------------- |
 | [modx.com/extras/](https://modx.com/extras/)                                | Over **800** add-ons | [Community forum](https://community.modx.com/)                                    |
-| [modstore.pro](https://en.modstore.pro/) ([Russian](https://modstore.pro/)) | 100+ (EN), 300+ (RU) | [Community forum](https://modx.pro), and private ticketing for premium extras     |
+| [modstore.pro](https://en.modstore.pro/) ([Russian](https://modstore.pro/)) | 100+ (EN), 400+ (RU) | [Community forum](https://modx.pro), and private ticketing for premium extras     |
 | [modmore.com](https://www.modmore.com/extras/)                              | 20+                  | [Community forum](https://forum.modmore.com) and email support for premium extras |
 | [extras.io](https://extras.io/extras/)                                      | 5                    | [Email support](https://extras.io/support/) for premium extras                    |
 | [bobsguides.com](https://bobsguides.com/guide-to-packages.html)             | 47                   | [Email support for Bob Ray's extras](https://bobsguides.com/contact-form.html)    |
