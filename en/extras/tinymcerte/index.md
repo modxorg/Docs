@@ -5,7 +5,7 @@ description: "TinyMCE is a platform independent web based Javascript HTML WYSIWY
 
 ## What is TinyMCE Rich Text Editor?
 
-TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor. It allows non-technical users to format content without knowing how to code. This release was done as a companion project for the [a11y.modx.com] (https://a11y.modx.com) to provide an accessible RTE. It is based on the TinyMCE 5 code base. 
+TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor. It allows non-technical users to format content without knowing how to code. This release was done as a companion project for the [a11y.modx.com](https://a11y.modx.com) to provide an accessible RTE. It is based on the TinyMCE 5 code base. 
 
 ## New in TinyMCE Rich Text Editor 2.0.0
 
