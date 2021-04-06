@@ -12,3 +12,4 @@ This is the documentation home for the TinyMCE Add-On.
 1. [Spellchecker](extras/tinymce/tinymce.spellchecker)
 2. [Table controls](extras/tinymce/tinymce.table-controls)
 3. [Template](extras/tinymce/tinymce.template)
+4. [TinyMCE Rich Text Editor](extras/tinymcerte)
