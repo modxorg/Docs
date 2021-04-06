@@ -18,7 +18,7 @@ TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor. It a
 - Remove the deprecated `file_browser_callback` and use the `file_picker_callback`
 - Add `link_list_enable` system setting
 - Allow direct JSON based `style_formats` items
-- MODX `skintool.json` for (TinyMCE 5 Skin Tool)[http://skin.tiny.cloud/t5/]
+- MODX `skintool.json` for [TinyMCE 5 Skin Tool](http://skin.tiny.cloud/t5/)
 
 
 ## History

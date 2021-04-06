@@ -6,7 +6,7 @@ translation: "extras/tinymcerte"
 
 ## Что такое редактор TinyMCE RTE?
 
-TinyMCE это платформенно-независимый Javascript HTML WYSIWYG веб-редактор. Он позволяет простым пользователям форматировать контент, не зная, как кодировать. Этот выпуск был разработан в качестве сопутствующего проекта для [a11y.modx.com](https://a11y.modx.com), чтобы обеспечить доступный RTE. Он основан на кодовой базе TinyMCE 5. 
+TinyMCE это платформенно-независимый Javascript HTML WYSIWYG веб-редактор. Он позволяет простым пользователям форматировать контент, не зная, как кодировать. Этот выпуск был разработан в качестве сопутствующего проекта для [<a11y.modx.com>](https://a11y.modx.com), чтобы обеспечить доступный RTE. Он основан на кодовой базе TinyMCE 5. 
 
 ## Новое в версии TinyMCE Rich Text Editor 2.0.0
 
@@ -18,7 +18,7 @@ TinyMCE это платформенно-независимый Javascript HTML W
 - Удален устаревший `file_browser_callback`, вместо него будет использован `file_picker_callback`
 - Добавлена системная настройка `link_list_enable`
 - Разрешены прямые элементы `style_formats` на основе JSON
-- Добавлен MODX `skintool.json` для (TinyMCE 5 Skin Tool) [http://skin.tiny.cloud/t5/] 
+- Добавлен MODX `skintool.json` для [TinyMCE 5 Skin Tool](http://skin.tiny.cloud/t5/) 
 
 
 ## История
