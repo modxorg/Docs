@@ -81,3 +81,7 @@ To test if a translation is properly connected, you'll need to run the applicati
 If you're new to git or GitHub, or more of a visual learner, the following screencast (from 2019) will show you how you can edit the documentation with just the browser.
 
 <iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/330122657?byline=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+## See also
+
+1. [Markdown rules document](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)

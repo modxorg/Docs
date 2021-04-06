@@ -56,7 +56,7 @@ Check out the [Tag Syntax](building-sites/tag-syntax "Tag Syntax") documentation
 
 ### 2.1. Help! Where did the sidebar go?
 
-You probably hid it at some point. There's a subtle arrow on the left side of the screen ([see this image](/download/attachments/36634926/subtlearrow.PNG)) that you can click to bring it back. In some cases you will need to refresh the page for the contents of the sidebar to load properly.
+You probably hid it at some point. There's a subtle arrow on the left side of the screen ([see this image](subtlearrow.PNG)) that you can click to bring it back. In some cases you will need to refresh the page for the contents of the sidebar to load properly.
 
 ### 2.2 How can I modify what resource fields are visible when creating or editing a [Resource](building-sites/resources "Resource")? Is there something like [ManagerManager](https://modx.com/extras/package/managermanager) for Revolution?
 

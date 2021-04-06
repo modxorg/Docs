@@ -1,7 +1,6 @@
 ---
 title: "Login.Request Membership"
-_old_id: "910"
-_old_uri: "revo/login/login.tutorials/login.request-membership"
+description: "Login Request Membership"
 ---
 
 ## Outline
@@ -18,19 +17,19 @@ The steps go something like this:
 
 1\. **Visit the homepage as a guest:** the header displays a link to the login page.
 
-![](foxy+cart+header.jpg)
+![](foxy_cart_header.jpg)
 
 2\. **Login:** The Login page contains links to the "Forgot Password" and to a "Apply for Membership" page.
 
-![](the+foxycart+forum+-+sign+in.jpg)
+![](the_foxycart_forum_sign_in.jpg)
 
 3\. **Redirect to the Homepage:** after a successful login, you are returned to the homepage, but this time, additional functionality is unlocked.
 
-![](the+foxycart+forum+-+logged+in.jpg)
+![](the_foxycart_forum_logged_in.jpg)
 
 4\. **Logout:** When you're done visiting the site, you can click the "Logout" link and land on the "Come Again" page.
 
-![](the+foxycart+forum+-+sign+out.jpg)
+![](the_foxycart_forum_sign_out.jpg)
 
 Make sense? It's pretty similar to what we did before in the [Basic Setup](extras/login/login.tutorials/basic-setup "Login.Basic Setup"), but there are a few extra things going on, so we need a few extra pages. Most importantly, we'll need to integrate both the [Register](extras/login/login.register "Login.Register") and the [Personalize](https://modx.com/extras/package/personalize) Snippets, and we'll need to shuffle around a couple other components from the [Basic Setup](extras/login/login.tutorials/basic-setup "Login.Basic Setup") tutorial.
 
@@ -42,7 +41,7 @@ Let's get started!
 
 We're augmenting the functionality offered by the default Login snippet, so make sure that you also download the [Personalize](https://modx.com/extras/package/personalize) Snippet. It is available via package management.
 
-![](personalize+snippet.jpg)
+![](personalize_snippet.jpg)
 
 Be sure to download the latest version (the one by BobRay). Bob says he may have goofed when submitting his upgrade, so it shows up as a separate package.
 

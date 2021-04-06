@@ -23,7 +23,7 @@ translation: "building-sites/elements/template-variables/step-by-step"
 
 В левой панели дерева ресурсов перейдите на вкладку **Элементы**
 
-![](modx+create+tv.png)
+![](modx_create_tv.png)
 
 ### 3. Заполните общую информацию
 
@@ -37,7 +37,7 @@ translation: "building-sites/elements/template-variables/step-by-step"
 -   **Категория**: Это влияет на то, на какой вкладке отображается переменная
 -   **Порядок сортировки**: Если вы используете более одного TV, это определит, какие из них появятся сверху (1 = верх, большие цифры опускаются TV вниз)
 
-![](modx+__+template+variable_+bio-1.png)
+![](modx_template_variable_bio_1.png)
 
 На картинке вы можете видеть, как настройки будут соответствовать полям редактора ваших страниц.
 

@@ -314,7 +314,7 @@ Option 1==value1||Option 2==value2
 
 Этот тип ввода также принимает условия WHERE для фильтрации по:
 
-![](screen+shot+2012-05-18+at+9.04.54+pm.png)
+![](screen-shot.png)
 
 ### Другой пример
 
