@@ -23,7 +23,7 @@ Install via Package Management, or download the package from the [MODX Extras re
 
 **Tagger FURLs are currently not working when using any resource extensions (.html,...) except /.** Please change your extension to **/** at least on the resource where the TaggerGetResourcesWhere snippet is called.
 
-- Content -> Content Types -> HTML (.html) -> /
+-   Content -> Content Types -> HTML (.html) -> /
 
 ## Groups
 
@@ -52,7 +52,7 @@ After installation you will need to set up some groups. Groups are representing 
 
 ### Changing labels of Tagger places
 
-System Settings under Tagger namespace are available for these settings: tagger.place\_in\_tab\_label, tagger.place\_tvs\_tab\_label, tagger.place\_above\_content\_label, tagger.place\_below\_content\_label, tagger.place\_bottom\_page\_label
+System Settings under Tagger namespace are available for these settings: tagger.place_in_tab_label, tagger.place_tvs_tab_label, tagger.place_above_content_label, tagger.place_below_content_label, tagger.place_bottom_page_label
 
 You can change their value to text or a lexicon key. If you want to have different name based on Resource Template, you can use following notation:
 
@@ -74,12 +74,12 @@ This Snippet allows you to list tags for resource(s), group(s) and all tags
 | &groups          | string   | optional      | Comma separated list of Tagger Groups for which Tags will be listed                                                                              |                  |
 | &parents         | int      | optional      | Comma separated list of resource IDs whose children should be scanned to build the list of tags                                                  |                  |
 | &rowTpl          | string   | optional      | Name of a chunk that will be used for each Tag. If no chunk is given, array with available placeholders will be rendered                         |                  |
-| &tpl\_N          | string   | optional      | Name of chunk that will be used for every Nth tag                                                                                                |                  |
+| &tpl_N           | string   | optional      | Name of chunk that will be used for every Nth tag                                                                                                |                  |
 | &outTpl          | string   | optional      | Name of a chunk that will be used for wrapping all tags. If no chunk is given, tags will be rendered without a wrapper. Placeholder: `[[+tags]]` |                  |
 | &separator       | string   | optional      | String separator, that will be used for separating Tags                                                                                          |                  |
 | &limit           | int      | optional      | Limit number of returned Tags                                                                                                                    | 0                |
 | &offset          | int      | optional      | Offset the output by this number of Tags                                                                                                         | 0                |
-| &totalPh         | string   | optional      | Placeholder to output the total number of Tags regardless of &limit and &offset                                                                  | tags\_total      |
+| &totalPh         | string   | optional      | Placeholder to output the total number of Tags regardless of &limit and &offset                                                                  | tags_total       |
 | &target          | int      | optional      | An ID of a resource that will be used for generating URI for a Tag. If no ID is given, current Resource ID will be used                          | current resource |
 | &showUnused      | int      | optional      | If set to 1, Tags that are not assigned to any Resource will be included to the output as well                                                   | 0                |
 | &toPlaceholder   | string   | optional      | If set, output will return in a placeholder with given name                                                                                      |                  |
@@ -87,12 +87,12 @@ This Snippet allows you to list tags for resource(s), group(s) and all tags
 | &showUnpublished | int      | optional      | If set to 1, Tags that are assigned only to unpublished Resources will be included in the output as well                                         | 0                |
 | &contexts        | string   | optional      | If set, will display only tags for resources in given contexts. Contexts can be separated by a comma                                             |                  |
 | &wrapIfEmpty     | int      | optional      | If set to 1, outTpl will be used even if there will be no tags to display.                                                                       | 1                |
-| &translate       | int      | optional      | If set, group\_name\_translated and group\_description\_translated will be added as a placeholders to rowChunk                                   | 0                |
-| &sort            | string   | optional      | Sort options in JSON. Example {"tag": "ASC"} or multiple sort options {"group\_id": "ASC", "tag": "ASC"}                                         |                  |
+| &translate       | int      | optional      | If set, group_name_translated and group_description_translated will be added as a placeholders to rowChunk                                       | 0                |
+| &sort            | string   | optional      | Sort options in JSON. Example {"tag": "ASC"} or multiple sort options {"group_id": "ASC", "tag": "ASC"}                                          |                  |
 
 **OUTPUT PLACEHOLDERS AND EXAMPLE VALUES:**
 
-``` php
+```php
 [[+id]] => 1
 [[+tag]] => News
 [[+alias]] => news
@@ -114,7 +114,7 @@ This Snippet allows you to list tags for resource(s), group(s) and all tags
 
 **EXAMPLE USAGE:**
 
-``` php
+```php
 // Get tags for all resources, including unused tags
 [[TaggerGetTags? &showUnused=`1`]]
 // Get tags from groups 1 and 3 for all resources
@@ -129,11 +129,11 @@ This Snippet allows you to list tags for resource(s), group(s) and all tags
 
 Let's say we have a group with name **Tags** and alias **tags**. To translate name and/or description of this group, we will have to create new lexicons entries in a specific format.
 
-- Open lexicon management
-- Select **Tagger** namespace and **custom** topic
-- Add new lexicon entry to this namespace and topic with a key: **tagger.custom."group\_alias"** (in this example it will be tagger.custom.tags)
-- If you want to translate description add one more lexicon entry with key: **tagger.custom."group\_alias"\_desc** (in this example it will be tagger.custom.tags\_desc)
-- If you want to use those translations also on the frontend, call TaggerGetTags with option **&translate=`1`** (`[[TaggetGetTags? &translate=`1`]]`), new placeholders (group\_name\_translated, group\_description\_translated) will be available
+-   Open lexicon management
+-   Select **Tagger** namespace and **custom** topic
+-   Add new lexicon entry to this namespace and topic with a key: **tagger.custom."group_alias"** (in this example it will be tagger.custom.tags)
+-   If you want to translate description add one more lexicon entry with key: **tagger.custom."group_alias"\_desc** (in this example it will be tagger.custom.tags_desc)
+-   If you want to use those translations also on the frontend, call TaggerGetTags with option **&translate=`1`** (`[[TaggetGetTags? &translate=`1`]]`), new placeholders (group_name_translated, group_description_translated) will be available
 
 ### TaggerGetResourcesWhere
 
@@ -141,19 +141,19 @@ This snippet generate a SQL Query that can be used in a WHERE condition in the g
 
 **PROPERTIES:**
 
-| **Property**                                                                                                    | **Type** | **Required?** | **Description**                                                                                                                                    | **Default** |
-| --------------------------------------------------------------------------------------------------------------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| &tags                                                                                                           | string   | optional      | Comma separated list of Tag aliases (NOT names or IDs) for which a Resource query will be generated. By default Tags from GET param will be loaded |             |
-| &groups                                                                                                         | string   | optional      | Comma separated list of Tagger Groups. Only from those groups will Tags be allowed                                                                 |             |
-| &where                                                                                                          | string   | optional      | Original getResources WHERE property. If you used WHERE property in your current getResources call, move it here.                                  |             |
-| &likeComparison                                                                                                 | int      | optional      | If set to 1, tags will compare using LIKE which will match partial strings instead of only exact matches.                                          | 0           |
-| &tagField                                                                                                       | string   | optional      | Field that will be used to compare with given tags. If you want to match against the 'full text' of the tag name you've entered, this will need to be set to 'tag'. | alias    |
-| &matchAll                                                                                                       | int      | optional      | If set to 1, resource must have all specified tags (an 'AND' match). If set to 0 or left out, it can match any one of the tags (an 'OR' match).                                      | 0        |
-| &field                                                                                                          | string   | optional      | modResource field that will be used to compare with assigned resource ID                                                                           | id          |
+| **Property**    | **Type** | **Required?** | **Description**                                                                                                                                                     | **Default** |
+| --------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| &tags           | string   | optional      | Comma separated list of Tag aliases (NOT names or IDs) for which a Resource query will be generated. By default Tags from GET param will be loaded                  |             |
+| &groups         | string   | optional      | Comma separated list of Tagger Groups. Only from those groups will Tags be allowed                                                                                  |             |
+| &where          | string   | optional      | Original getResources WHERE property. If you used WHERE property in your current getResources call, move it here.                                                   |             |
+| &likeComparison | int      | optional      | If set to 1, tags will compare using LIKE which will match partial strings instead of only exact matches.                                                           | 0           |
+| &tagField       | string   | optional      | Field that will be used to compare with given tags. If you want to match against the 'full text' of the tag name you've entered, this will need to be set to 'tag'. | alias       |
+| &matchAll       | int      | optional      | If set to 1, resource must have all specified tags (an 'AND' match). If set to 0 or left out, it can match any one of the tags (an 'OR' match).                     | 0           |
+| &field          | string   | optional      | modResource field that will be used to compare with assigned resource ID                                                                                            | id          |
 
 **EXAMPLE USAGE:**
 
-``` php
+```php
 [[!getResources?
     &where=`[[!TaggerGetResourcesWhere?
     &tags=`Books,Vehicles`

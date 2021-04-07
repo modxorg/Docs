@@ -17,8 +17,8 @@ MIGX stands for **M**ulti**I**tems**G**ridtv for MOD**X**.
 
 ## Requirements
 
-- MODX Revolution 2.1 rc4 or later
-- PHP5 or later  MIGX also works on Revolution 2.0.8 with limited functionality.
+-   MODX Revolution 2.1 rc4 or later
+-   PHP5 or later MIGX also works on Revolution 2.0.8 with limited functionality.
 
 ## Download
 
@@ -36,40 +36,40 @@ Since Version 2.8 this steps (1-19) are not longer needed.
 
 Note: It would be prudent to create a snapshot of your MODX database before setup as this process will change your database structure.
 
-- Open the "System" menu from within the Revolution Manager
-- Click the "Actions" menu item
-- Find the MIGX category from the list of actions on left. Right click on it.
-- Click "Create Action Here"
-- Type "index" for controller
-- Ensure "migx" is selected for the namespace
-- Select "No Action" for the parent controller
-- Click "Save"
-- Refresh the page
-- Find the Components category from the list of top menu items on the right. Right click on it.
-- Click "Place Action Here"
-    - Lexicon Key: migx
-    - Description: Configurator and Package Manager
-    - Action: migx - index (there are multiple pages sorted alphabetically. Make sure you go past all the core actions)
-    - Icon: (leave blank)
-    - Parameters: &configs=packagemanager||migxconfigs||setup
-    - Handler: (leave blank)
-    - Permissions: (leave blank)
-- Click "save"
-- Refresh the page
-- Open the "Components" menu
-- Click the new MIGX Action item you created.
-- Click the Setup / Upgrade tab
-- WARNING: Before this next step, you probably want to ensure that you've created a snapshot of your database.
-- Click the Setup button
-- Done!
+-   Open the "System" menu from within the Revolution Manager
+-   Click the "Actions" menu item
+-   Find the MIGX category from the list of actions on left. Right click on it.
+-   Click "Create Action Here"
+-   Type "index" for controller
+-   Ensure "migx" is selected for the namespace
+-   Select "No Action" for the parent controller
+-   Click "Save"
+-   Refresh the page
+-   Find the Components category from the list of top menu items on the right. Right click on it.
+-   Click "Place Action Here"
+    -   Lexicon Key: migx
+    -   Description: Configurator and Package Manager
+    -   Action: migx - index (there are multiple pages sorted alphabetically. Make sure you go past all the core actions)
+    -   Icon: (leave blank)
+    -   Parameters: &configs=packagemanager||migxconfigs||setup
+    -   Handler: (leave blank)
+    -   Permissions: (leave blank)
+-   Click "save"
+-   Refresh the page
+-   Open the "Components" menu
+-   Click the new MIGX Action item you created.
+-   Click the Setup / Upgrade tab
+-   WARNING: Before this next step, you probably want to ensure that you've created a snapshot of your database.
+-   Click the Setup button
+-   Done!
 
 ## Upgrading to MIGX 2.0
 
-MIGX 2.0 requires a new field in the MIGX table within your database to work properly. This procedure will add a new auto\_increment field, MIGX\_id, that is required for the [getImageList](extras/migx/migx.frontend-usage "MIGX.Frontend-Usage") snippet to work correctly. It is important that you create a snapshot of your database before any database structure changes.
+MIGX 2.0 requires a new field in the MIGX table within your database to work properly. This procedure will add a new auto_increment field, MIGX_id, that is required for the [getImageList](extras/migx/migx.frontend-usage "MIGX.Frontend-Usage") snippet to work correctly. It is important that you create a snapshot of your database before any database structure changes.
 
 ### Step 1: Backup your database
 
-Make a backup of your database tables, specifically the modx\_site\_tmplvar\_contentvalues table.
+Make a backup of your database tables, specifically the modx_site_tmplvar_contentvalues table.
 
 ### Step 2: Component Upgrade
 
