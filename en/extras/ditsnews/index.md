@@ -13,29 +13,29 @@ DitsNews is a component for managing Newsletters with MODX Revolution.
 
 ### Features
 
-- newsletters/groups/subscribers management
-- import/export subscribers (CSV) (in 0.2.1)
-- message queue (50 messages per batch)
-- subscribe through form
-- confirm subscription (link in email message)
-- unsubscribe via link in newsletter
-- public/private groups (you can only subscribe to public groups)
+-   newsletters/groups/subscribers management
+-   import/export subscribers (CSV) (in 0.2.1)
+-   message queue (50 messages per batch)
+-   subscribe through form
+-   confirm subscription (link in email message)
+-   unsubscribe via link in newsletter
+-   public/private groups (you can only subscribe to public groups)
 
 ### History
 
 Being developed since December 2010 by [ditsmedia](https://modx.com/extras/author/ditsmedia).
 
-| Version                                                 | Release date | Contributors | Remarks / highlights |
-| ------------------------------------------------------- | ------------ | ------------ | -------------------- |
+| Version                                                  | Release date | Contributors | Remarks / highlights |
+| -------------------------------------------------------- | ------------ | ------------ | -------------------- |
 | [0.1.0 alpha](https://modx.com/extras/package/ditsnews)  | 24 Dec 2010  | ditsmedia    | Initial release.     |
 | [0.1.0 alpha2](https://modx.com/extras/package/ditsnews) | 11 Jan 2011  | ditsmedia    | several issues fixed |
 | [0.2.0 alpha](https://modx.com/extras/package/ditsnews)  | soon!        | ditsmedia    | New codebase         |
 
 ### Requirements
 
-- MODX Revolution (tested with 2.1.1)
-- [FormIt](extras/formit "FormIt") (for sign-up form)
-- Cronjobs (or some other method to run a script periodically)
+-   MODX Revolution (tested with 2.1.1)
+-   [FormIt](extras/formit "FormIt") (for sign-up form)
+-   Cronjobs (or some other method to run a script periodically)
 
 ### Development & Bug reporting
 
@@ -77,12 +77,12 @@ This section needs an update with correct naming and technical settings
 
 You can go to the settings of DitsNews by drop-down list of the menu button on the right. There are some basic settings available:
 
-- Name (email-from)
-- Email (email-from)
-- Bounce-Email-Adress
-- Confirmation page (ID required)
-- Unsubscribe page (ID required)
-- Template (used for Newsletters)
+-   Name (email-from)
+-   Email (email-from)
+-   Bounce-Email-Adress
+-   Confirmation page (ID required)
+-   Unsubscribe page (ID required)
+-   Template (used for Newsletters)
 
 ### Backend - Groups
 
@@ -92,12 +92,12 @@ You need a group to send a newsletter. So create a basic group with public setti
 
 Here you can add new subscribers manually or do CSV-Imports and CSV-Exports of subscribers. You can add / edit some user data:
 
-- First Name
-- Last Name
-- Company
-- E-mail adress (required)
-- Status (active / inactive)
-- assign to groups
+-   First Name
+-   Last Name
+-   Company
+-   E-mail adress (required)
+-   Status (active / inactive)
+-   assign to groups
 
 ### Backend - Creating a Newsletter
 
@@ -105,7 +105,7 @@ A Newsletter is fully created with MODX native templates and ressources. So firs
 
 ### available placeholders
 
-``` php
+```php
 [[+firstname]]
 [[+lastname]]
 [[+fullname]]
@@ -117,35 +117,27 @@ A Newsletter is fully created with MODX native templates and ressources. So firs
 
 ### Exampleof a Newsletter Template
 
-``` html
-[[!ditsnewsPlaceholders? &firstnameDefault=`Subscriber`]] <!-- Sets firstname field of email newsletter to "Subscriber" when empty -->
+```html
+[[!ditsnewsPlaceholders? &firstnameDefault=`Subscriber`]]
+<!-- Sets firstname field of email newsletter to "Subscriber" when empty -->
 <html>
     <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>My newsletter</title>
-    <base href="[[++site_url]]" /><!-- Important! DitsNews needs this to create correct URLs! -->
-    <style type="text/css">
-        a {
-        font-weight: bold;
-        color: #ff0000
-        }
-    </style>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>My newsletter</title>
+        <base href="[[++site_url]]" />
+        <!-- Important! DitsNews needs this to create correct URLs! -->
+        <style type="text/css">
+            a {
+                font-weight: bold;
+                color: #ff0000;
+            }
+        </style>
     </head>
-<body>
-    <p>Hello [[!+firstname:default=`Subscriber`]],</p>
-    [[*content]]
-    <p><a href="[[~10]]">Unsubscribe</a></p><!-- Link to unsubscribe page: user data will be added while sending -->
-</body>
+    <body>
+        <p>Hello [[!+firstname:default=`Subscriber`]],</p>
+        [[*content]]
+        <p><a href="[[~10]]">Unsubscribe</a></p>
+        <!-- Link to unsubscribe page: user data will be added while sending -->
+    </body>
 </html>
 ```
-
-## Roadmap
-
-All of the following features will come up in later versions:
-
-- move settings to MODX System Settings
-- make message queue batch size editable (fixed at 50 for now)
-- statistics (views, bounces, etc.)
-- handle bounces
-- remove unconfirmed subscriptions
-- more translations (English and Dutch only for now, German available in latest GitHub package)

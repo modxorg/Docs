@@ -10,20 +10,20 @@ ModDef is a component for managing definitions of terms used on your site. These
 
 ## Features
 
-- definitions management
-- use the same definition in multiple languages
+-   definitions management
+-   use the same definition in multiple languages
 
 ## History
 
 Being developed since Mar 02, 2011 by [Jeroen Kenters](https://modx.com/extras/author/jeroenkenters).
 
-| Version                                              | Release date | Contributors   | Remarks / highlights |
-| ---------------------------------------------------- | ------------ | -------------- | -------------------- |
+| Version                                               | Release date | Contributors   | Remarks / highlights |
+| ----------------------------------------------------- | ------------ | -------------- | -------------------- |
 | [0.1.0 alpha](https://modx.com/extras/package/moddef) | Mar 02, 2011 | Jeroen Kenters | Initial release.     |
 
 ### Requirements
 
-- MODX Revolution
+-   MODX Revolution
 
 ### Development & Bug reporting
 
@@ -54,17 +54,9 @@ Let's say you want to explain to your visitors that CMS means Content Management
 2. Choose ModDef from the Components menu
 3. Click on the 'New definition' button
 4. Fill in the fields;
-4.1. Language: en (or whatever language code your site uses)
-4.2. Text: CMS
-4.3. Definition: Content Management System
+   4.1. Language: en (or whatever language code your site uses)
+   4.2. Text: CMS
+   4.3. Definition: Content Management System
 5. Click on save
 
 From now on the word CMS will be a tooltip on all paragraphs on your site, explaining that CMS means Content Management System.
-
-## Roadmap
-
-All of the following features will come up in later versions:
-
-- only replace text once per page
-- snippet to show definition
-- translations

@@ -38,7 +38,7 @@ From there you can add a store by filling in the description, longitude and lati
 
 ## Sorting stores
 
-To sort stores log in to the manager and go to "Components" -> "Store Locator". You will see a grid containing all of your stores, you can just pick up a single row and drop it where you want it to be. 
+To sort stores log in to the manager and go to "Components" -> "Store Locator". You will see a grid containing all of your stores, you can just pick up a single row and drop it where you want it to be.
 
 ![](sort.png)
 
@@ -56,33 +56,33 @@ Place the main `[[[StoreLocator](extras/storelocator "StoreLocator")]]` snippet 
 
 You can configure the snippet "StoreLocator" with the following parameters:
 
-| Parameter          | Description                                                            | Values                                                      | Default Value        | Required  |
-| ------------------ | ---------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------- | --------- |
-| apiKey             | Your Google Maps API key                                               | A Google API key                                            | (empty)              | no        |
-| zoom               | Standard zoom level when the map initializes                           | A number between 1 - 15                                     | 8                    | no        |
-| storeZoom          | Zoom level when a user clicks on a store in the list                   | A number between 1 - 15                                     | 13                   | no        |
-| searchZoom         | Zoom level when user has searched and map is centered on their address | A number between 1 - 15                                     | 13                   | no        |
-| width              | Width of the map                                                       | A value in pixels                                           | 300                  | no        |
-| height             | Height of the map                                                      | A value in pixels                                           | 400                  | no        |
-| mapType            | The type of the Google Map                                             | HYBRID                                                      | ROADMAP              | SATELLITE | TERRAIN | ROADMAP | no |
-| defaultRadius      | The default radius that will be selected in the search form            | 5, 10, 25, 50, 100                                          | 5                    | no        |
-| centerLongitude    | Longitude on which the map will center by default                      | Longitude coordinates                                       | 6.61480              | no        |
-| centerLatitude     | Latitude on which the map will center by default                       | Latitude coordinates                                        | 52.40441             | no        |
-| markerImage        | A URL to an image to be used instead of the default Google Map marker  | A URL                                                       | 0                    | no        |
-| sortDir            | Sort direction of the store list                                       | ASC                                                         | DESC                 | ASC       | no      |
-| limit              | Maximum amount of stores shown by default and in search results        | 0 means all records, any other number limits the resultlist | 0                    | no        |
-| formTpl            | The chunk for the form                                                 | A chunk name                                                | sl.form              | no        |
-| storeRowTpl        | The chunk for a store row as shown in the list and search results      | A chunk name                                                | sl.storerow          | no        |
-| storeInfoWindowTpl | The chunk for the info window popup when clicked on a store marker     | A chunk name                                                | sl.infowindow        | no        |
-| noResultsTpl       | The chunk that shows when no results are found                         | A chunk name                                                | sl.noresultstpl      | no        |
-| scriptWrapperTpl   | The script wrapper (only change when you know what you're doing)       | A chunk name                                                | sl.scriptwrapper     | no        |
-| scriptStoreMarker  | The script store marker (only change when you know what you're doing)  | A chunk name                                                | sl.scriptstoremarker | no        |
+| Parameter          | Description                                                            | Values                                                      | Default Value        | Required |
+| ------------------ | ---------------------------------------------------------------------- | ----------------------------------------------------------- | -------------------- | -------- |
+| apiKey             | Your Google Maps API key                                               | A Google API key                                            | (empty)              | no       |
+| zoom               | Standard zoom level when the map initializes                           | A number between 1 - 15                                     | 8                    | no       |
+| storeZoom          | Zoom level when a user clicks on a store in the list                   | A number between 1 - 15                                     | 13                   | no       |
+| searchZoom         | Zoom level when user has searched and map is centered on their address | A number between 1 - 15                                     | 13                   | no       |
+| width              | Width of the map                                                       | A value in pixels                                           | 300                  | no       |
+| height             | Height of the map                                                      | A value in pixels                                           | 400                  | no       |
+| mapType            | The type of the Google Map                                             | `HYBRID,ROADMAP,SATELLITE,TERRAIN`                          | ROADMAP              | no       |
+| defaultRadius      | The default radius that will be selected in the search form            | 5, 10, 25, 50, 100                                          | 5                    | no       |
+| centerLongitude    | Longitude on which the map will center by default                      | Longitude coordinates                                       | 6.61480              | no       |
+| centerLatitude     | Latitude on which the map will center by default                       | Latitude coordinates                                        | 52.40441             | no       |
+| markerImage        | A URL to an image to be used instead of the default Google Map marker  | A URL                                                       | 0                    | no       |
+| sortDir            | Sort direction of the store list                                       | `ASC,DESC `                                                 | ASC                  | no       |
+| limit              | Maximum amount of stores shown by default and in search results        | 0 means all records, any other number limits the resultlist | 0                    | no       |
+| formTpl            | The chunk for the form                                                 | A chunk name                                                | sl.form              | no       |
+| storeRowTpl        | The chunk for a store row as shown in the list and search results      | A chunk name                                                | sl.storerow          | no       |
+| storeInfoWindowTpl | The chunk for the info window popup when clicked on a store marker     | A chunk name                                                | sl.infowindow        | no       |
+| noResultsTpl       | The chunk that shows when no results are found                         | A chunk name                                                | sl.noresultstpl      | no       |
+| scriptWrapperTpl   | The script wrapper (only change when you know what you're doing)       | A chunk name                                                | sl.scriptwrapper     | no       |
+| scriptStoreMarker  | The script store marker (only change when you know what you're doing)  | A chunk name                                                | sl.scriptstoremarker | no       |
 
 ## Examples
 
 Below you see the main snippet call and the placement of the placeholders. Every parameter is optional, we have just used some possibilities of customization.
 
-``` php
+```php
 [[!StoreLocator?
     &searchZoom=`10`
     &zoom=`7`
@@ -116,10 +116,10 @@ Here's an example of the usage and placement of the snippet call: [http://www.yo
 
 You have the possibility to buy StoreLocator premium through the about screen in the component. This will add the following functionality:
 
-- Custom caching (storelist and search results)
-- Custom marker images for each individual store
-- Possibility to get directions from the entered address to a store from the StoreLocator screen
-- A snippet that can plot directions to a specific store from an entered address.
+-   Custom caching (storelist and search results)
+-   Custom marker images for each individual store
+-   Possibility to get directions from the entered address to a store from the StoreLocator screen
+-   A snippet that can plot directions to a specific store from an entered address.
 
 Check out the video demo:
 Custom marker images: <http://www.youtube.com/watch?v=keUjHDmOJnw>
