@@ -2312,5 +2312,13 @@
     "/display/ADDON/MIGX.Tutorials": "en/extras/migx/migx.tutorials",
     "/display/ADDON/ClientConfig": "en/extras/clientconfig",
     "/revolution/2.x/revolution/2.x/developing-in-modx/advanced-development/internationalization": "en/extending-modx/internationalization",
-    "/display/revolution20/modX.getRegisteredClientScripts": "en/extending-modx/modx-class/reference/modx.getregisteredclientscripts"
+    "/display/revolution20/modX.getRegisteredClientScripts": "en/extending-modx/modx-class/reference/modx.getregisteredclientscripts",
+    "/3.x/en/extras/minishop": "en/extras/minishop2",
+    "/current/en/extras/quip/quip.roadmap": "en/extras/quip",
+    "/display/ADDON/Archivist.Archivist": "en/extras/archivist/archivist",
+    "/current/en/extras/packman/packman.roadmap": "en/extras/packman",
+    "/evolution/1.0": "en/index",
+    "/display/revolution/modX.getRequest": "en/extending-modx/modx-class/reference/modx.getrequest",
+    "/display/revolution20/Named+Anchor": "en/building-sites/integrating-templates/named-anchor",
+    "/display/revolution/Weblink": "en/building-sites/resources/weblink"
 }
