@@ -2322,5 +2322,16 @@
     "/display/revolution20/Named+Anchor": "en/building-sites/integrating-templates/named-anchor",
     "/display/revolution/Weblink": "en/building-sites/resources/weblink",
     "/display/revolution20/Input+and+Output+Filters+(Output+Modifiers)": "en/building-sites/tag-syntax/output-filters",
-    "/revolution/2.x/administering-your-site": "en/building-sites/"
+    "/revolution/2.x/administering-your-site": "en/building-sites/",
+    "/current/en/extras/gallery/gallery.roadmap": "en/extras/gallery",
+    "/current/en/extras/peoples/peoples.roadmap": "en/extras/peoples",
+    "/current/en/extras/login/login.roadmap": "en/extras/login",
+    "/current/en/extras/handyman/handyman.roadmap": "en/extras/handyman",
+    "/current/en/extras/articles/roadmap": "en/extras/articles",
+    "/current/en/extras/simplesearch/simplesearch.roadmap": "en/extras/simplesearch",
+    "/current/en/extras/filelister/filelister.roadmap": "en/extras/filelister",
+    "/current/en/extras/versionx/versionx.roadmap": "en/extras/versionx",
+    "/current/en/extras/discuss/discuss.roadmap": "en/extras/discuss",
+    "/current/en/extras/batcher/roadmap": "en/extras/batcher",
+    "/current/en/extras/googlesitemap/googlesitemap.roadmap": "en/extras/googlesitemap"
 }
