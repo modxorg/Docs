@@ -43,6 +43,7 @@ location ~ ^/(\.(?!well_known)|_build|core|config.core.php) {
 ```
 
 If you have a high-traffic site, you might wish to bypass the PHP processing with MODX, and directly return a 404 from NGINX (or 444, which drops the connection without returning anything):
+
 ```
 location ~ ^/(\.(?!well_known)|_build|core|config.core.php) {
     return 404;    
