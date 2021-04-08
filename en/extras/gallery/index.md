@@ -22,8 +22,6 @@ Another small tutorial about setting up an album with Gallery can be found here:
 
 Gallery was written by Shaun McCormick (splittingred) as a dynamic Gallery component, and first released on February 5th, 2010.
 
-You can view the [roadmap here](extras/gallery/gallery.roadmap "Gallery.Roadmap").
-
 ### Download
 
 It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, available here: <https://modx.com/extras/package/gallery>

@@ -10,8 +10,8 @@ GoogleSiteMap is a snippet that will display a Google-customized SiteMap for you
 
 ## Requirements
 
-- MODX Revolution 2.2.x or later
-- PHP5.4 or later
+-   MODX Revolution 2.2.x or later
+-   PHP5.4 or later
 
 ## Historyand Info
 
@@ -20,8 +20,6 @@ In 2016 GoogleSiteMap was completely re-written by YJ Tso (@sepiariver) based on
 The trade-off was that some of the legacy features could not be supported. An attempt was made to maintain backwards compatibility, by calling the legacy Snippet if a legacy feature is required.
 
 The legacy GoogleSiteMap Snippet was originally written by Shaun McCormick (splittingred) as a Snippet to display a Google SiteMap, and first released on June 23rd, 2009.
-
-You can view the [roadmap here](extras/googlesitemap/googlesitemap.roadmap "GoogleSiteMap.Roadmap").
 
 ### Download
 
@@ -39,20 +37,20 @@ GoogleSiteMap can be called via the Snippet tags.
 
 GoogleSiteMap comes with two snippets:
 
-- [GoogleSiteMap](extras/googlesitemap/googlesitemap "GoogleSiteMap")
-- [GoogleSiteMapVersion1](extras/googlesitemap/googlesitemapversion1)
+-   [GoogleSiteMap](extras/googlesitemap/googlesitemap "GoogleSiteMap")
+-   [GoogleSiteMapVersion1](extras/googlesitemap/googlesitemapversion1)
 
 ## Examples
 
 Display a Google SiteMap for tens of thousands of Resources.
 
-``` php
+```php
 [[!GoogleSiteMap]]
 ```
 
 Display a Google SiteMap for a more modest number of Resources, using a custom item template Chunk.
 
-``` php
+```php
 [[!GoogleSiteMap? &itemTpl=`myCustomTpl`]]
 ```
 

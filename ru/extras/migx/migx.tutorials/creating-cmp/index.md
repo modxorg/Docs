@@ -63,7 +63,7 @@ That's all!
 
 Ну или можно воспользовать **сниппетом**:
 
-``` php
+```php
 [[!migxLoopCollection?
     &packageName=`electrica`
     &classname=`electricaItem`
@@ -73,7 +73,7 @@ That's all!
 
 **Чанк**:
 
-``` php
+```php
 <h1>[[+title]]</h1>
 <p>[[+description]]</p>
 ```

@@ -12,19 +12,19 @@ EventX is a calendar extra for MODX Revolution. EventsX shows upcoming (and prev
 
 ## Features
 
-- events management (create/update/remove/(de)activate)
-- every event has a start and end date (can be the same date for single day events)
-- jQuery calendar included
-- languages:
-    - english
-    - dutch
-    - german (thanks to Anselm Hannemann)
-    - russian
+-   events management (create/update/remove/(de)activate)
+-   every event has a start and end date (can be the same date for single day events)
+-   jQuery calendar included
+-   languages:
+    -   english
+    -   dutch
+    -   german (thanks to Anselm Hannemann)
+    -   russian
 
 ## Requirements
 
-- MODX Revolution (tested with 2.1.3pl)
-- jQuery for the calendar (you can also create your own JSON based calendar)
+-   MODX Revolution (tested with 2.1.3pl)
+-   jQuery for the calendar (you can also create your own JSON based calendar)
 
 ## History
 
@@ -38,12 +38,9 @@ It can be downloaded from within the MODX Revolution manager via [Package Manage
 
 EventX is on GitHub: <https://github.com/jkenters/EventsX>, report any issues or feature-requests here: <https://github.com/jkenters/EventsX/issues>.
 
-## Roadmap
+## Issues and feature-requests
 
-EventX has its issues and feature-requests on GitHub: <https://github.com/jkenters/EventsX/issues>. Nevertheless there's a roadmap:
-
-- event registration
-- bugfixing
+EventX has its issues and feature-requests on GitHub: <https://github.com/jkenters/EventsX/issues>.
 
 ## Install
 
@@ -71,56 +68,74 @@ Go to components -> EventsX and create some events
 
 ### example _events_ calendar template
 
-``` html
+```html
 <html>
-<head>
-<title>[[++site_name]] - [[*pagetitle]]</title>
-<base href="[[++site_url]]" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="assets/components/eventsx/js/web/jquery.calendar-widget.js"></script>
-<script type="text/javascript" src="assets/components/eventsx/js/web/calendar.js"></script>
-<link rel="stylesheet" type="text/css" href="assets/components/eventsx/css/calendar.css" />
-</head>
-<body>
-  <a href="" id="prevMonth">previous month</a> <a href="" id="nextMonth">next month</a>
-  <div id="calendar"></div>
-  [[*content]]
-</body>
+    <head>
+        <title>[[++site_name]] - [[*pagetitle]]</title>
+        <base href="[[++site_url]]" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script
+            type="text/javascript"
+            src="assets/components/eventsx/js/web/jquery.calendar-widget.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="assets/components/eventsx/js/web/calendar.js"
+        ></script>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/components/eventsx/css/calendar.css"
+        />
+    </head>
+    <body>
+        <a href="" id="prevMonth">previous month</a>
+        <a href="" id="nextMonth">next month</a>
+        <div id="calendar"></div>
+        [[*content]]
+    </body>
 </html>
 ```
 
 ### example _upcoming events_ calendar template
 
-``` html
+```html
 <html>
-<head>
-<title>[[++site_name]] - [[*pagetitle]]</title>
-<base href="[[++site_url]]" />
-</head>
-<body>
-    [[!EventsX? &tpl=`evxEventTpl` &limit=`10`]]
-    [[*content]]
-</body>
+    <head>
+        <title>[[++site_name]] - [[*pagetitle]]</title>
+        <base href="[[++site_url]]" />
+    </head>
+    <body>
+        [[!EventsX? &tpl=`evxEventTpl` &limit=`10`]] [[*content]]
+    </body>
 </html>
 ```
 
 ### example _single event_ calendar template
 
-``` html
-[[!evxEvent?]]<html>
-<head>
-<title>[[++site_name]] - [[*pagetitle]]</title>
-<base href="[[++site_url]]" />
-</head>
-<body>
-    <p>Name: [[+event.name]]</p>
-    <p>Start date: [[+event.startdate:strtotime:date=`%d-%m-%Y`]]</p>
-    <p>End date: [[+event.enddate:strtotime:date=`%d-%m-%Y`]]</p>
-    [[+event.description]]<!-- Description is a TinyMCE field by default, so no <p> here -->
-    <h2>Location</h2>
-    <p>[[+event.location]]<br /> [[+event.street]]<br /> [[+event.pc]]<br /> [[+event.city]]<br /> [[+event.region]]<br /> [[+event.country]]</p>
-    <p><a href="[[+event.website]]">Visit website</a></p>
-</body>
+```html
+[[!evxEvent?]]
+<html>
+    <head>
+        <title>[[++site_name]] - [[*pagetitle]]</title>
+        <base href="[[++site_url]]" />
+    </head>
+    <body>
+        <p>Name: [[+event.name]]</p>
+        <p>Start date: [[+event.startdate:strtotime:date=`%d-%m-%Y`]]</p>
+        <p>End date: [[+event.enddate:strtotime:date=`%d-%m-%Y`]]</p>
+        [[+event.description]]<!-- Description is a TinyMCE field by default, so no <p> here -->
+        <h2>Location</h2>
+        <p>
+            [[+event.location]]<br />
+            [[+event.street]]<br />
+            [[+event.pc]]<br />
+            [[+event.city]]<br />
+            [[+event.region]]<br />
+            [[+event.country]]
+        </p>
+        <p><a href="[[+event.website]]">Visit website</a></p>
+    </body>
 </html>
 ```
 

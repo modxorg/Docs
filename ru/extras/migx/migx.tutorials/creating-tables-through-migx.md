@@ -14,7 +14,7 @@ translation: "extras/migx/migx.tutorials/creating-tables-through-migx"
 
 Мы создадим простую табличку для примера:
 
-``` xml
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="electrica" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="" phpdoc-subpackage="" version="1.1">
     <object class="electricaItem" table="electrica_items" extends="xPDOSimpleObject">
@@ -34,7 +34,7 @@ translation: "extras/migx/migx.tutorials/creating-tables-through-migx"
 
 Все. Теперь мы можем работать с нашей таблицей.
 
-``` php
+```php
 <?php
 // Добавляем пакет
 if(!$modx->addPackage('electrica', MODX_CORE_PATH . 'components/electrica/model/')){
