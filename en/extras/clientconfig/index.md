@@ -50,4 +50,4 @@ You can choose a number of field types for your configurations. The xtype in bra
 
 You can use the Selectbox field type to mimick the boolean yes||no behaviour of certain System Settings by setting the field options like the screenshot example:
 
-![](screen+shot+2012-12-10+at+10.40.42+am.png)
+![](screen-shot.png)

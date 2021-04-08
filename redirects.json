@@ -2320,5 +2320,7 @@
     "/evolution/1.0": "en/index",
     "/display/revolution/modX.getRequest": "en/extending-modx/modx-class/reference/modx.getrequest",
     "/display/revolution20/Named+Anchor": "en/building-sites/integrating-templates/named-anchor",
-    "/display/revolution/Weblink": "en/building-sites/resources/weblink"
+    "/display/revolution/Weblink": "en/building-sites/resources/weblink",
+    "/display/revolution20/Input+and+Output+Filters+(Output+Modifiers)": "en/building-sites/tag-syntax/output-filters",
+    "/revolution/2.x/administering-your-site": "en/building-sites/"	
 }

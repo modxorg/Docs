@@ -29,7 +29,7 @@ Many VPS's include the WHM/cPanel administration panels. It's relatively easy to
 2. Find the "Plugins" section in the left navigation
 3. If ModSecurity is installed, you'll see **Mod Security** listed under your plugins.
 
-![](modsecurity+whm.jpg)
+![](modsecurity-whm.jpg)
 
 A handy cPanel/WHM `mod_security` module is available for visually editing your rules here: <http://configserver.com/>
 
