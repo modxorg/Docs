@@ -16,9 +16,9 @@ This is a huge topic so this page seeks to help you both harden MODX and inform 
 
 This is only one part of the security hardening process. Before you do any of this, though, make a backup of your site and your database!
 
-The top three things you should tackle are 1) blocking the core from being web accessible, blocking the `manager` on the public domains and use a subdomain for the Manager, and 3) put a WAF in front of your website. The other items will further help make MODX more difficult to identify and provide incremental layers of of secuirty or obsfuscation, but the tradeoff is increased time and complexity for updating or moving your website.
+The top four things you should tackle are 1) blocking the core from being web accessible, 2) blocking the `manager` on the public domains and use a subdomain for the Manager, 3) put a WAF in front of your website, and 4) always keep your server, MODX version and Extras updated. The other items will further help make MODX more difficult to identify and provide incremental layers of of secuirty or obsfuscation, but the tradeoff is increased time and complexity for updating or moving your website.
 
-### Protect the Core
+### Protect the Core and Other Locations
 
 This is perhaps the most important step to take because the MODX core contains code that can do _very bad things™_ in the hands of malicious users. You don’t want anyone poking around via a browser and finding or exploiting potential weaknesses.
 
@@ -29,18 +29,28 @@ The following examples block the `core` and anything within it from from being p
 For Apache, add the following to you `.htaccess` file:
 
 ```
-RedirectMatch 404 ^/core/.*$
+RewriteCond %{HTTP_HOST} ^(www\.)?example\.com$ [NC]
+# Block access to dotfiles and folder people have no need to touch
+RewriteRule ^(\.(?!well_known)|_build|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
 ```
 
-For NGINX, add the following to your web rules:
+For NGINX, add the following to your web rules which will pass the rewrites to the MODX error handler:
 
 ```
-location ^~ /core {
-    return 404;
+location ~ ^/(\.(?!well_known)|_build|core|config.core.php) {
+    rewrite ^/(\.(?!well_known)|_build|core|config.core.php) /index.php?q=doesnotexist;    
 }
 ```
 
-Note: this will return an NGINX 404 error page, which almost certainly won’t match your MODX-specified Error Page. You may wish to make a custom error page that matches your MODX error page for an extra layer of obsfuscation. Create raw HTML files in your web root and add the following to your NGINX web rules. As a bonus, the custom 500 error page can contain important contact information and a branded logo if your site is erroring or if the database is overloading causing a 502 or 504. You may also want to create more custom error pages for the various other [4xx and 5xx error codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status):
+If you have a high-traffic site, you might wish to bypass the PHP processing with MODX, and directly return a 404 from NGINX (or 444, which drops the connection without returning anything):
+
+```
+location ~ ^/(\.(?!well_known)|_build|core|config.core.php) {
+    return 404;    
+}
+```
+
+Note: this will use the default NGINX 404 error page, which almost certainly won’t match your MODX-specified Error Page. You may wish to make a custom error page that matches your MODX error page for an extra layer of obsfuscation. Create raw HTML files in your web root and add the following to your NGINX web rules. As a bonus, the custom 500 error page can contain important contact information and a branded logo if your site is erroring or if the database is overloading causing a 502 or 504. You may also want to create more custom error pages for the various other [4xx and 5xx error codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status):
 
 ```
 error_page 404 /custom_404.html;
@@ -53,15 +63,25 @@ See [example code for a custom error page](https://gist.github.com/jaygilmore/8a
 
 The MODX Manager directory is arguably the second most important path to protect. If someone finds a nice MODX login page at <http://example.com/manager/> it won’t take a genius to determine that it runs MODX and the brute-force hacking attempts can begin.
 
-Ideally, you would not allow access to the Manager on the same URL that runs your website at all, similar to the `core` protection above. For example, you might configure a subdomain to use for editing the pages like **my-secret-manager-subdomain.example.com**.
+Ideally, you would not allow access to the Manager on the same URL that runs your website at all, similar to the `core` protection above. For example, you might configure a subdomain to use for editing the pages like **cms.example.com** (or something preferably even more obscure/non-obvious.
 
 For NGINX, add the following to your web rules, using all the public (sub)domains that you might use for yoru site:
 
 ```
+# only allow manager access on cms.example.com
+set $mgrcheck $host$request_uri;
+if ($mgrcheck ~* "((?<!cms.)example\.com/manager)") {
+    rewrite /manager /index.php?q=doesnotexist;    
+}
+```
+
+Or if you have a custom 404 page implemented per the previous section:
+
+```
 set $mgrcheck $host$request_uri;
 
-if ($mgrcheck ~* "((www.|promos.|blog.)?example.com/manager") {
-    return 404;
+if ($mgrcheck ~* "((?<!cms.)example\.com/manager)") {
+    return 404;    
 }
 ```
 
@@ -71,15 +91,7 @@ For Apache, add the following to your `.htaccess` file:
 RewriteCond %{HTTP_HOST} ^(www\.)?example\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^promos\example\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^blog\.example\.com$ [NC]
-RewriteRule ^manager/ /404.php [L,R=404]
-```
-
-You also need to create the `404.php` page to create the appropriate header response:
-
-``` php
-<?php
-header( 'HTTP/1.0 404 Not Found' );
-include 'error404.html';
+RewriteRule ^manager/ /index.php?q=doesnotexist [L,R=404]
 ```
 
 You can also further lock down access to the Manager by configuring your server and/or its firewall to allow access to the Manager URL only from specific IP addresses. E.g. if your site is only accessed by workers in an office, you could configure your server to deny requests from outside the office’s IP addresses. Another tactic would be to put an .htaccess password on the manager directory. This would mean that users would have to enter 2 separate passwords before entering the MODX Manager. Perhaps that is inconvenient, but it is more secure.
@@ -89,7 +101,7 @@ You can also further lock down access to the Manager by configuring your server 
 
 Make sure that your server has a good firewall installed with intrusion detection to dynamically detects and blocks common hacking attempts. [ModSecurity](getting-started/installation/troubleshooting/modsecurity) is a security module for both Apache and NGINX that helps deter a number of malicious attacks. You can also use a WAF (web application firewall) service from vendors like Cloudflare, Fastly, Imperva, StackPath, and others to block many brute force attackers and known bad actors.
 
-### Update Your Server
+### Update Your Server, MODX, and Extras
 
 No matter how secure all other elements are, it amounts to nothing if your server is not adequately secure. If your server is compromised there is nothing you can do to guarantee the integrity of your site or even the entire server itself.
 
@@ -98,6 +110,8 @@ Always stay on top of server stack maintenance, including the software that powe
 Turn off all unnecessary services and if possible, and especially turn off FTP entirely in favor of SFTP. 
 
 Also turn off password authentication entirely in favour of [SSH keyed logins](http://tipsfor.us/2009/06/15/securing-a-linux-server-ssh-and-brute-force-attacks/). When using SSH keys, make sure to use a complex passphrase.
+
+Finally, it’s critical to keep things upgraded to the latest version in MODX, too. When any release comes out that remotely mentions anythign that sounds like a security issue or bug, upgrade ASAP. 
 
 ## Other Ways to Protect MODX
 
