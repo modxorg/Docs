@@ -63,6 +63,10 @@ Also called "Core Extension". A MODX Third-party Component that modifies the MOD
 
 A type of xPDOVehicle Resolver that copies files from the source location to the target location in a Transport Package.
 
+## Friendly URLs, Friendly aliases
+
+Friendly URLs (FURLs) is actually short for SEO-friendly URLs. SEO, as you probably know, is an acronym for Search Engine Optimization. Since "Search-engine-Optimization-friendly-URLs" is quite a mouthful, they're usually referred to as FURLs in MODX.
+
 ## Language Tags
 
 Tags in the form `[[%LanguageStringKey]]` that reference MODX Lexicon entries.

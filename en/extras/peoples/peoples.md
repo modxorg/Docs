@@ -72,7 +72,7 @@ Show all the Users for a site.
 
 The only chunk used in the Peoples snippet is the &tpl property, which uses the default of pplUser.
 
-- [tpl](extras/peoples/peoples.peoples/peoples.peoples.tpl "Peoples.Peoples.tpl")
+- [tpl](extras/peoples/peoples/tpl "Peoples.Peoples.tpl")
 
 ## Examples
 
@@ -97,8 +97,8 @@ Show all the inactive users in the site:
 ## See Also
 
 - [Peoples.PeopleGroup](extras/peoples/peoples.peoplegroup)
-    - [Peoples.PeopleGroup.userTpl](extras/peoples/peoples.peoplegroup/peoples.peoplegroup.usertpl)
+    - [Peoples.PeopleGroup.userTpl](extras/peoples/peoples.peoplegroup/usertpl)
 - [Peoples.PeopleGroups](extras/peoples/peoples.peoplegroups)
-    - [Peoples.PeopleGroups.tpl](extras/peoples/peoples.peoplegroups/peoples.peoplegroups.tpl)
-- [Peoples.Peoples](extras/peoples/peoples.peoples)
-    - [Peoples.Peoples.tpl](extras/peoples/peoples.peoples/peoples.peoples.tpl)
+    - [Peoples.PeopleGroups.tpl](extras/peoples/peoples.peoplegroups/tpl)
+- [Peoples.Peoples](extras/peoples/peoples)
+    - [Peoples.Peoples.tpl](extras/peoples/peoples/tpl)
