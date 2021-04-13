@@ -35,6 +35,6 @@ $modx->removeEventListener('OnLoadDocument', 2);
 
 ## Смотрите также
 
-- [addEventListener](extending-modx/modx-class/reference/addeventlistener "addEventListener")
-- [removeAllEventListener](extending-modx/modx-class/reference/removealleventlistener "removeAllEventListener")
+- [addEventListener](extending-modx/modx-class/reference/modx.addeventlistener "addEventListener")
+- [removeAllEventListener](extending-modx/modx-class/reference/modx.removealleventlistener "removeAllEventListener")
 - [modX](extending-modx/core-model/modx "MODX")
