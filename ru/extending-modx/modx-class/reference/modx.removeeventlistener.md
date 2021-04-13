@@ -1,6 +1,7 @@
 ---
 title: "modX.removeEventListener"
 translation: "extending-modx/modx-class/reference/modx.removeeventlistener"
+description: "Удалите событие из eventMap, чтобы оно не вызывалось, для всех или для отдельного плагина"
 ---
 
 ## modX::removeEventListener
@@ -9,13 +10,16 @@ translation: "extending-modx/modx-class/reference/modx.removeeventlistener"
 
 ## Синтаксис
 
-API Doc: [modX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
-
 ``` php
-boolean removeEventListener (string $event)
+boolean removeEventListener (string $event, [integer $pluginId = 0])
 ```
 
-## Пример
+- `$event` _(string)_ Название события, которое вы хотите удалить.  **обязательно**
+- `$pluginId` _(integer)_ ID определенного плагина, для которого я хочу удалить событие 
+
+API Doc: [modX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
+
+## Примеры
 
 Предотвратить запуск любых событий на `OnChunkRender`:
 
@@ -23,6 +27,14 @@ boolean removeEventListener (string $event)
 $modx->removeEventListener('OnChunkRender');
 ```
 
+Предотвратить запуск любых событий на 'OnLoadDocument' для плагина с ID = 2
+
+``` php
+$modx->removeEventListener('OnLoadDocument', 2);
+```
+
 ## Смотрите также
 
-- [modX](extending-modx/core-model/modx "modX")
+- [addEventListener](extending-modx/modx-class/reference/addeventlistener "addEventListener")
+- [removeAllEventListener](extending-modx/modx-class/reference/removealleventlistener "removeAllEventListener")
+- [modX](extending-modx/core-model/modx "MODX")
