@@ -1,6 +1,7 @@
 ---
 title: "modX.setDebug"
 translation: "extending-modx/modx-class/reference/modx.setdebug"
+description: "modX.setDebug метод для изменения уровня отладки"
 ---
 
 ## modX::setDebug
@@ -12,8 +13,10 @@ translation: "extending-modx/modx-class/reference/modx.setdebug"
 API Doc: [modX::setDebug()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setDebug())
 
 ``` php
-boolean|int setDebug ([boolean|int $debug = true], [boolean $stopOnNotice = false])
+boolean|int setDebug ([boolean|int $debug = true])
 ```
+
+- `$debug` _(string)_ Логическое или целое число, описывающее состояние отладки и/или уровень сообщения об ошибках PHP 
 
 ## Пример
 
@@ -25,4 +28,4 @@ $modx->setDebug(true);
 
 ## Смотрите также
 
-[modX.setDebug](extending-modx/modx-class/reference/modx.setdebug)
+[log_level](building-sites/settings/log_level)

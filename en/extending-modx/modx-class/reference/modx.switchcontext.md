@@ -1,7 +1,6 @@
 ---
 title: "modX.switchContext"
-_old_id: "1108"
-_old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.switchcontext"
+description: "modX.switchContext method for context switch"
 ---
 
 ## modX::switchContext
@@ -15,8 +14,11 @@ Be aware that switching contexts does not allow custom session handling classes 
 API Doc: [modX::switchContext()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::switchContext())
 
 ``` php
-boolean switchContext (string $contextKey)
+boolean switchContext (string $contextKey, [boolean $reload = false])
 ```
+
+- `$contextKey` _(string)_ The key of the context to switch to. **required**
+- `$reload` _(boolean)_ Set to true to force the context data to be regenerated before being switched to
 
 ## Example
 

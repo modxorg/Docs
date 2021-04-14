@@ -9,11 +9,11 @@ translation: "extending-modx/modx-class/reference/modx.addeventlistener"
 
 ## Синтаксис
 
-API Doc: [modX::addEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::addEventListener())
-
 ``` php
-boolean addEventListener (string $event, integer $pluginId)
+boolean addEventListener (string $event, integer $pluginId, [string $propertySetName = ''])
 ```
+
+API Документация: [modX::addEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::addEventListener())
 
 ## Пример
 

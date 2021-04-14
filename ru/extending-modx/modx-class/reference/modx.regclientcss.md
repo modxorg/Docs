@@ -1,6 +1,7 @@
 ---
 title: "modX.regClientCSS"
 translation: "extending-modx/modx-class/reference/modx.regclientcss"
+description: "Регистрирует CSS для внедрения внутри тега HEAD ресурса"
 ---
 
 ## modX::regClientCSS
@@ -12,15 +13,18 @@ translation: "extending-modx/modx-class/reference/modx.regclientcss"
 API Doc: [modX::regClientCSS()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientCSS())
 
 ``` php
-void regClientCSS (string $src)
+void regClientCSS (string $src, [string $media = null])
 ```
+
+- `$src` _(string)_ CSS файл, который будет вставлен перед закрывающим тегом HEAD в HTML. **обязательный**
+- `$media` _(string)_ Возможные варианты типов: `all`, `aural`, `braille`, `embossed`, `handheld`, `print`, `projection`, `screen`, `tty`, `tv`
 
 ## Пример
 
-Зарегистрируйте файл CSS в теге HEAD:
+Зарегистрируйте файл CSS в теге HEAD для `media` с типом 'all':
 
 ``` php
-$modx->regClientCSS('assets/css/style.css');
+$modx->regClientCSS('assets/css/style.css', 'all');
 ```
 
 ## Смотрите также

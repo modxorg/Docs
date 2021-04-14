@@ -1,7 +1,6 @@
 ---
 title: "modX.sendForward"
-_old_id: "1102"
-_old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.sendforward"
+description: "modX.sendForward forwards the request to another resource without changing the URL"
 ---
 
 ## modX::sendForward
@@ -13,14 +12,18 @@ Forwards the request to another resource without changing the URL. If the ID pro
 API Doc: [modX::sendForward()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendForward())
 
 ``` php
-void sendForward (integer $id, [string|array $options = null])
+void sendForward (integer $id, [string|array $options = null], [boolean $sendErrorPage = true])
 ```
 
-`$id` is a Resource ID (you cannot sendForward to an URL - if you need to pass some value, use `modX::setPlaceholder` and call that on the target resource).
-`$options` is assumed to be a proper HTTP response code when it is a string, eg "HTTP/1.1 301 Moved Permanently". If it's an array, you can use the following options:
-
-- `response_code`: the same as if you would pass a string to the `$options` var
-- `merge`: a way to merge the resource currently in `$modx->resource` with the target resource. The content, pub\_date, unpub\_date, richtext, \_content and \_processed values are excluded as well as the value of the `forward_merge_excludes` system setting/another option key. I'm not sure if this is supposed to be used out of the core and there's probably better ways to get data combined (eg: setPlaceholder) then merging.
+- `$id` is a Resource ID (you cannot sendForward to an URL - if you need to pass some value, use `modX::setPlaceholder` and call that on the target resource).
+- `$options` is assumed to be a proper HTTP response code when it is a string, eg "HTTP/1.1 301 Moved Permanently". If it's an array, you can use the following options:
+   - `response_code`: response code, please see example below
+   - `error_type`: response code type, please see example below. F.e. 404
+   - `error_header`: "Header:" value
+   - `error_pagetitle`: error pagetitle value
+   - `error_message`: error message
+   - `merge`: a way to merge the resource currently in `$modx->resource` with the target resource. The `content`, `pub_date`, `unpub_date`, `richtext`, `_content` and `_processed` values are excluded as well as the value of the [forward_merge_excludes](building-sites/settings/forward_merge_excludes) system setting. I'm not sure if this is supposed to be used out of the core and there's probably better ways to get data combined (eg: `setPlaceholder`) then merging.
+- `$sendErrorPage` Whether we should skip the [sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage") if the resource does not exist.
 
 ## Example
 
@@ -30,6 +33,20 @@ Send the user to Resource ID 234 without actually changing the URL.
 $modx->sendForward(234);
 ```
 
+Send user to 404 Error page, for actual page ID we use [error_page](building-sites/settings/error_page) system setting value. If there is no such value,
+the value of [site_start](building-sites/settings/site_start) will be used.
+
+``` php
+$options = array(
+   'response_code' => '404 Not Found',
+   'error_type' => '404',
+   'error_header' => '404 Not Found',
+   'error_pagetitle' => 'Error 404: Page not found',
+   'error_message' => '<h1>Page not found</h1><p>The page you requested was not found.</p>'
+);
+$this->sendForward($this->getOption('error_page', $options, $this->getOption('site_start')), $options, false);
+```
+
 ## See Also
 
 - [modX](extending-modx/core-model/modx "modX")
@@ -37,3 +54,4 @@ $modx->sendForward(234);
 - [modX.sendRedirect](extending-modx/modx-class/reference/modx.sendredirect "modX.sendRedirect")
 - [modX.sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage")
 - [modX.sendUnauthorizedPage](extending-modx/modx-class/reference/modx.sendunauthorizedpage)
+- [error_page](building-sites/settings/error_page)
