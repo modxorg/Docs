@@ -17,12 +17,12 @@ void sendForward (integer $id, [string|array $options = null], [boolean $sendErr
 
 - `$id` is a Resource ID (you cannot sendForward to an URL - if you need to pass some value, use `modX::setPlaceholder` and call that on the target resource).
 - `$options` is assumed to be a proper HTTP response code when it is a string, eg "HTTP/1.1 301 Moved Permanently". If it's an array, you can use the following options:
-   - `response_code`: response code, please see example below
-   - `error_type`: response code type, please see example below. F.e. 404
-   - `error_header`: "Header:" value
-   - `error_pagetitle`: error pagetitle value
-   - `error_message`: error message
-   - `merge`: a way to merge the resource currently in `$modx->resource` with the target resource. The `content`, `pub_date`, `unpub_date`, `richtext`, `_content` and `_processed` values are excluded as well as the value of the [forward_merge_excludes](building-sites/settings/forward_merge_excludes) system setting. I'm not sure if this is supposed to be used out of the core and there's probably better ways to get data combined (eg: `setPlaceholder`) then merging.
+    - `response_code`: response code, please see example below
+    - `error_type`: response code type, please see example below. F.e. 404
+    - `error_header`: "Header:" value
+    - `error_pagetitle`: error pagetitle value
+    - `error_message`: error message
+    - `merge`: a way to merge the resource currently in `$modx->resource` with the target resource. The `content`, `pub_date`, `unpub_date`, `richtext`, `_content` and `_processed` values are excluded as well as the value of the [forward_merge_excludes](building-sites/settings/forward_merge_excludes) system setting. I'm not sure if this is supposed to be used out of the core and there's probably better ways to get data combined (eg: `setPlaceholder`) then merging.
 - `$sendErrorPage` Whether we should skip the [sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage") if the resource does not exist.
 
 ## Example

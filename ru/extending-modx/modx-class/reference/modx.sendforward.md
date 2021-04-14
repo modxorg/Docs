@@ -18,12 +18,12 @@ void sendForward (integer $id, [string|array $options = null])
 
 - `$id` это идентификатор ресурса (вы не можете перенаправить на URL адрес - если вам нужно передать какое-то значение, используйте `modX::setPlaceholder` и вызовите его на целевом ресурсе).
 - `$options` предполагается, что это правильный код ответа HTTP, когда он является строкой, например "HTTP/1.1 301 Moved Permanently". Если это массив, вы можете использовать следующие параметры:
-   - `response_code`: код ответа
-   - `error_type`: тип ошибки, смотрите пример ниже, но, например, 404
-   - `error_header`: Значение поля "Header" страницы ошибки
-   - `error_pagetitle`: Имя заголовка страницы ошибки
-   - `error_message`: Сообщение об ошибке
-   - `merge`: способ объединения ресурса, находящегося в данный момент в `$modx->resource` с целевым ресурсом. `content`, `pub_date`, `unpub_date`, `richtext`, `_content` и `_processed` значения исключаются вместе со значением системного параметра [forward_merge_excludes](building-sites/settings/forward_merge_excludes). Я не уверен, что это должно использоваться из ядра, и, вероятно, есть лучшие способы объединить данные (например, `setPlaceholder`), а затем объединить.
+    - `response_code`: код ответа
+    - `error_type`: тип ошибки, смотрите пример ниже, но, например, 404
+    - `error_header`: Значение поля "Header" страницы ошибки
+    - `error_pagetitle`: Имя заголовка страницы ошибки
+    - `error_message`: Сообщение об ошибке
+    - `merge`: способ объединения ресурса, находящегося в данный момент в `$modx->resource` с целевым ресурсом. `content`, `pub_date`, `unpub_date`, `richtext`, `_content` и `_processed` значения исключаются вместе со значением системного параметра [forward_merge_excludes](building-sites/settings/forward_merge_excludes). Я не уверен, что это должно использоваться из ядра, и, вероятно, есть лучшие способы объединить данные (например, `setPlaceholder`), а затем объединить.
 - `$sendErrorPage` Следует ли пропустить выполнение [sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage") если ресурс не существует.
    
 ## Пример
