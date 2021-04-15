@@ -1,12 +1,11 @@
 ---
 title: "modX.initialize"
-_old_id: "1084"
-_old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.initialize"
+description: "Initializes MODX engine into contexts"
 ---
 
 ## modX::initialize
 
-Initializes the modX engine into a [Context](building-sites/contexts "Contexts").
+Initializes MODX engine into a [Context](building-sites/contexts "Contexts").
 
 This includes preparing the session, pre-loading some common classes and objects, the current site and context settings, extension packages used to override session handling, error handling, or other initialization classes.
 
@@ -15,8 +14,11 @@ This includes preparing the session, pre-loading some common classes and objects
 API Doc: [modX::initialize()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::initialize())
 
 ``` php
-void initialize ([string $contextKey = 'web'])
+void initialize ([string $contextKey = 'web'], [$options = null])
 ```
+
+- `$contextKey` _(string)_ Indicates the context to initialize
+- `$options` _(string)_ An array of options for the initialization.
 
 ## Example
 

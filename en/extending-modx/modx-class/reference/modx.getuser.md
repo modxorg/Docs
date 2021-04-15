@@ -1,7 +1,6 @@
 ---
 title: "modX.getUser"
-_old_id: "1078"
-_old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getuser"
+description: "Get the current authenticated User and assigns it to the modX instance"
 ---
 
 ## modX::getUser
@@ -13,8 +12,11 @@ Get the current authenticated User and assigns it to the modX instance.
 API Doc: [modX::getUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getUser())
 
 ``` php
-modUser getUser ([string $contextKey = ''])
+modUser getUser ([string $contextKey = ''], [bool $forceLoadSettings = false])
 ```
+
+- `$contextKey` _(string)_ Indicates the context to initialize, an optional context to get the user from.
+- `$forceLoadSettings` _(bool)_ If set to true, will load settings regardless of whether the user has an authenticated context or not
 
 ## Example
 
@@ -25,10 +27,10 @@ $user = $modx->getUser();
 echo $user->get('username');
 ```
 
-Get the user's email address (stored in their profile):
+Get the user's email address (stored in their profile) from 'web' context:
 
 ``` php
-$user = $modx->getUser();
+$user = $modx->getUser('web', true);
 if (!$user) return '';
 $profile = $user->getOne('Profile');
 if (!$profile) return '';
