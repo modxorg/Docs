@@ -11,7 +11,7 @@ These coding standards primarily apply to PHP code.
 
 - Beginning brackets do NOT linebreak. They start one space after the end parenthesis, as according to traditional Unix policy.
 - Do not do any real logic in object constructors. Create class methods to do so.
-   null, true and false should always be lowercase.
+   `null`, `true` and `false` should always be lowercase.
 - Avoid embedded assignments (ex: `$d = ($a = $b + $c)` is bad).
 - Never use `extract()`.
 - Avoid using global variables if at all possible.
@@ -71,7 +71,7 @@ class modFactor {
 
 ## Arrays
 
-- Array index names use the underscore \_, not the dash as their separator. This prevents errors with `magic\_quotes`.
+- Array index names use the underscore \_, not the dash as their separator. This prevents errors with `magic_quotes`.
 - Array index names are always lowercase. Spaces are represented by an underscore.
 - Array index names are always encapsulated with single quotes.
    Example:
