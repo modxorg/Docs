@@ -5,7 +5,7 @@ translation: "extending-modx/modx-class/reference/modx.executeprocessor"
 
 ## modX::executeProcessor
 
-Этот метод удаляется в 2.1 и заменяется `$modX->runProcessor`
+Этот метод удален в 2.1 и заменен на [$modX->runProcessor](extending-modx/modx-class/reference/modx.runprocessor)
 
 Выполняет определенный процессор. Единственным аргументом является массив, который может принимать следующие значения:
 

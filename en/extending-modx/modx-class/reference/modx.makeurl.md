@@ -1,7 +1,6 @@
 ---
 title: "modX.makeUrl"
-_old_id: "1087"
-_old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.makeurl"
+description: "Generates a URL representing a specified resource"
 ---
 
 ## modX::makeUrl
@@ -23,7 +22,7 @@ The scheme indicates in what format the URL is generated.
 API Doc: [modX::makeUrl()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::makeUrl())
 
 ``` php
-string makeUrl (integer $id, [string $context = ''], [string|array $args = ''], [mixed $scheme = -1])
+string makeUrl (integer $id, [string $context = ''], [string|array $args = ''], [mixed $scheme = -1], [array $options = null])
 ```
 
 ## Examples

@@ -1,6 +1,7 @@
 ---
 title: "modX.makeUrl"
 translation: "extending-modx/modx-class/reference/modx.makeurl"
+description: "Создает URL-адрес, представляющий указанный ресурс"
 ---
 
 ## modX::makeUrl
@@ -25,7 +26,7 @@ URL-адреса в мультиконтекстных сайтах принуд
 API Doc: [modX::makeUrl()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::makeUrl())
 
 ``` php
-string makeUrl (integer $id, [string $context = ''], [string|array $args = ''], [mixed $scheme = -1])
+string makeUrl (integer $id, [string $context = ''], [string|array $args = ''], [mixed $scheme = -1], [array $options = null])
 ```
 
 ## Примеры

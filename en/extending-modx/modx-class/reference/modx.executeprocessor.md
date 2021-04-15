@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::executeProcessor
 
-This method is removed in 2.1, and replaced by `$modX->runProcessor`
+This method is removed in 2.1, and replaced by [$modX->runProcessor](extending-modx/modx-class/reference/modx.runprocessor)
 
 Executes a specific processor. The only argument is an array, which can take the following values:
 
