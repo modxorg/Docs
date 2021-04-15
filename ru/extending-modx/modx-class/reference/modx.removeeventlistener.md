@@ -10,14 +10,14 @@ description: "Удалите событие из eventMap, чтобы оно н�
 
 ## Синтаксис
 
+API документация: [modX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
+
 ``` php
 boolean removeEventListener (string $event, [integer $pluginId = 0])
 ```
 
 - `$event` _(string)_ Название события, которое вы хотите удалить.  **обязательно**
 - `$pluginId` _(integer)_ ID определенного плагина, для которого я хочу удалить событие 
-
-API Doc: [modX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
 
 ## Примеры
 

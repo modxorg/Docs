@@ -15,8 +15,11 @@ Overrides `xPDO::getCacheManager`.
 API Doc: [modX::getCacheManager()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getCacheManager())
 
 ``` php
-object getCacheManager()
+object getCacheManager([string $class = ''], [[array $options = array('path' => XPDO_CORE_PATH, 'ignorePkg' => true)]])
 ```
+
+- `$class` _(string)_ The class name of the cache manager to load
+- `$options` _(array)_ An array of options to send to the cache manager instance
 
 ## Example
 

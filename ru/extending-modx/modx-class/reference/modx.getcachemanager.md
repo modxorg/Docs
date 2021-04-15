@@ -14,8 +14,11 @@ translation: "extending-modx/modx-class/reference/modx.getcachemanager"
 API Doc: [modX::getCacheManager()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getCacheManager())
 
 ``` php
-object getCacheManager()
+object getCacheManager([string $class = ''], [[array $options = array('path' => XPDO_CORE_PATH, 'ignorePkg' => true)]])
 ```
+
+- `$class` _(string)_ Имя класса кеш-менеджера для загрузки 
+- `$options` _(array)_ Массив параметров для отправки экземпляру диспетчера кеша 
 
 ## Пример
 
@@ -28,5 +31,5 @@ $cacheManager->set('testcachefile','test123');
 
 ## Смотрите также
 
-- [Caching](extending-modx/xpdo/caching "Caching") – the full options are documented on the xPDO caching page.
+- [Кеширование](extending-modx/xpdo/caching "Кеширование") – подробные варианты описаны на странице кэширования xPDO. 
 - [modX](extending-modx/core-model/modx "modX")

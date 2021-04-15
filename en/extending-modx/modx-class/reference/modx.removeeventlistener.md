@@ -9,14 +9,14 @@ Remove an event from the eventMap so it will not be invoked.
 
 ## Syntax
 
+API Doc: [modX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
+
 ``` php
 boolean removeEventListener (string $event, [integer $pluginId = 0])
 ```
 
 - `$event` _(string)_ The name of the Event you wish to remove. **required**
 - `$pluginId` _(integer)_ ID of certain Plugin for which I want to delete the Event 
-
-API Doc: [modX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
 
 ## Examples
 
