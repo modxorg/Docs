@@ -14,7 +14,7 @@ PackMan был написан Shaun McCormick компонент для созд
 
 ### Скачать
 
-Его можно загрузить и установить из MODX через [Управление Пакетами](developing-in-modx/advanced-development/package-management "Управление Пакетами") (**Пакеты** > **Установщик**), или из [Официального MODX репозитория](https://modx.com/extras/package/packman).
+Его можно загрузить и установить из MODX через [Управление Пакетами](building-sites/extras "Управление Пакетами") (**Пакеты** > **Установщик**), или из [Официального MODX репозитория](https://modx.com/extras/package/packman).
 
 ### Разработка и ошибки
 

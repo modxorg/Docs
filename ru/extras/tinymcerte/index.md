@@ -27,7 +27,7 @@ TinyMCE это платформенно-независимый Javascript HTML W
 
 ## Скачать
 
-TinyMCE Rich Text Editor можно загрузить и установить из MODX через [Управление Пакетами](developing-in-modx/advanced-development/package-management "Управление Пакетами") (**Пакеты** > **Установщик**), или из [Официального MODX репозитория](https://modx.com/extras/package/upgrademodx).
+TinyMCE Rich Text Editor можно загрузить и установить из MODX через [Управление Пакетами](building-sites/extras "Управление Пакетами") (**Пакеты** > **Установщик**), или из [Официального MODX репозитория](https://modx.com/extras/package/upgrademodx).
 
 ## Разработка и ошибки
 

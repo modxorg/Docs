@@ -50,7 +50,7 @@ Return the processed TV with name myTV of the parent resource, and if it is empt
 [[getResourceField? &id=`[[*parent]]` &field=`myTV` &processTV=`1` &default=`Sorry, no data available`]]
 ```
 
-Return the introtext field of the ultimate parent (note that this requires the UltimateParent snippet to be installed):
+Return the introtext field of the ultimate parent (note that this requires the [UltimateParent](https://modx.com/extras/package/ultimateparent) snippet to be installed):
 
 ``` php
 [[getResourceField? &id=`[[UltimateParent]]` &field=`introtext`]]
