@@ -2334,5 +2334,6 @@
     "/current/en/extras/versionx/versionx.roadmap": "en/extras/versionx",
     "/current/en/extras/discuss/discuss.roadmap": "en/extras/discuss",
     "/current/en/extras/batcher/roadmap": "en/extras/batcher",
-    "/current/en/extras/googlesitemap/googlesitemap.roadmap": "en/extras/googlesitemap"
+    "/current/en/extras/googlesitemap/googlesitemap.roadmap": "en/extras/googlesitemap",
+    "/display/ADDON/Batcher": "en/extras/batcher"
 }

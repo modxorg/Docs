@@ -15,6 +15,10 @@ Any type of file resource that is usually located in the /assets directory, as d
 
 A synonym for the MODX manager interface.
 
+## Cache, caching
+
+The process of storing frequently requested data and where it is stored.  By caching data that is being reused, a lot of database requests can be prevented, resulting in a better performance. MODX Revolution offers a number of different caching features on different levels within the application. [See more](extending-modx/caching)
+
 ## Category
 
 An optional classifying name that can be attached to any Element or PropertySet (and other objects in later versions of Revolution) that separates it from other similar objects.
@@ -27,9 +31,13 @@ Tags in the form `[[$ChunkName]]` that can be used in reference to Chunks.
 
 Also called "Third-party Component", or 3PC, a Component usually provides extra functionality to MODX, usually in the form of an Add-on, Core Extension, or Template.
 
+## Connector
+
+Essentially entry point for AJAX requests in MODX. It doesn't do any database manipulation on its own; just simply load up the main MODX class, sanitize any request data, and then handle the request by pointing to the appropriate Processor file [See more](getting-started/directory-structure#connectors)
+
 ## Content Type
 
-Sets the extension, mime-type and binary setting for any Resource.
+Sets the extension, mime-type and binary setting for any Resource. [See more](building-sites/resources/content-types)
 
 ## Context
 
@@ -63,6 +71,14 @@ Also called "Core Extension". A MODX Third-party Component that modifies the MOD
 
 A type of xPDOVehicle Resolver that copies files from the source location to the target location in a Transport Package.
 
+## Form Customization
+
+Feature that allows users to create [Rules](building-sites/client-proofing/form-customization/rules), which govern how manager pages render their forms in the MODX Revolution Manager. [See more](building-sites/client-proofing/form-customization)
+
+## Form Customization Set
+
+A Form Customization Set is a collection of [Rules](building-sites/client-proofing/form-customization/rules) that occur for a specific page (action) in the Manager. [See more](building-sites/client-proofing/form-customization/sets)
+
 ## Friendly URLs, Friendly aliases
 
 Friendly URLs (FURLs) is actually short for SEO-friendly URLs. SEO, as you probably know, is an acronym for Search Engine Optimization. Since "Search-engine-Optimization-friendly-URLs" is quite a mouthful, they're usually referred to as FURLs in MODX.
@@ -86,6 +102,10 @@ Tags in the form `[[~ResourceId]]` that reference the URL of a particular Resour
 ## Manager
 
 The back-end of the MODX interface.
+
+## Media Source
+
+With MS you can specify the "source" of media through many types - from the file system itself, to an Amazon S3 bucket, to a Flickr album. MODX provides two source types with the core installation: the file system and Amazon S3 bucket integration. Other sources can be made by creating Media Source Drivers, or by downloading them from [Package Management](building-sites/extras). [See More](building-sites/media-sources)
 
 ## Namespace
 
@@ -151,7 +171,7 @@ A type of Resource that references a single, local MODX Resource; the Resource's
 
 A site-wide variable accessible to the MODX site. Can be overridden by Context Settings and User Settings.
 
-## Template Variables
+## Template Variables (or TVs)
 
 Custom Resource Fields created by the user on the Document Create/Edit Screen and referenced using Content Tags.
 

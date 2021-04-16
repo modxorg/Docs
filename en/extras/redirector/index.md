@@ -1,7 +1,6 @@
 ---
 title: "Redirector"
-_old_id: "698"
-_old_uri: "revo/redirector"
+description: "Redirector is a management tool for your 404 / 301 redirects on your site."
 ---
 
 ## What is Redirector?

@@ -34,7 +34,7 @@ UpgradeMODX должен работать с любой установкой MOD
 
 ## Скачать
 
-UpgradeMODX можно загрузить и установить из MODX через [Управление Пакетами](developing-in-modx/advanced-development/package-management "Управление Пакетами") (Пакеты -> Установщик), или из [Официального MODX репозитория](https://modx.com/extras/package/upgrademodx).
+UpgradeMODX можно загрузить и установить из MODX через [Установку компонентов](building-sites/extras "Установка компонентов") (`Пакеты -> Установщик`), или из [Официального MODX репозитория](https://modx.com/extras/package/upgrademodx).
 
 ## Разработка и ошибки
 
