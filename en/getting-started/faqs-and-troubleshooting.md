@@ -94,3 +94,9 @@ See Original Post: <http://forums.modx.com/thread/78611/core-cache-file-locks-an
 ### 3.2 General Snippet Problems
 
 If you find a snippet and/or plugin isn't working properly despite the correct code, double check that it has been installed.
+
+## 4. Frontend Display Issues
+
+### 4.1 Blank manager pages
+
+Perhaps the most complete list of what needs to be checked is described here: <https://community.modx.com/t/blank-manager-with-undefined-message/3799/20> 

@@ -72,7 +72,7 @@ description: "Наиболее исчерпывающий список всех 
 
 ## Настройка формы
 
-Функция, которая позволяет пользователям создавать [правила]((building-sites/client-proofing/form-customization/rules)), которые определяют, как страницы менеджера отображают свои формы. [Подробнее](building-sites/client-proofing/form-customization)
+Функция, которая позволяет пользователям создавать [правила](building-sites/client-proofing/form-customization/rules), которые определяют, как страницы менеджера отображают свои формы. [Подробнее](building-sites/client-proofing/form-customization)
 
 ## Наборы настроек формы
 
