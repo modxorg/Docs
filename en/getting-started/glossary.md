@@ -121,7 +121,9 @@ Tags in the form `[[+PlaceholderName]]` that reference MODX Placeholders, usuall
 
 ## Resource Field
 
-Any of the fields of the `site_content` table, such as pagetitle, longtitle, introtext, alias, menuindex, etc. Some fields are available on the Document Create/Edit screen and via Resource Tags; Others can only be accessed via the documentObject.
+Any of the fields of the `site_content` table, such as `pagetitle`, `longtitle`, `introtext`, `alias`, `menuindex`, etc. Some fields are available on the Document Create/Edit screen and via Resource Tags; Others can only be accessed via the `documentObject`.
+
+## Plugin - 
 
 ## Property
 
@@ -143,17 +145,17 @@ Also called a Document ID, Resource ID, or Document Identifier; the number in pa
 
 Tags in the form `[[*ResourceFieldTV]]`, which can be used to refer to Resource Fields, or Template Variables.
 
-## Resolver (for xPDOVehicles)
+## Resolver (from Transport Package)
 
-Post-processor: a script or predefined action that is evaluated after a Vehicle is installed or uninstalled. Resolvers always occur after the vehicle's object is save()'d, and can then perform actions on MODX before anything else happens in the install/uninstall process.
+Post-processor: a script or predefined action that is evaluated after a [Transport Vehicle](getting-started/glossary#transport-vehicles) is installed or uninstalled. Resolvers always occur after the vehicle's object is save()'d, and can then perform actions on MODX before anything else happens in the install/uninstall process.
 
-An example of a PHP Resolver is one that attaches Plugin Events to a newly-installed Plugin.
+An example of a PHP Resolver is one that attaches Plugin Events to a newly-installed [Plugin](getting-started/glossary#plugin).
 
-An example of a file Resolver is one that copies the assets/ditto directory in the xPDOVehicle path to `/MODX/assets/ditto`.
+An example of a file Resolver is one that copies the `assets/getResources` directory in the `xPDOVehicle` path to `/MODX/assets/getResources`.
 
 ## Setting Tags
 
-Tags in the form `[[++SettingName]]` that reference MODX System Settings, Context Settings, and User Settings.
+Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getting-started/glossary#system-setting), [Context Settings]((getting-started/glossary#context-setting)), and [User Settings]((getting-started/glossary#user-setting)).
 
 ## Snippet Tags
 
@@ -177,19 +179,19 @@ Custom Resource Fields created by the user on the Document Create/Edit Screen an
 
 ## Transport Package
 
-A packaged and zipped collection of Transport Vehicles, that can be easily distributed ("transported") from one Core Workspace to another.
+A packaged and zipped collection of [Transport Vehicles](getting-started/glossary#transport-vehicles), that can be easily distributed ("transported") from one Core Workspace to another. [See more](extending-modx/transport-packages)
 
 ## Transport Vehicles
 
-An intelligent container that encapsulates any artifact that can be distributed in a Transport Package. Transport Vehicles store their payloads in a portable format.
+An intelligent container that encapsulates any artifact that can be distributed in a [Transport Package](getting-started/glossary#transport-package). Transport Vehicles store their payloads in a portable format. [See more](extending-modx/transport-packages#okay-what-are-these-vehicles)
 
 ## User Setting
 
 A user-specific setting that either creates a new setting or overrides the similar Context Setting and System Setting. Used to provide unique settings to that user.
 
-## Validator (for xPDOVehicles)
+## Validator (from Transport Package)
 
-Pre-processor: a script or predefined action that executes prior to the vehicle being installed or uninstalled. If the validator returns true, the install/uninstall action will proceed as normal. If the validator returns false, MODX will not uninstall or install the package.
+Pre-processor: a script or predefined action that executes prior to the [Transport Vehicle](getting-started/glossary#transport-vehicles) being installed or uninstalled. If the validator returns true, the install/uninstall action will proceed as normal. If the validator returns false, MODX will not uninstall or install the package.
 
 A Validator could be used to determine if a directory exists and is writable, to see if other MODX elements are already installed, or to determine if a certain version of MySQL and PHP are used on a server.
 

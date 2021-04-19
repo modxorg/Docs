@@ -1,6 +1,7 @@
 ---
 title: "modChunk"
 translation: "extending-modx/core-model/modchunk"
+description: "Это базовый класс Chunk для MODX Revolution"
 ---
 
 ## modChunk класс
