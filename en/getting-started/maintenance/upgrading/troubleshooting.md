@@ -2,6 +2,7 @@
 title: "Troubleshooting Upgrades"
 _old_id: "491"
 _old_uri: "2.x/administering-your-site/upgrading-modx/troubleshooting-upgrades"
+sortorder: 1
 ---
 
 ## Common Problems
@@ -30,7 +31,7 @@ If you've never had problems with min before and you happen to have installed th
 
 ## Still Problems?
 
-File a bug here: <http://tracker.modx.com/> and we'll get right to the issue.
+[Get help on the forum](https://community.modx.com) or from a [MODX Professional](https://modx.com/professional/).
 
 ## See Also
 
