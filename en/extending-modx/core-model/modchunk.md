@@ -1,7 +1,6 @@
 ---
 title: "modChunk"
-_old_id: "197"
-_old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modchunk"
+description: "This is the Chunk base class for MODX Revolution"
 ---
 
 ## The modChunk Class
@@ -15,9 +14,5 @@ This is the Chunk base class for MODX Revolution.
 
 ## See Also
 
-| Page: [(at)CHUNK](/evolution/0.9.x/developers-guide/template-variables/(at)-binding/(at)chunk) |
-|------------------------------------------------------------------------------------------------|
-| Page: [(at)CHUNK](/evolution/1.0/developers-guide/template-variables/(at)-binding/(at)chunk) |
-| Page: [modChunk](extending-modx/core-model/modchunk) |
-| Page: [modChunk.setContent](extending-modx/core-model/modchunk/modchunk.setcontent) |
-| Page: [modChunk.getContent](extending-modx/core-model/modchunk/modchunk.getcontent) |
+- [modChunk.setContent](extending-modx/core-model/modchunk/modchunk.setcontent)
+- [modChunk.getContent](extending-modx/core-model/modchunk/modchunk.getcontent)

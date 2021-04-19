@@ -25,4 +25,4 @@ See these tickets for more information:
 
 ### Access Denied Error
 
-If you have HTML5 caching enabled try disabling it and clear your browser cache. (<http://tracker.modx.com/issues/7340>)
+If you have HTML5 caching enabled try disabling it and clear your browser cache. (<https://github.com/modxcms/revolution/issues/7340>)

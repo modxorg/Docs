@@ -14,7 +14,7 @@ With the `GatewayManager` you're able to make your domains available for certain
 
 ### History
 
-`GatewayManager`, was written by Bert Oost ([www.oostdesign.com](httpы://www.oostdesign.com)), a simple but effective component to handle domains and contexts inside MODX, and first released on November 13th, 2011.
+`GatewayManager`, was written by Bert Oost ([www.oostdesign.com](https://www.oostdesign.com)), a simple but effective component to handle domains and contexts inside MODX, and first released on November 13th, 2011.
 It is now developed and maintained by Anton Tarasov at ([https://github.com/himurovich/MODX-GatewayManager](https://github.com/himurovich/MODX-GatewayManager))
 
 ### Download

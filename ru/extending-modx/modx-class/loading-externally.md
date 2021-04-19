@@ -1,11 +1,11 @@
 ---
-title: "Loading MODX Externally"
-_old_uri: "2.x/developing-in-modx/other-development-resources/loading-modx-externally"
+title: "Загрузка MODX извне"
+translation: "extending-modx/modx-class/loading-externally"
 ---
 
 ## Загрузка объекта modX
 
-Использование объекта modX (и все его соответствующие классы) довольно просто. Все, что вам нужно, это код:
+Использовать объекта modX (и все его соответствующие классы) довольно просто. Все, что вам нужно, это следующий код:
 
 ``` php
 require_once '/absolute/path/to/modx/config.core.php';
@@ -15,7 +15,7 @@ $modx->initialize('web');
 $modx->getService('error','error.modError', '', '');
 ```
 
-Это инициализирует объект MODX в 'web' [Context](building-sites/contexts "Contexts"). Теперь, если вы хотите получить к нему доступ в другом контексте (и тем самым изменить его права доступа, политики и т.д.), Вам просто нужно изменить 'web' на что угодно [Context](building-sites/contexts "Contexts"), что вы хотите загрузить. Это также загружает обработчик ошибок MODX.
+Это инициализирует объект MODX в `web` [Контексте](building-sites/contexts "Контексты"). Теперь, если вы хотите получить к нему доступ в другом контексте (и тем самым изменить его права доступа, политики и т.д.), вам просто нужно изменить `web` на любой другой [Контекст](building-sites/contexts "Контексты"), тот, что вы хотите загрузить. Это также загружает обработчик ошибок MODX.
 
 Оттуда вы можете использовать любые методы, функции или классы MODX.
 
@@ -37,17 +37,17 @@ $modx->initialize('mgr');
 
 ## Устаревший пример
 
-Этот пример является устаревшим. Так что лучше измените свой код, если вы все еще используете MODX\_API\_MODE.
-Вы также можете использовать MODX в своем режиме API, а затем включить основной index.php файл для вашего сайта:
+Этот пример является устаревшим. Так что лучше измените свой код, если вы все еще используете `MODX_API_MODE`.
+Вы также можете использовать MODX в своем режиме API, а затем включить основной `index.php` файл для вашего сайта:
 
 ``` php
 define('MODX_API_MODE', true);
-// Full path to the index
+// Полный путь до index.php
 require_once('/path/to/modx/public_html/index.php');
 $modx->initialize('mgr');
 ```
 
 ## Смотрите также
 
-- [Developer Introduction](extending-modx/getting-started/developer-introduction "Developer Introduction")
-- [xPDO](extending-modx/xpdo "Home"), the db-layer for Revolution
+- [Введение для разработчиков](extending-modx/getting-started/developer-introduction)
+- [xPDO](extending-modx/xpdo "xPDO"), уровень базы данных для Revolution
