@@ -2,6 +2,7 @@
 title: "Upgrading from MODX Evolution"
 _old_id: "320"
 _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-from-modx-evolution"
+sortorder: 99
 ---
 
 Due to the significant differences in the codebases, tag syntax, and users, upgrading from MODX Evolution to Revolution is more involved process with a number of manual steps.
