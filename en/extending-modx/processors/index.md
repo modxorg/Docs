@@ -87,7 +87,7 @@ $id = $response->response['object']['id'];
 ```
 
 Here we create a new resource using standard processor from `$_POST` data and get resource `id` from response.
-[Here is the source code] (https://github.com/bezumkin/miniShop/blob/master/core/components/minishop/processors/mgr/goods/create.php) the entire miniShop processor to create a new product.
+[Here is the source code](https://github.com/bezumkin/miniShop/blob/master/core/components/minishop/processors/mgr/goods/create.php) the entire miniShop processor to create a new product.
 
 This approach ensures that regardless of future changes to MODX, its processor will work in all versions. And, very importantly, **plugins will work** that should work when creating new resources. Also, `alias` will be generated (if you use them), and as indicated in the System Settings, through transliteration, or not.
 Updating products works the same way, and for example [mSearch](https://docs.modx.pro/en/components/msearch2) gets `OnDocFormSave` event and indexes this resource.
