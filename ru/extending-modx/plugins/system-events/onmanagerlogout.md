@@ -40,5 +40,5 @@ switch($eventName) {
 - [OnBeforeWebLogout event](extending-modx/plugins/system-events/onbeforeweblogout "OnBeforeWebLogout")
 - [OnBeforeManagerLogout event](extending-modx/plugins/system-events/onbeforemanagerlogout "OnBeforeManagerLogout")
 - [OnWebLogout event](extending-modx/plugins/system-events/onweblogout "OnWebLogout")
-- [Системные события](extending-modx/plugins/system-events "Системные события")
-- [Плагины](extending-modx/plugins "Плагины")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

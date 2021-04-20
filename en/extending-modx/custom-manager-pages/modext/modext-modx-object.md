@@ -41,6 +41,20 @@ There are a few other variables available on the MODx.config object that are not
 | site\_url                 | The full Site URL for the active context.                                                    |
 | custom\_resource\_classes | An array of custom Resource classes pulled from the System Setting custom\_resource\_classes |
 
+### MODx.action
+
+This object contains a map of all the modAction objects (or MODX manager controllers), mapped by their controller to their ID:
+
+``` javascript
+var actionId = MODx.action['resource/create'];
+```
+
+As of MODX 2.2, the non-core Actions are prefixed with their namespace. Prior to 2.2 it would just be the action controller. For example a "controllers/index" action in a "mycomponent" namespace would be retrievable using the following in 2.2 and up:
+
+``` javascript
+var actionId = MODx.action['mycomponent:controllers/index'];
+```
+
 ### MODx.version
 
 Contains MODX version information, with the following attributes:
@@ -137,7 +151,7 @@ This method will automatically logout the active manager user. It fires the 'bef
 
 ### MODx.loadHelpPane
 
-This will load the current Help screen for the active page. Its URL is set from the `MODx.config.help_url` property; you can override this to fire up any URL into the panel:
+This will load the current Help screen for the active page. Normally this is set by default on the modAction record for the page, and its URL can be found by the MODx.config.help\_url property. You can, however, override this to fire up any URL into the panel:
 
 ``` javascript
 /* show the modx.com site in the Help modal */

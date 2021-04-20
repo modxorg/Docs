@@ -8,7 +8,7 @@ Users using Revolution 2.0.0-beta-4 or earlier should note that the defines are 
 
 A build script. What is that, you might ask? This is the meat of the packaging process; here is where your component is actually put into the nice, neat .zip transport package that you find on modxcms.com or through Revolution's Package Management section.
 
-This tutorial will guide you through how to create one of those scripts. We'll be using a sample component called Quip, which contains a few menus, some chunks and a snippet, lexicons, setup options, a license, a readme, and system settings. It's basically a quick, easy run through of all the basics to creating a fundamental build script.
+This tutorial will guide you through how to create one of those scripts. We'll be using a sample component called Quip, which contains a modAction, a few menus, some chunks and a snippet, lexicons, setup options, a license, a readme, and system settings. It's basically a quick, easy run through of all the basics to creating a fundamental build script.
 
 ## Directory Structure
 
@@ -35,7 +35,7 @@ $tstart = $mtime;
 set_time_limit(0); /* makes sure our script doesnt timeout */
 ```
 
-Now let's define some basic paths. We can define these up top into a "sources" array to make them easier to reach later in the build script. Note how the 'source\_core' and 'source\_assets' directories do _not_ post-fix a foreslash onto their paths. This is required.
+Now let's define some basic paths. We can define these up top into a "sources" array to make them easier to reach later in the build script. Note how the 'source*core' and `source_assets` directories do \_not* post-fix a foreslash onto their paths. This is required.
 
 ```php
 $root = dirname(dirname(__FILE__)).'/';
@@ -95,12 +95,8 @@ $builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
 ```
 
 The modPackageBuilder::createPackage function has 3 parameters:
-
--   name,
--   version,
--   release.
-
-For us we'll be doing quip-0.1-alpha7, so let's go with that.
+_name_, _version_, and _release_. For us,
+we'll be doing quip-0.1-alpha7, so let's go with that.
 
 Next, we'll register a [Namespace](extending-modx/namespaces "Namespaces") to this package. Not all packages need [Namespaces](extending-modx/namespaces "Namespaces"); but all 3rd Party Components do. Basically, a Namespace is an organizing tool for MODX so that MODX can know what objects are tied to what package. This is helpful later on should we want to uninstall our package; we'd want it to remove the objects we'd install.
 
@@ -131,14 +127,22 @@ So, first off, we created a snippet object. Note that you'll have to specify an 
 
 Simple enough? So our example tells it to look for a Snippet named 'Test', and if it finds it, update its contents. If it doesnt find it, create it. However, if it does find it; we told MODX not to update its PK - there's no need to adjust that in this situation.
 
-Let's also package in the modMenu:
+Now, what about related objects? What if I want to package in my modMenu, along with its Action associated with the modMenu? Here's a bit more complex scenario:
 
 ```php
+$action= $modx->newObject('modAction');
+$action->fromArray(array(
+    'id' => 1,
+    'namespace' => 'quip',
+    'parent' => '0',
+    'controller' => 'index',
+    'haslayout' => '1',
+    'lang_topics' => 'quip:default,file',
+    'assets' => '',
+),'',true,true);
 $menu= $modx->newObject('modMenu');
 $menu->fromArray(array(
     'text' => 'quip',
-    'namespace' => 'quip',
-    'action' => 'index',
     'parent' => 'components',
     'description' => 'quip_desc',
     'icon' => 'images/icons/plugin.gif',
@@ -146,21 +150,30 @@ $menu->fromArray(array(
     'params' => '',
     'handler' => '',
 ),'',true,true);
+$menu->addOne($action);
 $vehicle= $builder->createVehicle($menu,array (
     xPDOTransport::PRESERVE_KEYS => true,
     xPDOTransport::UPDATE_OBJECT => true,
     xPDOTransport::UNIQUE_KEY => 'text',
+    xPDOTransport::RELATED_OBJECTS => true,
+    xPDOTransport::RELATED_OBJECT_ATTRIBUTES => array (
+        'Action' => array (
+            xPDOTransport::PRESERVE_KEYS => false,
+            xPDOTransport::UPDATE_OBJECT => true,
+            xPDOTransport::UNIQUE_KEY => array ('namespace','controller'),
+        ),
+    ),
 ));
 ```
 
-## Related objects
-
-When packing in related objects, you need 2 new parameters:
+Okay, a bit more meat here. We're introducing 2 new parameters:
 
 -   `xPDOTransport::RELATED_OBJECTS` _(boolean)_ - Either true or false, this will tell MODX we want to search for related objects to this object. This must be set for the next parameter to work.
 -   `xPDOTransport::RELATED_OBJECT_ATTRIBUTES` _(array)_ - This defines the types and details of the related objects we want to grab. If you note, the format is simply an associative array of attributes - similar to the parent object's attributes - where the key is the "alias" of the related object we want to grab. The aliases can be found in the Schema, located in _core/model/schema/modx.mysql.schema.xml_.
 
-You need to associate related objects to eachother with the `addOne` or `addMany` functions before calling `$builder->createVehicle`. This can be nested as deep as you need.
+So our example above tells us on the modAction (found by looking for the modAction with a namespace of 'quip' and a controller of 'index') to include the related modAction object that we package in. We packaged them in manually using xPDO's addOne function on the modAction.
+
+Also, if we wanted to package in related objects to the modAction objects, we would just have had to define that in the 'Action' attributes and addMany (or addOne) on that action. You can go however deep in nesting that you want.
 
 So, back to our script. To recap, so far we have:
 
@@ -206,7 +219,7 @@ $builder->createPackage('quip','0.1','alpha5');
 $builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
 ```
 
-So, let's first package the menu for our backend:
+So, let's first package in our modActions and modMenus for our backend:
 
 ```php
 /* load action/menu */
@@ -216,6 +229,14 @@ $vehicle= $builder->createVehicle($menu,array (
     xPDOTransport::PRESERVE_KEYS => true,
     xPDOTransport::UPDATE_OBJECT => true,
     xPDOTransport::UNIQUE_KEY => 'text',
+    xPDOTransport::RELATED_OBJECTS => true,
+    xPDOTransport::RELATED_OBJECT_ATTRIBUTES => array (
+        'Action' => array (
+            xPDOTransport::PRESERVE_KEYS => false,
+            xPDOTransport::UPDATE_OBJECT => true,
+            xPDOTransport::UNIQUE_KEY => array ('namespace','controller'),
+        ),
+    ),
 ));
 $builder->putVehicle($vehicle);
 unset($vehicle,$action); /* to keep memory low */
@@ -271,9 +292,7 @@ $snippet->setProperties($properties);
 $category->addMany($snippet);
 ```
 
-We're using the addMany method here, and not the addOne method. Wether you need to use one or the other does not so much depend on the amount of objects you are relating (in this case only one snippet), but the cardinality of the relationship.
-
-That may sound complex - but the cardinality simply means if it is a one-on-one or one-to-many relationship. In this case, a category has a one-to-many relationship with snippets (there can be many snippets in one category) and that means you will have to use the addMany method. You can pass an array of objects or just one object to that method, but which one you use depends on the cardinality. Read more about [relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships"), [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany").
+We're using the addMany method here, and not the addOne method. Wether you need to use one or the other does not so much depend on the amount of objects you are relating (in this case only one snippet), but the cardinality of the relationship. That may sound complex - but the cardinality simply means if it is a one-on-one or one-to-many relationship. In this case, a category has a one-to-many relationship with snippets (there can be many snippets in one category) and that means you will have to use the addMany method. You can pass an array of objects or just one object to that method, but which one you use depends on the cardinality. Read more about [relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships"), [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany").
 
 You'll use modSnippet's setProperties function to pass in an array of property arrays. So, let's take a look at that properties.inc.php file:
 
@@ -388,7 +407,7 @@ We have our lexicon structured nicely in our _core/components/quip/lexicon_ dire
 
 As you can see, we have a subdirectory as 'en', the IANA code for English. Then, we have a 'default.inc.php' - this represents the 'default' lexicon topic. Should we want to create separate lexicon topics, we would name them 'topicname.inc.php'.
 
-As of MODX Revolution RC-2, MODX will automatically find the lexicons in your lexicon directory, assuming that you put them in this structure in the following place: `{namespace_path}lexicon/`, where the Namespace path is the path you put for your Namespace earlier. You don't have to build in the lexicons directly at all; MODX will parse it for you.
+As of MODX Revolution RC-2, MODX will automatically find the lexicons in your lexicon directory, assuming that you put them in this structure in the following place: '{namespace_path}lexicon/', where the Namespace path is the path you put for your Namespace earlier. You don't have to build in the lexicons directly at all; MODX will parse it for you.
 
 This is because the lexicons are cached first from your files, then any overrides from the DB are merged and cached. This allows people to 'override' your lexicons by using Lexicon Management in the Manager, should they choose to, without breaking their upgrade path for your Component.
 
@@ -413,9 +432,9 @@ $builder->setPackageAttributes(array(
 ));
 ```
 
-Obviously our license and readme values are being passed the contents of our license and readme files. We're doing them via `file_get_contents()` so that we can still store the actual files in the \_modx/core/components/quip/docs\* directory after install, should the user want to view them later.
+Obviously our license and readme values are being passed the contents of our license and readme files. We're doing them via file\*get*contents() so that we can still store the actual files in the \_modx/core/components/quip/docs* directory after install, should the user want to view them later.
 
-But 'setup-options' looks a little different. We could just pass a `file_get_contents()` call that puts in a string, but then our setup options form wouldn't be dynamic! There might be cases where you wouldn't want that, but we do. We want this options form to upgrade well. Note that you have to pass the file location as the 'source' parameter - remember Resolvers? Looks familiar, eh? Same idea.
+But 'setup-options' looks a little different. We could just pass a file_get_contents() call that puts in a string, but then our setup options form wouldn't be dynamic! There might be cases where you wouldn't want that, but we do. We want this options form to upgrade well. Note that you have to pass the file location as the 'source' parameter - remember Resolvers? Looks familiar, eh? Same idea.
 
 Our setup.options.php file looks like this:
 

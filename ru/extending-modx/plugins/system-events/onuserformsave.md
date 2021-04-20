@@ -20,5 +20,5 @@ translation: "extending-modx/plugins/system-events/onuserformsave"
 
 ## Смотри также
 
-- [Системные события](extending-modx/plugins/system-events "Системные события")
-- [Плагины](extending-modx/plugins "Плагины")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

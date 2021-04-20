@@ -106,7 +106,7 @@ Click Save and you'll see your menu item added to the tree under 'Extras'.
 
 [Lexicons](extending-modx/internationalization "Internationalization") in MODX Revolution allow you to provide MODX with translations for your Extra (and anything, really) in any language. We want our Extra to be i18n-compatible, so we want to utilize this feature. Each string (also called an Entry) has its own key, such as 'doodles.desc'. The common practice for Lexicon keys for Extras is to prefix them with the Namespace path and a dot. This prevents collisions with other Extras.
 
-Lexicon strings are collected in files called 'Lexicon Topics'. This means your strings can be isolated by a specific area (similar to how the _core/lexicon/_ directory does it), and makes it so you don't have to load _all_ the strings for your Extra when you may only want to load a few.
+Lexicon strings are collected in files called 'Lexicon Topics'. This means your strings can be isolated by a specific area (similar to how the core/lexicon/ directory does it), and makes it so you don't have to load _all_ the strings for your Extra when you may only want to load a few.
 
 If you wanted to use your Lexicons in a Snippet, you could use `$modx->lexicon->load('doodles:default')`. This would load the 'default' topic from the 'doodles' Namespace. For CMPs, however, this is a little different; you load it in the Controller class via the getLanguageTopics method. This method expects an array to return that will specify the Lexicon Topics to load so we can easily access them.
 
@@ -114,7 +114,7 @@ But we haven't actually _made_ that Lexicon Topic file, so let's go do this now.
 
 > {namespace_path}/lexicon/{language}/{topic}.inc.php
 
-So we'll go ahead and create our file here: _/www/doodles/core/components/doodles/lexicon/en/default.inc.php_ and fill it with this:
+So we'll go ahead and create our file here: /www/doodles/core/components/doodles/lexicon/en/default.inc.php and fill it with this:
 
 ```php
 <?php
@@ -141,7 +141,7 @@ $_lang['doodles.search...'] = 'Search...';
 $_lang['doodles.top_downloaded'] = 'Top Downloaded Doodles';
 ```
 
-There's quite a few strings in there! We'll use them, don't worry. Note that all we're doing is filling a PHP array called `$_lang`. That's it. MODX will do the rest.
+There's quite a few strings in there! We'll use them, don't worry. Note that all we're doing is filling a PHP array called `$_lang`. That's it; MODX will do the rest.
 
 You can also see our 'doodles' and 'doodles.desc' strings we referenced earlier in here.
 
@@ -155,7 +155,7 @@ We're going to need to setup a basic controller first before we can proceed with
 
 ### The Base Controller
 
-Let's create our controller at: _/www/doodles/core/components/doodles/controllers/index.class.php_. And put this in it:
+Let's create our controller at: /www/doodles/core/components/doodles/controllers/index.class.php. And put this in it:
 
 ```php
 <?php
@@ -191,7 +191,7 @@ class DoodlesIndexManagerController extends modExtraManagerController {
 }
 ```
 
-A bit of explanation here. What we're doing is creating a Controller Class (`DoodlesIndexManagerController`) for our Extra that extends `modExtraManagerController`, a special class for developing Extras. MODX 2.3 does request routing via Controller classes, which are all sorts of powerful. But in our Controller for our Extra, we want to make sure to always append some CSS/JS (similar to MODX 2.1 and earlier's header.php file), and also give our Controller access to the Doodles class object.
+A bit of explanation here. What we're doing is creating a Controller Class (DoodlesIndexManagerController) for our Extra that extends modExtraManagerController, a special class for developing Extras. MODX 2.3 does request routing via Controller classes, which are all sorts of powerful. But in our Controller for our Extra, we want to make sure to always append some CSS/JS (similar to MODX 2.1 and earlier's header.php file), and also give our Controller access to the Doodles class object.
 
 So, we do that in the `initialize()` method, which is called when a controller is loaded. Secondly, we define the `getLanguageTopics()` method to tell MODX to load our lexicon file for the manager. We then define `checkPermissions()`, which basically says if it doesn't return true, deny access to this controller page.
 
@@ -249,9 +249,9 @@ Doodles.page.Home = function (config) {
         components: [
             {
                 xtype: "doodles-panel-home",
-                renderTo: "doodles-panel-home-div"
-            }
-        ]
+                renderTo: "doodles-panel-home-div",
+            },
+        ],
     });
     Doodles.page.Home.superclass.constructor.call(this, config);
 };
@@ -259,7 +259,7 @@ Ext.extend(Doodles.page.Home, MODx.Component);
 Ext.reg("doodles-page-home", Doodles.page.Home);
 ```
 
-Okay, let's explain. The first thing that happens is that we tell ExtJS, when the page is nice and loaded, "load" the component (or widget/object/panel) with 'xtype' _doodles-page-home_. How ExtJS works is that it allows you to define components with an 'xtype', which is kind of like a unique identifier for a panel, tree, etc. Think of it like an ID for a class. `MODx.load` simply instantiates that object.
+Okay, let's explain. The first thing that happens is that we tell ExtJS, when the page is nice and loaded, "load" the component (or widget/object/panel) with 'xtype' _doodles-page-home_. How ExtJS works is that it allows you to define components with an 'xtype', which is kind of like a unique identifier for a panel, tree, etc. Think of it like an ID for a class. MODx.load simply instantiates that object.
 
 Below that, we actually define the 'doodles-page-home' object, and make it extend MODx.Component. MODx.Component is basically an abstracted JS class that renders a page in the MODX manager interface. It provides a few helper methods that make quick generation of MODX pages smoother. All we have to pass into it is the components we want to load; currently, in this case, the 'doodles-panel-home' component (which we haven't defined yet; it'll be in the home.panel.js file mentioned earlier). We also want it to render to the DOM ID of 'doodles-panel-home-div', which, as you might remember, was the "div" we returned earlier in our `controllers/index.class.php` controller.
 
@@ -301,10 +301,10 @@ Doodles.panel.Home = function (config) {
                                 border: false,
                                 bodyCssClass: "panel-desc",
                             } /*,{
-                                xtype: 'doodles-grid-doodles'
-                                ,cls: 'main-wrapper'
-                                ,preventRender: true
-                            }*/,
+                    xtype: 'doodles-grid-doodles'
+                    ,cls: 'main-wrapper'
+                    ,preventRender: true
+                }*/,
                         ],
                     },
                 ],
@@ -381,7 +381,7 @@ First off, go ahead and uncomment this line in your index.class.php controller:
 $this->addJavascript($doodles->config['jsUrl'].'mgr/widgets/doodles.grid.js');
 ```
 
-This tells MODX to load the grid widget file, which we'll now create at _/www/doodles/assets/components/doodles/js/mgr/widgets/doodles.grid.js_:
+This tells MODX to load the grid widget file, which we'll now create at /www/doodles/assets/components/doodles/js/mgr/widgets/doodles.grid.js:
 
 ```javascript
 Doodles.grid.Doodles = function (config) {
@@ -449,8 +449,7 @@ Finally, let's add the grid to our panel. Remove the comment tags in the home.pa
         xtype: "doodles-grid-doodles",
         cls: "main-wrapper",
         preventRender: true,
-    }
-,
+    },
 ];
 ```
 
@@ -519,7 +518,7 @@ The great thing, though, is you won't have to worry about this. MODX already han
 
 The second reason loading the connector file directly won't work is that we didn't specify a routing path - remember baseParams in the grid? Remember how we set the 'action' param in it to 'mgr/doodle/getList'? That's our routing path. That tells the connector to load the file at:
 
-> _/www/doodles/core/components/doodles/processors/mgr/doodle/getlist.class.php_
+> /www/doodles/core/components/doodles/processors/mgr/doodle/getlist.class.php
 
 So let's go ahead and make that file to give our grid some data:
 
@@ -553,7 +552,7 @@ Great! We've got a working grid. Now, let's add some functionality to it, since 
 
 ### Adding Search
 
-Add this bit of code to your grid panel in _widgets/doodles.grid.js_, right after the columns: definition at line 29:
+Add this bit of code to your grid panel in widgets/doodles.grid.js, right after the columns: definition at line 29:
 
 ```javascript
 ,tbar:[{
@@ -615,7 +614,7 @@ This will pass a 'query' REQUEST parameter to our getList Processor in the getli
     }
 ```
 
-The `modObjectGetListProcessor` assistance class lets us extend the `prepareQueryBeforeCount()` method to modify the [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") object before it's passed to the `getCount()` method. All we have to do is return our modified query object. We're going to extend it here to add searchability to our grid via the "query" parameter. Note we can get whatever that parameter is via the neat `->getProperty()` method.
+The modObjectGetListProcessor assistance class lets us extend the `prepareQueryBeforeCount()` method to modify the [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") object before it's passed to the `getCount()` method. All we have to do is return our modified query object. We're going to extend it here to add searchability to our grid via the "query" parameter. Note we can get whatever that parameter is via the neat `->getProperty()` method.
 
 Now load your grid, and you'll get:
 
@@ -708,7 +707,7 @@ MODx.Window wraps Ext.Window, but provides a form inside that will automatically
 
 ![](img/26.png)
 
-Excellent! We've got a nice little update window. Now as you probably noticed in our baseParams, we're looking now for the 'mgr/doodle/update' processor. So let's create a file at: _/www/doodles/core/components/doodles/processors/mgr/doodle/update.class.php_:
+Excellent! We've got a nice little update window. Now as you probably noticed in our baseParams, we're looking now for the 'mgr/doodle/update' processor. So let's create a file at: /www/doodles/core/components/doodles/processors/mgr/doodle/update.class.php:
 
 ```php
 <?php
@@ -851,7 +850,7 @@ MODExt also has automatic inline editing built right into its grids. Simply add 
 ,autosave: true
 ```
 
-That tells the grid to turn on inline editing and saving; and also to send any saves to the processor at _mgr/doodle/updateFromGrid_. So let's create it, at: _/www/doodles/core/components/doodles/processors/mgr/doodle/updatefromgrid.class.php_:
+That tells the grid to turn on inline editing and saving; and also to send any saves to the processor at mgr/doodle/updateFromGrid. So let's create it, at: /www/doodles/core/components/doodles/processors/mgr/doodle/updatefromgrid.class.php:
 
 ```php
 require_once (dirname(__FILE__).'/update.class.php');

@@ -24,24 +24,21 @@ translation: "getting-started/getting-started"
 
 В дополнение к отправке с начальным ресурсом MODX также предоставляет начальный шаблон с именем «BaseTemplate». Этот шаблон находится на вкладке «Элементы» в разделе «Шаблоны». Редактирование этого шаблона может быть выполнено нажатием на сам шаблон, «BaseTemplate». Отсюда можно внести изменения в шаблон, описание и содержание, например, в приведенный ниже пример.
 
-```html
+ ```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <base href="[[!++site_url]]" />
-        <title>[[*pagetitle]]</title>
-        <!-- Continue to insert your css, scripts and other assets here -->
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        />
-    </head>
-    <body>
-        <main>
-            [[*content]]
-        </main>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <base href="[[!++site_url]]" />
+    <title>[[*pagetitle]]</title>
+    <!-- Continue to insert your css, scripts and other assets here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <main>
+        [[*content]]
+    </main>
+</body>
 </html>
 ```
 
@@ -56,12 +53,3 @@ translation: "getting-started/getting-started"
 ## Создание нового шаблона
 
 Чтобы создать новый шаблон, нажмите на вкладку «Элементы», а затем найдите значок «+» рядом с текстом «Шаблоны». Кроме того, можно создать новый шаблон, щелкнув правой кнопкой мыши текст «Шаблоны» и выбрав «Новый шаблон» или «Шаблон быстрого создания». Отсюда приступите к редактированию шаблона, как описано ранее.
-
-## Изменение пользовательского интерфейса и настройек безопасности
-
-MODX имеет мощное управление пользователями и группами, а также позволяет изменить метод входа в систему. Стоит обратить внимание на настройку пользователей, сделать форму менеджера Кастомизация и прочее:
-
--   [Управление пользователями и группами](building-sites/client-proofing/security/users)
--   [Настройка панели управления](building-sites/client-proofing/form-customization)
--   [Тема панели управления](building-sites/client-proofing/custom-manager-themes)
--   [Вход без пароля](building-sites/client-proofing/security/passwordless-login)

@@ -5,19 +5,19 @@ translation: "extending-modx/plugins/system-events/onfilemanagerdirremove"
 
 ## Событие: OnFileManagerDirRemove
 
-Срабатывает после удаления каталога через менеджер.
+ Срабатывает после удаления каталога через менеджер.
 
-Служба: 1 - Parser Service Events
-Группа: Нет
+ Служба: 1 - Parser Service Events
+ Группа: Нет
 
 ## Параметры события
 
-| Имя       | Описание                                             |
-| --------- | ---------------------------------------------------- |
-| directory | Содержит полный путь к каталогу, который был удален. |
-| source    | Содержит объект медиаресурса.                        |
+ | Имя       | Описание                                             |
+ | --------- | ---------------------------------------------------- |
+ | directory | Содержит полный путь к каталогу, который был удален. |
+ | source    | Содержит объект медиаресурса.                        |
 
 ## Смотри также
 
--   [Системные события](extending-modx/plugins/system-events)
--   [Plugins](extending-modx/plugins)
+- [System Events](extending-modx/plugins/system-events)
+- [Plugins](extending-modx/plugins)

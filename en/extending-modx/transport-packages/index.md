@@ -45,7 +45,7 @@ In the 'manifest-vehicles' array, you'll see these keys for each vehicle:
 
 -   **vehicle_package** - This tells us what type of package is holding these vehicles. Currently the only type is 'transport'.
 -   **vehicle_class** - The class name of the type of Vehicle this is.
--   **class** - The class name of the DB object being transported, or `xPDOFileVehicle` if it's a file vehicle.
+-   **class** - The class name of the DB object being transported, or xPDOFileVehicle if it's a file vehicle.
 -   **guid** - A randomly generated GUID for the vehicle.
 -   **native_key** - If the vehicle is a database object, this will be its primary key by which it is identified.
 -   **filename** - Where the vehicle's source file can be found within the transport package's folder.

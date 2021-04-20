@@ -40,6 +40,20 @@ var tpl = MODx.config.default_template;
 | site_url                | Полный URL сайта для активного контекста.                                                           |
 | custom_resource_classes | Массив пользовательских классов ресурсов, извлеченных из системных настроек custom_resource_classes |
 
+### MODx.action
+
+Этот объект содержит карту всех объектов modAction (или контроллеров диспетчера MODX), сопоставленных их контроллером с их идентификатором:
+
+```javascript
+var actionId = MODx.action['resource/create'];
+```
+
+Начиная с MODX 2.2, неосновные действия имеют префикс своего пространства имен. До 2.2 это был бы просто контроллер действий. Например, действие «controllers/index» в пространстве имен «mycomponent» можно получить, используя следующую информацию в версии 2.2 и выше:
+
+```javascript
+var actionId = MODx.action['mycomponent:controllers/index'];
+```
+
 ### MODx.version
 
 Содержит информацию о версии MODX со следующими атрибутами:
@@ -92,9 +106,7 @@ var userId = MODx.user.id;
 | MODx.perm.directory_create | Создать каталог в файловой системе. |
 
 ```javascript
-if (MODx.perm.file_upload) {
-    /* ...код... */
-}
+if (MODx.perm.file_upload) { /* ...код... */ }
 ```
 
 ## Пользовательские методы
@@ -107,10 +119,10 @@ if (MODx.perm.file_upload) {
 
 ```javascript
 var w = MODx.load({
-    xtype: "modx-window-namespace-create",
-    blankValues: true
+  xtype: 'modx-window-namespace-create'
+  ,blankValues: true
 });
-w.setValues({ name: "My Namespace" });
+w.setValues({ name: 'My Namespace' });
 w.show();
 ```
 
@@ -134,15 +146,15 @@ MODx.sleep(3); /* остановиться на 3 секунды */
 
 ### MODx.logout
 
-Этот метод автоматически выведет из менеджера активного пользователя. Он запускает события `beforeLogout` и `afterLogout` объекта MODx. Если оба события успешны, он перенаправит пользователя на экран входа в систему.
+Этот метод автоматически выведет из менеджера активного пользователя. Он запускает события beforeLogout и afterLogout объекта MODx. Если оба события успешны, он перенаправит пользователя на экран входа в систему.
 
 ### MODx.loadHelpPane
 
-Это загрузит текущий экран справки для активной страницы. Его URL задается из свойства `MODx.config.help_url`. Вы можете переопределить это, чтобы запустить любой URL в панели:
+Этот метод загрузит текущий экран справки для активной страницы. Обычно это устанавливается по умолчанию в записи modAction для страницы, а ее URL-адрес можно найти с помощью свойства MODx.config.help_url. Однако вы можете переопределить его поведение, чтобы запустить любой URL на панели:
 
 ```javascript
 /* Показать сайт в модальном окне справки */
-MODx.config.help_url = "https://modx.com/";
+MODx.config.help_url = 'https://modx.com/';
 MODx.loadHelpPane();
 ```
 
@@ -154,14 +166,14 @@ MODx.loadHelpPane();
 
 Проверяет, является ли указанная переменная «пустой» (в смысле PHP). Это означает, что это либо:
 
--   false, 'false', или 'FALSE'
--   0 или '0'
--   '' (пустая строка)
--   null (нуль)
--   undefined (неопределено)
+- false, 'false', или 'FALSE'
+- 0 или '0'
+- '' (пустая строка)
+- null (нуль)
+- undefined (неопределено)
 
 ### MODx.debug
 
 (Только с версии 2.1+)
 
-Это отправит сообщение об отладке тогда и только тогда, когда MODX [Системные настройки](_legacy/administering-your-site/settings "Настройки") [ui_debug_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") установлен в Yes/1. Отладочное сообщение будет использовать console.log для вывода на консоль. Это может быть полезно для добавления отладки и утверждений в ваш код, не нарушая его на рабочих сайтах (что, вероятно, [ui_debug_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") off).
+Этот метод отправит сообщение об отладке тогда и только тогда, когда для [системной настройки](_legacy/administering-your-site/settings "Settings")  MODX  [ui_debug_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") установлено значение Да/1. Отладочное сообщение будет использовать console.log для вывода на консоль. Это может быть полезно для добавления отладки и сравнений в ваш код, не нарушая его на рабочих сайтах (которые, вероятно, отключили бы [ui_debug_mode](building-sites/settings/ui_debug_mode "ui_debug_mode")).

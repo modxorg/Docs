@@ -1,10 +1,10 @@
 ---
-title: "Friendly URLs on nginx"
+title: "Nginx Server Config"
 _old_id: "376"
 _old_uri: "2.x/getting-started/installation/basic-installation/nginx-server-config"
 ---
 
-Here is an example config for a MODX installation on an nginx server (php-fpm is required for nginx servers) to enable friendly urls.
+Here is an example config for a MODX installation on an nginx server (php-fpm is required for nginx servers). This example enables MODX FURLs as well.
 
 ``` php
 server {
@@ -44,3 +44,10 @@ This is _**codependent**_ on how the www.conf (usually located at `/etc/php5/fpm
 The nginx config file needs to specify the _**same**_ connection in _**both**_ files! \[NB: theoretically unix sockets will be faster, but in such case both resources need to be on the _**same**_ host. TCP is useful in a distributed environment. \]
 
 An alternative server configuration was suggested [in this forum topic](http://forums.modx.com/thread/70163/furls-not-working-after-upgrade-2-1-3-pl?page=2#dis-post-394442).
+
+Thanks for posting this, complete with FURL support :)
+
+Question: With **root /home/sites/example.com;** defined at the server level, is it necessary to include again in the first `location` block?
+ My understanding is that nginx configs are inherited from the top down, and therefore it could be removed in this case...
+
+In some cases (my guts say older versions of nginx) you might need to comment out the `fastcgi_split_path_info` directive.

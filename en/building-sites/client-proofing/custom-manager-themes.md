@@ -4,18 +4,32 @@ _old_id: "365"
 _old_uri: "2.x/administering-your-site/customizing-the-manager/manager-templates-and-themes"
 ---
 
-**Heads up**: when you use custom Manager theme you need to check that everything still works as expected after upgrading MODX. A custom Manager theme can conflict with or be missing important core changes that come in new MODX releases.
+**Heads up**: when you use custom manager themes or templates, you will need to make sure everything works as expected after upgrading MODX. It's not uncommon for custom manager templates to conflict with core changes.
 
-The MODX Manager uses a template similar to regular MODX pages. By default, the Manager template files live inside the `manager/templates/default` directory. By updating the MODX system setting for `manager\_theme` to point to a new directory, you can override any single file by copying its directory structure and adding just the templates you wish to override. You can override as few or as many templates as you desire, as long as you maintain identical directory layouts. The Manager will fall back to the `default` theme templates for any that have not been overridden.
+This about customizing the manager and its templates. For example if you want a customized manager login form.
 
-For example, to customize only the Manager Login page, you copy the following file into a new directory:
+The MODX manager uses a template much like regular MODX pages. The manager's template files live inside of **manager/templates/default** directory. You can update the system setting for the **manager\_theme** to point to the new directory.
+
+The way this is set up is just like extending a PHP class: you can override any single file by mimicking the directory structure and updating the **manager\_theme** directory.
+
+For 2.1 and earlier, you must copy the entire controllers and templates directory for your theme. 2.2 and later let you copy single files.
+
+For example, to customize just the Manager Login template, you could copy the following file into a new directory:
 
 >manager/templates/default/security/login.tpl
 
-To create a custom Manager login theme called **my-brand**, copy that file into a new directory:
+Copy that file into a new directory, for example here:
 
->manager/templates/**my-brand**/security/login.tpl
+>manager/templates/custom/security/login.tpl
 
-Then update your system setting for `manager\_theme` to point to the newly created `my-brand` directory. The version of the file from the `my-brand` directory will override the version of the file from the default directory.
+Then update your System Setting for **manager\_theme** to point to the newly created **custom** directory, and the version of the file from the **custom** directory will override the version of the file from the default directory.
 
-While far less common, you can similarly override the Controllers in the same way, replacing "templates" with "controllers" per above. If you don't know what that means, you don’t need to do so.
+You'll also have to copy this directory:
+
+>manager/controllers/default
+
+to a new directory with the same name as your new custom them directory, like so:
+
+>manager/controllers/custom
+
+This is because when you change the manager\_theme key value in System Settings it will also reference the new controllers directory. Of course you can probably change the path for that somewhere...

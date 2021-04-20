@@ -6,7 +6,7 @@ _old_uri: "2.x/case-studies-and-tutorials/adding-custom-fields-to-manager-forms"
 
 ## Adding a Custom Field
 
-Adding custom fields to manager forms - such as the Create Chunk, Update Resource, etc - in MODX Revolution is fairly straightforward. You just use the `OnFormRender` Plugin events.
+Adding custom fields to manager forms - such as the Create Chunk, Update Resource, etc - in MODX Revolution is fairly straightforward. You just use the On\*FormRender Plugin events.
 
 We want to add a field called 'Home' that puts an address field into the manager interface, and then stores it into the longtitle value (this is not the best place to store it, but let's go along with it for tutorial purposes :) ).
 

@@ -12,13 +12,10 @@ translation: "extending-modx/plugins/system-events/onbeforemanagerpageinit"
 
 ## Параметры события
 
-Обратите внимание, что параметры события для этого события изменились в 3.0.0-alpha2.
-
-| Имя            | Описание                                                         |
-| -------------- | ---------------------------------------------------------------- |
-| action         | Маршрут или действие для загрузки в текущем пространстве имен    |
-| namespace      | Пространство имен (в виде строки) для текущего пространства имен |
-| namespace_path | Основной путь для пространства имен                              |
+| Имя      | Описание                                                        |
+| -------- | --------------------------------------------------------------- |
+| action   | Конфигурационный массив текущего контроллера менеджера.         |
+| filename | Имя файла загружаемого контроллера. (**устарело с версии 2.2**) |
 
 ## Замечания
 
@@ -45,5 +42,5 @@ switch($eventName) {
 
 ## Смотри также
 
--   [System Events](extending-modx/plugins/system-events "System Events")
--   [Плагины](extending-modx/plugins "Плагины")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

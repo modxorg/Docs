@@ -13,13 +13,10 @@ Loaded right before a manager controller is run and after checking permissions.
 
 ## Event Parameters
 
-Please note that the event parameters for this event changed in 3.0.0-alpha2.
-
 | Name     | Description                                                             |
 | -------- | ----------------------------------------------------------------------- |
-| action   | The route or action to load in the current namespace  |
-| namespace | The namespace (as a string) for the current namespace |
-| namespace_path | The core path for the namespace |
+| action   | The config array of current manager controller.                         |
+| filename | The filename of the controller being loaded. (**Deprecated since 2.2**) |
 
 ## Remarks
 

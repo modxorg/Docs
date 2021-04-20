@@ -6,9 +6,9 @@ description: "Using Friendly URLs"
 
 You can have friendly URLs fully functioning in under two minutes by following a simple four step process.
 
-## 1. Enable rewrite rules 
+## 1) Working `.htaccess` sample
 
-MODX supplies an ht.access file for you to edit to match your server settings. It is located in the root of the MODX site. This file will be ignored by the server until you rename it or (better) copy it to a file called .htaccess. Whenever a browser requests a page, the server checks for a file called .htaccess, which can contain information about how various URLs should be handled.
+MODX supplies an `ht.access` file for you to edit to match your server settings It is located in the root of the MODX site. This file will be ignored by the server until you rename it or (better) copy it to a file called `.htaccess`. Whenever a browser requests a page, the server checks for a file called `.htaccess`, which can contain information about how various URLs should be handled.
 
 The `.htaccess` file can be anywhere above the MODX installation but the usual location is in the MODX site root (along with the `ht.access` file, and the `assets`, `manager` and `connectors` directories as shown in the image below). For most installs, you don't have to make any changes at all to the file in order to get FURLs working. There is one change you should make, but get FURLs working first and we'll cover that change at the end of this page.
 
@@ -89,7 +89,7 @@ The `RewriteBase` line should end with a '/' for root installations.
 The `RewriteBase` for a subdirectory installation may have to be entered as: `RewriteBase /subdirectoryName/` although this is normally only necessary on localhost installs.
 The `RewriteBase` line should almost always end with a slash.
 
-## 2. Configure Friendly URLs in MODX 
+## 2) Configure MODX Revolution
 
 Next, change the settings in the Friendly URLs Area of the MODX [System Settings](building-sites/settings) (see the following image). In MODX 2.3, click on the gear icon at the upper right and select "System Settings." In earlier versions, go to `System -> System Settings`. In the "Search by key" box at the upper right of the grid, type "friendly" (without the quotes), and press 'Enter'. That will display all the Friendly URL settings. The main one you want is toward the bottom: Use [Friendly URLs](building-sites/settings/friendly_urls) (`friendly_urls`). Double click on the "No" and change it to "Yes".
 
@@ -103,18 +103,15 @@ The Use Friendly Alias Path ([use_alias_path](building-sites/settings/use_alias_
 
 The [friendly_alias_urls](building-sites/settings/friendly_alias_urls) setting was removed in MODX 2.1+. Enabling [friendly_urls](building-sites/settings/friendly_urls) implies you are using `friendly_alias_urls` in 2.1+ and this setting was no longer useful or necessary.
 
-## 3. Add the base href tag to the head
+## 3) Edit your template(s)
 
 Make sure you have the following tag in the head section of all your templates. If you have only one front-end context (e.g., 'web') you can usually leave out the exclamation point to improve the speed of page loads:
-
 
 ``` html
 <base href="[[!++site_url]]" />
 ```
 
-This is necessary so that any relative URLs (`some/resource`) are resolved from the root of the site. 
-
-## 4. Clear the site cache
+## 4) Clear the site cache
 
 And you're done!
 
@@ -124,7 +121,7 @@ The easiest way to take advantage of using fully qualified Friendly URLs, is to 
 <a href="[[~1]]" title="some title">Some Page</a>
 ```
 
-## 5. (Optional) Convert WWW URLs to non-WWW or Vice Versa
+## 5) Convert WWW URLs to non-WWW or Vice Versa
 
 Earlier, we mentioned one change that you should always make to the .htaccess file once you have FURLs working. It concerns URLs that start with 'www' (or not). A user can reach most sites with the domain name, or the domain name preceded by 'www.' You should always convert the URL to one or the other. The reasons are complicated, but if you don't do this, odd things can happen on your site. Users who are logged in, for example, can suddenly lose that status.
 
