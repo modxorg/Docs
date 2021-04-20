@@ -10,7 +10,7 @@ Include a class by fully qualified name. This is a handy way to perform an `incl
 
 ## Syntax
 
-API Docs: <http://api.modx.com/xpdo/xPDO.html#loadClass>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::loadClass()>
 
 ``` php
 string|boolean loadClass (string $fqn, [ $path = ''], [ $ignorePkg = false], [ $transient = false])

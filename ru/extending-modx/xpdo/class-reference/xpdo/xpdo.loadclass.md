@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.loadclass"
 
 ## Синтаксис
 
-API Docs: <http://api.modx.com/xpdo/xPDO.html#loadClass>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::loadClass()>
 
 ```php
 string|boolean loadClass (string $fqn, [ $path = ''], [ $ignorePkg = false], [ $transient = false])

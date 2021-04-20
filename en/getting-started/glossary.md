@@ -155,7 +155,7 @@ An example of a file Resolver is one that copies the `assets/getResources` direc
 
 ## Setting Tags
 
-Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getting-started/glossary#system-setting), [Context Settings]((getting-started/glossary#context-setting)), and [User Settings]((getting-started/glossary#user-setting)).
+Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getting-started/glossary#system-setting), [Context Settings](getting-started/glossary#context-setting), and [User Settings](getting-started/glossary#user-setting).
 
 ## Snippet Tags
 

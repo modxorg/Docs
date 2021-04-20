@@ -11,7 +11,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getobject"
 
 ## Синтаксис
 
-API Docs: <http://api.modx.com/xpdo/xPDO.html#getObject>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getObject()>
 
 ```php
 xPDOObject|null getObject (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

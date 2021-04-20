@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.tojson"
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#toJSON>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::toJSON()>
 
 ```php
 string toJSON (array $array)

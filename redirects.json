@@ -2359,5 +2359,6 @@
     "/display/revolution20/Input+and+Output+Filters%28Output+Modifiers%29": "en/building-sites/tag-syntax/output-filters",
     "/display/revolution20/INHERIT+Binding": "en/building-sites/elements/template-variables/bindings/inherit-binding",
     "/display/revolution20/How+to+Write+a+Good+Snippet": "en/extending-modx/snippets",
-    "/display/revolution20/Hardening+MODX+Revolution": "en/getting-started/maintenance/securing-modx"
+    "/display/revolution20/Hardening+MODX+Revolution": "en/getting-started/maintenance/securing-modx",
+    "/display/revolution20/Using+runProcessor": "en/extending-modx/processors/using-runprocessor"
 }

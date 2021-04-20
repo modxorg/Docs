@@ -17,7 +17,7 @@ In order to use `getObjectGraph` effectively, you need to understand the data mo
 
 ## Syntax
 
-API Docs: <http://api.modx.com/xpdo/xPDO.html#getObjectGraph>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getObjectGraph()>
 
 ``` php
 xPDOObject|null getObjectGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

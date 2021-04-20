@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.commit"
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#commit>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::commit()>
 
 ```php
 void commit ()

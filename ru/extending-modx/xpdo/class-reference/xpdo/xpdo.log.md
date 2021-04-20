@@ -9,6 +9,8 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.log"
 
 ## Синтаксис
 
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::log()>
+
 ```php
 $xpdo->log($level, $msg, $target= '', $def= '', $file= '', $line= '');
 ```
@@ -19,8 +21,6 @@ $xpdo->log($level, $msg, $target= '', $def= '', $file= '', $line= '');
 -   `$def` - (строка) Имя определяющей структуры (например, класса), помогающей определить источник событий журнала.
 -   `$file` - (строка) Имя файла, в котором произошло событие журнала. Обычно вы используете константу `__FILE__`.
 -   `$line` - (строка) Номер строки, помогающей определить источник события. Обычно вы используете константу `__FILE__`
-
-API Docs: [http://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#%5CxPDO](http://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#%5CxPDO)
 
 ```php
 void log (integer $level, string $msg, [string $target = ''], [string $def = ''], [string $file = ''], [string $line = ''])
