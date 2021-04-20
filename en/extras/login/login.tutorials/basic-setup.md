@@ -39,7 +39,7 @@ If you are using an older version of MODX or you just want to enhance your under
 
 1\. **Security -> Resource Groups** : Create a new Resource Group for all the pages that will be available only to members.
 
-![](create+resource+group.jpg)
+![](create_resource_group.jpg)
 
 2\. **Security -> Access Controls** : Create User Group named "Members". Users in the "Members" group will have access to the "Members Only" resources. Make sense?
 
@@ -47,9 +47,9 @@ If you are using an older version of MODX or you just want to enhance your under
 
 3\. On that same page (**Security -> Access Controls**), **Right Click** the newly created "Members" User Group and select "Update User Group".
 
-![](update+user+group.jpg)
+![](update_user_group.jpg)
 
-![](update+user+group+-+detail.jpg)
+![](update_user_group_detail.jpg)
 
 Then Add a Resource Group to this User Group. At a minimum, the Resource Group should have the following settings:
 
@@ -64,7 +64,7 @@ Then Add a Resource Group to this User Group. At a minimum, the Resource Group s
 
 Use a simple Username and password that you can remember; the important thing here is to make sure your new user is a member of the "Members" User Group. Head to the "Access Permissions" tab and click "Add User to Group"
 
-![](new+user+as+group+member.jpg)
+![](new_user_as_group_member.jpg)
 
 - **User Group:** Members
 - **Role:** Member
@@ -131,7 +131,7 @@ This page houses the form where users can request that their password be reset. 
 
 Here's what the flow looks like, just so you can follow what we're doing here:
 
-![](password+reset+flow.jpg)
+![](password_reset_flow.jpg)
 
 ### Reset Password Handler (3)
 
@@ -149,7 +149,7 @@ Remember to ensure the **Forgot Password (2)** and **Reset Password Handler (3)*
 
 This is the page that displays to users who have successfully logged in. This page must have restricted permissions, and the users who log in must have the corresponding permissions to access this page. You can put whatever "private" content you want on it, just make sure you update the permissions on it so that it belongs to the "Members Only" resource group – just click on the page's "Access Permissions" or "Resource Groups" tab (depending on your version of MODX):
 
-![](setting+access+permissions.jpg)
+![](setting_access_permissions.jpg)
 
 and check the box for "Members Only".
 

@@ -1,8 +1,7 @@
 ---
 title: "Successful installation, now what?"
 sortorder: "4"
-_old_id: "1688"
-_old_uri: "2.x/getting-started/installation/successful-installation,-now-what-do-i-do"
+description: "After completing a successful installation, you will be presented with the Manager login page"
 ---
 
 After completing a successful installation, you will be presented with the Manager login page. Proceed to log into the MODX manager using the credentials specified during the installation. Upon successful log in a screen will be presented:

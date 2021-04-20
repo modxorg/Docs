@@ -311,7 +311,7 @@ This is similar to using a [@SELECT](building-sites/elements/template-variables/
 
 This input type also accepts WHERE conditions to filter by:
 
-![](screen+shot+2012-05-18+at+9.04.54+pm.png)
+![](screen-shot.png)
 
 Another example:
 

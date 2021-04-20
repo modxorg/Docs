@@ -18,7 +18,7 @@ Validation can simply be done by adding the fields to validate to the &validate 
 [[!FormIt? &validate=`username:required`]]
 ```
 
-Validators can also be "chained", or done in sucession. The following first checks to see if required, then strips all tags from the post:
+Validators can also be "chained", or done in succession. The following first checks to see if required, then strips all tags from the post:
 
 ``` php
 [[!FormIt? &validate=`text:required:stripTags`

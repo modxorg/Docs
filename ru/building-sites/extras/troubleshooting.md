@@ -24,4 +24,4 @@ _old_uri: "2.x/administering-your-site/installing-a-package/troubleshooting-pack
 
 ### Ошибка Доступ запрещен
 
-Если у вас включено кэширование HTML5, попробуйте отключить его и очистить кеш браузера. (<http://tracker.modx.com/issues/7340>)
+Если у вас включено кэширование HTML5, попробуйте отключить его и очистить кеш браузера. (<https://github.com/modxcms/revolution/issues/7340>)

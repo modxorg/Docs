@@ -1,14 +1,17 @@
 ---
 title: "use_browser"
 translation: "building-sites/settings/use_browser"
+description: "Если установлено значение Да, включает браузер ресурсов"
 ---
 
-## use_browser
+---
 
--   **Имя**: Разрешить диспетчер файлов
--   **Тип**: Да/Нет
--   **По умолчанию**: Да
+**ВНИМАНИЕ**: Эта настройка **устарела** в MODX Revolution. Используйте вместо этого `file_tree` и `file_manager` политики доступа, смотрите также [Разрешения](building-sites/client-proofing/security/policies/permissions "Разрешения").
+
+---
+
+-   **Имя**: Разрешить диспетчер файлов  
+-   **Тип**: Да/Нет  
+-   **По умолчанию**: Да  
 
 Если установлено значение Да, включает браузер ресурсов. Это позволит вашим пользователям просматривать и загружать на сервер такие ресурсы, как изображения, флеш-файлы и медиа-файлы.
-
-Эта настройка **устарела** в MODX Revolution. Использовать file_tree и file_manager instead [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions").

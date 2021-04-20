@@ -3,6 +3,7 @@ title: "Glossary of Revolution Terms"
 sortorder: 5
 _old_id: "157"
 _old_uri: "2.x/getting-started/an-overview-of-MODX/glossary-of-revolution-terms"
+description: "Full list of MODX terms can be found here"
 ---
 
 ## Add-on
@@ -17,6 +18,10 @@ Any type of file resource that is usually located in the /assets directory, as d
 
 A synonym for the MODX manager interface.
 
+## Cache, caching
+
+The process of storing frequently requested data and where it is stored.  By caching data that is being reused, a lot of database requests can be prevented, resulting in a better performance. MODX Revolution offers a number of different caching features on different levels within the application. [See more](extending-modx/caching)
+
 ## Category
 
 An optional classifying name that can be attached to any Element or PropertySet (and other objects in later versions of Revolution) that separates it from other similar objects.
@@ -29,9 +34,13 @@ Tags in the form `[[$ChunkName]]` that can be used in reference to Chunks.
 
 Also called "Third-party Component", or 3PC, a Component usually provides extra functionality to MODX, usually in the form of an Add-on, Core Extension, or Template.
 
+## Connector
+
+Essentially entry point for AJAX requests in MODX. It doesn't do any database manipulation on its own; just simply load up the main MODX class, sanitize any request data, and then handle the request by pointing to the appropriate Processor file [See more](getting-started/directory-structure#connectors)
+
 ## Content Type
 
-Sets the extension, mime-type and binary setting for any Resource.
+Sets the extension, mime-type and binary setting for any Resource. [See more](building-sites/resources/content-types)
 
 ## Context
 
@@ -65,6 +74,18 @@ Also called "Core Extension". A MODX Third-party Component that modifies the MOD
 
 A type of xPDOVehicle Resolver that copies files from the source location to the target location in a Transport Package.
 
+## Form Customization
+
+Feature that allows users to create [Rules](building-sites/client-proofing/form-customization/rules), which govern how manager pages render their forms in the MODX Revolution Manager. [See more](building-sites/client-proofing/form-customization)
+
+## Form Customization Set
+
+A Form Customization Set is a collection of [Rules](building-sites/client-proofing/form-customization/rules) that occur for a specific page (action) in the Manager. [See more](building-sites/client-proofing/form-customization/sets)
+
+## Friendly URLs, Friendly aliases
+
+Friendly URLs (FURLs) is actually short for SEO-friendly URLs. SEO, as you probably know, is an acronym for Search Engine Optimization. Since "Search-engine-Optimization-friendly-URLs" is quite a mouthful, they're usually referred to as FURLs in MODX.
+
 ## Language Tags
 
 Tags in the form `[[%LanguageStringKey]]` that reference MODX Lexicon entries.
@@ -85,9 +106,17 @@ Tags in the form `[[~ResourceId]]` that reference the URL of a particular Resour
 
 The back-end of the MODX interface.
 
+## Media Source
+
+With MS you can specify the "source" of media through many types - from the file system itself, to an Amazon S3 bucket, to a Flickr album. MODX provides two source types with the core installation: the file system and Amazon S3 bucket integration. Other sources can be made by creating Media Source Drivers, or by downloading them from [Package Management](building-sites/extras). [See More](building-sites/media-sources)
+
 ## Namespace
 
 An organizational tag for Components to use to identify Lexicon Entries, Settings, and other objects related to the Component in a Revolution site. Also specifies an absolute path in which the Component may be found.
+
+## Package Management
+
+A web service that enables remote [installation](building-sites/extras) of Transport Packages directly from the Manager.
 
 ## Placeholder Tags
 
@@ -95,7 +124,9 @@ Tags in the form `[[+PlaceholderName]]` that reference MODX Placeholders, usuall
 
 ## Resource Field
 
-Any of the fields of the `site_content` table, such as pagetitle, longtitle, introtext, alias, menuindex, etc. Some fields are available on the Document Create/Edit screen and via Resource Tags; Others can only be accessed via the documentObject.
+Any of the fields of the `site_content` table, such as `pagetitle`, `longtitle`, `introtext`, `alias`, `menuindex`, etc. Some fields are available on the Document Create/Edit screen and via Resource Tags; Others can only be accessed via the `documentObject`.
+
+## Plugin - 
 
 ## Property
 
@@ -117,17 +148,17 @@ Also called a Document ID, Resource ID, or Document Identifier; the number in pa
 
 Tags in the form `[[*ResourceFieldTV]]`, which can be used to refer to Resource Fields, or Template Variables.
 
-## Resolver (for xPDOVehicles)
+## Resolver (from Transport Package)
 
-Post-processor: a script or predefined action that is evaluated after a Vehicle is installed or uninstalled. Resolvers always occur after the vehicle's object is save()'d, and can then perform actions on MODX before anything else happens in the install/uninstall process.
+Post-processor: a script or predefined action that is evaluated after a [Transport Vehicle](getting-started/glossary#transport-vehicles) is installed or uninstalled. Resolvers always occur after the vehicle's object is save()'d, and can then perform actions on MODX before anything else happens in the install/uninstall process.
 
-An example of a PHP Resolver is one that attaches Plugin Events to a newly-installed Plugin.
+An example of a PHP Resolver is one that attaches Plugin Events to a newly-installed [Plugin](getting-started/glossary#plugin).
 
-An example of a file Resolver is one that copies the assets/ditto directory in the xPDOVehicle path to `/MODX/assets/ditto`.
+An example of a file Resolver is one that copies the `assets/getResources` directory in the `xPDOVehicle` path to `/MODX/assets/getResources`.
 
 ## Setting Tags
 
-Tags in the form `[[++SettingName]]` that reference MODX System Settings, Context Settings, and User Settings.
+Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getting-started/glossary#system-setting), [Context Settings]((getting-started/glossary#context-setting)), and [User Settings]((getting-started/glossary#user-setting)).
 
 ## Snippet Tags
 
@@ -145,35 +176,31 @@ A type of Resource that references a single, local MODX Resource; the Resource's
 
 A site-wide variable accessible to the MODX site. Can be overridden by Context Settings and User Settings.
 
-## Template Variables
+## Template Variables (or TVs)
 
 Custom Resource Fields created by the user on the Document Create/Edit Screen and referenced using Content Tags.
 
 ## Transport Package
 
-A packaged and zipped collection of Transport Vehicles, that can be easily distributed ("transported") from one Core Workspace to another.
-
-## Package Management
-
-A web service that enables remote [installation](building-sites/extras) of Transport Packages directly from the Manager.
+A packaged and zipped collection of [Transport Vehicles](getting-started/glossary#transport-vehicles), that can be easily distributed ("transported") from one Core Workspace to another. [See more](extending-modx/transport-packages)
 
 ## Transport Vehicles
 
-An intelligent container that encapsulates any artifact that can be distributed in a Transport Package. Transport Vehicles store their payloads in a portable format.
+An intelligent container that encapsulates any artifact that can be distributed in a [Transport Package](getting-started/glossary#transport-package). Transport Vehicles store their payloads in a portable format. [See more](extending-modx/transport-packages#okay-what-are-these-vehicles)
 
 ## User Setting
 
 A user-specific setting that either creates a new setting or overrides the similar Context Setting and System Setting. Used to provide unique settings to that user.
 
+## Validator (from Transport Package)
+
+Pre-processor: a script or predefined action that executes prior to the [Transport Vehicle](getting-started/glossary#transport-vehicles) being installed or uninstalled. If the validator returns true, the install/uninstall action will proceed as normal. If the validator returns false, MODX will not uninstall or install the package.
+
+A Validator could be used to determine if a directory exists and is writable, to see if other MODX elements are already installed, or to determine if a certain version of MySQL and PHP are used on a server.
+
 ## Weblink
 
 A type of Resource that references a specific URL or MODX Resource, redirecting the visitor to that URL or Resource.
-
-## Validator (for xPDOVehicles)
-
-Pre-processor: a script or predefined action that executes prior to the vehicle being installed or uninstalled. If the validator returns true, the install/uninstall action will proceed as normal. If the validator returns false, MODX will not uninstall or install the package.
-
-A Validator could be used to determine if a directory exists and is writable, to see if other MODX elements are already installed, or to determine if a certain version of MySQL and PHP are used on a server.
 
 ## xPDOVehicle
 

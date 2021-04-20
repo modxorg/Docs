@@ -25,7 +25,7 @@ SiteCheck is a commercial extra that tests the integrity of your MODX site. It t
     - Resources with duplicate pagetitles in the same Context
     - Resources with invalid class keys
     - Resources with invalid Contexts
-    - Resources where context\_key doesn't match parent's
+    - Resources where `context_key` value doesn't match parent's
     - Elements with invalid Categories
     - Elements with invalid Property Sets
     - Templates with invalid Template Variables
@@ -62,7 +62,7 @@ SiteCheck can be obtained from the secure server at [Gumroad.com](https://gum.co
 
 Bugs and feature requests for GoRevo can be submitted [here.](https://bobsguides.com/contact-form.html)
 
-Questions about how to use SiteCheck should be posted on the [MODX Forums](https://forums.modx.com).
+Questions about how to use SiteCheck should be posted on the [MODX Forums](https://community.modx.com).
 
 ## Documentation
 

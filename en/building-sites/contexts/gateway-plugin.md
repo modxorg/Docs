@@ -1,5 +1,5 @@
 ---
-title: "Using a Gateway Plugin"
+title: "Using a GatewayManager Plugin"
 _old_id: "333"
 _old_uri: "2.x/administering-your-site/contexts/using-one-gateway-plugin-to-manage-multiple-domains"
 ---

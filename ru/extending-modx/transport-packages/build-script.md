@@ -1,5 +1,5 @@
 ---
-title: "Creating a Build Script"
+title: "Создание скрипта сборки"
 _old_id: "67"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script"
 ---

@@ -1,7 +1,6 @@
 ---
 title: "modX.removeEventListener"
-_old_id: "1097"
-_old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.removeeventlistener"
+description: "Remove an event from the eventMap so it will not be invoked"
 ---
 
 ## modX::removeEventListener
@@ -13,10 +12,13 @@ Remove an event from the eventMap so it will not be invoked.
 API Doc: [modX::removeEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::removeEventListener())
 
 ``` php
-boolean removeEventListener (string $event)
+boolean removeEventListener (string $event, [integer $pluginId = 0])
 ```
 
-## Example
+- `$event` _(string)_ The name of the Event you wish to remove. **required**
+- `$pluginId` _(integer)_ ID of certain Plugin for which I want to delete the Event 
+
+## Examples
 
 Prevent any Events from firing on 'OnChunkRender':
 
@@ -24,6 +26,14 @@ Prevent any Events from firing on 'OnChunkRender':
 $modx->removeEventListener('OnChunkRender');
 ```
 
+Prevent Events from firing on 'OnLoadDocument' for Plugin with ID = 2
+
+``` php
+$modx->removeEventListener('OnLoadDocument', 2);
+```
+
 ## See Also
 
-- [modX](extending-modx/core-model/modx "modX")
+- [addEventListener](extending-modx/modx-class/reference/modx.addeventlistener "addEventListener")
+- [removeAllEventListener](extending-modx/modx-class/reference/modx.removealleventlistener "removeAllEventListener")
+- [modX](extending-modx/core-model/modx "MODX")

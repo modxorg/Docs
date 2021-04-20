@@ -57,7 +57,7 @@ Check out the [Tag Syntax](building-sites/tag-syntax "Tag Syntax") documentation
 
 ### 2.1. Help! Where did the sidebar go?
 
-You probably hid it at some point. There's a subtle arrow on the left side of the screen ([see this image](/download/attachments/36634926/subtlearrow.PNG)) that you can click to bring it back. In some cases you will need to refresh the page for the contents of the sidebar to load properly.
+You probably hid it at some point. There's a subtle arrow on the left side of the screen ([see this image](subtlearrow.PNG)) that you can click to bring it back. In some cases you will need to refresh the page for the contents of the sidebar to load properly.
 
 ### 2.2 How can I modify what resource fields are visible when creating or editing a [Resource](building-sites/resources "Resource")? Is there something like [ManagerManager](https://modx.com/extras/package/managermanager) for Revolution?
 
@@ -95,3 +95,9 @@ See Original Post: <http://forums.modx.com/thread/78611/core-cache-file-locks-an
 ### 3.2 General Snippet Problems
 
 If you find a snippet and/or plugin isn't working properly despite the correct code, double check that it has been installed.
+
+## 4. Frontend Display Issues
+
+### 4.1 Blank manager pages
+
+Perhaps the most complete list of what needs to be checked is described here: <https://community.modx.com/t/blank-manager-with-undefined-message/3799/20> 

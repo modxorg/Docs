@@ -15,11 +15,11 @@ This is just a quick guide for adding templates to TinyMCE in Revolution (I foun
 
 \- Choose '**TinyMCE**' in the 'core' selection box and '**General**' in the 'filter-by-area' selection box.
 
-\- Look for the property: '**Custom Plugins**' (key: 'tiny.custom\_plugins'). Add the value '**template**' at the end of the list that is already there.
+\- Look for the property: '**Custom Plugins**' (key: 'tiny.custom_plugins'). Add the value '**template**' at the end of the list that is already there.
 
-\- Change the value for the property '**Template List**' (key: 'tiny.template\_list'). Add the values (templates) in a comma separated list in this format:
+\- Change the value for the property '**Template List**' (key: `tiny.template_list`). Add the values (templates) in a comma separated list in this format:
 
-``` php
+```php
 name:path-to-the-template:description
 ```
 
@@ -30,3 +30,16 @@ Apparently you can use a snippet that contains the list, but I couldn't get it t
 \- Add the value '**template**' to one of the button lists (select '**Custom buttons**' in the 'Filter-by-area' selection box).
 
 Don't forget to upload the template-code in the path you just entered.
+
+---
+
+title: "TinyMCE"
+description: "Maybe the most popular WYSIWYG editor for MODX backend"
+
+---
+
+## See also
+
+1. [Spellchecker](extras/tinymce/tinymce.spellchecker)
+2. [Table controls](extras/tinymce/tinymce.table-controls)
+3. [TinyMCE](extras/tinymce)

@@ -1,10 +1,11 @@
 ---
 title: "modX.getService"
-_old_id: "1075"
-_old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getservice"
+description: "getService load and return a named service class instance"
 ---
 
 ## modX::getService
+
+**Note**: getService pushed to xPDO layer
 
 Load and return a named service class instance. Returns either a reference to the service class instance or null if it could not be loaded. You can think of this is a simple dependency injector.
 
@@ -18,10 +19,10 @@ API Doc: [modX::getService()](http://api.modx.com/revolution/2.2/db_core_model_m
 object getService (string $name, [string $class = ''], [string $path = ''], [array $params = array ()])
 ```
 
-- `$name` : a key which uniquely identifies the service.
-- `$class` : the full name of the class compatible with the "new" operator OR you can use "dot notation" to specify sub-folders relative to `$path`
-- `$path` : full path to the directory containing the class in question.
-- `$params` : passed as the 2nd argument to the constructor. The first argument is always a reference to xPDO/MODX.
+- `$name` _(string)_ a key which uniquely identifies the service.
+- `$class` _(string)_ the full name of the class compatible with the "new" operator OR you can use "dot notation" to specify sub-folders relative to `$path`
+- `$path` _(string)_ full path to the directory containing the class in question.
+- `$params` _(array)_  passed as the 2nd argument to the constructor. The first argument is always a reference to xPDO/MODX.
 
 ## Examples
 

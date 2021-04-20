@@ -1,7 +1,6 @@
 ---
 title: "modX.getTree"
-_old_id: "1077"
-_old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.gettree"
+description: "Get a site tree from a single or multiple modResource instances"
 ---
 
 ## modX::getTree
@@ -13,8 +12,12 @@ Get a site tree from a single or multiple modResource instances.
 API Doc: [modX::getTree()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getTree())
 
 ``` php
-array getTree ([int|array $id = null], [int $depth = 10])
+array getTree ([int|array $id = null], [int $depth = 10], [array $options = array()])
 ```
+
+- `$id` _(int|array)_ A single or multiple modResource ids to build the tree from.
+- `$depth` _(integer)_ The maximum depth to build the tree (default 10).
+- `$options` _(array)_ An array of filtering options, such as 'context' to specify the context to grab from.
 
 ## Example
 

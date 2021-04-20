@@ -1,6 +1,7 @@
 ---
 title: "modX.sendForward"
 translation: "extending-modx/modx-class/reference/modx.sendforward"
+description: "modX.sendForward перенаправляет запрос на другой ресурс без изменения URL"
 ---
 
 ## modX::sendForward
@@ -15,18 +16,36 @@ API Doc: [modX::sendForward()](http://api.modx.com/revolution/2.2/db_core_model_
 void sendForward (integer $id, [string|array $options = null])
 ```
 
-`$id` это идентификатор ресурса (вы не можете отправить вперед на URL адрес - если вам нужно передать какое-то значение, используйте `modX::setPlaceholder` и вызовите его на целевом ресурсе).
-`$options` предполагается, что это правильный код ответа HTTP, когда он является строкой, например "HTTP/1.1 301 перемещен постоянно". Если это массив, вы можете использовать следующие параметры:
-
-- `response_code`: то же самое, как если бы вы передали строку в `$options`
-- `merge`: способ объединения ресурса, находящегося в данный момент `$modx->resource` с целевым ресурсом. content, pub\_date, unpub\_date, richtext, \_content и \_processed исключаются значения, а также Значение системного параметра `forward_merge_excludes` другого ключа опции. Я не уверен, что это должно использоваться из ядра, и, вероятно, есть лучшие способы объединить данные (например, `setPlaceholder`), а затем объединить.
-
+- `$id` это идентификатор ресурса (вы не можете перенаправить на URL адрес - если вам нужно передать какое-то значение, используйте `modX::setPlaceholder` и вызовите его на целевом ресурсе).
+- `$options` предполагается, что это правильный код ответа HTTP, когда он является строкой, например "HTTP/1.1 301 Moved Permanently". Если это массив, вы можете использовать следующие параметры:
+    - `response_code`: код ответа
+    - `error_type`: тип ошибки, смотрите пример ниже, но, например, 404
+    - `error_header`: Значение поля "Header" страницы ошибки
+    - `error_pagetitle`: Имя заголовка страницы ошибки
+    - `error_message`: Сообщение об ошибке
+    - `merge`: способ объединения ресурса, находящегося в данный момент в `$modx->resource` с целевым ресурсом. `content`, `pub_date`, `unpub_date`, `richtext`, `_content` и `_processed` значения исключаются вместе со значением системного параметра [forward_merge_excludes](building-sites/settings/forward_merge_excludes). Я не уверен, что это должно использоваться из ядра, и, вероятно, есть лучшие способы объединить данные (например, `setPlaceholder`), а затем объединить.
+- `$sendErrorPage` Следует ли пропустить выполнение [sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage") если ресурс не существует.
+   
 ## Пример
 
 Отправьте пользователя на ресурс с идентификатором 234, фактически не меняя URL.
 
 ``` php
 $modx->sendForward(234);
+```
+
+Отправьте пользователя на страницу ошибки 404, для фактического идентификатора страницы мы используем значение системной настройки [error_page](building-sites/settings/error_page). Если такого значения нет,
+будет использовано значение переменной [site_start](building-sites/settings/site_start)
+
+``` php
+$options = array(
+   'response_code' => '404 Страница не найдена',
+   'error_type' => '404',
+   'error_header' => '404 Не найдена',
+   'error_pagetitle' => 'Ошибка 404: Страница не найдена',
+   'error_message' => '<h1>Страница не найдена</h1><p>Запрошенная вами страница не найдена.</p>'
+);
+$this->sendForward($this->getOption('error_page', $options, $this->getOption('site_start')), $options, false);
 ```
 
 ## Смотрите также
@@ -36,3 +55,4 @@ $modx->sendForward(234);
 - [modX.sendRedirect](extending-modx/modx-class/reference/modx.sendredirect "modX.sendRedirect")
 - [modX.sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage")
 - [modX.sendUnauthorizedPage](extending-modx/modx-class/reference/modx.sendunauthorizedpage)
+- [error_page](building-sites/settings/error_page)

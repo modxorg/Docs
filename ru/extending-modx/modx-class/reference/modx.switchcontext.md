@@ -1,6 +1,7 @@
 ---
 title: "modX.switchContext"
 translation: "extending-modx/modx-class/reference/modx.switchcontext"
+description: "modX.switchContext метод для переключения контекста"
 ---
 
 ## modX::switchContext
@@ -11,11 +12,14 @@ translation: "extending-modx/modx-class/reference/modx.switchcontext"
 
 ## Синтаксис
 
-API Doc: [modX::switchContext()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::switchContext())
+API Документация: [modX::switchContext()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::switchContext())
 
 ``` php
-boolean switchContext (string $contextKey)
+boolean switchContext (string $contextKey, [boolean $reload = false])
 ```
+
+- `$contextKey` _(string)_ Ключ контекста, на который нужно переключиться. **Обязательный**
+- `$reload` _(boolean)_ Установите значение в "true", чтобы принудительно создать данные контекста перед переключением на него. 
 
 ## Пример
 

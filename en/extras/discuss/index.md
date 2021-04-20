@@ -12,8 +12,8 @@ After a long time of internal usage only, Discuss 1.1.0 was released on Christma
 
 ### Requirements
 
-- MODX Revolution, at least 2.2 and latest suggested.
-- PHP5 or later
+-   MODX Revolution, at least 2.2 and latest suggested.
+-   PHP5 or later
 
 ### History
 
@@ -33,26 +33,24 @@ Several documents are available to help you get started using Discuss.
 2. [Getting Started](extras/discuss/discuss.getting-started "Discuss.Getting Started")
 3. [Creating a Discuss Theme](extras/discuss/discuss.creating-a-discuss-theme "Discuss.Creating a Discuss Theme")
 
-## What's Next
-
-Please see the [Roadmap](extras/discuss/discuss.roadmap "Discuss.Roadmap"). Remember to report your bugs and feature requests in the [Tracker](http://tracker.modx.com/projects/discuss/issues).
+Remember to report your bugs and feature requests in the [Tracker](http://tracker.modx.com/projects/discuss/issues).
 
 ## See Also
 
 1. [Discuss.Installation](extras/discuss/discuss.installation)
-     1. [Discuss.Installation from Git](extras/discuss/discuss.installation/installation-from-git)
+    1. [Discuss.Installation from Git](extras/discuss/discuss.installation/installation-from-git)
 2. [Discuss.Getting Started](extras/discuss/discuss.getting-started)
 3. [Discuss.Creating a Discuss Theme](extras/discuss/discuss.creating-a-discuss-theme)
 4. [Discuss.Controllers](extras/discuss/discuss.controllers)
-     1. [Discuss.Controllers.board](extras/discuss/discuss.controllers/board)
-         1. [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/board/xml)
-     2. [Discuss.Controllers.home](extras/discuss/discuss.controllers/home)
-     3. [Discuss.Controllers.login](extras/discuss/discuss.controllers/login)
-     4. [Discuss.Controllers.logout](extras/discuss/discuss.controllers/logout)
-     5. [Discuss.Controllers.profile](extras/discuss/discuss.controllers/profile)
-     6. [Discuss.Controllers.register](extras/discuss/discuss.controllers/register)
-     7. [Discuss.Controllers.search](extras/discuss/discuss.controllers/search)
-     8. [Discuss.Controllers.thread](extras/discuss/discuss.controllers/thread)
+    1. [Discuss.Controllers.board](extras/discuss/discuss.controllers/board)
+        1. [Discuss.Controllers.board.xml](extras/discuss/discuss.controllers/board/xml)
+    2. [Discuss.Controllers.home](extras/discuss/discuss.controllers/home)
+    3. [Discuss.Controllers.login](extras/discuss/discuss.controllers/login)
+    4. [Discuss.Controllers.logout](extras/discuss/discuss.controllers/logout)
+    5. [Discuss.Controllers.profile](extras/discuss/discuss.controllers/profile)
+    6. [Discuss.Controllers.register](extras/discuss/discuss.controllers/register)
+    7. [Discuss.Controllers.search](extras/discuss/discuss.controllers/search)
+    8. [Discuss.Controllers.thread](extras/discuss/discuss.controllers/thread)
 5. [Discuss.Database Model](extras/discuss/discuss.database-model)
 6. [Discuss.Contributing](extras/discuss/discuss.contributing)
 7. [Discuss.ChunkMap](extras/discuss/discuss.chunkmap)

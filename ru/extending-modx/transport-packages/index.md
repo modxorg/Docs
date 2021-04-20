@@ -1,119 +1,118 @@
 ---
-title: "Transport Packages"
-_old_id: "308"
-_old_uri: "2.x/developing-in-modx/advanced-development/package-management/transport-packages"
+title: "Транспортные пакеты"
+description: ""
 ---
 
-## What is a Transport Package?
+## Что такое Транспортный пакет?
 
-A Transport Package is a collection of objects and files that can be used to "transport" data from one MODX installation to another; or even to transport 3rd-Party Components in a simple, easily-manageable format. In other words, Transport Packages can transport nearly _anything_ - from database data, files and even scripts to run during its install.
+Транспортный пакет (далее `ТП`) - это набор объектов и файлов, которые можно использовать для "переноса" данных из одной установки MODX в другую; или даже для транспортировки сторонних компонентов в простом, легко управляемом формате. Другими словами, `ТП` могут транспортировать *практически* все - от данных базы данных, файлов и даже сценариев до запуска во время установки.
 
-Transport Packages also allow for versioning, in that they match based on a simple format, complying with PHP version number standards:
+Транспортные пакеты также позволяют управлять версиями, поскольку они именуются на основе простого формата, соответствующего стандартам номеров версий PHP: 
 
 > packagename-version-release.transport.zip
 
-So, an example Transport Package might be "myextra-1.0-rc1.transport.zip". If you were to upload a "myextra-1.0-rc2.transport.zip", MODX would then interpret this as part of the same "package" but a newer version of it. It would then behave in "upgrade" mode.
+Примером `ТП` может быть `myextra-1.0-rc1.transport.zip`. Если бы вы загрузили `myextra-1.0-rc2.transport.zip`, MODX интерпретировал бы его как часть того же 'пакета', но его более новую версию. Поэтому он будет вести себя в режиме "обновления".
 
-Transport packages are stored in .zip files, ending with ".transport.zip". They can be uploaded and installed anywhere there is a MODX Revolution instance - regardless of the server configuration.
+`ТП` хранятся в файлах `.zip`, оканчивающихся на `.transport.zip`. Их можно загрузить и установить везде, где есть MODX Revolution - независимо от конфигурации сервера. 
 
-### The Internals of a Transport Package
+### Содержимое Транспортного пакета
 
-MODX Revolution automatically "unpacks", or unzips, your transport packages for you. Once done, a subdirectory in your core/packages directory will appear with the name of the zip file (minus ".transport.zip"). This directory will contain:
+MODX Revolution автоматически "распаковывает" ваши `ТП`. После этого в вашем каталоге `core/packages` появится подкаталог с именем zip-файла (без суффикса `transport.zip`). Этот подкаталог будет содержать:
 
-- A manifest.php file
-- Subdirectories of each Vehicle (more on those later)
+- Файл `manifest.php`
+- Поддиректории каждого Транспортного контейнера (подробнее об этом позже)
 
-It may also contain a "preserved.php" file, if the package is an upgrade from a prior package, which contains the metadata for the install to be restored. And finally, there might be a 'setup-options.php' file if the package has packaged one inside.
+Он также может содержать файл `saved.php`, если пакет является обновлением предыдущего пакета, который содержит метаданные для восстанавливаемой установки. И, наконец, может быть файл `setup-options.php`, если пакет упакован внутри.
 
-### The manifest.php file
+### Файл манифеста manifest.php
 
-The manifest basically stores all the relevant information for the package, including the locations of files and information about them. If you open the manifest.php file, you'll see that it contains a giant PHP array being returned. Within that are some keys you might be interested in:
+В файле-манифесте обычно хранится вся необходимая информация для пакета, включая расположение файлов и информацию о них. Если вы откроете файл `manifest.php`, вы увидите, что он содержит возвращаемый гигантский массив PHP. В нем есть несколько ключей, которые могут вас заинтересовать:
 
-- **manifest-version** - This tells us what version the manifest definition is. MODX uses it to determine how to interpret the manifest and make it easier for future MODX versions to be backwards-compatible.
+- **manifest-version** - это говорит нам, какой версии является определение манифеста. MODX использует его, чтобы определить, как интерпретировать манифест и упростить для будущих версий MODX обратную совместимость.
 
-- **manifest-attributes** - These are any custom attributes that were set on the package when it was being built. The most common are 'license', 'readme' and 'setup-options', which MODX interprets during install time.
+- **manifest-attributes** - это любые настраиваемые атрибуты, которые были установлены в пакете при его сборке. Наиболее распространенными являются 'license', 'readme' и 'setup-options' которые MODX интерпретирует во время установки.
 
-- **manifest-vehicles** - These are the Vehicles metadata, in array format.
+- **manifest-vehicles** - это метаданные Контейнера `ТП` в формате массива. 
 
-### Okay, what are these Vehicles?
+### Хорошо, а что такое Контейнер транспортного пакета?
 
-Transport Vehicles are the parts of a Transport Package. A package can contain as many Vehicles as it likes. Vehicles also come in different types; the currently available ones are:
+Транспортные Контейнеры (или Контейнеры Транспортного пакета) являются частью `ТП`. Пакет может содержать сколько угодно Транспортных Контейнеров, они также бывают разных типов; в настоящее время доступны:
 
-- xPDOObjectVehicle - For transporting database data
-- xPDOFileVehicle - For transporting files
+- `xPDOObjectVehicle` - Для передачи данных базы данных
+- `xPDOFileVehicle` - Для транспортировки файлов
 
-In the 'manifest-vehicles' array, you'll see these keys for each vehicle:
+В массиве "manifest-vehicles" вы увидите эти ключи для каждого Контейнера:
 
-- **vehicle\_package** - This tells us what type of package is holding these vehicles. Currently the only type is 'transport'.
-- **vehicle\_class** - The class name of the type of Vehicle this is.
-- **class** - The class name of the DB object being transported, or xPDOFileVehicle if it's a file vehicle.
-- **guid** - A randomly generated GUID for the vehicle.
-- **native\_key** - If the vehicle is a database object, this will be its primary key by which it is identified.
-- **filename** - Where the vehicle's source file can be found within the transport package's folder.
-- **namespace** - Certain packages use the 'namespace' field to group vehicles and other objects to make them uniquely identifiable within a MODX installation.
+- **vehicle\_package** - это говорит нам, какой тип пакета содержит эти Контейнеры. В настоящее время единственный вид - «transport».
+- **vehicle\_class** - имя класса данного типа Контейнера.
+- **class** - имя класса транспортируемого объекта БД или `xPDOFileVehicle`, если это файловый Контейнер.
+- **guid** - GUID, сгенерированный случайным образом для Контейнера.
+- **native\_key** - Если Контейнер является объектом базы данных, это будет его первичный ключ, по которому он будет идентифицирован.
+- **имя_файла** - где в папке транспортного пакета находится исходный файл Контейнера.
+- **namespace** - Некоторые пакеты используют поле `namespace` для группировки Контейнеров и других объектов, чтобы сделать их однозначно идентифицируемыми в установке MODX.
 
-So now that we've seen what the vehicles represent in the manifest, let's open up a Vehicle by looking a filename and diving in.
+Итак, теперь, когда мы увидели, что Контейнеры представляют из себя в манифесте, давайте откроем Контейнер, посмотрев файл и погрузившись в него. 
 
-#### Inside a Vehicle's Source
+#### Внутри транспортного Контейнера
 
-Vehicles can actually have a few different files grouped with them, but we'll first concern ourselves with the main vehicle file, which is specified in the manifest and often ends with '.vehicle'.
+Внутри контейнеров могут быть сгруппированы несколько разных файлов, но сначала мы рассмотрим главный файл транспортного Контейнера, который указан в манифесте и имя которого часто заканчивается на `.vehicle`.
 
-Again, it looks like a big PHP array, with similar keys. It has some extra keys though, which are important. xPDOFileVehicle and xPDOObjectVehicle can have different keys. Let's go over the common ones:
+Опять же, это похоже на большой массив PHP с похожими ключами. Тем не менее, у него есть несколько дополнительных ключей, которые важны. `xPDOFileVehicle` и `xPDOObjectVehicle` могут иметь разные ключи. Давайте рассмотрим самые распространенные:
 
-- **class** - Similar to the manifest, the class type of the vehicle.
-- **object** - An array that contains the object information. For DB objects this will most likely be a JSON array representation of the DB table. For files, it will be a PHP array with the source, target and name of the vehicle.
-- **vehicle\_class** - Similar to the manifest, the class name of the vehicle.
-- **vehicle\_package** - Similar to the manifest, the transport type of the vehicle.
-- **guid** - Similar to the manifest, a unique identifier for the vehicle.
-- **package** - Only applicable to xPDOObjectVehicles, this will most likely be 'modx' or blank.
-- **signature** - The filename signature for this vehicle.
-- **native\_key** - Similar to the manifest. If the vehicle is a database object, this will be its primary key by which it is identified.
+- **class** - аналогично манифесту, тип класса Контейнера.
+- **object** - массив, содержащий информацию об объекте. Для объектов БД это, скорее всего, будет представление таблицы БД в виде массива JSON. Для файлов это будет массив PHP с источником, целью и названием Контейнера.
+- **vehicle\_class** - аналогично манифесту, имя класса Контейнера.
+- ** vehicle\_package** - аналогично манифесту, тип транспорта Контейнера.
+- **guid** - аналогично манифесту, уникальный идентификатор Контейнера.
+- **package** - Применимо только к `xPDOObjectVehicles`, скорее всего, это будет 'modx' или пусто.
+- **signature** - подпись имени файла для этого Контейнера.
+- **native\_key** - аналогично манифесту. Если Контейнер является объектом базы данных, это будет его первичный ключ, по которому он будет идентифицирован.
 
-The xPDOObjectVehicle, or database vehicles, often have these extra keys:
+`XPDOObjectVehicle` или Контейнеры с базой данных часто имеют следующие дополнительные ключи:
 
-- **preserve\_keys** - If true, the vehicle will try and preserve the primary key of the database record on install.
-- **update\_object** - If true, the vehicle will UPDATE the object if it's found already in the database during install. If false, it will be skipped.
-- **unique\_key** - The column name by which the database object can be uniquely identified - often this is not the primary key, as auto-incrementing fields often do not match across different databases.
-- **related\_objects** - A complex array of any related objects to this vehicle's main database object. Sometimes, it may be necessary to package in "related" objects to achieve the desired end result. A great example is if the packager wants to put all of his Snippets in a Category. He would make the vehicle's object be the Category, and then add related objects - the snippets - to it.
-- **related\_object\_attributes** - The attributes for the above related objects.
-- **namespace** - Similar to the manifest; a grouping value for the objects in a transport package.
+- **preserve\_keys** - Если true, Контейнер попытается сохранить первичный ключ записи базы данных при установке.
+- **update\_object** - Если true, Контейнер ОБНОВИТ объект, если он уже был найден в базе данных во время установки. Если false, он будет пропущен.
+- **unique\_key** - имя столбца, по которому объект базы данных может быть однозначно идентифицирован - часто это не первичный ключ, поскольку автоматически увеличивающиеся поля часто не совпадают в разных базах данных.
+- **related\_objects** - сложный массив любых связанных объектов с основным объектом базы данных этого Контейнера. Иногда может потребоваться упаковать «связанные» объекты для достижения желаемого конечного результата. Отличный пример - если упаковщик хочет поместить все свои Сниппеты в Категорию. Он сделал бы объект Контейнера категорией, а затем добавил бы к нему связанные объекты - Сниппеты.
+- **related\_object\_attributes** - атрибуты для вышеупомянутых связанных объектов.
+- **namespace** - аналогично манифесту; значение группировки для объектов в `ТП`.
 
-There are also some optional ones, which may or may not be set:
+Есть также несколько необязательных ключей, которые могут быть установлены или не установлены: 
 
-- **validate** - An array of arrays which contain validators, explained later.
-- **resolve** - An array of arrays which contain resolvers, explained later.
+- **validate** - массив массивов, которые содержат "валидаторы", объяснение позже.
+- **resolve** - массив массивов, которые содержат "преобразователи", объясненные позже.
 
-In xPDOFileVehicles, you will also see a directory with the same filename as the vehicle, minus the ".vehicle". If you open it, there will be the files for the vehicle.
+В `xPDOFileVehicles` вы также увидите каталог с тем же именем, что и у Контейнера, за вычетом `.vehicle`. Если вы откроете его, там будут файлы для Контейнера.
 
-## Resolvers and Validators
+## Резольверы и валидаторы
 
-What are resolvers and validators? Well, think of them like pre and post installation scripts. They are, in essence, PHP scripts. (In fact, if you open them up, they look exactly like PHP scripts.) They are named the same filename as the vehicle, but are postfixed with ".resolver" or ".validator".
+Что такое "Резолверы" и "Валидаторы"? Думайте о них как скриптах, запускающихся *до* и *после* установки. По сути это PHP-скрипты. (На самом деле, если вы их откроете, они будут выглядеть точно так же, как PHP скрипты.) Их имена совпадают с именем файла `ТС`, но с добавлением постфикса `.resolver` или `.validator`.
 
-### A Validator
+### Валидатор
 
-A validator is executed _before_ the Vehicle is installed, upgraded or uninstalled. If they return false, the Vehicle is not installed, and is skipped.
+Валидатор запускается *перед* установкой, обновлением или удалением Контейнера. Если он возвращают false, Контейнер не устанавливается и пропускается.
 
-They are useful for determining whether or not the Vehicle should still be installed, uninstalled or upgraded in the package process. For example - if you want to have dependencies and not have a Vehicle installed unless something else is found, a Validator would be a great place for it.
+Они полезны для определения того, следует ли по-прежнему устанавливать, удалять или обновлять Контейнер в процессе установки `ТП`. Например, если вы хотите иметь зависимости и не устанавливать Контейнер, если не будет найдено что-то еще, Валидатор будет отличным местом для этого.
 
-### A Resolver
+### Резольвер
 
-Resolvers are executed _after_ the Vehicle is installed, upgraded or uninstalled. Each will execute in turn regardless of any other resolver results.
+Резольверы выполняются *после* установки, обновления или удаления Контейнера. Каждый из них будет выполняться по очереди независимо от результатов любого другого Резольверя.
 
-Resolvers are useful for 'cleaning up' after a Vehicle is installed, or setting custom configuration options (such as ones setup in Setup Options during install).
+Резольверы полезны для "очистки" после установки Контейнера или для настройки параметров пользовательской конфигурации (например, параметров установки во время инсталляции).
 
-## Usage
+## Использование
 
-Transport Packages can be managed in the [Package Management](extending-modx/transport-packages "Package Management") section of the Revolution manager. They can be added to the Revolution instance by either:
+Транспортными пакетами можно управлять в разделе [Менеджер пакетов](building-sites/extras). Их можно добавить в MODX одним из следующих способов:
 
-1. Uploading the file manually to core/packages/, and then clicking "Add New Package" and selecting the "Search Locally for Packages" option
-2. Downloading the package from a [Transport Provider](building-sites/extras/providers "Providers"). This allows updates to be remotely downloaded for a package as well.
+1. Загрузите файл вручную в каталог `core/packages/`, а затем нажмите кнопку "Загрузить пакеты" и выберите параметр "Искать пакеты локально".
+2. Загрузка пакета из [Транспортного провайдера](building-sites/extras/providers). Это также позволяет удаленно загружать обновления для пакета.
 
-Once downloaded, they can be installed by right-clicking a package in the grid, and clicking Install. This will prompt the user to accept a License Agreement should the package come with one, and prompting to read the README should the package contain one. Then it will present a form with pre-installation options, which may or may not exist depending on the package. The user can then click 'Install' to install the package.
+После загрузки их можно установить, щелкнув правой кнопкой мыши пакет в списке и выбрав "Установить". Здест пользователю нужно будет принять лицензионное соглашение, если оно есть в пакете, и предложение ознакомиться с README файлом, если он есть в пакете. Затем он представит форму с параметрами предварительной установки, которые могут существовать или не существовать в зависимости от пакета. Затем пользователь может щелкнуть "Установить"»", чтобы установить пакет.
 
-Once installed, the user can uninstall the package at any time. Also, if the package was downloaded from a [Transport Provider](building-sites/extras/providers "Providers"), then the user can check for updates for the package.
+После установки пользователь может удалить пакет в любое время. Кроме того, если пакет был загружен из [Транспортного провайдера](building-sites/extras/providers), то пользователь может проверить наличие обновлений для пакета. 
 
-## Related Pages
+## Смотрите еще
 
-- [Package Management](extending-modx/transport-packages "Package Management")
-- [Providers](building-sites/extras/providers "Providers")
-- Tutorial: [Creating a 3rd Party Component Build Script](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script")
+- [Управление пакетами](building-sites/extras)
+- [Провайдеры](building-sites/extras/providers)
+- Руководство: [Создание скрипта сборки](extending-modx/transport-packages/build-script)

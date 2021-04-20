@@ -24,7 +24,7 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 
  On the left-hand resource-tree pane, click on the **Elements** tab
 
- ![](modx+create+tv.png)
+ ![](modx_create_tv.png)
 
 ### 3. Define the General Information
 
@@ -38,7 +38,7 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 - **Category**: This affects which sub-tab the variable appears on
 - **Sort Order**: If you're using more than one TV, this will determine which appear at the top (1 = top, bigger numbers sink to the bottom)
 
- ![](modx+__+template+variable_+bio-1.png)
+ ![](modx_template_variable_bio_1.png)
 
  In the picture, you can see how the settings will correspond to your pages's editor fields.
 

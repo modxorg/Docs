@@ -1,6 +1,7 @@
 ---
 title: "modX.runSnippet"
 translation: "extending-modx/modx-class/reference/modx.runsnippet"
+description: "Обрабатывает и возвращает вывод из фрагмента PHP по имени"
 ---
 
 ## modX::runSnippet
@@ -9,18 +10,15 @@ translation: "extending-modx/modx-class/reference/modx.runsnippet"
 
 ## Синтаксис
 
+API документация: [modX::runSnippet()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runSnippet())
+
 ``` php
 string runSnippet (string $snippetName, [array $params = array ()])
 ```
 
 - `$snippetName` _(string)_ Имя сниппета, который вы хотите назвать. **обязательный**
-- `$parameters` _(array)_ Пары ключевых значений параметров для передачи в сниппет, эквивалентные `&key=`value``
+- `$params` _(array)_ Ассоциативный массив свойств, передаваемых сниппету. 
 
-API Doc: [modX::runSnippet()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runSnippet())
-
-``` php
-string runSnippet (string $snippetName, [array $params = array ()])
-```
 
 ## Пример
 
@@ -32,7 +30,7 @@ string runSnippet (string $snippetName, [array $params = array ()])
 $output = $modx->runSnippet('Welcome',array(
    'name' => 'John'
 ));
-echo $output; // распечатает 'Добро пожаловать, John!'
+echo $output; // распечатает 'Добро пожаловать, Сергей!'
 ```
 
 ### Подсказка
@@ -42,4 +40,4 @@ echo $output; // распечатает 'Добро пожаловать, John!'
 ## Смотрите также
 
 - [modX](extending-modx/core-model/modx "modX")
-- [Snippets](extending-modx/snippets "Snippets")
+- [Сниппеты](extending-modx/snippets "Сниппеты")

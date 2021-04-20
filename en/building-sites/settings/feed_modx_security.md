@@ -1,13 +1,11 @@
 ---
 title: "feed_modx_security"
-_old_id: "120"
-_old_uri: "2.x/administering-your-site/settings/system-settings/feed_modx_security"
+description: "Set the URL for the RSS feed for the MODX Security panel in the manager"
 ---
 
-## feed\_modx\_security
 
-**Name**: MODX Security Feed URL
-**Type**: String
-**Default**: <http://feeds.feedburner.com/modxsecurity>
+**Name**: MODX Security Feed URL   
+**Type**: String  
+**Default**: <https://forums.modx.com/board.xml?board=294>
 
 Set the URL for the RSS feed for the MODX Security panel in the manager.

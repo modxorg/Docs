@@ -1,17 +1,16 @@
 ---
-title: "Installing Extras (Add-ons)"
-_old_id: "167"
-_old_uri: "2.x/administering-your-site/installing-a-package"
+title: "Package Management"
 note: "This page is the result of different pages getting combined, which needs some manual work to rewrite into one."
+description: ""
 ---
 
 ## Installing a Package
 
-This page will guide you through the process of installing a Package via [Package Management](extending-modx/transport-packages "Package Management").
+This page will guide you through the process of installing a Package using [Transport Packages](extending-modx/transport-packages "Transport Packages").
 
-Downloading packages through [Package Management](extending-modx/transport-packages "Package Management") requires cURL or PHP Sockets. MODX will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](building-sites/extras/troubleshooting "Troubleshooting Package Management").
+Downloading [Transport Packages](extending-modx/transport-packages) requires `cURL` or `PHP Sockets`. MODX will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](building-sites/extras/troubleshooting "Troubleshooting Package Management").
 
-Go to Extras -> [Installer](extending-modx/transport-packages "Package Management").
+Go to `Extras->Installer`.
 
 ![](modx-package-management-1.jpg)
 
@@ -47,9 +46,7 @@ Or, packages can be downloaded directly from a browser via MODX's Extras section
 
 Downloading Packages requires you to either have cURL or sockets installed on your web server. If you do not have these installed, the list of packages will show blank.
 
-The Official Provider of modx.com has a URL of:
-<http://rest.modx.com/extras/>
- and comes packaged in with MODX Revolution 2.0.0.
+The Official Provider of modx.com has a URL of: <http://rest.modx.com/extras/> and comes packaged in with MODX Revolution 2.0.0.
 
 ### Installing Packages
 

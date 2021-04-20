@@ -1,7 +1,6 @@
 ---
 title: "Transport Packages"
-_old_id: "308"
-_old_uri: "2.x/developing-in-modx/advanced-development/package-management/transport-packages"
+description: "A Transport Package is a collection of objects and files"
 ---
 
 ## What is a Transport Package?

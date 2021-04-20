@@ -1,8 +1,7 @@
 ---
 title: "Using Friendly URLs"
 sortorder: "5"
-_old_id: "331"
-_old_uri: "2.x/administering-your-site/using-friendly-urls"
+description: "Using Friendly URLs"
 ---
 
 You can have friendly URLs fully functioning in under two minutes by following a simple four step process.
@@ -12,15 +11,13 @@ If you're using a webserver other than apache, enabling the rewrite rules will b
 - [Friendly URLs on nginx](getting-started/friendly-urls/nginx)
 - [Friendly URLs on lighttpd](getting-started/friendly-urls/lighttpd)
 
-## 1. Enable rewrite rules 
+MODX supplies an `ht.access` file for you to edit to match your server settings It is located in the root of the MODX site. This file will be ignored by the server until you rename it or (better) copy it to a file called `.htaccess`. Whenever a browser requests a page, the server checks for a file called `.htaccess`, which can contain information about how various URLs should be handled.
 
-MODX supplies an ht.access file for you to edit to match your server settings. It is located in the root of the MODX site. This file will be ignored by the server until you rename it or (better) copy it to a file called .htaccess. Whenever a browser requests a page, the server checks for a file called .htaccess, which can contain information about how various URLs should be handled.
-
-The .htaccess file can be anywhere above the MODX installation but the usual location is in the MODX site root (along with the ht.access file, and the assets, manager and connectors directories as shown in the image below). For most installs, you don't have to make any changes at all to the file in order to get FURLs working. There is one change you should make, but get FURLs working first and we'll cover that change at the end of this page.
+The `.htaccess` file can be anywhere above the MODX installation but the usual location is in the MODX site root (along with the `ht.access` file, and the `assets`, `manager` and `connectors` directories as shown in the image below). For most installs, you don't have to make any changes at all to the file in order to get FURLs working. There is one change you should make, but get FURLs working first and we'll cover that change at the end of this page.
 
 ![](shawnwilkerson_09_01.jpg)
 
-Here is the ht.access file that comes with one version of MODX (your version may be slightly different).
+Here is the `ht.access` file that comes with one version of MODX (your version may be slightly different).
 
 ``` php
 # MODX supports Friendly URLs via this .htaccess file. You must serve web
@@ -86,25 +83,28 @@ RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 #php_value zlib.output_compression_level 5
 ```
 
-You can also put the file in /htdocs or /public\_html or what ever your server uses as long as it is in, or above, the MODX root directory.
+You can also put the file in `/htdocs` or `/public_html` or what ever your server uses as long as it is in, or above, the MODX root directory.
 
-Be aware some hosts like to write their own .htaccess just above the site level, but if your .htaccess is in the MODX site root, it should work fine. If your host has placed an .htaccess file in the MODX site root, you may have to paste the code from the MODX ht.access file below the hosts code in that file. Be sure to back up the host's file first! That way you can restore it if things go bad.
+Be aware some hosts like to write their own `.htaccess` just above the site level, but if your `.htaccess` is in the MODX site root, it should work fine. If your host has placed an `.htaccess` file in the MODX site root, you may have to paste the code from the MODX `ht.access` file below the hosts code in that file. Be sure to back up the host's file first! That way you can restore it if things go bad.
 
-The RewriteBase line should end with a / for root installations  The RewriteBase for a subdirectory installation may have to be entered as: RewriteBase /subdirectoryName/ although this is normally only necessary on localhost installs.The RewriteBase line should almost always end with a slash.
+The `RewriteBase` line should end with a '/' for root installations.
+
+The `RewriteBase` for a subdirectory installation may have to be entered as: `RewriteBase /subdirectoryName/` although this is normally only necessary on localhost installs.
+The `RewriteBase` line should almost always end with a slash.
 
 ## 2. Configure Friendly URLs in MODX 
 
-Next, change the settings in the Friendly URLs Area of the MODX System Settings (see the following image). In MODX 2.3, click on the gear icon at the upper right and select "System Settings." In earlier versions, go to System -> System Settings. In the "Search by key" box at the upper right of the grid, type "friendly" (without the quotes), and press Enter. That will display all the Friendly URL settings. The main one you want is toward the bottom: Use Friendly URLs (friendly\_urls). Double click on the "No" and change it to "Yes".
+Next, change the settings in the Friendly URLs Area of the MODX [System Settings](building-sites/settings) (see the following image). In MODX 2.3, click on the gear icon at the upper right and select "System Settings." In earlier versions, go to `System -> System Settings`. In the "Search by key" box at the upper right of the grid, type "friendly" (without the quotes), and press 'Enter'. That will display all the Friendly URL settings. The main one you want is toward the bottom: Use [Friendly URLs](building-sites/settings/friendly_urls) (`friendly_urls`). Double click on the "No" and change it to "Yes".
 
-If you do not see all of the MODX FURL settings, simply change the "Area" drop-down box at the top of the grid to Friendly URL as I did.
+If you do not see all of the MODX FURL settings, simply change the "Area" (second drop-down box)  at the top of the grid to 'Friendly URL' as I did.
 
-You will not find friendly\_url\_prefix and friendly\_url\_suffix among the settings in the image below - these have been deprecated in favor of extensions defined by [Content Types](building-sites/resources/content-types "Content Types") and container\_suffix (for Container Resources with Content Types having a mime\_type of text/html).  The default Container Suffix setting is now "/" which results in the urls of container resources instead of the content type of the container (in other words, the URLs of resources marked as containers will be / instead of something like .html). If you want your container resources to show as their content type (e.g., .html), remove the "/" from this setting. If you have issues with packages that utilize the container suffix for FURLS (such as [Articles](/extras/articles "Articles")), return this setting to "/".
+You will not find [friendly_url_prefix](building-sites/settings/friendly_url_prefix) setting and [friendly_url_suffix](building-sites/settings/friendly_url_suffix) among the settings in the image below - these have been deprecated in favor of extensions defined by [Content Types](building-sites/resources/content-types "Content Types") and [container_suffix](building-sites/settings/container_suffix) (for Container Resources with Content Types having a `mime_type` of 'text/html').  The default Container Suffix setting is now "/" which results in the urls of container resources instead of the content type of the container (in other words, the URLs of resources marked as containers will be / instead of something like '.html'). If you want your container resources to show as their content type (e.g., '.html'), remove the "/" from this setting. If you have issues with packages that utilize the container suffix for FURLS (such as [Articles](/extras/articles "Articles")), return this setting to "/".
 
 ![](furl_settings.png)
 
-The Use Friendly Alias Path (use\_alias\_path) setting allows the site to display directory structures. If it is set to "No" all of the documents on the site will appear in the URLs as if they are directly off of the root, disregarding the paths. It the setting is set to "Yes" (the default), you will see a full path to the current page in the URLs.
+The Use Friendly Alias Path ([use_alias_path](building-sites/settings/use_alias_path)) setting allows the site to display directory structures. If it is set to "No" all of the documents on the site will appear in the URLs as if they are directly off of the root, disregarding the paths. If the setting is set to "Yes" (the default), you will see a full path to the current page in the URLs.
 
-The friendly\_alias\_urls setting was removed in MODX 2.1+. Enabling friendly\_urls implies you are using friendly\_alias\_urls in 2.1+ and this setting was no longer useful or necessary.
+The [friendly_alias_urls](building-sites/settings/friendly_alias_urls) setting was removed in MODX 2.1+. Enabling [friendly_urls](building-sites/settings/friendly_urls) implies you are using `friendly_alias_urls` in 2.1+ and this setting was no longer useful or necessary.
 
 ## 3. Add the base href tag to the head
 
@@ -152,11 +152,11 @@ RewriteRule (.*) http://yoursite.com/$1 [R=301,L]
 
 Notice that we didn't uncomment the first line. It's a real comment. Uncommenting would make the server treat it like code and that might crash the server.
 
-Severs can be quite touchy about what's in an .htaccess file. Always back up a working .htaccess file before modifying it. That way, if your work crashes the server, you can just copy the saved version back to .htaccess and start again.
+Servers can be quite touchy about what's in an `.htaccess` file. Always back up a working `.htaccess` file before modifying it. That way, if your work crashes the server, you can just copy the saved version back to `.htaccess` and start again.
 
 ## 6) Rewrite to fix duplicates of the main page
 
-Search engines will index each page (index.php, index.html, index.htm, etc.) and will react poorly to duplicate content.
+Search engines will index each page (`index.php`, `index.html`, `index.htm`, etc.) and will react poorly to duplicate content.
 
 ``` php
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.(php|html|htm)\ HTTP/

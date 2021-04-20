@@ -1,9 +1,8 @@
 ---
 title: "mail_smtp_prefix"
 translation: "building-sites/settings/mail_smtp_prefix"
+description: "Устанавливает префикс подключения"
 ---
-
-## mail_smtp_prefix
 
 -   **Имя**: SMTP префикс для соединений
 -   **Тип**: String

@@ -1,9 +1,8 @@
 ---
 title: "mail_smtp_single_to"
 translation: "building-sites/settings/mail_smtp_single_to"
+description: "Обеспечивает возможность обработки в поле to отдельных сообщений электронной почты вместо разовой отправки по всем адресам"
 ---
-
-## mail_smtp_single_to
 
 -   **Имя**: SMTP посылать по одному
 -   **Тип**: Да/Нет
