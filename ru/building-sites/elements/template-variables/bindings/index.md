@@ -3,14 +3,14 @@ title: "Привязки"
 translation: "building-sites/elements/template-variables/bindings"
 ---
 
-## Что такое **@** привязки?
+С помощью привязок вы можете определить динамический источник данных для переменной шаблона. Обычно используется для телевизоров selectbox или checkbox, где редактор может выбрать один или несколько соответствующих параметров, которые отображаются динамически.
 
-В контексте шаблонных переменных Tv источником данных является расположение отображаемой информации. Источник данных может поступать из любого из следующих источников:
+Например:
 
 - внешне сгенерированный файл, который отправляется через FTP на сервер
 - таблица базы данных, доступная для MODX
-- [Ресурсы](building-sites/resources "Ресурсы") в дереве ресурсов
-- [Чанки](building-sites/elements/chunks "Чанки") в дереве элементов
+- [Ресурс](building-sites/resources "Ресурсы") в дереве ресурсов
+- [Чанк](building-sites/elements/chunks "Чанки") в дереве элементов
 - результат оцененного PHP-скрипта
 
 Эти источники данных могут быть привязаны (или «связаны») к переменной шаблона для форматирования и отображения в документе. Кроме того, связанные данные на TV можно легко отформатировать с помощью средств управления TV для получения действительно потрясающих результатов. Формат для использования типов привязок источника данных, доступных для всех переменных шаблона, следующий:
@@ -19,7 +19,6 @@ translation: "building-sites/elements/template-variables/bindings"
 - @RESOURCE resource\_id
 - @CHUNK chunk\_name
 - @SELECT sql\_query
-- @EVAL php\_code
 - @DIRECTORY path\_relative\_to\_base\_path
 - @INLINE доступный в некоторых дополнительных объектах (например, getResources), это указывает блок форматирования in-line в виде строки.
 
@@ -33,7 +32,7 @@ translation: "building-sites/elements/template-variables/bindings"
 col1row1Value==col2row1Value||col1row2Value==col2row2Value,...
 ```
 
-Обратите внимание, что @ привязки будут работать только при использовании внутри полей «Значения параметра ввода» или «Значение по умолчанию».
+> Обратите внимание, что @-bindings работают только в полях «Значения параметра ввода» или «Значение по умолчанию».
 
 При размещении @ привязок внутри поля «Значения параметров ввода» они используются для форматирования параметров ввода только при редактировании документа в Менеджере, например, для создания раскрывающегося списка городов или стран.
 
@@ -45,11 +44,10 @@ col1row1Value==col2row1Value||col1row2Value==col2row2Value,...
 - [@RESOURCE](building-sites/elements/template-variables/bindings/resource-binding "RESOURCE привязка")
 - [@CHUNK](building-sites/elements/template-variables/bindings/chunk-binding "CHUNK привязка")
 - [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT привязка")
-- [@EVAL](building-sites/elements/template-variables/bindings/eval-binding "EVAL привязка")
 - [@DIRECTORY](building-sites/elements/template-variables/bindings/directory-binding "DIRECTORY привязка")
 - [@INHERIT](building-sites/elements/template-variables/bindings/inherit-binding "INHERIT привязка")
 
-[getResources](/extras/getresources "getResources") дополнение поддерживающее @INLINE привязку.
+Некоторые дополнения, такие как [getResources](/extras/getresources "getResources"), поддерживают привязки `@INLINE` или `@FILE` для своих чанков.
 
 ## Смотрите также
 

@@ -1,5 +1,6 @@
 ---
 title: "FAQs & Troubleshooting"
+sortorder: 2
 _old_id: "1689"
 _old_uri: "2.x/faqs-and-troubleshooting"
 note: "This page hasn't been updated in a while, and could use a good review."

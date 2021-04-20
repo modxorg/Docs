@@ -20,5 +20,5 @@ translation: "extending-modx/plugins/system-events/onpluginformrender"
 
 ## Смотри также
 
-- [System Events](extending-modx/plugins/system-events "System Events")
-- [Plugins](extending-modx/plugins "Plugins")
+- [Системные события](extending-modx/plugins/system-events "Системные события")
+- [Плагины](extending-modx/plugins "Плагины")

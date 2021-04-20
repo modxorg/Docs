@@ -8,7 +8,7 @@ So you're developing your custom component for MODX Revolution, and you've run i
 
 ## The Scenario
 
-So let's say we want to create a custom component called "StoreFinder" that takes a zip code from a textfield and then looks up all the store locations with that zip code and returns them in a table. Currently we'll have one table for this: (note the prefix "modx\_" - this is specific to your DB connection, done in Revolution setup.)
+So let's say we want to create a custom component called "StoreFinder" that takes a zip code from a textfield and then looks up all the store locations with that zip code and returns them in a table. Currently we'll have one table for this: (note the prefix `modx_` - this is specific to your DB connection, done in Revolution setup.)
 
 -   modx_sfinder_stores
 
@@ -56,7 +56,7 @@ Great! Now we've got our model definition. Let's add a table tag as the next lin
 <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
 ```
 
-"Object" is our representation of a table, which will generate into an xPDOObject class when we're through. There are some attributes to note here:
+"Object" is our representation of a table, which will generate into an `xPDOObject` class when we're through. There are some attributes to note here:
 
 -   **class** - This is the name of the class we want to be generated from the table. Here, we'll use "sfStore". Note that instead of just "Store", we prefixed it with "sf" to prevent collisions with any other packages we might install that might also have Store tables.
 -   **table** - This should point to the actual database table name, minus the prefix.
@@ -169,11 +169,11 @@ echo "\nExecution time: {$totalTime}\n";
 exit ();
 ```
 
-This block of code executes the schema parsing method, and then outputs the total time the script took to execute. Run it, and viola! Our storefinder/core/model/storefinder/ directory is now filled with all of our map and class files!
+This block of code executes the schema parsing method, and then outputs the total time the script took to execute. Run it, and viola! Our _storefinder/core/model/storefinder/_ directory is now filled with all of our map and class files!
 
 ## Using our New Model
 
-You may be asking, "Okay, that's great. Now how do I _use_ these?" Well, xPDO makes it incredibly simple. Let's first create our snippet file in our core/components/storefinder/ directory, and call it 'snippet.storefinder.php' -- we're going to tie into a file on the file system because it's easier to edit it using a text editor, and we want a file on the file system for our build package.
+You may be asking, "Okay, that's great. Now how do I _use_ these?" Well, xPDO makes it incredibly simple. Let's first create our snippet file in our _core/components/storefinder/_ directory, and call it 'snippet.storefinder.php' -- we're going to tie into a file on the file system because it's easier to edit it using a text editor, and we want a file on the file system for our build package.
 
 Before we proceed, let's enable testing of this snippet directly from MODX. Since we're developing this in a separate directory from our MODX install, let's create a snippet called 'StoreFinder' in our MODX Revolution instance, and put this inside of it (you'll need to change the first line to the correct path):
 
@@ -245,7 +245,7 @@ $store->fromArray(array(
 $store->save();
 ```
 
-Run this **only once** (unless you want duplicate data). That should populate your table with some data, and then output 'Total: 2', assuming you didn't remove the getCollection lines. After you've run it, go ahead and erase those lines.
+Run this **only once** (unless you want duplicate data). That should populate your table with some data, and then output 'Total: 2', assuming you didn't remove the `getCollection` lines. After you've run it, go ahead and erase those lines.
 
 Okay, now we've got our model running smoothly! For those of you who are already familiar with component development, the second part of this tutorial will be dealing with finishing our Component's scenario. You can stop reading if you want.
 

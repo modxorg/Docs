@@ -1,5 +1,6 @@
 ---
 title: "Explanation of Directory Structure"
+sortorder: 6
 _old_id: "108"
 _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure"
 ---
@@ -148,7 +149,6 @@ These classes are used by MODX internally, and developers should never need to d
 - **core/cache/config.cache.php** - This is the cache file for all of the [System Settings](building-sites/settings "System Settings") in MODX. Their database equivalents are found in the \_system\_settings table, and their xPDO equivalents are modSystemSetting objects.
     - **_Tip_** - If you ever get locked out by the CAPTCHA component, you can edit this file and set _use\_captcha_ to '0' to disable CAPTCHA. Then you can log in and disable CAPTCHA in [System Settings](building-sites/settings "System Settings").
 - **core/cache/sitePublishing.idx.php** - In MODX Evolution, this file contained the cache data for all documents, chunks, and snippets. In Revolution, this is no longer the case, and this file now keeps track of cache refresh intervals.
-- **core/cache/mgr/actions.cache.php** - a map of all modAction objects.
 
 ## manager/
 
@@ -160,7 +160,7 @@ This directory contains the [ExtJS](http://extjs.com/) libraries, as well as the
 
 ### manager/controllers/
 
-Controllers are the PHP files tied to modActions. They simply fetch data and return or output it to the browser for rendering and display. Whenever you load a page in the Manager, you are in effect telling MODX to load a particular Controller, which simply loads a Smarty template and outputs any necessary JavaScript to the browser.
+Controllers are the PHP files that generate manager pages. They simply fetch data and return or output it to the browser for rendering and display. Whenever you load a page in the Manager, you are in effect telling MODX to load a particular Controller, which simply loads a Smarty template and outputs any necessary JavaScript to the browser.
 
 ### manager/templates/
 
