@@ -10,7 +10,7 @@ Gets the actual run-time table name from a specified class name.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getTableName>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getTableName()>
 
 ``` php
 string getTableName (string $className, [boolean $includeDb = false])

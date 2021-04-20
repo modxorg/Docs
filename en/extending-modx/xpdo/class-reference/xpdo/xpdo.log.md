@@ -10,6 +10,8 @@ Log a message with details about where and when an event occurs.
 
 ## Syntax
 
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::log()>
+
 ``` php
 $xpdo->log($level, $msg, $target= '', $def= '', $file= '', $line= '');
 ```
@@ -21,7 +23,6 @@ $xpdo->log($level, $msg, $target= '', $def= '', $file= '', $line= '');
 - `$file` (string) A filename in which the log event occurred. Usually you would use the \_\_FILE\_\_ constant.
 - `$line` (string) A line number to help locate the source of the event. Usually you would use the \_\_LINE\_\_ constant
 
-API Docs: [http://api.modx.com/revolution/2.2/db\_core\_xpdo\_xpdo.class.html#%5CxPDO](http://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#%5CxPDO)
 
 ``` php
 void log (integer $level, string $msg, [string $target = ''], [string $def = ''], [string $file = ''], [string $line = ''])

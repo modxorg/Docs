@@ -11,6 +11,8 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator"
 
 ## Синтаксис
 
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getIterator()>
+
 ```php
 xPDOIterator getIterator (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 ```

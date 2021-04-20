@@ -2336,5 +2336,6 @@
     "/current/en/extras/batcher/roadmap": "en/extras/batcher",
     "/current/en/extras/googlesitemap/googlesitemap.roadmap": "en/extras/googlesitemap",
     "/display/ADDON/Batcher": "en/extras/batcher",
-    "/display/revolution20/Developing+an+Extra+in+MODX+Revolution": "en/extending-modx/tutorials/developing-an-extra"
+    "/display/revolution20/Developing+an+Extra+in+MODX+Revolution": "en/extending-modx/tutorials/developing-an-extra",
+    "/display/revolution20/Using+runProcessor": "en/extending-modx/processors/using-runprocessor"
 }

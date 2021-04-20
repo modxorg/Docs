@@ -10,7 +10,7 @@ Sets the logging level state for the XPDO instance.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#setLogLevel>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::setLogLevel()>
 
 ## Example
 

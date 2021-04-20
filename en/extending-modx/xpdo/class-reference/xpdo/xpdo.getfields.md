@@ -12,7 +12,7 @@ This includes default values for each field and is used by the objects themselve
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getFields>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getFields()>
 
 ``` php
 array getFields (string $className)
