@@ -1,4 +1,7 @@
-# mChimpX
+---
+title: "mChimpX"
+description: "mChimpX extra"
+---
 
 ## What is mChimpX?
 
@@ -74,4 +77,4 @@ Install the package through the MODX® package manager.
 
 ## Official Documentation
 
-<https://docs.modx.com/extras/revo/mchimpx>
+<https://docs.modx.com/current/en/extras/mchimpx>

@@ -28,7 +28,7 @@ It can be downloaded from within the MODX Revolution manager via [Package Manage
 
 Archivist is stored and developed in GitHub, and can be found here:<http://github.com/splittingred/Archivist>
 
-Bugs can be filed here: <http://tracker.modx.com/projects/archivist>
+Bugs can be filed here: <https://github.com/modxcms/Archivist/issues>
 
 ## Usage
 
@@ -62,8 +62,8 @@ And then on your archives page:
 
 ## See Also
 
-1. [Archivist.Archivist](extras/archivist/archivist.archivist)
-    1. [Archivist.Archivist.tpl](extras/archivist/archivist.archivist/archivist.archivist.tpl)
-2. [Archivist.ArchivistGrouper](extras/archivist/archivist.archivistgrouper)
+1. [Archivist snippet](extras/archivist/archivist)
+    1. [Archivist tpl](extras/archivist/archivist/tpl)
+2. [ArchivistGrouper snippet](extras/archivist/archivist.archivistgrouper)
 3. [Archivist.getArchives](extras/archivist/archivist.getarchives)
-    1. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/archivist.getarchives.tpl)
+    1. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/tpl)

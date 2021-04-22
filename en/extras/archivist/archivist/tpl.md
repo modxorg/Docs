@@ -35,8 +35,8 @@ This is the Chunk displayed with the &tpl property on the [Archivist](extras/arc
 
 ## See Also
 
-1. [Archivist.Archivist](extras/archivist/archivist)
-   1. [Archivist.Archivist.tpl](extras/archivist/archivist/tpl)
-2. [Archivist.ArchivistGrouper](extras/archivist/archivist.archivistgrouper)
-3. [Archivist.getArchives](extras/archivist/archivist.getarchives)
-   1. [Archivist.getArchives.tpl](extras/archivist/archivist.getarchives/tpl)
+1. [Archivist snippet](extras/archivist/archivist)
+   1. [Archivist tpl](extras/archivist/archivist/tpl)
+2. [Archivist ArchivistGrouper snippet](extras/archivist/archivist.archivistgrouper)
+3. [Archivist getArchives snippet](extras/archivist/archivist.getarchives)
+   1. [Archivist getArchives tpl](extras/archivist/archivist.getarchives/tpl)
