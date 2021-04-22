@@ -123,7 +123,9 @@ Tags in the form `[[+PlaceholderName]]` that reference MODX Placeholders, usuall
 
 Any of the fields of the `site_content` table, such as `pagetitle`, `longtitle`, `introtext`, `alias`, `menuindex`, etc. Some fields are available on the Document Create/Edit screen and via Resource Tags; Others can only be accessed via the `documentObject`.
 
-## Plugin - 
+## Plugin
+
+Plugins are similar to [Snippets](getting-started/glossary#snippet) in that they are pieces of PHP code that have access to the MODX API. The biggest difference is when the code is executed. Plugins are configured to execute during certain System events, such as saving a chunk or clearing the cache. [See more](extending-modx/plugins) 
 
 ## Property
 
@@ -157,9 +159,13 @@ An example of a file Resolver is one that copies the `assets/getResources` direc
 
 Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getting-started/glossary#system-setting), [Context Settings](getting-started/glossary#context-setting), and [User Settings](getting-started/glossary#user-setting).
 
+## Snippet
+
+Способ, с помощью которого MODX позволяет вам запускать динамический код PHP на любой из ваших страниц. [Подробнее](building-sites/elements/snippets)
+
 ## Snippet Tags
 
-Tags in the form `[[SnippetName]]`, also referred to as Snippet Calls.
+Tags in the form `[[SnippetName]]`, also referred to as [Snippet](getting-started/glossary#snippet) calls.
 
 ## Static Resource
 
@@ -168,6 +174,10 @@ A specific type of Resource that is a direct reference to a specific file on the
 ## Symlink
 
 A type of Resource that references a single, local MODX Resource; the Resource's content will replace the Symlink's content.
+
+## System Event
+
+Event in MODX that "fire" throughout the MODX code in response to various system actions. [See more](extending-modx/plugins/system-events)
 
 ## System Setting
 

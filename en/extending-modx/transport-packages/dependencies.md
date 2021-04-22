@@ -1,14 +1,13 @@
 ---
 title: "Package Dependencies"
-_old_id: "1737"
-_old_uri: "2.x/developing-in-modx/advanced-development/package-management/package-dependencies"
+description: "New in MODX 2.4 is the ability to define package dependencies in transport packages"
 ---
 
 New in MODX 2.4 is the ability to define package dependencies in transport packages. When these are set, the user will not be able of installing the package until the dependencies have been fulfilled.
 
 ## Adding Package Dependencies to your Build
 
-Package Dependencies are added to the package attributes, which were already used for the license, readme and changelog contents, typically looking like this toward the end of your [build script](extending-modx/transport-packages/build-script). If you use a different way of creating packages, you might need to check that documentation to see if it supports these attributes and how you can defined the dependencies there.
+Package Dependencies are added to the package attributes, which were already used for the `license`, `readme` and `changelog` contents, typically looking like this toward the end of your [build script](extending-modx/transport-packages/build-script). If you use a different way of creating packages, you might need to check that documentation to see if it supports these attributes and how you can defined the dependencies there.
 
 ```php
 $builder->setPackageAttributes(array(
@@ -39,9 +38,9 @@ $builder->setPackageAttributes(array(
 ));
 ```
 
-You can add more packages to the list by simply adding additional elements to that array. You can also add checks for "modx" and "php" to require a specific version of MODX or PHP.
+You can add more packages to the list by simply adding additional elements to that array. You can also add checks for `modx` and `php` to require a specific version of MODX or PHP.
 
-Keep in mind that these package dependencies only work in MODX 2.4 and up. If you intend to support older versions, you might want to add an additional check in a resolver, or add instructions to your documentation.
+Keep in mind that these package dependencies only work in MODX 2.4 and up. If you intend to support older versions, you might want to add an additional check in a [Resolver](getting-started/glossary#resolver-from-transport-package), or add instructions to your documentation.
 
 There are different ways of specifying the version numbers that each carry different meaning. You can also add multiple constraints by separating them with a comma.
 
