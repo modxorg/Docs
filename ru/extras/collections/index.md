@@ -1,92 +1,92 @@
 ---
 title: "Collections"
-_old_id: "1725"
-_old_uri: "revo/collections"
+translation: "extras/collections"
+description: "Collections"
 ---
 
-Collections is a MODX Revolution Extra that adds a custom `CollectionContainer` resource class with the following behaviour:
+Collections ("Коллекции") - это Дополнение MODX Revolution, которое добавляет пользовательский класс ресурсов `CollectionContainer` со следующим поведением:
 
-1. Any direct child resource will be hidden from the Resource Tree in the Manager, and listed in a grid view (similar to Articles) under a dedicated “Children” tab.
-2. Any children that themselves have children will be shown in the Tree, to be managed normally.
+1. Любой прямой дочерний ресурс будет скрыт в дереве ресурсов в Менеджере и будет отображаться в виде таблицы (по аналогии с [Articles](extras/articles)) на специальной вкладке "Дочерние ресурсы".
+2. Любые дочерние элементы, у которых есть собственные дочерние элементы, будут показаны в дереве для обычного управления. 
 
 ![Collections Children Grid](collections-grid-view.png)
 
-### Sub Collections
+### Подколлекции
 
-Just like the MODX Resource Tree itself, Collections supports nesting. You can create a Collection within another Collection. Sub Collection Containers will be displayed in the resource tree and their children will be displayed in the grid view.
+Как и само дерево ресурсов MODX, Collections поддерживает вложение. Вы можете создать коллекцию внутри другой коллекции. Контейнеры вложенной коллекции будут отображаться в дереве ресурсов, а их дочерние элементы будут отображаться в виде таблицы.
 
-### Drag n Drop
+### Перетаскивание
 
-You can drag n drop Resources into a Collections container and if they don’t have children of their own they will be listed in the grid. If they do have children, they’ll just remain in the Tree as usual.
+Вы можете перетащить ресурсы в контейнер Коллекций, и если у них нет собственных дочерних элементов, они будут перечислены в таблице. Если у них есть Дочерние ресурсы, они просто останутся в Дереве, как обычно.
 
-## Collections Templates (new in version 2)
+## Шаблоны коллекций (новое с версии 2)
 
-### General Settings
+### Общие настройки 
 
 ![](screenshot-2014-11-25-15.35.06.png)
 
-- Set as default view - If "Yes", this Collections View Template (CVT) will be used as a last fallback.
-- Default for templates - This will be the default CVT for Resources using these MODX Templates. Can be overridden on a per-resource basis in the Collections vertical-tab of the Collections resource's Settings.
-- Page size - Default number of children to display per page in the grid.
-- Sort field - Default field to sort by (Same rules as for name in columns definitions).
-- Sort dir - Default sort direction.
-- Allow bulk actions - Enables checkboxes for multi-item selection, and bulk actions on those selections.
-- Allow drag & drop - Enables drag & drop sorting.
-- Content's place - Position of the standard Resource content field.
-- Tab's label - Customize the label text for the "Children" tab.
-- Context menu items - Customize the items in the context menu (when you right-click in the grid).
-- Buttons - Customize the buttons rendered, when using a renderer that renders buttons. Optionally add classes to each button with a colon ":" separator.
+- Задать как вид по умолчанию - Если «Да», этот Шаблон Представления Коллекций (ШПК) будет использоваться в качестве последнего запасного варианта.
+- По умолчанию для шаблонов - ШПК будет использован по умолчанию для ресурсов, использующих указанные шаблоны. Может быть переопределено для каждого ресурса на вертикальной вкладке "Коллекции" в настройках ресурса "Коллекции".
+- Размер страницы - количество дочерних элементов по умолчанию для отображения на каждой странице в таблице.
+- Поле сортировки - поле по умолчанию для сортировки (те же правила, что и для имени в определениях столбцов).
+- Направление сортировки - направление сортировки по умолчанию.
+- Разрешить массовые действия - включает флажки для выбора нескольких элементов и массовых действий с этими выборами.
+- Разрешить перетаскивание - включает сортировку перетаскиванием.
+- Место расположения контента - Положение стандартного поля  контента `content` Ресурса.
+- Надпись вкладки - Настройте текст метки для вкладки «Дочерние ресурсы».
+- Пункты контекстного меню - Настройте элементы в контекстном меню (при щелчке правой кнопкой мыши в таблице на элементе Коллекции).
+- Кнопки - Настройте отображаемые кнопки при использовании средства визуализации, которое отображает кнопки. При желании добавьте классы к каждой кнопке с разделителем двоеточие ":".
 
-#### Permanent sort
+#### Постоянная сортировка
 
-From version 3.2.0, new fields were added to general setting: **Permanent sort - Before** and **Permanent sort - After**. They allow adding more sort options to children's grid and they will be applied together with the default sort option (and also with sorting after clicking a column header). **Before sort** is used before the default sort, **after sort** is used after the default.
+Начиная с версии 3.2.0, в общие настройки были добавлены новые поля: **Фиксированная сортировка - До** и **Фиксированная сортировка - После**. Они позволяют добавлять дополнительные параметры сортировки в таблицу дочерних элементов, и они будут применяться вместе с параметром сортировки по умолчанию (а также с сортировкой после щелчка по заголовку столбца). **Фиксированная сортировка - до** используется перед сортировкой по умолчанию, **Фиксированная сортировка - после** используется после сортировки по умолчанию.
 
-**Syntax for both fields:**
+**Синтаксис для обоих полей:**
 
 ``` plain
 sort_field_condition=sort_field:sort_dir:sort_type,sort_field_condition2=sort_field2:sort_dir2:sort_type2<br>*=sort_field:sort_dir:sort_type,sort_field_condition2=sort_field2:sort_dir2:sort_type2<br>sort_field:sort_dir,sort_field_condition2=sort_field2
 ```
 
-- sort\_field\_condition - Sort options will be applied only if table is sorted by this field, this item is optional, if it's not present, or is set to **\*** sort will be applied everytime
-- sort\_field - Field to filter by, **required**
-- sort\_dir - Direction to sort, optional, if not present sort direction from table will be used
-- sort\_type - Allows casting type to a field, optional
+- sort\_field\_condition - Параметры сортировки будут применяться только в том случае, если таблица отсортирована по этому полю, этот элемент является необязательным, если он отсутствует или установлен в **\*** сортировка будет применяться каждый раз
+- sort\_field - Поле для фильтрации, **обязательно**
+- sort\_dir - Направление сортировки, необязательно, если его нет, будет использовано направление сортировки из таблицы
+- sort\_type - Разрешает приведение типа к полю, необязательно
 
-### Example
+### Пример
 
 ``` plain
 publishedon=published:asc
--- Setting above as Permanent sort - Before will pull all unpublished resources on top of the grid when sorting by published on. Because sort_dir is present, doesn't matter if you sorting asc/desc by published on, unpublished resources will always be on top.
+-- Такая настройка для "Постоянная сортировка - до" перетащит все неопубликованные ресурсы в верхнюю часть таблицы при сортировке по опубликованным. Поскольку sort_dir присутствует, не имеет значения, сортируете ли вы по убыванию или по возврастанию по опубликованным, неопубликованные ресурсы всегда будут наверху 
 ```
 
-### Collection's settings
+### Настройки Коллекции
 
 ![](screenshot-2014-11-25-15.36.58.png)
 
-- Resource type selection - Enable Resource type selection when creating a new Resource using the "New Child" button.
-- Default children's resource type - Set a default Resource type for newly created child Resources.
-- Default children's template - Set a default Template for newly created child Resources.
-- New child's button label - Customize the label text on the "New Child" button.
-- Allowed resource types - Limit the allowed Resource types to a comma-separated list, if Resource type selection is enabled.
+- Выбор типа ресурса - Включите выбор типа ресурса при создании нового ресурса с помощью кнопки «Новый дочерний элемент»
+- Тип дочерних ресурсов по умолчанию - Установите тип ресурса по умолчанию для вновь созданных Дочерних ресурсов.
+- Шаблон дочерних ресурсов по умолчанию - Установите шаблон по умолчанию для вновь созданных дочерних ресурсов.
+- Надпись кнопки быстрого создания ресурсов - Настройте текст метки на кнопке «Новый дочерний элемент».
+- Разрешенные типы ресурсов - Ограничьте разрешенные типы ресурсов списком, разделенным запятыми, если включен выбор типа ресурса. 
 
-### Columns
+### Столбцы
 
 ![](screenshot-2014-11-25-15.41.40.png)
 
-- Label - String or lexicon entry key (you can add your own lexicon entries under the collections namespace into the topic templates) that will be used as a column label.
-- Name - Name of the field; can be any field from modResource, any TV name (prefixed with tv\_, **TV name must NOT contain a dot**) or any Tagger group alias (prefixed with tagger\_)
-- Hidden - If "Yes", column will be hidden by default.
-- Sortable - If "Yes", user will be able to sort the grid by the values in this column.
-- Width - Width of column.
-- Editor - (string) Xtype or (object) JSON of valid editor.
-- Renderer - Name of function that will be used as a renderer.
-- Position - Order of columns.
+- Метка - строка или ключ Лексикона (вы можете добавить свои собственные словарные статьи в пространство имен коллекций в шаблоны тем), который будет использоваться в качестве метки столбца.
+- Название - Название поля, может быть любым полем из `modResource`, любым именем TV (с префиксом `tv_`, **имя TV НЕ должно содержать точки**) или любым `alias` псевдонимом группы [Tagger](extras/tagger) (с префиксом `tagger_`)
+- Скрытый - если указано "Да", столбец будет скрыт по умолчанию.
+- Сортировка - если указано "Да", пользователь сможет отсортировать сетку по значениям в этом столбце.
+- Ширина - Ширина столбца.
+- Редактор - (string) Xtype или (object) JSON действующего редактора.
+- Renderer - имя функции, которая будет использоваться в качестве средства визуализации.
+- Позиция - Порядок столбцов. 
 
-### Editors
+### Редакторы
 
-As an editor can be used any valid xtype (string) or JSON object.
+В качестве редактора может использоваться любой действительный объект xtype (string) или JSON.
 
-Examples:
+Примеры: 
 
 - textfield
 - textarea
@@ -94,38 +94,40 @@ Examples:
 - numberfield
 - `{"xtype":"numberfield","allowDecimals":false,"allowNegative":false}`
 
-### Renderers
+### Рендереры
 
-As a renderer, you can use any [function](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) with proper arguments.
+В качестве Рендерера вы можете использовать любую [функцию](https://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) с корректными аргументами.
 
-Available renderers:
+Доступные рендереры:
 
-- **this.rendYesNo** - Yes/No (1/0) boolean values, coloured in green and red, respectively
-- **Collections.renderer.qtip** - On hover will show a qtip with value (useful for longer values)
-- **Collections.renderer.pagetitleWithButtons** - Pagetitle (in h2 element) with link to edit and buttons for update, view, delete, publish (ala Articles grid view)
-- **Collections.renderer.pagetitle** - Pagetitle (in h2 element) with link to edit
-- **Collections.renderer.pagetitleLink** - Pagetitle with link to edit (smaller text than h2)
-- **Collections.renderer.datetimeTwoLines** - Date on first line and time on second line. Date and time formats are configurable via system settings
-- **Collections.renderer.datetime** - Date and time on one line. Date and time formats are configurable via system settings
-- **Collections.renderer.image** - Image thumbnail
+- **this.rendYesNo** - Да/Нет (1/0) логические значения, окрашенные в зеленый и красный цвета соответственно
+- **Collections.renderer.qtip** - При наведении курсора отображается подсказка со значением (полезно для более длинных значений)
+- **Collections.renderer.pagetitleWithButtons** -Заголовок страницы (в элементе h2) со ссылкой на редактирование и кнопками для обновления, просмотра, удаления, публикации (а-ля в виде таблицы в [Articles](extras/articles))
+- **Collections.renderer.pagetitle** -  Заголовок (в элементе h2) со ссылкой для редактирования
+- **Collections.renderer.pagetitleLink** - Заголовок страницы со ссылкой для редактирования (текст меньше, чем h2)
+- **Collections.renderer.datetimeTwoLines** - Дата в первой строке и время во второй строке. Форматы даты и времени настраиваются в Cистемных настройках.
+- **Collections.renderer.datetime** - Дата и время в одной строке. Форматы даты и времени настраиваются в Cистемных настройках.
+- **Collections.renderer.image** - миниатюра изображения
 
-#### Custom renderers
+#### Пользовательские рендереры
 
-Custom renderers can be easily added by creating a JS file (and CSS file if needed) and specifying URLs to those files in system settings. JS files can contain [functions](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) (see [sample](https://github.com/modxcms/Collections/blob/develop/assets/components/collections/js/mgr/extra/collections.renderers.js) renderers here) that can then be used collectively.
+Пользовательские рендереры можно легко добавить, создав файл JS (и файл CSS, если необходимо) и указав URL-адреса этих файлов в Системных настройках. Файлы JS могут содержать [функции](http://docs.sencha.com/extjs/3.4.0/#!/api/Ext.grid.Column-cfg-renderer) (см. [Образец](https://github.com/modxcms/Collections/blob/develop/assets/components/collections/js/mgr/extra/collections.renderers.js) здесь), которые затем можно использовать совместно. 
 
-## Selections (new in version 3)
+## Подборки (новое с версии 3)
 
 Selections are essentially links to other Resources in the same MODX site. You are not duplicating the original Resources when you add them to a Selections container, but simply creating another view from which to manage those Resources.
 
-### ExampleUse Case 1
+Подборки - это по сути ссылки на другие ресурсы на том же сайте MODX. Вы не дублируете исходные ресурсы, когда добавляете их в контейнер `Selections`, а просто создаете другое представление для управления этими ресурсами.
 
-You want to create a menu with links to Resources that are in disparate parts of the Tree. Those Resources rightfully "belong" where they are in the site's content structure, so the solution thus far has been to create a container Resource in the Tree specifically for this menu, and create Weblink Resources therein. But really the Weblinks add no value other than they can be controlled in another list. Instead, add those Resources to a Selections container, which maintains its own menuindex values for each Resource, and using the getSelections Snippet, you can list Resources sorted by those, special menuindex values.
+### Пример использования 1
 
-### ExampleUse Case 2
+Вы хотите создать меню со ссылками на ресурсы, которые находятся в разных частях Дерева ресурсов. Эти ресурсы фактически расположены там в Дереве ресурсов, где они и находятся в структуре контента сайта, поэтому до сих пор решение заключалось в создании контейнера `Resource` в дереве специально для этого меню и создании в нем ресурсов веб-ссылок. Но на самом деле веб-ссылки не добавляют никакой ценности, кроме того, что ими можно управлять в другом списке. Вместо этого добавьте эти ресурсы в контейнер `Selections`, который поддерживает свои собственные значения `menuindex` для каждого ресурса, и, используя Сниппет `getSelections`, вы можете перечислить ресурсы, отсортированные по этим специальным значениям `menuindex`.
 
-You want to populate a widget with links to other Resources on your site, but again the Resources come from various sections, or you wish to manually curate the widget contents rather than automate it. Selections provides an alternative to, say, MIGX, when you need a management UI for arbitrary "Selections" of Resources, no matter where they exist in the site (even if they live under a "Collections" container, for example).
+### Пример использования 2
 
-### getSelections Snippet
+Вы хотите заполнить виджет ссылками на другие ресурсы на вашем сайте, но опять же, ресурсы поступают из различных разделов, или вы хотите вручную курировать содержимое виджета, а не автоматизировать его. `Selections` предоставляет альтернативу, например [MIGX](extras/migx), когда вам нужен пользовательский интерфейс управления для произвольных "выборок" ресурсов, независимо от того, где они существуют на сайте (даже если они находятся, например, в контейнере "Коллекции").
+
+### Сниппет getSelections 
 
 ``` php
 [[getSelections?
@@ -134,19 +136,19 @@ You want to populate a widget with links to other Resources on your site, but ag
 ]]
 ```
 
-getSelections is a wrapper Snippet for getResources, so it relies on getResources being installed. Any / all of the getResources properties available in the version of getResources that you have installed will also be available as properties for getSelections. Additionally here are the properties specific to getSelections:
+getSelections это сниппет-обёртка для `getResources`, поэтому он зависит от установленного `getResources`. Любые/все свойства `getResources`, доступные в установленной вами версии `getResources`, также будут доступны как свойства для `getSelections`. Кроме того, вот свойства, специфичные для `getSelections`:
 
-- &selections - the ID of the Selections container Resource.
-- &getResourcesSnippet - You can optionally name another listing Snippet to call with getSelections, but this has not been thoroughly tested with other Snippets, and should probably only be used if you're able to troubleshoot both getSelections and the Snippet you're calling.
+- &selections - ID Ресурса контейнера `Selections`
+- &getResourcesSnippet - при желании вы можете назвать другой Сниппет листинга для вызова с помощью `getSelections`, но это не было тщательно протестировано с другими Сниппетами и, вероятно, должно использоваться только в том случае, если вы можете устранить неполадки как `getSelections`, так и вызываемого Сниппета. 
 
-### Selection's settings
+### Настройки подборок
 
 ![](screenshot-2014-11-25-15.40.15.png)
 
-- New link's button label - Customize label text on the "New Link" button.
+- Метка кнопки новой ссылки - Настройте текст метки на кнопке «Новая ссылка». 
 
-## Additional Resources
+## Смотрите также
 
-- [Collections: Customizable Views for Content Types](https://modx.com/blog/2014/09/30/collections-easily-customizable-admin-views-for-content-types/)
-- [Collections 3](http://www.bxr.cz/blog/collections-3/)
-- [Collections: Enhanced sort](http://www.bxr.cz/blog/collections-enhanced-sort/)
+- [Collections: Настраиваемые представления для типов контента](https://modx.com/blog/2014/09/30/collections-easily-customizable-admin-views-for-content-types/)
+- [Collections 3](https://www.bxr.cz/blog/collections-3/)
+- [Collections: Расширенная сортировка](https://www.bxr.cz/blog/collections-enhanced-sort/)

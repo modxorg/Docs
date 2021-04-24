@@ -23,6 +23,10 @@ The process of storing frequently requested data and where it is stored.  By cac
 
 An optional classifying name that can be attached to any Element or PropertySet (and other objects in later versions of Revolution) that separates it from other similar objects.
 
+## Child Resource
+
+MODX resources are arranged in a tree-like manner, and it may happen that one of the resources is specified as a Container, and other resources are located inside it. In this case in relation to the Container (which is Parent resource here), such resources are called Child resources. 
+
 ## Chunk Tags
 
 Tags in the form `[[$ChunkName]]` that can be used in reference to Chunks.
@@ -115,6 +119,10 @@ An organizational tag for Components to use to identify Lexicon Entries, Setting
 
 A web service that enables remote [installation](building-sites/extras) of Transport Packages directly from the Manager.
 
+## Parent Resource
+
+Resources in MODX are arranged in a tree-like manner, and it may happen that one of the resources is specified as a Container, and other resources are located inside it, in this case the Container will be Parent resource, and "subordinate" resources will be Child resources. 
+
 ## Placeholder Tags
 
 Tags in the form `[[+PlaceholderName]]` that reference MODX Placeholders, usually set with `$MODX->setPlaceholder('placeholderName','value')` in a Snippet or Plugin.
@@ -122,6 +130,10 @@ Tags in the form `[[+PlaceholderName]]` that reference MODX Placeholders, usuall
 ## Resource Field
 
 Any of the fields of the `site_content` table, such as `pagetitle`, `longtitle`, `introtext`, `alias`, `menuindex`, etc. Some fields are available on the Document Create/Edit screen and via Resource Tags; Others can only be accessed via the `documentObject`.
+
+## Resource Tree
+
+The way Resources are located relative to each other, which affects the structure of web pages and, as a result, URL links of your site. You can see Resource Tree in the MODX Manager, it is on the left. 
 
 ## Plugin
 
@@ -134,6 +146,8 @@ A single variable for an Element; used to set a specific parameter for the Eleme
 ## Property Set
 
 A collection of variables used for a particular purpose with an Element. Property Sets are attached to Elements and pass in the Properties that they carry as parameters to the Element. An example is a custom Property Set for a Snippet that passes in specific parameters to the Element, overriding the default behavior.
+
+## Renderer
 
 ## Resource
 
