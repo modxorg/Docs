@@ -1,109 +1,108 @@
 ---
 title: "MIGX"
 translation: "extras/migx"
+description: "MIGX - это настраиваемая TV переменная для объединения нескольких TV в один"
 ---
 
-## What is MIGX?
+## Что такое MIGX?
 
-MIGX is a [custom](making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-input-type "Adding a Custom TV Input Type") [Template Variable](making-sites-with-modx/customizing-content/template-variables "Template Variables") (TV) input type for aggregating multiple TVs into one TV. This aggregation greatly simplifies the workflow for end users of the manager to add complex data items to the manager. A data item can consist of any number of any other TVs, including text, images, files, checkboxes, etc.
+MIGX - это [настраиваемая TV переменная](extending-modx/custom-tvs) для объединения нескольких TV в один. Такое агрегирование значительно упрощает рабочий процесс для конечных пользователей Менеджера по добавлению сложных элементов данных. Элемент данных может состоять из любого количества любых других TV, включая текст, изображения, файлы, флажки и т.д. 
 
-The package is highly customizable and allows the developer to define a custom input window for the MIGX TV. From this input window, items can be added, modified, and reordered.
+Пакет легко настраивается и позволяет разработчику определять настраиваемое окно ввода для MIGX TV. В этом окне ввода можно добавлять, изменять и переупорядочивать элементы.
 
-The package also ships with a snippet ( [getImageList](extras/migx/migx.frontend-usage "MIGX.Frontend-Usage")) that facilitates the easy retrieval of the complex data items from the custom MIGX TV input type.
+Пакет также поставляется со Сниппетом ([getImageList](extras/migx/migx.frontend-usage)), который упрощает получение сложных элементов данных из настраиваемого типа ввода MIGX TV.
 
-Please read below for install instructions for MIGX as they differ from typical MODX packages.
+Пожалуйста, прочтите ниже инструкции по установке MIGX, поскольку они отличаются от типичных пакетов MODX.
 
-MIGX stands for **M**ulti**I**tems**G**ridtv for MOD**X**.
+MIGX это аббревиатура от **M** ulti **I** tems **G** rid TV для MOD **X**.
 
-## Requirements
+## Требования
 
--   MODX Revolution 2.1 rc4 or later
--   PHP5 or later MIGX also works on Revolution 2.0.8 with limited functionality.
+-   MODX Revolution 2.1 rc4 или более поздняя версия
+-   PHP5 или более поздняя версия MIGX также работает с Revolution 2.0.8 с ограниченной функциональностью. 
 
-## Download
+## Скачать
 
-MIGX can be downloaded from within the Revolution manager via [Package Management]("Package Management"), or from the MODX Extras Repository, available here: <https://modx.com/extras/package/migx>
+MIGX можно загрузить из диспетчера Revolution через [Менеджер пакетов](building-sites/extras), или из официального MODX репозитория <https://modx.com/extras/package/migx>
 
-## Installation Instructions
+## Инструкции по установке
 
-### Step 1: Package Installation
+### Шаг 1: Установка пакета
 
-Install the package via the the link above.
+Установите пакет по ссылке выше.
 
-### Step 2: Set up the MIGX Configurator Custom Manager Page (CMP) and Package Manager
+### Шаг 2: Настройте страницу настраиваемого диспетчера конфигуратора MIGX (CMP) и Менеджер Пакетов
 
-Since Version 2.8 this steps (1-19) are not longer needed.
+Примечание. Было бы разумно создать резервную копию вашей базы данных MODX перед настройкой, поскольку этот процесс изменит структуру вашей базы данных.
 
-Note: It would be prudent to create a snapshot of your MODX database before setup as this process will change your database structure.
+- Откройте меню «Система» в Менеджере.
+- Щелкните пункт меню «Действия».
+- Найдите категорию MIGX в списке действий слева. Щелкните по нему правой кнопкой мыши.
+- Нажмите «Создать действие здесь».
+- Введите `index` для контроллера
+- Убедитесь, что для пространства имен выбрано `migx`.
+- Выберите «Нет действий» для родительского контроллера.
+- Нажмите "Сохранить".
+-   Обновите страницу
+- Найдите категорию «Компоненты» в списке верхних пунктов меню справа. Щелкните по нему правой кнопкой мыши.
+- Нажмите «Разместить действие здесь».
+    - Ключ лексикона: `migx`
+    - Описание: конфигуратор и менеджер пакетов
+    - Действие: `migx - index` (есть несколько страниц, отсортированных по алфавиту. Убедитесь, что вы пропустили все основные действия)
+    - Значок: (оставьте поле пустым)
+    - Параметры: `&configs=packagemanager||migxconfigs||setup`
+    - Обработчик: (оставьте поле пустым)
+    - Разрешения: (оставьте поле пустым)
+- Нажимаем "сохранить"
+-   Обновите страницу
+- Откройте меню «Компоненты».
+- Щелкните созданный вами новый элемент действия MIGX.
+- Щелкните вкладку «Настройка/обновление».
+- ПРЕДУПРЕЖДЕНИЕ. Перед этим следующим шагом вы, вероятно, захотите убедиться, что создали моментальный снимок своей базы данных.
+- Нажмите кнопку «Настройка».
+-   Готово! 
 
--   Open the "System" menu from within the Revolution Manager
--   Click the "Actions" menu item
--   Find the MIGX category from the list of actions on left. Right click on it.
--   Click "Create Action Here"
--   Type "index" for controller
--   Ensure "migx" is selected for the namespace
--   Select "No Action" for the parent controller
--   Click "Save"
--   Refresh the page
--   Find the Components category from the list of top menu items on the right. Right click on it.
--   Click "Place Action Here"
-    -   Lexicon Key: migx
-    -   Description: Configurator and Package Manager
-    -   Action: migx - index (there are multiple pages sorted alphabetically. Make sure you go past all the core actions)
-    -   Icon: (leave blank)
-    -   Parameters: &configs=packagemanager||migxconfigs||setup
-    -   Handler: (leave blank)
-    -   Permissions: (leave blank)
--   Click "save"
--   Refresh the page
--   Open the "Components" menu
--   Click the new MIGX Action item you created.
--   Click the Setup / Upgrade tab
--   WARNING: Before this next step, you probably want to ensure that you've created a snapshot of your database.
--   Click the Setup button
--   Done!
+## Обновление до MIGX 2.0
 
-## Upgrading to MIGX 2.0
+Для правильной работы MIGX 2.0 требуется новое поле в таблице MIGX в вашей базе данных. Эта процедура добавит новое поле auto_increment `MIGX_id`, которое требуется для правильной работы Сниппета [getImageList](extras/migx/migx.frontend-usage). Перед изменением структуры базы данных важно создать резервную копию базы данных. 
 
-MIGX 2.0 requires a new field in the MIGX table within your database to work properly. This procedure will add a new auto_increment field, MIGX_id, that is required for the [getImageList](extras/migx/migx.frontend-usage "MIGX.Frontend-Usage") snippet to work correctly. It is important that you create a snapshot of your database before any database structure changes.
+### Шаг 1: Создайте резервную копию базы данных
 
-### Step 1: Backup your database
+Сделайте резервную копию таблиц вашей базы данных, в частности таблицы `modx_site_tmplvar_contentvalues`. 
 
-Make a backup of your database tables, specifically the modx_site_tmplvar_contentvalues table.
+### Шаг 2: Обновите Компонент
 
-### Step 2: Component Upgrade
+1. Откройте меню "Компоненты" в Менеджере.
+2. Щелкните элемент "MIGX".
+3. Щелкните вкладку "Настройка/обновление".
+4. ПРЕДУПРЕЖДЕНИЕ. Перед этим следующим шагом вы, вероятно, захотите убедиться, что создали резевную копию своей базы данных.
+5. Нажмите кнопку "Обновить".
+6. Готово! 
 
-1. Open the "Components" menu from within the Revolution Manager
-2. Click the MIGX Action Item
-3. Click the Setup / Upgrade tab
-4. WARNING: Before this next step, you probably want to ensure that you've created a snapshot of your database.
-5. Click the Upgrade button
-6. Done!
+## Разработка и уведомление об ошибках
 
-## Development and Bug Reporting
+MIGX хранится и разрабатывается Bruno17 с использованием GitHub: <https://github.com/Bruno17/migx>
 
-MIGX is stored and developed by Bruno17 using GitHub: <https://github.com/Bruno17/migx>
+## Использование
 
-## Usage
+### Шаг 1: Установка MIGX
 
-### Step 1: Install MIGX
+Следуйте указаниям в этом документе
 
-Follow the instructions in this document.
+### Шаг 2: Использование в бекенде
 
-### Step 2: Backend Usage
+Создайте новый MIGX TV и назначьте его шаблону 
 
-Create a new TV and apply it to a template
+[Смотрите инструкции](extras/migx/migx.backend-usage)
 
-[View Instructions](extras/migx/migx.backend-usage "MIGX.Backend-Usage")
+### Шаг 3: Ввод данных
 
-### Step 3: Data Entry
+Загрузите контент в свой новый TV. 
 
-Fill in content into your new TV.
+[Смотрите инструкции](extras/migx/migx.data-entry)
 
-[View Instructions](extras/migx/migx.data-entry "MIGX.Data-Entry")
+### Шаг 4: Использование во фронтенде
 
-### Step 4: Frontend Usage
+Используйте Сниппет `getImageList` для отображения контента из вашего нового MIGX TV. 
 
-Use the getImageList snippet to display content from your new TV.
-
-[View Instructions](extras/migx/migx.frontend-usage "MIGX.Frontend-Usage")
+[Смотрите инструкции](extras/migx/migx.frontend-usage)
