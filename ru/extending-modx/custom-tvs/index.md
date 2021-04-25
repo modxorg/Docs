@@ -1,30 +1,30 @@
 ---
-title: "Custom Template Variables"
-_old_id: "1047"
-_old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2"
+title: "Настраиваемые TV переменные шаблона"
+translation: "extending-modx/custom-tvs"
+description: "Cоздание собственных пользовательских типы ввода для TV"
 ---
 
-This tutorial is for MODX Revolution 2.2 or greater.
+Это руководство предназначено для MODX Revolution 2.2 или выше.
 
-## What are Custom TV Input Types?
+## Что такое настраиваемые TV переменные шаблона?
 
-MODX Revolution allows you to create your own custom TV input types (similar to the textbox, radio, textarea, richtext, etc types already available) for your [Template Variables](building-sites/elements/template-variables "Template Variables"). This tutorial will show a very simple example by loading a simple Template dropdown for us in the mgr, and then in the frontend will render our Template ID wrapped in a special div. We'll call it "TemplateSelect". We'll also make this an Extra called "OurTVs", meaning that we'll have the files outside of the normal TV input renders directory, and put it in our own Extra's directory in core/components/ourtvs/.
+MODX Revolution позволяет вам создавать собственные пользовательские типы ввода для [TV](getting-started/glossary#shablonnye-peremennye-ili-tv-parametry-ili-tv) (аналогичные уже доступным типам, таким как `textbox`, `radio`, `textarea`, `richtext` и т.д.) для ваших [TV](building-sites/elements/template-variables) . Это руководство покажет очень простой пример, загрузив для нас простой раскрывающийся список шаблонов в Менеджере, а затем во внешнем интерфейсе отобразит наш идентификатор шаблона, заключенный в специальный блок `<div>`. Назовем его `TemplateSelect`. Мы также создадим Дополнение под названием `OurTVs`, что означает, что у нас будут файлы вне обычного каталога рендеринга входных TV, и мы поместим их в наш собственный каталог Дополнения в `core/components/ourtvs/`. 
 
-## Create a Namespace
+## Создаем пространство имен
 
-If you haven't already, go ahead and create a Namespace called "ourtvs" with the path "{core\_path}components/ourtvs/". This will help us later on.
+Если вы еще этого не сделали, создайте пространство имен под названием `ourtvs` с путем `{core\_path}components/ourtvs/`. Это поможет нам в дальнейшем. 
 
-## Creating the Pathing Plugin
+## Создаем плагин
 
-We'll need a plugin to tell MODX where our custom TV directories are. Go ahead and make a plugin called "OurTvsPlugin", and assign it to the following events:
+Нам понадобится плагин, чтобы сообщить MODX, где находятся наши пользовательские каталоги TV. Сделайте плагин под названием `OurTvsPlugin` и назначьте его следующим событиям:
 
-- _OnTVInputRenderList_ - For rendering the actual TV input in the backend
-- _OnTVOutputRenderList_ - For rendering the TV output in the frontend
-- _OnTVInputPropertiesList_ - For loading any custom properties for the input render in the manager
-- _OnTVOutputRenderPropertiesList_ - For loading any custom properties for the output render (front-end) of the TV
-- _OnDocFormPrerender_ - For loading any custom JS/CSS for our TV
+- _OnTVInputRenderList_ - для отображения фактического ввода TV в бэкэнде
+- _OnTVOutputRenderList_ - для отображения TV-вывода в веб-интерфейсе
+- _OnTVInputPropertiesList_ - Для загрузки любых настраиваемых свойств для входного рендера в Менеджере
+- _OnTVOutputRenderPropertiesList_ - для загрузки любых настраиваемых свойств для выходного TV рендера (интерфейс)
+- _OnDocFormPrerender_ - Для загрузки любого пользовательского JS/CSS для нашего TV
 
-Now put in the Plugin code:
+Теперь введите код плагина: 
 
 ``` php
 $corePath = $modx->getOption('core_path',null,MODX_CORE_PATH).'components/ourtvs/';
@@ -46,17 +46,17 @@ switch ($modx->event->name) {
 }
 ```
 
-These event handlers tell MODX to check these directories for our TV files when doing all the rendering and processing. Think of it like adding library or include paths.
+Эти обработчики событий говорят MODX проверять эти каталоги на наличие наших TV файлов при выполнении всех операций рендеринга и обработки. Думайте об этом как о добавлении библиотеки или включении путей.
 
-The pathing plugin will not be required in MODX 2.3; the Namespace will handle all the pathing. This is why we told you earlier to make the Namespace. :)
+Плагин для определения пути не потребуется в MODX 2.3. Пространство имен будет обрабатывать все пути. Вот почему мы ранее говорили вам создать пространство имен. :) 
 
-## Creating the Input Controller
+## Создание Контроллера ввода
 
-The input controller is what actually loads the markup for the custom TV input. Create the input controller file here:
+Контроллер ввода - это то, что фактически загружает разметку для пользовательского входа TV. Создайте здесь файл контроллера ввода: 
 
 > core/components/ourtvs/tv/input/templateselect.class.php
 
-And inside, you can put this code:
+Внутрь поместите следующий код:
 
 ``` php
 <?php
@@ -72,13 +72,13 @@ if(!class_exists('TemplateSelectInputRender')) {
 return 'TemplateSelectInputRender';
 ```
 
-Here we tell it where to find our smarty template for rendering the TV, as well as having a process() method to do any business logic we want to do prior to rendering the TV.
+Здесь мы сообщаем ему, где найти наш smarty шаблон для отображения TV, а также о наличии метода `process()` для выполнения любой бизнес-логики, которую мы хотим выполнить перед отображением TV.
 
-Now you can see here we are specifying a "tpl" file for rendering our TV. Go ahead and put it here:
+Теперь вы можете видеть, что здесь мы указываем файл `tpl` для отображения нашего TV. Продолжим и добавим сюда: 
 
 > core/components/ourtvs/tv/input/tpl/templateselect.tpl
 
-And make its content:
+И добавим содержимое: 
 
 ``` javascript
 <select id="tv{$tv->id}" name="tv{$tv->id}" class="combobox"></select>
@@ -102,19 +102,19 @@ MODx.load({
 </script>
 ```
 
-You don't have to use the ExtJS code as shown here to have a custom input type. It could even just be a straight HTML input. It's really up to you. Most importantly, your input type should have a name of `tv{$tv->id}`.
+Вам не нужно использовать код ExtJS, как показано здесь, чтобы иметь собственный тип ввода. Это может быть даже простой ввод HTML. Это действительно зависит от вас. Наиболее важно, чтобы ваш тип ввода имел имя `tv{$tv->id}`.
 
-And that should render us a nice template dropdown in the backend:
+И это должно дать нам красивый раскрывающийся список шаблонов в бэкэнде: 
 
 ![](ctv1.png)
 
-## Creating the Output Controller
+## Создание Контроллера вывода
 
-Okay, so now we want to make the output controller, let's create the file at:
+Итак, теперь мы хотим создать контроллер вывода, давайте создадим файл по адресу: 
 
 > core/components/ourtvs/tv/output/templateselect.class.php
 
-And the content:
+И теперь контент:
 
 ``` php
 if(!class_exists('TemplateSelectOutputRender')) {
@@ -127,26 +127,26 @@ if(!class_exists('TemplateSelectOutputRender')) {
 return 'TemplateSelectOutputRender';
 ```
 
-There we go - now when we render this in the front-end, it will display the ID of our selected Template wrapped in a div.
+Итак, теперь, когда мы визуализируем это во фронтенде, он будет отображать идентификатор нашего выбранного шаблона, заключенного в `div`. 
 
-## See Also
+## Смотрите также
 
-1. [Creating a Template Variable](building-sites/elements/template-variables/step-by-step)
-2. [Bindings](building-sites/elements/template-variables/bindings)
-3. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
-4. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
-5. [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
-6. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
-7. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
-8. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
-9. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
-10. [Template Variable Input Types](building-sites/elements/template-variables/input-types)
-11. [Template Variable Output Types](building-sites/elements/template-variables/output-types)
-12. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
-13. [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
-14. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
-15. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
-16. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
-17. [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
-18. [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
-19. [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)
+1. [Создание TV переменной](building-sites/elements/template-variables/step-by-step)
+2. [Привязки](building-sites/elements/template-variables/bindings)
+3. [Привязка Чанка](building-sites/elements/template-variables/bindings/chunk-binding)
+4. [Привязка Каталога](building-sites/elements/template-variables/bindings/directory-binding)
+5. [EVAL Привязка](building-sites/elements/template-variables/bindings/eval-binding)
+6. [Привязка файла](building-sites/elements/template-variables/bindings/file-binding)
+7. [INHERIT Привязка](building-sites/elements/template-variables/bindings/inherit-binding)
+8. [Привязка Ресурса](building-sites/elements/template-variables/bindings/resource-binding)
+9. [SELECT Привязка](building-sites/elements/template-variables/bindings/select-binding)
+10. [TV типы ввода](building-sites/elements/template-variables/input-types)
+11. [TV типы вывода](building-sites/elements/template-variables/output-types)
+12. [TV тип вывода - дата](building-sites/elements/template-variables/output-types/date)
+13. [TV тип вывода TV - разделитель](building-sites/elements/template-variables/output-types/delimiter)
+14. [TV тип вывода - HTML тег](building-sites/elements/template-variables/output-types/html)
+15. [TV тип вывода - изображение](building-sites/elements/template-variables/output-types/image)
+16. [TV тип вывода - ссылка](building-sites/elements/template-variables/output-types/url)
+17. [Добавление произвольного TV - MODX 2.2](extending-modx/custom-tvs)
+18. [Создание поля множественного выбора для страниц в вашем шаблоне](building-sites/tutorials/multiselect-related-pages)
+19. [Доступ к значениям TV переменных шаблона через API](extending-modx/snippets/accessing-tvs)
