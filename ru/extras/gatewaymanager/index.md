@@ -20,7 +20,7 @@ translation: "extras/gatewaymanager"
 
 ### Скачать
 
-Его можно загрузить из менеджера MODX Revolution через [Менеджер пакетов](building-sites/extras "Менеджер пакетов"), or from the MODX Extras Repository.
+Его можно загрузить из менеджера MODX Revolution через [Менеджер пакетов](building-sites/extras "Менеджер пакетов"), или из официального MODX репозитория <https://modx.com/extras/package/gatewaymanager>
 
 ## Разработка и отчеты об ошибках 
 
