@@ -1,9 +1,6 @@
-git reset --hard HEAD~1
-
 ---
 title: "Hardening MODX Revolution"
-_old_id: "361"
-_old_uri: "2.x/administering-your-site/security/hardening-modx-revolution"
+description: "Hardening MODX Revolution"
 ---
 
 ## Overview
