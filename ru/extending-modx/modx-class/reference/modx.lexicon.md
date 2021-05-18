@@ -38,5 +38,5 @@ $_lang['welcome_message'] = 'Привет [[+name]]!  Как дела?';
 
 ## Смотрите также
 
-- [Internationalization](extending-modx/internationalization "Internationalization")
-- [cultureKey](building-sites/settings/culturekey)
+- [Интернационализация](extending-modx/internationalization "Интернационализация")
+- Системная настройка [cultureKey](building-sites/settings/culturekey)
