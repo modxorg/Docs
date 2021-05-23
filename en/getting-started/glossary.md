@@ -169,6 +169,10 @@ An example of a PHP Resolver is one that attaches Plugin Events to a newly-insta
 
 An example of a file Resolver is one that copies the `assets/getResources` directory in the `xPDOVehicle` path to `/MODX/assets/getResources`.
 
+## Session
+
+Period of time when all requests from the user will be uniquely recognized by MODX and associated with this user. After this time communication with the client will be lost, and the next request from him will be processed as absolutely unique, in no way related to the previous ones. 
+
 ## Setting Tags
 
 Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getting-started/glossary#system-setting), [Context Settings](getting-started/glossary#context-setting), and [User Settings](getting-started/glossary#user-setting).
