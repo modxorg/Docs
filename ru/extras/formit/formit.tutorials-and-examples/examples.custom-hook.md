@@ -19,9 +19,9 @@ description: "Пользовательский произвольный хук"
    &emailTo=`user@example.com`
    &redirectTo=`123`
    &validate=`name:required,
-      email:email:required,
-      subject:required,
-      text:required:stripTags,
+    email:email:required,
+    subject:required,
+    text:required:stripTags,
 ]]
 ```
 
