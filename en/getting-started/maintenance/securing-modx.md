@@ -31,21 +31,21 @@ For Apache, add the following to you `.htaccess` file:
 ```
 RewriteCond %{HTTP_HOST} ^(www\.)?example\.com$ [NC]
 # Block access to dotfiles and folder people have no need to touch
-RewriteRule ^(\.(?!well_known)|_build|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
+RewriteRule ^(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
 ```
 
 For NGINX, add the following to your web rules which will pass the rewrites to the MODX error handler:
 
 ```
-location ~ ^/(\.(?!well_known)|_build|core|config.core.php) {
-    rewrite ^/(\.(?!well_known)|_build|core|config.core.php) /index.php?q=doesnotexist;    
+location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
+    rewrite ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;    
 }
 ```
 
 If you have a high-traffic site, you might wish to bypass the PHP processing with MODX, and directly return a 404 from NGINX (or 444, which drops the connection without returning anything):
 
 ```
-location ~ ^/(\.(?!well_known)|_build|core|config.core.php) {
+location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
     return 404;    
 }
 ```
