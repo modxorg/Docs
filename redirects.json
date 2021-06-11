@@ -2361,5 +2361,9 @@
     "/display/revolution20/How+to+Write+a+Good+Snippet": "en/extending-modx/snippets",
     "/display/revolution20/Hardening+MODX+Revolution": "en/getting-started/maintenance/securing-modx",
     "/display/revolution20/Using+runProcessor": "en/extending-modx/processors/using-runprocessor",
-    "/display/ADDON/ForcedPasswdChange": "en/extras/forcedpasswdchange"
+    "/display/ADDON/ForcedPasswdChange": "en/extras/forcedpasswdchange",
+    "/display/revolution20/PolicyTemplates": "building-sites/client-proofing/security/policies/policytemplates",
+    "/display/revolution20/modX.getRegisteredClientStartupScripts": "en/extending-modx/modx-class/reference/modx.getregisteredclientstartupscripts",
+    "/display/ADDON/Login.Profile": "en/extras/login/login.profile",
+    "/display/ADDON/If": "en/extras/if"
 }
