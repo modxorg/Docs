@@ -8,10 +8,10 @@ MODX makes sure to provide a default implementation for these services (using Gu
 
 This means you can make ask the services container for any of the following services covering PSR-7 (HTTP messages), PSR-17 (HTTP factories) and PSR-18 (HTTP client):
 
-- `\Psr\Http\Client\ClientInterface`: the PSR-18 compatible HTTP Client itself, used for sending a PSR-7 request. by default provides a `\GuzzleHttp\Client` instance with the default options.
-- `\Psr\Http\Message\ServerRequestFactoryInterface`, a PSR-17 compatible ServerRequestFactory, which is used to create new PSR-7 ServerRequest instances. By default provides a `\Http\Factory\Guzzle\ServerRequestFactory` instance [1]
-- `\Psr\Http\Message\RequestFactoryInterface`, a PSR-17 compatible RequestFactory, which is used to create new PSR-7 Request instances. By default provides a `\Http\Factory\Guzzle\RequestFactory` instance [1]
-- `\Psr\Http\Message\StreamFactoryInterface`, a PSR-7 compatible StreamFactory implementation, typically used to create a body for requests/responses. By default provides a `\Http\Factory\Guzzle\StreamFactory` instance.
+- `\Psr\Http\Client\ClientInterface`: the PSR-18 compatible HTTP Client itself, used for sending a PSR-7 request. Provides a fresh `\GuzzleHttp\Client` instance on each call with the default options.
+- `\Psr\Http\Message\ServerRequestFactoryInterface`, a PSR-17 compatible ServerRequestFactory, which is used to create new PSR-7 ServerRequest instances. By default provides a `\Http\Factory\Guzzle\ServerRequestFactory` shared instance [1]
+- `\Psr\Http\Message\RequestFactoryInterface`, a PSR-17 compatible RequestFactory, which is used to create new PSR-7 Request instances. By default provides a `\Http\Factory\Guzzle\RequestFactory` shared instance [1]
+- `\Psr\Http\Message\StreamFactoryInterface`, a PSR-7 compatible StreamFactory implementation, typically used to create a body for requests/responses. By default provides a `\Http\Factory\Guzzle\StreamFactory` shared instance.
 
 [1] These will be updated soon to the `\GuzzleHttp\Psr7\HttpFactory` provided by `guzzlehttp/psr7` v2; there's currently a dependency conflict so for starters we settled on http-interop's fine work.
 
