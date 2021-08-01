@@ -1,5 +1,6 @@
 ---
 title: "OnLoadWebDocument"
+description: "Событие запускается непосредственно перед отправкой ответа и после загрузки ресурса"
 translation: "extending-modx/plugins/system-events/onloadwebdocument"
 ---
 
@@ -43,5 +44,5 @@ $modx->resource->_content = 'Content override';
 
 ## Смотри также
 
-- [System Events](extending-modx/plugins/system-events "System Events")
-- [Plugins](extending-modx/plugins "Plugins")
+- [Системные события](extending-modx/plugins/system-events "Системные события")
+- [Написание плагинов](extending-modx/plugins "Написание плагинов")
