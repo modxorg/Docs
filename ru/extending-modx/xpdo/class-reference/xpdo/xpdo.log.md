@@ -1,5 +1,6 @@
 ---
 title: "xPDO.log"
+description: "Метод регистрирует сообщение с подробной информацией о том, где и когда произошло событие"
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.log"
 ---
 
@@ -137,6 +138,6 @@ $modx->setLogLevel($log_level);
 
 ## Смотрите также
 
--   **log_level** System Setting
--   **log_target** System Setting
+-   [Системная настройка log_level](building-sites/settings/log_level)
+-   [Системная настройка log_target](building-sites/settings/log_target)
 -   [xPDO](extending-modx/xpdo "xPDO")
