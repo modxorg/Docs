@@ -106,15 +106,23 @@ In the case of creating a blog post we may wish to also include a side bar, and 
 The below example illustrates placing the header, footer and aside into a chunk.
 
 ```php
-[[$headerHTML]]
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Organization">
+<head>
+[[$headHTML]]
+[[- this is an easy way to add things to the head section, depending on the template -]]
+</head>
+<body>
     <main>
         [[*content]]
     </main>
     [[$aside]]
 [[$footerHTML]]
+</body>
+</html>
 ```
 
-The `headerHTML` chunk has replaced the markup that was previously in the header, including the DOCTYPE and head tag. The `footerHTML` chunk has now replaced the footer mark up, including the closing body and html tag. In the case described above regarding the change of the link text it would now only need to be performed once in the chunk.
+The `headHTML` chunk has replaced the markup that was previously inside the head tags. The `footerHTML` chunk has now replaced the footer mark up. In the case described above regarding the change of the link text it would now only need to be performed once in the chunk.
 
 Chunks are not limited to a top level include, they can also be nested inside of other Chunks. In the below example we have created a new Chunk called `metaData` and filled it with some common meta data.
 
