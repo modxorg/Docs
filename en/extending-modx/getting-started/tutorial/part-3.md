@@ -1,5 +1,5 @@
 ---
-title: "Part 3"
+title: "Getting Started Part 3: Processors"
 _old_id: "1118"
 _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i/php-coding-in-modx-revolution,-pt.-iii"
 note: 'Some of the details about connectors and processors relate to MODX before 2.3.'

@@ -1,5 +1,5 @@
 ---
-title: "Step 2"
+title: "Getting Started Part 2: Objects and Queries"
 _old_id: "1117"
 _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i/php-coding-in-modx-revolution,-pt.-ii"
 ---
