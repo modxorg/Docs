@@ -115,7 +115,7 @@ Then, below this, add in the following HTML (removing any fields you'd like) to 
 
 ### UpdateProfile photo update
 
-To update user's logo (avatar), you need to do two steps - add file upload field to HTML form and implement pre-hook snippet, how to do it you can find here: [Profile logo update custom postHook example](extras/login/login.updateprofile#profile-logo-update-custom-posthook) 
+To update user's logo (avatar), you need to do two steps - add file upload field to HTML form and implement pre-hook snippet, how to do it you can find here: [Profile logo update custom postHook example](extras/login/login.tutorials/using-pre-and-post-hooks#profile-logo-update-custom-posthook) 
 
 ## See Also
 
