@@ -12,6 +12,7 @@ As a major release, MODX 3.0 comes with a number of breaking changes. There is a
 The biggest breaking changes can be summarised as follows:
 
 - [Minimum supported PHP version has been increased to 7.1](getting-started/upgrading-to-3.0/requirements)
+- [It's no longer possible to use a custom core folder/path](getting-started/upgrading-to-3.0/core-folder)
 - [sqlsrv support has been removed](getting-started/upgrading-to-3.0/sqlsrv)
 - [A large number of (previously unnamespaced) classes have been renamed and moved](getting-started/upgrading-to-3.0/class-names), including processors and model classes.
 - [All processors have been renamed, including base processors](getting-started/upgrading-to-3.0/processors)
