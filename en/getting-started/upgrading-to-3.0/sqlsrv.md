@@ -27,7 +27,7 @@ Next up we're going to create a clean MODX installation **using the same version
 
 The reason to first create a clean installation is that while the migration tries to guess the appropriate data types and such, it is possible that will deviate slightly from the MODX schemas for MySQL. 
 
-[Follow the standard installation instructions](../installation) to create your clean MODX installation. 
+[Follow the standard installation instructions](getting-started/installation) to create your clean MODX installation. 
 
 ## Step 3, copy data from the migration into the clean install
 
