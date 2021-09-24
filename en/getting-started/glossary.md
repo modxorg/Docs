@@ -3,6 +3,10 @@ title: "Glossary of Revolution Terms"
 description: "Full list of MODX terms can be found here"
 ---
 
+## ACL
+
+An ACL, or Access Control List, is a set of [Permissions](building-sites/client-proofing/security/policies/permissions) attached to an object. More information on ACLs can be found here in [Wikipedia](https://en.wikipedia.org/wiki/Access_control_list). Also [see more](building-sites/client-proofing/security/policies/acls)
+
 ## Add-on
 
 A MODX Third-party Component (3PC) that does not modify the Core or extend any of its classes, but yet still provides extra functionality to the MODX instance.
