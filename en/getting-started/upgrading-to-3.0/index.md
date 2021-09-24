@@ -8,19 +8,21 @@ This document details the changes made between 2.x and 3.0 that may affect upgra
 
 ## Upgrade to 3.0
 
-In general, you can follow the [standard upgrading process](getting-started/maintenance/upgrading) when upgrading to 3.0. It's recommended to first upgrade to the latest 2.7 release, which will log deprecated functionality your site depends on to the MODX log.
+In general, you can follow the [standard upgrading process](getting-started/maintenance/upgrading) when upgrading to 3.0. It's recommended to first upgrade to the latest 2.8 release for some time, which will log deprecated functionality your site may depend on to the MODX log.
 
 After upgrading the core and upgrading your extras, you may encounter some breaking changes that need to be addressed in extras or custom code.
 
-- Important: [MODX 3.0 requires at least PHP 7.1](getting-started/maintenance/upgrading/3.0/requirements)
-- [A list of breaking changes can be found here](getting-started/maintenance/upgrading/3.0/breaking-changes), most notably [many core classes have been moved and renamed](getting-started/maintenance/upgrading/3.0/class-names)
-- [The manager language is now dynamic](getting-started/maintenance/upgrading/3.0/manager-language)
-- [Various system settings have been removed or changed](getting-started/maintenance/upgrading/3.0/system-settings)
+- Important: [MODX 3.0 requires at least PHP 7.2](getting-started/upgrading-to-3.0/requirements)
+- Important: [sqlsrv support has been removed](getting-started/upgrading-to-3.0/sqlsrv)
+- [A list of breaking changes can be found here](getting-started/upgrading-to-3.0/breaking-changes), most notably [many core classes have been moved and renamed](getting-started/upgrading-to-3.0/class-names)
+- [The manager language is now dynamic](getting-started/upgrading-to-3.0/manager-language)
+- [Various system settings have been removed or changed](getting-started/upgrading-to-3.0/system-settings)
 
 ## Other notable changes and improvements
 
 ### Manager/Interface
 
+- New template picker allows for easier resource creation [#15535](https://github.com/modxcms/revolution/pull/15535)
 - Redesigned installer [#14507](https://github.com/modxcms/revolution/pull/14507) and login [#13773](https://github.com/modxcms/revolution/pull/13773).
 - Manager has been redesigned. Improved manager on mobile devices [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735). Changed resource styles in the tree [#14832](https://github.com/modxcms/revolution/pull/14832)
 - Language can now be switched on the fly [#14046](https://github.com/modxcms/revolution/pull/14046)

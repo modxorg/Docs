@@ -79,7 +79,7 @@ return '<pre>' . $response->getStatusCode() . ' : ' . print_r($body, true) . '</
 
 You'll notice we're writing directly to the existing streaming body on the request. It's also possible to use the StreamFactoryInterface service to create a fresh stream and to set that as the body. For example:
 
-```
+```php 
 <?php
 $streamFactory = $modx->services->get(\Psr\Http\Message\StreamFactoryInterface::class);
 
