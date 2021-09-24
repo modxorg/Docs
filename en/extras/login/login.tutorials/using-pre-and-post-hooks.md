@@ -115,6 +115,81 @@ Then we'd adjust our Register snippet call to load the postHook:
 
 And we're done!
 
+### Profile logo update custom postHook
+
+First of all extend [UpdateProfile](https://docs.modx.com/current/en/extras/login/login.updateprofile#the-updateprofile-form) HTML form with next field:
+
+```html
+<div>
+  <img src="[[+photo:default=`/assets/photouser/default.jpg`]]">
+</div>
+<label for="photo">Photo
+    <span class="error">[[+error.photo]]</span>
+</label>
+<input type="file" id="photo" name="photo" value="[[+photo]]">
+
+```
+
+Create custom hook named 'hookUpdateProfilePhoto'. Please make sure that all used folders exist and have sufficient permissions.
+Add the following code to the snippet:
+
+```php
+
+<?php
+// get user details
+$profile = $modx->user->getOne('Profile');
+//if post
+if(isset($_POST['login-updprof-btn'])) {
+    //set extensions
+    $validExt=array('jpg','png','jpeg');
+    //set path for file
+    $pathToFile = $modx->config['base_path'].'site_content/content/users/';
+    // set path for cmp because of media resource
+    $pathToFileProfile = 'users/';
+    // get file name
+    $nameFile = $_FILES['photo']['name'];
+    // lowercase and exxtention
+    $extFile = mb_strtolower(pathinfo($nameFile, PATHINFO_EXTENSION));
+    // the tmp file
+    $tmpFile = $_FILES['photo']['tmp_name'];
+    // upload is ok then
+    if((is_uploaded_file($tmpFile)) &&! ($_FILES['photo']['error'])){
+        // check extention types
+        if (in_array($extFile,$validExt)) {
+            // make a file name
+            $tmpzname='user'.$modx->user->get('id');
+            // add a hash and extension
+            $nameFile=hash('adler32',$tmpzname).'.'.$extFile;
+            //full name with path
+            $fullNameFile = $pathToFile.$nameFile;
+            // copy the tmp to new one move_uploaded_file1 and rename1 did not work this will overwrite the old pic as they all have same name
+            copy($tmpFile, $fullNameFile);
+            // name and path for profile as its different because of media resource
+            $fullNameFileProfile = $pathToFileProfile.$nameFile;
+            // delete old pic in profile
+            $hook->setValue('photo','');
+            //set new pic path
+            $hook->setValue('photo',$fullNameFileProfile);
+        }
+        else{
+            $modx->log(modX::LOG_LEVEL_ERROR,'The image has an invalid extension');
+        }
+    }
+      else {
+        $modx->log(modX::LOG_LEVEL_ERROR,'Error loading file. Error code:'.$_FILES['photo']['error']);
+    }
+} 
+return true;
+
+```
+
+and after add it to `UpdateProfile` snippet `preHooks` parameter:
+
+```php
+[[!UpdateProfile? &preHooks=`hookUpdateProfilePhoto`]]
+```
+
+
 ## See Also
 
 1. [Login.Login](extras/login/login)
