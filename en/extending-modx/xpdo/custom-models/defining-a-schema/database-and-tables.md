@@ -30,7 +30,7 @@ First we'll tell the browser and parser that this is XML code with a standard XM
 
 - **package** - The name of the xPDO package (note this is different than a "transport package", a Revolution term). This is how xPDO separates different models and manages them. _Note: in the XML, the package name must be all lowercase._
 - **baseClass** - This is the base class from which all your class definitions will extend. Unless you're planning on creating a custom xPDOObject extension, it's best to leave it at the default.
-- **platform** — The database platform PDO driver you are using. At this time, xPDO supports mysql, sqlite, and sqlsrv PDO drivers.
+- **platform** — The database platform PDO driver you are using. At this time, xPDO supports mysql, sqlite, and sqlsrv PDO drivers. (Note: sqlsrv is no longer supported in MODX3.)
 - **defaultEngine** — The default engine of the database tables, usually either MyISAM or InnoDB. xPDO recommends using MyISAM.
 - **tablePrefix** — An optional parameter that can be set to override the default runtime table prefix. Useful for creating 3rd party components, but typically recommended to NOT define so the tablePrefix inherits from the MODX installation.
 - **phpdoc-package & phpdoc-subpackage** — These are custom attributes we're going to use in our map and class files. They're not standard xPDO attributes, but show that you can put whatever you want as attributes.

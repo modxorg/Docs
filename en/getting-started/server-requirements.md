@@ -26,7 +26,9 @@ A `memory_limit` of at least 64M or higher is recommended.
 
 MODX supports different database drivers, including `mysql`, `sqlsrv`, and a third-party `postgres` implementation is available. It is important to note that extras also need to implement different drivers for their custom database tables, which is often only done for `mysql`, making that your best bet.
 
-The minimum supported MySQL version is 4.1.20, but 5.6 or up is recommended. It is also possible to use clusters like Galera.
+> Note: sqlsrv support is deprecated and [has been removed in 3.0](https://github.com/modxcms/revolution/issues/15540).   
+
+The minimum supported MySQL version is 4.1.20, but 5.6 or up is strongly recommended. It is also possible to use clusters like Galera.
 
 Both MyISAM and InnoDB storage engines are supported, as are utf8 and utf8mb character sets.
 
