@@ -2365,5 +2365,22 @@
     "/display/revolution20/PolicyTemplates": "building-sites/client-proofing/security/policies/policytemplates",
     "/display/revolution20/modX.getRegisteredClientStartupScripts": "en/extending-modx/modx-class/reference/modx.getregisteredclientstartupscripts",
     "/display/ADDON/Login.Profile": "en/extras/login/login.profile",
-    "/display/ADDON/If": "en/extras/if"
+    "/display/ADDON/If": "en/extras/if",
+    "/help/Resources": "en/building-sites/resources",
+    "/help/Templates": "en/building-sites/elements/templates",
+    "/help/Chunks": "en/building-sites/elements/chunks",
+    "/help/Snippets": "en/building-sites/elements/snippets",
+    "/help/Plugins": "en/extending-modx/plugins",
+    "/help/Resource+Groups": "en/building-sites/client-proofing/security/resource-groups",
+    "/help/Media+Sources": "en/building-sites/media-sources",
+    "/help/Package+Management": "en/building-sites/extras",
+    "/help/Users": "en/building-sites/client-proofing/security/users",
+    "/help/Settings": "en/building-sites/settings",
+    "/help/Dashboards": "en/building-sites/client-proofing/dashboards",
+    "/help/Contexts": "en/building-sites/contexts",
+    "/help/Actions+and+Menus": "en/extending-modx/menus/actions",
+    "/help/Security": "en/building-sites/client-proofing/security",
+    "/help/Properties+and+Property+Sets": "en/building-sites/properties-and-property-sets",
+    "/help/Internationalization": "en/extending-modx/internationalization",
+    "/help/Namespaces": "en/extending-modx/namespaces"
 }
