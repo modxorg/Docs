@@ -76,13 +76,14 @@ switch($eventName) {
     case 'OnBeforeDocFormSave':
         if ($resource->get('parent') == 0) {
             $resource->set('template', '1');
+            $resource->save();
         }
         break;
 }
 ```
 
-**Saving Happens Automatically**
-No need to run the `$resource->save()` method as that happens automatically.
+**Saving Not! Happens Automatically**
+You should run the `$resource->save()` method additionally, as that doesn't happen automatically.
 
 ## See Also
 

@@ -10,7 +10,7 @@ Returns the debug state for the XPDO connection.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getDebug>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getDebug()>
 
 ``` php
 boolean getDebug ()

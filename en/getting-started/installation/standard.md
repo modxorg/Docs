@@ -72,6 +72,8 @@ If you have your MySQL server on a different port, specify it like so: "my.datab
 
 ### Microsoft SQL Server Notes
 
+> Important: sqlsrv support is deprecated and has been removed from MODX 3.0.
+
 Support for Microsoft SQL Server was introduced in MODX Revolution 2.1  Depending on your SQL Server's network configuration, there are different ways you may specify your host.
 
 - Named pipe: (local)/SQLEXPRESS

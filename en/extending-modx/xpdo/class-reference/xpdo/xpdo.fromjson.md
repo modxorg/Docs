@@ -10,7 +10,7 @@ Converts a JSON source string into an equivalent PHP representation.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#fromJSON>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::fromJSON()>
 
 ``` php
 mixed fromJSON (string $src, [boolean $asArray = true])

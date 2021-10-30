@@ -11,7 +11,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph"
 
 ## Синтаксис
 
-API Docs: <http://api.modx.com/xpdo/xPDO.html#getCollectionGraph>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getCollectionGraph()>
 
 ```php
 array getCollectionGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

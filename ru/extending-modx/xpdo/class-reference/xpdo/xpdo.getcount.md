@@ -12,7 +12,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getcount"
 
 ### Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getCount>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getCount()>
 
 ```php
 integer getCount (string $className, [mixed $criteria = null])

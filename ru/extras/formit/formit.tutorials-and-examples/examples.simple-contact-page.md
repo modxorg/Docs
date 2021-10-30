@@ -30,12 +30,12 @@ description: "Пример простой контактной формы свя
    &emailTo=`user@example.com`
    &redirectTo=`123`
    &validate=`nospam:blank,
-      name:required,
-      email:email:required,
-      subject:required,
-      text:required:stripTags,
-      numbers:required,
-      colors:required`
+    name:required,
+    email:email:required,
+    subject:required,
+    text:required:stripTags,
+    numbers:required,
+    colors:required`
 ]]
 ```
 

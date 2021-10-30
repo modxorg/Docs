@@ -11,7 +11,7 @@ All new objects created with this method are transient until [xPDOObject::save()
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#newObject>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::newObject()>
 
 ``` php
 object|null newObject (string $className, [array $fields = array ()])
