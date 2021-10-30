@@ -1,11 +1,12 @@
 ---
 title: "modChunk.getContent"
 translation: "extending-modx/core-model/modchunk/modchunk.getcontent"
+description: "Получить исходный необработанный контент для чанка"
 ---
 
 ## modChunk::getContent
 
-Получить исходный контент этого чанка.
+Получить исходный необработанный контент этого чанка. Имейте ввиду, что контент будет содержать необработанные теги, что делать с ними дальше можно почитать например здесь [Парсинг MODX тегов](extending-modx/parsing-tags)
 
 ## Синтаксис
 
@@ -29,3 +30,4 @@ if ($chunk) {
 - [modChunk](extending-modx/core-model/modchunk)
 - [modChunk.setContent](extending-modx/core-model/modchunk/modchunk.setcontent)
 - [modChunk.getContent](extending-modx/core-model/modchunk/modchunk.getcontent)
+- [Парсинг MODX тегов](extending-modx/parsing-tags)

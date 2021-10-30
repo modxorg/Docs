@@ -12,7 +12,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.query"
 
 ## Синтаксис
 
-API Docs: Смотри <http://php.net/manual/en/pdo.query.php>
+API Docs: Смотри <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::query()>
 
 ```php
 xPDOObject|false query (string $statement)

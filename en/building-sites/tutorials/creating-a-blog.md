@@ -138,7 +138,7 @@ Okay, now we're in the comments part of BlogPostTemplate. As you can see here, w
 </section>
 ```
 
-Okay, cool. Note we have two Snippet calls here - [Quip](/extras/quip/quip.quip "Quip.Quip") for displaying the comments for this thread, and [QuipReply](/extras/quip/quip.quipreply "Quip.QuipReply") for displaying the reply form.
+Okay, cool. Note we have two Snippet calls here - [Quip](/extras/quip/quip "Quip") for displaying the comments for this thread, and [QuipReply](/extras/quip/quip.quipreply "Quip.QuipReply") for displaying the reply form.
 
 In our Quip snippet call, we've specified a thread ID in the manner we've described above, and then set some settings. Our comments are going to be threaded (the default), so we need to specify a Resource ID where our Reply to Thread post is going to be (this is detailed in the [Quip Documentation](/extras/quip "Quip"). We recommend reading there for how to set it up.) with the `&replyResourceId` property. For a quick example, if your `&replyResourceId` points to page 123, then on page 123, you should put something like the following:
 
@@ -360,7 +360,7 @@ Okay, so now you've got a Resource to browse archives in, but you need some way 
 </ul>
 ```
 
-The [Archivist](/extras/archivist/archivist.archivist "Archivist.Archivist") Snippet generates a month-by-month list of posts (you can add all kinds of other options, but see [it's documentation](/extras/archivist/archivist.archivist "Archivist.Archivist") for that). We have the `&target` set to 30, our Archives Resource, and the `&parents` set to 34 and 35, our Section Resources.
+The [Archivist](/extras/archivist/archivist "Archivist") Snippet generates a month-by-month list of posts (you can add all kinds of other options, but see [it's documentation](/extras/archivist/archivist "Archivist") for that). We have the `&target` set to 30, our Archives Resource, and the `&parents` set to 34 and 35, our Section Resources.
 
 That's it! Archivist will actually automatically handle the rest - including all your URL generation for archives - archives/2010/05/ will show all the posts within May 2010, where archives/2009/ will show all posts in 2009. Pretty sweet, huh?
 
@@ -462,3 +462,7 @@ So we've got a full blog setup! It should look something like this in our tree n
 ![](blog-tree2.png)
 
 Again, there's far more customization and things you could add to your blog. This tutorial is meant as a starting point, but feel free to customize and add things to your liking - the great part about MODX is that you can very easily customize, tweak and scale any solution: including a blog!
+
+## See also
+
+- [Create a Blog in MODX Revolution](https://sepiariver.com/modx/creating-a-blog-in-modx/)

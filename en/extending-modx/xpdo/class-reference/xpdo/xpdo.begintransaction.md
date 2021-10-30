@@ -10,7 +10,7 @@ See <http://php.net/manual/en/function.pdo-begintransaction.php>
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#beginTransaction>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::beginTransaction()>
 
 ``` php
 void beginTransaction ()

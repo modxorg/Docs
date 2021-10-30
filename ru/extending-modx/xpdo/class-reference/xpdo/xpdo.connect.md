@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.connect"
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#connect>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::connect()>
 
 ```php
 boolean connect ([array $driverOptions = array ()])

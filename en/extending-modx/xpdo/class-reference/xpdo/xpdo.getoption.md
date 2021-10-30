@@ -10,7 +10,7 @@ Get an xPDO configuration option value by key.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getOption>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getOption()>
 
 ``` php
 mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )

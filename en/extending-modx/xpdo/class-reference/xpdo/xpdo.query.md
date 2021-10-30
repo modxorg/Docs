@@ -13,7 +13,7 @@ This can be a good way to issue reporting queries without having to worry about 
 
 ## Syntax
 
-API Docs: see <http://php.net/manual/en/pdo.query.php>
+API Docs: see <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::query()>
 
 ```php
 xPDOObject|false query (string $statement)

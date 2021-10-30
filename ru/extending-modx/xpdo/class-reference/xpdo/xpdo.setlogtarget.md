@@ -18,7 +18,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.setlogtarget"
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#setLogTarget>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::setLogTarget()>
 
 ```php
 mixed setLogTarget ([string $target = 'ECHO'], mixed 1)

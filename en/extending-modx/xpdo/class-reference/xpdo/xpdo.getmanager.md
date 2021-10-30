@@ -12,7 +12,7 @@ The manager class can perform operations such as creating or altering table stru
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getManager>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getManager()>
 
 ``` php
 object|null getManager ()

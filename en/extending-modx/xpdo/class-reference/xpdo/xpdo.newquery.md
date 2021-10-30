@@ -10,7 +10,7 @@ Creates an new `xPDOQuery` for a specified `xPDOObject` class.
 
 ## Syntax
 
-API Docs: <http://api.modx.com/xpdo/xPDO.html#newQuery>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::newQuery()>
 
 ``` php
 xPDOQuery newQuery (string $class, [mixed $criteria = null], [boolean|integer $cacheFlag = true])

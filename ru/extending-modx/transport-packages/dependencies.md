@@ -1,14 +1,14 @@
 ---
-title: "Package Dependencies"
-_old_id: "1737"
-_old_uri: "2.x/developing-in-modx/advanced-development/package-management/package-dependencies"
+title: "Пакетные зависимости"
+translation: "extending-modx/transport-packages/dependencies"
+description: "Пакетные зависимости"
 ---
 
-New in MODX 2.4 is the ability to define package dependencies in transport packages. When these are set, the user will not be able of installing the package until the dependencies have been fulfilled.
+Новое в MODX 2.4 это возможность определять зависимости пакетов в [Транспортных пакетах](extending-modx/transport-packages). Если они установлены, пользователь не сможет установить пакет, пока все зависимости не будут выполнены. 
 
-## Adding Package Dependencies to your Build
+## Добавление пакетных зависимостей в вашу сборку
 
-Package Dependencies are added to the package attributes, which were already used for the license, readme and changelog contents, typically looking like this toward the end of your [build script](extending-modx/transport-packages/build-script). If you use a different way of creating packages, you might need to check that documentation to see if it supports these attributes and how you can defined the dependencies there.
+Пакетные зависимости добавляются к атрибутам Пакета, которые уже используются для указания файла лицензии `license`, `readme` и журнала изменений `changelog`, обычно добавляются в конец вашего [скрипта сборки](extending-modx/transport-packages/build-script). Если вы используете другой способ создания пакетов, вам может потребоваться свериться с этой документацией, чтобы узнать, поддерживает ли она эти атрибуты и как вы можете определить там зависимости. 
 
 ``` php
 $builder->setPackageAttributes(array(
@@ -21,9 +21,9 @@ $builder->setPackageAttributes(array(
 ));
 ```
 
-To add the package dependencies, simply add the `requires` option, providing an array of package names and the minimum version requirements.
+Чтобы добавить зависимости пакетов, просто добавьте опцию `requires`, указав массив имен пакетов и минимальные требования к версии.
 
-For example to indicate a package requires FormIt 2.2 or higher:
+Например, для указания необходимости пакета `FormIt` версии 2.2 или выше: 
 
 ``` php
 $builder->setPackageAttributes(array(
@@ -39,16 +39,16 @@ $builder->setPackageAttributes(array(
 ));
 ```
 
-You can add more packages to the list by simply adding additional elements to that array. You can also add checks for "modx" and "php" to require a specific version of MODX or PHP.
+Вы можете указать больше пакетов в списке, просто добавив дополнительные элементы в этот массив. Вы также можете добавить проверки для `modx` и `php`, чтобы потребовать конкретную версию MODX или PHP.
 
-Keep in mind that these package dependencies only work in MODX 2.4 and up. If you intend to support older versions, you might want to add an additional check in a resolver, or add instructions to your documentation.
+Имейте в виду, что эти зависимости пакетов работают только в MODX 2.4 и выше. Если вы собираетесь поддерживать более старые версии, вы можете добавить дополнительную проверку в [Резольвер](getting-started/glossary#rezolvery-v-transportnom-pakete) или добавить инструкции в свою документацию.
 
-There are different ways of specifying the version numbers that each carry different meaning. You can also add multiple constraints by separating them with a comma.
+Есть разные способы указать номера версий, каждый из которых имеет разное значение. Вы также можете добавить несколько ограничений, разделив их запятыми. 
 
-| Token                               | What it does                                                                | Example version string        |
+| Токен                               | Что это значит                                                              | Пример строки для указания версии        |
 | ----------------------------------- | --------------------------------------------------------------------------- | ----------------------------- |
-| ~                                   | Requires at least the specified version, up to the next significant version | ~1.0 translates to >=1.0,<2.0 |
+| ~                                   | Требуется как минимум указанная версия, до следующей значимой версии  | ~1.0 translates to >=1.0,<2.0 |
 | ~1.3.0 translates to >=1.3.0,<1.4.0 |
-| n.\*                                | Wildcard for a specific part of the version string                          | 1.\* translates to >=1.0,<2.0 |
-| <, >, !                             | At least that version, at most that version, or not that version            |                               |
-| \*                                  | Anything goes                                                               |                               |
+| n.\*                                | Подстановочный знак для определенной части строки версии                           | 1.\* translates to >=1.0,<2.0 |
+| <, >, !                             | По крайней мере, эта версия, максимум эта версия или не эта версия             |                               |
+| \*                                  | Любая версия подойдет                                                               |                               |

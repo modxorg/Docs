@@ -11,7 +11,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection"
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getCollection>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getCollection()>
 
 ```php
 array getCollection (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

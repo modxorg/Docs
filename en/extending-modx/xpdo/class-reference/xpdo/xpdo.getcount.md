@@ -12,7 +12,7 @@ If you are specifying the `select()`, don't use `getCount()`, just run the query
 
 ### Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#getCount>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getCount()>
 
 ``` php
 integer getCount (string $className, [mixed $criteria = null])

@@ -10,7 +10,7 @@ Sets an xPDO configuration option value.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#setOption>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::setOption()>
 
 ``` php
 void setOption (string $key, mixed $value)

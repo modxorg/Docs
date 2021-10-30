@@ -5,7 +5,7 @@ translation: "extending-modx/plugins/system-events/onbeforemanagerlogout"
 
 ## Событие: OnBeforeManagerLogout
 
-Запускается до выхода пользователя из менеджера. Выход еще не произошел.
+Запускается до выхода пользователя из Менеджера. Выход еще не произошел.
 
 Служба: 2 - Manager Access Service Events
 Группа: Нет

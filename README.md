@@ -22,13 +22,3 @@ The beauty of markdown is that it is independent from specific technologies or t
 ## Discussion
 
 Please feel free to open an issue for bad markdown conversions or discussion points. There is also a relevant #documentation channel on the [MODX Community Slack](https://modx.org).
-
-## The Conversion (Old)
-
-The current [docs site](https://docs.modx.com) is powered by MODX, with a front-end editing utility. Documentation content is stored as HTML, while the goal is to use Markdown instead.
-
-I've been provided with a copy of the MODX database to ease the conversion so we don't have to scrape or parse more than necessary.
-
-To run the conversion, a convert script is included in `/convert/`. This uses a composer dependency, so `composer install` in that directory before running it (from the command line) with `php do-it.php`. The actual conversion script is in `convert/Converter.php`. It basically connects to MODX, assuming `config.core.php` in the project root to point it to a valid MODX installation, and then recursively (by parent) loops over all resources and converts the resource content and meta data into a markdown file. The markdown file is placed under `/en/`, with the naming matching the resource alias/parents.
-
-Improvements to the conversion script are welcome.

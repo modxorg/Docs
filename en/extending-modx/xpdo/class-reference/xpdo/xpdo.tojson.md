@@ -10,7 +10,7 @@ Converts a PHP array into a JSON encoded string.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/xPDO.html#toJSON>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::toJSON()>
 
 ``` php
 string toJSON (array $array)

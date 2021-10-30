@@ -6,6 +6,10 @@ _old_uri: "2.x/getting-started/an-overview-of-MODX/glossary-of-revolution-terms"
 description: "Full list of MODX terms can be found here"
 ---
 
+## ACL
+
+An ACL, or Access Control List, is a set of [Permissions](building-sites/client-proofing/security/policies/permissions) attached to an object. More information on ACLs can be found here in [Wikipedia](https://en.wikipedia.org/wiki/Access_control_list). Also [see more](building-sites/client-proofing/security/policies/acls)
+
 ## Add-on
 
 A MODX Third-party Component (3PC) that does not modify the Core or extend any of its classes, but yet still provides extra functionality to the MODX instance.
@@ -25,6 +29,10 @@ The process of storing frequently requested data and where it is stored.  By cac
 ## Category
 
 An optional classifying name that can be attached to any Element or PropertySet (and other objects in later versions of Revolution) that separates it from other similar objects.
+
+## Child Resource
+
+MODX resources are arranged in a tree-like manner, and it may happen that one of the resources is specified as a Container, and other resources are located inside it. In this case in relation to the Container (which is Parent resource here), such resources are called Child resources. 
 
 ## Chunk Tags
 
@@ -118,6 +126,10 @@ An organizational tag for Components to use to identify Lexicon Entries, Setting
 
 A web service that enables remote [installation](building-sites/extras) of Transport Packages directly from the Manager.
 
+## Parent Resource
+
+Resources in MODX are arranged in a tree-like manner, and it may happen that one of the resources is specified as a Container, and other resources are located inside it, in this case the Container will be Parent resource, and "subordinate" resources will be Child resources. 
+
 ## Placeholder Tags
 
 Tags in the form `[[+PlaceholderName]]` that reference MODX Placeholders, usually set with `$MODX->setPlaceholder('placeholderName','value')` in a Snippet or Plugin.
@@ -126,7 +138,13 @@ Tags in the form `[[+PlaceholderName]]` that reference MODX Placeholders, usuall
 
 Any of the fields of the `site_content` table, such as `pagetitle`, `longtitle`, `introtext`, `alias`, `menuindex`, etc. Some fields are available on the Document Create/Edit screen and via Resource Tags; Others can only be accessed via the `documentObject`.
 
-## Plugin - 
+## Resource Tree
+
+The way Resources are located relative to each other, which affects the structure of web pages and, as a result, URL links of your site. You can see Resource Tree in the MODX Manager, it is on the left. 
+
+## Plugin
+
+Plugins are similar to [Snippets](getting-started/glossary#snippet) in that they are pieces of PHP code that have access to the MODX API. The biggest difference is when the code is executed. Plugins are configured to execute during certain System events, such as saving a chunk or clearing the cache. [See more](extending-modx/plugins) 
 
 ## Property
 
@@ -135,6 +153,8 @@ A single variable for an Element; used to set a specific parameter for the Eleme
 ## Property Set
 
 A collection of variables used for a particular purpose with an Element. Property Sets are attached to Elements and pass in the Properties that they carry as parameters to the Element. An example is a custom Property Set for a Snippet that passes in specific parameters to the Element, overriding the default behavior.
+
+## Renderer
 
 ## Resource
 
@@ -156,13 +176,21 @@ An example of a PHP Resolver is one that attaches Plugin Events to a newly-insta
 
 An example of a file Resolver is one that copies the `assets/getResources` directory in the `xPDOVehicle` path to `/MODX/assets/getResources`.
 
+## Session
+
+Period of time when all requests from the user will be uniquely recognized by MODX and associated with this user. After this time communication with the client will be lost, and the next request from him will be processed as absolutely unique, in no way related to the previous ones. 
+
 ## Setting Tags
 
-Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getting-started/glossary#system-setting), [Context Settings]((getting-started/glossary#context-setting)), and [User Settings]((getting-started/glossary#user-setting)).
+Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getting-started/glossary#system-setting), [Context Settings](getting-started/glossary#context-setting), and [User Settings](getting-started/glossary#user-setting).
+
+## Snippet
+
+Способ, с помощью которого MODX позволяет вам запускать динамический код PHP на любой из ваших страниц. [Подробнее](building-sites/elements/snippets)
 
 ## Snippet Tags
 
-Tags in the form `[[SnippetName]]`, also referred to as Snippet Calls.
+Tags in the form `[[SnippetName]]`, also referred to as [Snippet](getting-started/glossary#snippet) calls.
 
 ## Static Resource
 
@@ -171,6 +199,10 @@ A specific type of Resource that is a direct reference to a specific file on the
 ## Symlink
 
 A type of Resource that references a single, local MODX Resource; the Resource's content will replace the Symlink's content.
+
+## System Event
+
+Event in MODX that "fire" throughout the MODX code in response to various system actions. [See more](extending-modx/plugins/system-events)
 
 ## System Setting
 

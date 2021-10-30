@@ -9,22 +9,22 @@ MODX Revolution is a database-driven web application, so moving it to a new serv
 Following is the official documentation of how to move your site to a new location. Normally, the move is to a new server, but the steps here also apply if you move your site to a new folder on your current web server.
 
 **Tip**
- It's not required, but it's a very good idea to turn off Friendly URLs (FURLS) in the Manager, if you have them on, and rename .htaccess to ht.access on your site before performing any of the steps below. Do the reverse as your last step after everything is working at the new location (rename ht.access to .htaccess and turn on FURLS). It takes a big potential source of confusion out of the picture during the transition.
+ It's not required, but it's a very good idea to turn off [Friendly URLs (FURLS)](getting-started/glossary#friendly-urls-friendly-aliases) in the Manager, if you have them on, and rename .htaccess to ht.access on your site before performing any of the steps below. Do the reverse as your last step after everything is working at the new location (rename ht.access to .htaccess and turn on FURLS). It takes a big potential source of confusion out of the picture during the transition.
 
 ## Log into the Manager: Clear your Cache and Sessions
 
 Before doing anything else, it would be wise to empty all of the cached content.
 
-- Log into the manager, then: Manage --> Clear Cache
-- Clear your sessions: Manage --> Logout All Users
+- Log into the [Manager]((getting-started/glossary), then: `Manage` --> `Clear Cache`
+- Clear your [Sessions](getting-started/glossary): `Manage` --> `Logout All Users`
 
 The first benefit of this is a smaller download / upload file.
 
-The safest and surest method to clear the cache is to clear it manually. Do this by deleting all the contents contained within the **core/cache folder**. This process is typically fastest when performed in the server's file manager, as opposed to FTP.
+The safest and surest method to clear the cache is to clear it manually. Do this by deleting all the contents contained within the `core/cache` folder. This process is typically fastest when performed in the server's file manager / via SSH, as opposed to FTP.
 
 ## Packaging up your Files
 
-Any time you pack up a site and move, it's best to package the files into "boxes" – when you move out of your apartment, you put everything into boxes; the same concept is true with files: package them. If you simply drag and drop files from one server to another using a GUI interface, chances are good that the GUI will omit hidden files such as the vital _.htaccess_ file. Besides, transferring hundreds of files via FTP can take a long time because each file must often undergo some sort of authentication; in other words copying over a hundred 1 megabyte files takes a lot longer than copying over a single 100 megabyte file.
+Any time you pack up a site and move, it's best to package the files into "boxes" – when you move out of your apartment, you put everything into boxes; the same concept is true with files: package them. If you simply drag and drop files from one server to another using a GUI interface, chances are good that the GUI will omit hidden files such as the vital `.htaccess` file. Besides, transferring hundreds of files via FTP can take a long time because each file must often undergo some sort of authentication; in other words copying over a hundred 1 megabyte files takes a lot longer than copying over a single 100 megabyte file.
 
 On a UNIX style system, you can create a compressed file using the tar command:
 
@@ -56,17 +56,17 @@ Some of the folders may need to be writable. Depending on the security configura
 
 ## Dumping your Database
 
-_Please note that MODX can run on multiple database drivers, currently MySQL and sqlsrv. The following section is MySQL specific, however you should be able to do the same with similar commands for sqlsrv._
+_Please note that MODX can run on multiple database drivers, currently MySQL and `sqlsrv`. The following section is MySQL specific, however you should be able to do the same with similar commands for `sqlsrv`._
 
-You can dump your MySQL database using a GUI tool such as phpMyAdmin, or you can run the command-line **mysqldump** utility.
+You can dump your MySQL database using a GUI tool such as `phpMyAdmin`, or you can run the command-line `mysqldump` utility.
 
 ``` php
 mysqldump -u username -p your_revo_db > /path/to/backups/my_revo_db.sql
 ```
 
-If you use _mysqldump_, be sure you use a username that has SELECT and LOCK permissions on all your MODX Revolution database tables – usually it's best to simply use the same username and password that are defined in your configuration file (_/core/config/config.inc.php_). Remember that _mysqldump_ will prompt you for the password after you execute this command: when you type it (or paste it), you won't see anything in the terminal window.
+If you use `mysqldump`, be sure you use a username that has SELECT and LOCK permissions on all your MODX Revolution database tables – usually it's best to simply use the same username and password that are defined in your configuration file (`/core/config/config.inc.php`). Remember that `mysqldump` will prompt you for the password after you execute this command: when you type it (or paste it), you won't see anything in the terminal window.
 
-On the new server, you can simply use the "mysql" command to slurp the dump file into the new target database:
+On the new server, you can simply use the `mysql` command to slurp the dump file into the new target database:
 
 ``` php
 mysql -u username -p target_db < my_revo_db.sql
@@ -74,13 +74,13 @@ mysql -u username -p target_db < my_revo_db.sql
 
 You can also use phpMyAdmin, but remember that web-based tools like this are subject to the same memory limits as PHP, so you're usually better off using a command-line tool if possible.
 
-[Database Dump with phpMyAdmin](http://wiki.phpmyadmin.net/pma/FAQ_6.4)
+[Database Dump with phpMyAdmin](https://docs.phpmyadmin.net/en/latest/faq.html#how-can-i-backup-my-database-or-table)
 
 Many server control panels offer database backup and compression tools as well.
 
 ## Updating your Config Files
 
-Once you've deployed files to the new server, you need to update the main configuration file: _core/config/config.inc.php_. You have to update paths to **6** different resources. Open the file and update the values for the following variables doing a find and replace:
+Once you've deployed files to the new server, you need to update the main configuration file: `core/config/config.inc.php`. You have to update paths to **6** different resources. Open the file and update the values for the following variables doing a find and replace:
 
 ``` php
 /* PATHS */
@@ -155,7 +155,7 @@ That's because the old path is still cached; MODX Revolution caches a lot of inf
 
 If the cache and session information was not cleared before the move you will need to do so, if you encounter errors within the manager after moving the site.
 
-Sometimes clearing the site cache in the manager won't fix all path issues and it is nessesary to remove all folders/files inside the core/cache folder by FTP or command line.
+Sometimes clearing the site cache in the manager won't fix all path issues and it is nessesary to remove all folders/files inside the core/cache folder by FTP/SSH/command line or hosting panel file manager.
 
 ## Re-run setup
 
@@ -166,17 +166,17 @@ Whenever changes are made to a MODX Revolution site in regards to installs, upgr
 
 [Download Previous Versions of MODX Revolution](https://modx.com/download/previous-releases/)
 
-If MODX does not find a config.inc.php file during setup, it will not offer you the option of doing an upgrade install. Do not proceed unless you can check the "Upgrade Install" checkbox. It the config.inc.php file is there but MODX is not finding it, check the path specified in the config.core.php files described above in the Updating Your Config Files section. MODX uses that path to find the config.inc.php file.
+If MODX does not find a `config.inc.php` file during setup, it will not offer you the option of doing an upgrade install. Do not proceed unless you can check the "Upgrade Install" checkbox. It the `config.inc.php` file is there but MODX is not finding it, check the path specified in the `config.core.php` files described above in the Updating Your Config Files section. MODX uses that path to find the `config.inc.php` file.
 
 ## Updating your Extras settings
 
 ![](modx-namespaces.png)
 
-Some extras, such as Gallery, store information on where certain files can be found in their own settings. To take Gallery as the example, it stores the path to its assets, core, files and phpthumb folders on the filesystem. Depending on your setup these will change when moving and in order to keep using these addons you will need to update those paths. While every addon can decide for itself where to store paths, one of the popular locations is in the system settings.
+Some extras, such as [Gallery](extras/gallery), store information on where certain files can be found in their own settings. To take Gallery as the example, it stores the path to its assets, core, files and phpthumb folders on the filesystem. Depending on your setup these will change when moving and in order to keep using these addons you will need to update those paths. While every addon can decide for itself where to store paths, one of the popular locations is in the system settings.
 
-Go to System -> System Settings in your manager, and find the namespaces dropdown, as seen on the image to the right (click to enlarge). Open it and look for the extra of your choice, for instance Gallery. Not all extras specify system settings but most of them will show up on the list anyway. Now that you have found where these paths are stored you can update them to reflect the new location.
+Go to `System` -> `System Settings` in your Manager, and find the namespaces dropdown, as seen on the image to the right (click to enlarge). Open it and look for the extra of your choice, for instance Gallery. Not all extras specify system settings but most of them will show up on the list anyway. Now that you have found where these paths are stored you can update them to reflect the new location.
 
-**If you are using MODX Revolution 2.2**, you may also need to check the extension\_packages system setting (found under the System & Server area in the System Settings). This setting is used for custom resource classes (such as the **Articles** addon) and defines the path to its model - this may need to be updated after moving your site.
+**If you are using MODX Revolution 2.2**, you may also need to check the `extension_packages` system setting (found under the System & Server area in the System Settings). This setting is used for custom resource classes (such as the [Articles](extras/articles) extra) and defines the path to its model - this may need to be updated after moving your site.
 
 ## Troubleshooting / Errors
 

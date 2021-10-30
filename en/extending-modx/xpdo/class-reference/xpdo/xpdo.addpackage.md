@@ -10,7 +10,7 @@ This is used to load up the xPDO ORM mapping classes that define your package's 
 
 ## Syntax
 
-API Docs: <http://api.modx.com/xpdo/xPDO.html#addPackage>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO:addPackage()>
 
 ``` php
 boolean addPackage ([string $pkg = ''], [string $path = ''], [string $tablePrefix = ''])
@@ -19,6 +19,12 @@ boolean addPackage ([string $pkg = ''], [string $path = ''], [string $tablePrefi
 - `$pkg` corresponds to the name of a sub-folder within the specified $path. The sub-folder contains the myriad _your\_table.class.php_ files and most often a _mysql_ sub-folder which contains additional map and class files, e.g. _your\_table.class.php_ and _your\_table.map.inc.php_
 - `$path` is the full path to the folder containing the packages, including the package name you referenced in the first argument.
 - `$tablePrefix` is the table prefix for your package. You MUST include contain the correct prefix when **addPackage** is called (i.e. at runtime), otherwise your package will not load correctly!
+
+---
+
+**Note:** database table prefix `$tablePrefix` for your package **have to** match common MODX DB table prefix, otherwise you can get far-reaching error consequences. The MODX prefix can be and sometimes needs to be changed (f.e. for [Hardening MODX Revolution](getting-started/maintenance/securing-modx#changing-default-database-prefixes) needs), the main thing to remember is that package prefix and MODX one should be both equal. If you do not really understand what is at stake, do not specify this parameter `$tablePrefix`, in this case the default prefix value `_modx` will be used. 
+
+---
 
 This function returns **true** on success and **false** on error. Check the logs on error.
 
@@ -34,7 +40,7 @@ $modx->addPackage('mypkg',MODX_CORE_PATH.'components/mypkg/model/','mypkg_');
 
 Pictured is the file structure of the FormIt Snippet.
 
-![](/download/attachments/12615848/Path_to_models.jpg)
+![](Path_to_models.jpg)
 
 If you were to load one of its packages using the addPackage() method, you could use one of the three available packages (formit, recaptcha, or stopforumspam) as the first argument, and the path to the containing folder as the second argument, e.g.
 
