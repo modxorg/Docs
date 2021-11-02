@@ -85,7 +85,9 @@ You're not doomed. [Check out these instructions for Revolution](building-sites/
 
 ### 3.1 Blank frontend pages resolved by Clearing Cache
 
-In Revolution 2.2.5 the way xPDO/MODX write cache files has been re-factored. If you are having issues with blank frontend pages that are resolved after clearing the site cache, you could try setting _use\_flock_. This should help with RackSpace Cloud hosting, GoDaddy hosting, and some other providers.
+In Revolution 2.2.5 the way xPDO/MODX write cache files has been re-factored. If you are having issues with blank frontend pages that are resolved after clearing the site cache, you could try setting _use\_flock_. This should help with RackSpace Cloud hosting, GoDaddy hosting, and some other providers. 
+
+Also, if after saving a resource/template the browser only gives an error message 500 when loading the manager. And if the problem can then be solved by deleting the entire cache directory content via FTP, then this indicates a flock issue.
 
 In your MODX config file add the setting _use\_flock_ in your $config\_options array, and set it to false.
 
