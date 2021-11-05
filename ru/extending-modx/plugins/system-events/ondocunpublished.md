@@ -31,6 +31,7 @@ translation: "extending-modx/plugins/system-events/ondocunpublished"
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnDocUnPublished':
+        $modx->log(modX::LOG_LEVEL_ERROR, print_r($resource->toArray(),true));
         $response = array(
         	'success' => false,
         	'message' => 'Ресурс снят с публикации!',
@@ -38,7 +39,6 @@ switch($eventName) {
         );
         echo $modx->toJSON($response);
         exit; 
-        $modx->log(modX::LOG_LEVEL_ERROR, print_r($resource->toArray(),true));
         break;
 }
 ```
