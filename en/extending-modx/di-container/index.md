@@ -68,7 +68,7 @@ $modx->services->add('my_service', function($c) use ($modx) {
 If you require a new instance to be returned for each service request, use the `factory()` method:
 
 ```php
-$modx->services->factory('my_service', function($c) use ($modx) {
+$modx->services['my_service'] = $modx->services->factory(function($c) use ($modx) {
     return new MyPackage\MyService($modx);
 });
 ```
