@@ -337,7 +337,7 @@ Grab first 10 Resources - sorted by publishedon - below the Resource ID 17, no m
 ]]
 <div class="paging">
     <ul class="pageList">
-        [!+page.nav]]
+        [[!+page.nav]]
     </ul>
 </div>
 ```
