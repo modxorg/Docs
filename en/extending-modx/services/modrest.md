@@ -3,6 +3,10 @@ title: "modRest"
 translation: "extending-modx/services/modrest"
 ---
 
+> Note: modRest is deprecated.
+> 
+> It's strongly encouraged to use the [PSR HTTP Services](extending-modx/services/http) provided since MODX 3.0.0-beta1. 
+
 Built-in curl client for sending requests to third-party services (RESTful and others)
 
 Since third-party services are increasingly being used in the daily development of sites, for these purposes MODX has a built-in client with which you can send requests:

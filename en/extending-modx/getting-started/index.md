@@ -42,7 +42,7 @@ More on Property Sets can be found [here](building-sites/properties-and-property
 
 ## [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages") (CMPs)
 
-[Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages"), or CMPs, are custom pages in the manager built by 3rd Party developers to allow backend management of Components. They use the `modAction` and `modMenu` objects to dynamically create manager pages that can be easily found and added with no hacking of the core.
+[Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages"), or CMPs, are custom pages in the manager built by 3rd Party developers to allow backend management of Components. They can be added with no hacking of the core.
 
 ## Using MODX Externally
 

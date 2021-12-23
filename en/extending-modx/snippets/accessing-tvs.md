@@ -67,7 +67,6 @@ if (!$page->setTVValue('bio', 'This is my new bio...')) {
 - [Bindings](building-sites/elements/template-variables/bindings)
     - [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
     - [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
-    - [EVAL Binding](building-sites/elements/template-variables/bindings/eval-binding)
     - [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
     - [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
     - [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)

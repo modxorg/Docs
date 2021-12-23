@@ -8,9 +8,9 @@ _old_uri: "2.x/administering-your-site/security/hardening-modx-revolution"
 
 Any publicly viewable website will be targeted by hackers and [script kiddies](https://en.wikipedia.org/wiki/Script_kiddie). There is simply no site too small today and automated tools make it easy to deploy attacks to deface your site, to create backlinks to other webistes, to infect unsuspecting site visitors with malware, to run cryptomining scripts, to send email spam from your domain, to create phishing sites, to redirect to sites that sell pills or porn, or worse…
 
-Hardening any web application, including MODX Revolution, involves paying attention to _all_ layers of your site. This includes your server, all of its services, and the application itself.
+Hardening any web application, including MODX Revolution, involves paying attention to _all_ layers of your site. This includes your server, all of its services, and the application itself. 
 
-This is a huge topic so this page seeks to help you both harden MODX and inform you of other important areas.
+This is a huge topic so this page seeks to help you both harden MODX and inform you of other important areas. 
 
 ## Top Four Ways to Harden MODX
 
@@ -107,11 +107,11 @@ No matter how secure all other elements are, it amounts to nothing if your serve
 
 Always stay on top of server stack maintenance, including the software that powers encryption, your web server, your database, and remote connections. Patching your server software and core OS weekly, if not daily, is not uncommon. **Keep your server patched!**
 
-Turn off all unnecessary services and if possible, and especially turn off FTP entirely in favor of SFTP.
+Turn off all unnecessary services and if possible, and especially turn off FTP entirely in favor of SFTP. 
 
 Also turn off password authentication entirely in favour of [SSH keyed logins](http://tipsfor.us/2009/06/15/securing-a-linux-server-ssh-and-brute-force-attacks/). When using SSH keys, make sure to use a complex passphrase.
 
-Finally, it’s critical to keep things upgraded to the latest version in MODX, too. When any release comes out that remotely mentions anythign that sounds like a security issue or bug, upgrade ASAP.
+Finally, it’s critical to keep things upgraded to the latest version in MODX, too. When any release comes out that remotely mentions anythign that sounds like a security issue or bug, upgrade ASAP. 
 
 ## Other Ways to Protect MODX
 
@@ -168,7 +168,7 @@ This is best done when you first install MODX, but it’s always a good habit to
 
 ### Set up a Dedicated 404 Page
 
-Don’t just point your 404 page to your homepage. Set up a dedicated 404 page.
+Don’t just point your 404 page to your homepage. Set up a dedicated 404 page. 
 
 You don’t want your site to get any undue attention because a scanner thinks that you have a page on your site that you do not. E.g., if scanner looks for a known vulnerability at <http://yoursite.com/malicious/hack>, and the request comes back as an HTTP 200, then the scanner might think that you actually have that vulnerable file on your site, attracting other hacks and scans. You can use the FireFox “Web Developer” add-on (or several others) to view page headers and verify that 404s are actually 404s.
 
@@ -198,7 +198,7 @@ Tools like Adminer and phpMyAdmin can be very useful for quick fixes to your sit
 
 ## Always Use SSL
 
-Serving your site via an [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) connection is table stakes for the web today. Even Google penalizes sites not served over HTTPS in their SERP algorithm. Obtain, install, and keep your server running a modern SSL cypher and renew your SSL certificates frequently.
+Serving your site via an [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) connection is table stakes for the web today. Even Google penalizes sites not served over HTTPS in their SERP algorithm. Obtain, install, and keep your server running a modern SSL cypher and renew your SSL certificates frequently. 
 
 Once you’ve verified that HTTPS works, you can force all connections to communicate over port 443 (i.e. over a secure connection).
 

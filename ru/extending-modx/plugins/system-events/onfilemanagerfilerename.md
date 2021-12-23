@@ -5,7 +5,7 @@ translation: "extending-modx/plugins/system-events/onfilemanagerfilerename"
 
 ## Событие: OnFileManagerFileRename
 
-Запускается после переименования файла через менеджер. Старое имя файла можно получить с помощью переменной $\_POST.
+Запускается после переименования файла через менеджер. Старое имя файла можно получить с помощью переменной \$\_POST.
 
 Служба: 1 - Parser Service Events
 Группа: Нет
@@ -19,5 +19,5 @@ translation: "extending-modx/plugins/system-events/onfilemanagerfilerename"
 
 ## Смотри также
 
-- [System Events](extending-modx/plugins/system-events)
-- [Plugins](extending-modx/plugins)
+-   [Системные события](extending-modx/plugins/system-events)
+-   [Plugins](extending-modx/plugins)

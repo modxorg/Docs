@@ -20,7 +20,7 @@ The Doodles Extra in this tutorial can be found on GitHub, here: <https://github
 
 ## Setting Up Our Directories
 
-There are many ways that you could start developing your Extra - you could write your Plugins, Snippets, etc. inside MODX and then package it with a packaging tool like [PackMan](/extras/packman "PackMan"), or you could develop your project outside the MODX manager and track your files via a source control system such as [Git](http://github.com/). This tutorial uses the latter method for several reasons:
+There are many ways that you could start developing your Extra - you could write your Plugins, Snippets, etc. inside MODX and then package it with a packaging tool like [PackMan](extras/packman "PackMan"), or you could develop your project outside the MODX manager and track your files via a source control system such as [Git](http://github.com/). This tutorial uses the latter method for several reasons:
 
 -   Allows immediate development straight from your Git repository
 -   Allows easy collaboration between developers, as there is no copying files or changing core files - just developing in your preferred IDE and then doing some initial setup on paths.
@@ -61,7 +61,7 @@ Go ahead and create a file for our first Snippet:
 
 `/www/doodles/core/components/doodles/elements/snippets/snippet.doodles.php`
 
-You'll have to make a snippets/ directory, if you haven't already. Your file should be empty, but let's add a few lines of code:
+You'll have to make a _snippets/_ directory, if you haven't already. Your file should be empty, but let's add a few lines of code:
 
 ```php
 <?php
@@ -79,7 +79,7 @@ $dood = $modx->getService('doodles','Doodles',$doodlesCorePath.'model/doodles/',
 
 Okay, so first off, what is `$modx->getOption`? That's a method that grabs the System Setting with the key (the first parameter). In the first line, we are grabbing a 'default' path we are assuming our Doodles core path is going to be, by prefixing the MODX core path to it. It'll be: `/www/modx/core/components/doodles/`
 
-Next, we'll pass that as a fallback value for the next `getOption` call. This one passes 3 parameters: a key named "doodles.core_path", null, and our default path var we just assigned. In getOption, the 2nd parameter is an array to search for the key (which we aren't doing, so we can set it to null), and the 3rd paramter is a default value if the key isn't found.
+Next, we'll pass that as a fallback value for the next `getOption` call. This one passes 3 parameters: a key named "doodles.core_path", null, and our default path var we just assigned. In `getOption`, the 2nd parameter is an array to search for the key (which we aren't doing, so we can set it to null), and the 3rd paramter is a default value if the key isn't found.
 
 All this hubbub is required because we are developing our code in one place, yet when deployed, it will exist in another. We can't simply reference the paths relative to the MODX because we're not developing inside the MODX core. We'll explain this more in the next section.
 
@@ -92,7 +92,7 @@ We set a couple System Settings (that are specific to our development environmen
 -   **doodles.core_path** - /www/doodles/core/components/doodles/
 -   **doodles.assets_url** - /doodles/assets/components/doodles/
 
-If you need to change either of those to reflect your correct paths, such as the URL one, do so. Now our first line will return: /www/doodles/core/components/doodles/ Bingo! Cool, huh?
+If you need to change either of those to reflect your correct paths, such as the URL one, do so. Now our first line will return: _/www/doodles/core/components/doodles/_ Bingo! Cool, huh?
 
 Why do we do this? Why not just refer to `/www/doodles/core/components/doodles/`? Well, that wouldn't work in someone else's installation. There's is most likely to be at `MODXPATH/core/components/doodles/`. Our Transport Package (later) will handle all of that dynamic path stuff, but we want to add an override to allow us to develop Doodles outside of the MODX path. And we just did. Coding bliss!
 
@@ -102,7 +102,7 @@ Now on to the third line:
 $dood = $modx->getService('doodles','Doodles',$doodlesCorePath.'model/doodles/',$scriptProperties);
 ```
 
-Okay, this gets crazy. $modx->getService loads a class and instantiates an object of it, if it exists, and sets it to $modx->doodles here in this case (the first parameter passed in). More on getService can be found [here](extending-modx/modx-class/reference/modx.getservice "modX.getService"). But wait! We don't have a Doodles class! Well, it's time to make one.
+Okay, this gets crazy. `$modx->getService` loads a class and instantiates an object of it, if it exists, and sets it to `$modx->doodles` here in this case (the first parameter passed in). More on getService can be found [here](extending-modx/modx-class/reference/modx.getservice "modX.getService"). But wait! We don't have a Doodles class! Well, it's time to make one.
 
 ### Making the Doodles Base Class
 
@@ -152,9 +152,9 @@ Cool. Now we want to use [xPDO](extending-modx/xpdo "xPDO") to query the databas
 
 ### Making the Model
 
-xPDO OOP query methods to access the database. It currently is beginning to support multiple databases, and it does that by the abstraction of DB queries. Also, it allows you to keep your DB rows in nice, clean classes and do all kinds of neat things in very short lines of code. But to do that, we have to add an xPDO model to our Snippet (via the `$modx->addPackage method`). But first we have to build that model, using an xPDO Schema. There's a [nice long tutorial here](extending-modx/xpdo/custom-models) on how to do that, but we'll go over it fast for now.
+xPDO OOP query methods to access the database. It currently is beginning to support multiple databases, and it does that by the abstraction of DB queries. Also, it allows you to keep your DB rows in nice, clean classes and do all kinds of neat things in very short lines of code. But to do that, we have to add an xPDO model to our Snippet (via the `$modx->addPackage` method`). But first we have to build that model, using an xPDO Schema. There's a [nice long tutorial here](extending-modx/xpdo/custom-models) on how to do that, but we'll go over it fast for now.
 
-Go ahead and make a xml file in /www/doodles/core/components/doodles/model/schema/doodles.mysql.schema.xml. Put this in it:
+Go ahead and make a xml file in _/www/doodles/core/components/doodles/model/schema/doodles.mysql.schema.xml_. Put this in it:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -412,10 +412,10 @@ foreach ($doodles as $doodle) {
 }
 ```
 
-So, what this does is iterates over all the Doodle objects we got with the getCollection call, and creates a PHP array from their values with the toArray method. Then, it uses getChunk and that array to set values to the Chunk for each row, and append that to the `$output` variable. So we get a bunch of \\
+So, what this does is iterates over all the Doodle objects we got with the getCollection call, and creates a PHP array from their values with the toArray method. Then, it uses getChunk and that array to set values to the Chunk for each row, and append that to the `$output` variable. So we get a bunch of
 
 1. tags (as many as you added rows in the DB for). It should look something like this:
-   ![](img/doodleoutput1.png)
+    ![](img/doodleoutput1.png)
 
 Cool, huh? You can obviously change that Chunk to whatever you want - and people can pass in a name of a Chunk to &tpl in their Snippet call to use whatever Chunk they want. Templatability in your Snippet! Hooray!
 

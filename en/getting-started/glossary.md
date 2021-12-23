@@ -1,5 +1,8 @@
 ---
 title: "Glossary of Revolution Terms"
+sortorder: 5
+_old_id: "157"
+_old_uri: "2.x/getting-started/an-overview-of-MODX/glossary-of-revolution-terms"
 description: "Full list of MODX terms can be found here"
 ---
 

@@ -22,7 +22,7 @@ sortorder: 6
 - Ставьте скобки сразу после имени функции.
 - Не используйте скобки в выражениях с `return` когда это необходимо. Например:
 
- ``` php
+```php
 if ($test) {
 }
 while ($test == $other) {
@@ -39,7 +39,7 @@ return $test;
 - Все имена методов должны быть в camelCase и начинаться со строчной буквы.
 - Все `private` методы и переменные должны начинаться с символа подчеркивания "_".
 
- ``` php
+```php
 class modFactor {
     public $publicVar;
     private $_privateVar;
@@ -52,14 +52,14 @@ class modFactor {
 
 Обратите внимание, это не аргументы функции.
 
-- Используйте строчные буквы.
-- Разделяйте слова подчеркиванием.
+-   Используйте строчные буквы.
+-   Разделяйте слова подчеркиванием.
 
 ## Аргументы функций и свойства классов
 
-- Первая буква в нижнем регистре, остальные в **camelCase**. Пример:
+-   Первая буква в нижнем регистре, остальные в **camelCase**. Пример:
 
- ``` php
+```php
 class modFactor {
     public function testFunc($testVar, array &$anotherTest = array()) {
         $this->_privateVar = $testVar;
@@ -76,7 +76,7 @@ class modFactor {
 
 Пример:
 
-``` php
+```php
 $_lang['chunk_create_text'] = 'Тест';
 ```
 
@@ -97,5 +97,5 @@ $_lang['chunk_create_text'] = 'Тест';
 $_lang['mycomponent.welcome_message'] = 'Привет!';
 ```
 
-- Всегда добавляйте префикс к имени класса: например `finBank`, `finTransaction` и тд.
-- Всегда добавляйте префикс к имени [Чанка](building-sites/elements/chunks "Чанки") например `finStatement`, `finDeposit`
+-   Всегда добавляйте префикс к имени класса: например `finBank`, `finTransaction` и тд.
+-   Всегда добавляйте префикс к имени [Чанка](building-sites/elements/chunks "Чанки") например `finStatement`, `finDeposit`

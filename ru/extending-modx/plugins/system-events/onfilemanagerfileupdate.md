@@ -19,5 +19,5 @@ translation: "extending-modx/plugins/system-events/onfilemanagerfileupdate"
 
 ## Смотри также
 
-- [System Events](extending-modx/plugins/system-events)
-- [Plugins](extending-modx/plugins)
+-   [Системные события](extending-modx/plugins/system-events)
+-   [Plugins](extending-modx/plugins)
