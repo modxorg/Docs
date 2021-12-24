@@ -4,28 +4,34 @@ _old_id: "330"
 _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components"
 ---
 
+# Using Custom Database Tables
+
+This tutorial covers how to use MODX to build a custom database table and link it to xPDO's object model. At the end of this tutorial you should have learned how to write a simple XML Schema for your table, create the PHP Class files, and read and write data through MODX.
+
 ## What's Changed in MODX 3?
+
 MODX 3 brings PHP Namespaces to your XML Schema, generated class files, and a new bootstrap functionality to custom packages and Extras. It also changes the MySQL map file structure in the model that it generates. Let's walk through a simple example as a starting point. From here, you can make things more complex, such as using configuration files or helper functions. But to start, let's look at the minimum needed to create a custom table, and show we can write and read from the table.
 
 **NOTE**: This was converted from the previous "StoreFinder" example.
 
-**ALSO NOTE**: This methodology is not backwards compatible to MODX 2.x. This tutorial is intended to be run and used in MODX 3.
+**ALSO NOTE**: This methodology is not backwards compatible to MODX 2.x. This tutorial is intended to be run and used in MODX 3. You can see the equivalent guide for 2.x here: [Using Custom Database Tables](/2.x/en/extending-modx/tutorials/using-custom-database-tables.md "Using Custom Database Tables")
 
 ## Directory Structure
+
 The data structure selected for this example is slightly different than previous examples and is designed to be less confusing. Previous examples would frequently have the same package name repeated in the directory structure like `doodles/core/components/doodles/model/doodles`. To me, that seemed like a lot of doodling for one path. The structure I've selected tries to keep the naming convention functional. The change to a "src/" directory is a structure that MODX 3 uses in it's own file structure and sets you up to use Composer and other fancy features if your Component becomes more complex.
 
 If you've built on MODX before you'll know that the "/core/components/" structure is where custom components (Extras) are installed to. If you don't plan on publishing this as an Extra, you could simplify your directory structure by not utilizing that part. But, if you did want to publish it, you may have to refactor your code later. In this example, we'll use the methodology where we create a project folder in the web root, and utilize the `/core/components/` structure so that we can build it to a package later on.
 
-* www
-  * project1
-  * _build
-  * core
-    * components 
-      * ToDo
-        * src
-          * Model
-          * Schema
-  * bootstrap.php
+*   www
+    *   project1
+    *   _build
+    *   core
+        *   components 
+            *   ToDo
+                *   src
+                    *   Model
+                    *   Schema
+*   bootstrap.php
 
 If we were building a Custom Manager Page (CMP), then we would also have a folder for assets. But since we're focused on the data aspect for Part 1, we'll leave that out for now.
 
@@ -37,16 +43,15 @@ More details on [Namespaces and Bootstrapping Services](extending-modx/namespace
 
 For our use case, lets use the classic To-Do list example. You can never have too many To-Dos. And as the first To-Do, let's add, "Build a To-Do list in MODX 3!". Let's lay out the tables and structure. We will use a parent "To-Do List" table and child "To-Do Tasks" table. There will be a one-to-many relationship from the List to the Tasks.
  
- - Table Name: `modx_td_list`
-   - Fields:
-     - `name`
-     - `description`
- 
- - Table Name: `modx_td_task`
-   - Fields:
-     - `short_description`
-     - `due_date`
-     - `completed` (boolean)
+*   Table Name: `modx_td_list`
+    *   Fields:
+        *   `name`
+        *   `description`
+*   Table Name: `modx_td_task`
+    *   Fields:
+        *   `short_description`
+        *   `due_date`
+        *   `completed` (boolean)
 
 Now that we've defined our starting table structure, let's make the schema file that defines the model. This "schema" file is an XML representation of our database table(s). It is then parsed by xPDO into PHP-format "maps", which are array representations of the schema and its relationships.
 
@@ -90,15 +95,16 @@ For more details on when to use xPDOObject vs. xPDOSimpleObject, See this blog p
 
 First we'll tell the browser and parser that this is XML code with a standard XML header. Next, we're going to create a "model" tag, and put some attributes into it. They are:
 
-- **package** - The name of the xPDO package. This is how xPDO separates different models and manages them.
-- **baseClass** - This is the base class from which all your class definitions will extend. Unless you're planning on creating a custom `xPDOObject` extension, it's best to leave it at the default.
-- **platform** - For this example, MySQL (mysql).
-- **defaultEngine** - The default engine of the database tables, usually either InnoDB or MyISAM. MODX recommends using InnoDB.
-- **phpdoc-package & phpdoc-subpackage** - These are custom attributes we're going to use in our map and class files. They're not standard xPDO attributes, but show that you can put whatever you want as attributes. These attributes have no impact on the build process, so we'll leave them out for our example.
+*   **package** - The name of the xPDO package. This is how xPDO separates different models and manages them.
+*   **baseClass** - This is the base class from which all your class definitions will extend. Unless you're planning on creating a custom `xPDOObject` extension, it's best to leave it at the default.
+*   **platform** - For this example, MySQL (mysql).
+*   **defaultEngine** - The default engine of the database tables, usually either InnoDB or MyISAM. MODX recommends using InnoDB.
+*   **phpdoc-package & phpdoc-subpackage** - These are custom attributes we're going to use in our map and class files. They're not standard xPDO attributes, but show that you can put whatever you want as attributes. These attributes have no impact on the build process, so we'll leave them out for our example.
 
 For more details on MODX schemas, see [Defining a Schema | Database and Tables](custom-models/defining-a-schema/database-and-tables#defining-tables). This gives additional details on the Class, Table, and Extends attributes, as well as additional examples.
 
 ## Schema "Package" and the "Namespace"
+
 Since MODX 3 introduces namespaces, MODX derives the namespace from the package attribute. This attribute is used to uniquely identify the files and classes included with your component. It's also used as the namespace for your model PHP files and is included at the top of each PHP file. This is the root namespace value.
 
 To simplify namespace usage, and be able to derive the amespace from there, MODX equates the directory path to the namespace. Even though the concept of Namespaces doesn't require these to match, for the purpose of MODX components and Extras, the namespace will match the directory path.
@@ -277,6 +283,7 @@ Hopefully, in a second part, we can expand this into a full Extra with a Custom 
 To test out our tables, we'll create, or modify a resource to include the below HTML. We're avoiding some of the complexity in passing in a template to our Snippet, or iterating. Instead we'll wrap the output in "pre" tags and use it as a "log" type functionality. It will output all the ToDo Lists and Tasks.
 
 I added modified the default home page and replaced the content field with this value.
+
 ```html
 <pre>[[!ToDo]]</pre>
 ```
