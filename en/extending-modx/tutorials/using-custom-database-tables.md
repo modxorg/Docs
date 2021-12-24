@@ -4,8 +4,6 @@ _old_id: "330"
 _old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components"
 ---
 
-# Using Custom Database Tables
-
 This tutorial covers how to use MODX to build a custom database table and link it to xPDO's object model. At the end of this tutorial you should have learned how to write a simple XML Schema for your table, create the PHP Class files, and read and write data through MODX.
 
 ## What's Changed in MODX 3?
@@ -135,7 +133,7 @@ width="600" />
 
 As of MODX 3, the core path in your Namespace entry is where MODX looks for your `bootstrap.php` file. The bootstrap file will allow us to hook into the Autoloader, load our classes, register a service, or any other startup tasks that are needed.
 
-**Additional Details for Overachievers :)**
+### Additional Details for Overachievers :)
 
 If you look at the index file, you can see that it calls the initialize function and passes in the "web" context: `$modx->initialize('web')`. If you then take a look at the initialize function within the main `modX.php` file, you'll see that it calls `_initNamespaces()`. This function loads the namespace data from the cache, loops through the entries, then checks for and requires the `bootstrap.php` file if it's present and readable.
 
