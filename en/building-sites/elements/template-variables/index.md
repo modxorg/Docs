@@ -66,4 +66,6 @@ Which would output:
     3. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
     4. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
     5. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
-5. [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs) 6.[Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages) 7.[Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)
+5. [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
+6. [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
+7. [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)
