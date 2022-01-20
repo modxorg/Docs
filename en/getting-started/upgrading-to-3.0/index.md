@@ -1,10 +1,12 @@
 ---
 title: "Upgrading from 2.x to 3.0"
-note: "This is a living document as MODX 3.0 is still in development. At this time it's not yet recommended to upgrade sites to MODX 3.0 unless you're a developer looking to test, and prepare, your extras. "
+note: "This is a living document as MODX 3.0 is in active development. At this time we suggest using 3.0 on new projects in development and to report any issues on GitHub, but to hold off from updating production sites with any complexity until a little later. "
 sortorder: 7
 ---
 
 This document details the changes made between 2.x and 3.0 that may affect upgrades. It's not a full list of all changes (see the [changelog for that](https://github.com/modxcms/revolution/blob/3.x/core/docs/changelog.txt)), but rather a reference of (breaking) changes that may affect extras and sites.
+
+[You may find a list of compatible extras on SiteDash](https://sitedash.app/extras).
 
 ## Upgrade to 3.0
 
