@@ -1,7 +1,6 @@
 ---
 title: "System Events"
-_old_id: "298"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/"
+description: "System Events are fired throughout the MODX code, allowing Plugins to interact with MODX code and add custom functionality without hacking core code"
 ---
 
 ## What are System Events?
@@ -86,6 +85,7 @@ This is not an exhaustive list as events are still being documented. Thank you f
 - [OnElementNotFound](extending-modx/plugins/system-events/onelementnotfound)
 - [OnEmptyTrash](extending-modx/plugins/system-events/onemptytrash)
 - [OnFileManagerBeforeUpload](extending-modx/plugins/system-events/onfilemanagerbeforeupload)
+- [OnFileManagerUpload](extending-modx/plugins/system-events/onfilemanagerupload)
 - [OnFileManagerDirCreate](extending-modx/plugins/system-events/onfilemanagerdircreate)
 - [OnFileManagerDirRemove](extending-modx/plugins/system-events/onfilemanagerdirremove)
 - [OnFileManagerDirRename](extending-modx/plugins/system-events/onfilemanagerdirrename)
@@ -93,7 +93,7 @@ This is not an exhaustive list as events are still being documented. Thank you f
 - [OnFileManagerFileRemove](extending-modx/plugins/system-events/onfilemanagerfileremove)
 - [OnFileManagerFileRename](extending-modx/plugins/system-events/onfilemanagerfilerename)
 - [OnFileManagerFileUpdate](extending-modx/plugins/system-events/onfilemanagerfileupdate)
-- [OnFileManagerUpload](extending-modx/plugins/system-events/onfilemanagerupload)
+- [OnFileManagerMoveObject](extending-modx/plugins/system-events/onfilemanagermoveobject)
 - [OnHandleRequest](extending-modx/plugins/system-events/onhandlerequest)
 - [OnInitCulture](extending-modx/plugins/system-events/oninitculture)
 - [OnLoadWebDocument](extending-modx/plugins/system-events/onloadwebdocument)
@@ -106,10 +106,7 @@ This is not an exhaustive list as events are still being documented. Thank you f
 - [OnManagerPageAfterRender](extending-modx/plugins/system-events/onmanagerpageafterrender)
 - [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender)
 - [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit)
-- [OnModxInit](extending-modx/plugins/system-events/onmodxinit)
-- [OnPackageInstall](extending-modx/plugins/system-events/onpackageinstall)
-- [OnPackageRemove](extending-modx/plugins/system-events/onpackageremove)
-- [OnPackageUninstall](extending-modx/plugins/system-events/onpackageuninstall)
+- [OnMODXInit](extending-modx/plugins/system-events/onmodxinit)
 - [OnPageNotFound](extending-modx/plugins/system-events/onpagenotfound)
 - [OnPageUnauthorized](extending-modx/plugins/system-events/onpageunauthorized)
 - [OnParseDocument](extending-modx/plugins/system-events/onparsedocument)
@@ -126,10 +123,16 @@ This is not an exhaustive list as events are still being documented. Thank you f
 - [OnPropertySetBeforeSave](extending-modx/plugins/system-events/onpropertysetbeforesave)
 - [OnPropertySetRemove](extending-modx/plugins/system-events/onpropertysetremove)
 - [OnPropertySetSave](extending-modx/plugins/system-events/onpropertysetsave)
+- [OnResourceAutoPublish](extending-modx/plugins/system-events/onresourceautopublish)
+- [OnResourceBeforeSort](extending-modx/plugins/system-events/onresourcebeforesort)
+- [OnResourceDelete](extending-modx/plugins/system-events/onresourcedelete)
+- [OnResourceDuplicate](extending-modx/plugins/system-events/onresourceduplicate)
 - [OnResourceGroupBeforeRemove](extending-modx/plugins/system-events/onresourcegroupbeforeremove)
 - [OnResourceGroupBeforeSave](extending-modx/plugins/system-events/onresourcegroupbeforesave)
 - [OnResourceGroupRemove](extending-modx/plugins/system-events/onresourcegroupremove)
 - [OnResourceGroupSave](extending-modx/plugins/system-events/onresourcegroupsave)
+- [OnResourceSort](extending-modx/plugins/system-events/onresourcesort)
+- [OnResourceUndelete](extending-modx/plugins/system-events/onresourceundelete)
 - [OnRichTextBrowserInit](extending-modx/plugins/system-events/onrichtextbrowserinit)
 - [OnRichTextEditorInit](extending-modx/plugins/system-events/onrichtexteditorinit)
 - [OnRichTextEditorRegister](extending-modx/plugins/system-events/onrichtexteditorregister)
