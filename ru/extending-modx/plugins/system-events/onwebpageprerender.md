@@ -16,7 +16,7 @@ translation: "extending-modx/plugins/system-events/onwebpageprerender"
 
 Нет.
 
-## Example
+## Пример
 
 **Описаниие:** Отфильтруйте слова из документа перед его отображением в Интернете
 **Системное событие:** OnWebPagePrerender
@@ -49,5 +49,5 @@ switch($eventName) {
 
 ## Смотри также
 
-- [System Events](extending-modx/plugins/system-events "System Events")
-- [Plugins](extending-modx/plugins "Plugins")
+- [Системные события](extending-modx/plugins/system-events "Системные события")
+- [Плагины](extending-modx/plugins "Плагины")

@@ -1,6 +1,7 @@
 ---
 title: "OnPluginEventRemove"
 translation: "extending-modx/plugins/system-events/onplugineventremove"
+description: "Событие OnPluginEventRemove срабатывает после того, как плагин отсоединяется непосредственно от события"
 ---
 
 ## Событие: OnPluginEventRemove

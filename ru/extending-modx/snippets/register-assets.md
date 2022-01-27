@@ -67,7 +67,7 @@ var myCustomJSVar = 123;
 
 ### regClientScript
 
-Similar to [regClientStartupScript](#AddingCSSandJStoYourPagesThroughSnippets-regClientStartupScript) за исключением того, что он работает перед закрывающим тегом BODY:
+Действует аналогично [regClientStartupScript](extending-modx/modx-class/reference/modx.regclientstartupscript) за исключением того, что он работает перед закрывающим тегом BODY:
 
 ``` php
 $modx->regClientScript('assets/js/footer.js');
@@ -83,7 +83,7 @@ $modx->regClientScript('http://code.jquery.com/jquery-latest.min.js');
 
 ### regClientHTMLBlock
 
-Similar to [regClientStartupHTMLBlock](#AddingCSSandJStoYourPagesThroughSnippets-regClientStartupHTMLBlock) за исключением того, что он работает перед закрывающим тегом BODY:
+Действует аналогично [regClientStartupHTMLBlock](extending-modx/modx-class/reference/modx.regclientstartuphtmlblock) за исключением того, что он работает перед закрывающим тегом BODY:
 
 ``` php
 $modx->regClientHTMLBlock('

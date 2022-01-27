@@ -32,7 +32,7 @@ If you'd like the results to show on the same page, simply place the [SimpleSear
 
 There is 1 chunk that is processed in SimpleSearchForm. Its corresponding SimpleSearchForm parameter is:
 
-- [tpl](extras/simplesearch/simplesearch.simplesearchform/simplesearch.simplesearchform.tpl "SimpleSearch.SimpleSearchForm.tpl") - The Chunk to use for the search form.
+- [tpl](extras/simplesearch/simplesearch/tpl "SimpleSearch.SimpleSearchForm.tpl") - The Chunk to use for the search form.
 
 ## Examples
 
