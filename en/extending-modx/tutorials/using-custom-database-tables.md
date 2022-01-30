@@ -21,10 +21,13 @@ Based on recent discussions, we should clarify at the start, the terminology use
 1. PHP Namespace
    1. With MODX 3, our Models and Processors use PHP Namespaces and are auto-loadable.
    2. Example, at the top of your Model class files, MODX generates a php namespace declaration
+   
       ```php
 	  <?php
 
 	  namespace MyComponent\Model\MyClass
+	  ```
+
 2. Component Namespace
    1. MODX has a namespace record that you create within the manager. This is separate from the PHP namespace and should be lowercase. This value is used to determine the paths to a particular custom component. The Core Path and the Assets Path.
    2. Menu entries specify this lowercase namespace. MODX uses that to route the manager request to the proper manager page.
@@ -46,17 +49,17 @@ If you've built on MODX before you'll know that the `/core/components/` structur
 
 In this example, we'll use the methodology where we create a project folder in the web root, and utilize the `/core/components/` structure so that we can build it to a package later on. The `project1` directory is located in our web root directory:
 
- *   project1
-     *   _build
-     *   core
-         *   components 
-             *   todo
-                 *   src
-                     *   Model
-                 *   schema
-     *   bootstrap.php
+* `project1
+  * _build
+  * core
+    * components 
+      * todo
+        * src
+          * Model
+        * schema
+        * bootstrap.php
 
-Go ahead and create these directories except for the `Model/` directory.
+Go ahead and create these directories except for the `Model/` directory. The model directory will be built automatically by the `build.tables.php` script.
 
 ---
 
@@ -76,15 +79,15 @@ For this tutorial, lets use the classic To-Do list example. You can never have t
 
 We will use a parent ***To-Do List*** table and child ***To-Do Tasks*** table. There will be a one-to-many relationship from the List to the Tasks.
  
-*   Table Name: `modx_td_list`
-    *   Fields:
-        *   `name`
-        *   `description`
-*   Table Name: `modx_td_task`
-    *   Fields:
-        *   `short_description`
-        *   `due_date`
-        *   `completed` (boolean)
+* Table Name: `modx_td_list`
+  * Fields:
+    * `name`
+    * `description`
+* Table Name: `modx_td_task`
+    * Fields:
+      * `short_description`
+      * `due_date`
+      * `completed` (boolean)
 
 Now that we've defined our starting table structure, let's make the schema file that defines the model. This schema file is an XML representation of our database table(s). It is then parsed by xPDO into PHP-format "maps", which are array representations of the schema and its relationships.
 
@@ -321,6 +324,7 @@ foreach ($classes as $class) {
 	}
 }
 ```
+
 Now execute that file on the command line with `php build.tables.php`;
 
 If you saw something like this as your output, congratulations! 
@@ -451,6 +455,7 @@ if ($lists) {
 // Return output
 return $output;
 ```
+
 When you navigate to the root page of the site, or to the page you used as your test page, you should see similar output to below:
 
 <img src="img/todo-final-output.png" 
