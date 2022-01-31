@@ -81,15 +81,13 @@ For this tutorial, lets use the classic To-Do list example. You can never have t
 
 We will use a parent ***To-Do List*** table and child ***To-Do Tasks*** table. There will be a one-to-many relationship from the List to the Tasks.
  
-* Table Name: `modx_td_list`
-  * Fields:
+* Table Name: `modx_td_list`, fields:
     * `name`
     * `description`
-* Table Name: `modx_td_task`
-    * Fields:
-      * `short_description`
-      * `due_date`
-      * `completed` (boolean)
+* Table Name: `modx_td_task`, fields:
+    * `short_description`
+    * `due_date`
+    * `completed` (boolean)
 
 Now that we've defined our starting table structure, let's make the schema file that defines the model. This schema file is an XML representation of our database table(s). It is then parsed by xPDO into PHP-format "maps", which are array representations of the schema and its relationships.
 
