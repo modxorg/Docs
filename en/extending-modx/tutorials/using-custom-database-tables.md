@@ -8,18 +8,19 @@ This tutorial covers how to use MODX to build a custom database table and link i
 
 ## What's Changed in MODX 3?
 
-MODX 3 brings PHP Namespaces to your XML Schema, generated class files, and a new bootstrap functionality to custom packages and Extras. It also changes the MySQL map file structure in the model that it generates. Let's walk through a simple example as a starting point. From here, you can make things more complex, such as using configuration files or helper functions. But to start, let's look at the minimum needed to create a custom table, and show we can write and read from the table.
+MODX 3 brings PHP Namespaces to your XML Schema and class files, and a new bootstrap functionality to load any dependencies. It also changes the MySQL map file structure in the model that it generates. Let's walk through a simple example as a starting point. From here, you can make things more complex, such as using configuration files or helper functions. But to start, let's look at the minimum needed to create a custom table, and show we can write and read from the table.
 
 **NOTE**: This was converted from the previous "StoreFinder" example.
 
-**ALSO NOTE**: This methodology is not backwards compatible to MODX 2.x. This tutorial is intended to be run and used in MODX 3. You can see the equivalent guide for 2.x here: [Using Custom Database Tables](/2.x/en/extending-modx/tutorials/using-custom-database-tables.md "Using Custom Database Tables")
+**ALSO NOTE**: This methodology is not backwards compatible to MODX 2.x. This tutorial is intended to be run and used in MODX 3. You can see the equivalent guide for 2.x here: [Using Custom Database Tables](/2.x/en/extending-modx/tutorials/using-custom-database-tables "Using Custom Database Tables")
 
 ## Key Terminology and Standards
 
 Based on recent discussions, we should clarify at the start, the terminology used and what it refers to. These are also standard practices that should be followed for consistency.
 
-1. PHP Namespace
-   1. With MODX 3, our Models and Processors use PHP Namespaces and are auto-loadable.
+### PHP Namespace
+
+   1. With MODX 3, our Models and Processors use PHP Namespaces and are autoloadable.
    2. Example, at the top of your Model class files, MODX generates a php namespace declaration
    
       ```php
@@ -28,12 +29,17 @@ Based on recent discussions, we should clarify at the start, the terminology use
 	  namespace MyComponent\Model\MyClass
 	  ```
 
-2. Component Namespace
+### Component Namespace
+
    1. MODX has a namespace record that you create within the manager. This is separate from the PHP namespace and should be lowercase. This value is used to determine the paths to a particular custom component. The Core Path and the Assets Path.
    2. Menu entries specify this lowercase namespace. MODX uses that to route the manager request to the proper manager page.
-3. XML Schema Package attribute
-   1. The package attribute in MODX 3 is your PHP Namespace. This value is generated to the top of your PHP Model class files and should be CamelCase/ProperCase.
-4. Directory structure and capitalization
+
+### XML Schema Package attribute
+
+   1. The package attribute in MODX 3 is your PHP Namespace. This value is generated to the top of your PHP Model class files and should be CamelCase/PascalCase.
+
+### Directory structure and capitalization
+
    1. All directories should be lowercase except those located in your `src/` directory. Within `src/` the files should mirror the capitalization (camelCase or PascalCase of your namespaced classes)
       1. Example file path: `{core_path}/components/mycomponent/src/Model/MyClass.php`
       2. Corresponding PHP Namespace: `MyComponent\Model\MyClass`
@@ -73,7 +79,7 @@ This file allows us a different method to load our classes calling `addPackage` 
 
 From here, we can also initialize a Service Class and add it to the new MODX Dependency Injection Container. We can then access that Service throughout the system (Plugins/Events, Snippets, etc).
 
-> More details on [Namespaces and Bootstrapping Services](extending-modx/namespaces.md#bootstrapping-services "Namespaces | Bootstrapping Services")
+> More details on [Namespaces and Bootstrapping Services](extending-modx/namespaces#bootstrapping-services "Namespaces | Bootstrapping Services")
 
 ## Data and Tables
 
@@ -154,7 +160,7 @@ The model tag and its attributes define a few different things about your Compon
 
 > For more details on MODX schemas, see [Defining a Schema | Database and Tables](custom-models/defining-a-schema/database-and-tables#defining-tables). This gives additional details on the Class, Table, and Extends attributes, as well as additional examples.
 > 
-> For more details on how the paths are defined and used, see [Namespaces | Usage](extending-modx/namespaces.md#usage).
+> For more details on how the paths are defined and used, see [Namespaces | Usage](extending-modx/namespaces#usage).
 
 ## Create a Component Namespace Entry in the Manager
 
@@ -201,7 +207,7 @@ Go ahead and create a `build.schema.php` file in your `_build/` directory. It sh
 define('MODX_API_MODE', true);
 
 // Include the main index.php file to load MODX in API Mode
-@include(dirname(__FILE__, 3) . DIRECTORY_SEPARATOR . 'index.php');
+@include(dirname(__FILE__, 3) . '/index.php');
 
 /**
  * @var \MODX\Revolution\modX $modx
@@ -291,11 +297,8 @@ Go ahead and create `build.tables.php` in your `_build/` directory and copy the 
 // Set API Mode
 define('MODX_API_MODE', true);
 
-// Shortcut for directory separator
-$ds = DIRECTORY_SEPARATOR;
-
 // Include the index to load MODX in API Mode
-@include(dirname(__FILE__, 3) . $ds . 'index.php');
+@include(dirname(__FILE__, 3) . '/index.php');
 
 /**
  * @var \MODX\Revolution\modX $modx
