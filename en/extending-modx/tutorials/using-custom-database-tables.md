@@ -20,7 +20,7 @@ Based on recent discussions, we should clarify at the start, the terminology use
 
 ### PHP Namespace
 
-   1. With MODX 3, our Models and Processors use PHP Namespaces and are auto-loadable.
+   1. With MODX 3, our Models and Processors use PHP Namespaces and are autoloadable.
    2. Example, at the top of your Model class files, MODX generates a php namespace declaration
    
       ```php
@@ -34,8 +34,8 @@ Based on recent discussions, we should clarify at the start, the terminology use
    1. MODX has a namespace record that you create within the manager. This is separate from the PHP namespace and should be lowercase. This value is used to determine the paths to a particular custom component. The Core Path and the Assets Path.
    2. Menu entries specify this lowercase namespace. MODX uses that to route the manager request to the proper manager page.
 
-1. XML Schema Package attribute
-   1. The package attribute in MODX 3 is your PHP Namespace. This value is generated to the top of your PHP Model class files and should be CamelCase/ProperCase.
+### XML Schema Package attribute
+   1. The package attribute in MODX 3 is your PHP Namespace. This value is generated to the top of your PHP Model class files and should be CamelCase/PascalCase.
 
 ### Directory structure and capitalization
 
