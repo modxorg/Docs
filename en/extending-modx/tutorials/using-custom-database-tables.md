@@ -49,15 +49,17 @@ If you've built on MODX before you'll know that the `/core/components/` structur
 
 In this example, we'll use the methodology where we create a project folder in the web root, and utilize the `/core/components/` structure so that we can build it to a package later on. The `project1` directory is located in our web root directory:
 
-* `project1
-  * _build
-  * core
-    * components 
-      * todo
-        * src
-          * Model
-        * schema
-        * bootstrap.php
+```
+project1/
+  _build/
+  core/
+    components/
+      todo/
+        src/
+          Model/
+        schema/
+        bootstrap.php
+```
 
 Go ahead and create these directories except for the `Model/` directory. The model directory will be built automatically by the `build.tables.php` script.
 
