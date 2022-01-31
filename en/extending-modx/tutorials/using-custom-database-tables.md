@@ -35,6 +35,7 @@ Based on recent discussions, we should clarify at the start, the terminology use
    2. Menu entries specify this lowercase namespace. MODX uses that to route the manager request to the proper manager page.
 
 ### XML Schema Package attribute
+
    1. The package attribute in MODX 3 is your PHP Namespace. This value is generated to the top of your PHP Model class files and should be CamelCase/PascalCase.
 
 ### Directory structure and capitalization
