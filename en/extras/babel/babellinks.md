@@ -19,6 +19,7 @@ BabelLinks is a snippet which displays links to other languages (contexts) in th
 | includeUnlinked | Flag whether to show unlinked translation.                                    | 0                     | 3.0.0   |
 | toArray         | Flag whether to dump the output as an array instead.                          | 0                     | 3.0.0   |
 | toPlaceholder   | Flag whether to dump the output into the given placeholder's name.            |                       | 3.0.0   |
+| ignoreSiteStatus | Option to ignore site_status (when the site is offline)                      | 0                     | 3.0.0   |
 
 ## BabelLink Chunk
 

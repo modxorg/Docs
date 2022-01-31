@@ -2386,5 +2386,6 @@
     "/help/security": "en/building-sites/client-proofing/security",
     "/help/properties+and+property+sets": "en/building-sites/properties-and-property-sets",
     "/help/internationalization": "en/extending-modx/internationalization",
-    "/help/namespaces": "en/extending-modx/namespaces"
+    "/help/namespaces": "en/extending-modx/namespaces",
+    "/help/template+variables": "en/building-sites/elements/template-variables"
 }
