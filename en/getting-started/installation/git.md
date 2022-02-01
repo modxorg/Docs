@@ -28,23 +28,17 @@ Forking it with your GitHub account will allow you to contribute back to MODX by
 
 If you're not familiar with Git, please read the excellent tutorial from [GitHub](http://learn.github.com/) and view the [GitHub help pages](http://help.github.com).
 
-From there, make sure you are working on the **2.x** branch, if you're wanting the latest bugfixes and features targeted for the next release. There are two significant branches in the modxcms/revolution GitHub repository related to the version 2 releases of MODX Revolution:
+From there, make sure you are working on the **2.x** branch, if you're wanting the latest bugfixes and features targeted for the next release.
 
-#### Major-Version Branch
+#### Minor-Versions
 
-- **2.x** - The latest development branch for MODX Revolution version 2; all new features and bugfixes targeted for the next minor release will exist here.
+Each minor version is tagged. To check out a specific minor version use the following syntax:
 
-#### Minor-Version Branch
-
-- **2.5.x** - A minor version branch for current stable minor releases; contains only bug fixes targeted for the next patch release.
-
-To create a local tracking branch from one in the origin remote; after cloning, just type:
-
-``` php
-git checkout -b 2.x origin/2.x
+```php
+git checkout tags/v2.8.1-pl -b 2.8.1
 ```
 
-And git will handle the rest.
+This will checkout the `v2.8.1-pl` tag in your local `2.8.1` branch.
 
 There may be other temporary branches in the repository from time to time, representing features in collaborative development, specific releases being prepared, and/or critical bug patches for supported releases.
 
