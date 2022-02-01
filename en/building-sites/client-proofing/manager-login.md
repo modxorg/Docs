@@ -22,7 +22,7 @@ To change the background to a different image, provide an image URL in the `logi
 
 Alternatively, the background can also be changed programmatically with a plugin. 
 
-One pre-made example of that is the [DailyPhoto extra](https://modx.com/extras/package/dailyphoto) which uses a different random photo each time from Unsplash. 
+One pre-made example of that is the [DailyPhoto extra](https://modx.com/extras/package/dailyphoto) which uses a different random photo each day from Unsplash. 
 
 To create your own custom logic for the background image, create a plugin that listens to the `OnManagerLoginFormRender` system event, with code like this:
 
