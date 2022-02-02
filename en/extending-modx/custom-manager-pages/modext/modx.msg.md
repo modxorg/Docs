@@ -37,6 +37,7 @@ Loads a confirmation dialog that prompts the user for a Yes/No response. If Yes 
 | --------- | ------------------------------------------------- |
 | title     | The title of the confirmation box.                |
 | text      | The text in the confirmation box.                 |
+| minWidth  | The confirmation popup will automatically choose a size, but to make sure it's at least a certain width provide an integer value representing the width. (Added in 3.0.0-rc2) |
 | url       | The URL to send the AJAX request to.              |
 | params    | The REQUEST params to send with the AJAX request. |
 | listeners | Any listeners to look for on the request.         |
