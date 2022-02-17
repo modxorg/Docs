@@ -30,8 +30,8 @@ The email hook will email out your form contents to any email(s).
 | emailMultiWrapper       | Wraps values submitted by checkboxes/multi-selects with this value. Defaults to just the value. (1.6.0+)                                                                                                                                                                                                                                            |
 | emailMultiSeparator     | Separates checkboxes/multi-selects with this value. Defaults to a newline. (1.6.0+)                                                                                                                                                                                                                                                                 |
 | emailSelectField        | The name of the form field, that selects the email addresses to send to. (4.2.5+)                                                                                                                                                                                                                                                                   |
-| emailSelectTo           | A semicolon separated list of comma separated email addresses to send to. (4.2.5+)                                                                                                                                                                                                                                                                  |
-| emailSelectToName       | A semicolon separated list of comma separated email names to send to. (4.2.5+)                                                                                                                                                                                                                                                                      |
+| emailSelectTo           | A semicolon-separated list of comma-separated email addresses to send to. (4.2.5+)                                                                                                                                                                                                                                                                  |
+| emailSelectToName       | A semicolon-separated list of comma-separated email names to send to. (4.2.5+)                                                                                                                                                                                                                                                                      |
 
 Any of the email hook properties can have placeholders of field names from your form in them that will be evaluated.
 
@@ -39,7 +39,7 @@ Any of the email hook properties can have placeholders of field names from your 
 
 Simply specify it as a hook in your FormIt call, and then specify the email-specific properties in the FormIt call as well.
 
-``` php
+```
 [[!FormIt?
     ...
     &hooks=`email`
@@ -54,7 +54,7 @@ Simply specify it as a hook in your FormIt call, and then specify the email-spec
 
 Note the &emailTpl property points to the name of a Chunk. In that Chunk, you'll have placeholders for each field in your form. Our Chunk could look like this:
 
-``` html
+```html
 <p>Hello,</p>
 <p>[[+name]] just purchased the CDO package: [[+cdo_package]].</p>
 <p>Their email: [[+email]]</p>
@@ -65,11 +65,11 @@ This assumes, of course, that you have the fields "name", "cdo\_package" and "em
 
 ### Specifying Dynamic To Addresses
 
-FormIt, as of 4.2.5+, could select the receiver of the mail by the numeric value of a field i.e. by the option value of a select. By doing this, you could avoid to create a spoofable form field, where a frontend user could submit any mail address quite easily. The frontend user would only see a numbered list of receivers that are translated to email addresses by FormIt properties.
+FormIt, as of 4.2.5+, can select the receiver of the mail by the numeric value of a field i.e. by the option value of a select. This way you can avoid creating a spoofable form field where a frontend user can easily enter any mail address. The frontend user will only see a numbered list of recipients translated into email addresses by FormIt properties.
 
-For this, you could use the following FormIt properties
+For this, you can use the following FormIt properties (The different groups of email addresses and names are separated by semicolon, each group can contain multiple adresses and names separated by comma):
 
-``` php
+```
 &emailSelectTo=`mail1@my.domain,mail2@my.domain;different@my.domain`
 &emailSelectToName=`Mail1,Mail2;Different`
 &emailSelectField=`emailselect`
@@ -77,20 +77,20 @@ For this, you could use the following FormIt properties
 
 and the following form field
 
-``` php
+```html
 <select name="emailselect">
     <option value="1" [[!+fi.emailselect:default=`1`:FormItIsSelected=`1`]]>Address 1</option>
     <option value="2" [[!+fi.emailselect:default=`1`:FormItIsSelected=`2`]]>Address 2</option>
 </select>
 ```
 
-If Address 1 is selected, the mail would be sent to `mail1@my.domain,mail2@my.domain`, if Address 2 is selected, the mail would be sent to `different@my.domain`.
+If Address 1 is selected, the mail will be sent to `mail1@my.domain,mail2@my.domain`, if Address 2 is selected, the mail will be sent to `different@my.domain`.
 
 ### Using a Subject Field as the Email Subject Line
 
 Let's say you have a subject field in your form. You want that to be the subject of the email sent out. The email hook has the ability to do this:
 
-``` php
+```
 [[!FormIt?
     ...
     &emailUseFieldForSubject=`1`
@@ -103,7 +103,7 @@ This will then look for a field named "subject" that will be used in the email. 
 
 FormIt, as of 1.6.0+, will automatically handle checkboxes and combine them into one field. You can use the &emailMultiSeparator and &emailMultiWrapper properties to specify how they are joined. For example, to wrap checkboxes in LI tags:
 
-``` php
+```
 [[!FormIt?
     ...
     &emailMultiWrapper=`<li>[[+value]]</li>`
@@ -112,7 +112,7 @@ FormIt, as of 1.6.0+, will automatically handle checkboxes and combine them into
 
 Or just to separate them with BR tags:
 
-``` php
+```
 [[!FormIt?
     ...
     &emailMultiSeparator=`<br />`
