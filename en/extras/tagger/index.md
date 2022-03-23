@@ -98,6 +98,7 @@ This Snippet allows you to list tags for resource(s), group(s) and all tags
 [[+alias]] => news
 [[+group]] => 3
 [[+group_id]] => 3
+[[+group_alias]] => mediatype
 [[+group_name]] => Media Type
 [[+group_field_type]] => tagger-combo-tag
 [[+group_allow_new]] => 0
