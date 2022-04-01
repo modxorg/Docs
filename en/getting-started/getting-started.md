@@ -10,7 +10,7 @@ After completing a successful installation, you will be presented with the Manag
 
 ## Basic security
 
-You will immediately encounter any security concerns which could, and should, be addressed in order to help harden your MODX system. Initial warnings usually refer to either ensuring that the setup folder has been deleted, or that the core folder is accessible by the public. These issues can be addressed by checking that the 'setup' folder has been deleted and renaming the 'ht.access' file located in the core folder to '.htaccess'.
+You will immediately encounter any security concerns which could, and should, be addressed in order to help harden your MODX system. Initial warnings usually refer to either ensuring that the setup folder has been deleted, or that the core folder is accessible by the public. These issues can be addressed by checking that the 'setup' folder has been deleted and renaming the 'ht.access' file located in the core folder to '.htaccess' for servers running Apache. Learn more about [hardening Apache and NGINX configurations for MODX](getting-started/maintenance/securing-modx "Learn more about securing your MODX install").
 
 ## Editing the default Resource
 
