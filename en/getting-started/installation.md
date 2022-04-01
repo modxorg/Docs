@@ -11,7 +11,7 @@ Before installing please ensure the server meets the [Server Requirements](getti
 
 ## Downloading MODX
 
-MODX Revolution 2.x can be downloaded either directly from [the MODX site](https://modx.com/download) or via [Git](http://github.com/modxcms).
+MODX Revolution 3.x can be downloaded either directly from [the MODX site](https://modx.com/download) or via [Git](http://github.com/modxcms).
 
 ### From the MODX Site
 
