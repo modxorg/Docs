@@ -13,12 +13,17 @@ server {
         root /home/sites/example.com;
         index index.php;
         client_max_body_size 30M;
-        location / {
-                root /home/sites/example.com;
-                if (!-e $request_filename) {
-                        rewrite ^/(.*)$ /index.php?q=$1 last;
-                }
+        
+        # the MODX part
+        location @modx-rewrite {
+            rewrite ^/(.*)$ /index.php?q=$1&$args last;
         }
+    
+        location / {
+            absolute_redirect off;
+            try_files $uri $uri/ @modx-rewrite;
+        }
+        
         location ~ \.php$ {
                 try_files $uri =404;
                 fastcgi_split_path_info ^(.+\.php)(.*)$;
