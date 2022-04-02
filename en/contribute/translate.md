@@ -1,6 +1,6 @@
 ---
 title: Translate MODX
-sortorder: 4
+sortorder: 5
 ---
 
 If you speak any languages other than English, you can help translate MODX into your language.
