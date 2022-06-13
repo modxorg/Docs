@@ -26,7 +26,7 @@ Next, you'll want to prepare the necessary rights and permissions for users and 
 
 MODX Revolution includes some pretty head-splitting granularity when it comes to [Permissions](administering-your-site/security/policies/permissions "Permissions"), but here is a basic schema to get you started. (Have a look at [Making Member-Only Pages](administering-your-site/security/security-tutorials/making-member-only-pages "Making Member-Only Pages") for more detailed explanation.)
 
-As of MODX 2.2.3, you can skip most of this step by using the **Access Wizard**, which appears when you create a new Resource Group under **Security -> Resource Groups**. Just use the following settings:
+As of MODX 2.2.3, you can skip most of this step by using the **Access Wizard**, which appears when you create a new Resource Group under **Content -> Resource Groups**. Just use the following settings:
 
 - Name: Members
 - Context: web
@@ -37,7 +37,7 @@ As of MODX 2.2.3, you can skip most of this step by using the **Access Wizard**,
 
 If you are using an older version of MODX or you just want to enhance your understanding of the process, you can follow the manual steps below:
 
-1\. **Security -> Resource Groups** : Create a new Resource Group for all the pages that will be available only to members.
+1\. **Content -> Resource Groups** : Create a new Resource Group for all the pages that will be available only to members.
 
 ![](create_resource_group.jpg)
 
