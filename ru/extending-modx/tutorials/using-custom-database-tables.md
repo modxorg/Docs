@@ -1,7 +1,6 @@
 ---
 title: "Использование пользовательских таблиц базы данных"
-_old_id: "330"
-_old_uri: "2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components"
+translation: "extending-modx/tutorials/using-custom-database-tables"
 ---
 
 В этом руководстве рассказывается, как использовать MODX для создания пользовательской таблицы базы данных и связывания ее с объектной моделью xPDO. В конце этого руководства вы должны были научиться писать простую XML-схему для своей таблицы, создавать файлы классов PHP, а также читать и записывать данные через MODX.
@@ -56,6 +55,7 @@ MODX 3 представляет Composer, пространство имен PHP 
 
 Если вы работали с MODX раньше, вы знаете, что структура `/core/components/` — это место, где устанавливаются пользовательские компоненты (дополнения). Если вы не планируете публиковать это как дополнение, вы можете упростить структуру каталогов, не используя эту часть. Но если вы хотите опубликовать его, вам, возможно, придется провести рефакторинг кода позже.
 В этом примере мы будем использовать методологию, при которой мы создаем папку проекта в корневом каталоге веб-сайта и используем структуру `/core/components/`, чтобы позже мы могли собрать ее в пакет. Каталог `project1` находится в корневом каталоге нашего веб-сайта:
+
 ```
 project1/
   _build/
@@ -68,7 +68,7 @@ project1/
         bootstrap.php
 ```
 
-Создайте эти каталоги, кроме каталога `Model/`. Каталог модели будет создан автоматически скриптом build.tables.php.
+Создайте эти каталоги, кроме каталога `Model/`. Каталог модели будет создан автоматически скриптом build.tables.php
 ---
 
 Если бы мы создавали пользовательскую страницу менеджера (CMP), у нас также была бы папка assets для активов. Но поскольку мы сосредоточились на аспекте данных в части 1, мы пока опустим CMP и каталог активов.
@@ -88,12 +88,12 @@ project1/
 Мы будем использовать родительскую таблицу ***To-Do List*** и дочернюю таблицу ***To-Do Tasks***. От Списка к Заданиям будет отношение один ко многим.
 
 * Таблица: `modx_td_list`, поля:
-    * `name`
-    * `description`
+  * `name`
+  * `description`
 * Таблица: `modx_td_task`, поля:
-    * `short_description`
-    * `due_date`
-    * `completed` (boolean)
+  * `short_description`
+  * `due_date`
+  * `completed` (boolean)
 
 Теперь, когда мы определили начальную структуру нашей исходной таблицы, давайте создадим файл схемы, определяющий модель. Этот файл схемы представляет собой XML-представление таблиц нашей базы данных.
 Затем он анализируется xPDO в «карты» в формате PHP, которые представляют собой массивы представлений схемы и ее взаимосвязей.
@@ -115,32 +115,33 @@ xPDO немного отличается и находится в `core/vendor/x
 > Когда использовать `xPDOObject` vs. `xPDOSimpleObject`, Читайте пост Bob Ray: [Comparing xPDOObject and xPDOSimpleObject](https://modx.com/blog/comparing-xpdoobject-and-xpdosimpleobject?utm_source=MODX+News&utm_campaign=df07d658fe-weekly_recap_21_12_10_&utm_medium=email&utm_term=0_27b5d94031-df07d658fe-34671909&goal=0_27b5d94031-df07d658fe-34671909&mc_cid=df07d658fe&mc_eid=21ae2973a7 "Comparing xPDOObject and xPDOSimpleObject"). In our case, we'll use `xPDOSimpleObject` so that we have an "`id`" auto-incrementing primary key generated for us.
 
 Создайте файл в каталоге вашей схемы с именем `todo.mysql.schema.xml`. Полный путь, начинающийся с project1, должен быть `project1/core/components/todo/schema/todo.mysql.schema.xml`. Скопируйте и вставьте приведенный ниже XML в свой файл и сохраните его.
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="ToDo\Model" baseClass="xPDO\Om\xPDOObject" platform="mysql"  defaultEngine="InnoDB" version="3.0">
-	
-	<object class="tdList" table="td_list" extends="xPDO\Om\xPDOSimpleObject">
-		<field key="name" dbtype="varchar" precision="128" phptype="string" default="" />
-		<field key="short_description" dbtype="varchar" precision="255" phptype="string" default="" />
 
-		<index alias="name" name="name" primary="false" unique="false" type="BTREE">
-			<column key="name" length="" collation="A" null="false" />
-		</index>
+ <object class="tdList" table="td_list" extends="xPDO\Om\xPDOSimpleObject">
+  <field key="name" dbtype="varchar" precision="128" phptype="string" default="" />
+  <field key="short_description" dbtype="varchar" precision="255" phptype="string" default="" />
 
-		<composite alias="Task" class="ToDo\Model\tdTask" local="id" foreign="list" cardinality="many" owner="local" />
-	</object>
+  <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+   <column key="name" length="" collation="A" null="false" />
+  </index>
 
-	<object class="tdTask" table="td_task" extends="xPDO\Om\xPDOSimpleObject">
-		<field key="list" dbtype="int" precision="10" phptype="integer" null="false" default="" />
-		<field key="task_description" dbtype="varchar" precision="255" phptype="string" default="" />
-		<field key="due_date" dbtype="datetime" phptype="datetime" null="true" default="NULL" />
+  <composite alias="Task" class="ToDo\Model\tdTask" local="id" foreign="list" cardinality="many" owner="local" />
+ </object>
 
-		<index alias="task_description" name="task_description" primary="false" unique="false" type="BTREE">
-			<column key="task_description" length="" collation="A" null="false" />
-		</index>
+ <object class="tdTask" table="td_task" extends="xPDO\Om\xPDOSimpleObject">
+  <field key="list" dbtype="int" precision="10" phptype="integer" null="false" default="" />
+  <field key="task_description" dbtype="varchar" precision="255" phptype="string" default="" />
+  <field key="due_date" dbtype="datetime" phptype="datetime" null="true" default="NULL" />
 
-		<aggregate alias="List" class="ToDo\Model\tdList" local="list" foreign="id" cardinality="one" owner="foreign" />
-	</object>
+  <index alias="task_description" name="task_description" primary="false" unique="false" type="BTREE">
+   <column key="task_description" length="" collation="A" null="false" />
+  </index>
+
+  <aggregate alias="List" class="ToDo\Model\tdList" local="list" foreign="id" cardinality="one" owner="foreign" />
+ </object>
 
 </model>
 ```
@@ -149,12 +150,12 @@ xPDO немного отличается и находится в `core/vendor/x
 
 Тег модели и его атрибуты определяют несколько разных вещей о вашем компоненте/дополнении:
 
-*   **package** - Пространство имен PHP пакета xPDO. Это существенное изменение в MODX 3. Как упоминалось ранее, *это значение генерируется для ваших файлов классов PHP как ваше **пространство имен**.*
-*   **baseClass** - Это базовый класс, от которого будут расширяться все ваши определения классов. Если вы не планируете создавать собственное расширение xPDOObject, лучше оставить значение по умолчанию.
-*   **platform** - MySQL (mysql).
-*   **defaultEngine** - Механизм таблиц базы данных по умолчанию, обычно это InnoDB или MyISAM. MODX рекомендует использовать InnoDB.
-*   **phpdoc-package** - Это значение напрямую не используется MODX, но может использоваться в блоках документации. Ожидаемое значение — это ваше пространство имен PHP в MODX 3, и если вы его не заполните, MODX сопоставит его автоматически. Вы увидите это в блоках документации ваших файлов классов как `@package MyComponent\Model`.
-*   **phpdoc-subpackage** - Согласно [phpDocumentor](https://docs.phpdoc.org/guide/references/phpdoc/tags/subpackage.html), это считается устаревшим. В этом нет необходимости, так как пространство имен представляет как пакет, так и подпакет в одном значении.
+* **package** - Пространство имен PHP пакета xPDO. Это существенное изменение в MODX 3. Как упоминалось ранее, *это значение генерируется для ваших файлов классов PHP как ваше **пространство имен**.*
+* **baseClass** - Это базовый класс, от которого будут расширяться все ваши определения классов. Если вы не планируете создавать собственное расширение xPDOObject, лучше оставить значение по умолчанию.
+* **platform** - MySQL (mysql).
+* **defaultEngine** - Механизм таблиц базы данных по умолчанию, обычно это InnoDB или MyISAM. MODX рекомендует использовать InnoDB.
+* **phpdoc-package** - Это значение напрямую не используется MODX, но может использоваться в блоках документации. Ожидаемое значение — это ваше пространство имен PHP в MODX 3, и если вы его не заполните, MODX сопоставит его автоматически. Вы увидите это в блоках документации ваших файлов классов как `@package MyComponent\Model`.
+* **phpdoc-subpackage** - Согласно [phpDocumentor](https://docs.phpdoc.org/guide/references/phpdoc/tags/subpackage.html), это считается устаревшим. В этом нет необходимости, так как пространство имен представляет как пакет, так и подпакет в одном значении.
 
 ---
 
@@ -186,6 +187,7 @@ width="600" />
 ## Как MODX использует запись пространства имен компонентов?
 
 Начиная с MODX 3, основной путь в вашей записи пространства имен — это место, где MODX ищет ваш файл `bootstrap.php`. Файл начальной загрузки позволит нам добавить наши файлы классов, подключиться к автозагрузчику, зарегистрировать службу или выполнить любые другие необходимые задачи запуска.
+
 ### Дополнительные подробности для отличников :)
 
 Если вы посмотрите на индексный файл, то увидите, что он вызывает функцию инициализации и проходит в «web» контексте: `$modx->initialize('web')`. Если вы затем посмотрите на функцию инициализации в основном файле `modX.php`, вы увидите, что она вызывает `_initNamespaces()`. Эта функция загружает данные пространства имен из кеша, перебирает записи, затем проверяет и требует файл `bootstrap.php`, если он присутствует и доступен для чтения.
@@ -208,7 +210,7 @@ define('MODX_API_MODE', true);
 
 /**
  * @var \MODX\Revolution\modX $modx
- * 
+ *
  */
 
 // Get the manager and generator
@@ -226,21 +228,21 @@ $corePath = $projectRootDir . 'core/components/todo/';
 $schemaFile = $corePath . "schema/todo.mysql.schema.xml";
 
 if (is_file($schemaFile)) {
-	echo("Parsing schema: $schemaFile".PHP_EOL);
-	// Parse the schema to generate the class files
-	$generator->parseSchema(
-		$schemaFile, 
-		$corePath . 'src/',
-		[
-			"compile" => 0,
-			"update" => 0,
-			"regenerate" => 1,
-			"namespacePrefix" => "ToDo\\"
-		]
-	);
+ echo("Parsing schema: $schemaFile".PHP_EOL);
+ // Parse the schema to generate the class files
+ $generator->parseSchema(
+  $schemaFile,
+  $corePath . 'src/',
+  [
+   "compile" => 0,
+   "update" => 0,
+   "regenerate" => 1,
+   "namespacePrefix" => "ToDo\\"
+  ]
+ );
 }
 else {
-	echo("Schema file path invalid: $schemaFile".PHP_EOL);
+ echo("Schema file path invalid: $schemaFile".PHP_EOL);
 }
 ```
 
@@ -272,6 +274,7 @@ $modx->addPackage('ToDo\Model', $namespace['path'] . 'src/', null, 'ToDo\\');
 ```
 
 **Предупреждение**: файл `bootstrap.php` кажется очень чувствительным к "взлому" админки. Если, например, если у вас есть опечатка в вашем PHP или неправильное имя класса, или вы попытаетесь повторить что-либо здесь, это приведет к поломке админки MODX  и неправильной загрузке. Удаление журнала или echo восстановит его рабочее состояние.
+
 ## Пишем наш скрипт построения таблиц
 
 Это очень похоже на сценарий схемы и имеет все те же общие пути. Вы можете объединить файлы и иметь один файл сборки, который создает схему, а затем создает таблицы базы данных. Я обнаружил, что может быть полезно запускать их независимо и убедиться, что ваши файлы схемы успешно сгенерированы.
@@ -290,13 +293,13 @@ define('MODX_API_MODE', true);
 
 /**
  * @var \MODX\Revolution\modX $modx
- * 
+ *
  */
 
 // Classes to loop through
 $classes = [
-	'ToDo\Model\tdList',
-	'ToDo\Model\tdTask'
+ 'ToDo\Model\tdList',
+ 'ToDo\Model\tdTask'
 ];
 
 // Get the manager
@@ -304,15 +307,15 @@ $manager = $modx->getManager();
 
 // Loop through our classes
 foreach ($classes as $class) {
-	// Check if the class exists
-	if (class_exists($class)  ) {
-		// Create the table
-		echo("Creating table for class: $class".PHP_EOL);
-		$manager->createObjectContainer($class);
-	}
-	else {
-		echo("Unable to load model class: $class".PHP_EOL);
-	}
+ // Check if the class exists
+ if (class_exists($class)  ) {
+  // Create the table
+  echo("Creating table for class: $class".PHP_EOL);
+  $manager->createObjectContainer($class);
+ }
+ else {
+  echo("Unable to load model class: $class".PHP_EOL);
+ }
 }
 ```
 
@@ -333,6 +336,7 @@ foreach ($classes as $class) {
 
 Чтобы протестировать наши таблицы, мы создадим или изменим ресурс, чтобы включить приведенный ниже HTML. Мы избегаем некоторых сложностей при передаче шаблона в наш сниппет или итерации. Вместо этого мы обернем вывод в теги «pre» и будем использовать его как функциональность типа «log». Он выведет все списки дел и задачи.
 Я изменил домашнюю страницу по умолчанию, которая поставляется с MODX, и заменил поле содержимого этим значением. Это говорит MODX вывести результат запуска сниппета с именем «ToDo». `!` говорит, что он должен работать без кэширования.
+
 ```html
 <pre>[[!ToDo]]</pre>
 ```
@@ -361,7 +365,7 @@ $output .= "Getting ToDo List Data: Action ($action)";
 if ($action === 'generate') {
     // Define our todo list data as an array
     $data = [
-        [   
+        [
             "name" => "Grocery List",
             "short_description" => "Things to buy at the store",
             "tasks" => [
@@ -380,28 +384,28 @@ if ($action === 'generate') {
             ]
         ]
     ];
-    
+
     // Now let's loop through and create our lists and tasks
     foreach ($data as $createList) {
         // Get a list object and set the values
         $newList = $modx->newObject($namespace.'tdList');
         $newList->set('name', $createList['name']);
         $newList->set('short_description', $createList['short_description']);
-        
+
         // Now before we save the list, let's create an array of task objects
         $newTaskArr = [];
         foreach ($createList['tasks'] as $createTask) {
             // Get a task object and set the values
             $newTask = $modx->newObject($namespace.'tdTask');
             $newTask->set('task_description', $createTask['task_description']);
-            
+
             // Add the task object to the array
             $newTaskArr[] = $newTask;
         }
-        
+
         // Use the addMany function to associate all the tasks to the parent list
         $newList->addMany($newTaskArr);
-        
+
         // And finally call the save function to persist the data to our tables
         $newList->save();
     }
@@ -417,15 +421,15 @@ if ($lists) {
     foreach ($lists as $list) {
         // Add the list to the output
         $output .= PHP_EOL.PHP_EOL.'(' . $list->get('id') . ') '.$list->get('name');
-        
+
         // Add the description if we have one
         if ($list->get('short_description'))
             $output .= PHP_EOL.' - '.$list->get('short_description');
-            
+
         // Now get any tasks
         $tasks = $modx->getCollection($namespace.'tdTask', ['list' => $list->get('id')]);
         $taskCount = 0;
-        
+
         // If we have tasks
         if ($tasks) {
             // Loop through the tasks
