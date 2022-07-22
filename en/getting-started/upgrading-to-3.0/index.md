@@ -1,10 +1,11 @@
 ---
 title: "Upgrading from 2.x to 3.0"
-note: "This is a living document as MODX 3.0 is in active development. At this time we suggest using 3.0 on new projects in development and to report any issues on GitHub, but to hold off from updating production sites with any complexity until a little later. "
 sortorder: 7
 ---
 
 This document details the changes made between 2.x and 3.0 that may affect upgrades. It's not a full list of all changes (see the [changelog for that](https://github.com/modxcms/revolution/blob/3.x/core/docs/changelog.txt)), but rather a reference of (breaking) changes that may affect extras and sites.
+
+
 
 [You may find a list of compatible extras on SiteDash](https://sitedash.app/extras).
 
@@ -14,8 +15,9 @@ In general, you can follow the [standard upgrading process](getting-started/main
 
 After upgrading the core and upgrading your extras, you may encounter some breaking changes that need to be addressed in extras or custom code.
 
-- Important: [MODX 3.0 requires at least PHP 7.2](getting-started/upgrading-to-3.0/requirements)
-- Important: [sqlsrv support has been removed](getting-started/upgrading-to-3.0/sqlsrv)
+- ⚠️ Important: [the core folder must now always be located in the project root, and can no longer be renamed](getting-started/upgrading-to-3.0/core-folder)
+- ⚠️ Important: [MODX 3.0 requires at least PHP 7.2](getting-started/upgrading-to-3.0/requirements)
+- ⚠️ Important: [sqlsrv support has been removed](getting-started/upgrading-to-3.0/sqlsrv)
 - [A list of breaking changes can be found here](getting-started/upgrading-to-3.0/breaking-changes), most notably [many core classes have been moved and renamed](getting-started/upgrading-to-3.0/class-names)
 - [The manager language is now dynamic](getting-started/upgrading-to-3.0/manager-language)
 - [Various system settings have been removed or changed](getting-started/upgrading-to-3.0/system-settings)
