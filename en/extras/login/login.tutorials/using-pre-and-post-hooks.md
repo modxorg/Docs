@@ -125,8 +125,8 @@ $attachment = 'relative_file_path.pdf';
 $hook->modx->getService('mail', 'mail.modPHPMailer');
 $hook->modx->mail->mailer->AddAttachment(MODX_BASE_PATH.$attachment);
 return true;
-
 ```
+
 and  mention it in `Register` snippet call:
 
 ``` php
