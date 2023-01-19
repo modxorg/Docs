@@ -115,6 +115,24 @@ Then we'd adjust our Register snippet call to load the postHook:
 
 And we're done!
 
+### Register custom hook for activation email attach
+
+What if you want to attach some document to newly registered user activation email? It's easy to do this also via `prehook`, just create snippet (let's name it `attachFile`) of something like the following code:
+
+```php
+// it can be a list/array of files and even passed to the hook from the outside. This example will be limited to a single hard-fixed file
+
+$attachment = 'relative_file_path.pdf';
+$hook->modx->getService('mail', 'mail.modPHPMailer');
+$hook->modx->mail->mailer->AddAttachment(MODX_BASE_PATH.$attachment);
+return true;
+```
+and  mention it in `Register` snippet call:
+
+```php
+[[!Register? &preHooks=`attachFile`]]
+```
+
 ### Profile logo update custom postHook
 
 First of all extend [UpdateProfile](https://docs.modx.com/current/en/extras/login/login.updateprofile#the-updateprofile-form) HTML form with next field:
@@ -188,7 +206,6 @@ and after add it to `UpdateProfile` snippet `preHooks` parameter:
 ```php
 [[!UpdateProfile? &preHooks=`hookUpdateProfilePhoto`]]
 ```
-
 
 ## See Also
 
