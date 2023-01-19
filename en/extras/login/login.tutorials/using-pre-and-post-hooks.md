@@ -1,7 +1,6 @@
 ---
 title: "Login.Using Pre and Post Hooks"
-_old_id: "917"
-_old_uri: "revo/login/login.tutorials/login.using-pre-and-post-hooks"
+description: "Login hooks are basically Snippets that run after the form is validated"
 ---
 
 ## Hooking it Up with Login
@@ -126,6 +125,7 @@ $attachment = 'relative_file_path.pdf';
 $hook->modx->getService('mail', 'mail.modPHPMailer');
 $hook->modx->mail->mailer->AddAttachment(MODX_BASE_PATH.$attachment);
 return true;
+
 ```
 and  mention it in `Register` snippet call:
 
