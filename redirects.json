@@ -2381,5 +2381,6 @@
     "/help/properties+and+property+sets": "en/building-sites/properties-and-property-sets",
     "/help/internationalization": "en/extending-modx/internationalization",
     "/help/namespaces": "en/extending-modx/namespaces",
-    "/help/template+variables": "en/building-sites/elements/template-variables"
+    "/help/template+variables": "en/building-sites/elements/template-variables",
+    "/display/ADDON/tagLister": "en/extras/tagLister"
 }
