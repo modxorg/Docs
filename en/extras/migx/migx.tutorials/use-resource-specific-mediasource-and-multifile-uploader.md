@@ -88,29 +88,6 @@ Create a new TV
         "pos": 2
       },
       {
-        "MIGX_id": 330,
-        "field": "showBtn",
-        "caption": "Show button",
-        "description": {
-          "field": "showBtn",
-          "caption": "Show button",
-          "inputTV": "showBtn"
-        },
-        "description_is_code": "0",
-        "inputTV": "",
-        "inputTVtype": "checkbox",
-        "validation": "",
-        "configs": "",
-        "restrictive_condition": "",
-        "display": "",
-        "sourceFrom": "config",
-        "sources": "",
-        "inputOptionValues": "yes==yes",
-        "default": "yes",
-        "useDefaultIfEmpty": 1,
-        "pos": 3
-      },
-      {
         "MIGX_id": 425,
         "field": "image",
         "caption": "Image",
