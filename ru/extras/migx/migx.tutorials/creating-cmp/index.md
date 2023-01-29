@@ -1,6 +1,6 @@
 ---
 title: "Создание CMP для вывода в админку"
-translation: "extras/migx/migx.tutorials/creating-cmp"
+translation: "extras/migxdb/migxdb.tutorials/creating-cmp"
 ---
 
 В прошлой статье я рассказал, как можно создавать свой компонент с помощью MIGX. Теперь я покажу, как можно создавать и редактировать данные в админке.
