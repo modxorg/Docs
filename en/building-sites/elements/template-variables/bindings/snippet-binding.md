@@ -11,6 +11,7 @@ The @SNIPPET Binding executes the specified MODX snippet. It should be used with
 ``` php
 @SNIPPET snippet_name [properties_as_json]
 ```
+
 Binds the variable to a snippet. Where snippet_name is the name of the snippet. The returned value is the output of the snippet.\
 The JSON formatted properties are optional and are passed as scriptProperties to the snippet.
 
