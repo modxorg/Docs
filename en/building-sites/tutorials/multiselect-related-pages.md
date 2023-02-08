@@ -17,10 +17,10 @@ Next link the Template Variable to the template that needs it on the "Template A
 To fill the template variable with some values, we will need to write simple snippet\* and run it in the Input Options field. To do this we will be using what is known as an [@BINDING](building-sites/elements/template-variables/bindings "Bindings"). Add the following code to the Input Options field:
 
 ``` php
- @EVAL return $modx->runSnippet('listMyResources',array('parent' => 9));
+ @SNIPPET listMyResources {"parent":"9"}
 ```
 
-This makes use of the [@EVAL binding](building-sites/elements/template-variables/bindings/eval-binding "EVAL Binding") to wrap the rest of the input in an eval() PHP statement. This can be used to execute PHP, and therefore access the very powerful $modx object. We are then using that to use the runSnippet method which, well, runs a snippet, while passing the array in the second parameter as properties. In this case we are telling it that "parent" is equal to 9. The result of this snippet will then be returned - not echoed. This is needed to make sure it can be parsed and will not be placed on the page randomly.
+This makes use of the [@SNIPPET binding](building-sites/elements/template-variables/bindings/snippet-binding "SNIPPET Binding") to generate the input-options for that TV. This can be used to run MODX snippets. We pass the the snippet name as second and the properties as JSON to the third parameter. In this case we are telling it that "parent" is equal to 9.
 
 You probably don't have a snippet called listMyResources yet, so let's create it.
 
