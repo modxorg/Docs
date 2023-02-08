@@ -45,10 +45,11 @@ When placing @ bindings inside the "Default Value" field the returned value is u
 - [@RESOURCE](building-sites/elements/template-variables/bindings/resource-binding "RESOURCE Binding")
 - [@CHUNK](building-sites/elements/template-variables/bindings/chunk-binding "CHUNK Binding")
 - [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding")
+- [@SNIPPET](building-sites/elements/template-variables/bindings/snippet-binding "SNIPPET Binding")
 - [@DIRECTORY](building-sites/elements/template-variables/bindings/directory-binding "DIRECTORY Binding")
 - [@INHERIT](building-sites/elements/template-variables/bindings/inherit-binding "INHERIT Binding")
 
-Certain extras, such as [getResources](/extras/getresources "getResources"), support @INLINE or `@FILE` bindings for their chunks.
+Certain extras, such as [getResources](/extras/getresources "getResources"), support `@INLINE` or `@FILE` bindings for their chunks.
 
 ## See Also
 
