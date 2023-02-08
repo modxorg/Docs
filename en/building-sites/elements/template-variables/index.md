@@ -58,6 +58,7 @@ Which would output:
     4. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
     5. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
     6. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
+    7. [SNIPPET Binding](building-sites/elements/template-variables/bindings/snippet-binding)
 3. [Template Variable Input Types](building-sites/elements/template-variables/input-types)
 4. [Template Variable Output Types](building-sites/elements/template-variables/output-types)
     1. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
