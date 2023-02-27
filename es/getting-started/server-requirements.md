@@ -46,7 +46,6 @@ Apache 2.4 o NGINX 1.8 son recomendados. También es posible usar lighttpd, IIS,
 
 Para usar la interfaz del Panel de Administración, se soportan los siguientes exploradores:
 
-- Internet Explorer 11
 - Edge (últimos 2)
 - Chrome (últimos 2)
 - Firefox (últimos 2)
