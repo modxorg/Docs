@@ -45,7 +45,6 @@ In order to use [friendly urls](getting-started/friendly-urls), you may need add
 
 To use the back-end interface, the following desktop browsers are supported:
 
-- Internet Explorer 11
 - Edge (last 2)
 - Chrome (last 2)
 - Firefox (last 2)
