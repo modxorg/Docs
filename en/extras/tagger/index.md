@@ -113,6 +113,8 @@ This Snippet allows you to list tags for resource(s), group(s) and all tags
 [[+active]] => 1 (1/0 based on if current tag is active or not)
 ```
 
+For the `[[+active]]` placeholder to show the correct state, the snippet `TaggerGetTags` has to be called _uncached_.
+
 **EXAMPLE USAGE:**
 
 ``` php
@@ -159,5 +161,84 @@ This snippet generate a SQL Query that can be used in a WHERE condition in the g
     &where=`[[!TaggerGetResourcesWhere?
     &tags=`Books,Vehicles`
     &where=`{"isfolder": 0}`]]`
+]]
+```
+
+### TaggerGetCurrentTag
+
+This snippet lists the groups and tags that are the parameters of the current request. Always call this snippet _uncached_, as it reads the values from $_GET.
+
+**PROPERTIES:**
+
+| **Property** | **Type** | **Required?** | **Description** | **Default** |
+| ------------ | -------- | ------------- | --------------- | ----------- |
+| &tagTpl          | string       | optional    | Name of a chunk that will be used for each Tag. If no chunk is given, array with available placeholders will be rendered |
+| &groupTpl        | string       | optional    | Name of a chunk that will be used for each Group. If no chunk is given, array with available placeholders will be rendered |
+| &outTpl          | string       | optional    | Name of a chunk that will be used for wrapping all groups. If no chunk is given, tags will be rendered without a wrapper |
+| &tagSeparator    | string       | optional    | String separator, that will be used for separating Tags |
+| &groupSeparator  | string       | optional    | String separator, that will be used for separating Groups |
+| &target          | int          | optional    | An ID of a resource that will be used for generating URI for a Tag. | current resource ID
+| &friendlyURL     | int          | optional    | If set, will be used instead of friendly_urls system setting to generate URL | friendly_urls system setting
+| &linkTagScheme   | int, string  | optional    | Strategy to generate URLs, available values: -1, 0, 1, full, abs, http, https | link_tag_scheme system setting
+
+**TEMPLATE PLACEHOLDERS:**
+
+``` php
+// tagTpl
+[[+tag]]
+[[+label]]
+[[+alias]]
+[[+uri]] => The URL contains all the tags of the current request, excluding the one of this template
+[[+group_name]] => Name of the group the tag belongs to
+[[+group_alias]] => Alias of the group the tag belongs to
+
+// groupTpl
+[[+name]] => Group name
+[[+alias]] => Group alias
+[[+multipleTags]] => Whether this group has more than 1 active tag
+[[+tags]] => The markup of the active tags of this group
+
+// outTpl
+[[+groups]] => The markup of all the active groups
+```
+
+**EXAMPLE USAGE:**
+
+``` php
+[[!TaggerGetCurrentTag?
+    &tagTpl=`@INLINE [[+label]]`
+    &groupTpl=`@INLINE <li>[[+name]]: [[+tags]]</li>`
+    &outTpl=`@INLINE <ul>[[+groups]]</ul>`
+    &tagSeparator=`, `
+]]
+```
+
+### TaggerGetRelatedWhere
+
+This snippet can be used to get related resources, which have the same tag. It generates a SQL condition for the WHERE property of a getResources snippet tag.
+
+**PROPERTIES:**
+
+| **Property** | **Type** | **Required?** | **Description** | **Default** |
+| ------------ | -------- | ------------- | --------------- | ----------- |
+| &resources       | string  | optional    | Comma separated list of resources for which will be listed Tags. | current resource
+| &groups          | string  | optional    | Comma separated list of Tagger Groups for which will be listed Tags |
+| &showUnused      | int     | optional    | If 1 is set, Tags that are not assigned to any Resource will be included to the output as well | 0
+| &showUnpublished | int     | optional    | If 1 is set, Tags that are assigned only to unpublished Resources will be included to the output as well | 0
+| &showDeleted     | int     | optional    | If 1 is set, Tags that are assigned only to deleted Resources will be included to the output as well | 0
+| &contexts        | string  | optional    | If set, will display only tags for resources in given contexts. Contexts can be separated by a comma |
+
+Internally this snippet runs the snippet `TaggerGetResourcesWhere`, so the properties of `TaggerGetResourcesWhere` can be used as well. (Except `&tags` and `&where` which are set by the code.)
+
+**EXAMPLE USAGE:**
+
+``` php
+// Lists all the resources with the same parent, that share at least one tag from the group 1 with the current resource.
+[[getResources?
+    &where=`[[TaggerGetRelatedWhere? &groups=`1`]]`
+    &parents=`[[*parent]]`
+    &tpl=`@INLINE <li>[[+pagetitle]]</li>`
+    &tplWrapper=`@INLINE <ul>[[+output]]</ul>`
+    &limit=`0`
 ]]
 ```
