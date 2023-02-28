@@ -37,7 +37,6 @@ Het is ook mogelijk om lighttpd, IIS, Zeus, Valet en andere webservers te gebrui
 
 De volgende browsers zijn ondersteund voor het gebruik van de back-end manager voor het beheren van de site:
 
-- Internet Explorer 11
 - Edge (laatste 2)
 - Chrome (laatste 2)
 - Firefox (laatste 2)
