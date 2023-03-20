@@ -158,7 +158,7 @@ The model tag and its attributes define a few different things about your Compon
 
 ---
 
-> For more details on MODX schemas, see [Defining a Schema | Database and Tables]([custom-models/defining-a-schema/database-and-tables#defining-tables](https://docs.modx.com/3.x/en/extending-modx/xpdo/custom-models/defining-a-schema/database-and-tables#defining-tables)). This gives additional details on the Class, Table, and Extends attributes, as well as additional examples.
+> For more details on MODX schemas, see [Defining a Schema | Database and Tables](extending-modx/xpdo/custom-models/defining-a-schema/database-and-tables#defining-tables)). This gives additional details on the Class, Table, and Extends attributes, as well as additional examples.
 > 
 > For more details on how the paths are defined and used, see [Namespaces | Usage](extending-modx/namespaces#usage).
 
