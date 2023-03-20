@@ -158,7 +158,7 @@ The model tag and its attributes define a few different things about your Compon
 
 ---
 
-> For more details on MODX schemas, see [Defining a Schema | Database and Tables](custom-models/defining-a-schema/database-and-tables#defining-tables). This gives additional details on the Class, Table, and Extends attributes, as well as additional examples.
+> For more details on MODX schemas, see [Defining a Schema | Database and Tables](extending-modx/xpdo/custom-models/defining-a-schema/database-and-tables#defining-tables)). This gives additional details on the Class, Table, and Extends attributes, as well as additional examples.
 > 
 > For more details on how the paths are defined and used, see [Namespaces | Usage](extending-modx/namespaces#usage).
 
@@ -470,6 +470,6 @@ width="600" />
 * [Generating the xPDO Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code")
 * [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files")
 *[Reverse Engineer xPDO Classes from Existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table")
-* [Creating Objects](https://docs.modx.com/3.x/en/extending-modx/xpdo/creating-objects "Creating Objects")
-* [Retrieving Objects](https://docs.modx.com/3.x/en/extending-modx/xpdo/retrieving-objects "Retrieving Objects")
-* [Add Many | Adding multiple child records with one "save"](https://docs.modx.com/3.x/en/extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "Adding multiple child records with one save")
+* [Creating Objects](extending-modx/xpdo/creating-objects)
+* [Retrieving Objects](extending-modx/xpdo/retrieving-objects)
+* [Add Many | Adding multiple child records with one "save"](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany)
