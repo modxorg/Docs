@@ -10,8 +10,7 @@ _old_uri: "revo/flexibility"
 
 Quickstart projects by creating a fully working MODX Revolution website with just one package.
 
-**Flexibility - version 3.0.6-rc** **<http://flexibilitymodx.com/>**
-
+**Flexibility - version 3.0.6-rc**
 This package is meant to be used once to quick-start MODX website projects. It will install a lot of things and provide a nice responsive MODX website based on the Foundation framework from ZURB.
 
 ## Requirements
