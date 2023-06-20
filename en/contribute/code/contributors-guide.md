@@ -191,7 +191,6 @@ After installing, change the following System Settings:
 friendly_urls     => Yes
 use_alias_path    => Yes
 publish_default   => Yes
-cache_disabled    => Yes
 ```
 
 Optional (but we prefer no .html-extensions). Change the Content-Type of HTML. Remove the .html File extension. You can do this by clicking "Content" in the top MODX menu and then clicking 'Content Types'.
