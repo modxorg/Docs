@@ -19,4 +19,4 @@ Repository, available on https://modx.com/extras/package/filedownloadr
 FileDownloadR has a GitHub repository at [FileDownloadR](https://github.com/Jako/FileDownloadR). Any bug can be issued on 
 [issues](https://github.com/Jako/FileDownloadR/issues)
 
-The package documentation can be found at http://jako.github.io/FileDownloadR/
+The package documentation can be found at [FileDownloadR](http://jako.github.io/FileDownloadR/)
