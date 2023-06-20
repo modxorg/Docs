@@ -11,7 +11,7 @@ This way, the full url of the file will not be revealed and the files/directorie
 Each file can also be assigned a download counter, which is stored in a custom database table.
 
 The FileDownloadR project was started in 2011 by [Rico Goldsky](https://github.com/goldsky) as a rewite of the 
-FileDownload Evolution package by Kyle Jaebker. It is maintained since 2023 by Thomas Jakobi(https://github.com/Jako).
+FileDownload Evolution package by Kyle Jaebker. It is maintained since 2023 by [Thomas Jakobi](https://github.com/Jako).
 
 FileDownloadR can be installed from within the MODX Revolution manager via Package Management, or from the MODX Extras 
 Repository, available on [filedownloadr](https://modx.com/extras/package/filedownloadr)
