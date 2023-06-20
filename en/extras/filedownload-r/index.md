@@ -17,6 +17,6 @@ FileDownloadR can be installed from within the MODX Revolution manager via Packa
 Repository, available on https://modx.com/extras/package/filedownloadr
 
 FileDownloadR has a GitHub repository at https://github.com/Jako/FileDownloadR. Any bug can be issued on 
-https://github.com/Jako/FileDownloadR/issues
+[issues](https://github.com/Jako/FileDownloadR/issues)
 
 The package documentation can be found at http://jako.github.io/FileDownloadR/
