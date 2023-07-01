@@ -1,5 +1,7 @@
 ---
 title: "FileDownloadR"
+_old_id: "639"
+_old_uri: "revo/filedownload-r"
 ---
 
 Display a list of downloadable files without revealing the file url.
