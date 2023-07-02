@@ -14,9 +14,9 @@ The FileDownloadR project was started in 2011 by [Rico Goldsky](https://github.c
 FileDownload Evolution package by Kyle Jaebker. It is maintained since 2023 by [Thomas Jakobi](https://github.com/Jako).
 
 FileDownloadR can be installed from within the MODX Revolution manager via Package Management, or from the MODX Extras 
-Repository, available on [filedownloadr](https://modx.com/extras/package/filedownloadr)
+Repository, available on [modx.com/extras/package/filedownloadr](https://modx.com/extras/package/filedownloadr)
 
-FileDownloadR has a GitHub repository at [FileDownloadR](https://github.com/Jako/FileDownloadR). Any bug can be issued on 
-[issues](https://github.com/Jako/FileDownloadR/issues)
+FileDownloadR has a GitHub repository at [github.com/Jako/FileDownloadR](https://github.com/Jako/FileDownloadR). Any 
+bug can be issued in the [issue tracker](https://github.com/Jako/FileDownloadR/issues)
 
-The package documentation can be found at [FileDownloadR](http://jako.github.io/FileDownloadR/)
+The package documentation can be found at [jako.github.io/FileDownloadR](http://jako.github.io/FileDownloadR/)
