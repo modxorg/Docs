@@ -145,6 +145,19 @@ getSelections is a wrapper Snippet for getResources, so it relies on getResource
 
 - New link's button label - Customize label text on the "New Link" button.
 
+### Use with pdoRessources
+Instead of getRessources it is also possible to use the snippet pdoPage from the extra pdoTools:
+
+``` php
+[[!pdoPage?
+    &elementClass=`modSnippet`
+    &element=`getSelections`
+    &getResourcesSnippet=`pdoResources`
+    &parents=`[[*id]]`
+    &tpl=`myTplChunk`
+]]
+```
+
 ## Additional Resources
 
 - [Collections: Customizable Views for Content Types](https://modx.com/blog/2014/09/30/collections-easily-customizable-admin-views-for-content-types/)
