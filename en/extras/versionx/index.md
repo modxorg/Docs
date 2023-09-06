@@ -52,7 +52,9 @@ To really provide an integrated experience, VersionX creates unbranded tabs on R
 
 ### Take a Snapshot during Installation
 
-To provide a baseline to compare to you can create a snapshot during the installation. You will be presented with checkboxes which you can tick or leave empty, indicating which types of elements and resources you would like to create a snapshot version of. Basically this creates a version for all resources or element types you choose. You can run this any time by reinstalling the package from the package manager. If you have a large amount of resources (several thousand or more) this could potentially be a long process.
+To provide a baseline to compare to you can create a snapshot during the installation. You will be presented with checkboxes which you can tick or leave empty, indicating which types of elements and resources you would like to create a snapshot version of. 
+
+Basically this creates a version for all resources or element types you choose. You can run this any time by reinstalling the package from the package manager. If you have a large amount of resources (several thousand or more) this could potentially be a long process.
 
 Versions created as a result of the snapshot during setup will have a "mode" set of "Snapshot".
 
