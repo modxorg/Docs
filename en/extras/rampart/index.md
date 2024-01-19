@@ -25,9 +25,9 @@ It can be downloaded from within the MODX Revolution manager via [Package Manage
 
 ### Development and Bug Reporting
 
-Rampart is stored and developed in GitHub, and can be found here:<http://github.com/splittingred/Rampart>
+Rampart is stored and developed in GitHub, and can be found here: <https://github.com/modxcms/Rampart>
 
-Bugs can be filed here: <http://bugs.modx.com/projects/Rampart>
+Bugs can be filed here: <https://github.com/modxcms/Rampart/issues>
 
 ## Usage
 
