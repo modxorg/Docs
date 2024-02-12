@@ -5,7 +5,7 @@ _old_uri: "revo/addheaderfiles"
 ---
 
 !!! warning "Deprecated"
-    This Extra was deprecated in 2021 and won't be updated further. See: https://github.com/Jako/AddHeaderfiles
+    This Extra was deprecated in 2021 and won't be updated further. See: [github.com/Jako/AddHeaderfiles](https://github.com/Jako/AddHeaderfiles)
 
 ## What is AddHeaderfiles?
 
