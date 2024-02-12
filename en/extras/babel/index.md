@@ -6,7 +6,7 @@ _old_uri: "revo/babel"
 
 ## What is Babel?
 
-Babel is an Extra for MODx Revolution that helps you to manage your multilingual websites using different contexts. Babel even supports managing several different multilingual websites within one MODx instance by using so-called context groups.
+Babel is an Extra for MODX Revolution that helps you to manage your multilingual websites using different contexts. Babel even supports managing several different multilingual websites within one MODX instance by using so-called context groups.
 
 Babel maintains links between translated resources. In the manager you can use the Babel Box to easily switch between the different language versions of your resources. Translations can be created automatically by Babel or defined manually.
 
@@ -14,9 +14,8 @@ Additionally, Babel can be used to synchronize certain template variables (TVs) 
 
 ## Requirements
 
-- MODX Revolution 2.2.4 or later
-- PHP 5.3 or later
-- MODX Cropping Engine i.e. [pThumb](https://modx.com/extras/package/pthumb)
+- MODX Revolution 2.8 or later
+- PHP 7.2 or later
 
 ## History& Info
 
