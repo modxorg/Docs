@@ -4,6 +4,9 @@ _old_id: "1691"
 _old_uri: "revo/addheaderfiles"
 ---
 
+!!! warning "Deprecated"
+    This Extra was deprecated in 2021 and won't be updated further. See: https://github.com/Jako/AddHeaderfiles
+
 ## What is AddHeaderfiles?
 
 With this tool the MODX regClient functions are used to insert Javascript and CSS styles at the appropriate positions of the current page. Since those functions don't insert the same filename twice, the snippet could be called everywhere in the template, document or in chunks to collect all needed Javascripts and CSS styles together.
