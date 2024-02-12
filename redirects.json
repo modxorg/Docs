@@ -2384,5 +2384,7 @@
     "/help/internationalization": "en/extending-modx/internationalization",
     "/help/namespaces": "en/extending-modx/namespaces",
     "/help/template+variables": "en/building-sites/elements/template-variables",
-    "/display/addon/taglister": "en/extras/taglister"
+    "/display/addon/taglister": "en/extras/taglister",
+    "/en/extras/babel/babellinks": "en/extras/babel",
+    "/en/extras/babel/babeltranslation": "en/extras/babel"
 }
