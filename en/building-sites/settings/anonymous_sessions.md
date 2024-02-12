@@ -10,7 +10,7 @@ description: "If disabled, only authenticated users will have access to a PHP se
 
 If disabled, only authenticated users will have access to a PHP session. This can reduce overhead for anonymous users and the load they impose on a MODX site if they do not need access to a unique session. If `session_enabled` is false, this setting has no effect as sessions would never be available.
 
-> Use as context setting only
+> **Use as context setting only**
 >
 > Only use this as a context setting, if you add this to the main system settings and set it to No you will lock yourself out of the manager!
 >
