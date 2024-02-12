@@ -13,8 +13,8 @@ With two Formit hooks the upload queue could be pre filled from Formit field val
 
 ## Requirements
 
-- MODX Revolution 2.2.x or later
-- PHP5.2 or later
+- MODX Revolution 2.8 or later
+- PHP 7.2 or later
 
 ## History & Info
 
