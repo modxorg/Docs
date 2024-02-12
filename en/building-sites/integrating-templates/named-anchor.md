@@ -32,7 +32,7 @@ To generate a link to a Resource with ID 12, while using a named anchor of "proh
 
 Alternatively, you could use a plugin to automatically prepend a link to the current resource before the actual anchor.
 
-Put the following code into a new plugin, and on the System Events tab assign it to the "OnWebPagePrerender" event (based on [this post](http://forums.modx.com/thread/35800/plugin-anchorsaway?page=3#dis-post-199475)).
+This can be achieved with the extra [AnchorsAway](https://extras.modx.com/package/anchorsaway) or with a custom plugin. For the custom plugin, you need to insert the following code into a new plugin and assign it to the "OnWebPagePrerender" event on the "System Events" tab. (based on [this post](http://forums.modx.com/thread/35800/plugin-anchorsaway?page=3#dis-post-199475)).
 
 ``` php
 if($modx->resource->get('id') !=$modx->config['site_start']) {
