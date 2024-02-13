@@ -146,6 +146,7 @@ getSelections is a wrapper Snippet for getResources, so it relies on getResource
 - New link's button label - Customize label text on the "New Link" button.
 
 ### Use with pdoRessources
+
 Instead of getRessources it is also possible to use the snippet pdoPage from the extra pdoTools:
 
 ``` php
