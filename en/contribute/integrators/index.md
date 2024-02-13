@@ -33,5 +33,17 @@ When done, you will need to **force push the rebased commits** along with the gr
 
 Any fixes that need to be backported (eg from 3.x to 3.0.x) are cherry-picked.
 
-- PRs **without compiled changes** can be cherry-picked from the **squashed commit**
-- PRs **with compiled changes** need each individual original commit cherry-picked, and then run the build again to push as a separate commit. 
+### No compiled changes
+
+PRs **without compiled changes** can be cherry-picked from the **squashed commit**
+
+### With compiled changes
+
+PRs **with compiled changes** need each individual original commit cherry-picked, and then run the build again to push as a separate commit. 
+
+````bash
+git cherry-pick -n commitHash1 commitHash2 ...
+cd _build/templates/default && grunt build && cd ../../../
+git add -u
+git commit
+````
