@@ -44,7 +44,7 @@ Lexicons must first be loaded if they are to be used in the front-end; however, 
 
 To use a Lexicon Entry in a tag, use the following syntax:
 
-``` php
+```
 [[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
 ```
 
@@ -54,7 +54,9 @@ It is preferable not to use the 'language' property for every tag should you be 
 
 If you have placeholders in your lexicon string, for example "This is `[[+userinput]]`!", you simply specify the key ("userinput") as tag property and pass what you want it replaced with in the value. Example:
 
-`[[!%key? &topic=`topicname` &namespace=`namespace\_name` &language=`en` &userinput=`amazing`]]`
+```
+[[!%key? &topic=`topicname` &namespace=`namespace\_name` &language=`en` &userinput=`amazing`]]
+```
 
 Note our ! prefix for the Tag; this makes sure the Tag isn't cached, since our string might be changing before the page cache does.
 
