@@ -36,12 +36,11 @@ xPDOObject|false query (string $statement)
 
 ```php
 $result = $modx->query("SELECT * FROM modx_users WHERE id=1");
-if (!is_object($result)) {
-   return 'No result!';
-}
-else {
-   $row = $result->fetch(PDO::FETCH_ASSOC);
-   return 'Result:' .print_r($row,true);
+if(!$result->fetch(PDO::FETCH_ASSOC)) {
+    return 'No result!';
+} else {
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    return 'Result:' .print_r($row,true);
 }
 ```
 
