@@ -7,7 +7,7 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getobject"
 
 Извлекает один экземпляр объекта по заданным критериям.
 
-Критериями могут быть значения первичного ключа, массив значений первичного ключа (для нескольких объектов первичного ключа) или объект `xPDOCriteria`. Если параметр `$ criterts` не указан, класс не найден или объект не может быть найден по предоставленным критериям, возвращается значение null.
+Критериями могут быть значения первичного ключа, массив значений первичного ключа (для нескольких объектов первичного ключа) или объект `xPDOCriteria`. Если параметр `$ criteria` не указан, класс не найден или объект не может быть найден по предоставленным критериям, возвращается значение null.
 
 ## Синтаксис
 
@@ -35,7 +35,7 @@ $output = $page->get('pagetitle');
 
 | Распространенное имя | Имя объекта                                                                                                                                                                         |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Page                 | modResource (Примечаниt: Page - это всего лишь одно из проявлений modResource. Это также можно использовать для получения веб-ссылок, символических ссылок и статических ресурсов.) |
+| Page                 | modResource (Примечание: Page - это всего лишь одно из проявлений modResource. Это также можно использовать для получения веб-ссылок, символических ссылок и статических ресурсов.) |
 | Chunk                | modChunk                                                                                                                                                                            |
 | User                 | modUser                                                                                                                                                                             |
 | Template             | modTemplate                                                                                                                                                                         |
@@ -106,6 +106,6 @@ $myobj = $xpdo->getObject('MyObject', $query);
 -   [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
 -   [xPDO.getCollectionGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
 -   [xPDO.getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
--   [xPDO.load](extending-modx/xpdo/class-reference/xpdo/xpdo.load "xPDO.load")
+-   [xPDO.load](extending-modx/xpdo/class-reference/xpdo/xpdo.loadclass "xPDO.loadClass")
 -   [xPDO.query](extending-modx/xpdo/class-reference/xpdo/xpdo.query "xPDO.query")
 -   [xPDO](extending-modx/xpdo "xPDO")
