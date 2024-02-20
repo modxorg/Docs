@@ -6,32 +6,35 @@ _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-doodles-manager-with-help-
 
 In this Tutorial we will learn how to create a doodles-manager with help of MIGXdb.
 
-The result at the end will be the same as its done here, but without doing one line of coding: [Developing an Extra in MODX Revolution](case-studies-and-tutorials/developing-an-extra-in-modx-revolution "Developing an Extra in MODX Revolution")
-
-First we will create a db-schema and its table(s), if not already done. Then we will create and configure a MIGXdb-CMP to manage our doodles (db-records).
+First we will create a db-schema and its table(s). Then we will create and configure a MIGXdb Custom Manager Page (CMP) to manage our doodles (database records).
 
 ## Requirements
 
-To begin with we will need to install [MIGX](extras/migx "MIGX") using the Package Manager and do some [basic configuration](extras/migxdb/migxdb.configuration "MIGXdb.Configuration").
+To begin with we will need to install [MIGX](extras/migx "MIGX") using the Package Manager.
 
 ## Create a new Package and schema-file
 
-Go to Components->MIGX-> Tab 'Package Manager' add a name for your new package into the field 'packageName:'. For our example we use 'doodles'.
+### The Package
 
-Click 'Create Package'
+- In the main MODX menu, click **Extras**
+- Click **MIGX**
+- Click the **Package Manager** tab
+- Add 'doodles' to the **Package Name** field. 
+- Click **Create Package**
 
-This should create a directory under your core-path with an empty schema-file in its correct place.
+This should create a `/doodles` directory under your `/core/components` directory containing new `/schema` and `/src` folders, as well as a new file, `bootstrap.php`.
 
 ### The Schema
 
-Still having 'doodles' in the field packageName we want to fill the textarea-field 'schema'.
-
-Go to the tab 'xml schema' and add this code:
+- Stay on the **Package Manager** tab
+- Keep 'doodles' in the **Package Name** field
+- Click the **Xml Schema** tab
+- Add the following code:
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
-<model package="doodles" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
-    <object class="Doodle" table="doodles" extends="xPDOSimpleObject">
+<model package="Doodles\Model\" baseClass="xPDO\Om\xPDOObject" platform="mysql" defaultEngine="InnoDB" version="3.0">
+    <object class="Doodle" table="doodles" extends="xPDO\Om\xPDOSimpleObject">
         <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
         <field key="description" dbtype="text" phptype="string" null="false" default=""/>
         <field key="createdon" dbtype="datetime" phptype="datetime" null="true"/>
@@ -46,11 +49,11 @@ Go to the tab 'xml schema' and add this code:
 </model>
 ```
 
-by clicking 'Save Schema' we should have our schema-file created. You can test it by clicking 'Load Schema'
+- Click **Save Schema**
 
-I've added two fields to the original doodles-schema: published, deleted
-These fields are required by the default getlist-processor of MIGXdb.
-If you had already created the doodles-table you can add these fields to your existing schema and go to the tab 'add fields' to add the new fields to your map and table.
+Your new schema file `doodles.mysql.schema.xml` should now be created in `/core/components/doodles/schema`. You can test it by clicking **Load Schema** in the **Xml Schema** tab.
+
+Note that the fields 'published' and 'deleted' are required by the default getlist-processor of MIGXdb.
 
 Of course you can create your own processors under your own processor-path.
 
@@ -58,77 +61,88 @@ Of course you can create your own processors under your own processor-path.
 
 ### Parse Schema
 
-Create xpdo-classes and maps from schema by clicking 'Parse Schema' on the tab 'Parse Schema'.
+- Click the **Parse Schema** tab
+- Click **Parse Schema**
+
+This will create xpdo-classes and maps from your new schema.
 
 ### Create Table(s)
 
-Create tables from the schema by clicking 'Create Tables' on the tab 'Create Tables'. This schould create our table.
+- Click the **Create Tables** tab
+- Click **Create Tables**
+
+This will create your new table(s) in your database from your new schema.
 
 ## Create the Configuration
 
-Now we want to create our configuration for the MIGXdb-CMP.
+Now we want to create our configuration for the MIGXdb Custom Manager Page (CMP).
 
-Go to the main-tab 'MIGX'
-
-There should be a grid with some buttons.
-
-We click the 'Add item' button
-
-In the opening window we add:
+- Go to the main-tab **MIGX**
+- There should be a grid with some buttons
+- Click the **Add Item** button
+- In the window that opens, we add the following:
 
 ### Settings
 
-Name: doodles - this is the name of our configuration. Make sure to use unique configuration-names.
-"Add Item" Replacement: Add Doodle - this is the text on our 'Add Item' - Button unique MIGX ID: doodles - Its a good idea to have a unique MIGX - id for all your MIGX-configs.
+- **Name**: 'doodles'
+    - this is the name of our configuration. Make sure to use unique configuration-names
+- **"Add Item" Replacement**: 'Add new Doodle'
+    - this is the text for our **Add Item** button
+- **unique MIGX ID**: 'doodles'
+    - Its a good idea to have a unique MIGX - id for all your MIGX-configs.
 
 ### CMP-Settings
 
-Tab Caption: Doodles
-Tab Description: Manage your doodles here. You can edit them by either double-clicking on the grid or right-clicking on the respective row.
+- **Tab Caption**: 'Doodles'
+- **Tab Description**: 'Manage your doodles here. You can edit them by either double-clicking on the grid or right-clicking on the respective row.'
 
 ### Columns
 
-click 'add item' for four columns:
-
-- Header: **ID**
-- field: **id**
-
-- Header: **Name**
-- field: **name**
-
-- Header: **Description**
-- field: **description**
-
-- field: **deleted**
-- show in grid: **no**
-
+- Click the **Select db-fields** button
+- Select the following fields:
+    - id
+    - name
+    - description
+    - published
+- Click **Save and Close**
+- Right-click and Edit each field as follows:
+    - id
+        - **Header**: 'ID'
+    - name
+        - **Header**: 'Name'
+    - description
+        - **Header**: 'Description'
+    - published
+        - **Header**: 'Published'
+        - **Renderer**: 'this.renderClickCrossTick'
+        - **on Click**: 'switchOption'
+          
 ### Formtabs
 
-click 'add item' to add a new formtab
-
-- Caption: **Doodle**
-
-We add two fields to our tab: click 'add item'
-
-- fieldname: **name**
-- Caption: **Name**
-
-- fieldname: **description**
-- Caption: **Desription**
-- inputTVtype: **textarea**
+- Click **Add Item** to add a new formtab
+- **Caption**: 'Doodle'
+- Click **Select db-fields**
+- Select the following fields:
+    - name
+    - description
+- Click **Save and Close**
+- Right-click and Edit each field as follows:
+    - name
+        - **Caption**: 'Name'
+    - description
+        - **Caption**: 'Description'
+        - **Input TV type**: 'textarea'
 
 ### MIGXdb-Settings
 
-- package: **doodles**
-- classname: **Doodle**
+- **Classname**: 'Doodles\Model\Doodle'
 
-### db-filters
+### Db-Filters
 
-click 'add item'
-
-- filter name: **search**
-- filter type: **textbox**
-- getlist where:
+- Click **Add item**
+- **filter Name**: 'search'
+- **Filter Type**: 'textbox'
+- **getlist-where**:
 
 ``` json
 {"name:LIKE":"%[[+search]]%","OR:description:LIKE":"%[[+search]]%"}
@@ -136,44 +150,25 @@ click 'add item'
 
 ### Contextmenues
 
-check: update , `recall_remove_delete`
+- check: **update** and **recall_remove_delete**
 
 ### Actionbuttons
 
-check: add item , toggletrash
+- check: **addItem**
 
 ## Create a menu item for your CMP
 
-### Revolution 2.3+
-
-Tools (gear icon) -> Menus
-
-'Create Menu' button
-
-Enter values:
-
-- Parent: choose where you want the menu item to appear
-- Lexicon-key: doodles (or what you'd like the menu item to be named if you're not using a Lexicon)
-- Action: **index**
-- Parameters: `&configs=doodles` (note: 'doodles' should be the value of the 'name' field of your config as opposed to the 'unique MIGX ID')
-- Namespace: **migx**
-
-Click 'Save' button
-
-### Revolution before version 2.3
-
-System -> Actions
-
-In the menu-tree select: Components->MIGX->right-click->Place Action here
-
-Enter values:
-
-- Lexicon-key: **doodles**
-- Action: **migx-index**
-- Parameters: `&configs=doodles` (note: 'doodles' should be the value of the 'name' field of your config as opposed to the 'unique MIGX ID')
-
-Click 'Save' button
-
+- In the MODX menu, click the **Tools (gear icon)**
+- Click **Menus**
+- Click **Create**
+- Enter values:
+    - **Parent**: choose where you want the menu item to appear
+    - **Lexicon-key**: 'Doodles' (or what you'd like the menu item to be named if you're not using a Lexicon)
+    - **Action**: 'index'
+    - **Parameters**: `&configs=doodles` (note: 'doodles' here refers to the 'name' field of your MIGXdb config as opposed to the 'unique MIGX ID')
+    - **Namespace**: 'migx'
+- Click **Save** button
+  
 ## Done
 
 Refresh the manager page
