@@ -4,9 +4,9 @@ _old_id: "933"
 _old_uri: "revo/migxdb/migxdb.tutorials/migxdb.create-doodles-manager-with-help-of-migxdb"
 ---
 
-In this Tutorial we will learn how to create a doodles-manager with help of MIGXdb.
+In this Tutorial we will learn how to create a **doodles-manager** with help of **MIGXdb**.
 
-First we will create a db-schema and its table(s). Then we will create and configure a MIGXdb Custom Manager Page (CMP) to manage our doodles (database records).
+First we will create a **db-schema** and its **table(s)**. Then we will create and configure a **MIGXdb Custom Manager Page (CMP)** to manage our **doodles** (database records).
 
 ## Requirements
 
