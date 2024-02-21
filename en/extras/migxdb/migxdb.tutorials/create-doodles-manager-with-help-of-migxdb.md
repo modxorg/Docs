@@ -168,7 +168,7 @@ At this point, we need to save your 'doodles' configuration to allow MIGX to con
 
 ### Saving your Configuration
 
-- Click **Save and CLose** on your configuration.
+- Click **Save and Close** on your configuration.
 
 ## Create a menu item for your CMP
 
