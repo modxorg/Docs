@@ -10,6 +10,8 @@ First we will create a **db-schema** and its **table(s)**. Then we will create a
 
 ## Requirements
 
+This tutorial is for **MODX 3.0.0-pl** and above.
+
 To begin with we will need to install [MIGX](extras/migx "MIGX") using the Package Manager.
 
 ## Create a new Package and schema-file
@@ -27,7 +29,7 @@ This should create a `/doodles` directory under your `/core/components` director
 ### The Schema
 
 - Stay on the **Package Manager** tab
-- Keep 'doodles' in the **Package Name** field
+- Ensure 'doodles' is still in the **Package Name** field
 - Click the **Xml Schema** tab
 - Add the following code:
 
@@ -51,7 +53,7 @@ This should create a `/doodles` directory under your `/core/components` director
 
 - Click **Save Schema**
 
-Your new schema file `doodles.mysql.schema.xml` should now be created in `/core/components/doodles/schema`. You can test it by clicking **Load Schema** in the **Xml Schema** tab.
+Your new schema file `doodles.mysql.schema.xml` should now be created in `/core/components/doodles/schema`. You can test it by clicking **Load Schema** in the **Xml Schema** tab (always ensure your package name 'doodles' is present in the MIGX Package Manager tab when working on your package).
 
 Note that the fields 'published' and 'deleted' are required by the default getlist-processor of MIGXdb.
 
@@ -61,7 +63,7 @@ Of course you can create your own processors under your own processor-path.
 
 ### Parse Schema
 
-- Click the **Parse Schema** tab
+- Click the **Schema** tab
 - Click **Parse Schema**
 
 This will create xpdo-classes and maps from your new schema.
@@ -93,8 +95,20 @@ Now we want to create our configuration for the MIGXdb Custom Manager Page (CMP)
 
 ### CMP-Settings
 
-- **Tab Caption**: 'Doodles'
-- **Tab Description**: 'Manage your doodles here. You can edit them by either double-clicking on the grid or right-clicking on the respective row.'
+- **Main Caption**: 'Doodles'
+- **Tab Caption**: 'Manage your Doodles'
+- **Tab Description**: 'Here you can Add / Remove and Edit your Doodles.'
+
+### MIGXdb-Settings
+
+- **Classname**: 'Doodles\Model\Doodle'
+
+### Saving your Progress  
+
+At this point, we need to save your 'doodles' configuration to allow MIGX to connect to your database table and access its fields.
+
+- Click **Save and Close** to save your MIGX configuration.
+- Staying on the MIGX tab - Right-click your 'doodles' configuration and click Edit to continue editing it.
 
 ### Columns
 
@@ -105,7 +119,7 @@ Now we want to create our configuration for the MIGXdb Custom Manager Page (CMP)
     - description
     - published
 - Click **Save and Close**
-- Right-click and Edit each field as follows:
+- Right-click and **Edit** each field as follows:
     - id
         - **Header**: 'ID'
     - name
@@ -126,17 +140,13 @@ Now we want to create our configuration for the MIGXdb Custom Manager Page (CMP)
     - name
     - description
 - Click **Save and Close**
-- Right-click and Edit each field as follows:
+- Right-click and **Edit** each field as follows:
     - name
         - **Caption**: 'Name'
     - description
         - **Caption**: 'Description'
         - **Input TV type**: 'textarea'
-
-### MIGXdb-Settings
-
-- **Classname**: 'Doodles\Model\Doodle'
-
+      
 ### Db-Filters
 
 - Click **Add item**
@@ -150,11 +160,15 @@ Now we want to create our configuration for the MIGXdb Custom Manager Page (CMP)
 
 ### Contextmenues
 
-- check: **update** and **recall_remove_delete**
+- check: **update**, **duplicate**, **publish**, **unpublish** and **recall_remove_delete**
 
 ### Actionbuttons
 
 - check: **addItem**
+
+### Saving your Configuration
+
+- Click **Save and CLose** on your configuration.
 
 ## Create a menu item for your CMP
 
@@ -176,3 +190,19 @@ Refresh the manager page
 Go to the area of the menu where you created your 'doodles' menu item and click it
 
 There it is, your new 'doodles' manager!
+
+## Listing your Doodles on the Frontend
+
+To list your **Doodles** on the Frontend, you can use the included snippet **migxLoopCollection**
+
+An example:
+
+```
+[[!migxLoopCollection?
+  &classname=`Doodles\Model\Doodle`
+  &tpl=`@CODE:<h3>[[+name]]</h3><p>[[+description]]</p>`
+  &sortConfig=`[{"sortby":"name","sortdir":"ASC"}]`
+  &where=`{"published":"1"}`
+]]
+```
+This will list all published Doodles in alphabetical order.
