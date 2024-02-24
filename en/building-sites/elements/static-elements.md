@@ -10,11 +10,15 @@ A static element is an element which gets its content from a file. When edited v
 
 ## Creating a Static Element
 
-To create an element as a static element, simply check the _Is Static_ checkbox, select the Media Source, and add the path to the file relative to that media source to the _Static File_ input. You can also click the icon in the _Static File_ input to open the MODX Browser to select the file, rather than entering it manually.
+To create an element as a static element, simply check the _Is Static_ checkbox, select a Media Source, and add the path to the file relative to that media source to the _Static File_ input. You can also click the icon in the _Static File_ input to open the MODX Browser to select the file, rather than entering it manually.
 
 ![](static-template.png)
 
 This process is the same for all types of elements.
+
+### Creating a Static Element without a Media Source
+
+Alternatively, you can create a static element and select `None` as the Media Source. In this case, you can add a path relative to the MODX core components path (`MODX_CORE_PATH . 'components/'`) in the _Static File_ input, or you can create a system setting with the key `element_static_path` which will set the location your paths will be relative to.
 
 ## Files vs. Database
 
