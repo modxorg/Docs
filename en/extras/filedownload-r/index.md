@@ -4,23 +4,19 @@ _old_id: "639"
 _old_uri: "revo/filedownload-r"
 ---
 
-FileDownload R is a snippet that will display a list of files from user's directory.
+Display a list of downloadable files without revealing the file url.
 
-This snippet is a complete rewrite of the [Kyles Jabber](http://muddydogpaws.com/)'s [FileDownload](http://wiki.modxcms.com/index.php/FileDownload) for MODX Evolution.
-This Revolution version was built by goldsky.
-Download: <https://modx.com/extras/package/filedownloadr>
-Any bugs can be issued on here: <https://github.com/goldsky/FileDownload-R/issues>
+This MODX Extra can be used to display a list of files from a directory. The download link for each file is hashed. 
+This way, the full url of the file will not be revealed and the files/directories can be located outside the webroot. 
+Each file can also be assigned a download counter, which is stored in a custom database table.
 
-This snippet does not reveal your real path to the link, but it uses a hashed link instead.
-The best thing is that you can store the files/directories outside of the webroot, and this script will do the rest.
+The FileDownloadR project was started in 2011 by [Rico Goldsky](https://github.com/goldsky) as a rewite of the 
+FileDownload Evolution package by Kyle Jaebker. It is maintained since 2023 by [Thomas Jakobi](https://github.com/Jako).
 
-The download counter is stored inside a custom database.
+FileDownloadR can be installed from within the MODX Revolution manager via Package Management, or from the MODX Extras 
+Repository, available on [modx.com/extras/package/filedownloadr](https://modx.com/extras/package/filedownloadr)
 
-There are 2 snippets of this package:
+FileDownloadR has a GitHub repository at [github.com/Jako/FileDownloadR](https://github.com/Jako/FileDownloadR). Any 
+bug can be issued in the [issue tracker](https://github.com/Jako/FileDownloadR/issues)
 
-1. [FileDownload](extras/filedownload-r/filedownload-r.filedownload "FileDownload R.FileDownload")
-2. [FileDownloadLink](extras/filedownload-r/filedownload-r.filedownloadlink "FileDownload R.FileDownloadLink")
-
-Since v. 1.0.0-pl, this package also provides plugin feature to enable developer adding their additional functions for the downloading process.
-
-- [Plugins](extras/filedownload-r/filedownload-r.plugins "FileDownload R.Plugins")
+The package documentation can be found at [jako.github.io/FileDownloadR](http://jako.github.io/FileDownloadR/)
