@@ -11,7 +11,7 @@ Image+ is an advanced image custom template variable type for MODX Revolution. T
 ## Requirements
 
 - MODX Revolution 2.2.4 or later
-- PHP 5.3 or later
+- PHP 7.1 or later
 - MODX Cropping Engine i.e. [pThumb](https://modx.com/extras/package/pthumb)
 
 ## History& Info
