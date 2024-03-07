@@ -40,7 +40,7 @@ There is only one condition - Formit must be launched on the page where data fro
 ]]
 ```
 
-> Please make sure that emailFrom is set to `[[++emailsender]]`, otherwise the email field of the form will be taken. This is now causing issues as most hosters no longer send mails with a from from a unknown domains.
+> Please make sure that emailFrom is set to `[[++emailsender]]`, otherwise the email field of the form will be taken. This is now causing issues as most hosters no longer send mails with a `from` from unknown domains.
 
 ## Contact Form
 
