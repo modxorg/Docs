@@ -28,6 +28,7 @@ There is only one condition - Formit must be launched on the page where data fro
    &hooks=`recaptcha,email,redirect`
    &emailTpl=`MyEmailChunk`
    &emailTo=`user@example.com`
+   &emailFrom=`[[++emailsender]]`
    &redirectTo=`123`
    &validate=`nospam:blank,
       name:required,
@@ -38,6 +39,8 @@ There is only one condition - Formit must be launched on the page where data fro
       colors:required`
 ]]
 ```
+
+> Please make sure that emailFrom is set to `[[++emailsender]]`, otherwise the email field of the form will be taken. This is now causing issues as most hosters no longer send mails with a from from a unknown domains.
 
 ## Contact Form
 
