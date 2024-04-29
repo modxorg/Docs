@@ -3,22 +3,22 @@ title: "OnFileManagerMoveObject"
 translation: "extending-modx/plugins/system-events/onfilemanagermoveobject"
 ---
 
-## Событие: OnFileManagerMoveObject
+## Event: OnFileManagerMoveObject
 
-Срабатывает при перемещении файла или папки в определенное место.
+Fires when moving a file or folder to a new location.
 
-Служба: 1 - Parser Service Events
-Группа: Нет
+Service: 1 - Parser Service Events
+Group: None
 
-## Параметры события
+## Event Parameters
 
 | Имя       | Описание                                                    |
 | --------- | ----------------------------------------------------------- |
-| from      | Место, откуда осуществляется перемещение                    |
-| to        | Место, куда перемещается файл или директория                |
-| source    | Объект modMediaSource, в который был загружен файл.         |
+| from      | The path the file or directory is moved from.               |
+| to        | The path the file or directory is moved to.                 |
+| source    | The modMediaSource object that the file was moved to.       |
 
-## Смотри также
+## See Also
 
-- [Системные события](extending-modx/plugins/system-events "Системные события")
-- [Плагины](extending-modx/plugins "Плагины")
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")
