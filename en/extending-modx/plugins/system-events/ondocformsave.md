@@ -30,7 +30,7 @@ To do something with the page ID (e.g. to update a related custom table), you ca
 
 ``` php
 // Log all available properties of the $resource
-$modx->log(MODX_LOG_LEVEL_ERROR, print_r($resource->toArray(),true) );
+$modx->log(modX::LOG_LEVEL_ERROR, print_r($resource->toArray(),true) );
 // Get the page id
 $page_id = $resource->get('id');
 // or simply
