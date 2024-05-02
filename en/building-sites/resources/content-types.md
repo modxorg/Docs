@@ -24,7 +24,7 @@ Then save the [Resources](building-sites/resources "Resources"). This will autom
 
 ### Creating New Content Types
 
-First, go to System -> Content Types. You'll see a grid populated with all the current Content Types. Click on 'New Content Type', and a window will appear:
+First, go to Content -> Content Types. You'll see a grid populated with all the current Content Types. Click on 'New Content Type', and a window will appear:
 
 ![](content-type-new1.png)
 
