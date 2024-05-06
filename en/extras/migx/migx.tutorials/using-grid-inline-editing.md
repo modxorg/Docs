@@ -4,108 +4,79 @@ _old_id: "1730"
 _old_uri: "revo/migx/migx.tutorials/migx.using-grid-inline-editing"
 ---
 
-In this Tutorial we will learn how to create an **Inline Editable Grid** with help of **MIGX**.
+Possible with MIGX 2.9 +
 
-First we will create a **Template Variable** (TV). We will then create a **MIGX Configuration** to manage our TV records.
+raw version for now - feel free, to make it a bit nicer!
 
-## Requirements
+Create MIGX-TV with editable grid-cells:
 
-This tutorial is for **MODX 3.0.0-pl** and above.
+Create new MIGX-TV
+In input-options put into the field
+configurations: editablegridcells
 
-To begin with we will need to install [MIGX](extras/migx "MIGX") using the Package Manager (**Requires MIGX 2.9 +**).
+assign it to your Template
 
-## Create MIGX-TV with editable grid-cells
+Go to the MIGX-CMP to the tab MIGX
+Create a new config with
 
-### Create new MIGX TV
+Tab 'Settings'
+name: editablegridcells
+unique MIGX ID: editablegridcells
+check the checkbox 'add items directly'
 
-- Create a new **Template Variable** (TV) 
-- In the **General Information** tab
-- **Name**: 'countries'
-- **Caption**: 'Countries'
-- Click the **Input Options** tab
-- **Input Type**: 'migx'
-- **Configurations**: 'countriesconfig'
-- Click the **Template Access** tab
-- Check 'Access' for the **Template(s)** where you'd like to use your new TV
-- **Save** your new TV
+Tab 'Columns'
+Create columns:
 
-### Create new MIGX Configuration
+Header: Text
+Field: text
+Cell-Editor: this.textEditor
 
-- In the MODX menu - click **Extras**
-- Click **MIGX**
-- Click the **Add Item** button
-  
-#### Settings Tab
+Header: Listbox
+Field: listbox
+Cell-Editor: this.listboxEditor
 
-- **Name**: 'countriesconfig'
-- **unique MIGX ID**: 'countriesconfig'
-- Check the checkbox **Add Items directly**
+Header: Checkbox
+Field: checkbox
+Renderer: this.renderSwitchStatusOptions
+onClicK: switchOption
 
-#### Columns Tab
+Add three RenderOptions:
 
-- Click the **Add Item** button
-  - **Header**: 'Country'
-  - **Field**: 'country'
-  - **Cell-Editor**: 'this.textEditor'
-  - Click **Save and Close**
+name: checkbox\_inactive
+value: 0
+image: assets/components/migx/style/images/cb\_empty.png
 
-- Click the **Add Item** button
-  - **Header**: 'Continent'
-  - **Field**: 'continent'
-  - **Cell-Editor**: 'this.listboxEditor'
-  - Click **Save and Close**
+name: checkbox\_active
+value: 1
+image: assets/components/migx/style/images/cb\_ticked.png
 
-- Click the **Add Item** button
-  - **Header**: 'Visited'
-  - **Field**: 'visited'
-  - **Renderer**: 'this.renderSwitchStatusOptions'
-  - **on Click**: 'switchOption'
-  - Under **Renderoptions**
-    - Click **Add Item**
-      - **Name**: 'Yes'
-      - **value**: '1'
-      - **Image**: 'assets/components/migx/style/images/tick.png'
-      - Click **Save and Close**
-    - Click **Add Item**
-      - **Name**: 'No'
-      - **value**: '0'
-      - **Image**: 'assets/components/migx/style/images/cross.png'
-      - Click **Save and Close**
-    - Click **Add Item**
-      - **Name**: 'Unspecified'
-      - **Use as Fallback**: *check*
-      - **value**: ''
-      - **Image**: 'assets/components/migx/style/images/cross.png'
-      - Click **Save and Close**
-  - Click **Save and Close**
+and as fallback for other values:
 
-#### Handlers Tab
+name: checkbox\_fallback
+check the ckeckbox: 'use as fallback'
+value:
+image: assets/components/migx/style/images/cb\_empty.png
 
-- Check **this.handleColumnSwitch**
+at the Tab 'Handlers' check 'this.handleColumnSwitch'
 
-#### Formtabs Tab
+at the Tab 'Formtabs'
 
-- Click the **Add Item** button
-  - **Caption**: 'Countries'
-  - Click **Add Item**
-    - **Fieldname**: 'country'
-    - **Caption**: 'Country'
-    - Click **Save and Close**
-  - Click **Add Item**
-    - **Fieldname**: 'continent'
-    - **Caption**: 'Continent'
-    - **Input TV type**: 'listbox'
-    - **Input Option Values**: 'Asia||Africa||Europe||North America||South America||Australia/Oceania||Antarctica'
-    - Click **Save and Close**
-  - Click **Add Item**
-    - **Fieldname**: 'visited'
-    - **Caption**: 'Visited'
-    - **Input TV type**: 'checkbox'
-    - **Input Option Values**: 'Yes==1'
-    - **Default Value**: '0'
-    - Click **Save and Close**
-  - Click **Save and Close**
-- Click **Save and Close** 
+Create a Tab with Caption 'Fields'
+Create three fields:
+
+Fieldname: text
+Caption: Text
+
+Fieldname: listbox
+Caption: Listbox
+input TV type: listbox
+Input Option Values: Value A||Value B||Value C||Value D
+
+Fieldname: checkbox
+Caption: Checkbox
+input TV type: checkbox
+Input Option Values: active==1
+Default Value: 0
 
 Inline-Editing:
 Double-click on a Cell
