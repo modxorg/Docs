@@ -27,13 +27,13 @@ void sendForward (integer $id, [string|array $options = null], [boolean $sendErr
 
 ## Examples
 
-1. Send the user to Resource ID 234 without actually changing the URL.
+Send the user to Resource ID 234 without actually changing the URL.
 
 ``` php
 $modx->sendForward(234);
 ```
 
-2. Send user to 404 Error page, for actual page ID we use [error_page](building-sites/settings/error_page) system setting value. If there is no such value,
+Send user to 404 Error page, for actual page ID we use [error_page](building-sites/settings/error_page) system setting value. If there is no such value,
 the value of [site_start](building-sites/settings/site_start) will be used.
 
 ``` php
@@ -46,7 +46,7 @@ $options = array(
 );
 $this->sendForward($this->getOption('error_page', $options, $this->getOption('site_start')), $options, false);
 ```
-3. Show replacement page, keeping original `pagetitle`, `introtext` and other fields. To do this, you just need to specify an additional array with keys:
+Show replacement page, keeping original `pagetitle`, `introtext` and other fields. To do this, you just need to specify an additional array with keys:
 
 ``` php
 $options = array(
@@ -56,6 +56,7 @@ $options = array(
 );
 $this->sendForward(15, $options);;
 ```
+
 [forward_merge_excludes](building-sites/settings/forward_merge_excludes) setting manages source page fields that need to be excluded from the results. Next fields will definitely be added as well: `content,pub_date,unpub_date,richtext`
 
 This is good approach if you want hide/protect some resources but left `pagetitle` and `description` for visitors and search crawlers.
