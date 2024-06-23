@@ -55,7 +55,7 @@ $options = array(
 	// original fields list that need to be excluded from the result
 	'forward_merge_excludes' => 'id,template,type,published,class_key'
 );
-$this->sendForward(15, $options);;
+$this->sendForward(15, $options);
 ```
 
 [forward_merge_excludes](building-sites/settings/forward_merge_excludes) setting manages source page fields that need to be excluded from the results. Next fields will definitely be added as well: `content,pub_date,unpub_date,richtext`
