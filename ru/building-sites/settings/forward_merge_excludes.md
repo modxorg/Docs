@@ -23,4 +23,5 @@ $modx->sendForward(15, $options);
 ```
 
 ## Посмотрите также
+
 -   [modX.sendForward](extending-modx/modx-class/reference/modx.sendforward)
