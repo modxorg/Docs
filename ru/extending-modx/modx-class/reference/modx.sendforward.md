@@ -28,13 +28,13 @@ void sendForward (integer $id, [string|array $options = null])
    
 ## Примеры
 
-1. Отправьте пользователя на ресурс с идентификатором 234, фактически не меняя URL.
+Отправьте пользователя на ресурс с идентификатором 234, фактически не меняя URL.
 
 ``` php
 $modx->sendForward(234);
 ```
 
-2. Отправьте пользователя на страницу ошибки 404, для фактического идентификатора страницы мы используем значение системной настройки [error_page](building-sites/settings/error_page). Если такого значения нет,
+Отправьте пользователя на страницу ошибки 404, для фактического идентификатора страницы мы используем значение системной настройки [error_page](building-sites/settings/error_page). Если такого значения нет,
 будет использовано значение переменной [site_start](building-sites/settings/site_start)
 
 ``` php
@@ -48,7 +48,7 @@ $options = array(
 $this->sendForward($this->getOption('error_page', $options, $this->getOption('site_start')), $options, false);
 ```
 
-3. Выдайте заменяющую страницу, сохранив оригинальные `pagetitle`, `introtext` и другие поля. Для этого нужно просто указать дополнительный массив с ключами:
+Выдайте заменяющую страницу, сохранив оригинальные `pagetitle`, `introtext` и другие поля. Для этого нужно просто указать дополнительный массив с ключами:
 
 ``` php
 $options = array(
@@ -58,6 +58,7 @@ $options = array(
 );
 $this->sendForward(15, $options);
 ```
+
 Ключ [forward_merge_excludes](building-sites/settings/forward_merge_excludes) заведует полями исходной страницы, которые нужно исключить из результатов. К эти полям обязательно будут прибавлены еще `content,pub_date,unpub_date,richtext`
 
 Такой способ полезен, если вы хотите закрывать какие-то разделы сайта, оставляя `pagetitle` и `description` для посетителей и поисковиков.
