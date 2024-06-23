@@ -46,6 +46,7 @@ $options = array(
 );
 $this->sendForward($this->getOption('error_page', $options, $this->getOption('site_start')), $options, false);
 ```
+
 Show replacement page, keeping original `pagetitle`, `introtext` and other fields. To do this, you just need to specify an additional array with keys:
 
 ``` php
