@@ -29,7 +29,7 @@ $url = 'http://site.ru/rest/products';
 $params = array('limit' => 100);
 /* @var modRest $client */
 $client = $modx->getService('rest', 'rest.modRest');
-// $client->setOption('format','JSON'); // The format of the received data accepts json or xml (json by default) for conversion to an array
+// $client->setOption('format','json'); // The format of the received data accepts json or xml (json by default) for conversion to an array
 $response = $client->get($url, $params);
 $data = $response->process(); // Will return an array
 ```
