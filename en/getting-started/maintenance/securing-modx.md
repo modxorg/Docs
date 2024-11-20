@@ -34,6 +34,12 @@ RewriteCond %{HTTP_HOST} ^(www\.)?example\.com$ [NC]
 RewriteRule ^(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
 ```
 
+To show your error page, you need to specify the path to it in .htaccess, for example:
+
+```
+ErrorDocument 404 /404
+```
+
 For NGINX, add the following to your web rules which will pass the rewrites to the MODX error handler:
 
 ```
