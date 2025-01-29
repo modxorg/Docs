@@ -21,6 +21,25 @@ It has the following properties to be passed into the FormIt snippet call:
 | formFields                                                             | A comma-separated list of fields that will be saved. Defaults will save all fields including the submit button.             | |
 | fieldNames                                                             | Change the name of the field inside the CMP. So if the field name is email2 you could change the name to "secondary email". | &fieldnames=\`fieldname==Field display name,anotherone==Another field display name\` |
 
+## Cleaning up of old forms
+
+Depending on local laws, storing form submission for eternity might be a privacy concern.
+
+To address this issue, formit offers a quick and easy way to remove form submissions after a set number of days by seting up a cronjob for automatically cleaning up of old forms.
+
+As a default, all form submissions older than 30 days will be removed whenever your cronjob is triggered. 
+This value can be changed by setting a different number of days in system settings: formit.cleanform.days.
+
+### Cronjob Setup 
+Please use the following path: /(full_path_to)/assets/components/formit/cronjob/cron.php
+
+Hint: You can see the full path during installation:
+
+<img width="622" alt="image" src="https://github.com/user-attachments/assets/d5ce3acc-3297-45bf-9414-e7b3c08d50d8" />
+
+
+*Note:* cron.php only accepts request via CLI. You can do this by adding a new cronjob via SSH or by using [cronmanager](https://jako.github.io/CronManager/usage/) to trigger the cleanup routine.
+
 ## See Also
 
 1. [FormIt.Hooks.email](extras/formit/formit.hooks/email)
