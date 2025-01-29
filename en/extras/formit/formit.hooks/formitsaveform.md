@@ -23,11 +23,12 @@ It has the following properties to be passed into the FormIt snippet call:
 
 ## Cleaning up of old forms
 
-Depending on local laws, storing form submission for eternity might be a privacy concern.
+Depending on local laws, storing form submissions for eternity might be a privacy concern.
 
-To address this issue, formit offers a quick and easy way to remove form submissions after a set number of days by seting up a cronjob for automatically cleaning up of old forms.
+To address this issue, formit offers a quick and easy way to remove form submissions after a set number of days by setting up a cronjob.
 
-As a default, all form submissions older than 30 days will be removed whenever your cronjob is triggered. 
+As a default, the cronjob will remove all form submissions older than 30 days whenever it is triggered. 
+
 This value can be changed by setting a different number of days in system settings: formit.cleanform.days.
 
 ### Cronjob Setup 
