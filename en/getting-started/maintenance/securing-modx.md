@@ -168,6 +168,10 @@ Again, this could potentially live on another domain (e.g. one optimized to serv
 
 You can mask your Manager login page so it’s not obvious that your site is powered by MODX. See the page on [Manager Templates](building-sites/client-proofing/custom-manager-themes) for more information.
 
+### Browser Extensions Collecting Information  
+
+When users log into the MODX Manager using Chrome or Firefox, they may have browser extensions like [BuiltWith](https://trends.builtwith.com/framework/MODX) or [Wappalyzer](https://www.wappalyzer.com/websites/modx/) installed. These extensions track website visits, analyze browsing behavior, and compare detected patterns like the default `<title>` tag *Dashboard | MODX Revolution* against their databases to categorize sites. To reduce exposure, customize these and other identifiable elements to make it more difficult for extensions to detect MODX.
+
 ### Change the Default Database Prefixes
 
 This is best done when you first install MODX, but it’s always a good habit to avoid the defaults and choose a custom database prefix for your tables instead of the default `modx_` prefix. If a hacker is somehow able to issue arbitrary SQL commands via a SQL injection attack, using custom table prefixes will make the attack a bit more difficult.
