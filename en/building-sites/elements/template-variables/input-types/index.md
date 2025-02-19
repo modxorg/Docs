@@ -336,7 +336,7 @@ Another example:
 
 ## Rich Text
 
-See _HTML Area_.
+See [_HTML Area_](<#html-area-richtext>).
 
 ## Tag
 
