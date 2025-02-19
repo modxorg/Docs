@@ -51,7 +51,7 @@ The basic usage of this is to simply define the field as a checkbox. You can con
 
 #### Unchecked by Default
 
--   Input Option Values: `My Option==1`
+-   Input Option Values: `My Option==0`
 -   Default Value: 0
 
 The box will be checked by default as long as the value following the "==" matches the default value. If you want to set default of a check box template variable to multiple values, you have to separate the values with the "||" delimiter.
