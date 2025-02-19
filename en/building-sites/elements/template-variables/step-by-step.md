@@ -5,7 +5,7 @@ _old_id: "75"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable"
 ---
 
-This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what about what a Template Variable is, see the page on [Template Variables](building-sites/elements/template-variables "Template Variables").
+This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what a Template Variable is, see the page on [Template Variables](building-sites/elements/template-variables "Template Variables").
 
 ## Explanation
 
