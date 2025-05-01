@@ -81,6 +81,10 @@ Practically both terms are used to indicate the same thing: a Document which hol
 
 You're not doomed. [Check out these instructions for Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Resetting a User Password Manually").
 
+### 2.6 I am getting a 500 HTTP Internal Server Error
+
+Let's say you are working peacefully insie your `/manager/` and suddently no page can be opened and any URL you try to access besides cached pages gives you a `HTTP ERROR 500`, try manually going to your `/core/cache/` folder and delete everything in it, open an incognito window in your browser and try going to `/manager/` again, this should solve at least one of many reasons.
+
 ## 3. Frontend Display Issues
 
 ### 3.1 Blank frontend pages resolved by Clearing Cache
