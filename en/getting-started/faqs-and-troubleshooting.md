@@ -82,6 +82,13 @@ Practically both terms are used to indicate the same thing: a Document which hol
 
 You're not doomed. [Check out these instructions for Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Resetting a User Password Manually").
 
+### 2.6 I am getting a 500 HTTP Internal Server Error
+
+If you're experiencing a 500 internal server error in the manager, here are a few things to try that typically resolves most common problems:
+
+- Rename or remove the `/core/cache` folder. The cache can sometimes get corrupted. 
+- Open an incognito window in your browser. That resolves any cookie-related issues.
+
 ## 3. Frontend Display Issues
 
 ### 3.1 Blank frontend pages resolved by Clearing Cache

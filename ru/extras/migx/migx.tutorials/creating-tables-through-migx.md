@@ -1,6 +1,6 @@
 ---
 title: "Создание таблиц через MIGX"
-translation: "extras/migx/migx.tutorials/creating-tables-through-migx"
+translation: "extras/migxdb/migxdb.tutorials/creating-tables"
 ---
 
 У новичков часто возникает вопрос, как можно быстро создать какую нибудь таблицу и начать с ней работать на пример из сниппета. Я раньше делал всегда через пакет modExtra, выпиливая из него то, что мне не нужно. Но это долго и не совсем удобно, если нужна одна — две таблички. MIGX решает эту проблему.

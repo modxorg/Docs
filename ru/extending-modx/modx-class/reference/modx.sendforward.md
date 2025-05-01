@@ -26,7 +26,7 @@ void sendForward (integer $id, [string|array $options = null])
     - `merge`: способ объединения ресурса, находящегося в данный момент в `$modx->resource` с целевым ресурсом. `content`, `pub_date`, `unpub_date`, `richtext`, `_content` и `_processed` значения исключаются вместе со значением системного параметра [forward_merge_excludes](building-sites/settings/forward_merge_excludes). Я не уверен, что это должно использоваться из ядра, и, вероятно, есть лучшие способы объединить данные (например, `setPlaceholder`), а затем объединить.
 - `$sendErrorPage` Следует ли пропустить выполнение [sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage") если ресурс не существует.
    
-## Пример
+## Примеры
 
 Отправьте пользователя на ресурс с идентификатором 234, фактически не меняя URL.
 
@@ -48,6 +48,22 @@ $options = array(
 $this->sendForward($this->getOption('error_page', $options, $this->getOption('site_start')), $options, false);
 ```
 
+Выдайте заменяющую страницу, сохранив оригинальные `pagetitle`, `introtext` и другие поля. Для этого нужно просто указать дополнительный массив с ключами:
+
+``` php
+$options = array(
+	'merge' => 1, // Включает механизм склейки полей
+	// список оригинальных полей, которые нужно исключить из результата
+	'forward_merge_excludes' => 'id,template,type,published,class_key'
+);
+$this->sendForward(15, $options);
+```
+
+Ключ [forward_merge_excludes](building-sites/settings/forward_merge_excludes) заведует полями исходной страницы, которые нужно исключить из результатов. К эти полям обязательно будут прибавлены еще `content,pub_date,unpub_date,richtext`
+
+Такой способ полезен, если вы хотите закрывать какие-то разделы сайта, оставляя `pagetitle` и `description` для посетителей и поисковиков.
+
+
 ## Смотрите также
 
 - [modX](extending-modx/core-model/modx "modX")
@@ -56,3 +72,4 @@ $this->sendForward($this->getOption('error_page', $options, $this->getOption('si
 - [modX.sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage")
 - [modX.sendUnauthorizedPage](extending-modx/modx-class/reference/modx.sendunauthorizedpage)
 - [error_page](building-sites/settings/error_page)
+- [forward_merge_excludes](building-sites/settings/forward_merge_excludes)

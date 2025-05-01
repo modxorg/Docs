@@ -1,7 +1,6 @@
 ---
 title: "Register"
-_old_id: "909"
-_old_uri: "revo/login/login.register"
+description: "Register snippet documentation"
 ---
 
 ## What is Register?
@@ -53,6 +52,7 @@ Register has some default properties packaged into it. They are:
 | usernameField                     | The name of the field to use for the new User's username.                                                                                                                                                                                  | username            |
 | validate                          | A comma-separated list of fields to validate, with each field name as name:validator (eg: username:required,email:required). Validators can also be chained, like email:email:required. This property can be specified on multiple lines.  |                     |
 | validatePassword                  | Whether or not to validate the sent password when registering. Recommended to leave this Yes unless you are generating your own password in a hook.                                                                                        | 1                   |
+| validationErrorMessage            | If you want to show a general message when the validation fails, you can use this property and `validation_error_message` placeholder                                                                         | `register.validation_error_message` lexicon value                   |
 
 ### Validators
 

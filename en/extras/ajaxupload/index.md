@@ -11,6 +11,11 @@ All uploaded images and generated thumbnails are given random filenames to avoid
 
 With two Formit hooks the upload queue could be pre filled from Formit field value and saved into Formit field value.
 
+## Requirements
+
+- MODX Revolution 2.8 or later
+- PHP 7.2 or later
+
 ## History & Info
 
 AjaxUpload was initially written in 2012 for MODX Evolution and is maintained and developed since then by [Thomas Jakobi](https://github.com/jako).

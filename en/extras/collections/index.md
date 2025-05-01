@@ -23,7 +23,7 @@ You can drag n drop Resources into a Collections container and if they don’t h
 
 ### General Settings
 
-![](screenshot-2014-11-25-15.35.06.png)
+![screenshot](screenshot-2014-11-25-15.35.06.png)
 
 - Set as default view - If "Yes", this Collections View Template (CVT) will be used as a last fallback.
 - Default for templates - This will be the default CVT for Resources using these MODX Templates. Can be overridden on a per-resource basis in the Collections vertical-tab of the Collections resource's Settings.
@@ -144,6 +144,20 @@ getSelections is a wrapper Snippet for getResources, so it relies on getResource
 ![](screenshot-2014-11-25-15.40.15.png)
 
 - New link's button label - Customize label text on the "New Link" button.
+
+### Use with pdoRessources
+
+Instead of getRessources it is also possible to use the snippet pdoPage from the extra pdoTools:
+
+``` php
+[[!pdoPage?
+    &elementClass=`modSnippet`
+    &element=`getSelections`
+    &getResourcesSnippet=`pdoResources`
+    &parents=`[[*id]]`
+    &tpl=`myTplChunk`
+]]
+```
 
 ## Additional Resources
 

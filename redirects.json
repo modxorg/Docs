@@ -1851,6 +1851,8 @@
     "/extras/revo/migx/migx.tutorials/migx.sortable-resourcelist": "en/extras/migx/migx.tutorials/sortable-resourcelist",
     "/extras/revo/migx/migx.tutorials/migx.use-resource-specific-media-source-and-multifile-uploader": "en/extras/migx/migx.tutorials/use-resource-specific-mediasource-and-multifile-uploader",
     "/extras/revo/migx/migx.tutorials/migx.using-grid-inline-editing": "en/extras/migx/migx.tutorials/using-grid-inline-editing",
+    "/current/en/extras/migx/migx.tutorials/creating-tables-through-migx": "en/extras/migxdb/migxdb.tutorials/creating-tables",
+    "/current/en/extras/migx/migx.tutorials/creating-cmp": "en/extras/migxdb/migxdb.tutorials/creating-cmp",
     "/extras/revo/migxdb": "en/extras/migxdb/index",
     "/extras/revo/migxdb/migxdb.configuration": "en/extras/migxdb/migxdb.configuration",
     "/extras/revo/migxdb/migxdb.tutorials": "en/extras/migxdb/migxdb.tutorials",
@@ -2390,5 +2392,8 @@
     "/help/properties+and+property+sets": "en/building-sites/properties-and-property-sets",
     "/help/internationalization": "en/extending-modx/internationalization",
     "/help/namespaces": "en/extending-modx/namespaces",
-    "/help/template+variables": "en/building-sites/elements/template-variables"
+    "/help/template+variables": "en/building-sites/elements/template-variables",
+    "/display/addon/taglister": "en/extras/taglister",
+    "/en/extras/babel/babellinks": "en/extras/babel",
+    "/en/extras/babel/babeltranslation": "en/extras/babel"
 }

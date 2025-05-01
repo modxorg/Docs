@@ -2,7 +2,7 @@
 title: "Reporting and triaging issues"
 _old_id: "1130"
 _old_uri: "contribute/filing-and-discussing-issues"
-sortorder: 3
+sortorder: 4
 ---
 
 Bug reports and feature requests for MODX are handled through issues on GitHub. There are a few noteworthy issue trackers in use:

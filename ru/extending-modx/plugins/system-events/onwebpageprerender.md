@@ -16,7 +16,7 @@ translation: "extending-modx/plugins/system-events/onwebpageprerender"
 
 Нет.
 
-## Example
+## Пример
 
 **Описаниие:** Отфильтруйте слова из документа перед его отображением в Интернете
 **Системное событие:** OnWebPagePrerender

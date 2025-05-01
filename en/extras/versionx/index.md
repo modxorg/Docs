@@ -2,51 +2,45 @@
 title: "VersionX"
 _old_id: "732"
 _old_uri: "revo/versionx"
-description: "VersionX extra implements version management for Resources, Templates, Chunks, Template Variables, as well as Snippets and Plugins"
+description: "Keep track of changes to your resources and elements with VersionX "
 ---
 
-## What is VersionX
+VersionX is an extra for MODX Revolution which keeps track of your changes to Resources, Templates, Chunks, Template Variables, Snippets and Plugins. 
 
-VersionX is an extra for MODX Revolution which adds Resource, Template, Chunk, Template Variable, Snippet and Plugin versioning to your MODX site.
-
-### VersionX + Revolution Compatibility
+## VersionX + Revolution Compatibility
 
 - VersionX 1.0 only worked in Revolution 2.0.x and is no longer supported.
 - VersionX 2.0 supported Revolution 2.0-2.2.
 - VersionX 2.1 no longer claims Revolution 2.0 support, but instead needs Revolution 2.1 by default. It should theoretically work, but no Revolution 2.0 specific testing or patches will be released.
 - VersionX 2.2 required at least Revolution 2.2 to take advantage of new coding standards.
-- VersionX 2.3.2 current version, supports MODX 3 (alpha2+)
+- VersionX 2.3.2+ supports MODX 2 and 3 (alpha2+)
+- VersionX 3.0 supports MODX 2.7+ and 3.0-alpha2+
 
-### History & Legacy
+## History & Legacy
 
 VersionX was first developed in December 2010 by Mark Hamstra and made it up to VersionX 1.0.0-Alpha5 in March 2011 before time ran out to further develop and support the component. Unfortunately VersionX 1.0 did not support MODX Revolution 2.1 or up.
 
-In August 2011, the first steps towards a complete rewrite were made, which happened mostly in private repositories until late November. With the first version of the 2.0.0 branch released on May 3rd, 2012, VersionX is now future-proof, flexible and able of versioning all elements and resources.
+In 2011-2012, it was rewritten completely and 2.0 was released on May 3rd, 2012. This release kept getting minor updates and added features for about a decade. 
 
-| Version      | Release date    | Remarks / highlights                                                                                                 |
-| ------------ | --------------- | -------------------------------------------------------------------------------------------------------------------- |
-| 1.0.0-alpha  | 9 Jan 2011      | Initial release.                                                                                                     |
-| 1.0.0-alpha2 | 11 Jan 2011     | Several fatal issues fixed, German translation added                                                                 |
-| 1.0.0-alpha3 | 14 Jan 2011     | Important fixes filed, usability improvements, French and Russian translated added                                   |
-| 1.0.0-alpha4 | 18 Mar 2011     | Many bugfixes.                                                                                                       |
-| 1.0.0-alpha5 | 24 Mar 2011     | Few fatal bugfixes.                                                                                                  |
-| 2.0.0-rc1    | 03 May 2012     | Complete rewrite including versioning of Elements and actually functional restoring of resources.                    |
-|              |                 | Compatible with Revolution 2.0.8 - 2.2.x (excluding 2.2.0-pl2, including basic support for Custom Resource Classes). |
-|              |                 | Tabs added to Resource and Templates.                                                                                |
-| 2.0.0-rc2    | 28 May 2012     | Bugfixes, dashboard widget, DE and RU translations. Fixes critical bug with static resources.                        |
-| 2.0.0-rc3    | 08 July 2012    | Bugfixes, UI improvements and plugin and snippet versioning UIs added.                                               |
-| 2.0.0-rc4    | 19 July 2012    | Critical bugfix for specific browsers.                                                                               |
-| 2.0.0-pl     | 29 October 2012 | Bugfixes, better UTF-8 support, ability to revert Resources.                                                         |
-| 2.1.0-pl     | 14 January 2013 | Bugfixes, ability to revert all elements, remember open tabs in component.                                           |
+In 2023, following a crowdfunding campaign, it was rewritten again to no longer store full copies of objects, but just the changes (deltas) to save on diskspace. This release was in beta for a few months before the official release. 
 
-**VersionX 1.0 and 2.0 are NOT compatible with each other**
-Due to the severity of the rewrite, VersionX 1.0 and 2.0 are not compatible with each other. However, considering the huge advantages of 2.0 over 1.0, VersionX 2.0 will be pushed out as an update to 1.0 and the update process should be pretty smooth.. **minus the fact that your stored revisions will not be imported to VersionX 2.0** and you will not be able to interact with them through the Manager after updating to 2.0. You can, however, access your old data by opening up the `extra_versionx` table in a tool such as PhpMyAdmin. An import is not planned, however during the setup procedure of VersionX 2.0 you are presented with options to create a snapshot of the current data. See for more information under Usage & Features.
+## Upgrading to 3.0
+
+3.0 uses a new data model so older data created in 2.0 is not immediately available. 
+
+When installing the 3.0 release, you can choose to create fresh snapshots and essentially start from scratch based on the current state. Or, you can migrate existing data over from the command line by using the following command from the root of your MODX installation:
+
+```
+php core/components/versionx/migrate.php
+```
+
+Depending on the size of your version history, that may take a while to process. 
+
+Old data is not automatically removed. After updating, you may want to delete or truncate the `modx_versionx_*` tables **except** for the tables starting with `modx_versionx_delta`. 
 
 ## Development & Bug reporting
 
-VersionX 1.0 is no longer supported or developed.
-
-VersionX 2.0 has been publicly released on May 3rd 2012, is developed in a separate repository on Github: <https://github.com/modmore/VersionX> - bugs & feature requests are very much welcome there as well.
+For reporting issues or requesting features, please visit <https://github.com/modmore/VersionX>. 
 
 ## Usage & Features
 

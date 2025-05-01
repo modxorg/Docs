@@ -1,11 +1,11 @@
 ---
 title: "Creating a CMP for output to the admin panel"
-translation: "extras/migx/migx.tutorials/creating-cmp"
+translation: "extras/migxdb/migxdb.tutorials/creating-cmp"
 ---
 
 In the last article I explained how you can create your component using MIGX. Now I will show how you can create and edit data in the admin panel.
 
-Who does not know what it is about, link to [first article](extras/migx/migx.tutorials/creating-tables-through-migx).
+Who does not know what it is about, link to [first article](extras/migxdb/migxdb.tutorials/creating-tables).
 
 In fact, creating your own page is essentially no different from creating the usual MIGX TV.
 
@@ -59,7 +59,7 @@ That's all!
 
 ![](creating-cmp-9.png)
 
-Well, the output on the front has already been described in [previous article](extras/migx/migx.tutorials/creating-tables-through-migx). Create a snippet and make the selection or sampling we need.
+Well, the output on the front has already been described in [previous article](extras/migxdb/migxdb.tutorials/creating-tables). Create a snippet and make the selection or sampling we need.
 
 Well, or you can use **snippet**:
 

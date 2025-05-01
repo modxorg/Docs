@@ -20,7 +20,7 @@ In other words, if @CHUNK Hello is the value of a TV called MyChunk, the followi
 @CHUNK chunk_name
 ```
 
-Binds the variable to a document. Where chunk\_name is the name of the chunk. The returned value is a string containing the content of the chunk.
+Binds the variable to a chunk. Where chunk\_name is the name of the chunk. The returned value is a string containing the content of the chunk.
 
 This binding is very similar to the [@RESOURCE binding](building-sites/elements/template-variables/bindings/resource-binding "RESOURCE Binding") with the exception that it will bind the TV to a [Chunk](building-sites/elements/chunks "Chunks").
 

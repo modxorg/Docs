@@ -1,7 +1,6 @@
 ---
 title: "Adding CSS and JS"
-_old_id: "13"
-_old_uri: "2.x/developing-in-modx/basic-development/snippets/adding-css-and-js-to-your-pages-through-snippets"
+description: "Learning How to Register CSS and JS"
 ---
 
 ## Learning How to Register CSS and JS
@@ -63,7 +62,7 @@ There are also methods that can be used to insert Javascript or HTML at the end 
 
 ### regClientScript
 
-Similar to [regClientStartupScript](#AddingCSSandJStoYourPagesThroughSnippets-regClientStartupScript) except that it runs before the closing BODY tag:
+Similar to [regClientStartupScript](extending-modx/modx-class/reference/modx.regclientstartupscript) except that it runs before the closing BODY tag:
 
 ``` php
 $modx->regClientScript('assets/js/footer.js');
@@ -79,7 +78,7 @@ $modx->regClientScript('http://code.jquery.com/jquery-latest.min.js');
 
 ### regClientHTMLBlock
 
-Similar to [regClientStartupHTMLBlock](#AddingCSSandJStoYourPagesThroughSnippets-regClientStartupHTMLBlock) except that it runs before the closing BODY tag:
+Similar to [regClientStartupHTMLBlock](extending-modx/modx-class/reference/modx.regclienthtmlblock) except that it runs before the closing BODY tag:
 
 ``` php
 $modx->regClientHTMLBlock('
