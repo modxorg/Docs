@@ -32,6 +32,7 @@ As a default, the cronjob will remove all form submissions older than 30 days wh
 This value can be changed by setting a different number of days in system settings: formit.cleanform.days.
 
 ### Cronjob Setup 
+
 Please use the following path: /(full_path_to)/assets/components/formit/cronjob/cron.php
 
 Hint: You can see the full path during installation:
