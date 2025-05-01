@@ -114,7 +114,7 @@ You use the [Date TV Output Type](making-sites-with-modx/customizing-content/tem
 
 ## DropDown List Menu
 
-NOTE: this TV Input type has been deprecated since Revo 2.1.x Please see [Listbox](<#TemplateVariableInputTypes-Listbox(MultiSelect)>) input types below.
+NOTE: this TV Input type has been deprecated since Revo 2.1.x Please see [Listbox](<#listbox-single-select-listbox>) input types below.
 
 Set input option values in the `option1==value1||option2==value2||option3==value3` format. Make sure to choose an output type of delimited (or other of your liking) to be able to present this to the front-end in a certain manner. You can also use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding to select 2 columns, e.g.
 
