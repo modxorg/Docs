@@ -74,6 +74,4 @@ sLink is not actively being developed at this point. Others are encouraged to "b
 
 ## External sources
 
-Forum topic for sLink 1.0-rc1: <https://forums.modx.com/index.php/topic,56101.0.html>
-
-Repository page: <https://modx.com/extras/package/simplesearch>
+Repository page: <https://extras.modx.com/package/slink>
