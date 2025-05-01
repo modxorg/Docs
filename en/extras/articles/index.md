@@ -35,10 +35,6 @@ Here are some tutorials to get you started with Articles:
 -   [Creating a Blog](extras/articles/creating-a-blog "Articles.Creating a Blog")
 -   [Theming Articles](extras/articles/theming-articles "Articles.Theming Articles")
 
-## Video: See Articles in action
-
-See how you can create an Articles weblog from scratch in 5 minutes. You can also watch this video on [YouTube](http://www.youtube.com/watch?v=WLCGsAEdTJY) if the embed below doesn't work.
-
 ## See Also
 
 1. [Articles.Creating a Blog](extras/articles/creating-a-blog)
