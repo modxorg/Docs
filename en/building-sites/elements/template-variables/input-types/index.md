@@ -15,7 +15,7 @@ It's best to enter multiple Input Option values on a single line with no carriag
 Auto-Tag is a convenient template variable for using tags when blogging, have multiple categories a resource can belong to, or anytime you need a list of tags that have been used before. Every time you edit or create a resource with access to an auto-tag template variable, you will see the tags that were used before. You can easily click on priorly used tags to chose them in the list.
 
 To make auto-tag tvs useful in the front end, you will need to set the output type to "Delimiter" and specify a delimiter of your choice, and/or use an output filter to present it in the way you prefer. ![](autotag.png)
-To output the tags in such a way that you each tag links to a certain resource and passes the tag in a GET parameter, you can use an output filter (snippet) as follows:
+To output the tags in such a way that each tag links to a certain resource and passes the tag in a GET parameter, you can use an output filter (snippet) as follows:
 
 ```php
 if ($input == '') { return 'Error'; } // In case the TV is empty
