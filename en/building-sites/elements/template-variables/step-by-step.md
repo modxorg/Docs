@@ -9,15 +9,15 @@ This page outlines how to create a Template Variable in MODX Revolution. A Templ
 
 ## Explanation
 
- When we say "Create a Template Variable", there are two possible actions that we might be talking about:
+When we say "Create a Template Variable", there are two possible actions that we might be talking about:
  
- - we can be referring to the action of adding some text or content to one of our existing custom fields when we edit a MODX page (i.e. a Resource),
- - OR we can be referring to the action of defining this field so that it is available to our MODX resources.
+- we can be referring to the action of adding some text or content to one of our existing custom fields when we edit a MODX page (i.e. a Resource),
+- OR we can be referring to the action of defining this field so that it is available to our MODX resources.
 
 This page is all about the latter. In the first case, we would be creating an _instance_ of the Template Variable, whereas the second case is all about defining the Template Variable blueprint, which determines how each instance will behave.
 
  **A Class of Field**
- When you create a Template Variable, you are really defining a _class_ of custom field; it acts as a blueprint for all instances of this custom field.
+When you create a Template Variable, you are really defining a _class_ of custom field; it acts as a blueprint for all instances of this custom field.
 
 ## Creating the Template Variable
 
