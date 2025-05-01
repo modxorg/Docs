@@ -83,7 +83,10 @@ You're not doomed. [Check out these instructions for Revolution](building-sites/
 
 ### 2.6 I am getting a 500 HTTP Internal Server Error
 
-Let's say you are working peacefully insie your `/manager/` and suddently no page can be opened and any URL you try to access besides cached pages gives you a `HTTP ERROR 500`, try manually going to your `/core/cache/` folder and delete everything in it, open an incognito window in your browser and try going to `/manager/` again, this should solve at least one of many reasons.
+If you're experiencing a 500 internal server error in the manager, here are a few things to try that typically resolves most common problems:
+
+- Rename or remove the `/core/cache` folder. The cache can sometimes get corrupted. 
+- Open an incognito window in your browser. That resolves any cookie-related issues.
 
 ## 3. Frontend Display Issues
 
