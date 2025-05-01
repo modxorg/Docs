@@ -141,7 +141,7 @@ An example Register snippet call with activation would look like this:
 
 This would send the User the email specified in the "myActivationEmailTpl" chunk, with the specified subject line, which will direct the User to the Resource 26 to activate their account. It will also, after sending the email, redirect the User to a "Please activate your account page" of sorts at Resource 325.
 
-Activation can be turned off by setting &activation=`0`. Note, though, that this will mean anyone - including spambots - can register and be active users in your site.
+Activation can be turned off by setting &activation=``. Note, though, that this will mean anyone - including spambots - can register and be active users in your site.
 
 The &activationEmailTpl field can be a chunk name by default. You can change the type of the field by setting &activationEmailTplType to one of the following values:
 
