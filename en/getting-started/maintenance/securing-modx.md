@@ -4,25 +4,30 @@ _old_id: "361"
 _old_uri: "2.x/administering-your-site/security/hardening-modx-revolution"
 ---
 
-## Overview
-
-Any publicly viewable website will be targeted by hackers and [script kiddies](https://en.wikipedia.org/wiki/Script_kiddie). There is simply no site too small today and automated tools make it easy to deploy attacks to deface your site, to create backlinks to other webistes, to infect unsuspecting site visitors with malware, to run cryptomining scripts, to send email spam from your domain, to create phishing sites, to redirect to sites that sell pills or porn, or worse…
+Any publicly viewable website will be targeted by hackers. There is simply no site too small today. Automated tools make it easy for attackers to deploy various malicious activities. These can include defacing your site, creating spam backlinks, infecting visitors with malware, running cryptomining scripts, and sending spam emails from your domain. They may also create phishing sites or redirect visitors to malicious websites that sell questionable products or contain inappropriate content.
 
 Hardening any web application, including MODX Revolution, involves paying attention to _all_ layers of your site. This includes your server, all of its services, and the application itself. 
 
-This is a huge topic so this page seeks to help you both harden MODX and inform you of other important areas. 
+This is a huge topic, so this page seeks to help you both harden MODX and inform you of other important areas. 
 
 ## Top Four Ways to Harden MODX
 
 This is only one part of the security hardening process. Before you do any of this, though, make a backup of your site and your database!
 
-The top four things you should tackle are 1) blocking the core from being web accessible, 2) blocking the `manager` on the public domains and use a subdomain for the Manager, 3) put a WAF in front of your website, and 4) always keep your server, MODX version and Extras updated. The other items will further help make MODX more difficult to identify and provide incremental layers of of secuirty or obsfuscation, but the tradeoff is increased time and complexity for updating or moving your website.
+The top four things you should tackle are:
+
+1. Block the `/core/` directory from being web-accessible.
+2. Block public access to `manager`, or obfuscate it by renaming it or moving it to a subdomain.
+3. Always keep your server, MODX core, and Extras updated.
+4. Put a WAF in front of your website.
+
+The other items will further help make MODX more difficult to identify and provide incremental layers of security, or obfuscation, but the tradeoff is increased time and complexity for updating or moving your website. 
 
 ### Protect the Core and Other Locations
 
 This is perhaps the most important step to take because the MODX core contains code that can do _very bad things™_ in the hands of malicious users. You don’t want anyone poking around via a browser and finding or exploiting potential weaknesses.
 
-While previous versions of MODX Revoution allowed you to move the core outside of the web root, this is not currently possible due to how Composer and Autoloading work in MODX 3.0. However, you can accomplish the same level of security by denying public web access to the `core` directory.
+While previous versions of MODX Revoution allowed you to move the core outside the web root, this is not currently possible due to how Composer and Autoloading work in MODX 3.0. However, you can achieve the same level of security by denying public web access to the `core` directory.
 
 The following examples block the `core` and anything within it from from being publicly accessed. Note, this is returning a 404 (not found) vs a 403 (unauthorized) response on purpose:
 
@@ -105,11 +110,13 @@ You can also further lock down access to the Manager by configuring your server 
 
 ### Deploy a Firewall or WAF
 
-Make sure that your server has a good firewall installed with intrusion detection to dynamically detects and blocks common hacking attempts. [ModSecurity](getting-started/installation/troubleshooting/modsecurity) is a security module for both Apache and NGINX that helps deter a number of malicious attacks. You can also use a WAF (web application firewall) service from vendors like Cloudflare, Fastly, Imperva, StackPath, and others to block many brute force attackers and known bad actors.
+Make sure that your server has a good firewall installed with intrusion detection to dynamically detects and blocks common hacking attempts. 
+
+[ModSecurity](getting-started/installation/troubleshooting/modsecurity) is a security module for both Apache and NGINX that helps deter a number of malicious attacks. You can also use a WAF (web application firewall) service from vendors like Cloudflare, Fastly, Imperva, StackPath, and others to block many brute force attackers and known bad actors.
 
 ### Update Your Server, MODX, and Extras
 
-No matter how secure all other elements are, it amounts to nothing if your server is not adequately secure. If your server is compromised there is nothing you can do to guarantee the integrity of your site or even the entire server itself.
+No matter how secure all other elements are, it amounts to nothing if your server is not adequately secure. If your server is compromised, there is nothing you can do to guarantee the integrity of your site or even the entire server itself.
 
 Always stay on top of server stack maintenance, including the software that powers encryption, your web server, your database, and remote connections. Patching your server software and core OS weekly, if not daily, is not uncommon. **Keep your server patched!**
 
@@ -117,11 +124,11 @@ Turn off all unnecessary services and if possible, and especially turn off FTP e
 
 Also turn off password authentication entirely in favour of [SSH keyed logins](http://tipsfor.us/2009/06/15/securing-a-linux-server-ssh-and-brute-force-attacks/). When using SSH keys, make sure to use a complex passphrase.
 
-Finally, it’s critical to keep things upgraded to the latest version in MODX, too. When any release comes out that remotely mentions anythign that sounds like a security issue or bug, upgrade ASAP. 
+Finally, it’s critical to keep things upgraded to the latest version in MODX, too. When any release comes out that remotely mentions anything that sounds like a security issue or bug, upgrade ASAP. 
 
 ## Other Ways to Protect MODX
 
-You can go to extremes to obsfuscate and further harden MODX—even so far as to make MODX look and respond like a completely different CMS platform. The following are some additional ways to protect MODX and make it more time consuming and difficult for hackers to succeed.
+You can go to extremes to obfuscate and further harden MODX—even so far as to make MODX look and respond like a completely different CMS platform. The following are some additional ways to protect MODX and make it more time-consuming and difficult for hackers to succeed.
 
 ### Change Common Paths
 
