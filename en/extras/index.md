@@ -99,7 +99,7 @@ This does not mean however that these are your only options. Browse the reposito
 
 - [SiteCheck](https://bobsguides.com/sitecheck-tutorial.html) (premium extra from Bob Ray) performs thousands of checks on the integrity of your site.
 
-### Updrading MODX
+### Upgrading MODX
 
 - [UpgradeMODX](https://bobsguides.com/upgrade-modx-package.html) allows you to upgrade MODX Revolution from within the MODX Manager.
 - [GoRevo](https://bobsguides.com/why-choose-gorevo.html) (premium extra from Bob Ray) provides a tool for migrating from MODX Evolution to MODX Revolution.
