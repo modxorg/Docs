@@ -344,9 +344,9 @@ Great! We've got our category vehicle, complete with all the related chunks and 
 
 ## Validators and Resolvers
 
-Validators and resolvers are basically scripts that run during the install process. Validators are run pre-install; meaning that they are run before the main package installation happens. If they return false, the installation does not proceed.
+Validators and resolvers are basically scripts that run during the install process. Validators are run at the start of the vehicle they are attached to. If they return false, the installation does not proceed.
 
-Resolvers, on the other hand, execute after the main package has installed. They can either be file or PHP scripts. A file resolver simply copies over files into a specific target location. A PHP resolver executes a script after install.
+Resolvers, on the other hand, execute after vehicle they are attached to has installed. They can either be file or PHP scripts. A file resolver simply copies over files into a specific target location. A PHP resolver executes a script after install.
 
 With that said, we're going to attach 2 file resolvers, and one PHP resolver, to our script:
 
