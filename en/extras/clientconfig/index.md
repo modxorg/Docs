@@ -22,7 +22,7 @@ Now we can add some settings in the Settings tab. Simply click the Add Setting b
 
 Settings contain a number of fixed options:
 
-- **key**: the key that you will use to reference the setting when retrieving the setting values: `[[++key]]` or $modx->getOption('key') in code.
+- **key**: the key that you will use to reference the setting when retrieving the setting values: `[[++key]]`, `'key' | config` in fenom, or $modx->getOption('key') in code.
 - **label**: the visible name of the field.
 - **xtype** (field type): a valid field type; see specifics below.
 - **description**: description of the field to provide extra context for the field. Visible on hover over the field.
