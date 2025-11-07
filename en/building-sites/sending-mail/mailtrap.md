@@ -2,7 +2,7 @@
 title: Mailtrap
 ---
 
-When working on your MODX site, it's useful to have a single platform to both test emails in development and send them reliably in production. We suggest using Mailtrap for this.
+When working on your MODX site, it's useful to have a single platform to both test emails in development and send them reliably in production. One option for that is Mailtrap.
 
 [Mailtrap](https://mailtrap.io) is an email platform for developer and product teams. It provides both an SMTP Service for sending transactional and bulk emails and an Email Sandbox for testing emails (free plan available for both).
 
