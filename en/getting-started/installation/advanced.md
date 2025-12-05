@@ -15,17 +15,11 @@ You might want to check the [Server Requirements](getting-started/server-require
 
 After you've [downloaded](getting-started/installation "Installation") MODX Revolution's advanced distribution, upload and extract it to your server. You should be left with two directories - `core/` and `setup/`. From here, if you plan on moving the `core/` directory, proceed to the next section. If you're not going to do so, or rename the config key, browse to **setup/** in your browser and skip to the **Advanced Options** section of this document.
 
-### Renaming or Moving the Core
+### ~~Renaming or Moving the Core~~
 
-MODX Revolution allows you to rename and/or move the `core/` directory to enhance your level of security. You can also move the `core/` directory outside of the webroot to further secure your MODX installation.
+The core folder can no longer be moved to a custom path or renamed in 3.0. 
 
-Should you choose to rename or move the core, MODX recommends doing so before installing. Simply rename or move the core, and `setup/` - at the beginning - will present you with a page asking for the new location of the core:
-
-![](setup-corefinder.png)
-
-Enter into the textfield the absolute path to where you have moved the core directory. If MODX is able to find the core from there, you will proceed normally with the installation. If MODX still cannot find the directory from the path you specified, check if you have typed it correctly, that it is an absolute path, and that you've made the directory readable (and the `core/cache/` file writable).
-
-MODX might also ask you to make the `setup/includes/core.config.php` file writable. This is required to change the core path, and you should do so before proceeding.
+This is due to the way Composer is integrated with the core development process for managing dependencies and enabling autoloading in the core. [#15476](https://github.com/modxcms/revolution/issues/15476)
 
 ### Changing the Configuration Key
 
