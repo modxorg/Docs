@@ -122,3 +122,15 @@ Let's say we wanted a separate chunk template for our "people" results, rather t
 It will default to the standard &tpl if no facet-specific tpl is specified.
 
 That's it! Your search is now faceted and can be drilled down, and has its own template for each facet.
+
+## See Also
+
+1. [SimpleSearch.SimpleSearch](extras/simplesearch/simplesearch)
+    1. [SimpleSearch.SimpleSearch.containerTpl](extras/simplesearch/simplesearch/containertpl)
+    2. [SimpleSearch.SimpleSearch.currentPageTpl](extras/simplesearch/simplesearch/currentpagetpl)
+    3. [SimpleSearch.SimpleSearch.pageTpl](extras/simplesearch/simplesearch/pagetpl)
+    4. [SimpleSearch.SimpleSearch.tpl](extras/simplesearch/simplesearch/tpl)
+    5. [SimpleSearch.Faceted Search Through PostHooks](extras/simplesearch/simplesearch/faceted-search-through-posthooks)
+2. [SimpleSearch.SimpleSearchForm](extras/simplesearch/simplesearch.simplesearchform)
+    1. [SimpleSearch.SimpleSearchForm.tpl](extras/simplesearch/simplesearch.simplesearchform/tpl)
+3. [SimpleSearch.Solr](extras/simplesearch/simplesearch.solr)
