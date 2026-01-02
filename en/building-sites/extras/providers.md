@@ -10,7 +10,7 @@ Transport Providers in MODX are remote sources that one can download Transport P
 
 MODX supports an unlimited number of Transport Providers, and each one can be from any source.
 
-MODX recommends not downloading Transport Packages from providers you cannot verify or do not trust. We recommend the modx.com Official Provider at: <http://rest.modx.com/extras/>
+MODX recommends not downloading Transport Packages from providers you cannot verify or do not trust. We recommend the modx.com Official Provider at: [https://rest.modx.com/extras/](https://rest.modx.com/extras/)
 
 ## Usage
 
