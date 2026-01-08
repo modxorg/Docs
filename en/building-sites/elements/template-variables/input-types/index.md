@@ -237,6 +237,7 @@ Option 1==value1||Option 2==value2
 ```json
 {
     "allowBlank": "true",
+    "forceSelection": "false",
     "listWidth": "",
     "title": "",
     "typeAhead": "false",
