@@ -92,6 +92,7 @@ This is a list of the built-in hooks packaged with FormIt:
 - [math](extras/formit/formit.hooks/math "FormIt.Hooks.math")
 - [recaptcha](extras/formit/formit.hooks/recaptcha "FormIt.Hooks.recaptcha")
 - [FormItAutoResponder](extras/formit/formit.hooks/formitautoresponder "FormIt.Hooks.FormItAutoResponder")
+- [FormItSaveForm](extras/formit/formit.hooks/formitsaveform "FormIt.Hooks.FormItSaveForm")
 
 The redirect hook (if used) should always be the last hook specified. Remember that the hooks execute in the order they are specified in the property.
 
