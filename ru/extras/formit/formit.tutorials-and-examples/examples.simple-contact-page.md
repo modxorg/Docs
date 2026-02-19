@@ -6,7 +6,7 @@ description: "Пример простой контактной формы свя
 
 Здесь мы приведем простой пример контактной страницы.
 
-Мы предполагаем, что вы уже установили Компонент Formit через [Управление пакетами](develop-in-modx/advanced-development/package-management) и ознакомились с разделом Formit [Как использовать](/extras/formit#kak-ispolzovat «Как использовать»).
+Мы предполагаем, что вы уже установили Компонент Formit через [Управление пакетами](developing-in-modx/advanced-development/package-management) и ознакомились с разделом Formit [Как использовать](/extras/formit#kak-ispolzovat "Как использовать").
 
 В этом примере контактная форма будет проверять входные данные, отправлять электронное письмо и, наконец, перенаправлять на ресурс с идентификатором 123.
 
@@ -19,7 +19,7 @@ description: "Пример простой контактной формы свя
 
 ## Тег сниппета
 
-Вы можете вызвать этот Сниппет где угодно: внутри Шаблона, Чанка, тела содержимого страницы или даже программно через [runSnippet](exnding-modx/modx-class/reference/modx.runsnippet).
+Вы можете вызвать этот Сниппет где угодно: внутри Шаблона, Чанка, тела содержимого страницы или даже программно через [runSnippet](extending-modx/modx-class/reference/modx.runsnippet).
 
 Есть только одно условие - Formit должен быть запущен на странице, куда будут отправлены данные из контактной формы ниже (см. значение поля «action»).
 
@@ -28,16 +28,19 @@ description: "Пример простой контактной формы свя
    &hooks=`recaptcha,email,redirect`
    &emailTpl=`MyEmailChunk`
    &emailTo=`user@example.com`
+   &emailFrom=`[[++emailsender]]`
    &redirectTo=`123`
    &validate=`nospam:blank,
-    name:required,
-    email:email:required,
-    subject:required,
-    text:required:stripTags,
-    numbers:required,
-    colors:required`
+      name:required,
+      email:email:required,
+      subject:required,
+      text:required:stripTags,
+      numbers:required,
+      colors:required`
 ]]
 ```
+
+> Убедитесь, что параметр emailFrom установлен в `[[++emailsender]]`, иначе будет использоваться значение поля email из формы. Это вызывает проблемы, так как большинство хостингов больше не отправляют письма с адресом отправителя `from` от неизвестных доменов.
 
 ## Контактная форма
 
@@ -46,9 +49,7 @@ description: "Пример простой контактной формы свя
 ```html
 <h2>Контактная форма</h2>
 
-[[!+fi.validation_error_message:notempty=`
-<p>[[!+fi.validation_error_message]]</p>
-`]]
+[[!+fi.validation_error_message:notempty=`<p>[[!+fi.validation_error_message]]</p>`]]
 
 <form action="[[~[[*id]]]]" method="post" class="form">
     <input type="hidden" name="nospam" value="" />
@@ -75,23 +76,15 @@ description: "Пример простой контактной формы свя
         Сообщение:
         <span class="error">[[!+fi.error.text]]</span>
     </label>
-    <textarea name="text" id="text" cols="55" rows="7" value="[[!+fi.text]]">
-[[!+fi.text]]</textarea
-    >
+    <textarea name="text" id="text" cols="55" rows="7" value="[[!+fi.text]]">[[!+fi.text]]</textarea>
 
     <label>
         Числа:[[+fi.error.numbers]]
         <select name="numbers" value="[[!+fi.numbers]]">
-            <option value="">Select an option...</option>
-            <option value="one" [[!+fi.numbers:FormItIsSelected="`one`]]">
-                Один
-            </option>
-            <option value="two" [[!+fi.numbers:FormItIsSelected="`two`]]">
-                Два
-            </option>
-            <option value="three" [[!+fi.numbers:FormItIsSelected="`three`]]">
-                Три
-            </option>
+            <option value="">Выберите вариант...</option>
+            <option value="one" [[!+fi.numbers:FormItIsSelected=`one`]]>Один</option>
+            <option value="two" [[!+fi.numbers:FormItIsSelected=`two`]]>Два</option>
+            <option value="three" [[!+fi.numbers:FormItIsSelected=`three`]]>Три</option>
         </select>
     </label>
 
@@ -100,43 +93,20 @@ description: "Пример простой контактной формы свя
         <input type="hidden" name="colors[]" value="" />
     </label>
     <ul>
-        <li>
-            <label
-                ><input
-                    type="checkbox"
-                    name="colors[]"
-                    value="red"
-                    [[!+fi.colors:FormItIsChecked="`red`]]"
-                />
-                Красный</label
-            >
-        </li>
-        <li>
-            <label
-                ><input
-                    type="checkbox"
-                    name="colors[]"
-                    value="blue"
-                    [[!+fi.colors:FormItIsChecked="`blue`]]"
-                />
-                Синий</label
-            >
-        </li>
-        <li>
-            <label
-                ><input
-                    type="checkbox"
-                    name="colors[]"
-                    value="green"
-                    [[!+fi.colors:FormItIsChecked="`green`]]"
-                />
-                Зеленый</label
-            >
-        </li>
+      <li>
+        <label><input type="checkbox" name="colors[]" value="red" [[!+fi.colors:FormItIsChecked=`red`]] /> Красный</label>
+      </li>
+      <li>
+        <label><input type="checkbox" name="colors[]" value="blue" [[!+fi.colors:FormItIsChecked=`blue`]] /> Синий</label>
+      </li>
+      <li>
+        <label><input type="checkbox" name="colors[]" value="green" [[!+fi.colors:FormItIsChecked=`green`]] /> Зеленый</label>
+      </li>
     </ul>
 
     <br class="clear" />
-    [[!+formit.recaptcha_html]] [[!+fi.error.recaptcha]]
+    [[!+formit.recaptcha_html]]
+    [[!+fi.error.recaptcha]]
 
     <br class="clear" />
 
