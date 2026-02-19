@@ -6,6 +6,8 @@ _old_uri: "revo/formit/formit.validators"
 
 ## Validation in FormIt
 
+FormIt 3.0 introduces an update to the encryption methods used for encrypting form submissions. Prior to 3.0 mcrypt was used, which in 3.0 is replaced with openssl, due to mcrypt being deprecated as of PHP 7.2. FormIt 3.0 comes with a migration page which is accessible from the manager.
+
 As of FormIt 2.2.9, all fields will automatically have `html_entities` applied. To allow HTML tags to be saved/stored, you will need to use the `allowSpecialChars` validator on each field, that should save raw html tags.
 
 As of FormIt 1.4.0, validation has changed. The old method of doing validation on the input names will still work until FormIt 2.0.0, when it will be removed. It is recommended to use the new way by using the &validate property.

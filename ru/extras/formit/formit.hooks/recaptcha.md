@@ -6,7 +6,7 @@ translation: "extras/formit/formit.hooks/recaptcha"
 
 ## Хук recaptcha для FormIt
 
-The recaptcha хук включит поддержку reCaptcha для форм FormIt.
+Хук recaptcha включит поддержку reCaptcha для форм FormIt.
 
 ## Использование
 
