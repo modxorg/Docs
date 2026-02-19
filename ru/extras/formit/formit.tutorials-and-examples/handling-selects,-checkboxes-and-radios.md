@@ -44,30 +44,13 @@ FormIt предоставляет служебный Сниппет под на�
 Поскольку HTML не отправляет значение, если флажок не установлен, проверки «обязательности» (required) флажка может быть затруднительной. Перед этим вам нужно будет добавить скрытое (`type = hidden`) поле, чтобы отправлялось хотя бы пустое значение:
 
 ```html
-[[!FormIt? &validate=`color:required`]] ...
+[[!FormIt? &validate=`color:required`]]
+...
 <label>Цвет: [[!+fi.error.color]]</label>
 <input type="hidden" name="color[]" value="" />
-<input
-    type="checkbox"
-    name="color[]"
-    value="blue"
-    [[!+fi.color:FormItIsChecked="`blue`]]"
-/>
-Синий
-<input
-    type="checkbox"
-    name="color[]"
-    value="red"
-    [[!+fi.color:FormItIsChecked="`red`]]"
-/>
-Красный
-<input
-    type="checkbox"
-    name="color[]"
-    value="green"
-    [[!+fi.color:FormItIsChecked="`green`]]"
-/>
-Зеленый
+<input type="checkbox" name="color[]" value="blue" [[!+fi.color:FormItIsChecked=`blue`]] > Синий
+<input type="checkbox" name="color[]" value="red" [[!+fi.color:FormItIsChecked=`red`]] > Красный
+<input type="checkbox" name="color[]" value="green" [[!+fi.color:FormItIsChecked=`green`]] > Зеленый
 ```
 
 Это успешно проверит, чтобы при отправке формы был установлен хотя бы один флажок.
