@@ -14,6 +14,17 @@ You will see a name and description field, and below, a grid of Widgets assigned
 
 ![](dashboard-edit.png)
 
+## Template vs Personal Changes
+
+Changes made on this page update the dashboard **template**. For [customizable dashboards](building-sites/client-proofing/dashboards "Dashboards"), template changes are propagated to all users who have a personal copy of that dashboard:
+
+- When you **add a widget** here, it will appear on the dashboard for all existing users of that dashboard.
+- When you **remove a widget** here, it will be removed from all users' personal dashboards.
+
+This is different from changes made directly on the dashboard page itself (for example, using the close button on a widget or adding a widget from the dashboard view). Those changes only affect the currently logged-in user.
+
+If you want to enforce a widget change across all users, make it from this management page. If you only want to adjust your own dashboard, make the change directly on the dashboard page instead.
+
 ## See Also
 
 1. [Managing Your Dashboard](building-sites/client-proofing/dashboards/managing)
