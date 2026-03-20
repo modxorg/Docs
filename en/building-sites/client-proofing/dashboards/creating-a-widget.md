@@ -41,6 +41,12 @@ From here, click the "Place Widget" button above the Widgets grid on this page. 
 
 Save your Dashboard.
 
+> **Note:** Adding a widget through the Dashboards manager page (as described above) places it on the dashboard **template**. If the dashboard is [customizable](building-sites/client-proofing/dashboards "Dashboards"), the widget will automatically appear for all existing users of that dashboard, as well as any new users.
+>
+> Adding a widget directly on the dashboard page (via the dashboard view itself) only adds it for the currently logged-in user. Other users will not see it unless it is also added to the template.
+>
+> On large sites with many users, adding a widget to the template will create a placement record for each user who already has a personal copy of that dashboard. Keep this in mind if performance is a concern.
+
 ### Viewing the Widget
 
 Now, if you click the "Dashboard" top menu item on the page, you can see your new dashboard widget in place!
