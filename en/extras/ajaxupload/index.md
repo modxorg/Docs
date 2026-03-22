@@ -5,11 +5,7 @@ description: "Dynamic files form upload via Ajax"
 
 ## What is AjaxUpload?
 
-With this snippet an upload button for uploading multiple files with progress-bar is generated. Works well in FF3.6+, Safari4+, Chrome and falls back to hidden iframe based upload in other browsers, providing good user experience everywhere.
-
-All uploaded images and generated thumbnails are given random filenames to avoid hotlinking uploaded not published fullsize images. Automatic thumbnail generation for uploaded jpeg, png and gif files. Other uploaded files will get a generic icon.
-
-With two Formit hooks the upload queue could be pre filled from Formit field value and saved into Formit field value.
+AjaxUpload is an extra package for MODx Revolution. It displays an upload area with [pqinoa/filepond](https://github.com/pqina/filepond) for uploading multiple files. The upload queue can be filled and saved by Formit hooks. The uploaded files can be attached to the FormIt mails and deleted after the form submission.
 
 ## Requirements
 
