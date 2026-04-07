@@ -23,8 +23,8 @@ MinifyX can be installed from within the MODX Revolution manager via Package Man
 
 ## Development & Bug Reporting
 
-MinifyX has a GitHub repository at https://github.com/Jako/MinifyX
+MinifyX has a GitHub repository at [https://github.com/Jako/MinifyX](https://github.com/Jako/MinifyX)
 
 ## Documentation
 
-The package documentation can be found at http://jako.github.io/MinifyX/
+The package documentation can be found at [https://jako.github.io/MinifyX/](https://jako.github.io/MinifyX/)
