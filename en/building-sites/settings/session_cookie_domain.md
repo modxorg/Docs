@@ -6,9 +6,9 @@ description: "Session Cookie Domain setting"
 
 ## session\_cookie\_domain
 
-**Name**: Session Cookie Domain
-**Type**: String
-**Default**: localhost
+-   **Name**: Session Cookie Domain
+-   **Type**: String
+-   **Default**: ''
 
 Use this setting to customize the session cookie domain.
 
