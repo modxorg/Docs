@@ -29,15 +29,18 @@ When using the `session_cookie_domain` setting with internationalized domain nam
 HTTP cookies (including session cookies) are based on ASCII-compatible domain names. In practice, this means that IDN domains are typically represented in **punycode (A-label)** form when used at the protocol level.
 
 Example:
+
 - Unicode: `müller-example.de`
 - Punycode: `xn--mller-example-9db.de`
 
 In testing, the following behavior was observed:
+
 - ASCII domain - works as expected
 - Unicode IDN domain in `session_cookie_domain` - may break sessions
 - Empty `session_cookie_domain` - works reliably
 
 **Recommendations:**
+
 - Avoid setting `session_cookie_domain` unless explicitly required, leave it empty to let PHP handle it automatically
 - If using IDN domains, prefer the punycode (ASCII) representation
 
