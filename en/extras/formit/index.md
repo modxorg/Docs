@@ -98,3 +98,4 @@ For more information on hooks, see the [Hooks](extras/formit/formit.hooks "FormI
     4. [FormIt.Using a Blank NoSpam Field](extras/formit/formit.tutorials-and-examples/using-a-blank-nospam-field)
 5. [FormIt.FormItCountryOptions](extras/formit/formit.formitcountryoptions)
 6. [FormIt.FormItStateOptions](extras/formit/formit.formitstateoptions)
+7. [AJAX Form Submission](extras/formit/formit.ajax)
