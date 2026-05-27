@@ -97,3 +97,4 @@ FormIt 3.0 представляет обновление методов шифр
     4. [Использование пустого поля для защиты от спама](extras/formit/formit.tutorials-and-examples/using-a-blank-nospam-field)
 5. [FormItCountryOptions](extras/formit/formit.formitcountryoptions)
 6. [FormItStateOptions](extras/formit/formit.formitstateoptions)
+7. [Отправка формы через AJAX](extras/formit/formit.ajax)

@@ -4,24 +4,20 @@ translation: "extras/formit/formit.tutorials-and-examples/formit.examples.simple
 description: "Пример простой контактной формы связи"
 ---
 
-Здесь мы приведем простой пример контактной страницы.
+Здесь мы приведём простой пример контактной страницы.
 
-Мы предполагаем, что вы уже установили Компонент Formit через [Управление пакетами](developing-in-modx/advanced-development/package-management) и ознакомились с разделом Formit [Как использовать](/extras/formit#kak-ispolzovat "Как использовать").
+Мы предполагаем, что вы уже установили FormIt через [Управление пакетами](developing-in-modx/advanced-development/package-management) и ознакомились с разделом [Как использовать](/extras/formit#kak-ispolzovat "Как использовать").
 
-В этом примере контактная форма будет проверять входные данные, отправлять электронное письмо и, наконец, перенаправлять на ресурс с идентификатором 123.
+В этом примере контактная форма проверяет входные данные, отправляет email и перенаправляет на ресурс с ID 123.
 
-Процесс валидации (смотрите, как он работает [здесь](extras/formit/formit.validators), если описать кратко, в нем - каждый хук выполняет какую-то логику, в случае успеха - передает обработку следующему хуку) в этом примере делает следующее: кроме прочего удаляет теги из сообщения, подтверждает валидность электронной почты и убеждается, что ни одно из полей не пустое. Все это указывается в параметре `&validate`.
+Валидация (подробнее — [FormIt Validators](extras/formit/formit.validators)) удаляет теги из сообщения, проверяет корректность email и требует заполнения всех полей — всё указывается в параметре `&validate`.
 
-И, наконец, нам нужна поддержка [reCaptcha](https://www.google.com/recaptcha/about/). Мы уже настроили наши открытый и закрытый ключи для `reCaptcha` с помощью следующих системных настроек:
+Форма также использует [reCAPTCHA v3](https://www.google.com/recaptcha/about/). Настройте ключи в системных настройках:
 
--   `formit.recaptcha_public_key`
--   `formit.recaptcha_private_key`
+- `formit.recaptcha_site_key`
+- `formit.recaptcha_secret_key`
 
 ## Тег сниппета
-
-Вы можете вызвать этот Сниппет где угодно: внутри Шаблона, Чанка, тела содержимого страницы или даже программно через [runSnippet](extending-modx/modx-class/reference/modx.runsnippet).
-
-Есть только одно условие - Formit должен быть запущен на странице, куда будут отправлены данные из контактной формы ниже (см. значение поля «action»).
 
 ```php
 [[!FormIt?
@@ -40,75 +36,70 @@ description: "Пример простой контактной формы свя
 ]]
 ```
 
-> Убедитесь, что параметр emailFrom установлен в `[[++emailsender]]`, иначе будет использоваться значение поля email из формы. Это вызывает проблемы, так как большинство хостингов больше не отправляют письма с адресом отправителя `from` от неизвестных доменов.
+> Убедитесь, что `emailFrom` установлен в `[[++emailsender]]`, иначе будет использоваться email из поля формы — большинство хостингов отклоняют письма с адресом отправителя от неизвестных доменов.
 
 ## Контактная форма
-
-Этот HTML-код должен вызываться на странице сайта, где вы хотите увидеть контактную форму. Значение атрибута `action` указывает на страницу, на которой расположен вызов Сниппета, в нашем случае мы вызываем его на той же странице, поэтому мы используем [~tag](building-sites/tag-syntax/common#default-resource-content-field-tags), чтобы создать ссылку на текущую страницу.
 
 ```html
 <h2>Контактная форма</h2>
 
-[[!+fi.validation_error_message:notempty=`<p>[[!+fi.validation_error_message]]</p>`]]
-
 <form action="[[~[[*id]]]]" method="post" class="form">
+    [[!+fi.validation_error_message]]
+    [[!+fi.successMessage]]
+    <div class="error">[[!+fi.error_message]]</div>
+
     <input type="hidden" name="nospam" value="" />
 
-    <label for="name">
-        Имя:
-        <span class="error">[[!+fi.error.name]]</span>
-    </label>
-    <input type="text" name="name" id="name" value="[[!+fi.name]]" />
+    <div class="form-field">
+        <label for="name">Имя:</label>
+        <input type="text" name="name" id="name" value="[[!+fi.name]]" />
+        [[!+fi.error.name]]
+    </div>
 
-    <label for="email">
-        Email:
-        <span class="error">[[!+fi.error.email]]</span>
-    </label>
-    <input type="text" name="email" id="email" value="[[!+fi.email]]" />
+    <div class="form-field">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email" value="[[!+fi.email]]" />
+        [[!+fi.error.email]]
+    </div>
 
-    <label for="subject">
-        Тема:
-        <span class="error">[[!+fi.error.subject]]</span>
-    </label>
-    <input type="text" name="subject" id="subject" value="[[!+fi.subject]]" />
+    <div class="form-field">
+        <label for="subject">Тема:</label>
+        <input type="text" name="subject" id="subject" value="[[!+fi.subject]]" />
+        [[!+fi.error.subject]]
+    </div>
 
-    <label for="text">
-        Сообщение:
-        <span class="error">[[!+fi.error.text]]</span>
-    </label>
-    <textarea name="text" id="text" cols="55" rows="7" value="[[!+fi.text]]">[[!+fi.text]]</textarea>
+    <div class="form-field">
+        <label for="text">Сообщение:</label>
+        <textarea name="text" id="text" cols="55" rows="7">[[!+fi.text]]</textarea>
+        [[!+fi.error.text]]
+    </div>
 
-    <label>
-        Числа:[[+fi.error.numbers]]
-        <select name="numbers" value="[[!+fi.numbers]]">
+    <div class="form-field">
+        <label for="numbers">Числа:</label>
+        <select name="numbers" id="numbers">
             <option value="">Выберите вариант...</option>
             <option value="one" [[!+fi.numbers:FormItIsSelected=`one`]]>Один</option>
             <option value="two" [[!+fi.numbers:FormItIsSelected=`two`]]>Два</option>
             <option value="three" [[!+fi.numbers:FormItIsSelected=`three`]]>Три</option>
         </select>
-    </label>
+        [[!+fi.error.numbers]]
+    </div>
 
-    <label>
-        Цвета:[[!+fi.error.colors]]
+    <div class="form-field">
+        <label>Цвета:</label>
         <input type="hidden" name="colors[]" value="" />
-    </label>
-    <ul>
-      <li>
-        <label><input type="checkbox" name="colors[]" value="red" [[!+fi.colors:FormItIsChecked=`red`]] /> Красный</label>
-      </li>
-      <li>
-        <label><input type="checkbox" name="colors[]" value="blue" [[!+fi.colors:FormItIsChecked=`blue`]] /> Синий</label>
-      </li>
-      <li>
-        <label><input type="checkbox" name="colors[]" value="green" [[!+fi.colors:FormItIsChecked=`green`]] /> Зеленый</label>
-      </li>
-    </ul>
+        <ul>
+            <li><label><input type="checkbox" name="colors[]" value="red" [[!+fi.colors:FormItIsChecked=`red`]] /> Красный</label></li>
+            <li><label><input type="checkbox" name="colors[]" value="blue" [[!+fi.colors:FormItIsChecked=`blue`]] /> Синий</label></li>
+            <li><label><input type="checkbox" name="colors[]" value="green" [[!+fi.colors:FormItIsChecked=`green`]] /> Зелёный</label></li>
+        </ul>
+        [[!+fi.error.colors]]
+    </div>
 
-    <br class="clear" />
-    [[!+formit.recaptcha_html]]
-    [[!+fi.error.recaptcha]]
-
-    <br class="clear" />
+    <div class="form-field">
+        [[+formit.recaptcha_html]]
+        [[!+fi.error.recaptcha]]
+    </div>
 
     <div class="form-buttons">
         <input type="submit" value="Отправить" />
@@ -118,20 +109,16 @@ description: "Пример простой контактной формы свя
 
 ## MyEmailChunk (Tpl чанк)
 
-Ниже приведен чанк для письма электронной почты `&emailTpl`, который мы отправляем на адрес, указанный в параметре `&emailTo` Formit, после получения и проверки данных формы.
-
 ```php
+Это чанк письма FormIt.
 
-Это Чанк нашей формы.
-
-<br />[[+name]] ([[+email]]) Wrote: <br />
+<br />[[+name]] ([[+email]]) написал(а): <br />
 
 [[+text]]
 ```
 
 ## Смотрите также
 
-1. [AjaxForm](https://modx.com/extras/package/ajaxform) Отправка любой формы через Ajax
+1. [FormIt.Hooks.recaptcha](extras/formit/formit.hooks/recaptcha)
 2. [FormItAutoResponder](extras/formit/formit.hooks/formitautoresponder)
-3. Что такое [Google Recaptcha](https://www.google.com/recaptcha/about/)
-4. [ReCaptchaV2](https://modx.com/extras/package/recaptchav2) Google Recaptcha(V2 и V3 поддерживаются) компонент для MODX
+3. [FormIt.Validators](extras/formit/formit.validators)

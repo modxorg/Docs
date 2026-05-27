@@ -6,35 +6,47 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.recaptcha"
 
 ## The recaptcha hook
 
-The recaptcha hook will enable reCaptcha support for FormIt forms.
+The recaptcha hook enables reCAPTCHA v3 support for FormIt forms. reCAPTCHA v3 works invisibly in the background — no checkbox or challenge is shown to the user. Google returns a score (0.0–1.0) indicating how likely the submission is from a human; submissions below the minimum score are rejected.
+
+## Requirements
+
+- A reCAPTCHA v3 site key and secret key from [https://www.google.com/recaptcha](https://www.google.com/recaptcha)
+- FormIt's frontend JS enabled via the `formit.frontend_js` system setting (set to `js/web/formit.js`)
 
 ## Usage
 
-First off, add "recaptcha" to your &hooks parameter in your FormIt call. Then you'll need to include the following placeholders in your form:
+Add `recaptcha` to your `&hooks` parameter:
 
 ``` php
+[[!FormIt?
+    &hooks=`recaptcha,email`
+]]
+```
+
+Add the reCAPTCHA placeholder and the error placeholder to your form:
+
+``` html
 [[+formit.recaptcha_html]]
 [[!+fi.error.recaptcha]]
 ```
 
-The first placeholder is where the reCaptcha form will be rendered; the 2nd is the error message (if any) for reCaptcha.
+`[[+formit.recaptcha_html]]` renders two hidden fields (`g-recaptcha-response` and `g-recaptcha-action`) required for v3. FormIt automatically loads the Google reCAPTCHA script and executes the token request on form submit.
 
-Finally, you'll need to setup your reCaptcha private and public keys in System Settings. The settings available for reCaptcha are:
+## System Settings
 
-| Name                           | Description                                                          |
-| ------------------------------ | -------------------------------------------------------------------- |
-| formit.recaptcha\_public\_key  | Your reCaptcha public key.                                           |
-| formit.recaptcha\_private\_key | Your reCaptcha private key.                                          |
-| formit.recaptcha\_use\_ssl     | Whether or not to use SSL for reCaptcha requests. Defaults to false. |
+Configure your keys in **System Settings** under the `formit_recaptcha` area:
+
+| Setting | Description | Default |
+| --- | --- | --- |
+| `formit.recaptcha_site_key` | Your reCAPTCHA v3 site key (public). | |
+| `formit.recaptcha_secret_key` | Your reCAPTCHA v3 secret key (private). | |
+| `formit.recaptcha_min_score` | Minimum score to accept a submission (0.0–1.0). | `0.5` |
 
 ## Available Properties
 
-The reCaptcha hook has a few extra configuration options:
-
-| Name           | Description                                                                                                                                       | Default |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| recaptchaJs    | A JSON object to pass into the RecaptchaOptions var, which configures the reCaptcha widget. See the official reCaptcha docs for more information. | {}      |
-| recaptchaTheme | The recaptcha theme to use.                                                                                                                       | clean   |
+| Name | Description | Default |
+| --- | --- | --- |
+| `recaptchaAction` | Action name sent to Google with the token request. Visible in the reCAPTCHA admin dashboard. | `submit` |
 
 ## See Also
 
