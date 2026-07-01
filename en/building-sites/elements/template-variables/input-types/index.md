@@ -4,13 +4,15 @@ _old_id: "489"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-input-types"
 ---
 
-There are a number of built-in template variable types.
+There are a number of built-in template variable (TV) types.
 
 Some input types are deprecated depending on your MODX version.
 
-It's best to enter multiple Input Option values on a single line with no carriage returns.
+Note that for TV types containing user-defined, selectable lists (listbox, checkbox, radio, etc.), it's best to enter multiple Input Option values on a single line with no carriage returns.
 
-## Auto-Tag (autotag)
+## Input Types
+
+### Auto-Tag (autotag)
 
 Auto-Tag is a convenient template variable for using tags when blogging, have multiple categories a resource can belong to, or anytime you need a list of tags that have been used before. Every time you edit or create a resource with access to an auto-tag template variable, you will see the tags that were used before. You can easily click on priorly used tags to chose them in the list.
 
@@ -26,7 +28,7 @@ foreach ($tags as $key => $value) { // Loop through the tags
 return implode(', ',$output); // Merge the output array and output
 ```
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -38,25 +40,25 @@ return implode(', ',$output); // Merge the output array and output
 }
 ```
 
-## Check Box (checkbox)
+### Check Box (checkbox)
 
-### Simple Usage
+#### Simple Usage
 
 The basic usage of this is to simply define the field as a checkbox. You can control whether or not the box is checked by default or not by manipulating the "Input Option Values" and "Default Value" fields.
 
-#### Checked by Default
+##### Checked by Default
 
 -   Input Option Values: `My Option==1`
 -   Default Value: 1
 
-#### Unchecked by Default
+##### Unchecked by Default
 
 -   Input Option Values: `My Option==1`
 -   Default Value: 0
 
 The box will be checked by default as long as the value following the "==" matches the default value. If you want to set default of a check box template variable to multiple values, you have to separate the values with the "||" delimiter.
 
-### Advanced Usage
+#### Advanced Usage
 
 You can distinguish between separate keys and values using double-equals and double-pipes:
 
@@ -64,7 +66,7 @@ You can distinguish between separate keys and values using double-equals and dou
 option1==value1||option2==value2
 ```
 
-### More Advanced Usage
+#### More Advanced Usage
 
 The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the `option1==value1||option2==value2` format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") to select items from your database, e.g. **Input option values:**
 
@@ -76,7 +78,7 @@ The Check Box input type allows multiple checkboxes to be displayed with a singl
 
 If you are using multiple checkboxes like this, you will probably need to set the **Output Type** to "Delimiter" (e.g. a comma) so you can distinguish the values contained in each checkbox.
 
-## Date (date)
+### Date (date)
 
 This allows you to set both a date and a time.
 
@@ -95,7 +97,7 @@ If you like to have a default set date you can put one of the following keywords
 
 You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -112,7 +114,7 @@ You use the [Date TV Output Type](making-sites-with-modx/customizing-content/tem
 }
 ```
 
-## DropDown List Menu
+### DropDown List Menu
 
 NOTE: this TV Input type has been deprecated since Revo 2.1.x Please see [Listbox](<#listbox-single-select-listbox>) input types below.
 
@@ -126,7 +128,7 @@ Also see Resource List TV type.
 
 ![](dropdown.jpg)
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -136,13 +138,13 @@ Also see Resource List TV type.
 }
 ```
 
-## Email
+### Email
 
 This is a text field that comes with its own validation: only text that's in a valid email format will be accepted.
 
 ![](email.jpg)
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -152,25 +154,26 @@ This is a text field that comes with its own validation: only text that's in a v
 }
 ```
 
-## File
+### File
 
 Creates a file input form to browse the server for a file. Files can be uploaded through the MODX File Manager. You can declare a default value file by specifying the path to the file.
 
 Take extra note of relative file paths when using friendly url paths.
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
+(None)
 
-## Hidden
+### Hidden
 
 A hidden field does not show up in the manager, so it's rare that you'd use this option. You can set a default value that can be retrieved on all pages using this variable. Another possibility is to store a Snippet that takes a page's ID as input.
 
-## HTML Area (richtext)
+### HTML Area (richtext)
 
 This gives you a small WSYIWYG editor for the field. It looks exactly like the Richtext fields.
 
 ![](html_area.jpg)
 
-## Image
+### Image
 
 ![](tv-image-new.png)
 
@@ -190,9 +193,9 @@ In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head ove
 
 This input type returns the link (to be used as src attribute) to the image. You can also set the whole [html-img-tag as a output-type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type "Image TV Output Type").
 
-## [Image+](extras/image) (imageplus)
+### [Image+](extras/image) (imageplus)
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -206,17 +209,17 @@ This input type returns the link (to be used as src attribute) to the image. You
 }
 ```
 
-## Listbox (Single-Select) (listbox)
+### Listbox (Single-Select) (listbox)
 
 This has the same options available to it as the Listbox (Multi-Select) – see below.
 
-## Listbox (Multi-Select) (listbox-multiple)
+### Listbox (Multi-Select) (listbox-multiple)
 
 This behaves similar to the checkbox fields: you can select multiple items, and this field can be powered by a @SELECT binding in its "Input Option Values" parameter. Like checkboxes, you probably want to set the "Output Type" to delimiter so you can distinguish between values.
 
 ![](listbox_multi.jpg)
 
-### Simple Usage
+#### Simple Usage
 
 Just like with the Checkbox options, you can simply specify a list of values separated by double-pipes:
 
@@ -224,7 +227,7 @@ Just like with the Checkbox options, you can simply specify a list of values sep
 Man||Bear||Pig
 ```
 
-### Separate Options/Values
+#### Separate Options/Values
 
 Often it's nice to have a more readable label. You can display something nice and still store a different value using the double-equals and double-pipes format used by checkboxes:
 
@@ -232,7 +235,7 @@ Often it's nice to have a more readable label. You can display something nice an
 Option 1==value1||Option 2==value2
 ```
 
-#### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -246,13 +249,13 @@ Option 1==value1||Option 2==value2
 }
 ```
 
-## Number
+### Number
 
 This is another text field with some pre-emptive validation. You literally cannot type anything but the digits 0 to 9, the minus sign (-) , and a period (i.e. a decimal point). A validation error is triggered if you enter more than one decimal point or minus sign. Complex numbers (e.g. using radicals "^" or "e" are **not** supported).
 
 Note that trailing zeros are truncated, e.g. 4.50 gets trimmed to 4.5; this may make this input type unsuitable for currency fields.
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -266,33 +269,33 @@ Note that trailing zeros are truncated, e.g. 4.50 gets trimmed to 4.5; this may 
 }
 ```
 
-## Radio Options (option)
+### Radio Options (option)
 
-### Simple Usage
+#### Simple Usage
 
 The basic usage of this is to provide a list of radio option. You can control the default option by manipulating the "Input Option Values" and "Default Value" fields.
 
-#### Selected by Default
+##### Selected by Default
 
 -   Input Option Values: My Option==1
 -   Default Value: 1
 
 The option will be selected by default as long as the value following the "==" matches the default value.
 
-### Advanced Usage
+#### Advanced Usage
 
 The radio option can be used to output more than simple numerical values. One such example is using the radio option to determine the chunk used for a sidebar.
 
 Set your input option values using the format **Title==value** format, but use the chunk placeholders as your values. To declare multiple options use two pipes (||) after the value, before the next options title.
 
-#### Sidebar Example Revolution
+##### Sidebar Example Revolution
 
 -   Input Option Values: `[[$my_related_chunk]]||Content==[[*sidebar-txt]]||Twitter==[[$my_twitter_chunk]]`
 -   Default Value: `[[$my_related_chunk]]`
 
 In the above examples, you can output a chunk or another Template Variable without the aid of an extra.
 
-#### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -301,7 +304,7 @@ In the above examples, you can output a chunk or another Template Variable witho
 }
 ```
 
-## Resource List (resourcelist)
+### Resource List (resourcelist)
 
 Supply the definition with a resource ID, and you'll end up with a drop down list of all pages/resources that are children of that resource. The value stored after you've made a selection is the ID of the single selected resource.
 
@@ -319,7 +322,7 @@ Another example:
 [{"pagetitle:!=":"Home"}]
 ```
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -334,15 +337,15 @@ Another example:
 }
 ```
 
-## Rich Text
+### Rich Text
 
 See [_HTML Area_](building-sites/elements/template-variables/input-types#html-area-richtext).
 
-## Tag
+### Tag
 
 Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](building-sites/elements/template-variables/output-types/html) for formatting.
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -350,7 +353,7 @@ Multiple tags separated by || characters will be separated and output individual
 }
 ```
 
-## Text
+### Text
 
 This is a vanilla text field.
 
@@ -362,7 +365,7 @@ As of MODX 2.1, there are three input options you can set for this TV:
 
 ![](tvinput.png)
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -374,11 +377,11 @@ As of MODX 2.1, there are three input options you can set for this TV:
 }
 ```
 
-## Textarea
+### Textarea
 
 This is a standard _textarea_ field, with a height of 15 rows. It's the same size as the HTML Area fields, but without the WYSIWYG editor.
 
-### All input option names (for use in migx options-json)
+#### JSON Input Options Template
 
 ```json
 {
@@ -386,16 +389,44 @@ This is a standard _textarea_ field, with a height of 15 rows. It's the same siz
 }
 ```
 
-## Textarea (Mini) (deprecated)
+### Textarea (Mini) (deprecated)
 
 This is a smaller _textarea_ field, with a height of only 5 rows.
 
-## Textbox
+### Textbox
 
 This appears to be exactly the same as the vanilla Text field.
 
-## URL
+### URL
 
 This is a guided text field, which a dropdown option to select the protocol: none, <http://>, <https://>, <ftp://,> or [](mailto:). No validation is performed to ensure the correctness of the URL structure.
 
 ![](url.jpg)
+
+## Dynamically-Defined Input Options
+
+First, please note that this section refers to the definition of the TV itself, not the user-defined, selectable options (key-value pairs) of a listbox or similar input.
+
+When defining a TV in a way other than manager’s standard built-in editing form (_e.g._, within the MIGX Extra), a JSON configuration object can be used to define its input options. The input is ultimately rendered to the Resource form by the Smarty templating engine. However, Smarty tags cannot be used within this JSON object to change options on the fly. An alternative strategy that works is to use a Snippet to insert dynamic values. For example:
+
+This won’t work:
+```json
+{
+    "maxDateValue":"{$smarty.now|date_format:'%Y-%m-%d'}",
+    "allowBlank":true,
+    "hideTime":true
+}
+```
+But, this _will_ work:
+```json
+{
+    "maxDateValue":"[[!tv-option--get-max-date]]",
+    "allowBlank":true,
+    "hideTime":true
+}
+```
+where the Snippet `tv-option--get-max-date`  contains:
+```php
+<?php
+return date('Y-m-d', time());
+```
