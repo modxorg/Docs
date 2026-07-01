@@ -161,6 +161,7 @@ Creates a file input form to browse the server for a file. Files can be uploaded
 Take extra note of relative file paths when using friendly url paths.
 
 #### JSON Input Options Template
+
 (None)
 
 ### Hidden
@@ -410,6 +411,7 @@ First, please note that this section refers to the definition of the TV itself, 
 When defining a TV in a way other than manager’s standard built-in editing form (_e.g._, within the MIGX Extra), a JSON configuration object can be used to define its input options. The input is ultimately rendered to the Resource form by the Smarty templating engine. However, Smarty tags cannot be used within this JSON object to change options on the fly. An alternative strategy that works is to use a Snippet to insert dynamic values. For example:
 
 This won’t work:
+
 ```json
 {
     "maxDateValue":"{$smarty.now|date_format:'%Y-%m-%d'}",
@@ -417,7 +419,9 @@ This won’t work:
     "hideTime":true
 }
 ```
+
 But, this _will_ work:
+
 ```json
 {
     "maxDateValue":"[[!tv-option--get-max-date]]",
@@ -425,7 +429,9 @@ But, this _will_ work:
     "hideTime":true
 }
 ```
+
 where the Snippet `tv-option--get-max-date`  contains:
+
 ```php
 <?php
 return date('Y-m-d', time());
