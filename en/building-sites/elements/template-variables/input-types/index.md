@@ -48,15 +48,15 @@ return implode(', ', $output);
 <details>
     <summary><strong>JSON Input Options Template</strong></summary>
 
-    ```json
-    {
-        "allowBlank": "true",
-        "maxLength": "",
-        "minLength": "",
-        "regex": "",
-        "regexText": ""
-    }
-    ```
+```json
+{
+    "allowBlank": "true",
+    "maxLength": "",
+    "minLength": "",
+    "regex": "",
+    "regexText": ""
+}
+```
 
 </details>
 
