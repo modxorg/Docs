@@ -20,25 +20,45 @@ To make auto-tag tvs useful in the front end, you will need to set the output ty
 To output the tags in such a way that each tag links to a certain resource and passes the tag in a GET parameter, you can use an output filter (snippet) as follows:
 
 ```php
-if ($input == '') { return 'Error'; } // In case the TV is empty
-$tags = explode(', ',$input); // Based on a delimiter of ", " this will split each one up in an array
-foreach ($tags as $key => $value) { // Loop through the tags
-    $output[] = '<a href="'.$modx->makeurl(9, '', array('tag' => $value)).'">'.$value.'</a>'; // Add it to an output array, with a link to resource 9 and the get parameter.
+<?php
+
+// In case the TV is empty
+if ($input == '') {
+    return 'Error';
 }
-return implode(', ',$output); // Merge the output array and output
+
+$output = [];
+
+// Based on a delimiter of "," this will split each one up in an array
+$tags = array_map('trim', explode(',', $input));
+
+// Loop through tags, adding each to an output array with a link to Resource 9 and the tag as a get parameter
+foreach ($tags as $key => $value) {
+    $url = $modx->makeurl(9, '', ['tag' => $value]);
+    $output[] = <<<LINK
+    <a href="{$url}">{$value}</a>
+    >>>;
+}
+
+// Convert the output array to a string
+return implode(', ', $output);
+
 ```
 
-#### JSON Input Options Template
+<details>
+    <summary><strong>JSON Input Options Template</strong></summary>
 
-```json
-{
-    "allowBlank": "true",
-    "maxLength": "",
-    "minLength": "",
-    "regex": "",
-    "regexText": ""
-}
-```
+    ```json
+    {
+        "allowBlank": "true",
+        "maxLength": "",
+        "minLength": "",
+        "regex": "",
+        "regexText": ""
+    }
+    ```
+
+</details>
 
 ### Check Box (checkbox)
 
