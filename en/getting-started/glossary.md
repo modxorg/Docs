@@ -186,7 +186,7 @@ Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getti
 
 ## Snippet
 
-Способ, с помощью которого MODX позволяет вам запускать динамический код PHP на любой из ваших страниц. [Подробнее](building-sites/elements/snippets)
+The way in which MODX allows you to run dynamic PHP code on any of your pages. [Read more](building-sites/elements/snippets)
 
 ## Snippet Tags
 
