@@ -153,6 +153,8 @@ A collection of variables used for a particular purpose with an Element. Propert
 
 ## Renderer
 
+A method used to modify how data is displayed by MODX. [See more](current/en/extras/collections#renderers)
+
 ## Resource
 
 A type of container that is interpreted by the Parser to fetch content. Can have any number of derivative classes; the most common is a Document.
@@ -183,7 +185,7 @@ Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getti
 
 ## Snippet
 
-Способ, с помощью которого MODX позволяет вам запускать динамический код PHP на любой из ваших страниц. [Подробнее](building-sites/elements/snippets)
+The way in which MODX allows you to run dynamic PHP code on any of your pages. [Read more](building-sites/elements/snippets)
 
 ## Snippet Tags
 
