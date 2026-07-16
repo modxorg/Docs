@@ -156,6 +156,8 @@ A collection of variables used for a particular purpose with an Element. Propert
 
 ## Renderer
 
+A method used to modify how data is displayed by MODX. [See more](3.x/en/extras/collections#renderers)
+
 ## Resource
 
 A type of container that is interpreted by the Parser to fetch content. Can have any number of derivative classes; the most common is a Document.
