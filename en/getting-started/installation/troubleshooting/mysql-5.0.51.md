@@ -2,6 +2,7 @@
 title: "MySQL 5.0.51"
 _old_id: "1115"
 _old_uri: "2.x/getting-started/server-requirements/mysql-5.0.51-issues"
+note: "MODX now requires MySQL 5.7 or up. This page is an archive."
 ---
 
 ## Why does MODX not support MySQL server version 5.0.51?

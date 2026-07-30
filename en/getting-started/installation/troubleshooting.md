@@ -8,10 +8,8 @@ _old_uri: "2.x/getting-started/installation/troubleshooting-installation"
 
 First off, make sure:
 
-- You have eAccelerator disabled during install. eAccelerator can cause problems when doing the heavy lifting during the install process.
 - You followed all the directions [here](getting-started/installation "Installation") for your distribution.
-- You are using at least PHP 5.1.1+, but not 5.1.6 or 5.2.0
-- You are using MySQL later than 4.1.20, but not any iteration of MySQL 5.0.51 (including 5.0.51a).
+- Your environment meets the current [Server Requirements](getting-started/server-requirements) — especially **PHP 8.1+** (required since MODX 3.2; earlier 3.x releases allowed PHP 7.2+) and a supported MySQL/MariaDB version.
 - Clear the `core/cache/` directory entirely before starting setup; sometimes improper file permissions can cause issues.
 - Clear your browser cache and cookies
 

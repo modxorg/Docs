@@ -1,15 +1,18 @@
 ---
 title: "Advanced Installation"
+sortorder: "2"
 _old_id: "17"
 _old_uri: "2.x/getting-started/installation/advanced-installation"
 ---
 
-This is the tutorial for the advanced distribution of MODX. It is recommended to only install this distribution if:
+This is the tutorial for the **advanced** distribution of MODX. Use it only if:
 
-- You plan on renaming the `manager/` or `connectors/` directories, or move the core/ directory
-- You have SSH access or can easily move/make writable directories on your server.
+- You plan to rename the `manager/` and/or `connectors/` directories during setup
+- You have SSH access (or similar) and can make parent folders writable
 
-You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If after reading this, you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation") page.
+The **core directory cannot be moved or renamed in MODX 3**. For a normal install, prefer the [Basic Installation](getting-started/installation/standard) with the traditional package.
+
+Check [Server Requirements](getting-started/server-requirements) first. If you hit problems, see [Troubleshooting Installation](getting-started/installation/troubleshooting).
 
 ## Installation Pre-Steps
 

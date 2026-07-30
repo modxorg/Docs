@@ -1,70 +1,70 @@
 ---
-title: "Glossary of Revolution Terms"
+title: "Glossary"
 sortorder: 5
 _old_id: "157"
 _old_uri: "2.x/getting-started/an-overview-of-MODX/glossary-of-revolution-terms"
-description: "Full list of MODX terms can be found here"
+description: "Common MODX terms used throughout the documentation"
 ---
 
 ## ACL
 
-An ACL, or Access Control List, is a set of [Permissions](building-sites/client-proofing/security/policies/permissions) attached to an object. More information on ACLs can be found here in [Wikipedia](https://en.wikipedia.org/wiki/Access_control_list). Also [see more](building-sites/client-proofing/security/policies/acls)
+An ACL, or Access Control List, is a set of [Permissions](building-sites/client-proofing/security/policies/permissions) attached to an object. More information on ACLs can be found on [Wikipedia](https://en.wikipedia.org/wiki/Access_control_list). Also [see more](building-sites/client-proofing/security/policies/acls).
 
 ## Add-on
 
-A MODX Third-party Component (3PC) that does not modify the Core or extend any of its classes, but yet still provides extra functionality to the MODX instance.
+A third-party Component (3PC) that does not modify the Core or extend its classes, but still provides extra functionality to the MODX site. Often installed via Extras (Package Management).
 
 ## Asset
 
-Any type of file resource that is usually located in the /assets directory, as defined by the constant `MODX_ASSETS_PATH;` can include Third-party Components, libraries, image files, css files, JavaScript files, class files, etc.
+Any file resource usually located under `/assets`, as defined by `MODX_ASSETS_PATH`. Can include Extra front-end files, libraries, images, CSS, JavaScript, and similar.
 
 ## Back-end
 
-A synonym for the MODX manager interface.
+A synonym for the MODX Manager interface.
 
 ## Cache, caching
 
-The process of storing frequently requested data and where it is stored.  By caching data that is being reused, a lot of database requests can be prevented, resulting in a better performance. MODX Revolution offers a number of different caching features on different levels within the application. [See more](extending-modx/caching)
+Storing frequently requested data so repeated database work can be avoided. MODX caches configuration, resources, elements, lexicons, and more under `core/cache/`. [See more](extending-modx/caching).
 
 ## Category
 
-An optional classifying name that can be attached to any Element or PropertySet (and other objects in later versions of Revolution) that separates it from other similar objects.
+An optional classifying name attached to Elements, Property Sets, and some other objects so related items can be grouped in the Manager.
 
 ## Child Resource
 
-MODX resources are arranged in a tree-like manner, and it may happen that one of the resources is specified as a Container, and other resources are located inside it. In this case in relation to the Container (which is Parent resource here), such resources are called Child resources. 
+Resources are arranged in a tree. When a Resource is a Container (parent), the Resources inside it are its Child Resources.
 
 ## Chunk Tags
 
-Tags in the form `[[$ChunkName]]` that can be used in reference to Chunks.
+Tags in the form `[[$ChunkName]]` that insert a Chunk.
 
 ## Component
 
-Also called "Third-party Component", or 3PC, a Component usually provides extra functionality to MODX, usually in the form of an Add-on, Core Extension, or Template.
+Also called a third-party Component or 3PC. Usually an Extra (Add-on), Core Extension, or Template package that adds functionality.
 
 ## Connector
 
-Essentially entry point for AJAX requests in MODX. It doesn't do any database manipulation on its own; just simply load up the main MODX class, sanitize any request data, and then handle the request by pointing to the appropriate Processor file [See more](getting-started/directory-structure#connectors)
+HTTP entry point for AJAX requests. Connectors bootstrap MODX, sanitize the request, and hand off to a Processor. [See more](getting-started/directory-structure#connectors).
 
 ## Content Type
 
-Sets the extension, mime-type and binary setting for any Resource. [See more](building-sites/resources/content-types)
+Sets the extension, MIME type, and binary flag for a Resource. [See more](building-sites/resources/content-types).
 
 ## Context
 
-A delineator of resources and settings that can be used for a variety of reasons; usually used to create multiple-context sites, such as subdomains, multi-language sites, etc.
+A grouping of Resources and settings, commonly used for multi-site, multi-language, or subdomain setups.
 
 ## Context Setting
 
-A single setting for that Context that either creates a new setting or overrides a System Setting.
+A setting that applies to one Context. It can introduce a new key or override a System Setting for that Context.
 
 ## Core Workspace
 
-Each unique MODX Core is represented by a named Workspace. When you install Revolution initially, the MODX Core used by the setup application is recorded into the MODX database as the Default MODX Workspace. In future MODX Revolution releases, there will be an ability to manage multiple Workspaces from a single database, directly from the manager application. This will make it easy to isolate upgrades to the MODX Core; by quickly adding a new Core Workspace and selecting a menu option, you'll be able to apply an entire new MODX Core installation to production sites after testing on a staging site, or quickly revert to a previous Core Workspace you know works. This will be especially important for multi-site configurations running on shared MODX Core installations.
+A named record of the MODX Core used by the site. A normal install creates a single default workspace that points at the core package. Day-to-day sites rarely interact with workspaces beyond what setup and Package Management already do.
 
 ## Document
 
-A specific type of Resource, usually pertaining to a normal website page.
+The usual Resource type for a normal website page (class `modDocument`).
 
 ## Document Identifier
 
@@ -72,170 +72,164 @@ See Resource Identifier.
 
 ## Element
 
-Also called "Content Elements", a single Template, Template Variable, Chunk, Snippet, Plugin, Category, or Property Set visible in the Manager Elements tree.
+A Template, Template Variable, Chunk, Snippet, Plugin, Category, or Property Set shown in the Manager Elements tree.
 
 ## Extension
 
-Also called "Core Extension". A MODX Third-party Component that modifies the MODX Core, such as a custom User or authentication class, caching mechanisms, or context manipulation classes.
+Also called a Core Extension. A Component that replaces or extends core behaviour, such as a custom authentication class or caching mechanism.
 
 ## File Resolver
 
-A type of xPDOVehicle Resolver that copies files from the source location to the target location in a Transport Package.
+A Transport Package resolver that copies files from a package source path to a target path on install or uninstall.
 
 ## Form Customization
 
-Feature that allows users to create [Rules](building-sites/client-proofing/form-customization/rules), which govern how manager pages render their forms in the MODX Revolution Manager. [See more](building-sites/client-proofing/form-customization)
+Rules that control how Manager forms look and behave (fields, tabs, and related UI). [See more](building-sites/client-proofing/form-customization).
 
 ## Form Customization Set
 
-A Form Customization Set is a collection of [Rules](building-sites/client-proofing/form-customization/rules) that occur for a specific page (action) in the Manager. [See more](building-sites/client-proofing/form-customization/sets)
+A collection of Form Customization Rules for a specific Manager page (action). [See more](building-sites/client-proofing/form-customization/sets).
 
 ## Friendly URLs, Friendly aliases
 
-Friendly URLs (FURLs) is actually short for SEO-friendly URLs. SEO, as you probably know, is an acronym for Search Engine Optimization. Since "Search-engine-Optimization-friendly-URLs" is quite a mouthful, they're usually referred to as FURLs in MODX.
+SEO-friendly URLs (often abbreviated FURLs). With Friendly URLs enabled, Resources use readable paths based on aliases instead of `index.php?id=…`. See [Using Friendly URLs](getting-started/friendly-urls).
 
 ## Language Tags
 
-Tags in the form `[[%LanguageStringKey]]` that reference MODX Lexicon entries.
+Tags in the form `[[%LanguageStringKey]]` that output Lexicon entries.
 
 ## Lexicon
 
-A Lexicon is a dictionary of words and phrases organized by Culture (more specific than language, i.e. en-UK) that is used to internationalize the manager application and can be used by Add-On and Core Extension developers to provide localization facilities for their own components. This replaces the legacy MODX language files and allows customization of the entries directly from the manager application.
+A dictionary of words and phrases organized by culture (for example `en`, or more specific cultures such as `en-GB`). Used to internationalize the Manager and Extras. Entries can be edited in Lexicon Management.
 
 ## Lexicon Topic (formerly Foci)
 
-A set of Lexicon Entries focused on a particular subject. Revolution only loads Lexicon Entries as it needs them, by their Topic, to reduce load times.
+A set of Lexicon Entries for one subject. MODX loads topics on demand to keep overhead down.
 
 ## Link Tags
 
-Tags in the form `[[~ResourceId]]` that reference the URL of a particular Resource.
+Tags in the form `[[~ResourceId]]` that output the URL of a Resource.
 
 ## Manager
 
-The back-end of the MODX interface.
+The back-end administration UI of MODX.
 
 ## Media Source
 
-With MS you can specify the "source" of media through many types - from the file system itself, to an Amazon S3 bucket, to a Flickr album. MODX provides two source types with the core installation: the file system and Amazon S3 bucket integration. Other sources can be made by creating Media Source Drivers, or by downloading them from [Package Management](building-sites/extras). [See More](building-sites/media-sources)
+A configured source for media files: typically the local filesystem, or remote backends such as Amazon S3. Drivers can be installed as Extras. [See more](building-sites/media-sources).
 
 ## Namespace
 
-An organizational tag for Components to use to identify Lexicon Entries, Settings, and other objects related to the Component in a Revolution site. Also specifies an absolute path in which the Component may be found.
+An organizational key for Components. Namespaces group Lexicon Entries, Settings, and related objects, and usually define a path where the Component lives.
 
 ## Package Management
 
-A web service that enables remote [installation](building-sites/extras) of Transport Packages directly from the Manager.
+The Manager Installer (Extras → Installer) that downloads and installs Transport Packages from providers such as modx.com. [See more](building-sites/extras).
 
 ## Parent Resource
 
-Resources in MODX are arranged in a tree-like manner, and it may happen that one of the resources is specified as a Container, and other resources are located inside it, in this case the Container will be Parent resource, and "subordinate" resources will be Child resources. 
+In the Resource Tree, a Container Resource that has Child Resources beneath it.
 
 ## Placeholder Tags
 
-Tags in the form `[[+PlaceholderName]]` that reference MODX Placeholders, usually set with `$MODX->setPlaceholder('placeholderName','value')` in a Snippet or Plugin.
-
-## Resource Field
-
-Any of the fields of the `site_content` table, such as `pagetitle`, `longtitle`, `introtext`, `alias`, `menuindex`, etc. Some fields are available on the Document Create/Edit screen and via Resource Tags; Others can only be accessed via the `documentObject`.
-
-## Resource Tree
-
-The way Resources are located relative to each other, which affects the structure of web pages and, as a result, URL links of your site. You can see Resource Tree in the MODX Manager, it is on the left. 
+Tags in the form `[[+PlaceholderName]]` that output Placeholders, usually set in a Snippet or Plugin with `$modx->setPlaceholder('placeholderName', 'value')`.
 
 ## Plugin
 
-Plugins are similar to [Snippets](getting-started/glossary#snippet) in that they are pieces of PHP code that have access to the MODX API. The biggest difference is when the code is executed. Plugins are configured to execute during certain System events, such as saving a chunk or clearing the cache. [See more](extending-modx/plugins) 
+PHP that runs on System Events (for example saving a Resource or clearing the cache), with access to the MODX API. Unlike Snippets, Plugins are not usually called from a page tag. [See more](extending-modx/plugins).
 
 ## Property
 
-A single variable for an Element; used to set a specific parameter for the Element.
+A single named parameter for an Element.
 
 ## Property Set
 
-A collection of variables used for a particular purpose with an Element. Property Sets are attached to Elements and pass in the Properties that they carry as parameters to the Element. An example is a custom Property Set for a Snippet that passes in specific parameters to the Element, overriding the default behavior.
+A named collection of Properties attached to an Element so you can pass different parameters without editing the Element itself.
 
 ## Renderer
 
-A method used to modify how data is displayed by MODX. [See more](3.x/en/extras/collections#renderers)
+A method used to change how data is displayed (for example in a custom grid column). See Extra documentation where renderers are defined for that package.
 
 ## Resource
 
-A type of container that is interpreted by the Parser to fetch content. Can have any number of derivative classes; the most common is a Document.
+Anything in the Resource Tree that the Parser can resolve to a URL and content: most often a Document, but also Weblinks, Symlinks, and Static Resources.
+
+## Resource Field
+
+A field on a Resource such as `pagetitle`, `longtitle`, `introtext`, `alias`, or `menuindex`. Many appear on the Resource create/edit screen and via Resource Tags (`[[*pagetitle]]`). Others are available through the Resource object in PHP.
 
 ## Resource Identifier
 
-Also called a Document ID, Resource ID, or Document Identifier; the number in parenthesis in the MODX Resource Tree in the Manager that uniquely identifies the Resource specified.
+Also called a Document ID or Resource ID: the numeric ID shown in the Resource Tree that uniquely identifies the Resource.
 
 ## Resource Tags
 
-Tags in the form `[[*ResourceFieldTV]]`, which can be used to refer to Resource Fields, or Template Variables.
+Tags in the form `[[*fieldOrTvName]]` that output Resource Fields or Template Variables for the current Resource.
+
+## Resource Tree
+
+The hierarchical list of Resources in the Manager (usually on the left). Structure here drives site navigation and, when Friendly Alias Paths are on, URL paths.
 
 ## Resolver (from Transport Package)
 
-Post-processor: a script or predefined action that is evaluated after a [Transport Vehicle](getting-started/glossary#transport-vehicles) is installed or uninstalled. Resolvers always occur after the vehicle's object is save()'d, and can then perform actions on MODX before anything else happens in the install/uninstall process.
-
-An example of a PHP Resolver is one that attaches Plugin Events to a newly-installed [Plugin](getting-started/glossary#plugin).
-
-An example of a file Resolver is one that copies the `assets/getResources` directory in the `xPDOVehicle` path to `/MODX/assets/getResources`.
+A post-processor that runs after a Transport Vehicle’s object is saved during install or uninstall. Examples: attach Plugin events, or copy files into `assets/`.
 
 ## Session
 
-Period of time when all requests from the user will be uniquely recognized by MODX and associated with this user. After this time communication with the client will be lost, and the next request from him will be processed as absolutely unique, in no way related to the previous ones. 
+The period during which MODX recognizes a visitor (or Manager user) across requests. When the session ends, the next request is treated as a new visitor unless they authenticate again.
 
 ## Setting Tags
 
-Tags in the form `[[++SettingName]]` that reference MODX [System Settings](getting-started/glossary#system-setting), [Context Settings](getting-started/glossary#context-setting), and [User Settings](getting-started/glossary#user-setting).
+Tags in the form `[[++SettingName]]` that output [System Settings](getting-started/glossary#system-setting), [Context Settings](getting-started/glossary#context-setting), or [User Settings](getting-started/glossary#user-setting).
 
 ## Snippet
 
-The way in which MODX allows you to run dynamic PHP code on any of your pages. [Read more](building-sites/elements/snippets)
+PHP that you call from a page (or other Element) to run dynamic logic. [See more](building-sites/elements/snippets).
 
 ## Snippet Tags
 
-Tags in the form `[[SnippetName]]`, also referred to as [Snippet](getting-started/glossary#snippet) calls.
+Tags in the form `[[SnippetName]]` (Snippet calls).
 
 ## Static Resource
 
-A specific type of Resource that is a direct reference to a specific file on the MODX site. The content is replaced with the contents of that file.
+A Resource whose content is read from a file on the filesystem.
 
 ## Symlink
 
-A type of Resource that references a single, local MODX Resource; the Resource's content will replace the Symlink's content.
+A Resource that reuses the content of another local Resource at a different URL.
 
 ## System Event
 
-Event in MODX that "fire" throughout the MODX code in response to various system actions. [See more](extending-modx/plugins/system-events)
+Events that fire during MODX operations (save, remove, cache clear, and so on). Plugins listen to these events. [See more](extending-modx/plugins/system-events).
 
 ## System Setting
 
-A site-wide variable accessible to the MODX site. Can be overridden by Context Settings and User Settings.
+A site-wide setting. Context Settings and User Settings can override it for a Context or user.
 
 ## Template Variables (or TVs)
 
-Custom Resource Fields created by the user on the Document Create/Edit Screen and referenced using Content Tags.
+Custom fields you attach to Templates and edit on Resources. Referenced with Resource Tags such as `[[*MyTV]]`.
 
 ## Transport Package
 
-A packaged and zipped collection of [Transport Vehicles](getting-started/glossary#transport-vehicles), that can be easily distributed ("transported") from one Core Workspace to another. [See more](extending-modx/transport-packages)
+A zipped collection of Transport Vehicles that can be installed on a MODX site (core upgrades and Extras). [See more](extending-modx/transport-packages).
 
 ## Transport Vehicles
 
-An intelligent container that encapsulates any artifact that can be distributed in a [Transport Package](getting-started/glossary#transport-package). Transport Vehicles store their payloads in a portable format. [See more](extending-modx/transport-packages#okay-what-are-these-vehicles)
+Containers inside a Transport Package that hold objects or files and know how to install or uninstall them. [See more](extending-modx/transport-packages#okay-what-are-these-vehicles).
 
 ## User Setting
 
-A user-specific setting that either creates a new setting or overrides the similar Context Setting and System Setting. Used to provide unique settings to that user.
+A per-user setting that can create a new key or override the matching Context or System Setting.
 
 ## Validator (from Transport Package)
 
-Pre-processor: a script or predefined action that executes prior to the [Transport Vehicle](getting-started/glossary#transport-vehicles) being installed or uninstalled. If the validator returns true, the install/uninstall action will proceed as normal. If the validator returns false, MODX will not uninstall or install the package.
-
-A Validator could be used to determine if a directory exists and is writable, to see if other MODX elements are already installed, or to determine if a certain version of MySQL and PHP are used on a server.
+A pre-processor that runs before a Transport Vehicle is installed or uninstalled. If it returns false, that install/uninstall step is skipped. Typical uses: check PHP extensions, writable directories, or required packages.
 
 ## Weblink
 
-A type of Resource that references a specific URL or MODX Resource, redirecting the visitor to that URL or Resource.
+A Resource that redirects to another Resource or an external URL.
 
 ## xPDOVehicle
 
-The base Transport Vehicle class, xPDOVehicle, stores xPDOObject instances (which represent a row of data in a table) in it's payload, along with various attributes that control how the object is installed/uninstalled in a Core Workspace (see xPDOVehicle Validators and xPDOVehicle Resolvers).
+The base Transport Vehicle class. It stores xPDO objects (rows of data) plus attributes that control install and uninstall, including Validators and Resolvers.
