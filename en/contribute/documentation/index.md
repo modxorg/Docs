@@ -94,7 +94,7 @@ Front matter values (for example `title` and `description`) should be plain text
 
 ### Embedded videos (YouTube, Vimeo, GitHub)
 
-To embed a video or other supported rich content, put the **https URL alone on its own line**. Do not wrap it in an iframe or other HTML.
+To embed a video or other supported rich content, put the **https URL alone on its own line**. Do not wrap it in an iframe or other HTML. Angle brackets (`<https://...>`) and Markdown link syntax are not treated as embeds.
 
 Supported hosts today: **YouTube**, **Vimeo**, and **GitHub**.
 
@@ -104,7 +104,7 @@ Watch this overview:
 https://vimeo.com/330122657
 ```
 
-If the URL cannot be embedded, it falls back to a normal link.
+If the URL cannot be embedded, it falls back to a normal link. 
 
 ### Images
 

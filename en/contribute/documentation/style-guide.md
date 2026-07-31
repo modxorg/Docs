@@ -302,7 +302,7 @@ Do **not** use layout HTML (`` `<div>` ``, `` `<span>` ``, inline styles, alignm
 
 | Media | How to include it |
 | ----- | ----------------- |
-| YouTube / Vimeo / GitHub | Put the `https://` URL alone on its own line. DocsApp embeds it when the host is allowed. |
+| YouTube / Vimeo / GitHub | Put the bare `https://` URL alone on its own line (not `<…>` or `[text](url)`). DocsApp embeds it when the host is allowed. |
 | Local video (`.mp4`, `.webm`, `.ogg`) | Use image syntax: `![Demo](demo.mp4)`. DocsApp renders a video player. |
 | Screenshots / diagrams | Use `![description](file.png)` (or `.jpg` / `.gif` / `.webp`). |
 
