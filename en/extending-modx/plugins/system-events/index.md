@@ -149,6 +149,8 @@ This is not an exhaustive list as events are still being documented. Thank you f
 - [OnUserFormDelete](extending-modx/plugins/system-events/onuserformdelete)
 - [OnUserFormSave](extending-modx/plugins/system-events/onuserformsave)
 - [OnUserNotFound](extending-modx/plugins/system-events/onusernotfound)
+- [OnUserProfileBeforeSave](extending-modx/plugins/system-events/onuserprofilebeforesave)
+- [OnUserProfileSave](extending-modx/plugins/system-events/onuserprofilesave)
 - [OnUserRemove](extending-modx/plugins/system-events/onuserremove)
 - [OnUserSave](extending-modx/plugins/system-events/onusersave)
 - [OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication)
