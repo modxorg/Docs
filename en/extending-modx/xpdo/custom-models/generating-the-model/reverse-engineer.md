@@ -13,9 +13,11 @@ If you're wanting to extend existing MODX classes, e.g. by creating [Custom Reso
 Our process will be this:
 
 1. Create a database table (or tables) using MySQL (this can be done via the mysql command line or any number of MySQL GUI clients, e.g. phpMyAdmin or SQL-Yog).
-2. Copy the "reverse-engineering" script (provided below) to your webserver. Put it at the root of your MODX install (this is important so the script can find xPDO). This script uses the xPDO classes to sniff out the definition of the table you just created.
+2. Copy the reverse-engineering script below to the root of your MODX install (next to `config.core.php`). The script loads xPDO through Composer (`core/vendor/autoload.php`) and reads the table definitions.
 3. If needed, modify the generated XML definition file to define foreign key relationships, then re-run the script to regenerate the class files.
 4. Connect your newly created class and schema files to a Snippet or Custom Manager Page.
+
+For a MODX 3 workflow that targets namespaced models under `src/` (PSR-4), see [Using Custom Database Tables in your 3rd Party Components](extending-modx/tutorials/using-custom-database-tables). The script on this page still writes the classic `model/` package layout.
 
 Even if you plan to deploy your code and its associated data models onto multiple other other platforms, it's generally considered **much** easier to develop it with a single database in mind. Once you've done that, you can then focus on abstraction later. You can of course jump right into the xPDO definitions and classes that will define database-agnostic classes and schemas, but it is more difficult for the novice precisely because it deals with abstractions. The further you get from concrete examples, the more difficult the development becomes.
 
@@ -51,7 +53,7 @@ Together, they behave similarly to other ORM's, e.g. Doctrine
 Doctrine_Core::generateModelsFromDb();
 ```
 
-Here's a reverse-engineering script that allows a bit of configuration and does a little error checking:
+Here is a reverse-engineering script with a few options and basic checks. It targets **MODX 3 / xPDO 3**: xPDO lives under Composer (`core/vendor/`), not `core/xpdo/xpdo.class.php` as in MODX 2.
 
 ``` php
 <?php /* ------------------------------------------------------------------------------
@@ -67,7 +69,7 @@ Here's a reverse-engineering script that allows a bit of configuration and does 
   have been created, the purpose of this script has been served, though you will need to run it again if you modify your schema.
 
   USAGE:
-  1. Upload this file to the root of your MODX installation
+  1. Upload this file to the root of your MODX installation (next to config.core.php)
   2. Set the configuration details below
   3. Navigate to this script in a browser to execute it,
   e.g. http://yoursite.com/thisscript.php
@@ -81,7 +83,7 @@ Here's a reverse-engineering script that allows a bit of configuration and does 
   core/components/$package_name/model/$package_name/*.class.php
   core/components/$package_name/model/$package_name/mysql/*.class.php
   core/components/$package_name/model/$package_name/mysql/*.inc.php
-  core/components/$package_name/schema/$package_name.mysql.schema.xml
+  core/components/$package_name/model/schema/$package_name.mysql.schema.xml
 
   SEE ALSO:
   https://forums.modx.com/index.php?topic=40174.0
@@ -141,13 +143,19 @@ $restrict_prefix = false;
 //  DO NOT TOUCH BELOW THIS LINE
 //------------------------------------------------------------------------------
 if (!defined('MODX_CORE_PATH')) {
-    print_msg('<h1?>Reverse Engineering Error
+    print_msg('<h1>Reverse Engineering Error</h1>
         <p>MODX_CORE_PATH not defined! Did you include the correct config file?</p>');
     exit;
 }
 
-$xpdo_path = strtr(MODX_CORE_PATH . 'xpdo/xpdo.class.php', '\\', '/');
-include_once ( $xpdo_path );
+// MODX 3: load xPDO via Composer (core/xpdo/xpdo.class.php no longer exists)
+$autoload = strtr(MODX_CORE_PATH . 'vendor/autoload.php', '\\', '/');
+if (!is_readable($autoload)) {
+    print_msg('<h1>Reverse Engineering Error</h1>
+        <p>Composer autoload not found at <code>' . htmlspecialchars($autoload) . '</code>. Run <code>composer install</code> in the core directory, or check MODX_CORE_PATH.</p>');
+    exit;
+}
+require_once $autoload;
 
 // A few definitions of files/folders:
 $package_dir = MODX_CORE_PATH . "components/$package_name/";
@@ -202,7 +210,14 @@ if (file_exists($xml_schema_file) && !$regenerate_schema && $verbose) {
     print_msg(sprintf('<br></br><strong>Ok:</strong> Using existing XML schema file:<br></br>`%s`', $xml_schema_file));
 }
 
-$xpdo = new xPDO("mysql:host=$database_server;dbname=$dbase", $database_user, $database_password, $table_prefix);
+$xpdo = new \xPDO\xPDO(
+    "mysql:host=$database_server;dbname=$dbase;charset=utf8",
+    $database_user,
+    $database_password,
+    [
+        \xPDO\xPDO::OPT_TABLE_PREFIX => $table_prefix,
+    ]
+);
 
 // Set the package name and root path of that package
 $xpdo->setPackage($package_name, $package_dir, $package_dir);
@@ -218,7 +233,7 @@ if ($regenerate_schema) {
         print_msg("<br></br>The old XML schema file: <br></br>`{$xml_schema_file}` <br></br>has been renamed to <br></br>`{$rename}`.");
         rename($xml_schema_file, $rename);
     }
-    $xml = $generator->writeSchema($xml_schema_file, $package_name, 'xPDOObject', $table_prefix, $restrict_prefix);
+    $xml = $generator->writeSchema($xml_schema_file, $package_name, 'xPDO\\Om\\xPDOObject', $table_prefix, $restrict_prefix);
     if ($verbose) {
         print_msg(sprintf('<br></br><strong>Ok:</strong> XML schema file generated: `%s`<hr></hr>', $xml_schema_file));
     }

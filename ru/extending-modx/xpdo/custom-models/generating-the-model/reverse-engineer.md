@@ -13,9 +13,11 @@ description: "Как и многие веб-приложения, MODX подп�
 Наш процесс будет таким:
 
 1. Создайте таблицу (или таблицы) базы данных с помощью MySQL (это можно сделать с помощью командной строки mysql или используя такие инструменты MySQL GUI, как например, `phpMyAdmin` или `SQL-Yog`).
-2. Скопируйте сценарий "обратного проектирования" (приведенный ниже) на свой веб-сервер. Поместите его в корень установки MODX (это важно, чтобы сценарий мог найти xPDO). Этот скрипт использует классы xPDO, чтобы найти определение только что созданной таблицы.
+2. Скопируйте сценарий обратного проектирования ниже в корень установки MODX (рядом с `config.core.php`). Скрипт загружает xPDO через Composer (`core/vendor/autoload.php`) и читает определения таблиц.
 3. При необходимости измените сгенерированный файл определения XML, чтобы определить отношения внешнего ключа, затем повторно запустите сценарий, чтобы повторно сгенерировать файлы классов.
 4. Подключите вновь созданные файлы классов и схем к фрагменту или настраиваемой странице Компонента.
+
+Для workflow MODX 3 с namespaced-моделями в `src/` (PSR-4) смотрите [Использование пользовательских таблиц БД в сторонних компонентах](extending-modx/tutorials/using-custom-database-tables). Скрипт на этой странице по-прежнему пишет классическую раскладку пакета в `model/`.
 
 Даже если вы планируете развернуть свой код и связанные с ним модели данных на нескольких других платформах, обычно считается **гораздо** проще создать его с единой базой данных. Как только вы это сделаете, вы сможете сосредоточиться на абстракции. Конечно, вы можете сразу перейти к определениям и классам xPDO, которые будут определять классы и схемы, не зависящие от базы данных, но для новичка это сложнее именно потому, что оно имеет дело с абстракциями. Чем дальше вы уходите от конкретных примеров, тем сложнее становится разработка. 
 
@@ -51,7 +53,7 @@ xPDO - это движок, стоящий за этой абстракцией 
 Doctrine_Core::generateModelsFromDb();
 ```
 
-Вот небольшой сценарий обратного проектирования, который позволяет настраивать и проверять ошибки: 
+Вот сценарий обратного проектирования с настройками и базовыми проверками. Он рассчитан на **MODX 3 / xPDO 3**: xPDO подключается через Composer (`core/vendor/`), а не через `core/xpdo/xpdo.class.php`, как в MODX 2.
 
 ``` php
 <?php /* ------------------------------------------------------------------------------
@@ -67,7 +69,7 @@ Doctrine_Core::generateModelsFromDb();
   были созданы, цель этого скрипта была достигнута, хотя вам нужно будет запустить его снова, если вы измените свою схему.
 
   ПРИМЕНЕНИЕ:
-  1. Загрузите этот файл в корень установки MODX.
+  1. Загрузите этот файл в корень установки MODX (рядом с config.core.php)
   2. Задайте детали конфигурации ниже.
   3. Перейдите к этому сценарию в браузере, чтобы запустить его,
   например http://yoursite.com/thisscript.php
@@ -141,13 +143,19 @@ $restrict_prefix = false;
 //  НИЧЕГО НЕ ИЗМЕНЯЙТЕ НИЖЕ ЭТОЙ СТРОКИ 
 //------------------------------------------------------------------------------
 if (!defined('MODX_CORE_PATH')) {
-    print_msg('<h1?>Ошибка обратного проектирования
+    print_msg('<h1>Ошибка обратного проектирования</h1>
         <p>MODX_CORE_PATH не определен! Вы включили правильный файл конфигурации?</p>');
     exit;
 }
 
-$xpdo_path = strtr(MODX_CORE_PATH . 'xpdo/xpdo.class.php', '\\', '/');
-include_once ( $xpdo_path );
+// MODX 3: xPDO через Composer (core/xpdo/xpdo.class.php больше нет)
+$autoload = strtr(MODX_CORE_PATH . 'vendor/autoload.php', '\\', '/');
+if (!is_readable($autoload)) {
+    print_msg('<h1>Ошибка обратного проектирования</h1>
+        <p>Не найден Composer autoload: <code>' . htmlspecialchars($autoload) . '</code>. Выполните <code>composer install</code> в каталоге core или проверьте MODX_CORE_PATH.</p>');
+    exit;
+}
+require_once $autoload;
 
 // Несколько определений файлов / каталогов: 
 $package_dir = MODX_CORE_PATH . "components/$package_name/";
@@ -202,7 +210,14 @@ if (file_exists($xml_schema_file) && !$regenerate_schema && $verbose) {
     print_msg(sprintf('<br></br><strong>ОК:</strong> Существующий файл XML схемы:<br></br>`%s`', $xml_schema_file));
 }
 
-$xpdo = new xPDO("mysql:host=$database_server;dbname=$dbase", $database_user, $database_password, $table_prefix);
+$xpdo = new \xPDO\xPDO(
+    "mysql:host=$database_server;dbname=$dbase;charset=utf8",
+    $database_user,
+    $database_password,
+    [
+        \xPDO\xPDO::OPT_TABLE_PREFIX => $table_prefix,
+    ]
+);
 
 // Задайте имя пакета и корневой путь этого пакета 
 $xpdo->setPackage($package_name, $package_dir, $package_dir);
@@ -218,7 +233,7 @@ if ($regenerate_schema) {
         print_msg("<br></br>Прежний файл XML схемы: <br></br>`{$xml_schema_file}` <br></br>блы переименован в <br></br>`{$rename}`.");
         rename($xml_schema_file, $rename);
     }
-    $xml = $generator->writeSchema($xml_schema_file, $package_name, 'xPDOObject', $table_prefix, $restrict_prefix);
+    $xml = $generator->writeSchema($xml_schema_file, $package_name, 'xPDO\\Om\\xPDOObject', $table_prefix, $restrict_prefix);
     if ($verbose) {
         print_msg(sprintf('<br></br><strong>ОК:</strong> XML файл схемы сгенерирован: `%s`<hr></hr>', $xml_schema_file));
     }
