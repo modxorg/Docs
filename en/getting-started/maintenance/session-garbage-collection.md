@@ -3,8 +3,6 @@ title: "Session Garbage Collection"
 description: "Why the modx_session table grows, how PHP session GC works with modSessionHandler, and how to keep sessions pruned"
 ---
 
-## Session Garbage Collection
-
 By default Revolution stores sessions in the database with [`MODX\Revolution\modSessionHandler`](building-sites/settings/session_handler_class) (table `{table_prefix}session`, often `modx_session`). PHP must run session garbage collection (GC) on that handler, or expired rows stay forever.
 
 On many hosts, especially Debian and Ubuntu, `session.gc_probability` is `0` because the OS cleans **file** sessions with a cron job. That cron does **not** touch the MODX session table. SiteDash data around 2021 suggested roughly three in ten MODX sites had no working GC. Tables of several gigabytes and dead sites are a known outcome ([modxcms/revolution#16275](https://github.com/modxcms/revolution/issues/16275)).
