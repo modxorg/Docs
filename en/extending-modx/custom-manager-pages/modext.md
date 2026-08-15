@@ -31,6 +31,8 @@ There are a few components that are used throughout the MODx Manager, and will l
 8. [MODx.msg](extending-modx/custom-manager-pages/modext/modx.msg)
 9. [MODx.tree.Tree](extending-modx/custom-manager-pages/modext/modx.tree.tree)
 10. [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window)
+11. [MODx.util.getHeaderBreadCrumbs](extending-modx/custom-manager-pages/modext/page_breadcrumbs)
+12. [MODx.util.Format.dateFromTimestamp](extending-modx/custom-manager-pages/modext/modx.util.format.datefromtimestamp) (3.x)
 
 ### More MODExt Components
 
