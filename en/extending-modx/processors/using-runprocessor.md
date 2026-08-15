@@ -89,4 +89,4 @@ $response = $modx->runProcessor(
 );
 ```
 
-See the [Processors overview](extending-modx/processors) for login, Resource create, nesting core processors, and writing your own classes.
+See the [Processors overview](extending-modx/processors) for login, Resource create, nesting core processors, and writing your own classes. Browse every core action on the [Core processor list](extending-modx/processors/list).

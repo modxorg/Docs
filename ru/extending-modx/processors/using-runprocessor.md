@@ -88,4 +88,4 @@ $response = $modx->runProcessor(
 );
 ```
 
-Обзор: [Процессоры](extending-modx/processors): вход/выход, создание ресурса, вызов ядра из своего кода и скелет класса.
+Обзор: [Процессоры](extending-modx/processors): вход/выход, создание ресурса, вызов ядра из своего кода и скелет класса. Все action ядра: [Список процессоров ядра](extending-modx/processors/list).

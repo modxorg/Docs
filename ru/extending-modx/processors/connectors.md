@@ -57,5 +57,6 @@ $modx->request->handleRequest([
 ## См. также
 
 - [Процессоры](extending-modx/processors)
+- [Список процессоров ядра](extending-modx/processors/list)
 - [Пользовательские страницы менеджера](extending-modx/custom-manager-pages)
 - [MODExt FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel): отправка через URL коннектора

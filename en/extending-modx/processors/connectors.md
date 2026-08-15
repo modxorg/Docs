@@ -56,5 +56,6 @@ Opening the connector URL in a browser with no session and no `action` usually r
 ## See also
 
 - [Processors](extending-modx/processors)
+- [Core processor list](extending-modx/processors/list)
 - [Custom Manager Pages](extending-modx/custom-manager-pages)
 - [MODExt FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel): posts through a connector URL
