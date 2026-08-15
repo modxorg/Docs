@@ -12,20 +12,19 @@ Packages are collections of maps and classes that represent tables in a database
 
 Packages are loaded in xPDO via the addPackage method or the addExtensionPackage methods. The addPackage method is appropriate for plugins and Snippets that need to load up classes and table data on demand. addExtensionPackage is a convenience method which ultimately relies on addPackage. When a package is added via addExtensionPackage, it is loaded with each MODX request; it is more appropriate for packages that alter core functionality.
 
-The addPackage method takes 3 parameters: 'name', 'path' and an optional 'table\_prefix'. Name is the name of the model package, whereas path is an absolute path to that model directory. The table\_prefix states what the table prefix for the tables of the classes will be. If it's not set, it will default to the xPDO connection default. Let's say we have a xPDO model package already built (with all the maps and classes) in:
+The addPackage method takes the package name, the absolute path to the model directory, and an optional table prefix. If you omit the prefix, xPDO uses the connection default (`xPDO::OPT_TABLE_PREFIX`), which in MODX is the site table prefix. **Do not pass a custom table prefix unless the package tables intentionally use a different prefix than MODX.** A hard-coded third argument overrides the MODX prefix and breaks installs that changed `table_prefix` (see [xPDO.addPackage](extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage)).
+
+Assume an xPDO model package (maps and classes) lives in:
 
 > /myapp/core/model/boxpackage/
 
-And our table prefix is 'myapp\_'. So, we'll pass the first parameter as the package name - in this case 'boxpackage' - and the model path as the 2nd parameter:
+Load it with the connection prefix:
 
 ``` php
-$xpdo->addPackage('boxpackage','/myapp/core/model/','myapp_');
+$xpdo->addPackage('boxpackage', '/myapp/core/model/');
 ```
 
-From then on out, any of our classes in our Package can be loaded via xPDO's retrieval methods.
-
-Using the table\_prefix is not recommended unless you have a good reason to specifically set the table prefix.
-
+From then on, load package classes through xPDO’s retrieval methods.
 ## Conclusion
 
 Now that you've got your package loaded, you'll want to look into [creating objects](extending-modx/xpdo/creating-objects "Creating Objects"), or adding rows to your tables, with xPDO.

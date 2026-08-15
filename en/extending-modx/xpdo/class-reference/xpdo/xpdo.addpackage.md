@@ -25,23 +25,24 @@ boolean addPackage (
 
 - `$pkg` — name of a subfolder under `$path`. That folder holds your `*.class.php` files and usually a platform folder such as `mysql/` with map files (`*.map.inc.php`) and `metadata.{dbtype}.php`.
 - `$path` — absolute path to the directory that **contains** the `$pkg` subfolder. End it with a trailing slash.
-- `$prefix` — table prefix for this package. Pass the prefix your schema expects. If you omit it (`null`), xPDO uses the connection's default table prefix (`xPDO::OPT_TABLE_PREFIX`).
+- `$prefix` — optional table prefix for this package only. Leave it out (`null`) in almost all MODX code so xPDO uses the connection default (`xPDO::OPT_TABLE_PREFIX`), which is the site’s table prefix from `config.inc.php`. A non-null string **overrides** that MODX prefix for every table in the package.
 - `$namespacePrefix` — optional PSR-4 namespace prefix for model classes (xPDO 3 / MODX 3).
 
 The function returns `true` on success and `false` on error. Check the logs when it fails.
 
----
+### When to pass `$prefix`
 
-**Note:** Keep `$prefix` aligned with the prefix baked into your package schema and with the site table prefix when those tables share the same prefix. You can change the MODX prefix (for example when [hardening the install](getting-started/maintenance/securing-modx#changing-default-database-prefixes)); the package and site prefixes still need to match for those tables. If you are unsure, omit `$prefix` and rely on the connection default.
+**Prefer omitting `$prefix`.** Packages that live in the same database as MODX should follow the site prefix. If you hard-code `mypkg_` (or any other string) while the install uses `modx_` or a custom hardened prefix, queries miss the real tables. Sites that [change the default database prefix](getting-started/maintenance/securing-modx#changing-default-database-prefixes) break first.
 
----
+Pass an explicit `$prefix` only when the package tables intentionally use a **different** prefix than the MODX connection (legacy import, shared third-party schema, or a second xPDO connection with its own prefix). In that case document the choice and keep the schema, maps, and call in sync.
 
+If the package was generated against the same prefix as MODX, call `addPackage` with two arguments (or pass `null`) and let the connection supply the prefix.
 ## Example
 
-Most Snippets and plugins load a package from `MODX_CORE_PATH` and point at the component's `model/` directory:
+Most Snippets and plugins load a package from `MODX_CORE_PATH` and point at the component's `model/` directory. Omit the third argument so the package uses the MODX table prefix:
 
 ``` php
-$modx->addPackage('mypkg', MODX_CORE_PATH . 'components/mypkg/model/', 'mypkg_');
+$modx->addPackage('mypkg', MODX_CORE_PATH . 'components/mypkg/model/');
 ```
 
 ## Another Example
@@ -81,7 +82,7 @@ Current FormIt also ships a namespaced xPDO model under `core/components/formit/
 ``` php
 $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 $xpdo->setLogTarget('ECHO');
-if (!$xpdo->addPackage('my_package', '/path/to/docroot/core/components/my_package/model/', 'pkg_')) {
+if (!$xpdo->addPackage('my_package', '/path/to/docroot/core/components/my_package/model/')) {
     print 'There was a problem adding your package.';
 }
 ```
