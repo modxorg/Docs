@@ -44,7 +44,7 @@ When MODX runs a processor it does this (see `Processor::run()`):
 1. `checkPermissions()`: if it fails, you get a permission error response.
 2. Load lexicon topics from `getLanguageTopics()`.
 3. `initialize()`: must return `true`, or the return value becomes the failure message.
-4. `process()`: the real work. Model helpers (`CreateProcessor`, `GetListProcessor`, …) implement a fixed pipeline with hooks you override.
+4. `process()`: the real work. Model helpers (`CreateProcessor`, `GetListProcessor`, ...) implement a fixed pipeline with hooks you override.
 
 Inside your class you read input with `getProperty()` / `getProperties()`, write with `setProperty()`, and finish with `$this->success($message, $object)` or `$this->failure($message)`. Field-level errors use `addFieldError('field', $msg)` so MODExt forms can highlight inputs.
 
@@ -62,13 +62,13 @@ These are equivalent for core processors:
 | Relative namespace | `Resource\Create` |
 | Fully qualified class | `\MODX\Revolution\Processors\Resource\Create` |
 
-Special case: Template Variables live under `Element\TemplateVar\…`. Slash `element/templatevar/create` works. Legacy `element/tv/…` is rewritten to `TemplateVar` in the loader. Details: [Processor loading logic](extending-modx/modx-class/reference/modx.runprocessor#processor-loading-logic).
+Special case: Template Variables live under `Element\TemplateVar\...`. Slash `element/templatevar/create` works. Legacy `element/tv/...` is rewritten to `TemplateVar` in the loader. Details: [Processor loading logic](extending-modx/modx-class/reference/modx.runprocessor#processor-loading-logic).
 
 ## Prefer core processors
 
 When MODX already ships an action you need, call that processor instead of writing raw `newObject()` / `save()` code. You get permissions, validation, alias generation, and plugin events (`OnDocFormSave` and friends) for free. Other extras that listen to those events keep working with your code.
 
-Browse what exists: [Core processor list](extending-modx/processors/list) (Browser, Context, Element, Resource, Security, System, Workspace, …).
+Browse what exists: [Core processor list](extending-modx/processors/list) (Browser, Context, Element, Resource, Security, System, Workspace, ...).
 
 ### Login and logout
 
@@ -130,7 +130,29 @@ if ($response->isError()) {
 }
 ```
 
-More Snippet-oriented examples: [Using runProcessor](extending-modx/processors/using-runprocessor).
+More Snippet-oriented examples (update/delete/publish, Snippet/TV, settings, cache, field errors, FQCN): [Using runProcessor](extending-modx/processors/using-runprocessor).
+
+### Update a Resource
+
+```php
+$response = $modx->runProcessor('resource/update', [
+    'id' => $id,
+    'pagetitle' => 'My page (edited)',
+    'published' => 1,
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
+
+### Clear the cache
+
+```php
+$response = $modx->runProcessor('system/clearcache');
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
 
 ### List processors and grids
 
@@ -182,7 +204,7 @@ if ($response->isError()) {
     return $this->failure($response->getMessage());
 }
 $id = $response->getObject()['id'];
-// attach extra records to $id …
+// attach extra records to $id ...
 ```
 
 Plugins on Resource save still fire. Alias and other core behaviour stay consistent with the manager.

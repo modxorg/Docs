@@ -24,7 +24,101 @@ For how MODX resolves `$action` to a class or file in 3.x, read [Processor loadi
 
 `runProcessor` exists since Revolution 2.0.8. Older installs used the deprecated [`executeProcessor`](extending-modx/modx-class/reference/modx.executeprocessor).
 
-## Create a Chunk
+Exact property names differ per processor. When validation fails, open the class under `core/src/Revolution/Processors/` (3.x) or check the [Core processor list](extending-modx/processors/list).
+
+## Handle the response
+
+```php
+$response = $modx->runProcessor('resource/get', ['id' => 10]);
+if ($response->isError()) {
+    if ($response->hasFieldErrors()) {
+        foreach ($response->getFieldErrors() as $error) {
+            // $error->getField(), $error->getMessage()
+            $modx->log(modX::LOG_LEVEL_ERROR, $error->getField() . ': ' . $error->getMessage());
+        }
+    }
+    return $response->getMessage();
+}
+$resource = $response->getObject();
+```
+
+`$response->getResponse()` returns the full array (`success`, `message`, `object`, `total`, ...).
+
+## Resources
+
+### Create
+
+```php
+$response = $modx->runProcessor('resource/create', [
+    'pagetitle' => 'News item',
+    'alias' => 'news-item',
+    'content' => '<p>Body</p>',
+    'parent' => 5,
+    'template' => 2,
+    'context_key' => 'web',
+    'published' => 1,
+    'class_key' => 'modDocument',
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+$id = (int)$response->getObject()['id'];
+```
+
+### Update
+
+```php
+$response = $modx->runProcessor('resource/update', [
+    'id' => $id,
+    'pagetitle' => 'News item (edited)',
+    'content' => '<p>Updated body</p>',
+    'published' => 1,
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
+
+### Get one / list
+
+```php
+$response = $modx->runProcessor('resource/get', ['id' => $id]);
+if (!$response->isError()) {
+    $row = $response->getObject();
+}
+
+$response = $modx->runProcessor('resource/getlist', [
+    'parent' => 5,
+    'start' => 0,
+    'limit' => 20,
+    'sort' => 'menuindex',
+    'dir' => 'ASC',
+]);
+if (!$response->isError()) {
+    $payload = $response->getResponse();
+    // typically: success, total, results
+}
+```
+
+### Publish, unpublish, delete, undelete, duplicate
+
+```php
+$modx->runProcessor('resource/publish', ['id' => $id]);
+$modx->runProcessor('resource/unpublish', ['id' => $id]);
+$modx->runProcessor('resource/delete', ['id' => $id]);      // soft-delete to recycle bin
+$modx->runProcessor('resource/undelete', ['id' => $id]);
+
+$response = $modx->runProcessor('resource/duplicate', [
+    'id' => $id,
+    'name' => 'News item copy',
+]);
+```
+
+Always check `isError()` in real code. These one-liners omit it for brevity.
+
+## Elements
+
+### Chunk
 
 ```php
 $response = $modx->runProcessor('element/chunk/create', [
@@ -39,9 +133,48 @@ $chunk = $response->getObject();
 return 'Created Chunk "' . $chunk['name'] . '" with ID ' . $chunk['id'];
 ```
 
-## Create a User
+### Snippet
 
-You can create a user with extended fields, group membership, a generated password, and email notification in one call:
+```php
+$response = $modx->runProcessor('element/snippet/create', [
+    'name' => 'HelloUser',
+    'description' => 'Returns the username',
+    'snippet' => 'return $modx->user->get("username");',
+]);
+```
+
+### Template Variable
+
+```php
+$response = $modx->runProcessor('element/templatevar/create', [
+    'name' => 'articleImage',
+    'caption' => 'Article image',
+    'type' => 'image',
+    'category' => 0,
+]);
+```
+
+In 3.x you can also call `\MODX\Revolution\Processors\Element\TemplateVar\Create::class` as `$action`.
+
+## Users and auth
+
+### Login / logout
+
+```php
+$response = $modx->runProcessor('security/login', [
+    'username' => $username,
+    'password' => $password,
+    'rememberme' => 1,
+    'login_context' => 'web',
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+
+$response = $modx->runProcessor('security/logout');
+```
+
+### Create a user
 
 ```php
 $groups = [
@@ -74,7 +207,82 @@ if ($response->isError()) {
 }
 ```
 
-Exact keys depend on the processor. Check the processor class under `core/src/Revolution/Processors/` (3.x) or the matching 2.x path when a field fails validation.
+### Change password
+
+```php
+$response = $modx->runProcessor('security/profile/changepassword', [
+    'password_old' => $oldPassword,
+    'password_new' => $newPassword,
+    'password_confirm' => $newPassword,
+]);
+```
+
+Property names can vary by MODX version. Confirm them in the processor class if the call fails.
+
+## System
+
+### Clear cache
+
+```php
+$response = $modx->runProcessor('system/clearcache');
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
+
+### Create a system setting
+
+```php
+$response = $modx->runProcessor('system/settings/create', [
+    'key' => 'myextra.some_flag',
+    'value' => '1',
+    'xtype' => 'combo-boolean',
+    'namespace' => 'myextra',
+    'area' => 'myextra',
+]);
+```
+
+## Files (media browser)
+
+Upload and filesystem processors expect media-source paths and manager permissions. Typical actions: `browser/file/upload`, `browser/file/remove`, `browser/directory/create`. Pass the same fields the manager file tree sends (source, path, file). From a web Snippet you rarely call these unless the user is authenticated for `mgr` (or you opened that context on purpose).
+
+```php
+// Example shape only: required keys depend on source and request
+$response = $modx->runProcessor('browser/directory/create', [
+    'name' => 'exports',
+    'parent' => '/',
+    'source' => 1,
+]);
+```
+
+## 3.x class name as action
+
+```php
+use MODX\Revolution\Processors\Resource\Create;
+
+$response = $modx->runProcessor(Create::class, [
+    'pagetitle' => 'Via FQCN',
+    'context_key' => 'web',
+]);
+```
+
+## Nest core processors inside your own
+
+```php
+$response = $modx->runProcessor('resource/create', $resourceData);
+if ($response->isError()) {
+    return $this->failure($response->getMessage());
+}
+$id = (int)$response->getObject()['id'];
+
+$tvResponse = $modx->runProcessor('resource/update', [
+    'id' => $id,
+    'pagetitle' => $resourceData['pagetitle'],
+    // include TV values the update processor expects for your setup
+]);
+```
+
+Plugins on Resource save still run for each successful core call.
 
 ## Custom processor path
 
@@ -89,4 +297,18 @@ $response = $modx->runProcessor(
 );
 ```
 
-See the [Processors overview](extending-modx/processors) for login, Resource create, nesting core processors, and writing your own classes. Browse every core action on the [Core processor list](extending-modx/processors/list).
+## Permissions from the front end
+
+Many core processors need manager permissions. From a `web` Snippet either:
+
+1. Run as a user who already has those policies in `web`, or
+2. Initialize the manager context for trusted/internal scripts only: `$modx->initialize('mgr');`
+
+Do not expose privileged processors on public forms without your own auth and CSRF checks.
+
+## See also
+
+- [Processors overview](extending-modx/processors)
+- [Core processor list](extending-modx/processors/list)
+- [modX.runProcessor](extending-modx/modx-class/reference/modx.runprocessor)
+- [Connectors](extending-modx/processors/connectors)

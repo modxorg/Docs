@@ -45,7 +45,7 @@ $object = $response->getObject(); // массив полей из ответа �
 1. `checkPermissions()`: при отказе вернётся ответ с ошибкой прав.
 2. Загрузка лексиконов из `getLanguageTopics()`.
 3. `initialize()`: должен вернуть `true`, иначе возвращённое значение станет текстом ошибки.
-4. `process()`: основная работа. Model-хелперы (`CreateProcessor`, `GetListProcessor`, …) задают фиксированный пайплайн с хуками, которые вы переопределяете.
+4. `process()`: основная работа. Model-хелперы (`CreateProcessor`, `GetListProcessor`, ...) задают фиксированный пайплайн с хуками, которые вы переопределяете.
 
 В классе читайте вход через `getProperty()` / `getProperties()`, пишите через `setProperty()`, завершайте через `$this->success($message, $object)` или `$this->failure($message)`. Ошибки полей: `addFieldError('field', $msg)`, чтобы формы MODExt подсветили инпуты.
 
@@ -63,13 +63,13 @@ $object = $response->getObject(); // массив полей из ответа �
 | Относительный namespace | `Resource\Create` |
 | Полное имя класса | `\MODX\Revolution\Processors\Resource\Create` |
 
-Особый случай: Template Variables лежат в `Element\TemplateVar\…`. Путь `element/templatevar/create` работает. Устаревший `element/tv/…` лоадер переписывает в `TemplateVar`. Подробности: [логика загрузки](extending-modx/modx-class/reference/modx.runprocessor#processor-loading-logic).
+Особый случай: Template Variables лежат в `Element\TemplateVar\...`. Путь `element/templatevar/create` работает. Устаревший `element/tv/...` лоадер переписывает в `TemplateVar`. Подробности: [логика загрузки](extending-modx/modx-class/reference/modx.runprocessor#processor-loading-logic).
 
 ## Берите процессоры ядра
 
 Если нужное действие уже есть в MODX, вызывайте его процессор вместо сырого `newObject()` / `save()`. Так вы получаете права, валидацию, генерацию `alias` и события плагинов (`OnDocFormSave` и другие). Дополнения, которые слушают эти события, продолжают работать с вашим кодом.
 
-Что есть в ядре: [Список процессоров ядра](extending-modx/processors/list) (Browser, Context, Element, Resource, Security, System, Workspace, …).
+Что есть в ядре: [Список процессоров ядра](extending-modx/processors/list) (Browser, Context, Element, Resource, Security, System, Workspace, ...).
 
 ### Вход и выход
 
@@ -131,7 +131,29 @@ if ($response->isError()) {
 }
 ```
 
-Больше примеров из сниппетов: [Использование runProcessor](extending-modx/processors/using-runprocessor).
+Больше примеров из сниппетов (update/delete/publish, сниппет/TV, настройки, кэш, ошибки полей, FQCN): [Использование runProcessor](extending-modx/processors/using-runprocessor).
+
+### Обновление ресурса
+
+```php
+$response = $modx->runProcessor('resource/update', [
+    'id' => $id,
+    'pagetitle' => 'Моя страница (правка)',
+    'published' => 1,
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
+
+### Очистка кэша
+
+```php
+$response = $modx->runProcessor('system/clearcache');
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
 
 ### Списки и гриды
 
@@ -183,7 +205,7 @@ if ($response->isError()) {
     return $this->failure($response->getMessage());
 }
 $id = $response->getObject()['id'];
-// дальше привяжите свои записи к $id …
+// дальше привяжите свои записи к $id ...
 ```
 
 Плагины на сохранение ресурса сработают. `alias` и остальное поведение ядра совпадут с менеджером.

@@ -23,7 +23,101 @@ $response = $modx->runProcessor($action, $scriptProperties, $options);
 
 `runProcessor` есть с Revolution 2.0.8. Раньше использовали устаревший [`executeProcessor`](extending-modx/modx-class/reference/modx.executeprocessor).
 
-## Создание чанка
+Точные имена свойств зависят от процессора. Если валидация падает, откройте класс в `core/src/Revolution/Processors/` (3.x) или смотрите [Список процессоров ядра](extending-modx/processors/list).
+
+## Обработка ответа
+
+```php
+$response = $modx->runProcessor('resource/get', ['id' => 10]);
+if ($response->isError()) {
+    if ($response->hasFieldErrors()) {
+        foreach ($response->getFieldErrors() as $error) {
+            // $error->getField(), $error->getMessage()
+            $modx->log(modX::LOG_LEVEL_ERROR, $error->getField() . ': ' . $error->getMessage());
+        }
+    }
+    return $response->getMessage();
+}
+$resource = $response->getObject();
+```
+
+`$response->getResponse()` возвращает весь массив (`success`, `message`, `object`, `total`, ...).
+
+## Ресурсы
+
+### Создание
+
+```php
+$response = $modx->runProcessor('resource/create', [
+    'pagetitle' => 'Новость',
+    'alias' => 'news-item',
+    'content' => '<p>Текст</p>',
+    'parent' => 5,
+    'template' => 2,
+    'context_key' => 'web',
+    'published' => 1,
+    'class_key' => 'modDocument',
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+$id = (int)$response->getObject()['id'];
+```
+
+### Обновление
+
+```php
+$response = $modx->runProcessor('resource/update', [
+    'id' => $id,
+    'pagetitle' => 'Новость (правка)',
+    'content' => '<p>Обновлённый текст</p>',
+    'published' => 1,
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
+
+### Получить один / список
+
+```php
+$response = $modx->runProcessor('resource/get', ['id' => $id]);
+if (!$response->isError()) {
+    $row = $response->getObject();
+}
+
+$response = $modx->runProcessor('resource/getlist', [
+    'parent' => 5,
+    'start' => 0,
+    'limit' => 20,
+    'sort' => 'menuindex',
+    'dir' => 'ASC',
+]);
+if (!$response->isError()) {
+    $payload = $response->getResponse();
+    // обычно: success, total, results
+}
+```
+
+### Публикация, удаление, дублирование
+
+```php
+$modx->runProcessor('resource/publish', ['id' => $id]);
+$modx->runProcessor('resource/unpublish', ['id' => $id]);
+$modx->runProcessor('resource/delete', ['id' => $id]);      // в корзину
+$modx->runProcessor('resource/undelete', ['id' => $id]);
+
+$response = $modx->runProcessor('resource/duplicate', [
+    'id' => $id,
+    'name' => 'Копия новости',
+]);
+```
+
+В боевом коде всегда проверяйте `isError()`. В однострочниках выше проверка опущена для краткости.
+
+## Элементы
+
+### Чанк
 
 ```php
 $response = $modx->runProcessor('element/chunk/create', [
@@ -38,9 +132,48 @@ $chunk = $response->getObject();
 return 'Создан чанк "' . $chunk['name'] . '" с ID ' . $chunk['id'];
 ```
 
-## Создание пользователя
+### Сниппет
 
-Можно за один вызов создать пользователя с расширенными полями, группами, сгенерированным паролем и письмом:
+```php
+$response = $modx->runProcessor('element/snippet/create', [
+    'name' => 'HelloUser',
+    'description' => 'Возвращает имя пользователя',
+    'snippet' => 'return $modx->user->get("username");',
+]);
+```
+
+### TV
+
+```php
+$response = $modx->runProcessor('element/templatevar/create', [
+    'name' => 'articleImage',
+    'caption' => 'Картинка статьи',
+    'type' => 'image',
+    'category' => 0,
+]);
+```
+
+В 3.x `$action` может быть и `\MODX\Revolution\Processors\Element\TemplateVar\Create::class`.
+
+## Пользователи и авторизация
+
+### Вход / выход
+
+```php
+$response = $modx->runProcessor('security/login', [
+    'username' => $username,
+    'password' => $password,
+    'rememberme' => 1,
+    'login_context' => 'web',
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+
+$response = $modx->runProcessor('security/logout');
+```
+
+### Создание пользователя
 
 ```php
 $groups = [
@@ -73,7 +206,82 @@ if ($response->isError()) {
 }
 ```
 
-Нужные ключи зависят от процессора. Если валидация падает, откройте класс в `core/src/Revolution/Processors/` (3.x) или соответствующий путь в 2.x.
+### Смена пароля
+
+```php
+$response = $modx->runProcessor('security/profile/changepassword', [
+    'password_old' => $oldPassword,
+    'password_new' => $newPassword,
+    'password_confirm' => $newPassword,
+]);
+```
+
+Имена полей могут отличаться по версии MODX. Если вызов падает, сверьте их в классе процессора.
+
+## Система
+
+### Очистка кэша
+
+```php
+$response = $modx->runProcessor('system/clearcache');
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
+
+### Создание системной настройки
+
+```php
+$response = $modx->runProcessor('system/settings/create', [
+    'key' => 'myextra.some_flag',
+    'value' => '1',
+    'xtype' => 'combo-boolean',
+    'namespace' => 'myextra',
+    'area' => 'myextra',
+]);
+```
+
+## Файлы (media browser)
+
+Процессоры загрузки и ФС ждут пути media source и права менеджера. Типичные action: `browser/file/upload`, `browser/file/remove`, `browser/directory/create`. Передавайте те же поля, что шлёт дерево файлов в менеджере (source, path, file). Из веб-сниппета их вызывают редко, пока пользователь не аутентифицирован для `mgr` (или вы сами не открыли этот контекст).
+
+```php
+// Только форма вызова: нужные ключи зависят от источника и запроса
+$response = $modx->runProcessor('browser/directory/create', [
+    'name' => 'exports',
+    'parent' => '/',
+    'source' => 1,
+]);
+```
+
+## Action как класс 3.x
+
+```php
+use MODX\Revolution\Processors\Resource\Create;
+
+$response = $modx->runProcessor(Create::class, [
+    'pagetitle' => 'Через FQCN',
+    'context_key' => 'web',
+]);
+```
+
+## Ядерный процессор внутри своего
+
+```php
+$response = $modx->runProcessor('resource/create', $resourceData);
+if ($response->isError()) {
+    return $this->failure($response->getMessage());
+}
+$id = (int)$response->getObject()['id'];
+
+$tvResponse = $modx->runProcessor('resource/update', [
+    'id' => $id,
+    'pagetitle' => $resourceData['pagetitle'],
+    // добавьте значения TV, которые ждёт update в вашей схеме
+]);
+```
+
+Плагины на сохранение ресурса сработают на каждый успешный вызов ядра.
 
 ## Свой каталог процессоров
 
@@ -88,4 +296,18 @@ $response = $modx->runProcessor(
 );
 ```
 
-Обзор: [Процессоры](extending-modx/processors): вход/выход, создание ресурса, вызов ядра из своего кода и скелет класса. Все action ядра: [Список процессоров ядра](extending-modx/processors/list).
+## Права с фронтенда
+
+Многим процессорам ядра нужны права менеджера. Из сниппета в `web` либо:
+
+1. Работайте под пользователем, у которого эти политики уже есть в `web`, либо
+2. Для доверенных/внутренних скриптов инициализируйте менеджер: `$modx->initialize('mgr');`
+
+Не отдавайте привилегированные процессоры на публичные формы без своей авторизации и CSRF.
+
+## См. также
+
+- [Процессоры](extending-modx/processors)
+- [Список процессоров ядра](extending-modx/processors/list)
+- [modX.runProcessor](extending-modx/modx-class/reference/modx.runprocessor)
+- [Коннекторы](extending-modx/processors/connectors)
