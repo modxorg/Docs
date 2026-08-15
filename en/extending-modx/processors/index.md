@@ -1,107 +1,172 @@
 ---
 title: 'Processors'
-description: "Processors can be compared to commands or actions"
+description: "Processors are PHP classes that run one action: create a resource, list records, log a user in"
 ---
 
-## Processors in MODX
+## What a processor is
 
-Processors can be compared to "commands" or "actions". Before MODX 2.2 they were "simple" PHP files, but they have since been rewritten based on the `modProcessor` class, and its various subtypes.
+A processor is a PHP class that runs **one** action against MODX: create a Chunk, list Resources, log a user in, upload a file. The manager UI, connectors, Snippets, and Plugins all reach the same actions through processors.
 
-So, we are talking about processor files, these are PHP scripts that can perform certain functions. For clarity, have a look at [/core/model/modx/processors](https://github.com/modxcms/revolution/tree/2.x/core/model/modx/processors) and you will see how many there are.
+Since MODX 2.2 processors are class-based (subclasses of the processor base class). Flat `.php` processor files without a class are gone in MODX 3.0.
 
-You can work with processors from any Snippet or Plugin using [runProcessor](extending-modx/processors/using-runprocessor) method: 
+Core processor classes live under:
 
-``` php
-$response = $modx->runProcessor('action/path/to/processor',$arrayOfProperties,$otherOptions);
+- **3.x:** [`core/src/Revolution/Processors/`](https://github.com/modxcms/revolution/tree/3.x/core/src/Revolution/Processors)
+- **2.x:** `core/model/modx/processors/` (legacy layout)
+
+You call them from PHP with [`modX::runProcessor`](extending-modx/modx-class/reference/modx.runprocessor). Manager AJAX goes through a [connector](extending-modx/processors/connectors), which ends up in the same method.
+
+```php
+$response = $modx->runProcessor(
+    'resource/create',
+    $properties,
+    $options // optional; often unused for core processors
+);
 ```
 
-In response we get [modProcessorResponse](https://github.com/modxcms/revolution/blob/df90fecfdfcf719cabe171ea3db59e47f45d7ee9/core/model/modx/modprocessor.class.php) object with all its methods.
+`$response` is a [`ProcessorResponse`](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/Processors/ProcessorResponse.php) (3.x) / `modProcessorResponse` (2.x). Check the result before you trust the data:
 
-## Standard processors
+```php
+if ($response->isError()) {
+    return $response->getMessage();
+}
+$object = $response->getObject(); // array of fields from the processor
+```
 
-As an example please check `security` folder - there are` login` and `logout` processors that control user authorization. Here's how we can authorize the user:
+Useful methods: `isError()`, `getMessage()`, `getObject()`, `getResponse()`, `hasFieldErrors()`, `getFieldErrors()`.
 
-``` php
-$username = 'ivanpetrov';
-$password = '*********';
-$data = array(
+## Prefer core processors
+
+When MODX already ships an action you need, call that processor instead of writing raw `newObject()` / `save()` code. You get permissions, validation, alias generation, and plugin events (`OnDocFormSave` and friends) for free. Other extras that listen to those events keep working with your code.
+
+### Login and logout
+
+```php
+$data = [
     'username' => $username,
     'password' => $password,
     'rememberme' => 1,
     'login_context' => 'web',
-);    
-$response = $modx->runProcessor('/security/login', $data);
+];
+$response = $modx->runProcessor('security/login', $data);
 if ($response->isError()) {
-    $modx->log(modX::LOG_LEVEL_ERROR, 'login error. Username: '.$username.', Message: '.$response->getMessage());
+    $modx->log(
+        modX::LOG_LEVEL_ERROR,
+        'Login failed for ' . $username . ': ' . $response->getMessage()
+    );
 }
 ```
 
-Leaving website is even easier: 
-
-``` php
-$response = $modx->runProcessor('/security/logout');
+```php
+$response = $modx->runProcessor('security/logout');
 if ($response->isError()) {
-    $modx->log(modX::LOG_LEVEL_ERROR, 'Logout error. Username: '.$modx->user->get('username').', uid: '.$modx->user->get('id').'. Message: '.$response->getMessage());
+    $modx->log(modX::LOG_LEVEL_ERROR, $response->getMessage());
 }
 ```
 
-This is very convenient and ensures that your's component will work in all MODX versions. Therefore, if possible, you should always use standard processors.
+In 3.x you can also pass the namespaced class, for example `\MODX\Revolution\Processors\Security\Login`. Slash paths such as `security/login` still resolve. See [Processor loading logic](extending-modx/modx-class/reference/modx.runprocessor#processor-loading-logic).
 
-Of course, standard processors don't know how to work with your Components.
+### Create a Resource
 
-## Own processors
+```php
+$response = $modx->runProcessor('resource/create', [
+    'pagetitle' => 'My page',
+    'content' => '<p>Hello</p>',
+    'parent' => 0,
+    'template' => 1,
+    'context_key' => 'web',
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+$id = $response->getObject()['id'];
+```
 
-Using your own processors differs from the standard ones only in that you need to specify the folder where to get them from. Let's see an example from [miniShop2](https://minishop2.com): 
+Omit fields you do not care about. The processor fills defaults from System Settings. Set `class_key` when you create a custom Resource type.
 
-``` php
-// Array we will send to processor, there to catch it in $scriptProperties
-$processorProps = array(
-    'id' => 55
+## Custom processors
+
+Extras keep processors under their own tree, usually `core/components/myextra/processors/`. Point `runProcessor` at that tree with `processors_path`:
+
+```php
+$response = $modx->runProcessor(
+    'web/orders/getlist',
+    ['id' => 55],
+    [
+        'processors_path' => $modx->getOption('core_path')
+            . 'components/myextra/processors/',
+    ]
 );
-// Options array for the runProcessor method
-$otherProps = array(
-    // Here we indicate where our processors are located
-    'processors_path' => $modx->getOption('core_path') . 'components/minishop/processors/'
-);
-// Run
-$response = $modx->runProcessor('web/orders/getlist', $processorProps, $otherProps);
-// And return response from the processor
-return $response->response;
+if ($response->isError()) {
+    return $response->getMessage();
+}
+return $modx->toJSON($response->getResponse());
 ```
 
-This is a slightly modified example from miniShop Snippet, where it [processes personal account requests](https://github.com/bezumkin/miniShop/blob/master/core/components/minishop/elements/snippets/minishop.php#L26).
+The action has no file extension. MODX looks for `{processors_path}web/orders/getlist.class.php` (and expects a processor class). Same idea as a connector: the connector sets `processors_path`, then routes `action` to a file.
 
-As you can see start processor is specified without extension, by the path from the processor folder. If we do not specify our folder, it will be `/core/model/modx/processors/` by default. In the example above we change it to a folder inside miniShop component.
+### Call a core processor from your own
 
-## Standard processor inside native
+Inside a custom create processor you can run a core one, then continue with your own fields:
 
-Here's the most interesting! Let's see an example: 
-
-``` php
-$response = $modx->runProcessor('resource/create', $_POST);
+```php
+$response = $modx->runProcessor('resource/create', $resourceData);
 if ($response->isError()) {
-    return $modx->error->failure($response->getMessage());
+    return $this->failure($response->getMessage());
+}
+$id = $response->getObject()['id'];
+// attach extra records to $id …
+```
+
+Plugins on Resource save still fire. Alias and other core behaviour stay consistent with the manager.
+
+## Writing a class-based processor
+
+Minimal create processor for a custom xPDO object (3.x class names):
+
+```php
+<?php
+namespace MyExtra\Processors\Item;
+
+use MODX\Revolution\Processors\Model\CreateProcessor;
+
+class Create extends CreateProcessor
+{
+    public $classKey = 'MyExtra\\Model\\Item';
+    public $objectType = 'myextra.item';
+    public $primaryKeyField = 'id';
+
+    public function beforeSet()
+    {
+        $name = trim((string)$this->getProperty('name'));
+        if ($name === '') {
+            $this->addFieldError('name', $this->modx->lexicon('myextra.item_err_name'));
+        }
+        return parent::beforeSet();
+    }
 }
 
-$id = $response->response['object']['id'];
+return Create::class;
 ```
 
-Here we create a new resource using standard processor from `$_POST` data and get resource `id` from response.
-[Here is the source code](https://github.com/bezumkin/miniShop/blob/master/core/components/minishop/processors/mgr/goods/create.php) the entire miniShop processor to create a new product.
+Common model helpers (3.x → see the [3.0 processors upgrade notes](getting-started/upgrading-to-3.0/processors) for the full map):
 
-This approach ensures that regardless of future changes to MODX, its processor will work in all versions. And, very importantly, **plugins will work** that should work when creating new resources. Also, `alias` will be generated (if you use them), and as indicated in the System Settings, through transliteration, or not.
-Updating products works the same way, and for example [mSearch](https://docs.modx.pro/en/components/msearch2) gets `OnDocFormSave` event and indexes this resource.
+| Role | 3.x class |
+| ---- | --------- |
+| Create | `\MODX\Revolution\Processors\Model\CreateProcessor` |
+| Update | `\MODX\Revolution\Processors\Model\UpdateProcessor` |
+| Get | `\MODX\Revolution\Processors\Model\GetProcessor` |
+| Get list | `\MODX\Revolution\Processors\Model\GetListProcessor` |
+| Remove | `\MODX\Revolution\Processors\Model\RemoveProcessor` |
 
-You may not use `runProcessor` in such cases and work through` newObject` method - but then you need to additionally generate events for plugins, define unset fields of a new resource, generate `alias` and much more.
-For what - if MODX has already foreseen all this?
+In 2.x the same roles use `modObjectCreateProcessor`, `modObjectGetListProcessor`, and so on. Hooks you override most often: `initialize`, `beforeSet`, `beforeSave`, `afterSave`, `prepareQueryBeforeCount` (lists).
 
-## Conclusion
+## Next steps
 
-Processors are a great thing, and you need to make the most of them in all your Snippets. If you want to do something with a resource or other element - please check if there is a ready-made processor in the system for this?
-If yes - use it! This saves you a lot of headache and allows other Components and plugins to interact with your code.
-
-## See also
-
-- [Getting started with class-based processors](https://www.markhamstra.com/xpdo/2012/getting-started-with-class-based-processors-2.2/) (at markhamstra.com)
-- [Extending modObjectGetListProcessor, a powerful class based processor in MODX 2.2](https://www.markhamstra.com/xpdo/2012/modobjectgetlistprocessor-class-based-processor/) (at markhamstra.com)
-- [Full list of MODX Processors](https://bobsguides.com/modx-processor-list.html) (at bobsguides.com)
+- [Using runProcessor](extending-modx/processors/using-runprocessor) — practical Snippet examples
+- [modX.runProcessor](extending-modx/modx-class/reference/modx.runprocessor) — parameters and 3.x loading rules
+- [Connectors](extending-modx/processors/connectors) — AJAX gateway for CMPs
+- [Processors in the 3.0 upgrade guide](getting-started/upgrading-to-3.0/processors)
+- [Developing an Extra, Part II](extending-modx/tutorials/developing-an-extra/part-2) — connector + getlist walkthrough
+- [Class-based processors](https://www.markhamstra.com/xpdo/2012/getting-started-with-class-based-processors-2.2/) and [modObjectGetListProcessor](https://www.markhamstra.com/xpdo/2012/modobjectgetlistprocessor-class-based-processor/) (Mark Hamstra)
+- [Processor list](https://bobsguides.com/modx-processor-list.html) (Bob's Guides, oriented to 2.x paths)

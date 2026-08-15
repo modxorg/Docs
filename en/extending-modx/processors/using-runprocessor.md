@@ -4,49 +4,89 @@ _old_id: "493"
 _old_uri: "2.x/developing-in-modx/advanced-development/using-runprocessor"
 ---
 
-The usage of runProcessor described here only work in Revolution 2.0.8 and later. Users prior to that will have to use the deprecated [executeProcessor](extending-modx/modx-class/reference/modx.executeprocessor "modX.executeProcessor") method.
-
 ## Using runProcessor
 
-MODX has a specific method that allows you to run processors straight from any PHP file, such as a [Plugin](extending-modx/plugins "Plugins"), [Snippet](extending-modx/snippets "Snippets") or externally. This can be done with the following syntax:
+[`modX::runProcessor`](extending-modx/modx-class/reference/modx.runprocessor) runs a processor from any PHP context that has a `$modx` instance: a [Snippet](extending-modx/snippets), [Plugin](extending-modx/plugins), custom script, or another processor.
 
-> $response = $modx->runProcessor('action/path/to/processor',$arrayOfProperties,$otherOptions);
+```php
+$response = $modx->runProcessor($action, $scriptProperties, $options);
+```
 
-This will then execute the specified processor and return a modProcessorResponse object, that contains the response from the processor. That can then be checked to see if the process was a success or failure. The first parameter, or action, is the path to the processor (without the file extension) from the core/model/modx/processors/ directory (This directory can also be overridden in the 3rd parameter array with the param 'processors\_path').
+| Argument | Role |
+| -------- | ---- |
+| `$action` | Processor to run. In 3.x: full class name, `Resource\Create`, or legacy path `resource/create`. |
+| `$scriptProperties` | Data the processor reads via `getProperty()` / `getProperties()`. |
+| `$options` | Optional. Main key: `processors_path` for extras outside the core tree. |
 
-For example, this code creates a new Chunk:
+Returns a `ProcessorResponse` (3.x) / `modProcessorResponse` (2.x). Use `isError()`, `getMessage()`, and `getObject()` (array of returned fields).
 
-``` php
-$response = $modx->runProcessor('element/chunk/create',array(
-   'name' => 'NewChunk',
-   'description' => 'A test Chunk made with runProcessor.',
-   'snippet' => '<h3>Chunkify!</h3>',
-));
+For how MODX resolves `$action` to a class or file in 3.x, read [Processor loading logic](extending-modx/modx-class/reference/modx.runprocessor#processor-loading-logic).
+
+`runProcessor` exists since Revolution 2.0.8. Older installs used the deprecated [`executeProcessor`](extending-modx/modx-class/reference/modx.executeprocessor).
+
+## Create a Chunk
+
+```php
+$response = $modx->runProcessor('element/chunk/create', [
+    'name' => 'NewChunk',
+    'description' => 'A test Chunk made with runProcessor.',
+    'snippet' => '<h3>Chunkify!</h3>',
+]);
 if ($response->isError()) {
     return $response->getMessage();
 }
-$chunkArray = $response->getObject();
-return 'The chunk "'.$chunkArray['name'].' was created with ID '.$chunkArray['id'];
+$chunk = $response->getObject();
+return 'Created Chunk "' . $chunk['name'] . '" with ID ' . $chunk['id'];
 ```
 
-This block of code runs the 'element/chunk/create' processor, checks to see if it was successful (with isError()), and if so, returns a message saying the ID and the name of the new Chunk. Note that getObject returns an **array** of the object that is returned by the processor. getMessage will return any message sent back from the processor.
+## Create a User
 
-You can also create an entire user, including Extended Fields, group assignments, a generated password and email notification.
+You can create a user with extended fields, group membership, a generated password, and email notification in one call:
 
-``` php
-$groups = array();
-$groups['Group1']['usergroup'] = '7'; // ID of group
-$groups['Group1']['role'] = '1'; // ID of role
-$groups['Group2']['usergroup'] = '8';
-$groups['Group2']['role'] = '1';
-$fields = array();
-$fields['active'] = true;
-$fields['passwordgenmethod'] = 'g';
-$fields['passwordnotifymethod'] = 'e';
-$fields['email'] = $email;
-$fields['username'] = $username;
-$fields['fullname'] = $fullname;
-$fields['extended']['container']['name'] = $value;
-$fields['groups'] = $groups;
+```php
+$groups = [
+    'Group1' => [
+        'usergroup' => '7', // user group ID
+        'role' => '1',      // role ID
+    ],
+    'Group2' => [
+        'usergroup' => '8',
+        'role' => '1',
+    ],
+];
+$fields = [
+    'active' => true,
+    'passwordgenmethod' => 'g',
+    'passwordnotifymethod' => 'e',
+    'email' => $email,
+    'username' => $username,
+    'fullname' => $fullname,
+    'extended' => [
+        'container' => [
+            'name' => $value,
+        ],
+    ],
+    'groups' => $groups,
+];
 $response = $modx->runProcessor('security/user/create', $fields);
+if ($response->isError()) {
+    return $response->getMessage();
+}
 ```
+
+Exact keys depend on the processor. Check the processor class under `core/src/Revolution/Processors/` (3.x) or the matching 2.x path when a field fails validation.
+
+## Custom processor path
+
+```php
+$response = $modx->runProcessor(
+    'mgr/item/update',
+    ['id' => 12, 'name' => 'Updated'],
+    [
+        'processors_path' => $modx->getOption('core_path')
+            . 'components/myextra/processors/',
+    ]
+);
+```
+
+See the [Processors overview](extending-modx/processors) for login, Resource create, nesting core processors, and writing your own classes.

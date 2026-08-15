@@ -3,49 +3,89 @@ title: "Использование runProcessor"
 translation: "extending-modx/processors/using-runprocessor"
 ---
 
-Использование runProcessor, описанное здесь, работает только в Revolution 2.0.8 и более поздних версиях. Пользователи до этого должны будут использовать устаревшие [executeProcessor](extending-modx/modx-class/reference/modx.executeprocessor "modX.executeProcessor") методы.
-
 ## Использование runProcessor
 
-У MODX есть специальный метод, который позволяет вам запускать процессоры прямо из любого файла PHP, такого как [Плагин](extending-modx/plugins "Плагины"), [Сниппет](extending-modx/snippets "Сниппет") или внешне. Это можно сделать с помощью следующего синтаксиса:
+[`modX::runProcessor`](extending-modx/modx-class/reference/modx.runprocessor) запускает процессор из любого PHP-контекста с экземпляром `$modx`: [сниппет](extending-modx/snippets), [плагин](extending-modx/plugins), свой скрипт или другой процессор.
 
-> $response = $modx->runProcessor('action/path/to/processor',$arrayOfProperties,$otherOptions);
+```php
+$response = $modx->runProcessor($action, $scriptProperties, $options);
+```
 
-Затем он выполнит указанный процессор и вернет объект modProcessorResponse, который содержит ответ от процессора. Затем можно проверить, был ли процесс успешным или неудачным. Первый параметр или действие - это путь к процессору (без расширения файла) из папки `core/model/modx/processors/` (Этот каталог также может быть переопределен в массиве 3-х параметров с помощью параметра `processors_path`).
+| Аргумент | Назначение |
+| -------- | ---------- |
+| `$action` | Какой процессор вызвать. В 3.x: полное имя класса, `Resource\Create` или путь в стиле 2.x `resource/create`. |
+| `$scriptProperties` | Данные, которые процессор читает через `getProperty()` / `getProperties()`. |
+| `$options` | Опционально. Главный ключ: `processors_path` для процессоров вне дерева ядра. |
 
-Например, этот код создает новый Чанк:
+Возвращает `ProcessorResponse` (3.x) / `modProcessorResponse` (2.x). Смотрите `isError()`, `getMessage()` и `getObject()` (массив полей).
 
-``` php
-$response = $modx->runProcessor('element/chunk/create',array(
-   'name' => 'NewChunk',
-   'description' => 'Тестовый чанк создан с runProcessor.',
-   'snippet' => '<h3>Chunkify!</h3>',
-));
+Как 3.x превращает `$action` в класс или файл: [логика загрузки](extending-modx/modx-class/reference/modx.runprocessor#processor-loading-logic).
+
+`runProcessor` есть с Revolution 2.0.8. Раньше использовали устаревший [`executeProcessor`](extending-modx/modx-class/reference/modx.executeprocessor).
+
+## Создание чанка
+
+```php
+$response = $modx->runProcessor('element/chunk/create', [
+    'name' => 'NewChunk',
+    'description' => 'Тестовый чанк через runProcessor.',
+    'snippet' => '<h3>Chunkify!</h3>',
+]);
 if ($response->isError()) {
     return $response->getMessage();
 }
-$chunkArray = $response->getObject();
-return 'The chunk "'.$chunkArray['name'].' was created with ID '.$chunkArray['id'];
+$chunk = $response->getObject();
+return 'Создан чанк "' . $chunk['name'] . '" с ID ' . $chunk['id'];
 ```
 
-Этот блок кода запускает процессор `element/chunk/create`, проверяет, был ли он успешным (с помощью `isError()`), и, если так, возвращает сообщение с указанием идентификатора и имени нового чанка. Обратите внимание, что getObject возвращает **массив** объекта, который возвращается процессором. `getMessage` вернет любое сообщение, отправленное обратно процессором.
+## Создание пользователя
 
-Вы также можете создать целого пользователя, включая Расширенные поля, групповые назначения, сгенерированный пароль и уведомление по электронной почте.
+Можно за один вызов создать пользователя с расширенными полями, группами, сгенерированным паролем и письмом:
 
-``` php
-$groups = array();
-$groups['Group1']['usergroup'] = '7'; // ID of group
-$groups['Group1']['role'] = '1'; // ID of role
-$groups['Group2']['usergroup'] = '8';
-$groups['Group2']['role'] = '1';
-$fields = array();
-$fields['active'] = true;
-$fields['passwordgenmethod'] = 'g';
-$fields['passwordnotifymethod'] = 'e';
-$fields['email'] = $email;
-$fields['username'] = $username;
-$fields['fullname'] = $fullname;
-$fields['extended']['container']['name'] = $value;
-$fields['groups'] = $groups;
+```php
+$groups = [
+    'Group1' => [
+        'usergroup' => '7', // ID группы
+        'role' => '1',      // ID роли
+    ],
+    'Group2' => [
+        'usergroup' => '8',
+        'role' => '1',
+    ],
+];
+$fields = [
+    'active' => true,
+    'passwordgenmethod' => 'g',
+    'passwordnotifymethod' => 'e',
+    'email' => $email,
+    'username' => $username,
+    'fullname' => $fullname,
+    'extended' => [
+        'container' => [
+            'name' => $value,
+        ],
+    ],
+    'groups' => $groups,
+];
 $response = $modx->runProcessor('security/user/create', $fields);
+if ($response->isError()) {
+    return $response->getMessage();
+}
 ```
+
+Нужные ключи зависят от процессора. Если валидация падает, откройте класс в `core/src/Revolution/Processors/` (3.x) или соответствующий путь в 2.x.
+
+## Свой каталог процессоров
+
+```php
+$response = $modx->runProcessor(
+    'mgr/item/update',
+    ['id' => 12, 'name' => 'Updated'],
+    [
+        'processors_path' => $modx->getOption('core_path')
+            . 'components/myextra/processors/',
+    ]
+);
+```
+
+Обзор: [Процессоры](extending-modx/processors) — вход/выход, создание ресурса, вызов ядра из своего кода и скелет класса.
