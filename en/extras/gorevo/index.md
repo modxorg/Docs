@@ -6,7 +6,7 @@ _old_uri: "revo/gorevo"
 
 ## What is GoRevo?
 
-GoRevo is a commercial extra that performs an intelligent migration of MODX Evolution sites to MODX Revolution. 
+GoRevo is a commercial Extra that migrates older 1.x sites to modern MODX. 
  
 ### Features
 
@@ -25,7 +25,7 @@ GoRevo is a commercial extra that performs an intelligent migration of MODX Evol
 - Custom Plugins
 - Selected files and/or directories
 
-GoRevo will attempt to convert Ditto, Breadcrumbs, WebLogin, WebLoginPE, and PHX tags to work in Revolution. Wayfinder tags will generally work as is. GoRevo will also attempt to duplicate the User Groups, User Login credentials, and Resource Groups from the Evolution site.
+GoRevo attempts to convert Ditto, Breadcrumbs, WebLogin, WebLoginPE, and PHX tags for modern MODX. Wayfinder tags usually work as-is. GoRevo also tries to duplicate User Groups, login credentials, and Resource Groups from the source site.
 
 You can get more information about GoRevo at [Bob's Guides](https://bobsguides.com/why-choose-gorevo.html).
 
@@ -33,7 +33,7 @@ You can get more information about GoRevo at [Bob's Guides](https://bobsguides.c
 
 - Author: Bob Ray [Bob's Guides](https://bobsguides.com)
 
-GoRevo took about six months of intensive development. It has been used to convert many Evolution sites to MODX Revolution, including many conversions performed by MODX LLC.
+GoRevo took about six months of intensive development. Teams have used it to convert many older 1.x sites to modern MODX, including conversions performed by MODX LLC.
 
 This version of the GoRevo extra was developed by Bob Ray in 2014. As of Jun 22, 2017 it had been last updated on December 21, 2017, had 190 commits, and had been downloaded 61 times. The GoRevo package consists of 1,563 separate files, containing 32,211 lines of code.
 

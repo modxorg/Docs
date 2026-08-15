@@ -27,23 +27,11 @@ En esta página, encontrarás las siguientes categorías y preguntas:
 
 ## 1. MODX 101
 
-### 1.1. ¿Qué es MODX Evolution y qué es MODX Revolution? ¿Cual es la diferencia?
+### 1.1. ¿Qué es MODX?
 
-MODX Evolution es el código heredado en las versiones 1.x. Ha impulsado cientos de miles de sitios web en los últimos cinco años y es lo que ha dado forma a MODX.
+MODX es un CMS y framework de aplicaciones de código abierto. Esta documentación cubre MODX 2.x y 3.x (históricamente también llamado Revolution).
 
-MODX Revolution es una reescritura completa de MODX Evolution que comparte las mismas ideas pero se basa en xPDO, una capa de abstracción de base de datos, y finalmente vio la luz del día en 2010.
-
-En este momento, hay tres tipos de productos MODX :
-
-- 0.9.6.x – es la base de código original que comenzó con su primera versión de producción/estable como la versión 0.9.0 a finales de octubre del 2005. Ya no es compatible, y REALMENTE debería actualizar a la última versión de Evolution. ¡Las vulnerabilidades en 0.9.6.x han sido reparadas hace mucho tiempo!
-- Evolution 1.x – una distribución limpia y refinada de 0.9.6.x con convenciones y terminología más acorde con nuestro totalmente reescrito Revolution.
-- Revolution 2.x – una derivación completamente orientada a objetos y completamente nueva que ha estado en desarrollo durante más de 3 años, que aborda las limitaciones encontradas en la base del código original, como tener un analizador verdaderamente recursivo y eliminar el límite máximo de 5,000 documentos.
-
-Otras lecturas:
-
-- "La Evolución de una Revolución" <https://modx.com/about/blog/the-evolution-of-a-revolution/>
-- "¿Cuáles son las diferencias básicas entre Evolución y Revolución?" <https://modx.com/revolution/product/faq/#q1>
-- Hay una gran cantidad de temas importantes en los foros, además de discutir evo y revo, que pueden ser interesantes si buscas una discusión más profunda de las diferencias. Dado que Revolution lleva más de tres años en desarrollo, revise la fecha en que se publicó algo para asegurarse de que sigan siendo relevantes.
+Las versiones 1.x antiguas quedan fuera del alcance de estos docs.
 
 ### 1.2. ¿Qué etiquetas diferentes puedo usar? Que es `[[*pagetitle]]`, `[[Wayfinder]]` etc?
 
@@ -57,7 +45,7 @@ Probablemente la escondiste en algún momento. Hay una flecha sutil en el lado i
 
 ### 2.2 ¿Cómo puedo modificar los campos de recursos que son visibles al crear o editar un [Recurso](building-sites/resources "Recurso")? ¿Existe algo como [Administrador del Manager](https://modx.com/extras/package/managermanager) en Revolution?
 
-Puede usar la [Personalización de formularios](building-sites/client-proofing/form-customization "Personalización de Formularios") (que se encuentra bajo el menú de Seguridad) para cambiar los campos. No ofrece todo el complemento ManagerManager (Evolution) pero llega bastante lejos.
+Puede usar la [Personalización de formularios](building-sites/client-proofing/form-customization "Personalización de Formularios") (que se encuentra bajo el menú de Seguridad) para cambiar los campos.
 
 ### 2.3 ¿Qué significa modDocument/modWeblink/modSymLink/modStaticResource?
 

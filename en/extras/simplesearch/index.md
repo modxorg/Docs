@@ -15,7 +15,7 @@ SimpleSearch is a simple search component for MODX Revolution. It supports searc
 
 ## History
 
-SimpleSearch was written by [Shaun McCormick](https://github.com/splittingred) as a simple search component, and first released on June 2nd, 2010. It is loosely based on AjaxSearch for MODX Evolution by KyleJ/coroico, without the Ajax functionality.
+SimpleSearch was written by [Shaun McCormick](https://github.com/splittingred) as a simple search component, and first released on June 2nd, 2010. It is loosely based on AjaxSearch by KyleJ/coroico, without the Ajax functionality.
 
 ## Upgrade risks
 

@@ -17,11 +17,11 @@ Common questions and quick fixes for MODX 3. For deeper troubleshooting, see the
 
 ## 1. MODX 101
 
-### 1.1. What is MODX / MODX Revolution / MODX Evolution?
+### 1.1. What is MODX?
 
 **MODX** (also called **MODX Revolution**) is the actively developed CMS documented here. Current releases are **3.x**. See [An Overview of MODX](getting-started/what-is-modx) for concepts.
 
-**MODX Evolution** is a separate, older 1.x product line. It is not covered by these 3.x docs. Sites still on Evolution need a migration project; there is no official one-click upgrade path. Historical notes live under [Upgrading from Evolution](getting-started/maintenance/upgrading/evolution).
+Older 1.x releases sit outside the scope of these docs.
 
 If you are moving from **Revolution 2.x to 3.x**, start with [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0).
 
