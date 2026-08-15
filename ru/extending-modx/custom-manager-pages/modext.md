@@ -30,6 +30,8 @@ MODExt является расширением [JavaScript-фреймворка 
 8. [MODx.msg](extending-modx/custom-manager-pages/modext/modx.msg)
 9. [MODx.tree.Tree](extending-modx/custom-manager-pages/modext/modx.tree.tree)
 10. [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window)
+11. [MODx.util.getHeaderBreadCrumbs](extending-modx/custom-manager-pages/modext/page_breadcrumbs)
+12. [MODx.util.Format.dateFromTimestamp](extending-modx/custom-manager-pages/modext/modx.util.format.datefromtimestamp) (3.x)
 
 ### Больше компонентов MODExt
 
