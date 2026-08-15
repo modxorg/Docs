@@ -3,110 +3,100 @@ title: "FAQs & Troubleshooting"
 sortorder: 2
 _old_id: "1689"
 _old_uri: "2.x/faqs-and-troubleshooting"
-note: "This page hasn't been updated in a while, and could use a good review."
 ---
 
-This document aims to get you started with common issues / questions with MODX Revolution by either answering it, or pointing you to the right resources. It is by no means exclusive, and a good search on the forums and this documentation may find more resources for what you're looking for. In all cases - if you can't find what you need, do ask in the [forums](http://forums.modx.com) or on IRC: irc.freenode.org channel: #MODX.
+Common questions and quick fixes for MODX 3. For deeper troubleshooting, see the topic-specific pages below. If you still need help, ask in the [MODX Community](https://community.modx.com) or [Slack](https://modx.org).
 
-The questions numbering represents nothing but that - a number to indicate what question you're looking at to help scanning through.
+## Related troubleshooting
 
-This is a documentation stub, and could use your help to complete! If you don't have access to edit this page, [please post anything you would want to see added or updated in this topic on the forums](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
-
-This document will always be a work in progress as new features are added / changed, and it could use your help in keeping it structured and up to date! If you do not have access to editing this document, [please post anything you would want to see added or updated in this topic on the forums](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
-
-## Table of Contents
-
-FAQs and/or Troubleshooting on specific subjects elsewhere:
-
-- [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation")
-- [Troubleshooting Upgrades](getting-started/maintenance/upgrading/troubleshooting "Troubleshooting Upgrades")
-- [Troubleshooting Package Management](building-sites/extras/troubleshooting "Troubleshooting Package Management")
-- [Troubleshooting Security](building-sites/client-proofing/security/troubleshooting-security "Troubleshooting Security")
-
-Subpages dealing with specific subjects:
-
-- [CMP Development FAQs & Troubleshooting](extending-modx/custom-manager-pages/troubleshooting "CMP Development FAQs & Troubleshooting")
-
-On this page, you will find the following categories and questions:
+- [Troubleshooting Installation](getting-started/installation/troubleshooting)
+- [Troubleshooting Upgrades](getting-started/maintenance/upgrading/troubleshooting)
+- [Troubleshooting Package Management](building-sites/extras/troubleshooting)
+- [Troubleshooting Security](building-sites/client-proofing/security/troubleshooting-security)
+- [CMP Development FAQs & Troubleshooting](extending-modx/custom-manager-pages/troubleshooting)
 
 ## 1. MODX 101
 
-### 1.1. What is MODX Evolution, and what is MODX Revolution? What's the difference?
+### 1.1. What is MODX / MODX Revolution / MODX Evolution?
 
-MODX Evolution is the legacy code and are the 1.x versions. It has powered hundreds of thousands of websites in the past five years and is what has shaped MODX.
+**MODX** (also called **MODX Revolution**) is the actively developed CMS documented here. Current releases are **3.x**. See [An Overview of MODX](getting-started/what-is-modx) for concepts.
 
-MODX Revolution is a complete rewrite of MODX Evolution which shares the same ideas but is based on xPDO, a database abstraction layer, and finally saw daylight in 2010.
+**MODX Evolution** is a separate, older 1.x product line. It is not covered by these 3.x docs. Sites still on Evolution need a migration project; there is no official one-click upgrade path. Historical notes live under [Upgrading from Evolution](getting-started/maintenance/upgrading/evolution).
 
-There are three kinds of MODX products at this point:
+If you are moving from **Revolution 2.x to 3.x**, start with [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0).
 
-- 0.9.6.x – the original code base that started with it's first production/stable release as version 0.9.0 at the end of October 2005. _No longer supported, and you REALLY should update to the latest Evolution version. Exploits founds in 0.9.6.x have long been fixed!_
-- Evolution 1.x – a cleaned up and refined distribution of 0.9.6.x with conventions and terminology more in line with our totally rewritten Revolution release.
-- Revolution 2.x – a fully object oriented and completely new branch that's been in development for more than 3 years that addresses limitations found in the original code base such as having a truly recursive parser and eliminating the 5,000 document ceiling.
+### 1.2. What PHP / server version do I need?
 
-Further reading:
+See [Server Requirements](getting-started/server-requirements). Current MODX 3.x (**3.2 and later**) requires **PHP 8.1 or higher**. MODX 3.0 originally allowed PHP 7.2+; that floor was raised in 3.2.
 
-- "The Evolution of a Revolution" <https://modx.com/about/blog/the-evolution-of-a-revolution/>
-- "What are the basic differences between Evolution and Revolution?" <https://modx.com/revolution/product/faq/#q1>
-- There's a number of big topics on the forums as well discussing evo and revo which may be interesting if you're looking for more in-depth discussing of the differences. As Revolution has been over three years in development, do check out the date something was posted to be sure they are still relevant.
+### 1.3. What different tags can I use? What is `[[*pagetitle]]`, `[[Wayfinder]]`, etc.?
 
-### 1.2. What different tags can I use? What is `[[*pagetitle]]`, `[[Wayfinder]]` etc?
-
-Check out the [Tag Syntax](building-sites/tag-syntax "Tag Syntax") documentation. You can find resource fields you can use in Revolution on the [Resources Documentation](building-sites/resources "Resources").
+See [Tag Syntax](building-sites/tag-syntax). Resource fields you can use in tags are listed under [Resources](building-sites/resources).
 
 ## 2. The Manager
 
-### 2.1. Help! Where did the sidebar go?
+### 2.1. Help! Where did the sidebar / resource tree go?
 
-You probably hid it at some point. There's a subtle arrow on the left side of the screen ([see this image](subtlearrow.PNG)) that you can click to bring it back. In some cases you will need to refresh the page for the contents of the sidebar to load properly.
+You probably collapsed it. There is a small arrow on the left edge of the screen ([see this image](subtlearrow.PNG)). Click it to bring the tree back. Refresh the page if the tree stays empty after expanding.
 
-### 2.2 How can I modify what resource fields are visible when creating or editing a [Resource](building-sites/resources "Resource")? Is there something like [ManagerManager](https://modx.com/extras/package/managermanager) for Revolution?
+### 2.2. How can I change which resource fields are visible when editing?
 
-You can use [Form Customization](building-sites/client-proofing/form-customization "Form Customization") (found under the Security menu) to change the fields. It doesn't offer all of the (Evolution) ManagerManager plugin but comes pretty far.
+Use [Form Customization](building-sites/client-proofing/form-customization) to hide, rename, or rearrange fields on the Resource create/update screens (and to limit rules to certain user groups or templates).
 
-### 2.3 What does modDocument/ modWeblink/ modSymLink/ modStaticResource mean?
+### 2.3. What do modDocument / modWeblink / modSymLink / modStaticResource mean?
 
-They are the class names of Documents, Weblinks, Symlinks and Static Resources. They are "subtypes" of Resources (class name modResource) and each have their own specific goal. They all show up in the Resource Tree and can appear anywhere in the hierarchy.
+They are the class names for the built-in Resource types (in 3.x they live under the `MODX\Revolution\` namespace; short names are still commonly used). All appear in the Resource Tree:
 
-- [Documents](building-sites/resources "Resources") (commonly refered to as Resources, see 2.4 below) are regular pages and have content.
-- A [Weblink](building-sites/resources/weblink "Weblink") redirect a user to a different Resource or an external URL.
-- A [Symlink](building-sites/resources/symlink "Symlink") acts as a copy of a Document
-- [Static Resources](building-sites/resources/static-resource "Static Resource") act like Documents, however their content comes from a file on the filesystem.
+- [Documents](building-sites/resources) (class `modDocument`): normal pages with content. People often say “Resource” when they mean a Document.
+- [Weblinks](building-sites/resources/weblink): redirect to another Resource or an external URL
+- [Symlinks](building-sites/resources/symlink): reuse another Document’s content at a different URL
+- [Static Resources](building-sites/resources/static-resource): content comes from a file on the filesystem
 
-### 2.4 What is the difference between a Resource and a Document?
+### 2.4. What is the difference between a Resource and a Document?
 
-Technically, a Resource (modResource) is an abstract object of which a Document (modDocument) is an implementation.
+Technically, a Resource (`modResource`) is the abstract base; a Document (`modDocument`) is the usual HTML page implementation. In everyday use, “Resource” often means “that page in the tree,” which might be a Document, Weblink, Symlink, or Static Resource.
 
-Practically both terms are used to indicate the same thing: a Document which holds certain content. Coming from the technical implementation, a [Weblink](building-sites/resources/weblink "Weblink"), [Symlink](building-sites/resources/symlink "Symlink") or [Static Resource](building-sites/resources/static-resource "Static Resource") are also be included when referring to "Resources" as they are also implementations of the modResource class.
+### 2.5. I'm locked out of the manager / forgot my password
 
-### 2.5 I'm locked out! I can't access the manager! Forgot my password and recovery doesn't work!
+See [Resetting a User Password Manually](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually).
 
-You're not doomed. [Check out these instructions for Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Resetting a User Password Manually").
+### 2.6. I get a 500 Internal Server Error in the manager
 
-### 2.6 I am getting a 500 HTTP Internal Server Error
+Try these first:
 
-If you're experiencing a 500 internal server error in the manager, here are a few things to try that typically resolves most common problems:
+1. Clear or rename `core/cache/` (a corrupt cache is a frequent cause).
+2. Open the manager in a private/incognito window (rules out bad cookies/sessions).
+3. Confirm PHP meets [Server Requirements](getting-started/server-requirements) for your MODX version.
+4. Check `core/cache/logs/error.log` for the real PHP error.
 
-- Rename or remove the `/core/cache` folder. The cache can sometimes get corrupted. 
-- Open an incognito window in your browser. That resolves any cookie-related issues.
+More install-time cases are covered in [Troubleshooting Installation](getting-started/installation/troubleshooting).
 
-## 3. Frontend Display Issues
+### 2.7. The manager is blank / shows “undefined” / broken layout
 
-### 3.1 Blank frontend pages resolved by Clearing Cache
+Often caused by failed JS/CSS loading or a bad cache. Clear `core/cache/`, hard-refresh the browser, and see the community checklist: [Blank manager with undefined message](https://community.modx.com/t/blank-manager-with-undefined-message/3799/20). Also review [Troubleshooting Installation](getting-started/installation/troubleshooting) (including disabling `compress_js` / `compress_css` if asset URLs are failing).
 
-In Revolution 2.2.5 the way xPDO/MODX write cache files has been re-factored. If you are having issues with blank frontend pages that are resolved after clearing the site cache, you could try setting _use\_flock_. This should help with RackSpace Cloud hosting, GoDaddy hosting, and some other providers. 
+## 3. Frontend and cache issues
 
-Also, if after saving a resource/template the browser only gives an error message 500 when loading the manager. And if the problem can then be solved by deleting the entire cache directory content via FTP, then this indicates a flock issue.
+### 3.1. Blank frontend pages that work again after clearing the cache
 
-In your MODX config file add the setting _use\_flock_ in your $config\_options array, and set it to false.
+On some hosts (notably certain cloud/shared setups), file locking when writing cache files can leave you with blank pages or 500s after saving until you wipe `core/cache/`.
 
-See Original Post: <http://forums.modx.com/thread/78611/core-cache-file-locks-and-will-not-update#dis-post-434053>
+In `core/config/config.inc.php`, disable flock by adding `use_flock` to `$config_options` and setting it to `false`:
 
-### 3.2 General Snippet Problems
+``` php
+$config_options = array(
+    'use_flock' => false,
+);
+```
 
-If you find a snippet and/or plugin isn't working properly despite the correct code, double check that it has been installed.
+(Merge with any existing `$config_options` entries rather than replacing them.)
 
-## 4. Frontend Display Issues
+### 3.2. A Snippet or Plugin does nothing
 
-### 4.1 Blank manager pages
+Confirm it is actually installed and enabled (Extras → Installer / the Elements tree), that the tag name matches, and that you cleared the cache after installing or editing it. Cached pages will keep serving old output until cleared.
 
-Perhaps the most complete list of what needs to be checked is described here: <https://community.modx.com/t/blank-manager-with-undefined-message/3799/20> 
+## 4. Upgrading
+
+### 4.1. How do I upgrade within 3.x, or from 2.x to 3.x?
+
+Follow [Upgrading MODX](getting-started/maintenance/upgrading). For any move from 2.x to 3.x, also read [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0) before you start: class namespaces, processors, the core path, and PHP requirements all change. Remember that **3.2+ needs PHP 8.1+**.

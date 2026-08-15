@@ -1,5 +1,6 @@
 ---
 title: "Git Installation"
+sortorder: "4"
 _old_id: "154"
 _old_uri: "2.x/getting-started/installation/git-installation"
 ---
@@ -47,55 +48,21 @@ Run `composer install` in the root of the `www` directory.
 
 ``` bash
 $ composer install
-Loading composer repositories with package information
-Updating dependencies (including require-dev)
-Package operations: 21 installs, 0 updates, 0 removals
-
-- Installing psr/log (1.0.2): Loading from cache
-- Installing symfony/debug (v4.0.6): Loading from cache
-- Installing symfony/polyfill-mbstring (v1.7.0): Loading from cache
-- Installing symfony/console (v3.4.6): Loading from cache
-- Installing psr/container (1.0.0): Loading from cache
-- Installing container-interop/container-interop (1.2.0): Loading from cache
-- Installing xpdo/xpdo (3.x-dev 5801782): Cloning 58017821d0 from cache
-- Installing mtdowling/jmespath.php (2.4.0): Loading from cache
-- Installing psr/http-message (1.0.1): Loading from cache
-- Installing guzzlehttp/psr7 (1.4.2): Loading from cache
-- Installing guzzlehttp/promises (v1.3.1): Loading from cache
-- Installing guzzlehttp/guzzle (6.3.0): Loading from cache
-- Installing aws/aws-sdk-php (3.52.30): Downloading (100%)
-- Installing league/flysystem (1.0.43): Loading from cache
-- Installing league/flysystem-aws-s3-v3 (1.0.18): Loading from cache
-- Installing psr/cache (1.0.1): Loading from cache
-- Installing league/flysystem-cached-adapter (1.0.6): Loading from cache
-- Installing phpmailer/phpmailer (v6.0.3): Loading from cache
-- Installing smarty/smarty (v3.1.31): Loading from cache
-- Installing james-heinrich/phpthumb (v1.7.14): Loading from cache
-- Installing pelago/emogrifier (v2.0.0): Loading from cache
-symfony/console suggests installing symfony/event-dispatcher ()
-symfony/console suggests installing symfony/lock ()
-symfony/console suggests installing symfony/process ()
-xpdo/xpdo suggests installing ext-redis (Allows caching using Redis)
-aws/aws-sdk-php suggests installing aws/aws-php-sns-message-validator (To validate incoming SNS notifications)
-aws/aws-sdk-php suggests installing doctrine/cache (To use the DoctrineCacheAdapter)
-league/flysystem suggests installing league/flysystem-aws-s3-v2 (Allows you to use S3 storage with AWS SDK v2)
-league/flysystem suggests installing league/flysystem-azure (Allows you to use Windows Azure Blob storage)
-league/flysystem suggests installing league/flysystem-eventable-filesystem (Allows you to use EventableFilesystem)
-league/flysystem suggests installing league/flysystem-rackspace (Allows you to use Rackspace Cloud Files)
-league/flysystem suggests installing league/flysystem-sftp (Allows you to use SFTP server storage via phpseclib)
-league/flysystem suggests installing league/flysystem-webdav (Allows you to use WebDAV storage)
-league/flysystem suggests installing league/flysystem-ziparchive (Allows you to use ZipArchive adapter)
-league/flysystem suggests installing spatie/flysystem-dropbox (Allows you to use Dropbox storage)
-league/flysystem suggests installing srmklive/flysystem-dropbox-v2 (Allows you to use Dropbox storage for PHP 5 applications)
-league/flysystem-cached-adapter suggests installing ext-phpredis (Pure C implemented extension for PHP)
-phpmailer/phpmailer suggests installing league/oauth2-google (Needed for Google XOAUTH2 authentication)
-phpmailer/phpmailer suggests installing hayageek/oauth2-yahoo (Needed for Yahoo XOAUTH2 authentication)
-phpmailer/phpmailer suggests installing stevenmaguire/oauth2-microsoft (Needed for Microsoft XOAUTH2 authentication)
-Writing lock file
-Generating autoload files
+Installing dependencies from lock file (including require-dev)
+Verifying lock file contents can be installed on current platform.
+Package operations: 40 installs, 0 updates, 0 removals
+  - Installing xpdo/xpdo (3.2.0): Extracting archive
+  - Installing league/flysystem (2.5.0): Extracting archive
+  - Installing phpmailer/phpmailer (v6.9.1): Extracting archive
+  - Installing smarty/smarty (v4.5.0): Extracting archive
+  - Installing guzzlehttp/guzzle (7.8.1): Extracting archive
+  ...
+Generating optimized autoload files
 ```
 
-It may be necessary from time-to-time to run `composer update` to make sure you're up-to-date.
+Exact package versions change over time; a successful run ends with Composer generating the autoloader under `core/vendor/`.
+
+It may be necessary from time to time to run `composer update` so dependencies stay current with the branch you are on.
 
 ### Run the build
 
@@ -212,21 +179,15 @@ If you want to point git at your own fork to contribute back to MODX:
 
 Now navigate to the standard setup, e.g. `http://localhost/setup/` to configure and install MODX.
 
-### DYLD error with MAMP on Mac OS X
+### Using MAMP’s PHP on macOS
 
-If you use MAMP on Mac OS X, you may get problems (errors about DYLD libraries not being included) when trying to execute `transport.core.php` from the terminal. This is because the MAMP PHP libraries won't be on the dynamic linker path by default.
-
-To adjust the dynamic linker library path to include the MAMP PHP libraries, run the following command via the terminal:
+If `php -v` in Terminal shows a different version than MAMP (or the build fails with library errors), call MAMP’s PHP binary explicitly. Paths vary by MAMP version; a typical PHP 8.2 install looks like:
 
 ``` bash
-export DYLD_LIBRARY_PATH=/Applications/MAMP/Library/lib:$\{DYLD_LIBRARY_PATH\}
+/Applications/MAMP/bin/php/php8.2.0/bin/php transport.core.php
 ```
 
-You can then execute `transport.core.php` by using the absolute path to the MAMP PHP executable:
-
-``` bash
-/Applications/MAMP/bin/php5/bin/php transport.core.php
-```
+You can also put that `bin` directory early in your `PATH` (see below) so plain `php` and `composer` use the same version.
 
 ### Making sure `php` is in your PATH
 
@@ -234,19 +195,19 @@ If you're encountering issues with running the composer or build steps, check if
 
 ``` bash
 $ php -v
-PHP 7.2.3 (cli) (built: Mar 8 2018 10:30:06) ( NTS )
-Copyright (c) 1997-2018 The PHP Group
-Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
- with Zend OPcache v7.2.3, Copyright (c) 1999-2018, by Zend Technologies
+PHP 8.2.12 (cli) (built: Nov 21 2023 08:00:00) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v4.2.12, Copyright (c) Zend Technologies
+ with Zend OPcache v8.2.12, Copyright (c), by Zend Technologies
 ```
 
-If you do not get something like the above, please ask someone or Google on how to get it installed.
+You need **PHP 8.1 or higher** for current MODX 3.x (required since 3.2). If `php -v` reports an older version, install or select a newer PHP before continuing.
 
-In some local development environments (e.g. MAMP, XAMMP), you may also want to verify which version of PHP you're using. 
+In some local development environments (e.g. MAMP, XAMPP), you may also want to verify which version of PHP you're using. 
 
 ``` bash
 $ which php
-/Applications/MAMP/bin/php/php7.4.12/bin/php
+/Applications/MAMP/bin/php/php8.2.0/bin/php
 ```
 
 If that does not return the path you're expecting, edit the `$PATH` in your `~/.bash_profile` or `~/.zshrc`. 

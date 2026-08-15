@@ -3,154 +3,131 @@ title: "Basic Installation"
 sortorder: "1"
 _old_id: "32"
 _old_uri: "2.x/getting-started/installation/basic-installation"
+description: "Install MODX 3 from the traditional zip package"
 ---
 
-## Beginning Setup
+This guide walks through a normal new install from the **traditional** zip download. Most sites should use this path.
 
-After you've [downloaded](getting-started/installation "Installation") MODX Revolution, upload the .zip file to your server. On the server itself, either through your control panel extraction script or in the server's file manager, extract the file to its own directory. Copy or move all the files within the new extracted MODX version directory to the directory that you wish to install MODX into. You may delete the extracted folder and its contents, as well as the MODX .zip file once your installation is complete.
+- Upgrading an existing site? See [Upgrading MODX](getting-started/maintenance/upgrading).
+- Renaming `manager/` or `connectors/`? Use the [Advanced Installation](getting-started/installation/advanced).
+- Installing from Git or Composer? See [Git Installation](getting-started/installation/git) or [Composer](getting-started/installation/composer).
 
-You can install MODX into any directory you wish, although installing to the root is generally preferred for production sites.
+## 1. Check requirements
 
-FTP Warning - Using FTP to transfer unpacked files to your server may result in corrupted or incomplete transfers. This can affect your installation negatively. If at all possible, use your server's unpacking script or utility to transfer or move extracted MODX installation files.
+Confirm your host meets the [Server Requirements](getting-started/server-requirements). Current MODX 3.x (3.2+) needs **PHP 8.1+** and MySQL/MariaDB.
 
-### Installing MODX With An Existing Site
+You will need:
 
-Development sites often begin in a subdirectory, and then are [moved](getting-started/maintenance/moving-your-site "Moving Your Site to a New Server") to the root directory when completed. The subdirectory method is useful if you've got an existing site that must remain available during development, or for subdomain MODX installations. It is also possible to leave MODX in a subdirectory and use .htaccess to rewrite your urls to the root.
+- A web root (or subdirectory) where the site will live
+- A MySQL database and a database user with full rights on that database
+- The ability to upload/extract files (file manager, SFTP, or SSH)
 
-#### Existing Static HTML Site
+## 2. Download and place the files
 
-If your existing site is static html with an index.html or similar start page, you can install MODX into the root folder alongside your static site while developing. When you are ready to go live, rename or move your static html files and MODX will take over. **Do not enable** [Friendly URL's](getting-started/friendly-urls "Using Friendly URLs") if using this method until after your html files have been moved or renamed. As always, **back up your existing site** prior to installing MODX Revolution or making any changes to your current file structure.
+1. Download the latest **traditional** package from [modx.com/download](https://modx.com/download/).
+2. Upload the zip to your server.
+3. Extract it **on the server** (hosting file manager or `unzip`). Prefer extracting on the server over uploading thousands of files via FTP, which may corrupt or skip files.
+4. Move the extracted files into your web root (or the subdirectory you want to use), so that `index.php`, `core/`, `manager/`, `connectors/`, and `setup/` sit in that directory.
+5. You can delete the zip and any empty wrapper folder left after extraction.
 
-#### Existing Other CMS or Dynamically Driven Site
+Installing in the domain root is usual for production. A subdirectory is fine for testing. Special cases (existing HTML/CMS site, temporary hosting URL) are covered in [Installing alongside an existing site](getting-started/installation/existing-site).
 
-Do not install MODX Revolution into a directory that contains another dynamically driven site or CMS until that site is removed. Use the subdirectory method to develop MODX in this case.
+Before continuing, ensure PHP can write to at least:
 
-In all cases except for a new blank site, installing MODX Revolution to a subdirectory for development is the safest method.
+- `core/cache/`
+- `core/config/`
+- `core/packages/`
+- `core/import/`
+- `core/export/`
 
-### Pre-DNS Transfer Installation to Temporary Directory
+## 3. Create the database
 
-If your host provides a temporary installation folder to develop in prior to DNS transfer, once your DNS has been transferred you will need to reference the [Moving Your Site to Another Server](getting-started/maintenance/moving-your-site "Moving Your Site to a New Server") page and update the configuration files: _core/config/config.inc.php, /config.core.php, /connectors/config.php, and /manager/config.core.php_ paths to point to your new root directory.
+In your host’s MySQL tool (phpMyAdmin, control panel, CLI, etc.):
 
-## Installing MODX Revolution
+1. Create an empty database (utf8mb4 is a good default charset when the host offers it).
+2. Create a database user and grant it all privileges on that database. If you prefer a more restrictive set of database permissions, see the list in [Server Requirements](getting-started/server-requirements).
+3. Note the hostname (often `localhost`), database name, username, and password. Some shared hosts prefix database and usernames (for example `account_modx`); use the full names setup expects.
 
-Start the install process by loading your web browser and running the setup script by navigating to the **setup/** folder.
+## 4. Run setup
 
-You might want to check the [Server Requirements](getting-started/server-requirements "Server Requirements") page first. If you're still having issues installing, please read the [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation") page.
+In your browser, open `https://yoursite.example/setup/` to start the installation wizard.
 
-Before running setup, make sure your core/cache/ and core/config/ directories are writable by PHP.
+Use your real domain or local URL, and include a subdirectory if you installed into one.
 
-From there you will be asked to choose a language, and be presented with a welcome screen. Click Next when you're ready.
+### Language and welcome
 
-## Install Options
+Choose your language, then continue past the welcome screen.
 
-After this, you'll be presented with a screen with some Install Options:
+### Install options
 
 ![](setup-opt1.png)
 
-The New Installation option should be the only available option for you to choose. If you need to adjust the file permissions for your webserver, you can do so in the textfields below. Most servers will be fine with the default values.
+For a new site, leave **New Installation** selected. File and directory permission fields can usually stay at the defaults. Click **Next**.
 
-When you're finished, click Next to proceed.
-
-## Database Options
-
-From here, you will get a form asking you for your database information:
+### Database connection
 
 ![](setup-db-1.png)
 
-You can create your database and user prior to this step. Make sure your database user is associated with the new database and the user is given permission for all privileges for that database.
+Enter:
 
-- Add in your database hostname, which is the URL at which your database is located. For most users, this will be 'localhost'.
-- Enter your database user name. On some hosts, your database username is prefixed with the site owner directory name such as `siteOwner_modxDatabase`. In this case, the entire database name must be entered. Check your database tool in your control panel, or the database itself for such a prefix.
-- Your username may also be prefixed with the same site owner directory name. If so, you must prefix your username here the same. i.e. `siteOwner_databaseUserName`.
-- Enter your password.
-- Also, if you want, you can specify a different table prefix here. This tells MODX to prefix the tables with this value - this is useful should you want to make multiple MODX installations on one database.
-- When finished, click the 'Test database server connection and view collations' link. Should you have any errors, they will show below. If you do have errors, check to make sure your database username and password are correct. Also, if your user does not have access to create a database, you might need to do that manually.
+- **Database hostname** - usually `localhost`. For a non-standard port use `host;port=3307`. For a Unix socket you can use a form like `;unix_socket=/path/to/mysql.sock`.
+- **Username** and **password**
+- **Database name**
+- **Table prefix** - `modx_` is fine; change it only if you share one database across multiple MODX installs
 
-### MySQL Notes
+Click **Test database server connection and view collations**. Fix any errors before continuing (wrong password, missing database, or a user without rights are the usual causes).
 
-If you have your MySQL server on a different port, specify it like so: "my.database.com;port=3307", with the ;port= appending the IP/hostname.  If you are running your MySQL server with networking disabled, you can specify the socket name like this: ";unix\_socket=MySQL".
-
-### Microsoft SQL Server Notes
-
-> Important: sqlsrv support is deprecated and has been removed from MODX 3.0.
-
-Support for Microsoft SQL Server was introduced in MODX Revolution 2.1  Depending on your SQL Server's network configuration, there are different ways you may specify your host.
-
-- Named pipe: (local)/SQLEXPRESS
-- Tcp/ip: 127.0.0.1,2301 (IP, port)
-
-Due to the way that the PDO driver for SqlSrv works, you may not get an error message or a response back after clicking 'Test database server connection and view collations'. If this happens, it is an indication that there is a problem connecting to the database, authenticating or selecting the database itself. After verifying your settings, click the Back button to go to the previous page, and then Next to get back to the Database Options page.
-
-### Collations and Charsets
-
-This will then popup another form for setting your database charset and collation:
+### Charset and collation
 
 ![](setup-db2.png)
 
-For most users you can leave these values at what they are. However, if you need to change them, **make sure** the collation matches the charset. Click the 'Create or test selection of your database.' after you've finished.
+Typically, you'll want to use `utf8mb4` and `utf8mb4_general_ci` to have wide compatibility. Using plain `utf8` can make it impossible to save emojis or certain scripts. If you change them, keep charset and collation matched. Then create or confirm the database selection as setup asks.
 
-**Microsoft SQL Server Notes**
-MODX has only been tested with SQL Server's Latin1 character set.
-
-### Creating an Administrator User
+### Administrator user
 
 ![](setup-db3.png)
 
-This form will now present you with a few fields for setting up your administrator user. Specify a username that you want to be the administrator username.
+Create the main Manager user:
 
-MODX recommends **not** using 'admin', as this is a common administrator username and is often the first username hackers check.
+- Prefer a username other than `admin`
+- Use a strong password
+- Use a real email address you control (setup also uses this for the initial `emailsender` setting)
 
-From there, put in your email (or the email of your administrator) and specify a password. Click next when you're finished.
+Click **Next**.
 
-Some host's server configurations won't allow MODX to send emails if the System Setting [emailsender](building-sites/settings/emailsender) (set at install to the email address entered for the default admin user) is not valid for the domain. If MODX is not sending registration or form emails, check the [emailsender](building-sites/settings/emailsender) and set it to a valid email address for the hosted domain.
+### Pre-installation checks and install
 
-## Pre-Installation Checks
+Setup verifies PHP, extensions, and writable paths. Resolve any failures (see [Server Requirements](getting-started/server-requirements) and [Troubleshooting Installation](getting-started/installation/troubleshooting)), then click **Install**.
 
-MODX will then proceed with a list of checks to verify that your system is ready for installing. If any of these fail, you'll need to proceed with the directions that it suggests to make sure your environment meets the [Server Requirements](getting-started/server-requirements "Server Requirements") and has the correct directories writable.
+When it finishes successfully, continue to the summary screen.
 
-Once you're ready, and all the checks pass, click 'Install' to proceed.
-
-If you get a blank screen or cannot proceed after clicking 'Install', verify these steps:
-
-1. Make sure the directories "/core/packages","/core/cache", "/core/import", and "/core/export" are writable.
-2. Make sure your php.ini setting sets `memory_limit` to 128M, and `max_execution_time` to 120
-3. Create a blank file "/core/config/config.inc.php" and make it writable. **DO NOT COPY config.inc.tpl! Just make it a blank file!**
-4. Post a message in the [Revolution forum](https://forums.modx.com/index.php/board,280.0.html) regarding your issue. State your server setup and installation info, and we'll try and help you find a solution.
-
-## Post-Installation Summary
-
-MODX will then let you know if any errors occurred during install, and prompt you to attempt reinstallation should any of those errors have occurred.
-
-When install is successful, click 'Next' to proceed, and you'll be presented with one final option:
+### Remove setup and log in
 
 ![](setup-cleanup1.png)
 
-MODX recommends that you make sure to remove the `setup/` directory after installing, to safeguard your site from anyone else trying to run setup on your site. You can do this by clicking the 'Check this to DELETE the setup directory from the filesystem.' checkbox.
+Tick the option to **delete the `setup/` directory**, then log in to the Manager.
 
-**WARNING**: the setup application grants powerful and far-reaching control over your server. DO NOT leave it in place, after you've finished installing MODX.
+Leave `setup/` in place only while you still need it. The installer is powerful; remove it as soon as installation succeeds.
 
-When ready, click 'Login' to be presented with the Login form for the manager interface. You're finished!
+## 5. After installation
 
-## Additional Info
+1. Confirm you can sign in to the Manager and open the site front-end.
+2. Work through [Successful installation, now what?](getting-started/getting-started).
+3. Turn on [Friendly URLs](getting-started/friendly-urls) when you are ready (and use the correct Apache/nginx rules).
+4. Harden the install: [Securing MODX](getting-started/maintenance/securing-modx) (especially blocking web access to `core/`).
+5. Install Extras from Package Management when needed: [Transport packages](extending-modx/transport-packages).
 
-Some other special cases:
+If email from the site fails later, check that [emailsender](building-sites/settings/emailsender) is a valid address for your domain.
 
-### MAMP on MacOSX
+## If something goes wrong
 
-MAMP (including latest 1.8.4) works fine with MODX Revolution, with one exception. You cannot use eAccelerator as the caching system, as the drivers compiled with MAMP are faulty with regards to PDO and will cause Apache kernel errors. Select the 'xCache' caching drivers to remedy this.
+- Blank page or stalled install: [Troubleshooting Installation](getting-started/installation/troubleshooting)
+- Still stuck? Ask on the [MODX Community](https://community.modx.com) and include your PHP version, database type/version, and the exact setup error (also check `core/cache/logs/error.log` when it exists).
 
-### Vista and XAMPP
+## See also
 
-There have been reported problems with installing Revolution on 64-bit Vista with XAMPP. We cannot guarantee a working solution on that OS and setup at this time.
-
-Some users have reported that applying a fix found here: <http://www.apachefriends.org/f/viewtopic.php?f=16&t=32617> will fix Apache crashing errors with PDO support in XAMPP.
-
-### Installing Packages
-
-For information on installing 3rd-party packages, see the [How to Install Packages](extending-modx/transport-packages "Package Management") article.
-
-### See Also
-
-1. [Lighttpd Guide](getting-started/friendly-urls/lighttpd)
-2. [Installation on a server running ModSecurity](getting-started/installation/troubleshooting/modsecurity)
-3. [Nginx Server Config](getting-started/friendly-urls/nginx)
+- [Installing alongside an existing site](getting-started/installation/existing-site)
+- [Advanced Installation](getting-started/installation/advanced)
+- [Command Line Installation](getting-started/installation/cli)
+- [Friendly URLs on nginx](getting-started/friendly-urls/nginx) / [Apache](getting-started/friendly-urls/apache)
+- [ModSecurity](getting-started/installation/troubleshooting/modsecurity)

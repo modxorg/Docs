@@ -4,9 +4,13 @@ _old_id: "321"
 _old_uri: "2.x/administering-your-site/upgrading-modx"
 ---
 
-This document is for Upgrading MODX 2.x. If you are looking to upgrade from Evolution (1.x), this is not officially supported at this time, but resources to help you in this process can be [found here](getting-started/maintenance/upgrading/evolution).
+This document covers the standard process for upgrading an existing MODX Revolution installation (typically within the 3.x line, or from a recent 2.x site after you have planned for 3.0 changes).
 
-## Upgrading MODX Revolution 2.x
+- Upgrading **from 2.x to 3.0+**: read [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0) first — namespaces, processors, the fixed core path, and PHP requirements all change.
+- Confirm your host meets current [Server Requirements](getting-started/server-requirements). **MODX 3.2+ requires PHP 8.1 or higher** (3.0 originally allowed PHP 7.2+).
+- Upgrading from Evolution (1.x) is not officially supported; historical notes are [here](getting-started/maintenance/upgrading/evolution).
+
+## Upgrading MODX Revolution
 
 This document assumes you are upgrading from a standard install. For Git users, please see [Git Installation](getting-started/installation/git "Git Installation").
 
@@ -14,10 +18,11 @@ This document assumes you are upgrading from a standard install. For Git users, 
 
 Always make sure to backup your files and database before upgrading. Upgrades should go smoothly, but it is **always** a safe and smart practice to backup.
 
-When you are updating from MODX Revolution 2.0.x to 2.1.x it is VERY important to realize a lot of functions have been deprecated. Most addons will have been updated to use the new methods, however you may not always be running the latest version. So, BEFORE starting the upgrade process make sure all your packages are up to date, and working properly in 2.0.x. If you don't, you may end up being locked in some kind of limbo where the manager can not be accessed due to fatal PHP errors. While this can often be fixed by manually removing or updating the offending files, in certain server setups you may not have access to php generated files (such as files created by the package manager on install) requiring a lot more work to fix.
+Before starting the upgrade process make sure all your packages are up to date and working on your current version. Outdated extras are a common cause of fatal errors after a core upgrade, which can lock you out of the manager.
 
 Pre-Upgrade Checklist:
 
+- Confirm PHP and database versions meet [Server Requirements](getting-started/server-requirements) for the target release
 - Upgrade any packages if needed
 - Log out of MODX (use "Flush Sessions and Log Out" from the manager menu)
 - Delete the files in your core/cache folder
@@ -34,7 +39,7 @@ For the advanced distribution, do the same, but you'll only need to do so for th
 
 Make sure that you don't overwrite core/config/config.inc.php, and that it's writable. Also, don't overwrite or erase the core/components/ directory.
 
-The trick here is to get an FTP client that supports **directory merging**. You don't want to indiscriminately **overwrite** directories: you want to insert the updated files into place inside the directories. A self-extracting MODX update mechanism is still a couple releases away, so until then, it is **extremely** handy to have an FTP program that supports directory merging or better yet, use the server's extraction script or function in the file manager as suggested above.
+The trick here is to get an FTP client that supports **directory merging**. You don't want to indiscriminately **overwrite** directories: you want to insert the updated files into place inside the directories. Until a self-extracting update mechanism ships, it is **extremely** handy to have an FTP program that supports directory merging or better yet, use the server's extraction script or function in the file manager as suggested above.
 
 On OS X, you can purchase one of the following:
 
@@ -66,12 +71,9 @@ It's a good idea to clear your browser cache after upgrading. Browsers often cac
 
 For changes relating to specific versions, please see the following pages:
 
-- [For Upgrading to 2.2](getting-started/maintenance/upgrading/2.2 "Upgrading to 2.2.x")
-- [For Upgrading From 2.0.x to 2.1.x](getting-started/maintenance/upgrading/2.1 "Upgrading from 2.0.x to 2.1.x") **!important**
-- [For Upgrades Coming From Prior to 2.0.5](getting-started/maintenance/upgrading/2.0.5 "Upgrading from Versions Earlier than 2.0.5")
-- [For Upgrades Coming From Prior to 2.0.0-rc2](getting-started/maintenance/upgrading/2.0.0-rc2 "Upgrading to Revolution 2.0.0-rc-2")
-
-Upgrades after 2.0.0-rc-2 should run smoothly without issues.
+- [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0) (required reading for any 2.x → 3.x move; includes the PHP 7.2 → **8.1 in 3.2** requirement notes)
+- [Upgrading to 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2) (security-related behavioural changes still relevant before jumping to 3.x)
+- Historical 2.x notes: [2.3](getting-started/maintenance/upgrading/2.3), [2.2](getting-started/maintenance/upgrading/2.2), [2.1](getting-started/maintenance/upgrading/2.1), [pre-2.0.5](getting-started/maintenance/upgrading/2.0.5), [2.0.0-rc2](getting-started/maintenance/upgrading/2.0.0-rc2)
 
 ## See Also
 
@@ -79,14 +81,14 @@ Upgrades after 2.0.0-rc-2 should run smoothly without issues.
 
 If you're copying the extracted folder in Mac OS X, be careful, as OS X will "replace" folders when you drag and drop them over each other. Make sure that you use the "ditto" command from the command line, rather than drag/dropping from Finder, otherwise your core/config/config.inc.php file will be erased. A sample ditto command after you've extracted the zip could be:
 
-``` php
-ditto modx-2.1.0-pl /www/public_html/modx/
+``` bash
+ditto modx-3.2.0-pl /www/public_html/modx/
 ```
 
 The effect is the same if you use the humble **cp** command:
 
-``` php
-cp -fr modx-2.2.0-pl/* /www/public_html/modx
+``` bash
+cp -fr modx-3.2.0-pl/* /www/public_html/modx
 ```
 
 The "-fr" bit forces a recursive copy (i.e. a directory merge). Using a backslash before the "cp" command lets you avoid all the prompts asking "Are you sure?" to every overwrite operation.
@@ -96,9 +98,7 @@ See the note above about FTP clients that support directory merging.
 ### Related Articles
 
 1. [Troubleshooting Upgrades](getting-started/maintenance/upgrading/troubleshooting)
-2. [Upgrading to 2.2.x](getting-started/maintenance/upgrading/2.2)
-3. [Upgrading from 2.0.x to 2.1.x](getting-started/maintenance/upgrading/2.1)
-4. [Upgrading from Versions Earlier than 2.0.5](getting-started/maintenance/upgrading/2.0.5)
-5. [Upgrading to Revolution 2.0.0-rc-2](getting-started/maintenance/upgrading/2.0.0-rc2)
-6. [Upgrading from MODX Evolution](getting-started/maintenance/upgrading/evolution)
-7. [Functional Changes from Evolution](getting-started/maintenance/upgrading/evolution/functional-changes)
+2. [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0)
+3. [Server Requirements](getting-started/server-requirements)
+4. [Upgrading to 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2)
+5. [Upgrading from MODX Evolution](getting-started/maintenance/upgrading/evolution)

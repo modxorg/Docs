@@ -1,5 +1,6 @@
 ---
 title: "Command Line Installation"
+sortorder: "3"
 _old_id: "349"
 _old_uri: "2.x/getting-started/installation/command-line-installation"
 ---

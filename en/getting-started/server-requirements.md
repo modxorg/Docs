@@ -7,15 +7,17 @@ _old_uri: "2.x/getting-started/server-requirements"
 
 MODX will run fine on most shared/cloud hosting, as well as VPS and dedicated boxes. MODX is written in PHP, typically uses a MySQL database, and needs a webserver like Apache or nginx to serve web requests.
 
-| Component | Minimum | Recommended |
-| --------- | ------- | ----------- |
-| PHP | 8.1 | 8.2 or higher |
-| Database | Latest MySQL 5.6.x | MariaDB 10.1.x or Percona Server 5.6.x or above |
-| Webserver | * | NGINX 1.18 or Apache 2.4 |
+| Component | Minimum            | Recommended                                     |
+| --------- | ------------------ | ----------------------------------------------- |
+| PHP       | 8.1                | 8.2 or higher                                   |
+| Database  | MySQL 5.7.x        | MySQL 8.0+ / MariaDB 10.6+ / Percona Server 8.0+|
+| Webserver | *                  | NGINX 1.18 or Apache 2.4                        |
 
 ## PHP
 
-MODX 3 requires **PHP 8.1 or higher** (`composer.json` on the [3.x branch](https://github.com/modxcms/revolution/blob/3.x/composer.json)). PHP 8.2+ is a good target for new installs.
+Current MODX 3 releases require **PHP 8.1 or higher**. PHP 8.2+ is recommended.
+
+MODX 3.0 originally required PHP 7.2. The minimum was raised to **PHP 8.1 in MODX 3.2**. If you are still on an earlier 3.x release, check that version's requirements before upgrading — moving to 3.2 or later means your host must support PHP 8.1+.
 
 ### Required extensions
 
@@ -52,13 +54,11 @@ A `memory_limit` of at least 64M or higher is recommended.
 
 MODX supports a `mysql` database and a third-party `postgres` implementation is available. It is important to note that extras also need to implement different drivers for their custom database tables, which is often only done for `mysql`, making that your best bet.
 
-> Note: sqlsrv support is deprecated and [has been removed in 3.0](https://github.com/modxcms/revolution/issues/15540).
+> Note: sqlsrv support was removed in MODX 3.0. See the [sqlsrv migration notes](getting-started/upgrading-to-3.0/sqlsrv) if you need to move an older site off SQL Server.
 
-The minimum supported MySQL version is 4.1.20, but 5.7 or up is recommended. It is also possible to use clusters like Galera.
+The minimum supported MySQL version is 5.7; MySQL 8.0+ or MariaDB 10.6+ is recommended. It is also possible to use clusters like Galera. 
 
-> Prior to MODX3, sqlsrv was also supported. [As that was practically unused, support for it has been removed in MODX 3.0.](https://github.com/modxcms/revolution/issues/15540)
-
-Both MyISAM and InnoDB storage engines are supported, as are utf8 and utf8mb character sets. It is recommended to use a utf8mb character set for widest UTF-8 support.
+Both MyISAM and InnoDB storage engines are supported, as are utf8 and utf8mb4 character sets. It is recommended to use a utf8mb4 character set for widest UTF-8 support.
 
 The following permissions are required: `SELECT`, `INSERT`, `UPDATE`, `DELETE` for normal operations, `CREATE`, `ALTER`, `INDEX`, `DROP` for installations and upgrades of the core and installable extras, and `CREATE TEMPORARY TABLES` by some third party extras.
 

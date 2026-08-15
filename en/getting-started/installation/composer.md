@@ -1,5 +1,6 @@
 ---
 title: "Installation with composer"
+sortorder: "5"
 ---
 
 The easiest way for a developer to try out MODX3 is using composer with the following command:
