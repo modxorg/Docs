@@ -10,7 +10,7 @@ description: "Каталог процессоров ядра MODX 3.x: action-п
 
 Заметки:
 
-- Описания взяты из docblock классов и свойства `$permission` в MODX Revolution **3.x** (текст на английском, как в исходниках).
+- Описания переведены с docblock классов и свойства `$permission` в MODX Revolution **3.x**. Термины ACL, FC (Form Customization), TV, Media Source оставлены как в ядре.
 - Не включены абстрактные базы, хелперы `Model\\*Processor` и Template Variable Configs/Renders (куски UI менеджера, обычно не цели для `runProcessor`).
 - У Template Variables каталог: `Element/TemplateVar/`. Путь `element/templatevar/` резолвится. Устаревший `element/tv/` лоадер переписывает в TemplateVar.
 - Permission: свойство `$permission` класса, если задано. Пустая ячейка значит, что свойства нет (проверка прав может быть в `checkPermissions()` или в другом месте).
@@ -24,448 +24,447 @@ description: "Каталог процессоров ядра MODX 3.x: action-п
 
 _16 процессоров_
 
-| Action | Description | Permission |
-| ------ | ----------- | ---------- |
-| `browser/directory/create` | Create a directory. | `directory_create` |
-| `browser/directory/getfiles` | Gets all files in a directory | `file_list` |
-| `browser/directory/getlist` | Get a list of directories and files, sorting them first by folder/file and then alphanumerically. | `directory_list` |
-| `browser/directory/remove` | Remove a directory | `directory_remove` |
-| `browser/directory/rename` | Renames a directory | `directory_update` |
-| `browser/directory/sort` | Sort a directory. | `directory_update` |
-| `browser/directory/update` | Renames a directory. |  |
-| `browser/file/create` | Creates a file. | `file_create` |
-| `browser/file/download` | Send a file to user | `file_view` |
-| `browser/file/get` | Gets the contents of a file | `file_view` |
-| `browser/file/remove` | Removes a file. | `file_remove` |
-| `browser/file/rename` | Renames a file | `file_update` |
-| `browser/file/unpack` | Unpacks archives, currently only zip | `file_unpack` |
-| `browser/file/update` | Updates a file. | `file_update` |
-| `browser/file/upload` | Upload files to a directory | `file_upload` |
-| `browser/visibility` | Set visibility on a directory or file | `directory_chmod` |
+| Action | Описание | Permission |
+| ------ | -------- | ---------- |
+| `browser/directory/create` | Создаёт каталог. | `directory_create` |
+| `browser/directory/getfiles` | Получает все файлы в каталоге | `file_list` |
+| `browser/directory/getlist` | Получает список каталогов и файлов, отсортировав их сначала по папке/файлу, а затем по алфавиту. | `directory_list` |
+| `browser/directory/remove` | Удаляет каталог | `directory_remove` |
+| `browser/directory/rename` | Переименовывает каталог | `directory_update` |
+| `browser/directory/sort` | Сортирует каталог. | `directory_update` |
+| `browser/directory/update` | Переименовывает каталог. |  |
+| `browser/file/create` | Создаёт файл. | `file_create` |
+| `browser/file/download` | Отправляет файл пользователю | `file_view` |
+| `browser/file/get` | Получает содержимое файла | `file_view` |
+| `browser/file/remove` | Удаляет файл. | `file_remove` |
+| `browser/file/rename` | Переименовывает файл | `file_update` |
+| `browser/file/unpack` | Распаковывает архивы, на данный момент только zip | `file_unpack` |
+| `browser/file/update` | Обновляет файл. | `file_update` |
+| `browser/file/upload` | Загружает файлы в каталог | `file_upload` |
+| `browser/visibility` | Устанавливает видимость каталога или файла | `directory_chmod` |
 
 ## Context
 
 _19 процессоров_
 
-| Action | Description | Permission |
-| ------ | ----------- | ---------- |
-| `context/create` | Creates a context | `new_context` |
-| `context/duplicate` | Duplicates a context. | `new_context` |
-| `context/get` | Grabs a context | `view_context` |
-| `context/getlist` | Grabs a list of contexts. | `view_context` |
-| `context/group/create` | Create a Context Group. | `new_context` |
-| `context/group/get` | Get a Context Group. | `view_context` |
-| `context/group/getlist` | Get a list of Context Groups. | `view_context` |
-| `context/group/remove` | Remove a Context Group and unassign its Contexts. | `delete_context` |
-| `context/group/update` | Update a Context Group. | `edit_context` |
-| `context/group/updatefromgrid` | Update a Context Group from a grid row (JSON data). |  |
-| `context/remove` | Removes a context | `delete_context` |
-| `context/setting/create` | Creates a context setting | `settings` |
-| `context/setting/get` | Gets a context setting | `settings` |
-| `context/setting/getlist` | Get a list of context settings | `settings` |
-| `context/setting/remove` | Removes a context setting. |  |
-| `context/setting/update` | Updates a context setting |  |
-| `context/setting/updatefromgrid` | Updates a setting from a grid. Passed as JSON data. |  |
-| `context/update` | Updates a context. | `edit_context` |
-| `context/updatefromgrid` | Update a context from a grid. Passed as JSON data. |  |
+| Action | Описание | Permission |
+| ------ | -------- | ---------- |
+| `context/create` | Создаёт контекст | `new_context` |
+| `context/duplicate` | Дублирует контекст. | `new_context` |
+| `context/get` | Получает контекст. | `view_context` |
+| `context/getlist` | Получает список контекстов. | `view_context` |
+| `context/group/create` | Создаёт контекстную группу. | `new_context` |
+| `context/group/get` | Получает контекстную группу. | `view_context` |
+| `context/group/getlist` | Получает список контекстных групп. | `view_context` |
+| `context/group/remove` | Удаляет группу контекстов и снимает назначение ее контекстов. | `delete_context` |
+| `context/group/update` | Обновляет группу контекста. | `edit_context` |
+| `context/group/updatefromgrid` | Обновляет группу контекста из строки сетки (данные JSON). |  |
+| `context/remove` | Удаляет контекст | `delete_context` |
+| `context/setting/create` | Создаёт настройку контекста | `settings` |
+| `context/setting/get` | Получает настройку контекста | `settings` |
+| `context/setting/getlist` | Получает список настроек контекста | `settings` |
+| `context/setting/remove` | Удаляет настройку контекста. |  |
+| `context/setting/update` | Обновляет настройку контекста |  |
+| `context/setting/updatefromgrid` | Обновляет настройку из сетки. Передается как данные JSON. |  |
+| `context/update` | Обновляет контекст. | `edit_context` |
+| `context/updatefromgrid` | Обновляет контекст из сетки. Передается как данные JSON. |  |
 
 ## Element (чанки, сниппеты, плагины, шаблоны, TV, наборы свойств)
 
 _68 процессоров_
 
-| Action | Description | Permission |
-| ------ | ----------- | ---------- |
-| `element/category/create` | Create a category. | `save_category` |
-| `element/category/get` | Gets a category. | `view_category` |
-| `element/category/getlist` | Grabs a list of Categories. |  |
-| `element/category/remove` | Deletes a category. Resets all elements with that category to 0. | `delete_category` |
-| `element/category/update` | Update a category. | `save_category` |
-| `element/chunk/create` | Creates a chunk. | `new_chunk` |
-| `element/chunk/duplicate` | Duplicates a chunk. | `new_chunk` |
-| `element/chunk/get` | Gets a chunk. | `view_chunk` |
-| `element/chunk/getlist` | Grabs a list of chunks. | `view_chunk` |
-| `element/chunk/remove` | Removes a chunk. | `delete_chunk` |
-| `element/chunk/update` | Updates a chunk. | `save_chunk` |
-| `element/duplicate` | Abstract class for Duplicate Element processors. To be extended for each derivative element type. |  |
-| `element/exportproperties` | Export properties and output url to download to browser |  |
-| `element/getclasses` | Outputs a list of Element subclasses |  |
-| `element/getinsertproperties` | Class GetInsertProperties |  |
-| `element/getlistbyclass` | Grabs a list of elements by their subclass |  |
-| `element/getnodes` | Grabs all elements for element tree |  |
-| `element/importproperties` | Import properties from a file |  |
-| `element/plugin/activate` | Activate a plugin. | `save_plugin` |
-| `element/plugin/create` | Creates a plugin | `new_plugin` |
-| `element/plugin/deactivate` | Deactivate a plugin. | `save_plugin` |
-| `element/plugin/duplicate` | Duplicate a plugin | `new_plugin` |
-| `element/plugin/event/associate` | Associate the event to the plugins. | `save_plugin` |
-| `element/plugin/event/get` | Get Plugin event | `view_plugin` |
-| `element/plugin/event/getassoc` | Gets a list of plugins associated to system event | `view_plugin` |
-| `element/plugin/event/getlist` | Gets a list of system events | `view_plugin` |
-| `element/plugin/event/remove` | Remove Event from a Plugin | `delete_plugin` |
-| `element/plugin/event/update` | Update Plugin Event | `save_plugin` |
-| `element/plugin/event/updatefromgrid` | Update Plugin event from the grid |  |
-| `element/plugin/get` | Get a plugin | `view_plugin` |
-| `element/plugin/getlist` | Grabs a list of plugins. | `view_plugin` |
-| `element/plugin/remove` | Delete a plugin. | `delete_plugin` |
-| `element/plugin/update` | Update a plugin. | `save_plugin` |
-| `element/propertyset/addelement` | Adds an element to a Property Set | `save_propertyset` |
-| `element/propertyset/associate` | Associates a property set to an element, or creates a property set |  |
-| `element/propertyset/create` | Creates a property set | `new_propertyset` |
-| `element/propertyset/duplicate` | Duplicates a property set | `new_propertyset` |
-| `element/propertyset/get` | Grabs a property set | `view_propertyset` |
-| `element/propertyset/getlist` | Grabs a list of property sets for building dropdown (combo) fields. | `view_propertyset` |
-| `element/propertyset/getnodes` | Grabs all elements for propertyset tree | `view_propertyset` |
-| `element/propertyset/getproperties` | Gets properties for a property set |  |
-| `element/propertyset/remove` | Removes a property set | `delete_propertyset` |
-| `element/propertyset/removeelement` | Removes an element from a Property Set | `delete_propertyset` |
-| `element/propertyset/update` | Updates a property set | `save_propertyset` |
-| `element/propertyset/updatefromelement` | Saves a property set |  |
-| `element/snippet/create` | Create a snippet. | `new_snippet` |
-| `element/snippet/duplicate` | Duplicate a snippet. | `new_snippet` |
-| `element/snippet/get` | Get a snippet. | `view_snippet` |
-| `element/snippet/getlist` | Grabs a list of snippets. | `view_snippet` |
-| `element/snippet/remove` | Delete a snippet. | `delete_snippet` |
-| `element/snippet/update` | Update a snippet | `save_snippet` |
-| `element/sort` | Sorts elements in the element tree |  |
-| `element/template/create` | Create a template | `new_template` |
-| `element/template/duplicate` | Duplicate a Template. | `new_template` |
-| `element/template/get` | Gets a template | `view_template` |
-| `element/template/getlist` | Grabs a list of templates. | `view_template` |
-| `element/template/remove` | Deletes a template. | `delete_template` |
-| `element/template/templatevar/getlist` | Gets a list of TVs, marking ones associated with the template. |  |
-| `element/template/update` | Update a template | `save_template` |
-| `element/templatevar/create` | Create a Template Variable. | `new_tv` |
-| `element/templatevar/duplicate` | Duplicate a TV | `new_tv` |
-| `element/templatevar/get` | Gets a TV | `view_tv` |
-| `element/templatevar/getlist` | Grabs a list of TVs. | `view_tv` |
-| `element/templatevar/remove` | Delete a TV | `delete_tv` |
-| `element/templatevar/resourcegroup/getlist` | Gets a list of resource groups associated to a TV. |  |
-| `element/templatevar/template/getlist` | Grabs a list of templates associated with the TV |  |
-| `element/templatevar/template/updatefromgrid` | Assigns or unassigns a template to a TV. Passed in JSON data. |  |
-| `element/templatevar/update` | Updates a TV | `save_tv` |
+| Action | Описание | Permission |
+| ------ | -------- | ---------- |
+| `element/category/create` | Создаёт категорию. | `save_category` |
+| `element/category/get` | Получает категорию. | `view_category` |
+| `element/category/getlist` | Захватывает список категорий. |  |
+| `element/category/remove` | Удаляет категорию. Сбрасывает все элементы этой категории в 0. | `delete_category` |
+| `element/category/update` | Обновляет категорию. | `save_category` |
+| `element/chunk/create` | Создаёт чанк. | `new_chunk` |
+| `element/chunk/duplicate` | Дублирует фрагмент. | `new_chunk` |
+| `element/chunk/get` | Получает кусок. | `view_chunk` |
+| `element/chunk/getlist` | Захватывает список кусков. | `view_chunk` |
+| `element/chunk/remove` | Удаляет кусок. | `delete_chunk` |
+| `element/chunk/update` | Обновляет чанк. | `save_chunk` |
+| `element/duplicate` | Абстрактный класс для процессоров дублирования элементов. Расширяется для каждого типа элемента. |  |
+| `element/exportproperties` | Экспортирует свойства и выходной URL-адрес для загрузки в браузер. |  |
+| `element/getclasses` | Выводит список подклассов Element. |  |
+| `element/getinsertproperties` | Возвращает свойства элемента для диалога вставки. |  |
+| `element/getlistbyclass` | Получает список элементов по их подклассу |  |
+| `element/getnodes` | Захватывает все элементы дерева элементов |  |
+| `element/importproperties` | Импортирует свойства из файла |  |
+| `element/plugin/activate` | Активирует плагин. | `save_plugin` |
+| `element/plugin/create` | Создаёт плагин | `new_plugin` |
+| `element/plugin/deactivate` | Деактивирует плагин. | `save_plugin` |
+| `element/plugin/duplicate` | Дублирует плагин | `new_plugin` |
+| `element/plugin/event/associate` | Связывает событие с плагинами. | `save_plugin` |
+| `element/plugin/event/get` | Получает событие плагина | `view_plugin` |
+| `element/plugin/event/getassoc` | Получает список плагинов, связанных с системным событием. | `view_plugin` |
+| `element/plugin/event/getlist` | Получает список системных событий | `view_plugin` |
+| `element/plugin/event/remove` | Удаляет событие из плагина | `delete_plugin` |
+| `element/plugin/event/update` | Обновляет событие плагина | `save_plugin` |
+| `element/plugin/event/updatefromgrid` | Обновляет событие плагина из сетки |  |
+| `element/plugin/get` | Получает плагин | `view_plugin` |
+| `element/plugin/getlist` | Захватывает список плагинов. | `view_plugin` |
+| `element/plugin/remove` | Удаляет плагин. | `delete_plugin` |
+| `element/plugin/update` | Обновляет плагин. | `save_plugin` |
+| `element/propertyset/addelement` | Добавляет элемент в набор свойств. | `save_propertyset` |
+| `element/propertyset/associate` | Связывает набор свойств с элементом или создаёт набор свойств. |  |
+| `element/propertyset/create` | Создаёт набор свойств | `new_propertyset` |
+| `element/propertyset/duplicate` | Дублирует набор свойств | `new_propertyset` |
+| `element/propertyset/get` | Захватывает набор свойств | `view_propertyset` |
+| `element/propertyset/getlist` | Получает список наборов свойств для создания раскрывающихся (комбинированных) полей. | `view_propertyset` |
+| `element/propertyset/getnodes` | Захватывает все элементы дерева набора свойств. | `view_propertyset` |
+| `element/propertyset/getproperties` | Получает свойства для набора свойств. |  |
+| `element/propertyset/remove` | Удаляет набор свойств | `delete_propertyset` |
+| `element/propertyset/removeelement` | Удаляет элемент из набора свойств. | `delete_propertyset` |
+| `element/propertyset/update` | Обновляет набор свойств | `save_propertyset` |
+| `element/propertyset/updatefromelement` | Сохраняет набор свойств |  |
+| `element/snippet/create` | Создаёт фрагмент. | `new_snippet` |
+| `element/snippet/duplicate` | Дублирует фрагмент. | `new_snippet` |
+| `element/snippet/get` | Получает фрагмент. | `view_snippet` |
+| `element/snippet/getlist` | Захватывает список фрагментов. | `view_snippet` |
+| `element/snippet/remove` | Удаляет фрагмент. | `delete_snippet` |
+| `element/snippet/update` | Обновляет фрагмент | `save_snippet` |
+| `element/sort` | Сортирует элементы в дереве элементов. |  |
+| `element/template/create` | Создаёт шаблон | `new_template` |
+| `element/template/duplicate` | Дублирует шаблон. | `new_template` |
+| `element/template/get` | Получает шаблон | `view_template` |
+| `element/template/getlist` | Захватывает список шаблонов. | `view_template` |
+| `element/template/remove` | Удаляет шаблон. | `delete_template` |
+| `element/template/templatevar/getlist` | Получает список TVов, отмечая те, которые связаны с шаблоном. |  |
+| `element/template/update` | Обновляет шаблон | `save_template` |
+| `element/templatevar/create` | Создаёт переменную шаблона. | `new_tv` |
+| `element/templatevar/duplicate` | Дублирует TV | `new_tv` |
+| `element/templatevar/get` | Получает TV | `view_tv` |
+| `element/templatevar/getlist` | Захватывает список TVов. | `view_tv` |
+| `element/templatevar/remove` | Удаляет TV | `delete_tv` |
+| `element/templatevar/resourcegroup/getlist` | Получает список групп ресурсов, связанных с TV. |  |
+| `element/templatevar/template/getlist` | Получает список шаблонов, связанных с TV. |  |
+| `element/templatevar/template/updatefromgrid` | Назначает или снимает назначение шаблона для TV. Данные передаются в JSON. |  |
+| `element/templatevar/update` | Обновляет TV | `save_tv` |
 
 ## Resource
 
 _27 процессоров_
 
-| Action | Description | Permission |
-| ------ | ----------- | ---------- |
-| `resource/create` | Creates a resource. | `new_document` |
-| `resource/data` | Returns resource data. |  |
-| `resource/delete` | Deletes a resource. | `delete_document` |
-| `resource/duplicate` | Duplicates a resource, and optionally, all of its children. |  |
-| `resource/emptyrecyclebin` | Empties the recycle bin. |  |
-| `resource/event/getlist` | Grabs the site schedule data. |  |
-| `resource/event/updatefromgrid` | Update a resource from the site schedule grid. |  |
-| `resource/get` | Retrieves a resource by its ID. | `view` |
-| `resource/getlist` | Gets a list of resources. | `view` |
-| `resource/getnodes` | Get nodes for the resource tree |  |
-| `resource/gettoolbar` | Gets a dynamic toolbar for the Resource tree. |  |
-| `resource/locks/release` | Release a lock on a resource |  |
-| `resource/locks/steal` | Steal a lock on a resource |  |
-| `resource/publish` | Publishes a resource. |  |
-| `resource/reload` | save resource form data for reload |  |
-| `resource/resourcegroup/getlist` | Grabs a list of resource groups for a resource. |  |
-| `resource/resourcegroup/updatefromgrid` | Assign or unassigns a resource group to a resource. | `resource` |
-| `resource/search` | Searches for specific resources and returns them in an array. | `search` |
-| `resource/sort` | Sorts the resource tree |  |
-| `resource/translit` | Retrieves a string and returns it transliterated to use in various applications but mainly for real-time alias |  |
-| `resource/trash/getlist` | Gets a list of resources for trash manager. | `view` |
-| `resource/trash/purge` | Empties the recycle bin. |  |
-| `resource/trash/restore` | Restores deleted files. |  |
-| `resource/undelete` | Undeletes a resource. |  |
-| `resource/unpublish` | Unpublishes a resource. |  |
-| `resource/update` | Updates a resource. | `save_document` |
+| Action | Описание | Permission |
+| ------ | -------- | ---------- |
+| `resource/create` | Создаёт ресурс. | `new_document` |
+| `resource/data` | Возвращает данные ресурса. |  |
+| `resource/delete` | Удаляет ресурс. | `delete_document` |
+| `resource/duplicate` | Дублирует ресурс и, при необходимости, все его дочерние элементы. |  |
+| `resource/emptyrecyclebin` | Очищает корзину. |  |
+| `resource/event/getlist` | Собирает данные расписания сайта. |  |
+| `resource/event/updatefromgrid` | Обновляет ресурс из сетки расписания сайта. |  |
+| `resource/get` | Извлекает ресурс по его идентификатору. | `view` |
+| `resource/getlist` | Получает список ресурсов. | `view` |
+| `resource/getnodes` | Получает узлы для дерева ресурсов |  |
+| `resource/gettoolbar` | Получает динамическую панель инструментов для дерева ресурсов. |  |
+| `resource/locks/release` | Снять блокировку ресурса |  |
+| `resource/locks/steal` | Украсть блокировку ресурса |  |
+| `resource/publish` | Публикует ресурс. |  |
+| `resource/reload` | сохранить данные формы ресурса для перезагрузки |  |
+| `resource/resourcegroup/getlist` | Получает список групп ресурсов для ресурса. |  |
+| `resource/resourcegroup/updatefromgrid` | Назначает или снимает назначение группы ресурсов для ресурса. | `resource` |
+| `resource/search` | Ищет определенные ресурсы и возвращает их в массиве. | `search` |
+| `resource/sort` | Сортирует дерево ресурсов |  |
+| `resource/translit` | Извлекает строку и возвращает ее в транслитерированном виде для использования в различных приложениях, но в основном для псевдонима в реальном времени. |  |
+| `resource/trash/getlist` | Получает список ресурсов для диспетчера мусора. | `view` |
+| `resource/trash/purge` | Очищает корзину. |  |
+| `resource/trash/restore` | Восстанавливает удаленные файлы. |  |
+| `resource/undelete` | Восстанавливает ресурс. |  |
+| `resource/unpublish` | Отменяет публикацию ресурса. |  |
+| `resource/update` | Обновляет ресурс. | `save_document` |
 | `resource/updatefromgrid` | _(нет docblock у класса)_ | `save_document` |
 
 ## Search
 
 _1 процессоров_
 
-| Action | Description | Permission |
-| ------ | ----------- | ---------- |
-| `search/search` | Searches for elements, resources and users |  |
+| Action | Описание | Permission |
+| ------ | -------- | ---------- |
+| `search/search` | Поиск элементов, ресурсов и пользователей |  |
 
 ## Security (пользователи, ACL, формы, сообщения)
 
 _128 процессоров_
 
-| Action | Description | Permission |
-| ------ | ----------- | ---------- |
-| `security/access/addacl` | Adds an ACL | `access_permissions` |
-| `security/access/flush` | Flushes permissions for the logged in user. |  |
-| `security/access/getacl` | Gets an ACL. | `access_permissions` |
-| `security/access/getlist` | Gets a list of ACLs. | `access_permissions` |
-| `security/access/getnodes` | Gets a node list of ACLs | `access_permissions` |
+| Action | Описание | Permission |
+| ------ | -------- | ---------- |
+| `security/access/addacl` | Добавляет ACL | `access_permissions` |
+| `security/access/flush` | Сбрасывает разрешения для вошедшего в систему пользователя. |  |
+| `security/access/getacl` | Получает ACL. | `access_permissions` |
+| `security/access/getlist` | Получает список ACL. | `access_permissions` |
+| `security/access/getnodes` | Получает список узлов ACL. | `access_permissions` |
 | `security/access/permission/getlist` | _(нет docblock у класса)_ | `access_permissions` |
-| `security/access/policy/create` | Create an access policy. | `policy_new` |
-| `security/access/policy/duplicate` | Duplicates a policy | `policy_new` |
-| `security/access/policy/export` | Export a policy template. | `policy_view` |
-| `security/access/policy/getlist` | Gets a list of policies. | `policy_view` |
-| `security/access/policy/import` | Import a policy template. | `policy_view` |
-| `security/access/policy/remove` | Removes a policy | `policy_delete` |
-| `security/access/policy/removemultiple` | Removes multiple policies | `policy_delete` |
-| `security/access/policy/template/create` | Create an access policy template | `policy_template_new` |
-| `security/access/policy/template/duplicate` | Duplicates a policy template | `policy_template_new` |
-| `security/access/policy/template/export` | Export a policy template. | `policy_template_view` |
-| `security/access/policy/template/getlist` | Gets a list of policy templates. | `policy_template_view` |
-| `security/access/policy/template/group/getlist` | Gets a list of policy template groups. | `policy_template_view` |
-| `security/access/policy/template/import` | Import a policy template. | `policy_template_view` |
-| `security/access/policy/template/remove` | Removes a policy template | `policy_template_delete` |
-| `security/access/policy/template/removemultiple` | Removes multiple policy templates | `policy_template_delete` |
-| `security/access/policy/template/update` | Updates a policy template | `policy_template_save` |
-| `security/access/policy/template/updatefromgrid` | Update a policy template from a grid |  |
-| `security/access/policy/update` | Updates a policy | `policy_save` |
-| `security/access/policy/updatefromgrid` | Update a policy from a grid |  |
-| `security/access/removeacl` | Remove an ACL. | `access_permissions` |
-| `security/access/updateacl` | Update an ACL. | `access_permissions` |
+| `security/access/policy/create` | Создаёт политику доступа. | `policy_new` |
+| `security/access/policy/duplicate` | Дублирует политику | `policy_new` |
+| `security/access/policy/export` | Экспортирует шаблон политики. | `policy_view` |
+| `security/access/policy/getlist` | Получает список политик. | `policy_view` |
+| `security/access/policy/import` | Импортирует шаблон политики. | `policy_view` |
+| `security/access/policy/remove` | Удаляет политику | `policy_delete` |
+| `security/access/policy/removemultiple` | Удаляет несколько политик | `policy_delete` |
+| `security/access/policy/template/create` | Создаёт шаблон политики доступа | `policy_template_new` |
+| `security/access/policy/template/duplicate` | Дублирует шаблон политики | `policy_template_new` |
+| `security/access/policy/template/export` | Экспортирует шаблон политики. | `policy_template_view` |
+| `security/access/policy/template/getlist` | Получает список шаблонов политик. | `policy_template_view` |
+| `security/access/policy/template/group/getlist` | Получает список групп шаблонов политик. | `policy_template_view` |
+| `security/access/policy/template/import` | Импортирует шаблон политики. | `policy_template_view` |
+| `security/access/policy/template/remove` | Удаляет шаблон политики | `policy_template_delete` |
+| `security/access/policy/template/removemultiple` | Удаляет несколько шаблонов политик. | `policy_template_delete` |
+| `security/access/policy/template/update` | Обновляет шаблон политики | `policy_template_save` |
+| `security/access/policy/template/updatefromgrid` | Обновляет шаблон политики из сетки |  |
+| `security/access/policy/update` | Обновляет политику | `policy_save` |
+| `security/access/policy/updatefromgrid` | Обновляет политику из сетки |  |
+| `security/access/removeacl` | Удаляет ACL. | `access_permissions` |
+| `security/access/updateacl` | Обновляет ACL. | `access_permissions` |
 | `security/access/usergroup/accessnamespace/create` | _(нет docblock у класса)_ | `access_permissions` |
-| `security/access/usergroup/accessnamespace/getlist` | Gets a list of ACLs. | `access_permissions` |
-| `security/access/usergroup/accessnamespace/remove` | Remove a Resource Group ACL for a user group | `access_permissions` |
+| `security/access/usergroup/accessnamespace/getlist` | Получает список ACL. | `access_permissions` |
+| `security/access/usergroup/accessnamespace/remove` | Удаляет ACL группы ресурсов для группы пользователей | `access_permissions` |
 | `security/access/usergroup/accessnamespace/update` | _(нет docblock у класса)_ | `access_permissions` |
-| `security/access/usergroup/category/create` | Class Create | `access_permissions` |
-| `security/access/usergroup/category/getlist` | Gets a list of ACLs. | `access_permissions` |
-| `security/access/usergroup/category/remove` | Remove a Resource Group ACL for a user group | `access_permissions` |
+| `security/access/usergroup/category/create` | Создаёт класс | `access_permissions` |
+| `security/access/usergroup/category/getlist` | Получает список ACL. | `access_permissions` |
+| `security/access/usergroup/category/remove` | Удаляет ACL группы ресурсов для группы пользователей | `access_permissions` |
 | `security/access/usergroup/category/update` | _(нет docblock у класса)_ | `access_permissions` |
 | `security/access/usergroup/context/create` | _(нет docblock у класса)_ | `access_permissions` |
-| `security/access/usergroup/context/getlist` | Gets a list of ACLs. | `access_permissions` |
-| `security/access/usergroup/context/remove` | Remove a context ACL for a user group | `access_permissions` |
-| `security/access/usergroup/context/update` | Update ACL for Context | `access_permissions` |
+| `security/access/usergroup/context/getlist` | Получает список ACL. | `access_permissions` |
+| `security/access/usergroup/context/remove` | Удаляет контекстного ACL для группы пользователей | `access_permissions` |
+| `security/access/usergroup/context/update` | Обновляет ACL для контекста | `access_permissions` |
 | `security/access/usergroup/resourcegroup/create` | _(нет docblock у класса)_ | `access_permissions` |
-| `security/access/usergroup/resourcegroup/getlist` | Gets a list of ACLs. | `access_permissions` |
-| `security/access/usergroup/resourcegroup/remove` | Remove a Resource Group ACL for a user group | `access_permissions` |
+| `security/access/usergroup/resourcegroup/getlist` | Получает список ACL. | `access_permissions` |
+| `security/access/usergroup/resourcegroup/remove` | Удаляет ACL группы ресурсов для группы пользователей | `access_permissions` |
 | `security/access/usergroup/resourcegroup/update` | _(нет docblock у класса)_ | `access_permissions` |
 | `security/access/usergroup/source/create` | _(нет docblock у класса)_ | `access_permissions` |
-| `security/access/usergroup/source/getlist` | Gets a list of ACLs. | `access_permissions` |
-| `security/access/usergroup/source/remove` | Remove a Media Source ACL for a user group | `access_permissions` |
+| `security/access/usergroup/source/getlist` | Получает список ACL. | `access_permissions` |
+| `security/access/usergroup/source/remove` | Удаляет ACL источника мультимедиа для группы пользователей | `access_permissions` |
 | `security/access/usergroup/source/update` | _(нет docblock у класса)_ | `access_permissions` |
-| `security/flush` | Flush all sessions |  |
-| `security/forms/profile/activate` | Activate a FC Profile | `customize_forms` |
-| `security/forms/profile/activatemultiple` | Activate multiple FC Profiles |  |
-| `security/forms/profile/create` | Create a FC Profile | `customize_forms` |
-| `security/forms/profile/deactivate` | Deactivate a FC Profile | `customize_forms` |
-| `security/forms/profile/deactivatemultiple` | Deactivate multiple FC Profiles |  |
-| `security/forms/profile/duplicate` | Duplicate a FC Profile | `customize_forms` |
-| `security/forms/profile/getlist` | Gets a list of Form Customization profiles. | `customize_forms` |
-| `security/forms/profile/remove` | Remove FC Profile | `customize_forms` |
-| `security/forms/profile/removemultiple` | Remove multiple FC profiles |  |
-| `security/forms/profile/update` | Update a FC Profile | `customize_forms` |
-| `security/forms/profile/updatefromgrid` | Update a FC Profile from grid |  |
-| `security/forms/set/activate` | Activate a FC Set | `customize_forms` |
-| `security/forms/set/activatemultiple` | Activate multiple FC Sets |  |
-| `security/forms/set/create` | Create a FC Set | `customize_forms` |
-| `security/forms/set/deactivate` | Deactivate a FC Set | `customize_forms` |
-| `security/forms/set/deactivatemultiple` | Deactivate multiple FC Sets |  |
-| `security/forms/set/duplicate` | Duplicate a FC Set | `customize_forms` |
-| `security/forms/set/export` | Export a form customization set. | `customize_forms` |
-| `security/forms/set/getlist` | Gets a list of Form Customization sets. | `customize_forms` |
-| `security/forms/set/import` | Import a Form Customization Set from an XML file | `customize_forms` |
-| `security/forms/set/remove` | Remove a FC Set | `customize_forms` |
-| `security/forms/set/removemultiple` | Remove multiple FC sets |  |
-| `security/forms/set/update` | Saves a Form Customization Set. | `customize_forms` |
-| `security/forms/set/updatefromgrid` | Update a FC Profile from grid | `customize_forms` |
-| `security/group/create` | Create a user group | `usergroup_new` |
-| `security/group/getlist` | Gets a list of user groups | `usergroup_view` |
-| `security/group/getnodes` | Get the user groups in tree node format |  |
-| `security/group/remove` | Remove a user group | `usergroup_delete` |
-| `security/group/setting/create` | Create a User Group setting |  |
-| `security/group/setting/getlist` | Gets a list of user group settings |  |
-| `security/group/setting/remove` | Remove a user group setting and its lexicon strings |  |
-| `security/group/setting/update` | Update a user group setting |  |
-| `security/group/setting/updatefromgrid` | Update a user group setting from a grid |  |
-| `security/group/sort` | Sort users and user groups, effectively repositioning users into proper groups |  |
-| `security/group/update` | Update a user group | `usergroup_save` |
-| `security/group/user/create` | Add a user to a user group |  |
-| `security/group/user/getlist` | Gets a list of users in a usergroup | `usergroup_user_list` |
-| `security/group/user/remove` | Remove a user from a user group |  |
-| `security/group/user/update` | Update a users role in a user group |  |
-| `security/login` | Properly log in the user and set up the session. |  |
-| `security/logout` | Properly log out the user, running any events and flushing the session. |  |
-| `security/message/create` | Create a message | `messages` |
-| `security/message/getlist` | Get a list of messages | `messages` |
-| `security/message/read` | Mark a message as read | `messages` |
-| `security/message/remove` | Remove a message | `messages` |
-| `security/message/unread` | Mark a message as unread | `messages` |
-| `security/profile/changepassword` | Change a user's password |  |
-| `security/profile/get` | Get a user profile |  |
-| `security/profile/update` | Update a user profile |  |
-| `security/resourcegroup/create` | Create a resource group | `resourcegroup_new` |
-| `security/resourcegroup/getlist` | Gets a list of resource groups | `resourcegroup_view` |
-| `security/resourcegroup/getnodes` | Get the resource groups as nodes |  |
-| `security/resourcegroup/remove` | Remove a resource group |  |
-| `security/resourcegroup/removeresource` | Remove a resource-resourcegroup pairing |  |
-| `security/resourcegroup/update` | Update a resource group |  |
-| `security/resourcegroup/updateresourcesin` | Update documents in a resource group | `resourcegroup_resource_edit` |
-| `security/role/create` | Creates a role from a POST request. | `new_role` |
-| `security/role/get` | Gets a role | `view_role` |
-| `security/role/getauthoritylist` | Gets a list of roles |  |
-| `security/role/getlist` | Gets a list of roles | `view_role` |
-| `security/role/remove` | Removes a role. | `delete_role` |
-| `security/role/update` | Update a role from a POST request | `save_role` |
-| `security/role/updatefromgrid` | Updates a role from a grid. Passed as JSON data |  |
-| `security/user/activatemultiple` | Activate multiple users |  |
-| `security/user/create` | Create a user | `new_user` |
-| `security/user/deactivatemultiple` | Deactivate multiple users |  |
-| `security/user/delete` | Deletes a user | `delete_user` |
-| `security/user/duplicate` | Duplicates a user. | `new_user` |
-| `security/user/get` | Get a user | `view_user` |
-| `security/user/getlist` | Gets a list of users | `view_user` |
-| `security/user/getonline` | Gets a list of all users who are online |  |
-| `security/user/getrecentlyeditedresources` | Gets a list of recently edited resources by a user | `view_document` |
-| `security/user/removemultiple` | Remove multiple users |  |
-| `security/user/setting/create` | Create a user setting |  |
-| `security/user/setting/getlist` | Gets a list of user settings |  |
-| `security/user/setting/remove` | Remove a user setting and its lexicon strings |  |
-| `security/user/setting/update` | Updates a user setting |  |
-| `security/user/setting/updatefromgrid` | Updates a setting from a grid |  |
-| `security/user/update` | Update a user. | `save_user` |
-| `security/user/updatefromgrid` | Update a user from a grid |  |
+| `security/flush` | Сбрасывает все сеансы |  |
+| `security/forms/profile/activate` | Активирует профиль FC | `customize_forms` |
+| `security/forms/profile/activatemultiple` | Активирует несколько профилей FC |  |
+| `security/forms/profile/create` | Создаёт профиль FC | `customize_forms` |
+| `security/forms/profile/deactivate` | Деактивирует профиль FC | `customize_forms` |
+| `security/forms/profile/deactivatemultiple` | Деактивирует несколько профилей FC |  |
+| `security/forms/profile/duplicate` | Дублирует профиль FC | `customize_forms` |
+| `security/forms/profile/getlist` | Получает список профилей настройки формы. | `customize_forms` |
+| `security/forms/profile/remove` | Удаляет профиль FC | `customize_forms` |
+| `security/forms/profile/removemultiple` | Удаляет несколько профилей FC |  |
+| `security/forms/profile/update` | Обновляет профиль FC | `customize_forms` |
+| `security/forms/profile/updatefromgrid` | Обновляет профиль FC из сетки |  |
+| `security/forms/set/activate` | Активирует набор FC | `customize_forms` |
+| `security/forms/set/activatemultiple` | Активирует несколько наборов FC |  |
+| `security/forms/set/create` | Создаёт набор FC | `customize_forms` |
+| `security/forms/set/deactivate` | Деактивирует набор FC | `customize_forms` |
+| `security/forms/set/deactivatemultiple` | Деактивирует несколько наборов FC |  |
+| `security/forms/set/duplicate` | Дублирует набор FC | `customize_forms` |
+| `security/forms/set/export` | Экспортирует набор настроек формы. | `customize_forms` |
+| `security/forms/set/getlist` | Получает список наборов настроек формы. | `customize_forms` |
+| `security/forms/set/import` | Импортирует набор настроек формы из файла XML | `customize_forms` |
+| `security/forms/set/remove` | Удаляет набор FC | `customize_forms` |
+| `security/forms/set/removemultiple` | Удаляет несколько наборов FC |  |
+| `security/forms/set/update` | Сохраняет набор настроек формы. | `customize_forms` |
+| `security/forms/set/updatefromgrid` | Обновляет профиль FC из сетки | `customize_forms` |
+| `security/group/create` | Создаёт группу пользователей | `usergroup_new` |
+| `security/group/getlist` | Получает список групп пользователей | `usergroup_view` |
+| `security/group/getnodes` | Получает группы пользователей в формате узла дерева. |  |
+| `security/group/remove` | Удаляет группы пользователей | `usergroup_delete` |
+| `security/group/setting/create` | Создаёт настройку группы пользователей |  |
+| `security/group/setting/getlist` | Получает список настроек группы пользователей. |  |
+| `security/group/setting/remove` | Удаляет настройки группы пользователей и ее словарных строк. |  |
+| `security/group/setting/update` | Обновляет настройки группы пользователей |  |
+| `security/group/setting/updatefromgrid` | Обновляет настройки группы пользователей из сетки |  |
+| `security/group/sort` | Сортирует пользователей и группы пользователей, эффективно распределяя пользователей по нужным группам. |  |
+| `security/group/update` | Обновляет группы пользователей | `usergroup_save` |
+| `security/group/user/create` | Добавляет пользователя в группу пользователей |  |
+| `security/group/user/getlist` | Получает список пользователей в группе пользователей | `usergroup_user_list` |
+| `security/group/user/remove` | Удаляет пользователя из группы пользователей |  |
+| `security/group/user/update` | Обновляет роли пользователей в группе пользователей |  |
+| `security/login` | Правильно войдите в систему и настройте сеанс. |  |
+| `security/logout` | Правильно выйдите из системы, запустив все события и очистив сеанс. |  |
+| `security/message/create` | Создаёт сообщение | `messages` |
+| `security/message/getlist` | Получает список сообщений | `messages` |
+| `security/message/read` | Отметить сообщение как прочитанное | `messages` |
+| `security/message/remove` | Удаляет сообщение | `messages` |
+| `security/message/unread` | Отметить сообщение как непрочитанное | `messages` |
+| `security/profile/changepassword` | Изменяет пароль пользователя |  |
+| `security/profile/get` | Получает профиль пользователя |  |
+| `security/profile/update` | Обновляет профиль пользователя |  |
+| `security/resourcegroup/create` | Создаёт группу ресурсов | `resourcegroup_new` |
+| `security/resourcegroup/getlist` | Получает список групп ресурсов | `resourcegroup_view` |
+| `security/resourcegroup/getnodes` | Получает группы ресурсов как узлы |  |
+| `security/resourcegroup/remove` | Удаляет группы ресурсов |  |
+| `security/resourcegroup/removeresource` | Удаляет пары ресурс-группа ресурсов |  |
+| `security/resourcegroup/update` | Обновляет группы ресурсов |  |
+| `security/resourcegroup/updateresourcesin` | Обновляет документов в группе ресурсов | `resourcegroup_resource_edit` |
+| `security/role/create` | Создаёт роль на основе запроса POST. | `new_role` |
+| `security/role/get` | Получает роль | `view_role` |
+| `security/role/getauthoritylist` | Получает список ролей |  |
+| `security/role/getlist` | Получает список ролей | `view_role` |
+| `security/role/remove` | Удаляет роль. | `delete_role` |
+| `security/role/update` | Обновляет роли из POST-запроса | `save_role` |
+| `security/role/updatefromgrid` | Обновляет роль из сетки. Передано как данные JSON |  |
+| `security/user/activatemultiple` | Активирует несколько пользователей |  |
+| `security/user/create` | Создаёт пользователя | `new_user` |
+| `security/user/deactivatemultiple` | Деактивирует несколько пользователей |  |
+| `security/user/delete` | Удаляет пользователя | `delete_user` |
+| `security/user/duplicate` | Дублирует пользователя. | `new_user` |
+| `security/user/get` | Получает пользователя | `view_user` |
+| `security/user/getlist` | Получает список пользователей | `view_user` |
+| `security/user/getonline` | Получает список всех пользователей, находящихся в сети. |  |
+| `security/user/getrecentlyeditedresources` | Получает список недавно отредактированных пользователем ресурсов. | `view_document` |
+| `security/user/removemultiple` | Удаляет несколько пользователей |  |
+| `security/user/setting/create` | Создаёт пользовательскую настройку |  |
+| `security/user/setting/getlist` | Получает список пользовательских настроек |  |
+| `security/user/setting/remove` | Удаляет пользовательской настройки и ее словарных строк. |  |
+| `security/user/setting/update` | Обновляет настройку пользователя |  |
+| `security/user/setting/updatefromgrid` | Обновляет настройку из сетки |  |
+| `security/user/update` | Обновляет пользователя. | `save_user` |
+| `security/user/updatefromgrid` | Обновляет пользователя из сетки |  |
 
 ## Software update
 
 _3 процессоров_
 
-| Action | Description | Permission |
-| ------ | ----------- | ---------- |
-| `softwareupdate/base` | Provides base methods and shared properties for building status data used in the front end display of software updates (MODX and Extras) |  |
-| `softwareupdate/getfile` | Retrieves the downloadable file URL and other metadata for the specified MODX upgrade package |  |
-| `softwareupdate/getlist` | Retrieves status data for use in the front end display of software updates (MODX and Extras) |  |
+| Action | Описание | Permission |
+| ------ | -------- | ---------- |
+| `softwareupdate/base` | Предоставляет базовые методы и общие свойства для построения данных о состоянии, используемых при отображении обновлений программного обеспечения (MODX и Extras). |  |
+| `softwareupdate/getfile` | Получает URL-адрес загружаемого файла и другие метаданные для указанного пакета обновления MODX. |  |
+| `softwareupdate/getlist` | Извлекает данные о состоянии для использования во внешнем интерфейсе обновлений программного обеспечения (MODX и Extras). |  |
 
 ## Media Source
 
 _8 процессоров_
 
-| Action | Description | Permission |
-| ------ | ----------- | ---------- |
-| `source/create` | Creates a Media Source | `source_save` |
-| `source/duplicate` | Duplicates a source. | `source_save` |
-| `source/getlist` | Gets a list of Media Sources | `source_view` |
-| `source/remove` | Removes a Media Source | `source_delete` |
-| `source/removemultiple` | Removes multiple Media Sources |  |
-| `source/type/getlist` | Gets a list of media source types |  |
-| `source/update` | Updates a Media Source | `source_save` |
-| `source/updatefromgrid` | Update a Source from the grid. Sent through JSON-encoded 'data' parameter. |  |
+| Action | Описание | Permission |
+| ------ | -------- | ---------- |
+| `source/create` | Создаёт источник мультимедиа | `source_save` |
+| `source/duplicate` | Дублирует источник. | `source_save` |
+| `source/getlist` | Получает список источников мультимедиа. | `source_view` |
+| `source/remove` | Удаляет источник мультимедиа | `source_delete` |
+| `source/removemultiple` | Удаляет несколько источников мультимедиа |  |
+| `source/type/getlist` | Получает список типов медиа-источников. |  |
+| `source/update` | Обновляет источник мультимедиа | `source_save` |
+| `source/updatefromgrid` | Обновляет источник из сетки. Отправляется через параметр data в формате JSON. |  |
 
 ## System (настройки, меню, дашборды, логи)
 
 _72 процессоров_
 
-| Action | Description | Permission |
-| ------ | ----------- | ---------- |
-| `system/activeresource/getlist` | Gets a list of active resources | `view_document` |
-| `system/charset/getlist` | Gets a list of charsets |  |
-| `system/clearcache` | Refreshes the site cache |  |
-| `system/configcheck` | Runs a config check |  |
-| `system/configjs` | Outputs the $modx->config to JSON |  |
-| `system/console` | Read from the registry to console |  |
-| `system/contenttype/create` | Create a content type | `content_types` |
-| `system/contenttype/getlist` | Gets a list of content types |  |
-| `system/contenttype/remove` | Removes a content type | `content_types` |
-| `system/contenttype/update` | Update a content type from the grid. Sent through JSON-encoded 'data' parameter. | `content_types` |
-| `system/contenttype/updatefromgrid` | Update a content type from the grid. Sent through JSON-encoded 'data' parameter. |  |
-| `system/country/getlist` | Gets a list of country codes |  |
-| `system/dashboard/create` | Creates a Dashboard | `dashboards` |
-| `system/dashboard/duplicate` | Duplicates a dashboard. | `dashboards` |
-| `system/dashboard/getlist` | Gets a list of dashboards | `dashboards` |
-| `system/dashboard/remove` | Removes a Dashboard | `dashboards` |
-| `system/dashboard/removemultiple` | Removes multiple Dashboards |  |
-| `system/dashboard/update` | Updates a Dashboard | `dashboards` |
-| `system/dashboard/updatefromgrid` | Update a Dashboard from the grid. Sent through JSON-encoded 'data' parameter. |  |
-| `system/dashboard/user/create` | Class Create |  |
-| `system/dashboard/user/getlist` | Class GetList |  |
-| `system/dashboard/user/remove` | Class Remove |  |
-| `system/dashboard/user/resize` | Class Resize |  |
-| `system/dashboard/user/sort` | Class Sort |  |
-| `system/dashboard/widget/create` | Creates a new Dashboard Widget | `dashboards` |
-| `system/dashboard/widget/feed` | Class modDashboardWidgetFeedProcessor Used to load the news and security feeds on the dashboard over AJAX. The processed feed content (i.e. HTML) is returned in object->html. |  |
-| `system/dashboard/widget/getlist` | Gets a list of dashboards | `dashboards` |
-| `system/dashboard/widget/remove` | Removes a Dashboard Widget | `dashboards` |
-| `system/dashboard/widget/removemultiple` | Removes multiple Dashboard Widgets |  |
-| `system/dashboard/widget/update` | Updates a Dashboard Widget | `dashboards` |
-| `system/databasetable/getlist` | Gets a list of database tables |  |
-| `system/databasetable/mysql/getlist` | MySQL-specific table listing processor |  |
+| Action | Описание | Permission |
+| ------ | -------- | ---------- |
+| `system/activeresource/getlist` | Получает список активных ресурсов | `view_document` |
+| `system/charset/getlist` | Получает список кодировок |  |
+| `system/clearcache` | Обновляет кэш сайта |  |
+| `system/configcheck` | Запускает проверку конфигурации |  |
+| `system/configjs` | Выводит $modx->config в JSON. |  |
+| `system/console` | Читает данные реестра в консоль. |  |
+| `system/contenttype/create` | Создаёт тип контента | `content_types` |
+| `system/contenttype/getlist` | Получает список типов контента |  |
+| `system/contenttype/remove` | Удаляет тип контента | `content_types` |
+| `system/contenttype/update` | Обновляет тип контента из сетки. Отправляется через параметр data в формате JSON. | `content_types` |
+| `system/contenttype/updatefromgrid` | Обновляет тип контента из сетки. Отправляется через параметр data в формате JSON. |  |
+| `system/country/getlist` | Получает список кодов стран |  |
+| `system/dashboard/create` | Создаёт панель мониторинга | `dashboards` |
+| `system/dashboard/duplicate` | Дублирует панель мониторинга. | `dashboards` |
+| `system/dashboard/getlist` | Получает список информационных панелей | `dashboards` |
+| `system/dashboard/remove` | Удаляет панель мониторинга | `dashboards` |
+| `system/dashboard/removemultiple` | Удаляет несколько информационных панелей |  |
+| `system/dashboard/update` | Обновляет панель мониторинга | `dashboards` |
+| `system/dashboard/updatefromgrid` | Обновляет панель мониторинга из сетки. Отправляется через параметр data в формате JSON. |  |
+| `system/dashboard/user/create` | Создаёт класс |  |
+| `system/dashboard/user/getlist` | Получает список виджетов дашборда пользователя. |  |
+| `system/dashboard/user/remove` | Удаляет размещение виджета на дашборде пользователя. |  |
+| `system/dashboard/user/resize` | Изменяет размер виджета на дашборде пользователя. |  |
+| `system/dashboard/user/sort` | Сортирует виджеты дашборда пользователя. |  |
+| `system/dashboard/widget/create` | Создаёт новый виджет панели мониторинга. | `dashboards` |
+| `system/dashboard/widget/feed` | Загружает ленты новостей и безопасности на дашборде через AJAX. Обработанный HTML возвращается в object->html. |  |
+| `system/dashboard/widget/getlist` | Получает список информационных панелей | `dashboards` |
+| `system/dashboard/widget/remove` | Удаляет виджет информационной панели | `dashboards` |
+| `system/dashboard/widget/removemultiple` | Удаляет несколько виджетов информационной панели |  |
+| `system/dashboard/widget/update` | Обновляет виджет информационной панели | `dashboards` |
+| `system/databasetable/getlist` | Получает список таблиц базы данных |  |
+| `system/databasetable/mysql/getlist` | MySQL-специфичный процессор листинга таблиц |  |
 | `system/databasetable/mysql/optimize` | _(нет docblock у класса)_ |  |
 | `system/databasetable/mysql/optimizedatabase` | _(нет docblock у класса)_ |  |
 | `system/databasetable/mysql/truncate` | _(нет docblock у класса)_ |  |
-| `system/databasetable/optimize` | Optimize a database table |  |
-| `system/databasetable/optimizedatabase` | Optimize a database |  |
-| `system/databasetable/truncate` | Truncate a database table |  |
-| `system/deprecatedlog/clear` | Clear the error log |  |
-| `system/deprecatedlog/getlist` | Get a list of system settings |  |
-| `system/derivatives/getlist` | Gets a list of derivative classes for a class |  |
-| `system/downloadoutput` | Output data to a file for downloading |  |
-| `system/errorlog/clear` | Clear the error log |  |
-| `system/errorlog/download` | Grab and download the error log |  |
-| `system/errorlog/get` | Grab and output the error log |  |
-| `system/event/create` | Create a system event | `events` |
-| `system/event/getlist` | Gets a list of system events |  |
-| `system/event/grouplist` | Create a system setting |  |
-| `system/event/remove` | Remove a system even | `events` |
-| `system/info` | Removes locks on all objects |  |
-| `system/language/getlist` | Grabs a list of lexicon languages |  |
-| `system/log/getlist` | Gets a list of manager log actions |  |
-| `system/log/truncate` | Clears the manager log actions |  |
-| `system/menu/create` | Creates a menu item | `menus` |
-| `system/menu/getlist` | Get a list of menu items | `menus` |
-| `system/menu/getnodes` | Get the menu items, in node format | `menus` |
-| `system/menu/remove` | Remove a menu item | `menus` |
-| `system/menu/sort` | Sort menu items for a tree |  |
-| `system/menu/update` | Update a menu item | `menus` |
-| `system/phpinfo` | Display phpinfo() |  |
-| `system/phpthumb` | Generate a thumbnail |  |
-| `system/refreshuris` | Regenerate the system's Resource URIs in the database |  |
-| `system/registry/register/read` | Read from the registry |  |
-| `system/registry/register/send` | Send a message to the registry. |  |
-| `system/removelocks` | Removes locks on all objects |  |
-| `system/rte/getlist` | Get a list of registered RTEs |  |
-| `system/settings/create` | Create a system setting | `settings` |
-| `system/settings/getareas` | Get a list of setting areas | `settings` |
-| `system/settings/getlist` | Get a list of system settings | `settings` |
-| `system/settings/remove` | Remove a system setting | `settings` |
-| `system/settings/update` | Update a system setting | `settings` |
-| `system/settings/updatefromgrid` | Update a setting from a grid |  |
+| `system/databasetable/optimize` | Оптимизирует таблицу базы данных |  |
+| `system/databasetable/optimizedatabase` | Оптимизирует базу данных |  |
+| `system/databasetable/truncate` | Усечь таблицу базы данных |  |
+| `system/deprecatedlog/clear` | Очищает журнал ошибок |  |
+| `system/deprecatedlog/getlist` | Получает список настроек системы |  |
+| `system/derivatives/getlist` | Получает список производных классов для класса. |  |
+| `system/downloadoutput` | Вывод данных в файл для скачивания |  |
+| `system/errorlog/clear` | Очищает журнал ошибок |  |
+| `system/errorlog/download` | Возьмите и загрузите журнал ошибок |  |
+| `system/errorlog/get` | Захватывает и выведите журнал ошибок |  |
+| `system/event/create` | Создаёт системное событие | `events` |
+| `system/event/getlist` | Получает список системных событий |  |
+| `system/event/grouplist` | Создаёт системную настройку |  |
+| `system/event/remove` | Удаляет систему даже | `events` |
+| `system/info` | Снимает блокировки со всех объектов |  |
+| `system/language/getlist` | Захватывает список языков лексики |  |
+| `system/log/getlist` | Получает список действий журнала менеджера. |  |
+| `system/log/truncate` | Очищает журнал действий менеджера. |  |
+| `system/menu/create` | Создаёт пункт меню | `menus` |
+| `system/menu/getlist` | Получает список пунктов меню | `menus` |
+| `system/menu/getnodes` | Получает пункты меню в формате узла | `menus` |
+| `system/menu/remove` | Удаляет пункт меню | `menus` |
+| `system/menu/sort` | Сортирует пункты меню в дереве. |  |
+| `system/menu/update` | Обновляет пункт меню | `menus` |
+| `system/phpinfo` | Отобразить phpinfo() |  |
+| `system/phpthumb` | Создаёт миниатюру |  |
+| `system/refreshuris` | Восстанавливает URI ресурсов системы в базе данных. |  |
+| `system/registry/register/read` | Читает данные из реестра. |  |
+| `system/registry/register/send` | Отправляет сообщение в реестр. |  |
+| `system/removelocks` | Снимает блокировки со всех объектов |  |
+| `system/rte/getlist` | Получает список зарегистрированных RTE |  |
+| `system/settings/create` | Создаёт системную настройку | `settings` |
+| `system/settings/getareas` | Получает список областей настройки | `settings` |
+| `system/settings/getlist` | Получает список настроек системы | `settings` |
+| `system/settings/remove` | Удаляет системной настройки | `settings` |
+| `system/settings/update` | Обновляет системные настройки | `settings` |
+| `system/settings/updatefromgrid` | Обновляет настройки из сетки |  |
 
 ## Workspace (пакеты, лексикон, namespaces)
 
 _37 процессоров_
 
-| Action | Description | Permission |
-| ------ | ----------- | ---------- |
-| `workspace/lexicon/create` | Updates a lexicon entry from a grid |  |
-| `workspace/lexicon/getlist` | Gets a list of lexicon entries |  |
-| `workspace/lexicon/reloadfrombase` | Regenerates strings from the base lexicon files, resetting any customizations. |  |
-| `workspace/lexicon/revert` | Updates a lexicon entry from a grid |  |
-| `workspace/lexicon/topic/getlist` | Gets a list of lexicon topics |  |
-| `workspace/lexicon/updatefromgrid` | Updates a lexicon entry from a grid |  |
-| `workspace/packagenamespace/create` | Creates a namespace | `namespaces` |
-| `workspace/packagenamespace/getlist` | Gets a list of namespaces | `namespaces` |
-| `workspace/packagenamespace/remove` | Removes a namespace. | `namespaces` |
-| `workspace/packagenamespace/removemultiple` | Removes namespaces. |  |
-| `workspace/packagenamespace/update` | Updates a namespace from a grid | `namespaces` |
-| `workspace/packagenamespace/updatefromgrid` | Updates a namespace from a grid |  |
-| `workspace/packages/checkforupdates` | Update a package from its provider. |  |
-| `workspace/packages/dependency/download` | Download a package by resolving dependent package constraints |  |
-| `workspace/packages/get` | Gets a Transport Package. | `packages` |
-| `workspace/packages/getattribute` | Gets an attribute of a package |  |
-| `workspace/packages/getdependencies` | Gets a list of packages | `packages` |
-| `workspace/packages/getlist` | Gets a list of packages | `packages` |
-| `workspace/packages/install` | Install a package |  |
-| `workspace/packages/purge` | Purge old package versions |  |
-| `workspace/packages/remove` | Remove a package |  |
-| `workspace/packages/rest/download` | Download a package by passing in its location |  |
+| Action | Описание | Permission |
+| ------ | -------- | ---------- |
+| `workspace/lexicon/create` | Обновляет словарную статью из сетки |  |
+| `workspace/lexicon/getlist` | Получает список записей словаря |  |
+| `workspace/lexicon/reloadfrombase` | Восстанавливает строки из файлов базового словаря, сбрасывая любые настройки. |  |
+| `workspace/lexicon/revert` | Обновляет словарную статью из сетки |  |
+| `workspace/lexicon/topic/getlist` | Получает список тем словаря |  |
+| `workspace/lexicon/updatefromgrid` | Обновляет словарную статью из сетки |  |
+| `workspace/packagenamespace/create` | Создаёт пространство имен | `namespaces` |
+| `workspace/packagenamespace/getlist` | Получает список пространств имен | `namespaces` |
+| `workspace/packagenamespace/remove` | Удаляет пространство имен. | `namespaces` |
+| `workspace/packagenamespace/removemultiple` | Удаляет пространства имен. |  |
+| `workspace/packagenamespace/update` | Обновляет пространство имен из сетки | `namespaces` |
+| `workspace/packagenamespace/updatefromgrid` | Обновляет пространство имен из сетки |  |
+| `workspace/packages/checkforupdates` | Обновляет пакет от его поставщика. |  |
+| `workspace/packages/dependency/download` | Загружает пакет, устранив ограничения зависимого пакета. |  |
+| `workspace/packages/get` | Получает транспортный пакет. | `packages` |
+| `workspace/packages/getattribute` | Получает атрибут пакета |  |
+| `workspace/packages/getdependencies` | Получает список пакетов | `packages` |
+| `workspace/packages/getlist` | Получает список пакетов | `packages` |
+| `workspace/packages/install` | Устанавливает пакет |  |
+| `workspace/packages/purge` | Очищает старые версии пакета |  |
+| `workspace/packages/remove` | Удаляет пакет |  |
+| `workspace/packages/rest/download` | Загружает пакет, указав его местоположение. |  |
 | `workspace/packages/rest/getinfo` | _(нет docblock у класса)_ |  |
 | `workspace/packages/rest/getlist` | _(нет docblock у класса)_ |  |
 | `workspace/packages/rest/getnodes` | _(нет docblock у класса)_ |  |
-| `workspace/packages/scanlocal` | Scans for local packages to add to the workspace. |  |
-| `workspace/packages/uninstall` | Uninstall a package |  |
-| `workspace/packages/update` | Gets a chunk. |  |
-| `workspace/packages/upload` | Upload transport package to Packages directory |  |
-| `workspace/packages/version/getlist` | Gets a list of package versions for a package | `packages` |
-| `workspace/packages/version/remove` | Remove a package |  |
-| `workspace/providers/create` | Create a provider | `providers` |
-| `workspace/providers/getlist` | Gets a list of providers | `providers` |
-| `workspace/providers/remove` | Remove a provider | `providers` |
-| `workspace/providers/update` | Update a provider | `providers` |
-| `workspace/providers/updatefromgrid` | Update a provider from a grid |  |
-| `workspace/theme/getlist` | Grabs a list of manager themes | `settings` |
-
+| `workspace/packages/scanlocal` | Сканирует локальные пакеты для добавления в рабочую область. |  |
+| `workspace/packages/uninstall` | Удаляет пакет |  |
+| `workspace/packages/update` | Получает кусок. |  |
+| `workspace/packages/upload` | Загружает транспортный пакет в каталог Packages. |  |
+| `workspace/packages/version/getlist` | Получает список версий пакета для пакета. | `packages` |
+| `workspace/packages/version/remove` | Удаляет пакет |  |
+| `workspace/providers/create` | Создаёт поставщика | `providers` |
+| `workspace/providers/getlist` | Получает список провайдеров | `providers` |
+| `workspace/providers/remove` | Удаляет провайдера | `providers` |
+| `workspace/providers/update` | Обновляет провайдера | `providers` |
+| `workspace/providers/updatefromgrid` | Обновляет провайдера из сетки |  |
+| `workspace/theme/getlist` | Получает список тем менеджера | `settings` |
