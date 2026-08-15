@@ -25,6 +25,7 @@ $xpdo->addPackage('boxpackage', '/myapp/core/model/');
 ```
 
 From then on, load package classes through xPDO’s retrieval methods.
+
 ## Conclusion
 
 Now that you've got your package loaded, you'll want to look into [creating objects](extending-modx/xpdo/creating-objects "Creating Objects"), or adding rows to your tables, with xPDO.

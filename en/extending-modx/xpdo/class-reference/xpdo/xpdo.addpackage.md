@@ -37,6 +37,7 @@ The function returns `true` on success and `false` on error. Check the logs when
 Pass an explicit `$prefix` only when the package tables intentionally use a **different** prefix than the MODX connection (legacy import, shared third-party schema, or a second xPDO connection with its own prefix). In that case document the choice and keep the schema, maps, and call in sync.
 
 If the package was generated against the same prefix as MODX, call `addPackage` with two arguments (or pass `null`) and let the connection supply the prefix.
+
 ## Example
 
 Most Snippets and plugins load a package from `MODX_CORE_PATH` and point at the component's `model/` directory. Omit the third argument so the package uses the MODX table prefix:

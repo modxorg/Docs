@@ -24,6 +24,7 @@ $xpdo->addPackage('boxpackage', '/myapp/core/model/');
 ```
 
 Дальше классы пакета можно брать методами выборки xPDO.
+
 ## Выводы
 
 Теперь, когда вы загрузили пакет, вы можете захотеть взглянуть на [creating objects](extending-modx/xpdo/creating-objects "Создание объектов"), или добавление строк в ваши таблицы при помощи xPDO.
