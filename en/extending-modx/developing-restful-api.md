@@ -4,69 +4,111 @@ _old_id: "1728"
 _old_uri: "2.x/developing-in-modx/advanced-development/developing-rest-servers"
 ---
 
-MODX 2.3 introduced a convenient method to develop RESTful APIs, on top of MODX. This is done with the modRestService class and modRestController derivatives and supports a whole lot of fancy features for interacting with xPDOObject instances. This document aims to provide you with the information you need to get started building your own API.
+MODX ships a small REST server stack built around `modRestService` and `modRestController`. You point HTTP requests at a bootstrap script, map URL paths to controller classes, and get CRUD behaviour over xPDO objects with hooks for auth, validation, and response shaping.
 
-## Recommended Pre-Development Reading
+This page covers MODX 2.3+ and MODX 3.x. Class locations changed in 3.x (`MODX\Revolution\Rest\*`). Behaviour of the service and controllers matches the examples below.
 
-Before building a RESTful API, it helps to know what a RESTful API really is and how they are supposed to work. There are a lot of resources available online, and Phil Sturgeon's " [Build APIs you won't hate](https://leanpub.com/build-apis-you-wont-hate)" is a great (e)book that can be useful to check out.
+> Outgoing HTTP from MODX to third-party APIs is a different stack. See [HTTP Client](extending-modx/services/http). The deprecated `modRest` client is documented under [Services](extending-modx/services/modrest).
 
-## In a Nutshell
+## Recommended reading
 
-1. Create an `index.php` file that handles the loading of MODX, setting up the REST Service with the right configuration and passing on the request to the controller (see #3).
-2. Create a `.htaccess` file that directs all requests (in a subfolder or on a specific domain) to the `index.php` from #1.
-3. Create controllers for each of your endpoints
+Phil Sturgeon's *[Build APIs you won't hate](https://leanpub.com/build-apis-you-wont-hate)* is a solid primer on REST conventions before you wire controllers.
+
+## In a nutshell
+
+1. Create `rest/index.php` that boots MODX, configures `modRestService`, then calls `prepare()` and `process()`.
+2. Route `/rest/*` to that script (Apache `.htaccess` inside `rest/`, or an nginx `location`).
+3. Add one controller class per endpoint under `rest/Controllers/`.
 
 ## 1. Bootstrapping the API
 
-The `modRestService` and `modRestController` classes will make your work a lot easier, but you do need to set up some basic code to hook it up. For this document, we will assume you are placing your API in a `/rest/` folder, adjust paths as necessary.
+Place the API under `/rest/` (adjust paths if you use another folder).
 
-First, create a `rest/index.php` file which looks something like this:
+### MODX 3.x
 
-``` php
+```php
 <?php
-// Boot up MODX
-require_once dirname(dirname(__FILE__)) . '/config.core.php';
-require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
+use MODX\Revolution\modX;
+use MODX\Revolution\Rest\modRestService;
+
+require_once dirname(__DIR__) . '/config.core.php';
+require_once MODX_CORE_PATH . 'vendor/autoload.php';
+
 $modx = new modX();
 $modx->initialize('web');
-$modx->getService('error','error.modError', '', '');
-// Boot up any service classes or packages (models) you will need
-$path = $modx->getOption('mypackage.core_path', null,
-   $modx->getOption('core_path').'components/mypackage/') . 'model/mypackage/';
+$modx->getService('error', 'error.modError', '', '');
+
+$path = $modx->getOption(
+    'mypackage.core_path',
+    null,
+    $modx->getOption('core_path') . 'components/mypackage/'
+) . 'model/mypackage/';
+$modx->addPackage('mypackage', $path);
+
+$rest = new modRestService($modx, [
+    'basePath' => __DIR__ . '/Controllers/',
+    'controllerClassSeparator' => '',
+    'controllerClassPrefix' => 'MyController',
+    'xmlRootNode' => 'response',
+]);
+
+$rest->prepare();
+if (!$rest->checkPermissions()) {
+    $rest->sendUnauthorized(true);
+}
+$rest->process();
+```
+
+### MODX 2.x
+
+```php
+<?php
+require_once dirname(dirname(__FILE__)) . '/config.core.php';
+require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
+
+$modx = new modX();
+$modx->initialize('web');
+$modx->getService('error', 'error.modError', '', '');
+
+$path = $modx->getOption(
+    'mypackage.core_path',
+    null,
+    $modx->getOption('core_path') . 'components/mypackage/'
+) . 'model/mypackage/';
 $modx->getService('mypackage', 'myPackage', $path);
-// Load the modRestService class and pass it some basic configuration
-$rest = $modx->getService('rest', 'rest.modRestService', '', array(
+
+$rest = $modx->getService('rest', 'rest.modRestService', '', [
     'basePath' => dirname(__FILE__) . '/Controllers/',
     'controllerClassSeparator' => '',
     'controllerClassPrefix' => 'MyController',
     'xmlRootNode' => 'response',
-));
-// Prepare the request
+]);
+
 $rest->prepare();
-// Make sure the user has the proper permissions, send the user a 401 error if not
 if (!$rest->checkPermissions()) {
     $rest->sendUnauthorized(true);
 }
-// Run the request
 $rest->process();
 ```
 
-With that in place, next you'll need to make sure the all requests to your `/rest/` folder are actually handled by the REST server. To do that, add the following to your `.htaccess` (or the equivalent on nginx or other systems) in the root of your site:
+`checkPermissions()` on the service returns `true` by default. Override it on a custom service subclass (or gate traffic earlier) when every request must pass a site-wide check. Per-controller auth uses `verifyAuthentication()` (see below).
 
-### Apache
+### URL rewriting
 
-``` plain
+Put rewrite rules **inside** `rest/` so the rest of the site keeps normal routing.
+
+**Apache** (`rest/.htaccess`):
+
+```apache
 RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-s
-RewriteRule ^(.*)$ rest/index.php?_rest=$1 [QSA,NC,L]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^(.*)$ rest/index.php [QSA,NC,L]
+RewriteRule ^(.*)$ index.php?_rest=$1 [QSA,L]
 ```
 
-### NGINX
+**nginx**:
 
-``` plain
+```nginx
 location /rest/ {
     try_files $uri @modx_rest;
 }
@@ -75,76 +117,233 @@ location @modx_rest {
 }
 ```
 
-If you were to open /rest/foobar in your browser now, you should get an error that indicates your API is working, yay!
+Open `/rest/foobar` in a browser. A working bootstrap returns JSON like:
 
-``` json
+```json
 {
-    success: false,
-    message: "Method not allowed",
-    object: [ ],
-    code: 405
+    "success": false,
+    "message": "Method not allowed",
+    "object": [],
+    "code": 405
 }
 ```
 
-Now we can get started with the actual API building!
+That 405 means the router ran and found no matching controller. Next step: add controllers.
 
-## 2. Building API Endpoints
+### Useful `modRestService` options
 
-The actual API consists of a bunch of endpoints. If you want to build a proper RESTful API each endpoint would match a "resource" (not necessarily the kind from the left tree!), and the different HTTP verbs (GET, POST, PUT and DELETE) would be used to interact with specific objects. Say you're building an API for managing your to do list, you could have an endpoint "items" with the following actions:
+| Option | Default | Role |
+| --- | --- | --- |
+| `basePath` | site `base_path` | Directory of controller files |
+| `controllerClassPrefix` | `modRestController` | Prefix prepended to the class loaded from the file name |
+| `controllerClassSeparator` | `''` | Joiner between prefix and class segment |
+| `requestParameter` | `_rest` | Query param that carries the path (`items`, `items/15`) |
+| `defaultResponseFormat` | `json` | `json` or `xml` when no suffix is present |
+| `collectionResultsKey` / `collectionTotalKey` | `results` / `total` | Keys in list responses |
+| `propertyLimit` / `propertyOffset` | `limit` / `start` | Query param names for pagination |
+| `propertySort` / `propertySortDir` | `sort` / `dir` | Query param names for sorting |
+| `propertySearch` | `search` | Query param name for text search |
+| `defaultSuccessStatusCode` / `defaultFailureStatusCode` | `200` / `200` | HTTP status codes used by `success()` / `failure()` |
 
-- `GET /items`: returns items on your to do list
-- `GET /items/15`: returns the item with primary key 15
-- `POST /items`: create a new item on the to do list
-- `PUT /items/15`: update one or more values on your to do list item with primary key 15
-- `DELETE /items/15`: delete the item with primary key 15
+## 2. Building API endpoints
 
-There is a lot of discussion around the web about how to name your endpoints - in this case we went for the plural "items". One thing to note is that we don't have endpoints like /items/create - that is already covered by POSTing to /items and is a key aspect of building RESTful APIs.
+Map one path segment to one resource type. HTTP verbs do the work:
 
-To create your Items endpoint , you will need to create the Items controller. Based on the configuration we passed to the modRestService earlier, and the defaults, each controller needs to start with MyController, be placed in a `/rest/Controllers/` directory and the file must match the endpoint name suffixed with `.php`. So create a new file `/rest/Controllers/Items.php`. Give it the following contents:
+- `GET /items`: list
+- `GET /items/15`: read primary key `15`
+- `POST /items`: create
+- `PUT /items/15`: update
+- `DELETE /items/15`: delete
 
-``` php
-class MyControllerItems extends modRestController {
+Skip paths like `/items/create`. `POST /items` already means create.
+
+With `controllerClassPrefix => 'MyController'` and empty separator, file `rest/Controllers/Items.php` must define class `MyControllerItems`.
+
+### MODX 3.x controller
+
+```php
+<?php
+use MODX\Revolution\Rest\modRestController;
+
+class MyControllerItems extends modRestController
+{
     public $classKey = 'ToDoItem';
     public $defaultSortField = 'sortorder';
     public $defaultSortDirection = 'ASC';
 }
 ```
 
-Assuming ToDoItem is the name of a valid xPDOObject derivative, and you loaded it with $modx->addPackage() somewhere (for example in your Service class that we called in the index.php), you now have a fully functional RESTful API for your ToDoItem objects. Just request /rest/items and it should return your ToDoItems in pretty JSON.
+### MODX 2.x controller
 
-If you don't have a package ready, you can also set the classKey property to "modResource" and the defaultSortField to "id" to set up an API for all resources.
-
-``` json
+```php
+<?php
+class MyControllerItems extends modRestController
 {
-  results: [
-    {
-       id: 1,
-       sortorder: 1,
-       name: "Finish documenting RESTful APIs",
-       added: "2014-09-14",
-       target_completion_date: "2014-10-14",
-       assigned_to: ""
-    },
-    // ...
-  ],
-  total: 1
+    public $classKey = 'ToDoItem';
+    public $defaultSortField = 'sortorder';
+    public $defaultSortDirection = 'ASC';
 }
 ```
 
-It's like magic! But you know what's even better? It is a full blown API now... if you go back to the actions we mentioned earlier, they will all work out of the box. `/rest/items/1` will return only the to do item with ID 1, for example. To test the POST, PUT and DELETE, you will probably need to use something like [Postman](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm)[](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm) or curl to send the proper requests but they should be functional now too.
+Load the package with `addPackage()` (or your Extra's service) before `process()` so `ToDoItem` resolves. For a quick experiment without a custom package, set `$classKey = 'modResource'` (or `\MODX\Revolution\modResource` in 3.x) and `$defaultSortField = 'id'`.
 
-Now that you have your basic API running, it's time to start doing some real development and making it work the way you want it to.
+`GET /rest/items` then returns a collection:
 
-## 3. Making your Endpoints smarter
+```json
+{
+    "results": [
+        {
+            "id": 1,
+            "sortorder": 1,
+            "name": "Finish documenting RESTful APIs",
+            "added": "2014-09-14",
+            "target_completion_date": "2014-10-14",
+            "assigned_to": ""
+        }
+    ],
+    "total": 1
+}
+```
 
-The majority of the work following now boils down to making your endpoints smarter, and adding more of them. You will probably want to change the way your data is returned, filter out unwanted data and more like that. The modRestController has all the options and hooks for you to do just that.
+`GET /rest/items/1`, `POST`, `PUT`, and `DELETE` work from the same class. Use curl or an API client to send non-GET verbs.
 
-Each of the requests is passed to a specific method in your Controller. This means that when you, for example, request `GET /items`, which returns a list of objects, it is handled by the `modRestController.getList()` method. This is how requests are routed to the controller:
+### Request routing
 
-- GET /items: `modRestController.get()` which calls `modRestController.getList()`
-- GET /items/5: `modRestController.get()` which calls `modRestController.read()`
-- POST /items: `modRestController.post()`
-- PUT /items/5: `modRestController.put()`
-- DELETE /items/5: `modRestController.delete()`
+| Request | Controller entry |
+| --- | --- |
+| `GET /items` | `get()` → `getList()` |
+| `GET /items/5` | `get()` → `read($id)` |
+| `POST /items` | `post()` |
+| `PUT /items/5` | `put()` |
+| `DELETE /items/5` | `delete()` |
 
-These methods by default do what you would expect them to do with some sensible error handling and - for the most part - don't need to be customised. There are also methods such as `modRestController.beforePost()`, `modRestController.beforePut()`, `modRestController.beforeDelete()` that allow you to prevent the action (creating, updating or deleting an object respectively) by returning false. The object in question is available via `$this->object`, so you could make sure the user has permission to complete the action or otherwise prepare stuff. There is also `modRestController.afterRead()`, `modRestController.afterPost()`, `modRestController.afterPut()` and `modRestController.afterDelete()` for doing stuff after the action is completed. These methods get passed an array by reference which contains the object that is about to be returned.
+The ID segment is copied onto `$this->primaryKeyField` (default `id`) before the method runs.
+
+### List query parameters
+
+Defaults from the service config:
+
+| Param | Purpose |
+| --- | --- |
+| `limit` | Page size (controller `$defaultLimit`, default `20`) |
+| `start` | Offset |
+| `sort` | Field name (falls back to `$defaultSortField`) |
+| `dir` | `ASC` or `DESC` |
+| `search` | LIKE filter across `$searchFields` |
+
+Example: `/rest/items?limit=10&start=0&sort=name&dir=ASC&search=docs`
+
+## 3. Controller properties
+
+Set these on your controller class to drive the default CRUD path:
+
+| Property | Role |
+| --- | --- |
+| `$classKey` | xPDO class to load |
+| `$classAlias` | Optional query alias |
+| `$primaryKeyField` | Field used for read/update/delete (default `id`) |
+| `$defaultSortField` / `$defaultSortDirection` | Default list sorting |
+| `$defaultLimit` / `$defaultOffset` | Default pagination |
+| `$searchFields` | Fields searched when `search` is present |
+| `$postRequiredFields` / `$putRequiredFields` / `$deleteRequiredFields` | Required request fields |
+| `$postRequiredRelatedObjects` / `$putRequiredRelatedObjects` | Map of `field => classKey` that must exist |
+| `$postMethod` / `$putMethod` / `$deleteMethod` | Object methods called to persist (`save` / `save` / `remove`) |
+| `$allowedMethods` | HTTP verbs this controller accepts |
+
+## 4. Hooks and response shaping
+
+Default `get` / `post` / `put` / `delete` already handle the happy path. Override hooks when you need filters, permissions, or a different payload.
+
+**Before write/delete**: return `true` to continue, or `false` / an error string to abort:
+
+- `beforePost()`
+- `beforePut()`
+- `beforeDelete()`
+
+The object sits on `$this->object`.
+
+**After read/write**: `afterRead`, `afterPost`, `afterPut`, and `afterDelete` receive the outgoing array by reference. Change fields there before the response leaves.
+
+**List customisation:**
+
+- `prepareListQueryBeforeCount(xPDOQuery $c)` / `prepareListQueryAfterCount(xPDOQuery $c)`: add joins or `where` clauses
+- `prepareListObject(xPDOObject $object)`: map each row (default `toArray()`)
+- `addSearchQuery()`: override search behaviour
+
+**Helpers you call from overrides:**
+
+- `$this->getProperty($key)` / `setProperty()` / `getProperties()`
+- `$this->success($message, $object, $status)`
+- `$this->failure($message, $object, $status)`
+- `$this->collection($list, $total, $status)`
+- `$this->addFieldError($field, $message)`
+
+Example: expose only a subset of fields on list responses:
+
+```php
+protected function prepareListObject(xPDOObject $object)
+{
+    $row = $object->toArray();
+    return [
+        'id' => $row['id'],
+        'name' => $row['name'],
+        'sortorder' => $row['sortorder'],
+    ];
+}
+```
+
+Example: block creates unless a field is present:
+
+```php
+public $postRequiredFields = ['name'];
+
+public function beforePost()
+{
+    if ($this->getProperty('name') === 'blocked') {
+        return 'That name is not allowed';
+    }
+    return parent::beforePost();
+}
+```
+
+## 5. Authentication and protection
+
+Each controller has `protected $protected = true` by default. When protected, `process()` calls `verifyAuthentication()` before the verb method (except `OPTIONS`). The stock `verifyAuthentication()` returns `true`.
+
+For a public endpoint, set:
+
+```php
+protected $protected = false;
+```
+
+For a real check, keep `$protected = true` and override:
+
+```php
+public function verifyAuthentication()
+{
+    $key = $this->getProperty('api_key');
+    return $key && $key === $this->modx->getOption('mypackage.api_key');
+}
+```
+
+Failed auth becomes HTTP 401 with the standard error payload. Pair this with HTTPS and your own token or session scheme. The core does not ship OAuth for this stack.
+
+`modRestService::checkPermissions()` is a separate gate that runs in your bootstrap when you call it. Override that method on a custom service class for global rules.
+
+## 6. Response format
+
+JSON is the default. Request XML with a `.xml` suffix when the format is enabled (`/rest/items.xml`), or set `defaultResponseFormat` to `xml`.
+
+Success and failure bodies use keys from the service config (`success`, `message`, `object`, plus `errors` when field errors exist). List calls use `results` and `total`.
+
+Default HTTP status for both success and failure is `200`. Pass a third argument to `success()` / `failure()`, or change `defaultSuccessStatusCode` / `defaultFailureStatusCode`, when you need 201/404-style codes.
+
+## 7. Nested controllers
+
+Controllers may live in subfolders under `basePath`. The class name still uses the configured prefix and separator. With an empty separator, `Controllers/Users/Profile.php` maps to a class like `MyControllerUsersProfile` and path `/rest/users/profile`.
+
+## See also
+
+- [HTTP Client](extending-modx/services/http): outbound requests from MODX 3
+- [modRest](extending-modx/services/modrest): deprecated outbound client
+- [xPDO retrieving objects](extending-modx/xpdo/retrieving-objects): query patterns you reuse in `prepareListQuery*`
