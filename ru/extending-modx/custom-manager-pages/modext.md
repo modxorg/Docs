@@ -128,5 +128,5 @@ Ext.reg( "mycomponent-grid-mygrid", MyComponent.grid.MyGrid );
 
 ## Смотрите также
 
-- [Документация по API ExtJS 3.4](http://docs.sencha.com/ext-js/3-4/#!/api)
-- [Примеры по ExtJS 3.4](http://dev.sencha.com/deploy/ext-3.4.0/examples/)
+- [Документация по API ExtJS 3.4](https://docs.sencha.com/extjs/3.4.0/#!/api)
+- [Примеры ExtJS 3.4 (GPL CDN)](https://cdn.sencha.com/ext/gpl/3.4.1.1/examples/)

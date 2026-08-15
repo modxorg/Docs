@@ -129,5 +129,5 @@ Lastly, we create the top toolbar, consisting of a button. The handler creates a
 
 ## See Also
 
-- [ExtJS 3.4 API Documentation](http://docs.sencha.com/ext-js/3-4/#!/api)
-- [ExtJS 3.4 Examples](http://dev.sencha.com/deploy/ext-3.4.0/examples/)
+- [ExtJS 3.4 API Documentation](https://docs.sencha.com/extjs/3.4.0/#!/api)
+- [ExtJS 3.4 Examples (GPL CDN)](https://cdn.sencha.com/ext/gpl/3.4.1.1/examples/)
