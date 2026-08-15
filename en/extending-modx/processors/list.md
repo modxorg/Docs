@@ -179,7 +179,7 @@ See also: [Processors overview](extending-modx/processors), [Using runProcessor]
 
 ## Search
 
-1 processors.
+1 processor.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
