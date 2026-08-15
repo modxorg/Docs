@@ -10,7 +10,7 @@ Get an option value for this instance of an xPDOObject, using xPDO options if no
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getOption>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getOption()>
 
 ``` php
 mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )

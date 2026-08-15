@@ -16,7 +16,7 @@ Each message is an array with the following keys:
 
 ## Syntax
 
-API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#getMessages>
+API Doc: <https://api.modx.com/revolution/2.2/db_core_xpdo_validation_xpdovalidator.class.html#\xPDOValidator::getMessages()>
 
 ``` php
 array getMessages ()

@@ -10,7 +10,7 @@ Sees if a string ends with a specific pattern or set of patterns. Useful for che
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#endsWith>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::endsWith()>
 
 ``` php
 boolean endsWith (string $string, string|array $pattern)

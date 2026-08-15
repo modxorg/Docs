@@ -10,7 +10,7 @@ Copies the object fields and corresponding values to an associative array.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#toArray>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::toArray()>
 
 ``` php
 array toArray(

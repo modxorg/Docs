@@ -24,7 +24,7 @@ This will also remove any **composite related objects** to this object. For exam
 
 This method is used to delete multiple objects.
 
-<http://api.modxcms.com/xpdo/xPDO.html#removeCollection>
+<https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::removeCollection()>
 
 ## Examples
 

@@ -10,7 +10,7 @@ Indicates if an object field has been modified (or never saved).
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isDirty>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::isDirty()>
 
 ``` php
 boolean isDirty (string $key)

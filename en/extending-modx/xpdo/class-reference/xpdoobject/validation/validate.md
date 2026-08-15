@@ -10,7 +10,7 @@ Validate the field values using an xPDOValidator.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#validate>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::validate()>
 
 ``` php
 boolean validate ([array $options = array()])

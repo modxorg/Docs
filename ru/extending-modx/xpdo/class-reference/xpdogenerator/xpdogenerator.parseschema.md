@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.pa
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOGenerator.html#parseSchema>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdogenerator.class.html#\xPDOGenerator::parseSchema()>
 
 ```php
 boolean parseSchema (string $schemaFile, [string $outputDir = ''], [boolean $compile = false])

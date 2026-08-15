@@ -10,7 +10,7 @@ Pack the [xPDOTransport](extending-modx/xpdo/class-reference/xpdotransport "xPDO
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/transport/xPDOTransport.html#pack>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_transport_xpdotransport.class.html#\xPDOTransport::pack()>
 
 ``` php
 boolean pack ()

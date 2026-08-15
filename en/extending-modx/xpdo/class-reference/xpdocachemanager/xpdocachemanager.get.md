@@ -15,7 +15,7 @@ Also allows for an array of options to be passed. The current available values a
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#get>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::get()>
 
 ``` php
 mixed get (string $key, [array $options = array()])

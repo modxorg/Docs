@@ -10,7 +10,7 @@ Get the name of a class related by foreign key to a specified field key. This is
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getFKClass>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getFKClass()>
 
 ``` php
 void getFKClass (string $k)

@@ -10,7 +10,7 @@ Get an instance of a provider which implements the `xPDOCache` interface. Defaul
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#getCacheProvider>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::getCacheProvider()>
 
 ``` php
 void &getCacheProvider ([ $key = ''], [ $options = array()])

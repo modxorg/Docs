@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.va
 
 ## Синтаксис
 
-API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#>
+API Doc: <https://api.modx.com/revolution/2.2/db_core_xpdo_validation_xpdovalidator.class.html>
 
 ```php
 boolean validate ([array $parameters = array()])

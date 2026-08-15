@@ -12,7 +12,7 @@ This will only work if there is a corresponding xPDO class for the table and its
 
 ## Syntax
 
-API Docs: [removeObjectContainer](http://api.modxcms.com/xpdo/om-mysql/xPDOManager_mysql.html#removeObjectContainer)
+API Docs: [removeObjectContainer](https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdomanager.class.html#\xPDOManager::removeObjectContainer())
 
 ``` php
 int removeObjectContainer (string $className)

@@ -10,7 +10,7 @@ Get a foreign key definition for a specific classname. This is generally used to
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getFKDefinition>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getFKDefinition()>
 
 ``` php
 array getFKDefinition (string $alias)

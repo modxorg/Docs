@@ -10,7 +10,7 @@ Creates the physical data container represented by a data source.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOManager.html#createSourceContainer>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdomanager.class.html#\xPDOManager::createSourceContainer()>
 
 ``` php
 void createSourceContainer (

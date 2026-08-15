@@ -12,7 +12,7 @@ Delete a key-value pair from a cache provider. Also allows for extra options:
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#delete>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::delete()>
 
 ``` php
 boolean delete (string $key, [array $options = array()])

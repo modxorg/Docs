@@ -10,7 +10,7 @@ Remove the persistent instance of an object permanently. This deletes rows from 
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#remove>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::remove()>
 
 ``` php
 boolean remove ([array $ancestors = array ()])

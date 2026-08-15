@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.wr
 
 ## Синтаксис
 
-API Docs: [http://api.modxcms.com/xpdo/om-mysql/xPDOGenerator_mysql.html#writeSchema](http://api.modxcms.com/xpdo/om-mysql/xPDOGenerator_mysql.html#writeSchema)
+API Docs: [xPDOGenerator::writeSchema()](https://api.modx.com/revolution/2.0/xpdo/om-mysql/xPDOGenerator_mysql.html#writeSchema)
 
 ```php
 boolean writeSchema (

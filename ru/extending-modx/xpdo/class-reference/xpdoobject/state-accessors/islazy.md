@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isl
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#isLazy>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::isLazy()>
 
 ```php
 boolean isLazy ([string $key = ''])

@@ -10,7 +10,7 @@ Gets the type of the primary key field for the object.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getPKType>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getPKType()>
 
 ``` php
 string getPKType()

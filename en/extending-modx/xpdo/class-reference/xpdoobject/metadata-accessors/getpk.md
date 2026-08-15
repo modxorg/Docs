@@ -10,7 +10,7 @@ Gets the name (or names) of the primary key field(s) for the object.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getPK>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getPK()>
 
 ``` php
 mixed getPK ()

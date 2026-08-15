@@ -10,7 +10,7 @@ Add a validation message to the stack.
 
 ## Syntax
 
-API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#addMessage>
+API Doc: <https://api.modx.com/revolution/2.2/db_core_xpdo_validation_xpdovalidator.class.html#\xPDOValidator::addMessage()>
 
 ``` php
 void addMessage (string $field, string $name, [mixed $message = null])
