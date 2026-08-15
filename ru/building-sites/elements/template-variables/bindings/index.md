@@ -17,7 +17,8 @@ translation: "building-sites/elements/template-variables/bindings"
 
 - @FILE file\_path
 - @RESOURCE resource\_id
-- @CHUNK chunk\_name
+- @CHUNK chunk\_name \[properties\_as\_json\]
+- @SNIPPET snippet\_name \[properties\_as\_json\]
 - @SELECT sql\_query
 - @DIRECTORY path\_relative\_to\_base\_path
 - @INLINE доступный в некоторых дополнительных объектах (например, getResources), это указывает блок форматирования in-line в виде строки.
@@ -44,6 +45,7 @@ col1row1Value==col2row1Value||col1row2Value==col2row2Value,...
 - [@RESOURCE](building-sites/elements/template-variables/bindings/resource-binding "RESOURCE привязка")
 - [@CHUNK](building-sites/elements/template-variables/bindings/chunk-binding "CHUNK привязка")
 - [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT привязка")
+- [@SNIPPET](building-sites/elements/template-variables/bindings/snippet-binding "SNIPPET привязка")
 - [@DIRECTORY](building-sites/elements/template-variables/bindings/directory-binding "DIRECTORY привязка")
 - [@INHERIT](building-sites/elements/template-variables/bindings/inherit-binding "INHERIT привязка")
 

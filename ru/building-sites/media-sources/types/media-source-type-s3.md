@@ -23,6 +23,9 @@ translation: "building-sites/media-sources/types/media-source-type-s3"
 | `thumbnailType` | Формат превью. **По умолчанию**: `png` |
 | `thumbnailQuality` | Качество превью от 0 до 100. **По умолчанию**: `90` |
 | `skipFiles` | Имена через запятую, которые скрывать при просмотре. **По умолчанию**: `.svn,.git,_notes,nbproject,.idea,.DS_Store` |
+| `visibility` | Видимость Flysystem по умолчанию для **новых файлов**: `public` или `private`. **По умолчанию**: `private`. У S3 поддерживается видимость файлов, не папок (`visibility_dirs` = false), поэтому Set Visibility для каталогов недоступен. |
+
+В MODX 3 источники медиа работают через League Flysystem (для этого типа — AWS SDK v3). Кастомные классы источников должны опираться на Flysystem API, а не на хелперы файловой системы до 3.0.
 
 ## Смотрите также
 

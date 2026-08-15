@@ -8,6 +8,7 @@ MODX 3.0 очистил значительное количество стары
 ## Удалены
 
 -   `allow_tv_eval`, привязка `@EVAL` больше не поддерживается для TVs по соображениям безопасности [#13865](https://github.com/modxcms/revolution/pull/13865)
+-   `forgot_login_email`, письмо сброса пароля теперь из лексикона `login_forgot_email` и ссылки сброса, без пароля в письме [#13786](https://github.com/modxcms/revolution/pull/13786). См. [forgot_login_email](building-sites/settings/forgot_login_email)
 -   `compress_js_max_files`, `manager_js_zlib_output_compression`, `manager_js_cache_file_locking`, `manager_js_cache_max_age`, `manager_js_document_root` что связано со старым динамическим менеджером JS minification [#13859](https://github.com/modxcms/revolution/pull/13859), [#14868](https://github.com/modxcms/revolution/pull/14868)
 -   `editor_css_path` и `editor_css_selectors` был удален [#14843](https://github.com/modxcms/revolution/pull/14843). Эти настройки могут быть в [TinyMCE](https://github.com/modxcms/TinyMCE/issues/30) или других сторонних дополнениях, которые могут потребоваться для настройки недоступных настроек.)
 -   `manager_language` [#13786](https://github.com/modxcms/revolution/pull/13786), заменено автоматическое определение языка и переключение на лету в менеджере [#14046](https://github.com/modxcms/revolution/pull/14046). [Узнайте больше о языке менеджера в 3.0](getting-started/upgrading-to-3.0/manager-language)

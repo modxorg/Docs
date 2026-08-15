@@ -13,7 +13,7 @@ The @SNIPPET Binding executes the specified MODX snippet. It should be used with
 ```
 
 Binds the variable to a snippet. Where snippet_name is the name of the snippet. The returned value is the output of the snippet.\
-The JSON formatted properties are optional and are passed as scriptProperties to the snippet.
+The JSON formatted properties are optional (MODX 3.0+) and are passed as scriptProperties to the snippet.
 
 ## Usage
 

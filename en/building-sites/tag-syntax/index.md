@@ -62,6 +62,20 @@ A good rule-of-thumb is that your tags should fit onto one line, even if you mul
 ]]
 ```
 
+## Literal square brackets inside tags
+
+MODX 3 can keep literal single `[` and `]` characters inside tag property values (for example in an output filter) without breaking tag collection. [#13904](https://github.com/modxcms/revolution/pull/13904)
+
+```php
+[[+label:notempty=`[required]`]]
+```
+
+Standard tags still use double brackets: `[[ ... ]]`.
+
+## Array values in element properties (extras / custom parsers)
+
+When a snippet, chunk, or other element receives **array** property values (typical in PHP API calls rather than tag strings), MODX builds a stable cache/tag signature by serializing those arrays. Custom parser or element subclasses that forge tag signatures should treat array properties the same way so cache keys stay sortable and consistent. [#14689](https://github.com/modxcms/revolution/pull/14689)
+
 ## Properties
 
 All MODX tags can accept [properties](building-sites/properties-and-property-sets), not just Snippets.

@@ -123,6 +123,30 @@ translation: "building-sites/tag-syntax/output-filters"
 | urldecode                                | Преобразует входные данные из строки, удобной для URL, аналогично PHP [urldecode](http://www.php.net/manual/en/function.urldecode.php)                                                                                                                                               | `[[+myparam:urldecode]]`                           |
 | filterPathSegment                        | Добавлено в 2.7. Преобразует ввод в удобную для URL строку с тем же механизмом, который превращает заголовок страницы в псевдоним, включая транслитерацию, если она включена. Полезно для пользовательских URL.                                                                      | `[[+pagetitle:filterPathSegment]]`                 |
 
+### Модификаторы пути к файлу
+
+Добавлены в MODX 3.0. Это обёртки над PHP [`pathinfo()`](https://www.php.net/manual/en/function.pathinfo.php). Они не проверяют, существует ли путь на диске. Параметры после модификатора игнорируются.
+
+| Модификатор | Описание | Пример |
+| ----------- | -------- | ------ |
+| dirname     | Каталог без имени файла | `[[+filepath:dirname]]` → `/assets/images` для `/assets/images/logo.jpg` |
+| basename    | Имя файла с расширением | `[[+filepath:basename]]` → `logo.jpg` |
+| filename    | Имя файла без последнего расширения | `[[+filepath:filename]]` → `logo` |
+| extension   | Только последнее расширение (единственное число; не `extensions`) | `[[+filepath:extension]]` → `jpg` |
+
+Полезные краевые случаи:
+
+- `test.inc.php` → filename `test.inc`, extension `php`
+- `file.tar.gz` → filename `file.tar`, extension `gz`
+- `.htaccess` → пустой filename, extension `htaccess`
+- Путь без расширения даёт пустую строку extension
+
+```php
+[[*myImageTV:basename]]
+[[*myImageTV:dirname]]/thumbs/[[*myImageTV:filename]].webp
+[[+file:extension:lcase:is=`pdf`:then=`PDF`:else=`Other`]]
+```
+
 ### Кэширование
 
 Как правило, любой контент в заполнителе, который, по вашему мнению, **может изменяться динамически**, должен быть кэширован. Например:

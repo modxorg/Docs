@@ -419,7 +419,10 @@ Each package has what are called 'package attributes', which can be passed to an
 
 -   **license** (string) - This represents your license agreement. Should MODX find this not empty during install, it will prompt the user to agree to it before they can proceed to install the package.
 -   **readme** (string) - This holds the readme. Before installing, if this is not empty, the user will be able to view the readme. This can be useful to make sure people see any requirements before they install.
+-   **changelog** (string) - Optional release notes shown with the package attributes.
 -   **setup-options** (string) - And here is the best part - this can be an HTML form (minus the form tags) that will pass any user-inputted options to the resolvers or validators. This means that you can take in user input before install, and process it during install!
+
+**Markdown in package attributes (MODX 3+):** when the installer shows `license`, `readme`, or `changelog`, MODX renders those strings as Markdown (Parsedown, safe mode) before display. [#13853](https://github.com/modxcms/revolution/pull/13853) You can keep plain text or HTML-ish content, but Markdown headings, lists, and links work without shipping a separate HTML file for those three keys.
 
 So let's use these in our build script:
 

@@ -5,9 +5,9 @@ translation: "building-sites/elements/template-variables/bindings/chunk-binding"
 
 ## Что такое @CHUNK привязка?
 
-Привязка @CHUNK возвращает проанализированный контент любого указанного чанка, если @CHUNK используется в переменной шаблона (TV).
+Привязка @CHUNK возвращает разобранное содержимое указанного чанка, когда @CHUNK используется в переменной шаблона (TV).
 
-Другими словами, если @CHUNK Hello - это значение TV с именем MyChunk, следующий тег в шаблоне или в поле Resource Content ресурса будет заменен содержимым блока Hello:
+Другими словами, если @CHUNK Hello — значение TV с именем MyChunk, следующий тег в шаблоне или в поле содержимого ресурса будет заменён содержимым чанка Hello:
 
 ```php
 [[*MyChunk]]
@@ -16,12 +16,12 @@ translation: "building-sites/elements/template-variables/bindings/chunk-binding"
 ## Синтаксис
 
 ```php
-@CHUNK chunk_name
+@CHUNK chunk_name [properties_as_json]
 ```
 
-Привязывает переменную к документу. Где `chunk_name` - это имя чанка. Возвращаемое значение является строкой, содержащей содержимое чанка.
+Привязывает переменную к чанку. `chunk_name` — имя чанка. Возвращаемое значение — разобранный вывод чанка.
 
-Это связывание очень похоже на [@RESOURCE привязку](building-sites/elements/template-variables/bindings/resource-binding "RESOURCE привязка") за исключением того, что он будет привязывать TV к [чанку](building-sites/elements/chunks "Чанки").
+Необязательные JSON-свойства (MODX 3.0+) передаются в `getChunk()` как массив плейсхолдеров / свойств чанка.
 
 ## Использование
 
@@ -29,7 +29,18 @@ translation: "building-sites/elements/template-variables/bindings/chunk-binding"
 @CHUNK MycontactForm
 ```
 
+Со свойствами:
+
+```php
+@CHUNK MycontactForm {"submitLabel":"Отправить","showTitle":"1"}
+```
+
+Некорректный JSON после имени чанка пишется в лог ошибок и игнорируется. Чанк всё равно выполняется без этих свойств.
+
+Эта привязка похожа на [@RESOURCE](building-sites/elements/template-variables/bindings/resource-binding "RESOURCE привязка"), но связывает TV с [чанком](building-sites/elements/chunks "Чанки"). Для выполнения PHP используйте [@SNIPPET](building-sites/elements/template-variables/bindings/snippet-binding "SNIPPET привязка").
+
 ## Смотрите также
 
--   [Переменные шаблона](building-sites/elements/template-variables "Переменные шаблона")
--   [Привязки](building-sites/elements/template-variables/bindings "Привязки")
+- [Переменные шаблона](building-sites/elements/template-variables "Переменные шаблона")
+- [Привязки](building-sites/elements/template-variables/bindings "Привязки")
+- [Привязка SNIPPET](building-sites/elements/template-variables/bindings/snippet-binding "SNIPPET привязка")

@@ -84,8 +84,59 @@ MODx.grid.Grid adds a few unique parameters not found in typical Ext.grid.Grid o
 | preventSaveRefresh | If autosave is true, after saving, will prevent the grid from refreshing. Makes for a more seamless editing experience.                                                   | 1                       |
 | primaryKey         | If your grid items have a primary key that's not ID, set it here.                                                                                                         | id                      |
 | storeId            | A custom ID to give the store for this grid. Will default to a unique Ext ID.                                                                                             | Ext.id()                |
+| showActionsColumn  | If true, append an actions column (`modx-actions`) with icon buttons. Added in MODX 3.0.                                                                                  | true                    |
+| actionsColumnWidth | Width of the actions column. Auto: `50` for pixel column models, `0.1` when all column widths are ≤ 1.                                                                    | auto                    |
+| disableContextMenuAction | If true, omit the default gear icon that opens the row context menu, and suppress that actions menu path.                                                          | false                   |
 
 For a complete list of all parameters not listed here for grids, see the [ExtJS](http://sencha.com) documentation.
+
+## Actions column (MODX 3.0+)
+
+`MODx.grid.Grid` and `MODx.grid.LocalGrid` share `MODx.grid.GridBase`. When `showActionsColumn` is true, MODX adds a fixed column whose renderer calls `getActions()`.
+
+Override `getActions` to return extra icon buttons. Each item needs `action`, `icon`, and `text`. A click looks for a method named after `action` (or Capitalized `action`) on the grid.
+
+``` javascript
+getActions: function(value, metaData, record, rowIndex, colIndex, store) {
+    return [{
+        action: 'removeElement',
+        icon: 'trash-o',
+        text: _('delete')
+    }];
+}
+```
+
+Unless `disableContextMenuAction` is true, MODX also appends a gear action that opens the same menu as a right-click (`getMenu` / processor `menu` data).
+
+Turn the whole column off:
+
+``` javascript
+Ext.applyIf(config, {
+    showActionsColumn: false
+});
+```
+
+## Editable column hover (MODX 3.0+)
+
+Columns that define an `editor` automatically receive the CSS class `x-editable-column` through `renderEditableColumn`. The manager theme shows a hover cue (pen icon). There is no separate config flag: add an `editor` when the cell is inline-editable.
+
+## Column links (MODX 3.0+)
+
+Use `renderLink(content, attributes, isSimulated, isSimulatedTag)` in a column renderer to wrap values in an `<a class="x-grid-link">` (or a simulated span link).
+
+``` javascript
+renderer: {
+    fn: function(value, metaData, record) {
+        return this.renderLink(value, {
+            href: '?a=context/update&key=' + record.data.key,
+            title: _('edit')
+        });
+    },
+    scope: this
+}
+```
+
+Related helper: `getLinkTemplate(controllerPath, displayValueIndex, options)` for `xtype: 'templatecolumn'` layouts.
 
 ## Custom Events
 

@@ -30,20 +30,30 @@ After upgrading the core and upgrading your extras, you may encounter some break
 - Redesigned installer [#14507](https://github.com/modxcms/revolution/pull/14507) and login [#13773](https://github.com/modxcms/revolution/pull/13773).
 - Manager has been redesigned. Improved manager on mobile devices [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735). Changed resource styles in the tree [#14832](https://github.com/modxcms/revolution/pull/14832)
 - Language can now be switched on the fly [#14046](https://github.com/modxcms/revolution/pull/14046)
-- All manager permissions are automatically made available in `MODx.perm` [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425)
+- All manager permissions are automatically made available in `MODx.perm` [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425). See [The MODx Object](extending-modx/custom-manager-pages/modext/modext-modx-object).
 - Google translations are now disabled in the manager [#14414](https://github.com/modxcms/revolution/pull/14414)
 - More consistent resource/element duplication [#14411](https://github.com/modxcms/revolution/pull/14411)
 
 ### Packages
 
-- Markdown is now parsed in package attributes (changelog/readme/license) [#13853](https://github.com/modxcms/revolution/pull/13853)
+- Markdown is now parsed in package attributes (changelog/readme/license) [#13853](https://github.com/modxcms/revolution/pull/13853). See [Creating a Build Script](extending-modx/transport-packages/build-script).
 
 ### Files & Media
 
-- Media sources now use Flysystem [#13709](https://github.com/modxcms/revolution/pull/13709)
-- Core directories are now protected from being renamed/removed from the manager [#14374](https://github.com/modxcms/revolution/pull/14374)
+- Media sources now use Flysystem [#13709](https://github.com/modxcms/revolution/pull/13709). See [File System](building-sites/media-sources/types/media-source-type-file-system) and [S3](building-sites/media-sources/types/media-source-type-s3) media source types.
+- Core directories are now protected from being renamed/removed from the manager [#14374](https://github.com/modxcms/revolution/pull/14374). See [File System media sources](building-sites/media-sources/types/media-source-type-file-system).
 
 ### Resources & Templates
 
-- Resources can now get an icon based on their content type [#14383](https://github.com/modxcms/revolution/pull/14383)
-- New output modifiers related to files: `dirname`, `basename`, `filename`, `extensions` [#14198](https://github.com/modxcms/revolution/pull/14198)
+- Resources can now get an icon based on their content type [#14383](https://github.com/modxcms/revolution/pull/14383). See [Content Types](building-sites/resources/content-types).
+- New output modifiers related to files: `dirname`, `basename`, `filename`, `extension` [#14198](https://github.com/modxcms/revolution/pull/14198). See [Output Filter/Modifiers](building-sites/tag-syntax/output-filters).
+
+### Security & email
+
+- Forgot-password email uses a reset link (`modhash`) instead of sending a password [#13786](https://github.com/modxcms/revolution/pull/13786). See [forgot_login_email](building-sites/settings/forgot_login_email).
+
+### Parser & REST
+
+- Literal single `[` / `]` inside tag values are supported [#13904](https://github.com/modxcms/revolution/pull/13904). See [Tag Syntax](building-sites/tag-syntax).
+- Array property values get a stable serialized tag signature [#14689](https://github.com/modxcms/revolution/pull/14689). See [Tag Syntax](building-sites/tag-syntax).
+- Empty XML elements in `modRestService` request bodies map to `''` [#14305](https://github.com/modxcms/revolution/pull/14305). See [Developing a RESTful API](extending-modx/developing-restful-api).

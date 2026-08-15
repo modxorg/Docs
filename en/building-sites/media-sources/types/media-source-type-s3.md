@@ -24,6 +24,9 @@ This Media Source type connects the Manager to an Amazon S3 bucket (or an S3-com
 | thumbnailType | Image format for generated thumbnails. **Default**: `png` |
 | thumbnailQuality | Thumbnail quality from 0 to 100. **Default**: `90` |
 | skipFiles | Comma-separated names to hide while browsing. **Default**: `.svn,.git,_notes,nbproject,.idea,.DS_Store` |
+| visibility | Default Flysystem visibility for **new files**: `public` or `private`. **Default**: `private`. S3 sources support file visibility only (`visibility_dirs` is false), so folder Set Visibility is not offered. |
+
+MODX 3 media sources use League Flysystem (AWS SDK v3 for this type). Custom media source classes should target the Flysystem-based APIs rather than the pre-3.0 filesystem helpers.
 
 ## See Also
 

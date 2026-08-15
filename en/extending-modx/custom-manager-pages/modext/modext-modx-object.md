@@ -76,25 +76,16 @@ var userId = MODx.user.id;
 
 ### MODx.perm
 
-This will contain the following permissions should they be granted to the user (they will not exist if the user does not have the permission):
+`MODx.perm` is a map of **every** manager permission name to a boolean for the current user. Config JS loads distinct rows from `modAccessPermission` and sets each key with `hasPermission()`. There is no fixed subset. [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425)
 
-| Name                        | Description                                         |
-| --------------------------- | --------------------------------------------------- |
-| MODx.perm.resource\_tree    | To view the Resources tree.                         |
-| MODx.perm.element\_tree     | To view the Elements tree.                          |
-| MODx.perm.file\_tree        | To view the Files tree.                             |
-| MODx.perm.file\_upload      | To be able to upload files.                         |
-| MODx.perm.file\_manager     | To use the MODX file browser.                       |
-| MODx.perm.new\_chunk        | To create a new Chunk.                              |
-| MODx.perm.new\_plugin       | To create a new Plugin.                             |
-| MODx.perm.new\_snippet      | To create a new Snippet.                            |
-| MODx.perm.new\_template     | To create a new Template.                           |
-| MODx.perm.new\_tv           | To create a new Template Variable.                  |
-| MODx.perm.directory\_create | To be able to create a directory on the filesystem. |
+Use any permission key your Extra or CMP checks, for example:
 
-``` javascript
+```javascript
 if (MODx.perm.file_upload) { /* ...code... */ }
+if (MODx.perm.view_document) { /* ... */ }
 ```
+
+Common keys still include `resource_tree`, `element_tree`, `file_tree`, `file_upload`, `file_manager`, `new_chunk`, `new_plugin`, `new_snippet`, `new_template`, `new_tv`, and `directory_create`. Missing keys mean the user does not have that permission (treat as falsy).
 
 ## Custom Methods
 

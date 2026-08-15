@@ -3,36 +3,39 @@ title: "forgot_login_email"
 translation: "building-sites/settings/forgot_login_email"
 ---
 
-## forgot_login_email
+## Письмо сброса пароля (MODX 3)
 
--   **Имя**: Письмо восстановления пароля
--   **Тип**: textarea
--   **По умолчанию**: (see below)
--   **Доступно в**: Revolution 2.0.0+
+В MODX 3 поток «забыли пароль» в менеджере больше не отправляет временный пароль по почте. Пользователь получает одноразовую ссылку сброса, открывает экран входа и задаёт новый пароль. [#13786](https://github.com/modxcms/revolution/pull/13786)
 
-Шаблон для электронного письма, которое отправляется, когда пользователь забыл свое имя пользователя и/или пароль MODX.
+Текст письма берётся из лексикона `login_forgot_email` (namespace `core`, topic `login`), а не из системной настройки. Правьте ключ в System → Lexicon Management или переопределите в своём лексиконе.
 
-По умолчанию это:
+Русский текст по умолчанию:
 
 ```html
-<p>Hello [[+username]],</p>
-<p>
-    A request for a password reset has been issued for your MODX user. If you
-    sent this, you may follow this link and use this password to login. If you
-    did not send this request, please ignore this email.
-</p>
-
-<p>
-    <strong>Activation Link:</strong>
-    [[+url_scheme]][[+http_host]][[+manager_url]]?modahsh=[[+hash]]<br />
-    <strong>Username:</strong> [[+username]]<br />
-    <strong>Password:</strong> [[+password]]<br />
-</p>
-
-<p>
-    After you log into the MODX Manager, you can change your password again, if
-    you wish.
-</p>
-
-<p>Regards,<br />Site Administrator</p>
+<h2>Забыли пароль?</h2>
+<p>Мы получили запрос на изменение пароля вашего аккаунта. Вы можете сбросить пароль, нажав кнопку ниже и следуя инструкциям на экране.</p>
+<p class="center"><a href="[[+url_scheme]][[+http_host]][[+manager_url]]?modhash=[[+hash]]" class="btn">Сбросить пароль</a></p>
+<p class="small">Если вы не отправляли такого запроса, просто проигнорируйте это письмо.</p>
 ```
+
+### Плейсхолдеры
+
+| Плейсхолдер | Назначение |
+| --- | --- |
+| `[[+hash]]` | Одноразовый hash активации (в URL сброса как `modhash`) |
+| `[[+url_scheme]]`, `[[+http_host]]`, `[[+manager_url]]` | Абсолютный URL менеджера |
+| `[[+username]]` и другие поля пользователя | Доступны при разборе сообщения |
+| Плейсхолдеры из конфига | Подмешиваются из `$modx->config` перед parse |
+
+Не вставляйте `[[+password]]`. В MODX 3 пароль в этом письме не генерируется и не отправляется.
+
+### Поток сброса
+
+1. Пользователь запрашивает сброс на экране входа (`allow_manager_login_forgot_password` должен быть включён).
+2. MODX сохраняет hash и шлёт лексиконное письмо со ссылкой `?modhash=[[+hash]]`.
+3. Переход по ссылке открывает вход в режиме смены пароля.
+4. Пользователь вводит и подтверждает новый пароль.
+
+### Устаревшая настройка `forgot_login_email`
+
+В Revolution 2.x шаблон лежал в системной настройке `forgot_login_email`. В MODX 3 настройка удалена. Если после апгрейда в БД ещё есть кастомное значение, перенесите HTML в лексикон `login_forgot_email` и уберите строку с `[[+password]]`.
