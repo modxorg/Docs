@@ -5,72 +5,99 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage"
 
 ## xPDO::addPackage
 
-Этот метод используется для загрузки классов отображения ORD xPDO, которые определяют объекты вашего пакета. Соглашение MODX заключается в том, что эти классы хранятся в каталоге вашего пакета "model/". Загрузка этих классов позволяет xPDO взаимодействовать с вашим пользовательским объектом и расширением таблиц базы данных, которые они представляют. Функциональность отключена из файла **metadata.inc.php** в указанном каталоге (`$path + $pkg`). Эти метаданные показывают, как MODX знает, какие имена классов активны и расширяют ли какие-либо классы основные классы. Конечный результат немного похож на функцию автозагрузки.
+Загружает классы ORM-отображения xPDO, которые описывают объекты вашего пакета. По соглашению MODX эти классы лежат в каталоге `model/` компонента. После вызова `addPackage` xPDO может работать с вашими объектами и с таблицами, которые они описывают.
+
+xPDO опирается на файл `metadata.{dbtype}.php` в каталоге пакета (`$path` + `$pkg`), например `metadata.mysql.php`. В нём перечислены активные классы и то, какие из них расширяют ядро. По смыслу это похоже на автозагрузку моделей пакета.
 
 ## Синтаксис
 
 API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::addPackage()>
 
 ```php
-boolean addPackage ([string $pkg = ''], [string $path = ''], [string $tablePrefix = ''])
+boolean addPackage (
+    [string $pkg = ''],
+    [string $path = ''],
+    [string|null $prefix = null],
+    [string|null $namespacePrefix = null]
+)
 ```
 
--   `$pkg` соответствует имени подпапки в указанном `$path`. Подпапка содержит множество _your_table.class.php_ файлов и чаще всего подпапку _mysql_, которая содержит дополнительные файлы карт и классов, например, _your_table.class.php_ и _your_table.map.inc.php_
--   `$path` - это полный путь к папке, содержащей пакеты, включая имя пакета, на которое вы указали в первом аргументе.
--   `$tablePrefix` - префикс таблицы для вашего пакета. Вы ДОЛЖНЫ включать правильный префикс при вызове **addPackage** (т.е. во время выполнения), иначе ваш пакет не будет загружен правильно!
+- `$pkg` — имя подпапки внутри `$path`. В ней лежат файлы `*.class.php` и чаще всего платформенная папка вроде `mysql/` с картами (`*.map.inc.php`) и `metadata.{dbtype}.php`.
+- `$path` — абсолютный путь к каталогу, который **содержит** подпапку `$pkg`. Заканчивайте путь слэшем.
+- `$prefix` — префикс таблиц этого пакета. Передайте префикс, который ожидает ваша схема. Если опустить (`null`), xPDO возьмёт префикс соединения по умолчанию (`xPDO::OPT_TABLE_PREFIX`).
+- `$namespacePrefix` — необязательный PSR-4 префикс пространства имён для классов модели (xPDO 3 / MODX 3).
+
+Метод возвращает `true` при успехе и `false` при ошибке. При сбое смотрите журнал.
 
 ---
 
-**Важное замечание:** значение префикса таблиц базы данных `$tablePrefix` для вашего пакета **должно!** совпадать с общепринятым префиксом для всех таблиц базы данных MODX, иначе вы можете получить далеко идущие последствия в виде ошибок.
-Префикс MODX можно и нужно менять (например, для [Усиления защиты](getting-started/maintenance/securing-modx#changing-default-database-prefixes)), главное помнить, что префикс в пакете и в MODX должны совпадать. Если вы не очень понимаете, о чем идет речь, не указывайте этот параметр `$tablePrefix`, в этом случае будет использовано значение по умолчанию - `_modx` 
+**Важно:** `$prefix` должен совпадать с префиксом в схеме пакета и с префиксом сайта, если таблицы делят один префикс. Префикс MODX можно менять (например при [усилении защиты](getting-started/maintenance/securing-modx#changing-default-database-prefixes)). Префикс пакета и сайта для этих таблиц всё равно должны совпадать. Если вы не уверены, не передавайте `$prefix`: сработает значение по умолчанию из соединения.
 
 ---
-
-Функция `addPackage` возвращает **true** в случае успеха и **false** при ошибке. Проверьте логи на ошибку.
 
 ## Пример
 
-Чаще всего это использует константу `MODX_CORE_PATH` и указывает на каталог вашего пакета "model/":
+Чаще всего сниппет или плагин загружает пакет через `MODX_CORE_PATH` и указывает на `model/` компонента:
 
 ```php
-$modx->addPackage('mypkg',MODX_CORE_PATH.'components/mypkg/model/','mypkg_');
+$modx->addPackage('mypkg', MODX_CORE_PATH . 'components/mypkg/model/', 'mypkg_');
 ```
 
 ## Другой пример
 
-Изображенная структура файла сниппета FormIt.
+На скриншоте — дерево компонента FormIt. Соседние папки внутри `model/` — это пакеты, которые вы передаёте как `$pkg`, когда `$path` указывает на `model/`:
 
-![](Path_to_models.jpg)
+![Дерево компонента FormIt с пакетами в model](formit-model-structure.png)
 
-Если бы вы должны были загрузить один из его пакетов с помощью метода `addPackage ()`, вы могли бы использовать один из трех доступных пакетов (formit, recaptcha или stopforumspam) в качестве первого аргумента, а путь к папке, содержащей его, в качестве второго. аргумент, например
+Каталог `model/` у FormIt по-прежнему выглядит так:
+
+``` text
+core/components/formit/model/
+├── formit/
+├── recaptcha/
+├── schema/
+└── stopforumspam/
+```
+
+Загрузка одного из этих пакетов:
 
 ```php
-$xpdo->addPackage('recaptcha', MODX_CORE_PATH.'components/formit/model/');
+$modx->addPackage('formit', MODX_CORE_PATH . 'components/formit/model/');
 ```
+
+Или другого пакета из того же пути:
+
+```php
+$modx->addPackage('recaptcha', MODX_CORE_PATH . 'components/formit/model/');
+```
+
+`addPackage` ожидает метаданные пакета (`metadata.{dbtype}.php`) в `$path/$pkg/`. Папки без этого файла могут хранить классы для [`loadClass`](extending-modx/xpdo/class-reference/xpdo/xpdo.loadclass). Без метаданных в журнал попадёт предупреждение.
+
+В актуальном FormIt есть и namespaced-модель xPDO в `core/components/formit/src/FormIt/Model/` (с `metadata.mysql.php`). Для неё укажите `$path` на этот каталог Model и при PSR-4 передайте `$namespacePrefix`.
 
 ## Тестирование
 
 ```php
 $xpdo->setLogLevel(xPDO::LOG_LEVEL_INFO);
 $xpdo->setLogTarget('ECHO');
-if (!$xpdo->addPackage('my_package','/path/to/docroot/core/components/my_package/model/','pkg_')) {
+if (!$xpdo->addPackage('my_package', '/path/to/docroot/core/components/my_package/model/', 'pkg_')) {
     print 'Возникли проблемы при установке вашего пакета';
 }
 ```
 
-`$path` (2-й аргумент) должен существовать, иначе будет зарегистрирована ошибка. Но если 1-й аргумент `$pkg` не является подпапкой внутри `$path`, ошибка не выдается.
+`$path` (2-й аргумент) должен существовать, иначе xPDO запишет ошибку. Если `$pkg` не является подпапкой `$path`, жёсткой ошибки может не быть. Смотрите журнал на предупреждения о метаданных.
 
-При сбое эта функция записывает подробные сообщения об ошибках в журнал.
+При сбое метод пишет подробные сообщения в журнал.
 
 ## Добавление пакетов из других баз данных
 
-Метод `addPackage()` работает с любым экземпляром объекта xPDO, который имеет допустимые файлы классов и карт. Если вам нужно подключиться к другой базе данных, создайте новый экземпляр xPDO, используя действительные критерии входа в систему, например, как описано здесь: [Соединения с базой данных и xPDO](extending-modx/xpdo/create-xpdo-instance/connections "Соединения с базой данных и xPDO")
+`addPackage()` работает с любым экземпляром xPDO, у которого есть доступ к валидным файлам классов и карт. Чтобы работать с другой БД, создайте новый экземпляр xPDO с нужным подключением, как описано в [Соединения с базой данных и xPDO](extending-modx/xpdo/create-xpdo-instance/connections).
 
 ## Создание таблиц
 
-Недостаточно просто загрузить пакет и его классы PHP. Если ваш пакет определяет таблицы базы данных, возможно, вам придется создать таблицы. Обычно это делается для вас, когда вы устанавливаете пакет, но если вы делаете что-то вручную, вы захотите взглянуть на функцию [xPDOManager.createObjectContainer](extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer "xPDOManager.createObjectContainer").
+Загрузка пакета только регистрирует PHP-классы. Если пакет описывает таблицы, их ещё нужно создать. Обычно это делает установщик пакета. Для ручной настройки используйте [xPDOManager.createObjectContainer](extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer).
 
 ## Смотрите также
 
--   [xPDO](extending-modx/xpdo "xPDO")
--   [Загрузка пакетов](extending-modx/xpdo/custom-models/loading-package "Загрузка пакетов")
+- [xPDO](extending-modx/xpdo)
+- [Загрузка пакетов](extending-modx/xpdo/custom-models/loading-package)
