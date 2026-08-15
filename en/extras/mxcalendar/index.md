@@ -10,7 +10,7 @@ _old_uri: "revo/mxcalendar"
 
 ## About mxCalendar
 
-mxCalendar is a extra created for both Evolution and Revolution to allow for full calendar editing using the native Manager of ModX. The calendar supports various views including calendar, list, and detail of which all views support the ModX template standards for fully customizing your themes. In addition mxCalendar supports feature rich calendar functions such as repeating events, Google Maps, cateogries, context, and unique calendars.
+mxCalendar is an Extra for full calendar editing in the MODX Manager. The calendar supports various views including calendar, list, and detail of which all views support the ModX template standards for fully customizing your themes. In addition mxCalendar supports feature rich calendar functions such as repeating events, Google Maps, cateogries, context, and unique calendars.
 
 ## Installation
 
@@ -18,21 +18,6 @@ mxCalendar is a extra created for both Evolution and Revolution to allow for ful
 
 It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/mxcalendar2>. When using the Package Management for direct download you can simply click on the "Install" button after download completes. If you choose to download from the extras site you will then need to FTP, or otherwise move, the transport package zip file to your "/core/packages/" folder first. After you have copied the transport zip file to your packages folder you will then need to launch Package Management from inside the Manager (ver 2.2.x) and then select the down arrow next to "Download Extras" and select the last option "Search Locally for Packages" and then find "mxcalendars" in the list of packages and choose "install".
 
-### ModX Evolution
-
-You will need to download from the ModX Extras Repository, here <https://modx.com/extras/package/mxcalendar>. After you have downloaded you will need to follow these steps.
-
-1. Unzip folder to your favorite place
-2. Upload mxCalendar folder to your sites root /assets/modules/ folder
-3. Copy contents of "snippets/mxCalendar.module.txt" file from the unzipped folder
-4. Log into your Manager interface and goto the Modules > Manage Modules section
-5. Select the New Module button
-6. In the Module name field place mxcalendar
-7. Past the content of "snippets/mxCalendar.module.txt" into the Module code (php) section
-8. Select Save
-9. Click the gear icon next to the new entry "mxcalendar" and select Run Module
-10. You should see a screen saying the installation was successful, so click the Start button
-11. Now you are in the new manager
 
 ## Creating Calendars
 

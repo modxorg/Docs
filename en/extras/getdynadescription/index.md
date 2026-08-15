@@ -6,7 +6,7 @@ _old_uri: "revo/getdynadescription"
 
 ## What is getDynaDescription?
 
-Conversion and rewrite of the Evolution getDynaDescription snippet.
+Conversion and rewrite of the earlier getDynaDescription snippet.
 
 Creates Meta tags from a TV, the resource description field, or the resource content field.
 

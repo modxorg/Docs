@@ -18,7 +18,7 @@ With two Formit hooks the upload queue could be pre filled from Formit field val
 
 ## History & Info
 
-AjaxUpload was initially written in 2012 for MODX Evolution and is maintained and developed since then by [Thomas Jakobi](https://github.com/jako).
+AjaxUpload was first released in 2012 and is maintained by [Thomas Jakobi](https://github.com/jako).
 
 ### Download
 

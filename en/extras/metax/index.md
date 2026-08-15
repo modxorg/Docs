@@ -13,7 +13,7 @@ Requirements
 
 ## History
 
-MetaX was created in 2010 for both MODX Evolution and later MODX Revolution using the same codebase. Since then, the codebase for MetaX has been split to take better advantage of new features in MODX Revolution. All versions of MetaX have been released by it's creator, Sal Sodano ( <http://salscode.com>), with other contributors along the way.
+MetaX was created in 2010. Later builds target MODX Revolution features. All versions of MetaX have been released by its creator, Sal Sodano (<http://salscode.com>), with other contributors along the way.
 
 ### Development
 

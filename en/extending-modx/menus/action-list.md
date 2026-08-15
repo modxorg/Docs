@@ -10,7 +10,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/acti
 
 Within the Manager, you can access a list of actions with the `MODx.action` variable. Do NOT rely on any list with manager action IDs as these IDs are not hardcoded in the MODX Core, but instead they are dynamically created during setup and just happen to have a certain ID.
 
-Back in Evolution there was indeed a fixed list, but there has never been one in Revolution.
+There has never been a fixed list of manager actions in modern MODX.
 
 ### Before Revolution 2.3
 
