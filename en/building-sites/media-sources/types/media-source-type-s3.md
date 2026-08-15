@@ -6,20 +6,24 @@ _old_uri: "2.x/administering-your-site/media-sources/media-source-types/media-so
 
 ## The Amazon S3 Media Source Type
 
-This media source type allows you to connect to an Amazon S3 bucket.
+This Media Source type connects the Manager to an Amazon S3 bucket (or an S3-compatible store via `endpoint`).
 
 ### Available Properties
 
-| Name             | Description                                                                                                                                                                                                                             |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| url              | Required. The URL to the Amazon S3 instance. Often <http://myaccount.s3.amazonaws.com/> or <https://s3.amazonaws.com/myaccount/>. If you're having issues seeing thumbnails but it works properly, make sure the url ends with a slash. |
-| bucket           | Required. The bucket to connect the source to.                                                                                                                                                                                          |
-| key              | Required. The Amazon key used for authentication to the bucket.                                                                                                                                                                         |
-| secret\_key      | Required. The Amazon secret key for authentication to the bucket.                                                                                                                                                                       |
-| imageExtensions  | A list of file extensions that can be made into thumbnails. **Default Value**: jpg,jpeg,png,gif                                                                                                                                         |
-| thumbnailType    | When a thumbnail is displayed, the type of image it will be rendered as.**Default Value**: png                                                                                                                                          |
-| thumbnailQuality | The quality of the rendered thumbnail, on a scale from 0-100. **Default Value**: 90                                                                                                                                                     |
-| skipFiles        | A comma-separated list of filenames to skip when browsing the source. **Default Value**: .svn,.git,\_notes,nbproject,.idea,.DS\_Store                                                                                                   |
+| Name | Description |
+| --- | --- |
+| url | Required. Base URL for objects in the bucket. Often `https://myaccount.s3.amazonaws.com/` or `https://s3.amazonaws.com/myaccount/`. If thumbnails fail while files otherwise work, end the URL with a slash. |
+| endpoint | Optional S3-compatible endpoint (for example `https://s3.<region>.example.com`). Leave empty for Amazon S3. |
+| region | AWS region of the bucket (example: `us-west-1`). Default in Revolution 3.x: `us-east-2`. A wrong region is a common reason the Media Browser lists no files. Set the region where you created the bucket. If listing still fails after credentials and bucket name are correct, clear `region`, save, then enter the matching region code (or leave it blank and save again to retry). |
+| bucket | Required. S3 bucket name for this source. |
+| prefix | Optional path prefix inside the bucket. |
+| key | Required. Access key ID for the bucket. |
+| secret\_key | Required. Secret access key for the bucket. |
+| no\_check\_bucket | If yes, MODX skips checking that the bucket exists. Use this when the access key cannot list or create buckets. |
+| imageExtensions | Comma-separated extensions treated as images for thumbnails. **Default**: `jpg,jpeg,png,gif,svg,webp` |
+| thumbnailType | Image format for generated thumbnails. **Default**: `png` |
+| thumbnailQuality | Thumbnail quality from 0 to 100. **Default**: `90` |
+| skipFiles | Comma-separated names to hide while browsing. **Default**: `.svn,.git,_notes,nbproject,.idea,.DS_Store` |
 
 ## See Also
 
