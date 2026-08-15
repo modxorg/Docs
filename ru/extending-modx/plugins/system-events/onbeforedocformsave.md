@@ -1,63 +1,74 @@
 ---
 title: "OnBeforeDocFormSave"
 translation: "extending-modx/plugins/system-events/onbeforedocformsave"
+description: "Событие плагина до сохранения ресурса процессором создания/обновления в Менеджере"
 ---
 
 ## Событие: OnBeforeDocFormSave
 
-Запускается до сохранения ресурса в менеджере через форму редактирования. Это позволяет коду предотвращать сохранение документа.
+Срабатывает в Менеджере **до** того, как процессор создания или обновления ресурса запишет его в БД. Здесь меняют поля объекта `$resource` или блокируют сохранение.
 
-Служба: 1 - Parser Service Events
-Группа: Documents
+- Служба: 1 - Parser Service Events
+- Группа: Documents
 
-**Будь осторожен с TVs**
-Изменение или вставка значений TV лучше сделать [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave "OnDocFormSave") поскольку процесс сохранения TV во время onBeforeDocFormSave более сложен из-за визуализации значений TV.
+Вызывается из `MODX\Revolution\Processors\Resource\Create` и `Update` (также `UpdateFromGrid`). Порядок в этих процессорах:
 
-Плагины, привязанные к этому событию, должны вернуть **null** в случае успеха. Любое возвращенное значение будет отправлено в журналы как ошибка (но страница все равно будет сохранена).
+1. Поля попадают в объект Resource
+2. Выполняется `OnBeforeDocFormSave`
+3. Процессор вызывает `$resource->save()`
+4. Идёт работа после сохранения (TV при update, группы ресурсов и т. д.)
+5. Выполняется `OnDocFormSave`
 
-Вы также можете передать сообщение в функцию `$modx->event->output()`, и оно будет отображено пользователю во всплывающем модальном окне. Если вы передаете значение здесь, **страница _не_ будет сохранена!**
+### Изменение полей и вызов `save()`
 
-**Только текст**
- Если вы передаете значение в `$modx->event->output()`, оно должно быть только текстовым! HTML-теги не допускаются: они приводят к зависанию модального окна.
+Для полей ресурса вызывайте `$resource->set(...)`. В плагине **не** нужен `$resource->save()`: процессор сохранит объект после возврата из плагина.
+
+Не вызывайте `$resource->save()` здесь без веской причины. Ранний `save()` может записать строку до Template Variables и прочих шагов after-save и путает момент create/update. Для TV лучше [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave) и `setTVValue`.
+
+### Блокировка сохранения
+
+При успехе плагин ничего не возвращает (или возвращает пустое значение). Непустое возвращаемое значение попадает в лог как ошибка. В зависимости от формы возврата сохранение при этом всё ещё может пройти.
+
+Чтобы **остановить** сохранение и показать сообщение в Менеджере, передайте текст в `$modx->event->output(...)`. Только plain text (без HTML), иначе модальное окно может зависнуть.
 
 ## Параметры события
 
-| Имя      | Описание                                               |
-| -------- | ------------------------------------------------------ |
-| mode     | Либо 'new' либо 'upd', в зависимости от обстоятельств. |
-| resource | Ссылка на объект modResource.                          |
-| id       | Идентификатор ресурса. Будет 0 для новых ресурсов.     |
+| Имя | Описание |
+| --- | --- |
+| mode | `new` или `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`) |
+| resource | Ссылка на объект `modResource` (передаётся по ссылке) |
+| id | ID ресурса. Для ещё не сохранённых новых ресурсов — `0` |
 
 ## Примеры
 
-### Требуемые поля
+### Обязательное поле
 
 ``` php
-if (empty($resource->longtitle)) {
-    $modx->event->output('Требуется расширенное название!'); // to modal window
-    return '[MyPlugin] Не удалось сохранить id страницы '.$id.' из-за отсутствия длинного заголовка'; // в журнал ошибок
+if (empty($resource->get('longtitle'))) {
+    $modx->event->output('Нужен расширенный заголовок!');
+    return;
 }
 ```
 
-### Рассчитать значение поля
+### Задать поле до сохранения процессором
 
 ``` php
-if ($resource->get('parent') == 123) {
+if ((int) $resource->get('parent') === 123) {
     $resource->set('template', 4);
 }
 ```
 
-Такой плагин не разрешит создавать новые ресурсы, и не будет сохранять ресурсы, у которых не заполнено `introtext`:
+Здесь `$resource->save()` не вызывайте. Дальше сохранит процессор create/update.
+
+### Запрет создания или обновления без introtext
 
 ``` php
 <?php
-$eventName = $modx->event->name;
-switch($eventName) {
+switch ($modx->event->name) {
     case 'OnBeforeDocFormSave':
         if ($mode == modSystemEvent::MODE_UPD) {
-            //если не заполнен introtext
-            if (!$resource->get('introtext')){
-                $modx->event->output("Голову ты дома не забыл, а про 'Ключевые слова' забыл!");
+            if (!$resource->get('introtext')) {
+                $modx->event->output("Заполните поле «Аннотация» (introtext).");
             }
         } elseif ($mode == modSystemEvent::MODE_NEW) {
             $modx->event->output("Вам нельзя создавать ресурсы!");
@@ -66,25 +77,21 @@ switch($eventName) {
 }
 ```
 
-Такой плагин установит значение поля `template=1` у всех ресурсов находящийхся в корне т.е `parent=0`:
+### Шаблон для ресурсов в корне
 
 ``` php
 <?php
-$eventName = $modx->event->name;
-switch($eventName) {
+switch ($modx->event->name) {
     case 'OnBeforeDocFormSave':
-        if ($resource->get('parent') == 0) {
-            $resource->set('template', '1');
-            $resource->save();
+        if ((int) $resource->get('parent') === 0) {
+            $resource->set('template', 1);
         }
         break;
 }
 ```
 
-**Принудительное сохранение**
-Также необходимо запустить  `$resource->save()` метод, так как это не происходит автоматически.
+## Смотрите также
 
-## Смотри также
-
-- [Системные события](extending-modx/plugins/system-events "Системные события")
-- [Плагины](extending-modx/plugins "Плагины")
+- [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave)
+- [Системные события](extending-modx/plugins/system-events)
+- [Плагины](extending-modx/plugins)
