@@ -14,7 +14,7 @@ MODX aplica la transliteración en `modResource::filterPathSegment()` al generar
 
 ## Ajustes implicados
 
-Abre **System Settings**, área **Friendly URL** (busca `friendly_alias`):
+Abre **Configuración del Sistema**, área **URL amigable** (busca `friendly_alias`):
 
 | Ajuste | Función |
 | ------ | ------- |

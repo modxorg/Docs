@@ -24,7 +24,7 @@ Open **System Settings**, area **Friendly URL** (search for `friendly_alias`):
 
 Related filters (word delimiters, lowercase, max length, restrict chars) run after transliteration. See the other `friendly_alias_*` settings in the same area.
 
-Default for `friendly_alias_translit` in a stock install is `none` (no transliteration). The PHP fallback in code uses `iconv` when the extension exists and the setting is unset. Set the value explicitly so behaviour is obvious.
+Default for `friendly_alias_translit` in a stock install is `none` (no transliteration). The PHP fallback in code uses `iconv` when the extension exists and the setting is unset. Set the value explicitly so behavior is obvious.
 
 ## Built-in: none
 
