@@ -18,3 +18,5 @@ Default:
 ``` php
 /[\0\x0B\t\n\r\f\a&=+%#<>"~:`@\?\[\]\{\}\|\^\'\\\\]/
 ```
+
+If you add `.` here so aliases cannot contain periods, keep that change out of file uploads. With [upload_translit](building-sites/settings/upload_translit) enabled, MODX 3.1.0+ uses [upload_translit_restrict_chars_pattern](building-sites/settings/upload_translit_restrict_chars_pattern) for uploaded names. On 3.0.x the same FURL pattern also cleaned uploads, so a `.` in this setting turned `photo.jpg` into `photojpg`.
