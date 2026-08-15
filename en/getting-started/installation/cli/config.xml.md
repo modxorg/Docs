@@ -6,56 +6,122 @@ _old_uri: "2.x/getting-started/installation/command-line-installation/the-setup-
 
 ## The XML Configuration File
 
-The config.xml file used for running setup via CLI has the following XML nodes. They are described and outlined below:
+CLI setup reads an XML file (usually `setup/config.xml`). Copy `setup/config.dist.new.xml` from a MODX 3.x package, rename it to `config.xml`, and edit the values for your server. You can keep the file outside the web root and point to it with `--config=/path/to/config.xml`.
 
-### Database Configuration Options
+The sample below matches [`setup/config.dist.new.xml`](https://github.com/modxcms/revolution/blob/3.x/setup/config.dist.new.xml) on the 3.x branch. Replace database credentials, admin account, host, and filesystem paths before you run install.
 
-| Key                           | Description                                                                           | Default           |
-| ----------------------------- | ------------------------------------------------------------------------------------- | ----------------- |
-| database\_type                | The database driver to use for this installation.                                     | mysql             |
-| database\_server              | The hostname where your DB server is located. To use a port, postfix with :portnumber | localhost         |
-| database                      | The name of the database                                                              | modx\_modx        |
-| database\_user                | The user to use to connect to the database                                            | db\_username      |
-| database\_password            | The password to use to connect to the database                                        | db\_password      |
-| database\_connection\_charset | The charset to use in the connection to the database                                  | utf8              |
-| database\_charset             | The charset of the database                                                           | utf8              |
-| database\_collation           | The collation of the database                                                         | utf8\_general\_ci |
-| table\_prefix                 | The table prefix to use for all MODX tables                                           | modx\_            |
+### Minimal new-install example
 
-### Installation Configuration Options
+```xml
+<modx>
+    <database_type>mysql</database_type>
+    <database_server>localhost</database_server>
+    <database>modx_modx</database>
+    <database_user>db_username</database_user>
+    <database_password>db_password</database_password>
+    <database_connection_charset>utf8</database_connection_charset>
+    <database_charset>utf8</database_charset>
+    <database_collation>utf8_general_ci</database_collation>
+    <table_prefix>modx_</table_prefix>
+    <https_port>443</https_port>
+    <http_host>localhost</http_host>
 
-| Key                      | Description                                                                                                                                                                                                                                                                     | Default           |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| inplace                  | Set this to 1 if you are using MODX from Git or extracted it from the full MODX package to the server prior to installation                                                                                                                                                     |
-| unpacked                 | Set this to 1 if you have manually extracted the core package from the file core/packages/core.transport.zip. This will reduce the time it takes for the installation process on systems that do not allow the PHP time\_limit and script execution time settings to be altered |
-| language                 | The language to install MODX for. This will set the default manager language to this. Use IANA codes.                                                                                                                                                                           |
-| cmsadmin                 | The username of the new Administrator account for new installs                                                                                                                                                                                                                  | username          |
-| cmspassword              | The password of the new Administrator account for new installs                                                                                                                                                                                                                  | password          |
-| cmsadminemail            | The email of the new Administrator account for new installs                                                                                                                                                                                                                     | email@address.com |
-| remove\_setup\_directory | Whether or not to remove the setup/ directory after installation.                                                                                                                                                                                                               | 1                 |
+    <!-- 1 = files already in place (Git checkout or full extract before setup) -->
+    <inplace>0</inplace>
 
-### Path Configuration Options
+    <!-- 1 = core.transport.zip already extracted under core/packages/ -->
+    <unpacked>0</unpacked>
 
-| Key                       | Description | Default |
-| ------------------------- | ----------- | ------- |
-| context\_mgr\_path        |             |         |
-| context\_mgr\_url         |             |         |
-| context\_connectors\_path |             |         |
-| context\_connectors\_url  |             |         |
-| context\_web\_path        |             |         |
-| context\_web\_url         |             |         |
-| assets\_path              |             |         |
-| assets\_url               |             |         |
-| core\_path                |             |         |
-| processors\_path          |             |         |
+    <!-- IANA language code for the default manager language -->
+    <language>en</language>
 
-### Other Configuration Options
+    <cmsadmin>username</cmsadmin>
+    <cmspassword>password</cmspassword>
+    <cmsadminemail>email@address.com</cmsadminemail>
 
-| Key             | Description                                                            | Default   |
-| --------------- | ---------------------------------------------------------------------- | --------- |
-| https\_port     | The port on your server for HTTPS connections                          | 443       |
-| http\_host      | The HTTP host of your server. Usually the hostname, such as mysite.com | localhost |
-| cache\_disabled | Whether or not to disable the MODX cache                               | 0         |
+    <core_path>/www/modx/core/</core_path>
+
+    <context_mgr_path>/www/modx/manager/</context_mgr_path>
+    <context_mgr_url>/modx/manager/</context_mgr_url>
+    <context_connectors_path>/www/modx/connectors/</context_connectors_path>
+    <context_connectors_url>/modx/connectors/</context_connectors_url>
+    <context_web_path>/www/modx/</context_web_path>
+    <context_web_url>/modx/</context_web_url>
+
+    <remove_setup_directory>1</remove_setup_directory>
+</modx>
+```
+
+Then from `setup/`:
+
+```shell
+php ./index.php --installmode=new
+```
+
+See [Command Line Installation](getting-started/installation/cli) for `--config`, upgrades, and `upgrade-advanced`.
+
+### Minimal upgrade example
+
+For `--installmode=upgrade`, `setup/config.dist.upgrade.xml` only needs the keys below (plus any other values you want to change):
+
+```xml
+<modx>
+    <inplace>0</inplace>
+    <unpacked>0</unpacked>
+    <language>en</language>
+    <core_path>/www/modx/core/</core_path>
+    <remove_setup_directory>1</remove_setup_directory>
+</modx>
+```
+
+## Database Configuration Options
+
+| Key | Description | Default |
+| --- | ----------- | ------- |
+| database\_type | The database driver to use for this installation. | mysql |
+| database\_server | The hostname where your DB server is located. To use a port, postfix with `:portnumber`. | localhost |
+| database | The name of the database. | modx\_modx |
+| database\_user | The user to use to connect to the database. | db\_username |
+| database\_password | The password to use to connect to the database. | db\_password |
+| database\_connection\_charset | The charset to use in the connection to the database. | utf8 |
+| database\_charset | The charset of the database. | utf8 |
+| database\_collation | The collation of the database. | utf8\_general\_ci |
+| table\_prefix | The table prefix to use for all MODX tables. | modx\_ |
+
+## Installation Configuration Options
+
+| Key | Description | Default |
+| --- | ----------- | ------- |
+| inplace | Set this to `1` if you are using MODX from Git or extracted the full package to the server before installation. | |
+| unpacked | Set this to `1` if you already extracted `core/packages/core.transport.zip`. Speeds up install when PHP `time_limit` cannot be raised. | |
+| language | Default manager language. Use IANA codes. | |
+| cmsadmin | Username of the new administrator account (new installs). | username |
+| cmspassword | Password of the new administrator account (new installs). | password |
+| cmsadminemail | Email of the new administrator account (new installs). | email@address.com |
+| remove\_setup\_directory | Whether to remove the `setup/` directory after installation. | 1 |
+
+## Path Configuration Options
+
+| Key | Description | Default |
+| --- | ----------- | ------- |
+| core\_path | Absolute path to the `core/` directory. | |
+| context\_mgr\_path | Absolute path to the manager context. | |
+| context\_mgr\_url | URL path to the manager (for example `/modx/manager/`). | |
+| context\_connectors\_path | Absolute path to the connectors directory. | |
+| context\_connectors\_url | URL path to the connectors. | |
+| context\_web\_path | Absolute path to the web root for the `web` context. | |
+| context\_web\_url | URL path to the site root (for example `/modx/`). | |
+| assets\_path | Absolute path to `assets/` (optional; defaults under the web path). | |
+| assets\_url | URL path to `assets/` (optional). | |
+| processors\_path | Absolute path to processors (optional; MODX sets a default). | |
+
+## Other Configuration Options
+
+| Key | Description | Default |
+| --- | ----------- | ------- |
+| https\_port | The port on your server for HTTPS connections. | 443 |
+| http\_host | The HTTP host of your server (hostname, such as `mysite.com`). | localhost |
+| cache\_disabled | Whether to disable the MODX cache. | 0 |
 
 ## See Also
 

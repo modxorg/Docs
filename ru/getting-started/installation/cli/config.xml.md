@@ -1,68 +1,136 @@
 ---
-title: "Создание Установочного Xml Файла"
+title: "Создание установочного XML-файла"
 translation: "getting-started/installation/cli/config.xml"
 ---
 
-Файл config.xml, используемый для установки через командную строку (CLI), имеет следующие элементы XML:
+## XML-файл конфигурации
 
-## Параметры конфигурации базы данных
+CLI-установка читает XML-файл (обычно `setup/config.xml`). Скопируйте `setup/config.dist.new.xml` из пакета MODX 3.x, переименуйте в `config.xml` и подставьте значения своего сервера. Файл можно держать вне web root и указать через `--config=/path/to/config.xml`.
 
-| Ключ                          | Описание                                                                                                                        | По умолчанию      |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| database\_type                | Используемы драйвер базы данных.                                                                                                | mysql             |
-| database\_server              | Имя хоста, на котором расположен ваш сервер базы данных. Чтобы сменитьпорт по умолчанию укажите его через двоеточие: portnumber | localhost         |
-| database                      | Имя базы данных                                                                                                                 | modx\_modx        |
-| database\_user                | Пользователь базы данных                                                                                                        | db\_username      |
-| database\_password            | Пароль пользователя для доступа к базе данных                                                                                   | db\_password      |
-| database\_connection\_charset | Кодировка, используемая при подключении к базе данных                                                                           | utf8              |
-| database\_charset             | Кодировка базы данных                                                                                                           | utf8              |
-| database\_collation           | Сопоставление базы данных                                                                                                       | utf8\_general\_ci |
-| table\_prefix                 | Префикс таблицы, используемый для всех таблиц MODX                                                                              | modx\_            |
+Пример ниже совпадает с [`setup/config.dist.new.xml`](https://github.com/modxcms/revolution/blob/3.x/setup/config.dist.new.xml) в ветке 3.x. Перед установкой замените доступ к БД, учётку администратора, хост и пути на диске.
+
+### Минимальный пример новой установки
+
+```xml
+<modx>
+    <database_type>mysql</database_type>
+    <database_server>localhost</database_server>
+    <database>modx_modx</database>
+    <database_user>db_username</database_user>
+    <database_password>db_password</database_password>
+    <database_connection_charset>utf8</database_connection_charset>
+    <database_charset>utf8</database_charset>
+    <database_collation>utf8_general_ci</database_collation>
+    <table_prefix>modx_</table_prefix>
+    <https_port>443</https_port>
+    <http_host>localhost</http_host>
+
+    <!-- 1 = файлы уже на месте (Git или полная распаковка до setup) -->
+    <inplace>0</inplace>
+
+    <!-- 1 = core.transport.zip уже распакован в core/packages/ -->
+    <unpacked>0</unpacked>
+
+    <!-- Код языка IANA для языка менеджера по умолчанию -->
+    <language>ru</language>
+
+    <cmsadmin>username</cmsadmin>
+    <cmspassword>password</cmspassword>
+    <cmsadminemail>email@address.com</cmsadminemail>
+
+    <core_path>/www/modx/core/</core_path>
+
+    <context_mgr_path>/www/modx/manager/</context_mgr_path>
+    <context_mgr_url>/modx/manager/</context_mgr_url>
+    <context_connectors_path>/www/modx/connectors/</context_connectors_path>
+    <context_connectors_url>/modx/connectors/</context_connectors_url>
+    <context_web_path>/www/modx/</context_web_path>
+    <context_web_url>/modx/</context_web_url>
+
+    <remove_setup_directory>1</remove_setup_directory>
+</modx>
+```
+
+Затем из каталога `setup/`:
+
+```shell
+php ./index.php --installmode=new
+```
+
+См. [установку из командной строки](getting-started/installation/cli) про `--config`, апгрейд и `upgrade-advanced`.
+
+### Минимальный пример апгрейда
+
+Для `--installmode=upgrade` в `setup/config.dist.upgrade.xml` достаточно ключей ниже (и любых других значений, которые хотите изменить):
+
+```xml
+<modx>
+    <inplace>0</inplace>
+    <unpacked>0</unpacked>
+    <language>ru</language>
+    <core_path>/www/modx/core/</core_path>
+    <remove_setup_directory>1</remove_setup_directory>
+</modx>
+```
+
+## Параметры базы данных
+
+| Ключ | Описание | По умолчанию |
+| ---- | -------- | ------------ |
+| database\_type | Драйвер базы данных. | mysql |
+| database\_server | Хост сервера БД. Порт укажите через двоеточие: `хост:порт`. | localhost |
+| database | Имя базы данных. | modx\_modx |
+| database\_user | Пользователь БД. | db\_username |
+| database\_password | Пароль пользователя БД. | db\_password |
+| database\_connection\_charset | Кодировка соединения с БД. | utf8 |
+| database\_charset | Кодировка базы данных. | utf8 |
+| database\_collation | Collation базы данных. | utf8\_general\_ci |
+| table\_prefix | Префикс таблиц MODX. | modx\_ |
 
 ## Параметры установки
 
-| Key                      | Description                                                                                                                                                                                                               | Default           |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
-| inplace                  | Установите значение 1, если вы используете MODX из Git или извлекли его из пакета MODX                                                                                                                                    |
-| unpacked                 | Установите значение 1, если вы вручную извлекли ядро из файла core/packages/core.transport.zip. Это сократит время, необходимое для установки в системах, которые не позволяют изменять настройки времени PHP time\_limit |
-| language                 | Язык установки MODX. Этот параметр установит язык менеджера по умолчанию. Используйте коды IANA.                                                                                                                          |
-| cmsadmin                 | Имя пользователя администратора, который будет создан после установки                                                                                                                                                     | username          |
-| cmspassword              | Пароль учетной записи администратора (для новых установок)                                                                                                                                                                | password          |
-| cmsadminemail            | Электронный адрес новой учетной записи администратора (для новых установок)                                                                                                                                               | email@address.com |
-| remove\_setup\_directory | Следует ли удалять каталог setup/ после установки.                                                                                                                                                                        | 1                 |
+| Ключ | Описание | По умолчанию |
+| ---- | -------- | ------------ |
+| inplace | `1`, если вы ставите из Git или уже распаковали полный пакет на сервер до запуска setup. | |
+| unpacked | `1`, если уже распаковали `core/packages/core.transport.zip`. Ускоряет установку, когда нельзя поднять PHP `time_limit`. | |
+| language | Язык менеджера по умолчанию. Коды IANA. | |
+| cmsadmin | Логин нового администратора (новая установка). | username |
+| cmspassword | Пароль нового администратора (новая установка). | password |
+| cmsadminemail | Email нового администратора (новая установка). | email@address.com |
+| remove\_setup\_directory | Удалять ли каталог `setup/` после установки. | 1 |
 
-## Конфигурация пути
+## Параметры путей
 
-| Key                       | Description | Default |
-| ------------------------- | ----------- | ------- |
-| context\_mgr\_path        |             |         |
-| context\_mgr\_url         |             |         |
-| context\_connectors\_path |             |         |
-| context\_connectors\_url  |             |         |
-| context\_web\_path        |             |         |
-| context\_web\_url         |             |         |
-| assets\_path              |             |         |
-| assets\_url               |             |         |
-| core\_path                |             |         |
-| processors\_path          |             |         |
+| Ключ | Описание | По умолчанию |
+| ---- | -------- | ------------ |
+| core\_path | Абсолютный путь к каталогу `core/`. | |
+| context\_mgr\_path | Абсолютный путь к менеджеру. | |
+| context\_mgr\_url | URL-путь к менеджеру (например `/modx/manager/`). | |
+| context\_connectors\_path | Абсолютный путь к connectors. | |
+| context\_connectors\_url | URL-путь к connectors. | |
+| context\_web\_path | Абсолютный путь к корню контекста `web`. | |
+| context\_web\_url | URL-путь к корню сайта (например `/modx/`). | |
+| assets\_path | Абсолютный путь к `assets/` (опционально; по умолчанию под web path). | |
+| assets\_url | URL-путь к `assets/` (опционально). | |
+| processors\_path | Абсолютный путь к процессорам (опционально; MODX задаёт значение по умолчанию). | |
 
-## Другие параметры конфигурации
+## Другие параметры
 
-| Key             | Description                                                     | Default   |
-| --------------- | --------------------------------------------------------------- | --------- |
-| https\_port     | Порт для соединения по HTTPS                                    | 443       |
-| http\_host      | HTTP-хост вашего сервера. Обычно имя хоста, например mysite.com | localhost |
-| cache\_disabled | Следует ли отключить кэш MODX                                   | 0         |
+| Ключ | Описание | По умолчанию |
+| ---- | -------- | ------------ |
+| https\_port | Порт HTTPS на сервере. | 443 |
+| http\_host | HTTP-хост сервера (имя хоста, например `mysite.com`). | localhost |
+| cache\_disabled | Отключать ли кэш MODX. | 0 |
 
-## Так же
+## См. также
 
-- [Базовая Установка](getting-started/installation/standard)
+- [Базовая установка](getting-started/installation/standard)
     - [Гид по Lighttpd](getting-started/friendly-urls/lighttpd)
-    - [Установка на сервере с запущеным ModSecurity](getting-started/installation/troubleshooting/modsecurity)
-    - [Настройка Сервера Nginx](getting-started/friendly-urls/nginx)
-- [Расширенная Установка](getting-started/installation/advanced)
+    - [Установка на сервере с ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+    - [Настройка Nginx](getting-started/friendly-urls/nginx)
+- [Расширенная установка](getting-started/installation/advanced)
 - [Установка через Git](getting-started/installation/git)
-- [Установка При Помощи Командной Строки](getting-started/installation/cli)
-    - [Создание Установочного Xml Файла](getting-started/installation/cli/config.xml)
+- [Установка из командной строки](getting-started/installation/cli)
+    - [Создание установочного XML-файла](getting-started/installation/cli/config.xml)
 - [Устранение неполадок при установке](getting-started/installation/troubleshooting)
-- [Успешная Установка, Что Дальше?](getting-started/getting-started)
+- [Успешная установка, что дальше?](getting-started/getting-started)
