@@ -14,3 +14,4 @@ This could be one of the following:
 1. [Securing / hardening your MODX Site](getting-started/maintenance/securing-modx.md)
 2. [Moving a MODX from one server to another](getting-started/maintenance/moving-your-site.md)
 3. [Upgrading a MODX installation](getting-started/maintenance/upgrading.md)
+4. [Session garbage collection](getting-started/maintenance/session-garbage-collection) (keep `modx_session` from growing unbounded)
