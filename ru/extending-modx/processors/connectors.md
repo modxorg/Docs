@@ -5,7 +5,7 @@ translation: "extending-modx/processors/connectors"
 
 ## Что такое коннектор
 
-Коннектор — PHP-вход для AJAX (и похожих) запросов, которые должны запустить [процессор](extending-modx/processors). Он поднимает MODX, проверяет, что пользователь может загрузить контекст, и передаёт запрос в `modX::request->handleRequest()`, а тот вызывает [`runProcessor`](extending-modx/modx-class/reference/modx.runprocessor).
+Коннектор: PHP-вход для AJAX (и похожих) запросов, которые должны запустить [процессор](extending-modx/processors). Он поднимает MODX, проверяет, что пользователь может загрузить контекст, и передаёт запрос в `modX::request->handleRequest()`, а тот вызывает [`runProcessor`](extending-modx/modx-class/reference/modx.runprocessor).
 
 Сам коннектор базу не меняет. Это делают процессоры.
 
@@ -50,7 +50,7 @@ $modx->request->handleRequest([
 
 ## Авторизация и CSRF
 
-Коннекторы ждут сессию менеджера (если вы сами не открыли анонимное действие) и токен сайта. MODExt передаёт его заголовком `modAuth` (или `HTTP_MODAUTH` в запросе). Значение — `$modx->siteId`. Не публикуйте его в репозитории и клиентской документации.
+Коннекторы ждут сессию менеджера (если вы сами не открыли анонимное действие) и токен сайта. MODExt передаёт его заголовком `modAuth` (или `HTTP_MODAUTH` в запросе). Значение: `$modx->siteId`. Не публикуйте его в репозитории и клиентской документации.
 
 Открыть URL коннектора в браузере без сессии и без `action` обычно даёт JSON вроде `success: false` / access denied. Так и задумано.
 
@@ -58,4 +58,4 @@ $modx->request->handleRequest([
 
 - [Процессоры](extending-modx/processors)
 - [Пользовательские страницы менеджера](extending-modx/custom-manager-pages)
-- [MODExt FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel) — отправка через URL коннектора
+- [MODExt FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel): отправка через URL коннектора

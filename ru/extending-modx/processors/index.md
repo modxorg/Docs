@@ -1,12 +1,12 @@
 ---
 title: "Процессоры"
 translation: "extending-modx/processors"
-description: "Процессоры — PHP-классы, которые выполняют одно действие: создать ресурс, отдать список, авторизовать пользователя"
+description: "Процессоры: PHP-классы, которые выполняют одно действие: создать ресурс, отдать список, авторизовать пользователя"
 ---
 
 ## Что такое процессор
 
-Процессор — PHP-класс, который выполняет **одно** действие в MODX: создать чанк, отдать список ресурсов, авторизовать пользователя, загрузить файл. Интерфейс менеджера, коннекторы, сниппеты и плагины ходят к одним и тем же действиям через процессоры.
+Процессор: PHP-класс, который выполняет **одно** действие в MODX: создать чанк, отдать список ресурсов, авторизовать пользователя, загрузить файл. Интерфейс менеджера, коннекторы, сниппеты и плагины ходят к одним и тем же действиям через процессоры.
 
 С MODX 2.2 процессоры классовые (наследники базового класса процессора). Плоские `.php`-файлы без класса в MODX 3.0 больше не поддерживаются.
 
@@ -25,7 +25,7 @@ $response = $modx->runProcessor(
 );
 ```
 
-`$response` — [`ProcessorResponse`](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/Processors/ProcessorResponse.php) (3.x) / `modProcessorResponse` (2.x). Сначала проверьте ошибку, потом читайте данные:
+`$response`: [`ProcessorResponse`](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/Processors/ProcessorResponse.php) (3.x) / `modProcessorResponse` (2.x). Сначала проверьте ошибку, потом читайте данные:
 
 ```php
 if ($response->isError()) {
@@ -150,7 +150,7 @@ class Create extends CreateProcessor
 return Create::class;
 ```
 
-Частые model-хелперы (полный список — в [заметках по апгрейду 3.0](getting-started/upgrading-to-3.0/processors)):
+Частые model-хелперы (полный список: в [заметках по апгрейду 3.0](getting-started/upgrading-to-3.0/processors)):
 
 | Задача | Класс 3.x |
 | ------ | --------- |
@@ -160,15 +160,15 @@ return Create::class;
 | Get list | `\MODX\Revolution\Processors\Model\GetListProcessor` |
 | Remove | `\MODX\Revolution\Processors\Model\RemoveProcessor` |
 
-В 2.x те же роли — `modObjectCreateProcessor`, `modObjectGetListProcessor` и т.д. Чаще всего переопределяют `initialize`, `beforeSet`, `beforeSave`, `afterSave`, для списков — `prepareQueryBeforeCount`.
+В 2.x те же роли: `modObjectCreateProcessor`, `modObjectGetListProcessor` и т.д. Чаще всего переопределяют `initialize`, `beforeSet`, `beforeSave`, `afterSave`, для списков: `prepareQueryBeforeCount`.
 
 ## Дальше
 
-- [Использование runProcessor](extending-modx/processors/using-runprocessor) — примеры из сниппетов
-- [modX.runProcessor](extending-modx/modx-class/reference/modx.runprocessor) — параметры и правила загрузки в 3.x
-- [Коннекторы](extending-modx/processors/connectors) — AJAX-вход для CMP
+- [Использование runProcessor](extending-modx/processors/using-runprocessor): примеры из сниппетов
+- [modX.runProcessor](extending-modx/modx-class/reference/modx.runprocessor): параметры и правила загрузки в 3.x
+- [Коннекторы](extending-modx/processors/connectors): AJAX-вход для CMP
 - [Процессоры в гайде по апгрейду на 3.0](getting-started/upgrading-to-3.0/processors)
-- [Developing an Extra, Part II](extending-modx/tutorials/developing-an-extra/part-2) — коннектор и getlist
+- [Developing an Extra, Part II](extending-modx/tutorials/developing-an-extra/part-2): коннектор и getlist
 - [Class-based processors](https://www.markhamstra.com/xpdo/2012/getting-started-with-class-based-processors-2.2/) и [modObjectGetListProcessor](https://www.markhamstra.com/xpdo/2012/modobjectgetlistprocessor-class-based-processor/) (Mark Hamstra)
 - [Список процессоров](https://bobsguides.com/modx-processor-list.html) (Bob's Guides, пути в основном 2.x)
 

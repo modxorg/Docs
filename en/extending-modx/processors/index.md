@@ -163,10 +163,10 @@ In 2.x the same roles use `modObjectCreateProcessor`, `modObjectGetListProcessor
 
 ## Next steps
 
-- [Using runProcessor](extending-modx/processors/using-runprocessor) — practical Snippet examples
-- [modX.runProcessor](extending-modx/modx-class/reference/modx.runprocessor) — parameters and 3.x loading rules
-- [Connectors](extending-modx/processors/connectors) — AJAX gateway for CMPs
+- [Using runProcessor](extending-modx/processors/using-runprocessor): practical Snippet examples
+- [modX.runProcessor](extending-modx/modx-class/reference/modx.runprocessor): parameters and 3.x loading rules
+- [Connectors](extending-modx/processors/connectors): AJAX gateway for CMPs
 - [Processors in the 3.0 upgrade guide](getting-started/upgrading-to-3.0/processors)
-- [Developing an Extra, Part II](extending-modx/tutorials/developing-an-extra/part-2) — connector + getlist walkthrough
+- [Developing an Extra, Part II](extending-modx/tutorials/developing-an-extra/part-2): connector + getlist walkthrough
 - [Class-based processors](https://www.markhamstra.com/xpdo/2012/getting-started-with-class-based-processors-2.2/) and [modObjectGetListProcessor](https://www.markhamstra.com/xpdo/2012/modobjectgetlistprocessor-class-based-processor/) (Mark Hamstra)
 - [Processor list](https://bobsguides.com/modx-processor-list.html) (Bob's Guides, oriented to 2.x paths)
