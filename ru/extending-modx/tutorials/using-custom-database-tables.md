@@ -11,7 +11,7 @@ MODX 3 приносит пространства имён PHP в XML-схему 
 
 **ПРИМЕЧАНИЕ**: материал переработан из прежнего примера StoreFinder.
 
-**ЕЩЁ ПРИМЕЧАНИЕ**: эта методология не обратно совместима с MODX 2.x. Руководство рассчитано на MODX 3. Эквивалент для 2.x: [Using Custom Database Tables](/2.x/en/extending-modx/tutorials/using-custom-database-tables "Using Custom Database Tables")
+**ЕЩЁ ПРИМЕЧАНИЕ**: эта методология не обратно совместима с MODX 2.x. Руководство рассчитано на MODX 3. Эквивалент для 2.x: [Using Custom Database Tables](/2.x/en/extending-modx/tutorials/using-custom-database-tables "Using Custom Database Tables"). Краткий чеклист апгрейда (Composer, `metadata.mysql.php`, `instanceof`, `addPackage`): [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
 
 ## Ключевые термины и стандарты
 

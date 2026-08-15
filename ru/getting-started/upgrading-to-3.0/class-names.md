@@ -46,6 +46,8 @@ translation: "getting-started/upgrading-to-3.0/class-names"
 | \xPDO\Transport\xPDOTransport     | \xPDOTransport     |
 | \xPDO\Transport\xPDOObjectVehicle | \xPDOObjectVehicle |
 
+Как связаны Composer, PSR-4, `metadata.mysql.php` и вызовы `addPackage` в Extra: [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
+
 ### Ядро и процессоры MODX
 
 | Новый класс                                   | Старый класс                  |

@@ -18,6 +18,7 @@ translation: "getting-started/upgrading-to-3.0"
 - ⚠️ Важно: [MODX 3.0 требовал PHP 7.2, текущие 3.x (3.2+) требуют PHP 8.1+](getting-started/upgrading-to-3.0/requirements)
 - ⚠️ Важно: [поддержка sqlsrv удалена](getting-started/upgrading-to-3.0/sqlsrv)
 - [Список критических изменений](getting-started/upgrading-to-3.0/breaking-changes), в частности [многие классы ядра перенесены и переименованы](getting-started/upgrading-to-3.0/class-names)
+- [xPDO 3, Composer и миграция кастомных моделей](getting-started/upgrading-to-3.0/xpdo)
 - [Язык менеджера теперь динамический](getting-started/upgrading-to-3.0/manager-language)
 - [Различные системные настройки удалены или изменены](getting-started/upgrading-to-3.0/system-settings)
 

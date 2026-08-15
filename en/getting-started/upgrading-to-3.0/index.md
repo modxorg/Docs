@@ -19,6 +19,7 @@ After upgrading the core and upgrading your extras, you may encounter some break
 - ⚠️ Important: [MODX 3.0 required PHP 7.2; current 3.x (3.2+) requires PHP 8.1+](getting-started/upgrading-to-3.0/requirements)
 - ⚠️ Important: [sqlsrv support has been removed](getting-started/upgrading-to-3.0/sqlsrv)
 - [A list of breaking changes can be found here](getting-started/upgrading-to-3.0/breaking-changes), most notably [many core classes have been moved and renamed](getting-started/upgrading-to-3.0/class-names)
+- [xPDO 3, Composer, and migrating custom models](getting-started/upgrading-to-3.0/xpdo)
 - [The manager language is now dynamic](getting-started/upgrading-to-3.0/manager-language)
 - [Various system settings have been removed or changed](getting-started/upgrading-to-3.0/system-settings)
 
