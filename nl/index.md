@@ -23,3 +23,5 @@ Wat de documentatie betreft zul je de meeste informatie in de [Engelstalige vers
 Wil je helpen met het schrijven en onderhouden van de Nederlandse (of Engelse) documentatie? [Deze documentatie is open source en te vinden op GitHub](https://github.com/modxorg/Docs).
 
 ## Eerste stappen met MODX
+
+Begin bij [Aan de slag](aan-de-slag): overzicht van MODX, serververeisten, installatie, vriendelijke URLs en upgrades (inclusief 2.x naar 3.0).

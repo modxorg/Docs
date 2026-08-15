@@ -1,52 +1,57 @@
 ---
 title: "Server vereisten"
+sortorder: "2"
 translation: "getting-started/server-requirements"
 ---
 
-MODX werkt prima op de meeste shared/cloud servers, en ook VPS en dedicated servers zijn geen probleem. MODX is geschreven in PHP, gebruikt in de meeste configuraties een MySQL database, en heeft een webserver als Apache of nginx nodig om de web requests te behandelen.
+MODX draait prima op de meeste shared/cloud hosting, en ook op VPS en dedicated servers. MODX is geschreven in PHP, gebruikt meestal een MySQL-database, en heeft een webserver als Apache of nginx nodig.
+
+| Component | Minimum | Aanbevolen |
+| --------- | ------- | ---------- |
+| PHP | 8.1 | 8.2 of hoger |
+| Database | MySQL 5.7.x | MySQL 8.0+ / MariaDB 10.6+ / Percona Server 8.0+ |
+| Webserver | * | NGINX 1.18 of Apache 2.4 |
 
 ## PHP
 
-MODX 2.x vereist een PHP versie van tenminste 5.3.3, maar het is aan te raden om minstens versie 7.1 te gebruiken. 7.2 en 7.3 zijn ook ondersteund.
+Huidige MODX 3-releases vereisen **PHP 8.1 of hoger**. PHP 8.2+ wordt aangeraden.
 
-In MODX 3.0 zal de minimale ondersteunde versie van PHP verhoogd worden, waarschijnlijk naar 7.1.
+MODX 3.0 vroeg oorspronkelijk PHP 7.2. Het minimum ging naar **PHP 8.1 in MODX 3.2**. Upgraden naar 3.2 of later betekent dus dat je host PHP 8.1+ moet ondersteunen.
 
-(MODX 2.7.0 en 2.7.1 hebben PHP 5.4 nodig; in 2.7.2 is dat hersteld naar PHP 5.3.3)
+De volgende extensies zijn nodig voor MODX, of vaak voor extras: `zlib`, `json`, `gd`, `pdo` (met `pdo_mysql`), `imagick`, `simplexml` (`php-xml`), `curl` en `mbstring`. Dit zijn gangbare extensies die meestal standaard aan staan.
 
-De volgende PHP extensies zijn voor MODX, of voor veelgebruikte extras, nodig: `zlib`, `json`, `gd`, `pdo` (met `pdo_mysql`), `imagick`, `simplexml`, `curl`, en `mbstring`. Dit zijn vrij standaard extensies die in de meeste gevallen standaard beschikbaar zijn.
-
-Een `memory_limit` waarde van tenminste 64M of hoger is aan te raden.
+Een `memory_limit` van minstens 64M of hoger wordt aangeraden.
 
 ## Database
 
-Het is mogelijk om MODX met verschillende database types te gebruiken, waaronder `mysql`, `sqlsrv`, en ook een third-party `postgres` implementatie is beschikbaar. Het is wel belangrijk om te weten dat veel uitbreidingen mogelijk alleen `mysql` ondersteunen, dat is dan ook de meestgebruikte database met MODX.
+MODX ondersteunt `mysql`. Er bestaat ook een third-party `postgres`-implementatie. Extras ondersteunen vaak alleen `mysql`, dus dat is de veiligste keuze.
 
-De minimale MySQL versie is 4.1.20, maar 5.7 of hoger is aan te raden. Ook clusters als Galera en MySQL alternatieven als MariaDB zijn mogelijk. 
+> Let op: ondersteuning voor sqlsrv is verwijderd in MODX 3.0. Zie de [sqlsrv-migratienotes (EN)](/current/en/getting-started/upgrading-to-3.0/sqlsrv) als je een oudere site van SQL Server af moet.
 
-Zowel MyISAM en InnoDB storage engines, en utf8 en utf8mb4 karaktersets zijn ondersteund.
+Minimale MySQL-versie is 5.7; MySQL 8.0+ of MariaDB 10.6+ wordt aangeraden. Clusters zoals Galera kunnen ook.
 
-Voor normaal gebruik dient de database user `SELECT`, `INSERT`, `UPDATE`, en `DELETE` permissies te hebben, en `CREATE`, `ALTER`, `INDEX` en `DROP` zijn nodig voor het installeren/upgraden van de core en uitbreidingen. Enkele uitbreidingen hebben mogelijk meer permissies nodig.
+Zowel MyISAM als InnoDB worden ondersteund, evenals utf8 en utf8mb4. Gebruik bij voorkeur utf8mb4 voor de breedste UTF-8-ondersteuning.
 
-## Web servers
+Benodigde rechten: `SELECT`, `INSERT`, `UPDATE`, `DELETE` voor normaal gebruik; `CREATE`, `ALTER`, `INDEX`, `DROP` voor installatie en upgrades van de core en extras; sommige extras vragen ook `CREATE TEMPORARY TABLES`.
 
-Apache 2.4 of hoger, or nginx 1.x is aan te raden.
+## Webservers
 
-Het is ook mogelijk om lighttpd, IIS, Zeus, Valet en andere webservers te gebruiken. Hiervoor is mogelijk wel meer configuratie nodig om zoekmachinevriendelijke URLs te ondersteunen.
+Apache 2.4+ of nginx 1.18.x worden aangeraden.
 
-## Browser Support for the Manager
+Voor [vriendelijke URLs](aan-de-slag/vriendelijke-urls) kan extra configuratie nodig zijn. Instructies (EN): [Apache](/current/en/getting-started/friendly-urls/apache), [nginx](/current/en/getting-started/friendly-urls/nginx), [lighttpd](/current/en/getting-started/friendly-urls/lighttpd). Een beknopte Apache-uitleg staat ook in het Nederlands: [Vriendelijke URLs op Apache](aan-de-slag/vriendelijke-urls/apache).
 
-De volgende browsers zijn ondersteund voor het gebruik van de back-end manager voor het beheren van de site:
+## Browserondersteuning voor de Manager
+
+Desktop:
 
 - Edge (laatste 2)
 - Chrome (laatste 2)
 - Firefox (laatste 2)
 - Safari (laatste 2)
 
-Op mobiele/tablet apparaten:
+Mobiel/tablet:
 
 - Chrome for Android (laatste)
 - Safari on iOS (laatste)
 
-De manager werkt mogelijk prima op oudere/andere browsers, maar die zijn niet officieel ondersteund.
-
-Denk erom dat deze vereisten alleen gelden voor de manager. Welke browsers je voor de site wilt ondersteunen hangt helemaal af van wat je daar zelf voor wilt.
+De manager kan op oudere of andere browsers werken, maar die zijn niet officieel ondersteund. Deze eisen gelden alleen voor de manager; welke browsers je frontend ondersteunt bepaal je zelf.
