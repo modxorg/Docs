@@ -21,7 +21,7 @@ See also: [Processors overview](extending-modx/processors), [Using runProcessor]
 
 ## Browser (files and directories)
 
-_16 processors_
+16 processors.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
@@ -44,7 +44,7 @@ _16 processors_
 
 ## Context
 
-_19 processors_
+19 processors.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
@@ -70,7 +70,7 @@ _19 processors_
 
 ## Element (Chunks, Snippets, Plugins, Templates, TVs, Property Sets)
 
-_68 processors_
+68 processors.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
@@ -145,7 +145,7 @@ _68 processors_
 
 ## Resource
 
-_27 processors_
+27 processors.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
@@ -179,7 +179,7 @@ _27 processors_
 
 ## Search
 
-_1 processors_
+1 processors.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
@@ -187,7 +187,7 @@ _1 processors_
 
 ## Security (users, ACLs, forms, messages)
 
-_128 processors_
+128 processors.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
@@ -322,7 +322,7 @@ _128 processors_
 
 ## Software update
 
-_3 processors_
+3 processors.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
@@ -332,7 +332,7 @@ _3 processors_
 
 ## Media Source
 
-_8 processors_
+8 processors.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
@@ -347,7 +347,7 @@ _8 processors_
 
 ## System (settings, menus, dashboards, logs)
 
-_72 processors_
+72 processors.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
@@ -426,7 +426,7 @@ _72 processors_
 
 ## Workspace (packages, lexicon, namespaces)
 
-_37 processors_
+37 processors.
 
 | Action | Description | Permission |
 | ------ | ----------- | ---------- |
