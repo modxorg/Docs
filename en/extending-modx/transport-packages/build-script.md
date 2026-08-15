@@ -126,10 +126,21 @@ $vehicle = $builder->createVehicle($snippet,array(
 So, first off, we created a snippet object. Note that you'll have to specify an arbitrary ID for it, even though we wont keep it later. This is required. Then, we used the 'createVehicle' function in modPackageBuilder to create the vehicle object. Let's look at those attributes options more closely:
 
 -   `xPDOTransport::UNIQUE_KEY` _(string/array)_ - Here you'd place the unique key that identifies the object you're creating. This will tell MODX to search for the modSnippet with the 'name' equal to the packaged in name (here, 'Test') when updating or removing the object. For most objects, this will be 'name'; others require different settings. Some might even require an array of two or more fields.
--   `xPDOTransport::UPDATE_OBJECT` _(boolean)_ - Either true or false, this tells MODX whether or not to update the object if it is found in the DB upon install (or update). Sometimes, if the object is already there, you may not want to update it - the update might erase the user's current settings for that object.
--   `xPDOTransport::PRESERVE_KEYS` _(boolean)_ - Either true or false, this tells MODX whether or not to rewrite the primary keys when the object is found. This can be useful if you're wanting the PKs to stay the same when you update - some PKs are auto_increment, and if you're wanting those to stay the same number, you'd set this to true. Note: If the object already exists, this feature only works if `xPDOTransport::UPDATE_OBJECT` is set to true as well. If the object is not found, it will work regardless.
+-   `xPDOTransport::UPDATE_OBJECT` _(boolean)_ - If true, MODX updates the object when an existing row matches `UNIQUE_KEY` during install or upgrade. If false, MODX leaves the existing row alone. This flag also gates uninstall: xPDO removes the object only when `UPDATE_OBJECT` is true (and `UNINSTALL_OBJECT` is not false). Set `UPDATE_OBJECT` to false when an upgrade must not overwrite user-changed data. That object then remains after uninstall as well.
+-   `xPDOTransport::UNINSTALL_OBJECT` _(boolean)_ - If false, MODX leaves the object in the database when the package is uninstalled. If omitted, the default is true. Removal still requires `UPDATE_OBJECT` to be true; both conditions must pass before xPDO deletes the row.
+-   `xPDOTransport::PRESERVE_KEYS` _(boolean)_ - If true, MODX applies the primary key values from the package when loading the object. Use `true` for natural or string primary keys (for example a Context `key`) so the packaged value is written. Use `false` for typical autoincrement IDs so the database assigns a new ID on insert. When the object already exists, this only takes effect if `UPDATE_OBJECT` is also true.
+-   `xPDOTransport::ABORT_INSTALL_ON_VEHICLE_FAIL` _(boolean)_ - If true on this vehicle and the vehicle fails to install, MODX aborts the rest of the package install.
+-   `xPDOTransport::PREEXISTING_MODE` _(integer)_ - Controls how objects (and file-resolver targets) that already exist on the site are handled. Use one of the mode constants below.
 
-Simple enough? So our example tells it to look for a Snippet named 'Test', and if it finds it, update its contents. If it doesnt find it, create it. However, if it does find it; we told MODX not to update its PK - there's no need to adjust that in this situation.
+**Preexisting modes** (values for `PREEXISTING_MODE`):
+
+-   `xPDOTransport::PRESERVE_PREEXISTING` _(0, default)_ - On install or upgrade, snapshot preexisting object data (and matching files from file resolvers) so they can be restored later. On uninstall, objects that already existed before install are not removed (they stay in that snapshot).
+-   `xPDOTransport::REMOVE_PREEXISTING` _(1)_ - Do not keep a restore snapshot. On uninstall, remove the object even if it existed before the package was installed (still requires `UPDATE_OBJECT` and `UNINSTALL_OBJECT`).
+-   `xPDOTransport::RESTORE_PREEXISTING` _(2)_ - On uninstall, restore objects and files from the snapshot taken at install. Object restore also requires `UPDATE_OBJECT` to be true.
+
+`PREEXISTING_MODE` can sit on the vehicle or be passed at install/uninstall time. Package Management passes it when uninstalling. Core setup uses `REMOVE_PREEXISTING` when installing the core package.
+
+Our example looks for a Snippet named 'Test' and updates it when found, or creates it when missing. `PRESERVE_KEYS` is false, so an autoincrement primary key is not forced from the package.
 
 Let's also package in the modMenu:
 
@@ -347,6 +358,16 @@ Great! We've got our category vehicle, complete with all the related chunks and 
 Validators and resolvers are basically scripts that run during the install process. Validators are run at the start of the vehicle they are attached to. If they return false, the installation does not proceed.
 
 Resolvers, on the other hand, execute after vehicle they are attached to has installed. They can either be file or PHP scripts. A file resolver simply copies over files into a specific target location. A PHP resolver executes a script after install.
+
+These vehicle attributes toggle resolver and file-vehicle behavior (pass them in the same array as `UPDATE_OBJECT` and friends, or as install options):
+
+-   `xPDOTransport::RESOLVE_FILES` _(boolean)_ - If false, file resolvers on the vehicle are skipped. Omit or set true to run them.
+-   `xPDOTransport::RESOLVE_FILES_REMOVE` _(boolean)_ - On uninstall, file resolvers remove their target files or directories unless this is set to false. Default is to remove.
+-   `xPDOTransport::RESOLVE_PHP` _(boolean)_ - If false, PHP resolvers on the vehicle are skipped. Omit or set true to run them.
+-   `xPDOTransport::INSTALL_FILES` _(boolean)_ - For `xPDOFileVehicle` only. If false, the vehicle skips copying its files on install.
+-   `xPDOTransport::UNINSTALL_FILES` _(boolean)_ - For `xPDOFileVehicle` only. If false, the vehicle leaves its files on uninstall. Default is to remove them.
+
+File resolvers also honor `PREEXISTING_MODE`. With `PRESERVE_PREEXISTING`, files already at the target path are archived before overwrite. With `RESTORE_PREEXISTING`, that archive is unpacked on uninstall.
 
 With that said, we're going to attach 2 file resolvers, and one PHP resolver, to our script:
 

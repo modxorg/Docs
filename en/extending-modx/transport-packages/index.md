@@ -68,11 +68,16 @@ Again, it looks like a big PHP array, with similar keys. It has some extra keys 
 -   **signature** - The filename signature for this vehicle.
 -   **native_key** - Similar to the manifest. If the vehicle is a database object, this will be its primary key by which it is identified.
 
-The xPDOObjectVehicle, or database vehicles, often have these extra keys:
+The xPDOObjectVehicle, or database vehicles, often have these extra keys (build scripts set them via `xPDOTransport::*` constants; see [Creating a Build Script](extending-modx/transport-packages/build-script)):
 
--   **preserve_keys** - If true, the vehicle will try and preserve the primary key of the database record on install.
--   **update_object** - If true, the vehicle will UPDATE the object if it's found already in the database during install. If false, it will be skipped.
+-   **preserve_keys** - If true, primary key values from the package are applied when loading the object. Use this for natural or string keys (such as a Context key). For typical autoincrement IDs, leave this false so the database assigns a new ID.
+-   **update_object** - If true, the vehicle updates the object when a matching row already exists. If false, that row is skipped. Uninstall also depends on this flag: xPDO removes the object only when update is allowed (and **uninstall_object** is not false).
+-   **uninstall_object** - If false, the object stays in the database when the package is uninstalled. Default is true when omitted. Removal still requires **update_object** to be true.
 -   **unique_key** - The column name by which the database object can be uniquely identified - often this is not the primary key, as auto-incrementing fields often do not match across different databases.
+-   **preexisting_mode** - How to treat objects that already exist on the site (`preserve_preexisting`, `remove_preexisting`, or `restore_preexisting`). Can be set on the vehicle or passed at install/uninstall. Details are on the build-script page.
+-   **abort_install_on_vehicle_fail** - If true and this vehicle fails to install, the package install stops.
+-   **resolve_files** / **resolve_files_remove** / **resolve_php** - Toggle file and PHP resolvers, and whether file resolvers delete their targets on uninstall.
+-   **install_files** / **uninstall_files** - For `xPDOFileVehicle`: skip copying files on install, or leave files in place on uninstall.
 -   **related_objects** - A complex array of any related objects to this vehicle's main database object. Sometimes, it may be necessary to package in "related" objects to achieve the desired end result. A great example is if the packager wants to put all of his Snippets in a Category. He would make the vehicle's object be the Category, and then add related objects - the snippets - to it.
 -   **related_object_attributes** - The attributes for the above related objects.
 -   **namespace** - Similar to the manifest; a grouping value for the objects in a transport package.
