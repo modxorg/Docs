@@ -10,7 +10,7 @@ Gets a field name as represented in the database container. This gets the name o
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getFieldName>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getFieldName()>
 
 ``` php
 string getFieldName (string $k, [string $alias = null])

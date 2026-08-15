@@ -38,6 +38,7 @@ Revolution - флагманская CMS и прикладная среда MODX,
 
 ### Другие ресурсы
 
+-   [Справочник по API](api-reference)
 -   [Получить последнюю версию](https://modx.com/download/)
 -   [Скачать дополнения](https://modx.com/extras/)
 -   [MODX сообщество](https://community.modx.com)

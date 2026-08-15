@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/metadata-accessors/
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getFKDefinition>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getFKDefinition()>
 
 ```php
 array getFKDefinition (string $alias)

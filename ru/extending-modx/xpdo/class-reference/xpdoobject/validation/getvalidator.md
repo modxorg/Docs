@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/validation/getvalid
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getValidator>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getValidator()>
 
 ```php
 string|boolean getValidator ()

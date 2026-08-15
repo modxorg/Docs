@@ -10,7 +10,7 @@ Replace a key-value pair in in a cache provider.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#replace>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::replace()>
 
 ``` php
 boolean replace (string $key, mixed &$var, [integer $lifetime = 0], [array $options = array()])

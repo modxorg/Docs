@@ -10,7 +10,7 @@ Get the absolute path to the current writable directory for storing cache files.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#getCachePath>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::getCachePath()>
 
 ``` php
 string getCachePath ()

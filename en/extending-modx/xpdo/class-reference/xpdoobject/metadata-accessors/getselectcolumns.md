@@ -10,7 +10,7 @@ Get a set of column names from an xPDOObject for use in SQL queries.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#getSelectColumns>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getSelectColumns()>
 
 ``` php
 static string getSelectColumns (

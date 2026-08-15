@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/validation/removeva
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#removeValidationRules>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::removeValidationRules()>
 
 ```php
 void removeValidationRules ([string $field = null], [array $rules = array()])

@@ -904,8 +904,8 @@
     "/en/developing-in-modx/basic-development/static-elements": "en/building-sites/elements/static-elements",
     "/revolution/2.x/developing-in-modx/code-standards": "en/_legacy/developing-in-modx/code-standards",
     "/en/developing-in-modx/code-standards": "en/_legacy/developing-in-modx/code-standards",
-    "/revolution/2.x/developing-in-modx/other-development-resources/api-reference": "en/extending-modx/api-reference",
-    "/en/developing-in-modx/other-development-resources/api-reference": "en/extending-modx/api-reference",
+    "/revolution/2.x/developing-in-modx/other-development-resources/api-reference": "en/api-reference",
+    "/en/developing-in-modx/other-development-resources/api-reference": "en/api-reference",
     "/revolution/2.x/developing-in-modx/other-development-resources/class-reference": "en/extending-modx/core-model",
     "/en/developing-in-modx/other-development-resources/class-reference/index": "en/extending-modx/core-model",
     "/revolution/2.x/developing-in-modx/other-development-resources/class-reference/modchunk": "en/extending-modx/core-model/modchunk",
@@ -2395,5 +2395,16 @@
     "/help/template+variables": "en/building-sites/elements/template-variables",
     "/display/addon/taglister": "en/extras/taglister",
     "/en/extras/babel/babellinks": "en/extras/babel",
-    "/en/extras/babel/babeltranslation": "en/extras/babel"
+    "/en/extras/babel/babeltranslation": "en/extras/babel",
+    "/help/content+types": "en/building-sites/resources/content-types",
+    "/help/policies": "en/building-sites/client-proofing/security/policies",
+    "/help/policytemplates": "en/building-sites/client-proofing/security/policies/policytemplates",
+    "/help/customizing+the+manager": "en/building-sites/client-proofing/form-customization",
+    "/help/form+customization+profiles": "en/building-sites/client-proofing/form-customization/profiles",
+    "/help/form+customization+sets": "en/building-sites/client-proofing/form-customization/sets",
+    "/help/user+groups": "en/building-sites/client-proofing/security/user-groups",
+    "/help/dashboard+widgets": "en/building-sites/client-proofing/dashboards/creating-a-widget",
+    "/en/extending-modx/api-reference": "en/api-reference",
+    "/extending-modx/api-reference": "en/api-reference",
+    "/ru/extending-modx/api-reference": "ru/api-reference"
 }

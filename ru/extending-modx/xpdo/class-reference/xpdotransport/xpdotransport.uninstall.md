@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdotransport/xpdotransport.un
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/transport/xPDOTransport.html#uninstall>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_transport_xpdotransport.class.html#\xPDOTransport::uninstall()>
 
 ```php
 boolean uninstall ([array $options = array ()])

@@ -12,7 +12,7 @@ Returns true if successful.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/transport/xPDOTransport.html#install>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_transport_xpdotransport.class.html#\xPDOTransport::install()>
 
 ``` php
 boolean install ([array $options = array ()])

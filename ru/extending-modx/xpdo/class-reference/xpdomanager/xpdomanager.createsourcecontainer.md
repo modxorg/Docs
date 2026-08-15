@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.create
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOManager.html#createSourceContainer>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdomanager.class.html#\xPDOManager::createSourceContainer()>
 
 ```php
 void createSourceContainer (

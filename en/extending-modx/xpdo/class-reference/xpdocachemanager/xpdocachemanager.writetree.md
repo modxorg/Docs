@@ -10,7 +10,7 @@ Recursively writes a directory tree of files to the filesystem.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#writeTree>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::writeTree()>
 
 ``` php
 boolean writeTree (string $dirname, [array $options = array()])

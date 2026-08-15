@@ -10,7 +10,7 @@ Escapes all single quotes in a string.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#escapeSingleQuotes>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::escapeSingleQuotes()>
 
 ``` php
 string escapeSingleQuotes (string $s)

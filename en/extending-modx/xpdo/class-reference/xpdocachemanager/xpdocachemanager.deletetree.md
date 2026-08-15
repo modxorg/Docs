@@ -18,7 +18,7 @@ The options array has the following parameters available:
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/cache/xPDOCacheManager.html#deleteTree>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::deleteTree()>
 
 ``` php
 boolean deleteTree (string $dirname, [array $options = array(

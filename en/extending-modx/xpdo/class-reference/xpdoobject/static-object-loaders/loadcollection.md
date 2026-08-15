@@ -10,7 +10,7 @@ This function is responsible for loading a collection of object instances from *
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#loadCollection>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::loadCollection()>
 
 ``` php
 static array loadCollection(

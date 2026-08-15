@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.remove
 
 ## Синтаксис
 
-API Docs: [removeSourceContainer](http://api.modxcms.com/xpdo/om-mysql/xPDOManager_mysql.html#removeSourceContainer)
+API Docs: [removeSourceContainer](https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdomanager.class.html#\xPDOManager::removeSourceContainer())
 
 ```php
 int removeSourceContainer (string $dsn, string $username, string $password)

@@ -10,7 +10,7 @@ Get a field value (or a set of values) by the field key(s) or name(s).
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#get>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::get()>
 
 ``` php
 mixed get(

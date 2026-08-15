@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.ha
 
 ## Синтаксис
 
-API Doc: <http://api.modxcms.com/xpdo/om/xPDOValidator.html#hasMessages>
+API Doc: <https://api.modx.com/revolution/2.2/db_core_xpdo_validation_xpdovalidator.class.html#\xPDOValidator::hasMessages()>
 
 ```php
 boolean hasMessages ()

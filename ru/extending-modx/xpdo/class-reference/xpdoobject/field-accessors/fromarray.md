@@ -9,15 +9,15 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fro
 
 ## Синтаксис
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#fromArray>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::fromArray()>
 
 ```php
 void fromArray(
-   array $fldarray,
-   [string $keyPrefix = ''],
-   [boolean $setPrimaryKeys = false],
-   [boolean $rawValues = false],
-   [boolean $adhocValues = false]
+    array $fldarray,
+    [string $keyPrefix = ''],
+    [boolean $setPrimaryKeys = false],
+    [boolean $rawValues = false],
+    [boolean $adhocValues = false]
 )
 ```
 

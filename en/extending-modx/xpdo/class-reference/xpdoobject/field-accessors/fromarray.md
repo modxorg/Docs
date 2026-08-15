@@ -10,7 +10,7 @@ Sets object fields from an associative array of key => value pairs.
 
 ## Syntax
 
-API Docs: <http://api.modxcms.com/xpdo/om/xPDOObject.html#fromArray>
+API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::fromArray()>
 
 ``` php
 void fromArray(
