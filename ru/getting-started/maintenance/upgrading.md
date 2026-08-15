@@ -63,14 +63,18 @@ translation: "getting-started/maintenance/upgrading"
 
 ## Изменения в зависимости от версии
 
- Для обновлений, касающихся определенных версий, пожалуйста ознакомьтесь со следующими страницами:
+Для изменений по конкретным версиям см. страницы:
 
-- [Обновление до версии 2.2](getting-started/maintenance/upgrading/2.2 "Обновление до 2.2.x")
-- [Обновление с версии 2.0.x до 2.1.x](getting-started/maintenance/upgrading/2.1 "Обновление с версии 2.0.x до 2.1.x") **!важно**
-- [Обновление с более ранних версий до 2.0.5](getting-started/maintenance/upgrading/2.0.5 "Обновление с более ранних версий до 2.0.5")
-- [Обновление до версии MODX Revolution 2.0.0-rc-2](getting-started/maintenance/upgrading/2.0.0-rc2 "Обновление до версии MODX Revolution 2.0.0-rc-2")
-
- Обновления после 2.0.0-rc-2 должны выполняться без проблем.
+- [Обновление до 2.8](getting-started/maintenance/upgrading/2.8), затем изменения безопасности в [2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2)
+- [Обновление до 2.7](getting-started/maintenance/upgrading/2.7)
+- [Обновление до 2.6](getting-started/maintenance/upgrading/2.6)
+- [Обновление до 2.5](getting-started/maintenance/upgrading/2.5)
+- [Обновление до 2.4](getting-started/maintenance/upgrading/2.4)
+- [Обновление до 2.3](getting-started/maintenance/upgrading/2.3)
+- [Обновление до 2.2](getting-started/maintenance/upgrading/2.2)
+- [Обновление с 2.0.x до 2.1.x](getting-started/maintenance/upgrading/2.1) **!важно**
+- [Обновление с версий до 2.0.5](getting-started/maintenance/upgrading/2.0.5)
+- [Обновление с версий до 2.0.0-rc2](getting-started/maintenance/upgrading/2.0.0-rc2)
 
 ## Смотри также
 
@@ -95,9 +99,14 @@ cp -fr modx-2.2.0-pl/* /www/public_html/modx
 ### Смотрите также
 
 1. [Решение проблем с обновлением](getting-started/maintenance/upgrading/troubleshooting)
-2. [Обновление до версии 2.2.x](getting-started/maintenance/upgrading/2.2)
-3. [Обновление с версии 2.0.x до 2.1.x](getting-started/maintenance/upgrading/2.1)
-4. [Обновление с более ранних версий до 2.0.5](getting-started/maintenance/upgrading/2.0.5)
-5. [Обновление до версии MODX Revolution 2.0.0-rc-2](getting-started/maintenance/upgrading/2.0.0-rc2)
-6. [Обновление с MODX Evolution](getting-started/maintenance/upgrading/evolution)
-7. [Функциональные отличия от Evolution](getting-started/maintenance/upgrading/evolution/functional-changes)
+2. [Обновление до 2.8](getting-started/maintenance/upgrading/2.8)
+3. [Обновление до 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2)
+4. [Обновление до 2.7](getting-started/maintenance/upgrading/2.7)
+5. [Обновление до 2.6](getting-started/maintenance/upgrading/2.6)
+6. [Обновление до 2.5](getting-started/maintenance/upgrading/2.5)
+7. [Обновление до 2.4](getting-started/maintenance/upgrading/2.4)
+8. [Обновление до 2.3](getting-started/maintenance/upgrading/2.3)
+9. [Обновление до 2.2.x](getting-started/maintenance/upgrading/2.2)
+10. [Обновление с 2.0.x до 2.1.x](getting-started/maintenance/upgrading/2.1)
+11. [Обновление с MODX Evolution](getting-started/maintenance/upgrading/evolution)
+12. [Функциональные отличия от Evolution](getting-started/maintenance/upgrading/evolution/functional-changes)
