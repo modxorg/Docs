@@ -56,7 +56,7 @@ This will output:
 
 ## Rules
 
-There are three different types of rules, `callable, `preg_match`, and `xPDOValidationRule`.
+There are three different types of rules: `callable`, `preg_match`, and `xPDOValidationRule`.
 
 ### The 'callable' Rule
 

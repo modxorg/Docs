@@ -15,4 +15,5 @@ xPDO генерирует свои файлы карт и классов, кот
 - [Определение базы данных и таблиц](extending-modx/xpdo/custom-models/defining-a-schema/database-and-tables)
 - [Обновление Моделей до версии Схемы 1.1](extending-modx/xpdo/custom-models/defining-a-schema/upgrade-schema-v1.0-to-v1.1)
 - [Определение Отношений](extending-modx/xpdo/custom-models/defining-a-schema/relationships)
+- [Правила валидации](extending-modx/xpdo/custom-models/defining-a-schema/validators)
 - [Больше примеров файлов схемы xPDO XML](extending-modx/xpdo/custom-models/defining-a-schema/more-examples)
