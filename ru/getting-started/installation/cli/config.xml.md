@@ -110,9 +110,9 @@ php ./index.php --installmode=new
 | context\_connectors\_url | URL-путь к connectors. | |
 | context\_web\_path | Абсолютный путь к корню контекста `web`. | |
 | context\_web\_url | URL-путь к корню сайта (например `/modx/`). | |
-| assets\_path | Абсолютный путь к `assets/` (опционально; по умолчанию под web path). | |
+| assets\_path | Абсолютный путь к `assets/` (опционально, по умолчанию под web path). | |
 | assets\_url | URL-путь к `assets/` (опционально). | |
-| processors\_path | Абсолютный путь к процессорам (опционально; MODX задаёт значение по умолчанию). | |
+| processors\_path | Абсолютный путь к процессорам (опционально, MODX задаёт значение по умолчанию). | |
 
 ## Другие параметры
 
