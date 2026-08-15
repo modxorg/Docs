@@ -7,7 +7,7 @@ MODX даёт небольшой REST-сервер на классах `modRestS
 
 Страница покрывает MODX 2.3+ и MODX 3.x. В 3.x классы лежат в `MODX\Revolution\Rest\*`. Поведение сервиса и контроллеров совпадает с примерами ниже.
 
-> Исходящие HTTP-запросы из MODX к чужим API — другой стек. См. [HTTP-клиент](extending-modx/services/http). Устаревший клиент `modRest` описан в [Services](extending-modx/services/modrest).
+> Исходящие HTTP-запросы из MODX к чужим API это другой стек. См. [HTTP-клиент](extending-modx/services/http). Устаревший клиент `modRest` описан в [Services](extending-modx/services/modrest).
 
 ## Что почитать заранее
 
@@ -146,13 +146,13 @@ location @modx_rest {
 
 ## 2. Конечные точки API
 
-Один сегмент пути — один тип ресурса. HTTP-глаголы делают работу:
+Один сегмент пути это один тип ресурса. HTTP-глаголы делают работу:
 
-- `GET /items` — список
-- `GET /items/15` — чтение по первичному ключу `15`
-- `POST /items` — создание
-- `PUT /items/15` — обновление
-- `DELETE /items/15` — удаление
+- `GET /items`: список
+- `GET /items/15`: чтение по первичному ключу `15`
+- `POST /items`: создание
+- `PUT /items/15`: обновление
+- `DELETE /items/15`: удаление
 
 Пути вроде `/items/create` не нужны. `POST /items` уже означает создание.
 
@@ -253,7 +253,7 @@ class MyControllerItems extends modRestController
 
 Стандартные `get` / `post` / `put` / `delete` закрывают обычный сценарий. Хуки нужны для фильтров, прав и другого payload.
 
-**До записи/удаления** — верните `true`, чтобы продолжить, или `false` / строку ошибки, чтобы остановить:
+**До записи/удаления**: верните `true`, чтобы продолжить, или `false` / строку ошибки, чтобы остановить:
 
 - `beforePost()`
 - `beforePut()`
@@ -261,13 +261,13 @@ class MyControllerItems extends modRestController
 
 Объект доступен как `$this->object`.
 
-**После чтения/записи** — `afterRead`, `afterPost`, `afterPut` и `afterDelete` получают исходящий массив по ссылке. Меняйте поля там.
+**После чтения/записи**: `afterRead`, `afterPost`, `afterPut` и `afterDelete` получают исходящий массив по ссылке. Меняйте поля там.
 
 **Список:**
 
-- `prepareListQueryBeforeCount(xPDOQuery $c)` / `prepareListQueryAfterCount(xPDOQuery $c)` — join и `where`
-- `prepareListObject(xPDOObject $object)` — разметка строки (по умолчанию `toArray()`)
-- `addSearchQuery()` — своя логика поиска
+- `prepareListQueryBeforeCount(xPDOQuery $c)` / `prepareListQueryAfterCount(xPDOQuery $c)`: join и `where`
+- `prepareListObject(xPDOObject $object)`: разметка строки (по умолчанию `toArray()`)
+- `addSearchQuery()`: своя логика поиска
 
 **Хелперы:**
 
@@ -315,7 +315,7 @@ public function beforePost()
 protected $protected = false;
 ```
 
-Своя проверка — оставьте `$protected = true` и переопределите:
+Своя проверка: оставьте `$protected = true` и переопределите:
 
 ```php
 public function verifyAuthentication()
@@ -327,7 +327,7 @@ public function verifyAuthentication()
 
 Ошибка авторизации даёт HTTP 401 и стандартный error payload. Держите HTTPS и свою схему токена или сессии. OAuth в этом стеке ядро не поставляет.
 
-`modRestService::checkPermissions()` — отдельный барьер в bootstrap. Для глобальных правил переопределите метод в своём классе сервиса.
+`modRestService::checkPermissions()` это отдельный барьер в bootstrap. Для глобальных правил переопределите метод в своём классе сервиса.
 
 ## 6. Формат ответа
 
@@ -335,7 +335,7 @@ public function verifyAuthentication()
 
 Тела success/failure используют ключи из конфига сервиса (`success`, `message`, `object`, плюс `errors` при ошибках полей). Списки используют `results` и `total`.
 
-HTTP-статус по умолчанию для успеха и ошибки — `200`. Передайте третий аргумент в `success()` / `failure()` или смените `defaultSuccessStatusCode` / `defaultFailureStatusCode`, если нужны коды вроде 201 или 404.
+HTTP-статус по умолчанию для успеха и ошибки: `200`. Передайте третий аргумент в `success()` / `failure()` или смените `defaultSuccessStatusCode` / `defaultFailureStatusCode`, если нужны коды вроде 201 или 404.
 
 ## 7. Вложенные контроллеры
 
@@ -343,6 +343,6 @@ HTTP-статус по умолчанию для успеха и ошибки �
 
 ## Смотрите также
 
-- [HTTP-клиент](extending-modx/services/http) — исходящие запросы в MODX 3
-- [modRest](extending-modx/services/modrest) — устаревший исходящий клиент
-- [Выборка объектов xPDO](extending-modx/xpdo/retrieving-objects) — запросы, которые вы переиспользуете в `prepareListQuery*`
+- [HTTP-клиент](extending-modx/services/http): исходящие запросы в MODX 3
+- [modRest](extending-modx/services/modrest): устаревший исходящий клиент
+- [Выборка объектов xPDO](extending-modx/xpdo/retrieving-objects): запросы, которые вы переиспользуете в `prepareListQuery*`

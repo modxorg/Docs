@@ -149,11 +149,11 @@ That 405 means the router ran and found no matching controller. Next step: add c
 
 Map one path segment to one resource type. HTTP verbs do the work:
 
-- `GET /items` — list
-- `GET /items/15` — read primary key `15`
-- `POST /items` — create
-- `PUT /items/15` — update
-- `DELETE /items/15` — delete
+- `GET /items`: list
+- `GET /items/15`: read primary key `15`
+- `POST /items`: create
+- `PUT /items/15`: update
+- `DELETE /items/15`: delete
 
 Skip paths like `/items/create`. `POST /items` already means create.
 
@@ -254,7 +254,7 @@ Set these on your controller class to drive the default CRUD path:
 
 Default `get` / `post` / `put` / `delete` already handle the happy path. Override hooks when you need filters, permissions, or a different payload.
 
-**Before write/delete** — return `true` to continue, or `false` / an error string to abort:
+**Before write/delete**: return `true` to continue, or `false` / an error string to abort:
 
 - `beforePost()`
 - `beforePut()`
@@ -262,13 +262,13 @@ Default `get` / `post` / `put` / `delete` already handle the happy path. Overrid
 
 The object sits on `$this->object`.
 
-**After read/write** — `afterRead`, `afterPost`, `afterPut`, and `afterDelete` receive the outgoing array by reference. Change fields there before the response leaves.
+**After read/write**: `afterRead`, `afterPost`, `afterPut`, and `afterDelete` receive the outgoing array by reference. Change fields there before the response leaves.
 
 **List customisation:**
 
-- `prepareListQueryBeforeCount(xPDOQuery $c)` / `prepareListQueryAfterCount(xPDOQuery $c)` — add joins or `where` clauses
-- `prepareListObject(xPDOObject $object)` — map each row (default `toArray()`)
-- `addSearchQuery()` — override search behaviour
+- `prepareListQueryBeforeCount(xPDOQuery $c)` / `prepareListQueryAfterCount(xPDOQuery $c)`: add joins or `where` clauses
+- `prepareListObject(xPDOObject $object)`: map each row (default `toArray()`)
+- `addSearchQuery()`: override search behaviour
 
 **Helpers you call from overrides:**
 
@@ -344,6 +344,6 @@ Controllers may live in subfolders under `basePath`. The class name still uses t
 
 ## See also
 
-- [HTTP Client](extending-modx/services/http) — outbound requests from MODX 3
-- [modRest](extending-modx/services/modrest) — deprecated outbound client
-- [xPDO retrieving objects](extending-modx/xpdo/retrieving-objects) — query patterns you reuse in `prepareListQuery*`
+- [HTTP Client](extending-modx/services/http): outbound requests from MODX 3
+- [modRest](extending-modx/services/modrest): deprecated outbound client
+- [xPDO retrieving objects](extending-modx/xpdo/retrieving-objects): query patterns you reuse in `prepareListQuery*`
