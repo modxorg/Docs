@@ -32,10 +32,11 @@ Bugs can be filed here: <https://github.com/modxcms/Archivist/issues>
 
 ## Usage
 
-Archivist has 2 snippets - one to display the month/year/day listing ("Archivist"), and the other to display archive results ("getArchives").
+Archivist ships three snippets:
 
-- [Archivist](extras/archivist/archivist "Archivist") - Displays archive navigation links.
-- [getArchives](extras/archivist/archivist.getarchives "getArchives") - Displays results of archives.
+- [Archivist](extras/archivist/archivist "Archivist") — month/year/day archive navigation links
+- [ArchivistGrouper](extras/archivist/archivist.archivistgrouper) — nested archive list (groups with items inside)
+- [getArchives](extras/archivist/archivist.getarchives "getArchives") — Resources for a selected archive filter
 
 ## Examples
 

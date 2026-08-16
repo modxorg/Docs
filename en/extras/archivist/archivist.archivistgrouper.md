@@ -4,57 +4,96 @@ _old_id: "778"
 _old_uri: "revo/archivist/archivist.archivistgrouper"
 ---
 
-The [Articles](extras/articles "Articles") addon 1.6.1 came with the Archivist addon 1.2.3, so I suppose this ArchivistGrouper snippet is now part of [Archivist](extras/archivist "Archivist"). No documentation yet from its creator, but I found the available properties in the snippet.
+ArchivistGrouper is a snippet in the [Archivist](extras/archivist) Extra. It lists Resources under one or more parents, grouped by month or year, with nested item links inside each group. Pair the group links with [getArchives](extras/archivist/archivist.getarchives) on a target Resource so filtered archive pages work.
 
-The descriptions in the table are just a guess!!! Someone with more experience or the creator should confirm or adjust these!!
+Articles ships Archivist and uses this snippet for nested archive navigation. You can call it on any site that has the Archivist package installed.
+
+Verified against [modxcms/Archivist](https://github.com/modxcms/Archivist) (`snippet.archivistgrouper.php` on `develop`). Archivist is an Extra, not part of MODX Revolution core.
 
 ## Usage
 
-Simply place the snippet wherever you would like to display archive listings in, the parents to grab archives from.
+Place the snippet where you want the grouped archive list. Point `parents` at the blog or article containers, and `target` at the Resource that runs getArchives.
 
 ``` php
-[[!ArchivistGrouper? &parents=`12`]]
+[[!ArchivistGrouper? &parents=`12` &target=`123`]]
+```
+
+Group by year instead of month:
+
+``` php
+[[!ArchivistGrouper? &parents=`12` &target=`123` &mode=`year`]]
 ```
 
 ## Available Properties
 
-| Name                                        | Description                                                                                                                                              | Default                                   |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| mode                                        | Choose between month and year                                                                                                                            | month                                     |
-| itemTpl                                     | The chunk that will be used to display each item within a group                                                                                          |                                           |
-| parents                                     | Comma-delimited list of ids serving as parents.                                                                                                          |                                           |
-| target                                      | The Resource that the getArchives snippet is called on, that will display the results of the archive filter.                                             |                                           |
-| depth                                       | Integer value indicating depth to search for resources from each parent.                                                                                 | 10                                        |
-| where                                       |                                                                                                                                                          |                                           |
-| hideContainers                              |                                                                                                                                                          | true                                      |
-| sortBy                                      | The field to sort and group results by.                                                                                                                  | publishedon                               |
-| sortDir                                     | Order which to sort by. Defaults to DESC.                                                                                                                | DESC                                      |
-| dateFormat                                  | The date format, according to MySQL DATE\_FORMAT() syntax, for each row. If blank, ArchivistGrouper will calculate this automatically.                   |                                           |
-| limitGroups                                 | Limits the number of groups returned.                                                                                                                    | 12                                        |
-| limitItems                                  | Limits the number of items returned. 0 means no limit??                                                                                                  | 0                                         |
-| resourceSeparator                           |                                                                                                                                                          | \\n                                       |
-| groupSeparator                              |                                                                                                                                                          | \\n                                       |
-| filterPrefix                                | The prefix to use for GET parameters with the Archivist links. Make sure this is the same as the filterPrefix parameter on the getArchives snippet call. | arc\_                                     |
-| useFurls                                    | If true, will generate links in pretty Friendly URL format.                                                                                              | true                                      |
-| persistGetParams                            |                                                                                                                                                          | false                                     |
-| extraParams                                 |                                                                                                                                                          |                                           |
-| cls                                         | A CSS class to add to each row.                                                                                                                          | arc-resource-row                          |
-| altCls                                      | A CSS class to add to each alternate row.                                                                                                                | arc-resource-row-alt                      |
-| setLocale                                   | If true, Archivist will run the setlocale function with your cultureKey setting if your cultureKey is not "en".                                          | true                                      |
-| groupTpl                                    | The chunk that will be used to display each month/year result.                                                                                           | yearContainer (when property mode=`year`) |
-| monthContainer (when property mode=`month`) |
+Defaults below match the snippet source. Empty Default means the snippet falls back as described.
 
-Almost all of the descriptions are the same properties as mentioned on the [Archivist page](extras/archivist/archivist.archivist "Archivist.Archivist").
+| Name | Description | Default |
+| ---- | ----------- | ------- |
+| mode | Group Resources by `month` or `year`. | `month` |
+| itemTpl | Chunk for each Resource inside a group. | `itemBrief` |
+| groupTpl | Chunk for each month or year group. If empty, uses `monthContainer` when `mode` is `month`, or `yearContainer` when `mode` is `year`. | _(auto)_ |
+| parents | Comma-delimited list of parent Resource IDs. If empty, uses the current Resource. Children of those parents are included down to `depth`. | current Resource |
+| target | Resource ID that should handle archive filter links (usually the page with getArchives). If empty, uses the current Resource. | current Resource |
+| depth | How deep to walk from each parent when collecting Resources. | `10` |
+| where | Optional JSON object of extra xPDO `where` conditions, merged into the query. | |
+| hideContainers | If true, skip Resources with `isfolder` set (containers). | `true` |
+| sortBy | Date field used to sort and group (for example `publishedon` or `createdon`). Use a date field only. | `publishedon` |
+| sortDir | Sort direction: `ASC` or `DESC`. | `DESC` |
+| dateFormat | Optional PHP [`strftime`](https://www.php.net/manual/en/function.strftime.php) format for the `[[+date]]` placeholder on each item. If blank, `[[+date]]` stays empty; other date placeholders still fill. | |
+| limitGroups | Maximum number of month or year groups to output. | `12` |
+| limitItems | Maximum items rendered inside each group. `0` means no per-group limit. | `0` |
+| resourceSeparator | String inserted between item chunks inside `[[+resources]]`. | newline |
+| filterPrefix | Prefix for year/month GET (or FURL path) parameters. Use the same value on getArchives. | `arc_` |
+| useFurls | If true, build pretty path-style filter URLs. If false, use query-string parameters. | `true` |
+| persistGetParams | If true, merge the current page’s GET parameters into archive links. Usually leave this off. | `false` |
+| extraParams | Optional query string fragment appended to each group URL. | |
+| cls | CSS class on each item row. | `arc-resource-row` |
+| altCls | Extra CSS class on alternate item rows. | `arc-resource-row-alt` |
+| setLocale | If true, call `setlocale` so month and weekday names follow the locale. | `true` |
+| locale | Locale passed to `setlocale` when `setLocale` is true. If empty, uses the site `cultureKey`. | `cultureKey` |
+| toPlaceholder | If set, store the snippet output in this placeholder and return nothing. | |
+
+The snippet also reads a property named `monthSeparator`, but current source joins groups with a hardcoded newline and never applies that property. Prefer `resourceSeparator` for item spacing inside a group.
 
 ## Chunks
 
-If no templates are given, the defaults are used. As it got me puzzled how to create my own template for the groups, I dived into the source and found this template that is used as monthContainer:
+### groupTpl (`monthContainer` / `yearContainer`)
 
-``` php
+Default month wrapper:
+
+``` html
 <li><a href="[[+url]]">[[+month_name]] [[+year]]</a>
 <ul>
 [[+resources]]
 </ul>
+</li>
 ```
 
-Notice the placeholder **`[[+resources]]`** that passes on the results to the itemTpl.
+Default year wrapper:
+
+``` html
+<li><a href="[[+url]]">[[+year]]</a>
+<ul>
+[[+resources]]
+</ul>
+</li>
+```
+
+`[[+resources]]` holds the rendered `itemTpl` chunks for that group. Group placeholders include `url`, `month_name`, `month`, `year`, `year_two_digit`, `day`, `weekday`, `weekday_abbr`, `weekday_idx`, `resources`, and `idx`.
+
+### itemTpl (`itemBrief`)
+
+Default item chunk:
+
+``` html
+<li><a href="[[~[[+id]]]]">[[+pagetitle]]</a></li>
+```
+
+Each item gets the Resource fields plus date helpers (`date`, `month_name`, `month`, `year`, and related), `cls`, `idx`, and `altCls` when the row is odd-numbered.
+
+## See Also
+
+- [Archivist](extras/archivist)
+- [Archivist snippet](extras/archivist/archivist)
+- [getArchives](extras/archivist/archivist.getarchives)
