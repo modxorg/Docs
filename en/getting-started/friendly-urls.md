@@ -18,6 +18,7 @@ You need two things:
 Everyone else: pick the guide for your server:
 
 - [Apache](getting-started/friendly-urls/apache) (most shared hosting; uses `ht.access` → `.htaccess`)
+- [IIS](getting-started/friendly-urls/iis) (`web.config` + URL Rewrite)
 - [nginx](getting-started/friendly-urls/nginx)
 - [lighttpd](getting-started/friendly-urls/lighttpd)
 
@@ -69,6 +70,8 @@ After FURLs work, decide on one canonical host (`www` or bare domain) and HTTP v
 On Apache, example rules live in the shipped `ht.access` file (commented out). Uncomment only the block you need and replace the example domain. Details are in the [Apache guide](getting-started/friendly-urls/apache).
 
 On nginx, put equivalent `return 301` logic in the matching `server` blocks.
+
+On IIS, add equivalent redirect rules in `web.config` (see the [IIS guide](getting-started/friendly-urls/iis)).
 
 ## Related
 
