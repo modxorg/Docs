@@ -93,7 +93,7 @@ The parameters that could help you for a custom installation.
 | Name         | Description                                                            | Default    |
 | ------------ | ---------------------------------------------------------------------- | ---------- |
 | docindexPath | the path under assets/files/ where are located Lucene document indexes | docindex/  |
-| libraryPath  | The path under assets/ where are located the Zend library              | libraries/ |
+| libraryPath  | Absolute or placeholder path to external libraries. AdvSearch appends `ZendSearch/vendor/autoload.php` for the Lucene engine. | `{core_path}components/advsearch/libraries/` |
 
 ## AdvSearch Chunks
 

@@ -6,45 +6,65 @@ _old_uri: "revo/advsearch"
 
 ## What is AdvSearch?
 
-AdvSearch is an advanced search component for MODX Revolution. It allows search in dynamic contents (by using Zend Lucene search class), setting up of faceted search and searching in custom packages.
-It doesn't support the ajax functionality for the moment.
+AdvSearch is an advanced search Extra for MODX Revolution. It supports MySQL search, optional Zend Lucene indexing for dynamic content, faceted search, and search in custom packages.
 
 ## Requirements
 
-- MODX Revolution 2.0.8 or later
-- PHP5 or later
+- MODX Revolution 2.0.8 or later (package docs also mention 2.1+)
+- PHP with multibyte string support enabled (`use_multibyte` / mbstring)
 - UTF-8 charset
-- php multi-bytes setting ON
-- Zend Search class from Zend library (See installation chapter)
-- Jquery 1.5.1 (provided with AdvSearch)
+- jQuery (shipped with AdvSearch; current package trees use a newer build than the old 1.5.1 note)
+- For `&engine=` `zend` or `all` only: the ZendSearch Lucene library (see below)
+
+MySQL-only search (`&engine=` `mysql`, the default) does not need ZendSearch.
 
 ## History
 
-AdvSearch was written by [Coroico](https://github.com/coroico) and first released on August 14th, 2011. It is loosely based on AjaxSearch for MODX Evolution by KyleJ/Coroico, minus dynamic content search based on Zend search library.
+AdvSearch was written by [Coroico](https://github.com/coroico) and first released on August 14th, 2011. It is loosely based on AjaxSearch for MODX Evolution by KyleJ/Coroico, with optional Lucene indexing via ZendSearch.
 
 ### Download
 
-It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/advsearch>
+Install from the Manager via [Package Management](developing-in-modx/advanced-development/package-management), or download from the Extras repository: <https://modx.com/extras/package/advsearch>
 
-Before to run the first search with AdvSearch, you need to install the Zend Search library first. See installation chapter below.
+If you plan to use the Zend Lucene engine, install ZendSearch before you index or search with that engine (see below).
 
 ### Development and Bug Reporting
 
-AdvSearch is stored and developed in GitHub, and can be found here:<http://github.com/coroico/AdvSearch>
+Source and issues live on GitHub: <https://github.com/coroico/AdvSearch>
 
-Bugs can be filed here: <http://github.com/coroico/AdvSearch/issues>
+## Installation of ZendSearch (Lucene engine)
 
-## Installation of the Zend Search class
+Zend Framework became the [Laminas Project](https://getlaminas.org/). Laminas did **not** take over the Lucene search component. There is no official `laminas-search` drop-in for AdvSearch.
 
-Even if AdvSearch addon is fully installable through the package management, the first time you install AdvSearch you need to install the Zend Search class.
-This installation is done only one time and will be valid for all the following re-installation of the addon.
+Current AdvSearch (see `advsearch.zend.controller.class.php` on the [Development](https://github.com/coroico/AdvSearch) branch) loads Composer’s autoloader at:
 
-- go to the Zend Framework download page at <http://framework.zend.com/download/latest/>
-- register you and download the free Zend Framework. Minimal release is enough.
-- if you haven’t a folder for libraries under assets/ create a folder libraries/ under assets/
-- unzip you Zend package under the assets/libraries/ folder. This should create a subdirectory named "Zend" (assets/libraries/Zend)
-- in this directory only the "search" directory and the "Exception.php" files are required. You could remove all the others files and directories.
-- at the end you should have only the "Search" folder and the "Exception.php" file.
+`{libraryPath}ZendSearch/vendor/autoload.php`
+
+By default `libraryPath` resolves to `core/components/advsearch/libraries/` (override with the AdvSearch `&libraryPath` property if you keep libraries elsewhere). After install you need this file:
+
+`core/components/advsearch/libraries/ZendSearch/vendor/autoload.php`
+
+AdvSearch then uses the `\ZendSearch\Lucene\` PHP API.
+
+### Install with Composer (recommended)
+
+On the server, from your MODX root (adjust the path if your Extra lives elsewhere):
+
+``` bash
+mkdir -p core/components/advsearch/libraries/ZendSearch
+cd core/components/advsearch/libraries/ZendSearch
+composer require handcraftedinthealps/zendsearch
+```
+
+[`handcraftedinthealps/zendsearch`](https://github.com/handcraftedinthealps/ZendSearch) is a maintained fork of the abandoned [`zendframework/zendsearch`](https://github.com/zendframework/ZendSearch) package. It keeps the `\ZendSearch\` namespace AdvSearch expects and targets modern PHP.
+
+You can use `composer require zendframework/zendsearch` instead if you accept the abandoned upstream package and its older dependency constraints.
+
+Confirm the autoloader exists, then set `&engine=` to `zend` or `all` on your AdvSearch calls and build the Lucene index with AdvSearch’s indexation tools.
+
+### Why not full Laminas?
+
+Laminas replaced most Zend Framework components. ZendSearch Lucene was already unmaintained and was not migrated. Dropping a generic Laminas release into `assets/libraries/Zend` (the old docs path) will not satisfy AdvSearch’s current loader.
 
 ## Usage
 
