@@ -1,79 +1,79 @@
 ---
-title: "Установка при помощи командной строки"
+title: "Установка из командной строки"
+sortorder: "3"
+_old_id: "349"
+_old_uri: "2.x/getting-started/installation/command-line-installation"
 translation: "getting-started/installation/cli"
 ---
 
-Установка через интерфейс командной строки доступна только для MODX Revolution версии 2.2 и выше.
+Установка через CLI доступна только для MODX Revolution 2.2 и новее.
 
-## Установка MODX через командную строку PHP
+## Установка MODX через PHP CLI
 
-MODX позволяет выполнять обновления и установку через командную строку (CLI) при использовании файла конфигурации XML. (Более подробную информацию об этом файле можно найти [здесь](getting-started/installation/cli/config.xml "XML-файл конфигурации установки"). Это позволяет пользователям создавать простые скрипты для обновления своих установок MODX.
+MODX позволяет обновлять и устанавливать через командную строку (CLI) с config XML. Подробнее о файле [здесь](getting-started/installation/cli/config.xml "The Setup Config Xml File"). Так можно собрать простые скрипты для обновления установок MODX.
 
-При обновлении **всегда** рекомендуется делать резервную копию файлов перед обновлением.
+Перед обновлением **всегда** делайте backup файлов.
 
-## Новые установки CLI
+## Новая установка через CLI
 
-Во-первых, [скачайте MODX](https://modx.com/download/) и распакуйте файлы на свой сервер. В каталоге **setup/** скопируйте файл `config.dist.new.xml` и переименуйте его в `config.xml`. MODX автоматически ищет файл `setup/config.xml` во время установки. Вы можете переместить его за пределы каталога **setup/** (и корневого каталога MODX, если хотите) и указать его местоположение с помощью аргумента `--config=/path/to/config.xml`.
+[Скачайте MODX](https://modx.com/download/) и распакуйте файлы на сервер. В `setup/` скопируйте `config.dist.new.xml` в `config.xml`. MODX ищет `setup/config.xml` при установке. Файл можно вынести из `setup/` (и из webroot MODX) и указать путь аргументом `--config=/path/to/config.xml`.
 
-Затем отредактируйте XML-файл и установите соответствующую информацию о базе данных, пути MODX и другие параметры конфигурации, а затем в командной строке перейдите в каталог MODX setup / и введите:
+Отредактируйте XML: данные БД, пути MODX и остальные параметры. В CLI перейдите в `setup/` и выполните:
 
-``` shell
+``` php
 php ./index.php --installmode=new
 ```
 
-MODX продолжит установку, и по ее завершении отобразит время, необходимое для запуска установки, а также все возникшие ошибки (которые также будут зарегистрированы в файле журнала установки в `core/cache/logs/`).
+MODX установится и выведет время работы и ошибки (они также попадут в лог в `core/cache/logs/`).
 
-> Примечание: если вы используете не стандартный каталог, вы должны указать дополнительный аргумент:
+Примечание: если core лежит не в стандартном месте, добавьте:
 
 ``` shell
 --core_path=/path/to/core/
 ```
 
-## Обновление MODX при помощи командной строки (CLI)
+## Базовое обновление MODX через CLI
 
-Выполните те же действия, что и при новой установке, но на этот раз в вашем XML-файле вам можно указать только следующие атрибуты:
+Как при новой установке, но в XML достаточно атрибутов:
 
 - `inplace`
 - `unpacked`
 - `language`
 - `remove_setup_directory`
 
-И любые другие атрибуты, которые вы хотите изменить во время обновления. Существует пример xml-файла обновления с именем `config.dist.upgrade.xml`.
-Затем, когда вы будете готовы, перейдите в каталог установки MODX и введите:
+И любых других, которые хотите изменить при обновлении. Пример: `config.dist.upgrade.xml`. Затем в `setup/`:
 
 ``` shell
 php ./index.php --installmode=upgrade
 ```
 
-MODX приступит к обновлению, по окончанию которого, отобразит затраченное время, а также сообщит о возникших ошибках (будут записаны в лог `core/cache/logs/`).
+Обновление завершится с отчётом о времени и ошибках (лог в `core/cache/logs/`).
 
-## Выполнение расширенного обновления MODX через интерфейс командной строки
+## Расширенное обновление MODX через CLI
 
-Выполните те же шаги, что и при базовом обновлении, но на этот раз в вашем XML-файле вам понадобятся все атрибуты, включенные в файл `config.dist.upgrade-advanced.xml`, так как все они могут быть изменены при расширенном обновлении.
+Как базовое обновление, но нужны все атрибуты из `config.dist.upgrade-advanced.xml`. При advanced upgrade меняется любой из них.
 
-Затем, когда вы будете готовы, перейдите в каталог установки MODX и введите:
+Затем в `setup/`:
 
 ``` shell
 php ./index.php --installmode=upgrade-advanced
 ```
 
-Это обновит вашу установку MODX, и по завершении отобразит время, необходимое для запуска установки, а также любые возникшие ошибки (которые также будут зарегистрированы в файле журнала установки в `core/cache/logs/`).
+## Вспомогательный скрипт
 
-## Использование вспомогательного скрипта
+На GitHub есть **installmodx.php**: [https://github.com/craftsmancoding/modx\_utils/blob/master/installmodx.php](https://github.com/craftsmancoding/modx_utils/blob/master/installmodx.php)
 
-На Github доступен вспомогательный скрипт **installmodx.php**: [https://github.com/craftsmancoding/modx\_utils/blob/master/installmodx.php](https://github.com/craftsmancoding/modx_utils/blob/master/installmodx.php)
-
-It provides command line options for this process.
+Он добавляет опции командной строки для этого процесса.
 
 ## Смотрите также
 
-1. [Базовая Установка](getting-started/installation/standard)
-2. [Гид по Lighttpd](getting-started/friendly-urls/lighttpd)
-3. [Установка на сервере с запущеным ModSecurity](getting-started/installation/troubleshooting/modsecurity)
-4. [Настройка Сервера Nginx](getting-started/friendly-urls/nginx)
-5. [Расширенная Установка](getting-started/installation/advanced)
+1. [Базовая установка](getting-started/installation/standard)
+2. [Руководство Lighttpd](getting-started/friendly-urls/lighttpd)
+3. [Установка на сервере с ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+4. [Конфигурация Nginx](getting-started/friendly-urls/nginx)
+5. [Расширенная установка](getting-started/installation/advanced)
 6. [Установка через Git](getting-started/installation/git)
-7. [Установка При Помощи Командной Строки](getting-started/installation/cli)
-8. [Создание Установочного Xml Файла](getting-started/installation/cli/config.xml)
+7. [Установка из командной строки](getting-started/installation/cli)
+8. [XML-файл конфигурации setup](getting-started/installation/cli/config.xml)
 9. [Устранение неполадок при установке](getting-started/installation/troubleshooting)
-10. [Успешная Установка, Что Дальше?](getting-started/getting-started)
+10. [Установка прошла успешно, что дальше?](getting-started/getting-started)

@@ -1,41 +1,44 @@
 ---
-title: "Гид по Lighttpd"
+title: "Дружественные URL на lighttpd"
+_old_id: "169"
+_old_uri: "2.x/getting-started/installation/basic-installation/lighttpd-guide"
 translation: "getting-started/friendly-urls/lighttpd"
 ---
 
-## Руководство по настройке и дружественных URL
+lighttpd не использует `.htaccess` в стиле Apache. Правила перезаписи для дружественных URL задают в `lighttpd.conf` (на Linux часто `/etc/lighttpd/lighttpd.conf`).
 
-- Этот гид освещает только настройку перезаписи URL и работу дружественных URL
-- Предполагается, что у вас уже есть работающая связка lighttpd+mysql+PHP
+Такая схема для MODX встречается редко. По возможности выберите [Apache](getting-started/friendly-urls/apache) или [nginx](getting-started/friendly-urls/nginx). Когда перезапись заработает, завершите шаги MODX из [Использование дружественных URL](getting-started/friendly-urls).
 
-## Настройка дружественных URL
+## Включите mod_rewrite
 
-lighttpd использует отличную от Apache систему перезаписи адресов. Перезапись URL выполняется в файле lighttpd.conf
+1. Откройте `lighttpd.conf`.
+2. Найдите `server.modules`.
+3. Убедитесь, что `mod_rewrite` указан и не закомментирован.
+4. Перезагрузите lighttpd после сохранения.
 
-- Сначала нужно убедиться, что модуль перезаписи URL включен.
-    - Откройте ваш конфигурационный файл lighttpd.conf (В Linux системах, обычно он распологается `/etc/lighttpd/lighttpd.conf`).
-    - Найдите директиву server.modules.
-    - Найдите в этой директиве запись `mod_rewrite`,.
-    - По умолчанию перед ней стоит #. Это символ комментария. Удалите # из строки и сохраните файл.
+## Добавьте правила перезаписи
 
-- Далее нам нужно найти место, в которое нужно поместить дружественный URL-код. Найдите похожий код:
+Найдите блок хоста / document-root для сайта, например:
 
-``` php
+``` lighttpd
 $SERVER["socket"] == ":80" {
-$HTTP["host"] =~ "yourdomainname.com" {
-    server.document-root = "/path/to/your/doc/root"
-    server.name = "yourservername"
+ $HTTP["host"] =~ "example.com" {
+ server.document-root = "/var/www/example.com"
+ server.name = "example.com"
 ```
 
-- Непосредственно под этим вы должны добавить следующий код.
+Добавьте правила под этим хостом, чтобы существующие файлы и деревья `assets`, `manager`, `core` и `connectors` не перезаписывались:
 
-``` php
-url.rewrite-once = ( "^/(assets|manager|core|connectors)(.*)$" => "/$1/$2",
-    "^/(?!index(?:-ajax)?\.php)(.*)\?(.*)$" => "/index.php?q=$1&$2",
-    "^/(?!index(?:-ajax)?\.php)(.*)$" => "/index.php?q=$1"
-)
+``` lighttpd
+ url.rewrite-once = (
+ "^/(assets|manager|core|connectors)(.*)$" => "/$1/$2",
+ "^/(?!index(?:-ajax)?\.php)(.*)\?(.*)$" => "/index.php?q=$1&$2",
+ "^/(?!index(?:-ajax)?\.php)(.*)$" => "/index.php?q=$1"
+ )
 ```
 
-Внимание! Lighttpd обрабатывает URL-адреса немного иначе. В файле конфигурации, вы должны исключить любые файлы и/или папки, адреса которых вы не хотите переписывать. В приведенном выше примере исключены каталоги/файлы (assets | manager | core | connectors). Если вы хотите добавить к исключениям ещё, что-то просто добавьте еще один |, а затем укажите имя файла/папки, которые вы хотите пропустить при переписывании URL.
+## Исключите дополнительные пути
 
-Теперь дружественные URL будут работать.
+lighttpd пропускает только перечисленные пути. Чтобы защитить ещё один веб-доступный каталог, расширьте первый шаблон через `|dirname`, например `(assets|manager|core|connectors|media)`.
+
+Перезагрузите lighttpd, затем включите дружественные URL в Менеджере и очистите кеш.
