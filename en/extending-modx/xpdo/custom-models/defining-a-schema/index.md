@@ -15,4 +15,5 @@ Please note that the default schema version changed in xPDO 2.0.0-rc3 to version
 - [Defining the Database and Tables](extending-modx/xpdo/custom-models/defining-a-schema/database-and-tables)
 - [Upgrading Models to Schema Version 1.1](extending-modx/xpdo/custom-models/defining-a-schema/upgrade-schema-v1.0-to-v1.1)
 - [Defining Relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships)
+- [Validation Rules](extending-modx/xpdo/custom-models/defining-a-schema/validators)
 - [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples)

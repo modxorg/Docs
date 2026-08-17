@@ -2,106 +2,127 @@
 title: "Validation Rules"
 _old_id: "1692"
 _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/validation-rules-in-your-schema"
+description: "Define field validation rules in an xPDO XML schema (callable, preg_match, xPDOValidationRule)"
 ---
 
 ## Overview
 
-Your XML schema can define validation rules using nodes in the XML that follow this pattern
+Your XML schema can define validation rules with nodes that follow this pattern:
 
 ``` xml
 <validation>
-    <rule field="$name_of_field"
+    <rule
+        field="$name_of_field"
         name="$name_of_rule"
         type="callable|preg_match|xPDOValidationRule"
         rule="$various"
         value="$optional_parameter"
-        message="string" />
+        message="string"
+    />
 </validation>
 ```
 
-The **rule** may have have these attributes:
+The **rule** element may use these attributes:
 
-- **field**: the field's name. _(required)_
-- **name**: a unique name for this validation rule. You can have multiple validation rules for each field. _(required)_
-- **Type**: can be "callable", "preg\_match" or "xPDOValidationRule" _(required)_
-- **rule**: varies depending on the type. For type=callable, this will be the name of the callback function. For type=preg\_match, this will be the regular expression. For type=xPDOValidationRule, a valid child class must be supplied. _(required)_
-- **value**: an optional argument to pass to the validation functions, e.g. when the type is `xPDOValidationRule` and the rule is a class that extends it. _(optional)_
-- **message**: this is a string describing the the validation rule if it fails. _(required)_ In MODX 2+, the message field contains a lexicon string which can provide language specific message translations.
+- **field**: field name _(required)_
+- **name**: unique name for this rule. You can attach several rules to one field _(required)_
+- **type**: must be `callable`, `preg_match`, or `xPDOValidationRule` _(required)_. Use `callable`, not `callback`. Older docs and samples sometimes said `callback`; xPDO’s validator only recognizes `callable` (see `xPDOValidator` in Revolution 3.x under `core/vendor/xpdo/.../Validation/`)
+- **rule**: depends on **type**. For `callable`, the PHP function or `Class::method` name. For `preg_match`, the regular expression. For `xPDOValidationRule`, a class that extends `xPDOValidationRule` _(required)_
+- **value**: optional argument for some `xPDOValidationRule` classes _(optional)_
+- **message**: failure message _(required)_. In MODX 2+, this is often a lexicon key for translated strings
 
 ``` xml
-    <rule field="category" name="preventBlank" type="xPDOValidationRule" rule="xPDOMinLengthValidationRule" value="1" message="category_err_ns_name" />
+<rule
+    field="category"
+    name="preventBlank"
+    type="xPDOValidationRule"
+    rule="xPDOMinLengthValidationRule"
+    value="1"
+    message="category_err_ns_name"
+/>
 ```
 
 ## Regex Validation
 
-Let's take this example from the modChunk schema:
+Example from the `modChunk` schema:
 
 ``` xml
-    <object class="modChunk" table="site_htmlsnippets" extends="modElement">
-        <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
-        <!-- ... more fields here -->
-        <validation>
-            <rule field="name" name="invalid" type="preg_match" rule="/^(?!\s)[a-zA-Z0-9\x2d-\x2f\x7f-\xff_-\s]+(?!\s)$/" message="chunk_err_invalid_name" />
-        </validation>
-    </object>
+<object class="modChunk" table="site_htmlsnippets" extends="modElement">
+    <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
+    <!-- ... more fields ... -->
+    <validation>
+        <rule
+            field="name"
+            name="invalid"
+            type="preg_match"
+            rule="/^(?!\s)[a-zA-Z0-9\x2d-\x2f\x7f-\xff_-\s]+(?!\s)$/"
+            message="chunk_err_invalid_name"
+        />
+    </validation>
+</object>
 ```
 
 ## Callable Validation
 
-You can use your own functions for validation purposes by using "callable" as the type -- this relies on PHP's [call\_user\_func()](http://php.net/manual/en/function.call-user-func.php) function. Because the function name is defined in XML where it is impossible to reference an object instance, you can only reference a regular PHP function like `my_function` or a static class method, e.g. `MyClass::myFunction`. Additionally check this ['callable' Rule](extending-modx/xpdo/custom-models/validation#the-callable-rule)
+Set `type="callable"` to run your own PHP function through [`call_user_func_array()`](https://www.php.net/manual/en/function.call-user-func-array.php). The name lives in XML, so you cannot reference an object instance. Use a global function (`my_function`) or a static method (`MyClass::myFunction`). See also [The callable Rule](extending-modx/xpdo/custom-models/validation#the-callable-rule).
 
 ## xPDOValidationRule Validation
 
-This is how you can tie-into the built-in MODX validation rules. See the classes available inside the `core/xpdo/validation/xpdovalidator.class.php` file:
+Built-in rules ship with xPDO under `core/vendor/xpdo/xpdo/src/xPDO/Validation/` (Revolution 3.x). Common classes:
 
-- **xPDOMinLengthValidationRule**
-- **xPDOMaxLengthValidationRule**
-- **xPDOMinValueValidationRule**
-- **xPDOMaxValueValidationRule**
-- **xPDOObjectExistsValidationRule**
-- **xPDOForeignKeyConstraint**
+- `xPDOMinLengthValidationRule`
+- `xPDOMaxLengthValidationRule`
+- `xPDOMinValueValidationRule`
+- `xPDOMaxValueValidationRule`
+- `xPDOObjectExistsValidationRule`
+- `xPDOForeignKeyConstraint`
 
-For example, look a the the rule defined for the `modContentType`
+Example from `modContentType`:
 
 ``` xml
-    <object class="modContentType" table="content_type" extends="xPDOSimpleObject">
-        <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" index="unique" />
-        <!-- ... more fields here ... -->
-        <validation>
-            <rule field="name" name="name" type="xPDOValidationRule" rule="xPDOMinLengthValidationRule" value="1" message="content_type_err_ns_name" />
-        </validation>
-    </object>
+<object class="modContentType" table="content_type" extends="xPDOSimpleObject">
+    <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" index="unique" />
+    <!-- ... more fields ... -->
+    <validation>
+        <rule
+            field="name"
+            name="name"
+            type="xPDOValidationRule"
+            rule="xPDOMinLengthValidationRule"
+            value="1"
+            message="content_type_err_ns_name"
+        />
+    </validation>
+</object>
 ```
 
 ## Using xPDOValidator
 
-You can use the xPDOValidator to pre-validate the current state of an `xPDOObject` or you can allow `save()` to call validation (see `xPDO::OPT_VALIDATE_ON_SAVE`) itself and fail if validation fails.
+You can pre-validate an `xPDOObject` with the validator, or let `save()` validate when `xPDO::OPT_VALIDATE_ON_SAVE` is enabled.
 
-An example of pre-validation from MODX Revolution's `modObjectCreateProcessor` class:
+Pre-validation pattern from Revolution’s `modObjectCreateProcessor`:
 
 ``` php
-/* run object validation */
 if (!$this->object->validate()) {
     /** @var modValidator $validator */
     $validator = $this->object->getValidator();
     if ($validator->hasMessages()) {
         foreach ($validator->getMessages() as $message) {
-            $this->addFieldError($message['field'],$this->modx->lexicon($message['message']));
+            $this->addFieldError($message['field'], $this->modx->lexicon($message['message']));
         }
     }
 }
 ```
 
-An example of examining the validation messages after `save()` failure from MODX Revolution's `modError` class:
+After a failed `save()`:
 
 ``` php
-/* save object and report validation errors */
 if (!$this->object->save()) {
     /** @var modValidator $validator */
     $validator = $this->object->getValidator();
     if ($validator->hasMessages()) {
         foreach ($validator->getMessages() as $message) {
-            $this->addFieldError($message['field'],$this->modx->lexicon($message['message']));
+            $this->addFieldError($message['field'], $this->modx->lexicon($message['message']));
         }
     }
 }
@@ -109,37 +130,46 @@ if (!$this->object->save()) {
 
 ### Writing Your Own Validation Rules
 
-If you want to write your own validation rules, you need to create a PHP class file inside of your namespace's model folder _for each validation rule you define_, e.g. `core/components/my_pkg/model/my_pkg/my_validation_rule.class.php`. The name should be all lowercase and include a `.class.php` extension. This is how xPDO knows how to find your class file (this is xPDO's "autoload-like" convention).
+For a custom `xPDOValidationRule` subclass, add one PHP class file per rule under your package model folder, for example `core/components/my_pkg/model/my_pkg/normalparents.class.php`. Use a lowercase filename with a `.class.php` extension so xPDO can find the class.
 
-Let's look at a Custom Resource Class (CRC) that does not want to be nested under other CRC's -- it wants as its parent only the built-in MODX classes (modDocument, a WebLink, etc). Here's its XML schema definition:
+Schema snippet for a Custom Resource Class that only allows built-in parents:
 
 ``` xml
-    <object class="MyCRC" extends="modResource">
-        <composite alias="Things" cardinality="many" class="Things" foreign="parent" local="id" owner="local"></composite>
-        <validation>
-          <rule field="parent" message="Invalid parent" name="parent" rule="NormalParents" type="xPDOValidationRule"></rule>
-        </validation>
-    </object>
+<object class="MyCRC" extends="modResource">
+    <composite alias="Things" cardinality="many" class="Things" foreign="parent" local="id" owner="local"></composite>
+    <validation>
+        <rule
+            field="parent"
+            message="Invalid parent"
+            name="parent"
+            rule="NormalParents"
+            type="xPDOValidationRule"
+        />
+    </validation>
+</object>
 ```
 
-And here's the corresponding validation rule from `core/components/my_pkg/model/my_pkg/normalparents.class.php`:
+Matching rule class:
 
 ``` php
-<?php /**
+<?php
+/**
  * @param mixed $value candidate value
  * @param array $options from the XML schema
  * @return boolean false on failed validation, true on pass
  */
-class NormalParents extends xPDOValidationRule {
-    public function isValid($value, array $options = array()) {
+class NormalParents extends xPDOValidationRule
+{
+    public function isValid($value, array $options = array())
+    {
         parent::isValid($value, $options);
         $result = false;
-        $obj=& $this-?>validator->object;
-        $xpdo=& $obj->xpdo;
-                $xpdo->log(1, 'Running TaxonomyParents Validation rule');
+        $obj = &$this->validator->object;
+        $xpdo = &$obj->xpdo;
+        $xpdo->log(xPDO::LOG_LEVEL_INFO, 'Running NormalParents validation rule');
         $validParentClasses = array('modDocument', 'modWebLink', 'modSymLink', 'modStaticResource');
         if ($obj->get('parent') === 0 || ($obj->Parent && in_array($obj->Parent->class_key, $validParentClasses))) {
-           $result = true;
+            $result = true;
         }
         if ($result === false) {
             $this->validator->addMessage($this->field, $this->name, $this->message);
@@ -149,3 +179,8 @@ class NormalParents extends xPDOValidationRule {
     }
 }
 ```
+
+## See Also
+
+- [Object Validation](extending-modx/xpdo/custom-models/validation)
+- [xPDOValidator](extending-modx/xpdo/class-reference/xpdovalidator)
