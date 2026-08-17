@@ -40,6 +40,8 @@ translation: "getting-started/friendly-urls"
 
 Контейнерные ресурсы (папки в дереве) используют настройку [container_suffix](building-sites/settings/container_suffix) (по умолчанию `/`) вместо старых `friendly_url_prefix` и `friendly_url_suffix`, которые убрали в пользу [типов контента](building-sites/resources/content-types).
 
+Для нелатинских заголовков настройте транслитерацию псевдонимов (`friendly_alias_translit`, iconv или пакет Translit): [Транслитерация псевдонимов](getting-started/friendly-urls/transliteration).
+
 ## 3. Добавьте base href в шаблоны
 
 Поместите это в `<head>` каждого шаблона, который отдаёт HTML:
@@ -74,6 +76,7 @@ translation: "getting-started/friendly-urls"
 
 ## См. также
 
+- [Транслитерация псевдонимов](getting-started/friendly-urls/transliteration)
 - [Требования к серверу](getting-started/server-requirements)
 - [Типы контента](building-sites/resources/content-types)
 - [Устранение неполадок при установке](getting-started/installation/troubleshooting)

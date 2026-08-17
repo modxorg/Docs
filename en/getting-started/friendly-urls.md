@@ -39,6 +39,8 @@ With **Use Friendly Alias Path** set to No, aliases behave as if every Resource 
 
 Container Resources (folders in the tree) use the [container_suffix](building-sites/settings/container_suffix) setting (default `/`) instead of the old `friendly_url_prefix` / `friendly_url_suffix` settings, which were removed in favour of [Content Types](building-sites/resources/content-types).
 
+For non-Latin pagetitles, configure alias transliteration (`friendly_alias_translit`, iconv, or the Translit extra): [Alias transliteration](getting-started/friendly-urls/transliteration).
+
 ## 3. Add a base href in your Templates
 
 Put this in the `<head>` of every Template that serves HTML:
@@ -75,6 +77,7 @@ On IIS, add equivalent redirect rules in `web.config` (see the [IIS guide](getti
 
 ## Related
 
+- [Alias transliteration](getting-started/friendly-urls/transliteration)
 - [Server Requirements](getting-started/server-requirements)
 - [Content Types](building-sites/resources/content-types)
 - [Troubleshooting Installation](getting-started/installation/troubleshooting)

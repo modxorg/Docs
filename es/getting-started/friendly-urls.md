@@ -151,6 +151,8 @@ La configuración Usar la Ruta de Alias Amigable (use\ _alias\ _path) permite qu
 
 La configuración friendly\_alias\_urls se eliminó en MODX 2.1+. Habilitar friendly\ _urls implica que está usando friendly\ _alias\ _urls en 2.1+ y esta configuración ya no era útil ni necesaria.
 
+Para títulos no latinos, configura la transliteración de alias (`friendly_alias_translit`, iconv o el extra Translit): [Transliteración de alias](getting-started/friendly-urls/transliteration).
+
 ## 3) Edita tu(s) plantilla(s)
 
 Asegúrate de tener la siguiente etiqueta en la sección principal de todas tus plantillas. Si solo tienes un contexto front-end (por ejemplo, 'web'), generalmente puedes omitir el signo de exclamación para acelerar la carga de la página:
