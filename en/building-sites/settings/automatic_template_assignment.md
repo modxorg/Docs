@@ -3,6 +3,8 @@ title: "automatic_template_assignment"
 description: "Choose how templates are assigned to new Resources on creation"
 ---
 
+## automatic_template_assignment
+
 **Name**: Automatic Template Assignment  
 **Type**: String  
 **Default**: `sibling` (MODX 3.0+; was `parent` in earlier 2.x defaults)

@@ -5,10 +5,10 @@ translation: "building-sites/settings/manager_time_format"
 
 ## manager_time_format
 
-**Name**: Manager Time Format  
-**Type**: String  
-**Default**: `H:i` (MODX 3.0+; в ранних 2.x по умолчанию было `g:i a`)
+**Имя**: Формат времени в системе управления  
+**Тип**: String  
+**По умолчанию**: `H:i` (MODX 3.0+; в ранних 2.x было `g:i a`)
 
-Строка формата PHP `date()` для времени в менеджере.
+Строка в формате PHP `date()` для времени в менеджере.
 
 См. также [Изменения системных настроек в 3.0](getting-started/upgrading-to-3.0/system-settings).

@@ -4,9 +4,11 @@ description: "Как назначается шаблон новым ресурс
 translation: "building-sites/settings/automatic_template_assignment"
 ---
 
-**Name**: Automatic Template Assignment  
-**Type**: String  
-**Default**: `sibling` (MODX 3.0+; в ранних 2.x по умолчанию было `parent`)
+## automatic_template_assignment
+
+**Имя**: Автоматическое присвоение шаблона  
+**Тип**: String  
+**По умолчанию**: `sibling` (MODX 3.0+; в ранних 2.x было `parent`)
 
 Как назначается шаблон новым ресурсам при создании:
 

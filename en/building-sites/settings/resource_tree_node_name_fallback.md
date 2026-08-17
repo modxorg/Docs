@@ -1,11 +1,14 @@
 ---
 title: "resource_tree_node_name_fallback"
-description: "Specify the Resource field to use as fallback when rendering the nodes in the Resource Tree"
+description: "Resource field used as fallback when rendering nodes in the Resource Tree"
 ---
 
+## resource_tree_node_name_fallback
 
-**Name**: Resource Tree Node Fallback Field   
+**Name**: Resource Tree Node Fallback Field  
 **Type**: String  
-**Default**: pagetitle
+**Default**: `alias` (MODX 3.0+; was `pagetitle` in earlier 2.x defaults)
 
-Specify the Resource field to use as fallback when rendering the nodes in the Resource Tree. This will be used if the resource has an empty value for the configured Resource Tree Node Field.
+Resource field used as fallback when rendering nodes in the Resource Tree, if the configured Resource Tree Node Field is empty.
+
+See also [System Settings changes in 3.0](getting-started/upgrading-to-3.0/system-settings).
