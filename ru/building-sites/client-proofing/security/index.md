@@ -1,32 +1,38 @@
 ---
 title: "Безопасность (ACLs)"
 translation: "building-sites/client-proofing/security"
-
 ---
 
 ## Безопасность в MODX Revolution
 
-Безопасность в MODX Revolution в первую очередь определяется парадигмой управления: доступ на основе атрибутов (ABAC).
+Безопасность в MODX Revolution строится на Attribute-Based Access Control (ABAC).
 
-Каждый пользователь MODX является объектом [Пользователь](building-sites/client-proofing/security/users "Пользователи") и может состоять в нескольких [Группах пользователей](building-sites/client-proofing/security/user-groups "Группы пользователей"). Каждая группа пользователей имеет атрибуты назначенные с помощью [Списков контроля доступа (ACLs)](building-sites/client-proofing/security/policies/acls "ACLs"). Списки ACL имеют различные имена в зависимости от того, как они применяются. Все списки ACL используют один общий принцип - они содержат список [Разрешения](building-sites/client-proofing/security/policies/permissions "Разрешения"). Эти разрешения определяют доступ к различным областям или действиям в MODX.
+У каждого пользователя есть объект [User](building-sites/client-proofing/security/users). Его можно включить в любое число [User Groups](building-sites/client-proofing/security/user-groups). Группам задают атрибуты через [Access Control Lists](building-sites/client-proofing/security/policies/acls) (ACL). Названия ACL зависят от того, куда их применяют, но принцип один: в списке лежат [Permissions](building-sites/client-proofing/security/policies/permissions). Эти разрешения открывают доступ к разделам и действиям в MODX.
 
-ACL состоит из:
+Обычно у ACL есть:
 
-- **Получатель** - Объект, который получает права доступа. В MODX, по умолчанию это группа пользователей.
-- **Цель** - Объект, к которому применяется ACL, например, контекст или группа ресурсов.
-- **Политика доступа** - Список разрешений, полученных этим ACL.
-- **Уровень** - Минимальный уровень полномочий, необходимый для использования этого ACL (см. [Роли](building-sites/client-proofing/security/roles "Роли")).
+- **Principal**: кто получает права. По умолчанию это User Group.
+- **Target**: к чему применяется ACL, например Context или Resource Group.
+- **Access Policy**: список Permissions по этой ACL.
+- **Authority**: минимальный уровень полномочий для использования ACL (см. [Roles](building-sites/client-proofing/security/roles)).
 
-После того, как ACL будет применен к объекту, такому как контекст или группа ресурсов, эти контексты или группы ресурсов будут доступны только для объектов с соответствующими разрешениями.
+В MODX доступ **allow/deny**: по умолчанию всё открыто. После назначения ACL на объект (Context или Resource Group) туда попадают только те, у кого есть нужные Permissions.
 
-### Пример работы
+### Видео-туториал по безопасности
+
+На Sample Site MODX показано, как:
+
+- ограничить RSS для Directors и выше
+- ограничить Blog только для Staff
+- сделать «secure» Context только для Directors и выше
+- ограничить часть категорий элементов только для администраторов
 
 ![](understanding-revo-acls.jpg)
 
-### Пример работы: Доступ к контекстам
+### Пример: доступ к Context
 
-Создайте контекст с именем «test» и назначьте ему ACL. Это можно сделать, отредактировав контекст и перейдя на вкладку 'Права доступа'. Отсюда вы можете предоставить Группе пользователей (скажем, 'HR Dept') явный доступ к этому Контексту. Для этого необходимо выбрать Группу пользователей, Политику доступа 'Administrator' и указать необходимые полномочия (скажем, 9999 для 'Member'):
+Создайте Context `test` и назначьте ему ACL. Откройте Context, вкладка **Access Permissions**. Дайте группе (например `HR Dept`) явный доступ: выберите User Group, политику `Administrator` и нужный Authority (например `9999` для Member):
 
 ![](sec-ugctx1.png)
 
-Это ограничит доступ к контексту 'test' для пользователей, которые являются членами (или [Ролями](building-sites/client-proofing/security/roles "Роли") с большими полномочиями) группы  'HR Dept'.
+Context `test` станет доступен пользователям, которые в группе `HR Dept` с ролью Member или с более сильным [Authority](building-sites/client-proofing/security/roles).

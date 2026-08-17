@@ -29,7 +29,7 @@ translation: "extras/migxdb/migxdb.tutorials/creating-cmp"
 
 Нажимаем **Save**.
 
-Затем идем в настройки — Меню. Создаем нашел меню:
+Затем идем в настройки. Меню. Создаем нашел меню:
 
 ![](creating-cmp-4.png)
 

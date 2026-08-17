@@ -4,100 +4,101 @@ _old_id: "1715"
 _old_uri: "revo/tagger"
 ---
 
-_Tags, Categories, and More for MODX!_
+_Теги, категории и многое другое для MODX!_
 
-A robust and performant tag management system. Summary of the many, many features:
+Надёжная и производительная система управления тегами. Кратко о возможностях:
 
-1. Tested with up to a million tags
-2. Paginated drop-down and type-ahead for easy tag input
-3. Combo-box or tag-field input types
-4. Optionally remove unused tags from the database automatically
-5. Optionally restrict tag creation to the CMP, versus on input
-6. Optionally use Auto-Tag cloud for input
+1. Протестировано с миллионом тегов
+2. Постраничный выпадающий список и автодополнение для удобного ввода тегов
+3. Типы ввода: combo-box или tag-field
+4. Неиспользуемые теги можно автоматически удалять из базы данных
+5. Создание тегов можно ограничить CMP, а не полем ввода
+6. Для ввода можно использовать облако Auto-Tag
 
-Display and list: all tags, tags from specified group(s), omit unused tags, Resources with a given tag, etc. Supplies getResources with a &where condition, so that all the templating and sorting abilities of getResources are at your fingertips.
+Вывод и списки: все теги, теги из указанных групп, без неиспользуемых тегов, ресурсы с заданным тегом и т.д. Поставляет getResources условие `&where`, поэтому все возможности шаблонизации и сортировки getResources доступны вам.
 
-## Installation
+## Установка
 
-Install via Package Management, or download the package from the [MODX Extras repository](https://modx.com/extras/)
+Установите через Менеджер пакетов или скачайте пакет из [репозитория MODX Extras](https://modx.com/extras/).
 
-**Tagger FURLs are currently not working when using any resource extensions (.html,...) except /.** Please change your extension to **/** at least on the resource where the TaggerGetResourcesWhere snippet is called.
+**Tagger FURL сейчас не работают при расширениях ресурсов (.html и т.п.), кроме `/`.** Смените расширение на **`/`** хотя бы у ресурса, на котором вызывается сниппет TaggerGetResourcesWhere.
 
--   Content -> Content Types -> HTML (.html) -> /
+- Content -> Content Types -> HTML (.html) -> /
 
-## Groups
+## Группы
 
-After installation you will need to set up some groups. Groups are representing fields that will be added to your Resource panel. Open components menu, find Tagger and go to **Groups** tab. Add new group.
+После установки настройте группы. Группы представляют поля, которые добавятся на панель ресурса. Откройте меню «Компоненты», найдите Tagger и перейдите на вкладку **Groups**. Добавьте новую группу.
 
-**\*\*WARNING\*\*** Please make sure that group alias will not match any Resource alias, otherwise resource with same alias will be unreachable.
+**\*\*ПРЕДУПРЕЖДЕНИЕ\*\*** Убедитесь, что alias группы не совпадает с alias ресурса. Иначе ресурс с таким alias станет недоступен.
 
-**GROUP OPTIONS:**
+**ПАРАМЕТРЫ ГРУППЫ:**
 
-| **Option**                            | **Required?** | **Description**                                                                                                                                          |
+| **Параметр** | **Обязат.?** | **Описание** |
 | ------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Name                                  | required      | Label of the field that will be added to Resource panel                                                                                                  |
-| Description                           | optional      | Description is showed on field hover                                                                                                                     |
-| Alias                                 | optional      | If not filled, will be generated automatically. Is used in FURLs.                                                                                        |
-| Field type                            | required      | Tag field - multi select field, Combo box - classic one item select field                                                                                |
-| Place                                 | required      | Where will be this group rendered. Options are: In tab, Above content, Below content, Bottom page, In TVs section                                        |
-| Position of Tagger tab in TVs section | optional      | If not filled 9999 will be used. Position of Tagger group in TVs tab panel. Use 0 to make Tagger group first.                                            |
-| Remove unused tags                    | optional      | If set to **yes**, all tags, that are not assigned to at least one resource will be removed from database.                                               |
-| Allow new tags from field             | optional      | If set to **yes**, users will be able to add new tags from field. Setting to **no** can be useful for example for list of categories                     |
-| Allow blank                           | optional      | If set to **no**, field will be marked as required and users will have to select at least on tag before saving the Resource                              |
-| Allow type                            | optional      | If set to **no**, users will not be able to type in the field. Clicking to the field will trigger showing list of available tags.                        |
-| Show autotag                          | optional      | If set to **yes**, all tags will be displayed below the field. Users will be able to click on them to select/unselect. Available only for **Tag field.** |
-| Hide input                            | optional      | Can be used only with **Show autotag** enabled. Will hide the input field and assign button, so users will be able to only click on existing tags.       |
-| Tag limit                             | optional      | Will limit number of tags that users can select. Setting to 0 will allow to select infinite number of tags.                                              |
-| Show for Templates                    | required      | Comma separated list of template **ID**s for which this group should be available for editing.                                                           |
+| Name | обяз. | Подпись поля на панели ресурса |
+| Description | необяз. | Описание показывается при наведении на поле |
+| Alias | необяз. | Если пусто, генерируется автоматически. Используется в FURL. |
+| Field type | обяз. | Tag field: множественный выбор. Combo box: классический выбор одного элемента |
+| Place | обяз. | Где отображается группа: In tab, Above content, Below content, Bottom page, In TVs section |
+| Position of Tagger tab in TVs section | необяз. | Если пусто, используется 9999. Позиция группы Tagger на вкладке TVs. Укажите 0, чтобы группа Tagger была первой. |
+| Remove unused tags | необяз. | При **yes** из базы удаляются все теги, не назначенные ни одному ресурсу |
+| Allow new tags from field | необяз. | При **yes** пользователи смогут добавлять новые теги из поля. **no** удобно, например, для списка категорий |
+| Allow blank | необяз. | При **no** поле станет обязательным, и перед сохранением ресурса нужно выбрать хотя бы один тег |
+| Allow type | необяз. | При **no** ввод в поле недоступен. Клик по полю откроет список доступных тегов |
+| Show autotag | необяз. | При **yes** под полем отображаются все теги. По клику их можно выбрать или снять выбор. Только для **Tag field.** |
+| Hide input | необяз. | Работает только с включённым **Show autotag**. Скрывает поле ввода и кнопку назначения, остаётся только выбор существующих тегов |
+| Tag limit | необяз. | Ограничивает число выбираемых тегов. 0 означает отсутствие ограничения |
+| Show for Templates | обяз. | Список **ID** шаблонов через запятую, для которых группа доступна для редактирования |
 
-### Changing labels of Tagger places
+### Изменение подписей мест Tagger
 
-System Settings under Tagger namespace are available for these settings: tagger.place_in_tab_label, tagger.place_tvs_tab_label, tagger.place_above_content_label, tagger.place_below_content_label, tagger.place_bottom_page_label
+В системных настройках пространства имён Tagger доступны ключи: tagger.place\_in\_tab\_label, tagger.place\_tvs\_tab\_label, tagger.place\_above\_content\_label, tagger.place\_below\_content\_label, tagger.place\_bottom\_page\_label
 
-You can change their value to text or a lexicon key. If you want to have different name based on Resource Template, you can use following notation:
+Значение можно задать текстом или ключом лексикона. Для разных подписей по шаблону ресурса используйте такую запись:
 
 `1==Label For Template with ID 1||2==Label For Template with ID 2`
 
-**Default label:** tagger.tab.label
+**Подпись по умолчанию:** tagger.tab.label
 
-## Basic Usage
+## Базовое использование
 
 ### TaggerGetTags
 
-This Snippet allows you to list tags for resource(s), group(s) and all tags
+Сниппет выводит теги для ресурса(ов), группы(групп) или все теги.
 
-**PROPERTIES:**
+**СВОЙСТВА:**
 
-| **Property**     | **Type** | **Required?** | **Description**                                                                                                                                  | **Default**      |
+| **Свойство** | **Тип** | **Обязат.?** | **Описание** | **По умолчанию** |
 | ---------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
-| &resources       | string   | optional      | Comma separated list of resources for which Tags will be listed                                                                                  |                  |
-| &groups          | string   | optional      | Comma separated list of Tagger Groups for which Tags will be listed                                                                              |                  |
-| &parents         | int      | optional      | Comma separated list of resource IDs whose children should be scanned to build the list of tags                                                  |                  |
-| &rowTpl          | string   | optional      | Name of a chunk that will be used for each Tag. If no chunk is given, array with available placeholders will be rendered                         |                  |
-| &tpl_N           | string   | optional      | Name of chunk that will be used for every Nth tag                                                                                                |                  |
-| &outTpl          | string   | optional      | Name of a chunk that will be used for wrapping all tags. If no chunk is given, tags will be rendered without a wrapper. Placeholder: `[[+tags]]` |                  |
-| &separator       | string   | optional      | String separator, that will be used for separating Tags                                                                                          |                  |
-| &limit           | int      | optional      | Limit number of returned Tags                                                                                                                    | 0                |
-| &offset          | int      | optional      | Offset the output by this number of Tags                                                                                                         | 0                |
-| &totalPh         | string   | optional      | Placeholder to output the total number of Tags regardless of &limit and &offset                                                                  | tags_total       |
-| &target          | int      | optional      | An ID of a resource that will be used for generating URI for a Tag. If no ID is given, current Resource ID will be used                          | current resource |
-| &showUnused      | int      | optional      | If set to 1, Tags that are not assigned to any Resource will be included to the output as well                                                   | 0                |
-| &toPlaceholder   | string   | optional      | If set, output will return in a placeholder with given name                                                                                      |                  |
-| &showDeleted     | int      | optional      | If set to 1, Tags that are assigned only to deleted Resources will be included in the output as well                                             | 0                |
-| &showUnpublished | int      | optional      | If set to 1, Tags that are assigned only to unpublished Resources will be included in the output as well                                         | 0                |
-| &contexts        | string   | optional      | If set, will display only tags for resources in given contexts. Contexts can be separated by a comma                                             |                  |
-| &wrapIfEmpty     | int      | optional      | If set to 1, outTpl will be used even if there will be no tags to display.                                                                       | 1                |
-| &translate       | int      | optional      | If set, group_name_translated and group_description_translated will be added as a placeholders to rowChunk                                       | 0                |
-| &sort            | string   | optional      | Sort options in JSON. Example {"tag": "ASC"} or multiple sort options {"group_id": "ASC", "tag": "ASC"}                                          |                  |
+| &resources | string | необяз. | Список ID ресурсов через запятую, для которых выводятся теги | |
+| &groups | string | необяз. | Список групп Tagger через запятую, для которых выводятся теги | |
+| &parents | int | необяз. | Список ID ресурсов через запятую: их дочерние ресурсы сканируются для построения списка тегов | |
+| &rowTpl | string | необяз. | Имя чанка для каждого тега. Без чанка выводится массив с доступными плейсхолдерами | |
+| &tpl\_N | string | необяз. | Имя чанка для каждого N-го тега | |
+| &outTpl | string | необяз. | Имя чанка-обёртки для всех тегов. Без чанка теги выводятся без обёртки. Плейсхолдер: `[[+tags]]` | |
+| &separator | string | необяз. | Разделитель между тегами | |
+| &limit | int | необяз. | Лимит числа возвращаемых тегов | 0 |
+| &offset | int | необяз. | Смещение вывода на это число тегов | 0 |
+| &totalPh | string | необяз. | Плейсхолдер для общего числа тегов без учёта &limit и &offset | tags\_total |
+| &target | int | необяз. | ID ресурса для генерации URI тега. Без ID используется текущий ресурс | current resource |
+| &showUnused | int | необяз. | При 1 в вывод попадают теги, не назначенные ни одному ресурсу | 0 |
+| &toPlaceholder | string | необяз. | При указании вывод возвращается в плейсхолдер с этим именем | |
+| &showDeleted | int | необяз. | При 1 в вывод попадают теги, назначенные только удалённым ресурсам | 0 |
+| &showUnpublished | int | необяз. | При 1 в вывод попадают теги, назначенные только неопубликованным ресурсам | 0 |
+| &contexts | string | необяз. | Показывать только теги ресурсов из указанных контекстов (через запятую) | |
+| &wrapIfEmpty | int | необяз. | При 1 outTpl используется даже если тегов нет | 1 |
+| &translate | int | необяз. | При указании в rowChunk добавляются плейсхолдеры group\_name\_translated и group\_description\_translated | 0 |
+| &sort | string | необяз. | Параметры сортировки в JSON. Пример {"tag": "ASC"} или несколько {"group\_id": "ASC", "tag": "ASC"} | |
 
-**OUTPUT PLACEHOLDERS AND EXAMPLE VALUES:**
+**ПЛЕЙСХОЛДЕРЫ ВЫВОДА И ПРИМЕРЫ ЗНАЧЕНИЙ:**
 
-```php
+``` php
 [[+id]] => 1
 [[+tag]] => News
 [[+alias]] => news
 [[+group]] => 3
 [[+group_id]] => 3
+[[+group_alias]] => mediatype
 [[+group_name]] => Media Type
 [[+group_field_type]] => tagger-combo-tag
 [[+group_allow_new]] => 0
@@ -112,9 +113,11 @@ This Snippet allows you to list tags for resource(s), group(s) and all tags
 [[+active]] => 1 (1/0 based on if current tag is active or not)
 ```
 
-**EXAMPLE USAGE:**
+Чтобы плейсхолдер `[[+active]]` показывал корректное состояние, вызывайте сниппет `TaggerGetTags` _без кэша_.
 
-```php
+**ПРИМЕРЫ ИСПОЛЬЗОВАНИЯ:**
+
+``` php
 // Get tags for all resources, including unused tags
 [[TaggerGetTags? &showUnused=`1`]]
 // Get tags from groups 1 and 3 for all resources
@@ -125,38 +128,117 @@ This Snippet allows you to list tags for resource(s), group(s) and all tags
 [[!TaggerGetTags? &resources=`[[+id]]` &rowTpl=`tag_links_tpl`]]
 ```
 
-#### How to translate groups
+#### Как переводить группы
 
-Let's say we have a group with name **Tags** and alias **tags**. To translate name and/or description of this group, we will have to create new lexicons entries in a specific format.
+Допустим, есть группа с именем **Tags** и alias **tags**. Чтобы перевести имя и/или описание, создайте записи лексикона в нужном формате.
 
--   Open lexicon management
--   Select **Tagger** namespace and **custom** topic
--   Add new lexicon entry to this namespace and topic with a key: **tagger.custom."group_alias"** (in this example it will be tagger.custom.tags)
--   If you want to translate description add one more lexicon entry with key: **tagger.custom."group_alias"\_desc** (in this example it will be tagger.custom.tags_desc)
--   If you want to use those translations also on the frontend, call TaggerGetTags with option **&translate=`1`** (`[[TaggetGetTags? &translate=`1`]]`), new placeholders (group_name_translated, group_description_translated) will be available
+- Откройте управление лексиконами
+- Выберите пространство имён **Tagger** и тему **custom**
+- Добавьте запись с ключом **tagger.custom."group_alias"** (в этом примере tagger.custom.tags)
+- Для перевода описания добавьте запись с ключом **tagger.custom."group_alias"\_desc** (в этом примере tagger.custom.tags\_desc)
+- Чтобы использовать переводы на фронтенде, вызовите TaggerGetTags с **&translate=`1`** (`[[TaggetGetTags? &translate=`1`]]`). Появятся плейсхолдеры group\_name\_translated и group\_description\_translated
 
 ### TaggerGetResourcesWhere
 
-This snippet generate a SQL Query that can be used in a WHERE condition in the getResources snippet
+Сниппет формирует SQL-запрос для условия WHERE в getResources.
 
-**PROPERTIES:**
+**СВОЙСТВА:**
 
-| **Property**    | **Type** | **Required?** | **Description**                                                                                                                                                     | **Default** |
-| --------------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| &tags           | string   | optional      | Comma separated list of Tag aliases (NOT names or IDs) for which a Resource query will be generated. By default Tags from GET param will be loaded                  |             |
-| &groups         | string   | optional      | Comma separated list of Tagger Groups. Only from those groups will Tags be allowed                                                                                  |             |
-| &where          | string   | optional      | Original getResources WHERE property. If you used WHERE property in your current getResources call, move it here.                                                   |             |
-| &likeComparison | int      | optional      | If set to 1, tags will compare using LIKE which will match partial strings instead of only exact matches.                                                           | 0           |
-| &tagField       | string   | optional      | Field that will be used to compare with given tags. If you want to match against the 'full text' of the tag name you've entered, this will need to be set to 'tag'. | alias       |
-| &matchAll       | int      | optional      | If set to 1, resource must have all specified tags (an 'AND' match). If set to 0 or left out, it can match any one of the tags (an 'OR' match).                     | 0           |
-| &field          | string   | optional      | modResource field that will be used to compare with assigned resource ID                                                                                            | id          |
+| **Свойство** | **Тип** | **Обязат.?** | **Описание** | **По умолчанию** |
+| --------------------------------------------------------------------------------------------------------------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| &tags | string | необяз. | Список alias тегов через запятую (не имена и не ID), для которых строится запрос ресурсов. По умолчанию теги берутся из GET-параметра | |
+| &groups | string | необяз. | Список групп Tagger через запятую. Разрешены только теги из этих групп | |
+| &where | string | необяз. | Исходное свойство WHERE getResources. Если WHERE уже есть в вызове getResources, перенесите его сюда | |
+| &likeComparison | int | необяз. | При 1 сравнение через LIKE: частичное совпадение строк, не только точное | 0 |
+| &tagField | string | необяз. | Поле для сравнения с переданными тегами. Для совпадения по полному тексту имени тега укажите 'tag' | alias |
+| &matchAll | int | необяз. | При 1 ресурс должен иметь все указанные теги (AND). При 0 или без параметра достаточно любого тега (OR) | 0 |
+| &field | string | необяз. | Поле modResource для сравнения с ID назначенного ресурса | id |
 
-**EXAMPLE USAGE:**
+**ПРИМЕР ИСПОЛЬЗОВАНИЯ:**
 
-```php
+``` php
 [[!getResources?
     &where=`[[!TaggerGetResourcesWhere?
     &tags=`Books,Vehicles`
     &where=`{"isfolder": 0}`]]`
+]]
+```
+
+### TaggerGetCurrentTag
+
+Сниппет выводит группы и теги из параметров текущего запроса. Всегда вызывайте его _без кэша_: он читает значения из $_GET.
+
+**СВОЙСТВА:**
+
+| **Свойство** | **Тип** | **Обязат.?** | **Описание** | **По умолчанию** |
+| ------------ | -------- | ------------- | --------------- | ----------- |
+| &tagTpl | string | необяз. | Имя чанка для каждого тега. Без чанка выводится массив с доступными плейсхолдерами | |
+| &groupTpl | string | необяз. | Имя чанка для каждой группы. Без чанка выводится массив с доступными плейсхолдерами | |
+| &outTpl | string | необяз. | Имя чанка-обёртки для всех групп. Без чанка теги выводятся без обёртки | |
+| &tagSeparator | string | необяз. | Разделитель между тегами | |
+| &groupSeparator | string | необяз. | Разделитель между группами | |
+| &target | int | необяз. | ID ресурса для генерации URI тега | current resource ID |
+| &friendlyURL | int | необяз. | Если задано, используется вместо системной настройки friendly_urls | friendly_urls system setting |
+| &linkTagScheme | int, string | необяз. | Стратегия URL: -1, 0, 1, full, abs, http, https | link_tag_scheme system setting |
+
+**ПЛЕЙСХОЛДЕРЫ ШАБЛОНОВ:**
+
+``` php
+// tagTpl
+[[+tag]]
+[[+label]]
+[[+alias]]
+[[+uri]] => The URL contains all the tags of the current request, excluding the one of this template
+[[+group_name]] => Name of the group the tag belongs to
+[[+group_alias]] => Alias of the group the tag belongs to
+
+// groupTpl
+[[+name]] => Group name
+[[+alias]] => Group alias
+[[+multipleTags]] => Whether this group has more than 1 active tag
+[[+tags]] => The markup of the active tags of this group
+
+// outTpl
+[[+groups]] => The markup of all the active groups
+```
+
+**ПРИМЕР ИСПОЛЬЗОВАНИЯ:**
+
+``` php
+[[!TaggerGetCurrentTag?
+    &tagTpl=`@INLINE [[+label]]`
+    &groupTpl=`@INLINE <li>[[+name]]: [[+tags]]</li>`
+    &outTpl=`@INLINE <ul>[[+groups]]</ul>`
+    &tagSeparator=`, `
+]]
+```
+
+### TaggerGetRelatedWhere
+
+Сниппет возвращает связанные ресурсы с тем же тегом. Формирует SQL-условие для свойства WHERE в вызове getResources.
+
+**СВОЙСТВА:**
+
+| **Свойство** | **Тип** | **Обязат.?** | **Описание** | **По умолчанию** |
+| ------------ | -------- | ------------- | --------------- | ----------- |
+| &resources | string | необяз. | Список ID ресурсов через запятую, для которых выводятся теги | current resource |
+| &groups | string | необяз. | Список групп Tagger через запятую, для которых выводятся теги | |
+| &showUnused | int | необяз. | При 1 в вывод попадают теги, не назначенные ни одному ресурсу | 0 |
+| &showUnpublished | int | необяз. | При 1 в вывод попадают теги, назначенные только неопубликованным ресурсам | 0 |
+| &showDeleted | int | необяз. | При 1 в вывод попадают теги, назначенные только удалённым ресурсам | 0 |
+| &contexts | string | необяз. | Показывать только теги ресурсов из указанных контекстов (через запятую) | |
+
+Внутри сниппет вызывает `TaggerGetResourcesWhere`, поэтому доступны и его свойства (кроме `&tags` и `&where`, которые задаёт код).
+
+**ПРИМЕР ИСПОЛЬЗОВАНИЯ:**
+
+``` php
+// Lists all the resources with the same parent, that share at least one tag from the group 1 with the current resource.
+[[getResources?
+    &where=`[[TaggerGetRelatedWhere? &groups=`1`]]`
+    &parents=`[[*parent]]`
+    &tpl=`@INLINE <li>[[+pagetitle]]</li>`
+    &tplWrapper=`@INLINE <ul>[[+output]]</ul>`
+    &limit=`0`
 ]]
 ```
