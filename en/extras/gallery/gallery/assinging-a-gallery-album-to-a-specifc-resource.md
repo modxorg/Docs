@@ -24,11 +24,11 @@ Gallery does not assign albums to Resources out of the box. Use a Listbox TV who
 - Enable Type-Ahead: Yes
 - Force Selection to List: Yes
 
-4. Assign the TV to the templates that should pick an album. Save.
+1. Assign the TV to the templates that should pick an album. Save.
 
-5. Edit a Resource, open Template Variables, choose the album, Save.
+2. Edit a Resource, open Template Variables, choose the album, Save.
 
-6. In the page Template, render the album:
+3. In the page Template, render the album:
 
 ```php
 [[!Gallery? &album=`[[*assignedGallery]]`]]

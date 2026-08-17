@@ -24,11 +24,11 @@ translation: "extras/gallery/gallery/assinging-a-gallery-album-to-a-specifc-reso
 - Enable Type-Ahead: Yes
 - Force Selection to List: Yes
 
-4. Привяжите TV к шаблонам нужных ресурсов. Сохраните.
+1. Привяжите TV к шаблонам нужных ресурсов. Сохраните.
 
-5. Откройте ресурс, вкладка Template Variables, выберите альбом, Save.
+2. Откройте ресурс, вкладка Template Variables, выберите альбом, Save.
 
-6. В шаблоне страницы выведите галерею:
+3. В шаблоне страницы выведите галерею:
 
 ```php
 [[!Gallery? &album=`[[*assignedGallery]]`]]
