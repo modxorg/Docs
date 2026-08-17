@@ -18,7 +18,7 @@ translation: "extras/bdlistings/bdhooknewlisting"
 - category (целочисленный ID категории)
 - subcategory (целочисленный ID подкатегории)
 - target (целочисленный ID целевой группы (возраст))
-- publishedon — дата или timestamp, поддерживаются большинство форматов
+- publishedon. дата или timestamp, поддерживаются большинство форматов
 - companyname
 - contactinfo
 - address

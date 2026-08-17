@@ -35,7 +35,7 @@ translation: "extras/bdlistings/bdcategories"
 [[+subcategories]]
 ```
 
-`tplInner` — имя чанка для обёртки всех подкатегорий. Результат попадает в плейсхолдер subcategories в чанке tplCategory. Подходит для `<optgroup>` или дополнительной разметки подкатегорий.
+`tplInner`. имя чанка для обёртки всех подкатегорий. Результат попадает в плейсхолдер subcategories в чанке tplCategory. Подходит для `<optgroup>` или дополнительной разметки подкатегорий.
 Плейсхолдеры:
 
 - subcategories (все подкатегории, разделённые значением subSeparator)
@@ -45,7 +45,7 @@ translation: "extras/bdlistings/bdcategories"
 <p>Subcategories: [[+subcategories]]</p>
 ```
 
-`tplOuter` — чанк для обёртки всех категорий. Его значение возвращает сниппет.
+`tplOuter`. чанк для обёртки всех категорий. Его значение возвращает сниппет.
 Плейсхолдеры:
 
 - wrapper (все категории, разделённые значением categorySeparator)
@@ -56,7 +56,7 @@ translation: "extras/bdlistings/bdcategories"
 [[+wrapper]]
 ```
 
-`tplSub` — чанк для вывода подкатегорий.
+`tplSub`. чанк для вывода подкатегорий.
 Плейсхолдеры:
 
 - id (ID категории)

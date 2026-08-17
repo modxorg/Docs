@@ -136,4 +136,4 @@ translation: "extras/discuss/discuss.controllers/board"
 
 ### OnDiscussRenderBoard
 
-Все текущие плейсхолдеры доступны в массиве $placeholders. return или $modx->event->output() должны вернуть массив плейсхолдеров для переопределения. Плагин на этом событии — единственный способ задать top, bottom, aboveThreads, belowThreads, aboveBoards и belowBoards.
+Все текущие плейсхолдеры доступны в массиве $placeholders. return или $modx->event->output() должны вернуть массив плейсхолдеров для переопределения. Плагин на этом событии. единственный способ задать top, bottom, aboveThreads, belowThreads, aboveBoards и belowBoards.

@@ -71,7 +71,7 @@ boilerX поставляется с примером шаблона, котор�
 | CSS Path            | Путь к main.css                     | assets/components/boilerx/css/main.css                     |
 | Normalize CSS Path  | Путь к normalize.css                | assets/components/boilerx/css/normalize.css                |
 | jQuery version      | Версия jQuery для HTML5 Boilerplate      | 1.9.1                                                      |
-| Modernizr.js Path   | Путь к modernizr.js                        | assets/components/boilerx/js/vendor/modernizr–2.6.2.min.js |
+| Modernizr.js Path   | Путь к modernizr.js                        | assets/components/boilerx/js/vendor/modernizr. 2.6.2.min.js |
 | Meta Author         | Meta author                         | Site Authors                                               |
 | Meta Description    | Meta description                        | Not Another Wordpress Site                                 |
 | Meta Viewport       | Viewport для iOS                           | width=device-width,initial-scale=1                         |

@@ -131,17 +131,17 @@ if (!-e $request_filename){
 
 Когда friendly urls работают, настройте Discuss. Большая часть настроек в System settings: System > System settings, namespace «discuss».
 
-- **discuss.forums_resource_id** — ID ресурса с форумом Discuss.
-- **discuss.login_resource_id** — ID ресурса с вызовом [Login](extras/login "Login").
-- **discuss.register_resource_id** — ID ресурса с [Register](extras/login/login.register "Login.Register").
-- **discuss.update_profile_resource_id** — ID ресурса с [UpdateProfile](extras/login/login.updateprofile "Login.UpdateProfile").
+- **discuss.forums_resource_id**. ID ресурса с форумом Discuss.
+- **discuss.login_resource_id**. ID ресурса с вызовом [Login](extras/login "Login").
+- **discuss.register_resource_id**. ID ресурса с [Register](extras/login/login.register "Login.Register").
+- **discuss.update_profile_resource_id**. ID ресурса с [UpdateProfile](extras/login/login.updateprofile "Login.UpdateProfile").
 - Установите **discuss.sso_mode** в yes. Discuss будет использовать ваши страницы login, register и update_profile вместо встроенных.
 
 Другие полезные настройки:
 
 - При создании кастомной темы включите **discuss.debug_templates**, чтобы в HTML-комментариях показывались используемые chunks.
 - **discuss.theme** загружает шаблоны и assets. Пока подойдёт default, позже укажите имя каталога темы в «themes» Discuss.
-- **discuss.forum_title** — название форума.
+- **discuss.forum_title**. название форума.
 - По умолчанию Discuss использует простой текстовый поиск (если тема его использует). Для Solr установите **discuss.search_class** в disSolrSearch и заполните настройки solr.
 
 ## Страницы Login, Register и Update Profile с Discuss

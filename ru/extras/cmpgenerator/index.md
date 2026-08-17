@@ -12,7 +12,7 @@ CMPGenerator рассчитан на PHP-разработчиков, котор�
 
 Вам нужно понимать:
 
-- Базы данных — [MySQL](http://dev.mysql.com/)
+- Базы данных. [MySQL](http://dev.mysql.com/)
 - [PHP](http://php.net)
 - Затем можно использовать [XPDO](developing-in-modx/basic-development/xpdo "xPDO")
 - [Стандарты кода MODX](developing-in-modx/code-standards "Code Standards")
@@ -42,7 +42,7 @@ CMPGenerator на GitHub: <https://github.com/jgulledge19/CMPGenerator>, issues:
     - Выберите Build Scheme, если нужна схема. Без этого таблицы не задействовать.
     - Выберите Build Package для генерации всех файлов.
 - После создания файлов при связях между таблицами добавьте код вручную в core/components/YOUR-CMP/model/YOUR-CMP/YOUR-CMP.mysql.custom.schema.xml. См. [Defining Relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships).
-  Обновите связи и перегенерируйте пакет: Build Scheme — No, Build Package — Yes, сохраните.
+  Обновите связи и перегенерируйте пакет: Build Scheme. No, Build Package. Yes, сохраните.
 
 **Build Scheme** создаёт или пересоздаёт xml-файл. Если вы правили файл вручную, ставьте No.
 
