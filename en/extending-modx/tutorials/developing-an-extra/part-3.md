@@ -394,9 +394,11 @@ Also, the first parameter of the `resolve()` call tells MODX this is a 'file' re
 
 If you run the build script now, it will package in your _doodles/core/_ and _doodles/assets/_ directories, and install them into the User's proper directories. Great!
 
-### Adding the Menu and Action
+### Adding the Menu
 
-Now that we've got most of our Extra nice and packaged, let's add in the Menu and Action that make up our Custom Manager Page (CMP). Add this code below the putVehicle line at line 80 for our Category:
+Now that we've got most of our Extra nice and packaged, let's add in the Menu that makes up our Custom Manager Page (CMP). Add this code below the putVehicle line at line 80 for our Category:
+
+> **Note:** `modAction` has been deprecated since MODX 2.3.0 and removed in MODX 3.0. From MODX 2.3.x onwards, menu routing is based on a namespace and action name directly on the `modMenu` object. The code below uses the current supported approach.
 
 ```php
 $modx->log(modX::LOG_LEVEL_INFO,'Packaging in menu...');
@@ -406,40 +408,20 @@ $vehicle= $builder->createVehicle($menu,array (
     xPDOTransport::PRESERVE_KEYS => true,
     xPDOTransport::UPDATE_OBJECT => true,
     xPDOTransport::UNIQUE_KEY => 'text',
-    xPDOTransport::RELATED_OBJECTS => true,
-    xPDOTransport::RELATED_OBJECT_ATTRIBUTES => array (
-        'Action' => array (
-            xPDOTransport::PRESERVE_KEYS => false,
-            xPDOTransport::UPDATE_OBJECT => true,
-            xPDOTransport::UNIQUE_KEY => array ('namespace','controller'),
-        ),
-    ),
 ));
 $modx->log(modX::LOG_LEVEL_INFO,'Adding in PHP resolvers...');
 $builder->putVehicle($vehicle);
 unset($vehicle,$menu);
 ```
 
-Very similar to our Category Vehicle creation code. We've also got a related object of our Action. There are a couple differences, however, worth noting:
+Very similar to our Category Vehicle creation code. Worth noting:
 
 -   PRESERVE_KEYS is set to 'true' on our menu. This is because menu keys are unique - and we want to preserve that for our installed menu.
--   UNIQUE_KEY of the related object Action is an array. This tells MODX to look for a modAction object that has both a 'namespace' => 'doodles' and a controller of 'controllers/index'. It's a bit more specific on the search.
 
 As you probably guessed, we need to add a transport.menu.php file. Add one at _/www/doodles/_build/data/transport.menu.php_:
 
 ```php
 <?php
-$action= $modx->newObject('modAction');
-$action->fromArray(array(
-    'id' => 1,
-    'namespace' => 'doodles',
-    'parent' => 0,
-    'controller' => 'index',
-    'haslayout' => true,
-    'lang_topics' => 'doodles:default',
-    'assets' => '',
-),'',true,true);
-
 $menu= $modx->newObject('modMenu');
 $menu->fromArray(array(
     'text' => 'doodles',
@@ -449,16 +431,16 @@ $menu->fromArray(array(
     'menuindex' => 0,
     'params' => '',
     'handler' => '',
+    'action' => 'index',
+    'namespace' => 'doodles',
 ),'',true,true);
-$menu->addOne($action);
-unset($menus);
 
 return $menu;
 ```
 
-Looks very similar to our transport.snippets.php file, except we're just returning one menu, and we're calling addOne on the menu object to add the Action as a related object to the menu. Note that the fields in each of the fromArray calls are the fields in the DB table for the menu and action, by the way.
+Looks very similar to our transport.snippets.php file, except we're just returning one menu. Note that the `action` and `namespace` fields are required for MODX 2.3.x and above — they tell MODX which controller to load when the menu item is clicked. Note that the fields in the fromArray call are the fields in the DB table for the menu, by the way.
 
-So now our Menu and Action are all nicely packaged in.
+So now our Menu is all nicely packaged in.
 
 ## Adding a Resolver
 
@@ -596,30 +578,3 @@ This tutorial is part of a Series:
 -   [Part II: Creating our Custom Manager Page](extending-modx/tutorials/developing-an-extra/part-2 "Developing an Extra in MODX Revolution, Part II")
 -   Part III: Packaging Our Extra
 
-the transport.menu.php modAction controller value should be just "index" and not have the preceding "controllers/" as follows when using the new abstract classes:
-
-```php
-$action= $modx->newObject('modAction');
-$action->fromArray(array(
-    'id' => 1,
-    'namespace' => 'doodles',
-    'parent' => 0,
-    'controller' => 'index',
-    'haslayout' => true,
-    'lang_topics' => 'doodles:default',
-    'assets' => '',
-),'',true,true);
-```
-
-```php
-$action= $modx->newObject('modAction');
-$action->fromArray(array(
- 'id' => 1,
- 'namespace' => 'doodles',
- 'parent' => 0,
- 'controller' => 'controllers/index',
- 'haslayout' => true,
- 'lang\_topics' => 'doodles:default',
- 'assets' => '',
-),'',true,true);
-```
