@@ -7,6 +7,8 @@ _old_uri: "2.x/administering-your-site/using-friendly-urls"
 
 Puedes tener las URL amigables funcionando completamente en menos de dos minutos siguiendo un simple proceso de cuatro pasos.
 
+En **IIS** el archivo `.htaccess` de Apache no aplica. Usa [URLs amigables en IIS](getting-started/friendly-urls/iis) (`web.config` y el módulo URL Rewrite). También hay notas para [nginx](getting-started/friendly-urls/nginx) y [lighttpd](getting-started/friendly-urls/lighttpd).
+
 ## 1) Trabajando sobre el archivo .htaccess de ejemplo
 
 MODX proporciona un archivo ht.access para que lo edites coincidiendo con la configuración de tu servidor. Se encuentra en la raíz del sitio MODX. El servidor ignorará este archivo hasta que lo renombres o (mejor) lo copies en un archivo llamado .htaccess. Cada vez que un navegador solicita una página, el servidor busca el archivo llamado .htaccess, que puede contener información sobre cómo se deben manejar varias URL.

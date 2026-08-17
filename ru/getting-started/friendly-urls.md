@@ -19,6 +19,7 @@ translation: "getting-started/friendly-urls"
 Остальным: выберите руководство для вашего сервера:
 
 - [Apache](getting-started/friendly-urls/apache) (большинство shared-хостингов, файл `ht.access` → `.htaccess`)
+- [IIS](getting-started/friendly-urls/iis) (`web.config` и URL Rewrite)
 - [nginx](getting-started/friendly-urls/nginx)
 - [lighttpd](getting-started/friendly-urls/lighttpd)
 
