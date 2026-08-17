@@ -3,47 +3,52 @@ title: "Начало работы с PHP в MODX"
 translation: "extending-modx/getting-started/tutorial"
 ---
 
-Кодовая база в Revolution переключилась на [xPDO](http://www.xpdo.org/ "Домашняя страница xPDO"), инструмент для моделирования объектно-реляционных мостов, созданный Джейсоном Ковардом. С точки зрения непрофессионала, это означает, что все таблицы базы данных теперь представлены объектами PHP (как обычно для любого ORM). Чанки представлены объектами 'modChunk', сниппеты объектами 'modSnippet' и так далее.
+Многие спрашивают о новой кодовой базе. Удобна ли она для разработчиков? Сильно ли отличается от 0.9.6/Evolution? Поддерживает ли OOP-проекты? Быстрее ли она? Легко ли её освоить?
 
-## Простое как
+В этих руководствах мы ответим на эти вопросы: **да**.
 
-Итак, как на самом деле получить объект в новом modx? Ну, вы привыкли полагаться на несколько различных функций:
+Кодовая база Revolution перешла на [xPDO](http://www.xpdo.org/ "xPDO Homepage"), инструмент ORM, созданный Jason Coward. Проще говоря, все таблицы БД теперь представлены объектами PHP (как принято в ORM). Чанки представлены объектами `modChunk`, сниппеты объектами `modSnippet` и т.д.
 
-```php
-// Старый способ работы в MODx 1.x и более ранних версиях
+## Простой способ
+
+Как получить объект в новом MODX? Раньше приходилось опираться на набор разных функций:
+
+``` php
+// The old way of doing things in MODx 1.x and earlier
 $doc = $modx->getDocument(23);
 $doc = $modx->getDocument(45,'pagetitle,introtext');
 $chunk = $modx->getChunk('chunkName');
 
-// или даже более запутанный
+// or even more convoluted
 $res = $modx->db->select('id,username',$table_prefix.'.modx_manager_users');
 $users = array();
-if ($modx->db->getRecordCount($res)){
-    while ($row = $modx->db->getRow($res)) {
-        array_push($users,$row);
-    }
+if ($modx->db->getRecordCount($res))
+{
+   while ($row = $modx->db->getRow($res)) {
+       array_push($users,$row);
+   }
 }
 return $users;
 ```
 
-Уже нет. Все гораздо проще, и на самом деле вам нужно всего несколько функций. Давайте посмотрим на некоторые примеры:
+Больше нет. Всё проще. Вам понадобится всего несколько функций. Примеры:
 
-```php
-// получение чанка с ID 43
+``` php
+// getting a chunk with ID 43
 $chunk = $modx->getObject('modChunk',43);
 
-// получение чанка с именем 'TestChunk'
+// getting a chunk with name 'TestChunk'
 $chunk = $modx->getObject('modChunk',array(
     'name' => 'TestChunk'
 ));
 
-// получить коллекцию объектов чанка, затем вывести их имена
+// getting a collection of chunk objects, then outputting their names
 $chunks = $modx->getCollection('modChunk');
 foreach ($chunks as $chunk) {
     echo $chunk->get('name')."<br />\n";
 }
 
-// получение ресурса (то есть страницы), который публикуется с псевдонимом «test»
+// getting a resource (i.e. a page) that is published, with a alias of 'test'
 $document = $modx->getObject('modResource',array(
     'published' => 1,
     'alias' => 'test',
@@ -52,11 +57,11 @@ $document = $modx->getObject('modResource',array(
 
 ## Модель
 
-Итак, вы, вероятно, спрашиваете, где находится список имен таблиц для сопоставления имен объектов? Его можно найти в «core/model/schema/modx.mysql.schema.xml». (Обратите внимание на «mysql» - да, это означает, что MODX в ближайшем будущем будет поддерживать другие базы данных). Оттуда вы можете просмотреть XML-представление всех таблиц MODX DB.
+Где найти соответствие имён таблиц и объектов? В файле `core/model/schema/modx.mysql.schema.xml`. (Обратите внимание на `mysql`: MODX в перспективе будет поддерживать и другие СУБД.) Там XML-представление всех таблиц MODX.
 
-Например, modChunk:
+Например, `modChunk`:
 
-```xml
+``` xml
 <object class="modChunk" table="site_htmlsnippets" extends="modElement">
     <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
     <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default="Chunk" />
@@ -69,27 +74,27 @@ $document = $modx->getObject('modResource',array(
 </object>
 ```
 
-Вы также можете определить свои собственные схемы для своих компонентов и добавить их в виде пакетов - подробнее об этом в следующей статье. Давайте перейдем в схему:
+Вы также можете определить собственные схемы для компонентов и добавить их как пакеты. Об этом в следующей статье. Разберём схему:
 
-```xml
+``` xml
 <object class="modChunk" table="site_htmlsnippets" extends="modElement">
 ```
 
-Свойство _class_ сообщает вам, каким будет имя класса. Свойство _table_ показывает фактическую таблицу MySQL, а _extends_ показывает, какой объект он расширяет. modElement является базовым классом для всех элементов в MODX - сниппетов, модулей, блоков, шаблонов и т.д.
+Свойство _class_ задаёт имя класса. _table_ показывает таблицу MySQL. _extends_ указывает родительский класс. `modElement` это базовый класс для всех элементов MODX: сниппетов, модулей, чанков, шаблонов и т.д.
 
-```xml
+``` xml
 <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
 ```
 
-Этот тег представляет столбец в базе данных. Большинство из этих атрибутов довольно просты.
+Этот тег описывает столбец БД. Большинство атрибутов очевидны.
 
-```xml
+``` xml
 <aggregate alias="modCategory" class="modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
 ```
 
-Хорошо, вот где мы вступаем в отношения с БД. Отношение **Aggregate** - это отношение, в котором, с точки зрения непрофессионалов, если бы вы удалили этот чанк, он не удалил бы категорию, к которой он относится. Если бы это были **Композитные** отношения, это было бы. В составных отношениях есть «зависимость», которая связана с другим объектом. Для примера, давайте получим все `modContextSettings` для modContext:
+Здесь начинаются связи БД. **Aggregate** это связь, при которой удаление чанка не удаляет связанную категорию. При **Composite** связи удаление затронуло бы связанный объект. В Composite есть зависимость от другого объекта. Пример: получить все `modContextSettings` для `modContext`:
 
-```php
+``` php
 $context = $modx->getObject('modContext','web');
 $settings = $context->getMany('ContextSetting');
 foreach ($settings as $setting) {
@@ -98,9 +103,9 @@ foreach ($settings as $setting) {
 }
 ```
 
-Довольно легко, да? Мы займемся созданием и удалением объектов, а также более сложными запросами, такими как внутренние объединения, ограничения, сортировка и другие, в [следующей статье](extending-modx/getting-started/tutorial/part-2).
+Просто, правда? Создание и удаление объектов, более сложные запросы (inner join, limit, сортировка и др.) разберём в [следующей статье](extending-modx/getting-started/tutorial/part-2).
 
-## Смотри также
+## Смотрите также
 
--   [xPDO: Определение схемы](extending-modx/xpdo/custom-models/defining-a-schema "Определение схемы")
--   [xPDO: Связанные объекты](extending-modx/xpdo/retrieving-objects/related-objects "Работа со связанными объектами")
+- [xPDO: Defining a Schema](extending-modx/xpdo/custom-models/defining-a-schema "Defining a Schema")
+- [xPDO: Related Objects](extending-modx/xpdo/retrieving-objects/related-objects "Working with Related Objects")
