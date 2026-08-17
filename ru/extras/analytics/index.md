@@ -6,7 +6,7 @@ translation: "extras/analytics/index"
 
 ## Что такое Analytics?
 
-Analytics. утилита для MODX Revolution, которая вставляет код отслеживания Google Universal Analytics (analytics.js) и/или Google Analytics (ga.js) на страницы вашего сайта.
+Analytics это утилита для MODX Revolution, которая вставляет код отслеживания Google Universal Analytics (analytics.js) и/или Google Analytics (ga.js) на страницы вашего сайта.
 
 По умолчанию трафик пользователей, вошедших в менеджер, игнорируется. Любой контекст сайта можно исключить по запросу, независимо от того, авторизован пользователь или нет.
 Шаблоны кода отслеживания можно переопределить своим чанком.

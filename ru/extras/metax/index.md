@@ -4,12 +4,12 @@ description: "Сниппет генерации meta-тегов и других 
 translation: "extras/metax/index"
 ---
 
-MetaX. простой [snippet](developing-in-modx/basic-development/snippets) для автоматизации meta-тегов. Также генерирует base, canonical, css, rss и другие теги head.
+MetaX это простой [snippet](developing-in-modx/basic-development/snippets) для автоматизации meta-тегов. Также генерирует base, canonical, css, rss и другие теги head.
 
-Requirements
+## Требования
 
-- MODX Revolution 2.0.0 or later
-- PHP5 or later
+- MODX Revolution 2.0.0 или новее
+- PHP5 или новее
 
 ## История
 
