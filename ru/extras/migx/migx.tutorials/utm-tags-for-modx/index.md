@@ -21,28 +21,28 @@ translation: "extras/migx/migx.tutorials/utm-tags-for-modx"
 
 Вкладка **Settings**
 
--   **Name** — utm
--   **Замена «Добавить элемент»** — Добавить метку
--   **Form Caption** — Добавить/редактировать метку
--   **Window Title** — Добавить/редактировать метку
+-   **Name**. utm
+-   **Замена «Добавить элемент»**. Добавить метку
+-   **Form Caption**. Добавить/редактировать метку
+-   **Window Title**. Добавить/редактировать метку
 
 Вкладка **Formtabs**
 
-Fields — Создаем 1 вкладку и в поле Fields создадим несколько полей
+Fields. Создаем 1 вкладку и в поле Fields создадим несколько полей
 
 1. Сама метка
 
-    - **Fieldname** — utm
-    - **Caption** — UTM метка
+    - **Fieldname**. utm
+    - **Caption**. UTM метка
 
 2. Заголовок страницы
 
-    - **Fieldname** — title
-    - **Caption** — Заголовок страницы
+    - **Fieldname**. title
+    - **Caption**. Заголовок страницы
 
 3. Заголовок H1
-    - **Fieldname** — pagetitle
-    - **Caption** — Заголовок H1
+    - **Fieldname**. pagetitle
+    - **Caption**. Заголовок H1
 
 Вкладка **Columns**
 
@@ -51,35 +51,35 @@ Fields — Создаем 1 вкладку и в поле Fields создади�
 1 Ссылка (нужна будет для того, чтобы менеджер по клику мог увидеть как будет выглядеть страница, это удобно)
 
 -   Вкладка **Column**
-    -   **Header** — Ссылка
-    -   **Field** — link
+    -   **Header**. Ссылка
+    -   **Field**. link
 -   Вкладка **Renderer**
-    -   **Renderer** — this.renderChunk
-    -   **renderChunk template** — `<a href="[[~[[#GET.id]]]]?utm=[[+utm]]" target="_blank">Посмотреть</a>`
+    -   **Renderer**. this.renderChunk
+    -   **renderChunk template**. `<a href="[[~[[#GET.id]]]]?utm=[[+utm]]" target="_blank">Посмотреть</a>`
 
 2 Метка
 
 -   Вкладка **Column**
-    -   **Header** — Метка УТП
-    -   **Field** — utm
+    -   **Header**. Метка УТП
+    -   **Field**. utm
 -   Вкладка **Cell Editor**
-    -   **Editor** — this.textEditor
+    -   **Editor**. this.textEditor
 
 3 Заголовок страницы
 
 -   Вкладка **Column**
-    -   **Header** — Заголовок страницы
-    -   **Field** — title
+    -   **Header**. Заголовок страницы
+    -   **Field**. title
 -   Вкладка Cell Editor
-    **Editor** — this.textEditor
+    **Editor**. this.textEditor
 
 4 Заголовок H1
 
 -   Вкладка **Column**
-    -   **Header** — Заголовок H1
-    -   **Field** — pagetitle
+    -   **Header**. Заголовок H1
+    -   **Field**. pagetitle
 -   Вкладка Cell Editor
-    -   **Editor** — this.textEditor
+    -   **Editor**. this.textEditor
 
 Идём и создаем TV utm с типом ввода migx, в поле Конфигурации пишем название нашей конфигурации, т.е. utm, назначаем нужные шаблоны и открываем на редактирование ресурс, ну или же его создаем.
 

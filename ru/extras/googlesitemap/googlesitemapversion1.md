@@ -24,12 +24,12 @@ translation: "extras/googlesitemap/googlesitemapversion1"
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
 | allowedtemplates | Список ID шаблонов через запятую. Фильтрует только при заданном значении.                                                                                                                                                     |                                             |
 | containerTpl     | Чанк контейнера вывода.                                                                                                                                                                                                   | gContainer                                  |
-| context          | Ограничение контекстами. Пусто — ресурсы текущего контекста. Список через запятую.                                                                                                |                                             |
+| context          | Ограничение контекстами. Пусто. ресурсы текущего контекста. Список через запятую.                                                                                                |                                             |
 | excludeResources | Необязательный список ID ресурсов для пропуска.                                                                                                                                                                                       |                                             |
 | googleSchema     | Расположение схемы GoogleSiteMap.                                                                                                                                                                                                    | <http://www.google.com/schemas/sitemap/0.9> |
 | hideDeleted      | При true только неудалённые ресурсы.                                                                                                                                                                                                | 1                                           |
 | itemTpl          | Чанк для каждого элемента результата.                                                                                                                                                                                                       | gItem                                       |
-| maxDepth         | Глубина дерева ресурсов. Пусто или 0 — вся глубина.                                                                                                                                                       | 0                                           |
+| maxDepth         | Глубина дерева ресурсов. Пусто или 0. вся глубина.                                                                                                                                                       | 0                                           |
 | published        | При true только опубликованные ресурсы.                                                                                                                                                                                                 | 1                                           |
 | searchable       | При true только searchable ресурсы.                                                                                                                                                                                                | 1                                           |
 | showHidden       | При true включаются скрытые ресурсы.                                                                                                                                                                                                      | false                                       |
@@ -43,8 +43,8 @@ translation: "extras/googlesitemap/googlesitemapversion1"
 
 GoogleSiteMap обрабатывает 2 чанка:
 
-- [itemTpl](extras/googlesitemap/googlesitemap/itemtpl "GoogleSiteMap.GoogleSiteMap.itemTpl") — чанк каждого элемента.
-- [containerTpl](extras/googlesitemap/googlesitemap/containertpl) — чанк обёртки результатов.
+- [itemTpl](extras/googlesitemap/googlesitemap/itemtpl "GoogleSiteMap.GoogleSiteMap.itemTpl"). чанк каждого элемента.
+- [containerTpl](extras/googlesitemap/googlesitemap/containertpl). чанк обёртки результатов.
 
 ## Примеры
 

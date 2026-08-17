@@ -32,7 +32,7 @@ translation: "extras/filelister/filelister"
 | pathTpl             | Чанк для каждого элемента плейсхолдера +path.                                                                                                                                          | feoPathLink                                      |
 | showFiles           | При false файлы скрываются.                                                                                                                                            | 1                                                |
 | showDirectories     | При false каталоги скрываются.                                                                                                                                      | 1                                                |
-| showExt             | Расширения через запятую (без точки) для ограничения файлов. Пусто — все файлы. Указаны — только с этими расширениями. |                                                  |
+| showExt             | Расширения через запятую (без точки) для ограничения файлов. Пусто. все файлы. Указаны. только с этими расширениями. |                                                  |
 | sortBy              | Поле сортировки: extension, lastmod, bytesize или filename.                                                                                              | filename                                         |
 | sortDir             | Направление сортировки.                                                                                                                                                    | ASC                                              |
 | allowDownload       | При false отключает просмотр и скачивание файлов.                                                                                                                                 | 1                                                |
@@ -41,7 +41,7 @@ translation: "extras/filelister/filelister"
 | toPlaceholder       | Имя плейсхолдера вместо прямого вывода.                                                                                   |                                                  |
 | navKey              | Ключ навигации REQUEST для просмотра.                                                                                                                                          | fd                                               |
 | homePathName        | Пользовательское имя корня при просмотре.                                                                                                               |                                                  |
-| limit               | Необязательно. Лимит записей. 0 — все.                                                                                                                    | 0                                                |
+| limit               | Необязательно. Лимит записей. 0. все.                                                                                                                    | 0                                                |
 | cls                 | CSS-класс обычных строк.                                                                                                                                               | feo-row                                          |
 | altCls              | CSS-класс чередующихся строк.                                                                                                                                                   | feo-alt-row                                      |
 | firstCls            | CSS-класс первой строки.                                                                                                                                                    | feo-first-row                                    |
@@ -52,10 +52,10 @@ translation: "extras/filelister/filelister"
 
 FileLister обрабатывает 4 чанка:
 
-- [fileTpl](extras/filelister/filelister/filetpl "FileLister.FileLister.fileTpl") — чанк для каждого файла.
-- [directoryTpl](extras/filelister/filelister/directorytpl "FileLister.FileLister.directoryTpl") — чанк для каждого каталога.
-- [fileLinkTpl](extras/filelister/filelister/filelinktpl "FileLister.FileLister.fileLinkTpl") — чанк ссылок для каждой записи.
-- [pathTpl](extras/filelister/filelister/pathtpl "FileLister.FileLister.pathTpl") — чанк элементов плейсхолдера path.
+- [fileTpl](extras/filelister/filelister/filetpl "FileLister.FileLister.fileTpl"). чанк для каждого файла.
+- [directoryTpl](extras/filelister/filelister/directorytpl "FileLister.FileLister.directoryTpl"). чанк для каждого каталога.
+- [fileLinkTpl](extras/filelister/filelister/filelinktpl "FileLister.FileLister.fileLinkTpl"). чанк ссылок для каждой записи.
+- [pathTpl](extras/filelister/filelister/pathtpl "FileLister.FileLister.pathTpl"). чанк элементов плейсхолдера path.
 
 ## Примеры
 

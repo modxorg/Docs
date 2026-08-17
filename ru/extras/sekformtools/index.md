@@ -33,12 +33,12 @@ SekFormTools устанавливает 5 таблиц: страны, штаты
 
 sekFormTools вызывается несколькими сниппетами:
 
-- [sekFormTools.input.autocomplete](extras/sekformtools/sekformtools.input.autocomplete "sekFormTools.input.autocomplete") — поле jQuery автодополнения.
-- [sekFormTools.input.combobox](extras/sekformtools/sekformtools.input.combobox "sekFormTools.input.combobox") — combo box jQuery автодополнения.
-- [sekFormTools.input.datepicker](extras/sekformtools/sekformtools.input.datepicker "sekFormTools.input.datepicker") — поле date picker jQuery.
-- [sekFormTools.input.textfield](extras/sekformtools/sekformtools.input.textfield "sekFormTools.input.textfield") — текстовое поле jQuery с подсказкой.
-- [sekFormTools.input.helper](extras/sekformtools/sekformtools.input.helper "sekFormTools.input.helper") — вызывается с пустой страницы, заполняет автодополнение и combo box из базы.
-- spellchecker — вызов `[[spellchecker]]` на странице включает проверку орфографии и грамматики во всех textarea.
+- [sekFormTools.input.autocomplete](extras/sekformtools/sekformtools.input.autocomplete "sekFormTools.input.autocomplete"). поле jQuery автодополнения.
+- [sekFormTools.input.combobox](extras/sekformtools/sekformtools.input.combobox "sekFormTools.input.combobox"). combo box jQuery автодополнения.
+- [sekFormTools.input.datepicker](extras/sekformtools/sekformtools.input.datepicker "sekFormTools.input.datepicker"). поле date picker jQuery.
+- [sekFormTools.input.textfield](extras/sekformtools/sekformtools.input.textfield "sekFormTools.input.textfield"). текстовое поле jQuery с подсказкой.
+- [sekFormTools.input.helper](extras/sekformtools/sekformtools.input.helper "sekFormTools.input.helper"). вызывается с пустой страницы, заполняет автодополнение и combo box из базы.
+- spellchecker. вызов `[[spellchecker]]` на странице включает проверку орфографии и грамматики во всех textarea.
 
 Для сложных сценариев см. [Advanced Examples](extras/sekformtools/sekformtools-advanced-examples "sekFormTools Advanced Examples").
 

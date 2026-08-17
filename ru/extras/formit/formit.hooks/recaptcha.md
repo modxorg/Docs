@@ -6,7 +6,7 @@ translation: "extras/formit/formit.hooks/recaptcha"
 
 ## Хук recaptcha для FormIt
 
-Хук recaptcha включает поддержку reCAPTCHA v3 для форм FormIt. reCAPTCHA v3 работает незаметно в фоне — пользователю не показывается никаких чекбоксов или заданий. Google возвращает оценку (0.0–1.0), отражающую вероятность того, что форму отправил человек; заявки ниже минимального порога отклоняются.
+Хук recaptcha включает поддержку reCAPTCHA v3 для форм FormIt. reCAPTCHA v3 работает незаметно в фоне. пользователю не показывается никаких чекбоксов или заданий. Google возвращает оценку (0.0. 1.0), отражающую вероятность того, что форму отправил человек; заявки ниже минимального порога отклоняются.
 
 ## Требования
 
@@ -40,7 +40,7 @@ translation: "extras/formit/formit.hooks/recaptcha"
 | --- | --- | --- |
 | `formit.recaptcha_site_key` | Ваш публичный ключ reCAPTCHA v3 (site key). | |
 | `formit.recaptcha_secret_key` | Ваш приватный ключ reCAPTCHA v3 (secret key). | |
-| `formit.recaptcha_min_score` | Минимальная оценка для принятия заявки (0.0–1.0). | `0.5` |
+| `formit.recaptcha_min_score` | Минимальная оценка для принятия заявки (0.0. 1.0). | `0.5` |
 
 ## Поддерживаемые параметры
 

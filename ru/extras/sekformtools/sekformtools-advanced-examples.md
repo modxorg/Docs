@@ -29,7 +29,7 @@ translation: "extras/sekformtools/sekformtools-advanced-examples"
 
 ### Первый шаг
 
-Не обязательно, но лучше задать input_id для всех полей. Здесь input\_id равен «ftcountry». Это понадобится дальше. Главное поле — «object» как JSON-строка с данными таблицы. Здесь value и label совпадают с country\_name, поэтому &value равен «United States». Если object->value был бы «id», &value был бы «244».
+Не обязательно, но лучше задать input_id для всех полей. Здесь input\_id равен «ftcountry». Это понадобится дальше. Главное поле. «object» как JSON-строка с данными таблицы. Здесь value и label совпадают с country\_name, поэтому &value равен «United States». Если object->value был бы «id», &value был бы «244».
 
 ``` php
 <label for="ftcountry">Country</label>
@@ -40,7 +40,7 @@ translation: "extras/sekformtools/sekformtools-advanced-examples"
 
 ### Второй шаг
 
-Снова задайте input_id, для штата это «ftstate». Свойство object задаётся так же. Отличие от страны — свойство filter. Filter выполняет две роли и сейчас работает только между двумя combo box или отдельно. В дочернем поле filter задают в JSON.
+Снова задайте input_id, для штата это «ftstate». Свойство object задаётся так же. Отличие от страны. свойство filter. Filter выполняет две роли и сейчас работает только между двумя combo box или отдельно. В дочернем поле filter задают в JSON.
 
 ``` php
 <label for="ftstate">State</label>

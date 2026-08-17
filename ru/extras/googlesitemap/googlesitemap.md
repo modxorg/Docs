@@ -30,7 +30,7 @@ translation: "extras/googlesitemap/googlesitemap"
 | legacyProps    | Меняйте только если точно понимаете зачем. Свойства через запятую запускают legacy GoogleSiteMap. | allowedtemplates, excludeResources, excludeChildrenOf, sortByAlias, templateFilter, itemTpl, startId, where |
 | legacySnippet  | Меняйте только если точно понимаете зачем. Этот сниппет вызывается при legacy-свойстве.                | GoogleSiteMapVersion1                                                                                       |
 | containerTpl   | Чанк контейнера вывода.                                                                                                                      | gContainer                                                                                                  |
-| context        | Ограничение контекстами. Пусто — ресурсы текущего контекста. Список через запятую.                   |                                                                                                             |
+| context        | Ограничение контекстами. Пусто. ресурсы текущего контекста. Список через запятую.                   |                                                                                                             |
 | googleSchema   | Расположение схемы GoogleSiteMap.                                                                                                                       | <http://www.google.com/schemas/sitemap/0.9>                                                                 |
 | hideDeleted    | При true только неудалённые ресурсы.                                                                                                                   | true                                                                                                        |
 | published      | При true только опубликованные ресурсы.                                                                                                                    | true                                                                                                        |
@@ -43,7 +43,7 @@ translation: "extras/googlesitemap/googlesitemap"
 
 GoogleSiteMap обрабатывает 1 чанк:
 
-- [containerTpl](extras/googlesitemap/googlesitemap/containertpl) — чанк обёртки результатов.
+- [containerTpl](extras/googlesitemap/googlesitemap/containertpl). чанк обёртки результатов.
 
 ## Примеры
 
