@@ -15,7 +15,7 @@ Breadcrumbs is a simple navigation trail [Snippet](developing-in-modx/basic-deve
 
 ## History
 
-Breadcrumbs has been around since the start of MODX 0.9.1, or MODX Evolution, with its first release on June 30th, 2006. It has had many different authors since its inception.
+Breadcrumbs has been around since MODX 0.9.1, with its first release on June 30th, 2006. It has had many different authors since its inception.
 
 ### Public Releases
 
@@ -26,14 +26,14 @@ Breadcrumbs has been around since the start of MODX 0.9.1, or MODX Evolution, wi
 | 1.1-beta1  | May 21st, 2009      | splittingred | Revolution |
 | 1.0-alpha4 | April 21st, 2009    | splittingred | Revolution |
 | 1.0-alpha3 | March 24th, 2009    | splittingred | Revolution |
-| 1.0.1      | April 25th, 2008    | jaredc       | Evolution  |
-| 1.0.0      | April 22nd, 2008    | jaredc       | Evolution  |
-| 0.9g       | March 26th, 2008    | webe         | Evolution  |
-| 0.9f       | January 17th, 2008  | jaredc       | Evolution  |
-| 0.9e       | January 11th, 2008  | jaredc       | Evolution  |
-| 0.9d       | July 12th, 2006     | jaredc       | Evolution  |
-| 0.91       | July 10th, 2006     | tillda       | Evolution  |
-| 0.9c       | June 30th, 2006     | jaredc       | Evolution  |
+| 1.0.1      | April 25th, 2008    | jaredc       | 1.x        |
+| 1.0.0      | April 22nd, 2008    | jaredc       | 1.x        |
+| 0.9g       | March 26th, 2008    | webe         | 1.x        |
+| 0.9f       | January 17th, 2008  | jaredc       | 1.x        |
+| 0.9e       | January 11th, 2008  | jaredc       | 1.x        |
+| 0.9d       | July 12th, 2006     | jaredc       | 1.x        |
+| 0.91       | July 10th, 2006     | tillda       | 1.x        |
+| 0.9c       | June 30th, 2006     | jaredc       | 1.x        |
 
 ### Download
 

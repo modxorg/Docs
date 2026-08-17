@@ -71,9 +71,3 @@ xPDO es el puente relacional de objetos (ORB) que alimenta MODX. Si sabes lo que
 - [Presentación y discusión de temas](contribute/issues)
 - [Convertirse en Colaborador](contribute/code)
 - [Guía de estilo de documentación](contribute/documentation/style-guide)
-
-## ¿Qué pasa con MODX Evolution?
-
-Evolution es la base del código clásico de MODX: la versión original fué lanzada en 2005.. [Desde Abril del 2017](https://modx.com/blog/evolution-cms-has-a-new-home) Evolution es oficialmente un proyecto separado, ya no está bajo las alas de MODX. Eso significa que Evolution tiene su propio liderazgo, procesos y comunidad.
-
-Toda la información sobre Evolution, incluida la documentación y los extras, se puede encontrar en [evo.im](https://evo.im/).

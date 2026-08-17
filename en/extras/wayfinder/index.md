@@ -10,7 +10,7 @@ _Wayfinder's_ primary purpose is to generate navigational menus that automatical
 
 Since you can make multiple calls to _Wayfinder_ on a single page, and each call can specify a different section of the document tree, you can have multiple navigational menus or document lists on a single page. For example you may wish to have a main menu at the top of the page, then along the sides have secondary menus for products, services, teams, roles, etc. Each pertaining to a different section of the document tree.
 
-Please note that since the release of Revolution there are two types of Wayfinder snippets available, one for each version. For clarity, this page uses the Evolution syntax when showing examples. Generally speaking the functionality between the two versions are the same, and so are the parameters. Mind that in Revolution, snippets must be called with `[[Wayfinder? &...]]` instead of \[!Wayfinder? &...!\].
+Call Wayfinder with modern tag syntax: `[[Wayfinder? &...]]`.
 
 For Wayfinder discussions on the MODX forums see <https://forums.modx.com/index.php/board,182.0.html>.
 
@@ -27,7 +27,7 @@ _Wayfinder_ has been totally re-factored from the original DropMenu navigation b
 | 0.9 beta 1/2/3 | Aug/Sept 2006 | 0.9.2.1         | Initial release                |
 | 1.0            | Oct 23, 2006  | 0.9.2.1         |                                |
 | 1.0.1          | Nov 07, 2006  | 0.9.2.1 - 0.9.5 |                                |
-| 2.0            | Feb 27, 2007  | 0.9.5 +         | Current release for Evolution  |
+| 2.0            | Feb 27, 2007  | 0.9.5 +         | Legacy 1.x release              |
 | 2.1.1 beta 1   | May 21, 2009  | 2.0.0-beta 1    |                                |
 | 2.1.1 beta 2   | Oct 20, 2009  | 2.0.0-beta 4    |                                |
 | 2.1.1 beta 4   | Nov 05, 2009  | 2.0.0-beta 5 +  |                                |
@@ -40,17 +40,7 @@ _Wayfinder_ has been totally re-factored from the original DropMenu navigation b
 ### Downloads
 
 - Download the [latest version of Wayfinder for Revolution](https://modx.com/extras/package/wayfinder) from the [MODX Extras Repository](http://www.modx.com/extras), or install via Package Management.
-- Download [version 2.0 for Evolution](http://www.muddydogpaws.com/development/wayfinder/download.html) from MuddyDogPaws.
 
-### Evolution (and before)
-
-MODX version 0.9.5-1.0 includes Wayfinder by default in the installer. To add Wayfinder to an older version of MODX or to upgrade to a newer version of Wayfinder in **Evolution**:
-
-1. Download the neccesary files from the link above.
-2. Create a new snippet in your MODX Manager (Elements -> Manage Elements -> Snippets) and name if Wayfinder.
-3. Copy the contents of snippet.wayfinder.tpl.php to the snippet contents.
-4. Create a new folder in your file system under /assets/snippets/ and call it wayfinder.
-5. Copy the file wayfinder.inc.php to the new folder.
 
 ### Revolution
 
@@ -144,7 +134,7 @@ Available placeholders are:
 Please note that you will need to wrap the placeholders with the relevant tags.
 
 ``` php
-Evolution: [+wf._____+]
+Older 1.x placeholder style: [+wf._____+]
 Revolution: [[+wf._____]]
 ```
 
@@ -186,7 +176,7 @@ Available placeholders are:
 Please note that you will need to wrap the placeholders with the relevant tags.
 
 ``` php
-Evolution: [+wf._____+]
+Older 1.x placeholder style: [+wf._____+]
 Revolution: [[+wf._____]]
 ```
 

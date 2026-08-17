@@ -20,7 +20,7 @@ MySQL-only search (`&engine=` `mysql`, the default) does not need ZendSearch.
 
 ## History
 
-AdvSearch was written by [Coroico](https://github.com/coroico) and first released on August 14th, 2011. It is loosely based on AjaxSearch for MODX Evolution by KyleJ/Coroico, with optional Lucene indexing via ZendSearch.
+AdvSearch was written by [Coroico](https://github.com/coroico) and first released on August 14th, 2011. It is loosely based on AjaxSearch by KyleJ/Coroico, with optional Lucene indexing via ZendSearch.
 
 ### Download
 

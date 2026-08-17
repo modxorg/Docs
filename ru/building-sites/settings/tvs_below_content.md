@@ -13,7 +13,7 @@ translation: "building-sites/settings/tvs_below_content"
 
 ### Yes
 
-Все TV отображаются под контентом Resource, как и для MODX Evolution.
+Все TV отображаются под контентом Resource.
 
 ![](tvs_below_content.jpg)
 

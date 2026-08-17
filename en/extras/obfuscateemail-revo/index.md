@@ -67,5 +67,5 @@ Protect your users and make your self look good in the process.
 
 ## History
 
-This Plugin was originally released for MODX Evolution by Aloysius Lim: <https://modx.com/extras/package/obfuscateemail>. When I made the jump to MODX Revolution a few years ago, I brought this plugin along as it had served my clients well. With the Release of MODX Revolution 2.1 and its move away from legacy code, some updates had to be performed.
+This plugin was originally released by Aloysius Lim: <https://modx.com/extras/package/obfuscateemail>. Later ports target MODX Revolution. With MODX Revolution 2.1 and its move away from legacy code, some updates had to be performed.
 I hope you find ObfuscateEmail-Revo as effective as I have over the years.

@@ -77,9 +77,3 @@ Love MODX? Learn how to get involved in the Community and contribute to the open
 - [Filing and Discussing Issues](contribute/issues)
 - [Becoming a Contributor](contribute/code)
 - [Documentation Style Guide](contribute/documentation/style-guide)
-
-## What about MODX Evolution?
-
-Evolution is MODX's classic codebase - the original version released in 2005. [As of April 2017](https://modx.com/blog/evolution-cms-has-a-new-home) Evolution is officially a separate project, no longer under the wings of MODX. That means Evolution has its own leadership, processes, and community.
-
-All information about Evolution, including documentation and extras, can be found at [evo.im](https://evo.im/).

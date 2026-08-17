@@ -10,8 +10,6 @@ CMP stands for Custom Manager Page, and it is simply a custom page that loads in
 
 If you are a developer looking to build an extra which includes a component, you should follow the [Developing an Extra for MODX Revolution tutorial](extending-modx/tutorials/developing-an-extra), as it walks you through all the specific steps and terminology based on an example package called doodles. This page only goes into a minimum set up for custom manager pages.
 
-The equivalent of a CMP or Component in MODX Evolution is a Module, though the technique in which they are created is quite different.
-
 ## Namespaces
 
 CMPs need a namespace in order for MODX to know where to load the files from.

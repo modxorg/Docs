@@ -22,7 +22,7 @@ translation: "getting-started/upgrading-to-3.0/breaking-changes"
 ## Очистка устаревшего функционала
 
 - Поле `modResource->contentType` удалено. В Revolution 2.0 его заменило поле `content_type`, которое ссылается на экземпляр `modContentType`. [#14057](https://github.com/modxcms/revolution/pull/14057)
-- `modParser095`, `modTranslate095` и `modTranslator` удалены. Это утилиты для переноса шаблонов из синтаксиса Evolution. [#14133](https://github.com/modxcms/revolution/pull/14133)
+- `modParser095`, `modTranslate095` и `modTranslator` удалены. Это утилиты для переноса шаблонов из старого синтаксиса 1.x. [#14133](https://github.com/modxcms/revolution/pull/14133)
 - Каталог `/manager/min/` удалён. Не использовался с 2.5. [#12778](https://github.com/modxcms/revolution/pull/12778), [#13194](https://github.com/modxcms/revolution/pull/13194), [#14416](https://github.com/modxcms/revolution/pull/14416)
 - Удалены неиспользуемые сетки ExtJS: assets/modext/widgets/resource/modx.grid.resource.security.js, assets/modext/widgets/security/modx.grid.role.user.js, assets/modext/workspace/lexicon/language.grid.js, assets/modext/workspace/lexicon/lexicon.topic.grid.js [#14895](https://github.com/modxcms/revolution/pull/14895)
 - Привязка `@EVAL` удалена у TV [#13865](https://github.com/modxcms/revolution/pull/13865)
