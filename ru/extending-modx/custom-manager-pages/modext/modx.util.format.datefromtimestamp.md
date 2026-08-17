@@ -5,7 +5,7 @@ translation: "extending-modx/custom-manager-pages/modext/modx.util.format.datefr
 
 ## MODx.util.Format.dateFromTimestamp
 
-Доступен в MODX **3.x**. Превращает Unix-время в строку по форматам даты и времени менеджера из системных настроек (`manager_date_format`, `manager_time_format`).
+Доступен в MODX **3.0+** (хелперы даты/времени менеджера). Превращает Unix-время в строку по форматам даты и времени менеджера из системных настроек (`manager_date_format`, `manager_time_format`).
 
 Вызывайте в сетках и панелях CMP, когда показываете время файлов или другие Unix-метки и хотите тот же вид, что в ядре менеджера.
 

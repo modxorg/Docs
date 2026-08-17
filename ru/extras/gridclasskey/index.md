@@ -94,7 +94,13 @@ On this example, let's named it "author".
 
 ![](authortv.png)
 
-We need a snippet that will list the users from this particular user group, we use [@EVAL binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding) feature for this.
+Create a snippet that lists users from that usergroup (next step), then set the TV Input Option Values to:
+
+```php
+@SNIPPET authorListTV
+```
+
+`@EVAL` bindings are removed in MODX 3. Use [`@SNIPPET`](building-sites/elements/template-variables/bindings/snippet-binding) instead.
 
 ##### 3. Create snippet to list the authors on Template Variable's values
 

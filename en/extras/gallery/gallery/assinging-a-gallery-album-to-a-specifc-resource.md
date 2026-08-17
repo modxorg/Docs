@@ -1,51 +1,35 @@
 ---
-title: "Assigning a Gallery album to a specifc resource"
+title: "Assigning a Gallery album to a specific resource"
 _old_id: "1757"
 _old_uri: "revo/gallery/gallery.gallery/assinging-a-gallery-album-to-a-specifc-resource"
 ---
 
-One thing Gallery lacks out-of-box is assigning albums to a resources. To get this, you'll need to create a Listbox [tv](making-sites-with-modx/customizing-content/template-variables) and use [EVAL-binding](making-sites-with-modx/customizing-content/template-variables/bindings/eval-binding) to create the Listbox items dynamically.
+Gallery does not assign albums to Resources out of the box. Use a Listbox TV whose options come from the album table.
 
-To assign a gallery to a specific resource, do the following.
+`@EVAL` bindings are removed in MODX 3. Prefer `@SELECT` (below) or an [`@SNIPPET`](building-sites/elements/template-variables/bindings/snippet-binding) that returns `label==id` pairs.
 
-1\. Install [Gallery](https://rtfm.modx.com/extras/revo/gallery/gallery.gallery) extension
+1. Install the [Gallery](extras/gallery) Extra.
 
-2\. Create some galleries, and fill them with images.
+2. Create albums and add images.
 
-3\. Create a chunk named "galleryDropdownList" for instance.
+3. Create a Listbox TV named `assignedGallery` (single or multi, depending on how many albums you need per Resource).
 
-``` php
-[[+name]]==[[+id]]||
-```
+**Input Option Values** — load active albums from the Gallery tables (adjust the table prefix if yours is not `modx_`):
 
-4\. Create a new [tv](making-sites-with-modx/customizing-content/template-variables) with a name "assignedGallery". **Input options:**
-
-Input type = Listbox (single- or multi- - depends on how many galleries you want to assign to a resource).
-
-Input Option Values (just copy-paste the following code):
-
-``` php
-$output = $modx->runSnippet("GalleryAlbums",array("rowTpl"=>"galleryDropdownList"))."none==0"; return $output;
-```
-
-OR as an alternative to point 3 and 4, use this Select as Input Option Values (benefit: no need of @EVAL and no need of a chunk):
-
-``` sql
+```sql
 @SELECT GROUP_CONCAT(name, '==', id SEPARATOR '||') FROM `modx_gallery_albums` WHERE active=1
 ```
 
-Default Value: 0
+- Default Value: `0`
+- Enable Type-Ahead: Yes
+- Force Selection to List: Yes
 
-Enable Type-Ahead: Yes
+4. Assign the TV to the templates that should pick an album. Save.
 
-Force Selection to List: Yes
+5. Edit a Resource, open Template Variables, choose the album, Save.
 
-5\. Assign your tv to a templates of a desired resources, and select some category for it. Save.
+6. In the page Template, render the album:
 
-6\. Open target resource in manager, go to Template Variables, and locate your tv. Choose proper gallery album for it, and click Save, when you done.
-
-7\. In your page template, place the following code where you expect your gallery to be rendered:
-
-``` php
+```php
 [[!Gallery? &album=`[[*assignedGallery]]`]]
 ```

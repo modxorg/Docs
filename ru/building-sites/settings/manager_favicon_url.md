@@ -5,9 +5,11 @@ translation: "building-sites/settings/manager_favicon_url"
 
 ## manager_favicon_url
 
--   **Имя**: URL фавиконки панели управления
--   **Тип**: Textfield
--   **По умолчанию**:
--   **Доступно в**: 2.1+
+**Name**: Manager Favicon URL  
+**Type**: Textfield  
+**Default**: `favicon.ico` (MODX 3.0+; раньше часто оставляли пустым)  
+**Available In**: 2.1+
 
-Если установлено, этот URL будет загружен как значок для менеджера MODX. Должен быть относительным URL-адресом manager/ каталога или абсолютным URL-адресом.
+URL favicon для менеджера MODX. Относительный путь от каталога `manager/` или абсолютный URL.
+
+См. также [Изменения системных настроек в 3.0](getting-started/upgrading-to-3.0/system-settings).

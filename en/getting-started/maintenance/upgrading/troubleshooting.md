@@ -25,9 +25,7 @@ If you didn't backup, you can try creating a new core/config/config.inc.php from
 
 Make sure to clear your browser cache. Browsers cache the JS and CSS in the manager to have it load faster, and this often causes issues when upgrading, as the browser persists in using the old files. (Note: this is less of an issue post-2.0.2, as JS files are now prefixed with the version to make them non-cacheable after upgrades.)
 
-### Some manager pages are blank due to 400 Bad Request from manager/min/
-
-If you've never had problems with min before and you happen to have installed the ACE Extra, make sure the files it refers to in manager/components/ace/ exist.
+On MODX 3.x the Manager ships prebuilt asset bundles. There is no `manager/min/` compressor path anymore (removed in 3.0). If a page looks blank after upgrade, clear the browser cache for the manager host and confirm your Extra still loads its own assets under `manager/components/`.
 
 ## Still Problems?
 
