@@ -5,7 +5,7 @@ sortorder: 5
 translation: "getting-started/upgrading-to-3.0/xpdo"
 ---
 
-В MODX 3 **xPDO 3** ставится через Composer (`xpdo/xpdo` в `composer.json`). Библиотека больше не лежит россыпью в `core/xpdo/`. Классы моделей живут в PHP-namespaces и грузятся через PSR-4. [#14534](https://github.com/modxcms/revolution/pull/14534), [#13781](https://github.com/modxcms/revolution/pull/13781)
+В MODX 3 **xPDO 3** лежит в `core/vendor/xpdo/` (пакет Composer `xpdo/xpdo`). Библиотека больше не лежит россыпью в `core/xpdo/`. Классы моделей живут в PHP-namespaces и грузятся через PSR-4.
 
 Эта страница — ориентир для апгрейда. Пошаговая сборка нового Extra: [Использование пользовательских таблиц БД](extending-modx/tutorials/using-custom-database-tables). Справочник API: [xPDO](extending-modx/xpdo).
 
@@ -13,27 +13,21 @@ translation: "getting-started/upgrading-to-3.0/xpdo"
 
 | Тема | MODX 2 / xPDO 2 | MODX 3 / xPDO 3 |
 | --- | --- | --- |
-| Где лежит xPDO | `core/xpdo/` | `core/vendor/xpdo/` через Composer |
+| Где лежит xPDO | `core/xpdo/` | `core/vendor/xpdo/` (входит в релиз) |
 | Autoload | загрузчики MODX / xPDO | Composer `autoload.php` + PSR-4 |
 | Модели ядра | `core/model/modx/*.class.php` | `core/src/Revolution/` в `MODX\Revolution\` |
 | Атрибут `package` в schema | короткое имя пакета (`modx`) | PHP-namespace (`MODX\Revolution\`) |
 | Базовые классы | `xPDOObject`, `xPDOSimpleObject` | `xPDO\Om\xPDOObject`, `xPDO\Om\xPDOSimpleObject` |
-| Метаданные пакета | поклассовые `*.map.inc.php` в `mysql/` | пакетный `metadata.mysql.php` с `class_map` (schema `version="3.0"`) |
+| Метаданные пакета | `metadata.mysql.php` плюс поклассовые карты в `mysql/` (schema `version` 1.x) | Тот же файл, но metadata schema `version="3.0"` с `namespace`, `namespacePrefix` и `class_map` для PSR-4 |
 | `addPackage` | путь + папка пакета | путь + namespaced package + опциональный `$namespacePrefix` |
 
 `modX` по-прежнему расширяет `xPDO\xPDO`, поэтому `$modx->getObject()`, `newQuery()` и остальное остаются на экземпляре MODX.
 
-## Composer и PSR-4
+## Vendor и PSR-4
 
-Зависимости ставятся из корня проекта (там, где `composer.json`):
+Обычная загрузка дистрибутива или обновление через Package Manager уже кладёт `core/vendor/` и `core/vendor/autoload.php`. Для получения xPDO 3 **не** нужен свой `composer.json` у сайта и **не** нужен ручной `composer install`. Setup и фронт-контроллеры подключают bundled autoloader. Отдельные файлы классов xPDO подключать не нужно.
 
-```bash
-composer install
-# или после смены зависимостей
-composer update
-```
-
-Composer кладёт библиотеки в `core/vendor/` и собирает `core/vendor/autoload.php`. Setup и фронт-контроллеры подключают этот autoloader. Отдельные файлы классов xPDO подключать не нужно.
+Composer нужен, если вы собираете Revolution из Git, пересобираете модели ядра или ведёте Extra со своими Composer-зависимостями. В этих случаях используется `composer.json` релиза (или Extra), а библиотеки пишутся в `core/vendor/`.
 
 Код ядра MODX тоже идёт через Composer (`"MODX\\": "core/src/"`). Поэтому [каталог core должен оставаться `/core/`](getting-started/upgrading-to-3.0/core-folder) в корне проекта.
 
@@ -100,7 +94,7 @@ $item = $modx->getObject(\ToDo\Model\Task::class, $id);
 - `src/Model/metadata.mysql.php` (`version` ≥ `3.0`, `namespace`, `namespacePrefix`, `class_map`)
 - `src/Model/mysql/Task.php` (карта платформы)
 
-Старые раскладки 2.x только с `model/mycomp/mysql/myobject.map.inc.php` без `metadata.mysql.php` версии 3.0 дают warning по metadata и не регистрируют PSR-4 так же.
+В Extra на MODX 2.x `metadata.mysql.php` уже был. Для MODX 3 перегенерируйте его из schema с `version="3.0"`, чтобы появились namespace-поля и `class_map`. Metadata 2.x (или раскладка без пересборки под 3.0) не регистрирует PSR-4 так же и может писать warning по package metadata.
 
 ## Миграция модели Extra с 2.x
 
@@ -112,7 +106,7 @@ $item = $modx->getObject(\ToDo\Model\Task::class, $id);
 4. **Обновите `addPackage`** до namespaced-формы и вызывайте его из [`bootstrap.php`](extending-modx/namespaces) при загрузке Extra.
 5. **Замените строковые имена классов** на `::class` или FQCN в `getObject`, `newObject`, `newQuery`, процессорах и атрибутах vehicle.
 6. **Исправьте `instanceof` и type hint’ы** на namespaced-классы. Короткие имена вроде `modResource` или старого `MyObject` в 3.x не являются реальными PHP-классами.
-7. **Уберите** `require`/`include` для `xpdo.class.php` и отдельных model-файлов. Опирайтесь на Composer и `addPackage`.
+7. **Уберите** `require`/`include` для `xpdo.class.php` и отдельных model-файлов. Опирайтесь на bundled vendor autoloader и `addPackage`.
 
 ### Было / стало (объект ядра)
 

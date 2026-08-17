@@ -4,7 +4,7 @@ description: "Composer, PSR-4, and migrating custom models from MODX 2.x to MODX
 sortorder: 5
 ---
 
-MODX 3 ships **xPDO 3** through Composer (`xpdo/xpdo` in `composer.json`). The library no longer lives as loose files under `core/xpdo/`. Model classes use PHP namespaces and PSR-4 autoloading. [#14534](https://github.com/modxcms/revolution/pull/14534), [#13781](https://github.com/modxcms/revolution/pull/13781)
+MODX 3 ships **xPDO 3** under `core/vendor/xpdo/` (Composer package `xpdo/xpdo`). The library no longer lives as loose files under `core/xpdo/`. Model classes use PHP namespaces and PSR-4 autoloading.
 
 This page is the upgrade-oriented reference. For a full walkthrough that builds a new Extra from scratch, use [Using Custom Database Tables](extending-modx/tutorials/using-custom-database-tables). For API methods, start at [xPDO](extending-modx/xpdo).
 
@@ -12,27 +12,21 @@ This page is the upgrade-oriented reference. For a full walkthrough that builds 
 
 | Topic | MODX 2 / xPDO 2 | MODX 3 / xPDO 3 |
 | --- | --- | --- |
-| Where xPDO lives | `core/xpdo/` | `core/vendor/xpdo/` via Composer |
+| Where xPDO lives | `core/xpdo/` | `core/vendor/xpdo/` (bundled with the release) |
 | Autoload | MODX / xPDO class loaders | Composer `autoload.php` + PSR-4 |
 | Core models | `core/model/modx/*.class.php` | `core/src/Revolution/` under `MODX\Revolution\` |
 | Schema `package` | Short package folder name (`modx`) | PHP namespace (`MODX\Revolution\`) |
 | Base classes | `xPDOObject`, `xPDOSimpleObject` | `xPDO\Om\xPDOObject`, `xPDO\Om\xPDOSimpleObject` |
-| Package metadata | Per-class `*.map.inc.php` under `mysql/` | Package `metadata.mysql.php` with a `class_map` (schema `version="3.0"`) |
+| Package metadata | `metadata.mysql.php` plus per-class maps under `mysql/` (schema `version` 1.x) | Same filename, but schema `version="3.0"` metadata with `namespace`, `namespacePrefix`, and a `class_map` for PSR-4 |
 | `addPackage` | Path + package folder | Path + namespaced package + optional `$namespacePrefix` |
 
 `modX` still extends `xPDO\xPDO`, so `$modx->getObject()`, `newQuery()`, and friends stay on the main MODX instance.
 
-## Composer and PSR-4
+## Vendor layout and PSR-4
 
-Install or update dependencies from the project root (or wherever your `composer.json` lives):
+A normal download or Package Manager upgrade already includes `core/vendor/` and `core/vendor/autoload.php`. You do **not** need a project-level `composer.json` or a manual `composer install` to get xPDO 3. Setup and front controllers load that bundled autoloader. You do not `require` individual xPDO class files.
 
-```bash
-composer install
-# or, after dependency bumps
-composer update
-```
-
-Composer writes libraries into `core/vendor/` and generates `core/vendor/autoload.php`. Setup and front controllers load that autoloader. You do not `require` individual xPDO class files.
+Composer matters if you develop from a Git checkout of Revolution, rebuild core models, or ship an Extra that manages its own Composer dependencies. Those workflows use the release `composer.json` (or the Extra’s) and write libraries into `core/vendor/`.
 
 MODX core code maps through Composer as well (`"MODX\\": "core/src/"`). That is why the [core folder must stay at `/core/`](getting-started/upgrading-to-3.0/core-folder) in the project root.
 
@@ -99,7 +93,7 @@ Generate classes with your build script or the xPDO CLI (`core/vendor/bin/xpdo p
 - `src/Model/metadata.mysql.php` (`version` ≥ `3.0`, `namespace`, `namespacePrefix`, `class_map`)
 - `src/Model/mysql/Task.php` (platform map)
 
-Old 2.x layouts that only ship `model/mycomp/mysql/myobject.map.inc.php` without a 3.0 `metadata.mysql.php` will log a package metadata warning and will not register PSR-4 the same way.
+MODX 2.x Extras already shipped a `metadata.mysql.php`. For MODX 3 regenerate it from a `version="3.0"` schema so it includes the namespace fields and `class_map`. A 2.x metadata file (or a layout that never got a 3.0 metadata rebuild) will not register PSR-4 the same way and can log a package metadata warning.
 
 ## Migrating a 2.x Extra model
 
@@ -111,7 +105,7 @@ Work through this checklist for each custom package:
 4. **Update `addPackage`** to the four-argument (or namespaced) form and load it from [`bootstrap.php`](extending-modx/namespaces) when the Extra boots.
 5. **Replace string class keys** in PHP with `::class` or FQCNs in `getObject`, `newObject`, `newQuery`, processors, and vehicle attributes.
 6. **Fix `instanceof` and type hints** to the namespaced classes. Short names like `modResource` or your old `MyObject` are not real PHP classes in 3.x.
-7. **Drop** `require`/`include` of `xpdo.class.php` or per-class model files. Rely on Composer + `addPackage`.
+7. **Drop** `require`/`include` of `xpdo.class.php` or per-class model files. Rely on the bundled vendor autoloader + `addPackage`.
 
 ### Before / after (core object)
 
