@@ -67,4 +67,4 @@ MODX загружает запрошенный [Ресурс](building-sites/res
 ## Смотрите также
 
 1. [Словарь терминов Revolution](getting-started/glossary)
-1. [Объяснение структуры каталогов](getting-started/directory-structure)
+2. [Объяснение структуры каталогов](getting-started/directory-structure)
