@@ -20,13 +20,13 @@ _HybridAuth помогает разработчикам строить соци�
 2. Откройте системные настройки в менеджере, переключитесь на hybridauth и создайте или обновите ha.keys.Servicename. Для Twitter это ha.keys.Twitter
 3. Укажите ключи как JSON-строку с массивом
 
-``` json
-{"key":"your key from twitter","secret":"secret from twitter"}
-```
+    ``` json
+    {"key":"your key from twitter","secret":"secret from twitter"}
+    ```
 
-![](ha3.png)
+    ![](ha3.png)
 
-Это нужно для корректной инициализации библиотеки (<http://hybridauth.sourceforge.net/userguide/Configuration.html>).
+    Это нужно для корректной инициализации библиотеки (<http://hybridauth.sourceforge.net/userguide/Configuration.html>).
 
 4. Запустите сниппет `[[!HybridAuth?providers=`Twitter`]]` на любой странице
 
