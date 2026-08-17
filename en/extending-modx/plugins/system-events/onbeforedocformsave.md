@@ -2,63 +2,74 @@
 title: "OnBeforeDocFormSave"
 _old_id: "381"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbeforedocformsave"
+description: "Plugin event fired before the Manager Resource create/update processor saves the resource"
 ---
 
 ## Event: OnBeforeDocFormSave
 
-Fires before a Resource is saved in the manager via the editing form. This allows code to prevent the saving of a document.
+Fires in the Manager **before** the Resource create or update processor persists the Resource. Use it to change fields on the `$resource` object, or to block the save.
 
 - Service: 1 - Parser Service Events
 - Group: Documents
 
-**Be Careful with TVs**
-Changing or inserting TV values is better done [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave "OnDocFormSave") as the process for saving TVs during onBeforeDocFormSave is more complicated due to TV values being rendered.
+Fired from `MODX\Revolution\Processors\Resource\Create` and `Update` (also `UpdateFromGrid`). Flow in those processors:
 
-Plugins tied to this event should return **null** on success. Any value returned will be sent to the logs as an error (but the page will still be saved).
+1. Fields are applied to the Resource object
+2. `OnBeforeDocFormSave` runs
+3. The processor calls `$resource->save()`
+4. After-save work runs (TVs on update, resource groups, and so on)
+5. `OnDocFormSave` runs
 
-You may also pass a message to the `$modx->event->output()` function and this will be displayed to the user in a modal pop-up window. If you pass a value here, **the page will _not_ be saved!**
+### Changing fields vs calling `save()`
 
-**Text Only**
- If you pass a value to the `$modx->event->output()`, it must be text only! HTML tags are not allowed: they will cause the modal window to hang.
+For Resource fields, call `$resource->set(...)`. You do **not** need `$resource->save()` in the plugin. The processor saves after your plugin returns.
+
+Do **not** call `$resource->save()` here unless you have a rare reason to persist early. An early `save()` can write the row before Template Variables and related after-save steps run, and it muddies create vs update timing. Prefer [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave) for TV changes (`setTVValue`).
+
+### Blocking the save
+
+Plugins should return nothing (or an empty value) on success. A non-empty return value is treated as an error message and is logged; depending on how it is returned it may still allow the save to continue.
+
+To **stop** the save and show a message in the Manager, pass text to `$modx->event->output(...)`. That text must be plain text (no HTML), or the modal can hang.
 
 ## Event Parameters
 
-| Name     | Description                                            |
-| -------- | ------------------------------------------------------ |
-| mode     | Either 'new' or 'upd', depending on the circumstances. |
-| resource | A reference to the modResource object.                 |
-| id       | The ID of the Resource. Will be 0 for new Resources.   |
+| Name | Description |
+| --- | --- |
+| mode | `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`) |
+| resource | Reference to the `modResource` object (passed by reference) |
+| id | Resource ID. `0` for new Resources that are not saved yet |
 
 ## Examples
 
-### Require a Field
+### Require a field
 
 ``` php
-if (empty($resource->longtitle)) {
-    $modx->event->output('Long title is required!'); // to modal window
-    return '[MyPlugin] Failed to save page id '.$id.' due to missing longtitle'; // to the error log
+if (empty($resource->get('longtitle'))) {
+    $modx->event->output('Long title is required!');
+    return;
 }
 ```
 
-### Calculate a Field Value
+### Set a field before the processor saves
 
 ``` php
-if ($resource->get('parent') == 123) {
+if ((int) $resource->get('parent') === 123) {
     $resource->set('template', 4);
 }
 ```
 
-Such a plugin will not allow the creation of new resources, and will not save resources that are not filled `introtext`:
+No `$resource->save()` here. The create/update processor saves next.
+
+### Block create, or updates missing introtext
 
 ``` php
 <?php
-$eventName = $modx->event->name;
-switch($eventName) {
+switch ($modx->event->name) {
     case 'OnBeforeDocFormSave':
         if ($mode == modSystemEvent::MODE_UPD) {
-            //if not filled introtext
-            if (!$resource->get('introtext')){
-                $modx->event->output("You have not forgotten your head at home, but you have forgotten about the 'Keywords'!");
+            if (!$resource->get('introtext')) {
+                $modx->event->output("Please fill in the Intro Text field.");
             }
         } elseif ($mode == modSystemEvent::MODE_NEW) {
             $modx->event->output("You cannot create resources!");
@@ -67,25 +78,21 @@ switch($eventName) {
 }
 ```
 
-Such a plugin will set the value of the field `template=1` for all resources located in the root, i.e. `parent=0`:
+### Force a template for root resources
 
 ``` php
 <?php
-$eventName = $modx->event->name;
-switch($eventName) {
+switch ($modx->event->name) {
     case 'OnBeforeDocFormSave':
-        if ($resource->get('parent') == 0) {
-            $resource->set('template', '1');
-            $resource->save();
+        if ((int) $resource->get('parent') === 0) {
+            $resource->set('template', 1);
         }
         break;
 }
 ```
 
-**Saving Not! Happens Automatically**
-You should run the `$resource->save()` method additionally, as that doesn't happen automatically.
-
 ## See Also
 
-- [System Events](extending-modx/plugins/system-events "System Events")
-- [Plugins](extending-modx/plugins "Plugins")
+- [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave)
+- [System Events](extending-modx/plugins/system-events)
+- [Plugins](extending-modx/plugins)
