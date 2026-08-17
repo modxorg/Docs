@@ -8,8 +8,6 @@ ArchivistGrouper is a snippet in the [Archivist](extras/archivist) Extra. It lis
 
 Articles ships Archivist and uses this snippet for nested archive navigation. You can call it on any site that has the Archivist package installed.
 
-Verified against [modxcms/Archivist](https://github.com/modxcms/Archivist) (`snippet.archivistgrouper.php` on `develop`). Archivist is an Extra, not part of MODX Revolution core.
-
 ## Usage
 
 Place the snippet where you want the grouped archive list. Point `parents` at the blog or article containers, and `target` at the Resource that runs getArchives.
