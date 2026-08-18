@@ -16,6 +16,8 @@ translation: "getting-started/upgrading-to-3.0/class-names"
 
 Большинство классов моделей и служб, которые загружаются через `$modx->loadClass` (который включает в себя конструктор запросов xPDO для классов моделей) или `$modx->getService` будет по-прежнему работать, так как `loadClass` внутренне переводит их в свои новые имена классов.
 
+Сам `$modx->getService()` в 3.x **устарел**. phpdoc xPDO (и PhpStorm) всё ещё пишут про удаление в 3.1. Его не удалили: метод на месте, ядро его вызывает. В новом коде регистрируйте и забирайте объекты через `$modx->services`. См. [modX.getService](extending-modx/modx-class/reference/modx.getservice) и [DI-контейнер](extending-modx/di-container).
+
 Для примера `$modx->getIterator('modResource')` все равно будет работать - _пока_, хотя `\modResource` класс сейчас `\MODX\Revolution\modResource`.
 
 Это будет регистрировать устаревшее сообщение в журнале ошибок, призывающее вас обновить ссылку. Правильный вызов был бы `$modx->getIterator(\MODX\Revolution\modResource::class)`.

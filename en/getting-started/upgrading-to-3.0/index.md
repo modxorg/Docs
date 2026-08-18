@@ -21,6 +21,7 @@ After upgrading the core and upgrading your extras, you may encounter some break
 - [A list of breaking changes can be found here](getting-started/upgrading-to-3.0/breaking-changes), most notably [many core classes have been moved and renamed](getting-started/upgrading-to-3.0/class-names)
 - [The manager language is now dynamic](getting-started/upgrading-to-3.0/manager-language)
 - [Various system settings have been removed or changed](getting-started/upgrading-to-3.0/system-settings)
+- `$modx->getService()` is deprecated in favour of the [DI container](extending-modx/di-container) (`$modx->services`). The method still works and was **not** removed in 3.1. See [modX.getService](extending-modx/modx-class/reference/modx.getservice).
 
 ## Other notable changes and improvements
 

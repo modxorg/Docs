@@ -5,15 +5,15 @@ translation: "extending-modx/services"
 
 ## Что такое сервис?
 
-Сервис - это любой объект, который загружается через [$modx->getService](extending-modx/modx-class/reference/modx.getservice "modX.getService"). Это может быть пользовательский класс, предоставленный пользователем, или самим MODX.
+Сервис это объект в [контейнере внедрения зависимостей](extending-modx/di-container) (`$modx->services`). В 2.x и по-прежнему в 3.x многие extras грузят сервисы через [$modx->getService](extending-modx/modx-class/reference/modx.getservice). Этот хелпер в 3.x устарел. Берите `has` / `add` / `get` у `$modx->services`.
 
-Как только объект загружен с помощью getService, он доступен через `$modx->(servicename)`. Так, например:
+Когда сервис уже в контейнере, его можно повесить на `$modx` вручную (`$modx->error = $modx->services->get('error')`). `getService` делал это сам.
 
 ``` php
-$modx->getService('twitter','myTwitter','/path/to/twitter/model/',array(  
-  'api_key' => 3212423,
-));  
-$modx->twitter->tweet('Success!');  
+$modx->services->add('twitter', function($c) use ($modx) {
+    return new MyPackage\Twitter($modx, ['api_key' => 3212423]);
+});
+$modx->services->get('twitter')->tweet('Success!');
 ```
 
 ## Какие сервисы включены по умолчанию?
@@ -26,4 +26,5 @@ $modx->twitter->tweet('Success!');
 
 ## Смотрите также
 
-- [modX.getService](extending-modx/modx-class/reference/modx.getservice "modX.getService")
+- [modX.getService](extending-modx/modx-class/reference/modx.getservice)
+- [Контейнер внедрения зависимостей](extending-modx/di-container)

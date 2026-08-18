@@ -5,6 +5,8 @@ translation: "extending-modx/di-container/config"
 
 MODX 3 представляет контейнер для инъекций зависимости, основанный на [Pimple 3](https://github.com/silexphp/Pimple), который содержит сервисы ядра и кастомные сервисы.
 
+`$modx->getService()` ещё работает, но устарел. Новые сервисы регистрируйте через `add()` / `get()`, а не через `getService()`. См. [modX.getService](extending-modx/modx-class/reference/modx.getservice).
+
 Контейнер доступен в `modX:$services`, что означает, что он обычно доступен одним из следующих способов:
 
 -   `$modx->services` (в snippets, plugins, и так далее)

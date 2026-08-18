@@ -4,6 +4,8 @@ title: Dependency Injection Container
 
 MODX 3 introduces a Dependency Injection Container, based on [Pimple 3](https://github.com/silexphp/Pimple), that holds core services and custom services.
 
+`$modx->getService()` still works but is deprecated. Register new services with `add()` / `get()` here instead of `getService()`. See [modX.getService](extending-modx/modx-class/reference/modx.getservice).
+
 The container is available in `modX:$services`, meaning it is typically accessible in one of the following ways:
 
 - `$modx->services` (in snippets, plugins, etc)
