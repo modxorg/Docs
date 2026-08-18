@@ -4,30 +4,35 @@ _old_id: "1047"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2"
 ---
 
-This tutorial is for MODX Revolution 2.2 or greater.
+This tutorial is for MODX Revolution 2.2 and 3.x.
 
 ## What are Custom TV Input Types?
 
-MODX Revolution allows you to create your own custom TV input types (similar to the textbox, radio, textarea, richtext, etc types already available) for your [Template Variables](building-sites/elements/template-variables "Template Variables"). This tutorial will show a very simple example by loading a simple Template dropdown for us in the mgr, and then in the frontend will render our Template ID wrapped in a special div. We'll call it "TemplateSelect". We'll also make this an Extra called "OurTVs", meaning that we'll have the files outside of the normal TV input renders directory, and put it in our own Extra's directory in core/components/ourtvs/.
+MODX Revolution lets you add your own TV input types (beside textbox, radio, textarea, richtext, and the rest) for [Template Variables](building-sites/elements/template-variables). This example loads a Template dropdown in the Manager, then on the frontend prints the selected Template ID in a `div`. We call the type `templateselect` and keep the files in an Extra at `core/components/ourtvs/`.
+
+If the custom renderer is missing, MODX draws a **plain text field**. That is the fallback in `modTemplateVar::getRender()`, not a broken combo. The usual cause is skipping the pathing plugin below.
 
 ## Create a Namespace
 
-If you haven't already, go ahead and create a Namespace called "ourtvs" with the path "{core\_path}components/ourtvs/". This will help us later on.
+Create a Namespace named `ourtvs` with path `{core_path}components/ourtvs/`.
+
+In 3.x, MODX also scans `{namespace_path}/tv/input/` when it **lists** input types in the TV editor. That list is not the same as **rendering** the TV on a Resource. Rendering still uses the plugin events in the next step.
 
 ## Creating the Pathing Plugin
 
-We'll need a plugin to tell MODX where our custom TV directories are. Go ahead and make a plugin called "OurTvsPlugin", and assign it to the following events:
+You still need this plugin on 2.3 and on 3.x. The Namespace does not replace it for the Resource form.
 
-- _OnTVInputRenderList_ - For rendering the actual TV input in the backend
-- _OnTVOutputRenderList_ - For rendering the TV output in the frontend
-- _OnTVInputPropertiesList_ - For loading any custom properties for the input render in the manager
-- _OnTVOutputRenderPropertiesList_ - For loading any custom properties for the output render (front-end) of the TV
-- _OnDocFormPrerender_ - For loading any custom JS/CSS for our TV
+Create a plugin named `OurTvsPlugin` and attach **only** these events:
 
-Now put in the Plugin code:
+- `OnTVInputRenderList` — Manager input renderer
+- `OnTVOutputRenderList` — frontend output renderer
+- `OnTVInputPropertiesList` — input properties in the Manager
+- `OnTVOutputRenderPropertiesList` — output properties
+
+Plugin code:
 
 ``` php
-$corePath = $modx->getOption('core_path',null,MODX_CORE_PATH).'components/ourtvs/';
+$corePath = $modx->getOption('core_path').'components/ourtvs/';
 switch ($modx->event->name) {
     case 'OnTVInputRenderList':
         $modx->event->output($corePath.'tv/input/');
@@ -41,44 +46,40 @@ switch ($modx->event->name) {
     case 'OnTVOutputRenderPropertiesList':
         $modx->event->output($corePath.'tv/properties/');
         break;
-    case 'OnManagerPageBeforeRender':
-        break;
 }
 ```
 
-These event handlers tell MODX to check these directories for our TV files when doing all the rendering and processing. Think of it like adding library or include paths.
+Those handlers add include paths. Trailing slashes matter. After you save the plugin, clear the Manager cache.
 
-The pathing plugin will not be required in MODX 2.3; the Namespace will handle all the pathing. This is why we told you earlier to make the Namespace. :)
+If you skip this plugin, the TV type may still appear in the Input Type dropdown (3.x Namespace scan), but the Resource form falls back to a text field.
 
 ## Creating the Input Controller
 
-The input controller is what actually loads the markup for the custom TV input. Create the input controller file here:
+The input controller loads the markup. Create:
 
-> core/components/ourtvs/tv/input/templateselect.class.php
+> `core/components/ourtvs/tv/input/templateselect.class.php`
 
-And inside, you can put this code:
+The file name without `.class.php` is the type key: `templateselect`.
 
 ``` php
 <?php
-if(!class_exists('TemplateSelectInputRender')) {
+if (!class_exists('TemplateSelectInputRender')) {
     class TemplateSelectInputRender extends modTemplateVarInputRender {
         public function getTemplate() {
             return $this->modx->getOption('core_path').'components/ourtvs/tv/input/tpl/templateselect.tpl';
         }
-        public function process($value,array $params = array()) {
+        public function process($value, array $params = array()) {
         }
     }
 }
 return 'TemplateSelectInputRender';
 ```
 
-Here we tell it where to find our smarty template for rendering the TV, as well as having a process() method to do any business logic we want to do prior to rendering the TV.
+On 3.x, `modTemplateVarInputRender` is `MODX\Revolution\modTemplateVarInputRender`. The global name still works while deprecated class aliases are on (default). You can add `use MODX\Revolution\modTemplateVarInputRender;` at the top if you prefer the namespaced class.
 
-Now you can see here we are specifying a "tpl" file for rendering our TV. Go ahead and put it here:
+`getTemplate()` points at a Smarty file. Put it here:
 
-> core/components/ourtvs/tv/input/tpl/templateselect.tpl
-
-And make its content:
+> `core/components/ourtvs/tv/input/tpl/templateselect.tpl`
 
 ``` javascript
 <select id="tv{$tv->id}" name="tv{$tv->id}" class="combobox"></select>
@@ -102,24 +103,25 @@ MODx.load({
 </script>
 ```
 
-You don't have to use the ExtJS code as shown here to have a custom input type. It could even just be a straight HTML input. It's really up to you. Most importantly, your input type should have a name of `tv{$tv->id}`.
+You do not have to use ExtJS. A plain HTML control is fine. The control must use the name `tv{$tv->id}`.
 
-And that should render us a nice template dropdown in the backend:
+Create a Template Variable, set Input Type to `templateselect`, assign it to a Template, then edit a Resource. You should get a Template dropdown:
 
 ![](ctv1.png)
 
+If you still see a text box: confirm the plugin is enabled on `OnTVInputRenderList`, the class file path matches the output path, and the TV type key is `templateselect`.
+
 ## Creating the Output Controller
 
-Okay, so now we want to make the output controller, let's create the file at:
+Create:
 
-> core/components/ourtvs/tv/output/templateselect.class.php
-
-And the content:
+> `core/components/ourtvs/tv/output/templateselect.class.php`
 
 ``` php
-if(!class_exists('TemplateSelectOutputRender')) {
+<?php
+if (!class_exists('TemplateSelectOutputRender')) {
     class TemplateSelectOutputRender extends modTemplateVarOutputRender {
-        public function process($value,array $params = array()) {
+        public function process($value, array $params = array()) {
             return '<div class="template">'.$value.'</div>';
         }
     }
@@ -127,7 +129,7 @@ if(!class_exists('TemplateSelectOutputRender')) {
 return 'TemplateSelectOutputRender';
 ```
 
-There we go - now when we render this in the front-end, it will display the ID of our selected Template wrapped in a div.
+On the frontend this prints the selected Template ID inside a `div`.
 
 ## See Also
 

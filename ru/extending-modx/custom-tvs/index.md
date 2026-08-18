@@ -1,33 +1,38 @@
 ---
 title: "Настраиваемые TV переменные шаблона"
 translation: "extending-modx/custom-tvs"
-description: "Cоздание собственных пользовательских типы ввода для TV"
+description: "Создание собственных типов ввода для TV"
 ---
 
-Это руководство предназначено для MODX Revolution 2.2 или выше.
+Это руководство для MODX Revolution 2.2 и 3.x.
 
-## Что такое настраиваемые TV переменные шаблона?
+## Что такое настраиваемые типы ввода TV?
 
-MODX Revolution позволяет вам создавать собственные пользовательские типы ввода для [TV](getting-started/glossary#shablonnye-peremennye-ili-tv-parametry-ili-tv) (аналогичные уже доступным типам, таким как `textbox`, `radio`, `textarea`, `richtext` и т.д.) для ваших [TV](building-sites/elements/template-variables) . Это руководство покажет очень простой пример, загрузив для нас простой раскрывающийся список шаблонов в Менеджере, а затем во внешнем интерфейсе отобразит наш идентификатор шаблона, заключенный в специальный блок `<div>`. Назовем его `TemplateSelect`. Мы также создадим Дополнение под названием `OurTVs`, что означает, что у нас будут файлы вне обычного каталога рендеринга входных TV, и мы поместим их в наш собственный каталог Дополнения в `core/components/ourtvs/`. 
+MODX Revolution позволяет добавлять свои типы ввода для [TV](building-sites/elements/template-variables) рядом с `textbox`, `radio`, `textarea`, `richtext` и остальными. Этот пример показывает выпадающий список шаблонов в менеджере, а на фронтенде печатает ID выбранного шаблона в `div`. Тип называется `templateselect`. Файлы лежат в Extra по пути `core/components/ourtvs/`.
 
-## Создаем пространство имен
+Если кастомный рендерер не найден, MODX рисует **обычное текстовое поле**. Это запасной вариант в `modTemplateVar::getRender()`, а не сломанный combo. Чаще всего забыли плагин путей ниже.
 
-Если вы еще этого не сделали, создайте пространство имен под названием `ourtvs` с путем `{core\_path}components/ourtvs/`. Это поможет нам в дальнейшем. 
+## Создайте пространство имён
 
-## Создаем плагин
+Создайте Namespace с именем `ourtvs` и путём `{core_path}components/ourtvs/`.
 
-Нам понадобится плагин, чтобы сообщить MODX, где находятся наши пользовательские каталоги TV. Сделайте плагин под названием `OurTvsPlugin` и назначьте его следующим событиям:
+В 3.x MODX ещё смотрит `{namespace_path}/tv/input/`, когда **перечисляет** типы ввода в редакторе TV. Список типов и **отрисовка** TV на ресурсе это разные шаги. Для отрисовки нужен плагин из следующего шага.
 
-- _OnTVInputRenderList_ - для отображения фактического ввода TV в бэкэнде
-- _OnTVOutputRenderList_ - для отображения TV-вывода в веб-интерфейсе
-- _OnTVInputPropertiesList_ - Для загрузки любых настраиваемых свойств для входного рендера в Менеджере
-- _OnTVOutputRenderPropertiesList_ - для загрузки любых настраиваемых свойств для выходного TV рендера (интерфейс)
-- _OnDocFormPrerender_ - Для загрузки любого пользовательского JS/CSS для нашего TV
+## Создайте плагин путей
 
-Теперь введите код плагина: 
+Плагин нужен и в 2.3, и в 3.x. Namespace его для формы ресурса не заменяет.
+
+Создайте плагин `OurTvsPlugin` и повесьте **только** эти события:
+
+- `OnTVInputRenderList` — рендер ввода в менеджере
+- `OnTVOutputRenderList` — рендер вывода на фронтенде
+- `OnTVInputPropertiesList` — свойства ввода в менеджере
+- `OnTVOutputRenderPropertiesList` — свойства вывода
+
+Код плагина:
 
 ``` php
-$corePath = $modx->getOption('core_path',null,MODX_CORE_PATH).'components/ourtvs/';
+$corePath = $modx->getOption('core_path').'components/ourtvs/';
 switch ($modx->event->name) {
     case 'OnTVInputRenderList':
         $modx->event->output($corePath.'tv/input/');
@@ -41,44 +46,40 @@ switch ($modx->event->name) {
     case 'OnTVOutputRenderPropertiesList':
         $modx->event->output($corePath.'tv/properties/');
         break;
-    case 'OnManagerPageBeforeRender':
-        break;
 }
 ```
 
-Эти обработчики событий говорят MODX проверять эти каталоги на наличие наших TV файлов при выполнении всех операций рендеринга и обработки. Думайте об этом как о добавлении библиотеки или включении путей.
+Обработчики добавляют пути для include. Слеш в конце пути нужен. После сохранения плагина очистите кеш менеджера.
 
-Плагин для определения пути не потребуется в MODX 2.3. Пространство имен будет обрабатывать все пути. Вот почему мы ранее говорили вам создать пространство имен. :) 
+Без плагина тип может появиться в списке Input Type (в 3.x его подхватывает Namespace), но на форме ресурса останется текстовое поле.
 
-## Создание Контроллера ввода
+## Создайте контроллер ввода
 
-Контроллер ввода - это то, что фактически загружает разметку для пользовательского входа TV. Создайте здесь файл контроллера ввода: 
+Контроллер ввода грузит разметку. Создайте файл:
 
-> core/components/ourtvs/tv/input/templateselect.class.php
+> `core/components/ourtvs/tv/input/templateselect.class.php`
 
-Внутрь поместите следующий код:
+Имя файла без `.class.php` это ключ типа: `templateselect`.
 
 ``` php
 <?php
-if(!class_exists('TemplateSelectInputRender')) {
+if (!class_exists('TemplateSelectInputRender')) {
     class TemplateSelectInputRender extends modTemplateVarInputRender {
         public function getTemplate() {
             return $this->modx->getOption('core_path').'components/ourtvs/tv/input/tpl/templateselect.tpl';
         }
-        public function process($value,array $params = array()) {
+        public function process($value, array $params = array()) {
         }
     }
 }
 return 'TemplateSelectInputRender';
 ```
 
-Здесь мы сообщаем ему, где найти наш smarty шаблон для отображения TV, а также о наличии метода `process()` для выполнения любой бизнес-логики, которую мы хотим выполнить перед отображением TV.
+В 3.x класс называется `MODX\Revolution\modTemplateVarInputRender`. Глобальное имя работает, пока включены deprecated class aliases (так по умолчанию). Можно написать `use MODX\Revolution\modTemplateVarInputRender;` в начале файла, если хотите namespaced-класс.
 
-Теперь вы можете видеть, что здесь мы указываем файл `tpl` для отображения нашего TV. Продолжим и добавим сюда: 
+`getTemplate()` указывает на Smarty-файл. Положите его сюда:
 
-> core/components/ourtvs/tv/input/tpl/templateselect.tpl
-
-И добавим содержимое: 
+> `core/components/ourtvs/tv/input/tpl/templateselect.tpl`
 
 ``` javascript
 <select id="tv{$tv->id}" name="tv{$tv->id}" class="combobox"></select>
@@ -102,24 +103,25 @@ MODx.load({
 </script>
 ```
 
-Вам не нужно использовать код ExtJS, как показано здесь, чтобы иметь собственный тип ввода. Это может быть даже простой ввод HTML. Это действительно зависит от вас. Наиболее важно, чтобы ваш тип ввода имел имя `tv{$tv->id}`.
+ExtJS не обязателен. Подойдёт обычный HTML. У контрола должно быть имя `tv{$tv->id}`.
 
-И это должно дать нам красивый раскрывающийся список шаблонов в бэкэнде: 
+Создайте TV, в Input Type выберите `templateselect`, назначьте TV шаблону, откройте ресурс. Должен появиться список шаблонов:
 
 ![](ctv1.png)
 
-## Создание Контроллера вывода
+Если снова текстовое поле: плагин включён на `OnTVInputRenderList`, путь к class-файлу совпадает с `event->output`, ключ типа `templateselect`.
 
-Итак, теперь мы хотим создать контроллер вывода, давайте создадим файл по адресу: 
+## Создайте контроллер вывода
 
-> core/components/ourtvs/tv/output/templateselect.class.php
+Создайте файл:
 
-И теперь контент:
+> `core/components/ourtvs/tv/output/templateselect.class.php`
 
 ``` php
-if(!class_exists('TemplateSelectOutputRender')) {
+<?php
+if (!class_exists('TemplateSelectOutputRender')) {
     class TemplateSelectOutputRender extends modTemplateVarOutputRender {
-        public function process($value,array $params = array()) {
+        public function process($value, array $params = array()) {
             return '<div class="template">'.$value.'</div>';
         }
     }
@@ -127,7 +129,7 @@ if(!class_exists('TemplateSelectOutputRender')) {
 return 'TemplateSelectOutputRender';
 ```
 
-Итак, теперь, когда мы визуализируем это во фронтенде, он будет отображать идентификатор нашего выбранного шаблона, заключенного в `div`. 
+На фронтенде это выведет ID выбранного шаблона внутри `div`.
 
 ## Смотрите также
 
@@ -135,18 +137,17 @@ return 'TemplateSelectOutputRender';
 2. [Привязки](building-sites/elements/template-variables/bindings)
 3. [Привязка Чанка](building-sites/elements/template-variables/bindings/chunk-binding)
 4. [Привязка Каталога](building-sites/elements/template-variables/bindings/directory-binding)
-5. [EVAL Привязка](building-sites/elements/template-variables/bindings/eval-binding)
-6. [Привязка файла](building-sites/elements/template-variables/bindings/file-binding)
-7. [INHERIT Привязка](building-sites/elements/template-variables/bindings/inherit-binding)
-8. [Привязка Ресурса](building-sites/elements/template-variables/bindings/resource-binding)
-9. [SELECT Привязка](building-sites/elements/template-variables/bindings/select-binding)
-10. [TV типы ввода](building-sites/elements/template-variables/input-types)
-11. [TV типы вывода](building-sites/elements/template-variables/output-types)
-12. [TV тип вывода - дата](building-sites/elements/template-variables/output-types/date)
-13. [TV тип вывода TV - разделитель](building-sites/elements/template-variables/output-types/delimiter)
-14. [TV тип вывода - HTML тег](building-sites/elements/template-variables/output-types/html)
-15. [TV тип вывода - изображение](building-sites/elements/template-variables/output-types/image)
-16. [TV тип вывода - ссылка](building-sites/elements/template-variables/output-types/url)
-17. [Добавление произвольного TV - MODX 2.2](extending-modx/custom-tvs)
-18. [Создание поля множественного выбора для страниц в вашем шаблоне](building-sites/tutorials/multiselect-related-pages)
-19. [Доступ к значениям TV переменных шаблона через API](extending-modx/snippets/accessing-tvs)
+5. [Привязка файла](building-sites/elements/template-variables/bindings/file-binding)
+6. [INHERIT Привязка](building-sites/elements/template-variables/bindings/inherit-binding)
+7. [Привязка Ресурса](building-sites/elements/template-variables/bindings/resource-binding)
+8. [SELECT Привязка](building-sites/elements/template-variables/bindings/select-binding)
+9. [TV типы ввода](building-sites/elements/template-variables/input-types)
+10. [TV типы вывода](building-sites/elements/template-variables/output-types)
+11. [TV тип вывода - дата](building-sites/elements/template-variables/output-types/date)
+12. [TV тип вывода TV - разделитель](building-sites/elements/template-variables/output-types/delimiter)
+13. [TV тип вывода - HTML тег](building-sites/elements/template-variables/output-types/html)
+14. [TV тип вывода - изображение](building-sites/elements/template-variables/output-types/image)
+15. [TV тип вывода - ссылка](building-sites/elements/template-variables/output-types/url)
+16. [Добавление произвольного TV - MODX 2.2](extending-modx/custom-tvs)
+17. [Создание поля множественного выбора для страниц в вашем шаблоне](building-sites/tutorials/multiselect-related-pages)
+18. [Доступ к значениям TV переменных шаблона через API](extending-modx/snippets/accessing-tvs)
