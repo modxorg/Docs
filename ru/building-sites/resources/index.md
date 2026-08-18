@@ -19,6 +19,17 @@ translation: "building-sites/resources"
 
 Содержимое ресурса можно редактировать в большом поле (Содержимое) в нижней области. Другие поля, связанные с ресурсом, также можно редактировать с помощью вкладок в верхней части страницы.
 
+### Вкладка Resource Groups и чекбокс Access
+
+Вкладка **Resource Groups** (в русской локали менеджера — **Группы ресурсов**) показывает все группы ресурсов сайта. Колонка **Access** (**Доступ**) это членство в группе, а не выдача ACL.
+
+- Отметьте **Access** и сохраните: ресурс входит в группу (`modResourceGroupResource`).
+- Снимите **Access** и сохраните: ресурс выходит из группы.
+
+Страница остаётся публичной, пока вы не свяжете группу с группой пользователей и ACL. См. [Группы ресурсов](building-sites/client-proofing/security/resource-groups).
+
+Если создаёте ресурс под родителем, который уже в группах, эти чекбоксы **Access** сразу отмечены. Чтобы их видеть и менять, нужно право `resourcegroup_resource_edit`.
+
 ## Поля ресурсов
 
 По умолчанию у ресурсов есть список предопределенных полей. Вот они:
@@ -151,3 +162,4 @@ store/items.html?tag=Snacks&sort=Taste
 4. [Символическая ссылка](building-sites/resources/symlink)
     1. [Использование ресурсных ссылок](building-sites/resources/symlink/using-resource-symlinks)
 5. [Ссылка на сайт](building-sites/resources/weblink)
+6. [Группы ресурсов](building-sites/client-proofing/security/resource-groups)

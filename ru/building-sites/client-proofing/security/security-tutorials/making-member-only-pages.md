@@ -41,7 +41,7 @@ translation: "building-sites/client-proofing/security/security-tutorials/making-
 
 ### 2. Добавьте ресурсы в Resource Group
 
-Нужно указать MODX, какие ресурсы защищать. Оставайтесь на той же странице из шага 1 (Security > Resource Groups). Справа откройте контекст web, чтобы видеть страницы сайта. Перетащите их из правой колонки в группу ресурсов. Проще простого. Альтернатива: открыть каждый ресурс, вкладку Resource Groups и отметить чекбокс в колонке "Acces" в строке "Protected".
+Укажите MODX, какие ресурсы защищать. Оставайтесь на странице из шага 1 (Security > Resource Groups). Справа откройте контекст web, чтобы видеть страницы сайта. Перетащите их из правой колонки в группу ресурсов. Либо откройте каждый ресурс, вкладку Resource Groups и отметьте **Access** в строке "Protected".
 
 ### 3. Добавьте пользователей в User Group
 
@@ -85,7 +85,7 @@ translation: "building-sites/client-proofing/security/security-tutorials/making-
 
 Группа есть. Добавьте в неё ресурсы. Способов два.
 
-Первый: Security -> Resource Groups и перетащите ресурсы из правого дерева в левые группы ("Protected"). Второй: отредактируйте ресурс и отметьте нужный пункт на вкладке "Access Permissions".
+Первый: Security -> Resource Groups и перетащите ресурсы из правого дерева в левые группы ("Protected"). Второй: откройте ресурс и отметьте **Access** на вкладке Resource Groups.
 
 ### 3. Создайте User Group
 

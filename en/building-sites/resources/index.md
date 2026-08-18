@@ -21,6 +21,17 @@ Resources are shown in the Resources tree in the left-hand navigation of the man
 
 The content of the Resource can then be edited in the large content field in the bottom area. Other fields related to each Resource can also be edited via the tabs on the top of the page.
 
+### Resource Groups tab and the Access checkbox
+
+The **Resource Groups** tab lists every Resource Group on the site. The column labeled **Access** is membership, not an ACL grant.
+
+- Check **Access** and save: this Resource joins that group (`modResourceGroupResource`).
+- Uncheck **Access** and save: this Resource leaves that group.
+
+The page is still public until you pair the group with a User Group and an ACL. See [Resource Groups](building-sites/client-proofing/security/resource-groups).
+
+When you create a Resource under a parent that already belongs to groups, those **Access** boxes start checked. You need the `resourcegroup_resource_edit` permission to see and change them.
+
 ## Resource Fields
 
 Resources come packaged with a list of predetermined fields by default. They are:
@@ -154,3 +165,4 @@ The available schemes are:
 4. [Symlink](building-sites/resources/symlink)
     1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
 5. [Weblink](building-sites/resources/weblink)
+6. [Resource Groups](building-sites/client-proofing/security/resource-groups)
