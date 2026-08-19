@@ -38,6 +38,21 @@ translation: "getting-started/upgrading-to-3.0/processors"
 
 Любой вызов к ядру процессора должен быть рассмотрен. Старые имена действий в [modX::runProcessor](extending-modx/modx-class/reference/modx.runprocessor) (например `resource/create`) все еще поддерживаются, но возможно, что внутренняя логика некоторых процессоров изменилась.
 
+## Пользовательские типы ресурсов (CRC)
+
+Если класс пользовательского ресурса определяет `{ClassKey}CreateProcessor` или `{ClassKey}UpdateProcessor`, основные процессоры ресурсов создают этот класс вместо себя. Типы ресурсов, которые расширяют эти процессоры, должны использовать имена классов 3.x.
+
+В 2.x основные классы лежали в `core/model/modx/processors/resource/create.class.php` (`modResourceCreateProcessor`) и `update.class.php` (`modResourceUpdateProcessor`). Этих файлов больше нет.
+
+| Старый класс                    | Новый класс                                     |
+| ------------------------------- | ----------------------------------------------- |
+| `\modResourceCreateProcessor`   | `\MODX\Revolution\Processors\Resource\Create`   |
+| `\modResourceUpdateProcessor`   | `\MODX\Revolution\Processors\Resource\Update`   |
+
+`core/include/deprecated.php` даёт псевдонимы старых имён до 3.3. `require_once` путей 2.x падает.
+
+См. [Шаг 4: Настройка процессоров](extending-modx/custom-resources/step-4-processors).
+
 ## Процессоры с плоскими файлами больше не поддерживаются
 
 Поддержка так называемых процессоров с плоскими файлами (которые заканчиваются на `.php` вместо `.class.php` и не используют класс процессора) была удалена.

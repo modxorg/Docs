@@ -30,6 +30,8 @@ translation: "building-sites/resources/custom-resources"
 
 Контроллеры, процессоры и основные функции рендеринга могут быть расширены и переопределены. Например, вы можете автоматически добавлять текст к выводу любого содержимого пользовательских классов ресурсов, переопределяя метод `process()` или `getContent()` CRC в классе PHP. Любой метод в классе `modResource` доступен для переопределения при использовании пользовательских классов ресурсов.
 
+В MODX 3 процессор создания или обновления CRC должен расширять `\MODX\Revolution\Processors\Resource\Create` или `Update`. Старые имена `modResourceCreateProcessor` и `modResourceUpdateProcessor` работают как псевдонимы до 3.3. Файлы процессоров 2.x в `core/model/modx/processors/resource/` удалены. См. [Шаг 4: Настройка процессоров](extending-modx/custom-resources/step-4-processors) и [процессоры в заметках об обновлении до 3.0](getting-started/upgrading-to-3.0/processors).
+
 ## Создание Пользовательских классов ресурсов
 
 Пожалуйста, следуйте инструкциям на [Создание класса ресурса](extending-modx/custom-resources "Создание класса ресурса").

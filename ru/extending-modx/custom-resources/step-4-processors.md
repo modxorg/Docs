@@ -12,9 +12,37 @@ translation: "extending-modx/custom-resources/step-4-processors"
 
 Это небольшой бонусный материал, помогающий определить некоторые вещи, что можно сделать, расширяя стандартные процессоры.
 
+## Имена классов в MODX 3.x
+
+При создании или обновлении CRC метод `MODX\Revolution\Processors\Resource\Create::getInstance()` ищет класс `{class_key}CreateProcessor`. Процессор обновления ищет `{class_key}UpdateProcessor`. Эти классы должны расширять основные процессоры ресурсов.
+
+Файлы 2.x `core/model/modx/processors/resource/create.class.php` и `update.class.php` удалены. Не подключайте их через `require_once`.
+
+| Старый класс | Новый класс |
+| --- | --- |
+| `modResourceCreateProcessor` | `\MODX\Revolution\Processors\Resource\Create` |
+| `modResourceUpdateProcessor` | `\MODX\Revolution\Processors\Resource\Update` |
+
+`core/include/deprecated.php` даёт псевдонимы старых имён до 3.3. Для кода только под 3.0+ расширяйте классы с пространствами имён:
+
+```php
+use MODX\Revolution\Processors\Resource\Create;
+use MODX\Revolution\Processors\Resource\Update;
+
+class CopyrightedResourceCreateProcessor extends Create
+{
+}
+
+class CopyrightedResourceUpdateProcessor extends Update
+{
+}
+```
+
+См. [процессоры в заметках об обновлении до 3.0](getting-started/upgrading-to-3.0/processors).
+
 ## Расширение процессоров для нашего CRC
 
-Расширить процессоры для нашего CopyrightedResource довольно просто. Загрузите ваш файл **copyrightedresource.class.php**, содержащий ваш основной класс, и в верхней части поместите следующий код:
+Расширить процессоры для нашего CopyrightedResource довольно просто. В MODX 2.x загрузите ваш файл **copyrightedresource.class.php**, содержащий ваш основной класс, и в верхней части поместите следующий код:
 
 ```php
 require_once MODX_CORE_PATH.'model/modx/modprocessor.class.php';
@@ -22,7 +50,7 @@ require_once MODX_CORE_PATH.'model/modx/processors/resource/create.class.php';
 require_once MODX_CORE_PATH.'model/modx/processors/resource/update.class.php';
 ```
 
-Это говорит MODX загружать некоторые базовые классы, которые нам понадобятся - да, мы здесь как бы удваиваемся. Поскольку MODX видит наш файл основного класса, и этот класс будет включен при загрузке MODX, нам просто может потребоваться больше файлов оттуда. Внизу того же файла, после вашего класса CopyrightedResource, поместите следующий код:
+Это говорит MODX загружать некоторые базовые классы, которые нам понадобятся. Поскольку MODX видит наш файл основного класса, и этот класс будет включен при загрузке MODX, нам просто может потребоваться больше файлов оттуда. Внизу того же файла, после вашего класса CopyrightedResource, поместите следующий код:
 
 ```php
 class CopyrightedResourceCreateProcessor extends modResourceCreateProcessor {
@@ -30,6 +58,8 @@ class CopyrightedResourceCreateProcessor extends modResourceCreateProcessor {
 class CopyrightedResourceUpdateProcessor extends modResourceUpdateProcessor {
 }
 ```
+
+В 3.x эти строки `require_once` не нужны. Расширяйте `\MODX\Revolution\Processors\Resource\Create` и `Update`, как показано выше.
 
 Теперь мы переопределили процессоры для нашего класса; MODX будет автоматически использовать эти классы в качестве класса процессора при создании или обновлении нашего CRC. Затем мы можем переопределить методы, чтобы обеспечить пользовательскую функциональность для нашего класса CopyrightedResource. Например, вот заглушка для нашего класса CopyrightedResource и процессора обновлений. Она показывает некоторые методы, которые вы можете переопределить:
 
