@@ -6,7 +6,7 @@ translation: "getting-started/maintenance/upgrading"
 
 Dit beschrijft het standaardproces om een bestaande MODX Revolution-installatie te upgraden (meestal binnen de 3.x-lijn, of vanaf een recente 2.x-site nadat je de 3.0-wijzigingen hebt gepland).
 
-- Upgraden **van 2.x naar 3.0+**: lees eerst [Upgraden van 2.x naar 3.0](aan-de-slag/upgraden-naar-3.0). Namespaces, processors, het vaste core-pad en PHP-eisen veranderen.
+- Upgraden **van 2.x naar 3.0+**: setup accepteert alleen **2.6.0 of nieuwer**. Lees eerst [Upgraden van 2.x naar 3.0](aan-de-slag/upgraden-naar-3.0). Namespaces, processors, het vaste core-pad en PHP-eisen veranderen.
 - Controleer of je host voldoet aan de huidige [server vereisten](aan-de-slag/server-vereisten). **MODX 3.2+ vereist PHP 8.1 of hoger** (3.0 stond oorspronkelijk PHP 7.2+ toe).
 - Upgraden vanaf Evolution (1.x) wordt niet officieel ondersteund; historische notes: [Evolution (EN)](/current/en/getting-started/maintenance/upgrading/evolution).
 

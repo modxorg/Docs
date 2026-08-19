@@ -11,10 +11,13 @@ This document details the changes made between 2.x and 3.0 that may affect upgra
 
 ## Upgrade to 3.0
 
-In general, you can follow the [standard upgrading process](getting-started/maintenance/upgrading) when upgrading to 3.0. It's recommended to first upgrade to the latest 2.8 release for some time, which will log deprecated functionality your site may depend on to the MODX log.
+Setup only upgrades from **MODX 2.6.0 or later**. On 2.5 or older, upgrade to 2.6 first. Setup stops with a failure if the current version is below 2.6.0.
+
+After you are on 2.6+, follow the [standard upgrading process](getting-started/maintenance/upgrading). Then spend time on the latest **2.8** release before 3.0. 2.8 writes deprecated API use to the MODX log. Fix extras and custom code there, then jump to 3.0.
 
 After upgrading the core and upgrading your extras, you may encounter some breaking changes that need to be addressed in extras or custom code.
 
+- ⚠️ Important: upgrades from MODX older than **2.6.0** are not supported
 - ⚠️ Important: [the core folder must now always be located in the project root, and can no longer be renamed](getting-started/upgrading-to-3.0/core-folder)
 - ⚠️ Important: [MODX 3.0 required PHP 7.2; current 3.x (3.2+) requires PHP 8.1+](getting-started/upgrading-to-3.0/requirements)
 - ⚠️ Important: [sqlsrv support has been removed](getting-started/upgrading-to-3.0/sqlsrv)
@@ -23,6 +26,8 @@ After upgrading the core and upgrading your extras, you may encounter some break
 - [The manager language is now dynamic](getting-started/upgrading-to-3.0/manager-language)
 - [Various system settings have been removed or changed](getting-started/upgrading-to-3.0/system-settings)
 - `$modx->getService()` is deprecated in favour of the [DI container](extending-modx/di-container) (`$modx->services`). The method still works and was **not** removed in 3.1. See [modX.getService](extending-modx/modx-class/reference/modx.getservice).
+- [Notable manager UI changes in 3.0](getting-started/upgrading-to-3.0/manager-ui)
+- Custom resource types that extend core Resource processors: [Processors](getting-started/upgrading-to-3.0/processors) and [Custom Resource Classes](building-sites/resources/custom-resources)
 
 ## Other notable changes and improvements
 

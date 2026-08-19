@@ -5,7 +5,7 @@ translation: "getting-started/maintenance/upgrading"
 
 Этот документ описывает стандартный процесс обновления существующей установки MODX Revolution (обычно в линейке 3.x или с недавнего сайта 2.x после планирования изменений для 3.0).
 
-- Обновление **с 2.x до 3.0+**: сначала прочитайте [Обновление с 2.x до 3.0](getting-started/upgrading-to-3.0). Меняются пространства имён, процессоры, фиксированный путь к core и требования к PHP.
+- Обновление **с 2.x до 3.0+**: setup принимает только **2.6.0 и новее**. Сначала прочитайте [Обновление с 2.x до 3.0](getting-started/upgrading-to-3.0). Меняются пространства имён, процессоры, фиксированный путь к core и требования к PHP.
 - Убедитесь, что хостинг соответствует актуальным [требованиям к серверу](getting-started/server-requirements). **MODX 3.2+ требует PHP 8.1 или выше** (в 3.0 изначально допускался PHP 7.2+).
 - Обновление с Evolution (1.x) официально не поддерживается. Исторические заметки [здесь](getting-started/maintenance/upgrading/evolution).
 
@@ -70,7 +70,7 @@ translation: "getting-started/maintenance/upgrading"
 
 Изменения для конкретных версий см. на следующих страницах:
 
-- [Обновление с 2.x до 3.0](getting-started/upgrading-to-3.0) (обязательно при переходе 2.x → 3.x, включая заметки о PHP 7.2 → **8.1 в 3.2**)
+- [Обновление с 2.x до 3.0](getting-started/upgrading-to-3.0) (обязательно при переходе с 2.6+ на 3.x, включая заметки о PHP 7.2 и **8.1 в 3.2**)
 - [Обновление до 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2) (изменения поведения, связанные с безопасностью, актуальны перед переходом на 3.x)
 - Исторические заметки по 2.x: [2.3](getting-started/maintenance/upgrading/2.3), [2.2](getting-started/maintenance/upgrading/2.2), [2.1](getting-started/maintenance/upgrading/2.1), [до 2.0.5](getting-started/maintenance/upgrading/2.0.5), [2.0.0-rc2](getting-started/maintenance/upgrading/2.0.0-rc2)
 

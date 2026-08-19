@@ -50,7 +50,7 @@ In 2.x the core classes lived at `core/model/modx/processors/resource/create.cla
 
 `core/include/deprecated.php` aliases the old names until 3.3. A `require_once` of the 2.x paths fails.
 
-See [Step 4: Customizing the Processors](extending-modx/custom-resources/step-4-processors).
+See [Custom Resource Classes](building-sites/resources/custom-resources) and [Step 4: Customizing the Processors](extending-modx/custom-resources/step-4-processors).
 
 ## Flat-file processors no longer supported
 

@@ -51,7 +51,7 @@ translation: "getting-started/upgrading-to-3.0/processors"
 
 `core/include/deprecated.php` даёт псевдонимы старых имён до 3.3. `require_once` путей 2.x падает.
 
-См. [Шаг 4: Настройка процессоров](extending-modx/custom-resources/step-4-processors).
+См. [пользовательские классы ресурсов](building-sites/resources/custom-resources) и [Шаг 4: Настройка процессоров](extending-modx/custom-resources/step-4-processors).
 
 ## Процессоры с плоскими файлами больше не поддерживаются
 
