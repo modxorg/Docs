@@ -8,19 +8,18 @@ _old_uri: "2.x/administering-your-site/security/policies/permissions/permissions
 
 This policy is packaged into MODX and is given to users on the 'mgr' context who want to have full access to managing MODX content.
 
+From MODX 3.3.0 the top-menu keys match the pages they open. Parent folders use `menu_*` keys. See [Upgrading to 3.3.0](getting-started/maintenance/upgrading/3.3.0).
+
 ## Default Permissions
 
 | Name                        | Description of Access                                                                                                            |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| about                       | The About page.                                                                                                                  |
-| access\_permissions         | Any Access Permission-related pages and actions.                                                                                 |
+| access\_permissions         | Pages under Access that use this key (Resource Groups, ACLs, Flush Permissions). The Access parent menu uses `menu_access`.       |
 | action\_ok                  |
-| actions                     | The [Actions](extending-modx/menus/actions "Actions and Menus") page.                                                            |
 | change\_password            | User can change their user password.                                                                                             |
 | change\_profile             | User can change their profile.                                                                                                   |
 | content\_types              | The [Content Types](building-sites/resources/content-types "Content Types") page.                                                |
 | create                      | Basic "create" access on objects.                                                                                                |
-| credits                     | View the Credits page.                                                                                                           |
 | customize\_forms            | View and manage the [Customizing the Manager](building-sites/client-proofing/form-customization "Customizing the Manager") page. |
 | database                    | The System Info page                                                                                                             |
 | database\_truncate          | The ability to truncate a database table.                                                                                        |
@@ -49,8 +48,8 @@ This policy is packaged into MODX and is given to users on the 'mgr' context who
 | edit\_user                  | To edit any [User](building-sites/client-proofing/security/users "Users").                                                       |
 | element\_tree               | The ability to view the Elements Tree on the left nav.                                                                           |
 | empty\_cache                | To empty the site cache.                                                                                                         |
-| export\_static              | To export the site to static HTML.                                                                                               |
-| file\_manager               | To use the file manager, including creating/deleting files.                                                                      |
+| error\_log\_view            | View the Error Log under Reports (menu, `system/event`, and ErrorLog processors).                                                |
+| file\_manager               | Use the Media Browser and related file manager actions. The Media parent menu uses `menu_media`.                                 |
 | file\_tree                  | To view the Files Tree on the left nav.                                                                                          |
 | flush\_sessions             | Can flush Sessions across the site.                                                                                              |
 | frames                      | To use the MODX Manager UI at all.                                                                                               |
@@ -61,9 +60,11 @@ This policy is packaged into MODX and is given to users on the 'mgr' context who
 | lexicons                    | To edit or view Lexicons and [Internationalization](extending-modx/internationalization "Internationalization").                 |
 | list                        | Basic permission to "list" any object. List means to get a collection of objects.                                                |
 | load                        | Basic permission to "load" any object, or be able to return it as an instance at all.                                            |
-| logout                      | To be able to logout as a user.                                                                                                  |
 | logs                        | To view the logs, such as error and manager logs.                                                                                |
-| menus                       | To edit or save any top Menu items.                                                                                              |
+| menu\_access                | Show the main menu item Access.                                                                                                  |
+| menu\_media                 | Show the main menu item Media.                                                                                                   |
+| menu\_system                | Show the main menu item Gear (System). Does not grant System Settings (`settings`).                                              |
+| menus                       | View and manage Gear → Menus (`system/action` and Menu processors).                                                              |
 | messages                    | To send or view any personal Messages.                                                                                           |
 | namespaces                  | To edit or view [Namespaces](extending-modx/namespaces "Namespaces").                                                            |
 | new\_category               | To create a new Category.                                                                                                        |
@@ -96,7 +97,7 @@ This policy is packaged into MODX and is given to users on the 'mgr' context who
 | save\_tv                    | To save any [Template Variables](building-sites/elements/template-variables "Template Variables").                               |
 | save\_user                  | To save any [User](building-sites/client-proofing/security/users "Users").                                                       |
 | search                      | To use the Search page.                                                                                                          |
-| settings                    | To view and edit any System Settings.                                                                                            |
+| settings                    | To view and edit System Settings. The Gear parent menu uses `menu_system`.                                                       |
 | steal\_locks                | To "steal" locks, overriding a current lock on a document.                                                                       |
 | unlock\_element\_properties | To be able to edit the default properties for any Element.                                                                       |
 | view                        | Basic permission to "view" any object.                                                                                           |
@@ -104,7 +105,6 @@ This policy is packaged into MODX and is given to users on the 'mgr' context who
 | view\_chunk                 | To view any [Chunks](building-sites/elements/chunks "Chunks").                                                                   |
 | view\_context               | To view any [Contexts](building-sites/contexts "Contexts").                                                                      |
 | view\_document              | To view any [Resources](building-sites/resources "Resources").                                                                   |
-| view\_eventlog              | To view the Event Log.                                                                                                           |
 | view\_offline               |
 | view\_plugin                | To view any [Plugins](extending-modx/plugins "Plugins").                                                                         |
 | view\_role                  | To view any [Roles](building-sites/client-proofing/security/roles "Roles").                                                      |
@@ -117,7 +117,7 @@ This policy is packaged into MODX and is given to users on the 'mgr' context who
 
 ## Custom Permissions
 
-If you have created your own actions and menu items (e.g. if you have created a [Custom Manager Page](extending-modx/custom-manager-pages "Custom Manager Pages Tutorial")), then you can define custom permission items when you create the menu item (System --> Actions --> Create Menu) that correspond to permissions listed here.
+If you have created your own menu items (for example a [Custom Manager Page](extending-modx/custom-manager-pages "Custom Manager Pages Tutorial")), set a permission key on the menu item (System → Menus) that matches a permission on this policy.
 
 ![](modx+custom+permission.jpg)
 

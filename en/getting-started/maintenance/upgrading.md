@@ -72,6 +72,7 @@ It's a good idea to clear your browser cache after upgrading. Browsers often cac
 For changes relating to specific versions, please see the following pages:
 
 - [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0) (required reading for any 2.x → 3.x move; includes the PHP 7.2 → **8.1 in 3.2** requirement notes)
+- [Upgrading to 3.3.0](getting-started/maintenance/upgrading/3.3.0) (top-menu Access Policy keys)
 - [Upgrading to 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2) (security-related behavioural changes still relevant before jumping to 3.x)
 - Historical 2.x notes: [2.3](getting-started/maintenance/upgrading/2.3), [2.2](getting-started/maintenance/upgrading/2.2), [2.1](getting-started/maintenance/upgrading/2.1), [pre-2.0.5](getting-started/maintenance/upgrading/2.0.5), [2.0.0-rc2](getting-started/maintenance/upgrading/2.0.0-rc2)
 
@@ -100,5 +101,6 @@ See the note above about FTP clients that support directory merging.
 1. [Troubleshooting Upgrades](getting-started/maintenance/upgrading/troubleshooting)
 2. [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0)
 3. [Server Requirements](getting-started/server-requirements)
-4. [Upgrading to 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2)
-5. [Upgrading from MODX Evolution](getting-started/maintenance/upgrading/evolution)
+4. [Upgrading to 3.3.0](getting-started/maintenance/upgrading/3.3.0)
+5. [Upgrading to 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2)
+6. [Upgrading from MODX Evolution](getting-started/maintenance/upgrading/evolution)
