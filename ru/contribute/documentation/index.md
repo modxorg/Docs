@@ -81,7 +81,7 @@ translation: "getting-started/friendly-urls"
 
 Если вы новичок в git или GitHub или являетесь более опытным специалистом по визуальному обучению, следующий скринкаст (с 2019 г.) покажет вам, как можно редактировать документацию с помощью только браузера.
 
-<iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/330122657?byline=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+https://vimeo.com/330122657
 
 ## Смотрите также
 

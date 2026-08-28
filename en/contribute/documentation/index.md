@@ -76,12 +76,61 @@ The name of your file (and thus, the documentation URL) does **not** have to mat
 
 To test if a translation is properly connected, you'll need to run the application on a local environment and execute `php docs.php index:translations`. See the DocsApp repository for more.
 
+## Markdown, HTML, and media
+
+Write pages in [CommonMark](https://commonmark.org/) Markdown (with tables, footnotes, strikethrough, and similar extras). Prefer Markdown for structure and formatting.
+
+### Raw HTML is not rendered
+
+Raw HTML in documentation sources is **stripped** and will not appear on the site. Do not use tags such as `` `<div>` ``, `` `<span>` ``, `` `<br>` ``, `` `<iframe>` ``, `` `<script>` ``, or `` `<video>` `` in page content. Put example HTML inside fenced code blocks so it shows as code instead of being removed:
+
+```` plain
+```html
+<div class="example">Sample markup</div>
+```
+````
+
+Front matter values (for example `title` and `description`) should be plain text, not HTML.
+
+### Embedded videos (YouTube, Vimeo, GitHub)
+
+To embed a video or other supported rich content, put the **https URL alone on its own line**. Do not wrap it in an iframe or other HTML. Angle brackets (`<https://...>`) and Markdown link syntax are not treated as embeds.
+
+Supported hosts today: **YouTube**, **Vimeo**, and **GitHub**.
+
+``` plain
+Watch this overview:
+
+https://vimeo.com/330122657
+```
+
+If the URL cannot be embedded, it falls back to a normal link. 
+
+### Images
+
+Use standard Markdown image syntax. Relative paths resolve from the current file's directory:
+
+``` plain
+![Setup options](setup-opt1.png)
+```
+
+### Local videos
+
+For short demos stored next to the page (`.mp4`, `.webm`, or `.ogg`), use the **same image syntax**. DocsApp turns those into an in-page video player and serves the file from the docs tree:
+
+``` plain
+![Basic use demo](basic-use.mp4)
+```
+
+Prefer hosting longer videos on Vimeo or YouTube and embedding them with a bare URL as above.
+
 ## Screencast
 
 If you're new to git or GitHub, or more of a visual learner, the following screencast (from 2019) will show you how you can edit the documentation with just the browser.
 
-<iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/330122657?byline=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+https://vimeo.com/330122657
 
 ## See also
 
-1. [Markdown rules document](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)
+1. [Content Style Guide](style-guide)
+2. [Markdown rules document](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md)
