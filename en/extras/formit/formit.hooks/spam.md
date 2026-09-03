@@ -6,7 +6,7 @@ _old_uri: "revo/formit/formit.hooks/formit.hooks.spam"
 
 ## The spam hook
 
-The spam hook will check all the fields specified in the property _spamEmailFields_ against a spam filter via [StopForumSpam](http://www.stopforumspam.com/). If the user is flagged as a spammer, it will show an error message for that field checked.
+The spam hook will check all the fields specified in the property _spamEmailFields_ against [StopForumSpam](https://www.stopforumspam.com/) (`https://api.stopforumspam.com/`). If the address (and optionally the IP) is flagged as spam, it shows an error on that field.
 
 The spam hook requires either cURL or Sockets support in your PHP installation (The same requirements for [Package Management](developing-in-modx/advanced-development/package-management "Package Management")).
 

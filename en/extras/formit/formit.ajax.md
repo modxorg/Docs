@@ -4,26 +4,26 @@ title: "AJAX Form Submission"
 
 ## AJAX Form Submission
 
-FormIt can submit forms via AJAX without a full page reload. Validation errors, success messages, and redirects are all handled client-side through a built-in JavaScript library.
+From FormIt **5.2.0**, forms can submit via AJAX without a full page reload. Validation errors, success messages, and redirects are handled by the built-in `formit.js`. The same script drives [reCAPTCHA v3](extras/formit/formit.hooks/recaptcha) token requests before POST.
 
 ## Setup
 
-To enable AJAX support, set the `formit.frontend_js` system setting:
+Set the `formit.frontend_js` system setting (a fresh FormIt install already has this default):
 
 | Setting | Value |
 |---|---|
 | `formit.frontend_js` | `js/web/formit.js` |
 
-This registers the FormIt JavaScript file and configures the AJAX endpoint URL automatically.
+FormIt registers `assets/components/formit/js/web/formit.js` and passes the `action.php` URL into the JS config. If the `recaptcha` hook is active and a site key is set, it also registers Google `api.js?render=...`.
 
 ## How It Works
 
-1. The FormIt snippet stores its configuration (hooks, validation rules, etc.) in a server-side session/cache and outputs an MD5 hash as the `[[!+fi.ajaxToken]]` placeholder.
-2. You place this hash into a `data-formit-ajax-token` attribute on your `<form>` tag.
-3. The JavaScript library automatically initializes all forms that have this attribute.
-4. On form submit, the JS intercepts the event, sends form data + token via `fetch()` to `action.php`.
-5. The endpoint retrieves the original snippet configuration by hash, runs FormIt server-side, and returns a JSON response.
-6. The JS updates the DOM: displays field errors, validation messages, success messages, or performs a redirect.
+1. Before a POST, the FormIt snippet stores its configuration (hooks, validation rules, and so on) in the session and cache, and outputs a random token as `[[!+fi.ajaxToken]]` (32 hex characters from `random_bytes`, not an MD5 hash).
+2. You put that token on the `<form>` as `data-formit-ajax-token`.
+3. On page load, `formit.js` attaches to every `<form>`. AJAX runs only when `data-formit-ajax-token` is present. Without that attribute, if the form has `g-recaptcha-response`, the script still intercepts submit, fills the reCAPTCHA token, then does a normal POST.
+4. In AJAX mode the JS posts form data with the `X-FormIt-Token` header via `fetch()` to `action.php`.
+5. The endpoint loads the stored configuration by token, runs FormIt server-side, and returns JSON.
+6. The JS updates the DOM: field errors, validation messages, success, or redirect.
 
 ## Snippet Call
 
@@ -124,7 +124,7 @@ All `data-formit-error` and message elements are cleared before each submission.
 
 ### Auto-initialization
 
-Forms with the `data-formit-ajax-token` attribute are automatically initialized on `DOMContentLoaded`. No extra JavaScript is needed for basic usage.
+On `DOMContentLoaded`, `formit.js` initializes **every** `<form>` on the page. You do not need extra JS for the basic flow. AJAX for a given form is enabled only by `data-formit-ajax-token`.
 
 ## JavaScript Events
 
@@ -132,7 +132,7 @@ The form element dispatches `CustomEvent`s that you can listen to with `addEvent
 
 | Event | Cancelable | `event.detail` | Description |
 |---|---|---|---|
-| `formit:beforesubmit` | Yes | `{ form }` | Fired before the AJAX request. Call `event.preventDefault()` to cancel. |
+| `formit:beforesubmit` | Yes | `{ form }` | Fired before the reCAPTCHA token request / submit. Call `event.preventDefault()` to cancel. |
 | `formit:success` | No | `{ data }` | Fired on successful submission. |
 | `formit:error` | No | `{ data }` | Fired when validation fails. |
 | `formit:complete` | No | `{}` | Fired after every request (success or error). |
@@ -158,12 +158,12 @@ This lets you intercept the redirect and handle it your own way (e.g., load cont
 
 ## CSS Loading State
 
-During an AJAX request:
+While the reCAPTCHA token request and/or AJAX request runs:
 
 - The `formit-loading` CSS class is added to the `<form>` element.
 - All `[type="submit"]` buttons inside the form are set to `disabled`.
 
-Both are removed when the request completes.
+Both are removed when the flow finishes (or if reCAPTCHA fails).
 
 You can use this to style a loading indicator:
 

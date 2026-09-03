@@ -6,7 +6,7 @@ translation: "extras/formit/formit.hooks/spam"
 
 ## Хук spam для Formit
 
-Хук проверяет все поля, указанные в свойстве `spamEmailFields`, на соответствие фильтру спама через [StopForumSpam](http://www.stopforumspam.com/). Если пользователь отмечен как спамер, будет показано сообщение об ошибке для этого отмеченного поля.
+Хук проверяет все поля, указанные в свойстве `spamEmailFields`, через API [StopForumSpam](https://www.stopforumspam.com/) (`https://api.stopforumspam.com/`). Если адрес (и при необходимости IP) помечен как спам, для этого поля показывается ошибка.
 
 Для хука требуется поддержка `cURL` или `Sockets` в вашей установке PHP (те же требования для [Управления пакетами](developing-in-modx/advanced-development/package-management "Управление пакетами")).
 
