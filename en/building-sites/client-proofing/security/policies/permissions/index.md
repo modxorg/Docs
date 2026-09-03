@@ -23,6 +23,8 @@ Access Policies (ACLs) define lists of permissions (see Menu --> Access Controls
 1. [Permissions - Administrator Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy)
 2. [Permissions - Resource Policy](building-sites/client-proofing/security/policies/permissions/resource-policy)
 
+From MODX 3.3.0, top-menu parent folders and some report/system items use dedicated permission keys. See [Upgrading to 3.3.0](getting-started/maintenance/upgrading/3.3.0).
+
 ## See Also
 
 1. [Users](building-sites/client-proofing/security/users)

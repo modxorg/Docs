@@ -71,6 +71,7 @@ translation: "getting-started/maintenance/upgrading"
 Изменения для конкретных версий см. на следующих страницах:
 
 - [Обновление с 2.x до 3.0](getting-started/upgrading-to-3.0) (обязательно при переходе 2.x → 3.x, включая заметки о PHP 7.2 → **8.1 в 3.2**)
+- [Обновление до 3.3.0](getting-started/maintenance/upgrading/3.3.0) (ключи Access Policy верхнего меню)
 - [Обновление до 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2) (изменения поведения, связанные с безопасностью, актуальны перед переходом на 3.x)
 - Исторические заметки по 2.x: [2.3](getting-started/maintenance/upgrading/2.3), [2.2](getting-started/maintenance/upgrading/2.2), [2.1](getting-started/maintenance/upgrading/2.1), [до 2.0.5](getting-started/maintenance/upgrading/2.0.5), [2.0.0-rc2](getting-started/maintenance/upgrading/2.0.0-rc2)
 
@@ -99,5 +100,6 @@ cp -fr modx-3.2.0-pl/* /www/public_html/modx
 1. [Решение проблем с обновлением](getting-started/maintenance/upgrading/troubleshooting)
 2. [Обновление с 2.x до 3.0](getting-started/upgrading-to-3.0)
 3. [Требования к серверу](getting-started/server-requirements)
-4. [Обновление до 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2)
-5. [Обновление с MODX Evolution](getting-started/maintenance/upgrading/evolution)
+4. [Обновление до 3.3.0](getting-started/maintenance/upgrading/3.3.0)
+5. [Обновление до 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2)
+6. [Обновление с MODX Evolution](getting-started/maintenance/upgrading/evolution)

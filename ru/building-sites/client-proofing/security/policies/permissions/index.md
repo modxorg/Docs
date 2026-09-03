@@ -20,6 +20,8 @@ translation: "building-sites/client-proofing/security/policies/permissions"
 1. [Права Доступа - Политика Администратора](building-sites/client-proofing/security/policies/permissions/administrator-policy)
 2. [Права Доступа - Политика Ресурса](building-sites/client-proofing/security/policies/permissions/resource-policy)
 
+С MODX 3.3.0 родители верхнего меню и часть пунктов Reports/System используют отдельные ключи. См. [Обновление до 3.3.0](getting-started/maintenance/upgrading/3.3.0).
+
 ## Смотрите также
 
 1. [Пользователи](building-sites/client-proofing/security/users)

@@ -5,21 +5,20 @@ translation: "building-sites/client-proofing/security/policies/permissions/admin
 
 ## Политика Администратора
 
-Эта политика упакована в MODX и предоставляется пользователям в контексте mgr, которые хотят иметь полный доступ к управлению содержимым MODX
+Эта политика упакована в MODX и предоставляется пользователям в контексте mgr, которые хотят иметь полный доступ к управлению содержимым MODX.
+
+С MODX 3.3.0 ключи верхнего меню совпадают со страницами, которые они открывают. Родители используют ключи `menu_*`. См. [Обновление до 3.3.0](getting-started/maintenance/upgrading/3.3.0).
 
 ## Разрешения по умолчанию
 
 | название                  | Описание доступа                                                                                                                                                                                            |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| about                     | О странице.                                                                                                                                                                                                 |
-| access_permissions        | Любые связанные с разрешением доступа страницы и действия.                                                                                                                                                  |
+| access_permissions        | Страницы раздела Access с этим ключом (Resource Groups, ACL, Flush Permissions). Родитель Access использует `menu_access`.                                                                                  |
 | action_ok                 |
-| actions                   | Страница [действий](extending-modx/menus/actions "Действия и меню") .                                                                                                                                       |
 | change_password           | Пользователь может изменить свой пароль пользователя.                                                                                                                                                       |
 | change_profile            | Пользователь может изменить свой профиль.                                                                                                                                                                   |
 | Content_Types             | Страница [типов контента](building-sites/resources/content-types "Типы контента") .                                                                                                                         |
 | create                    | Базовый «создать» доступ к объектам.                                                                                                                                                                        |
-| credits                   | Просмотрите страницу «Кредиты».                                                                                                                                                                             |
 | customize_forms           | Просмотр и управление [настройкой](building-sites/client-proofing/form-customization "Настройка менеджера") страницы [менеджера](building-sites/client-proofing/form-customization "Настройка менеджера") . |
 | database                  | Страница Информация о системе                                                                                                                                                                               |
 | database_truncate         | Возможность усекать таблицу базы данных.                                                                                                                                                                    |
@@ -48,8 +47,8 @@ translation: "building-sites/client-proofing/security/policies/permissions/admin
 | edit_user                 | Для редактирования любого [пользователя](building-sites/client-proofing/security/users "пользователей") .                                                                                                   |
 | element_tree              | Возможность просмотра дерева элементов на левой панели.                                                                                                                                                     |
 | empty_cache               | Очистить кеш сайта.                                                                                                                                                                                         |
-| export_static             | Для экспорта сайта в статический HTML.                                                                                                                                                                      |
-| file_manager              | Использовать файловый менеджер, в том числе создание / удаление файлов.                                                                                                                                     |
+| error_log_view            | Просмотр Error Log в Reports (меню, `system/event` и процессоры ErrorLog).                                                                                                                                  |
+| file_manager              | Media Browser и связанные действия файлового менеджера. Родитель Media использует `menu_media`.                                                                                                             |
 | file_tree                 | Для просмотра дерева файлов на левой панели.                                                                                                                                                                |
 | flush_sessions            | Может сбрасывать сеансы по всему сайту.                                                                                                                                                                     |
 | frames                    | Чтобы использовать интерфейс диспетчера MODX на всех.                                                                                                                                                       |
@@ -60,9 +59,11 @@ translation: "building-sites/client-proofing/security/policies/permissions/admin
 | lexicons                  | Для редактирования или просмотра лексиконов и [интернационализации](extending-modx/internationalization "интернационализация") .                                                                            |
 | list                      | Базовое разрешение «перечислить» любой объект. Список означает получить коллекцию объектов.                                                                                                                 |
 | load                      | Базовое разрешение «загрузить» любой объект или иметь возможность вернуть его как экземпляр вообще.                                                                                                         |
-| logout                    | Чтобы можно было выйти из системы как пользователь.                                                                                                                                                         |
 | logs                      | Для просмотра журналов, таких как ошибки и журналы менеджера.                                                                                                                                               |
-| menus                     | Для редактирования или сохранения любых топовых пунктов меню.                                                                                                                                               |
+| menu_access               | Показать пункт главного меню Access.                                                                                                                                                                        |
+| menu_media                | Показать пункт главного меню Media.                                                                                                                                                                         |
+| menu_system               | Показать пункт главного меню шестерёнки (System). Не открывает System Settings (`settings`).                                                                                                                |
+| menus                     | Просмотр и управление Gear → Menus (`system/action` и процессоры Menu).                                                                                                                                     |
 | messages                  | Для отправки или просмотра любых личных сообщений.                                                                                                                                                          |
 | namespaces                | Для редактирования или просмотра [пространств имен](extending-modx/namespaces "Пространства имен") .                                                                                                        |
 | new_category              | Создать новую категорию.                                                                                                                                                                                    |
@@ -95,7 +96,7 @@ translation: "building-sites/client-proofing/security/policies/permissions/admin
 | save_tv                   | Сохранить любые [переменные шаблона](building-sites/elements/template-variables "Переменные шаблона") .                                                                                                     |
 | save_user                 | Сохранить любого [пользователя](building-sites/client-proofing/security/users "пользователей") .                                                                                                            |
 | search                    | Чтобы использовать страницу поиска.                                                                                                                                                                         |
-| settings                  | Для просмотра и редактирования любых настроек системы.                                                                                                                                                      |
+| settings                  | Просмотр и правка System Settings. Родитель шестерёнки использует `menu_system`.                                                                                                                            |
 | steal_locks               | Чтобы «украсть» блокировки, переопределяя текущую блокировку документа.                                                                                                                                     |
 | unlock_element_properties | Чтобы иметь возможность редактировать свойства по умолчанию для любого элемента.                                                                                                                            |
 | view                      | Базовое разрешение на «просмотр» любого объекта.                                                                                                                                                            |
@@ -103,7 +104,6 @@ translation: "building-sites/client-proofing/security/policies/permissions/admin
 | view_chunk                | Для просмотра любых [чанков](building-sites/elements/chunks "Куски") .                                                                                                                                      |
 | view_context              | Для просмотра любых [контекстов](building-sites/contexts "Контексты") .                                                                                                                                     |
 | view_document             | Для просмотра любых [ресурсов](building-sites/resources "Ресурсы") .                                                                                                                                        |
-| view_eventlog             | Для просмотра журнала событий.                                                                                                                                                                              |
 | view_offline              |
 | view_plugin               | Для просмотра любых [плагинов](extending-modx/plugins "Плагины") .                                                                                                                                          |
 | view_role                 | Для просмотра любых [ролей](building-sites/client-proofing/security/roles "Роли") .                                                                                                                         |
@@ -116,7 +116,7 @@ translation: "building-sites/client-proofing/security/policies/permissions/admin
 
 ## Пользовательские разрешения
 
-Если вы создали свои собственные действия и пункты меню [страницу настраиваемого менеджера](extending-modx/custom-manager-pages "Пользовательский менеджер страниц Учебникl"), то вы можете определить настраиваемые элементы разрешений при создании элемента меню (Система -> Действия -> Создать меню), который соответствует разрешения перечислены здесь.
+Если вы создали свои пункты меню (например [страницу настраиваемого менеджера](extending-modx/custom-manager-pages "Пользовательский менеджер страниц")), задайте ключ разрешения на пункте меню (System → Menus), совпадающий с разрешением в этой политике.
 
 ![](/2.x/en/building-sites/client-proofing/security/policies/permissions/modx+custom+permission.jpg)
 
