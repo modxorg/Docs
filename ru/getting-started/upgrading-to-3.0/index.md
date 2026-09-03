@@ -21,6 +21,7 @@ translation: "getting-started/upgrading-to-3.0"
 - [xPDO 3, Composer и миграция кастомных моделей](getting-started/upgrading-to-3.0/xpdo)
 - [Язык менеджера теперь динамический](getting-started/upgrading-to-3.0/manager-language)
 - [Различные системные настройки удалены или изменены](getting-started/upgrading-to-3.0/system-settings)
+- `$modx->getService()` устарел. Вместо него [DI-контейнер](extending-modx/di-container) (`$modx->services`). Метод всё ещё работает и **не** удалён в 3.1. См. [modX.getService](extending-modx/modx-class/reference/modx.getservice).
 
 ## Другие заметные изменения и улучшения
 

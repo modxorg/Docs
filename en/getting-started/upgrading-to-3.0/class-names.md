@@ -15,6 +15,8 @@ You may encounter warnings or errors (including fatal errors) in certain cases:
 
 Most model and service classes that are loaded through `$modx->loadClass` (which includes the xPDO Query builder for model classes) or `$modx->getService` will still work, as `loadClass` internally translates these to their new class names.
 
+`$modx->getService()` itself is **deprecated** in 3.x. xPDO phpdoc (and therefore PhpStorm) still say it will be removed in 3.1. That did not happen: the method remains, and the core still uses it. For new code, register and fetch objects on `$modx->services`. See [modX.getService](extending-modx/modx-class/reference/modx.getservice) and the [DI container](extending-modx/di-container).
+
 For example `$modx->getIterator('modResource')` will still work - _for now_, even though the `\modResource` class is now `\MODX\Revolution\modResource`.
 
 That will log a deprecated message to your error log encouraging you to update your reference. The right call would be `$modx->getIterator(\MODX\Revolution\modResource::class)`.

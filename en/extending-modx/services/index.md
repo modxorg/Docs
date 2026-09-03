@@ -6,15 +6,15 @@ _old_uri: "2.x/developing-in-modx/advanced-development/modx-services"
 
 ## What is a Service?
 
-A service is any object that is loaded via [$modx->getService](extending-modx/modx-class/reference/modx.getservice "modX.getService"). It can be a custom class provided by the user, or by MODX itself.
+A service is any object stored in the [dependency injection container](extending-modx/di-container) (`$modx->services`). In 2.x, and still in 3.x, many extras also load services with [$modx->getService](extending-modx/modx-class/reference/modx.getservice). That helper is deprecated in 3.x. Prefer `has` / `add` / `get` on `$modx->services`.
 
-Once an object is loaded with getService, it is accessible via `$modx->(servicename)`. So, for example:
+Once a service is in the container, you can also hang it on `$modx` yourself (`$modx->error = $modx->services->get('error')`). `getService` did that automatically.
 
 ``` php
-$modx->getService('twitter','myTwitter','/path/to/twitter/model/',array(  
-  'api_key' => 3212423,
-));  
-$modx->twitter->tweet('Success!');  
+$modx->services->add('twitter', function($c) use ($modx) {
+    return new MyPackage\Twitter($modx, ['api_key' => 3212423]);
+});
+$modx->services->get('twitter')->tweet('Success!');
 ```
 
 ## What are the Default Included Services?
@@ -27,4 +27,5 @@ A list of the core-included MODX Services is as follows:
 
 ## See Also
 
-- [modX.getService](extending-modx/modx-class/reference/modx.getservice "modX.getService")
+- [modX.getService](extending-modx/modx-class/reference/modx.getservice)
+- [Dependency Injection Container](extending-modx/di-container)
