@@ -45,6 +45,8 @@ This layer of backwards compatibility is likely to be fully removed in MODX 4.0.
 | \xPDO\Transport\xPDOTransport     | \xPDOTransport     |
 | \xPDO\Transport\xPDOObjectVehicle | \xPDOObjectVehicle |
 
+How Composer, PSR-4, `metadata.mysql.php`, and Extra `addPackage` calls fit together: [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
+
 ### MODX Core & Controllers
 
 | New Class                                   | Old Class                   |

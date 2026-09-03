@@ -12,7 +12,7 @@ MODX 3 brings PHP Namespaces to your XML Schema and class files, and a new boots
 
 **NOTE**: This was converted from the previous "StoreFinder" example.
 
-**ALSO NOTE**: This methodology is not backwards compatible to MODX 2.x. This tutorial is intended to be run and used in MODX 3. You can see the equivalent guide for 2.x here: [Using Custom Database Tables](/2.x/en/extending-modx/tutorials/using-custom-database-tables "Using Custom Database Tables")
+**ALSO NOTE**: This methodology is not backwards compatible to MODX 2.x. This tutorial is intended to be run and used in MODX 3. You can see the equivalent guide for 2.x here: [Using Custom Database Tables](/2.x/en/extending-modx/tutorials/using-custom-database-tables "Using Custom Database Tables"). For a shorter upgrade checklist (Composer, `metadata.mysql.php`, `instanceof`, `addPackage`), see [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
 
 ## Key Terminology and Standards
 

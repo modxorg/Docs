@@ -7,7 +7,7 @@ note: "This page is a stub. You can help by expanding it."
 
 xPDO is the object-relational-bridge that is built into MODX. Simply put, it's how MODX connects to the database, and how it interacts with different tables.
 
-In MODX 2.x, the `modX` class directly extends `xPDO`. While in hindsight that's not the best development pattern, it does mean that whenever you have access to the `modX` instance, you can use any of the `xPDO` methods on it as well.
+In MODX 2.x and 3.x, the `modX` class extends `xPDO`, so any time you have the `modX` instance you can call xPDO methods on it. In MODX 3 that parent is the namespaced `xPDO\xPDO` class loaded through Composer. For upgrade and Extra migration details, see [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
 
 ## What is xPDO?
 
@@ -17,10 +17,10 @@ xPDO is our name for open eXtensions to PDO. It's a light-weight ORB (object-rel
 
 In the context of xPDO, the following terms are important to know:
 
-- **Packages** are collections of models. In the MODX core, all models are part of the `modx` package, plus there are a few sub-packages like `modx.media` and `modx.package`. To make xPDO aware of the models in a package, it needs to be registered with `$xpdo->addPackage()`.
+- **Packages** are collections of models. In the MODX 3 core, models live under namespaces such as `MODX\Revolution` (plus sub-packages like Sources and Transport). Register a package with `$xpdo->addPackage()` (and a `$namespacePrefix` when you use PSR-4).
 - **Models** are classes that represent a specific database table. They are the abstraction you will use most often; rather than interacting with SQL directly, you load a model, adjust its properties, and save it.
-- **Schemas** are XML files that define the different models that are available in a package, and what their fields (properties) are. They are used only in development, during which they will be processed (typically called being "built") into the model classes and maps.
-- **Maps** are PHP files containing arrays that define the metadata for packages and schemas. They are in the database driver-specific model directory (e.g. `model/modx/mysql/modresource.map.inc.php`). These files are not typically managed manually, instead they are generated from a schema file.
+- **Schemas** are XML files that define the different models that are available in a package, and what their fields (properties) are. They are used only in development, during which they will be processed (typically called being "built") into the model classes and maps. In MODX 3 set `version="3.0"` and put the PHP namespace in the `package` attribute.
+- **Maps** are PHP metadata for packages and schemas. In MODX 3 / xPDO 3 a package ships `metadata.{dbtype}.php` (with a `class_map`) plus platform files under a driver folder (for example `mysql/`). Older 2.x docs often show only `*.map.inc.php` files; regenerate with schema `version="3.0"` when you target MODX 3.
 
 There are a lot more things to learn about xPDO, but if you understand these 4 you have a solid foundation to make sense of the rest of the documentation.
 

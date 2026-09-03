@@ -15,6 +15,7 @@ translation: "getting-started/upgrading-to-3.0/breaking-changes"
 - [Больше нельзя использовать свой каталог или путь к core](getting-started/upgrading-to-3.0/core-folder)
 - [Поддержка sqlsrv удалена](getting-started/upgrading-to-3.0/sqlsrv)
 - [Большое число (ранее без namespace) классов переименовано и перенесено](getting-started/upgrading-to-3.0/class-names), включая процессоры и классы моделей.
+- [xPDO 3 через Composer и PSR-4; миграция кастомных пакетов](getting-started/upgrading-to-3.0/xpdo)
 - [Все процессоры переименованы, включая базовые](getting-started/upgrading-to-3.0/processors)
 - [modAction и связанный функционал удалены](getting-started/upgrading-to-3.0/actions)
 - modRestClient удалён [#15781](https://github.com/modxcms/revolution/pull/15781) и [заменён новым HTTP-сервисом PSR-7/17/18](extending-modx/services/http)
