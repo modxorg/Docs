@@ -1,11 +1,15 @@
 ---
 title: "allow_tv_eval"
-description: "Select this option to enable or disable eval in TV binding. If this option is set to no, the code/value will just be handled as regular text."
+description: "Removed in MODX 3.0. Formerly enabled eval in TV bindings."
 ---
 
-**Name**: Disable eval in TV binding  
+**Removed in MODX 3.0.** `@EVAL` TV bindings are gone. Use `@SELECT`, `@SNIPPET`, or other supported bindings instead. See [System Settings changes in 3.0](getting-started/upgrading-to-3.0/system-settings).
+
+---
+
+**Name**: Enable eval in TV bindings  
 **Type**: Yes/No  
 **Default**: Yes  
-**Available In**: Revolution 2.5.0+
+**Available In**: Revolution 2.5.0–2.x only
 
-Select this option to enable or disable eval in TV binding. If this option is set to no, the code/value will just be handled as regular text.
+On 2.x: enable or disable eval in TV bindings. When No, the value was treated as plain text.

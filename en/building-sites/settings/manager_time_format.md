@@ -4,10 +4,12 @@ _old_id: "194"
 _old_uri: "2.x/administering-your-site/settings/system-settings/manager_time_format"
 ---
 
-## manager\_time\_format
+## manager_time_format
 
-**Name**: Manager Time Format
-**Type**: String
-**Default**: g:i a
+**Name**: Manager Time Format  
+**Type**: String  
+**Default**: `H:i` (MODX 3.0+; was `g:i a` in earlier 2.x defaults)
 
-The format string, in PHP date() format, for the time settings represented in the manager.
+PHP `date()` format string for times shown in the Manager.
+
+See also [System Settings changes in 3.0](getting-started/upgrading-to-3.0/system-settings).

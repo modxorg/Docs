@@ -45,10 +45,10 @@ Package Name: mygallery
 
 На вкладку добавьте поле с fieldname «tags» и inputTVtype «listbox-multiple»
 
-В Input Option Values этого поля укажите:
+В Input Option Values этого поля укажите (привязка `@SNIPPET`; `@EVAL` в MODX 3 недоступен):
 
 ``` php
-@EVAL return $modx->runSnippet('migxLoopCollection',array('classname'=>'mygalTag','sortConfig'=>'[{"sortby":""tag}]','tpl'=>'@CODE:[[+tag]]==[[+id]]','outputSeparator'=>'||'));
+@SNIPPET migxLoopCollection {"classname":"mygalTag","sortConfig":"[{\"sortby\":\"tag\"}]","tpl":"@CODE:[[+tag]]==[[+id]]","outputSeparator":"||"}
 ```
 
 Создайте ещё одно поле с fieldname «newtag»

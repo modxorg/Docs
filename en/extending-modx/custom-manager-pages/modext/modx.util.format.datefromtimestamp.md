@@ -4,7 +4,7 @@ title: "MODx.util.Format.dateFromTimestamp"
 
 ## MODx.util.Format.dateFromTimestamp
 
-Available in MODX **3.x**. Turns a Unix timestamp into a string that follows the manager date and time formats from System Settings (`manager_date_format`, `manager_time_format`).
+Available in MODX **3.0+** (added with the manager date/time helpers). Turns a Unix timestamp into a string that follows the manager date and time formats from System Settings (`manager_date_format`, `manager_time_format`).
 
 Use it in CMP grids and panels when you show file times or other Unix timestamps and want the same look as the core manager UI.
 

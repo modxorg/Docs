@@ -45,10 +45,10 @@ Add a new Tab with caption 'Tags'
 
 Add new Field to this Tab with fieldname 'tags' and inputTVtype 'listbox-multiple'
 
-into Input Option Values of this field put:
+into Input Option Values of this field put (`@SNIPPET` binding; `@EVAL` is gone in MODX 3):
 
 ``` php
-@EVAL return $modx->runSnippet('migxLoopCollection',array('classname'=>'mygalTag','sortConfig'=>'[{"sortby":""tag}]','tpl'=>'@CODE:[[+tag]]==[[+id]]','outputSeparator'=>'||'));
+@SNIPPET migxLoopCollection {"classname":"mygalTag","sortConfig":"[{\"sortby\":\"tag\"}]","tpl":"@CODE:[[+tag]]==[[+id]]","outputSeparator":"||"}
 ```
 
 Create another field with the fieldname 'newtag'

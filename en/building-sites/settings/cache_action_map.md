@@ -4,15 +4,15 @@ _old_id: "35"
 _old_uri: "2.x/administering-your-site/settings/system-settings/cache_action_map"
 ---
 
-## cache\_action\_map
+## cache_action_map
 
- **Name**: Enable Action Map Cache
-**Type**: Yes/No
-**Default**: Yes
+**Removed in MODX 3.0.** The action map is gone with `modAction`. See [System Settings changes in 3.0](getting-started/upgrading-to-3.0/system-settings).
 
- When enabled, actions (or controller maps) will be cached to greatly reduce manager page load times.
+---
 
-## See Also
+**Name**: Enable Action Map Cache  
+**Type**: Yes/No  
+**Default**: Yes  
+**Available In**: Revolution 2.x only
 
-- **modmanagerrequest.class.php** `modManagerRequest::loadActionMap()` function
-- `$modx->actionMap array`
+On 2.x: when enabled, controller action maps were cached to speed up Manager page loads.
