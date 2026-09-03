@@ -30,17 +30,23 @@ An example [Register](extras/login/login.register "Login.Register") snippet call
 
 This would send the User the email specified in the "myActivationEmailTpl" chunk, with the specified subject line, which will direct the User to the Resource 26 - the Resource you put the ConfirmRegister snippet call in - to activate their account.
 
+Set `activePage` when you want a friendly landing page for people who open the activation link a second time (account already active). Set `redirectBack` or `redirectTo` when you need to send them somewhere after a successful confirm (checkout, membership form, and so on).
+
 ### Default Properties
 
 ConfirmRegister has some default properties packaged into it. They are:
 
-| Name                 | Description                                                                                                                 | Default |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------- |
-| redirectTo           | Optional. After a successful confirmation, redirect to this Resource.                                                       |         |
-| redirectParams       | Optional. A JSON object of parameters to pass when redirecting using redirectTo.                                            |         |
-| authenticate         | Authenticate and login the user to the current context after confirming registration.                                       | 1       |
-| authenticateContexts | Optional. A comma-separated list of contexts to authenticate to. Defaults to the current context.                           |         |
-| errorPage            | Optional. If set, will redirect user to a custom error page if they try to access this page after activating their account. |
+| Name                       | Description                                                                                                                                                                              | Default |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| redirectTo                 | Optional. After a successful confirmation, redirect to this Resource.                                                                                                                    |         |
+| redirectParams             | Optional. A JSON object of parameters to pass when redirecting using redirectTo.                                                                                                         |         |
+| redirectBack               | Optional. Resource ID for the post-confirm redirect when `redirectTo` is empty. Can also be sent in the confirmation link / request (for example from a form that required registration). |         |
+| redirectBackParams         | Optional. Query parameters for `redirectBack` (JSON snippet property, or a value from the confirmation request). Used when `redirectParams` is empty.                                    |         |
+| redirectUnsetDefaultParams | Optional. If true, do not merge Register persist parameters (`username`, `userid`, and leftover query args) into the redirect URL.                                                       | 0       |
+| authenticate               | Authenticate and login the user to the current context after confirming registration.                                                                                                    | 1       |
+| authenticateContexts       | Optional. A comma-separated list of contexts to authenticate to. Defaults to the current context.                                                                                        |         |
+| errorPage                  | Optional. Resource ID to redirect to when confirmation fails (bad or missing link, user not found, and similar). If empty, MODX shows the site error page.                               |         |
+| activePage                 | Optional. Resource ID to redirect to when the activation link is opened again for a user who is **already** active. If empty, ConfirmRegister uses `errorPage` (or the site error page). |         |
 
 ### Events
 
