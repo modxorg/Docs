@@ -70,6 +70,7 @@ This policy is packaged into MODX and is given to users on the 'mgr' context who
 | new\_chunk                  | To create a new [Chunk](building-sites/elements/chunks "Chunks").                                                                |
 | new\_context                | To create a new [Context](building-sites/contexts "Contexts").                                                                   |
 | new\_document               | To create a new [Resources](building-sites/resources "Resources").                                                               |
+| new\_document\_in\_root     | To create a [Resource](building-sites/resources "Resources") at the site root. Replaces the removed `udperms_allowroot` setting. |
 | new\_plugin                 | To create a new [Plugin](extending-modx/plugins "Plugins").                                                                      |
 | new\_role                   | To create a new [Role](building-sites/client-proofing/security/roles "Roles").                                                   |
 | new\_snippet                | To create a new [Snippet](extending-modx/snippets "Snippets").                                                                   |

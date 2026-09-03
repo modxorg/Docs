@@ -4,12 +4,6 @@ _old_id: "317"
 _old_uri: "2.x/administering-your-site/settings/system-settings/udperms_allowroot"
 ---
 
-## udperms\_allowroot
+The `udperms_allowroot` setting was removed in MODX 3.0. Revolution already ignored it. Root resource creation is controlled by the `new_document_in_root` [permission](building-sites/client-proofing/security/policies/permissions/administrator-policy) on the Administrator Policy (granted by default).
 
-**Name**: Allow Root Resource Creation
-**Type**: Yes/No
-**Default**: No
-
-If true, allows users to create new resources in the root of the site.
-
-This setting is **deprecated** in MODX Revolution. It has been replaced by the 'new\_document\_in\_root' [Permission](building-sites/client-proofing/security/policies/permissions "Permissions") in the Administrator Policy (the permission is granted by default).
+Grant `new_document_in_root` to let users create resources at the site root. Deny it to block create, duplicate, and move into the root.

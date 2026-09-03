@@ -14,6 +14,7 @@ MODX 3.0 очистил значительное количество стары
 -   `manager_language` [#13786](https://github.com/modxcms/revolution/pull/13786), заменено автоматическое определение языка и переключение на лету в менеджере [#14046](https://github.com/modxcms/revolution/pull/14046). [Узнайте больше о языке менеджера в 3.0](getting-started/upgrading-to-3.0/manager-language)
 -   `resolve_hostnames` и `server_protocol` были удалены [#14877](https://github.com/modxcms/revolution/pull/14877). Устаревшие настройки из MODX Evolution.
 -   `upload_flash`, установите `upload_files` или `upload_images` или `allowedFileTypes` вместо медиа источника. [#14252](https://github.com/modxcms/revolution/pull/14252)
+-   `udperms_allowroot` и `webpwdreminder_message` [#14841](https://github.com/modxcms/revolution/pull/14841). Создание ресурсов в корне задаёт разрешение `new_document_in_root`. `webpwdreminder_message` был неиспользуемым шаблоном письма веб-пользователю. См. [udperms_allowroot](building-sites/settings/udperms_allowroot) и [webpwdreminder_message](building-sites/settings/webpwdreminder_message).
 -   `cache_action_map` поскольку карта действий была полностью удалена, теперь официально исчезло modAction [#14927](https://github.com/modxcms/revolution/pull/14927)
 
 ## Измененные значения по умолчанию

@@ -13,6 +13,7 @@ MODX 3.0 cleaned up a significant number of old system settings and changed the 
 - `manager_language` [#13786](https://github.com/modxcms/revolution/pull/13786), replaced by automatic language detection and on-the-fly switching in the manager [#14046](https://github.com/modxcms/revolution/pull/14046). [Learn more about the manager language in 3.0](getting-started/maintenance/upgrading/3.0/manager-language)
 - `resolve_hostnames` and `server_protocol` have been removed [#14877](https://github.com/modxcms/revolution/pull/14877). Deprecated settings from MODX Evolution.
 - `upload_flash`, set `upload_files` or `upload_images` or the `allowedFileTypes` on the media source instead. [#14252](https://github.com/modxcms/revolution/pull/14252)
+- `udperms_allowroot` and `webpwdreminder_message` [#14841](https://github.com/modxcms/revolution/pull/14841). Root resource creation uses the `new_document_in_root` permission. `webpwdreminder_message` was an unused web-user password email template. See [udperms_allowroot](building-sites/settings/udperms_allowroot) and [webpwdreminder_message](building-sites/settings/webpwdreminder_message).
 - `cache_action_map` as the action map has been removed completely now that modAction is officially gone [#14927](https://github.com/modxcms/revolution/pull/14927)
 
 ## Changed default values

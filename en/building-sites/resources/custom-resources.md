@@ -31,6 +31,8 @@ CRCs look like normal Resources in the tree. The CRC class can also hook into th
 
 CRCs can have their Controllers, Processors and main rendering functionality extended and overridden. You can, for example, automatically append text to the output of any CRC's content by overriding the process() or getContent() method of the CRC in the PHP class. Any method in the modResource class is available to be overridden when using CRCs.
 
+On MODX 3, a CRC create or update processor must extend `\MODX\Revolution\Processors\Resource\Create` or `Update`. The old `modResourceCreateProcessor` and `modResourceUpdateProcessor` names are aliases until 3.3. The 2.x processor files under `core/model/modx/processors/resource/` are gone. See [Step 4: Customizing the Processors](extending-modx/custom-resources/step-4-processors) and [Processors in the 3.0 upgrade notes](getting-started/upgrading-to-3.0/processors).
+
 ## Creating a CRC
 
 Please follow the tutorial on [Creating a Resource Class](extending-modx/custom-resources "Creating a Resource Class").

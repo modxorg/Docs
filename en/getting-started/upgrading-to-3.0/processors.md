@@ -37,6 +37,21 @@ To help ease with the transition to 3.0, the old class names are automatically m
 
 Any call to a core processor will need to be reviewed. The old action names in [modX::runProcessor](extending-modx/modx-class/reference/modx.runprocessor) (e.g. `resource/create`) are still supported, but it is possible that the internal logic of some processors has changed.
 
+## Custom resource types (CRC)
+
+If a custom resource class defines `{ClassKey}CreateProcessor` or `{ClassKey}UpdateProcessor`, the core resource processors instantiate that class instead of themselves. Custom resource types that extend those processors must follow the 3.x class names.
+
+In 2.x the core classes lived at `core/model/modx/processors/resource/create.class.php` (`modResourceCreateProcessor`) and `update.class.php` (`modResourceUpdateProcessor`). Those files are gone.
+
+| Old class                       | New class                                       |
+| ------------------------------- | ----------------------------------------------- |
+| `\modResourceCreateProcessor`   | `\MODX\Revolution\Processors\Resource\Create`   |
+| `\modResourceUpdateProcessor`   | `\MODX\Revolution\Processors\Resource\Update`   |
+
+`core/include/deprecated.php` aliases the old names until 3.3. A `require_once` of the 2.x paths fails.
+
+See [Step 4: Customizing the Processors](extending-modx/custom-resources/step-4-processors).
+
 ## Flat-file processors no longer supported
 
 Support for so-called flat-file processors (which end in `.php` rather than `.class.php` and don't use a processor class) has been removed.
