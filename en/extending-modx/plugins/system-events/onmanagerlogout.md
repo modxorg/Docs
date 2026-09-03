@@ -21,6 +21,10 @@ Fires after a user is logged out of the manager and their context session is rem
 | **&** loginContext | The context key this logout is occurring in. **Passed by reference**                 |
 | **&** addContexts  | Additional contexts in which the logout is also occuring in. **Passed by reference** |
 
+## `$modx->getUser()` during OnManagerLogout
+
+Same logout processor as [OnWebLogout](extending-modx/plugins/system-events/onweblogout): session contexts are removed first, then the event fires, and `$modx->user` is not cleared. Prefer the event `$user` over `$modx->getUser()` for who logged out. See that page for details and a reload workaround.
+
 ## Example
 
 Such a plugin will write to the "Error log" who came out and where:
