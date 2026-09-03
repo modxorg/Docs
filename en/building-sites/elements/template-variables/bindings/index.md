@@ -18,7 +18,8 @@ These Data Sources can be tied (or "bound") to a Template Variable for formattin
 
 - @FILE file\_path
 - @RESOURCE resource\_id
-- @CHUNK chunk\_name
+- @CHUNK chunk\_name \[properties\_as\_json\]
+- @SNIPPET snippet\_name \[properties\_as\_json\]
 - @SELECT sql\_query
 - @DIRECTORY path\_relative\_to\_base\_path
 - @INLINE available in some Extras (e.g. getResources), this specifies a formatting chunk in-line as a string.

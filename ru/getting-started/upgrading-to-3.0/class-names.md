@@ -91,6 +91,8 @@ translation: "getting-started/upgrading-to-3.0/class-names"
 -   All classes and functions related to the `xmlrpc` and `jsonrpc` services/utilities: `modXMLRPCResponse`, `modJSONRPCResponse`, `modXMLRPCResource` (+ platform classes), `modJSONRPCResource` (+ platform classes)
 -   `modManagerControllerDeprecated`
 
+Flash-хелперы copy-to-clipboard из ExtJS удалены вместе с Flash [#13697](https://github.com/modxcms/revolution/pull/13697). Используйте clipboard API браузера.
+
 ## Изменения подписи
 
 -   `modResponse::_construct` (и унаследовал `modManagerResponse`/`modConnectorResponse`) теперь помечен как «открытый» и больше не содержит амперсанд, поскольку объекты всегда передаются по ссылке.

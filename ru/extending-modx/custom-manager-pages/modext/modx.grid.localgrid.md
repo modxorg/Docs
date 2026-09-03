@@ -11,7 +11,9 @@ translation: "extending-modx/custom-manager-pages/modext/modx.grid.localgrid"
 
 Класс MODExt LocalGrid аналогичен классу [MODx.grid.Grid](extending-modx/custom-manager-pages/modext/modx.grid.grid "MODx.grid.Grid"), однако вместо того, чтобы использовать коннектор для заполнения его данными, он должен быть загружен через локальное хранилище.
 
-При создании этого экземпляра в интерфейсе с вкладками рекомендуется установить в своей конфигурации protectRender: true, чтобы предотвратить проблемы с отображением JS.
+LocalGrid наследует те же defaults GridBase, что и удалённые сетки: `showActionsColumn`, `getActions()`, подсветку editable-колонок и `renderLink()`.
+
+При создании этого экземпляра в интерфейсе с вкладками рекомендуется установить в своей конфигурации preventRender: true, чтобы предотвратить проблемы с отображением JS.
 
 ## Смотрите также
 

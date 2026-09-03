@@ -333,6 +333,8 @@ public function verifyAuthentication()
 
 По умолчанию JSON. XML запрашивайте суффиксом `.xml` (`/rest/items.xml`) или через `defaultResponseFormat => 'xml'`.
 
+При разборе входящего XML пустой XML-элемент в PHP-массиве становится пустой строкой (`''`), а не пустым массивом. [#14305](https://github.com/modxcms/revolution/pull/14305) Контроллеры с `empty()` или строгой проверкой `=== ''` ведут себя так же, как при JSON с `""`.
+
 Тела success/failure используют ключи из конфига сервиса (`success`, `message`, `object`, плюс `errors` при ошибках полей). Списки используют `results` и `total`.
 
 HTTP-статус по умолчанию для успеха и ошибки: `200`. Передайте третий аргумент в `success()` / `failure()` или смените `defaultSuccessStatusCode` / `defaultFailureStatusCode`, если нужны коды вроде 201 или 404.

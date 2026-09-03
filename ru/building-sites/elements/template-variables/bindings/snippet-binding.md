@@ -14,7 +14,7 @@ translation: "building-sites/elements/template-variables/bindings/snippet-bindin
 ```
 
 Привязывает переменную к сниппету. Где `snippet_name` - это имя сниппета. Возвращаемое значение - вывод сниппета.\
-Свойства в формате JSON необязательны и передаются сниппету как scriptProperties.
+Свойства в формате JSON необязательны (MODX 3.0+) и передаются сниппету как scriptProperties.
 
 ## Использование
 

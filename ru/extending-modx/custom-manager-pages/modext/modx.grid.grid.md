@@ -84,8 +84,59 @@ MODx.grid.Grid добавляет несколько уникальных пар
 | preventSaveRefresh | Если автосохранение имеет значение true, после сохранения будет препятствовать обновлению сетки. Используется для более плавного редактирования.                                                                    | 1                     |
 | primaryKey         | Если у ваших элементов сетки есть первичный ключ, который не является идентификатором, установите его здесь.                                                                                                        | id                    |
 | storeId            | Пользовательский идентификатор для предоставления хранилища в данной сетке. По умолчанию будет использоваться уникальный Ext ID.                                                                                    | Ext.id()              |
+| showActionsColumn  | Если true, добавляет колонку действий (`modx-actions`) с иконками. Добавлено в MODX 3.0.                                                                                                                            | true                  |
+| actionsColumnWidth | Ширина колонки действий. Авто: `50` для пиксельных колонок, `0.1` если все ширины ≤ 1.                                                                                                                              | auto                  |
+| disableContextMenuAction | Если true, убирает шестерёнку контекстного меню и соответствующий путь меню действий.                                                                                                                         | false                 |
 
 Полный список всех параметров, не перечисленных здесь, см. в документации [ExtJS](http://sencha.com).
+
+## Колонка действий (MODX 3.0+)
+
+`MODx.grid.Grid` и `MODx.grid.LocalGrid` используют общий `MODx.grid.GridBase`. При `showActionsColumn: true` MODX добавляет фиксированную колонку, renderer которой вызывает `getActions()`.
+
+Переопределите `getActions`, чтобы вернуть дополнительные кнопки-иконки. У каждого элемента нужны `action`, `icon` и `text`. Клик ищет на сетке метод с именем `action` (или Capitalized `action`).
+
+```javascript
+getActions: function(value, metaData, record, rowIndex, colIndex, store) {
+    return [{
+        action: 'removeElement',
+        icon: 'trash-o',
+        text: _('delete')
+    }];
+}
+```
+
+Если `disableContextMenuAction` не true, MODX также добавляет шестерёнку, которая открывает то же меню, что и правый клик (`getMenu` / данные `menu` процессора).
+
+Отключить колонку целиком:
+
+```javascript
+Ext.applyIf(config, {
+    showActionsColumn: false
+});
+```
+
+## Подсветка редактируемых колонок (MODX 3.0+)
+
+Колонки с `editor` автоматически получают CSS-класс `x-editable-column` через `renderEditableColumn`. Тема менеджера показывает подсказку при наведении (иконка карандаша). Отдельного флага нет: задайте `editor`, если ячейка редактируется inline.
+
+## Ссылки в колонках (MODX 3.0+)
+
+В renderer используйте `renderLink(content, attributes, isSimulated, isSimulatedTag)`, чтобы обернуть значение в `<a class="x-grid-link">` (или имитацию ссылки через span).
+
+```javascript
+renderer: {
+    fn: function(value, metaData, record) {
+        return this.renderLink(value, {
+            href: '?a=context/update&key=' + record.data.key,
+            title: _('edit')
+        });
+    },
+    scope: this
+}
+```
+
+Смежный helper: `getLinkTemplate(controllerPath, displayValueIndex, options)` для колонок `xtype: 'templatecolumn'`.
 
 ## Пользовательские события
 

@@ -334,6 +334,8 @@ Failed auth becomes HTTP 401 with the standard error payload. Pair this with HTT
 
 JSON is the default. Request XML with a `.xml` suffix when the format is enabled (`/rest/items.xml`), or set `defaultResponseFormat` to `xml`.
 
+When the service parses inbound XML request bodies, an empty XML element becomes an empty string (`''`) in the resulting PHP array, not an empty array. [#14305](https://github.com/modxcms/revolution/pull/14305) Controllers that treat “empty” with `empty()` or strict `=== ''` checks stay consistent with JSON clients sending `""`.
+
 Success and failure bodies use keys from the service config (`success`, `message`, `object`, plus `errors` when field errors exist). List calls use `results` and `total`.
 
 Default HTTP status for both success and failure is `200`. Pass a third argument to `success()` / `failure()`, or change `defaultSuccessStatusCode` / `defaultFailureStatusCode`, when you need 201/404-style codes.

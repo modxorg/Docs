@@ -29,20 +29,30 @@ translation: "getting-started/upgrading-to-3.0"
 - Переработан установщик [#14507](https://github.com/modxcms/revolution/pull/14507) и вход в менеджер [#13773](https://github.com/modxcms/revolution/pull/13773).
 - Менеджер переработан. Улучшена работа на мобильных [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735). Изменены стили ресурсов в дереве [#14832](https://github.com/modxcms/revolution/pull/14832)
 - Язык можно переключать на лету [#14046](https://github.com/modxcms/revolution/pull/14046)
-- Все разрешения менеджера автоматически доступны в `MODx.perm` [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425)
+- Все разрешения менеджера автоматически доступны в `MODx.perm` [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425). См. [Объект MODx](extending-modx/custom-manager-pages/modext/modext-modx-object).
 - Перевод Google отключён в менеджере [#14414](https://github.com/modxcms/revolution/pull/14414)
 - Более последовательное дублирование ресурсов и элементов [#14411](https://github.com/modxcms/revolution/pull/14411)
 
 ### Пакеты
 
-- Markdown теперь разбирается в атрибутах пакета (changelog, readme, license) [#13853](https://github.com/modxcms/revolution/pull/13853)
+- Markdown теперь разбирается в атрибутах пакета (changelog, readme, license) [#13853](https://github.com/modxcms/revolution/pull/13853). См. [Создание скрипта сборки](extending-modx/transport-packages/build-script).
 
 ### Файлы и медиа
 
-- Медиаисточники теперь используют Flysystem [#13709](https://github.com/modxcms/revolution/pull/13709)
-- Каталоги ядра защищены от переименования и удаления из менеджера [#14374](https://github.com/modxcms/revolution/pull/14374)
+- Медиаисточники теперь используют Flysystem [#13709](https://github.com/modxcms/revolution/pull/13709). См. [Файловая система](building-sites/media-sources/types/media-source-type-file-system) и [S3](building-sites/media-sources/types/media-source-type-s3).
+- Каталоги ядра защищены от переименования и удаления из менеджера [#14374](https://github.com/modxcms/revolution/pull/14374). См. [источник File System](building-sites/media-sources/types/media-source-type-file-system).
 
 ### Ресурсы и шаблоны
 
-- Ресурсы могут получить иконку по типу контента [#14383](https://github.com/modxcms/revolution/pull/14383)
-- Новые модификаторы вывода для файлов: `dirname`, `basename`, `filename`, `extensions` [#14198](https://github.com/modxcms/revolution/pull/14198)
+- Ресурсы могут получить иконку по типу контента [#14383](https://github.com/modxcms/revolution/pull/14383). См. [Типы содержимого](building-sites/resources/content-types).
+- Новые модификаторы вывода для файлов: `dirname`, `basename`, `filename`, `extension` [#14198](https://github.com/modxcms/revolution/pull/14198). См. [Фильтры/модификаторы вывода](building-sites/tag-syntax/output-filters).
+
+### Безопасность и почта
+
+- Письмо «забыли пароль» использует ссылку сброса (`modhash`), а не пароль в письме [#13786](https://github.com/modxcms/revolution/pull/13786). См. [forgot_login_email](building-sites/settings/forgot_login_email).
+
+### Парсер и REST
+
+- Литеральные одинарные `[` / `]` внутри значений тегов поддерживаются [#13904](https://github.com/modxcms/revolution/pull/13904). См. [Синтаксис тегов](building-sites/tag-syntax).
+- Значения-массивы в свойствах получают стабильную serialize-подпись тега [#14689](https://github.com/modxcms/revolution/pull/14689). См. [Синтаксис тегов](building-sites/tag-syntax).
+- Пустые XML-элементы во входящем теле `modRestService` становятся `''` [#14305](https://github.com/modxcms/revolution/pull/14305). См. [RESTful API](extending-modx/developing-restful-api).

@@ -50,6 +50,12 @@ After you've created one or more Templates, you can edit any Resource and choose
 
 Templates can contain any tags, including [Template Variables](building-sites/elements/template-variables "Template Variables"), [Chunks](building-sites/elements/chunks "Chunks"), [Snippets](extending-modx/snippets "Snippets"), and others.
 
+### Manager Icon Class
+
+When you create or edit a Template, the **Manager Icon Class** field (`template_icon`) sets a CSS class for Resources that use that Template in the Resource tree. Use Font Awesome-style classes such as `icon-home` or `fa-home`.
+
+If this field is set, it takes precedence over the Content Type Icon for tree display. Leave it empty when you want the [Content Type](building-sites/resources/content-types) Icon (or the default resource / folder icon) to apply instead.
+
 ### Using Resource Fields in the Template
 
 As you noticed from our Template sample code above, the fields of a Resource can be referenced using the `[[*fieldName]]` syntax. A list of available Resource Fields can be [found here](building-sites/resources#Resources-ResourceFields). For example, if we wanted to show the current Resource's pagetitle in our `<title>` tag, we would simply do this:

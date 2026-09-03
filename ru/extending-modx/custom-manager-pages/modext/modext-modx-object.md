@@ -75,27 +75,20 @@ var userId = MODx.user.id;
 
 ### MODx.perm
 
-Будет содержать следующие разрешения, если они будут предоставлены пользователю (они не будут существовать, если у пользователя нет разрешения):
+`MODx.perm` — карта **всех** имён manager-разрешений на boolean для текущего пользователя. Config JS читает distinct-строки `modAccessPermission` и заполняет ключи через `hasPermission()`. Фиксированного subset нет. [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425)
 
-| Название                   | Описание                            |
-| -------------------------- | ----------------------------------- |
-| MODx.perm.resource_tree    | Для просмотра дерева ресурсов.      |
-| MODx.perm.element_tree     | Для просмотра дерева элементов.     |
-| MODx.perm.file_tree        | Для просмотра дерева файлов.        |
-| MODx.perm.file_upload      | Загружать файлы.                    |
-| MODx.perm.file_manager     | Использовать файловый браузер MODX. |
-| MODx.perm.new_chunk        | Создать новый чанк.                 |
-| MODx.perm.new_plugin       | Создать новый плагин.               |
-| MODx.perm.new_snippet      | Создать новый сниппет.              |
-| MODx.perm.new_template     | Создать новый шаблон.               |
-| MODx.perm.new_tv           | Создать новую переменную шаблона.   |
-| MODx.perm.directory_create | Создать каталог в файловой системе. |
+Проверяйте любой ключ, который нужен Extra или CMP:
 
 ```javascript
 if (MODx.perm.file_upload) {
     /* ...код... */
 }
+if (MODx.perm.view_document) {
+    /* ... */
+}
 ```
+
+Частые ключи по-прежнему включают `resource_tree`, `element_tree`, `file_tree`, `file_upload`, `file_manager`, `new_chunk`, `new_plugin`, `new_snippet`, `new_template`, `new_tv` и `directory_create`. Отсутствующий ключ означает, что разрешения нет (считайте falsy).
 
 ## Пользовательские методы
 

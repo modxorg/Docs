@@ -11,6 +11,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 
 The MODExt LocalGrid class is similar to the [MODx.grid.Grid](extending-modx/custom-manager-pages/modext/modx.grid.grid "MODx.grid.Grid") class, however rather than using a connector to populate it with data, it must be loaded through a local store.
 
+LocalGrid inherits the same GridBase defaults as remote grids: `showActionsColumn`, `getActions()`, editable-column hover, and `renderLink()`.
+
 When instantiating this into a tabbed interface, it's recommended to set preventRender: true in its config to prevent JS rendering issues.
 
 ## See Also

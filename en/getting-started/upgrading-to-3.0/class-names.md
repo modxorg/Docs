@@ -79,6 +79,8 @@ These classes were permanently removed from 3.0 with no alternative:
 -   All classes and functions related to the `xmlrpc` and `jsonrpc` services/utilities: `modXMLRPCResponse`, `modJSONRPCResponse`, `modXMLRPCResource` (+ platform classes), `modJSONRPCResource` (+ platform classes)
 -   `modManagerControllerDeprecated`
 
+Flash clipboard helpers previously used by ExtJS for copy-to-clipboard are gone with the Flash removal [#13697](https://github.com/modxcms/revolution/pull/13697). Use the browser clipboard APIs instead.
+
 ## Signature changes
 
 -   `modResponse::_construct` (and inherited `modManagerResponse`/`modConnectorResponse`) is now marked `public` and no longer includes the ampersand as objects are always passed by reference.

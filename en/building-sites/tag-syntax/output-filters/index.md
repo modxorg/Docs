@@ -121,6 +121,30 @@ The following table lists some of the existing modifiers and shows examples of t
 | urldecode                                | Converts the input from an URL-friendly string Similar to PHP's [urldecode](http://www.php.net/manual/en/function.urldecode.php)                                                                                                                                    | `[[+myparam:urldecode]]`                           |
 | filterPathSegment                        | Added in 2.7. Converts the input into a URL-friendly string with the same mechanism that turns a pagetitle into an alias, including transliteration if enabled. Useful for custom urls.                                                                             | `[[+pagetitle:filterPathSegment]]`                 |
 
+### File path output modifiers
+
+Added in MODX 3.0. These modifiers wrap PHP [`pathinfo()`](https://www.php.net/manual/en/function.pathinfo.php). They do not check whether the path exists on disk. Options after the modifier are ignored.
+
+| Modifier   | Description | Example |
+| ---------- | ----------- | ------- |
+| dirname    | Directory portion of the path | `[[+filepath:dirname]]` → `/assets/images` for `/assets/images/logo.jpg` |
+| basename   | File name including extension | `[[+filepath:basename]]` → `logo.jpg` |
+| filename   | File name without the final extension | `[[+filepath:filename]]` → `logo` |
+| extension  | Final extension only (singular name; not `extensions`) | `[[+filepath:extension]]` → `jpg` |
+
+Edge cases worth knowing:
+
+- `test.inc.php` → filename `test.inc`, extension `php`
+- `file.tar.gz` → filename `file.tar`, extension `gz`
+- `.htaccess` → empty filename, extension `htaccess`
+- A path with no extension returns an empty extension string
+
+```php
+[[*myImageTV:basename]]
+[[*myImageTV:dirname]]/thumbs/[[*myImageTV:filename]].webp
+[[+file:extension:lcase:is=`pdf`:then=`PDF`:else=`Other`]]
+```
+
 ### Caching
 
 In general, any content in a placeholder that you think **might change dynamically** should be uncached. For example:
