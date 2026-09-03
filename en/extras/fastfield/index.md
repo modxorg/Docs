@@ -5,9 +5,13 @@ _old_uri: "revo/fastfield"
 description: "fastField extra helps to get single field, including Template Variables and Properties, of a different resource, also it can display superglobal PHP variables"
 ---
 
+**FastField is not compatible with MODX 3.** Do not install it on 3.x. Use [pdoTools](extras/pdoTools) instead: [pdoParser](extras/pdoTools/Parser) already includes the `[[#...]]` FastField tag syntax (with the author's permission). See [argnist/fastField#16](https://github.com/argnist/fastField/issues/16).
+
+The rest of this page documents the Extra for MODX Revolution **2.2+** (2.x only).
+
 ## What is fastField?
 
-fastField is a plugin which adds new type of tag `[[#...]]` . It can be used to display a single field, including template variables and properties, of a different resource for MODX Revolution 2.2+. It also can display the value of superglobal PHP variables $\_POST, $\_GET and others.
+fastField is a plugin which adds a new type of tag `[[#...]]`. On MODX 2.2+ it can display a single field, including template variables and properties, of another resource. It can also display values from PHP superglobals such as `$_POST` and `$_GET`.
 
 ## History
 
