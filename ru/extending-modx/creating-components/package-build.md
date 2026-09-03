@@ -3,222 +3,168 @@ title: "Собираем и устанавливаем первую версию
 translation: "extending-modx/creating-components/package-build"
 ---
 
-В прошлом уроке мы определились с примерным функционалом, написали схему таблиц и сгенерировали модель xPDO для работы с БД MySQL.
+В прошлом уроке мы определились с примерным функционалом, написали схему таблиц и сгенерировали модель xPDO для MySQL.
 
-А сегодня нужно собрать и установить первую версию пакета и разобраться, как работают [Custom Manager Pages](extending-modx/custom-manager-pages "Custom Manager Pages").
+Сегодня собираем и устанавливаем первую версию пакета и смотрим, как устроены [Custom Manager Pages](extending-modx/custom-manager-pages).
 
-Учитывая, что мы используем заготовку modExtra и уже разобрали, как она работает, сборка пакета сводится к запуску скрипта `build.transport.php` на сервере.
+## Скрипты сборки (актуальный modExtra)
 
-Если в конфиге `build.config.php` задана константа `PKG_AUTO_INSTALL`, компонент сразу установится на сайт.
+В старых материалах курса фигурировали `build.transport.php` и `build.config.php`. В текущих заготовках этих файлов **нет**.
 
-Итак, я запускаю `c2263.paas2.ams.modxcloud.com/Sendex/_build/build.transport.php`, и в конфиге у меня включена автоустановка. Поэтому сразу после сборки пакетом уже можно пользоваться.
+| MODX | Заготовка | Сборка | Конфиг |
+| --- | --- | --- | --- |
+| 3.x | [modx-pro/ModExtra3](https://github.com/modx-pro/ModExtra3) | `_build/build.php` | `_build/config.inc.php` |
+| 2.x | [modx-pro/modExtra](https://github.com/modx-pro/modExtra) | `_build/build.php` | `_build/config.inc.php` |
 
-![](/2.x/ru/extending-modx/creating-components/package-build/package-build-1.png)
+Рабочая копия лежит в каталоге `Extras/` в корне сайта. Переименование через `rename_it.php`, затем сборка:
 
-![](/2.x/ru/extending-modx/creating-components/package-build/package-build-2.png)
+```bash
+php ~/www/Extras/modExtra/rename_it.php Sendex
+php ~/www/Extras/Sendex/_build/build.php
+```
 
-Иначе пришлось бы зайти в управление пакетами, искать их локально и устанавливать. Пакеты я собираю часто, и делать это каждый раз давно надоело.
+То же можно открыть в браузере:
 
-Давайте теперь посмотрим, как работает CMP, то есть наш новый раздел админки Sendex.
+`https://your-dev-site/Extras/Sendex/_build/build.php`
+
+Параметр `?download=1` отдаёт готовый transport zip после сборки.
+
+В `config.inc.php` автоустановка это флаг `'install' => true` (не константа `PKG_AUTO_INSTALL`):
+
+```php
+return [
+    'name' => 'Sendex',
+    'name_lower' => 'sendex',
+    'version' => '1.0.0',
+    'release' => 'pl',
+    'install' => true,
+    // ...
+];
+```
+
+При `'install' => true` скрипт собирает пакет и сразу ставит его через Package Management. Если `false`, зайдите в **Приложения → Установщик**, найдите пакет локально и установите zip вручную.
+
+![](package-build/package-build-1.png)
+
+![](package-build/package-build-2.png)
+
+Списки элементов лежат в `_build/elements/` (например `menus.php`, `snippets.php`). PHP-файлы, имя которых не начинается с `.` или `_`, подхватываются автоматически. Резолверы в `_build/resolvers/`. Подробнее: [Структура компонента](extending-modx/creating-components/component-structure).
 
 ## Меню
 
-Все меню MODX состоят из двух частей: собственно пункта меню и действия, которое он вызывает. Как и всё остальное в Revolution, меню и действие тоже объекты. Мы задаём их в файле [transport.menu.php](https://github.com/bezumkin/Sendex/blob/master/_build/data/transport.menu.php).
+В MODX 3 объекта `modAction` уже нет. Пункт меню это `modMenu`, в поле `action` пишется имя контроллера внутри namespace компонента.
 
-Видите: в массиве с пунктами меню (у нас он один) modMenu есть ещё ключ **action**. Это параметры для создаваемого modAction.
+В актуальных modExtra / ModExtra3 меню задаётся в [`_build/elements/menus.php`](https://github.com/modx-pro/ModExtra3/blob/master/_build/elements/menus.php):
 
-Если захотим добавить ещё один пункт, получится примерно так:
-
-``` php
-$tmp = array(
-    'sendex' => array(
+```php
+return [
+    'sendex' => [
         'description' => 'sendex_menu_desc',
-        'action' => array(
-            'controller' => 'index',
-        ),
-    ),
-    'another_menu' => array(
-        'description' => 'My description',
-        'action' => array(
-        'controller' => 'and here is the file controller',
-        ),
-    ),
-);
+        'action' => 'home',
+        // 'parent' => 'components', // так задаёт скрипт сборки по умолчанию
+    ],
+];
 ```
 
-Ещё можно указать, в каком родительском меню будет наш пункт. Это параметр **parent**, и в нашем случае он стандартный: **components**.
+- `action` → файл `core/components/sendex/controllers/home.class.php` (класс вроде `SendexHomeManagerController`).
+- `parent` → обычно `components`. Пустая строка для корневого пункта, который только открывает подменю.
+- `handler` → необязательный JavaScript. Для «пустого» родителя часто `return false;`.
 
-А вот у miniShop2, который изначально планировался под расширения, меню лежит не в components, а в корне. Посмотрите на его [transport.menu.php](https://github.com/bezumkin/miniShop2/blob/master/_build/data/transport.menu.php). У первого пункта там `parent = ''`, а у следующих уже `parent = 'minishop2'`.
-
-Для таких случаев нужен ещё параметр **handler**: javascript-функция, которая вызывается при клике на пункт меню. Для основного пункта меню MS2, который просто контейнер подменю, это `return false;`. То есть при клике ничего не делать.
-
-Но у нас простой, можно сказать классический случай: один CMP и один пункт меню в components.
-
-Как правило (не обязательно), modMenu связан с `modAction`. Его цель запустить конкретный контроллер. Поэтому в массиве с action мы указываем пункт **controller**.
+В старых коммитах Sendex ещё встречается `_build/data/transport.menu.php` с вложенным массивом `action` под `modAction`. Это история. Для MODX 3 используйте `menus.php`, как выше.
 
 ## Настройка для разработки
 
-Прежде чем разбирать контроллер, нужно сделать несколько настроек, чтобы удобно работать на удалённом сервере.
+Каталог проекта (например `Extras/Sendex`) это рабочее дерево. После установки MODX также кладёт файлы в `core/components/sendex/` и `assets/components/sendex/`. Правки в `Extras/Sendex` не попадут в установленные копии, пока вы не пересоберёте пакет или не направите namespace на проект.
 
-Напоминаю: весь наш проект лежит в каталоге Sendex в корне сайта. А только что установленный пакет распаковался в `/core` и `/assets`. Теперь, если мы что-то меняем, изменения синхронизируются с каталогом в корне и не затрагивают установленные файлы.
+Варианты:
 
-Здесь 2 варианта: после каждого изменения собирать и устанавливать пакет или научить MODX загружать скрипты из каталога `/Sendex`.
+1. После каждого изменения собирать и ставить пакет заново.
+2. Указать namespace (и пути) на `Extras/Sendex`, чтобы менеджер читал PHP/JS из проекта.
 
-Конечно, второй вариант предпочтительнее. Поэтому идём в **Система → Пространства имён** и делаем так:
+Для варианта 2: **Система → Пространства имён**, откройте `sendex` и пропишите путь к `core` проекта. В ModExtra3 резолвер `symlinks` может сам сделать ссылки `core` и `assets` обратно в `Extras/`.
 
-![](/2.x/ru/extending-modx/creating-components/package-build/package-build-3.png)
+![](package-build/package-build-3.png)
 
-Это позволит MODX обращаться за исходниками в наш каталог. Теперь нужно создать системные настройки `sendex_core_path` и `sendex_assets_url` (а демо-настройку `sendex_some_setting` можно удалить):
+При необходимости создайте системные настройки `sendex_core_path` и `sendex_assets_url` (демо-настройки можно удалить):
 
-![](/2.x/ru/extending-modx/creating-components/package-build/package-build-4.png)
+![](package-build/package-build-4.png)
 
-![](/2.x/ru/extending-modx/creating-components/package-build/package-build-5.png)
+![](package-build/package-build-5.png)
 
-`sendex_assets_path` необязательна, но тоже полезна. Эти настройки нужны, чтобы знать, где искать наши файлы.
-
-В принципе можно их не создавать и каждый раз доставать `modNamespace`, но это не очень удобно.
-
-С этого момента рабочие каталоги проекта можно получать так:
-
-``` php
-$corePath = $this->modx->getOption('sendex_core_path', $config, $this->modx->getOption('core_path') . 'components/sendex/');
-$assetsUrl = $this->modx->getOption('sendex_assets_url', $config, $this->modx->getOption('assets_url') . 'components/sendex/');
+```php
+$corePath = $this->modx->getOption(
+    'sendex_core_path',
+    $config,
+    $this->modx->getOption('core_path') . 'components/sendex/'
+);
+$assetsUrl = $this->modx->getOption(
+    'sendex_assets_url',
+    $config,
+    $this->modx->getOption('assets_url') . 'components/sendex/'
+);
 ```
 
-И последний штрих: нужно добавить
-
-``` php
-ini_set('display_errors', 1);
-ini_set('error_reporting', -1);
-```
-
-в системные файлы MODX: `/index.php` и `/manager/index.php`. Они нужны, чтобы MODXCloud не прятал от нас ошибки во время разработки.
-
-Забегая немного вперёд: ещё нужно подправить `/assets/components/sendex/connector.php`, потому что он загружает MODX при запросах из админки и должен уметь работать и при обычном расположении файлов, и при разработке в каталоге Sendex. Лично я и здесь добавляю вывод ошибок, чтобы видеть ругань на ajax-запросах из админки.
-В итоге у меня получился [вот такой коннектор](https://github.com/bezumkin/Sendex/blob/8863b2c6960c304464a9c24b6ba13db03f8aeac2/assets/components/sendex/connector.php). Советую сохранить его.
+На время разработки можно включить вывод ошибок в корневых `index.php` и `manager/index.php` (хостинги часто их прячут). На проде так не оставляйте.
 
 ## Контроллеры CMP
 
-Итак, при клике на пункт меню MODX смотрит, с каким действием он связан и на какой контроллер ссылается, а затем вызывает этот файл.
+По клику на пункт меню MODX загружает контроллер из `action` в каталоге `controllers/` компонента.
 
-Контроллер это специальный php-файл в каталоге core компонента, наследующий `modManagerController`. Указывается он просто по имени: если версия MODX <2.2, это может быть `index.php` или `controller.php`, а если MODX новее, обычно используют `index.class.php` или `controller.class.php`.
+Домашний контроллер ModExtra3 наследует `MODX\Revolution\modExtraManagerController` и уже подключает ассеты через `addCss()` / `addJavascript()` / `addHtml()`. См. [`controllers/home.class.php`](https://github.com/modx-pro/ModExtra3/blob/master/core/components/modextra/controllers/home.class.php).
 
-Наш контроллер лежит в `/core/components/sendex/index.class.php`, поэтому в `modAction` указан index.
-Учитывая настройки для разработки, первым делом меняем загрузку класса Sendex и приводим файл [вот к такому виду](https://github.com/bezumkin/Sendex/blob/988146a6938bae7225b0432dd031b0dfc42ea7ce/core/components/sendex/index.class.php). Теперь не нужно каждый раз собирать пакет, и все изменения сразу видны.
+В уроках Sendex ещё разбирается старая цепочка (`index.class.php` → `SendexMainController` → `home.class.php`). Смысл тот же: входной контроллер поднимает конфиг и ассеты, затем отдаёт страницу дочернему. После настройки путей во входной файл почти не лезут.
 
-А сейчас внимательно [смотрите на файл](https://github.com/bezumkin/Sendex/blob/master/core/components/sendex/index.class.php) и пытайтесь войти в логику.
+После первой установки из заготовки откройте CMP. Демо-гриды могут писать ошибки в лог, пока вы не замените процессоры. Так и должно быть.
 
-* MODX нужен контроллер `index`, и в нём он ищет для запуска `IndexManagerController`. Это делается автоматически
-* `IndexManagerController` наследует абстрактный класс `SendexMainController` со всеми его методами
-* `SendexMainController` наследует `modExtraManagerController` со всеми его методами
-* `modExtraManagerController` общий класс всех CMP и содержит основную логику работы. Он запускает свой метод `initialize()`
-* Этот метод переопределён в дочернем классе `SendexMainController`, поэтому запускается оттуда
-* Мы уже смотрим системные настройки и подгружаем класс Sendex из каталога, указанного в системных настройках
-* Создаётся новый экземпляр класса `Sendex`. В PHP 5 при этом вызывается метод `__construct()`. У нас он задаёт переменную `Sendex::config`, в которую кладёт массив с настройками и путями к файлам
-* Пути к файлам определяются так же через системные настройки. Значит, мы грузим их из каталога `/Sendex/...`
-* В этот момент уже можно обращаться к любым методам и свойствам класса Sendex, включая `$sendex->config`
-* Где-то в глубинах `modExtraManagerController` уже добавлен класс `modX`, и мы можем обращаться к нему через `$this->modx`
-* Теперь комбинируем конфиг Sendex и методы `modX`, чтобы подключить нужные скрипты и стили из каталогов компонента
-* После того как подключили всё нужное, передаём дальнейшую логику родительскому классу. Пусть делает что хочет
-* А он хочет узнать, какой контроллер грузить дальше, и класс `IndexManagerController` отвечает: `home`
-* Этот класс уже загрузится из каталога `/Sendex/core/components/sendex/controllers/home.class.php`
+![](package-build/package-build-6.png)
 
-**Всё это знать не обязательно!** Такая логика используется примерно в 90% новых дополнений и сводится к вызову основного контроллера. Он загружает основные файлы компонента и передаёт управление дочернему контроллеру. А тот уже загрузит всё нужное для конкретной страницы компонента.
+![](package-build/package-build-7.png)
 
-Обычно у компонента **одна** страница, поэтому все эти сложности можно пропустить. По большому счёту в `index.class.php` больше залезать не нужно. Работать будем только с `controllers/home.class.php`.
-
-Честно говоря, я и сам не до конца понимаю эту цепочку контроллеров и кто кого загружает, поэтому просто следую отлаженной схеме.
-
-Ещё одно замечание: в моём modExtra скрипты и стили загружаются по старинке методами:
+Проверка, что менеджер читает ваш проект: временно в начале активного контроллера:
 
 ```php
-$this->modx->regClientCSS()
-$this->modx->regClientStartupScript()
-$this->modx->regClientScript()
-$this->modx->regClientStartupHTMLBlock()
-```
-
-Если хотите, чтобы компонент дружил с [AjaxManager](https://modx.com/extras/package/ajaxmanager), их нужно заменить на:
-
-```php
-$this->addCss()
-$this->addJavascript()
-$this->addLastJavascript()
-$this->addHtml()
-```
-
-При этом инициализацию страницы нужно перенести из `/assets/components/sendex/js/mgr/sections/home.js` в `home.class.php`. Иначе при открытии страницы будет ошибка.
-
-Лично я всё это сделал, поэтому просто сверьте и скопируйте мои файлы: [index.class.php](https://github.com/bezumkin/Sendex/blob/75c06d157fb8eaf20bff62330dc68fedad6a19db/core/components/sendex/index.class.php), [home.class.php](https://github.com/bezumkin/Sendex/blob/75c06d157fb8eaf20bff62330dc68fedad6a19db/core/components/sendex/controllers/home.class.php) и [home.js](https://github.com/bezumkin/Sendex/blob/75c06d157fb8eaf20bff62330dc68fedad6a19db/assets/components/sendex/js/mgr/sections/home.js).
-
-Если всё сделали правильно, можно на всякий случай синхронизировать проект, почистить кэши везде и зайти на страницу Sendex в админке:
-
-![](/2.x/ru/extending-modx/creating-components/package-build/package-build-6.png)
-
-Это страница из modExtra. Она вызывает его контроллеры с его объектами (которые мы удалили), поэтому в логе MODX должны появиться ошибки:
-
-![](/2.x/ru/extending-modx/creating-components/package-build/package-build-7.png)
-
-Это нормально. Они пропадут, когда мы перепишем процессоры.
-
-Можно также проверить, срабатывают ли изменения при синхронизации проекта с сервером.
-
-Пишем в `index.class.php` сразу после:
-
-``` php
-<?php:
 echo 'Hello world';
 die;
 ```
 
-Сохраняем и обновляем страницу в админке:
+Сохраните и обновите CMP. Если видите сообщение, namespace смотрит в рабочую копию.
 
-![](/2.x/ru/extending-modx/creating-components/package-build/package-build-8.png)
+![](package-build/package-build-8.png)
 
-Если видите то же, что и я, всё хорошо.
-
-Кстати, при последующей сборке и установке пакета наш namespace перезапишется на стандартный, поэтому я внёс [пару изменений в установщик](https://github.com/bezumkin/Sendex/commit/5416d620300261025420f9e73c41ee3a6fb9fd5a). Видите, как просто работать с установщиком? Советую сделать так же.
+Повторная сборка может сбросить пути namespace. Поправьте резолвер или namespace после установки, если работаете из `Extras/`. В истории Sendex есть [правки установщика под это](https://github.com/bezumkin/Sendex/commit/5416d620300261025420f9e73c41ee3a6fb9fd5a).
 
 ## Основные методы контроллера
 
-Нужно ещё немного рассказать о методах контроллера home.class.php, который будет у нас основным рабочим.
+Полезные методы домашнего контроллера:
 
 ### getPageTitle
 
-Вывод текста для тега title страницы CMP. Сейчас там выводится sendex из лексикона, поэтому мы видим его в заголовке:
+Текст для title страницы в менеджере (часто ключ лексикона).
 
-![](/2.x/ru/extending-modx/creating-components/package-build/package-build-9.png)
+![](package-build/package-build-9.png)
 
 ### getTemplateFile
 
-Этот метод отдаёт html-шаблон страницы, который распарсит Smarty. Учитывая, что вся админка сделана на ExtJS, файл шаблона `/core/components/sendex/elements/templates/home.tpl` выглядит так:
-
-``` html
-<div id="sendex-panel-home-div"></div>
-```
-
-Про него можно сразу забыть. Он просто выводит тег, который используют для отрисовки компонента ExtJs.
+Путь к Smarty-шаблону или пустая строка, если разметку добавляет сам контроллер (в ModExtra3 в контроллер дописывается `<div id="...">`, метод возвращает `''`).
 
 ### getLanguageTopics
 
-Этот метод возвращает массив словарей, которые будет использовать компонент.
+Темы лексиконов, например `['sendex:default']`.
 
 ### checkPermissions
 
-Проверять или нет права доступа к странице. Их можно указать в настройке меню:
+Вернуть `true`/`false` или опираться на права в настройках меню.
 
-![](/2.x/ru/extending-modx/creating-components/package-build/package-build-10.png)
-
-чтобы закрыть страницу от кого-то. Например, можно указать `save_document`, чтобы пускать только пользователя с правом редактирования документов.
+![](package-build/package-build-10.png)
 
 ### loadCustomCssJs
 
-Основной метод контроллера. Именно он загружает все нужные скрипты и стили для работы страницы. В него мы ещё будем добавлять всякое.
+Подключает CSS/JS страницы. Сюда обычно идёт основная работа по UI CMP.
 
 ## Заключение
 
-Ну что, на мой взгляд всё самое сложное позади: мы собрали, установили и настроили компонент для дальнейшей удобной разработки.
+Сборка идёт через `_build/build.php`, автоустановка через `'install'` в `_build/config.inc.php`. Меню на MODX 3 это `modMenu` со строковым `action`, без `modAction`. Для живых правок без постоянной пересборки направьте namespace на `Extras/YourExtra`.
 
-У нас даже есть демо-страница в админке благодаря скриптам modExtra. С ними разберёмся в следующем уроке.
+Дальше: интерфейс админки на ExtJS.
 
-Текущий вид смотрите на GitHub в [истории изменений файлов](https://github.com/bezumkin/Sendex/commits/master).
+История Sendex: [коммиты](https://github.com/bezumkin/Sendex/commits/master). Новые extras под MODX 3 начинайте с [ModExtra3](https://github.com/modx-pro/ModExtra3).
