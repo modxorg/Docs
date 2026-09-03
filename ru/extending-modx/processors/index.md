@@ -1,108 +1,273 @@
 ---
 title: "Процессоры"
 translation: "extending-modx/processors"
-description: "Процессоры можно сравнить с командами или действиями, это такие PHP скрипты, которые могут выполнять определенные функции"
+description: "Процессоры: PHP-классы, которые выполняют одно действие: создать ресурс, отдать список, авторизовать пользователя"
 ---
 
-## Процессоры в MODX
+## Что такое процессор
 
-Процессоры можно сравнить с "командами" или "действиями". До MODX 2.2 они были "простыми" PHP-файлами, но с тех пор они были переписаны на базе `modProcessor` класса, и его различных подтипов.
+Процессор: PHP-класс, который выполняет **одно** действие в MODX: создать чанк, отдать список ресурсов, авторизовать пользователя, загрузить файл. Интерфейс менеджера, коннекторы, сниппеты и плагины ходят к одним и тем же действиям через процессоры.
 
-Итак, мы говорим про файлы-процессоры, это такие PHP скрипты, которые могут выполнять определенные функции. Для наглядности загляните в [/core/model/modx/processors](https://github.com/modxcms/revolution/tree/2.x/core/model/modx/processors), и вы увидите, как их много.
+С MODX 2.2 процессоры классовые (наследники базового класса процессора). Плоские `.php`-файлы без класса в MODX 3.0 больше не поддерживаются.
 
-Работать с процессорами можно из любого Cниппета или Плагина при помощи метода [runProcessor](extending-modx/processors/using-runprocessor):
+Где лежат процессоры ядра:
 
-``` php
-$response = $modx->runProcessor('action/path/to/processor',$arrayOfProperties,$otherOptions);
+- **3.x:** [`core/src/Revolution/Processors/`](https://github.com/modxcms/revolution/tree/3.x/core/src/Revolution/Processors)
+- **2.x:** `core/model/modx/processors/` (старая раскладка)
+
+Полный каталог действий ядра (путь, краткое описание из docblock, `$permission`): [Список процессоров ядра](extending-modx/processors/list).
+
+Из PHP их вызывают через [`modX::runProcessor`](extending-modx/modx-class/reference/modx.runprocessor). AJAX менеджера идёт через [коннектор](extending-modx/processors/connectors) и в итоге попадает в тот же метод.
+
+```php
+$response = $modx->runProcessor(
+    'resource/create',
+    $properties,
+    $options // опционально; для процессоров ядра часто не нужен
+);
 ```
 
-В ответ мы получаем объект [modProcessorResponse](https://github.com/modxcms/revolution/blob/df90fecfdfcf719cabe171ea3db59e47f45d7ee9/core/model/modx/modprocessor.class.php), со всеми его методами.
+`$response`: [`ProcessorResponse`](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/Processors/ProcessorResponse.php) (3.x) / `modProcessorResponse` (2.x). Сначала проверьте ошибку, потом читайте данные:
 
-## Стандартные процессоры
+```php
+if ($response->isError()) {
+    return $response->getMessage();
+}
+$object = $response->getObject(); // массив полей из ответа процессора
+```
 
-К примеру, в каталоге `security` есть процессоры `login` и `logout`, которые управляют авторизацией пользователей. Вот как мы можем его авторизовать:
+Полезные методы: `isError()`, `getMessage()`, `getObject()`, `getResponse()`, `hasFieldErrors()`, `getFieldErrors()`.
 
-``` php
-$username = 'ivanpetrov';
-$password = '*********';
-$data = array(
+### Как работает `run()`
+
+При запуске процессора MODX делает примерно следующее (см. `Processor::run()`):
+
+1. `checkPermissions()`: при отказе вернётся ответ с ошибкой прав.
+2. Загрузка лексиконов из `getLanguageTopics()`.
+3. `initialize()`: должен вернуть `true`, иначе возвращённое значение станет текстом ошибки.
+4. `process()`: основная работа. Model-хелперы (`CreateProcessor`, `GetListProcessor`, ...) задают фиксированный пайплайн с хуками, которые вы переопределяете.
+
+В классе читайте вход через `getProperty()` / `getProperties()`, пишите через `setProperty()`, завершайте через `$this->success($message, $object)` или `$this->failure($message)`. Ошибки полей: `addFieldError('field', $msg)`, чтобы формы MODExt подсветили инпуты.
+
+### Права и контекст
+
+У многих процессоров есть `public $permission = 'save_document';` (или похожее). Пользователь в **текущем** контексте `$modx` должен пройти эту проверку (и всё, что добавит `checkPermissions()`). Контроллеры и коннекторы обычно инициализируют `mgr`. Из веб-сниппета может понадобиться `$modx->initialize('mgr')` или пользователь с нужными политиками в `web`. Иначе вызов падает, хотя PHP выглядит корректно.
+
+### Формы action в 3.x
+
+Для процессоров ядра это эквивалентно:
+
+| Форма | Пример |
+| ----- | ------ |
+| Путь со слэшем (стиль 2.x) | `resource/create` |
+| Относительный namespace | `Resource\Create` |
+| Полное имя класса | `\MODX\Revolution\Processors\Resource\Create` |
+
+Особый случай: Template Variables лежат в `Element\TemplateVar\...`. Путь `element/templatevar/create` работает. Устаревший `element/tv/...` лоадер переписывает в `TemplateVar`. Подробности: [логика загрузки](extending-modx/modx-class/reference/modx.runprocessor#processor-loading-logic).
+
+## Берите процессоры ядра
+
+Если нужное действие уже есть в MODX, вызывайте его процессор вместо сырого `newObject()` / `save()`. Так вы получаете права, валидацию, генерацию `alias` и события плагинов (`OnDocFormSave` и другие). Дополнения, которые слушают эти события, продолжают работать с вашим кодом.
+
+Что есть в ядре: [Список процессоров ядра](extending-modx/processors/list) (Browser, Context, Element, Resource, Security, System, Workspace, ...).
+
+### Вход и выход
+
+```php
+$data = [
     'username' => $username,
     'password' => $password,
     'rememberme' => 1,
     'login_context' => 'web',
-);    
-$response = $modx->runProcessor('/security/login', $data);
+];
+$response = $modx->runProcessor('security/login', $data);
 if ($response->isError()) {
-    $modx->log(modX::LOG_LEVEL_ERROR, 'Ошибка авторизации. Имя пользователя: '.$username.', Сообщение: '.$response->getMessage());
+    $modx->log(
+        modX::LOG_LEVEL_ERROR,
+        'Ошибка входа для ' . $username . ': ' . $response->getMessage()
+    );
 }
 ```
 
-Выход с сайта и того проще:
-
-``` php
-$response = $modx->runProcessor('/security/logout');
+```php
+$response = $modx->runProcessor('security/logout');
 if ($response->isError()) {
-    $modx->log(modX::LOG_LEVEL_ERROR, 'Ошибка разавторизации. Имя пользователя: '.$modx->user->get('username').', UID: '.$modx->user->get('id').'. Сообщение: '.$response->getMessage());
+    $modx->log(modX::LOG_LEVEL_ERROR, $response->getMessage());
 }
 ```
 
-Это очень удобно и гарантирует, что компонент будет работать во всех версиях MODX. Поэтому, если возможно, всегда нужно использовать стандартные процессоры.
+В 3.x можно передать и namespaced-класс, например `\MODX\Revolution\Processors\Security\Login`.
 
-Конечно, стандартные процессоры не умеют работать с вашими расширениями.
+### Создание ресурса
 
-## Собственные процессоры
+```php
+$response = $modx->runProcessor('resource/create', [
+    'pagetitle' => 'Моя страница',
+    'content' => '<p>Привет</p>',
+    'parent' => 0,
+    'template' => 1,
+    'context_key' => 'web',
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+$id = $response->getObject()['id'];
+```
 
-Использование своих процессоров отличается от стандартных только тем, что нужно указать директорию, откуда их брать. Смотрим пример из [miniShop2](https://minishop2.com):
+Ненужные поля можно не передавать. Процессор подставит значения по умолчанию из системных настроек. Для своего типа ресурса укажите `class_key`.
 
-``` php
-// Массив, который мы передадим в процессор, там его ловить в $scriptProperties
-$processorProps = array(
-    'id' => 55
+Типичные create/update процессоры стреляют событиями до/после сохранения (для ресурсов: то же семейство событий, что и в менеджере). Поэтому поисковые индексаторы и другие плагины видят и программные сохранения.
+
+### Создание чанка
+
+```php
+$response = $modx->runProcessor('element/chunk/create', [
+    'name' => 'HelloBox',
+    'description' => 'Создано из сниппета',
+    'snippet' => '<div class="hello">[[*pagetitle]]</div>',
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
+
+Больше примеров из сниппетов (update/delete/publish, сниппет/TV, настройки, кэш, ошибки полей, FQCN): [Использование runProcessor](extending-modx/processors/using-runprocessor).
+
+### Обновление ресурса
+
+```php
+$response = $modx->runProcessor('resource/update', [
+    'id' => $id,
+    'pagetitle' => 'Моя страница (правка)',
+    'published' => 1,
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
+
+### Очистка кэша
+
+```php
+$response = $modx->runProcessor('system/clearcache');
+if ($response->isError()) {
+    return $response->getMessage();
+}
+```
+
+### Списки и гриды
+
+Процессоры `GetList` кормят ExtJS-сетки. Они ждут paging/sort вроде `start`, `limit`, `sort`, `dir`, часто ещё `query`. В JSON обычно есть `success`, `total` и `results` (точные ключи зависят от процессора). Из PHP:
+
+```php
+$response = $modx->runProcessor('resource/getlist', [
+    'start' => 0,
+    'limit' => 10,
+    'sort' => 'pagetitle',
+    'dir' => 'ASC',
+]);
+if ($response->isError()) {
+    return $response->getMessage();
+}
+$data = $response->getResponse();
+```
+
+## Свои процессоры
+
+Дополнения держат процессоры в своём дереве, обычно `core/components/myextra/processors/`. Укажите этот каталог в `processors_path`:
+
+```php
+$response = $modx->runProcessor(
+    'web/orders/getlist',
+    ['id' => 55],
+    [
+        'processors_path' => $modx->getOption('core_path')
+            . 'components/myextra/processors/',
+    ]
 );
-// Массив опций для метода runProcessor
-$otherProps = array(
-    // Здесь указываем где лежат наши процессоры
-    'processors_path' => $modx->getOption('core_path') . 'components/minishop/processors/'
-);
-// Запускаем
-$response = $modx->runProcessor('web/orders/getlist', $processorProps, $otherProps);
-// И возвращаем ответ от процессора
-return $response->response;
+if ($response->isError()) {
+    return $response->getMessage();
+}
+return $modx->toJSON($response->getResponse());
 ```
 
-Это чуть измененный пример из сниппета miniShop, где он [обрабатывает запросы личного кабинета](https://github.com/bezumkin/miniShop/blob/master/core/components/minishop/elements/snippets/minishop.php#L26).
+В `action` нет расширения файла. MODX ищет `{processors_path}web/orders/getlist.class.php` и ждёт класс процессора (или угадывает имя вида `modFooBarProcessor`). Коннектор делает то же самое: задаёт `processors_path` и маршрутизирует `action` в файл.
 
-Как вы видите, процессор для запуска указывается без расширения, путем от каталога процессоров. Если мы не указываем свой каталог, то это будет `/core/model/modx/processors/` по умолчанию. В примере выше — мы ее меняем на каталог внутри компонента miniShop.
+Имена файлов в extras: `mgr/item/getlist.class.php` и action `mgr/item/getlist`. Возврат `MyExtra\\Processors\\Item\\GetList::class` из файла снимает неоднозначность с угадыванием класса.
 
-## Стандартный процессор внутри собственного
+### Вызов процессора ядра из своего
 
-Вот и самое интересное! Смотрим пример:
+Внутри своего create-процессора можно сначала вызвать ядерный, затем дописать свои данные:
 
-``` php
-$response = $modx->runProcessor('resource/create', $_POST);
+```php
+$response = $modx->runProcessor('resource/create', $resourceData);
 if ($response->isError()) {
-    return $modx->error->failure($response->getMessage());
+    return $this->failure($response->getMessage());
+}
+$id = $response->getObject()['id'];
+// дальше привяжите свои записи к $id ...
+```
+
+Плагины на сохранение ресурса сработают. `alias` и остальное поведение ядра совпадут с менеджером.
+
+## Классовый процессор
+
+Минимальный create-процессор для своего xPDO-объекта (имена классов 3.x):
+
+```php
+<?php
+namespace MyExtra\Processors\Item;
+
+use MODX\Revolution\Processors\Model\CreateProcessor;
+
+class Create extends CreateProcessor
+{
+    public $classKey = 'MyExtra\\Model\\Item';
+    public $objectType = 'myextra.item';
+    public $primaryKeyField = 'id';
+    public $languageTopics = ['myextra:default'];
+    // public $permission = 'myextra_item_save';
+    // public $beforeSaveEvent = 'OnBeforeMyExtraItemSave';
+    // public $afterSaveEvent = 'OnMyExtraItemSave';
+
+    public function beforeSet()
+    {
+        $name = trim((string)$this->getProperty('name'));
+        if ($name === '') {
+            $this->addFieldError('name', $this->modx->lexicon('myextra.item_err_name'));
+        }
+        return parent::beforeSet();
+    }
 }
 
-$id = $response->response['object']['id'];
+return Create::class;
 ```
 
-В этом примере мы создаем стандартным процессором новый ресурс из присланных данных, и получаем из ответа `id` этого ресурса, для дальнейшей работы.
-[Вот исходный код](https://github.com/bezumkin/miniShop/blob/master/core/components/minishop/processors/mgr/goods/create.php) всего процессора miniShop для создания нового товара.
+Порядок `CreateProcessor::process()` (упрощённо): `beforeSet` → `fromArray` → `beforeSave` → validate → событие до сохранения → `saveObject` → `afterSave` → событие после сохранения → `cleanup`.
 
-При таком подходе гарантируется, что независимо от будущих изменений в MODX свой процессор будет работать во всех версиях. И, что очень важно, **будут работать плагины**, которые должны работать при создании новых ресурсов. Также будет сгенерирован `alias` (если вы их используете), причем как это указано в настройках, через транслитерацию, или нет.
-Таким же образом работает и обновление товаров, а например [mSearch](https://docs.modx.pro/en/components/msearch2), ловит событие `OnDocFormSave` и индексирует этот ресурс.
+Для списков наследуйте `GetListProcessor` и фильтруйте в `prepareQueryBeforeCount` / `prepareQueryAfterCount`. Фильтры читайте через `$this->getProperty('resource_id')` (или что вы положили в `baseParams` сетки). Из панели ресурса само ничего не подставится, пока JS это не отправит.
 
-Конечно, можно не использовать в таких случаях `runProcessor`, а работать через `newObject` — но тогда нужно самостоятельно генерировать события для плагинов, определять незаданные поля нового ресурса, генерировать `alias` и еще много чего.
-Зачем, если MODX все это уже предусмотрел?
+Частые model-хелперы (полный список: в [заметках по апгрейду 3.0](getting-started/upgrading-to-3.0/processors)):
 
-## Заключение
+| Задача | Класс 3.x |
+| ------ | --------- |
+| Create | `\MODX\Revolution\Processors\Model\CreateProcessor` |
+| Update | `\MODX\Revolution\Processors\Model\UpdateProcessor` |
+| Get | `\MODX\Revolution\Processors\Model\GetProcessor` |
+| Get list | `\MODX\Revolution\Processors\Model\GetListProcessor` |
+| Remove | `\MODX\Revolution\Processors\Model\RemoveProcessor` |
 
-Процессоры — отличная вещь и нужно использовать их по-максимуму, везде, во всех своих Сниппетах. Если вы хотите сделать что-то с ресурсом или другим элементом — посмотрите, нет ли для этого готового процессора в системе?
-Если есть — используйте его. Это оградит вас от лишней головной боли, и позволит другим расширениям и плагинам взаимодействовать с вашим кодом. 
+В 2.x те же роли: `modObjectCreateProcessor`, `modObjectGetListProcessor` и т.д. Чаще всего переопределяют `initialize`, `beforeSet`, `beforeSave`, `afterSave`, для списков: `prepareQueryBeforeCount`.
 
-## Смотрите также
+## Дальше
 
-- [Начало работы с процессорами на основе классов](https://www.markhamstra.com/xpdo/2012/getting-started-with-class-based-processors-2.2/) (at markhamstra.com)
-- [Расширение modObjectGetListProcessor, мощный процессор на основе классов в MODX 2.2](https://www.markhamstra.com/xpdo/2012/modobjectgetlistprocessor-class-based-processor/) (at markhamstra.com)
-- [Полный список процессоров MODX](https://bobsguides.com/modx-processor-list.html) (at bobsguides.com)
+- [Список процессоров ядра](extending-modx/processors/list): все action ядра с краткими описаниями
+- [Использование runProcessor](extending-modx/processors/using-runprocessor): примеры из сниппетов
+- [modX.runProcessor](extending-modx/modx-class/reference/modx.runprocessor): параметры и правила загрузки в 3.x
+- [Коннекторы](extending-modx/processors/connectors): AJAX-вход для CMP
+- [Процессоры в гайде по апгрейду на 3.0](getting-started/upgrading-to-3.0/processors)
+- [Developing an Extra, Part II](extending-modx/tutorials/developing-an-extra/part-2): коннектор и getlist
+- [Class-based processors](https://www.markhamstra.com/xpdo/2012/getting-started-with-class-based-processors-2.2/) и [modObjectGetListProcessor](https://www.markhamstra.com/xpdo/2012/modobjectgetlistprocessor-class-based-processor/) (Mark Hamstra)
+- [Список процессоров на Bob's Guides](https://bobsguides.com/modx-processor-list.html) (в основном пути 2.x)
+
+Материал опирается в том числе на статью [«Процессоры в MODX»](https://modx.pro/development/3156) на modx.pro, с правками под актуальные пути и классы 3.x.
