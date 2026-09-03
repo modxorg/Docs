@@ -26,11 +26,17 @@ API Documentation can also be found here: <http://api.modx.com/formit/>
 
 ### Important changes
 
-FormIt 3.0 introduces an update to the encryption methods used for encrypting form submissions. Prior to 3.0 mcrypt was used, which in 3.0 is replaced with openssl, due to mcrypt being deprecated as of PHP 7.2. FormIt 3.0 comes with a migration page which is accessible from the manager.
+Current package line: **FormIt 5.2.x** ([Sterc/FormIt](https://github.com/Sterc/FormIt), `3.x` branch). Releases that most often break older write-ups:
 
-As of FormIt 2.2.9, all fields will automatically have `html_entities` applied. To allow HTML tags to be saved/stored, you will need to use the `allowSpecialChars` validator on each field, that should save raw html tags.
+- **5.2.1+**: the `recaptcha` hook is **reCAPTCHA v3**. Use `formit.recaptcha_site_key` / `formit.recaptcha_secret_key` / `formit.recaptcha_min_score` and frontend JS (`formit.frontend_js`). Old `recaptcha_public_key` / `recaptcha_private_key` and `recaptchaTheme`, `recaptchaJs`, `recaptcha_use_ssl` are gone. See [recaptcha](extras/formit/formit.hooks/recaptcha).
+- **5.2.0+**: [AJAX form submission](extras/formit/formit.ajax) via `formit.js` and `[[!+fi.ajaxToken]]`.
+- **5.1.2+**: uploads are blocked by `formit.upload_blocked_extensions` even when MODX upload settings allow those extensions.
+- **5.0+**: package targets MODX 3.
+- **3.0**: encryption for saved forms moved from `mcrypt` to `openssl` (migration page in the manager).
 
-As of FormIt 1.1.4, all fields will automatically have `stripTags` applied. To allow HTML tags to be saved/stored, you will need to use the `allowTags` validator on each field, stipulating which tags are permitted.
+As of FormIt 2.2.9, all fields automatically have `html_entities` applied. To allow HTML tags to be saved/stored, use the `allowSpecialChars` validator on each field that should keep raw HTML.
+
+As of FormIt 1.1.4, all fields automatically have `stripTags` applied. To allow HTML tags to be saved/stored, use the `allowTags` validator on each field, stipulating which tags are permitted.
 
 ## How to Use
 
@@ -63,6 +69,10 @@ These are the available general properties for the FormIt call (not including ho
 | redirectTo                | page ID of a "Thank You" page, where the visitor can be sent after successfully submitting the form, but this parameter is read ONLY if you include "redirect" in the list of &hooks.                                                                                                                                                                                                                                |                                                                             |
 | allowFiles                | Specify if files are allowed to be posted. Submitted files are stored in a temporary directory to prevent files getting lost in multistep forms.                                                                                                                                                                                                                                                                     | true                                                                        |
 | attachFilesToEmail        | Attaches uploaded files in email, form needs to be set as enctype="multipart/form-data"                                                                                                                                                                                                                                                                                                                              | true                                                                        |
+| trimValuesBeforeValidation | Trim string values before validation runs.                                                                                                                                                                                                                                                                                                                                                                           | true                                                                        |
+| saveTmpFiles              | Keep uploaded files in temporary storage between multi-step form requests.                                                                                                                                                                                                                                                                                                                                           | false                                                                       |
+| storeAttachments          | Used with [FormItSaveForm](extras/formit/formit.hooks/formitsaveform): store attachments with the saved form.                                                                                                                                                                                                                                                                                                        | false                                                                       |
+| recaptchaAction           | Action name for reCAPTCHA v3 (see [recaptcha](extras/formit/formit.hooks/recaptcha)).                                                                                                                                                                                                                                                                                                                                 | `submit`                                                                    |
 
 
 ## Validation

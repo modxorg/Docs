@@ -12,10 +12,12 @@ This example form validates input data, sends an email, and redirects to a resou
 
 Validation (see [FormIt Validators](extras/formit/formit.validators)) in this example strips tags from the message, validates the email address, and requires all fields to be filled in.
 
-It also uses [reCAPTCHA v3](https://www.google.com/recaptcha/about/) support. Set up your keys in System Settings:
+It also uses [reCAPTCHA v3](https://www.google.com/recaptcha/about/) via the [recaptcha](extras/formit/formit.hooks/recaptcha) hook (FormIt 5.2.1+). Set these System Settings:
 
 - `formit.recaptcha_site_key`
 - `formit.recaptcha_secret_key`
+- `formit.recaptcha_min_score` if you need a different threshold (default `0.5`)
+- `formit.frontend_js` = `js/web/formit.js` (required for the token request)
 
 ## Snippet Tag
 
@@ -36,7 +38,7 @@ It also uses [reCAPTCHA v3](https://www.google.com/recaptcha/about/) support. Se
 ]]
 ```
 
-> Make sure `emailFrom` is set to `[[++emailsender]]`, otherwise the form's email field will be used as the sender — most hosting providers will reject or block such emails.
+> Make sure `emailFrom` is set to `[[++emailsender]]`, otherwise the form's email field will be used as the sender. Most hosting providers will reject or block such emails.
 
 ## Contact Form
 
