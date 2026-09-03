@@ -11,10 +11,6 @@ translation: "extending-modx/services/modmail"
 
 `modPHPMailer` - это класс, который расширяет `modMail`, чтобы обеспечить реализацию класса `PHPMailer` с открытым исходным кодом.
 
-### Другие реализации ModMail
-
-- [modSwiftMailer](https://modx.com/extras/revo/modswiftmailer "modSwiftMailer") - Может быть загружен через Управление пакетами.
-
 ## Использование
 
 Следующий пример основан на нативном `modPHPMailer`, который поставляется с MODX Revolution.
@@ -63,4 +59,4 @@ $modx->mail->address('to','mom@example.org');
 
 - [MODX Services](extending-modx/services "MODX Сервисы")
 - [modX.getService](extending-modx/modx-class/reference/modx.getservice "modX.getService")
-- [modSwiftMailer](https://modx.com/extras/revo/modswiftmailer "modSwiftMailer")
+- [Отправка почты](building-sites/sending-mail)
