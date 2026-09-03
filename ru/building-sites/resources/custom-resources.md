@@ -3,7 +3,7 @@ title: "Пользовательские классы ресурсов"
 translation: "building-sites/resources/custom-resources"
 ---
 
-Пользовательские классы ресурсов доступны только в MODX 2.2 и более поздних версиях.
+Пользовательские классы ресурсов (CRC) появились в MODX 2.2. В 3.x они работают. Процессоры создания и обновления переехали вместе с остальными процессорами ядра. См. [Процессоры в MODX 3](#процессоры-в-modx-3) ниже.
 
 ## Что такое пользовательский класс ресурсов?
 
@@ -30,7 +30,20 @@ translation: "building-sites/resources/custom-resources"
 
 Контроллеры, процессоры и основные функции рендеринга могут быть расширены и переопределены. Например, вы можете автоматически добавлять текст к выводу любого содержимого пользовательских классов ресурсов, переопределяя метод `process()` или `getContent()` CRC в классе PHP. Любой метод в классе `modResource` доступен для переопределения при использовании пользовательских классов ресурсов.
 
-В MODX 3 процессор создания или обновления CRC должен расширять `\MODX\Revolution\Processors\Resource\Create` или `Update`. Старые имена `modResourceCreateProcessor` и `modResourceUpdateProcessor` работают как псевдонимы до 3.3. Файлы процессоров 2.x в `core/model/modx/processors/resource/` удалены. См. [Шаг 4: Настройка процессоров](extending-modx/custom-resources/step-4-processors) и [процессоры в заметках об обновлении до 3.0](getting-started/upgrading-to-3.0/processors).
+## Процессоры в MODX 3
+
+При создании или обновлении CRC метод `MODX\Revolution\Processors\Resource\Create::getInstance()` ищет класс `{class_key}CreateProcessor`. Процессор обновления ищет `{class_key}UpdateProcessor`. Ваш подкласс должен расширять основной процессор Resource.
+
+В 2.x эти классы лежали в `core/model/modx/processors/resource/create.class.php` (`modResourceCreateProcessor`) и `update.class.php` (`modResourceUpdateProcessor`). Этих файлов больше нет. `require_once` этих путей падает.
+
+| Старый класс | Новый класс |
+| --- | --- |
+| `modResourceCreateProcessor` | `\MODX\Revolution\Processors\Resource\Create` |
+| `modResourceUpdateProcessor` | `\MODX\Revolution\Processors\Resource\Update` |
+
+`core/include/deprecated.php` даёт псевдонимы старых имён до 3.3. Для кода только под 3.0+ расширяйте классы с пространствами имён. `runProcessor('resource/create')` по-прежнему работает.
+
+См. [Шаг 4: Настройка процессоров](extending-modx/custom-resources/step-4-processors) и [процессоры в заметках об обновлении до 3.0](getting-started/upgrading-to-3.0/processors).
 
 ## Создание Пользовательских классов ресурсов
 

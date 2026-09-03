@@ -4,7 +4,7 @@ _old_id: "79"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes"
 ---
 
-Custom Resource Classes are available in MODX 2.2 and later only.
+Custom Resource Classes (CRC) shipped in MODX 2.2. They still work in 3.x. Create and update processors moved with the rest of the core processors. See [Processors on MODX 3](#processors-on-modx-3) below.
 
 ## What is a Custom Resource Class?
 
@@ -31,7 +31,20 @@ CRCs look like normal Resources in the tree. The CRC class can also hook into th
 
 CRCs can have their Controllers, Processors and main rendering functionality extended and overridden. You can, for example, automatically append text to the output of any CRC's content by overriding the process() or getContent() method of the CRC in the PHP class. Any method in the modResource class is available to be overridden when using CRCs.
 
-On MODX 3, a CRC create or update processor must extend `\MODX\Revolution\Processors\Resource\Create` or `Update`. The old `modResourceCreateProcessor` and `modResourceUpdateProcessor` names are aliases until 3.3. The 2.x processor files under `core/model/modx/processors/resource/` are gone. See [Step 4: Customizing the Processors](extending-modx/custom-resources/step-4-processors) and [Processors in the 3.0 upgrade notes](getting-started/upgrading-to-3.0/processors).
+## Processors on MODX 3
+
+When you create or update a CRC, `MODX\Revolution\Processors\Resource\Create::getInstance()` looks for `{class_key}CreateProcessor`. The update processor looks for `{class_key}UpdateProcessor`. Your subclass must extend the core Resource processor.
+
+In 2.x those core classes lived at `core/model/modx/processors/resource/create.class.php` (`modResourceCreateProcessor`) and `update.class.php` (`modResourceUpdateProcessor`). Those files are gone. A `require_once` of those paths fails.
+
+| Old class | New class |
+| --- | --- |
+| `modResourceCreateProcessor` | `\MODX\Revolution\Processors\Resource\Create` |
+| `modResourceUpdateProcessor` | `\MODX\Revolution\Processors\Resource\Update` |
+
+`core/include/deprecated.php` aliases the old names until 3.3. For 3.0+ only, extend the namespaced classes. `runProcessor('resource/create')` still works.
+
+See [Step 4: Customizing the Processors](extending-modx/custom-resources/step-4-processors) and [Processors in the 3.0 upgrade notes](getting-started/upgrading-to-3.0/processors).
 
 ## Creating a CRC
 

@@ -10,16 +10,21 @@ Dit document beschrijft de belangrijkste wijzigingen tussen 2.x en 3.0 die upgra
 
 ## Upgraden naar 3.0
 
-In het algemeen volg je het [standaard upgradeproces](aan-de-slag/upgraden). Het is verstandig om eerst een tijd op de nieuwste 2.8-release te draaien: die logt deprecated functionaliteit waar je site van afhankelijk kan zijn naar het MODX-log.
+Setup upgrade alleen vanaf **MODX 2.6.0 of nieuwer**. Zit je op 2.5 of ouder, ga dan eerst naar 2.6. Setup stopt met een fout als de huidige versie lager is dan 2.6.0.
+
+Ben je op 2.6+, volg dan het [standaard upgradeproces](aan-de-slag/upgraden). Draai zo mogelijk eerst de nieuwste **2.8**: die logt deprecated API-gebruik naar het MODX-log, zodat je extras en custom code kunt bijwerken vóór 3.0.
 
 Na het upgraden van de core en je extras kun je breaking changes tegenkomen in extras of custom code.
 
+- Belangrijk: upgrades vanaf MODX ouder dan **2.6.0** worden niet ondersteund
 - Belangrijk: [de core-map moet in de projectroot staan en kan niet meer hernoemd worden](#core-map)
 - Belangrijk: [MODX 3.0 vroeg PHP 7.2; huidige 3.x (3.2+) vraagt PHP 8.1+](#serververeisten)
 - Belangrijk: [sqlsrv-ondersteuning is verwijderd](#sqlsrv)
 - [Breaking changes](#belangrijkste-breaking-changes), vooral [hernoemde en verplaatste core classes](/current/en/getting-started/upgrading-to-3.0/class-names)
 - [Manager-taal is dynamisch (EN)](/current/en/getting-started/upgrading-to-3.0/manager-language)
 - [Systeeminstellingen gewijzigd of verwijderd (EN)](/current/en/getting-started/upgrading-to-3.0/system-settings)
+- [Opvallende manager-UI in 3.0 (EN)](/current/en/getting-started/upgrading-to-3.0/manager-ui)
+- Custom resource types die core Resource-processors uitbreiden: [Processors (EN)](/current/en/getting-started/upgrading-to-3.0/processors)
 
 Uitgebreide details per onderwerp staan in de [Engelstalige upgrade-sectie](/current/en/getting-started/upgrading-to-3.0).
 
@@ -101,7 +106,7 @@ Ondersteuning voor sqlsrv-databases is verwijderd. Migreer eerst naar MySQL: [sq
 ## Aanbevolen volgorde
 
 1. Backup van bestanden en database
-2. Upgrade naar nieuwste 2.8 en check de MODX-logs op deprecation-warnings
+2. Zit je onder 2.6, upgrade eerst naar 2.6. Daarna naar de nieuwste 2.8 en check de MODX-logs op deprecation-warnings
 3. Upgrade extras die 3.x ondersteunen; check [SiteDash](https://sitedash.app/extras)
 4. Zorg voor PHP 8.1+ (voor huidige 3.x) en MySQL/MariaDB volgens de [server vereisten](aan-de-slag/server-vereisten)
 5. Zet een custom core terug naar `/core/` indien van toepassing

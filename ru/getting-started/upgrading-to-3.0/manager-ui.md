@@ -7,6 +7,15 @@ translation: "getting-started/upgrading-to-3.0/manager-ui"
 
 Редизайн установщика и входа описаны в [Обновлении до 3.0](getting-started/upgrading-to-3.0) и на странице [входа в систему управления](building-sites/client-proofing/manager-login). Смена языка описана в [языке системы управления](getting-started/upgrading-to-3.0/manager-language).
 
+## Уже описано в других местах
+
+- Новый [вход в менеджер](building-sites/client-proofing/manager-login), включая свой фон. [#13773](https://github.com/modxcms/revolution/pull/13773)
+- Новый установщик. [#14507](https://github.com/modxcms/revolution/pull/14507)
+- [Язык менеджера на лету](getting-started/upgrading-to-3.0/manager-language). [#14046](https://github.com/modxcms/revolution/pull/14046)
+- Медиабраузер и вёрстка менеджера на узких экранах. [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735)
+- Встроенный перевод Chrome в менеджере отключён. [#14414](https://github.com/modxcms/revolution/pull/14414)
+- Gravatar на новых установках выключен. См. [системные настройки в 3.0](getting-started/upgrading-to-3.0/system-settings). [#14215](https://github.com/modxcms/revolution/pull/14215)
+
 ## Подсказки
 
 Подсказки с описанием полей можно выключить. Можно задать, сколько они висят на экране:
@@ -14,7 +23,7 @@ translation: "getting-started/upgrading-to-3.0/manager-ui"
 - [manager_tooltip_enable](building-sites/settings/manager_tooltip_enable) (по умолчанию Да)
 - [manager_tooltip_delay](building-sites/settings/manager_tooltip_delay) (по умолчанию 2300 мс, ExtJS `dismissDelay`)
 
-Превью картинок в Медиабраузере задаёт [modx_browser_tree_hide_tooltips](building-sites/settings/modx_browser_tree_hide_tooltips), не эти настройки.
+Превью картинок в Медиабраузере задаёт [modx_browser_tree_hide_tooltips](building-sites/settings/modx_browser_tree_hide_tooltips), не эти настройки. [#14535](https://github.com/modxcms/revolution/pull/14535)
 
 ## Профиль и формы ресурсов
 

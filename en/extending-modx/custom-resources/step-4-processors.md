@@ -41,6 +41,34 @@ class CopyrightedResourceUpdateProcessor extends Update
 
 See [Processors in the 3.0 upgrade notes](getting-started/upgrading-to-3.0/processors).
 
+## MODX 3.x class names
+
+When you create or update a CRC, `MODX\Revolution\Processors\Resource\Create::getInstance()` looks for `{class_key}CreateProcessor`. The update processor looks for `{class_key}UpdateProcessor`. Those classes must extend the core resource processors.
+
+The 2.x files `core/model/modx/processors/resource/create.class.php` and `update.class.php` are gone. Do not `require_once` those paths.
+
+| Old class | New class |
+| --- | --- |
+| `modResourceCreateProcessor` | `\MODX\Revolution\Processors\Resource\Create` |
+| `modResourceUpdateProcessor` | `\MODX\Revolution\Processors\Resource\Update` |
+
+`core/include/deprecated.php` aliases the old names until 3.3. For 3.0+ only, extend the namespaced classes:
+
+``` php
+use MODX\Revolution\Processors\Resource\Create;
+use MODX\Revolution\Processors\Resource\Update;
+
+class CopyrightedResourceCreateProcessor extends Create
+{
+}
+
+class CopyrightedResourceUpdateProcessor extends Update
+{
+}
+```
+
+See [Processors in the 3.0 upgrade notes](getting-started/upgrading-to-3.0/processors).
+
 ## Extending the Processors for our CRC
 
  Extending the Processors for our CopyrightedResource is fairly simple. On MODX 2.x, load up your **copyrightedresource.class.php** file that contains your main class, and at the top, put this:

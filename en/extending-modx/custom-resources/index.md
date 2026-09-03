@@ -11,6 +11,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes/c
 - [Part III: Customizing the Controllers](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3")
 - [Part IV: Customizing the Processors](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4")
 
+On MODX 3, skip the 2.x `require_once` paths under `core/model/modx/processors/resource/`. Extend `\MODX\Revolution\Processors\Resource\Create` and `Update`. Details are in [Step 4](extending-modx/custom-resources/step-4-processors) and on [Custom Resource Classes](building-sites/resources/custom-resources).
+
  We're going to create a sample Custom Resource Class (CRC) that does a very simple task - it outputs a copyright on the bottom of a page with the current date. Yes, something this trivial should be done by placing a [Snippet](extending-modx/snippets "Snippets") in your [Template](building-sites/elements/templates "Templates"), but we want to illustrate the concept of CRCs using something very, very simple, so bear with us. :)
 
  This page deals with Part I - creating the actual Custom Resource Class itself. [Part II](extending-modx/custom-resources/step-2-overriding-methods "Creating a Resource Class - Step 2") will actually implement the behavior of appending the copyright. [Part III](extending-modx/custom-resources/step-3-controllers "Creating a Resource Class - Step 3") will deal with overriding the Controllers, and [Part IV](extending-modx/custom-resources/step-4-processors "Creating a Resource Class - Step 4") will deal with overriding the Processors. The files used in this tutorial can be found on GitHub for reference: <https://github.com/modxcms/CopyrightedResource>

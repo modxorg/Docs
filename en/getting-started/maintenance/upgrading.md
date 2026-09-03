@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/upgrading-modx"
 
 This document covers the standard process for upgrading an existing MODX Revolution installation (typically within the 3.x line, or from a recent 2.x site after you have planned for 3.0 changes).
 
-- Upgrading **from 2.x to 3.0+**: read [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0) first — namespaces, processors, the fixed core path, and PHP requirements all change.
+- Upgrading **from 2.x to 3.0+**: Setup only accepts **2.6.0 or later**. Read [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0) first. Namespaces, processors, the fixed core path, and PHP requirements all change.
 - Confirm your host meets current [Server Requirements](getting-started/server-requirements). **MODX 3.2+ requires PHP 8.1 or higher** (3.0 originally allowed PHP 7.2+).
 - Upgrading from Evolution (1.x) is not officially supported; historical notes are [here](getting-started/maintenance/upgrading/evolution).
 
@@ -71,7 +71,7 @@ It's a good idea to clear your browser cache after upgrading. Browsers often cac
 
 For changes relating to specific versions, please see the following pages:
 
-- [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0) (required reading for any 2.x → 3.x move; includes the PHP 7.2 → **8.1 in 3.2** requirement notes)
+- [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0) (required reading for any 2.6+ to 3.x move; includes the PHP 7.2 to **8.1 in 3.2** requirement notes)
 - [Upgrading to 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2) (security-related behavioural changes still relevant before jumping to 3.x)
 - Historical 2.x notes: [2.3](getting-started/maintenance/upgrading/2.3), [2.2](getting-started/maintenance/upgrading/2.2), [2.1](getting-started/maintenance/upgrading/2.1), [pre-2.0.5](getting-started/maintenance/upgrading/2.0.5), [2.0.0-rc2](getting-started/maintenance/upgrading/2.0.0-rc2)
 
