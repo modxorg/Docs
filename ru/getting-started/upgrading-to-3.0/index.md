@@ -16,11 +16,14 @@ translation: "getting-started/upgrading-to-3.0"
 
 После обновления ядра и дополнений могут проявиться критические изменения, которые нужно исправить в дополнениях или своём коде.
 
+Авторам Extras: чеклист [Обновление дополнений для 3.0](getting-started/upgrading-to-3.0/extras) (namespace, процессоры, модели, меню).
+
 - ⚠️ Важно: обновление с MODX старше **2.6.0** не поддерживается
 - ⚠️ Важно: [каталог core теперь всегда должен находиться в корне проекта и больше не может быть переименован](getting-started/upgrading-to-3.0/core-folder)
 - ⚠️ Важно: [MODX 3.0 требовал PHP 7.2, текущие 3.x (3.2+) требуют PHP 8.1+](getting-started/upgrading-to-3.0/requirements)
 - ⚠️ Важно: [поддержка sqlsrv удалена](getting-started/upgrading-to-3.0/sqlsrv)
 - [Список критических изменений](getting-started/upgrading-to-3.0/breaking-changes), в частности [многие классы ядра перенесены и переименованы](getting-started/upgrading-to-3.0/class-names)
+- [Обновление дополнений для 3.0](getting-started/upgrading-to-3.0/extras)
 - [xPDO 3, Composer и миграция кастомных моделей](getting-started/upgrading-to-3.0/xpdo)
 - [Язык менеджера теперь динамический](getting-started/upgrading-to-3.0/manager-language)
 - [Различные системные настройки удалены или изменены](getting-started/upgrading-to-3.0/system-settings)
