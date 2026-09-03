@@ -42,7 +42,7 @@ Great! We have a resource group and a user group created. We now need to add res
 
 ### 2. Add Resources to the Resource Group
 
-We need to tell MODX with resource we want to protect. Let's stay on the same page from Step 1 (Security > Resource Groups). On the right, open up the web context to see all the pages on your site. Drag them from the column on the right into your resource group. Easy, right? An alternative is to go into each resource, go to the Resource Groups tab, and check the checkbox under the "Acces" column and the "Protected" row.
+Tell MODX which Resources to protect. Stay on the page from Step 1 (Security > Resource Groups). On the right, open the web context to see the pages on your site. Drag them from the right column into your Resource Group. Or edit each Resource, open the Resource Groups tab, and check **Access** on the "Protected" row.
 
 ### 3. Add Users to the User Group
 
@@ -86,7 +86,7 @@ To create a resource group, navigate to Security -> Resource Groups and click on
 
 Now that you have a resource group, you should add resources to it. There are two ways to achieve this.
 
-First of all, you can go to Security -> Resource Groups and drag resources from the right resource tree to the left resource groups ("Protected"). The second option is editing your resource, and ticking the right box on the "Access Permissions" tab.
+First, go to Security -> Resource Groups and drag Resources from the right tree into the left groups ("Protected"). Or edit the Resource and check **Access** on the Resource Groups tab.
 
 ### 3. Create a User Group
 

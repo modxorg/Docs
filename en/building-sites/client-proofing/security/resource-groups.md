@@ -22,7 +22,9 @@ Drag the Resources from the right tree directly into Resource Groups in the left
 
 ### Option 2
 
-When you are editing a Resource directly, click on its "Access Permissions" tab, and check which Resource Groups it is a member of.
+Edit the Resource, open the **Resource Groups** tab, and use the **Access** checkbox on each row. Checked means this Resource belongs to that group. Unchecked means it does not. Save the Resource.
+
+Membership alone does not hide the page. You still need a User Group and an ACL on the Resource Group. The same checkbox is documented on [Resources](building-sites/resources).
 
 ![](resource_groups_edit.jpg)
 
