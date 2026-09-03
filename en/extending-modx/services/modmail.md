@@ -12,10 +12,6 @@ modMail is an abstract class that can be extended to provide mail services for R
 
 modPHPMailer is a class that extends modMail to provide an implementation for the open source PHPMailer class.
 
-### Other modMail Implementations
-
-- [modSwiftMailer](https://modx.com/extras/package/modswiftmailer "modSwiftMailer") - Can be downloaded through Package Management.
-
 ## Usage
 
 The following example is based on the native modPHPMailer which comes with MODX Revolution.
@@ -64,4 +60,4 @@ Simple - just extend modMail with that class, then load your class via [getServi
 
 - [MODX Services](extending-modx/services "MODX Services")
 - [modX.getService](extending-modx/modx-class/reference/modx.getservice "modX.getService")
-- [modSwiftMailer](https://modx.com/extras/package/modswiftmailer "modSwiftMailer")
+- [Sending mail](building-sites/sending-mail)
