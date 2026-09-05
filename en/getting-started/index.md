@@ -17,3 +17,4 @@ Welcome to MODX. This section covers installation, core concepts, Friendly URLs,
 8. [FAQs & Troubleshooting](getting-started/faqs-and-troubleshooting)
 9. [Maintenance](getting-started/maintenance)
 10. [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0)
+11. [Core roadmap](getting-started/roadmap)
