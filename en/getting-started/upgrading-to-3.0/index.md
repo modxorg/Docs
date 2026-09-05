@@ -17,11 +17,14 @@ After you are on 2.6+, follow the [standard upgrading process](getting-started/m
 
 After upgrading the core and upgrading your extras, you may encounter some breaking changes that need to be addressed in extras or custom code.
 
+Extra authors: use the [Updating Extras for 3.0](getting-started/upgrading-to-3.0/extras) checklist (namespaces, processors, models, menus).
+
 - ⚠️ Important: upgrades from MODX older than **2.6.0** are not supported
 - ⚠️ Important: [the core folder must now always be located in the project root, and can no longer be renamed](getting-started/upgrading-to-3.0/core-folder)
 - ⚠️ Important: [MODX 3.0 required PHP 7.2; current 3.x (3.2+) requires PHP 8.1+](getting-started/upgrading-to-3.0/requirements)
 - ⚠️ Important: [sqlsrv support has been removed](getting-started/upgrading-to-3.0/sqlsrv)
 - [A list of breaking changes can be found here](getting-started/upgrading-to-3.0/breaking-changes), most notably [many core classes have been moved and renamed](getting-started/upgrading-to-3.0/class-names)
+- [Updating Extras for 3.0](getting-started/upgrading-to-3.0/extras)
 - [xPDO 3, Composer, and migrating custom models](getting-started/upgrading-to-3.0/xpdo)
 - [The manager language is now dynamic](getting-started/upgrading-to-3.0/manager-language)
 - [Various system settings have been removed or changed](getting-started/upgrading-to-3.0/system-settings)
