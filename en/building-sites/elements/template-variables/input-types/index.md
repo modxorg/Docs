@@ -24,7 +24,7 @@ There are a number of built-in template variable (TV) types. Be aware that:
 ```
 
 </details>
-<img src="type-autotag.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-autotag.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type is a compound field with a text field for tag entry and rows of clickable pre-existing tags. It can be useful for blog content, Resources that can belong to multiple categories, or anytime you need a list of tags that have been used before. Every time you edit or create a Resource with access to an Auto-Tag TV, you will see rows of tags that have been used before. You can easily click on these tags to assign them to the current Resource.
 
@@ -77,7 +77,7 @@ return implode(', ', $output);
 ```
 
 </details>
-<img src="type-checkbox.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-checkbox.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type renders one or more checkbox fields based on a list of options you define.
 
@@ -166,7 +166,7 @@ If you are using multiple checkboxes like this, you will probably need to set th
 ```
 
 </details>
-<img src="type-date.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-date.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type provides a picker widget, allowing you to set a date and/or a time.
 
@@ -232,7 +232,7 @@ You use the [Date TV Output Type](making-sites-with-modx/customizing-content/tem
 ```
 
 </details>
-<img src="type-email.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-email.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type is a text field that automatically validates its value against a preset email address pattern. To validate against your own custom pattern, create a Text TV instead and enter your pattern in the *Regular Expression Validator* field.
 
@@ -248,7 +248,7 @@ This TV type is a text field that automatically validates its value against a pr
 ```
 
 </details>
-<img src="type-file.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-file.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type creates a file input field to browse the server for a file. Files can be uploaded through the MODX File Manager. A TV’s optional *Default File* is also selectable using the File Manager.
 
@@ -272,7 +272,7 @@ A hidden field does not show up in the manager, so it's rare that you'd use this
 ```
 
 </details>
-<img src="type-image.svg" class="input-type" style="max-width: 460px; margin: 1rem 0 0 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-image.svg" class="input-type" style="max-width: 460px; margin: 1rem 0 0 0;">
 <p><small>Photo courtesy of Victor Serban, Unsplash</small></p>
 
 This TV type creates a file input field to browse the server for an image. Images can be uploaded through the MODX File Manager. A TV’s optional *Default Image* is also selectable using the File Manager.
@@ -285,7 +285,7 @@ By default, this input type returns the link (to be used as `src` attribute) to 
 
 ```html
 <img
-    src="path/to/chosen/image.png"
+    src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/path/to/chosen/image.png"
     alt="For presentation only"
     id="hero-page-[[*id]]"
     class="hero-image full"
@@ -313,7 +313,7 @@ To be clear, `src` is included in the example code above for completeness and is
 ```
 
 </details>
-<img src="type-listbox.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-listbox.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type produces a select field where only a single option can be selected. The methods of defining its options are shown in the Listbox (Multi-Select) section below.
 
@@ -337,7 +337,7 @@ This TV type produces a select field where only a single option can be selected.
 ```
 
 </details>
-<img src="type-listbox-multi.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-listbox-multi.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type produces a custom select field where one or more options can be selected. Selections are presented as a row of dismissable options. As with the other chooser-type TVs, this field can be powered by using a `@SELECT` binding in its “Dropdown List Options” field. Its *Output Options* "Output Type" should almost always be set to Delimiter to distinguish between values.
 
@@ -375,7 +375,7 @@ Option 1==value1||Option 2==value2
 ```
 
 </details>
-<img src="type-number.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-number.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type simulates a real number field using a special text field with pre-defined and user-defined constraints: Only the digits 0 to 9, a minus sign (-), and a period (*i.e.*, decimal point) are accepted.
 
@@ -402,7 +402,7 @@ This TV type simulates a real number field using a special text field with pre-d
 ```
 
 </details>
-<img src="type-radio.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-radio.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type displays a list of radio button options. Unlike Check Box TVs, only a single selection can be made when using a Radio Options TV.
 
@@ -445,7 +445,7 @@ Radio Options values are not restricted to just hard-coded text and numbers; you
 ```
 
 </details>
-<img src="type-resourcelist.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-resourcelist.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type is a specialized single-select field that displays a dropdown list of child Resources of a given Resource ID. The value stored will be the ID of the selected child Resource.
 
@@ -480,7 +480,7 @@ This input type also accepts Where Conditions to filter the list. Two example va
 ```
 
 </details>
-<img src="type-richtext.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-richtext.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 When a Rich Text editor (*e.g.*, TinyMCE Rich Text Editor, CKEditor, Redactor, etc.) is installed, this TV type becomes available and produces a small <abbr title="What you see is what you get">WSYIWYG</abbr> field for creating html-formatted text.
 
@@ -496,7 +496,7 @@ When a Rich Text editor (*e.g.*, TinyMCE Rich Text Editor, CKEditor, Redactor, e
 ```
 
 </details>
-<img src="type-tag.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-tag.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type present rows of clickable tags whose initial values are pre-defined in the TV’s **Tag Options**. Like the Auto-Tag TV, this compound field allows the addition of new comma-separated tags in the text input. However, these additions are only available in the Resource in which they are made. (Note that this TV type’s configuration is very similar to that of Check Box TVs.)
 
@@ -518,7 +518,7 @@ To make Tag TVs useful in the front end, you will need to set the [output type](
 ```
 
 </details>
-<img src="type-text.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-text.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type produces a standard text field.
 
@@ -537,7 +537,7 @@ This TV type produces a standard text field.
 ```
 
 </details>
-<img src="type-textarea.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-textarea.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type produces a standard *textarea* field, with a height of 15 rows. It's the same size as the HTML Area fields, but without a WYSIWYG editor.
 
@@ -553,7 +553,7 @@ This TV type produces a standard *textarea* field, with a height of 15 rows. It'
 ```
 
 </details>
-<img src="type-url.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+<img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-url.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
 This TV type produces a composite field with a dropdown option to select the protocol—(none), <http://>, <https://>, <ftp://>, or <mailto:>—and a text field for the remainder of the URL. Note that there is no preset validation for this field. To create a field that ensures the correctness of the URL entered, use a Text TV with a *Regular Expression Validator* rule.
 
