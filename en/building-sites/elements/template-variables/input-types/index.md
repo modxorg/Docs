@@ -4,20 +4,34 @@ _old_id: "489"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/template-variable-input-types"
 ---
 
-There are a number of built-in template variable (TV) types.
-
-Some input types are deprecated depending on your MODX version.
-
-Note that for TV types containing user-defined, selectable lists (listbox, checkbox, radio, etc.), it's best to enter multiple Input Option values on a single line with no carriage returns.
+There are a number of built-in template variable (TV) types. Be aware that:
+- Built-in input types not found on this page are deprecated or have been removed and may not work in the current version of MODX.
+- For TV types containing user-defined, selectable lists (listbox, checkbox, radio, etc.), it's best to enter list definitions having multiple values on a single line with no carriage returns.
 
 ## Input Types
 
 ### Auto-Tag (autotag)
 
-Auto-Tag is a convenient template variable for using tags when blogging, have multiple categories a resource can belong to, or anytime you need a list of tags that have been used before. Every time you edit or create a resource with access to an auto-tag template variable, you will see the tags that were used before. You can easily click on priorly used tags to chose them in the list.
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
-To make auto-tag tvs useful in the front end, you will need to set the output type to "Delimiter" and specify a delimiter of your choice, and/or use an output filter to present it in the way you prefer. ![](autotag.png)
-To output the tags in such a way that each tag links to a certain resource and passes the tag in a GET parameter, you can use an output filter (snippet) as follows:
+```json
+{
+    "allowBlank": "true",
+    "parent_resources": ""
+}
+```
+
+</details>
+<img src="type-autotag.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+
+This TV type is a compound field with a text field for tag entry and rows of clickable pre-existing tags. It can be useful for blog content, Resources that can belong to multiple categories, or anytime you need a list of tags that have been used before. Every time you edit or create a Resource with access to an Auto-Tag TV, you will see rows of tags that have been used before. You can easily click on these tags to assign them to the current Resource.
+
+To make Auto-Tag TVs useful in the front end, you will need to set the [output type](building-sites/elements/template-variables/output-types) to “Delimiter” and specify a delimiter of your choice, and/or use an output filter to present them in the way you prefer. 
+
+#### Linking Tags to Resources
+
+To output tags so each one links to a certain Resource and passes the tag in the URL (as a GET parameter), you can use an output filter (Snippet). For example:
 
 ```php
 <?php
@@ -37,7 +51,7 @@ foreach ($tags as $key => $value) {
     $url = $modx->makeurl(9, '', ['tag' => $value]);
     $output[] = <<<LINK
     <a href="{$url}">{$value}</a>
-    >>>;
+    LINK;
 }
 
 // Convert the output array to a string
@@ -45,79 +59,95 @@ return implode(', ', $output);
 
 ```
 
+### Check Box (checkbox)
+
 <details>
-    <summary><strong>JSON Input Options Template</strong></summary>
+    <summary><em>JSON Input Options Template</em></summary>
 
 ```json
 {
     "allowBlank": "true",
-    "maxLength": "",
-    "minLength": "",
-    "regex": "",
-    "regexText": ""
+    "displayAsSwitch": "false",
+    "columns": "1",
+    "columnDirection": "vertical",
+    "columnWidth": "medium",
+    "columnWidth": "false"
 }
 ```
 
 </details>
+<img src="type-checkbox.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-### Check Box (checkbox)
+This TV type renders one or more checkbox fields based on a list of options you define.
 
-#### Simple Usage
+#### Single Checkbox
 
-The basic usage of this is to simply define the field as a checkbox. You can control whether or not the box is checked by default or not by manipulating the "Input Option Values" and "Default Value" fields.
+The most basic usage of this type of field is a single checkbox, often used for confirmation of some condition. Use the following sample configuration to control the checkbox’s initial state:
 
-##### Checked by Default
+| Config Field | Value <br>(default checked) | Value <br>(default unchecked) |
+| ---- | ---- | ---- |
+| Checkbox Options | `My Option==1` | `My Option==1` |
+| Default Option(s) | `1` | `0` |
+|||
 
--   Input Option Values: `My Option==1`
--   Default Value: 1
 
-##### Unchecked by Default
+Although the values of `1` and `0` are a natural choice for this type of field, any values can be used. As long as the value following the `==` matches the *Default Option(s)* value, the checkbox will be checked. 
 
--   Input Option Values: `My Option==1`
--   Default Value: 0
+#### Multiple Checkboxes
 
-The box will be checked by default as long as the value following the "==" matches the default value. If you want to set default of a check box template variable to multiple values, you have to separate the values with the "||" delimiter.
+If you want to set default of a check box template variable to multiple values, you have to separate the values with the "||" delimiter.
 
-#### Advanced Usage
+*Basic Definition*
 
-You can distinguish between separate keys and values using double-equals and double-pipes:
+In their simplest form, lists are defined using labels separated by double-pipes. In this format, the label is also the value. Using the following sample configuration, three checkboxes would be rendered with “Option B” checked by default.
+
+| Config Field | Value |
+| ---- | ---- |
+| Checkbox Options | `Option A\|\|Option B\|\|Option C` |
+| Default Option(s) | `Option B` |
+|||
+
+*Label==Value Definition (with multiple default selections)*
+
+You can distinguish between labels and values using double-equals (`==`) and between each option using double-pipes (`||`). Using the following sample configuration, three checkboxes would be rendered with both “Option A” and “Option C” checked by default.
+
+| Config Field | Value |
+| ---- | ---- |
+| Checkbox Options | `Option A==1\|\|Option B==2\|\|Option C==3` |
+| Default Option(s) | `1\|\|3` |
+|||
+
+*Dynamic Definition (using mySQL query)*
+
+| Config Field | Value |
+| ---- | ---- |
+| Checkbox Options | `@SELECT pagetitle, id FROM modx_site_content WHERE parent=35` |
+| Default Option(s) | `(empty)` (no default) |
+|||
+
+*Manually-Defined Options*
+
+
 
 ```php
 option1==value1||option2==value2
 ```
 
-#### More Advanced Usage
+*Dynamically-Defined Options*
 
-The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the `option1==value1||option2==value2` format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") to select items from your database, e.g. **Input option values:**
+The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the `option1==value1||option2==value2` format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can enter a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") statement for your **Checkbox Options** to generate items from your database, for example: 
 
 ```sql
 @SELECT pagetitle, id FROM modx_site_content WHERE parent=35
 ```
 
-![](checkboxes.jpg)
+If you are using multiple checkboxes like this, you will probably need to set the **Output Type** to "Delimiter" (*e.g.*, a comma) so you can distinguish the values contained in each checkbox.
 
-If you are using multiple checkboxes like this, you will probably need to set the **Output Type** to "Delimiter" (e.g. a comma) so you can distinguish the values contained in each checkbox.
 
 ### Date (date)
 
-This allows you to set both a date and a time.
-
-![](date.jpg)
-
-If you like to have a default set date you can put one of the following keywords inside the default value field (without quotes!). The "strange" logic behind the -X/+X values (which intuitively would be - for back and + for future) comes probably from a subtraction in the code somewhere, eg. now() - value, so if value is +72 this means now() - (+72), but - and + is -, so a positive value gets subtracted while with now() - (-72), - and - equals +, a negative value is added.
-
-| Default value | Function                                                                                 |
-| ------------- | ---------------------------------------------------------------------------------------- |
-| `yesterday`   | Displays the day before todays date, time 12:00pm                                        |
-| `today`       | Displays todays date, time 12:00pm                                                       |
-| `now`         | Displays todays date, current time                                                       |
-| `tomorrow`    | Displays the day after todays date, time 12:00pm                                         |
-| `+X`          | X is an amount of hours BACK from the current time, eg. +72 means "3 days back from now" |
-| `-X`          | X is an amount of hours IN THE FUTURE from the current time, eg. -72 means "in 3 days"   |
-
-You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
-
-#### JSON Input Options Template
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
 ```json
 {
@@ -128,43 +158,68 @@ You use the [Date TV Output Type](making-sites-with-modx/customizing-content/tem
     "minTimeValue": "",
     "maxDateValue": "",
     "maxTimeValue": "",
-    "startDay": "",
-    "timeIncrement": "",
+    "startDay": "0",
+    "timeIncrement": "15",
     "hideTime": "false"
 }
 ```
 
-### DropDown List Menu
+</details>
+<img src="type-date.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-NOTE: this TV Input type has been deprecated since Revo 2.1.x Please see [Listbox](<#listbox-single-select-listbox>) input types below.
+This TV type provides a picker widget, allowing you to set a date and/or a time.
 
-Set input option values in the `option1==value1||option2==value2||option3==value3` format. Make sure to choose an output type of delimited (or other of your liking) to be able to present this to the front-end in a certain manner. You can also use a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding to select 2 columns, e.g.
+If you’d like your TV to have a specific date selected by default, you can choose from MODX’s preset options or enter a custom option in the *Default Date and Time* field.
 
-```sql
-@SELECT name, value FROM your_table
+<hr>
+
+*Preset Relative Date Options*
+
+| Keyword | Result                                                                                 |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| `yesterday`   | Displays the day before todays date, time 12:00pm                                        |
+| `today`       | Displays todays date, time 12:00pm                                                       |
+| `now`         | Displays todays date, current time                                                       |
+| `tomorrow`    | Displays the day after todays date, time 12:00pm                                         |
+
+<br>
+
+*Sample Custom Date Options*
+
+| Value | Result                                                                                 |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| `+X`          | X-hours BACK from the current time <br>(*e.g.*, `+72` means 3 days ago) |
+| `-X`          | X-hours IN THE FUTURE from the current time <br>(*e.g.*, `-72` means 3 days from now)   |
+| `YYYY-MM-DD HH:MM`          | Using this exact format, selects a specific date and time <br>(*e.g.*, `2026-07-01 14:00` selects July 1, 2026 at 2 pm)   |
+
+<hr>
+<br>
+
+Be careful when using the `+X` and `-X` patterns: While intuitively “-” would represent going back in time and “+” going forward, this is not the case. This is due to the date/time value being calulated using this basic fixed mathematical expression:
+
+```
+Base Time (now) - Differential Value (X)
 ```
 
-Also see Resource List TV type.
+So using basic math, to add 72 hours to the *Base Time* you need to plug a negative *Differential Value* into the equation, *i.e.*:
 
-![](dropdown.jpg)
-
-#### JSON Input Options Template
-
-```json
-{
-    "allowBlank": "true",
-    "listWidth": "",
-    "listHeight": ""
-}
 ```
+Base Time - (-72)
+```
+
+Conversely, to subtract 72 hours from the *Base Time* you need to plug a positive *Differential Value* into the equation, *i.e.*:
+
+```
+Base Time - (+72)
+```
+
+#### Formatting the Rendered Value
+You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
 
 ### Email
 
-This is a text field that comes with its own validation: only text that's in a valid email format will be accepted.
-
-![](email.jpg)
-
-#### JSON Input Options Template
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
 ```json
 {
@@ -174,77 +229,119 @@ This is a text field that comes with its own validation: only text that's in a v
 }
 ```
 
+</details>
+<img src="type-email.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+
+This TV type is a text field that automatically validates its value against a preset email address pattern. To validate against your own custom pattern, create a Text TV instead and enter your pattern in the *Regular Expression Validator* field.
+
 ### File
 
-Creates a file input form to browse the server for a file. Files can be uploaded through the MODX File Manager. You can declare a default value file by specifying the path to the file.
-
-Take extra note of relative file paths when using friendly url paths.
-
-#### JSON Input Options Template
-
-(None)
-
-### Hidden
-
-A hidden field does not show up in the manager, so it's rare that you'd use this option. You can set a default value that can be retrieved on all pages using this variable. Another possibility is to store a Snippet that takes a page's ID as input.
-
-### HTML Area (richtext)
-
-This gives you a small WSYIWYG editor for the field. It looks exactly like the Richtext fields.
-
-![](html_area.jpg)
-
-### Image
-
-![](tv-image-new.png)
-
-Creates an image input form to browse the server for a file. Files can be uploaded through the MODX File Manager then.
-
-In MODX 2.2+ there are no input options for Image TVs anymore. Instead, head over to the "Media Sources" tab and choose a media source to assign to this TV for every context. You can configure base paths and the like in the [Media Source](building-sites/media-sources "Media Sources").
-
-![](tv-image-input-options.png)
-
-1. You can declare a default value file by specifying the path to the image.
-
-2. If you want to limit the images used for this TV to a specific folder, you can specify (since Revolution 2.1) a base-path and base-url. You can also set relative or absolute paths. Take extra note of relative file paths when using friendly url paths. For correct display of images in frontend and backend be sure to have correct settings in `base_url` and `base_path` settings!
-
-3. You can prepend URL if filepath doesn't begin with a trailing slash.
-
-4. You can specify file extensions that can be selected.
-
-This input type returns the link (to be used as src attribute) to the image. You can also set the whole [html-img-tag as a output-type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type "Image TV Output Type").
-
-### [Image+](extras/image) (imageplus)
-
-#### JSON Input Options Template
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
 ```json
 {
-    "targetWidth": "",
-    "targetHeight": "",
-    "targetRatio": "",
-    "thumbnailWidth": "",
-    "allowAltTag": "true",
-    "allowCaption": "false",
-    "allowCredits": "false"
+    "allowBlank": "true"
 }
 ```
 
-### Listbox (Single-Select) (listbox)
+</details>
+<img src="type-file.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-This has the same options available to it as the Listbox (Multi-Select) – see below.
+This TV type creates a file input field to browse the server for a file. Files can be uploaded through the MODX File Manager. A TV’s optional *Default File* is also selectable using the File Manager.
+
+### Hidden
+
+A hidden field does not show up in the manager, so it's rare that you'd use this option. Some example usages include:
+- Making a default value available to all pages
+- Storing a Snippet that takes a page’s ID as input
+- Storing a calculated value based on other fields’ values
+
+### Image
+
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
+
+```json
+{
+    "allowBlank": "true"
+}
+```
+
+</details>
+<img src="type-image.svg" class="input-type" style="max-width: 460px; margin: 1rem 0 0 0;">
+<p><small>Photo courtesy of Victor Serban, Unsplash</small></p>
+
+This TV type creates a file input field to browse the server for an image. Images can be uploaded through the MODX File Manager. A TV’s optional *Default Image* is also selectable using the File Manager.
+
+To associate this TV with a Media Source other than the default one, you can do so by visiting the “Media Sources” tab while in the TV editor view. This tab lists all Contexts this TV is available to and presents a dropdown menu to assign a specific Media Source to each (double-click a Source name in the grid to access its menu).
+
+To learn about the various Media Source settings that influence where this TV’s files are located and determine their validity (*i.e.*, file storage paths, allowed file types/extensions, upload limits, etc.), *see* the [Media Sources](building-sites/media-sources "Media Sources") documentation page.
+
+By default, this input type returns the link (to be used as `src` attribute) to the image. As an alternative to constructing the `<img>` tag for this TV in your front-end template, you can select [“Image”](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type) in *Output Options*; this will return a full image tag that includes the attributes you specify, *e.g.*:
+
+```html
+<img
+    src="path/to/chosen/image.png"
+    alt="For presentation only"
+    id="hero-page-[[*id]]"
+    class="hero-image full"
+    style="max-height: 50vh;"
+    loading="lazy"
+>
+```
+
+To be clear, `src` is included in the example code above for completeness and is not a part of the editable *Output Options*.
+
+### Listbox (Single-Select) (listbox)
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
+
+```json
+{
+    "allowBlank": "true",
+    "title": "",
+    "typeAhead": "false",
+    "typeAheadDelay": "250",
+    "forceSelection": "false",
+    "listEmptyText": ""
+}
+```
+
+</details>
+<img src="type-listbox.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+
+This TV type produces a select field where only a single option can be selected. The methods of defining its options are shown in the Listbox (Multi-Select) section below.
 
 ### Listbox (Multi-Select) (listbox-multiple)
 
-This behaves similar to the checkbox fields: you can select multiple items, and this field can be powered by a @SELECT binding in its "Input Option Values" parameter. Like checkboxes, you probably want to set the "Output Type" to delimiter so you can distinguish between values.
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
-![](listbox_multi.jpg)
+```json
+{
+    "allowBlank": "true",
+    "stackItems": "false",
+    "preserveSelectionOrder": "false",
+    "title": "",
+    "typeAhead": "false",
+    "typeAheadDelay": "250",
+    "forceSelection": "false",
+    "listEmptyText": ""
+    
+}
+```
+
+</details>
+<img src="type-listbox-multi.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+
+This TV type produces a custom select field where one or more options can be selected. Selections are presented as a row of dismissable options. As with the other chooser-type TVs, this field can be powered by using a `@SELECT` binding in its “Dropdown List Options” field. Its *Output Options* "Output Type" should almost always be set to Delimiter to distinguish between values.
 
 #### Simple Usage
 
 Just like with the Checkbox options, you can simply specify a list of values separated by double-pipes:
 
-```php
+```
 Man||Bear||Pig
 ```
 
@@ -252,71 +349,44 @@ Man||Bear||Pig
 
 Often it's nice to have a more readable label. You can display something nice and still store a different value using the double-equals and double-pipes format used by checkboxes:
 
-```php
-Option 1==value1||Option 2==value2
 ```
-
-#### JSON Input Options Template
-
-```json
-{
-    "allowBlank": "true",
-    "listWidth": "",
-    "title": "",
-    "typeAhead": "false",
-    "typeAheadDelay": "250",
-    "listEmptyText": "",
-    "stackItems": "false"
-}
+Option 1==value1||Option 2==value2
 ```
 
 ### Number
 
-This is another text field with some pre-emptive validation. You literally cannot type anything but the digits 0 to 9, the minus sign (-) , and a period (i.e. a decimal point). A validation error is triggered if you enter more than one decimal point or minus sign. Complex numbers (e.g. using radicals "^" or "e" are **not** supported).
-
-Note that trailing zeros are truncated, e.g. 4.50 gets trimmed to 4.5; this may make this input type unsuitable for currency fields.
-
-#### JSON Input Options Template
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
 ```json
 {
     "allowBlank": "true",
-    "allowDecimals": "Yes",
-    "allowNegative": "Yes",
-    "decimalPrecision": "2",
-    "decimalSeparator": ".",
+    "minValue": "",
     "maxValue": "",
-    "minValue": ""
+    "allowDecimals": "false",
+    "decimalPrecision": "2",
+    "strictDecimalPrecision": "false",
+    "decimalSeparator": "."
 }
 ```
 
-### Radio Options (option)
+</details>
+<img src="type-number.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-#### Simple Usage
+This TV type simulates a real number field using a special text field with pre-defined and user-defined constraints: Only the digits 0 to 9, a minus sign (-), and a period (*i.e.*, decimal point) are accepted.
 
-The basic usage of this is to provide a list of radio option. You can control the default option by manipulating the "Input Option Values" and "Default Value" fields.
+#### Usage Notes
+- If you want trailing zeros to be preserved (*i.e.*, 4.50 doesn’t get trimmed to 4.5), set “Strict Decimal Precision” to “Yes.” This can be helpful for currency fields.
+- To prevent negative values, set the TV’s “Min Value” to 0 (or greater)
 
-##### Selected by Default
+#### Unsupported Values and Features
+- Complex numbers (*e.g.*, radicals “2^10,” scientific notation “2.8e6,” etc.)
+- Number-specific special controls like `step` and the ability to change the entered value via the up and down arrow keys
 
--   Input Option Values: My Option==1
--   Default Value: 1
+### Radio Options (radio)
 
-The option will be selected by default as long as the value following the "==" matches the default value.
-
-#### Advanced Usage
-
-The radio option can be used to output more than simple numerical values. One such example is using the radio option to determine the chunk used for a sidebar.
-
-Set your input option values using the format **Title==value** format, but use the chunk placeholders as your values. To declare multiple options use two pipes (||) after the value, before the next options title.
-
-##### Sidebar Example Revolution
-
--   Input Option Values: `[[$my_related_chunk]]||Content==[[*sidebar-txt]]||Twitter==[[$my_twitter_chunk]]`
--   Default Value: `[[$my_related_chunk]]`
-
-In the above examples, you can output a chunk or another Template Variable without the aid of an extra.
-
-#### JSON Input Options Template
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
 ```json
 {
@@ -325,25 +395,35 @@ In the above examples, you can output a chunk or another Template Variable witho
 }
 ```
 
+</details>
+<img src="type-radio.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+
+This TV type displays a list of radio button options. Unlike Check Box TVs, only a single selection can be made when using a Radio Options TV.
+
+#### Simple Usage
+
+Using the configuration below, this TV would initially display as shown in the image above.
+
+| Input Option | Value |
+| ---- | ---- |
+| Radio Button Options | `Red==1\|\|Green==2\|\|Blue==3` |
+| Default Option | `2` |
+|||
+
+#### Advanced Usage
+
+Radio Options values are not restricted to just hard-coded text and numbers; you can incorporate Chunks and/or TVs that output more complex content as a value (without the aid of an Extra or custom Snippet). For example, to build a sidebar selector:
+
+| Input Option | Value |
+| ---- | ---- |
+| Radio Button Options | `[[$my_related_chunk]]\|\|Content==[[*sidebar-txt]]\|\|Twitter==[[$my_twitter_chunk]]` |
+| Default Option | `[[$my_related_chunk]]` |
+|||
+
 ### Resource List (resourcelist)
 
-Supply the definition with a resource ID, and you'll end up with a drop down list of all pages/resources that are children of that resource. The value stored after you've made a selection is the ID of the single selected resource.
-
-![](resource_list.jpg)
-
-This is similar to using a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding in a DropDown list menu, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
-
-This input type also accepts WHERE conditions to filter by:
-
-![](screen-shot.png)
-
-Another example:
-
-```php
-[{"pagetitle:!=":"Home"}]
-```
-
-#### JSON Input Options Template
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
 ```json
 {
@@ -358,15 +438,50 @@ Another example:
 }
 ```
 
-### Rich Text
+</details>
+<img src="type-resourcelist.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-See [_HTML Area_](building-sites/elements/template-variables/input-types#html-area-richtext).
+This TV type is a specialized single-select field that displays a dropdown list of child Resources of a given Resource ID. The value stored will be the ID of the selected child Resource.
+
+This is similar to using a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding in a Listbox, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
+
+This input type also accepts Where Conditions to filter the list. Two example values are shown below:
+
+```php
+[{"template:=":"4"}]
+```
+
+```php
+[{"pagetitle:!=":"Home"}]
+```
+
+### RichText
+
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
+
+```json
+{
+    "allowBlank": "1",
+    "showNone": "1",
+    "parents": "",
+    "depth": "10",
+    "includeParent": "1",
+    "limitRelatedContext": "0",
+    "where": "[{\"isfolder: = \":\"1\"},{\"hidemenu\":\"0\",\"OR:hidemenu:=\":\"1\"}]",
+    "limit": "0"
+}
+```
+
+</details>
+<img src="type-richtext.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+
+When a Rich Text editor (*e.g.*, TinyMCE Rich Text Editor, CKEditor, Redactor, etc.) is installed, this TV type becomes available and produces a small <abbr title="What you see is what you get">WSYIWYG</abbr> field for creating html-formatted text.
 
 ### Tag
 
-Multiple tags separated by || characters will be separated and output individually when used with the [HTMLTag output type](building-sites/elements/template-variables/output-types/html) for formatting.
-
-#### JSON Input Options Template
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
 ```json
 {
@@ -374,19 +489,17 @@ Multiple tags separated by || characters will be separated and output individual
 }
 ```
 
+</details>
+<img src="type-tag.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+
+This TV type present rows of clickable tags whose initial values are pre-defined in the TV’s **Tag Options**. Like the Auto-Tag TV, this compound field allows the addition of new comma-separated tags in the text input. However, these additions are only available in the Resource in which they are made. (Note that this TV type’s configuration is very similar to that of Check Box TVs.)
+
+To make Tag TVs useful in the front end, you will need to set the [output type](building-sites/elements/template-variables/output-types) to “Delimiter” and specify a delimiter of your choice, and/or use an output filter to present them in the way you prefer.
+
 ### Text
 
-This is a vanilla text field.
-
-As of MODX 2.1, there are three input options you can set for this TV:
-
--   Allow Blank: yes/no, when "no" the resource cannot be saved without it being filled in.
--   Max length: a number representing the number of characters that can be filled in in this field.
--   Min Length: a number representing the minimum number of characters needed to be filled in. May want to use this with the allow blank option to "no".
-
-![](tvinput.png)
-
-#### JSON Input Options Template
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
 ```json
 {
@@ -398,11 +511,34 @@ As of MODX 2.1, there are three input options you can set for this TV:
 }
 ```
 
+</details>
+<img src="type-text.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+
+This TV type produces a standard text field.
+
 ### Textarea
 
-This is a standard _textarea_ field, with a height of 15 rows. It's the same size as the HTML Area fields, but without the WYSIWYG editor.
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
-#### JSON Input Options Template
+```json
+{
+    "allowBlank": "true",
+    "inputHeight": "140",
+    "textareaGrow": "false",
+    "textareaResizable": "false"
+}
+```
+
+</details>
+<img src="type-textarea.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
+
+This TV type produces a standard *textarea* field, with a height of 15 rows. It's the same size as the HTML Area fields, but without a WYSIWYG editor.
+
+### URL
+
+<details>
+    <summary><em>JSON Input Options Template</em></summary>
 
 ```json
 {
@@ -410,19 +546,14 @@ This is a standard _textarea_ field, with a height of 15 rows. It's the same siz
 }
 ```
 
-### Textarea (Mini) (deprecated)
+</details>
+<img src="type-url.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-This is a smaller _textarea_ field, with a height of only 5 rows.
+This TV type produces a composite field with a dropdown option to select the protocol—(none), <http://>, <https://>, <ftp://>, or <mailto:>—and a text field for the remainder of the URL. Note that there is no preset validation for this field. To create a field that ensures the correctness of the URL entered, use a Text TV with a *Regular Expression Validator* rule.
 
-### Textbox
+*Usage Note*
 
-This appears to be exactly the same as the vanilla Text field.
-
-### URL
-
-This is a guided text field, which a dropdown option to select the protocol: none, <http://>, <https://>, <ftp://,> or [](mailto:). No validation is performed to ensure the correctness of the URL structure.
-
-![](url.jpg)
+You may paste full URLs into the text part of this field; the protocol will automatically be separated out and selected in the dropdown when the object this TV is a part of, usually a Resource, is saved.
 
 ## Dynamically-Defined Input Options
 
