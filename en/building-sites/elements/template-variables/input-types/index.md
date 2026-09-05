@@ -5,6 +5,7 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 ---
 
 There are a number of built-in template variable (TV) types. Be aware that:
+
 - Built-in input types not found on this page are deprecated or have been removed and may not work in the current version of MODX.
 - For TV types containing user-defined, selectable lists (listbox, checkbox, radio, etc.), it's best to enter list definitions having multiple values on a single line with no carriage returns.
 
@@ -97,7 +98,7 @@ Although the values of `1` and `0` are a natural choice for this type of field, 
 
 If you want to set default of a check box template variable to multiple values, you have to separate the values with the "||" delimiter.
 
-*Basic Definition*
+##### Basic Definition
 
 In their simplest form, lists are defined using labels separated by double-pipes. In this format, the label is also the value. Using the following sample configuration, three checkboxes would be rendered with “Option B” checked by default.
 
@@ -107,7 +108,7 @@ In their simplest form, lists are defined using labels separated by double-pipes
 | Default Option(s) | `Option B` |
 |||
 
-*Label==Value Definition (with multiple default selections)*
+##### Label==Value Definition (with multiple default selections)
 
 You can distinguish between labels and values using double-equals (`==`) and between each option using double-pipes (`||`). Using the following sample configuration, three checkboxes would be rendered with both “Option A” and “Option C” checked by default.
 
@@ -117,7 +118,7 @@ You can distinguish between labels and values using double-equals (`==`) and bet
 | Default Option(s) | `1\|\|3` |
 |||
 
-*Dynamic Definition (using mySQL query)*
+##### Dynamic Definition (using mySQL query)
 
 | Config Field | Value |
 | ---- | ---- |
@@ -125,7 +126,7 @@ You can distinguish between labels and values using double-equals (`==`) and bet
 | Default Option(s) | `(empty)` (no default) |
 |||
 
-*Manually-Defined Options*
+##### Manually-Defined Options
 
 
 
@@ -133,7 +134,7 @@ You can distinguish between labels and values using double-equals (`==`) and bet
 option1==value1||option2==value2
 ```
 
-*Dynamically-Defined Options*
+##### Dynamically-Defined Options
 
 The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the `option1==value1||option2==value2` format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can enter a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") statement for your **Checkbox Options** to generate items from your database, for example: 
 
@@ -214,6 +215,7 @@ Base Time - (+72)
 ```
 
 #### Formatting the Rendered Value
+
 You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
 
 ### Email
@@ -253,6 +255,7 @@ This TV type creates a file input field to browse the server for a file. Files c
 ### Hidden
 
 A hidden field does not show up in the manager, so it's rare that you'd use this option. Some example usages include:
+
 - Making a default value available to all pages
 - Storing a Snippet that takes a page’s ID as input
 - Storing a calculated value based on other fields’ values
@@ -294,6 +297,7 @@ By default, this input type returns the link (to be used as `src` attribute) to 
 To be clear, `src` is included in the example code above for completeness and is not a part of the editable *Output Options*.
 
 ### Listbox (Single-Select) (listbox)
+
 <details>
     <summary><em>JSON Input Options Template</em></summary>
 
@@ -376,10 +380,12 @@ Option 1==value1||Option 2==value2
 This TV type simulates a real number field using a special text field with pre-defined and user-defined constraints: Only the digits 0 to 9, a minus sign (-), and a period (*i.e.*, decimal point) are accepted.
 
 #### Usage Notes
+
 - If you want trailing zeros to be preserved (*i.e.*, 4.50 doesn’t get trimmed to 4.5), set “Strict Decimal Precision” to “Yes.” This can be helpful for currency fields.
 - To prevent negative values, set the TV’s “Min Value” to 0 (or greater)
 
 #### Unsupported Values and Features
+
 - Complex numbers (*e.g.*, radicals “2^10,” scientific notation “2.8e6,” etc.)
 - Number-specific special controls like `step` and the ability to change the entered value via the up and down arrow keys
 
@@ -551,7 +557,7 @@ This TV type produces a standard *textarea* field, with a height of 15 rows. It'
 
 This TV type produces a composite field with a dropdown option to select the protocol—(none), <http://>, <https://>, <ftp://>, or <mailto:>—and a text field for the remainder of the URL. Note that there is no preset validation for this field. To create a field that ensures the correctness of the URL entered, use a Text TV with a *Regular Expression Validator* rule.
 
-*Usage Note*
+#### Usage Note
 
 You may paste full URLs into the text part of this field; the protocol will automatically be separated out and selected in the dropdown when the object this TV is a part of, usually a Resource, is saved.
 
