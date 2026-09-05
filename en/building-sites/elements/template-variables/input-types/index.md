@@ -174,7 +174,7 @@ If you’d like your TV to have a specific date selected by default, you can cho
 
 <hr>
 
-*Preset Relative Date Options*
+#### Preset Relative Date Options
 
 | Keyword | Result                                                                                 |
 | ------------- | ---------------------------------------------------------------------------------------- |
@@ -185,7 +185,7 @@ If you’d like your TV to have a specific date selected by default, you can cho
 
 <br>
 
-*Sample Custom Date Options*
+#### Sample Custom Date Options
 
 | Value | Result                                                                                 |
 | ------------- | ---------------------------------------------------------------------------------------- |
