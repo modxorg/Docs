@@ -108,18 +108,50 @@ If you have some kind of advanced setup in which the site_url setting is being s
 
 However, you will only need that when the site\_url is set dynamically, can differ per request, and you are generating full URLs instead of relative ones. Any normal usage can be cached.
 
+### When to cache
+
+Cache every tag whose output stays the same between cache clears. Saving a Resource, Element, or (in many cases) a Setting clears the cache, so menus and listings usually do not need `!`.
+
+Leave a tag uncached when:
+
+1. The output is user-specific (Login, profile data, `[[!+modx.user.id]]`, member-only menus).
+2. The output depends on GET/POST or other request data (search results, `getPage` paging, form feedback).
+3. The Snippet's job is to redirect or otherwise act on the request even when it prints nothing.
+4. You need custom cache lifetimes for data that changes outside MODX (write that inside the Snippet or use a dedicated cache Extra).
+
+Common mistakes: calling Wayfinder or getResources with `!` "so the menu updates" (a content save already rebuilds the cache), and calling `If` uncached when its subject is a static Resource field.
+
 ### Parsing Order
 
-If you call an uncached Snippet, it will be executed after all cached tags have been processed.
+The parser walks nested tags **inside out**. It finishes all **cached** work first, then processes **uncached** tags. A rough priority:
 
-If you have cached placeholders below that, they will be evaluated before that Snippet is executed - meaning they'll get the last value that was stored in the cache by that Snippet previously (or empty, if not set yet).
+1. Nested cached tag
+2. Cached tag
+3. Nested uncached tag
+4. Uncached tag
 
-If you want to call a Snippet uncached that sets placeholders, you need to make sure the placeholders are set to uncached as well:
+After a cached pass, any remaining uncached tags are left in the cached page output and run on every request.
+
+If you call an uncached Snippet that sets placeholders, mark those placeholders uncached too:
 
 ``` php
 [[!Profile]]
 Hello [[!+username]],
 ```
+
+Otherwise a cached `[[+username]]` can show a previous (or empty) value.
+
+### Nested tags and "mosquito" conditionals
+
+Nested tags are normal. Conditionals that embed full tags in `:then=` / `:else=` are risky: both branches are parsed **before** the condition runs. A redirect Snippet in the unused branch still fires.
+
+Build the **next** tag from the condition result instead (mosquito style), then wrap it in outer `[[` `]]`:
+
+``` php
+[[[[*id:is=`1`:then=`$homeChunk`:else=`$defaultChunk`]]]]
+```
+
+Summary and examples: [Nested tags, caching, and mosquito conditionals](building-sites/tag-syntax/nested-tags).
 
 ## Timing
 
