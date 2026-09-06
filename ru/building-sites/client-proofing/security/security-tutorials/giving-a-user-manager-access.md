@@ -19,6 +19,16 @@ translation: "building-sites/client-proofing/security/security-tutorials/giving-
 6. В **Manage → Users** создайте пользователя или откройте существующего. На вкладке Access Permissions добавьте его в группу Administrator с ролью Editor.
 7. Откройте **Security → Flush Sessions** и войдите снова.
 
+## Публикация в менеджере
+
+Если пользователь редактирует ресурсы, но не может публиковать (чекбокс Published откатывается, нет дат, нет Publish в меню дерева):
+
+- В стоковой политике **Content Editor** нет `publish_document` / `unpublish_document`.
+- Эти ключи должны быть в Context Access ACL на **`mgr`**, а не только на `web` или другом фронтовом контексте.
+- Разрешения Resource Policy `publish` / `unpublish` текущий UI публикации в менеджере не открывают.
+
+Подробнее: [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#публикация-в-менеджере-и-несколько-групп).
+
 ## Смотрите также
 
 1. [Доступ пользователя к Менеджеру](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)

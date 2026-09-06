@@ -6,7 +6,9 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 
 ## modX::hasPermission
 
-Returns true if user has the specified policy permission.
+Returns true if user has the specified policy permission in the **current** context (`$modx->context`). In the manager that context is usually `mgr`.
+
+So `$modx->hasPermission('publish_document')` in manager code only sees Context Access policies attached to **`mgr`**. A policy that grants the same key on another context does not satisfy this check. See [ACLs: Manager publishing and multiple groups](building-sites/client-proofing/security/policies/acls#manager-publishing-and-multiple-groups).
 
 ## Syntax
 

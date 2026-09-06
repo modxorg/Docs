@@ -26,6 +26,8 @@ This policy is packaged into MODX and is given to users on any context who want 
 | unpublish |
 | view |
 
+Do not confuse Resource permissions `publish` / `unpublish` with Administrator/context permission `publish_document`. The manager publish checkbox, dates, tree actions, and publish processors gate on `publish_document` for the **`mgr`** context. Resource `publish` / `unpublish` alone will not open those controls. See [ACLs: Manager publishing and multiple groups](building-sites/client-proofing/security/policies/acls#manager-publishing-and-multiple-groups).
+
 ## See Also
 
 1. [Permissions - Administrator Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy)

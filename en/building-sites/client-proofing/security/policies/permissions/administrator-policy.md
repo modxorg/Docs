@@ -80,7 +80,7 @@ This policy is packaged into MODX and is given to users on the 'mgr' context who
 | packages                    | To use any Transport Packages in the [Package Management](extending-modx/transport-packages "Package Management") system.        |
 | property\_sets              | To view and edit [Properties and Property Sets](building-sites/properties-and-property-sets "Properties and Property Sets").     |
 | providers                   | To view and edit [Providers](building-sites/extras/providers "Providers") across the site.                                       |
-| publish\_document           | To publish or unpublish any Resource.                                                                                            |
+| publish\_document           | To publish or unpublish any Resource. In the manager UI this is checked on the **`mgr`** context via `hasPermission('publish_document')`. A grant only on another context does not unlock manager publish controls. See [ACLs](building-sites/client-proofing/security/policies/acls#manager-publishing-and-multiple-groups). |
 | purge\_deleted              | To empty the Recycle Bin.                                                                                                        |
 | remove                      | Basic permission to remove any object.                                                                                           |
 | remove\_locks               | To remove all existing Locks throughout the site.                                                                                |

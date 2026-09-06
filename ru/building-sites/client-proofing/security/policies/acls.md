@@ -43,6 +43,21 @@ ACL для ресурсов работают немного иначе и в о�
 - ... даст разрешения на ресурсы (save, load, delete и т. д.) из указанной политики
 - ... для всех ресурсов в группе ресурсов
 
+## Публикация в менеджере и несколько групп
+
+Публикация в менеджере (чекбокс Published, даты publish/unpublish, пункты Publish/Unpublish в дереве, процессоры publish/unpublish) смотрит на контекстное разрешение `publish_document` (и `unpublish_document`) через `modX::hasPermission()`. В менеджере текущий контекст это **`mgr`**.
+
+Следствия:
+
+1. Политика с `publish_document` только на фронтовом контексте (`web` или другом) **не** включает кнопки публикации в менеджере. Нужен Context Access ACL на **`mgr`**.
+2. Разрешения Resource ACL `publish` / `unpublish` ([ресурсная политика](building-sites/client-proofing/security/policies/permissions/resource-policy)) это другой слой. Текущий UI публикации в менеджере их не использует.
+3. Несколько групп на **`mgr`** объединяются через OR: достаточно, чтобы **одна** подходящая ACL на `mgr` дала `publish_document`. Это не пересечение всех групп.
+4. Типичная ловушка: одна группа даёт на `mgr` политику **Content Editor** (без публикации), а вторая кладёт политику с публикацией только на другой контекст. Пользователь в обеих группах всё равно без publish в менеджере, пока `publish_document` не появится на `mgr`.
+
+Что сделать: добавьте Context Access на **`mgr`** хотя бы для одной группы пользователя с политикой, где есть `publish_document` (и при необходимости `unpublish_document`). Content Editor на другой группе можно оставить. Сбросьте сессии/права и проверьте снова.
+
+Подробнее: [Политика администратора](building-sites/client-proofing/security/policies/permissions/administrator-policy) (`publish_document`), [доступ менеджера](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access). Фон треда: [modxcms/revolution#14925](https://github.com/modxcms/revolution/issues/14925).
+
 ## Смотрите также
 
 1. [Пользователи](building-sites/client-proofing/security/users)

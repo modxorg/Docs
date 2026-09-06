@@ -8,7 +8,7 @@ translation: "building-sites/client-proofing/security/policies"
 Политика доступа - это набор [Разрешений](building-sites/client-proofing/security/policies/permissions "Разрешения") содержащий одно или несколько Разрешений, определённых в панели управления. По умолчанию в MODX определены следующие политики доступа:
 
 - **Administrator**: Политика администрирования контекста со всеми разрешениями по умолчанию.
-- **Content Editor**: Политика администрирования контекста с ограниченными разрешениями, относящимися к редактированию контента, но без разрешений на публикацию.
+- **Content Editor**: Политика администрирования контекста с ограниченными разрешениями, относящимися к редактированию контента, но без разрешений на публикацию (`publish_document` / `unpublish_document`).
 - **Context**: Стандартная политика контекста, которую можно применять при создании списков ACL для получения базового доступа в контексте (read/write и view\_unpublished).  
 - **Element**: Политика элемента MODX со всеми атрибутами.
 - **Load Only**: Минимальная политика с разрешением на загрузку объекта.
@@ -38,6 +38,8 @@ translation: "building-sites/client-proofing/security/policies"
 Политики доступа могут быть назначены с помощью [Списков контроля доступа](building-sites/client-proofing/security/policies/acls "ACLs") (ACLs), для контекста или группы пользователей с указанием минимальной [Роли](building-sites/client-proofing/security/roles "Роли"). Это означает, что все пользователи в этой группе  обладающие минимальной ролью, могут использовать разрешения в политике контекста, указанные в [ACL](building-sites/client-proofing/security/policies/acls "ACLs").
 
 По умолчанию в MODX присутствует политика доступа ["Administrator"](building-sites/client-proofing/security/policies/permissions/administrator-policy "Политики - Политика Администратора") которая содержит все [Разрешения](building-sites/client-proofing/security/policies/permissions "Разрешения") которые можно использовать в контексте ACL. При создании пользовательской политики доступа, для пользователей с ограничениями, эту политику лучше всего продублировать.
+
+Кнопки публикации в менеджере требуют `publish_document` в Context Access ACL на контексте **`mgr`**. Политика только на другом контексте эти кнопки не откроет. Подробнее: [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#публикация-в-менеджере-и-несколько-групп).
 
 ### Доступ к группе ресурсов
 

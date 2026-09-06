@@ -20,6 +20,16 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials/giving-a-user
 6. In Manage -> Users, create the new user, or edit existing, and via the Access Permissions tab, assign them to the Administrator group with a role of Editor.
 7. Click on Security -> Flush Sessions and re-login.
 
+## Publishing in the manager
+
+If the user can edit resources but cannot publish (Published checkbox snaps back, no publish dates, no Publish in the tree menu):
+
+- Stock **Content Editor** has no `publish_document` / `unpublish_document`.
+- Those keys must appear on a Context Access ACL for **`mgr`**, not only on `web` or another frontend context.
+- Resource Policy permissions `publish` / `unpublish` do not drive the current manager publish UI.
+
+More detail: [ACLs: Manager publishing and multiple groups](building-sites/client-proofing/security/policies/acls#manager-publishing-and-multiple-groups).
+
 ## See Also
 
 1. [Giving a User Manager Access](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)

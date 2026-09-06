@@ -9,7 +9,7 @@ _old_uri: "2.x/administering-your-site/security/policies"
 An Access Policy is a set of [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") containing one or many Permissions, as defined in the manager. By default MODX comes with pre-configured Access Policies:
 
 - **Administrator**: Context administration policy with all default permissions.
-- **Context Editor**: Context administration policy with limited, content-editing related Permissions, but no publishing Permissions.
+- **Content Editor**: Context administration policy with limited, content-editing related Permissions, but no publishing Permissions (`publish_document` / `unpublish_document`).
 - **Context**: A standard Context policy that you can apply when creating Context ACLs for basic read/write and view\_unpublished access within a Context.
 - **Element**: MODX Element policy with all attributes.
 - **Load Only**: A minimal policy with permission to load an object.
@@ -38,6 +38,8 @@ Policies can be used in a myriad of different ways. Here are 3 example usages th
 Access Policies can be assigned as [Access Control Lists](building-sites/client-proofing/security/policies/acls "ACLs") (ACLs) to a Context and User Group, with a specified Minimum [Role](building-sites/client-proofing/security/roles "Roles"). When done, this means that all the Users in that User Group with at least the Role specified as the Minimum Role can use the Permissions in the Policy in the Context specified in the [ACL](building-sites/client-proofing/security/policies/acls "ACLs").
 
 MODX comes with a default ["Administrator" Policy](building-sites/client-proofing/security/policies/permissions/administrator-policy "Permissions - Administrator Policy") that contains all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") one would use in a Context ACL. It's best to duplicate this policy when creating a custom access policy for restricting manager users.
+
+Manager publish controls require `publish_document` on a Context Access ACL for the **`mgr`** context. Policies attached only to another context do not unlock those controls. Details: [ACLs: Manager publishing and multiple groups](building-sites/client-proofing/security/policies/acls#manager-publishing-and-multiple-groups).
 
 ### Resource Group Access
 
