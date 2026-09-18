@@ -57,7 +57,7 @@ Fred requires at least one Category before creating actual content Element.
 
 Fred Elements can be as simple as raw text or more complex like a responsive product catalog detail page. Let’s start by creating a simple heading Element, often the first thing on a page.
 
-Switch to the `Elements` tab in Element’s CMP (`Extras` > `Fred` > `Elements`) and click the `Create Element` button. Fill the name (`H1 Heading`), category (`Blocks`), image (`https://placehold.it/300x150&text=H1+Heading`).
+Switch to the `Elements` tab in Element’s CMP (`Extras` > `Fred` > `Elements`) and click the `Create Element` button. Fill the name (`H1 Heading`), category (`Blocks`), image (`https://placeholder.photo/300x150?text=H1+Heading`).
 
 Add the following markup:
 
@@ -82,7 +82,7 @@ Select the placeholder “Hello, world.” text and start typing to edit its con
 
 Let’s create another Element for a single paragraph:
 
-1. Create an Element under same category with the name `Basic Paragraph`, `https://placehold.it/600x150&text=A+paragraph+of+text` for the image, and `<p data-fred-name="paragraph">Your content goes here…</p>` for the markup
+1. Create an Element under same category with the name `Basic Paragraph`, `https://placeholder.photo/600x150?text=A+paragraph+of+text` for the image, and `<p data-fred-name="paragraph">Your content goes here…</p>` for the markup
 2. Save this in the Manager
 3. From the front-end, reload the page
 4. Drag this new Element beneath the previously created title, and drop it in place
