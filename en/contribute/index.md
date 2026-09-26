@@ -17,6 +17,7 @@ Besides developing fixes or features:
 - [Reporting or triaging issues](contribute/issues) requires barely any code at all. Just use the product, report bugs, or try to reproduce reported issues to offer more information.
 - [MODX can also be translated](contribute/translate) into dozens of languages. 
 - [Writing and improving the documentation](contribute/documentation) lets you change this very page and help new (and seasoned) users understand how to best use MODX.
+- Follow planned work via the [Core roadmap](getting-started/roadmap) (milestones, changelog, branches).
 
 ## Where to find MODX
 

@@ -16,3 +16,4 @@ sortorder: 1
 8. [Часто задаваемые вопросы и устранение неполадок](getting-started/faqs-and-troubleshooting)
 9. [Обслуживание](getting-started/maintenance)
 10. [Обновление с 2.x до 3.0](getting-started/upgrading-to-3.0)
+11. [Roadmap ядра](getting-started/roadmap)
