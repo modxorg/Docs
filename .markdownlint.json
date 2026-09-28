@@ -15,5 +15,6 @@
   "no-trailing-punctuation": {
     "punctuation": ".,;:"
   },
-  "no-duplicate-header": false
+  "no-duplicate-header": false,
+  "no-bare-urls": false
 }

@@ -282,35 +282,50 @@ Some important recommendations:
 
 ## Page Formatting and Markup
 
-There is a limited set of formatting elements in order to make it easy for editors and provide consistent formatting for readers. The following shows what formats are available for HTML and special formats for the MODX Documentation
+Documentation pages are Markdown, not free-form HTML. Use Markdown for headings, lists, links, tables, emphasis, and fenced code blocks. [DocsApp](https://github.com/modxorg/DocsApp) **strips raw HTML** from page bodies, so tags written outside code fences do not appear on the site.
 
-### Permitted HTML Markup
+### Markdown formatting
 
-| Format Type    | Usage                                                                                                                                        | Example |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| Normal Text    | This is the text format used for all paragraph text and inside tables.                                                                       |         |
-| Bold           | (TBD)                                                                                                                                        |         |
-| Italics        | (TBD)                                                                                                                                        |         |
-| Bulleted Lists | (TBD)                                                                                                                                        |         |
-| Numbered Lists | (TBD)                                                                                                                                        |         |
-| Indents        | Reserve indentation for use in creating nested or child lists. Paragraphs should not be                                                      |         |
-| Images         | (TBD)                                                                                                                                        |         |
-| Media          | (TBD)                                                                                                                                        |         |
-| Table          | (TBD)                                                                                                                                        |         |
-| Links          | (TBD)                                                                                                                                        |         |
-| Text-Alignment | Reserve text-alignment for table cells. It should not be used to center, right or jusitfy text. Paragraph and headings must be left-aligned. |         |
+| Format | Markdown | Notes |
+| ------ | -------- | ----- |
+| Headings | `#` … `######` | One `#` heading per page title is usually enough; start section headings at `##`. |
+| Bold / italic | `**bold**`, `_italic_` | Use sparingly for UI labels and emphasis. |
+| Lists | `-` or `1.` | Nest lists with indentation when needed. |
+| Links | `[label](https://example.com)` or `[label](../other-page)` | Prefer relative links for other docs pages. |
+| Images | `![alt text](image.png)` | Keep image files next to the page when practical. |
+| Tables | GitHub-flavored pipe tables | Good for option lists and comparisons. |
+| Code | Fenced blocks with a language tag (for example `php`, `html`, `bash`) | Use for PHP, HTML, CSS, JS, and shell examples. |
 
-### Special Formats
+Do **not** use layout HTML (`` `<div>` ``, `` `<span>` ``, inline styles, alignment attributes, custom classes or IDs). Those are stripped and make maintenance harder.
 
-| Format Type | Usage                                                                                                                                                                            | Example |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
-| PHP Code    | This is a special macro-format for wrapping code examples including PHP, HTML, CSS and Javascript. This will enable syntax highlighting and enhance the readibility of the page. |         |
-| Note        | (TBD)                                                                                                                                                                            |         |
-| Warning     | (TBD)                                                                                                                                                                            |         |
-| Danger      | (TBD)                                                                                                                                                                            |         |
-| Info        | (TBD)                                                                                                                                                                            |         |
+### Media embeds
 
-Other HTML elements such as divs, spans, blockquotes, address and etc. should not be used. This makes maintaining the documentations more difficult and can potentially create issues with layouts. Classes and IDs should not be used in markup. Special classes used when formatting in HTML are created by the Special Format macros listed above.
+| Media | How to include it |
+| ----- | ----------------- |
+| YouTube / Vimeo / GitHub | Put the bare `https://` URL alone on its own line (not `<…>` or `[text](url)`). DocsApp embeds it when the host is allowed. |
+| Local video (`.mp4`, `.webm`, `.ogg`) | Use image syntax: `![Demo](demo.mp4)`. DocsApp renders a video player. |
+| Screenshots / diagrams | Use `![description](file.png)` (or `.jpg` / `.gif` / `.webp`). |
+
+Wrong (stripped, no embed):
+
+``` plain
+<iframe src="https://player.vimeo.com/video/123"></iframe>
+<video src="demo.mp4" controls></video>
+```
+
+Correct:
+
+``` plain
+https://vimeo.com/123
+
+![Demo](demo.mp4)
+```
+
+Front matter fields such as `title` and `description` must be plain text, not HTML.
+
+### Callouts and notes
+
+Callout-style boxes (note, warning, and similar) are controlled by front matter on the page (for example `note:`) or by normal Markdown emphasis, not by custom HTML macros.
 
 ## Final checklist
 
@@ -320,3 +335,4 @@ Before considering a document or change complete, it is a good idea to perform t
 - It is concise? Does it have a clear communication style?
 - It is coherent? Does the text jumps from topic to topic?
 - It is grammatically correct? Have you spell checked the text? Have you asked a native speaker to proof-read your text
+- Does it avoid raw HTML outside code fences? Are embeds bare URLs or Markdown images/videos as documented above?
