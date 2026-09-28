@@ -27,7 +27,7 @@ _Wayfinder_ has been totally re-factored from the original DropMenu navigation b
 | 0.9 beta 1/2/3 | Aug/Sept 2006 | 0.9.2.1         | Initial release                |
 | 1.0            | Oct 23, 2006  | 0.9.2.1         |                                |
 | 1.0.1          | Nov 07, 2006  | 0.9.2.1 - 0.9.5 |                                |
-| 2.0            | Feb 27, 2007  | 0.9.5 +         | Legacy 1.x release              |
+| 2.0            | Feb 27, 2007  | 0.9.5 +         | Current release for Evolution  |
 | 2.1.1 beta 1   | May 21, 2009  | 2.0.0-beta 1    |                                |
 | 2.1.1 beta 2   | Oct 20, 2009  | 2.0.0-beta 4    |                                |
 | 2.1.1 beta 4   | Nov 05, 2009  | 2.0.0-beta 5 +  |                                |
@@ -134,7 +134,7 @@ Available placeholders are:
 Please note that you will need to wrap the placeholders with the relevant tags.
 
 ``` php
-Older 1.x placeholder style: [+wf._____+]
+Evolution: [+wf._____+]
 Revolution: [[+wf._____]]
 ```
 
@@ -176,7 +176,7 @@ Available placeholders are:
 Please note that you will need to wrap the placeholders with the relevant tags.
 
 ``` php
-Older 1.x placeholder style: [+wf._____+]
+Evolution: [+wf._____+]
 Revolution: [[+wf._____]]
 ```
 
