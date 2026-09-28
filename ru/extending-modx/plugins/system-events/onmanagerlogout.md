@@ -20,6 +20,10 @@ translation: "extending-modx/plugins/system-events/onmanagerlogout"
 | **&** loginContext | Ключ контекста, в котором происходит выход из системы. **Передано по ссылке**                 |
 | **&** addContexts  | Дополнительные контексты, в которых также происходит выход из системы. **Передано по ссылке** |
 
+## `$modx->getUser()` во время OnManagerLogout
+
+Тот же процессор выхода, что и у [OnWebLogout](extending-modx/plugins/system-events/onweblogout): сначала снимаются session contexts, потом событие, `$modx->user` не сбрасывается. Для вышедшего пользователя берите `$user` из события, а не `$modx->getUser()`. Подробности и обходной путь на той странице.
+
 ## Пример
 
 Такой плагин запишет в "Журнал ошибок" кто и где вышел:

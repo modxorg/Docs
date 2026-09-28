@@ -6,7 +6,7 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebl
 
 ## Event: OnWebLogout
 
-Fires right after the user logs out of a context and their context session is removed.
+Fires after the logout processor removes the user's session contexts for a non-`mgr` context. Plugins cannot change whether the logout already happened.
 
 - Service: 3 - Web Access Events
 - Group: None
@@ -21,25 +21,47 @@ Fires right after the user logs out of a context and their context session is re
 | **&** loginContext | The context key this logout is occurring in. **Passed by reference**                 |
 | **&** addContexts  | Additional contexts in which the logout is also occuring in. **Passed by reference** |
 
+## `$modx->getUser()` during OnWebLogout
+
+The logout processor removes session contexts **before** it invokes `OnWebLogout`. For that context, `$modx->user->isAuthenticated($loginContext)` is already false.
+
+It does **not** clear or reload `$modx->user` before the event. `$modx->getUser()` short-circuits on the cached object and still returns the user who just logged out (same id). Code that calls `$modx->getUser()` (or fires other plugins that do) can look "still logged in" even though the session context is gone.
+
+Use the event `$user` parameter (or `$scriptProperties['user']`) for who logged out. Do not treat `$modx->getUser()` as the current session user during this event.
+
+If you need `$modx->getUser()` to reflect a logged-out request state, clear and reload after the session contexts are gone:
+
+```php
+$modx->user = null;
+$modx->getUser($loginContext, true);
+```
+
+The same processor path fires [OnManagerLogout](extending-modx/plugins/system-events/onmanagerlogout) for `mgr`, also without refreshing `$modx->user`. Core tracking: [modxcms/revolution#17015](https://github.com/modxcms/revolution/issues/17015).
+
 ## Example
 
-Such a plugin will display in the "Error log" who logged out and where:
+Log who logged out. Prefer the event `$user`, not `$modx->getUser()`:
 
 ```php
 <?php
 $eventName = $modx->event->name;
-switch($eventName) {
+switch ($eventName) {
     case 'OnWebLogout':
         $id = $user->get('id');
-        $modx->log(modX::LOG_LEVEL_ERROR, 'User with id logged out '.$id.' out of context '.$loginContext.' and these more '.print_r($addContexts));
+        $modx->log(
+            modX::LOG_LEVEL_ERROR,
+            'User with id ' . $id . ' logged out of context ' . $loginContext
+            . ' and these more ' . print_r($addContexts, true)
+        );
         break;
 }
 ```
 
 ## See Also
 
-- [OnBeforeWebLogout event](extending-modx/plugins/system-events/onbeforeweblogout "OnBeforeWebLogout")
-- [OnBeforeManagerLogout event](extending-modx/plugins/system-events/onbeforemanagerlogout "OnBeforeManagerLogout")
-- [OnManagerLogout event](extending-modx/plugins/system-events/onmanagerlogout "OnManagerLogout")
-- [System Events](extending-modx/plugins/system-events "System Events")
-- [Plugins](extending-modx/plugins "Plugins")
+- [OnBeforeWebLogout](extending-modx/plugins/system-events/onbeforeweblogout)
+- [OnBeforeManagerLogout](extending-modx/plugins/system-events/onbeforemanagerlogout)
+- [OnManagerLogout](extending-modx/plugins/system-events/onmanagerlogout)
+- [OnWebLogin](extending-modx/plugins/system-events/onweblogin)
+- [System Events](extending-modx/plugins/system-events)
+- [Plugins](extending-modx/plugins)
