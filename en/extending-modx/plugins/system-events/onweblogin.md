@@ -6,44 +6,61 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebl
 
 ## Event: OnWebLogin
 
-Fired anytime a user logs into a non-mgr context after performing any autentification checks successfully. Doesn't affect the autentification process.
+Fires after a user passes authentication for a non-`mgr` context and session contexts are added. Plugins cannot change whether the login succeeds.
 
 - Service: 3 - Web Access Events
 - Group: None
 
 ## Event Parameters
 
-| Name         | Description                                                                      |
-| ------------ | -------------------------------------------------------------------------------- |
-| user         | A reference to the modUser object.                                               |
-| attributes   | An array of: - rememberme - Boolean set if user wants password to be remembered. |
-| lifetime     | The session cookie lifetime for this login.                                      |
-| loginContext | The context key this login is occurring in.                                      |
-| addContexts  | Additional contexts in which the login is also occuring in.                      |
+| Name       | Description                                                                 |
+| ---------- | --------------------------------------------------------------------------- |
+| user       | The `modUser` that just logged in.                                          |
+| attributes | An array with:                                                              |
+|            | - rememberme — whether the user asked to remember the login                 |
+|            | - lifetime — session cookie lifetime for this login                         |
+|            | - loginContext — context key for this login                                 |
+|            | - addContexts — extra contexts that also received a session                 |
+
+## `$modx->getUser()` during OnWebLogin
+
+The login processor adds session contexts **before** it invokes `OnWebLogin`. The user is logged in at the session level.
+
+For web contexts it does **not** refresh `$modx->user` before the event. `$modx->getUser()` often still returns the previous user object from the request (anonymous / id `0`, or whatever was already cached). That is why `$modx->getUser()` looks “wrong” here even though login succeeded.
+
+Use the event `$user` parameter (or `$scriptProperties['user']`) for the authenticated user. If you need `$modx->getUser()` to match, clear and reload after the session exists:
+
+```php
+$modx->user = null;
+$modx->getUser($attributes['loginContext'], true);
+```
+
+On manager login the processor does refresh `$modx->user` before [OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin). That refresh does not run for web/`OnWebLogin`.
 
 ## Event Login Workflow
 
-1. _[_OnBeforeWebLogin_](extending-modx/plugins/system-events/onbeforeweblogin)_ || _[OnBeforeManagerLogin](extending-modx/plugins/system-events/onbeforemanagerlogin)_ - Inside this event the developer can check for erroneous parameters which will **disallow** further logging in process. If plugins executed by this event return something except true, the logging in will be aborted with the specified error.
-2. _[OnUserNotFound](extending-modx/plugins/system-events/onusernotfound)_ - This event is executed only if the provided username is not found inside MODX database. The developer can provide it's own modUser object in the event output to continue the login process.
-3. _[OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication)_ || _[OnManagerAuthentication](extending-modx/plugins/system-events/onmanagerauthentication)_ - Inside this event the developer can check for parameters which will **override the default checking by password** and **allow** further logging in process. If one of the plugins executed from this event return true, the user is considered verified and logged in.
-4. **_OnWebLogin_** || _[OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin)_ - This event is fired after the logging in process has finished and the user is considered logged in. It **doesn't change** the logging in process **behaviour**.
+1. [OnBeforeWebLogin](extending-modx/plugins/system-events/onbeforeweblogin) || [OnBeforeManagerLogin](extending-modx/plugins/system-events/onbeforemanagerlogin) — plugins can abort login by returning a value other than `true`.
+2. [OnUserNotFound](extending-modx/plugins/system-events/onusernotfound) — runs only when the username is missing from the MODX database. A plugin may supply its own `modUser` to continue.
+3. [OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication) || [OnManagerAuthentication](extending-modx/plugins/system-events/onmanagerauthentication) — plugins can override the default password check. Returning `true` marks the user as authenticated.
+4. **OnWebLogin** || [OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin) — runs after session contexts are added. Does not change login success or failure. On web, prefer the `$user` event parameter over `$modx->getUser()` (see above).
 
 ## Example
 
-Such a plugin will display in the Error Log "who logged in and where:
+Log who logged in and with which attributes:
 
 ```php
 <?php
 $eventName = $modx->event->name;
-switch($eventName) {
+switch ($eventName) {
     case 'OnWebLogin':
         $name = $user->get('username');
-        $modx->log(modX::LOG_LEVEL_ERROR, 'User logged in '.$name.print_r($attributes));
+        $modx->log(modX::LOG_LEVEL_ERROR, 'User logged in: ' . $name . ' ' . print_r($attributes, true));
         break;
 }
 ```
 
 ## See Also
 
-- [System Events](extending-modx/plugins/system-events "System Events")
-- [Plugins](extending-modx/plugins "Plugins")
+- [System Events](extending-modx/plugins/system-events)
+- [Plugins](extending-modx/plugins)
+- [OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin)
