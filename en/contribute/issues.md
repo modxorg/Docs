@@ -78,8 +78,8 @@ Please file issues for the appropriate project in the issues section at Github: 
 
 Issues that the community can initiate or collaborate on include:
 
-- bugs in MODX (Evolution and Revolution) and some Extras
-- feature requests for MODX (Evolution and Revolution) and some Extras
+- bugs in MODX and some Extras
+- feature requests for MODX and some Extras
 - reports of bugs or problems with various MODX websites or parts thereof
 
 Many feature requests and bug reports stem originally from discussions in the forums. If you are filing a bug report or feature request for which there is forum discussion, please include a link to the forum thread.

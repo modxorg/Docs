@@ -101,4 +101,3 @@ See the note above about FTP clients that support directory merging.
 2. [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0)
 3. [Server Requirements](getting-started/server-requirements)
 4. [Upgrading to 2.8.2 / 2.8.3](getting-started/maintenance/upgrading/2.8.2)
-5. [Upgrading from MODX Evolution](getting-started/maintenance/upgrading/evolution)

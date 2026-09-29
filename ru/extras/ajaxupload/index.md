@@ -19,7 +19,7 @@ description: "динамическая загрузка файлов через 
 
 ## История и информация
 
-Первоначально AjaxUpload был написан в 2012 году для MODX Evolution и с тех пор поддерживается и развивается [Thomas Jakobi](https://github.com/jako).
+AjaxUpload впервые вышел в 2012 году. С тех пор его поддерживает и развивает [Thomas Jakobi](https://github.com/jako).
 
 ### Скачать
 

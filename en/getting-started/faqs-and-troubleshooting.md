@@ -19,11 +19,11 @@ Common questions and quick fixes for MODX 3. For deeper troubleshooting, see the
 
 ### 1.1. What is MODX / MODX Revolution / MODX Evolution?
 
-**MODX** (also called **MODX Revolution**) is the actively developed CMS documented here. Current releases are **3.x**. See [An Overview of MODX](getting-started/what-is-modx) for concepts.
+Names on forums and in search results often mix product lines. Short map:
 
-**MODX Evolution** is a separate, older 1.x product line. It is not covered by these 3.x docs. Sites still on Evolution need a migration project; there is no official one-click upgrade path. Historical notes live under [Upgrading from Evolution](getting-started/maintenance/upgrading/evolution).
-
-If you are moving from **Revolution 2.x to 3.x**, start with [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0).
+- **MODX** / **MODX Revolution 3.x** — the actively developed CMS documented here. See [An Overview of MODX](getting-started/what-is-modx) for concepts.
+- **MODX Revolution 2.x** — the previous major Revolution line. Many production sites still run it. Upgrading to 3.x is supported with planning; start with [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0).
+- **MODX Evolution** — a separate, older **1.x** product line. It is not covered by these 3.x docs. Sites still on Evolution need a migration project; there is no official one-click upgrade path. Historical notes live under [Upgrading from Evolution](getting-started/maintenance/upgrading/evolution).
 
 ### 1.2. What PHP / server version do I need?
 
