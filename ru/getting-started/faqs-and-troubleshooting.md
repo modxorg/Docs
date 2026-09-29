@@ -18,13 +18,13 @@ translation: "getting-started/faqs-and-troubleshooting"
 
 ## 1. MODX 101
 
-### 1.1. Что такое MODX?
+### 1.1. Что такое MODX / MODX Revolution / MODX Evolution?
 
-**MODX** (также **MODX Revolution**): активно развиваемая CMS, описанная в этой документации. Текущие релизы: **3.x**. Концепции см. в [Обзор MODX](getting-started/what-is-modx).
+На форумах и в поиске часто смешивают линейки продукта. Краткая карта:
 
-Старые релизы 1.x в эту документацию не входят.
-
-Если вы переходите с **Revolution 2.x на 3.x**, начните с [Обновление с 2.x до 3.0](getting-started/upgrading-to-3.0).
+- **MODX** / **MODX Revolution 3.x** — активно развиваемая CMS, описанная в этой документации. Концепции см. в [Обзор MODX](getting-started/what-is-modx).
+- **MODX Revolution 2.x** — предыдущая мажорная линейка Revolution. Многие боевые сайты всё ещё на ней. Переход на 3.x поддерживается при планировании; начните с [Обновление с 2.x до 3.0](getting-started/upgrading-to-3.0).
+- **MODX Evolution** — отдельная старая ветка **1.x**. Эти документы для 3.x её не покрывают. Сайты на Evolution требуют проекта миграции, официального обновления в один клик нет. Исторические заметки: [Обновление с Evolution](getting-started/maintenance/upgrading/evolution).
 
 ### 1.2. Какая версия PHP и сервера нужна?
 

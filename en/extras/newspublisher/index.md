@@ -27,7 +27,7 @@ Install using Package Manager and see the tutorial at [Bobs Guides](https://bobs
 
 ## History
 
-- Earlier author: Raymond Irving [SlideShare](https://www.slideshare.net/xwisdom)
+- Original author: Raymond Irving [SlideShare](https://www.slideshare.net/xwisdom)
 - Revolution Author: Bob Ray [Bob's Guides](https://bobsguides.com)
 - Contributors: Invaluable fixes, improvements, and feature additions were created and tested by Markus Schlegel, donshakespeare, Bruno17, Gregor Šekoranja, Alberto Ramacciotti, and others too numerous to mention.
 

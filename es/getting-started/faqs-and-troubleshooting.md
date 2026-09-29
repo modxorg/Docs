@@ -27,11 +27,15 @@ En esta página, encontrarás las siguientes categorías y preguntas:
 
 ## 1. MODX 101
 
-### 1.1. ¿Qué es MODX?
+### 1.1. ¿Qué es MODX Evolution y qué es MODX Revolution? ¿Cual es la diferencia?
 
-MODX es un CMS y framework de aplicaciones de código abierto. Esta documentación cubre MODX 2.x y 3.x (históricamente también llamado Revolution).
+En foros y búsquedas verás varios nombres de producto. Mapa corto:
 
-Las versiones 1.x antiguas quedan fuera del alcance de estos docs.
+- **MODX** / **MODX Revolution 3.x** — el CMS en desarrollo activo documentado aquí.
+- **MODX Revolution 2.x** — la generación anterior de Revolution. Muchos sitios en producción siguen en 2.x. La actualización a 3.x es posible con planificación; guía en inglés: <https://docs.modx.com/3.x/en/getting-started/upgrading-to-3.0>.
+- **MODX Evolution** — una línea de producto **1.x** separada y más antigua. No está cubierta por estos docs de 3.x. Los sitios que siguen en Evolution necesitan un proyecto de migración; no hay una actualización oficial de un solo clic. Notas históricas en inglés: <https://docs.modx.com/3.x/en/getting-started/maintenance/upgrading/evolution>.
+
+**Contexto histórico:** Evolution es el código heredado en las versiones 1.x. Revolution es una reescritura completa que comparte las mismas ideas pero se basa en xPDO y salió a la luz en 2010.
 
 ### 1.2. ¿Qué etiquetas diferentes puedo usar? Que es `[[*pagetitle]]`, `[[Wayfinder]]` etc?
 

@@ -8,6 +8,7 @@ This document covers the standard process for upgrading an existing MODX Revolut
 
 - Upgrading **from 2.x to 3.0+**: Setup only accepts **2.6.0 or later**. Read [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0) first. Namespaces, processors, the fixed core path, and PHP requirements all change.
 - Confirm your host meets current [Server Requirements](getting-started/server-requirements). **MODX 3.2+ requires PHP 8.1 or higher** (3.0 originally allowed PHP 7.2+).
+- Upgrading from Evolution (1.x) is not officially supported; historical notes are [here](getting-started/maintenance/upgrading/evolution).
 
 ## Upgrading MODX Revolution
 
