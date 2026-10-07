@@ -103,7 +103,6 @@ sortorder: 5
 ### Обновление MODX
 
 -   [UpgradeMODX](https://bobsguides.com/upgrade-modx-package.html) позволяет обновить MODX Revolution из админки MODX.
--   [GoRevo](https://bobsguides.com/why-choose-gorevo.html) (Премиум дополнение от Bob Ray) предоставляет инструмент для перехода с MODX Evolution на MODX Revolution.
 
 ## Распространение ваших собственных дополнений
 

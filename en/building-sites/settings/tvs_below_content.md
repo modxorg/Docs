@@ -14,7 +14,7 @@ This controls whether Template Variables show up on their own tab or below resou
 
 ### Yes
 
-All TVs appear below the Resource content, just like they did for MODX Evolution.
+All TVs appear below the Resource content.
 
 ![](tvs_below_content.jpg)
 

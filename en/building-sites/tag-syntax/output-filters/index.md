@@ -12,7 +12,7 @@ Filters in Revolution allow you to manipulate the way data is presented or parse
 
 ## Output Filter
 
-In Revolution, the Output Filter applies one or more of series of output modifiers, which behave similarly to PHx calls in MODX Evolution - except they're built into the core. The syntax looks like this:
+An Output Filter applies one or more output modifiers built into the core. The syntax looks like this:
 
 ```php
 [[element:modifier=`value`]]

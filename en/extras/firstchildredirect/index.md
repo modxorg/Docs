@@ -4,13 +4,11 @@ _old_id: "641"
 _old_uri: "revo/firstchildredirect"
 ---
 
-FirstChildRedirect is a snippet that will redirect a certain resource to its first child resource. There is a version for both Revolution and Evolution, of which the Revolution one allows more easy customization.
+FirstChildRedirect is a snippet that redirects a resource to its first child resource.
 
 ## Installation & bugs
 
 FirstChildRedirect can be installed through the MODX Revolution Package Manager, or installed manually by downloading the package from the MODX Extras website, uploading it to core/packages and adding a new package through the package manager from a local search.
-
-FirstChildRedirect is also available for MODX Evolution, however that does not support all additional parameters as described below.
 
 ## Snippet usage
 

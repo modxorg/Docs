@@ -21,7 +21,7 @@ getResources was first written by Jason Coward (opengeek) and released on June 3
 
 It can be downloaded from within the MODX Revolution manager via [Package Management](developing-in-modx/advanced-development/package-management "Package Management"), or from the MODX Extras Repository, here: <https://modx.com/extras/package/getresources>
 
-It is NOT a replacement for Ditto, but rather an alternative component that can accomplish some of the things that the more specialized components do, i.e. Ditto, Wayfinder, Breadcrumbs; basically anything that output the properties for a list of Resources (formerly Documents in MODX Evolution).
+It can accomplish some of the things that more specialized components do, i.e. Wayfinder, Breadcrumbs; basically anything that outputs the properties for a list of Resources.
 
 Documentation and tutorials on Russian can be found here: <http://modx.by/docs/modx-add-ons/getresources/>
 
@@ -278,7 +278,7 @@ Output a list of child Resources of the current Resource, where the Resource-tem
 [[getResources? &parents=`[[*id]]` &where=`{"template:IN":[1,2,3]}` &tpl=`myRowTpl`]]
 ```
 
-Display a message when no results found (equivalent of "empty" parameter in Ditto):
+Display a message when no results found:
 
 ``` php
 [[getResources:default=`No results found`? &parents=`[[*id]]` &tpl=`myRowTpl`]]

@@ -20,7 +20,7 @@ FileUpload presents a file upload form.
 - Downloads: 5,348
 - License: Free
 - [Discuss Extra](http://www.modxcms.com/forums/index.php?topic=5889)
-- Requires: Evolution 1.0.x or greater
+- Requires: MODX 2.x or greater
 - Supports: mysql
 
 ## History

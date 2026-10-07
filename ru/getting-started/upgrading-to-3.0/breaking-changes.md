@@ -39,7 +39,7 @@ translation: "getting-started/upgrading-to-3.0/breaking-changes"
   $mime = $contentType ? $contentType->get('mime_type') : '';
   ```
 
-- `modParser095`, `modTranslate095` и `modTranslator` удалены. Они только помогали переносить синтаксис тегов Evolution (0.9.x) в Revolution. Для миграции Evo→Revo их больше не вызывайте: конвертируйте шаблоны в обычные теги `[[...]]` вручную или своим инструментом и используйте стандартный `modParser`. [#14133](https://github.com/modxcms/revolution/pull/14133)
+- `modParser095`, `modTranslate095` и `modTranslator` удалены. Они только помогали переносить старый синтаксис тегов 0.9.x/1.x в Revolution. Для legacy-миграций их больше не вызывайте: конвертируйте шаблоны в обычные теги `[[...]]` вручную или своим инструментом и используйте стандартный `modParser`. [#14133](https://github.com/modxcms/revolution/pull/14133)
 - Flash-based copy-to-clipboard в ExtJS удалён. Копирование в менеджере идёт через clipboard API браузера. [#13697](https://github.com/modxcms/revolution/pull/13697)
 - Каталог `/manager/min/` удалён. Не использовался с 2.5. [#12778](https://github.com/modxcms/revolution/pull/12778), [#13194](https://github.com/modxcms/revolution/pull/13194), [#14416](https://github.com/modxcms/revolution/pull/14416)
 - Удалены неиспользуемые сетки ExtJS: assets/modext/widgets/resource/modx.grid.resource.security.js, assets/modext/widgets/security/modx.grid.role.user.js, assets/modext/workspace/lexicon/language.grid.js, assets/modext/workspace/lexicon/lexicon.topic.grid.js [#14895](https://github.com/modxcms/revolution/pull/14895)
