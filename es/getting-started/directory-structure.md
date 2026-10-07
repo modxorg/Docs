@@ -1,187 +1,202 @@
 ---
 title: "Explicación de la Estructura de Directorios"
+sortorder: 6
 _old_id: "108"
 _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure"
+translation: "getting-started/directory-structure"
 ---
 
-El directorio raíz de MODX se divide en varios subdirectorios, cada uno con su propio conjunto de responsabilidades y tareas. Algunos de estos directorios se pueden renombrar y mover, y sus ubicaciones se pueden configurar durante el proceso de ajustes.
+Distribución típica de nivel superior tras la instalación:
+
+| Ruta | Propósito |
+|---|---|
+| `index.php` | Front controller del contexto web |
+| `ht.access` | Plantilla de reescritura de Apache; renómbralo a `.htaccess` para URL amigables |
+| `composer.json` | Dependencias PHP, se instalan en `core/vendor/` |
+| `connectors/` | Puntos de entrada de solicitudes AJAX |
+| `core/` | Código de la aplicación, configuración, caché, paquetes, librerías vendor |
+| `manager/` | Interfaz del Manager (back-end) |
+| `setup/` | Instalador y actualizador; elimínalo tras instalar o actualizar |
+| `_build/` | Construye el paquete de transporte del core (solo checkouts de Git) |
+| `assets/` | Archivos front-end de medios y de los Extras |
+
+`core/` debe permanecer en `/core/` en la raíz del proyecto: no se puede mover ni renombrar en 3.x. Los directorios `manager/` y `connectors/` se pueden renombrar durante una [Instalación avanzada](getting-started/installation/advanced). Ver también [Cambios de la carpeta core en 3.0](getting-started/upgrading-to-3.0/core-folder).
 
 ## connectors/
 
-Los conectores son, esencialmente, puntos de entrada para solicitudes AJAX en MODX. No hacen ninguna manipulación de la base de datos por su cuenta; simplemente cargan la clase MODX principal, sanitizan cualquier dato de la solicitud y luego manejan la solicitud apuntando al archivo del procesador apropiado.
+Los conectores son puntos de entrada HTTP para solicitudes AJAX del Manager y otras. Cada conector carga MODX, sanitiza la solicitud y la entrega a un [Procesador](extending-modx/processors). Nunca modifica la base de datos por sí mismo.
 
-Por ejemplo, cuando creamos un recurso, solicitamos connectors/resource/index.php?Action=create. El archivo index.php incluirá el archivo de conector base (Connectors/index.php) que crea una instancia del objeto MODX principal, manejará cualquier cambio personalizado de [Contexto](building-sites/contexts "Contexts"), y sanitizará la peticion GET o POST. El archivo `connectors/resource/index.php` "manejará" la solicitud y llamará al archivo de procesador correcto, lo cual discutiremos más adelante.
+En 3.x, la mayoría del tráfico del Manager pasa por `connectors/index.php` con un parámetro `action` (por ejemplo `Resource/Create`). El action se resuelve en una clase bajo `core/src/Revolution/Processors/`.
 
-### Archivos Destacables
+### Archivos destacables
 
-- **connectors/index.php**- Este archivo es especialmente útil en la creación de tus propios conectores. Simplemente incluye este archivo en tus conectore, y entonces maneja las solicitudes usando  `$modx->request->handleRequest()`;
+- **connectors/index.php** - bootstrap principal del conector. Los conectores personalizados suelen incluir este archivo (o replicar su bootstrap) y luego llamar a `$modx->request->handleRequest()`.
+- **connectors/config.core.php** - creado por el instalador; apunta a la ruta del core y la clave de configuración.
+- **connectors/system/** - algunos endpoints de conector dedicados al sistema siguen siendo scripts separados.
 
 ## core/
 
-El Core (`núcleo`) es lo que hace que MODX sea MODX. Es la base de todas las librerias en Revolution. Casi todo lo que necesita, a excepción de los archivos del administrador y los archivos de configuración, se encuentran en este directorio.
+Todo lo que hace funcionar a MODX, excepto la interfaz del Manager y el setup.
 
-### core/cache/
+### core/vendor/
 
-El directorio de caché contiene todos los archivos de caché generados por MODX. MODX genera datos bajo demanda, elementos, recursos, RSS y Smarty, lo que significa que solo se almacenan en caché después de acceder por primera vez.
+Creado por `composer install` y incluido en los paquetes tradicionales. Aquí viven las librerías de terceros: xPDO, Smarty, Flysystem, Guzzle, PHPMailer. El autoloader es `core/vendor/autoload.php`. No edites este árbol a mano; cambia las dependencias a través de Composer.
 
-#### core/cache/logs/
+### core/src/
 
-Todo el registro de actividad en MODX se realiza aquí. Aquí encontrarás el archivo error.log, que contiene la fecha, la hora, el archivo y el error que MODX registró.
+Raíz PSR-4 del espacio de nombres `MODX\` (`"MODX\\": "core/src/"` en `composer.json`).
 
-Para registrar una entrada en este archivo, puede usar el método `$modx->log ()`.
+#### core/src/Revolution/
 
-#### core/cache/mgr/
+Clases del core con espacio de nombres (`MODX\Revolution\...`): el servicio `modX`, objetos del modelo, servicios, controladores del Manager y componentes relacionados.
 
-Este directorio contiene datos de caché para el contexto mgr (Manager). Al igual que la caché de cada contexto, almacenará en caché cualquier configuración de contexto que se haya cambiado de su configuración predeterminada del sistema.
-
-#### core/cache/rss/
-
-Una caché de cada fuente RSS en MODX.
-
-#### core/cache/web/
-
-El caché en MODX Revolution está dividido en varias partes. Cada contexto (por ej. web y mgr) tiene un archivo context.cache.php. Este es un archivo como el config.cache.php, excepto que solo almacena en caché la configuración que se ha modificado de los Ajustes de sistema predeterminados. Cualquier ajuste de contexto puede invalidar su homónimo ajuste de sistema.
-
-Además, el caché de contexto web contendrá directorios separados para recursos y elementos. Un recurso con ID 12 se encontrará en `cache/web/resources/12.cache.php`. Este nuevo mecanismo de almacenamiento en caché significa que los tiempos de carga disminuirán y el límite en el número de recursos almacenables en caché desaparecerá.
-
-### core/components/
-
-Cuando instalas un paquete utilizando el [Administrador de Paquetes](extending-modx/transport-packages "Package Management"), un directorio `core/components/ /` se creará para contener los archivos necesarios para que se ejecute el componente instalado. Por lo general, todos los archivos necesarios para ejecutarse en el Administrador, como controladores, datos de modelo/esquema, procesadores y archivos de clase, deben almacenarse aquí, así como cualquier archivo que no se desee que sea accesible desde la web.
-
-### core/config/
-
-Este directorio contiene el archivo de configuración de MODX Revolution. Configura las credenciales de la base de datos y una serie de constantes MODX \ _ para el correcto funcionamiento del sitio.
-
-### core/docs/
-
-Este directorio contiene el archivo changelog.txt, la licencia GPL y cualquier tutorial que se haya creado para Revolution.
-
-### core/error/
-
-Contiene plantillas predeterminadas para mensajes de respuesta de error en el front-end de Revolution. Puedes personalizar esas páginas aquí.
-
-### core/export/
-
-Después de ejecutar la función Exportar en MODX Revolution, los archivos HTML exportados para su sitio se ubicarán aquí.
-
-### core/import/
-
-Para ejecutar la función Importar en MODX Revolution, debes mover tus archivos HTML a este directorio.
-
-### core/lexicon/
-
-En Revolution, los archivos de léxico se dividen en directorios separados, dependiendo de su código IANA de dos dígitos (por ejemplo, los léxicos en inglés se almacenan en `/core/lexicon/en/`). Dentro de estos subdirectorios hay varios archivos, en el formato "tema.inc.php". Un "tema" es simplemente un archivo de léxico único. Dividir los léxicos en temas significa que solo se cargan las cadenas `_required_language`, ahorrando memoria y tiempo de carga.
-
-Todos los léxicos se almacenan en la base de datos MODX y luego se almacenan en caché a pedido. Esto permite gestionar los léxicos directamente desde el Administrador, dentro del área \[Administración del Idioma\].
-
-Para cargar un léxico, se usaría un formato como este:
-
-``` php
-$modx->lexicon->load( 'lang:namespace:topic' );
-```
-
-\# **lang**- el código IANA de 2 dígitos. Este es opcional, y por defecto es 'en'.
-
-1. **namespace**- Cada léxico tiene su [Espacio de nombres](extending-modx/namespaces "Namespaces"). El espacio de nombres para MODX es "core". Los creadores de paquetes también podrán crear un espacio de nombres personalizado, y los usuarios del Manager también pueden crear sus propios espacios de nombres.
-2. **topic**- El archivo del tema específico que se quiere cargar.
+| Directorio | Contenido |
+|---|---|
+| `Processors/` | Manejadores de solicitudes llamados a través de conectores, agrupados por área: `Browser/`, `Context/`, `Element/`, `Model/`, `Resource/`, `Search/`, `Security/`, `SoftwareUpdate/`, `Source/`, `System/`, `Workspace/` |
+| `Controllers/` | Controladores de páginas del Manager |
+| `Services/` | Servicios compartidos (cliente HTTP y otros en el contenedor MODX) |
+| `Transport/` | Construcción/instalación de paquetes de transporte |
+| `Sources/` | Controladores de fuentes de medios |
+| `Smarty/` | Integración con Smarty (`modSmarty`) |
+| `mysql/` | Archivos de mapa/clase xPDO específicos de MySQL para objetos del core |
+| `Error/`, `Exceptions/` | Clases de errores y excepciones |
+| `File/` | Utilidades y manejadores de archivos |
+| `Filters/` | Filtros de entrada/salida |
+| `Formatter/` | Formateadores de datos |
+| `Hashing/` | Hashing y operaciones con contraseñas |
+| `Mail/` | Envío de correo |
+| `Registry/` | Almacenamiento del registro (comunicación vía conectores) |
+| `Rest/` | Servidor API REST |
+| `Security/` | Autenticación y control de acceso |
+| `Validation/` | Validación de datos |
 
 ### core/model/
 
-Aquí estás el modelo. ¿Y qué es un modelo, dirás? Bueno, es la M en MVC (model-view-controller), que es un paradigma OO que establece que debe haber al menos tres partes en una aplicación. El modelo, que contiene la estructura de la base de datos y los enganches ("hooks") en ella; la Vista, que es la parte GUI de la aplicación que no contiene lógica, solo presentación; y los Controladores, que conectan el modelo a la vista.
-Por lo tanto, MODX hace un modelo similar. Realmente hacemos un modelo MVC/C, en el que agregamos un punto de acceso de conector y procesadores al modelo. Lo explicaremos a medida que nos acerquemos a ello. Lo que necesitas saber es que el modelo contiene todas las clases de PHP que ejecutan Revolution, incluidos los procesadores que manejan funciones específicas, como guardar fragmentos, eliminar fragmentos, etc.
+Reservado principalmente para el **esquema** XML y una carga ligera de compatibilidad hacia atrás.
 
-### core/model/modx/
+- **core/model/schema/** - esquemas XML usados para generar mapas y clases durante el desarrollo (`modx.mysql.schema.xml`, esquemas de transport/sources, archivos relacionados). No se leen en cada petición del front-end.
+- **core/model/modx/modx.class.php** - carga ligera que incluye el autoloader de Composer para rutas de include antiguas.
 
-"¡Espera! ¡Pensé que ya estábamos en un directorio modx? ¿Por qué otro subdirectorio modx?" Buena pregunta. Bueno, MODX Revolution usa xPDO para la gestión de su base de datos.xPDO utiliza la idea de 'paquetes' para diferentes conexiones a diferentes modelos. Entonces, si yo quisiera crear mis propias tablas personalizadas, crearía un nuevo paquete xPDO y lo agregaría en tiempo de ejecución. De esta manera, podría usar los mapas y las clases creadas sin tener que modificar el núcleo MODX. Esto se explica en el tutorial [Crear un componente de terceros](extending-modx/tutorials/developing-an-extra "Escribir un componente de terceros en MODX Revolution, Pt. I").
+Las clases del modelo y los procesadores en runtime viven en `core/src/Revolution/`, no en el árbol antiguo de 2.x bajo `core/model/modx/`.
 
-Dicho esto, se puede inferir que el directorio core/model/modx se refiere al paquete "modx". Si entras verás un montón de clases. Estas son las clases que son xPDOObjects, que son clases PHP que representan tablas en el DB (es decir, modsnippet.class.php es una clase PHP que es un objeto de modx\_site\_snippets ), o son clases funcionales, como `modcachemanager.class.php`.
+### core/include/
 
-Los subdirectorios en esta carpeta - sin incluir mysql o processors - are subcategories of classes, son subcategorías de clases, que se cargan como: `$modx->loadClass('transport.modPackageBuilder');` con "." como separación de directorios.
+- **deprecated.php** - funciones de compatibilidad para APIs obsoletas de la era 2.x cuyos alias todavía existen.
 
-#### core/model/modx/mysql/
+### core/cache/
 
-Este directorio contiene los archivos de clase y mapa para cada objeto xPDO. Los mapas son simplemente matrices PHP que contienen la estructura de la tabla de la base de datos a la que hacen referencia.
+MODX reconstruye la caché bajo demanda, así que limpiar `core/cache/` es seguro. Escribe entradas de registro con `$modx->log()`; van a `core/cache/logs/` (`error.log`).
 
-Otras plataformas de bases de datos como pgsql, mssql y otras también aparecerían aquí.
+La caché del contexto `web` guarda ajustes de contexto sobreescritos, recursos y elementos, por ejemplo `cache/web/resources/12.cache.php`.
 
-##### core/model/modx/processors/
+| Directorio | Contenido |
+|---|---|
+| `system_settings/` | Ajustes del sistema |
+| `context_settings/` | Ajustes de contextos |
+| `auto_publish/` | Próximos horarios de autopublicación/despublicación |
+| `lexicon_topics/` | Temas del léxico |
+| `namespaces/` | Espacios de nombres |
+| `scripts/` | Scripts compilados de snippets y chunks |
+| `includes/` | Archivos include compilados |
+| `elements/` (en `scripts/`, `includes/`) | Elementos compilados |
+| `menu/` | Menú del Manager |
+| `mgr/` | Caché del contexto Manager |
+| `registry/` | Estado del registro |
+| `rss/` | Fuentes RSS |
+| `logs/` | Archivos de registro |
 
-Este directorio contiene los archivos de procesador individuales utilizados en la manipulación de la base de datos. Nunca se accede directamente; en su lugar se accede a través de conectores. Esto permite bloquearlos para evitar el acceso no autorizado.
+Archivos destacables:
 
-#### core/model/schema/
+- **core/cache/system_settings/config.cache.php** - [Ajustes del sistema](building-sites/settings) en caché. Limpiar `core/cache/` fuerza una reconstrucción desde la base de datos.
+- **core/cache/auto_publish/auto_publish.cache.php** - almacena el horario del próximo evento de autopublicación/despublicación por recurso; no es una caché del contenido del sitio.
 
-El esquema es la representación XML de la base de datos MODX. Esto se usa en la construcción de nuevos mapas y clases, pero en realidad nunca se lee o analiza cuando se ejecuta MODX. En principio, puedes ignorar este directorio, ya que se utiliza principalmente para trabajos de desarrollo. El tutorial [Crear componentes de terceros](extending-modx/tutorials/developing-an-extra "Escribir un componente de terceros en MODX Revolution, Pt. I") te explicará más acerca de los esquemas.
+### core/components/
 
-#### core/model/smarty/
+Si un Extra distribuye PHP que no debe ser accesible desde la web (procesadores, código de modelo, archivos privados), vive en `core/components/<package>/`. No todo paquete tiene una carpeta core; depende del paquete.
 
-Este directorio contiene las bibliotecas Smarty. Es simplemente una extracción de los archivos Smarty que puedes obtener de <http://smarty.php.net>. Nada en esta carpeta está personalizado para MODX, eso sucede en otros lugares.
+### core/config/
 
-Smarty es un motor de plantillas inteligente orientado a objetos que utiliza marcadores de posición dinámicos y modificables. La mayoría de las páginas vistas en el Administrador y durante la instalación son archivos de plantilla Smarty (.tpl) con los que MODX interactúa.
+`config.inc.php` contiene las credenciales de la base de datos, rutas y opciones relacionadas; el instalador lo crea y actualiza. Mantén el archivo privado y haz copias de seguridad.
 
-Cuando editas un recurso (a menudo un documento) en el Administrador, por ejemplo, estás viendo una página generada por el controlador en manager/controllers/resource/staticresource/update.php. Después de establecer las características del recurso en la matriz $resource, este código muestra la página:
+### core/docs/
+
+Changelog (`changelog.txt`), texto de la licencia y `version.inc.php`.
+
+### core/error/
+
+Plantillas de páginas de error para fallos graves donde MODX no puede ejecutarse.
+
+### core/export/ y core/import/
+
+Destinos de las herramientas de exportación/importación HTML del Manager y de los Extras: `export/` para la salida, `import/` para los archivos que colocas allí para importar.
+
+### core/lexicon/
+
+Temas de léxico basados en archivos organizados por código de cultura (`core/lexicon/en/`); cada tema es un archivo como `default.inc.php`. La Gestión del Léxico guarda las entradas editadas en la base de datos.
+
+Carga un tema en código con:
 
 ``` php
-$modx->smarty->assign('resource',$resource); return $modx->smarty->fetch('resource/staticresource/update.tpl');
+$modx->lexicon->load('lang:namespace:topic');
 ```
 
-Los marcadores de posición ("placeholders") de Smarty en update.tpl se completan con los datos contenidos en la matriz $resource.
+| Parámetro | Significado |
+|---|---|
+| `lang` | Clave de cultura opcional; por defecto la cultura actual, a menudo `en` |
+| `namespace` | `core` para las cadenas integradas, o el espacio de nombres de un Extra |
+| `topic` | Nombre del archivo del tema sin `.inc.php` |
 
 ### core/packages/
 
-Aquí encontrarás los paquetes de transporte que hayas descargado a través de la sección [Administrador de Paquetes](extending-modx/transport-packages "Administración de Paquetes") de Revolution, como TinyMCE, Ditto, etc. El paquete principal también se encuentra aquí. Esto permite una fácil instalación y eliminación, así como la actualización remota de los paquetes instalados.
-Cuando crea un paquete (por ejemplo, después de salir de SVN), el paquete de transporte se almacenará aquí.
-
-### core/xpdo/
-
-MODX Revolution fue diseñado para usar OpenExpedio (xPDO), una extensión de PDO. Proporciona una interfaz uniforme para manipular bases de datos y hace posible que MODX admita varias plataformas de bases de datos además de MySQL.
-
-Este directorio contiene todos los archivos de clase que necesita xPDO para hacer todo, desde el almacenamiento en caché de consultas hasta la creación de paquetes de transporte y la salida de datos como un objeto JSON conveniente.
-MODX utiliza estas clases internamente, y los desarrolladores nunca deberían necesitar tratarlas directamente.
-
-### Archivos destacables
-
-- **core/cache/config.cache.php** - Este es el archivo de caché para todas las [Configuraciones del sistema](building-sites/settings "System Settings") en MODX. Sus equivalentes en base de datos se encuentran en la tabla _system_settings, y sus equivalentes xPDO son objetos modSystemSetting.
-    - **_Truco_** - Si alguna vez quedas bloqueado por el componente CAPTCHA, puedes editar este archivo y establecer _use _captcha_ en '0' para deshabilitar CAPTCHA. Luego puedes iniciar sesión y desactivar CAPTCHA en [Configuración del sistema](building-sites/settings "Configuración del Sistema").
-- **core/cache/sitePublishing.idx.php** - En Revolution, este archivo ahora realiza un seguimiento de los intervalos de actualización de caché.
-
-- **core/cache/mgr/actions.cache.php** - Un mapa de todos los objetos modAction.
+[Paquetes de transporte](extending-modx/transport-packages) descargados y construidos, incluido `core.transport.zip` que usa el instalador. Gestión de Paquetes lee y escribe aquí.
 
 ## manager/
 
-El Manager es el back-end modX o área de administración para crear recursos, administrar usuarios y realizar tareas generales de mantenimiento del sitio.
-
 ### manager/assets/
 
-Este directorio contiene las librerías [ExtJS](http://extjs.com/), así como la implementación personalizada de ModExt. ModExt amplía la biblioteca ExtJS original, para hacer el desarrollo más conveniente para los usuarios.
+Recursos front-end de la interfaz del Manager:
+
+- **ext3/** - librerías Ext JS 3 usadas por el Manager
+- **modext/** - capa ModExt y widgets del Manager sobre Ext JS
+- **lib/**, **fileapi/** - librerías JS de apoyo
 
 ### manager/controllers/
 
-Los controladores son los archivos PHP vinculados a modActions. Simplemente, capturan datos y los devuelven o envían al navegador para su representación y visualización. Cada vez que cargues una página en el Manager, en efecto, le estás diciendo a MODX que cargue un controlador en particular, el cuál simplemente carga una plantilla Smarty y envía cualquier JavaScript necesario al navegador.
+Scripts PHP de entrada que arrancan las páginas del Manager (tema por defecto: `manager/controllers/default/`). Preparan datos y registran componentes Ext JS / ModExt; la lógica más pesada vive en `core/src/Revolution/Controllers/`.
+
+Los subdirectorios corresponden a las áreas del Manager: `browser/`, `context/`, `dashboard/`, `element/`, `media/`, `resource/`, `security/`, `source/`, `system/`, `workspaces/`.
 
 ### manager/templates/
 
-Este directorio contiene los archivos de plantilla para cada página del administrador. No contienen código PHP, sino que se utilizan para organizar HTML. Si está buscando el archivo Smarty .tpl para una página de administrador en particular, comprueba el directorio manager/templates/default/.
+Plantillas Smarty de las páginas del Manager en `manager/templates/default/`: HTML y Smarty, no lógica de negocio en PHP.
+
+Los subdirectorios reflejan los controladores, más `css/`, `js/`, `images/`, `fonts/` y plantillas `email/` compartidos.
 
 ### Archivos destacables
 
-- **manager/assets/ext2/ext-all.js** - Este es el archivo principal de la biblioteca Ext, que debe incluirse en todas las páginas del Manager (o cualquier página que utilice Ext). Se comprime para ahorrar espacio, reducir el tiempo de descarga y acelerar las cargas de páginas. Sin embargo, si estás realizando un montón de trabajo de JavaScript, estás expuesto a sufrir algunos errores crípticos debido a la compresión. La mejor manera de lidiar con esto, es simplemente cambiar el nombre del archivo ext-all.js a ext-all-debug.js para usar la versión sin comprimir durante el desarrollo. ¡Asegúrate de cambiarlos después!
+- **manager/index.php** - front controller del Manager
+- **manager/config.core.php** - creado por el instalador; apunta al core
 
 ## setup/
 
-Este directorio contiene los archivos necesarios para ejecutar el programa de instalación y realizar una [Instalación nueva](getting-started/installation "Nueva Instalación") o una Actualización.
+El instalador incluye sus propios directorios `controllers/`, `processors/`, `templates/`, `lang/`, `includes/`, `assets/` y `provisioner/`, más una entrada CLI (`cli-install.php`). Ver [Instalación](getting-started/installation) e [Instalación desde la línea de comandos](getting-started/installation/cli).
+
+Como precaución de seguridad, el instalador deja un directorio `.locked` tras su uso. Se niega a ejecutarse mientras ese directorio exista.
 
 ## \_build/
 
-Este directorio solo está presente en la versión de MODX Revolution descargada desde el servidor de subversion (así como en la distribución "SDK"). Contiene los archivos de datos principales MODX empaquetados necesarios para instalar MODX en una base de datos.
-
-### Archivos destacables
-
-- **\_build/transport.core.php** - Este archivo debe ejecutarse después de descargar MODX Revolution y antes de ejecutar el programa de instalación. Después de la finalización, debe aparecer un directorio "core" dentro del directorio core/packages/, que contendrá todos los valores necesarios para instalar MODX Revolution.
+Construye `core/packages/core.transport.zip` con `php _build/transport.core.php` después de instalar las dependencias de Composer. No es necesario en sitios de producción instalados desde un paquete tradicional. Ver [Instalación desde Git](getting-started/installation/git).
 
 ## assets/
 
-Este directorio no está presente en MODX Revolution de forma predeterminada, pero es común colocar imágenes, CSS, JavaScript y otros medios aquí.
+Un checkout mínimo del core no crea el directorio por defecto; las instalaciones tradicionales y casi todos los sitios lo usan.
 
 ### assets/components/
 
-Al instalar un paquete mediante el [Administrador de paquetes](extending-modx/transport-packages "Administración de Paquetes"), se creará un directorio assets/components/ que contendrá los archivos de componentes necesarios, así como JavaScript o imágenes.
+Archivos de Extras accesibles desde la web (JS, CSS, imágenes) instalados por Gestión de Paquetes, normalmente espejados con `core/components/<package>/`.
+
+## Relacionado
+
+- [Requisitos del servidor](getting-started/server-requirements)
+- [Endurecer MODX](getting-started/maintenance/securing-modx) (bloquear el acceso público a `core/` y rutas relacionadas)
+- [Actualización de 2.x a 3.0](getting-started/upgrading-to-3.0) (espacios de nombres, procesadores, ruta fija del core)
