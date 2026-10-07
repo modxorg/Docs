@@ -1,85 +1,103 @@
 ---
 title: "Preguntas frecuentes y solución de problemas"
+sortorder: 2
 _old_id: "1689"
 _old_uri: "2.x/faqs-and-troubleshooting"
-note: "Esta página no se ha actualizado en un tiempo, y podría necesitar una buena revisión."
+translation: "getting-started/faqs-and-troubleshooting"
 ---
 
-Este documento tiene como objetivo comenzar con problemas/preguntas comunes sobre MODX Revolution, ya sea respondiéndolos, o apuntando a los recursos adecuados. No es de ninguna manera exclusivo, y una buena búsqueda en los foros y en esta documentación puede encontrar más recursos para lo que está buscando. En todos los casos - si no puede encontrar lo que necesita, pregunte en los [foros](http://forums.modx.com) o en IRC: irc.freenode.org canal: #MODX.
-La numeración de preguntas no representa nada más que eso - un número para indicar qué pregunta está buscando para ayudar a navegar a través de ellas.
+Preguntas frecuentes y soluciones rápidas para MODX 3. ¿Sigues atascado? Pregunta en la [Comunidad MODX](https://community.modx.com) o en [Slack](https://modx.org).
 
-¡Este documento siempre será un trabajo en progreso a medida que se agreguen/cambien nuevas funciones, y podría ser útil su ayuda para mantenerlo estructurado y actualizado! Si no tiene acceso para editar este documento, [por favor, publica cualquier cosa que desees ver agregada o actualizada en este tema en los foros](http://forums.modx.com/thread/72123/faqs-troubleshooting-on-the-rtfm).
+## Solución de problemas relacionada
 
-## Tabla de Contenidos
-
-Preguntas frecuentes y/o solución de problemas sobre temas específicos en otros lugares:
-
-- [Solución de problemas de instalación](getting-started/installation/troubleshooting "Solución de problemas de instalación")
-- [Solución de problemas de actualizaciones](getting-started/maintenance/upgrading/troubleshooting "Solución de problemas de actualizaciones")
-- [Solución de problemas de gestión de paquetes](building-sites/extras/troubleshooting "Solución de problemas de gestión de paquetes")
-- [Solución de problemas de seguridad](building-sites/client-proofing/security/troubleshooting-security "Solución de problemas de seguridad")
-
-Subpáginas que tratan temas específicos:
-
-- [Preguntas frecuentes y solución de problemas de desarrollo de CMP (Páginas personalizadas del Administrador)](extending-modx/custom-manager-pages/troubleshooting "Preguntas frecuentes y solución de problemas de desarrollo de CMP (Páginas personalizadas del Administrador)")
-
-En esta página, encontrarás las siguientes categorías y preguntas:
+- [Solución de problemas de instalación](getting-started/installation/troubleshooting)
+- [Solución de problemas de actualizaciones](getting-started/maintenance/upgrading/troubleshooting)
+- [Solución de problemas de gestión de paquetes](building-sites/extras/troubleshooting)
+- [Solución de problemas de seguridad](building-sites/client-proofing/security/troubleshooting-security)
+- [Preguntas frecuentes y solución de problemas de desarrollo de CMP](extending-modx/custom-manager-pages/troubleshooting)
 
 ## 1. MODX 101
 
-### 1.1. ¿Qué es MODX Evolution y qué es MODX Revolution? ¿Cual es la diferencia?
+### 1.1. ¿Qué es MODX / MODX Revolution / MODX Evolution?
 
 En foros y búsquedas verás varios nombres de producto. Mapa corto:
 
-- **MODX** / **MODX Revolution 3.x** — el CMS en desarrollo activo documentado aquí.
+- **MODX** / **MODX Revolution 3.x** — el CMS documentado aquí; las versiones actuales son **3.x**. Conceptos: [Descripción general de MODX](getting-started/what-is-modx).
 - **MODX Revolution 2.x** — la generación anterior de Revolution. Muchos sitios en producción siguen en 2.x. La actualización a 3.x es posible con planificación; guía en inglés: <https://docs.modx.com/3.x/en/getting-started/upgrading-to-3.0>.
-- **MODX Evolution** — una línea de producto **1.x** separada y más antigua. No está cubierta por estos docs de 3.x. Los sitios que siguen en Evolution necesitan un proyecto de migración; no hay una actualización oficial de un solo clic. Notas históricas en inglés: <https://docs.modx.com/3.x/en/getting-started/maintenance/upgrading/evolution>.
+- **MODX Evolution** — una línea **1.x** separada y antigua, no cubierta por estos documentos de 3.x. Migrar de ella es un proyecto; no hay actualización de un solo clic. Notas históricas en inglés: <https://docs.modx.com/3.x/en/getting-started/maintenance/upgrading/evolution>.
 
-**Contexto histórico:** Evolution es el código heredado en las versiones 1.x. Revolution es una reescritura completa que comparte las mismas ideas pero se basa en xPDO y salió a la luz en 2010.
+### 1.2. ¿Qué versión de PHP / servidor necesito?
 
-### 1.2. ¿Qué etiquetas diferentes puedo usar? Que es `[[*pagetitle]]`, `[[Wayfinder]]` etc?
+Ver [Requisitos del servidor](getting-started/server-requirements). MODX 3.x (**3.2 y posteriores**) requiere **PHP 8.1 o superior**; antes de 3.2: PHP 7.2.5+ (3.0), PHP 7.4+ (3.1).
 
-Consulta la documentación de [Sintáxis de Etiquetas](building-sites/tag-syntax "Sintáxis de Etiquetas"). Puedes encontrar los campos de recursos que puedes usar en Revolution en la [Documentación de recursos](building-sites/resources "Recursos").
+### 1.3. ¿Qué etiquetas puedo usar? ¿Qué es `[[*pagetitle]]`, `[[Wayfinder]]`, etc.?
+
+Ver [Sintaxis de etiquetas](building-sites/tag-syntax). Los campos de recursos usables en etiquetas están en [Recursos](building-sites/resources).
 
 ## 2. El Manager
 
-### 2.1. ¡Ayuda! ¿A dónde se fue la barra lateral?
+### 2.1. ¡Ayuda! ¿A dónde fue la barra lateral / el árbol de recursos?
 
-Probablemente la escondiste en algún momento. Hay una flecha sutil en el lado izquierdo de la pantalla ([ver esta imagen](/download/attachments/36634926/subtlearrow.PNG)) en la que puedes hacer clic para recuperarla. En algunos casos, deberás actualizar la página para que los contenidos de la barra lateral se carguen correctamente.
+Probablemente la colapsaste: haz clic en la pequeña flecha del borde izquierdo de la pantalla ([ver esta imagen](subtlearrow.PNG)) para restaurar el árbol. Actualiza la página si sigue vacío tras expandirlo.
 
-### 2.2 ¿Cómo puedo modificar los campos de recursos que son visibles al crear o editar un [Recurso](building-sites/resources "Recurso")? ¿Existe algo como [Administrador del Manager](https://modx.com/extras/package/managermanager) en Revolution?
+### 2.2. ¿Cómo cambio qué campos de recurso están visibles al editar?
 
-Puede usar la [Personalización de formularios](building-sites/client-proofing/form-customization "Personalización de Formularios") (que se encuentra bajo el menú de Seguridad) para cambiar los campos.
+Usa la [Personalización de formularios](building-sites/client-proofing/form-customization) para ocultar, renombrar o reorganizar campos en las pantallas de creación/edición de recursos (y limitar reglas a ciertos grupos de usuarios o plantillas).
 
-### 2.3 ¿Qué significa modDocument/modWeblink/modSymLink/modStaticResource?
+### 2.3. ¿Qué significan modDocument / modWeblink / modSymLink / modStaticResource?
 
-Son los nombres de clase de Documentos, Weblinks, Symlinks y Recursos estáticos. Son "subtipos" de recursos (nombre de clase modResource) y cada uno tiene su propio objetivo específico. Todos aparecen en el Árbol de recursos y pueden aparecer en cualquier lugar de la jerarquía.
+Nombres de clase de los tipos de recurso integrados (en 3.x viven en el espacio de nombres `MODX\Revolution\`; los nombres cortos siguen siendo comunes). Todos aparecen en el Árbol de recursos:
 
-- [Documentos](building-sites/resources "Recursos") (comúnmente conocidos como Recursos, ver sección 2.4 a continuación) son páginas regulares y tienen contenido.
-- Un [Weblink](building-sites/resources/weblink "Weblink") redirige a un usuario a un recurso diferente o una URL externa.
-- Un [Symlink](building-sites/resources/symlink "Symlink") actúa como una copia de un documento.
-- [Recursos estáticos](building-sites/resources/static-resource "Recursos estáticos") actúan como documentos, sin embargo, su contenido proviene de un archivo en el sistema de archivos en vez de la base de datos.
+- [Documentos](building-sites/resources) (clase `modDocument`): páginas normales con contenido. A menudo se dice «Recurso» cuando se quiere decir un Document.
+- [Weblinks](building-sites/resources/weblink): redirigen a otro recurso o a una URL externa
+- [Symlinks](building-sites/resources/symlink): reutilizan el contenido de otro documento en otra URL
+- [Recursos estáticos](building-sites/resources/static-resource): el contenido viene de un archivo del sistema de archivos
 
-### 2.4 ¿Cuál es la diferencia entre un recurso y un documento?
+### 2.4. ¿Cuál es la diferencia entre un Recurso y un Documento?
 
-Técnicamente, un Recurso (modResource) es un objeto abstracto del cual un Documento (modDocument) es una implementación.
+Un Recurso (`modResource`) es la clase base; un Documento (`modDocument`) es la página HTML habitual. En el uso cotidiano, «Recurso» suele significar «esa página del árbol»: un Documento, Weblink, Symlink o Recurso estático.
 
-Prácticamente ambos términos se usan para indicar lo mismo: un documento que contiene cierto contenido. Tomando de la implementación técnica, un [Weblink](building-sites/resources/weblink "Weblink"), [Symlink](building-sites/resources/symlink "Symlink") ó [Recurso Estático](building-sites/resources/static-resource "Recurso Estático"), también se incluyen cuando se hace referencia a "Recursos", ya que también son implementaciones de la clase modResource.
+### 2.5. No puedo entrar al manager / olvidé mi contraseña
 
-### 2.5 ¡Estoy bloqueado! ¡No puedo acceder al Manager! ¡Olvidé mi contraseña y la recuperación no funciona!
+Ver [Restablecer una contraseña de usuario manualmente](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually).
 
-No estás condenado [Consulta estas instrucciones para Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Restablecer una contraseña de usuario manualmente").
+### 2.6. Error 500 Internal Server Error en el manager
 
-## 3. Problemas de visualización del sitio web público
+Prueba primero:
 
-### 3.1 Páginas en blanco en el sitio resueltas Borrando Caché
+1. Borra o renombra `core/cache/` (una caché corrupta es una causa frecuente).
+2. Abre el manager en una ventana privada/incógnita (descarta cookies/sesiones defectuosas).
+3. Confirma que PHP cumple los [Requisitos del servidor](getting-started/server-requirements) de tu versión de MODX.
+4. Revisa `core/cache/logs/error.log` para el error PHP real. (Si el sitio define un logger PSR-3 propio con `modX::setLogger()`, los errores van allí.)
 
-En Revolution 2.2.5, la forma en que xPDO/MODX escribe archivos de caché se ha refactorizado. Si tienes problemas con las páginas frontend en blanco que se resuelven después de borrar la memoria caché del sitio, puedes intentar configurar _use\_flock_. Esto debería ayudar con el alojamiento RackSpace Cloud, el alojamiento GoDaddy y algunos otros proveedores.
+Más casos de instalación: [Solución de problemas de instalación](getting-started/installation/troubleshooting).
 
-En su archivo de configuración MODX, agregue la configuración _use\_flock_ en su matriz $config\_options y configúrelo en falso.
+### 2.7. El manager está en blanco / muestra «undefined» / diseño roto
 
-Ver publicación original: <http://forums.modx.com/thread/78611/core-cache-file-locks-and-will-not-update#dis-post-434053>
+Carga fallida de JS/CSS o una caché mala. Borra `core/cache/`, fuerza la actualización del navegador y consulta la lista de la comunidad: [Blank manager with undefined message](https://community.modx.com/t/blank-manager-with-undefined-message/3799/20). También ver [Solución de problemas de instalación](getting-started/installation/troubleshooting) (incluido desactivar `compress_js` / `compress_css` si las URL de recursos fallan).
 
-### 3.2 Problemas generales de Snippets
+## 3. Problemas de frontend y caché
 
-Si encuentras que un snippet y/o plugin no funciona correctamente a pesar del código correcto, verifica que se haya instalado.
+### 3.1. Páginas en blanco en el frontend que se recuperan al borrar la caché
+
+En algunos hosts (sobre todo cloud/shared), el bloqueo de archivos al escribir la caché puede dejar páginas en blanco o errores 500 tras guardar hasta que borres `core/cache/`.
+
+En `core/config/config.inc.php`, desactiva flock añadiendo `use_flock` a `$config_options` con valor `false`:
+
+``` php
+$config_options = array(
+    'use_flock' => false,
+);
+```
+
+(Combínalo con las entradas `$config_options` existentes en lugar de reemplazarlas.) Con `use_flock` desactivado, MODX usa lock files en `core/cache/locks/` en lugar de bloqueo de archivos.
+
+### 3.2. Un Snippet o Plugin no hace nada
+
+Confirma que está instalado y activado (Extras → Installer / el árbol de elementos), que el nombre de la etiqueta coincide y que limpiaste la caché tras instalarlo o editarlo. Las páginas en caché siguen sirviendo la salida antigua hasta que la borres.
+
+## 4. Actualización
+
+### 4.1. ¿Cómo actualizo dentro de 3.x, o de 2.x a 3.x?
+
+Sigue [Actualización de MODX](getting-started/maintenance/upgrading). Para un salto de 2.x a 3.x, lee antes [Actualización de 2.x a 3.0](getting-started/upgrading-to-3.0): cambian los espacios de nombres de clases, los procesadores, la ruta del core y los requisitos de PHP. **3.2+ necesita PHP 8.1+**.
