@@ -111,7 +111,7 @@ Notable files:
 
 ### core/components/
 
-Each Extra gets `core/components/<package>/` for PHP that must not be web-accessible: processors, model code, private assets.
+If an Extra ships PHP that must not be web-accessible (processors, model code, private files), it lives in `core/components/<package>/`. Not every package has one — that depends on the package.
 
 ### core/config/
 

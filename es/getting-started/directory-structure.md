@@ -112,7 +112,7 @@ Archivos destacables:
 
 ### core/components/
 
-Cada Extra recibe `core/components/<package>/` para el PHP que no debe ser accesible desde la web: procesadores, código de modelo, recursos privados.
+Si un Extra distribuye PHP que no debe ser accesible desde la web (procesadores, código de modelo, archivos privados), vive en `core/components/<package>/`. No todo paquete tiene una carpeta core; depende del paquete.
 
 ### core/config/
 
