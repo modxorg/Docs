@@ -10,7 +10,7 @@ _old_uri: "revo/mxcalendar"
 
 ## About mxCalendar
 
-mxCalendar is an Extra for full calendar editing in the MODX Manager. The calendar supports various views including calendar, list, and detail of which all views support the ModX template standards for fully customizing your themes. In addition mxCalendar supports feature rich calendar functions such as repeating events, Google Maps, cateogries, context, and unique calendars.
+mxCalendar was an Extra for full calendar editing in the MODX Manager. It works only in MODX 2.x and is compatible with PHP 7.1 and below. The calendar supports various views including calendar, list, and detail of which all views support the ModX template standards for fully customizing your themes. In addition mxCalendar supports feature rich calendar functions such as repeating events, Google Maps, cateogries, context, and unique calendars.
 
 ## Installation
 
