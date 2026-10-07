@@ -5,84 +5,117 @@ _old_id: "108"
 _old_uri: "2.x/getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure"
 ---
 
-The root of a MODX 3 installation is split into several directories, each with a clear role. In 3.x the **`core/` directory must stay at `/core/` in the project root** (it cannot be renamed or moved). The `manager/` and `connectors/` directories can still be renamed during an [Advanced Installation](getting-started/installation/advanced). See also [Core folder changes in 3.0](getting-started/upgrading-to-3.0/core-folder).
+Top-level layout after install:
 
-Typical top-level layout after install:
+| Path | Purpose |
+|---|---|
+| `index.php` | Front controller for the web context |
+| `ht.access` | Apache rewrite template; rename to `.htaccess` for Friendly URLs |
+| `composer.json` | PHP dependencies, installed into `core/vendor/` |
+| `connectors/` | Entry points for AJAX requests |
+| `core/` | Application code, config, cache, packages, vendor libraries |
+| `manager/` | Manager (back-end) UI |
+| `setup/` | Installer and upgrader; remove it after install or upgrade |
+| `_build/` | Builds the core transport package (Git checkouts only) |
+| `assets/` | Media and Extra front-end files |
 
-- `index.php` - front controller for the web context
-- `ht.access` - Apache rewrite template (rename/copy to `.htaccess` for Friendly URLs)
-- `composer.json` - PHP dependency definition (Composer installs into `core/vendor/`)
-- `connectors/` - AJAX / connector entry points
-- `core/` - application code, config, cache, packages, vendor libraries
-- `manager/` - Manager (back-end) UI
-- `setup/` - installer (remove after install/upgrade)
-- `_build/` - present mainly in Git checkouts; used to build the core transport package
-- `assets/` - not shipped by default; commonly used for media and Extra front-end files
+`core/` must stay at `/core/` in the project root: it cannot be moved or renamed in 3.x. `manager/` and `connectors/` can be renamed during an [Advanced Installation](getting-started/installation/advanced). See also [Core folder changes in 3.0](getting-started/upgrading-to-3.0/core-folder).
 
 ## connectors/
 
-Connectors are HTTP entry points for Manager (and other) AJAX requests. They do not change the database themselves. They bootstrap MODX, sanitize the request, and hand off to a [Processor](extending-modx/processors).
+Connectors are HTTP entry points for Manager and other AJAX requests. Each connector loads MODX, sanitizes the request, and hands it off to a [Processor](extending-modx/processors). It never changes the database itself.
 
-In 3.x most manager traffic goes through `connectors/index.php` with an `action` parameter (for example `Resource/Create`). That resolves to a class under `core/src/Revolution/Processors/`.
+In 3.x most Manager traffic goes through `connectors/index.php` with an `action` parameter (for example `Resource/Create`). The action resolves to a class under `core/src/Revolution/Processors/`.
 
 ### Notable files
 
 - **connectors/index.php** - main connector bootstrap. Custom connectors typically include this file (or mirror its bootstrap) and then call `$modx->request->handleRequest()`.
 - **connectors/config.core.php** - created by setup; points at the core path and config key.
-- **connectors/system/** - a few dedicated system connector endpoints still live as separate scripts.
+- **connectors/system/** - dedicated system connector endpoints, still separate scripts.
 
 ## core/
 
-The core holds almost everything that makes MODX run, aside from the Manager UI assets and setup. Dependencies are managed with Composer and live in `core/vendor/`. The main MODX code lives in `core/src/`. 
+Everything that makes MODX run, except the Manager UI and setup.
 
 ### core/vendor/
 
-Created by `composer install` (and included in traditional distribution packages). Contains third-party libraries such as xPDO, Smarty, Flysystem, Guzzle, and PHPMailer. The Composer autoloader is `core/vendor/autoload.php`. Do not edit this tree by hand; change dependencies via Composer.
+Created by `composer install` and shipped with traditional packages. Third-party libraries live here: xPDO, Smarty, Flysystem, Guzzle, PHPMailer. The autoloader is `core/vendor/autoload.php`. Do not edit this tree by hand; change dependencies through Composer.
 
 ### core/src/
 
-PSR-4 root for the `MODX\` namespace (`"MODX\\": "core/src/"` in `composer.json`). Application code for 3.x lives primarily here.
+PSR-4 root for the `MODX\` namespace (`"MODX\\": "core/src/"` in `composer.json`).
 
 #### core/src/Revolution/
 
-Namespaced core classes (`MODX\Revolution\...`): the `modX` service, model objects, services, controllers used by the Manager, and related components.
+Namespaced core classes (`MODX\Revolution\...`): the `modX` service, model objects, services, Manager controllers, and related components.
 
-Notable subdirectories include:
-
-- **Processors/** - request handlers invoked via connectors (create/update/remove lists, browser, security, and so on)
-- **Controllers/** - Manager page controller classes
-- **Services/** - shared services (HTTP client, and others registered on the MODX container)
-- **Transport/** - transport package building/installation support
-- **Sources/** - media source drivers
-- **Smarty/** - MODX's Smarty integration (`modSmarty`)
-- **mysql/** - MySQL-specific xPDO map/class files for core objects
+| Directory | Contents |
+|---|---|
+| `Processors/` | Request handlers called through connectors, grouped by area: `Browser/`, `Context/`, `Element/`, `Model/`, `Resource/`, `Search/`, `Security/`, `SoftwareUpdate/`, `Source/`, `System/`, `Workspace/` |
+| `Controllers/` | Manager page controllers |
+| `Services/` | Shared services (HTTP client and others on the MODX container) |
+| `Transport/` | Transport package build/install support |
+| `Sources/` | Media source drivers |
+| `Smarty/` | Smarty integration (`modSmarty`) |
+| `mysql/` | MySQL-specific xPDO map/class files for core objects |
+| `Error/`, `Exceptions/` | Error and exception classes |
+| `File/` | File utilities and handlers |
+| `Filters/` | Input/output filters |
+| `Formatter/` | Data formatters |
+| `Hashing/` | Hashing and password operations |
+| `Mail/` | Mail sending |
+| `Registry/` | Registry storage (connector communication) |
+| `Rest/` | REST API server |
+| `Security/` | Authentication and access control |
+| `Validation/` | Data validation |
 
 ### core/model/
 
 Mostly reserved for the XML **schema** and a thin backwards-compatibility stub.
 
-- **core/model/schema/** - XML schemas used when generating maps/classes during development (`modx.mysql.schema.xml`, transport/sources schemas, and related files). Not read on every front-end request.
-- **core/model/modx/modx.class.php** - legacy stub that loads Composer’s autoloader for older include paths.
+- **core/model/schema/** - XML schemas used to generate maps and classes during development (`modx.mysql.schema.xml`, transport/sources schemas, related files). Not read on every front-end request.
+- **core/model/modx/modx.class.php** - legacy stub that loads Composer's autoloader for older include paths.
 
-Runtime model classes and processors are under `core/src/Revolution/`, not under the old `core/model/modx/` class tree from 2.x.
+Runtime model classes and processors live in `core/src/Revolution/`, not in the 2.x tree under `core/model/modx/`.
 
 ### core/include/
 
-- **deprecated.php** - compatibility helpers loaded for deprecated 2.x-era APIs where aliases still exist.
+- **deprecated.php** - compatibility helpers for deprecated 2.x-era APIs whose aliases still exist.
 
 ### core/cache/
 
-Generated cache files: configuration, contexts, resources, elements, lexicons, Smarty, and more. Safe to clear (MODX will rebuild on demand). Logging goes to **core/cache/logs/** (notably `error.log`). Use `$modx->log()` to write log entries.
+MODX rebuilds cache on demand, so clearing `core/cache/` is safe. Write log entries with `$modx->log()`; they go to `core/cache/logs/` (`error.log`).
 
-Context-specific cache (for example `web` and `mgr`) stores overridden context settings and, for web, cached resources/elements such as `cache/web/resources/12.cache.php`.
+The `web` context cache stores overridden context settings, resources, and elements, for example `cache/web/resources/12.cache.php`.
+
+| Directory | Contents |
+|---|---|
+| `system_settings/` | System settings |
+| `context_settings/` | Context settings |
+| `auto_publish/` | Next auto-publish/unpublish event times |
+| `lexicon_topics/` | Lexicon topics |
+| `namespaces/` | Namespaces |
+| `scripts/` | Compiled snippet and chunk scripts |
+| `includes/` | Compiled include files |
+| `elements/` (under `scripts/`, `includes/`) | Compiled elements |
+| `menu/` | Manager menu |
+| `mgr/` | Manager context cache |
+| `registry/` | Registry state |
+| `rss/` | RSS feeds |
+| `logs/` | Log files |
+
+Notable files:
+
+- **core/cache/system_settings/config.cache.php** - cached [System Settings](building-sites/settings).
+- **core/cache/auto_publish/auto_publish.cache.php** - the next auto-publish/unpublish event time per Resource, not a site content cache.
 
 ### core/components/
 
-Created when you install Extras. Each package typically gets `core/components/<package>/` for PHP that should not be web-accessible (processors, model code, private assets).
+Each Extra gets `core/components/<package>/` for PHP that must not be web-accessible: processors, model code, private assets.
 
 ### core/config/
 
-Holds `config.inc.php` (database credentials, paths, and related options). Created/updated by setup. Keep this file private and backed up.
+`config.inc.php` holds database credentials, paths, and related options; setup creates and updates it. Keep the file private and back it up.
 
 ### core/docs/
 
@@ -90,15 +123,15 @@ Changelog (`changelog.txt`), license text, and `version.inc.php`.
 
 ### core/error/
 
-Error page templates for severe errors where MODX is unable to run.
+Error page templates for severe errors where MODX cannot run.
 
 ### core/export/ and core/import/
 
-Targets used by the Manager HTML export/import tools and third party extras (`export/` for output, `import/` for files you place there to import).
+Targets for the Manager HTML export/import tools and Extras: `export/` for output, `import/` for files you place there to import.
 
 ### core/lexicon/
 
-File-based lexicon topics, organized by culture code (for example `core/lexicon/en/`). Topics are files like `default.inc.php`. Entries can be overwritten through Lexicon Management, which stores them in the database. 
+File-based lexicon topics organized by culture code (`core/lexicon/en/`); each topic is a file such as `default.inc.php`. Lexicon Management stores edited entries in the database.
 
 Load a topic in code with:
 
@@ -106,38 +139,37 @@ Load a topic in code with:
 $modx->lexicon->load('lang:namespace:topic');
 ```
 
-- **lang** - optional culture key (defaults to the current culture, often `en`)
-- **namespace** - usually `core` for the built-in strings, or an Extra’s namespace
-- **topic** - the topic file name without `.inc.php`
+| Parameter | Meaning |
+|---|---|
+| `lang` | Optional culture key; defaults to the current culture, often `en` |
+| `namespace` | `core` for built-in strings, or an Extra's namespace |
+| `topic` | Topic file name without `.inc.php` |
 
 ### core/packages/
 
 Downloaded and built [transport packages](extending-modx/transport-packages), including `core.transport.zip` used by setup. Package Management reads and writes here.
 
-### Notable cache files
-
-- **core/cache/config.cache.php** - cached [System Settings](building-sites/settings). Clearing `core/cache/` forces a rebuild from the database.
-- **core/cache/sitePublishing.idx.php** - tracks auto-publish/unpublish timing, not a full-site content cache.
-
 ## manager/
-
-The Manager back-end for editing resources, elements, users, and system settings.
 
 ### manager/assets/
 
 Front-end assets for the Manager UI:
 
 - **ext3/** - Ext JS 3 libraries used by the Manager
-- **modext/** - MODX’s ModExt layer and Manager widgets on top of Ext JS
+- **modext/** - ModExt layer and Manager widgets on top of Ext JS
 - **lib/**, **fileapi/** - supporting JS libraries
 
 ### manager/controllers/
 
-PHP entry scripts that bootstrap Manager pages (under `manager/controllers/default/` for the default Manager theme). They prepare data and register Ext JS / ModExt components; much of the heavier logic lives in classes under `core/src/Revolution/Controllers/`.
+PHP entry scripts that bootstrap Manager pages (default theme: `manager/controllers/default/`). They prepare data and register Ext JS / ModExt components; heavier logic lives in `core/src/Revolution/Controllers/`.
+
+Subdirectories match Manager areas: `browser/`, `context/`, `dashboard/`, `element/`, `media/`, `resource/`, `security/`, `source/`, `system/`, `workspaces/`.
 
 ### manager/templates/
 
-Smarty templates for Manager pages (`manager/templates/default/`). These are HTML/Smarty, not PHP business logic.
+Smarty templates for Manager pages in `manager/templates/default/`: HTML and Smarty, not PHP business logic.
+
+Subdirectories mirror the controllers, plus shared `css/`, `js/`, `images/`, `fonts/`, and `email/` templates.
 
 ### Notable files
 
@@ -146,17 +178,17 @@ Smarty templates for Manager pages (`manager/templates/default/`). These are HTM
 
 ## setup/
 
-The installer and upgrader. Run it for new installs and upgrades, then remove the `setup/` directory when finished. Contains its own controllers, templates, language files, and CLI entry (`cli-install.php`). See [Installation](getting-started/installation) and [Command Line Installation](getting-started/installation/cli).
+Setup ships its own `controllers/`, `processors/`, `templates/`, `lang/`, `includes/`, `assets/`, and `provisioner/` directories, plus a CLI entry (`cli-install.php`). See [Installation](getting-started/installation) and [Command Line Installation](getting-started/installation/cli).
 
-As a security precaution, a `.locked` directory is placed in the setup after it was used. The setup will refuse to run when that directory is present. 
+As a security precaution, setup leaves a `.locked` directory in place after use. Setup refuses to run while that directory is present.
 
 ## \_build/
 
-Present when you install from Git (and similar development layouts). Used to build `core/packages/core.transport.zip` via `php _build/transport.core.php` after Composer dependencies are installed. Not required on production sites installed from a traditional package. See [Git Installation](getting-started/installation/git).
+Builds `core/packages/core.transport.zip` with `php _build/transport.core.php` after Composer dependencies are installed. Not needed on production sites installed from a traditional package. See [Git Installation](getting-started/installation/git).
 
 ## assets/
 
-Not created by a minimal core checkout by default, but traditional installs and almost all sites use it for media, CSS, and JavaScript.
+A minimal core checkout does not create the directory; traditional installs and almost all sites use it.
 
 ### assets/components/
 
