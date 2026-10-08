@@ -22,17 +22,17 @@ After you've done those steps, you can run the MODX installer to verify it was u
 
 From a security point of view, there is zero difference between physically moving the core out of the webroot to prevent direct access, and blocking access to it in a different way.
 
-Here's how you could block access to the core (and various other common sensitive directories or files, including any dotfiles except the .well_known directory) on Apache:
+Here's how you could block access to the core (and various other common sensitive directories or files, including any dotfiles except the .well-known directory) on Apache:
 
 ```` 
-RewriteRule ^(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
+RewriteRule ^(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
 ````
 
 And for nginx:
 
 ````
-location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
-    rewrite ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;    
+location ~ ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) {
+    rewrite ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;    
 }
 ````
 
@@ -43,7 +43,7 @@ On high-traffic sites you can prevent such requests from hitting MODX by immedia
 For nginx, that would look like this:
 
 ````
-location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
+location ~ ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) {
     return 404;    
 }
 ````

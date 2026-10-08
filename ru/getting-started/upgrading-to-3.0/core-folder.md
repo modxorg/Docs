@@ -23,17 +23,17 @@ translation: "getting-started/upgrading-to-3.0/core-folder"
 
 С точки зрения безопасности нет разницы между физическим выносом core из webroot и блокировкой доступа другим способом.
 
-Пример блокировки core (и других чувствительных каталогов или файлов, включая dotfiles, кроме `.well_known`) на Apache:
+Пример блокировки core (и других чувствительных каталогов или файлов, включая dotfiles, кроме `.well-known`) на Apache:
 
 ```` 
-RewriteRule ^(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
+RewriteRule ^(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
 ````
 
 И для nginx:
 
 ````
-location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
-    rewrite ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;    
+location ~ ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) {
+    rewrite ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;    
 }
 ````
 
@@ -44,7 +44,7 @@ location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
 Для nginx так:
 
 ````
-location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
+location ~ ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) {
     return 404;    
 }
 ````
