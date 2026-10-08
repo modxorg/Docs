@@ -4,25 +4,25 @@ sortorder: "4"
 description: "After completing a successful installation, you will be presented with the Manager login page"
 ---
 
-After completing a successful installation, you will be presented with the Manager login page. Proceed to log into the MODX manager using the credentials specified during the installation. Upon successful log in a screen will be presented:
+After completing a successful installation, you will be presented with the Manager login page. Log into the Manager using the credentials you specified during installation. You will see:
 
 ![](first_login.png)
 
 ## Basic security
 
-You will immediately encounter any security concerns which could, and should, be addressed in order to help harden your MODX system. Initial warnings usually refer to either ensuring that the setup folder has been deleted, or that the core folder is accessible by the public. These issues can be addressed by checking that the 'setup' folder has been deleted and renaming the 'ht.access' file located in the core folder to '.htaccess' for servers running Apache. Learn more about [hardening Apache and NGINX configurations for MODX](getting-started/maintenance/securing-modx "Learn more about securing your MODX install").
+The Configuration Check widget on the Dashboard lists anything you should fix to harden the install; on a clean install it may show no warnings at all. Typical warnings cover the `setup` folder still being present or reachable, the `core` folder being web-accessible (rename `core/ht.access` to `.htaccess` on Apache), PHP version, unwritable `config.inc.php` or `core/cache/`, unpublished error pages, and `allow_tags_in_post`. Learn more about [hardening Apache and NGINX configurations for MODX](getting-started/maintenance/securing-modx "Learn more about securing your MODX install").
 
 ## Editing the default Resource
 
-By default MODX initially creates a starter resource located in the 'Resources' tab, and a starter template located in the 'Elements' tab under templates. To view the current state of the MODX site navigate the top menu replicating these steps 'Content -> Preview Site'. Alternatively, right click on the default resource and select 'View', or click on the resource itself and select the 'View' button.
+By default MODX creates a starter resource titled 'Home' (alias `index`) in the 'Resources' tab, and a starter template titled 'BaseTemplate' under 'Elements -> Templates'. To view the site, use the 'View website' button on the Dashboard, right-click the 'Home' resource and select 'View', click 'View' in the resource toolbar, or press `Ctrl+Alt+P` in the resource editor.
 
-To edit the content of this resource, click on the resource itself in the 'Resources' tab and proceed to edit the content located in the 'Content' box. From here you can also proceed to edit the page title, description, summary, if it should be published or not and the alias ['friendly url'](getting-started/friendly-urls "Learn about 'Friendly URLs'")
+Click the resource in the 'Resources' tab and edit its content in the 'Content' box. From there you can also edit the page title, description, summary, publication status, and the ['friendly URL' alias](getting-started/friendly-urls "Learn about 'Friendly URLs'").
 
-After the edits have been made click the 'Save' button located in the top right, or use the handy keyboard shortcut 'Ctrl + S' to save the updated resource. Once the page has finished saving view the changes made by clicking the 'View' button.
+Click the 'Save' button in the top right, or press `Ctrl + S`, to save the resource. After saving, click 'View' to see the changes.
 
 ## Editing the default Template
 
-In addition to shipping with a starter resource MODX also provides a starter template titled 'BaseTemplate'. This template is located in the 'Elements' tab under 'Templates'. Editing this template can be accomplished by clicking on the template itself, 'BaseTemplate'. From here edits can be made to the template name, description and content such as the example below.
+MODX also ships with a starter template titled 'BaseTemplate', located in the 'Elements' tab under 'Templates'. Click it to edit the template name, description, and content — for example:
 
 ```html
 <!DOCTYPE html>
@@ -45,9 +45,9 @@ In addition to shipping with a starter resource MODX also provides a starter tem
 </html>
 ```
 
-In the example template above there are a few odd looking string surrounded by square brackets. These are MODX tags which serve a specific purpose. The `content` tag for example indicates to MODX that it needs to feed the content tab you edited in the default resource into this location. The `pagetitle` tag refers to the page title field we also edited in that resource. Learn more about the different tags syntax, their purpose and how to use them by [visiting this page](building-sites/tag-syntax "Learn more about the MODX tag syntax").
+In the template above, a few odd-looking strings are surrounded by square brackets. These are MODX tags with specific purposes. The `content` tag, for example, tells MODX to insert the content you edited in the default resource; the `pagetitle` tag inserts the resource's page title. Learn more about [the MODX tag syntax, its purpose, and how to use it](building-sites/tag-syntax "Learn more about the MODX tag syntax").
 
-Once the template has been updated click the 'Save' button, or 'Ctrl + S', and continue to view the site to check out the changes.
+Once the template has been updated, click 'Save' (or press `Ctrl + S`) and view the site to see the changes.
 
 ## Creating a new Resource
 
@@ -55,11 +55,11 @@ To create a new Resource click on the 'Resources' tab and then locate the '+' ic
 
 ## Creating a new Template
 
-To create a new Template click on the 'Elements' tab and then locate the '+' icon next to the 'Templates' text. Alternatively, a new Template can be created by right click on the 'Templates' text and selecting either 'New Template' or 'Quick Create Template'. From here proceed to edit the Template as documented earlier.
+To create a new Template click on the 'Elements' tab and then locate the '+' icon next to the 'Templates' text. Alternatively, right-click the 'Templates' text and select 'Create Template' or 'Quick Create Template'. From here proceed to edit the Template as documented earlier.
 
 ## Change user experience and security settings
 
-MODX has a powerful user and group management and also allows to change the login method. You should pay some attention to set up users, do manager form customization and other stuff:
+MODX has powerful user and group management and supports alternative login methods. A few related topics:
 
 -   [User and group management](building-sites/client-proofing/security/users)
 -   [Manager customization](building-sites/client-proofing/form-customization)
