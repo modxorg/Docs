@@ -9,7 +9,7 @@ _old_uri: "2.x/getting-started/installation/troubleshooting-installation"
 First off, make sure:
 
 - You followed all the directions [here](getting-started/installation "Installation") for your distribution.
-- Your environment meets the current [Server Requirements](getting-started/server-requirements) — especially **PHP 8.1+** (required since MODX 3.2; earlier 3.x releases allowed PHP 7.2+) and a supported MySQL/MariaDB version.
+- Your environment meets the current [Server Requirements](getting-started/server-requirements) — especially **PHP 8.1+** (required since MODX 3.2; earlier 3.x releases allowed PHP 7.2+) and a supported MySQL/MariaDB version (Setup aborts on MySQL 5.0.51 — see [MySQL 5.0.51](troubleshooting/mysql-5.0.51)).
 - Clear the `core/cache/` directory entirely before starting setup; sometimes improper file permissions can cause issues.
 - Clear your browser cache and cookies
 
@@ -46,7 +46,7 @@ If you renamed the `config.inc.tpl` to `config.inc.php`, rename it back to `conf
 
 ### "I clicked install and got a blank white screen!"
 
-Make sure your `memory_limit` setting in php.ini is set to at least 32M. For slower servers, you might need to up it to 64M.
+Make sure your `memory_limit` setting in php.ini is set to at least 24M (the value Setup checks). For slower servers, you might need to up it to 64M.
 
 ### "Cannot connect to database" in the database options page
 

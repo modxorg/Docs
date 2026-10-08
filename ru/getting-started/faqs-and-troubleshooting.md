@@ -1,6 +1,6 @@
 ---
 title: "FAQ и устранение неполадок"
-sortorder: 2
+sortorder: 8
 _old_id: "1689"
 _old_uri: "2.x/faqs-and-troubleshooting"
 translation: "getting-started/faqs-and-troubleshooting"

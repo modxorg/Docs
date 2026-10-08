@@ -19,7 +19,7 @@ MODX helps you organize your content the way you want it, and get stellar built-
 
 ### Designer
 
-Ever wanted complete freedom with your HTML and CSS? Tired of hacking existing systems to get your design to work the way you comp'ed it? MODX does not generate one single line of HTML - it leaves the front-end design up to you.
+Ever wanted complete freedom with your HTML and CSS? Tired of hacking existing systems to make your design work the way you comped it? MODX does not generate one single line of HTML - it leaves the front-end design up to you.
 
 You can use MODX as your Content Management System (CMS) of choice, as MODX offers completely flexible templating and no-holds-barred content delivery. Put your CSS and images where you want them. And once you're done designing, either hand off the development duties to your developer, or point-and-click install Extras straight from within the manager. Simple.
 
@@ -31,7 +31,7 @@ Enter MODX Revolution. A completely flexible, powerful and robust API, built on 
 
 ## Basic Concepts
 
-MODX, in essence, has a ton of moving parts. But the basics parts are:
+MODX has a lot of moving parts, but the basics are:
 
 ### Resources
 
@@ -67,5 +67,5 @@ MODX loads the requested [Resource](building-sites/resources "Resources"), fetch
 
 ## See Also
 
-1. [Glossary of Revolution Terms](getting-started/an-overview-of-modx/glossary-of-revolution-terms)
-2. [Explanation of Directory Structure](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure)
+1. [Glossary](getting-started/glossary)
+2. [Explanation of Directory Structure](getting-started/directory-structure)

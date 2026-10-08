@@ -1,5 +1,6 @@
 ---
 title: "Обслуживание"
+sortorder: 9
 translation: "getting-started/maintenance"
 ---
 

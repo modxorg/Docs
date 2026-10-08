@@ -1,6 +1,6 @@
 ---
 title: "Обновление с 2.x до 3.0"
-sortorder: 7
+sortorder: 10
 translation: "getting-started/upgrading-to-3.0"
 ---
 

@@ -75,5 +75,5 @@ MODX carga el [Recurso](building-sites/resources "Resources") solicitado, busca 
 
 ## Ver también
 
-1. [Glosario de términos de Revolution](getting-started/an-overview-of-modx/glossary-of-revolution-terms)
-    1. [Explicación de la Estructura de Directorios](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure)
+1. [Glosario](getting-started/glossary)
+2. [Explicación de la Estructura de Directorios](getting-started/directory-structure)

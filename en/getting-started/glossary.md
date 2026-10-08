@@ -1,6 +1,6 @@
 ---
 title: "Glossary of Revolution Terms"
-sortorder: 5
+sortorder: 7
 _old_id: "157"
 _old_uri: "2.x/getting-started/an-overview-of-MODX/glossary-of-revolution-terms"
 description: "Definitions of common MODX Revolution terms, with links to the related docs"

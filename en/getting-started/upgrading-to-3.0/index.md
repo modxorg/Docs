@@ -1,6 +1,6 @@
 ---
 title: "Upgrading from 2.x to 3.0"
-sortorder: 7
+sortorder: 10
 ---
 
 This document details the changes made between 2.x and 3.0 that may affect upgrades. It's not a full list of all changes (see the [changelog for that](https://github.com/modxcms/revolution/blob/3.x/core/docs/changelog.txt)), but rather a reference of (breaking) changes that may affect extras and sites.

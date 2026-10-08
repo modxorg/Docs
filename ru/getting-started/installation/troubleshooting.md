@@ -10,7 +10,7 @@ translation: "getting-started/installation/troubleshooting"
 Сначала проверьте:
 
 - Вы выполнили все шаги [здесь](getting-started/installation "Installation") для своего дистрибутива.
-- Окружение соответствует актуальным [требованиям к серверу](getting-started/server-requirements), в том числе **PHP 8.1+** (обязательно с MODX 3.2; в более ранних 3.x допускался PHP 7.2+) и поддерживаемая версия MySQL/MariaDB.
+- Окружение соответствует актуальным [требованиям к серверу](getting-started/server-requirements), в том числе **PHP 8.1+** (обязательно с MODX 3.2; в более ранних 3.x допускался PHP 7.2+) и поддерживаемая версия MySQL/MariaDB (Setup прерывается на MySQL 5.0.51 — см. [MySQL 5.0.51](troubleshooting/mysql-5.0.51)).
 - Каталог `core/cache/` полностью очищен перед setup. Неверные права на файлы иногда мешают установке.
 - Очищены кеш и cookies браузера.
 
@@ -47,7 +47,7 @@ try {
 
 ### «Нажал Install: белый экран»
 
-В php.ini параметр `memory_limit` должен быть не меньше 32M. На медленных серверах может понадобиться 64M.
+В php.ini параметр `memory_limit` должен быть не меньше 24M (значение, которое проверяет Setup). На медленных серверах может понадобиться 64M.
 
 ### «Cannot connect to database» на странице параметров БД
 
