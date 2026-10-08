@@ -32,7 +32,7 @@ For Apache, add the following to your `.htaccess` file:
 ``` apache
 RewriteCond %{HTTP_HOST} ^(www\.)?example\.com$ [NC]
 # Block access to dotfiles and folder people have no need to touch
-RewriteRule ^(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
+RewriteRule ^(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
 ```
 
 To show your own error page, specify its path in `.htaccess`, for example:
@@ -44,15 +44,15 @@ ErrorDocument 404 /404
 For NGINX, add the following to your web rules; it passes the rewrites to the MODX error handler:
 
 ``` nginx
-location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
-    rewrite ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;
+location ~ ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) {
+    rewrite ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;
 }
 ```
 
 On a high-traffic site you may prefer to bypass PHP and return a 404 from NGINX directly (or 444, which drops the connection without returning anything):
 
 ``` nginx
-location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
+location ~ ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) {
     return 404;
 }
 ```
