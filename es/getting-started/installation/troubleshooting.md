@@ -8,9 +8,8 @@ _old_uri: "2.x/getting-started/installation/troubleshooting-installation"
 
 En primer lugar, asegúrate de que:
 
-- Tienes eAccelerator deshabilitado durante la instalación. eAccelerator puede causar problemas al subir objetos pesados durante el proceso de instalación.
 - Seguiste todas las instrucciones [aquí](getting-started/installation  "Instalación") para tu distribución.
-- Estas usando al menos PHP 5.1.1+, pero no 5.1.6 o 5.2.0
+- Estás usando al menos PHP 8.1+ (obligatorio desde MODX 3.2; las versiones 3.x anteriores permitían PHP 7.2+).
 - Está utilizando MySQL superior a 4.1.20, pero no ninguna iteración de MySQL 5.0.51 (incluida 5.0.51a).
 - Borraste el directorio `core/cache/` completamente antes de comenzar la configuración. A veces, los permisos de archivo incorrectos pueden causar problemas.
 - Limpiaste la caché y las cookies de tu navegador.
@@ -78,27 +77,9 @@ Luego elimina el archivo `core/cache/config.cache.php`.
 
 A menos, por supuesto, que los hayas cambiado explícitamente para algún propósito propio.
 
-### Las cosas a veces no se cargan, la página se descarta, etc. (eAccelerator)
+### Rareza general en el Manager
 
-¿Estás ejecutando eAccelerator? En algunas configuraciones de servidor, esto puede causar problemas. Es posible que debas deshabilitarlo. Puedes hacerlo a través de tu php.ini:
-
-``` php
-eaccelerator.enable = 0;
-eaccelerator.optimizer = 0;
-eaccelerator.debug = 0;
-```
-
-o en tu .htaccess en el directorio raíz de modx, si tu servidor admite las directivas de servidor `php_flag`:
-
-``` php
-php_flag eaccelerator.enable 0
-php_flag eaccelerator.optimizer 0
-php_flag eaccelerator.debug 0
-```
-
-### Rareza general en el Manager (no eAccelerator)
-
-En algunos sistemas, especialmente con alojamiento compartido, puede haber un problema con la configuración del sistema `compress_js` y/o `compress_css`. Vete a Sistema -> Configuración del Sistema y escribe 'compress' (sin las comillas) en el cuadro de búsqueda, en la esquina superior derecha. Apaga las dos configuraciones, luego cierra la sesión, elimina todos los archivos en el directorio `core/cache`, borra la memoria caché y las cookies de tu navegador, y vuelve a iniciar sesión.
+En algunos sistemas, especialmente con alojamiento compartido, puede haber un problema con la configuración del sistema `compress_js` y/o `compress_css`. Ve a **Administrador → Configuración del Sistema** y escribe 'compress' (sin las comillas) en el cuadro de búsqueda, en la esquina superior derecha. Apaga las dos configuraciones, luego cierra la sesión, elimina todos los archivos en el directorio `core/cache`, borra la memoria caché y las cookies de tu navegador, y vuelve a iniciar sesión.
 
 Si el Manager está lo suficientemente desordenado que no te deja cambiar la configuración, consulta la nota a continuación sobre cómo cambiar las dos configuraciones de sistema en la tabla `modx_system_settings` de la base de datos con PhpMyAdmin.
 
@@ -110,8 +91,8 @@ La solución simple: borra la memoria caché de tu navegador e inicia sesión nu
 
 Una solución más completa:
 
-1. En Gestionar, Limpiar Caché
-2. En Gestionar, Vaciar Permisos y Vaciar Todas las Sesiones
+1. Menú principal → **Contenido → Limpiar Caché**
+2. Menú de usuario → **Acceso → Vaciar Permisos**, luego **Acceso → Vaciar Todas las Sesiones**
 3. Esto vaciará todo y cerrará sesión
 4. Por último, borra la memoria caché del navegador
 
@@ -125,15 +106,13 @@ php_value session.auto_start 0
 
 ### No se pudo conectar con el servidor de la base de datos. Verifique las propiedades de conexión e intente nuevamente. Acceso denegado
 
-Often on shared hosting, if you create a username for your database with an underscore (\_) in it, it will cause problems. Ensure your database username does not contain an underscore, and try again.
+En algunos alojamientos compartidos, si creas un nombre de usuario para tu base de datos con un guion bajo (\_), puede causar problemas. Asegúrate de que el nombre de usuario de tu base de datos no contenga guion bajo e inténtalo de nuevo.
 
-### El Manager se muestra como texto sin formato después de la instalación
+Otros casos frecuentes están cubiertos en [Preguntas frecuentes y solución de problemas](getting-started/faqs-and-troubleshooting).
 
-El administrador MODX carga CSS comprimido y scripts JS. Alguna configuración del servidor. Ver "Errores JS en el Manager debido a Error 4
+### Si tu manager de MODX no se carga correctamente, faltan partes del Manager o hay errores de JavaScript 400 en el Manager
 
-### TEl Manager se muestra como texto sin formato, faltan partes del Manager o hay errores de JavaScript 400 en el Manager 
-
-Si tu manager de MODX no se carga correctamente debido a errores 400  al intentar cargar código JavaScript comprimido de Google Minify, es probable que se deba a una configuración incorrecta del servidor. Si esto no se puede rectificar en el servidor, puedes deshabilitar manualmente la compresión JS y CSS de la siguiente manera:
+Si tu manager de MODX no se carga correctamente debido a errores 400 al intentar cargar los archivos JavaScript comprimidos (los paquetes listos como `modx.jsgrps-min.js` que sirve `compress_js`), es probable que se deba a una configuración incorrecta del servidor. Si esto no se puede rectificar en el servidor, puedes deshabilitar manualmente la compresión JS y CSS de la siguiente manera:
 
 1. Entra en la base de datos utilizando PhpMyAdmin y busca la tabla `prefijo_system_settings` (`prefijo` suele ser modx).
 2. Busca las filas con valores `compress_js` y `compress_css` en el campo key y establece su valor en 0, y guárdalas.
@@ -149,4 +128,4 @@ Esto te permitirá usar el Manager sin compresión JS y CSS.
 
 ## ¿Aún tienes problemas??
 
-Si todavía tienes problemas, publica tu error y la información del entorno del servidor en [nuestros foros aquí](https://forums.modx.com/index.php/board,378.0.html), e intentaremos y solucionar tu problema lo antes posible.
+Si todavía tienes problemas, publica tu error y la información del entorno del servidor en la [Comunidad MODX](https://community.modx.com), e intentaremos y solucionar tu problema lo antes posible.

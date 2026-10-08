@@ -16,12 +16,12 @@ Git clona el repositorio de revolution que está en GitHub, en: <http://github.c
 git clone http://github.com/modxcms/revolution.git
 ```
 
-O, si deseas devolver contribuciones, [crea un fork en tu repositorio de GitHub](http://help.github.com/forking/) y clona ese repositorio como "origen" y agrega el repositorio modxcms/revolution como remoto llamado "upstream":
+O, si deseas devolver contribuciones, [crea un fork en tu repositorio de GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo) y clona ese repositorio como "origen" y agrega el repositorio modxcms/revolution como remoto llamado "upstream":
 
 ``` php
 git clone git@github.com:tunombredeusuariogit/revolution.git
 cd revolution
-git remote add upstream -f http://github.com/modxcms/revolution.git
+git remote add -f upstream https://github.com/modxcms/revolution.git
 ```
 
 Creando un fork con tu cuenta de GitHub te permitirá contribuir con MODX enviando solicitudes haciendo clic en el botón "Pull Request" en tu página de GitHub. (Sin embargo, deberás [enviar un CLA](http://develop.modx.com/contribute/cla/) antes de que podamos aceptar tu código). Si decides hacer el fork, sería útil para ti leer nuestra [Guía de contribuidores de Git](contribute/code/contributors-guide  "Guía del colaborador de MODX en GitHub"), para obtener información detallada sobre cómo mantener su fork actualizado.
@@ -36,7 +36,7 @@ A partir de ahí, asegúrate de estar trabajando en la rama **2.x**, si deseas l
 
 #### Rama de versión menor
 
-- **2.5.x** - Una rama de versión menor para versiones estables actuales; contiene solo correcciones de errores para la próxima versión.
+- **2.8.x** - Una rama de versión menor para versiones estables actuales; contiene solo correcciones de errores para la próxima versión.
 
 Para crear una rama de seguimiento local a partir de una en el origen remoto; después de la clonación, solo escriba:
 
@@ -78,7 +78,7 @@ git fetch origin
 git rebase origin/2.x
 ```
 
-Y Git actualizará tu instalación. (Sustituye '2.5.x' por '2.x' si estás probando o colaborando en una rama específica de versión menor, o cualquier rama desde la que puedas estar trabajando). 
+Y Git actualizará tu instalación. (Sustituye `2.x` por el nombre de la rama con la que estés probando o colaborando, o cualquier rama desde la que puedas estar trabajando). 
 
 Si estás trabajando desde un fork, en lugar de directamente desde el repositorio modxcms/revolution, tendrás que buscar en el origen, en lugar de buscar en el fork. Lee la [Guía para GitHub del Colaborador de MODX](contribute/code/contributors-guide  "Guía para GitHub del Colaborador de MODX") para obtener más información.
 
@@ -111,22 +111,28 @@ git branch -d myworkflow
 
 El primer paso nos lleva de vuelta a la rama de desarrollo, y luego elimina la rama personalizada. Esto te permite actualizar fácilmente MODX sin tener que preocuparse por confirmaciones inválidas o que ya no se usan, y mantiene limpia tu rama principal.
 
-Siempre puedes hacer `git merge --ff-only origin/2.x` nuevos commits provenientes de 2.x (o 2.5.x, etc.) en tu rama después de ejecutar `git fetch origin` mientras haces que tu rama se desproteja.
+Siempre puedes hacer `git merge --ff-only origin/2.x` nuevos commits provenientes de 2.x (o 2.8.x, etc.) en tu rama después de ejecutar `git fetch origin` mientras haces que tu rama se desproteja.
 
-Para obtener más información sobre el uso de los forks en GitHub, consulta la [Página de ayuda de Forks en GitHub](http://help.github.com/forking/).
+Para obtener más información sobre el uso de los forks en GitHub, consulta la [documentación de GitHub sobre forks](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
 ### Cambio de ramas
 
-Si deseas cambiar a una rama diferente (que ya has extraído localmente), simplemente escribe estos comandos:
+Si deseas cambiar a una rama diferente, simplemente escribe estos comandos:
 
 ``` php
 git fetch upstream
-git checkout 2.5.x upstream/2.5.x
+git checkout 3.x
 ```
 
-Por supuesto, reemplazando 2.5.x con el nombre real de la rama a la que deseas cambiar. Después de hacerlo, ejecuta la compilación y ejecuta `setup/` nuevamente, ya que las diferentes ramas pueden tener diferentes bases de datos.
+Si aún no tienes esa rama localmente, créala desde el remoto:
 
-No siempre se recomienda volver _atrás_ ; es decir, cambiar de 2.x (las últimas características en desarrollo para la próxima versión menor) a 2.5.x (los últimos parches para la próxima versión de parche), ya que los cambios en la base de datos no se pueden ejecutar a la inversa. Si bien no deberían ocurrir problemas importantes, ten cuidado al hacer esto o mantén tu trabajo en bases de datos separadas para cada rama en la que trabajes.
+``` php
+git checkout -b 3.x upstream/3.x
+```
+
+Por supuesto, reemplazando `3.x` con el nombre real de la rama a la que deseas cambiar (las ramas existentes incluyen `2.x`, `2.8.x`, `3.0.x`, `3.2.x` y `3.x`). Después de hacerlo, ejecuta la compilación y ejecuta `setup/` nuevamente, ya que las diferentes ramas pueden tener diferentes bases de datos.
+
+No siempre se recomienda volver _atrás_ ; es decir, cambiar de una rama de desarrollo como `3.x` a una rama de mantenimiento como `3.2.x` o `2.8.x`, ya que los cambios en la base de datos no se pueden ejecutar a la inversa. Si bien no deberían ocurrir problemas importantes, ten cuidado al hacer esto o mantén tu trabajo en bases de datos separadas para cada rama en la que trabajes.
 
 ## Información adicional
 

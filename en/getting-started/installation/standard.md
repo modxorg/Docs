@@ -56,7 +56,7 @@ Use your real domain or local URL, and include a subdirectory if you installed i
 
 ### Language and welcome
 
-Choose your language, then continue past the welcome screen.
+Choose your language, then continue to Install Options. (The welcome screen — with the configuration-key link — is part of the advanced/git setup flow; the traditional package skips straight to the install options.)
 
 ### Install options
 

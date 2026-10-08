@@ -39,7 +39,7 @@ Es posible que desees consultar primero la página [Requisitos del Servidor](get
 
 Antes de ejecutar la instalación, asegúrese de que PHP pueda escribir en tus directorios core/cache/ y core/config/. 
 
-A partir de ahí, se te pedirá que elijas un idioma y se te presentará una pantalla de bienvenida. Haz clic en Siguiente cuando estés listo.
+A partir de ahí, se te pedirá que elijas un idioma y continuarás directamente a las opciones de instalación. (La pantalla de bienvenida — con el enlace para cambiar la clave de configuración — forma parte del flujo de instalación avanzada/git; el paquete traditional salta directamente a las opciones de instalación.)
 
 ## Opciones de instalación
 
@@ -109,9 +109,9 @@ Algunas configuraciones de servidor del host no permitirán que MODX envíe corr
    Si obtienes una pantalla en blanco o no puedes continuar después de hacer clic en 'Instalar', verifica estos pasos:
    
    1. Asegúrate de que los directorios "/\[root\]", "/core/config", "/core/packages","/core/cache", y "/core/export" se puedan escribir. (root será el directorio real en el que estás instalando).
-   2. Asegúrate de que tu configuración de php.ini establezca memory\_limit en 128M y max\_execution\_time en 120 .
+   2. Asegúrate de que tu php.ini establezca memory\_limit en al menos 24M (el instalador intenta subirlo a 128M por sí mismo). Un max\_execution\_time mayor (por ejemplo 120) es recomendable en servidores lentos, pero setup no lo comprueba.
    3. Asegúrate de que MODX pueda crear el administrador y los directorios de conectores. Esto se hace dando permisos de escritura a los directorios **padres** de los directorios manager/ y connectors/ (ya que puede cambiar dónde están instalados).
-   4. Publica un mensaje en el [Foro Revolución](https://forums.modx.com/index.php/board,280.0.html) con respecto a tu problema. Indica la configuración de tu servidor y la información de instalación, e intentaremos ayudarte a encontrar una solución.
+   4. Publica un mensaje en la [Comunidad MODX](https://community.modx.com) con respecto a tu problema. Indica la configuración de tu servidor y la información de instalación, e intentaremos ayudarte a encontrar una solución.
 
 ## Resumen posterior a la instalación
    
@@ -131,7 +131,7 @@ Otros casos especiales:
 
 ### MAMP en MacOSX
 
-MAMP (incluida la última versión 1.8.4) funciona bien con MODX Revolution, con una excepción. No puede usar eAccelerator como el sistema de almacenamiento en caché, ya que los controladores compilados con MAMP son defectuosos con respecto a PDO y causarán errores en el núcleo de Apache. Selecciona los controladores de almacenamiento en caché 'xCache' para remediar esto.
+MAMP funciona bien con MODX Revolution. Asegúrate de que la versión de PHP incluida en MAMP sea 8.1 o superior: MODX 3.2+ la requiere (en instaladores antiguos de MAMP, eAccelerator y xCache ya no aplican y deben ignorarse).
 
 ### Vista y XAMPP
 
