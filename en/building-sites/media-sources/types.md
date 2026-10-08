@@ -7,6 +7,7 @@ _old_uri: "2.x/administering-your-site/media-sources/media-source-types"
 This is a list of all the currently available Media Source types packaged with the core installation of MODX.
 
 - [File System](building-sites/media-sources/types/media-source-type-file-system "Media Source Type - File System")
+- [FTP](building-sites/media-sources/types/media-source-type-ftp "Media Source Type - FTP")
 - [Amazon S3](building-sites/media-sources/types/media-source-type-s3 "Media Source Type - S3")
 
 ## See Also
@@ -17,4 +18,5 @@ This is a list of all the currently available Media Source types packaged with t
    1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
 4. [Media Source Types](building-sites/media-sources/types)
    1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
-   2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)
+   2. [Media Source Type - FTP](building-sites/media-sources/types/media-source-type-ftp)
+   3. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)

@@ -6,6 +6,7 @@ translation: "building-sites/media-sources/types"
 Это список всех доступных в настоящее время типов источников мультимедиа, идущих с базовой установкой MODX.
 
 -   [File System](building-sites/media-sources/types/media-source-type-file-system "Тип медиа источника - File System")
+-   [FTP](building-sites/media-sources/types/media-source-type-ftp "Тип медиа источника - FTP")
 -   [Amazon S3](building-sites/media-sources/types/media-source-type-s3 "Тип медиа источника - S3")
 
 ## Смотрите также
@@ -16,4 +17,5 @@ translation: "building-sites/media-sources/types"
     1. [Руководство по созданию медиа источника для клиентов](building-sites/media-sources/securing/clients-tutorial)
 4. [Типы медиа источника](building-sites/media-sources/types)
     1. [Тип медиа источника - File System](building-sites/media-sources/types/media-source-type-file-system)
-    2. [Тип медиа источника - S3](building-sites/media-sources/types/media-source-type-s3)
+    2. [Тип медиа источника - FTP](building-sites/media-sources/types/media-source-type-ftp)
+    3. [Тип медиа источника - S3](building-sites/media-sources/types/media-source-type-s3)
