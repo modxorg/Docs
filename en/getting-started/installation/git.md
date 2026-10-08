@@ -12,7 +12,7 @@ Installing MODX from git is a great way to have the very latest version, and is 
 You'll need to:
 
 - get the files from GitHub
-- install composer dependencies 
+- install composer dependencies
 - build the core package
 - run the standard setup
 
@@ -28,12 +28,12 @@ git clone http://github.com/modxcms/revolution.git -b 3.x www
 
 Note that it's preselecting the 3.x branch and installs into the `www` directory, you may tweak that to match your desired setup.
 
-Or, if you'd like to contribute back: [fork modxcms/revolution to your own GitHub account](http://help.github.com/forking/), clone that repository as "origin" and add the modxcms/revolution repository as a remote called "upstream":
+Or, if you'd like to contribute back: [fork modxcms/revolution to your own GitHub account](https://docs.github.com/en/get-started/quickstart/fork-a-repo), clone that repository as "origin" and add the modxcms/revolution repository as a remote called "upstream":
 
 ``` bash
 git clone git@github.com:yourgitusernamehere/revolution.git
 cd revolution
-git remote add upstream -f http://github.com/modxcms/revolution.git -b 3.x www
+git remote add -f upstream https://github.com/modxcms/revolution.git
 ```
 
 You can switch to a different branch using `git checkout <name-of-branch>` or `git checkout -b 3.x upstream/3.x`
@@ -42,7 +42,7 @@ You can switch to a different branch using `git checkout <name-of-branch>` or `g
 
 MODX uses Composer to manage internal dependencies that are necessary to run 3.x.
 
-If you do not yet have Composer installed on your system [find the installation instructions here](https://getcomposer.org/download/). The command below assumes you've installed Composer globally, for example by running `mv composer.phar /usr/local/bin/composer` after the installation instructions linked above. 
+If you do not yet have Composer installed on your system [find the installation instructions here](https://getcomposer.org/download/). The command below assumes you've installed Composer globally, for example by running `mv composer.phar /usr/local/bin/composer` after the installation instructions linked above.
 
 Run `composer install` in the root of the `www` directory.
 
@@ -137,11 +137,11 @@ git rebase origin/3.x
 
 You can replace `3.x` with any other branch.
 
-It may be necessary to run the build step and setup again after loading changes. 
+It may be necessary to run the build step and setup again after loading changes.
 
 ## Contributing By Sending Pull Requests
 
-If you've fixed a bug or added an improvement, and you're working on a fork of the revolution repository, you can send a pull request to MODX which will be reviewed by the core integrators. 
+If you've fixed a bug or added an improvement, and you're working on a fork of the revolution repository, you can send a pull request to MODX which will be reviewed by the core integrators.
 
 [See the Contribute section for more information](contribute/code).
 
@@ -151,12 +151,18 @@ If you want to switch to a different branch (that you have already checked out l
 
 ``` bash
 git fetch upstream
-git checkout 2.5.x upstream/2.5.x
+git checkout 3.x
 ```
 
-Of course, replacing 2.5.x with the actual name of the branch you want to switch to. After you've done so, run the build and run `setup/` again, since different branches might have different databases.
+If you don't have that branch locally yet, create it from the remote:
 
-Switching _backwards_ is not always recommended; ie, switching from 2.x (the latest features in development for next minor release) to 2.5.x (the latest patches for next patch release), since database changes cannot be executed in reverse. While no major issues should occur, be careful when doing this or keep your work in separate databases for each branch you work on.
+``` bash
+git checkout -b 3.x upstream/3.x
+```
+
+Of course, replacing `3.x` with the actual name of the branch you want to switch to (existing branches include `2.x`, `2.8.x`, `3.0.x`, `3.2.x`, and `3.x`). After you've done so, run the build and run `setup/` again, since different branches might have different databases.
+
+Switching _backwards_ is not always recommended; ie, switching from a development branch such as `3.x` to a maintenance branch such as `3.2.x` or `2.8.x`, since database changes cannot be executed in reverse. While no major issues should occur, be careful when doing this or keep your work in separate databases for each branch you work on.
 
 ## Additional Information
 
@@ -203,11 +209,11 @@ Zend Engine v4.2.12, Copyright (c) Zend Technologies
 
 You need **PHP 8.1 or higher** for current MODX 3.x (required since 3.2). If `php -v` reports an older version, install or select a newer PHP before continuing.
 
-In some local development environments (e.g. MAMP, XAMPP), you may also want to verify which version of PHP you're using. 
+In some local development environments (e.g. MAMP, XAMPP), you may also want to verify which version of PHP you're using.
 
 ``` bash
 $ which php
 /Applications/MAMP/bin/php/php8.2.0/bin/php
 ```
 
-If that does not return the path you're expecting, edit the `$PATH` in your `~/.bash_profile` or `~/.zshrc`. 
+If that does not return the path you're expecting, edit the `$PATH` in your `~/.bash_profile` or `~/.zshrc`.

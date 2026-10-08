@@ -18,7 +18,7 @@ Manager MODX отправляет много данных через `connectors
 ### WHM / cPanel
 
 1. Войдите в WHM (часто `https://yoursite.com:2087/`).
-2. В разделе **Plugins** найдите **Mod Security**.
+2. В актуальных версиях WHM перейдите в **Security Center → ModSecurity® Tools**. В старых версиях раздел находился в **Plugins → Mod Security** (как на скриншоте ниже).
 
 ![](modsecurity-whm.jpg)
 
@@ -63,11 +63,13 @@ at ARGS:els.
 [unique_id "TshG4EWntHMAAAfIFmUAAAAI"]
 ```
 
+Обратите внимание: этот пример лога из старой установки (эпоха MODX 2.x), у которой каждый connector был отдельным PHP-файлом. В MODX 3 все запросы к коннекторам идут через одну точку входа — `/connectors/index.php?action=…` — поэтому подстройте пути в whitelist под это (см. ниже).
+
 Запишите:
 
 - **Rule id**: `[id "300016"]`
 - **Host**: `[hostname "yoursite.com"]`
-- **URI**: `[uri "/connectors/element/tv.php"]`
+- **URI**: `[uri "/connectors/element/tv.php"]` (в MODX 3: `/connectors/index.php?action=element/tv/update`)
 
 Они нужны, чтобы снять конкретное правило только для этого пути.
 
@@ -94,27 +96,24 @@ cp -p httpd.conf httpd.conf.backup
 
 ### Пример whitelist
 
-Из примера лога выше:
+Из примера лога выше, адаптированного под MODX 3:
 
 ``` apache
-<LocationMatch "/connectors/element/tv.php">
- <IfModule mod_security2.c>
- SecRuleRemoveById 300016
- </IfModule>
+<LocationMatch "^/connectors/index\.php$">
+  <IfModule mod_security2.c>
+    SecRuleRemoveById 300016
+  </IfModule>
 </LocationMatch>
 ```
 
-Несколько id можно указать в одной строке или несколькими директивами `SecRuleRemoveById`. Если переименовали `connectors/` или сменили путь сайта, обновите `LocationMatch`.
-
-Другим connector или URL Manager могут понадобиться свои записи по мере нахождения в логах, например:
+`LocationMatch` сравнивается только с URL-путём (query string не участвует), а в MODX 3 все действия коннектора идут через один путь `connectors/index.php` — то есть правило снимается сразу для всех действий. Если нужно снять его только для одного действия, вместо этого сравните query string правилом `SecRule`, например:
 
 ``` apache
-<LocationMatch "/connectors/resource/index.php">
- <IfModule mod_security2.c>
- SecRuleRemoveById 300013 300014 300015 300016
- </IfModule>
-</LocationMatch>
+SecRule REQUEST_URI "@contains action=element/tv/update" \
+  "id:30001601,phase:1,pass,nolog,ctl:ruleRemoveById=300016"
 ```
+
+Если в логе путь из Manager (например `/manager/…`), добавьте аналогичный `<LocationMatch>` для него. Если переименовали `connectors/` или сменили путь сайта, обновите эти пути.
 
 Затем reload или restart Apache (зависит от хостинга, например `systemctl reload httpd` или `/etc/init.d/httpd restart`). На cPanel сначала пересоберите conf, если так подключаются includes, затем перезапустите.
 
@@ -124,7 +123,7 @@ cp -p httpd.conf httpd.conf.backup
 
 Лимиты request body в ModSecurity могут обрезать большие загрузки (в том числе крупные Static Resources), иногда около 64 KB, иногда **без** явной строки в логе.
 
-В WHM Mod Security → Edit Config проверьте:
+В WHM перейдите в **Security Center → ModSecurity® Configuration → Configure Global Directives** и проверьте:
 
 - `SecRequestBodyAccess`
 - `SecRequestBodyLimit`

@@ -29,12 +29,12 @@ git clone http://github.com/modxcms/revolution.git -b 3.x www
 
 Команда выбирает ветку 3.x и кладёт файлы в каталог `www`. Путь можно изменить под свою схему.
 
-Чтобы участвовать в разработке: [сделайте fork modxcms/revolution](http://help.github.com/forking/), клонируйте свой репозиторий как `origin` и добавьте modxcms/revolution как remote `upstream`:
+Чтобы участвовать в разработке: [сделайте fork modxcms/revolution](https://docs.github.com/en/get-started/quickstart/fork-a-repo), клонируйте свой репозиторий как `origin` и добавьте modxcms/revolution как remote `upstream`:
 
 ``` bash
 git clone git@github.com:yourgitusernamehere/revolution.git
 cd revolution
-git remote add upstream -f http://github.com/modxcms/revolution.git -b 3.x www
+git remote add -f upstream https://github.com/modxcms/revolution.git
 ```
 
 Переключение ветки: `git checkout <name-of-branch>` или `git checkout -b 3.x upstream/3.x`
@@ -146,16 +146,22 @@ git rebase origin/3.x
 
 ## Переключение веток
 
-Чтобы переключиться на другую уже локально полученную ветку:
+Чтобы переключиться на другую ветку:
 
 ``` bash
 git fetch upstream
-git checkout 2.5.x upstream/2.5.x
+git checkout 3.x
 ```
 
-Подставьте имя нужной ветки вместо `2.5.x`. Затем снова запустите сборку и `setup/`: у разных веток могут быть разные базы.
+Если такой ветки локально ещё нет, создайте её из удалённой:
 
-Откат на более старую ветку не всегда безопасен. Например, с 2.x на 2.5.x: изменения БД нельзя откатить. Серьёзных сбоев обычно нет, но лучше держать отдельные базы для каждой ветки.
+``` bash
+git checkout -b 3.x upstream/3.x
+```
+
+Подставьте имя нужной ветки вместо `3.x` (из существующих: `2.x`, `2.8.x`, `3.0.x`, `3.2.x`, `3.x`). Затем снова запустите сборку и `setup/`: у разных веток могут быть разные базы.
+
+Откат на более старую ветку не всегда безопасен. Например, с ветки разработки `3.x` на ветку поддержки `3.2.x` или `2.8.x`: изменения БД нельзя откатить. Серьёзных сбоев обычно нет, но лучше держать отдельные базы для каждой ветки.
 
 ## Дополнительно
 
