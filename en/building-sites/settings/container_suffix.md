@@ -10,7 +10,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/container_suffix
 **Type**: String
 **Default**: /
 
-Sets the container suffix for the site. This is the suffix added to the Friendly URL when a Resource is checked as a container.
+Sets the container suffix for the site. This is the suffix added to the Friendly URL when a Resource is checked as a container. The suffix is applied only to containers whose content type is HTML.
 
 ## Example
 
