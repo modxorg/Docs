@@ -40,6 +40,8 @@ Opcional: [friendly_urls_strict](building-sites/settings/friendly_urls_strict) d
 
 Con **Use Friendly Alias Path** en No, los recursos se comportan como si estuvieran en la raíz del sitio, ignorando las carpetas padre.
 
+La configuración relacionada [use_frozen_parent_uris](building-sites/settings/use_frozen_parent_uris) (por defecto No) hace que las URI de los recursos hijos sean relativas a la URI congelada de su padre en lugar de su alias actual — útil cuando los padres cambian a menudo.
+
 Los recursos contenedor (carpetas) usan el ajuste [container_suffix](building-sites/settings/container_suffix) (por defecto `/`) en lugar de `friendly_url_prefix` / `friendly_url_suffix`, eliminados a favor de los [Content Types](building-sites/resources/content-types). Solo aplica a carpetas cuyo content type es HTML.
 
 Para títulos no latinos, configura la transliteración de alias (`friendly_alias_translit`: `none` (por defecto), `iconv`, `iconv_ascii` o una tabla con nombre): [Transliteración de alias](getting-started/friendly-urls/transliteration).
@@ -84,4 +86,10 @@ En IIS, añade reglas de redirección equivalentes en `web.config` (ver la [guí
 - [friendly_urls_strict](building-sites/settings/friendly_urls_strict)
 - [Requisitos del servidor](getting-started/server-requirements)
 - [Content Types](building-sites/resources/content-types)
-- [Solución de problemas de instalación](getting-started/installation/troubleshooting)
+
+## Solución de problemas: 404 en rutas bonitas
+
+- Las rutas bonitas devuelven 404 pero `index.php?id=42` funciona → faltan las reglas de reescritura o no corresponden a tu servidor — vuelve al paso 1.
+- CSS/JS se rompieron al activar FURL → añade `<base href>` a tus plantillas (paso 3).
+- Los enlaces no cambiaron al activar `friendly_urls` → vacía la caché (paso 4); los recursos ya guardados mantienen su alias hasta que los edites.
+- Las peticiones a archivos de `core/` devuelven 404 → es lo esperado; `core/` debe seguir bloqueado ([Endurecer MODX](getting-started/maintenance/securing-modx)).

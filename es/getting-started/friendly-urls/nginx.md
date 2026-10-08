@@ -1,54 +1,88 @@
 ---
 title: "Configuración del servidor Nginx
 "
+description: "Reescrituras try_files para URLs amigables y un bloque server de ejemplo para nginx"
 _old_id: "376"
 _old_uri: "2.x/getting-started/installation/basic-installation/nginx-server-config"
 ---
 
-Aquí hay una configuración de ejemplo para una instalación de MODX en un servidor nginx (se requiere php-fpm para los servidores nginx). Este ejemplo también habilita MODX FURL.
+nginx no usa `.htaccess`. Las URLs amigables necesitan un fallback `try_files` (o una reescritura equivalente) hacia `index.php`, además de PHP-FPM (u otra configuración FastCGI de PHP).
 
-``` php
+**MODX Cloud:** salta la configuración del servidor de abajo. Tu sitio ya tiene un nginx funcionando para URLs amigables; solo actívalas en el Manager ([Usando las URLs amigables](getting-started/friendly-urls)).
+
+En otros hosts, haz que la reescritura funcione primero y luego completa los ajustes de MODX en esa misma página.
+
+## Ejemplo de bloque server
+
+Ajusta `server_name`, `root`, TLS y el destino de `fastcgi_pass` para tu host.
+
+``` nginx
 server {
-        listen 80;
-        server_name example.com www.example.com;
-        root /home/sites/example.com;
-        index index.php;
-        client_max_body_size 30M;
-        location / {
-                root /home/sites/example.com;
-                if (!-e $request_filename) {
-                        rewrite ^/(.*)$ /index.php?q=$1 last;
-                }
-        }
-        location ~ \.php$ {
-                try_files $uri =404;
-                fastcgi_split_path_info ^(.+\.php)(.*)$;
-                fastcgi_pass   127.0.0.1:9000;
-                fastcgi_index  index.php;
-                fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-                include fastcgi_params;
-                fastcgi_ignore_client_abort on;
-                fastcgi_param  SERVER_NAME $http_host;
-        }
-
-        location ~ /\.ht {
-                deny  all;
-        }
+    listen 80;
+    listen [::]:80;
+    server_name example.com www.example.com;
+    return 301 https://example.com$request_uri;
 }
 
+server {
+    # http2 on requiere nginx >= 1.25.1; en versiones anteriores usa: listen 443 ssl http2;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+    server_name example.com www.example.com;
+
+    # ssl_certificate     /path/to/fullchain.pem;
+    # ssl_certificate_key /path/to/privkey.pem;
+
+    root /var/www/example.com;
+    index index.php;
+    client_max_body_size 30M;
+
+    location @modx {
+        rewrite ^/(.*)$ /index.php?q=$1&$args last;
+    }
+
+    location / {
+        absolute_redirect off;
+        try_files $uri $uri/ @modx;
+    }
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param SERVER_NAME $host;
+        fastcgi_ignore_client_abort on;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location ~ ^/(_build|_gitify|_backup|core|config\.core\.php) {
+        deny all;
+    }
+}
 ```
 
-La conectividad FastCGI entre nginx y PHP como se expresa en la línea `fastcgi_pass 127.0.0.1:9000;` _**puede necesitar ser configurada**_ a algo como `fastcgi_pass unix:/var/run/php5-fpm.sock;`
+## Conexión con PHP-FPM
 
-Esto es _**dependiente**_ de cómo se configura el archivo www.conf (generalmente ubicado en `/etc/php5/fpm/pool.d`). ¿Cómo se configura la directiva "listen" en _**ese**_ archivo: TCP o unix socket (por ej. `/var/run/php5-fpm.sock` ) ?
+La línea `fastcgi_pass` debe coincidir con cómo está escuchando PHP-FPM:
 
-¡El archivo de configuración de nginx necesita especificar la  _**misma**_ conexión en _**ambos**_ archivos! \[Nota: teóricamente, los sockets de Unix serán más rápidos, pero en tal caso ambos recursos deben estar en el _**mismo**_ host . TCP es útil en un entorno distribuido.\]
+- Socket Unix (común en un solo host), por ejemplo `unix:/run/php/php8.2-fpm.sock` o `unix:/var/run/php-fpm/www.sock`
+- TCP, por ejemplo `127.0.0.1:9000`
 
-Se sugiere una configuración de servidor alternativa [en este tema del foro](http://forums.modx.com/thread/70163/furls-not-working-after-upgrade-2-1-3-pl?page=2#dis-post-394442).
+Revisa la directiva `listen` en la configuración del pool (a menudo bajo `/etc/php/*/fpm/pool.d/www.conf`) y usa el mismo valor en nginx.
 
-Gracias por publicar esto, completo con soporte FURL :)
+## www vs dominio sin www
 
-Pregunta: Con **root /home/sites/example.com;** definido en el nivel del servidor, ¿es necesario incluirlo nuevamente en el primer bloque `location`?  
-Tengo entendido que las configuraciones nginx se heredan de arriba hacia abajo y, por lo tanto, podrían eliminarse en este caso ...
+El ejemplo envía HTTP al HTTPS del host canónico. Si mantienes tanto `www` como el nombre sin www en el 443, añade una redirección explícita de uno a otro para que las sesiones y el SEO se mantengan consistentes.
 
-En algunos casos (probablemente en versiones anteriores de nginx), es posible que debas comentar la directiva `fastcgi_split_path_info`.
+## Páginas relacionadas
+
+- [Usando las URLs amigables](getting-started/friendly-urls)
+- [Endurecer MODX](getting-started/maintenance/securing-modx)
+- [Requerimientos del Servidor](getting-started/server-requirements)

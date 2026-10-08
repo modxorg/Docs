@@ -40,6 +40,8 @@ translation: "getting-started/friendly-urls"
 
 При **Использовать дружественный путь псевдонима** = «Нет» ресурсы ведут себя так, будто лежат в корне сайта, без учёта родительских папок.
 
+Связанная настройка: [use_frozen_parent_uris](building-sites/settings/use_frozen_parent_uris) (по умолчанию Нет) делает URI дочерних ресурсов относительными к замороженному URI родителя вместо его текущего псевдонима — полезно, когда родители часто меняются.
+
 Контейнерные ресурсы (папки) используют настройку [container_suffix](building-sites/settings/container_suffix) (по умолчанию `/`) вместо `friendly_url_prefix` / `friendly_url_suffix`, удалённых в пользу [типов контента](building-sites/resources/content-types). Действует только для папок с HTML-типом контента.
 
 Для нелатинских заголовков настройте транслитерацию псевдонимов (`friendly_alias_translit`: `none` (по умолчанию), `iconv`, `iconv_ascii` или именованная таблица): [Транслитерация псевдонимов](getting-started/friendly-urls/transliteration).
@@ -82,4 +84,10 @@ translation: "getting-started/friendly-urls"
 - [friendly_urls_strict](building-sites/settings/friendly_urls_strict)
 - [Требования к серверу](getting-started/server-requirements)
 - [Типы контента](building-sites/resources/content-types)
-- [Устранение неполадок при установке](getting-started/installation/troubleshooting)
+
+## Устранение неполадок: 404 на «красивых» путях
+
+- «Красивые» пути отдают 404, а `index.php?id=42` работает → правила перезаписи отсутствуют или неверны для вашего сервера — вернитесь к шагу 1.
+- Сломались CSS/JS после включения FURL → добавьте `<base href>` в шаблоны (шаг 3).
+- Ссылки не изменились после включения `friendly_urls` → очистите кеш (шаг 4); уже сохранённые ресурсы хранят свой alias, пока вы их не отредактируете.
+- Запросы к файлам `core/` отдают 404 → это ожидаемо; `core/` должен оставаться закрытым ([Усиление безопасности MODX](getting-started/maintenance/securing-modx)).
