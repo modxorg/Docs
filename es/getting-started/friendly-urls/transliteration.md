@@ -22,6 +22,7 @@ Abre **Configuración del Sistema**, área **URL amigable** (busca `friendly_ali
 | [friendly\_alias\_translit\_class](building-sites/settings/friendly_alias_translit_class) | Clase de servicio para tablas con nombre (por defecto `translit.modTransliterate`) |
 | [friendly\_alias\_translit\_class\_path](building-sites/settings/friendly_alias_translit_class_path) | Ruta desde la que cargar esa clase (por defecto `{core_path}components/`) |
 | [automatic\_alias](building-sites/settings/automatic_alias) | Generar el alias desde el pagetitle al guardar si el alias está vacío |
+| [friendly\_alias\_realtime](building-sites/settings/friendly_alias_realtime) | Vista previa del alias en vivo en el Manager mientras escribes el pagetitle (por defecto No; requiere `automatic_alias`) |
 
 Los filtros relacionados (delimitadores, minúsculas, longitud, restricción de caracteres) se aplican después de la transliteración. Revisa el resto de `friendly_alias_*` en la misma área.
 
@@ -37,7 +38,7 @@ Pon `friendly_alias_translit` en `iconv`. Requiere la extensión PHP `iconv`.
 
 MODX convierte la cadena con `//TRANSLIT//IGNORE` al charset del sitio (`modx_charset`, normalmente UTF-8). La calidad depende de tu build de PHP/iconv y de la locale. Es una opción rápida sin extras, no una tabla por idioma.
 
-### iconv\_ascii
+## Integrado: iconv\_ascii
 
 Con `iconv_ascii` la conversión apunta a ASCII (`ASCII//TRANSLIT//IGNORE`). Úsalo si quieres segmentos solo latinos y `iconv` todavía deja caracteres no ASCII.
 

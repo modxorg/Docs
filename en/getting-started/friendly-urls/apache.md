@@ -42,6 +42,12 @@ This is most often needed on local installs under a subfolder.
 
 Place it in the MODX site root (next to `index.php`, `manager/`, `connectors/`). It can sit higher in the tree, but the site root is the usual location.
 
+The distribution ships three `ht.access` files with different jobs:
+
+- **Site root** — rename to `.htaccess` for Friendly URL rewrites (this guide).
+- **`core/ht.access`** — rename to `.htaccess` to block all web access to `core/` (see [Hardening MODX](getting-started/maintenance/securing-modx)).
+- **`manager/ht.access`** — ships with rewrites off; rename only if you use the optional manager redirect rules from the root `ht.access` (it warns not to rename this file otherwise).
+
 If the host already has an `.htaccess` in that directory, merge carefully: keep a backup, then append the MODX rewrite block below the host rules unless the host docs say otherwise.
 
 ## Optional: force www or non-www

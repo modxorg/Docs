@@ -149,6 +149,8 @@ No encontrarás friendly\_url\_prefix ni friendly\_url\_suffix entre las configu
 
 La configuración Usar la Ruta de Alias Amigable (use\ _alias\ _path) permite que el sitio muestre estructuras de directorios. Si se establece en "No", todos los documentos en el sitio aparecerán en las URL como si estuvieran directamente en el directorio raíz, sin tener en cuenta las rutas. Si la configuración se establece en "Sí" (el valor predeterminado), verá una ruta completa a la página actual en las URL.
 
+La configuración relacionada [use_frozen_parent_uris](building-sites/settings/use_frozen_parent_uris) (por defecto No) hace que las URI de los recursos hijos sean relativas a la URI congelada de su padre en lugar de su alias actual — útil cuando los padres cambian a menudo.
+
 La configuración friendly\_alias\_urls se eliminó en MODX 2.1+. Habilitar friendly\ _urls implica que está usando friendly\ _alias\ _urls en 2.1+ y esta configuración ya no era útil ni necesaria.
 
 Para títulos no latinos, configura la transliteración de alias (`friendly_alias_translit`, iconv o el extra Translit): [Transliteración de alias](getting-started/friendly-urls/transliteration).
@@ -199,3 +201,10 @@ RewriteRule (.*) http://tusitio.com/$1 [R=301,L]
 Ten en cuenta que no descomentamos la primera línea. Es un comentario real. Descomentarlo haría que el servidor lo tratase como código y eso podría bloquear el servidor.
 
 Los servidores pueden ser bastante sensibles acerca de lo que hay en un archivo .htaccess. Haz siempre una copia de seguridad del archivo .htaccess que funcione antes de modificarlo. De esa manera, si tu trabajo bloquea el servidor, puedes recuperar la versión guardada de  .htaccess y comenzar de nuevo.
+
+## Solución de problemas: 404 en rutas bonitas
+
+- Las rutas bonitas devuelven 404 pero `index.php?id=42` funciona → faltan las reglas de reescritura o no corresponden a tu servidor — vuelve al paso 1.
+- CSS/JS se rompieron al activar FURL → añade `<base href>` a tus plantillas (paso 3).
+- Los enlaces no cambiaron al activar `friendly_urls` → vacía la caché (paso 4); los Resources ya guardados mantienen su alias hasta que los edites.
+- Las peticiones a archivos de `core/` devuelven 404 → es lo esperado; `core/` debe seguir bloqueado ([Endurecer MODX](getting-started/maintenance/securing-modx)).

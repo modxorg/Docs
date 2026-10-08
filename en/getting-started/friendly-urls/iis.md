@@ -1,11 +1,11 @@
 ---
 title: "Friendly URLs on IIS"
-sortorder: "3"
+description: "Friendly URL rewrites on Microsoft IIS with the URL Rewrite module"
 ---
 
 Use this guide when you run MODX on Microsoft IIS and need Friendly URLs (FURLs). Apache uses `ht.access` / `.htaccess`. On IIS you use a `web.config` file with the [URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) module.
 
-The community thread that prompted this page covers IIS 8 on Windows Server 2012 R2 and multi-language routing. The same baseline rules apply on later IIS versions.
+The baseline rules below apply on IIS 7 and later, including current Windows Server versions.
 
 ## Requirements
 
@@ -33,6 +33,13 @@ Create `web.config` in the web root (or merge these rules into an existing file)
             statusReason="Forbidden" statusDescription="Forbidden" />
         </rule>
 
+        <!-- Block direct access to internal paths (mirrors the Apache minimum rules) -->
+        <rule name="Block internal paths" stopProcessing="true">
+          <match url="^(core|_build|_gitify|_backup|config\.core\.php)(/|$)" />
+          <action type="CustomResponse" statusCode="404"
+            statusReason="Not Found" statusDescription="Not Found" />
+        </rule>
+
         <rule name="MODX Friendly URLs" stopProcessing="true">
           <match url="^(.*)$" />
           <conditions logicalGrouping="MatchAll">
@@ -48,6 +55,34 @@ Create `web.config` in the web root (or merge these rules into an existing file)
 ```
 
 If MODX lives in a subdirectory (for example `/modx`), adjust the rewrite `url` so it still targets that folder’s `index.php`, or set the IIS application root to the MODX web root so the sample above works unchanged.
+
+## Optional: force www or HTTPS
+
+Add these rules **above** the Friendly URLs rule in the same `<rules>` block, and change the example domains:
+
+```xml
+<!-- Force canonical host (www -> bare domain) -->
+<rule name="Redirect www to apex" stopProcessing="true">
+  <match url="^(.*)$" />
+  <conditions>
+    <add input="{HTTP_HOST}" pattern="^www\.(.+)$" />
+  </conditions>
+  <action type="Redirect" url="https://{C:1}/{R:1}"
+    redirectType="Permanent" appendQueryString="true" />
+</rule>
+
+<!-- Force HTTPS -->
+<rule name="Redirect to HTTPS" stopProcessing="true">
+  <match url="^(.*)$" />
+  <conditions>
+    <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+  </conditions>
+  <action type="Redirect" url="https://{HTTP_HOST}/{R:1}"
+    redirectType="Permanent" appendQueryString="true" />
+</rule>
+```
+
+Without these, `www` and bare hostnames (and HTTP vs HTTPS) serve duplicate content — the same reason the Apache guide ships commented www/HTTPS blocks in `ht.access`.
 
 ## Enable Friendly URLs in MODX
 
@@ -71,6 +106,7 @@ Extras such as Babel or XRouting need working FURLs first. After the baseline ru
 ## Related pages
 
 - [Using Friendly URLs](getting-started/friendly-urls)
+- [Hardening MODX](getting-started/maintenance/securing-modx)
 - [Advanced Installation](getting-started/installation/advanced)
 - [Friendly URLs on nginx](getting-started/friendly-urls/nginx)
 - [Friendly URLs on lighttpd](getting-started/friendly-urls/lighttpd)

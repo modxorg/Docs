@@ -1,5 +1,6 @@
 ---
 title: "Friendly URLs on nginx"
+description: "Friendly URL try_files rewrites and a sample server block for nginx"
 _old_id: "376"
 _old_uri: "2.x/getting-started/installation/basic-installation/nginx-server-config"
 ---
@@ -23,8 +24,10 @@ server {
 }
 
 server {
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
+    # http2 on needs nginx >= 1.25.1; on older versions use: listen 443 ssl http2;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
     server_name example.com www.example.com;
 
     # ssl_certificate     /path/to/fullchain.pem;
@@ -57,6 +60,10 @@ server {
     location ~ /\.ht {
         deny all;
     }
+
+    location ~ ^/(_build|_gitify|_backup|core|config\.core\.php) {
+        deny all;
+    }
 }
 ```
 
@@ -76,4 +83,5 @@ The sample sends HTTP to HTTPS on the canonical host. If you keep both `www` and
 ## Related
 
 - [Using Friendly URLs](getting-started/friendly-urls)
+- [Hardening MODX](getting-started/maintenance/securing-modx)
 - [Server Requirements](getting-started/server-requirements)

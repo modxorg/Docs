@@ -1,12 +1,12 @@
 ---
 title: "Дружественные URL на IIS"
-sortorder: "3"
+description: "Перезапись дружественных URL на Microsoft IIS с модулем URL Rewrite"
 translation: "getting-started/friendly-urls/iis"
 ---
 
 Эта страница нужна, если MODX работает на Microsoft IIS и нужны дружественные URL (FURL). На Apache используют `ht.access` / `.htaccess`. На IIS — файл `web.config` и модуль [URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite).
 
-Тема появилась из обсуждения на форуме: IIS 8 на Windows Server 2012 R2 и мультиязычная маршрутизация. Те же базовые правила подходят и для более новых версий IIS.
+Базовые правила ниже применяются к IIS 7 и новее, включая актуальные версии Windows Server.
 
 ## Требования
 
@@ -34,6 +34,13 @@ translation: "getting-started/friendly-urls/iis"
             statusReason="Forbidden" statusDescription="Forbidden" />
         </rule>
 
+        <!-- Блокировать прямой доступ к внутренним путям (минимальные правила в стиле Apache) -->
+        <rule name="Block internal paths" stopProcessing="true">
+          <match url="^(core|_build|_gitify|_backup|config\.core\.php)(/|$)" />
+          <action type="CustomResponse" statusCode="404"
+            statusReason="Not Found" statusDescription="Not Found" />
+        </rule>
+
         <rule name="MODX Friendly URLs" stopProcessing="true">
           <match url="^(.*)$" />
           <conditions logicalGrouping="MatchAll">
@@ -49,6 +56,34 @@ translation: "getting-started/friendly-urls/iis"
 ```
 
 Если MODX лежит в подкаталоге (например `/modx`), поправьте `url` в rewrite так, чтобы он указывал на `index.php` этой папки, либо сделайте корень приложения IIS равным web-корню MODX. Тогда пример выше можно не менять.
+
+## Необязательно: принудительный www или HTTPS
+
+Добавьте эти правила **выше** правила Friendly URLs в том же блоке `<rules>` и замените примерные домены на свои:
+
+```xml
+<!-- Принудительно канонический хост (www -> домен без www) -->
+<rule name="Redirect www to apex" stopProcessing="true">
+  <match url="^(.*)$" />
+  <conditions>
+    <add input="{HTTP_HOST}" pattern="^www\.(.+)$" />
+  </conditions>
+  <action type="Redirect" url="https://{C:1}/{R:1}"
+    redirectType="Permanent" appendQueryString="true" />
+</rule>
+
+<!-- Принудительно HTTPS -->
+<rule name="Redirect to HTTPS" stopProcessing="true">
+  <match url="^(.*)$" />
+  <conditions>
+    <add input="{HTTPS}" pattern="off" ignoreCase="true" />
+  </conditions>
+  <action type="Redirect" url="https://{HTTP_HOST}/{R:1}"
+    redirectType="Permanent" appendQueryString="true" />
+</rule>
+```
+
+Без этих правил `www` и домены без www (и HTTP вместе с HTTPS) отдают дублирующийся контент — по той же причине в руководстве по Apache в `ht.access` идут закомментированные блоки www/HTTPS.
 
 ## Включение Friendly URLs в MODX
 
@@ -72,6 +107,7 @@ translation: "getting-started/friendly-urls/iis"
 ## См. также
 
 - [Использование дружественных URL](getting-started/friendly-urls)
+- [Усиление безопасности MODX](getting-started/maintenance/securing-modx)
 - [Расширенная установка](getting-started/installation/advanced)
 - [Дружественные URL на nginx](getting-started/friendly-urls/nginx)
 - [Дружественные URL на lighttpd](getting-started/friendly-urls/lighttpd)
