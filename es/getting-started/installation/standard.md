@@ -15,7 +15,7 @@ Advertencia de FTP: el uso de FTP para transferir archivos desempaquetados a tu 
 
 ### Instalar MODX con un sitio existente
 
-Los sitios de desarrollo a menudo comienzan en un subdirectorio y luego se [trasladan](getting-started/maintenance/moving-your-site "Moviendo tu sitio a un nuevo servidor") al directorio raíz cuando se completa . El método de subdirectorio es útil si tiene un sitio existente que debe permanecer disponible durante el desarrollo o para instalaciones MODX en subdominio. También es posible dejar MODX en un subdirectorio y usar .htaccess para reescribir sus URL a la raíz.
+Los sitios de desarrollo a menudo comienzan en un subdirectorio y luego se [trasladan](/current/en/getting-started/maintenance/moving-your-site "Moviendo tu sitio a un nuevo servidor") al directorio raíz cuando se completa . El método de subdirectorio es útil si tiene un sitio existente que debe permanecer disponible durante el desarrollo o para instalaciones MODX en subdominio. También es posible dejar MODX en un subdirectorio y usar .htaccess para reescribir sus URL a la raíz.
 
 #### Sitio HTML estático existente
 
@@ -29,7 +29,7 @@ En cualquier caso, excepto en un nuevo sitio en blanco, instalar MODX Revolution
 
 ### Instalación en directorio temporal previa a la transferencia de DNS
 
-Si tu host proporciona una carpeta de instalación temporal para desarrollar antes de la transferencia de DNS, una vez que se haya transferido tu DNS, deberás tomar referencia de [Mover tu sitio a otro servidor](getting-started/maintenance/moving-your-site "Mover tu sitio a un nuevo servidor") y actualizar los archivos de configuración: _core/config/config.inc.php, /config.core.php, /connectors/config.core.php, y /manager/config.core.php_ con la ruta que apunte a tu nuevo directorio raíz.
+Si tu host proporciona una carpeta de instalación temporal para desarrollar antes de la transferencia de DNS, una vez que se haya transferido tu DNS, deberás tomar referencia de [Mover tu sitio a otro servidor](/current/en/getting-started/maintenance/moving-your-site "Mover tu sitio a un nuevo servidor") y actualizar los archivos de configuración: _core/config/config.inc.php, /config.core.php, /connectors/config.core.php, y /manager/config.core.php_ con la ruta que apunte a tu nuevo directorio raíz.
 
 ## Instalando MODX Revolution
 
@@ -98,7 +98,7 @@ MODX recomienda **no** usar 'admin', ya que este es un nombre de usuario de admi
 
 A partir de ahí, ingresa tu correo electrónico (o el correo electrónico de tu administrador) y especifica una contraseña. Haz clic en siguiente cuando hayas terminado.
 
-Algunas configuraciones de servidor del host no permitirán que MODX envíe correos electrónicos si la Configuración del sistema [emailsender](building-sites/settings/emailsender) (por defecto establecida en la instalación a la dirección de correo electrónico ingresada para el usuario administrador) no es válida para el dominio. Si MODX no envía correos electrónicos de registro o formulario, verifica [emailsender](building-sites/settings/emailsender) y configúralo en una dirección de correo electrónico válida para el dominio alojado.
+Algunas configuraciones de servidor del host no permitirán que MODX envíe correos electrónicos si la Configuración del sistema [emailsender](/current/en/building-sites/settings/emailsender) (por defecto establecida en la instalación a la dirección de correo electrónico ingresada para el usuario administrador) no es válida para el dominio. Si MODX no envía correos electrónicos de registro o formulario, verifica [emailsender](/current/en/building-sites/settings/emailsender) y configúralo en una dirección de correo electrónico válida para el dominio alojado.
 
 ## Comprobaciones previas a la instalación
    
@@ -141,11 +141,11 @@ Algunos usuarios han informado de que la aplicación de una soluciónpuede encue
 
 ### Instalando Paquetes
 
-Para obtener información sobre la instalación de paquetes de terceros, consulta el artículo [Cómo instalar paquetes](extending-modx/transport-packages "Administración de Paquetes").
+Para obtener información sobre la instalación de paquetes de terceros, consulta el artículo [Cómo instalar paquetes](/current/en/extending-modx/transport-packages "Administración de Paquetes").
 
 ### See Also
 
 1. [Guía para Lighttpd](getting-started/friendly-urls/lighttpd)
-2. [Instalación en un servidor que ejecuta ModSecurity](getting-started/installation/troubleshooting/modsecurity)
+2. [Instalación en un servidor que ejecuta ModSecurity](/current/en/getting-started/installation/troubleshooting/modsecurity)
 3. [Configuración del servidor Nginx](getting-started/friendly-urls/nginx)
 4. [Video de YouTube de un embajador de MODX](http://www.youtube.com/watch?v=Wwrq-3CWFVU)

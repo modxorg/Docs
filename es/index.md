@@ -17,9 +17,9 @@ Los experimentados [Profesionales de MODX](https://modx.com/professionals) y el 
 
 Este sitio de documentación es una referencia exhaustiva para todo lo relacionado con MODX, y también incluye guías y tutoriales para ayudarte a comenzar rápida y fácilmente. Los puntos destacados incluyen:
 
-- Los tutoriales [Serie de Videos de Inicio-Rápido](building-sites/integrating-templates/video-quick-start)
+- Los tutoriales [Serie de Videos de Inicio-Rápido](/current/en/building-sites/integrating-templates/video-quick-start)
 - Una guía sobre [Construcción de sitios](building-sites)
-- El tutorial [Creando un Blog en MODX](building-sites/tutorials/creating-a-blog)
+- El tutorial [Creando un Blog en MODX](/current/en/building-sites/tutorials/creating-a-blog)
 
 Si tienes alguna pregunta sobre este sitio de documentación o deseas contribuir a mejorarlo, [mira la fuente de la documentación](https://github.com/modxorg/Docs) y la [aplicación](https://github.com/modxorg/DocsApp) en GitHub. ¡Todas las contribuciones son bienvenidas!
 
@@ -29,7 +29,7 @@ Revolution es el marco de aplicaciones y CMS insignia de MODX, llamado con cari�
 
 ### Enlaces Rápidos
 
-- [Serie de videos de Inicio Rápido](building-sites/integrating-templates/video-quick-start)
+- [Serie de videos de Inicio Rápido](/current/en/building-sites/integrating-templates/video-quick-start)
 - [Guía de instalación](getting-started/installation)
 - [Construcción de sitios](building-sites)
 
@@ -46,7 +46,7 @@ Revolution es el marco de aplicaciones y CMS insignia de MODX, llamado con cari�
 Los extras de MODX amplían la funcionalidad principal del software de MODX. Otros CMS se refieren a ellos como "Complementos" o "Módulos". Muchos de los Extras son desarrollados por el equipo principal de MODX, mientras que otros son de terceros. Aunque de ninguna manera es una referencia exhaustiva, aquí se ha documentado una gran cantidad de los Extras populares.
 
 - [Descargar Extras](https://modx.com/extras/?product=revolution)
-- [Aprender más sobre la instalación de Extras](building-sites/extras)
+- [Aprender más sobre la instalación de Extras](/current/en/building-sites/extras)
 
 ## xPDO
 
@@ -54,8 +54,8 @@ xPDO es el puente relacional de objetos (ORB) que alimenta MODX. Si sabes lo que
 
 ### Enlaces Rápidos
 
-- [Página de documentación de xPDO](extending-modx/xpdo)
-- [Primeros pasos](extending-modx/xpdo/getting-started) con xPDO
+- [Página de documentación de xPDO](/current/en/extending-modx/xpdo)
+- [Primeros pasos](/current/en/extending-modx/xpdo/getting-started) con xPDO
 
 ### Otros recursos
 
@@ -67,7 +67,7 @@ xPDO es el puente relacional de objetos (ORB) que alimenta MODX. Si sabes lo que
 
 ¿Amas MODX? Aprende cómo involucrarte en la Comunidad y contribuir al proyecto de código abierto.
 
-- [Documentación](contribute/)
-- [Presentación y discusión de temas](contribute/issues)
-- [Convertirse en Colaborador](contribute/code)
-- [Guía de estilo de documentación](contribute/documentation/style-guide)
+- [Documentación](/current/en/contribute)
+- [Presentación y discusión de temas](/current/en/contribute/issues)
+- [Convertirse en Colaborador](/current/en/contribute/code)
+- [Guía de estilo de documentación](/current/en/contribute/documentation/style-guide)
