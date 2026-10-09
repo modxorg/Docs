@@ -1,6 +1,6 @@
 ---
 title: "Documentación de MODX"
-description: "Obtén más información sobre MODX Revolution, el sistema de gestión de contenido potente y fácil de usar con un historial de 14 años."
+description: "Obtén más información sobre MODX Revolution, el sistema de gestión de contenido potente y fácil de usar con un historial de dos décadas."
 _old_id: "1"
 _old_uri: "dashboard.action"
 ---
@@ -11,17 +11,17 @@ MODX Revolution (Revo) es un sistema de gestión de contenido (CMS) fácil de us
 
 Además de este sitio de documentación, la [Comunidad MODX] (<https://community.modx.com>) es vibrante y siempre está dispuesta a ayudar. Prueba a hacer preguntas allí: te sorprenderás gratamente de la capacidad de respuesta de la base de usuarios de MODX.
 
-Experimentados [Profesionales de MODX](https://modx.com/professionals) y [soporte comercial respaldado por el proveedor](https://modx.com/support/) están siempre disponibles, así que, sin importar tus necesidades y requerimientos, estás cubierto.
+Los experimentados [Profesionales de MODX](https://modx.com/professionals) y el [soporte comercial respaldado por el proveedor](https://modx.com/support/) están siempre disponibles, así que, sin importar tus necesidades, estás cubierto.
 
 ## Empezando
 
 Este sitio de documentación es una referencia exhaustiva para todo lo relacionado con MODX, y también incluye guías y tutoriales para ayudarte a comenzar rápida y fácilmente. Los puntos destacados incluyen:
 
 - Los tutoriales [Serie de Videos de Inicio-Rápido](building-sites/integrating-templates/video-quick-start)
-- Una guía sobre [Creando sitios con MODX](building-sites)
-- El tutorial [Creando un Blog en MODX](case-studies-and-tutorials/creating-a-blog-in-modx-revolution)
+- Una guía sobre [Construcción de sitios](building-sites)
+- El tutorial [Creando un Blog en MODX](building-sites/tutorials/creating-a-blog)
 
-Si tiene alguna pregunta sobre este sitio de documentación, o deseas contribuir a mejorarlo, [mira la fuente de la documentación](https://github.com/modxorg/Docs) y la [aplicación](https://github.com/modxorg/DocsApp) en GitHub. ¡Todas las contribuciones son bienvenidas!
+Si tienes alguna pregunta sobre este sitio de documentación o deseas contribuir a mejorarlo, [mira la fuente de la documentación](https://github.com/modxorg/Docs) y la [aplicación](https://github.com/modxorg/DocsApp) en GitHub. ¡Todas las contribuciones son bienvenidas!
 
 ### MODX Revolution
 
@@ -31,7 +31,7 @@ Revolution es el marco de aplicaciones y CMS insignia de MODX, llamado con cari�
 
 - [Serie de videos de Inicio Rápido](building-sites/integrating-templates/video-quick-start)
 - [Guía de instalación](getting-started/installation)
-- [Creando sitios con MODX](building-sites)
+- [Construcción de sitios](building-sites)
 
 ### Otros recursos
 
@@ -43,7 +43,7 @@ Revolution es el marco de aplicaciones y CMS insignia de MODX, llamado con cari�
 
 ### Extras
 
-Los extras de MODX amplían la funcionalidad principal del software de MODX. Otros CMS se refieren a ellos como "Complementos" o "Módulos". Muchos de los Extras son desarrollados por el equipo principal de MODX, mientras que otros son de terceros. Aunque de ninguna manera es una referencia exhaustiva, la mayoría de los Extras más populares están documentados aquí.
+Los extras de MODX amplían la funcionalidad principal del software de MODX. Otros CMS se refieren a ellos como "Complementos" o "Módulos". Muchos de los Extras son desarrollados por el equipo principal de MODX, mientras que otros son de terceros. Aunque de ninguna manera es una referencia exhaustiva, aquí se ha documentado una gran cantidad de los Extras populares.
 
 - [Descargar Extras](https://modx.com/extras/?product=revolution)
 - [Aprender más sobre la instalación de Extras](building-sites/extras)
@@ -54,12 +54,12 @@ xPDO es el puente relacional de objetos (ORB) que alimenta MODX. Si sabes lo que
 
 ### Enlaces Rápidos
 
-- [xPDO 2.x Inicio Documentación](extending-modx/xpdo)
-- [Empezando](getting-started) con xPDO 2.x
+- [Página de documentación de xPDO](extending-modx/xpdo)
+- [Primeros pasos](extending-modx/xpdo/getting-started) con xPDO
 
 ### Otros recursos
 
-- [Obtén la última versión](http://xpdo.org/downloads.html)
+- [Obtén la última versión](https://github.com/modxcms/xpdo/releases)
 - [Foros de discusión](http://forums.modx.com/board/46/developing-with-xpdo)
 - [Errores y solicitudes de funciones](https://github.com/modxcms/xpdo/issues)
 
