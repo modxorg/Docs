@@ -3,11 +3,11 @@ title: "modAction и связанные"
 translation: "getting-started/upgrading-to-3.0/actions"
 ---
 
-Вся функциональность, связанная с `modAction`, была удалена в MODX3. Это сопровождалось очисткой классов `modManagerResponse` и`modManagerController`.
+`modAction` и `modAccessAction` удалены в MODX 3 (см. [Удалённые объекты](#удаленные-объекты) ниже); `modActionDom`, `modAccessActionDom`, `modActionField` и таблицы `actiondom` / `access_actiondom` / `actions_fields` остались и по-прежнему используются правилами Form Customization. Вместе с этим была выполнена очистка классов `modManagerResponse` и `modManagerController`.
 
-Это означает, что URL-адреса менеджера в виде `/manager/?a=15` (где `15` - это идентификатор действия) больше не будут работать. Дополнительные функции, которые полагаются на это, должны быть обновлены, чтобы использовать вместо них маршрутизацию на основе пространства имен в форме `/manager/?namespace=myextra&a=action`.
+Это означает, что URL-адреса менеджера в виде `/manager/?a=15` (где `15` — это идентификатор действия) больше не будут работать. Дополнения, которые на них полагаются, должны перейти на маршрутизацию на основе пространства имён в форме `/manager/?namespace=myextra&a=action`. Страница, на которую попадает пользователь после входа, задаётся настройками `welcome_action` и `welcome_namespace`.
 
-Для некоторых дополнений это может потребовать переписывания контроллеров. Для других достаточно просто изменить определение меню (в Система > Меню).
+Для некоторых дополнений это может потребовать переписывания контроллеров. Для других достаточно просто изменить определение меню (в Admin > Меню).
 
 ## Удален: `MODx.action` (JavaScript)
 
@@ -27,11 +27,12 @@ translation: "getting-started/upgrading-to-3.0/actions"
 
 ## Изменено: параметры переданы в событие OnBeforeManagerPageInit
 
-Предварительно, [OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit) получил параметр `$action` в виде массива. Теперь он включает в себя следующие параметры:
+Раньше [OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit) получал параметр `$action` в виде массива. Теперь событие получает массив конфигурации контроллера со следующими ключами:
 
--   `string $namespace` пространство имен для запроса
--   `string $namespacePath` (основной) путь для пространства имен
--   `string $action` роутер/действие в пространстве имен
+-   `namespace` пространство имён для запроса
+-   `namespace_path` (core-)путь для пространства имён
+-   `action` роутер/действие в пространстве имён
+-   `controller` имя контроллера, выбранное для запроса
 
 ## Удалена: константа `MODX_INCLUDES_PATH`
 
@@ -50,6 +51,8 @@ translation: "getting-started/upgrading-to-3.0/actions"
 ## Удалены: `loadControllerClass` и `instantiateController` в `modManagerResponse`
 
 Поскольку логика загрузки контроллеров была изменена в `modManagerResponse`, методы `loadControllerClass` и `instantiateController` были удалены.
+
+Теперь контроллеры могут лежать в автозагружаемом пространстве имён `\MODX\Revolution\Controllers\`: `getControllerClassName()` сначала ищет `\MODX\Revolution\Controllers\{action}` и только потом — на файловой системе в `{namespace_path}/controllers/`. Если класс контроллера автозагружается там, дополнительная настройка не нужна.
 
 Некоторые подписи немного изменились:
 

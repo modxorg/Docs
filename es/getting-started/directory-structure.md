@@ -20,11 +20,11 @@ Distribución típica de nivel superior tras la instalación:
 | `_build/` | Construye el paquete de transporte del core (solo checkouts de Git) |
 | `assets/` | Archivos front-end de medios y de los Extras |
 
-`core/` debe permanecer en `/core/` en la raíz del proyecto: no se puede mover ni renombrar en 3.x. Los directorios `manager/` y `connectors/` se pueden renombrar durante una [Instalación avanzada](getting-started/installation/advanced). Ver también [Cambios de la carpeta core en 3.0](getting-started/upgrading-to-3.0/core-folder).
+`core/` debe permanecer en `/core/` en la raíz del proyecto: no se puede mover ni renombrar en 3.x. Los directorios `manager/` y `connectors/` se pueden renombrar durante una [Instalación avanzada](getting-started/installation/advanced). Ver también [Cambios de la carpeta core en 3.0](/current/en/getting-started/upgrading-to-3.0/core-folder).
 
 ## connectors/
 
-Los conectores son puntos de entrada HTTP para solicitudes AJAX del Manager y otras. Cada conector carga MODX, sanitiza la solicitud y la entrega a un [Procesador](extending-modx/processors). Nunca modifica la base de datos por sí mismo.
+Los conectores son puntos de entrada HTTP para solicitudes AJAX del Manager y otras. Cada conector carga MODX, sanitiza la solicitud y la entrega a un [Procesador](/current/en/extending-modx/processors). Nunca modifica la base de datos por sí mismo.
 
 En 3.x, la mayoría del tráfico del Manager pasa por `connectors/index.php` con un parámetro `action` (por ejemplo `Resource/Create`). El action se resuelve en una clase bajo `core/src/Revolution/Processors/`.
 
@@ -107,7 +107,7 @@ La caché del contexto `web` guarda ajustes de contexto sobreescritos, recursos 
 
 Archivos destacables:
 
-- **core/cache/system_settings/config.cache.php** - [Ajustes del sistema](building-sites/settings) en caché. Limpiar `core/cache/` fuerza una reconstrucción desde la base de datos.
+- **core/cache/system_settings/config.cache.php** - [Ajustes del sistema](/current/en/building-sites/settings) en caché. Limpiar `core/cache/` fuerza una reconstrucción desde la base de datos.
 - **core/cache/auto_publish/auto_publish.cache.php** - almacena el horario del próximo evento de autopublicación/despublicación por recurso; no es una caché del contenido del sitio.
 
 ### core/components/
@@ -148,7 +148,7 @@ $modx->lexicon->load('lang:namespace:topic');
 
 ### core/packages/
 
-[Paquetes de transporte](extending-modx/transport-packages) descargados y construidos, incluido `core.transport.zip` que usa el instalador. Gestión de Paquetes lee y escribe aquí.
+[Paquetes de transporte](/current/en/extending-modx/transport-packages) descargados y construidos, incluido `core.transport.zip` que usa el instalador. Gestión de Paquetes lee y escribe aquí.
 
 ## manager/
 
@@ -198,5 +198,5 @@ Archivos de Extras accesibles desde la web (JS, CSS, imágenes) instalados por G
 ## Relacionado
 
 - [Requisitos del servidor](getting-started/server-requirements)
-- [Endurecer MODX](getting-started/maintenance/securing-modx) (bloquear el acceso público a `core/` y rutas relacionadas)
-- [Actualización de 2.x a 3.0](getting-started/upgrading-to-3.0) (espacios de nombres, procesadores, ruta fija del core)
+- [Endurecer MODX](/current/en/getting-started/maintenance/securing-modx) (bloquear el acceso público a `core/` y rutas relacionadas)
+- [Actualización de 2.x a 3.0](/current/en/getting-started/upgrading-to-3.0) (espacios de nombres, procesadores, ruta fija del core)

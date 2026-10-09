@@ -13,9 +13,16 @@ MODX 3.0 очистил значительное количество стары
 -   `editor_css_path` и `editor_css_selectors` был удален [#14843](https://github.com/modxcms/revolution/pull/14843). Эти настройки могут быть в [TinyMCE](https://github.com/modxcms/TinyMCE/issues/30) или других сторонних дополнениях, которые могут потребоваться для настройки недоступных настроек.)
 -   `manager_language` [#13786](https://github.com/modxcms/revolution/pull/13786), заменено автоматическое определение языка и переключение на лету в менеджере [#14046](https://github.com/modxcms/revolution/pull/14046). [Узнайте больше о языке менеджера в 3.0](getting-started/upgrading-to-3.0/manager-language)
 -   `resolve_hostnames` и `server_protocol` были удалены [#14877](https://github.com/modxcms/revolution/pull/14877). Устаревшие настройки из MODX Evolution.
--   `upload_flash`, установите `upload_files` или `upload_images` или `allowedFileTypes` вместо медиа источника. [#14252](https://github.com/modxcms/revolution/pull/14252)
+-   `upload_flash`, установите `upload_files` или `allowedFileTypes` у media source. [#14252](https://github.com/modxcms/revolution/pull/14252). Примечание: в 3.0 дополнительно появились `upload_images` и `upload_media`, но их снова удалили начиная с **3.1.0** [#16349](https://github.com/modxcms/revolution/pull/16349) — в актуальных релизах остаются только `upload_files` и `allowedFileTypes`.
 -   `udperms_allowroot` и `webpwdreminder_message` [#14841](https://github.com/modxcms/revolution/pull/14841). Создание ресурсов в корне задаёт разрешение `new_document_in_root`. `webpwdreminder_message` был неиспользуемым шаблоном письма веб-пользователю. См. [udperms_allowroot](building-sites/settings/udperms_allowroot) и [webpwdreminder_message](building-sites/settings/webpwdreminder_message).
 -   `cache_action_map` поскольку карта действий была полностью удалена, теперь официально исчезло modAction [#14927](https://github.com/modxcms/revolution/pull/14927)
+-   `filemanager_path`, `filemanager_path_relative`, `filemanager_url`, `filemanager_url_relative`, `rb_base_dir`, `rb_base_url`, `strip_image_paths`, `use_browser` и `fe_editor_lang`. В основном это настройки путей файлового менеджера и RedBox; если у вас был свой `filemanager_path` или `rb_base_dir`, проверьте дополнения после обновления — параметров больше нет.
+-   `emailsubject`, `signupemail_message`, `websignupemail_message`, `manager_lang_attribute` и `topmenu_subitems_max`. Первые три — шаблоны/темы писем: их текст теперь берётся из лексиконов (`signupemail_message` при создании пользователя всё ещё читается с fallback на лексикон). `manager_lang_attribute` и `topmenu_subitems_max` — неиспользуемые остатки.
+
+## Переименованы
+
+-   `mail_smtp_prefix` → `mail_smtp_secure`. Значение переносит установщик при обновлении ([скрипт апгрейда 3.0.0](https://github.com/modxcms/revolution/blob/3.x/setup/includes/upgrades/common/3.0.0-update-smtp-system-settings.php)).
+-   `upload_check_exists` → `upload_file_exists`. Для этого переименования **автоматической миграции нет**: после обновления проверьте настройки сайта на наличие старого ключа.
 
 ## Измененные значения по умолчанию
 

@@ -3,43 +3,41 @@ title: sqlsrv
 description: As of MODX 3.0, sqlsrv (mssql server) is no longer supported. This means that if you used sqlsrv with MODX 2.x, you will now need to migrate your database to upgrade to MODX 3. 
 ---
 
-As of MODX 3.0, sqlsrv (mssql server) is no longer supported. This means that if you used sqlsrv with MODX 2.x, you will now need to migrate your database to MySQL if you wish to upgrade to MODX 3.
+As of MODX 3.0, sqlsrv (mssql server) is no longer supported. If you used sqlsrv with MODX 2.x, migrate your database to MySQL to upgrade to MODX 3.
 
-MODX does not currently provide utilities to migrate, however there are various migration tools available online. 
+MODX does not provide migration utilities, but various migration tools are available online.
+
 
 ## Before you begin
 
-It's strongly recommended running a database type migration on a development or staging site, rather than production. It may take some time for data to be copied and migrated across.
+Run the migration on a development or staging site, not production. Copying and migrating the data may take a while.
 
 ## Step 1, migrate to MySQL
 
-To get started, first **migrate your sqlsrv database to a new MySQL database** with a third party tool. One option that we'll describe here is using MySQL Workbench, [available here](https://dev.mysql.com/downloads/workbench/).
+**Migrate your sqlsrv database to a new MySQL database** with a third-party tool. One option is MySQL Workbench, [available here](https://dev.mysql.com/downloads/workbench/).
 
 In the top menu choose Database > Migration wizard.
 
 ![Choose Migration Wizard in the database menu of MySQL Workbench](sqlsrv-migration-workbench.png)
 
-At the bottom of the screen click "Start migration" and keep going through the steps shown in the task list to get your data moved over into the clean database.
+At the bottom of the screen click "Start migration" and follow the steps in the task list to move the data into the clean database.
 
 ## Step 2, create a clean MODX installation on MySQL
 
-Next up we're going to create a clean MODX installation **using the same version currently installed on sqlsrv**. 
+Create a clean MODX installation **on the same version that currently runs on sqlsrv**.
 
-The reason to first create a clean installation is that while the migration tries to guess the appropriate data types and such, it is possible that will deviate slightly from the MODX schemas for MySQL. 
+A clean installation is needed because the migration guesses data types and may deviate slightly from the MODX schemas for MySQL.
 
-[Follow the standard installation instructions](getting-started/installation) to create your clean MODX installation. 
+[Follow the standard installation instructions](getting-started/installation) to create the clean installation.
 
 ## Step 3, copy data from the migration into the clean install
 
-Next, use a MySQL tool (such as MySQL Workbench or PHPMyAdmin) to export **only the data** from the migrated database to file. **Do not export the structure**! Make sure to create the export with the "truncate before insert" option because we don't need to keep the information from the clean install, we just want its database structure.
+Use a MySQL tool (such as MySQL Workbench or PHPMyAdmin) to export **only the data** from the migrated database to a file. **Do not export the structure**. Enable "truncate before insert" in the export: the clean install contributes only its database structure, not its data.
 
-Import the export onto the clean installation. 
+Import the export into the clean installation.
 
 ## Step 4, copy files and test
 
-Finally, make sure to move across all files that your site needs. That includes components, assets, etc, however make sure to **not** overwrite the `core/config/config.inc.php` file.
+Move across all files your site needs — components, assets, etc. Do **not** overwrite `core/config/config.inc.php`.
 
-Now you can test your site on MySQL and make sure it all works as expected. 
-
-
-
+Test the site on MySQL and check that everything works as expected.

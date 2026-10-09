@@ -3,35 +3,39 @@ title: Changed Class Names
 note: This list may be incomplete, please edit this page to help make it complete.
 ---
 
-In order to implement namespaces and make sense of certain code, a lot of files and classes were renamed and moved in 3.0. This leads to potential breaking changes.
+To implement namespaces, 3.0 renamed and moved many files and classes. You may see warnings or errors (including fatal errors) when you:
 
-You may encounter warnings or errors (including fatal errors) in certain cases:
-
--   when using a direct `include`/`require` statements targeting any relevant file that is no longer there
--   when extending one of these classes
--   when type hinting against these classes
+- `include`/`require` a file that is no longer there
+- extend one of these classes
+- type hint against these classes
 
 ## Model & Service Classes
 
-Most model and service classes that are loaded through `$modx->loadClass` (which includes the xPDO Query builder for model classes) or `$modx->getService` will still work, as `loadClass` internally translates these to their new class names.
+Most model and service classes loaded through `$modx->loadClass` (including the xPDO Query builder) or `$modx->getService` still work: `loadClass` translates the old names internally. `$modx->getIterator('modResource')` still resolves — and logs a deprecation. Prefer `$modx->getIterator(\MODX\Revolution\modResource::class)`.
 
-`$modx->getService()` itself is **deprecated** in 3.x. xPDO phpdoc (and therefore PhpStorm) still say it will be removed in 3.1. That did not happen: the method remains, and the core still uses it. For new code, register and fetch objects on `$modx->services`. See [modX.getService](extending-modx/modx-class/reference/modx.getservice) and the [DI container](extending-modx/di-container).
+`$modx->getService()` itself is **deprecated** in 3.x but was **not** removed in 3.1; the core still uses it. For new code, register and fetch objects on `$modx->services`. See [modX.getService](extending-modx/modx-class/reference/modx.getservice) and the [DI container](extending-modx/di-container).
 
-For example `$modx->getIterator('modResource')` will still work - _for now_, even though the `\modResource` class is now `\MODX\Revolution\modResource`.
+### Type checks against old names
 
-That will log a deprecated message to your error log encouraging you to update your reference. The right call would be `$modx->getIterator(\MODX\Revolution\modResource::class)`.
+With the deprecated global class aliases loaded (the default), the old name is a real class, so `instanceof modResource` works. Disable `load_deprecated_global_class_aliases` (see below) and two things change:
 
-It is important to note that if you're **type checking** the result of such a call (e.g. `if ($foo instanceof modResource)`), you may not immediately encounter an error (compared to typehinting, like `public function(modResource $foo)`, which does cause an error), but that **will evaluate to `false`** because the old class name does not exist anymore, so that check always fails.
+- a type hint (`public function(modResource $foo)`) fails outright
+- `instanceof modResource` silently evaluates to `false`, because PHP allows `instanceof` against a class that does not exist
 
-You can type check against non-existant classes without a warning in PHP, so you could resolve that by type checking for both the 2.x and 3.0 class name. (e.g. `if (($foo instanceof modResource) || $foo instanceof \MODX\Revolution\modResource))`
+To cover both cases, check both names:
+
+```php
+if ($foo instanceof modResource || $foo instanceof \MODX\Revolution\modResource) {
+```
+
+This works whether or not the aliases are loaded.
 
 ## Changed classes, with upgrade path
 
-The following class names were changed, but have been aliased in 3.0 to help alleviate upgrade pains as they are commonly used. The aliases are automatically in `modX::loadConfig` if `load_deprecated_global_class_aliases` is true, which is the default. It's possible to disable by adding the key with a value of `false` to your `$config_options` in `core/config/config.inc.php`.
+These commonly used classes are aliased to their new names. The aliases load in `modX::loadConfig` when `load_deprecated_global_class_aliases` is `true` (the default). To disable them, add the key with a value of `false` to `$config_options` in `core/config/config.inc.php`.
 
-**The aliases will no longer be automatically available in MODX 3.3.** If you have not yet updated relevant code by then, you can manually require `core/include/deprecated.php` to temporarily resolve that, but you should still make sure to update the code to the new classes.
 
-This layer of backwards compatibility is likely to be fully removed in MODX 4.0.
+**Automatic loading of these aliases will stop in a future 3.x release — the source comment in `core/include/deprecated.php` says "likely 3.3 or 3.4".** If you still need the aliases after that, you can manually require `core/include/deprecated.php` as a stopgap, but update your code to the new classes anyway. The backwards-compatibility layer itself (including manual loading) will likely be removed in MODX 4.0.
 
 ### xPDO
 
@@ -54,6 +58,7 @@ How Composer, PSR-4, `metadata.mysql.php`, and Extra `addPackage` calls fit toge
 | New Class                                   | Old Class                   |
 | ------------------------------------------- | --------------------------- |
 | \MODX\Revolution\modX                       | \modX                       |
+| \MODX\Revolution\modManagerController       | \modManagerController       |
 | \MODX\Revolution\modParsedManagerController | \modParsedManagerController |
 | \MODX\Revolution\modExtraManagerController  | \modExtraManagerController  |
 
@@ -63,29 +68,42 @@ How Composer, PSR-4, `metadata.mysql.php`, and Extra `addPackage` calls fit toge
 | ---------------------------- | ------------ |
 | \MODX\Revolution\modResource | \modResource |
 
+### Services, interfaces and utilities
+
+| New Class                                            | Old Class                     |
+| ---------------------------------------------------- | ----------------------------- |
+| \MODX\Revolution\modParser                           | \modParser                    |
+| \MODX\Revolution\Mail\modMail                        | \modMail                      |
+| \MODX\Revolution\Mail\modPHPMailer                   | \modPHPMailer                 |
+| \MODX\Revolution\Sources\modMediaSource              | \modMediaSource               |
+| \MODX\Revolution\modSystemEvent                      | \modSystemEvent               |
+| \MODX\Revolution\modTemplateVarInputRender           | \modTemplateVarInputRender    |
+| \MODX\Revolution\modTemplateVarOutputRender          | \modTemplateVarOutputRender   |
+| \MODX\Revolution\modDashboardWidgetInterface         | \modDashboardWidgetInterface  |
+
 ### Processors
 
-All processors have been renamed and moved, including the base processor classes. Flat-file processors are also no longer supported. [See the dedicated processors documentation](getting-started/upgrading-to-3.0/processors)
+All processors, including the base classes (`\modProcessor`, `\modObjectProcessor`, `\modObject*Processor`, `\modProcessorResponse`, `\modProcessorResponseError`), have been renamed and moved. Old names have aliases for now; flat-file processors are gone. See the [processors page](getting-started/upgrading-to-3.0/processors).
 
 ## Changed classes, without upgrade path
 
-All other model and service classes do not include an automatic alias. This includes utilities like the parser (`\MODX\Revolution\modParser`)
+Every other model and service class has no alias. This includes the everyday objects from `getObject`/`getCollection`, such as `\MODX\Revolution\modContext`, `\MODX\Revolution\modUser`, `\MODX\Revolution\modChunk`, `\MODX\Revolution\modSnippet`, `\MODX\Revolution\modPlugin` and `\MODX\Revolution\modTemplate`.
 
 ## Removed classes
 
-These classes were permanently removed from 3.0 with no alternative:
+These classes were removed from 3.0 with no alternative:
 
--   `modDeprecatedProcessor`
--   `modParser095`
--   `modTranslate095`
--   `modTranslator`
--   All classes and functions related to the `xmlrss` service/utility: `Snoopy`, `MagpieRSS`, `modRSSParser`, `RSSCache`, function `parse_w3cdtf`, function `fetch_rss`. To fetch RSS feeds, you can now use SimplePie.
--   All classes and functions related to the `xmlrpc` and `jsonrpc` services/utilities: `modXMLRPCResponse`, `modJSONRPCResponse`, `modXMLRPCResource` (+ platform classes), `modJSONRPCResource` (+ platform classes)
--   `modManagerControllerDeprecated`
+- `modDeprecatedProcessor`
+- `modParser095`
+- `modTranslate095`
+- `modTranslator`
+- All classes and functions related to the `xmlrss` service/utility: `Snoopy`, `MagpieRSS`, `modRSSParser`, `RSSCache`, function `parse_w3cdtf`, function `fetch_rss`. To fetch RSS feeds, use SimplePie.
+- All classes and functions related to the `xmlrpc` and `jsonrpc` services/utilities: `modXMLRPCResponse`, `modJSONRPCResponse`, `modXMLRPCResource` (+ platform classes), `modJSONRPCResource` (+ platform classes)
+- `modManagerControllerDeprecated`
 
-Flash clipboard helpers previously used by ExtJS for copy-to-clipboard are gone with the Flash removal [#13697](https://github.com/modxcms/revolution/pull/13697). Use the browser clipboard APIs instead.
+Flash clipboard helpers used by ExtJS for copy-to-clipboard are gone; use the browser clipboard APIs instead [#13697](https://github.com/modxcms/revolution/pull/13697).
 
 ## Signature changes
 
--   `modResponse::_construct` (and inherited `modManagerResponse`/`modConnectorResponse`) is now marked `public` and no longer includes the ampersand as objects are always passed by reference.
--   `Processor::getInstance` and `modManagerController::getInstance` no longer use the ampersand for passing modX as reference.
+- `modResponse::_construct` (and inherited `modManagerResponse`/`modConnectorResponse`) is now `public` and no longer uses the ampersand: objects are always passed by reference.
+- `Processor::getInstance` and `modManagerController::getInstance` no longer pass modX by reference with the ampersand.

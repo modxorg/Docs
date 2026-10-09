@@ -33,7 +33,7 @@ Cuando creas un nuevo contexto además del contexto "web" predeterminado, es pos
 
  Puedes crear configuraciones para cualquier contexto definido haciendo clic en ** Sistema -> Contextos**. Luego haz clic con el botón derecho en cualquier contexto y selecciona "Actualizar Contexto".
 
- Cada contexto puede tener su propia configuración que anula o extiende las [Configuraciones de Sistema](building-sites/settings "Configuraciones de Sistema"). Las configuraciones de contexto, a su vez pueden ser anuladadas o extendidas por las [Configuraciones de Usuario](administering-your-site/security/users#Users-UsersUserSettings). La jerarquía a recordar es esta:
+ Cada contexto puede tener su propia configuración que anula o extiende las [Configuraciones de Sistema](/current/en/building-sites/settings "Configuraciones de Sistema"). Las configuraciones de contexto, a su vez pueden ser anuladadas o extendidas por las [Configuraciones de Usuario](/current/en/building-sites/client-proofing/security/users#Users-UsersUserSettings). La jerarquía a recordar es esta:
 
  Configuración del sistema -> Configuración del contexto -> Configuración del usuario
 
@@ -61,5 +61,5 @@ $setting = $modx->getOption('my_context_setting');
 
 ## Ver también
 
-1. [Crear un subdominio desde una carpeta usando hosts virtuales](building-sites/contexts/virtual-host)
-2. [Uso de un Plugin de puertas para administrar múltiples dominios](building-sites/contexts/gateway-plugin)
+1. [Crear un subdominio desde una carpeta usando hosts virtuales](/current/en/building-sites/contexts/virtual-host)
+2. [Uso de un Plugin de puertas para administrar múltiples dominios](/current/en/building-sites/contexts/gateway-plugin)

@@ -2,21 +2,19 @@
 title: Core folder
 ---
 
-The core folder can no longer be moved to a custom path or renamed in 3.0. 
+In 3.0 the core folder can no longer be moved to a custom path or renamed. Composer manages dependencies and autoloading for the core, which requires the standard location. [#15476](https://github.com/modxcms/revolution/issues/15476)
 
-This is due to the way Composer is integrated with the core development process for managing dependencies and enabling autoloading in the core. [#15476](https://github.com/modxcms/revolution/issues/15476)
+## Upgrading
 
-## Upgrading 
+If you have a custom core directory, or the core sits outside the webroot, reverse that before upgrading:
 
-If you currently have a custom core directory or have it moved out of the webroot, you'll need to reverse that process before upgrading to 3.0. 
+1. Move the core directory back to /core/ in the root of the installation.
+2. Edit `config.core.php`, `/manager/config.core.php`, and `/connectors/config.core.php` to use the updated core path.
 
-That means:
+The `MODX_CORE_PATH` definition in `core/config/config.inc.php` is only a fallback that never runs once `config.core.php` already defines the constant, so it does not need changing — keep the two in sync if you edit it anyway.
 
-1. Move the core directory back to /core/ in the root of the installation
-2. Edit core/config/config.inc.php with the updated core path
-3. Edit config.core.php, /manager/config.core.php, and /connectors/config.core.php to use the update core path.
+After those steps, run the MODX installer to verify the path was updated correctly.
 
-After you've done those steps, you can run the MODX installer to verify it was updated correctly.
 
 ## But what about security?
 
@@ -38,7 +36,7 @@ location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
 
 These examples pass the request on to MODX with a non-existent alias, which has the benefit of ensuring it looks like the rest of your site. 
 
-On high-traffic sites you can prevent such requests from hitting MODX by immediately returning a 404, however that will then look different from a regular error which from a security point of view means an attacker can determine those files probably do exist. 
+On high-traffic sites you can prevent such requests from hitting MODX by immediately returning a 404. That response then differs from a regular error, which lets an attacker conclude the requested files probably do exist.
 
 For nginx, that would look like this:
 

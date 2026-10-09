@@ -68,7 +68,7 @@ Se requieren los siguientes permisos:
 
 MODX funciona en la mayoría de los servidores web actuales. Se recomiendan Apache 2.4+ o nginx 1.18.x.
 
-Para usar [friendly urls](getting-started/friendly-urls) puede hacer falta configuración adicional. Hay instrucciones para [apache](getting-started/friendly-urls/apache), [nginx](getting-started/friendly-urls/nginx) y [lighttpd](getting-started/friendly-urls/lighttpd).
+Para usar [friendly urls](getting-started/friendly-urls) puede hacer falta configuración adicional. Hay instrucciones para [apache](/current/en/getting-started/friendly-urls/apache), [nginx](getting-started/friendly-urls/nginx) y [lighttpd](getting-started/friendly-urls/lighttpd).
 
 ## Exploradores soportados por el Administrador
 

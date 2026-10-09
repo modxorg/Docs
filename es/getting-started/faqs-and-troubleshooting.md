@@ -15,13 +15,13 @@ La numeración de preguntas no representa nada más que eso - un número para in
 Preguntas frecuentes y/o solución de problemas sobre temas específicos en otros lugares:
 
 - [Solución de problemas de instalación](getting-started/installation/troubleshooting "Solución de problemas de instalación")
-- [Solución de problemas de actualizaciones](getting-started/maintenance/upgrading/troubleshooting "Solución de problemas de actualizaciones")
-- [Solución de problemas de gestión de paquetes](building-sites/extras/troubleshooting "Solución de problemas de gestión de paquetes")
-- [Solución de problemas de seguridad](building-sites/client-proofing/security/troubleshooting-security "Solución de problemas de seguridad")
+- [Solución de problemas de actualizaciones](/current/en/getting-started/maintenance/upgrading/troubleshooting "Solución de problemas de actualizaciones")
+- [Solución de problemas de gestión de paquetes](/current/en/building-sites/extras/troubleshooting "Solución de problemas de gestión de paquetes")
+- [Solución de problemas de seguridad](/current/en/building-sites/client-proofing/security/troubleshooting-security "Solución de problemas de seguridad")
 
 Subpáginas que tratan temas específicos:
 
-- [Preguntas frecuentes y solución de problemas de desarrollo de CMP (Páginas personalizadas del Administrador)](extending-modx/custom-manager-pages/troubleshooting "Preguntas frecuentes y solución de problemas de desarrollo de CMP (Páginas personalizadas del Administrador)")
+- [Preguntas frecuentes y solución de problemas de desarrollo de CMP (Páginas personalizadas del Administrador)](/current/en/extending-modx/custom-manager-pages/troubleshooting "Preguntas frecuentes y solución de problemas de desarrollo de CMP (Páginas personalizadas del Administrador)")
 
 En esta página, encontrarás las siguientes categorías y preguntas:
 
@@ -39,7 +39,7 @@ En foros y búsquedas verás varios nombres de producto. Mapa corto:
 
 ### 1.2. ¿Qué etiquetas diferentes puedo usar? Que es `[[*pagetitle]]`, `[[Wayfinder]]` etc?
 
-Consulta la documentación de [Sintáxis de Etiquetas](building-sites/tag-syntax "Sintáxis de Etiquetas"). Puedes encontrar los campos de recursos que puedes usar en Revolution en la [Documentación de recursos](building-sites/resources "Recursos").
+Consulta la documentación de [Sintáxis de Etiquetas](building-sites/tag-syntax "Sintáxis de Etiquetas"). Puedes encontrar los campos de recursos que puedes usar en Revolution en la [Documentación de recursos](/current/en/building-sites/resources "Recursos").
 
 ## 2. El Manager
 
@@ -47,28 +47,28 @@ Consulta la documentación de [Sintáxis de Etiquetas](building-sites/tag-syntax
 
 Probablemente la escondiste en algún momento. Hay una flecha sutil en el lado izquierdo de la pantalla ([ver esta imagen](/download/attachments/36634926/subtlearrow.PNG)) en la que puedes hacer clic para recuperarla. En algunos casos, deberás actualizar la página para que los contenidos de la barra lateral se carguen correctamente.
 
-### 2.2 ¿Cómo puedo modificar los campos de recursos que son visibles al crear o editar un [Recurso](building-sites/resources "Recurso")? ¿Existe algo como [Administrador del Manager](https://modx.com/extras/package/managermanager) en Revolution?
+### 2.2 ¿Cómo puedo modificar los campos de recursos que son visibles al crear o editar un [Recurso](/current/en/building-sites/resources "Recurso")? ¿Existe algo como [Administrador del Manager](https://modx.com/extras/package/managermanager) en Revolution?
 
-Puede usar la [Personalización de formularios](building-sites/client-proofing/form-customization "Personalización de Formularios") (que se encuentra bajo el menú de Seguridad) para cambiar los campos.
+Puede usar la [Personalización de formularios](/current/en/building-sites/client-proofing/form-customization "Personalización de Formularios") (que se encuentra bajo el menú de Seguridad) para cambiar los campos.
 
 ### 2.3 ¿Qué significa modDocument/modWeblink/modSymLink/modStaticResource?
 
 Son los nombres de clase de Documentos, Weblinks, Symlinks y Recursos estáticos. Son "subtipos" de recursos (nombre de clase modResource) y cada uno tiene su propio objetivo específico. Todos aparecen en el Árbol de recursos y pueden aparecer en cualquier lugar de la jerarquía.
 
-- [Documentos](building-sites/resources "Recursos") (comúnmente conocidos como Recursos, ver sección 2.4 a continuación) son páginas regulares y tienen contenido.
-- Un [Weblink](building-sites/resources/weblink "Weblink") redirige a un usuario a un recurso diferente o una URL externa.
-- Un [Symlink](building-sites/resources/symlink "Symlink") actúa como una copia de un documento.
-- [Recursos estáticos](building-sites/resources/static-resource "Recursos estáticos") actúan como documentos, sin embargo, su contenido proviene de un archivo en el sistema de archivos en vez de la base de datos.
+- [Documentos](/current/en/building-sites/resources "Recursos") (comúnmente conocidos como Recursos, ver sección 2.4 a continuación) son páginas regulares y tienen contenido.
+- Un [Weblink](/current/en/building-sites/resources/weblink "Weblink") redirige a un usuario a un recurso diferente o una URL externa.
+- Un [Symlink](/current/en/building-sites/resources/symlink "Symlink") actúa como una copia de un documento.
+- [Recursos estáticos](/current/en/building-sites/resources/static-resource "Recursos estáticos") actúan como documentos, sin embargo, su contenido proviene de un archivo en el sistema de archivos en vez de la base de datos.
 
 ### 2.4 ¿Cuál es la diferencia entre un recurso y un documento?
 
 Técnicamente, un Recurso (modResource) es un objeto abstracto del cual un Documento (modDocument) es una implementación.
 
-Prácticamente ambos términos se usan para indicar lo mismo: un documento que contiene cierto contenido. Tomando de la implementación técnica, un [Weblink](building-sites/resources/weblink "Weblink"), [Symlink](building-sites/resources/symlink "Symlink") ó [Recurso Estático](building-sites/resources/static-resource "Recurso Estático"), también se incluyen cuando se hace referencia a "Recursos", ya que también son implementaciones de la clase modResource.
+Prácticamente ambos términos se usan para indicar lo mismo: un documento que contiene cierto contenido. Tomando de la implementación técnica, un [Weblink](/current/en/building-sites/resources/weblink "Weblink"), [Symlink](/current/en/building-sites/resources/symlink "Symlink") ó [Recurso Estático](/current/en/building-sites/resources/static-resource "Recurso Estático"), también se incluyen cuando se hace referencia a "Recursos", ya que también son implementaciones de la clase modResource.
 
 ### 2.5 ¡Estoy bloqueado! ¡No puedo acceder al Manager! ¡Olvidé mi contraseña y la recuperación no funciona!
 
-No estás condenado [Consulta estas instrucciones para Revolution](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Restablecer una contraseña de usuario manualmente").
+No estás condenado [Consulta estas instrucciones para Revolution](/current/en/building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually "Restablecer una contraseña de usuario manualmente").
 
 ## 3. Problemas de visualización del sitio web público
 

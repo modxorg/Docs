@@ -33,7 +33,7 @@ Puedes usar MODX como tu sistema de gestión de contenido (CMS) preferido, ya qu
 
 Has examinado diferentes CMS, pero has descubierto que desarrollar en ellos es una mezcla de demasiados códigos sin conectar, o simplemente no son lo suficientemente potentes o elegantes. Has estudiado los frameworks PHP y has descubierto que tienen el potencial, pero no hacen Manejo de Contenido ni tienen una interfaz de usuario lo suficientemente buena para tus clientes. Deseas el poder y la flexibilidad de un framework, con la interfaz de usuario y la gestión de contenido de un CMS.
 
-Entra en MODX Revolution. Una API completamente flexible, potente y robusta, basada en los principios de POO y que utiliza un Modelo relacional de objetos (ORM) con PDO, llamado [xPDO](extending-modx/xpdo). Agrega una potente interfaz [Sencha](http://sencha.com) para tus clientes, totalmente personalizable. Propiedades y ajustes personalizados. Soporta internacionalización. Distribución de paquetes integrada para que puedas empaquetar tu código y distribuirlo en cualquier instalación de Revolution. Agrega páginas de administrador personalizadas para ejecutar aplicaciones completas dentro de MODX.
+Entra en MODX Revolution. Una API completamente flexible, potente y robusta, basada en los principios de POO y que utiliza un Modelo relacional de objetos (ORM) con PDO, llamado [xPDO](/current/en/extending-modx/xpdo). Agrega una potente interfaz [Sencha](http://sencha.com) para tus clientes, totalmente personalizable. Propiedades y ajustes personalizados. Soporta internacionalización. Distribución de paquetes integrada para que puedas empaquetar tu código y distribuirlo en cualquier instalación de Revolution. Agrega páginas de administrador personalizadas para ejecutar aplicaciones completas dentro de MODX.
 
 ## Conceptos básicos
 
@@ -41,23 +41,23 @@ En esencia, MODX lo forman un montón de partes engranadas. Pero las partes bás
 
 ### Recursos
 
-[Recursos](building-sites/resources "Resources") son básicamente una ubicación de página web. Puede ser contenido HTML real, o un archivo, enlace de reenvío o un enlace simbólico, o cualquier otra cosa a la que se pueda acceder mediante una URL.
+[Recursos](/current/en/building-sites/resources "Resources") son básicamente una ubicación de página web. Puede ser contenido HTML real, o un archivo, enlace de reenvío o un enlace simbólico, o cualquier otra cosa a la que se pueda acceder mediante una URL.
 
 ### Plantillas
 
-Las [Plantillas](building-sites/elements/templates "Templates") son la casa en la que habita un Recurso. Normalmente incluyen la cabecera y el pie de página.
+Las [Plantillas](/current/en/building-sites/elements/templates "Templates") son la casa en la que habita un Recurso. Normalmente incluyen la cabecera y el pie de página.
 
 ### Variables de Plantilla
 
-Las [Variables de Plantilla](building-sites/elements/template-variables "Template Variables") (TVs) son campos personalizados para una plantilla que permiten al usuario asignar valores dinámicos a un recurso. Un gran ejemplo sería una TV de 'etiquetas' que te permite especificar etiquetas para un recurso. Puede tener un número ilimitado de TVs por página.
+Las [Variables de Plantilla](/current/en/building-sites/elements/template-variables "Template Variables") (TVs) son campos personalizados para una plantilla que permiten al usuario asignar valores dinámicos a un recurso. Un gran ejemplo sería una TV de 'etiquetas' que te permite especificar etiquetas para un recurso. Puede tener un número ilimitado de TVs por página.
 
 ### Chunks (Trozos)
 
-[Chunks](building-sites/elements/chunks "Chunks") son simplemente pequeños bloques de contenido, con lo que quieras poner dentro de ellos. Pueden contener [Snippets](extending-modx/snippets "Snippets"), o cualquier otro tipo de Elemento (Snippet, Chunk, TV, etc).
+[Chunks](/current/en/building-sites/elements/chunks "Chunks") son simplemente pequeños bloques de contenido, con lo que quieras poner dentro de ellos. Pueden contener [Snippets](/current/en/extending-modx/snippets "Snippets"), o cualquier otro tipo de Elemento (Snippet, Chunk, TV, etc).
 
 ### Snippets (scripts)
 
-[Snippets](extending-modx/snippets "Snippets") son scripts dinámicos de código PHP que se ejecutan cuando se carga la página. Pueden hacer cualquier cosa que se pueda codificar, incluida la creación de menús personalizados, capturar datos personalizados, etiquetar elementos, procesar formularios, capturar tweets, etc, etc.
+[Snippets](/current/en/extending-modx/snippets "Snippets") son scripts dinámicos de código PHP que se ejecutan cuando se carga la página. Pueden hacer cualquier cosa que se pueda codificar, incluida la creación de menús personalizados, capturar datos personalizados, etiquetar elementos, procesar formularios, capturar tweets, etc, etc.
                                                                                                                               
 
 
@@ -71,9 +71,9 @@ Los Ajustes de Sistema te ofrecen opciones de configuración casi infinitas. La 
 
 ## Entonces, ¿qué pasa con una solicitud de página?
 
-MODX carga el [Recurso](building-sites/resources "Resources") solicitado, busca la [Plantilla](building-sites/elements/templates "Templates") del Recurso, y coloca el contenido del Recurso en la Plantilla. MODX luego analiza el contenido combinado resultante, incluidas las etiquetas que puedan estar en él, en el orden en que se encuentran. De ahí, envía la respuesta al explorador del usuario.
+MODX carga el [Recurso](/current/en/building-sites/resources "Resources") solicitado, busca la [Plantilla](/current/en/building-sites/elements/templates "Templates") del Recurso, y coloca el contenido del Recurso en la Plantilla. MODX luego analiza el contenido combinado resultante, incluidas las etiquetas que puedan estar en él, en el orden en que se encuentran. De ahí, envía la respuesta al explorador del usuario.
 
 ## Ver también
 
-1. [Glosario de términos de Revolution](getting-started/an-overview-of-modx/glossary-of-revolution-terms)
-    1. [Explicación de la Estructura de Directorios](getting-started/an-overview-of-modx/glossary-of-revolution-terms/explanation-of-directory-structure)
+1. [Glosario de términos de Revolution](/current/en/getting-started/glossary)
+    1. [Explicación de la Estructura de Directorios](/current/en/getting-started/directory-structure)

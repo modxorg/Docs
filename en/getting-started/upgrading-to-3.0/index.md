@@ -3,23 +3,18 @@ title: "Upgrading from 2.x to 3.0"
 sortorder: 7
 ---
 
-This document details the changes made between 2.x and 3.0 that may affect upgrades. It's not a full list of all changes (see the [changelog for that](https://github.com/modxcms/revolution/blob/3.x/core/docs/changelog.txt)), but rather a reference of (breaking) changes that may affect extras and sites.
-
-
-
-[You may find a list of compatible extras on SiteDash](https://sitedash.app/extras).
+This page lists breaking changes from 2.x to 3.0 that may affect extras and sites. For the full list, see the [changelog](https://github.com/modxcms/revolution/blob/3.x/core/docs/changelog.txt). Compatible extras: [SiteDash list](https://sitedash.app/extras).
 
 ## Upgrade to 3.0
 
 Setup only upgrades from **MODX 2.6.0 or later**. On 2.5 or older, upgrade to 2.6 first. Setup stops with a failure if the current version is below 2.6.0.
 
-After you are on 2.6+, follow the [standard upgrading process](getting-started/maintenance/upgrading). Then spend time on the latest **2.8** release before 3.0. 2.8 writes deprecated API use to the MODX log. Fix extras and custom code there, then jump to 3.0.
+From 2.6+, follow the [standard upgrading process](getting-started/maintenance/upgrading). Upgrade to the latest **2.8** release before 3.0: 2.8 writes deprecated API use to the MODX log. Fix extras and custom code there, then move to 3.0.
 
-After upgrading the core and upgrading your extras, you may encounter some breaking changes that need to be addressed in extras or custom code.
 
 - ⚠️ Important: upgrades from MODX older than **2.6.0** are not supported
 - ⚠️ Important: [the core folder must now always be located in the project root, and can no longer be renamed](getting-started/upgrading-to-3.0/core-folder)
-- ⚠️ Important: [MODX 3.0 required PHP 7.2; current 3.x (3.2+) requires PHP 8.1+](getting-started/upgrading-to-3.0/requirements)
+- ⚠️ Important: [MODX 3.0 required PHP 7.2.5; current 3.x (3.2+) requires PHP 8.1+](getting-started/upgrading-to-3.0/requirements)
 - ⚠️ Important: [sqlsrv support has been removed](getting-started/upgrading-to-3.0/sqlsrv)
 - [A list of breaking changes can be found here](getting-started/upgrading-to-3.0/breaking-changes), most notably [many core classes have been moved and renamed](getting-started/upgrading-to-3.0/class-names)
 - [Updating Extras for 3.0](getting-started/upgrading-to-3.0/extras)
@@ -35,10 +30,11 @@ After upgrading the core and upgrading your extras, you may encounter some break
 ### Manager/Interface
 
 - New template picker allows for easier resource creation [#15535](https://github.com/modxcms/revolution/pull/15535)
-- Redesigned installer [#14507](https://github.com/modxcms/revolution/pull/14507) and login [#13773](https://github.com/modxcms/revolution/pull/13773).
+- Redesigned installer [#14507](https://github.com/modxcms/revolution/pull/14507) and login [#13773](https://github.com/modxcms/revolution/pull/13773)
 - Manager has been redesigned. Improved manager on mobile devices [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735). Changed resource styles in the tree [#14832](https://github.com/modxcms/revolution/pull/14832)
 - Language can now be switched on the fly [#14046](https://github.com/modxcms/revolution/pull/14046)
 - All manager permissions are automatically made available in `MODx.perm` [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425). See [The MODx Object](extending-modx/custom-manager-pages/modext/modext-modx-object).
+- The manager also exposes `MODx.user` (`{id, username}`) for scripts that need the current user.
 - Google translations are now disabled in the manager [#14414](https://github.com/modxcms/revolution/pull/14414)
 - More consistent resource/element duplication [#14411](https://github.com/modxcms/revolution/pull/14411)
 
@@ -52,6 +48,7 @@ After upgrading the core and upgrading your extras, you may encounter some break
 - Core directories are now protected from being renamed/removed from the manager [#14374](https://github.com/modxcms/revolution/pull/14374). See [File System media sources](building-sites/media-sources/types/media-source-type-file-system).
 
 ### Resources & Templates
+
 
 - Resources can now get an icon based on their content type [#14383](https://github.com/modxcms/revolution/pull/14383). See [Content Types](building-sites/resources/content-types).
 - New output modifiers related to files: `dirname`, `basename`, `filename`, `extension` [#14198](https://github.com/modxcms/revolution/pull/14198). See [Output Filter/Modifiers](building-sites/tag-syntax/output-filters).

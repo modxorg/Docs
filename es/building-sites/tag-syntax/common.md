@@ -4,7 +4,7 @@ _old_id: "60"
 _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags"
 ---
 
-Esta página enumera las etiquetas de MODX Revolution normalmente utilizadas, como una ayuda para cualquiera que convierta diseños HTML/CSS en [plantillas de MODX](building-sites/elements/templates "Plantillas"). Estas se denominan frecuentemente "etiquetas" (_tags_) o "marcadores de posición"(_placeholders_) y, a veces, "variables de plantilla", por lo que mencionamos esos términos como ayuda para la búsqueda, aunque técnicamente hablando **no** son   marcadores de posición ni variables de plantilla: son etiquetas de MODX. Sí, puede resultar confuso para el recién llegado, así que recuerda que hay diferentes tipos de estas etiquetas, cada una con su propio propósito y nombre. Los marcadores de posición se establecen en código y se muestran con etiquetas de marcador de posición. Las [Variables de Plantilla](building-sites/elements/template-variables "Variables de Plantilla") son campos de contenido adicionales que se añaden a los predeterminados de los recursos, y creados por el usuario. Se pueden considerar como campos personalizados. El núcleo (core) de MODX no pre-establece ni los marcadores de posición ni las variables de plantilla.
+Esta página enumera las etiquetas de MODX Revolution normalmente utilizadas, como una ayuda para cualquiera que convierta diseños HTML/CSS en [plantillas de MODX](/current/en/building-sites/elements/templates "Plantillas"). Estas se denominan frecuentemente "etiquetas" (_tags_) o "marcadores de posición"(_placeholders_) y, a veces, "variables de plantilla", por lo que mencionamos esos términos como ayuda para la búsqueda, aunque técnicamente hablando **no** son   marcadores de posición ni variables de plantilla: son etiquetas de MODX. Sí, puede resultar confuso para el recién llegado, así que recuerda que hay diferentes tipos de estas etiquetas, cada una con su propio propósito y nombre. Los marcadores de posición se establecen en código y se muestran con etiquetas de marcador de posición. Las [Variables de Plantilla](/current/en/building-sites/elements/template-variables "Variables de Plantilla") son campos de contenido adicionales que se añaden a los predeterminados de los recursos, y creados por el usuario. Se pueden considerar como campos personalizados. El núcleo (core) de MODX no pre-establece ni los marcadores de posición ni las variables de plantilla.
 
 ## Etiquetas de campo de contenido de recursos predeterminadas
 
@@ -19,7 +19,7 @@ Esta página enumera las etiquetas de MODX Revolution normalmente utilizadas, co
 | **`[[*description]]`** | la Descripción de la página                                                                                  | `<meta name="description" content="[[*description]]"/>`                                                                                                                               |
 | **`[[*introtext]]`**   | el campo Introductorio (también llamado Sumario).                                                     | Usado a menudo por Snippets para resumir publicaciones, por ej. `<div id="summary">[[*introtext]]</div>`                                                                                              |
 | **`[[*parent]]`**      | el ID de la página padre (si existe). Establecido por MODX cuando se crea la página. Puede ser modificado por el usuario. | A menudo se usa junto con la sintaxis de enlace, por ej. `<a href="[[~[[*parent]]]]">Volver arriba</a>`                                                                              |
-| **`[[*menutitle]]`**   | el Título con el que la página aparece en los menús.                                                        | _Más utilizado por Snippets como_ [Wayfinder](extras/wayfinder "Wayfinder") o [pdoMenu](extras/pdotools/snippets/pdomenu "pdoMenu")  _cuando se construyen menús dinámicamente_ |
+| **`[[*menutitle]]`**   | el Título con el que la página aparece en los menús.                                                        | _Más utilizado por Snippets como_ [Wayfinder](/current/en/extras/wayfinder "Wayfinder") o [pdoMenu](/current/en/extras/pdotools/snippets/pdomenu "pdoMenu")  _cuando se construyen menús dinámicamente_ |
 | **`[[*content]]`**     | el contenido de la página.                                                                              | `<body>[[*content]]</body>`                                                                                                                                                           |
 
 ## Otras etiquetas comunes
@@ -32,7 +32,7 @@ Esta página enumera las etiquetas de MODX Revolution normalmente utilizadas, co
 | **`[[++site_name]]`**         | Nombre del sitio                                                                                                                                                                                                                                                                                                                                            | `<title>[[++site_name]]  [[*pagetitle]]</title>`                                                                                           |
 | **`[[++site_start]]`**        | Contiene el ID de la página designada como tu página de "inicio".                                                                                                                                                                                                                                                                                                 | A menudo se usa junto con la sintaxis de enlace, por ej. `<a id="logo" href="[[~[[++site_start]]]"> Inicio </a>`                                    |
 | **`[[$chunk]]`**              | Hace referencia a un chunk por su nombre. Los chunks son cualquier _parte_ de contenido reutilizable.                                                                                                                                                                                                                                                                                    | Chunks comunes pueden ser _cabecera_ o _pieDePagina_                                                                                              |
-| **`[[~link]]`**               | Utiliza esta sintaxis para crear enlaces a páginas haciendo referencia a su identificación única (visible entre paréntesis junto al nombre de la página en el árbol de recursos). Estos enlaces no se romperán si las páginas se mueven o se les cambia el nombre. Puedes cambiar el esquema generado del enlace pasando el parámetro &scheme (ver [link\_tag\_scheme](building-sites/settings/link_tag_scheme)) | `<a id="logo" href="[[~1]]">Inicio</a>`                                                                                                        |
+| **`[[~link]]`**               | Utiliza esta sintaxis para crear enlaces a páginas haciendo referencia a su identificación única (visible entre paréntesis junto al nombre de la página en el árbol de recursos). Estos enlaces no se romperán si las páginas se mueven o se les cambia el nombre. Puedes cambiar el esquema generado del enlace pasando el parámetro &scheme (ver [link\_tag\_scheme](/current/en/building-sites/settings/link_tag_scheme)) | `<a id="logo" href="[[~1]]">Inicio</a>`                                                                                                        |
 | **`[[%translated_message]]`** | Utiliza etiquetas de léxico para traducir mensajes.                                                                                                                                                                                                                                                                                                                      | ```[[!%setting_emailsender? &topic=`setting` &namespace=`core` &language=`en`]]```                                                           |
 
 ## Todas las etiquetas
@@ -82,13 +82,13 @@ Esta página enumera las etiquetas de MODX Revolution normalmente utilizadas, co
 
 - [Formatos de Fecha](building-sites/tag-syntax/date-formats "Formatos de Fecha"): muestra cómo dar formato a los campos de fecha.
 
-1. [Recursos](building-sites/resources)
-2. [Tipos de contenido](building-sites/resources/content-types)
-3. [Ancla nombrada](building-sites/integrating-templates/named-anchor)
-4. [Recurso estático](building-sites/resources/static-resource)
-5. [Symlink](building-sites/resources/symlink)
-6. [Uso de recursos Symlinks](building-sites/resources/symlink/using-resource-symlinks)
-7. [Weblink](building-sites/resources/weblink)
-8. [Plantillas](building-sites/elements/templates)
-9. [Chunks](building-sites/elements/chunks)
-10. [Usando Snippets](building-sites/elements/snippets)
+1. [Recursos](/current/en/building-sites/resources)
+2. [Tipos de contenido](/current/en/building-sites/resources/content-types)
+3. [Ancla nombrada](/current/en/building-sites/integrating-templates/named-anchor)
+4. [Recurso estático](/current/en/building-sites/resources/static-resource)
+5. [Symlink](/current/en/building-sites/resources/symlink)
+6. [Uso de recursos Symlinks](/current/en/building-sites/resources/symlink/using-resource-symlinks)
+7. [Weblink](/current/en/building-sites/resources/weblink)
+8. [Plantillas](/current/en/building-sites/elements/templates)
+9. [Chunks](/current/en/building-sites/elements/chunks)
+10. [Usando Snippets](/current/en/building-sites/elements/snippets)

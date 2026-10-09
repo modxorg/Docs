@@ -18,7 +18,7 @@ translation: "getting-started/upgrading-to-3.0"
 
 - ⚠️ Важно: прямое обновление до MODX 3 с версий ниже **2.6.0** не поддерживается
 - ⚠️ Важно: [каталог core теперь всегда должен находиться в корне проекта и больше не может быть переименован](getting-started/upgrading-to-3.0/core-folder)
-- ⚠️ Важно: [MODX 3.0 требовал PHP 7.2, текущие 3.x (3.2+) требуют PHP 8.1+](getting-started/upgrading-to-3.0/requirements)
+- ⚠️ Важно: [MODX 3.0 требовал PHP 7.2.5, текущие 3.x (3.2+) требуют PHP 8.1+](getting-started/upgrading-to-3.0/requirements)
 - ⚠️ Важно: [поддержка sqlsrv удалена](getting-started/upgrading-to-3.0/sqlsrv)
 - [Список критических изменений](getting-started/upgrading-to-3.0/breaking-changes), в частности [многие классы ядра перенесены и переименованы](getting-started/upgrading-to-3.0/class-names)
 - [Обновление дополнений для 3.0](getting-started/upgrading-to-3.0/extras)
@@ -38,6 +38,7 @@ translation: "getting-started/upgrading-to-3.0"
 - Менеджер переработан. Улучшена работа на мобильных [#14700](https://github.com/modxcms/revolution/pull/14700), [#14735](https://github.com/modxcms/revolution/pull/14735). Изменены стили ресурсов в дереве [#14832](https://github.com/modxcms/revolution/pull/14832)
 - Язык можно переключать на лету [#14046](https://github.com/modxcms/revolution/pull/14046)
 - Все разрешения менеджера автоматически доступны в `MODx.perm` [#13924](https://github.com/modxcms/revolution/pull/13924), [#14425](https://github.com/modxcms/revolution/pull/14425). См. [Объект MODx](extending-modx/custom-manager-pages/modext/modext-modx-object).
+- Менеджер также отдаёт `MODx.user` (`{id, username}`) для скриптов, которым нужен текущий пользователь.
 - Перевод Google отключён в менеджере [#14414](https://github.com/modxcms/revolution/pull/14414)
 - Более последовательное дублирование ресурсов и элементов [#14411](https://github.com/modxcms/revolution/pull/14411)
 

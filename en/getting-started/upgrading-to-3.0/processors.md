@@ -4,20 +4,20 @@ title: Processors
 
 In MODX 3.0 all processors have been **renamed** and **moved** compared to 2.x. This also includes the base processors (`modObject...Processor`).
 
-For third party extras, this means:
+For third-party extras, this means:
 
--   If you extend any core processor in custom code, that will need your attention.
--   If you call any core processors with runProcessor, those should still work, but may have slightly different behavior.
--   If you use flat-file processors, you will need to rewrite the processor into a class.
+- If you extend any core processor in custom code, that needs your attention.
+- If you call core processors with runProcessor, those still work, but may have slightly different behavior.
+- If you use flat-file processors, you will need to rewrite the processor into a class.
 
 ## Base processors
 
-Any processor that previously inherited from a base processor (such as `modProcessor`, `modObjectProcessor`, `modDriverSpecificProcessor`, and any `modObject*Processor`) will need to be updated. Practically, that means every single processor.
+Any processor that previously inherited from a base processor (`modProcessor`, `modObjectProcessor`, `modDriverSpecificProcessor`, any `modObject*Processor`) must be updated. Practically, that means every processor.
 
-To help ease with the transition to 3.0, the old class names are automatically made available as aliases, but **those aliases will be removed in MODX 3.3**.
+The old class names are available as aliases for now, but **automatic loading of those aliases will stop in a future 3.x release (the source comment in `core/include/deprecated.php` says "likely 3.3 or 3.4")**.
 
--   If you want to support both 2.x and 3.x, you can continue to use the `modObject...Processor` classes for now, but you should make a plan for MODX 3.3+. Communicate clearly to your users which versions you intend to support and until when.
--   To upgrade your codebase to support 3.0+ (and not require additional upgrades when 3.3 comes), you'll need to change the class name you're extending.
+- To support both 2.x and 3.x, you can keep using the `modObject...Processor` classes for now, but plan for MODX 3.3+. Tell your users which versions you support and until when.
+- To support 3.0+ without another round of changes when the aliases stop loading, change the class name you extend.
 
 | Old Class                       | New Class                                               |
 | ------------------------------- | ------------------------------------------------------- |
@@ -29,13 +29,16 @@ To help ease with the transition to 3.0, the old class names are automatically m
 | `\modObjectExportProcessor`     | `\MODX\Revolution\Processors\Model\ExportProcessor`     |
 | `\modObjectGetListProcessor`    | `\MODX\Revolution\Processors\Model\GetListProcessor`    |
 | `\modObjectGetProcessor`        | `\MODX\Revolution\Processors\Model\GetProcessor`        |
+| `\modObjectImportProcessor`     | `\MODX\Revolution\Processors\Model\ImportProcessor`     |
 | `\modObjectRemoveProcessor`     | `\MODX\Revolution\Processors\Model\RemoveProcessor`     |
 | `\modObjectSoftRemoveProcessor` | `\MODX\Revolution\Processors\Model\SoftRemoveProcessor` |
 | `\modObjectUpdateProcessor`     | `\MODX\Revolution\Processors\Model\UpdateProcessor`     |
+| `\modProcessorResponse`         | `\MODX\Revolution\Processors\ProcessorResponse`         |
+| `\modProcessorResponseError`    | `\MODX\Revolution\Processors\ProcessorResponseError`    |
 
 ## Calling core processors with runProcessor
 
-Any call to a core processor will need to be reviewed. The old action names in [modX::runProcessor](extending-modx/modx-class/reference/modx.runprocessor) (e.g. `resource/create`) are still supported, but it is possible that the internal logic of some processors has changed.
+Review every call to a core processor. The old action names in [modX::runProcessor](extending-modx/modx-class/reference/modx.runprocessor) (e.g. `resource/create`) are still supported, but the internal logic of some processors has changed. `runProcessor` also accepts a full processor class name as `$action`, e.g. `$modx->runProcessor(\MODX\Revolution\Processors\Resource\Create::class, $props)`.
 
 ## Custom resource types (CRC)
 
@@ -48,12 +51,11 @@ In 2.x the core classes lived at `core/model/modx/processors/resource/create.cla
 | `\modResourceCreateProcessor`   | `\MODX\Revolution\Processors\Resource\Create`   |
 | `\modResourceUpdateProcessor`   | `\MODX\Revolution\Processors\Resource\Update`   |
 
-`core/include/deprecated.php` aliases the old names until 3.3. A `require_once` of the 2.x paths fails.
+`core/include/deprecated.php` aliases the old names for now (automatic loading stops in a future 3.x release — "likely 3.3 or 3.4"). A `require_once` of the 2.x paths fails.
 
 See [Custom Resource Classes](building-sites/resources/custom-resources) and [Step 4: Customizing the Processors](extending-modx/custom-resources/step-4-processors).
 
 ## Flat-file processors no longer supported
 
-Support for so-called flat-file processors (which end in `.php` rather than `.class.php` and don't use a processor class) has been removed.
+Flat-file processors — files ending in `.php` instead of `.class.php` that do not use a processor class — are no longer supported. Refactor them into object-based processors using the classes above.
 
-Any flat-file processor will need to be refactored into an object-based processor using the classes mentioned above.
