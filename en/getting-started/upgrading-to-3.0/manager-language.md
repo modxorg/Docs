@@ -2,12 +2,10 @@
 title: Manager Language
 ---
 
-In MODX 2.x, the manager language was managed through a `manager_language` system setting (and optionally overridden on context or user level). In MODX 3, this setting has been removed, and the manager language is instead stored in the users' session. 
+In MODX 2.x the manager language came from the `manager_language` system setting; there was no built-in context- or user-level override. In MODX 3 the setting is gone — the language is stored in the user's session.
 
-The current language is available with the key `cultureKey` in the MODX config array: `$modx->config['cultureKey']`. The backend javascripts have to be changed from `MODx.config.manager_language` to `MODx.config.cultureKey`.
+The current language is available as `cultureKey` in the MODX config array: `$modx->config['cultureKey']`. Manager JavaScript must use `MODx.config.cultureKey` instead of `MODx.config.manager_language`.
 
-When visiting the manager, it will automatically select the most likely desirable language based on the browser language. A different language can be selected at the bottom of the login screen.
-
-To dynamically change your language while logged in, use the User > Toggle Language menu from the manager menu.
+The manager picks a language from the browser language on first visit; a different one can be chosen at the bottom of the login screen. While logged in, use Admin > Toggle language in the manager menu (in 3.0 this item was under User; it moved to Admin in 3.1 — the screenshot below shows the 3.0 menu).
 
 ![Toggling the manager language while you're logged in to the manager](manager-language.jpg)

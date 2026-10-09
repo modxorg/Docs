@@ -11,14 +11,14 @@ translation: "getting-started/upgrading-to-3.0/breaking-changes"
 
 Главные критические изменения можно свести к следующему:
 
-- [Минимальная версия PHP поднята до 7.2 в 3.0 и снова до 8.1 в 3.2](getting-started/upgrading-to-3.0/requirements)
+- [Минимальная версия PHP поднята до 7.2.5 в 3.0 и снова до 8.1 в 3.2](getting-started/upgrading-to-3.0/requirements)
 - [Больше нельзя использовать свой каталог или путь к core](getting-started/upgrading-to-3.0/core-folder)
 - [Поддержка sqlsrv удалена](getting-started/upgrading-to-3.0/sqlsrv)
 - [Большое число (ранее без namespace) классов переименовано и перенесено](getting-started/upgrading-to-3.0/class-names), включая процессоры и классы моделей.
 - [Чеклист для авторов Extras при обновлении пакетов 2.x](getting-started/upgrading-to-3.0/extras)
 - [xPDO 3 через Composer и PSR-4; миграция кастомных пакетов](getting-started/upgrading-to-3.0/xpdo)
 - [Все процессоры переименованы, включая базовые](getting-started/upgrading-to-3.0/processors)
-- [modAction и связанный функционал удалены](getting-started/upgrading-to-3.0/actions)
+- [`modAction` и `modAccessAction` удалены](getting-started/upgrading-to-3.0/actions) (`modActionDom` и компания остались)
 - modRestClient удалён [#15781](https://github.com/modxcms/revolution/pull/15781) и [заменён новым HTTP-сервисом PSR-7/17/18](extending-modx/services/http)
 
 ## Очистка устаревшего функционала

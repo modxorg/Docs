@@ -18,12 +18,12 @@ translation: "getting-started/upgrading-to-3.0/manager-ui"
 
 ## Подсказки
 
-Подсказки с описанием полей можно выключить. Можно задать, сколько они висят на экране:
+Подсказки с описанием полей можно выключить. Можно задать, сколько они висят на экране [#14535](https://github.com/modxcms/revolution/pull/14535):
 
 - [manager_tooltip_enable](building-sites/settings/manager_tooltip_enable) (по умолчанию Да)
 - [manager_tooltip_delay](building-sites/settings/manager_tooltip_delay) (по умолчанию 2300 мс, ExtJS `dismissDelay`)
 
-Превью картинок в Медиабраузере задаёт [modx_browser_tree_hide_tooltips](building-sites/settings/modx_browser_tree_hide_tooltips), не эти настройки. [#14535](https://github.com/modxcms/revolution/pull/14535)
+Превью картинок в Медиабраузере задаёт [modx_browser_tree_hide_tooltips](building-sites/settings/modx_browser_tree_hide_tooltips), не эти настройки. [#12139](https://github.com/modxcms/revolution/pull/12139)
 
 ## Профиль и формы ресурсов
 

@@ -4,9 +4,7 @@ description: "Checklist for Extra authors: namespaces, processors, xPDO models, 
 sortorder: 2
 ---
 
-Site owners use [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0). This page is for authors who build or maintain transport packages.
-
-Compatible packages: [SiteDash extras list](https://sitedash.app/extras). Linked pages below cover each topic in depth. The [Collection](https://github.com/modxcms/Collections) notes from [theboxer](https://github.com/theboxer) (summary on [modx.pro](https://modx.pro/development/19429)) are a worked example of an Extra that extends `modResource`.
+Site owners use [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0). This page is for Extra authors who build or maintain transport packages. Compatible packages are listed on [SiteDash](https://sitedash.app/extras). The [Collection](https://github.com/modxcms/Collections) notes from [theboxer](https://github.com/theboxer) (summary on [modx.pro](https://modx.pro/development/19429)) are a worked example of an Extra that extends `modResource`.
 
 ## Support scope
 
@@ -15,9 +13,10 @@ Compatible packages: [SiteDash extras list](https://sitedash.app/extras). Linked
 | MODX 3 only | Namespaced classes, PSR-4 models, `bootstrap.php`. Drop `require_once` of old core paths. |
 | One package for 2.x and 3.x | Branch on version (`$modx->version['version'] >= 3`), class-name prefixes or dynamic parent classes. More work. Overview: [Modernizing Extras cheat sheet](https://modx.com/blog/modernizing-extras-conversion-cheat-sheet). |
 
-Global aliases (`modResource`, `modObjectCreateProcessor`, and similar) still load by default in 3.0-3.2 through `load_deprecated_global_class_aliases`. Automatic loading is scheduled to stop in **3.3**, so move to namespaced code before then. See [Changed class names](getting-started/upgrading-to-3.0/class-names).
+Global aliases (`modResource`, `modObjectCreateProcessor`, and similar) still load by default in 3.0-3.2 through `load_deprecated_global_class_aliases`. Automatic loading is scheduled to stop in a future 3.x release — the source comment in `core/include/deprecated.php` says "likely 3.3 or 3.4" — so move to namespaced code before then. See [Changed class names](getting-started/upgrading-to-3.0/class-names).
 
 ## Checklist
+
 
 1. PHP: match the floor for the MODX line you support ([requirements](getting-started/upgrading-to-3.0/requirements)).
 2. Class names: in `extends`, type hints, and `instanceof`, replace short core names with `MODX\Revolution\…` / `xPDO\…`. Tables: [Changed class names](getting-started/upgrading-to-3.0/class-names).

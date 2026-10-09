@@ -16,7 +16,7 @@ sortorder: 2
 | Только MODX 3 | Классы с namespace, модели PSR-4, `bootstrap.php`. Убрать `require_once` старых путей ядра. |
 | Один пакет на 2.x и 3.x | Ветвление по версии (`$modx->version['version'] >= 3`), префиксы имён классов или динамические родительские классы. Больше работы. Обзор: [Modernizing Extras cheat sheet](https://modx.com/blog/modernizing-extras-conversion-cheat-sheet). |
 
-Глобальные алиасы (`modResource`, `modObjectCreateProcessor` и похожие) в 3.0-3.2 по умолчанию ещё подключаются через `load_deprecated_global_class_aliases`. Автоподключение планируют убрать в **3.3**, поэтому к этому моменту код лучше перевести на namespace. См. [Изменённые имена классов](getting-started/upgrading-to-3.0/class-names).
+Глобальные алиасы (`modResource`, `modObjectCreateProcessor` и похожие) в 3.0-3.2 по умолчанию ещё подключаются через `load_deprecated_global_class_aliases`. Автоподключение планируют убрать в будущем релизе 3.x — в комментарии кода в `core/include/deprecated.php` сказано «likely 3.3 or 3.4», — поэтому к этому моменту код лучше перевести на namespace. См. [Изменённые имена классов](getting-started/upgrading-to-3.0/class-names).
 
 ## Чеклист
 

@@ -12,7 +12,7 @@ _old_uri: "dashboard.action"
 
 MODX Revolution (Revo) is an easy-to-use Content Management System (CMS) and Application Framework rolled into one. Despite the limitless possibilities that MODX affords you, we think you'll find it refreshingly intuitive to work with. At every step, MODX strives to deliver Creative Freedom.
 
-With MODX3, the platform has been modernised, and also offers a redesigned manager user interface. [Learn more about upgrading to MODX 3](getting-started/maintenance/upgrading/3.0).
+With MODX3, the platform has been modernised, and also offers a redesigned manager user interface. [Learn more about upgrading to MODX 3](getting-started/upgrading-to-3.0).
 
 In addition to this documentation site, the [MODX Community](https://community.modx.com) is vibrant and always willing to help. Go ahead and ask questions there - you'll be pleasantly surprised at the responsiveness of the MODX user base.
 
