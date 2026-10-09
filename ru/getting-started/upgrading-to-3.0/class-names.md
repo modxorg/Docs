@@ -22,17 +22,17 @@ translation: "getting-started/upgrading-to-3.0/class-names"
 
 Это будет регистрировать устаревшее сообщение в журнале ошибок, призывающее вас обновить ссылку. Правильный вызов был бы `$modx->getIterator(\MODX\Revolution\modResource::class)`.
 
-Важно отметить, что если вы **проверяете тип** результат такого вызова (например `if ($foo instanceof modResource)`), вы не можете сразу столкнуться с ошибкой (по сравнению с typehinting, например `public function(modResource $foo)`, что действительно вызывает ошибку), но это **будет оценивать к `false`** потому что старое имя класса больше не существует, так что проверка всегда терпит неудачу.
+Важно отметить, что если вы **проверяете тип** результата такого вызова (например `if ($foo instanceof modResource)`), вы не сразу столкнётесь с ошибкой (в отличие от typehinting вроде `public function(modResource $foo)`, который действительно падает). Пока загружены устаревшие глобальные псевдонимы — это поведение по умолчанию, — старое имя является настоящим классом, и проверка работает. Только если вы отключили `load_deprecated_global_class_aliases` (см. ниже), `instanceof modResource` молча вернёт `false`, а type hint и тогда упадёт.
 
-Вы можете ввести проверку против несуществующих классов без предупреждения в PHP, поэтому вы можете решить это путем проверки типов для имени класса 2.x и 3.0. (например, `if (($foo instanceof modResource) || $foo instanceof \MODX\Revolution\modResource))`
+Вы можете проверять тип против несуществующих классов без предупреждения в PHP, поэтому проверяйте тип и для имени класса 2.x, и для 3.0 (например `if (($foo instanceof modResource) || $foo instanceof \MODX\Revolution\modResource))`). Именно такая двойная проверка позволяет коду работать независимо от того, загружены псевдонимы или нет.
 
 ## Мягкие Изменения
 
 Следующие имена классов были изменены, но были псевдонимы в версии 3.0, чтобы облегчить проблемы обновления, поскольку они обычно используются. Псевдонимы автоматически находятся в `modX::loadConfig`, если `load_deprecated_global_class_aliases` равно true, что по умолчанию. Это можно отключить, добавив ключ со значением `false` в ваши `$config_options` в `core/config/config.inc.php`.
 
-**Псевдонимы больше не будут автоматически доступны в MODX 3.3.** Если вы еще не обновили соответствующий код к тому времени, вы можете вручную потребовать `core/include/deprecated.php` чтобы временно решить эту проблему, но вы все равно должны обновить код до новых классов.
+**Автоподключение этих псевдонимов прекратится в будущем релизе 3.x — в комментарии кода в `core/include/deprecated.php` сказано «likely 3.3 or 3.4».** Если вам всё ещё нужны псевдонимы, можно вручную подключить `core/include/deprecated.php`, но код всё равно следует перевести на новые классы.
 
-Этот уровень обратной совместимости, вероятно, будет полностью удален в MODX 4.0.
+Слой обратной совместимости (включая ручное подключение файла) вероятно, будет полностью удалён в MODX 4.0.
 
 ### xPDO
 
@@ -50,23 +50,13 @@ translation: "getting-started/upgrading-to-3.0/class-names"
 
 Как связаны Composer, PSR-4, `metadata.mysql.php` и вызовы `addPackage` в Extra: [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
 
-### Ядро и процессоры MODX
+### Ядро MODX и контроллеры
 
 | Новый класс                                   | Старый класс                  |
 | --------------------------------------------- | ----------------------------- |
 | \MODX\Revolution\modX                         | \modX                         |
-| \MODX\Revolution\modProcessor                 | \modProcessor                 |
-| \MODX\Revolution\modObjectProcessor           | \modObjectProcessor           |
-| \MODX\Revolution\modObjectCreateProcessor     | \modObjectCreateProcessor     |
-| \MODX\Revolution\modObjectExportProcessor     | \modObjectExportProcessor     |
-| \MODX\Revolution\modObjectGetListProcessor    | \modObjectGetListProcessor    |
-| \MODX\Revolution\modObjectGetProcessor        | \modObjectGetProcessor        |
-| \MODX\Revolution\modObjectImportProcessor     | \modObjectImportProcessor     |
-| \MODX\Revolution\modObjectRemoveProcessor     | \modObjectRemoveProcessor     |
-| \MODX\Revolution\modObjectSoftRemoveProcessor | \modObjectSoftRemoveProcessor |
-| \MODX\Revolution\modObjectUpdateProcessor     | \modObjectUpdateProcessor     |
+| \MODX\Revolution\modManagerController         | \modManagerController         |
 | \MODX\Revolution\modParsedManagerController   | \modParsedManagerController   |
-| \MODX\Revolution\modObjectDuplicateProcessor  | \modObjectDuplicateProcessor  |
 | \MODX\Revolution\modExtraManagerController    | \modExtraManagerController    |
 
 ### Классы моделей MODX
@@ -75,13 +65,26 @@ translation: "getting-started/upgrading-to-3.0/class-names"
 | ---------------------------- | ------------ |
 | \MODX\Revolution\modResource | \modResource |
 
+### Сервисы, интерфейсы и утилиты
+
+| Новый класс                                    | Старый класс                 |
+| ---------------------------------------------- | ---------------------------  |
+| \MODX\Revolution\modParser                     | \modParser                   |
+| \MODX\Revolution\Mail\modMail                  | \modMail                     |
+| \MODX\Revolution\Mail\modPHPMailer             | \modPHPMailer                |
+| \MODX\Revolution\Sources\modMediaSource        | \modMediaSource              |
+| \MODX\Revolution\modSystemEvent                | \modSystemEvent              |
+| \MODX\Revolution\modTemplateVarInputRender     | \modTemplateVarInputRender   |
+| \MODX\Revolution\modTemplateVarOutputRender    | \modTemplateVarOutputRender  |
+| \MODX\Revolution\modDashboardWidgetInterface   | \modDashboardWidgetInterface |
+
 ### Процессоры
 
-Все процессоры были переименованы и перемещены, включая базовые классы процессоров. Процессоры с плоскими файлами также больше не поддерживаются. [Смотрите документацию по выделенным процессорам](getting-started/upgrading-to-3.0/processors)
+Все процессоры были переименованы и перемещены, включая базовые классы процессоров (`\modProcessor`, `\modObjectProcessor`, `\modObject*Processor`, `\modProcessorResponse`, `\modProcessorResponseError` — у всех есть псевдонимы, см. [таблицу процессоров](getting-started/upgrading-to-3.0/processors)). Процессоры с плоскими файлами также больше не поддерживаются. [Смотрите документацию по выделенным процессорам](getting-started/upgrading-to-3.0/processors)
 
 ## Измененные классы, без пути обновления
 
-Все остальные модели и классы обслуживания не включают автоматический псевдоним. Это включает в себя утилиты, такие как парсер (`\MODX\Revolution\modParser`)
+Все остальные классы моделей и служб автоматического псевдонима не имеют — это ежедневные объекты, которые вы получаете через `getObject`/`getCollection`: `\MODX\Revolution\modContext`, `\MODX\Revolution\modUser`, `\MODX\Revolution\modChunk`, `\MODX\Revolution\modSnippet`, `\MODX\Revolution\modPlugin`, `\MODX\Revolution\modTemplate` и т. д.
 
 ## Удаленные классы
 

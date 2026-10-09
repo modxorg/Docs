@@ -15,10 +15,10 @@ translation: "getting-started/upgrading-to-3.0/processors"
 
 Любой процессор, который ранее унаследовал от базового процессора (такого как `modProcessor`, `modObjectProcessor`, `modDriverSpecificProcessor` и любой `modObject*Processor`), необходимо будет обновить. Практически это означает, что каждый процессор.
 
-Чтобы облегчить переход на 3.0, старые имена классов автоматически становятся доступными как псевдонимы, но **эти псевдонимы будут удалены в MODX 3.3**.
+Чтобы облегчить переход на 3.0, старые имена классов автоматически становятся доступными как псевдонимы, но **автоподключение этих псевдонимов прекратится в будущем релизе 3.x — в комментарии кода в `core/include/deprecated.php` сказано «likely 3.3 or 3.4»**.
 
 -   Если вы хотите поддерживать оба 2.x и 3.x, вы можете продолжать использовать классы `modObject...Processor`, но вы должны составить план для MODX 3.3+. Сообщите своим пользователям, какие версии вы намерены поддерживать, и до каких пор.
--   Чтобы обновить вашу кодовую базу для поддержки 3.0+ (и не требовать дополнительных обновлений, когда выйдет 3.3), вам нужно изменить имя класса, который вы расширяете.
+-   Чтобы обновить вашу кодовую базу для поддержки 3.0+ (и не требовать дополнительных обновлений, когда автозагрузка псевдонимов отключится), вам нужно изменить имя класса, который вы расширяете.
 
 | Старый класс                    | Новый класс                                             |
 | ------------------------------- | ------------------------------------------------------- |
@@ -30,13 +30,16 @@ translation: "getting-started/upgrading-to-3.0/processors"
 | `\modObjectExportProcessor`     | `\MODX\Revolution\Processors\Model\ExportProcessor`     |
 | `\modObjectGetListProcessor`    | `\MODX\Revolution\Processors\Model\GetListProcessor`    |
 | `\modObjectGetProcessor`        | `\MODX\Revolution\Processors\Model\GetProcessor`        |
+| `\modObjectImportProcessor`     | `\MODX\Revolution\Processors\Model\ImportProcessor`     |
 | `\modObjectRemoveProcessor`     | `\MODX\Revolution\Processors\Model\RemoveProcessor`     |
 | `\modObjectSoftRemoveProcessor` | `\MODX\Revolution\Processors\Model\SoftRemoveProcessor` |
 | `\modObjectUpdateProcessor`     | `\MODX\Revolution\Processors\Model\UpdateProcessor`     |
+| `\modProcessorResponse`         | `\MODX\Revolution\Processors\ProcessorResponse`         |
+| `\modProcessorResponseError`    | `\MODX\Revolution\Processors\ProcessorResponseError`    |
 
 ## Вызов процессоров ядра с runProcessor
 
-Любой вызов к ядру процессора должен быть рассмотрен. Старые имена действий в [modX::runProcessor](extending-modx/modx-class/reference/modx.runprocessor) (например `resource/create`) все еще поддерживаются, но возможно, что внутренняя логика некоторых процессоров изменилась.
+Любой вызов к ядру процессора должен быть рассмотрен. Старые имена действий в [modX::runProcessor](extending-modx/modx-class/reference/modx.runprocessor) (например `resource/create`) все еще поддерживаются, но возможно, что внутренняя логика некоторых процессоров изменилась. `runProcessor` также принимает полное имя класса процессора в `$action`, например `$modx->runProcessor(\MODX\Revolution\Processors\Resource\Create::class, $props)`.
 
 ## Пользовательские типы ресурсов (CRC)
 
@@ -49,7 +52,7 @@ translation: "getting-started/upgrading-to-3.0/processors"
 | `\modResourceCreateProcessor`   | `\MODX\Revolution\Processors\Resource\Create`   |
 | `\modResourceUpdateProcessor`   | `\MODX\Revolution\Processors\Resource\Update`   |
 
-`core/include/deprecated.php` даёт псевдонимы старых имён до 3.3. `require_once` путей 2.x падает.
+`core/include/deprecated.php` пока даёт псевдонимы старых имён (автоподключение прекратится в будущем релизе 3.x — «likely 3.3 or 3.4»). `require_once` путей 2.x падает.
 
 См. [пользовательские классы ресурсов](building-sites/resources/custom-resources) и [Шаг 4: Настройка процессоров](extending-modx/custom-resources/step-4-processors).
 
