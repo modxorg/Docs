@@ -6,41 +6,40 @@ _old_uri: "2.x/administering-your-site/upgrading-modx/upgrading-from-modx-evolut
 
 ## Changes from MODX Evolution to MODX Revolution
 
-Much has changed from MODX Evolution in the new Revolution release. This document will attempt to address some of the major ones.
-
 ### Tag Syntax
 
-Tags have changed their basic syntax. You can view the [Tag Syntax changes here](building-sites/tag-syntax "Tag Syntax").
+Tag syntax changed; see the [Tag Syntax changes](building-sites/tag-syntax "Tag Syntax").
 
 ### Parsing Order
 
-In Evolution, pages were parsed via eval and done as a whole - in Revolution, we implemented "Source Order" parsing. This means tags are parsed in the order that they occur.
+Evolution parsed a whole page through eval; Revolution parses tags in source order, as they occur:
 
-So what does that mean? Well, a few things:
+- _Don't put Snippet calls that assign placeholders at the end of a Resource, or after the Resource._ The placeholders will be blank, because the [Snippet](extending-modx/snippets "Snippets") has not executed yet.
+- _Tags can now have tags within their properties._ `[[mySnippet? &tag=`test`[[call]]``]]` is valid.
+- Using `=`, `?`, `!` and `*` in a Snippet property is now allowed.
 
-- _Don't put Snippet calls that assign placeholders at the end of a Resource, or after the Resource._ The placeholders will simply be blank, since the [Snippet](extending-modx/snippets "Snippets") haven't executed yet.
-- _Tags can now have tags within their properties._ `[[mySnippet? &tag=`test`[[call]]``]]` is now 100% a-okay.
-- \_Using =,?,!,\* is now OK in a Snippet property.
 
 ### No More 5000-Document limit
 
-Although this has been mostly remedied in later versions of Evolution, there is still a performance hit in those versions. This, caching-wise, has been fixed in Revolution.
+Later Evolution versions mostly lifted the 5000-document limit but kept a performance cost; Revolution removes it at the caching level.
 
-That said, if you're creating a site that has over 10,000 Resources, chances are you're not designing it right. Consider writing custom [Snippets](extending-modx/snippets "Snippets") that pull from custom database tables instead for similar pages (such as inventories or e-commerce).
+Even so, a site with more than 10,000 Resources is usually designed the wrong way: for repeated pages such as inventories or e-commerce, write custom [Snippets](extending-modx/snippets "Snippets") that read their own database tables.
 
 ### Security
 
-The access permissions system has been completely rewritten into a new ABAC-based system. You can read more about it [here](building-sites/client-proofing/security "Security").
+The access permissions system was rewritten as an ABAC-based system; see [Security](building-sites/client-proofing/security "Security").
 
 ### Error Page vs Unauthorized Page
 
-This is a change from MODX Evolution. In Revolution, if a web page is protected in the front end so that only logged-in users can see it, the default behavior is for anonymous users to be redirected to the Error (page not found) page rather than the Unauthorized page when they try to access the resource. In Revolution, if Users don't have the "load" permission for a resource, it's as if it doesn't exist — thus the "page not found" response. If you would like them to be sent to the Unauthorized page instead, you can do the following:
+On a protected front-end page, anonymous users are redirected to the Error (page not found) page, not the Unauthorized page: without the "load" permission a resource counts as nonexistent.
 
-- Create a new Access Policy called "Load" and add a single Permission: Load.
-- Create a new Context Access ACL entry for the anonymous User Group with a Context of "web," a Role of "member" and an Access Policy of "Load."
+To send them to the Unauthorized page instead:
+
+1. Create an Access Policy called "Load" and add a single Permission: Load.
+2. Create a Context Access ACL entry for the anonymous User Group with a Context of "web," a Role of "member" and an Access Policy of "Load."
 
 (credit to [Bob's Guides](http://bobsguides.com/revolution-permissions.html))
 
 ### FURL Suffixes and Prefixes -> Content Types
 
-The settings friendly\_url\_prefix and friendly\_url\_suffix are no longer applicable, as Revolution handles those now through [Content Types](building-sites/resources/content-types "Content Types").
+The `friendly_url_prefix` and `friendly_url_suffix` settings no longer apply; Revolution handles this with [Content Types](building-sites/resources/content-types "Content Types").

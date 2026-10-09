@@ -6,15 +6,20 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/summary-of-legacy-
 
 ## Functionality
 
-### TV Input Types
+### TV input types
 
 The following input types were removed:
 
-- htmlarea, dropdown (use listbox), textareamini
+| Input type | Use instead |
+| --- | --- |
+| `htmlarea` | — |
+| `dropdown` | `listbox` |
+| `textareamini` | — |
 
-## Methods, Constants and Variables
 
-Many constants, variables and api methods have been long deprecated, marked for removal in 2.0 or 2.1 and are now finally removed from the MODX Revolution 2.1 codebase.
+## Methods, constants and variables
+
+Constants, variables and API methods marked for removal in 2.0 or 2.1 are finally removed from the MODX Revolution 2.1 codebase.
 
 | Item Removed                  | Notes on Replacement or Potential Workaround                            |
 | ----------------------------- | ----------------------------------------------------------------------- |
@@ -54,10 +59,9 @@ DBAPI: `modX->db`
 | modX->db->prepareDate($timestamp, $fieldType= 'DATETIME')                                        | php to sql conversion of datetypes are handled automatically in the modX model (or a custom xPDO model)                                                                                                                                                                                                                                                                                                          |
 | modX->db->getHTMLGrid($dsq, $params)                                                             | no direct analog                                                                                                                                                                                                                                                                                                                                                                                                 |
 | modX->db->makeArray($rs= '')                                                                     | see xPDOCriteria->stmt->fetch()                                                                                                                                                                                                                                                                                                                                                                                  |
-| modX->getFullTableName()                                                                         | modX->getTableName($className, $includeDb=false)                                                                                                                                                                                                                                                                                                                                                                 |
+| modX->getFullTableName()                                                                         | modX->getTableName($className, $includeDb=false) (note: `getFullTableName()` was removed in 2.1 but later restored as a legacy helper in current 3.x)                                                                                                                                                                                                                                                         |
 | or modX->escape($customTableName)                                                                |
 | modX->dbConfig                                                                                   | modX->getOption() (NOTE: some of the configuration keys are different, i.e. dbuser = username, dbpass = password, dbase = dbname)                                                                                                                                                                                                                                                                                |
-|                                                                                                  |
 | modX->putChunk()                                                                                 | modX->getChunk()                                                                                                                                                                                                                                                                                                                                                                                                 |
 | modX->isFrontend()                                                                               | modX->context->get('key') == 'web' or other front-end context                                                                                                                                                                                                                                                                                                                                                    |
 | modX->isBackend()                                                                                | modX->context->get('key') == 'mgr'                                                                                                                                                                                                                                                                                                                                                                               |

@@ -9,3 +9,5 @@ config.core.php
 ht.access
 index.php
 .htaccess
+.temp/
+.DS_Store

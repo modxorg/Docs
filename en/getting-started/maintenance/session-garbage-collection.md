@@ -9,19 +9,16 @@ On many hosts, especially Debian and Ubuntu, `session.gc_probability` is `0` bec
 
 Setup in current Revolution releases warns when GC probability is zero ([modxcms/revolution#16448](https://github.com/modxcms/revolution/pull/16448)). Existing installs still need a manual check.
 
-### How GC runs
+## How GC runs
 
-On a share of requests, PHP calls the session handler’s `gc()` method. Probability is:
-
-`session.gc_probability` / `session.gc_divisor`
-
-Example: `1` / `100` means about 1% of requests run GC.
+On a share of requests, PHP calls the session handler's `gc()` method. The chance is `session.gc_probability` / `session.gc_divisor`: with `1` / `100`, about 1% of requests run GC.
 
 `modSessionHandler::gc()` deletes session rows whose `access` timestamp is older than [`session_gc_maxlifetime`](building-sites/settings/session_gc_maxlifetime) (seconds). Default is `604800` (seven days). That setting also drives `session.gc_maxlifetime` when MODX starts the session.
 
 If `session.gc_probability` is `0`, `gc()` never runs. New visits keep inserting rows. The table only grows.
 
-### Check your server
+
+## Check your server
 
 In SSH or a one-off PHP script:
 
@@ -50,7 +47,8 @@ SELECT COUNT(*) FROM modx_session;
 
 Use your real table prefix if it is not `modx_`.
 
-### Fix it: enable PHP session GC
+
+## Fix it: enable PHP session GC
 
 Prefer a lasting php.ini (or pool) change so every request sees the same values:
 
@@ -71,7 +69,7 @@ Confirm with `php -i` (CLI) **and** a web `ini_get()` script. CLI and the web SA
 
 After GC runs again, old rows drop according to [`session_gc_maxlifetime`](building-sites/settings/session_gc_maxlifetime). Align that setting with [`session_cookie_lifetime`](building-sites/settings/session_cookie_lifetime) so cookies and DB cleanup agree.
 
-### Fix it: scheduled cleanup when you cannot change ini
+## Fix it: scheduled cleanup when you cannot change php.ini
 
 If the host locks `session.gc_probability` at `0`, schedule your own cleanup.
 
@@ -82,7 +80,7 @@ If the host locks `session.gc_probability` at `0`, schedule your own cleanup.
 0 3 * * * php /path/to/public_html/core/components/your-tool/session-gc.php
 ```
 
-A minimal CLI script that loads MODX and runs handler GC (put it outside the web root when you can; adjust paths):
+A minimal CLI script that loads MODX and runs handler GC (put it outside the web root when you can):
 
 ```php
 <?php
@@ -92,10 +90,12 @@ require MODX_CORE_PATH . 'vendor/autoload.php';
 $modx = \MODX\Revolution\modX::getInstance();
 $modx->initialize('web');
 $handler = new \MODX\Revolution\modSessionHandler($modx);
-$handler->gc(0);
+$handler->gc(0); // the argument is ignored: the cutoff is always session_gc_maxlifetime
 ```
 
-Prefer a small Extra or a documented project script over dropping ad-hoc files in the web root.
+`modSessionHandler::gc($max)` does not use its `$max` parameter — rows are deleted by the [`session_gc_maxlifetime`](building-sites/settings/session_gc_maxlifetime) setting only (so any integer works, e.g. `0`).
+
+Prefer a small extra or a documented project script over ad-hoc files in the web root.
 
 **Option B — SQL cron** for expired rows (match `session_gc_maxlifetime`, default seven days):
 
@@ -106,26 +106,32 @@ WHERE access < UNIX_TIMESTAMP(DATE_SUB(NOW(), INTERVAL 7 DAY));
 
 Run this only when you understand the lifetime you want. Wrong intervals log users out early.
 
-### Emergency: clear all sessions
+## Emergency: clear all sessions
 
-Manager menu **Manage → Logout All Users** truncates the session table via `modSessionHandler::flushSessions()`. Everyone is logged out, including you. Use this when the table is already huge and you need space now. Then enable GC or a cron so it does not fill again.
+User menu (top right) → **Access → Logout All Users** (permission `flush_sessions`) truncates the session table via `modSessionHandler::flushSessions()`. Everyone is logged out, including you.
+
+Use it when the table is already huge and you need space now, then enable GC or a cron so it does not fill again.
 
 You can also `TRUNCATE TABLE modx_session;` in SQL with the same effect.
 
-### Installer check
+
+## Installer check
 
 New installs run `_checkSessionsGarbageCollector()`. If probability is `0`, Setup tries `ini_set('session.gc_probability', 1)` for the setup process and shows a warning with the current probability and divisor. A successful `ini_set` during Setup does **not** permanently fix the server. You still need php.ini, pool config, or a cron for production.
 
-### Related settings
+
+## Related settings
 
 | Setting | Role |
 | --- | --- |
 | [`session_handler_class`](building-sites/settings/session_handler_class) | Default `MODX\Revolution\modSessionHandler` stores sessions in the DB. Empty uses PHP’s default (often files). |
 | [`session_gc_maxlifetime`](building-sites/settings/session_gc_maxlifetime) | Age in seconds before GC deletes a session row. Default `604800`. |
 | [`session_cookie_lifetime`](building-sites/settings/session_cookie_lifetime) | Browser cookie lifetime. Keep in mind next to GC max lifetime. |
-| [`session_enabled`](building-sites/settings/session_enabled) / [`anonymous_sessions`](building-sites/settings/anonymous_sessions) | When sessions start for front-end traffic. |
+| [`session_cookie_secure`](building-sites/settings/session_cookie_secure), [`session_cookie_httponly`](building-sites/settings/session_cookie_httponly), [`session_cookie_samesite`](building-sites/settings/session_cookie_samesite), [`session_cookie_path`](building-sites/settings/session_cookie_path), [`session_cookie_domain`](building-sites/settings/session_cookie_domain) | How the session cookie is set (HTTPS-only, no JS access, SameSite, scope). |
+| [`cache_db_session`](building-sites/settings/cache_db_session), [`cache_db_session_lifetime`](building-sites/settings/cache_db_session_lifetime) | Cache session rows in the MODX cache instead of reading them from the table on every request; lifetime defaults to a quarter of `session_gc_maxlifetime`. |
+| [`session_enabled`](building-sites/settings/session_enabled) / [`anonymous_sessions`](building-sites/settings/anonymous_sessions) | When sessions start for front-end traffic. Note: `session_enabled` is not shipped as a system setting — core reads it with a default of `true`, so you have to create it manually (System Settings → Add) if you want to toggle it. |
 
-### See also
+## See also
 
 - [PHP session.gc_probability](https://www.php.net/manual/en/session.configuration.php#ini.session.gc-probability)
 - [modxcms/revolution#16275](https://github.com/modxcms/revolution/issues/16275)
