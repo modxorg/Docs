@@ -24,7 +24,7 @@ cd revolution
 git remote add upstream -f http://github.com/modxcms/revolution.git
 ```
 
-Creando un fork con tu cuenta de GitHub te permitirá contribuir con MODX enviando solicitudes haciendo clic en el botón "Pull Request" en tu página de GitHub. (Sin embargo, deberás [enviar un CLA](http://develop.modx.com/contribute/cla/) antes de que podamos aceptar tu código). Si decides hacer el fork, sería útil para ti leer nuestra [Guía de contribuidores de Git](contribute/code/contributors-guide  "Guía del colaborador de MODX en GitHub"), para obtener información detallada sobre cómo mantener su fork actualizado.
+Creando un fork con tu cuenta de GitHub te permitirá contribuir con MODX enviando solicitudes haciendo clic en el botón "Pull Request" en tu página de GitHub. (Sin embargo, deberás [enviar un CLA](http://develop.modx.com/contribute/cla/) antes de que podamos aceptar tu código). Si decides hacer el fork, sería útil para ti leer nuestra [Guía de contribuidores de Git](/current/en/contribute/code/contributors-guide  "Guía del colaborador de MODX en GitHub"), para obtener información detallada sobre cómo mantener su fork actualizado.
 
 Si no estás familiarizado con Git, lee el excelente tutorial de [GitHub](http://learn.github.com/) y las [páginas de ayuda de GitHub](http://help.github.com).
 
@@ -80,7 +80,7 @@ git rebase origin/2.x
 
 Y Git actualizará tu instalación. (Sustituye '2.5.x' por '2.x' si estás probando o colaborando en una rama específica de versión menor, o cualquier rama desde la que puedas estar trabajando). 
 
-Si estás trabajando desde un fork, en lugar de directamente desde el repositorio modxcms/revolution, tendrás que buscar en el origen, en lugar de buscar en el fork. Lee la [Guía para GitHub del Colaborador de MODX](contribute/code/contributors-guide  "Guía para GitHub del Colaborador de MODX") para obtener más información.
+Si estás trabajando desde un fork, en lugar de directamente desde el repositorio modxcms/revolution, tendrás que buscar en el origen, en lugar de buscar en el fork. Lee la [Guía para GitHub del Colaborador de MODX](/current/en/contribute/code/contributors-guide  "Guía para GitHub del Colaborador de MODX") para obtener más información.
 
 Cuando se realiza un commit, este mensaje puede aparecer en la confirmación:
 

@@ -13,13 +13,13 @@ MODX proporciona una útil variedad de etiquetas diferenciadas por un token, o u
 | --------------------------------------------------------------- | ----- | ------------------- | ---------------------------------------------------------------------------------------------------- |
 | Comentario                                                         | `-`   | `[[- Comentario ]]`    | Define un comentario que no se procesara.<br>*ej:* `[[- Esto es un comentario]]`                                     |
 | [Campo de recurso](building-sites/tag-syntax/common)              | `*`   | `[[*nombreDeCampo]]`    | Muestra el valor de un campo relacionado con el recurso actual.<br>*ej:* `[[*pagetitle]]`              |
-| [Variable de Plantilla](building-sites/elements/template-variables) | `*`   | `[[*NombreVdP]]`       | Muestra el valor de una variable de plantilla.<br>*ej:* `[[*etiquetas]]`                                        |
-| [Chunk](building-sites/elements/chunks)                         | `$`   | `[[$NombreDeChunk]]`    | Muestra la salida de un chunk una vez procesado.<br>*ej:* `[[$cabecera]]`                                |
-| [Snippet](building-sites/elements/snippets)                     |       | `[[nombreDelSnippet]]`   | Define un snippet de código PHP que se ejecutará.<br>*ej:* `[[getResources]]`                            |
+| [Variable de Plantilla](/current/en/building-sites/elements/template-variables) | `*`   | `[[*NombreVdP]]`       | Muestra el valor de una variable de plantilla.<br>*ej:* `[[*etiquetas]]`                                        |
+| [Chunk](/current/en/building-sites/elements/chunks)                         | `$`   | `[[$NombreDeChunk]]`    | Muestra la salida de un chunk una vez procesado.<br>*ej:* `[[$cabecera]]`                                |
+| [Snippet](/current/en/building-sites/elements/snippets)                     |       | `[[nombreDelSnippet]]`   | Define un snippet de código PHP que se ejecutará.<br>*ej:* `[[getResources]]`                            |
 | Marcador de posición                                                     | `+`   | `[[+placeholder]]`  | Define un marcador de posición para los valores devuetos por una consulta.<br>*ej:* `[[+pagetitle]]`             |
 | Enlace                                                            | `~`   | `[[~enlace]]`         | Devuelve un enlace derivado de un valor.<br>*ej:* `[[~1? &scheme=full]]`                                 |
-| [Configuración](building-sites/settings)                              | `++`  | `[[++nombreDeConfiguracion]]` | Define un marcador de posición específicamente para los valores definidos en la configuración del sistema.<br>*ej:* `[[++site_name]]` |
-| [Idioma](extending-modx/internationalization)                 | `%`   | `[[%idioma]]`     | *ej:* `[[%cadena? &language=en &namespace=generic &topic=topic]]`                                    |
+| [Configuración](/current/en/building-sites/settings)                              | `++`  | `[[++nombreDeConfiguracion]]` | Define un marcador de posición específicamente para los valores definidos en la configuración del sistema.<br>*ej:* `[[++site_name]]` |
+| [Idioma](/current/en/extending-modx/internationalization)                 | `%`   | `[[%idioma]]`     | *ej:* `[[%cadena? &language=en &namespace=generic &topic=topic]]`                                    |
 
 ## Deconstrucción de una etiqueta de MODX
 
@@ -31,10 +31,10 @@ Una etiqueta MODX se puede ampliar con indicadores y propiedades opcionales. La 
 | `!`                       | *Opcional* indicador de no almacenamiento en caché                                                                                                                                               |
 | `Token`                   | *Opcional* Define el tipo de elemento.<br>`$` = Chunk,<br>`*` = Campo de recurso / Variable de Plantilla,<br>`+` = Marcador de posición *Leer arriba para más variantes*                                 |
 | `Nombre`                    | Valor del nombre del elemento solicitado.                                                                                                                                                 |
-| `@conjuntoPropiedades`            | Define un [conjunto de propiedades](building-sites/properties-and-property-sets) a usar.                                                                                                |
+| `@conjuntoPropiedades`            | Define un [conjunto de propiedades](/current/en/building-sites/properties-and-property-sets) a usar.                                                                                                |
 | ``` :modificador=`valor` ``` | Define un filtro o modificador de salida que se utilizará.<br>*ej:*```:gt=`0`:then=`¡Disponible!` ```                                                                                    |
 | `?`                       | Indica a MODX el comienzo de una lista de propiedades pasadas a esta llamada.<br>*Required if properties present*                                                                                       |
-| ``` &propiedad=`valor` ``` | Define una [propiedad](building-sites/properties-and-property-sets) y el valor de la misma para ser usado en la llamada. Cada propiedad se separa con el símbolo `&`.<br>*ej:* ``` &prop1=`1` &prop2=`2` ``` |
+| ``` &propiedad=`valor` ``` | Define una [propiedad](/current/en/building-sites/properties-and-property-sets) y el valor de la misma para ser usado en la llamada. Cada propiedad se separa con el símbolo `&`.<br>*ej:* ``` &prop1=`1` &prop2=`2` ``` |
 | `]]`                      | Define el cierre de una etiqueta de MODX.                                                                                                                                               |
 
 ## Construcción de una etiqueta de MODX
@@ -64,7 +64,7 @@ Una buena regla general es que tus etiquetas deben caber en una línea, incluso 
 
 ## Propiedades
 
-Todas las etiquetas de MODX pueden aceptar [propiedades](building-sites/properties-and-property-sets), no solo los Snippets.
+Todas las etiquetas de MODX pueden aceptar [propiedades](/current/en/building-sites/properties-and-property-sets), no solo los Snippets.
 
 En el siguiente ejemplo, tenemos un chunk simple llamado 'Hola'.
 

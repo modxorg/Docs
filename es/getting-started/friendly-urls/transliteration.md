@@ -18,10 +18,10 @@ Abre **Configuración del Sistema**, área **URL amigable** (busca `friendly_ali
 
 | Ajuste | Función |
 | ------ | ------- |
-| [friendly\_alias\_translit](building-sites/settings/friendly_alias_translit) | Método: `none`, `iconv`, `iconv_ascii` o una tabla con nombre de un extra |
-| [friendly\_alias\_translit\_class](building-sites/settings/friendly_alias_translit_class) | Clase de servicio para tablas con nombre (por defecto `translit.modTransliterate`) |
-| [friendly\_alias\_translit\_class\_path](building-sites/settings/friendly_alias_translit_class_path) | Ruta desde la que cargar esa clase (por defecto `{core_path}components/`) |
-| [automatic\_alias](building-sites/settings/automatic_alias) | Generar el alias desde el pagetitle al guardar si el alias está vacío |
+| [friendly\_alias\_translit](/current/en/building-sites/settings/friendly_alias_translit) | Método: `none`, `iconv`, `iconv_ascii` o una tabla con nombre de un extra |
+| [friendly\_alias\_translit\_class](/current/en/building-sites/settings/friendly_alias_translit_class) | Clase de servicio para tablas con nombre (por defecto `translit.modTransliterate`) |
+| [friendly\_alias\_translit\_class\_path](/current/en/building-sites/settings/friendly_alias_translit_class_path) | Ruta desde la que cargar esa clase (por defecto `{core_path}components/`) |
+| [automatic\_alias](/current/en/building-sites/settings/automatic_alias) | Generar el alias desde el pagetitle al guardar si el alias está vacío |
 
 Los filtros relacionados (delimitadores, minúsculas, longitud, restricción de caracteres) se aplican después de la transliteración. Revisa el resto de `friendly_alias_*` en la misma área.
 
@@ -60,7 +60,7 @@ Otros extras (Translitor, yTranslit, etc.) pueden registrar su propia clase. Sig
 
 ## Comprobar que funciona
 
-1. Activa [friendly\_urls](building-sites/settings/friendly_urls) y configura el rewrite ([guía de Friendly URLs](getting-started/friendly-urls)).
+1. Activa [friendly\_urls](/current/en/building-sites/settings/friendly_urls) y configura el rewrite ([guía de Friendly URLs](getting-started/friendly-urls)).
 2. Crea un Resource cuyo pagetitle tenga caracteres no latinos.
 3. Guarda (con `automatic_alias` o acepta el alias sugerido).
 4. Confirma el campo alias y la URL pública.
@@ -69,13 +69,13 @@ Los Resources ya guardados mantienen su alias hasta que lo regeneres. Cambiar el
 
 ## Subida de archivos
 
-En MODX 3.x, [upload\_translit](building-sites/settings/upload_translit) puede transliterar nombres de archivos subidos con las mismas reglas globales. Es independiente de los alias FURL, pero útil en los mismos sitios multilingües.
+En MODX 3.x, [upload\_translit](/current/en/building-sites/settings/upload_translit) puede transliterar nombres de archivos subidos con las mismas reglas globales. Es independiente de los alias FURL, pero útil en los mismos sitios multilingües.
 
 ## Ver también
 
 - [Usando las URLs amigables](getting-started/friendly-urls)
-- [friendly\_alias\_translit](building-sites/settings/friendly_alias_translit)
-- [friendly\_alias\_translit\_class](building-sites/settings/friendly_alias_translit_class)
-- [friendly\_alias\_translit\_class\_path](building-sites/settings/friendly_alias_translit_class_path)
-- [upload\_translit](building-sites/settings/upload_translit)
+- [friendly\_alias\_translit](/current/en/building-sites/settings/friendly_alias_translit)
+- [friendly\_alias\_translit\_class](/current/en/building-sites/settings/friendly_alias_translit_class)
+- [friendly\_alias\_translit\_class\_path](/current/en/building-sites/settings/friendly_alias_translit_class_path)
+- [upload\_translit](/current/en/building-sites/settings/upload_translit)
 - [Translit en extras.modx.com](https://extras.modx.com/package/translit)

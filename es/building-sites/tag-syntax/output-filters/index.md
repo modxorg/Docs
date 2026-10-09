@@ -10,7 +10,7 @@ Los filtros en Revolution te permiten manipular la forma en que se presentan o a
 
 ## Filtro de entrada
 
-[Filtro de entrada](building-sites/tag-sintax/input-filter.md)
+[Filtro de entrada](/current/en/building-sites/tag-syntax/input-filter)
 
 ## Filtro de salida
 
@@ -114,11 +114,11 @@ La siguiente tabla enumera algunos de los modificadores existentes y muestra eje
 | isloggedin                               | Returns true if user is authenticated in this context.                                                                                                                                                                                                      | `[[+modx.user.id:isloggedin]]`                         |
 | isnotloggedin                            | Returns true if user is not authenticated in this context.                                                                                                                                                                                                  | `[[+modx.user.id:isnotloggedin]]`                      |
 | toPlaceholder                            | Puts the input value into the passed placeholder. Does not prevent the output of the TV value, so add ```[[*someTV:toPlaceholder=`placeholder`:notempty=``]]``` if you don't want to output the value of the TV itself.                                     | ```[[*someTV:toPlaceholder=`placeholder`]]```          |
-| cssToHead                                | Put a `<link>` element into <head>, where the input value is placed inside the href attribute. Uses [modX.regClientCSS](extending-modx/modx-class/reference/modx.regclientcss "modX.regClientCSS").                                                                                                                                                             | `[[+cssTV:cssToHead]]`                                 |
-| htmlToHead                               | Insert a block of HTML code in the header of the page, before `</head>`. Uses  [modX.regClientStartupHTMLBlock](extending-modx/modx-class/reference/modx.regclientstartuphtmlblock "modX.regClientStartupHTMLBlock")                                                                                                                       | `[[+htmlTV:htmlToHead]]`                               |
-| htmlToBottom                             | Insert HTML code at the end of the page, before `</body>`. Uses [modX.regClientHTMLBlock](extending-modx/modx-class/reference/modx.regclienthtmlblock "modX.regClientHTMLBlock").                                                                           | `[[+htmlTV:htmlToBottom]]`                             |
-| jsToHead                                 | Insert JS code (or a link) in the header of the page, before `</head>`. Uses [modX.regClientStartupScript](extending-modx/modx-class/reference/modx.regclientstartupscript "modX.regClientStartupScript").                                                 | `[[+jsTV:jsToHead]]`                                   |
-| jsToBottom                               | Insert JS code (or a link) at the end of the page, before `</body>`. Uses [modX.regClientScript](extending-modx/modx-class/reference/modx.regclientscript "modX.regClientScript").                                                                          | `[[+jsTV:jsToBottom]]`                                 |
+| cssToHead                                | Put a `<link>` element into <head>, where the input value is placed inside the href attribute. Uses [modX.regClientCSS](/current/en/extending-modx/modx-class/reference/modx.regclientcss "modX.regClientCSS").                                                                                                                                                             | `[[+cssTV:cssToHead]]`                                 |
+| htmlToHead                               | Insert a block of HTML code in the header of the page, before `</head>`. Uses  [modX.regClientStartupHTMLBlock](/current/en/extending-modx/modx-class/reference/modx.regclientstartuphtmlblock "modX.regClientStartupHTMLBlock")                                                                                                                       | `[[+htmlTV:htmlToHead]]`                               |
+| htmlToBottom                             | Insert HTML code at the end of the page, before `</body>`. Uses [modX.regClientHTMLBlock](/current/en/extending-modx/modx-class/reference/modx.regclienthtmlblock "modX.regClientHTMLBlock").                                                                           | `[[+htmlTV:htmlToBottom]]`                             |
+| jsToHead                                 | Insert JS code (or a link) in the header of the page, before `</head>`. Uses [modX.regClientStartupScript](/current/en/extending-modx/modx-class/reference/modx.regclientstartupscript "modX.regClientStartupScript").                                                 | `[[+jsTV:jsToHead]]`                                   |
+| jsToBottom                               | Insert JS code (or a link) at the end of the page, before `</body>`. Uses [modX.regClientScript](/current/en/extending-modx/modx-class/reference/modx.regclientscript "modX.regClientScript").                                                                          | `[[+jsTV:jsToBottom]]`                                 |
 | urlencode                                | Converts the input into a URL-friendly string similar to how an HTML form would do so. Similar to PHP's [urlencode](http://www.php.net/manual/en/function.urlencode.php)                                                                                    | `[[+mystring:urlencode]]`                              |
 | urldecode                                | Converts the input from an URL-friendly string Similar to PHP's [urldecode](http://www.php.net/manual/en/function.urldecode.php)                                                                                                                            | `[[+myparam:urldecode]]`                               |
 | filterPathSegment                        | Added in 2.7. Converts the input into a URL-friendly string with the same mechanism that turns a pagetitle into an alias, including transliteration if enabled. Useful for custom urls.                                                                     | `[[+pagetitle:filterPathSegment]]`                     |
@@ -152,7 +152,7 @@ If you have properties on the tag, you'll want to specify those **after** the mo
 
 ### Creating a Custom Output Modifier
 
-Also, [Snippets](extending-modx/snippets "Snippets") can be used as custom modifiers. Simply put the [Snippet](extending-modx/snippets "Snippets") name instead of the modifier. Example with a snippet named 'makeExciting' that appends a variable amount of exclamation marks:
+Also, [Snippets](/current/en/extending-modx/snippets "Snippets") can be used as custom modifiers. Simply put the [Snippet](/current/en/extending-modx/snippets "Snippets") name instead of the modifier. Example with a snippet named 'makeExciting' that appends a variable amount of exclamation marks:
 
 ``` php
 [[*pagetitle:makeExciting=`4`]]
@@ -196,7 +196,7 @@ A good example of chaining would be to format a date string to another format, l
 [[+mydate:strtotime:date=`%Y-%m-%d`]]
 ```
 
-Directly accessing the `modx_user_attributes` table in the database using output modifiers instead of a [Snippet](extending-modx/snippets "Snippets") can be accomplished simply by utilizing the userinfo modifier. Select the appropriate column from the table and specify it as the property of the output modifier, like so:
+Directly accessing the `modx_user_attributes` table in the database using output modifiers instead of a [Snippet](/current/en/extending-modx/snippets "Snippets") can be accomplished simply by utilizing the userinfo modifier. Select the appropriate column from the table and specify it as the property of the output modifier, like so:
 
 ``` php
 User Internal Key: [[!+modx.user.id:userinfo=`internalKey`]]<br />
@@ -234,7 +234,7 @@ You will most likely want to call these uncached (see note about caching above) 
 
 ## See Also
 
-- [Properties and Property Sets](building-sites/properties-and-property-sets "Properties and Property Sets")
-- [Templates](building-sites/elements/templates "Templates")
-- [Template Variables](building-sites/elements/template-variables "Template Variables")
-- [Snippets](extending-modx/snippets "Snippets")
+- [Properties and Property Sets](/current/en/building-sites/properties-and-property-sets "Properties and Property Sets")
+- [Templates](/current/en/building-sites/elements/templates "Templates")
+- [Template Variables](/current/en/building-sites/elements/template-variables "Template Variables")
+- [Snippets](/current/en/extending-modx/snippets "Snippets")
