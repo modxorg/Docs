@@ -4,11 +4,11 @@ _old_id: "1382"
 _old_uri: "2.x/advanced-features/caching/caching-tutorial-lifetimes"
 ---
 
-A common need is the ability to control how long a piece of data should live – how long before it expires and is no longer good?. Just like with bottles of milk, knowing the expiration date can tell us whether our data is still good or if we need to recalculate it.
+A lifetime is how long a cached value stays valid. Once it expires, `get()` returns `null` and the caller has to calculate the value again.
 
 ## Create a Snippet
 
-In this example, we are going to create a snippet that stores a bit of data for a short period of time. Paste the following bit of code into a new Snippet named "testCache" and then save it.
+Create a Snippet named **testCache** with this code:
 
 ``` php
 <?php
@@ -24,11 +24,11 @@ if (!$payload = $cacheManager->get('my_cache_key')) {
 return $payload;
 ```
 
-The trick here is that the output from the cacheManager will be null if the data either does not exist or has expired.
+The value is written on the first request and read on every request after that, until the lifetime runs out and `get()` returns `null` again.
 
 ## Reference the Snippet
 
-When you reference a snippet that is using custom caching like this, you _must_ call it uncached. That bypasses the standard caching mechanisms and it allows your code to take caching into its own hands.
+A Snippet that manages its own caching must be called uncached. The uncached call bypasses the standard Resource caching, so your code stays in control of the value.
 
 ``` php
 [[!testCache]]
@@ -36,12 +36,12 @@ When you reference a snippet that is using custom caching like this, you _must_ 
 
 ## Observations
 
-When you view your page containing the `testCache`. Refresh the page frequently. You should notice that the datestamp only refreshes every 10 seconds!
+Open the Resource that calls `testCache` and refresh it repeatedly. The timestamp changes only once every 10 seconds.
 
-When you clear the Site's cache, your cached data will get cleared out, so you can trigger a new datestamp by clearing your site's cache (this is a bit easier to see if you bump up your lifetime to 60 seconds or so).
+This Snippet writes to the **default** partition, so clearing the site cache clears it too. That is why the original 10-second lifetime is hard to observe: you get a fresh 10 seconds each time you clear the cache. Raise `$lifetime` to 60 seconds to watch it expire without clearing.
 
-If you want your data to stick around even after a user has cleared the site cache, you need to set up your own caching partition – that's in a different tutorial. The example here is ideal for caching data that has something to do with pages because the cache will get cleared when a page is updated.
+Data in a partition of your own survives clearing the site cache: `refresh()` clears the fixed list of core partitions, and a partition that is not on that list is never touched. Pass the partition in `$options` — see [Programmatic (Custom) Caching](extending-modx/caching/#programmatic-caching).
 
 ## Summary
 
-Setting custom lifetimes for your cached data can be a great way to help your site take a load off. Caching data for even a minute or two (or even a few seconds) can make the difference between a responsive web server and a crippled site. In our example, we are are calculating the current date for demonstration purposes, but think about how this technique can save CPU cycles when the thing than you are calculating is particularly intensive, say an intensive database query or a slow API call.
+A lifetime is worth setting when the value is expensive to calculate and stays correct for a while — an intensive database query, a slow API call. Caching it for a few seconds keeps that work off every request.
