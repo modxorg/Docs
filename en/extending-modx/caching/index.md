@@ -4,48 +4,76 @@ _old_id: "53"
 _old_uri: "2.x/developing-in-modx/advanced-development/caching"
 ---
 
-By caching data that is being reused, a lot of database requests can be prevented, resulting in a better performance. MODX Revolution offers a number of different caching features on different levels within the application. The caching within MODX is mostly handled by the modCacheManager core class, which extends the xPDOCacheManager class and allows partition-specific cache handlers. The default implementation writes caches to files in the core/cache/ folder.
+Caching in MODX is handled by the `modCacheManager` core class. It extends `xPDOCacheManager` and gives every partition its own cache handler; by default it writes to files in `core/cache/`.
 
 If you have a custom MODX\_CONFIG\_KEY defined, the cache manager will write to core/cache/MODX\_CONFIG\_KEY/ instead.
 
 ## General Caching Terminology & Behavior
 
-MODX uses different **partitions** for separate types of data being cached. A partition is, simplified, a folder in the core/cache/ folder, but the real value of partitions is that each partition can be assigned different cache handlers. **Cache handlers** are derivatives of the xPDOCache class and provide a unified API for storing, reading and removing cache entries.
+MODX splits cached data into **partitions**. A partition is, simplified, a folder in `core/cache/`; its value is that every partition can be assigned its own cache handler. **Cache handlers** are derivatives of the `xPDOCache` class and provide a unified API for storing, reading and removing cache entries.
 
-The default **cache handler,** xPDOFileCache, writes the cache to the file system in the core/cache/ folder, but other cache handlers are available in the core for APC (xPDOAPCCache), memcache(d) (xPDOMemCache, xPDOMemCached) and WinCache (xPDOWinCache).
+MODX ships with these cache handlers:
+
+| Class | Requires |
+| --- | --- |
+| `xPDO\Cache\xPDOFileCache` | Nothing. The default, writes to the file system |
+| `xPDO\Cache\xPDOMemCached` | The PHP `memcached` extension |
+| `xPDO\Cache\xPDORedisCache` | The PHP `redis` extension |
+| `xPDO\Cache\xPDOWinCache` | The PHP `wincache` extension |
+
+The source tree still contains `xPDO\Cache\xPDOAPCCache`, but it cannot initialize: it tests for `apc_exists()`, a function removed in PHP 7. Do not configure it.
+
+::: warning
+A handler that fails to initialize is replaced with `xPDOFileCache` and the site keeps working, so a misconfiguration is easy to miss. A class name that cannot be loaded writes `Could not load class: ...` at ERROR level to the MODX log — check the log after changing a handler. See [Using Memcache](extending-modx/caching/memcache).
+:::
 
 ## MODX Core Cache Partitions
 
-There are a number of partitions in the core. These can easily be identified by looking in the core/cache/ folder with the default cache configuration.
+With the default cache configuration, every partition below is a directory in `core/cache/`.
 
-Typically you do not want work with the cached data directly (use the available APIs instead), but for means of understanding the MODX core we go through the core partitions here and briefly describe their purpose and contents.
+| Partition | Contents |
+| --- | --- |
+| `auto_publish` | A unix timestamp with the next time a Resource needs to be automatically published or unpublished. See `modCacheManager::autoPublish()` |
+| `context_settings` | Per Context: the resource map (parent and child IDs), alias map, Plugins used in the Context, and access policies |
+| `db` | Used when the `cache_db` system setting is enabled; raw result sets for xPDO queries. See [Database caching](#database-caching) |
+| `default` | The partition targeted by every `set()` call that passes no `xPDO::OPT_CACHE_KEY` — which is why your own cached data disappears when the site cache is cleared |
+| `lexicon_topics` | The lexicon topic tree, used by the manager |
+| `media_sources` | The MediaSource definitions |
+| `menu` | Per manager language, a multi dimensional array of the manager top menu |
+| `namespaces` | The Namespace index, including the packages installed through Extras |
+| `packages` | Written by the package install and removal processors |
+| `resource` | Per Context and Resource ID: the partial-page cache for Resources. Holds the meta data, the cached representation (`_content`) with uncached tags left intact, access policies, and the Elements used to process the Resource |
+| `scripts` | The prepared source of Snippets and Plugins, written as executable PHP |
+| `system_settings` | The global MODX configuration and system settings. Loaded first on every request; because alternative handlers for partitions are stored in system settings, this partition cannot be loaded from another handler that way |
 
-As we’ll discuss later, it is also possible for custom providers to be used in custom development work.
+Four more directories sit in `core/cache/` without being cache partitions:
 
-- **action\_map** Contains a big array of all the actions (IDs referencing controllers and namespaces) that can be accessed in the manager. As actions are deprecated and no longer used in 2.3, never rely on this.
-- **auto\_publish** Contains a unix timestamp with the next time a resource needs to be automatically published or unpublished. (See modCacheManager.autoPublish())
-- **context\_settings** For each context in the website, this contains a resource map (parent and child IDs), alias map, plugins used in the context and access policies.
-- **db** The db cache partition is used when the cache\_db system or context setting is enabled and contains raw result sets for xPDO getObject/getCollection requests. More about this below.
-- **includes** This is not an actual cache partition, but contains PHP files where snippets and plugins are wrapped in function calls for easy execution by the core. See scripts for the cache partition for snippets and plugins.
-- **logs** Again, not an actual cache partition, but contains an error.log file and at times other log files (e.g. setup).
-- **menu** Contains, per manager language, a multi dimensional array of the manager top menu.
-- **mgr** Not an actual cache partition but is used by Smarty and the Google Minify in 2.2 to write cache files to.
-- **registry** Default location for the modRegistry to write file-based register logs to. Not an actual cache partition.
-- **resource** Contains, organised per context and resource ID, the partial-page caching mechanism for resources. These cache files contain the meta data for the resource, a cached representation of the resource (\_content) with uncached tags left intact, access policies for the resource and elements and their sources used in processing the resource.
-- **rss** Not an actual cache partition, but used by MagpieRSS (powering the RSS dashboard widgets) to write its cache to.
-- **scripts** Contains the source for snippets and plugins, which are later written to the includes cache folder for inclusion.
-- **setup** Not an actual cache partition. Used by the MODX setup to cache smarty templates.
-- **system\_settings** Contains the global MODX configuration and system settings. This partition is loaded first by requests to MODX. As alternative cache handlers for partitions are stored in the system settings, this partition can not be loaded from another cache handler that way.
+- **includes** Holds the prepared PHP of static Snippets and Plugins, written by `modScript::loadScript()` for direct inclusion.
+- **logs** Holds error.log, written by the file log target and managed by the Error Log processors.
+- **registry** Used by `modFileRegister`, the file-based register the manager uses to pass data to processors.
+- **rss** Used by SimplePie to cache the feeds behind the RSS dashboard widget.
 
-To change the cache handler for a specific cache partition, simply create a new system (or context) setting with the name of cache\_PARTITION\_handler (for example cache\_resource\_handler or cache\_scripts\_handler) and give it the value of the cache handler you would like to use. The default is xPDOFileCache but others are available for APC, memcache(d) and wincache.
+Each partition is named by two system settings: `cache_PARTITION_key` holds the folder name, `cache_PARTITION_handler` the handler class. To change the handler of one partition, create a system setting named cache\_PARTITION\_handler — for example cache\_resource\_handler or cache\_scripts\_handler — and give it the class name of the handler you want. Context settings of the same name override system settings, so a partition can be moved to a different store for one Context only.
 
-Note that in MODX 2.0.x the cache system was quite different. The available partitions were different and the system settings were stored in core/cache/config.cache.php. If you are still running MODX 2.0.x now, you should spend more time upgrading and less time reading this document.
+::: warning
+`cache_resource_clear_partial` switches `refresh()` to clearing only the contexts you name, instead of the whole **resource** partition. It only takes effect when `cache_handler` is set to exactly `xPDOFileCache`; MODX compares the setting as a literal string, and its own default value is the namespaced `xPDO\Cache\xPDOFileCache`. In practice you must set both settings by hand, or the flag is ignored.
+:::
 
-### Database caching
+### Database caching {#database-caching}
 
-If you enable the **cache\_db** system setting, MODX can automatically cache database result sets fetched by any xPDOCriteria or xPDOQuery instance. This includes all of the result sets representing xPDOObjects or collections of xPDOObjects returned by methods like getObject and getCollection.
+The **cache\_db** system setting makes xPDO cache the result sets it reads from the database, including those returned by `getObject()` and `getCollection()`. Leave it off unless database access costs more than an include from disk — a remote database server, or a setup where a caching system is already available.
 
-This feature can be enabled in environments where database access is more expensive than PHP include time, for instance, when using an external database server, or custom configured for environments with memcached, APC, or other caching systems available. This is a separate partition from the other cache partitions in MODX, so it can be configured with other cache handlers. See [xPDO Caching](extending-modx/xpdo/caching) for additional information.
+The results go to the **db** partition, which takes part in `refresh()` like any other partition, and which you can point at a different handler:
+
+| Setting | Default | Purpose |
+| --- | --- | --- |
+| `cache_db` | `false` | Whether database results are cached at all |
+| `cache_db_key` | `db` | Partition the results are written to |
+| `cache_db_handler` | inherits `cache_handler` | Handler class for the **db** partition |
+| `cache_db_expires` | `0` | Lifetime of a stored result set, in seconds. `0` means until cleared |
+| `cache_db_format` | `0` | Storage format. `0` executable PHP, `1` JSON, `2` serialized |
+
+Do not confuse this with `xPDOCriteria::$cacheFlag`, which is a separate mechanism belonging to that class and has nothing to do with `cache_db`. See [xPDO Caching](extending-modx/xpdo/caching) for additional information.
 
 ## Refreshing the MODX Core Cache
 
@@ -55,7 +83,7 @@ To refresh any of the core MODX cache partitions, use the `modCacheManager->refr
 $modx->cacheManager->refresh();
 ```
 
- Alternatively, you can define a `$providers` array with partition `key => $partitionOptions` elements.
+Alternatively, you can define a `$providers` array with partition `key => $partitionOptions` elements. The **context_settings** and **resource** partitions accept a `contexts` list; the others take no options.
 
 ``` php
 // refresh the web and web2 context_settings only
@@ -64,28 +92,35 @@ $modx->cacheManager->refresh([
 ]);
 ```
 
-The second parameter, `$results`, is passed by reference and will contain the results of each of the cache partitions. Depending on the partition, this can be a boolean or an array with more information from the result of refreshing the specific partition. The function itself returns a boolean indicating if any of the partitions returned a boolean false.
+The second parameter, `$results`, is passed by reference and holds the result of each partition. Most partitions report a boolean; **context_settings** reports one entry per Context instead. The method returns `false` if any partition reported exactly `false` — a partition returning `null` or `0` is not counted as a failure.
 
-## Programmatic (Custom) Caching
+Every refresh also fires the **OnCacheUpdate** event with the `results`, `paths` and `options` properties.
 
-By interacting with the modCacheManager, you can easily cache any type of data. There are several useful features for you to use in maintaining a valid cache. By using the modCacheManager with a custom partition (though not required), users of your code can change the cache handler and store the data in a memcached, APC or WinCache instance instead of the default file based cache.
+## Programmatic (Custom) Caching {#programmatic-caching}
 
-The modCacheManager (xPDOCacheManager derivative) provides the following useful methods:
+`modCacheManager` caches data of any type. Data written to a partition of your own can be moved to a memcached, Redis or WinCache instance through the `cache_PARTITION_handler` system settings, without changing a single call site.
 
-- `add($key, $var, $lifetime = 0, $options = array())`. Used for adding a value to the cache, but only if it does not yet exist or has expired.
-- `replace ($key, $var, $lifetime = 0, $options = array())`. Used for replacing an existing cached value with a different one.
-- `set ($key, $var, $lifetime = 0, $options = array())`. Used for setting a value in the cache no matter if it exists already (gets overwritten) or not (gets added).
-- `delete ($key, $options = array())`. Deletes a cached value from the cache.
-- `get ($key, $options = array())`. Gets a cached value from the cache.
-- `clean ($options = array())`. Flushes (empties) an entire cache provider. Make sure to define the xPDO::OPT\_CACHE\_KEY in the options array.
+`modCacheManager`, an `xPDOCacheManager` derivative, provides these methods:
 
-In general you can use `get($key)` and `set($key, $value)` to retrieve and set values respectively, but the additional methods provide additional control over the way data is manipulated.
+- `add($key, &$var, $lifetime = 0, $options = array())`. Used for adding a value to the cache, but only if it does not yet exist or has expired.
+- `replace($key, &$var, $lifetime = 0, $options = array())`. Used for replacing an existing cached value with a different one.
+- `set($key, &$var, $lifetime = 0, $options = array())`. Used for setting a value in the cache no matter if it exists already (gets overwritten) or not (gets added).
+- `delete($key, $options = array())`. Deletes a cached value from the cache.
+- `get($key, $options = array())`. Gets a cached value from the cache.
+- `clean($options = array())`. Flushes (empties) an entire cache provider. Make sure to define the xPDO::OPT\_CACHE\_KEY in the options array.
+- `flushPermissions()`. Marks the permission data of all Users stale, so it is rebuilt on the next request.
 
-The `$options` array can contain the following options indicating the cache partition to write to, the cache handler to use and the default expiry time.
+::: warning
+`add()`, `replace()` and `set()` declare `$var` by reference. Pass a literal straight to them — `$modx->cacheManager->set('k', 5)` — and PHP raises a fatal error. Assign to a variable first.
+:::
 
-- `xPDO::OPT_CACHE_KEY`: the cache partition to write to.
-- `xPDO::OPT_CACHE_HANDLER`: the cache handler to use. Typically you shouldn’t hardcode this and instead let the specific implementation handle the cache handler via system settings (ie cache\_PARTITION\_handler system setting).
-- `xPDO::OPT_CACHE_EXPIRES:` the default expiry time.
+The `$options` array selects the partition to write to, the handler to write through, and the default expiry time:
+
+| Option | Purpose |
+| --- | --- |
+| `xPDO::OPT_CACHE_KEY` | The cache partition to write to |
+| `xPDO::OPT_CACHE_HANDLER` | The cache handler to use. Leave it unset and let the cache\_PARTITION\_handler system setting pick the handler |
+| `xPDO::OPT_CACHE_EXPIRES` | The default expiry time |
 
 ### Example 1: Simple Setting & Getting
 
@@ -104,28 +139,36 @@ $str = 'My test cached data.';
 $options = array(
     xPDO::OPT_CACHE_KEY => 'mypartition',
 );
-// Writes the data to the default cache partition with an expiry time of 2 hours.
+// Writes the data to the mypartition partition with an expiry time of 2 hours.
 $modx->cacheManager->set('testdata', $str, 7200, $options);
 // Gets the data from cache again. Returns null if cache is not available or expired.
 $str = $modx->cacheManager->get('testdata', $options);
 ```
 
-## Note on Revolution 2.0
+## Replacing the Cache Manager
 
-MODX Revolution 2.0 had a different caching system with different partitions. To clear the cache in 2.0, you would use the clearCache() method that has been deprecated since 2.1. It's better to upgrade to the latest version than to continue using 2.0.
+MODX resolves the cache manager from the **modCacheManager.class** system setting, falling back to the built-in `modCacheManager`. Point it at your own class to add partitions or change how `refresh()` behaves:
 
 ``` php
-// clear all the usual stuff by default (all files with the extension .cache.php
-// in the cachePath + all object caches)
-$modx->cacheManager->clearCache();
-// clear only cache files with extension .php or .log in the web/ custom/
-// or logs/ paths; no objects are cleared
-$paths = array('web/', 'custom/', 'logs/');
-$options = array('objects' => null, 'extensions' => array('.php', '.log'));
-$modx->cacheManager->clearCache($paths, $options);
-// clear all cache files with extension .php in the cachePath
-// + all objects + execute the timed publishing checks
-$paths = array('');
-$options = array('objects' => '*', 'publishing' => true, 'extensions' => array('.php'));
-$modx->cacheManager->clearCache($paths, $options);
+class MyCacheManager extends modCacheManager {
+    public function refresh(array $providers = [], array &$results = []) {
+        $cleared = parent::refresh($providers, $results);
+        $this->modx->log(modX::LOG_LEVEL_INFO, 'Cache refresh finished.');
+
+        return $cleared;
+    }
+}
 ```
+
+## Note on Revolution 2.0
+
+In MODX 2.0.x the cache system was quite different: the set of partitions differed, and system settings were stored in `core/cache/config.cache.php`. If you are still running MODX 2.0.x, spend more time on the upgrade than on this page.
+
+`modCacheManager->clearCache()` still exists, but it has been deprecated since MODX 2.1 in favour of `refresh()`. Do not use it in new code.
+
+## See Also
+
+- [Basic Usage](extending-modx/caching/example) — writing and reading a value from a Snippet
+- [Lifetimes](extending-modx/caching/lifetimes) — how long a cached value stays valid
+- [Using Memcache](extending-modx/caching/memcache) — moving a partition to memcached
+- [xPDO Caching](extending-modx/xpdo/caching) — caching inside xPDO itself
