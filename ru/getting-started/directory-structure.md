@@ -48,14 +48,13 @@ translation: "getting-started/directory-structure"
 
 #### core/src/Revolution/
 
-Классы ядра с пространством имён (`MODX\Revolution\...`): сервис `modX`, объекты модели, сервисы, контроллеры Менеджера и связанные компоненты.
+Классы ядра с пространством имён (`MODX\Revolution\...`): сервис `modX`, объекты модели, сервисы, обработка ошибок и связанные компоненты.
 
 Заметные подкаталоги:
 
 | Каталог | Содержимое |
 |---|---|
 | `Processors/` | Обработчики запросов через коннекторы, сгруппированные по областям: `Browser/`, `Context/`, `Element/`, `Model/`, `Resource/`, `Search/`, `Security/`, `SoftwareUpdate/`, `Source/`, `System/`, `Workspace/` |
-| `Controllers/` | Контроллеры страниц Менеджера |
 | `Services/` | Общие сервисы (HTTP-клиент и другие, зарегистрированные в контейнере MODX) |
 | `Transport/` | Поддержка сборки и установки транспортных пакетов |
 | `Sources/` | Драйверы источников медиа |
@@ -166,7 +165,7 @@ $modx->lexicon->load('lang:namespace:topic');
 
 ### manager/controllers/
 
-PHP-скрипты, которые загружают страницы Менеджера (под `manager/controllers/default/` для темы по умолчанию). Они готовят данные и регистрируют компоненты Ext JS / ModExt, более тяжёлая логика: в классах под `core/src/Revolution/Controllers/`.
+PHP-скрипты, которые загружают страницы Менеджера (под `manager/controllers/default/` для темы по умолчанию). Они готовят данные и регистрируют компоненты Ext JS / ModExt; обработка запроса уходит в процессоры под `core/src/Revolution/Processors/`.
 
 Подкаталоги соответствуют областям Менеджера: `browser/`, `context/`, `dashboard/`, `element/`, `media/`, `resource/`, `security/`, `source/`, `system/`, `workspaces/`.
 

@@ -48,12 +48,11 @@ Raíz PSR-4 del espacio de nombres `MODX\` (`"MODX\\": "core/src/"` en `composer
 
 #### core/src/Revolution/
 
-Clases del core con espacio de nombres (`MODX\Revolution\...`): el servicio `modX`, objetos del modelo, servicios, controladores del Manager y componentes relacionados.
+Clases del core con espacio de nombres (`MODX\Revolution\...`): el servicio `modX`, objetos del modelo, servicios, manejo de errores y componentes relacionados.
 
 | Directorio | Contenido |
 |---|---|
 | `Processors/` | Manejadores de solicitudes llamados a través de conectores, agrupados por área: `Browser/`, `Context/`, `Element/`, `Model/`, `Resource/`, `Search/`, `Security/`, `SoftwareUpdate/`, `Source/`, `System/`, `Workspace/` |
-| `Controllers/` | Controladores de páginas del Manager |
 | `Services/` | Servicios compartidos (cliente HTTP y otros en el contenedor MODX) |
 | `Transport/` | Construcción/instalación de paquetes de transporte |
 | `Sources/` | Controladores de fuentes de medios |
@@ -162,7 +161,7 @@ Recursos front-end de la interfaz del Manager:
 
 ### manager/controllers/
 
-Scripts PHP de entrada que arrancan las páginas del Manager (tema por defecto: `manager/controllers/default/`). Preparan datos y registran componentes Ext JS / ModExt; la lógica más pesada vive en `core/src/Revolution/Controllers/`.
+Scripts PHP de entrada que arrancan las páginas del Manager (tema por defecto: `manager/controllers/default/`). Preparan datos y registran componentes Ext JS / ModExt; el manejo de solicitudes pasa por los Procesadores en `core/src/Revolution/Processors/`.
 
 Los subdirectorios corresponden a las áreas del Manager: `browser/`, `context/`, `dashboard/`, `element/`, `media/`, `resource/`, `security/`, `source/`, `system/`, `workspaces/`.
 

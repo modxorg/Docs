@@ -8,7 +8,7 @@ description: "Definitions of common MODX Revolution terms, with links to the rel
 
 ## ACL
 
-An ACL, or Access Control List, is a set of [Permissions](building-sites/client-proofing/security/policies/permissions) attached to an object. More background is on [Wikipedia](https://en.wikipedia.org/wiki/Access_control_list). [See more](building-sites/client-proofing/security/policies/acls)
+An ACL, or Access Control List, is a set of [Permissions](building-sites/client-proofing/security/policies/permissions) attached to an object. A User with the `sudo` flag bypasses all permission checks. More background is on [Wikipedia](https://en.wikipedia.org/wiki/Access_control_list). [See more](building-sites/client-proofing/security/policies/acls)
 
 ## Add-on
 
@@ -16,7 +16,7 @@ A MODX Third-party Component (3PC) that does not modify the Core or extend its c
 
 ## Asset
 
-Any file under the assets path defined by `MODX_ASSETS_PATH` (usually `/assets`): libraries, images, CSS, JavaScript, class files, Extra packages, and similar.
+Any file under the assets directory defined by `MODX_ASSETS_PATH` (an absolute filesystem path, usually mapped to `/assets` on the site): libraries, images, CSS, JavaScript, class files, Extra packages, and similar.
 
 ## Authentication
 
@@ -32,7 +32,7 @@ Stored copies of data MODX reuses so it can skip repeated database work. Revolut
 
 ## Category
 
-An optional label you attach to an [Element](getting-started/glossary#element), [Property Set](getting-started/glossary#property-set), or related objects so you can group them in the Manager.
+An optional label you attach to an [Element](getting-started/glossary#element), [Property Set](getting-started/glossary#property-set), or related object to group them in the Manager.
 
 ## Child Resource
 
@@ -80,7 +80,7 @@ HTTP cookie data the browser stores for the site. MODX uses cookies with the [Se
 
 ## Core Workspace
 
-Named record of a MODX Core installation path in the database. The setup process creates the default workspace for the Core you install. Multi-workspace switching from the Manager is not a shipped day-to-day workflow in current Revolution releases.
+Named record of a MODX Core installation path in the database. Setup creates the default workspace for the Core you install. Multi-workspace switching in the Manager is not a standard workflow in current Revolution releases.
 
 ## Database
 
@@ -148,7 +148,7 @@ Tags in the form `[[%LanguageStringKey]]` that pull strings from the [Lexicon](g
 
 ## Lexicon
 
-Dictionary of strings keyed by culture (more specific than a bare language code, for example `en`) used to localize the Manager and Extras. Lexicon entries replace older flat language files and you can edit many of them in the Manager.
+Dictionary of strings keyed by the `cultureKey` setting (a 2-letter language code, default `en`) used to localize the Manager and Extras. Many entries are editable in the Manager; Lexicon entries replaced the older flat language files.
 
 ## Lexicon Management
 
@@ -172,7 +172,7 @@ Also called the MODX Browser or File Manager. Manager UI for browsing and pickin
 
 ## Media Source
 
-Defines where media lives: local [File System](getting-started/glossary#file-system), Amazon S3, or other drivers. Core ships File System and S3. More drivers come from [Package Management](getting-started/glossary#package-management) or custom code. [See more](building-sites/media-sources)
+Defines where media lives: local [File System](getting-started/glossary#file-system), FTP, Amazon S3, or other drivers. Core ships File System, FTP, and S3. More drivers come from [Package Management](getting-started/glossary#package-management) or custom code. [See more](building-sites/media-sources)
 
 ## Menu
 
@@ -220,7 +220,7 @@ Database column (or columns) that uniquely identify a row. For Resources the pri
 
 ## Processor
 
-PHP script that performs one Manager or Connector action (create, update, get list, and so on). Connectors route AJAX calls to Processors. [See more](extending-modx/processors)
+PHP class that performs one Manager or Connector action (create, update, get list, and so on). Connectors route AJAX calls to Processors. [See more](extending-modx/processors)
 
 ## Property
 
@@ -304,7 +304,7 @@ Named point in Core or Extra code where [Plugins](getting-started/glossary#plugi
 
 ## System Setting
 
-Site-wide configuration key. [Context Settings](getting-started/glossary#context-setting) and [User Settings](getting-started/glossary#user-setting) can override it.
+Site-wide configuration key. [User Group Settings](getting-started/glossary#user-group-setting), [Context Settings](getting-started/glossary#context-setting), and [User Settings](getting-started/glossary#user-setting) can override it.
 
 ## Template
 
@@ -338,13 +338,17 @@ Manager or front-end account: username, credentials, profile, and group membersh
 
 Named set of Users used with Access Policies and permissions. [See more](building-sites/client-proofing/security/user-groups)
 
+## User Group Setting
+
+A setting scoped to one [User Group](getting-started/glossary#user-group) and inherited by its members (User → User Group → Context → System). Managed from the group's Settings tab.
+
 ## User Setting
 
-Setting for one [User](getting-started/glossary#user). It can add a key or override matching Context and System Settings.
+Setting for one [User](getting-started/glossary#user). It can add a key or override matching User Group, Context, and System Settings.
 
 ## User's Primary Group
 
-The main [User Group](getting-started/glossary#user-group) assigned to a User. Policies and defaults often key off the primary group.
+The main [User Group](getting-started/glossary#user-group) assigned to a User. Permissions apply through any of the User's groups; the primary group mainly supplies defaults for group settings.
 
 ## Username
 

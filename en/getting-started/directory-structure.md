@@ -47,12 +47,11 @@ PSR-4 root for the `MODX\` namespace (`"MODX\\": "core/src/"` in `composer.json`
 
 #### core/src/Revolution/
 
-Namespaced core classes (`MODX\Revolution\...`): the `modX` service, model objects, services, Manager controllers, and related components.
+Namespaced core classes (`MODX\Revolution\...`): the `modX` service, model objects, services, error handling, and related components.
 
 | Directory | Contents |
 |---|---|
 | `Processors/` | Request handlers called through connectors, grouped by area: `Browser/`, `Context/`, `Element/`, `Model/`, `Resource/`, `Search/`, `Security/`, `SoftwareUpdate/`, `Source/`, `System/`, `Workspace/` |
-| `Controllers/` | Manager page controllers |
 | `Services/` | Shared services (HTTP client and others on the MODX container) |
 | `Transport/` | Transport package build/install support |
 | `Sources/` | Media source drivers |
@@ -161,7 +160,7 @@ Front-end assets for the Manager UI:
 
 ### manager/controllers/
 
-PHP entry scripts that bootstrap Manager pages (default theme: `manager/controllers/default/`). They prepare data and register Ext JS / ModExt components; heavier logic lives in `core/src/Revolution/Controllers/`.
+PHP entry scripts that bootstrap Manager pages (default theme: `manager/controllers/default/`). They prepare data and register Ext JS / ModExt components; request handling then goes through Processors under `core/src/Revolution/Processors/`.
 
 Subdirectories match Manager areas: `browser/`, `context/`, `dashboard/`, `element/`, `media/`, `resource/`, `security/`, `source/`, `system/`, `workspaces/`.
 
