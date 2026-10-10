@@ -46,7 +46,7 @@ Composer también las *sugiere*. No son requisitos duros para una instalación m
 - `imagick` — procesamiento de imágenes más avanzado que solo `gd`
 - `intl` — internacionalización
 
-Se recomienda un `memory_limit` de al menos 64M.
+Setup requiere un `memory_limit` de al menos 24M; se recomienda 64M o más.
 
 ## Base de Datos
 

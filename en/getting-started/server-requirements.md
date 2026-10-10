@@ -48,7 +48,7 @@ Composer also *suggests* these. They are not hard requirements for a bare instal
 - `imagick` — stronger image processing than `gd` alone
 - `intl` — internationalization helpers
 
-A `memory_limit` of at least 64M or higher is recommended.
+Setup requires a `memory_limit` of at least 24M; 64M or more is recommended.
 
 ## Database
 

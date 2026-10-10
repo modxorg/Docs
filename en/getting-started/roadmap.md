@@ -29,7 +29,7 @@ Development for MODX 3 happens on the [`3.x`](https://github.com/modxcms/revolut
 
 For breaking changes already in 3.0 and later notes (class aliases, processors, xPDO, `modAction`), start at [Upgrading from 2.x to 3.0](getting-started/upgrading-to-3.0).
 
-Documented heads-up for package authors: deprecated global class aliases are expected to stop loading automatically in **3.3**. Details: [Changed class names](getting-started/upgrading-to-3.0/class-names).
+Documented heads-up for package authors: deprecated global class aliases are expected to stop loading automatically in **3.3 or 3.4**. Details: [Changed class names](getting-started/upgrading-to-3.0/class-names).
 
 ## How to use this
 

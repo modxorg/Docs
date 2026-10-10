@@ -11,7 +11,7 @@ En primer lugar, asegúrate de que:
 - Tienes eAccelerator deshabilitado durante la instalación. eAccelerator puede causar problemas al subir objetos pesados durante el proceso de instalación.
 - Seguiste todas las instrucciones [aquí](getting-started/installation  "Instalación") para tu distribución.
 - Estas usando al menos PHP 5.1.1+, pero no 5.1.6 o 5.2.0
-- Está utilizando MySQL superior a 4.1.20, pero no ninguna iteración de MySQL 5.0.51 (incluida 5.0.51a).
+- Está utilizando MySQL superior a 4.1.20, pero no ninguna iteración de MySQL 5.0.51 (incluida 5.0.51a; ver [MySQL 5.0.51](troubleshooting/mysql-5.0.51)).
 - Borraste el directorio `core/cache/` completamente antes de comenzar la configuración. A veces, los permisos de archivo incorrectos pueden causar problemas.
 - Limpiaste la caché y las cookies de tu navegador.
 
@@ -48,7 +48,7 @@ Si cambiaste el nombre de `config.inc.tpl` a `config.inc.php`, cámbielo  a `con
 
 ### "¡Hice clic en instalar y obtuve una pantalla en blanco!"
 
-Asegúrate de que tu configuración `memory_limit` en php.ini esté establecida en al menos 32M. Para servidores más lentos, es posible que necesites subirlo a 64M.
+Asegúrate de que tu configuración `memory_limit` en php.ini esté establecida en al menos 24M (el valor que verifica Setup). Para servidores más lentos, es posible que necesites subirlo a 64M.
 
 ### "No se puede conectar a la base de datos" en la página de opciones de la base de datos
 
