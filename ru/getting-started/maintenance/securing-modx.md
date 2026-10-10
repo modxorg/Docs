@@ -35,7 +35,7 @@ translation: "getting-started/maintenance/securing-modx"
 ```
 RewriteCond %{HTTP_HOST} ^(www\.)?example\.com$ [NC]
 # Block access to dotfiles and folder people have no need to touch
-RewriteRule ^(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
+RewriteRule ^(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
 ```
 
 Чтобы показывалась ваша страница ошибки, укажите путь в `.htaccess`, например:
@@ -47,15 +47,15 @@ ErrorDocument 404 /404
 Для NGINX добавьте правило, которое передаёт rewrite в обработчик ошибок MODX:
 
 ```
-location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
-    rewrite ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;    
+location ~ ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) {
+    rewrite ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;    
 }
 ```
 
 На высоконагруженном сайте можно обойти PHP MODX и сразу отдавать 404 из NGINX (или 444, когда соединение закрывается без ответа):
 
 ```
-location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
+location ~ ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) {
     return 404;    
 }
 ```

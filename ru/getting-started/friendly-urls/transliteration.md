@@ -22,6 +22,7 @@ MODX применяет транслитерацию в `modResource::filterPath
 | [friendly\_alias\_translit\_class](building-sites/settings/friendly_alias_translit_class) | Сервисный класс для именованных таблиц (по умолчанию `translit.modTransliterate`) |
 | [friendly\_alias\_translit\_class\_path](building-sites/settings/friendly_alias_translit_class_path) | Откуда грузить класс (по умолчанию `{core_path}components/`) |
 | [automatic\_alias](building-sites/settings/automatic_alias) | Генерировать alias из pagetitle при сохранении, если поле пустое |
+| [friendly\_alias\_realtime](building-sites/settings/friendly_alias_realtime) | Живой предпросмотр alias в Менеджере, пока вы вводите pagetitle (по умолчанию Нет; требует `automatic_alias`) |
 
 Связанные фильтры (разделители слов, нижний регистр, длина, ограничение символов) работают после транслитерации. Смотрите остальные `friendly_alias_*` в той же области.
 
@@ -37,7 +38,7 @@ MODX применяет транслитерацию в `modResource::filterPath
 
 MODX конвертирует строку с флагами `//TRANSLIT//IGNORE` в кодировку сайта (`modx_charset`, обычно UTF-8). Качество зависит от сборки PHP/iconv и локали. Это быстрый вариант без пакетов, не языковая таблица.
 
-### iconv\_ascii
+## Встроенный вариант: iconv\_ascii
 
 Значение `iconv_ascii` гонит строку в ASCII (`ASCII//TRANSLIT//IGNORE`). Берите его, если нужны только латинские сегменты URL, а обычный `iconv` всё ещё оставляет не-ASCII.
 

@@ -54,14 +54,14 @@ Heb je nu een custom core-directory of een core buiten de webroot, draai dat ter
 Fysiek verplaatsen van de core buiten de webroot is vanuit security-oogpunt hetzelfde als toegang blokkeren via de webserver. Voorbeeld op Apache:
 
 ```apache
-RewriteRule ^(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
+RewriteRule ^(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php)  /index.php?q=doesnotexist [L,R=404]
 ```
 
 Op nginx:
 
 ```nginx
-location ~ ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) {
-    rewrite ^/(\.(?!well_known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;
+location ~ ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) {
+    rewrite ^/(\.(?!well-known)|_build|_gitify|_backup|core|config.core.php) /index.php?q=doesnotexist;
 }
 ```
 

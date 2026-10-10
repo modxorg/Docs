@@ -1,5 +1,6 @@
 ---
 title: "Дружественные URL на nginx"
+description: "Перезапись try_files для дружественных URL и пример блока server для nginx"
 _old_id: "376"
 _old_uri: "2.x/getting-started/installation/basic-installation/nginx-server-config"
 translation: "getting-started/friendly-urls/nginx"
@@ -17,47 +18,53 @@ nginx не использует `.htaccess`. Для дружественных U
 
 ``` nginx
 server {
- listen 80;
- listen [:]:80;
- server_name example.com www.example.com;
- return 301 https://example.com$request_uri;
+    listen 80;
+    listen [::]:80;
+    server_name example.com www.example.com;
+    return 301 https://example.com$request_uri;
 }
 
 server {
- listen 443 ssl http2;
- listen [:]:443 ssl http2;
- server_name example.com www.example.com;
+    # http2 on требует nginx >= 1.25.1; в старых версиях используйте: listen 443 ssl http2;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+    server_name example.com www.example.com;
 
- # ssl_certificate /path/to/fullchain.pem;
- # ssl_certificate_key /path/to/privkey.pem;
+    # ssl_certificate     /path/to/fullchain.pem;
+    # ssl_certificate_key /path/to/privkey.pem;
 
- root /var/www/example.com;
- index index.php;
- client_max_body_size 30M;
+    root /var/www/example.com;
+    index index.php;
+    client_max_body_size 30M;
 
- location @modx {
- rewrite ^/(.*)$ /index.php?q=$1&$args last;
- }
+    location @modx {
+        rewrite ^/(.*)$ /index.php?q=$1&$args last;
+    }
 
- location / {
- absolute_redirect off;
- try_files $uri $uri/ @modx;
- }
+    location / {
+        absolute_redirect off;
+        try_files $uri $uri/ @modx;
+    }
 
- location ~ \.php$ {
- try_files $uri =404;
- fastcgi_split_path_info ^(.+\.php)(.*)$;
- fastcgi_pass unix:/run/php/php8.2-fpm.sock;
- fastcgi_index index.php;
- include fastcgi_params;
- fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
- fastcgi_param SERVER_NAME $host;
- fastcgi_ignore_client_abort on;
- }
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param SERVER_NAME $host;
+        fastcgi_ignore_client_abort on;
+    }
 
- location ~ /\.ht {
- deny all;
- }
+    location ~ /\.ht {
+        deny all;
+    }
+
+    location ~ ^/(_build|_gitify|_backup|core|config\.core\.php) {
+        deny all;
+    }
 }
 ```
 
@@ -77,4 +84,5 @@ server {
 ## См. также
 
 - [Использование дружественных URL](getting-started/friendly-urls)
+- [Усиление безопасности MODX](getting-started/maintenance/securing-modx)
 - [Требования к серверу](getting-started/server-requirements)
