@@ -1,6 +1,7 @@
 ---
 title: "Обновление c MODX Evolution"
 translation: "getting-started/maintenance/upgrading/evolution"
+sortorder: 99
 ---
 
 Из-за значительных различий в кодовой базе, синтаксисе тегов и пользователях, обновление с MODX Evolution до Revolution является более сложным процессом с рядом шагов, выполняемых вручную. 

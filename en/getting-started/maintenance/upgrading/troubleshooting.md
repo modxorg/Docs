@@ -5,33 +5,33 @@ _old_uri: "2.x/administering-your-site/upgrading-modx/troubleshooting-upgrades"
 sortorder: 1
 ---
 
-## Common Problems
+## Common problems
 
-First off, make sure:
+Check first:
 
-- You have eAccelerator disabled during install. eAccelerator can cause problems when doing the heavy lifting during the install process.
 - You followed all the directions on the [Upgrading MODX](getting-started/maintenance/upgrading "Upgrading MODX") page.
-- You've uploaded all the necessary files for upgrade, making sure to **merge** directories and not _replace_ them.
-- Clear your browser cache after upgrading. This will clear up a lot of common JS and CSS related errors.
-- Clear the Site Cache after upgrading. Sometimes this doesn't occur for whatever reason during setup/ because of your environment.
+- You uploaded all the necessary files for the upgrade, **merging** directories instead of _replacing_ them.
+- You cleared your browser cache after upgrading. That clears up most JS and CSS related errors.
+- You cleared the site cache after upgrading. Setup does not always do it, depending on your environment.
 
 ### Help! The only option I can choose is "New Installation", but this is an upgrade!
 
-This occurs when you erase the core/config/config.inc.php file. You'll need to restore it. If you made a backup before upgrading (as is strongly recommended), just copy the file from there to your new core/config/ directory and make it writable.
+This occurs when you erase the `core/config/config.inc.php` file. Restore it: if you made a backup before upgrading, copy the file from there to your `core/config/` directory and make it writable.
 
-If you didn't backup, you can try creating a new core/config/config.inc.php from the template in core/docs/config.inc.tpl, by replacing all the placeholders surrounded by {}, and then making the file writable.
+Without a backup, create a new `core/config/config.inc.php` from the template in `core/docs/config.inc.tpl`, replace all the placeholders surrounded by `{}`, and make the file writable.
 
 ### Setup went well, but my manager isn't fully working
 
-Make sure to clear your browser cache. Browsers cache the JS and CSS in the manager to have it load faster, and this often causes issues when upgrading, as the browser persists in using the old files. (Note: this is less of an issue post-2.0.2, as JS files are now prefixed with the version to make them non-cacheable after upgrades.)
+Clear your browser cache: the browser caches manager JS and CSS for speed and keeps using the old files after an upgrade. Since 2.0.2 this is rarer, because manager assets carry a cache-busting query token, `?mv=<adler32 hash of version + uuid>`, that changes after every upgrade.
 
-On MODX 3.x the Manager ships prebuilt asset bundles. There is no `manager/min/` compressor path anymore (removed in 3.0). If a page looks blank after upgrade, clear the browser cache for the manager host and confirm your Extra still loads its own assets under `manager/components/`.
+On MODX 3.x the Manager ships prebuilt asset bundles. There is no `manager/min/` compressor path anymore (removed in 3.0). If a page looks blank after upgrade, clear the browser cache for the manager host and confirm your Extra still loads its own assets under `assets/components/<namespace>/` (its PHP lives in `core/components/<namespace>/`).
 
-## Still Problems?
+
+## Still problems?
 
 [Get help on the forum](https://community.modx.com) or from a [MODX Professional](https://modx.com/professional/).
 
-## See Also
+## See also
 
 - [Troubleshooting Installation](getting-started/installation/troubleshooting "Troubleshooting Installation")
-- [Additional Troubleshooting](faqs-and-troubleshooting "FAQs & Troubleshooting")
+- [Additional Troubleshooting](getting-started/faqs-and-troubleshooting "FAQs & Troubleshooting")
