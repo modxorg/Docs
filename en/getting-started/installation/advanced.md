@@ -16,7 +16,7 @@ Check [Server Requirements](getting-started/server-requirements) first. If you h
 
 ## Installation Pre-Steps
 
-After you've [downloaded](getting-started/installation "Installation") MODX Revolution's advanced distribution, upload and extract it to your server. You should be left with two directories - `core/` and `setup/`. From here, if you plan on moving the `core/` directory, proceed to the next section. If you're not going to do so, or rename the config key, browse to **setup/** in your browser and skip to the **Advanced Options** section of this document.
+After you've [downloaded](getting-started/installation "Installation") MODX Revolution's advanced distribution, upload and extract it to your server. You should be left with two directories - `core/` and `setup/`. From here, browse to **setup/** in your browser: pick a language, optionally rename the configuration key (see the next section), and then continue to the **Advanced Options** section of this document.
 
 ### ~~Renaming or Moving the Core~~
 
@@ -93,9 +93,9 @@ Once you're ready, and all the checks pass, click 'Install' to proceed.
 If you get a blank screen or cannot proceed after clicking 'Install', verify these steps:
 
 1. Make sure the directories "/\[root\]", "/core/config", "/core/packages","/core/cache", and "/core/export" are writable. (root will be the actual directory you are installing to.)
-2. Make sure your php.ini setting sets memory\_limit to 128M, and max\_execution\_time to 120
+2. Make sure your php.ini sets memory\_limit to at least 24M (the advanced installer tries to raise it to 128M itself). A larger max\_execution\_time (for example 120) is a good idea on slow hosts, but setup does not check it
 3. Ensure that MODX can create the manager and connectors directories; this is done by making the parents of those directories writable (since you can change where they are installed)
-4. Post a message in the [Revolution forum](https://forums.modx.com/index.php/board,280.0.html) regarding your issue. State your server setup and installation info, and we'll try and help you find a solution.
+4. Post a message on the [MODX Community](https://community.modx.com) regarding your issue. State your server setup and installation info, and we'll try and help you find a solution.
 
 ## Post-Installation Summary
 

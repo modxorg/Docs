@@ -6,26 +6,22 @@ _old_uri: "2.x/getting-started/installation/advanced-installation"
 
 Este es el tutorial para la distribución avanzada de MODX. Se recomienda instalar esta distribución solo si:
 
-- Planeas renombrar los directorios manager/ o connectors/ , o mover el  directorio core/
+- Planeas renombrar los directorios manager/ o connectors/
 - Tiene acceso SSH o puedes mover y crear fácilmente directorios con permisos de escritura en tu servidor.
+
+**El directorio core no se puede mover ni renombrar en MODX 3.** Para una instalación normal, prefiere la [Instalación básica](getting-started/installation/standard) con el paquete traditional.
 
 Es posible que desees comprobar primero la página de [Requisitos del Servidor](getting-started/server-requirements "Server Requirements"). Si después de leer esto, todavía tienes problemas para instalar, lee la página [Solución de problemas de instalación](getting-started/installation/troubleshooting "Troubleshooting Installation").
 
 ## Pasos previos a la instalación
 
-Después de haber [descargado]getting-started/installation "Instalación") la distribución avanzada de MODX Revolution, súbela y extráela en tu servidor. Deberías tener dos directorios: core/ y setup/. A partir de aquí, si planeas mover el directorio core/, continúa con la siguiente sección. Si no lo vas a hacer, o cambiar el nombre de la clave de configuración, vete a **setup /** en tu navegador y salta a la sección [Opciones avanzadas] (#AdvancedInstallation-AdvancedOptions) de este documento.
+Después de haber [descargado](getting-started/installation "Instalación") la distribución avanzada de MODX Revolution, súbela y extráela en tu servidor. Deberías tener dos directorios: `core/` y `setup/`. A partir de aquí, abre **setup/** en tu navegador: elige un idioma, cambia opcionalmente la clave de configuración (ver la siguiente sección) y continúa a la sección **Opciones avanzadas** de este documento.
 
-### Renombrando o moviendo el directorio core(núcleo)
+### ~~Renombrando o moviendo el directorio core(núcleo)~~
 
-MODX Revolution te permite cambiar el nombre y/o mover el directorio core/ para mejorar tu nivel de seguridad. También puedes mover el directorio core/ fuera del directorio web público, para asegurar aún más tu instalación de MODX.
+El directorio core ya no se puede mover a una ruta personalizada ni renombrar en 3.0.
 
-Si eliges cambiar el nombre o mover el core, MODX recomienda hacerlo antes de la instalación. Simplemente cambia el nombre o mueve el core, y setup/ - al inicio- te presentará una página pidiéndote la nueva ubicación del core:
-
-![](setup-corefinder.png)
-
-Ingresa en el campo de texto la ruta absoluta a donde has movido el directorio core. Si MODX puede encontrarlo allí, procederá normalmente con la instalación. Si MODX aún no puede encontrar el directorio desde la ruta que especificaste, verifica si lo has escrito correctamente, que sea una ruta absoluta y que hayas hecho que el directorio sea leíble (y que el directorio core/cache/ tenga permisos de escritura).
-
-MODX también podría pedirte que hagas que el archivo setup/includes/core.config.php sea escribible. Esto es necesario para cambiar la ruta principal, y debes hacerlo antes de continuar.
+Esto se debe a la forma en que Composer se integra en el proceso de desarrollo del core, para gestionar dependencias y habilitar el autoloading. [#15476](https://github.com/modxcms/revolution/issues/15476)
 
 ### Cambiar la clave de configuración
 
@@ -96,9 +92,9 @@ Una vez que estés listo y se pasen todas las comprobaciones, haz clic en 'Insta
 Si obtienes una pantalla en blanco o no puedes continuar después de hacer clic en 'Instalar', verifica estos pasos:
 
 1. Asegúrate de que los directorios "/\[root\]", "/core/config", "/core/packages","/core/cache", y "/core/export" se puedan escribir. (root será el directorio real en el que estás instalando).
-2. Asegúrate de que tu configuración de php.ini establezca memory\_limit en 128M y max\_execution\_time en 120 .
+2. Asegúrate de que tu php.ini establezca memory\_limit en al menos 24M (el instalador avanzado intenta subirlo a 128M por sí mismo). Un max\_execution\_time mayor (por ejemplo 120) es recomendable en servidores lentos, pero setup no lo comprueba.
 3. Asegúrate de que MODX pueda crear el administrador y los directorios de conectores. Esto se hace dando permisos de escritura a los directorios **padres** de los directorios manager/ y connectors/ (ya que puede cambiar dónde están instalados).
-4. Publica un mensaje en el [Foro Revolución](https://forums.modx.com/index.php/board,280.0.html) con respecto a tu problema. Indica la configuración de tu servidor y la información de instalación, e intentaremos ayudarte a encontrar una solución.
+4. Publica un mensaje en la [Comunidad MODX](https://community.modx.com) con respecto a tu problema. Indica la configuración de tu servidor y la información de instalación, e intentaremos ayudarte a encontrar una solución.
 
 ## Resumen posterior a la instalación
 

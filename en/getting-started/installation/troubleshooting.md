@@ -76,27 +76,9 @@ Then delete the `core/cache/config.cache.php` file.
 
 Unless, of course, you've changed these explicitly for some purpose of your own.
 
-### Things sometimes don't load, the page flakes out, etc (eAccelerator)
+### General weirdness in the Manager
 
-Are you running eAccelerator? In some server configurations, this can cause problems. You might need to disable it. You can do so via your php.ini:
-
-``` php
-eaccelerator.enable = 0;
-eaccelerator.optimizer = 0;
-eaccelerator.debug = 0;
-```
-
-or in your .htaccess in the modx root directory, if your server supports `php_flag` server directives:
-
-``` php
-php_flag eaccelerator.enable 0
-php_flag eaccelerator.optimizer 0
-php_flag eaccelerator.debug 0
-```
-
-### General weirdness in the Manager (not eAccelerator)
-
-On some systems, especially with shared hosting, there can be a problem with the `compress_js` and/or `compress_css` System Settings. Go to System -> System Settings and type 'compress' (without the quotes) in the search box at the upper right. Turn the two settings off, then log out, delete all files in the `core/cache` directory, clear your browser cache and cookies, and log back in.
+On some systems, especially with shared hosting, there can be a problem with the `compress_js` and/or `compress_css` System Settings. Go to **Admin → System Settings** and type 'compress' (without the quotes) in the search box at the upper right. Turn the two settings off, then log out, delete all files in the `core/cache` directory, clear your browser cache and cookies, and log back in.
 
 If the Manager is messed up enough that you can't change the settings, see the note below about changing the two System Settings in the `modx_system_settings` table in the database with PhpMyAdmin.
 
@@ -108,8 +90,8 @@ The simple fix: clear your browser's cache, and log back into the manager.
 
 A more complete solution:
 
-1. Under System Clear Cache
-2. Under Security Flush Permissions and then Flush Sessions
+1. Main menu → **Content → Clear Cache**
+2. User menu → **Access → Flush Your Permissions**, then **Access → Logout All Users**
 3. This will dump everything and log you out
 4. Last step Clear your browser cache
 
@@ -125,15 +107,11 @@ php_value session.auto_start 0
 
 Often on shared hosting, if you create a username for your database with an underscore (\_) in it, it will cause problems. Ensure your database username does not contain an underscore, and try again.
 
-More common issues to come...
-
-### The manager displays as plain text after installation
-
-The MODX manager loads compressed CSS and JS assets. Some server configuration See "JS Errors in the Manager due to Error 4
+More issues are covered in [FAQs & Troubleshooting](getting-started/faqs-and-troubleshooting).
 
 ### The Manager displays as plain text, Manager parts are missing, or there are JavaScript 400 Errors in the Manager
 
-If your MODX manager is not loading properly due to 400 errors in the manager when trying to load the Google Minify-compressed JavaScript code, this is likely due to a server misconfiguration on your end. If this cannot be rectified from a server angle, you can manually disable JS and CSS compression the following way:
+If your MODX manager is not loading properly due to 400 errors in the manager when trying to load the compressed JavaScript assets (the bundled files such as `modx.jsgrps-min.js` that `compress_js` serves), this is likely due to a server misconfiguration on your end. If this cannot be rectified from a server angle, you can manually disable JS and CSS compression the following way:
 
 1. Go into the DB using PhpMyAdmin and find the `table_prefix_system_settings` table (`table_prefix` is usually modx).
 2. Find the rows with key `compress_js` and `compress_css` and set their value to 0 and save them.
@@ -149,4 +127,4 @@ This will allow you to use the manager without JS and CSS compression.
 
 ## Still Having Issues?
 
-If you're still having problems, post your error and your server environment information in [our forums here](https://forums.modx.com/index.php/board,378.0.html), and we'll try and address your issue as soon as possible.
+If you're still having problems, post your error and your server environment information on the [MODX Community](https://community.modx.com), and we'll try and address your issue as soon as possible.

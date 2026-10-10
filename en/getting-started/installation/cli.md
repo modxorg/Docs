@@ -9,7 +9,7 @@ CLI Installation is available only for MODX Revolution versions 2.2 and later.
 
 ## Installing MODX via the PHP Command Line
 
-MODX allows you to do upgrades and installations via the command line (CLI) while using a config XML file. (More info on this file can be found [here](getting-started/installation/command-line-installation/the-setup-config-xml-file "The Setup Config Xml File").) This allows users to create simple batch scripts to update their MODX installations.
+MODX allows you to do upgrades and installations via the command line (CLI) while using a config XML file. (More info on this file can be found [here](getting-started/installation/cli/config.xml "The Setup Config Xml File").) This allows users to create simple batch scripts to update their MODX installations.
 
 When running upgrades, it is **always** recommended to backup your files before upgrading.
 
@@ -31,13 +31,16 @@ Note : if your core folder is in a "non-standard" location, you might want to us
 --core_path=/path/to/core/
 ```
 
+To override the `MODX_CONFIG_KEY` for a single run (multisite setups or site moves), pass `--config_key=mykey`. Setup strips unsafe characters and defines the key for this run only.
+
 ## Doing a Basic Upgrade MODX via CLI
 
-Follow the same steps as new installations, but this time in your XML file you need only specify the following attributes:
+Follow the same steps as new installations, but this time in your XML file you need at least the keys from `config.dist.upgrade.xml`:
 
 - `inplace`
 - `unpacked`
 - `language`
+- `core_path`
 - `remove_setup_directory`
 
 And any other attributes you would like to change during the upgrade. There is an example upgrade xml file named "config.dist.upgrade.xml". Then, once you are ready, browse to the MODX setup directory, and type:
@@ -65,6 +68,16 @@ This will upgrade your MODX installation, and when finished will display the tim
 There is a helper script **installmodx.php** available on Github: [https://github.com/craftsmancoding/modx\_utils/blob/master/installmodx.php](https://github.com/craftsmancoding/modx_utils/blob/master/installmodx.php)
 
 It provides command line options for this process.
+
+## Interactive CLI Setup
+
+MODX also ships an interactive helper, `setup/cli-install.php`. It prompts you for the same values, writes `setup/config.xml`, and then runs the installation:
+
+``` shell
+php setup/cli-install.php --mode=new
+```
+
+`--mode` accepts `new`, `upgrade`, or `advanced`. Any `--key=value` pair it recognizes (for example `--core_path=/path/to/core/`, `--language=en`) is used to prefill the answers, and on upgrades an existing `config.xml` can be loaded.
 
 ## See Also
 
