@@ -21,4 +21,3 @@ description: "Использовать строгие дружественные
 
 -   [Семантический URL](https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BC%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_URL)
 -   [friendly_urls](building-sites/settings/friendly_urls)
--   [friendly_alias_urls](building-sites/settings/friendly_alias_urls)

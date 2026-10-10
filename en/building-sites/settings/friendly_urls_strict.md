@@ -16,4 +16,3 @@ When friendly URLs are enabled, this option forces non-canonical requests that m
 
 -   [Friendly URL](https://en.wikipedia.org/wiki/Clean_URL)
 -   [friendly_urls](building-sites/settings/friendly_urls)
--   [friendly_alias_urls](building-sites/settings/friendly_alias_urls)
