@@ -46,9 +46,10 @@ With the default cache configuration, every partition below is a directory in `c
 | `scripts` | The prepared source of Snippets and Plugins, written as executable PHP |
 | `system_settings` | The global MODX configuration and system settings. Loaded first on every request; because alternative handlers for partitions are stored in system settings, this partition cannot be loaded from another handler that way |
 
-Three more directories sit in `core/cache/` without being cache partitions:
+Four more directories sit in `core/cache/` without being cache partitions:
 
 - **includes** Holds the prepared PHP of static Snippets and Plugins, written by `modScript::loadScript()` for direct inclusion.
+- **logs** Holds error.log, written by the file log target and managed by the Error Log processors.
 - **registry** Used by `modFileRegister`, the file-based register the manager uses to pass data to processors.
 - **rss** Used by SimplePie to cache the feeds behind the RSS dashboard widget.
 
