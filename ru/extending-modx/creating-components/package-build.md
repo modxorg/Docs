@@ -67,6 +67,7 @@ return [
 ```
 
 - `action` → файл `core/components/sendex/controllers/home.class.php` (класс вроде `SendexHomeManagerController`).
+- `namespace` → к какому компоненту относится action; по умолчанию в схеме — `core`. Заготовка подставляет ваш namespace автоматически; если собираете строки `modMenu` вручную, укажите его явно, иначе менеджер будет искать контроллер в core.
 - `parent` → обычно `components`. Пустая строка для корневого пункта, который только открывает подменю.
 - `handler` → необязательный JavaScript. Для «пустого» родителя часто `return false;`.
 
@@ -108,7 +109,7 @@ $assetsUrl = $this->modx->getOption(
 
 ## Контроллеры CMP
 
-По клику на пункт меню MODX загружает контроллер из `action` в каталоге `controllers/` компонента.
+По клику на пункт меню MODX загружает контроллер из `action` в каталоге `controllers/` компонента. Порядок разрешения в 3.x: сначала PSR-4 класс `\MODX\Revolution\Controllers\<Action>` (если есть — файл не грузится), затем легаси-глобальный класс `<Namespace><Action>ManagerController`, затем файл `controllers/<action>.class.php` и наконец `controllers/<action>/index.class.php` — ищутся в теме, `default` и в корне `controllers/` namespace.
 
 Домашний контроллер ModExtra3 наследует `MODX\Revolution\modExtraManagerController` и уже подключает ассеты через `addCss()` / `addJavascript()` / `addHtml()`. См. [`controllers/home.class.php`](https://github.com/modx-pro/ModExtra3/blob/master/core/components/modextra/controllers/home.class.php).
 

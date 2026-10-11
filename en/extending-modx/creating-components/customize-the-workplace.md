@@ -3,95 +3,81 @@ title: "Customize the workplace: MODXCloud + PhpStorm"
 translation: "extending-modx/creating-components/customize-the-workplace"
 ---
 
-For development we need a good environment. Personally, I use the local Nginx + Php5-fpm + Mysql web server on MacOS X, but this is far from the usual configuration.
-
-It is much easier and more accessible to use any hosting service with access to the site via SFTP. It doesn't matter which one: shared, vps or cloud.
-
-Specifically for our task, in order to make the working environment as uniform as possible and accessible to all participants in the training, we will use [free account](https://modxcloud.com/signup/lab-account.html) on MODXCloud and [30 day trial IDE PhpStorm](http://www.jetbrains.com/phpstorm/download/).
+For development you need a web server and an IDE. Any hosting with SFTP access works — shared, VPS or cloud. For a uniform setup across all course participants, the examples use a [free MODXCloud account](https://modxcloud.com/signup/lab-account.html) and the [30-day PhpStorm trial](http://www.jetbrains.com/phpstorm/download/).
 
 ## Register and configure MODXCloud
 
-It's all easier nowhere. Register, go, create a cloud.
+Register, create a cloud: **Clouds → Add new cloud**, plan **Development**, **Complete Cloud Creation**.
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/customize-1.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/customize-1.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/customize-2.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/customize-2.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/customize-3.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/customize-3.png)
 
-After entering, click **Clouds** in the top menu, then **Add new cloud**, fill in the required fields, select the tariff plan **Development** and click **Complete Cloud Creation**.
+![](/ru/extending-modx/creating-components/customize-the-workplace/customize-4.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/customize-4.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/customize-5.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/customize-5.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/customize-6.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/customize-6.png)
+Wait about 5 minutes for the cloud to start. A notification appears at the top of the screen, and the cloud shows up in the list. Open it: at the very bottom is the **SFTP access** block — it holds the credentials.
 
-Next we wait about 5 minutes until a new cloud is ready. You will see a new notification at the top of the screen and a cloud will appear in the list. We go into it, and at the very bottom we see **access via SFTP** - we need it.
+![](/ru/extending-modx/creating-components/customize-the-workplace/customize-7.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/customize-7.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/customize-8.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/customize-8.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/customize-9.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/customize-9.png)
+That is the whole hosting setup. Site credentials arrive in a notification:
 
-That's the whole hosting setup. The data for entering the site is in your notification box:
-
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/customize-10.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/customize-10.png)
 
 ## Setting PhpStorm
 
-[Downloading](http://www.jetbrains.com/phpstorm/download/) and install PhpStorm. Most likely, you will also need to download Java 7, he should say about it himself.
+[Download](http://www.jetbrains.com/phpstorm/download/) and install PhpStorm; the trial lasts 30 days without functional limits — enough to finish the course and decide on a purchase. The IDE will prompt you if it needs Java.
 
-We get a trial version without functionality limitations for 30 days. This is quite enough to go through the whole course and decide whether you need to buy this excellent IDE, or if you should look for free analogues. Personally, I bought it at last Christmas sale, it seems, for $ 25. Hopefully, this year we will be pleased with all of us - because we need to renew the license =)
+Create a new project named **Sendex**.
 
-We start IDE, we create the new project Sendex.
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-1.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-1.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-2.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-2.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-3.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-3.png)
+Theme, fonts and panel layout are a matter of taste — keep the defaults unless you have a preference.
 
-Personally, I move all the panels to the right, because I'm right-handed and it’s more convenient for me to climb to them. It is very easy to do this - through the context menu.
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-4.png)
 
-I use the Twilight theme with fonts for decoration [Ubuntu Mono](http://font.ubuntu.com/), almost all the default settings. The code style is standard, with one change - real, not smart, tabulation. The ancient holivar "tabs vs spaces" I decided for myself simply - tabs.
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-5.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-4.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-6.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-5.png)
+Now connect the server — this is the central step of the whole course setup. In the menu: **Tools → Deployment → Configuration**, add a new server and enter the MODXCloud data:
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-6.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-7.png)
 
-If anyone is interested - here is [export my settings](http://yadi.sk/d/CuMmZlEgGqq6Q), you can import yourself.
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-8.png)
 
-Next we set up communication with the server. This is one of the most important moments in further work. Select in the menu: **Tools → Deployment → Configuration**, add a new server and drive in data from MODXCloud:
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-9.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-7.png)
+Tick the checkbox in the upper left corner of the window to make this server the default for the project. Then press **Apply** and **Test SFTP connection**:
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-8.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-10.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-9.png)
+A success message means the connection works. From now on the project works with the server files: open the **Remote host** tab on the right — the site sits in the `www` directory; create a `Sendex` directory there.
 
-Do not forget to answer the green check mark in the upper left corner of the window so that our new server will become the default for this project. Also, after setting it is desirable to press **Apply и Test SFTP connection**.
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-11.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-10.png)
+Now map the local project to the remote **Sendex** directory — same **Deployment** settings, **Mapping** tab:
 
-If we see the word successfully, then everything is fine.
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-12.png)
 
-From this moment we can safely work with files and directories on the server. To do this, find the tab **Remote host** on the right and click. In the www directory is our site where you can create a directory Sendex.
-
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-11.png)
-
-Now the second important point is that we need to set up synchronization between the remote directory **Sendex** and the local project. This is done in the same place in the **Deployment** settings, **Mapping** tab:
-
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-12.png)
-
-Create a file **test.php** in the project and copy the code there for verification:
+Create a **test.php** file in the project to verify the setup:
 
 ``` php
 <?php
-// We connect
+// Load MODX
 define('MODX_API_MODE', true);
 require '../index.php';
 
@@ -104,44 +90,38 @@ echo '<pre>';
 print_r($modx->config);
 ```
 
-Now you need to synchronize the project with a remote server using the context menu. Immediately after uploading the file, we can launch it on the server by reference [c2263.paas2.ams.modxcloud.com/Sendex/test.php](c2263.paas2.ams.modxcloud.com/Sendex/test.php)
+Synchronize the project with the server via the context menu, then open the file in the browser: [c2263.paas2.ams.modxcloud.com/Sendex/test.php](c2263.paas2.ams.modxcloud.com/Sendex/test.php)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-13.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-13.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-14.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-14.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-15.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-15.png)
 
-Personally, I always turn on automatic synchronization so that files are updated when I click **Ctrl+S**.
+It is convenient to turn on automatic synchronization so files upload on **Ctrl+S**:
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-16.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-16.png)
 
-As you can see, we are already working with the MODX kernel from this file, which is in our project and synchronized with the remote directory.
+The file already works with the MODX kernel — and it lives in the project, not on the server.
 
-One snag - in the editor, everything somehow looks ugly and swears at _undefined variable 'modx'_:
+One snag: the editor flags _undefined variable 'modx'_:
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-17.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-17.png)
 
-This is because PhpStorm does not know MODX from the box, and we need to connect it to the project. Then IDE will index files and learn to understand the declared variables and their methods.
+PhpStorm does not know MODX out of the box. Download the latest MODX Revolution from the official site, unpack it anywhere and attach it to the project via the context menu **External Libraries** in the project files window. The IDE indexes the files and starts resolving variables and their methods:
 
-You need to download the latest version of MODX Revolution from the official site, unpack somewhere on your computer and connect to the project via the context menu **External Libraries** in the project files window:
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-18.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-18.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-19.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-19.png)
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-20.png)
 
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-20.png)
+After saving, all errors disappear except the missing `index.php` — it is on the server, not in the project; ignore it. Method completion works, and **Ctrl+B** navigates to a method definition.
 
-Click to save and all errors, except the inability to open the index.php file, disappear. We don’t have this file in the project - it is on the server, so just ignore it.
-
-Please note that after connecting MODX to the project, we see all its methods when typing - the magical PhpStorm begins to prompt us.
-
-![](/2.x/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-21.png)
-
-Moreover, by methods and variables you can navigate by simply clicking on them. **Ctrl+B**.
+![](/ru/extending-modx/creating-components/customize-the-workplace/PhpStorm-21.png)
 
 ## Conclusion
 
-So, we created hosting, created a project, set up IDE and file synchronization. The right working environment is very important, it depends on comfort and pleasure during the development.
+The workplace is ready: hosting, project, IDE and file synchronization.
 
-In the next lesson, we will clone [modExtra from the repository](https://github.com/bezumkin/modExtra) and analyze its structure.
+Next lesson: clone [ModExtra3 from the repository](https://github.com/modx-pro/ModExtra3) and explore its structure.

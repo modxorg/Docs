@@ -3,13 +3,11 @@ title: "Structure of the component"
 translation: "extending-modx/creating-components"
 ---
 
-All decent additions to MODX are distributed by transport packages - these are such zip files with a certain structure.
+A MODX component ships as a transport package — a zip with a fixed layout. During installation it can create tables, change system settings, copy files, and more.
 
-During installation, they can perform various actions: create tables, change system settings, copy files, etc.
+Building that zip from scratch is slow and error-prone. Use the **modExtra** scaffold instead — almost every add-on in the course starts from it.
 
-To write a transport package from scratch is very long, dreary and fraught with errors. It is much better to use a proven preparation **modExtra** - it is with its help that almost all of my additions are written.
-
-For MODX 2.x use [modx-pro/modExtra](https://github.com/modx-pro/modExtra). For MODX 3.x use [modx-pro/ModExtra3](https://github.com/modx-pro/ModExtra3). Layout of folders is the same idea. Download one scaffold and walk the tree below.
+For MODX 2.x take [modx-pro/modExtra](https://github.com/modx-pro/modExtra); for MODX 3.x — [modx-pro/ModExtra3](https://github.com/modx-pro/ModExtra3). The folder layout is the same. Pick one and follow the tree below.
 
 This page also covers the package builder: how it runs and how you configure it.
 
@@ -25,30 +23,27 @@ git clone https://github.com/modx-pro/modExtra.git
 # or: git clone https://github.com/modx-pro/ModExtra3.git
 ```
 
-Remove the nested `.git` directory if you do not want the scaffold history. Copy the rest into the project path from the previous lesson. PhpStorm will index the files.
-
-It should look like this:
+Delete the nested `.git` directory if you do not need the scaffold history, then copy the rest into the project path from the previous lesson.
 
 ![](/ru/extending-modx/creating-components/component-structure/structure-1.png)
 
-test.php can be safely removed.
+Remove `test.php` — it is not part of the component.
 
 ## Component structure
 
-A regular package consists of 3 directories:
+A regular package contains three directories and a few files:
 
-- `_build` — scripts to build the component into the transport package
-- `assets` — files that must be accessible from outside
-- `core` — files that are needed for the internal logic of the component
-- `README.md` — The file with the general description of the component is needed for the future repository on GitHub
-- `rename_it.php` — new script rename billet php
-- `rename_it.sh` — old script rename perl
+- `_build` — scripts that build the transport package
+- `assets` — files served to the browser
+- `core` — the component's internal logic
+- `README.md` — short description for the future GitHub repository
+- `rename_it.php` — renames the scaffold to your component name
+- `rename_it.sh` — the same rename script, older shell variant
+
 
 ### Directory core
 
-The most important component directory is the entire logic of its work.
-
-This directory should be copied to the working site, so it looks like this:
+`core` holds the component's logic. It is copied into the site's own `core` directory, so the paths line up:
 
 ``` plain
 - core
@@ -57,28 +52,20 @@ This directory should be copied to the working site, so it looks like this:
 ---- everything is necessary here
 ```
 
-That is, the directory structure is such that it is copied to the correct place `/core` of the site.
+Main directories:
 
-#### Main directories
+- **controllers** — manager page controllers; they load the required CSS and JS.
+- **docs** — changelog, readme and license; the package description uses them.
+- **elements** — chunks, snippets and other `modElement` objects shipped with the component.
+- **lexicon** — component lexicons, usually `en` and `ru`.
+- **model** — objects and table models for the database. The component's main class lives here too.
+- **processors** — small handlers for manager requests. Files here are not reachable from the browser; do not put anything that must run over HTTP into this directory.
 
-- **controllers** — files for the preparation of admin pages. Download the necessary scripts and styles.
-- **docs** — change history, instruction and license. These files are involved in the package description.
-- **elements** — installable chunks, snippets and other possible inheritors of `modElement`
-- **lexicon** — component dictionaries, usually only en and ru
-- **model** — a directory with component objects and table models for databases, usually only for MySql. The main working class of the component is also located here.
-- **processors** — files that perform some one small function. Serve, as a rule, for processing requests from the admin.
-Please note that files that are in this directory cannot be accessed from outside. That is, you cannot store any scripts here that you want to access from the browser.
-
-These are kernel files, and in MODX the core directory can be moved out of the site altogether, or even use one core for several installations.
-
-If you need to open something from the browser, there are assets for this.
+In MODX the `core` directory can live outside the site root, and one `core` can serve several installations. Anything the browser must reach belongs in `assets`.
 
 ### Directory assets
 
-Directory accessible from the browser for requests. Files are stored here `*.js, *.css and php-connectors` for their admin requests.
-
-By default, the connector is only one; it is the one that the admin pages will access to perform some tasks.
-There is nothing special to tell here, everything is clear.
+Files open to the browser: `*.js`, `*.css` and the connector PHP file that manager pages call. The scaffold ships one connector; that is all the component needs.
 
 ### Directory `_build`
 
@@ -102,7 +89,7 @@ Older course text still mentions `build.transport.php`, `build.config.php`, `BUI
 - `'update'`: per element type, whether to overwrite on package upgrade
 - `'static'`: default static flag for plugins, snippets, chunks
 
-You rarely edit `build.php`. Point the arrays, then run the script.
+You rarely edit `build.php`. Fill in the arrays, then run the script.
 
 #### Elements
 
@@ -160,4 +147,4 @@ Typical ModExtra3 resolvers include `tables.php` (schema/tables) and `symlinks.p
 
 Configure the package in `_build/config.inc.php` and `_build/elements/`, add resolvers as needed, then run `_build/build.php`.
 
-Next lesson: upload the scaffold, rename it to **Sendex**, tweak it, build, and install.
+Next lesson: rename the scaffold to **Sendex**, upload it and make the first commit.

@@ -34,9 +34,13 @@ translation: "extending-modx/creating-components/work-logic"
 <object class="sxNewsletter" table="sendex_newsletters" extends="xPDOSimpleObject">
 ```
 
-Наш объект обязан расширять уже существующий объект MODX, обычно используется `xPDOSimpleObject`. От него мы унаследуем колонку id, как первичный ключ — поэтому нигде в схеме не указано id у объектов.
+Наш объект наследует `xPDOSimpleObject`, который даёт общую CRUD-поверхность, — но в MODX 3 колонка `id` **не** наследуется автоматически: `xPDOSimpleObject` — пустой класс, и генератор не добавляет поле id. Объявите первичный ключ в схеме явно, так же, как это делает ядро:
 
-А вот если бы мы наследовали `xPDOObject`, тогда пришлось бы самостоятельно это прописывать. Если не хотите заморочек, просто всегда используйте `xPDOSimpleObject`.
+``` xml
+<field key="id" dbtype="int" precision="10" attributes="unsigned,auto_increment" phptype="integer" null="false" index="pk" generated="native" />
+```
+
+Без этого поля сгенерированная таблица создаётся без `id` и без первичного ключа. Если наследовать просто `xPDOObject`, придётся объявлять вручную и все остальные общие колонки — для большинства компонентов правильный выбор `xPDOSimpleObject` плюс явный `id`.
 
 Дальше в объекте описываются его поля:
 
@@ -107,7 +111,7 @@ translation: "extending-modx/creating-components/work-logic"
 
 ![](work-logic-2.png)
 
-3 Выполняем файл `build.model.php` на сервере. У меня это `c2263.paas2.ams.modxcloud.com/Sendex/_build/build.model.php` — при первой генерации будет только **done**, а при последующих — сообщения, что имеющиеся объекты не будут перезаписаны.
+3 Выполняем сборку модели запуском `_build/build.php` на сервере (например, `php ~/www/Extras/Sendex/_build/build.php` — генерация модели это приватный метод `buildModel()` внутри него, вызываемый из `process()`). У меня это `c2263.paas2.ams.modxcloud.com/Sendex/_build/build.php` — при первой генерации будет только **done**, а при последующих — сообщения, что имеющиеся объекты не будут перезаписаны.
 4 На сервере были созданы новые файлы — нужно синхронизировать директорию **model** (жмём две зеленые стрелочки вверху).
 
 ![](work-logic-3.png)
@@ -141,9 +145,9 @@ translation: "extending-modx/creating-components/work-logic"
 * `/model/sendex/metadata.mysql.php` — общая информация о том, какие объекты есть в компоненте.
 * `/model/sendex/sxnewsletter.class.php` — объект 1sxNewsletter1, здесь все его основные методы.
 * `/model/sendex/mysql/sxnewsletter.class.php` — расширение объекта 1sxNewsletter1 для БД MySql. Здесь методы, которые нужны для обеспечения его работы именно с этой базой данных.
-* `/model/sendex/mysql/sxnewsletter.map.inc.php` — карта объекта, 1sxNewsletter1, которая используется только для MySql. В ней прописаны все поля, индексы и связи, которые мы задали в схеме XML.
+* `/model/sendex/mysql/sxnewsletter.class.php` — платформенный класс объекта 1sxNewsletter1 для БД MySql. С MODX 3 карта объекта больше не отдельный файл `*.map.inc.php`: генератор записывает её в класс как `public static $metaMap = [...]` (все поля, индексы и связи из схемы XML).
 
-Как нетрудно догадаться, если бы мы создали еще одну схему для БД MsSQL, и сгенерировали модель по ней, то `/model/sendex/metadata.mysql.php` остался бы прежним, а в `/model/sendex/` добавилась бы директория mssql, с файлами `sxnewsletter.class.php` и `sxnewsletter.map.inc.php`.
+Как нетрудно догадаться, если бы мы создали еще одну схему для БД MsSQL и сгенерировали модель по ней, то `/model/sendex/metadata.mysql.php` остался бы прежним, а в `/model/sendex/` добавилась бы директория mssql со своим `sxnewsletter.class.php`, содержащим карту MsSQL.
 
 Именно так MODX поддерживает любые БД при помощи xPDO — создаёт один общий объект, который расширяется при работе в определённой системе.
 
@@ -155,7 +159,7 @@ if ($newsletter = $modx->getObject('sxNewsletter', 1)) {
 }
 ```
 
-Откройте, к примеру, [объект **modUser**](https://github.com/modxcms/revolution/blob/develop/core/model/modx/moduser.class.php) и поглядите на знакомые методы `isAuthenticated()` и `joinGroup()` — вот так MODX и работает =)
+Откройте, к примеру, [объект **modUser**](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modUser.php) и поглядите на знакомые методы `isAuthenticated()` и `joinGroup()` — вот так MODX и работает =)
 Теперь вы знаете, как просто выяснить, что умеет какой-то объект в движке или его дополнениях.
 
 Два других наших объекта **sxSubscriber** и **sxQueue** работают точно так же.

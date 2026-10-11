@@ -11,7 +11,7 @@ translation: "extending-modx/creating-components/git-basics"
 
 После того как мы связали локальный проект с удалённым сервером, в PhpStorm появились новые пункты контекстного меню:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-1.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-1.png)
 
 * Выгрузить файлы на сервер
 * Скачать файлы с сервера
@@ -22,9 +22,9 @@ translation: "extending-modx/creating-components/git-basics"
 
 Мы выгружаем проект в первый раз. Перезаписывать там нечего, поэтому смело нажимайте **Upload to MODXCloud**. После этого можно проверить наличие файлов в админке.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-2.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-2.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-3.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-3.png)
 
 Теперь нужно переименовать заготовку modExtra в Sendex. Для этого используем скрипт `rename_it.php`. На моём сервере ссылка такая:
 
@@ -35,7 +35,7 @@ http://c2263.paas2.ams.modxcloud.com/Sendex/rename_it.php
 Если открыть её без параметров, скрипт просит указать новое имя:
 
 ``` php
-You need to specify a new name of component in this file on line 9, or send it via $_GET["name"].
+You need to specify a new name for the component as first argument, or send it via $_GET["name"].
 ```
 
 Меняем ссылку и передаём новое имя:
@@ -50,11 +50,11 @@ http://c2263.paas2.ams.modxcloud.com/Sendex/rename_it.php?name=Sendex
 
 В админке уже видны новые файлы, а в проекте всё по-старому. Значит, их нужно синхронизировать. Учитывая, что в локальном проекте мы ничего не меняли, можно нажать **Download from MODXCloud**. IDE предупредит, что может перезаписать файлы. Спасибо, мы в курсе.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-4.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-4.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-5.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-5.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-6.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-6.png)
 
 Теперь удаляем старые ненужные файлы и каталоги:
 
@@ -65,7 +65,7 @@ http://c2263.paas2.ams.modxcloud.com/Sendex/rename_it.php?name=Sendex
 
 Если вы заранее включили Automatic upload в настройках Deployment, все изменения синхронизируются сразу:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-7.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-7.png)
 
 Помните: автоматическая синхронизация работает в одну сторону, с локального компьютера на сервер. Если правите файлы проекта через админку сайта, эти изменения нужно синхронизировать вручную.
 
@@ -81,7 +81,7 @@ http://c2263.paas2.ams.modxcloud.com/Sendex/rename_it.php?name=Sendex
 
 После установки вернитесь в PhpStorm и откройте настройки. В поиске введите git и посмотрите совпадения:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-8.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-8.png)
 
 Введите и проверьте данные доступа к GitHub, затем укажите и проверьте путь к исполняемому файлу git (на Windows путь может отличаться, придётся поискать).
 
@@ -89,17 +89,17 @@ http://c2263.paas2.ams.modxcloud.com/Sendex/rename_it.php?name=Sendex
 
 В меню нажмите **VCS → Enable version control**, выберите git и сохраните.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-9.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-9.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-10.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-10.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-11.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-11.png)
 
 Все файлы стали коричневыми. Это значит, что они ещё не добавлены в репозиторий. Добавьте их через контекстное меню. Там появился новый пункт Git. Файлы станут зелёными.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-12.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-12.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-13.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-13.png)
 
 Пора вкратце сказать, что такое система контроля версий. Грубо говоря, любая VCS это программа, которая хранит изменения ваших файлов с возможностью отката. Систем много, но сейчас самая популярная [Git](http://ru.wikipedia.org/wiki/Git), которую придумал [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) для разработки ядра Linux.
 
@@ -123,23 +123,23 @@ http://c2263.paas2.ams.modxcloud.com/Sendex/rename_it.php?name=Sendex
 
 В PhpStorm это просто. Откройте вкладку **Changes** внизу IDE и выберите **Commit changes** в контекстном меню. Перед отправкой изменений в репозиторий IDE показывает все изменённые файлы (сейчас это весь проект) и просит ввести описание изменений.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-14.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-14.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-15.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-15.png)
 
 В первом коммите изменений как бы нет, поэтому пишем «First commit». Дальше нажимаем commit и игнорируем предупреждения об ошибках в коде. Слишком умный этот PhpStorm! На вкладке **Version control** будет лог работы Git. Вдруг интересно?
 
 Всё, изменения сохранены в локальном репозитории. С этого момента при каждом изменении файла проекта он становится синим. Это значит, что в него внесены изменения, которые ещё не сохранены в репозитории. Нужен коммит.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-17.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-17.png)
 
 Осталось связать наш удалённый проект с GitHub и отправить туда изменения, чтобы их могли видеть все желающие. К сожалению, я не нашёл, как сделать это прямо в PhpStorm, поэтому придётся через командную строку.
 
 В этом нет ничего страшного, потому что сначала всё равно нужно создать новый проект на Github. Он уже подскажет, какие команды вводить.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-18.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-18.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-19.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-19.png)
 
 Как видите, чтобы отправить уже существующий репозиторий (а это наш случай), в командной строке нужно выполнить:
 
@@ -150,19 +150,19 @@ git push -u origin master
 
 Причём вторую команду можно запустить уже из PhpStorm. Обязательно отметьте ветку **master**, в которую нужно отправить наш коммит:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-20.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-20.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-21.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-21.png)
 
 Ну вот [наш проект и на GitHub](https://github.com/bezumkin/Sendex)! По идее, теперь можно делать себе forks (ответвления) и присылать мне свои коммиты, но на сегодня хватит.
 
 Можно также добавить локальный репозиторий в клиент GitHub и оттуда уже запушить его на удалённый сервер.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-22.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-22.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-23.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-23.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-24.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-24.png)
 
 Тоже хороший вариант.
 

@@ -1,44 +1,44 @@
 ---
 title: "We think over the logic of work, determine the schema and model of the database"
-translation: "extending-modx/creating-components/work-logic"
+translation: "extending-modx/creating-components"
 ---
 
-The preparatory work has been completed, and today we proceed directly to the development of the component.
+Preparation is over — we start building the component: a mailing-list extra. The goal of the course is learning to write components for MODX, not building the best newsletter in the world; keep the scope small.
 
-We write the component mailings, so you need to think about the basic logic of the work. I draw your attention to the fact that our goal is **to learn how to write components** for MODX, and not to write the best newsletter in the world. Therefore, I ask you to restrain your ambitions right away and not to suggest adding mega-functionality.
+The design:
 
-The logic of work seems to me like this:
+- **Newsletter** — everything that forms a letter: subject, template, sender.
+- **Subscriber** — a subscription to a newsletter. For now the subscriber must be an authorized user; guests can be added later.
+- On certain events a snippet generates the letters and stores them as **Queue** objects.
+- A scheduled script (every 5 minutes at least) sends emails from the queue. An empty queue means everything is out.
 
-* We have an object **Newsletter** - everything that is needed to form letters in it: subject, template, sender, etc.
-* Object **Subscriber** subscribes to the newsletter. For now, we will assume that this should be an authorized user, but we keep in mind that we can add guests.
-* When some events occur, the Subscription object is called and executes certain code that generates letters and saves them as an object **Queue**. For greater versatility, you can carry this code into a separate snippet.
-* The server executes the mailing script and sends emails from the Queue on a schedule, at least every 5 minutes. If the queue is empty, then everything has already been sent.
+The manager gets pages for managing subscriptions, adding subscribers and viewing the message queue — with delete and send-now actions. A page for composing and test-sending letters may come later.
 
-Accordingly, in the admin we will have a page for managing subscriptions, adding subscribers to them, and viewing the message queue, with the ability to delete or send something right now. Perhaps we will add a message verification page to send test messages for debugging.
-
-We have decided on the functionality, now we need to write a database schema to store our data.
+With the design fixed, write the database schema.
 
 ## DB table schema
 
-The schema in MODX is an XML file in which all objects and their relationships are described. It does not participate in the work of the component, it is not used anywhere, it is only needed to generate the model.
+The schema is an XML file that describes objects and their relations. It is not used at runtime — it only generates the model.
 
-The scheme may change as the supplement develops. You can add or remove objects, indexes, and relationships. No need to try to provide all the columns in the tables at once - you can add them at any time.
+The schema will change as the component grows: objects, indexes and relations get added and removed. Do not try to design every column upfront; columns can be added at any time.
 
-The basic principles of the xPDO scheme can be [read the official documentation](extending-modx/xpdo/custom-models/defining-a-schema), I'll just show you the finished file and explain what is there and how.
+The basics of the xPDO schema are in [the official documentation](extending-modx/xpdo/custom-models/defining-a-schema). Below is the finished file from [the course repository](https://github.com/bezumkin/Sendex/blob/b3a2eb0fb56ae8151b4686840e21bad18afd4fb5/core/components/sendex/model/schema/sendex.mysql.schema.xml).
 
-We open [the scheme in my repository on GitHub](https://github.com/bezumkin/Sendex/blob/b3a2eb0fb56ae8151b4686840e21bad18afd4fb5/core/components/sendex/model/schema/sendex.mysql.schema.xml) and look.
-
-Each object is described in the **object** tag. In the attributes of an object, you specify its name and the database table in which it will be stored. The table is specified **without a site prefix** - it will be added automatically by MODX itself when needed.
+Each object is an **object** tag. Its attributes carry the class name and the database table. The table is specified **without the site prefix** — MODX adds it when needed:
 
 ``` xml
 <object class="sxNewsletter" table="sendex_newsletters" extends="xPDOSimpleObject">
 ```
 
-Our object is obliged to extend an existing MODX object, usually `xPDOSimpleObject` is used. From it we will inherit the id column as the primary key - therefore, anywhere in the scheme id is not indicated for objects.
+The object extends `xPDOSimpleObject`, which supplies the common CRUD surface — but in MODX 3 the `id` column is **not** inherited automatically: `xPDOSimpleObject` is an empty class and the generator does not inject an id field. Declare the primary key explicitly in the schema, the same way core does:
 
-But if we inherited `xPDOObject`, then we would have to write it ourselves. If you do not want problems, just always use `xPDOSimpleObject`.
+``` xml
+<field key="id" dbtype="int" precision="10" attributes="unsigned,auto_increment" phptype="integer" null="false" index="pk" generated="native" />
+```
 
-Further in the object its fields are described:
+Without this field the generated table is created without `id` and without a primary key. If you extend plain `xPDOObject` instead, you also have to declare every other shared column yourself — for most components `xPDOSimpleObject` plus an explicit `id` is the right choice.
+
+Fields follow:
 
 ``` xml
 <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
@@ -46,19 +46,21 @@ Further in the object its fields are described:
 <field key="active" dbtype="tinyint" precision="1" phptype="boolean" attributes="unsigned" null="true" default="1" />
 ```
 
-* **key** - field name
-* **dbtype** - type of field in the database: `int, varchar, text, etc.`.
-* **precision** - accuracy, or field size. Required for fixed-length types, such as `int` and `varchar`. The `text` fields are not specified.
-* **phptype** - the type of a variable in php, xPDO will change the value according to it: `integer, string, float, json, array`. Note that `json` and `array` is an invention of MODX.
-* **Array** is for serialized data, with type preservation, and `json` is regular json. When saving such a field, its value will be run via `serialize ()` or `json_encode ()`, and when received, via `unserialize ()` and `json_decode`.
-Thus, it is possible to conveniently store arrays in a database.
-* **null** - can the field be empty? If you specify here `false`, and when working with an object you do not send a value, there will be an error in the log.
-* **default** - the default value will be used if the field can be `null` and there is no data for it when saving
-* **attributes** - additional properties for transfer to the database. They are exactly the same as in mySql
+| Attribute | Meaning |
+| --- | --- |
+| `key` | field name |
+| `dbtype` | database type: `int`, `varchar`, `text`, … |
+| `precision` | field size; required for fixed-length types (`int`, `varchar`), omitted for `text` |
+| `phptype` | PHP type the value is cast to: `integer`, `string`, `float`, `json`, `array` |
+| `null` | whether the field may be empty; with `false`, a missing value on save writes an error to the log |
+| `default` | value used when the field can be `null` and nothing was passed on save |
+| `attributes` | extra column properties passed through to MySQL |
 
-These are only basic properties, MODX stores many undocumented features, so I recommend carefully looking at its own scheme, and just copy what you need.
+`json` and `array` are MODX-specific: `array` serializes data with type preservation via `serialize()` / `unserialize()`, `json` uses `json_encode()` / `json_decode()`. Arrays store in the database and come back as arrays.
 
-After describing the columns of the table, you need to specify the indexes so that our table works quickly. In most cases, it is enough to add to the index those fields that will be sampled:
+These are the basic attributes only — MODX supports more; look at core schemas and copy what you need.
+
+Indexes come next, so the table works fast. Usually it is enough to index the fields that get selected:
 
 ``` xml
 <index alias="name" name="name" primary="false" unique="false" type="BTREE">
@@ -69,11 +71,12 @@ After describing the columns of the table, you need to specify the indexes so th
 </index>
 ```
 
-Of the important attributes here:
+| Attribute | Meaning |
+| --- | --- |
+| `primary` | primary index? Usually not — the primary index is on the `id` field from `xPDOSimpleObject` |
+| `unique` | unique index? If `true`, no two rows share a value; `id` is unique again |
 
-* **primary** - is the index primary? Usually - no, the primary index is in our `id` field from `xPDOSimpleObject`.
-* **unique** - is the index unique? That is, can table 2 and more have the same values for this field? We have a unique index in the id column again.
-And finally - the relationship of objects to each other:
+Finally, object relations:
 
 ``` xml
 <composite alias="Subscribers" class="sxSubscriber" local="id" foreign="newsletter_id" cardinality="many" owner="local" />
@@ -81,73 +84,67 @@ And finally - the relationship of objects to each other:
 <aggregate alias="Snippet" class="modSnippet" local="snippet" foreign="id" cardinality="one" owner="foreign" />
 ```
 
-* **Composite** - an object is the main one, in relation to another. When you delete such an object, all child objects associated with it here will be deleted.
-* **Aggregate** - an object is subject to another object. When it is deleted, the main thing will be nothing.
-    * **alias** is a pseudonym for communications. Used in `$object->getMany('Subscribers');` or `$object-> addOne ('Template');`
-    * **class** is the real name of the class with which the current object is associated.
-    * **local** - field of the current object, which is connected
-    * **foreign** - fields of the object with which we are associated.
-    * **cardinality** is a type of connection. One to one, or one to several. Typically, a bond aggregate is one, and a composite has many, that is, the parent has many children, and the descendants have only one parent. But there are exceptions.
-  If the connection is many, it uses `addMany()` and `getMany()`, if one is, then `addOne()` and `getOne()`.
+- **composite** — this object is the parent; deleting it deletes all child objects linked here.
+- **aggregate** — this object points to another object; when that object is deleted, the link breaks.
+- **alias** — the relation name used in `$object->getMany('Subscribers')` or `$object->addOne('Template')`.
+- **class** — the real class name of the related object.
+- **local** / **foreign** — the fields the relation joins on: on this object and on the related one.
+- **cardinality** — one-to-one or one-to-many. Aggregates are usually `one`, composites usually `many` — a parent has many children, a child has one parent — but there are exceptions. For `many` use `addMany()` / `getMany()`, for `one` use `addOne()` / `getOne()`.
 
-For a visual representation of the scheme, I advise you to use the service from [Jeroen Kenters](http://schemaviewer.dev.kenters.com/52845fee82d721.76762690)
+For a visual view of the schema, use the service from [Jeroen Kenters](http://schemaviewer.dev.kenters.com/52845fee82d721.76762690):
 
-![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-1.png)
+![](/ru/extending-modx/creating-components/work-logic/work-logic-1.png)
 
-In the course of development, the scheme will change several times, so it should become clearer further.
+The schema will change several times during development — it gets clearer as we go.
 
 ## Model generation
 
-As I said, the scheme itself gives us nothing, we need a working model. What is the **database model** in MODX? This is a set of php files, which consists of basic objects and extensions for a specific database.
+The schema alone does nothing; the working part is the model. The **database model** in MODX is a set of PHP files: the base object classes plus database-specific extensions.
 
-Let's generate a model and see what happens there:
+Generate the model:
 
-1 Copy-paste [current chart](https://github.com/bezumkin/Sendex/blob/b3a2eb0fb56ae8151b4686840e21bad18afd4fb5/core/components/sendex/model/schema/sendex.mysql.schema.xml) in your project and save. Changes should be synchronized with the server.
-2 Delete old unnecessary files from modExtra model
+1. Copy [the finished schema](https://github.com/bezumkin/Sendex/blob/b3a2eb0fb56ae8151b4686840e21bad18afd4fb5/core/components/sendex/model/schema/sendex.mysql.schema.xml) into the project and save; synchronize with the server.
+2. Delete the old modExtra model files:
 
-![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-2.png)
+![](/ru/extending-modx/creating-components/work-logic/work-logic-2.png)
 
-3 Execute file `build.model.php` on server. I have it `c2263.paas2.ams.modxcloud.com/Sendex/_build/build.model.php` — on server. In the first generation we will have only **done**, and in subsequent ones - messages that the existing objects will not be overwritten.
-4 New files were created on the server - you need to synchronize the **model** directory (click on the two green arrows at the top).
+1. Run `_build/build.php` on the server (for example `php ~/www/Extras/Sendex/_build/build.php` — model generation is the private `buildModel()` method inside it, called from `process()`). The first run prints only **done**; later runs warn that existing objects will not be overwritten.
 
-![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-3.png)
+1. Synchronize the **model** directory back (the two green arrows at the top):
 
-![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-4.png)
+![](/ru/extending-modx/creating-components/work-logic/work-logic-3.png)
 
-5 Model uploaded to us in the project. The files are still brown, as they have not yet been added to Git. Add them through the context menu and see green (new) files:
+![](/ru/extending-modx/creating-components/work-logic/work-logic-4.png)
 
-![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-5.png)
+1. The files arrive in the project brown — not yet in Git. Add them via the context menu; they turn green:
 
-![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-6.png)
+![](/ru/extending-modx/creating-components/work-logic/work-logic-5.png)
 
-6 Add the creation of new objects when installing a component in `/_build/resolvers/resolve.tables.php`
+![](/ru/extending-modx/creating-components/work-logic/work-logic-6.png)
 
-![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-7.png)
+1. Register the new objects for install in `/_build/resolvers/resolve.tables.php`:
 
-See the white bar to the left of the line numbers? This version control system shows us where the lines were changed. The file immediately turns blue - it contains their changes that were not saved in Git.
+![](/ru/extending-modx/creating-components/work-logic/work-logic-7.png)
 
-7 Send changes to the repository
+The white bar left of the line numbers marks changed lines; the file turns blue until the changes are committed.
 
-![](/2.x/ru/extending-modx/creating-components/work-logic/work-logic-8.png)
+1. Commit:
 
-In the lower left window we see the old file, in the lower right window - the new one. You can check all changes before submitting.
+![](/ru/extending-modx/creating-components/work-logic/work-logic-8.png)
 
-Here is my [today's commit](https://github.com/bezumkin/Sendex/commit/b3a2eb0fb56ae8151b4686840e21bad18afd4fb5) with all the work. But [list of all commits](https://github.com/bezumkin/Sendex/commits/master), to track progress.
+The diff shows the old and the new version of each file — review it before sending.
 
-Well, now let's take a closer look at what kind of model it is with the example of an object **sxNewsletter**?
+Here is [today's commit](https://github.com/bezumkin/Sendex/commit/b3a2eb0fb56ae8151b4686840e21bad18afd4fb5) with all the work, and [the full commit list](https://github.com/bezumkin/Sendex/commits/master) to track progress.
 
-So, we have new files:
+The generated model, on the example of `sxNewsletter`:
 
-* `/model/sendex/metadata.mysql.php` — general information about what objects are in the component.
-* `/model/sendex/sxnewsletter.class.php` — object `sxNewsletter`, here are all its main methods
-* `/model/sendex/mysql/sxnewsletter.class.php` — extension of the `sxNewsletter` object for MySql database. Here are the methods that are needed to ensure that it works with this particular database.
-* `/model/sendex/mysql/sxnewsletter.map.inc.php` — object map, `sxNewsletter`, which is used only for MySql. It contains all the fields, indices and relationships that we specified in the XML schema.
+- `/model/sendex/metadata.mysql.php` — the list of objects in the component.
+- `/model/sendex/sxnewsletter.class.php` — the `sxNewsletter` object with its main methods.
+- `/model/sendex/mysql/sxnewsletter.class.php` — the MySQL platform class: database-specific methods and the object map. Since MODX 3 the map is no longer a separate `*.map.inc.php` file — the generator writes it into the class as `public static $metaMap = [...]` (fields, indices and relations from the XML schema).
 
-As you might guess, if we created another schema for the MsSQL database and generated a model for it, then `/model/sendex/metadata.mysql.php` would remain the same, and the directory would be added to`/model/sendex/` mssql, with the `sxnewsletter.class.php` and `sxnewsletter.map.inc.php` files.
+A second schema, say for MsSQL, would keep `metadata.mysql.php` unchanged and add a `/model/sendex/mssql/` directory with its own `sxnewsletter.class.php` containing the MsSQL map. This is how xPDO supports any database: one common object, extended per database.
 
-This is how MODX supports any database using xPDO - creates one common object that expands when working in a particular system.
-
-We don’t need the files that are in `/model/sendex/mysql/`, moreover, they will be overwritten each time the model is generated according to the new scheme (I’m already generating a script), but in `/model/sendex/sxnewsletter.class.php` later we will write different methods to call them like this:
+The files under `/model/sendex/mysql/` are regenerated from the schema on every build — do not edit them. Custom methods go into `/model/sendex/sxnewsletter.class.php` and are called like this:
 
 ``` php
 if ($newsletter = $modx->getObject('sxNewsletter', 1)) {
@@ -155,14 +152,12 @@ if ($newsletter = $modx->getObject('sxNewsletter', 1)) {
 }
 ```
 
-Open, for example, [object **modUser**](https://github.com/modxcms/revolution/blob/develop/core/model/modx/moduser.class.php) and look at the familiar methods `isAuthenticated()` and `joinGroup()` - this is how MODX works =)
-Now you know how easy it is to find out what an object can do in the engine or its additions.
+Look at [modUser](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modUser.php): `isAuthenticated()` and `joinGroup()` are exactly such methods — this is how MODX works. You now know how to inspect any engine or extra object.
 
-Our other two objects **sxSubscriber** and **sxQueue** work the same way.
+`sxSubscriber` and `sxQueue` work the same way.
 
 ## Conclusion
 
-So, today we have decided on the main logic of work that we will program in the future, and sketched the first version of our xPDO model for the MySql database.
+Today: the component design and the first version of the xPDO model for MySQL.
 
-In the next lesson, we assemble the component into a transport package, install it on the site and configure it for convenient further development.
-And then we deal with the controllers custom manager pages of the admin panel and prepare to draw the interface on ExtJs.
+Next lesson: assemble the transport package, install it on the site and set up convenient development. Then custom manager pages and the ExtJS interface.
