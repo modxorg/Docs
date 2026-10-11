@@ -26,18 +26,20 @@ $SERVER["socket"] == ":80" {
     server.name = "example.com"
 ```
 
-Add rules under that host so existing files and the `assets`, `manager`, `core`, and `connectors` trees are not rewritten:
+Add rules under that host so existing files and the `assets`, `manager`, `connectors`, and `.well-known` paths are not rewritten. `core/` is deliberately left out so its files (for example `core/docs/changelog.txt`) are never served as static files — requests fall through to MODX and get a 404:
 
 ``` lighttpd
     url.rewrite-once = (
-        "^/(assets|manager|core|connectors)(.*)$" => "/$1/$2",
-        "^/(?!index(?:-ajax)?\.php)(.*)\?(.*)$" => "/index.php?q=$1&$2",
-        "^/(?!index(?:-ajax)?\.php)(.*)$" => "/index.php?q=$1"
+        "^/(assets|manager|connectors|\.well-known)(.*)$" => "/$1/$2",
+        "^/(?!index\.php)(.*)\?(.*)$" => "/index.php?q=$1&$2",
+        "^/(?!index\.php)(.*)$" => "/index.php?q=$1"
     )
 ```
 
 ## Exclude more paths
 
-lighttpd only skips paths you list. To protect another web-accessible directory, extend the first pattern with `|dirname`, for example `(assets|manager|core|connectors|media)`.
+lighttpd only skips paths you list. To protect another web-accessible directory, extend the first pattern with `|dirname`, for example `(assets|manager|connectors|media)`. Add `|robots\.txt|/favicon\.ico` to the same pattern if those files live in the document root and should be served directly.
+
+These rules target lighttpd 1.4.x, which matches the full request URI including the query string.
 
 Reload lighttpd, then enable Friendly URLs in the Manager and clear the cache.

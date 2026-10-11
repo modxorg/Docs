@@ -39,6 +39,8 @@ Optional: [friendly_urls_strict](building-sites/settings/friendly_urls_strict) r
 
 With **Use Friendly Alias Path** set to No, Resources behave as if they sit at the site root, ignoring parent folders.
 
+Related: [use_frozen_parent_uris](building-sites/settings/use_frozen_parent_uris) (default No) makes child URIs relative to a parent's frozen URI instead of its current alias — useful when parents change often.
+
 Container Resources (folders) use the [container_suffix](building-sites/settings/container_suffix) setting (default `/`) instead of `friendly_url_prefix` / `friendly_url_suffix`, removed in favour of [Content Types](building-sites/resources/content-types). It applies only to folders whose content type is HTML.
 
 For non-Latin pagetitles, configure alias transliteration (`friendly_alias_translit`: `none` (default), `iconv`, `iconv_ascii`, or a named table): [Alias transliteration](getting-started/friendly-urls/transliteration).
@@ -83,4 +85,10 @@ On IIS, add equivalent redirect rules in `web.config` (see the [IIS guide](getti
 - [friendly_urls_strict](building-sites/settings/friendly_urls_strict)
 - [Server Requirements](getting-started/server-requirements)
 - [Content Types](building-sites/resources/content-types)
-- [Troubleshooting Installation](getting-started/installation/troubleshooting)
+
+## Troubleshooting: pretty paths 404
+
+- Pretty paths 404 but `index.php?id=42` works → rewrite rules are missing or wrong for your server — go back to step 1.
+- CSS/JS broke after enabling FURLs → add `<base href>` to your Templates (step 3).
+- Links did not change after enabling `friendly_urls` → clear the cache (step 4); existing Resources keep their stored aliases until you edit them.
+- Requests to `core/` files return 404 → expected; `core/` must stay blocked ([Hardening MODX](getting-started/maintenance/securing-modx)).

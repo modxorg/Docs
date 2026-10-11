@@ -21,6 +21,7 @@ Open **System Settings**, area **Friendly URL** (search for `friendly_alias`):
 | [friendly\_alias\_translit\_class](building-sites/settings/friendly_alias_translit_class) | Service class for named tables (default `translit.modTransliterate`) |
 | [friendly\_alias\_translit\_class\_path](building-sites/settings/friendly_alias_translit_class_path) | Where to load that class (default `{core_path}components/`) |
 | [automatic\_alias](building-sites/settings/automatic_alias) | Generate the alias from the pagetitle on save when the alias is empty |
+| [friendly\_alias\_realtime](building-sites/settings/friendly_alias_realtime) | Live alias preview in the Manager while typing the pagetitle (default No; needs `automatic_alias`) |
 
 Related filters (word delimiters, lowercase, max length, restrict chars) run after transliteration. See the other `friendly_alias_*` settings in the same area.
 
@@ -36,7 +37,7 @@ Set `friendly_alias_translit` to `iconv`. Requires the PHP `iconv` extension.
 
 MODX runs something equivalent to converting the string with `//TRANSLIT//IGNORE` into the site charset (`modx_charset`, usually UTF-8). Quality depends on your PHP/iconv build and locale. It is a quick option without extras, not a language-specific table.
 
-### iconv\_ascii
+## Built-in: iconv\_ascii
 
 Set `friendly_alias_translit` to `iconv_ascii` to force transliteration toward ASCII (`ASCII//TRANSLIT//IGNORE`). Use this when you want Latin-only URL segments and `iconv` alone still leaves non-ASCII characters.
 
