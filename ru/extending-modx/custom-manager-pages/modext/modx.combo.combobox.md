@@ -8,13 +8,13 @@ translation: "extending-modx/custom-manager-pages/modext/modx.combo.combobox"
 **Расширяет:** [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox)
 **Основные характеристики:** Удаленные и локальные хранилища данных; рендерер сетки.
 
-![](/2.x/en/extending-modx/custom-manager-pages/modext/modext_combobox.png)
+![](/en/extending-modx/custom-manager-pages/modext/modext_combobox.png)
 
 Класс MODExt ComboBox содержит все функциональные возможности обычного Ext ComboBox. Он может быть заполнен удаленно массивом объектов JSON из коннектора (по умолчанию) или локально (используя базовый массив JavaScript или Ext ArrayStore с параметром конфигурации «mode», установленным в «local»).
 
 Уникальной особенностью класса MODx ComboBox является встроенный рендерер для сеток. Он позволяет разработчикам использовать ComboBox в качестве редактора сетки и автоматически обеспечивает правильное отображение displayValue в ячейке сетки:
 
-![](/2.x/en/extending-modx/custom-manager-pages/modext/modext_combobox_grid.png)
+![](/en/extending-modx/custom-manager-pages/modext/modext_combobox_grid.png)
 
 ## Уникальные параметры
 
@@ -23,10 +23,15 @@ translation: "extending-modx/custom-manager-pages/modext/modx.combo.combobox"
 | Название   | Описание                                               | По умолчанию |
 | ---------- | ------------------------------------------------------ | ------------ |
 | url        | URL к коннектору.                                      |
-| baseParams | Любые другие параметры всегда отправлять на коннектор. | {}           |
-| fields     | Поля в формате массива ожидаются в ответе коннектора.  | []           |
+| baseParams | Любые другие параметры всегда отправлять на коннектор. | { action: 'GetList' } |
+| fields     | Поля в формате массива ожидаются в ответе коннектора.  | ['id','name']         |
 
 Класс также наследует все свойства [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox).
+
+Ещё два момента:
+
+- Конструктор принимает второй аргумент `getStore` (по умолчанию true). Передайте false, чтобы пропустить автоматическое создание хранилища (например, когда вы передаёте собственный store).
+- Комбо выставляет событие `loaded` после завершения загрузки своего хранилища.
 
 ## Использование Grid Renderer
 

@@ -9,7 +9,7 @@ translation: "extending-modx/custom-manager-pages/modext/modx.msg"
 
 **Основные характеристики:** Особенности коннектора AJAX.
 
-![](/2.x/en/extending-modx/custom-manager-pages/modext/confirm.png)
+![](/en/extending-modx/custom-manager-pages/modext/confirm.png)
 
 Класс MODx.msg обеспечивает функциональность класса Ext.MessageBox с дополнительным преимуществом использования функции обратного вызова AJAX (для диалогов подтверждения). Просто предоставьте URL и дополнительные параметры, и запрос коннектора будет отправлен после того, как пользователь подтвердит запрос. По умолчанию минимальная ширина составляет 200 пикселей.
 
@@ -99,6 +99,14 @@ MODx.msg.status(opt)
 ```
 
 Обработчик 'success' является частью modExt и поставляется с [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel "MODx.FormPanel").
+
+### getWindow
+
+Возвращает экземпляр Ext.Window последнего (или указанного) окна сообщения, чтобы работать с ним напрямую:
+
+```javascript
+var win = MODx.msg.getWindow();
+```
 
 ## Смотрите также
 

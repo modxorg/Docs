@@ -11,7 +11,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 
 ![](confirm.png)
 
-The MODx.msg class provides the functionality of the Ext.MessageBox class, with the added benefit of using an AJAX callback function (for confirmation dialogs). Simply provide a URL and optional parameters and a connector request will be sent after the user confirms the prompt. It defaults to a minimum width of 200px.
+MODx.msg provides Ext.MessageBox functionality with an AJAX callback (for confirmation dialogs). Provide a URL and optional parameters, and a connector request is sent after the user confirms. Default minimum width: 200px.
 
 ## Methods
 
@@ -19,7 +19,7 @@ The MODx.msg class provides the functionality of the Ext.MessageBox class, with 
 
 > MODx.msg.alert(title,text,fn,scope)
 
-Used to display an alert dialog box on the page. Example:
+Displays an alert dialog box:
 
 ``` javascript
 MODx.msg.alert('Warning!','You are out of space! We should clear the cache.',function() {
@@ -31,7 +31,7 @@ MODx.msg.alert('Warning!','You are out of space! We should clear the cache.',fun
 
 > MODx.msg.confirm(config)
 
-Loads a confirmation dialog that prompts the user for a Yes/No response. If Yes is selected, fires an AJAX request to a specific connector. The properties for the config parameter are:
+Prompts the user for a Yes/No response. On Yes, an AJAX request goes to the connector in `url`. Config properties:
 
 | Name      | Description                                       |
 | --------- | ------------------------------------------------- |
@@ -41,8 +41,6 @@ Loads a confirmation dialog that prompts the user for a Yes/No response. If Yes 
 | url       | The URL to send the AJAX request to.              |
 | params    | The REQUEST params to send with the AJAX request. |
 | listeners | Any listeners to look for on the request.         |
-
-An example:
 
 ``` javascript
 MODx.msg.confirm({
@@ -62,8 +60,6 @@ MODx.msg.confirm({
 
 #### MODx.msg.confirm Custom Events
 
-MODx.msg.confirm adds a few custom events that fire:
-
 | Name    | Description                                              |
 | ------- | -------------------------------------------------------- |
 | success | Fires on a successful response from the AJAX submission. |
@@ -76,7 +72,7 @@ MODx.msg.confirm adds a few custom events that fire:
 MODx.msg.status(opt)
 ```
 
-Loads a temporary status message in the top-right of the screen, that fades away. The properties for the opt parameter are:
+Shows a temporary status message in the top-right of the screen that fades away:
 
 | Name     | Description                                                                             | Default |
 | -------- | --------------------------------------------------------------------------------------- | ------- |
@@ -85,7 +81,7 @@ Loads a temporary status message in the top-right of the screen, that fades away
 | dontHide | If true, will not automatically hide the status message. Will stay until it is clicked. | false   |
 | delay    | The number of seconds to show the message.                                              | 1.5     |
 
-You could use this in custom manager pages to provide confirmation your object was saved. You could add something like this to your FormPanel definition:
+To confirm in a CMP that an object was saved, add this to your FormPanel definition:
 
 ``` javascript
         listeners: {
@@ -100,6 +96,14 @@ You could use this in custom manager pages to provide confirmation your object w
 ```
 
 The 'success' listener is part of modExt and comes with [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel "MODx.FormPanel").
+
+### getWindow
+
+Returns the underlying Ext.Window instance of the last (or given) message window:
+
+``` javascript
+var win = MODx.msg.getWindow();
+```
 
 ## See Also
 
