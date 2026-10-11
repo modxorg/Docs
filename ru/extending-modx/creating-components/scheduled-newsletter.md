@@ -40,7 +40,7 @@ $q = $modx->newQuery('sxQueue');
 $q->limit($modx->getOption('sendex_queue_limit', null, 100, true));
 
 // We send
-$queue = $modx->getCollection('sxQueue');
+$queue = $modx->getCollection('sxQueue', $q);
 /** @var sxQueue $email */
 foreach ($queue as $email) {
     $email->send();

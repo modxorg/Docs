@@ -1,173 +1,162 @@
 ---
 title: "Git basics and the first commit of a component on Github"
-translation: "extending-modx/creating-components/git-basics"
+translation: "extending-modx/creating-components"
 ---
 
-We finish with preparation for the beginning of active development.
-
-Today we need to upload the stub to the server, rename it, create a repository on GitHub and send the first commit to it. And for this you will need to configure PhpStorm to work with git.
+This lesson: upload the scaffold to the server, rename it to Sendex, and push the first commit to GitHub. PhpStorm must be configured for Git first.
 
 ## Server synchronization
 
-After we connected our local project with a remote server, new items in the context menu appeared in PhpStorm:
+Once the local project is connected to the server, the PhpStorm context menu gains new items:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-1.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-1.png)
 
 * Upload files to server
 * Download files from server
 * Sync remote and local files
 
-It is important to understand that the first and second points can **overwrite existing files**, so they should be used very carefully.
-Basically, it is better to use synchronization - it will show the differences in the files and allow you to select actions with them. However, there is a drawback - when you synchronize, you need to read all deleted files, and this takes time. It is good that PhpStorm allows you to synchronize not only the entire project, but also each individual directory, and even a file.
+Upload and download can **overwrite existing files** — use them carefully. Synchronization is safer: it shows the differences and lets you pick actions per file. Its drawback is confirming every deleted file, which takes time; PhpStorm lets you sync a single directory or file instead of the whole project.
 
-We upload the project for the first time, there is nothing to overwrite there - so feel free to click **Upload to MODXCloud**. After that, you can check the presence of files in the admin panel.
+First upload has nothing to overwrite — click **Upload to MODXCloud**, then check the files in the admin panel:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-2.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-2.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-3.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-3.png)
 
-Now we need to rename the modExtra stub into Sendex. To do this, use the `rename_it.php` script. On my server, the link is this:
+## Rename the scaffold
+
+Rename the modExtra stub to Sendex with the `rename_it.php` script:
 
 ``` php
 http://c2263.paas2.ams.modxcloud.com/Sendex/rename_it.php
 ```
 
-If you open it without parameters, the script requires you to specify a new name:
+Called without parameters, it asks for a new name:
 
 ``` php
-You need to specify a new name of component in this file on line 9, or send it via $_GET["name"].
+You need to specify a new name for the component as first argument, or send it via $_GET["name"].
 ```
 
-OK, change the link and show the new name:
+Pass the name in the URL:
 
 ``` php
 http://c2263.paas2.ams.modxcloud.com/Sendex/rename_it.php?name=Sendex
 ```
 
-We see a bunch of incomprehensible lines (in fact, these are new names for files and directories), which means that the workpiece has been successfully renamed, and now it is a real component.
+The script prints the renamed files and directories — the scaffold is now a real component.
 
-We can even assemble and install it right now, but then it will create us unnecessary demo tables in the database, so we will do this after writing our own schema and generating the model.
+It can already be built and installed, but that would create demo tables in the database; we will build after writing our own schema and generating the model.
 
-In the admin panel you can already see new files, but in the project everything is as before. So they need to be synchronized. Given that we have not changed anything in the local project, you can click **Download from MODXCloud** - the IDE will warn you that it can overwrite files. Thank you, we know.
+The admin panel shows the new files, but the local project still has the old names — synchronize. Nothing changed locally, so click **Download from MODXCloud**; the IDE will warn about overwriting.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-4.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-4.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-5.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-5.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-6.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-6.png)
 
-Now delete the old unnecessary files and directories:
+Delete the leftovers:
 
 * `/core/components/modextra/`
 * `/assets/components/modextra/`
 * `rename_it.php`
 * `rename_it.sh`
 
-If you prudently activate the Automatic upload item in the Deployment settings, then all changes will be synchronized immediately:
+If **Automatic upload** is enabled in the Deployment settings, all changes sync immediately:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-7.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-7.png)
 
-Please remember that automatic synchronization works in one direction - from the local computer to the server. If you edit project files through the site admin panel - you need to synchronize these changes manually.
+Automatic synchronization works in one direction: local → server. Edits made through the admin panel must be synchronized manually.
 
-Well, now our project is ready for the first commit on GitHub.
+The project is ready for the first commit on GitHub.
 
 ## Work with GitHub
 
-Generally, this clause is optional. Nobody forces you to keep a history of file changes, accept error messages and suggestions for code changes.
+This section is optional: you can keep the project on your computer without any repository. A public repository, however, gives history, review from users, and a free backup.
 
-You can safely keep everything in your computer and not bother with these repositories of yours. However, a good programmer always keeps the project clean and tidy, communicates with his users and remembers that when he changed in his code. I am silent about the fact that the repository on the Internet is an excellent backup.
+[Register on GitHub](https://github.com/join) and [download their app](http://windows.github.com/). The app is optional, but it installs console git, which we need.
 
-Therefore [register on GitHub](https://github.com/join) and [download their app](http://windows.github.com/). On the one hand, the application is not necessary, but on the other hand, it will install the console git, which we really need.
+Back in PhpStorm, open the settings, search for `git`:
 
-After installation, go back to PhpStorm and run to the settings. There is a search in which we enter git and see the matches:
+![](/ru/extending-modx/creating-components/git-basics/git-basics-8.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-8.png)
+Check the GitHub credentials and the path to the git executable.
 
-We enter and check the access data on GitHub, and then specify and check the path to the git executable file (I don’t know where it will be on Windows - I’ll have to search).
+If `Sendex/.git` still exists (from modExtra), delete it — we need a new local repository.
 
-If you haven’t deleted the `Sendex/.git` directory, now is the time to do it, because we need to create a new local repository.
+**VCS → Enable version control**, select git, save:
 
-Click on the menu **VCS → Enable version control**, select git and save.
+![](/ru/extending-modx/creating-components/git-basics/git-basics-9.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-9.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-10.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-10.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-11.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-11.png)
+Files turn brown — they are not in the repository yet. Add them via the context menu (**Git** item); they turn green:
 
-All files turned brown, which means that they are not added to the repository. We need to add them through the context menu, in which a new Git item has appeared, and they will turn green.
+![](/ru/extending-modx/creating-components/git-basics/git-basics-12.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-12.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-13.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-13.png)
+Git is a version control system: it stores file changes and can roll them back. Its advantage over alternatives is easy branching — work in a branch, then merge it into the main project, resolving conflicts. New to git? [This tutorial](http://githowto.com/ru/git_how_to) covers the command line; the course does the same in PhpStorm.
 
-Probably, it is time to briefly tell you what is a version control system? Roughly speaking, any version control system is a program that stores changes to your files, with the ability to roll back. There are a lot of systems, but the most popular is now [Git](http://ru.wikipedia.org/wiki/Git), which came up with [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) for developing the Linux kernel.
+Git stores everything in a single `.git` directory — `Sendex/.git` *is* the repository. That is why the old modExtra `.git` had to go.
 
-The main difference from competitors is the convenient creation of branches and their merging. That is, for each change you can create a new branch, chemize something there, and then inject these changes into the main project, resolving conflicts (if any).
+The new repository is **local**: no commits yet, not attached to GitHub, but fully working — copy the project to a flash drive and the history goes with it.
 
-If you have never worked with this, it may be difficult to enter. Therefore, I advise you to read here [this tutorial](http://githowto.com/ru/git_how_to), everything is well described there. Please note that there is knowledge of how to work with Git in the command line, and I show the same thing only in PhpStorm.
+To keep files out of version control, use `.gitignore` in the repository root:
 
-**Once again I remind**, it is not at all necessary to develop add-ons in MODX - it is just a useful skill that can make your life much easier.
+```
+.idea
+```
 
-Another difference with Git is the storage format. It does not climb into your files, saving everything you need in one directory **.Git**. In fact, `Sendex/.git` is the repository. That is why we needed to delete the old directory, which was the modExtra repository.
+This disables tracking of the PhpStorm service directory.
 
-Now we have created a new, clean Git repository, in which no changes have been saved. This repository is **local**, it is not yet attached to GitHub, but is fully operational. You can copy the project to a USB flash drive, carry it back and forth and at the same time its history of changes will be there.
+So why GitHub? To link all your machines and copies of the project in one place. GitHub is a hosting for such central repositories, and [MODX lives there too](https://github.com/modxcms/revolution/).
 
-To exclude files or directories from the version control system, the `.gitignore` file is used, and we need to add this to the repository root:
-`.idea`
-Thus, we disable the tracking of the PhpStorm service directory within the project.
+**README.md** at the project root is the short description — edit it, then make the first commit: a save point you can roll back to.
 
-Convenient, isn't it? So why do you need GitHub? But then, to link all your computers, flash drives and other storage of a single project. GitHub **can be called the central repository of code**. Currently, he hosts a huge number of projects that are developed by different people, and all this does not turn into chaos. By the way, [MODX is developed in the same place](https://github.com/modxcms/revolution/).
+Open the **Changes** tab at the bottom of the IDE and select **Commit changes** in the context menu. The IDE lists all changed files (currently the whole project) and asks for a commit message:
 
-The **README.md** file at the root of the project will serve as a brief description, so I changed it a bit and now you can make the first commit, that is, fix the code. It will be like a save point, to which we can then roll back, if that.
+![](/ru/extending-modx/creating-components/git-basics/git-basics-14.png)
 
-PhpStorm makes it easy. Open the **Changes** tab at the bottom of the IDE, and select **Commit changes** in the context menu. before sending changes to the IDE repository, shows us all the changed files (and this is the whole project now), and asks to enter a description of the changes.
+![](/ru/extending-modx/creating-components/git-basics/git-basics-15.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-14.png)
+The first commit has no changes yet — write “First commit” and click commit; ignore the code warnings. The **Version control** tab shows the git log.
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-15.png)
+The changes are saved in the local repository. From now on, a modified file turns blue — its changes are not committed yet:
 
-There are no changes in the first commit, so we write “First commit”. Next, click commit and ignore error warnings in the code - it hurts too clever this PhpStorm! On the tab **Version control** there will be a log of Git work - well, suddenly, I wonder?
+![](/ru/extending-modx/creating-components/git-basics/git-basics-17.png)
 
-Everything, changes are saved in our local repository, and from this point on each change of the project file it will turn blue. This means that changes have been made to it that were not saved in the repository — you need to commit it.
+Last step: link the local repository to GitHub. Create a new project there — GitHub shows the exact commands:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-17.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-18.png)
 
-Well, now we just have to link our remote project with GitHub and send changes to it so that everyone can see them. Unfortunately, I did not find how to do this directly in PhpStorm, so I’ll have to go through the command line.
+![](/ru/extending-modx/creating-components/git-basics/git-basics-19.png)
 
-There is nothing terrible in this, because we still need to first create a new project on Github - and he will already tell you what commands you need to enter.
+To push an existing repository, run in the console:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-18.png)
-
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-19.png)
-
-As you can see, to send the existing repository (and this is our case), you need to run in the command line:
-
-``` php
+``` bash
 git remote add origin https://github.com/bezumkin/Sendex.git
 git push -u origin master
 ```
 
-Moreover, the second team can be run already from PhpStorm. Be sure to mark the **master** branch to which you want to send our commit:
+The second command can be run from PhpStorm — select the **master** branch to push:
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-20.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-20.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-21.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-21.png)
 
-Well here [our project and on GitHub](https://github.com/bezumkin/Sendex)! In theory, you can now make yourself forks (branches) and send me your commits, but that's enough for today.
+[Our project is on GitHub](https://github.com/bezumkin/Sendex). You can now fork it and send commits back. The GitHub desktop client can also host the local repository and push to the remote:
 
-You can also add a local repository to the GitHub client, and from there start it up to a remote server.
+![](/ru/extending-modx/creating-components/git-basics/git-basics-22.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-22.png)
+![](/ru/extending-modx/creating-components/git-basics/git-basics-23.png)
 
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-23.png)
-
-![](/2.x/ru/extending-modx/creating-components/git-basics/git-basics-24.png)
-
-Also a good option.
+![](/ru/extending-modx/creating-components/git-basics/git-basics-24.png)
 
 ## Conclusion
 
-Today we uploaded our project to the server, renamed, synchronized changes and added a version control system. We even uploaded our repository on GitHub, so that all interested could watch the progress of our course =)
+The project is on the server, renamed, synchronized and under version control — with its first commit on GitHub.
 
-At the next lesson, we think over the logic of the component, write a schema and generate a database model.
+Next lesson: design the component logic, write the schema and generate the database model.

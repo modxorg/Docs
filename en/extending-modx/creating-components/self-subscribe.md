@@ -1,17 +1,19 @@
 ---
 title: "Self subscription \ unsubscribe user"
-translation: "extending-modx/creating-components/self-subscribe"
+translation: "extending-modx/creating-components"
 ---
 
-We smoothly come to the end of the development of the component and conduct lessons. Today there will be nothing new, just make an independent subscription and unsubscribe from the user.
+The component is nearly done. This lesson adds self-service subscription and unsubscription for site users:
 
-To do this, you will need to add a new `code` field to the `sxSubscriber` object (for the “unsubscribe” link), add new methods for checking mail and subscribe \ unsubscribe in the `sxNewsletter` class and add processing of these actions to the snippet **Sendex**
+1. a `code` field on `sxSubscriber` (the unsubscribe link);
+2. methods on `sxNewsletter`: email check, subscribe, unsubscribe;
+3. handling of these actions in the **Sendex** snippet.
 
-In general, nothing interesting, the usual programming in PHP.
+Plain PHP, nothing exotic.
 
 ## Add a field code
 
-Edit our scheme in the file `/core/components/sendex/model/schema/sendex.mysql.schema.xml`, add the field and the index:
+Edit the schema `/core/components/sendex/model/schema/sendex.mysql.schema.xml` — add the field and the index:
 
 ``` xml
 <object class="sxSubscriber" table="sendex_subscribers" extends="xPDOSimpleObject">
@@ -25,28 +27,25 @@ Edit our scheme in the file `/core/components/sendex/model/schema/sendex.mysql.s
 </object>
 ```
 
-Add the creation of the field and the index in the resolver `/_build/resolvers/resolve.tables.php`.
+Add the field and the index creation to the resolver `/_build/resolvers/resolve.tables.php`:
 
 ``` php
     $manager->addField('sxSubscriber', 'code');
     $manager->addIndex('sxSubscriber', 'code');
 ```
 
-And run the build package (`/Sendex/_build/build.transport.php`), which will regenerate the model and update the database table.
+Then run the build (`php ~/www/Extras/Sendex/_build/build.php` — current scaffolds have no `build.transport.php`); it regenerates the model and updates the table on install.
 
-As you can see, each time it is all easier and simpler. [Here is a commit](https://github.com/bezumkin/Sendex/commit/e006accb6861a21f0eb46fa3d23ebdb5f89eabfb).
+[Commit](https://github.com/bezumkin/Sendex/commit/e006accb6861a21f0eb46fa3d23ebdb5f89eabfb).
 
 ## Methods in sxNewsletter
 
-Editing the file `/core/components/sendex/model/sendex/sxnewsletter.class.php`.
+Edit `/core/components/sendex/model/sendex/sxnewsletter.class.php` — four new methods.
 
-In total, we add 4 methods.
 
 ### checkEmail
 
-Method to check the user's email.
-
-It uses a very interesting service MODX. [modRegistry](http://rtfm.modx.com/revolution/2.x/developing-in-modx/advanced-development/modx-services/modregistry). This is a special MODX system, where temporary data is entered, which can then be checked and deleted. For example, passwords can be reset via `modRegistry`.
+Checks the user's email before the subscription is confirmed. It uses `modRegistry` — MODX's storage for temporary data that can be read and deleted later (password reset works the same way):
 
 ``` php
 // Connect service
@@ -71,11 +70,11 @@ $instance->send('/sendex/subscribe/',
 );
 ```
 
-Now over time **ttl** you can get the saved data in the following method.
+The data stays available for `ttl` seconds; the next method reads it while the confirmation link is still valid.
 
 ### confirmEmail
 
-Method to confirm user email. A link comes to it, according to which it should go with a unique hash - we saved it in modRegistry in the previous method.
+The user follows the confirmation link, which carries the unique hash saved in `modRegistry`:
 
 ``` php
 // Connect service
@@ -103,11 +102,11 @@ if (!empty($entry[0])) {
 }
 ```
 
-There may be several subscriptions with snippets on the page, so I provided for a call to the desired object `sxNewsletter`, otherwise there may be confusion.
+A page can carry several subscription forms, so the method resolves the `sxNewsletter` object that owns the hash — otherwise subscriptions would mix.
 
 ### Subscribe
 
-A method for subscribing to a newsletter. Everything is simple: the usual checks of incoming data and the creation of an object:
+Creates the subscriber after the usual input checks:
 
 ``` php
 $subscriber = $this->xpdo->newObject('sxSubscriber');
@@ -118,9 +117,7 @@ $subscriber->fromArray(array(
 ), '', true, true);
 ```
 
-Please note that here **not** indicates the new **code** field, we will set it when saving the `sxSubscriber` object.
-
-I extend the `save()` method in order to ensure that the user will always have a unique code for unsubscribing from the list.
+Note: the new `code` field is **not** set here — `save()` fills it in. Override `save()` so every subscriber always gets a unique unsubscribe code:
 
 ``` php
 public function save($cacheFlag = null) {
@@ -131,11 +128,11 @@ public function save($cacheFlag = null) {
 }
 ```
 
-[Коммит файла sxsubscriber.class.php](https://github.com/bezumkin/Sendex/commit/efbe679327d42168f60cd83db84d4447cc409d98)
+[Commit of sxsubscriber.class.php](https://github.com/bezumkin/Sendex/commit/efbe679327d42168f60cd83db84d4447cc409d98)
 
 ### unSubscribe
 
-Method for unsubscribing the reader from the list. Gets code, searches for a record in the database and deletes it.
+Takes the code, finds the record and deletes it:
 
 ``` php
 if ($subscriber = $this->xpdo->getObject('sxSubscriber', array('code' => $code))) {
@@ -143,52 +140,44 @@ if ($subscriber = $this->xpdo->getObject('sxSubscriber', array('code' => $code))
 }
 ```
 
-The user does not need to confirm anything. If he has a unique code for unsubscribe - he unsubscribes in one motion.
+No confirmation needed: whoever holds the unique code unsubscribes in one step.
 
-[Here is a commit with all methods](https://github.com/bezumkin/Sendex/commit/4d154cda6e514354fcb22d9d2b347d6303ae464e). Now you need to modify the Sendex snippet so that it can call them.
+[Commit with all methods](https://github.com/bezumkin/Sendex/commit/4d154cda6e514354fcb22d9d2b347d6303ae464e). Now the **Sendex** snippet has to call them.
 
 ## Work with a subscription in the snippet
 
-Snippet, as before, shows different forms, depending on the status of the user. But now it also happens in the **sx_action** variable of the `$_REQUEST` array.
+The snippet still shows different forms depending on the user's state. New: it also reads the `sx_action` variable from `$_REQUEST`. If the variable is present, the user has submitted a form and the request must be processed. Three actions:
 
-If there is such a variable, then the user has submitted the form, and you need to process it. In total, I provided for 3 actions.
 
 ### subscribe
 
-We check email and call the checkEmail method from the subscription object. If the answer is `true`, then the user is already signed, if `false` is an error, otherwise we get a unique key to access the data in modRegistry.
+Validates the email and calls `checkEmail()` on the newsletter object. The result is one of three: `true` — already subscribed; `false` — error; anything else — a unique key to read the data from `modRegistry`.
 
-It is necessary to send him a letter to the user, and for this I [added method Sendex::sendEmail()](https://github.com/bezumkin/Sendex/commit/fb71d844b45a924ddf00e315ffb3bce642e0517e). For registration of the letter with activation, a new chunk is used. `tpl.Sendex.subscribe.activate`
+The key is needed to send the confirmation letter — that is what [Sendex::sendEmail()](https://github.com/bezumkin/Sendex/commit/fb71d844b45a924ddf00e315ffb3bce642e0517e) does. The letter body is the chunk `tpl.Sendex.subscribe.activate`.
 
 ### confirm
 
-The user receives the letter and must follow the link. It certainly contains another `sx_action - confirm`. For it, the snippet calls `sxNewsletter::confirmEmail()` and passes the hash from the link in the letter there.
-
-If the hash is correct, the method will receive the data and create a new sxSubscriber subscriber. When you save, as we remember, it will generate a unique unsubscribe code.
+The user receives the letter and follows the link, which carries `sx_action=confirm` and the hash. The snippet calls `sxNewsletter::confirmEmail()` with that hash. If the hash is correct, the method reads the data and creates an `sxSubscriber`; on save it generates the unique unsubscribe code.
 
 ### unsubscribe
 
-If the user is already subscribed to the newsletter, the unsubscribe form is shown to him and I added a hidden input code to it. If the user sends this form with `sx_action = ubsubscribe`, then the code will go to the `sxNewsletter::unSubscribe()` method and the user will be unsubscribed.
+A subscribed user sees the unsubscribe form with a hidden `code` input. On submit with `sx_action=unsubscribe` the code goes to `sxNewsletter::unSubscribe()` and the subscription is deleted.
 
-The code is generated randomly, the `sha1` algorithm virtually eliminates collisions, so the exact person who clicked the form will be unsubscribed.
+The code is random and `sha1` collisions are practically impossible — only the person who opened the form gets unsubscribed.
 
-## Another couple of comments
+## Error handling and limitations
 
-During the snippet, various abnormal situations may occur. User is already signed, meail is incorrect, etc.
-So, if there is a message, then it is saved to the `[[+message]]]` playholder, and if this is an error, then the `error` playholder is set.
+Abnormal situations happen: already subscribed, invalid email, and so on. Messages go to the `[[+message]]` placeholder; errors also set the `error` placeholder.
 
-If everything is fine, after processing the `sx_action` page reloads to remove the data from `$ _POST`. Otherwise, pressing F5 will re-send the form.
 
-Snippet is far from ideal, and so far presented in a subtle form, for training. For good, it should be taught to work through ajax and more clearly display errors.
+After a successful `sx_action` the page reloads to clear `$_POST` — otherwise pressing F5 resubmits the form.
 
-But for our purposes this is enough.
-Here is [commit with all changes](https://github.com/bezumkin/Sendex/commit/f5f50f3376dbe4f8cfee83cd5d6fad49fd302762) snippet, chunks and lexicons. Oh yeah, that [more lexicons](https://github.com/bezumkin/Sendex/commit/71f21e170a72d281b5c0f4df76988c0589df086e).
+The snippet is a teaching sketch; a production version should use AJAX and show errors more clearly.
+
+[Commit with the snippet, chunks and lexicons](https://github.com/bezumkin/Sendex/commit/f5f50f3376dbe4f8cfee83cd5d6fad49fd302762). [More lexicons](https://github.com/bezumkin/Sendex/commit/71f21e170a72d281b5c0f4df76988c0589df086e).
 
 ## Conclusion
 
-So, we have a snippet that displays 2 forms, depending on the status of the user.
+The snippet now shows two forms depending on the user's state, and on submit calls the newsletter methods to subscribe and unsubscribe. Subscription verifies the email; unsubscription does not.
 
-When sending these forms, it calls methods in the distribution object and signs / unsubscribes users. When subscribing, email is checked, when unsubscribing - no.
-
-As soon as the user has subscribed, you can generate letters through the admin or api and send them. In the next lesson, we will script scripts to automatically queue letters at various events, and send them by cron.
-
-After that, I think you will ask me questions, and our classes will end, because the first beta version of the component will be ready.
+Once users can subscribe, letters can be generated through the manager or the API. The next lesson adds the queue script: fill it on events, send it by cron — and the first beta of the component is ready.

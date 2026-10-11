@@ -32,7 +32,7 @@ translation: "extending-modx/creating-components/self-subscribe"
     $manager->addIndex('sxSubscriber', 'code');
 ```
 
-И запускаем сборку пакета (`/Sendex/_build/build.transport.php`), которая перегенерирует модель и обновит таблицу БД.
+И запускаем сборку пакета (`php ~/www/Extras/Sendex/_build/build.php` — в текущих заготовках нет `build.transport.php`), которая перегенерирует модель и обновит таблицу БД.
 
 Как видите, с каждым разом это всё проще и проще. [Вот коммит](https://github.com/bezumkin/Sendex/commit/e006accb6861a21f0eb46fa3d23ebdb5f89eabfb).
 
@@ -167,7 +167,7 @@ if ($subscriber = $this->xpdo->getObject('sxSubscriber', array('code' => $code))
 
 ### unsubscribe
 
-Если пользователь уже подписан на рассылку, ему показывается форма отписки и в неё я добавил скрытый input code. Если юзер отправит эту форму с `sx_action = ubsubscribe`, то код пойдёт в метод `sxNewsletter::unSubscribe()` и юзер будет отписан.
+Если пользователь уже подписан на рассылку, ему показывается форма отписки и в неё я добавил скрытый input code. Если юзер отправит эту форму с `sx_action = unsubscribe`, то код пойдёт в метод `sxNewsletter::unSubscribe()` и юзер будет отписан.
 
 Код генерируется случайно, алгоритм `sha1` практически исключает коллизии, так что отписан будет именно тот, кто нажал форму.
 

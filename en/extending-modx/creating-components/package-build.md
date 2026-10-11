@@ -61,27 +61,30 @@ return [
     'sendex' => [
         'description' => 'sendex_menu_desc',
         'action' => 'home',
+        // 'namespace' => 'sendex', // injected by the build script; without it the action is looked up in core
         // 'parent' => 'components', // default in the build script
     ],
 ];
 ```
 
 - `action` → controller file `core/components/sendex/controllers/home.class.php` (class like `SendexHomeManagerController`).
+- `namespace` → which component the action belongs to; defaults to `core` in the schema. The scaffold injects your namespace automatically — if you build `modMenu` rows by hand, set it explicitly or the manager will look for the controller in core.
 - `parent` → usually `components`. Leave empty for a top-level item that only opens a submenu.
 - `handler` → optional JavaScript. Use `return false;` for a parent row that should not open a page.
+
 
 Older Sendex commits still show `_build/data/transport.menu.php` with a nested `action` array for `modAction`. That pattern is historical. New work on MODX 3 should follow `menus.php` as above.
 
 ## Customization for development
 
-The project directory (for example `Extras/Sendex`) is the working tree. After install, MODX also has copies under `core/components/sendex/` and `assets/components/sendex/`. Edits in `Extras/Sendex` do not change the installed files until you rebuild, unless you point the namespace at the project path.
+The project directory (for example `Extras/Sendex`) is the working tree. After install, MODX also has copies under `core/components/sendex/` and `assets/components/sendex/`. Edits in `Extras/Sendex` do not reach the installed files until you rebuild — unless you point the namespace at the project path.
 
 Options:
 
 1. Rebuild and reinstall after every change.
 2. Point the namespace (and path settings) at `Extras/Sendex` so the manager loads PHP/JS from the project.
 
-For option 2: **System → Namespaces**, open the `sendex` namespace, set its path to the project `core` path (the ModExtra3 `symlinks` resolver can also link `core` and `assets` back into `Extras/` for you).
+For option 2: **Admin → Namespaces**, open the `sendex` namespace, set its path to the project `core` path (the ModExtra3 `symlinks` resolver can also link `core` and `assets` back into `Extras/` for you).
 
 ![](/ru/extending-modx/creating-components/package-build/package-build-3.png)
 
@@ -108,7 +111,15 @@ During development you may enable error display in the web root `index.php` and 
 
 ## CMP controllers
 
-When you click the menu item, MODX loads the controller named in `action` from the component's `controllers/` directory.
+When you click the menu item, MODX loads the controller named in `action` from the component's `controllers/` directory. Resolution order in 3.x:
+
+1. PSR-4 class `\MODX\Revolution\Controllers\<Action>` (if it exists, no file is loaded);
+2. legacy global class `<Namespace><Action>ManagerController`;
+3. file `controllers/<action>.class.php`;
+4. file `controllers/<action>/index.class.php`.
+
+Files are searched in the theme, `default`, and the namespace's `controllers/` root.
+
 
 ModExtra3's home controller extends `MODX\Revolution\modExtraManagerController` and already uses `addCss()` / `addJavascript()` / `addHtml()`. See [`controllers/home.class.php`](https://github.com/modx-pro/ModExtra3/blob/master/core/components/modextra/controllers/home.class.php).
 
@@ -160,6 +171,7 @@ Return `true`/`false`, or rely on menu permission fields so only allowed users o
 ### loadCustomCssJs
 
 Registers CSS/JS for the page. This is where most CMP UI work happens.
+
 
 ## Conclusion
 
