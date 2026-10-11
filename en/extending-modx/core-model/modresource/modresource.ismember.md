@@ -2,43 +2,45 @@
 title: "modResource.isMember"
 _old_id: "1718"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modresource/modresource.ismember"
+description: "Check whether a Resource belongs to one or more Resource Groups"
 ---
 
 ## modResource::isMember
 
- States whether a resource is a member of a resource group or groups. You may specify either a string name of the resource group, or an array of resource group names.
-
- This method is available with MODX v2.3 (most likely not in a patch release)
+Checks whether a Resource belongs to one or more Resource Groups.
 
 ## Syntax
 
- API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modresource.class.html#\\\\modResource::isMember()](http://api.modx.com/revolution/2.2/db_core_model_modx_modresource.class.html#\\modResource::isMember())
-
 ``` php
-boolean isMember (mixed $groups)
+boolean isMember (string|array $groups [, boolean $matchAll = false])
 ```
+
+| Parameter | Description |
+| --- | --- |
+| `$groups` | Resource Group name or an array of Resource Group names |
+| `$matchAll` | `true` — require membership in every group of the array; `false` (default) — membership in any one group is enough. No effect when `$groups` is a single string. |
 
 ## Example
 
- Get a resource object:
+Get a Resource object:
 
 ``` php
 $resource = $modx->getObject('modResource', array('id' => 2));
 ```
 
- See if the resource is a member of the 'Marketing' resource group:
+Check membership in the 'Marketing' Resource Group:
 
 ``` php
 $resource->isMember('Marketing');
 ```
 
- See if the resource is a member of EITHER the 'Marketing' or 'Finances' resource group.
+Check membership in either the 'Marketing' or the 'Finances' Resource Group:
 
 ``` php
 $resource->isMember(array('Marketing', 'Finances'));
 ```
 
- See if the resource is a member of BOTH the 'Marketing' and 'Finances' resource group (by default it's enough to be in one resource group to get back true).
+Check membership in both Resource Groups at once:
 
 ``` php
 $resource->isMember(array('Marketing', 'Finances'), true);
@@ -46,4 +48,4 @@ $resource->isMember(array('Marketing', 'Finances'), true);
 
 ## See Also
 
-- [modResource](extending-modx/core-model/modresource "modResource")
+- [modResource](extending-modx/core-model/modresource)

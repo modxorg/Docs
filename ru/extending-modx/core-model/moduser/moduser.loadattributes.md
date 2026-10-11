@@ -1,6 +1,7 @@
 ---
 title: "modUser.loadAttributes"
 translation: "extending-modx/core-model/moduser/moduser.loadattributes"
+description: "Загрузить атрибуты профиля безопасности пользователя"
 ---
 
 ## modUser::loadAttributes
@@ -9,20 +10,20 @@ translation: "extending-modx/core-model/moduser/moduser.loadattributes"
 
 ## Синтаксис
 
-API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::loadAttributes()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::loadAttributes())
-
 ``` php
-void loadAttributes ( $target, [ $context = ''], [ $reload = false])
+void loadAttributes (mixed $target, [string $context = ''], [boolean $reload = false])
 ```
+
+`$target` — имя класса или массив имён классов `modAccess*`, права которых нужно загрузить, а не класс ресурса или контекста. По умолчанию `$context` — текущий контекст; `$reload` сбрасывает значения, закэшированные в сессии.
 
 ## Пример
 
-Загрузите атрибуты для 'sports' контекста и цели modResource.
+Загрузить права групп ресурсов для контекста 'sports'.
 
 ``` php
-$user->loadAttributes('modResource','sports',true);
+$user->loadAttributes([\MODX\Revolution\modAccessResourceGroup::class], 'sports', true);
 ```
 
 ## Смотрите также
 
-- [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")
+- [modUser](extending-modx/core-model/moduser "modUser")

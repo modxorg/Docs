@@ -1,21 +1,20 @@
 ---
 title: "modResource.isMember"
 translation: "extending-modx/core-model/modresource/modresource.ismember"
+description: "Проверить, входит ли ресурс в одну или несколько групп ресурсов"
 ---
 
 ## modResource::isMember
 
 Указывает, является ли ресурс членом группы или групп ресурсов. Вы можете указать либо строковое имя группы ресурсов, либо массив имен групп ресурсов.
 
-Этот метод доступен в MODX v2.3 (скорее всего, не в патче)
-
 ## Синтаксис
 
- API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modresource.class.html#\\\\modResource::isMember()](http://api.modx.com/revolution/2.2/db_core_model_modx_modresource.class.html#\\modResource::isMember())
-
 ``` php
-boolean isMember (mixed $groups)
+boolean isMember (string|array $groups [, boolean $matchAll = false])
 ```
+
+`$groups` — имя группы ресурсов или массив имён групп ресурсов. Задайте `$matchAll` со значением `true`, чтобы требовать членства во всех группах массива; по умолчанию достаточно входа хотя бы в одну. Если `$groups` — одиночная строка, `$matchAll` не действует.
 
 ## Пример
 
@@ -31,13 +30,13 @@ $resource = $modx->getObject('modResource', array('id' => 2));
 $resource->isMember('Marketing');
 ```
 
-Посмотрите, является ли ресурс членом ЛИБО группы ресурсов 'Marketing' или 'Finances'.
+Проверьте, входит ли ресурс в группу 'Marketing' или 'Finances':
 
 ``` php
 $resource->isMember(array('Marketing', 'Finances'));
 ```
 
-Посмотрите, является ли ресурс членом BOTH и группы ресурсов 'Marketing' и 'Finances' (по умолчанию достаточно быть в одной группе ресурсов, чтобы вернуть true).
+Проверьте, входит ли ресурс одновременно в обе группы 'Marketing' и 'Finances':
 
 ``` php
 $resource->isMember(array('Marketing', 'Finances'), true);

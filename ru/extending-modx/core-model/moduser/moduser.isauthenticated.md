@@ -1,6 +1,7 @@
 ---
 title: "modUser.isAuthenticated"
 translation: "extending-modx/core-model/moduser/moduser.isauthenticated"
+description: "Проверить, аутентифицирован ли пользователь в контексте"
 ---
 
 ## modUser::isAuthenticated
@@ -10,8 +11,6 @@ translation: "extending-modx/core-model/moduser/moduser.isauthenticated"
 Отдельные контексты сеанса могут позволить пользователям входить/выходить из определенных дочерних сайтов индивидуально (или в коллекциях).
 
 ## Синтаксис
-
-API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::isAuthenticated()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::isAuthenticated())
 
 ``` php
 boolean isAuthenticated ([string $sessionContext = 'web'])

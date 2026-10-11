@@ -2,15 +2,14 @@
 title: "modUser.getSessionContexts"
 _old_id: "1343"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/moduser/moduser.getsessioncontexts"
+description: "List the Context keys the User is logged into"
 ---
 
 ## modUser::getSessionContexts
 
-Returns an array of user session context keys.
+Returns the session Contexts of this User as an array of `context key => User id`.
 
 ## Syntax
-
-API Doc: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::getSessionContexts()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::getSessionContexts())
 
 ``` php
 array getSessionContexts ()
@@ -18,13 +17,11 @@ array getSessionContexts ()
 
 ## Example
 
-Get all user seesion contexts for this user that is logged into the web and mgr contexts:
-
 ``` php
 $keys = $user->getSessionContexts();
-print_r($keys); // prints Array ( 'web', 'mgr' );
+print_r($keys); // e.g. array('web' => 1, 'mgr' => 1);
 ```
 
 ## See Also
 
-- [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")
+- [modUser](extending-modx/core-model/moduser "modUser")

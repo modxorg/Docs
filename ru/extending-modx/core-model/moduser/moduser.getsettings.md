@@ -1,15 +1,14 @@
 ---
 title: "modUser.getSettings"
 translation: "extending-modx/core-model/moduser/moduser.getsettings"
+description: "Получить настройки групп пользователя, перекрытые его собственными настройками"
 ---
 
 ## modUser::getSettings
 
-Получает все пользовательские настройки в формате массива.
+Возвращает настройки групп пользователя, перекрытые настройками самого пользователя: сначала значения из `getUserGroupSettings()`, затем поверх них каждая запись из связи UserSettings. Настройка, есть ли она в обоих источниках, получает значение самого пользователя.
 
 ## Синтаксис
-
-API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::getSettings()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::getSettings())
 
 ``` php
 array getSettings ()
@@ -25,4 +24,4 @@ $settings = $user->getSettings();
 
 ## Смотрите также
 
-- [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")
+- [modUser](extending-modx/core-model/moduser "modUser")

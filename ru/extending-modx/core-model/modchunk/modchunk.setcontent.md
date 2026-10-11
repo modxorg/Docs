@@ -1,6 +1,7 @@
 ---
 title: "modChunk.setContent"
 translation: "extending-modx/core-model/modchunk/modchunk.setcontent"
+description: "Установить содержимое чанка"
 ---
 
 ## modChunk::setContent
@@ -9,11 +10,11 @@ translation: "extending-modx/core-model/modchunk/modchunk.setcontent"
 
 ## Синтаксис
 
-API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modchunk.class.html#%5CmodChunk::setContent()](http://api.modx.com/revolution/2.2/db_core_model_modx_modchunk.class.html#%5CmodChunk::setContent())
-
 ``` php
-void setContent ( $content, [ $options = array()])
+boolean setContent ($content [, array $options = array()])
 ```
+
+Возвращает истину, если контент был установлен. Наследуется от `modElement` (`core/src/Revolution/modElement.php`).
 
 ## Пример
 
@@ -24,5 +25,4 @@ $chunk->setContent('<h2>Hello!</h2>');
 ## Смотрите также
 
 - [modChunk](extending-modx/core-model/modchunk)
-- [modChunk.setContent](extending-modx/core-model/modchunk/modchunk.setcontent)
 - [modChunk.getContent](extending-modx/core-model/modchunk/modchunk.getcontent)

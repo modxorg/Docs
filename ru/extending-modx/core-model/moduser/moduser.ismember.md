@@ -1,6 +1,7 @@
 ---
 title: "modUser.isMember"
 translation: "extending-modx/core-model/moduser/moduser.ismember"
+description: "Проверить, входит ли пользователь в одну или несколько групп пользователей"
 ---
 
 ## modUser::isMember
@@ -9,11 +10,11 @@ translation: "extending-modx/core-model/moduser/moduser.ismember"
 
 ## Синтаксис
 
- API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#\\\\modUser::isMember()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::isMember())
-
 ``` php
-boolean isMember (mixed $groups)
+boolean isMember (string|array $groups [, boolean $matchAll = false])
 ```
+
+`$groups` — имя группы или массив имён групп. Задайте `$matchAll` со значением `true`, чтобы требовать членства во всех группах массива; по умолчанию достаточно входа хотя бы в одну. Если `$groups` — одиночная строка, `$matchAll` не действует.
 
 ## Пример
 
@@ -29,13 +30,13 @@ $user = $modx->getObject('modUser', array('username' => 'boss'));
 $user->isMember('Staff');
 ```
 
-Посмотрите, является ли Пользователь членом ЛИБО группы пользователей 'Staff' или 'Investors'.
+Проверьте, входит ли пользователь в группу 'Staff' или 'Investors':
 
 ``` php
 $user->isMember(array('Staff','Investors'));
 ```
 
-Посмотрите, является ли Пользователь членом ОБА, группы пользователей 'Staff' и 'Investors'.
+Проверьте, входит ли пользователь одновременно в обе группы 'Staff' и 'Investors':
 
 ``` php
 $user->isMember(array('Staff','Investors'), true);
@@ -43,4 +44,4 @@ $user->isMember(array('Staff','Investors'), true);
 
 ## Смотрите также
 
-- [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")
+- [modUser](extending-modx/core-model/moduser "modUser")

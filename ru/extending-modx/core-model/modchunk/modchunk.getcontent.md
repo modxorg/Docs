@@ -10,11 +10,11 @@ description: "Получить исходный необработанный к�
 
 ## Синтаксис
 
-API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_modchunk.class.html#%5CmodChunk::getContent()](http://api.modx.com/revolution/2.2/db_core_model_modx_modchunk.class.html#%5CmodChunk::getContent())
-
 ``` php
-void getContent ([ $options = array()])
+string getContent ([array $options = array()])
 ```
+
+Метод унаследован из `modElement` (`core/src/Revolution/modElement.php`), а не объявлен в modChunk. Для статического чанка метод читает исходный файл и, если он отличается от сохранённого контента, записывает его обратно через `save()`.
 
 ## Пример
 
@@ -29,5 +29,4 @@ if ($chunk) {
 
 - [modChunk](extending-modx/core-model/modchunk)
 - [modChunk.setContent](extending-modx/core-model/modchunk/modchunk.setcontent)
-- [modChunk.getContent](extending-modx/core-model/modchunk/modchunk.getcontent)
 - [Парсинг MODX тегов](extending-modx/parsing-tags)
