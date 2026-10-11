@@ -1,6 +1,7 @@
 ---
 title: "modUser.removeSessionContext"
 translation: "extending-modx/core-model/moduser/moduser.removesessioncontext"
+description: "Удалить контекст из сеанса пользователя"
 ---
 
 ## modUser::removeSessionContext
@@ -8,8 +9,6 @@ translation: "extending-modx/core-model/moduser/moduser.removesessioncontext"
 Удаляет контекст сеанса пользователя.
 
 ## Синтаксис
-
-API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::removeSessionContext()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::removeSessionContext())
 
 ``` php
 void removeSessionContext (string|array $context)
@@ -25,5 +24,5 @@ $user->removeSessionContext('sports');
 
 ## Смотрите также
 
-- [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser")
+- [modUser](extending-modx/core-model/moduser "modUser")
 - [Contexts](building-sites/contexts "Contexts")

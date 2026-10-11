@@ -1,15 +1,16 @@
 ---
 title: "modUser.removeSessionCookie"
 translation: "extending-modx/core-model/moduser/moduser.removesessioncookie"
+description: "Удалить cookie сеанса пользователя для контекста"
 ---
 
 ## modUser::removeSessionCookie
 
 Удаляет cookie сеанса для пользователя.
 
-## Синтаксис
+Тело метода в ядре пустое (`TODO Implement this.` в `core/src/Revolution/modUser.php`), поэтому вызов сейчас ничего не делает: cookie остаётся на месте, а `$context` не используется. Сеанс фактически завершает `endSession()`.
 
-API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::removeSessionCookie()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::removeSessionCookie())
+## Синтаксис
 
 ``` php
 void removeSessionCookie (string $context)

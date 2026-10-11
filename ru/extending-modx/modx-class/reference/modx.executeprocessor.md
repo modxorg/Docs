@@ -1,37 +1,14 @@
 ---
 title: "modX.executeProcessor"
 translation: "extending-modx/modx-class/reference/modx.executeprocessor"
+description: "Удалён в MODX 2.1 — вместо него используйте modX.runProcessor"
 ---
 
 ## modX::executeProcessor
 
-Этот метод удален в 2.1 и заменен на [$modX->runProcessor](extending-modx/modx-class/reference/modx.runprocessor)
-
-Выполняет определенный процессор. Единственным аргументом является массив, который может принимать следующие значения:
-
-- `action` - действие, которое необходимо выполнить, аналогичное обработке соединителя.
-- `processors_path` - если указано, переопределит путь к процессорам MODX по умолчанию.
-- `location` - префикс для загрузки файлов процессора, будет предшествовать параметру действия.
-
-## Синтаксис
-
-API Doc: [modX::runProcessor()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runProcessor())
-
-``` php
-mixed executeProcessor (array $options)
-```
-
-## Пример
-
-Выполнение процессора для получения списка контекста
-
-``` php
-$modx->executeProcessor(array(
-    'location' => 'context',
-    'action' => 'getList',
-));
-```
+Удалён в MODX 2.1. Используйте [modX.runProcessor](extending-modx/modx-class/reference/modx.runprocessor).
 
 ## Смотрите также
 
 - [modX](extending-modx/core-model/modx "modX")
+- [modX.runProcessor](extending-modx/modx-class/reference/modx.runprocessor "modX.runProcessor")

@@ -1,6 +1,7 @@
 ---
 title: "modUser.addSessionContext"
 translation: "extending-modx/core-model/moduser/moduser.addsessioncontext"
+description: "Добавить контекст в сеанс пользователя"
 ---
 
 ## modUser::addSessionContext
@@ -8,8 +9,6 @@ translation: "extending-modx/core-model/moduser/moduser.addsessioncontext"
 Добавляет новый контекст в массив контекста сеанса пользователя.
 
 ## Синтаксис
-
-API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::addSessionContext()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::addSessionContext())
 
 ``` php
 void addSessionContext (string $context)
@@ -20,8 +19,10 @@ void addSessionContext (string $context)
 Добавьте 'sports' контекст сессию для пользователя.
 
 ``` php
-$modx->addSessionContext('sports');
+$modx->user->addSessionContext('sports');
 ```
+
+`addSessionContext` — метод `modUser`, поэтому вызывайте его на объекте пользователя, а не на `$modx`.
 
 ## Смотрите также
 

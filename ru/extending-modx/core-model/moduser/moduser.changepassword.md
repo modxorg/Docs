@@ -1,18 +1,19 @@
 ---
 title: "modUser.changePassword"
 translation: "extending-modx/core-model/moduser/moduser.changepassword"
+description: "Сменить пароль пользователя, при желании проверив старый"
 ---
 
 ## modUser::changePassword
 
-Меняет пароль пользователя. Сначала он сопоставляет oldPassword, который вы укажете, с текущим паролем, используя `modUser->passwordMatches($oldPassword)`, затем устанавливает пароль и, наконец, вызывает [OnUserChangePassword](extending-modx/plugins/system-events/onuserchangepassword "OnUserChangePassword") событие. Возвращает истину, если пароль был изменен, ложь, если нет.
+Меняет пароль пользователя. По умолчанию сначала сопоставляет `$oldPassword` с текущим паролем через `modUser->passwordMatches()`, затем устанавливает новый пароль и в конце вызывает событие [OnUserChangePassword](extending-modx/plugins/system-events/onuserchangepassword "OnUserChangePassword"). Возвращает истину, если пароль был изменён, ложь — если нет.
+
+Передайте в `$validateOldPassword` значение `false`, чтобы пропустить проверку старого пароля.
 
 ## Синтаксис
 
-API документация: [http://api.modx.com/revolution/2.2/db\_core\_model\_modx\_moduser.class.html#%5CmodUser::changePassword()](http://api.modx.com/revolution/2.2/db_core_model_modx_moduser.class.html#%5CmodUser::changePassword())
-
 ``` php
-boolean changePassword (string $newPassword, string $oldPassword)
+boolean changePassword (string $newPassword, string $oldPassword [, boolean $validateOldPassword = true])
 ```
 
 ## Пример
