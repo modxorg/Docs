@@ -14,8 +14,9 @@ translation: "getting-started/upgrading-to-3.0/core-folder"
 Сделайте так:
 
 1. Перенесите каталог core обратно в `/core/` в корне установки
-2. Обновите путь к core в `core/config/config.inc.php`
-3. Обновите путь в `config.core.php`, `/manager/config.core.php` и `/connectors/config.core.php`
+2. Обновите путь в `config.core.php`, `/manager/config.core.php` и `/connectors/config.core.php`
+
+Определение `MODX_CORE_PATH` в `core/config/config.inc.php` — это лишь запасной вариант, который не выполняется, когда `config.core.php` уже задал константу, поэтому менять его не нужно; всё же лучше держать оба файла согласованными.
 
 После этого запустите установщик MODX и проверьте, что пути верные.
 

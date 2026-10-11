@@ -11,10 +11,10 @@ Preguntas frecuentes y soluciones rápidas para MODX 3. ¿Sigues atascado? Pregu
 ## Solución de problemas relacionada
 
 - [Solución de problemas de instalación](getting-started/installation/troubleshooting)
-- [Solución de problemas de actualizaciones](getting-started/maintenance/upgrading/troubleshooting)
-- [Solución de problemas de gestión de paquetes](building-sites/extras/troubleshooting)
-- [Solución de problemas de seguridad](building-sites/client-proofing/security/troubleshooting-security)
-- [Preguntas frecuentes y solución de problemas de desarrollo de CMP](extending-modx/custom-manager-pages/troubleshooting)
+- [Solución de problemas de actualizaciones](/current/en/getting-started/maintenance/upgrading/troubleshooting)
+- [Solución de problemas de gestión de paquetes](/current/en/building-sites/extras/troubleshooting)
+- [Solución de problemas de seguridad](/current/en/building-sites/client-proofing/security/troubleshooting-security)
+- [Preguntas frecuentes y solución de problemas de desarrollo de CMP](/current/en/extending-modx/custom-manager-pages/troubleshooting)
 
 ## 1. MODX 101
 
@@ -32,7 +32,7 @@ Ver [Requisitos del servidor](getting-started/server-requirements). MODX 3.x (**
 
 ### 1.3. ¿Qué etiquetas puedo usar? ¿Qué es `[[*pagetitle]]`, `[[Wayfinder]]`, etc.?
 
-Ver [Sintaxis de etiquetas](building-sites/tag-syntax). Los campos de recursos usables en etiquetas están en [Recursos](building-sites/resources).
+Ver [Sintaxis de etiquetas](/current/en/building-sites/tag-syntax). Los campos de recursos usables en etiquetas están en [Recursos](/current/en/building-sites/resources).
 
 ## 2. El Manager
 
@@ -42,16 +42,16 @@ Probablemente la colapsaste: haz clic en la pequeña flecha del borde izquierdo 
 
 ### 2.2. ¿Cómo cambio qué campos de recurso están visibles al editar?
 
-Usa la [Personalización de formularios](building-sites/client-proofing/form-customization) para ocultar, renombrar o reorganizar campos en las pantallas de creación/edición de recursos (y limitar reglas a ciertos grupos de usuarios o plantillas).
+Usa la [Personalización de formularios](/current/en/building-sites/client-proofing/form-customization) para ocultar, renombrar o reorganizar campos en las pantallas de creación/edición de recursos (y limitar reglas a ciertos grupos de usuarios o plantillas).
 
 ### 2.3. ¿Qué significan modDocument / modWeblink / modSymLink / modStaticResource?
 
 Nombres de clase de los tipos de recurso integrados (en 3.x viven en el espacio de nombres `MODX\Revolution\`; los nombres cortos siguen siendo comunes). Todos aparecen en el Árbol de recursos:
 
-- [Documentos](building-sites/resources) (clase `modDocument`): páginas normales con contenido. A menudo se dice «Recurso» cuando se quiere decir un Document.
-- [Weblinks](building-sites/resources/weblink): redirigen a otro recurso o a una URL externa
-- [Symlinks](building-sites/resources/symlink): reutilizan el contenido de otro documento en otra URL
-- [Recursos estáticos](building-sites/resources/static-resource): el contenido viene de un archivo del sistema de archivos
+- [Documentos](/current/en/building-sites/resources) (clase `modDocument`): páginas normales con contenido. A menudo se dice «Recurso» cuando se quiere decir un Document.
+- [Weblinks](/current/en/building-sites/resources/weblink): redirigen a otro recurso o a una URL externa
+- [Symlinks](/current/en/building-sites/resources/symlink): reutilizan el contenido de otro documento en otra URL
+- [Recursos estáticos](/current/en/building-sites/resources/static-resource): el contenido viene de un archivo del sistema de archivos
 
 ### 2.4. ¿Cuál es la diferencia entre un Recurso y un Documento?
 
@@ -59,7 +59,7 @@ Un Recurso (`modResource`) es la clase base; un Documento (`modDocument`) es la 
 
 ### 2.5. No puedo entrar al manager / olvidé mi contraseña
 
-Ver [Restablecer una contraseña de usuario manualmente](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually).
+Ver [Restablecer una contraseña de usuario manualmente](/current/en/building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually).
 
 ### 2.6. Error 500 Internal Server Error en el manager
 
@@ -100,4 +100,4 @@ Confirma que está instalado y activado (Extras → Installer / el árbol de ele
 
 ### 4.1. ¿Cómo actualizo dentro de 3.x, o de 2.x a 3.x?
 
-Sigue [Actualización de MODX](getting-started/maintenance/upgrading). Para un salto de 2.x a 3.x, lee antes [Actualización de 2.x a 3.0](getting-started/upgrading-to-3.0): cambian los espacios de nombres de clases, los procesadores, la ruta del core y los requisitos de PHP. **3.2+ necesita PHP 8.1+**.
+Sigue [Actualización de MODX](/current/en/getting-started/maintenance/upgrading). Para un salto de 2.x a 3.x, lee antes [Actualización de 2.x a 3.0](/current/en/getting-started/upgrading-to-3.0): cambian los espacios de nombres de clases, los procesadores, la ruta del core y los requisitos de PHP. **3.2+ necesita PHP 8.1+**.

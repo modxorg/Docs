@@ -2,61 +2,59 @@
 title: 'modAction and related'
 ---
 
-All `modAction` related functionality has been removed in MODX3. This was accompanied by a cleanup of the `modManagerResponse` and `modManagerController` classes. 
+Manager URLs like `/manager/?a=15` (where `15` is an action ID) no longer work in MODX 3. Extras must use namespace-based routing: `/manager/?namespace=myextra&a=action`. The landing page after login is controlled by the `welcome_action` and `welcome_namespace` settings.
 
-This means that manager URLs in the form of `/manager/?a=15` (where `15` is the ID of an action) will no longer work. Extras that rely on it must be updated to use namespace-based routing instead, in the form of `/manager/?namespace=myextra&a=action`. 
+For some extras, this means rewriting controllers; for others, changing the menu definition (in Admin > Menus) is enough.
 
-For some extras, this may require rewriting controllers. For others, simply changing the menu definition (in System > Menus) is sufficient.
 
-## Removed: `MODx.action` (JavaScript)
+`modAction` and `modAccessAction` are gone (see [Removed objects](#removed-objects) below). `modActionDom`, `modAccessActionDom`, `modActionField` and the `actiondom` / `access_actiondom` / `actions_fields` tables remain and still serve Form Customization rules. The cleanup also touched the `modManagerResponse` and `modManagerController` classes.
 
-The `MODx.action` javascript variable in the manager is no longer available and may cause an error when accessed without checking if it exists.
+## Removed: `MODX.action` (JavaScript)
 
-## Removed: `modX::$actionMap`
+The `MODx.action` JavaScript variable in the manager is gone. Accessing it without checking whether it exists may throw an error.
 
-With the removal of actions, the actionMap no longer serves a purpose, and has been removed. 
+## Removed: `modX::$actionMap` and `modCacheManager::generateActionMap()`
 
-## Removed: `modCacheManager::generateActionMap()`
-
-Along with `modX::$actionMap`, the method that generates it `modCacheManager::generateActionMap()` has also been removed. 
+The action map served the old action system. It and the method that generated it are gone.
 
 ## Removed: `modManagerRequest::loadActionMap()`
 
-Used to fill `modX::$actionMap`, has been removed.
+Filled `modX::$actionMap`; removed with the map.
 
 ## Changed: parameters passed to OnBeforeManagerPageInit event
 
-Previously, [OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit) received an `$action` parameter as an array. Now, it includes the following parameters:
+[OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit) used to receive `$action` as an array. It now receives the controller configuration array:
 
-- `string $namespace` the namespace for the request
-- `string $namespacePath` the (core) path for the namespace
-- `string $action` the router/action in the namespace
+- `namespace` — the namespace for the request
+- `namespace_path` — the core path for the namespace
+- `action` — the router/action in the namespace
+- `controller` — the controller name resolved for the request
+
 
 ## Removed: `MODX_INCLUDES_PATH` constant
 
 No known uses of this constant, so it has been removed.
 
-## Changed: throwing exceptions 
+## Changed: throwing exceptions
 
-When initialising a controller, you can now throw a new exception `MODX\Revolution\Controllers\Exceptions\NotFoundException` or `MODX\Revolution\Controllers\Exceptions\AccessDeniedException`. These will be handled by the `modManagerResponse` class to show a nicer error page.
+When initialising a controller, you can throw `MODX\Revolution\Controllers\Exceptions\NotFoundException` or `MODX\Revolution\Controllers\Exceptions\AccessDeniedException`. `modManagerResponse` catches them and shows a proper error page. Provide a useful message in the exception.
 
-Make sure to provide a useful message in the exception.
+A falsey return value from `modManagerController::checkPermissions` is also handled, but it cannot carry a custom message — throw the exception for that.
 
-This also supports returning a falsey return value from `modManagerController::checkPermissions`, but that does not allow providing a custom message unless you throw the exception yourself.
-
-`\Exception`s and `\Error`s triggered by the rendering of a controller will also be caught now. 
+`\Exception`s and `\Error`s thrown while rendering a controller are now caught as well.
 
 ## Removed: `loadControllerClass` and `instantiateController` on `modManagerResponse`
 
-As the logic for loading controllers has been refactored in `modManagerResponse`, the `loadControllerClass` and `instantiateController` methods have been removed. 
+Controller loading in `modManagerResponse` was refactored; both methods are gone.
 
-Some signatures have slightly changed:
+Controllers may now live in the autoloaded `\MODX\Revolution\Controllers\` namespace: `getControllerClassName()` looks for `\MODX\Revolution\Controllers\{action}` first, then falls back to the filesystem lookup in `{namespace_path}/controllers/`. If your controller class is autoloadable there, no other wiring is needed.
 
-- `checkForMenuPermissions(string $action): bool` now defines the `string` parameter type and `bool` return type 
-- `getControllerClassName(string $action): string` now requires the `$action` to be provided and either returns a string or throws a `NotFoundException`. 
+Some signatures changed:
+
+- `checkForMenuPermissions(string $action): bool` — the parameter type and return type are now declared
+- `getControllerClassName(string $action): string` — `$action` is required; the method returns a string or throws a `NotFoundException`
 
 ## Removed objects
 
 - `modAccessAction` (`access_actions` table)
 - `modAction` (`actions` table)
-

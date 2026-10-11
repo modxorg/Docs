@@ -5,20 +5,16 @@ sortorder: 1
 note: 'This document is not yet complete.'
 ---
 
-As a major release, MODX 3.0 comes with a number of breaking changes. There is always a balance to be kept between breaking changes that cleanup technical debt, and not breaking things unnecessarily.
-
 ## Most important breaking changes
 
-The biggest breaking changes can be summarised as follows:
-
-- [Minimum supported PHP version was increased to 7.2 in 3.0, and again to 8.1 in 3.2](getting-started/upgrading-to-3.0/requirements)
+- [Minimum supported PHP version was increased to 7.2.5 in 3.0, and again to 8.1 in 3.2](getting-started/upgrading-to-3.0/requirements)
 - [It's no longer possible to use a custom core folder/path](getting-started/upgrading-to-3.0/core-folder)
 - [sqlsrv support has been removed](getting-started/upgrading-to-3.0/sqlsrv)
 - [A large number of (previously unnamespaced) classes have been renamed and moved](getting-started/upgrading-to-3.0/class-names), including processors and model classes.
 - [Checklist for Extra authors updating 2.x packages](getting-started/upgrading-to-3.0/extras)
 - [xPDO 3 ships via Composer with PSR-4 models; migrate custom packages](getting-started/upgrading-to-3.0/xpdo)
 - [All processors have been renamed, including base processors](getting-started/upgrading-to-3.0/processors)
-- [modAction and related functionality has been removed](getting-started/upgrading-to-3.0/actions)
+- [`modAction` and `modAccessAction` have been removed](getting-started/upgrading-to-3.0/actions) (`modActionDom` and friends remain)
 - modRestClient has been removed [#15781](https://github.com/modxcms/revolution/pull/15781) and has been [replaced with a new PSR-7/17/18 HTTP service](extending-modx/services/http)
 
 ## Legacy functionality cleanup

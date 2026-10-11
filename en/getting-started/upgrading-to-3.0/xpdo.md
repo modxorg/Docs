@@ -59,10 +59,12 @@ $modx->addPackage(
 );
 ```
 
-- First argument: PHP package / namespace segment that holds `metadata.{dbtype}.php`.
-- Second: filesystem root for that PSR-4 prefix (often `.../src/`).
-- Third: table prefix override, or `null` to use the site prefix.
-- Fourth: `$namespacePrefix` so xPDO registers PSR-4 correctly when the package path is nested under that prefix.
+| Argument | Meaning |
+| --- | --- |
+| 1 | PHP package / namespace segment that holds `metadata.{dbtype}.php` |
+| 2 | Filesystem root for that PSR-4 prefix (often `.../src/`) |
+| 3 | Table prefix override, or `null` for the site prefix |
+| 4 | `$namespacePrefix` so xPDO registers PSR-4 correctly when the package path is nested under that prefix |
 
 After `addPackage` succeeds, use FQCNs:
 
@@ -93,11 +95,12 @@ Generate classes with your build script or the xPDO CLI (`core/vendor/bin/xpdo p
 - `src/Model/metadata.mysql.php` (`version` ≥ `3.0`, `namespace`, `namespacePrefix`, `class_map`)
 - `src/Model/mysql/Task.php` (platform map)
 
-MODX 2.x Extras already shipped a `metadata.mysql.php`. For MODX 3 regenerate it from a `version="3.0"` schema so it includes the namespace fields and `class_map`. A 2.x metadata file (or a layout that never got a 3.0 metadata rebuild) will not register PSR-4 the same way and can log a package metadata warning.
+For MODX 3, regenerate `metadata.mysql.php` from a `version="3.0"` schema so it includes the namespace fields and `class_map`. A 2.x metadata file will not register PSR-4 the same way and can log a package metadata warning.
 
 ## Migrating a 2.x Extra model
 
 Work through this checklist for each custom package:
+
 
 1. **Move classes** into a `src/` tree that mirrors the PHP namespace (`MyExtra\Model\...`).
 2. **Rewrite the schema**: set `package` to the PHP namespace, `version="3.0"`, and namespaced `extends` / relation `class` values (`xPDO\Om\...`, `MODX\Revolution\...` when you relate to core objects).
@@ -121,7 +124,7 @@ $resource = $modx->getObject(modResource::class, $id);
 if ($resource instanceof modResource) { /* ... */ }
 ```
 
-`$modx->getObject('modResource', $id)` may still resolve through `loadClass` translation and log a deprecation. Prefer the namespaced form. `instanceof modResource` against the old global name is always false. Full alias table: [Changed Class Names](getting-started/upgrading-to-3.0/class-names).
+`$modx->getObject('modResource', $id)` may still resolve through `loadClass` translation and log a deprecation. Prefer the namespaced form. `instanceof modResource` only works while the deprecated global aliases are loaded (the default; see [Changed Class Names](getting-started/upgrading-to-3.0/class-names)) — with them disabled, the old name is not a class and the check silently returns `false`.
 
 ### Before / after (custom package)
 

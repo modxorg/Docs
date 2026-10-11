@@ -39,7 +39,7 @@ No es posible dar todos los ejemplos posibles, pero aquí hay algunas formas com
 
 El modificador de salida de fecha ejecuta internamente la [función PHP strftime](https://www.php.net/manual/es/function.strftime.php), por lo que toda la documentación sobre strftime también se aplica al modificador de salida `date`.
 
-Para cambiar el idioma usado por el modificador de salida `date` (por ejemplo, para el nombre de días y meses), ajusta la [configuración de sistema](building-sites/settings) de MODX `locale` de manera apropiada.
+Para cambiar el idioma usado por el modificador de salida `date` (por ejemplo, para el nombre de días y meses), ajusta la [configuración de sistema](/current/en/building-sites/settings) de MODX `locale` de manera apropiada.
 
 | Código              | Muestra                                                      | Ejemplo                 |
 | ----------------- | ------------------------------------------------------------ | ----------------------- |
@@ -84,6 +84,6 @@ No todos los servidores admiten todos los parámetros de formato, en particular 
 - [strftime() documentation en PHP.net](https://www.php.net/manual/es/function.strftime.php)
 - [Modificadores de salida](building-sites/tag-syntax/output-filters)
 - [Etiquetas de plantilla comunes](building-sites/tag-syntax/common)
-- [Recursos](building-sites/resources)
-- [Plantillas](building-sites/elements/templates)
-- [Chunks](building-sites/elements/chunks)
+- [Recursos](/current/en/building-sites/resources)
+- [Plantillas](/current/en/building-sites/elements/templates)
+- [Chunks](/current/en/building-sites/elements/chunks)

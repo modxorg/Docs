@@ -122,7 +122,7 @@ $resource = $modx->getObject(modResource::class, $id);
 if ($resource instanceof modResource) { /* ... */ }
 ```
 
-`$modx->getObject('modResource', $id)` ещё может отработать через перевод в `loadClass` и записать deprecation в лог. Лучше namespaced-форма. `instanceof modResource` со старым global-именем всегда false. Таблица алиасов: [Изменение имён классов](getting-started/upgrading-to-3.0/class-names).
+`$modx->getObject('modResource', $id)` ещё может отработать через перевод в `loadClass` и записать deprecation в лог. Лучше namespaced-форма. `instanceof modResource` работает только пока загружены устаревшие глобальные алиасы (это поведение по умолчанию, см. [Изменение имён классов](getting-started/upgrading-to-3.0/class-names)): если их отключить, старого класса не существует и проверка молча вернёт `false`.
 
 ### Было / стало (свой пакет)
 
