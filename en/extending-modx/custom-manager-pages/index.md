@@ -6,60 +6,59 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages"
 
 ## What is a CMP?
 
-CMP stands for Custom Manager Page, and it is simply a custom page that loads in the MODX Revolution manager. It may also be called a Component or 3PC (3rd Party Component). Typically CMPs are accessed from the Extras menu in MODX, but as a developer there is a lot of freedom in where they are placed.
+A CMP (Custom Manager Page) is a custom page that loads in the MODX manager. It may also be called a Component or 3PC (3rd Party Component). CMPs are usually reached from the Extras menu, but you can place them anywhere.
 
-If you are a developer looking to build an extra which includes a component, you should follow the [Developing an Extra for MODX Revolution tutorial](extending-modx/tutorials/developing-an-extra), as it walks you through all the specific steps and terminology based on an example package called doodles. This page only goes into a minimum set up for custom manager pages.
+This page covers the minimum setup. To build a full extra with a component, follow the [Developing an Extra for MODX Revolution tutorial](extending-modx/tutorials/developing-an-extra) — it walks through every step and the terminology on an example package called doodles.
 
 ## Namespaces
 
-CMPs need a namespace in order for MODX to know where to load the files from.
+CMPs need a Namespace so MODX knows where to load the files from.
 
-To create a Namespace, go to System -> Namespaces. Hit the Create New button and give the namespace a name and a core path. In Revolution 2.2 the Assets path is not yet used, but it can't hurt to also specify it. Your namespace name should be lowercase. While you're free to organise your filesystem as you want, it is best practice to place any files in a directory with the same name as your namespace, in the core/components and assets/components directories.
+To create a Namespace:
 
-So for example if your namespace is called "awesomestuff", your core path would be /path/to/core/components/awesomestuff/ and your assets path would be /path/to/assets/components/awesomestuff/.
+1. Go to Admin -> Namespaces and click Create New.
+2. Give it a lowercase name.
+3. Set the core path, for example `/path/to/core/components/awesomestuff/`.
+4. Set the assets path, for example `/path/to/assets/components/awesomestuff/`. It is stored with the namespace and passed to the manager JS config, so set it now.
 
-The following window is an example of what information makes up a Namespace:
+It is best practice to place files in a directory with the same name as your namespace, under `core/components` and `assets/components`.
 
 ![](namespace-create1.png)
 
 (NOTE: This image is outdated)
 
-In the paths, you can also use placeholders which will be evaluated when MODX loads files from your namespace:
+Paths can use placeholders, resolved when MODX loads files from your namespace:
 
-- {core\_path} - Resolves to the **MODX\_CORE\_PATH** variable, which contains the absolute path to the core directory of your MODX installation, for example _/home/username/public\_html/modx\_location/core/_
-- {base\_path} - Resolves to the **MODX\_BASE\_PATH** variable, which contains the absolute path to the root of the MODX installations, typically something _/home/username/public\_html/modx\_location/_
-- {assets\_path} - Resolves to the **MODX\_ASSETS\_PATH** variable, which contains the absolute path to the assets directory of your MODX installation.
+- {core\_path} - the **MODX\_CORE\_PATH** variable: the absolute path to the core directory of your MODX installation, for example _/home/username/public\_html/modx\_location/core/_
+- {base\_path} - the **MODX\_BASE\_PATH** variable: the absolute path to the root of the MODX installation, typically something like _/home/username/public\_html/modx\_location/_
+- {assets\_path} - the **MODX\_ASSETS\_PATH** variable: the absolute path to the assets directory of your MODX installation.
 
 ## Using modMenu
 
-To point the end user to your custom manager page, you will typically want to make it available through the side menu. This is done with a menu item (modMenu).
+To point the user to your CMP, add a menu item (modMenu). A menu item holds the text to display and an action that matches a controller.
 
-A menu item contains the name and description to display in the top menu, and has an action that matches a controller - more on that in a minute.
+Go to Admin > Menus and create a new menu item. Select the parent menu item, typically "Extras", and fill in the fields:
 
-Go to System > Menus and create a new menu. Select the parent menu item; typically "Extras".
-
-In the modal window, you will be asked to fill in a few details.
-
-- Lexicon Key: this can either be a lexicon key, or just the title you want to show up. When building packages that will be distributed, you should place text in lexicons so they can easily be translated. If it's a lexicon key, it needs to be in the default topic of your namespace.
-- Description: the description that appears under menu items. Can also be a lexicon key.
-- Action: enter the name of the action (controller). For now, enter "index", we'll show you why later when creating the controller.
-- Icon: only used if the menu item is at the top level of the menu, and the user is on a narrow viewport.
-- Parameters: not necessary for this tutorial, but you could use this if you want to pass additional URL parameters to the menu item link. Simply specify "&foo=bar" in that case.
-- Namespace: enter your namespace here. This is necessary to make sure the action is routed to the appropriate path.
-- Handler: instead of loading an action, it's also possible for a menu item to execute a piece of javascript when clicked. This javascript would need to be specified in the handler. Leave empty for now.
-- Permissions: only allow access if the user has these permissions. 
+- Lexicon Key: a lexicon key, or the title to show. For distributed packages, put text in lexicons so it can be translated; the key must be in the default topic of your namespace.
+- Description: the text under the menu item. Can also be a lexicon key.
+- Action: the name of the controller. Enter "index" for now; the controller comes next.
+- Icon: used only for top-level menu items on a narrow viewport.
+- Parameters: not needed here. To pass extra URL parameters, specify "&foo=bar".
+- Namespace: your namespace. Required so the action routes to the right path.
+- Handler: instead of loading an action, a menu item can run a snippet of JavaScript on click. Leave empty for now.
+- Permissions: only allow access if the user has these permissions.
 
 ![](menu-create1.png)
 
 (Note: image is outdated)
 
-Hit save, and refresh the page. Your menu item should be there now! But hold on, it wont work yet, because we're missing the controllers..
+Save and refresh the page. The menu item appears, but it does not work yet — the controllers are missing.
 
 ## Adding a base Controller
 
-Now, to make your manager page functional, it's necessary to add the controllers for it. Remember that we created an action with a controller "index"? Let's add our index controller, which will function as entry point to our other controllers.
+To make the page work, add its controllers. The menu item's action is "index", so create the index controller first — it is the entry point for the other controllers.
 
-Create a new file core/components/namespace/index.class.php, with the following contents:
+Create `core/components/namespace/index.class.php` with the following contents:
 
 ``` php
 <?php
@@ -101,40 +100,37 @@ abstract class NamespaceManagerController extends modExtraManagerController {
     }
 }
 /**
- * The Index Manager Controller is the default one that gets called when no
- * &action parameter is passed  We use it to define the default controller
- * which will then handle the actual processing.
+ * The Index Manager Controller handles the action "index" — the default
+ * action the manager loads when a menu item does not specify another one.
  *
- * It is important to name this class "IndexManagerController" and making sure
- * it extends the abstract class we defined above
+ * Name this class by prefixing your namespace: "NamespaceIndexManagerController".
+ * The namespace prefix is required; PHP class names are case-insensitive, so
+ * the capitalisation of "Index" itself does not matter.
  */
-class IndexManagerController extends NamespaceManagerController {
-    /**
-     * Defines the name or path to the default controller to load.
-     * @return string
-     */
-    public static function getDefaultController() {
-        return 'home';
+class NamespaceIndexManagerController extends NamespaceManagerController {
+    public function process(array $scriptProperties = array()) {
+        /* Optionally load another controller here; in 3.x the manager
+         * simply routes the empty &a= parameter to the "index" action,
+         * so a menu item can also point straight at its final action. */
+        return parent::process($scriptProperties);
     }
 }
 ```
 
- So that's our base index controller. The IndexManagerController will be called when the menu item is loaded, which tells MODX to load the "home" controller by default. By passing an "action" url parameter to the page (either by adjusting the menu item "parameters" option, or by manually crafting that link) it will load a different controller instead.
-
- In this tutorial we only go into the pieces that are actually required to build a real simple manager page, but if you are looking to build a fully fledged manager page with ExtJS and more, follow the [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra) tutorial. You'll find there's an overlap between this page and Part 2 of that tutorial, but that we restrict ourselves to a simple manager page here.
+The index controller runs when the menu item's action is "index" (the default when no `&a=` parameter is passed). To load a different controller, pass its action in the `a` URL parameter — set the menu item's "Action" field (e.g. `home`) or add `&a=home` to its "Parameters".
 
 ## Adding the Home controller
 
-The Home controller is the one that is actually processed when we open the menu item.
+The Home controller is processed when the menu item is opened.
 
-Create a new file in core/components/namespace/controllers/home.class.php and give it the following contents:
+Create `core/components/namespace/controllers/home.class.php`:
 
 ``` php
 <?php
 /**
  * The name of the controller is based on the action (home) and the
- * namespace. This home controller is loaded by default because of
- * our IndexManagerController.
+ * namespace. Point the menu item's Action field (or an &a= parameter)
+ * at "home" to load this controller.
  */
 class NamespaceHomeManagerController extends NamespaceManagerController {
     /**
@@ -152,8 +148,9 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
         return 'My first CMP!';
     }
     /**
-     * Register needed assets. Using this method, it will automagically
-     * combine and compress them if that is enabled in system settings.
+     * Register needed assets. addCss/addJavascript entries are emitted with
+     * a ?mv=<version> cache-busting suffix automatically; addLastJavascript
+     * is emitted as-is (no suffix).
      */
     public function loadCustomCssJs() {
         $this->addCss('url/to/some/css_file.css');
@@ -168,33 +165,42 @@ class NamespaceHomeManagerController extends NamespaceManagerController {
 }<br>
 ```
 
-We're just returning the HTML we want added to the page in the process function. Easy, right? Load the menu item now and your manager page should show up telling you that you're awesome.
+The `process` function returns the HTML for the page. Load the menu item now; the manager page shows the HTML.
 
-If you're getting a blank page, there is likely a class name or path wrong somewhere. If you can access the PHP Error logs it will tell you exactly which one, but here are some pointers:
+
+A blank page usually means a wrong class name or path. PHP error logs name the exact problem. Also check:
 
 - Is your namespace core path correct?
-- Is your index controller called "IndexManagerController"? Don't use the namespace in that name.
-- Is your home controller called "NamespaceHomeManagerController"? It's important to start with the namespace with an uppercase character, then the action ("home") with an uppercase controller, and then ManagerController, anything else is not accepted.
+- Is your index controller called "NamespaceIndexManagerController"? The class name must start with your namespace (with an uppercase character), then the action, then "ManagerController" — e.g. for namespace `myns` and action `index` the router looks for `MynsindexManagerController` (case-insensitive).
+- Is your home controller called "NamespaceHomeManagerController"? Same rule: namespace + action + ManagerController.
+
+### Controllers in MODX 3
+
+The class names in this guide (e.g. `modExtraManagerController`) are global names. In 3.x they are deprecated aliases of the real classes (`\MODX\Revolution\modExtraManagerController` and friends), loaded while the `load_deprecated_global_class_aliases` system setting (on by default) is enabled. New code can use the namespaced class names or, since 3.0, a PSR-4 controller class `\MODX\Revolution\Controllers\<Action>` — that is the first place the manager looks before falling back to the `controllers/` files described here.
+
+When routing an action, the manager tries in order: the PSR-4 controller class, the full class name `<Namespace><action>ManagerController`, the file `controllers/<action>.class.php`, and finally `controllers/<action>/index.class.php`, searching each in the theme, `default` and root of your namespace's `controllers/` directory.
+
+Other overridable hooks on the controller base class: `failure()`, `addLexiconTopic()`, `loadWorkingContext()`, `getHelpUrl()`, and the lifecycle event helpers `firePreRenderEvents()` / `firePostRenderEvents()`. `process()` may return an HTML string or an array of template placeholders. Around every page the manager fires `OnBeforeManagerPageInit`, `OnManagerPageInit`, `OnManagerPageBeforeRender` and `OnManagerPageAfterRender` — useful for CMPs that hook into the manager bootstrap.
 
 ### Using a Template file
 
-It's possible to use a template file for custom manager pages. Simply add a getTemplateFile method and return the absolute path to a file, and it will be loaded and processed as a Smarty template. To add placeholders for the template file, call $this->setPlaceholder($key, $value) in the process function.
+A CMP can render a Smarty template instead of an HTML string. Add a `getTemplateFile` method that returns the template path relative to your namespace's templates directory (e.g. `return 'home.tpl';`); the manager resolves it against `[namespace]/templates/`, `[namespace]/templates/default/` and `[namespace]/templates/{manager_theme}/`, in that order. In `process`, call `$this->setPlaceholder($key, $value)` to fill template placeholders.
 
-Here's an example of using placeholders in the smarty template file, assuming you called $this->setPlaceholder('foo', 'Bar');
+If you called `$this->setPlaceholder('foo', 'Bar')`, the template can output:
 
 ``` html
 <h2 class="modx-page-header">{$foo}</h2>
 ```
 
- This would output a standard MODX Manager page header saying "Bar".
+This renders a standard Manager page header saying "Bar".
 
 ## Going beyond plain HTML
 
-After this tutorial you built a super simple custom manager page. If you want, you can now continue building a rich interface using [MODExt](extending-modx/custom-manager-pages/modext "MODExt"), the ExtJS integration in Revolution. More about MODExt can be found [here](extending-modx/custom-manager-pages/modext "MODExt").
+This tutorial built a plain HTML CMP. For a rich interface, use [MODExt](extending-modx/custom-manager-pages/modext "MODExt"), the ExtJS integration in Revolution.
 
-It is also recommended to follow the [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra) tutorial as it walks you through every step needed to build a rich component.
+The [Developing an Extra in MODX Revolution](extending-modx/tutorials/developing-an-extra) tutorial covers every step of building a full component.
 
-It's also possible to create components with MODX snippets and chunks. [See the parsed manager controller](extending-modx/custom-manager-pages/parsed). 
+Components can also be built from Snippets and Chunks — see the [parsed manager controller](extending-modx/custom-manager-pages/parsed).
 
 ## See Also
 

@@ -38,27 +38,15 @@ var tpl = MODx.config.default_template;
 | manager_url             | URL к менеджеру.                                                                                    |
 | http_host               | Переменная хоста HTTP для активного контекста.                                                      |
 | site_url                | Полный URL сайта для активного контекста.                                                           |
-| custom_resource_classes | Массив пользовательских классов ресурсов, извлеченных из системных настроек custom_resource_classes |
+| resource_classes | Массив имён пользовательских классов ресурсов (class\_key => class), доступных в выпадающих списках создания/редактирования ресурсов |
+| resource_classes_drop | Имена классов ресурсов, которые нужно исключить из этих списков |
 
-### MODx.version
+### MODx.config.version
 
-Содержит информацию о версии MODX со следующими атрибутами:
-
-| Ключ          | Пример                                 |
-| ------------- | -------------------------------------- |
-| версия        | 2                                      |
-| major_version | 1                                      |
-| minor_version | 0                                      |
-| patch_level   | pl                                     |
-| кодовое имя   | Revolution                             |
-| дистрибутив   | (Traditional)                          |
-| полная версия | 2.1.0-пл                               |
-| full_appname  | MODX Revolution 2.1.0-pl (Traditional) |
-
-Пример:
+Текущая версия MODX в виде полной строки версии (например, `"3.1.0-pl"`). Более подробные атрибуты версии (кодовое имя, дистрибутив и т.д.) существуют только на стороне PHP в `$modx->version` — объекта `MODx.version` в JS менеджера нет.
 
 ```javascript
-var fv = MODx.version.full_version;
+var fv = MODx.config.version;
 ```
 
 ### MODx.user
@@ -109,6 +97,17 @@ w.show();
 
 Любой определенный класс, имеющий зарегистрированный тип xtype, может быть загружен из этого метода.
 
+### MODx.add
+
+Добавляет компонент в основную область контента менеджера (`modx-content`), заменяя то, что там было. Принимает либо строку xtype, либо полный объект конфигурации компонента:
+
+```javascript
+MODx.add({
+  xtype: 'box'
+  ,html: 'Привет из моего CMP'
+});
+```
+
 ### MODx.clearCache
 
 Этот метод запускает консоль, которая очищает кеш MODX. Он также будет запускать события beforeClearCache и afterClearCache для объекта MODx. Если системный параметр [clear_cache_refresh_trees](building-sites/settings/clear_cache_refresh_trees "clear_cache_refresh_trees") установлен в 1, он также обновит все активные деревья слева.
@@ -119,10 +118,10 @@ w.show();
 
 ### MODx.sleep
 
-Этот метод заставит JavaScript засыпать (или останавливаться) на указанное количество секунд:
+Этот метод заставит JavaScript засыпать (или останавливаться) на указанное количество **миллисекунд**:
 
 ```javascript
-MODx.sleep(3); /* остановиться на 3 секунды */
+MODx.sleep(3000); /* остановиться на 3 секунды (аргумент — миллисекунды) */
 ```
 
 ### MODx.logout
@@ -157,4 +156,4 @@ MODx.loadHelpPane();
 
 (Только с версии 2.1+)
 
-Это отправит сообщение об отладке тогда и только тогда, когда MODX [Системные настройки](_legacy/administering-your-site/settings "Настройки") [ui_debug_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") установлен в Yes/1. Отладочное сообщение будет использовать console.log для вывода на консоль. Это может быть полезно для добавления отладки и утверждений в ваш код, не нарушая его на рабочих сайтах (что, вероятно, [ui_debug_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") off).
+Это отправит сообщение об отладке тогда и только тогда, когда MODX [Системные настройки](building-sites/settings "Настройки") [ui_debug_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") установлен в Yes/1. Отладочное сообщение будет использовать console.log для вывода на консоль. Это может быть полезно для добавления отладки и утверждений в ваш код, не нарушая его на рабочих сайтах (что, вероятно, [ui_debug_mode](building-sites/settings/ui_debug_mode "ui_debug_mode") off).

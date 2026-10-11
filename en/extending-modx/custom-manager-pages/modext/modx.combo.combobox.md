@@ -11,27 +11,32 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 
 ![](modext_combobox.png)
 
-The MODExt ComboBox class contains all of the functionality of a regular Ext ComboBox. It may be populated remotely by an array of JSON objects from a connector (default), or locally (using a basic Javascript array or an Ext ArrayStore, with the "mode" config option set to "local").
+The MODExt ComboBox has all the functionality of a regular Ext ComboBox. It can be populated remotely by an array of JSON objects from a connector (default), or locally (a plain JavaScript array or an Ext ArrayStore, with the "mode" config option set to "local").
 
-One unique feature of the MODx ComboBox class is the built-in renderer for grids. It allows developers to use a ComboBox as a grid editor, and automatically takes care of displaying the correct displayValue in the grid cell:
+A unique feature is the built-in renderer for grids: use a ComboBox as a grid editor and it displays the correct displayValue in the grid cell:
 
 ![](modext_combobox_grid.png)
 
 ## Unique Parameters
 
-The unique parameters for the class are simply pass-thru parameters to the data store for the combo:
+The unique parameters are pass-through parameters to the combo's data store:
 
-| Name       | Description                                                          | Default |
-| ---------- | -------------------------------------------------------------------- | ------- |
-| url        | The URL to the connector.                                            |         |
-| baseParams | Any other parameters to always send to the connector.                | {}      |
-| fields     | The fields, in array format, you expect from the connector response. | \[\]    |
+| Name       | Description                                                          | Default                        |
+| ---------- | -------------------------------------------------------------------- | ------------------------------ |
+| url        | The URL to the connector.                                            |                                |
+| baseParams | Any other parameters to always send to the connector.                | { action: 'GetList' }          |
+| fields     | The fields, in array format, you expect from the connector response. | \['id', 'name'\]               |
 
 The class also inherits all [Ext.form.ComboBox](http://extjs.cachefly.net/ext-3.3.0/docs/?class=Ext.form.ComboBox) properties.
 
+Notes:
+
+- The constructor accepts a second argument, `getStore` (default true). Pass false to skip automatic store creation (e.g. when supplying your own store).
+- The combo fires a `loaded` event after its store has finished loading.
+
 ## Using the Grid Renderer
 
-MODx.combo.ComboBox also comes with a built-in renderer for usage in grids. To use in, in your grid's column model defintion, simply specify renderer: true in the editor definition, like so:
+In a grid's column model definition, specify `renderer: true` in the editor definition:
 
 ``` javascript
 {
@@ -41,8 +46,6 @@ MODx.combo.ComboBox also comes with a built-in renderer for usage in grids. To u
   ,editor: { xtype: 'modx-combo-usergroup' ,renderer: true}
 }
 ```
-
-An example of a local data combo box would be:
 
 ### Units Combo Box
 
@@ -73,32 +76,30 @@ Ext.extend(Doodles.combo.Units,MODx.combo.ComboBox);
 Ext.reg('doodle-combo-units',Doodles.combo.Units);
 ```
 
-'store' is used to create your 'fields' and 'data', the optional 'mode' must be set to 'local' for this method.
-
-And to view that combo box:
+`store` supplies the `fields` and `data`; set `mode` to `'local'` for this approach.
 
 ### Combo Call From Grid
 
 ``` javascript
-       {
-            header: _('unit')
-            ,dataIndex: 'unit'
-            ,sortable: false
-            ,width: 50
-            ,editor: { xtype: 'doodle-combo-units', renderer: true }
-        }
+{
+    header: _('unit')
+    ,dataIndex: 'unit'
+    ,sortable: false
+    ,width: 50
+    ,editor: { xtype: 'doodle-combo-units', renderer: true }
+}
 ```
 
 ### Combo Call From Window
 
 ``` javascript
-       {
-            xtype: 'doodle-combo-units'
-            ,fieldLabel: _('unit')
-            ,name: 'unit'
-            ,hiddenName: 'unit'
-            ,anchor: '100%'
-        }
+{
+    xtype: 'doodle-combo-units'
+    ,fieldLabel: _('unit')
+    ,name: 'unit'
+    ,hiddenName: 'unit'
+    ,anchor: '100%'
+}
 ```
 
-hiddenName must be set when calling from a create or update window to save the value, but is not needed in the grid view.
+`hiddenName` must be set when calling from a create or update window to save the value; it is not needed in the grid view.

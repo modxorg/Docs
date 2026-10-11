@@ -37,8 +37,8 @@ translation: "extending-modx/custom-manager-pages/troubleshooting"
 Типичные местоположения внутри компонента:
 
 - Коннектор: assets/components/mycomponent/connector.php or assets/components/mycomponent/mgr/connector.php
-- Процессор: core/components/mycomponent/processors/mgr/processorname.php
-- Контроллер: core/components/mycomponent/controllers/controllername.php
+- Процессор: core/components/mycomponent/processors/mgr/processorname.class.php (кастомные процессоры должны называться `<action>.class.php`, а файл должен возвращать имя класса; класс обычно наследует `\MODX\Revolution\Processors\Processor` или один из его потомков)
+- Контроллер: core/components/mycomponent/controllers/controllername.class.php (файл класса, а не голый PHP-файл)
 
 ### 1.2. Зачем мне все эти штуки в моей странице? Разве я не могу просто отобразить некоторые значения в моем контроллере и собрать что-нибудь оттуда?
 
@@ -46,16 +46,18 @@ translation: "extending-modx/custom-manager-pages/troubleshooting"
 
 Однако рекомендуется использовать разные части, чтобы быть уверенным в том, что вы можете легко развернуть их в других установках (поскольку все они будут предполагать наличие файлов в этом конкретном месте). Это также позволяет пользователям перемещать основную папку MODX из корневого каталога, доступного через Интернет, что повышает безопасность системы.
 
-### 1.3. Какую версию ExtJS использует MODX Revolution? Когда MODX Revolution обновится до ExtJS 4.0?
+### 1.3. Какую версию ExtJS использует MODX Revolution?
 
 | Версия MODX | Версия ExtJS |
 | ----------- | ------------ |
+| 3.x         | 3.4          |
+| 2.3+        | 3.4          |
 | 2.1.2-пл    | 3.4.0        |
 | 2.1.0-rc1   | 3.3.1        |
 | 2.0.4-пл    | 3.3.0        |
 | 2.0.0-RC2   | 3.2.1        |
 
-Маловероятно, что MODX начнет использовать ExtJS 4 до версии 2.3/2.4 или 3.0. Если вы настаиваете на использовании ExtJS 4.0, вы всегда можете самостоятельно начать процесс миграции папки manager/assets/modext/.
+MODX 3 по-прежнему поставляет Ext JS 3 (manager/assets/ext3/), поэтому Ext JS 3.4 остаётся целевым API для CMP. При желании для конкретной страницы менеджер может загрузить и другие JS-фреймворки параллельно с ним.
 
 ### 1.4. Могу ли я использовать виджеты ExtJS, которые MODX использует в менеджере, в моем собственном CMP?
 

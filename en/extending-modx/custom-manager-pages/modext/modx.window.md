@@ -11,7 +11,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 
 ![](modx-window.png)
 
-MODExt Windows are a convenient way to display record data from a Grid or AJAX request for editing. Windows automatically include a FormPanel which you can add form fields (and other components) to. Submitting/saving a Window actually submits the FormPanel, and initiates an AJAX request to your connector.
+A MODx.Window edits record data from a Grid or AJAX request. It includes a FormPanel; add form fields (and other components) to it. Saving submits the FormPanel and sends an AJAX request to your connector.
 
 ## Unique Parameters
 
@@ -21,11 +21,11 @@ MODExt Windows are a convenient way to display record data from a Grid or AJAX r
 | allowDrop     | Whether or not to allow dropping of tree items onto the form fields.                                      | 1       |
 | baseParams    | An object of parameters to send along with the window form on save.                                       | {}      |
 | blankValues   | If true, will reset the values of the form each time it is shown.                                         | 0       |
-| cancelBtnText | The text of the cancel button for the window.                                                             | Cancel  |
+| cancelBtnText | The text of the cancel button for the window.                                                             | Close (lexicon `cancel`)  |
 | fields        | An array of fields for the form, similar to Ext.form.FormPanel's fields definition.                       | \[\]    |
 | fileUpload    | If true, the form will be built to accept files.                                                          | 0       |
 | formFrame     | Whether or not to add a ext-style frame to the window.                                                    | 1       |
-| labelAlign    | The alignment of the labels on the form.                                                                  | right   |
+| labelAlign    | The alignment of the labels on the form.                                                                  | top     |
 | labelWidth    | The width, in pixels, of the labels on the form.                                                          | 100     |
 | record        | A JSON object of default values (in name: value format) to set to the form when first loading the window. | {}      |
 | saveBtnText   | The text of the save button for the window.                                                               | Save    |
@@ -38,21 +38,23 @@ MODExt Windows are a convenient way to display record data from a Grid or AJAX r
 | success      | If the form submission returns a success response.                                |
 | failure      | If the form submission returns a failure response.                                |
 | beforeSubmit | Before the form submits its values to the connector, but after validation passes. |
+| updateWindow | After the window's form values are updated from a record (setValues/reconfigure). |
 
 ## Unique Functionality
 
 ### Firing the submit method
 
-You can manually fire the submission of the Window's form by running the submit() method, which has an optional "close" parameter (1/0) that, if 1, will close the window on success. Example:
+`submit()` submits the Window's form. The window closes on success by default; pass `false` to keep it open:
 
 ``` javascript
 var w = Ext.getCmp('my-window-id');
-w.submit(true); /* submit and then close window */
+w.submit();      /* submit and close the window on success (default) */
+w.submit(false); /* submit but leave the window open */
 ```
 
 ### setValues
 
-The MODx.Window class comes with a setValues method, that will set the form values of the window:
+Sets the form values of the window:
 
 ``` javascript
 var w = Ext.getCmp('my-window-id');
@@ -64,7 +66,7 @@ w.setValues({
 
 ### reset
 
-You can run the reset method to empty (reset) all the fields on the form:
+Empties (resets) all form fields:
 
 ``` javascript
 var w = Ext.getCmp('my-window-id');
@@ -73,12 +75,12 @@ w.reset();
 
 ### Hiding and Showing Fields
 
-MODx.Window comes with a few assistance methods for making fields in its forms visible or hidden:
+`hideField` / `showField` make form fields visible or hidden. Unlike [MODx.FormPanel](extending-modx/custom-manager-pages/modext/modx.formpanel)'s methods, these expect the field **object**, not its name:
 
 ``` javascript
 var w = Ext.getCmp('my-window-id');
-w.hideField('email');
-w.showField('comments');
+w.hideField(w.fp.getForm().findField('email'));
+w.showField(w.fp.getForm().findField('comments'));
 ```
 
 ## See Also

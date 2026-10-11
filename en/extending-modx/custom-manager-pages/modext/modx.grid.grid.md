@@ -13,7 +13,9 @@ When instantiating this into a tabbed interface, it's recommended to set prevent
 
 ![](grid.png)
 
-MODExt Grids are used to display tabular data, complete with a ColumnModel, top toolbar (tbar) and bottom toolbar (bbar). It has built-in support for paging as well. Grids are populated remotely from a connector request returning a JSON object. Displaying a right-click context menu for each row can easily be achieved by including a "menu" key for each data row in your processor:
+MODExt Grids display tabular data with a ColumnModel, top toolbar (tbar), bottom toolbar (bbar) and paging. Data loads remotely from a connector request returning JSON.
+
+A right-click context menu per row comes from a "menu" key in each data row of your processor:
 
 ``` php
 foreach( $items as $item ) {
@@ -30,9 +32,9 @@ foreach( $items as $item ) {
 }
 ```
 
-The above code would create a context menu for each item with the text being the lexicon key matching "my\_lexicon," and the handler being the myHandler function registered to your Grid object.
+Each item gets a context menu entry with the text from lexicon key `my_lexicon` and the handler `myHandler`, registered on your Grid object.
 
-Menus may alternatively (and preferably) be created by extending your JS Grid and adding a "getMenu" method:
+Menus can also (and preferably) be created by extending the JS Grid and adding a "getMenu" method:
 
 ``` javascript
 getMenu: function() {
@@ -45,26 +47,24 @@ getMenu: function() {
 }
 ```
 
-Returning an array of items in the getMenu method will automatically add the items to the context menu.
+Returning an array of items from getMenu adds them to the context menu.
 
-Revolution 2.0.x grids cannot simply return the array - they will need to call "this.addContextMenuItem(m);" before the end of the function. Returning the array was added in 2.1.
+Revolution 2.0.x grids cannot return the array — they must call `this.addContextMenuItem(m);` before the end of the function. Returning the array was added in 2.1.
 
 ## MODExt-Specific Parameters
 
-First off, MODx.grid.Grid pulls its data remotely, via the "url" config parameter. It loads the baseParams into the call as well, which defaults to:
+The grid loads its data from the "url" config parameter, with baseParams that default to:
 
 ``` javascript
 baseParams: { action: 'getList' }
 ```
 
-You can override the baseParams in your config parameter.
-
-MODx.grid.Grid adds a few unique parameters not found in typical Ext.grid.Grid objects:
+Override baseParams in your config. The grid adds parameters not found in typical Ext.grid.Grid objects:
 
 | Name               | Description                                                                                                                                                               | Default                 |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
 | url                | The URL of the connector to load this grid from.                                                                                                                          |                         |
-| paging             | If true, will enable paging and add the PagingToolbar automatically to the bottom of the grid.                                                                            | true                    |
+| paging             | If true, will enable paging and add the PagingToolbar automatically to the bottom of the grid.                                                                            | false (set automatically when a bbar is passed) |
 | pageSize           | The number of items to page by, if paging == true. Defaults to the System Setting of "default\_per\_page", which is 20.                                                   | 20                      |
 | pageStart          | The index to start the paging on.                                                                                                                                         | 0                       |
 | showPerPage        | Whether or not to show the "Per Page" textbox. Defaults to true.                                                                                                          | true                    |
@@ -74,7 +74,7 @@ MODx.grid.Grid adds a few unique parameters not found in typical Ext.grid.Grid o
 | pluralText         | The text for a plural amount of items in the grouped column, ie: "Rows"                                                                                                   | Records                 |
 | singleText         | The text for a single amount of items in the grouped column, ie: "Row"                                                                                                    | Record                  |
 | sortBy             | The default column to sort by when grouping and remoteSort are true.                                                                                                      | id                      |
-| sortDir            | The default column to sort by when grouping and remoteSort are true.                                                                                                      | ASC                     |
+| sortDir            | The default direction to sort by when grouping and remoteSort are true.                                                                                                 | ASC                   |
 | preventRender      | Prevent the grid from rendering. Useful when putting the grid in panels or tabs.                                                                                          | 1                       |
 | autosave           | If true, will automatically fire the 'updateFromGrid' processor (or the processor in the saveUrl config param) for this connector when doing in-line editing in the grid. | false                   |
 | saveUrl            | The connector URL to call when inline-editing with autosave on.                                                                                                           | The value of config.url |
@@ -116,6 +116,7 @@ Ext.applyIf(config, {
 });
 ```
 
+
 ## Editable column hover (MODX 3.0+)
 
 Columns that define an `editor` automatically receive the CSS class `x-editable-column` through `renderEditableColumn`. The manager theme shows a hover cue (pen icon). There is no separate config flag: add an `editor` when the cell is inline-editable.
@@ -150,15 +151,13 @@ MODx.grid.Grid adds a few extra events not found in Ext.grid.Grid objects:
 
 ## Other Unique Functions
 
-MODExt grids come with quite a few other features.
-
 ### Custom Store Exception Messages
 
-If the JSON returned is not a valid data store collection, and contains a "message" parameter, this will be set to the emptyText for the grid and displayed as the first row of the grid. A common usage is to use $modx->error->failure('Message here') in your processors.
+Store load exceptions are handled by `onStoreException`: the message is wrapped in an `error-with-icon` block shown above the grid. In debug mode (`MODx.config.debug > 0`) the raw message is also placed into the grid's emptyText; with debug off the details are only logged. A common usage is to use $modx->error->failure('Message here') in your processors.
 
 ### loadWindow
 
-Automatically load and show a window of any given xtype:
+Loads and shows a window of any given xtype:
 
 ``` javascript
 grid.loadWindow({
@@ -167,13 +166,13 @@ grid.loadWindow({
 });
 ```
 
-This will, if blankValues is not set to true, automatically pass in the currently selected row's data into the Window as well, setting its values in the form (assuming your window extends [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window "MODx.Window").)
+If blankValues is not true, the currently selected row's data is passed into the Window and set in the form (assuming your window extends [MODx.Window](extending-modx/custom-manager-pages/modext/modx.window "MODx.Window").)
 
 ### remove
 
-MODx.grid.Grid comes with a custom method named 'remove', which automatically fires an AJAX request to your connector set in config.url with the action of "remove", and the ID (or primaryKey set in the config) of the currently selected row. This is useful for context menus.
+`remove()` sends an AJAX request to the connector in config.url with the action "remove" and the ID (or primaryKey) of the selected row — useful for context menus.
 
-The method takes one parameter - text - which is the text to display in the confirm dialog that prompts the user if they want to remove the row before actually doing so. The beforeRemoveRow event is fired before the confirm dialog is loaded.
+The one parameter, text, is the confirm-dialog message shown before the row is removed. The beforeRemoveRow event fires before the confirm dialog loads:
 
 ``` javascript
 grid.remove("Are you sure you want to remove this Item?");
@@ -181,25 +180,41 @@ grid.remove("Are you sure you want to remove this Item?");
 
 ### confirm
 
-The confirm method is a custom method that allows you to pop up a confirmation dialog before executing an action:
+Shows a confirmation dialog before executing an action:
 
 ``` javascript
 grid.confirm("approve","Are you sure you want to approve this article?");
 ```
 
-Similar to remove, it will take the ID/primaryKey of the currently selected row, and send it through to the processor action specified in the first parameter to the confirm method. Once finished, it will refresh the grid.
+Like remove, it sends the ID/primaryKey of the selected row to the processor action in the first parameter, then refreshes the grid.
 
 ### refresh
 
-A custom method that will refresh the grid whenever fired.
+Refreshes the grid.
 
 ### encodeModified
 
-This will return a JSON object of all modified (dirty) rows and fields. Useful if autosave is set to false.
+Returns a JSON object of all modified (dirty) rows and fields. Useful when autosave is off.
 
 ### encode
 
-This will return a JSON object of all rows.
+Returns a JSON object of all rows.
+
+### removeActiveRow
+
+Removes the currently selected row from the grid's store and view without firing a connector request — useful after a successful remove call you handled yourself. Note: the `record` argument is currently ignored; the method always removes the selected row ([#17050](https://github.com/modxcms/revolution/issues/17050)):
+
+``` javascript
+grid.removeActiveRow(record);
+```
+
+### Row expander helpers
+
+Grids using a row-expander plugin can toggle all rows with `expandAll()` / `collapseAll()`; `findExpanderPlugin()` locates the expander plugin instance on the grid.
+
+### Permission-aware cells
+
+`setEditableCellClasses()`, `userCanEditRecord(record)` and `userHasRecordPermissions(record)` decide whether a record/cell is editable for the current user, based on record permissions returned by your processor.
 
 ## See Also
 

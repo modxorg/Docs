@@ -6,22 +6,28 @@ _old_uri: "2.x/developing-in-modx/advanced-development/custom-manager-pages/mode
 
 ## What is the MODx.Console?
 
-The MODx.Console is a special Ext widget that has been built to act as a terminal-like output console for processors that need to return more detailed information. It can be found in [Package Management](extending-modx/transport-packages "Package Management"), clearing the cache, or in other areas of MODX:
+The MODx.Console is an Ext widget that shows terminal-like output from processors that return detailed information. You can find it in [Package Management](extending-modx/transport-packages "Package Management"), in cache clearing, and in other areas of MODX:
 
 ![](modx-console.png)
 
 ## How it Works
 
-The Console relies on two parameters to function:
+The Console polls a Registry entry described by two parameters:
 
 - **register** - The registry to pull from
 - **topic** - The topic in the registry to read
 
-First off, the Console starts up a Polling panel that queries the Registry with those two variables. It will continue to poll the Registry until the Console JS object has had its "complete" event fired; or a COMPLETED message is sent. Once that occurs, the Console will stop polling the Registry, and its "OK" button will be enabled. The user can then choose to close the console or download the output to a file. Once the user clicks the OK button, the "shutdown" event will be fired on the console.
+It keeps polling until the Console JS object's "complete" event fires, or a COMPLETED message arrives. Then polling stops and the "OK" button is enabled. The user can close the console or download the output to a file. Clicking "OK" fires the "shutdown" event.
+
+Two more config options are worth knowing:
+
+- **format** - How to render each log line; defaults to `html_log`.
+- The console also has a `setRegister(register, topic)` method, so you can point an already-created console at a different register/topic without rebuilding it.
+
 
 ## Usage
 
-The console can easily be hooked up to nearly any processor and JS custom application in MODX. Simply instantiate a new console object:
+Instantiate a console object:
 
 ``` javascript
 var topic = '/mytopic/';
@@ -40,9 +46,9 @@ var console = MODx.load({
 console.show(Ext.getBody());
 ```
 
-Note here that you fire up the console, and then load the topic that you want (make sure to include the beginning and ending slashes).
+Include the beginning and ending slashes in the topic.
 
-When you've got that loaded, you can send a request to your processor:
+Then send a request to your processor:
 
 ``` javascript
 MODx.Ajax.request({
@@ -60,7 +66,7 @@ MODx.Ajax.request({
 });
 ```
 
-You'll need to specify the URL of your connector url, as well as the action you want to load (the processor). In your processor, you can output to the Console by using $modx->log:
+Specify the connector URL and the processor action. In the processor, write to the Console with $modx->log:
 
 ``` php
 $modx->log(modX::LOG_LEVEL_INFO,'An information message in normal colors.');
@@ -68,18 +74,18 @@ $modx->log(modX::LOG_LEVEL_ERROR,'An error in red!');
 $modx->log(modX::LOG_LEVEL_WARN,'A warning in blue!');
 ```
 
-Once you're done with your processor, you should do two things. One, fire off a log message with just "COMPLETED" in the body:
+When the processor is done, fire a log message with "COMPLETED" as the body:
 
 ``` php
 $modx->log(modX::LOG_LEVEL_INFO,'COMPLETED');
 ```
 
-This tells the console to stop polling, and enables the "OK" button which closes the console.
+This stops the polling and enables the "OK" button.
 
-MODX Revolution 2.1.0-rc2 and later do not need you to send the COMPLETED message in the registry - just firing the 'complete' event on the JS Console object will work. All prior versions require the COMPLETED message.
+MODX Revolution 2.1.0-rc2 and later do not need the COMPLETED message in the registry — firing the 'complete' event on the JS Console object is enough. All prior versions require the COMPLETED message.
 
-After that, once the user clicks the "OK" button, MODx.Console will fire its "shutdown" event. Here you can fire any code you wish to do at that time.
+After the user clicks "OK", MODx.Console fires its "shutdown" event; run any cleanup code there.
 
-Modx.Ajax.request expects a 'success' key value return in json, so you have to return 'success' in the processor. Otherwise the success listener will never fire.
+Modx.Ajax.request expects a 'success' key in the JSON response, so the processor must return 'success'. Otherwise the success listener never fires.
 
-To return text, html, or anything non json, the native Ext.Ajax.request can be used.
+To return text, html, or anything non-json, use the native Ext.Ajax.request.
