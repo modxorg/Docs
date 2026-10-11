@@ -108,28 +108,27 @@ Generate the model:
 
 ![](/ru/extending-modx/creating-components/work-logic/work-logic-2.png)
 
-3. Run `_build/build.php` on the server (for example `php ~/www/Extras/Sendex/_build/build.php` — model generation is the private `buildModel()` method inside it, called from `process()`). The first run prints only **done**; later runs warn that existing objects will not be overwritten.
+1. Run `_build/build.php` on the server (for example `php ~/www/Extras/Sendex/_build/build.php` — model generation is the private `buildModel()` method inside it, called from `process()`). The first run prints only **done**; later runs warn that existing objects will not be overwritten.
 
-
-4. Synchronize the **model** directory back (the two green arrows at the top):
+1. Synchronize the **model** directory back (the two green arrows at the top):
 
 ![](/ru/extending-modx/creating-components/work-logic/work-logic-3.png)
 
 ![](/ru/extending-modx/creating-components/work-logic/work-logic-4.png)
 
-5. The files arrive in the project brown — not yet in Git. Add them via the context menu; they turn green:
+1. The files arrive in the project brown — not yet in Git. Add them via the context menu; they turn green:
 
 ![](/ru/extending-modx/creating-components/work-logic/work-logic-5.png)
 
 ![](/ru/extending-modx/creating-components/work-logic/work-logic-6.png)
 
-6. Register the new objects for install in `/_build/resolvers/resolve.tables.php`:
+1. Register the new objects for install in `/_build/resolvers/resolve.tables.php`:
 
 ![](/ru/extending-modx/creating-components/work-logic/work-logic-7.png)
 
 The white bar left of the line numbers marks changed lines; the file turns blue until the changes are committed.
 
-7. Commit:
+1. Commit:
 
 ![](/ru/extending-modx/creating-components/work-logic/work-logic-8.png)
 
