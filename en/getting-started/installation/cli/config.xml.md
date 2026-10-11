@@ -121,7 +121,8 @@ For `--installmode=upgrade`, `setup/config.dist.upgrade.xml` only needs the keys
 | --- | ----------- | ------- |
 | https\_port | The port on your server for HTTPS connections. | 443 |
 | http\_host | The HTTP host of your server (hostname, such as `mysite.com`). | localhost |
-| cache\_disabled | Whether to disable the MODX cache. | 0 |
+
+**Note:** the configuration key is not an XML tag — pass it on the command line as `--config_key=mykey` to override `MODX_CONFIG_KEY` for one run (multisite setups or site moves). Setup strips unsafe characters from the value.
 
 ## See Also
 

@@ -17,7 +17,7 @@ Ask your host, or check yourself:
 ### WHM / cPanel
 
 1. Log into WHM (often `https://yoursite.com:2087/`).
-2. Under **Plugins**, look for **Mod Security**.
+2. In current WHM versions go to **Security Center → ModSecurity® Tools**. Older versions listed it under **Plugins → Mod Security** (as in the screenshot below).
 
 ![](modsecurity-whm.jpg)
 
@@ -62,11 +62,13 @@ at ARGS:els.
 [unique_id "TshG4EWntHMAAAfIFmUAAAAI"]
 ```
 
+Note that this sample log is from an older (MODX 2.x-era) install, where each connector had its own PHP file. On MODX 3 every connector request goes through a single entry point — `/connectors/index.php?action=…` — so adjust the paths in your whitelist accordingly (see below).
+
 Note:
 
 - **Rule id** - `[id "300016"]`
 - **Host** - `[hostname "yoursite.com"]`
-- **URI** - `[uri "/connectors/element/tv.php"]`
+- **URI** - `[uri "/connectors/element/tv.php"]` (on MODX 3: `/connectors/index.php?action=element/tv/update`)
 
 You need those to whitelist the rule for that path only.
 
@@ -93,27 +95,24 @@ cp -p httpd.conf httpd.conf.backup
 
 ### Example whitelist
 
-From the sample log above:
+From the sample log above, adapted to MODX 3:
 
 ``` apache
-<LocationMatch "/connectors/element/tv.php">
+<LocationMatch "^/connectors/index\.php$">
   <IfModule mod_security2.c>
     SecRuleRemoveById 300016
   </IfModule>
 </LocationMatch>
 ```
 
-You can list several rule ids on one line or use several `SecRuleRemoveById` directives. If you rename `connectors/` or change the site path, update these `LocationMatch` paths to match.
-
-Other connectors or Manager URLs may need their own entries as you find them in the logs, for example:
+`LocationMatch` is compared against the URL path only (the query string does not participate), and on MODX 3 all connector actions share the one `connectors/index.php` path — so the rule above is removed for every connector action. If you need to whitelist a single action, match the query string with a `SecRule` instead, for example:
 
 ``` apache
-<LocationMatch "/connectors/resource/index.php">
-  <IfModule mod_security2.c>
-    SecRuleRemoveById 300013 300014 300015 300016
-  </IfModule>
-</LocationMatch>
+SecRule REQUEST_URI "@contains action=element/tv/update" \
+  "id:30001601,phase:1,pass,nolog,ctl:ruleRemoveById=300016"
 ```
+
+If the log shows a Manager URL instead (for example `/manager/…`), add a similar `<LocationMatch>` for that path. If you rename `connectors/` or change the site path, update these paths to match.
 
 Then reload or restart Apache so the change is picked up (method depends on the host, for example `systemctl reload httpd` or `/etc/init.d/httpd restart`). On cPanel, rebuild the conf first if that is how includes are merged, then restart.
 
@@ -123,7 +122,7 @@ If Apache fails to start, restore the backup config and fix the syntax before tr
 
 ModSecurity request-body limits can truncate large downloads (including large Static Resources), sometimes around 64KB, occasionally **without** a clear log line.
 
-In WHM Mod Security → Edit Config, review settings such as:
+In WHM, go to **Security Center → ModSecurity® Configuration → Configure Global Directives**, and review settings such as:
 
 - `SecRequestBodyAccess`
 - `SecRequestBodyLimit`

@@ -17,7 +17,7 @@ translation: "getting-started/installation/advanced"
 
 ## Предварительные шаги
 
-После [скачивания](getting-started/installation "Installation") advanced-дистрибутива MODX Revolution загрузите и распакуйте его на сервер. Должны остаться два каталога: `core/` и `setup/`. Если вы не собираетесь менять config key, откройте в браузере **setup/** и перейдите к разделу **Advanced Options** ниже.
+После [скачивания](getting-started/installation "Installation") advanced-дистрибутива MODX Revolution загрузите и распакуйте его на сервер. Должны остаться два каталога: `core/` и `setup/`. Далее откройте в браузере **setup/**: выберите язык, при желании переименуйте ключ конфигурации (см. следующий раздел) и продолжите к разделу **Advanced Options** ниже.
 
 ### ~~Переименование или перемещение core~~
 
@@ -94,9 +94,9 @@ Setup проверит готовность системы. При сбое сл
 Если после Install: пустой экран или процесс не идёт дальше:
 
 1. Каталоги `/[root]`, `/core/config`, `/core/packages`, `/core/cache` и `/core/export` должны быть доступны для записи. (`[root]`: каталог установки.)
-2. В php.ini: `memory_limit` 128M, `max_execution_time` 120.
+2. В php.ini `memory_limit` должен быть не меньше 24M (advanced-установщик сам попытается поднять его до 128M). Более крупный `max_execution_time` (например 120) желателен на медленных серверах, но setup его не проверяет.
 3. MODX должен создавать каталоги manager и connectors. Сделайте writable родителей этих путей.
-4. Опишите проблему на [форуме Revolution](https://forums.modx.com/index.php/board,280.0.html). Укажите конфигурацию сервера и шаг установки.
+4. Опишите проблему на [форуме MODX Community](https://community.modx.com). Укажите конфигурацию сервера и шаг установки.
 
 ## Итог после установки
 

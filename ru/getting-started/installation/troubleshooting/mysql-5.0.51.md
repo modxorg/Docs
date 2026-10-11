@@ -2,7 +2,7 @@
 title: "MySQL 5.0.51"
 _old_id: "1115"
 _old_uri: "2.x/getting-started/server-requirements/mysql-5.0.51-issues"
-note: "MODX теперь требует MySQL 5.7 или выше. Эта страница в архиве."
+note: "Поддерживаемый минимум — MySQL 5.7 (см. требования к серверу); setup дополнительно отказывается устанавливаться на версиях, предшествующих 4.1.20, а также на 5.0.51/5.0.51a. Эта страница в архиве."
 translation: "getting-started/installation/troubleshooting/mysql-5.0.51"
 ---
 

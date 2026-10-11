@@ -32,13 +32,16 @@ MODX установится и выведет время работы и оши�
 --core_path=/path/to/core/
 ```
 
+Чтобы переопределить `MODX_CONFIG_KEY` для одного запуска (мульти сайты или переезд), передайте `--config_key=mykey`. Setup убирает небезопасные символы и задаёт ключ только для этого запуска.
+
 ## Базовое обновление MODX через CLI
 
-Как при новой установке, но в XML достаточно атрибутов:
+Как при новой установке, но в XML нужны как минимум ключи из `config.dist.upgrade.xml`:
 
 - `inplace`
 - `unpacked`
 - `language`
+- `core_path`
 - `remove_setup_directory`
 
 И любых других, которые хотите изменить при обновлении. Пример: `config.dist.upgrade.xml`. Затем в `setup/`:
@@ -64,6 +67,16 @@ php ./index.php --installmode=upgrade-advanced
 На GitHub есть **installmodx.php**: [https://github.com/craftsmancoding/modx\_utils/blob/master/installmodx.php](https://github.com/craftsmancoding/modx_utils/blob/master/installmodx.php)
 
 Он добавляет опции командной строки для этого процесса.
+
+## Интерактивная установка через CLI
+
+В пакет также входит интерактивный помощник `setup/cli-install.php`. Он задаёт те же вопросы, записывает `setup/config.xml` и запускает установку:
+
+``` shell
+php setup/cli-install.php --mode=new
+```
+
+`--mode` принимает `new`, `upgrade` или `advanced`. Любую пару `--key=value`, которую он знает (например `--core_path=/path/to/core/`, `--language=en`), можно передать заранее; при обновлении значения можно загрузить из существующего `config.xml`.
 
 ## Смотрите также
 
